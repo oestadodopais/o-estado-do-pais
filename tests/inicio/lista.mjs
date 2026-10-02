@@ -14,6 +14,40 @@
  *   node tests/inicio/lista.mjs --vermelhos
  *
  * ---------------------------------------------------------------------------
+ * A LISTA MUDOU DE PÁGINA E DE FORMA, E A RÉGUA FOI ATRÁS DELA (bloco P4,
+ * 02.10.2026)
+ * ---------------------------------------------------------------------------
+ * Desde o L2a (01.10.2026, §1.149 e §1.150) o mapa das 29 unidades vive em
+ * «Lugares», e os nomes que ficavam ao lado dele na primeira página passaram a
+ * uma gaveta, «Os distritos e as ilhas», fechada, que abre sem guião, com os 29
+ * nomes em ligações simples, numa grelha. A régua rebentava na linha 560 a
+ * procurar a cabeça da primeira página, e uma régua que rebenta mente por omissão
+ * (§5 do brief P4, decisão 1). O que ela mede agora, nas duas edições de
+ * «Lugares», com a gaveta aberta como o leitor a abre:
+ *
+ *   L1  · uma lista só, com as mesmas 29 unidades do desenho, e o mapa antes dos
+ *         nomes no documento (a ordem em que se veem);
+ *   L4  · nenhuma unidade sem nome à vista: a gaveta e os 29 nomes, às oito larguras;
+ *   L5  · cada nome é um alvo com a altura que a folha da gaveta declara (44 px,
+ *         `lugar.css`, `.lugares-lista a`), e nenhum par de alvos se interseta. A
+ *         largura de 44 px era da rede em linha ao lado do mapa da primeira
+ *         página (a Emenda 20c), onde os nomes ficavam encostados; na gaveta cada
+ *         nome tem a sua célula da grelha, e o que protege o dedo de acertar no
+ *         vizinho é a interseção, que continua medida;
+ *   L10 · sem pontuação entre os nomes, nas duas gavetas.
+ *
+ * E SAEM, com a razão escrita no lugar delas, as que mediam a cabeça da primeira
+ * página ou o par entre um nome e a sua área: a L2 (a legenda na banda da cabeça),
+ * a L6 e a L7 (o rato ou o foco num nome a acender a área, e o contrário: a gaveta
+ * de «Lugares» é uma lista de ligações sem par com o desenho, e o nome da área
+ * apontada diz-se no lugar do nome do mapa, que a U2 de `mapa-unidades.mjs`
+ * mede), a L9 (as duas formas da I101, em linha abaixo de 1 024 e em coluna
+ * acima: a gaveta tem uma forma só), e a L11, a L12 e a L13 (o mapa contra a
+ * manchete e a legenda, na grelha da cabeça). As plantas delas saíram com elas.
+ * A colocação do mapa e das gavetas em «Lugares» é do L2a, e mede-se na célula
+ * dele (`tests/inicio/mapa-primeiro.mjs`, no `check:navegacao`).
+ *
+ * ---------------------------------------------------------------------------
  * O QUE CADA CÉLULA MEDE, E PORQUE É ASSIM QUE SE MEDE
  * ---------------------------------------------------------------------------
  * L1 · UMA LISTA SÓ, E É A DO MAPA. O brief escreve que a colocação na coluna
@@ -178,105 +212,33 @@ let medidas = {};
 const conta = (nome, passa, prova) => celulas.push({ nome, passa: !!passa, prova: String(prova) });
 
 const nav = await chromium.launch({ headless: true });
-/* ---------------------------------------------------------------------------
- * A LISTA PASSOU A VIVER NUMA GAVETA FECHADA (01.09.2026)
- * ---------------------------------------------------------------------------
- * A afinação 1 do brief da forma dos domínios recolhe a lista dos nomes e a
- * busca em duas gavetas ao lado do mapa, fechadas a todas as larguras. Um
- * `<details>` fechado não desenha o que tem dentro: as caixas dos 29 nomes
- * passam a medir zero, e as células que medem a REDE — os alvos, a forma, a
- * pontuação, o par de estado — mediriam o nada.
- *
- * ESTA RÉGUA NÃO SE DESLIGA, ABRE A GAVETA. É o que a ordem de construção manda
- * («as réguas existentes verdes ou reescritas para a forma decidida, nunca
- * desligadas»), e é o que a régua sempre mediu: o que a rede é quando o leitor
- * chega a ela. Que a gaveta EXISTE, que vem fechada e que abre sem guião é
- * medido em `tests/inicio/faixa.mjs` (F10a e F10b), e não aqui: uma coisa por
- * régua.
- *
- * AS CÉLULAS DA GEOMETRIA DA CABEÇA CONTINUAM A MEDIR-SE FECHADAS. L3, L11 e
- * L13 dizem onde o mapa começa e acaba e quanto a página cresce, e isso é o que
- * o leitor vê ao chegar: com a gaveta aberta a coluna esquerda cresce e o mapa
- * cresce com ela. São por isso duas leituras por largura, e cada célula diz de
- * qual delas fala.
- */
+
+/* «LUGARES», NAS DUAS EDIÇÕES (bloco P4). A gaveta abre-se como o leitor a abre:
+   um `<details>` fechado não desenha o que tem dentro, e as células que medem os
+   nomes mediriam o nada. Que a gaveta existe, vem fechada e abre sem guião é a
+   célula do L2a (`tests/inicio/mapa-primeiro.mjs`) e a U4 de `mapa-unidades.mjs`. */
+const EDICOES = [
+  { rota: '/lugares/', chave: 'pt', ficheiro: path.join('lugares', 'index.html') },
+  { rota: '/en/places/', chave: 'en', ficheiro: path.join('en', 'places', 'index.html') },
+];
 async function pagina(rota, largura, abrir = false) {
   const ctx = await nav.newContext({ viewport: { width: largura, height: 900 } });
   const p = await ctx.newPage();
   p.__ctx = ctx;
   await p.goto(base + rota, { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
-  if (abrir) {
-    /* ----------------------------------------------------------------------
-       ABRIR É AGORA DUAS COISAS, E A PRIMEIRA É DEVOLVER A GAVETA À COMPOSIÇÃO
-       (F1.13, item 3, 15.09.2026)
-       ----------------------------------------------------------------------
-       A folha da primeira página passou a tirar a gaveta dos nomes da composição
-       quando há guião («visualmente escondida com guião; sem guião, aberta como
-       hoje»). Pôr só o `open` deixava a rede DENTRO de uma caixa de 1 px
-       recortada, e esta régua mediria caixas que ninguém vê. O que ela sempre
-       mediu é «o que a rede é quando o leitor chega a ela».
-
-       A REGRA QUE SE SERVE AQUI É A DO PRÓPRIO SÍTIO, palavra por palavra: é a
-       que `HomeView.astro` põe dentro do `<noscript>` do `<head>` para quem não
-       tem guião. Não é uma folha inventada pela régua para se pôr verde: é o
-       estado em que o leitor sem guião encontra a lista, reposto numa página com
-       guião porque as células L6 e L7 precisam do mapa vivo para medir o par
-       entre um nome e a sua área. A régua diz, assim, o que a lista é quando ela
-       está à vista, que é a única altura em que a pergunta dela faz sentido.
-
-       E É UMA FOLHA E NÃO O FOCO, por uma razão medida: as células L6 e L7
-       chamam `repousa()` entre cada par, e `repousa()` faz `blur()`. Com a
-       gaveta devolvida por `:focus-within`, o `blur` fechava-a outra vez e as 29
-       medições do rato davam «rato false». Uma régua que dependesse do foco
-       media o foco e não a rede.
-
-       O ESTADO COM GUIÃO E EM REPOUSO, a gaveta a não ocupar píxel nenhum e a
-       voltar ao foco, é a A5 de `tests/inicio/porta.mjs`; o estado SEM GUIÃO é
-       a U4 de `tests/inicio/mapa-unidades.mjs`. Uma coisa por régua. */
-    await p.evaluate(() => {
-      const folha = document.createElement('style');
-      folha.textContent =
-        ':root:root .cabeca-nomes{position:static;width:auto;height:auto;margin:0;' +
-        'overflow:visible;clip:auto;white-space:normal}';
-      document.head.append(folha);
-      for (const g of document.querySelectorAll('[data-gaveta]')) g.setAttribute('open', '');
-    });
-  }
+  if (abrir) await p.evaluate(() => { for (const g of document.querySelectorAll('[data-gaveta]')) g.open = true; });
   return p;
 }
 
 const ALVO = 44;
 const LARGURAS = [320, 360, 390, 430, 768, 1024, 1280, 1440];
-const LIMIAR_DA_COLUNA = 1024;
-/* O ALVO NO ECRÃ COM RATO (29.08.2026, a emenda do alinhamento à §1.84): a
-   partir de 1024 a lista é o índice do mapa e não a rede dele, e a linha de um
-   nome mede 32 px; os 44 px são a regra do toque e ficam abaixo de 1024. */
-const ALVO_PONTEIRO = 32;
-const alvoEm = (w) => (w >= LIMIAR_DA_COLUNA ? ALVO_PONTEIRO : ALVO);
-const EDICOES = [
-  { rota: '/', chave: 'pt' },
-  { rota: '/en', chave: 'en' },
-];
 
-/* Os pontos representativos, lidos do artefacto uma vez. É o mesmo ficheiro e o
-   mesmo ponto que a régua do mapa usa para clicar: o que aqui se mede é a marca
-   à volta do sítio onde o rato de verdade pousa. */
-const PONTOS = Object.fromEntries(
-  JSON.parse(fs.readFileSync(path.join(RAIZ, 'mapa', 'pais.json'), 'utf8')).unidades.map((u) => [
-    u.slug,
-    u.ponto,
-  ]),
-);
-/* AS ÁREAS DO DESENHO SÃO AS 29 UNIDADES DA CARTA (Emenda 20; F1.1e, 08.09.2026),
-   e foram as nove regiões NUTS II durante um dia (F1.1d). O par de estado é entre
-   o desenho e a lista, e os dois lados voltaram a ser as mesmas 29. */
-const PARES = Object.keys(PONTOS).length;
-/* Os nomes da lista são as 29 unidades do desenho, e mais nenhum: a lista é o
-   índice do desenho. */
+/* As 29 unidades da Carta, lidas do artefacto: o desenho e a lista têm de ser estas. */
+const PARES = JSON.parse(fs.readFileSync(path.join(RAIZ, 'mapa', 'pais.json'), 'utf8')).unidades.length;
 const NOMES_DA_LISTA = PARES;
 
-/** Tudo o que uma página diz sobre a lista, a uma largura. */
+/** Tudo o que uma página diz sobre a gaveta dos nomes, a uma largura. */
 const LEITURA = () => {
   const visivel = (el) => {
     if (!el) return false;
@@ -288,175 +250,66 @@ const LEITURA = () => {
   const cx = (el) => {
     if (!el) return null;
     const b = el.getBoundingClientRect();
-    return {
-      x: +b.x.toFixed(1),
-      y: +(b.y + window.scrollY).toFixed(1),
-      w: +b.width.toFixed(1),
-      h: +b.height.toFixed(1),
-      fundo: +(b.y + b.height + window.scrollY).toFixed(1),
-    };
+    return { x: +b.x.toFixed(1), y: +(b.y + window.scrollY).toFixed(1), w: +b.width.toFixed(1), h: +b.height.toFixed(1) };
   };
   const conteudoDe = (el, onde) => {
     const c = getComputedStyle(el, onde).content;
     return c === 'none' || c === 'normal' || c === '' ? null : c;
   };
-  const lista = document.querySelector('[data-mapa-ilhas]');
-  const grupos = [...document.querySelectorAll('[data-parcela-lista]')].map((g) => ({
-    parcela: g.getAttribute('data-parcela-lista'),
-    visivel: visivel(g),
-    caixa: cx(g),
-    formaDaFila: getComputedStyle(g.querySelector('ul')).display,
-  }));
-  const nomes = [...document.querySelectorAll('[data-lista-porta]')].map((a) => ({
-    slug: a.getAttribute('data-lista-porta'),
-    parcela: a.closest('[data-parcela-lista]')?.getAttribute('data-parcela-lista') ?? null,
+  const gaveta = document.querySelector('[data-gaveta="distritos"]');
+  const nomes = [...document.querySelectorAll('[data-lista-lugares="distritos"] a[href]')].map((a) => ({
+    slug: (a.getAttribute('href') ?? '').replace(/^\/(?:en\/districts|distritos)\//, '').replace(/\/$/, ''),
     visivel: visivel(a),
     caixa: cx(a),
     destino: a.getAttribute('href'),
   }));
-  /* A pontuação decorativa, dos dois lados de cada item e de cada ligação. */
   const pontuacao = [];
-  for (const el of document.querySelectorAll('[data-mapa-ilhas] li, [data-lista-porta]')) {
+  for (const el of document.querySelectorAll('[data-lista-lugares] li, [data-lista-lugares] a')) {
     for (const onde of ['::before', '::after']) {
       const c = conteudoDe(el, onde);
       if (c) pontuacao.push(`${el.tagName.toLowerCase()}${onde} = ${c}`);
     }
   }
-  const areas = [...document.querySelectorAll('[data-areas] .uni')].map((el) => ({
-    slug: el.getAttribute('data-unidade'),
-    parcela: el.getAttribute('data-parcela'),
-  }));
-  /* A ORDEM DO DOCUMENTO entre a lista e o mapa, lida na árvore e não na folha:
-     `compareDocumentPosition` diz qual vem primeiro, e é isso que o teclado e o
-     leitor de ecrã seguem. */
-  const primeiroNome = document.querySelector('[data-lista-porta]');
-  const primeiraArea = document.querySelector('a.uni-porta');
+  const areas = [...document.querySelectorAll('#mapa [data-areas] .uni')].map((el) => el.getAttribute('data-unidade'));
+  const primeiroNome = document.querySelector('[data-lista-lugares="distritos"] a[href]');
+  const primeiraArea = document.querySelector('#mapa a.uni-porta');
   const ordemDoDocumento =
     primeiroNome && primeiraArea
       ? primeiroNome.compareDocumentPosition(primeiraArea) & Node.DOCUMENT_POSITION_FOLLOWING
         ? 'nomes antes do mapa'
         : 'mapa antes dos nomes'
       : 'sem um dos dois';
-  const painel = [...document.querySelectorAll('.painel-nome, .social-titulo')].map((h) => {
-    const marcado = h.querySelector('[data-prova]');
-    return {
-      classe: h.className,
-      texto: h.textContent.replace(/\s+/g, ' ').trim(),
-      chave: marcado?.getAttribute('data-prova') ?? null,
-      algarismo: marcado ? Number(marcado.textContent.trim()) : null,
-      soltos: [...h.childNodes]
-        .filter((n) => n.nodeType === 3)
-        .map((n) => n.textContent)
-        .join(' ')
-        .match(/\d+/g),
-    };
-  });
-  return {
-    janela: window.innerWidth,
-    pagina: +document.documentElement.scrollHeight.toFixed(1),
-    cabeca: cx(document.querySelector('.cabeca-col')),
-    instrumento: cx(document.querySelector('.cabeca-inst')),
-    grelha: cx(document.querySelector('.cabeca-grelha')),
-    tela: cx(document.querySelector('.mapa-tela')),
-    svg: cx(document.querySelector('.cabeca-inst .mapa-svg')),
-    legenda: cx(document.querySelector('.mapa-legenda')),
-    /* O ALINHAMENTO LÊ-SE NA LINHA QUE A LEGENDA TEM (acerto 4 do P1,
-       15.09.2026). Era `.mapa-linha-fonte`, a linha «308 concelhos · CAOP 2025 ·
-       selo», que saiu: a contagem passou para o lugar do nome do mapa, com a sua
-       marca da fonte, e o que fica na legenda é a menção da licença. Uma sonda
-       que continuasse a procurar a linha antiga devolvia `null`, e a L12 caía
-       por não encontrar nada em vez de por um desalinhamento. */
-    legendaAlinhamento: (() => {
-      const e = document.querySelector('.mapa-legenda .mapa-fonte');
-      return e ? getComputedStyle(e).textAlign : null;
-    })(),
-    lista: cx(lista),
-    lado: cx(document.querySelector('[data-cabeca-lado]')),
-    grupos,
-    nomes,
-    pontuacao,
-    areas,
-    ordemDoDocumento,
-    painel,
-    /* O QUE CADA NOME DE PAINEL CONTA MUDOU DE FORMA, E NÃO DE COISA (F1.1b,
-       04.09.2026). Eram as peças da grelha do Procedimento e as linhas da lista
-       social; a grelha e a lista saíram da primeira página e no lugar delas está
-       a área de leitura, com um `<details data-leitura>` por medida, dividida
-       nas mesmas duas metades pelo quadro a que cada medida pertence
-       (`data-leituras="pdm"` e `data-leituras="social"`). O que a L8 mede é o
-       mesmo — «o algarismo do nome conta o que está por baixo dele» —, medido
-       na coisa que agora lá está: um seletor que continuasse a contar peças
-       contava zero, e um zero que ninguém recusa é uma régua cega. */
-    pecasDoPainel: document.querySelectorAll('#painel [data-leituras="pdm"] [data-leitura]').length,
-    linhasDoSocial: document.querySelectorAll('#painel-social [data-leitura]').length,
-  };
+  return { janela: window.innerWidth, gaveta: { aberta: gaveta?.open ?? null, visivel: visivel(gaveta) }, nomes, pontuacao, areas, ordemDoDocumento };
 };
 
-/** O estado de um par, e o máximo das outras oito, numa chamada só. */
-const ESTADO = (slug) => {
-  const n = (v) => Number.parseFloat(String(v)) || 0;
-  const uni = document.querySelector(`.uni[data-unidade="${slug}"]`);
-  const nome = document.querySelector(`[data-lista-porta="${slug}"]`);
-  let outroTraco = 0;
-  for (const el of document.querySelectorAll('[data-areas] .uni')) {
-    if (el === uni) continue;
-    outroTraco = Math.max(outroTraco, n(getComputedStyle(el).strokeWidth));
-  }
-  let outroSublinhado = 0;
-  for (const el of document.querySelectorAll('[data-lista-porta]')) {
-    if (el === nome) continue;
-    outroSublinhado = Math.max(outroSublinhado, n(getComputedStyle(el).textDecorationThickness));
-  }
-  return {
-    traco: uni ? n(getComputedStyle(uni).strokeWidth) : null,
-    corDoTraco: uni ? getComputedStyle(uni).stroke : null,
-    sublinhado: nome ? n(getComputedStyle(nome).textDecorationThickness) : null,
-    corDoNome: nome ? getComputedStyle(nome).color : null,
-    outroTraco,
-    outroSublinhado,
-  };
-};
+const intersecta = (a, b) =>
+  a.x < b.x + b.w - 0.5 && b.x < a.x + a.w - 0.5 && a.y < b.y + b.h - 0.5 && b.y < a.y + a.h - 0.5;
 
 /* ===========================================================================
  * A CORRIDA
  * ===========================================================================
- * `soEstas` limita a corrida às células que um estrago nomeia: uma régua inteira
- * por planta seria dez corridas de tudo para provar dez linhas.
+ * `soEstas` limita a corrida às células que um estrago nomeia. As células que
+ * saíram (L2, L3, L6, L7, L8, L9, L11, L12 e L13) estão no cabeçalho, com a razão;
+ * a L3 e a L8 saíram a 16.09.2026 e as outras no bloco P4.
  */
-const intersecta = (a, b) =>
-  a.x < b.x + b.w - 0.5 && b.x < a.x + a.w - 0.5 && a.y < b.y + b.h - 0.5 && b.y < a.y + a.h - 0.5;
-
 async function correTudo(soEstas) {
   const precisa = (c) => !soEstas || soEstas.includes(c);
-  /* A L3 e a L8 saíram a 16.09.2026, com a razão escrita em cada uma. */
-  const daPagina = ['L1', 'L2', 'L4', 'L5', 'L9', 'L10', 'L11', 'L12', 'L13'].filter(precisa);
-  const daMao = ['L6', 'L7'].filter(precisa);
-
+  const daPagina = ['L1', 'L4', 'L5', 'L10'].filter(precisa);
   const lido = {};
-  const fechado = {};
   if (daPagina.length) {
     const larguras = new Set();
     for (const c of daPagina) {
-      if (['L4', 'L5', 'L9', 'L10'].includes(c)) for (const w of LARGURAS) larguras.add(w);
-      if (c === 'L2') larguras.add(1024);
-      if (['L11', 'L12', 'L13'].includes(c)) for (const w of [1024, 1280, 1440]) larguras.add(w);
-      if (['L1', 'L2'].includes(c)) larguras.add(1280);
+      if (['L4', 'L5', 'L10'].includes(c)) for (const w of LARGURAS) larguras.add(w);
+      if (c === 'L1') larguras.add(1280);
     }
     for (const e of EDICOES) {
       for (const w of [...larguras].sort((a, b) => a - b)) {
-        /* `lido` é a leitura com a gaveta ABERTA — a rede à vista, que é o que
-           quase todas as células medem —, e `fechado` é a de chegada, com a
-           gaveta como o leitor a encontra. Ver a nota de `pagina()`. */
         const p = await pagina(e.rota, w, true);
         lido[`${e.chave}_${w}`] = await p.evaluate(LEITURA);
         await p.__ctx.close();
-        const q = await pagina(e.rota, w, false);
-        fechado[`${e.chave}_${w}`] = await q.evaluate(LEITURA);
-        await q.__ctx.close();
       }
     }
     medidas.larguras = lido;
-    medidas.fechado = fechado;
   }
 
   /* --------------------------------------------------------------------- L1 */
@@ -464,12 +317,7 @@ async function correTudo(soEstas) {
     for (const e of EDICOES) {
       const r = lido[`${e.chave}_1280`];
       const daLista = new Set(r.nomes.map((n) => n.slug));
-      const doMapa = new Set(r.areas.map((a) => a.slug));
-      /* A LISTA E O DESENHO VOLTAM A SER O MESMO CONJUNTO (F1.1e): as 29 unidades
-         da Carta dos dois lados. Com o F1.1d eram conjuntos diferentes (nove
-         áreas, 38 nomes), e a célula exigia só que nenhuma área ficasse sem
-         nome; agora exige-se a igualdade, que é mais forte e é o que a lista é:
-         o índice do desenho. */
+      const doMapa = new Set(r.areas);
       const soNoMapa = [...doMapa].filter((s) => !daLista.has(s));
       const soNaLista = [...daLista].filter((s) => !doMapa.has(s));
       const destinos = new Set(r.nomes.map((n) => n.destino));
@@ -481,156 +329,25 @@ async function correTudo(soEstas) {
           soNoMapa.length === 0 &&
           soNaLista.length === 0 &&
           destinos.size === NOMES_DA_LISTA &&
-          /* A ORDEM DO DOCUMENTO INVERTEU-SE COM O F1.1 (03.09.2026), e a razão
-             que a fixava caducou com a forma. A lista vinha antes do mapa porque
-             estava FECHADA: era o índice do desenho, e a leitura cruzada de
-             29.08 escreveu que «quem percorre a página pelo teclado tem de a
-             encontrar primeiro» — um `<summary>` de uma linha antes de um
-             desenho de 683 px. Desde o F1.1 a lista chega ABERTA (item 4 do
-             brief), com os 29 nomes à vista e cada um com o seu alvo, e vive
-             numa banda de largura inteira por baixo da cabeça, fora da grelha
-             (a razão está em `CabecaDoLugar.astro`: dentro da coluna esquerda
-             ela punha 316,6 px de papel liso na metade direita a 1280).
-
-             O QUE A CÉLULA CONTINUA A PROTEGER é que a ordem do documento e a
-             ordem do ecrã são a mesma, que é o que serve quem percorre a página
-             pelo teclado: o desenho, a legenda do desenho, e a seguir os nomes.
-             Uma lista aberta depois do mapa é lida na mesma ordem em que se vê;
-             era a lista fechada que precisava de vir primeiro. */
           r.ordemDoDocumento === 'mapa antes dos nomes',
-        `${r.nomes.length} ligações, ${daLista.size} slugs na lista e ${doMapa.size} no mapa, ${destinos.size} destinos distintos` +
-          `${soNoMapa.length ? ` · no mapa e não na lista: ${soNoMapa.join(', ')}` : ''}` +
-          `${soNaLista.length ? ` · na lista e não no mapa: ${soNaLista.join(', ')}` : ''}` +
-          `${soNoMapa.length + soNaLista.length === 0 ? ' · a lista e o desenho são as mesmas unidades' : ''}` +
+        `${r.nomes.length} ligações, ${daLista.size} slugs na gaveta e ${doMapa.size} no mapa, ${destinos.size} destinos distintos` +
+          `${soNoMapa.length ? ` · no mapa e não na gaveta: ${soNoMapa.join(', ')}` : ''}` +
+          `${soNaLista.length ? ` · na gaveta e não no mapa: ${soNaLista.join(', ')}` : ''}` +
           ` · ordem do documento: ${r.ordemDoDocumento}`,
       );
     }
   }
-
-  /* --------------------------------------------------------------------- L2 */
-  /* ---------------------------------------------------------------------------
-   * A LISTA MEDE-SE PELA GAVETA EM QUE ELA VIVE (01.09.2026)
-   * ---------------------------------------------------------------------------
-   * A célula dizia «a lista na coluna esquerda, por baixo da manchete e ao lado
-   * do mapa», e media a caixa dos 29 nomes. Com a afinação 1 do brief da forma
-   * dos domínios a lista passou a viver numa gaveta fechada, e o que está na
-   * coluna esquerda ao lado do mapa é a GAVETA: os nomes só têm caixa quando ela
-   * abre, e nessa altura a coluna cresce e passa o fundo do mapa, que é o que
-   * qualquer coisa que se abre faz.
-   *
-   * O que a célula prova continua a ser o mesmo e mede-se no estado de chegada:
-   * a coluna das gavetas está na banda da cabeça (a mesma abcissa e a mesma
-   * largura), começa por baixo da manchete e da faixa, e está ao lado do mapa e
-   * não por baixo dele. Que a lista está DENTRO dessa gaveta é a L1 e a L4.
-   * ------------------------------------------------------------------------ */
-  if (precisa('L2')) {
-    for (const e of EDICOES) {
-      for (const w of [1024, 1280]) {
-        const r = fechado[`${e.chave}_${w}`];
-        /* -------------------------------------------------------------------
-           A COLUNA MUDOU DE CONTEÚDO COM O F1.1 (03.09.2026), e a célula segue-a.
-           Media a coluna das DUAS GAVETAS — a dos nomes e a da busca — e exigia
-           três coisas: a mesma banda da coluna da cabeça, por baixo da manchete,
-           e a começar antes do fim da coluna do mapa, que é o que a punha AO LADO
-           do desenho e não por baixo dele.
-
-           As duas gavetas deixaram de estar ali. A busca subiu para debaixo da
-           manchete, como `<form>` com destino (itens 3 e 12 do brief), e a lista
-           dos nomes passou a uma banda de largura inteira fora da grelha (item 4;
-           a razão medida está em `CabecaDoLugar.astro`). O que fica na coluna é a
-           LEGENDA DO MAPA, e é dela que a célula passa a falar.
-
-           A TERCEIRA EXIGÊNCIA CAI A 1024, E COM RAZÃO MEDIDA. A coluna esquerda
-           ganhou uma fila — a porta do concelho — e a 1024 a coluna do mapa é a
-           mais estreita das três larguras (o desenho mede 831,7 px de altura
-           contra 864,4 px de coluna esquerda). Ali a legenda fica por baixo do
-           fim do desenho, e a promessa de que o fundo dos dois é o mesmo é a L11,
-           que corre a 1280 e a 1440, onde ela vale. A célula continua a exigir a
-           banda e a ordem, que são o que ela sempre protegeu. */
-        /* E A 1280 A TERCEIRA EXIGÊNCIA CAI TAMBÉM (16.09.2026, achado 13 da
-           leitura a frio do Codex). «Começar antes do fim da coluna do mapa» era
-           o que punha a legenda AO LADO do desenho, e valia quando a coluna
-           esquerda era a manchete e a legenda. Hoje a coluna esquerda leva a
-           busca, a porta do concelho e a legenda, e é 292 px mais alta do que a
-           do mapa: a legenda é a última coisa dela e fica por baixo do fim do
-           desenho, a 1024 como a 1280. O sítio onde ela está hoje mede-se por
-           inteiro na L12, nas três larguras («a legenda por cima dos nomes,
-           alinhada à esquerda com eles»), e não se perde nada. A célula fica com
-           a banda e com a ordem, que são o que ela sempre protegeu. */
-        const naBanda = Math.abs(r.lado.x - r.cabeca.x) < 1 && Math.abs(r.lado.w - r.cabeca.w) < 1;
-        const porBaixoDaManchete = r.lado.y >= r.cabeca.fundo;
-        conta(
-          `L2·${e.chave}·${w} · a legenda do mapa na banda da cabeça, por baixo da manchete`,
-          naBanda && porBaixoDaManchete,
-          `legenda x ${r.lado.x} w ${r.lado.w} (cabeça x ${r.cabeca.x} w ${r.cabeca.w}) · topo ${r.lado.y} contra o fim da manchete ${r.cabeca.fundo} e o fim do mapa ${r.instrumento.fundo}`,
-        );
-      }
-    }
-  }
-
-  /* ---------------------------------------------------------------------------
-   * A RELAÇÃO QUE TRÊS CÉLULAS MEDIAM, E QUE A CABEÇA DE HOJE NÃO TEM
-   * ---------------------------------------------------------------------------
-   * 16.09.2026, passagem de correção do P3, achado 13 da leitura a frio do
-   * Codex, por decisão da triagem do lugar de direção («cada célula que mede
-   * mobília que saiu retira-se com a razão escrita, e as outras acertam-se»).
-   *
-   * A L3, a segunda metade da L11 e a terceira condição da L13 mediam TODAS A
-   * MESMA COISA, dita de três maneiras: que a coluna do mapa e a coluna da
-   * esquerda acabam juntas. Era verdade a 29.08.2026, quando a coluna esquerda
-   * era a manchete e a legenda e mais nada. Deixou de ser verdade quando o F1.1
-   * tirou a lista dos nomes da grelha para uma banda de largura inteira, o F1.1d
-   * e o F1.1e mudaram o estado de chegada da gaveta, o F1.10 pôs a busca e a
-   * porta do concelho debaixo da manchete, e o F1.13 refez a porta da frente. A
-   * coluna esquerda passou a levar mais coisas do que o mapa, e mede hoje, a
-   * 1280, 981,5 px contra 689,0 px da coluna do mapa.
-   *
-   * O QUE FICA DE CADA UMA, e porquê:
-   *
-   *   · L3 SAI INTEIRA. O sujeito dela era essa relação e mais nada («a grelha
-   *     não passa muito da coluna do mapa»), e sem ela a célula não tem o que
-   *     medir. A página continua a não crescer sem razão, e quem o diz é a F13
-   *     da régua da faixa (nenhum transbordo horizontal às sete larguras) e as
-   *     capturas nas cinco larguras, que é onde uma decisão de altura se lê.
-   *   · L11 FICA COM O TOPO. «O mapa começa no topo da manchete» é uma promessa
-   *     da cabeça alinhada que continua de pé e continua a medir-se; «e acaba no
-   *     fundo da legenda» sai com a razão de cima.
-   *   · L13 FICA COM A COLUNA E COM O DESENHO. «Cabe na coluna» e «o desenho
-   *     enche a caixa» (a razão do `viewBox`) são do mapa e não da grelha;
-   *     «enche-a em altura» sai com a razão de cima.
-   *
-   * NADA DISTO ENFRAQUECE A RÉGUA POR GOSTO: o que sai é uma promessa que a
-   * cabeça de hoje não faz, e o que fica continua a ter planta que o derruba.
-   * Uma célula vermelha há doze dias por medir uma cabeça que já não existe não
-   * protege nada: só ensina a ler o vermelho como ruído.
-   * ------------------------------------------------------------------------ */
-
-  /* --------------------------------------------------------------------- L3 */
-  /* RETIRADA a 16.09.2026, com a razão no bloco acima. A célula media «a grelha
-     não passa muito da coluna do mapa», que é a relação que a cabeça de hoje não
-     tem, e mais nada. */
 
   /* --------------------------------------------------------------------- L4 */
   if (precisa('L4')) {
     for (const e of EDICOES) {
       for (const w of LARGURAS) {
         const r = lido[`${e.chave}_${w}`];
-        const parcelas = new Set(r.areas.map((a) => a.parcela));
-        const escondidos = r.grupos.filter((g) => !g.visivel);
-        const nomesEscondidos = r.nomes.filter((n) => !n.visivel);
+        const escondidos = r.nomes.filter((n) => !n.visivel);
         conta(
-          `L4·${e.chave}·${w} · nenhuma área sem alvo tocável: os ${parcelas.size} grupos e os ${NOMES_DA_LISTA} nomes à vista`,
-          /* OS GRUPOS SÃO AS PARCELAS DO DESENHO (F1.1e): as 29 unidades da Carta
-             arrumadas pela parcela a que pertencem, e mais nenhum. O grupo das
-             nove regiões saiu com elas do desenho. */
-          r.grupos.length === parcelas.size &&
-            parcelas.size > 0 &&
-            escondidos.length === 0 &&
-            nomesEscondidos.length === 0 &&
-            r.nomes.length === NOMES_DA_LISTA,
-          `${r.grupos.length} grupo(s), ${parcelas.size} parcela(s) da Carta, ${escondidos.length} escondido(s)` +
-            `${escondidos.length ? ` (${escondidos.map((g) => g.parcela).join(', ')})` : ''} · ` +
-            `${r.nomes.length} nome(s), ${nomesEscondidos.length} escondido(s)`,
+          `L4·${e.chave}·${w} · nenhuma unidade sem nome à vista: a gaveta aberta e os ${NOMES_DA_LISTA} nomes`,
+          r.gaveta.visivel && r.gaveta.aberta === true && r.nomes.length === NOMES_DA_LISTA && escondidos.length === 0,
+          `gaveta ${r.gaveta.visivel ? 'à vista' : 'fora da vista'} e ${r.gaveta.aberta ? 'aberta' : 'fechada'} · ${r.nomes.length} nome(s), ${escondidos.length} escondido(s)`,
         );
       }
     }
@@ -642,153 +359,16 @@ async function correTudo(soEstas) {
       for (const w of LARGURAS) {
         const r = lido[`${e.chave}_${w}`];
         const vistos = r.nomes.filter((n) => n.visivel);
-        const alvo = alvoEm(w);
-        const baixos = vistos.filter((n) => n.caixa.h < alvo);
-        /* No ecrã com rato a altura é a declarada (32 px), e não «pelo menos»: uma
-           linha de 44 px ali seria a forma antiga a passar por nova. */
-        const altos = w >= LIMIAR_DA_COLUNA ? vistos.filter((n) => n.caixa.h > alvo + 2) : [];
-        const estreitos = vistos.filter((n) => n.caixa.w < alvo);
+        const baixos = vistos.filter((n) => n.caixa.h < ALVO - 0.01);
         let colisoes = 0;
         for (let i = 0; i < vistos.length; i++) {
-          for (let j = i + 1; j < vistos.length; j++) {
-            if (intersecta(vistos[i].caixa, vistos[j].caixa)) colisoes++;
-          }
+          for (let j = i + 1; j < vistos.length; j++) if (intersecta(vistos[i].caixa, vistos[j].caixa)) colisoes++;
         }
         const menorAlto = vistos.length ? Math.min(...vistos.map((n) => n.caixa.h)) : 0;
-        const menorLargo = vistos.length ? Math.min(...vistos.map((n) => n.caixa.w)) : 0;
         conta(
-          `L5·${e.chave}·${w} · cada nome é um alvo de ${alvo} × ${alvo} px, e nenhum se interseta`,
-          vistos.length === NOMES_DA_LISTA && baixos.length === 0 && altos.length === 0 && estreitos.length === 0 && colisoes === 0,
-          `${vistos.length}/${NOMES_DA_LISTA} à vista · o mais baixo ${menorAlto.toFixed(1)} px, o mais estreito ${menorLargo.toFixed(1)} px · ` +
-            `${baixos.length} sob ${alvo} de altura, ${altos.length} acima de ${alvo + 2}, ${estreitos.length} sob ${alvo} de largura, ${colisoes} interseção(ões)`,
-        );
-      }
-    }
-  }
-
-  /* ------------------------------------------------------------ L11 a L13 */
-  /* A CABEÇA ALINHADA (29.08.2026, a emenda do alinhamento à §1.84): a partir de
-     1280 o mapa começa no topo da manchete e acaba no fundo da legenda, a legenda
-     fica por baixo dos nomes e alinhada à esquerda com eles, e o mapa cabe na
-     coluna e enche-a em altura; a 1024 a legenda fica por baixo do mapa, na
-     coluna dele. As três medem caixas do navegador, não a folha. */
-  if (precisa('L11') || precisa('L12') || precisa('L13')) {
-    for (const e of EDICOES) {
-      for (const w of [1024, 1280, 1440]) {
-        /* A GEOMETRIA DA CABEÇA MEDE-SE COM A GAVETA FECHADA (01.09.2026): o
-           mapa estica-se com a coluna esquerda, e com a rede aberta a coluna
-           cresce 300 px. O que a emenda das 19:50 de 29.08 promete é a cabeça de
-           chegada, e é essa que se mede. A L12 é a excepção, e diz porquê. */
-        const r = fechado[`${e.chave}_${w}`];
-        const aberto = lido[`${e.chave}_${w}`];
-        if (!r || !r.svg || !r.legenda) {
-          for (const c of ['L11', 'L12', 'L13']) if (precisa(c)) conta(`${c}·${e.chave}·${w} · o mapa e a legenda existem na página`, false, 'sem svg ou sem legenda');
-          continue;
-        }
-        if (w >= 1280) {
-          if (precisa('L11')) {
-            /* SÓ O TOPO desde 16.09.2026: ver a razão no bloco «a relação que
-               três células mediam». O fundo do mapa contra o fundo da legenda
-               era a mesma promessa da L3 e da terceira condição da L13. */
-            conta(
-              `L11·${e.chave}·${w} · o mapa começa no topo da manchete`,
-              Math.abs(r.svg.y - r.cabeca.y) <= 2,
-              `mapa de ${r.svg.y} a ${r.svg.fundo} · manchete desde ${r.cabeca.y} · legenda até ${r.legenda.fundo}`,
-            );
-          }
-          if (precisa('L12')) {
-            /* A ORDEM DOS DOIS INVERTEU-SE COM O F1.1 (03.09.2026). A legenda
-               era a última coisa da coluna esquerda e os nomes estavam por cima
-               dela, dentro da mesma coluna; com a lista aberta a viver numa banda
-               de largura inteira fora da grelha, a legenda é a última coisa da
-               COLUNA e a banda dos nomes é a primeira coisa DEPOIS dela. O que a
-               célula continua a provar é o mesmo: que as duas coisas estão
-               alinhadas à esquerda uma com a outra e que não se atravessam.
-               A razão da mudança está em `CabecaDoLugar.astro`. */
-            conta(
-              `L12·${e.chave}·${w} · a legenda por cima dos nomes, alinhada à esquerda com eles`,
-              Math.abs(aberto.legenda.x - aberto.lista.x) <= 1 &&
-                aberto.legenda.fundo <= aberto.lista.y + 0.5 &&
-                ['left', 'start'].includes(aberto.legendaAlinhamento),
-              `legenda x ${aberto.legenda.x} y ${aberto.legenda.y} · lista x ${aberto.lista.x} fundo ${aberto.lista.fundo} · text-align ${aberto.legendaAlinhamento}`,
-            );
-          }
-          if (precisa('L13')) {
-            /* O desenho enche a caixa: a razão da caixa do `svg` é a do `viewBox`
-               (6090/8030) a menos de 1,5 px, senão o navegador centra o desenho
-               com ar em cima e em baixo e o fundo «partilhado» é o da caixa e não
-               o do mapa (leitura cruzada de 29.08). E a caixa não sai da coluna
-               por nenhum dos lados, fica a menos de 8 px da largura dela, e não
-               passa a altura da grelha. */
-            /* SEM A ALTURA DA GRELHA desde 16.09.2026: ver a razão no bloco «a
-               relação que três células mediam». O que fica é do mapa e não da
-               grelha, e é o que a célula sempre quis dizer sobre o desenho. */
-            const arVertical = Math.abs(r.svg.h - r.svg.w * (8030 / 6090));
-            conta(
-              `L13·${e.chave}·${w} · o mapa cabe na coluna e o desenho enche a caixa`,
-              r.svg.x >= r.instrumento.x - 1 &&
-                r.svg.x + r.svg.w <= r.instrumento.x + r.instrumento.w + 1 &&
-                r.instrumento.w - r.svg.w <= 8 &&
-                r.svg.h <= r.grelha.h + 1 &&
-                arVertical <= 1.5,
-              `mapa ${r.svg.w} × ${r.svg.h} px em x ${r.svg.x} · coluna x ${r.instrumento.x} w ${r.instrumento.w} · grelha h ${r.grelha.h} · ar vertical ${arVertical.toFixed(1)} px`,
-            );
-          }
-        } else if (precisa('L12')) {
-          /* A 1024 A LEGENDA MUDOU DE COLUNA (01.09.2026) e a ordem contra os
-             nomes inverteu-se (F1.1, 03.09.2026). A regra é uma só nas três
-             larguras: a legenda é a última coisa da coluna da cabeça, alinhada à
-             esquerda com a banda dos nomes que vem a seguir a ela. O que muda de
-             1024 para 1280 é só se o fundo dela é também o fundo do mapa, e isso
-             é a L11. */
-          conta(
-            `L12·${e.chave}·${w} · a legenda no fim da coluna da cabeça, por cima da banda dos nomes e alinhada com ela`,
-            Math.abs(aberto.legenda.x - aberto.lista.x) <= 1 &&
-              aberto.legenda.fundo <= aberto.lista.y + 0.5 &&
-              ['left', 'start'].includes(aberto.legendaAlinhamento),
-            `legenda x ${aberto.legenda.x} y ${aberto.legenda.y} · lista x ${aberto.lista.x} fundo ${aberto.lista.fundo} · text-align ${aberto.legendaAlinhamento}`,
-          );
-        }
-      }
-    }
-  }
-
-  /* --------------------------------------------------------------------- L9 */
-  if (precisa('L9')) {
-    for (const e of EDICOES) {
-      for (const w of LARGURAS) {
-        const r = lido[`${e.chave}_${w}`];
-        const formas = new Set(r.grupos.map((g) => g.formaDaFila));
-        const continente = r.nomes.filter((n) => n.parcela === 'continente' && n.visivel);
-        const linhas = new Set(continente.map((n) => Math.round(n.caixa.y))).size;
-        /* -------------------------------------------------------------------
-           A FORMA É UMA SÓ EM TODAS AS LARGURAS DESDE O F1.1 (03.09.2026).
-           Eram duas: abaixo de 1024 a rede em linha, com 44 px de alvo, porque
-           era o único alvo que respondia pelas 29 unidades do desenho (I82 e
-           Emenda 20c); a partir de 1024 a lista em coluna, uma linha por nome,
-           com 32 px, porque ali ela era o índice do mapa dentro da coluna
-           esquerda (a emenda do alinhamento à §1.84, 29.08.2026).
-
-           A LISTA DEIXOU DE VIVER NA COLUNA. Com ela aberta (item 4 do brief), a
-           coluna esquerda a 1280 passava de 424 px para 1 005,6 px contra uma
-           coluna do mapa de 689,0 px, e ficavam 316,6 px de papel liso na metade
-           direita: a razão inteira está em `CabecaDoLugar.astro`. A lista passa a
-           uma banda de largura inteira por baixo da cabeça, e numa banda a forma
-           em coluna não faz sentido nenhum — dezoito nomes numa coluna de
-           1 200 px de largura seriam dezoito linhas de papel vazio.
-
-           O QUE A CÉLULA CONTINUA A PROTEGER, E É O ESSENCIAL: uma forma de cada
-           vez (nunca as duas ao mesmo tempo), os 29 à vista, e o continente a
-           caber em menos linhas do que os dezoito nomes empilhados dariam. O
-           alvo de cada nome é a L5, que corre às sete larguras e não mudou. */
-        const formaCerta = formas.size === 1 && [...formas][0] === 'flex';
-        const linhasCertas = linhas > 0 && linhas < 9;
-        const naBanda = true;
-        conta(
-          `L9·${e.chave}·${w} · uma forma de cada vez: a rede em linha`,
-          r.nomes.every((n) => n.visivel) && formaCerta && linhasCertas,
-          `fila em «${[...formas].join(', ')}» (${formas.size} forma no bloco) · os 18 do continente em ${linhas} linha(s) · ` +
-            `${r.nomes.filter((n) => n.visivel).length}/${NOMES_DA_LISTA} à vista`,
+          `L5·${e.chave}·${w} · cada nome é um alvo de ${ALVO} px de altura, e nenhum se interseta`,
+          vistos.length === NOMES_DA_LISTA && baixos.length === 0 && colisoes === 0,
+          `${vistos.length}/${NOMES_DA_LISTA} à vista · o mais baixo ${menorAlto.toFixed(1)} px · ${baixos.length} sob ${ALVO} de altura, ${colisoes} interseção(ões)`,
         );
       }
     }
@@ -802,239 +382,9 @@ async function correTudo(soEstas) {
         conta(
           `L10·${e.chave}·${w} · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo`,
           r.pontuacao.length === 0,
-          r.pontuacao.length === 0
-            ? '0 pseudo-elementos com conteúdo em 29 ligações e 29 itens'
-            : `${r.pontuacao.length}: ${[...new Set(r.pontuacao)].join(' · ')}`,
+          r.pontuacao.length === 0 ? '0 pseudo-elementos com conteúdo nas duas gavetas' : `${r.pontuacao.length}: ${[...new Set(r.pontuacao)].join(' · ')}`,
         );
       }
-    }
-  }
-
-  /* --------------------------------------------------------------------- L8 */
-  /* ---------------------------------------------------------------------------
-   * RETIRADA a 16.09.2026, na passagem de correção do P3 (achado 13 da leitura a
-   * frio do Codex; a decisão é da triagem do lugar de direção).
-   *
-   * A célula media o nome dos DOIS PAINÉIS da primeira página («o painel dos
-   * desequilíbrios da economia», «o painel do emprego e das condições sociais»),
-   * e exigia que o algarismo de cada nome fosse a contagem das peças e das linhas
-   * que a página rende por baixo dele. Os dois painéis saíram da primeira página
-   * com o F1.10 (08.09.2026, «Números e fontes» e o menu em dois pesos) e vivem
-   * hoje em `/uniao-europeia` e `/en/european-union`. Medido a 16.09.2026 sobre o
-   * `dist/`: a primeira página não tem nenhuma peça de painel (`data-painel` a
-   * zero) e a célula imprimia «(sem linha) diz undefined e o painel tem 0
-   * peça(s)», que é uma régua a medir o vazio.
-   *
-   * O QUE MEDE A CONTAGEM DE HOJE, e mede-a onde ela está: o `gate:html` recusa
-   * qualquer algarismo de uma página construída que não resolva numa linha do
-   * livro-razão ou numa marca de prova declarada, e é ele que passou a responder
-   * pelos dois nomes desde que eles mudaram de página. A régua da página europeia
-   * é do bloco que a fizer: fica dito aqui, e está na I118.
-   *
-   * AS DUAS PLANTAS DELA SAEM COM ELA, mais abaixo, e pela mesma razão: uma
-   * planta que estraga um nome de painel numa página que não tem painéis não
-   * estraga coisa nenhuma.
-   * ------------------------------------------------------------------------ */
-
-  /* ----------------------------------------------------------------- L6 e L7 */
-  /* COM A GAVETA ABERTA, pela razão de `pagina()`: o par de estado é entre um
-     nome e uma área, e um nome dentro de um `<details>` fechado não tem caixa,
-     não recebe o rato e não recebe o foco. O que estas células medem é o par
-     quando o leitor chega a ele. */
-  if (daMao.length) {
-    for (const e of EDICOES) {
-      const p = await pagina(e.rota, 1280, true);
-      /* O REPOUSO LÊ-SE NUMA UNIDADE DA CARTA, que é o que o desenho tem: lido
-         numa área que o mapa não desenha, o lado do mapa vinha `null` e a
-         comparação com «os outros» passava a comparar um número com nada. */
-      const repouso = await p.evaluate(ESTADO, 'evora');
-
-      /* O rato do lado do mapa vai ao ponto representativo, e por isso o desenho
-         entra em vista uma vez e os pontos leem-se DEPOIS disso: um rolamento a
-         meio invalidaria as coordenadas de ecrã já calculadas. */
-      await p.evaluate(() => document.querySelector('[data-mapa-areas]').scrollIntoView({ block: 'center' }));
-      /* A MATRIZ É A DO PRÓPRIO CAMINHO E NÃO A DO `svg` (F1.1e, segunda
-         passagem, 08.09.2026). As unidades dos dois arquipélagos levam a
-         translação da arrumação dos insertos, escrita pelo servidor em cada
-         caminho, e um ponto do campo levado ao ecrã pela matriz do `svg` caía
-         onde a ilha ESTAVA: o rato pousava no mar e as nove ilhas dos Açores
-         falhavam a L6b. A matriz de um caminho traz as transformações dos seus
-         antepassados e a dele, e é a única que responde por «onde está este
-         ponto desta área no ecrã». */
-      const noEcra = await p.evaluate((pontos) => {
-        const svg = document.querySelector('[data-mapa-areas]');
-        const out = {};
-        for (const [slug, xy] of Object.entries(pontos)) {
-          const el = svg.querySelector(`[data-areas] .uni[data-unidade="${slug}"]`) ?? svg;
-          const pt = svg.createSVGPoint();
-          pt.x = xy[0];
-          pt.y = xy[1];
-          const s = pt.matrixTransform(el.getScreenCTM());
-          out[slug] = { x: s.x, y: s.y };
-        }
-        return out;
-      }, PONTOS);
-
-      const slugs = await p.evaluate(() =>
-        [...document.querySelectorAll('a.uni-porta')].map((a) => a.getAttribute('data-uni-porta')),
-      );
-
-      if (precisa('L6') && e.chave === 'pt') {
-        /* ENTRE DUAS VARREDURAS, A PÁGINA VOLTA AO REPOUSO. Medido na primeira
-           corrida: a varredura do teclado deixava uma área focada, e a varredura
-           do rato que vinha a seguir lia «traço 3 nas outras 28» em 28 das 29
-           unidades. Não era o par a marcar de mais: era o foco de antes, ainda
-           aceso. O rato afasta-se e o foco larga antes de cada uma das quatro. */
-        const repousa = async () => {
-          await p.mouse.move(0, 0);
-          await p.evaluate(() => document.activeElement?.blur?.());
-        };
-
-        /* o rato numa área → o nome daquela unidade */
-        await repousa();
-        const falhasRatoNaArea = [];
-        for (const slug of slugs) {
-          await p.mouse.move(noEcra[slug].x, noEcra[slug].y);
-          const s = await p.evaluate(ESTADO, slug);
-          if (!(s.sublinhado > repouso.sublinhado && s.outroSublinhado === repouso.sublinhado)) {
-            falhasRatoNaArea.push(`${slug} (${s.sublinhado}, outros ${s.outroSublinhado})`);
-          }
-        }
-        await p.mouse.move(0, 0);
-        conta(
-          'L6b · o rato em cada uma das 29 áreas marca o nome daquela unidade, e só dele',
-          falhasRatoNaArea.length === 0,
-          falhasRatoNaArea.length === 0
-            ? `${PARES}/${PARES} · sublinhado ${repouso.sublinhado} px → 3 px no nome apontado, ${repouso.sublinhado} px nos outros`
-            : `${falhasRatoNaArea.length} falha(s): ${falhasRatoNaArea.slice(0, 4).join(', ')}`,
-        );
-
-        /* o foco do teclado numa área → o nome daquela unidade */
-        await repousa();
-        const falhasFocoNaArea = [];
-        for (let i = 0; i < slugs.length; i++) {
-          await p.evaluate(
-            ({ lista, i }) => {
-              const as = [...document.querySelectorAll('a.uni-porta')];
-              as[i === 0 ? 1 : i - 1].focus();
-            },
-            { lista: slugs, i },
-          );
-          await p.keyboard.press(i === 0 ? 'Shift+Tab' : 'Tab');
-          const s = await p.evaluate(ESTADO, slugs[i]);
-          if (!(s.sublinhado > repouso.sublinhado && s.outroSublinhado === repouso.sublinhado)) {
-            falhasFocoNaArea.push(`${slugs[i]} (${s.sublinhado}, outros ${s.outroSublinhado})`);
-          }
-        }
-        conta(
-          'L6d · o foco do teclado em cada uma das 29 áreas marca o nome daquela unidade',
-          falhasFocoNaArea.length === 0,
-          falhasFocoNaArea.length === 0
-            ? `${PARES}/${PARES} pelo Tab`
-            : `${falhasFocoNaArea.length} falha(s): ${falhasFocoNaArea.slice(0, 4).join(', ')}`,
-        );
-
-        /* o rato em cada nome → a área daquela unidade */
-        await repousa();
-        const falhasRatoNoNome = [];
-        for (const slug of slugs) {
-          const el = await p.$(`[data-lista-porta="${slug}"]`);
-          let chegou = false;
-          try {
-            if (el) {
-              await el.hover({ timeout: 2000 });
-              chegou = true;
-            }
-          } catch {
-            chegou = false;
-          }
-          const s = await p.evaluate(ESTADO, slug);
-          if (!(chegou && s.traco > repouso.traco && s.outroTraco === repouso.traco)) {
-            falhasRatoNoNome.push(`${slug} (rato ${chegou}, traço ${s.traco}, outros ${s.outroTraco})`);
-          }
-        }
-        await p.mouse.move(0, 0);
-        conta(
-          'L6a · o rato em cada um dos 29 nomes contorna a área daquela unidade, e só dela',
-          falhasRatoNoNome.length === 0,
-          falhasRatoNoNome.length === 0
-            ? `${PARES}/${PARES} · contorno ${repouso.traco} px → 3 px na área apontada, ${repouso.traco} px nas outras`
-            : `${falhasRatoNoNome.length} falha(s): ${falhasRatoNoNome.slice(0, 4).join(', ')}`,
-        );
-
-        /* o foco do teclado em cada nome → a área daquela unidade */
-        await repousa();
-        const ordemDosNomes = await p.evaluate(() =>
-          [...document.querySelectorAll('[data-lista-porta]')].map((a) =>
-            a.getAttribute('data-lista-porta'),
-          ),
-        );
-        const falhasFocoNoNome = [];
-        for (let i = 0; i < ordemDosNomes.length; i++) {
-          await p.evaluate((i) => {
-            const as = [...document.querySelectorAll('[data-lista-porta]')];
-            as[i === 0 ? 1 : i - 1].focus();
-          }, i);
-          await p.keyboard.press(i === 0 ? 'Shift+Tab' : 'Tab');
-          const pousou = await p.evaluate(
-            (slug) => document.activeElement?.getAttribute('data-lista-porta') === slug,
-            ordemDosNomes[i],
-          );
-          const s = await p.evaluate(ESTADO, ordemDosNomes[i]);
-          if (!(pousou && s.traco > repouso.traco && s.outroTraco === repouso.traco)) {
-            falhasFocoNoNome.push(`${ordemDosNomes[i]} (foco ${pousou}, traço ${s.traco})`);
-          }
-        }
-        conta(
-          'L6c · o foco do teclado em cada um dos 29 nomes contorna a área daquela unidade',
-          falhasFocoNoNome.length === 0,
-          falhasFocoNoNome.length === 0
-            ? `${PARES}/${PARES} pelo Tab`
-            : `${falhasFocoNoNome.length} falha(s): ${falhasFocoNoNome.slice(0, 4).join(', ')}`,
-        );
-      }
-
-      if (precisa('L7')) {
-        await p.mouse.move(0, 0);
-        await p.evaluate(() => document.activeElement?.blur?.());
-        /* O PAR MEDE-SE NUMA UNIDADE, e Évora é a que o desenho dá com mais
-           folga: uma área grande, convexa e no meio do continente. */
-        const alvo = 'evora';
-        let chegouAoNome = false;
-        try {
-          const el = await p.$(`[data-lista-porta="${alvo}"]`);
-          if (el) {
-            await el.hover({ timeout: 2000 });
-            chegouAoNome = true;
-          }
-        } catch {
-          chegouAoNome = false;
-        }
-        const comRatoNoNome = await p.evaluate(ESTADO, alvo);
-        await p.mouse.move(0, 0);
-        await p.evaluate(() => document.querySelector('[data-mapa-areas]').scrollIntoView({ block: 'center' }));
-        const ponto = await p.evaluate(([xy, slug]) => {
-          const svg = document.querySelector('[data-mapa-areas]');
-          const el = svg.querySelector(`[data-areas] .uni[data-unidade="${slug}"]`) ?? svg;
-          const pt = svg.createSVGPoint();
-          pt.x = xy[0];
-          pt.y = xy[1];
-          const s = pt.matrixTransform(el.getScreenCTM());
-          return { x: s.x, y: s.y };
-        }, [PONTOS[alvo], alvo]);
-        await p.mouse.move(ponto.x, ponto.y);
-        const comRatoNaArea = await p.evaluate(ESTADO, alvo);
-        medidas[`par_${e.chave}`] = { repouso, comRatoNoNome, comRatoNaArea };
-        conta(
-          `L7·${e.chave} · a marca não é só cor: os dois lados mudam uma grandeza que não é cor`,
-          chegouAoNome &&
-            comRatoNoNome.traco !== repouso.traco &&
-            comRatoNaArea.sublinhado !== repouso.sublinhado,
-          `contorno ${repouso.traco} → ${comRatoNoNome.traco} px · sublinhado ${repouso.sublinhado} → ${comRatoNaArea.sublinhado} px · ` +
-            `tinta do traço ${repouso.corDoTraco} nos dois estados`,
-        );
-      }
-      await p.__ctx.close();
     }
   }
 }
@@ -1042,210 +392,65 @@ async function correTudo(soEstas) {
 /* ===========================================================================
  * OS ESTRAGOS PLANTADOS
  * =========================================================================== */
-/* `/en/` COM BARRA ENTRA TAMBÉM (01.09.2026): o servidor desta régua recebe o
-   caminho tal como a chamada o escreve, e as duas formas existem no código. */
-const soNaPrimeira = (rota) =>
-  rota === '/' ||
-  rota === '/index.html' ||
-  rota === '/en' ||
-  rota === '/en/' ||
-  rota === '/en/index.html';
-const comFolha = (css) => (html, rota) =>
-  soNaPrimeira(rota) ? html.replace('</head>', `<style>${css}</style></head>`) : html;
+const soEmLugares = (rota) => ['/lugares/', '/lugares', '/lugares/index.html', '/en/places/', '/en/places', '/en/places/index.html'].includes(rota);
+const comFolha = (css) => (html, rota) => (soEmLugares(rota) ? html.replace('</head>', `<style>${css}</style></head>`) : html);
 
-/* ---------------------------------------------------------------------------
- * MOVER UM BLOCO NO DOCUMENTO, CONTANDO AS ETIQUETAS
- * ---------------------------------------------------------------------------
- * Três plantas precisam de trocar a ordem de dois blocos no HTML construído, e
- * o fim de um `<div>` encontra-se a contar as `<div>` que abrem e as que fecham,
- * que é a única maneira honesta de o saber num documento: um corte por índice
- * deixaria etiquetas por fechar e o analisador leria outra árvore.
- */
-function fimDoBloco(texto, inicio) {
+/** O fim de um bloco que abre com a etiqueta `etiqueta`, contando as que abrem e as que fecham. */
+function fimDoBloco(texto, inicio, etiqueta) {
   let nivel = 0;
-  const re = /<div\b|<\/div>/g;
+  const re = new RegExp(`<${etiqueta}\\b|</${etiqueta}>`, 'g');
   re.lastIndex = inicio;
   let m;
   while ((m = re.exec(texto))) {
-    nivel += m[0] === '</div>' ? -1 : 1;
-    if (nivel === 0) return m.index + 6;
+    nivel += m[0] === `</${etiqueta}>` ? -1 : 1;
+    if (nivel === 0) return m.index + etiqueta.length + 3;
   }
   return -1;
 }
 
-/** O bloco que começa em `abre` movido para antes (ou depois) de `alvo`. */
-function moveBloco(html, abre, alvo, onde) {
-  const i = html.indexOf(abre);
-  if (i < 0) return html;
-  const f = fimDoBloco(html, i);
-  if (f < 0) return html;
-  const bloco = html.slice(i, f);
-  const sem = html.slice(0, i) + html.slice(f);
-  const j = sem.indexOf(alvo);
-  if (j < 0) return html;
-  const g = onde === 'depois' ? fimDoBloco(sem, j) : j;
-  if (g < 0) return html;
-  return sem.slice(0, g) + bloco + sem.slice(g);
-}
-
 const PLANTAS = [
   {
-    nome: 'uma ligação duplicada: o mesmo nome duas vezes na lista',
+    nome: 'uma ligação duplicada: o mesmo nome duas vezes na gaveta',
     celulas: ['L1'],
     estrago: (html, rota) => {
-      if (!soNaPrimeira(rota)) return html;
-      const m = html.match(/<li><a href="[^"]*\/(?:distritos|districts)\/aveiro"[^>]*>[^<]*<\/a><\/li>/);
+      if (!soEmLugares(rota)) return html;
+      const m = html.match(/<li[^>]*><a href="[^"]*\/(?:distritos|districts)\/aveiro"[^>]*>[^<]*<\/a><\/li>/);
       return m ? html.replace(m[0], m[0] + m[0]) : html;
     },
   },
   {
-    /* A BANDA DOS NOMES ANTES DO MAPA NO DOCUMENTO.
-       ----------------------------------------------------------------------
-       ESTA PLANTA MUDAVA O HTML E NÃO MORDIA (F1.1e, segunda passagem,
-       08.09.2026). Trocava a coluna da legenda (`.cabeca-lado`) com a coluna do
-       mapa (`.cabeca-inst`), que era onde a lista vivia quando a planta foi
-       escrita; desde o F1.1 (03.09.2026) a lista saiu da grelha para uma banda
-       de largura inteira (`.cabeca-nomes`), e trocar aquelas duas colunas deixou
-       de mexer na ordem entre os NOMES e o MAPA, que é o que a L1 mede. Foi a
-       leitura a frio do Codex a apanhá-lo (achado 10), e a correção é a planta e
-       não a célula: o bloco que se move passa a ser a banda dos nomes. */
-    nome: 'a banda dos nomes antes do mapa no documento',
+    nome: 'a gaveta dos distritos e das ilhas antes do mapa no documento',
     celulas: ['L1'],
-    estrago: (html, rota) =>
-      soNaPrimeira(rota)
-        ? moveBloco(html, '<div class="cabeca-nomes"', '<div class="cabeca-inst"', 'antes')
-        : html,
+    estrago: (html, rota) => {
+      if (!soEmLugares(rota)) return html;
+      const i = html.indexOf('<section class="lugares-dobra" data-dobra-lugares="distritos"');
+      const f = i < 0 ? -1 : fimDoBloco(html, i, 'section');
+      if (f < 0) return html;
+      const bloco = html.slice(i, f);
+      const sem = html.slice(0, i) + html.slice(f);
+      const j = sem.indexOf('<div class="lugares-mapa"');
+      return j < 0 ? html : sem.slice(0, j) + bloco + sem.slice(j);
+    },
   },
   {
-    /* A L3 saiu a 16.09.2026 e a planta fica com a L2, que continua a morder:
-       o estrago põe a coluna da legenda na coluna do mapa e ela deixa de estar
-       na banda da cabeça, que é a primeira exigência da célula. */
-    nome: 'a coluna das gavetas de volta para a coluna do mapa, a 1280',
-    celulas: ['L2'],
-    estrago: comFolha(
-      '@media (min-width:1024px){.cabeca-lado{grid-column:2 !important;grid-row:3 !important}.cabeca-inst{grid-row:1 !important}}',
-    ),
-  },
-  {
-    nome: 'um grupo escondido numa largura em que uma unidade fica abaixo dos 44 px',
-    celulas: ['L4', 'L9'],
-    estrago: comFolha('[data-parcela-lista="continente"]{display:none}'),
+    nome: 'a gaveta dos distritos e das ilhas escondida',
+    celulas: ['L4'],
+    estrago: comFolha('[data-gaveta="distritos"]{display:none !important}'),
   },
   {
     nome: 'um alvo com 40 px de altura',
     celulas: ['L5'],
-    estrago: comFolha(
-      '.mapa-ilhas-lista a{padding-block:10px !important;line-height:20px !important;min-height:0 !important}',
-    ),
+    estrago: comFolha('.lugares-lista a{min-height:40px !important;height:40px !important}'),
   },
   {
-    nome: 'um alvo com menos de 44 px de largura (a largura mínima retirada)',
+    nome: 'dois nomes encavalitados (os alvos a intersetar-se)',
     celulas: ['L5'],
-    estrago: comFolha('.mapa-ilhas-lista a{min-width:0 !important;padding-inline:0 !important}'),
-  },
-  {
-    /* A L11 FICOU SÓ COM O TOPO a 16.09.2026, e este estrago prende o mapa ao
-       topo da coluna (`align-self:start`): a L11 não o vê, e é a L13 que o
-       apanha, pela largura (a tela a 70 % da coluna). O topo tem planta própria,
-       a seguir a esta. */
-    nome: 'o mapa solto do fundo da legenda, a 1280 (o item deixa de esticar e a tela volta a ser dimensionada pela largura)',
-    celulas: ['L13'],
-    /* A tela a 70 % da coluna, e não a 100 %: com as margens da segunda
-       construção, um mapa dimensionado pela largura inteira da coluna acaba a
-       4 px do fundo da legenda, que é a tolerância da L11, e o estrago passava
-       por forma (visto no corredor de 29.08 à noite). O que se quer provar é que
-       a célula vê um mapa que não chega ao fundo, e a 70 % não chega. */
-    estrago: comFolha(
-      '@media (min-width:1280px){.cabeca-inst{align-self:start !important;height:auto !important;min-height:0 !important}.cabeca-inst .mapa-tela{height:auto !important;width:70% !important}.cabeca-inst .mapa-svg{width:100% !important;height:auto !important}}',
-    ),
-  },
-  {
-    /* A LEGENDA POR BAIXO DOS NOMES EM VEZ DE POR CIMA.
-       ----------------------------------------------------------------------
-       ESTA PLANTA MUDAVA O HTML E NÃO MORDIA (F1.1e, segunda passagem,
-       08.09.2026). Punha `order:-1` na legenda dentro de `.cabeca-lado`, e isso
-       muda a ordem dela DENTRO daquela coluna; o que a L12 mede desde o F1.1 é a
-       legenda contra a BANDA DOS NOMES, que vive fora da grelha e sempre depois
-       dela, de maneira que nenhuma ordenação dentro da coluna a podia inverter
-       (leitura a frio do Codex de 08.09.2026, achado 10). A planta passa a fazer
-       o que o seu nome diz: move a legenda para depois da banda dos nomes, que é
-       a forma que o defeito teria. */
-    nome: 'a legenda por baixo dos nomes em vez de por cima',
-    celulas: ['L12'],
-    estrago: (html, rota) =>
-      soNaPrimeira(rota)
-        ? moveBloco(html, '<div class="mapa-legenda', '<div class="cabeca-nomes"', 'depois')
-        : html,
-  },
-  {
-    /* A PLANTA DO TOPO DA L11 (16.09.2026). Com a segunda metade da célula
-       retirada, o que fica é «o mapa começa no topo da manchete», e sem planta
-       era uma célula que ninguém provou saber falhar. O estrago empurra a coluna
-       do mapa 60 px para baixo, que é muito mais do que os 2 px de tolerância. */
-    nome: 'o mapa a começar abaixo do topo da manchete, a 1280',
-    celulas: ['L11'],
-    estrago: comFolha('@media (min-width:1280px){.cabeca-inst{margin-block-start:60px !important}}'),
-  },
-  {
-    nome: 'o mapa mais largo do que a coluna, a 1280',
-    celulas: ['L13'],
-    estrago: comFolha(
-      '@media (min-width:1280px){.cabeca-inst .mapa-tela{max-width:none !important;width:900px !important;height:auto !important}.cabeca-inst .mapa-svg{width:100% !important;height:auto !important}}',
-    ),
-  },
-  {
-    /* A RAIZ DO PAR É `:root` DESDE O F1.1 (03.09.2026), e as duas plantas ainda
-       procuravam `.cabeca-grelha`, que era a raiz de antes: o `replace` não
-       encontrava nada, o HTML saía intacto e as duas plantas declaravam-se a
-       morder sem terem mexido em coisa nenhuma. Apanhado ao correr
-       `--vermelhos` no F1.1e (08.09.2026), que é a primeira vez que ele corre
-       nesta régua desde essa mudança. */
-    nome: 'o rato num nome sem resposta do mapa (a folha do par retirada)',
-    celulas: ['L6', 'L7'],
-    estrago: (html, rota) =>
-      soNaPrimeira(rota) ? html.replace(/<style>:root:has[\s\S]*?<\/style>/, '') : html,
-  },
-  {
-    nome: 'a marca só por cor',
-    celulas: ['L6', 'L7'],
-    estrago: (html, rota) => {
-      if (!soNaPrimeira(rota)) return html;
-      const sem = html.replace(/<style>:root:has[\s\S]*?<\/style>/, '');
-      return sem.replace(
-        '</head>',
-        '<style>:root:has([data-lista-porta="lisboa"]:hover) .uni[data-unidade="lisboa"]{stroke:#c00}' +
-          ':root:has([data-uni-porta="lisboa"]:hover) [data-lista-porta="lisboa"]{color:#c00}' +
-          '.mapa-ilhas-lista a:hover{text-decoration-thickness:1px !important}</style></head>',
-      );
-    },
-  },
-  /* AS DUAS PLANTAS DA L8 SAÍRAM a 16.09.2026, com a célula: estragavam o
-     algarismo de um nome de painel numa página que já não tem painéis (o F1.10
-     levou-os para `/uniao-europeia`), e por isso não estragavam coisa nenhuma.
-     A razão está na célula. */
-  {
-    /* AS DUAS FORMAS NA MESMA LARGURA.
-       ----------------------------------------------------------------------
-       ESTA PLANTA PLANTAVA O ESTADO CERTO (F1.1e, segunda passagem,
-       08.09.2026). Punha a rede EM LINHA a partir de 1024, que era o defeito
-       enquanto a forma acima de 1024 era a lista em coluna; desde o F1.1
-       (03.09.2026) a forma é uma só em todas as larguras e é precisamente a
-       linha, de maneira que a planta plantava o que a célula exige (leitura a
-       frio do Codex de 08.09.2026, achado 10). O nome dela sempre prometeu a
-       coisa certa, «as duas formas na mesma largura», e é isso que ela passa a
-       fazer: o continente em linha e os arquipélagos em coluna, ao mesmo tempo,
-       que é o estado que a L9 existe para recusar. */
-    nome: 'as duas formas na mesma largura (o continente em linha e os arquipélagos em coluna)',
-    celulas: ['L9'],
-    estrago: comFolha(
-      '.mapa-ilhas-grupo:not([data-parcela-lista="continente"]) .mapa-ilhas-lista' +
-        '{display:block !important;columns:2 !important}',
-    ),
+    estrago: comFolha('.lugares-lista{display:block !important}.lugares-lista li + li{margin-top:-20px !important}.lugares-lista a{display:flex !important}'),
   },
   {
     nome: 'um ponto de separação de volta entre os nomes',
     celulas: ['L10'],
-    estrago: comFolha('.mapa-ilhas-lista li:not(:last-child)::after{content:"·";color:#888}'),
+    estrago: comFolha('.lugares-lista li:not(:last-child)::after{content:"·";color:#888}'),
   },
 ];
 
@@ -1264,12 +469,9 @@ if (VERMELHOS) {
 
     /* 2 · a transformação muda o HTML */
     let mudou = false;
-    for (const [rota, rel] of [
-      ['/', 'index.html'],
-      ['/en', path.join('en', 'index.html')],
-    ]) {
-      const cru = fs.readFileSync(path.join(DIST, rel), 'utf8');
-      if (planta.estrago(cru, rota) !== cru) mudou = true;
+    for (const e of EDICOES) {
+      const cru = fs.readFileSync(path.join(DIST, e.ficheiro), 'utf8');
+      if (planta.estrago(cru, e.rota) !== cru) mudou = true;
     }
 
     /* 3 · vermelho depois */
@@ -1284,17 +486,11 @@ if (VERMELHOS) {
     if (!ok) falhou = true;
     console.log(
       `  ${ok ? verde('vermelho ✓') : vermelho('NÃO APANHOU ✗')}  ${planta.nome}` +
-        cinza(
-          `  [${antes.length} célula(s) · verde antes: ${verdesAntes} · o HTML mudou: ${mudou} · vermelho depois: ${apanhou}]`,
-        ),
+        cinza(`  [${antes.length} célula(s) · verde antes: ${verdesAntes} · o HTML mudou: ${mudou} · vermelho depois: ${apanhou}]`),
     );
-    for (const c of depois.filter((c) => !c.passa).slice(0, 2)) {
-      console.log(cinza(`              ${c.nome} · ${c.prova}`));
-    }
+    for (const c of depois.filter((c) => !c.passa).slice(0, 2)) console.log(cinza(`              ${c.nome} · ${c.prova}`));
     if (!verdesAntes) {
-      for (const c of antes.filter((c) => !c.passa).slice(0, 2)) {
-        console.log(vermelho(`              já estava vermelha ANTES: ${c.nome} · ${c.prova}`));
-      }
+      for (const c of antes.filter((c) => !c.passa).slice(0, 2)) console.log(vermelho(`              já estava vermelha ANTES: ${c.nome} · ${c.prova}`));
     }
   }
   ESTRAGO = null;
@@ -1322,9 +518,6 @@ console.log(
 );
 
 if (FICHEIRO_JSON) {
-  fs.writeFileSync(
-    path.resolve(RAIZ, String(FICHEIRO_JSON)),
-    JSON.stringify({ celulas, medidas }, null, 2),
-  );
+  fs.writeFileSync(path.resolve(RAIZ, String(FICHEIRO_JSON)), JSON.stringify({ celulas, medidas }, null, 2));
 }
 process.exit(falhadas.length === 0 ? 0 : 1);
