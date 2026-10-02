@@ -1,0 +1,12 @@
+{
+  "o_que": "a primeira leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), na passagem UE2-b, escrita à mão pelo construtor, e a hora do relógio da máquina na primeira chamada da passagem",
+  "simbolos_restantes_no_inicio": 14039047,
+  "lido_no_inicio": "na mensagem do lugar de direção que abre a passagem UE2-b, antes de qualquer ferramenta da passagem",
+  "inicio_utc": "2026-10-02T15:24:47Z",
+  "inicio_origem": "date -u +%Y-%m-%dT%H:%M:%SZ, a primeira chamada ao relógio da passagem",
+  "semana_da_conta_no_inicio": {
+    "o_que": "a percentagem da semana e das cinco horas da subscrição do Claude, lidas da linha de estado (os campos rate_limits) na mesma chamada",
+    "sete_dias_usados_por_cento": 20,
+    "cinco_horas_usadas_por_cento": 14
+  }
+}
