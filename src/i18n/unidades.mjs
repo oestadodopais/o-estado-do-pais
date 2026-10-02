@@ -54,10 +54,13 @@
  * raras, para que quem lê veja primeiro o que mais se rende.
  */
 export const UNIDADES = {
-  /* RP1: tradução de unidades publicadas pelo INE e pelo Eurostat. */
-  '€ por mês': '€ per month',
-  '€ por ano': '€ per year',
-  '€ por pensionista por ano': '€ per pensioner per year',
+  /* RP1: tradução de unidades publicadas pelo INE e pelo Eurostat. Desde o K2-b (02.10.2026) o dinheiro escreve-se
+     com a palavra e não com o símbolo, nas duas edições (§1.127, decisão 4; a regra portuguesa é
+     `dinheiroComPalavra()`, abaixo): «euros per month», como a entrada «euros por mês» já dizia. A chave continua a
+     ser a cadeia exacta do livro-razão. */
+  '€ por mês': 'euros per month',
+  '€ por ano': 'euros per year',
+  '€ por pensionista por ano': 'euros per pensioner per year',
   'por mil pessoas em idade ativa': 'per thousand people of working age',
   /* 645 linhas. A casa: `concelhos.mjs`, medida «divida», Euros → Euros. */
   euros: 'euros',
@@ -229,10 +232,27 @@ export const UNIDADES_EM_PORTUGUES = {
  */
 export function unidadeDaLinha(unit, lang = 'pt') {
   const cru = unit === null || unit === undefined ? '' : String(unit);
-  if (lang !== 'en') return { texto: cru, lingua: 'pt-PT' };
+  if (lang !== 'en') return { texto: dinheiroComPalavra(cru), lingua: 'pt-PT' };
   const traduzida = Object.prototype.hasOwnProperty.call(UNIDADES, cru)
     ? /** @type {Record<string, string>} */ (UNIDADES)[cru]
     : null;
-  if (traduzida === null) return { texto: cru, lingua: 'pt-PT' };
-  return { texto: traduzida, lingua: null };
+  if (traduzida === null) return { texto: dinheiroComPalavra(cru), lingua: 'pt-PT' };
+  return { texto: dinheiroComPalavra(traduzida), lingua: null };
+}
+
+/**
+ * O DINHEIRO ESCREVE-SE COM A PALAVRA (bloco K2-b, 02.10.2026). A decisão 4 da §1.127 diz que o dinheiro se escreve
+ * com a palavra da unidade da linha, nunca com o símbolo, e quase todas as linhas de euros do livro-razão já escrevem
+ * «euros» («euros», «euros por mês», «euros por habitante · volumes encadeados (2015)»); seis linhas do RP1 escrevem o
+ * símbolo («€ por mês», «€ por ano», «€ por pensionista por ano»), porque a unidade foi copiada da tabela da fonte. A
+ * unidade é um rótulo da casa e não uma citação (o cabeçalho deste ficheiro; §1.24), e por isso o símbolo à cabeça de
+ * uma unidade escreve-se aqui com a palavra, na formatação: a linha do livro-razão fica como o motor a escreveu, e o
+ * cartão, o recibo, o título e o cartão de partilha dizem «euros por mês». A regra é escrita pela forma da unidade, e
+ * não por uma lista, como a do espaço em `valorComUnidade()`; o `check:formato` (F5) recusa um valor com o símbolo do
+ * euro ao lado.
+ *
+ * @param {string} unidade
+ */
+export function dinheiroComPalavra(unidade) {
+  return unidade.replace(/^€(?=\s|$)/u, 'euros');
 }
