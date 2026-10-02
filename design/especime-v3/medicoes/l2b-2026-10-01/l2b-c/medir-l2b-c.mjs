@@ -136,8 +136,12 @@ medida('l2b_c_contagens_no_portao', Object.keys(CONTAGENS_DO_PORTAO).length, 'id
 
 /* ------------------------------------------------------------- (d) o relatório */
 {
-  const r = `${ler(`${PAI}/LEIA-ME.md`) ?? ''}\n${ler(`${PAI}/RESPOSTA-construtor-l2b.md`) ?? ''}`;
-  medida('l2b_c_mencoes_de_quatro_cartoes_sem_valor', (r.match(/quatro cartões sem valor/g) ?? []).length, `${PAI}/LEIA-ME.md e RESPOSTA-construtor-l2b.md · «quatro cartões sem valor»`, 'o relatório diz três', /três cartões sem valor/.test(r));
+  /* Só o que o ponto (d) corrigiu: as secções do L2b (o relatório até à secção da L2b-b) e a resposta curta do
+     L2b. A secção da L2b-c cita a expressão errada para dizer o que mudou, e não conta. */
+  const leia = ler(`${PAI}/LEIA-ME.md`) ?? '';
+  const doL2b = leia.slice(0, leia.indexOf('## L2b-b ·') >= 0 ? leia.indexOf('## L2b-b ·') : undefined);
+  const r = `${doL2b}\n${ler(`${PAI}/RESPOSTA-construtor-l2b.md`) ?? ''}`;
+  medida('l2b_c_mencoes_de_quatro_cartoes_sem_valor', (r.match(/quatro cartões sem valor/g) ?? []).length, `${PAI}/LEIA-ME.md até à secção da L2b-b, e RESPOSTA-construtor-l2b.md · «quatro cartões sem valor»`, 'as secções do L2b dizem três', /três cartões sem valor/.test(r));
 }
 
 /* ------------------------------------------------------------- as capturas e o mapa */
