@@ -1,7 +1,18 @@
-"""C1e: os nomes lidos do Git e os caminhos locais também não entram em dist/."""
+"""C1e: os nomes lidos do Git e os caminhos locais também não entram em dist/.
+
+S1 (02.10.2026, ponto 6 do brief): também não entram em `api/`, a pasta das funções que correm na Vercel
+ao lado do sítio, que é código público como o resto do repositório. E uma célula nova prova que `api/` não
+tem segredo nenhum: nenhuma chave secreta da base (`sb_secret_`), nenhum papel de serviço (`service_role`) e
+nenhum `SUGESTOES_SAL=` com valor, que é o sal da marca do endereço e vive só na Vercel. O conhecido-positivo
+da célula é a chave pública da base (`sb_publishable_`), que o código da função leva de propósito e que o
+mesmo leitor tem de ver. As plantas são cópias em memória do código da função, com um segredo ou um caminho
+plantado, e cada uma tem de morder; as cadeias plantadas compõem-se aqui por partes, para nenhuma chave
+falsa ficar escrita no repositório.
+"""
 import argparse
 import importlib.util
 import json
+import re
 from pathlib import Path
 import sys
 sys.dont_write_bytecode = True
@@ -16,6 +27,61 @@ def conferir(ficheiros):
         vistos += 1
         if detetor.tem_caminho(corpo): achados.append(nome)
     return {'ficheiros': vistos, 'quantidade': len(achados), 'achados': achados}
+
+# A célula dos segredos (S1): o que não pode estar em `api/`. As marcas compõem-se por partes de propósito.
+SEGREDOS = [
+    ('chave secreta da base', re.compile(rb'sb_' + rb'secret_')),
+    ('papel de serviço', re.compile(rb'service' + rb'_role')),
+    ('o sal da marca com valor', re.compile(rb'SUGESTOES_' + rb'SAL\s*[:=]\s*["\']?[^\s"\';,)]+')),
+]
+PUBLICA = re.compile(rb'sb_' + rb'publishable_[A-Za-z0-9_-]+')
+
+
+def ficheiros_da_api(raiz):
+    pasta = raiz / 'api'
+    return sorted(p for p in pasta.rglob('*') if p.is_file()) if pasta.is_dir() else []
+
+
+def segredos_em(corpo):
+    return [nome for nome, marca in SEGREDOS if marca.search(corpo)]
+
+
+def medir_api(raiz, prova):
+    """S1: os caminhos e os nomes em `api/`, e a célula dos segredos, com as plantas."""
+    ficheiros = ficheiros_da_api(raiz)
+    caminhos = conferir((str(p.relative_to(raiz)), p.read_bytes()) for p in ficheiros)
+    achados = [{'ficheiro': str(p.relative_to(raiz)), 'segredos': s}
+               for p in ficheiros if (s := segredos_em(p.read_bytes()))]
+    publicas = sum(len(PUBLICA.findall(p.read_bytes())) for p in ficheiros)
+    plantas = []
+    if prova:
+        if not ficheiros:
+            raise ValueError('Falta um ficheiro em api/ para plantar.')
+        corpo = ficheiros[0].read_bytes()
+        plantados = [
+            ('segredo-chave-secreta', b'const k = "' + b'sb_' + b'secret_' + b'0' * 24 + b'";'),
+            ('segredo-papel-de-servico', b'// a chave do ' + b'service' + b'_role vai aqui'),
+            ('segredo-sal-com-valor', b'SUGESTOES_' + b'SAL=' + b'0' * 16),
+        ]
+        for nome, linha in plantados:
+            plantas.append({'id': nome, 'mordeu': bool(segredos_em(corpo + b'\n' + linha + b'\n'))})
+        # O nome do sal sem valor, como o código o lê do ambiente, não é segredo nenhum.
+        plantas.append({'id': 'sal-lido-do-ambiente-sem-valor',
+                        'mordeu': not segredos_em(b'const sal = process.env.SUGESTOES_' + b'SAL;')})
+        for i, caminho in enumerate(detetor.proibidos()):
+            plantas.append({'id': f'api-caminho-{i + 1}',
+                            'mordeu': conferir([('api-plantado.js', corpo + b'\n// ' + caminho + b'\n')])['quantidade'] == 1})
+        nomes = detetor.nomes_dos_autores()
+        if not nomes:
+            raise ValueError('O Git não forneceu nomes para o conhecido-positivo de api/.')
+        plantas.append({'id': 'api-nome-do-git',
+                        'mordeu': conferir([('api-plantado.js', corpo + b'\n// ' + nomes[0] + b'\n')])['quantidade'] == 1})
+    passou = (bool(ficheiros) and caminhos['quantidade'] == 0 and not achados and publicas > 0
+              and all(p['mordeu'] for p in plantas))
+    return {'ficheiros': len(ficheiros), 'caminhos_e_nomes': caminhos['quantidade'],
+            'achados_de_caminhos': caminhos['achados'], 'segredos': achados,
+            'chaves_publicas_vistas': publicas, 'plantas': plantas, 'passou': passou}
+
 
 def medir(dist, prova):
     ficheiros = sorted(p for p in dist.rglob('*') if p.is_file())
@@ -56,7 +122,8 @@ def medir(dist, prova):
                                     'mordeu': not detetor.tem_caminho(inocuo)})
         for i, caminho in enumerate(detetor.proibidos()):
             r['plantas'].append({'id':f'caminho-{i+1}', 'mordeu':conferir([('pagina-construida.html',corpo+b'<p>'+caminho+b'</p>')])['quantidade']==1})
-    r['passou'] = bool(ficheiros) and r['quantidade']==0 and all(p['mordeu'] for p in r['plantas'])
+    r['api'] = medir_api(RAIZ, prova)
+    r['passou'] = bool(ficheiros) and r['quantidade']==0 and all(p['mordeu'] for p in r['plantas']) and r['api']['passou']
     return r
 
 if __name__ == '__main__':

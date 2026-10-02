@@ -38,7 +38,8 @@
  * ---------------------------------------------------------------------------
  * O QUE SE LÊ
  * ---------------------------------------------------------------------------
- * `src/**` (`.mjs` e `.astro`) e `scripts/**` (`.mjs`). De cada ficheiro saem as
+ * `src/**` (`.mjs` e `.astro`), `scripts/**` (`.mjs`) e, desde o bloco S1 (02.10.2026),
+ * `api/**` (`.js`), a pasta das funções que correm na Vercel. De cada ficheiro saem as
  * ligações e as declarações não exportadas, em todas as formas que a leitura a
  * frio listou como cegas na primeira passagem:
  *
@@ -82,7 +83,10 @@ const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
 
 /* ------------------------------------------------------------- os ficheiros */
 
-function ficheiros(dirs = [['src', ['.mjs', '.astro']], ['scripts', ['.mjs']]]) {
+/** O que se lê, por pasta e por extensão. `api/` entrou no bloco S1 (02.10.2026). */
+const DIRS_LIDOS = [['src', ['.mjs', '.astro']], ['scripts', ['.mjs']], ['api', ['.js']]];
+
+function ficheiros(dirs = DIRS_LIDOS, raiz = RAIZ) {
   const out = [];
   const desce = (dir, exts) => {
     for (const e of fs.readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
@@ -96,8 +100,8 @@ function ficheiros(dirs = [['src', ['.mjs', '.astro']], ['scripts', ['.mjs']]]) 
     }
   };
   for (const [d, exts] of dirs) {
-    const raiz = path.join(RAIZ, d);
-    if (fs.existsSync(raiz)) desce(raiz, exts);
+    const pasta = path.join(raiz, d);
+    if (fs.existsSync(pasta)) desce(pasta, exts);
   }
   return out;
 }
@@ -414,6 +418,14 @@ function prova() {
       fs.writeFileSync(f, corpo);
       if (mortosDe(f).mortos.some((d) => d.nome === alvo)) falhas.push(`${nome}: apontou o «${alvo}», que está vivo`);
     }
+    /* A PASTA `api/` É LIDA (bloco S1, 02.10.2026): a lista das pastas, aplicada a uma
+       raiz temporária com uma função morta em `api/`, tem de a listar e de a ver. */
+    const raizDeEnsaio = path.join(dir, 'raiz');
+    fs.mkdirSync(path.join(raizDeEnsaio, 'api'), { recursive: true });
+    const funcao = path.join(raizDeEnsaio, 'api', 'funcao.js');
+    fs.writeFileSync(funcao, 'function MORTO() { return 1; }\nexport async function GET() { return 2; }\n');
+    if (!ficheiros(DIRS_LIDOS, raizDeEnsaio).includes(funcao)) falhas.push('api/: a pasta das funções não é lida');
+    else if (!mortosDe(funcao).mortos.some((d) => d.nome === 'MORTO')) falhas.push('api/funcao.js: não viu o «MORTO» morto');
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
   }
@@ -424,7 +436,7 @@ function prova() {
     process.exit(1);
   }
   console.log(
-    cinza(`  prova ✓ ${CASOS.length} forma(s) mortas vistas e ${CALADOS.length} viva(s) deixadas em paz, num directório temporário.`),
+    cinza(`  prova ✓ ${CASOS.length} forma(s) mortas vistas e ${CALADOS.length} viva(s) deixadas em paz, e a pasta api/ lida e com o seu morto visto, num directório temporário.`),
   );
 }
 
