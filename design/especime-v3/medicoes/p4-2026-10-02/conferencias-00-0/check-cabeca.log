@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 check:cabeca
+> node tests/inicio/hierarquia-b2.mjs
+
+check:cabeca C1; construção afc4fb20396e4729bc64ce838416f31cc753a8fd; 110 cabeças; 4 mordidas; 10 reposições
+check:cabeca: PASS

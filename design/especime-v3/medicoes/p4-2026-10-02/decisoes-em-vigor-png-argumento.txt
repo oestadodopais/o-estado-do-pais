@@ -1,0 +1,19 @@
+§1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
+    scripts/check-lugar.mjs:424
+    scripts/check-lugar.mjs:436
+    scripts/check-lugar.mjs:437
+    scripts/check-lugar.mjs:438
+    scripts/check-lugar.mjs:439
+    scripts/check-lugar.mjs:440
+    scripts/check-lugar.mjs:441
+    scripts/check-lugar.mjs:442
+    scripts/check-lugar.mjs:443
+    scripts/check-lugar.mjs:444
+    scripts/check-lugar.mjs:445
+    scripts/check-lugar.mjs:446
+    scripts/check-lugar.mjs:447
+    scripts/check-lugar.mjs:448
+§1.106 · «Trabalho» sai do Método como nome de um estudo, e «vaga» sai da voz do leitor
+    scripts/check-lugar.mjs:498
+2 decisão(ões) citada(s) em 1 ficheiro(s) de texto
+1 ficheiro(s) binário(s) saltado(s): design/especime-v3/capturas/ue2-2026-10-02/antes-uniao-en-1024.png
