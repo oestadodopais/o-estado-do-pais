@@ -161,6 +161,16 @@ const brutoAgora = ['designações', 'localizações de projeto vencidas', 'atua
 medicao('ocorrencias_brutas_dos_tres_termos', brutoAgora, 'o detetor do §0 do brief sobre src/data/leituras.mjs da árvore (as três cadeias contadas no ficheiro inteiro, com a origem registada e os comentários)',
   'o mesmo detetor na cabeça de partida dá 11, o número do §0', ['designações', 'localizações de projeto vencidas', 'atuarialmente'].reduce((n, t) => n + mostrar('src/data/leituras.mjs').split(t).length - 1, 0) === 11);
 
+/* 7b · A «CÉLULA DE LINGUAGEM SIMPLES» QUE O ITEM 4 DO BRIEF CITA: os ficheiros de código e de conferência que a nomeiam
+   (scripts/, tests/, src/ e package.json). O conhecido-positivo é o próprio brief, que a nomeia. */
+const RE_LS = /linguagem simples|plain[- ]language/i;
+const nomeiam = [];
+const varre = (d) => { for (const e of fs.readdirSync(d, { withFileTypes: true })) { const f = path.join(d, e.name); if (e.isDirectory()) { if (e.name !== 'node_modules') varre(f); } else if (/\.(mjs|js|ts|astro|json|py|css)$/.test(e.name) && RE_LS.test(fs.readFileSync(f, 'utf8'))) nomeiam.push(f); } };
+for (const d of ['scripts', 'tests', 'src']) varre(d);
+if (RE_LS.test(fs.readFileSync('package.json', 'utf8'))) nomeiam.push('package.json');
+medicao('ficheiros_de_codigo_que_nomeiam_uma_celula_de_linguagem_simples', nomeiam.length, 'scripts/, tests/, src/ e package.json lidos por inteiro à procura de «linguagem simples» ou «plain language»',
+  'o mesmo detetor acha a expressão no brief do K2', RE_LS.test(fs.readFileSync('design/observatorio/BRIEF-K2-o-cartao-para-o-telemovel.md', 'utf8')), { ficheiros: nomeiam });
+
 /* 8 · O FORMATO DOS NÚMEROS, pela célula nova, na construção do bloco e na de base. */
 const { conferirFormatoDosNumeros, plantasDoFormato } = await import(pathToFileURL(path.resolve('tests/inicio/formato-dos-numeros.mjs')).href);
 const formato = conferirFormatoDosNumeros(DIST);

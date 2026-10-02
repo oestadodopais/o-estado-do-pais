@@ -1,0 +1,520 @@
+{
+  "bloco": "K2",
+  "cabeca": "3ee67971f2e9dc0f3f11dd5b2040dd13390f40f9",
+  "construcao": {
+    "commit": "3ee67971f2e9dc0f3f11dd5b2040dd13390f40f9",
+    "construido_em": "2026-10-02T09:26:48.074Z"
+  },
+  "base": {
+    "cabeca": "1722244db19b66e523a7eaf9f0b27e770060bab8",
+    "construcao": "1722244db19b66e523a7eaf9f0b27e770060bab8"
+  },
+  "medidas": [
+    {
+      "nome": "cartoes_dos_quadros_com_variacao_sob_nome_de_nivel",
+      "valor": 0,
+      "comando": "o detetor do §0 do brief sobre src/data/figuras.mjs da árvore (as entradas cuja medida começa por «Variação» e cujo nome não diz a variação)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor na cabeça de partida acha 4, com a taxa de atividade",
+        "encontrado": true
+      },
+      "antes": 4,
+      "lista_antes": [
+        "custo-unitario-do-trabalho-2025",
+        "precos-da-habitacao-2025",
+        "taxa-de-actividade-2025",
+        "taxa-de-cambio-efectiva-real-2025"
+      ],
+      "lista_agora": []
+    },
+    {
+      "nome": "cartoes_nacionais_com_variacao_sob_nome_de_nivel",
+      "valor": 6,
+      "comando": "as páginas de assunto construídas: os cartões cuja unidade diz «variação» ou cuja linha é uma variação de preços, e cujo nome não diz a variação, a inflação nem o crescimento",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor na construção de base acha 10, com a taxa de atividade",
+        "encontrado": true
+      },
+      "antes": 10,
+      "lista_antes": [
+        "custo-unitario-do-trabalho-2025",
+        "desempenho-das-exportacoes-2025",
+        "ipc-alimentacao-variacao-homologa",
+        "ipc-combustiveis-variacao-homologa",
+        "ipc-energia-em-casa-variacao-homologa",
+        "ipc-rendas-variacao-homologa",
+        "ipc-sem-habitacao-variacao-media-12-meses",
+        "precos-da-habitacao-2025",
+        "taxa-de-actividade-2025",
+        "taxa-de-cambio-efectiva-real-2025"
+      ],
+      "lista_agora": [
+        "desempenho-das-exportacoes-2025",
+        "ipc-alimentacao-variacao-homologa",
+        "ipc-combustiveis-variacao-homologa",
+        "ipc-energia-em-casa-variacao-homologa",
+        "ipc-rendas-variacao-homologa",
+        "ipc-sem-habitacao-variacao-media-12-meses"
+      ],
+      "detalhe_agora": [
+        {
+          "id": "desempenho-das-exportacoes-2025",
+          "pagina": "estado-e-economia/",
+          "nome": "Quota nas exportações",
+          "unidade": "% do total OCDE e UE não-OCDE, variação em três anos"
+        },
+        {
+          "id": "ipc-alimentacao-variacao-homologa",
+          "pagina": "precos/",
+          "nome": "Preços dos alimentos e das bebidas não alcoólicas",
+          "unidade": "%",
+          "rotulo_da_fonte": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor"
+        },
+        {
+          "id": "ipc-combustiveis-variacao-homologa",
+          "pagina": "precos/",
+          "nome": "Preços dos combustíveis",
+          "unidade": "%",
+          "rotulo_da_fonte": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor"
+        },
+        {
+          "id": "ipc-energia-em-casa-variacao-homologa",
+          "pagina": "precos/",
+          "nome": "Preços da energia em casa",
+          "unidade": "%",
+          "rotulo_da_fonte": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor"
+        },
+        {
+          "id": "ipc-rendas-variacao-homologa",
+          "pagina": "habitacao/",
+          "nome": "Preços das rendas",
+          "unidade": "%",
+          "rotulo_da_fonte": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor"
+        },
+        {
+          "id": "ipc-sem-habitacao-variacao-media-12-meses",
+          "pagina": "habitacao/",
+          "nome": "Preços sem a habitação",
+          "unidade": "%",
+          "rotulo_da_fonte": "Índice de preços no consumidor (Taxa de variação média dos últimos 12 meses - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor"
+        }
+      ]
+    },
+    {
+      "nome": "unidade_da_disparidade_de_emprego",
+      "valor": "% da população",
+      "comando": "ledger/claims/disparidade-de-emprego-entre-sexos-2025.yml · unit",
+      "conhecido_positivo": {
+        "o_que": "a linha é do Eurostat",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "frase_da_diferenca_em_pontos_percentuais_no_cartao_e_no_recibo",
+      "valor": 4,
+      "comando": "o cartão da diferença de emprego (a dobra) e o recibo da linha (o bloco da pergunta), nas duas edições, contam se dizem «em pontos percentuais» ou «in percentage points»",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha «pontos percentuais» no cartão da taxa de atividade",
+        "encontrado": true
+      },
+      "de": 4,
+      "sitios": [
+        "emprego/index.html",
+        "en/employment/index.html",
+        "livro-razao/disparidade-de-emprego-entre-sexos-2025/index.html",
+        "en/ledger/disparidade-de-emprego-entre-sexos-2025/index.html"
+      ]
+    },
+    {
+      "nome": "linhas_sem_derivacao_com_menos_casas_do_que_o_excerto",
+      "valor": 0,
+      "comando": "node scripts/check-ledger.mjs (a célula das casas decimais, scripts/casas-decimais.mjs)",
+      "conhecido_positivo": {
+        "o_que": "a planta da linha dos jovens com o valor antigo («8» contra «8.0») morde",
+        "encontrado": true
+      },
+      "contas": {
+        "linhas": 3009,
+        "com_derivacao": 338,
+        "sem_excerto": 8,
+        "nao_numericas": 11,
+        "lidas_d1": 1946,
+        "sem_par_d1": 706,
+        "compostas_d2": 117
+      },
+      "plantas": 6,
+      "plantas_certas": 6
+    },
+    {
+      "nome": "plantas_do_portao_das_casas_decimais_que_morderam",
+      "valor": 2,
+      "comando": "node design/especime-v3/medicoes/k2-2026-10-02/plantas-casas-decimais.mjs (o ledger:check sobre uma cópia estragada do livro)",
+      "conhecido_positivo": {
+        "o_que": "a planta do crédito malparado arredondado morde",
+        "encontrado": true
+      },
+      "de": 2
+    },
+    {
+      "nome": "linhas_corrigidas_pelo_mecanismo",
+      "valor": 2,
+      "comando": "ledger/claims/<id>.yml (a última entrada de corrections) e ledger/historias-valores.json",
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor acha a correção do E0 na taxa de desemprego (6 para 6,0)",
+        "encontrado": true
+      },
+      "linhas": [
+        {
+          "id": "jovens-nem-2025",
+          "valor": "8,0",
+          "entrada": {
+            "date": "2026-10-02",
+            "kind": "correcao",
+            "old_value": "8",
+            "new_value": "8,0",
+            "reason": "A apresentação omitira a casa decimal que o excerto da fonte já guardava: «8.0». Repõe-se essa casa decimal na forma portuguesa, sem alterar a quantidade nem declarar uma revisão da fonte.",
+            "reason_en": "The presentation omitted the decimal place already preserved in the source excerpt: «8.0». That decimal place is restored in the Portuguese number format, without changing the quantity or claiming a source revision."
+          },
+          "seladas": 1
+        },
+        {
+          "id": "fluxo-de-credito-as-empresas-2025",
+          "valor": "3,0",
+          "entrada": {
+            "date": "2026-10-02",
+            "kind": "correcao",
+            "old_value": "3",
+            "new_value": "3,0",
+            "reason": "A apresentação omitira a casa decimal que o excerto da fonte já guardava: «3.0». Repõe-se essa casa decimal na forma portuguesa, sem alterar a quantidade nem declarar uma revisão da fonte.",
+            "reason_en": "The presentation omitted the decimal place already preserved in the source excerpt: «3.0». That decimal place is restored in the Portuguese number format, without changing the quantity or claiming a source revision."
+          },
+          "seladas": 1
+        }
+      ]
+    },
+    {
+      "nome": "correcoes_publicadas",
+      "valor": "7",
+      "comando": "ledger/claims/correcoes-publicadas.yml · value, e a contagem direta das entradas «correcao» do livro",
+      "conhecido_positivo": {
+        "o_que": "a contagem direta das entradas «correcao» do livro dá 7",
+        "encontrado": true
+      },
+      "recontagem": {
+        "date": "2026-10-02",
+        "kind": "atualizacao",
+        "old_value": "5",
+        "new_value": "7",
+        "reason": "Duas correções publicadas a 02.10.2026 repõem a casa decimal dos jovens que não trabalham, não estudam nem estão em formação e do fluxo de crédito às empresas. A contagem passa a incluí-las; a recontagem não é uma correção adicional.",
+        "reason_en": "Two corrections published on 02.10.2026 restore the decimal place of young people not in employment, education or training and of the credit flow to corporations. The count now includes them; the recount is not an additional correction."
+      },
+      "entradas_seladas": 2,
+      "contadas": 7
+    },
+    {
+      "nome": "termos_dos_estudos_sem_explicacao",
+      "valor": 0,
+      "comando": "src/data/leituras.mjs: cada designação de pelouro, localização de projeto vencida e valor atuarialmente neutro numa frase ou num nome de medida, e se a frase (ou a nota das medidas, para um nome) diz o que o termo é",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor na cabeça de partida acha 18 sem explicação em 18",
+        "encontrado": true
+      },
+      "ocorrencias": 18,
+      "antes": 18,
+      "ocorrencias_antes": 18,
+      "lista_antes": [
+        "evora-os-pelouros-quem-os-teve-o-que-fizeram · pt · frase",
+        "evora-os-pelouros-quem-os-teve-o-que-fizeram · pt · nome de medida",
+        "evora-os-pelouros-quem-os-teve-o-que-fizeram · pt · nome de medida",
+        "evora-os-pelouros-quem-os-teve-o-que-fizeram · en · frase",
+        "evora-os-pelouros-quem-os-teve-o-que-fizeram · en · nome de medida",
+        "evora-os-pelouros-quem-os-teve-o-que-fizeram · en · nome de medida",
+        "evora-quem-governou-a-camara-2009-2025 · pt · frase",
+        "evora-quem-governou-a-camara-2009-2025 · pt · nome de medida",
+        "evora-quem-governou-a-camara-2009-2025 · pt · nome de medida",
+        "evora-quem-governou-a-camara-2009-2025 · en · frase",
+        "evora-quem-governou-a-camara-2009-2025 · en · nome de medida",
+        "evora-quem-governou-a-camara-2009-2025 · en · nome de medida",
+        "evora-economia-e-dinheiro-publico-de-fora-da-camara · pt · frase",
+        "evora-economia-e-dinheiro-publico-de-fora-da-camara · en · frase",
+        "penalizacoes-por-reforma-antecipada-2026 · pt · frase",
+        "penalizacoes-por-reforma-antecipada-2026 · pt · nome de medida",
+        "penalizacoes-por-reforma-antecipada-2026 · en · frase",
+        "penalizacoes-por-reforma-antecipada-2026 · en · nome de medida"
+      ]
+    },
+    {
+      "nome": "ocorrencias_brutas_dos_tres_termos",
+      "valor": 13,
+      "comando": "o detetor do §0 do brief sobre src/data/leituras.mjs da árvore (as três cadeias contadas no ficheiro inteiro, com a origem registada e os comentários)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor na cabeça de partida dá 11, o número do §0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_de_codigo_que_nomeiam_uma_celula_de_linguagem_simples",
+      "valor": 0,
+      "comando": "scripts/, tests/, src/ e package.json lidos por inteiro à procura de «linguagem simples» ou «plain language»",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha a expressão no brief do K2",
+        "encontrado": true
+      },
+      "ficheiros": []
+    },
+    {
+      "nome": "desvios_do_formato_dos_numeros",
+      "valor": 0,
+      "comando": "node tests/inicio/formato-dos-numeros.mjs --prova (o check:formato)",
+      "conhecido_positivo": {
+        "o_que": "a mesma célula na construção de base acha 42 desvios",
+        "encontrado": true
+      },
+      "contas": {
+        "paginas": 7442,
+        "valores": 26582,
+        "simbolos": 27000,
+        "simbolo": {
+          "%": {
+            "colado": 701,
+            "com_espaco": 1845
+          },
+          "€": {
+            "colado": 0,
+            "com_espaco": 24
+          }
+        },
+        "por_regra": {
+          "F1": 0,
+          "F2": 0,
+          "F3": 0
+        }
+      },
+      "contas_base": {
+        "paginas": 7442,
+        "valores": 26582,
+        "simbolos": 26988,
+        "simbolo": {
+          "%": {
+            "colado": 701,
+            "com_espaco": 1845
+          },
+          "€": {
+            "colado": 0,
+            "com_espaco": 24
+          }
+        },
+        "por_regra": {
+          "F1": 42,
+          "F2": 0,
+          "F3": 0
+        }
+      },
+      "plantas": 4,
+      "plantas_mordidas": 4
+    },
+    {
+      "nome": "cartoes_fora_da_ordem",
+      "valor": 0,
+      "comando": "node tests/cartao/cartao.mjs --prova (a K19 do check:cartao, tests/cartao/ordem.mjs)",
+      "conhecido_positivo": {
+        "o_que": "a mesma célula na construção de base acha 10210 queixas",
+        "encontrado": true
+      },
+      "contas": {
+        "paginas": 656,
+        "cartoes": 5248,
+        "com_dobra": 5066,
+        "faixa_da_uniao": 42,
+        "erros": 0
+      },
+      "contas_base": {
+        "paginas": 656,
+        "cartoes": 5248,
+        "com_dobra": 0,
+        "faixa_da_uniao": 42,
+        "erros": 10210
+      },
+      "plantas": 7,
+      "plantas_mordidas": 7
+    },
+    {
+      "nome": "leituras_dos_cartoes_em_duas_metades",
+      "valor": 92,
+      "comando": "src/lib/leitura-da-medida.mjs · partesDaLeitura() sobre cada leitura declarada em src/data/leituras-das-medidas.mjs, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "a leitura da taxa de desemprego, que diz o que o número é e compara-o com o ano anterior, sai em duas metades",
+        "encontrado": true
+      },
+      "duas_metades": 92,
+      "so_o_que_e": 6,
+      "so_comparacao": 0,
+      "juntas_iguais_a_inteira": 98,
+      "leituras": 98,
+      "so_o_que_e_ids": [
+        "camaras",
+        "ganho-medio-mensal-2024",
+        "retribuicao-minima-mensal-garantida-continente-2026"
+      ]
+    },
+    {
+      "nome": "linhas_de_texto_da_primeira_pagina_que_mudaram",
+      "valor": 12,
+      "comando": "o texto visível de dist/index.html e dist/en/index.html, linha a linha, contra a construção de base (as linhas que entraram)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comparador acha a troca de uma palavra plantada em memória na página de base",
+        "encontrado": true
+      },
+      "pt": {
+        "saiu": [
+          "Preços da habitação",
+          "Preços da habitação",
+          "designações repartidas por duas pessoas; a câmara instalada em",
+          "está em localizações de projeto vencidas e",
+          "o custo unitário do trabalho",
+          "os preços da habitação"
+        ],
+        "entrou": [
+          "Preços da habitação, variação anual",
+          "Preços da habitação, variação anual",
+          "designações de pelouro repartidas por duas pessoas (um pelouro é uma área do trabalho da câmara que o presidente atribui por despacho a um membro do executivo); a câmara instalada em",
+          "está em localizações de projeto vencidas, isto é, na parte de cada projeto que o registo atribui ao concelho cuja data prevista de conclusão já passou sem conclusão registada, e",
+          "a variação em três anos do custo unitário do trabalho",
+          "a variação anual dos preços da habitação"
+        ]
+      },
+      "en": {
+        "saiu": [
+          "House prices",
+          "House prices",
+          "designations split between two people; the council installed in",
+          "sits in overdue project locations and",
+          "unit labour cost",
+          "house prices"
+        ],
+        "entrou": [
+          "House prices, annual change",
+          "House prices, annual change",
+          "portfolio designations split between two people (a portfolio is an area of the council’s work that the president assigns by order to a member of the executive); the council installed in",
+          "sits in overdue project locations, that is, in the part of each project that the register attributes to the municipality whose planned completion date has passed with no completion recorded, and",
+          "the three-year change in unit labour cost",
+          "the annual change in house prices"
+        ]
+      }
+    },
+    {
+      "nome": "ressalvas_da_uniao_dentro_da_dobra",
+      "valor": 0,
+      "comando": "as páginas de assunto construídas, nas duas edições: cada `.cartao-medida-ressalva` e se tem um `<details>` por cima",
+      "conhecido_positivo": {
+        "o_que": "a mesma conta acha a ressalva da habitação dentro da dobra quando a planta a mete lá, em memória",
+        "encontrado": true
+      },
+      "fora": 2,
+      "dentro": 0,
+      "paginas": [
+        "habitacao/index.html",
+        "en/housing/index.html"
+      ]
+    },
+    {
+      "nome": "capturas_depois",
+      "valor": 40,
+      "comando": "node design/especime-v3/medicoes/k2-2026-10-02/captar-k2.mjs depois",
+      "conhecido_positivo": {
+        "o_que": "o manifesto da construção de base tem as capturas de antes",
+        "encontrado": true
+      },
+      "problemas": 0,
+      "larguras": [
+        390,
+        768,
+        1024,
+        1280,
+        1600
+      ],
+      "antes": 16
+    },
+    {
+      "nome": "cartoes_a_390_com_a_ordem_do_brief",
+      "valor": 72,
+      "comando": "design/especime-v3/medicoes/k2-2026-10-02/capturas-depois.json: os cartões a 390 px cuja ordem no ecrã abre pelo nome e acaba na dobra, sem definição fora dela",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor nas capturas de antes acha 54 cartões fora da ordem",
+        "encontrado": true
+      },
+      "de": 72,
+      "antes_fora": 54,
+      "antes_de": 72
+    },
+    {
+      "nome": "capturas_da_uniao_com_os_valores_a_uma_so_altura",
+      "valor": 10,
+      "comando": "design/especime-v3/medicoes/k2-2026-10-02/capturas-depois.json: as alturas distintas do valor de cada cartão da faixa, relativas ao topo do cartão",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor sobre o topo dos nomes acha mais do que uma altura numa das capturas",
+        "encontrado": true
+      },
+      "de": 10
+    },
+    {
+      "nome": "linhas_da_dobra_com_um_ponto_de_outro_elemento",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/k2-2026-10-02/alvos-da-dobra.mjs <saída.json>",
+      "conhecido_positivo": {
+        "o_que": "a mesma medida com a margem antiga da dobra acha 1 linhas com falha, todas num selo",
+        "encontrado": true
+      },
+      "de": 160,
+      "construcao": "3ee67971f2e9dc0f3f11dd5b2040dd13390f40f9"
+    },
+    {
+      "nome": "linhas_do_inventario_retiradas",
+      "valor": 46,
+      "comando": "python3 design/especime-v3/medicoes/k2-2026-10-02/inventario-k2.py",
+      "conhecido_positivo": {
+        "o_que": "uma das retiradas é a leitura inteira da taxa de emprego",
+        "encontrado": true
+      },
+      "novas": 8
+    },
+    {
+      "nome": "folhas_mudadas_nas_leituras_e_perguntas",
+      "valor": 38,
+      "comando": "node design/especime-v3/medicoes/k2-2026-10-02/acertos-k2.mjs 1722244db19b66e523a7eaf9f0b27e770060bab8 <saída>",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comparador acha a folha mudada da diferença de emprego",
+        "encontrado": true
+      },
+      "fora_da_lista": 0
+    },
+    {
+      "nome": "origem_nova_conferida_contra_os_bytes",
+      "valor": 1,
+      "comando": "python3 design/especime-v3/medicoes/k2-2026-10-02/origens-k2.py <saída>",
+      "conhecido_positivo": {
+        "o_que": "o conhecido-positivo, a origem que o L1 recortou do mesmo PDF, confere",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_citadas_nos_ficheiros_tocados",
+      "valor": 51,
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo 1722244db19b66e523a7eaf9f0b27e770060bab8..<cabeça>",
+      "conhecido_positivo": {
+        "o_que": "a §1.127 (a ordem da habitação e a T10) está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_gastos_ate_ao_relatorio",
+      "valor": 1339297,
+      "comando": "design/especime-v3/medicoes/k2-2026-10-02/custo-inicio.json e design/especime-v3/medicoes/k2-2026-10-02/custo-fim.json (a diferença das duas leituras do contador)",
+      "conhecido_positivo": {
+        "o_que": "o contador do início é o da primeira mensagem",
+        "encontrado": true
+      },
+      "segundos": 29221
+    }
+  ]
+}

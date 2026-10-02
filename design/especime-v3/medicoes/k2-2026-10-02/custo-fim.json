@@ -1,0 +1,8 @@
+{
+  "o_que": "a segunda leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), escrita à mão pelo construtor logo depois de a ler, e a hora do relógio da máquina na chamada seguinte",
+  "simbolos_restantes_no_fim": 13660703,
+  "lido_no_fim": "o contador mostrado depois de escrever a resposta curta, antes de escrever este ficheiro, de correr de novo o medir-k2.mjs e de commitar o relatório",
+  "sessao": "a sessão do construtor foi resumida uma vez a meio, quando o contexto se esgotou, e continuou com o mesmo contador, que só desce",
+  "fim_utc": "2026-10-02T09:41:44Z",
+  "fim_origem": "date -u +%Y-%m-%dT%H:%M:%SZ, na chamada que escreveu este ficheiro"
+}

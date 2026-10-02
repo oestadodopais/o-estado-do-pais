@@ -1,0 +1,468 @@
+{
+  "o_que": "os oito pontos do quadrado de 44 px de cada linha «O que é este número», na construção e com a margem antiga da dobra",
+  "construcao": {
+    "commit": "3ee67971f2e9dc0f3f11dd5b2040dd13390f40f9",
+    "construido_em": "2026-10-02T09:26:48.074Z"
+  },
+  "rotas": [
+    "/municipios/evora/",
+    "/en/municipalities/evora/",
+    "/lugares/",
+    "/en/places/",
+    "/emprego/",
+    "/en/employment/"
+  ],
+  "larguras": [
+    390,
+    641,
+    768,
+    1023,
+    1280
+  ],
+  "linhas_medidas": 160,
+  "linhas_com_falha": 0,
+  "conhecido_positivo": {
+    "o_que": "a mesma medida com a folha «.cartao-medida-dobra{margin-top:2px !important}» acrescentada à página",
+    "linhas_medidas": 160,
+    "linhas_com_falha": 1,
+    "todas_num_selo": true
+  },
+  "corridas": {
+    "construcao": [
+      {
+        "rota": "/municipios/evora/",
+        "largura": 390,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/municipalities/evora/",
+        "largura": 390,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/lugares/",
+        "largura": 390,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/places/",
+        "largura": 390,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/emprego/",
+        "largura": 390,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/employment/",
+        "largura": 390,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/municipios/evora/",
+        "largura": 641,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/municipalities/evora/",
+        "largura": 641,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/lugares/",
+        "largura": 641,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/places/",
+        "largura": 641,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/emprego/",
+        "largura": 641,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/employment/",
+        "largura": 641,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/municipios/evora/",
+        "largura": 768,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/municipalities/evora/",
+        "largura": 768,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/lugares/",
+        "largura": 768,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/places/",
+        "largura": 768,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/emprego/",
+        "largura": 768,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/employment/",
+        "largura": 768,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/municipios/evora/",
+        "largura": 1023,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/municipalities/evora/",
+        "largura": 1023,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/lugares/",
+        "largura": 1023,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/places/",
+        "largura": 1023,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/emprego/",
+        "largura": 1023,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/employment/",
+        "largura": 1023,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/municipios/evora/",
+        "largura": 1280,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/municipalities/evora/",
+        "largura": 1280,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/lugares/",
+        "largura": 1280,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/places/",
+        "largura": 1280,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/emprego/",
+        "largura": 1280,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/employment/",
+        "largura": 1280,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      }
+    ],
+    "margem_antiga": [
+      {
+        "rota": "/municipios/evora/",
+        "largura": 390,
+        "linhas": 8,
+        "com_falha": 1,
+        "falhas": [
+          {
+            "cartao": "evora-desemprego-registado-2025-12",
+            "caixa": {
+              "w": 141.5,
+              "h": 44
+            },
+            "margem": "2px",
+            "falhas": [
+              "a.src-chip"
+            ]
+          }
+        ]
+      },
+      {
+        "rota": "/en/municipalities/evora/",
+        "largura": 390,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/lugares/",
+        "largura": 390,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/places/",
+        "largura": 390,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/emprego/",
+        "largura": 390,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/employment/",
+        "largura": 390,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/municipios/evora/",
+        "largura": 641,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/municipalities/evora/",
+        "largura": 641,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/lugares/",
+        "largura": 641,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/places/",
+        "largura": 641,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/emprego/",
+        "largura": 641,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/employment/",
+        "largura": 641,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/municipios/evora/",
+        "largura": 768,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/municipalities/evora/",
+        "largura": 768,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/lugares/",
+        "largura": 768,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/places/",
+        "largura": 768,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/emprego/",
+        "largura": 768,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/employment/",
+        "largura": 768,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/municipios/evora/",
+        "largura": 1023,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/municipalities/evora/",
+        "largura": 1023,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/lugares/",
+        "largura": 1023,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/places/",
+        "largura": 1023,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/emprego/",
+        "largura": 1023,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/employment/",
+        "largura": 1023,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/municipios/evora/",
+        "largura": 1280,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/municipalities/evora/",
+        "largura": 1280,
+        "linhas": 8,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/lugares/",
+        "largura": 1280,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/places/",
+        "largura": 1280,
+        "linhas": 1,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/emprego/",
+        "largura": 1280,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      },
+      {
+        "rota": "/en/employment/",
+        "largura": 1280,
+        "linhas": 7,
+        "com_falha": 0,
+        "falhas": []
+      }
+    ]
+  }
+}
