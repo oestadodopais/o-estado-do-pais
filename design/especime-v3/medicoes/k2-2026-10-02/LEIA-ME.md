@@ -188,8 +188,9 @@ Duas leituras do contador de símbolos restantes que a ferramenta mostra ao agen
 - `b88664a0` a coordenada da origem chega à página pela função que resolve as origens;
 - `fd62f066` o separador antes da classe etária é o «·» da casa (o portão de HTML recusou o travessão);
 - `390031fb` as plantas do portão de HTML, as capturas e o mapa do repositório;
-- o commit deste relatório, com as medidas e a resposta curta (`RESPOSTA-construtor-k2-c.md`); e o seguinte, com os códigos da corrida final dos portões.
+- `90469a0e` o relatório, as medidas e a resposta curta (`RESPOSTA-construtor-k2-c.md`): a cabeça da corrida final dos portões;
+- o commit seguinte, com os códigos dessa corrida, os registos dela sem o caminho da máquina, e esta secção a dizê-los.
 
-**Os portões.** A corrida final corre por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça do commit deste relatório, para `portoes/k2-c/`; os códigos entram no commit seguinte, com a cabeça ao lado.
+**Os portões.** A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça `90469a0e`, para `portoes/k2-c/`: `build` 0 em 128 segundos, `verify` 0 em 741 segundos e `typecheck` 0, cada código lido de `portoes/k2-c/<portão>.codigo`, escrito depois de o processo acabar (`medidas-k2-c.json`, `portoes_a_zero_na_k2_c`). A cabeça no fim da corrida é a mesma do princípio, e a árvore só tinha por seguir a pasta da própria corrida (`portoes/k2-c/estado.fim`). Os registos dizem `<worktree>` onde estava o caminho da máquina, em três linhas.
 
 **O custo.** Duas leituras do contador de símbolos restantes, em `custo-inicio-k2-c.json` e `custo-fim-k2-c.json`: 241 905 símbolos e 2 511 segundos até à escrita desta secção (`medidas-k2-c.json`, `simbolos_gastos_na_k2_c_ate_ao_relatorio`). O modelo foi o Claude Opus 5.5, sem subagentes.
