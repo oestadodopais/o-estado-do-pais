@@ -563,4 +563,4 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
-| ue2 | 12 cadeias novas, nenhuma retirada | por ler | Claude Opus 5.5, construtor do UE2: as perguntas de seis cartões da página da União na forma em palavras comuns, com o termo da fonte entre parênteses, nas duas línguas (a sétima, a da taxa de câmbio efetiva real, leva um algarismo declarado e a régua salta-a nesta rota). As perguntas do cartão continuam vivas nas páginas de assunto. A leitura cruzada do diff faz-se antes da fusão. |
+| ue2 | 14 cadeias novas, nenhuma retirada | por ler | Claude Opus 5.5, construtor do UE2: as perguntas de seis cartões da página da União na forma em palavras comuns, com o termo da fonte entre parênteses, nas duas línguas (a sétima, a da taxa de câmbio efetiva real, leva um algarismo declarado e a régua salta-a nesta rota), e o título da fila dos 21 cartões, nas duas línguas. As perguntas do cartão continuam vivas nas páginas de assunto. A leitura cruzada do diff faz-se antes da fusão. |
