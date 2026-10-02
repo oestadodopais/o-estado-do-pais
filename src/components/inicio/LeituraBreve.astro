@@ -90,6 +90,11 @@ const { s, lang, quadro, medidas, formas = null } = Astro.props;
    declaração única desde o item 8 do P1 (15.09.2026); o que fica aqui é a
    frase, que só três dos quatro fixadores têm. */
 const parDo = (fixador) => (fixador ? s.estado[fixador] ?? null : null);
+/* O SÍMBOLO DO VALOR DE REFERÊNCIA LEVA O ESPAÇO ANTES DELE (bloco K2, 02.10.2026, item 5 do brief): «60 %», como em
+   todos os valores do sítio. O «pp» da taxa de atividade já o declarava («' pp'»); o «%» das outras doze passa a tê-lo
+   aqui, na formatação, e a declaração do limiar fica como a nota da linha a escreve. */
+/** @param {string} simbolo */
+const simboloComEspaco = (simbolo) => (/^\s/.test(simbolo) ? simbolo : ` ${simbolo}`);
 
 const leituras = medidas.map((m) => ({
   id: m.claim,
@@ -276,13 +281,13 @@ for (let i = 0; i < RANHURAS.length; i++) {
                     <span data-nonledger="limiar-do-quadro">{l.limiar.inferior.nl}</span>/
                     {l.limiar.superior.sinal ?? ''}
                     <span data-nonledger="limiar-do-quadro">{l.limiar.superior.nl}</span>
-                    {l.simbolo}
+                    {simboloComEspaco(l.simbolo)}
                   </>
                 ) : (
                   <>
                     {l.limiar.sinal ?? ''}
                     <span data-nonledger="limiar-do-quadro">{l.limiar.nl}</span>
-                    {l.simbolo}
+                    {simboloComEspaco(l.simbolo)}
                   </>
                 )}
               </span>
@@ -337,13 +342,13 @@ for (let i = 0; i < RANHURAS.length; i++) {
                     <span data-nonledger="limiar-do-quadro">{l.limiar.inferior.nl}</span>/
                     {l.limiar.superior.sinal ?? ''}
                     <span data-nonledger="limiar-do-quadro">{l.limiar.superior.nl}</span>
-                    {l.simbolo}
+                    {simboloComEspaco(l.simbolo)}
                   </>
                 ) : (
                   <>
                     {l.limiar.sinal ?? ''}
                     <span data-nonledger="limiar-do-quadro">{l.limiar.nl}</span>
-                    {l.simbolo}
+                    {simboloComEspaco(l.simbolo)}
                   </>
                 )}
               </Fragment>
