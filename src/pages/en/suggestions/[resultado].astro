@@ -1,0 +1,14 @@
+---
+/* A gémea inglesa de `src/pages/sugestoes/[resultado].astro` (bloco S1). */
+import ResultadoDaSugestaoView from '../../../views/ResultadoDaSugestaoView.astro';
+import { segmentosDoResultado } from '../../../lib/sugestoes.mjs';
+
+export function getStaticPaths() {
+  return segmentosDoResultado('en').map(({ segmento, resultado }) => ({
+    params: { resultado: segmento },
+    props: { resultado },
+  }));
+}
+const { resultado } = Astro.props;
+---
+<ResultadoDaSugestaoView lang="en" resultado={resultado} />

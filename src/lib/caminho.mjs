@@ -62,6 +62,7 @@ import { getClaim } from './ledger.mjs';
 import { getSerie, hasSerie } from './series.mjs';
 import { nomeDaMedida } from './nomes.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
+import { SUGESTOES } from '../data/sugestoes.mjs';
 
 /** A chave de rota de cada entrada, e o identificador dela nas declarações (bloco PP1). */
 export const ENTRADA_DA_ROTA = {
@@ -94,6 +95,14 @@ export const PAI_DA_ROTA = {
   sobre: 'home',
   metodo: 'home',
   correcoes: 'home',
+  /* A CAIXA DAS SUGESTÕES (bloco S1, 02.10.2026) é uma página fixa como as
+     correções, e as quatro páginas do resultado são filhas dela: a última
+     migalha delas é a porta de volta ao formulário. */
+  sugestoes: 'home',
+  sugestoesObrigado: 'sugestoes',
+  sugestoesVazia: 'sugestoes',
+  sugestoesLimite: 'sugestoes',
+  sugestoesNaoChegou: 'sugestoes',
   marcador: 'home',
   agenda: 'home',
   uniaoEuropeia: 'home',
@@ -181,6 +190,10 @@ function etiquetaDaRota(chave, lang) {
     sobre: s.nav.sobre,
     livroConcelhos: s.nav.municipios,
     marcador: s.marcador.h1,
+    /* A página das sugestões chama-se pelo seu `<h1>`, que é também o rótulo da
+       porta do rodapé (bloco S1). As páginas do resultado não têm nome próprio no
+       caminho: acabam na migalha do formulário. */
+    sugestoes: SUGESTOES.titulo[lang],
   };
   /* O nome de uma entrada é o da declaração do lugar de direção, que é o `<h1>` da página. */
   const entrada = ENTRADAS.find((e) => e.id === ENTRADA_DA_ROTA[/** @type {keyof typeof ENTRADA_DA_ROTA} */ (chave)]);

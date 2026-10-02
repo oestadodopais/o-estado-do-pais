@@ -1,0 +1,84 @@
+---
+/**
+ * Sugestões — `/sugestoes` · `/en/suggestions` (bloco S1, 02.10.2026).
+ *
+ * Uma página simples: o título, o parágrafo que diz para que serve a caixa e
+ * para que não serve (com a porta das correções), o formulário e a nota do que
+ * fica guardado. O formulário é HTML e mais nada: vai por `POST` à função
+ * `api/sugestoes.js`, que responde com um redirecionamento para uma das quatro
+ * páginas do resultado. Funciona sem JavaScript, e esta vista não carrega
+ * nenhum guião.
+ *
+ * DE ONDE O LEITOR VEM. A porta do rodapé abre esta página com `?de=` igual ao
+ * caminho da página onde ele estava; a página não o lê nem o escreve em lado
+ * nenhum, porque o navegador manda o endereço desta página, com o `?de=`, no
+ * cabeçalho `Referer` do envio, e é a função que o lê de lá (só da mesma
+ * origem, pela política de referência que `vercel.json` põe em todas as
+ * respostas).
+ *
+ * O CAMPO ARMADILHADO (`sitio`) fica fora do ecrã e fora da árvore de
+ * acessibilidade, sem lugar no caminho do teclado e sem preenchimento
+ * automático: só um robô o preenche, e a função manda-o para a página do
+ * obrigado sem nada guardar. Um leitor de ecrã não o anuncia, para que nenhum
+ * leitor o preencha por engano e perca a sugestão sem saber.
+ *
+ * OS TEXTOS são os do brief, à letra, em `src/data/sugestoes.mjs`, e os limites
+ * de cada caixa são os mesmos que a função usa para cortar o que envia.
+ */
+import Base from '../layouts/Base.astro';
+import { routePath } from '../lib/routes.mjs';
+import { SITE_NAME } from '../../site.config.mjs';
+import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
+import { SUGESTOES, LIMITES_DAS_SUGESTOES, pedacosDaFrase } from '../data/sugestoes.mjs';
+import '../styles/sugestoes.css';
+
+const { lang = 'pt' } = Astro.props;
+const path = routePath('sugestoes', lang);
+const [antes, porta, depois] = pedacosDaFrase(SUGESTOES.paragrafo[lang], SUGESTOES.portaDoParagrafo[lang]);
+const [notaAntes, endereco, notaDepois] = pedacosDaFrase(SUGESTOES.nota[lang], ENDERECO_CORRECOES);
+const rotulos = SUGESTOES.rotulos;
+/** As três caixas, pela ordem do brief. */
+const caixas = /** @type {const} */ (['procurou', 'estudo', 'outro']);
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={`${SUGESTOES.titulo[lang]} · ${SITE_NAME}`}
+  description={SUGESTOES.descricao[lang]}
+>
+  <div class="sugestoes-cabeca">
+    <h1>{SUGESTOES.titulo[lang]}</h1>
+    <p class="lede" data-sugestoes-paragrafo>{antes}<a href={routePath('correcoes', lang)}>{porta}</a>{depois}</p>
+  </div>
+
+  <form class="sugestoes-form" method="post" action="/api/sugestoes" data-sugestoes-formulario>
+    <input type="hidden" name="lingua" value={lang} />
+    <div class="sugestoes-armadilha" aria-hidden="true" data-sugestoes-armadilha>
+      <label for="sugestao-sitio">{rotulos.sitio[lang]}</label>
+      <input id="sugestao-sitio" name="sitio" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+    {
+      caixas.map((nome) => (
+        <p class="sugestoes-campo">
+          <label for={`sugestao-${nome}`}>{rotulos[nome][lang]}</label>
+          <textarea id={`sugestao-${nome}`} name={nome} rows="4" maxlength={LIMITES_DAS_SUGESTOES.texto} />
+        </p>
+      ))
+    }
+    <p class="sugestoes-campo">
+      <label for="sugestao-contacto">{rotulos.contacto[lang]}</label>
+      <input
+        id="sugestao-contacto"
+        name="contacto"
+        type="email"
+        maxlength={LIMITES_DAS_SUGESTOES.contacto}
+        autocomplete="email"
+      />
+    </p>
+    <p class="sugestoes-nota" data-sugestoes-nota>{notaAntes}<a class="ligacao-email" href={`mailto:${endereco}`}>{endereco}</a>{notaDepois}</p>
+    <p class="sugestoes-accoes">
+      <button type="submit" class="sugestoes-enviar">{SUGESTOES.botao[lang]}</button>
+    </p>
+  </form>
+</Base>

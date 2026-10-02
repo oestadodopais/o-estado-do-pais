@@ -7,6 +7,7 @@ import { alternatesFor, pathFromUrl, matchPath } from './src/lib/routes.mjs';
 import { loadClaims, provenienciaIncompleta } from './src/lib/ledger.mjs';
 import { WORKS } from './src/data/studies.mjs';
 import { indexavel } from './src/data/leituras.mjs';
+import { ROTAS_DO_RESULTADO } from './src/data/sugestoes.mjs';
 
 /**
  * Uma alternativa de língua, tal como routes.mjs a devolve.
@@ -77,6 +78,13 @@ export default defineConfig({
            sozinhas ao índice. No dia em que a decisão for tomada, é esta linha
            que sai, com o `noindex` de `TextoView.astro` ao lado dela. */
         if (hit?.key === 'texto') return false;
+        /* As quatro páginas do resultado de um envio de sugestão (bloco S1,
+           02.10.2026) ficam fora, e levam `noindex`: são o fim de um envio
+           (obrigado, vazia, limite, não chegou) e um motor de busca não tem lá
+           nada para ler. A página do formulário entra, pela regra de baixo. As
+           chaves vêm da mesma tabela que dá o caminho às páginas e à função, e o
+           portão de HTML confere as duas metades no mapa construído. */
+        if (Object.values(ROTAS_DO_RESULTADO).some((chave) => chave === hit?.key)) return false;
         if (hit?.key === 'estudo') {
           const work = WORKS.find((w) => w.slug === hit.params.slug);
           /* Com leitura escrita e sem sucessor (bloco E1): um estudo sucedido é
