@@ -1,0 +1,62 @@
+{
+  "brief": "design/observatorio/BRIEF-K2-o-cartao-para-o-telemovel.md",
+  "guiao": "design/observatorio/medidas/BRIEF-K2.py",
+  "cabeca_lida": "a9509193",
+  "cartoes_com_variacao_sob_nome_de_nivel": [
+    "custo-unitario-do-trabalho-2025",
+    "precos-da-habitacao-2025",
+    "taxa-de-actividade-2025",
+    "taxa-de-cambio-efectiva-real-2025"
+  ],
+  "linhas_com_menos_decimais": [
+    "fluxo-de-credito-as-empresas-2025",
+    "jovens-nem-2025"
+  ],
+  "medidas": [
+    {
+      "nome": "cartoes_declarados_nos_quadros",
+      "valor": 21,
+      "comando": "git show a9509193:src/data/figuras.mjs · as entradas com claim e quadro",
+      "conhecido_positivo": {
+        "o_que": "a taxa de atividade é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_variacao_sob_nome_de_nivel",
+      "valor": 4,
+      "comando": "os cartões cuja medida começa por «Variação» e cujo nome não diz variação nem três anos",
+      "conhecido_positivo": {
+        "o_que": "a taxa de atividade é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidade_da_disparidade_de_emprego",
+      "valor": "% da população",
+      "comando": "git show a9509193:ledger/claims/disparidade-de-emprego-entre-sexos-2025.yml · unit",
+      "conhecido_positivo": {
+        "o_que": "a linha é do Eurostat",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_menos_decimais_do_que_a_fonte",
+      "valor": 2,
+      "comando": "as linhas sem derivação cujo excerto acaba em «: N.D» e cujo value tem menos casas decimais, sendo o mesmo número",
+      "conhecido_positivo": {
+        "o_que": "a dos jovens nem-nem de 2025 é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "frases_das_leituras_com_termos_por_explicar",
+      "valor": 11,
+      "comando": "git show a9509193:src/data/leituras.mjs · as ocorrências de «designações», «localizações de projeto vencidas» e «atuarialmente»",
+      "conhecido_positivo": {
+        "o_que": "«atuarialmente» aparece",
+        "encontrado": true
+      }
+    }
+  ]
+}
