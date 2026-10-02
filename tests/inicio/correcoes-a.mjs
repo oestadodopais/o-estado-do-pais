@@ -58,6 +58,19 @@
  * pseudo-elemento absoluto e centrado, que alarga o que se toca sem alargar o
  * que se compõe. Medir só a caixa do elemento conta 52 × 14px onde o dedo
  * encontra 52 × 44, que foi o que aconteceu na auditoria.
+ *
+ * ---------------------------------------------------------------------------
+ * O MAPA E A PESQUISA MUDARAM DE PÁGINA (bloco P4, 02.10.2026)
+ * ---------------------------------------------------------------------------
+ * Desde o L2a (01.10.2026, §1.149 e §1.150) o mapa das 29 unidades e a pesquisa
+ * do concelho vivem em «Lugares», e a primeira página ficou com a porta e o
+ * sinal. A régua rebentava na linha 536, a procurar a pesquisa na primeira
+ * página, e uma régua que rebenta mente por omissão (§5 do brief P4, decisão 1).
+ * As células do mapa e da pesquisa (A1, A4, A5, A6 e C1) medem agora «Lugares»
+ * (`LUGARES`); as da primeira página (A3, A7, A8, A9, A10 e A11) continuam a
+ * medi-la, porque ela existe, e a A2 mede a porta única do território, que desde
+ * a peça 3 do B1 é «Lugares» no menu. O que cada célula passou a medir está
+ * escrito ao pé dela.
  */
 import fs from 'node:fs';
 import http from 'node:http';
@@ -67,6 +80,8 @@ import { chromium, webkit, devices } from 'playwright';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.join(RAIZ, 'dist');
+/* A PÁGINA DO MAPA E DA PESQUISA (bloco P4): «Lugares», nas duas edições, desde o L2a. */
+const LUGARES = { pt: '/lugares/', en: '/en/places/' };
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -414,8 +429,15 @@ for (const edicao of ['pt', 'en']) {
      que agora é o menu, e continua a não haver um segundo caminho só para o
      telemóvel. As quatro portas conferem-se pelo `href` e não pelo texto, porque
      o texto é a etiqueta e a porta é o destino. */
+  /* A PORTA ÚNICA DO TERRITÓRIO É «LUGARES» (a peça 3 do B1, 22.09.2026, e o bloco
+     P4). O menu deixou de ter as camadas uma a uma: tem uma porta, «Lugares», e é
+     lá que as camadas se alcançam (as nove regiões, os 29 distritos e ilhas, e os
+     308 concelhos na pesquisa). A célula conserva o que o item A2 protegia, um só
+     caminho e nenhum destino de telemóvel à parte, medido na forma de hoje: uma
+     porta do território no menu, e as três camadas em «Lugares». As áreas de
+     governo saíram do menu na mesma peça e não são uma camada do território. */
   const comando = await p.evaluate(() => {
-    const menu = [...document.querySelectorAll('.nav-principal a')].map((a) =>
+    const menu = [...document.querySelectorAll('#nav-principal a')].map((a) =>
       a.getAttribute('href'),
     );
     return {
@@ -424,11 +446,18 @@ for (const edicao of ['pt', 'en']) {
       moveis: document.querySelectorAll('.movel-destino, .movel-selo').length,
     };
   });
-  const PORTAS_DO_AMBITO =
-    edicao === 'pt'
-      ? ['/municipios', '/regioes', '/distritos', '/areas']
-      : ['/en/municipalities', '/en/regions', '/en/districts', '/en/areas'];
+  const pl = await ctx.newPage();
+  await pl.goto(`${base}${LUGARES[edicao]}`, { waitUntil: 'networkidle' });
+  const camadas = await pl.evaluate((en) => ({
+    regioes: document.querySelectorAll(`[data-lista-lugares="regioes"] a[href^="${en ? '/en/regions/' : '/regioes/'}"]`).length,
+    distritos: document.querySelectorAll(`[data-lista-lugares="distritos"] a[href^="${en ? '/en/districts/' : '/distritos/'}"]`).length,
+    concelhos: document.querySelectorAll(`[data-pesquisa-lista] a[href^="${en ? '/en/municipalities/' : '/municipios/'}"]`).length,
+    moveis: document.querySelectorAll('.movel-destino, .movel-selo').length,
+  }), edicao === 'en');
+  await pl.close();
+  const PORTAS_DO_AMBITO = [LUGARES[edicao]];
   const emFaltaNoMenu = PORTAS_DO_AMBITO.filter((h) => !comando.menu.includes(h));
+  const camadasCertas = camadas.regioes === 9 && camadas.distritos === 29 && camadas.concelhos === 308 && camadas.moveis === 0;
   /* «REGIÃO» VOLTOU AO COMANDO, E VOLTOU COMO PORTA (Emenda 21b, 27.08.2026).
      Eram duas posições desde 25.08, quando a terceira saiu com a régua da
      convergência «até haver a página das regiões»; a página existe, e a posição
@@ -441,25 +470,34 @@ for (const edicao of ['pt', 'en']) {
      uma porta que se comportasse como um interruptor — é a mesma correcção que a
      célula 2i·5 da matriz levou no mesmo dia. */
   conta(
-    `A2 · as quatro camadas do território no menu, um só caminho, e nenhum destino de telemóvel à parte · 390 ${edicao}`,
-    emFaltaNoMenu.length === 0 && comando.comandos === 0 && comando.moveis === 0,
+    `A2 · o território por uma porta só, «Lugares», com as três camadas lá, e nenhum destino de telemóvel à parte · 390 ${edicao}`,
+    emFaltaNoMenu.length === 0 && comando.comandos === 0 && comando.moveis === 0 && camadasCertas,
     `menu com ${comando.menu.length} porta(s)` +
-      (emFaltaNoMenu.length ? ` · faltam ${emFaltaNoMenu.join(', ')}` : ' · as quatro lá estão') +
+      (emFaltaNoMenu.length ? ` · falta ${emFaltaNoMenu.join(', ')}` : ` · «Lugares» lá está (${LUGARES[edicao]})`) +
+      ` · em «Lugares»: ${camadas.regioes} regiões, ${camadas.distritos} distritos e ilhas, ${camadas.concelhos} concelhos na pesquisa` +
       ` · ${comando.comandos} linha(s) de comando na página (o F1.1 tirou-a)` +
-      ` · ${comando.moveis} destino(s) do telemóvel`,
+      ` · ${comando.moveis + camadas.moveis} destino(s) do telemóvel`,
   );
+
+  /* A PESQUISA E O MAPA MEDEM-SE EM «LUGARES» (bloco P4): a A4 e a A1 abrem a página
+     deles, e a primeira página volta a abrir-se logo a seguir, para a A9 em diante. */
+  await p.goto(`${base}${LUGARES[edicao]}`, { waitUntil: 'networkidle' });
+  await p.evaluate(() => document.fonts.ready);
 
   /* ---------------------------------------------------------------- A4 · o mapa */
   const mapa = await p.evaluate(() => {
-    const svg = document.querySelector('.mapa-svg');
+    const svg = document.querySelector('#mapa .mapa-svg');
     const r = svg ? svg.getBoundingClientRect() : null;
     const pontos = [...document.querySelectorAll('circle.mun')].filter(
       (c) => c.getBoundingClientRect().width > 0,
     ).length;
     const pesquisa = document.querySelector('#pesquisa');
     const rp = pesquisa ? pesquisa.getBoundingClientRect() : null;
-    const h1 = document.querySelector('[data-cabeca]:not([hidden]) h1');
-    const linha = document.querySelector('.mapa-linha');
+    /* O TÍTULO DE «LUGARES» É O `<h1>` DO `<main>`, e a contagem dos 308 diz-se no
+       lugar do nome do mapa, em repouso («Portugal · 308 concelhos»), desde que a
+       linha da legenda saiu (o acerto 4 do P1, 15.09.2026). */
+    const h1 = document.querySelector('main h1');
+    const linha = document.querySelector('#mapa [data-mapa-repouso="pais"]');
     const rl = linha ? linha.getBoundingClientRect() : null;
     return {
       svg: r ? +r.width.toFixed(1) : null,
@@ -506,16 +544,21 @@ for (const edicao of ['pt', 'en']) {
      lede existia. As duas comparações substituem a que se retirou, e são duas
      porque uma só (depois da manchete) deixaria passar uma busca empurrada para
      baixo do mapa. */
+  /* A LARGURA DA JANELA (I81) ERA DO MAPA DA PRIMEIRA PÁGINA, e não passou para
+     «Lugares», onde o mapa mede 281 px a 390 (a razão está na M1e de
+     `mapa-distritos.mjs`, que saiu pela mesma razão): a célula exige que o mapa se
+     renda, e não a largura da janela. O resto fica: a pesquisa à vista, depois do
+     título e antes do mapa, e a contagem dos 308 à vista. */
   conta(
-    `A4 · REVOGADA em parte (Emenda 20c) · o mapa rende-se a 390 e a pesquisa fica à vista · 390 ${edicao}`,
+    `A4 · REVOGADA em parte (Emenda 20c) · o mapa rende-se a 390 em «Lugares» e a pesquisa fica à vista · 390 ${edicao}`,
     mapa.svg !== null &&
-      mapa.svg >= 390 &&
+      mapa.svg > 0 &&
       mapa.pontos === 0 &&
       mapa.pesquisaVisivel &&
       mapa.pesquisaDepoisDaManchete &&
       mapa.pesquisaAntesDoMapa &&
       mapa.linhaVisivel,
-    `svg ${mapa.svg}px (a Emenda 20c manda rendê-lo; a 18 mandava-o fora) · ${mapa.pontos} ponto(s) com caixa, que é o que saiu com a Emenda 20a · pesquisa à vista ${mapa.pesquisaVisivel} · depois da manchete ${mapa.pesquisaDepoisDaManchete} · antes do mapa ${mapa.pesquisaAntesDoMapa} · rótulo «${mapa.rotulo}» · linha dos 308 à vista ${mapa.linhaVisivel}, a ${mapa.distanciaDaLinha}px da pesquisa`,
+    `svg ${mapa.svg}px (a Emenda 20c manda rendê-lo; a 18 mandava-o fora) · ${mapa.pontos} ponto(s) com caixa, que é o que saiu com a Emenda 20a · pesquisa à vista ${mapa.pesquisaVisivel} · depois do título ${mapa.pesquisaDepoisDaManchete} · antes do mapa ${mapa.pesquisaAntesDoMapa} · rótulo «${mapa.rotulo}» · a contagem dos 308 à vista ${mapa.linhaVisivel}, a ${mapa.distanciaDaLinha}px da pesquisa`,
   );
 
   /* --------------------------------------------- A1 · a busca sem gesto nenhum
@@ -549,7 +592,7 @@ for (const edicao of ['pt', 'en']) {
     };
   });
   conta(
-    `A1 · a busca do concelho inteira no primeiro ecrã, sem gesto, e o campo recebe o foco · 390 ${edicao}`,
+    `A1 · a busca do concelho inteira no primeiro ecrã de «Lugares», sem gesto, e o campo recebe o foco · 390 ${edicao}`,
     a1.dentro && a1.foco === 'pesquisa-concelho' && a1.forma === 1,
     `topo ${a1.topo}, fundo ${a1.fundo} de ${a1.ecra} (dentro: ${a1.dentro}) · foco «${a1.foco}» · ${a1.forma} formulário(s) com destino · endereço «${a1.endereco}»`,
   );
@@ -639,17 +682,27 @@ for (const edicao of ['pt', 'en']) {
   );
 
   /* ------------------------------------------------------------------- A7 · a cabeça */
+  /* A CÉLULA MEDE A CABEÇA DE HOJE (bloco P4). Desde a peça 3 do B1 a manchete da
+     primeira página é o nome, o `<h1>` da marca, dentro do cabeçalho, e o primeiro
+     título do conteúdo é o de «O que se passa» (o PP1): é ele que tem de começar
+     antes dos 40 % do ecrã, que é o que o item A7 protegia (o cabeçalho não come
+     o primeiro ecrã do telemóvel). E o comando do tema deixou o menu: o item A7
+     punha-o dentro do menu que abria, para não custar uma fila; desde o P4 o menu
+     não abre e o comando vive na fila da marca, à vista, sem fila própria. */
   const cabeca = await p.evaluate(() => {
     const h = document.querySelector('header').getBoundingClientRect();
-    const h1 = document.querySelector('[data-cabeca]:not([hidden]) h1');
-    const temaNoMenu = document.querySelector('#nav-principal .tema-no-menu');
-    const temaNaMobilia = document.querySelector('.masthead-furniture > .tema');
+    const h1 = document.querySelector('main h2');
+    const temaNaMarca = document.querySelector('header .masthead-marca [data-tema-controlo]');
+    const temaNoMenu = document.querySelector('#nav-principal [data-tema-controlo]');
     return {
       cabecaAlt: +h.height.toFixed(1),
-      manchete: h1 ? +h1.getBoundingClientRect().top.toFixed(1) : null,
+      /* NO DOCUMENTO E NÃO NA JANELA (P4): as sondas da A9 e da A10 rolam a página, e
+         uma posição lida na janela depois delas vinha negativa e passava por estar
+         acima dos 40 %. O que o item mede é onde o título está quando a página abre. */
+      manchete: h1 ? +(h1.getBoundingClientRect().top + scrollY).toFixed(1) : null,
       ecra: innerHeight,
+      temaNaMarcaVisivel: !!temaNaMarca && !temaNaMarca.hidden && temaNaMarca.getBoundingClientRect().width > 0,
       temaNoMenu: !!temaNoMenu,
-      temaNaMobiliaVisivel: !!temaNaMobilia && temaNaMobilia.getBoundingClientRect().width > 0,
       /* AS LEITURAS DO CABEÇALHO INTEIRO, E NÃO SÓ AS DA MOBÍLIA (F1.10, item
          8.11 e §7.3, 08.09.2026). A célula pedia três no documento e uma à
          vista, e estava VERMELHA desde 04.09: o F1.6 pôs uma quarta leitura na
@@ -673,60 +726,27 @@ for (const edicao of ['pt', 'en']) {
   });
   const limiar40 = cabeca.ecra * 0.4;
   conta(
-    `A7 · a cabeça e a manchete começam antes de 40% do ecrã · 390 ${edicao}`,
+    `A7 · a cabeça e o primeiro título do conteúdo começam antes de 40% do ecrã · 390 ${edicao}`,
     cabeca.cabecaAlt < limiar40 &&
       cabeca.manchete !== null &&
       cabeca.manchete < limiar40 &&
       cabeca.leituras === 0 &&
       cabeca.marcaLinhas === 1 &&
-      cabeca.temaNoMenu &&
-      !cabeca.temaNaMobiliaVisivel,
-    `cabeça ${cabeca.cabecaAlt}px · manchete a ${cabeca.manchete}px · 40% = ${limiar40.toFixed(
+      cabeca.temaNaMarcaVisivel &&
+      !cabeca.temaNoMenu,
+    `cabeça ${cabeca.cabecaAlt}px · primeiro título do conteúdo a ${cabeca.manchete}px · 40% = ${limiar40.toFixed(
       1,
-    )}px · marca em ${cabeca.marcaLinhas} linha(s) · ${cabeca.leituras} leitura(s) de aparelho no cabeçalho (o item 8.11 exige 0) · tema dentro do menu ${cabeca.temaNoMenu}, fora da mobília ${!cabeca.temaNaMobiliaVisivel}`,
+    )}px · marca em ${cabeca.marcaLinhas} linha(s) · ${cabeca.leituras} leitura(s) de aparelho no cabeçalho (o item 8.11 exige 0) · tema à vista na fila da marca ${cabeca.temaNaMarcaVisivel}, no menu ${cabeca.temaNoMenu}`,
   );
   if (edicao === 'pt') medidas.cabeca390 = cabeca;
 
-  /* ------------------------------------------------------------------ A11 · a identidade */
-  const identidade = await p.evaluate(() => {
-    const els = [...document.querySelectorAll('.masthead-identidade')];
-    return {
-      n: els.length,
-      texto: els[0] ? els[0].textContent.trim() : null,
-      familia: els[0] ? getComputedStyle(els[0]).fontFamily.split(',')[0].replace(/["']/g, '') : null,
-      corpo: els[0] ? getComputedStyle(els[0]).fontSize : null,
-      linhas: els[0]
-        ? Math.round(
-            els[0].getBoundingClientRect().height / parseFloat(getComputedStyle(els[0]).lineHeight),
-          )
-        : null,
-      ligacoes: els[0] ? els[0].querySelectorAll('a').length : null,
-      algarismos: els[0] ? /\d/.test(els[0].textContent) : null,
-    };
-  });
-  /* A FRASE CRESCEU E A CÉLULA MUDA COM ELA (bloco F1.10, 04.09.2026). A frase
-     de identidade passou a ser a frase de DEFINIÇÃO do sítio, por decisão do
-     lugar de direção (`DECISIONS.md` §1.98, segunda emenda, item 3): diz as três
-     maneiras de ler o sítio e a origem de cada número. O que a célula media
-     continua a valer todo (uma vez, na letra da prosa, sem porta, sem algarismo),
-     menos a contagem de linhas: uma frase de dezasseis palavras não cabe numa
-     linha a 390 px, e exigir que coubesse era exigir que a frase não mudasse. Em
-     vez do «uma linha» fica um TECTO medido, que é o que a composição promete:
-     não mais de três linhas a 390 px. */
-  const esperada =
-    edicao === 'pt'
-      ? 'Um observatório de Portugal: cada número com a sua fonte, lido por território, por domínio e em estudos.'
-      : 'An observatory of Portugal: every number with its source, read by territory, by domain and in studies.';
-  conta(
-    `A11 · a frase de definição, uma vez, na letra da prosa e sem porta · 390 ${edicao}`,
-    identidade.n === 1 &&
-      identidade.texto === esperada &&
-      identidade.linhas !== null &&
-      identidade.linhas <= 3 &&
-      identidade.ligacoes === 0 &&
-      identidade.algarismos === false,
-    `«${identidade.texto}» · ${identidade.n} ocorrência(s) · ${identidade.familia} ${identidade.corpo} · ${identidade.linhas} linha · ${identidade.ligacoes} ligações · algarismos ${identidade.algarismos}`,
-  );
+  /* ------------------------------------------------------------------ A11 · a identidade
+     SAIU NO BLOCO P4 (02.10.2026). Media a frase de definição por baixo da marca,
+     uma vez, na letra da prosa e sem porta. A frase saiu do cabeçalho com a peça 3
+     do B1 (`ad6c0d8f`, 21.09.2026: «O nome é o título da primeira página»), e a
+     primeira página não a rende em lado nenhum: a célula media um objeto que
+     deixou de existir, e dava «0 ocorrência(s)». A frase de identidade de hoje,
+     onde se render, é texto declarado que o inventário das frases mede. */
 
   /* ------------------------------------------------------------------- A8 · o vazio */
   const limites = await p.evaluate(() => {
@@ -800,10 +820,12 @@ for (const edicao of ['pt', 'en']) {
     deviceScaleFactor: 1,
   });
   const p = await ctx.newPage();
-  await p.goto(`${base}${rota}`, { waitUntil: 'networkidle' });
+  /* O MAPA MEDE-SE EM «LUGARES» (bloco P4): a A5, a A6 e a C1 abrem a página dele, e
+     a A3, mais abaixo, volta à primeira página. */
+  await p.goto(`${base}${LUGARES[edicao]}`, { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
 
-  /* ------------------------------------- A5 · as portas do mapa da primeira página
+  /* ------------------------------------- A5 · as portas do mapa (de «Lugares» desde o L2a)
    *
    * A CÉLULA MUDA DE OBJECTO E NÃO DE REGRA (Emenda 20a, 27.08.2026; ISSUES I86).
    *
@@ -835,8 +857,8 @@ for (const edicao of ['pt', 'en']) {
    */
   const familiaDoDistrito = edicao === 'pt' ? '/distritos/' : '/en/districts/';
   const a5 = await p.evaluate((familia) => {
-    const areas = [...document.querySelectorAll('[data-areas] .uni')];
-    const portas = [...document.querySelectorAll('[data-areas] a.uni-porta')];
+    const areas = [...document.querySelectorAll('#mapa [data-areas] .uni')];
+    const portas = [...document.querySelectorAll('#mapa [data-areas] a.uni-porta')];
     const nomes = portas.map((a) => (a.querySelector('title')?.textContent ?? '').trim());
     const destinos = portas.map((a) => a.getAttribute('href'));
     const padrao = new RegExp('^' + familia + '[a-z0-9-]+$');
@@ -880,13 +902,13 @@ for (const edicao of ['pt', 'en']) {
     const foco = [...document.querySelectorAll('a[href], button, input, summary')].filter(
       (e) => !e.closest('[hidden]'),
     );
-    const porta = document.querySelector('[data-areas] a.uni-porta');
+    const porta = document.querySelector('#mapa [data-areas] a.uni-porta');
     return { indice: porta ? foco.indexOf(porta) : -1, total: foco.length };
   });
   /* A porta pode não existir — é isso que um estrago plantado faz —, e a régua
      tem de dizer o que mediu em vez de rebentar. */
   const focado = await p.evaluate(() => {
-    const porta = document.querySelector('[data-areas] a.uni-porta');
+    const porta = document.querySelector('#mapa [data-areas] a.uni-porta');
     if (!porta) return { classe: null, href: null, existe: false };
     porta.focus();
     return {
@@ -929,7 +951,7 @@ for (const edicao of ['pt', 'en']) {
    * — e volta para a superfície onde essa leitura viver.
    */
   const a6 = await p.evaluate(() => {
-    const titulos = [...document.querySelectorAll('[data-areas] a.uni-porta title')].map((t) =>
+    const titulos = [...document.querySelectorAll('#mapa [data-areas] a.uni-porta title')].map((t) =>
       t.textContent.replace(/\s+/g, ' ').trim(),
     );
     return {
@@ -948,7 +970,7 @@ for (const edicao of ['pt', 'en']) {
       a6.titulos > 0 &&
       a6.vazios === 0 &&
       a6.compostos === 0,
-    `${a6.readouts} leituras e ${a6.pontos} pontos na primeira página · ${a6.titulos} nomes de área, ${a6.vazios} vazios, ${a6.compostos} compostos · o primeiro: «${a6.exemplo}»`,
+    `${a6.readouts} leituras e ${a6.pontos} pontos em «Lugares» · ${a6.titulos} nomes de área, ${a6.vazios} vazios, ${a6.compostos} compostos · o primeiro: «${a6.exemplo}»`,
   );
 
   /* ------------------------------------------------------------- C1 · o mapa não some */
@@ -967,12 +989,17 @@ for (const edicao of ['pt', 'en']) {
        endereço antigo com uma região reencaminha para a página dela — uma
        navegação a meio deste `evaluate` destrói o contexto de execução em vez de
        medir alguma coisa. Ficam os dois estados que a página tem. */
-    for (const q of ['?ambito=municipio', '']) {
+    /* OS ESTADOS DE HOJE SÃO OS DO FRAGMENTO (bloco P4). Os `?ambito=` saíram com o
+       F1.1, e o mapa de «Lugares» tem dois estados, o país e uma unidade crescida
+       (`#unidade=`), escritos no endereço pelo guião do mapa. A célula conserva o
+       que o achado C1 fechou, o mapa nunca desaparece ao mudar de estado, nos
+       estados que a página tem: uma unidade, outra, e de volta ao país. */
+    for (const q of ['#unidade=evora', '#unidade=faro', '']) {
       history.pushState({}, '', location.pathname + q);
       window.dispatchEvent(new PopStateEvent('popstate'));
-      await new Promise((r) => setTimeout(r, 60));
+      await new Promise((r) => setTimeout(r, 300));
       const f = document.querySelector('#mapa');
-      estados.push(`${q || '(defeito)'}: ${getComputedStyle(f).display}, hidden=${f.hidden}`);
+      estados.push(`${q || '(país)'}: ${getComputedStyle(f).display}, hidden=${f.hidden}`);
     }
     return { antes, estados };
   });
@@ -1066,18 +1093,18 @@ for (const edicao of ['pt', 'en']) {
      que é onde a medida estava. Medido nesta construção: com as peças, o
      primeiro valor ficava a 744 px e só dois dos quatro cabiam; com a faixa fica
      a 496 e cabem os quatro. */
+  /* OS QUATRO VALORES SÃO OS DOS PRIMEIROS CARTÕES (bloco P4). A faixa e as peças
+     saíram da página do concelho com a peça 2 do B1, que a refez em cartões de
+     medida (`[data-cartao-medida]`); a pergunta é a mesma, os quatro primeiros
+     valores dentro do primeiro ecrã de 800 px, e o cartão localizador saiu com o
+     item 8.17 do F1.10. */
   const dobra = await pe.evaluate(() => {
-    const daFaixa = [...document.querySelectorAll('[data-faixa] [data-cartao] .cartao-valor')];
-    const vals = (daFaixa.length
-      ? daFaixa
-      : [...document.querySelectorAll('#relance .peca .peca-valor')]
-    ).slice(0, 4);
-    const c = daFaixa.length
-      ? document.querySelector('[data-faixa] [data-cartao]')
-      : document.querySelector('#relance .peca');
+    const daFaixa = [...document.querySelectorAll('main [data-cartao-medida] .cartao-medida-valor')];
+    const vals = daFaixa.slice(0, 4);
+    const c = document.querySelector('main [data-cartao-medida]');
     const rc = c ? c.getBoundingClientRect() : null;
     return {
-      onde: daFaixa.length ? 'faixa' : 'peças',
+      onde: 'cartões',
       valores: vals.length,
       dentro: vals.filter((v) => v.getBoundingClientRect().bottom <= innerHeight).length,
       primeiro: vals[0] ? +vals[0].getBoundingClientRect().top.toFixed(0) : null,
@@ -1089,7 +1116,7 @@ for (const edicao of ['pt', 'en']) {
   const bE = await bandas(branco, bufE, limitesE);
   const noMainE = bE.bandas.filter((x) => x.noMain && !x.noMapa);
   conta(
-    `A8 · o mesmo no concelho, fora do desenho do cartão localizador, e os quatro valores dentro do primeiro ecrã · 1280 ${edicao}`,
+    `A8 · o mesmo no concelho, e os quatro primeiros valores dos cartões dentro do primeiro ecrã · 1280 ${edicao}`,
     !bE.telaVazia &&
       noMainE.length > 0 &&
       noMainE[0].alt <= 48 &&
