@@ -69,9 +69,20 @@ rot = mostrar("src/data/rotulos-b1.mjs") or ""
 medicao("palavras_da_nota_do_sucessor_que_dizem_a_reconciliacao", len(re.findall(r"reconcilia", rot)) if rot else NAO,
         f"git show {CAB}:src/data/rotulos-b1.mjs · «reconcilia»", "o rótulo «sucedeu-lhe» existe", "sucedeu-lhe" in rot)
 
-# 5 · o guião das decisões em vigor com um intervalo que tem PNG
-r = subprocess.run(["python3", "scripts/leituras/decisoes-em-vigor.py", "--intervalo", "74ce7657..642e9d56"], cwd=str(SITIO), capture_output=True, text=True)
-medicao("codigo_do_decisoes_em_vigor_num_intervalo_com_png", r.returncode, "python3 scripts/leituras/decisoes-em-vigor.py --intervalo 74ce7657..642e9d56 (o UE2, que tem capturas PNG)",
+# 5 · o guião das decisões em vigor com um intervalo que tem PNG, NA CABEÇA PRESA: o guião corre-se tal como estava em
+# 642e9d56 (lido com `git show` para um ficheiro transitório em scripts/leituras/, porque ele acha o sítio pelo seu próprio
+# caminho, dois níveis acima), e não o da árvore de trabalho, porque o item 6 do bloco corrige precisamente este guião e a
+# medição tem de continuar a dizer o que o §0 mediu. O ficheiro transitório apaga-se logo a seguir, aconteça o que acontecer.
+guiao_preso = mostrar("scripts/leituras/decisoes-em-vigor.py")
+transitorio = SITIO / "scripts" / "leituras" / f".decisoes-em-vigor-{CAB}-medida-p4.py"
+try:
+    transitorio.write_text(guiao_preso or "", encoding="utf-8")
+    r = subprocess.run(["python3", str(transitorio), "--intervalo", "74ce7657..642e9d56"], cwd=str(SITIO), capture_output=True, text=True)
+finally:
+    if transitorio.exists():
+        transitorio.unlink()
+medicao("codigo_do_decisoes_em_vigor_num_intervalo_com_png", r.returncode if guiao_preso else NAO,
+        f"git show {CAB}:scripts/leituras/decisoes-em-vigor.py > scripts/leituras/<transitório>.py; python3 scripts/leituras/<transitório>.py --intervalo 74ce7657..642e9d56 (o UE2, que tem capturas PNG); apagar o transitório",
         "a saída diz que não leu um byte 0x89", "0x89" in (r.stdout + r.stderr))
 
 # 6 · a linha da descrição em CHAVES-EN.md
