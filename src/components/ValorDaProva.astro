@@ -19,6 +19,7 @@
  * para abrir. IDENTIDADE §7.
  */
 import { dataDaCasa } from '../lib/datas.mjs';
+import { milharesDaCasa } from '../lib/formato.mjs';
 
 /**
  * `semPorta` — o número rende-se sem âncora (§7.10 do brief F1.10, e a decisão
@@ -51,7 +52,9 @@ const existe = valor !== null && valor !== undefined;
  * carácter. O portão continua a comparar o texto rendido com a conta que ele
  * próprio faz, e ganhou a mesma regra escrita outra vez do lado dele.
  */
-const escrito = existe ? dataDaCasa(valor) : null;
+/* K2 (02.10.2026, item 5 do brief): uma contagem de quatro algarismos ou mais escreve-se com os milhares separados,
+   como todos os valores do sítio. Uma data continua na forma da casa. */
+const escrito = existe ? milharesDaCasa(dataDaCasa(valor)) : null;
 ---
 
 {

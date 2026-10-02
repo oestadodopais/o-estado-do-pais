@@ -37,7 +37,7 @@ function normal(inteiro, casas) {
 
 /** O valor de uma linha como número exato e as suas casas, ou `null` se não é um número da casa. @param {unknown} valor */
 export function numeroDoValor(valor) {
-  const s = String(valor ?? '').replace(/[    ]/g, '').replace('−', '-');
+  const s = String(valor ?? '').replace(/[\u00a0\u202f\u2009 ]/g, '').replace('\u2212', '-');
   const m = /^(-?\d+)(?:,(\d+))?$/.exec(s);
   return m ? { n: normal(m[1], m[2] ?? ''), casas: (m[2] ?? '').length } : null;
 }
@@ -46,8 +46,8 @@ export function numeroDoValor(valor) {
 export function literaisDoExcerto(excerto) {
   const out = [];
   for (const m of excerto.matchAll(/(?<![\d.,])(-?\d+)\.(\d+)(?![\d.,]*\d)/g)) out.push({ n: normal(m[1], m[2]), casas: m[2].length, literal: m[0] });
-  for (const m of excerto.matchAll(/(?<![\d,])(-?\d{1,3}(?:[ .  ]\d{3})*|-?\d+),(\d+)(?![\d,]*\d)/g)) {
-    out.push({ n: normal(m[1].replace(/[ .  ]/g, ''), m[2]), casas: m[2].length, literal: m[0] });
+  for (const m of excerto.matchAll(/(?<![\d,])(-?\d{1,3}(?:[ .\u00a0\u202f]\d{3})*|-?\d+),(\d+)(?![\d,]*\d)/g)) {
+    out.push({ n: normal(m[1].replace(/[ .\u00a0\u202f]/g, ''), m[2]), casas: m[2].length, literal: m[0] });
   }
   for (const m of excerto.matchAll(/(?<![\d.,])(-?\d+)(?![\d.,]*\d)/g)) out.push({ n: normal(m[1], ''), casas: 0, literal: m[0] });
   return out;

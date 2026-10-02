@@ -885,6 +885,17 @@ function dataDaCasaGate(valor) {
 }
 
 /**
+ * OS MILHARES DE UMA CONTAGEM DA PROVA, na cópia do portão (bloco K2, 02.10.2026, item 5 do brief). Uma contagem de
+ * quatro algarismos ou mais escreve-se agrupada de três em três, como todos os valores do sítio; o texto que o portão
+ * lê já tem o espaço inquebrável normalizado num espaço, e por isso a cópia agrupa com um espaço. A comparação continua
+ * a ser carácter a carácter: uma contagem sem separador, ou com outro valor, fecha a construção.
+ * @param {string} valor
+ */
+function milharesDaCasaGate(valor) {
+  return /^\d{4,}$/.test(valor) ? valor.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : valor;
+}
+
+/**
  * A FORMA DE UM VALOR — a cópia própria do portão, e o que ela normaliza.
  *
  * Bloco T, T4. Até 18.08.2026 um `data-claim` era conferido por `digitsOf`, que
@@ -8064,7 +8075,7 @@ for (const o of ocorrenciasDaProva) {
    * comparam-se exactamente como antes.
    */
   const cru = String(esperado);
-  const naForma = /^\d{4}-\d{2}-\d{2}$/.test(cru) ? dataDaCasaGate(cru) : cru;
+  const naForma = /^\d{4}-\d{2}-\d{2}$/.test(cru) ? dataDaCasaGate(cru) : milharesDaCasaGate(cru);
   if (o.texto !== naForma) {
     erros.push({
       rel: o.rel,

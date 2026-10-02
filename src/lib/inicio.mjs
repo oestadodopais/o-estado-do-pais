@@ -455,7 +455,7 @@ export function ambitos() {
 export const MANCHETE_DO_PAIS = {
   divida: 'divida-publica-2025',
   desemprego: 'taxa-de-desemprego-2025',
-  sufixo: '%',
+  sufixo: ' %',
 };
 
 /**
