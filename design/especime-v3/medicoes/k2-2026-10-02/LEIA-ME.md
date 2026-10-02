@@ -151,8 +151,9 @@ Duas leituras do contador de símbolos restantes que a ferramenta mostra ao agen
 - `7cd3b762` o espaço antes de «%» em todas as superfícies;
 - `f37673b4` o dinheiro com a palavra da unidade, e a F5;
 - `1dea6572` os seis nomes que dizem a variação;
-- o commit deste relatório, com o mapa do repositório posto em dia, a linha do inventário, as medidas, as capturas e a resposta curta (`RESPOSTA-construtor-k2-b.md`); e o seguinte, com os códigos da corrida final dos portões.
+- `b7718d01` o relatório, com o mapa do repositório posto em dia, a linha do inventário, as medidas, as capturas e a resposta curta (`RESPOSTA-construtor-k2-b.md`): a cabeça da corrida final dos portões;
+- o commit seguinte, com os códigos dessa corrida, os registos dela sem o caminho da máquina, e esta secção a dizê-los.
 
-**Os portões.** A corrida final corre por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça do commit deste relatório, para `portoes/k2-b/`; os códigos entram no commit seguinte, com a cabeça ao lado.
+**Os portões.** A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça `b7718d01`, para `portoes/k2-b/`: `build` 0 em 124 segundos, `verify` 0 em 740 segundos e `typecheck` 0, cada código lido de `portoes/k2-b/<portão>.codigo`, escrito depois de o processo acabar (`medidas-k2-b.json`, `portoes_a_zero_na_k2_b`). A cabeça no fim da corrida é a mesma do princípio, e a árvore só tinha por seguir a pasta da própria corrida (`portoes/k2-b/estado.fim`). Os registos dizem `<worktree>` onde estava o caminho da máquina, em três linhas.
 
 **O custo.** Duas leituras do contador de símbolos restantes, em `custo-inicio-k2-b.json` e `custo-fim-k2-b.json`: 91 104 símbolos e 1 378 segundos até à escrita desta secção (`medidas-k2-b.json`, `simbolos_gastos_na_k2_b_ate_ao_relatorio`). O modelo foi o Claude Opus 5.5, sem subagentes.
