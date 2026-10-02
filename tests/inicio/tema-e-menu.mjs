@@ -18,10 +18,13 @@
  *         leva `data-theme` e o fundo é o papel claro dos tokens; e sem guião também, com o comando escondido;
  *   TM2 · o comando à vista no cabeçalho em todas as larguras (390, 768, 1 024, 1 280 e 1 600 px): dentro do
  *         `<header>`, visível, dentro da janela, cada botão com o alvo de 44 px por 44, e os dois a dizer o estado;
- *   TM3 · a escolha lembra-se e aplica-se antes da primeira pintura: com «dark» guardado, o atributo da raiz muda
- *         ANTES de o `<body>` entrar no documento (um observador posto antes de a página correr regista a ordem das
- *         duas mudanças), o fundo é o papel escuro e o botão «escuro» diz que está escolhido; um toque em «claro»
- *         volta ao claro e guarda «light», e uma recarga fica clara;
+ *   TM3 · o caminho inteiro do leitor (passagem P4-c, 02.10.2026, achado 5 da leitura a frio do P4: a forma de antes
+ *         guardava «dark» antes de a página correr e só carregava no «claro», e um manipulador que aplicasse o claro a
+ *         todos os cliques passava). Sem nada guardado, a página abre clara, com a cor da mobília do papel claro; um
+ *         toque em «escuro» põe o atributo na raiz, guarda «dark», pinta o papel escuro, troca a cor da mobília e
+ *         diz-se escolhido; uma recarga continua escura, com o atributo da raiz a mudar ANTES de o `<body>` entrar no
+ *         documento (um observador posto antes de a página correr regista a ordem das duas mudanças); um toque em
+ *         «claro» tira o atributo, guarda «light» e devolve a cor da mobília; e uma recarga fica clara;
  *   TM4 · o menu com seis portas numa linha, sem empurrar a página: nas cinco larguras, seis ligações em
  *         `#nav-principal`, todas no mesmo topo e dentro da caixa do menu, e o menu sem conteúdo para além da sua
  *         caixa nem da janela; a 320 e a 360 px, onde as portas não cabem numa linha, o menu dobra, sem passar da
@@ -34,8 +37,9 @@
  *
  * AS PLANTAS (`--prova`) servem a mesma construção com um estrago, pelo servidor desta régua e sem tocar no `dist/`,
  * e cada uma tem de fazer a sua célula falhar com a queixa esperada: a paleta escura pela preferência do sistema
- * (TM1), a guarda tirada do `<head>` e a guarda no fim do `<body>` (TM3), o comando tirado do cabeçalho e um botão
- * com 30 px (TM2), uma sétima porta e a letra do menu de antes do P4 (TM4), e o menu sem dobrar a 320 px (TM4).
+ * (TM1), a guarda tirada do `<head>`, a guarda no fim do `<body>` e, desde a P4-c, um manipulador que aplica o claro
+ * a todos os cliques (TM3), o comando tirado do cabeçalho e um botão com 30 px (TM2), uma sétima porta e a letra do
+ * menu de antes do P4 (TM4), e o menu sem dobrar a 320 px (TM4).
  *
  *   node tests/inicio/tema-e-menu.mjs [--prova] [--json <ficheiro>]      (OEDP_DIST mede outra construção)
  */
@@ -69,7 +73,7 @@ const rgb = (hex) => `rgb(${parseInt(hex.slice(1, 3), 16)}, ${parseInt(hex.slice
 /* --------------------------------------------------------------- o servidor, com o estrago da planta ativa */
 const tipos = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
   '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.json': 'application/json', '.png': 'image/png', '.ico': 'image/x-icon' };
-/** @type {{ html?: (s: string) => string, css?: (s: string) => string } | null} */
+/** @type {{ html?: (s: string) => string, css?: (s: string) => string, js?: (s: string) => string } | null} */
 let estrago = null;
 const servidor = http.createServer(async (q, r) => {
   try {
@@ -80,6 +84,7 @@ const servidor = http.createServer(async (q, r) => {
     r.setHeader('Content-Type', tipos[ext] ?? 'application/octet-stream');
     if (estrago?.html && ext === '.html') return r.end(estrago.html(await fs.readFile(f, 'utf8')));
     if (estrago?.css && ext === '.css') return r.end(estrago.css(await fs.readFile(f, 'utf8')));
+    if (estrago?.js && ext === '.js') return r.end(estrago.js(await fs.readFile(f, 'utf8')));
     r.end(await fs.readFile(f));
   } catch { r.writeHead(404).end(); }
 });
@@ -127,6 +132,7 @@ const estadoDaPagina = (p) => p.evaluate(() => {
   return {
     atributo: document.documentElement.getAttribute('data-theme'),
     fundo: getComputedStyle(document.body).backgroundColor,
+    cor: document.querySelector('meta[name="theme-color"]')?.getAttribute('content')?.toLowerCase() ?? null,
     guardado: (() => { try { return localStorage.getItem('tema'); } catch { return 'recusado'; } })(),
     comando: g ? { hidden: g.hidden, caixa: caixa(g), noCabecalho: !!g.closest('header'),
       botoes: [...g.querySelectorAll('button[data-tema]')].map((b) => ({ tema: b.getAttribute('data-tema'), premido: b.getAttribute('aria-pressed'), caixa: caixa(b), texto: b.textContent.trim() })) } : null,
@@ -182,26 +188,45 @@ async function tm2(rota, largura) {
 }
 
 async function tm3(rota, largura) {
-  const { ctx, p } = await abre(rota, largura, { guardado: 'dark' });
-  const onde = `${rota} a ${largura} px, «dark» guardado`;
+  const { ctx, p } = await abre(rota, largura);
+  const onde = `${rota} a ${largura} px, sem nada guardado`;
   const f = [];
+  /* Dois quadros depois de um toque: a mudança das fichas faz uma transição de 0,01 ms (a folha encurta-as com o
+     movimento reduzido), e uma transição só acaba quando o navegador pinta; lido no mesmo quadro, o fundo ainda é o de
+     partida. */
+  const pinta = () => p.evaluate(() => new Promise((ok) => requestAnimationFrame(() => requestAnimationFrame(ok))));
+  const premidos = (e) => e.comando?.botoes.map((b) => `${b.tema}:${b.premido}`).join(' ');
   try {
-    const e = await estadoDaPagina(p);
-    const iTema = e.ordem?.indexOf('tema') ?? -1;
-    const iCorpo = e.ordem?.indexOf('corpo') ?? -1;
-    if (iTema < 0 || iCorpo < 0 || iTema > iCorpo) f.push(`TM3 · ${onde}: a escolha não se aplicou antes da primeira pintura (ordem lida: ${JSON.stringify(e.ordem)}).`);
-    if (e.atributo !== 'dark' || e.fundo !== rgb(PAPEL_ESCURO)) f.push(`TM3 · ${onde}: a raiz diz «${e.atributo}» e o fundo é ${e.fundo}; o papel escuro é ${rgb(PAPEL_ESCURO)}.`);
-    const premidos = e.comando?.botoes.map((b) => `${b.tema}:${b.premido}`).join(' ');
-    if (premidos !== 'light:false dark:true') f.push(`TM3 · ${onde}: os botões dizem ${premidos}.`);
-    await p.click('header [data-tema-controlo] button[data-tema="light"]');
-    /* Dois quadros: a mudança das fichas faz uma transição de 0,01 ms (a folha encurta-as com o movimento reduzido),
-       e uma transição só acaba quando o navegador pinta; lido no mesmo quadro, o fundo ainda é o de partida. */
-    await p.evaluate(() => new Promise((ok) => requestAnimationFrame(() => requestAnimationFrame(ok))));
-    const depois = await estadoDaPagina(p);
-    if (depois.atributo !== null || depois.fundo !== rgb(PAPEL_CLARO) || depois.guardado !== 'light') f.push(`TM3 · ${onde}: o toque em «claro» deixou a raiz «${depois.atributo}», o fundo ${depois.fundo} e a chave «${depois.guardado}».`);
+    const inicio = await estadoDaPagina(p);
+    if (inicio.atributo !== null || inicio.fundo !== rgb(PAPEL_CLARO) || inicio.guardado !== null || inicio.cor !== PAPEL_CLARO) {
+      f.push(`TM3 · ${onde}: a página não abriu clara (raiz «${inicio.atributo}», fundo ${inicio.fundo}, chave «${inicio.guardado}», cor da mobília ${inicio.cor}).`);
+    }
+    /* O LEITOR ESCOLHE O ESCURO PELO BOTÃO. */
+    await p.click('header [data-tema-controlo] button[data-tema="dark"]');
+    await pinta();
+    const escuro = await estadoDaPagina(p);
+    if (escuro.atributo !== 'dark' || escuro.guardado !== 'dark' || escuro.fundo !== rgb(PAPEL_ESCURO) || escuro.cor !== PAPEL_ESCURO || premidos(escuro) !== 'light:false dark:true') {
+      f.push(`TM3 · ${onde}: o toque em «escuro» deixou a raiz «${escuro.atributo}», a chave «${escuro.guardado}», o fundo ${escuro.fundo}, a cor da mobília ${escuro.cor} e os botões ${premidos(escuro)}; o escuro é a raiz «dark», a chave «dark», o fundo ${rgb(PAPEL_ESCURO)} e a cor ${PAPEL_ESCURO}.`);
+    }
+    /* A RECARGA CONTINUA ESCURA, E O ESCURO APLICA-SE ANTES DA PRIMEIRA PINTURA. */
     await p.reload({ waitUntil: 'networkidle' });
-    const recarga = await estadoDaPagina(p);
-    if (recarga.atributo !== null || recarga.fundo !== rgb(PAPEL_CLARO)) f.push(`TM3 · ${onde}: depois de escolher o claro, a recarga voltou a «${recarga.atributo}» (${recarga.fundo}).`);
+    const recargaEscura = await estadoDaPagina(p);
+    const iTema = recargaEscura.ordem?.indexOf('tema') ?? -1;
+    const iCorpo = recargaEscura.ordem?.indexOf('corpo') ?? -1;
+    if (iTema < 0 || iCorpo < 0 || iTema > iCorpo) f.push(`TM3 · ${onde}: depois de escolher o escuro, a escolha não se aplicou antes da primeira pintura (ordem lida: ${JSON.stringify(recargaEscura.ordem)}).`);
+    if (recargaEscura.atributo !== 'dark' || recargaEscura.fundo !== rgb(PAPEL_ESCURO) || recargaEscura.cor !== PAPEL_ESCURO || premidos(recargaEscura) !== 'light:false dark:true') {
+      f.push(`TM3 · ${onde}: depois de escolher o escuro, a recarga deu a raiz «${recargaEscura.atributo}», o fundo ${recargaEscura.fundo}, a cor da mobília ${recargaEscura.cor} e os botões ${premidos(recargaEscura)}.`);
+    }
+    /* E VOLTA AO CLARO PELO OUTRO BOTÃO. */
+    await p.click('header [data-tema-controlo] button[data-tema="light"]');
+    await pinta();
+    const claro = await estadoDaPagina(p);
+    if (claro.atributo !== null || claro.guardado !== 'light' || claro.fundo !== rgb(PAPEL_CLARO) || claro.cor !== PAPEL_CLARO || premidos(claro) !== 'light:true dark:false') {
+      f.push(`TM3 · ${onde}: o toque em «claro» deixou a raiz «${claro.atributo}», a chave «${claro.guardado}», o fundo ${claro.fundo}, a cor da mobília ${claro.cor} e os botões ${premidos(claro)}.`);
+    }
+    await p.reload({ waitUntil: 'networkidle' });
+    const recargaClara = await estadoDaPagina(p);
+    if (recargaClara.atributo !== null || recargaClara.fundo !== rgb(PAPEL_CLARO) || recargaClara.cor !== PAPEL_CLARO) f.push(`TM3 · ${onde}: depois de escolher o claro, a recarga voltou a «${recargaClara.atributo}» (${recargaClara.fundo}, cor ${recargaClara.cor}).`);
   } finally { await ctx.close(); }
   return f;
 }
@@ -239,9 +264,15 @@ try {
 
   if (prova) {
     const guarda = /<script>\(function\(\)\{try\{if\(localStorage\.getItem\('tema'\)==='dark'\)[\s\S]*?<\/script>/;
+    const MANIPULADOR = "aplica(botao.getAttribute('data-tema') === ESCURO ? ESCURO : CLARO, true);";
+    const tema = await fs.readFile(path.join(DIST, 'js', 'tema.js'), 'utf8');
+    if (!tema.includes(MANIPULADOR)) falhas.push('A planta do manipulador não se planta: o guião do tema já não tem a linha que ela troca.');
     const PLANTAS = [
       ['a paleta escura pela preferência do sistema', { css: (s) => `${s}@media (prefers-color-scheme:dark){:root{--paper:${PAPEL_ESCURO}}}` }, () => tm1('/', 390), /TM1 · .*o fundo é rgb/],
       ['a guarda tirada do <head>', { html: (s) => s.replace(guarda, '') }, () => tm3('/lugares/', 390), /TM3 · .*não se aplicou antes da primeira pintura/],
+      /* P4-c (achado 5): o manipulador do comando passa a aplicar o claro a todos os cliques. A troca tem de acontecer no
+         guião servido, e a planta di-lo se o texto do manipulador mudar e a troca não se fizer. */
+      ['um manipulador que aplica o claro a todos os cliques', { js: (s) => s.replace(MANIPULADOR, 'aplica(CLARO, true);') }, () => tm3('/', 390), /TM3 · .*o toque em «escuro» deixou a raiz «null»/],
       ['a guarda no fim do <body>', { html: (s) => { const m = guarda.exec(s); return m ? s.replace(m[0], '').replace('</body>', `${m[0]}</body>`) : s; } }, () => tm3('/en/', 390), /TM3 · .*não se aplicou antes da primeira pintura/],
       ['o comando tirado do cabeçalho', { html: (s) => s.replace(/<div class="tema"[^>]*data-tema-controlo[^>]*>[\s\S]*?<\/div>/, '') }, () => tm2('/uniao-europeia/', 1024), /TM2 · .*não há comando do tema/],
       ['um botão do tema com 30 px', { html: (s) => s.replace('</head>', '<style>.tema-b{min-height:30px!important;min-width:30px!important;height:30px!important}</style></head>') }, () => tm2('/en/places/', 390), /TM2 · .*mede .* px, e o alvo é de 44 por 44/],
