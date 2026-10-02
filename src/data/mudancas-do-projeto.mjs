@@ -41,7 +41,7 @@ export const MUDANCAS_DO_PROJETO = [
       ],
       en: [
         'The INE revised public debt for 2025 to ',
-        { claim: 'divida-publica-2025-notificacao-ine-2026-09', sufixo: ' % of GDP' },
+        { claim: 'divida-publica-2025-notificacao-ine-2026-09', sufixo: '% of GDP' },
         ' in the second notification of 2026 under the excessive deficit procedure, still provisional; the reading of the country now gives both official readings, the INE’s and Eurostat’s, and the value in the Eurostat table changes on 21.10.2026.',
       ],
     },

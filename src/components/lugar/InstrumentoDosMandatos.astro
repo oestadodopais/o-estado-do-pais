@@ -131,7 +131,7 @@ const indiceSeriePartes = !temTempo
   : sobeOuDesce === 0
     ? [
         s.municipio.tempoSerieManteve,
-        { claim: primeiro.indice, sufixo: ' %' },
+        { claim: primeiro.indice, sufixo: '%' },
         s.municipio.tempoSerieB,
         { ref: primeiro.ref },
         s.municipio.tempoSerieIgualD,
@@ -140,11 +140,11 @@ const indiceSeriePartes = !temTempo
       ]
     : [
         sobeOuDesce > 0 ? s.municipio.tempoSerieSubiu : s.municipio.tempoSerieDesceu,
-        { claim: primeiro.indice, sufixo: ' %' },
+        { claim: primeiro.indice, sufixo: '%' },
         s.municipio.tempoSerieB,
         { ref: primeiro.ref },
         s.municipio.tempoSerieC,
-        { claim: ultimo.indice, sufixo: ' %' },
+        { claim: ultimo.indice, sufixo: '%' },
         s.municipio.tempoSerieD,
         { ref: ultimo.ref },
         s.municipio.tempoSerieE,
@@ -561,7 +561,7 @@ const banda = (temTempo ? m.tempo.mandatos : []).map((mandato, i) => {
                           {s.municipio.distanciaTecto}{' '}
                           <Claim id={r.limite} lang={lang} chip={true} sufixo={"\u00A0" + unidadeDaLinha(getClaim(r.limite).unit, lang).texto} />{' · '}
                           {s.municipio.tempoIndice}{' '}
-                          <Claim id={r.indice} lang={lang} chip={true} sufixo=" %" />
+                          <Claim id={r.indice} lang={lang} chip={true} sufixo="%" />
                         </div>
                       ))
                     ) : (

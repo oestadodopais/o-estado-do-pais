@@ -5,11 +5,10 @@
  * =============================================================================
  *
  * PORQUE EXISTE. O brief K2 manda que todos os valores do sítio sigam um só formato, o da casa: os milhares separados,
- * a vírgula decimal, e o espaço antes de «%» e do símbolo. A construção de base do bloco (a cabeça `1722244d`) tinha
- * o «%» colado ao valor em 701 sítios de 623 páginas (a leitura de cada concelho, as frases dos estudos no índice e
- * nas fichas, os valores de referência da página da União, o registo das correções inglês), ao lado do espaço que os
- * cartões e as leituras já escreviam desde o C1. Nenhuma célula conferia isto: o portão de HTML compara o valor com a
- * linha, e não o que está à volta dele.
+ * a vírgula decimal, e o espaço antes de «%» e do símbolo. Nenhuma célula conferia isto: o portão de HTML compara o
+ * valor com a linha, e não a forma em que ele se escreve nem o que está à volta dele. A construção de base do bloco
+ * (a cabeça `1722244d`) tinha 42 valores com os milhares fora da forma da casa (as contagens da prova, escritas sem
+ * separador), e nenhum com o ponto decimal ou o hífen.
  *
  * O FORMATO DA CASA, como as decisões em vigor o escrevem:
  *   · F1 · os milhares: a parte inteira de um valor com quatro algarismos ou mais agrupa-se de três em três, com o
@@ -19,17 +18,25 @@
  *          `src/components/Claim.astro`). O brief diz «espaço fino»: o que a página escreve é esse mesmo separador,
  *          no ponto de código que a letra desenha, e o relatório do bloco di-lo;
  *   · F2 · a vírgula decimal: nenhum ponto entre algarismos de um valor;
- *   · F3 · o sinal menos tipográfico (U+2212), e não o hífen;
- *   · F4 · o espaço antes do símbolo: um valor seguido de «%» ou de «€» leva um espaço entre os dois (U+0020 ou
- *          U+00A0), e nunca o símbolo colado.
+ *   · F3 · o sinal menos tipográfico (U+2212), e não o hífen.
+ *
+ * O SÍMBOLO DEPOIS DO VALOR CONTA-SE E NÃO SE EXIGE: É O PONTO EM QUE O BLOCO PAROU. O brief pede o espaço antes de
+ * «%»; as decisões escritas pedem o contrário: a §1.43 (a identidade v2, decisão 4: «A percentagem escreve-se colada
+ * ao número»), a §1.44 (o item 5: «O sinal de percentagem cola-se ao número», com `valorComUnidade()` em
+ * `src/lib/livro.mjs`) e a `IDENTIDADE.md` §11. Um bloco não desfaz uma decisão escrita por causa de uma frase do
+ * brief (a lição da N1, na §1.144), e por isso o K2 não muda o «%» de nenhuma página: mede e diz. A construção de base
+ * tinha o «%» colado a um valor em 701 sítios e separado por um espaço em 1 845, e o «€» separado em 24 e colado em
+ * nenhum (contados por esta célula sobre essa construção, e o relatório do bloco cita o ficheiro); a célula conta as
+ * duas formas em cada construção (`contas.simbolo`) e escreve-as na sua linha, até o lugar de direção decidir qual é a
+ * da casa. Nesse dia a regra volta a ser uma conferência, com a sua planta.
  *
  * O QUE LÊ. Todas as páginas construídas, menos os documentos alojados dos estudos (`/estudos/<slug>/documento/` e
  * `/en/studies/<slug>/document/`, servidos byte a byte como foram publicados, com os números de quem os escreveu).
  * Os valores são o texto dos elementos marcados como origem de um número: `data-claim` (uma linha do livro-razão),
  * `data-ponto` (um ponto de uma série), `data-prova` (uma contagem da prova) e `data-nonledger="limiar-do-quadro"`
- * (um valor de referência). As F1 a F3 correm nesses; a F4 corre também nos outros algarismos declarados por
- * `data-nonledger` (a escala de um instrumento, a numeração), que a gramática das leituras escreve sem separador de
- * milhares (`{ nl }` só aceita algarismos e vírgula). Um elemento com filhos não se lê aqui: o valor de cada origem é
+ * (um valor de referência). As F1 a F3 correm nesses; a contagem do símbolo corre também nos outros algarismos
+ * declarados por `data-nonledger` (a escala de um instrumento, a numeração), que a gramática das leituras escreve sem
+ * separador de milhares (`{ nl }` só aceita algarismos e vírgula). Um elemento com filhos não se lê aqui: o valor de cada origem é
  * um nó de texto só, e é assim que o `Claim`, o `PontoDaSerie` e o `ValorDaProva` o escrevem.
  *
  * O QUE NÃO FAZ: não lê os números dos documentos alojados, nem os que um estudo transcreve no seu corpo
@@ -72,7 +79,7 @@ const daCasa = (t) => /^\u2212?\d{1,3}(?:\u00a0\d{3})*(?:,\d+)?$/.test(t) || /^\
 export function conferirFormatoDaPagina(html, rel) {
   /** @type {{ regra: string, rel: string, valor: string, contexto: string }[]} */
   const desvios = [];
-  const contas = { valores: 0, simbolos: 0 };
+  const contas = { valores: 0, simbolos: 0, simbolo: { '%': { colado: 0, com_espaco: 0 }, '€': { colado: 0, com_espaco: 0 } } };
   for (const m of html.matchAll(ELEMENTO)) {
     const [inteiro, , atributos, marca, chave, cru] = m;
     if (/\bdata-registo/.test(atributos)) continue;
@@ -88,16 +95,14 @@ export function conferirFormatoDaPagina(html, rel) {
       else if (/\d\.\d/.test(texto) && !/^\d{1,3}(\.\d{3})+$/.test(texto)) desvios.push({ regra: 'F2', rel, valor: texto, contexto });
       else if (!daCasa(texto)) desvios.push({ regra: 'F1', rel, valor: texto, contexto });
     }
-    /* F4: o primeiro carácter visível depois do elemento, saltando a etiqueta do sufixo do `Claim` e as do fecho. */
+    /* O SÍMBOLO DEPOIS DO VALOR, contado: o texto que vem a seguir ao elemento, sem as etiquetas (a do sufixo do
+       `Claim`, as do fecho, a do selo), começa por «%» ou «€» colados, ou por um espaço e o símbolo. */
     contas.simbolos++;
-    const depois = html.slice(m.index + inteiro.length, m.index + inteiro.length + 200)
-      .replace(/^(?:\s*<\/[a-z]+>)*/i, '')
-      .replace(/^<span class="claim-sufixo"[^>]*>/, '');
-    const primeiro = desfaz(depois.replace(/^(<[^>]+>)+/, '')).slice(0, 1);
-    const colado = desfaz(depois).slice(0, 1);
-    if (colado === '%' || colado === '€' || (primeiro !== colado && (primeiro === '%' || primeiro === '€') && !/\s/.test(colado))) {
-      desvios.push({ regra: 'F4', rel, valor: texto, contexto });
-    }
+    const seguinte = desfaz(html.slice(m.index + inteiro.length, m.index + inteiro.length + 200).replace(/<[^>]+>/g, ''));
+    const colado = /^[%€]/.exec(seguinte);
+    const separado = /^[ \u00a0]([%€])/.exec(seguinte);
+    if (colado) contas.simbolo[colado[0]].colado++;
+    else if (separado) contas.simbolo[separado[1]].com_espaco++;
   }
   return { desvios, contas };
 }
@@ -124,11 +129,12 @@ export function paginasDoFormato(dist) {
 export function conferirFormatoDosNumeros(dist) {
   const paginas = paginasDoFormato(dist);
   const desvios = [];
-  const contas = { paginas: paginas.length, valores: 0, simbolos: 0, por_regra: { F1: 0, F2: 0, F3: 0, F4: 0 } };
+  const contas = { paginas: paginas.length, valores: 0, simbolos: 0, simbolo: { '%': { colado: 0, com_espaco: 0 }, '€': { colado: 0, com_espaco: 0 } }, por_regra: { F1: 0, F2: 0, F3: 0 } };
   for (const rel of paginas) {
     const r = conferirFormatoDaPagina(fs.readFileSync(path.join(dist, rel), 'utf8'), rel);
     contas.valores += r.contas.valores;
     contas.simbolos += r.contas.simbolos;
+    for (const sim of ['%', '€']) for (const k of ['colado', 'com_espaco']) contas.simbolo[sim][k] += r.contas.simbolo[sim][k];
     for (const d of r.desvios) {
       contas.por_regra[d.regra]++;
       desvios.push(d);
@@ -153,10 +159,6 @@ export function plantasDoFormato(dist) {
       estraga: (h) => h.replace(/(data-claim="taxa-de-emprego-2025"[^>]*>)(\d+),(\d+)</, '$1$2.$3<') },
     { nome: 'F3 · o hífen no lugar do sinal menos', rel: 'estado-e-economia/index.html', regra: 'F3',
       estraga: (h) => h.replace(/(data-claim="posicao-de-investimento-internacional-2025"[^>]*>)(?:\u2212|&#8722;|&minus;)/, '$1-') },
-    { nome: 'F4 · o «%» colado ao valor por um sufixo', rel: 'emprego/index.html', regra: 'F4',
-      estraga: (h) => h.replace(/(data-claim="taxa-de-emprego-2025"[^>]*>[^<]*<\/span>)/, '$1<span class="claim-sufixo">%</span>') },
-    { nome: 'F4 · o «%» colado a um valor de referência', rel: 'uniao-europeia/index.html', regra: 'F4',
-      estraga: (h) => h.replace(/(data-nonledger="limiar-do-quadro"[^>]*>\d+<\/span>) ?%/, '$1%') },
   ];
   return casos.map((p) => {
     const limpo = conferirFormatoDaPagina(ler(p.rel), p.rel).desvios;
@@ -179,10 +181,11 @@ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.ar
   if (r.contas.valores === 0) erros.push('a célula não leu valor nenhum: o leitor está cego');
   const j = process.argv.indexOf('--json');
   if (j >= 0) fs.writeFileSync(process.argv[j + 1], JSON.stringify({ contas: r.contas, desvios: r.desvios, plantas }, null, 2) + '\n');
-  console.log(`formato dos números · ${r.contas.paginas} páginas, ${r.contas.valores} valores, ${r.contas.simbolos} algarismos declarados vistos à procura do símbolo colado` +
-    (plantas.length ? ` · ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas a morder` : ''));
+  console.log(`formato dos números · ${r.contas.paginas} páginas, ${r.contas.valores} valores` +
+    (plantas.length ? ` · ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas a morder` : '') +
+    ` · o símbolo depois de ${r.contas.simbolos} algarismos declarados, contado e não exigido (o ponto parado do K2): «%» ${r.contas.simbolo['%'].colado} colado(s) e ${r.contas.simbolo['%'].com_espaco} com espaço, «€» ${r.contas.simbolo['€'].colado} colado(s) e ${r.contas.simbolo['€'].com_espaco} com espaço`);
   for (const e of erros.slice(0, 40)) console.error(`  ✗ ${e}`);
   if (erros.length > 40) console.error(`  … e mais ${erros.length - 40}`);
-  if (!erros.length) console.log('  ✓ todos os valores rendidos estão no formato da casa: os milhares com U+00A0, a vírgula decimal, o sinal menos e o espaço antes de «%» e de «€».');
+  if (!erros.length) console.log('  ✓ todos os valores rendidos estão no formato da casa: os milhares com U+00A0, a vírgula decimal e o sinal menos.');
   process.exitCode = erros.length ? 1 : 0;
 }
