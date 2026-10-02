@@ -33,7 +33,9 @@ function planta(nome,script,alteracoes,mordidas) {
  const originais=new Map(alteracoes.map(([f])=>[f,fs.readFileSync(path.join('dist',f),'utf8')]));
  let r;
  try {
-  for(const [f,fn] of alteracoes){const raiz=parse(originais.get(f));fn(raiz);const texto=raiz.toString();if(texto===originais.get(f))throw Error(`${nome}: a planta não mudou ${f}`);fs.writeFileSync(path.join('dist',f),texto);}
+  /* S1 (02.10.2026): um ficheiro `.xml` (o mapa do sítio) não passa pelo leitor de HTML, que o reescrevia: a planta
+     recebe o texto e devolve o texto. As outras continuam como eram. */
+  for(const [f,fn] of alteracoes){let texto;if(f.endsWith('.xml'))texto=fn(originais.get(f));else{const raiz=parse(originais.get(f));fn(raiz);texto=raiz.toString();}if(texto===originais.get(f))throw Error(`${nome}: a planta não mudou ${f}`);fs.writeFileSync(path.join('dist',f),texto);}
   r=spawnSync(process.execPath,[script],{encoding:'utf8',maxBuffer:64*1024*1024});
  }finally{for(const [f,s] of originais)fs.writeFileSync(path.join('dist',f),s);}
  const saida=r.stdout+r.stderr;
@@ -403,3 +405,31 @@ planta('p4d-mapa-unidade-antiga','scripts/gate-html.mjs',[
 planta('p4d-mapa-unidade-fora-da-legenda','scripts/gate-html.mjs',[
  ['en/places/index.html',r=>r.querySelector('[data-contexto-municipal="indice"]').insertAdjacentHTML('beforeend','<span data-unidade-da-casa-do-mapa="indice">% of the three-year average revenue</span>')]
 ],[/P4-d: a unidade da casa do mapa «indice» está fora da legenda ou do cabeçalho da tabela/]);
+/* S1 (02.10.2026): a caixa das sugestões. A porta do rodapé conta-se em todas as páginas, uma por página, com o
+   destino e o `?de=` do caminho da página; as páginas do resultado levam `noindex` e ficam fora do mapa do sítio; a
+   nota do que fica guardado é a declarada; o campo armadilhado não se anuncia; o formulário não manda campo nenhum
+   além dos seis; e a página das correções tem a frase com a porta das sugestões. `--prefixo s1-` corre só estas. */
+planta('s1-porta-sugestoes-a-dobrar','scripts/gate-html.mjs',[
+ ['lugares/index.html',r=>r.querySelector('[data-porta-sugestoes]').insertAdjacentHTML('afterend','<span data-porta-sugestoes><a href="/sugestoes?de=%2Flugares">Sugestões</a></span>')]
+],[/S1 porta: esta página tem 2 porta\(s\) das sugestões/]);
+planta('s1-porta-sugestoes-de-errado','scripts/gate-html.mjs',[
+ ['temas/index.html',r=>r.querySelector('[data-porta-sugestoes] a').setAttribute('href','/sugestoes?de=%2Flugares')]
+],[/S1 porta: a porta das sugestões diz \?de="\/lugares", e o caminho desta página é "\/temas"/]);
+planta('s1-resultado-sem-noindex','scripts/gate-html.mjs',[
+ ['sugestoes/obrigado/index.html',r=>r.querySelector('meta[name="robots"]').remove()]
+],[/S1 resultado: a página do resultado tem de levar uma marca robots «noindex, follow»/]);
+planta('s1-nota-mudada','scripts/gate-html.mjs',[
+ ['sugestoes/index.html',r=>{const n=r.querySelector('[data-sugestoes-nota]');n.set_content(n.innerHTML.replace('noventa dias','trinta dias'));}]
+],[/S1 formulário \(a nota do que fica guardado\): o texto rendido não é o declarado/]);
+planta('s1-armadilha-anunciada','scripts/gate-html.mjs',[
+ ['en/suggestions/index.html',r=>r.querySelector('[data-sugestoes-armadilha]').removeAttribute('aria-hidden')]
+],[/S1 formulário: o campo armadilhado não está fora da árvore de acessibilidade/]);
+planta('s1-campo-a-mais','scripts/gate-html.mjs',[
+ ['sugestoes/index.html',r=>r.querySelector('form').insertAdjacentHTML('afterbegin','<input type="hidden" name="ip" value="0">')]
+],[/S1 formulário: os campos são ip, /]);
+planta('s1-mapa-com-resultado','scripts/gate-html.mjs',[
+ ['sitemap-0.xml',x=>x.replace('</urlset>','<url><loc>https://xn--oestadodopas-2fb.pt/sugestoes/obrigado</loc></url></urlset>')]
+],[/S1 mapa: a página do resultado "\/sugestoes\/obrigado" está no mapa do sítio/]);
+planta('s1-correcoes-sem-a-frase','scripts/gate-html.mjs',[
+ ['correcoes/index.html',r=>r.querySelector('[data-porta-sugestoes-nas-correcoes]').remove()]
+],[/S1 correções: a página tem 0 bloco\(s\) \[data-porta-sugestoes-nas-correcoes\]/]);

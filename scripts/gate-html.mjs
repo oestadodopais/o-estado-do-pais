@@ -9,6 +9,14 @@ import { SUBJECTS } from '../src/data/studies.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa, serieDaLinhaDoPortao } from './series-do-portao.mjs';
 import { faixasDoPortao, linhaDePortugalDoPortao, MEDIDAS_SEM_FAIXA, conferirTabelaDaVista } from './concelhos-do-portao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../src/data/faixa-da-uniao.mjs';
+/* S1 (02.10.2026): a caixa das sugestões, lida por um módulo próprio do portão. */
+import {
+  conferirPortaDasSugestoes,
+  conferirPaginaDasSugestoes,
+  conferirMapaDasSugestoes,
+  conferirRegrasDaBase,
+  plantasDaCaixa,
+} from './sugestoes-do-portao.mjs';
 /**
  * A DEFINIÇÃO DECLARADA DE UMA MEDIDA, COMO TEXTO (a passagem UE1d, 29.09.2026,
  * pelo lugar de direção). As palavras e os algarismos declarados (`nl`) da
@@ -238,6 +246,8 @@ const FORMAS_DO_NOME = [
 ];
 const veONome = (texto) => typeof texto === 'string' && FORMAS_DO_NOME.some((forma) => texto.includes(forma));
 let paginasComONome = 0;
+/** S1 (02.10.2026): as contas da caixa das sugestões, para a saída do portão. */
+const SUGESTOES_NO_PORTAO = { paginas: 0, portas: 0, paginasDaCaixa: 0, enderecosNoMapa: 0, plantas: 0 };
 
 const RESTANTES = path.join(ROOT, 'ortografia', 'restantes.yml');
 
@@ -5229,6 +5239,28 @@ for (const file of ficheirosHtml(DIST)) {
 
   /**
    * ---------------------------------------------------------------------
+   * A PORTA DAS SUGESTÕES, E AS PÁGINAS DA CAIXA (bloco S1, 02.10.2026)
+   * ---------------------------------------------------------------------
+   * Nas mesmas páginas que levam a porta das correções (todas, menos os
+   * documentos alojados, que já saíram do laço), exatamente uma porta das
+   * sugestões, no rodapé e ao lado da das correções, para o formulário da
+   * edição da página e com `?de=` igual ao caminho dela. E nas páginas da caixa
+   * (o formulário, as quatro do resultado e a frase da página das correções), o
+   * que cada uma tem de dizer e de levar, com a lista do `noindex`. As
+   * conferências vivem em `scripts/sugestoes-do-portao.mjs`, e as plantas delas
+   * correm uma vez por corrida, depois do varrimento.
+   */
+  SUGESTOES_NO_PORTAO.paginas++;
+  for (const e of conferirPortaDasSugestoes(root, { caminho, lang: rota?.lang ?? linguaPagina ?? 'pt' })) err(e);
+  if (root.querySelector('[data-porta-sugestoes]')) SUGESTOES_NO_PORTAO.portas++;
+  const errosDaCaixa = conferirPaginaDasSugestoes(root, rota);
+  if (rota && ['sugestoes', 'sugestoesObrigado', 'sugestoesVazia', 'sugestoesLimite', 'sugestoesNaoChegou', 'correcoes'].includes(rota.key)) {
+    SUGESTOES_NO_PORTAO.paginasDaCaixa++;
+  }
+  for (const e of errosDaCaixa) err(e);
+
+  /**
+   * ---------------------------------------------------------------------
    * UM SÓ `<h1>` POR PÁGINA (bloco F1.7, item 3, 04.09.2026)
    * ---------------------------------------------------------------------
    * A regra já existia para os documentos alojados (`verificaDocumento()`) e
@@ -7663,6 +7695,28 @@ for (const file of ficheirosHtml(DIST)) {
 
 /* --------------------------------------------------- depois do varrimento */
 
+/* A CAIXA DAS SUGESTÕES, DEPOIS DO VARRIMENTO (bloco S1, 02.10.2026): as plantas
+   em memória primeiro (cada uma tem de ser recusada pela sua conferência, e uma
+   que não morda fecha a construção), e depois o mapa do sítio construído e as
+   regras do registo da base contra as palavras que o leitor lê. */
+{
+  const ficheiroDaBase = path.join(ROOT, 'supabase', 'migrations', '2026-10-02-caixa-das-sugestoes.sql');
+  if (!fs.existsSync(ficheiroDaBase)) {
+    erros.push({ rel: 'supabase/migrations', msg: 'S1 regras: falta o registo da base da caixa das sugestões, e sem ele as regras que a nota diz não se conferem.' });
+  } else {
+    const sql = fs.readFileSync(ficheiroDaBase, 'utf8');
+    for (const planta of plantasDaCaixa(sql)) {
+      SUGESTOES_NO_PORTAO.plantas++;
+      if (!planta.mordeu) erros.push({ rel: 'scripts/sugestoes-do-portao.mjs', msg: `S1: a planta em memória «${planta.nome}» não mordeu; a conferência dela não vê o que existe para ver.` });
+    }
+    for (const msg of conferirRegrasDaBase(sql)) erros.push({ rel: 'src/data/sugestoes.mjs', msg });
+  }
+  const mapa = conferirMapaDasSugestoes(DIST);
+  SUGESTOES_NO_PORTAO.enderecosNoMapa = mapa.enderecos;
+  for (const msg of mapa.erros) erros.push({ rel: 'dist/sitemap-0.xml', msg });
+  if (SUGESTOES_NO_PORTAO.portas === 0) erros.push({ rel: 'dist', msg: 'S1 porta: a conferência não viu porta das sugestões nenhuma.' });
+}
+
 /**
  * As ligações internas, conferidas contra o que foi construído.
  *
@@ -8695,6 +8749,7 @@ console.log(
       ` · UE1b: ${UE1B.portas} porta(s) dos recibos das linhas para as séries, ${UE1B.legendas} legenda(s) das marcas com ${UE1B.marcasNasLegendas} marca(s)` +
       ` · UE1d: ${UE1D.definicoes} definição(ões) declarada(s) nos recibos das séries` +
       ` · UE1e: ${UE1E.semPortugal} recibo(s) das séries sem Portugal na definição, ${UE1E.formaDaSerie} com a forma do recibo da série (${UE1E.formasDeclaradas} declarada(s))` +
+      ` · S1: ${SUGESTOES_NO_PORTAO.portas} porta(s) das sugestões em ${SUGESTOES_NO_PORTAO.paginas} página(s), ${SUGESTOES_NO_PORTAO.paginasDaCaixa} página(s) da caixa conferida(s), ${SUGESTOES_NO_PORTAO.enderecosNoMapa} endereço(s) lidos no mapa do sítio, ${SUGESTOES_NO_PORTAO.plantas} planta(s) em memória` +
       ` · L2b: ${ORIGENS_DOS_CONCELHOS.lugares} lugar(es), ${ORIGENS_DOS_CONCELHOS.contas} contagem(ns) e ${ORIGENS_DOS_CONCELHOS.empates} empate(s) recontados das linhas dos concelhos, ${ORIGENS_DOS_CONCELHOS.valoresNaFaixa} valor(es) do concelho e ${ORIGENS_DOS_CONCELHOS.portugal} de Portugal nas faixas, pela marca do cartão`,
   ),
 );
