@@ -167,9 +167,8 @@ function paletaDaCasa() {
   };
   const cores = new Set();
   const claro = bloco(':root');
-  const consulta = css.match(/@media\s*\(prefers-color-scheme:\s*dark\)\s*\{\s*(:root\s*\{[^{}]*\})\s*\}/);
-  if (!consulta) throw new Error('a régua não encontrou a paleta escura do sistema em tokens.css');
-  const escuro = { ...claro, ...bloco(':root', consulta[1]) };
+  /* A paleta escura vive no seletor da escolha do leitor (Emenda 12; de volta pelo bloco P4, 02.10.2026). */
+  const escuro = { ...claro, ...bloco(":root[data-theme='dark']") };
   for (const fichas of [claro, escuro]) {
     for (const nome of Object.keys(fichas)) {
       let v = fichas[nome];

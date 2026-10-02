@@ -4963,13 +4963,24 @@ for (const file of ficheirosHtml(DIST)) {
       ligacoesInternas.push({ rel, base: baseDeResolucao(rel, caminho), href });
     }
 
-    /* A cor do navegador acompanha o sistema e continua presa aos tokens. */
+    /* A cor da mobília do navegador é a do papel desta página, e é UMA só (Emenda 12, §1.52; de volta pelo bloco
+       P4, 02.10.2026). Entre 22.09 e 02.10.2026 eram duas, uma por esquema do sistema, porque o escuro seguia o
+       sistema (§1.117); com o claro para toda a gente, uma etiqueta com `media` prometia uma barra escura por cima
+       de uma página clara a quem nunca pediu o escuro. Quem troca a cor é `public/js/tema.js`, com a escolha do
+       leitor, e os papéis dele conferem-se contra os tokens mais abaixo. */
     const cores = root.querySelectorAll('head meta[name="theme-color"]');
-    if (cores.length !== 2) err(`tema do sistema: esperava duas etiquetas theme-color, encontrei ${cores.length}.`);
-    for (const [esquema, papel] of [['light', PAPEL_CLARO], ['dark', PAPEL_ESCURO]]) {
-      const daConsulta = cores.filter(c => c.getAttribute('media') === `(prefers-color-scheme: ${esquema})`);
-      if (daConsulta.length !== 1 || (daConsulta[0]?.getAttribute('content') ?? '').toLowerCase() !== papel)
-        err(`tema do sistema: theme-color de ${esquema} difere do papel declarado ${papel}.`);
+    if (cores.length !== 1) {
+      err(
+        `o <head> tem ${cores.length} etiqueta(s) <meta name="theme-color"> e devia ter uma.\n` +
+          `      Uma por esquema do sistema mentiria: o escuro deste sítio é uma escolha do leitor, ` +
+          `não a preferência do aparelho dele.`,
+      );
+    } else if (cores[0].hasAttribute('media') || (cores[0].getAttribute('content') ?? '').toLowerCase() !== PAPEL_CLARO) {
+      err(
+        `o <meta name="theme-color"> diz "${cores[0].getAttribute('content')}"` +
+          `${cores[0].hasAttribute('media') ? ` com media="${cores[0].getAttribute('media')}"` : ''}, e devia dizer o papel ` +
+          `claro dos tokens, "${PAPEL_CLARO}", sem condição.`,
+      );
     }
 
     const titulo = root.querySelector('head meta[name="apple-mobile-web-app-title"]');
@@ -7702,7 +7713,8 @@ for (const { rel, base, href } of ligacoesInternas) {
     const m = /--paper:\s*(#[0-9a-fA-F]{6})/.exec(dentro);
     return m ? m[1].toLowerCase() : null;
   };
-  const escuroBloco = /@media\s*\(prefers-color-scheme:\s*dark\)\s*\{\s*:root\s*\{([^{}]*)\}/.exec(cru);
+  /* A paleta escura vive no seletor da escolha do leitor (Emenda 12; de volta pelo bloco P4, 02.10.2026). */
+  const escuroBloco = /:root\[data-theme='dark'\]\s*\{([^{}]*)\}/.exec(cru);
   const claro = papel(cru);
   const escuro = escuroBloco ? papel(escuroBloco[1]) : null;
   if (claro !== PAPEL_CLARO) {
@@ -7720,7 +7732,28 @@ for (const { rel, base, href } of ligacoesInternas) {
       msg: `o papel escuro dos tokens é "${escuro}" e site.config.mjs diz "${PAPEL_ESCURO}".`,
     });
   }
-  // O guião deixou de ser servido. A N3 recusa a sua reposição nas páginas.
+  /* E A TERCEIRA CÓPIA, de volta com o guião no bloco P4 (02.10.2026): a que `public/js/tema.js` escreve na
+     etiqueta quando o leitor carrega no botão. É JavaScript servido tal e qual, e por isso lê-se do ficheiro e não
+     se importa. */
+  const relTema = 'public/js/tema.js';
+  const tema = fs.readFileSync(path.join(ROOT, 'public', 'js', 'tema.js'), 'utf8');
+  const naEscolha = /var PAPEL = \{\s*light:\s*'(#[0-9a-fA-F]{6})',\s*dark:\s*'(#[0-9a-fA-F]{6})'/.exec(tema);
+  if (!naEscolha) {
+    erros.push({
+      rel: relTema,
+      msg:
+        `não encontrei os dois papéis (var PAPEL = { light: '…', dark: '…' }).\n` +
+        `      É o que troca a cor da mobília do navegador quando o leitor escolhe o escuro; ` +
+        `sem eles a barra fica a dizer o papel claro por cima de uma página escura.`,
+    });
+  } else if (naEscolha[1].toLowerCase() !== PAPEL_CLARO || naEscolha[2].toLowerCase() !== PAPEL_ESCURO) {
+    erros.push({
+      rel: relTema,
+      msg:
+        `os papéis do controlo do tema são "${naEscolha[1]}" e "${naEscolha[2]}", e os tokens ` +
+        `dizem "${PAPEL_CLARO}" e "${PAPEL_ESCURO}".`,
+    });
+  }
 
 }
 

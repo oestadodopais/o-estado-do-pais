@@ -13,14 +13,25 @@ const pasta=path.join(raiz,'dist');
    passou a atravessar — o registo inteiro, nas duas edições, e a página de um
    lugar com mudanças, que é Évora. Sem elas a régua não vê nenhuma lista de
    lugar nem nenhum registo, e uma régua que não mede nada é verde por engano. */
-/* PP1, 28.09.2026: e as dez páginas das entradas, onde o `check:pais` passou a correr a T9 e os blocos. */
+/* PP1, 28.09.2026: e as dez páginas das entradas, onde o `check:pais` passou a correr a T9 e os blocos.
+   P4, 02.10.2026: as entradas leem-se da declaração. A lista escrita à mão ficou nos endereços de antes do N1
+   (30.09.2026: `/o-meu-dinheiro/` passou a `/precos/`, e as outras com ele), e o executor rebentava na primeira
+   leitura, antes de qualquer planta; são agora as catorze páginas das sete entradas com página própria. */
+import { ENTRADAS } from '../../src/data/primeira-pagina.mjs';
+const rotasDasEntradas=ENTRADAS.filter(e=>!e.existente).flatMap(e=>[e.rota.pt,e.rota.en]).map(r=>`${r.replace(/^\//,'').replace(/\/$/,'')}/index.html`);
 const rotas=['index.html','en/index.html','temas/index.html','en/themes/index.html',
  'correcoes/index.html','en/corrections/index.html',
  'municipios/evora/index.html','en/municipalities/evora/index.html',
  'estudos/index.html','en/studies/index.html',
- ...['o-meu-dinheiro','o-meu-trabalho','a-minha-casa','a-escola-e-a-saude','o-estado-e-a-economia',
-  'en/my-money','en/my-work','en/my-home','en/school-and-health','en/state-and-economy'].map(r=>`${r}/index.html`)];
-const originais=new Map(rotas.map(f=>[f,fs.readFileSync(path.join('dist',f),'utf8')]));
+ /* P4: «Lugares», que a conferência das entradas do `check:pais` lê desde o N1 (o cartão das câmaras vive lá). */
+ 'lugares/index.html','en/places/index.html',
+ ...rotasDasEntradas];
+/* P4, 02.10.2026: e as folhas construídas, que a N3 lê uma vez por corrida (nenhuma consulta à preferência escura
+   do sistema, e a paleta escura no seletor da escolha do leitor). */
+const folhas=fs.readdirSync(path.join('dist','_astro')).filter(f=>f.endsWith('.css')).map(f=>`_astro/${f}`);
+/* E os dois ficheiros do mapa do sítio, que a E5 das entradas lê desde o PP1b. */
+const mapasDoSitio=fs.readdirSync('dist').filter(f=>/^sitemap.*\.xml$/.test(f));
+const originais=new Map([...rotas,...folhas,...mapasDoSitio].map(f=>[f,fs.readFileSync(path.join('dist',f),'utf8')]));
 const resultados=[];
 const repor=()=>{for(const [f,s] of originais){const alvo=path.join(pasta,f);fs.mkdirSync(path.dirname(alvo),{recursive:true});fs.writeFileSync(alvo,s);}};
 const html=(f,fn)=>{const raiz=parse(fs.readFileSync(path.join(pasta,f),'utf8'));fn(raiz);fs.writeFileSync(path.join(pasta,f),raiz.toString());};
@@ -35,12 +46,15 @@ function prova(nome,esperado,preparar=()=>{},antes='') {
 }
 try {
  prova('páginas sem estrago',null);
- const card=parse(originais.get('temas/index.html')).querySelector('[data-cartao-medida]').getAttribute('data-cartao-medida');
- prova('medida rendida sem tema declarado','T2',()=>{},`import {DOMINIO_DAS_MEDIDAS} from './src/data/dominios.mjs';delete DOMINIO_DAS_MEDIDAS[${JSON.stringify(card)}];`);
+ /* P4, 02.10.2026: desde o N1 (30.09.2026) os cartões vivem nas páginas das entradas e não na dos temas, e as
+    células T1 a T8 passaram à célula E das entradas; as cinco plantas abaixo procuravam cartões na página dos temas e
+    rebentavam antes de correr. Passam ao sítio onde os cartões vivem, com a queixa que a célula de hoje dá. */
+ const card=parse(originais.get('precos/index.html')).querySelector('[data-cartao-medida]').getAttribute('data-cartao-medida');
+ prova('medida rendida sem tema declarado','E2',()=>{},`import {DOMINIO_DAS_MEDIDAS} from './src/data/dominios.mjs';delete DOMINIO_DAS_MEDIDAS[${JSON.stringify(card)}];`);
  /* PP1: os cartões saíram da primeira página, e a T3 corre na página dos temas. */
- prova('medida do país no tema errado','T3',()=>html('temas/index.html',r=>{const g=r.querySelectorAll('main [data-tema]');g[0].setAttribute('data-tema',g[1].getAttribute('data-tema'));}));
- prova('medida repetida','T4',()=>html('temas/index.html',r=>{const c=r.querySelector('[data-cartao-medida]');c.insertAdjacentHTML('afterend',c.outerHTML);}));
- prova('medida publicada ausente','T5',()=>html('temas/index.html',r=>r.querySelector('[data-cartao-medida]').remove()));
+ prova('medida do país no assunto errado','E3',()=>html('estado-e-economia/index.html',r=>{const c=r.querySelector('main [data-cartao-medida]');r.querySelector('main').insertAdjacentHTML('beforeend',c.outerHTML);c.remove();}));
+ prova('medida repetida','E3',()=>html('precos/index.html',r=>{const c=r.querySelector('main [data-cartao-medida]');c.insertAdjacentHTML('afterend',c.outerHTML);}));
+ prova('medida publicada ausente','E1',()=>html('en/prices/index.html',r=>r.querySelector('main [data-cartao-medida]').remove()));
  prova('mudança sem secção','M1',()=>{},`import {MUDANCAS_DO_PROJETO} from './src/data/mudancas-do-projeto.mjs';delete MUDANCAS_DO_PROJETO[0].decisao;`);
  prova('mudança com secção inexistente','M1',()=>{},`import {MUDANCAS_DO_PROJETO} from './src/data/mudancas-do-projeto.mjs';MUDANCAS_DO_PROJETO[0].decisao='0.0';`);
  /* B1c · as três células novas, cada uma com a sua planta, e a C1 e a M3 no
@@ -82,14 +96,25 @@ try {
  prova('ordem dos estudos trocada','E1',()=>html('index.html',r=>{const a=r.querySelectorAll('#trabalhos [data-estudo]');const x=a[0].getAttribute('data-estudo');a[0].setAttribute('data-estudo',a[1].getAttribute('data-estudo'));a[1].setAttribute('data-estudo',x);}));
  /* PP1: a leitura do país saiu, e o que a L3 protegia (o recibo de cada número) passou aos blocos. */
  prova('número de um bloco sem recibo','B1',()=>html('index.html',r=>r.querySelector('[data-bloco="trabalho"] [data-bloco-numero="taxa-de-emprego-2025"] a.src-chip').remove()));
- prova('sexta entrada no menu','N1',()=>html('index.html',r=>r.querySelector('#nav-principal').insertAdjacentHTML('beforeend','<a href="/agenda">Agenda</a>')));
+ /* P4, 02.10.2026: o menu tem seis portas; a planta de uma porta a mais passa a ser a sétima, e a da porta da União
+    tirada prova que a sexta é exigida. */
+ prova('sétima entrada no menu','N1',()=>html('index.html',r=>r.querySelector('#nav-principal').insertAdjacentHTML('beforeend','<a href="/agenda">Agenda</a>')));
+ prova('a porta da União tirada do menu','N1',()=>html('en/index.html',r=>r.querySelector('#nav-principal a[href="/en/european-union"]').remove()));
+ /* P4, 02.10.2026: a N3 inverteu-se (o claro por omissão, o escuro só pela escolha do leitor), e cada coisa que ela
+    exige tem a sua planta. */
+ prova('a página servida já com o escuro','N3',()=>html('index.html',r=>r.querySelector('html').setAttribute('data-theme','dark')));
+ prova('o comando do tema tirado do cabeçalho','N3',()=>html('temas/index.html',r=>r.querySelector('header [data-tema-controlo]').remove()));
+ prova('o comando do tema servido à vista, sem guião','N3',()=>html('estudos/index.html',r=>r.querySelector('header [data-tema-controlo]').removeAttribute('hidden')));
+ prova('a guarda do tema a seguir o sistema','N3',()=>html('en/themes/index.html',r=>{const s=r.querySelectorAll('head script:not([src])').find(x=>x.textContent.includes('data-theme'));s.set_content("(function(){if(matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.setAttribute('data-theme','dark')}})()");}));
+ prova('o guião adiado do tema tirado','N3',()=>html('correcoes/index.html',r=>r.querySelector('script[src="/js/tema.js"]').remove()));
+ prova('uma folha com o escuro pela preferência do sistema','N3',()=>{const f=path.join(pasta,folhas[0]);fs.writeFileSync(f,fs.readFileSync(f,'utf8')+'@media (prefers-color-scheme:dark){:root{--paper:#15171a}}');});
  /* R1, 23.09.2026: as quatro células novas ou mudadas deste bloco, cada uma com a
     sua planta. A M4 recusa a língua do código nas mudanças declaradas (I141); a
     T9 exige a cor do estado nos cartões com referência (I139); a E2 exige a
     lista dos estudos numa só (I144); a L2 exige a data da notificação do INE tal
     como a linha a publica (I147). */
  prova('mudança declarada na língua do código','M4',()=>{},`import {MUDANCAS_DO_PROJETO} from './src/data/mudancas-do-projeto.mjs';MUDANCAS_DO_PROJETO[0].texto.pt='Sete nomes do INE saíram dos recibos e dos cartões. Nenhum valor mudou.';`);
- prova('cartão fora do valor de referência pintado de dentro','T9',()=>html('temas/index.html',r=>{const q=r.querySelector('[data-regua="referencia"] .sq-fora');q.setAttribute('class','sq sq-dentro');}));
+ prova('cartão fora do valor de referência pintado de dentro','T9',()=>html('estado-e-economia/index.html',r=>{const q=r.querySelector('[data-regua="referencia"] .sq-fora');q.setAttribute('class','sq sq-dentro');}));
  prova('lista dos estudos com a ordem trocada','E2',()=>html('estudos/index.html',r=>{const a=r.querySelectorAll('main [data-estudo]');const x=a[0].getAttribute('data-estudo');a[0].setAttribute('data-estudo',a[1].getAttribute('data-estudo'));a[1].setAttribute('data-estudo',x);}));
  prova('a secção por lugar de volta','E2',()=>html('en/studies/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<section id="por-lugar"><h2>By place</h2></section>')));
  /* PP1: a data da notificação do INE vive na peça do bloco da dívida, e a célula dos blocos compara-a. */
