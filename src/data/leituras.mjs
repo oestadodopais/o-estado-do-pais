@@ -31,6 +31,21 @@ import { unidadeDaLinha } from '../i18n/unidades.mjs';
 /** @param {string} id @param {string} lang */
 const unidade = (id, lang) => unidadeDaLinha(getClaim(id).unit, lang).texto;
 
+/* OS TERMOS EXPLICADOS (bloco K2, 02.10.2026, item 7 do brief; I182). Três termos das leituras dos estudos não diziam
+   a um leitor comum o que são, e as frases ganham a explicação sem mudar um número nem a origem registada de cada uma
+   (o campo `origem` fica como estava). Cada explicação assenta numa frase do próprio estudo:
+     · a designação de pelouro: «Um pelouro é uma atribuição política feita por despacho do presidente» (os dois
+       documentos dos pelouros, `studies-src/evora-quem-governou-a-camara-2009-2025/pt.html` e
+       `studies-src/evora-os-pelouros-quem-os-teve-o-que-fizeram/pt.html`), com as áreas que as listas de pelouros
+       nomeiam (as finanças, a habitação, a cultura);
+     · a localização de projeto vencida: «uma linha por localização de projeto» do ficheiro de distribuição geográfica,
+       e «uma data prevista de conclusão já passada à data do instantâneo, sem data efetiva de conclusão registada»
+       (`studies-src/evora-economia-e-dinheiro-publico-de-fora-da-camara/pt.html`, a secção «O que significa «dentro do
+       prazo» nestes dados, e o que está vencido»);
+     · o valor atuarialmente neutro e as duas portas: «Quem sai um ano antes é penalizado em 2,75 vezes o custo que
+       impõe ao sistema», «Sem o fator de sustentabilidade, a penalização é sempre inferior à neutra» e «Com o fator de
+       sustentabilidade, a penalização de um ano é de 22,6%»
+       (`studies-src/penalizacoes-por-reforma-antecipada-2026/pt.html`). */
 export const LEITURAS = {
   /* ----------------------------------------------------------------- 04 */
   'evora-prometido-pago-auditado-2026': {
@@ -326,12 +341,12 @@ export const LEITURAS = {
     medidasNota: {
       pt: [
         [
-          'Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa.',
+          'Um pelouro é uma área do trabalho da câmara que o presidente atribui por despacho a um membro do executivo, e cada designação é um pelouro com o seu nome. Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa.',
         ],
       ],
       en: [
         [
-          'Each count is the list of portfolios the council’s page attributes to that person.',
+          'A portfolio is an area of the council’s work that the president assigns by order to a member of the executive, and each designation is one named portfolio. Each count is the list of portfolios the council’s page attributes to that person.',
         ],
       ],
     },
@@ -343,7 +358,7 @@ export const LEITURAS = {
         { claim: 'evora-pelouros-2021-presidente' },
         ' e ',
         { claim: 'evora-pelouros-2021-vice-presidente' },
-        ' designações repartidas por duas pessoas; a câmara instalada em ',
+        ' designações de pelouro repartidas por duas pessoas (um pelouro é uma área do trabalho da câmara que o presidente atribui por despacho a um membro do executivo); a câmara instalada em ',
         { ref: '2025' },
         ' tem ',
         { claim: 'evora-camara-lugares' },
@@ -356,7 +371,7 @@ export const LEITURAS = {
         { claim: 'evora-pelouros-2021-presidente' },
         ' and ',
         { claim: 'evora-pelouros-2021-vice-presidente' },
-        ' designations split between two people; the council installed in ',
+        ' portfolio designations split between two people (a portfolio is an area of the council’s work that the president assigns by order to a member of the executive); the council installed in ',
         { ref: '2025' },
         ' has ',
         { claim: 'evora-camara-lugares' },
@@ -460,12 +475,12 @@ export const LEITURAS = {
     medidasNota: {
       pt: [
         [
-          'Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa.',
+          'Um pelouro é uma área do trabalho da câmara que o presidente atribui por despacho a um membro do executivo, e cada designação é um pelouro com o seu nome. Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa.',
         ],
       ],
       en: [
         [
-          'Each count is the list of portfolios the council’s page attributes to that person.',
+          'A portfolio is an area of the council’s work that the president assigns by order to a member of the executive, and each designation is one named portfolio. Each count is the list of portfolios the council’s page attributes to that person.',
         ],
       ],
     },
@@ -477,7 +492,7 @@ export const LEITURAS = {
         { claim: 'evora-pelouros-2021-presidente' },
         ' e ',
         { claim: 'evora-pelouros-2021-vice-presidente' },
-        ' designações repartidas por duas pessoas; a câmara instalada em ',
+        ' designações de pelouro repartidas por duas pessoas (um pelouro é uma área do trabalho da câmara que o presidente atribui por despacho a um membro do executivo); a câmara instalada em ',
         { ref: '2025' },
         ' tem ',
         { claim: 'evora-camara-lugares' },
@@ -490,7 +505,7 @@ export const LEITURAS = {
         { claim: 'evora-pelouros-2021-presidente' },
         ' and ',
         { claim: 'evora-pelouros-2021-vice-presidente' },
-        ' designations split between two people; the council installed in ',
+        ' portfolio designations split between two people (a portfolio is an area of the council’s work that the president assigns by order to a member of the executive); the council installed in ',
         { ref: '2025' },
         ' has ',
         { claim: 'evora-camara-lugares' },
@@ -557,7 +572,7 @@ export const LEITURAS = {
         { claim: 'evora-prr-municipio-contratado', sufixo: '\u00A0' + unidade('evora-prr-municipio-contratado', 'pt') },
         '. Da soma aprovada para o concelho, ',
         { claim: 'evora-prr-vencido-quota-2026', sufixo: '%' },
-        ' está em localizações de projeto vencidas e ',
+        ' está em localizações de projeto vencidas, isto é, na parte de cada projeto que o registo atribui ao concelho cuja data prevista de conclusão já passou sem conclusão registada, e ',
         { claim: 'evora-prr-execucao-2026', sufixo: '%' },
         ' já foi paga, e as duas partes sobrepõem-se: as localizações vencidas também receberam dinheiro.',
       ],
@@ -568,7 +583,7 @@ export const LEITURAS = {
         { claim: 'evora-prr-municipio-contratado', sufixo: '\u00A0' + unidade('evora-prr-municipio-contratado', 'en') },
         '. Of the sum approved for the municipality, ',
         { claim: 'evora-prr-vencido-quota-2026', sufixo: '%' },
-        ' sits in overdue project locations and ',
+        ' sits in overdue project locations, that is, in the part of each project that the register attributes to the municipality whose planned completion date has passed with no completion recorded, and ',
         { claim: 'evora-prr-execucao-2026', sufixo: '%' },
         ' has been paid, and the two parts overlap: the overdue locations have also received money.',
       ],
@@ -633,7 +648,7 @@ export const LEITURAS = {
     medidasNota: {
       pt: [
         [
-          'A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão.',
+          'O valor atuarialmente neutro é o corte que pagaria exatamente o custo que a antecipação impõe ao sistema. A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão.',
         ],
         /* O FATOR VOLTA À PÁGINA, COM O SEU SELO (I75, 27.08.2026). O valor só
            se rendia na ressalva «A comparação junta duas figuras do relatório»,
@@ -655,7 +670,7 @@ export const LEITURAS = {
       ],
       en: [
         [
-          'For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision.',
+          'The actuarially neutral figure is the cut that would exactly pay for the cost the early retirement imposes on the system. For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision.',
         ],
         [
           'The one-year cut follows from the sustainability factor, ',
@@ -670,7 +685,7 @@ export const LEITURAS = {
         { claim: 'penalizacao-antecipacao-um-ano-sem-factor-2026' },
         ' ou de ',
         { claim: 'penalizacao-antecipacao-um-ano-com-factor-2026' },
-        ', consoante a porta por onde o trabalhador entra, quando o valor atuarialmente neutro calculado pelo próprio relatório é de ',
+        ', consoante a porta por onde o trabalhador entra (uma das exceções que afastam o fator de sustentabilidade, ou a regra geral), quando o valor atuarialmente neutro calculado pelo próprio relatório, o corte que pagaria exatamente o custo que a antecipação impõe ao sistema, é de ',
         { claim: 'penalizacao-antecipacao-um-ano-neutra' },
         ': a lei falha nos dois sentidos, e é mais dura com quem se desvia menos.',
       ],
@@ -679,7 +694,7 @@ export const LEITURAS = {
         { claim: 'penalizacao-antecipacao-um-ano-sem-factor-2026' },
         ' or ',
         { claim: 'penalizacao-antecipacao-um-ano-com-factor-2026' },
-        ', depending on which door the worker comes through, when the actuarially neutral figure calculated by the report itself is ',
+        ', depending on which door the worker comes through (one of the exceptions that set the sustainability factor aside, or the general rule), when the actuarially neutral figure calculated by the report itself, the cut that would exactly pay for the cost the early retirement imposes on the system, is ',
         { claim: 'penalizacao-antecipacao-um-ano-neutra' },
         ': the law misses in both directions, and is harshest on those who deviate least.',
       ],

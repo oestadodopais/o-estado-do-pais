@@ -1,7 +1,7 @@
 {
   "o_que": "as folhas das leituras, das perguntas e das leituras dos estudos que mudaram desde a cabeça de partida",
   "base": "1722244db19b66e523a7eaf9f0b27e770060bab8",
-  "mudancas": 24,
+  "mudancas": 38,
   "fora_da_lista": 0,
   "lista": [
     {
@@ -194,6 +194,118 @@
       "caminho": ".en[4]",
       "antes": null,
       "depois": " and that of women?",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+      "caminho": ".medidasNota.pt[0][0]",
+      "antes": "Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa.",
+      "depois": "Um pelouro é uma área do trabalho da câmara que o presidente atribui por despacho a um membro do executivo, e cada designação é um pelouro com o seu nome. Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa.",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+      "caminho": ".medidasNota.en[0][0]",
+      "antes": "Each count is the list of portfolios the council’s page attributes to that person.",
+      "depois": "A portfolio is an area of the council’s work that the president assigns by order to a member of the executive, and each designation is one named portfolio. Each count is the list of portfolios the council’s page attributes to that person.",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+      "caminho": ".frase.pt[6]",
+      "antes": " designações repartidas por duas pessoas; a câmara instalada em ",
+      "depois": " designações de pelouro repartidas por duas pessoas (um pelouro é uma área do trabalho da câmara que o presidente atribui por despacho a um membro do executivo); a câmara instalada em ",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "evora-os-pelouros-quem-os-teve-o-que-fizeram",
+      "caminho": ".frase.en[6]",
+      "antes": " designations split between two people; the council installed in ",
+      "depois": " portfolio designations split between two people (a portfolio is an area of the council’s work that the president assigns by order to a member of the executive); the council installed in ",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "evora-quem-governou-a-camara-2009-2025",
+      "caminho": ".medidasNota.pt[0][0]",
+      "antes": "Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa.",
+      "depois": "Um pelouro é uma área do trabalho da câmara que o presidente atribui por despacho a um membro do executivo, e cada designação é um pelouro com o seu nome. Cada contagem é a lista de pelouros que a página da câmara atribui a essa pessoa.",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "evora-quem-governou-a-camara-2009-2025",
+      "caminho": ".medidasNota.en[0][0]",
+      "antes": "Each count is the list of portfolios the council’s page attributes to that person.",
+      "depois": "A portfolio is an area of the council’s work that the president assigns by order to a member of the executive, and each designation is one named portfolio. Each count is the list of portfolios the council’s page attributes to that person.",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "evora-quem-governou-a-camara-2009-2025",
+      "caminho": ".frase.pt[6]",
+      "antes": " designações repartidas por duas pessoas; a câmara instalada em ",
+      "depois": " designações de pelouro repartidas por duas pessoas (um pelouro é uma área do trabalho da câmara que o presidente atribui por despacho a um membro do executivo); a câmara instalada em ",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "evora-quem-governou-a-camara-2009-2025",
+      "caminho": ".frase.en[6]",
+      "antes": " designations split between two people; the council installed in ",
+      "depois": " portfolio designations split between two people (a portfolio is an area of the council’s work that the president assigns by order to a member of the executive); the council installed in ",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "caminho": ".frase.pt[6]",
+      "antes": " está em localizações de projeto vencidas e ",
+      "depois": " está em localizações de projeto vencidas, isto é, na parte de cada projeto que o registo atribui ao concelho cuja data prevista de conclusão já passou sem conclusão registada, e ",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "evora-economia-e-dinheiro-publico-de-fora-da-camara",
+      "caminho": ".frase.en[6]",
+      "antes": " sits in overdue project locations and ",
+      "depois": " sits in overdue project locations, that is, in the part of each project that the register attributes to the municipality whose planned completion date has passed with no completion recorded, and ",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "penalizacoes-por-reforma-antecipada-2026",
+      "caminho": ".medidasNota.pt[0][0]",
+      "antes": "A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão.",
+      "depois": "O valor atuarialmente neutro é o corte que pagaria exatamente o custo que a antecipação impõe ao sistema. A quem cabe numa das exceções que afastam o fator de sustentabilidade, a lei corta menos do que o valor neutro. As duas medidas acima são os dois extremos da mesma decisão.",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "penalizacoes-por-reforma-antecipada-2026",
+      "caminho": ".medidasNota.en[0][0]",
+      "antes": "For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision.",
+      "depois": "The actuarially neutral figure is the cut that would exactly pay for the cost the early retirement imposes on the system. For those who fall within one of the exceptions that set the sustainability factor aside, the law cuts less than the neutral figure. The two measures above are the two ends of the same decision.",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "penalizacoes-por-reforma-antecipada-2026",
+      "caminho": ".frase.pt[4]",
+      "antes": ", consoante a porta por onde o trabalhador entra, quando o valor atuarialmente neutro calculado pelo próprio relatório é de ",
+      "depois": ", consoante a porta por onde o trabalhador entra (uma das exceções que afastam o fator de sustentabilidade, ou a regra geral), quando o valor atuarialmente neutro calculado pelo próprio relatório, o corte que pagaria exatamente o custo que a antecipação impõe ao sistema, é de ",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-dos-estudos",
+      "id": "penalizacoes-por-reforma-antecipada-2026",
+      "caminho": ".frase.en[4]",
+      "antes": ", depending on which door the worker comes through, when the actuarially neutral figure calculated by the report itself is ",
+      "depois": ", depending on which door the worker comes through (one of the exceptions that set the sustainability factor aside, or the general rule), when the actuarially neutral figure calculated by the report itself, the cut that would exactly pay for the cost the early retirement imposes on the system, is ",
       "permitida": true
     }
   ]
