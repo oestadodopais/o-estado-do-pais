@@ -1,0 +1,533 @@
+§1.1 · O mapa passou de `<canvas>` para SVG construído no servidor
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:1 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:1 (perto do diff)
+    src/i18n/strings.mjs:2982
+§1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
+    design/especime-v3/INVENTARIO-FRASES.md:1811
+    design/especime-v3/INVENTARIO-FRASES.md:2669
+    design/especime-v3/INVENTARIO-FRASES.md:2899
+    design/especime-v3/INVENTARIO-FRASES.md:320
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:3 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:7 (perto do diff)
+    src/i18n/strings.mjs:559
+§1.4 · `excerpt` ficou `[a verificar]` em quase todas as linhas semeadas
+    design/especime-v3/INVENTARIO-FRASES.md:2346
+    design/especime-v3/INVENTARIO-FRASES.md:2835
+    design/especime-v3/INVENTARIO-FRASES.md:2906
+    design/especime-v3/INVENTARIO-FRASES.md:2923
+    design/especime-v3/INVENTARIO-FRASES.md:2936
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:114
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:116
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:11 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:23 (perto do diff)
+    src/i18n/strings.mjs:1091
+    src/i18n/strings.mjs:1526
+    src/lib/documentos.mjs:1025 (perto do diff)
+    src/lib/documentos.mjs:1169
+    src/lib/documentos.mjs:1262
+    tests/documentos/moldura.mjs:38
+    tests/documentos/moldura.mjs:461
+    tests/inicio/matriz.mjs:637
+§1.5 · A linha de método e a linha de autoria não são traduzidas
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:25 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:39 (perto do diff)
+    src/i18n/strings.mjs:2296
+§1.06 · sem título em DECISIONS.md
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:27 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:45 (perto do diff)
+    src/data/figuras.mjs:1885
+§1.19 · Os estudos migram para dois sítios, não um
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:29 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:49 (perto do diff)
+    scripts/gate-html.mjs:1228
+    scripts/gate-html.mjs:5308
+    scripts/gate-html.mjs:8973
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:33 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:56 (perto do diff)
+    scripts/gate-html.mjs:143
+    scripts/gate-html.mjs:148
+    scripts/gate-html.mjs:2751
+    scripts/gate-html.mjs:2907
+    scripts/gate-html.mjs:3603
+    scripts/gate-html.mjs:3807
+    scripts/gate-html.mjs:3821
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    design/especime-v3/CHAVES-EN.md:525
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:41 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:67 (perto do diff)
+    scripts/gate-html.mjs:2630
+    scripts/gate-html.mjs:880
+    scripts/gate-html.mjs:914
+§1.34 · O primeiro tipo de página de município, e o que ele se recusa a dizer
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:47 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:76 (perto do diff)
+    scripts/gate-html.mjs:3242
+    scripts/gate-html.mjs:3351
+    scripts/gate-html.mjs:4046
+    scripts/gate-html.mjs:7222
+§1.35 · As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:52 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:84 (perto do diff)
+    src/i18n/strings.mjs:2840
+§1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:54 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:90 (perto do diff)
+    scripts/gate-html.mjs:5138
+    src/i18n/strings.mjs:357
+    src/i18n/strings.mjs:414
+§1.37 · O selo do cabeçalho passa a ser só o glifo
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:58 (perto do diff)
+    src/styles/site.css:1210
+§1.38 · A ortografia do sítio passa a ser uma só
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:60 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:98 (perto do diff)
+    scripts/check-ledger.mjs:1143
+    scripts/check-ledger.mjs:703
+    scripts/check-ledger.mjs:729
+    scripts/check-ledger.mjs:856
+    scripts/check-ledger.mjs:966
+§1.39 · O sítio passa a dizer o que é, e o Método a provar o que faz
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:66 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:103 (perto do diff)
+    scripts/gate-html.mjs:5013 (perto do diff)
+    scripts/gate-html.mjs:8127
+    scripts/gate-html.mjs:8841
+    src/i18n/strings.mjs:1736
+    src/i18n/strings.mjs:401
+    src/layouts/Base.astro:44 (perto do diff)
+    src/styles/site.css:1212
+§1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:74 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:113 (perto do diff)
+    scripts/gate-html.mjs:288
+    scripts/gate-html.mjs:380
+    scripts/gate-html.mjs:3910
+    scripts/gate-html.mjs:79
+    src/i18n/strings.mjs:2203
+    src/i18n/strings.mjs:2208
+§1.41 · A revisão cruzada do bloco V, e o que ela mudou
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:81 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:124 (perto do diff)
+    scripts/check-ledger.mjs:727
+    scripts/gate-html.mjs:3043
+    scripts/gate-html.mjs:3086
+§1.42 · Segunda revisão cruzada do bloco V
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:85 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:130 (perto do diff)
+    scripts/gate-html.mjs:3065
+    scripts/gate-html.mjs:3086
+    scripts/gate-html.mjs:3479
+    scripts/gate-html.mjs:7513
+§1.43 · A identidade v2: a direção S construída
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:90 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:563 (perto do diff)
+    src/styles/site.css:3248
+    src/styles/site.css:4578
+    src/styles/site.css:479
+§1.44 · A revisão cruzada da identidade v2
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:94 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:138 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:563 (perto do diff)
+    scripts/gate-html.mjs:906
+    src/data/figuras.mjs:113
+§1.46 · A leitura cruzada do bloco da agenda, e a palavra que faltava ao corte
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:97 (perto do diff)
+    scripts/check-ledger.mjs:992
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:99 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:145 (perto do diff)
+    scripts/gate-html.mjs:915
+    src/i18n/strings.mjs:2383
+    src/styles/site.css:3247
+§1.50 · O redesenho v3 abre: a letra passa a ser alojada aqui, e a cor passa a ser o par de estados
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:103 (perto do diff)
+    scripts/design-bundle.mjs:586
+    scripts/design-bundle.mjs:590
+    scripts/medir-contraste.mjs:197
+    src/styles/site.css:3130
+    src/styles/tokens.css:2
+    src/styles/tokens.css:97 (perto do diff)
+§1.52 · A direção lê a pré-visualização n.º 1: cinco emendas, quatro decisões de forma, e o tema deixa de ser uma pergunta
+    design/especime-v3/CHAVES-EN.md:114
+    design/especime-v3/INVENTARIO-FRASES.md:1269 (perto do diff)
+    design/especime-v3/INVENTARIO-FRASES.md:1272 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:110 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:152 (perto do diff)
+    public/js/tema.js:41 (perto do diff)
+    scripts/check-pais.mjs:440 (perto do diff)
+    scripts/gate-html.mjs:4966 (perto do diff)
+    src/components/ControloDeTema.astro:4 (perto do diff)
+    src/i18n/strings.mjs:274
+    src/layouts/Base.astro:202 (perto do diff)
+    src/layouts/Base.astro:216 (perto do diff)
+    src/lib/tema.mjs:3 (perto do diff)
+    src/styles/site.css:624
+    src/styles/site.css:753 (perto do diff)
+    src/styles/tokens.css:92 (perto do diff)
+    tests/inicio/tema-e-menu.mjs:9 (perto do diff)
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    design/especime-v3/CHAVES-EN.md:400
+    design/especime-v3/CHAVES-EN.md:423
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:116 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:158 (perto do diff)
+    scripts/gate-html.mjs:4022
+    scripts/gate-html.mjs:86
+    scripts/gate-html.mjs:8841
+§1.66 · As correções de UX depois da auditoria de 25.08, bloco A
+    design/especime-v3/INVENTARIO-FRASES.md:1134
+    design/especime-v3/INVENTARIO-FRASES.md:816
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:122 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:169 (perto do diff)
+§1.68 · As páginas dos 308 concelhos
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:125 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:176 (perto do diff)
+    scripts/gate-html.mjs:4809
+    scripts/gate-html.mjs:94
+    src/layouts/Base.astro:105
+§1.75 · As regiões
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:129 (perto do diff)
+    scripts/design-bundle.mjs:1565
+§1.79 · A marca: o «e» minúsculo, e o sítio como aplicação no telemóvel (Emenda 22)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:131 (perto do diff)
+    src/styles/dominio.css:15
+§1.82 · Correções pequenas, quinta passagem (I91, segunda metade; I92): a língua dos nomes e dos rótulos na edição inglesa
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:133 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:182 (perto do diff)
+    scripts/gate-html.mjs:1629
+§1.84 · A primeira página: os nomes do mapa ao lado, com o mapa a responder-lhes, e os dois painéis com nome (Emenda 24)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:135 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:187 (perto do diff)
+    tests/inicio/lista.mjs:40 (perto do diff)
+    tests/inicio/mapa-distritos.mjs:181 (perto do diff)
+    tests/inicio/matriz.mjs:3061 (perto do diff)
+§1.85 · A tipografia: a pergunta das famílias livres fecha sem mudança; a Spectral e a Bitter ficam; o Parnaso depende do pacote de teste do diretor
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:46
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:141 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:197 (perto do diff)
+    src/styles/dominio.css:12
+§1.86 · A identidade fecha: o nome, a marca e os tipos ficam como estão
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:143 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:202 (perto do diff)
+    src/styles/dominio.css:12
+§1.89 · A divulgação pela via B: o rótulo de IA em todas as páginas, a secção da política em `/metodo`, o nome do diretor e a gratuitidade na primeira página
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:145 (perto do diff)
+    src/lib/documentos.mjs:31
+§1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:147 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:208 (perto do diff)
+§1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:149 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:223 (perto do diff)
+    scripts/gate-html.mjs:5961
+    scripts/gate-html.mjs:6894
+    scripts/gate-html.mjs:8141
+    scripts/gate-html.mjs:876
+§1.92 · O corredor a duas velocidades construído como piloto: a pergunta com validadores, o arquivo por sha256 com índice, os dois fluxos com ensaio e real
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:154 (perto do diff)
+    scripts/leituras/decisoes-em-vigor.py:15 (2) (perto do diff)
+§1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
+    design/especime-v3/CHAVES-EN.md:1114
+    design/especime-v3/CHAVES-EN.md:1155
+    design/especime-v3/CHAVES-EN.md:1166
+    design/especime-v3/CHAVES-EN.md:1177
+    design/especime-v3/CHAVES-EN.md:1209
+    design/especime-v3/INVENTARIO-FRASES.md:1255 (perto do diff)
+    design/especime-v3/INVENTARIO-FRASES.md:1299 (perto do diff)
+    design/especime-v3/INVENTARIO-FRASES.md:1304 (perto do diff)
+    design/especime-v3/INVENTARIO-FRASES.md:1558
+    design/especime-v3/INVENTARIO-FRASES.md:1560
+    design/especime-v3/INVENTARIO-FRASES.md:1582
+    design/especime-v3/INVENTARIO-FRASES.md:165
+    design/especime-v3/INVENTARIO-FRASES.md:1662
+    design/especime-v3/INVENTARIO-FRASES.md:172
+    design/especime-v3/INVENTARIO-FRASES.md:182
+    design/especime-v3/INVENTARIO-FRASES.md:1975
+    design/especime-v3/INVENTARIO-FRASES.md:2004
+    design/especime-v3/INVENTARIO-FRASES.md:2005
+    design/especime-v3/INVENTARIO-FRASES.md:2006
+    design/especime-v3/INVENTARIO-FRASES.md:2007
+    design/especime-v3/INVENTARIO-FRASES.md:2149
+    design/especime-v3/INVENTARIO-FRASES.md:2153
+    design/especime-v3/INVENTARIO-FRASES.md:2182
+    design/especime-v3/INVENTARIO-FRASES.md:2253
+    design/especime-v3/INVENTARIO-FRASES.md:247
+    design/especime-v3/INVENTARIO-FRASES.md:2515
+    design/especime-v3/INVENTARIO-FRASES.md:2519
+    design/especime-v3/INVENTARIO-FRASES.md:2551
+    design/especime-v3/INVENTARIO-FRASES.md:2655
+    design/especime-v3/INVENTARIO-FRASES.md:2662
+    design/especime-v3/INVENTARIO-FRASES.md:271
+    design/especime-v3/INVENTARIO-FRASES.md:2713
+    design/especime-v3/INVENTARIO-FRASES.md:291
+    design/especime-v3/INVENTARIO-FRASES.md:298
+    design/especime-v3/INVENTARIO-FRASES.md:3018
+    design/especime-v3/INVENTARIO-FRASES.md:333
+    design/especime-v3/INVENTARIO-FRASES.md:442
+    design/especime-v3/INVENTARIO-FRASES.md:454
+    design/especime-v3/INVENTARIO-FRASES.md:471
+    design/especime-v3/INVENTARIO-FRASES.md:472
+    design/especime-v3/INVENTARIO-FRASES.md:473
+    design/especime-v3/INVENTARIO-FRASES.md:479
+    design/especime-v3/INVENTARIO-FRASES.md:840
+    design/especime-v3/INVENTARIO-FRASES.md:892
+    design/especime-v3/INVENTARIO-FRASES.md:911
+    design/especime-v3/INVENTARIO-FRASES.md:915
+    design/especime-v3/INVENTARIO-FRASES.md:971
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:66
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:67
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:156 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:231 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-png-argumento.txt:1 (perto do diff)
+    scripts/leituras/decisoes-em-vigor.py:111 (perto do diff)
+    scripts/leituras/decisoes-em-vigor.py:22 (perto do diff)
+    src/data/figuras.mjs:2669
+    src/data/figuras.mjs:2939
+    src/i18n/strings.mjs:112
+    src/i18n/strings.mjs:141
+    src/i18n/strings.mjs:1644
+    src/i18n/strings.mjs:1684
+    src/i18n/strings.mjs:207 (perto do diff)
+    src/i18n/strings.mjs:2360
+    src/i18n/strings.mjs:31
+    src/i18n/strings.mjs:80
+    tests/inicio/correcoes-a.mjs:745 (perto do diff)
+§1.99 · A fase 1 do plano, o segundo dia: os nomes e as datas, a acessibilidade e os alvos, a leitura breve no cartão, o conserto a quente das datas dos estudos, e o fecho do dia com cinco ramos a meio
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:231 (perto do diff)
+    tests/inicio/matriz.mjs:530
+§1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
+    design/especime-v3/CHAVES-EN.md:1212
+    design/especime-v3/INVENTARIO-FRASES.md:2004
+    design/especime-v3/INVENTARIO-FRASES.md:2005
+    design/especime-v3/INVENTARIO-FRASES.md:2006
+    design/especime-v3/INVENTARIO-FRASES.md:2007
+    design/especime-v3/INVENTARIO-FRASES.md:2566
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:233 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:291 (perto do diff)
+    src/data/figuras.mjs:2668
+    src/i18n/strings.mjs:1186
+§1.102 · A sessão de 08.09: o corredor parado por uma função apagada, as leituras a frio com o plano novo do Codex, a sonda ao INE, o F1.1d medido às cegas, e o F1.10 retomado
+    design/especime-v3/INVENTARIO-FRASES.md:2582
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:242 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:303 (perto do diff)
+    src/data/figuras.mjs:2751
+§1.105 · A porta do Método para os estudos chama a página pelo nome dela
+    design/especime-v3/CHAVES-EN.md:1265
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:245 (perto do diff)
+§1.106 · «Trabalho» sai do Método como nome de um estudo, e «vaga» sai da voz do leitor
+    design/especime-v3/CHAVES-EN.md:1318 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:247 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:310 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-png-argumento.txt:16 (perto do diff)
+§1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
+    design/especime-v3/INVENTARIO-FRASES.md:1294 (perto do diff)
+    design/especime-v3/INVENTARIO-FRASES.md:1295 (perto do diff)
+    design/especime-v3/INVENTARIO-FRASES.md:1297 (perto do diff)
+    design/especime-v3/INVENTARIO-FRASES.md:1298 (perto do diff)
+    design/especime-v3/INVENTARIO-FRASES.md:1750
+    design/especime-v3/INVENTARIO-FRASES.md:1752
+    design/especime-v3/INVENTARIO-FRASES.md:1754
+    design/especime-v3/INVENTARIO-FRASES.md:1755
+    design/especime-v3/INVENTARIO-FRASES.md:1973
+    design/especime-v3/INVENTARIO-FRASES.md:1974
+    design/especime-v3/INVENTARIO-FRASES.md:1994
+    design/especime-v3/INVENTARIO-FRASES.md:1995
+    design/especime-v3/INVENTARIO-FRASES.md:1996
+    design/especime-v3/INVENTARIO-FRASES.md:1997
+    design/especime-v3/INVENTARIO-FRASES.md:1998
+    design/especime-v3/INVENTARIO-FRASES.md:1999
+    design/especime-v3/INVENTARIO-FRASES.md:2000
+    design/especime-v3/INVENTARIO-FRASES.md:2001
+    design/especime-v3/INVENTARIO-FRASES.md:2002
+    design/especime-v3/INVENTARIO-FRASES.md:2003
+    design/especime-v3/INVENTARIO-FRASES.md:257
+    design/especime-v3/INVENTARIO-FRASES.md:260
+    design/especime-v3/INVENTARIO-FRASES.md:261
+    design/especime-v3/INVENTARIO-FRASES.md:272
+    design/especime-v3/INVENTARIO-FRASES.md:273
+    design/especime-v3/INVENTARIO-FRASES.md:274
+    design/especime-v3/INVENTARIO-FRASES.md:275
+    design/especime-v3/INVENTARIO-FRASES.md:276
+    design/especime-v3/INVENTARIO-FRASES.md:277
+    design/especime-v3/INVENTARIO-FRASES.md:2823
+    design/especime-v3/INVENTARIO-FRASES.md:2837
+    design/especime-v3/INVENTARIO-FRASES.md:2838
+    design/especime-v3/INVENTARIO-FRASES.md:2839
+    design/especime-v3/INVENTARIO-FRASES.md:2840
+    design/especime-v3/INVENTARIO-FRASES.md:2841
+    design/especime-v3/INVENTARIO-FRASES.md:2842
+    design/especime-v3/INVENTARIO-FRASES.md:2849
+    design/especime-v3/INVENTARIO-FRASES.md:2850
+    design/especime-v3/INVENTARIO-FRASES.md:2853
+    design/especime-v3/INVENTARIO-FRASES.md:2854
+    design/especime-v3/INVENTARIO-FRASES.md:2855
+    design/especime-v3/INVENTARIO-FRASES.md:2856
+    design/especime-v3/INVENTARIO-FRASES.md:2857
+    design/especime-v3/INVENTARIO-FRASES.md:2858
+    design/especime-v3/INVENTARIO-FRASES.md:2859
+    design/especime-v3/INVENTARIO-FRASES.md:287
+    design/especime-v3/INVENTARIO-FRASES.md:290
+    design/especime-v3/INVENTARIO-FRASES.md:293
+    design/especime-v3/INVENTARIO-FRASES.md:305
+    design/especime-v3/INVENTARIO-FRASES.md:306
+    design/especime-v3/INVENTARIO-FRASES.md:307
+    design/especime-v3/INVENTARIO-FRASES.md:308
+    design/especime-v3/INVENTARIO-FRASES.md:309
+    design/especime-v3/INVENTARIO-FRASES.md:310
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:250 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:315 (perto do diff)
+    scripts/gate-html.mjs:4194
+    scripts/gate-html.mjs:4250
+    scripts/gate-html.mjs:4391
+    src/i18n/strings.mjs:1218
+    src/i18n/strings.mjs:1292
+§1.109 · A regra 9 do Método deixa de nomear o diretor
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:310 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:380 (perto do diff)
+    scripts/gate-html.mjs:4195
+    scripts/gate-html.mjs:4250
+    scripts/gate-html.mjs:4391
+§1.110 · «A casa» sai do Método e do Sobre
+    design/especime-v3/INVENTARIO-FRASES.md:2919
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:115
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:314 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:387 (perto do diff)
+§1.112 · O lugar de direção dirige o sítio; o diretor é o leitor
+    design/especime-v3/medicoes/p4-2026-10-02/conferencias.sh:3 (perto do diff)
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:316 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:394 (perto do diff)
+§1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:318 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:399 (perto do diff)
+    public/js/tema.js:43 (perto do diff)
+    scripts/check-pais.mjs:442 (perto do diff)
+    scripts/design-bundle.mjs:1248 (perto do diff)
+    scripts/design-bundle.mjs:512 (perto do diff)
+    scripts/design-bundle.mjs:519 (perto do diff)
+    scripts/gate-html.mjs:4968 (perto do diff)
+    scripts/medir-contraste.mjs:55 (perto do diff)
+    src/components/ControloDeTema.astro:8 (perto do diff)
+    src/styles/tokens.css:93 (perto do diff)
+§1.118 · O M3, a segunda metade: a conferência estrutural no motor, e os nomes confirmados de volta aos recibos
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:404 (perto do diff)
+§1.119 · A I129: o grupo etário passa a estar escrito na linha e na definição, e a célula que não deixa uma definição contradizer a sua linha
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:407 (perto do diff)
+§1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:324 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:410 (perto do diff)
+    scripts/gate-html.mjs:4216
+§1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
+    design/especime-v3/INVENTARIO-FRASES.md:3008
+    design/especime-v3/INVENTARIO-FRASES.md:3065
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:410
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:327 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:419 (perto do diff)
+    scripts/leituras/decisoes-em-vigor.py:16 (perto do diff)
+    src/data/figuras.mjs:521
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:333 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:434 (perto do diff)
+    scripts/casas-decimais.mjs:116 (perto do diff)
+    scripts/casas-decimais.mjs:9 (perto do diff)
+    scripts/check-ledger.mjs:507 (perto do diff)
+    scripts/check-pais.mjs:301
+§1.129 · A peça 1 do B2, o veredicto: o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio da correção e o Opus acaba, e o diretor fixa a regra do sentido
+    design/especime-v3/INVENTARIO-FRASES.md:3189
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:339 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:439 (perto do diff)
+§1.130 · O brief do L1, a leitura de cada medida: a regra do sentido vira uma gramática com ramos, as 36 leituras do lugar de direção ensaiadas a seco, e um bloco que não aterra sem outra família
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:341 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:445 (perto do diff)
+    src/i18n/strings.mjs:2466
+§1.133 · O leitor comum primeiro: a decisão do diretor de 28.09.2026 sobre o público, o que se lê à primeira, e quem procura as relações nos dados
+    design/especime-v3/INVENTARIO-FRASES.md:3077
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:343 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:457 (perto do diff)
+    src/i18n/strings.mjs:1747
+§1.135 · O C1 construído pelo Codex e lido a frio seis vezes pelo Opus: as correções de confiança, a primeira atualização de uma linha cruzada, a regra 15 que lê o acesso em vigor, a guarda da pasta pessoal, e a aterragem
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:346 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:465 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:563 (perto do diff)
+§1.136 · A primeira página de um leitor comum: cinco blocos com condições em vez de valores presos, seis entradas por pergunta da vida, e a aterragem
+    tests/inicio/matriz.mjs:23 (perto do diff)
+§1.138 · O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:348 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:470 (perto do diff)
+    scripts/gate-html.mjs:229
+§1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
+    design/especime-v3/INVENTARIO-FRASES.md:3528
+    design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:499
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:350 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:475 (perto do diff)
+    scripts/gate-html.mjs:20
+    scripts/gate-html.mjs:42
+    src/data/figuras.mjs:520
+§1.143 · A primeira leitura por leitores comuns (30.09.2026): as portas dizem o que têm, a primeira página é o único lugar de «O que se passa», e uma coisa, um lugar, também na navegação
+    design/especime-v3/INVENTARIO-FRASES.md:3706 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:358 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:508 (perto do diff)
+    scripts/gate-html.mjs:5890
+    src/data/figuras.mjs:1965
+    tests/pais/portoes.mjs:312
+§1.144 · O N1 construído pelo Codex e lido a frio duas vezes pelo Opus: uma porta por assunto, a correção adiada do desemprego, e a primeira medida da M43
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:364 (perto do diff)
+    scripts/casas-decimais.mjs:8 (perto do diff)
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:366 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:536 (perto do diff)
+    src/components/NotaDoSucessor.astro:4 (perto do diff)
+§1.146 · O orçamento gasta-se até ao fim por decisão do diretor, o GPT-6.1 Sol entra (a recusa era do CLI), o leitor passa a ele e o construtor ensaia-se com ele no E0; e a aterragem dos registos do E1
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:369 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:371 (perto do diff)
+    scripts/check-pais.mjs:173
+§1.147 · O Opus constrói e o Sol lê (decisão do diretor, 30.09.2026 à noite): o construtor de sempre é o Claude Opus 5.5, o Codex fica nas leituras a frio (o 6.1 Sol em todas, a Astra numa segunda leitura dos blocos grandes) e como construtor de recurso; a tranca da máquina (M46); e a aterragem da §1.146
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:371 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:541 (perto do diff)
+    scripts/casas-decimais.mjs:8 (perto do diff)
+§1.148 · O E1 construído pelo Opus em cinco passagens e lido a frio três vezes pelo Codex: os quatro estudos de Évora no ar, as regras do lugar de direção nos pontos de paragem, o erro do limiar que era meu, e a aterragem do E0 e dos registos da §1.147
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:373 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:541 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:546 (perto do diff)
+§1.149 · A leitura do diretor de 01.10.2026 no telemóvel: o mapa de «Lugares» vem primeiro e as listas de nomes dobram-se; o mapa sai da primeira página, que fica com a porta; e a aterragem da §1.148
+    design/especime-v3/INVENTARIO-FRASES.md:3608
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:373 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:379 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:546 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:556 (perto do diff)
+    scripts/design-bundle.mjs:1668
+    scripts/design-bundle.mjs:1780
+    scripts/design-bundle.mjs:1874
+    src/views/LugaresView.astro:28
+    tests/inicio/correcoes-a.mjs:65 (perto do diff)
+    tests/inicio/lista.mjs:20 (perto do diff)
+    tests/inicio/mapa-distritos.mjs:24 (perto do diff)
+    tests/inicio/mapa-unidades.mjs:1336 (perto do diff)
+    tests/inicio/mapa-unidades.mjs:164 (perto do diff)
+    tests/inicio/matriz.mjs:26 (perto do diff)
+§1.150 · O L2a construído pelo Opus e lido a frio pelo Sol: o mapa primeiro em «Lugares», as listas dobradas, a primeira página com a porta; as decisões do lugar de direção nos pontos deixados; e a aterragem da §1.149
+    design/especime-v3/INVENTARIO-FRASES.md:3649
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-antes.txt:379 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:556 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:563 (perto do diff)
+    src/i18n/strings.mjs:686
+    tests/inicio/correcoes-a.mjs:65 (perto do diff)
+    tests/inicio/lista.mjs:20 (perto do diff)
+    tests/inicio/mapa-distritos.mjs:24 (perto do diff)
+    tests/inicio/mapa-distritos.mjs:413 (perto do diff)
+    tests/inicio/mapa-unidades.mjs:1247 (perto do diff)
+    tests/inicio/mapa-unidades.mjs:1337 (perto do diff)
+    tests/inicio/mapa-unidades.mjs:164 (perto do diff)
+    tests/inicio/mapa-unidades.mjs:171 (perto do diff)
+    tests/inicio/mapa-unidades.mjs:571 (perto do diff)
+    tests/inicio/matriz.mjs:26 (perto do diff)
+§1.151 · O L2b e o K2 construídos pelo Opus e lidos a frio pelo Sol: o concelho entre os 308 só nas taxas e nos rácios, o cartão para o telemóvel, o espaço antes de «%» como forma da casa em todas as superfícies (a §1.43, a §1.44 e a identidade §11 cedem à §1.135), e a aterragem da §1.150
+    design/especime-v3/medicoes/p4-2026-10-02/decisoes-em-vigor-intervalo-ue2.txt:563 (perto do diff)
+    scripts/casas-decimais.mjs:40 (perto do diff)
+§1.152 · sem título em DECISIONS.md
+    design/especime-v3/INVENTARIO-FRASES.md:3741 (perto do diff)
+    design/especime-v3/medicoes/p4-2026-10-02/auditoria-das-perguntas-p4.mjs:1 (perto do diff)
+    src/data/figuras.mjs:2331 (perto do diff)
+    src/data/figuras.mjs:2399 (perto do diff)
+70 decisão(ões) citada(s) em 177 ficheiro(s) de texto
+37 ficheiro(s) binário(s) saltado(s): design/especime-v3/capturas/p4-2026-10-02/p4-cabecalho-en-390-nome-inteiro.png, design/especime-v3/capturas/p4-2026-10-02/p4-cabecalho-en-390-publicado.png, design/especime-v3/capturas/p4-2026-10-02/p4-cabecalho-pt-390-nome-inteiro.png, …
