@@ -96,9 +96,13 @@ export const MEDIDAS_DO_CONCELHO = [
     unidade: { pt: 'Índice · média nacional = base', en: 'Index · national average = base' },
     prefixo: { pt: '', en: '' },
     ref: '2023',
+    /* O QUE O ÍNDICE É, EM PALAVRAS COMUNS (L2b-c, 01.10.2026, o achado 7 da leitura a frio do L2b, pela I150). A
+       frase dizia «Poder de compra per capita», e um leitor via «111,47» sem saber o que o número quer dizer. A
+       escala é a da unidade de cada linha, «índice (Portugal = 100)»: Portugal vale cem, e acima de cem o poder de
+       compra por pessoa no concelho é maior do que a média do país. Uma frase só, porque o cartão leva a primeira. */
     nota: {
-      pt: ['Poder de compra per capita, publicado pelo INE para todos os concelhos.'],
-      en: ['Purchasing power per capita, published for every municipality.'],
+      pt: ['Índice do poder de compra por pessoa, em que Portugal vale cem: acima de cem, o poder de compra por pessoa no concelho é maior do que a média do país; publicado pelo INE para todos os concelhos.'],
+      en: ['Index of purchasing power per person, where Portugal is one hundred: above one hundred, purchasing power per person in the municipality is higher than the country average; published for every municipality.'],
     },
   },
   {
@@ -232,12 +236,16 @@ export const MEDIDAS_DO_CONCELHO = [
     unidade: { pt: 'Euros por mês', en: 'Euros per month' },
     prefixo: { pt: '', en: '' },
     ref: '2024',
+    /* ANTES DE DESCONTOS (L2b-c, 01.10.2026, o achado 8 da leitura a frio do L2b, pela I150). A frase não dizia se o
+       ganho é o bruto ou o que se leva para casa; «Lugares» já o diz, pela definição da linha nacional do mesmo
+       indicador do INE (0012656), auditada pela K17 (`LEITURAS_DAS_MEDIDAS['ganho-medio-mensal-2024']`: «antes de
+       descontos»). A frase passa a dizer o que se conta primeiro, e quem publica depois. */
     nota: {
       pt: [
-        'Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho; trabalhadores por conta de outrem a tempo completo com remuneração completa.',
+        'O que os trabalhadores por conta de outrem a tempo completo com remuneração completa ganham por mês, em média, antes de descontos, pelos Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho.',
       ],
       en: [
-        'Staff records of the labour ministry’s strategy and planning office; full-time employees on full pay.',
+        'What full-time employees on full pay earn per month, on average, before deductions, from the staff records of the labour ministry’s strategy and planning office.',
       ],
     },
   },
