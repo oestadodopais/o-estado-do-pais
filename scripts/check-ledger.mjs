@@ -506,7 +506,9 @@ if (MARCADORES_RECUSADOS.length) {
  * Uma linha sem derivação não escreve menos casas decimais do que o excerto da fonte: «8» onde a fonte escreve
  * «8.0» é um número que a fonte não escreveu (§1.127, decisão 3). Desde a passagem K2-c (02.10.2026) o valor
  * compara-se só com o literal do excerto que é o próprio número, o que vem depois dos dois pontos no fim de um
- * excerto composto, e os números agrupados à inglesa leem-se. A célula e as plantas vivem em
+ * excerto composto, e os números agrupados à inglesa leem-se. Desde o bloco P4 (02.10.2026) as linhas do INE leem-se
+ * pela forma que o INE publica (o campo «ind_string»), com a regra escrita para a marca de provisório, e a linha da
+ * célula diz quantas linhas lê e quantas deixa por ler. A célula e as plantas vivem em
  * `scripts/casas-decimais.mjs`; as plantas correm aqui, antes de a célula dizer zero, sobre cópias em memória das
  * linhas reais, e uma que não morda (ou um controlo que morda) fecha a construção como um caso real. */
 {
@@ -517,8 +519,9 @@ if (MARCADORES_RECUSADOS.length) {
   console.log('');
   console.log(
     cinza(
-      `  casas decimais do excerto · ${casas.contas.com_literal_do_valor} linha(s) com o literal do valor no fim do excerto, ` +
-        `${casas.contas.sem_literal_do_valor} sem ele (não se leem), ` +
+      `  casas decimais do excerto · ${casas.contas.lidas} linha(s) lida(s): ${casas.contas.com_literal_do_valor} pelo literal do valor no fim do excerto ` +
+        `e ${casas.contas.pela_forma_publicada_do_ine} pela forma que o INE publica (${casas.contas.com_sinal_da_fonte} com o sinal da fonte declarado); ` +
+        `${casas.contas.por_ler} por ler (sem nenhum dos dois), ` +
         `${casas.contas.com_derivacao} derivada(s) fora da regra · ${plantasDasCasas.length} planta(s), ` +
         `${plantasDasCasas.filter((p) => p.certo).length} certa(s)`,
     ),
