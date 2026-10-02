@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-02T15:06:19+00:00",
+ "copia": "<o pacote da leitura, fora do repositório>",
+ "plantas": [
+  {
+   "id": "X1",
+   "ficheiro": "built/uniao-europeia/index.html",
+   "descricao": "a lista dos 27 escreve 137,7 para a Itália onde a série diz 137,1",
+   "sha256_antes": "cd82fd58b1b4e9b774b4c95fc87dbcde466326c75ddd6e50e65f46a4a1099290",
+   "sha256_depois": "bcc1ff0cec32f3d18f7cc238af2b33bfb3470fc7de314f5f02e21b8c5ad37399",
+   "contexto_antes": "</span> <span class=\"ponto-da-serie faixa-ue-valor\" data-ponto=\"divida-publica-2025-paises#EL\">146,1</span></li><li class=\"paises-lista-item paises-lista-pais\" data-lista-ponto=\"divida-publica-2025-paises#IT\"><span class=\"nome-do-pais\" data-pais=\"IT\">Itália</span> <span class=\"ponto-da-serie faixa-ue-valor\" data-ponto=\"divida-publica-2025-paises#IT\">137,1</span></li><li class=\"paises-lista-item paises-lista-pais\" data-lista-ponto=\"divida-publica-2025-paises#FR\"><span class=\"nome-do-pais\" data-pais=\"FR\">França</span> <s",
+   "contexto_depois": "</span> <span class=\"ponto-da-serie faixa-ue-valor\" data-ponto=\"divida-publica-2025-paises#EL\">146,1</span></li><li class=\"paises-lista-item paises-lista-pais\" data-lista-ponto=\"divida-publica-2025-paises#IT\"><span class=\"nome-do-pais\" data-pais=\"IT\">Itália</span> <span class=\"ponto-da-serie faixa-ue-valor\" data-ponto=\"divida-publica-2025-paises#IT\">137,7</span></li><li class=\"paises-lista-item paises-lista-pais\" data-lista-ponto=\"divida-publica-2025-paises#FR\"><span class=\"nome-do-pais\" data-pais=\"FR\">França</span> <s"
+  },
+  {
+   "id": "X2",
+   "ficheiro": "src/data/faixa-da-uniao.mjs",
+   "descricao": "a faixa dos inquilinos a preço de mercado deixa de vir a seguir à da sobrecarga, contra a razão escrita e a ressalva da §1.140",
+   "sha256_antes": "58176f8b0e142d05a49d2a88631054e12a0c3a8978c002ac2f225f8ae03c5489",
+   "sha256_depois": "44e53fb887a075dfe0df9cb5ceeaebb637504e5471d181a4a763d971a420b24e",
+   "contexto_antes": "ing, { depoisDe: string | null, razao: string }>}\n */\nexport const MEDIDAS_FORA_DOS_QUADROS = {\n  'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025': {\n    depoisDe: 'sobrecarga-do-custo-da-habitacao-2025',\n    razao:\n      'é a mesma medida num regime de ocupação, e a Comissão Europeia diz que o total se lê com a estrutura ' +\n      'por regime de ocupação (a res",
+   "contexto_depois": "ing, { depoisDe: string | null, razao: string }>}\n */\nexport const MEDIDAS_FORA_DOS_QUADROS = {\n  'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025': {\n    depoisDe: null,\n    razao:\n      'é a mesma medida num regime de ocupação, e a Comissão Europeia diz que o total se lê com a estrutura ' +\n      'por regime de ocupação (a res"
+  },
+  {
+   "id": "X3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 9 perguntas com os termos onde a medida diz 7",
+   "sha256_antes": "0155d5f798386f438e2439de9cb7c928a4a57cb448a4994ba149219048dce469",
+   "sha256_depois": "944cd4c88e23d0196fb7a72bdf05ebd6b9a89fe1dcaf40a0ad9902b95b0c1f7d",
+   "contexto_antes": "a sua etiqueta diz o grupo inteiro («Áustria 18,6, Portugal 18,6 e Suécia 18,6») | 30 toques certos em 30 por edição; 62 etiquetas por edição dizem um empate |\n| 3 | As definições em palavras comuns | 7 perguntas com os 4 termos ganham a forma `uniao` em `src/data/figuras.mjs`, que só a página da União rende: as palavras comuns primeiro e o termo da fonte entre parênteses, com as orige",
+   "contexto_depois": "a sua etiqueta diz o grupo inteiro («Áustria 18,6, Portugal 18,6 e Suécia 18,6») | 30 toques certos em 30 por edição; 62 etiquetas por edição dizem um empate |\n| 3 | As definições em palavras comuns | 9 perguntas com os 4 termos ganham a forma `uniao` em `src/data/figuras.mjs`, que só a página da União rende: as palavras comuns primeiro e o termo da fonte entre parênteses, com as orige"
+  },
+  {
+   "id": "X4",
+   "ficheiro": "built/uniao-europeia/index.html",
+   "descricao": "a marca de Portugal na faixa da dívida pública fica a 73,77 % da régua, fora da sua posição",
+   "sha256_antes": "bcc1ff0cec32f3d18f7cc238af2b33bfb3470fc7de314f5f02e21b8c5ad37399",
+   "sha256_depois": "b29794009e8e3784c7b3de87914a2eb1bd60a8ff7df2412f1df39a2723f75dbe",
+   "contexto_antes": "ass=\"faixa-ue-marca faixa-ue-pais\" data-faixa-marca=\"divida-publica-2025-paises#PL\" style=\"left:29.1803%\"></span><span class=\"faixa-ue-marca faixa-ue-portugal\" data-faixa-marca=\"divida-publica-2025-paises#PT\" style=\"left:53.7705%\"></span><span class=\"faixa-ue-marca faixa-ue-pais\" data-faixa-marca=\"divida-publica-2025-paises#RO\" style=\"left:28.8525%\"></span><span class=\"faixa-ue-marca fai",
+   "contexto_depois": "ass=\"faixa-ue-marca faixa-ue-pais\" data-faixa-marca=\"divida-publica-2025-paises#PL\" style=\"left:29.1803%\"></span><span class=\"faixa-ue-marca faixa-ue-portugal\" data-faixa-marca=\"divida-publica-2025-paises#PT\" style=\"left:73.7705%\"></span><span class=\"faixa-ue-marca faixa-ue-pais\" data-faixa-marca=\"divida-publica-2025-paises#RO\" style=\"left:28.8525%\"></span><span class=\"faixa-ue-marca fai"
+  },
+  {
+   "id": "X5",
+   "ficheiro": "ledger/series/divida-publica-2025-paises.yml",
+   "descricao": "a série de Portugal na dívida pública escreve 98,7 onde o excerto e a página dizem 89,7",
+   "sha256_antes": "c3c5327c45a1ea4f57bf3eba318e714b73e7d6f9ff4245e5932543ef01753eb3",
+   "sha256_depois": "500514f35463e88faeccd516c8746b44119b95e3c6066417693ba28e7c3118e2",
+   "contexto_antes": "nment gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Poland — 2025: 59.7\"\n    bandeira: null\n  - geo: \"PT\"\n    valor: \"89,7\"\n    excerto: \"General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: 89.7\"\n   ",
+   "contexto_depois": "nment gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Poland — 2025: 59.7\"\n    bandeira: null\n  - geo: \"PT\"\n    valor: \"98,7\"\n    excerto: \"General government gross debt (EDP concept), consolidated - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: 89.7\"\n   "
+  }
+ ]
+}
