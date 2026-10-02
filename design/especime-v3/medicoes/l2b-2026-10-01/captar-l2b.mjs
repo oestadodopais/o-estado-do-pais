@@ -12,6 +12,8 @@
  *   node design/especime-v3/medicoes/l2b-2026-10-01/captar-l2b.mjs l2b-b
  *     (a passagem L2b-b: as mesmas páginas nas cinco larguras sobre `dist/`, com as imagens `l2b-b-*.png` e o
  *     manifesto em `l2b-b/capturas.json`, para não tocar nas capturas do L2b nem no seu manifesto)
+ *   node design/especime-v3/medicoes/l2b-2026-10-01/captar-l2b.mjs l2b-c
+ *     (a passagem L2b-c, pela mesma regra, com as imagens `l2b-c-*.png` e o manifesto em `l2b-c/capturas.json`)
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -21,7 +23,7 @@ import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 
 const fase = process.argv[2];
-if (!['antes', 'depois', 'l2b-b'].includes(fase)) throw new Error('Uso: captar-l2b.mjs antes <dist> <cabeça> | depois | l2b-b');
+if (!['antes', 'depois', 'l2b-b', 'l2b-c'].includes(fase)) throw new Error('Uso: captar-l2b.mjs antes <dist> <cabeça> | depois | l2b-b | l2b-c');
 const dist = path.resolve(fase === 'antes' ? process.argv[3] : 'dist');
 const cabeca = fase === 'antes' ? process.argv[4] : execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const pasta = 'design/especime-v3/medicoes/l2b-2026-10-01';
@@ -72,6 +74,9 @@ const medir = () => {
     cartoes: document.querySelectorAll('[data-cartao-medida]').length,
     faixas: faixas.length,
     /* L2b-b: as faixas nas quatro contagens, que não as têm. */
+    /* L2b-c: as frases novas dos cartões do poder de compra e do ganho médio, à vista. */
+    frase_do_poder_de_compra: document.querySelector('[data-medida-chave="poderDeCompra"] .cartao-medida-frase')?.textContent.trim() ?? null,
+    frase_do_ganho: document.querySelector('[data-medida-chave="ganho"] .cartao-medida-frase')?.textContent.trim() ?? null,
     faixas_em_contagens: document.querySelectorAll('[data-medida-chave="populacao"] [data-faixa-concelho], [data-medida-chave="desempregoRegistado"] [data-faixa-concelho], [data-medida-chave="empresas"] [data-faixa-concelho], [data-medida-chave="divida"] [data-faixa-concelho]').length,
     faixas_que_cabem_no_cartao: cabe,
     primeira_faixa_y: faixas[0] ? Math.round(faixas[0].getBoundingClientRect().y + scrollY) : null,
@@ -104,6 +109,6 @@ try {
   servidor.close();
 }
 const manifesto = { bloco: 'L2b', fase, cabeca, construcao: { commit: versao.commit, ref: versao.ref, construido_em: versao.construido_em }, inicio, fim: new Date().toISOString(), larguras, capturas: resultados.length, pedidos_recusados_para_fora: pedidosRecusados.length, problemas, resultados };
-await fs.writeFile(fase === 'l2b-b' ? `${pasta}/l2b-b/capturas.json` : `${pasta}/capturas-${fase}.json`, JSON.stringify(manifesto, null, 2) + '\n');
+await fs.writeFile(fase.startsWith('l2b-') ? `${pasta}/${fase}/capturas.json` : `${pasta}/capturas-${fase}.json`, JSON.stringify(manifesto, null, 2) + '\n');
 console.log(`L2b ${fase}: ${resultados.length} capturas, ${problemas.length} problemas.`);
 process.exitCode = problemas.length ? 1 : 0;
