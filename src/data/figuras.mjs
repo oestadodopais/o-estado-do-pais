@@ -182,8 +182,12 @@ const LISTA_PDM = [
   {
     claim: 'desempenho-das-exportacoes-2025',
     quadro: 'pdm',
-    nome: { pt: 'Quota nas exportações', en: 'Share of exports' },
-    nomeNoVeredicto: { pt: 'a quota nas exportações' },
+    /* O NOME DIZ A VARIAÇÃO (bloco K2-b, 02.10.2026, a decisão do lugar de direção sobre os seis cartões que o §0 do
+       brief K2 não contou): o valor é a variação em três anos da quota, como a unidade da linha diz, e o nome de nível
+       lia-se como a quota. */
+    nome: { pt: 'Quota nas exportações, variação em três anos', en: 'Share of exports, three-year change' },
+    nomeNoVeredicto: { pt: 'a variação em três anos da quota nas exportações', en: 'the three-year change in the share of exports' },
+    nomeNaFrase: { pt: 'variação em três anos da quota nas exportações', en: 'three-year change in the share of exports' },
     medida: {
       pt: ['Percentagem do total OCDE e UE não-OCDE, variação em três anos · ', { ref: '2025' }],
       en: ['Percentage of the OECD and non-OECD EU total, three-year change · ', { ref: '2025' }],

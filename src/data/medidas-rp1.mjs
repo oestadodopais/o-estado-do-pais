@@ -13,6 +13,11 @@ export const DOMINIOS_RP1 = {
   "beneficiarios-do-rsi-por-mil-2024": "seguranca-social-e-pensoes",
   "linha-de-risco-de-pobreza-2025": "seguranca-social-e-pensoes"
 };
+/* OS NOMES QUE DIZEM A VARIAÇÃO (bloco K2-b, 02.10.2026, a decisão do lugar de direção sobre os seis cartões que o §0
+   do brief K2 não contou). O valor destes cinco cartões de preços é uma variação (a taxa de variação homóloga do índice,
+   e a variação média dos últimos doze meses no da habitação, como o rótulo de cada linha diz), e o nome de nível lia-se
+   como um preço. O nome diz a variação e o período, como os quatro do K2; a linha do período anterior leva o mesmo nome,
+   porque é a mesma medida um mês antes. */
 export const NOMES_RP1 = {
   "ipc-variacao-homologa": {
     "pt": "Inflação",
@@ -31,20 +36,20 @@ export const NOMES_RP1 = {
     "en": "Average inflation over a year"
   },
   "ipc-alimentacao-variacao-homologa": {
-    "pt": "Preços dos alimentos e das bebidas não alcoólicas",
-    "en": "Prices of food and non-alcoholic beverages"
+    "pt": "Preços dos alimentos e das bebidas não alcoólicas, variação num ano",
+    "en": "Prices of food and non-alcoholic beverages, change over a year"
   },
   "ipc-alimentacao-variacao-homologa-periodo-anterior": {
-    "pt": "Preços dos alimentos e das bebidas não alcoólicas",
-    "en": "Prices of food and non-alcoholic beverages"
+    "pt": "Preços dos alimentos e das bebidas não alcoólicas, variação num ano",
+    "en": "Prices of food and non-alcoholic beverages, change over a year"
   },
   "ipc-sem-habitacao-variacao-media-12-meses": {
-    "pt": "Preços sem a habitação",
-    "en": "Prices excluding housing"
+    "pt": "Preços sem a habitação, variação média em doze meses",
+    "en": "Prices excluding housing, twelve-month average change"
   },
   "ipc-sem-habitacao-variacao-media-12-meses-periodo-anterior": {
-    "pt": "Preços sem a habitação",
-    "en": "Prices excluding housing"
+    "pt": "Preços sem a habitação, variação média em doze meses",
+    "en": "Prices excluding housing, twelve-month average change"
   },
   "remuneracao-bruta-mensal-media": {
     "pt": "Remuneração média antes de descontos",
@@ -79,20 +84,20 @@ export const NOMES_RP1 = {
     "en": "At-risk-of-poverty line"
   },
   "ipc-energia-em-casa-variacao-homologa": {
-    "pt": "Preços da energia em casa",
-    "en": "Home energy prices"
+    "pt": "Preços da energia em casa, variação num ano",
+    "en": "Home energy prices, change over a year"
   },
   "ipc-energia-em-casa-variacao-homologa-periodo-anterior": {
-    "pt": "Preços da energia em casa",
-    "en": "Home energy prices"
+    "pt": "Preços da energia em casa, variação num ano",
+    "en": "Home energy prices, change over a year"
   },
   "ipc-combustiveis-variacao-homologa": {
-    "pt": "Preços dos combustíveis",
-    "en": "Fuel prices"
+    "pt": "Preços dos combustíveis, variação num ano",
+    "en": "Fuel prices, change over a year"
   },
   "ipc-combustiveis-variacao-homologa-periodo-anterior": {
-    "pt": "Preços dos combustíveis",
-    "en": "Fuel prices"
+    "pt": "Preços dos combustíveis, variação num ano",
+    "en": "Fuel prices, change over a year"
   },
   "ihpc-variacao-homologa": {
     "pt": "Inflação na comparação europeia",
@@ -103,12 +108,12 @@ export const NOMES_RP1 = {
     "en": "Inflation in the European comparison"
   },
   "ipc-rendas-variacao-homologa": {
-    "pt": "Preços das rendas",
-    "en": "Rent prices"
+    "pt": "Preços das rendas, variação num ano",
+    "en": "Rent prices, change over a year"
   },
   "ipc-rendas-variacao-homologa-periodo-anterior": {
-    "pt": "Preços das rendas",
-    "en": "Rent prices"
+    "pt": "Preços das rendas, variação num ano",
+    "en": "Rent prices, change over a year"
   },
   "ihpc-variacao-homologa-ue": {
     "pt": "Inflação na União Europeia",
