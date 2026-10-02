@@ -33,8 +33,13 @@
  *   · F3 · o sinal menos tipográfico (U+2212), e não o hífen;
  *   · F4 · o espaço antes de «%»: um valor seguido de «%» leva um espaço entre os dois (U+0020 ou U+00A0), e nunca o
  *          símbolo colado;
- *   · F5 · o dinheiro com a palavra: nenhum valor tem o símbolo do euro ao lado, nem depois dele (colado ou com um
- *          espaço) nem antes dele no mesmo texto («€ 920»).
+ *   · F5 · o dinheiro com a palavra: nenhum valor tem o símbolo do euro ao lado, nem depois dele (colado ou com
+ *          espaços, quantos forem: o HTML junta-os num só ao desenhar) nem antes dele no mesmo texto («€ 920»).
+ *
+ * CADA VALOR MARCADO CONTA-SE POR SI (passagem K2-c, 02.10.2026, achado 9 da leitura a frio do Codex). Um elemento
+ * marcado que traz o símbolo dentro de si («6,0%», «920 €») não é «não numérico»: o símbolo sai, o número confere-se
+ * pelas F1 a F3, e o símbolo pela F4 ou pela F5. Antes, um valor assim era saltado, e a célula só o via se nenhum
+ * outro valor contasse.
  *
  * O QUE LÊ. Todas as páginas construídas, menos os documentos alojados dos estudos (`/estudos/<slug>/documento/` e
  * `/en/studies/<slug>/document/`, servidos byte a byte como foram publicados, com os números de quem os escreveu).
@@ -85,7 +90,7 @@ const daCasa = (t) => /^\u2212?\d{1,3}(?:\u00a0\d{3})*(?:,\d+)?$/.test(t) || /^\
 export function conferirFormatoDaPagina(html, rel) {
   /** @type {{ regra: string, rel: string, valor: string, contexto: string }[]} */
   const desvios = [];
-  const contas = { valores: 0, simbolos: 0, simbolo: { '%': { colado: 0, com_espaco: 0 }, '€': { depois: 0, antes: 0 } } };
+  const contas = { valores: 0, simbolos: 0, nao_numericos: 0, simbolo: { '%': { colado: 0, com_espaco: 0 }, '€': { depois: 0, antes: 0 } } };
   for (const m of html.matchAll(ELEMENTO)) {
     const [inteiro, , atributos, marca, chave, cru] = m;
     if (/\bdata-registo/.test(atributos)) continue;
@@ -93,13 +98,29 @@ export function conferirFormatoDaPagina(html, rel) {
     if (!/\d/.test(texto)) continue;
     const deValor = MARCAS_DE_VALOR.has(marca) || (marca === 'nonledger' && MOTIVOS_DE_VALOR.has(chave));
     const doSimbolo = deValor || (marca === 'nonledger' && MOTIVOS_SO_DO_SIMBOLO.has(chave));
-    if (!doSimbolo || !eNumero(texto)) continue;
+    if (!doSimbolo) continue;
     const contexto = `${texto}${html.slice(m.index + inteiro.length, m.index + inteiro.length + 200).replace(/<[^>]+>/g, '')}`.slice(0, 50);
+    /* O SÍMBOLO DENTRO DO PRÓPRIO ELEMENTO (K2-c): sai do número, e cada forma confere-se pela sua regra. */
+    let numero = texto;
+    const comSimbolo = /^(.*\d)([\s\u00a0\u202f\u2009]*)([%€])$/.exec(texto);
+    const euroAntes = /^€[\s\u00a0\u202f\u2009]*(\d.*)$/.exec(texto);
+    if (comSimbolo) {
+      numero = comSimbolo[1].trim();
+      if (comSimbolo[3] === '%') {
+        if (comSimbolo[2]) contas.simbolo['%'].com_espaco++;
+        else { contas.simbolo['%'].colado++; desvios.push({ regra: 'F4', rel, valor: texto, contexto }); }
+      } else { contas.simbolo['€'].depois++; desvios.push({ regra: 'F5', rel, valor: texto, contexto }); }
+    } else if (euroAntes) {
+      numero = euroAntes[1].trim();
+      contas.simbolo['€'].antes++;
+      desvios.push({ regra: 'F5', rel, valor: texto, contexto });
+    }
+    if (!eNumero(numero)) { contas.nao_numericos++; continue; }
     if (deValor) {
       contas.valores++;
-      if (/^-/.test(texto)) desvios.push({ regra: 'F3', rel, valor: texto, contexto });
-      else if (/\d\.\d/.test(texto) && !/^\d{1,3}(\.\d{3})+$/.test(texto)) desvios.push({ regra: 'F2', rel, valor: texto, contexto });
-      else if (!daCasa(texto)) desvios.push({ regra: 'F1', rel, valor: texto, contexto });
+      if (/^-/.test(numero)) desvios.push({ regra: 'F3', rel, valor: texto, contexto });
+      else if (/\d\.\d/.test(numero) && !/^\d{1,3}(\.\d{3})+$/.test(numero)) desvios.push({ regra: 'F2', rel, valor: texto, contexto });
+      else if (!daCasa(numero)) desvios.push({ regra: 'F1', rel, valor: texto, contexto });
     }
     /* F4: o primeiro carácter visível depois do elemento, saltando a etiqueta do sufixo do `Claim` e as do fecho. */
     contas.simbolos++;
@@ -116,8 +137,8 @@ export function conferirFormatoDaPagina(html, rel) {
     const seguinte = desfaz(html.slice(m.index + inteiro.length, m.index + inteiro.length + 200).replace(/<[^>]+>/g, ''));
     if (/^%/.test(seguinte)) contas.simbolo['%'].colado++;
     else if (/^[ \u00a0]%/.test(seguinte)) contas.simbolo['%'].com_espaco++;
-    /* F5, DEPOIS: o «€» colado ao valor ou a um espaço dele. */
-    if (/^[ \u00a0]?€/.test(seguinte)) {
+    /* F5, DEPOIS: o «€» colado ao valor ou depois de espaços, quantos forem (K2-c: o HTML desenha-os como um só). */
+    if (/^[\s\u00a0\u202f\u2009]*€/.test(seguinte)) {
       contas.simbolo['€'].depois++;
       desvios.push({ regra: 'F5', rel, valor: texto, contexto });
     }
@@ -125,7 +146,7 @@ export function conferirFormatoDaPagina(html, rel) {
        um «€» no fim da célula vizinha de uma tabela não é deste valor. */
     const antes = desfaz(html.slice(Math.max(0, m.index - 200), m.index));
     const textoAntes = antes.slice(antes.lastIndexOf('>') + 1);
-    if (/€[ \u00a0]?$/.test(textoAntes)) {
+    if (/€[\s\u00a0\u202f\u2009]*$/.test(textoAntes)) {
       contas.simbolo['€'].antes++;
       desvios.push({ regra: 'F5', rel, valor: texto, contexto: `${textoAntes.slice(-12)}${contexto}`.slice(0, 50) });
     }
@@ -155,11 +176,12 @@ export function paginasDoFormato(dist) {
 export function conferirFormatoDosNumeros(dist) {
   const paginas = paginasDoFormato(dist);
   const desvios = [];
-  const contas = { paginas: paginas.length, valores: 0, simbolos: 0, simbolo: { '%': { colado: 0, com_espaco: 0 }, '€': { depois: 0, antes: 0 } }, por_regra: { F1: 0, F2: 0, F3: 0, F4: 0, F5: 0 } };
+  const contas = { paginas: paginas.length, valores: 0, simbolos: 0, nao_numericos: 0, simbolo: { '%': { colado: 0, com_espaco: 0 }, '€': { depois: 0, antes: 0 } }, por_regra: { F1: 0, F2: 0, F3: 0, F4: 0, F5: 0 } };
   for (const rel of paginas) {
     const r = conferirFormatoDaPagina(fs.readFileSync(path.join(dist, rel), 'utf8'), rel);
     contas.valores += r.contas.valores;
     contas.simbolos += r.contas.simbolos;
+    contas.nao_numericos += r.contas.nao_numericos;
     for (const [sim, formas] of Object.entries(r.contas.simbolo)) for (const [k, n] of Object.entries(formas)) contas.simbolo[sim][k] += n;
     for (const d of r.desvios) {
       contas.por_regra[d.regra]++;
@@ -174,9 +196,7 @@ export function conferirFormatoDosNumeros(dist) {
  * sem desvios e que a estragada tenha o desvio da sua regra.
  * @param {string} dist
  */
-export function plantasDoFormato(dist) {
-  const ler = (rel) => fs.readFileSync(path.join(dist, rel), 'utf8');
-  const casos = [
+export const PLANTAS_DO_FORMATO = [
     { nome: 'F1 · os milhares com o espaço comum, num valor de um cartão', rel: 'estado-e-economia/index.html', regra: 'F1',
       estraga: (h) => h.replace(/(data-claim="pib-real-per-capita-2025"[^>]*>)(\d+)\u00a0(\d{3})</, '$1$2 $3<').replace(/(data-claim="pib-real-per-capita-2025"[^>]*>)(\d+)&nbsp;(\d{3})</, '$1$2 $3<') },
     { nome: 'F1 · os milhares sem separador', rel: 'estado-e-economia/index.html', regra: 'F1',
@@ -194,12 +214,27 @@ export function plantasDoFormato(dist) {
       estraga: (h) => h.replace(/(data-linha-campo="unit">)euros por mês</, '$1€ por mês<') },
     { nome: 'F5 · o símbolo do euro antes do valor', rel: 'emprego/index.html', regra: 'F5',
       estraga: (h) => h.replace(/(<span[^>]*data-claim="taxa-de-emprego-2025")/, '€ $1') },
-  ];
-  return casos.map((p) => {
-    const limpo = conferirFormatoDaPagina(ler(p.rel), p.rel).desvios;
+    /* K2-c, achado 9 da leitura a frio: as duas formas que a célula aceitava. Um valor com o «%» dentro do próprio
+       elemento, numa página onde os outros valores contam; e o «€» depois de dois espaços. */
+    { nome: 'F4 · um valor marcado com o «%» dentro do elemento, entre valores válidos', rel: 'emprego/index.html', regra: 'F4',
+      estraga: (h) => h.replace(/(data-claim="taxa-de-emprego-2025"[^>]*>)([^<]*)</, '$1$2%<') },
+    { nome: 'F5 · o símbolo do euro depois de dois espaços', rel: 'livro-razao/remuneracao-bruta-mensal-media/index.html', regra: 'F5',
+      estraga: (h) => h.replace(/(data-claim="remuneracao-bruta-mensal-media"[^>]*>[^<]*<\/span>) (<span[^>]*data-linha-campo="unit">)euros por mês</, '$1  $2€ por mês<') },
+];
+
+/**
+ * As plantas, sobre cópias em memória de páginas construídas (a lista acima).
+ * @param {string} dist
+ * @param {(html: string, rel: string) => { desvios: { regra: string }[] }} [conferir] a célula a provar (por omissão,
+ *   esta; o relatório da passagem K2-c corre a mesma lista na versão anterior, para mostrar que ela não mordia)
+ */
+export function plantasDoFormato(dist, conferir = conferirFormatoDaPagina) {
+  const ler = (rel) => fs.readFileSync(path.join(dist, rel), 'utf8');
+  return PLANTAS_DO_FORMATO.map((p) => {
+    const limpo = conferir(ler(p.rel), p.rel).desvios;
     const estragado = p.estraga(ler(p.rel));
     const mudou = estragado !== ler(p.rel);
-    const desvios = conferirFormatoDaPagina(estragado, p.rel).desvios.filter((d) => d.regra === p.regra);
+    const desvios = conferir(estragado, p.rel).desvios.filter((d) => d.regra === p.regra);
     return { nome: p.nome, pagina: p.rel, limpa_sem_desvios: limpo.length === 0, estrago_aplicado: mudou, mordeu: mudou && limpo.length === 0 && desvios.length > 0, queixa: desvios[0] ?? null };
   });
 }
