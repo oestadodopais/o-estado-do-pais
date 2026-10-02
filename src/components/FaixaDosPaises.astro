@@ -1,0 +1,178 @@
+---
+/**
+ * A FAIXA DOS PAÍSES À LARGURA INTEIRA (bloco UE2, 02.10.2026): onde Portugal fica entre os 27, numa medida, na
+ * secção «Os 27 países» da página da União.
+ *
+ * É a irmã da faixa do cartão (`FaixaDaUniao.astro`), feita pelo mesmo modelo (`faixaDaMedida()`, em
+ * `src/lib/faixa-da-uniao.mjs`) e com as mesmas peças e as mesmas marcas: o desenho do valor mais baixo ao mais
+ * alto com uma marca por país, a de Portugal maior e a tinta e a da média da União como um traço, os rótulos de
+ * Portugal e da União, as pontas com o país mais baixo e o mais alto, a frase do lugar de Portugal e a porta do
+ * recibo da série. Aqui não se calcula nada, e a F20 do `check:formas` reconta cada peça pela função que a F19 usa
+ * na faixa do cartão.
+ *
+ * O QUE ELA TEM A MAIS, pelo §3 do brief:
+ *   · o nome da medida (o nome do cartão, pela escada de `src/lib/nomes.mjs`), a unidade e o período da série, por
+ *     cima do desenho, porque aqui não há cartão por cima a dizê-los;
+ *   · uma etiqueta por marca, com o nome do país (ou «média da União») e o valor do ponto, ESCONDIDA no documento;
+ *     o guião do toque (`public/js/paises.js`) mostra a da marca tocada e mais nenhuma, e não escreve texto nenhum;
+ *   · a lista dobrada «Os 27 por ordem», um `<details>` que abre sem guião, com os 27 países e a média da União pela
+ *     ordem dos valores (do mais alto para o mais baixo, o sentido do lugar na frase), Portugal marcado, a União na
+ *     sua posição, e a ressalva de cada ponto como as pontas a mostram. É o caminho sem guião e o de quem quer os
+ *     números (a decisão 2 do §5 do brief); o toque é um atalho;
+ *   · a ressalva da Comissão onde a média da União aparece numa medida que a pede (a §1.140, a sobrecarga do custo
+ *     da habitação no total), lida da fonte única `src/data/ressalvas-da-uniao.mjs`.
+ *
+ * SEM COR (IDENTIDADE §2), como a faixa do cartão: uma posição num ordenamento não é um valor de referência
+ * publicado. E sem «melhor» nem «pior» (§1.130): a ordem é a dos valores, e a frase diz um lugar.
+ *
+ * O DESENHO VAI `aria-hidden`, como o do cartão: a frase diz o que ele mostra, e a lista dobrada diz cada país com o
+ * seu valor a quem não vê o desenho ou não tem guião. As etiquetas do toque vivem dentro dele, e por isso também.
+ */
+import PontoDaSerie from './serie/PontoDaSerie.astro';
+import NomeDoPais from './serie/NomeDoPais.astro';
+import DataDaSerie from './serie/DataDaSerie.astro';
+import CampoDaSerie from './serie/CampoDaSerie.astro';
+import NomeDaMedida from './NomeDaMedida.astro';
+import { faixaDaMedida } from '../lib/faixa-da-uniao.mjs';
+import { getSerie, AGREGADO_DA_UNIAO } from '../lib/series.mjs';
+import { getClaim } from '../lib/ledger.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/cartao-medida.css';
+import '../styles/paises.css';
+
+const { linha: idDaLinha, lang } = Astro.props;
+const s = t(lang);
+const f = faixaDaMedida(idDaLinha, lang);
+if (!f) {
+  throw new Error(`<FaixaDosPaises>: a linha «${idDaLinha}» não tem série de países, e a secção dos países só rende as que têm.`);
+}
+const serie = getSerie(f.serie);
+const linha = getClaim(idDaLinha);
+const unidade = unidadeDaLinha(String(serie.unit), lang);
+const ressalva = ressalvaDaUniao(idDaLinha, lang);
+---
+
+<article class="paises-medida" data-faixa-paises={f.serie} id={`p-${f.serie}`} aria-labelledby={`pn-${f.serie}`}>
+  <h3 class="paises-nome" id={`pn-${f.serie}`}>
+    <NomeDaMedida linha={linha} lang={lang} escada="cartao" class="paises-nome-texto" />
+  </h3>
+  <p class="paises-unidade">
+    <CampoDaSerie serie={f.serie} campo="unit" valor={unidade.texto} lingua={unidade.lingua} />
+    {' · '}
+    <DataDaSerie serie={f.serie} campo="periodo" valor={String(serie.periodo)} lang={lang} />
+  </p>
+
+  <div class="faixa-ue-desenho paises-desenho" aria-hidden="true" data-faixa-desenho={f.serie} data-toques={f.serie}>
+    <span
+      class="faixa-ue-rotulo faixa-ue-rotulo-portugal"
+      data-faixa-rotulo="portugal"
+      data-ancora={f.rotulos.portugal.ancora}
+      style={`left:${f.rotulos.portugal.esquerda}%`}
+    >
+      <NomeDoPais geo="PT" lang={lang} />
+    </span>
+    <span class="faixa-ue-eixo">
+      {f.marcas.map((m) => (
+        <span
+          class:list={['faixa-ue-marca', `faixa-ue-${m.papel}`]}
+          data-faixa-marca={`${f.serie}#${m.geo}`}
+          style={`left:${m.esquerda}%`}
+        />
+      ))}
+    </span>
+    <span
+      class="faixa-ue-rotulo faixa-ue-rotulo-uniao"
+      data-faixa-rotulo="uniao"
+      data-ancora={f.rotulos.uniao.ancora}
+      style={`left:${f.rotulos.uniao.esquerda}%`}
+    >
+      <span data-voz>{f.palavras.uniao}</span>
+    </span>
+    {/* AS ETIQUETAS DO TOQUE: uma por marca, na posição dela, escondidas. O guião tira o `hidden` à da marca mais
+        perto do toque e põe-no às outras; sem guião ficam todas escondidas, e a lista dobrada, abaixo, diz o mesmo. */}
+    <span class="paises-toques">
+      {f.toques.map((x) => (
+        <span
+          class="paises-toque"
+          data-toque-de={`${f.serie}#${x.geo}`}
+          data-ancora={x.ancora}
+          style={`left:${x.esquerda}%`}
+          hidden
+        >
+          {x.geo === AGREGADO_DA_UNIAO ? <span data-voz>{f.palavras.uniao}</span> : <NomeDoPais geo={x.geo} lang={lang} />}
+          {' '}
+          <PontoDaSerie serie={f.serie} geo={x.geo} class="faixa-ue-valor" />
+          {x.ressalva && (
+            <span class="faixa-ue-ressalva" data-faixa-ressalva={`${f.serie}#${x.geo}`} data-bandeira={x.bandeira}>{' ('}{x.ressalva}{')'}</span>
+          )}
+        </span>
+      ))}
+    </span>
+  </div>
+
+  <p class="faixa-ue-pontas">
+    {['baixo', 'alto'].map((papel) => (
+      <span class:list={['faixa-ue-ponta', `faixa-ue-ponta-${papel}`]} data-faixa-ponta={papel}>
+        {f.pontas[papel].map((p, i, todos) => (
+          <>
+            {i > 0 && (i === todos.length - 1 ? f.palavras.lista.ultimo : f.palavras.lista.entre)}
+            <NomeDoPais geo={p.geo} lang={lang} />{' '}
+            <PontoDaSerie serie={f.serie} geo={p.geo} class="faixa-ue-valor" />
+            {p.ressalva && (
+              <span class="faixa-ue-ressalva" data-faixa-ressalva={`${f.serie}#${p.geo}`} data-bandeira={p.bandeira}>{' ('}{p.ressalva}{')'}</span>
+            )}
+          </>
+        ))}
+      </span>
+    ))}
+  </p>
+
+  <p class="faixa-ue-frase" data-faixa-frase={f.serie}>
+    {f.pedacos.map((p) =>
+      typeof p === 'string' ? (
+        p
+      ) : 'ponto' in p ? (
+        <PontoDaSerie serie={f.serie} geo={p.ponto} class="faixa-ue-valor" />
+      ) : 'pais' in p ? (
+        <NomeDoPais geo={p.pais} lang={lang} />
+      ) : 'conta' in p ? (
+        <span class="faixa-ue-conta" data-ponto-conta={f.serie}>{p.conta}</span>
+      ) : 'lugar' in p ? (
+        <span class="faixa-ue-lugar" data-ponto-lugar={f.serie}>{p.lugar}</span>
+      ) : (
+        <DataDaSerie serie={f.serie} campo="periodo" valor={p.periodo} lang={lang} />
+      ),
+    )}
+  </p>
+
+  {/* A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140): a faixa mostra a média da União, e numa medida que a pede a
+      ressalva da Comissão vai com ela, no mesmo bloco, como no cartão e nos recibos. */}
+  {ressalva && <p class="paises-ressalva" data-ressalva-da-uniao={idDaLinha}>{ressalva}</p>}
+
+  <details class="paises-lista" data-lista-paises={f.serie}>
+    <summary class="paises-lista-abrir">
+      <span class="paises-lista-seta" aria-hidden="true"></span>
+      <span class="paises-lista-rotulo">
+        {s.uniaoEuropeia.listaA}<span class="faixa-ue-conta" data-ponto-conta={f.serie}>{f.conta}</span>{s.uniaoEuropeia.listaFim}
+      </span>
+    </summary>
+    <ol class="paises-lista-itens">
+      {f.ordem.map((p) => (
+        <li class:list={['paises-lista-item', `paises-lista-${p.papel}`]} data-lista-ponto={`${f.serie}#${p.geo}`}>
+          {p.geo === AGREGADO_DA_UNIAO ? <span data-voz>{f.palavras.uniao}</span> : <NomeDoPais geo={p.geo} lang={lang} />}
+          {' '}
+          <PontoDaSerie serie={f.serie} geo={p.geo} class="faixa-ue-valor" />
+          {p.ressalva && (
+            <span class="faixa-ue-ressalva" data-faixa-ressalva={`${f.serie}#${p.geo}`} data-bandeira={p.bandeira}>{' ('}{p.ressalva}{')'}</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </details>
+
+  <p class="faixa-ue-porta">
+    <a href={f.porta}>{f.palavras.porta}</a>
+  </p>
+</article>

@@ -893,6 +893,34 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
 }
 
 /* =============================================================================
+ * A PILHA: A FILA QUE DOBRA TAMBÉM NO TELEMÓVEL (bloco UE2, 02.10.2026, o item 4 do brief)
+ * =============================================================================
+ * Na página da União a fila dos 21 cartões mostrava um cartão e uma nesga do seguinte a 390 px, e a página não se
+ * lia de cima a baixo: a captura do K2 media 1 205 px de altura, porque o resto dos cartões estava de lado. A forma
+ * «pilha» (`Faixa.astro`, `forma`) é a grelha que a fila já é a partir de 768 px, com colunas de 220 px no mínimo:
+ * uma coluna a 390 px, como as páginas de assunto, e duas quando cabem. Colunas mais estreitas foram medidas e
+ * recusadas: com duas colunas a 390 px (176 px cada) o «(dado provisório)» pisava o valor, e a palavra do estado
+ * partia-se em quatro linhas. O nome reserva duas linhas e não três: numa coluna só não há vizinho com quem alinhar
+ * o valor, e um nome mais longo faz crescer a sua fila (a fila do nome é `minmax(reserva, auto)`). O encaixe e o
+ * corte saem pela razão escrita acima, e o `position: relative` fica pela mesma razão. Acima de 768 px a regra de
+ * cima manda, e a pilha é a grelha de sempre.
+ * ========================================================================== */
+@media (max-width: 767px) {
+  .faixa-pilha {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1px;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+  .faixa-pilha > .cartao {
+    flex: none;
+    scroll-snap-align: none;
+    --cartao-nome-reserva: calc(2 * 1.25 * 15px);
+  }
+}
+
+/* =============================================================================
  * AS GAVETAS DO MAPA — a busca e os nomes, fechadas (01.09.2026)
  * ========================================================================== */
 

@@ -1,0 +1,186 @@
+/* =============================================================================
+ * A SECÇÃO DOS PAÍSES (bloco UE2, 02.10.2026): as dez faixas da União, à largura inteira, uma por baixo da outra
+ * =============================================================================
+ *
+ * A gramática é a da faixa do cartão (`src/styles/cartao-medida.css`, «A FAIXA DA UNIÃO»): uma linha do valor mais
+ * baixo ao mais alto dos 27, uma marca por país a cinzento, a de Portugal maior e a tinta, a média da União como um
+ * traço a tinta. SEM COR, pela razão de lá (IDENTIDADE §2). O que muda é a largura, que é a da página, para que as
+ * dez faixas se leiam à mesma escala de largura uma por baixo da outra (a decisão 1 do §5 do brief), e um quarto
+ * andar no desenho, por baixo do rótulo da União, onde aparece a etiqueta da marca tocada: o nome do país e o valor,
+ * sem tapar o nome de Portugal, que fica sempre no andar de cima.
+ *
+ * As posições escrevem-se em percentagem no próprio elemento, e a F20 do `check:formas` refá-las a partir dos valores.
+ */
+
+.paises-titulo {
+  font-family: var(--f-versal);
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--ink);
+}
+
+.paises-medida {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding: 20px 0 10px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.paises-nome {
+  margin: 0;
+  font-family: var(--f-prosa);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.paises-unidade {
+  margin: 0;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* QUATRO ANDARES: o nome de Portugal (0 a 14 px), o eixo com as marcas (a 23 px), o rótulo da média da União (33 a
+   47 px) e a etiqueta do toque (54 a 70 px). A margem lateral é a do desenho do cartão, para que as marcas das pontas
+   não fiquem cortadas pelo bordo. */
+.paises-desenho {
+  height: 72px;
+  margin: 8px 6px 0;
+  /* O toque não pinta a caixa inteira do desenho: quem diz o que foi tocado é o anel da marca e a etiqueta. */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* A ETIQUETA DE UMA MARCA, escondida até ao toque. O `hidden` do documento esconde-a sem guião; com guião, o
+   `public/js/paises.js` tira-o à da marca tocada. Ancora-se como os rótulos: pelo meio, ou pela ponta mais perto. */
+.paises-toque {
+  position: absolute;
+  top: 54px;
+  white-space: nowrap;
+  font-family: var(--f-prosa);
+  font-size: 13px;
+  line-height: 16px;
+  color: var(--ink);
+  transform: translateX(-50%);
+  padding: 0 3px;
+  background: var(--paper);
+  z-index: 3;
+}
+.paises-toque[data-ancora='inicio'] {
+  transform: translateX(-4px);
+}
+.paises-toque[data-ancora='fim'] {
+  transform: translateX(calc(-100% + 4px));
+}
+.paises-toque[hidden] {
+  display: none;
+}
+/* A marca tocada leva um anel a tinta, e não uma cor: é a mesma tinta do resto do desenho. */
+.paises-desenho .faixa-ue-marca[data-tocada] {
+  box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--ink);
+  z-index: 3;
+}
+/* Com guião, o desenho responde ao ponteiro, e di-lo pelo cursor; sem guião não responde, e não o diz. */
+[data-paises][data-toque='sim'] .paises-desenho {
+  cursor: pointer;
+}
+
+.paises-medida .faixa-ue-frase {
+  max-width: 70ch;
+}
+
+.paises-ressalva {
+  margin: 0;
+  max-width: 70ch;
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+/* A LISTA DOBRADA DOS 27, um `<details>` nativo fechado, com o alvo da casa (44 px) e o sinal de dobra da casa. */
+.paises-lista {
+  border-top: 1px solid var(--g3);
+  margin-top: 4px;
+}
+.paises-lista-abrir {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 4px 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--f-prosa);
+  font-size: 15px;
+  line-height: 1.3;
+}
+.paises-lista-abrir::-webkit-details-marker {
+  display: none;
+}
+.paises-lista-abrir:hover .paises-lista-rotulo {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.paises-lista-seta {
+  flex: 0 0 auto;
+  color: var(--muted);
+}
+.paises-lista-seta::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.16s ease;
+  transform-origin: 30% 50%;
+}
+.paises-lista[open] .paises-lista-seta::before {
+  transform: rotate(90deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .paises-lista-seta::before {
+    transition: none;
+  }
+}
+
+/* SEM NÚMEROS À FRENTE: a ordem é a informação, e um número de posição na lista contaria a média da União como se
+   fosse um país e discordaria do lugar de Portugal que a frase diz. A lista corre em colunas a partir de 768 px, de
+   cima para baixo e da esquerda para a direita. */
+.paises-lista-itens {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0 0 0 21px;
+  font-family: var(--f-prosa);
+  font-size: 14px;
+  line-height: 1.55;
+}
+@media (min-width: 768px) {
+  .paises-lista-itens {
+    columns: 3;
+    column-gap: 32px;
+  }
+}
+@media (min-width: 1280px) {
+  .paises-lista-itens {
+    columns: 4;
+  }
+}
+.paises-lista-item {
+  break-inside: avoid;
+}
+.paises-lista-portugal {
+  font-weight: 600;
+}
+.paises-lista-uniao {
+  color: var(--muted);
+}
