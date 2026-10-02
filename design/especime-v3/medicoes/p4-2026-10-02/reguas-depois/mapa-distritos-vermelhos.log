@@ -1,0 +1,17 @@
+
+  [32mvermelho ✓[0m  os nomes retirados da gaveta dos distritos e das ilhas
+[90m              M1b · a 1280, cada unidade abaixo de 44 px de área inscrita tem o nome numa lista · sem rede: Aveiro 22px, Braga 26px, Bragança 42px, Coimbra 20px, Faro 18px, Guarda 38px, Ilha da Graciosa 0px, Ilha da Madeira 10px, Ilha das Flores 0px, Ilha de Porto Santo 0px, Ilha de Santa Maria 0px, Ilha de São Jorge 0px, Ilha de São Miguel 2px, Ilha do Corvo 0px, Ilha do Faial 2px, Ilha do Pico 0px, Ilha Terceira 2px, Leiria 16px, Lisboa 28px, Portalegre 38px, Porto 22px, Santarém 32px, Setúbal 28px, Viana do Castelo 24px, Vila Real 30px, Viseu 30px[0m
+[90m              M2·320b · a 320, cada unidade abaixo de 44 px de área inscrita tem o nome numa lista · sem rede: Aveiro 14px, Beja 32px, Braga 16px, Bragança 26px, Castelo Branco 30px, Coimbra 14px, Évora 28px, Faro 12px, Guarda 24px, Ilha da Graciosa 0px, Ilha da Madeira 6px, Ilha das Flores 0px, Ilha de Porto Santo 0px, Ilha de Santa Maria 0px, Ilha de São Jorge 0px, Ilha de São Miguel 0px, Ilha do Corvo 0px, Ilha do Faial 0px, Ilha do Pico 0px, Ilha Terceira 0px, Leiria 10px, Lisboa 18px, Portalegre 24px, Porto 14px, Santarém 20px, Setúbal 18px, Viana do Castelo 14px, Vila Real 20px, Viseu 20px[0m
+  [32mvermelho ✓[0m  o nome da Ilha da Madeira retirado da gaveta
+[90m              M1b · a 1280, cada unidade abaixo de 44 px de área inscrita tem o nome numa lista · sem rede: Ilha da Madeira 10px[0m
+[90m              M2·390b · a 390, cada unidade abaixo de 44 px de área inscrita tem o nome numa lista · sem rede: Ilha da Madeira 6px[0m
+  [32mvermelho ✓[0m  uma área pintada com a cor de um estatuto
+[90m              M5a · as áreas do mapa de «Lugares» têm o mesmo desenho · 2 estilos[0m
+[90m              M5c · nenhuma cor de estatuto · 1 colisões[0m
+  [32mvermelho ✓[0m  o `class` e o `viewBox` repetidos no `<svg>` do mapa de «Lugares»
+[90m              M9 · nenhum atributo repetido num `<svg>` de mapa do dist/ · 1 etiqueta(s): lugares/index.html <class, viewbox>[0m
+  [32mvermelho ✓[0m  um nome movido para o fim da gaveta dos distritos e das ilhas
+[90m              M10a · em /lugares/, a lista de cada parcela está por ordem alfabética · distritos fora de ordem: Aveiro, Beja, Braga, Bragança, Castelo Branco, Coimbra, Faro, Guarda, Ilha da Graciosa, Ilha da Madeira, Ilha das Flores, Ilha de Porto Santo, Ilha de Santa Maria, Ilha de São Jorge, Ilha de São Miguel, Ilha do Corvo, Ilha do Faial, Ilha do Pico, Ilha Terceira, Leiria, Lisboa, Portalegre, Porto, Santarém, Setúbal, Viana do Castelo, Vila Real, Viseu, Évora[0m
+  [32mvermelho ✓[0m  o destino de uma área trocado pelo de outra, numa página de distrito
+[90m              M6a · o clique numa área abre a página dela · sintra → /municipios/mafra[0m
+

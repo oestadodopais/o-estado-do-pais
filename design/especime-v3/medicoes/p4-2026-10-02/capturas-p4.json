@@ -1,0 +1,1055 @@
+{
+  "bloco": "P4",
+  "cabeca": "ccdd9fa2f18ec714e2cc20d834b2c0a3160388e4",
+  "construcao": {
+    "commit": "ccdd9fa2f18ec714e2cc20d834b2c0a3160388e4",
+    "ref": "p4-2026-10-02",
+    "construido_em": "2026-10-02T20:12:47.937Z"
+  },
+  "inicio": "2026-10-02T20:26:19.513Z",
+  "fim": "2026-10-02T20:26:45.244Z",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "capturas": 37,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-inicio-pt-390.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6835,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 361.7,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "9b267c21088c191f48241c32dbfa1adaf4ef79b209f3b8343d9fd3e0a43ad88f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-inicio-pt-768.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 5291,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 528.6,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "7f00edf3ea2523fd84dd056b7bb175a46db1e80b83d3b0888e275ed7b3ffc149"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-inicio-pt-1024.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 4916,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 574.7,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "c88a2ddd967b2c81b17872364b4ef5ec4f5c4bbc7d55ae4faf3800cafba1c244"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-inicio-pt-1280.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4789,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 654.4,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "0973596b743a2401181dd7f615b569151f9a621fa52f4cdb1fa30fa4975250da"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-inicio-pt-1600.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 4806,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 814.4,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "14be6841c7b724337f1b614ecdf0ac67fea75e876219a1c30e3da3489bc09f07"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-inicio-en-390.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6761,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 359.2,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "97b781a73b79ba0aaf29a0bede4d388d0227425f61a1b5c6da0aaed8148d8d68"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-inicio-en-768.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 5336,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 525.8,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "d67bccb1ce0ac47c65245f524151df58c718aa03c863087a8f111af117d347e7"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-inicio-en-1024.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 5033,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 571.9,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "fe816e4ba721642716420690c7edf84c85fa8f035395b155d482f15ef84a3630"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-inicio-en-1280.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4850,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 651.6,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "0b63d15dd3e92b9e97b7ea9a4527cbebe176689417c37904b74a75d4a8ab3cc7"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-inicio-en-1600.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 4867,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 811.6,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "af4a07ab9f0fba76add068e91d5ce4862b6557bd1032abac1e71ceef1828caca"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-lugares-pt-390.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3692,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 361.7,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "ba56b3302e7c3f7ff51ca4433c7ec0bc8f3f7980eabad95a2bcdaea061226c2a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-lugares-pt-768.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 3451,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 528.6,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "e105984c79eaf9812caa326a3ce512786c217a942bdeee43697542e5b81ac124"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-lugares-pt-1024.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 3409,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 574.7,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "3902637bf583d518c1f7f9a19e58129adae9c012f47f7830dc37595cdee72c57"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-lugares-pt-1280.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 3468,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 654.4,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "d50443d2298a7247a2478729ce9363650f7ed3e9c40cb1d2e3c45a2b5a807ae4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-lugares-pt-1600.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 3477,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 814.4,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "8b18099c65c32b04e5ea620ab1368cdc1a33d6486e94b52f313758c6db970c33"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-lugares-en-390.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3713,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 359.2,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "c7ba5350685f3c0f9b9b51e4476437d04d6ca8e49ce507c95fd5bbdde03f57d9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-lugares-en-768.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 3426,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 525.8,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "9d32bfff3efa44146ea068c0473b33963a62bf4b1ec50c35a06ceaa608ed68af"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-lugares-en-1024.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 3419,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 571.9,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "45abbd757a9928acff36069401372befd6c6f39359c475ec921e78eef4b6315e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-lugares-en-1280.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 3481,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 651.6,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "02a34671deab37f33dbd7011e0a2ca524dba052568c4224df10417e0a16f988a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-lugares-en-1600.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 3490,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 811.6,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "36f9ac0ebb4aad8368c7871ef61cbf46a38b1d8c2b26762f76ec0dd3999188da"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-uniao-pt-390.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 9642,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 361.7,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "752be619c6700b11567933ff4acd0e27421c691781d0efe597139767983163d5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-uniao-pt-768.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 6900,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 528.6,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "21c30a92812acb880bd885afa2b4f5fd45e9a733cfa01c19e906942815b00a66"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-uniao-pt-1024.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 6721,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 574.7,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "d6017a33d524d9907827247a23bd17c4643c8812345c03aa8e59e8dcc527375f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-uniao-pt-1280.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6581,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 654.4,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "fbad0fd2b928c21727bb0516ed6aa35caddd9c1f3b9c7c16037c360d2105a45b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-uniao-pt-1600.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 6597,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 814.4,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "7e3660238b72c99a4c148a8fb2ddd172821341997c0094eb72fa28dd90eea397"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-uniao-en-390.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 9574,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 359.2,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "54c578d8e5030204871d12e6e2d8e6c14a9ccb604d99e71af70e70c8878c0dde"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-uniao-en-768.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 6779,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 525.8,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "cb5c31e0abc12e3e67e091863a3354ddc91e2828107f86d427da094e89068433"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-uniao-en-1024.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 6626,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 571.9,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "5298a36fcb8ab276ff44c74c543136707a8477f962ad51108cd37de0a3523f19"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-uniao-en-1280.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6448,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 651.6,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "98a2d2c47e6ce6e3cdb82ce3cbc9fea536715a441d99e3257e3f4c0efb03869d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-uniao-en-1600.png",
+      "tipo": "pagina",
+      "tema": "claro de omissão (aparelho escuro, nada guardado)",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 6464,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 811.6,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "6a101cd543cb4557b0bda4b8a1e7140ffaea5e31f4018969d21d7cf7fe41435e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-inicio-pt-390-escuro.png",
+      "tipo": "pagina",
+      "tema": "escuro (a escolha guardada no aparelho)",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6835,
+        "tema": "dark",
+        "papel": "rgb(21, 23, 26)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 361.7,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "64cf51eb03c355239bd815b05537aa3ad731f17957d5c630c56017f652d6cd29"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-lugares-pt-390-escuro.png",
+      "tipo": "pagina",
+      "tema": "escuro (a escolha guardada no aparelho)",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3692,
+        "tema": "dark",
+        "papel": "rgb(21, 23, 26)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 361.7,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "02b100afa4e05f6367654021ae82acc7ce399124b6d9a2f21d5dee970edc9066"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-uniao-pt-390-escuro.png",
+      "tipo": "pagina",
+      "tema": "escuro (a escolha guardada no aparelho)",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 9642,
+        "tema": "dark",
+        "papel": "rgb(21, 23, 26)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 361.7,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "b35130da3f371c6be9c10c1cd32e4a8ee8d0540dea674c3e1b26d504dbaecb89"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-cabecalho-pt-390-publicado.png",
+      "tipo": "cabecalho",
+      "variante": "publicado",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6835,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 361.7,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "693d3e41fd2d0908ecbfebb0ad422ca928e23bdd954a3a252250987886ca7494"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-cabecalho-pt-390-nome-inteiro.png",
+      "tipo": "cabecalho",
+      "variante": "nome-inteiro",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6879,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "União Europeia",
+          "Sobre"
+        ],
+        "linhas_do_menu": 2,
+        "menu_transborda": false,
+        "menu_direita": 260.1,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "d87b8b5f355ee26913c9932c7c6318197bcd49eca2da26d697eca618d0121202"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-cabecalho-en-390-publicado.png",
+      "tipo": "cabecalho",
+      "variante": "publicado",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6761,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "linhas_do_menu": 1,
+        "menu_transborda": false,
+        "menu_direita": 359.2,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "695877bfb14209d9f96223d96adeba861f532be6b0e24d8a702fb2c3b3cb2d32"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-cabecalho-en-390-nome-inteiro.png",
+      "tipo": "cabecalho",
+      "variante": "nome-inteiro",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6805,
+        "tema": null,
+        "papel": "rgb(246, 247, 244)",
+        "portas": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "European Union",
+          "About"
+        ],
+        "linhas_do_menu": 2,
+        "menu_transborda": false,
+        "menu_direita": 253.5,
+        "comando_do_tema_a_vista": true
+      },
+      "sha256": "c047cd1e5ff78d00446894aae554f618d46b808323c7e2c94c6d1d4d9dd404d3"
+    }
+  ]
+}
