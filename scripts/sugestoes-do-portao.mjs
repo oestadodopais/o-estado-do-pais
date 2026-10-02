@@ -171,7 +171,7 @@ export function conferirPaginaDasSugestoes(root, rota) {
   const robots = root.querySelectorAll('meta[name="robots"]').map((m) => desfaz(m.getAttribute('content')));
 
   if (rota.key === 'correcoes') {
-    const frase = blocoDeclarado(root, '[data-porta-sugestoes-nas-correcoes]', SUGESTOES.portaNasCorrecoes[lang], 'S1 correções', erros);
+    const frase = blocoDeclarado(root, '[data-sugestoes-nas-correcoes]', SUGESTOES.portaNasCorrecoes[lang], 'S1 correções', erros);
     if (frase) {
       if (!frase.closest('main')) erros.push('S1 correções: a frase com a porta das sugestões não está no <main>.');
       ligacaoDe(frase, routePath('sugestoes', lang), SUGESTOES.portaDaFraseNasCorrecoes[lang], 'S1 correções', erros, normalizePath(routePath('correcoes', lang)));

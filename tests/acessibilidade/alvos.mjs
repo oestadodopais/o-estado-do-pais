@@ -21,6 +21,14 @@
  * R1, 23.09.2026): cada estrago é uma passagem inteira, e provar a planta de uma
  * célula nova não precisa de pagar as outras seis.
  *
+ * A H16 (bloco S1, 02.10.2026) é a caixa das sugestões: a porta das sugestões em
+ * todas as páginas construídas, uma por página e dentro do `<footer>`, com o alvo
+ * de 44 px abaixo de 1024 e de 32 a partir daí, como as outras portas do rodapé;
+ * o botão do formulário com 44 px em todas as larguras; e o campo armadilhado
+ * fora do ecrã, fora do caminho do teclado e fora da árvore de acessibilidade.
+ * As duas famílias da caixa (o formulário e uma página do resultado) entram nas
+ * rotas medidas, e por isso também no axe e nas outras células.
+ *
  * A H15 (bloco R1, 23.09.2026, I137) é a busca dos lugares ESCRITA: escreve
  * «mour» no campo e exige uma ligação visível para Mourão, que o `Enter` com
  * vários resultados não sai da página e que com um só abre a do concelho. A
@@ -195,6 +203,10 @@ const FAMILIAS = [
   ['sobre', null],
   ['correcoes', null],
   ['marcador', null],
+  /* A CAIXA DAS SUGESTÕES (bloco S1, 02.10.2026): o formulário e uma das quatro páginas do resultado,
+     que partilham a mesma vista; a do obrigado é a que um leitor vê quando tudo correu bem. */
+  ['sugestoes', null],
+  ['sugestoesObrigado', null],
 ];
 
 /**
@@ -316,6 +328,41 @@ const ESTRAGOS = [
       const lista = html.slice(i, fim);
       return html.slice(0, fim) + lista.replace(' data-lista-agrupada', '') + html.slice(fim);
     },
+  },
+  {
+    /* A PORTA DAS SUGESTÕES DENTRO DO `<main>` (bloco S1, 02.10.2026): a mesma prova da porta das
+       correções, para a porta nova. */
+    nome: 'sugestoes-porta-no-main · a porta das sugestões dentro do <main>',
+    celulas: ['H16'],
+    faz: (html) => {
+      const bloco = html.match(/<span data-porta-sugestoes(?:="")?[^>]*>[\s\S]*?<\/span>/);
+      if (!bloco) return html;
+      return html.replace(bloco[0], '').replace('</main>', `${bloco[0]}</main>`);
+    },
+  },
+  {
+    /* O BOTÃO DO FORMULÁRIO A 30 px, contra os 44 que o brief pede em todas as larguras. */
+    nome: 'sugestoes-botao-a-30 · o botão do formulário a 30 px, contra os 44 exigidos',
+    celulas: ['H16'],
+    amostra: '/sugestoes/',
+    faz: (html) =>
+      html.replace(
+        '</head>',
+        '<style>.sugestoes-enviar{min-height:30px!important;height:30px!important;padding:0 4px!important;' +
+          'line-height:30px!important;font-size:10px!important}</style></head>',
+      ),
+  },
+  {
+    /* O CAMPO ARMADILHADO À VISTA: um leitor via-o, preenchia-o, e a sugestão perdia-se sem ele saber. */
+    nome: 'sugestoes-armadilha-a-vista · o campo armadilhado dentro do ecrã',
+    celulas: ['H16'],
+    amostra: '/sugestoes/',
+    faz: (html) =>
+      html.replace(
+        '</head>',
+        '<style>.sugestoes-armadilha{position:static!important;width:auto!important;height:auto!important;' +
+          'overflow:visible!important}</style></head>',
+      ),
   },
   {
     /* O SELO NA SINOPSE DA LISTA DOS ESTUDOS (bloco R1, 23.09.2026, I144). A
@@ -957,6 +1004,9 @@ function medeNaPagina(cfg) {
            selo continua a ser a porta da sua linha, com a área inteira a 390 px. O estrago
            «leitura-do-lugar-sem-classe» prova que é a classe que os dispensa, e só ela. */
         naProsaCorrida: !!el.closest?.('.lugar-estudo-leitura, .pais-leitura, .lugar-leitura, .estudos-lista .estudo-resumo, .pp-frase, .pp-peca, .pp-caixa-texto'),
+        /* H16 (bloco S1, 02.10.2026): a porta das sugestões do rodapé e o botão do formulário. */
+        portaSugestoes: !!el.closest?.('[data-porta-sugestoes]'),
+        botaoSugestoes: !!el.matches?.('[data-sugestoes-formulario] button[type="submit"]'),
         ok: ok44,
         ok32,
         ok44,
@@ -1099,7 +1149,28 @@ function medeNaPagina(cfg) {
   const comExpanded = [...document.querySelectorAll('[aria-expanded]')];
   const expandedDoGuiao = comExpanded.filter((el) => el.matches('details > summary[aria-controls]'));
 
+  /* H16 (bloco S1, 02.10.2026): a porta das sugestões no seu marco, e o campo armadilhado. */
+  const portasSugestoes = [...document.querySelectorAll('[data-porta-sugestoes]')];
+  const armadilha = document.querySelector('[data-sugestoes-armadilha] input');
+  const sugestoes = {
+    portas: portasSugestoes.length,
+    noMarco: portasSugestoes.length === 1
+      ? !!portasSugestoes[0].closest('footer,[role="contentinfo"],nav[aria-label],nav[aria-labelledby]')
+      : false,
+    armadilha: armadilha
+      ? (() => {
+          const r = armadilha.getBoundingClientRect();
+          return {
+            foraDoEcra: r.right <= 0 || r.left >= document.documentElement.clientWidth || r.bottom <= 0,
+            tabindex: armadilha.getAttribute('tabindex'),
+            foraDaArvore: !!armadilha.closest('[aria-hidden="true"]'),
+          };
+        })()
+      : null,
+  };
+
   return {
+    sugestoes,
     alvos,
     caixas,
     unidades,
@@ -1144,8 +1215,13 @@ function varreDist() {
   let portaForaDeMarco = 0;
   let portaEmMain = 0;
   let expanded = 0;
+  /* H16 (bloco S1, 02.10.2026): a porta das sugestões em cada página, pela posição das etiquetas. */
+  let sugestoesEmMarco = 0;
+  let sugestoesForaDeMarco = 0;
+  let sugestoesADobrar = 0;
+  let semPortaDasSugestoes = 0;
   const paginasExpanded = [];
-  const exemplos = { h1: [], porta: [], expanded: [] };
+  const exemplos = { h1: [], porta: [], expanded: [], sugestoes: [] };
   for (const f of paginas(DIST)) {
     const s = leFicheiro(f);
     const rel = path.relative(DIST, f);
@@ -1170,6 +1246,21 @@ function varreDist() {
     if (!cabecaValida(s, rel)) {
       h1Errado++;
       if (exemplos.h1.length < 5) exemplos.h1.push(`${rel} (${nH1})`);
+    }
+    const quantasSugestoes = (s.match(/data-porta-sugestoes(?![\w-])/g) ?? []).length;
+    if (quantasSugestoes === 0) semPortaDasSugestoes++;
+    else if (quantasSugestoes > 1) sugestoesADobrar++;
+    else {
+      /* O ATRIBUTO EXATO, e não o princípio da cadeia: um atributo que comece pelo mesmo nome noutro sítio da
+         página não é a porta. */
+      const j = s.search(/data-porta-sugestoes(?![\w-])/);
+      const fo = s.lastIndexOf('<footer', j);
+      const fc = s.lastIndexOf('</footer>', j);
+      if (fo >= 0 && fo > fc) sugestoesEmMarco++;
+      else {
+        sugestoesForaDeMarco++;
+        if (exemplos.sugestoes.length < 5) exemplos.sugestoes.push(rel);
+      }
     }
     const i = s.indexOf('data-porta-correccoes');
     if (i < 0) semPorta++;
@@ -1205,6 +1296,10 @@ function varreDist() {
     expanded,
     paginasExpanded,
     exemplos,
+    sugestoesEmMarco,
+    sugestoesForaDeMarco,
+    sugestoesADobrar,
+    semPortaDasSugestoes,
   };
 }
 
@@ -1927,6 +2022,54 @@ async function avalia(p, dist, cartoes, leis, folhas) {
     'H15',
     pesquisas.length === 4 && pesquisas.every((m) => m.passa),
     pesquisas.map((m) => resumoDaPesquisa(m)).join(' || '),
+  );
+
+  /* --- H16 · a caixa das sugestões (bloco S1, 02.10.2026) -----------------
+   *
+   * A PORTA EM TODAS AS PÁGINAS. Lida do disco, em todas as páginas construídas:
+   * uma porta das sugestões por página, dentro do `<footer>`, e as únicas páginas
+   * sem ela são as que também não têm a das correções (os documentos alojados,
+   * que não têm rodapé). Lida no navegador, nas rotas medidas: uma por página, no
+   * seu marco, com o alvo de 44 px a 390 e de 32 a partir de 1024, como as outras
+   * portas do rodapé (a folha dá-lhes 44 abaixo de 1024).
+   *
+   * O BOTÃO E A ARMADILHA, na página do formulário: o botão com 44 px em todas as
+   * larguras medidas (§3, ponto 4 do brief), e o campo armadilhado fora do ecrã,
+   * com `tabindex="-1"` e dentro de um `aria-hidden`: um leitor que o visse ou o
+   * ouvisse podia preenchê-lo, e a sugestão perdia-se sem ele saber.
+   */
+  const paginasComPorta = p.paginas.filter((pg) => pg.sugestoes.portas === 1 && pg.sugestoes.noMarco);
+  const portasDasSugestoes = todosOsAlvos.filter((a) => a.portaSugestoes);
+  const portasA390 = portasDasSugestoes.filter((a) => a.largura === 390);
+  const portasLargas = portasDasSugestoes.filter((a) => a.largura >= LIMIAR_DA_COLUNA);
+  const portasMasDeToque = [...portasA390.filter((a) => a.ok44 !== true), ...portasLargas.filter((a) => a.ok32 !== true)];
+  const botoes = todosOsAlvos.filter((a) => a.botaoSugestoes);
+  const botoesMaus = botoes.filter((a) => a.ok44 !== true);
+  const armadilhas = p.paginas.filter((pg) => pg.familia === 'sugestoes').map((pg) => ({ chave: pg.chave, largura: pg.largura, a: pg.sugestoes.armadilha }));
+  const armadilhasMas = armadilhas.filter((x) => !x.a || !x.a.foraDoEcra || x.a.tabindex !== '-1' || !x.a.foraDaArvore);
+  conta(
+    'H16',
+    dist.sugestoesEmMarco > 0 &&
+      dist.sugestoesForaDeMarco === 0 &&
+      dist.sugestoesADobrar === 0 &&
+      dist.semPortaDasSugestoes === dist.semPorta &&
+      paginasComPorta.length === p.paginas.length &&
+      portasA390.length > 0 &&
+      portasLargas.length > 0 &&
+      portasMasDeToque.length === 0 &&
+      botoes.length > 0 &&
+      botoesMaus.length === 0 &&
+      armadilhas.length > 0 &&
+      armadilhasMas.length === 0,
+    `${dist.n} página(s) do dist/: ${dist.sugestoesEmMarco} com a porta das sugestões dentro do <footer>, ` +
+      `${dist.sugestoesForaDeMarco} fora dele${dist.exemplos.sugestoes.length ? ` (${dist.exemplos.sugestoes.join('; ')})` : ''}, ` +
+      `${dist.sugestoesADobrar} com mais de uma, ${dist.semPortaDasSugestoes} sem ela ` +
+      `(e ${dist.semPorta} sem a das correções) · nas rotas medidas: ${paginasComPorta.length} de ${p.paginas.length} passagens ` +
+      `com uma porta no seu marco; ${portasA390.length} porta(s) a 390 e ${portasLargas.length} a partir de ${LIMIAR_DA_COLUNA}, ` +
+      `${portasMasDeToque.length} sem o alvo (${resumo(portasMasDeToque)}) · o botão do formulário: ${botoes.length} medição(ões), ` +
+      `${botoesMaus.length} abaixo de ${ALVO} px (${resumo(botoesMaus)}) · o campo armadilhado: ${armadilhas.length} medição(ões), ` +
+      `${armadilhasMas.length} à vista, no teclado ou na árvore de acessibilidade` +
+      (armadilhasMas.length ? ` (${armadilhasMas.slice(0, 3).map((x) => `${x.chave}@${x.largura}`).join(', ')})` : ''),
   );
 
   /* --- H10 · `aria-expanded` e o título do Método ------------------------- */
