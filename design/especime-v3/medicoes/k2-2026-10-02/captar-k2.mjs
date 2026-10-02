@@ -9,6 +9,8 @@
  *     (sobre `dist/`, que tem de ser uma construção da cabeça atual)
  *   node design/especime-v3/medicoes/k2-2026-10-02/captar-k2.mjs antes <pasta da construção de base> <cabeça de base>
  *     (a pasta fica fora do repositório, e o manifesto não a nomeia: guarda só a cabeça que o `version.json` dela diz)
+ *   node design/especime-v3/medicoes/k2-2026-10-02/captar-k2.mjs k2-b
+ *     (a passagem K2-b: sobre `dist/` da cabeça atual, a 390 e a 1 280 px, para `capturas-k2-b.json`)
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -18,14 +20,14 @@ import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 
 const fase = process.argv[2];
-if (!['antes', 'depois'].includes(fase)) throw new Error('Uso: captar-k2.mjs antes <dist> <cabeça> | depois');
+if (!['antes', 'depois', 'k2-b'].includes(fase)) throw new Error('Uso: captar-k2.mjs antes <dist> <cabeça> | depois | k2-b');
 const dist = path.resolve(fase === 'antes' ? process.argv[3] : 'dist');
 const cabeca = fase === 'antes' ? process.argv[4] : execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const pasta = 'design/especime-v3/medicoes/k2-2026-10-02';
 const saida = 'design/especime-v3/capturas/k2-2026-10-02';
 const versao = JSON.parse(await fs.readFile(path.join(dist, 'version.json'), 'utf8'));
 if (!cabeca || versao.commit !== cabeca) throw new Error(`A construção (${versao.commit}) não é da cabeça pedida (${cabeca}).`);
-const larguras = fase === 'antes' ? [390, 1280] : [390, 768, 1024, 1280, 1600];
+const larguras = fase === 'depois' ? [390, 768, 1024, 1280, 1600] : [390, 1280];
 const paginas = [
   { id: 'emprego', rota: { pt: '/emprego/', en: '/en/employment/' } },
   { id: 'uniao', rota: { pt: '/uniao-europeia/', en: '/en/european-union/' } },
