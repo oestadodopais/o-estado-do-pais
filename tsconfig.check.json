@@ -22,7 +22,11 @@
     "site.config.mjs",
     "src/lib/**/*.mjs",
     "src/data/**/*.mjs",
-    "src/i18n/**/*.mjs"
+    "src/i18n/**/*.mjs",
+    // A FUNÇÃO DA CAIXA DAS SUGESTÕES (bloco S1, 02.10.2026): `api/` é código que
+    // corre na Vercel ao lado do sítio, e entra no programa com `checkJs` como os
+    // módulos que ela importa da tabela das rotas e dos textos.
+    "api/**/*.js"
   ],
   // `src/data/sobre.mjs` É UM TEXTO GOVERNADO. A amarra das decisões
   // (`scripts/check-ledger.mjs`) prende os bytes do ficheiro ao resumo sha256
