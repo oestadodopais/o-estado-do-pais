@@ -1,0 +1,20 @@
+certa · a linha dos jovens com o valor antigo, «8» contra «8.0» · devia morder; hoje morde, com a célula de 4012a35c morde
+certa · uma linha composta arredondada, «2» contra «2.1 p» · devia morder; hoje morde, com a célula de 4012a35c morde
+certa · um inteiro alheio igual ao valor no mesmo excerto, «8» contra «… — Artigo 8 — … — 2025: 8.0» · devia morder; hoje morde, com a célula de 4012a35c morde
+certa · um número agrupado à inglesa com menos casas, «1422,4» contra «1,422.40» · devia morder; hoje morde, com a célula de 4012a35c morde
+certa · o controlo: a linha dos jovens derivada, com o valor antigo · devia calar; hoje cala, com a célula de 4012a35c cala
+certa · o controlo: a linha dos jovens como está · devia calar; hoje cala, com a célula de 4012a35c cala
+certa · o controlo: o número agrupado à inglesa com as mesmas casas, «1422,40» contra «1,422.40» · devia calar; hoje cala, com a célula de 4012a35c cala
+certa · uma linha do INE com menos casas do que a forma publicada, «86,6» contra «86,60» (o «valor» da máquina diz «86.6») · devia morder; hoje morde, com a célula de 4012a35c morde
+certa · uma linha do INE arredondada às unidades, «1 422» contra «1 422,4» · devia morder; hoje morde, com a célula de 4012a35c morde
+certa · uma linha do INE com mais casas do que a forma publicada, «1 422,40» contra «1 422,4» · devia morder; hoje morde, com a célula de 4012a35c morde
+certa · uma linha do INE com o número de outro concelho, «1 383,6» contra «1 422,4» · devia morder; hoje morde, com a célula de 4012a35c morde
+certa · a linha provisória do INE com um sinal que o excerto não declara, «1 835 x» com o sinal «&» · devia morder; hoje morde, com a célula de 4012a35c morde
+certa · a linha provisória do INE arredondada às dezenas, «1 840» contra «1 835 &» · devia morder; hoje morde, com a célula de 4012a35c morde
+certa · uma linha do INE com o «ind_string» tirado do excerto e uma casa a menos, «86,6» (o caso do leitor) · devia morder; hoje morde, com a célula de 4012a35c cala
+certa · uma linha do INE com o «ind_string» tirado do excerto e o valor certo, «86,60» · devia morder; hoje morde, com a célula de 4012a35c cala
+certa · o controlo: uma linha do INE com o excerto em prosa, que não é o registo da resposta, como está («valor 111.47») · devia calar; hoje cala, com a célula de 4012a35c cala
+certa · o controlo: a linha provisória do INE como está, «1 835» contra «1 835 &» com o sinal declarado · devia calar; hoje cala, com a célula de 4012a35c cala
+certa · o controlo: uma linha do INE como está, «1 422,4» · devia calar; hoje cala, com a célula de 4012a35c cala
+certa · o controlo: a linha do INE com o zero do fim, como está, «86,60» · devia calar; hoje cala, com a célula de 4012a35c cala
+19 de 19 certas hoje; 2 que mordem hoje e calavam com a célula de 4012a35c
