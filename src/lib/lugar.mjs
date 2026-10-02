@@ -110,11 +110,11 @@ export function leituraDoLugar(m, pecas, lang, s) {
     return {
       partes: [
         L.a,
-        { claim: 'evora-indice-de-divida-2014', sufixo: '%' },
+        { claim: 'evora-indice-de-divida-2014', sufixo: ' %' },
         L.b,
         { ref: '2014' },
         L.c,
-        { claim: 'evora-indice-de-divida-2024', sufixo: '%' },
+        { claim: 'evora-indice-de-divida-2024', sufixo: ' %' },
         L.d,
         { ref: '2024' },
         L.e,
@@ -163,7 +163,7 @@ export function leituraDoLugar(m, pecas, lang, s) {
       L.dividaB,
       { voz: dentro ? s.estado.lei.dentro : s.estado.lei.fora },
       L.dividaC,
-      { claim: indice.claim, sufixo: '%' },
+      { claim: indice.claim, sufixo: ' %' },
       L.dividaD,
     );
   }
