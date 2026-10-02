@@ -314,3 +314,15 @@ planta('l2b-portao-faixa-sem-a-porta-do-cartao','scripts/gate-html.mjs',[
 planta('l2b-b-portao-lugar-numa-contagem','scripts/gate-html.mjs',[
  ['municipios/evora/index.html',r=>r.querySelector('[data-cartao-medida][data-medida-chave="populacao"] .cartao-medida-valor').insertAdjacentHTML('afterend','<p class="planta-l2b-b">Évora está em <span data-concelho-lugar="populacao#evora">51</span>.º lugar.</p>')]
 ],[/L2b-b: «data-concelho-lugar» dá um lugar na medida «populacao», que é uma contagem e não tem faixa/]);
+/* K2-c (02.10.2026, achados 1 e 2 da leitura a frio do Codex): a unidade da casa do cartão da diferença de emprego
+   confere-se contra a definição declarada e só vale para a sua linha; a classe etária ao lado do título dos jovens é
+   uma citação registada, conferida carácter a carácter. `--prefixo k2c-` corre só estas. */
+planta('k2c-portao-unidade-da-casa-trocada','scripts/gate-html.mjs',[
+ ['emprego/index.html',r=>r.querySelector('[data-unidade-da-casa="disparidade-de-emprego-entre-sexos-2025"]').set_content('% da população')]
+],[/K2-c: a unidade da casa de "disparidade-de-emprego-entre-sexos-2025" diz «% da população» e a definição declara «pontos percentuais»/]);
+planta('k2c-portao-unidade-da-casa-de-outra-linha','scripts/gate-html.mjs',[
+ ['en/employment/index.html',r=>r.querySelector('[data-unidade-da-casa="disparidade-de-emprego-entre-sexos-2025"]').setAttribute('data-unidade-da-casa','taxa-de-emprego-2025')]
+],[/o valor da afirmação "disparidade-de-emprego-entre-sexos-2025" aparece sem selo para a sua própria linha na forma do cartão/,/K2-c: a unidade da casa de "taxa-de-emprego-2025" aparece na página e a definição de "taxa-de-emprego-2025" não declara unidade nenhuma/]);
+planta('k2c-portao-classe-etaria-trocada','scripts/gate-html.mjs',[
+ ['uniao-europeia/index.html',r=>r.querySelector('[data-verbatim="origem-eurostat-tipslm90-sexo-coordenadas"]').set_content('Age class: From 15 to 24 years')]
+],[/a citação "origem-eurostat-tipslm90-sexo-coordenadas" não foi transcrita fielmente/]);

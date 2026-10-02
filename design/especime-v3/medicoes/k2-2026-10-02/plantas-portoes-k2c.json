@@ -1,0 +1,51 @@
+[
+  {
+    "nome": "k2c-portao-unidade-da-casa-trocada",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "K2-c: a unidade da casa de \"disparidade-de-emprego-entre-sexos-2025\" diz «% da população» e a definição declara «pontos percentuais»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/emprego/index.html",
+        "antes": "f1ef9b121e9387c911e9a3dc5c28f491e2c72188bc1237746126695cd39662b6",
+        "reposto": "f1ef9b121e9387c911e9a3dc5c28f491e2c72188bc1237746126695cd39662b6"
+      }
+    ]
+  },
+  {
+    "nome": "k2c-portao-unidade-da-casa-de-outra-linha",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o valor da afirmação \"disparidade-de-emprego-entre-sexos-2025\" aparece sem selo para a sua própria linha na forma do cartão",
+      "K2-c: a unidade da casa de \"taxa-de-emprego-2025\" aparece na página e a definição de \"taxa-de-emprego-2025\" não declara unidade nenhuma"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/employment/index.html",
+        "antes": "5a288897416d0b5ac8619586bdbdccbed5dbfdb2b7386f1ce7ff63a839e3b8ea",
+        "reposto": "5a288897416d0b5ac8619586bdbdccbed5dbfdb2b7386f1ce7ff63a839e3b8ea"
+      }
+    ]
+  },
+  {
+    "nome": "k2c-portao-classe-etaria-trocada",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a citação \"origem-eurostat-tipslm90-sexo-coordenadas\" não foi transcrita fielmente"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/uniao-europeia/index.html",
+        "antes": "6778c0c62975036b5dc70164cbe1847c1f3d9703bf2804865415eabd88f9f83a",
+        "reposto": "6778c0c62975036b5dc70164cbe1847c1f3d9703bf2804865415eabd88f9f83a"
+      }
+    ]
+  }
+]
