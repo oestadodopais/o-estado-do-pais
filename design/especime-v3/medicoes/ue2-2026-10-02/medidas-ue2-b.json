@@ -1,0 +1,974 @@
+{
+  "bloco": "UE2-b",
+  "cabeca": "33c30fd9bca48d4a93a348d17d1bc02c2818a7ec",
+  "construcao_final": "33c30fd9bca48d4a93a348d17d1bc02c2818a7ec",
+  "construcao_de_base": "da6d2d91b706a4201a4fd98bcdfccbbba1d9f3c9",
+  "guiao": "design/especime-v3/medicoes/ue2-2026-10-02/medir-ue2-b.mjs",
+  "medidas": [
+    {
+      "nome": "formas_uniao_declaradas",
+      "valor": {
+        "antes": 7,
+        "agora": 0,
+        "antes_ids": [
+          "custo-unitario-do-trabalho-2025",
+          "desempenho-das-exportacoes-2025",
+          "divida-das-empresas-2025",
+          "divida-das-familias-2025",
+          "fluxo-de-credito-as-empresas-2025",
+          "fluxo-de-credito-as-familias-2025",
+          "taxa-de-cambio-efectiva-real-2025"
+        ]
+      },
+      "comando": "as entradas de DEFINICOES_DAS_MEDIDAS com a chave «uniao», no módulo da cabeça e no de da6d2d91 (git show)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha as formas do UE2 na declaração de base, entre elas a do custo unitário do trabalho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "origens_das_definicoes",
+      "valor": {
+        "perdidas": {},
+        "definicoes_com_origens_novas": 14,
+        "ganhas": {
+          "divida-publica-2025": [
+            "eurostat-tipsna40-descricao"
+          ],
+          "posicao-de-investimento-internacional-2025": [
+            "eurostat-tipsna40-descricao"
+          ],
+          "precos-da-habitacao-2025": [
+            "eurostat-tipsho20-descricao"
+          ],
+          "desempenho-das-exportacoes-2025": [
+            "eurostat-sec2010-ocde"
+          ],
+          "divida-das-empresas-2025": [
+            "eurostat-tipsna40-descricao"
+          ],
+          "divida-das-familias-2025": [
+            "eurostat-tipsna40-descricao"
+          ],
+          "saldo-da-balanca-corrente-2025": [
+            "eurostat-tipsbp10-descricao",
+            "eurostat-tipsna40-descricao"
+          ],
+          "taxa-de-actividade-2025": [
+            "eurostat-tipslm60-idade"
+          ],
+          "taxa-de-desemprego-mip-2025": [
+            "eurostat-tipsun20-descricao"
+          ],
+          "taxa-de-desemprego-2025": [
+            "eurostat-tipsun20-descricao"
+          ],
+          "desemprego-de-longa-duracao-2025": [
+            "glossario-atividade"
+          ],
+          "risco-de-pobreza-ou-exclusao-2025": [
+            "eurostat-tipslc10-descricao",
+            "eurostat-glossario-mediana",
+            "eurostat-tipslc10-privacao"
+          ],
+          "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": [
+            "eurostat-glossario-rendimento-disponivel"
+          ],
+          "sobrecarga-do-custo-da-habitacao-2025": [
+            "eurostat-glossario-rendimento-disponivel"
+          ]
+        }
+      },
+      "comando": "para cada medida, as origens da pergunta e da forma «uniao» de base que a declaração de agora não declara (perdidas), e as que declara a mais (ganhas)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha a descrição do PIB do Eurostat entre as origens ganhas da dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "perguntas_mudadas",
+      "valor": {
+        "quantas": 18,
+        "ids": [
+          "divida-publica-2025",
+          "posicao-de-investimento-internacional-2025",
+          "custo-unitario-do-trabalho-2025",
+          "precos-da-habitacao-2025",
+          "desempenho-das-exportacoes-2025",
+          "divida-das-empresas-2025",
+          "divida-das-familias-2025",
+          "fluxo-de-credito-as-empresas-2025",
+          "fluxo-de-credito-as-familias-2025",
+          "saldo-da-balanca-corrente-2025",
+          "taxa-de-actividade-2025",
+          "taxa-de-cambio-efectiva-real-2025",
+          "taxa-de-desemprego-mip-2025",
+          "taxa-de-desemprego-2025",
+          "desemprego-de-longa-duracao-2025",
+          "risco-de-pobreza-ou-exclusao-2025",
+          "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+          "sobrecarga-do-custo-da-habitacao-2025"
+        ]
+      },
+      "comando": "as entradas de DEFINICOES_DAS_MEDIDAS cujo texto (textoDaDefinicao, pt ou en) é diferente do da declaração de base",
+      "conhecido_positivo": {
+        "o_que": "o detetor acha a dívida pública entre as mudadas e não acha a taxa de emprego, que não mudou",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "termos_na_primeira_vez_entre_parenteses",
+      "valor": {
+        "fora_agora": 0,
+        "fora_antes": 32,
+        "termos": 15,
+        "agora": {
+          "pib": {
+            "pt": {
+              "definicoes_com_o_termo": 6,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 6,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "ativos_e_passivos": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "balanca_corrente": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "media_movel": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "ocde": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "populacao_ativa": {
+            "pt": {
+              "definicoes_com_o_termo": 5,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 5,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "pontos_percentuais": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "privacao_material_e_social_grave": {
+            "pt": {
+              "definicoes_com_o_termo": 2,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 2,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "intensidade_de_trabalho": {
+            "pt": {
+              "definicoes_com_o_termo": 2,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 2,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "risco_de_pobreza": {
+            "pt": {
+              "definicoes_com_o_termo": 2,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 2,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "rendimento_disponivel": {
+            "pt": {
+              "definicoes_com_o_termo": 3,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 3,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "economias_avancadas": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "consolidado": {
+            "pt": {
+              "definicoes_com_o_termo": 4,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 4,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "deflatores": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "custo_unitario": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          }
+        },
+        "antes": {
+          "pib": {
+            "pt": {
+              "definicoes_com_o_termo": 5,
+              "fora": 5,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:divida-publica-2025",
+                "cartao:posicao-de-investimento-internacional-2025",
+                "cartao:divida-das-empresas-2025",
+                "cartao:divida-das-familias-2025",
+                "cartao:saldo-da-balanca-corrente-2025"
+              ]
+            },
+            "en": {
+              "definicoes_com_o_termo": 5,
+              "fora": 5,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:divida-publica-2025",
+                "cartao:posicao-de-investimento-internacional-2025",
+                "cartao:divida-das-empresas-2025",
+                "cartao:divida-das-familias-2025",
+                "cartao:saldo-da-balanca-corrente-2025"
+              ]
+            }
+          },
+          "ativos_e_passivos": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:posicao-de-investimento-internacional-2025"
+              ]
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:posicao-de-investimento-internacional-2025"
+              ]
+            }
+          },
+          "balanca_corrente": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:saldo-da-balanca-corrente-2025"
+              ]
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:saldo-da-balanca-corrente-2025"
+              ]
+            }
+          },
+          "media_movel": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:saldo-da-balanca-corrente-2025"
+              ]
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:saldo-da-balanca-corrente-2025"
+              ]
+            }
+          },
+          "ocde": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:desempenho-das-exportacoes-2025"
+              ]
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:desempenho-das-exportacoes-2025"
+              ]
+            }
+          },
+          "populacao_ativa": {
+            "pt": {
+              "definicoes_com_o_termo": 3,
+              "fora": 3,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:taxa-de-desemprego-mip-2025",
+                "cartao:taxa-de-desemprego-2025",
+                "cartao:desemprego-de-longa-duracao-2025"
+              ]
+            },
+            "en": {
+              "definicoes_com_o_termo": 3,
+              "fora": 3,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:taxa-de-desemprego-mip-2025",
+                "cartao:taxa-de-desemprego-2025",
+                "cartao:desemprego-de-longa-duracao-2025"
+              ]
+            }
+          },
+          "pontos_percentuais": {
+            "pt": {
+              "definicoes_com_o_termo": 0,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 0,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "privacao_material_e_social_grave": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:risco-de-pobreza-ou-exclusao-2025"
+              ]
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:risco-de-pobreza-ou-exclusao-2025"
+              ]
+            }
+          },
+          "intensidade_de_trabalho": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:risco-de-pobreza-ou-exclusao-2025"
+              ]
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:risco-de-pobreza-ou-exclusao-2025"
+              ]
+            }
+          },
+          "risco_de_pobreza": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:risco-de-pobreza-ou-exclusao-2025"
+              ]
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:risco-de-pobreza-ou-exclusao-2025"
+              ]
+            }
+          },
+          "rendimento_disponivel": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:sobrecarga-do-custo-da-habitacao-2025"
+              ]
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 1,
+              "fora_de_parenteses_na_primeira_vez": [
+                "cartao:sobrecarga-do-custo-da-habitacao-2025"
+              ]
+            }
+          },
+          "economias_avancadas": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "consolidado": {
+            "pt": {
+              "definicoes_com_o_termo": 4,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 4,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "deflatores": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          },
+          "custo_unitario": {
+            "pt": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            },
+            "en": {
+              "definicoes_com_o_termo": 1,
+              "fora": 0,
+              "fora_de_parenteses_na_primeira_vez": []
+            }
+          }
+        }
+      },
+      "comando": "cada definição da página da União (a do cartão e a da faixa), nas duas edições: a primeira vez de cada termo, com mais «(» do que «)» antes dela",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha, na construção de base, o PIB fora de parênteses na pergunta da dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_a_habitacao_em_palavras_comuns",
+      "valor": {
+        "definicoes_com_o_termo_antigo_agora": 0,
+        "antes": 2
+      },
+      "comando": "as definições da página da União com «líquido de subsídios à habitação» ou «net of housing allowances», nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha o termo antigo na construção de base",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_de_assunto_com_o_main_mudado",
+      "valor": {
+        "paginas": 14,
+        "mudadas": 8,
+        "sem_mudanca": 6,
+        "porque": [
+          {
+            "pagina": "pobreza-e-desigualdade/index.html",
+            "quantas": 3,
+            "perguntas_mudadas": [
+              "risco-de-pobreza-ou-exclusao-2025",
+              "divida-das-familias-2025",
+              "fluxo-de-credito-as-familias-2025"
+            ],
+            "so_as_perguntas": true
+          },
+          {
+            "pagina": "emprego/index.html",
+            "quantas": 4,
+            "perguntas_mudadas": [
+              "taxa-de-actividade-2025",
+              "taxa-de-desemprego-mip-2025",
+              "desemprego-de-longa-duracao-2025",
+              "custo-unitario-do-trabalho-2025"
+            ],
+            "so_as_perguntas": true
+          },
+          {
+            "pagina": "habitacao/index.html",
+            "quantas": 3,
+            "perguntas_mudadas": [
+              "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+              "sobrecarga-do-custo-da-habitacao-2025",
+              "precos-da-habitacao-2025"
+            ],
+            "so_as_perguntas": true
+          },
+          {
+            "pagina": "estado-e-economia/index.html",
+            "quantas": 7,
+            "perguntas_mudadas": [
+              "divida-publica-2025",
+              "saldo-da-balanca-corrente-2025",
+              "posicao-de-investimento-internacional-2025",
+              "taxa-de-cambio-efectiva-real-2025",
+              "desempenho-das-exportacoes-2025",
+              "divida-das-empresas-2025",
+              "fluxo-de-credito-as-empresas-2025"
+            ],
+            "so_as_perguntas": true
+          },
+          {
+            "pagina": "en/poverty-and-inequality/index.html",
+            "quantas": 3,
+            "perguntas_mudadas": [
+              "risco-de-pobreza-ou-exclusao-2025",
+              "divida-das-familias-2025",
+              "fluxo-de-credito-as-familias-2025"
+            ],
+            "so_as_perguntas": true
+          },
+          {
+            "pagina": "en/employment/index.html",
+            "quantas": 4,
+            "perguntas_mudadas": [
+              "taxa-de-actividade-2025",
+              "taxa-de-desemprego-mip-2025",
+              "desemprego-de-longa-duracao-2025",
+              "custo-unitario-do-trabalho-2025"
+            ],
+            "so_as_perguntas": true
+          },
+          {
+            "pagina": "en/housing/index.html",
+            "quantas": 3,
+            "perguntas_mudadas": [
+              "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+              "sobrecarga-do-custo-da-habitacao-2025",
+              "precos-da-habitacao-2025"
+            ],
+            "so_as_perguntas": true
+          },
+          {
+            "pagina": "en/state-and-economy/index.html",
+            "quantas": 7,
+            "perguntas_mudadas": [
+              "divida-publica-2025",
+              "saldo-da-balanca-corrente-2025",
+              "posicao-de-investimento-internacional-2025",
+              "taxa-de-cambio-efectiva-real-2025",
+              "desempenho-das-exportacoes-2025",
+              "divida-das-empresas-2025",
+              "fluxo-de-credito-as-empresas-2025"
+            ],
+            "so_as_perguntas": true
+          }
+        ]
+      },
+      "comando": "o innerHTML do <main> das sete páginas de assunto nas duas edições, comparado entre as duas construções; numa página mudada, as perguntas dos cartões (data-cartao-definicao) que mudaram de texto, e se o <main> é igual com o texto delas trocado pelo id",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê o <main> da página da União mudado nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_que_dizem_o_que_a_medida_conta",
+      "valor": {
+        "por_edicao": {
+          "pt": 10,
+          "en": 10
+        },
+        "erros_da_f20": 0,
+        "as_tres_do_achado_7": {
+          "inquilinos": [
+            "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?",
+            "What share of tenants at market rent are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?"
+          ],
+          "inflacao": [
+            "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+            "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?"
+          ],
+          "emprego": [
+            "Que parte das pessoas dos 20 aos 64 anos tem emprego?",
+            "What share of people aged 20 to 64 is employed?"
+          ]
+        },
+        "dizem_a_populacao_e_a_base": {
+          "inquilinos": true,
+          "inflacao": true,
+          "emprego": true
+        },
+        "na_construcao_de_base": [
+          0,
+          0
+        ]
+      },
+      "comando": "conferirSeccaoDosPaises() de tests/uniao/paises.mjs sobre as duas edições (a conta F20g «definicoes»), e o texto de [data-faixa-o-que-conta] das três faixas que o achado 7 nomeia",
+      "conhecido_positivo": {
+        "o_que": "na construção de base o mesmo seletor acha as dez faixas de cada edição e nenhuma definição nelas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_f20",
+      "valor": {
+        "plantas": 34,
+        "mordidas": 34,
+        "as_da_definicao": [
+          {
+            "lang": "pt",
+            "nome": "a definição de outra medida numa faixa",
+            "passou": true
+          },
+          {
+            "lang": "pt",
+            "nome": "a pergunta do cartão, que diz Portugal, na faixa da inflação",
+            "passou": true
+          },
+          {
+            "lang": "pt",
+            "nome": "a definição tirada de uma faixa",
+            "passou": true
+          },
+          {
+            "lang": "pt",
+            "nome": "a definição por baixo da unidade, e não do nome",
+            "passou": true
+          },
+          {
+            "lang": "en",
+            "nome": "a definição de outra medida numa faixa",
+            "passou": true
+          },
+          {
+            "lang": "en",
+            "nome": "a pergunta do cartão, que diz Portugal, na faixa da inflação",
+            "passou": true
+          },
+          {
+            "lang": "en",
+            "nome": "a definição tirada de uma faixa",
+            "passou": true
+          },
+          {
+            "lang": "en",
+            "nome": "a definição por baixo da unidade, e não do nome",
+            "passou": true
+          }
+        ],
+        "planta_da_tabela": {
+          "nome": "a tabela da vista com «sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025» a seguir a «desemprego-de-longa-duracao-2025», e não a «sobrecarga-do-custo-da-habitacao-2025»",
+          "passou": true,
+          "porque": "F20a · a tabela da vista põe as medidas de fora dos quadros em sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025→desemprego-de-longa-duracao-2025, ihpc-variacao-homologa→null, e a dos portões em sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025→sobrecarga-do-custo-da-habitacao-2025, ihpc-variacao-homologa→null"
+        },
+        "tabela_intacta_erros": 0
+      },
+      "comando": "plantasDaSeccao() nas duas edições e plantaDaTabela(series) de tests/uniao/paises.mjs, e conferirTabelaDaSeccao() sobre a tabela da vista",
+      "conhecido_positivo": {
+        "o_que": "a tabela intacta passa, e a mesma célula recusa a tabela da vista com as entradas todas no fim (a planta de antes)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "k16",
+      "valor": {
+        "erros": 0,
+        "contas": {
+          "perguntas": 35,
+          "pedacos": 125,
+          "apoios": 188,
+          "apoios_em_origens": 165,
+          "apoios_em_linhas": 23,
+          "origens_usadas": 61,
+          "origens_seladas": 72,
+          "unidades_da_casa": 1,
+          "origens_com_coordenadas": 1
+        },
+        "formas_na_auditoria": 0,
+        "guiao_confere_codigo": 0,
+        "guiao_confere_saida": "UE2-b: 18 perguntas auditadas, 94 pedaços, 142 apoios (só conferido)."
+      },
+      "comando": "auditarPerguntas() de tests/cartao/perguntas.mjs, e node design/especime-v3/medicoes/ue2-2026-10-02/auditoria-das-perguntas.mjs --confere",
+      "conhecido_positivo": {
+        "o_que": "a mesma auditoria recusa um literal que o campo não tem no pedaço do PIB da dívida pública",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "descricao_da_pagina_da_uniao",
+      "valor": {
+        "agora": {
+          "pt": {
+            "description": "Onde Portugal fica entre os países da União Europeia, com o valor de cada um, e os dois quadros da União que o medem: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu.",
+            "og": "Onde Portugal fica entre os países da União Europeia, com o valor de cada um, e os dois quadros da União que o medem: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu."
+          },
+          "en": {
+            "description": "Where Portugal stands among the European Union countries, with each country’s value, and the two European Union frameworks that measure it: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard.",
+            "og": "Where Portugal stands among the European Union countries, with each country’s value, and the two European Union frameworks that measure it: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard."
+          }
+        },
+        "igual_a_declarada": true,
+        "diz_os_paises": true,
+        "algarismos": false
+      },
+      "comando": "meta[name=\"description\"] e meta[property=\"og:description\"] das duas edições da página da União construída, contra strings.mjs",
+      "conhecido_positivo": {
+        "o_que": "na construção de base o mesmo detetor lê as duas descrições e não acha os países nelas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "origens_novas",
+      "valor": {
+        "origens": [
+          "eurostat-tipslc10-privacao",
+          "eurostat-sec2010-ocde"
+        ],
+        "erros": 0
+      },
+      "comando": "python3 design/especime-v3/medicoes/ue2-2026-10-02/origens-ue2-b.py <raiz do motor> (origens-ue2-b.json)",
+      "conhecido_positivo": {
+        "o_que": "o detetor do guião acha o excerto da origem irmã no mesmo campo de cada ficheiro, e não acha uma cadeia inventada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inventario_da_passagem",
+      "valor": {
+        "vivas": 32,
+        "retiradas": 40
+      },
+      "comando": "as linhas de design/especime-v3/INVENTARIO-FRASES.md com o bloco «ue2-b», por estado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor conta as oito linhas que o UE2 deixou vivas (as catorze do bloco menos as seis cujo texto a passagem mudou)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_dos_portoes_ue2",
+      "valor": {
+        "plantas": 5,
+        "mordidas": 5,
+        "nomes": [
+          "ue2-portao-conta-da-tabela-errada",
+          "ue2-portao-valor-escondido-trocado",
+          "ue2-portao-nome-da-lista-a-mao",
+          "ue2-b-lugar-pergunta-antiga-na-pagina-da-uniao",
+          "ue2-b-cartao-pergunta-antiga-numa-pagina-de-assunto"
+        ]
+      },
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/ue2-2026-10-02/plantas-ue2-b node tests/pais/portoes.mjs --prefixo ue2- (plantas-portoes-ue2.json)",
+      "conhecido_positivo": {
+        "o_que": "cada planta saiu com o código 1 e repôs os ficheiros byte a byte",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas",
+      "valor": {
+        "capturas": 22,
+        "problemas": 0,
+        "cabeca_da_construcao": "33c30fd9bca48d4a93a348d17d1bc02c2818a7ec",
+        "alturas": [
+          {
+            "rota": "/uniao-europeia/",
+            "largura": 390,
+            "altura": 9580,
+            "faixas": 10,
+            "com_definicao": 10
+          },
+          {
+            "rota": "/uniao-europeia/",
+            "largura": 1280,
+            "altura": 6528,
+            "faixas": 10,
+            "com_definicao": 10
+          },
+          {
+            "rota": "/en/european-union/",
+            "largura": 390,
+            "altura": 9512,
+            "faixas": 10,
+            "com_definicao": 10
+          },
+          {
+            "rota": "/en/european-union/",
+            "largura": 1280,
+            "altura": 6417,
+            "faixas": 10,
+            "com_definicao": 10
+          },
+          {
+            "rota": "/emprego/",
+            "largura": 390,
+            "altura": 3183,
+            "faixas": 0,
+            "com_definicao": 0
+          },
+          {
+            "rota": "/emprego/",
+            "largura": 1280,
+            "altura": 2146,
+            "faixas": 0,
+            "com_definicao": 0
+          },
+          {
+            "rota": "/en/employment/",
+            "largura": 390,
+            "altura": 3170,
+            "faixas": 0,
+            "com_definicao": 0
+          },
+          {
+            "rota": "/en/employment/",
+            "largura": 1280,
+            "altura": 2079,
+            "faixas": 0,
+            "com_definicao": 0
+          }
+        ],
+        "altura_da_uniao_a_390_no_ue2": {
+          "pt": 8541,
+          "en": 8538
+        }
+      },
+      "comando": "node design/especime-v3/medicoes/ue2-2026-10-02/captar-ue2-b.mjs (capturas-ue2-b.json), e capturas-depois.json do UE2 para as alturas de antes",
+      "conhecido_positivo": {
+        "o_que": "o manifesto tem as oito páginas inteiras, e cada página da União diz dez faixas com dez definições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_a_zero",
+      "valor": null,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/ue2-2026-10-02/portoes/ue2-b (os ficheiros .codigo, cabeca e cabeca.fim)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor lê os códigos da corrida final do UE2 em portoes/, a zero",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_citadas",
+      "valor": {
+        "antes": {
+          "decisoes": 46,
+          "ficheiros": 17
+        },
+        "depois": {
+          "decisoes": 36,
+          "ficheiros": 21
+        }
+      },
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py sobre os ficheiros que a passagem ia tocar (antes) e sobre ficheiros-tocados-ue2-b.txt (depois)",
+      "conhecido_positivo": {
+        "o_que": "a §1.143 está entre as citadas depois",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo",
+      "valor": {
+        "simbolos_gastos_ate_ao_relatorio": 451162,
+        "segundos_ate_ao_relatorio": 3375,
+        "semana_no_inicio_por_cento": 20,
+        "sessao": "uma sessão só, com um resumo da conversa a meio da passagem; o contador é o da sessão inteira e atravessa o resumo"
+      },
+      "comando": "custo-inicio-ue2-b.json menos custo-fim-ue2-b.json (as duas leituras do contador, à mão) e as duas horas do relógio",
+      "conhecido_positivo": {
+        "o_que": "as duas leituras existem e a do fim é menor do que a do início",
+        "encontrado": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "o_que": "a segunda leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), na passagem UE2-b, escrita à mão pelo construtor logo depois de a ler, e a hora do relógio da máquina na chamada que escreveu este ficheiro",
+  "simbolos_restantes_no_fim": 13587885,
+  "lido_no_fim": "o contador mostrado depois de escrever a secção UE2-b do relatório e de conferir os seus números com o conferir-relatorio.py, antes de escrever este ficheiro e a resposta curta, de correr de novo o medir-ue2-b.mjs e de commitar a secção",
+  "sessao": "uma sessão só, com um resumo da conversa a meio da passagem; o contador é o da sessão inteira e atravessa o resumo",
+  "fim_utc": "2026-10-02T16:21:02Z",
+  "fim_origem": "date -u +%Y-%m-%dT%H:%M:%SZ, na chamada que escreveu este ficheiro"
+}

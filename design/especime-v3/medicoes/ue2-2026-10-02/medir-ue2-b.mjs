@@ -60,6 +60,23 @@ try {
     const d = /** @type {any} */ (DEFINICOES_DAS_MEDIDAS)[id];
     return !a || LANGS.some((l) => textoDaDefinicao(a[l]) !== textoDaDefinicao(d[l]));
   });
+  /* NENHUMA FONTE SE PERDE: a forma da página da União citava todas as origens da pergunta do cartão (a guarda do UE2
+     em `conferirOrigensDeclaradas`); com a forma fora, cada definição de agora tem de declarar todas as origens que a
+     pergunta e a forma de antes declaravam. */
+  const perdidas = {};
+  const ganhas = {};
+  for (const [id, d] of Object.entries(DEFINICOES_DAS_MEDIDAS)) {
+    const a = ANTES[id];
+    if (!a) continue;
+    const velhas = new Set([...a.origens, ...(a.uniao?.origens ?? [])]);
+    const p = [...velhas].filter((o) => !d.origens.includes(o));
+    const g = d.origens.filter((o) => !velhas.has(o));
+    if (p.length) perdidas[id] = p;
+    if (g.length) ganhas[id] = g;
+  }
+  medida('origens_das_definicoes', { perdidas, definicoes_com_origens_novas: Object.keys(ganhas).length, ganhas },
+    'para cada medida, as origens da pergunta e da forma «uniao» de base que a declaração de agora não declara (perdidas), e as que declara a mais (ganhas)',
+    'o mesmo detetor acha a descrição do PIB do Eurostat entre as origens ganhas da dívida pública', (ganhas['divida-publica-2025'] ?? []).includes('eurostat-tipsna40-descricao'));
   medida('perguntas_mudadas', { quantas: mudadas.length, ids: mudadas },
     'as entradas de DEFINICOES_DAS_MEDIDAS cujo texto (textoDaDefinicao, pt ou en) é diferente do da declaração de base',
     'o detetor acha a dívida pública entre as mudadas e não acha a taxa de emprego, que não mudou',
@@ -105,7 +122,7 @@ const contarTermos = (dist) => {
         return (antes.match(/\(/g) ?? []).length <= (antes.match(/\)/g) ?? []).length;
       });
       out[termo] ??= {};
-      out[termo][lang] = { definicoes_com_o_termo: com.length, fora_de_parenteses_na_primeira_vez: fora.map((d) => d.onde) };
+      out[termo][lang] = { definicoes_com_o_termo: com.length, fora: fora.length, fora_de_parenteses_na_primeira_vez: fora.map((d) => d.onde) };
     }
   }
   return out;
@@ -114,7 +131,8 @@ const contarTermos = (dist) => {
   const agora = contarTermos(FINAL);
   const antes = contarTermos(BASE);
   const foraAgora = Object.values(agora).reduce((n, x) => n + x.pt.fora_de_parenteses_na_primeira_vez.length + x.en.fora_de_parenteses_na_primeira_vez.length, 0);
-  medida('termos_na_primeira_vez_entre_parenteses', { fora_agora: foraAgora, agora, antes },
+  const foraAntes = Object.values(antes).reduce((n, x) => n + x.pt.fora + x.en.fora, 0);
+  medida('termos_na_primeira_vez_entre_parenteses', { fora_agora: foraAgora, fora_antes: foraAntes, termos: Object.keys(TERMOS).length, agora, antes },
     'cada definição da página da União (a do cartão e a da faixa), nas duas edições: a primeira vez de cada termo, com mais «(» do que «)» antes dela',
     'o mesmo detetor acha, na construção de base, o PIB fora de parênteses na pergunta da dívida pública',
     antes.pib.pt.fora_de_parenteses_na_primeira_vez.includes('cartao:divida-publica-2025'));
@@ -144,7 +162,7 @@ const contarTermos = (dist) => {
     const pa = perguntaDe(a);
     const pb = perguntaDe(b);
     const ids = [...new Set([...pa.keys(), ...pb.keys()])].filter((id) => pa.get(id) !== pb.get(id));
-    mudadas.push({ pagina: p, perguntas_mudadas: ids, so_as_perguntas: semAsPerguntas(a) === semAsPerguntas(b) });
+    mudadas.push({ pagina: p, quantas: ids.length, perguntas_mudadas: ids, so_as_perguntas: semAsPerguntas(a) === semAsPerguntas(b) });
   }
   const daUniao = LANGS.map((l) => (parse(ler(BASE, PAGINA[l])).querySelector('main')?.innerHTML ?? '') !== (parse(ler(FINAL, PAGINA[l])).querySelector('main')?.innerHTML ?? ''));
   medida('paginas_de_assunto_com_o_main_mudado', { paginas: paginas.length, mudadas: mudadas.length, sem_mudanca: paginas.length - mudadas.length, porque: mudadas },
@@ -271,12 +289,52 @@ const ctx = { series, paises };
     const p = path.join(PASTA, pasta);
     if (!fs.existsSync(path.join(p, 'cabeca'))) return null;
     const ler1 = (f) => (fs.existsSync(path.join(p, f)) ? fs.readFileSync(path.join(p, f), 'utf8').trim() : null);
-    return { cabeca: ler1('cabeca'), cabeca_fim: ler1('cabeca.fim'), build: Number(ler1('build.codigo')), verify: Number(ler1('verify.codigo')), typecheck: Number(ler1('typecheck.codigo')) };
+    const seg = (g) => (ler1(`${g}.inicio`) && ler1(`${g}.fim`) ? Math.round((Date.parse(ler1(`${g}.fim`)) - Date.parse(ler1(`${g}.inicio`))) / 1000) : null);
+    return {
+      cabeca: ler1('cabeca'), cabeca_fim: ler1('cabeca.fim'), cabeca_igual_no_fim: ler1('cabeca') === ler1('cabeca.fim'),
+      build: Number(ler1('build.codigo')), verify: Number(ler1('verify.codigo')), typecheck: Number(ler1('typecheck.codigo')),
+      segundos: { build: seg('build'), verify: seg('verify'), typecheck: seg('typecheck') },
+    };
   };
   const agora = lerPortoes('portoes/ue2-b');
   const doUe2 = lerPortoes('portoes');
   medida('portoes_a_zero', agora, `sh scripts/leituras/portoes.sh <worktree> ${PASTA}/portoes/ue2-b (os ficheiros .codigo, cabeca e cabeca.fim)`,
     'o mesmo leitor lê os códigos da corrida final do UE2 em portoes/, a zero', doUe2 && doUe2.build === 0 && doUe2.verify === 0 && doUe2.typecheck === 0);
+
+  /* AS CÉLULAS NA CORRIDA FINAL, lidas dos registos dela (portoes/ue2-b/build.log e verify.log), sem as cores. */
+  const P = path.join(PASTA, 'portoes/ue2-b');
+  if (fs.existsSync(path.join(P, 'verify.log'))) {
+    const semCor = (x) => x.replace(/\x1b\[[0-9;]*m/g, '');
+    const build = semCor(fs.readFileSync(path.join(P, 'build.log'), 'utf8'));
+    const verify = semCor(fs.readFileSync(path.join(P, 'verify.log'), 'utf8'));
+    const n = (re, x) => { const m = re.exec(x); return m ? m.slice(1).map(Number) : null; };
+    const f20 = n(/secção dos países \(F20\): (\d+) secção\(ões\), (\d+) faixa\(s\), (\d+) definição\(ões\) declarada\(s\), (\d+) marcas refeitas do valor, (\d+) etiquetas do toque, (\d+) listas com (\d+) itens, (\d+) ressalva\(s\) da Comissão, (\d+) plantas a morder/, build);
+    const k16 = n(/perguntas com cada pedaço apoiado \(K16\)\s+(\d+) \((\d+) pedaços, (\d+) apoios, (\d+) origens seladas/, verify);
+    const k16p = n(/K16 com a declaração em vigor a passar e (\d+) plantas a morder/, verify);
+    const d84 = n(/8\.4, o que a régua leu: (\d+) definições \(esperadas (\d+)\) · (\d+) origens \(esperadas (\d+)\)/, verify);
+    const voz = n(/(\d+) linhas do inventário com bloco \((\d+) vivas, todas rendidas; (\d+) retiradas, nenhuma rendida\)/, verify);
+    medida('celulas_na_corrida_final', {
+      f20: f20 && { seccoes: f20[0], faixas: f20[1], definicoes: f20[2], marcas: f20[3], etiquetas: f20[4], listas: f20[5], itens: f20[6], ressalvas: f20[7], plantas_a_morder: f20[8] },
+      k16: k16 && { perguntas: k16[0], pedacos: k16[1], apoios: k16[2], origens_seladas: k16[3], plantas_a_morder: k16p?.[0] ?? null },
+      d84: d84 && { definicoes: d84[0], esperadas: d84[1], origens: d84[2], origens_esperadas: d84[3] },
+      voz: voz && { linhas_com_bloco: voz[0], vivas: voz[1], retiradas: voz[2] },
+    }, 'as linhas do check:formas em portoes/ue2-b/build.log, e as do check:cartao, do check:lugar e do check:voz em portoes/ue2-b/verify.log, sem as cores',
+    'as cinco linhas foram lidas, e a F20 conta uma definição por faixa', Boolean(f20 && k16 && k16p && d84 && voz && f20[1] === f20[2]));
+  }
+
+  /* AS DECISÕES CITADAS NOS FICHEIROS QUE A PASSAGEM TOCOU, antes (os que ia tocar) e depois (os que tocou). */
+  {
+    const conta = (f) => {
+      const txt = fs.existsSync(path.join(PASTA, f)) ? fs.readFileSync(path.join(PASTA, f), 'utf8') : '';
+      const m = /(\d+) decisão\(ões\) citada\(s\) em (\d+) ficheiro\(s\)/.exec(txt);
+      return { txt, valor: m ? { decisoes: Number(m[1]), ficheiros: Number(m[2]) } : null };
+    };
+    const antes = conta('decisoes-em-vigor-ue2-b-antes.txt');
+    const depois = conta('decisoes-em-vigor-ue2-b-depois.txt');
+    medida('decisoes_citadas', { antes: antes.valor, depois: depois.valor },
+      'python3 scripts/leituras/decisoes-em-vigor.py sobre os ficheiros que a passagem ia tocar (antes) e sobre ficheiros-tocados-ue2-b.txt (depois)',
+      'a §1.143 está entre as citadas depois', depois.txt.includes('§1.143 ·'));
+  }
 
   const ini = lerJson('custo-inicio-ue2-b.json');
   const fim = lerJson('custo-fim-ue2-b.json');

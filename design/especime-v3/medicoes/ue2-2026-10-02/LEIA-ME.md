@@ -112,3 +112,79 @@ A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da má
 - **A página a 390 px é longa**: 8541 px, das quais a fila dos 21 cartões ocupa 3724. É o custo de ler tudo de cima a baixo, que o teste de aceitação pede; um cartão mais baixo na pilha de uma coluna é uma passagem de forma à parte.
 - **O guião das decisões em vigor** podia saltar os ficheiros binários do intervalo em vez de falhar; é uma ferramenta do lugar de direção, e não lhe toquei.
 - **A leitura a frio** por outra família, e a releitura do diff do inventário (o bloco `ue2` está «por ler» em `critica/REVISOES-DO-INVENTARIO.md`), fazem-se antes da fusão.
+
+## UE2-b · as palavras comuns como forma única, e as faixas que dizem o que contam
+
+*Passagem UE2-b, 02.10.2026, pela mensagem do lugar de direção que triou a leitura a frio do UE2 pelo Codex gpt-6.1-sol (`design/especime-v3/critica/LEITURA-ue2-2026-10-02.md`). Construtor: Claude Opus 5.5 (a definição `construtor`), na mesma worktree, sobre a cabeça `471c7f99`, sem subagentes. Cada número desta secção está num ficheiro desta pasta, quase todos em `medidas-ue2-b.json`, escrito por `medir-ue2-b.mjs`, com o comando e um conhecido-positivo em cada medida. A construção de base é a da cabeça do UE2 (`da6d2d91`, guardada fora do repositório; o código do sítio é o da `471c7f99`, que só acrescentou a leitura a frio), e a declaração de base lê-se dessa cabeça pelo Git. Os achados 1, 2, 3, a primeira parte do 4 e o 8 da leitura são as plantas do pacote, e não se tocaram; o 9 é do pacote. Sem travessões.*
+
+### Os pontos da mensagem
+
+| # | o que | como ficou | a medida |
+|---|---|---|---|
+| 1 | A forma em palavras comuns passa a ser a única | A forma `uniao` sai de `src/data/figuras.mjs` (7 formas antes, 0 agora), e a definição declarada de cada medida fica com as palavras comuns primeiro e o termo da fonte entre parênteses, a mesma em todo o lado onde se rende: 18 perguntas mudaram. A auditoria das perguntas (a K16) está em dia e sem entradas de formas: 35 perguntas, 125 pedaços e 188 apoios, a 0; as entradas das 18 escreve-as e confere-as `auditoria-das-perguntas.mjs` (o guião do UE2, renomeado: 18 perguntas, 94 pedaços, 142 apoios). A 8.4 do `check:lugar`, a K16 e a leitura breve voltaram a não conhecer formas. Nenhuma origem se perdeu: cada definição declara todas as origens que a pergunta e a forma de antes declaravam, e 14 ganharam origens (2 delas novas, recortes de ficheiros que o motor já tinha selado, conferidos por `origens-ue2-b.py`). **As páginas de assunto**: das 14 (as sete nas duas edições), 8 mudaram o `<main>` e 6 não; as 8 são a pobreza e desigualdade, o emprego, a habitação e o estado e economia, nas duas edições, e em todas a mudança são só as perguntas dos cartões das medidas que mudaram (3, 4, 3 e 7 por página): com o texto delas trocado pelo id da medida, o `<main>` de base e o de agora são iguais | `formas_uniao_declaradas`, `perguntas_mudadas`, `k16`, `origens_das_definicoes`, `origens_novas`, `paginas_de_assunto_com_o_main_mudado` |
+| 2 | Os outros termos, explicados na primeira vez | O PIB («o valor dos bens e serviços finais que a economia produz num ano (o PIB)»), os ativos e os passivos («o que os residentes do país têm no resto do mundo e o que lhe devem»), a balança corrente («a diferença entre o que o país recebeu do resto do mundo e o que lhe pagou, por bens, serviços e rendimentos») e a média móvel («na média desse ano e dos dois anteriores»), a OCDE (o nome por extenso), a população ativa («as pessoas que trabalham ou procuram trabalho»), os pontos percentuais («a diferença entre a percentagem desse ano e a de três anos antes») com o grupo de idades que a leitura pedia (dos 15 aos 64 anos), a privação material e social grave («pelo menos sete de treze privações por falta de recursos»), o risco de pobreza e a intensidade de trabalho muito baixa, o rendimento disponível («o que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais») e os apoios à habitação («descontados os apoios à habitação», onde estava «líquido de subsídios à habitação»), nas duas línguas. Cada explicação tem o seu literal numa origem declarada, na K16. Contados nas definições que a página da União rende, de cada cartão e de cada faixa, 15 termos: a primeira vez de cada um fora de parênteses, 0 agora e 32 na construção de base; o termo antigo dos apoios à habitação, 0 agora e 2 antes. Nenhum valor nem etiqueta de fonte mudou: nenhum ficheiro do livro-razão nem das séries está no diff, e o portão de HTML está a 0 | `termos_na_primeira_vez_entre_parenteses`, `apoios_a_habitacao_em_palavras_comuns`, `k16` |
+| 3 | As faixas dizem a população e a base da comparação | Por baixo do nome de cada faixa da secção dos países, a definição declarada da medida, na forma do recibo da série onde a declaração a tem (a inflação, que no cartão diz «em Portugal») e na do cartão nas outras: «Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe…», «Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior…», «Que parte das pessoas dos 20 aos 64 anos tem emprego?», e o mesmo nas outras sete, nas duas línguas. É a definição declarada e não palavras novas: uma fonte só, que a F20g confere carácter a carácter, logo por baixo do nome, e recusa se nomear Portugal, porque a faixa é dos 27. 10 definições em cada edição, e 0 na construção de base | `faixas_que_dizem_o_que_a_medida_conta`, `plantas_da_f20` |
+| 4 | A planta da tabela da ordem morde por si | A planta muda uma entrada para outra posição real (os inquilinos a seguir ao desemprego de longa duração, uma medida dos quadros com faixa, em vez de a seguir à sobrecarga no total) e só conta se a tabela intacta passa e a trocada é diferente dela: numa cópia em que a tabela da vista já estivesse trocada, sai como não mordida, com a razão | `plantas_da_f20` (`planta_da_tabela`, `tabela_intacta_erros`) |
+| 5 | A descrição do `<head>` diz também os países | «Onde Portugal fica entre os países da União Europeia, com o valor de cada um, e os dois quadros da União que o medem: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu.», e a gémea inglesa; a mesma no cartão de partilha, sem algarismos, porque o `<head>` não tem onde os provar | `descricao_da_pagina_da_uniao` |
+
+### As decisões do construtor, e porquê
+
+- **A faixa diz a definição declarada, e não uma frase nova.** A mensagem pede a população e a base «lidas das séries e das definições declaradas». A definição de cada medida já as diz, já está auditada pela K16 e já é a do cartão e a do recibo da série; uma frase própria da faixa seria uma segunda declaração da mesma coisa, que é o que a §1.143 não quer. O custo é a altura: a definição repete, na secção dos países, a que o cartão da mesma medida tem dobrada mais abaixo, e a página a 390 px passou de 8541 para 9580 px em português (8538 para 9512 em inglês).
+- **«Por bens, serviços e rendimentos», e não «em».** «O que o país recebeu do resto do mundo em bens» lê-se como os bens que entraram, que são o contrário de uma receita; com «por», recebeu e pagou pelos bens, pelos serviços e pelos rendimentos.
+- **A mediana pelo que faz.** «O rendimento que deixa metade da população do país acima dele e metade abaixo, o mediano», pelo glossário do Eurostat da mediana, que diz que metade dos valores fica acima dela e metade abaixo (o literal está na auditoria da K16, na origem `eurostat-glossario-mediana`), e não «o rendimento do meio do país», que em português se lê como o de uma região.
+- **«Num ano» no PIB.** A descrição do Eurostat diz que o PIB mede o valor da produção final «within a certain period of time», e a mesma descrição divide-o pela população média «of a specific year»; as medidas que o usam são anuais, e o apoio do «num ano» na K16 é esse segundo literal.
+- **«Descontados os apoios à habitação», sem termo entre parênteses.** O termo da fonte é o inglês («'net' of housing allowances»), que continua no excerto da origem; «líquido de subsídios à habitação» era uma tradução, e as palavras comuns dizem o mesmo.
+- **Na página de assunto a régua é a K6.** A 8.4 do `check:lugar` lê as definições da página da União e das páginas dos domínios; os cartões das páginas de assunto conferem-se pela K6 do `check:cartao`, contra a mesma declaração. A planta da forma única numa página de assunto é por isso da K6.
+- **O inventário escreve-se das declarações.** `inventario-ue2-b.mjs` lê as perguntas de antes na cabeça de base e as de agora no módulo, tira os algarismos declarados como a régua os tira, retira as que deixaram de se render e acrescenta as novas: 32 cadeias novas e 40 retiradas, com a razão.
+
+### Os portões que mudaram de forma, e a planta que prova que ainda mordem
+
+**P** protege um número, uma fonte ou uma pessoa; **M** é a forma.
+
+| régua | o que mudou | P ou M | a prova |
+|---|---|---|---|
+| K16 do `check:cartao` | sem entradas de formas; as 18 perguntas auditadas de novo; a planta da origem declarada sem uso junta a origem nova da dívida pública, para morder só por isso; a contagem das plantas sai da lista | **P** | as plantas da K16 a morder na corrida final (`celulas_na_corrida_final`); e a auditoria recusa um literal estragado no pedaço do PIB (`k16`) |
+| 8.4 do `check:lugar` | volta a conferir a declaração única, sem escolher pela rota | **P** | `ue2-b-lugar-pergunta-antiga-na-pagina-da-uniao` morde (a planta do UE2, renomeada) |
+| K6 do `check:cartao` | nada no código; a planta nova prova a forma única num cartão de uma página de assunto | **P** | `ue2-b-cartao-pergunta-antiga-numa-pagina-de-assunto` morde |
+| a guarda das origens (`conferirOrigensDeclaradas`) | sai a regra da forma (a forma citava todas as origens da pergunta do cartão), porque não há formas; a guarda dos quatro campos de cada origem fica, e a K16 exige que cada origem declarada apoie um pedaço | **P** | nenhuma origem perdida entre a declaração de base e a de agora (`origens_das_definicoes`) |
+| F20g do `check:formas` | a definição declarada por baixo do nome de cada faixa, carácter a carácter, sem nomear Portugal; e a contagem das definições contra as séries | **P** | 4 plantas novas por edição a morder, cada uma pela sua mensagem (a definição de outra medida, a pergunta do cartão com Portugal na faixa da inflação, a definição tirada, a definição fora do sítio) |
+| F20a do `check:formas` | a planta da tabela numa posição real, com o controlo da tabela intacta | **P** | a planta morde, e a tabela intacta passa (`plantas_da_f20`) |
+| `check:voz` | 32 linhas novas e 40 retiradas no inventário, com a entrada `ue2-b` por ler no registo das revisões | **M** | o portão a 0 com todas as vivas rendidas e nenhuma retirada rendida (`celulas_na_corrida_final`) |
+
+### As plantas
+
+- **F20**, em memória, sobre as duas edições da página construída: 34 em 34, das quais as 8 da definição; e a da tabela, uma vez (`plantas_da_f20`).
+- **K16**, em memória, no `check:cartao --prova` da corrida final (`celulas_na_corrida_final`).
+- **O portão de HTML, a 8.4 e a K6**, sobre `dist/`, cada uma com o código 1, as mordidas previstas e os bytes repostos: 5 em 5 (`plantas_dos_portoes_ue2`, `plantas-ue2-b/plantas-portoes-ue2.json`, um registo por planta).
+
+### Os commits
+
+```
+0a3cd8a0 UE2-b: a forma em palavras comuns como única forma das definições, com os termos da leitura a frio explicados
+1ec478e5 UE2-b: cada faixa dos países diz o que a medida conta, e a planta da tabela troca uma entrada por outra posição real
+78d523db UE2-b: a descrição da página da União diz também os países
+9a870ab9 UE2-b: o inventário das frases depois da passagem, escrito a partir das declarações, com a revisão por ler
+ffbccd25 UE2-b: as plantas dos portões da forma única, e o mapa do repositório
+33c30fd9 UE2-b: o captor e o medidor da passagem, a primeira leitura do contador e as decisões em vigor antes de mexer
+```
+
+e o commit desta secção, com as capturas, as medidas e a resposta curta; e o commit seguinte, com os códigos da corrida final dos portões, os registos dela sem o caminho da máquina, as medidas da construção dela e a secção «Os portões da passagem» a dizê-los.
+
+### As capturas
+
+Em `design/especime-v3/capturas/ue2-2026-10-02/`, da construção da `33c30fd9`, cujo código do sítio é o da cabeça final (depois dela só mudaram ficheiros desta pasta): `ue2-b-uniao-<língua>-<390|1280>.png` e `ue2-b-emprego-<língua>-<390|1280>.png`, as páginas inteiras; `ue2-b-faixa-<sobrecarga-…-inquilinos-mercado|ihpc-variacao-homologa>-<língua>-<390|1280>.png`, duas faixas com a definição por baixo do nome; `ue2-b-definicao-uniao-<língua>-390.png`, a definição do saldo da balança corrente aberta pela porta do seu cartão; `ue2-b-definicao-emprego-<língua>-<390|1280>.png`, a dobra do cartão da taxa de atividade aberta na página do emprego. 22 capturas, 0 problemas, 0 pedidos para fora, sem transbordo horizontal (`capturas-ue2-b.json`, `capturas`).
+
+### As decisões em vigor nos ficheiros tocados
+
+Lidas antes de mexer sobre os ficheiros que a passagem ia tocar (`decisoes-em-vigor-ue2-b-antes.txt`: 46 decisões em 17 ficheiros) e depois sobre os ficheiros de texto que tocou (`ficheiros-tocados-ue2-b.txt`, `decisoes-em-vigor-ue2-b-depois.txt`: 36 decisões em 21 ficheiros) (`decisoes_citadas`). Ficam em vigor as que a passagem tocou de perto: a §1.143 (uma coisa, um lugar: a definição é uma, e é a que a faixa diz); a §1.133 (o leitor comum primeiro); a §1.140 e a §1.124 (a média da União na sobrecarga só com a ressalva da Comissão, que a faixa continua a levar); e a §1.130 (sem «melhor» nem «pior»).
+
+### O custo
+
+Duas leituras do contador de símbolos restantes que a ferramenta mostra ao agente, em `custo-inicio-ue2-b.json` e `custo-fim-ue2-b.json`: 451 162 símbolos e 3375 segundos até à escrita desta secção (`medidas-ue2-b.json`, `custo`). A passagem atravessou um resumo da conversa a meio, e o contador é o da sessão inteira. O modelo foi o Claude Opus 5.5 em toda a passagem, sem subagentes. A semana da subscrição do Claude estava a 20 por cento no início (`custo-inicio-ue2-b.json`).
+
+### O que ficou por fazer, e porquê
+
+- **Dois termos fora da página da União.** A pergunta da diferença de emprego entre sexos, que só as páginas de assunto rendem, diz «em pontos percentuais» sem explicação; e a da sobrecarga no total diz «no total de todos os regimes de ocupação». A mensagem nomeia os termos das definições da página da União, e estes ficam como proposta, pela mesma forma.
+- **A altura da página da União a 390 px** cresceu com as definições das faixas (acima). Dobrar a definição na faixa encurtava-a, mas voltava a esconder a população e a base que o achado 7 pede à vista: é uma decisão do lugar de direção.
+- **A leitura a frio da passagem**, por outra família, e a releitura do diff do inventário (os blocos `ue2` e `ue2-b` estão «por ler» em `critica/REVISOES-DO-INVENTARIO.md`), fazem-se antes da fusão.
+- **A linha da descrição em `design/especime-v3/CHAVES-EN.md`** é a de 07.09, já desatualizada desde 14.09; é um registo de decisões de então, e não lhe toquei.
