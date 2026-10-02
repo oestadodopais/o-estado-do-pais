@@ -1,9 +1,33 @@
 {
   "bloco": "UE2",
   "guiao": "design/especime-v3/medicoes/ue2-2026-10-02/medir-ue2.mjs",
-  "cabeca_ao_medir": "8abc7bd10e96bbeedd7188876d46ac535d24802d",
-  "medido_em": "2026-10-02T14:41:20.185Z",
+  "cabeca_ao_medir": "04b5a2f26192becd4e84e2fea6d3f6a7c0a30253",
+  "medido_em": "2026-10-02T14:46:28.522Z",
   "medidas": [
+    {
+      "nome": "secao_0_do_brief_reproduzida",
+      "valor": {
+        "series_de_paises_no_livro": 10,
+        "cartoes_dos_dois_quadros": 21,
+        "paises_nomeados_em_cada_faixa_hoje": 2,
+        "termos_tecnicos_nas_definicoes_dos_quadros": 44,
+        "altura_da_pagina_da_uniao_a_390_depois_do_k2": 1205
+      },
+      "comando": "python3 design/observatorio/medidas/BRIEF-UE2.py, com OEDP_MEDIDAS_JSON num ficheiro temporário, comparado com BRIEF-UE2.json",
+      "conhecido_positivo": {
+        "o_que": "os valores de hoje são os do ficheiro do brief, e cada conhecido-positivo do guião foi encontrado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "termos_do_brief_no_ficheiro_das_figuras_hoje",
+      "valor": 58,
+      "comando": "o detetor do §0 (as seis raízes do guião do brief) sobre src/data/figuras.mjs da cabeça",
+      "conhecido_positivo": {
+        "o_que": "o detetor acha «deflat» no ficheiro",
+        "encontrado": true
+      }
+    },
     {
       "nome": "series_de_paises_no_livro",
       "valor": 10,
@@ -97,15 +121,29 @@
       }
     },
     {
+      "nome": "guarda_das_origens_da_forma",
+      "valor": {
+        "plantas": 2,
+        "a_morder": 2,
+        "controlo_passa": true
+      },
+      "comando": "conferirOrigensDeclaradas() de src/data/figuras.mjs sobre cópias da definição da dívida das empresas",
+      "conhecido_positivo": {
+        "o_que": "a definição em vigor passa e as duas plantas mordem",
+        "encontrado": true
+      }
+    },
+    {
       "nome": "construcoes_medidas",
       "valor": {
         "base": "ec1a00dbe6fc02c84d4669439a7cdc74c2354614",
         "final": "8abc7bd10e96bbeedd7188876d46ac535d24802d",
-        "cabeca_ao_medir": "8abc7bd10e96bbeedd7188876d46ac535d24802d"
+        "cabeca_ao_medir": "04b5a2f26192becd4e84e2fea6d3f6a7c0a30253",
+        "codigo_mudado_desde_a_construcao": []
       },
-      "comando": "o version.json de cada construção",
+      "comando": "o version.json de cada construção, e git diff --name-only <final> HEAD -- src scripts public ledger registos studies-src mapa package.json astro.config.mjs site.config.mjs vercel.json",
       "conhecido_positivo": {
-        "o_que": "a construção final é a da cabeça atual",
+        "o_que": "a construção final é antepassada da cabeça, e o que a construção lê não mudou desde ela",
         "encontrado": true
       }
     },
@@ -428,6 +466,36 @@
       "comando": "node tests/pais/portoes.mjs --prefixo ue2- (OEDP_MEDICOES nesta pasta), plantas-portoes-ue2.json",
       "conhecido_positivo": {
         "o_que": "cada planta saiu com o código 1 e as mordidas previstas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_citadas_nos_ficheiros_tocados",
+      "valor": {
+        "decisoes": 48,
+        "ficheiros": 24
+      },
+      "comando": "xargs python3 scripts/leituras/decisoes-em-vigor.py < ficheiros-tocados.txt > decisoes-em-vigor-depois.txt",
+      "conhecido_positivo": {
+        "o_que": "a §1.140 está entre as citadas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_gastos_ate_ao_relatorio",
+      "valor": 904094,
+      "comando": "custo-inicio.json menos custo-fim.json (o contador «total_tokens left»)",
+      "conhecido_positivo": {
+        "o_que": "o contador desceu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_ate_ao_relatorio",
+      "valor": 5483,
+      "comando": "fim_utc de custo-fim.json menos inicio_utc de custo-inicio.json",
+      "conhecido_positivo": {
+        "o_que": "a hora do fim é depois da do início",
         "encontrado": true
       }
     }
