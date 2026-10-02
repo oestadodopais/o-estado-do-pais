@@ -553,9 +553,13 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
   color: var(--ink);
 }
 
-/* AS CINCO FILAS DO CARTÃO: o estado, o valor, o nome, a unidade e o selo. As
-   três primeiras são o corpo, que é o que a porta cobre; as duas últimas são o
-   pé, onde vivem todos os selos do cartão. Ver a nota de `Faixa.astro`. */
+/* AS CINCO FILAS DO CARTÃO: o nome, o valor, a unidade, o estado e o selo
+   (desde o K2, 02.10.2026: era o estado, o valor, o nome, a unidade e o selo; a
+   ordem do documento e a do ecrã são agora a do brief, o nome, o valor com a
+   unidade e a comparação). A porta cobre o cartão inteiro, com os selos por
+   cima dela. A fila flexível é a da unidade: os cartões de uma faixa têm
+   alturas de nome diferentes, e a folga vai para ali, para que o estado e o
+   selo fiquem ao fundo, à mesma altura em todos. Ver a nota de `Faixa.astro`. */
 .cartao {
   flex: 0 0 clamp(190px, 58%, 230px);
   min-width: 0;
@@ -674,7 +678,7 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
    ocupada, centrar empurrava a palavra para o meio da área e o quadrado com ela.
    O que alinha é o cimo, que é onde a leitura começa. */
 .cartao-topo {
-  grid-row: 1;
+  grid-row: 4;
   display: flex;
   align-items: start;
   gap: 6px;
@@ -707,7 +711,7 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
    área sobreposta não é um alvo maior, é uma porta que abre a linha do vizinho».
    Onde não há selo por dentro, a fila fica com a altura do texto. */
 .cartao-unidade {
-  grid-row: 4;
+  grid-row: 3;
   margin: 0;
   font-family: var(--f-instr);
   font-variant-numeric: tabular-nums lining-nums;
@@ -739,12 +743,16 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
    cartão: quem tem três linhas cresce e quem tem uma ocupa o mínimo reservado,
    e os dois casos deixam o pé no mesmo sítio. */
 .cartao-nome {
-  grid-row: 3;
+  grid-row: 1;
   align-self: start;
   margin: 0;
   font-size: 15px;
   line-height: 1.25;
-  min-height: calc(2 * 1.25em);
+  /* TRÊS LINHAS RESERVADAS DESDE O K2 (02.10.2026): o nome passou a abrir o
+     cartão, e os valores de cartões vizinhos só ficam à mesma altura se os
+     nomes ocuparem a mesma; os nomes que dizem a variação («Taxa de câmbio
+     efetiva real, variação em três anos») dobram em três linhas a 390 px. */
+  min-height: calc(3 * 1.25em);
   /* O sublinhado declara-se em píxeis pela mesma razão da lista dos nomes: a
      marca do par vai de 1 para 3 px, e `auto` é uma cadeia e não uma grandeza. */
   text-decoration: underline;

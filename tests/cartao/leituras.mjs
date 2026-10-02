@@ -460,7 +460,28 @@ const dataDaCasaAqui = (v, lang = 'pt') => {
  * @param {{ anterior: string|null, ue: string|null }} regua  as linhas que a régua do cartão rende
  * @param {Map<string, any>} linhas
  */
-export function leituraIndependente(id, lang, regua, linhas = loadClaims()) {
+/**
+ * O CORTE DA LEITURA, PELA CONTA DESTA CÉLULA (bloco K2, 02.10.2026). O cartão rende a metade que diz o que o número é
+ * dentro da dobra e a metade que compara à vista. A célula não pergunta ao resolvedor onde corta: corta ela, no primeiro
+ * pedaço de topo da declaração que traz uma comparação (um nó `compara`, `estado` ou `comparacao`, a qualquer
+ * profundidade, também dentro de um ramo do sinal), e confere as duas metades rendidas contra a sua conta.
+ * @param {readonly any[]} partes
+ */
+export function corteIndependente(partes) {
+  /** @param {any} x @returns {boolean} */
+  const compara = (x) => Array.isArray(x) ? x.some(compara)
+    : Boolean(x && typeof x === 'object' && ('compara' in x || 'estado' in x || 'comparacao' in x ||
+      ('sinal' in x && Object.values(x.sinal ?? {}).some(compara))));
+  const i = partes.findIndex(compara);
+  return i < 0 ? partes.length : i;
+}
+
+/**
+ * @param {string} id @param {'pt'|'en'} lang @param {{ anterior: string|null, ue: string|null }} regua
+ * @param {Map<string, any>} [linhas]
+ * @param {[number, number] | null} [fatia]  só os pedaços de topo entre dois índices (o corte, acima)
+ */
+export function leituraIndependente(id, lang, regua, linhas = loadClaims(), fatia = null) {
   const d = /** @type {Record<string, any>} */ (LEITURAS_DAS_MEDIDAS)[id];
   if (!d?.[lang]) throw new Error(`não há leitura declarada para ${id} (${lang})`);
   const camaras = id === LEITURA_DAS_CAMARAS;
@@ -546,7 +567,7 @@ export function leituraIndependente(id, lang, regua, linhas = loadClaims()) {
     }
     throw new Error(`um pedaço de tipo desconhecido na leitura de ${id}`);
   };
-  return { texto: normal(texto(d[lang])), nos };
+  return { texto: normal(texto(fatia ? d[lang].slice(fatia[0], fatia[1]) : d[lang])), nos };
 }
 
 /**
@@ -592,18 +613,42 @@ export function conferirPaginaDaLeitura(root, lang, rota, linhas = loadClaims())
       if (marca.textContent !== ' (' + palavra + ')') falha(id, 'ressalva sem separador ou com palavra diferente da edição');
     }
     if ([...comBandeira].some(x => !comPalavra.has(x)) || [...comPalavra].some(x => !comBandeira.has(x))) falha(id, 'as linhas com bandeira e as palavras de ressalva não coincidem');
+    /* UMA LEITURA POR CARTÃO, EM UMA OU DUAS METADES (bloco K2, 02.10.2026). A metade que diz o que o número é
+       (`data-leitura-parte="o-que-e"`) vive dentro da dobra do cartão (`details.cartao-medida-dobra`), e a que compara
+       (`"comparacao"`) fica à vista, fora dela. Cada metade aparece no máximo uma vez, e as duas juntas, pela ordem da
+       declaração, são a leitura inteira: o que a célula conferia num elemento confere agora nas duas, com a mesma
+       força (o texto do resolvedor, a conta da célula, os ramos não escolhidos, os algarismos, as linhas citadas e a
+       marca da fonte), e confere também o corte, pela sua própria conta. */
     const leituras = cartao.querySelectorAll('[data-cartao-leitura]');
-    if (leituras.length !== 1) {
-      falha(id, `o cartão tem ${leituras.length} leitura(s), e um cartão nacional tem uma`);
+    /** @type {Record<string, any[]>} */
+    const metades = { 'o-que-e': [], comparacao: [] };
+    for (const l of leituras) {
+      const parte = l.getAttribute('data-leitura-parte');
+      if (parte !== 'o-que-e' && parte !== 'comparacao') falha(id, `uma metade da leitura sem a marca da parte («${parte ?? ''}»)`);
+      else metades[parte].push(l);
+    }
+    if (leituras.length === 0) {
+      falha(id, 'o cartão tem 0 leitura(s), e um cartão nacional tem uma');
       continue;
     }
-    const el = leituras[0];
+    if (metades['o-que-e'].length > 1 || metades.comparacao.length > 1) {
+      falha(id, `o cartão tem ${metades['o-que-e'].length} metade(s) do que o número é e ${metades.comparacao.length} da comparação, e cada uma aparece no máximo uma vez`);
+      continue;
+    }
+    const oQueE = metades['o-que-e'][0] ?? null;
+    const comparacao = metades.comparacao[0] ?? null;
+    if (oQueE && !oQueE.closest('details.cartao-medida-dobra')) falha(id, 'a metade que diz o que o número é está fora da dobra do cartão');
+    if (comparacao && comparacao.closest('details')) falha(id, 'a metade que compara está dentro de uma dobra, e fica à vista');
     contas.leituras++;
-    if (el.getAttribute('data-cartao-leitura') !== id) falha(id, `a leitura diz ser de «${el.getAttribute('data-cartao-leitura')}»`);
-    if (id !== LEITURA_DAS_CAMARAS && el.getAttribute('data-selo-em') !== id) falha(id, 'a leitura não diz que a sua porta é a marca do cartão (data-selo-em)');
-    const rendido = normal(el.textContent);
+    for (const el of [oQueE, comparacao].filter(Boolean)) {
+      if (el.getAttribute('data-cartao-leitura') !== id) falha(id, `a leitura diz ser de «${el.getAttribute('data-cartao-leitura')}»`);
+      if (id !== LEITURA_DAS_CAMARAS && el.getAttribute('data-selo-em') !== id) falha(id, 'a leitura não diz que a sua porta é a marca do cartão (data-selo-em)');
+    }
+    const rendidoOQueE = oQueE ? normal(oQueE.textContent) : '';
+    const rendidoComparacao = comparacao ? normal(comparacao.textContent) : '';
+    const rendido = normal(`${oQueE ? oQueE.textContent : ''}${comparacao ? comparacao.textContent : ''}`);
 
-    /* O TEXTO DO RESOLVEDOR, carácter a carácter, como a K6 faz com a pergunta. */
+    /* O TEXTO DO RESOLVEDOR, carácter a carácter, como a K6 faz com a pergunta: a leitura inteira, e cada metade. */
     let doResolvedor = null;
     try {
       doResolvedor = normal(textoDaLeitura(leituraDaMedida(id, lang).pedacos, lang));
@@ -614,7 +659,7 @@ export function conferirPaginaDaLeitura(root, lang, rota, linhas = loadClaims())
       falha(id, `o texto rendido difere do que o resolvedor dá: «${curto(rendido)}» contra «${curto(doResolvedor)}»`);
     }
 
-    /* A CONTA DESTA CÉLULA: os ramos e o texto, sem o resolvedor. */
+    /* A CONTA DESTA CÉLULA: os ramos e o texto, sem o resolvedor, e o corte pela sua regra. */
     const regua = {
       anterior: cartao.querySelector('[data-regua="anterior"] [data-claim]')?.getAttribute('data-claim') ?? null,
       ue: cartao.querySelector('[data-regua="ue"] [data-claim]')?.getAttribute('data-claim') ?? null,
@@ -624,6 +669,17 @@ export function conferirPaginaDaLeitura(root, lang, rota, linhas = loadClaims())
       contas.ramos += propria.nos.length;
       if (rendido !== propria.texto) {
         falha(id, `os ramos ou os valores rendidos não são os que a conta desta célula manda: «${curto(rendido)}» contra «${curto(propria.texto)}»`);
+      }
+      const declarada = /** @type {any} */ (LEITURAS_DAS_MEDIDAS)[id][lang];
+      const corte = corteIndependente(declarada);
+      const textoDe = (/** @type {[number, number]} */ f) => (f[0] < f[1] ? leituraIndependente(id, lang, regua, linhas, f).texto : '');
+      const esperadoOQueE = textoDe([0, corte]);
+      const esperadaComparacao = textoDe([corte, declarada.length]);
+      if (rendidoOQueE !== esperadoOQueE) {
+        falha(id, `a metade dentro da dobra não é a que o corte desta célula dá: «${curto(rendidoOQueE)}» contra «${curto(esperadoOQueE)}»`);
+      }
+      if (rendidoComparacao !== esperadaComparacao) {
+        falha(id, `a metade à vista não é a comparação que o corte desta célula dá: «${curto(rendidoComparacao)}» contra «${curto(esperadaComparacao)}»`);
       }
       for (const no of propria.nos) {
         for (const outro of no.outros) {
@@ -637,8 +693,8 @@ export function conferirPaginaDaLeitura(root, lang, rota, linhas = loadClaims())
     }
 
     /* CADA ALGARISMO NUMA MARCA DE ORIGEM. */
-    const marcado = (/** @type {any} */ n) => {
-      for (let p = n.parentNode; p && p !== el.parentNode; p = p.parentNode) {
+    const marcado = (/** @type {any} */ n, /** @type {any} */ raiz) => {
+      for (let p = n.parentNode; p && p !== raiz.parentNode; p = p.parentNode) {
         const a = p.attributes ?? {};
         if ('data-claim' in a || 'data-nonledger' in a || 'data-prova' in a) return true;
       }
@@ -647,29 +703,29 @@ export function conferirPaginaDaLeitura(root, lang, rota, linhas = loadClaims())
     /* O texto que se lê é o descodificado: uma referência de carácter como
        `&#39;` não é um algarismo à vista, e um algarismo escrito como `&#x31;`
        é, e tem de ter marca como qualquer outro. */
-    const anda = (/** @type {any} */ n) => {
+    const anda = (/** @type {any} */ n, /** @type {any} */ raiz) => {
       if (n.nodeType === NodeType.TEXT_NODE) {
         if (/\d/.test(n.text)) {
           contas.algarismos++;
-          if (!marcado(n)) falha(id, `a leitura escreve um algarismo sem marca de origem: «${curto(normal(n.text))}»`);
+          if (!marcado(n, raiz)) falha(id, `a leitura escreve um algarismo sem marca de origem: «${curto(normal(n.text))}»`);
         }
         return;
       }
-      for (const f of n.childNodes ?? []) anda(f);
+      for (const f of n.childNodes ?? []) anda(f, raiz);
     };
-    anda(el);
-
     /* AS LINHAS CITADAS: a do cartão e as que a régua dele rende, e mais nenhuma. */
     const permitidas = new Set([id, ...cartao.querySelectorAll('[data-regua] [data-claim]').map((x) => x.getAttribute('data-claim'))]);
     if (id === LEITURA_DAS_CAMARAS) permitidas.add(recontagemDasCamaras().datas[0].id);
-    for (const x of el.querySelectorAll('[data-claim], [data-de-linha]')) {
-      const citada = x.getAttribute('data-claim') ?? x.getAttribute('data-de-linha');
-      contas.linhas_citadas++;
-      if (!permitidas.has(citada)) falha(id, `a leitura cita a linha «${citada}», que não é a do cartão nem uma que a régua dele rende`);
+    for (const el of [oQueE, comparacao].filter(Boolean)) {
+      anda(el, el);
+      for (const x of el.querySelectorAll('[data-claim], [data-de-linha]')) {
+        const citada = x.getAttribute('data-claim') ?? x.getAttribute('data-de-linha');
+        contas.linhas_citadas++;
+        if (!permitidas.has(citada)) falha(id, `a leitura cita a linha «${citada}», que não é a do cartão nem uma que a régua dele rende`);
+      }
+      /* A LEITURA NÃO TEM MARCA DA FONTE: a porta é a do cartão (K10). */
+      if (el.querySelectorAll('.src-chip').length) falha(id, 'a leitura repete a marca da fonte');
     }
-
-    /* A LEITURA NÃO TEM MARCA DA FONTE: a porta é a do cartão (K10). */
-    if (el.querySelectorAll('.src-chip').length) falha(id, 'a leitura repete a marca da fonte');
   }
   return { erros, contas };
 }
@@ -776,6 +832,8 @@ export function plantasDaK17(dist) {
   /** @param {(r: import('node-html-parser').HTMLElement) => void} estraga */
   const pagina = (estraga) => { const r = parse(temas); estraga(r); return conferirPaginaDaLeitura(r, 'pt', '/estado-e-economia/ (planta)', linhas).erros; };
   const leituraDe = (/** @type {any} */ r, /** @type {string} */ id) => r.querySelector(`[data-cartao-medida="${id}"] [data-cartao-leitura]`);
+  /* K2 (02.10.2026): as duas metades da leitura de um cartão, pela marca da parte. */
+  const metadeDe = (/** @type {any} */ r, /** @type {string} */ id, /** @type {string} */ parte) => r.querySelector(`[data-cartao-medida="${id}"] [data-cartao-leitura][data-leitura-parte="${parte}"]`);
   regista('um algarismo escrito à mão na leitura', pagina((r) => { leituraDe(r, saldo).insertAdjacentHTML('beforeend', ' Em 12 anos subiu.'); }),
     'algarismo sem marca de origem');
   regista('um algarismo escrito como referência de carácter', pagina((r) => { leituraDe(r, saldo).insertAdjacentHTML('beforeend', ' Em &#x31;&#x32; anos.'); }),
@@ -785,10 +843,40 @@ export function plantasDaK17(dist) {
     l.set_content(l.innerHTML.replace('O saldo subiu face a', 'O saldo desceu face a'));
   }), 'um ramo que a conta não escolheu');
   regista('uma linha de outra medida citada', pagina((r) => {
-    const v = leituraDe(r, saldo).querySelector('[data-claim]');
+    /* K2: o valor da linha do saldo está na metade que diz o que o número é, dentro da dobra. */
+    const v = metadeDe(r, saldo, 'o-que-e').querySelector('[data-claim]');
     v.setAttribute('data-claim', 'divida-publica-2025');
   }), 'que não é a do cartão nem uma que a régua dele rende');
-  regista('um cartão sem leitura', pagina((r) => { leituraDe(r, 'divida-publica-2025').remove(); }), 'o cartão tem 0 leitura(s)');
+  regista('um cartão sem leitura', pagina((r) => { for (const l of r.querySelectorAll('[data-cartao-medida="divida-publica-2025"] [data-cartao-leitura]')) l.remove(); }), 'o cartão tem 0 leitura(s)');
+  /* AS PLANTAS DO CORTE (bloco K2, 02.10.2026): a metade do que o número é tirada da dobra, a comparação metida nela, a
+     primeira frase da comparação passada para dentro da dobra (o texto inteiro não muda, o corte muda), e uma metade
+     repetida. Cada uma tem de morder com a sua queixa. */
+  regista('k2 · a metade do que o número é fora da dobra', pagina((r) => {
+    const l = metadeDe(r, saldo, 'o-que-e');
+    const cartao = r.querySelector(`[data-cartao-medida="${saldo}"]`);
+    l.remove();
+    cartao.querySelector('.cartao-medida-valor').insertAdjacentHTML('afterend', l.outerHTML);
+  }), 'a metade que diz o que o número é está fora da dobra');
+  regista('k2 · a comparação dentro da dobra', pagina((r) => {
+    const l = metadeDe(r, saldo, 'comparacao');
+    l.remove();
+    r.querySelector(`[data-cartao-medida="${saldo}"] details.cartao-medida-dobra`).insertAdjacentHTML('beforeend', l.outerHTML);
+  }), 'a metade que compara está dentro de uma dobra');
+  regista('k2 · o corte noutro pedaço', pagina((r) => {
+    const a = metadeDe(r, saldo, 'o-que-e');
+    const b = metadeDe(r, saldo, 'comparacao');
+    const frase = ' O saldo subiu face a ';
+    const html = b.innerHTML;
+    const i = html.indexOf(frase.trim());
+    if (i < 0) return;
+    const ate = html.indexOf('.', i) + 1;
+    a.insertAdjacentHTML('beforeend', ' ' + html.slice(i, ate));
+    b.set_content(html.slice(0, i) + html.slice(ate));
+  }), 'a metade dentro da dobra não é a que o corte desta célula dá');
+  regista('k2 · uma metade repetida', pagina((r) => {
+    const l = metadeDe(r, saldo, 'comparacao');
+    l.insertAdjacentHTML('afterend', l.outerHTML);
+  }), 'cada uma aparece no máximo uma vez');
   regista('a leitura com a marca da fonte', pagina((r) => {
     leituraDe(r, saldo).insertAdjacentHTML('beforeend', '<a class="src-chip" href="/livro-razao/saldo-das-administracoes-publicas-2025">fonte</a>');
   }), 'repete a marca da fonte');

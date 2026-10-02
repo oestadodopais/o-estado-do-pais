@@ -2,7 +2,8 @@
  * O CARTÃO DE UMA MEDIDA · a folha (bloco P2, 15.09.2026)
  * ---------------------------------------------------------------------------
  * Cinco coisas numa pilha, pela ordem em que se leem: o nome, o valor com a
- * unidade e o período, a régua e a pergunta. A marca da fonte
+ * unidade e o período, a comparação (a leitura que compara, a régua, a faixa)
+ * e, desde o K2 (02.10.2026), a definição dobrada. A marca da fonte
  * (que vive dentro da linha do valor, ao lado dele, porque é lá que o portão a
  * confere).
  *
@@ -171,6 +172,80 @@
   font-size: 12px;
   line-height: 1.45;
   color: var(--ink);
+}
+
+/* ---------------------------------------------------------------------------
+ * A DEFINIÇÃO, DOBRADA (bloco K2, 02.10.2026, item 1 do brief)
+ * ---------------------------------------------------------------------------
+ * O que o número é e a pergunta do leitor ficam numa linha que se abre sem
+ * guião, no fim do cartão: um `<details>` nativo, com o sinal de dobra da casa
+ * (o triângulo de bordos que roda, o da gaveta de «Lugares», I54) e um alvo de
+ * 44 px de altura. A linha fechada compõe-se como a mobília pequena do cartão
+ * (a letra dos instrumentos, a 13 px, a cinzento), e abre a tinta. FECHADA EM
+ * TODAS AS LARGURAS, por decisão escrita no relatório do bloco: o brief deixava
+ * a definição à vista a 768 px e acima, se coubesse, e um `<details>` não abre
+ * por folha de estilo; um cartão com duas formas conforme a largura era um
+ * cartão que o leitor aprendia duas vezes. A identidade não muda: os tipos e as
+ * cores são os do cartão. */
+.cartao-medida-dobra {
+  margin: 2px 0 0;
+  min-width: 0;
+}
+.cartao-medida-dobra-abrir {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--f-instr);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+.cartao-medida-dobra-abrir::-webkit-details-marker {
+  display: none;
+}
+.cartao-medida-dobra-rotulo {
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.cartao-medida-dobra-abrir:hover .cartao-medida-dobra-rotulo {
+  text-decoration-color: currentColor;
+}
+.cartao-medida-dobra[open] > .cartao-medida-dobra-abrir {
+  color: var(--ink);
+}
+.cartao-medida-dobra-seta::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.16s ease;
+  transform-origin: 30% 50%;
+}
+.cartao-medida-dobra[open] .cartao-medida-dobra-seta::before {
+  transform: rotate(90deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cartao-medida-dobra-seta::before {
+    transition: none;
+  }
+}
+/* Dentro da dobra, a metade da leitura que diz o que o número é e a pergunta
+   compõem-se como se compunham à vista: a leitura a 14 px na tinta, a pergunta
+   a 12 px, as duas a 58ch. */
+.cartao-medida-dobra > .cartao-medida-leitura {
+  margin: 0 0 6px;
+}
+.cartao-medida-dobra > .cartao-medida-frase {
+  margin: 0 0 4px;
 }
 
 /* A RÉGUA. Uma linha, com os itens separados por um espaço largo e sem

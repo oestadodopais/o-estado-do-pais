@@ -5,7 +5,8 @@
  * ---------------------------------------------------------------------------
  * A ANATOMIA É A DO CARTÃO DO P2, e não muda: o nome, o valor com a unidade e o
  * período numa linha, a régua, uma frase do que a medida mede, e uma marca da
- * fonte. As mesmas cinco classes (`cartao-medida-nome`, `-valor`, `-frase`,
+ * fonte. Desde o K2 (02.10.2026) a frase vai dobrada no fim, numa linha que se
+ * abre sem guião, como no cartão nacional. As mesmas cinco classes (`cartao-medida-nome`, `-valor`, `-frase`,
  * `-regua`), a mesma folha, a mesma régua a medi-lo (`tests/cartao/cartao.mjs`).
  *
  * O QUE MUDA É DE ONDE VEM O QUE SE MOSTRA. As oito medidas de um concelho têm
@@ -155,5 +156,16 @@ const periodoDaFonte = (() => {
     )
   }
   {slug && nome && <FaixaDoConcelho tile={tile} slug={slug} nome={nome} lang={lang} s={s} />}
-  {frase && <p class="cartao-medida-frase"><Frase partes={frase} lang={lang} /></p>}
+  {/* A DEFINIÇÃO, DOBRADA (bloco K2, 02.10.2026, item 1 do brief): a frase do que a medida mede vai numa linha que se
+      abre sem guião, «O que é este número», no fim do cartão, depois do valor e da comparação (a palavra do estado e a
+      faixa do concelho). É a mesma dobra do cartão nacional, com a mesma folha. */}
+  {frase && (
+    <details class="cartao-medida-dobra" data-cartao-dobra={tile.claim}>
+      <summary class="cartao-medida-dobra-abrir">
+        <span class="cartao-medida-dobra-seta" aria-hidden="true"></span>
+        <span class="cartao-medida-dobra-rotulo" data-voz>{s.cartao.oQueE}</span>
+      </summary>
+      <p class="cartao-medida-frase"><Frase partes={frase} lang={lang} /></p>
+    </details>
+  )}
 </article>

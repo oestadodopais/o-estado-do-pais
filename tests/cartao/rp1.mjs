@@ -122,7 +122,10 @@ if (!process.argv.includes('--declaracoes')) {
       const card = root.querySelector(`[data-cartao-medida="${id}"]`);
       assert.ok(card, `${ficheiro}: cartão ausente ${id}`);cartoes++;
       assert.deepEqual(conferirValorUnidade(card).erros, [], id + ': valor separado da unidade');
-      assert.equal(card.querySelectorAll('[data-cartao-leitura]').length,1);
+      /* K2 (02.10.2026): uma leitura por cartão, em uma ou duas metades (o que o número é, dentro da dobra; a
+         comparação, à vista), cada metade no máximo uma vez. A K17 confere o texto das duas. */
+      const metades=card.querySelectorAll('[data-cartao-leitura]').map(l=>l.getAttribute('data-leitura-parte'));
+      assert.ok(metades.length>=1 && metades.length<=2 && new Set(metades).size===metades.length && metades.every(m=>m==='o-que-e'||m==='comparacao'), id+': a leitura não está em uma ou duas metades');
       assert.ok(card.querySelector('[data-regua] [data-claim]'),id+': régua ausente');
       assert.ok(card.querySelector('[data-de-campo="reference_date"]'),id+': período ausente');
       const recibo=parse(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/${id}/index.html`,'utf8'));

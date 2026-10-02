@@ -252,6 +252,22 @@ const palavraDoCartao = (c) =>
                 casa, é vocabulário fechado com os dois algarismos declarados —
                 o ordinal com o motivo `numeracao` do registo, e o total com a
                 chave da prova que o portão reconta. */}
+            {/* O NOME, O VALOR COM A UNIDADE E SÓ DEPOIS A COMPARAÇÃO (bloco K2, 02.10.2026, item 1 do brief): a ordem
+                do documento é a ordem em que o cartão se lê, a 390 px como nas outras larguras, e a folha coloca cada
+                peça na sua fila pela mesma ordem. A definição de cada medida está dobrada na leitura breve por baixo da
+                faixa, que a porta do cartão abre, e que abre sem guião. As duas notas acima falam da fila do estado,
+                que desde o K2 vem depois da unidade, na quarta das cinco filas, e não na primeira. */}
+            <p class="cartao-nome" id={`k-${c.id}`} data-medida-nome>{c.nome}</p>
+
+            <Claim id={c.id} lang={lang} chip={true} class="cartao-valor" />
+            {/* `selos` LIGADO, E É O PORTÃO QUE O EXIGE: a unidade de uma medida
+                pode citar uma linha do livro-razão (o teto legal do índice de
+                dívida cita-a), e um valor sem o seu selo fecha a construção. É
+                por isto que esta fila está no pé e não dentro da porta. */}
+            <p class="cartao-unidade" data-medida-unidade>
+              <Frase partes={c.medida} lang={lang} selos={true} />
+            </p>
+
             {palavra ? (
               <div class="cartao-topo">
                 {referencia ? <span class="cartao-palavra cartao-veredicto"><VeredictoDaReferencia linha={getClaim(c.id)} limiar={referencia.limiar} dono={referencia.limiarFixadoPor} s={s} /></span> : <>
@@ -338,17 +354,6 @@ const palavraDoCartao = (c) =>
                 )}
               </div>
             )}
-
-            <Claim id={c.id} lang={lang} chip={true} class="cartao-valor" />
-
-            <p class="cartao-nome" id={`k-${c.id}`} data-medida-nome>{c.nome}</p>
-            {/* `selos` LIGADO, E É O PORTÃO QUE O EXIGE: a unidade de uma medida
-                pode citar uma linha do livro-razão (o teto legal do índice de
-                dívida cita-a), e um valor sem o seu selo fecha a construção. É
-                por isto que esta fila está no pé e não dentro da porta. */}
-            <p class="cartao-unidade" data-medida-unidade>
-              <Frase partes={c.medida} lang={lang} selos={true} />
-            </p>
             {/* O RÓTULO DO DESTINO, NA FILA DO SELO E ENCOSTADO À DIREITA
                 (F1.2b, item 1, 03.09.2026).
                 Um cartão que leva para FORA desta página di-lo, e di-lo onde não

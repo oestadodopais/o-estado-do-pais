@@ -34,6 +34,11 @@
  *        L2b-b, só as taxas e os rácios, porque uma contagem não se ordena
  *        (§1.143, decisão 4). Num cartão nacional, ou no de uma contagem, é um
  *        bloco a mais.
+ *   K19 · **a ordem do cartão, lida no documento** (bloco K2, 02.10.2026) ·
+ *        o nome, o valor com a unidade, a comparação e só depois a definição,
+ *        dobrada num `<details>` fechado que abre por «O que é este número»;
+ *        nos cartões da faixa da página da União, o nome, o valor, a unidade e
+ *        o estado. A célula e as sete plantas vivem em `tests/cartao/ordem.mjs`.
  *   K18 · **a faixa da União refeita dos pontos** · a mesma célula que a F19 do
  *        `check:formas` corre na construção (`tests/cartao/faixa.mjs`): a faixa em
  *        cada cartão nacional com série, o desenho com uma marca por país na
@@ -225,6 +230,7 @@ import {
 import { auditarVeredicto, veredictoEsperado } from './veredicto.mjs';
 import { auditarPerguntas, lerAuditoriaDasPerguntas } from './perguntas.mjs';
 import { conferirAuditoriaDasLeituras, conferirLeiturasRendidas, plantasDaK17 } from './leituras.mjs';
+import { conferirOrdemDaPagina, plantasDaOrdem } from './ordem.mjs';
 import { REFERENCIAS_DAS_MEDIDAS } from '../../src/data/referencias-das-medidas.mjs';
 import { t } from '../../src/i18n/strings.mjs';
 import { DEFINICOES_DAS_MEDIDAS, ORIGENS_DAS_DEFINICOES, textoDaDefinicao } from '../../src/data/figuras.mjs';
@@ -311,6 +317,12 @@ const PECAS_PERMITIDAS = new Set([
   /* L2b, 01.10.2026: a faixa do concelho, só num cartão de concelho de uma
      medida da tabela das ordens, e uma vez (a K1 confere as duas coisas). */
   'cartao-medida-faixa-concelho',
+  /* K2, 02.10.2026: a definição dobrada, um `<details>` no fim do cartão com a
+     pergunta, a frase do que a medida mede e a metade da leitura que diz o que
+     o número é. A K1 olha para dentro dela como olha para o primeiro nível (a
+     frase conta como frase), e a K19 (`tests/cartao/ordem.mjs`) confere a ordem
+     e que nenhuma definição fica fora dela. */
+  'cartao-medida-dobra',
 ]);
 /** As séries de países e a tabela dos nomes, pelo leitor próprio dos portões (K1, K18). */
 const SERIES_DA_K18 = lerSeriesDoPortao();
@@ -423,6 +435,10 @@ function corre(dist) {
     ordinais_k18: 0,
     plantas_das_palavras_k18: 0,
     plantas_dos_empates_k18: 0,
+    /* K2: a ordem do cartão (K19). */
+    ordem_cartoes: 0,
+    ordem_com_dobra: 0,
+    ordem_faixa_da_uniao: 0,
   };
   const rotulos = rotulosDoRecibo();
 
@@ -454,6 +470,15 @@ function corre(dist) {
         contas.faixas_k18 += k18.contas.faixas;
         contas.ressalvas_k18 += k18.contas.ressalvas;
 
+      }
+
+      /* K19 · a ordem do cartão, lida no documento (bloco K2, 02.10.2026). */
+      if (html.includes('cartao-medida') || html.includes('data-faixa')) {
+        const k19 = conferirOrdemDaPagina(root, langPagina, rota);
+        erros.push(...k19.erros);
+        contas.ordem_cartoes += k19.contas.cartoes;
+        contas.ordem_com_dobra += k19.contas.com_dobra;
+        contas.ordem_faixa_da_uniao += k19.contas.faixa_da_uniao;
       }
 
       /* K8 · a linha do tipo e a legenda da marca. */
@@ -542,7 +567,10 @@ function corre(dist) {
         /* ------------------------------------------------------------ K1 */
         /** @type {string[]} */
         const classes = [];
-        for (const filho of cartao.childNodes) {
+        /* K2: o que está dentro da dobra conta como se estivesse ao primeiro nível, menos a linha que a abre. */
+        const dobraDoCartao = cartao.childNodes.find((n) => /** @type {any} */ (n).getAttribute?.('class')?.split(/\s+/).includes('cartao-medida-dobra'));
+        const filhosDaDobra = dobraDoCartao ? dobraDoCartao.childNodes.filter((n) => /** @type {any} */ (n).tagName && String(/** @type {any} */ (n).rawTagName).toLowerCase() !== 'summary') : [];
+        for (const filho of [...cartao.childNodes, ...filhosDaDobra]) {
           const el = /** @type {any} */ (filho);
           if (!el.tagName) continue;
           const classe = (el.getAttribute?.('class') ?? '').split(/\s+/).filter(Boolean);
@@ -1827,6 +1855,14 @@ if (PROVA) {
   }
 }
 
+/* K19 · AS PLANTAS DA ORDEM DO CARTÃO (bloco K2, 02.10.2026), sobre cópias em memória de páginas construídas. */
+if (PROVA) {
+  const plantas = plantasDaOrdem((rel) => fs.readFileSync(path.join(DIST, rel), 'utf8'));
+  for (const x of plantas) if (!x.mordeu) r.erros.push(`K19 NÃO MORDEU ${x.nome}: ${x.queixa ?? (x.limpa_sem_erros ? 'nenhum vermelho' : 'a página limpa já tinha erros')}`);
+  r.contas.ordem_plantas = plantas.length;
+  r.contas.ordem_plantas_mordidas = plantas.filter((x) => x.mordeu).length;
+}
+
 /* Os nomes oficiais que o recibo mostra: só os que o motor marca como a mesma
    medida. A conta escreve-se para o relatório do bloco. */
 let comNomeOficial = 0;
@@ -1897,6 +1933,7 @@ console.log(cinza(`    cartões de concelho com a faixa do concelho (K1)       $
 console.log(cinza(`    faixas refeitas dos pontos (K18)                       ${r.contas.faixas_k18}${PROVA ? ` · ${r.contas.plantas_k18} planta(s) a morder` : ''}`));
 console.log(cinza(`    ressalvas nas pontas e ordinais (K18, UE1b)            ${r.contas.ressalvas_k18} · ${r.contas.ordinais_k18}${PROVA ? ` · ${r.contas.plantas_das_palavras_k18} planta(s) das palavras a morder` : ''}`));
 console.log(cinza(`    empates num extremo, em memória (K18, UE1c)            ${PROVA ? `${r.contas.plantas_dos_empates_k18} planta(s) a morder` : 'sem --prova'}`));
+console.log(cinza(`    a ordem do cartão (K19): cartões, com dobra, da faixa  ${r.contas.ordem_cartoes} · ${r.contas.ordem_com_dobra} · ${r.contas.ordem_faixa_da_uniao}${PROVA ? ` · ${r.contas.ordem_plantas_mordidas} de ${r.contas.ordem_plantas} plantas a morder` : ''}`));
 console.log(cinza(`    medidas com nome oficial no recibo                    ${r.contas.medidas_com_nome_oficial}`));
 console.log(
   cinza(

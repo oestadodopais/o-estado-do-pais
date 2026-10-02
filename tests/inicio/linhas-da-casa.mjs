@@ -153,7 +153,9 @@ export function plantasDasLinhasDaCasa(dist = 'dist') {
       const s = normal(el.textContent);
       el.set_content(s.includes(',') ? s.split(',')[0] : s + '9');
     } }, /E0 visível pt primeira/],
-    ['lugar retirado do registo inglês', (r, lang, p) => { if (lang === 'en' && p === 'registo') r.querySelector('[data-mudou-registo] [data-correcao-entrada="correcoes-publicadas"] .registo-lugar').remove(); }, /E0 registo en: correcoes-publicadas perdeu a mudança/],
+    /* K2 (02.10.2026): a planta escolhe a entrada do E0 pelo seu índice, como a célula; com a recontagem de 02.10.2026
+       o contador tem duas entradas, e a primeira do registo, que é a mais recente, já não é a do E0. */
+    ['lugar retirado do registo inglês', (r, lang, p) => { if (lang !== 'en' || p !== 'registo') return; const c = lerLinha('correcoes-publicadas'); const n = String(c.corrections.indexOf(entradaE0(c))); r.querySelectorAll('[data-mudou-registo] [data-correcao-entrada="correcoes-publicadas"]').find(li => li.querySelector('[data-correcao-campo="date"]')?.getAttribute('data-correcao-n') === n)?.querySelector('.registo-lugar')?.remove(); }, /E0 registo en: correcoes-publicadas perdeu a mudança/],
     ['nome retirado da recontagem', (r, lang, p) => { if (lang === 'pt' && p === 'registo') r.querySelector('[data-correcao-entrada="correcoes-publicadas"] .registo-mudanca-nome')?.remove(); }, /E0b nome pt: correcoes-publicadas/],
     ['nome retirado da dívida das famílias', (r, lang, p) => { if (lang === 'en' && p === 'registo') r.querySelector('[data-correcao-entrada="divida-das-familias-2025-ue"] .registo-mudanca-nome')?.remove(); }, /E0b nome en: divida-das-familias-2025-ue/],
   ]) {
