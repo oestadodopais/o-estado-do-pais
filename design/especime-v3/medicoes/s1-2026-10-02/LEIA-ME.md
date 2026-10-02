@@ -82,11 +82,24 @@ As do portão de HTML sobre o `dist/` estão em `plantas-portoes-s1.json` e `pla
 
 ## Os commits
 
-Ver a lista no fim, escrita com a resposta curta.
+No ramo `s1-2026-10-02`, sobre o commit do brief `d0615da6`, por esta ordem:
+
+- `23941c27` as decisões em vigor antes de mexer e a primeira leitura do contador;
+- `c6e80bda` a caixa no sítio: os textos, as rotas, as páginas, a porta do rodapé, a frase das correções, o caminho e o mapa do sítio;
+- `a1f742a3` a função, o `typecheck` e a região;
+- `a505bc26` a célula da função, no `verify`;
+- `3517b42e` o portão de HTML, com as plantas;
+- `b61ea0b1` a privacidade, os mortos e o `verify:deploy`;
+- `b4f56e92` as rotas no inventário da voz, as frases, as exceções e a dispensa da sentinela;
+- `7b0f1fad` a H16 do `check:alvos`, a largura das portas do resultado e a marca da frase das correções;
+- `0af061b3` o mapa do repositório;
+- `ce74c218` as duas plantas da sentinela;
+- `b4ab49e4` as provas, a prova de caminho, o captor, o medidor e o relatório antes da corrida final: a cabeça da corrida final dos portões;
+- e o último, com os códigos da corrida final, as capturas, as medidas, o custo e a resposta curta, que só acrescenta provas a esta pasta e às capturas.
 
 ## As capturas
 
-Em `design/especime-v3/capturas/s1-2026-10-02/`, pelo captor `captar-s1.mjs`, com o manifesto `capturas-s1.json` (a cabeça da construção, o resumo de cada imagem e as medidas de cada página, sem transbordo nem pedido de fora).
+16 capturas (`capturas`) em `design/especime-v3/capturas/s1-2026-10-02/`, pelo captor `captar-s1.mjs`, sobre a construção da cabeça `b4ab49e4` da corrida final: a página do formulário nas cinco larguras e nas duas edições, a do obrigado a 390 e a 1 280 px nas duas edições, e o rodapé com as duas portas a 390 px nas duas edições. O manifesto `capturas-s1.json` guarda a cabeça, o resumo de cada imagem e as medidas de cada página (a altura do documento, o transbordo horizontal, a caixa do botão e a do campo armadilhado, o destino da porta do rodapé), com 0 problemas (`capturas_problemas`): nenhum transbordo, o botão com 44 px de altura em todas as larguras e o campo armadilhado fora do ecrã.
 
 ## As decisões em vigor nos ficheiros tocados
 
@@ -94,11 +107,11 @@ Lidas antes de mexer (`decisoes-em-vigor-antes.txt`) e outra vez sobre os fichei
 
 ## O custo
 
-Na resposta curta e em `medidas.json` (`simbolos_gastos`, `segundos_de_parede`), das duas leituras do contador em `custo-inicio.json` e `custo-fim.json`. O modelo foi o Claude Opus 5.5 em todo o bloco, sem subagentes.
+810 299 símbolos e 6091 segundos de parede (`simbolos_gastos`, `segundos_de_parede`), das duas leituras do contador de símbolos restantes que a ferramenta mostra ao construtor, em `custo-inicio.json` e `custo-fim.json`, e das horas lidas do relógio. A sessão foi uma só, sem resumo a meio, e o modelo foi o Claude Opus 5.5 em todo o bloco, sem subagentes. A semana da subscrição do Claude estava a 29 por cento no início e a 32 no fim (os dois ficheiros do custo).
 
 ## Os portões
 
-A corrida final corre por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça do commit deste relatório; os códigos, lidos de `portoes/<portão>.codigo`, entram no commit seguinte, com a resposta curta.
+A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da máquina (esperou pelo bloco P4, que a tinha), na cabeça `b4ab49e4`: `build` 0, `verify` 0 e `typecheck` 0 (`portao_build_codigo`, `portao_verify_codigo`, `portao_typecheck_codigo`), cada código lido de `portoes/<portão>.codigo`, escrito depois de o processo acabar, com as horas em `portoes/<portão>.inicio` e `.fim`. A cabeça no fim da corrida é a mesma do princípio (`portoes/cabeca` e `portoes/cabeca.fim`), e a árvore só tinha por seguir a pasta da própria corrida (`portoes/estado.fim`). Nos dois registos, o caminho absoluto da worktree, que três linhas imprimiam, está trocado por `<worktree>`. A pré-visualização da Vercel também passou a cadeia do `build` inteira (está `Ready`), sobre os ficheiros da worktree no momento do envio.
 
 ## O que ficou por fazer, e porquê
 

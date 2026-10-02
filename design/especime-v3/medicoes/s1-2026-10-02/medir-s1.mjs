@@ -204,9 +204,15 @@ const { ROUTES, routePath, LANGS } = await import(pathToFileURL(path.join(RAIZ, 
     fs.rmSync(tmp, { recursive: true, force: true });
   }
   medicao('mapa_citacoes_longe_da_linha_na_base_do_bloco', longeNaBase, 'git archive d0615da6 scripts tests src design/observatorio para uma pasta temporária, e o guião do mapa sobre ela', 'o guião conferiu citações na base', okNaBase && Number(okNaBase[1]) > 0);
-  const vozLinha = (le(path.join(PASTA, 'portoes/build.log')) ?? '').match(/voz ✓ \S*\s*(\d+) marcadores · (\d+) exceções/);
-  medicao('voz_marcadores', vozLinha ? Number(vozLinha[1]) : NAO, 'npm run build · a linha «voz ✓» do check:voz, em portoes/build.log', 'a linha diz também as exceções', Boolean(vozLinha));
-  medicao('voz_excecoes', vozLinha ? Number(vozLinha[2]) : NAO, 'a mesma linha', 'as exceções de contexto do bloco estão no ficheiro das marcas', excecoes.length > 0);
+  /* AS CORES DO TERMINAL SAEM ANTES DE LER: com elas, a primeira forma desta expressão deixava o código de cor comer
+     o primeiro algarismo e lia 5 onde a linha diz 65. O conhecido-positivo é agora a contagem das linhas das duas
+     tabelas do ficheiro das marcas, que tem de bater com o número que o portão diz. */
+  const semCores = (le(path.join(PASTA, 'portoes/build.log')) ?? '').replace(/\x1b\[[0-9;]*m/g, '');
+  const vozLinha = semCores.match(/voz ✓ (\d+) marcadores · (\d+) exceções/);
+  const linhasDasMarcas = voz.split('\n').filter((l) => /^\| (raiz|prefixo|palavra) \|/.test(l)).length;
+  const linhasDasExcecoes = voz.split('\n').filter((l) => /^\| (contexto|rota|frase|registo) \|/.test(l)).length;
+  medicao('voz_marcadores', vozLinha ? Number(vozLinha[1]) : NAO, 'npm run build · a linha «voz ✓» do check:voz, em portoes/build.log, sem as cores do terminal', 'o número é o das linhas da tabela dos marcadores de VOZ-MARCADORES.md', vozLinha && Number(vozLinha[1]) === linhasDasMarcas);
+  medicao('voz_excecoes', vozLinha ? Number(vozLinha[2]) : NAO, 'a mesma linha', 'o número é o das linhas da tabela das exceções de VOZ-MARCADORES.md', vozLinha && Number(vozLinha[2]) === linhasDasExcecoes);
 }
 
 /* 7 · a prova de caminho: o comportamento contra a base, e a plataforma. */

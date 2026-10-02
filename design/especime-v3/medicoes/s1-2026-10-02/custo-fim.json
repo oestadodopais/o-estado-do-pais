@@ -1,0 +1,13 @@
+{
+  "o_que": "a última leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), escrita à mão pelo construtor antes da medição final, e a hora lida do relógio na mesma chamada",
+  "modelo": "Claude Opus 5.5 (a definição de agente construtor), sem subagentes",
+  "simbolos_restantes_no_fim": 14189701,
+  "lido_no_fim": "o contador mostrado logo a seguir à abertura da última captura (o rodapé inglês a 390 px), antes de escrever este ficheiro",
+  "fim_utc": "2026-10-02T22:19:04Z",
+  "fim_origem": "date -u na chamada que escreveu este ficheiro",
+  "semana_da_conta_no_fim": {
+    "o_que": "a percentagem da semana e das cinco horas da subscrição do Claude, lidas da linha de estado (os campos rate_limits do ficheiro de uso da conta) na mesma chamada",
+    "sete_dias_usados_por_cento": 32,
+    "cinco_horas_usadas_por_cento": 27
+  }
+}

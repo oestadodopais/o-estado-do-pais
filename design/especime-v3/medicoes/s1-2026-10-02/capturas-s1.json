@@ -1,0 +1,401 @@
+{
+  "bloco": "S1",
+  "cabeca": "b4ab49e48a0af779657898c213cfa13fb7368e5f",
+  "construcao": {
+    "commit": "b4ab49e48a0af779657898c213cfa13fb7368e5f",
+    "ref": "s1-2026-10-02",
+    "construido_em": "2026-10-02T22:02:21.549Z"
+  },
+  "inicio": "2026-10-02T22:18:12.569Z",
+  "fim": "2026-10-02T22:18:22.147Z",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "capturas": 16,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-formulario-pt-390.png",
+      "tipo": "pagina",
+      "rota": "/sugestoes/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 1590,
+        "h1": "Sugestões",
+        "robots": null,
+        "botao": {
+          "left": 18,
+          "top": 1288,
+          "largura": 179,
+          "altura": 44
+        },
+        "armadilha": {
+          "left": -10000,
+          "top": 508,
+          "largura": 153,
+          "altura": 21
+        },
+        "porta_das_sugestoes": "/sugestoes?de=%2Fsugestoes"
+      },
+      "sha256": "3c32e99205e9de0264819976a0d640f026704f56fa3dedf53948083e23248bae"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-formulario-pt-768.png",
+      "tipo": "pagina",
+      "rota": "/sugestoes/",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 1453,
+        "h1": "Sugestões",
+        "robots": null,
+        "botao": {
+          "left": 31,
+          "top": 1199,
+          "largura": 179,
+          "altura": 44
+        },
+        "armadilha": {
+          "left": -10000,
+          "top": 488,
+          "largura": 153,
+          "altura": 21
+        },
+        "porta_das_sugestoes": "/sugestoes?de=%2Fsugestoes"
+      },
+      "sha256": "ff6d7f118d5e7c7587a0d438d5c209eeaacde4501263ede5e21f2dea9ea28b57"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-formulario-pt-1024.png",
+      "tipo": "pagina",
+      "rota": "/sugestoes/",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 1486,
+        "h1": "Sugestões",
+        "robots": null,
+        "botao": {
+          "left": 41,
+          "top": 1240,
+          "largura": 179,
+          "altura": 44
+        },
+        "armadilha": {
+          "left": -10000,
+          "top": 529,
+          "largura": 153,
+          "altura": 21
+        },
+        "porta_das_sugestoes": "/sugestoes?de=%2Fsugestoes"
+      },
+      "sha256": "2d131f250fe97828fe6e138af43a1407a7df6dec943f702c1f8c22d09ce8b53e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-formulario-pt-1280.png",
+      "tipo": "pagina",
+      "rota": "/sugestoes/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1484,
+        "h1": "Sugestões",
+        "robots": null,
+        "botao": {
+          "left": 94,
+          "top": 1257,
+          "largura": 179,
+          "altura": 44
+        },
+        "armadilha": {
+          "left": -10000,
+          "top": 546,
+          "largura": 153,
+          "altura": 21
+        },
+        "porta_das_sugestoes": "/sugestoes?de=%2Fsugestoes"
+      },
+      "sha256": "29950eece7e4ff876a8f15f28b1fb975c1aa2d97c39fbce487fb6e8ba214828f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-formulario-pt-1600.png",
+      "tipo": "pagina",
+      "rota": "/sugestoes/",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 1491,
+        "h1": "Sugestões",
+        "robots": null,
+        "botao": {
+          "left": 254,
+          "top": 1257,
+          "largura": 179,
+          "altura": 44
+        },
+        "armadilha": {
+          "left": -10000,
+          "top": 546,
+          "largura": 153,
+          "altura": 21
+        },
+        "porta_das_sugestoes": "/sugestoes?de=%2Fsugestoes"
+      },
+      "sha256": "d386cb8ee36aeb549e572b927d09c505dd1c7315d0edcc419f34da0818451cc3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-formulario-en-390.png",
+      "tipo": "pagina",
+      "rota": "/en/suggestions/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 1666,
+        "h1": "Suggestions",
+        "robots": null,
+        "botao": {
+          "left": 18,
+          "top": 1316,
+          "largura": 199,
+          "altura": 44
+        },
+        "armadilha": {
+          "left": -10000,
+          "top": 510,
+          "largura": 153,
+          "altura": 21
+        },
+        "porta_das_sugestoes": "/en/suggestions?de=%2Fen%2Fsuggestions"
+      },
+      "sha256": "b725dcd46fe26f990d8209d4e4157c930748439987a301543628d0076d084eff"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-formulario-en-768.png",
+      "tipo": "pagina",
+      "rota": "/en/suggestions/",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 1481,
+        "h1": "Suggestions",
+        "robots": null,
+        "botao": {
+          "left": 31,
+          "top": 1227,
+          "largura": 199,
+          "altura": 44
+        },
+        "armadilha": {
+          "left": -10000,
+          "top": 490,
+          "largura": 153,
+          "altura": 21
+        },
+        "porta_das_sugestoes": "/en/suggestions?de=%2Fen%2Fsuggestions"
+      },
+      "sha256": "78d5c7ab002af292fa2704cd8b99f7f5ae2bd73d0ec330d7633d74e887352e0b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-formulario-en-1024.png",
+      "tipo": "pagina",
+      "rota": "/en/suggestions/",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 1514,
+        "h1": "Suggestions",
+        "robots": null,
+        "botao": {
+          "left": 41,
+          "top": 1268,
+          "largura": 199,
+          "altura": 44
+        },
+        "armadilha": {
+          "left": -10000,
+          "top": 531,
+          "largura": 153,
+          "altura": 21
+        },
+        "porta_das_sugestoes": "/en/suggestions?de=%2Fen%2Fsuggestions"
+      },
+      "sha256": "54fd362ca9e140f34766c83ce1a63a7ee7eb5530934cd4c16f6d730b5e616291"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-formulario-en-1280.png",
+      "tipo": "pagina",
+      "rota": "/en/suggestions/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1550,
+        "h1": "Suggestions",
+        "robots": null,
+        "botao": {
+          "left": 94,
+          "top": 1287,
+          "largura": 199,
+          "altura": 44
+        },
+        "armadilha": {
+          "left": -10000,
+          "top": 550,
+          "largura": 153,
+          "altura": 21
+        },
+        "porta_das_sugestoes": "/en/suggestions?de=%2Fen%2Fsuggestions"
+      },
+      "sha256": "1e891b6b7abdb9dc7962d46e845c1f563dab027fcedd1b21cc7ef78873577f17"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-formulario-en-1600.png",
+      "tipo": "pagina",
+      "rota": "/en/suggestions/",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 1557,
+        "h1": "Suggestions",
+        "robots": null,
+        "botao": {
+          "left": 254,
+          "top": 1287,
+          "largura": 199,
+          "altura": 44
+        },
+        "armadilha": {
+          "left": -10000,
+          "top": 550,
+          "largura": 153,
+          "altura": 21
+        },
+        "porta_das_sugestoes": "/en/suggestions?de=%2Fen%2Fsuggestions"
+      },
+      "sha256": "ecba3b0385a665f3e5181a7d50eb1379fc6c7cdd3894d2d278ce0ccaaa3a3b97"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-obrigado-pt-390.png",
+      "tipo": "pagina",
+      "rota": "/sugestoes/obrigado/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 900,
+        "h1": "Sugestões",
+        "robots": "noindex, follow",
+        "botao": null,
+        "armadilha": null,
+        "porta_das_sugestoes": "/sugestoes?de=%2Fsugestoes%2Fobrigado"
+      },
+      "sha256": "17a029b4061f8fc8f7ab7804e7a1862813c6514a611e5565cf9d6862c540cf67"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-obrigado-pt-1280.png",
+      "tipo": "pagina",
+      "rota": "/sugestoes/obrigado/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 900,
+        "h1": "Sugestões",
+        "robots": "noindex, follow",
+        "botao": null,
+        "armadilha": null,
+        "porta_das_sugestoes": "/sugestoes?de=%2Fsugestoes%2Fobrigado"
+      },
+      "sha256": "7e5cfc70f585704c7f22ff77a404dcf09f7395317e9256571e57bbefcba4f5d7"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-obrigado-en-390.png",
+      "tipo": "pagina",
+      "rota": "/en/suggestions/thank-you/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 900,
+        "h1": "Suggestions",
+        "robots": "noindex, follow",
+        "botao": null,
+        "armadilha": null,
+        "porta_das_sugestoes": "/en/suggestions?de=%2Fen%2Fsuggestions%2Fthank-you"
+      },
+      "sha256": "97fc3086c11b86f0880347a02380b030a33bd6e179c5bc85d9717aa1822516eb"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-obrigado-en-1280.png",
+      "tipo": "pagina",
+      "rota": "/en/suggestions/thank-you/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 900,
+        "h1": "Suggestions",
+        "robots": "noindex, follow",
+        "botao": null,
+        "armadilha": null,
+        "porta_das_sugestoes": "/en/suggestions?de=%2Fen%2Fsuggestions%2Fthank-you"
+      },
+      "sha256": "a3596d8db743addc9ccac7dd70d47023b82a266c006f870801ce8dd73e604320"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-rodape-pt-390.png",
+      "tipo": "rodape",
+      "rota": "/lugares/",
+      "lang": "pt",
+      "largura": 390,
+      "portas": {
+        "correcoes": "mailto:correcoes@oestadodopais.pt",
+        "sugestoes": "/sugestoes?de=%2Flugares",
+        "rotulo": "Sugestões"
+      },
+      "sha256": "b8797b1d8d9c4021b1707a57d4d8292214d94f35feb40d0b396615380e1106af"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/s1-2026-10-02/s1-rodape-en-390.png",
+      "tipo": "rodape",
+      "rota": "/en/places/",
+      "lang": "en",
+      "largura": 390,
+      "portas": {
+        "correcoes": "mailto:correcoes@oestadodopais.pt",
+        "sugestoes": "/en/suggestions?de=%2Fen%2Fplaces",
+        "rotulo": "Suggestions"
+      },
+      "sha256": "c157a6d6fc767d4f7b89ca7017d50786395bfa9e175affab69d0745c47b1d773"
+    }
+  ]
+}
