@@ -558,3 +558,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | k2 | 8 cadeias novas, 46 retiradas, 4 mudadas de texto (as contagens da prova com os milhares separados) | lida pelo lugar de direção a 02.10.2026, aprovada como está | Claude Opus 5.5, construtor do K2: a linha «O que é este número» que abre a definição dobrada de cada cartão, nas duas línguas; as frases dos três estudos com os termos explicados (a designação de pelouro, a localização de projeto vencida, o valor atuarialmente neutro e as duas portas), nas duas línguas; e retiradas as leituras inteiras dos cartões nacionais, que passam a render-se em duas metades conferidas pela K17, e as frases antigas dos estudos. A leitura cruzada do diff faz-se antes da fusão. |
+
+## UE2 · a página dos países, 02.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| ue2 | 12 cadeias novas, nenhuma retirada | por ler | Claude Opus 5.5, construtor do UE2: as perguntas de seis cartões da página da União na forma em palavras comuns, com o termo da fonte entre parênteses, nas duas línguas (a sétima, a da taxa de câmbio efetiva real, leva um algarismo declarado e a régua salta-a nesta rota). As perguntas do cartão continuam vivas nas páginas de assunto. A leitura cruzada do diff faz-se antes da fusão. |
