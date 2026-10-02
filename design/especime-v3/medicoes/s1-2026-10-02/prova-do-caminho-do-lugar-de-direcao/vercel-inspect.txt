@@ -1,0 +1,4 @@
+target	preview
+status	● Ready
+url		https://o-estado-do-pais-fxilnc172-nunos-projects-b945a519.vercel.app
+└── λ api/sugestoes (4.74KB) [iad1]
