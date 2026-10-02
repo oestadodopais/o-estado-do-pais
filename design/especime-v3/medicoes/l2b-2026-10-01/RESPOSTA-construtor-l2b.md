@@ -10,5 +10,5 @@
 - **Fora da letra do brief**: o recibo de cada linha do ganho médio lista Portugal em «O enquadramento» (616), para o valor de Portugal na faixa não pedir uma segunda marca no cartão (a K10); a H2 do `check:alvos` conta os selos da leitura do lugar como prosa corrida, com um estrago, porque a frase nova pôs quatro selos em linhas vizinhas; o mapa do repositório ganhou a secção do L2b.
 - **Plantas**: 14 da célula nova, 5 do portão de HTML, 1 da K1 e 1 da H2, todas a morder.
 - **Portões**: a corrida intermédia saiu com a H2 vermelha, corrigida e conferida sozinha; a corrida final corre na cabeça deste commit e os códigos entram no commit seguinte, em `portoes/`.
-- **Capturas**: Évora e Penedono (o ganho mais baixo dos 308, e quatro cartões sem valor), 20 depois nas cinco larguras e nas duas edições e 8 antes, sem problemas.
+- **Capturas**: Évora e Penedono (o ganho mais baixo dos 308, e três cartões sem valor; dizia «quatro», corrigido na passagem L2b-c), 20 depois nas cinco larguras e nas duas edições e 8 antes, sem problemas.
 - **Custo**: 764496 símbolos e 5696 segundos até ao relatório, das duas leituras em ficheiro.

@@ -69,7 +69,7 @@ A `correcoes-c.mjs` mudou para «Lugares», na forma que a página tem (o formul
 
 **Évora vem de outra tabela do INE na população e nas empresas.** As outras 307 linhas da população são do indicador `0012917` e a de Évora do `0012918`; nas empresas, `0014061` e `0014063`. As duas tabelas cruzam a mesma estimativa por variáveis diferentes, e o total é o mesmo número da mesma estatística: inferido dos títulos, e não verificado na fonte neste bloco. A faixa ordena-as juntas, pela chave do cartão.
 
-**O concelho pequeno é Penedono**: 2 506 pessoas, o ganho médio mais baixo dos 308 (308.º), e quatro cartões sem valor publicado (a dívida, o índice e o prazo, e por isso sem lugar), que é onde a faixa mostra os ramos que Évora não mostra.
+**O concelho pequeno é Penedono**: 2 506 pessoas, o ganho médio mais baixo dos 308 (308.º), e três cartões sem valor publicado (a dívida, o índice e o prazo, e por isso sem lugar; dizia «quatro», corrigido na passagem L2b-c), que é onde a faixa mostra os ramos que Évora não mostra.
 
 **O peso.** A página de Abrantes passou de 21206 para 58530 bytes, a de Évora de 78684 para 115366 e a de Penedono de 19956 para 56051; a construção inteira, de 161265223 para 184717904 bytes, com as mesmas 7467 páginas. As marcas vão num só caminho de SVG por faixa: em elementos soltos, eram 1511048 elementos.
 
