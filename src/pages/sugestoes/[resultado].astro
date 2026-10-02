@@ -1,0 +1,16 @@
+---
+/* As quatro páginas do resultado de um envio (bloco S1). O último segmento de
+   cada caminho sai da tabela das rotas, e não de um nome de ficheiro escrito à
+   mão: a página e a função que manda o leitor para ela leem a mesma tabela. */
+import ResultadoDaSugestaoView from '../../views/ResultadoDaSugestaoView.astro';
+import { segmentosDoResultado } from '../../lib/sugestoes.mjs';
+
+export function getStaticPaths() {
+  return segmentosDoResultado('pt').map(({ segmento, resultado }) => ({
+    params: { resultado: segmento },
+    props: { resultado },
+  }));
+}
+const { resultado } = Astro.props;
+---
+<ResultadoDaSugestaoView lang="pt" resultado={resultado} />

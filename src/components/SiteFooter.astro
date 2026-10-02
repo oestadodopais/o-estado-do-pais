@@ -4,6 +4,7 @@ import { t } from '../i18n/strings.mjs';
 import { ROTAS_RODAPE, ETIQUETA_NAV } from '../lib/navegacao.mjs';
 import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 import { FICHA_DA_PRIMEIRA_PAGINA } from '../data/politica-ia.mjs';
+import { SUGESTOES } from '../data/sugestoes.mjs';
 const { lang = 'pt', path, outraLingua = null } = Astro.props;
 const s = t(lang);
 const aqui = normalizePath(path ?? Astro.url.pathname);
@@ -15,13 +16,20 @@ const outra = outraLingua ?? otherLanguagePath(aqui, lang);
    a mesma que o cabeçalho faz para a frase de identidade: o caminho desta página
    é o da rota `home` da sua edição. */
 const naPrimeiraPagina = normalizePath(routePath('home', lang)) === aqui;
+/* A PORTA DAS SUGESTÕES, AO LADO DA DAS CORREÇÕES (bloco S1, 02.10.2026). Leva o
+   leitor à página do formulário da sua edição com `?de=` igual ao caminho desta
+   página, que é o que a função das sugestões guarda como a página de onde ele
+   veio. O portão de HTML conta-a em todas as páginas, uma por página, como a das
+   correções, e confere o destino e o `?de=` contra o caminho da página. */
+const portaDasSugestoes = `${routePath('sugestoes', lang)}?de=${encodeURIComponent(aqui)}`;
 ---
 <footer class="rodape rodape-b1">
   <nav class="rodape-nav" aria-label={s.nav.rotuloRodape}>
     {ROTAS_RODAPE.map(rota => <><a href={routePath(rota, lang)}>{s.nav[ETIQUETA_NAV[rota]]}</a>{' · '}</>)}
     <a href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'} lang={lang === 'pt' ? 'en' : 'pt-PT'}>{s.outraLingua}</a>
   </nav>{' · '}
-  <span data-porta-correccoes><a class="ligacao-email" href={`mailto:${ENDERECO_CORRECOES}`}>{ENDERECO_CORRECOES}</a></span>
+  <span data-porta-correccoes><a class="ligacao-email" href={`mailto:${ENDERECO_CORRECOES}`}>{ENDERECO_CORRECOES}</a></span>{' · '}
+  <span data-porta-sugestoes><a href={portaDasSugestoes}>{SUGESTOES.titulo[lang]}</a></span>
   {naPrimeiraPagina && (
     <p class="rotulo-ia-ficha" data-ficha-primeira-pagina>
       <Fragment set:text={FICHA_DA_PRIMEIRA_PAGINA[lang].gratuito} />

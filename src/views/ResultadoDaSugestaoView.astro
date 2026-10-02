@@ -1,0 +1,48 @@
+---
+/**
+ * O resultado de um envio de sugestão (bloco S1, 02.10.2026): as quatro páginas
+ * para onde a função `api/sugestoes.js` manda o leitor, uma frase cada.
+ *
+ *   obrigado   · a sugestão chegou (e é também o destino de um robô que
+ *                preencha o campo armadilhado, sem nada ficar na base);
+ *   vazia      · as três caixas vinham em branco;
+ *   limite     · a base recusou a sexta sugestão da mesma marca na hora;
+ *   não chegou · a base não respondeu, recusou por ter a caixa do dia cheia,
+ *                ou a função não tinha o sal da marca.
+ *
+ * Levam `noindex` e ficam fora do mapa do sítio (`astro.config.mjs`): são o fim
+ * de um envio. As portas são duas, de volta ao formulário e à primeira página.
+ * A frase vem de `src/data/sugestoes.mjs` pela mesma tabela (`ROTAS_DO_RESULTADO`)
+ * que dá o caminho, e por isso uma página não pode dizer a frase de outra.
+ */
+import Base from '../layouts/Base.astro';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import { SITE_NAME } from '../../site.config.mjs';
+import { SUGESTOES, ROTAS_DO_RESULTADO } from '../data/sugestoes.mjs';
+import '../styles/sugestoes.css';
+
+/** @type {{ lang?: Lingua, resultado: keyof typeof ROTAS_DO_RESULTADO }} */
+const { lang = 'pt', resultado } = Astro.props;
+const s = t(lang);
+const chave = ROTAS_DO_RESULTADO[resultado];
+if (!chave) throw new Error(`sugestoes: resultado desconhecido "${resultado}"`);
+const frase = SUGESTOES.resultados[resultado][lang];
+---
+
+<Base
+  lang={lang}
+  path={routePath(chave, lang)}
+  title={`${SUGESTOES.titulo[lang]} · ${SITE_NAME}`}
+  description={frase}
+  noindex
+>
+  <div class="sugestoes-cabeca">
+    <h1>{SUGESTOES.titulo[lang]}</h1>
+    <p class="lede" data-sugestoes-resultado={resultado}>{frase}</p>
+  </div>
+  <p class="regra-portas sugestoes-portas">
+    <a href={routePath('sugestoes', lang)}>{SUGESTOES.voltar[lang]}</a>
+    <a href={routePath('home', lang)}>{s.nav.inicio}</a>
+  </p>
+</Base>

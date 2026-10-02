@@ -61,6 +61,45 @@ export const ROUTES = {
    * apagamento (§1.29).
    */
   correcoes: { pt: '/correcoes', en: '/en/corrections' },
+  /**
+   * A CAIXA DAS SUGESTÕES (bloco S1, 02.10.2026). Uma página simples onde o leitor
+   * diz o que procurou e não encontrou, ou que estudo gostava de ler; nada se
+   * publica, e os textos vivem em `src/data/sugestoes.mjs`. É uma rota sua e não
+   * uma secção das correções, porque uma sugestão não é uma correção: a correção
+   * tem página, endereço e registo público, e a sugestão vai para uma base fora do
+   * repositório (`design/observatorio/CAIXA-DAS-SUGESTOES.md`). A porta está no
+   * rodapé de todas as páginas, ao lado da das correções, com `?de=` a dizer de
+   * que página o leitor vem; é a única página destas cinco que entra no mapa do
+   * sítio.
+   */
+  sugestoes: { pt: '/sugestoes', en: '/en/suggestions' },
+  /**
+   * A sugestão chegou (bloco S1). É para aqui que a função `api/sugestoes.js`
+   * manda o leitor depois de a base aceitar a sugestão, e também um robô que
+   * preencha o campo armadilhado, sem nada ficar na base. Leva `noindex` e fica
+   * fora do mapa do sítio, como as outras três do resultado: é o fim de um envio,
+   * e um motor de busca não tem lá nada para ler.
+   */
+  sugestoesObrigado: { pt: '/sugestoes/obrigado', en: '/en/suggestions/thank-you' },
+  /**
+   * A sugestão vinha vazia (bloco S1): as três caixas em branco. A função não
+   * chama a base e manda o leitor para aqui, que lhe diz para escrever pelo menos
+   * numa delas. `noindex`, fora do mapa do sítio.
+   */
+  sugestoesVazia: { pt: '/sugestoes/vazia', en: '/en/suggestions/empty' },
+  /**
+   * O limite da hora (bloco S1): a base recusou a sexta sugestão da mesma marca
+   * na mesma hora. A frase diz o número por extenso, e o portão de HTML confere-o
+   * contra o registo da base. `noindex`, fora do mapa do sítio.
+   */
+  sugestoesLimite: { pt: '/sugestoes/limite', en: '/en/suggestions/limit' },
+  /**
+   * A sugestão não chegou (bloco S1): a base não respondeu, recusou por ter a
+   * caixa do dia cheia, ou a função não tinha o sal da marca. O leitor sabe que
+   * tem de voltar a tentar, e nada se perde em silêncio. `noindex`, fora do mapa
+   * do sítio.
+   */
+  sugestoesNaoChegou: { pt: '/sugestoes/nao-chegou', en: '/en/suggestions/not-received' },
   estudos: { pt: '/estudos', en: '/en/studies' },
   estudo: { pt: '/estudos/:slug', en: '/en/studies/:slug' },
   documento: { pt: '/estudos/:slug/documento', en: '/en/studies/:slug/document' },

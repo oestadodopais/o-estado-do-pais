@@ -1,0 +1,101 @@
+/* ---------------------------------------------------------------------------
+   A CAIXA DAS SUGESTÕES (bloco S1, 02.10.2026)
+   ---------------------------------------------------------------------------
+   A página do formulário e as quatro do resultado. Sem cor nova: as caixas de
+   escrever têm a letra, o fio e o papel da caixa das correções (`site.css`,
+   `.caixa-correcoes-texto`), e o botão tem a letra do botão dela, com o alvo de
+   44 px que o brief pede (§3, ponto 4) em todas as larguras. */
+
+.sugestoes-cabeca {
+  padding-top: clamp(20px, 3vw, 34px);
+}
+.sugestoes-cabeca .lede {
+  margin-top: 14px;
+}
+
+.sugestoes-form {
+  max-width: 62ch;
+  margin-top: 28px;
+}
+.sugestoes-campo {
+  margin: 0 0 20px;
+}
+.sugestoes-campo label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--f-prosa);
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.sugestoes-campo textarea,
+.sugestoes-campo input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  font-family: var(--f-prosa);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule-strong);
+  padding: 10px 14px;
+}
+.sugestoes-campo textarea {
+  resize: vertical;
+}
+
+/* O campo armadilhado: fora do ecrã e fora da árvore de acessibilidade
+   (`aria-hidden` na vista), para que só um robô o preencha. Não usa a classe
+   `.vh` de propósito: essa é a dos textos que se ouvem e não se veem, e este
+   campo não se deve ouvir. */
+.sugestoes-armadilha {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.sugestoes-nota {
+  max-width: 62ch;
+  margin: 4px 0 20px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.sugestoes-accoes {
+  margin: 0;
+}
+.sugestoes-enviar {
+  min-height: 44px;
+  min-width: 44px;
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 10px 18px;
+  cursor: pointer;
+}
+.sugestoes-enviar:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* As portas de uma página do resultado: de volta ao formulário e à primeira
+   página. 44 px de alvo em todas as larguras, como as portas das entradas
+   (`primeira-pagina.css`), para não abrir o buraco dos 641 aos 1023 px que a H2
+   do `check:alvos` mede. */
+.sugestoes-portas a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}

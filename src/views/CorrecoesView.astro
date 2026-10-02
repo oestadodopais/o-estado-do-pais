@@ -28,6 +28,7 @@ import RegistoCorrecoes from '../components/RegistoCorrecoes.astro';
 import CaixaDeCorrecoes from '../components/CaixaDeCorrecoes.astro';
 import Frase from '../components/Frase.astro';
 import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
+import { SUGESTOES, pedacosDaFrase } from '../data/sugestoes.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/leitura.css';
@@ -35,6 +36,14 @@ import '../styles/leitura.css';
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const path = routePath('correcoes', lang);
+/* A PORTA DAS SUGESTÕES, PARA QUEM CHEGAR À PORTA ERRADA (bloco S1, 02.10.2026,
+   §5.1 do brief): uma sugestão não é uma correção, e quem vem aqui dizer o que
+   falta encontra a página certa no sítio onde ia escrever. */
+const [sugestaoAntes, sugestaoPorta, sugestaoDepois] = pedacosDaFrase(
+  SUGESTOES.portaNasCorrecoes[lang],
+  SUGESTOES.portaDaFraseNasCorrecoes[lang],
+);
+const destinoDasSugestoes = `${routePath('sugestoes', lang)}?de=${encodeURIComponent(path)}`;
 ---
 
 <Base
@@ -83,6 +92,7 @@ const path = routePath('correcoes', lang);
   <section class="metodo-secao" id="escrever">
     <div><h2>{s.correcoes.caixaTitulo}</h2></div>
     <div class="metodo-corpo">
+      <p class="metodo-p" data-porta-sugestoes-nas-correcoes>{sugestaoAntes}<a href={destinoDasSugestoes}>{sugestaoPorta}</a>{sugestaoDepois}</p>
       <CaixaDeCorrecoes lang={lang} />
     </div>
   </section>
