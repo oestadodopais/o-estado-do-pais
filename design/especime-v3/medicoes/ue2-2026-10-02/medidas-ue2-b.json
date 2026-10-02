@@ -1,7 +1,7 @@
 {
   "bloco": "UE2-b",
-  "cabeca": "33c30fd9bca48d4a93a348d17d1bc02c2818a7ec",
-  "construcao_final": "33c30fd9bca48d4a93a348d17d1bc02c2818a7ec",
+  "cabeca": "d79df84030fce85e7d414de625709d8f9316c572",
+  "construcao_final": "d79df84030fce85e7d414de625709d8f9316c572",
   "construcao_de_base": "da6d2d91b706a4201a4fd98bcdfccbbba1d9f3c9",
   "guiao": "design/especime-v3/medicoes/ue2-2026-10-02/medir-ue2-b.mjs",
   "medidas": [
@@ -931,10 +931,61 @@
     },
     {
       "nome": "portoes_a_zero",
-      "valor": null,
+      "valor": {
+        "cabeca": "d79df84030fce85e7d414de625709d8f9316c572",
+        "cabeca_fim": "d79df84030fce85e7d414de625709d8f9316c572",
+        "cabeca_igual_no_fim": true,
+        "build": 0,
+        "verify": 0,
+        "typecheck": 0,
+        "segundos": {
+          "build": 130,
+          "verify": 749,
+          "typecheck": 1
+        }
+      },
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/ue2-2026-10-02/portoes/ue2-b (os ficheiros .codigo, cabeca e cabeca.fim)",
       "conhecido_positivo": {
         "o_que": "o mesmo leitor lê os códigos da corrida final do UE2 em portoes/, a zero",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "celulas_na_corrida_final",
+      "valor": {
+        "f20": {
+          "seccoes": 2,
+          "faixas": 20,
+          "definicoes": 20,
+          "marcas": 560,
+          "etiquetas": 560,
+          "listas": 20,
+          "itens": 560,
+          "ressalvas": 2,
+          "plantas_a_morder": 35
+        },
+        "k16": {
+          "perguntas": 35,
+          "pedacos": 125,
+          "apoios": 188,
+          "origens_seladas": 72,
+          "plantas_a_morder": 12
+        },
+        "d84": {
+          "definicoes": 74,
+          "esperadas": 74,
+          "origens": 162,
+          "origens_esperadas": 162
+        },
+        "voz": {
+          "linhas_com_bloco": 1497,
+          "vivas": 768,
+          "retiradas": 729
+        }
+      },
+      "comando": "as linhas do check:formas em portoes/ue2-b/build.log, e as do check:cartao, do check:lugar e do check:voz em portoes/ue2-b/verify.log, sem as cores",
+      "conhecido_positivo": {
+        "o_que": "as cinco linhas foram lidas, e a F20 conta uma definição por faixa",
         "encontrado": true
       }
     },
