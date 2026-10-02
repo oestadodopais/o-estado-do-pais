@@ -33,6 +33,11 @@ export const ROTULOS_B1 = {
        não tem passiva: diz-se «a 01.10.2026 sucedeu-lhe», e não «foi sucedido por». */
     edicaoDatada: 'Edição datada.', sucedidoA: 'A', sucedidoPor: 'sucedeu-lhe',
     sucedidoPorVarios: 'sucederam-lhe três estudos:', sucedidoEm: 'em',
+    /* A RECONCILIAÇÃO VIVE NO SUCESSOR (bloco P4, 02.10.2026, item 4 do brief P4; a I184). As edições datadas ficam
+       alojadas com os seus erros conhecidos, porque os bytes não mudam; a nota dizia que lhes sucedeu um estudo, e não
+       que é nele que o que esta edição escreveu se reconcilia. Uma frase para um sucessor, outra para vários. */
+    reconcilia: 'O estudo que lhe sucedeu reconcilia o que esta edição escreveu.',
+    reconciliamVarios: 'Os estudos que lhe sucederam reconciliam o que esta edição escreveu.',
     sucedeA: 'Sucede a', e: 'e' },
   en: { valor: 'Value', medida: 'Measure', fonte: 'Source', verificacao: 'Verified on', estudos: 'Studies', fontes: 'Sources and verification',
     edicao: 'Edition as published', publicado: 'published on', estudoPublicado: 'Study published',
@@ -43,6 +48,8 @@ export const ROTULOS_B1 = {
     todasAsMudancas: 'All changes',
     edicaoDatada: 'Dated edition.', sucedidoA: 'Succeeded on', sucedidoPor: 'by',
     sucedidoPorVarios: 'by three studies:', sucedidoEm: 'in',
+    reconcilia: 'The study that succeeded it reconciles what this edition wrote.',
+    reconciliamVarios: 'The studies that succeeded it reconcile what this edition wrote.',
     sucedeA: 'Succeeds', e: 'and' },
 };
 

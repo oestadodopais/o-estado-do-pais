@@ -366,9 +366,26 @@ function prendeEdicoesB1(rota, doc, slugDaPagina = null, esperadas = null) {
  * @param {string} slugDaPagina
  * @param {Set<unknown>} presasAqui
  */
+/* A RECONCILIAÇÃO NA NOTA (bloco P4, 02.10.2026, item 4 do brief P4; a I184). A edição datada fica alojada com os seus
+   erros conhecidos, e a nota tem de dizer que é no estudo que sucedeu que se reconcilia o que ela escreveu: uma frase
+   por língua e por número de sucessores, na marca `data-sucessor-reconcilia`. As frases esperadas são uma cópia escrita
+   aqui, e não as de `src/data/rotulos-b1.mjs`, para que uma mudança na fonte da página não se confirme a si própria. */
+const RECONCILIACAO = {
+  pt: { um: 'O estudo que lhe sucedeu reconcilia o que esta edição escreveu.', varios: 'Os estudos que lhe sucederam reconciliam o que esta edição escreveu.' },
+  en: { um: 'The study that succeeded it reconciles what this edition wrote.', varios: 'The studies that succeeded it reconcile what this edition wrote.' },
+};
+let notasComReconciliacao = 0;
+
 function prendeSucessor(rota, doc, slugDaPagina, presasAqui) {
   const work = WORKS.find((w) => w.slug === slugDaPagina);
   const linguaDaPagina = (rota === '/en' || rota.startsWith('/en/')) ? 'en' : 'pt';
+  for (const bloco of doc.querySelectorAll('[data-sucessor-edicao]')) {
+    const esperada = RECONCILIACAO[linguaDaPagina][(work?.sucedidoPor?.length ?? 0) > 1 ? 'varios' : 'um'];
+    const frases = bloco.querySelectorAll('[data-sucessor-reconcilia]').map((s) => s.textContent.replace(/\s+/g, ' ').trim());
+    if (frases.length !== 1 || frases[0] !== esperada) {
+      falhas.push(`${rota}: a nota do sucessor não diz que o estudo que lhe sucedeu reconcilia o que esta edição escreveu (esperada «${esperada}», lida ${JSON.stringify(frases)}).`);
+    } else notasComReconciliacao++;
+  }
   for (const bloco of doc.querySelectorAll('[data-sucessor-edicao]')) {
     const [slug, lang] = (bloco.getAttribute('data-sucessor-edicao') ?? '').split('/');
     if (!work?.sucedidoPor?.some((s) => s.slug === slug)) {
@@ -461,6 +478,12 @@ if (lacos === 0) {
     `${paginasPrendidas} página(s) conferida(s) e nenhuma data presa a uma edição: a conta 1b ` +
       `percorreu-as e não prendeu nada.`,
   );
+}
+
+/* O POSITIVO CONHECIDO DA RECONCILIAÇÃO (bloco P4): com estudos sucedidos no arquivo, a conta tem de ter visto e
+   conferido notas; zero notas com estudos sucedidos é uma conta que não mediu nada. */
+if (WORKS.some((w) => (w.sucedidoPor ?? []).length) && notasComReconciliacao === 0) {
+  falhas.push('o arquivo tem estudos sucedidos e nenhuma nota do sucessor foi conferida com a frase da reconciliação.');
 }
 
 /* E NENHUMA EDIÇÃO DO ARQUIVO PODE FICAR SEM PÁGINA QUE A IMPRIMA. Uma linha do
@@ -636,5 +659,5 @@ console.log(
   `${verde('check-datas')} · ${edicoes.length} edição(ões) datadas, ${impressas} data(s) ` +
     `impressa(s) em ${porRota.size} página(s), ${lacos} laço(s) data-edição em ` +
     `${paginasPrendidas} página(s) conferida(s), ${semData} edição(ões) sem data` +
-    `${semData === 0 ? ' e nenhuma caixa de aviso' : ''}.`,
+    `${semData === 0 ? ' e nenhuma caixa de aviso' : ''}; ${notasComReconciliacao} nota(s) do sucessor com a frase da reconciliação.`,
 );
