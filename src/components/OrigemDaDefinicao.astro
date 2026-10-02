@@ -94,10 +94,11 @@ const chaveDoExcerto = (o) =>
         </a>
         {/* A COORDENADA QUE A RESPOSTA FIXA, AO LADO DO TÍTULO DO CONJUNTO (passagem K2-c, 02.10.2026): quando o título
             diz outra coisa («aged 15-24» num indicador dos 15 aos 29), a etiqueta da dimensão e a da categoria, como o
-            excerto da linha as escreve, depois de « — », que é o separador das etiquetas nesse excerto. */}
+            excerto da linha as escreve. O separador é o «·» da casa, o mesmo entre o publicador e o documento: o
+            travessão das etiquetas é do excerto da linha, e a casa não o usa (IDENTIDADE §9). */}
         {o.coordenadas && (
           <>
-            {' — '}
+            {' · '}
             <span class="def-origem-coordenadas" data-verbatim={`origem-${o.chave}-coordenadas`} lang={linguaDoDocumento(o)}>
               {o.coordenadas}
             </span>
