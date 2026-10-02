@@ -456,6 +456,8 @@ interface MedidaDoPainel {
   estado: string | null;
   nome: ParDeLinguas;
   nomeNoVeredicto?: Partial<ParDeLinguas>;
+  /** K2: a forma do nome numa lista de uma frase, sem artigo e sem a vírgula do nome do cartão. */
+  nomeNaFrase?: Partial<ParDeLinguas>;
   linha?: Linha | null;
 }
 

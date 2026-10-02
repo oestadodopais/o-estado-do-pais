@@ -11,6 +11,11 @@
       "quem": "Claude Opus 5.5",
       "quando": "2026-09-23",
       "o_que": "releitura de cada apoio; o excerto dos dois sexos passa de «Total» a «Sex: Total», a forma em que o motor escreve as dimensões nos excertos das linhas"
+    },
+    {
+      "quem": "Claude Opus 5.5",
+      "quando": "2026-10-02",
+      "o_que": "o K2, item 3 do brief: a pergunta da diferença de emprego entre sexos, nova, pedaço a pedaço, com a descrição do Eurostat e o quadro do Painel Social do Relatório por País de Portugal (a unidade em pontos percentuais)"
     }
   ],
   "perguntas": [
@@ -1524,6 +1529,75 @@
               "linha": "ihpc-variacao-homologa",
               "campo": "excerpt",
               "literal": "Portugal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "origens": [
+        "eurostat-tesem060-descricao",
+        "ce-swd-2026-222-disparidade-de-emprego"
+      ],
+      "pergunta": {
+        "pt": "Qual é a diferença, em pontos percentuais, entre a taxa de emprego dos homens dos 20 aos 64 anos e a das mulheres?",
+        "en": "What is the difference, in percentage points, between the employment rate of men aged 20 to 64 and that of women?"
+      },
+      "mudanca": null,
+      "pedacos": [
+        {
+          "pt": "Qual é a diferença",
+          "en": "What is the difference",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem060-descricao",
+              "campo": "excerto",
+              "literal": "defined as the difference between the employment rates"
+            }
+          ]
+        },
+        {
+          "pt": ", em pontos percentuais,",
+          "en": ", in percentage points,",
+          "apoios": [
+            {
+              "origem": "ce-swd-2026-222-disparidade-de-emprego",
+              "campo": "excerto",
+              "literal": "(percentage points, population aged 20-64"
+            }
+          ]
+        },
+        {
+          "pt": " entre a taxa de emprego dos homens ",
+          "en": " between the employment rate of men ",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem060-descricao",
+              "campo": "excerto",
+              "literal": "the employment rates of men and women"
+            }
+          ]
+        },
+        {
+          "pt": "dos 20 aos 64 anos ",
+          "en": "aged 20 to 64 ",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem060-descricao",
+              "campo": "excerto",
+              "literal": "men and women aged 20-64"
+            }
+          ]
+        },
+        {
+          "pt": "e a das mulheres?",
+          "en": "and that of women?",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem060-descricao",
+              "campo": "excerto",
+              "literal": "employment rates of men and women"
             }
           ]
         }

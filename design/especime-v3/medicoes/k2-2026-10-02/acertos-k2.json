@@ -1,0 +1,200 @@
+{
+  "o_que": "as folhas das leituras, das perguntas e das leituras dos estudos que mudaram desde a cabeça de partida",
+  "base": "1722244db19b66e523a7eaf9f0b27e770060bab8",
+  "mudancas": 24,
+  "fora_da_lista": 0,
+  "lista": [
+    {
+      "familia": "leituras-das-medidas",
+      "id": "pib-real-per-capita-2025",
+      "caminho": ".pt[0]",
+      "antes": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços.",
+      "depois": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a unidade chama volumes encadeados.",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-das-medidas",
+      "id": "pib-real-per-capita-2025",
+      "caminho": ".en[0]",
+      "antes": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices.",
+      "depois": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the unit calls chain linked volumes.",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-das-medidas",
+      "id": "desempenho-das-exportacoes-2025",
+      "caminho": ".pt[0]",
+      "antes": "É quanto mudou em três anos a quota de Portugal nas exportações das economias avançadas.",
+      "depois": "É quanto mudou em três anos a quota de Portugal nas exportações das economias avançadas: a parte que as exportações de bens e serviços de Portugal têm no total das exportações dos países da OCDE e dos países da União que não são da OCDE.",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-das-medidas",
+      "id": "desempenho-das-exportacoes-2025",
+      "caminho": ".en[0]",
+      "antes": "It is how much Portugal’s share of the exports of advanced economies changed over three years.",
+      "depois": "It is how much Portugal’s share of the exports of advanced economies changed over three years: the part that Portugal’s exports of goods and services make up of the total exports of OECD countries and of EU countries outside the OECD.",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".pt[0]",
+      "antes": "É a diferença entre a percentagem de homens dos ",
+      "depois": "É a diferença, em pontos percentuais, entre a taxa de emprego dos homens dos ",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".pt[4]",
+      "antes": " anos com emprego e a percentagem de mulheres com emprego.",
+      "depois": " anos e a das mulheres.",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".en[0]",
+      "antes": "It is the difference between the percentage of men aged ",
+      "depois": "It is the difference, in percentage points, between the employment rate of men aged ",
+      "permitida": true
+    },
+    {
+      "familia": "leituras-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".en[4]",
+      "antes": " in employment and the percentage of women in employment.",
+      "depois": " and that of women.",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".origens[0]",
+      "antes": null,
+      "depois": "eurostat-tesem060-descricao",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".origens[1]",
+      "antes": null,
+      "depois": "ce-swd-2026-222-disparidade-de-emprego",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".pt[0]",
+      "antes": null,
+      "depois": "Qual é a diferença, em pontos percentuais, entre a taxa de emprego dos homens dos ",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".pt[1].nl",
+      "antes": null,
+      "depois": "20",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".pt[1].motivo",
+      "antes": null,
+      "depois": "escala-de-instrumento",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".pt[2]",
+      "antes": null,
+      "depois": " aos ",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".pt[3].nl",
+      "antes": null,
+      "depois": "64",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".pt[3].motivo",
+      "antes": null,
+      "depois": "escala-de-instrumento",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".pt[4]",
+      "antes": null,
+      "depois": " anos e a das mulheres?",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".en[0]",
+      "antes": null,
+      "depois": "What is the difference, in percentage points, between the employment rate of men aged ",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".en[1].nl",
+      "antes": null,
+      "depois": "20",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".en[1].motivo",
+      "antes": null,
+      "depois": "escala-de-instrumento",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".en[2]",
+      "antes": null,
+      "depois": " to ",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".en[3].nl",
+      "antes": null,
+      "depois": "64",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".en[3].motivo",
+      "antes": null,
+      "depois": "escala-de-instrumento",
+      "permitida": true
+    },
+    {
+      "familia": "definicoes-das-medidas",
+      "id": "disparidade-de-emprego-entre-sexos-2025",
+      "caminho": ".en[4]",
+      "antes": null,
+      "depois": " and that of women?",
+      "permitida": true
+    }
+  ]
+}
