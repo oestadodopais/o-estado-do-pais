@@ -533,7 +533,6 @@ section {
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  gap: 0 8px;
 }
 
 /* ---------------------------------------------------------------------------
@@ -777,7 +776,6 @@ section {
 .tema {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
   margin-left: auto;
 }
 .tema[hidden] {
@@ -829,11 +827,18 @@ section {
   letter-spacing: 0.02em;
   color: var(--muted);
 }
-.tema-b + .tema-b::before {
+.tema::before {
   content: '·';
+  order: 1;
   color: var(--rule-strong);
-  margin-right: 7px;
-  margin-left: -7px;
+}
+@supports (content: 'a' / 'b') {
+  .tema::before {
+    content: '·' / '';
+  }
+}
+.tema-b + .tema-b {
+  order: 2;
 }
 .tema-b[aria-pressed='true'] {
   color: var(--ink);

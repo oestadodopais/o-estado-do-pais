@@ -11,9 +11,14 @@
  * UM LUGAR SÓ, À VISTA EM TODAS AS LARGURAS: a fila da marca, à direita dela (`Masthead.astro`). Os dois lugares do
  * bloco A (item A7, um na mobília por baixo da marca e outro dentro do menu que abria no telemóvel) deixaram de
  * existir com a mobília antiga, na peça 3 do B1: o menu de hoje não abre e o cabeçalho não tem mobília por baixo da
- * marca. A fila da marca tem lugar para os dois botões (a 390 px a marca da primeira página mede 248 px numa coluna
- * de 354), e onde não tem, a 320 px, o comando desce para a linha seguinte em vez de apertar a marca. Cada botão tem
- * o alvo de toque de 44 px por 44.
+ * marca. A fila da marca tem lugar para os dois botões a partir de 390 px (medido a 390 px na primeira página, a de
+ * marca maior: a marca 248 px e o comando 102 px, 92 na edição inglesa, numa coluna de 354; o guião é
+ * `design/especime-v3/medicoes/p4-2026-10-02/fila-da-marca.mjs`), e onde não tem, na primeira página a 320 px, o
+ * comando desce para a linha seguinte em vez de apertar a marca. Cada botão tem o alvo de toque de 44 px por 44.
+ *
+ * O «·» ENTRE OS DOIS É DO GRUPO, E NÃO DO SEGUNDO BOTÃO (`.tema::before` em `site.css`, com a ordem posta pela
+ * folha): dentro do botão, o sublinhado do estado carregado passava por baixo do ponto quando o escolhido era o
+ * escuro, e o ponto entrava no nome que o leitor de ecrã diz do botão. No grupo, o ponto é desenho e não se ouve.
  *
  * ENTRA `hidden` DO SERVIDOR, e é `public/js/tema.js` que lhe tira o `hidden` depois de pôr os dois botões a dizer o
  * estado certo. Sem guião o sítio é claro e este comando não aparece: um comando que não comanda nada seria uma
