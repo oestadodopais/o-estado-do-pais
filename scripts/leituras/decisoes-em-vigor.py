@@ -21,6 +21,14 @@ as decisões que ficam em vigor; corre-se de novo sobre o intervalo do bloco ant
 Sai 0 com a lista; 1 se não conseguir ler `DECISIONS.md` ou o repositório; 2 se o seu
 conhecido-positivo falhar (a §1.98 citada em `scripts/check-lugar.mjs`, que a cita catorze vezes,
 na cabeça do sítio onde o guião vive), porque uma lista vazia de um detetor calado não diria nada.
+
+OS FICHEIROS BINÁRIOS SALTAM-SE, E DIZ-SE QUANTOS (bloco P4, 02.10.2026, item 6 do brief P4; a M47).
+Até aqui o guião lia cada ficheiro como texto, e o primeiro PNG de um intervalo (as capturas que
+cada bloco guarda) atirava um erro de descodificação no byte 0x89 e o guião saía com 1 sem dizer
+nada das decisões. Um ficheiro é binário quando o próprio Git o diz (o `--numstat` do intervalo
+escreve «-» nas duas contagens) ou quando os seus bytes não se leem como UTF-8 ou têm um byte nulo;
+salta-se, conta-se, e a última linha diz quantos se saltaram, com os primeiros nomes. Um binário
+não cita decisões, e por isso saltá-lo não esconde nenhuma.
 """
 import argparse
 import re
@@ -39,6 +47,29 @@ def git(repo, *args):
     if r.returncode != 0:
         raise RuntimeError(f"git {' '.join(args)}: {r.stderr.strip()}")
     return r.stdout
+
+
+class Binario(Exception):
+    """Os bytes de um ficheiro que não se leem como texto."""
+
+
+def texto_do_git(repo, objeto):
+    """O conteúdo de `git show <objeto>` como texto, ou `Binario` se os bytes não se leem como UTF-8 ou têm um nulo."""
+    r = subprocess.run(["git", "-C", str(repo), "-c", "core.quotepath=off", "show", objeto], capture_output=True)
+    if r.returncode != 0:
+        raise RuntimeError(f"git show {objeto}: {r.stderr.decode('utf-8', 'replace').strip()}")
+    if b"\x00" in r.stdout:
+        raise Binario(objeto)
+    try:
+        return r.stdout.decode("utf-8")
+    except UnicodeDecodeError as e:
+        raise Binario(objeto) from e
+
+
+def binarios_do_intervalo(repo, base, cabeca):
+    """Os caminhos que o Git classifica como binários no intervalo (o `--numstat` escreve «-» nas duas contagens)."""
+    saida = git(repo, "diff", "--numstat", f"{base}..{cabeca}")
+    return {l.split("\t", 2)[2] for l in saida.splitlines() if l.startswith("-\t-\t")}
 
 
 def titulos():
@@ -83,14 +114,22 @@ def main():
         tit = titulos()
         repo = Path(a.repo)
         vistos = {}
+        saltados = []
         if a.intervalo:
             base, cabeca = a.intervalo.split("..", 1)
             ficheiros = [f for f in git(repo, "diff", "--name-only", f"{base}..{cabeca}").splitlines() if f]
+            binarios = binarios_do_intervalo(repo, base, cabeca)
         else:
-            cabeca, base, ficheiros = "HEAD", None, a.ficheiros
+            cabeca, base, ficheiros, binarios = "HEAD", None, a.ficheiros, set()
         for f in ficheiros:
+            if f in binarios:
+                saltados.append(f)
+                continue
             try:
-                texto = git(repo, "show", f"{cabeca}:{f}")
+                texto = texto_do_git(repo, f"{cabeca}:{f}")
+            except Binario:
+                saltados.append(f)
+                continue
             except RuntimeError:
                 texto = ""
             muda = pedacos(repo, base, cabeca, f) if base else []
@@ -101,8 +140,8 @@ def main():
                 vistos.setdefault(d, []).append(f"{f}:{n}{parte and ' ' + parte}{' (perto do diff)' if perto else ''}")
             if base:
                 try:
-                    antes = git(repo, "show", f"{base}:{f}")
-                except RuntimeError:
+                    antes = texto_do_git(repo, f"{base}:{f}")
+                except (RuntimeError, Binario):
                     antes = ""
                 for n, d, parte in citacoes(antes):
                     if d + parte not in agora:
@@ -115,7 +154,10 @@ def main():
         print(f"§{d} · {tit.get(d, 'sem título em DECISIONS.md')}")
         for onde in sorted(set(vistos[d])):
             print(f"    {onde}")
-    print(f"{len(vistos)} decisão(ões) citada(s) em {len(ficheiros)} ficheiro(s)")
+    lidos = len(ficheiros) - len(saltados)
+    print(f"{len(vistos)} decisão(ões) citada(s) em {lidos} ficheiro(s) de texto")
+    exemplos = ", ".join(saltados[:3]) + (", …" if len(saltados) > 3 else "")
+    print(f"{len(saltados)} ficheiro(s) binário(s) saltado(s){': ' + exemplos if saltados else ''}")
     return 0
 
 
