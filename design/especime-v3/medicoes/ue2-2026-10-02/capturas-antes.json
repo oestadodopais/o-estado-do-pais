@@ -1,0 +1,264 @@
+{
+  "bloco": "UE2",
+  "fase": "antes",
+  "cabeca": "ec1a00dbe6fc02c84d4669439a7cdc74c2354614",
+  "construcao": {
+    "commit": "ec1a00dbe6fc02c84d4669439a7cdc74c2354614",
+    "ref": "ue2-2026-10-02",
+    "construido_em": "2026-10-02T13:34:17.990Z"
+  },
+  "inicio": "2026-10-02T14:21:04.250Z",
+  "fim": "2026-10-02T14:21:10.634Z",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "capturas": 10,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/antes-uniao-pt-390.png",
+      "tipo": "pagina",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 1205,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "faixas_dos_paises": 0,
+        "alturas_das_faixas": [],
+        "fila": {
+          "display": "flex",
+          "colunas": null,
+          "corre_de_lado": true,
+          "cartoes": 21,
+          "altura": 232
+        },
+        "definicoes": 21
+      },
+      "sha256": "86b202b21137cc9439b5572840d0a0d366f185e2f643c4de26a7e0d25531635c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/antes-uniao-pt-768.png",
+      "tipo": "pagina",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2525,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "faixas_dos_paises": 0,
+        "alturas_das_faixas": [],
+        "fila": {
+          "display": "grid",
+          "colunas": 3,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1603
+        },
+        "definicoes": 21
+      },
+      "sha256": "ee5a21b8c5af9cf6f75b2d739628f0317428a10743b20f71925ff7ef7d04c98b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/antes-uniao-pt-1024.png",
+      "tipo": "pagina",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2336,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "faixas_dos_paises": 0,
+        "alturas_das_faixas": [],
+        "fila": {
+          "display": "grid",
+          "colunas": 4,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1391
+        },
+        "definicoes": 21
+      },
+      "sha256": "128b93bccbd76b68e0066cd5f2092fb112767e71aa6089b1df4fc0ef971bdfb3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/antes-uniao-pt-1280.png",
+      "tipo": "pagina",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2180,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "faixas_dos_paises": 0,
+        "alturas_das_faixas": [],
+        "fila": {
+          "display": "grid",
+          "colunas": 5,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1194
+        },
+        "definicoes": 21
+      },
+      "sha256": "ebff1416f352854c004beb1c6f9474a92ffa22afcea3d5e1d5329877e233eef6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/antes-uniao-pt-1600.png",
+      "tipo": "pagina",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2189,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "faixas_dos_paises": 0,
+        "alturas_das_faixas": [],
+        "fila": {
+          "display": "grid",
+          "colunas": 5,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1194
+        },
+        "definicoes": 21
+      },
+      "sha256": "545b3abe3832d9bb5aa4502a3a0c52f6d278b03550ff19366a0a98d7e74d1e19"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/antes-uniao-en-390.png",
+      "tipo": "pagina",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 1198,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "faixas_dos_paises": 0,
+        "alturas_das_faixas": [],
+        "fila": {
+          "display": "flex",
+          "colunas": null,
+          "corre_de_lado": true,
+          "cartoes": 21,
+          "altura": 232
+        },
+        "definicoes": 21
+      },
+      "sha256": "094d2b0edcc3e3fbf5c1e67f740648c4f19d3d49a3026a5ce637ed5c4ba8128b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/antes-uniao-en-768.png",
+      "tipo": "pagina",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2448,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "faixas_dos_paises": 0,
+        "alturas_das_faixas": [],
+        "fila": {
+          "display": "grid",
+          "colunas": 3,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1588
+        },
+        "definicoes": 21
+      },
+      "sha256": "f0c0337f9074cd2d0a536199b8b99686e927879a996fdfbbb65e63ce01dea1aa"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/antes-uniao-en-1024.png",
+      "tipo": "pagina",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2285,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "faixas_dos_paises": 0,
+        "alturas_das_faixas": [],
+        "fila": {
+          "display": "grid",
+          "colunas": 4,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1375
+        },
+        "definicoes": 21
+      },
+      "sha256": "85929b018f8466cdc8673943d2d216d4b418739fe27cebed2b74b9218ec3023d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/antes-uniao-en-1280.png",
+      "tipo": "pagina",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2090,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "faixas_dos_paises": 0,
+        "alturas_das_faixas": [],
+        "fila": {
+          "display": "grid",
+          "colunas": 5,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1178
+        },
+        "definicoes": 21
+      },
+      "sha256": "16d2e0771f82af96fb20c5c26c0f8d670cb80ad284c542131113c3c5d89417e3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/antes-uniao-en-1600.png",
+      "tipo": "pagina",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2100,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "faixas_dos_paises": 0,
+        "alturas_das_faixas": [],
+        "fila": {
+          "display": "grid",
+          "colunas": 5,
+          "corre_de_lado": false,
+          "cartoes": 21,
+          "altura": 1178
+        },
+        "definicoes": 21
+      },
+      "sha256": "7cebe143b8d6f0ff0ee55b9a3ba8b2b218729bc5b418abfeb5e6977b0523e38f"
+    }
+  ]
+}
