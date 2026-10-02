@@ -744,7 +744,10 @@ h1.cabeca-h1[data-citadas]:not([data-citadas='1']) {
    e os dois casos deixam o pé no mesmo sítio. */
 .cartao-nome {
   grid-row: 1;
-  align-self: start;
+  /* ENCOSTADO AO VALOR (K2): com três linhas reservadas, um nome curto ficava com duas linhas de papel entre ele e o
+     número; encostado ao fundo da sua fila, o nome lê-se logo por cima do valor, e os valores continuam à mesma altura
+     em todos os cartões. */
+  align-self: end;
   margin: 0;
   font-size: 15px;
   line-height: 1.25;

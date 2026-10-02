@@ -186,9 +186,19 @@
  * a definição à vista a 768 px e acima, se coubesse, e um `<details>` não abre
  * por folha de estilo; um cartão com duas formas conforme a largura era um
  * cartão que o leitor aprendia duas vezes. A identidade não muda: os tipos e as
- * cores são os do cartão. */
+ * cores são os do cartão.
+ *
+ * A MARGEM DE CIMA É A FOLGA ENTRE DUAS ÁREAS DE TOQUE. O selo do valor tem uma
+ * área de 44 px centrada no selo (`a.src-chip::after`, em `site.css`), e num selo
+ * de 19,2 px ela desce 12,4 px abaixo dele. Com 2 px de margem e os 6 px do
+ * intervalo da grelha do cartão, a linha da dobra começava 8 px abaixo do selo, e
+ * a área do selo entrava 4,4 px no alvo da dobra: medido na construção do bloco
+ * nos cartões da ficha de Évora em que a dobra vem logo depois do valor, a 390,
+ * 641, 768 e 1 023 px (a célula H2 de `check:alvos` recusou-os na faixa dos 641
+ * aos 1 023 px). Com 10 px a folga é de 16 px, mais do que desce a área de um
+ * selo de 16 px (14 px), e nenhuma das duas áreas entra na outra. */
 .cartao-medida-dobra {
-  margin: 2px 0 0;
+  margin: 10px 0 0;
   min-width: 0;
 }
 .cartao-medida-dobra-abrir {
