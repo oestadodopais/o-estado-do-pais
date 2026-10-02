@@ -30,6 +30,14 @@
  *      Eurostat traz o selo do seu pedido no motor: o endereço (o `url` da
  *      origem), a hora, o cliente e o sha256, mais o ficheiro no motor e o campo.
  *
+ * A FORMA DA PÁGINA DA UNIÃO (bloco UE2, 02.10.2026). Uma pergunta pode ter a
+ * forma `uniao`, a mesma pergunta em palavras comuns com o termo da fonte entre
+ * parênteses, que a página da União rende. A forma audita-se como uma pergunta,
+ * numa entrada própria da auditoria com `forma: "uniao"`, e as seis regras de
+ * cima valem para ela com as origens que ELA declara: uma forma sem auditoria,
+ * uma auditoria de uma forma que não existe, um pedaço sem apoio ou uma origem
+ * da forma sem uso fecham a construção como fechariam na pergunta do cartão.
+ *
  * O QUE NÃO CONFERE, e di-lo: não infere que o literal quer dizer o que o pedaço
  * diz. Essa escolha é uma leitura, feita por quem assina a auditoria, e é essa
  * leitura que a leitura a frio relê. A célula garante que a leitura não pode
@@ -105,22 +113,31 @@ export function auditarPerguntas({
     return { erros, contas };
   }
 
+  /* A CHAVE DE UMA ENTRADA: o id da pergunta, e, numa forma, o id com o nome da forma («<id>#uniao», UE2). */
+  /** @param {any} q */
+  const chaveDe = (q) => (q?.forma ? `${q?.id}#${q.forma}` : q?.id);
   /** @type {Map<string, any>} */
   const auditadas = new Map();
   for (const q of lista) {
-    if (auditadas.has(q?.id)) falha(q?.id, 'aparece duas vezes na auditoria');
-    auditadas.set(q?.id, q);
+    if (auditadas.has(chaveDe(q))) falha(chaveDe(q), 'aparece duas vezes na auditoria');
+    auditadas.set(chaveDe(q), q);
   }
-  for (const id of Object.keys(definicoes)) {
+  for (const [id, d] of Object.entries(definicoes)) {
     if (!auditadas.has(id)) falha(id, 'a pergunta declarada não tem auditoria pedaço a pedaço');
+    if (d?.uniao && !auditadas.has(`${id}#uniao`)) {
+      falha(`${id}#uniao`, 'a forma da página da União não tem auditoria pedaço a pedaço');
+    }
   }
 
   /** @type {Set<string>} */
   const usadasEmTudo = new Set();
   for (const [id, q] of auditadas) {
-    const d = definicoes[id];
+    const base = definicoes[q?.id];
+    const d = q?.forma ? base?.[q.forma] : base;
     if (!d) {
-      falha(id, 'a auditoria fala de uma pergunta que não está declarada');
+      falha(id, q?.forma
+        ? `a auditoria fala da forma «${q.forma}» de uma pergunta que não a declara`
+        : 'a auditoria fala de uma pergunta que não está declarada');
       continue;
     }
     contas.perguntas++;
@@ -172,7 +189,7 @@ export function auditarPerguntas({
           usadas.add(a.origem);
           contas.apoios_em_origens++;
         } else if (a.linha) {
-          if (a.linha !== id) {
+          if (a.linha !== q.id) {
             falha(id, `${qual} cita a linha «${a.linha}», e só a linha da própria medida conta`);
             continue;
           }
