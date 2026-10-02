@@ -1,0 +1,152 @@
+§1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:129
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:229
+    src/data/primeira-pagina.mjs:63
+§1.19 · Os estudos migram para dois sítios, não um
+    scripts/gate-html.mjs:1228
+    scripts/gate-html.mjs:5297
+    scripts/gate-html.mjs:8929
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    scripts/gate-html.mjs:143
+    scripts/gate-html.mjs:148
+    scripts/gate-html.mjs:2751
+    scripts/gate-html.mjs:2907
+    scripts/gate-html.mjs:3603
+    scripts/gate-html.mjs:3807
+    scripts/gate-html.mjs:3821
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:62
+    scripts/gate-html.mjs:2630
+    scripts/gate-html.mjs:880
+    scripts/gate-html.mjs:914
+§1.34 · O primeiro tipo de página de município, e o que ele se recusa a dizer
+    scripts/gate-html.mjs:3242
+    scripts/gate-html.mjs:3351
+    scripts/gate-html.mjs:4046
+    scripts/gate-html.mjs:7200
+§1.35 · As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
+    src/data/verbatim.mjs:138
+§1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
+    scripts/gate-html.mjs:5127
+§1.38 · A ortografia do sítio passa a ser uma só
+    scripts/check-ledger.mjs:1140
+    scripts/check-ledger.mjs:700
+    scripts/check-ledger.mjs:726
+    scripts/check-ledger.mjs:853
+    scripts/check-ledger.mjs:963
+§1.39 · O sítio passa a dizer o que é, e o Método a provar o que faz
+    scripts/gate-html.mjs:5002
+    scripts/gate-html.mjs:8083
+    scripts/gate-html.mjs:8797
+§1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
+    scripts/gate-html.mjs:288
+    scripts/gate-html.mjs:380
+    scripts/gate-html.mjs:3910
+    scripts/gate-html.mjs:79
+    src/data/verbatim.mjs:138
+§1.41 · A revisão cruzada do bloco V, e o que ela mudou
+    scripts/check-ledger.mjs:724
+    scripts/gate-html.mjs:3043
+    scripts/gate-html.mjs:3086
+§1.42 · Segunda revisão cruzada do bloco V
+    scripts/gate-html.mjs:3065
+    scripts/gate-html.mjs:3086
+    scripts/gate-html.mjs:3479
+    scripts/gate-html.mjs:7491
+§1.43 · A identidade v2: a direção S construída
+    tests/inicio/formato-dos-numeros.mjs:17
+§1.44 · A revisão cruzada da identidade v2
+    scripts/gate-html.mjs:906
+    src/data/figuras.mjs:113
+    src/data/verbatim.mjs:246
+    tests/inicio/formato-dos-numeros.mjs:17
+§1.46 · A leitura cruzada do bloco da agenda, e a palavra que faltava ao corte
+    scripts/check-ledger.mjs:989
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    scripts/gate-html.mjs:915
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    scripts/gate-html.mjs:4022
+    scripts/gate-html.mjs:86
+    scripts/gate-html.mjs:8797
+§1.68 · As páginas dos 308 concelhos
+    scripts/gate-html.mjs:4809
+    scripts/gate-html.mjs:94
+§1.82 · Correções pequenas, quinta passagem (I91, segunda metade; I92): a língua dos nomes e dos rótulos na edição inglesa
+    scripts/gate-html.mjs:1629
+§1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:206
+§1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
+    scripts/gate-html.mjs:5939
+    scripts/gate-html.mjs:6872
+    scripts/gate-html.mjs:8097
+    scripts/gate-html.mjs:876
+§1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
+    src/data/figuras.mjs:2534
+    src/data/figuras.mjs:2804
+§1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
+    src/data/figuras.mjs:2533
+§1.102 · A sessão de 08.09: o corredor parado por uma função apagada, as leituras a frio com o plano novo do Codex, a sonda ao INE, o F1.1d medido às cegas, e o F1.10 retomado
+    src/data/figuras.mjs:2616
+§1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
+    design/especime-v3/medicoes/k2-2026-10-02/captar-k2.mjs:95
+    scripts/gate-html.mjs:4194
+    scripts/gate-html.mjs:4250
+    scripts/gate-html.mjs:4391
+§1.109 · A regra 9 do Método deixa de nomear o diretor
+    scripts/gate-html.mjs:4195
+    scripts/gate-html.mjs:4250
+    scripts/gate-html.mjs:4391
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:132
+§1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:128
+§1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:111
+    scripts/gate-html.mjs:4216
+§1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:208
+    src/data/figuras.mjs:521
+    tests/cartao/cartao.mjs:141
+    tests/cartao/cartao.mjs:143
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:131
+    scripts/casas-decimais.mjs:83
+    scripts/casas-decimais.mjs:9
+    scripts/check-ledger.mjs:507
+    tests/inicio/formato-dos-numeros.mjs:21
+§1.135 · O C1 construído pelo Codex e lido a frio seis vezes pelo Opus: as correções de confiança, a primeira atualização de uma linha cruzada, a regra 15 que lê o acesso em vigor, a guarda da pasta pessoal, e a aterragem
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:131
+    scripts/valor-unidade.mjs:12
+    tests/inicio/formato-dos-numeros.mjs:16
+§1.138 · O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
+    scripts/gate-html.mjs:229
+§1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:388
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:389
+    scripts/gate-html.mjs:20
+    scripts/gate-html.mjs:42
+    src/components/CartaoDaMedida.astro:174
+    src/components/CartaoDaMedida.astro:323
+    src/data/figuras.mjs:520
+    src/data/primeira-pagina.mjs:165
+    tests/cartao/cartao.mjs:139
+    tests/cartao/cartao.mjs:1744
+    tests/cartao/cartao.mjs:27
+    tests/cartao/cartao.mjs:287
+    tests/cartao/cartao.mjs:314
+    tests/cartao/cartao.mjs:421
+    tests/cartao/cartao.mjs:507
+§1.143 · A primeira leitura por leitores comuns (30.09.2026): as portas dizem o que têm, a primeira página é o único lugar de «O que se passa», e uma coisa, um lugar, também na navegação
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:411
+    scripts/gate-html.mjs:5879
+    tests/cartao/cartao.mjs:35
+    tests/pais/portoes.mjs:312
+§1.144 · O N1 construído pelo Codex e lido a frio duas vezes pelo Opus: uma porta por assunto, a correção adiada do desemprego, e a primeira medida da M43
+    scripts/casas-decimais.mjs:8
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:64
+§1.147 · O Opus constrói e o Sol lê (decisão do diretor, 30.09.2026 à noite): o construtor de sempre é o Claude Opus 5.5, o Codex fica nas leituras a frio (o 6.1 Sol em todas, a Astra numa segunda leitura dos blocos grandes) e como construtor de recurso; a tranca da máquina (M46); e a aterragem da §1.146
+    scripts/casas-decimais.mjs:8
+§1.149 · A leitura do diretor de 01.10.2026 no telemóvel: o mapa de «Lugares» vem primeiro e as listas de nomes dobram-se; o mapa sai da primeira página, que fica com a porta; e a aterragem da §1.148
+    src/data/primeira-pagina.mjs:463
+39 decisão(ões) citada(s) em 34 ficheiro(s)

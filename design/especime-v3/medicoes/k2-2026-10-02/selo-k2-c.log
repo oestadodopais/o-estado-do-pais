@@ -1,0 +1,9 @@
+planta: selo retirado, recusada
+planta: selo de outra linha, recusada
+planta: selo fora da linha do valor, recusada
+planta: duas marcas, recusada
+planta: unidade de outra linha, recusada
+planta: dois valores na linha, recusada
+planta: unidade da casa de outra linha, recusada
+planta: unidade da linha e unidade da casa, recusada
+selo do cartão: forma legítima aceite (com a unidade da linha e com a unidade da casa), plantas recusadas, reposição aceite
