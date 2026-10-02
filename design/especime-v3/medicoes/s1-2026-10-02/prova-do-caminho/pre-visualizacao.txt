@@ -1,0 +1,3 @@
+pedidos à pré-visualização, 2026-10-02T21:42:27Z
+pre-get · estado 302 · anfitrião do location https://vercel.com · x-vercel-id lhr1::7pwqz-1790977347700-b50105ca2999
+pre-post · estado 302 · anfitrião do location https://vercel.com · x-vercel-id lhr1::7pwqz-1790977347892-c2141c413c33

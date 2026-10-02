@@ -1,0 +1,163 @@
+{
+  "bloco": "S1",
+  "o_que": "a função api/sugestoes.js importada em Node contra a base real, com um sal de ensaio desta corrida e o endereço de documentação 203.0.113.7",
+  "inicio_utc": "2026-10-02T21:26:24Z",
+  "fim_utc": "2026-10-02T21:26:25Z",
+  "envios_que_a_base_guardou": [
+    {
+      "nome": "04-boa-pt",
+      "hora_utc": "2026-10-02T21:26:24Z",
+      "id": "47d6bcee-b142-4c1e-b3cf-0ab4bf61dec2"
+    },
+    {
+      "nome": "05-boa-en",
+      "hora_utc": "2026-10-02T21:26:25Z",
+      "id": "7bafb9bb-7536-4afd-9e35-560dcd2ba86f"
+    },
+    {
+      "nome": "06-limite-1",
+      "hora_utc": "2026-10-02T21:26:25Z",
+      "id": "96c1302d-4dd4-4473-a529-6c8fac7af831"
+    },
+    {
+      "nome": "06-limite-2",
+      "hora_utc": "2026-10-02T21:26:25Z",
+      "id": "07b04eb5-d235-4f94-a797-0c7bd5aa0eed"
+    },
+    {
+      "nome": "06-limite-3",
+      "hora_utc": "2026-10-02T21:26:25Z",
+      "id": "ca579724-845c-47c2-91a3-936d7c8d61af"
+    }
+  ],
+  "respostas": [
+    {
+      "nome": "01-get",
+      "hora_utc": "2026-10-02T21:26:24Z",
+      "estado": 303,
+      "location": "/sugestoes",
+      "chamadas_a_base": 0,
+      "respostas_da_base": []
+    },
+    {
+      "nome": "02-armadilha",
+      "hora_utc": "2026-10-02T21:26:24Z",
+      "estado": 303,
+      "location": "/sugestoes/obrigado",
+      "chamadas_a_base": 0,
+      "respostas_da_base": []
+    },
+    {
+      "nome": "03-vazia",
+      "hora_utc": "2026-10-02T21:26:24Z",
+      "estado": 303,
+      "location": "/sugestoes/vazia",
+      "chamadas_a_base": 0,
+      "respostas_da_base": []
+    },
+    {
+      "nome": "04-boa-pt",
+      "hora_utc": "2026-10-02T21:26:24Z",
+      "estado": 303,
+      "location": "/sugestoes/obrigado",
+      "chamadas_a_base": 1,
+      "respostas_da_base": [
+        {
+          "estado": 200,
+          "devolveu": "47d6bcee-b142-4c1e-b3cf-0ab4bf61dec2"
+        }
+      ]
+    },
+    {
+      "nome": "05-boa-en",
+      "hora_utc": "2026-10-02T21:26:25Z",
+      "estado": 303,
+      "location": "/en/suggestions/thank-you",
+      "chamadas_a_base": 1,
+      "respostas_da_base": [
+        {
+          "estado": 200,
+          "devolveu": "7bafb9bb-7536-4afd-9e35-560dcd2ba86f"
+        }
+      ]
+    },
+    {
+      "nome": "06-limite-1",
+      "hora_utc": "2026-10-02T21:26:25Z",
+      "estado": 303,
+      "location": "/sugestoes/obrigado",
+      "chamadas_a_base": 1,
+      "respostas_da_base": [
+        {
+          "estado": 200,
+          "devolveu": "96c1302d-4dd4-4473-a529-6c8fac7af831"
+        }
+      ]
+    },
+    {
+      "nome": "06-limite-2",
+      "hora_utc": "2026-10-02T21:26:25Z",
+      "estado": 303,
+      "location": "/sugestoes/obrigado",
+      "chamadas_a_base": 1,
+      "respostas_da_base": [
+        {
+          "estado": 200,
+          "devolveu": "07b04eb5-d235-4f94-a797-0c7bd5aa0eed"
+        }
+      ]
+    },
+    {
+      "nome": "06-limite-3",
+      "hora_utc": "2026-10-02T21:26:25Z",
+      "estado": 303,
+      "location": "/sugestoes/obrigado",
+      "chamadas_a_base": 1,
+      "respostas_da_base": [
+        {
+          "estado": 200,
+          "devolveu": "ca579724-845c-47c2-91a3-936d7c8d61af"
+        }
+      ]
+    },
+    {
+      "nome": "06-limite-4",
+      "hora_utc": "2026-10-02T21:26:25Z",
+      "estado": 303,
+      "location": "/sugestoes/limite",
+      "chamadas_a_base": 1,
+      "respostas_da_base": [
+        {
+          "estado": 400,
+          "devolveu": "limite"
+        }
+      ]
+    },
+    {
+      "nome": "06-limite-5",
+      "hora_utc": "2026-10-02T21:26:25Z",
+      "estado": 303,
+      "location": "/sugestoes/limite",
+      "chamadas_a_base": 1,
+      "respostas_da_base": [
+        {
+          "estado": 400,
+          "devolveu": "limite"
+        }
+      ]
+    },
+    {
+      "nome": "06-limite-6",
+      "hora_utc": "2026-10-02T21:26:25Z",
+      "estado": 303,
+      "location": "/sugestoes/limite",
+      "chamadas_a_base": 1,
+      "respostas_da_base": [
+        {
+          "estado": 400,
+          "devolveu": "limite"
+        }
+      ]
+    }
+  ]
+}

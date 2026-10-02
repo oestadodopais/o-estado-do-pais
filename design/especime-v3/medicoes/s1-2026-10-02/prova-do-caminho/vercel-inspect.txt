@@ -1,0 +1,5 @@
+    id		dpl_AhLs2hX9Z7iPnBCVrfV6RGoKCFoB
+    target	preview
+    status	● Ready
+    url		https://o-estado-do-pais-ps8hxm4ed-<equipa>.vercel.app
+    └── λ api/sugestoes (17.5KB) [dub1]

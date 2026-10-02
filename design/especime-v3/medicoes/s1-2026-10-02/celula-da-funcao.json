@@ -1,0 +1,231 @@
+{
+  "celula": "a função das sugestões (bloco S1)",
+  "funcao": "api/sugestoes.js",
+  "casos": [
+    {
+      "caso": "get",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "caso": "armadilha",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "caso": "vazia",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "caso": "boa",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "caso": "boa-en",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "caso": "limite",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "caso": "cheia",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "caso": "rede",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "caso": "sem-sal",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "caso": "corte",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "caso": "de-fora",
+      "passou": true,
+      "erros": []
+    },
+    {
+      "caso": "exportacoes",
+      "passou": true,
+      "erros": []
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "controlo-sem-troca",
+      "caso": "(todos)",
+      "mudou": false,
+      "mordeu": false,
+      "passou": true,
+      "erros": []
+    },
+    {
+      "nome": "get-para-outra-pagina",
+      "caso": "get",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "o location é \"/sugestoes/obrigado\", e não \"/sugestoes\""
+      ]
+    },
+    {
+      "nome": "armadilha-invertida",
+      "caso": "armadilha",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "a armadilha preenchida chamou a base 1 vez(es)"
+      ]
+    },
+    {
+      "nome": "vazia-invertida",
+      "caso": "vazia",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "o location é \"/sugestoes/obrigado\", e não \"/sugestoes/vazia\"",
+        "a sugestão vazia chamou a base 1 vez(es)"
+      ]
+    },
+    {
+      "nome": "marca-sem-separador",
+      "caso": "boa",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "a marca não é sha256(sal | ip) do primeiro endereço de x-forwarded-for"
+      ]
+    },
+    {
+      "nome": "marca-do-ultimo-endereco",
+      "caso": "boa",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "a marca não é sha256(sal | ip) do primeiro endereço de x-forwarded-for"
+      ]
+    },
+    {
+      "nome": "campo-em-branco-como-cadeia-vazia",
+      "caso": "boa",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "p_estudo foi \"\", e um campo em branco vai como null"
+      ]
+    },
+    {
+      "nome": "pagina-sem-o-de-do-referer",
+      "caso": "boa",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "a página foi null, e não a do ?de= do Referer"
+      ]
+    },
+    {
+      "nome": "lingua-sempre-portuguesa",
+      "caso": "boa-en",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "o location é \"/sugestoes/obrigado\", e não \"/en/suggestions/thank-you\"",
+        "a língua foi \"pt\""
+      ]
+    },
+    {
+      "nome": "limite-invertido",
+      "caso": "limite",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "o location é \"/sugestoes/nao-chegou\", e não \"/sugestoes/limite\""
+      ]
+    },
+    {
+      "nome": "cheia-como-limite",
+      "caso": "cheia",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "o location é \"/en/suggestions/limit\", e não \"/en/suggestions/not-received\""
+      ]
+    },
+    {
+      "nome": "rede-como-obrigado",
+      "caso": "rede",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "o location é \"/sugestoes/obrigado\", e não \"/sugestoes/nao-chegou\""
+      ]
+    },
+    {
+      "nome": "sal-invertido",
+      "caso": "sem-sal",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "o location é \"/sugestoes/obrigado\", e não \"/sugestoes/nao-chegou\"",
+        "sem o sal a base foi chamada 1 vez(es)"
+      ]
+    },
+    {
+      "nome": "corte-em-unidades-de-utf16",
+      "caso": "corte",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "o corte partiu um carácter a meio"
+      ]
+    },
+    {
+      "nome": "de-de-fora-aceite",
+      "caso": "de-fora",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "um ?de= de fora foi como página: \"https://fora.invalid/\""
+      ]
+    },
+    {
+      "nome": "exportacao-a-mais",
+      "caso": "exportacoes",
+      "mudou": true,
+      "mordeu": true,
+      "passou": true,
+      "erros": [
+        "o módulo exporta GET, PLANTA, POST, e não só o GET e o POST"
+      ]
+    }
+  ],
+  "casos_sem_planta": [],
+  "passou": true
+}

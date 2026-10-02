@@ -1,0 +1,12 @@
+01-get · 303 · /sugestoes · base 0
+02-armadilha · 303 · /sugestoes/obrigado · base 0
+03-vazia · 303 · /sugestoes/vazia · base 0
+04-boa-pt · 303 · /sugestoes/obrigado · base 1
+05-boa-en · 303 · /en/suggestions/thank-you · base 1
+06-limite-1 · 303 · /sugestoes/obrigado · base 1
+06-limite-2 · 303 · /sugestoes/obrigado · base 1
+06-limite-3 · 303 · /sugestoes/obrigado · base 1
+06-limite-4 · 303 · /sugestoes/limite · base 1
+06-limite-5 · 303 · /sugestoes/limite · base 1
+06-limite-6 · 303 · /sugestoes/limite · base 1
+início 2026-10-02T21:26:24Z · fim 2026-10-02T21:26:25Z · 5 envios guardados pela base

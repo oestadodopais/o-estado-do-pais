@@ -1,0 +1,12 @@
+a pré-visualização do S1: vercel deploy --yes --archive=tgz, da worktree do bloco, nunca --prod
+início 2026-10-02T21:27:11Z · fim 2026-10-02T21:41:58Z · código 0
+Uploading [====================] (689.3MB/689.3MB)
+Preview: https://o-estado-do-pais-ps8hxm4ed-<equipa>.vercel.app [15m]
+o .vercelignore usado, só na worktree e apagado a seguir, nunca no repositório (as quatro primeiras linhas são as que o lugar de direção provou; as três seguintes tiram os artefactos de uma construção local, que a Vercel refaz):
+design/especime-v3/capturas
+*.png
+!public/**/*.png
+!src/**/*.png
+dist
+.astro
+design-system
