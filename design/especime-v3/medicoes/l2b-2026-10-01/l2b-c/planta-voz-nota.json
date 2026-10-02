@@ -1,0 +1,11 @@
+{
+  "nome": "l2b-c-voz-nota-sem-guiao-por-declarar",
+  "o_que": "a linha da nota sem guião tirada do inventário da voz, e a régua corrida",
+  "codigo": 1,
+  "mordida": [
+    "· bloco por classificar em /lugares: «Sem JavaScript, a pesquisa não procura: para chegar a um concelho, use a lista dos distritos e das ilhas, abaixo.»"
+  ],
+  "antes": "e8049791f95b6bd12686db3c36c09d7469a00987d0739f31a4bed035b21eb7c3",
+  "reposto": "e8049791f95b6bd12686db3c36c09d7469a00987d0739f31a4bed035b21eb7c3",
+  "passou": true
+}

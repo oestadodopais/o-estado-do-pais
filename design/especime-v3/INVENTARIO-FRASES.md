@@ -479,11 +479,11 @@ quem escreveu a página.*
 | conteudo | Os trabalhos sobre este concelho | lugar | retirada | o vocabulário fechado do sítio (`DECISIONS.md` §1.98, segunda emenda, item 2, pela delegação do diretor de 04.09.2026): a palavra visível do território é «concelho», o trabalho de autor é um «estudo», e quem tem a dívida e presta contas é a câmara, que é o organismo e não o território |
 | conteudo | Os estudos sobre este concelho | b1-peca2 | retirada | saiu com a peça 2 do B1 (21.09.2026): a página de um lugar passou a ser a linha, o nome, a leitura, os números por tema, os estudos e o que mudou, e com ela saíram as contas do município, a distância desenhada, a leitura breve e o mapa localizador; o índice dos concelhos e o dos distritos passaram a redirecionamentos para a página dos lugares |
 | conteudo | Pelouros | até 2026-08-26 | viva | — |
-| conteudo | Poder de compra per capita, publicado pelo INE para todos os concelhos. | até 2026-08-26 | viva | — |
+| conteudo | Poder de compra per capita, publicado pelo INE para todos os concelhos. | l2b-c | retirada | o cartão do poder de compra passa a dizer o que o índice é em palavras comuns, com Portugal a valer cem (passagem L2b-c, 01.10.2026, o achado 7 da leitura a frio do L2b, pela I150); a frase nova está na secção da L2b-c |
 | conteudo | Portfolios | até 2026-08-26 | viva | — |
 | conteudo | Provenance | até 2026-08-26 | viva | — |
 | conteudo | Proveniência | até 2026-08-26 | viva | — |
-| conteudo | Purchasing power per capita, published for every municipality. | até 2026-08-26 | viva | — |
+| conteudo | Purchasing power per capita, published for every municipality. | l2b-c | retirada | ver a razão na gémea portuguesa (passagem L2b-c, 01.10.2026) |
 | conteudo | Quem administrou, e o que as contas registaram | até 2026-08-26 | viva | — |
 | conteudo | Quem responde pelo quê | até 2026-08-26 | viva | — |
 | conteudo | Quinze anos de governo municipal em Évora, ao longo de cinco mandatos. | até 2026-08-26 | viva | — |
@@ -2009,8 +2009,8 @@ que a régua não passasse a ter uma linha cujo texto é a letra «a».
 | conteudo | or more | dominio | viva | — |
 | conteudo | sem valor publicado | dominio | viva | — |
 | conteudo | no published value | dominio | viva | — |
-| conteudo | Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho; trabalhadores por conta de outrem a tempo completo com remuneração completa. | dominio | viva | — |
-| conteudo | Staff records of the labour ministry’s strategy and planning office; full-time employees on full pay. | dominio | viva | — |
+| conteudo | Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho; trabalhadores por conta de outrem a tempo completo com remuneração completa. | l2b-c | retirada | o cartão do ganho médio passa a dizer que o ganho é antes de descontos, como «Lugares» já diz (passagem L2b-c, 01.10.2026, o achado 8 da leitura a frio do L2b, pela I150); a frase nova está na secção da L2b-c |
+| conteudo | Staff records of the labour ministry’s strategy and planning office; full-time employees on full pay. | l2b-c | retirada | ver a razão na gémea portuguesa (passagem L2b-c, 01.10.2026) |
 
 ## As frases da segunda passagem (bloco F1.2, Claude Sonnet 5, 03.09.2026)
 
@@ -3631,3 +3631,19 @@ rende em página nenhuma e não entra; entra quando se render.
 | conteudo | It is above Portugal , which is the base of the index. | l2b | viva | A mesma comparação na edição inglesa. |
 | conteudo | Sem comparação com Portugal no mesmo período. | l2b | viva | A faixa de uma medida sem linha nacional da mesma medida e do mesmo período diz que não compara, e não escolhe outro período (o brief L2b, §5, decisão 3); não diz que o valor do país não existe, que é coisa que as linhas não provam. |
 | conteudo | No comparison with Portugal for the same period. | l2b | viva | A mesma frase na edição inglesa. |
+
+## L2b-c · as frases dos cartões do concelho e a nota da pesquisa sem guião, 01.10.2026
+
+As duas frases novas dos cartões do concelho (o poder de compra e o ganho médio, os achados 7 e 8 da leitura a frio do
+L2b, pela I150) e a nota da pesquisa de «Lugares» para quem não tem guião (o achado 6), que volta verdadeira: a antiga,
+que dizia que o botão levava à lista inteira dos concelhos, continua retirada.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Índice do poder de compra por pessoa, em que Portugal vale cem: acima de cem, o poder de compra por pessoa no concelho é maior do que a média do país; publicado pelo INE para todos os concelhos. | l2b-c | viva | A frase do cartão do poder de compra em palavras comuns: a escala é a da unidade de cada linha, «índice (Portugal = 100)», e a comparação com a média do país é a que a leitura do lugar e a faixa já fazem pela mesma base. |
+| conteudo | Index of purchasing power per person, where Portugal is one hundred: above one hundred, purchasing power per person in the municipality is higher than the country average; published for every municipality. | l2b-c | viva | A mesma frase na edição inglesa. |
+| conteudo | O que os trabalhadores por conta de outrem a tempo completo com remuneração completa ganham por mês, em média, antes de descontos, pelos Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho. | l2b-c | viva | A frase do cartão do ganho médio com «antes de descontos», pela definição da linha nacional do mesmo indicador do INE, auditada pela K17. |
+| conteudo | What full-time employees on full pay earn per month, on average, before deductions, from the staff records of the labour ministry’s strategy and planning office. | l2b-c | viva | A mesma frase na edição inglesa. |
+| navegacao | Sem JavaScript, a pesquisa não procura: para chegar a um concelho, use a lista dos distritos e das ilhas, abaixo. | l2b-c | viva | A nota `<noscript>` da pesquisa de «Lugares», à vista: sem guião o formulário submete para a própria página e não procura, e o caminho para um concelho é a gaveta dos distritos e das ilhas (a decisão 4 da §1.150). |
+| navegacao | Without JavaScript, the search finds nothing: to reach a municipality, use the list of districts and islands below. | l2b-c | viva | A mesma nota na edição inglesa. |
+

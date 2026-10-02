@@ -546,3 +546,10 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | l2b | 10 cadeias novas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor do L2b: as palavras do lado («acima de Portugal», «abaixo de Portugal») nas duas línguas, que a faixa de cada cartão de concelho e a frase do ganho médio da leitura do lugar dizem; as duas frases da comparação do poder de compra com a base do índice, nas duas línguas; e a frase de uma faixa sem linha nacional do mesmo período, nas duas línguas. Nenhuma cadeia sai do inventário. |
+
+## L2b-c · as frases dos cartões do concelho e a nota da pesquisa sem guião, 01.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| l2b-c | 6 cadeias novas, 4 retiradas | por ler pelo lugar de direção antes de aterrar | Claude Opus 5.5, construtor da passagem L2b-c: a frase do cartão do poder de compra diz o que o índice é, com Portugal a valer cem, e a do ganho médio diz que é antes de descontos, nas duas línguas, e as quatro frases antigas passam a retiradas, com a razão; a nota da pesquisa de «Lugares» sem guião volta, verdadeira e à vista, nas duas línguas. |
+
