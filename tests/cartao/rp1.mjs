@@ -63,8 +63,9 @@ for (const [campo, valor] of [['reference_date','2026-T5'],['access_date','2026-
 const nomesRP1c = {
   'pensao-media-anual-2025': {pt:'Pensão média anual', en:'Average annual pension'},
   'pensao-media-anual-2024': {pt:'Pensão média anual', en:'Average annual pension'},
-  'ipc-alimentacao-variacao-homologa': {pt:'Preços dos alimentos e das bebidas não alcoólicas', en:'Prices of food and non-alcoholic beverages'},
-  'ipc-alimentacao-variacao-homologa-periodo-anterior': {pt:'Preços dos alimentos e das bebidas não alcoólicas', en:'Prices of food and non-alcoholic beverages'},
+  /* K2-b (02.10.2026): os nomes dizem a variação e o período; os títulos transcritos das fontes não mudam. */
+  'ipc-alimentacao-variacao-homologa': {pt:'Preços dos alimentos e das bebidas não alcoólicas, variação num ano', en:'Prices of food and non-alcoholic beverages, change over a year'},
+  'ipc-alimentacao-variacao-homologa-periodo-anterior': {pt:'Preços dos alimentos e das bebidas não alcoólicas, variação num ano', en:'Prices of food and non-alcoholic beverages, change over a year'},
 };
 for (const [id, nomes] of Object.entries(nomesRP1c)) assert.deepEqual(NOMES_RP1[id], nomes);
 const publicacoesNoPeriodo = [];
