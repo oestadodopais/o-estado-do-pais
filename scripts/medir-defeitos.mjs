@@ -996,6 +996,15 @@ function frasesDaCasa(root, rotaKey) {
        página dos temas (bloco PP1, 28.09.2026): ver a razão ao lado de `ROTAS_DAS_ENTRADAS`. Fora dos
        cartões, a entrada lê as origens como qualquer rota da lista. */
     if (temOrigem && ROTAS_DAS_ENTRADAS.has(rotaKey) && el.closest(CARTAO_DOS_TEMAS)) continue;
+    /* AS DUAS METADES DA LEITURA DE UM CARTÃO, NAS PÁGINAS DOS ASSUNTOS (bloco K2, 02.10.2026). Desde o K2 a leitura
+       rende-se em duas metades, a que diz o que o número é dentro da dobra e a que compara à vista; a leitura inteira
+       trazia sempre uma marca de origem (um valor, um período, um algarismo declarado) e era saltada pela regra de
+       cima, e uma metade pode não trazer nenhuma («A variação é maior do que a do mês anterior.»). Contá-la aqui era
+       pedir uma linha do inventário por ramo de cada leitura, que a regra do PP1 recusa por fazer uma atualização dos
+       dados fechar a construção. A regra fica a mesma: dentro de um cartão de uma página dos assuntos, a leitura não se
+       conta, e quem a confere, parte a parte e com os ramos recontados, é a K17, que o `check:voz` corre nessas mesmas
+       páginas, na mesma corrida (`PAGINAS_COM_CARTOES`). A pergunta e a linha que abre a dobra continuam a contar-se. */
+    if (ROTAS_DAS_ENTRADAS.has(rotaKey) && el.closest('[data-cartao-leitura]') && el.closest(CARTAO_DOS_TEMAS)) continue;
     const t = temOrigem ? norm(textoForaDasOrigens(el, marcados)) : norm(texto(el));
     if (!t) continue;
     /* --------------------------------------------------------------------
