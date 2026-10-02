@@ -1,0 +1,294 @@
+{
+  "bloco": "UE2-b",
+  "cabeca": "33c30fd9bca48d4a93a348d17d1bc02c2818a7ec",
+  "construcao": {
+    "commit": "33c30fd9bca48d4a93a348d17d1bc02c2818a7ec",
+    "ref": "ue2-2026-10-02",
+    "construido_em": "2026-10-02T16:13:42.353Z"
+  },
+  "inicio": "2026-10-02T16:15:44.132Z",
+  "fim": "2026-10-02T16:15:58.613Z",
+  "larguras": [
+    390,
+    1280
+  ],
+  "capturas": 22,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-uniao-pt-390.png",
+      "tipo": "pagina",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 9580,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "faixas_dos_paises": 10,
+        "faixas_com_definicao": 10,
+        "descricao": "Onde Portugal fica entre os países da União Europeia, com o valor de cada um, e os dois quadros da União que o medem: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu."
+      },
+      "sha256": "ed617384d081cabb12863a53260852ae2673a4133afae14cd023696fad9a2b93"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-uniao-pt-1280.png",
+      "tipo": "pagina",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6528,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "faixas_dos_paises": 10,
+        "faixas_com_definicao": 10,
+        "descricao": "Onde Portugal fica entre os países da União Europeia, com o valor de cada um, e os dois quadros da União que o medem: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu."
+      },
+      "sha256": "2b1f2878d2b6b2d763653a949bca47050cbf64f3b08116c39aac2679736d0210"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-uniao-en-390.png",
+      "tipo": "pagina",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 9512,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "faixas_dos_paises": 10,
+        "faixas_com_definicao": 10,
+        "descricao": "Where Portugal stands among the European Union countries, with each country’s value, and the two European Union frameworks that measure it: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard."
+      },
+      "sha256": "ea759f0c9bfee780334491877d93c729f6234431e186418903cf7be1da96aabb"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-uniao-en-1280.png",
+      "tipo": "pagina",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6417,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "faixas_dos_paises": 10,
+        "faixas_com_definicao": 10,
+        "descricao": "Where Portugal stands among the European Union countries, with each country’s value, and the two European Union frameworks that measure it: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard."
+      },
+      "sha256": "81240e60b9f0cf6b1a13f556739d597563f93b91548edc68e78cfc95f9cf3703"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-emprego-pt-390.png",
+      "tipo": "pagina",
+      "rota": "/emprego/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3183,
+        "h1": "Emprego",
+        "faixas_dos_paises": 0,
+        "faixas_com_definicao": 0,
+        "descricao": "Os números de Portugal sobre o emprego, o desemprego, os jovens e o custo do trabalho."
+      },
+      "sha256": "4347863b64d87bafcb8068eb782cfcbcd879f336a56dd1aba5193c481f99a5b8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-emprego-pt-1280.png",
+      "tipo": "pagina",
+      "rota": "/emprego/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2146,
+        "h1": "Emprego",
+        "faixas_dos_paises": 0,
+        "faixas_com_definicao": 0,
+        "descricao": "Os números de Portugal sobre o emprego, o desemprego, os jovens e o custo do trabalho."
+      },
+      "sha256": "065c3bf84a672f0b39317dc5f6b1d6032cc4f40f0aca506195bdd882505ad61c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-emprego-en-390.png",
+      "tipo": "pagina",
+      "rota": "/en/employment/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3170,
+        "h1": "Employment",
+        "faixas_dos_paises": 0,
+        "faixas_com_definicao": 0,
+        "descricao": "Portugal’s figures on employment, unemployment, young people and labour costs."
+      },
+      "sha256": "29d707f296ce70a0c5e5f30d5eac4c12fcb85878d38dc84f5142c06da2757713"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-emprego-en-1280.png",
+      "tipo": "pagina",
+      "rota": "/en/employment/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2079,
+        "h1": "Employment",
+        "faixas_dos_paises": 0,
+        "faixas_com_definicao": 0,
+        "descricao": "Portugal’s figures on employment, unemployment, young people and labour costs."
+      },
+      "sha256": "41ad931cd48b14526809668f4bfb1f9c233ae94a48901eaa2fe2012d5dad60d1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-faixa-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-pt-390.png",
+      "tipo": "faixa",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "pt",
+      "largura": 390,
+      "definicao": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?",
+      "sha256": "3c5a69b28b70ff4d74bd4f5b316b5964448bb6b781099dc6a080a8b618f3ce69"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-faixa-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-pt-1280.png",
+      "tipo": "faixa",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "definicao": "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?",
+      "sha256": "2658fb722bd1c8ac6ae333d0ecfa684b0ec3536e938b95d61403f8fd52a417a8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-faixa-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-en-390.png",
+      "tipo": "faixa",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "en",
+      "largura": 390,
+      "definicao": "What share of tenants at market rent are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?",
+      "sha256": "76f3b975bfc88c39861d4179f3bcdd2a164650177d08d2f5bb695c6f5a6e1a7d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-faixa-sobrecarga-do-custo-da-habitacao-inquilinos-mercado-en-1280.png",
+      "tipo": "faixa",
+      "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+      "lang": "en",
+      "largura": 1280,
+      "definicao": "What share of tenants at market rent are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?",
+      "sha256": "9fa1daac8f0225be0b5f5636a238575294eed74c18f16efbff616cf798beff55"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-faixa-ihpc-variacao-homologa-pt-390.png",
+      "tipo": "faixa",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "pt",
+      "largura": 390,
+      "definicao": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+      "sha256": "79005a722351c87c9cad273d3621a88808dc1c03292b859a5aae9a110612661e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-faixa-ihpc-variacao-homologa-pt-1280.png",
+      "tipo": "faixa",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "pt",
+      "largura": 1280,
+      "definicao": "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?",
+      "sha256": "ee8481636fec30a4a03ecb61df7507df457302f4129b3d5cb4a5129a71d31e6b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-faixa-ihpc-variacao-homologa-en-390.png",
+      "tipo": "faixa",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "en",
+      "largura": 390,
+      "definicao": "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+      "sha256": "f99c5bf95c0ecda7c3869210348bf50a4cba8b48466880ab64886798328f529e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-faixa-ihpc-variacao-homologa-en-1280.png",
+      "tipo": "faixa",
+      "serie": "ihpc-variacao-homologa-paises",
+      "lang": "en",
+      "largura": 1280,
+      "definicao": "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?",
+      "sha256": "e91d672c2cc739d0f0e469b30dfdcb839be6c4d01d4190adfd9bc778669e0e12"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-definicao-uniao-pt-390.png",
+      "tipo": "definicao",
+      "pagina": "uniao",
+      "linha": "saldo-da-balanca-corrente-2025",
+      "lang": "pt",
+      "largura": 390,
+      "aberta": true,
+      "definicao": "Qual é a diferença entre o que o país recebeu do resto do mundo e o que lhe pagou, por bens, serviços e rendimentos (o saldo da balança corrente), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB), na média desse ano e dos dois anteriores (a média móvel de três anos para trás)?",
+      "sha256": "60796815a223c9a94953a48ac040010f4a37bc313cdb8c2896dac981812da1c6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-definicao-uniao-en-390.png",
+      "tipo": "definicao",
+      "pagina": "uniao",
+      "linha": "saldo-da-balanca-corrente-2025",
+      "lang": "en",
+      "largura": 390,
+      "aberta": true,
+      "definicao": "What is the difference between what the country received from the rest of the world and what it paid to it, for goods, services and income (the current account balance), as a percentage of the value of the final goods and services the economy produces in a year (GDP), on the average of that year and the two before it (the three-year backward moving average)?",
+      "sha256": "b0e38bfe272c52c4364acf6ee1a9da011d5bfcc9ca330edaa0445b87f55416ca"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-definicao-emprego-pt-390.png",
+      "tipo": "definicao",
+      "pagina": "emprego",
+      "linha": "taxa-de-actividade-2025",
+      "lang": "pt",
+      "largura": 390,
+      "aberta": true,
+      "definicao": "Quanto mudou em três anos a parte das pessoas dos 15 aos 64 anos que trabalham ou procuram trabalho (as pessoas ativas, empregadas ou desempregadas), contada como a diferença entre a percentagem desse ano e a de três anos antes (em pontos percentuais)?",
+      "sha256": "5aaec75b5ad2499bab3368fa37e217b8b50d326db58c711ab1686f783b98f8a4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-definicao-emprego-pt-1280.png",
+      "tipo": "definicao",
+      "pagina": "emprego",
+      "linha": "taxa-de-actividade-2025",
+      "lang": "pt",
+      "largura": 1280,
+      "aberta": true,
+      "definicao": "Quanto mudou em três anos a parte das pessoas dos 15 aos 64 anos que trabalham ou procuram trabalho (as pessoas ativas, empregadas ou desempregadas), contada como a diferença entre a percentagem desse ano e a de três anos antes (em pontos percentuais)?",
+      "sha256": "18d08efec5eb00d3ab555cc99ac4dd8ea3c14abbb9815af873929497d25d1e47"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-definicao-emprego-en-390.png",
+      "tipo": "definicao",
+      "pagina": "emprego",
+      "linha": "taxa-de-actividade-2025",
+      "lang": "en",
+      "largura": 390,
+      "aberta": true,
+      "definicao": "How much has the share of people aged 15 to 64 who work or are looking for work (active people, employed or unemployed) changed over three years, counted as the difference between that year’s percentage and the one three years earlier (in percentage points)?",
+      "sha256": "31c987d7418927c4b42ebffe87143ea7079010b84a25e4b90a3cb702d79add49"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ue2-2026-10-02/ue2-b-definicao-emprego-en-1280.png",
+      "tipo": "definicao",
+      "pagina": "emprego",
+      "linha": "taxa-de-actividade-2025",
+      "lang": "en",
+      "largura": 1280,
+      "aberta": true,
+      "definicao": "How much has the share of people aged 15 to 64 who work or are looking for work (active people, employed or unemployed) changed over three years, counted as the difference between that year’s percentage and the one three years earlier (in percentage points)?",
+      "sha256": "cd9df6fc38690362eaafc785bd54f115ade40a6a1c1d415f2371012c16f19ef8"
+    }
+  ]
+}
