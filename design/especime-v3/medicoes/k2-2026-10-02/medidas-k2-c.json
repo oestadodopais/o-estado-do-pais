@@ -1,0 +1,385 @@
+{
+  "passagem": "K2-c",
+  "cabeca": "390031fba3e1d0c784cdbe605d155c1f4ec42662",
+  "construcao": {
+    "commit": "fd62f06619f428d657a20c6e25ef1a8fa763641a",
+    "construido_em": "2026-10-02T11:27:46.115Z"
+  },
+  "construcao_do_k2": {
+    "commit": "a6b4de99ee44ec78c8552e1281cb9842ae801d1c"
+  },
+  "partida": "d72681678edf6bf62ab408aef4922420a558f834",
+  "medidas": [
+    {
+      "nome": "cartoes_da_diferenca_de_emprego_com_a_unidade_da_casa",
+      "valor": 4,
+      "comando": "a linha do valor do cartão da diferença de emprego entre sexos, nas páginas do emprego e da área do trabalho, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha a etiqueta da fonte em 4 cartões da construção do K2",
+        "encontrado": true
+      },
+      "de": 4,
+      "com_a_etiqueta_da_fonte": 0,
+      "textos": [
+        "emprego/index.html · 5,4 pontos percentuais",
+        "en/employment/index.html · 5,4 percentage points",
+        "areas/trabalho-solidariedade-e-seguranca-social/index.html · 5,4 pontos percentuais",
+        "en/areas/trabalho-solidariedade-e-seguranca-social/index.html · 5,4 percentage points"
+      ],
+      "antes": {
+        "da_casa": 0,
+        "da_fonte": 4,
+        "cartoes": 4,
+        "textos": [
+          "emprego/index.html · 5,4 % da população",
+          "en/employment/index.html · 5,4 % of the population",
+          "areas/trabalho-solidariedade-e-seguranca-social/index.html · 5,4 % da população",
+          "en/areas/trabalho-solidariedade-e-seguranca-social/index.html · 5,4 % of the population"
+        ]
+      }
+    },
+    {
+      "nome": "recibos_com_a_etiqueta_da_fonte",
+      "valor": 2,
+      "comando": "o campo da unidade no cabeçalho do recibo da linha, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha a etiqueta nos 2 recibos da construção do K2",
+        "encontrado": true
+      },
+      "de": 2
+    },
+    {
+      "nome": "paginas_da_uniao_com_a_classe_etaria_ao_lado_do_titulo",
+      "valor": 2,
+      "comando": "a linha da origem eurostat-tipslm90-sexo nas páginas da União, nas duas edições: a coordenada «Age class: From 15 to 29 years» depois do título que diz «aged 15-24»",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha o título «aged 15-24» em 2 páginas da construção do K2, e a classe em 0",
+        "encontrado": true
+      },
+      "de": 2,
+      "titulo_15_24": 2,
+      "antes": {
+        "com_classe": 0,
+        "com_titulo_15_24": 2
+      }
+    },
+    {
+      "nome": "classe_etaria_conferida_contra_os_bytes",
+      "valor": true,
+      "comando": "node design/especime-v3/medicoes/k2-2026-10-02/origens-k2-c.mjs <raiz do motor> <saída.json>",
+      "conhecido_positivo": {
+        "o_que": "o excerto «Sex: Total» da mesma origem refaz-se da dimensão sex da mesma resposta",
+        "encontrado": true
+      },
+      "sha256_confere": true,
+      "coordenada_da_resposta": "Age class: From 15 to 29 years"
+    },
+    {
+      "nome": "valores_da_faixa_da_uniao_sem_unidade",
+      "valor": 0,
+      "comando": "a linha da unidade de cada cartão da faixa da União, nas duas edições, sem uma palavra de unidade (percentagem, pontos, rácio, índice)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha 6 na construção do K2",
+        "encontrado": true
+      },
+      "de": 42,
+      "antes": [
+        "uniao-europeia/index.html · Custo unitário do trabalho, variação em três anos · Variação em três anos · 2025",
+        "uniao-europeia/index.html · Preços da habitação, variação anual · Variação anual · 2025",
+        "uniao-europeia/index.html · Taxa de câmbio efetiva real, variação em três anos · Variação em três anos · 2025",
+        "en/european-union/index.html · Unit labour cost, three-year change · Three-year change · 2025",
+        "en/european-union/index.html · House prices, annual change · Annual change · 2025",
+        "en/european-union/index.html · Real effective exchange rate, three-year change · Three-year change · 2025"
+      ],
+      "os_tres": {
+        "custo-unitario-do-trabalho-2025": {
+          "valor": "21,3",
+          "unidade": "Variação em três anos, em percentagem · 2025"
+        },
+        "precos-da-habitacao-2025": {
+          "valor": "17,6",
+          "unidade": "Variação anual, em percentagem · 2025"
+        },
+        "taxa-de-cambio-efectiva-real-2025": {
+          "valor": "2,8",
+          "unidade": "Variação em três anos, em percentagem · 2025"
+        }
+      }
+    },
+    {
+      "nome": "primeiras_paginas_com_as_tres_partes_da_definicao",
+      "valor": 2,
+      "comando": "o texto da primeira página, nas duas edições: as três situações da definição declarada da pobreza ou exclusão social",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha 0 na construção do K2, onde a explicação dizia só o rendimento mediano (em 2 páginas)",
+        "encontrado": true
+      },
+      "de": 2,
+      "explicacao_pt": "Os dois números, o de Portugal e o da União, contam quem está em pelo menos uma de três situações: rendimento abaixo de 60 % do rendimento mediano do seu país, o do meio; privação material e social grave; ou viver num agregado com intensidade de trabalho muito baixa. Cada pessoa conta uma só vez.",
+      "limiar_do_rendimento": "60"
+    },
+    {
+      "nome": "plantas_do_formato_que_mordem",
+      "valor": 10,
+      "comando": "node tests/inicio/formato-dos-numeros.mjs --prova",
+      "conhecido_positivo": {
+        "o_que": "a célula anterior não morde as duas plantas novas",
+        "encontrado": true
+      },
+      "de": 10,
+      "desvios": 0,
+      "nao_numericos": 48,
+      "na_celula_anterior": [
+        {
+          "nome": "F1 · os milhares com o espaço comum, num valor de um cartão",
+          "mordeu": true
+        },
+        {
+          "nome": "F1 · os milhares sem separador",
+          "mordeu": true
+        },
+        {
+          "nome": "F2 · o ponto decimal",
+          "mordeu": true
+        },
+        {
+          "nome": "F3 · o hífen no lugar do sinal menos",
+          "mordeu": true
+        },
+        {
+          "nome": "F4 · o «%» colado ao valor por um sufixo",
+          "mordeu": true
+        },
+        {
+          "nome": "F4 · o «%» colado a um valor de referência",
+          "mordeu": true
+        },
+        {
+          "nome": "F5 · a unidade com o símbolo do euro, depois do valor",
+          "mordeu": true
+        },
+        {
+          "nome": "F5 · o símbolo do euro antes do valor",
+          "mordeu": true
+        },
+        {
+          "nome": "F4 · um valor marcado com o «%» dentro do elemento, entre valores válidos",
+          "mordeu": false
+        },
+        {
+          "nome": "F5 · o símbolo do euro depois de dois espaços",
+          "mordeu": false
+        }
+      ]
+    },
+    {
+      "nome": "linhas_lidas_pelo_literal_do_valor",
+      "valor": 117,
+      "comando": "node scripts/check-ledger.mjs (a célula das casas decimais, scripts/casas-decimais.mjs)",
+      "conhecido_positivo": {
+        "o_que": "as plantas do inteiro alheio e do número agrupado à inglesa mordem",
+        "encontrado": true
+      },
+      "contas": {
+        "linhas": 3009,
+        "com_derivacao": 338,
+        "sem_excerto": 8,
+        "nao_numericas": 11,
+        "com_literal_do_valor": 117,
+        "sem_literal_do_valor": 2535
+      },
+      "erros": 0,
+      "contas_antes": {
+        "linhas": 3009,
+        "com_derivacao": 338,
+        "sem_excerto": 8,
+        "nao_numericas": 11,
+        "lidas_d1": 1946,
+        "sem_par_d1": 706,
+        "compostas_d2": 117
+      },
+      "plantas": [
+        {
+          "nome": "a linha dos jovens com o valor antigo, «8» contra «8.0»",
+          "certo": true,
+          "mordeu": true
+        },
+        {
+          "nome": "uma linha composta arredondada, «2» contra «2.1 p»",
+          "certo": true,
+          "mordeu": true
+        },
+        {
+          "nome": "um inteiro alheio igual ao valor no mesmo excerto, «8» contra «… — Artigo 8 — … — 2025: 8.0»",
+          "certo": true,
+          "mordeu": true
+        },
+        {
+          "nome": "um número agrupado à inglesa com menos casas, «1422,4» contra «1,422.40»",
+          "certo": true,
+          "mordeu": true
+        },
+        {
+          "nome": "o controlo: a linha dos jovens derivada, com o valor antigo",
+          "certo": true,
+          "mordeu": false
+        },
+        {
+          "nome": "o controlo: a linha dos jovens como está",
+          "certo": true,
+          "mordeu": false
+        },
+        {
+          "nome": "o controlo: o número agrupado à inglesa com as mesmas casas, «1422,40» contra «1,422.40»",
+          "certo": true,
+          "mordeu": false
+        }
+      ],
+      "plantas_na_regra_anterior": [
+        {
+          "nome": "a linha dos jovens com o valor antigo, «8» contra «8.0»",
+          "morde_na_nova": true,
+          "erros_na_anterior": 2
+        },
+        {
+          "nome": "uma linha composta arredondada, «2» contra «2.1 p»",
+          "morde_na_nova": true,
+          "erros_na_anterior": 1
+        },
+        {
+          "nome": "um inteiro alheio igual ao valor no mesmo excerto, «8» contra «… — Artigo 8 — … — 2025: 8.0»",
+          "morde_na_nova": true,
+          "erros_na_anterior": 1
+        },
+        {
+          "nome": "um número agrupado à inglesa com menos casas, «1422,4» contra «1,422.40»",
+          "morde_na_nova": true,
+          "erros_na_anterior": 0
+        },
+        {
+          "nome": "o controlo: a linha dos jovens derivada, com o valor antigo",
+          "morde_na_nova": false,
+          "erros_na_anterior": 0
+        },
+        {
+          "nome": "o controlo: a linha dos jovens como está",
+          "morde_na_nova": false,
+          "erros_na_anterior": 0
+        },
+        {
+          "nome": "o controlo: o número agrupado à inglesa com as mesmas casas, «1422,40» contra «1,422.40»",
+          "morde_na_nova": false,
+          "erros_na_anterior": 0
+        }
+      ],
+      "exemplo_da_leitura_a_frio": {
+        "na_regra_anterior": 0,
+        "na_nova": {
+          "linhas": 1,
+          "com_derivacao": 0,
+          "sem_excerto": 0,
+          "nao_numericas": 0,
+          "com_literal_do_valor": 0,
+          "sem_literal_do_valor": 1
+        }
+      }
+    },
+    {
+      "nome": "linhas_do_ine_com_a_forma_publicada_igual_ao_valor",
+      "valor": 1249,
+      "comando": "ledger/claims/*.yml: as linhas sem derivação cujo excerto traz o campo «ind_string» do INE, comparado com o valor (o mesmo número com as mesmas casas)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor acha 66 linhas cujo campo «valor» escreve outras casas que o valor da linha",
+        "encontrado": true
+      },
+      "com_ind_string": 1250,
+      "diferentes": [
+        "remuneracao-bruta-mensal-media · 1 835 · 1 835 &"
+      ],
+      "valor_com_outras_casas": 66
+    },
+    {
+      "nome": "k16_erros",
+      "valor": 0,
+      "comando": "node tests/cartao/cartao.mjs --prova (a K16, tests/cartao/perguntas.mjs)",
+      "conhecido_positivo": {
+        "o_que": "as duas plantas novas da K16 mordem",
+        "encontrado": true
+      },
+      "unidades_da_casa": 1,
+      "origens_com_coordenadas": 1
+    },
+    {
+      "nome": "plantas_do_portao_k2c_que_morderam",
+      "valor": 3,
+      "comando": "OEDP_MEDICOES=<pasta> node tests/pais/portoes.mjs --prefixo k2c-",
+      "conhecido_positivo": {
+        "o_que": "cada planta repôs os bytes do ficheiro que estragou",
+        "encontrado": true
+      },
+      "de": 3,
+      "plantas": [
+        "k2c-portao-unidade-da-casa-trocada",
+        "k2c-portao-unidade-da-casa-de-outra-linha",
+        "k2c-portao-classe-etaria-trocada"
+      ]
+    },
+    {
+      "nome": "planta_da_c1_com_a_unidade_da_casa",
+      "valor": true,
+      "comando": "node tests/confianca/c1.mjs --json design/especime-v3/medicoes/k2-2026-10-02/c1-k2-c.json",
+      "conhecido_positivo": {
+        "o_que": "o controlo com o espaço passa sem erros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_das_plantas_do_selo_do_cartao",
+      "valor": 0,
+      "comando": "node tests/cartao/selo.mjs",
+      "conhecido_positivo": {
+        "o_que": "o registo diz as duas plantas novas recusadas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_k2_c",
+      "valor": 12,
+      "comando": "node design/especime-v3/medicoes/k2-2026-10-02/captar-k2.mjs k2-c",
+      "conhecido_positivo": {
+        "o_que": "o manifesto da K2-b tem 16",
+        "encontrado": true
+      },
+      "problemas": 0,
+      "larguras": [
+        390,
+        1280
+      ],
+      "cabeca": "fd62f06619f428d657a20c6e25ef1a8fa763641a",
+      "paginas": [
+        "emprego",
+        "uniao",
+        "inicio"
+      ]
+    },
+    {
+      "nome": "decisoes_citadas_nos_ficheiros_tocados_pela_k2_c",
+      "valor": 39,
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py <os ficheiros de texto do intervalo d7268167..cabeça>",
+      "conhecido_positivo": {
+        "o_que": "a §1.127 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_gastos_na_k2_c_ate_ao_relatorio",
+      "valor": 241905,
+      "comando": "design/especime-v3/medicoes/k2-2026-10-02/custo-inicio-k2-c.json e design/especime-v3/medicoes/k2-2026-10-02/custo-fim-k2-c.json (a diferença das duas leituras do contador)",
+      "conhecido_positivo": {
+        "o_que": "o contador do fim é menor do que o do início",
+        "encontrado": true
+      },
+      "segundos": 2511
+    }
+  ]
+}

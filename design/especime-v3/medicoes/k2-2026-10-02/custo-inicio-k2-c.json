@@ -1,0 +1,7 @@
+{
+  "o_que": "a primeira leitura do contador de símbolos restantes da passagem K2-c (a linha «total_tokens left» que a ferramenta mostra ao agente), escrita à mão pelo construtor, e a hora do relógio da máquina na chamada que escreveu este ficheiro",
+  "simbolos_restantes_no_inicio": 13498500,
+  "lido_no_inicio": "o contador mostrado logo depois da entrega do relatório da K2-b e antes de ler a mensagem do lugar de direção que manda a K2-c",
+  "inicio_utc": "2026-10-02T11:00:16Z",
+  "inicio_origem": "date -u +%Y-%m-%dT%H:%M:%SZ, na chamada que escreveu este ficheiro"
+}

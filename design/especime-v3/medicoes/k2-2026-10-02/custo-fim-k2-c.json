@@ -1,0 +1,7 @@
+{
+  "o_que": "a segunda leitura do contador de símbolos restantes da passagem K2-c (a linha «total_tokens left» que a ferramenta mostra ao agente), escrita à mão pelo construtor logo depois de a ler, e a hora do relógio da máquina na chamada que escreveu este ficheiro",
+  "simbolos_restantes_no_fim": 13256595,
+  "lido_no_fim": "o contador mostrado depois de escrever a secção K2-c do relatório e a resposta curta, antes de escrever este ficheiro e de commitar o relatório",
+  "fim_utc": "2026-10-02T11:42:07Z",
+  "fim_origem": "date -u +%Y-%m-%dT%H:%M:%SZ, na chamada que escreveu este ficheiro"
+}

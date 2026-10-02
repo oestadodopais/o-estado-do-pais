@@ -1,0 +1,8 @@
+relatório: design/especime-v3/medicoes/k2-2026-10-02/RESPOSTA-construtor-k2-c.md
+pasta das medições: design/especime-v3/medicoes/k2-2026-10-02
+ficheiros JSON lidos: 24
+conhecido-positivo (o número 987654321, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
+números conferidos: 28
+números com ficheiro: 28
+números sem ficheiro: 0
+apagado antes de contar: codigo 6, enderecos 0, seccoes 0, datas 1, resumos 0, ordinais 1, identificadores 4, anos 0
