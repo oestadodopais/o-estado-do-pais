@@ -1,0 +1,8 @@
+{
+  "o_que": "a segunda leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), escrita à mão pelo construtor, e a hora do relógio da máquina, para a passagem L2b-c",
+  "simbolos_restantes_no_fim": 14134978,
+  "lido_no_fim": "ao escrever a secção L2b-c do relatório, antes da corrida final dos portões da passagem",
+  "contador_parado": false,
+  "fim_utc": "2026-10-02T00:11:35Z",
+  "fim_origem": "date -u +%Y-%m-%dT%H:%M:%SZ no momento da leitura"
+}
