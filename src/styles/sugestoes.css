@@ -91,11 +91,13 @@
 }
 
 /* As portas de uma página do resultado: de volta ao formulário e à primeira
-   página. 44 px de alvo em todas as larguras, como as portas das entradas
+   página. 44 px de alvo nos dois sentidos em todas as larguras, como as portas das entradas
    (`primeira-pagina.css`), para não abrir o buraco dos 641 aos 1023 px que a H2
    do `check:alvos` mede. */
 .sugestoes-portas a {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 44px;
+  min-width: 44px;
 }

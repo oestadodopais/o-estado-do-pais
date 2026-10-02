@@ -92,7 +92,7 @@ const destinoDasSugestoes = `${routePath('sugestoes', lang)}?de=${encodeURICompo
   <section class="metodo-secao" id="escrever">
     <div><h2>{s.correcoes.caixaTitulo}</h2></div>
     <div class="metodo-corpo">
-      <p class="metodo-p" data-porta-sugestoes-nas-correcoes>{sugestaoAntes}<a href={destinoDasSugestoes}>{sugestaoPorta}</a>{sugestaoDepois}</p>
+      <p class="metodo-p" data-sugestoes-nas-correcoes>{sugestaoAntes}<a href={destinoDasSugestoes}>{sugestaoPorta}</a>{sugestaoDepois}</p>
       <CaixaDeCorrecoes lang={lang} />
     </div>
   </section>

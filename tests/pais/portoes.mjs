@@ -431,5 +431,5 @@ planta('s1-mapa-com-resultado','scripts/gate-html.mjs',[
  ['sitemap-0.xml',x=>x.replace('</urlset>','<url><loc>https://xn--oestadodopas-2fb.pt/sugestoes/obrigado</loc></url></urlset>')]
 ],[/S1 mapa: a página do resultado "\/sugestoes\/obrigado" está no mapa do sítio/]);
 planta('s1-correcoes-sem-a-frase','scripts/gate-html.mjs',[
- ['correcoes/index.html',r=>r.querySelector('[data-porta-sugestoes-nas-correcoes]').remove()]
-],[/S1 correções: a página tem 0 bloco\(s\) \[data-porta-sugestoes-nas-correcoes\]/]);
+ ['correcoes/index.html',r=>r.querySelector('[data-sugestoes-nas-correcoes]').remove()]
+],[/S1 correções: a página tem 0 bloco\(s\) \[data-sugestoes-nas-correcoes\]/]);
