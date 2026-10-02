@@ -390,6 +390,13 @@ function corre(dist) {
   const enquadradas = [];
   /** @type {Map<string, Set<string>>} */
   const recibos = new Map();
+  /* O TETO DO ÍNDICE DE DÍVIDA NA LINHA DO ESTADO (passagem P4-c, 02.10.2026): a régua do cartão cita a linha do limite
+     sem marca própria, e a porta dela é a aritmética do recibo da linha do cartão, que liga cada linha de onde o índice
+     é calculado. Os pares recolhem-se aqui e conferem-se no fim contra as ligações da aritmética de cada recibo. */
+  /** @type {{ rota: string, cartao: string, linha: string, lang: string }[]} */
+  const limites = [];
+  /** @type {Map<string, Set<string>>} */
+  const derivacoes = new Map();
   const contas = {
     paginas: 0,
     cartoes: 0,
@@ -502,6 +509,11 @@ function corre(dist) {
           if (x) citadas.add(x);
         }
         recibos.set(rota.replace(/\/$/, ''), citadas);
+      }
+      /* P4-c: as linhas que a aritmética do recibo liga (as de onde a linha é calculada), pelo endereço da porta. */
+      const ligadas = root.querySelectorAll('a.linha-deriva-ligacao[href]');
+      if (ligadas.length) {
+        derivacoes.set(rota.replace(/\/$/, ''), new Set(ligadas.map((a) => String(a.getAttribute('href')).replace(/\/$/, '').split('/').pop())));
       }
 
       /* K14 · OS RECIBOS DAS MEDIDAS DA LISTA QUE MOSTRAM A UNIÃO (UE1d, §1.140):
@@ -781,6 +793,11 @@ function corre(dist) {
                é a mesma marca única; a linha de Portugal que ela escreve fica
                nas enquadradas, e o recibo tem de a listar. */
             if (daRegua === id && item.hasAttribute('data-faixa-concelho')) continue;
+            /* P4-c: o teto na linha do estado do cartão do índice de dívida; a porta é a aritmética do recibo. */
+            if (daRegua && item.getAttribute('data-regua') === 'limite') {
+              limites.push({ rota, cartao: id, linha: daRegua, lang: langPagina });
+              continue;
+            }
             if (daRegua) enquadradas.push({ rota, cartao: id, linha: daRegua, lang: langPagina });
           }
         }
@@ -855,6 +872,19 @@ function corre(dist) {
     }
   }
   contas.valores_de_regua_sem_marca = enquadradas.length;
+
+  /* P4-c: o teto que a linha do estado cita tem de estar ligado na aritmética do recibo da linha do cartão. */
+  for (const e of limites) {
+    const recibo = e.lang === 'en' ? `/en/ledger/${e.cartao}` : `/livro-razao/${e.cartao}`;
+    const ligadas = derivacoes.get(recibo);
+    if (!ligadas || !ligadas.has(e.linha)) {
+      erros.push(
+        `K10 · ${e.rota} · ${e.cartao}: a linha do estado cita o teto «${e.linha}» sem marca própria, e a aritmética do ` +
+          `recibo «${recibo}» não o liga: o valor fica sem porta para a sua linha`,
+      );
+    }
+  }
+  contas.tetos_na_linha_do_estado = limites.length;
 
   /* ------------------------------------------------------------------- K18 */
   /* UE1b: as palavras da faixa, uma vez por corrida e sem página (o ordinal
@@ -1928,6 +1958,7 @@ console.log(cinza(`    nome na língua da fonte          ${r.contas.nome_noutra_
 console.log(cinza(`    unidade na outra língua          ${r.contas.unidade_noutra_lingua} (a exceção da I92)`));
 console.log(cinza(`    o marcador em português          ${r.contas.marcador_em_portugues} (a exceção da IDENTIDADE §6)`));
 console.log(cinza(`    valores de régua sem marca própria                    ${r.contas.valores_de_regua_sem_marca} (a porta é a do cartão)`));
+console.log(cinza(`    tetos na linha do estado (P4-c)                       ${r.contas.tetos_na_linha_do_estado ?? 0} (a porta é a aritmética do recibo)`));
 console.log(cinza(`    valores de referência, as duas testemunhas comparadas  ${r.contas.valores_de_referencia_comparados}`));
 console.log(
   cinza(

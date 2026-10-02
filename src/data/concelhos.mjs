@@ -182,6 +182,15 @@ export const MEDIDAS_DO_CONCELHO = [
        (`s.municipio.distanciaLeiAntes` e as duas peças seguintes): o §0 do brief
        manda uma coisa num lugar só, e por isso a leitura não escreve a segunda. */
     limiarFixadoPor: 'lei',
+    /* A UNIDADE DA CASA DO CARTÃO (passagem P4-c, 02.10.2026, pela leitura do diretor de 02.10 à noite na página de
+       Évora): «105,5 % (limite legal = 150)» lia-se «105,5 % de 150». O valor é a dívida em percentagem da média da
+       receita corrente líquida dos três anos anteriores (a derivação de cada linha divide a dívida pelo limite e
+       multiplica por 150, com o limite a 1,5 vezes essa média), e o cartão diz na unidade de que é a percentagem; o
+       teto passa para a linha do estado, lido da linha do limite. A unidade da linha fica no recibo e no livro-razão,
+       como o motor a escreve. O portão de HTML confere o texto contra esta declaração, só no cartão de uma linha desta
+       medida, e exige que a derivação da linha diga o apoio na mesma língua (`apoioDaUnidadeDaCasa`). */
+    unidadeDaCasa: { pt: '% da receita de três anos', en: '% of three-year revenue' },
+    apoioDaUnidadeDaCasa: { pt: 'média da receita corrente líquida dos três anos anteriores', en: 'three-year average of net current revenue' },
     nota: {
       pt: ['A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média.'],
       en: ['Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average.'],
@@ -360,6 +369,10 @@ export function relanceDoConcelho(linhas = {}, refs = {}) {
          segunda declaração no registo de cada concelho era a promessa de duas
          palavras diferentes para o mesmo teto. */
       limiarFixadoPor: medida.limiarFixadoPor ?? null,
+      /* A UNIDADE DA CASA E O TETO (passagem P4-c): o cartão do índice de dívida diz a unidade declarada acima e, na
+         linha do estado, o teto lido da linha que a medida declara (`tecto`). */
+      unidadeDaCasa: medida.unidadeDaCasa ?? null,
+      tecto: medida.tecto ?? null,
     };
   });
 }

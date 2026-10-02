@@ -132,6 +132,7 @@ import { LEITURAS } from '../src/data/leituras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO } from '../src/data/nomes-das-medidas.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
+import { MEDIDAS_DO_CONCELHO } from '../src/data/concelhos.mjs';
 /* A LISTA DA CARTA, PARA RECONTAR AS 29 UNIDADES E OS SEUS CONCELHOS (Emenda 20).
    O ponto de observação do portão não é o artefacto do mapa: é a lista de 308
    pares (concelho, unidade) que o sítio já tem em `caop-centroids.mjs`, e a
@@ -566,7 +567,10 @@ const UE1D = { definicoes: 0 };
    recibo da série, e as formas declaradas. */
 const UE1E = { semPortugal: 0, formaDaSerie: 0, formasDeclaradas: 0 };
 /* K2-c: as unidades da casa vistas nos cartões (a conta que o fim da corrida exige diferente de zero). */
-const UNIDADES_DA_CASA = { vistas: 0 };
+const UNIDADES_DA_CASA = { vistas: 0, doConcelho: 0 };
+/* O TETO DO ÍNDICE DE DÍVIDA (passagem P4-c, 02.10.2026): a linha que a medida do concelho declara como teto, lida da
+   declaração; o cartão do índice mostra-a na linha do estado, sem marca própria, e só ela entra por essa porta. */
+const TETO_DO_INDICE = MEDIDAS_DO_CONCELHO.find((m) => m.chave === 'indice')?.tecto ?? null;
 const ORIGENS_DAS_SERIES = { pontos: 0, bandeiras: 0, paises: 0, campos: 0, contas: 0, lugares: 0, tabela: 0 };
 /** L2b: as origens da faixa do concelho, contadas pelo lado da página. */
 const ORIGENS_DOS_CONCELHOS = { lugares: 0, contas: 0, empates: 0, valoresNaFaixa: 0, portugal: 0 };
@@ -3294,6 +3298,15 @@ function temChipPara(no, alvos) {
 function linhaDaReguaDoCartao(principal, id, qual) {
   const atual = claims.get(principal);
   const outro = claims.get(id);
+  /* O TETO NA LINHA DO ESTADO DO CARTÃO DO ÍNDICE DE DÍVIDA (passagem P4-c, 02.10.2026, pela leitura do diretor de
+     02.10 à noite: «dentro do limite legal, que é 150 %»). Só a linha que a medida do concelho declara como teto, e só
+     no cartão de uma linha cuja derivação a usa (`derived_from`): o recibo dessa linha liga-a na aritmética, e a K10 do
+     `check:cartao` confere essa porta. As plantas `p4c-teto-*` de `tests/pais/portoes.mjs` trocam a linha por outra e
+     tiram o `data-selo-em`, e exigem a mordida do erro de sempre. */
+  if (qual === 'limite') {
+    return TETO_DO_INDICE !== null && id === TETO_DO_INDICE &&
+      Array.isArray(atual?.derived_from) && atual.derived_from.includes(id);
+  }
   const declarada = REGUAS_DECLARADAS[principal];
   // RP1: lê a declaração, mas recompõe os períodos sem chamar o resolvedor.
   let cadenciaConfere = true;
@@ -6178,8 +6191,41 @@ for (const file of ficheirosHtml(DIST)) {
      esta marca como a unidade da mesma linha, e só ela. */
   for (const el of body.querySelectorAll('[data-unidade-da-casa]')) {
     const id = el.getAttribute('data-unidade-da-casa') ?? '';
-    UNIDADES_DA_CASA.vistas++;
     const lang = linguaPagina === 'en' ? 'en' : 'pt';
+    /* A UNIDADE DA CASA DE UMA MEDIDA DE CONCELHO (passagem P4-c, 02.10.2026, pela leitura do diretor de 02.10 à
+       noite: «105,5 % (limite legal = 150)» lia-se «105,5 % de 150»). A declaração é da medida e não de uma linha
+       (`unidadeDaCasa` em `MEDIDAS_DO_CONCELHO`), porque a medida tem 308 linhas; a porta é a mesma: só no cartão da
+       sua própria linha e dessa medida, com o texto da declaração carácter a carácter; e, no lugar da pergunta
+       declarada que apoia a unidade de uma medida nacional, a derivação da própria linha tem de dizer o apoio que a
+       medida declara (`apoioDaUnidadeDaCasa`), na língua da página: é a linha a dizer de que é a percentagem. */
+    const daMedida = el.getAttribute('data-unidade-da-medida') ?? null;
+    if (daMedida !== null) {
+      UNIDADES_DA_CASA.doConcelho++;
+      const medida = MEDIDAS_DO_CONCELHO.find((m) => m.chave === daMedida);
+      const declaradaDaMedida = medida?.unidadeDaCasa?.[lang] ?? null;
+      const apoio = medida?.apoioDaUnidadeDaCasa?.[lang] ?? null;
+      const textoDaMedida = normalizeWhitespace(decodeEntities(textoDe(el)));
+      if (typeof declaradaDaMedida !== 'string' || typeof apoio !== 'string') {
+        err(`P4-c: a unidade da casa de "${id}" diz ser da medida «${daMedida}», e a medida não declara unidade da casa e apoio em ${lang}.`);
+        continue;
+      }
+      const cartaoDaUnidade = el.closest?.('[data-cartao-medida]');
+      if (cartaoDaUnidade?.getAttribute('data-cartao-medida') !== id || cartaoDaUnidade?.getAttribute('data-medida-chave') !== daMedida) {
+        err(`P4-c: a unidade da casa de "${id}" está fora do cartão da sua linha e da sua medida («${daMedida}»): só a linha do valor desse cartão a pode mostrar.`);
+      }
+      if (textoDaMedida !== declaradaDaMedida) {
+        err(`P4-c: a unidade da casa de "${id}" diz «${textoDaMedida}» e a medida «${daMedida}» declara «${declaradaDaMedida}» (${lang}).`);
+      }
+      const daLinha = claims.get(id);
+      const derivacao = lang === 'en' ? daLinha?.derivation_en : daLinha?.derivation;
+      if (typeof derivacao !== 'string' || !derivacao.includes(apoio)) {
+        err(`P4-c: a unidade da casa de "${id}" («${declaradaDaMedida}») não tem apoio na linha: a derivação ${lang === 'en' ? 'inglesa ' : ''}da linha tem de dizer «${apoio}».`);
+      }
+      continue;
+    }
+    /* A conta das unidades da casa das medidas nacionais, que a guarda do fim exige acima de zero, não conta as dos
+       concelhos: cada uma tem a sua guarda. */
+    UNIDADES_DA_CASA.vistas++;
     const declarada = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[id]?.unidade?.[lang] ?? null;
     const texto = normalizeWhitespace(decodeEntities(textoDe(el)));
     if (typeof declarada !== 'string' || !declarada) {
@@ -8519,6 +8565,10 @@ for (const [id] of SERIES_DO_PORTAO) {
    e da área do trabalho; uma corrida que não veja nenhuma deixou de conferir o que diz conferir. */
 if (UNIDADES_DA_CASA.vistas === 0) {
   erros.push({ rel: 'dist', msg: 'K2-c: nenhuma unidade da casa vista em página nenhuma, e a definição da diferença de emprego entre sexos declara uma: o leitor está cego.' });
+}
+/* P4-c: o cartão do índice de dívida mostra a unidade da casa nas páginas dos concelhos, nas duas edições. */
+if (UNIDADES_DA_CASA.doConcelho === 0) {
+  erros.push({ rel: 'dist', msg: 'P4-c: nenhuma unidade da casa de uma medida de concelho vista em página nenhuma, e o índice de dívida declara uma: o leitor está cego.' });
 }
 /* UE1d: a definição declarada em cada um dos recibos das séries, nas duas edições. */
 if (UE1D.definicoes !== LANGS.length * SERIES_DO_PORTAO.size) {

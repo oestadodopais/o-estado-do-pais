@@ -1,0 +1,51 @@
+{
+  "contas": {
+    "paginas": 616,
+    "com_valor": 614,
+    "sem_valor": 2,
+    "dentro": 594,
+    "fora": 20
+  },
+  "falhas": [],
+  "plantas": [
+    {
+      "nome": "a unidade antiga de volta",
+      "mordeu": true,
+      "queixa": "ID2 · planta: a unidade antiga de volta: o cartão escreve a unidade antiga, «% (limite legal = 150)»."
+    },
+    {
+      "nome": "o teto escrito à mão",
+      "mordeu": true,
+      "queixa": "ID3 · planta: o teto escrito à mão: o teto não é a linha «indice-de-divida-limite-legal» com «150 %» (lido: nada)."
+    },
+    {
+      "nome": "as palavras do estado de antes",
+      "mordeu": true,
+      "queixa": "ID3 · planta: as palavras do estado de antes: a linha do estado diz «dentro do limite legal», e pela conta (105,5 contra 150) é «dentro do limite legal, que é»."
+    },
+    {
+      "nome": "o estado trocado",
+      "mordeu": true,
+      "queixa": "ID3 · planta: o estado trocado: a linha do estado diz «outside the legal limit, which is», e pela conta (105,5 contra 150) é «within the legal limit, which is»."
+    },
+    {
+      "nome": "a dobra mudada",
+      "mordeu": true,
+      "queixa": "ID5 · planta: a dobra mudada: a dobra diz «A dívida em percentagem do limite legal.…» e a nota declarada é «A dívida em percentagem da média da receita corrente líquida…»."
+    },
+    {
+      "nome": "as palavras de antes no cartão das câmaras",
+      "mordeu": true,
+      "queixa": "ID6 · planta: as palavras de antes no cartão das câmaras: a régua do cartão das câmaras não diz «dentro do limite legal, que é» («de 308 câmaras; 297 dentro do limite legal (150 %fonte · CICF/IPCA — Anuário Financeiro do»)."
+    }
+  ],
+  "teto": {
+    "linha": "indice-de-divida-limite-legal",
+    "valor": "150",
+    "unidade": "%"
+  },
+  "unidade_da_casa": {
+    "pt": "% da receita de três anos",
+    "en": "% of three-year revenue"
+  }
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "nome": "p4c-unidade-antiga",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "P4-c: a unidade da casa de \"evora-indice-de-divida-2024\" diz «% \\(limite legal = 150\\)»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/evora/index.html",
+        "antes": "29dbb03351240c5eb647714b215e557befe9bed8d4348fb12282ae86568d2354",
+        "reposto": "29dbb03351240c5eb647714b215e557befe9bed8d4348fb12282ae86568d2354"
+      }
+    ]
+  },
+  {
+    "nome": "p4c-unidade-de-outra-medida",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "P4-c: a unidade da casa de \"evora-indice-de-divida-2024\" diz ser da medida «pmp», e a medida não declara"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/municipalities/evora/index.html",
+        "antes": "be50b885c0817824f461eee9d7aea81f5076adb4a0cb2573d92f47bb4ef9149c",
+        "reposto": "be50b885c0817824f461eee9d7aea81f5076adb4a0cb2573d92f47bb4ef9149c"
+      }
+    ]
+  },
+  {
+    "nome": "p4c-teto-de-outra-linha",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o valor da afirmação \"agueda-limite-divida-dgal-2024\" aparece sem selo para a sua própria linha"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/agueda/index.html",
+        "antes": "22052a0c72b3200e1c1b86261759625396a2aebadfe06e8e243af1f0181ea199",
+        "reposto": "22052a0c72b3200e1c1b86261759625396a2aebadfe06e8e243af1f0181ea199"
+      }
+    ]
+  },
+  {
+    "nome": "p4c-teto-sem-selo-em",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o valor da afirmação \"indice-de-divida-limite-legal\" aparece sem selo para a sua própria linha"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/municipalities/agueda/index.html",
+        "antes": "2f918765e9273dd0b6184d9ddd870a065ba349a0fa4d0230baabadf671749d5b",
+        "reposto": "2f918765e9273dd0b6184d9ddd870a065ba349a0fa4d0230baabadf671749d5b"
+      }
+    ]
+  },
+  {
+    "nome": "p4c-recibo-sem-a-porta-do-teto",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "K10 · .*agueda-indice-de-divida-2024: a linha do estado cita o teto «indice-de-divida-limite-legal» sem marca própria"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/agueda-indice-de-divida-2024/index.html",
+        "antes": "ad3dabc740dc1fce197d0f15427d997f3f53cde0166e2eb8b1dc64bef9618d12",
+        "reposto": "ad3dabc740dc1fce197d0f15427d997f3f53cde0166e2eb8b1dc64bef9618d12"
+      }
+    ]
+  },
+  {
+    "nome": "p4c-camaras-palavras-de-antes",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "V2 pt: a régua difere das contagens e do limite lidos nas linhas"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/lugares/index.html",
+        "antes": "6b6f0c2725ca9dca82ebab72a34b953bccb406eedb17bcde2cb7b871c809242d",
+        "reposto": "6b6f0c2725ca9dca82ebab72a34b953bccb406eedb17bcde2cb7b871c809242d"
+      }
+    ]
+  }
+]

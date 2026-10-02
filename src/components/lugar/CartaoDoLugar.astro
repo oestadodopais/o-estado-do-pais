@@ -40,7 +40,7 @@ import CampoDaLinha from '../CampoDaLinha.astro';
 import Provenance from '../Provenance.astro';
 import Frase from '../Frase.astro';
 import { unidadeDaLinha } from '../../i18n/unidades.mjs';
-import { marcaDoValor, provenienciaIncompleta } from '../../lib/ledger.mjs';
+import { marcaDoValor, provenienciaIncompleta, getClaim } from '../../lib/ledger.mjs';
 import { atrasoDaLinha } from '../../lib/frescura.mjs';
 import { dataDaCasa } from '../../lib/datas.mjs';
 import FaixaDoConcelho from './FaixaDoConcelho.astro';
@@ -58,6 +58,13 @@ const marca = marcaDoValor(tile.linha?.value);
    carácter com o campo `unit` daquela linha. Não é uma segunda marca da fonte: é
    o mesmo número da mesma linha, dito na unidade dela. */
 const unidade = unidadeDaLinha(tile.linha?.unit ?? '', lang);
+/* A UNIDADE DA CASA (passagem P4-c, 02.10.2026, pela leitura do diretor de 02.10 à noite na página de Évora). O
+   cartão do índice de dívida dizia «105,5 % (limite legal = 150)», que se lia «105,5 % de 150». Onde a medida declara
+   `unidadeDaCasa` (`src/data/concelhos.mjs`), o cartão diz de que é a percentagem, «% da receita de três anos», e a
+   unidade da linha fica no recibo, como o motor a escreve. A marca `data-unidade-da-casa` com
+   `data-unidade-da-medida` é a da passagem K2-c, pela porta estreita do portão de HTML: só no cartão da sua linha, com
+   o texto da declaração, e com a derivação da linha a dizer o apoio. */
+const unidadeDaCasa = tile.unidadeDaCasa?.[lang] ?? null;
 
 /** A primeira frase de uma nota declarada. Uma nota é uma lista de pedaços. */
 function primeiraFrase(partes) {
@@ -84,6 +91,14 @@ const frase = tile.derivada && tile.chave !== 'indice' ? null : primeiraFrase(ti
    calcula é `pecasDoConcelho()`, com a linha do teto. */
 const palavra =
   tile.estado === 'dentro' ? s.estado.lei.dentro : tile.estado === 'fora' ? s.estado.lei.fora : null;
+/* A LINHA DO ESTADO DIZ O TETO (passagem P4-c): «dentro do limite legal, que é 150 %». O 150 é a linha que a medida
+   declara como teto (`tecto`), rendida por <Claim/> e nunca escrita aqui, com a unidade dessa linha. Vai sem marca
+   própria, dentro de um item da régua com `data-selo-em` igual à linha do cartão: a porta dele é a marca única do
+   cartão, que abre o recibo da linha, onde a aritmética liga a linha do limite (a K10 do `check:cartao` confere-o, e
+   o portão aceita este item só com a linha que a derivação do cartão usa). */
+const tecto = palavra && tile.tecto ? getClaim(tile.tecto) : null;
+const palavraDoTeto = tecto ? (tile.estado === 'dentro' ? s.estado.lei.dentroQueE : s.estado.lei.foraQueE) : null;
+const unidadeDoTeto = tecto ? unidadeDaLinha(tecto.unit ?? '', lang) : null;
 /* A FONTE JÁ PUBLICOU UM PERÍODO MAIS RECENTE (bloco R1, 23.09.2026, I146). O
    recibo de Mourão diz «Último período publicado pela fonte: 2026-07; nesta
    linha: 2025-12», e o cartão mostrava «dezembro de 2025» sem dizer que havia
@@ -122,7 +137,8 @@ const periodoDaFonte = (() => {
         <Claim id={tile.claim} lang={lang} as="span" class="cartao-medida-num" />
       )
     }
-    {!marca && <>{' '}<CampoDaLinha
+    {!marca && unidadeDaCasa && <>{' '}<span class="cartao-medida-unidade" data-unidade-da-casa={tile.claim} data-unidade-da-medida={tile.chave}>{unidadeDaCasa}</span></>}
+    {!marca && !unidadeDaCasa && <>{' '}<CampoDaLinha
       id={tile.claim}
       campo="unit"
       valor={unidade.texto}
@@ -147,10 +163,19 @@ const periodoDaFonte = (() => {
   </p>
 
   {
-    palavra && (
+    palavra && !tecto && (
       <p class="cartao-medida-regua">
         <span class="cartao-medida-regua-item">
           <span data-voz>{palavra}</span>
+        </span>
+      </p>
+    )
+  }
+  {
+    palavra && tecto && unidadeDoTeto && (
+      <p class="cartao-medida-regua">
+        <span class="cartao-medida-regua-item" data-regua="limite" data-selo-em={tile.claim}>
+          <span data-voz>{palavraDoTeto}</span>{' '}<Claim id={tecto.id} lang={lang} as="span" sufixo={` ${unidadeDoTeto.texto}`} />
         </span>
       </p>
     )

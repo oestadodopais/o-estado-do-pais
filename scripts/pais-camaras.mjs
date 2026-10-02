@@ -100,9 +100,12 @@ export function verificaCartaoDasCamaras(doc, lang, linha = lerLinha) {
   const regua = c.querySelector('[data-camaras-regua]');
   const copia = regua ? parse(regua.outerHTML) : null;
   copia?.querySelectorAll('.src-chip').forEach(n => n.remove());
+  /* AS PALAVRAS DO CARTÃO DO ÍNDICE DE DÍVIDA (passagem P4-c, 02.10.2026, pela leitura do diretor de 02.10 à noite):
+     «dentro do limite legal, que é 150 %», e não «dentro do limite legal (150 %)». O que a célula protege não muda: as
+     três contagens recontadas das linhas, e o limite com o valor e a unidade da sua linha. */
   const esperado = lang === 'pt'
-    ? `de ${contagens.municipios_com_pagina} câmaras; ${contagens.camaras_dentro_do_limite} dentro do limite legal (${limite.value} ${limite.unit}); ${contagens.camaras_sem_valor} sem valor publicado`
-    : `of ${contagens.municipios_com_pagina} councils; ${contagens.camaras_dentro_do_limite} within the legal limit (${limite.value} ${limite.unit}); ${contagens.camaras_sem_valor} with no published value`;
+    ? `de ${contagens.municipios_com_pagina} câmaras; ${contagens.camaras_dentro_do_limite} dentro do limite legal, que é ${limite.value} ${limite.unit}; ${contagens.camaras_sem_valor} sem valor publicado`
+    : `of ${contagens.municipios_com_pagina} councils; ${contagens.camaras_dentro_do_limite} within the legal limit, which is ${limite.value} ${limite.unit}; ${contagens.camaras_sem_valor} with no published value`;
   if (normal(copia?.textContent) !== esperado) falha('a régua difere das contagens e do limite lidos nas linhas.');
   const data = c.querySelector('[data-de-campo="reference_date"]');
   if (data?.getAttribute('data-de-linha') !== datas[0].id || normal(data?.textContent) !== periodo) falha('o período não vem das linhas contadas.');

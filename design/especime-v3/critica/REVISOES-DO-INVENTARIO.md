@@ -576,3 +576,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | p4 | 4 cadeias novas, 2 retiradas | por ler | Claude Opus 5.5, construtor do P4: o nome do grupo do comando do tema («Tema» e «Theme»), que só se ouve, no cabeçalho de todas as páginas, com a Emenda 12 de volta (item 00 do brief P4); e a pergunta da sobrecarga do custo da habitação no total com os regimes de ocupação explicados em palavras comuns, nas duas línguas, no lugar da forma do UE2-b, que passa a retirada (item 3). |
+
+## P4-c · o cartão do índice de dívida, 02.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| p4-c | 6 cadeias novas, 2 retiradas | por ler | Claude Opus 5.5, construtor da passagem P4-c: a linha do estado do cartão do índice de dívida nas páginas dos concelhos, «dentro do limite legal, que é» e «fora do limite legal, que é» (na edição inglesa «within the legal limit, which is» e «outside the legal limit, which is»), seguida do teto lido da linha do limite; e a frase do cartão das câmaras na página «Lugares» com as mesmas palavras, que substitui a de «dentro do limite legal ( % )», retirada nas duas edições. A unidade da casa do cartão («% da receita de três anos») não entra no inventário: é um dado declarado na medida e conferido pelo portão de HTML. A leitura cruzada do diff fica para o lugar de direção. |
