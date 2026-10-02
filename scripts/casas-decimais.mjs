@@ -10,21 +10,28 @@
  * (decisão 3) diz que a precisão é a da fonte e não se toca; nenhuma célula o conferia, e a primeira página chegou a
  * mostrar «6 %» ao lado de «6,0 %». Esta célula fecha a construção quando volta a acontecer.
  *
- * O QUE CONFERE, em duas metades, as duas sobre linhas sem derivação (uma linha derivada é uma conta da casa, e a sua
- * precisão é a da derivação, que o `check` reavalia):
+ * O QUE CONFERE, sobre as linhas sem derivação (uma linha derivada é uma conta da casa, e a sua precisão é a da
+ * derivação, que o `check` reavalia): o valor da linha compara-se com O LITERAL DO EXCERTO QUE É O PRÓPRIO NÚMERO, e só
+ * com ele. É o que vem depois dos dois pontos no fim do excerto, e mais nada: a forma em que o motor compõe os excertos
+ * das etiquetas da resposta da fonte («… — Portugal — 2025: 8.0», com a marca da fonte opcional, «2.1 p»). Tem de ser o
+ * mesmo número com as mesmas casas: menos casas, mais casas ou outro número fecham a construção. Lê a forma inglesa,
+ * com os milhares agrupados por vírgulas («1,422.40»), e a simples («8.0»).
  *
- *   D1 · O MESMO NÚMERO COM MENOS CASAS. Em qualquer forma de excerto, os literais numéricos que ele traz (a forma
- *        inglesa, «8.0», e a portuguesa, «1 422,4» ou «65.565.049,87») comparam-se com o valor da linha como números
- *        exatos, sem passar por vírgula flutuante. Se há literais iguais ao valor e TODOS escrevem mais casas do que
- *        o valor, a linha cortou casas à fonte. Um excerto onde o número não se encontra (as tabelas de algarismos
- *        separados por espaços, onde os milhares se colam aos vizinhos) não se lê, e a contagem di-lo;
- *   D2 · O LITERAL DO FIM DE UM EXCERTO COMPOSTO. Os excertos que o motor compõe das etiquetas da resposta da fonte
- *        acabam no valor («… — Portugal — 2025: 8.0», com a marca da fonte opcional, «2.4 p»). Aí o literal do fim é
- *        o valor da linha: tem de ser o mesmo número com as mesmas casas, ou um arredondamento ou uma troca fecham.
+ * O CAMPO «valor» DAS RESPOSTAS DO INE NÃO É ESSE LITERAL, e fica de fora de propósito: o INE escreve o número duas
+ * vezes, «"ind_string" : "86,60"» (a forma que publica, com as suas casas) e «"valor" : "86.6"» (o número da máquina,
+ * sem os zeros do fim), e ler o último como o número da fonte daria 66 linhas certas por erradas (medido sobre o
+ * livro-razão a 02.10.2026, na passagem K2-c).
+ *
+ * ATÉ À PASSAGEM K2-c (02.10.2026) havia também uma comparação com qualquer literal do excerto igual ao valor, e a
+ * leitura a frio do Codex mostrou que ela aceitava uma precisão perdida quando um inteiro alheio coincidia com o valor
+ * («Artigo 8 … 8.0» contra «8»), e que não lia os números agrupados à inglesa. Por decisão do lugar de direção, a
+ * célula compara só com o literal que é o próprio número, como a medida do §0 do brief fez; um excerto que não acaba
+ * nesse literal (uma tabela de algarismos, o texto de um diploma) não se lê, e a contagem di-lo.
  *
  * AS PLANTAS CORREM SEMPRE, antes de a célula dizer zero, sobre cópias em memória: a linha dos jovens com o valor
- * antigo (D1 e D2), uma linha composta arredondada (D2), a retribuição mínima sem os cêntimos que o diploma escreve
- * (D1), e os dois controlos que não podem morder (a mesma linha derivada com menos casas, e uma linha certa).
+ * antigo, uma linha composta arredondada, um inteiro alheio igual ao valor no mesmo excerto, um número agrupado à
+ * inglesa com menos casas (que a forma anterior não lia), e três controlos que não podem morder (a mesma linha
+ * derivada, a linha certa, e o número agrupado à inglesa com as mesmas casas).
  */
 
 /** Normaliza um número exato: sem zeros à esquerda na parte inteira, sem zeros à direita nas casas. */
@@ -42,21 +49,16 @@ export function numeroDoValor(valor) {
   return m ? { n: normal(m[1], m[2] ?? ''), casas: (m[2] ?? '').length } : null;
 }
 
-/** Os literais numéricos de um excerto, nas duas formas. @param {string} excerto */
-export function literaisDoExcerto(excerto) {
-  const out = [];
-  for (const m of excerto.matchAll(/(?<![\d.,])(-?\d+)\.(\d+)(?![\d.,]*\d)/g)) out.push({ n: normal(m[1], m[2]), casas: m[2].length, literal: m[0] });
-  for (const m of excerto.matchAll(/(?<![\d,])(-?\d{1,3}(?:[ .\u00a0\u202f]\d{3})*|-?\d+),(\d+)(?![\d,]*\d)/g)) {
-    out.push({ n: normal(m[1].replace(/[ .\u00a0\u202f]/g, ''), m[2]), casas: m[2].length, literal: m[0] });
-  }
-  for (const m of excerto.matchAll(/(?<![\d.,])(-?\d+)(?![\d.,]*\d)/g)) out.push({ n: normal(m[1], ''), casas: 0, literal: m[0] });
-  return out;
-}
-
-/** O literal do fim de um excerto composto, ou `null`. @param {string} excerto */
-export function literalDoFim(excerto) {
-  const m = /:\s*(-?\d+)(?:\.(\d+))?(?:\s+[a-z]{1,3})?\s*$/.exec(excerto);
-  return m ? { n: normal(m[1], m[2] ?? ''), casas: (m[2] ?? '').length, literal: m[0].replace(/^:\s*/, '').trim() } : null;
+/**
+ * O literal do excerto que é o próprio número, ou `null`: o que vem depois dos dois pontos no fim do excerto, com a
+ * marca da fonte opcional. Os milhares agrupados à inglesa leem-se sem as vírgulas.
+ * @param {string} excerto
+ */
+export function literalDoValor(excerto) {
+  const m = /:\s*(-?\d{1,3}(?:,\d{3})+|-?\d+)(?:\.(\d+))?(?:\s+[a-z]{1,3})?\s*$/.exec(excerto);
+  if (!m) return null;
+  const literal = m[0].replace(/^:\s*/, '').trim();
+  return { n: normal(m[1].replace(/,/g, ''), m[2] ?? ''), casas: (m[2] ?? '').length, literal };
 }
 
 /**
@@ -66,7 +68,7 @@ export function literalDoFim(excerto) {
 export function conferirCasasDecimais(linhas) {
   /** @type {string[]} */
   const erros = [];
-  const contas = { linhas: 0, com_derivacao: 0, sem_excerto: 0, nao_numericas: 0, lidas_d1: 0, sem_par_d1: 0, compostas_d2: 0 };
+  const contas = { linhas: 0, com_derivacao: 0, sem_excerto: 0, nao_numericas: 0, com_literal_do_valor: 0, sem_literal_do_valor: 0 };
   for (const l of linhas) {
     contas.linhas++;
     if (l.derivation) { contas.com_derivacao++; continue; }
@@ -74,48 +76,55 @@ export function conferirCasasDecimais(linhas) {
     if (!excerto.trim() || excerto.includes('[a verificar]')) { contas.sem_excerto++; continue; }
     const v = numeroDoValor(l.value);
     if (!v) { contas.nao_numericas++; continue; }
-    const iguais = literaisDoExcerto(excerto).filter((x) => x.n === v.n);
-    if (iguais.length) {
-      contas.lidas_d1++;
-      if (iguais.every((x) => x.casas > v.casas)) {
-        erros.push(`D1 · ${l.id}: o valor «${l.value}» escreve ${v.casas} casa(s) decimal(is) e o excerto escreve o mesmo número com ${Math.min(...iguais.map((x) => x.casas))} («${iguais[0].literal}»). A precisão é a da fonte (§1.127, decisão 3): corrige-se pelo mecanismo, com uma entrada «correcao» selada e o contador recontado.`);
-      }
-    } else contas.sem_par_d1++;
-    const fim = literalDoFim(excerto);
-    if (fim) {
-      contas.compostas_d2++;
-      if (fim.n === v.n && fim.casas !== v.casas) {
-        erros.push(`D2 · ${l.id}: o excerto composto acaba em «${fim.literal}» e o valor escreve «${l.value}», com ${fim.casas > v.casas ? 'menos' : 'mais'} casas decimais do que a fonte.`);
-      } else if (fim.n !== v.n) {
-        erros.push(`D2 · ${l.id}: o excerto composto acaba em «${fim.literal}» e o valor da linha é «${l.value}»: o literal do fim de um excerto composto é o valor, com as mesmas casas.`);
-      }
+    const fim = literalDoValor(excerto);
+    if (!fim) { contas.sem_literal_do_valor++; continue; }
+    contas.com_literal_do_valor++;
+    if (fim.n === v.n && fim.casas > v.casas) {
+      erros.push(`D · ${l.id}: o excerto escreve o valor como «${fim.literal}», com ${fim.casas} casa(s) decimal(is), e a linha escreve «${l.value}», com ${v.casas}. A precisão é a da fonte (§1.127, decisão 3): corrige-se pelo mecanismo, com uma entrada «correcao» selada e o contador recontado.`);
+    } else if (fim.n === v.n && fim.casas < v.casas) {
+      erros.push(`D · ${l.id}: o excerto escreve o valor como «${fim.literal}» e a linha escreve «${l.value}», com mais casas decimais do que a fonte.`);
+    } else if (fim.n !== v.n) {
+      erros.push(`D · ${l.id}: o excerto acaba em «${fim.literal}» e o valor da linha é «${l.value}»: o literal que é o próprio número tem de ser o valor, com as mesmas casas.`);
     }
   }
   return { erros, contas };
 }
 
 /**
- * As plantas, sobre cópias em memória das linhas reais: cada uma diz se tem de morder e com que célula.
+ * As linhas das plantas, cópias em memória das linhas reais: cada uma diz se tem de morder.
  * @param {Map<string, Record<string, any>>} linhas
  */
-export function plantasDasCasasDecimais(linhas) {
+export function linhasDasPlantas(linhas) {
   const copia = (id, mudar) => {
     const l = linhas.get(id);
     if (!l) return null;
     return mudar(JSON.parse(JSON.stringify(l)));
   };
-  const plantas = [
-    { nome: 'a linha dos jovens com o valor antigo, «8» contra «8.0»', linha: copia('jovens-nem-2025', (l) => ({ ...l, value: '8' })), morde: /^D1 · jovens-nem-2025/ },
-    { nome: 'a mesma linha, pelo literal do fim', linha: copia('jovens-nem-2025', (l) => ({ ...l, value: '8' })), morde: /^D2 · jovens-nem-2025/ },
-    { nome: 'uma linha composta arredondada, «2» contra «2.1 p»', linha: copia('credito-malparado-2025', (l) => ({ ...l, value: '2' })), morde: /^D2 · credito-malparado-2025/ },
-    { nome: 'a retribuição mínima sem os cêntimos do diploma, «920» contra «€ 920,00»', linha: copia('retribuicao-minima-mensal-garantida-continente-2026', (l) => ({ ...l, value: '920' })), morde: /^D1 · retribuicao-minima-mensal-garantida-continente-2026/ },
-    { nome: 'o controlo: a linha dos jovens derivada, com o valor antigo', linha: copia('jovens-nem-2025', (l) => ({ ...l, value: '8', derivation: 'uma conta declarada, para a planta' })), morde: null },
-    { nome: 'o controlo: a linha dos jovens como está', linha: copia('jovens-nem-2025', (l) => l), morde: null },
+  return [
+    { nome: 'a linha dos jovens com o valor antigo, «8» contra «8.0»', linha: copia('jovens-nem-2025', (l) => ({ ...l, value: '8' })), morde: true },
+    { nome: 'uma linha composta arredondada, «2» contra «2.1 p»', linha: copia('credito-malparado-2025', (l) => ({ ...l, value: '2' })), morde: true },
+    { nome: 'um inteiro alheio igual ao valor no mesmo excerto, «8» contra «… — Artigo 8 — … — 2025: 8.0»',
+      linha: copia('jovens-nem-2025', (l) => ({ ...l, value: '8', excerpt: String(l.excerpt).replace(' — Portugal — ', ' — Artigo 8 — Portugal — ') })), morde: true },
+    { nome: 'um número agrupado à inglesa com menos casas, «1422,4» contra «1,422.40»',
+      linha: copia('jovens-nem-2025', (l) => ({ ...l, value: '1422,4', excerpt: String(l.excerpt).replace(/: 8\.0$/, ': 1,422.40') })), morde: true },
+    { nome: 'o controlo: a linha dos jovens derivada, com o valor antigo', linha: copia('jovens-nem-2025', (l) => ({ ...l, value: '8', derivation: 'uma conta declarada, para a planta' })), morde: false },
+    { nome: 'o controlo: a linha dos jovens como está', linha: copia('jovens-nem-2025', (l) => l), morde: false },
+    { nome: 'o controlo: o número agrupado à inglesa com as mesmas casas, «1422,40» contra «1,422.40»',
+      linha: copia('jovens-nem-2025', (l) => ({ ...l, value: '1422,40', excerpt: String(l.excerpt).replace(/: 8\.0$/, ': 1,422.40') })), morde: false },
   ];
-  return plantas.map((p) => {
-    if (!p.linha) return { nome: p.nome, mordeu: false, esperado: p.morde ? 'morder' : 'calar', queixa: 'a linha da planta não existe no livro-razão' };
-    const r = conferirCasasDecimais([p.linha]);
-    const queixa = p.morde ? r.erros.find((e) => p.morde.test(e)) ?? null : r.erros[0] ?? null;
+}
+
+/**
+ * As plantas, sobre as linhas acima: cada uma tem de morder ou de calar, como diz.
+ * @param {Map<string, Record<string, any>>} linhas
+ * @param {(linhas: Iterable<Record<string, any>>) => { erros: string[] }} [conferir] a célula a provar (por omissão,
+ *   esta; o relatório da passagem K2-c corre as mesmas linhas na versão anterior, para mostrar o que ela não via)
+ */
+export function plantasDasCasasDecimais(linhas, conferir = conferirCasasDecimais) {
+  return linhasDasPlantas(linhas).map((p) => {
+    if (!p.linha) return { nome: p.nome, mordeu: false, esperado: p.morde ? 'morder' : 'calar', certo: false, queixa: 'a linha da planta não existe no livro-razão' };
+    const r = conferir([p.linha]);
+    const queixa = r.erros.find((e) => e.includes(` · ${p.linha.id}:`)) ?? null;
     return { nome: p.nome, esperado: p.morde ? 'morder' : 'calar', mordeu: Boolean(queixa), certo: p.morde ? Boolean(queixa) : !queixa, queixa };
   });
 }

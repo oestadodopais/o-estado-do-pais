@@ -504,7 +504,9 @@ if (MARCADORES_RECUSADOS.length) {
  * AS CASAS DECIMAIS DO EXCERTO (bloco K2, 02.10.2026, item 6 do brief)
  * ===========================================================================
  * Uma linha sem derivação não escreve menos casas decimais do que o excerto da fonte: «8» onde a fonte escreve
- * «8.0» é um número que a fonte não escreveu (§1.127, decisão 3). A célula e as plantas vivem em
+ * «8.0» é um número que a fonte não escreveu (§1.127, decisão 3). Desde a passagem K2-c (02.10.2026) o valor
+ * compara-se só com o literal do excerto que é o próprio número, o que vem depois dos dois pontos no fim de um
+ * excerto composto, e os números agrupados à inglesa leem-se. A célula e as plantas vivem em
  * `scripts/casas-decimais.mjs`; as plantas correm aqui, antes de a célula dizer zero, sobre cópias em memória das
  * linhas reais, e uma que não morda (ou um controlo que morda) fecha a construção como um caso real. */
 {
@@ -515,8 +517,8 @@ if (MARCADORES_RECUSADOS.length) {
   console.log('');
   console.log(
     cinza(
-      `  casas decimais do excerto · ${casas.contas.lidas_d1} linha(s) lidas pelo número (D1), ` +
-        `${casas.contas.compostas_d2} com excerto composto (D2), ${casas.contas.sem_par_d1} sem o número no excerto, ` +
+      `  casas decimais do excerto · ${casas.contas.com_literal_do_valor} linha(s) com o literal do valor no fim do excerto, ` +
+        `${casas.contas.sem_literal_do_valor} sem ele (não se leem), ` +
         `${casas.contas.com_derivacao} derivada(s) fora da regra · ${plantasDasCasas.length} planta(s), ` +
         `${plantasDasCasas.filter((p) => p.certo).length} certa(s)`,
     ),
