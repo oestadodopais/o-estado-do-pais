@@ -17,8 +17,10 @@
  *   F20g · o cabeçalho de cada faixa: o nome é o de um cartão da linha portuguesa da série (`data-de-linha`), e a
  *          unidade e o período são os campos da série (o texto deles confere-o o portão de HTML e a F1);
  *   F20h · as etiquetas do toque: uma por marca e mais nenhuma, todas escondidas no documento servido (`hidden`),
- *          cada uma com o nome do país da tabela de autoridade (ou as palavras da União), o valor do seu ponto e a
- *          ressalva do ponto pelas palavras declaradas, e nada mais;
+ *          cada uma com o grupo dos pontos que têm o valor da sua marca (quase sempre um país só: marcas com o mesmo
+ *          valor estão no mesmo sítio, e o toque não as separa), pela ordem da série, cada ponto com o nome do país
+ *          da tabela de autoridade (ou as palavras da União), o seu valor e a sua ressalva pelas palavras declaradas,
+ *          com as palavras da lista entre eles, e nada mais;
  *   F20i · a lista dobrada: um `<details>` fechado, com o resumo «Os {conta} por ordem…» nas palavras declaradas e a
  *          contagem dos países da série; e os 27 países e a média da União, cada um uma vez, do valor mais alto para
  *          o mais baixo (os iguais pela ordem da série), cada um com o nome da tabela, o valor do ponto e a ressalva
@@ -101,44 +103,67 @@ export function ordemDosPontos(serie) {
 }
 
 /**
- * UM PONTO DITO NUMA ETIQUETA OU NUM ITEM DA LISTA: o nome (da tabela, ou as palavras da União), o valor do ponto e a
- * ressalva do ponto, e nada mais. Devolve o que está mal, ou `[]`.
+ * OS PONTOS DITOS NUMA ETIQUETA OU NUM ITEM DA LISTA: para cada ponto do grupo, pela ordem dada, o nome (da tabela, ou
+ * as palavras da União), o valor do ponto e a ressalva do ponto, com as palavras da lista entre eles, e nada mais. Um
+ * item da lista diz um ponto; uma etiqueta do toque diz o grupo dos pontos com o valor da sua marca. Devolve o que está
+ * mal, ou `[]`.
  */
-function conferirPontoDito(el, { serie, geo, lang, paises, onde }) {
+function conferirPontosDitos(el, { serie, geos, lang, paises, onde }) {
   const erros = [];
   const palavras = PALAVRAS_DA_FAIXA[lang];
-  const ponto = serie.pontos.find((p) => p.geo === geo);
-  if (!ponto) return [`${onde}: a série não tem o ponto ${geo}`];
-  let nome;
-  if (geo === AGREGADO) {
-    const v = el.querySelector('[data-voz]');
-    nome = palavras.uniao;
-    if (!v || norm(v.text) !== nome || el.querySelector('[data-pais]')) erros.push(`${onde}: a média da União não se diz pelas palavras declaradas («${nome}»)`);
-  } else {
-    const n = el.querySelectorAll('[data-pais]');
-    const p = paises.get(geo);
-    nome = p ? (lang === 'en' ? p.en : p.pt) : null;
-    if (n.length !== 1 || n[0].getAttribute('data-pais') !== geo) erros.push(`${onde}: o nome não é o do país ${geo} (${n.map((x) => x.getAttribute('data-pais')).join(', ') || 'nenhum'})`);
-    else if (!nome || norm(n[0].text) !== nome) erros.push(`${onde}: o nome de ${geo} diz «${norm(n[0].text)}» e a tabela de autoridade diz «${nome}»`);
+  const partes = [];
+  const nomeados = el.querySelectorAll('[data-pais]');
+  const paisesDoGrupo = geos.filter((g) => g !== AGREGADO);
+  if (nomeados.map((x) => x.getAttribute('data-pais')).join(',') !== paisesDoGrupo.join(',')) {
+    erros.push(`${onde}: os nomes são de ${nomeados.map((x) => x.getAttribute('data-pais')).join(', ') || 'ninguém'}, e são de ${paisesDoGrupo.join(', ') || 'ninguém'}`);
   }
-  const v = el.querySelectorAll('[data-ponto]');
-  const valor = norm(String(ponto.valor));
-  if (v.length !== 1 || v[0].getAttribute('data-ponto') !== `${serie.id}#${geo}`) erros.push(`${onde}: o valor não é o do ponto ${geo}`);
-  else if (norm(v[0].text) !== valor) erros.push(`${onde}: o valor de ${geo} diz «${norm(v[0].text)}» e o ponto diz «${valor}»`);
-  const marca = ponto.bandeira ? String(ponto.bandeira) : null;
+  const valores = el.querySelectorAll('[data-ponto]');
+  if (valores.map((x) => x.getAttribute('data-ponto')).join(',') !== geos.map((g) => `${serie.id}#${g}`).join(',')) {
+    erros.push(`${onde}: os valores são dos pontos ${valores.map((x) => x.getAttribute('data-ponto')).join(', ') || 'nenhum'}, e são de ${geos.join(', ')}`);
+  }
+  const uniao = el.querySelectorAll('[data-voz]');
+  if (uniao.length !== (geos.includes(AGREGADO) ? 1 : 0) || (uniao.length && norm(uniao[0].text) !== palavras.uniao)) {
+    erros.push(`${onde}: a média da União ${geos.includes(AGREGADO) ? 'não se diz pelas palavras declaradas' : 'é dita onde não está'} («${palavras.uniao}»)`);
+  }
   const ditas = el.querySelectorAll('[data-faixa-ressalva]');
-  const dita = marca ? palavras.ressalvas?.[marca] ?? null : null;
-  if (!marca && ditas.length) erros.push(`${onde}: há uma ressalva para ${geo}, cujo ponto não leva marca da fonte`);
-  if (marca) {
-    if (ditas.length !== 1 || ditas[0].getAttribute('data-faixa-ressalva') !== `${serie.id}#${geo}` || ditas[0].getAttribute('data-bandeira') !== marca) {
-      erros.push(`${onde}: o ponto de ${geo} leva a marca «${marca}» e a ressalva dela não está dita`);
-    } else if (norm(ditas[0].text) !== `(${dita})`) {
-      erros.push(`${onde}: a ressalva de ${geo} diz «${norm(ditas[0].text)}» e as palavras da marca «${marca}» são «(${dita})»`);
+  geos.forEach((geo, i) => {
+    const ponto = serie.pontos.find((p) => p.geo === geo);
+    if (!ponto) return void erros.push(`${onde}: a série não tem o ponto ${geo}`);
+    let nome;
+    if (geo === AGREGADO) nome = palavras.uniao;
+    else {
+      const p = paises.get(geo);
+      nome = p ? (lang === 'en' ? p.en : p.pt) : null;
+      const n = nomeados.find((x) => x.getAttribute('data-pais') === geo);
+      if (n && (!nome || norm(n.text) !== nome)) erros.push(`${onde}: o nome de ${geo} diz «${norm(n.text)}» e a tabela de autoridade diz «${nome}»`);
     }
-  }
-  const esperado = norm(`${nome ?? ''} ${valor}${dita ? ` (${dita})` : ''}`);
+    const valor = norm(String(ponto.valor));
+    const v = valores.find((x) => x.getAttribute('data-ponto') === `${serie.id}#${geo}`);
+    if (v && norm(v.text) !== valor) erros.push(`${onde}: o valor de ${geo} diz «${norm(v.text)}» e o ponto diz «${valor}»`);
+    const marca = ponto.bandeira ? String(ponto.bandeira) : null;
+    const dita = marca ? palavras.ressalvas?.[marca] ?? null : null;
+    const desta = ditas.filter((r) => r.getAttribute('data-faixa-ressalva') === `${serie.id}#${geo}`);
+    if (!marca && desta.length) erros.push(`${onde}: há uma ressalva para ${geo}, cujo ponto não leva marca da fonte`);
+    if (marca) {
+      if (desta.length !== 1 || desta[0].getAttribute('data-bandeira') !== marca) erros.push(`${onde}: o ponto de ${geo} leva a marca «${marca}» e a ressalva dela não está dita`);
+      else if (norm(desta[0].text) !== `(${dita})`) erros.push(`${onde}: a ressalva de ${geo} diz «${norm(desta[0].text)}» e as palavras da marca «${marca}» são «(${dita})»`);
+    }
+    const entre = i === 0 ? '' : i === geos.length - 1 ? palavras.lista.ultimo : palavras.lista.entre;
+    partes.push(`${entre}${nome ?? ''} ${valor}${dita ? ` (${dita})` : ''}`);
+  });
+  const alheias = ditas.filter((r) => !geos.some((g) => r.getAttribute('data-faixa-ressalva') === `${serie.id}#${g}`));
+  if (alheias.length) erros.push(`${onde}: tem ressalvas de pontos que não são dela: ${alheias.map((r) => r.getAttribute('data-faixa-ressalva')).join(', ')}`);
+  const esperado = norm(partes.join(''));
   if (norm(el.text) !== esperado) erros.push(`${onde}: diz «${norm(el.text)}» e a recomposição dá «${esperado}»`);
   return erros;
+}
+
+/** Os pontos da série com o valor de um ponto, pela ordem da série (os países e, no fim, a União). */
+export function grupoDoValor(serie, geo) {
+  const c = contaDaFaixa(serie);
+  const naSerie = [...c.paises.map((p) => ({ geo: p.geo, n: p.n })), { geo: AGREGADO, n: c.uniao }];
+  const n = naSerie.find((p) => p.geo === geo)?.n;
+  return naSerie.filter((p) => p.n === n).map((p) => p.geo);
 }
 
 /**
@@ -210,7 +235,7 @@ export function conferirSeccaoDosPaises(root, lang, rota, { series, paises }) {
       const geo = String(e.getAttribute('data-toque-de')).split('#')[1];
       if (!e.hasAttribute('hidden')) erro('F20h', sid, `a etiqueta de ${geo} não está escondida no documento: aparece sem toque`);
       if (!e.closest('[data-toques]')) erro('F20h', sid, `a etiqueta de ${geo} está fora do desenho`);
-      for (const m of conferirPontoDito(e, { serie, geo, lang, paises, onde: `a etiqueta de ${geo}` })) erro('F20h', sid, m);
+      for (const m of conferirPontosDitos(e, { serie, geos: grupoDoValor(serie, geo), lang, paises, onde: `a etiqueta de ${geo}` })) erro('F20h', sid, m);
     }
 
     /* F20i · a lista dobrada */
@@ -238,7 +263,7 @@ export function conferirSeccaoDosPaises(root, lang, rota, { series, paises }) {
         const classes = (item.getAttribute('class') ?? '').split(/\s+/);
         const papel = geo === AGREGADO ? 'paises-lista-uniao' : geo === 'PT' ? 'paises-lista-portugal' : 'paises-lista-pais';
         if (!classes.includes(papel)) erro('F20i', sid, `o item de ${geo} não tem a marca dele («${papel}»)`);
-        for (const m of conferirPontoDito(item, { serie, geo, lang, paises, onde: `o item de ${geo} da lista` })) erro('F20i', sid, m);
+        for (const m of conferirPontosDitos(item, { serie, geos: [geo], lang, paises, onde: `o item de ${geo} da lista` })) erro('F20i', sid, m);
       }
     }
 
@@ -323,6 +348,15 @@ export function plantasDaSeccao(html, lang, rota, ctx) {
     if (!v || !outro || norm(v.text) === norm(outro.text)) return false;
     v.set_content(outro.text);
     return true;
+  });
+  planta('a etiqueta de um empate só com um dos países', 'F20h', (r) => {
+    const e = r.querySelectorAll('[data-toque-de]').find((x) => x.querySelectorAll('[data-ponto]').length > 1);
+    if (!e) return false;
+    const pontos = e.querySelectorAll('[data-ponto]');
+    const ultimo = pontos[pontos.length - 1].getAttribute('data-ponto');
+    const geo = ultimo.split('#')[1];
+    e.set_content(e.innerHTML.split(/(?=, |\s(?:e|and)\s)/).slice(0, 1).join(''));
+    return !e.querySelector(`[data-ponto="${ultimo}"]`) && Boolean(geo);
   });
   planta('uma etiqueta do toque em falta', 'F20h', (r) => {
     const e = r.querySelector('[data-toque-de]');

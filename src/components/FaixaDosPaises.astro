@@ -14,7 +14,9 @@
  *   · o nome da medida (o nome do cartão, pela escada de `src/lib/nomes.mjs`), a unidade e o período da série, por
  *     cima do desenho, porque aqui não há cartão por cima a dizê-los;
  *   · uma etiqueta por marca, com o nome do país (ou «média da União») e o valor do ponto, ESCONDIDA no documento;
- *     o guião do toque (`public/js/paises.js`) mostra a da marca tocada e mais nenhuma, e não escreve texto nenhum;
+ *     o guião do toque (`public/js/paises.js`) mostra a da marca tocada e mais nenhuma, e não escreve texto nenhum.
+ *     Uma marca com o mesmo valor de outras está no mesmo sítio delas, e a sua etiqueta diz o grupo inteiro, pela
+ *     ordem da série;
  *   · a lista dobrada «Os 27 por ordem», um `<details>` que abre sem guião, com os 27 países e a média da União pela
  *     ordem dos valores (do mais alto para o mais baixo, o sentido do lugar na frase), Portugal marcado, a União na
  *     sua posição, e a ressalva de cada ponto como as pontas a mostram. É o caminho sem guião e o de quem quer os
@@ -91,7 +93,9 @@ const ressalva = ressalvaDaUniao(idDaLinha, lang);
       <span data-voz>{f.palavras.uniao}</span>
     </span>
     {/* AS ETIQUETAS DO TOQUE: uma por marca, na posição dela, escondidas. O guião tira o `hidden` à da marca mais
-        perto do toque e põe-no às outras; sem guião ficam todas escondidas, e a lista dobrada, abaixo, diz o mesmo. */}
+        perto do toque e põe-no às outras; sem guião ficam todas escondidas, e a lista dobrada, abaixo, diz o mesmo.
+        Cada etiqueta diz o grupo dos pontos com o valor da sua marca (um país só, quase sempre), porque marcas com o
+        mesmo valor estão no mesmo sítio do desenho e o toque não as separa. */}
     <span class="paises-toques">
       {f.toques.map((x) => (
         <span
@@ -101,12 +105,17 @@ const ressalva = ressalvaDaUniao(idDaLinha, lang);
           style={`left:${x.esquerda}%`}
           hidden
         >
-          {x.geo === AGREGADO_DA_UNIAO ? <span data-voz>{f.palavras.uniao}</span> : <NomeDoPais geo={x.geo} lang={lang} />}
-          {' '}
-          <PontoDaSerie serie={f.serie} geo={x.geo} class="faixa-ue-valor" />
-          {x.ressalva && (
-            <span class="faixa-ue-ressalva" data-faixa-ressalva={`${f.serie}#${x.geo}`} data-bandeira={x.bandeira}>{' ('}{x.ressalva}{')'}</span>
-          )}
+          {x.grupo.map((p, i, todos) => (
+            <>
+              {i > 0 && (i === todos.length - 1 ? f.palavras.lista.ultimo : f.palavras.lista.entre)}
+              {p.geo === AGREGADO_DA_UNIAO ? <span data-voz>{f.palavras.uniao}</span> : <NomeDoPais geo={p.geo} lang={lang} />}
+              {' '}
+              <PontoDaSerie serie={f.serie} geo={p.geo} class="faixa-ue-valor" />
+              {p.ressalva && (
+                <span class="faixa-ue-ressalva" data-faixa-ressalva={`${f.serie}#${p.geo}`} data-bandeira={p.bandeira}>{' ('}{p.ressalva}{')'}</span>
+              )}
+            </>
+          ))}
         </span>
       ))}
     </span>
