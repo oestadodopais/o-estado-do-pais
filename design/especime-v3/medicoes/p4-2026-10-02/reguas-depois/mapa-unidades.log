@@ -1,0 +1,72 @@
+
+[90m  F1.1e · os distritos e as ilhas voltam ao mapa · 33 células[0m
+
+  [32mpassa[0m  U1a · medida, não exigida (decisão de 08.09.2026) · a 390, o alvo das 29 unidades
+[90m         desenho 281 × 371 px · 29 áreas · 0 de 29 chegam aos 44 px (medido, não exigido) (mediana 14 px; a maior 32 px, a menor 0 px) · 10 com menos de 2 px de lado · 0 com o ponto fora da área[0m
+  [32mpassa[0m  U1a · medida, não exigida (decisão de 08.09.2026) · a 1280, o alvo das 29 unidades
+[90m         desenho 430 × 567 px · 29 áreas · 3 de 29 chegam aos 44 px (medido, não exigido) (mediana 22 px; a maior 52 px, a menor 0 px) · 7 com menos de 2 px de lado · 0 com o ponto fora da área[0m
+  [32mpassa[0m  U1b · medida, não exigida (decisão de 08.09.2026) · a 390, o alvo dos 308 concelhos, unidade a unidade
+[90m         308 de 308 medidos em 29 unidades, todos com o ponto dentro da sua área · 46 chegam aos 44 px (medido, não exigido) · mediana 26 px (26 px sem os de lado zero) · 0 com menos de 2 px · o menor com lado medível pediria um desenho de 4290 px de largura[0m
+  [32mpassa[0m  U1c · a rede de nomes responde pelas áreas abaixo de 44 px: as 29 na gaveta dos distritos e das ilhas (lida sem guião) e os 308 nas páginas das 29 unidades, uma ligação cada
+[90m         a gaveta dos nomes tem 29 unidades da Carta · as páginas das 29 unidades têm 308 ligações para 308 de 308 slugs da Carta[0m
+  [32mpassa[0m  U2a · pt: o nome da Carta no lugar ao passar e ao focar, nas 29 unidades
+[90m         29 de 29 · «Aveiro» … «Viseu» · cada um o nome de mapa/pais.json, cada porta na sua página[0m
+  [32mpassa[0m  U2b · pt: o nome no lugar numa amostra de 30 concelhos, nos níveis das três unidades maiores
+[90m         30 de 30 · «Armamar» … «Vagos»[0m
+  [32mpassa[0m  U2c · pt: numa página de distrito, o lugar do nome diz o concelho apontado
+[90m         16 de 16 concelhos de Lisboa · «Alenquer» … «Vila Franca de Xira» · 0 porta(s) de voltar (uma página de distrito não tem nível de cima)[0m
+  [32mpassa[0m  U2d · pt: com o dedo, o nome e a porta no lugar nas 29 unidades
+[90m         29 de 29 · «Aveiro» → «/distritos/aveiro» … «Viseu» → «/distritos/viseu» · nenhum toque navegou[0m
+  [32mpassa[0m  U2d · pt: com o dedo, o nome e a porta no lugar numa amostra de 30 concelhos
+[90m         30 de 30 · «Armamar» → «/municipios/armamar» … «Vagos» → «/municipios/vagos» · nenhum primeiro toque navegou[0m
+  [32mpassa[0m  U2a · en: o nome da Carta no lugar ao passar e ao focar, nas 29 unidades
+[90m         29 de 29 · «Aveiro» … «Viseu» · cada um o nome de mapa/pais.json, cada porta na sua página[0m
+  [32mpassa[0m  U2b · en: o nome no lugar numa amostra de 30 concelhos, nos níveis das três unidades maiores
+[90m         30 de 30 · «Armamar» … «Vagos»[0m
+  [32mpassa[0m  U2c · en: numa página de distrito, o lugar do nome diz o concelho apontado
+[90m         16 de 16 concelhos de Lisboa · «Alenquer» … «Vila Franca de Xira» · 0 porta(s) de voltar (uma página de distrito não tem nível de cima)[0m
+  [32mpassa[0m  U2d · en: com o dedo, o nome e a porta no lugar nas 29 unidades
+[90m         29 de 29 · «Aveiro» → «/en/districts/aveiro» … «Viseu» → «/en/districts/viseu» · nenhum toque navegou[0m
+  [32mpassa[0m  U2d · en: com o dedo, o nome e a porta no lugar numa amostra de 30 concelhos
+[90m         30 de 30 · «Armamar» → «/en/municipalities/armamar» … «Vagos» → «/en/municipalities/vagos» · nenhum primeiro toque navegou[0m
+  [32mpassa[0m  U3a · Chromium, com o dedo: a unidade cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre
+[90m         a unidade: nível «unidade», 14 concelhos (o artefacto tem 14), endereço «/lugares/#unidade=evora», nome «Évora» (esperado «Évora») com a porta «/distritos/evora» · o primeiro toque no concelho deixa o endereço em «/lugares/» e diz «Montemor-o-Novo» (esperado «Montemor-o-Novo») · o segundo abre «/municipios/montemor-o-novo»[0m
+  [32mpassa[0m  U3a · WebKit, com o dedo: a unidade cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre
+[90m         a unidade: nível «unidade», 14 concelhos (o artefacto tem 14), endereço «/lugares/#unidade=evora», nome «Évora» (esperado «Évora») com a porta «/distritos/evora» · o primeiro toque no concelho deixa o endereço em «/lugares/» e diz «Montemor-o-Novo» (esperado «Montemor-o-Novo») · o segundo abre «/municipios/montemor-o-novo»[0m
+  [32mpassa[0m  U3b · com o rato: a porta de voltar sobe um nível, e o botão de voltar do navegador desfaz o que o toque escreveu
+[90m         clique → «#unidade=beja» (nível unidade) · «Voltar ao país» → «sem fragmento» (nível pais) · voltar do navegador → «#unidade=beja» (nível unidade)[0m
+  [32mpassa[0m  U3c · emenda de 08.09 (segunda passagem) · a página de uma unidade abre-se pela porta do lugar do nome, e não por um segundo toque na área
+[90m         a porta diz «/distritos/faro» e leva a «/distritos/faro» · uma unidade que cresceu já não tem contorno no ecrã para receber um segundo toque, e a regra dos dois toques vale para um concelho (U3a e U3d)[0m
+  [32mpassa[0m  U3d · numa página de distrito, o primeiro toque num concelho diz o nome e o segundo abre
+[90m         o primeiro toque deixa o endereço em «/distritos/lisboa» e diz «Sintra» · o segundo abre «/municipios/sintra»[0m
+  [32mpassa[0m  U3e · com o ficheiro de uma unidade a responder 404, o mapa não cresce, o lugar do nome di-lo e o toque seguinte abre a página dela
+[90m         o primeiro toque deixa o nível em «pais» e o endereço em «/lugares/», com o nome «Faro», a porta «/distritos/faro» e o aviso à vista · o toque seguinte abre «/distritos/faro»[0m
+  [32mpassa[0m  U3f · com duas respostas atrasadas e a ordem trocada, o desenho fica no último gesto e o histórico escreve-se pela ordem dos gestos
+[90m         toque em «evora» (a responder em 1200 ms) e a seguir em «beja» (em 60 ms) · 2400 ms depois: nível «unidade», endereço «#unidade=beja», 14 concelhos (o ficheiro de «beja» tem 14), o primeiro «aljustrel» (esperado «aljustrel») · um passo atrás: nível «pais», endereço «sem fragmento»[0m
+  [32mpassa[0m  U3g · o fragmento limpo a meio de um pedido lento descarta a resposta, e a unidade não reabre em cima da primeira página
+[90m         «#unidade=evora» com o ficheiro a responder em 1200 ms, o fragmento limpo 200 ms depois · 2400 ms depois: nível «pais», endereço «sem fragmento», 0 concelhos desenhados, a porta de voltar escondida[0m
+  [32mpassa[0m  U4 · pt: sem guião, 29 ligações para as 29 páginas, a gaveta dos distritos e das ilhas À VISTA com as 29 lá dentro, zero regiões desenhadas e o «#unidade=» ignorado
+[90m         29 áreas, 29 com destino em «/distritos/», 29 de 29 respondem 200 · a gaveta fechada com 29 unidades, a caixa dela a 354×46 px (área 16284) e o «summary» à vista (item 3 do F1.13: sem guião a lista está à vista) · 0 região(ões) no desenho ou na lista · o lugar do nome rende-se · o segundo nível tem 0 nós[0m
+  [32mpassa[0m  U4 · en: sem guião, 29 ligações para as 29 páginas, a gaveta dos distritos e das ilhas À VISTA com as 29 lá dentro, zero regiões desenhadas e o «#unidade=» ignorado
+[90m         29 áreas, 29 com destino em «/en/districts/», 29 de 29 respondem 200 · a gaveta fechada com 29 unidades, a caixa dela a 354×46 px (área 16284) e o «summary» à vista (item 3 do F1.13: sem guião a lista está à vista) · 0 região(ões) no desenho ou na lista · o lugar do nome rende-se · o segundo nível tem 0 nós[0m
+  [32mpassa[0m  U8a · herdada do F1.1d (P7a) · o lugar do nome com contraste de 4,5:1 no tema claro
+[90m         repouso 6.24:1 · nome 16.39:1 · porta 16.39:1 · aviso 16.39:1[0m
+  [32mpassa[0m  U8a · herdada do F1.1d (P7a) · o lugar do nome com contraste de 4,5:1 no tema escuro
+[90m         repouso 9.52:1 · nome 15.38:1 · porta 15.38:1 · aviso 15.38:1[0m
+  [32mpassa[0m  U8b · herdada do F1.1d (P7b) · o lugar do nome é uma região com nome acessível, e a árvore de acessibilidade dele muda com a área apontada
+[90m         em repouso: - group "A área apontada no mapa": - paragraph: - text: Portugal · 308 concelhos - link "f · ao apontar: - group "A área apontada no mapa": - paragraph: Évora - paragraph: - link "Abrir →": - /ur[0m
+  [32mpassa[0m  U8c · herdada do F1.1d (P7c) · a frase do lugar declara `aria-live="polite"`, que é o atributo por onde um leitor de ecrã sabe que há ali algo a reler
+[90m         aria-live="polite" · o atributo mede-se; o anúncio em voz alta é do navegador e do leitor de ecrã, e não desta régua[0m
+  [32mpassa[0m  U10 · emenda de 08.09 (segunda passagem) · a 390, as molduras não se cruzam e cada ilha fica dentro da sua
+[90m         2 molduras · Madeira 67 × 165 px em y 616 · Açores 109 × 64 px em y 544 · não se cruzam · 11 polígonos nas parcelas com moldura, 0 fora da sua[0m
+  [32mpassa[0m  U10 · emenda de 08.09 (segunda passagem) · a 768, as molduras não se cruzam e cada ilha fica dentro da sua
+[90m         2 molduras · Madeira 67 × 165 px em y 632 · Açores 109 × 64 px em y 559 · não se cruzam · 11 polígonos nas parcelas com moldura, 0 fora da sua[0m
+  [32mpassa[0m  U10 · emenda de 08.09 (segunda passagem) · a 1280, as molduras não se cruzam e cada ilha fica dentro da sua
+[90m         2 molduras · Madeira 102 × 253 px em y 655 · Açores 167 × 98 px em y 543 · não se cruzam · 11 polígonos nas parcelas com moldura, 0 fora da sua[0m
+  [32mpassa[0m  U11 · emenda de 08.09 (segunda passagem) · o copiador é dono só do padrão `unidade-*.json`: um ficheiro estranho sobrevive e um `unidade-*` a mais sai com a linha a dizê-lo
+[90m         «leia-me-do-mapa.txt» sobreviveu · «unidade-condado-portucalense.json» saiu e a linha disse-o · 29 ficheiros de unidade · o copiador saiu a 0, a conferência a 0 e o portão do mapa a 0 (com o ficheiro estranho ainda na pasta) · a pasta ficou como estava (29 ficheiros)[0m
+  [32mpassa[0m  U12 · 16.09.2026 · a margem da moldura: nenhum polígono toca a linha da sua moldura em nenhuma das cinco larguras
+[90m         390: mapa 281 px, Madeira 1.03 px (2 polígonos, o mais perto ilha-da-madeira), Açores 1.03 px (9 polígonos, o mais perto ilha-das-flores) · 768: mapa 281 px, Madeira 1.03 px (2 polígonos, o mais perto ilha-da-madeira), Açores 1.03 px (9 polígonos, o mais perto ilha-das-flores) · 1024: mapa 430 px, Madeira 2.11 px (2 polígonos, o mais perto ilha-da-madeira), Açores 2.11 px (9 polígonos, o mais perto ilha-das-flores) · 1280: mapa 430 px, Madeira 2.11 px (2 polígonos, o mais perto ilha-da-madeira), Açores 2.11 px (9 polígonos, o mais perto ilha-das-flores) · 1600: mapa 430 px, Madeira 2.11 px (2 polígonos, o mais perto ilha-da-madeira), Açores 2.11 px (9 polígonos, o mais perto ilha-das-flores)[0m
+
+[32m  33 de 33 células passam.[0m
+

@@ -1,0 +1,20 @@
+
+  [32mvermelho ✓[0m  uma ligação duplicada: o mesmo nome duas vezes na gaveta[90m  [2 célula(s) · verde antes: true · o HTML mudou: true · vermelho depois: true][0m
+[90m              L1·pt · uma lista só, com as mesmas 29 unidades do desenho, depois do mapa no documento · 30 ligações, 29 slugs na gaveta e 29 no mapa, 29 destinos distintos · ordem do documento: mapa antes dos nomes[0m
+[90m              L1·en · uma lista só, com as mesmas 29 unidades do desenho, depois do mapa no documento · 30 ligações, 29 slugs na gaveta e 29 no mapa, 29 destinos distintos · ordem do documento: mapa antes dos nomes[0m
+  [32mvermelho ✓[0m  a gaveta dos distritos e das ilhas antes do mapa no documento[90m  [2 célula(s) · verde antes: true · o HTML mudou: true · vermelho depois: true][0m
+[90m              L1·pt · uma lista só, com as mesmas 29 unidades do desenho, depois do mapa no documento · 29 ligações, 29 slugs na gaveta e 29 no mapa, 29 destinos distintos · ordem do documento: nomes antes do mapa[0m
+[90m              L1·en · uma lista só, com as mesmas 29 unidades do desenho, depois do mapa no documento · 29 ligações, 29 slugs na gaveta e 29 no mapa, 29 destinos distintos · ordem do documento: nomes antes do mapa[0m
+  [32mvermelho ✓[0m  a gaveta dos distritos e das ilhas escondida[90m  [16 célula(s) · verde antes: true · o HTML mudou: true · vermelho depois: true][0m
+[90m              L4·pt·320 · nenhuma unidade sem nome à vista: a gaveta aberta e os 29 nomes · gaveta fora da vista e aberta · 29 nome(s), 29 escondido(s)[0m
+[90m              L4·pt·360 · nenhuma unidade sem nome à vista: a gaveta aberta e os 29 nomes · gaveta fora da vista e aberta · 29 nome(s), 29 escondido(s)[0m
+  [32mvermelho ✓[0m  um alvo com 40 px de altura[90m  [16 célula(s) · verde antes: true · o HTML mudou: true · vermelho depois: true][0m
+[90m              L5·pt·320 · cada nome é um alvo de 44 px de altura, e nenhum se interseta · 29/29 à vista · o mais baixo 40.0 px · 29 sob 44 de altura, 0 interseção(ões)[0m
+[90m              L5·pt·360 · cada nome é um alvo de 44 px de altura, e nenhum se interseta · 29/29 à vista · o mais baixo 40.0 px · 29 sob 44 de altura, 0 interseção(ões)[0m
+  [32mvermelho ✓[0m  dois nomes encavalitados (os alvos a intersetar-se)[90m  [16 célula(s) · verde antes: true · o HTML mudou: true · vermelho depois: true][0m
+[90m              L5·pt·320 · cada nome é um alvo de 44 px de altura, e nenhum se interseta · 29/29 à vista · o mais baixo 44.0 px · 0 sob 44 de altura, 28 interseção(ões)[0m
+[90m              L5·pt·360 · cada nome é um alvo de 44 px de altura, e nenhum se interseta · 29/29 à vista · o mais baixo 44.0 px · 0 sob 44 de altura, 28 interseção(ões)[0m
+  [32mvermelho ✓[0m  um ponto de separação de volta entre os nomes[90m  [16 célula(s) · verde antes: true · o HTML mudou: true · vermelho depois: true][0m
+[90m              L10·pt·320 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo · 36: li::after = "·"[0m
+[90m              L10·pt·360 · sem pontuação entre os nomes: nenhum «::before» nem «::after» com conteúdo · 36: li::after = "·"[0m
+

@@ -1,0 +1,40 @@
+
+  [32mvermelho ✓[0m  uma unidade sem nome no lugar (o `<title>` de Évora apagado)
+[90m              falha ✓ U2a · pt: o nome da Carta no lugar ao passar e ao focar, nas 29 unidades[0m
+[90m              falha ✓ U2a · en: o nome da Carta no lugar ao passar e ao focar, nas 29 unidades[0m
+  [32mvermelho ✓[0m  um concelho na unidade errada (mudado do ficheiro de Évora para o de Beja)
+[90m              falha ✓ U1b · medida, não exigida (decisão de 08.09.2026) · a 390, o alvo dos 308 concelhos, unidade a unidade[0m
+  [32mvermelho ✓[0m  o primeiro toque num concelho a navegar (o guião deixa de segurar esse clique)
+[90m              falha ✓ U3a · Chromium, com o dedo: a unidade cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre[0m
+[90m              falha ✓ U3a · WebKit, com o dedo: a unidade cresce sem navegar, o primeiro toque num concelho diz o nome, o segundo abre[0m
+  [32mvermelho ✓[0m  a unidade cujo ficheiro não veio a ficar sem destino (o guião sem a saída da falha)
+[90m              falha ✓ U3e · com o ficheiro de uma unidade a responder 404, o mapa não cresce, o lugar do nome di-lo e o toque seguinte abre a página dela[0m
+  [32mvermelho ✓[0m  um concelho a menos no ficheiro da geometria de uma unidade
+[90m              falha ✓ U1b · medida, não exigida (decisão de 08.09.2026) · a 390, o alvo dos 308 concelhos, unidade a unidade[0m
+[90m              falha ✓ U2b · pt: o nome no lugar numa amostra de 30 concelhos, nos níveis das três unidades maiores[0m
+[90m              falha ✓ U2b · en: o nome no lugar numa amostra de 30 concelhos, nos níveis das três unidades maiores[0m
+  [32mvermelho ✓[0m  o lugar do nome retirado da página de um distrito
+[90m              falha ✓ U2c · pt: numa página de distrito, o lugar do nome diz o concelho apontado[0m
+[90m              falha ✓ U2c · en: numa página de distrito, o lugar do nome diz o concelho apontado[0m
+[90m              falha ✓ U3d · numa página de distrito, o primeiro toque num concelho diz o nome e o segundo abre[0m
+  [32mvermelho ✓[0m  a gaveta dos distritos e das ilhas aberta por defeito
+[90m              falha ✓ U4 · pt: sem guião, 29 ligações para as 29 páginas, a gaveta dos distritos e das ilhas À VISTA com as 29 lá dentro, zero regiões desenhadas e o «#unidade=» ignorado[0m
+[90m              falha ✓ U4 · en: sem guião, 29 ligações para as 29 páginas, a gaveta dos distritos e das ilhas À VISTA com as 29 lá dentro, zero regiões desenhadas e o «#unidade=» ignorado[0m
+  [32mvermelho ✓[0m  uma área do nível do país sem ligação, sem guião
+[90m              falha ✓ U4 · pt: sem guião, 29 ligações para as 29 páginas, a gaveta dos distritos e das ilhas À VISTA com as 29 lá dentro, zero regiões desenhadas e o «#unidade=» ignorado[0m
+[90m              falha ✓ U4 · en: sem guião, 29 ligações para as 29 páginas, a gaveta dos distritos e das ilhas À VISTA com as 29 lá dentro, zero regiões desenhadas e o «#unidade=» ignorado[0m
+  [32mvermelho ✓[0m  uma região a voltar ao desenho (uma área a apontar para /regioes/)
+[90m              falha ✓ U4 · pt: sem guião, 29 ligações para as 29 páginas, a gaveta dos distritos e das ilhas À VISTA com as 29 lá dentro, zero regiões desenhadas e o «#unidade=» ignorado[0m
+[90m              falha ✓ U4 · en: sem guião, 29 ligações para as 29 páginas, a gaveta dos distritos e das ilhas À VISTA com as 29 lá dentro, zero regiões desenhadas e o «#unidade=» ignorado[0m
+  [32mvermelho ✓[0m  o guião sem a marca do gesto (uma resposta atrasada volta a mandar)
+[90m              falha ✓ U3f · com duas respostas atrasadas e a ordem trocada, o desenho fica no último gesto e o histórico escreve-se pela ordem dos gestos[0m
+[90m              falha ✓ U3g · o fragmento limpo a meio de um pedido lento descarta a resposta, e a unidade não reabre em cima da primeira página[0m
+  [32mvermelho ✓[0m  o número do gesto a não avançar (o fragmento limpo deixa de invalidar o pedido)
+[90m              falha ✓ U3g · o fragmento limpo a meio de um pedido lento descarta a resposta, e a unidade não reabre em cima da primeira página[0m
+  [32mvermelho ✓[0m  a arrumação dos insertos desfeita (as duas molduras como o artefacto as traz, cruzadas)
+[90m              falha ✓ U10 · emenda de 08.09 (segunda passagem) · a 390, as molduras não se cruzam e cada ilha fica dentro da sua[0m
+[90m              falha ✓ U10 · emenda de 08.09 (segunda passagem) · a 768, as molduras não se cruzam e cada ilha fica dentro da sua[0m
+[90m              falha ✓ U10 · emenda de 08.09 (segunda passagem) · a 1280, as molduras não se cruzam e cada ilha fica dentro da sua[0m
+  [32mvermelho ✓[0m  a margem das molduras a zero (o rectângulo de volta à caixa exacta dos polígonos)
+[90m              falha ✓ U12 · 16.09.2026 · a margem da moldura: nenhum polígono toca a linha da sua moldura em nenhuma das cinco larguras[0m
+

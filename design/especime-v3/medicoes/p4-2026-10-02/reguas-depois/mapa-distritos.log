@@ -1,0 +1,82 @@
+
+  [32m✓[0m M1a · a 1280, o mapa tem as 29 áreas e as 29 ligações
+[90m      janela 1280 · tela 430.0 px · desenho 430.0 × 567.0 px · 29 áreas · 29 ligações[0m
+  [32m✓[0m M1b · a 1280, cada unidade abaixo de 44 px de área inscrita tem o nome numa lista
+[90m      3/29 chegam aos 44 px de quadrado inscrito (pela caixa seriam 19) · 26 não chegam e as 29 da lista cobrem-nas[0m
+  [32m✓[0m M1c · a 1280, cada nome da lista é um alvo de 44 px
+[90m      29 nomes, o mais baixo 44 px de altura[0m
+  [32m✓[0m M1d · a 1280, o ponto representativo cai dentro da sua área
+[90m      29/29 pontos dentro da própria área · o maior quadrado inscrito vai de 0 a 52 px[0m
+  [32m✓[0m M2·320a · a 320, o mapa tem as 29 áreas e as 29 ligações
+[90m      janela 320 · tela 281.0 px · desenho 281.0 × 370.5 px · 29 áreas · 29 ligações[0m
+  [32m✓[0m M2·320b · a 320, cada unidade abaixo de 44 px de área inscrita tem o nome numa lista
+[90m      0/29 chegam aos 44 px de quadrado inscrito (pela caixa seriam 16) · 29 não chegam e as 29 da lista cobrem-nas[0m
+  [32m✓[0m M2·320c · a 320, cada nome da lista é um alvo de 44 px
+[90m      29 nomes, o mais baixo 44 px de altura[0m
+  [32m✓[0m M2·320d · a 320, o ponto representativo cai dentro da sua área
+[90m      29/29 pontos dentro da própria área · o maior quadrado inscrito vai de 0 a 32 px[0m
+  [32m✓[0m M2·360a · a 360, o mapa tem as 29 áreas e as 29 ligações
+[90m      janela 360 · tela 281.0 px · desenho 281.0 × 370.5 px · 29 áreas · 29 ligações[0m
+  [32m✓[0m M2·360b · a 360, cada unidade abaixo de 44 px de área inscrita tem o nome numa lista
+[90m      0/29 chegam aos 44 px de quadrado inscrito (pela caixa seriam 16) · 29 não chegam e as 29 da lista cobrem-nas[0m
+  [32m✓[0m M2·360c · a 360, cada nome da lista é um alvo de 44 px
+[90m      29 nomes, o mais baixo 44 px de altura[0m
+  [32m✓[0m M2·360d · a 360, o ponto representativo cai dentro da sua área
+[90m      29/29 pontos dentro da própria área · o maior quadrado inscrito vai de 0 a 32 px[0m
+  [32m✓[0m M2·390a · a 390, o mapa tem as 29 áreas e as 29 ligações
+[90m      janela 390 · tela 281.0 px · desenho 281.0 × 370.5 px · 29 áreas · 29 ligações[0m
+  [32m✓[0m M2·390b · a 390, cada unidade abaixo de 44 px de área inscrita tem o nome numa lista
+[90m      0/29 chegam aos 44 px de quadrado inscrito (pela caixa seriam 16) · 29 não chegam e as 29 da lista cobrem-nas[0m
+  [32m✓[0m M2·390c · a 390, cada nome da lista é um alvo de 44 px
+[90m      29 nomes, o mais baixo 44 px de altura[0m
+  [32m✓[0m M2·390d · a 390, o ponto representativo cai dentro da sua área
+[90m      29/29 pontos dentro da própria área · o maior quadrado inscrito vai de 0 a 32 px[0m
+  [32m✓[0m M2·430a · a 430, o mapa tem as 29 áreas e as 29 ligações
+[90m      janela 430 · tela 281.0 px · desenho 281.0 × 370.5 px · 29 áreas · 29 ligações[0m
+  [32m✓[0m M2·430b · a 430, cada unidade abaixo de 44 px de área inscrita tem o nome numa lista
+[90m      0/29 chegam aos 44 px de quadrado inscrito (pela caixa seriam 16) · 29 não chegam e as 29 da lista cobrem-nas[0m
+  [32m✓[0m M2·430c · a 430, cada nome da lista é um alvo de 44 px
+[90m      29 nomes, o mais baixo 44 px de altura[0m
+  [32m✓[0m M2·430d · a 430, o ponto representativo cai dentro da sua área
+[90m      29/29 pontos dentro da própria área · o maior quadrado inscrito vai de 0 a 32 px[0m
+  [32m✓[0m M3 · lisboa a 1280: a caixa do mapa, e a lista com todos os concelhos
+[90m      caixa 490.0 × 560.0 px · 16 áreas · 16 na lista · 0 abaixo de 44 px[0m
+  [32m✓[0m M3 · lisboa a 390: a caixa do mapa, e a lista com todos os concelhos
+[90m      caixa 354.0 × 408.5 px · 16 áreas · 16 na lista · 0 abaixo de 44 px[0m
+  [32m✓[0m M3 · aveiro a 1280: a caixa do mapa, e a lista com todos os concelhos
+[90m      caixa 490.0 × 560.0 px · 19 áreas · 19 na lista · 2 abaixo de 44 px (Espinho, São João da Madeira)[0m
+  [32m✓[0m M3 · aveiro a 390: a caixa do mapa, e a lista com todos os concelhos
+[90m      caixa 354.0 × 538.4 px · 19 áreas · 19 na lista · 2 abaixo de 44 px (Espinho, São João da Madeira)[0m
+  [32m✓[0m M3 · ilha-de-sao-miguel a 1280: a caixa do mapa, e a lista com todos os concelhos
+[90m      caixa 490.0 × 177.9 px · 6 áreas · 6 na lista · 0 abaixo de 44 px[0m
+  [32m✓[0m M3 · ilha-de-sao-miguel a 390: a caixa do mapa, e a lista com todos os concelhos
+[90m      caixa 354.0 × 128.5 px · 6 áreas · 6 na lista · 0 abaixo de 44 px[0m
+  [32m✓[0m M4a · «Lugares», com o desenho das 29 dentro
+[90m      834.8 KB de HTML, 383.3 KB de caminhos[0m
+  [32m✓[0m M4b · a maior página de distrito, com no máximo 25 KB de caminhos
+[90m      lisboa: 21.5 KB de caminhos, 34.3 KB de HTML[0m
+  [32m✓[0m M5a · as áreas do mapa de «Lugares» têm o mesmo desenho (Emenda 10)
+[90m      um estilo só para as 29: none|rgb(23, 25, 27)|1px|1[0m
+  [32m✓[0m M5b · ao passar o rato muda o contorno, e só ele (Emenda 20b)
+[90m      traço 1px → 3px · enchimento none (igual) · cor rgb(23, 25, 27) (igual)[0m
+  [32m✓[0m M5c · nenhuma cor de estatuto no desenho das áreas
+[90m      2 cores de estatuto declaradas, 0 usadas nas áreas[0m
+  [32m✓[0m M6a · cinco cliques no ponto representativo de cinco áreas abrem cinco páginas
+[90m      5/5 · lisboa→/municipios/lisboa · sintra→/municipios/sintra · cascais→/municipios/cascais · loures→/municipios/loures · mafra→/municipios/mafra[0m
+  [32m✓[0m M6b · e o ponto representativo cai dentro da área que o traz
+[90m      5/5 pontos caem na sua própria área[0m
+  [32m✓[0m M6c · pelo teclado, numa página de distrito: o foco pousa numa área e o Enter abre a página dela
+[90m      foco em /municipios/alenquer (contorno 3px), Enter → /municipios/alenquer[0m
+  [32m✓[0m M9 · nenhum atributo repetido num `<svg>` de mapa do dist/
+[90m      60 páginas com mapa varridas, 0 etiquetas com um atributo escrito duas vezes[0m
+  [32m✓[0m M10a · em /lugares/, a lista de cada parcela está por ordem alfabética
+[90m      1 parcelas, 29 nomes · distritos: Aveiro … Viseu[0m
+  [32m✓[0m M10b · em /en/places/, a lista de cada parcela está por ordem alfabética
+[90m      1 parcelas, 29 nomes · distritos: Aveiro … Viseu[0m
+  [32m✓[0m M7 · medir-defeitos: nada por classificar, autorreferência 0
+[90m      1396 rotas · 0 por classificar · autorreferência 0[0m
+  [32m✓[0m M8 · check:voz verde
+[90m      [90m        · ue1d · lida pelo lugar de direção a 29.09.2026 (a leitura do cartão acaba nas folhas comuns da comparação com a União, as mesmas das outras nove medidas; a ressalva é o texto da primeira página, de uma fonte só, e o cartão a 390 px diz a comparação, a faixa e a ressalva por esta ordem)[0m | [90m        · ue2 · por ler[0m | [90m        · ue2-b · por ler[0m[0m
+
+[32m  39 células, todas verdes.
+[0m
