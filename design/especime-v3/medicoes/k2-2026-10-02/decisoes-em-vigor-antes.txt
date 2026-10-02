@@ -1,0 +1,189 @@
+§1.1 · O mapa passou de `<canvas>` para SVG construído no servidor
+    src/i18n/strings.mjs:2955
+§1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
+    scripts/check-voz.mjs:49
+    scripts/check-voz.mjs:727
+    scripts/check-voz.mjs:795
+    src/i18n/strings.mjs:552
+§1.4 · `excerpt` ficou `[a verificar]` em quase todas as linhas semeadas
+    src/i18n/strings.mjs:1084
+    src/i18n/strings.mjs:1499
+§1.5 · A linha de método e a linha de autoria não são traduzidas
+    scripts/medir-defeitos.mjs:675
+    src/data/nomes-das-medidas.mjs:145
+    src/data/nomes-das-medidas.mjs:6
+    src/i18n/strings.mjs:2269
+§1.8 · As páginas de estudo estão fora do índice até à migração
+    src/data/leituras.mjs:7
+§1.19 · Os estudos migram para dois sítios, não um
+    scripts/gate-html.mjs:1215
+    scripts/gate-html.mjs:5284
+    scripts/gate-html.mjs:8883
+    src/data/leituras.mjs:7
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    scripts/gate-html.mjs:143
+    scripts/gate-html.mjs:148
+    scripts/gate-html.mjs:2738
+    scripts/gate-html.mjs:2894
+    scripts/gate-html.mjs:3590
+    scripts/gate-html.mjs:3794
+    scripts/gate-html.mjs:3808
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    scripts/gate-html.mjs:2617
+    scripts/gate-html.mjs:878
+    scripts/gate-html.mjs:901
+§1.34 · O primeiro tipo de página de município, e o que ele se recusa a dizer
+    scripts/gate-html.mjs:3229
+    scripts/gate-html.mjs:3338
+    scripts/gate-html.mjs:4033
+    scripts/gate-html.mjs:7159
+§1.35 · As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
+    src/data/leituras.mjs:19
+    src/data/leituras.mjs:270
+    src/i18n/strings.mjs:2813
+§1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
+    scripts/gate-html.mjs:5114
+    src/i18n/strings.mjs:350
+    src/i18n/strings.mjs:407
+§1.38 · A ortografia do sítio passa a ser uma só
+    scripts/check-ledger.mjs:1105
+    scripts/check-ledger.mjs:665
+    scripts/check-ledger.mjs:691
+    scripts/check-ledger.mjs:818
+    scripts/check-ledger.mjs:928
+§1.39 · O sítio passa a dizer o que é, e o Método a provar o que faz
+    scripts/gate-html.mjs:4989
+    scripts/gate-html.mjs:8042
+    scripts/gate-html.mjs:8751
+    src/i18n/strings.mjs:1709
+    src/i18n/strings.mjs:394
+§1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
+    scripts/gate-html.mjs:288
+    scripts/gate-html.mjs:380
+    scripts/gate-html.mjs:3897
+    scripts/gate-html.mjs:79
+    src/i18n/strings.mjs:2176
+    src/i18n/strings.mjs:2181
+§1.41 · A revisão cruzada do bloco V, e o que ela mudou
+    scripts/check-ledger.mjs:689
+    scripts/gate-html.mjs:3030
+    scripts/gate-html.mjs:3073
+§1.42 · Segunda revisão cruzada do bloco V
+    scripts/gate-html.mjs:3052
+    scripts/gate-html.mjs:3073
+    scripts/gate-html.mjs:3466
+    scripts/gate-html.mjs:7450
+§1.44 · A revisão cruzada da identidade v2
+    scripts/check-voz.mjs:409
+    scripts/gate-html.mjs:893
+    scripts/medir-defeitos.mjs:971
+    src/data/figuras.mjs:113
+§1.46 · A leitura cruzada do bloco da agenda, e a palavra que faltava ao corte
+    scripts/check-ledger.mjs:954
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    scripts/gate-html.mjs:902
+    src/components/Claim.astro:189
+    src/i18n/strings.mjs:2356
+§1.52 · A direção lê a pré-visualização n.º 1: cinco emendas, quatro decisões de forma, e o tema deixa de ser uma pergunta
+    src/i18n/strings.mjs:267
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    scripts/gate-html.mjs:4009
+    scripts/gate-html.mjs:86
+    scripts/gate-html.mjs:8751
+§1.68 · As páginas dos 308 concelhos
+    scripts/gate-html.mjs:4796
+    scripts/gate-html.mjs:94
+§1.82 · Correções pequenas, quinta passagem (I91, segunda metade; I92): a língua dos nomes e dos rótulos na edição inglesa
+    scripts/gate-html.mjs:1616
+§1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
+    scripts/gate-html.mjs:5926
+    scripts/gate-html.mjs:6831
+    scripts/gate-html.mjs:8056
+    scripts/gate-html.mjs:874
+§1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
+    scripts/check-formas.mjs:1123
+    scripts/check-voz.mjs:464
+    src/components/inicio/LeituraBreve.astro:158
+    src/data/figuras.mjs:2455
+    src/data/figuras.mjs:2725
+    src/data/leituras.mjs:600
+    src/i18n/strings.mjs:112
+    src/i18n/strings.mjs:141
+    src/i18n/strings.mjs:1617
+    src/i18n/strings.mjs:1657
+    src/i18n/strings.mjs:200
+    src/i18n/strings.mjs:2333
+    src/i18n/strings.mjs:31
+    src/i18n/strings.mjs:80
+§1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
+    src/components/inicio/LeituraBreve.astro:295
+    src/data/figuras.mjs:2454
+    src/i18n/strings.mjs:1159
+§1.102 · A sessão de 08.09: o corredor parado por uma função apagada, as leituras a frio com o plano novo do Codex, a sonda ao INE, o F1.1d medido às cegas, e o F1.10 retomado
+    src/data/figuras.mjs:2537
+§1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
+    scripts/gate-html.mjs:4181
+    scripts/gate-html.mjs:4237
+    scripts/gate-html.mjs:4378
+    src/i18n/strings.mjs:1191
+    src/i18n/strings.mjs:1265
+    src/styles/cartao-medida.css:9
+§1.109 · A regra 9 do Método deixa de nomear o diretor
+    scripts/gate-html.mjs:4182
+    scripts/gate-html.mjs:4237
+    scripts/gate-html.mjs:4378
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    src/data/nomes-das-medidas.mjs:143
+§1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
+    scripts/gate-html.mjs:4203
+§1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
+    src/components/ReguaDoCartao.astro:76
+    src/components/ReguaDoCartao.astro:78
+    src/data/figuras.mjs:502
+    tests/cartao/cartao.mjs:136
+    tests/cartao/cartao.mjs:138
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    scripts/check-pais.mjs:301
+    src/data/leituras-das-medidas.mjs:276
+§1.129 · A peça 1 do B2, o veredicto: o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio da correção e o Opus acaba, e o diretor fixa a regra do sentido
+    src/data/leituras-das-medidas.mjs:6
+    src/lib/leitura-da-medida.mjs:7
+    tests/cartao/leituras.mjs:6
+§1.130 · O brief do L1, a leitura de cada medida: a regra do sentido vira uma gramática com ramos, as 36 leituras do lugar de direção ensaiadas a seco, e um bloco que não aterra sem outra família
+    src/i18n/strings.mjs:2439
+§1.133 · O leitor comum primeiro: a decisão do diretor de 28.09.2026 sobre o público, o que se lê à primeira, e quem procura as relações nos dados
+    src/i18n/strings.mjs:1720
+§1.138 · O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
+    scripts/gate-html.mjs:229
+§1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
+    scripts/gate-html.mjs:20
+    scripts/gate-html.mjs:42
+    src/components/CartaoDaMedida.astro:162
+    src/components/CartaoDaMedida.astro:302
+    src/components/ReguaDoCartao.astro:74
+    src/components/ReguaDoCartao.astro:76
+    src/components/ReguaDoCartao.astro:84
+    src/data/figuras.mjs:501
+    src/data/leituras-das-medidas.mjs:25
+    src/data/leituras-das-medidas.mjs:96
+    src/data/medidas-rp1.mjs:254
+    src/lib/leitura-da-medida.mjs:19
+    src/styles/cartao-medida.css:150
+    tests/cartao/cartao.mjs:134
+    tests/cartao/cartao.mjs:1711
+    tests/cartao/cartao.mjs:27
+    tests/cartao/cartao.mjs:281
+    tests/cartao/cartao.mjs:308
+    tests/cartao/cartao.mjs:409
+    tests/cartao/cartao.mjs:482
+    tests/cartao/leituras.mjs:401
+    tests/cartao/leituras.mjs:97
+§1.143 · A primeira leitura por leitores comuns (30.09.2026): as portas dizem o que têm, a primeira página é o único lugar de «O que se passa», e uma coisa, um lugar, também na navegação
+    scripts/gate-html.mjs:5866
+    tests/cartao/cartao.mjs:35
+§1.146 · O orçamento gasta-se até ao fim por decisão do diretor, o GPT-6.1 Sol entra (a recusa era do CLI), o leitor passa a ele e o construtor ensaia-se com ele no E0; e a aterragem dos registos do E1
+    scripts/check-pais.mjs:173
+    tests/inicio/linhas-da-casa.mjs:1
+§1.150 · O L2a construído pelo Opus e lido a frio pelo Sol: o mapa primeiro em «Lugares», as listas dobradas, a primeira página com a porta; as decisões do lugar de direção nos pontos deixados; e a aterragem da §1.149
+    src/i18n/strings.mjs:679
+41 decisão(ões) citada(s) em 37 ficheiro(s)

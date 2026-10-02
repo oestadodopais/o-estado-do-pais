@@ -1,0 +1,3249 @@
+{
+  "bloco": "K2",
+  "fase": "antes",
+  "cabeca": "1722244db19b66e523a7eaf9f0b27e770060bab8",
+  "construcao": {
+    "commit": "1722244db19b66e523a7eaf9f0b27e770060bab8",
+    "ref": "k2-2026-10-02",
+    "construido_em": "2026-10-02T01:52:03.105Z"
+  },
+  "inicio": "2026-10-02T01:55:11.734Z",
+  "fim": "2026-10-02T01:55:22.380Z",
+  "larguras": [
+    390,
+    1280
+  ],
+  "capturas": 16,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-emprego-pt-390.png",
+      "pagina": "emprego",
+      "rota": "/emprego/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "49a84beb0484b94b8cac07807801e9388a7923506a014c950bf4d6991fea852f",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3286,
+        "h1": "Emprego",
+        "cartoes": [
+          {
+            "id": "taxa-de-emprego-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 403
+          },
+          {
+            "id": "taxa-de-actividade-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 395
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 506
+          },
+          {
+            "id": "desemprego-de-longa-duracao-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 441
+          },
+          {
+            "id": "jovens-nem-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 228
+          },
+          {
+            "id": "disparidade-de-emprego-entre-sexos-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 206
+          },
+          {
+            "id": "custo-unitario-do-trabalho-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 355
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-uniao-pt-390.png",
+      "pagina": "uniao",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "c2fd57dc620d780c39497b47ecd4028e4f6184ea58baa1e281dc632678801840",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 1163,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "cartoes": [
+          {
+            "id": "divida-publica-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "posicao-de-investimento-internacional-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "custo-unitario-do-trabalho-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "precos-da-habitacao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "desempenho-das-exportacoes-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "divida-das-empresas-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "divida-das-familias-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "fluxo-de-credito-as-empresas-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "fluxo-de-credito-as-familias-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "saldo-da-balanca-corrente-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-actividade-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-cambio-efectiva-real-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-emprego-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-desemprego-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "desemprego-de-longa-duracao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "jovens-nem-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "abandono-escolar-precoce-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "risco-de-pobreza-ou-exclusao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "racio-s80-s20-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "sobrecarga-do-custo-da-habitacao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-evora-pt-390.png",
+      "pagina": "evora",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "e2d863c8b85a0122e9da2d7632dc109467100ca40a6f6dd92a1ba75347ad1930",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 9488,
+        "h1": "Évora",
+        "cartoes": [
+          {
+            "id": "evora-poder-de-compra-2023",
+            "documento": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 295
+          },
+          {
+            "id": "evora-empresas-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 130
+          },
+          {
+            "id": "evora-divida-dgal-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 130
+          },
+          {
+            "id": "evora-prazo-medio-de-pagamento-2025-12",
+            "documento": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 257
+          },
+          {
+            "id": "evora-indice-de-divida-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 308
+          },
+          {
+            "id": "evora-desemprego-registado-2025-12",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 191
+          },
+          {
+            "id": "evora-ganho-medio-mensal-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 295
+          },
+          {
+            "id": "evora-populacao-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 112
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-estudos-pt-390.png",
+      "pagina": "estudos",
+      "rota": "/estudos/",
+      "lang": "pt",
+      "largura": 390,
+      "sha256": "05a71a9e2d2c9018ebddb189ab86e953d00823d2b3c1a691c99527ab14ef1fbc",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3272,
+        "h1": "Estudos",
+        "cartoes": []
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-emprego-pt-1280.png",
+      "pagina": "emprego",
+      "rota": "/emprego/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "06c3f1f9161fc4d4739a412150b5c79bcc18b664e61490459862b524613e3987",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2251,
+        "h1": "Emprego",
+        "cartoes": [
+          {
+            "id": "taxa-de-emprego-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 486
+          },
+          {
+            "id": "taxa-de-actividade-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 554
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 651
+          },
+          {
+            "id": "desemprego-de-longa-duracao-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 544
+          },
+          {
+            "id": "jovens-nem-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 290
+          },
+          {
+            "id": "disparidade-de-emprego-entre-sexos-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 292
+          },
+          {
+            "id": "custo-unitario-do-trabalho-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 517
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-uniao-pt-1280.png",
+      "pagina": "uniao",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "3ddfcda55e0b8a15fd3a304b278793d415db45a0abb46721ef6f5e92688e99e7",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2059,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "cartoes": [
+          {
+            "id": "divida-publica-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 240
+          },
+          {
+            "id": "posicao-de-investimento-internacional-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 240
+          },
+          {
+            "id": "custo-unitario-do-trabalho-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 240
+          },
+          {
+            "id": "precos-da-habitacao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 240
+          },
+          {
+            "id": "desempenho-das-exportacoes-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 240
+          },
+          {
+            "id": "divida-das-empresas-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "divida-das-familias-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "fluxo-de-credito-as-empresas-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "fluxo-de-credito-as-familias-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "saldo-da-balanca-corrente-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "taxa-de-actividade-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "taxa-de-cambio-efectiva-real-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "taxa-de-emprego-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "taxa-de-desemprego-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "desemprego-de-longa-duracao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "jovens-nem-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "abandono-escolar-precoce-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "risco-de-pobreza-ou-exclusao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "racio-s80-s20-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "sobrecarga-do-custo-da-habitacao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 193
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-evora-pt-1280.png",
+      "pagina": "evora",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "26a0aad8d765e286e74c0198a4561bd56188ef4010834c20630d26458f5aac44",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6877,
+        "h1": "Évora",
+        "cartoes": [
+          {
+            "id": "evora-poder-de-compra-2023",
+            "documento": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 378
+          },
+          {
+            "id": "evora-empresas-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 378
+          },
+          {
+            "id": "evora-divida-dgal-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 378
+          },
+          {
+            "id": "evora-prazo-medio-de-pagamento-2025-12",
+            "documento": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 378
+          },
+          {
+            "id": "evora-indice-de-divida-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 391
+          },
+          {
+            "id": "evora-desemprego-registado-2025-12",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 375
+          },
+          {
+            "id": "evora-ganho-medio-mensal-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 375
+          },
+          {
+            "id": "evora-populacao-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 137
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-estudos-pt-1280.png",
+      "pagina": "estudos",
+      "rota": "/estudos/",
+      "lang": "pt",
+      "largura": 1280,
+      "sha256": "9c0552e3b395b5eee0d6636d9b28560201d8b5fb39555f556009087c67199b23",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2949,
+        "h1": "Estudos",
+        "cartoes": []
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-emprego-en-390.png",
+      "pagina": "emprego",
+      "rota": "/en/employment/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "cf4d58b734eb26f086a01be6ea5e4da5c49e3600dda7642737c58dc4e77b27db",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3293,
+        "h1": "Employment",
+        "cartoes": [
+          {
+            "id": "taxa-de-emprego-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 383
+          },
+          {
+            "id": "taxa-de-actividade-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 393
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 488
+          },
+          {
+            "id": "desemprego-de-longa-duracao-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 420
+          },
+          {
+            "id": "jovens-nem-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 249
+          },
+          {
+            "id": "disparidade-de-emprego-entre-sexos-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 206
+          },
+          {
+            "id": "custo-unitario-do-trabalho-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 355
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-uniao-en-390.png",
+      "pagina": "uniao",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "4df44e1b931f2c02e3ee757759e84478b627f002163e7a4bbdf1547405c02342",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 1179,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "cartoes": [
+          {
+            "id": "divida-publica-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "posicao-de-investimento-internacional-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "custo-unitario-do-trabalho-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "precos-da-habitacao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "desempenho-das-exportacoes-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "divida-das-empresas-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "divida-das-familias-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "fluxo-de-credito-as-empresas-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "fluxo-de-credito-as-familias-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "saldo-da-balanca-corrente-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-actividade-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-cambio-efectiva-real-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-emprego-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-desemprego-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "desemprego-de-longa-duracao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "jovens-nem-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "abandono-escolar-precoce-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "risco-de-pobreza-ou-exclusao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "racio-s80-s20-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "sobrecarga-do-custo-da-habitacao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-evora-en-390.png",
+      "pagina": "evora",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "d6ba3fa7e8c617a37d3883a5b63d92a7a66822e4fde13d6cafd83e4e3bbdb01d",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 9632,
+        "h1": "Évora",
+        "cartoes": [
+          {
+            "id": "evora-poder-de-compra-2023",
+            "documento": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 295
+          },
+          {
+            "id": "evora-empresas-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 130
+          },
+          {
+            "id": "evora-divida-dgal-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 130
+          },
+          {
+            "id": "evora-prazo-medio-de-pagamento-2025-12",
+            "documento": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 257
+          },
+          {
+            "id": "evora-indice-de-divida-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 308
+          },
+          {
+            "id": "evora-desemprego-registado-2025-12",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 211
+          },
+          {
+            "id": "evora-ganho-medio-mensal-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 278
+          },
+          {
+            "id": "evora-populacao-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 112
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-estudos-en-390.png",
+      "pagina": "estudos",
+      "rota": "/en/studies/",
+      "lang": "en",
+      "largura": 390,
+      "sha256": "880d4c79e01c36a659abaaffb541f8c227268d66d5aed6139ca26ebf7df3ddca",
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3461,
+        "h1": "Studies",
+        "cartoes": []
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-emprego-en-1280.png",
+      "pagina": "emprego",
+      "rota": "/en/employment/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "da89f6d86cd67f8cd3524d12b6eae0a7e01d27e452882e3cc991899d1a9f43c8",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2204,
+        "h1": "Employment",
+        "cartoes": [
+          {
+            "id": "taxa-de-emprego-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 465
+          },
+          {
+            "id": "taxa-de-actividade-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 551
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 606
+          },
+          {
+            "id": "desemprego-de-longa-duracao-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 544
+          },
+          {
+            "id": "jovens-nem-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 311
+          },
+          {
+            "id": "disparidade-de-emprego-entre-sexos-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 292
+          },
+          {
+            "id": "custo-unitario-do-trabalho-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "leitura",
+              "comparacao",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": true,
+            "altura": 495
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-uniao-en-1280.png",
+      "pagina": "uniao",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "039e83c549d9537adc0663e2a6f9201dae93cd410f8eca58d582d94c54aa06fb",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1984,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "cartoes": [
+          {
+            "id": "divida-publica-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 225
+          },
+          {
+            "id": "posicao-de-investimento-internacional-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 225
+          },
+          {
+            "id": "custo-unitario-do-trabalho-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 225
+          },
+          {
+            "id": "precos-da-habitacao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 225
+          },
+          {
+            "id": "desempenho-das-exportacoes-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 225
+          },
+          {
+            "id": "divida-das-empresas-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "divida-das-familias-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "claim-provisorio",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "fluxo-de-credito-as-empresas-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "fluxo-de-credito-as-familias-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "saldo-da-balanca-corrente-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 224
+          },
+          {
+            "id": "taxa-de-actividade-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-cambio-efectiva-real-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-emprego-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "taxa-de-desemprego-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 209
+          },
+          {
+            "id": "desemprego-de-longa-duracao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 211
+          },
+          {
+            "id": "jovens-nem-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 211
+          },
+          {
+            "id": "abandono-escolar-precoce-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 211
+          },
+          {
+            "id": "risco-de-pobreza-ou-exclusao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 211
+          },
+          {
+            "id": "racio-s80-s20-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 211
+          },
+          {
+            "id": "sobrecarga-do-custo-da-habitacao-2025",
+            "documento": [
+              "comparacao",
+              "valor",
+              "selo",
+              "nome",
+              "unidade"
+            ],
+            "ecra": [
+              "comparacao",
+              "valor",
+              "nome",
+              "unidade",
+              "selo"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 193
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-evora-en-1280.png",
+      "pagina": "evora",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "b9766c80eff6b30d6e9cce92ec8f414b0ee8316c9f501c258d8ef998f5899a2e",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6930,
+        "h1": "Évora",
+        "cartoes": [
+          {
+            "id": "evora-poder-de-compra-2023",
+            "documento": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 378
+          },
+          {
+            "id": "evora-empresas-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 378
+          },
+          {
+            "id": "evora-divida-dgal-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 378
+          },
+          {
+            "id": "evora-prazo-medio-de-pagamento-2025-12",
+            "documento": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 378
+          },
+          {
+            "id": "evora-indice-de-divida-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "comparacao",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 391
+          },
+          {
+            "id": "evora-desemprego-registado-2025-12",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 341
+          },
+          {
+            "id": "evora-ganho-medio-mensal-2024",
+            "documento": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "faixa",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 341
+          },
+          {
+            "id": "evora-populacao-2025",
+            "documento": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "ecra": [
+              "nome",
+              "valor",
+              "definicao"
+            ],
+            "definicao_dobrada": false,
+            "resumo_da_dobra": null,
+            "definicao_fora_da_dobra": false,
+            "altura": 155
+          }
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/k2-2026-10-02/antes-estudos-en-1280.png",
+      "pagina": "estudos",
+      "rota": "/en/studies/",
+      "lang": "en",
+      "largura": 1280,
+      "sha256": "12bcf66bf795486929fe7ba204312be3234292dfb22e01b37bd8714b0e6a8fd2",
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2997,
+        "h1": "Studies",
+        "cartoes": []
+      }
+    }
+  ]
+}

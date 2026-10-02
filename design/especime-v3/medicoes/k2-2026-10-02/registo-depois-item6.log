@@ -1,0 +1,63 @@
+
+[90m  registo · os números dos documentos que governam, contra a fonte[0m
+
+[90m  os factos, medidos:[0m
+[90m     3009  linhas do livro-razão                                ledger/claims/*.yml[0m
+[90m           2.ª medição: loadClaims().size · subconjunto: as que o painel semanal reconfere = 91[0m
+[90m      308  concelhos com página                                 src/data/municipios.mjs · MUNICIPIOS_COM_PAGINA[0m
+[90m           2.ª medição: src/data/concelhos.gerado.json · linha `municipios-portugal-caop-2025`[0m
+[90m       17  estudos (trabalhos) no arquivo                       src/data/studies.mjs · WORKS[0m
+[90m           uma só fonte · linha `estudos-publicados`[0m
+[90m       25  edições do arquivo                                   src/data/studies.mjs · EDITIONS[0m
+[90m           uma só fonte · linha `edicoes-publicadas`[0m
+[90m       25  documentos alojados                                  studies-src/<slug>/<lingua>.html, declarados em studies-src/manifest.yml[0m
+[90m           2.ª medição: studies-src/manifest.yml · edicoes[0m
+[90m        7  correções publicadas                                 ledger/claims/*.yml · corrections[].kind == 'correcao'[0m
+[90m           uma só fonte · linha `correcoes-publicadas`[0m
+[90m       23  passos da construção                                 package.json · scripts.build[0m
+[90m           uma só fonte[0m
+[90m       17  páginas de leitura (edições com registo de conteúdo) registos/manifest.json[0m
+[90m           uma só fonte[0m
+
+[90m  hoje é 02.10.2026; uma afirmação datada de hoje confere-se como corrente.[0m
+
+  [32m✓[0m VISAO.md                                          2 corrente(s) ·  5 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 7 avaliada(s), chão 4
+[90m      VISAO.md:23 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      VISAO.md:23 «2 602 linhas» saltada pela forma (iii-a)[0m
+[90m      VISAO.md:35 «2 975 linhas» saltada pela forma (i) · 22.09.2026[0m
+[90m      VISAO.md:38 «treze estudos» saltada pela forma (i) · 22.09.2026[0m
+[90m      VISAO.md:38 «doze estudos» saltada pela forma (iii-a)[0m
+[90m      VISAO.md:23 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+  [32m✓[0m README.md                                         5 corrente(s) · 10 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 15 avaliada(s), chão 15
+[90m      README.md:30 «quinze passos encadeados» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:42 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:42 «132 linhas» saltada pela forma (iii-a)[0m
+[90m      README.md:246 «oito edições com registo» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:263 «vinte e cinco documentos» saltada pela forma (i) · 01.10.2026[0m
+[90m      README.md:266 «dezoito documentos» saltada pela forma (iii-a)[0m
+[90m      README.md:267 «dezoito edições do arquivo» saltada pela forma (iii-a)[0m
+[90m      README.md:267 «treze trabalhos» saltada pela forma (iii-a)[0m
+[90m      README.md:344 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:344 «132 linhas» saltada pela forma (iii-a)[0m
+[90m      README.md:195 «…ebe `lang` e mais nada; as rotas PT e EN são duas linhas cada. Os dados são partilhados; só as palavr…» distributiva (é por unidade, não é um total): não conferida[0m
+[90m      README.md:61 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:89 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:93 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:97 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:157 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:162 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:194 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:248 «oito edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:327 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:352 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+  [32m✓[0m design/especime-v3/PENDENTES-DO-DIRETOR.md        2 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  1 valor(es) do sítio · 4 avaliada(s), chão 3
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:9 «oito páginas de leitura» saltada pela forma (i) · 24.08.2026[0m
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:21 «uma edição» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:26 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+  [32m✓[0m CLAUDE.md                                         0 corrente(s) ·  0 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 0 avaliada(s), chão 0
+  [32m✓[0m design/observatorio/PLANO-fiabilidade-2026-09-02.md  0 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 1 avaliada(s), chão 1
+[90m      design/observatorio/PLANO-fiabilidade-2026-09-02.md:11 «32 linhas» saltada pela forma (ii) · 02.09.2026[0m
+
+  [32m✓[0m 8 facto(s) medidos na fonte (3 com segunda medição, 4 reconciliados com a linha que os publica) · 9 afirmação(ões) corrente(s) conferida(s) · 17 datada(s) saltada(s) · 0 subconjunto(s) · 1 valor(es) do sítio com o id ao lado
+[90m        5 documento(s) lidos · 38 unidade(s) no vocabulário do livro-razão · chão total 23 · prosa não se lê: «hoje só `evora`» e «o arquivo vazio» são do check:prosa (F3.1).[0m
+
