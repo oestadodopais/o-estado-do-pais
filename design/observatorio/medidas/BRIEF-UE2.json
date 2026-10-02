@@ -1,0 +1,64 @@
+{
+  "brief": "design/observatorio/BRIEF-UE2-a-pagina-dos-paises.md",
+  "guiao": "design/observatorio/medidas/BRIEF-UE2.py",
+  "cabeca_lida": "636cb657",
+  "series": [
+    "desemprego-de-longa-duracao-2025-paises.yml",
+    "divida-publica-2025-paises.yml",
+    "ihpc-variacao-homologa-paises.yml",
+    "precos-da-habitacao-2025-paises.yml",
+    "racio-s80-s20-2025-paises.yml",
+    "risco-de-pobreza-ou-exclusao-2025-paises.yml",
+    "sobrecarga-do-custo-da-habitacao-2025-paises.yml",
+    "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises.yml",
+    "taxa-de-desemprego-mip-2025-paises.yml",
+    "taxa-de-emprego-2025-paises.yml"
+  ],
+  "medidas": [
+    {
+      "nome": "series_de_paises_no_livro",
+      "valor": 10,
+      "comando": "git ls-tree 636cb657:ledger/series · os .yml",
+      "conhecido_positivo": {
+        "o_que": "a da dívida pública é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_dos_dois_quadros",
+      "valor": 21,
+      "comando": "git show 636cb657:src/data/figuras.mjs · as entradas com claim e quadro",
+      "conhecido_positivo": {
+        "o_que": "a dívida pública é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paises_nomeados_em_cada_faixa_hoje",
+      "valor": 2,
+      "comando": "git show 636cb657:src/components/FaixaDaUniao.astro · o cabeçalho diz que só o país mais baixo e o mais alto levam nome",
+      "conhecido_positivo": {
+        "o_que": "o cabeçalho fala das pontas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "termos_tecnicos_nas_definicoes_dos_quadros",
+      "valor": 44,
+      "comando": "as ocorrências em figuras.mjs de «nominal unit labour cost», «deflat», «economias avançadas»/«advanced economies», «consolidado»/«consolidated»",
+      "conhecido_positivo": {
+        "o_que": "«deflat» aparece",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_da_pagina_da_uniao_a_390_depois_do_k2",
+      "valor": 1205,
+      "comando": "a altura do PNG design/especime-v3/capturas/k2-2026-10-02/depois-uniao-pt-390.png",
+      "conhecido_positivo": {
+        "o_que": "a largura é 390",
+        "encontrado": true
+      }
+    }
+  ]
+}
