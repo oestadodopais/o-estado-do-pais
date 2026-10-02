@@ -2328,19 +2328,25 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        etiqueta da fonte fica no recibo e na linha, como a fonte a escreve; o portão de HTML confere a unidade da casa
        contra esta declaração. */
     unidade: { pt: 'pontos percentuais', en: 'percentage points' },
+    /* OS PONTOS PERCENTUAIS EM PALAVRAS COMUNS (bloco P4, 02.10.2026, item 3 do brief P4; a §1.152, decisão 4). A
+       pergunta dizia «em pontos percentuais» sem dizer o que são; passa à forma única das definições, as palavras
+       comuns primeiro e o termo da fonte entre parênteses, como a da taxa de atividade: a diferença entre as duas
+       percentagens (a definição do Eurostat, «the difference between the employment rates», e a unidade da linha,
+       «Percentage of total population»), em pontos percentuais (o relatório da Comissão). A unidade do cartão continua
+       a ser um pedaço desta pergunta. */
     pt: [
-      'Qual é a diferença, em pontos percentuais, entre a taxa de emprego dos homens dos ',
+      'Qual é a diferença entre a taxa de emprego dos homens dos ',
       { nl: '20', motivo: 'escala-de-instrumento' },
       ' aos ',
       { nl: '64', motivo: 'escala-de-instrumento' },
-      ' anos e a das mulheres?',
+      ' anos e a das mulheres, contada como a diferença entre as duas percentagens (em pontos percentuais)?',
     ],
     en: [
-      'What is the difference, in percentage points, between the employment rate of men aged ',
+      'What is the difference between the employment rate of men aged ',
       { nl: '20', motivo: 'escala-de-instrumento' },
       ' to ',
       { nl: '64', motivo: 'escala-de-instrumento' },
-      ' and that of women?',
+      ' and that of women, counted as the difference between the two percentages (in percentage points)?',
     ],
   },
   'risco-de-pobreza-ou-exclusao-2025': {
@@ -2390,14 +2396,19 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        duas: mudava o que entra no numerador e no denominador. */
     /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
        a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
-    origens: ['glossario-sobrecarga', 'eurostat-tespm140-populacao', 'eurostat-glossario-rendimento-disponivel'],
+    /* OS REGIMES DE OCUPAÇÃO EM PALAVRAS COMUNS (bloco P4, 02.10.2026, item 3 do brief P4; a §1.152, decisão 4). A
+       pergunta dizia «no total de todos os regimes de ocupação» sem dizer quais são; passa à forma única, com as
+       palavras que a leitura do mesmo cartão já usa e a K17 já audita (casa própria com ou sem crédito, arrendada a
+       preço de mercado ou a renda reduzida ou gratuita), apoiadas nas categorias da resposta do Eurostat
+       (`eurostat-tessi164-regimes`, que a pergunta passa a declarar), e o termo entre parênteses. */
+    origens: ['glossario-sobrecarga', 'eurostat-tespm140-populacao', 'eurostat-tessi164-regimes', 'eurostat-glossario-rendimento-disponivel'],
     pt: [
-      'Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de ',
+      'Que parte das pessoas, em casa própria com ou sem crédito ou arrendada a preço de mercado ou a renda reduzida ou gratuita (todos os regimes de ocupação), vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de ',
       { nl: '40', motivo: 'escala-de-instrumento' },
       ' % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?',
     ],
     en: [
-      'What share of people, across all tenure statuses, are in households where total housing costs, after deducting housing allowances, take more than ',
+      'What share of people, whether their home is owned with or without a mortgage or rented at market price or at a reduced rent or free (all tenure statuses), are in households where total housing costs, after deducting housing allowances, take more than ',
       { nl: '40', motivo: 'escala-de-instrumento' },
       ' % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?',
     ],
