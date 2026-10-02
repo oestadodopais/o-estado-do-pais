@@ -588,3 +588,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | p4-d | 6 cadeias novas | por ler | Claude Opus 5.5, construtor da passagem P4-d: «o limite legal é» e «the legal limit is», e a legenda e o cabeçalho da tabela do mapa da dívida em «Lugares» nas duas edições, que dizem a unidade da casa do cartão do índice de dívida (agora com a média) e o teto lido da linha do limite. A unidade da casa não entra no inventário como linha própria: é um dado declarado na medida e conferido pelo portão de HTML. A leitura cruzada do diff fica para o lugar de direção. |
+## S1 · a caixa das sugestões, 02.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| s1 | 26 cadeias novas, nenhuma retirada | por ler | Claude Opus 5.5, construtor do S1: o título, o parágrafo, a descrição, os quatro rótulos e a nota do que fica guardado da página das sugestões, as quatro frases das páginas do resultado e a frase da página das correções com a porta das sugestões, nas duas línguas. Os textos são os do brief à letra, menos a frase das correções, que é do construtor; a nota é rascunho à espera do diretor. Duas exceções de contexto novas em `VOZ-MARCADORES.md`, cada uma na sua rota, e a dispensa da frase inteira da nota inglesa na sentinela de «Language». |
+

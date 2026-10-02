@@ -3774,3 +3774,51 @@ já declaradas aqui), e a descrição nova da página da União, que diz também
 | conteudo | % of the three-year average revenue · the legal limit is % | p4-d | viva | A mesma legenda na edição inglesa (passagem P4-d, 02.10.2026). |
 | conteudo | Valor ( % da receita média de três anos ; o limite legal é % ) | p4-d | viva | O cabeçalho da coluna dos valores na tabela do mapa da dívida em «Lugares», com a unidade e o teto do cartão, que a régua da voz lê sem o 150 (passagem P4-d, 02.10.2026). |
 | conteudo | Value ( % of the three-year average revenue ; the legal limit is % ) | p4-d | viva | O mesmo cabeçalho na edição inglesa (passagem P4-d, 02.10.2026). |
+## S1 · a caixa das sugestões, 02.10.2026
+
+A página do formulário (`/sugestoes`, `/en/suggestions`) e as quatro do resultado entram no inventário no commit em que
+nascem, e a página das correções ganha a frase com a porta das sugestões (o brief S1, §5.1). Os textos são os do §5.4 e
+do §5.5 do brief, à letra, em `src/data/sugestoes.mjs`, menos a frase da página das correções, que é do construtor. As
+linhas estão escritas como a régua as lê: uma ligação no fim de uma frase deixa um espaço antes do ponto, e o apóstrofo
+do texto inglês do brief, que é o da máquina de escrever, chega à régua escapado pelo Astro (`&#39;`), porque a régua
+compara o texto como o HTML o escreve.
+
+A classe de cada uma, pela regra da casa: o título da página e o parágrafo que diz para que serve a caixa são
+**conteúdo**, porque são o objeto da página, como a política o é em `/correcoes`; a descrição do `<head>` é o começo
+desse parágrafo; os rótulos das caixas, as frases do resultado e a frase das correções são **navegação**, porque dizem
+como se usa um comando, o estado dele depois de usado, ou levam a outra página; e a nota do que fica guardado é
+**divulgação**: está na página porque quem recolhe dados pessoais junto de quem os deixa tem de lhe dar, no momento em
+que os recolhe, a informação que o artigo 13.º do Regulamento (UE) 2016/679 enumera, e é um rascunho do lugar de
+direção à espera do «sim» do diretor (§5.4 do brief). As marcas da voz que a nota e a página do
+obrigado levam («a página de onde veio», «não tem resposta garantida») têm exceção de contexto nas suas rotas, em
+`VOZ-MARCADORES.md`; e a palavra «language» da nota inglesa, que a sentinela da frase retirada «Language» apanharia, tem
+a dispensa da frase inteira em `scripts/medir-defeitos.mjs` e mais nenhuma.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Sugestões | s1 | viva | O título da página do formulário e das quatro do resultado (bloco S1). |
+| conteudo | Suggestions | s1 | viva | O mesmo título na edição inglesa. |
+| conteudo | O que procurou aqui e não encontrou? Que estudo gostava de ler? Escreva. As sugestões não se publicam: lê-as a direção do projeto e decide o que entra no plano. Para corrigir um número ou uma frase, a porta é outra: a página das correções . | s1 | viva | O parágrafo da página do formulário, à letra do §5.5 do brief: para que serve a caixa e para que não serve, com a porta das correções. |
+| conteudo | What did you look for here and not find? Which study would you like to read? Write it down. Suggestions are not published: the project&#39;s direction reads them and decides what enters the plan. To correct a number or a sentence, the door is another one: the corrections page . | s1 | viva | O mesmo parágrafo na edição inglesa, à letra do brief; o `&#39;` é o apóstrofo do brief, como a régua o lê. |
+| conteudo | O que procurou aqui e não encontrou? Que estudo gostava de ler? | s1 | viva | A descrição do `<head>` da página do formulário: as duas primeiras frases do parágrafo. |
+| conteudo | What did you look for here and not find? Which study would you like to read? | s1 | viva | A mesma descrição na edição inglesa. |
+| navegacao | O que procurou e não encontrou? | s1 | viva | O rótulo da primeira caixa do formulário (§5.5 do brief). |
+| navegacao | What did you look for and not find? | s1 | viva | O mesmo rótulo na edição inglesa. |
+| navegacao | Que estudo ou que número gostava de ver aqui? | s1 | viva | O rótulo da segunda caixa. |
+| navegacao | Which study or number would you like to see here? | s1 | viva | O mesmo rótulo na edição inglesa. |
+| navegacao | Outra coisa | s1 | viva | O rótulo da terceira caixa. |
+| navegacao | Anything else | s1 | viva | O mesmo rótulo na edição inglesa. |
+| navegacao | Contacto, se quiser resposta (opcional) | s1 | viva | O rótulo do contacto, que é opcional. |
+| navegacao | Contact, if you want a reply (optional) | s1 | viva | O mesmo rótulo na edição inglesa. |
+| divulgacao | O que fica guardado: o que escrever, a língua, a página de onde veio e, se o deixar, o contacto. O endereço IP não se guarda: fica durante uma hora uma marca cifrada dele, só para travar envios em massa. Os dados ficam em servidores na União Europeia. Uma sugestão decidida apaga-se ao fim de noventa dias; uma por decidir, ao fim de um ano. O contacto serve só para responder. Para saber o que enviou ou pedir que se apague, escreva para correcoes@oestadodopais.pt . | s1 | viva | A nota do que fica guardado, à letra do §5.4 do brief: rascunho do lugar de direção de 02.10.2026, à espera do diretor. Os números por extenso são as regras do registo da base, e o portão de HTML confere-os contra ele. |
+| divulgacao | What is kept: what you write, the language, the page you came from and, if you leave it, the contact. The IP address is not kept: an encrypted mark of it stays for one hour, only to stop mass sending. The data is held on servers in the European Union. A decided suggestion is deleted after ninety days; an undecided one after a year. The contact is used only to reply. To know what you sent or to ask for it to be deleted, write to correcoes@oestadodopais.pt . | s1 | viva | A mesma nota na edição inglesa, à letra do brief, e o mesmo rascunho à espera do diretor. |
+| navegacao | Obrigado. A sugestão chegou. Não se publica e não tem resposta garantida; o que entrar no plano aparece nestas páginas. | s1 | viva | A página do obrigado: o estado do envio depois de a base aceitar a sugestão (§5.5 do brief). |
+| navegacao | Thank you. The suggestion arrived. It is not published and a reply is not guaranteed; what enters the plan appears on these pages. | s1 | viva | A mesma frase na edição inglesa. |
+| navegacao | A sugestão vinha vazia. Escreva pelo menos numa das três caixas. | s1 | viva | A página da sugestão vazia. |
+| navegacao | The suggestion was empty. Write in at least one of the three boxes. | s1 | viva | A mesma frase na edição inglesa. |
+| navegacao | Chegaram cinco sugestões deste endereço na última hora. Volte mais tarde. | s1 | viva | A página do limite da hora; o número por extenso é a regra do registo da base, e o portão de HTML confere-o. |
+| navegacao | Five suggestions arrived from this address in the last hour. Please come back later. | s1 | viva | A mesma frase na edição inglesa. |
+| navegacao | A caixa não conseguiu guardar a sugestão. Volte a tentar mais tarde. | s1 | viva | A página do não chegou: a base não respondeu, a caixa do dia estava cheia, ou faltava o sal da marca. |
+| navegacao | The box could not keep the suggestion. Please try again later. | s1 | viva | A mesma frase na edição inglesa. |
+| navegacao | Para dizer o que procurou e não encontrou, ou que estudo gostava de ler, a porta é outra: a página das sugestões . | s1 | viva | A frase da página das correções para quem chegar à porta errada (§5.1 do brief), escrita pelo construtor no molde da última frase do parágrafo do formulário, e por ler pelo lugar de direção. |
+| navegacao | To say what you looked for and did not find, or which study you would like to read, the door is another one: the suggestions page . | s1 | viva | A mesma frase na edição inglesa. |

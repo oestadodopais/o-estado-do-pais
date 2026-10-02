@@ -486,6 +486,17 @@ const ROTAS_DO_INVENTARIO = new Set([
      registo. A rota não é a casa do método (Emenda 15 isenta o Método, o Sobre e
      o recibo), e por isso a sua autorreferência conta e vai a zero. */
   'correcoes',
+  /* A CAIXA DAS SUGESTÕES (bloco S1, 02.10.2026): a página do formulário e as
+     quatro do resultado entram no commit em que nascem, que é a regra desta
+     lista. São páginas do leitor: a Emenda 15 governa-as, e a sua
+     autorreferência vai a zero. A nota do que fica guardado é divulgação (a lei
+     pede-a a quem guarda dados de quem escreve), e o parágrafo e as frases do
+     resultado são o conteúdo da página, como a política o é em `/correcoes`. */
+  'sugestoes',
+  'sugestoesObrigado',
+  'sugestoesVazia',
+  'sugestoesLimite',
+  'sugestoesNaoChegou',
   /* `/agenda` entra na subetapa 4c, `/estudos` e `/estudos/<slug>` na 4e. São as
      páginas de leitura que a Emenda 15 governa e que o brief da etapa 4 manda
      medir a zero: nenhuma delas é a casa do método. */
@@ -1525,9 +1536,35 @@ for (const frases of frasesDaVozPorRota.values()) for (const t of frases) rendid
  * marcador.
  */
 const escapaParaRe = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+/**
+ * UMA RETIRADA DENTRO DE UMA FRASE DECLARADA, E SÓ DESSA (bloco S1, 02.10.2026).
+ *
+ * «Language» saiu da mobília com a segunda porta da língua (B1, peça 3), e a
+ * sentinela procura-a por palavra inteira e sem maiúsculas em todo o texto
+ * rendido. A nota do que fica guardado da caixa das sugestões, na edição
+ * inglesa, diz «the language» no meio de uma frase, e é o texto do brief à letra
+ * (§5.4 do brief S1), que o construtor não muda. A dispensa é para ESSA frase
+ * inteira, tal como a régua a lê, e para mais nenhuma: a palavra sozinha, noutra
+ * frase, ou nesta frase com uma palavra mudada, continua a morder, e a planta
+ * `s1-voz-language-de-volta` (`tests/pais/portoes.mjs`) prova-o. Se a nota
+ * mudar, a dispensa deixa de casar e a sentinela volta a morder, que é o que
+ * obriga quem a mudar a passar por aqui.
+ */
+const NOTA_INGLESA_DA_CAIXA =
+  'What is kept: what you write, the language, the page you came from and, if you leave it, the contact. ' +
+  'The IP address is not kept: an encrypted mark of it stays for one hour, only to stop mass sending. ' +
+  'The data is held on servers in the European Union. A decided suggestion is deleted after ninety days; ' +
+  'an undecided one after a year. The contact is used only to reply. To know what you sent or to ask for ' +
+  'it to be deleted, write to';
+/* As duas leituras da mesma frase: a da medida 8, com o endereço da ligação, e a da medida 9, que lê o texto
+   fora das ligações e por isso o perde. As duas são a mesma nota, e só a nota. */
+const RETIRADAS_DENTRO_DE_FRASE = new Map([
+  ['Language', new Set([`${NOTA_INGLESA_DA_CAIXA} correcoes@oestadodopais.pt .`, `${NOTA_INGLESA_DA_CAIXA} .`])],
+]);
 function ondeVolta(frase) {
   const re = new RegExp(`(?<![\\p{L}\\p{N}])${escapaParaRe(frase)}(?![\\p{L}\\p{N}])`, 'iu');
-  for (const t of rendidas) if (re.test(t)) return t;
+  const admitidas = RETIRADAS_DENTRO_DE_FRASE.get(frase) ?? new Set();
+  for (const t of rendidas) if (re.test(t) && !admitidas.has(t)) return t;
   return null;
 }
 
