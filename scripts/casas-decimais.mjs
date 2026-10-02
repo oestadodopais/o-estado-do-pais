@@ -31,7 +31,26 @@
  * AS PLANTAS CORREM SEMPRE, antes de a célula dizer zero, sobre cópias em memória: a linha dos jovens com o valor
  * antigo, uma linha composta arredondada, um inteiro alheio igual ao valor no mesmo excerto, um número agrupado à
  * inglesa com menos casas (que a forma anterior não lia), e três controlos que não podem morder (a mesma linha
- * derivada, a linha certa, e o número agrupado à inglesa com as mesmas casas).
+ * derivada, a linha certa, e o número agrupado à inglesa com as mesmas casas). Desde o bloco P4, as da forma que o
+ * INE publica, abaixo.
+ *
+ * AS LINHAS DO INE LEEM-SE PELA FORMA QUE O INE PUBLICA (bloco P4, 02.10.2026, item 2 do brief
+ * `design/observatorio/BRIEF-P4-os-pequenos-do-sitio.md`; a decisão 2 do §5 desse brief: «a regra das casas decimais
+ * lê a forma publicada da fonte quando a fonte a publica; o literal do excerto é o caminho geral»; a proposta do
+ * construtor da passagem K2-c, §1.151, decisão 5). Até ao P4 a célula deixava por ler 2 535 linhas, entre elas as
+ * 1 250 do INE, porque o excerto delas não acaba no literal do número: acaba no campo «valor», que é o número da
+ * máquina. O excerto do INE traz também «"ind_string" : "1 422,4"», que é a forma que o INE publica, com as suas
+ * casas e os milhares separados por espaço; e uma linha cuja fonte é uma resposta do INE (o endereço em `www.ine.pt`)
+ * lê-se por esse campo: o valor da linha tem de ser esse número, com as mesmas casas. Medido a 02.10.2026 sobre o
+ * livro-razão: o «ind_string» é o valor em 1 249 das 1 250 linhas, e a que difere é a da remuneração média, pela
+ * marca de provisório.
+ *
+ * A REGRA DA MARCA DE PROVISÓRIO. Quando o excerto declara um sinal convencional («"sinal_conv" : "&"», com
+ * «"sinal_conv_desc" : "Dado provisório"»), o INE escreve-o na forma publicada, depois do número e de um espaço
+ * («1 835 &»). Esse sinal, e só um sinal que o próprio excerto declara, sai do fim da forma antes de comparar: é a
+ * marca da fonte e não o número (o recibo da linha mostra-a pela nota da fonte). Uma forma com um sinal que o excerto
+ * não declara, ou um excerto com mais de um «ind_string», não se lê como número e fecha a construção: a célula não
+ * adivinha qual é o número.
  */
 
 /** Normaliza um número exato: sem zeros à esquerda na parte inteira, sem zeros à direita nas casas. */
@@ -61,14 +80,63 @@ export function literalDoValor(excerto) {
   return { n: normal(m[1].replace(/,/g, ''), m[2] ?? ''), casas: (m[2] ?? '').length, literal };
 }
 
+/** O anfitrião das respostas do INE, a fonte cuja forma publicada esta célula sabe ler. */
+const ANFITRIAO_DO_INE = 'www.ine.pt';
+
 /**
- * A célula sobre uma coleção de linhas (o livro-razão, ou uma cópia para as plantas).
+ * A forma que o INE publica para o número de uma linha, ou `null` se a linha não é uma resposta do INE com o campo
+ * «ind_string»: `{ n, casas, literal, sinal }`, com o sinal convencional que o excerto declara e a forma trazia, ou
+ * `{ erro }` quando a forma não se lê como número (um sinal que o excerto não declara, mais de uma forma).
+ * @param {Record<string, any>} linha
+ */
+export function formaPublicadaDoINE(linha) {
+  const excerto = String(linha.excerpt ?? '');
+  const formas = [...excerto.matchAll(/"ind_string"\s*:\s*"([^"]*)"/g)].map((m) => m[1]);
+  if (!formas.length) return null;
+  let anfitriao = '';
+  try { anfitriao = new URL(String(linha.source_url ?? '')).host; } catch { anfitriao = ''; }
+  if (anfitriao !== ANFITRIAO_DO_INE) return null;
+  if (formas.length !== 1) return { erro: `o excerto traz ${formas.length} formas publicadas («ind_string»), e a célula não adivinha qual é a do valor.` };
+  const sinais = [...excerto.matchAll(/"sinal_conv"\s*:\s*"([^"]+)"/g)].map((m) => m[1]);
+  let forma = formas[0].trim();
+  let sinal = null;
+  for (const s of sinais) {
+    if (forma.endsWith(` ${s}`)) { sinal = s; forma = forma.slice(0, -(s.length + 1)).trim(); break; }
+  }
+  const n = numeroDoValor(forma);
+  if (!n) {
+    return { erro: `a forma que o INE publica, «${formas[0]}», não se lê como número${sinais.length ? `, e o sinal que o excerto declara é «${sinais.join('», «')}»` : ', e o excerto não declara sinal convencional nenhum'}.` };
+  }
+  return { ...n, literal: formas[0], sinal };
+}
+
+/** A comparação do valor de uma linha com o número que a fonte escreve, e a queixa, ou `null` se batem. */
+function queixaDasCasas(l, v, fonte, onde) {
+  if (fonte.n === v.n && fonte.casas > v.casas) {
+    return `D · ${l.id}: ${onde} escreve o valor como «${fonte.literal}», com ${fonte.casas} casa(s) decimal(is), e a linha escreve «${l.value}», com ${v.casas}. A precisão é a da fonte (§1.127, decisão 3): corrige-se pelo mecanismo, com uma entrada «correcao» selada e o contador recontado.`;
+  }
+  if (fonte.n === v.n && fonte.casas < v.casas) {
+    return `D · ${l.id}: ${onde} escreve o valor como «${fonte.literal}» e a linha escreve «${l.value}», com mais casas decimais do que a fonte.`;
+  }
+  if (fonte.n !== v.n) {
+    return `D · ${l.id}: ${onde} escreve «${fonte.literal}» e o valor da linha é «${l.value}»: o número que a fonte escreve tem de ser o valor, com as mesmas casas.`;
+  }
+  return null;
+}
+
+/**
+ * A célula sobre uma coleção de linhas (o livro-razão, ou uma cópia para as plantas). Desde o bloco P4 as contas dizem
+ * quantas linhas se leem (pelo literal do fim do excerto ou pela forma que o INE publica) e quantas ficam por ler.
  * @param {Iterable<Record<string, any>>} linhas
  */
 export function conferirCasasDecimais(linhas) {
   /** @type {string[]} */
   const erros = [];
-  const contas = { linhas: 0, com_derivacao: 0, sem_excerto: 0, nao_numericas: 0, com_literal_do_valor: 0, sem_literal_do_valor: 0 };
+  const contas = {
+    linhas: 0, com_derivacao: 0, sem_excerto: 0, nao_numericas: 0,
+    com_literal_do_valor: 0, pela_forma_publicada_do_ine: 0, com_sinal_da_fonte: 0,
+    sem_literal_do_valor: 0, lidas: 0, por_ler: 0,
+  };
   for (const l of linhas) {
     contas.linhas++;
     if (l.derivation) { contas.com_derivacao++; continue; }
@@ -76,17 +144,23 @@ export function conferirCasasDecimais(linhas) {
     if (!excerto.trim() || excerto.includes('[a verificar]')) { contas.sem_excerto++; continue; }
     const v = numeroDoValor(l.value);
     if (!v) { contas.nao_numericas++; continue; }
+    const ine = formaPublicadaDoINE(l);
+    if (ine) {
+      contas.pela_forma_publicada_do_ine++;
+      if (ine.erro) { erros.push(`D · ${l.id}: ${ine.erro}`); continue; }
+      if (ine.sinal) contas.com_sinal_da_fonte++;
+      const q = queixaDasCasas(l, v, ine, 'a forma que o INE publica («ind_string»)');
+      if (q) erros.push(q);
+      continue;
+    }
     const fim = literalDoValor(excerto);
     if (!fim) { contas.sem_literal_do_valor++; continue; }
     contas.com_literal_do_valor++;
-    if (fim.n === v.n && fim.casas > v.casas) {
-      erros.push(`D · ${l.id}: o excerto escreve o valor como «${fim.literal}», com ${fim.casas} casa(s) decimal(is), e a linha escreve «${l.value}», com ${v.casas}. A precisão é a da fonte (§1.127, decisão 3): corrige-se pelo mecanismo, com uma entrada «correcao» selada e o contador recontado.`);
-    } else if (fim.n === v.n && fim.casas < v.casas) {
-      erros.push(`D · ${l.id}: o excerto escreve o valor como «${fim.literal}» e a linha escreve «${l.value}», com mais casas decimais do que a fonte.`);
-    } else if (fim.n !== v.n) {
-      erros.push(`D · ${l.id}: o excerto acaba em «${fim.literal}» e o valor da linha é «${l.value}»: o literal que é o próprio número tem de ser o valor, com as mesmas casas.`);
-    }
+    const q = queixaDasCasas(l, v, fim, 'o excerto');
+    if (q) erros.push(q);
   }
+  contas.lidas = contas.com_literal_do_valor + contas.pela_forma_publicada_do_ine;
+  contas.por_ler = contas.sem_literal_do_valor;
   return { erros, contas };
 }
 
@@ -111,6 +185,25 @@ export function linhasDasPlantas(linhas) {
     { nome: 'o controlo: a linha dos jovens como está', linha: copia('jovens-nem-2025', (l) => l), morde: false },
     { nome: 'o controlo: o número agrupado à inglesa com as mesmas casas, «1422,40» contra «1,422.40»',
       linha: copia('jovens-nem-2025', (l) => ({ ...l, value: '1422,40', excerpt: String(l.excerpt).replace(/: 8\.0$/, ': 1,422.40') })), morde: false },
+    /* AS PLANTAS DA FORMA QUE O INE PUBLICA (bloco P4, 02.10.2026). */
+    { nome: 'uma linha do INE com menos casas do que a forma publicada, «86,6» contra «86,60» (o «valor» da máquina diz «86.6»)',
+      linha: copia('alcacer-do-sal-poder-de-compra-2023', (l) => ({ ...l, value: '86,6' })), morde: true },
+    { nome: 'uma linha do INE arredondada às unidades, «1 422» contra «1 422,4»',
+      linha: copia('abrantes-ganho-medio-mensal-2024', (l) => ({ ...l, value: '1 422' })), morde: true },
+    { nome: 'uma linha do INE com mais casas do que a forma publicada, «1 422,40» contra «1 422,4»',
+      linha: copia('abrantes-ganho-medio-mensal-2024', (l) => ({ ...l, value: '1 422,40' })), morde: true },
+    { nome: 'uma linha do INE com o número de outro concelho, «1 383,6» contra «1 422,4»',
+      linha: copia('abrantes-ganho-medio-mensal-2024', (l) => ({ ...l, value: '1 383,6' })), morde: true },
+    { nome: 'a linha provisória do INE com um sinal que o excerto não declara, «1 835 x» com o sinal «&»',
+      linha: copia('remuneracao-bruta-mensal-media', (l) => ({ ...l, excerpt: String(l.excerpt).replace('"ind_string" : "1 835 &"', '"ind_string" : "1 835 x"') })), morde: true },
+    { nome: 'a linha provisória do INE arredondada, «1 84» contra «1 835 &»',
+      linha: copia('remuneracao-bruta-mensal-media', (l) => ({ ...l, value: '1 84' })), morde: true },
+    { nome: 'o controlo: a linha provisória do INE como está, «1 835» contra «1 835 &» com o sinal declarado',
+      linha: copia('remuneracao-bruta-mensal-media', (l) => l), morde: false },
+    { nome: 'o controlo: uma linha do INE como está, «1 422,4»',
+      linha: copia('abrantes-ganho-medio-mensal-2024', (l) => l), morde: false },
+    { nome: 'o controlo: a linha do INE com o zero do fim, como está, «86,60»',
+      linha: copia('alcacer-do-sal-poder-de-compra-2023', (l) => l), morde: false },
   ];
 }
 
