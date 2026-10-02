@@ -575,4 +575,4 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
-| p4 | 2 cadeias novas, nenhuma retirada | por ler | Claude Opus 5.5, construtor do P4: o nome do grupo do comando do tema («Tema» e «Theme»), que só se ouve, no cabeçalho de todas as páginas, com a Emenda 12 de volta (item 00 do brief P4). |
+| p4 | 4 cadeias novas, 2 retiradas | por ler | Claude Opus 5.5, construtor do P4: o nome do grupo do comando do tema («Tema» e «Theme»), que só se ouve, no cabeçalho de todas as páginas, com a Emenda 12 de volta (item 00 do brief P4); e a pergunta da sobrecarga do custo da habitação no total com os regimes de ocupação explicados em palavras comuns, nas duas línguas, no lugar da forma do UE2-b, que passa a retirada (item 3). |

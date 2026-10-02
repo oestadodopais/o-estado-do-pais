@@ -26,6 +26,11 @@
       "quem": "Claude Opus 5.5",
       "quando": "2026-10-02",
       "o_que": "a passagem UE2-b: a forma em palavras comuns passa a ser a única, nas 18 perguntas que mudaram, pedaço a pedaço, com os termos que a leitura a frio do UE2 apontou explicados; as entradas das formas da página da União saem. Escrito por design/especime-v3/medicoes/ue2-2026-10-02/auditoria-das-perguntas.mjs"
+    },
+    {
+      "quem": "Claude Opus 5.5",
+      "quando": "2026-10-02",
+      "o_que": "o P4, item 3 do brief: os pontos percentuais na pergunta da diferença de emprego entre sexos e os regimes de ocupação na da sobrecarga do custo da habitação no total, explicados em palavras comuns pela forma única, pedaço a pedaço. Escrito por design/especime-v3/medicoes/p4-2026-10-02/auditoria-das-perguntas-p4.mjs"
     }
   ],
   "perguntas": [
@@ -1693,18 +1698,46 @@
       "origens": [
         "glossario-sobrecarga",
         "eurostat-tespm140-populacao",
+        "eurostat-tessi164-regimes",
         "eurostat-glossario-rendimento-disponivel"
       ],
       "pergunta": {
-        "pt": "Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?",
-        "en": "What share of people, across all tenure statuses, are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?"
+        "pt": "Que parte das pessoas, em casa própria com ou sem crédito ou arrendada a preço de mercado ou a renda reduzida ou gratuita (todos os regimes de ocupação), vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?",
+        "en": "What share of people, whether their home is owned with or without a mortgage or rented at market price or at a reduced rent or free (all tenure statuses), are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?"
       },
-      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). O rendimento disponível diz-se pelo que é, o que o agregado recebe depois de pagos os impostos e as contribuições sociais, pelo glossário do Eurostat, e «líquido de subsídios à habitação» como «descontados os apoios à habitação», pelo glossário da sobrecarga; o termo fica entre parênteses.",
+      "mudanca": "P4 (02.10.2026, item 3 do brief P4): os regimes de ocupação dizem-se pelas categorias da resposta do Eurostat (casa própria com ou sem crédito, arrendada a preço de mercado ou a renda reduzida ou gratuita), com as palavras que a leitura do mesmo cartão já usa, e o termo fica entre parênteses; o resto da pergunta não muda.",
       "pedacos": [
         {
-          "pt": "Que parte das pessoas, no total de todos os regimes de ocupação, ",
-          "en": "What share of people, across all tenure statuses, ",
+          "pt": "Que parte das pessoas, ",
+          "en": "What share of people, ",
           "apoios": [
+            {
+              "origem": "eurostat-tespm140-populacao",
+              "campo": "excerto",
+              "literal": "Percentage of the population living in a household"
+            }
+          ]
+        },
+        {
+          "pt": "em casa própria com ou sem crédito ou arrendada a preço de mercado ou a renda reduzida ou gratuita ",
+          "en": "whether their home is owned with or without a mortgage or rented at market price or at a reduced rent or free ",
+          "apoios": [
+            {
+              "origem": "eurostat-tessi164-regimes",
+              "campo": "excerto",
+              "literal": "\"OWN_L\":\"Owner, with mortgage or loan\",\"OWN_NL\":\"Owner, no outstanding mortgage or housing loan\",\"RENT_MKT\":\"Tenant, rent at market price\",\"RENT_FR\":\"Tenant, rent at reduced price or free\""
+            }
+          ]
+        },
+        {
+          "pt": "(todos os regimes de ocupação), ",
+          "en": "(all tenure statuses), ",
+          "apoios": [
+            {
+              "origem": "eurostat-tessi164-regimes",
+              "campo": "documento",
+              "literal": "by tenure status"
+            },
             {
               "origem": "eurostat-tespm140-populacao",
               "campo": "excerto",
@@ -2147,37 +2180,20 @@
         "ce-swd-2026-222-disparidade-de-emprego"
       ],
       "pergunta": {
-        "pt": "Qual é a diferença, em pontos percentuais, entre a taxa de emprego dos homens dos 20 aos 64 anos e a das mulheres?",
-        "en": "What is the difference, in percentage points, between the employment rate of men aged 20 to 64 and that of women?"
+        "pt": "Qual é a diferença entre a taxa de emprego dos homens dos 20 aos 64 anos e a das mulheres, contada como a diferença entre as duas percentagens (em pontos percentuais)?",
+        "en": "What is the difference between the employment rate of men aged 20 to 64 and that of women, counted as the difference between the two percentages (in percentage points)?"
       },
-      "mudanca": null,
+      "mudanca": "P4 (02.10.2026, item 3 do brief P4): os pontos percentuais dizem-se pela conta que a definição do Eurostat escreve, a diferença entre as duas percentagens (as taxas de emprego, que a linha mede em percentagem da população), e o termo fica entre parênteses, como na pergunta da taxa de atividade.",
       "pedacos": [
         {
-          "pt": "Qual é a diferença",
-          "en": "What is the difference",
+          "pt": "Qual é a diferença entre a taxa de emprego dos homens ",
+          "en": "What is the difference between the employment rate of men ",
           "apoios": [
             {
               "origem": "eurostat-tesem060-descricao",
               "campo": "excerto",
               "literal": "defined as the difference between the employment rates"
-            }
-          ]
-        },
-        {
-          "pt": ", em pontos percentuais,",
-          "en": ", in percentage points,",
-          "apoios": [
-            {
-              "origem": "ce-swd-2026-222-disparidade-de-emprego",
-              "campo": "excerto",
-              "literal": "(percentage points, population aged 20-64"
-            }
-          ]
-        },
-        {
-          "pt": " entre a taxa de emprego dos homens ",
-          "en": " between the employment rate of men ",
-          "apoios": [
+            },
             {
               "origem": "eurostat-tesem060-descricao",
               "campo": "excerto",
@@ -2197,13 +2213,40 @@
           ]
         },
         {
-          "pt": "e a das mulheres?",
-          "en": "and that of women?",
+          "pt": "e a das mulheres, ",
+          "en": "and that of women, ",
           "apoios": [
             {
               "origem": "eurostat-tesem060-descricao",
               "campo": "excerto",
               "literal": "employment rates of men and women"
+            }
+          ]
+        },
+        {
+          "pt": "contada como a diferença entre as duas percentagens ",
+          "en": "counted as the difference between the two percentages ",
+          "apoios": [
+            {
+              "origem": "eurostat-tesem060-descricao",
+              "campo": "excerto",
+              "literal": "the difference between the employment rates"
+            },
+            {
+              "linha": "disparidade-de-emprego-entre-sexos-2025",
+              "campo": "excerpt",
+              "literal": "Percentage of total population"
+            }
+          ]
+        },
+        {
+          "pt": "(em pontos percentuais)?",
+          "en": "(in percentage points)?",
+          "apoios": [
+            {
+              "origem": "ce-swd-2026-222-disparidade-de-emprego",
+              "campo": "excerto",
+              "literal": "(percentage points, population aged 20-64"
             }
           ]
         }
