@@ -238,6 +238,8 @@ const contaDosPaises = paisesDaUniao().length;
     {faixasDosPaises.map((x) => <FaixaDosPaises linha={x.linha} lang={lang} />)}
   </section>
 
+  {/* O TÍTULO DA FILA DOS CARTÕES (bloco UE2): a secção dos países fica entre a manchete e a fila, e a fila diz o que é. */}
+  <h2 class="paises-titulo quadros-titulo" id="quadros">{s.uniaoEuropeia.quadrosTitulo}</h2>
   <Faixa
     s={s}
     lang={lang}

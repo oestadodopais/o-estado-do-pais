@@ -22,6 +22,12 @@
   border-top: 1px solid var(--ink);
 }
 
+/* O título da fila dos 21 cartões, a seguir à secção dos países: a mesma forma do título dela, com o ar de uma secção. */
+.quadros-titulo {
+  margin-top: clamp(30px, 3.2vw, 44px);
+  padding-bottom: 12px;
+}
+
 .paises-medida {
   display: grid;
   gap: 6px;

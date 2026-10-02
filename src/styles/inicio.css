@@ -3335,7 +3335,11 @@ a.porta:hover .porta-seta {
   transition: transform 0.16s ease;
   transform-origin: 30% 50%;
 }
-.dobra[open] .dobra-seta::before {
+/* SÓ A SETA DA PRÓPRIA DOBRA RODA (bloco UE2, 02.10.2026). O seletor era `.dobra[open] .dobra-seta::before`, e
+   apanhava também as setas das dobras do excerto que vivem dentro da leitura aberta (`OrigemDaDefinicao`, com a
+   mesma classe): uma leitura aberta mostrava cada «Excerto» com a seta de aberto, e fechado. Visto na captura da
+   definição aberta do UE2; a seta do excerto tem a sua regra em `definicao.css`. */
+.dobra[open] > .dobra-abrir .dobra-seta::before {
   transform: rotate(90deg);
 }
 .dobra[open] .dobra-nome {

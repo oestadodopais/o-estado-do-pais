@@ -1135,6 +1135,11 @@ export const STRINGS = {
       paisesFim: ' países',
       listaA: 'Os ',
       listaFim: ' por ordem, do mais alto para o mais baixo',
+      /* O TÍTULO DA FILA DOS 21 CARTÕES (bloco UE2): a fila vinha logo a seguir à manchete, que lhe dava o contexto; desde
+         o UE2 a secção dos países fica entre as duas, e a fila ganha um título que diz o que os cartões são. São as
+         palavras do conjunto que o contador de cada cartão já diz a quem o ouve («das medidas dos dois quadros da União
+         Europeia»), em título. */
+      quadrosTitulo: 'As medidas dos dois quadros da União Europeia',
     },
 
     /**
@@ -3388,6 +3393,7 @@ export const STRINGS = {
       paisesFim: ' countries',
       listaA: 'The ',
       listaFim: ' in order, from highest to lowest',
+      quadrosTitulo: 'The measures of the two European Union scoreboards',
     },
 
     estado: {
