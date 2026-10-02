@@ -64,10 +64,10 @@
  *
  * A FAIXA DOS 21 CARTÕES NÃO CORRE DE LADO NESTA PÁGINA (o item 4 do brief): a
  * `forma="pilha"` pô-la numa grelha que dobra em todas as larguras, e a 390 px
- * a página lê-se de cima a baixo. As definições dobradas dos 21 cartões usam a
- * forma da página da União, quando a definição a declara (`uniao`, em
- * `DEFINICOES_DAS_MEDIDAS`): as palavras comuns primeiro, e o termo da fonte ao
- * lado, entre parênteses (a decisão 3 do §5 do brief).
+ * a página lê-se de cima a baixo. As definições dobradas dos 21 cartões dizem
+ * as palavras comuns primeiro, e o termo da fonte ao lado, entre parênteses (a
+ * decisão 3 do §5 do brief); desde a passagem UE2-b é a forma única de cada
+ * definição, em todo o lado onde ela se rende (`DEFINICOES_DAS_MEDIDAS`).
  */
 import Base from '../layouts/Base.astro';
 import '../styles/pais.css';
@@ -290,7 +290,7 @@ const contaDosPaises = paisesDaUniao().length;
       />
     </div>
 
-    <LeituraBreve s={s} lang={lang} quadro="pdm" medidas={medidas} formaDaDefinicao="uniao" />
+    <LeituraBreve s={s} lang={lang} quadro="pdm" medidas={medidas} />
 
     <hr class="paineis-separador" data-separador-paineis />
 
@@ -323,7 +323,7 @@ const contaDosPaises = paisesDaUniao().length;
         </p>
       </div>
 
-      <LeituraBreve s={s} lang={lang} quadro="social" medidas={sociais} formaDaDefinicao="uniao" />
+      <LeituraBreve s={s} lang={lang} quadro="social" medidas={sociais} />
     </section>
 
     {/* ------------------------------------------------------------------

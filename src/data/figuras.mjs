@@ -1847,6 +1847,48 @@ export const ORIGENS_DAS_DEFINICOES = /** @type {const} */ ({
       sha256: "3cadaa8dcec031d42b6c88a61b411458cc61efc27cfca8216c8ab598c30a64d6",
     },
   },
+  /* ===========================================================================
+     AS ORIGENS DA PASSAGEM UE2-b (02.10.2026)
+     ===========================================================================
+     As definições da página da União explicam em palavras comuns os termos que a leitura a frio do UE2 apontou (os
+     achados 5 e 6) e que o construtor tinha proposto, e cada palavra corrente apoia-se num literal de uma origem
+     selada. Quase todas as origens já estavam declaradas (a descrição do PIB, a do índice dos preços da habitação, os
+     glossários da atividade, do desemprego, da mediana e do rendimento disponível); estas duas são recortes novos de
+     ficheiros que o motor JÁ tinha selado, com o mesmo pedido, a mesma hora, o mesmo cliente e o mesmo sha256 das
+     origens irmãs, e por isso nenhum pedido novo se fez. O guião `design/especime-v3/medicoes/ue2-2026-10-02/
+     origens-ue2-b.py` relê os dois ficheiros no motor, confere o sha256 e confere que cada excerto está no campo que a
+     origem diz. */
+  "eurostat-tipslc10-privacao": {
+    publicador: "Eurostat",
+    documento: "People at risk of poverty or social exclusion",
+    url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=PT&unit=PC",
+    lido: "2026-09-24",
+    lingua: "en",
+    excerto: "Severely materially deprived are persons having living conditions severely constrained by a lack of resources, they experience at least seven out of thirteen deprivation items.",
+    selo: {
+      motor: "indicators/out/l1-2026-09-24/eurostat-tipslc10.json",
+      campo: "extension.description",
+      hora: "2026-09-24T06:29:30Z",
+      cliente: "core.http.HttpClient.condicional",
+      sha256: "72d44cd6f15295f80f3495efe152fc42b574530789f8511292fc8524edc34dbc",
+    },
+  },
+  "eurostat-sec2010-ocde": {
+    publicador: "Eurostat",
+    documento: "European system of accounts: ESA 2010",
+    url: "https://ec.europa.eu/eurostat/documents/3859598/5925693/KS-02-13-269-EN.PDF",
+    lido: "2026-09-26",
+    lingua: "en",
+    excerto: "the Organisation for Economic Cooperation and Development (OECD)",
+    selo: {
+      motor: "indicators/out/l1-2026-09-26/eurostat-esa2010-KS-02-13-269-EN.pdf",
+      campo: "a extração pdftotext (modo simples), §1.06, com as quebras de linha lidas como espaços",
+      hora: "2026-09-26T08:30:11Z",
+      cliente: "core.http.HttpClient.condicional",
+      sha256: "9569393aefd24d7fed20e55f30e68850148004e45c70dd5af4eda73214349858",
+      extracao: {"ficheiro": "indicators/out/l1-2026-09-26/eurostat-esa2010-KS-02-13-269-EN.txt", "sha256": "164126b77cddab0134a5f3a460f3454631a2f42eb75584df7cce4fc3909f7c9e", "ferramenta": "pdftotext version 26.03.0, modo simples (sem -layout)"},
+    },
+  },
   ...ORIGENS_RP1,
 });
 
@@ -1913,34 +1955,30 @@ export const DEFINICAO_DOS_PAINEIS = /** @type {const} */ ({
  * frase sai agora, palavra por palavra, com o endereço e o excerto ao lado.
  *
  * ---------------------------------------------------------------------------
- * A FORMA DA PÁGINA DA UNIÃO (bloco UE2, 02.10.2026, o item 3 e a decisão 3 do
- * brief UE2; o achado 6 da leitura a frio do K2)
+ * AS PALAVRAS COMUNS PRIMEIRO, E O TERMO DA FONTE ENTRE PARÊNTESES (bloco UE2 e
+ * passagem UE2-b, 02.10.2026)
  * ---------------------------------------------------------------------------
- * Na página da União, a definição dobrada de cada um dos 21 cartões diz em
- * palavras comuns o que o número é, e o termo técnico da fonte fica ao lado,
- * entre parênteses, para quem o procura. Sete perguntas usavam um dos quatro
- * termos que a leitura a frio do K2 apontou (o índice nominal do custo unitário
- * do trabalho, os deflatores, as economias avançadas e a dívida ou o fluxo de
- * crédito consolidado), e cada uma ganha `uniao`: a pergunta nessa forma, nas
- * duas línguas, com as suas origens.
- *
- * É UMA FORMA E NÃO UMA SEGUNDA DEFINIÇÃO. As mesmas perguntas rendem-se na
- * dobra dos cartões das páginas de assunto, que o §4 do brief não deixa mudar,
- * e por isso a pergunta do cartão fica como estava e a página da União usa a
- * sua forma, como o recibo da série usa a `serie`. As regras, que a construção
- * e as células conferem:
- *   · a forma cita todas as origens da pergunta do cartão, e acrescenta as que
- *     explicam os termos (`conferirOrigensDeclaradas()`, abaixo);
- *   · cada pedaço dela apoia-se num literal de uma origem que ela declara, e
- *     cada origem que ela declara apoia um pedaço (a K16 do `check:cartao`, com
- *     a auditoria em `tests/cartao/perguntas-provadas.json`);
- *   · as palavras que explicam são as que a leitura de cada cartão nacional já
- *     usa e a K17 já audita, onde as há («o que se paga pelo trabalho a
- *     dividir pelo que ele produz», «descontado o que reembolsaram», «a parte
- *     que as exportações de bens e serviços … têm no total»), e nenhuma muda um
- *     valor nem uma etiqueta da fonte;
- *   · a régua 8.4 do `check:lugar` confere, na página da União, que a dobra
- *     rende a forma e as origens dela, carácter a carácter.
+ * Cada definição diz em palavras comuns o que o número é, e o termo técnico da
+ * fonte fica ao lado, entre parênteses, para quem o procura (a decisão 3 do
+ * brief UE2). O bloco UE2 fê-lo numa forma só da página da União, porque o §4
+ * do brief não deixava mudar as páginas de assunto; na passagem UE2-b o lugar de
+ * direção decidiu que uma definição é uma coisa e vive num lugar (§1.143), e a
+ * forma em palavras comuns passou a ser a ÚNICA, em todo o lado onde a pergunta
+ * se rende: a página da União, os cartões das páginas de assunto e das áreas, e
+ * os recibos das séries. Na mesma passagem, os outros termos que a leitura a
+ * frio apontou ganharam a explicação: o PIB, os ativos e os passivos, a balança
+ * corrente e a média móvel, a OCDE, a população ativa, os pontos percentuais, a
+ * privação material e social grave, o rendimento disponível e os apoios à
+ * habitação. As regras, que a construção e as células conferem:
+ *   · cada pedaço de cada pergunta apoia-se num literal de uma origem que ela
+ *     declara, e cada origem que ela declara apoia um pedaço (a K16 do
+ *     `check:cartao`, com a auditoria em `tests/cartao/perguntas-provadas.json`,
+ *     escrita e conferida por `design/especime-v3/medicoes/ue2-2026-10-02/
+ *     auditoria-das-perguntas.mjs`);
+ *   · as palavras que explicam são, onde as há, as que as leituras dos cartões
+ *     nacionais já usam e a K17 já audita, e nenhuma muda um valor nem uma
+ *     etiqueta da fonte;
+ *   · o grupo etário que a linha fixa continua escrito como intervalo (a K13).
  */
 export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
   'divida-publica-2025': {
@@ -1948,74 +1986,69 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        leitura a frio da peça 1 do B2). A origem escreve «in % of GDP» e não
        define o PIB; a glosa era da casa, sem origem. A pergunta diz agora o que
        a origem diz, como as outras perguntas que dividem pelo PIB. */
-    origens: ['pdm-divida-publica'],
-    pt: ['Quanto devem as administrações públicas, em percentagem do PIB?'],
-    en: ['How much does general government owe, as a percentage of GDP?'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['pdm-divida-publica', 'eurostat-tipsna40-descricao'],
+    pt: [
+      'Quanto devem as administrações públicas, em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?',
+    ],
+    en: [
+      'How much does general government owe, as a percentage of the value of the final goods and services the economy produces in a year (GDP)?',
+    ],
   },
   'posicao-de-investimento-internacional-2025': {
     /* DUAS ORIGENS DESDE 14.09.2026 (achado 3): o conceito é do Banco de
        Portugal, que compila a posição de Portugal e a explica nas duas línguas;
        a unidade («em percentagem do PIB») é da linha da Comissão, e nenhum
        excerto do Banco de Portugal a diz. A ordem é a da frase. */
-    origens: ['bdp-pii', 'pdm-posicao-de-investimento'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['bdp-pii', 'pdm-posicao-de-investimento', 'eurostat-tipsna40-descricao'],
     pt: [
-      'Qual é a diferença entre os ativos financeiros e os passivos dos residentes face ao resto do mundo, em percentagem do PIB?',
+      'Qual é a diferença entre o que os residentes do país têm no resto do mundo e o que lhe devem (os ativos financeiros e os passivos face ao exterior), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?',
     ],
     en: [
-      'What is the difference between residents’ financial assets and liabilities relative to the rest of the world, as a percentage of GDP?',
+      'What is the difference between what the country’s residents own in the rest of the world and what they owe to it (financial assets and liabilities relative to the rest of the world), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?',
     ],
   },
   'custo-unitario-do-trabalho-2025': {
     /* REESCRITA A 09.09.2026: dizia «o custo nominal do trabalho por unidade
        produzida», e a linha da Comissão diz «nominal unit labour cost index,
        per hour worked». A produção era da casa. */
-    origens: ['pdm-custo-do-trabalho'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['pdm-custo-do-trabalho', 'eurostat-tipslm10-descricao'],
     pt: [
-      'Quanto mudou em três anos o índice nominal do custo unitário do trabalho, por hora trabalhada?',
+      'Quanto mudou em três anos a remuneração por hora de trabalho, aos preços de cada ano, a dividir pelo que se produz numa hora de trabalho (o índice nominal do custo unitário do trabalho, por hora trabalhada)?',
     ],
     en: [
-      'How much has the nominal unit labour cost index, per hour worked, changed over three years?',
+      'How much has pay per hour of work, at each year’s prices, divided by what an hour of work produces, changed over three years (the nominal unit labour cost index, per hour worked)?',
     ],
-    /* A FORMA DA PÁGINA DA UNIÃO (bloco UE2, 02.10.2026): a ver a nota antes de `DEFINICOES_DAS_MEDIDAS`. */
-    uniao: {
-      origens: ['pdm-custo-do-trabalho', 'eurostat-tipslm10-descricao'],
-      pt: [
-        'Quanto mudou em três anos a remuneração por hora de trabalho, aos preços de cada ano, a dividir pelo que se produz numa hora de trabalho (o índice nominal do custo unitário do trabalho, por hora trabalhada)?',
-      ],
-      en: [
-        'How much has pay per hour of work, at each year’s prices, divided by what an hour of work produces, changed over three years (the nominal unit labour cost index, per hour worked)?',
-      ],
-    },
   },
   'precos-da-habitacao-2025': {
-    origens: ['glossario-hpi'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['glossario-hpi', 'eurostat-tipsho20-descricao'],
     pt: [
-      'Quanto mudaram os preços de transação das casas compradas pelas famílias?',
+      'Quanto mudaram num ano os preços de transação das casas compradas pelas famílias?',
     ],
     en: [
-      'How much have the transaction prices of homes purchased by households changed?',
+      'How much have the transaction prices of homes purchased by households changed in a year?',
     ],
   },
   'desempenho-das-exportacoes-2025': {
     /* REESCRITA A 09.09.2026: dizia «a quota do país nas exportações das
        economias avançadas», e a linha da Comissão diz «export performance
        against advanced economies». A quota era da casa. */
-    origens: ['pdm-exportacoes'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['pdm-exportacoes', 'eurostat-tipsbp60-descricao', 'eurostat-sec2010-ocde'],
     pt: [
-      'Quanto mudou em três anos o desempenho das exportações do país face às economias avançadas?',
+      'Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)?',
     ],
     en: [
-      'How much has the country’s export performance against advanced economies changed over three years?',
+      'How much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD changed over three years (export performance against advanced economies)?',
     ],
-    uniao: {
-      origens: ['pdm-exportacoes', 'eurostat-tipsbp60-descricao'],
-      pt: [
-        'Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da OCDE e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)?',
-      ],
-      en: [
-        'How much has the part that the country’s exports of goods and services make up of the total exports of OECD countries and of EU countries outside the OECD changed over three years (export performance against advanced economies)?',
-      ],
-    },
   },
   'divida-das-empresas-2025': {
     /* A EXPANSÃO DA SIGLA FICOU `[a verificar]` A 14.09.2026 (achado 6), porque
@@ -2023,38 +2056,28 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        I142) a resposta do Eurostat ao pedido das próprias linhas liga-o, e a
        definição volta a escrever «sociedades não financeiras» com a segunda
        origem que o prova (`eurostat-tipspd30`). */
-    origens: ['pdm-divida-das-empresas', 'eurostat-tipspd30'],
-    pt: ['Quanto devem as sociedades não financeiras, em dívida consolidada e em percentagem do PIB?'],
-    en: ['How much do non-financial corporations owe in consolidated debt, as a percentage of GDP?'],
-    uniao: {
-      origens: ['pdm-divida-das-empresas', 'eurostat-tipspd30', 'eurostat-tipspd30-descricao', 'eurostat-tipspc30-descricao'],
-      pt: [
-        'Quanto devem as empresas que não são financeiras, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada das sociedades não financeiras), em percentagem do PIB?',
-      ],
-      en: [
-        'How much do companies other than financial companies owe in loans and debt securities, leaving out what they owe one another (the consolidated debt of non-financial corporations), as a percentage of GDP?',
-      ],
-    },
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['pdm-divida-das-empresas', 'eurostat-tipspd30', 'eurostat-tipspd30-descricao', 'eurostat-tipspc30-descricao', 'eurostat-tipsna40-descricao'],
+    pt: [
+      'Quanto devem as empresas que não são financeiras, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada das sociedades não financeiras), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?',
+    ],
+    en: [
+      'How much do companies other than financial companies owe in loans and debt securities, leaving out what they owe one another (the consolidated debt of non-financial corporations), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?',
+    ],
   },
   'divida-das-familias-2025': {
     /* DUAS ORIGENS: a linha da Comissão abrevia «incl. NPISH», e o nome por
        extenso é o do glossário do Eurostat. */
-    origens: ['pdm-divida-das-familias', 'glossario-npish'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['pdm-divida-das-familias', 'glossario-npish', 'eurostat-tipspd22-descricao', 'eurostat-tipspc40-descricao', 'eurostat-tipsna40-descricao'],
     pt: [
-      'Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em dívida consolidada e em percentagem do PIB?',
+      'Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?',
     ],
     en: [
-      'How much do households and non-profit institutions serving them owe in consolidated debt, as a percentage of GDP?',
+      'How much do households and non-profit institutions serving them owe in loans and debt securities, leaving out what they owe one another (consolidated debt), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?',
     ],
-    uniao: {
-      origens: ['pdm-divida-das-familias', 'glossario-npish', 'eurostat-tipspd22-descricao', 'eurostat-tipspc40-descricao'],
-      pt: [
-        'Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada), em percentagem do PIB?',
-      ],
-      en: [
-        'How much do households and non-profit institutions serving them owe in loans and debt securities, leaving out what they owe one another (consolidated debt), as a percentage of GDP?',
-      ],
-    },
   },
   'fluxo-de-credito-as-empresas-2025': {
     /* REESCRITA A 09.09.2026 na primeira oração: dizia «o crédito novo», e a
@@ -2079,22 +2102,15 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        pedido da dívida das empresas escreve «Non-financial corporations» por
        extenso (`eurostat-tipspd30`), e a definição volta a dizer «sociedades
        não financeiras» sem o marcador. */
-    origens: ['pdm-credito-as-empresas', 'glossario-fdi', 'eurostat-tipspd30'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['pdm-credito-as-empresas', 'glossario-fdi', 'eurostat-tipspd30', 'eurostat-tipspc30-descricao', 'eurostat-sec2010-registo-liquido'],
     pt: [
-      'Quanto representa o fluxo de crédito consolidado às sociedades não financeiras na dívida que tinham no período anterior, excluindo o investimento direto estrangeiro das duas parcelas?',
+      'Quanto crédito contraíram num ano as empresas que não são financeiras, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado das sociedades não financeiras), em percentagem da dívida que tinham no fim do ano anterior, excluindo o investimento direto estrangeiro das duas parcelas?',
     ],
     en: [
-      'What percentage of non-financial corporations’ debt in the previous period does their consolidated credit flow represent, excluding foreign direct investment from both amounts?',
+      'How much credit did companies other than financial companies take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow of non-financial corporations), as a percentage of the debt they had at the end of the previous year, excluding foreign direct investment from both amounts?',
     ],
-    uniao: {
-      origens: ['pdm-credito-as-empresas', 'glossario-fdi', 'eurostat-tipspd30', 'eurostat-tipspc30-descricao', 'eurostat-sec2010-registo-liquido'],
-      pt: [
-        'Quanto crédito contraíram num ano as empresas que não são financeiras, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado das sociedades não financeiras), em percentagem da dívida que tinham no fim do ano anterior, excluindo o investimento direto estrangeiro das duas parcelas?',
-      ],
-      en: [
-        'How much credit did companies other than financial companies take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow of non-financial corporations), as a percentage of the debt they had at the end of the previous year, excluding foreign direct investment from both amounts?',
-      ],
-    },
   },
   'fluxo-de-credito-as-familias-2025': {
     /* REESCRITA A 09.09.2026 na primeira oração, pela mesma razão da anterior, e
@@ -2104,22 +2120,15 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        excerto da Comissão diz «household debt stock in t-1». «t-1» é o período
        antes do de referência, e mais nada: nem «fim», nem «ano», que eram as
        duas palavras da casa. A definição diz agora o que o excerto diz. */
-    origens: ['pdm-credito-as-familias', 'glossario-npish'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['pdm-credito-as-familias', 'glossario-npish', 'eurostat-tipspc40-descricao', 'eurostat-sec2010-registo-liquido'],
     pt: [
-      'Que percentagem da dívida das famílias e das instituições sem fim lucrativo ao seu serviço no período anterior representa o fluxo de crédito consolidado que recebem?',
+      'Quanto crédito contraíram num ano as famílias e as instituições sem fim lucrativo ao seu serviço, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado), em percentagem da dívida que tinham no fim do ano anterior?',
     ],
     en: [
-      'What percentage of the debt of households and non-profit institutions serving them in the previous period does their consolidated credit flow represent?',
+      'How much credit did households and non-profit institutions serving them take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow), as a percentage of the debt they had at the end of the previous year?',
     ],
-    uniao: {
-      origens: ['pdm-credito-as-familias', 'glossario-npish', 'eurostat-tipspc40-descricao', 'eurostat-sec2010-registo-liquido'],
-      pt: [
-        'Quanto crédito contraíram num ano as famílias e as instituições sem fim lucrativo ao seu serviço, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado), em percentagem da dívida que tinham no fim do ano anterior?',
-      ],
-      en: [
-        'How much credit did households and non-profit institutions serving them take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow), as a percentage of the debt they had at the end of the previous year?',
-      ],
-    },
   },
   'saldo-da-balanca-corrente-2025': {
     /* A MÉDIA É MÓVEL, E PARA TRÁS (achado 12 de 14.09.2026, que é o achado 7
@@ -2127,21 +2136,33 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        average», a gémea inglesa dizia-o e a portuguesa dizia «na média dos três
        anos anteriores», que é outra coisa: uma média dos três anos que vêm
        antes, e não uma janela de três anos que acaba na observação. */
-    origens: ['pdm-balanca-corrente'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['pdm-balanca-corrente', 'eurostat-tipsbp10-descricao', 'eurostat-tipsna40-descricao'],
     pt: [
-      'Qual é o saldo da balança corrente em percentagem do PIB, na média móvel de três anos para trás?',
+      'Qual é a diferença entre o que o país recebeu do resto do mundo e o que lhe pagou, por bens, serviços e rendimentos (o saldo da balança corrente), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB), na média desse ano e dos dois anteriores (a média móvel de três anos para trás)?',
     ],
     en: [
-      'What is the current account balance as a percentage of GDP, on a three-year backward moving average?',
+      'What is the difference between what the country received from the rest of the world and what it paid to it, for goods, services and income (the current account balance), as a percentage of the value of the final goods and services the economy produces in a year (GDP), on the average of that year and the two before it (the three-year backward moving average)?',
     ],
   },
   'taxa-de-actividade-2025': {
-    origens: ['glossario-atividade', 'pdm-taxa-de-actividade'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['glossario-atividade', 'pdm-taxa-de-actividade', 'eurostat-tipslm60-idade'],
     pt: [
-      'Quanto mudou em três anos a percentagem de pessoas ativas, empregadas ou desempregadas, na população comparável?',
+      'Quanto mudou em três anos a parte das pessoas dos ',
+      { nl: '15', motivo: 'escala-de-instrumento' },
+      ' aos ',
+      { nl: '64', motivo: 'escala-de-instrumento' },
+      ' anos que trabalham ou procuram trabalho (as pessoas ativas, empregadas ou desempregadas), contada como a diferença entre a percentagem desse ano e a de três anos antes (em pontos percentuais)?',
     ],
     en: [
-      'How much has the percentage of active people, employed or unemployed, in the comparable total population changed over three years?',
+      'How much has the share of people aged ',
+      { nl: '15', motivo: 'escala-de-instrumento' },
+      ' to ',
+      { nl: '64', motivo: 'escala-de-instrumento' },
+      ' who work or are looking for work (active people, employed or unemployed) changed over three years, counted as the difference between that year’s percentage and the one three years earlier (in percentage points)?',
     ],
   },
   'taxa-de-cambio-efectiva-real-2025': {
@@ -2149,30 +2170,19 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        industriais», e a linha da Comissão diz «relative to 41 other industrial
        countries». As moedas eram da casa; o número dos países é da fonte e
        entra com a marca de escala de instrumento. */
-    origens: ['pdm-cambio-efectivo-real'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['pdm-cambio-efectivo-real', 'eurostat-tipser10-descricao'],
     pt: [
-      'Quanto mudou em três anos a taxa de câmbio efetiva real face a outros ',
+      'Quanto mudaram em três anos os preços do país face aos de outros ',
       { nl: '41', motivo: 'escala-de-instrumento' },
-      ' países industriais, com base nos deflatores dos índices de preços no consumidor?',
+      ' países industriais, contando as taxas de câmbio e os preços no consumidor de cada um (a taxa de câmbio efetiva real, com base nos deflatores dos índices de preços no consumidor)?',
     ],
     en: [
-      'How much has the real effective exchange rate relative to ',
+      'How much have the country’s prices relative to those of ',
       { nl: '41', motivo: 'escala-de-instrumento' },
-      ' other industrial countries, based on consumer price index deflators, changed over three years?',
+      ' other industrial countries, allowing for exchange rates and each country’s consumer prices, changed over three years (the real effective exchange rate, based on consumer price index deflators)?',
     ],
-    uniao: {
-      origens: ['pdm-cambio-efectivo-real', 'eurostat-tipser10-descricao'],
-      pt: [
-        'Quanto mudaram em três anos os preços do país face aos de outros ',
-        { nl: '41', motivo: 'escala-de-instrumento' },
-        ' países industriais, contando as taxas de câmbio e os preços no consumidor de cada um (a taxa de câmbio efetiva real, com base nos deflatores dos índices de preços no consumidor)?',
-      ],
-      en: [
-        'How much have the country’s prices relative to those of ',
-        { nl: '41', motivo: 'escala-de-instrumento' },
-        ' other industrial countries, allowing for exchange rates and each country’s consumer prices, changed over three years (the real effective exchange rate, based on consumer price index deflators)?',
-      ],
-    },
   },
   /* O GRUPO ETÁRIO DESTAS TRÊS (I129, segunda passagem, 22.09.2026). A célula
      K13 apanhou-as a dizer a medida sem dizer de quem ela é: o glossário do
@@ -2181,20 +2191,22 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
      etiqueta `Age class` que o excerto das nove linhas passou a trazer, e não
      do glossário nem de memória. */
   'taxa-de-desemprego-mip-2025': {
-    origens: ['glossario-desemprego'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['glossario-desemprego', 'eurostat-tipsun20-descricao'],
     pt: [
-      'Que parte da população ativa dos ',
+      'Que parte das pessoas dos ',
       { nl: '15', motivo: 'escala-de-instrumento' },
       ' aos ',
       { nl: '74', motivo: 'escala-de-instrumento' },
-      ' anos está sem emprego?',
+      ' anos que trabalham ou procuram trabalho (a população ativa) está sem emprego?',
     ],
     en: [
-      'What share of the labour force aged ',
+      'What share of people aged ',
       { nl: '15', motivo: 'escala-de-instrumento' },
       ' to ',
       { nl: '74', motivo: 'escala-de-instrumento' },
-      ' is unemployed?',
+      ' who work or are looking for work (the labour force) is unemployed?',
     ],
   },
   'taxa-de-emprego-2025': {
@@ -2215,20 +2227,22 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     ],
   },
   'taxa-de-desemprego-2025': {
-    origens: ['glossario-desemprego'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['glossario-desemprego', 'eurostat-tipsun20-descricao'],
     pt: [
-      'Que parte da população ativa dos ',
+      'Que parte das pessoas dos ',
       { nl: '15', motivo: 'escala-de-instrumento' },
       ' aos ',
       { nl: '74', motivo: 'escala-de-instrumento' },
-      ' anos está sem emprego?',
+      ' anos que trabalham ou procuram trabalho (a população ativa) está sem emprego?',
     ],
     en: [
-      'What share of the labour force aged ',
+      'What share of people aged ',
       { nl: '15', motivo: 'escala-de-instrumento' },
       ' to ',
       { nl: '74', motivo: 'escala-de-instrumento' },
-      ' is unemployed?',
+      ' who work or are looking for work (the labour force) is unemployed?',
     ],
   },
   'desemprego-de-longa-duracao-2025': {
@@ -2238,20 +2252,22 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        não. A descrição do indicador `tesem130`, pedida pelo cliente da casa e
        selada no motor, di-lo: a parte da população ativa dos 15 aos 74 anos. A
        pergunta escreve o grupo como intervalo, como a do desemprego. */
-    origens: ['glossario-longa-duracao', 'eurostat-tesem130-denominador'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['glossario-longa-duracao', 'eurostat-tesem130-denominador', 'glossario-atividade'],
     pt: [
-      'Que parte da população ativa dos ',
+      'Que parte das pessoas dos ',
       { nl: '15', motivo: 'escala-de-instrumento' },
       ' aos ',
       { nl: '74', motivo: 'escala-de-instrumento' },
-      ' anos está sem trabalho e procura emprego ativamente há pelo menos um ano?',
+      ' anos que trabalham ou procuram trabalho (a população ativa) está sem trabalho e procura emprego ativamente há pelo menos um ano?',
     ],
     en: [
-      'What share of the labour force aged ',
+      'What share of people aged ',
       { nl: '15', motivo: 'escala-de-instrumento' },
       ' to ',
       { nl: '74', motivo: 'escala-de-instrumento' },
-      ' is out of work and has been actively seeking employment for at least a year?',
+      ' who work or are looking for work (the labour force) is out of work and has been actively seeking employment for at least a year?',
     ],
   },
   'jovens-nem-2025': {
@@ -2328,12 +2344,18 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     ],
   },
   'risco-de-pobreza-ou-exclusao-2025': {
-    origens: ['glossario-arope'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['glossario-arope', 'eurostat-tipslc10-descricao', 'eurostat-glossario-mediana', 'eurostat-tipslc10-privacao'],
     pt: [
-      'Que parte da população está em risco de pobreza, em privação material e social grave ou num agregado com intensidade de trabalho muito baixa, contando cada pessoa uma única vez?',
+      'Que parte da população está em pelo menos uma de três situações: rendimento abaixo de ',
+      { nl: '60', motivo: 'escala-de-instrumento' },
+      ' % do rendimento que deixa metade da população do país acima dele e metade abaixo, o mediano (risco de pobreza); pelo menos sete de treze privações por falta de recursos (privação material e social grave); ou viver num agregado onde quase ninguém trabalha (intensidade de trabalho muito baixa), contando cada pessoa uma única vez?',
     ],
     en: [
-      'What share of the population is at risk of poverty, severely materially and socially deprived or living in a household with very low work intensity, counting each person only once?',
+      'What share of the population is in at least one of three situations: income below ',
+      { nl: '60', motivo: 'escala-de-instrumento' },
+      ' % of the income that leaves half of the country’s population above it and half below, the median (at risk of poverty); at least seven out of thirteen deprivations because of a lack of resources (severe material and social deprivation); or living in a household where almost nobody works (very low work intensity), counting each person only once?',
     ],
   },
   'racio-s80-s20-2025': {
@@ -2346,16 +2368,18 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     ],
   },
   'sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025': {
-    origens: ['glossario-sobrecarga', 'eurostat-tessi164-inquilinos'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['glossario-sobrecarga', 'eurostat-tessi164-inquilinos', 'eurostat-glossario-rendimento-disponivel'],
     pt: [
-      'Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de ',
+      'Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de ',
       { nl: '40', motivo: 'escala-de-instrumento' },
-      ' % do rendimento disponível, também líquido de subsídios à habitação?',
+      ' % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?',
     ],
     en: [
-      'What share of tenants at market rent are in households where total housing costs, net of housing allowances, take more than ',
+      'What share of tenants at market rent are in households where total housing costs, after deducting housing allowances, take more than ',
       { nl: '40', motivo: 'escala-de-instrumento' },
-      ' % of disposable income, also net of housing allowances?',
+      ' % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?',
     ],
   },
   'sobrecarga-do-custo-da-habitacao-2025': {
@@ -2364,16 +2388,18 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        ('net' of housing allowances)» e «disposable income ('net' of housing
        allowances)», e a definição guardava o limiar dos 40 % e deixava cair as
        duas: mudava o que entra no numerador e no denominador. */
-    origens: ['glossario-sobrecarga', 'eurostat-tespm140-populacao'],
+    /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
+       a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    origens: ['glossario-sobrecarga', 'eurostat-tespm140-populacao', 'eurostat-glossario-rendimento-disponivel'],
     pt: [
-      'Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, líquido de subsídios à habitação, leva mais de ',
+      'Que parte das pessoas, no total de todos os regimes de ocupação, vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de ',
       { nl: '40', motivo: 'escala-de-instrumento' },
-      ' % do rendimento disponível, também líquido de subsídios à habitação?',
+      ' % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?',
     ],
     en: [
-      'What share of people, across all tenure statuses, are in households where total housing costs, net of housing allowances, take more than ',
+      'What share of people, across all tenure statuses, are in households where total housing costs, after deducting housing allowances, take more than ',
       { nl: '40', motivo: 'escala-de-instrumento' },
-      ' % of disposable income, also net of housing allowances?',
+      ' % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?',
     ],
   },
   ...PERGUNTAS_RP1,
@@ -2406,20 +2432,6 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
  * @param {Record<string, { origens?: readonly string[] }>} coleccao
  */
 export const conferirOrigensDeclaradas = (familia, coleccao) => {
-  /* A FORMA DA PÁGINA DA UNIÃO (bloco UE2, 02.10.2026) confere-se como uma definição, com uma regra a mais: cita
-     todas as origens da pergunta do cartão, para que a forma em palavras comuns nunca perca uma fonte do que diz. */
-  for (const [nome, d] of Object.entries(coleccao)) {
-    const forma = /** @type {{ uniao?: { origens?: readonly string[] } }} */ (/** @type {unknown} */ (d)).uniao;
-    if (!forma) continue;
-    conferirOrigensDeclaradas(`${familia} (a forma da página da União de "${nome}")`, { [nome]: forma });
-    const faltam = (d.origens ?? []).filter((o) => !(forma.origens ?? []).includes(o));
-    if (faltam.length) {
-      throw new Error(
-        `figuras: a forma da página da União de "${nome}" não cita ${faltam.join(', ')}, que a pergunta do cartão ` +
-          `cita. A forma em palavras comuns diz o mesmo com as mesmas fontes, e as que explicam os termos a mais.`,
-      );
-    }
-  }
   for (const [nome, d] of Object.entries(coleccao)) {
     if (!Array.isArray(d.origens) || d.origens.length === 0) {
       throw new Error(

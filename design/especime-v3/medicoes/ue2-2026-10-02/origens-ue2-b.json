@@ -1,0 +1,28 @@
+{
+  "bloco": "UE2-b",
+  "guiao": "design/especime-v3/medicoes/ue2-2026-10-02/origens-ue2-b.py",
+  "origens": [
+    {
+      "origem": "eurostat-tipslc10-privacao",
+      "irma": "eurostat-tipslc10-descricao",
+      "ficheiro": "indicators/out/l1-2026-09-24/eurostat-tipslc10.json",
+      "campo": "extension.description",
+      "sha256_medido": "72d44cd6f15295f80f3495efe152fc42b574530789f8511292fc8524edc34dbc",
+      "conhecido_positivo_encontrado": true,
+      "cadeia_inventada_encontrada": false,
+      "excerto_no_campo": true
+    },
+    {
+      "origem": "eurostat-sec2010-ocde",
+      "irma": "eurostat-sec2010-registo-liquido",
+      "ficheiro": "indicators/out/l1-2026-09-26/eurostat-esa2010-KS-02-13-269-EN.pdf",
+      "campo": "a extração pdftotext (modo simples), §1.06, com as quebras de linha lidas como espaços",
+      "sha256_medido": "9569393aefd24d7fed20e55f30e68850148004e45c70dd5af4eda73214349858",
+      "sha256_da_extracao_medido": "164126b77cddab0134a5f3a460f3454631a2f42eb75584df7cce4fc3909f7c9e",
+      "conhecido_positivo_encontrado": true,
+      "cadeia_inventada_encontrada": false,
+      "excerto_no_campo": true
+    }
+  ],
+  "erros": []
+}

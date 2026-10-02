@@ -68,12 +68,7 @@ import { rotuloDoValorDeReferencia } from '../../lib/estado.mjs';
 /* `quadro` é a marca do quadro a que estas leituras pertencem («pdm» ou
    «social»), e serve a régua: é por ela que se conta se cada frase de contexto
    está antes das leituras do SEU quadro, e não antes de outras. */
-/* `formaDaDefinicao` é a forma da definição que esta página rende, quando a declaração a tem (bloco UE2,
-   02.10.2026): a página da União passa «uniao», e cada medida cuja pergunta tem essa forma rende-a, com as origens
-   dela; as outras rendem a pergunta do cartão. Ver «A FORMA DA PÁGINA DA UNIÃO» em `src/data/figuras.mjs`. */
-const { s, lang, quadro, medidas, formas = null, formaDaDefinicao = null } = Astro.props;
-/** A definição que se rende: a forma pedida, onde a declaração a tem, e a pergunta do cartão onde não tem. */
-const definicaoRendida = (/** @type {any} */ d) => (d && formaDaDefinicao && d[formaDaDefinicao]) || d;
+const { s, lang, quadro, medidas, formas = null } = Astro.props;
 
 /* AS TRÊS DATAS SAÍRAM DAQUI (bloco P3, 16.09.2026, item 2; decisão do diretor
    de 16.09). Viviam nesta dobra com três rótulos de recibo por cima («período
@@ -121,13 +116,13 @@ const leituras = medidas.map((m) => ({
      «jovens NEM» ou «rácio S80/S20» não se entendem sem ela. As medidas de um
      concelho não trazem definição: as frases delas são a leitura da medida, e
      vêm por `frasesProntas`. */
-  definicao: definicaoRendida(m.definicao)?.[lang] ?? null,
+  definicao: m.definicao?.[lang] ?? null,
   /* A ORIGEM DE CADA DEFINIÇÃO (segunda passagem, 09.09.2026). Chega resolvida
      de `src/data/figuras.mjs`, com os quatro campos conferidos ali: uma
      definição citada sem documento, endereço, data de leitura e excerto fecha a
      construção em vez de se render. As medidas de um concelho não trazem
      definição, e por isso também não trazem origem. */
-  origens: m.definicao ? origensDaDefinicao(definicaoRendida(m.definicao), lang) : [],
+  origens: m.definicao ? origensDaDefinicao(m.definicao, lang) : [],
   frases: m.frasesProntas ?? (m.frase?.[lang] ? [m.frase[lang]] : []),
   limiar: m.limiar ?? null,
   comparacao: m.comparacao ?? null,

@@ -1649,6 +1649,7 @@ if (PROVA) {
      origens são cópias, e nada se escreve no disco. A primeira repete o defeito
      que a leitura a frio achou: a pergunta do desemprego de longa duração com a
      única origem que tinha antes, e o denominador sem nada que o diga. */
+  let plantasDaK16 = 0;
   {
     const limpa = auditarPerguntas();
     if (limpa.erros.length) falhas.push(`K16 recusa a declaração em vigor: ${limpa.erros[0]}`);
@@ -1659,8 +1660,6 @@ if (PROVA) {
     const auditoriaCom = (estraga) => { const c = structuredClone(base); estraga(c); return c; };
     /** @param {any} a @param {string} id */
     const dela = (a, id) => a.perguntas.find((/** @type {any} */ q) => q.id === id);
-    /** A entrada da forma da página da União de uma pergunta (UE2). @param {any} a @param {string} id */
-    const daForma = (a, id) => a.perguntas.find((/** @type {any} */ q) => q.id === id && q.forma === 'uniao');
     /** @type {[string, string, string, Parameters<typeof auditarPerguntas>[0]][]} */
     const plantas = [
       ['a origem selada tirada à pergunta', 'desemprego-de-longa-duracao-2025', 'que a pergunta não declara como origem',
@@ -1673,9 +1672,11 @@ if (PROVA) {
         { auditoria: auditoriaCom((a) => { dela(a, 'risco-de-pobreza-ou-exclusao-2025').pedacos[4].apoios = []; }) }],
       ['uma pergunta sem auditoria', 'jovens-nem-2025', 'não tem auditoria',
         { auditoria: auditoriaCom((a) => { a.perguntas = a.perguntas.filter((/** @type {any} */ q) => q.id !== 'jovens-nem-2025'); }) }],
+      /* UE2-b (02.10.2026): a pergunta da dívida pública declara agora também a descrição do PIB do Eurostat, que apoia
+         o que o PIB mede; a planta junta a origem sem uso às duas declaradas, para morder só pelo que diz. */
       ['uma origem declarada sem uso', 'divida-publica-2025', 'não apoia pedaço nenhum',
-        { definicoes: { ...definicoes, 'divida-publica-2025': { ...definicoes['divida-publica-2025'], origens: ['pdm-divida-publica', 'painel-pdm'] } },
-          auditoria: auditoriaCom((a) => { dela(a, 'divida-publica-2025').origens = ['pdm-divida-publica', 'painel-pdm']; }) }],
+        { definicoes: { ...definicoes, 'divida-publica-2025': { ...definicoes['divida-publica-2025'], origens: ['pdm-divida-publica', 'eurostat-tipsna40-descricao', 'painel-pdm'] } },
+          auditoria: auditoriaCom((a) => { dela(a, 'divida-publica-2025').origens = ['pdm-divida-publica', 'eurostat-tipsna40-descricao', 'painel-pdm']; }) }],
       ['outra linha citada', 'taxa-de-emprego-2025', 'só a linha da própria medida conta',
         { auditoria: auditoriaCom((a) => { dela(a, 'taxa-de-emprego-2025').pedacos[1].apoios[0].linha = 'taxa-de-desemprego-2025'; }) }],
       ['um literal curto', 'divida-publica-2025', 'menos de 4 caracteres',
@@ -1689,17 +1690,8 @@ if (PROVA) {
         { definicoes: { ...definicoes, 'disparidade-de-emprego-entre-sexos-2025': { ...definicoes['disparidade-de-emprego-entre-sexos-2025'], unidade: { pt: '% da população', en: 'percentage points' } } } }],
       ['as coordenadas de outra classe etária', 'origem «eurostat-tipslm90-sexo»', 'não são um segmento do excerto',
         { origens: { ...origensReais, 'eurostat-tipslm90-sexo': { ...origensReais['eurostat-tipslm90-sexo'], coordenadas: 'Age class: From 15 to 24 years' } } }],
-      /* UE2 (02.10.2026): as formas da página da União auditam-se como as perguntas. Uma forma sem auditoria, um pedaço
-         dela sem apoio, a forma mudada sem nova leitura, e uma auditoria de uma forma que a pergunta não declara. */
-      ['a forma da União sem auditoria', 'custo-unitario-do-trabalho-2025#uniao', 'não tem auditoria',
-        { auditoria: auditoriaCom((a) => { a.perguntas = a.perguntas.filter((/** @type {any} */ q) => !(q.id === 'custo-unitario-do-trabalho-2025' && q.forma === 'uniao')); }) }],
-      ['um pedaço da forma da União sem apoio', 'divida-das-empresas-2025#uniao', 'não tem apoio nenhum',
-        { auditoria: auditoriaCom((a) => { daForma(a, 'divida-das-empresas-2025').pedacos[2].apoios = []; }) }],
-      ['a forma da União mudada sem nova leitura', 'taxa-de-cambio-efectiva-real-2025#uniao', 'os pedaços juntos',
-        { definicoes: { ...definicoes, 'taxa-de-cambio-efectiva-real-2025': { ...definicoes['taxa-de-cambio-efectiva-real-2025'], uniao: { ...definicoes['taxa-de-cambio-efectiva-real-2025'].uniao, pt: ['Quanto mudou em três anos a taxa de câmbio efetiva real?'] } } } }],
-      ['a auditoria de uma forma que a pergunta não declara', 'divida-publica-2025#uniao', 'que não a declara',
-        { auditoria: auditoriaCom((a) => { a.perguntas.push({ ...structuredClone(dela(a, 'divida-publica-2025')), forma: 'uniao' }); }) }],
     ];
+    plantasDaK16 = plantas.length;
     for (const [nome, alvo, mordida, entrada] of plantas) {
       const vistos = auditarPerguntas(entrada).erros.filter((e) => e.startsWith(`K16 · ${alvo}:`));
       if (!vistos.some((e) => e.includes(mordida))) {
@@ -1726,8 +1718,7 @@ if (PROVA) {
         `declaração em vigor a passar e cinco plantas a morder (o limite trocado, dois algarismos ` +
         `soltos fora do intervalo, uma medida sem definição, a etiqueta a contradizer o filtro e ` +
         `duas linhas da mesma medida com grupos diferentes), mais a catraca vazia nas duas metades; ` +
-        `K16 com a declaração em vigor a passar e as suas plantas a morder, a primeira o defeito da leitura a frio e ` +
-        `quatro as das formas da página da União (UE2)`,
+        `K16 com a declaração em vigor a passar e ${plantasDaK16} plantas a morder, a primeira o defeito da leitura a frio`,
     ),
   );
 }
