@@ -1,0 +1,77 @@
+{
+  "contas": {
+    "paginas": 7442,
+    "valores": 26582,
+    "simbolos": 27000,
+    "simbolo": {
+      "%": {
+        "colado": 701,
+        "com_espaco": 1845
+      },
+      "€": {
+        "colado": 0,
+        "com_espaco": 24
+      }
+    },
+    "por_regra": {
+      "F1": 0,
+      "F2": 0,
+      "F3": 0
+    }
+  },
+  "desvios": [],
+  "plantas": [
+    {
+      "nome": "F1 · os milhares com o espaço comum, num valor de um cartão",
+      "pagina": "estado-e-economia/index.html",
+      "limpa_sem_desvios": true,
+      "estrago_aplicado": true,
+      "mordeu": true,
+      "queixa": {
+        "regra": "F1",
+        "rel": "estado-e-economia/index.html",
+        "valor": "20 600",
+        "contexto": "20 600 <span class=\"campo-valor cartao-medida-unid"
+      }
+    },
+    {
+      "nome": "F1 · os milhares sem separador",
+      "pagina": "estado-e-economia/index.html",
+      "limpa_sem_desvios": true,
+      "estrago_aplicado": true,
+      "mordeu": true,
+      "queixa": {
+        "regra": "F1",
+        "rel": "estado-e-economia/index.html",
+        "valor": "20600",
+        "contexto": "20600 <span class=\"campo-valor cartao-medida-unida"
+      }
+    },
+    {
+      "nome": "F2 · o ponto decimal",
+      "pagina": "emprego/index.html",
+      "limpa_sem_desvios": true,
+      "estrago_aplicado": true,
+      "mordeu": true,
+      "queixa": {
+        "regra": "F2",
+        "rel": "emprego/index.html",
+        "valor": "79.6",
+        "contexto": "79.6 <span class=\"campo-valor cartao-medida-unidad"
+      }
+    },
+    {
+      "nome": "F3 · o hífen no lugar do sinal menos",
+      "pagina": "estado-e-economia/index.html",
+      "limpa_sem_desvios": true,
+      "estrago_aplicado": true,
+      "mordeu": true,
+      "queixa": {
+        "regra": "F3",
+        "rel": "estado-e-economia/index.html",
+        "valor": "-50,2",
+        "contexto": "-50,2 <span class=\"campo-valor cartao-medida-unida"
+      }
+    }
+  ]
+}

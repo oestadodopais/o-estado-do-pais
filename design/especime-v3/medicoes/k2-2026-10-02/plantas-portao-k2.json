@@ -1,0 +1,41 @@
+{
+  "o_que": "as plantas do portão de HTML do bloco K2, cada uma sobre um ficheiro de dist/ com os bytes repostos",
+  "plantas": [
+    {
+      "nome": "G1 · uma contagem da prova sem o separador de milhares",
+      "ficheiro": "livro-razao/index.html",
+      "estrago_aplicado": true,
+      "codigo": 1,
+      "mordida": "o número da prova \"afirmacoes\" foi renderizado como \"3009\" e o portão escreve-o \"3 009\"",
+      "queixa": "✗ o número da prova \"afirmacoes\" foi renderizado como \"3009\" e o portão escreve-o \"3 009\" (o registo diz \"3009\").",
+      "mordeu": true,
+      "antes": "12f1d2bc737bafd7ea7a5e48c767f38ac0d7a4705ca7434f457092d263ac6b64",
+      "reposto": "12f1d2bc737bafd7ea7a5e48c767f38ac0d7a4705ca7434f457092d263ac6b64",
+      "bytes_repostos": true
+    },
+    {
+      "nome": "G2 · uma contagem agrupada com outro valor",
+      "ficheiro": "livro-razao/index.html",
+      "estrago_aplicado": true,
+      "codigo": 1,
+      "mordida": "o número da prova \"afirmacoes\" foi renderizado como \"3 010\" e o portão escreve-o \"3 009\"",
+      "queixa": "✗ o número da prova \"afirmacoes\" foi renderizado como \"3 010\" e o portão escreve-o \"3 009\" (o registo diz \"3009\").",
+      "mordeu": true,
+      "antes": "12f1d2bc737bafd7ea7a5e48c767f38ac0d7a4705ca7434f457092d263ac6b64",
+      "reposto": "12f1d2bc737bafd7ea7a5e48c767f38ac0d7a4705ca7434f457092d263ac6b64",
+      "bytes_repostos": true
+    },
+    {
+      "nome": "G3 · a metade da leitura na dobra sem o invólucro data-selo-em",
+      "ficheiro": "estado-e-economia/index.html",
+      "estrago_aplicado": true,
+      "codigo": 1,
+      "mordida": "o valor da afirmação \"saldo-das-administracoes-publicas-2025\" aparece sem selo para a sua própria linha",
+      "queixa": "✗ o valor da afirmação \"saldo-das-administracoes-publicas-2025\" aparece sem selo para a sua própria linha.",
+      "mordeu": true,
+      "antes": "f0f84dd1287053e37c4182dbfcf5552435e0555f0808d315bfe9b9caa1264641",
+      "reposto": "f0f84dd1287053e37c4182dbfcf5552435e0555f0808d315bfe9b9caa1264641",
+      "bytes_repostos": true
+    }
+  ]
+}
