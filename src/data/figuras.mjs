@@ -2441,6 +2441,8 @@ export const origensDaDefinicao = (definicao, lang = 'pt') =>
       linguaExcerto: lang === 'en' && o.excertoEn ? 'en' : (campos.lingua ?? (chave === 'bdp-pii' ? 'pt' : 'en')),
       lido: o.lido,
       excerto: lang === 'en' && o.excertoEn ? o.excertoEn : o.excerto,
+      /* K2-c: a coordenada que a resposta fixa, ao lado do título do conjunto, quando a origem a declara. */
+      coordenadas: typeof campos.coordenadas === 'string' && campos.coordenadas ? campos.coordenadas : null,
     };
   });
 
