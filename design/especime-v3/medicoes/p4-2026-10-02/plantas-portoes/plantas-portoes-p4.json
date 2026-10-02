@@ -1,0 +1,66 @@
+[
+  {
+    "nome": "p4-cartao-pergunta-antiga-da-disparidade",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "K6 · \\/emprego\\/ · disparidade-de-emprego-entre-sexos-2025: a frase do cartão diz «Qual é a diferença, em pontos percentuais"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/emprego/index.html",
+        "antes": "8a8a246b36f58c52922a9a0ae95991cf018b006a0d62952080939dc66fe6c796",
+        "reposto": "8a8a246b36f58c52922a9a0ae95991cf018b006a0d62952080939dc66fe6c796"
+      }
+    ]
+  },
+  {
+    "nome": "p4-cartao-pergunta-antiga-da-sobrecarga",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "K6 · \\/en\\/housing\\/ · sobrecarga-do-custo-da-habitacao-2025: a frase do cartão diz «What share of people, across all tenure statuses"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/housing/index.html",
+        "antes": "d4a381d21261063602209fb5f24a9783b1c19b62c208e9527d742d0138a729a8",
+        "reposto": "d4a381d21261063602209fb5f24a9783b1c19b62c208e9527d742d0138a729a8"
+      }
+    ]
+  },
+  {
+    "nome": "p4-datas-nota-sem-a-reconciliacao",
+    "comando": "node scripts/check-datas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "evora-quinze-anos-cinco-mandatos: a nota do sucessor não diz que o estudo que lhe sucedeu reconcilia o que esta edição escreveu"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/estudos/evora-quinze-anos-cinco-mandatos/index.html",
+        "antes": "997868e0a6bcb0258eefe5cc293de573dad80390bb5be95a6d36fa9f522a0775",
+        "reposto": "997868e0a6bcb0258eefe5cc293de573dad80390bb5be95a6d36fa9f522a0775"
+      }
+    ]
+  },
+  {
+    "nome": "p4-datas-nota-inglesa-com-a-frase-portuguesa",
+    "comando": "node scripts/check-datas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "evora-2027-prometido-painel-dinheiro: a nota do sucessor não diz que o estudo que lhe sucedeu reconcilia"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/studies/evora-2027-prometido-painel-dinheiro/index.html",
+        "antes": "c48e484022e5e2b4a768e62c671dcd3fcfe19fe26b159fa7bd5d4c47972e3055",
+        "reposto": "c48e484022e5e2b4a768e62c671dcd3fcfe19fe26b159fa7bd5d4c47972e3055"
+      }
+    ]
+  }
+]

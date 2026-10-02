@@ -350,3 +350,19 @@ planta('ue2-b-lugar-pergunta-antiga-na-pagina-da-uniao','scripts/check-lugar.mjs
 planta('ue2-b-cartao-pergunta-antiga-numa-pagina-de-assunto','tests/cartao/cartao.mjs',[
  ['emprego/index.html',r=>r.querySelector('[data-cartao-medida="taxa-de-desemprego-mip-2025"] [data-cartao-definicao]').set_content('Que parte da população ativa dos 15 aos 74 anos está sem emprego?')]
 ],[/K6 · \/emprego\/ · taxa-de-desemprego-mip-2025: a frase do cartão diz «Que parte da população ativa dos 15 aos 74/]);
+/* P4 (02.10.2026, itens 3 e 4 do brief P4): os dois termos que a passagem UE2-b deixou por explicar, e a nota do sucessor.
+   A pergunta antiga de cada um dos dois cartões, com o termo sem explicação, tem de morder na K6 (a frase do cartão é a
+   declarada); e a nota de uma edição datada sem a frase da reconciliação, ou com a frase da outra língua, tem de morder
+   na célula da nota do `check:datas`. */
+planta('p4-cartao-pergunta-antiga-da-disparidade','tests/cartao/cartao.mjs',[
+ ['emprego/index.html',r=>r.querySelector('[data-cartao-medida="disparidade-de-emprego-entre-sexos-2025"] [data-cartao-definicao]').set_content('Qual é a diferença, em pontos percentuais, entre a taxa de emprego dos homens dos 20 aos 64 anos e a das mulheres?')]
+],[/K6 · \/emprego\/ · disparidade-de-emprego-entre-sexos-2025: a frase do cartão diz «Qual é a diferença, em pontos percentuais/]);
+planta('p4-cartao-pergunta-antiga-da-sobrecarga','tests/cartao/cartao.mjs',[
+ ['en/housing/index.html',r=>r.querySelector('[data-cartao-medida="sobrecarga-do-custo-da-habitacao-2025"] [data-cartao-definicao]').set_content('What share of people, across all tenure statuses, are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?')]
+],[/K6 · \/en\/housing\/ · sobrecarga-do-custo-da-habitacao-2025: a frase do cartão diz «What share of people, across all tenure statuses/]);
+planta('p4-datas-nota-sem-a-reconciliacao','scripts/check-datas.mjs',[
+ ['estudos/evora-quinze-anos-cinco-mandatos/index.html',r=>r.querySelector('[data-sucessor-reconcilia]').remove()]
+],[/evora-quinze-anos-cinco-mandatos: a nota do sucessor não diz que o estudo que lhe sucedeu reconcilia o que esta edição escreveu/]);
+planta('p4-datas-nota-inglesa-com-a-frase-portuguesa','scripts/check-datas.mjs',[
+ ['en/studies/evora-2027-prometido-painel-dinheiro/index.html',r=>r.querySelector('[data-sucessor-reconcilia]').set_content('O estudo que lhe sucedeu reconcilia o que esta edição escreveu.')]
+],[/evora-2027-prometido-painel-dinheiro: a nota do sucessor não diz que o estudo que lhe sucedeu reconcilia/]);

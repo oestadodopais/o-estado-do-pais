@@ -9,6 +9,12 @@
  * `src/data/datas-de-publicacao.json` como todas as datas de publicação do sítio,
  * e rende-se com a mesma marca `data-nonledger`. Um sucessor sem data nesse
  * ficheiro fecha a construção: uma nota com a data por dizer seria uma nota a meio.
+ *
+ * A RECONCILIAÇÃO (bloco P4, 02.10.2026, item 4 do brief P4; a I184): a nota diz
+ * também que é no estudo que sucedeu que se reconcilia o que esta edição escreveu,
+ * porque a edição fica alojada com os seus erros conhecidos. A frase vai na marca
+ * `data-sucessor-reconcilia`, e a célula da nota no `check:datas` exige-a, com a
+ * sua cópia das duas frases.
  */
 import TituloDeTrabalho from './TituloDeTrabalho.astro';
 import { workById } from '../data/studies.mjs';
@@ -42,5 +48,6 @@ const data = sucessores[0]?.data;
         ))}
       </>
     )}
+    {' '}<span data-sucessor-reconcilia>{sucessores.length === 1 ? r.reconcilia : r.reconciliamVarios}</span>
   </p>
 )}
