@@ -13,6 +13,12 @@
  * O QUE ELA TEM A MAIS, pelo §3 do brief:
  *   · o nome da medida (o nome do cartão, pela escada de `src/lib/nomes.mjs`), a unidade e o período da série, por
  *     cima do desenho, porque aqui não há cartão por cima a dizê-los;
+ *   · (a passagem UE2-b, o achado 7 da leitura a frio do UE2) por baixo do nome, o que a medida conta: a definição
+ *     declarada em `DEFINICOES_DAS_MEDIDAS`, na forma do recibo da série onde a declaração a tem e na do cartão onde
+ *     não tem (a regra do `SerieView.astro`, UE1e), porque a unidade sozinha («%») não diz de quem é a percentagem
+ *     nem com que se compara: os inquilinos a preço de mercado, a inflação face ao mesmo mês do ano anterior, o
+ *     emprego dos 20 aos 64 anos. A F20g compara-a com a declaração e recusa-a se nomear Portugal, porque a faixa é
+ *     dos 27;
  *   · uma etiqueta por marca, com o nome do país (ou «média da União») e o valor do ponto, ESCONDIDA no documento;
  *     o guião do toque (`public/js/paises.js`) mostra a da marca tocada e mais nenhuma, e não escreve texto nenhum.
  *     Uma marca com o mesmo valor de outras está no mesmo sítio delas, e a sua etiqueta diz o grupo inteiro, pela
@@ -35,6 +41,8 @@ import NomeDoPais from './serie/NomeDoPais.astro';
 import DataDaSerie from './serie/DataDaSerie.astro';
 import CampoDaSerie from './serie/CampoDaSerie.astro';
 import NomeDaMedida from './NomeDaMedida.astro';
+import Frase from './Frase.astro';
+import { DEFINICOES_DAS_MEDIDAS } from '../data/figuras.mjs';
 import { faixaDaMedida } from '../lib/faixa-da-uniao.mjs';
 import { getSerie, AGREGADO_DA_UNIAO } from '../lib/series.mjs';
 import { getClaim } from '../lib/ledger.mjs';
@@ -54,12 +62,23 @@ const serie = getSerie(f.serie);
 const linha = getClaim(idDaLinha);
 const unidade = unidadeDaLinha(String(serie.unit), lang);
 const ressalva = ressalvaDaUniao(idDaLinha, lang);
+const declarada = /** @type {Record<string, { pt: readonly unknown[], en: readonly unknown[], serie?: { pt: readonly unknown[], en: readonly unknown[] } }>} */ (DEFINICOES_DAS_MEDIDAS)[idDaLinha];
+if (!declarada) {
+  throw new Error(`<FaixaDosPaises>: a medida «${idDaLinha}» não tem definição declarada em DEFINICOES_DAS_MEDIDAS, e a faixa diz o que a medida conta.`);
+}
+/* A forma do recibo da série, onde a declaração a tem; a do cartão, onde não tem (UE1e). */
+const definicao = (declarada.serie ?? declarada)[lang];
 ---
 
 <article class="paises-medida" data-faixa-paises={f.serie} id={`p-${f.serie}`} aria-labelledby={`pn-${f.serie}`}>
   <h3 class="paises-nome" id={`pn-${f.serie}`}>
     <NomeDaMedida linha={linha} lang={lang} escada="cartao" class="paises-nome-texto" />
   </h3>
+  {/* O QUE A MEDIDA CONTA (a passagem UE2-b): a população e a base da comparação de cada número da faixa, pela
+      definição declarada, a mesma do recibo da série. */}
+  <p class="paises-o-que-conta" data-faixa-o-que-conta={f.serie}>
+    <Frase partes={definicao} lang={lang} selos={true} />
+  </p>
   <p class="paises-unidade">
     <CampoDaSerie serie={f.serie} campo="unit" valor={unidade.texto} lingua={unidade.lingua} />
     {' · '}
