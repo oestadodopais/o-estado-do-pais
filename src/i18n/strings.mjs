@@ -1118,8 +1118,13 @@ export const STRINGS = {
       metaDescription:
       /* A CAUDA SAIU A 14.09.2026 (achado 6 da leitura cruzada do inventário):
          «cada uma com a sua linha» é a casa a dizer o que guarda, e não o que a
-         página mostra. O que fica diz o que a página tem. */
-        'Os dois quadros da União Europeia que medem Portugal: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu.',
+         página mostra. O que fica diz o que a página tem.
+         OS PAÍSES ENTRARAM A 02.10.2026 (a passagem UE2-b, pelo lugar de
+         direção): desde o UE2 a página abre com a secção dos países, onde
+         Portugal fica entre os outros com o valor de cada um, e a descrição diz
+         as duas coisas que a página tem, pela ordem dela. Sem algarismos: o
+         `<head>` não tem onde os provar, e por isso não diz quantos são. */
+        'Onde Portugal fica entre os países da União Europeia, com o valor de cada um, e os dois quadros da União que o medem: as medidas do Procedimento dos Desequilíbrios Macroeconómicos e as do Painel Social Europeu.',
       h1: 'Portugal na União Europeia',
       /* A PORTA DA FAIXA DA PRIMEIRA PÁGINA para esta página. É o nome da página
          de chegada com a seta, que é a forma da casa para uma porta («O
@@ -3383,8 +3388,8 @@ export const STRINGS = {
     uniaoEuropeia: {
       metaTitle: 'Portugal in the European Union · O Estado do País',
       metaDescription:
-        /* Ver a razão na gémea portuguesa (achado 6, 14.09.2026). */
-        'The two European Union frameworks that measure Portugal: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard.',
+        /* Ver a razão na gémea portuguesa (achado 6, 14.09.2026; e a passagem UE2-b, 02.10.2026). */
+        'Where Portugal stands among the European Union countries, with each country’s value, and the two European Union frameworks that measure it: the measures of the Macroeconomic Imbalance Procedure and those of the European Social Scoreboard.',
       h1: 'Portugal in the European Union',
       porta: 'Portugal in the European Union',
       /* Ver a razão na gémea portuguesa (bloco UE2, 02.10.2026). «from highest to lowest» é o sentido da frase do
