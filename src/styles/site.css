@@ -19,14 +19,12 @@
   box-sizing: border-box;
 }
 
-/* A paleta e os comandos nativos seguem a preferência do sistema. */
+/* Os comandos nativos seguem o atributo da paleta (Emenda 12; bloco P4). */
 html {
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-  }
+:root[data-theme='dark'] {
+  color-scheme: dark;
 }
 
 body {
@@ -529,6 +527,15 @@ section {
   text-decoration: none;
 }
 
+/* P4: a marca e, à direita, o comando do tema; onde não cabem, o comando desce. */
+.masthead-marca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0 8px;
+}
+
 /* ---------------------------------------------------------------------------
  * A FRASE DE IDENTIDADE, POR BAIXO DA MARCA (Emenda 18, 25.08.2026)
  * ---------------------------------------------------------------------------
@@ -808,7 +815,7 @@ section {
   background: none;
   border: 0;
   margin: 0;
-  padding: 0 10px;
+  padding: 0 7px;
   min-width: 44px;
   min-height: 44px;
   display: inline-flex;
@@ -825,8 +832,8 @@ section {
 .tema-b + .tema-b::before {
   content: '·';
   color: var(--rule-strong);
-  margin-right: 10px;
-  margin-left: -10px;
+  margin-right: 7px;
+  margin-left: -7px;
 }
 .tema-b[aria-pressed='true'] {
   color: var(--ink);
@@ -839,9 +846,6 @@ section {
 .tema-b:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 2px;
-}
-.masthead-compact .tema-b {
-  font-size: 9.5px;
 }
 
 /* A mobília do cabeçalho compacto é a mesma linha, mais discreta: nas páginas
@@ -5615,8 +5619,8 @@ a.marcador::after {
   height: 100%;
 }
 
-/* B1, peça 3: a barra de leitura tem cinco entradas em todas as larguras. */
-.menu-cinco { display: flex; flex-wrap: nowrap; align-items: center; gap: 0 clamp(16px, 2.8vw, 34px); border-bottom: 1px solid var(--rule); }
+/* B1, peça 3; P4: seis portas, numa linha a partir de 390 px; abaixo, dobram. */
+.menu-cinco { display: flex; flex-wrap: wrap; align-items: center; gap: 0 clamp(16px, 2.8vw, 34px); border-bottom: 1px solid var(--rule); }
 .menu-cinco a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--f-versal); font-size: 15px; font-weight: 600; letter-spacing: .05em; text-transform: lowercase; color: var(--muted); text-decoration: none; white-space: nowrap; }
 .menu-cinco a[aria-current='page'], .menu-cinco a:hover { color: var(--ink); }
 .masthead-pais { border-bottom: 0; padding: clamp(24px, 4.4vw, 50px) 0 clamp(14px, 2.2vw, 22px); }
@@ -5631,9 +5635,10 @@ a.marcador::after {
 .rodape-b1 a:hover { text-decoration: underline; }
 .sobre-portas { display: flex; flex-wrap: wrap; gap: 4px 20px; }
 .sobre-portas a { min-height: 44px; display: inline-flex; align-items: center; }
+/* P4: 344 px de portas numa coluna de 354 a 390 px (medido; ver navegacao.mjs). */
 @media (width <= 430px) {
-  .menu-cinco { gap: 0 12px; }
-  .menu-cinco a { font-size: 13.5px; letter-spacing: .03em; }
+  .menu-cinco { gap: 0 6px; }
+  .menu-cinco a { font-size: 13px; letter-spacing: 0; }
 }
 
 /* ---------------------------------------------------------------------------

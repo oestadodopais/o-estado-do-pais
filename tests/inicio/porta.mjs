@@ -44,7 +44,8 @@ const medir=()=>{
  const blocos=[...document.querySelectorAll('main [data-o-que-se-passa] [data-bloco]')].slice(0,2).map(b=>({
   id:b.getAttribute('data-bloco'),titulo:caixa(b.querySelector('[data-bloco-titulo]')),frase:caixa(b.querySelector('[data-bloco-frase]')),
   desenho:caixa(b.querySelector('[data-bloco-desenho]')),fonte:caixa(b.querySelector('[data-bloco-fonte]'))}));
- return {menuUmaLinha:menu.length===5 && menu.every(r=>r.width>0&&Math.abs(r.y-menu[0].y)<1),
+ /* P4, 02.10.2026 (item 0 do brief P4): seis portas, com a página da União, numa linha a 390 px. */
+ return {menuUmaLinha:menu.length===6 && menu.every(r=>r.width>0&&Math.abs(r.y-menu[0].y)<1),
   largura:innerWidth,documento:document.documentElement.scrollWidth,altura:document.documentElement.scrollHeight,
   menu:caixa(document.querySelector('#nav-principal')),conteudo:caixa(document.querySelector('main')),
   oQueSePassa:caixa(document.querySelector('main [data-o-que-se-passa] h2')),data:caixa(document.querySelector('main [data-numeros-mais-recentes]')),

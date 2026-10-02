@@ -434,8 +434,51 @@ function confereCorrecoes(lista, onde) {
   }
 }
 
-// Cinco entradas em cada página própria. Os documentos originais são transcrições.
+// Seis entradas em cada página própria (cinco até ao bloco P4). Os documentos originais são transcrições.
 let paginas = 0;
+/* N3 · O TEMA CLARO POR OMISSÃO, O ESCURO SÓ PELA ESCOLHA DO LEITOR (bloco P4, 02.10.2026, item 00 do brief
+   `design/observatorio/BRIEF-P4-os-pequenos-do-sitio.md`; a Emenda 12 de 21.08.2026, §1.52, de volta).
+   De 22.09 a 02.10.2026 esta célula recusava o guião e o atributo do tema, porque o escuro seguia a preferência do
+   sistema sem comando (§1.117, I130). O brief P4 inverteu a decisão, e a célula conserva o que protege, que é o
+   mecanismo do tema ser um só e conhecido, na forma nova: em cada página própria, a raiz servida sem `data-theme`
+   (nenhum elemento o leva no HTML servido: o escuro só existe depois da escolha do leitor); a guarda do `<head>`
+   uma vez, com o corpo aprovado, carácter a carácter, que é a única coisa que escreve o atributo antes da primeira
+   pintura e só quando a chave guardada diz «dark»; o guião adiado uma vez; e o comando uma vez, dentro do
+   `<header>`, servido com `hidden` (sem guião o sítio é claro e o comando não aparece), com os dois botões da sua
+   edição. Uma vez por corrida, as folhas construídas: nenhuma consulta à preferência escura do sistema, e a paleta
+   escura no seletor da escolha. O corpo da guarda é uma cópia escrita aqui, e não o de `src/lib/tema.mjs`, para que
+   uma mudança na fonte das páginas não se confirme a si própria. */
+const GUARDA_APROVADA = "(function(){try{if(localStorage.getItem('tema')==='dark'){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})()";
+const BOTOES_DO_TEMA = { pt: [['light', 'claro', 'true'], ['dark', 'escuro', 'false']], en: [['light', 'light', 'true'], ['dark', 'dark', 'false']] };
+function confereTema(doc, rel, lang) {
+  if (doc.querySelector('html')?.hasAttribute('data-theme') || doc.querySelectorAll('[data-theme]').length)
+    erros.push(`N3: a página é servida com data-theme em ${rel}; o escuro só existe pela escolha do leitor.`);
+  const guardas = doc.querySelectorAll('head script:not([src])').filter(s => /data-theme|localStorage/.test(s.textContent));
+  if (guardas.length !== 1 || guardas[0].textContent !== GUARDA_APROVADA)
+    erros.push(`N3: a guarda do tema no <head> de ${rel} não é a aprovada (${guardas.length} guião(ões) do tema em linha).`);
+  const adiados = doc.querySelectorAll('script[src="/js/tema.js"]');
+  if (adiados.length !== 1 || !adiados[0].hasAttribute('defer'))
+    erros.push(`N3: ${adiados.length} guião(ões) adiado(s) do tema em ${rel}, e é um, com defer.`);
+  const comandos = doc.querySelectorAll('[data-tema-controlo]');
+  const noCabecalho = doc.querySelectorAll('header [data-tema-controlo]');
+  const c = noCabecalho[0];
+  const botoes = c ? c.querySelectorAll('button[data-tema]').map(b => [b.getAttribute('data-tema'), normal(b.textContent), b.getAttribute('aria-pressed')]) : [];
+  if (comandos.length !== 1 || noCabecalho.length !== 1 || !c.hasAttribute('hidden') || c.getAttribute('role') !== 'group' ||
+      c.getAttribute('aria-label') !== t(lang).tema.rotulo || JSON.stringify(botoes) !== JSON.stringify(BOTOES_DO_TEMA[lang]))
+    erros.push(`N3: o comando do tema em ${rel} não é o esperado (${comandos.length} na página, ${noCabecalho.length} no cabeçalho; botões ${JSON.stringify(botoes)}).`);
+}
+{
+  const pastaDasFolhas = path.join(dist, '_astro');
+  const folhas = fs.existsSync(pastaDasFolhas) ? fs.readdirSync(pastaDasFolhas).filter(f => f.endsWith('.css')) : [];
+  let escolhas = 0;
+  for (const f of folhas) {
+    const css = fs.readFileSync(path.join(pastaDasFolhas, f), 'utf8');
+    if (/prefers-color-scheme\s*:\s*dark/.test(css)) erros.push(`N3: a folha _astro/${f} aplica o escuro pela preferência do sistema.`);
+    escolhas += (css.match(/\[data-theme=['"]?dark['"]?\]/g) ?? []).length;
+  }
+  if (!folhas.length) erros.push('N3: nenhuma folha construída lida em _astro/; a célula não mediu nada.');
+  else if (!escolhas) erros.push('N3: nenhuma folha construída tem a paleta escura no seletor da escolha do leitor.');
+}
 function anda(dir) {
   for (const f of fs.readdirSync(dir, {withFileTypes:true})) {
     const abs = path.join(dir,f.name);
@@ -445,15 +488,15 @@ function anda(dir) {
     if (!cru.includes('class="wrap"')) continue;
     const doc = parse(cru);
     if (!doc.querySelector('footer.rodape')) continue;
-    if (doc.querySelector('[data-theme]') || doc.querySelectorAll('script').some(s =>
-      s.getAttribute('src') === '/js/tema.js' || /data-theme|localStorage\s*\.\s*(?:getItem|setItem)\s*\(\s*['"]tema['"]/.test(s.textContent)))
-      erros.push(`N3: guião ou atributo do tema em ${path.relative(dist, abs)}.`);
     paginas++;
     const lang = doc.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt';
-    const esperado = lang === 'pt' ? ['Portugal','Lugares','Temas','Estudos','Sobre'] : ['Portugal','Places','Themes','Studies','About'];
+    confereTema(doc, path.relative(dist, abs), lang);
+    /* N1 · AS SEIS PORTAS (bloco P4, 02.10.2026, item 0 do brief P4): a página da União entra entre «Estudos» e
+       «Sobre», com o rótulo curto (a razão medida está em `src/lib/navegacao.mjs`). A lista esperada é escrita aqui. */
+    const esperado = lang === 'pt' ? ['Portugal','Lugares','Temas','Estudos','Europa','Sobre'] : ['Portugal','Places','Themes','Studies','Europe','About'];
     const portas = doc.querySelectorAll('#nav-principal a');
-    const destinos = lang === 'pt' ? ['/','/lugares/','/temas/','/estudos','/sobre'] : ['/en','/en/places/','/en/themes/','/en/studies','/en/about'];
-    if (JSON.stringify(portas.map(a=>normal(a.textContent))) !== JSON.stringify(esperado) || portas.some((a,i)=>a.getAttribute('href') !== destinos[i]) || doc.querySelector('.nav-menu')) erros.push(`N1: menu de cinco errado em ${path.relative(dist, abs)}.`);
+    const destinos = lang === 'pt' ? ['/','/lugares/','/temas/','/estudos','/uniao-europeia','/sobre'] : ['/en','/en/places/','/en/themes/','/en/studies','/en/european-union','/en/about'];
+    if (JSON.stringify(portas.map(a=>normal(a.textContent))) !== JSON.stringify(esperado) || portas.some((a,i)=>a.getAttribute('href') !== destinos[i]) || doc.querySelector('.nav-menu')) erros.push(`N1: menu de seis errado em ${path.relative(dist, abs)}.`);
     /* N2 lê o rótulo onde ele está desde o bloco R1 (23.09.2026): no topo de
        cada página, e não no rodapé. O que ela protege é o mesmo, a porta e o
        ponto final numa caixa que não quebra. */

@@ -88,8 +88,10 @@
 }
 
 /* ============================================================
-   TOKENS v3: a paleta segue o sistema, pela decisão do B1 de 22.09.2026.
-   A regra sem consulta dá a paleta clara; a consulta aplica a paleta escura.
+   TOKENS v3: claro para toda a gente; o escuro só em :root[data-theme="dark"],
+   pela escolha do leitor (Emenda 12, §1.52; de volta pelo bloco P4, 02.10.2026,
+   depois de dez dias a seguir o sistema, §1.117). A razão está em
+   `src/components/ControloDeTema.astro`.
 
    ------------------------------------------------------------
    A COR É O ESTADO (v3; `IDENTIDADE.md` §2, `DECISIONS.md` §1.50, Emenda 1 de
@@ -174,8 +176,8 @@
 }
 
 /* ============================================================
-   O ESCURO SEGUE O SISTEMA (B1, 22.09.2026).
-   A paleta conserva as cores e as condições de contraste já medidas.
+   O ESCURO É UMA ESCOLHA DO LEITOR (Emenda 12; de volta pelo bloco P4): este
+   seletor é o único caminho para ele. A paleta não muda.
 
    AS DUAS CONDIÇÕES DA DIREÇÃO CONTINUAM DE PÉ, porque são sobre a paleta e não
    sobre a porta por onde ela entra:
@@ -193,16 +195,14 @@
    (7,18:1), enquanto o marcador pode ficar no cobalto escuro porque leva
    contorno.
    ============================================================ */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #15171a;
-    --ink: #eceeea; /* 15,38:1 sobre o papel escuro */
-    --g1: #b9beba; /* 9,52:1 */
-    --g2: #8e948f; /* 5,80:1 */
-    --g3: #3a3f3c; /* 1,67:1, decoração */
-    --amber: #e0a21a; /* 8,00:1 sobre papel escuro: aqui o âmbar lê-se sozinho */
-    --ochre: #e0a21a; /* a palavra do estado em escuro É o âmbar; o ocre falha aqui */
-    --cobalt: #1f4e8c; /* marcador; 2,16:1 sozinho, e por isso leva contorno */
-    --cobalt-palavra: #7fa6dc; /* 7,18:1 */
-  }
+:root[data-theme='dark'] {
+  --paper: #15171a;
+  --ink: #eceeea; /* 15,38:1 sobre o papel escuro */
+  --g1: #b9beba; /* 9,52:1 */
+  --g2: #8e948f; /* 5,80:1 */
+  --g3: #3a3f3c; /* 1,67:1, decoração */
+  --amber: #e0a21a; /* 8,00:1 sobre papel escuro: aqui o âmbar lê-se sozinho */
+  --ochre: #e0a21a; /* a palavra do estado em escuro É o âmbar; o ocre falha aqui */
+  --cobalt: #1f4e8c; /* marcador; 2,16:1 sozinho, e por isso leva contorno */
+  --cobalt-palavra: #7fa6dc; /* 7,18:1 */
 }

@@ -1,48 +1,28 @@
 ---
 /**
- * O CONTROLO DO TEMA — «claro · escuro» —, escrito uma vez e rendido em dois
- * sítios do mesmo cabeçalho.
+ * O COMANDO DO TEMA, «claro · escuro», no cabeçalho de todas as páginas (bloco P4, 02.10.2026, item 00 do brief
+ * `design/observatorio/BRIEF-P4-os-pequenos-do-sitio.md`; a Emenda 12 de 21.08.2026, `DECISIONS.md` §1.52, de volta).
  *
- * ---------------------------------------------------------------------------
- * PORQUE É QUE ELE PASSA A TER DOIS LUGARES (correções de UX, bloco A, item A7)
- * ---------------------------------------------------------------------------
- * A auditoria de 25.08 mediu a mobília do cabeçalho no telemóvel: 213px em
- * todas as páginas e 259px na primeira, com o primeiro título de conteúdo a
- * 0,35 ecrãs (achado D6). A decisão do lugar de direção, abaixo de 640px, é «a
- * marca numa linha, as duas leituras numa só linha em corpo de mobília, o
- * comando de tema dentro do menu». O comando mede 44px de altura, que é o alvo
- * de toque que ele tem de ter, e é a fila mais alta da mobília: dentro do menu
- * ele deixa de custar essa fila ao ecrã de entrada e continua a uma toque de
- * distância.
+ * O SÍTIO É CLARO PARA TODA A GENTE, com ou sem guião, em qualquer aparelho, e o escuro é uma escolha do leitor, feita
+ * aqui e guardada no aparelho dele. Entre 22.09 e 02.10.2026 o papel escuro seguiu a preferência do sistema, sem
+ * comando (§1.117, I130); a leitura do diretor de 02.10.2026 viu o sítio escuro no portátil e claro no telemóvel, sem
+ * maneira de escolher, e o brief P4 repôs a Emenda 12.
  *
- * DUAS RENDIÇÕES, E NÃO UMA QUE SE MOVE. O lugar do telemóvel é dentro de
- * `<nav id="nav-principal">`, que o «Menu» abre; o lugar do computador é a
- * mobília, por baixo da marca. Os dois vivem em ramos diferentes da árvore, e
- * nenhuma folha move um elemento de um ramo para o outro. É a mesma disciplina
- * que a primeira página já usa nos quatro painéis: tudo o que o leitor pode ver
- * está no documento, e a folha acende um. Cada cópia é apagada pela `@media` da
- * outra largura, e um elemento com `display: none` não está na árvore de
- * acessibilidade: em cada largura há um comando, e um só.
+ * UM LUGAR SÓ, À VISTA EM TODAS AS LARGURAS: a fila da marca, à direita dela (`Masthead.astro`). Os dois lugares do
+ * bloco A (item A7, um na mobília por baixo da marca e outro dentro do menu que abria no telemóvel) deixaram de
+ * existir com a mobília antiga, na peça 3 do B1: o menu de hoje não abre e o cabeçalho não tem mobília por baixo da
+ * marca. A fila da marca tem lugar para os dois botões (a 390 px a marca da primeira página mede 248 px numa coluna
+ * de 354), e onde não tem, a 320 px, o comando desce para a linha seguinte em vez de apertar a marca. Cada botão tem
+ * o alvo de toque de 44 px por 44.
  *
- * `public/js/tema.js` passou a servir TODOS os controlos que encontrar
- * (`querySelectorAll`), e não o primeiro: com dois no documento, servir o
- * primeiro deixaria o do telemóvel escondido para sempre, porque é o script que
- * lhe tira o `hidden`.
- *
- * ENTRA `hidden` DO SERVIDOR, como entrava. Sem JavaScript o sítio é claro e
- * este comando não existe — um comando que não comanda nada é uma promessa
- * falhada, e é mais barato não o desenhar.
+ * ENTRA `hidden` DO SERVIDOR, e é `public/js/tema.js` que lhe tira o `hidden` depois de pôr os dois botões a dizer o
+ * estado certo. Sem guião o sítio é claro e este comando não aparece: um comando que não comanda nada seria uma
+ * promessa falhada. A guarda contra o pisca está no `<head>` de `Base.astro`, com o corpo de `src/lib/tema.mjs`.
  */
-const { s, onde } = Astro.props;
+const { s } = Astro.props;
 ---
 
-<div
-  class:list={['tema', onde === 'menu' && 'tema-no-menu']}
-  role="group"
-  aria-label={s.tema.rotulo}
-  data-tema-controlo
-  hidden
->
+<div class="tema" role="group" aria-label={s.tema.rotulo} data-tema-controlo hidden>
   <button type="button" class="tema-b" data-tema="light" aria-pressed="true">{s.tema.claro}</button>
   <button type="button" class="tema-b" data-tema="dark" aria-pressed="false">{s.tema.escuro}</button>
 </div>

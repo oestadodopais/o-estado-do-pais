@@ -186,6 +186,13 @@ export const STRINGS = {
          e «União Europeia» ao lado de uma página que se chama «Portugal na União
          Europeia» seriam dois nomes para a mesma coisa. */
       uniaoEuropeia: 'Portugal na União Europeia',
+      /* A PORTA DA UNIÃO NO MENU DO CABEÇALHO (bloco P4, 02.10.2026, item 0 do
+         brief P4). O nome inteiro da página fica no rodapé, que é o índice do
+         sítio; no menu, a sexta porta leva o nome curto, porque as seis têm de
+         caber numa linha a 390 px e «União Europeia» não cabe (a medida está no
+         relatório do bloco e em `src/lib/navegacao.mjs`). É a decisão do brief, e
+         ela cede a regra do F1.10 («um nome por coisa») só no menu. */
+      uniaoEuropeiaNoMenu: 'Europa',
       estudos: 'Estudos',
       /* «NÚMEROS E FONTES» E NÃO «LIVRO-RAZÃO» (bloco F1.10, item 8.8,
          08.09.2026). É o tropeço R2 da ronda de leitores de 07.09 («the
@@ -3039,6 +3046,7 @@ export const STRINGS = {
       distritos: 'Districts',
       /* Ver a razão na edição portuguesa. */
       uniaoEuropeia: 'Portugal in the European Union',
+      uniaoEuropeiaNoMenu: 'Europe',
       estudos: 'Studies',
       /* Ver a razão na edição portuguesa. */
       livro: 'Numbers and sources',

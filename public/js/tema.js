@@ -38,7 +38,9 @@
  * página não tem controlo nenhum, e o cabeçalho tem «Menu» na mesma.
  *
  * ---------------------------------------------------------------------------
- * PARTE 2 · O CONTROLO DO TEMA (Emenda 12, 21.08.2026; DECISIONS §1.52).
+ * PARTE 2 · O CONTROLO DO TEMA (Emenda 12, 21.08.2026; DECISIONS §1.52; de
+ * volta pelo bloco P4, 02.10.2026, depois de dez dias em que o escuro seguiu a
+ * preferência do sistema sem comando, §1.117).
  * ---------------------------------------------------------------------------
  *
  * Claro por defeito para todos, independentemente da preferência do sistema. O
@@ -107,15 +109,12 @@
   /* --------------------------------------------------------------------------
    * TODOS OS CONTROLOS, E NÃO O PRIMEIRO (bloco A das correções de UX, item A7)
    * --------------------------------------------------------------------------
-   * Era `querySelector`, porque o cabeçalho tinha um controlo só. Desde a
-   * correção da cabeça no telemóvel tem DOIS — o da mobília, por baixo da marca,
-   * e o de dentro do menu —, e cada largura apaga o do outro lado com uma
-   * `@media`. Servir o primeiro deixaria o outro `hidden` para sempre, porque é
-   * este ficheiro que lhe tira o `hidden`, e o telemóvel ficava sem comando.
-   *
-   * O que muda é só o número: a leitura da chave é uma, o estado do documento é
-   * um, e os dois controlos dizem sempre a mesma coisa porque `aplica()` escreve
-   * em todos de uma vez. */
+   * O bloco A pôs dois controlos no cabeçalho, um por largura, e este ficheiro
+   * passou a servir todos os que encontrar. Desde o bloco P4 (02.10.2026) há um
+   * só, na fila da marca, à vista em todas as larguras (a razão está em
+   * `src/components/ControloDeTema.astro`); servir todos continua certo e não
+   * custa nada: a leitura da chave é uma, o estado do documento é um, e
+   * `aplica()` escreve em todos de uma vez. */
   var grupos = document.querySelectorAll('[data-tema-controlo]');
   if (!grupos.length) return;
 

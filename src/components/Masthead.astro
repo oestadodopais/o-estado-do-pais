@@ -1,11 +1,18 @@
 ---
 /** B1, peça 3: cinco destinos numa linha. A língua e as restantes portas
- * ficam no rodapé e no Sobre. O nome é o título da primeira página. */
+ * ficam no rodapé e no Sobre. O nome é o título da primeira página.
+ *
+ * P4 (02.10.2026, o brief P4, itens 00 e 0): o menu passa a seis, com a página
+ * da União entre «Estudos» e «Sobre», porque o leitor de 02.10 não a encontrou;
+ * e o comando do tema volta ao cabeçalho, na fila da marca, à direita dela, em
+ * todas as larguras (a razão do lugar está em `ControloDeTema.astro`). A troca
+ * de língua continua no rodapé, onde a peça 3 do B1 a pôs. */
 import { SITE_NAME } from '../../site.config.mjs';
 import { routePath, normalizePath } from '../lib/routes.mjs';
 import Caminho from './Caminho.astro';
+import ControloDeTema from './ControloDeTema.astro';
 import { t } from '../i18n/strings.mjs';
-import { ROTAS_NAV, ETIQUETA_NAV } from '../lib/navegacao.mjs';
+import { ROTAS_NAV, ETIQUETA_NO_MENU } from '../lib/navegacao.mjs';
 const { lang = 'pt', path, compact = false } = Astro.props;
 const s = t(lang);
 const aqui = normalizePath(path ?? Astro.url.pathname);
@@ -18,12 +25,15 @@ const NomeTag = naHome ? 'h1' : 'p';
     {ROTAS_NAV.map(chave => {
       const href = routePath(chave, lang);
       return <a href={href} aria-current={normalizePath(href) === aqui ? 'page' : undefined}>
-        {chave === 'home' ? 'Portugal' : s.nav[ETIQUETA_NAV[chave]]}
+        {chave === 'home' ? 'Portugal' : s.nav[ETIQUETA_NO_MENU[chave]]}
       </a>;
     })}
   </nav>
   <div class:list={['masthead', compact && 'masthead-compact', naHome && 'masthead-pais']}>
-    <NomeTag class="wordmark">{compact ? <a href={home}>{SITE_NAME}</a> : SITE_NAME}</NomeTag>
+    <div class="masthead-marca">
+      <NomeTag class="wordmark">{compact ? <a href={home}>{SITE_NAME}</a> : SITE_NAME}</NomeTag>
+      <ControloDeTema s={s} />
+    </div>
     <Caminho lang={lang} path={aqui} />
   </div>
 </header>

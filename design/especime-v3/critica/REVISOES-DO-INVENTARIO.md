@@ -570,3 +570,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | ue2-b | 32 cadeias novas, 40 retiradas | por ler | Claude Opus 5.5, construtor da passagem UE2-b: as perguntas de 18 medidas na forma em palavras comuns, a única desde a passagem, com os termos da leitura a frio do UE2 explicados, nas duas línguas; as perguntas de antes e as formas da página da União que mudaram de texto passam a retiradas; a definição da inflação na forma do recibo da série, por baixo do nome da sua faixa na secção dos países; e a descrição nova da página da União, que diz também os países. As linhas do UE2 cujo texto ficou ganham uma nota. Escrito por `design/especime-v3/medicoes/ue2-2026-10-02/inventario-ue2-b.mjs`. A leitura cruzada do diff faz-se antes da fusão. |
+
+## P4 · os pequenos do sítio depois do UE2, 02.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| p4 | 2 cadeias novas, nenhuma retirada | por ler | Claude Opus 5.5, construtor do P4: o nome do grupo do comando do tema («Tema» e «Theme»), que só se ouve, no cabeçalho de todas as páginas, com a Emenda 12 de volta (item 00 do brief P4). |

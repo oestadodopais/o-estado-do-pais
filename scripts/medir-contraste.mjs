@@ -49,10 +49,11 @@ const amarelo = (s) => `\x1b[33m${s}\x1b[0m`;
 /* ============================================================= as duas paletas
  *
  * O ficheiro declara duas, por esta ordem: `:root` nu é a paleta clara, que é a
- * de toda a gente; o bloco `@media (prefers-color-scheme: dark) { :root {…} }`
- * é a escura, que desde 22.09.2026 segue a preferência do sistema (§1.117,
- * I130: o comando saiu com a mobília antiga na peça 3 do B1, e a Emenda 12 fica
- * revogada nesta parte). A régua aceita também a forma antiga do bloco.
+ * de toda a gente; o bloco `:root[data-theme='dark']` é a escura, que é a
+ * escolha do leitor no comando do cabeçalho (a Emenda 12, de volta pelo bloco
+ * P4, 02.10.2026; entre 22.09 e 02.10.2026 o escuro seguiu a preferência do
+ * sistema, §1.117, I130). A régua aceita também a forma desses dez dias,
+ * `@media (prefers-color-scheme: dark) { :root {…} }`.
  *
  * ERAM TRÊS BLOCOS ATÉ 21.08.2026, e a régua tinha uma conferência a mais: o
  * escuro vinha por duas portas — a preferência do sistema e a escolha explícita
@@ -67,8 +68,11 @@ const ESTADOS = [
   { chave: 'claro', titulo: 'claro (:root)', bloco: /:root\s*\{([\s\S]*?)\n\}/ },
   {
     chave: 'escuro',
-    titulo: 'escuro, pela preferência do sistema (@media (prefers-color-scheme: dark))',
-    bloco: /(?:@media \(prefers-color-scheme: dark\) \{\s*\n\s*:root \{|:root\[data-theme=['"]dark['"]\]\s*\{)([\s\S]*?)\n  ?\}/,
+    titulo: "escuro, pela escolha do leitor (:root[data-theme='dark'])",
+    /* Os dois feitios fecham em sítios diferentes: o seletor de topo fecha numa chaveta sem recuo, e o da consulta
+       dentro dela, com dois espaços. A primeira redação exigia um espaço antes da chaveta e, no feitio de topo, ia
+       buscar o fecho a uma regra seguinte (corrigido no bloco P4, 02.10.2026). */
+    bloco: /(?::root\[data-theme=['"]dark['"]\]\s*\{([\s\S]*?)\n\}|@media \(prefers-color-scheme: dark\) \{\s*\n\s*:root \{([\s\S]*?)\n  \})/,
   },
 ];
 
@@ -76,7 +80,7 @@ function lerFichas(css, bloco) {
   const m = css.match(bloco);
   if (!m) return null;
   const fichas = {};
-  for (const linha of m[1].split('\n')) {
+  for (const linha of (m[1] ?? m[2]).split('\n')) {
     const f = linha.match(/^\s*(--[a-z0-9-]+)\s*:\s*([^;]+);/i);
     if (f) fichas[f[1]] = f[2].trim();
   }

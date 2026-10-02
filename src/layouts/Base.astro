@@ -12,13 +12,13 @@ import {
   SITE_SHORT_NAME,
   SITE_URL,
   PAPEL_CLARO,
-  PAPEL_ESCURO,
   canonicalUrl,
 } from '../../site.config.mjs';
 import { alternatesFor, normalizePath } from '../lib/routes.mjs';
 import { abrePagina } from '../lib/uma-vez-por-pagina.mjs';
 import { DIMENSOES, cartaoDaPagina, urlDoCartao } from '../lib/cartoes.mjs';
 import { t } from '../i18n/strings.mjs';
+import { GUARDA_DO_TEMA } from '../lib/tema.mjs';
 import Masthead from '../components/Masthead.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import RotuloDeIA from '../components/RotuloDeIA.astro';
@@ -196,9 +196,44 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <!-- A cor do navegador acompanha a paleta escolhida pelo sistema. -->
-    <meta name="theme-color" content={PAPEL_CLARO} media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content={PAPEL_ESCURO} media="(prefers-color-scheme: dark)" />
+    {
+      /* ------------------------------------------------------------------
+         A COR DA MOBÍLIA DO NAVEGADOR É A DO PAPEL DESTA PÁGINA, E É UMA SÓ
+         (Emenda 12, §1.52; de volta pelo bloco P4, 02.10.2026)
+         ------------------------------------------------------------------
+         O sítio é claro para toda a gente até o leitor escolher o escuro no
+         comando do cabeçalho. Uma etiqueta com `media="(prefers-color-scheme:
+         dark)"` pintaria de escuro a barra de um leitor de sistema escuro que
+         nunca pediu o escuro, por cima de uma página de papel claro. O papel
+         escuro está à mão de quem sabe o que o leitor escolheu:
+         `public/js/tema.js` troca esta cor quando o leitor carrega no botão, e
+         o portão de HTML confere os dois papéis contra os tokens.
+         ------------------------------------------------------------------ */
+    }
+    <meta name="theme-color" content={PAPEL_CLARO} />
+    {
+      /* ------------------------------------------------------------------
+         A GUARDA CONTRA O PISCA DO TEMA (Emenda 12, §1.52; de volta pelo bloco
+         P4, 02.10.2026)
+         ------------------------------------------------------------------
+         Claro por omissão para todos. Quem escolheu escuro tem a escolha
+         guardada no aparelho, e esta linha aplica-a ANTES da primeira pintura:
+         um ficheiro adiado corre depois de a página pintar, e o leitor que
+         pediu escuro veria a página clara primeiro e o escuro a seguir.
+
+         É bloqueante e é minúscula de propósito, e é a única coisa que escreve
+         `data-theme` antes do clique: compara a chave com UMA cadeia e, quando
+         não bate certo, não faz nada; um valor estranho não produz atributo
+         nenhum. O `try` existe porque `localStorage` atira, e não devolve
+         nada, quando o aparelho o recusa. `is:inline` porque uma etiqueta que
+         o empacotador mova deixa de estar antes da pintura. A N3 do
+         `check:pais` exige este corpo, carácter a carácter, em cada página.
+         ------------------------------------------------------------------ */
+    }
+    <script
+      is:inline
+      set:html={GUARDA_DO_TEMA}
+    />
     <meta name="apple-mobile-web-app-title" content={SITE_SHORT_NAME} />
 
     <link rel="canonical" href={canonical} />
@@ -275,5 +310,13 @@ const cartaoTwitter = urlDoCartao({ ...cartao, ...DIM_TWITTER });
       <SiteFooter lang={lang} path={path} outraLingua={caminhoDaOutraLingua} />
     </div>
 
+    {
+      /* O CONTROLO DO TEMA, adiado e partilhado por todas as páginas (Emenda
+         12; de volta pelo bloco P4, 02.10.2026). A guarda do `<head>` trata da
+         primeira pintura; este trata do clique e do que se guarda, e mostra o
+         comando. Vem depois do documento porque nada do que ele faz é preciso
+         antes de o leitor ver a página. */
+    }
+    <script src="/js/tema.js" defer is:inline></script>
   </body>
 </html>

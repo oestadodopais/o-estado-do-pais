@@ -53,8 +53,14 @@ const FICHAS = {
    acompanhe fecha a célula, em vez de ela aceitar a cor antiga. */
 {
   const tokens = await fs.readFile(path.join(RAIZ, 'src', 'styles', 'tokens.css'), 'utf8');
-  const claro = tokens.slice(tokens.indexOf(':root {'), tokens.indexOf('@media (prefers-color-scheme: dark)'));
-  const escuro = tokens.slice(tokens.indexOf('@media (prefers-color-scheme: dark)'));
+  /* A paleta escura vive no seletor da escolha do leitor (a Emenda 12, de volta pelo bloco P4, 02.10.2026). */
+  const SELETOR_ESCURO = ":root[data-theme='dark'] {";
+  if (!tokens.includes(SELETOR_ESCURO)) {
+    console.error(`geometria: não encontrei o bloco ${SELETOR_ESCURO} em tokens.css.`);
+    process.exit(2);
+  }
+  const claro = tokens.slice(tokens.indexOf(':root {'), tokens.indexOf(SELETOR_ESCURO));
+  const escuro = tokens.slice(tokens.indexOf(SELETOR_ESCURO));
   for (const [tema, bloco] of [['light', claro], ['dark', escuro]]) {
     for (const [nome, ficha] of [['papel', 'paper'], ['tinta', 'ink'], ['g1', 'g1'], ['g2', 'g2'], ['g3', 'g3'], ['âmbar', 'amber']]) {
       const m = new RegExp(`--${ficha}:\\s*(#[0-9a-fA-F]{6})`).exec(bloco);
@@ -187,6 +193,9 @@ const navegador = await chromium.launch({ headless: true });
 /** @param {string} rota @param {number} largura @param {'light'|'dark'} tema @param {string|null} [html] */
 async function correr(rota, largura, tema, html = null) {
   const ctx = await navegador.newContext({ viewport: { width: largura, height: 900 }, deviceScaleFactor: 1, colorScheme: tema, reducedMotion: 'reduce' });
+  /* O ESCURO É A ESCOLHA DO LEITOR (bloco P4, 02.10.2026): o aparelho em escuro já não escurece a página, e a corrida
+     escura guarda a escolha antes de a página abrir, como o comando a guarda, para a guarda do `<head>` a aplicar. */
+  if (tema === 'dark') await ctx.addInitScript(() => { try { localStorage.setItem('tema', 'dark'); } catch {} });
   const externos = [];
   try {
     await ctx.route('**/*', (r) => {
