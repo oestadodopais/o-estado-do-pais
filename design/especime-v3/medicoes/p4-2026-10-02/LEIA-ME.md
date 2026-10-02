@@ -163,7 +163,7 @@ A corrida final do construtor, na cabeça `716af503`, deu `build` 0, `verify` 1 
 
 ### Os portões da passagem
 
-A corrida final corre pela tranca na cabeça do commit desta secção, e os códigos, lidos dos ficheiros, entram no commit seguinte, em `portoes-c/`, com esta linha posta em dia.
+A corrida final correu pela tranca (`sh scripts/leituras/portoes.sh`) na cabeça `66dfc531`, a do commit desta secção, com os ficheiros em `portoes-c/` e a cabeça ao lado dos códigos (`portoes-c/cabeca`): `build` 0, `verify` 0 e `typecheck` 0, lidos de `portoes-c/build.codigo`, `portoes-c/verify.codigo` e `portoes-c/typecheck.codigo`. Os registos levam `<worktree>` e `<casa>` no lugar dos caminhos da máquina.
 
 ### O que fica por fazer
 

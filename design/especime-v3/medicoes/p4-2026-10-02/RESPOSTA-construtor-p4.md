@@ -25,6 +25,6 @@
 - **Achado 6.** No modo dos ficheiros, um ficheiro pedido que não se lê dá 1, com o nome; o conhecido-positivo plantado dá 2; o guião de antes dava 0, calado.
 - **O cartão do índice de dívida.** «105,5 % da receita de três anos» e «dentro do limite legal, que é 150 %», com o 150 lido da linha do limite, sem marca própria e com a porta na aritmética do recibo; as mesmas palavras no cartão das câmaras; a dobra e os valores não mudam. A célula ID: 616 páginas, 614 com valor (594 dentro, 20 fora), 2 sem valor, 6 plantas a morder; 6 plantas `p4c-` dos portões a morder.
 - **Capturas**: 4, do cartão de Évora a 390 e a 1280 px nas duas edições, com 0 problemas.
-- **Portões da passagem**: correm pela tranca na cabeça do commit desta resposta, e os códigos entram no commit seguinte, em `portoes-c/`.
+- **Portões da passagem**: na cabeça `66dfc531`, pela tranca, `build` 0, `verify` 0 e `typecheck` 0 (`portoes-c/`).
 - **Por fazer**: as duas réguas à mão a 1; a unidade antiga na legenda e na tabela do mapa da dívida em «Lugares», se o lugar de direção a quiser igual; as 11 linhas do INE em prosa, no motor; a leitura a frio da passagem.
 - **Custo da passagem**: 241 964 símbolos e 4 780 segundos, das duas leituras em ficheiro.

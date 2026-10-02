@@ -2,9 +2,9 @@
   "bloco": "P4",
   "construtor": "Claude Opus 5.5",
   "base": "afc4fb20",
-  "cabeca": "a43787cc6856ca65ff869aa00ccd75bc7985743d",
+  "cabeca": "66dfc531ee2171193a70471dbda8500169a1f13a",
   "guiao": "design/especime-v3/medicoes/p4-2026-10-02/medir-p4.mjs",
-  "escrito_em": "2026-10-02T22:50:35.881Z",
+  "escrito_em": "2026-10-02T23:08:24.994Z",
   "medidas_escritas": 37,
   "medidas_do_p4": 28,
   "medidas_da_p4c": 9,
@@ -650,7 +650,12 @@
     },
     {
       "nome": "p4c_portoes",
-      "valor": "por correr: os portões da P4-c correm depois do último commit da passagem, e os códigos entram no commit seguinte",
+      "valor": {
+        "cabeca": "66dfc531ee2171193a70471dbda8500169a1f13a",
+        "build": 0,
+        "verify": 0,
+        "typecheck": 0
+      },
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/p4-2026-10-02/portoes-c",
       "conhecido_positivo": {
         "o_que": "o guião escreve a cabeça ao lado dos códigos",
