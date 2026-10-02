@@ -19,6 +19,19 @@
  * o sistema dá a porta e ninguém a escolhe.
  *
  * ---------------------------------------------------------------------------
+ * O MAPA MUDOU DE PÁGINA, E A RÉGUA FOI ATRÁS DELE (bloco P4, 02.10.2026)
+ * ---------------------------------------------------------------------------
+ * Desde o L2a (01.10.2026, §1.149 e §1.150) o mapa das 29 unidades vive em
+ * «Lugares», e a primeira página ficou com a porta e o sinal. A régua rebentava
+ * na primeira vez que procurava o mapa na primeira página (a linha 501), e uma
+ * régua que rebenta mente por omissão (§5 do brief P4, decisão 1). As células
+ * do mapa medem agora «Lugares» (`LUGARES`), dentro de `#mapa`, porque a página
+ * tem um segundo mapa, o das comparações dos concelhos; a rede de nomes ao lado
+ * do mapa passou a ser a gaveta dos distritos e das ilhas, que lista as 29; e as
+ * células que mediam uma decisão que só existia na primeira página saem, com a
+ * razão escrita no lugar delas (a M1e e as suas duas plantas).
+ *
+ * ---------------------------------------------------------------------------
  * O QUE CADA CÉLULA MEDE, E PORQUE É ASSIM QUE SE MEDE
  * ---------------------------------------------------------------------------
  * M1 e M2 · os alvos das 29, a 1280 e nas quatro larguras de telemóvel que a
@@ -183,6 +196,9 @@ const PONTOS_DAS_UNIDADES = Object.fromEntries(
    A folha dá ao mapa a largura da JANELA abaixo de 640 (I81), e por isso cada
    uma destas é ao mesmo tempo a janela e a largura do desenho. */
 const TELEMOVEIS = [320, 360, 390, 430];
+/* A PÁGINA DO MAPA DAS 29 (bloco P4): «Lugares», nas duas edições, desde o L2a. */
+const LUGARES = { pt: '/lugares/', en: '/en/places/' };
+const eLugares = (rota) => rota === LUGARES.pt || rota === `${LUGARES.pt}index.html` || rota === '/lugares';
 const LIMIAR_DA_JANELA = 640;
 
 /* UM CLIQUE QUE MUDA DE PÁGINA ESPERA-SE ANTES DE SE DAR, E NÃO DEPOIS.
@@ -282,13 +298,18 @@ const QUADRADO_INSCRITO = ({ pontos, PASSO }) => {
 
 /** O que o navegador vê do mapa das 29, a uma largura. */
 async function mapaDoPais(largura) {
-  const p = await pagina('/', largura);
+  const p = await pagina(LUGARES.pt, largura);
   const r = await p.evaluate(() => {
-    const svg = document.querySelector('[data-mapa-areas]');
-    if (!svg) return { erro: 'a primeira página não tem o mapa das áreas' };
+    const svg = document.querySelector('#mapa [data-mapa-areas]');
+    if (!svg) return { erro: '«Lugares» não tem o mapa das áreas' };
     const caixa = svg.getBoundingClientRect();
-    const tela = document.querySelector('.mapa-tela').getBoundingClientRect();
-    const areas = [...document.querySelectorAll('[data-areas] .uni')].map((el) => {
+    const tela = document.querySelector('#mapa .mapa-tela').getBoundingClientRect();
+    /* A REDE DE NOMES É A GAVETA DOS DISTRITOS E DAS ILHAS (P4): abre-se como o
+       leitor a abre, e mede-se aberta. Lista as 29, e cada nome é a porta da
+       página da sua unidade, lida do endereço. */
+    const gaveta = document.querySelector('[data-gaveta="distritos"]');
+    if (gaveta) gaveta.open = true;
+    const areas = [...document.querySelectorAll('#mapa [data-areas] .uni')].map((el) => {
       const b = el.getBoundingClientRect();
       return {
         slug: el.getAttribute('data-unidade'),
@@ -297,18 +318,19 @@ async function mapaDoPais(largura) {
         lado: Math.max(b.width, b.height),
       };
     });
-    const daLista = [...document.querySelectorAll('[data-mapa-ilhas] [data-lista-porta]')];
+    const daLista = [...document.querySelectorAll('[data-lista-lugares="distritos"] a[href^="/distritos/"]')];
+    const slugDe = (a) => a.getAttribute('href').replace(/^\/distritos\//, '').replace(/\/$/, '');
     return {
       caixa: { w: caixa.width, h: caixa.height },
       tela: tela.width,
       janela: window.innerWidth,
       areas,
-      naLista: [...new Set(daLista.map((a) => a.getAttribute('data-lista-porta')))],
+      naLista: [...new Set(daLista.map(slugDe))],
       alvosDaLista: daLista.map((a) => {
         const b = a.getBoundingClientRect();
-        return { slug: a.getAttribute('data-lista-porta'), h: b.height, w: b.width };
+        return { slug: slugDe(a), h: b.height, w: b.width };
       }),
-      ligacoes: document.querySelectorAll('[data-areas] a.uni-porta').length,
+      ligacoes: document.querySelectorAll('#mapa [data-areas] a.uni-porta').length,
     };
   });
   if (!r.erro) {
@@ -328,10 +350,12 @@ async function mediuOPais(largura, id) {
   const chegam = r.areas.filter((a) => a.inscrito >= ALVO);
   const naoChegam = r.areas.filter((a) => a.inscrito < ALVO);
   const semRede = naoChegam.filter((a) => !r.naLista.includes(a.slug));
-  const alvoDaLista = largura >= 1024 ? ALVO_PONTEIRO : ALVO;
-  /* No ecrã com rato a linha é a declarada, 32 px, e não «pelo menos 32»: uma
-     linha de 44 ali seria a forma antiga a passar. */
-  const listaCurta = r.alvosDaLista.filter((a) => a.h < alvoDaLista || (largura >= 1024 && a.h > alvoDaLista + 2));
+  /* OS NOMES DA GAVETA SÃO ALVOS DE 44 px EM TODAS AS LARGURAS (P4). A lista ao
+     lado do mapa da primeira página declarava 32 px exatos no ecrã com rato, e
+     44 no telemóvel; a gaveta de «Lugares» declara 44 em todas (`lugar.css`,
+     `.lugares-lista a`), e é essa a declaração que a célula mede agora. */
+  const alvoDaLista = ALVO;
+  const listaCurta = r.alvosDaLista.filter((a) => a.h < alvoDaLista);
   const porCaixa = r.areas.filter((a) => a.lado >= ALVO);
   const foraDoPonto = r.areas.filter((a) => !a.dentro);
 
@@ -383,17 +407,18 @@ async function mediuOPais(largura, id) {
       ? `29/29 pontos dentro da própria área · o maior quadrado inscrito vai de ${Math.min(...r.areas.map((a) => a.inscrito))} a ${Math.max(...r.areas.map((a) => a.inscrito))} px`
       : `fora: ${foraDoPonto.map((a) => a.nome).join(', ')}`,
   );
-  /* ABAIXO DE 640 O MAPA MEDE A JANELA (I81). É a decisão desta passagem, e é
-     medível: a tela toma a largura da janela em vez da coluna, que é a janela
-     menos duas goteiras. Acima do limiar a célula não corre, porque ali a folha
-     manda outra coisa e essa outra coisa está medida nas células a, b e c. */
-  if (largura < LIMIAR_DA_JANELA) {
-    conta(
-      `${id}e · a ${largura}, a tela do mapa mede a janela e não a coluna`,
-      Math.abs(r.tela - r.janela) < 0.5,
-      `tela ${r.tela.toFixed(1)} px numa janela de ${r.janela} px (a coluna mede ${(r.janela - r.tela).toFixed(1)} px menos)`,
-    );
-  }
+  /* A CÉLULA e SAIU NO BLOCO P4 (02.10.2026). Media a decisão da I81, «abaixo
+     de 640 o mapa mede a janela», que era uma regra do mapa da PRIMEIRA PÁGINA
+     (`[data-inicio] .mapa-tela`, com a margem negativa que o levava às bordas).
+     O L2a pôs o mapa em «Lugares» com a disposição dessa página (§1.150: a
+     pesquisa, o mapa e as gavetas; a partir de 1 024 px o mapa à direita), e lá a
+     tela mede 281 px a 320 e a 390 px, dentro da coluna: a regra não passou para
+     a página nova e nenhuma decisão a pede lá. Uma célula que mede uma decisão
+     que deixou de existir é uma célula a acusar a página de uma coisa que
+     ninguém lhe pediu; a ordem e a colocação do mapa em «Lugares» medem-se na
+     célula do L2a (`tests/inicio/mapa-primeiro.mjs`, no `check:navegacao`). As
+     suas duas plantas saíram com ela. */
+  void LIMIAR_DA_JANELA;
 }
 
 /* ------------------------------------------------------------------ M1 e M2 */
@@ -468,13 +493,14 @@ for (const slug of DISTRITOS_MEDIDOS) {
     }))
     .sort((a, b) => b.caminhos - a.caminhos);
   const maior = paginasDeDistrito[0];
+  /* A PÁGINA QUE LEVA O DESENHO DAS 29 É «LUGARES» desde o L2a (P4). */
   medidas.pesos = {
-    inicio: peso('index.html'),
-    inicio_caminhos: bytesDosCaminhos('index.html'),
+    inicio: peso(path.join('lugares', 'index.html')),
+    inicio_caminhos: bytesDosCaminhos(path.join('lugares', 'index.html')),
     maior_distrito: maior,
   };
   conta(
-    'M4a · a primeira página, com o desenho das 29 dentro',
+    'M4a · «Lugares», com o desenho das 29 dentro',
     true,
     `${(medidas.pesos.inicio / 1024).toFixed(1)} KB de HTML, ${(medidas.pesos.inicio_caminhos / 1024).toFixed(1)} KB de caminhos`,
   );
@@ -487,9 +513,9 @@ for (const slug of DISTRITOS_MEDIDOS) {
 
 /* ---------------------------------------------------------------------- M5 */
 {
-  const p = await pagina('/', 1280);
+  const p = await pagina(LUGARES.pt, 1280);
   const r = await p.evaluate(() => {
-    const areas = [...document.querySelectorAll('[data-areas] .uni')];
+    const areas = [...document.querySelectorAll('#mapa [data-areas] .uni')];
     const estilo = (el) => {
       const c = getComputedStyle(el);
       return [c.fill, c.stroke, c.strokeWidth, c.opacity].join('|');
@@ -499,7 +525,7 @@ for (const slug of DISTRITOS_MEDIDOS) {
   });
   /* O rato e o teclado: o que muda é o contorno e só ele. */
   const antes = await p.evaluate(() => {
-    const c = getComputedStyle(document.querySelector('[data-areas] .uni'));
+    const c = getComputedStyle(document.querySelector('#mapa [data-areas] .uni'));
     return { fill: c.fill, stroke: c.stroke, w: c.strokeWidth };
   });
   /* O RATO VAI AO PONTO REPRESENTATIVO DE UMA UNIDADE, e não ao centro da caixa
@@ -509,9 +535,9 @@ for (const slug of DISTRITOS_MEDIDOS) {
   const daRegiao = JSON.parse(
     fs.readFileSync(path.join(RAIZ, 'mapa', 'pais.json'), 'utf8'),
   ).unidades.find((u) => u.slug === 'evora');
-  await p.locator('[data-mapa-areas]').scrollIntoViewIfNeeded();
+  await p.locator('#mapa [data-mapa-areas]').scrollIntoViewIfNeeded();
   const ondeCentro = await p.evaluate((pt) => {
-    const svg = document.querySelector('[data-mapa-areas]');
+    const svg = document.querySelector('#mapa [data-mapa-areas]');
     const q = new DOMPoint(pt[0], pt[1]).matrixTransform(svg.getScreenCTM());
     return { x: q.x, y: q.y };
   }, daRegiao.ponto);
@@ -524,7 +550,7 @@ for (const slug of DISTRITOS_MEDIDOS) {
   await p.__ctx.close();
 
   conta(
-    'M5a · as áreas do mapa da primeira página têm o mesmo desenho (Emenda 10)',
+    'M5a · as áreas do mapa de «Lugares» têm o mesmo desenho (Emenda 10)',
     r.distintos.length === 1,
     r.distintos.length === 1
       ? `um estilo só para as ${r.n}: ${r.distintos[0]}`
@@ -539,7 +565,7 @@ for (const slug of DISTRITOS_MEDIDOS) {
   );
 
   /* Nenhuma cor de estatuto no desenho: as três do sítio, lidas dos tokens. */
-  const p2 = await pagina('/', 1280);
+  const p2 = await pagina(LUGARES.pt, 1280);
   const semEstatuto = await p2.evaluate(() => {
     /* ---------------------------------------------------------------------
        UMA COR COMPARA-SE NA FORMA EM QUE O NAVEGADOR A DEVOLVE
@@ -573,7 +599,7 @@ for (const slug of DISTRITOS_MEDIDOS) {
       return out;
     };
     const cores = resolveCores(['--amber', '--cobalt', '--cobalt-palavra', '--amber-palavra']);
-    const areas = [...document.querySelectorAll('[data-areas] .uni')];
+    const areas = [...document.querySelectorAll('#mapa [data-areas] .uni')];
     const usadas = new Set();
     for (const el of areas) {
       const c = getComputedStyle(el);
@@ -848,14 +874,17 @@ function repeticoesNosMapas(paginas) {
  * --------------------------------------------------------------------------- */
 async function mediuAOrdemDaLista(rota, id) {
   const p = await pagina(rota, 1280);
+  /* A GAVETA DOS DISTRITOS E DAS ILHAS (P4): as listas por parcela das 29
+     unidades, que ficavam por baixo do mapa da primeira página, passaram no L2a
+     à gaveta de «Lugares». Mede-se a ordem rendida contra a colação da língua.
+     Só esta gaveta, que é o objeto da célula desde o F1.1e (o grupo das regiões
+     saiu dela então); a das regiões, na edição inglesa, segue a ordem dos nomes
+     portugueses («Azores» antes de «Alentejo»), e isso está no relatório do P4
+     como achado, fora do mandato do bloco. */
   const grupos = await p.evaluate(() =>
-    [...document.querySelectorAll('[data-parcela-lista]')].map((g) => ({
-      parcela: g.getAttribute('data-parcela-lista'),
-      /* O GRUPO DAS NOVE REGIÕES SAIU COM O F1.1e, e com ele a sua marca
-         (`data-lista-regiao`), que este selector também lia. Fica um selector
-         só, que é o das 29 unidades: um selector para uma marca que já não se
-         rende é uma régua a dizer que ainda olha para lá. */
-      nomes: [...g.querySelectorAll('[data-lista-porta]')].map((a) => a.textContent.trim()),
+    [...document.querySelectorAll('[data-lista-lugares="distritos"]')].map((g) => ({
+      parcela: g.getAttribute('data-lista-lugares'),
+      nomes: [...g.querySelectorAll('a')].map((a) => a.textContent.trim()),
     })),
   );
   await p.__ctx.close();
@@ -875,8 +904,8 @@ async function mediuAOrdemDaLista(rota, id) {
           .join(' | '),
   );
 }
-await mediuAOrdemDaLista('/', 'M10a');
-await mediuAOrdemDaLista('/en', 'M10b');
+await mediuAOrdemDaLista(LUGARES.pt, 'M10a');
+await mediuAOrdemDaLista(LUGARES.en, 'M10b');
 
 /* ------------------------------------------------------------------ M7 e M8 */
 function corre(guiao, args = []) {
@@ -928,54 +957,32 @@ const PLANTAS = [
      Saíram durante um dia, com as células, quando o F1.1d trocou as 29 unidades
      pelas nove regiões no mapa da primeira página; o desenho voltou às 29, e uma
      célula sem planta é uma célula por provar. */
+  /* DUAS PLANTAS SAÍRAM NO BLOCO P4 (02.10.2026), com a célula que provavam:
+     «o mapa encolhido para 200 px na primeira página» e «o mapa do telemóvel de
+     volta à largura da coluna» mordiam a M2·320e, a regra da I81 do mapa da
+     primeira página, que saiu (a razão está na função `mediuOPais`). A primeira
+     mordia também a M1b, porque a lista de então só nomeava as unidades
+     pequenas; a gaveta de «Lugares» nomeia as 29, e encolher o mapa já não deixa
+     nenhuma sem nome: a M1b prova-se agora tirando nomes à gaveta, nas duas
+     plantas seguintes. */
   {
-    nome: 'o mapa encolhido para 200 px na primeira página',
-    celulas: ['M1b', 'M2·320e'],
-    estrago: (html, rota) =>
-      rota === '/' || rota === '/index.html'
-        ? html.replace('</head>', '<style>.mapa-tela{width:200px !important;margin-inline:0 !important}</style></head>')
-        : html,
-  },
-  {
-    nome: 'os nomes retirados das listas por baixo do mapa',
+    nome: 'os nomes retirados da gaveta dos distritos e das ilhas',
     celulas: ['M1b', 'M2·320b'],
     estrago: (html, rota) =>
-      rota === '/' || rota === '/index.html'
-        ? html.replace(
-            /<li><a href="\/distritos\/[^"]*" data-lista-porta="[^"]*">[^<]*<\/a><\/li>/g,
-            '',
-          )
-        : html,
-  },
-  {
-    /* O ESTRAGO DA I81. A folha volta a dar ao mapa a largura da COLUNA abaixo
-       de 640, que é o que ela dizia até esta passagem: a margem negativa que o
-       leva às bordas da caixa de conteúdo é anulada. Numa janela de 320 a tela
-       cai de 320 para 284 px, e a célula que mede a decisão sai vermelha. */
-    nome: 'o mapa do telemóvel de volta à largura da coluna',
-    celulas: ['M2·320e'],
-    estrago: (html, rota) =>
-      rota === '/' || rota === '/index.html'
-        ? html.replace(
-            '</head>',
-            '<style>@media (max-width:640px){[data-inicio] .mapa-tela{margin-inline:0 !important}}</style></head>',
-          )
+      eLugares(rota)
+        ? html.replace(/<li[^>]*><a href="\/distritos\/[^"]*" data-lugar[^>]*>[^<]*<\/a><\/li>/g, '')
         : html,
   },
   {
     /* O ESTRAGO DA I82, e é o caso conhecido da medição cega M3. A Ilha da
-       Madeira tem uma CAIXA de 186 px a 390 e um quadrado inscrito de 8: pela
-       caixa é um alvo folgado, pela área inscrita não é alvo nenhum. Tirar-lhe o
-       nome da lista era invisível para a régua antiga e é vermelho para esta,
-       que é exactamente a diferença entre as duas medidas. */
-    nome: 'o nome da Ilha da Madeira retirado da lista da sua parcela',
+       Madeira tem uma CAIXA folgada e um quadrado inscrito muito abaixo dos 44
+       px: pela caixa é um alvo, pela área inscrita não é. Tirar-lhe o nome da
+       gaveta é vermelho para a M1b, que é a diferença entre as duas medidas. */
+    nome: 'o nome da Ilha da Madeira retirado da gaveta',
     celulas: ['M1b', 'M2·390b'],
     estrago: (html, rota) =>
-      rota === '/' || rota === '/index.html'
-        ? html.replace(
-            /<li><a href="\/distritos\/ilha-da-madeira" data-lista-porta="ilha-da-madeira">[^<]*<\/a><\/li>/g,
-            '',
-          )
+      eLugares(rota)
+        ? html.replace(/<li[^>]*><a href="\/distritos\/ilha-da-madeira" data-lugar[^>]*>[^<]*<\/a><\/li>/g, '')
         : html,
   },
   {
@@ -984,7 +991,7 @@ const PLANTAS = [
     nome: 'uma área pintada com a cor de um estatuto',
     celulas: ['M5a', 'M5c'],
     estrago: (html, rota) =>
-      rota === '/' || rota === '/index.html'
+      eLugares(rota)
         ? html.replace(
             '</head>',
             '<style>[data-unidade="evora"]{stroke:var(--amber) !important}</style></head>',
@@ -997,14 +1004,18 @@ const PLANTAS = [
        repetição posta de volta na cadeia em memória. É exactamente o defeito que
        a medição cega achou: `class` e `viewBox` escritos duas vezes no `<svg>`
        do cartão localizador. */
-    nome: 'o `class` e o `viewBox` repetidos no `<svg>` do cartão localizador',
+    /* O ALVO PASSOU AO MAPA DE «LUGARES» (P4): o cartão localizador da página do
+       concelho, onde a repetição foi achada, saiu com o item 8.17 do F1.10, e a
+       página de Évora já não tem `<svg>` de mapa nenhum. A repetição planta-se no
+       `<svg>` das 29 unidades, que é onde o mapa vive. */
+    nome: 'o `class` e o `viewBox` repetidos no `<svg>` do mapa de «Lugares»',
     celulas: ['M9'],
     emMemoria: () => {
       const paginas = paginasComMapa().map((pg) => ({ ...pg }));
-      const alvo = paginas.find((pg) => pg.rel.startsWith('municipios/evora/'));
+      const alvo = paginas.find((pg) => pg.rel === path.join('lugares', 'index.html'));
       alvo.html = alvo.html.replace(
-        '<svg class="mapa-svg" viewBox="0 0 600 790"',
-        '<svg class="mapa-svg" viewBox="0 0 600 790" class="mapa-svg" viewBox="0 0 600 790"',
+        '<svg class="mapa-svg mapa-svg-areas" viewBox="0 0 6090 8030"',
+        '<svg class="mapa-svg mapa-svg-areas" viewBox="0 0 6090 8030" class="mapa-svg" viewBox="0 0 6090 8030"',
       );
       const achados = repeticoesNosMapas(paginas);
       conta(
@@ -1020,15 +1031,15 @@ const PLANTAS = [
     /* O ESTRAGO DA X2. Um nome muda de sítio na lista do continente, e é o
        defeito que a leitura de fora achou: «Évora» no fim, depois de Viseu. O
        estrago tira-o de onde ele agora está e volta a pô-lo no fim. */
-    nome: 'um nome movido para o fim da lista do continente',
+    nome: 'um nome movido para o fim da gaveta dos distritos e das ilhas',
     celulas: ['M10a'],
     estrago: (html, rota) => {
-      if (rota !== '/' && rota !== '/index.html') return html;
-      const item = '<li><a href="/distritos/evora" data-lista-porta="evora">Évora</a></li>';
-      if (!html.includes(item)) return html;
-      const sem = html.replace(item, '');
-      const fim = sem.indexOf('</ul>', sem.indexOf('data-parcela-lista="continente"'));
-      return sem.slice(0, fim) + item + sem.slice(fim);
+      if (!eLugares(rota)) return html;
+      const m = /<li[^>]*><a href="\/distritos\/evora" data-lugar[^>]*>Évora<\/a><\/li>/.exec(html);
+      if (!m) return html;
+      const sem = html.replace(m[0], '');
+      const fim = sem.indexOf('</ul>', sem.indexOf('data-lista-lugares="distritos"'));
+      return sem.slice(0, fim) + m[0] + sem.slice(fim);
     },
   },
   {
@@ -1065,7 +1076,7 @@ if (VERMELHOS) {
       if (planta.celulas.some((c) => c.startsWith(`M2·${w}`))) await mediuOPais(w, `M2·${w}`);
     }
     if (planta.celulas.some((c) => c.startsWith('M5'))) {
-      const p = await pagina('/', 1280);
+      const p = await pagina(LUGARES.pt, 1280);
       const r = await p.evaluate(() => {
         const resolveCores = (nomes) => {
           const sonda = document.createElement('span');
@@ -1089,7 +1100,7 @@ if (VERMELHOS) {
           sonda.remove();
           return out;
         };
-        const areas = [...document.querySelectorAll('[data-areas] .uni')];
+        const areas = [...document.querySelectorAll('#mapa [data-areas] .uni')];
         const estilo = (el) => {
           const c = getComputedStyle(el);
           return [c.fill, c.stroke, c.strokeWidth, c.opacity].join('|');
@@ -1104,11 +1115,11 @@ if (VERMELHOS) {
         return { distintos: [...new Set(areas.map(estilo))], cores, usadas: [...usadas] };
       });
       await p.__ctx.close();
-      conta('M5a · as áreas do mapa da primeira página têm o mesmo desenho', r.distintos.length === 1, `${r.distintos.length} estilos`);
+      conta('M5a · as áreas do mapa de «Lugares» têm o mesmo desenho', r.distintos.length === 1, `${r.distintos.length} estilos`);
       const colisao = r.usadas.filter((u) => r.cores.includes(u));
       conta('M5c · nenhuma cor de estatuto', colisao.length === 0, `${colisao.length} colisões`);
     }
-    if (planta.celulas.includes('M10a')) await mediuAOrdemDaLista('/', 'M10a');
+    if (planta.celulas.includes('M10a')) await mediuAOrdemDaLista(LUGARES.pt, 'M10a');
     if (planta.celulas.includes('M6a')) {
       /* NUMA PÁGINA DE DISTRITO (F1.1d): na primeira página um clique numa área
          faz a região crescer e não abre página nenhuma, e por isso o clique que
