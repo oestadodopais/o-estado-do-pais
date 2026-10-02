@@ -37,7 +37,9 @@
  *   L10 · sem pontuação entre os nomes, nas duas gavetas.
  *
  * E SAEM, com a razão escrita no lugar delas, as que mediam a cabeça da primeira
- * página ou o par entre um nome e a sua área: a L2 (a legenda na banda da cabeça),
+ * página (a da Emenda 24, §1.84, com a emenda do alinhamento de 29.08.2026, que o
+ * PP1 e o L2a deixaram sem objeto) ou o par entre um nome e a sua área: a L2 (a
+ * legenda na banda da cabeça),
  * a L6 e a L7 (o rato ou o foco num nome a acender a área, e o contrário: a gaveta
  * de «Lugares» é uma lista de ligações sem par com o desenho, e o nome da área
  * apontada diz-se no lugar do nome do mapa, que a U2 de `mapa-unidades.mjs`

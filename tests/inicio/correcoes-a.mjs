@@ -742,11 +742,11 @@ for (const edicao of ['pt', 'en']) {
 
   /* ------------------------------------------------------------------ A11 · a identidade
      SAIU NO BLOCO P4 (02.10.2026). Media a frase de definição por baixo da marca,
-     uma vez, na letra da prosa e sem porta. A frase saiu do cabeçalho com a peça 3
-     do B1 (`ad6c0d8f`, 21.09.2026: «O nome é o título da primeira página»), e a
-     primeira página não a rende em lado nenhum: a célula media um objeto que
-     deixou de existir, e dava «0 ocorrência(s)». A frase de identidade de hoje,
-     onde se render, é texto declarado que o inventário das frases mede. */
+     uma vez, na letra da prosa e sem porta (a frase da §1.98, segunda emenda, item
+     3, com as palavras do F1.13). A frase saiu do cabeçalho com a peça 3 do B1
+     (`ad6c0d8f`, 21.09.2026: «O nome é o título da primeira página»), e a L4 do
+     `check:lugar` exige-a agora a 0 em `/` e em `/en/` («esperado 0, B1»): a célula
+     media um objeto que deixou de existir por decisão, e dava «0 ocorrência(s)». */
 
   /* ------------------------------------------------------------------- A8 · o vazio */
   const limites = await p.evaluate(() => {
