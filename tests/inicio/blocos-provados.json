@@ -1938,18 +1938,40 @@
         },
         {
           "caminho": "ressalva[0]",
-          "pt": "O risco de pobreza mede-se contra o rendimento de cada país: é ter menos de ",
-          "en": "The risk of poverty is measured against each country’s own income: it means having less than ",
+          "pt": "Os dois números, o de Portugal e o da União, contam quem está em pelo menos uma de três situações: rendimento abaixo de ",
+          "en": "Both figures, Portugal’s and the Union’s, count the people in at least one of three situations: income below ",
           "partes": [
             {
-              "pt": "O risco de pobreza mede-se contra o rendimento de cada país: é ter menos de ",
-              "en": "The risk of poverty is measured against each country’s own income: it means having less than ",
+              "pt": "Os dois números, o de Portugal e o da União,",
+              "en": "Both figures, Portugal’s and the Union’s,",
               "classe": "diz",
               "apoios": [
                 {
+                  "linha": "risco-de-pobreza-ou-exclusao-2025",
+                  "campo": "excerpt",
+                  "literal": "Portugal — 2025"
+                },
+                {
+                  "linha": "risco-de-pobreza-ou-exclusao-2025-ue",
+                  "campo": "excerpt",
+                  "literal": "European Union - 27 countries"
+                }
+              ]
+            },
+            {
+              "pt": " contam quem está em pelo menos uma de três situações: rendimento abaixo de ",
+              "en": " count the people in at least one of three situations: income below ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-arope",
+                  "campo": "excerto",
+                  "literal": "corresponds to the sum of persons who are either at risk of poverty, or severely materially and socially deprived or living in a household with a very low work intensity"
+                },
+                {
                   "origem": "eurostat-tipslc10-descricao",
                   "campo": "excerto",
-                  "literal": "At risk-of-poverty are persons with an equalised disposable income below the risk-of-poverty threshold, which is set at 60 % of the national median equalised disposable income"
+                  "literal": "At risk-of-poverty are persons with an equalised disposable income below the risk-of-poverty threshold"
                 }
               ]
             }
@@ -1957,12 +1979,12 @@
         },
         {
           "caminho": "ressalva[2]",
-          "pt": " % do rendimento mediano, o do meio.",
-          "en": " % of the median income, the one in the middle.",
+          "pt": " % do rendimento mediano do seu país, o do meio; privação material e social grave; ou viver num agregado com intensidade de trabalho muito baixa. Cada pessoa conta uma só vez.",
+          "en": " % of their country’s median income, the one in the middle; severe material and social deprivation; or living in a household with very low work intensity. Each person counts only once.",
           "partes": [
             {
-              "pt": " % do rendimento mediano, o do meio.",
-              "en": " % of the median income, the one in the middle.",
+              "pt": " % do rendimento mediano do seu país, o do meio;",
+              "en": " % of their country’s median income, the one in the middle;",
               "classe": "diz",
               "apoios": [
                 {
@@ -1974,6 +1996,42 @@
                   "origem": "eurostat-glossario-mediana",
                   "campo": "excerto",
                   "literal": "The median is the middle value in a group of numbers ranked in order of size."
+                }
+              ]
+            },
+            {
+              "pt": " privação material e social grave;",
+              "en": " severe material and social deprivation;",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-arope",
+                  "campo": "excerto",
+                  "literal": "severely materially and socially deprived"
+                }
+              ]
+            },
+            {
+              "pt": " ou viver num agregado com intensidade de trabalho muito baixa.",
+              "en": " or living in a household with very low work intensity.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-arope",
+                  "campo": "excerto",
+                  "literal": "living in a household with a very low work intensity"
+                }
+              ]
+            },
+            {
+              "pt": " Cada pessoa conta uma só vez.",
+              "en": " Each person counts only once.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "glossario-arope",
+                  "campo": "excerto",
+                  "literal": "People are included only once even if they are in more than one of the situations mentioned above."
                 }
               ]
             }

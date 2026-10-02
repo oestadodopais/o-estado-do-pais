@@ -264,9 +264,13 @@ export const BLOCOS_DA_PRIMEIRA_PAGINA = [
       ],
     },
     pecas: [],
+    /* AS TRÊS PARTES DA DEFINIÇÃO (passagem K2-c, 02.10.2026, achado 7 da leitura a frio do Codex): o número do painel é
+       o da pobreza ou exclusão social, e a explicação só dizia o rendimento abaixo de 60 % da mediana. Diz agora as três
+       situações da definição declarada (`DEFINICOES_DAS_MEDIDAS`, a do glossário do Eurostat) e que cada pessoa conta
+       uma vez, para os dois números do painel, o de Portugal e o da União; os valores não mudam. */
     ressalva: {
-      pt: ['O risco de pobreza mede-se contra o rendimento de cada país: é ter menos de ', nl('60'), ' % do rendimento mediano, o do meio.'],
-      en: ['The risk of poverty is measured against each country’s own income: it means having less than ', nl('60'), ' % of the median income, the one in the middle.'],
+      pt: ['Os dois números, o de Portugal e o da União, contam quem está em pelo menos uma de três situações: rendimento abaixo de ', nl('60'), ' % do rendimento mediano do seu país, o do meio; privação material e social grave; ou viver num agregado com intensidade de trabalho muito baixa. Cada pessoa conta uma só vez.'],
+      en: ['Both figures, Portugal’s and the Union’s, count the people in at least one of three situations: income below ', nl('60'), ' % of their country’s median income, the one in the middle; severe material and social deprivation; or living in a household with very low work intensity. Each person counts only once.'],
     },
   },
 ];
