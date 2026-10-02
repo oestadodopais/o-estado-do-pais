@@ -1911,6 +1911,36 @@ export const DEFINICAO_DOS_PAINEIS = /** @type {const} */ ({
  * o Banco de Portugal, que compila a posição de investimento internacional de
  * Portugal, publica uma página que a explica nas duas línguas: é dela que a
  * frase sai agora, palavra por palavra, com o endereço e o excerto ao lado.
+ *
+ * ---------------------------------------------------------------------------
+ * A FORMA DA PÁGINA DA UNIÃO (bloco UE2, 02.10.2026, o item 3 e a decisão 3 do
+ * brief UE2; o achado 6 da leitura a frio do K2)
+ * ---------------------------------------------------------------------------
+ * Na página da União, a definição dobrada de cada um dos 21 cartões diz em
+ * palavras comuns o que o número é, e o termo técnico da fonte fica ao lado,
+ * entre parênteses, para quem o procura. Sete perguntas usavam um dos quatro
+ * termos que a leitura a frio do K2 apontou (o índice nominal do custo unitário
+ * do trabalho, os deflatores, as economias avançadas e a dívida ou o fluxo de
+ * crédito consolidado), e cada uma ganha `uniao`: a pergunta nessa forma, nas
+ * duas línguas, com as suas origens.
+ *
+ * É UMA FORMA E NÃO UMA SEGUNDA DEFINIÇÃO. As mesmas perguntas rendem-se na
+ * dobra dos cartões das páginas de assunto, que o §4 do brief não deixa mudar,
+ * e por isso a pergunta do cartão fica como estava e a página da União usa a
+ * sua forma, como o recibo da série usa a `serie`. As regras, que a construção
+ * e as células conferem:
+ *   · a forma cita todas as origens da pergunta do cartão, e acrescenta as que
+ *     explicam os termos (`conferirOrigensDeclaradas()`, abaixo);
+ *   · cada pedaço dela apoia-se num literal de uma origem que ela declara, e
+ *     cada origem que ela declara apoia um pedaço (a K16 do `check:cartao`, com
+ *     a auditoria em `tests/cartao/perguntas-provadas.json`);
+ *   · as palavras que explicam são as que a leitura de cada cartão nacional já
+ *     usa e a K17 já audita, onde as há («o que se paga pelo trabalho a
+ *     dividir pelo que ele produz», «descontado o que reembolsaram», «a parte
+ *     que as exportações de bens e serviços … têm no total»), e nenhuma muda um
+ *     valor nem uma etiqueta da fonte;
+ *   · a régua 8.4 do `check:lugar` confere, na página da União, que a dobra
+ *     rende a forma e as origens dela, carácter a carácter.
  */
 export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
   'divida-publica-2025': {
@@ -1946,6 +1976,16 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     en: [
       'How much has the nominal unit labour cost index, per hour worked, changed over three years?',
     ],
+    /* A FORMA DA PÁGINA DA UNIÃO (bloco UE2, 02.10.2026): a ver a nota antes de `DEFINICOES_DAS_MEDIDAS`. */
+    uniao: {
+      origens: ['pdm-custo-do-trabalho', 'eurostat-tipslm10-descricao'],
+      pt: [
+        'Quanto mudou em três anos a remuneração por hora de trabalho, aos preços de cada ano, a dividir pelo que se produz numa hora de trabalho (o índice nominal do custo unitário do trabalho, por hora trabalhada)?',
+      ],
+      en: [
+        'How much has pay per hour of work, at each year’s prices, divided by what an hour of work produces, changed over three years (the nominal unit labour cost index, per hour worked)?',
+      ],
+    },
   },
   'precos-da-habitacao-2025': {
     origens: ['glossario-hpi'],
@@ -1967,6 +2007,15 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     en: [
       'How much has the country’s export performance against advanced economies changed over three years?',
     ],
+    uniao: {
+      origens: ['pdm-exportacoes', 'eurostat-tipsbp60-descricao'],
+      pt: [
+        'Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da OCDE e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)?',
+      ],
+      en: [
+        'How much has the part that the country’s exports of goods and services make up of the total exports of OECD countries and of EU countries outside the OECD changed over three years (export performance against advanced economies)?',
+      ],
+    },
   },
   'divida-das-empresas-2025': {
     /* A EXPANSÃO DA SIGLA FICOU `[a verificar]` A 14.09.2026 (achado 6), porque
@@ -1977,6 +2026,15 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     origens: ['pdm-divida-das-empresas', 'eurostat-tipspd30'],
     pt: ['Quanto devem as sociedades não financeiras, em dívida consolidada e em percentagem do PIB?'],
     en: ['How much do non-financial corporations owe in consolidated debt, as a percentage of GDP?'],
+    uniao: {
+      origens: ['pdm-divida-das-empresas', 'eurostat-tipspd30', 'eurostat-tipspd30-descricao', 'eurostat-tipspc30-descricao'],
+      pt: [
+        'Quanto devem as empresas que não são financeiras, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada das sociedades não financeiras), em percentagem do PIB?',
+      ],
+      en: [
+        'How much do companies other than financial companies owe in loans and debt securities, leaving out what they owe one another (the consolidated debt of non-financial corporations), as a percentage of GDP?',
+      ],
+    },
   },
   'divida-das-familias-2025': {
     /* DUAS ORIGENS: a linha da Comissão abrevia «incl. NPISH», e o nome por
@@ -1988,6 +2046,15 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     en: [
       'How much do households and non-profit institutions serving them owe in consolidated debt, as a percentage of GDP?',
     ],
+    uniao: {
+      origens: ['pdm-divida-das-familias', 'glossario-npish', 'eurostat-tipspd22-descricao', 'eurostat-tipspc40-descricao'],
+      pt: [
+        'Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada), em percentagem do PIB?',
+      ],
+      en: [
+        'How much do households and non-profit institutions serving them owe in loans and debt securities, leaving out what they owe one another (consolidated debt), as a percentage of GDP?',
+      ],
+    },
   },
   'fluxo-de-credito-as-empresas-2025': {
     /* REESCRITA A 09.09.2026 na primeira oração: dizia «o crédito novo», e a
@@ -2019,6 +2086,15 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     en: [
       'What percentage of non-financial corporations’ debt in the previous period does their consolidated credit flow represent, excluding foreign direct investment from both amounts?',
     ],
+    uniao: {
+      origens: ['pdm-credito-as-empresas', 'glossario-fdi', 'eurostat-tipspd30', 'eurostat-tipspc30-descricao', 'eurostat-sec2010-registo-liquido'],
+      pt: [
+        'Quanto crédito contraíram num ano as empresas que não são financeiras, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado das sociedades não financeiras), em percentagem da dívida que tinham no fim do ano anterior, excluindo o investimento direto estrangeiro das duas parcelas?',
+      ],
+      en: [
+        'How much credit did companies other than financial companies take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow of non-financial corporations), as a percentage of the debt they had at the end of the previous year, excluding foreign direct investment from both amounts?',
+      ],
+    },
   },
   'fluxo-de-credito-as-familias-2025': {
     /* REESCRITA A 09.09.2026 na primeira oração, pela mesma razão da anterior, e
@@ -2035,6 +2111,15 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
     en: [
       'What percentage of the debt of households and non-profit institutions serving them in the previous period does their consolidated credit flow represent?',
     ],
+    uniao: {
+      origens: ['pdm-credito-as-familias', 'glossario-npish', 'eurostat-tipspc40-descricao', 'eurostat-sec2010-registo-liquido'],
+      pt: [
+        'Quanto crédito contraíram num ano as famílias e as instituições sem fim lucrativo ao seu serviço, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado), em percentagem da dívida que tinham no fim do ano anterior?',
+      ],
+      en: [
+        'How much credit did households and non-profit institutions serving them take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow), as a percentage of the debt they had at the end of the previous year?',
+      ],
+    },
   },
   'saldo-da-balanca-corrente-2025': {
     /* A MÉDIA É MÓVEL, E PARA TRÁS (achado 12 de 14.09.2026, que é o achado 7
@@ -2075,6 +2160,19 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
       { nl: '41', motivo: 'escala-de-instrumento' },
       ' other industrial countries, based on consumer price index deflators, changed over three years?',
     ],
+    uniao: {
+      origens: ['pdm-cambio-efectivo-real', 'eurostat-tipser10-descricao'],
+      pt: [
+        'Quanto mudaram em três anos os preços do país face aos de outros ',
+        { nl: '41', motivo: 'escala-de-instrumento' },
+        ' países industriais, contando as taxas de câmbio e os preços no consumidor de cada um (a taxa de câmbio efetiva real, com base nos deflatores dos índices de preços no consumidor)?',
+      ],
+      en: [
+        'How much have the country’s prices relative to those of ',
+        { nl: '41', motivo: 'escala-de-instrumento' },
+        ' other industrial countries, allowing for exchange rates and each country’s consumer prices, changed over three years (the real effective exchange rate, based on consumer price index deflators)?',
+      ],
+    },
   },
   /* O GRUPO ETÁRIO DESTAS TRÊS (I129, segunda passagem, 22.09.2026). A célula
      K13 apanhou-as a dizer a medida sem dizer de quem ela é: o glossário do
@@ -2308,6 +2406,20 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
  * @param {Record<string, { origens?: readonly string[] }>} coleccao
  */
 export const conferirOrigensDeclaradas = (familia, coleccao) => {
+  /* A FORMA DA PÁGINA DA UNIÃO (bloco UE2, 02.10.2026) confere-se como uma definição, com uma regra a mais: cita
+     todas as origens da pergunta do cartão, para que a forma em palavras comuns nunca perca uma fonte do que diz. */
+  for (const [nome, d] of Object.entries(coleccao)) {
+    const forma = /** @type {{ uniao?: { origens?: readonly string[] } }} */ (/** @type {unknown} */ (d)).uniao;
+    if (!forma) continue;
+    conferirOrigensDeclaradas(`${familia} (a forma da página da União de "${nome}")`, { [nome]: forma });
+    const faltam = (d.origens ?? []).filter((o) => !(forma.origens ?? []).includes(o));
+    if (faltam.length) {
+      throw new Error(
+        `figuras: a forma da página da União de "${nome}" não cita ${faltam.join(', ')}, que a pergunta do cartão ` +
+          `cita. A forma em palavras comuns diz o mesmo com as mesmas fontes, e as que explicam os termos a mais.`,
+      );
+    }
+  }
   for (const [nome, d] of Object.entries(coleccao)) {
     if (!Array.isArray(d.origens) || d.origens.length === 0) {
       throw new Error(

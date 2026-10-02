@@ -64,6 +64,7 @@ import { t } from '../src/i18n/strings.mjs';
 import {
   DEFINICAO_DOS_PAINEIS,
   DEFINICOES_DAS_MEDIDAS,
+  FIGURAS,
   origensDaDefinicao,
   textoDaDefinicao,
 } from '../src/data/figuras.mjs';
@@ -1650,7 +1651,12 @@ for (const ficheiro of paginas) {
       anota('d84_definicoes_fora', `${url} · «${id}»: a leitura não rende a definição`);
       continue;
     }
-    conferirDefinicao(el, id, d[lang], d);
+    /* A FORMA DA PÁGINA DA UNIÃO (bloco UE2, 02.10.2026). Na página da União, a dobra de uma medida cuja pergunta
+       tem a forma `uniao` rende essa forma, com as origens dela; em qualquer outra página, e nas medidas sem a
+       forma, a pergunta do cartão. A régua escolhe pela rota e pela declaração, e não por uma marca da página:
+       uma página que rendesse a pergunta do cartão onde devia render a forma, ou o contrário, cai aqui. */
+    const forma = chaveDaRota === 'uniaoEuropeia' && d.uniao ? d.uniao : d;
+    conferirDefinicao(el, id, forma[lang], forma);
   }
 
   /* ------------------------------------------------------------------ 8.11 */
@@ -1969,11 +1975,15 @@ for (const alvo of INDICES_DA_HIERARQUIA) {
 const DEFINICOES_ESPERADAS =
   (Object.keys(DEFINICAO_DOS_PAINEIS).length + Object.keys(DEFINICOES_DAS_MEDIDAS).length) *
   LANGS.length;
+/* AS ORIGENS DE CADA DEFINIÇÃO, NA FORMA QUE A PÁGINA RENDE (bloco UE2, 02.10.2026): as 21 medidas dos dois quadros
+   rendem-se na página da União, e a que tem a forma `uniao` rende-a, com as origens dela; as outras rendem a pergunta
+   do cartão no seu recibo. A conta faz-se da declaração, como antes, e não do que a página mostra. */
+const DOS_QUADROS = new Set(FIGURAS.map((f) => f.claim));
 const ORIGENS_ESPERADAS =
-  [...Object.values(DEFINICAO_DOS_PAINEIS), ...Object.values(DEFINICOES_DAS_MEDIDAS)].reduce(
-    (n, d) => n + d.origens.length,
-    0,
-  ) * LANGS.length;
+  [
+    ...Object.values(DEFINICAO_DOS_PAINEIS),
+    ...Object.entries(DEFINICOES_DAS_MEDIDAS).map(([id, d]) => (DOS_QUADROS.has(id) && d.uniao ? d.uniao : d)),
+  ].reduce((n, d) => n + d.origens.length, 0) * LANGS.length;
 console.log(
   `  8.4, o que a régua leu: ${definicoesVistas} definições (esperadas ${DEFINICOES_ESPERADAS}) · ` +
     `${origensVistas} origens (esperadas ${ORIGENS_ESPERADAS})`,
