@@ -326,3 +326,16 @@ planta('k2c-portao-unidade-da-casa-de-outra-linha','scripts/gate-html.mjs',[
 planta('k2c-portao-classe-etaria-trocada','scripts/gate-html.mjs',[
  ['uniao-europeia/index.html',r=>r.querySelector('[data-verbatim="origem-eurostat-tipslm90-sexo-coordenadas"]').set_content('Age class: From 15 to 24 years')]
 ],[/a citação "origem-eurostat-tipslm90-sexo-coordenadas" não foi transcrita fielmente/]);
+/* UE2 (02.10.2026): a secção dos países da página da União. A contagem do título é a da tabela de autoridade,
+   recontada pelo portão; as etiquetas do toque estão escondidas no documento, e o portão lê-as na mesma: um valor
+   trocado numa etiqueta que só aparece com o toque fecha a construção; e o nome de um país na lista dobrada é o da
+   tabela. `--prefixo ue2-` corre só estas. */
+planta('ue2-portao-conta-da-tabela-errada','scripts/gate-html.mjs',[
+ ['uniao-europeia/index.html',r=>r.querySelector('[data-tabela-dos-paises="conta"]').set_content('28')]
+],[/UE2: a contagem dos países da tabela dos nomes diz «28» e a tabela tem 27/]);
+planta('ue2-portao-valor-escondido-trocado','scripts/gate-html.mjs',[
+ ['en/european-union/index.html',r=>r.querySelector('[data-toque-de="divida-publica-2025-paises#EL"] [data-ponto]').set_content('146,2')]
+],[/UE1: o ponto «EL» da série «divida-publica-2025-paises» foi renderizado como «146,2»/]);
+planta('ue2-portao-nome-da-lista-a-mao','scripts/gate-html.mjs',[
+ ['uniao-europeia/index.html',r=>r.querySelector('[data-lista-ponto="taxa-de-emprego-2025-paises#MT"] [data-pais]').set_content('Malta e Gozo')]
+],[/UE1: o nome do país «MT» foi renderizado como «Malta e Gozo»/]);
