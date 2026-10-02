@@ -1,9 +1,9 @@
 {
   "bloco": "K2",
-  "cabeca": "3ee67971f2e9dc0f3f11dd5b2040dd13390f40f9",
+  "cabeca": "a6b4de99ee44ec78c8552e1281cb9842ae801d1c",
   "construcao": {
-    "commit": "3ee67971f2e9dc0f3f11dd5b2040dd13390f40f9",
-    "construido_em": "2026-10-02T09:26:48.074Z"
+    "commit": "a6b4de99ee44ec78c8552e1281cb9842ae801d1c",
+    "construido_em": "2026-10-02T09:43:16.575Z"
   },
   "base": {
     "cabeca": "1722244db19b66e523a7eaf9f0b27e770060bab8",
@@ -515,6 +515,31 @@
         "encontrado": true
       },
       "segundos": 29221
+    },
+    {
+      "nome": "portoes_a_zero",
+      "valor": 3,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/k2-2026-10-02/portoes",
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor de códigos lê o 1 de alvos-intermedio.codigo, a corrida intermédia do check:alvos que falhou",
+        "encontrado": true
+      },
+      "portoes": {
+        "build": {
+          "codigo": 0,
+          "segundos": 127
+        },
+        "verify": {
+          "codigo": 0,
+          "segundos": 747
+        },
+        "typecheck": {
+          "codigo": 0,
+          "segundos": 0
+        },
+        "cabeca": "a6b4de99ee44ec78c8552e1281cb9842ae801d1c",
+        "cabeca_no_fim": "a6b4de99ee44ec78c8552e1281cb9842ae801d1c"
+      }
     }
   ]
 }
