@@ -1,6 +1,6 @@
 # S1 · a caixa das sugestões: relatório do construtor
 
-*Claude Opus 5.5 (a definição `construtor`), 02.10.2026, ramo `s1-2026-10-02`, sobre o commit do brief `d0615da6`. O mandato é `design/observatorio/BRIEF-S1-a-caixa-das-sugestoes.md`. Cada número deste relatório está em `medidas.json`, escrito por `medir-s1.mjs` nesta pasta, ou noutro JSON desta pasta; o nome da medida vai entre parênteses. Sem travessões.*
+*Claude Opus 5.5 (a definição `construtor`), 02.10.2026, ramo `s1-2026-10-02`, sobre o commit do brief `d0615da6`. O mandato é `design/observatorio/BRIEF-S1-a-caixa-das-sugestoes.md`. Cada número deste relatório está num JSON desta pasta, escrito por `medir-s1.mjs`; o nome da medida vai entre parênteses. Os números das secções do S1 são os do fim do bloco, guardados em `medidas-s1.json` (a cópia do `medidas.json` da cabeça `7fdd4794`); os da passagem S1-b, na secção «S1-b» no fim, estão em `medidas.json`, com o prefixo `s1b_`. Sem travessões.*
 
 ## Antes de tudo: o bloco não aterra sem duas decisões do diretor
 
@@ -116,8 +116,87 @@ A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da má
 ## O que ficou por fazer, e porquê
 
 - **As duas decisões do diretor** do princípio: a nota e a recusa. Sem elas o bloco não aterra.
-- **As cinco linhas de ensaio na base**, para o lugar de direção confirmar e apagar: os envios de `prova-do-caminho/respostas.json`, com as horas e os identificadores (`envios_que_a_base_guardou`): `04-boa-pt` às 21:26:24 UTC (47d6bcee-b142-4c1e-b3cf-0ab4bf61dec2), `05-boa-en` às 21:26:24 (7bafb9bb-7536-4afd-9e35-560dcd2ba86f), e os três primeiros do limite às 21:26:24 e 21:26:25 (96c1302d-4dd4-4473-a529-6c8fac7af831, 07b04eb5-d235-4f94-a797-0c7bd5aa0eed, ca579724-845c-47c2-91a3-936d7c8d61af). Todos levam «ensaio» e a hora no texto.
+- **As cinco linhas de ensaio na base**, para o lugar de direção confirmar e apagar: os envios de `prova-do-caminho/respostas.json`, com as horas e os identificadores (`envios_que_a_base_guardou`): as horas são as do registo, ao segundo (acertadas na passagem S1-b, pelo achado 15 da leitura a frio):
+  - `04-boa-pt` às 21:26:24 UTC (47d6bcee-b142-4c1e-b3cf-0ab4bf61dec2);
+  - `05-boa-en` às 21:26:25 UTC (7bafb9bb-7536-4afd-9e35-560dcd2ba86f);
+  - `06-limite-1` às 21:26:25 UTC (96c1302d-4dd4-4473-a529-6c8fac7af831);
+  - `06-limite-2` às 21:26:25 UTC (07b04eb5-d235-4f94-a797-0c7bd5aa0eed);
+  - `06-limite-3` às 21:26:25 UTC (ca579724-845c-47c2-91a3-936d7c8d61af). Todos levam «ensaio» e a hora no texto.
 - **A pré-visualização** fica no projeto da Vercel, atrás da autenticação; apagá-la é do lugar de direção.
 - **O passo da leitura da caixa no `CLAUDE.md`** do projeto entra ao aterrar, pelo lugar de direção (§5.6 do brief).
 - **A frase da página das correções**, que é minha, e a releitura do diff do inventário (o bloco `s1` está «por ler» em `critica/REVISOES-DO-INVENTARIO.md`), fazem-se antes da fusão, com a leitura a frio por outra família.
 - **O bloco P4 corre ao lado** e trata do menu principal; este bloco não tocou no menu, e o rodapé só ganhou a porta nova.
+
+## S1-b · a passagem de correção depois da leitura a frio (03.10.2026)
+
+*Claude Opus 5.5, sobre a cabeça `a0a85d20` do lugar de direção, que trouxe a leitura a frio do Codex `gpt-6.1-sol` com a triagem (`design/especime-v3/critica/LEITURA-S1-2026-10-03.md`: as cinco plantas achadas, nove achados reais para esta passagem), a segunda migração da base, já aplicada (`supabase/migrations/2026-10-03-chave-tranca-e-marca-horaria.sql`), e o identificador da equipa fora do registo do lugar de direção. Não toquei no brief, nas migrações nem na nota.*
+
+### O que mudou, por achado
+
+| achado | o que mudou | a planta que morde | a medida |
+|---|---|---|---|
+| 2 (Blocking), a chave | a função manda `p_chave` (a variável sensível `SUGESTOES_CHAVE`, limpa das pontas) em cada corpo; sem a chave, ou com uma chave só de espaços, não chegou, e a base não é chamada; a recusa `chave` da base leva ao não chegou | `chave-invertida`, `chave-sem-trim`, `corpo-sem-chave`, `chave-recusada-como-limite`, na célula da função; `regras-chave-tirada` e `regras-funcao-antiga-viva`, no portão | os casos `sem-chave` e `chave-recusada`, e a conferência de todos os casos (`s1b_casos_da_celula_da_funcao_verdes`) |
+| 4, a marca de hora a hora | a marca é `sha256(sal \| ip \| hora)`, com a hora UTC inteira (`AAAA-MM-DDTHH`): igual dentro da mesma hora, outra na seguinte, sempre com 64 caracteres | `marca-sem-a-hora`, `marca-com-o-dia`, `marca-em-base64`, `marca-sem-separador`, `marca-do-ultimo-endereco` | o caso `marca-de-hora-a-hora` |
+| 10, o endereço e a proveniência | sem `x-forwarded-for`, não chegou, e a base não é chamada; o `?de=` só se lê de um `Referer` cuja origem é a origem pública do pedido | `ip-em-falta-invertido`, `referer-de-outra-origem-aceite`, `origem-sem-o-esquema-publico` | os casos `sem-ip` e `referer-de-outra-origem` (outro anfitrião e outro esquema) |
+| 6, o texto da página do limite | «Chegaram cinco sugestões deste endereço numa hora. Volte mais tarde.» / «Five suggestions arrived from this address within one hour. Please come back later.», no texto do lugar de direção; as duas frases antigas ficam retiradas no inventário, com a razão | `s1b-limite-antigo-de-volta`, sobre o `dist/`: a frase antiga de volta morde na sentinela das retiradas | `s1b_textos_da_pagina_iguais_a_decisao` |
+| 8, as regras da base | a célula lê todas as migrações por ordem de nome, segue o que cada uma cria, apaga, agenda e desagenda, e confere as regras em vigor no fim contra a tabela declarada (`REGRAS_DA_CAIXA`) e contra os textos | em memória, em cada corrida do portão: o limite mudado, a limpeza tirada, o teto tirado, a tranca tirada, a chave tirada, a função antiga viva, a retenção desagendada e mudada, a tarefa das marcas diária, uma coluna mais curta | `s1b_migracoes_lidas`, `s1b_funcoes_vivas_no_fim_das_migracoes`, `s1b_tarefas_vivas_no_fim_das_migracoes`, `s1b_regras_em_falta`, `s1b_plantas_em_memoria_da_caixa_que_morderam` |
+| 9, as fugas | em todos os casos da célula, nenhuma resposta (o corpo e os cabeçalhos) traz o sal, a chave ou um endereço do leitor; o detetor dos segredos apanha também a chave com valor e as duas formas entre aspas | `fuga-do-sal`, `fuga-da-chave`, `fuga-do-endereco`, na célula; `segredo-sal-entre-aspas`, `segredo-chave-com-valor`, `segredo-chave-entre-aspas`, no detetor, com os três controlos sem valor que não podem morder | `s1b_privacidade_plantas_de_api_que_morderam`, `s1b_privacidade_segredos_em_api` |
+| 16, a H16 | as páginas sem a porta das sugestões comparam-se, uma a uma, com as que não têm a das correções | `sugestoes-identidades-trocadas`: uma página perde uma porta e outra perde a outra, com os mesmos totais | `s1b_alvos_paginas_so_sem_uma_das_portas`, `s1b_planta_das_identidades_pegou` |
+| 17, a região no `verify:deploy` | antes de ir ao ar, a leitura da região corre sobre duas respostas reais da Vercel gravadas em `scripts/verify-deploy-regioes.json`, com o endereço, a hora, o cliente e o sha256 do que se guardou, uma de cada feitio do cabeçalho | a leitura errada (a primeira região em vez da última) tem de ser recusada pelo controlo, em cada corrida | `s1b_verify_deploy_controlos_gravados_verdes`, `s1b_verify_deploy_controlos_gravados_vermelhos` |
+| 13, a equipa | o guião da prova da plataforma redige o endereço sem nomear a equipa; nenhum ficheiro do bloco a tem | a procura acha o identificador num ficheiro de outro bloco, que é o conhecido-positivo | `s1b_ficheiros_do_bloco_com_o_identificador_da_equipa` em `s1b_ficheiros_do_bloco_lidos_na_procura` |
+| 15, as horas | as horas dos envios de ensaio, na secção do S1, são as do registo, ao segundo | (a medida é a planta: confere cada linha contra o registo) | `s1b_envios_de_ensaio_com_a_hora_do_registo_no_relatorio` |
+
+### Uma coisa que achei ao medir antes de construir, e o que fiz com ela
+
+O ponto 3 pede que o `?de=` só se leia de um `Referer` cuja origem é a do pedido. Antes de o construir li no código do `@vercel/node` que vem com a linha de comandos (a versão 5.5.28, na Vercel CLI 50.9.0) como um «Web Handler» recebe o `Request`: o `request.url` é composto com o `Host` do leitor e com `http` sempre que o `Host` não traz a porta `443`. A documentação da Vercel diz que o `host` é o domínio como o leitor o pediu e que o `x-forwarded-proto` é «typically `https` in production». Uma comparação com `new URL(request.url).origin` teria falhado em todos os envios no ar, e a página de onde o leitor veio perdia-se em silêncio. A função compara por isso com a origem pública, o esquema do `x-forwarded-proto` e o anfitrião do `request.url`, e a célula corre os casos com o pedido em `http` e o esquema público em `https`, como no ar; a planta `origem-sem-o-esquema-publico` prova que a outra comparação perderia a página. Que o código que corre no ar é este mesmo é inferido (é o ficheiro do construtor da função, `serverless-functions/helpers-web.ts`), não provado: prova-o o primeiro envio depois de aterrar.
+
+### A prova do comportamento, e o que fica por provar contra a base real
+
+A chave só existe na Vercel, numa variável sensível que ninguém lê de volta, e o construtor não a tem. Por isso **a prova desta passagem não chamou a base real**: correu a função nova em Node com uma chave e um sal de ensaio e uma base simulada que faz o que a última definição da função da base faz (`prova-do-caminho/prova-do-comportamento-b.mjs`, `respostas-b.json`, `prova-local-b.txt`). Fez 15 pedidos (`s1b_prova_pedidos`), e a base simulada guardou 6 (`s1b_prova_envios_guardados_pela_base_simulada`). O bom em português guardou a página do `?de=`, e o do `Referer` de outra origem guardou-a como nula. O pedido sem endereço e o pedido sem chave não chamaram a base (`s1b_prova_chamadas_a_base_sem_ip_e_sem_chave`). O sexto envio da hora na mesma marca foi o terceiro dos seis seguidos (`s1b_prova_primeiro_dos_seis_recusado`), porque os três bons já tinham contado. **O que não está provado, sem rodeios:**
+- que a chave verdadeira chega à base verdadeira e que a base a aceita;
+- que a base verdadeira guarda o que a simulada guardou.
+
+O `verify:deploy`, depois de aterrar, prova que a função responde, leva ao formulário e corre em Dublin; mas faz só um GET e não manda sugestão nenhuma. O primeiro envio com a chave verdadeira contra a base verdadeira é o primeiro envio depois de aterrar, e confirma-o na base o lugar de direção.
+
+### Duas consequências da migração nova, para o diretor ler com a nota
+
+Não mudei nada por elas; a nota é dele e está a decidir-se.
+- **O limite passa a ser cinco por marca e por hora do relógio.** Como a marca muda quando a hora muda, a mesma pessoa pode mandar cinco mesmo antes de uma hora em ponto e mais cinco logo a seguir. A prova mostra-o: depois de a hora mudar, o envio seguinte foi guardado, com duas marcas vivas ao mesmo tempo (`s1b_prova_marcas_vivas_depois_da_hora_mudar`). A frase da página do limite continua verdadeira.
+- **Uma marca vive entre uma hora e quase duas.** A linha da marca expira uma hora depois do primeiro envio e apaga-se na chamada seguinte à função, ou na tarefa do minuto sete de cada hora. É inferido da agenda da tarefa e da função, não medido na base. A nota diz «fica durante uma hora».
+
+### As plantas da passagem
+
+- A célula da função, em `celula-da-funcao-b.json`: 17 casos verdes e 28 plantas (`s1b_casos_da_celula_da_funcao`, `s1b_plantas_da_celula_da_funcao`). Cada planta mordeu com a queixa que nomeia, e a cópia de controlo sem troca passou.
+- O portão de HTML corre as plantas da caixa em memória em cada corrida (`s1b_plantas_em_memoria_da_caixa`), e todas morderam (`s1b_plantas_em_memoria_da_caixa_que_morderam`).
+- O detetor dos segredos, em `privacidade-b.json`: as plantas de `api/` todas a morder, e nenhum segredo em `api/`.
+- As plantas sobre o `dist/` correram outra vez sobre a construção desta passagem, todas a morder com os bytes repostos: as oito do portão de HTML e as duas da sentinela de «Language», em `plantas-b/`, e a da frase antiga do limite.
+- A da H16, em `alvos-plantas-b.json`.
+- A do `verify:deploy`, em cada corrida, no registo `verify-deploy-b.log`.
+
+### Os commits da passagem
+
+- `47a4a31d` a função e a sua célula;
+- `a131a4f9` o texto do limite e o inventário;
+- `cd17b9ba` a célula das regras sobre todas as migrações;
+- `6ae70a5c` o detetor dos segredos, a H16 e o controlo do `verify:deploy`;
+- `cc93092c` a redação sem a equipa e a prova do comportamento;
+- `6d374df2` a planta da frase antiga do limite;
+- `21f1a2c5` o mapa do repositório;
+- o das provas, das medidas e deste relatório, que é a cabeça da corrida final dos portões;
+- e o último, com os códigos dessa corrida, as medidas postas em dia, o custo e a resposta curta.
+
+### Os portões da passagem
+
+A corrida final corre por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça do commit deste relatório. Os códigos, lidos de `portoes-b/<portão>.codigo`, entram no último commit com a cabeça ao lado: `s1b_portao_build_codigo`, `s1b_portao_verify_codigo` e `s1b_portao_typecheck_codigo`.
+
+### O custo da passagem
+
+Das duas leituras do contador de símbolos restantes, em `custo-inicio-b.json` e `custo-fim-b.json`, e das horas lidas do relógio: `s1b_simbolos_gastos` e `s1b_segundos_de_parede`. A passagem correu numa só sessão do Claude Opus 5.5, sem subagentes, com um resumo do contexto a meio; as duas leituras são do mesmo contador da sessão, que desceu de uma para a outra através do resumo.
+
+### O que ficou por fazer
+
+- **A prova contra a base real**, depois de aterrar (acima).
+- **As duas decisões do diretor** do princípio deste relatório: a recusa do Método e a nota. As duas consequências acima juntam-se à nota.
+- **O identificador da equipa fora do bloco.** Está ainda em ficheiros de outros blocos (`BRIEF-decisoes-2026-08-20.md`, `design/especime-v3/PLANO-redesenho-v3.md`, dois briefs em `design/especime-v3/briefs/`, `design/especime-v3/medicoes/higiene-construtor.md` e `design/especime-v3/notas/pos-fusao.md`). Não são registos meus, e não lhes toquei.
+- **A leitura a frio da passagem** e a releitura do diff do inventário (o bloco `s1-b` está «por ler»).
+

@@ -1,23 +1,14 @@
 {
   "bloco": "S1",
   "guiao": "design/especime-v3/medicoes/s1-2026-10-02/medir-s1.mjs",
-  "cabeca": "21f1a2c5577da75596ad6fd814c02394e343505b",
+  "cabeca": "b4ab49e48a0af779657898c213cfa13fb7368e5f",
   "medidas": [
     {
       "nome": "textos_da_pagina_iguais_ao_brief",
-      "valor": 22,
+      "valor": 24,
       "comando": "node design/especime-v3/medicoes/s1-2026-10-02/medir-s1.mjs · os textos de src/data/sugestoes.mjs que são, byte a byte, um texto entre «…» do §5 do brief",
       "conhecido_positivo": {
         "o_que": "o parágrafo português do brief é encontrado entre os citados",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_textos_da_pagina_iguais_a_decisao",
-      "valor": 2,
-      "comando": "o mesmo guião · os textos de src/data/sugestoes.mjs iguais, byte a byte, aos dois da página do limite da mensagem do lugar de direção da passagem S1-b",
-      "conhecido_positivo": {
-        "o_que": "a frase portuguesa do limite é a da decisão",
         "encontrado": true
       }
     },
@@ -77,7 +68,7 @@
     },
     {
       "nome": "construcao_da_cabeca",
-      "valor": 0,
+      "valor": 1,
       "comando": "dist/version.json, o campo commit, contra git rev-parse HEAD",
       "conhecido_positivo": {
         "o_que": "o ficheiro tem commit",
@@ -86,7 +77,7 @@
     },
     {
       "nome": "paginas_da_caixa_construidas",
-      "valor": "NÃO LIDO",
+      "valor": 10,
       "comando": "as cinco rotas da caixa nas duas edições, cada uma com o seu index.html em dist/",
       "conhecido_positivo": {
         "o_que": "a página do formulário português existe",
@@ -95,7 +86,7 @@
     },
     {
       "nome": "paginas_da_caixa_com_noindex",
-      "valor": "NÃO LIDO",
+      "valor": 8,
       "comando": "as páginas da caixa com <meta name=\"robots\" content=\"noindex, follow\">",
       "conhecido_positivo": {
         "o_que": "a do obrigado português leva-o",
@@ -104,7 +95,7 @@
     },
     {
       "nome": "formularios_no_mapa_do_sitio",
-      "valor": "NÃO LIDO",
+      "valor": 2,
       "comando": "os <loc> de dist/sitemap-N.xml com o caminho do formulário de cada edição",
       "conhecido_positivo": {
         "o_que": "o mapa tem a página das correções",
@@ -113,7 +104,7 @@
     },
     {
       "nome": "paginas_do_resultado_no_mapa_do_sitio",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "os <loc> de dist/sitemap-N.xml com o caminho de uma página do resultado",
       "conhecido_positivo": {
         "o_que": "o mesmo leitor vê os dois formulários",
@@ -122,7 +113,7 @@
     },
     {
       "nome": "paginas_html_construidas",
-      "valor": "NÃO LIDO",
+      "valor": 7477,
       "comando": "os ficheiros .html de dist/",
       "conhecido_positivo": {
         "o_que": "a página do formulário é um deles",
@@ -131,7 +122,7 @@
     },
     {
       "nome": "paginas_com_uma_porta_das_sugestoes",
-      "valor": "NÃO LIDO",
+      "valor": 7452,
       "comando": "os .html de dist/ com exatamente um atributo data-porta-sugestoes",
       "conhecido_positivo": {
         "o_que": "a primeira página tem-na",
@@ -140,7 +131,7 @@
     },
     {
       "nome": "paginas_com_a_porta_das_correcoes",
-      "valor": "NÃO LIDO",
+      "valor": 7452,
       "comando": "os .html de dist/ com data-porta-correccoes",
       "conhecido_positivo": {
         "o_que": "a primeira página tem-na",
@@ -392,7 +383,7 @@
     },
     {
       "nome": "linhas_do_inventario_do_bloco",
-      "valor": 24,
+      "valor": 26,
       "comando": "as linhas de design/especime-v3/INVENTARIO-FRASES.md com o bloco s1",
       "conhecido_positivo": {
         "o_que": "a da nota portuguesa é uma delas",
@@ -565,321 +556,6 @@
       "nome": "segundos_de_parede",
       "valor": 6091,
       "comando": "fim_utc de custo-fim.json menos inicio_utc de custo-inicio.json",
-      "conhecido_positivo": {
-        "o_que": "o início vem de um relógio lido",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_casos_da_celula_da_funcao",
-      "valor": 17,
-      "comando": "node tests/sugestoes/funcao.mjs --prova --json design/especime-v3/medicoes/s1-2026-10-02/celula-da-funcao-b.json",
-      "conhecido_positivo": {
-        "o_que": "o caso da chave em falta está entre os casos e passa",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_casos_da_celula_da_funcao_verdes",
-      "valor": 17,
-      "comando": "o mesmo ficheiro · os casos com passou",
-      "conhecido_positivo": {
-        "o_que": "o caso da marca de hora a hora passa",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_plantas_da_celula_da_funcao",
-      "valor": 28,
-      "comando": "o mesmo ficheiro · as plantas além do controlo",
-      "conhecido_positivo": {
-        "o_que": "a planta da chave invertida mordeu com a queixa esperada",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_plantas_da_celula_que_morderam_com_a_queixa",
-      "valor": 28,
-      "comando": "o mesmo ficheiro · as plantas que morderam com a queixa que nomeiam",
-      "conhecido_positivo": {
-        "o_que": "a planta da fuga do sal mordeu",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_migracoes_lidas",
-      "valor": 2,
-      "comando": "ls supabase/migrations/*.sql, lidas por ordem de nome por estadoDasMigracoes() de scripts/sugestoes-do-portao.mjs",
-      "conhecido_positivo": {
-        "o_que": "a segunda migração está entre as lidas",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_funcoes_vivas_no_fim_das_migracoes",
-      "valor": 1,
-      "comando": "estadoDasMigracoes() · as funções enviar_sugestao vivas no fim",
-      "conhecido_positivo": {
-        "o_que": "a viva tem a chave como primeiro parâmetro",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_tarefas_vivas_no_fim_das_migracoes",
-      "valor": 2,
-      "comando": "estadoDasMigracoes() · as tarefas do pg_cron vivas no fim",
-      "conhecido_positivo": {
-        "o_que": "a das marcas de hora a hora está viva",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_regras_em_falta",
-      "valor": 0,
-      "comando": "conferirRegrasDaBase() de scripts/sugestoes-do-portao.mjs sobre as migrações",
-      "conhecido_positivo": {
-        "o_que": "as plantas das regras correm sobre as mesmas migrações",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_plantas_em_memoria_da_caixa",
-      "valor": 17,
-      "comando": "plantasDaCaixa() de scripts/sugestoes-do-portao.mjs, que o portão de HTML corre em cada corrida",
-      "conhecido_positivo": {
-        "o_que": "a planta da chave tirada é uma delas e mordeu",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_plantas_em_memoria_da_caixa_que_morderam",
-      "valor": 17,
-      "comando": "a mesma função · as plantas que morderam",
-      "conhecido_positivo": {
-        "o_que": "a planta da limpeza tirada mordeu",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_privacidade_plantas_de_api",
-      "valor": 15,
-      "comando": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/check-privacidade.py --prova --json design/especime-v3/medicoes/s1-2026-10-02/privacidade-b.json",
-      "conhecido_positivo": {
-        "o_que": "a planta do sal entre aspas mordeu",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_privacidade_plantas_de_api_que_morderam",
-      "valor": 15,
-      "comando": "o mesmo ficheiro · as plantas de api/ que morderam",
-      "conhecido_positivo": {
-        "o_que": "a planta da chave entre aspas mordeu",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_privacidade_segredos_em_api",
-      "valor": 0,
-      "comando": "o mesmo ficheiro · os segredos achados em api/",
-      "conhecido_positivo": {
-        "o_que": "a chave pública da base foi vista",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_plantas_sobre_o_dist_do_prefixo_s1",
-      "valor": 10,
-      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/s1-2026-10-02/plantas-b node tests/pais/portoes.mjs --prefixo s1-, sobre a construção da passagem",
-      "conhecido_positivo": {
-        "o_que": "a planta do campo a mais mordeu",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_plantas_sobre_o_dist_do_prefixo_s1_que_morderam",
-      "valor": 10,
-      "comando": "o mesmo ficheiro · as plantas que morderam com a queixa e repuseram os bytes",
-      "conhecido_positivo": {
-        "o_que": "a planta do mapa com uma página do resultado mordeu",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_plantas_da_lista_que_morderam",
-      "valor": 3,
-      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/s1-2026-10-02/plantas-b node tests/pais/portoes.mjs --lista s1-voz-language-de-volta,s1-voz-nota-mudada-com-language,s1b-limite-antigo-de-volta",
-      "conhecido_positivo": {
-        "o_que": "a planta da frase antiga do limite mordeu",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_alvos_h16_verde",
-      "valor": 1,
-      "comando": "node tests/acessibilidade/alvos.mjs --json design/especime-v3/medicoes/s1-2026-10-02/alvos-b.json · a célula H16",
-      "conhecido_positivo": {
-        "o_que": "a varredura guardou as páginas sem cada porta",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_alvos_paginas_so_sem_uma_das_portas",
-      "valor": 0,
-      "comando": "o mesmo ficheiro · as páginas que estão num conjunto e não no outro",
-      "conhecido_positivo": {
-        "o_que": "os dois conjuntos têm páginas (os documentos alojados)",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_alvos_celulas_vermelhas",
-      "valor": 0,
-      "comando": "o mesmo ficheiro · as células que não passam",
-      "conhecido_positivo": {
-        "o_que": "a H16 está entre as células",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_planta_das_identidades_pegou",
-      "valor": 1,
-      "comando": "node tests/acessibilidade/alvos.mjs --vermelhos --so sugestoes-identidades --json design/especime-v3/medicoes/s1-2026-10-02/alvos-plantas-b.json",
-      "conhecido_positivo": {
-        "o_que": "a H16 caiu com ela",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_verify_deploy_controlos_gravados_verdes",
-      "valor": 5,
-      "comando": "node scripts/verify-deploy.mjs > design/especime-v3/medicoes/s1-2026-10-02/verify-deploy-b.log · as linhas «controlo gravado» com ✓",
-      "conhecido_positivo": {
-        "o_que": "o mesmo registo tem a pergunta da região da função no ar",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_verify_deploy_controlos_gravados_vermelhos",
-      "valor": 0,
-      "comando": "o mesmo registo · as linhas «controlo gravado» com ✗",
-      "conhecido_positivo": {
-        "o_que": "o registo tem linhas do controlo",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_prova_pedidos",
-      "valor": 15,
-      "comando": "node design/especime-v3/medicoes/s1-2026-10-02/prova-do-caminho/prova-do-comportamento-b.mjs",
-      "conhecido_positivo": {
-        "o_que": "o guião diz que a base real não foi chamada",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_prova_envios_guardados_pela_base_simulada",
-      "valor": 6,
-      "comando": "o mesmo ficheiro · os envios a que a base simulada respondeu «guardou»",
-      "conhecido_positivo": {
-        "o_que": "o bom em português foi guardado com a página do ?de=",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_prova_chamadas_a_base_sem_ip_e_sem_chave",
-      "valor": 0,
-      "comando": "o mesmo ficheiro · as chamadas à base dos pedidos sem endereço e sem chave",
-      "conhecido_positivo": {
-        "o_que": "os dois foram para o não chegou",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_prova_primeiro_dos_seis_recusado",
-      "valor": 3,
-      "comando": "o mesmo ficheiro · o primeiro dos seis seguidos que a função mandou para a página do limite",
-      "conhecido_positivo": {
-        "o_que": "a base simulada respondeu «limite» a esse envio",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_prova_marcas_vivas_depois_da_hora_mudar",
-      "valor": 2,
-      "comando": "o mesmo ficheiro · as marcas vivas na base simulada depois do envio da hora seguinte",
-      "conhecido_positivo": {
-        "o_que": "o envio da hora seguinte foi guardado",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_ficheiros_do_bloco_com_o_identificador_da_equipa",
-      "valor": 0,
-      "comando": "o identificador lido do registo antigo do lugar de direção (git show 7fdd4794), procurado nos ficheiros seguidos do bloco",
-      "conhecido_positivo": {
-        "o_que": "o mesmo identificador é achado num ficheiro de outro bloco (BRIEF-decisoes-2026-08-20.md)",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_ficheiros_do_bloco_lidos_na_procura",
-      "valor": 94,
-      "comando": "git ls-files dos caminhos do bloco",
-      "conhecido_positivo": {
-        "o_que": "o guião da prova da plataforma está entre eles",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_envios_de_ensaio_com_a_hora_do_registo_no_relatorio",
-      "valor": 5,
-      "comando": "as linhas do LEIA-ME.md com o identificador de cada envio guardado e a sua hora de respostas.json",
-      "conhecido_positivo": {
-        "o_que": "o registo tem os envios guardados",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1b_portao_build_codigo",
-      "valor": "NÃO LIDO",
-      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes-b · portoes-b/build.codigo",
-      "conhecido_positivo": {
-        "o_que": "a pasta tem a cabeça da corrida",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1b_portao_verify_codigo",
-      "valor": "NÃO LIDO",
-      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes-b · portoes-b/verify.codigo",
-      "conhecido_positivo": {
-        "o_que": "a pasta tem a cabeça da corrida",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1b_portao_typecheck_codigo",
-      "valor": "NÃO LIDO",
-      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes-b · portoes-b/typecheck.codigo",
-      "conhecido_positivo": {
-        "o_que": "a pasta tem a cabeça da corrida",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1b_simbolos_gastos",
-      "valor": "NÃO LIDO",
-      "comando": "custo-inicio-b.json menos custo-fim-b.json, o contador que a ferramenta mostra ao construtor",
-      "conhecido_positivo": {
-        "o_que": "os dois ficheiros dizem de onde vem o número",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1b_segundos_de_parede",
-      "valor": "NÃO LIDO",
-      "comando": "fim_utc de custo-fim-b.json menos inicio_utc de custo-inicio-b.json",
       "conhecido_positivo": {
         "o_que": "o início vem de um relógio lido",
         "encontrado": true
