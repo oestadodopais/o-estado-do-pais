@@ -1,8 +1,10 @@
 # S1 · a caixa das sugestões: relatório do construtor
 
-*Claude Opus 5.5 (a definição `construtor`), 02.10.2026, ramo `s1-2026-10-02`, sobre o commit do brief `d0615da6`. O mandato é `design/observatorio/BRIEF-S1-a-caixa-das-sugestoes.md`. Cada número deste relatório está num JSON desta pasta, escrito por `medir-s1.mjs`; o nome da medida vai entre parênteses. Os números das secções do S1 são os do fim do bloco, guardados em `medidas-s1.json` (a cópia do `medidas.json` da cabeça `7fdd4794`); os da passagem S1-b, na secção «S1-b» no fim, estão em `medidas.json`, com o prefixo `s1b_`. Sem travessões.*
+*Claude Opus 5.5 (a definição `construtor`), 02.10.2026, ramo `s1-2026-10-02`, sobre o commit do brief `d0615da6`. O mandato é `design/observatorio/BRIEF-S1-a-caixa-das-sugestoes.md`. Cada número deste relatório está num JSON desta pasta, escrito por `medir-s1.mjs`; o nome da medida vai entre parênteses. Os números das secções do S1 são os do fim do bloco, guardados em `medidas-s1.json` (a cópia do `medidas.json` da cabeça `7fdd4794`); os da passagem S1-b, na secção «S1-b», em `medidas-s1b.json` (a cópia do `medidas.json` do commit `85b64d20`), com o prefixo `s1b_`; os da passagem S1-c, na secção «S1-c» no fim, em `medidas.json`, com o prefixo `s1c_`. Sem travessões.*
 
 ## Antes de tudo: o bloco não aterra sem duas decisões do diretor
+
+*As duas foram decididas pelo diretor a 03.10.2026 (§1.154), e a passagem S1-c, no fim deste relatório, pô-las no sítio.*
 
 1. **A nota do que fica guardado é um rascunho.** Os textos do §5.4 estão à letra em `src/data/sugestoes.mjs`, e o comentário do ficheiro diz «rascunho do lugar de direção de 02.10.2026, à espera do diretor». Ao ler a nota contra o que a função faz, achei duas coisas que o diretor deve ver antes do «sim», e não mudei uma palavra (o texto é dele): a nota diz «uma marca cifrada» / «an encrypted mark», e a marca não é cifrada, é um resumo `sha256` do sal e do endereço, que não se desfaz; mas um endereço IPv4 tem cerca de quatro mil milhões de valores, e quem tiver o sal acha o endereço de uma marca percorrendo-os, por isso a marca é um pseudónimo do endereço durante a hora em que existe, e não um anonimato. E o artigo 13.º do Regulamento (UE) 2016/679 (lido a 02.10.2026 na reprodução do texto do regulamento em gdpr-info.eu, porque a página do EUR-Lex chegou cortada) enumera o que se dá a quem deixa dados pessoais; a nota diz o que se guarda, por quanto tempo, para quê o contacto e a marca, e onde pedir o que se enviou ou que se apague; não diz quem é o responsável pelo tratamento, a base legal, quem recebe os dados (a Vercel e a Supabase tratam-nos por conta do projeto) nem o direito de reclamar a uma autoridade de controlo. Isto é uma comparação de textos, não um parecer: a exposição legal é do diretor, e a hora do advogado também.
 2. **A caixa contradiz uma recusa publicada, e as recusas são do diretor.** O Método diz, nas duas edições, «Este projeto não guarda dados pessoais dos leitores nem os põe no repositório.» / «This project keeps no personal data of its readers and puts none in the repository.» (`src/data/politica-ia.mjs`, a última das cinco recusas, rendida por `MetodoView.astro` em `/metodo` e `/en/method`), que copia o §6 de `design/observatorio/POLITICA-DA-AUTONOMIA.md`. A caixa guarda o contacto de quem o deixa, o texto que o leitor escreve (que pode ter dados pessoais) e, durante uma hora, a marca do endereço. A política diz no §7 que uma mudança às recusas é do diretor, com data, e que o lugar de direção pode propor e não alterar; a emenda de 04.09.2026 repete que os dados pessoais continuam a ser dele. **Parei nesse ponto**: não toquei na recusa nem na política, e construí o resto, que só sai do ramo com o «sim» do diretor de qualquer maneira. Fica uma proposta de redação, que é só uma proposta: «Este projeto só guarda dados pessoais de quem usa a caixa das sugestões, pelo tempo e para o fim que a nota da caixa diz, e nunca os põe no repositório.» / «This project keeps personal data only of those who use the suggestions box, for the time and the purpose that the box's note states, and never puts it in the repository.» A mesma mudança vai ao §6 da política, com a data da decisão.
@@ -202,3 +204,55 @@ A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da má
 - **A leitura a frio da passagem** e a releitura do diff do inventário (o bloco `s1-b` está «por ler»).
 - **O que o S1 deixou por fazer**, e que esta passagem não tocou: apagar as linhas de ensaio do S1 na base e a pré-visualização do S1, e o passo da leitura da caixa no `CLAUDE.md` ao aterrar (a secção «O que ficou por fazer, e porquê», acima).
 
+## S1-c · as decisões do diretor no sítio (03.10.2026)
+
+*Claude Opus 5.5, sobre a cabeça `85b64d20`. O diretor decidiu a 03.10.2026: sim à frase nova do Método; o campo do contacto sai do formulário; a nota fica com a opção 3, a direção do projeto como responsável, pelo endereço das correções. A entrada §1.154 é do lugar de direção. Não toquei nas migrações.*
+
+### O que mudou, ponto por ponto
+
+| ponto | o que mudou | a planta que morde | a medida |
+|---|---|---|---|
+| 1, o contacto sai | o campo sai do formulário nas duas edições, com a regra da folha que só ele usava; o rótulo deixa de existir em `src/data/sugestoes.mjs`, e as duas frases ficam retiradas no inventário, com a razão; o limite do contacto sai da tabela dos limites; a função manda `p_contacto` sempre `null`, e a base fica como está; o procedimento da caixa perde as frases do contacto e da resposta por correio, e ganha uma que diz que a coluna fica vazia | na célula da função, `contacto-de-volta` e `contacto-escondido-noutro-parametro`; sobre o `dist/`, `s1c-contacto-de-volta` (o portão de HTML recusa um contacto pelo nome e pela lista dos campos) e `s1c-voz-rotulo-do-contacto-de-volta` (a sentinela das frases retiradas) | `s1c_rotulos_do_contacto_declarados`, `s1c_limite_do_contacto_declarado`, `s1c_funcao_com_o_contacto_null`, `s1c_formularios_construidos_com_campo_do_contacto`, `s1c_paginas_construidas_com_o_rotulo_do_contacto`, `s1c_frases_do_contacto_no_procedimento_da_caixa` |
+| 1, a célula | os casos do contacto passam a provar que nada do que o leitor escreva num campo `contacto` chega à base: um caso novo, `contacto`, e duas conferências que valem para todos os casos (o parâmetro vazio, e o contacto de ensaio em corpo nenhum) | as duas de cima, cada uma com a sua queixa | `s1c_casos_da_celula_da_funcao`, `s1c_casos_da_celula_da_funcao_verdes`, `s1c_plantas_da_celula_da_funcao`, `s1c_plantas_da_celula_que_morderam_com_a_queixa` |
+| 2, a nota | o texto aprovado, à letra, nas duas línguas, e o comentário do ficheiro diz «texto aprovado pelo diretor a 03.10.2026 (§1.154)»; o portão de HTML continua a conferir a hora, os noventa dias e o ano contra o SQL das migrações, e não mordeu em número nenhum, porque a nota já os diz por extenso | `s1-nota-mudada` (o portão de HTML) e `s1c-voz-nota-com-outra-palavra` (a linha viva do texto aprovado deixa de se render) | `s1c_notas_iguais_a_decisao` |
+| 2, a voz | «alojam este sítio» / «host this site» acordou o arame da voz (os marcadores «ste sítio» e «this site»), e o texto é do diretor: uma exceção de contexto em `design/especime-v3/VOZ-MARCADORES.md`, só na rota da caixa; e a dispensa de «language» passou ao texto novo, nas suas duas leituras | `s1c-voz-este-sitio-fora-da-nota` («este sítio» noutra frase da mesma página morde), `s1-voz-language-de-volta` e `s1-voz-nota-mudada-com-language` | sem medida própria: o `check:voz` verde na corrida final e as três plantas |
+| 3, a recusa do Método | a frase nova nas duas edições, em `src/data/politica-ia.mjs`, e no §6 de `design/observatorio/POLITICA-DA-AUTONOMIA.md` com a data da decisão; as duas edições entram vivas no inventário da voz | `s1c-voz-recusa-do-metodo-mudada` (com uma palavra mudada no Método, a linha viva deixa de se render) | `s1c_recusas_do_metodo_iguais_a_decisao`, `s1c_recusa_datada_no_s6_da_politica` |
+| 4, as capturas | o formulário a 390 e a 1 280 px, nas duas edições, com o prefixo `s1c-`; as do S1 ficam como estavam, porque o manifesto do S1 prende o sha256 de cada uma | o captor planta um contacto em cada página, depois da imagem, e tem de o ver | `s1c_capturas`, `s1c_capturas_problemas`, `s1c_capturas_sem_o_campo_do_contacto`, `s1c_capturas_com_a_nota_aprovada`, `s1c_recusas_rendidas_iguais_a_declarada` |
+
+### A amarra das decisões, medida antes de mexer
+
+O ponto 3 mandava parar se a amarra (`scripts/check-ledger.mjs`) prendesse o ficheiro da política a um resumo carimbado numa entrada do `DECISIONS.md`. Li a amarra: governa só os ficheiros da sua tabela `TEXTOS`, o do Sobre e o do Método (`src/data/sobre.mjs` e `src/data/metodo.mjs`), e a sua segunda metade lê as citações da `IDENTIDADE.md`. Nem `design/observatorio/POLITICA-DA-AUTONOMIA.md` nem `src/data/politica-ia.mjs` estão nela, e nenhum ficheiro que a passagem tocou está na tabela (`s1c_ficheiros_tocados_que_a_amarra_governa`, em `s1c_ficheiros_tocados_pela_passagem`). Por isso não há resumo nenhum a pedir para a §1.154, e corri os portões inteiros.
+
+### As plantas da passagem
+
+- A célula da função, em `celula-da-funcao-c.json`: todos os casos verdes e todas as plantas a morder com a queixa que nomeiam, com a cópia de controlo verde.
+- Sobre o `dist/` desta passagem, em `plantas-c/`: as cinco plantas novas, e outra vez as dez do S1 e a da S1-b, todas a morder com os bytes repostos (`s1c_plantas_do_dist_do_prefixo_s1c_que_morderam`, `s1c_plantas_do_dist_do_prefixo_s1_que_morderam`, `s1c_plantas_do_dist_do_prefixo_s1b_que_morderam`).
+
+### Os commits da passagem
+
+- `29b57384` o contacto sai e a nota aprovada (os textos, a vista, a folha, a função, a célula, o portão e o procedimento da caixa);
+- `860f6724` a recusa do Método e o §6 da política;
+- `92d19f0a` o inventário da voz, a exceção de contexto e a dispensa de «language»;
+- `dd656d59` as cinco plantas sobre o `dist/`;
+- `68b9148b` o mapa do repositório;
+- o das provas, das medidas, do captor e deste relatório, que é a cabeça da corrida final dos portões;
+- e o último, com os códigos dessa corrida, as capturas, as medidas postas em dia, o custo e a resposta curta.
+
+### Os portões da passagem
+
+A corrida final corre por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça do commit deste relatório. Os códigos, lidos de `portoes-c/<portão>.codigo`, entram no último commit com a cabeça ao lado: `s1c_portao_build_codigo`, `s1c_portao_verify_codigo` e `s1c_portao_typecheck_codigo`.
+
+### O custo da passagem
+
+Das duas leituras do contador de símbolos restantes, em `custo-inicio-c.json` e `custo-fim-c.json`, e das horas lidas do relógio: `s1c_simbolos_gastos` e `s1c_segundos_de_parede`. A passagem correu numa só sessão do Claude Opus 5.5, sem subagentes.
+
+### O que ficou por fazer
+
+- **A §1.154 no `DECISIONS.md`**, que é do lugar de direção; a amarra não pede resumo nenhum para ela, porque nenhum texto governado mudou.
+- **A prova contra a base real**, depois de aterrar, como na S1-b: o primeiro envio verdadeiro confirma-se na base, agora também com o contacto vazio.
+- **Uma consequência que fica com a nota aprovada**, dita na S1-b e que não muda nada aqui: a nota diz que o resumo do endereço fica durante uma hora e se apaga a seguir; a linha expira uma hora depois do primeiro envio e apaga-se na chamada seguinte à função ou na tarefa do minuto sete de cada hora, e por isso pode durar até quase uma hora depois de expirar (inferido da agenda da tarefa, não medido na base).
+- **O procedimento da caixa** ainda diz que a marca é o `sha256` do sal e do endereço, sem a hora, e só fala da variável do sal; a S1-b não lhe tocou por decisão do lugar de direção, e esta passagem só tirou o contacto.
+- **O nome da organização portuguesa na nota inglesa** («Comissão Nacional de Proteção de Dados») não leva a marca da língua; um leitor de ecrã lê-o com a pronúncia inglesa. Marcá-lo pedia partir a cadeia do diretor como se parte a do endereço de correio, e não foi pedido.
+- **O nome da equipa na história do ramo**, da S1-b, fica como estava.
+- **A leitura a frio das passagens** e a releitura do diff do inventário (os blocos `s1-b` e `s1-c` estão «por ler»).
+- **O que o S1 deixou por fazer**: apagar as linhas de ensaio do S1 na base e a pré-visualização do S1, e o passo da leitura da caixa no `CLAUDE.md` ao aterrar.

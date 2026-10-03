@@ -1,0 +1,87 @@
+[
+  {
+    "nome": "s1c-contacto-de-volta",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "S1 formulário: o formulário pede um contacto",
+      "S1 formulário: os campos são lingua, sitio, procurou, estudo, outro, contacto, e são só lingua, sitio, procurou, estudo, outro"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/sugestoes/index.html",
+        "antes": "d94210bebd75fea3c6064bf8ecd51fa8850c88e33b4b45f037a70243def2ea10",
+        "reposto": "d94210bebd75fea3c6064bf8ecd51fa8850c88e33b4b45f037a70243def2ea10"
+      }
+    ]
+  },
+  {
+    "nome": "s1c-voz-rotulo-do-contacto-de-volta",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "FRASE RETIRADA QUE VOLTOU A RENDER-SE",
+      "Contacto, se quiser resposta \\(opcional\\)"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/sugestoes/index.html",
+        "antes": "d94210bebd75fea3c6064bf8ecd51fa8850c88e33b4b45f037a70243def2ea10",
+        "reposto": "d94210bebd75fea3c6064bf8ecd51fa8850c88e33b4b45f037a70243def2ea10"
+      }
+    ]
+  },
+  {
+    "nome": "s1c-voz-nota-com-outra-palavra",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "linha «viva» que não se rende em rota nenhuma",
+      "O que fica guardado: o que escrever, a língua e a página de onde veio"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/sugestoes/index.html",
+        "antes": "d94210bebd75fea3c6064bf8ecd51fa8850c88e33b4b45f037a70243def2ea10",
+        "reposto": "d94210bebd75fea3c6064bf8ecd51fa8850c88e33b4b45f037a70243def2ea10"
+      }
+    ]
+  },
+  {
+    "nome": "s1c-voz-este-sitio-fora-da-nota",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "frase com marcador da voz e sem declaração de autorreferência",
+      "marcador\\(es\\): ste sítio"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/sugestoes/index.html",
+        "antes": "d94210bebd75fea3c6064bf8ecd51fa8850c88e33b4b45f037a70243def2ea10",
+        "reposto": "d94210bebd75fea3c6064bf8ecd51fa8850c88e33b4b45f037a70243def2ea10"
+      }
+    ]
+  },
+  {
+    "nome": "s1c-voz-recusa-do-metodo-mudada",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "linha «viva» que não se rende em rota nenhuma",
+      "Este projeto só guarda dados pessoais de quem usa a caixa das sugestões"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/metodo/index.html",
+        "antes": "3c9eae23c2ec13025fd4838169dd741dfc0309735f64c2de4e833c2d848dbff1",
+        "reposto": "3c9eae23c2ec13025fd4838169dd741dfc0309735f64c2de4e833c2d848dbff1"
+      }
+    ]
+  }
+]

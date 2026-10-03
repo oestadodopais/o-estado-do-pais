@@ -1,0 +1,51 @@
+  ✓ get
+  ✓ armadilha
+  ✓ vazia
+  ✓ boa
+  ✓ boa-en
+  ✓ contacto
+  ✓ limite
+  ✓ cheia
+  ✓ chave-recusada
+  ✓ rede
+  ✓ sem-sal
+  ✓ sem-chave
+  ✓ sem-ip
+  ✓ corte
+  ✓ de-fora
+  ✓ referer-de-outra-origem
+  ✓ marca-de-hora-a-hora
+  ✓ exportacoes
+  ✓ planta controlo-sem-troca ((todos)) · a cópia sem troca passa
+  ✓ planta get-para-outra-pagina (get) · mordeu com a queixa esperada
+  ✓ planta armadilha-invertida (armadilha) · mordeu com a queixa esperada
+  ✓ planta vazia-invertida (vazia) · mordeu com a queixa esperada
+  ✓ planta marca-sem-separador (boa) · mordeu com a queixa esperada
+  ✓ planta marca-do-ultimo-endereco (boa) · mordeu com a queixa esperada
+  ✓ planta campo-em-branco-como-cadeia-vazia (boa) · mordeu com a queixa esperada
+  ✓ planta pagina-sem-o-de-do-referer (boa) · mordeu com a queixa esperada
+  ✓ planta origem-sem-o-esquema-publico (boa) · mordeu com a queixa esperada
+  ✓ planta chave-sem-trim (boa) · mordeu com a queixa esperada
+  ✓ planta corpo-sem-chave (boa) · mordeu com a queixa esperada
+  ✓ planta fuga-do-sal (boa) · mordeu com a queixa esperada
+  ✓ planta fuga-da-chave (boa) · mordeu com a queixa esperada
+  ✓ planta fuga-do-endereco (boa) · mordeu com a queixa esperada
+  ✓ planta contacto-de-volta (contacto) · mordeu com a queixa esperada
+  ✓ planta contacto-escondido-noutro-parametro (contacto) · mordeu com a queixa esperada
+  ✓ planta lingua-sempre-portuguesa (boa-en) · mordeu com a queixa esperada
+  ✓ planta limite-invertido (limite) · mordeu com a queixa esperada
+  ✓ planta cheia-como-limite (cheia) · mordeu com a queixa esperada
+  ✓ planta chave-recusada-como-limite (chave-recusada) · mordeu com a queixa esperada
+  ✓ planta rede-como-obrigado (rede) · mordeu com a queixa esperada
+  ✓ planta sal-invertido (sem-sal) · mordeu com a queixa esperada
+  ✓ planta chave-invertida (sem-chave) · mordeu com a queixa esperada
+  ✓ planta ip-em-falta-invertido (sem-ip) · mordeu com a queixa esperada
+  ✓ planta corte-em-unidades-de-utf16 (corte) · mordeu com a queixa esperada
+  ✓ planta de-de-fora-aceite (de-fora) · mordeu com a queixa esperada
+  ✓ planta referer-de-outra-origem-aceite (referer-de-outra-origem) · mordeu com a queixa esperada
+  ✓ planta marca-sem-a-hora (marca-de-hora-a-hora) · mordeu com a queixa esperada
+  ✓ planta marca-com-o-dia (marca-de-hora-a-hora) · mordeu com a queixa esperada
+  ✓ planta marca-em-base64 (marca-de-hora-a-hora) · mordeu com a queixa esperada
+  ✓ planta exportacao-a-mais (exportacoes) · mordeu com a queixa esperada
+
+  a função das sugestões: 18 casos verdes, 30 plantas que mordem com a queixa esperada e a cópia de controlo verde.

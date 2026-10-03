@@ -1,11 +1,11 @@
 {
   "bloco": "S1",
   "guiao": "design/especime-v3/medicoes/s1-2026-10-02/medir-s1.mjs",
-  "cabeca": "68b9148bb40fa0990c4345e527f34d362a4871c2",
+  "cabeca": "c4ff98b54353d245126f09e2ae330661b9b43d29",
   "medidas": [
     {
       "nome": "textos_da_pagina_iguais_ao_brief",
-      "valor": 18,
+      "valor": 22,
       "comando": "node design/especime-v3/medicoes/s1-2026-10-02/medir-s1.mjs · os textos de src/data/sugestoes.mjs que são, byte a byte, um texto entre «…» do §5 do brief",
       "conhecido_positivo": {
         "o_que": "o parágrafo português do brief é encontrado entre os citados",
@@ -23,7 +23,7 @@
     },
     {
       "nome": "textos_da_pagina_declarados",
-      "valor": 22,
+      "valor": 24,
       "comando": "o mesmo guião · as cadeias do §5.4 e do §5.5 em src/data/sugestoes.mjs, nas duas línguas",
       "conhecido_positivo": {
         "o_que": "a nota inglesa está entre as declaradas",
@@ -77,7 +77,7 @@
     },
     {
       "nome": "construcao_da_cabeca",
-      "valor": 0,
+      "valor": 1,
       "comando": "dist/version.json, o campo commit, contra git rev-parse HEAD",
       "conhecido_positivo": {
         "o_que": "o ficheiro tem commit",
@@ -86,7 +86,7 @@
     },
     {
       "nome": "paginas_da_caixa_construidas",
-      "valor": "NÃO LIDO",
+      "valor": 10,
       "comando": "as cinco rotas da caixa nas duas edições, cada uma com o seu index.html em dist/",
       "conhecido_positivo": {
         "o_que": "a página do formulário português existe",
@@ -95,7 +95,7 @@
     },
     {
       "nome": "paginas_da_caixa_com_noindex",
-      "valor": "NÃO LIDO",
+      "valor": 8,
       "comando": "as páginas da caixa com <meta name=\"robots\" content=\"noindex, follow\">",
       "conhecido_positivo": {
         "o_que": "a do obrigado português leva-o",
@@ -104,7 +104,7 @@
     },
     {
       "nome": "formularios_no_mapa_do_sitio",
-      "valor": "NÃO LIDO",
+      "valor": 2,
       "comando": "os <loc> de dist/sitemap-N.xml com o caminho do formulário de cada edição",
       "conhecido_positivo": {
         "o_que": "o mapa tem a página das correções",
@@ -113,7 +113,7 @@
     },
     {
       "nome": "paginas_do_resultado_no_mapa_do_sitio",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "os <loc> de dist/sitemap-N.xml com o caminho de uma página do resultado",
       "conhecido_positivo": {
         "o_que": "o mesmo leitor vê os dois formulários",
@@ -122,7 +122,7 @@
     },
     {
       "nome": "paginas_html_construidas",
-      "valor": "NÃO LIDO",
+      "valor": 7477,
       "comando": "os ficheiros .html de dist/",
       "conhecido_positivo": {
         "o_que": "a página do formulário é um deles",
@@ -131,7 +131,7 @@
     },
     {
       "nome": "paginas_com_uma_porta_das_sugestoes",
-      "valor": "NÃO LIDO",
+      "valor": 7452,
       "comando": "os .html de dist/ com exatamente um atributo data-porta-sugestoes",
       "conhecido_positivo": {
         "o_que": "a primeira página tem-na",
@@ -140,7 +140,7 @@
     },
     {
       "nome": "paginas_com_a_porta_das_correcoes",
-      "valor": "NÃO LIDO",
+      "valor": 7452,
       "comando": "os .html de dist/ com data-porta-correccoes",
       "conhecido_positivo": {
         "o_que": "a primeira página tem-na",
@@ -392,16 +392,16 @@
     },
     {
       "nome": "linhas_do_inventario_do_bloco",
-      "valor": 20,
-      "comando": "as linhas vivas de design/especime-v3/INVENTARIO-FRASES.md com o bloco s1",
+      "valor": 24,
+      "comando": "as linhas de design/especime-v3/INVENTARIO-FRASES.md com o bloco s1",
       "conhecido_positivo": {
-        "o_que": "a do parágrafo português é uma delas",
+        "o_que": "a da nota portuguesa é uma delas",
         "encontrado": true
       }
     },
     {
       "nome": "excecoes_de_contexto_do_bloco",
-      "valor": 3,
+      "valor": 2,
       "comando": "as linhas «contexto» de design/especime-v3/VOZ-MARCADORES.md com uma rota da caixa",
       "conhecido_positivo": {
         "o_que": "a da página de onde veio é uma delas",
@@ -438,7 +438,7 @@
     {
       "nome": "voz_marcadores",
       "valor": 65,
-      "comando": "npm run build · a linha «voz ✓» do check:voz, em portoes-b/build.log, sem as cores do terminal",
+      "comando": "npm run build · a linha «voz ✓» do check:voz, em portoes/build.log, sem as cores do terminal",
       "conhecido_positivo": {
         "o_que": "o número é o das linhas da tabela dos marcadores de VOZ-MARCADORES.md",
         "encontrado": true
@@ -450,7 +450,7 @@
       "comando": "a mesma linha",
       "conhecido_positivo": {
         "o_que": "o número é o das linhas da tabela das exceções de VOZ-MARCADORES.md",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
@@ -824,7 +824,7 @@
     },
     {
       "nome": "s1b_ficheiros_do_bloco_lidos_na_procura",
-      "valor": 147,
+      "valor": 127,
       "comando": "git ls-files dos caminhos do bloco",
       "conhecido_positivo": {
         "o_que": "o guião da prova da plataforma está entre eles",
@@ -906,7 +906,7 @@
     },
     {
       "nome": "s1b_portao_cabeca_e_a_construida",
-      "valor": 0,
+      "valor": 1,
       "comando": "dist/version.json, o campo commit, contra portoes-b/cabeca",
       "conhecido_positivo": {
         "o_que": "o ficheiro da construção tem commit",
@@ -944,321 +944,6 @@
       "nome": "s1b_segundos_de_parede",
       "valor": 3246,
       "comando": "fim_utc de custo-fim-b.json menos inicio_utc de custo-inicio-b.json",
-      "conhecido_positivo": {
-        "o_que": "o início vem de um relógio lido",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_notas_iguais_a_decisao",
-      "valor": 2,
-      "comando": "o mesmo guião · SUGESTOES.nota de src/data/sugestoes.mjs contra o texto da mensagem do lugar de direção da S1-c, byte a byte, nas duas línguas",
-      "conhecido_positivo": {
-        "o_que": "a nota que estava no fim da S1-b não é igual à da decisão (o leitor distingue)",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_recusas_do_metodo_iguais_a_decisao",
-      "valor": 2,
-      "comando": "o mesmo guião · POLITICA.recusas.itens[4] de src/data/politica-ia.mjs contra a frase da decisão, byte a byte, nas duas línguas",
-      "conhecido_positivo": {
-        "o_que": "a recusa anterior estava no ficheiro do fim da S1-b",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_recusa_datada_no_s6_da_politica",
-      "valor": 1,
-      "comando": "as linhas do §6 de design/observatorio/POLITICA-DA-AUTONOMIA.md com a frase da decisão (sem o ponto final), a data 03.10.2026 e §1.154",
-      "conhecido_positivo": {
-        "o_que": "o §6 do fim da S1-b tinha a recusa antiga",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_rotulos_do_contacto_declarados",
-      "valor": 0,
-      "comando": "'contacto' in SUGESTOES.rotulos, de src/data/sugestoes.mjs",
-      "conhecido_positivo": {
-        "o_que": "o ficheiro do fim da S1-b declarava o rótulo do contacto",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_limite_do_contacto_declarado",
-      "valor": 0,
-      "comando": "'contacto' in LIMITES_DAS_SUGESTOES",
-      "conhecido_positivo": {
-        "o_que": "o ficheiro do fim da S1-b tinha o limite do contacto",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_funcao_com_o_contacto_null",
-      "valor": 1,
-      "comando": "api/sugestoes.js: «p_contacto: null,» no corpo, e nenhum campo(dados, 'contacto', …)",
-      "conhecido_positivo": {
-        "o_que": "a função do fim da S1-b lia o campo do contacto",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_formularios_construidos_com_campo_do_contacto",
-      "valor": "NÃO LIDO",
-      "comando": "as duas páginas do formulário em dist/, com name=\"contacto\"",
-      "conhecido_positivo": {
-        "o_que": "o mesmo leitor acha name=\"procurou\" nas duas",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_paginas_construidas_com_o_rotulo_do_contacto",
-      "valor": "NÃO LIDO",
-      "comando": "os .html de dist/ com «Contacto, se quiser resposta» ou «Contact, if you want a reply»",
-      "conhecido_positivo": {
-        "o_que": "a mesma varredura acha o botão «Enviar a sugestão»",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1c_frases_do_contacto_no_procedimento_da_caixa",
-      "valor": 0,
-      "comando": "design/observatorio/CAIXA-DAS-SUGESTOES.md contra as cinco formas do contacto que o procedimento tinha",
-      "conhecido_positivo": {
-        "o_que": "as mesmas formas no procedimento do fim da S1-b",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_casos_da_celula_da_funcao",
-      "valor": 18,
-      "comando": "node tests/sugestoes/funcao.mjs --prova --json celula-da-funcao-c.json",
-      "conhecido_positivo": {
-        "o_que": "o caso do contacto está entre eles",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_casos_da_celula_da_funcao_verdes",
-      "valor": 18,
-      "comando": "o mesmo ficheiro",
-      "conhecido_positivo": {
-        "o_que": "a cópia de controlo passou",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_plantas_da_celula_da_funcao",
-      "valor": 30,
-      "comando": "o mesmo ficheiro",
-      "conhecido_positivo": {
-        "o_que": "as duas do contacto estão entre elas",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_plantas_da_celula_que_morderam_com_a_queixa",
-      "valor": 30,
-      "comando": "o mesmo ficheiro · mordeu = a queixa esperada nos erros",
-      "conhecido_positivo": {
-        "o_que": "a do contacto de volta mordeu",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_plantas_do_dist_do_prefixo_s1c",
-      "valor": 5,
-      "comando": "OEDP_MEDICOES=…/plantas-c node tests/pais/portoes.mjs --prefixo s1c- · plantas-c/plantas-portoes-s1c.json",
-      "conhecido_positivo": {
-        "o_que": "o ficheiro diz o comando de cada planta",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_plantas_do_dist_do_prefixo_s1c_que_morderam",
-      "valor": 5,
-      "comando": "o mesmo ficheiro · passou = código 1, todas as mordidas e os bytes repostos",
-      "conhecido_positivo": {
-        "o_que": "cada registo tem o sha256 de antes e de depois",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_plantas_do_dist_do_prefixo_s1",
-      "valor": 10,
-      "comando": "OEDP_MEDICOES=…/plantas-c node tests/pais/portoes.mjs --prefixo s1- · plantas-c/plantas-portoes-s1.json",
-      "conhecido_positivo": {
-        "o_que": "o ficheiro diz o comando de cada planta",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_plantas_do_dist_do_prefixo_s1_que_morderam",
-      "valor": 10,
-      "comando": "o mesmo ficheiro · passou = código 1, todas as mordidas e os bytes repostos",
-      "conhecido_positivo": {
-        "o_que": "cada registo tem o sha256 de antes e de depois",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_plantas_do_dist_do_prefixo_s1b",
-      "valor": 1,
-      "comando": "OEDP_MEDICOES=…/plantas-c node tests/pais/portoes.mjs --prefixo s1b- · plantas-c/plantas-portoes-s1b.json",
-      "conhecido_positivo": {
-        "o_que": "o ficheiro diz o comando de cada planta",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_plantas_do_dist_do_prefixo_s1b_que_morderam",
-      "valor": 1,
-      "comando": "o mesmo ficheiro · passou = código 1, todas as mordidas e os bytes repostos",
-      "conhecido_positivo": {
-        "o_que": "cada registo tem o sha256 de antes e de depois",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_capturas",
-      "valor": "NÃO LIDO",
-      "comando": "node design/especime-v3/medicoes/s1-2026-10-02/captar-s1c.mjs · capturas-s1c.json",
-      "conhecido_positivo": {
-        "o_que": "a planta do contacto foi vista em cada página",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1c_capturas_problemas",
-      "valor": "NÃO LIDO",
-      "comando": "o mesmo ficheiro · problemas",
-      "conhecido_positivo": {
-        "o_que": "o captor confere a nota contra a declarada",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1c_capturas_sem_o_campo_do_contacto",
-      "valor": "NÃO LIDO",
-      "comando": "o mesmo ficheiro · os nomes dos campos de cada página, lidos no navegador",
-      "conhecido_positivo": {
-        "o_que": "a mesma leitura viu o contacto plantado",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1c_capturas_com_a_nota_aprovada",
-      "valor": "NÃO LIDO",
-      "comando": "o mesmo ficheiro · a nota rendida contra SUGESTOES.nota",
-      "conhecido_positivo": {
-        "o_que": "a nota declarada é a da decisão",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_recusas_rendidas_iguais_a_declarada",
-      "valor": "NÃO LIDO",
-      "comando": "o mesmo ficheiro · a quinta recusa rendida no Método, nas duas edições",
-      "conhecido_positivo": {
-        "o_que": "o Método rende as cinco recusas",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1c_ficheiros_tocados_que_a_amarra_governa",
-      "valor": 0,
-      "comando": "os ficheiros de git diff --name-only 85b64d20..HEAD que estão na tabela TEXTOS de scripts/check-ledger.mjs",
-      "conhecido_positivo": {
-        "o_que": "a tabela tem os dois textos governados, o do Sobre e o do Método",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_ficheiros_tocados_pela_passagem",
-      "valor": 15,
-      "comando": "git diff --name-only 85b64d20..HEAD",
-      "conhecido_positivo": {
-        "o_que": "a política da autonomia está entre eles",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_portao_build_codigo",
-      "valor": "NÃO LIDO",
-      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes-c · portoes-c/build.codigo",
-      "conhecido_positivo": {
-        "o_que": "a pasta tem a cabeça da corrida e a mesma no fim",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1c_portao_verify_codigo",
-      "valor": "NÃO LIDO",
-      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes-c · portoes-c/verify.codigo",
-      "conhecido_positivo": {
-        "o_que": "a pasta tem a cabeça da corrida e a mesma no fim",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1c_portao_typecheck_codigo",
-      "valor": "NÃO LIDO",
-      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes-c · portoes-c/typecheck.codigo",
-      "conhecido_positivo": {
-        "o_que": "a pasta tem a cabeça da corrida e a mesma no fim",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1c_portao_cabeca_e_a_construida",
-      "valor": "NÃO LIDO",
-      "comando": "dist/version.json, o campo commit, contra portoes-c/cabeca",
-      "conhecido_positivo": {
-        "o_que": "a cabeça da corrida é antepassada da atual",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1c_portao_ficheiros_mudados_durante_a_corrida",
-      "valor": "NÃO LIDO",
-      "comando": "as linhas de portoes-c/estado.fim que não são a pasta da própria corrida",
-      "conhecido_positivo": {
-        "o_que": "a pasta da corrida aparece no estado do fim",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1c_ficheiros_novos_com_o_nome_da_equipa",
-      "valor": 0,
-      "comando": "os ficheiros novos da S1-c nesta pasta (portoes-c/, plantas-c/, as capturas, a célula, o custo, o captor), contra o identificador e o nome lidos do histórico",
-      "conhecido_positivo": {
-        "o_que": "o mesmo identificador está num ficheiro de outro bloco",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_ficheiros_novos_lidos_na_procura",
-      "valor": 29,
-      "comando": "o mesmo conjunto",
-      "conhecido_positivo": {
-        "o_que": "o captor está entre eles",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "s1c_simbolos_gastos",
-      "valor": "NÃO LIDO",
-      "comando": "custo-inicio-c.json menos custo-fim-c.json, o contador que a ferramenta mostra ao construtor",
-      "conhecido_positivo": {
-        "o_que": "os dois ficheiros dizem de onde vem o número",
-        "encontrado": false
-      }
-    },
-    {
-      "nome": "s1c_segundos_de_parede",
-      "valor": "NÃO LIDO",
-      "comando": "fim_utc de custo-fim-c.json menos inicio_utc de custo-inicio-c.json",
       "conhecido_positivo": {
         "o_que": "o início vem de um relógio lido",
         "encontrado": true

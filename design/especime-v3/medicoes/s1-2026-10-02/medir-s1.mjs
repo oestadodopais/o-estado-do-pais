@@ -1,7 +1,8 @@
 /**
- * AS MEDIDAS DO BLOCO S1 (a caixa das sugestões), escritas em `medidas.json` ao lado deste guião, com as da
- * passagem S1-b (03.10.2026), que começam por `s1b_`. As medidas do S1 tal como estavam no fim do bloco ficam em
- * `medidas-s1.json`, a cópia do `medidas.json` da cabeça 7fdd4794, que é o que a secção do S1 do relatório cita.
+ * AS MEDIDAS DO BLOCO S1 (a caixa das sugestões), escritas em `medidas.json` ao lado deste guião, com as das
+ * passagens S1-b e S1-c (03.10.2026), que começam por `s1b_` e por `s1c_`. As medidas do S1 tal como estavam no fim
+ * do bloco ficam em `medidas-s1.json`, a cópia do `medidas.json` da cabeça 7fdd4794, que é o que a secção do S1 do
+ * relatório cita; as do fim da S1-b, em `medidas-s1b.json`, a cópia do `medidas.json` do commit 85b64d20.
  *
  * Cada medição leva o nome, o valor, o comando que a repete e um conhecido-positivo: uma coisa que o MESMO leitor tem
  * de encontrar, para que um zero ou um valor não seja o silêncio de um leitor cego. O que este guião não conseguir ler
@@ -189,7 +190,8 @@ const { ROUTES, routePath, LANGS } = await import(pathToFileURL(path.join(RAIZ, 
 {
   const inv = le(path.join(RAIZ, 'design/especime-v3/INVENTARIO-FRASES.md')) ?? '';
   const s1 = inv.split('\n').filter((l) => /^\| [a-z]+ \| .* \| s1 \| viva \|/.test(l));
-  medicao('linhas_do_inventario_do_bloco', s1.length, 'as linhas de design/especime-v3/INVENTARIO-FRASES.md com o bloco s1', 'a da nota portuguesa é uma delas', s1.some((l) => l.includes('O que fica guardado:')));
+  /* Desde a S1-c a nota do S1 está retirada (o bloco da linha passou a s1-c), e o conhecido-positivo é o parágrafo. */
+  medicao('linhas_do_inventario_do_bloco', s1.length, 'as linhas vivas de design/especime-v3/INVENTARIO-FRASES.md com o bloco s1', 'a do parágrafo português é uma delas', s1.some((l) => l.includes('O que procurou aqui e não encontrou? Que estudo gostava de ler? Escreva.')));
   const voz = le(path.join(RAIZ, 'design/especime-v3/VOZ-MARCADORES.md')) ?? '';
   const excecoes = voz.split('\n').filter((l) => /^\| contexto \|/.test(l) && /\| (sugestoes|sugestoesObrigado) \|$/.test(l));
   medicao('excecoes_de_contexto_do_bloco', excecoes.length, 'as linhas «contexto» de design/especime-v3/VOZ-MARCADORES.md com uma rota da caixa', 'a da página de onde veio é uma delas', excecoes.some((l) => l.includes('a página de onde veio')));
@@ -216,11 +218,14 @@ const { ROUTES, routePath, LANGS } = await import(pathToFileURL(path.join(RAIZ, 
   /* AS CORES DO TERMINAL SAEM ANTES DE LER: com elas, a primeira forma desta expressão deixava o código de cor comer
      o primeiro algarismo e lia 5 onde a linha diz 65. O conhecido-positivo é agora a contagem das linhas das duas
      tabelas do ficheiro das marcas, que tem de bater com o número que o portão diz. */
-  const semCores = (le(path.join(PASTA, 'portoes/build.log')) ?? '').replace(/\x1b\[[0-9;]*m/g, '');
+  /* O registo da construção é o da corrida final mais recente desta pasta (a da S1-c, a da S1-b ou a do S1), para que
+     o número do portão e o ficheiro das marcas sejam da mesma cabeça. */
+  const corrida = ['portoes-c', 'portoes-b', 'portoes'].find((d) => fs.existsSync(path.join(PASTA, d, 'build.log')));
+  const semCores = (le(path.join(PASTA, `${corrida}/build.log`)) ?? '').replace(/\x1b\[[0-9;]*m/g, '');
   const vozLinha = semCores.match(/voz ✓ (\d+) marcadores · (\d+) exceções/);
   const linhasDasMarcas = voz.split('\n').filter((l) => /^\| (raiz|prefixo|palavra) \|/.test(l)).length;
   const linhasDasExcecoes = voz.split('\n').filter((l) => /^\| (contexto|rota|frase|registo) \|/.test(l)).length;
-  medicao('voz_marcadores', vozLinha ? Number(vozLinha[1]) : NAO, 'npm run build · a linha «voz ✓» do check:voz, em portoes/build.log, sem as cores do terminal', 'o número é o das linhas da tabela dos marcadores de VOZ-MARCADORES.md', vozLinha && Number(vozLinha[1]) === linhasDasMarcas);
+  medicao('voz_marcadores', vozLinha ? Number(vozLinha[1]) : NAO, `npm run build · a linha «voz ✓» do check:voz, em ${corrida}/build.log, sem as cores do terminal`, 'o número é o das linhas da tabela dos marcadores de VOZ-MARCADORES.md', vozLinha && Number(vozLinha[1]) === linhasDasMarcas);
   medicao('voz_excecoes', vozLinha ? Number(vozLinha[2]) : NAO, 'a mesma linha', 'o número é o das linhas da tabela das exceções de VOZ-MARCADORES.md', vozLinha && Number(vozLinha[2]) === linhasDasExcecoes);
 }
 
@@ -367,6 +372,99 @@ const { ROUTES, routePath, LANGS } = await import(pathToFileURL(path.join(RAIZ, 
   const fim = leJson(B('custo-fim-b.json'));
   medicao('s1b_simbolos_gastos', ini && fim ? ini.simbolos_restantes_no_inicio - fim.simbolos_restantes_no_fim : NAO, 'custo-inicio-b.json menos custo-fim-b.json, o contador que a ferramenta mostra ao construtor', 'os dois ficheiros dizem de onde vem o número', Boolean(ini?.o_que && fim?.o_que));
   medicao('s1b_segundos_de_parede', ini && fim ? Math.round((Date.parse(fim.fim_utc) - Date.parse(ini.inicio_utc)) / 1000) : NAO, 'fim_utc de custo-fim-b.json menos inicio_utc de custo-inicio-b.json', 'o início vem de um relógio lido', Boolean(ini?.inicio_origem));
+}
+
+/* 10 · A PASSAGEM S1-c (03.10.2026): a decisão do diretor (§1.154), ponto por ponto, pelas suas provas. */
+{
+  const C = (f) => path.join(PASTA, f);
+  const ANTES = '85b64d20';
+  const antes = (f) => {
+    try {
+      return execFileSync('git', ['show', `${ANTES}:${f}`], { cwd: RAIZ, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+    } catch {
+      return null;
+    }
+  };
+  /* Os textos da decisão, tal como a mensagem do lugar de direção da passagem S1-c os deu (os pontos 2 e 3). */
+  const DECISAO_NOTA = {
+    pt: 'O que fica guardado: o que escrever, a língua e a página de onde veio. O endereço IP não se guarda: fica durante uma hora um resumo dele feito com um sal, só para travar envios em massa, e apaga-se a seguir. Os dados ficam em servidores na União Europeia, nos dois serviços que alojam este sítio e a caixa (a Vercel e a Supabase), que os tratam por conta do projeto. Guardam-se porque os enviou: ao carregar em «Enviar a sugestão», aceita que fiquem guardados para este fim. Uma sugestão decidida apaga-se ao fim de noventa dias; uma por decidir, ao fim de um ano. Por este tratamento responde a direção deste projeto, pelo endereço correcoes@oestadodopais.pt. Para saber o que enviou, corrigi-lo ou pedir que se apague, escreva para esse endereço; pode também reclamar junto da Comissão Nacional de Proteção de Dados (cnpd.pt).',
+    en: 'What is kept: what you write, the language and the page you came from. The IP address is not kept: a salted hash of it stays for one hour, only to stop mass sending, and is then deleted. The data is held on servers in the European Union, in the two services that host this site and the box (Vercel and Supabase), which process it on the project\'s behalf. It is kept because you sent it: by pressing "Send the suggestion" you accept that it is kept for this purpose. A decided suggestion is deleted after ninety days; an undecided one after a year. The project\'s direction is responsible for this processing, at correcoes@oestadodopais.pt. To know what you sent, to correct it or to ask for it to be deleted, write to that address; you may also complain to the Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt).',
+  };
+  const DECISAO_RECUSA = {
+    pt: 'Este projeto só guarda dados pessoais de quem usa a caixa das sugestões, pelo tempo e para o fim que a nota da caixa diz, e nunca os põe no repositório.',
+    en: "This project keeps personal data only of those who use the suggestions box, for the time and the purpose that the box's note states, and never puts it in the repository.",
+  };
+  const { POLITICA } = await import(pathToFileURL(path.join(RAIZ, 'src/data/politica-ia.mjs')).href);
+  const { LIMITES_DAS_SUGESTOES } = await import(pathToFileURL(path.join(RAIZ, 'src/data/sugestoes.mjs')).href);
+  medicao('s1c_notas_iguais_a_decisao', LANGS.filter((l) => SUGESTOES.nota[l] === DECISAO_NOTA[l]).length, 'o mesmo guião · SUGESTOES.nota de src/data/sugestoes.mjs contra o texto da mensagem do lugar de direção da S1-c, byte a byte, nas duas línguas', 'a nota que estava no fim da S1-b não é igual à da decisão (o leitor distingue)', (antes('src/data/sugestoes.mjs') ?? '').includes('uma marca cifrada'));
+  medicao('s1c_recusas_do_metodo_iguais_a_decisao', LANGS.filter((l) => POLITICA.recusas.itens[4][l] === DECISAO_RECUSA[l]).length, 'o mesmo guião · POLITICA.recusas.itens[4] de src/data/politica-ia.mjs contra a frase da decisão, byte a byte, nas duas línguas', 'a recusa anterior estava no ficheiro do fim da S1-b', (antes('src/data/politica-ia.mjs') ?? '').includes('não guarda dados pessoais dos leitores'));
+  const politica = le(path.join(RAIZ, 'design/observatorio/POLITICA-DA-AUTONOMIA.md')) ?? '';
+  const s6 = politica.slice(politica.indexOf('## 6 ·'), politica.indexOf('## 7 ·'));
+  const linhaDatada = s6.split('\n').filter((l) => l.includes(DECISAO_RECUSA.pt.replace(/\.$/, '')) && l.includes('03.10.2026') && l.includes('§1.154'));
+  medicao('s1c_recusa_datada_no_s6_da_politica', linhaDatada.length, 'as linhas do §6 de design/observatorio/POLITICA-DA-AUTONOMIA.md com a frase da decisão (sem o ponto final), a data 03.10.2026 e §1.154', 'o §6 do fim da S1-b tinha a recusa antiga', (antes('design/observatorio/POLITICA-DA-AUTONOMIA.md') ?? '').includes('A casa não guarda dados pessoais dos leitores'));
+  medicao('s1c_rotulos_do_contacto_declarados', 'contacto' in SUGESTOES.rotulos ? 1 : 0, "'contacto' in SUGESTOES.rotulos, de src/data/sugestoes.mjs", 'o ficheiro do fim da S1-b declarava o rótulo do contacto', (antes('src/data/sugestoes.mjs') ?? '').includes("contacto: { pt: 'Contacto, se quiser resposta (opcional)'"));
+  medicao('s1c_limite_do_contacto_declarado', 'contacto' in LIMITES_DAS_SUGESTOES ? 1 : 0, "'contacto' in LIMITES_DAS_SUGESTOES", 'o ficheiro do fim da S1-b tinha o limite do contacto', (antes('src/data/sugestoes.mjs') ?? '').includes('contacto: 200'));
+  const funcao = le(path.join(RAIZ, 'api/sugestoes.js')) ?? '';
+  medicao('s1c_funcao_com_o_contacto_null', /\n\s*p_contacto: null,\n/.test(funcao) && !/campo\(dados, 'contacto'/.test(funcao) ? 1 : 0, "api/sugestoes.js: «p_contacto: null,» no corpo, e nenhum campo(dados, 'contacto', …)", "a função do fim da S1-b lia o campo do contacto", (antes('api/sugestoes.js') ?? '').includes("campo(dados, 'contacto'"));
+  const versao = leJson(path.join(RAIZ, 'dist/version.json'));
+  const daCabeca = versao?.commit === git('rev-parse', 'HEAD');
+  const formularios = LANGS.map((l) => le(path.join(RAIZ, 'dist', routePath('sugestoes', l).replace(/^\//, ''), 'index.html')) ?? '');
+  medicao('s1c_formularios_construidos_com_campo_do_contacto', daCabeca ? formularios.filter((h) => /name="contacto"/.test(h)).length : NAO, 'as duas páginas do formulário em dist/, com name="contacto"', 'o mesmo leitor acha name="procurou" nas duas', formularios.every((h) => /name="procurou"/.test(h)));
+  let comRotulo = 0, comBotao = 0;
+  if (daCabeca) {
+    const anda = (d) => { for (const e of fs.readdirSync(d, { withFileTypes: true })) { const f = path.join(d, e.name); if (e.isDirectory()) anda(f); else if (e.name.endsWith('.html')) { const h = fs.readFileSync(f, 'utf8'); if (/Contacto, se quiser resposta|Contact, if you want a reply/.test(h)) comRotulo += 1; if (/Enviar a sugestão/.test(h)) comBotao += 1; } } };
+    anda(path.join(RAIZ, 'dist'));
+  }
+  medicao('s1c_paginas_construidas_com_o_rotulo_do_contacto', daCabeca ? comRotulo : NAO, 'os .html de dist/ com «Contacto, se quiser resposta» ou «Contact, if you want a reply»', 'a mesma varredura acha o botão «Enviar a sugestão»', comBotao > 0);
+  const caixa = le(path.join(RAIZ, 'design/observatorio/CAIXA-DAS-SUGESTOES.md')) ?? '';
+  const RE_CONTACTO = /deixa ou não um contacto|o contacto, se o deixou|Se o leitor deixou contacto|com_contacto|sem contacto\*\*/g;
+  medicao('s1c_frases_do_contacto_no_procedimento_da_caixa', (caixa.match(RE_CONTACTO) ?? []).length, 'design/observatorio/CAIXA-DAS-SUGESTOES.md contra as cinco formas do contacto que o procedimento tinha', 'as mesmas formas no procedimento do fim da S1-b', ((antes('design/observatorio/CAIXA-DAS-SUGESTOES.md') ?? '').match(RE_CONTACTO) ?? []).length >= 4);
+  const celula = leJson(C('celula-da-funcao-c.json'));
+  const plantasC = (celula?.plantas ?? []).filter((x) => x.nome !== 'controlo-sem-troca');
+  medicao('s1c_casos_da_celula_da_funcao', celula ? celula.casos.length : NAO, 'node tests/sugestoes/funcao.mjs --prova --json celula-da-funcao-c.json', 'o caso do contacto está entre eles', (celula?.casos ?? []).some((c) => c.caso === 'contacto'));
+  medicao('s1c_casos_da_celula_da_funcao_verdes', celula ? celula.casos.filter((c) => c.passou).length : NAO, 'o mesmo ficheiro', 'a cópia de controlo passou', (celula?.plantas ?? []).some((x) => x.nome === 'controlo-sem-troca' && x.passou));
+  medicao('s1c_plantas_da_celula_da_funcao', celula ? plantasC.length : NAO, 'o mesmo ficheiro', 'as duas do contacto estão entre elas', ['contacto-de-volta', 'contacto-escondido-noutro-parametro'].every((n) => plantasC.some((x) => x.nome === n)));
+  medicao('s1c_plantas_da_celula_que_morderam_com_a_queixa', celula ? plantasC.filter((x) => x.mordeu).length : NAO, 'o mesmo ficheiro · mordeu = a queixa esperada nos erros', 'a do contacto de volta mordeu', plantasC.some((x) => x.nome === 'contacto-de-volta' && x.mordeu));
+  for (const [prefixo, ficheiro] of [['s1c', 'plantas-portoes-s1c.json'], ['s1', 'plantas-portoes-s1.json'], ['s1b', 'plantas-portoes-s1b.json']]) {
+    const r = leJson(C(`plantas-c/${ficheiro}`));
+    medicao(`s1c_plantas_do_dist_do_prefixo_${prefixo}`, r ? r.length : NAO, `OEDP_MEDICOES=…/plantas-c node tests/pais/portoes.mjs --prefixo ${prefixo}- · plantas-c/${ficheiro}`, 'o ficheiro diz o comando de cada planta', Boolean(r?.every((x) => x.comando)));
+    medicao(`s1c_plantas_do_dist_do_prefixo_${prefixo}_que_morderam`, r ? r.filter((x) => x.passou).length : NAO, `o mesmo ficheiro · passou = código 1, todas as mordidas e os bytes repostos`, 'cada registo tem o sha256 de antes e de depois', Boolean(r?.every((x) => x.ficheiros.every((f) => f.antes && f.reposto))));
+  }
+  const cap = leJson(C('capturas-s1c.json'));
+  medicao('s1c_capturas', cap ? cap.capturas : NAO, 'node design/especime-v3/medicoes/s1-2026-10-02/captar-s1c.mjs · capturas-s1c.json', 'a planta do contacto foi vista em cada página', Boolean(cap?.resultados?.length) && cap.resultados.every((r) => r.planta_do_contacto_vista));
+  medicao('s1c_capturas_problemas', cap ? cap.problemas.length : NAO, 'o mesmo ficheiro · problemas', 'o captor confere a nota contra a declarada', Boolean(cap?.resultados?.every((r) => typeof r.nota_igual_a_declarada === 'boolean')));
+  medicao('s1c_capturas_sem_o_campo_do_contacto', cap ? cap.resultados.filter((r) => !r.medidas.campos.includes('contacto') && r.medidas.campos_de_correio === 0).length : NAO, 'o mesmo ficheiro · os nomes dos campos de cada página, lidos no navegador', 'a mesma leitura viu o contacto plantado', Boolean(cap?.resultados?.every((r) => r.planta_do_contacto_vista)));
+  medicao('s1c_capturas_com_a_nota_aprovada', cap ? cap.resultados.filter((r) => r.nota_igual_a_declarada).length : NAO, 'o mesmo ficheiro · a nota rendida contra SUGESTOES.nota', 'a nota declarada é a da decisão', SUGESTOES.nota.pt === DECISAO_NOTA.pt);
+  medicao('s1c_recusas_rendidas_iguais_a_declarada', cap ? LANGS.filter((l) => cap.recusa_do_metodo?.[l]?.quinta_igual_a_declarada).length : NAO, 'o mesmo ficheiro · a quinta recusa rendida no Método, nas duas edições', 'o Método rende as cinco recusas', LANGS.every((l) => cap?.recusa_do_metodo?.[l]?.recusas_rendidas === 5));
+  /* A amarra das decisões (`scripts/check-ledger.mjs`) só governa os ficheiros da sua tabela TEXTOS; os da S1-c não estão nela. */
+  const ledger = le(path.join(RAIZ, 'scripts/check-ledger.mjs')) ?? '';
+  const tabela = (ledger.match(/const TEXTOS = \{([\s\S]*?)\};/) ?? [])[1] ?? '';
+  const governados = [...tabela.matchAll(/path\.join\(RAIZ, ((?:'[^']+',?\s*)+)\)/g)].map((m) => [...m[1].matchAll(/'([^']+)'/g)].map((x) => x[1]).join('/'));
+  const tocados = execFileSync('git', ['diff', '--name-only', `${ANTES}..HEAD`], { cwd: RAIZ, encoding: 'utf8' }).split('\n').filter(Boolean);
+  medicao('s1c_ficheiros_tocados_que_a_amarra_governa', governados.length ? tocados.filter((f) => governados.includes(f)).length : NAO, `os ficheiros de git diff --name-only ${ANTES}..HEAD que estão na tabela TEXTOS de scripts/check-ledger.mjs`, 'a tabela tem os dois textos governados, o do Sobre e o do Método', governados.includes('src/data/sobre.mjs') && governados.includes('src/data/metodo.mjs'));
+  medicao('s1c_ficheiros_tocados_pela_passagem', tocados.length, `git diff --name-only ${ANTES}..HEAD`, 'a política da autonomia está entre eles', tocados.includes('design/observatorio/POLITICA-DA-AUTONOMIA.md'));
+  for (const g of ['build', 'verify', 'typecheck']) {
+    const c = le(C(`portoes-c/${g}.codigo`));
+    medicao(`s1c_portao_${g}_codigo`, c === null ? NAO : Number(c.trim()), `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes-c · portoes-c/${g}.codigo`, 'a pasta tem a cabeça da corrida e a mesma no fim', fs.existsSync(C('portoes-c/cabeca')) && (le(C('portoes-c/cabeca')) ?? '').trim() === (le(C('portoes-c/cabeca.fim')) ?? '').trim());
+  }
+  const cabecaC = (le(C('portoes-c/cabeca')) ?? '').trim();
+  const antepassadaC = (de) => { try { execFileSync('git', ['merge-base', '--is-ancestor', de, 'HEAD'], { cwd: RAIZ }); return true; } catch { return false; } };
+  const estadoC = le(C('portoes-c/estado.fim'));
+  const mudadosC = estadoC === null ? null : estadoC.split('\n').filter((l) => l.trim() && !l.includes('design/especime-v3/medicoes/s1-2026-10-02/portoes-c/'));
+  medicao('s1c_portao_cabeca_e_a_construida', cabecaC && versao?.commit ? (versao.commit === cabecaC ? 1 : 0) : NAO, 'dist/version.json, o campo commit, contra portoes-c/cabeca', 'a cabeça da corrida é antepassada da atual', Boolean(cabecaC) && antepassadaC(cabecaC));
+  medicao('s1c_portao_ficheiros_mudados_durante_a_corrida', mudadosC === null ? NAO : mudadosC.length, 'as linhas de portoes-c/estado.fim que não são a pasta da própria corrida', 'a pasta da corrida aparece no estado do fim', (estadoC ?? '').includes('portoes-c/'));
+  const antigo = execFileSync('git', ['show', '7fdd4794:design/especime-v3/medicoes/s1-2026-10-02/prova-do-caminho-do-lugar-de-direcao/vercel-inspect.txt'], { cwd: RAIZ, encoding: 'utf8' });
+  const equipa = (antigo.match(/o-estado-do-pais-[a-z0-9]+-([a-z0-9-]+)\.vercel\.app/) ?? [])[1] ?? null;
+  const guiaoAntigo = execFileSync('git', ['show', 'cc93092c~1:design/especime-v3/medicoes/s1-2026-10-02/prova-do-caminho/prova-da-plataforma.sh'], { cwd: RAIZ, encoding: 'utf8' });
+  const nomeAntigo = (guiaoAntigo.match(/sed -E 's\/([a-z0-9-]+)\[-a-z0-9\]\*\/<equipa>/) ?? [])[1] ?? null;
+  const daPassagem = [...['portoes-c', 'plantas-c'].flatMap((d) => (fs.existsSync(C(d)) ? fs.readdirSync(C(d)).map((f) => C(`${d}/${f}`)) : [])), C('capturas-s1c.json'), C('celula-da-funcao-c.json'), C('celula-da-funcao-c.log'), C('custo-inicio-c.json'), C('custo-fim-c.json'), C('captar-s1c.mjs')].filter((f) => fs.existsSync(f));
+  const comEquipaC = equipa && nomeAntigo ? daPassagem.filter((f) => { const x = le(f) ?? ''; return x.includes(equipa) || x.includes(nomeAntigo); }) : [];
+  medicao('s1c_ficheiros_novos_com_o_nome_da_equipa', equipa && nomeAntigo ? comEquipaC.length : NAO, 'os ficheiros novos da S1-c nesta pasta (portoes-c/, plantas-c/, as capturas, a célula, o custo, o captor), contra o identificador e o nome lidos do histórico', 'o mesmo identificador está num ficheiro de outro bloco', equipa && (le(path.join(RAIZ, 'BRIEF-decisoes-2026-08-20.md')) ?? '').includes(equipa));
+  medicao('s1c_ficheiros_novos_lidos_na_procura', daPassagem.length, 'o mesmo conjunto', 'o captor está entre eles', daPassagem.includes(C('captar-s1c.mjs')));
+  const iniC = leJson(C('custo-inicio-c.json'));
+  const fimC = leJson(C('custo-fim-c.json'));
+  medicao('s1c_simbolos_gastos', iniC && fimC ? iniC.simbolos_restantes_no_inicio - fimC.simbolos_restantes_no_fim : NAO, 'custo-inicio-c.json menos custo-fim-c.json, o contador que a ferramenta mostra ao construtor', 'os dois ficheiros dizem de onde vem o número', Boolean(iniC?.o_que && fimC?.o_que));
+  medicao('s1c_segundos_de_parede', iniC && fimC ? Math.round((Date.parse(fimC.fim_utc) - Date.parse(iniC.inicio_utc)) / 1000) : NAO, 'fim_utc de custo-fim-c.json menos inicio_utc de custo-inicio-c.json', 'o início vem de um relógio lido', Boolean(iniC?.inicio_origem));
 }
 
 const saida = { bloco: 'S1', guiao: 'design/especime-v3/medicoes/s1-2026-10-02/medir-s1.mjs', cabeca: git('rev-parse', 'HEAD'), medidas };
