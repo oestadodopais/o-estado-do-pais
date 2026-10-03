@@ -1,0 +1,127 @@
+{
+  "erros": [],
+  "contas": {
+    "paginas": 7466,
+    "paginas_com_cartoes": 656,
+    "cartoes": 5290,
+    "familias": {
+      "nacional": 318,
+      "uniao": 42,
+      "concelho": 4928,
+      "camaras": 2
+    },
+    "nomes": {
+      "projeto": 224,
+      "medidas": 24,
+      "figuras": 70
+    },
+    "estados": 688,
+    "unidades": {
+      "declaradas": 776,
+      "da_linha": 4442,
+      "em_divida": 6
+    },
+    "faixas": {
+      "lugar": 2464,
+      "comparacao": 2464
+    },
+    "dobras": {
+      "perguntas": 138,
+      "notas": 4928,
+      "referencias": 12,
+      "uniao": 42
+    }
+  },
+  "chaves": 354,
+  "formas_por_campo": {
+    "dobra": 144,
+    "nome": 354,
+    "periodo": 272,
+    "regua": 106,
+    "unidade": 312,
+    "comparacao": 12,
+    "faixa": 49,
+    "estado": 60,
+    "dobra-referencia": 12,
+    "faixa-ue": 20
+  },
+  "em_dia_com_o_declarado": true,
+  "formas_declaradas_que_ja_nao_se_rendem": 0,
+  "plantas": [
+    {
+      "nome": "r2-nome-trocado-num-cartao-nacional",
+      "campo": "nome",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-nome-pelo-titulo-da-fonte",
+      "campo": "nome",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-unidade-da-casa-trocada",
+      "campo": "unidade",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-unidade-da-linha-em-vez-da-declarada",
+      "campo": "unidade",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-unidade-da-linha-nao-aceite",
+      "campo": "unidade",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-estado-sem-o-dono",
+      "campo": "estado",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-estado-do-dono-errado",
+      "campo": "estado",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-faixa-sem-a-medida",
+      "campo": "faixa",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-comparacao-de-antes",
+      "campo": "faixa",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-pergunta-trocada",
+      "campo": "dobra",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-pergunta-tirada",
+      "campo": "dobra",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-nota-do-concelho-de-antes",
+      "campo": "dobra",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-referencia-na-dobra-de-outro-dono",
+      "campo": "dobra",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-unidade-do-cartao-da-uniao-de-antes",
+      "campo": "unidade",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-cartao-sem-chave",
+      "campo": "chave",
+      "mordeu": true
+    }
+  ]
+}

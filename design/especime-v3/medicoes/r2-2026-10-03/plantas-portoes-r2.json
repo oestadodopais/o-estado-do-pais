@@ -1,0 +1,82 @@
+[
+  {
+    "nome": "r2-portao-cartao-com-a-etiqueta-da-linha",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "R2: o cartão de \"jovens-nem-2025\" tem unidade declarada em UNIDADES_DOS_CARTOES e imprime outra \\(a etiqueta da linha\\)"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/emprego/index.html",
+        "antes": "35af9f692168dc47419942c7083191f8874149ac8c3d2bedd27aa41e2425cf01",
+        "reposto": "35af9f692168dc47419942c7083191f8874149ac8c3d2bedd27aa41e2425cf01"
+      }
+    ]
+  },
+  {
+    "nome": "r2-portao-unidade-da-casa-com-outra-idade",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "K2-c: a unidade da casa de \"jovens-nem-2025\" diz «% of people aged 15 to 24» e a declaração diz «% of people aged 15 to 29»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/employment/index.html",
+        "antes": "ce1c36a4a8973490ea87fdfd041fb249c5e17faf5828655ea319a606ae373595",
+        "reposto": "ce1c36a4a8973490ea87fdfd041fb249c5e17faf5828655ea319a606ae373595"
+      }
+    ]
+  },
+  {
+    "nome": "r2-portao-algarismo-da-unidade-sem-marca",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "algarismos fora do livro-razão: \"20\""
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/emprego/index.html",
+        "antes": "35af9f692168dc47419942c7083191f8874149ac8c3d2bedd27aa41e2425cf01",
+        "reposto": "35af9f692168dc47419942c7083191f8874149ac8c3d2bedd27aa41e2425cf01"
+      }
+    ]
+  },
+  {
+    "nome": "r2-l1-porta-da-origem-repetida-fora",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L1 · páginas com dois destinos iguais fora da mobília: \\d+, acima do teto"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/retribuicao-minima-mensal-garantida-continente-2026/index.html",
+        "antes": "a5a3bca9c7eed07232d24b9ed2569045f5039fde858daab3b6c4b8f05e7fdd05",
+        "reposto": "a5a3bca9c7eed07232d24b9ed2569045f5039fde858daab3b6c4b8f05e7fdd05"
+      }
+    ]
+  },
+  {
+    "nome": "r2-l1-dispensa-so-no-recibo",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L1 · páginas com dois destinos iguais fora da mobília: \\d+, acima do teto"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "4b413f3468b8fd5a9e1e6ca609af168214007fc41afef6c706e345e15761e7b8",
+        "reposto": "4b413f3468b8fd5a9e1e6ca609af168214007fc41afef6c706e345e15761e7b8"
+      }
+    ]
+  }
+]

@@ -1,0 +1,845 @@
+{
+  "bloco": "R2",
+  "guiao": "design/especime-v3/medicoes/r2-2026-10-03/medir-r2.mjs",
+  "cabeca": "f13705cde56eb9f7eaac59eea0195292236def4c",
+  "construcao": "f13705cde56eb9f7eaac59eea0195292236def4c",
+  "medidas": [
+    {
+      "nome": "linhas_do_livro",
+      "valor": 3009,
+      "comando": "loadClaims() de src/lib/ledger.mjs",
+      "conhecido_positivo": {
+        "o_que": "a linha do índice de dívida de Évora é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_distintas_nas_linhas",
+      "valor": 41,
+      "comando": "o campo unit de cada linha, formas distintas",
+      "conhecido_positivo": {
+        "o_que": "«euros por mês» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_do_dicionario_das_unidades_inglesas",
+      "valor": 39,
+      "comando": "Object.keys(UNIDADES) de src/i18n/unidades.mjs",
+      "conhecido_positivo": {
+        "o_que": "a entrada «euros», sem aspas, está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_das_linhas_sem_entrada_inglesa",
+      "valor": 2,
+      "comando": "as unidades das linhas que não são chaves de UNIDADES",
+      "conhecido_positivo": {
+        "o_que": "«factor» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_sem_entrada_inglesa_declaradas_em_portugues",
+      "valor": 2,
+      "comando": "as unidades sem entrada que UNIDADES_EM_PORTUGUES declara com a razão",
+      "conhecido_positivo": {
+        "o_que": "«avisos» está declarada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_sem_entrada_nem_declaracao",
+      "valor": 0,
+      "comando": "as unidades sem entrada inglesa e sem declaração em português",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê as duas declaradas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_contadas_pela_expressao_do_brief",
+      "valor": 25,
+      "comando": "a expressão regular de design/observatorio/medidas/BRIEF-R2.py, ^\\s{2}'([^']+)':\\s*'([^']*)', sobre src/i18n/unidades.mjs",
+      "conhecido_positivo": {
+        "o_que": "a expressão vê a entrada do índice de dívida, entre aspas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sem_entrada_pela_expressao_do_brief",
+      "valor": 16,
+      "comando": "as unidades das linhas fora das entradas que a expressão do brief vê",
+      "conhecido_positivo": {
+        "o_que": "«euros», que tem entrada sem aspas, cai aqui",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_declaradas_dos_cartoes",
+      "valor": 56,
+      "comando": "Object.keys(UNIDADES_DOS_CARTOES) de src/data/unidades-dos-cartoes.mjs",
+      "conhecido_positivo": {
+        "o_que": "a dos jovens está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_da_linha_aceites_num_cartao",
+      "valor": 13,
+      "comando": "Object.keys(UNIDADES_DA_LINHA_ACEITES_NUM_CARTAO)",
+      "conhecido_positivo": {
+        "o_que": "«euros» está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_a_unidade_da_linha_em_divida",
+      "valor": 2,
+      "comando": "Object.keys(CARTOES_COM_A_UNIDADE_DA_LINHA_EM_DIVIDA)",
+      "conhecido_positivo": {
+        "o_que": "o das exportações, do achado 4 parado, está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_das_linhas_com_o_simbolo_do_euro",
+      "valor": 3,
+      "comando": "as unidades das linhas que começam por «€» (as linhas não mudam: a unidade é do motor)",
+      "conhecido_positivo": {
+        "o_que": "«€ por mês» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_de_cartao_vistas_em_dist",
+      "valor": 5226,
+      "comando": "cada .cartao-medida-unidade dentro da quantidade de um cartão de medida, em todas as páginas de dist/",
+      "conhecido_positivo": {
+        "o_que": "há unidades de cartão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_de_cartao_com_o_simbolo_do_euro",
+      "valor": 0,
+      "comando": "as unidades de cartão em dist/ com «€»",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê o «€» nas unidades das linhas (a medida acima)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_da_linha_fora_dos_cartoes",
+      "valor": 12140,
+      "comando": "cada [data-linha-campo=\"unit\"] fora de um cartão de medida, em todas as páginas de dist/ (o recibo de cada linha, sobretudo)",
+      "conhecido_positivo": {
+        "o_que": "há unidades de linha no recibo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_da_linha_fora_dos_cartoes_com_o_simbolo_do_euro",
+      "valor": 0,
+      "comando": "as mesmas, com «€» (o mandato deixa o recibo como o motor escreve a linha)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê o «€» nas unidades das linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_de_cartao_em_portugues_nas_paginas_inglesas",
+      "valor": 0,
+      "comando": "as unidades de cartão das páginas inglesas marcadas lang=\"pt-PT\" (a unidade sem palavra inglesa certa, I92)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor de lang=\"pt-PT\" encontra o termo «dívida total» na dobra inglesa do cartão da dívida das páginas de concelho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_com_a_percentagem_sozinha",
+      "valor": 2,
+      "comando": "as unidades de cartão em dist/ que são só «%»",
+      "conhecido_positivo": {
+        "o_que": "as duas são da água não faturada, o cartão declarado em dívida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_paginas_lidas",
+      "valor": 7466,
+      "comando": "node scripts/inventario-rotulos.mjs --prova --json design/especime-v3/medicoes/r2-2026-10-03/check-rotulos.json",
+      "conhecido_positivo": {
+        "o_que": "a régua leu páginas com cartões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_paginas_com_cartoes",
+      "valor": 656,
+      "comando": "o campo contas.paginas_com_cartoes",
+      "conhecido_positivo": {
+        "o_que": "a página de Évora está entre elas (há cartões de concelho)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_cartoes",
+      "valor": 5290,
+      "comando": "o campo contas.cartoes",
+      "conhecido_positivo": {
+        "o_que": "há cartões das cinco famílias menos uma (a dobra da União conta à parte)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_cartoes_nacionais",
+      "valor": 318,
+      "comando": "contas.familias.nacional",
+      "conhecido_positivo": {
+        "o_que": "o cartão dos jovens está entre eles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_cartoes_dos_concelhos",
+      "valor": 4928,
+      "comando": "contas.familias.concelho",
+      "conhecido_positivo": {
+        "o_que": "oito por página de concelho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_cartoes_da_uniao",
+      "valor": 42,
+      "comando": "contas.familias.uniao",
+      "conhecido_positivo": {
+        "o_que": "os 21 cartões das duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_cartoes_das_camaras",
+      "valor": 2,
+      "comando": "contas.familias.camaras",
+      "conhecido_positivo": {
+        "o_que": "um por edição de «Lugares»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_chaves",
+      "valor": 354,
+      "comando": "o campo chaves",
+      "conhecido_positivo": {
+        "o_que": "a chave do índice de dívida está no inventário declarado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_unidades_declaradas_rendidas",
+      "valor": 776,
+      "comando": "contas.unidades.declaradas",
+      "conhecido_positivo": {
+        "o_que": "há unidades declaradas rendidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_unidades_da_linha_rendidas",
+      "valor": 4442,
+      "comando": "contas.unidades.da_linha",
+      "conhecido_positivo": {
+        "o_que": "há unidades da linha rendidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_unidades_em_divida_rendidas",
+      "valor": 6,
+      "comando": "contas.unidades.em_divida",
+      "conhecido_positivo": {
+        "o_que": "a água não faturada e as exportações, em cada página onde se rendem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_estados_conferidos",
+      "valor": 688,
+      "comando": "contas.estados",
+      "conhecido_positivo": {
+        "o_que": "há estados conferidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_frases_do_lugar_conferidas",
+      "valor": 2464,
+      "comando": "contas.faixas.lugar",
+      "conhecido_positivo": {
+        "o_que": "há frases do lugar conferidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_comparacoes_conferidas",
+      "valor": 2464,
+      "comando": "contas.faixas.comparacao",
+      "conhecido_positivo": {
+        "o_que": "há comparações conferidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_perguntas_conferidas",
+      "valor": 138,
+      "comando": "contas.dobras.perguntas",
+      "conhecido_positivo": {
+        "o_que": "há perguntas conferidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_notas_conferidas",
+      "valor": 4928,
+      "comando": "contas.dobras.notas",
+      "conhecido_positivo": {
+        "o_que": "há notas de concelho conferidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_referencias_na_dobra",
+      "valor": 12,
+      "comando": "contas.dobras.referencias",
+      "conhecido_positivo": {
+        "o_que": "há frases de referência nas dobras das áreas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_plantas",
+      "valor": 15,
+      "comando": "o campo plantas",
+      "conhecido_positivo": {
+        "o_que": "cada planta mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_plantas_a_morder",
+      "valor": 15,
+      "comando": "as plantas com mordeu: true",
+      "conhecido_positivo": {
+        "o_que": "a do estado sem o dono está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regua_erros",
+      "valor": 0,
+      "comando": "o campo erros",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor morde nas plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas_distintas_da_unidade_nos_cartoes_portugueses",
+      "valor": 46,
+      "comando": "as formas distintas do campo unidade nas chaves pt das famílias nacional, concelho e câmaras de design/especime-v3/rotulos/INVENTARIO.json",
+      "conhecido_positivo": {
+        "o_que": "«% das pessoas dos 15 aos 29 anos» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas_distintas_da_unidade_nos_cartoes_portugueses_antes",
+      "valor": 34,
+      "comando": "a mesma conta sobre design/especime-v3/medicoes/r2-2026-10-03/antes-inventario-r2.json",
+      "conhecido_positivo": {
+        "o_que": "«% da população», a unidade de antes dos jovens, é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas_distintas_do_estado_nos_cartoes_portugueses_antes",
+      "valor": 10,
+      "comando": "as formas distintas do campo estado nas mesmas chaves de design/especime-v3/medicoes/r2-2026-10-03/antes-inventario-r2.json",
+      "conhecido_positivo": {
+        "o_que": "há estados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas_distintas_do_estado_nos_cartoes_portugueses",
+      "valor": 10,
+      "comando": "as formas distintas do campo estado nas mesmas chaves de design/especime-v3/rotulos/INVENTARIO.json",
+      "conhecido_positivo": {
+        "o_que": "a forma da Comissão com o dono é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inventario_declarado_chaves",
+      "valor": 354,
+      "comando": "as chaves de design/especime-v3/rotulos/INVENTARIO.json",
+      "conhecido_positivo": {
+        "o_que": "a do índice de dívida em português está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "perguntas_declaradas",
+      "valor": 42,
+      "comando": "Object.keys(DEFINICOES_DAS_MEDIDAS)",
+      "conhecido_positivo": {
+        "o_que": "a pergunta nova da creche está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "k16_perguntas_auditadas",
+      "valor": 42,
+      "comando": "auditarPerguntas() de tests/cartao/perguntas.mjs",
+      "conhecido_positivo": {
+        "o_que": "a K16 conta as unidades da casa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "k16_pedacos",
+      "valor": 151,
+      "comando": "auditarPerguntas().contas.pedacos",
+      "conhecido_positivo": {
+        "o_que": "há pedaços",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "k16_unidades_da_casa_auditadas",
+      "valor": 56,
+      "comando": "auditarPerguntas().contas.unidades_da_casa",
+      "conhecido_positivo": {
+        "o_que": "a dos jovens é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "k16_erros",
+      "valor": 0,
+      "comando": "auditarPerguntas().erros",
+      "conhecido_positivo": {
+        "o_que": "a K16 morde nas plantas do check:cartao --prova (o registo da corrida)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "k17_medidas_auditadas",
+      "valor": 49,
+      "comando": "conferirAuditoriaDasLeituras() de tests/cartao/leituras.mjs",
+      "conhecido_positivo": {
+        "o_que": "a do PIB real está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "k17_erros",
+      "valor": 0,
+      "comando": "conferirAuditoriaDasLeituras().erros",
+      "conhecido_positivo": {
+        "o_que": "a K17 lê folhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "perguntas_novas_do_bloco",
+      "valor": 7,
+      "comando": "as entradas de tests/cartao/perguntas-provadas.json cuja mudança começa por «R2 »",
+      "conhecido_positivo": {
+        "o_que": "a do salário mínimo é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_portao_r2",
+      "valor": 5,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/r2-2026-10-03 node tests/pais/portoes.mjs --prefixo r2-",
+      "conhecido_positivo": {
+        "o_que": "cada uma passou (código 1, as mordidas e os bytes repostos)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_portao_k2c_refeitas",
+      "valor": 3,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/r2-2026-10-03 node tests/pais/portoes.mjs --prefixo k2c-",
+      "conhecido_positivo": {
+        "o_que": "as da unidade da casa, com as mensagens novas, passaram",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_portao_p4_corridas_de_novo",
+      "valor": 13,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/r2-2026-10-03 node tests/pais/portoes.mjs --prefixo p4",
+      "conhecido_positivo": {
+        "o_que": "as do índice de dívida e do mapa, com a unidade nova, passaram",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_fc_r2",
+      "valor": 3,
+      "comando": "node tests/inicio/navegacao.mjs --prova --json design/especime-v3/medicoes/r2-2026-10-03/check-navegacao.json",
+      "conhecido_positivo": {
+        "o_que": "cada uma mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_id",
+      "valor": 10,
+      "comando": "node tests/municipio/indice-de-divida.mjs --prova --json design/especime-v3/medicoes/r2-2026-10-03/indice-de-divida.json",
+      "conhecido_positivo": {
+        "o_que": "todas morderam",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "planta_da_id_r2",
+      "valor": 1,
+      "comando": "node tests/municipio/indice-de-divida.mjs --prova --json design/especime-v3/medicoes/r2-2026-10-03/indice-de-divida.json",
+      "conhecido_positivo": {
+        "o_que": "mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_k16",
+      "valor": 15,
+      "comando": "node tests/cartao/cartao.mjs --prova > design/especime-v3/medicoes/r2-2026-10-03/check-cartao.log",
+      "conhecido_positivo": {
+        "o_que": "a linha da K16 está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inventario_das_frases_retiradas",
+      "valor": 33,
+      "comando": "node design/especime-v3/medicoes/r2-2026-10-03/inventario-frases-r2.mjs --confere",
+      "conhecido_positivo": {
+        "o_que": "o guião confere o ficheiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inventario_das_frases_apagadas",
+      "valor": 3,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "as três formas curtas do estado sem o dono",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "inventario_das_frases_novas",
+      "valor": 40,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "há linhas novas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "achados_da_triagem",
+      "valor": 27,
+      "comando": "as linhas da tabela «A triagem» da auditoria que começam por «| n (»",
+      "conhecido_positivo": {
+        "o_que": "o achado 19, recusado, está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "achados_feito",
+      "valor": 18,
+      "comando": "design/especime-v3/medicoes/r2-2026-10-03/achados-r2.json, o campo contagens",
+      "conhecido_positivo": {
+        "o_que": "a soma das contagens é a dos achados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "achados_parado",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/r2-2026-10-03/achados-r2.json, o campo contagens",
+      "conhecido_positivo": {
+        "o_que": "a soma das contagens é a dos achados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "achados_feito_em_parte",
+      "valor": 6,
+      "comando": "design/especime-v3/medicoes/r2-2026-10-03/achados-r2.json, o campo contagens",
+      "conhecido_positivo": {
+        "o_que": "a soma das contagens é a dos achados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "achados_por_verificar",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/r2-2026-10-03/achados-r2.json, o campo contagens",
+      "conhecido_positivo": {
+        "o_que": "a soma das contagens é a dos achados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "achados_recusado",
+      "valor": 1,
+      "comando": "design/especime-v3/medicoes/r2-2026-10-03/achados-r2.json, o campo contagens",
+      "conhecido_positivo": {
+        "o_que": "a soma das contagens é a dos achados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "achados_com_verify",
+      "valor": 10,
+      "comando": "design/especime-v3/medicoes/r2-2026-10-03/achados-r2.json, o campo verify",
+      "conhecido_positivo": {
+        "o_que": "a Madeira do salário mínimo está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_paginas_antes",
+      "valor": 2342,
+      "comando": "node design/especime-v3/medicoes/r2-2026-10-03/l1-r2.mjs (a lista de antes em l1-antes-check-lugar.txt)",
+      "conhecido_positivo": {
+        "o_que": "a lista de antes tem as páginas que a contagem impressa diz",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_paginas_depois",
+      "valor": 2342,
+      "comando": "node design/especime-v3/medicoes/r2-2026-10-03/l1-r2.mjs",
+      "conhecido_positivo": {
+        "o_que": "o mesmo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_teto",
+      "valor": 2342,
+      "comando": "scripts/lugar-tetos-b1.json, impresso pela régua",
+      "conhecido_positivo": {
+        "o_que": "o teto de antes é o mesmo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_paginas_antes_da_dispensa",
+      "valor": 2344,
+      "comando": "AMOSTRA=100000 node scripts/check-lugar.mjs sobre a construção de 6ab33620 (design/especime-v3/medicoes/r2-2026-10-03/l1-antes-da-dispensa-check-lugar.txt)",
+      "conhecido_positivo": {
+        "o_que": "as duas edições do recibo do salário mínimo estão nessa lista e não na de depois",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_paginas_que_entraram",
+      "valor": 0,
+      "comando": "o campo entraram de l1-r2.json",
+      "conhecido_positivo": {
+        "o_que": "o detetor vê as páginas de antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_paginas_que_sairam",
+      "valor": 0,
+      "comando": "o campo sairam de l1-r2.json",
+      "conhecido_positivo": {
+        "o_que": "o mesmo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_paginas_que_pioraram",
+      "valor": 2,
+      "comando": "o campo pioraram de l1-r2.json",
+      "conhecido_positivo": {
+        "o_que": "o mesmo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "achados_com_rotulos_que_mudaram",
+      "valor": 23,
+      "comando": "node design/especime-v3/medicoes/r2-2026-10-03/antes-depois-r2.mjs",
+      "conhecido_positivo": {
+        "o_que": "o achado 1 mudou e o 4, parado, não",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "campos_lidos_antes_e_depois",
+      "valor": 160,
+      "comando": "a soma dos campos de cada achado em achados-antes-depois.json",
+      "conhecido_positivo": {
+        "o_que": "o mesmo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "campos_que_mudaram",
+      "valor": 112,
+      "comando": "a soma de campos_que_mudaram",
+      "conhecido_positivo": {
+        "o_que": "o mesmo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas",
+      "valor": 16,
+      "comando": "node design/especime-v3/medicoes/r2-2026-10-03/captar-r2.mjs",
+      "conhecido_positivo": {
+        "o_que": "a captura de Évora a 390 px em português está lá, com o sha256",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_com_problemas",
+      "valor": 0,
+      "comando": "o campo problemas de capturas-r2.json",
+      "conhecido_positivo": {
+        "o_que": "o guião confere a cabeça da construção antes de captar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_conferidas",
+      "valor": 266,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "conhecido_positivo": {
+        "o_que": "há citações conferidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_longe_da_linha",
+      "valor": 0,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha da contagem está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_por_encontrar",
+      "valor": 0,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "a linha da contagem está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_citadas_nos_ficheiros_do_bloco",
+      "valor": 49,
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo d9b168b9..f13705cd > design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt",
+      "conhecido_positivo": {
+        "o_que": "o conhecido-positivo do guião (a §1.98 em scripts/check-lugar.mjs) está na saída",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_de_texto_lidos_pelo_guiao_das_decisoes",
+      "valor": 33,
+      "comando": "o mesmo",
+      "conhecido_positivo": {
+        "o_que": "o mesmo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "citacoes_de_decisoes_perto_do_diff",
+      "valor": 61,
+      "comando": "as linhas «(perto do diff)» da mesma saída",
+      "conhecido_positivo": {
+        "o_que": "a §1.143 citada em src/data/faixa-do-concelho.mjs está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_restantes_no_inicio",
+      "valor": 15000000,
+      "comando": "design/especime-v3/medicoes/r2-2026-10-03/custo-inicio.json",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro diz a hora de início",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_restantes_no_fim",
+      "valor": "NÃO LIDO",
+      "comando": "design/especime-v3/medicoes/r2-2026-10-03/custo-fim.json",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro diz a hora do fim",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "simbolos_gastos_pelo_contador",
+      "valor": "NÃO LIDO",
+      "comando": "a diferença das duas leituras do contador",
+      "conhecido_positivo": {
+        "o_que": "as duas leituras existem",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "segundos_de_parede",
+      "valor": "NÃO LIDO",
+      "comando": "fim_utc menos inicio_utc",
+      "conhecido_positivo": {
+        "o_que": "as duas horas existem",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "portao_build",
+      "valor": "NÃO LIDO",
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro build.codigo existe",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "portao_verify",
+      "valor": "NÃO LIDO",
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro verify.codigo existe",
+        "encontrado": false
+      }
+    },
+    {
+      "nome": "portao_typecheck",
+      "valor": "NÃO LIDO",
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro typecheck.codigo existe",
+        "encontrado": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "o_que": "a primeira leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), no bloco R2, escrita à mão pelo construtor, e a hora do relógio da máquina na primeira chamada ao relógio do bloco",
+  "simbolos_restantes_no_inicio": 15000000,
+  "lido_no_inicio": "na mensagem do lugar de direção que abre o bloco R2, antes de qualquer ferramenta do bloco",
+  "inicio_utc": "2026-10-03T21:08:40Z",
+  "inicio_origem": "date -u, a primeira chamada ao relógio do bloco; as leituras do mapa, do brief, da auditoria e das decisões vieram antes dela, na mesma sessão, sem relógio",
+  "semana_da_conta_no_inicio": {
+    "o_que": "a percentagem da semana e das cinco horas da subscrição do Claude, lidas da linha de estado (os campos rate_limits) por scripts/leituras/uso.py às 21:08 UTC",
+    "sete_dias_usados_por_cento": 43,
+    "cinco_horas_usadas_por_cento": 12
+  }
+}

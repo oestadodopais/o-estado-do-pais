@@ -1,0 +1,38 @@
+
+  A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2
+
+[90m    páginas lidas                    7467[0m
+[90m    cartões                          5246 (2623 pt, 2623 en)[0m
+[90m    com nome                         5246 de 5246[0m
+[90m    com a frase do que medem         5070 de 5246 com frase[0m
+[90m    com régua                        780 de 5246 com régua[0m
+[90m    linhas sem nome, como linha do livro-razão             48 (42 com a aritmética escrita)[0m
+[90m    itens «período anterior», pares conferidos             166[0m
+[90m    «Governo Constitucional»         1 pt · 1 en[0m
+[90m    legenda da marca                 2 página(s)[0m
+[90m    nome na língua da fonte          0 (com a marca «lang»)[0m
+[90m    unidade na outra língua          0 (a exceção da I92)[0m
+[90m    o marcador em português          4 (a exceção da IDENTIDADE §6)[0m
+[90m    valores de régua sem marca própria                    884 (a porta é a do cartão)[0m
+[90m    tetos na linha do estado (P4-c)                       614 (a porta é a aritmética do recibo)[0m
+[90m    valores de referência, as duas testemunhas comparadas  15[0m
+[90m      com a testemunha discordante declarada e inteira     2[0m
+[90m    cartões com veredicto conferido (K15)                 74[0m
+[90m    a União com a ressalva (K14): cartões e recibos        4 · 4[0m
+[90m    cartões com a faixa da União (K1, K18)                 20[0m
+[90m    cartões de concelho com a faixa do concelho (K1)       2464[0m
+[90m    faixas refeitas dos pontos (K18)                       20[0m
+[90m    ressalvas nas pontas e ordinais (K18, UE1b)            4 · 27[0m
+[90m    empates num extremo, em memória (K18, UE1c)            sem --prova[0m
+[90m    a ordem do cartão (K19): cartões, com dobra, da faixa  5248 · 5084 · 42[0m
+[90m    medidas com nome oficial no recibo                    11[0m
+[90m    perguntas com cada pedaço apoiado (K16)               42 (151 pedaços, 225 apoios, 72 origens seladas no motor)[0m
+[90m    leituras dos cartões nacionais (K17)                 96 em 96 cartões (49 declarações auditadas, 1159 partes, 461 apoios, 104 origens, 208 ramos recontados)[0m
+[90m    medidas com grupo etário fixado na linha (K13)         4[0m
+[90m      linhas dessas medidas, todas conferidas               12[0m
+[90m      delas, na catraca declarada (I132, vazia)           0[0m
+[90m    ficheiros do motor               referencias.json sim · nomes.json sim[0m
+
+[31m  1 defeito(s):[0m
+    K6 · /emprego/ · disparidade-de-emprego-entre-sexos-2025: a frase do cartão diz «Qual é a diferença, em pontos percentuais, entre a…» e a declaração diz «Qual é a diferença entre a taxa de emprego dos hom…»
+
