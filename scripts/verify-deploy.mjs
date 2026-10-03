@@ -42,6 +42,8 @@
  * com `--host`, porque os anfitriões que redireccionam são os que são.
  */
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
+import fs from 'node:fs';
 import { SITE_HOST, SITE_HOST_UNACCENTED } from '../site.config.mjs';
 import { routePath } from '../src/lib/routes.mjs';
 
@@ -257,21 +259,46 @@ conferir('/404 lang', lingua(paginaPt.corpo), 'pt-PT');
    resposta tem de vir da região de Dublin, para os dados não saírem da União.
    A região lê-se do `x-vercel-id`: a documentação da Vercel diz que o cabeçalho
    traz as regiões por onde o pedido passou e a região onde a função correu; o
-   formato medido a 02.10.2026 em respostas reais da Vercel é
+   formato das respostas reais da Vercel é
    «<regiões separadas por ":" ou "::">::<identificador>», com a região da função
-   em último lugar antes do identificador («lhr1::iad1::…» e
-   «lhr1:lhr1:lhr1:sfo1::…»). Esta pergunta lê essa última região, e imprime o
-   cabeçalho inteiro para quem quiser conferir. */
+   em último lugar antes do identificador. As duas formas estão gravadas em
+   `scripts/verify-deploy-regioes.json`, e o controlo corre sobre elas antes de
+   esta pergunta ir ao sítio no ar. Esta pergunta lê essa última região, e
+   imprime o cabeçalho inteiro para quem quiser conferir. */
 /* Um GET, e não o HEAD de omissão de `ler()`: a função exporta o GET e o POST, e é o GET que se afirma. */
+/** A região da função num `x-vercel-id`: a última região antes do identificador do pedido. */
+const regiaoDaFuncao = (id) => (id ? id.slice(0, id.lastIndexOf('::')).split(':').filter(Boolean).at(-1) ?? null : null);
+
+/* O CONTROLO GRAVADO (S1-b, 03.10.2026, o achado 17 da leitura a frio do Sol): antes de perguntar ao sítio
+   no ar, a mesma leitura corre sobre respostas reais da Vercel guardadas em `scripts/verify-deploy-regioes.json`
+   (com o endereço, a hora, o cliente e o sha256 do que se guardou), e tem de dar a região que cada uma diz.
+   E a planta: uma leitura errada do cabeçalho (a primeira região em vez da última) tem de ser recusada pelo
+   mesmo controlo, ou o controlo não morde. */
+{
+  let gravadas = [];
+  try {
+    gravadas = JSON.parse(fs.readFileSync(new URL('./verify-deploy-regioes.json', import.meta.url), 'utf8')).respostas ?? [];
+  } catch (e) {
+    erros.push(`não foi possível ler as respostas gravadas do controlo da região: ${e.message}`);
+  }
+  if (!gravadas.length) erros.push('o controlo gravado da região não tem resposta nenhuma.');
+  const idDe = (bloco) => (bloco.match(/^x-vercel-id:\s*(\S+)\s*$/im) ?? [])[1] ?? null;
+  for (const r of gravadas) {
+    const resumo = createHash('sha256').update(r.cabecalhos_guardados ?? '').digest('hex');
+    conferir(`controlo gravado ${r.endereco} sha256`, resumo, r.sha256_dos_cabecalhos_guardados);
+    conferir(`controlo gravado ${r.endereco} região`, regiaoDaFuncao(idDe(r.cabecalhos_guardados ?? '')), r.regiao_da_funcao_esperada);
+  }
+  const leituraErrada = (id) => (id ? id.split(':').filter(Boolean)[0] ?? null : null);
+  const plantaMorde = gravadas.some((r) => leituraErrada(idDe(r.cabecalhos_guardados ?? '')) !== r.regiao_da_funcao_esperada);
+  conferir('controlo gravado: a leitura errada é recusada', plantaMorde, true);
+}
+
 const funcao = await ler(`https://${host}/api/sugestoes`, { comCorpo: true });
 conferir('/api/sugestoes estado', funcao.estado, 303);
 conferir('/api/sugestoes location', funcao.cabecalho('location'), routePath('sugestoes', 'pt'));
 const idDaVercel = funcao.cabecalho('x-vercel-id');
-const regioesDoPedido = idDaVercel
-  ? idDaVercel.slice(0, idDaVercel.lastIndexOf('::')).split(':').filter(Boolean)
-  : [];
 console.log(cinza(`      x-vercel-id observado: ${mostrar(idDaVercel)}`));
-conferir('/api/sugestoes região da função', regioesDoPedido.at(-1) ?? null, 'dub1');
+conferir('/api/sugestoes região da função', regiaoDaFuncao(idDaVercel), 'dub1');
 
 console.log();
 

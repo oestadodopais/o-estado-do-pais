@@ -1,0 +1,27 @@
+{
+  "o_que": "respostas gravadas da Vercel para o controlo da leitura da região da função no cabeçalho x-vercel-id, que o verify:deploy corre antes de perguntar ao sítio no ar (passagem S1-b, 03.10.2026, o achado 17 da leitura a frio do Sol). A documentação da Vercel diz que o cabeçalho traz as regiões por onde o pedido passou e a região onde a função correu; a leitura da casa é a última região antes do identificador do pedido, e estas respostas são os dois feitios que o cabeçalho tem.",
+  "respostas": [
+    {
+      "endereco": "https://vercel.com/api/user",
+      "hora_utc": "2026-10-03T19:15:24Z",
+      "cliente": "curl 8.7.1",
+      "pedido": "GET, sem cookies nem autenticação",
+      "cabecalhos_guardados": "HTTP/2 403\ncache-control: private, max-age=0\ndate: Sat, 03 Oct 2026 19:15:24 GMT\nserver: Vercel\nx-vercel-id: lhr1:lhr1:lhr1:sfo1::qsdwl-1791054924407-273fdca4b8f2\n",
+      "o_que_se_guarda": "a linha do estado e os cabeçalhos server, date, cache-control, x-vercel-cache e x-vercel-id, pela ordem da resposta; os cookies e os outros cabeçalhos ficam de fora",
+      "sha256_dos_cabecalhos_guardados": "5da6243fa2af22fd7fc9a3b365e54c96c8ab72e7e7477572285e08b67cc872a3",
+      "regiao_da_funcao_esperada": "sfo1",
+      "porque": "um pedido a uma função da Vercel, sem cache, pedido de Londres: as regiões vêm separadas por um só «:» e a da função é a última antes do identificador"
+    },
+    {
+      "endereco": "https://vercel.com/docs/headers/response-headers",
+      "hora_utc": "2026-10-03T19:15:23Z",
+      "cliente": "curl 8.7.1",
+      "pedido": "GET, sem cookies nem autenticação",
+      "cabecalhos_guardados": "HTTP/2 200\ncache-control: public, max-age=0, must-revalidate\ndate: Sat, 03 Oct 2026 17:29:12 GMT\nserver: Vercel\nx-vercel-cache: HIT\nx-vercel-id: lhr1::iad1::pxtx7-1791054923525-e3a27e449627\n",
+      "o_que_se_guarda": "a linha do estado e os cabeçalhos server, date, cache-control, x-vercel-cache e x-vercel-id, pela ordem da resposta; os cookies e os outros cabeçalhos ficam de fora",
+      "sha256_dos_cabecalhos_guardados": "96f190d23b283b91c10192e5694128e4d43af69220aaf26c71e1f0e962e2b235",
+      "regiao_da_funcao_esperada": "iad1",
+      "porque": "uma página da documentação da Vercel, servida da cache da borda de Londres: as regiões vêm separadas por «::», e a última antes do identificador é iad1"
+    }
+  ]
+}

@@ -341,6 +341,21 @@ const ESTRAGOS = [
     },
   },
   {
+    /* AS IDENTIDADES TROCADAS (S1-b, o achado 16): uma página perde a porta das sugestões e outra perde a das
+       correções, no disco. Os dois totais continuam iguais, e só a comparação das páginas o vê. O que se serve
+       ao navegador muda num comentário só, na página da amostra, para a planta provar que mexeu em alguma coisa
+       sem mexer no que o navegador mede. */
+    nome: 'sugestoes-identidades-trocadas · os mesmos totais em páginas diferentes',
+    celulas: ['H16'],
+    amostra: '/sugestoes/',
+    faz: (html, rota) => (rota === '/sugestoes/' ? html.replace('</body>', '<!-- s1b-identidades --></body>') : html),
+    noDisco: (texto, caminho) => {
+      if (caminho.endsWith(`${path.sep}temas${path.sep}index.html`)) return texto.replace(/<span data-porta-sugestoes(?:="")?[^>]*>[\s\S]*?<\/span>/, '');
+      if (caminho.endsWith(`${path.sep}agenda${path.sep}index.html`)) return texto.replace(/<span data-porta-correccoes(?:="")?[^>]*>[\s\S]*?<\/span>/, '');
+      return texto;
+    },
+  },
+  {
     /* O BOTÃO DO FORMULÁRIO A 30 px, contra os 44 que o brief pede em todas as larguras. */
     nome: 'sugestoes-botao-a-30 · o botão do formulário a 30 px, contra os 44 exigidos',
     celulas: ['H16'],
@@ -1220,6 +1235,10 @@ function varreDist() {
   let sugestoesForaDeMarco = 0;
   let sugestoesADobrar = 0;
   let semPortaDasSugestoes = 0;
+  /* S1-b (03.10.2026, o achado 16 da leitura a frio do Sol): as páginas, e não só os totais. Dois conjuntos
+     diferentes com o mesmo tamanho passavam a comparação das contagens. */
+  const paginasSemPortaDasSugestoes = [];
+  const paginasSemPortaDasCorrecoes = [];
   const paginasExpanded = [];
   const exemplos = { h1: [], porta: [], expanded: [], sugestoes: [] };
   for (const f of paginas(DIST)) {
@@ -1248,7 +1267,10 @@ function varreDist() {
       if (exemplos.h1.length < 5) exemplos.h1.push(`${rel} (${nH1})`);
     }
     const quantasSugestoes = (s.match(/data-porta-sugestoes(?![\w-])/g) ?? []).length;
-    if (quantasSugestoes === 0) semPortaDasSugestoes++;
+    if (quantasSugestoes === 0) {
+      semPortaDasSugestoes++;
+      paginasSemPortaDasSugestoes.push(rel);
+    }
     else if (quantasSugestoes > 1) sugestoesADobrar++;
     else {
       /* O ATRIBUTO EXATO, e não o princípio da cadeia: um atributo que comece pelo mesmo nome noutro sítio da
@@ -1263,7 +1285,10 @@ function varreDist() {
       }
     }
     const i = s.indexOf('data-porta-correccoes');
-    if (i < 0) semPorta++;
+    if (i < 0) {
+      semPorta++;
+      paginasSemPortaDasCorrecoes.push(rel);
+    }
     else {
       /* DENTRO DO `<footer>`, e mais nada (segunda passagem, Blocking 4). A
          primeira forma aceitava `<main>` e por isso dava por boas as 6 482
@@ -1300,6 +1325,8 @@ function varreDist() {
     sugestoesForaDeMarco,
     sugestoesADobrar,
     semPortaDasSugestoes,
+    paginasSemPortaDasSugestoes,
+    paginasSemPortaDasCorrecoes,
   };
 }
 
@@ -2047,12 +2074,19 @@ async function avalia(p, dist, cartoes, leis, folhas) {
   const botoesMaus = botoes.filter((a) => a.ok44 !== true);
   const armadilhas = p.paginas.filter((pg) => pg.familia === 'sugestoes').map((pg) => ({ chave: pg.chave, largura: pg.largura, a: pg.sugestoes.armadilha }));
   const armadilhasMas = armadilhas.filter((x) => !x.a || !x.a.foraDoEcra || x.a.tabindex !== '-1' || !x.a.foraDaArvore);
+  /* AS MESMAS PÁGINAS, e não o mesmo número (S1-b, o achado 16): as páginas sem a porta das sugestões têm de
+     ser, uma a uma, as que também não têm a das correções. */
+  const semSugestoes = new Set(dist.paginasSemPortaDasSugestoes);
+  const semCorrecoes = new Set(dist.paginasSemPortaDasCorrecoes);
+  const soSemSugestoes = [...semSugestoes].filter((p) => !semCorrecoes.has(p));
+  const soSemCorrecoes = [...semCorrecoes].filter((p) => !semSugestoes.has(p));
   conta(
     'H16',
     dist.sugestoesEmMarco > 0 &&
       dist.sugestoesForaDeMarco === 0 &&
       dist.sugestoesADobrar === 0 &&
-      dist.semPortaDasSugestoes === dist.semPorta &&
+      soSemSugestoes.length === 0 &&
+      soSemCorrecoes.length === 0 &&
       paginasComPorta.length === p.paginas.length &&
       portasA390.length > 0 &&
       portasLargas.length > 0 &&
@@ -2064,7 +2098,11 @@ async function avalia(p, dist, cartoes, leis, folhas) {
     `${dist.n} página(s) do dist/: ${dist.sugestoesEmMarco} com a porta das sugestões dentro do <footer>, ` +
       `${dist.sugestoesForaDeMarco} fora dele${dist.exemplos.sugestoes.length ? ` (${dist.exemplos.sugestoes.join('; ')})` : ''}, ` +
       `${dist.sugestoesADobrar} com mais de uma, ${dist.semPortaDasSugestoes} sem ela ` +
-      `(e ${dist.semPorta} sem a das correções) · nas rotas medidas: ${paginasComPorta.length} de ${p.paginas.length} passagens ` +
+      `(e ${dist.semPorta} sem a das correções; ${soSemSugestoes.length} página(s) sem a das sugestões e com a das correções` +
+      (soSemSugestoes.length ? ` (${soSemSugestoes.slice(0, 3).join('; ')})` : '') +
+      `, ${soSemCorrecoes.length} sem a das correções e com a das sugestões` +
+      (soSemCorrecoes.length ? ` (${soSemCorrecoes.slice(0, 3).join('; ')})` : '') +
+      `) · nas rotas medidas: ${paginasComPorta.length} de ${p.paginas.length} passagens ` +
       `com uma porta no seu marco; ${portasA390.length} porta(s) a 390 e ${portasLargas.length} a partir de ${LIMIAR_DA_COLUNA}, ` +
       `${portasMasDeToque.length} sem o alvo (${resumo(portasMasDeToque)}) · o botão do formulário: ${botoes.length} medição(ões), ` +
       `${botoesMaus.length} abaixo de ${ALVO} px (${resumo(botoesMaus)}) · o campo armadilhado: ${armadilhas.length} medição(ões), ` +
