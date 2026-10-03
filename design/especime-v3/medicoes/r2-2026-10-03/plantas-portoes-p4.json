@@ -1,0 +1,210 @@
+[
+  {
+    "nome": "p4-cartao-pergunta-antiga-da-disparidade",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "K6 · \\/emprego\\/ · disparidade-de-emprego-entre-sexos-2025: a frase do cartão diz «Qual é a diferença, em pontos percentuais"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/emprego/index.html",
+        "antes": "35af9f692168dc47419942c7083191f8874149ac8c3d2bedd27aa41e2425cf01",
+        "reposto": "35af9f692168dc47419942c7083191f8874149ac8c3d2bedd27aa41e2425cf01"
+      }
+    ]
+  },
+  {
+    "nome": "p4-cartao-pergunta-antiga-da-sobrecarga",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "K6 · \\/en\\/housing\\/ · sobrecarga-do-custo-da-habitacao-2025: a frase do cartão diz «What share of people, across all tenure statuses"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/housing/index.html",
+        "antes": "3831ff6084ba915b5f522cb9d3d7c3a9771aca68395be871b12283db7bcef050",
+        "reposto": "3831ff6084ba915b5f522cb9d3d7c3a9771aca68395be871b12283db7bcef050"
+      }
+    ]
+  },
+  {
+    "nome": "p4-datas-nota-sem-a-reconciliacao",
+    "comando": "node scripts/check-datas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "evora-quinze-anos-cinco-mandatos: a nota do sucessor não diz que o estudo que lhe sucedeu reconcilia o que esta edição escreveu"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/estudos/evora-quinze-anos-cinco-mandatos/index.html",
+        "antes": "39c3a5ab24c2952f0cf22ce8df57c39de65cc9bc3492fe5e011c47874ff9524a",
+        "reposto": "39c3a5ab24c2952f0cf22ce8df57c39de65cc9bc3492fe5e011c47874ff9524a"
+      }
+    ]
+  },
+  {
+    "nome": "p4-datas-nota-inglesa-com-a-frase-portuguesa",
+    "comando": "node scripts/check-datas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "evora-2027-prometido-painel-dinheiro: a nota do sucessor não diz que o estudo que lhe sucedeu reconcilia"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/studies/evora-2027-prometido-painel-dinheiro/index.html",
+        "antes": "b9981be7c5590e326ce45c44c766228243dea0dee3588d1b491bbcc7c20959d8",
+        "reposto": "b9981be7c5590e326ce45c44c766228243dea0dee3588d1b491bbcc7c20959d8"
+      }
+    ]
+  },
+  {
+    "nome": "p4c-unidade-antiga",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "P4-c: a unidade da casa de \"evora-indice-de-divida-2024\" diz «% \\(limite legal = 150\\)»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/evora/index.html",
+        "antes": "49e4445ec43e976e49f0665013dc97ff13e44a1f73b154a8c0d24d9c30d60240",
+        "reposto": "49e4445ec43e976e49f0665013dc97ff13e44a1f73b154a8c0d24d9c30d60240"
+      }
+    ]
+  },
+  {
+    "nome": "p4c-unidade-de-outra-medida",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "P4-c: a unidade da casa de \"evora-indice-de-divida-2024\" diz ser da medida «pmp», e a medida não declara"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/municipalities/evora/index.html",
+        "antes": "6c09f9dab79ff24d73deadb4e7c59a18160f3e241c87b59dd9672922fbade83a",
+        "reposto": "6c09f9dab79ff24d73deadb4e7c59a18160f3e241c87b59dd9672922fbade83a"
+      }
+    ]
+  },
+  {
+    "nome": "p4c-teto-de-outra-linha",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o valor da afirmação \"agueda-limite-divida-dgal-2024\" aparece sem selo para a sua própria linha"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/agueda/index.html",
+        "antes": "3ccb67c97c40c9342c4b98a86bb34691ea3cad5dfa880011e74df97f2832c9aa",
+        "reposto": "3ccb67c97c40c9342c4b98a86bb34691ea3cad5dfa880011e74df97f2832c9aa"
+      }
+    ]
+  },
+  {
+    "nome": "p4c-teto-sem-selo-em",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "o valor da afirmação \"indice-de-divida-limite-legal\" aparece sem selo para a sua própria linha"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/municipalities/agueda/index.html",
+        "antes": "9c54076c98447b6fb48d5223a29db151992a7a3dddfe37b81a55fac7d90c68b2",
+        "reposto": "9c54076c98447b6fb48d5223a29db151992a7a3dddfe37b81a55fac7d90c68b2"
+      }
+    ]
+  },
+  {
+    "nome": "p4c-recibo-sem-a-porta-do-teto",
+    "comando": "node tests/cartao/cartao.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "K10 · .*agueda-indice-de-divida-2024: a linha do estado cita o teto «indice-de-divida-limite-legal» sem marca própria"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/agueda-indice-de-divida-2024/index.html",
+        "antes": "ad3dabc740dc1fce197d0f15427d997f3f53cde0166e2eb8b1dc64bef9618d12",
+        "reposto": "ad3dabc740dc1fce197d0f15427d997f3f53cde0166e2eb8b1dc64bef9618d12"
+      }
+    ]
+  },
+  {
+    "nome": "p4c-camaras-palavras-de-antes",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "V2 pt: a régua difere das contagens e do limite lidos nas linhas"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/lugares/index.html",
+        "antes": "bf5162bbd55fa8c4e810015f66f157f1dce30a08f9c23ea02ed2976442246bd1",
+        "reposto": "bf5162bbd55fa8c4e810015f66f157f1dce30a08f9c23ea02ed2976442246bd1"
+      }
+    ]
+  },
+  {
+    "nome": "p4d-unidade-sem-a-media",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "P4-c: a unidade da casa de \"evora-indice-de-divida-2024\" diz «% da receita de três anos»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/evora/index.html",
+        "antes": "49e4445ec43e976e49f0665013dc97ff13e44a1f73b154a8c0d24d9c30d60240",
+        "reposto": "49e4445ec43e976e49f0665013dc97ff13e44a1f73b154a8c0d24d9c30d60240"
+      }
+    ]
+  },
+  {
+    "nome": "p4d-mapa-unidade-antiga",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "P4-d: a unidade da casa do mapa «indice» diz «% \\(limite legal = 150\\)»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/lugares/index.html",
+        "antes": "bf5162bbd55fa8c4e810015f66f157f1dce30a08f9c23ea02ed2976442246bd1",
+        "reposto": "bf5162bbd55fa8c4e810015f66f157f1dce30a08f9c23ea02ed2976442246bd1"
+      }
+    ]
+  },
+  {
+    "nome": "p4d-mapa-unidade-fora-da-legenda",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "P4-d: a unidade da casa do mapa «indice» está fora da legenda ou do cabeçalho da tabela"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/places/index.html",
+        "antes": "678f1f1863d3ec8fe70bd46cbf3722d2cf922cbd9b5fa4abe6e81253a50eb810",
+        "reposto": "678f1f1863d3ec8fe70bd46cbf3722d2cf922cbd9b5fa4abe6e81253a50eb810"
+      }
+    ]
+  }
+]

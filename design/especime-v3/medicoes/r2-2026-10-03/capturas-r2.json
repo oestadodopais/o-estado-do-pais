@@ -1,0 +1,736 @@
+{
+  "bloco": "R2",
+  "cabeca": "f13705cde56eb9f7eaac59eea0195292236def4c",
+  "construcao": {
+    "commit": "f13705cde56eb9f7eaac59eea0195292236def4c",
+    "ref": "r2-2026-10-03",
+    "construido_em": "2026-10-03T22:46:41.531Z"
+  },
+  "inicio": "2026-10-03T22:59:20.549Z",
+  "fim": "2026-10-03T22:59:31.238Z",
+  "capturas": 16,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-primeira-pt-390.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 2400
+      },
+      "diz": [],
+      "sha256": "5f0beab4c04fb0cff36f3326cda3ea41136278d31f50f9c3f5d37ad4c8d41018"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-primeira-pt-1280.png",
+      "pagina": "primeira",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 2400
+      },
+      "diz": [],
+      "sha256": "d88f091d84e33d6718a46f699743623a9b233aab0314d295a5eac7da436cf15e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-primeira-en-390.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 2400
+      },
+      "diz": [],
+      "sha256": "4938b830fefc365e2062e4b5f8ec79d62a5c01e1a716bec4d41ca0cabc5c8edc"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-primeira-en-1280.png",
+      "pagina": "primeira",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 2400
+      },
+      "diz": [],
+      "sha256": "0d4725ca517f41b28b281fb495d0b4bd89c3df6519247321a4676e3a88cc5d9e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-emprego-pt-390.png",
+      "pagina": "emprego",
+      "rota": "/emprego/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 303,
+        "width": 390,
+        "height": 2400
+      },
+      "diz": [
+        {
+          "seletor": "[data-cartao-medida=\"taxa-de-emprego-2025\"]",
+          "nome": "Taxa de emprego",
+          "unidade": "% das pessoas dos 20 aos 64 anos",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Que parte das pessoas dos 20 aos 64 anos tem emprego?"
+        },
+        {
+          "seletor": "[data-cartao-medida=\"jovens-nem-2025\"]",
+          "nome": "Jovens sem emprego, escola ou formação",
+          "unidade": "% das pessoas dos 15 aos 29 anos",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Que parte dos jovens dos 15 aos 29 anos, de ambos os sexos, não trabalha nem estuda nem está em formação?"
+        },
+        {
+          "seletor": "[data-cartao-medida=\"taxa-de-actividade-2025\"]",
+          "nome": "Pessoas que trabalham ou procuram trabalho (taxa de atividade)",
+          "unidade": "diferença em três anos, em pontos percentuais",
+          "estado": "dentro do valor de referência da Comissão (acima de −0,2 pp)",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Quanto mudou em três anos a parte das pessoas dos 15 aos 64 anos que trabalham ou procuram trabalho (as pessoas ativas, empregadas ou desempregadas), contada como a diferença entre a percentagem desse ano e a de três anos antes (em pontos percentuais)?"
+        }
+      ],
+      "sha256": "582f5c8af2ba40548461b0203d36be34f512102dba53b903f71312c4300e2d28"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-emprego-pt-1280.png",
+      "pagina": "emprego",
+      "rota": "/emprego/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 384,
+        "width": 1280,
+        "height": 1998
+      },
+      "diz": [
+        {
+          "seletor": "[data-cartao-medida=\"taxa-de-emprego-2025\"]",
+          "nome": "Taxa de emprego",
+          "unidade": "% das pessoas dos 20 aos 64 anos",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Que parte das pessoas dos 20 aos 64 anos tem emprego?"
+        },
+        {
+          "seletor": "[data-cartao-medida=\"jovens-nem-2025\"]",
+          "nome": "Jovens sem emprego, escola ou formação",
+          "unidade": "% das pessoas dos 15 aos 29 anos",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Que parte dos jovens dos 15 aos 29 anos, de ambos os sexos, não trabalha nem estuda nem está em formação?"
+        },
+        {
+          "seletor": "[data-cartao-medida=\"taxa-de-actividade-2025\"]",
+          "nome": "Pessoas que trabalham ou procuram trabalho (taxa de atividade)",
+          "unidade": "diferença em três anos, em pontos percentuais",
+          "estado": "dentro do valor de referência da Comissão (acima de −0,2 pp)",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Quanto mudou em três anos a parte das pessoas dos 15 aos 64 anos que trabalham ou procuram trabalho (as pessoas ativas, empregadas ou desempregadas), contada como a diferença entre a percentagem desse ano e a de três anos antes (em pontos percentuais)?"
+        }
+      ],
+      "sha256": "30fc5c81cd5534859be72a656e156f99e2a41279f0a72329af4d41ccf7695945"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-emprego-en-390.png",
+      "pagina": "emprego",
+      "rota": "/en/employment/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 303,
+        "width": 390,
+        "height": 2400
+      },
+      "diz": [
+        {
+          "seletor": "[data-cartao-medida=\"taxa-de-emprego-2025\"]",
+          "nome": "Employment rate",
+          "unidade": "% of people aged 20 to 64",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "What share of people aged 20 to 64 is employed?"
+        },
+        {
+          "seletor": "[data-cartao-medida=\"jovens-nem-2025\"]",
+          "nome": "Young people not in employment, education or training",
+          "unidade": "% of people aged 15 to 29",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "What share of young people aged 15 to 29, of both sexes, is not employed and is not in education or training?"
+        },
+        {
+          "seletor": "[data-cartao-medida=\"taxa-de-actividade-2025\"]",
+          "nome": "People who work or are looking for work (activity rate)",
+          "unidade": "difference over three years, in percentage points",
+          "estado": "within the Commission’s reference value (above −0,2 pp)",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "How much has the share of people aged 15 to 64 who work or are looking for work (active people, employed or unemployed) changed over three years, counted as the difference between that year’s percentage and the one three years earlier (in percentage points)?"
+        }
+      ],
+      "sha256": "bc70aa40c9d73d436e10762bf9c669d04ee7591f8c15279109a75cd63e234af3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-emprego-en-1280.png",
+      "pagina": "emprego",
+      "rota": "/en/employment/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 384,
+        "width": 1280,
+        "height": 1936
+      },
+      "diz": [
+        {
+          "seletor": "[data-cartao-medida=\"taxa-de-emprego-2025\"]",
+          "nome": "Employment rate",
+          "unidade": "% of people aged 20 to 64",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "What share of people aged 20 to 64 is employed?"
+        },
+        {
+          "seletor": "[data-cartao-medida=\"jovens-nem-2025\"]",
+          "nome": "Young people not in employment, education or training",
+          "unidade": "% of people aged 15 to 29",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "What share of young people aged 15 to 29, of both sexes, is not employed and is not in education or training?"
+        },
+        {
+          "seletor": "[data-cartao-medida=\"taxa-de-actividade-2025\"]",
+          "nome": "People who work or are looking for work (activity rate)",
+          "unidade": "difference over three years, in percentage points",
+          "estado": "within the Commission’s reference value (above −0,2 pp)",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "How much has the share of people aged 15 to 64 who work or are looking for work (active people, employed or unemployed) changed over three years, counted as the difference between that year’s percentage and the one three years earlier (in percentage points)?"
+        }
+      ],
+      "sha256": "8f9cf5ec76feba926fd7103812d042ea13be110ed2680f9966b09af1d95a62b6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-evora-pt-390.png",
+      "pagina": "evora",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 609,
+        "width": 390,
+        "height": 4800
+      },
+      "diz": [
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"poderDeCompra\"]",
+          "nome": "Poder de compra por habitante",
+          "unidade": "índice (Portugal = 100)",
+          "estado": "",
+          "faixa": "Évora (111,47) está em 12.º lugar entre os 308 concelhos com valor no poder de compra por habitante, do mais alto para o mais baixo.",
+          "comparacao": "Está acima da média de Portugal (100).",
+          "dobra": "Índice do poder de compra por pessoa, em que Portugal vale cem: acima de cem, o poder de compra por pessoa no concelho é maior do que a média do país; publicado pelo INE para todos os concelhos."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"empresas\"]",
+          "nome": "Empresas não financeiras",
+          "unidade": "empresas",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"divida\"]",
+          "nome": "Dívida total da câmara",
+          "unidade": "euros",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "A dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais e as exceções da lei)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"pmp\"]",
+          "nome": "Prazo médio de pagamento",
+          "unidade": "",
+          "estado": "",
+          "faixa": "Évora não tem valor publicado neste período, e por isso não tem lugar entre os 299 concelhos com valor no prazo médio de pagamento.",
+          "comparacao": "Sem comparação com Portugal no mesmo período.",
+          "dobra": "O número médio de dias que a câmara demora a pagar aos fornecedores (prazo médio de pagamento), pela lista anual da DGAL."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"indice\"]",
+          "nome": "Índice de dívida",
+          "unidade": "% da receita média dos três anos anteriores",
+          "estado": "dentro do limite legal, que é 150 %",
+          "faixa": "Évora (105,5) está em 287.º lugar entre os 307 concelhos com valor no índice de dívida, do mais baixo para o mais alto.",
+          "comparacao": "Sem comparação com Portugal no mesmo período.",
+          "dobra": "A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"desempregoRegistado\"]",
+          "nome": "Desemprego registado",
+          "unidade": "pessoas",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"ganho\"]",
+          "nome": "Ganho médio mensal",
+          "unidade": "euros por mês",
+          "estado": "",
+          "faixa": "Évora (1 484,5) está em 35.º lugar entre os 308 concelhos com valor no ganho médio mensal, do mais alto para o mais baixo.",
+          "comparacao": "Está abaixo de Portugal, onde o ganho médio é de 1 576,0 euros por mês.",
+          "dobra": "O que os trabalhadores por conta de outrem a tempo completo com remuneração completa ganham por mês, em média, antes de descontos, pelos Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"populacao\"]",
+          "nome": "População residente",
+          "unidade": "pessoas",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Estima quantas pessoas vivem no concelho (população residente), pela estimativa anual do INE."
+        }
+      ],
+      "sha256": "166d2d4633c95919cd6ea4a293e242fcafb2b2ff36f83cf28e35d7dcb3d64818"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-evora-pt-1280.png",
+      "pagina": "evora",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 635,
+        "width": 1280,
+        "height": 4800
+      },
+      "diz": [
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"poderDeCompra\"]",
+          "nome": "Poder de compra por habitante",
+          "unidade": "índice (Portugal = 100)",
+          "estado": "",
+          "faixa": "Évora (111,47) está em 12.º lugar entre os 308 concelhos com valor no poder de compra por habitante, do mais alto para o mais baixo.",
+          "comparacao": "Está acima da média de Portugal (100).",
+          "dobra": "Índice do poder de compra por pessoa, em que Portugal vale cem: acima de cem, o poder de compra por pessoa no concelho é maior do que a média do país; publicado pelo INE para todos os concelhos."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"empresas\"]",
+          "nome": "Empresas não financeiras",
+          "unidade": "empresas",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"divida\"]",
+          "nome": "Dívida total da câmara",
+          "unidade": "euros",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "A dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais e as exceções da lei)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"pmp\"]",
+          "nome": "Prazo médio de pagamento",
+          "unidade": "",
+          "estado": "",
+          "faixa": "Évora não tem valor publicado neste período, e por isso não tem lugar entre os 299 concelhos com valor no prazo médio de pagamento.",
+          "comparacao": "Sem comparação com Portugal no mesmo período.",
+          "dobra": "O número médio de dias que a câmara demora a pagar aos fornecedores (prazo médio de pagamento), pela lista anual da DGAL."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"indice\"]",
+          "nome": "Índice de dívida",
+          "unidade": "% da receita média dos três anos anteriores",
+          "estado": "dentro do limite legal, que é 150 %",
+          "faixa": "Évora (105,5) está em 287.º lugar entre os 307 concelhos com valor no índice de dívida, do mais baixo para o mais alto.",
+          "comparacao": "Sem comparação com Portugal no mesmo período.",
+          "dobra": "A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"desempregoRegistado\"]",
+          "nome": "Desemprego registado",
+          "unidade": "pessoas",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"ganho\"]",
+          "nome": "Ganho médio mensal",
+          "unidade": "euros por mês",
+          "estado": "",
+          "faixa": "Évora (1 484,5) está em 35.º lugar entre os 308 concelhos com valor no ganho médio mensal, do mais alto para o mais baixo.",
+          "comparacao": "Está abaixo de Portugal, onde o ganho médio é de 1 576,0 euros por mês.",
+          "dobra": "O que os trabalhadores por conta de outrem a tempo completo com remuneração completa ganham por mês, em média, antes de descontos, pelos Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"populacao\"]",
+          "nome": "População residente",
+          "unidade": "pessoas",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Estima quantas pessoas vivem no concelho (população residente), pela estimativa anual do INE."
+        }
+      ],
+      "sha256": "cf61ba7a5aad1688a1bb01fd8d665667524956b2d45e9627effbd2a25080f5fd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-evora-en-390.png",
+      "pagina": "evora",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 609,
+        "width": 390,
+        "height": 4800
+      },
+      "diz": [
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"poderDeCompra\"]",
+          "nome": "Purchasing power per inhabitant",
+          "unidade": "index (Portugal = 100)",
+          "estado": "",
+          "faixa": "Évora (111,47) ranks 12th of the 308 municipalities with a value for purchasing power per inhabitant, from the highest to the lowest.",
+          "comparacao": "It is above Portugal’s average (100).",
+          "dobra": "Index of purchasing power per person, where Portugal is one hundred: above one hundred, purchasing power per person in the municipality is higher than the country average; published for every municipality."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"empresas\"]",
+          "nome": "Non-financial enterprises",
+          "unidade": "enterprises",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Counts the non-financial enterprises attributed to the municipality (integrated business accounts system)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"divida\"]",
+          "nome": "Total municipal debt",
+          "unidade": "euros",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "The council’s debt that counts towards the legal limit at year end (DGAL’s “dívida total”, without non-budget debts and the exceptions in the law)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"pmp\"]",
+          "nome": "Average payment time",
+          "unidade": "",
+          "estado": "",
+          "faixa": "Évora has no published value for this period, so it has no place among the 299 municipalities with a value for the average time to pay suppliers.",
+          "comparacao": "No comparison with Portugal for the same period.",
+          "dobra": "The average number of days the council takes to pay its suppliers (DGAL’s “prazo médio de pagamento”, from its annual list)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"indice\"]",
+          "nome": "Debt index",
+          "unidade": "% of the average revenue of the previous three years",
+          "estado": "within the legal limit, which is 150 %",
+          "faixa": "Évora (105,5) ranks 287th of the 307 municipalities with a value for the debt index, from the lowest to the highest.",
+          "comparacao": "No comparison with Portugal for the same period.",
+          "dobra": "Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"desempregoRegistado\"]",
+          "nome": "Registered unemployment",
+          "unidade": "people",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Counts the unemployed people registered with the employment service at month end (registered unemployment)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"ganho\"]",
+          "nome": "Average monthly earnings",
+          "unidade": "euros per month",
+          "estado": "",
+          "faixa": "Évora (1 484,5) ranks 35th of the 308 municipalities with a value for average monthly earnings, from the highest to the lowest.",
+          "comparacao": "It is below Portugal, where the average is 1 576,0 euros per month.",
+          "dobra": "What full-time employees on full pay earn per month, on average, before deductions, from the staff records of the labour ministry’s strategy and planning office."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"populacao\"]",
+          "nome": "Resident population",
+          "unidade": "people",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Estimates how many people have their home in the municipality (resident population), from the statistics institute’s annual estimate."
+        }
+      ],
+      "sha256": "3afc69de259b453b303571569bbe645ac87a75f2dc5a1eca537dd09b342ed9f5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-evora-en-1280.png",
+      "pagina": "evora",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 635,
+        "width": 1280,
+        "height": 4800
+      },
+      "diz": [
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"poderDeCompra\"]",
+          "nome": "Purchasing power per inhabitant",
+          "unidade": "index (Portugal = 100)",
+          "estado": "",
+          "faixa": "Évora (111,47) ranks 12th of the 308 municipalities with a value for purchasing power per inhabitant, from the highest to the lowest.",
+          "comparacao": "It is above Portugal’s average (100).",
+          "dobra": "Index of purchasing power per person, where Portugal is one hundred: above one hundred, purchasing power per person in the municipality is higher than the country average; published for every municipality."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"empresas\"]",
+          "nome": "Non-financial enterprises",
+          "unidade": "enterprises",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Counts the non-financial enterprises attributed to the municipality (integrated business accounts system)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"divida\"]",
+          "nome": "Total municipal debt",
+          "unidade": "euros",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "The council’s debt that counts towards the legal limit at year end (DGAL’s “dívida total”, without non-budget debts and the exceptions in the law)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"pmp\"]",
+          "nome": "Average payment time",
+          "unidade": "",
+          "estado": "",
+          "faixa": "Évora has no published value for this period, so it has no place among the 299 municipalities with a value for the average time to pay suppliers.",
+          "comparacao": "No comparison with Portugal for the same period.",
+          "dobra": "The average number of days the council takes to pay its suppliers (DGAL’s “prazo médio de pagamento”, from its annual list)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"indice\"]",
+          "nome": "Debt index",
+          "unidade": "% of the average revenue of the previous three years",
+          "estado": "within the legal limit, which is 150 %",
+          "faixa": "Évora (105,5) ranks 287th of the 307 municipalities with a value for the debt index, from the lowest to the highest.",
+          "comparacao": "No comparison with Portugal for the same period.",
+          "dobra": "Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"desempregoRegistado\"]",
+          "nome": "Registered unemployment",
+          "unidade": "people",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Counts the unemployed people registered with the employment service at month end (registered unemployment)."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"ganho\"]",
+          "nome": "Average monthly earnings",
+          "unidade": "euros per month",
+          "estado": "",
+          "faixa": "Évora (1 484,5) ranks 35th of the 308 municipalities with a value for average monthly earnings, from the highest to the lowest.",
+          "comparacao": "It is below Portugal, where the average is 1 576,0 euros per month.",
+          "dobra": "What full-time employees on full pay earn per month, on average, before deductions, from the staff records of the labour ministry’s strategy and planning office."
+        },
+        {
+          "seletor": "article.cartao-medida[data-medida-chave=\"populacao\"]",
+          "nome": "Resident population",
+          "unidade": "people",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": "Estimates how many people have their home in the municipality (resident population), from the statistics institute’s annual estimate."
+        }
+      ],
+      "sha256": "09333c9a3c16ea3b3e9024087a2c741057e221da4df460201815ef037ff14d30"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-uniao-pt-390.png",
+      "pagina": "uniao",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 5525,
+        "width": 390,
+        "height": 2400
+      },
+      "diz": [
+        {
+          "seletor": "li.cartao[data-cartao=\"jovens-nem-2025\"]",
+          "nome": "Jovens sem emprego, escola ou formação",
+          "unidade": "Percentagem das pessoas dos 15 aos 29 anos · 2025",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": ""
+        },
+        {
+          "seletor": "li.cartao[data-cartao=\"custo-unitario-do-trabalho-2025\"]",
+          "nome": "Custo do trabalho por unidade produzida (custo unitário do trabalho)",
+          "unidade": "Variação em três anos, em percentagem · 2025",
+          "estado": "fora do valor de referência da Comissão (acima de 9 %)",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": ""
+        }
+      ],
+      "sha256": "acc6a215203aebd038431cc64ef0b6b2a9d887e9c5bcc9940d94ff40af4521a8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-uniao-pt-1280.png",
+      "pagina": "uniao",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 5002,
+        "width": 1280,
+        "height": 1625
+      },
+      "diz": [
+        {
+          "seletor": "li.cartao[data-cartao=\"jovens-nem-2025\"]",
+          "nome": "Jovens sem emprego, escola ou formação",
+          "unidade": "Percentagem das pessoas dos 15 aos 29 anos · 2025",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": ""
+        },
+        {
+          "seletor": "li.cartao[data-cartao=\"custo-unitario-do-trabalho-2025\"]",
+          "nome": "Custo do trabalho por unidade produzida (custo unitário do trabalho)",
+          "unidade": "Variação em três anos, em percentagem · 2025",
+          "estado": "fora do valor de referência da Comissão (acima de 9 %)",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": ""
+        }
+      ],
+      "sha256": "6f62d5f6bc57c95a3cfccbf6faf341941717ccc7548cafedb1ad3859cfe7cf87"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-uniao-en-390.png",
+      "pagina": "uniao",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 5386,
+        "width": 390,
+        "height": 2400
+      },
+      "diz": [
+        {
+          "seletor": "li.cartao[data-cartao=\"jovens-nem-2025\"]",
+          "nome": "Young people not in employment, education or training",
+          "unidade": "Percentage of people aged 15 to 29 · 2025",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": ""
+        },
+        {
+          "seletor": "li.cartao[data-cartao=\"custo-unitario-do-trabalho-2025\"]",
+          "nome": "Labour cost per unit of output (unit labour cost)",
+          "unidade": "Three-year change, as a percentage · 2025",
+          "estado": "outside the Commission’s reference value (above 9 %)",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": ""
+        }
+      ],
+      "sha256": "1c3759aa98abdb380235e202de5e4d187e694f7c75d1a1c013e7593fee1588ab"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/depois-uniao-en-1280.png",
+      "pagina": "uniao",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 4911,
+        "width": 1280,
+        "height": 1645
+      },
+      "diz": [
+        {
+          "seletor": "li.cartao[data-cartao=\"jovens-nem-2025\"]",
+          "nome": "Young people not in employment, education or training",
+          "unidade": "Percentage of people aged 15 to 29 · 2025",
+          "estado": "",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": ""
+        },
+        {
+          "seletor": "li.cartao[data-cartao=\"custo-unitario-do-trabalho-2025\"]",
+          "nome": "Labour cost per unit of output (unit labour cost)",
+          "unidade": "Three-year change, as a percentage · 2025",
+          "estado": "outside the Commission’s reference value (above 9 %)",
+          "faixa": "",
+          "comparacao": "",
+          "dobra": ""
+        }
+      ],
+      "sha256": "eee9c4092c859bd15abdcfd9fc0657b8419d071db068205c73ed0952647c586a"
+    }
+  ]
+}

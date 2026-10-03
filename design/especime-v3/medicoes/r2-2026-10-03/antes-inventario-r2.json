@@ -1,0 +1,4594 @@
+{
+ "o_que": "O inventário dos rótulos de uma construção, escrito por --inventario, sem comparação com a declaração em vigor.",
+ "construcao": null,
+ "contas": {
+  "paginas": 7466,
+  "paginas_com_cartoes": 656,
+  "cartoes": 5290,
+  "familias": {
+   "nacional": 318,
+   "uniao": 42,
+   "concelho": 4928,
+   "camaras": 2
+  },
+  "nomes": {
+   "projeto": 224,
+   "medidas": 24,
+   "figuras": 70
+  },
+  "estados": 614,
+  "unidades": {
+   "declaradas": 162,
+   "da_linha": 4442,
+   "em_divida": 6
+  },
+  "faixas": {
+   "lugar": 0,
+   "comparacao": 1232
+  },
+  "dobras": {
+   "perguntas": 110,
+   "notas": 1848,
+   "referencias": 0,
+   "uniao": 42
+  }
+ },
+ "rotulos_fora_da_declaracao_de_hoje": 7746,
+ "inventario": {
+  "camaras|en|camaras": {
+   "dobra": {
+    "Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average.": 1
+   },
+   "nome": {
+    "Councils with debt above the legal limit": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "regua": {
+    "of # councils; # within the legal limit, which is # %source; # with no published value": 1
+   },
+   "unidade": {
+    "councils": 1
+   }
+  },
+  "camaras|pt|camaras": {
+   "dobra": {
+    "A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média.": 1
+   },
+   "nome": {
+    "Câmaras com a dívida acima do limite legal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "regua": {
+    "de # câmaras; # dentro do limite legal, que é # %fonte; # sem valor publicado": 1
+   },
+   "unidade": {
+    "câmaras": 1
+   }
+  },
+  "concelho|en|concelho:desempregoRegistado": {
+   "dobra": {
+    "Registered with the employment service at month end, monthly file by municipality.": 308
+   },
+   "nome": {
+    "Registered unemployment": 308
+   },
+   "periodo": {
+    "· December #": 30,
+    "· December # (the source has already published July #; read on #)": 278
+   },
+   "unidade": {
+    "people": 308
+   }
+  },
+  "concelho|en|concelho:divida": {
+   "dobra": {
+    "What the council owes at the end of the year, from the annual series of the Directorate-General for Local Authorities.": 308
+   },
+   "nome": {
+    "Total municipal debt": 308
+   },
+   "periodo": {
+    "· #": 308
+   },
+   "unidade": {
+    "euros": 307
+   }
+  },
+  "concelho|en|concelho:empresas": {
+   "dobra": {
+    "Integrated business accounts; each enterprise counts in a single municipality.": 308
+   },
+   "nome": {
+    "Non-financial enterprises": 308
+   },
+   "periodo": {
+    "· #": 308
+   },
+   "unidade": {
+    "enterprises": 308
+   }
+  },
+  "concelho|en|concelho:ganho": {
+   "comparacao": {
+    "It is above Portugal (#).": 20,
+    "It is below Portugal (#).": 288
+   },
+   "dobra": {
+    "What full-time employees on full pay earn per month, on average, before deductions, from the staff records of the labour ministry’s strategy and planning office.": 308
+   },
+   "faixa": {
+    "L (#) ranks #nd of the # municipalities with a value, from the highest to the lowest.": 28,
+    "L (#) ranks #rd of the # municipalities with a value, from the highest to the lowest, level with another municipality with the same value.": 2,
+    "L (#) ranks #rd of the # municipalities with a value, from the highest to the lowest.": 27,
+    "L (#) ranks #st of the # municipalities with a value, from the highest to the lowest.": 27,
+    "L (#) ranks #th of the # municipalities with a value, from the highest to the lowest, level with another municipality with the same value.": 12,
+    "L (#) ranks #th of the # municipalities with a value, from the highest to the lowest.": 212
+   },
+   "nome": {
+    "Average monthly earnings": 308
+   },
+   "periodo": {
+    "· #": 308
+   },
+   "unidade": {
+    "euros per month": 308
+   }
+  },
+  "concelho|en|concelho:indice": {
+   "comparacao": {
+    "No comparison with Portugal for the same period.": 308
+   },
+   "dobra": {
+    "Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average.": 308
+   },
+   "estado": {
+    "outside the legal limit, which is": 10,
+    "within the legal limit, which is": 297
+   },
+   "faixa": {
+    "L (#) ranks #nd of the # municipalities with a value, from the lowest to the highest, level with another municipality with the same value.": 4,
+    "L (#) ranks #nd of the # municipalities with a value, from the lowest to the highest.": 19,
+    "L (#) ranks #rd of the # municipalities with a value, from the lowest to the highest, level with # other municipalities with the same value.": 6,
+    "L (#) ranks #rd of the # municipalities with a value, from the lowest to the highest, level with another municipality with the same value.": 6,
+    "L (#) ranks #rd of the # municipalities with a value, from the lowest to the highest.": 21,
+    "L (#) ranks #st of the # municipalities with a value, from the lowest to the highest, level with another municipality with the same value.": 14,
+    "L (#) ranks #st of the # municipalities with a value, from the lowest to the highest.": 20,
+    "L (#) ranks #th of the # municipalities with a value, from the lowest to the highest, level with # other municipalities with the same value.": 9,
+    "L (#) ranks #th of the # municipalities with a value, from the lowest to the highest, level with another municipality with the same value.": 50,
+    "L (#) ranks #th of the # municipalities with a value, from the lowest to the highest.": 158,
+    "L has no published value for this period, so it has no place among the # municipalities with a value.": 1
+   },
+   "nome": {
+    "Debt index": 308
+   },
+   "periodo": {
+    "· #": 308
+   },
+   "unidade": {
+    "% of the three-year average revenue": 307
+   }
+  },
+  "concelho|en|concelho:pmp": {
+   "comparacao": {
+    "No comparison with Portugal for the same period.": 308
+   },
+   "dobra": {
+    "Days the council takes to pay its suppliers, from the annual list of the Directorate-General for Local Authorities.": 308
+   },
+   "faixa": {
+    "L (#) ranks #nd of the # municipalities with a value, from the lowest to the highest, level with # other municipalities with the same value.": 55,
+    "L (#) ranks #nd of the # municipalities with a value, from the lowest to the highest, level with another municipality with the same value.": 2,
+    "L (#) ranks #nd of the # municipalities with a value, from the lowest to the highest.": 5,
+    "L (#) ranks #rd of the # municipalities with a value, from the lowest to the highest, level with # other municipalities with the same value.": 24,
+    "L (#) ranks #rd of the # municipalities with a value, from the lowest to the highest, level with another municipality with the same value.": 4,
+    "L (#) ranks #rd of the # municipalities with a value, from the lowest to the highest.": 3,
+    "L (#) ranks #st of the # municipalities with a value, from the lowest to the highest, level with another municipality with the same value.": 2,
+    "L (#) ranks #st of the # municipalities with a value, from the lowest to the highest.": 3,
+    "L (#) ranks #th of the # municipalities with a value, from the lowest to the highest, level with # other municipalities with the same value.": 170,
+    "L (#) ranks #th of the # municipalities with a value, from the lowest to the highest, level with another municipality with the same value.": 18,
+    "L (#) ranks #th of the # municipalities with a value, from the lowest to the highest.": 13,
+    "L has no published value for this period, so it has no place among the # municipalities with a value.": 9
+   },
+   "nome": {
+    "Average payment time": 308
+   },
+   "periodo": {
+    "· December #": 308
+   },
+   "unidade": {
+    "days": 299
+   }
+  },
+  "concelho|en|concelho:poderDeCompra": {
+   "comparacao": {
+    "It is above Portugal, which is the base of the index.": 31,
+    "It is below Portugal, which is the base of the index.": 277
+   },
+   "dobra": {
+    "Index of purchasing power per person, where Portugal is one hundred: above one hundred, purchasing power per person in the municipality is higher than the country average; published for every municipality.": 308
+   },
+   "faixa": {
+    "L (#) ranks #nd of the # municipalities with a value, from the highest to the lowest, level with another municipality with the same value.": 2,
+    "L (#) ranks #nd of the # municipalities with a value, from the highest to the lowest.": 25,
+    "L (#) ranks #rd of the # municipalities with a value, from the highest to the lowest, level with another municipality with the same value.": 4,
+    "L (#) ranks #rd of the # municipalities with a value, from the highest to the lowest.": 25,
+    "L (#) ranks #st of the # municipalities with a value, from the highest to the lowest, level with another municipality with the same value.": 4,
+    "L (#) ranks #st of the # municipalities with a value, from the highest to the lowest.": 26,
+    "L (#) ranks #th of the # municipalities with a value, from the highest to the lowest, level with another municipality with the same value.": 12,
+    "L (#) ranks #th of the # municipalities with a value, from the highest to the lowest.": 210
+   },
+   "nome": {
+    "Purchasing power per inhabitant": 308
+   },
+   "periodo": {
+    "· #": 308
+   },
+   "unidade": {
+    "index (Portugal = 100)": 308
+   }
+  },
+  "concelho|en|concelho:populacao": {
+   "dobra": {
+    "The statistics institute’s annual estimate for the municipality.": 308
+   },
+   "nome": {
+    "Resident population": 308
+   },
+   "periodo": {
+    "· #": 308
+   },
+   "unidade": {
+    "people": 308
+   }
+  },
+  "concelho|pt|concelho:desempregoRegistado": {
+   "dobra": {
+    "Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho.": 308
+   },
+   "nome": {
+    "Desemprego registado": 308
+   },
+   "periodo": {
+    "· dezembro de #": 30,
+    "· dezembro de # (a fonte já publicou julho de #; lido a #)": 278
+   },
+   "unidade": {
+    "pessoas": 308
+   }
+  },
+  "concelho|pt|concelho:divida": {
+   "dobra": {
+    "O que a câmara deve no fim do ano, pela série anual da Direção-Geral das Autarquias Locais.": 308
+   },
+   "nome": {
+    "Dívida total da câmara": 308
+   },
+   "periodo": {
+    "· #": 308
+   },
+   "unidade": {
+    "euros": 307
+   }
+  },
+  "concelho|pt|concelho:empresas": {
+   "dobra": {
+    "Sistema de contas integradas das empresas; cada empresa conta num único concelho.": 308
+   },
+   "nome": {
+    "Empresas não financeiras": 308
+   },
+   "periodo": {
+    "· #": 308
+   },
+   "unidade": {
+    "empresas": 308
+   }
+  },
+  "concelho|pt|concelho:ganho": {
+   "comparacao": {
+    "Está abaixo de Portugal (#).": 288,
+    "Está acima de Portugal (#).": 20
+   },
+   "dobra": {
+    "O que os trabalhadores por conta de outrem a tempo completo com remuneração completa ganham por mês, em média, antes de descontos, pelos Quadros de Pessoal do Gabinete de Estratégia e Planeamento do Ministério do Trabalho.": 308
+   },
+   "faixa": {
+    "L (#) está em #.º lugar entre os # concelhos com valor, do mais alto para o mais baixo, a par de outro concelho com o mesmo valor.": 14,
+    "L (#) está em #.º lugar entre os # concelhos com valor, do mais alto para o mais baixo.": 294
+   },
+   "nome": {
+    "Ganho médio mensal": 308
+   },
+   "periodo": {
+    "· #": 308
+   },
+   "unidade": {
+    "euros por mês": 308
+   }
+  },
+  "concelho|pt|concelho:indice": {
+   "comparacao": {
+    "Sem comparação com Portugal no mesmo período.": 308
+   },
+   "dobra": {
+    "A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média.": 308
+   },
+   "estado": {
+    "dentro do limite legal, que é": 297,
+    "fora do limite legal, que é": 10
+   },
+   "faixa": {
+    "L (#) está em #.º lugar entre os # concelhos com valor, do mais baixo para o mais alto, a par de # outros concelhos com o mesmo valor.": 15,
+    "L (#) está em #.º lugar entre os # concelhos com valor, do mais baixo para o mais alto, a par de outro concelho com o mesmo valor.": 74,
+    "L (#) está em #.º lugar entre os # concelhos com valor, do mais baixo para o mais alto.": 218,
+    "L não tem valor publicado neste período, e por isso não tem lugar entre os # concelhos com valor.": 1
+   },
+   "nome": {
+    "Índice de dívida": 308
+   },
+   "periodo": {
+    "· #": 308
+   },
+   "unidade": {
+    "% da receita média de três anos": 307
+   }
+  },
+  "concelho|pt|concelho:pmp": {
+   "comparacao": {
+    "Sem comparação com Portugal no mesmo período.": 308
+   },
+   "dobra": {
+    "Dias que a câmara demora a pagar aos fornecedores, pela lista anual da Direção-Geral das Autarquias Locais.": 308
+   },
+   "faixa": {
+    "L (#) está em #.º lugar entre os # concelhos com valor, do mais baixo para o mais alto, a par de # outros concelhos com o mesmo valor.": 249,
+    "L (#) está em #.º lugar entre os # concelhos com valor, do mais baixo para o mais alto, a par de outro concelho com o mesmo valor.": 26,
+    "L (#) está em #.º lugar entre os # concelhos com valor, do mais baixo para o mais alto.": 24,
+    "L não tem valor publicado neste período, e por isso não tem lugar entre os # concelhos com valor.": 9
+   },
+   "nome": {
+    "Prazo médio de pagamento": 308
+   },
+   "periodo": {
+    "· dezembro de #": 308
+   },
+   "unidade": {
+    "dias": 299
+   }
+  },
+  "concelho|pt|concelho:poderDeCompra": {
+   "comparacao": {
+    "Está abaixo de Portugal, que é a base do índice.": 277,
+    "Está acima de Portugal, que é a base do índice.": 31
+   },
+   "dobra": {
+    "Índice do poder de compra por pessoa, em que Portugal vale cem: acima de cem, o poder de compra por pessoa no concelho é maior do que a média do país; publicado pelo INE para todos os concelhos.": 308
+   },
+   "faixa": {
+    "L (#) está em #.º lugar entre os # concelhos com valor, do mais alto para o mais baixo, a par de outro concelho com o mesmo valor.": 22,
+    "L (#) está em #.º lugar entre os # concelhos com valor, do mais alto para o mais baixo.": 286
+   },
+   "nome": {
+    "Poder de compra por habitante": 308
+   },
+   "periodo": {
+    "· #": 308
+   },
+   "unidade": {
+    "índice (Portugal = 100)": 308
+   }
+  },
+  "concelho|pt|concelho:populacao": {
+   "dobra": {
+    "Estimativa anual do INE para o concelho.": 308
+   },
+   "nome": {
+    "População residente": 308
+   },
+   "periodo": {
+    "· #": 308
+   },
+   "unidade": {
+    "pessoas": 308
+   }
+  },
+  "dobra|en|abandono-escolar-precoce-2025": {
+   "dobra": {
+    "What share of people aged 18 to 24 has completed at most lower secondary education and is not in education or training?": 1
+   },
+   "nome": {
+    "Early school leaving": 1
+   }
+  },
+  "dobra|en|custo-unitario-do-trabalho-2025": {
+   "dobra": {
+    "How much has pay per hour of work, at each year’s prices, divided by what an hour of work produces, changed over three years (the nominal unit labour cost index, per hour worked)?": 1
+   },
+   "nome": {
+    "Unit labour cost, three-year change": 1
+   }
+  },
+  "dobra|en|desempenho-das-exportacoes-2025": {
+   "dobra": {
+    "How much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD changed over three years (export performance against advanced economies)?": 1
+   },
+   "nome": {
+    "Share of exports, three-year change": 1
+   }
+  },
+  "dobra|en|desemprego-de-longa-duracao-2025": {
+   "dobra": {
+    "What share of people aged 15 to 74 who work or are looking for work (the labour force) is out of work and has been actively seeking employment for at least a year?": 1
+   },
+   "nome": {
+    "Long-term unemployment": 1
+   }
+  },
+  "dobra|en|divida-das-empresas-2025": {
+   "dobra": {
+    "How much do companies other than financial companies owe in loans and debt securities, leaving out what they owe one another (the consolidated debt of non-financial corporations), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?": 1
+   },
+   "nome": {
+    "Corporate debt": 1
+   }
+  },
+  "dobra|en|divida-das-familias-2025": {
+   "dobra": {
+    "How much do households and non-profit institutions serving them owe in loans and debt securities, leaving out what they owe one another (consolidated debt), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?": 1
+   },
+   "nome": {
+    "Household debt": 1
+   }
+  },
+  "dobra|en|divida-publica-2025": {
+   "dobra": {
+    "How much does general government owe, as a percentage of the value of the final goods and services the economy produces in a year (GDP)?": 1
+   },
+   "nome": {
+    "Government debt": 1
+   }
+  },
+  "dobra|en|fluxo-de-credito-as-empresas-2025": {
+   "dobra": {
+    "How much credit did companies other than financial companies take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow of non-financial corporations), as a percentage of the debt they had at the end of the previous year, excluding foreign direct investment from both amounts?": 1
+   },
+   "nome": {
+    "Credit flow to corporations": 1
+   }
+  },
+  "dobra|en|fluxo-de-credito-as-familias-2025": {
+   "dobra": {
+    "How much credit did households and non-profit institutions serving them take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow), as a percentage of the debt they had at the end of the previous year?": 1
+   },
+   "nome": {
+    "Credit flow to households": 1
+   }
+  },
+  "dobra|en|jovens-nem-2025": {
+   "dobra": {
+    "What share of young people aged 15 to 29, of both sexes, is not employed and is not in education or training?": 1
+   },
+   "nome": {
+    "Young people not in employment, education or training": 1
+   }
+  },
+  "dobra|en|posicao-de-investimento-internacional-2025": {
+   "dobra": {
+    "What is the difference between what the country’s residents own in the rest of the world and what they owe to it (financial assets and liabilities relative to the rest of the world), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?": 1
+   },
+   "nome": {
+    "Net international investment position": 1
+   }
+  },
+  "dobra|en|precos-da-habitacao-2025": {
+   "dobra": {
+    "How much have the transaction prices of homes purchased by households changed in a year?": 1
+   },
+   "nome": {
+    "House prices, annual change": 1
+   }
+  },
+  "dobra|en|racio-s80-s20-2025": {
+   "dobra": {
+    "How many times greater is the total income of the fifth of the population with the highest income than that of the fifth with the lowest?": 1
+   },
+   "nome": {
+    "Income inequality": 1
+   }
+  },
+  "dobra|en|risco-de-pobreza-ou-exclusao-2025": {
+   "dobra": {
+    "What share of the population is in at least one of three situations: income below 60 % of the income that leaves half of the country’s population above it and half below, the median (at risk of poverty); at least seven out of thirteen deprivations because of a lack of resources (severe material and social deprivation); or living in a household where almost nobody works (very low work intensity), counting each person only once?": 1
+   },
+   "nome": {
+    "At risk of poverty or social exclusion": 1
+   }
+  },
+  "dobra|en|saldo-da-balanca-corrente-2025": {
+   "dobra": {
+    "What is the difference between what the country received from the rest of the world and what it paid to it, for goods, services and income (the current account balance), as a percentage of the value of the final goods and services the economy produces in a year (GDP), on the average of that year and the two before it (the three-year backward moving average)?": 1
+   },
+   "nome": {
+    "Current account balance": 1
+   }
+  },
+  "dobra|en|sobrecarga-do-custo-da-habitacao-2025": {
+   "dobra": {
+    "What share of people, whether their home is owned with or without a mortgage or rented at market price or at a reduced rent or free (all tenure statuses), are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?": 1
+   },
+   "nome": {
+    "Housing cost overburden": 1
+   }
+  },
+  "dobra|en|taxa-de-actividade-2025": {
+   "dobra": {
+    "How much has the share of people aged 15 to 64 who work or are looking for work (active people, employed or unemployed) changed over three years, counted as the difference between that year’s percentage and the one three years earlier (in percentage points)?": 1
+   },
+   "nome": {
+    "Activity rate, three-year change": 1
+   }
+  },
+  "dobra|en|taxa-de-cambio-efectiva-real-2025": {
+   "dobra": {
+    "How much have the country’s prices relative to those of 41 other industrial countries, allowing for exchange rates and each country’s consumer prices, changed over three years (the real effective exchange rate, based on consumer price index deflators)?": 1
+   },
+   "nome": {
+    "Real effective exchange rate, three-year change": 1
+   }
+  },
+  "dobra|en|taxa-de-desemprego-2025": {
+   "dobra": {
+    "What share of people aged 15 to 74 who work or are looking for work (the labour force) is unemployed?": 1
+   },
+   "nome": {
+    "Unemployment rate": 1
+   }
+  },
+  "dobra|en|taxa-de-desemprego-mip-2025": {
+   "dobra": {
+    "What share of people aged 15 to 74 who work or are looking for work (the labour force) is unemployed?": 1
+   },
+   "nome": {
+    "Unemployment rate": 1
+   }
+  },
+  "dobra|en|taxa-de-emprego-2025": {
+   "dobra": {
+    "What share of people aged 20 to 64 is employed?": 1
+   },
+   "nome": {
+    "Employment rate": 1
+   }
+  },
+  "dobra|pt|abandono-escolar-precoce-2025": {
+   "dobra": {
+    "Que parte das pessoas dos 18 aos 24 anos concluiu no máximo o ensino básico e não está em estudos nem em formação?": 1
+   },
+   "nome": {
+    "Abandono escolar precoce": 1
+   }
+  },
+  "dobra|pt|custo-unitario-do-trabalho-2025": {
+   "dobra": {
+    "Quanto mudou em três anos a remuneração por hora de trabalho, aos preços de cada ano, a dividir pelo que se produz numa hora de trabalho (o índice nominal do custo unitário do trabalho, por hora trabalhada)?": 1
+   },
+   "nome": {
+    "Custo unitário do trabalho, variação em três anos": 1
+   }
+  },
+  "dobra|pt|desempenho-das-exportacoes-2025": {
+   "dobra": {
+    "Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)?": 1
+   },
+   "nome": {
+    "Quota nas exportações, variação em três anos": 1
+   }
+  },
+  "dobra|pt|desemprego-de-longa-duracao-2025": {
+   "dobra": {
+    "Que parte das pessoas dos 15 aos 74 anos que trabalham ou procuram trabalho (a população ativa) está sem trabalho e procura emprego ativamente há pelo menos um ano?": 1
+   },
+   "nome": {
+    "Desemprego de longa duração": 1
+   }
+  },
+  "dobra|pt|divida-das-empresas-2025": {
+   "dobra": {
+    "Quanto devem as empresas que não são financeiras, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada das sociedades não financeiras), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?": 1
+   },
+   "nome": {
+    "Dívida das empresas": 1
+   }
+  },
+  "dobra|pt|divida-das-familias-2025": {
+   "dobra": {
+    "Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?": 1
+   },
+   "nome": {
+    "Dívida das famílias": 1
+   }
+  },
+  "dobra|pt|divida-publica-2025": {
+   "dobra": {
+    "Quanto devem as administrações públicas, em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?": 1
+   },
+   "nome": {
+    "Dívida pública": 1
+   }
+  },
+  "dobra|pt|fluxo-de-credito-as-empresas-2025": {
+   "dobra": {
+    "Quanto crédito contraíram num ano as empresas que não são financeiras, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado das sociedades não financeiras), em percentagem da dívida que tinham no fim do ano anterior, excluindo o investimento direto estrangeiro das duas parcelas?": 1
+   },
+   "nome": {
+    "Fluxo de crédito às empresas": 1
+   }
+  },
+  "dobra|pt|fluxo-de-credito-as-familias-2025": {
+   "dobra": {
+    "Quanto crédito contraíram num ano as famílias e as instituições sem fim lucrativo ao seu serviço, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado), em percentagem da dívida que tinham no fim do ano anterior?": 1
+   },
+   "nome": {
+    "Fluxo de crédito às famílias": 1
+   }
+  },
+  "dobra|pt|jovens-nem-2025": {
+   "dobra": {
+    "Que parte dos jovens dos 15 aos 29 anos, de ambos os sexos, não trabalha nem estuda nem está em formação?": 1
+   },
+   "nome": {
+    "Jovens sem emprego, escola ou formação": 1
+   }
+  },
+  "dobra|pt|posicao-de-investimento-internacional-2025": {
+   "dobra": {
+    "Qual é a diferença entre o que os residentes do país têm no resto do mundo e o que lhe devem (os ativos financeiros e os passivos face ao exterior), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?": 1
+   },
+   "nome": {
+    "Posição de investimento internacional": 1
+   }
+  },
+  "dobra|pt|precos-da-habitacao-2025": {
+   "dobra": {
+    "Quanto mudaram num ano os preços de transação das casas compradas pelas famílias?": 1
+   },
+   "nome": {
+    "Preços da habitação, variação anual": 1
+   }
+  },
+  "dobra|pt|racio-s80-s20-2025": {
+   "dobra": {
+    "Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos?": 1
+   },
+   "nome": {
+    "Desigualdade de rendimento": 1
+   }
+  },
+  "dobra|pt|risco-de-pobreza-ou-exclusao-2025": {
+   "dobra": {
+    "Que parte da população está em pelo menos uma de três situações: rendimento abaixo de 60 % do rendimento que deixa metade da população do país acima dele e metade abaixo, o mediano (risco de pobreza); pelo menos sete de treze privações por falta de recursos (privação material e social grave); ou viver num agregado onde quase ninguém trabalha (intensidade de trabalho muito baixa), contando cada pessoa uma única vez?": 1
+   },
+   "nome": {
+    "Risco de pobreza ou exclusão social": 1
+   }
+  },
+  "dobra|pt|saldo-da-balanca-corrente-2025": {
+   "dobra": {
+    "Qual é a diferença entre o que o país recebeu do resto do mundo e o que lhe pagou, por bens, serviços e rendimentos (o saldo da balança corrente), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB), na média desse ano e dos dois anteriores (a média móvel de três anos para trás)?": 1
+   },
+   "nome": {
+    "Saldo da balança corrente": 1
+   }
+  },
+  "dobra|pt|sobrecarga-do-custo-da-habitacao-2025": {
+   "dobra": {
+    "Que parte das pessoas, em casa própria com ou sem crédito ou arrendada a preço de mercado ou a renda reduzida ou gratuita (todos os regimes de ocupação), vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?": 1
+   },
+   "nome": {
+    "Sobrecarga do custo da habitação": 1
+   }
+  },
+  "dobra|pt|taxa-de-actividade-2025": {
+   "dobra": {
+    "Quanto mudou em três anos a parte das pessoas dos 15 aos 64 anos que trabalham ou procuram trabalho (as pessoas ativas, empregadas ou desempregadas), contada como a diferença entre a percentagem desse ano e a de três anos antes (em pontos percentuais)?": 1
+   },
+   "nome": {
+    "Taxa de atividade, variação em três anos": 1
+   }
+  },
+  "dobra|pt|taxa-de-cambio-efectiva-real-2025": {
+   "dobra": {
+    "Quanto mudaram em três anos os preços do país face aos de outros 41 países industriais, contando as taxas de câmbio e os preços no consumidor de cada um (a taxa de câmbio efetiva real, com base nos deflatores dos índices de preços no consumidor)?": 1
+   },
+   "nome": {
+    "Taxa de câmbio efetiva real, variação em três anos": 1
+   }
+  },
+  "dobra|pt|taxa-de-desemprego-2025": {
+   "dobra": {
+    "Que parte das pessoas dos 15 aos 74 anos que trabalham ou procuram trabalho (a população ativa) está sem emprego?": 1
+   },
+   "nome": {
+    "Taxa de desemprego": 1
+   }
+  },
+  "dobra|pt|taxa-de-desemprego-mip-2025": {
+   "dobra": {
+    "Que parte das pessoas dos 15 aos 74 anos que trabalham ou procuram trabalho (a população ativa) está sem emprego?": 1
+   },
+   "nome": {
+    "Taxa de desemprego": 1
+   }
+  },
+  "dobra|pt|taxa-de-emprego-2025": {
+   "dobra": {
+    "Que parte das pessoas dos 20 aos 64 anos tem emprego?": 1
+   },
+   "nome": {
+    "Taxa de emprego": 1
+   }
+  },
+  "nacional|en|abandono-escolar-precoce-2025": {
+   "dobra": {
+    "What share of people aged 18 to 24 has completed at most lower secondary education and is not in education or training?": 2
+   },
+   "nome": {
+    "Early school leaving": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|en|agua-nao-faturada-portugal-2024": {
+   "nome": {
+    "Unbilled water": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|en|alentejo-central-poder-de-compra-2023": {
+   "nome": {
+    "Purchasing power per inhabitant in Alentejo Central": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index (Portugal = 100)": 1
+   }
+  },
+  "nacional|en|beneficiarios-do-rsi-por-mil-2024": {
+   "dobra": {
+    "How many people receive social insertion income for every thousand people of working age?": 2
+   },
+   "nome": {
+    "People receiving social insertion income": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#": 2
+   },
+   "unidade": {
+    "per thousand people of working age": 2
+   }
+  },
+  "nacional|en|competencias-digitais-2025": {
+   "nome": {
+    "People with basic or above basic digital skills": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#": 2
+   },
+   "unidade": {
+    "% of individuals": 2
+   }
+  },
+  "nacional|en|crescimento-da-despesa-liquida-2025": {
+   "estado": {
+    "outside the reference value of the Council of the EU (above # %)": 2
+   },
+   "nome": {
+    "Net expenditure growth": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#outside the reference value of the Council of the EU (above # %)": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|en|criancas-em-creche-2025": {
+   "nome": {
+    "Children in formal childcare": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|en|custo-unitario-do-trabalho-2025": {
+   "dobra": {
+    "How much has pay per hour of work, at each year’s prices, divided by what an hour of work produces, changed over three years (the nominal unit labour cost index, per hour worked)?": 2
+   },
+   "estado": {
+    "outside the reference value (above # %)": 2
+   },
+   "nome": {
+    "Unit labour cost, three-year change": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:# (provisional data)European Union:#outside the reference value (above # %)": 2
+   },
+   "unidade": {
+    "three-year change, %": 2
+   }
+  },
+  "nacional|en|desempenho-das-exportacoes-2025": {
+   "dobra": {
+    "How much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD changed over three years (export performance against advanced economies)?": 2
+   },
+   "estado": {
+    "within the reference value (above −# %)": 2
+   },
+   "nome": {
+    "Share of exports, three-year change": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#within the reference value (above −# %)": 2
+   },
+   "unidade": {
+    "% of the OECD and non-OECD EU countries total, three-year change": 2
+   }
+  },
+  "nacional|en|desemprego-de-longa-duracao-2025": {
+   "dobra": {
+    "What share of people aged 15 to 74 who work or are looking for work (the labour force) is out of work and has been actively seeking employment for at least a year?": 2
+   },
+   "faixa-ue": {
+    "Among the # EU countries in #, the lowest value is # (Netherlands) and the highest is # (Greece); the EU average is #. Portugal (#) ranks #th from the highest.": 1
+   },
+   "nome": {
+    "Long-term unemployment": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#": 2
+   },
+   "unidade": {
+    "% of the labour force": 2
+   }
+  },
+  "nacional|en|despesa-em-id-2024": {
+   "nome": {
+    "Spending on research and development": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:# (estimated value)": 2
+   },
+   "unidade": {
+    "% of GDP": 2
+   }
+  },
+  "nacional|en|disparidade-de-emprego-entre-sexos-2025": {
+   "dobra": {
+    "What is the difference between the employment rate of men aged 20 to 64 and that of women, counted as the difference between the two percentages (in percentage points)?": 2
+   },
+   "nome": {
+    "Employment gap between men and women": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#": 2
+   },
+   "unidade": {
+    "percentage points": 2
+   }
+  },
+  "nacional|en|disparidade-salarial-entre-sexos-2024": {
+   "nome": {
+    "Unadjusted gender pay gap": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:# (provisional data)": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|en|divida-das-empresas-2025": {
+   "dobra": {
+    "How much do companies other than financial companies owe in loans and debt securities, leaving out what they owe one another (the consolidated debt of non-financial corporations), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?": 1
+   },
+   "estado": {
+    "within the reference value (below # %)": 1
+   },
+   "nome": {
+    "Corporate debt": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "regua": {
+    "#:# (provisional data)European Union:# (provisional data)within the reference value (below # %)": 1
+   },
+   "unidade": {
+    "% of GDP": 1
+   }
+  },
+  "nacional|en|divida-das-familias-2025": {
+   "dobra": {
+    "How much do households and non-profit institutions serving them owe in loans and debt securities, leaving out what they owe one another (consolidated debt), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?": 1
+   },
+   "estado": {
+    "within the reference value (below # %)": 1
+   },
+   "nome": {
+    "Household debt": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "regua": {
+    "#:# (provisional data)European Union:# (provisional data)within the reference value (below # %)": 1
+   },
+   "unidade": {
+    "% of GDP": 1
+   }
+  },
+  "nacional|en|divida-publica-2025": {
+   "dobra": {
+    "How much does general government owe, as a percentage of the value of the final goods and services the economy produces in a year (GDP)?": 2
+   },
+   "estado": {
+    "outside the reference value (above # %)": 2
+   },
+   "faixa-ue": {
+    "Among the # EU countries in #, the lowest value is # (Estonia) and the highest is # (Greece); the EU average is #. Portugal (#) ranks #th from the highest.": 1
+   },
+   "nome": {
+    "Government debt": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#outside the reference value (above # %)": 2
+   },
+   "unidade": {
+    "% of GDP": 2
+   }
+  },
+  "nacional|en|evora-camara-lugares": {
+   "nome": {
+    "Seats on the municipal council of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "seats": 1
+   }
+  },
+  "nacional|en|evora-camara-mandatos-cdu-2013": {
+   "nome": {
+    "Seats won by the CDU in Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "seats": 1
+   }
+  },
+  "nacional|en|evora-camara-mandatos-cdu-2017": {
+   "nome": {
+    "Seats won by the CDU in Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "regua": {
+    "#:#": 1
+   },
+   "unidade": {
+    "seats": 1
+   }
+  },
+  "nacional|en|evora-camara-mandatos-cdu-2021": {
+   "nome": {
+    "Seats won by the CDU in Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "seats": 1
+   }
+  },
+  "nacional|en|evora-camara-mandatos-ps-2009": {
+   "nome": {
+    "Seats won by the PS in Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "seats": 1
+   }
+  },
+  "nacional|en|evora-camara-mandatos-ps-2025": {
+   "nome": {
+    "Seats won by the PS in Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "seats": 1
+   }
+  },
+  "nacional|en|evora-concentracao-vab4-2024": {
+   "nome": {
+    "Share of the four largest companies in gross value added, in Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of gross value added by enterprises": 1
+   }
+  },
+  "nacional|en|evora-contas-2024-votos-contra": {
+   "nome": {
+    "Votes against approving the accounts": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "votes": 1
+   }
+  },
+  "nacional|en|evora-contas-2024-votos-favor": {
+   "nome": {
+    "Votes in favour of approving the accounts": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "votes": 1
+   }
+  },
+  "nacional|en|evora-desemprego-registado-2013": {
+   "nome": {
+    "Registered unemployment in Évora": 1
+   },
+   "periodo": {
+    "in December #": 1
+   },
+   "unidade": {
+    "people": 1
+   }
+  },
+  "nacional|en|evora-desemprego-registado-2024": {
+   "nome": {
+    "Registered unemployment in Évora": 1
+   },
+   "periodo": {
+    "in December #": 1
+   },
+   "unidade": {
+    "people": 1
+   }
+  },
+  "nacional|en|evora-despesa-paga-2025": {
+   "nome": {
+    "Spending paid by the municipality of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-divida-31-10-2013": {
+   "nome": {
+    "Debt recorded at the start of the term": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-divida-dgal-2014": {
+   "nome": {
+    "Total indebtedness of the municipality of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-divida-dgal-2017": {
+   "nome": {
+    "Total indebtedness of the municipality of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-divida-dgal-2021": {
+   "nome": {
+    "Total indebtedness of the municipality of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-divida-dgal-2024": {
+   "nome": {
+    "Total indebtedness of the municipality of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-divida-inicio-mandato-reexpressa": {
+   "nome": {
+    "Debt at the start of the term, restated": 1
+   },
+   "periodo": {
+    "in October #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-divida-total-2017": {
+   "nome": {
+    "Total debt of the municipality of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-divida-total-2021": {
+   "nome": {
+    "Total debt of the municipality of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-divida-total-2024": {
+   "nome": {
+    "Total debt of the municipality of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-divida-total-2025": {
+   "nome": {
+    "Total debt of the municipality of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "regua": {
+    "#:#": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-excesso-endividamento-2014": {
+   "nome": {
+    "Debt above the legal limit": 1
+   },
+   "periodo": {
+    "in January #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-excesso-endividamento-2019": {
+   "nome": {
+    "Debt above the legal limit": 1
+   },
+   "periodo": {
+    "in December #": 1
+   },
+   "regua": {
+    "January #:#": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-execucao-da-receita-2021": {
+   "nome": {
+    "Revenue collected against the budget": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of the budget": 1
+   }
+  },
+  "nacional|en|evora-execucao-da-receita-2025": {
+   "nome": {
+    "Revenue collected against the budget": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "regua": {
+    "#:#": 1
+   },
+   "unidade": {
+    "% of the budget": 1
+   }
+  },
+  "nacional|en|evora-executivo-2025-ad": {
+   "nome": {
+    "AD seats on the executive of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "seats": 1
+   }
+  },
+  "nacional|en|evora-executivo-2025-cdu": {
+   "nome": {
+    "CDU seats on the executive of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "seats": 1
+   }
+  },
+  "nacional|en|evora-executivo-2025-chega": {
+   "nome": {
+    "Chega seats on the executive of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "seats": 1
+   }
+  },
+  "nacional|en|evora-executivo-2025-ps": {
+   "nome": {
+    "PS seats on the executive of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "seats": 1
+   }
+  },
+  "nacional|en|evora-limite-divida-2025": {
+   "nome": {
+    "Limit on total debt": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-limite-divida-dgal-2014": {
+   "nome": {
+    "Limit on indebtedness": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-limite-divida-dgal-2017": {
+   "nome": {
+    "Limit on indebtedness": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-limite-divida-dgal-2021": {
+   "nome": {
+    "Limit on indebtedness": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-limite-divida-dgal-2024": {
+   "nome": {
+    "Limit on indebtedness": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-margem-endividamento-2025": {
+   "nome": {
+    "Headroom up to the debt limit": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-orcamento-2025": {
+   "nome": {
+    "Budget of the municipality of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-pael-emprestimo": {
+   "nome": {
+    "Loan from the local economy support programme": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-pagamentos-em-atraso-2025": {
+   "nome": {
+    "Payments in arrears of the municipality of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-pelouros-2021-presidente": {
+   "nome": {
+    "Portfolios held by the mayor": 1
+   },
+   "periodo": {
+    "in December #": 1
+   },
+   "unidade": {
+    "portfolios": 1
+   }
+  },
+  "nacional|en|evora-pelouros-2021-vice-presidente": {
+   "nome": {
+    "Portfolios held by the deputy mayor": 1
+   },
+   "periodo": {
+    "in December #": 1
+   },
+   "unidade": {
+    "portfolios": 1
+   }
+  },
+  "nacional|en|evora-pelouros-2025-presidente": {
+   "nome": {
+    "Portfolios held by the mayor": 1
+   },
+   "periodo": {
+    "in August #": 1
+   },
+   "unidade": {
+    "portfolios": 1
+   }
+  },
+  "nacional|en|evora-pelouros-2025-vereadora": {
+   "nome": {
+    "Portfolios held by the councillor": 1
+   },
+   "periodo": {
+    "in August #": 1
+   },
+   "unidade": {
+    "portfolios": 1
+   }
+  },
+  "nacional|en|evora-pelouros-2025-vice-presidente": {
+   "nome": {
+    "Portfolios held by the deputy mayor": 1
+   },
+   "periodo": {
+    "in August #": 1
+   },
+   "unidade": {
+    "portfolios": 1
+   }
+  },
+  "nacional|en|evora-poder-de-compra-2023": {
+   "nome": {
+    "Purchasing power per inhabitant in Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index (Portugal = 100)": 1
+   }
+  },
+  "nacional|en|evora-prazo-medio-de-pagamento-2023": {
+   "nome": {
+    "Average time to pay suppliers": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "days": 1
+   }
+  },
+  "nacional|en|evora-prazo-medio-de-pagamento-2025": {
+   "nome": {
+    "Average time to pay suppliers": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "regua": {
+    "#:#": 1
+   },
+   "unidade": {
+    "days": 1
+   }
+  },
+  "nacional|en|evora-prr-aprovado-2026": {
+   "nome": {
+    "PRR funds approved for Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-prr-municipio-contratado": {
+   "nome": {
+    "PRR funds contracted by the municipality of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-prr-pago-2026": {
+   "nome": {
+    "PRR funds paid in Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-prr-universidade-contratado": {
+   "nome": {
+    "PRR funds contracted by the University of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-prr-vencido-aprovado-2026": {
+   "nome": {
+    "Approved funds in projects past their deadline": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-receita-cobrada-2025": {
+   "nome": {
+    "Revenue collected by the municipality of Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-saneamento-financeiro-2016": {
+   "nome": {
+    "Financial recovery loan": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|evora-vab-empresarial-2024": {
+   "nome": {
+    "Gross value added by companies in Évora": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|en|factor-sustentabilidade-2026": {
+   "nome": {
+    "Pension sustainability factor": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "factor": 1
+   }
+  },
+  "nacional|en|fluxo-de-credito-as-empresas-2025": {
+   "dobra": {
+    "How much credit did companies other than financial companies take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow of non-financial corporations), as a percentage of the debt they had at the end of the previous year, excluding foreign direct investment from both amounts?": 1
+   },
+   "estado": {
+    "within the reference value (below # %)": 1
+   },
+   "nome": {
+    "Credit flow to corporations": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "regua": {
+    "#:#within the reference value (below # %)": 1
+   },
+   "unidade": {
+    "% of the stock at the end of the previous period": 1
+   }
+  },
+  "nacional|en|fluxo-de-credito-as-familias-2025": {
+   "dobra": {
+    "How much credit did households and non-profit institutions serving them take on in a year, minus what they repaid and leaving out operations among themselves (the consolidated credit flow), as a percentage of the debt they had at the end of the previous year?": 1
+   },
+   "estado": {
+    "within the reference value (below # %)": 1
+   },
+   "nome": {
+    "Credit flow to households": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "regua": {
+    "#:#European Union:# (provisional data)within the reference value (below # %)": 1
+   },
+   "unidade": {
+    "% of the stock at the end of the previous period": 1
+   }
+  },
+  "nacional|en|formacao-bruta-de-capital-fixo-2025": {
+   "nome": {
+    "Investment (gross fixed capital formation)": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:# (provisional data)European Union:#": 2
+   },
+   "unidade": {
+    "% of GDP": 2
+   }
+  },
+  "nacional|en|ganho-medio-mensal-2024": {
+   "nome": {
+    "Average monthly earnings": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "unidade": {
+    "euros per month": 2
+   }
+  },
+  "nacional|en|ihpc-variacao-homologa": {
+   "dobra": {
+    "How much have consumer prices in Portugal changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?": 1
+   },
+   "faixa-ue": {
+    "Among the # EU countries in August #, the lowest value is # (Sweden) and the highest is # (Romania); the EU average is #. Portugal (#) ranks #th from the highest.": 1
+   },
+   "nome": {
+    "Inflation in the European comparison": 1
+   },
+   "periodo": {
+    "in August #": 1
+   },
+   "regua": {
+    "July #:#European Union:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|en|independencia-da-justica-2025": {
+   "nome": {
+    "Perceived independence of the justice system": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|en|ipc-alimentacao-variacao-homologa": {
+   "dobra": {
+    "How much have food and non-alcoholic beverage prices changed since the same month a year earlier?": 1
+   },
+   "nome": {
+    "Prices of food and non-alcoholic beverages, change over a year": 1
+   },
+   "periodo": {
+    "in August #": 1
+   },
+   "regua": {
+    "July #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|en|ipc-combustiveis-variacao-homologa": {
+   "dobra": {
+    "How much have fuel and lubricant prices for vehicles changed since the same month a year earlier?": 1
+   },
+   "nome": {
+    "Fuel prices, change over a year": 1
+   },
+   "periodo": {
+    "in August #": 1
+   },
+   "regua": {
+    "July #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|en|ipc-energia-em-casa-variacao-homologa": {
+   "dobra": {
+    "How much have the prices of electricity, gas and other fuels used at home changed since the same month a year earlier?": 1
+   },
+   "nome": {
+    "Home energy prices, change over a year": 1
+   },
+   "periodo": {
+    "in August #": 1
+   },
+   "regua": {
+    "July #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|en|ipc-rendas-variacao-homologa": {
+   "dobra": {
+    "How much have rents actually paid for housing changed since the same month a year earlier?": 1
+   },
+   "nome": {
+    "Rent prices, change over a year": 1
+   },
+   "periodo": {
+    "in August #": 1
+   },
+   "regua": {
+    "July #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|en|ipc-sem-habitacao-variacao-media-12-meses": {
+   "dobra": {
+    "How much has the average level of consumer prices excluding housing changed over the last twelve months?": 1
+   },
+   "nome": {
+    "Prices excluding housing, twelve-month average change": 1
+   },
+   "periodo": {
+    "in August #": 1
+   },
+   "regua": {
+    "July #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|en|ipc-variacao-homologa": {
+   "dobra": {
+    "How much have consumer prices changed since the same month a year earlier?": 1
+   },
+   "nome": {
+    "Inflation": 1
+   },
+   "periodo": {
+    "in August #": 1
+   },
+   "regua": {
+    "July #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|en|ipc-variacao-media-12-meses": {
+   "dobra": {
+    "How much has the average level of consumer prices changed over the last twelve months compared with the previous twelve months?": 1
+   },
+   "nome": {
+    "Average inflation over a year": 1
+   },
+   "periodo": {
+    "in August #": 1
+   },
+   "regua": {
+    "July #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|en|jovens-nem-2025": {
+   "dobra": {
+    "What share of young people aged 15 to 29, of both sexes, is not employed and is not in education or training?": 2
+   },
+   "nome": {
+    "Young people not in employment, education or training": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#": 2
+   },
+   "unidade": {
+    "% of the population": 2
+   }
+  },
+  "nacional|en|licencas-de-construcao-2025": {
+   "nome": {
+    "Floor area licensed for housing": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:# (provisional data)European Union:#": 2
+   },
+   "unidade": {
+    "m² per 1000 inhabitants": 2
+   }
+  },
+  "nacional|en|linha-de-risco-de-pobreza-2025": {
+   "dobra": {
+    "Below what annual income is a person living alone at risk of poverty?": 2
+   },
+   "nome": {
+    "At-risk-of-poverty line": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#": 2
+   },
+   "unidade": {
+    "euros per year": 2
+   }
+  },
+  "nacional|en|municipios-acores-caop-2025": {
+   "nome": {
+    "Municipalities in the Azores": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "municipalities": 1
+   }
+  },
+  "nacional|en|municipios-continente-caop-2025": {
+   "nome": {
+    "Municipalities on the mainland": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "municipalities": 1
+   }
+  },
+  "nacional|en|municipios-madeira-caop-2025": {
+   "nome": {
+    "Municipalities in Madeira": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "municipalities": 1
+   }
+  },
+  "nacional|en|municipios-portugal-caop-2025": {
+   "nome": {
+    "Municipalities in Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "municipalities": 1
+   }
+  },
+  "nacional|en|necessidades-medicas-nao-satisfeitas-2025": {
+   "nome": {
+    "Unmet need for medical care": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|en|penalizacao-antecipacao-um-ano-com-factor-2026": {
+   "nome": {
+    "Pension cut for one year of early retirement, with the sustainability factor": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|en|penalizacao-antecipacao-um-ano-neutra": {
+   "nome": {
+    "Pension cut for one year of early retirement, at no cost to the system": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|en|penalizacao-antecipacao-um-ano-sem-factor-2026": {
+   "nome": {
+    "Pension cut for one year of early retirement, without the sustainability factor": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|en|pensao-media-anual-2025": {
+   "dobra": {
+    "What is the average annual amount of pensions paid by Social Security per pensioner?": 2
+   },
+   "nome": {
+    "Average annual pension": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#": 2
+   },
+   "unidade": {
+    "euros per pensioner per year": 2
+   }
+  },
+  "nacional|en|pib-pc-acores-2024": {
+   "nome": {
+    "Gross domestic product per inhabitant in the Azores": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index (EU-27 = 100)": 1
+   }
+  },
+  "nacional|en|pib-pc-alentejo-2000": {
+   "nome": {
+    "Gross domestic product per inhabitant in the Alentejo": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index (EU-27 = 100)": 1
+   }
+  },
+  "nacional|en|pib-pc-alentejo-2024": {
+   "nome": {
+    "Gross domestic product per inhabitant in the Alentejo": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "regua": {
+    "#:#": 1
+   },
+   "unidade": {
+    "index (EU-27 = 100)": 1
+   }
+  },
+  "nacional|en|pib-pc-algarve-2024": {
+   "nome": {
+    "Gross domestic product per inhabitant in the Algarve": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index (EU-27 = 100)": 1
+   }
+  },
+  "nacional|en|pib-pc-centro-2024": {
+   "nome": {
+    "Gross domestic product per inhabitant in the Centro region": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index (EU-27 = 100)": 1
+   }
+  },
+  "nacional|en|pib-pc-grande-lisboa-2024": {
+   "nome": {
+    "Gross domestic product per inhabitant in Greater Lisbon": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index (EU-27 = 100)": 1
+   }
+  },
+  "nacional|en|pib-pc-madeira-2024": {
+   "nome": {
+    "Gross domestic product per inhabitant in Madeira": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index (EU-27 = 100)": 1
+   }
+  },
+  "nacional|en|pib-pc-norte-2024": {
+   "nome": {
+    "Gross domestic product per inhabitant in the Norte region": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index (EU-27 = 100)": 1
+   }
+  },
+  "nacional|en|pib-pc-oeste-e-vale-do-tejo-2024": {
+   "nome": {
+    "Gross domestic product per inhabitant in Oeste e Vale do Tejo": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index (EU-27 = 100)": 1
+   }
+  },
+  "nacional|en|pib-pc-peninsula-de-setubal-2024": {
+   "nome": {
+    "Gross domestic product per inhabitant in Península de Setúbal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index (EU-27 = 100)": 1
+   }
+  },
+  "nacional|en|pib-pc-portugal-2024": {
+   "nome": {
+    "Gross domestic product per inhabitant in Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "index (EU-27 = 100)": 1
+   }
+  },
+  "nacional|en|pib-real-per-capita-2025": {
+   "nome": {
+    "Real GDP per capita": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:# (provisional data)European Union:#": 2
+   },
+   "unidade": {
+    "euro per capita · chain linked volumes (2015)": 2
+   }
+  },
+  "nacional|en|portugal-concentracao-vab4-2024": {
+   "nome": {
+    "Share of the four largest companies in gross value added, in Portugal": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "% of gross value added by enterprises": 1
+   }
+  },
+  "nacional|en|posicao-de-investimento-internacional-2025": {
+   "dobra": {
+    "What is the difference between what the country’s residents own in the rest of the world and what they owe to it (financial assets and liabilities relative to the rest of the world), as a percentage of the value of the final goods and services the economy produces in a year (GDP)?": 1
+   },
+   "estado": {
+    "outside the reference value (below −# %)": 1
+   },
+   "nome": {
+    "Net international investment position": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "regua": {
+    "#:−#outside the reference value (below −# %)": 1
+   },
+   "unidade": {
+    "% of GDP": 1
+   }
+  },
+  "nacional|en|precos-da-habitacao-2025": {
+   "dobra": {
+    "How much have the transaction prices of homes purchased by households changed in a year?": 2
+   },
+   "estado": {
+    "outside the reference value (above # %)": 2
+   },
+   "faixa-ue": {
+    "Among the # EU countries in #, the lowest value is −# (Finland) and the highest is # (Hungary); the EU average is #. Portugal (#) ranks #nd from the highest.": 1
+   },
+   "nome": {
+    "House prices, annual change": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#outside the reference value (above # %)": 2
+   },
+   "unidade": {
+    "average annual change, %": 2
+   }
+  },
+  "nacional|en|racio-s80-s20-2025": {
+   "dobra": {
+    "How many times greater is the total income of the fifth of the population with the highest income than that of the fifth with the lowest?": 2
+   },
+   "faixa-ue": {
+    "Among the # EU countries in #, the lowest value is # (Belgium) and the highest is # (Bulgaria); the EU average is #. Portugal (#) ranks #th from the highest.": 1
+   },
+   "nome": {
+    "Income inequality": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#": 2
+   },
+   "unidade": {
+    "ratio": 2
+   }
+  },
+  "nacional|en|remuneracao-bruta-mensal-media": {
+   "dobra": {
+    "How much do employees receive per month, on average and before deductions?": 2
+   },
+   "nome": {
+    "Average pay before deductions": 2
+   },
+   "periodo": {
+    "in the #nd quarter of #": 2
+   },
+   "regua": {
+    "#nd quarter of #:#": 2
+   },
+   "unidade": {
+    "euros per month": 2
+   }
+  },
+  "nacional|en|retribuicao-minima-mensal-doze-meses-2026": {
+   "nome": {
+    "Monthly minimum wage": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "unidade": {
+    "euros per month": 1
+   }
+  },
+  "nacional|en|retribuicao-minima-mensal-garantida-continente-2026": {
+   "nome": {
+    "Guaranteed minimum monthly wage": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "unidade": {
+    "euros per month": 2
+   }
+  },
+  "nacional|en|risco-de-pobreza-ou-exclusao-2025": {
+   "dobra": {
+    "What share of the population is in at least one of three situations: income below 60 % of the income that leaves half of the country’s population above it and half below, the median (at risk of poverty); at least seven out of thirteen deprivations because of a lack of resources (severe material and social deprivation); or living in a household where almost nobody works (very low work intensity), counting each person only once?": 2
+   },
+   "faixa-ue": {
+    "Among the # EU countries in #, the lowest value is # (Czechia) and the highest is # (Bulgaria); the EU average is #. Portugal (#) ranks #th from the highest, level with other countries with the same value (Austria and Sweden).": 1
+   },
+   "nome": {
+    "At risk of poverty or social exclusion": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|en|saldo-da-balanca-corrente-2025": {
+   "dobra": {
+    "What is the difference between what the country received from the rest of the world and what it paid to it, for goods, services and income (the current account balance), as a percentage of the value of the final goods and services the economy produces in a year (GDP), on the average of that year and the two before it (the three-year backward moving average)?": 1
+   },
+   "estado": {
+    "within the reference values (between −# and # %)": 1
+   },
+   "nome": {
+    "Current account balance": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "regua": {
+    "#:#within the reference values (between −# and # %)": 1
+   },
+   "unidade": {
+    "% of GDP (three-year average)": 1
+   }
+  },
+  "nacional|en|saldo-das-administracoes-publicas-2025": {
+   "estado": {
+    "within the reference value of the Pact (above −# %)": 2
+   },
+   "nome": {
+    "General government balance": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#within the reference value of the Pact (above −# %)": 2
+   },
+   "unidade": {
+    "% of GDP": 2
+   }
+  },
+  "nacional|en|sobrecarga-do-custo-da-habitacao-2025": {
+   "dobra": {
+    "What share of people, whether their home is owned with or without a mortgage or rented at market price or at a reduced rent or free (all tenure statuses), are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?": 2
+   },
+   "faixa-ue": {
+    "Among the # EU countries in #, the lowest value is # (Cyprus) and the highest is # (Greece); the EU average is #. Portugal (#) ranks #th from the highest.": 1
+   },
+   "nome": {
+    "Housing cost overburden": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|en|sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": {
+   "dobra": {
+    "What share of tenants at market rent are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?": 2
+   },
+   "faixa-ue": {
+    "Among the # EU countries in #, the lowest value is # (Finland) and the highest is # (Romania); the EU average is #. Portugal (#) ranks #th from the highest.": 1
+   },
+   "nome": {
+    "Housing cost overburden, tenants at market rent": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|en|taxa-de-actividade-2025": {
+   "dobra": {
+    "How much has the share of people aged 15 to 64 who work or are looking for work (active people, employed or unemployed) changed over three years, counted as the difference between that year’s percentage and the one three years earlier (in percentage points)?": 2
+   },
+   "estado": {
+    "within the reference value (above −# pp)": 2
+   },
+   "nome": {
+    "Activity rate, three-year change": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#within the reference value (above −# pp)": 2
+   },
+   "unidade": {
+    "three-year change, percentage points": 2
+   }
+  },
+  "nacional|en|taxa-de-cambio-efectiva-real-2025": {
+   "dobra": {
+    "How much have the country’s prices relative to those of 41 other industrial countries, allowing for exchange rates and each country’s consumer prices, changed over three years (the real effective exchange rate, based on consumer price index deflators)?": 2
+   },
+   "estado": {
+    "within the reference values (between −# and # %)": 2
+   },
+   "nome": {
+    "Real effective exchange rate, three-year change": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#within the reference values (between −# and # %)": 2
+   },
+   "unidade": {
+    "three-year change, %": 2
+   }
+  },
+  "nacional|en|taxa-de-desemprego-2025": {
+   "dobra": {
+    "What share of people aged 15 to 74 who work or are looking for work (the labour force) is unemployed?": 1
+   },
+   "nome": {
+    "Unemployment rate": 1
+   },
+   "periodo": {
+    "in #": 1
+   },
+   "regua": {
+    "#:#European Union:#": 1
+   },
+   "unidade": {
+    "% of the labour force": 1
+   }
+  },
+  "nacional|en|taxa-de-desemprego-mip-2025": {
+   "dobra": {
+    "What share of people aged 15 to 74 who work or are looking for work (the labour force) is unemployed?": 2
+   },
+   "estado": {
+    "within the reference value (below # %)": 2
+   },
+   "faixa-ue": {
+    "Among the # EU countries in #, the lowest value is # (Czechia) and the highest is # (Spain); the EU average is #. Portugal (#) ranks #th from the highest.": 1
+   },
+   "nome": {
+    "Unemployment rate": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#within the reference value (below # %)": 2
+   },
+   "unidade": {
+    "% of the labour force": 2
+   }
+  },
+  "nacional|en|taxa-de-emprego-2025": {
+   "dobra": {
+    "What share of people aged 20 to 64 is employed?": 2
+   },
+   "faixa-ue": {
+    "Among the # EU countries in #, the lowest value is # (Italy) and the highest is # (Malta); the EU average is #. Portugal (#) ranks #th from the highest.": 1
+   },
+   "nome": {
+    "Employment rate": 2
+   },
+   "periodo": {
+    "in #": 2
+   },
+   "regua": {
+    "#:#European Union:#": 2
+   },
+   "unidade": {
+    "% of the population": 2
+   }
+  },
+  "nacional|pt|abandono-escolar-precoce-2025": {
+   "dobra": {
+    "Que parte das pessoas dos 18 aos 24 anos concluiu no máximo o ensino básico e não está em estudos nem em formação?": 2
+   },
+   "nome": {
+    "Abandono escolar precoce": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|pt|agua-nao-faturada-portugal-2024": {
+   "nome": {
+    "Água não faturada": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|pt|alentejo-central-poder-de-compra-2023": {
+   "nome": {
+    "Poder de compra por habitante no Alentejo Central": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice (Portugal = 100)": 1
+   }
+  },
+  "nacional|pt|beneficiarios-do-rsi-por-mil-2024": {
+   "dobra": {
+    "Quantas pessoas recebem o rendimento social de inserção por cada mil pessoas em idade ativa?": 2
+   },
+   "nome": {
+    "Pessoas que recebem o rendimento social de inserção": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#": 2
+   },
+   "unidade": {
+    "por mil pessoas em idade ativa": 2
+   }
+  },
+  "nacional|pt|competencias-digitais-2025": {
+   "nome": {
+    "Pessoas com competências digitais básicas ou superiores": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#": 2
+   },
+   "unidade": {
+    "% dos indivíduos": 2
+   }
+  },
+  "nacional|pt|crescimento-da-despesa-liquida-2025": {
+   "estado": {
+    "fora do valor de referência do Conselho da UE (acima de # %)": 2
+   },
+   "nome": {
+    "Crescimento da despesa líquida": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#fora do valor de referência do Conselho da UE (acima de # %)": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|pt|criancas-em-creche-2025": {
+   "nome": {
+    "Crianças em creche": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|pt|custo-unitario-do-trabalho-2025": {
+   "dobra": {
+    "Quanto mudou em três anos a remuneração por hora de trabalho, aos preços de cada ano, a dividir pelo que se produz numa hora de trabalho (o índice nominal do custo unitário do trabalho, por hora trabalhada)?": 2
+   },
+   "estado": {
+    "fora do valor de referência (acima de # %)": 2
+   },
+   "nome": {
+    "Custo unitário do trabalho, variação em três anos": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:# (dado provisório)União Europeia:#fora do valor de referência (acima de # %)": 2
+   },
+   "unidade": {
+    "variação em três anos, %": 2
+   }
+  },
+  "nacional|pt|desempenho-das-exportacoes-2025": {
+   "dobra": {
+    "Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)?": 2
+   },
+   "estado": {
+    "dentro do valor de referência (acima de −# %)": 2
+   },
+   "nome": {
+    "Quota nas exportações, variação em três anos": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#dentro do valor de referência (acima de −# %)": 2
+   },
+   "unidade": {
+    "% do total OCDE e UE não-OCDE, variação em três anos": 2
+   }
+  },
+  "nacional|pt|desemprego-de-longa-duracao-2025": {
+   "dobra": {
+    "Que parte das pessoas dos 15 aos 74 anos que trabalham ou procuram trabalho (a população ativa) está sem trabalho e procura emprego ativamente há pelo menos um ano?": 2
+   },
+   "faixa-ue": {
+    "Entre os # países da União, em #, o valor mais baixo é # (Países Baixos) e o mais alto # (Grécia); a média da União é #. Portugal (#) está em #.º lugar, do mais alto para o mais baixo.": 1
+   },
+   "nome": {
+    "Desemprego de longa duração": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#": 2
+   },
+   "unidade": {
+    "% da população ativa": 2
+   }
+  },
+  "nacional|pt|despesa-em-id-2024": {
+   "nome": {
+    "Despesa em investigação e desenvolvimento": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:# (valor estimado)": 2
+   },
+   "unidade": {
+    "% do PIB": 2
+   }
+  },
+  "nacional|pt|disparidade-de-emprego-entre-sexos-2025": {
+   "dobra": {
+    "Qual é a diferença entre a taxa de emprego dos homens dos 20 aos 64 anos e a das mulheres, contada como a diferença entre as duas percentagens (em pontos percentuais)?": 2
+   },
+   "nome": {
+    "Diferença de emprego entre homens e mulheres": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#": 2
+   },
+   "unidade": {
+    "pontos percentuais": 2
+   }
+  },
+  "nacional|pt|disparidade-salarial-entre-sexos-2024": {
+   "nome": {
+    "Disparidade salarial não ajustada entre homens e mulheres": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:# (dado provisório)": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|pt|divida-das-empresas-2025": {
+   "dobra": {
+    "Quanto devem as empresas que não são financeiras, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada das sociedades não financeiras), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?": 1
+   },
+   "estado": {
+    "dentro do valor de referência (abaixo de # %)": 1
+   },
+   "nome": {
+    "Dívida das empresas": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "regua": {
+    "#:# (dado provisório)União Europeia:# (dado provisório)dentro do valor de referência (abaixo de # %)": 1
+   },
+   "unidade": {
+    "% do PIB": 1
+   }
+  },
+  "nacional|pt|divida-das-familias-2025": {
+   "dobra": {
+    "Quanto devem as famílias e as instituições sem fim lucrativo ao seu serviço, em empréstimos e títulos de dívida, sem contar o que devem umas às outras (a dívida consolidada), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?": 1
+   },
+   "estado": {
+    "dentro do valor de referência (abaixo de # %)": 1
+   },
+   "nome": {
+    "Dívida das famílias": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "regua": {
+    "#:# (dado provisório)União Europeia:# (dado provisório)dentro do valor de referência (abaixo de # %)": 1
+   },
+   "unidade": {
+    "% do PIB": 1
+   }
+  },
+  "nacional|pt|divida-publica-2025": {
+   "dobra": {
+    "Quanto devem as administrações públicas, em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?": 2
+   },
+   "estado": {
+    "fora do valor de referência (acima de # %)": 2
+   },
+   "faixa-ue": {
+    "Entre os # países da União, em #, o valor mais baixo é # (Estónia) e o mais alto # (Grécia); a média da União é #. Portugal (#) está em #.º lugar, do mais alto para o mais baixo.": 1
+   },
+   "nome": {
+    "Dívida pública": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#fora do valor de referência (acima de # %)": 2
+   },
+   "unidade": {
+    "% do PIB": 2
+   }
+  },
+  "nacional|pt|evora-camara-lugares": {
+   "nome": {
+    "Lugares na câmara municipal de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "lugares": 1
+   }
+  },
+  "nacional|pt|evora-camara-mandatos-cdu-2013": {
+   "nome": {
+    "Mandatos ganhos pela CDU em Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "lugares": 1
+   }
+  },
+  "nacional|pt|evora-camara-mandatos-cdu-2017": {
+   "nome": {
+    "Mandatos ganhos pela CDU em Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "regua": {
+    "#:#": 1
+   },
+   "unidade": {
+    "lugares": 1
+   }
+  },
+  "nacional|pt|evora-camara-mandatos-cdu-2021": {
+   "nome": {
+    "Mandatos ganhos pela CDU em Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "lugares": 1
+   }
+  },
+  "nacional|pt|evora-camara-mandatos-ps-2009": {
+   "nome": {
+    "Mandatos ganhos pelo PS em Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "lugares": 1
+   }
+  },
+  "nacional|pt|evora-camara-mandatos-ps-2025": {
+   "nome": {
+    "Mandatos ganhos pelo PS em Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "lugares": 1
+   }
+  },
+  "nacional|pt|evora-concentracao-vab4-2024": {
+   "nome": {
+    "Peso das quatro maiores empresas no valor acrescentado, em Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% do VAB empresarial": 1
+   }
+  },
+  "nacional|pt|evora-contas-2024-votos-contra": {
+   "nome": {
+    "Votos contra a aprovação das contas": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "votos": 1
+   }
+  },
+  "nacional|pt|evora-contas-2024-votos-favor": {
+   "nome": {
+    "Votos a favor da aprovação das contas": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "votos": 1
+   }
+  },
+  "nacional|pt|evora-desemprego-registado-2013": {
+   "nome": {
+    "Desemprego registado em Évora": 1
+   },
+   "periodo": {
+    "em dezembro de #": 1
+   },
+   "unidade": {
+    "pessoas": 1
+   }
+  },
+  "nacional|pt|evora-desemprego-registado-2024": {
+   "nome": {
+    "Desemprego registado em Évora": 1
+   },
+   "periodo": {
+    "em dezembro de #": 1
+   },
+   "unidade": {
+    "pessoas": 1
+   }
+  },
+  "nacional|pt|evora-despesa-paga-2025": {
+   "nome": {
+    "Despesa paga pelo município de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-divida-31-10-2013": {
+   "nome": {
+    "Dívida registada no início do mandato": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-divida-dgal-2014": {
+   "nome": {
+    "Endividamento total do município de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-divida-dgal-2017": {
+   "nome": {
+    "Endividamento total do município de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-divida-dgal-2021": {
+   "nome": {
+    "Endividamento total do município de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-divida-dgal-2024": {
+   "nome": {
+    "Endividamento total do município de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-divida-inicio-mandato-reexpressa": {
+   "nome": {
+    "Dívida do início do mandato, reexpressa": 1
+   },
+   "periodo": {
+    "em outubro de #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-divida-total-2017": {
+   "nome": {
+    "Dívida total do município de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-divida-total-2021": {
+   "nome": {
+    "Dívida total do município de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-divida-total-2024": {
+   "nome": {
+    "Dívida total do município de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-divida-total-2025": {
+   "nome": {
+    "Dívida total do município de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "regua": {
+    "#:#": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-excesso-endividamento-2014": {
+   "nome": {
+    "Dívida acima do limite legal": 1
+   },
+   "periodo": {
+    "em janeiro de #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-excesso-endividamento-2019": {
+   "nome": {
+    "Dívida acima do limite legal": 1
+   },
+   "periodo": {
+    "em dezembro de #": 1
+   },
+   "regua": {
+    "janeiro de #:#": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-execucao-da-receita-2021": {
+   "nome": {
+    "Receita cobrada face ao orçamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% do orçamento": 1
+   }
+  },
+  "nacional|pt|evora-execucao-da-receita-2025": {
+   "nome": {
+    "Receita cobrada face ao orçamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "regua": {
+    "#:#": 1
+   },
+   "unidade": {
+    "% do orçamento": 1
+   }
+  },
+  "nacional|pt|evora-executivo-2025-ad": {
+   "nome": {
+    "Lugares da AD no executivo de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "lugares": 1
+   }
+  },
+  "nacional|pt|evora-executivo-2025-cdu": {
+   "nome": {
+    "Lugares da CDU no executivo de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "lugares": 1
+   }
+  },
+  "nacional|pt|evora-executivo-2025-chega": {
+   "nome": {
+    "Lugares do Chega no executivo de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "lugares": 1
+   }
+  },
+  "nacional|pt|evora-executivo-2025-ps": {
+   "nome": {
+    "Lugares do PS no executivo de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "lugares": 1
+   }
+  },
+  "nacional|pt|evora-limite-divida-2025": {
+   "nome": {
+    "Limite da dívida total": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-limite-divida-dgal-2014": {
+   "nome": {
+    "Limite do endividamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-limite-divida-dgal-2017": {
+   "nome": {
+    "Limite do endividamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-limite-divida-dgal-2021": {
+   "nome": {
+    "Limite do endividamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-limite-divida-dgal-2024": {
+   "nome": {
+    "Limite do endividamento": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-margem-endividamento-2025": {
+   "nome": {
+    "Margem até ao limite da dívida": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-orcamento-2025": {
+   "nome": {
+    "Orçamento do município de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-pael-emprestimo": {
+   "nome": {
+    "Empréstimo do apoio à economia local": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-pagamentos-em-atraso-2025": {
+   "nome": {
+    "Pagamentos em atraso do município de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-pelouros-2021-presidente": {
+   "nome": {
+    "Pelouros do presidente da câmara": 1
+   },
+   "periodo": {
+    "em dezembro de #": 1
+   },
+   "unidade": {
+    "pelouros": 1
+   }
+  },
+  "nacional|pt|evora-pelouros-2021-vice-presidente": {
+   "nome": {
+    "Pelouros do vice-presidente da câmara": 1
+   },
+   "periodo": {
+    "em dezembro de #": 1
+   },
+   "unidade": {
+    "pelouros": 1
+   }
+  },
+  "nacional|pt|evora-pelouros-2025-presidente": {
+   "nome": {
+    "Pelouros do presidente da câmara": 1
+   },
+   "periodo": {
+    "em agosto de #": 1
+   },
+   "unidade": {
+    "pelouros": 1
+   }
+  },
+  "nacional|pt|evora-pelouros-2025-vereadora": {
+   "nome": {
+    "Pelouros da vereadora": 1
+   },
+   "periodo": {
+    "em agosto de #": 1
+   },
+   "unidade": {
+    "pelouros": 1
+   }
+  },
+  "nacional|pt|evora-pelouros-2025-vice-presidente": {
+   "nome": {
+    "Pelouros do vice-presidente da câmara": 1
+   },
+   "periodo": {
+    "em agosto de #": 1
+   },
+   "unidade": {
+    "pelouros": 1
+   }
+  },
+  "nacional|pt|evora-poder-de-compra-2023": {
+   "nome": {
+    "Poder de compra por habitante em Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice (Portugal = 100)": 1
+   }
+  },
+  "nacional|pt|evora-prazo-medio-de-pagamento-2023": {
+   "nome": {
+    "Prazo médio de pagamento a fornecedores": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "dias": 1
+   }
+  },
+  "nacional|pt|evora-prazo-medio-de-pagamento-2025": {
+   "nome": {
+    "Prazo médio de pagamento a fornecedores": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "regua": {
+    "#:#": 1
+   },
+   "unidade": {
+    "dias": 1
+   }
+  },
+  "nacional|pt|evora-prr-aprovado-2026": {
+   "nome": {
+    "Verbas do PRR aprovadas para Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-prr-municipio-contratado": {
+   "nome": {
+    "Verbas do PRR contratadas pelo município de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-prr-pago-2026": {
+   "nome": {
+    "Verbas do PRR pagas em Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-prr-universidade-contratado": {
+   "nome": {
+    "Verbas do PRR contratadas pela Universidade de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-prr-vencido-aprovado-2026": {
+   "nome": {
+    "Verbas aprovadas em projetos fora de prazo": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-receita-cobrada-2025": {
+   "nome": {
+    "Receita cobrada pelo município de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-saneamento-financeiro-2016": {
+   "nome": {
+    "Empréstimo de saneamento financeiro": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|evora-vab-empresarial-2024": {
+   "nome": {
+    "Valor acrescentado bruto das empresas de Évora": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros": 1
+   }
+  },
+  "nacional|pt|factor-sustentabilidade-2026": {
+   "nome": {
+    "Fator de sustentabilidade das pensões": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "factor": 1
+   }
+  },
+  "nacional|pt|fluxo-de-credito-as-empresas-2025": {
+   "dobra": {
+    "Quanto crédito contraíram num ano as empresas que não são financeiras, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado das sociedades não financeiras), em percentagem da dívida que tinham no fim do ano anterior, excluindo o investimento direto estrangeiro das duas parcelas?": 1
+   },
+   "estado": {
+    "dentro do valor de referência (abaixo de # %)": 1
+   },
+   "nome": {
+    "Fluxo de crédito às empresas": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "regua": {
+    "#:#dentro do valor de referência (abaixo de # %)": 1
+   },
+   "unidade": {
+    "% do stock no final do período anterior": 1
+   }
+  },
+  "nacional|pt|fluxo-de-credito-as-familias-2025": {
+   "dobra": {
+    "Quanto crédito contraíram num ano as famílias e as instituições sem fim lucrativo ao seu serviço, descontado o que reembolsaram e sem contar as operações entre elas (o fluxo de crédito consolidado), em percentagem da dívida que tinham no fim do ano anterior?": 1
+   },
+   "estado": {
+    "dentro do valor de referência (abaixo de # %)": 1
+   },
+   "nome": {
+    "Fluxo de crédito às famílias": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "regua": {
+    "#:#União Europeia:# (dado provisório)dentro do valor de referência (abaixo de # %)": 1
+   },
+   "unidade": {
+    "% do stock no final do período anterior": 1
+   }
+  },
+  "nacional|pt|formacao-bruta-de-capital-fixo-2025": {
+   "nome": {
+    "Investimento (formação bruta de capital fixo)": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:# (dado provisório)União Europeia:#": 2
+   },
+   "unidade": {
+    "% do PIB": 2
+   }
+  },
+  "nacional|pt|ganho-medio-mensal-2024": {
+   "nome": {
+    "Ganho médio mensal": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "unidade": {
+    "euros por mês": 2
+   }
+  },
+  "nacional|pt|ihpc-variacao-homologa": {
+   "dobra": {
+    "Quanto mudaram os preços no consumidor em Portugal face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?": 1
+   },
+   "faixa-ue": {
+    "Entre os # países da União, em agosto de #, o valor mais baixo é # (Suécia) e o mais alto # (Roménia); a média da União é #. Portugal (#) está em #.º lugar, do mais alto para o mais baixo.": 1
+   },
+   "nome": {
+    "Inflação na comparação europeia": 1
+   },
+   "periodo": {
+    "em agosto de #": 1
+   },
+   "regua": {
+    "julho de #:#União Europeia:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|pt|independencia-da-justica-2025": {
+   "nome": {
+    "Perceção de independência da justiça": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|pt|ipc-alimentacao-variacao-homologa": {
+   "dobra": {
+    "Quanto mudaram os preços dos alimentos e das bebidas não alcoólicas face ao mesmo mês do ano anterior?": 1
+   },
+   "nome": {
+    "Preços dos alimentos e das bebidas não alcoólicas, variação num ano": 1
+   },
+   "periodo": {
+    "em agosto de #": 1
+   },
+   "regua": {
+    "julho de #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|pt|ipc-combustiveis-variacao-homologa": {
+   "dobra": {
+    "Quanto mudaram os preços dos combustíveis e dos lubrificantes para os veículos face ao mesmo mês do ano anterior?": 1
+   },
+   "nome": {
+    "Preços dos combustíveis, variação num ano": 1
+   },
+   "periodo": {
+    "em agosto de #": 1
+   },
+   "regua": {
+    "julho de #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|pt|ipc-energia-em-casa-variacao-homologa": {
+   "dobra": {
+    "Quanto mudaram os preços da eletricidade, do gás e dos outros combustíveis usados em casa face ao mesmo mês do ano anterior?": 1
+   },
+   "nome": {
+    "Preços da energia em casa, variação num ano": 1
+   },
+   "periodo": {
+    "em agosto de #": 1
+   },
+   "regua": {
+    "julho de #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|pt|ipc-rendas-variacao-homologa": {
+   "dobra": {
+    "Quanto mudaram as rendas efetivamente pagas pela habitação face ao mesmo mês do ano anterior?": 1
+   },
+   "nome": {
+    "Preços das rendas, variação num ano": 1
+   },
+   "periodo": {
+    "em agosto de #": 1
+   },
+   "regua": {
+    "julho de #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|pt|ipc-sem-habitacao-variacao-media-12-meses": {
+   "dobra": {
+    "Quanto mudou o nível médio dos preços no consumidor sem a habitação nos últimos doze meses?": 1
+   },
+   "nome": {
+    "Preços sem a habitação, variação média em doze meses": 1
+   },
+   "periodo": {
+    "em agosto de #": 1
+   },
+   "regua": {
+    "julho de #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|pt|ipc-variacao-homologa": {
+   "dobra": {
+    "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior?": 1
+   },
+   "nome": {
+    "Inflação": 1
+   },
+   "periodo": {
+    "em agosto de #": 1
+   },
+   "regua": {
+    "julho de #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|pt|ipc-variacao-media-12-meses": {
+   "dobra": {
+    "Quanto mudou o nível médio dos preços no consumidor nos últimos doze meses face aos doze meses anteriores?": 1
+   },
+   "nome": {
+    "Inflação média de um ano": 1
+   },
+   "periodo": {
+    "em agosto de #": 1
+   },
+   "regua": {
+    "julho de #:#": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|pt|jovens-nem-2025": {
+   "dobra": {
+    "Que parte dos jovens dos 15 aos 29 anos, de ambos os sexos, não trabalha nem estuda nem está em formação?": 2
+   },
+   "nome": {
+    "Jovens sem emprego, escola ou formação": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#": 2
+   },
+   "unidade": {
+    "% da população": 2
+   }
+  },
+  "nacional|pt|licencas-de-construcao-2025": {
+   "nome": {
+    "Área licenciada para habitação": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:# (dado provisório)União Europeia:#": 2
+   },
+   "unidade": {
+    "m² por 1000 habitantes": 2
+   }
+  },
+  "nacional|pt|linha-de-risco-de-pobreza-2025": {
+   "dobra": {
+    "Abaixo de que rendimento anual fica em risco de pobreza uma pessoa que vive sozinha?": 2
+   },
+   "nome": {
+    "Linha de risco de pobreza": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#": 2
+   },
+   "unidade": {
+    "euros por ano": 2
+   }
+  },
+  "nacional|pt|municipios-acores-caop-2025": {
+   "nome": {
+    "Concelhos nos Açores": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "municípios": 1
+   }
+  },
+  "nacional|pt|municipios-continente-caop-2025": {
+   "nome": {
+    "Concelhos no continente": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "municípios": 1
+   }
+  },
+  "nacional|pt|municipios-madeira-caop-2025": {
+   "nome": {
+    "Concelhos na Madeira": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "municípios": 1
+   }
+  },
+  "nacional|pt|municipios-portugal-caop-2025": {
+   "nome": {
+    "Concelhos em Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "municípios": 1
+   }
+  },
+  "nacional|pt|necessidades-medicas-nao-satisfeitas-2025": {
+   "nome": {
+    "Necessidades de cuidados médicos por satisfazer": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|pt|penalizacao-antecipacao-um-ano-com-factor-2026": {
+   "nome": {
+    "Corte na pensão por um ano de antecipação, com o fator de sustentabilidade": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|pt|penalizacao-antecipacao-um-ano-neutra": {
+   "nome": {
+    "Corte na pensão por um ano de antecipação, sem custo para o sistema": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|pt|penalizacao-antecipacao-um-ano-sem-factor-2026": {
+   "nome": {
+    "Corte na pensão por um ano de antecipação, sem o fator de sustentabilidade": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "%": 1
+   }
+  },
+  "nacional|pt|pensao-media-anual-2025": {
+   "dobra": {
+    "Qual é o valor anual médio das pensões pagas pela Segurança Social por pensionista?": 2
+   },
+   "nome": {
+    "Pensão média anual": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#": 2
+   },
+   "unidade": {
+    "euros por pensionista por ano": 2
+   }
+  },
+  "nacional|pt|pib-pc-acores-2024": {
+   "nome": {
+    "Produto interno bruto por habitante nos Açores": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice (UE-27 = 100)": 1
+   }
+  },
+  "nacional|pt|pib-pc-alentejo-2000": {
+   "nome": {
+    "Produto interno bruto por habitante no Alentejo": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice (UE-27 = 100)": 1
+   }
+  },
+  "nacional|pt|pib-pc-alentejo-2024": {
+   "nome": {
+    "Produto interno bruto por habitante no Alentejo": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "regua": {
+    "#:#": 1
+   },
+   "unidade": {
+    "índice (UE-27 = 100)": 1
+   }
+  },
+  "nacional|pt|pib-pc-algarve-2024": {
+   "nome": {
+    "Produto interno bruto por habitante no Algarve": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice (UE-27 = 100)": 1
+   }
+  },
+  "nacional|pt|pib-pc-centro-2024": {
+   "nome": {
+    "Produto interno bruto por habitante no Centro": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice (UE-27 = 100)": 1
+   }
+  },
+  "nacional|pt|pib-pc-grande-lisboa-2024": {
+   "nome": {
+    "Produto interno bruto por habitante na Grande Lisboa": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice (UE-27 = 100)": 1
+   }
+  },
+  "nacional|pt|pib-pc-madeira-2024": {
+   "nome": {
+    "Produto interno bruto por habitante na Madeira": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice (UE-27 = 100)": 1
+   }
+  },
+  "nacional|pt|pib-pc-norte-2024": {
+   "nome": {
+    "Produto interno bruto por habitante no Norte": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice (UE-27 = 100)": 1
+   }
+  },
+  "nacional|pt|pib-pc-oeste-e-vale-do-tejo-2024": {
+   "nome": {
+    "Produto interno bruto por habitante no Oeste e Vale do Tejo": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice (UE-27 = 100)": 1
+   }
+  },
+  "nacional|pt|pib-pc-peninsula-de-setubal-2024": {
+   "nome": {
+    "Produto interno bruto por habitante na Península de Setúbal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice (UE-27 = 100)": 1
+   }
+  },
+  "nacional|pt|pib-pc-portugal-2024": {
+   "nome": {
+    "Produto interno bruto por habitante em Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "índice (UE-27 = 100)": 1
+   }
+  },
+  "nacional|pt|pib-real-per-capita-2025": {
+   "nome": {
+    "PIB real por habitante": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:# (dado provisório)União Europeia:#": 2
+   },
+   "unidade": {
+    "euros por habitante · volumes encadeados (2015)": 2
+   }
+  },
+  "nacional|pt|portugal-concentracao-vab4-2024": {
+   "nome": {
+    "Peso das quatro maiores empresas no valor acrescentado, em Portugal": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "% do VAB empresarial": 1
+   }
+  },
+  "nacional|pt|posicao-de-investimento-internacional-2025": {
+   "dobra": {
+    "Qual é a diferença entre o que os residentes do país têm no resto do mundo e o que lhe devem (os ativos financeiros e os passivos face ao exterior), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?": 1
+   },
+   "estado": {
+    "fora do valor de referência (abaixo de −# %)": 1
+   },
+   "nome": {
+    "Posição de investimento internacional": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "regua": {
+    "#:−#fora do valor de referência (abaixo de −# %)": 1
+   },
+   "unidade": {
+    "% do PIB": 1
+   }
+  },
+  "nacional|pt|precos-da-habitacao-2025": {
+   "dobra": {
+    "Quanto mudaram num ano os preços de transação das casas compradas pelas famílias?": 2
+   },
+   "estado": {
+    "fora do valor de referência (acima de # %)": 2
+   },
+   "faixa-ue": {
+    "Entre os # países da União, em #, o valor mais baixo é −# (Finlândia) e o mais alto # (Hungria); a média da União é #. Portugal (#) está em #.º lugar, do mais alto para o mais baixo.": 1
+   },
+   "nome": {
+    "Preços da habitação, variação anual": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#fora do valor de referência (acima de # %)": 2
+   },
+   "unidade": {
+    "variação anual média, %": 2
+   }
+  },
+  "nacional|pt|racio-s80-s20-2025": {
+   "dobra": {
+    "Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos?": 2
+   },
+   "faixa-ue": {
+    "Entre os # países da União, em #, o valor mais baixo é # (Bélgica) e o mais alto # (Bulgária); a média da União é #. Portugal (#) está em #.º lugar, do mais alto para o mais baixo.": 1
+   },
+   "nome": {
+    "Desigualdade de rendimento": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#": 2
+   },
+   "unidade": {
+    "rácio": 2
+   }
+  },
+  "nacional|pt|remuneracao-bruta-mensal-media": {
+   "dobra": {
+    "Quanto recebe por mês, em média e antes de descontos, quem trabalha por conta de outrem?": 2
+   },
+   "nome": {
+    "Remuneração média antes de descontos": 2
+   },
+   "periodo": {
+    "no #.º trimestre de #": 2
+   },
+   "regua": {
+    "#.º trimestre de #:#": 2
+   },
+   "unidade": {
+    "euros por mês": 2
+   }
+  },
+  "nacional|pt|retribuicao-minima-mensal-doze-meses-2026": {
+   "nome": {
+    "Salário mínimo por mês": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "unidade": {
+    "euros por mês": 1
+   }
+  },
+  "nacional|pt|retribuicao-minima-mensal-garantida-continente-2026": {
+   "nome": {
+    "Retribuição mínima mensal garantida": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "unidade": {
+    "euros por mês": 2
+   }
+  },
+  "nacional|pt|risco-de-pobreza-ou-exclusao-2025": {
+   "dobra": {
+    "Que parte da população está em pelo menos uma de três situações: rendimento abaixo de 60 % do rendimento que deixa metade da população do país acima dele e metade abaixo, o mediano (risco de pobreza); pelo menos sete de treze privações por falta de recursos (privação material e social grave); ou viver num agregado onde quase ninguém trabalha (intensidade de trabalho muito baixa), contando cada pessoa uma única vez?": 2
+   },
+   "faixa-ue": {
+    "Entre os # países da União, em #, o valor mais baixo é # (Chéquia) e o mais alto # (Bulgária); a média da União é #. Portugal (#) está em #.º lugar, do mais alto para o mais baixo, a par de outros países com o mesmo valor (Áustria e Suécia).": 1
+   },
+   "nome": {
+    "Risco de pobreza ou exclusão social": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|pt|saldo-da-balanca-corrente-2025": {
+   "dobra": {
+    "Qual é a diferença entre o que o país recebeu do resto do mundo e o que lhe pagou, por bens, serviços e rendimentos (o saldo da balança corrente), em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB), na média desse ano e dos dois anteriores (a média móvel de três anos para trás)?": 1
+   },
+   "estado": {
+    "dentro dos valores de referência (entre −# e # %)": 1
+   },
+   "nome": {
+    "Saldo da balança corrente": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "regua": {
+    "#:#dentro dos valores de referência (entre −# e # %)": 1
+   },
+   "unidade": {
+    "% do PIB (média de três anos)": 1
+   }
+  },
+  "nacional|pt|saldo-das-administracoes-publicas-2025": {
+   "estado": {
+    "dentro do valor de referência do Pacto (acima de −# %)": 2
+   },
+   "nome": {
+    "Saldo das administrações públicas": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#dentro do valor de referência do Pacto (acima de −# %)": 2
+   },
+   "unidade": {
+    "% do PIB": 2
+   }
+  },
+  "nacional|pt|sobrecarga-do-custo-da-habitacao-2025": {
+   "dobra": {
+    "Que parte das pessoas, em casa própria com ou sem crédito ou arrendada a preço de mercado ou a renda reduzida ou gratuita (todos os regimes de ocupação), vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?": 2
+   },
+   "faixa-ue": {
+    "Entre os # países da União, em #, o valor mais baixo é # (Chipre) e o mais alto # (Grécia); a média da União é #. Portugal (#) está em #.º lugar, do mais alto para o mais baixo.": 1
+   },
+   "nome": {
+    "Sobrecarga do custo da habitação": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|pt|sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": {
+   "dobra": {
+    "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?": 2
+   },
+   "faixa-ue": {
+    "Entre os # países da União, em #, o valor mais baixo é # (Finlândia) e o mais alto # (Roménia); a média da União é #. Portugal (#) está em #.º lugar, do mais alto para o mais baixo.": 1
+   },
+   "nome": {
+    "Sobrecarga do custo da habitação, inquilinos a preço de mercado": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#": 2
+   },
+   "unidade": {
+    "%": 2
+   }
+  },
+  "nacional|pt|taxa-de-actividade-2025": {
+   "dobra": {
+    "Quanto mudou em três anos a parte das pessoas dos 15 aos 64 anos que trabalham ou procuram trabalho (as pessoas ativas, empregadas ou desempregadas), contada como a diferença entre a percentagem desse ano e a de três anos antes (em pontos percentuais)?": 2
+   },
+   "estado": {
+    "dentro do valor de referência (acima de −# pp)": 2
+   },
+   "nome": {
+    "Taxa de atividade, variação em três anos": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#dentro do valor de referência (acima de −# pp)": 2
+   },
+   "unidade": {
+    "variação em três anos, pontos percentuais": 2
+   }
+  },
+  "nacional|pt|taxa-de-cambio-efectiva-real-2025": {
+   "dobra": {
+    "Quanto mudaram em três anos os preços do país face aos de outros 41 países industriais, contando as taxas de câmbio e os preços no consumidor de cada um (a taxa de câmbio efetiva real, com base nos deflatores dos índices de preços no consumidor)?": 2
+   },
+   "estado": {
+    "dentro dos valores de referência (entre −# e # %)": 2
+   },
+   "nome": {
+    "Taxa de câmbio efetiva real, variação em três anos": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#dentro dos valores de referência (entre −# e # %)": 2
+   },
+   "unidade": {
+    "variação em três anos, %": 2
+   }
+  },
+  "nacional|pt|taxa-de-desemprego-2025": {
+   "dobra": {
+    "Que parte das pessoas dos 15 aos 74 anos que trabalham ou procuram trabalho (a população ativa) está sem emprego?": 1
+   },
+   "nome": {
+    "Taxa de desemprego": 1
+   },
+   "periodo": {
+    "em #": 1
+   },
+   "regua": {
+    "#:#União Europeia:#": 1
+   },
+   "unidade": {
+    "% da população ativa": 1
+   }
+  },
+  "nacional|pt|taxa-de-desemprego-mip-2025": {
+   "dobra": {
+    "Que parte das pessoas dos 15 aos 74 anos que trabalham ou procuram trabalho (a população ativa) está sem emprego?": 2
+   },
+   "estado": {
+    "dentro do valor de referência (abaixo de # %)": 2
+   },
+   "faixa-ue": {
+    "Entre os # países da União, em #, o valor mais baixo é # (Chéquia) e o mais alto # (Espanha); a média da União é #. Portugal (#) está em #.º lugar, do mais alto para o mais baixo.": 1
+   },
+   "nome": {
+    "Taxa de desemprego": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#dentro do valor de referência (abaixo de # %)": 2
+   },
+   "unidade": {
+    "% da população ativa": 2
+   }
+  },
+  "nacional|pt|taxa-de-emprego-2025": {
+   "dobra": {
+    "Que parte das pessoas dos 20 aos 64 anos tem emprego?": 2
+   },
+   "faixa-ue": {
+    "Entre os # países da União, em #, o valor mais baixo é # (Itália) e o mais alto # (Malta); a média da União é #. Portugal (#) está em #.º lugar, do mais alto para o mais baixo.": 1
+   },
+   "nome": {
+    "Taxa de emprego": 2
+   },
+   "periodo": {
+    "em #": 2
+   },
+   "regua": {
+    "#:#União Europeia:#": 2
+   },
+   "unidade": {
+    "% da população": 2
+   }
+  },
+  "uniao|en|abandono-escolar-precoce-2025": {
+   "nome": {
+    "Early school leaving": 1
+   },
+   "unidade": {
+    "Percentage of those aged # to # · #": 1
+   }
+  },
+  "uniao|en|custo-unitario-do-trabalho-2025": {
+   "estado": {
+    "outside the reference value (above # %)": 1
+   },
+   "nome": {
+    "Unit labour cost, three-year change": 1
+   },
+   "unidade": {
+    "Three-year change, as a percentage · #": 1
+   }
+  },
+  "uniao|en|desempenho-das-exportacoes-2025": {
+   "estado": {
+    "within the reference value (above −# %)": 1
+   },
+   "nome": {
+    "Share of exports, three-year change": 1
+   },
+   "unidade": {
+    "Percentage of the OECD and non-OECD EU total, three-year change · #": 1
+   }
+  },
+  "uniao|en|desemprego-de-longa-duracao-2025": {
+   "nome": {
+    "Long-term unemployment": 1
+   },
+   "unidade": {
+    "Percentage of the labour force · #": 1
+   }
+  },
+  "uniao|en|divida-das-empresas-2025": {
+   "estado": {
+    "within the reference value (below # %)": 1
+   },
+   "nome": {
+    "Corporate debt": 1
+   },
+   "unidade": {
+    "Percentage of GDP · #": 1
+   }
+  },
+  "uniao|en|divida-das-familias-2025": {
+   "estado": {
+    "within the reference value (below # %)": 1
+   },
+   "nome": {
+    "Household debt": 1
+   },
+   "unidade": {
+    "Percentage of GDP · #": 1
+   }
+  },
+  "uniao|en|divida-publica-2025": {
+   "estado": {
+    "outside the reference value (above # %)": 1
+   },
+   "nome": {
+    "Government debt": 1
+   },
+   "unidade": {
+    "Percentage of GDP · #": 1
+   }
+  },
+  "uniao|en|fluxo-de-credito-as-empresas-2025": {
+   "estado": {
+    "within the reference value (below # %)": 1
+   },
+   "nome": {
+    "Credit flow to corporations": 1
+   },
+   "unidade": {
+    "Percentage of the stock at the end of the previous period · #": 1
+   }
+  },
+  "uniao|en|fluxo-de-credito-as-familias-2025": {
+   "estado": {
+    "within the reference value (below # %)": 1
+   },
+   "nome": {
+    "Credit flow to households": 1
+   },
+   "unidade": {
+    "Percentage of the stock at the end of the previous period · #": 1
+   }
+  },
+  "uniao|en|jovens-nem-2025": {
+   "nome": {
+    "Young people not in employment, education or training": 1
+   },
+   "unidade": {
+    "Percentage of the population · #": 1
+   }
+  },
+  "uniao|en|posicao-de-investimento-internacional-2025": {
+   "estado": {
+    "outside the reference value (below −# %)": 1
+   },
+   "nome": {
+    "Net international investment position": 1
+   },
+   "unidade": {
+    "Percentage of GDP · #": 1
+   }
+  },
+  "uniao|en|precos-da-habitacao-2025": {
+   "estado": {
+    "outside the reference value (above # %)": 1
+   },
+   "nome": {
+    "House prices, annual change": 1
+   },
+   "unidade": {
+    "Annual change, as a percentage · #": 1
+   }
+  },
+  "uniao|en|racio-s80-s20-2025": {
+   "nome": {
+    "Income inequality": 1
+   },
+   "unidade": {
+    "Ratio of the richest fifth to the poorest fifth · #": 1
+   }
+  },
+  "uniao|en|risco-de-pobreza-ou-exclusao-2025": {
+   "nome": {
+    "At risk of poverty or social exclusion": 1
+   },
+   "unidade": {
+    "Percentage of the population · #": 1
+   }
+  },
+  "uniao|en|saldo-da-balanca-corrente-2025": {
+   "estado": {
+    "within the reference values (between −# and # %)": 1
+   },
+   "nome": {
+    "Current account balance": 1
+   },
+   "unidade": {
+    "Percentage of GDP, three-year average · #": 1
+   }
+  },
+  "uniao|en|sobrecarga-do-custo-da-habitacao-2025": {
+   "nome": {
+    "Housing cost overburden": 1
+   },
+   "unidade": {
+    "Percentage of the population · #": 1
+   }
+  },
+  "uniao|en|taxa-de-actividade-2025": {
+   "estado": {
+    "within the reference value (above −# pp)": 1
+   },
+   "nome": {
+    "Activity rate, three-year change": 1
+   },
+   "unidade": {
+    "Three-year change, in percentage points · #": 1
+   }
+  },
+  "uniao|en|taxa-de-cambio-efectiva-real-2025": {
+   "estado": {
+    "within the reference values (between −# and # %)": 1
+   },
+   "nome": {
+    "Real effective exchange rate, three-year change": 1
+   },
+   "unidade": {
+    "Three-year change, as a percentage · #": 1
+   }
+  },
+  "uniao|en|taxa-de-desemprego-2025": {
+   "nome": {
+    "Unemployment rate": 1
+   },
+   "unidade": {
+    "Percentage of the labour force · #": 1
+   }
+  },
+  "uniao|en|taxa-de-desemprego-mip-2025": {
+   "estado": {
+    "within the reference value (below # %)": 1
+   },
+   "nome": {
+    "Unemployment rate": 1
+   },
+   "unidade": {
+    "Percentage of the labour force · #": 1
+   }
+  },
+  "uniao|en|taxa-de-emprego-2025": {
+   "nome": {
+    "Employment rate": 1
+   },
+   "unidade": {
+    "Percentage of the population aged # to # · #": 1
+   }
+  },
+  "uniao|pt|abandono-escolar-precoce-2025": {
+   "nome": {
+    "Abandono escolar precoce": 1
+   },
+   "unidade": {
+    "Percentagem dos # aos # anos · #": 1
+   }
+  },
+  "uniao|pt|custo-unitario-do-trabalho-2025": {
+   "estado": {
+    "fora do valor de referência (acima de # %)": 1
+   },
+   "nome": {
+    "Custo unitário do trabalho, variação em três anos": 1
+   },
+   "unidade": {
+    "Variação em três anos, em percentagem · #": 1
+   }
+  },
+  "uniao|pt|desempenho-das-exportacoes-2025": {
+   "estado": {
+    "dentro do valor de referência (acima de −# %)": 1
+   },
+   "nome": {
+    "Quota nas exportações, variação em três anos": 1
+   },
+   "unidade": {
+    "Percentagem do total OCDE e UE não-OCDE, variação em três anos · #": 1
+   }
+  },
+  "uniao|pt|desemprego-de-longa-duracao-2025": {
+   "nome": {
+    "Desemprego de longa duração": 1
+   },
+   "unidade": {
+    "Percentagem da população ativa · #": 1
+   }
+  },
+  "uniao|pt|divida-das-empresas-2025": {
+   "estado": {
+    "dentro do valor de referência (abaixo de # %)": 1
+   },
+   "nome": {
+    "Dívida das empresas": 1
+   },
+   "unidade": {
+    "Percentagem do PIB · #": 1
+   }
+  },
+  "uniao|pt|divida-das-familias-2025": {
+   "estado": {
+    "dentro do valor de referência (abaixo de # %)": 1
+   },
+   "nome": {
+    "Dívida das famílias": 1
+   },
+   "unidade": {
+    "Percentagem do PIB · #": 1
+   }
+  },
+  "uniao|pt|divida-publica-2025": {
+   "estado": {
+    "fora do valor de referência (acima de # %)": 1
+   },
+   "nome": {
+    "Dívida pública": 1
+   },
+   "unidade": {
+    "Percentagem do PIB · #": 1
+   }
+  },
+  "uniao|pt|fluxo-de-credito-as-empresas-2025": {
+   "estado": {
+    "dentro do valor de referência (abaixo de # %)": 1
+   },
+   "nome": {
+    "Fluxo de crédito às empresas": 1
+   },
+   "unidade": {
+    "Percentagem do stock no final do período anterior · #": 1
+   }
+  },
+  "uniao|pt|fluxo-de-credito-as-familias-2025": {
+   "estado": {
+    "dentro do valor de referência (abaixo de # %)": 1
+   },
+   "nome": {
+    "Fluxo de crédito às famílias": 1
+   },
+   "unidade": {
+    "Percentagem do stock no final do período anterior · #": 1
+   }
+  },
+  "uniao|pt|jovens-nem-2025": {
+   "nome": {
+    "Jovens sem emprego, escola ou formação": 1
+   },
+   "unidade": {
+    "Percentagem da população · #": 1
+   }
+  },
+  "uniao|pt|posicao-de-investimento-internacional-2025": {
+   "estado": {
+    "fora do valor de referência (abaixo de −# %)": 1
+   },
+   "nome": {
+    "Posição de investimento internacional": 1
+   },
+   "unidade": {
+    "Percentagem do PIB · #": 1
+   }
+  },
+  "uniao|pt|precos-da-habitacao-2025": {
+   "estado": {
+    "fora do valor de referência (acima de # %)": 1
+   },
+   "nome": {
+    "Preços da habitação, variação anual": 1
+   },
+   "unidade": {
+    "Variação anual, em percentagem · #": 1
+   }
+  },
+  "uniao|pt|racio-s80-s20-2025": {
+   "nome": {
+    "Desigualdade de rendimento": 1
+   },
+   "unidade": {
+    "Rácio entre o quinto mais rico e o quinto mais pobre · #": 1
+   }
+  },
+  "uniao|pt|risco-de-pobreza-ou-exclusao-2025": {
+   "nome": {
+    "Risco de pobreza ou exclusão social": 1
+   },
+   "unidade": {
+    "Percentagem da população · #": 1
+   }
+  },
+  "uniao|pt|saldo-da-balanca-corrente-2025": {
+   "estado": {
+    "dentro dos valores de referência (entre −# e # %)": 1
+   },
+   "nome": {
+    "Saldo da balança corrente": 1
+   },
+   "unidade": {
+    "Percentagem do PIB, média de três anos · #": 1
+   }
+  },
+  "uniao|pt|sobrecarga-do-custo-da-habitacao-2025": {
+   "nome": {
+    "Sobrecarga do custo da habitação": 1
+   },
+   "unidade": {
+    "Percentagem da população · #": 1
+   }
+  },
+  "uniao|pt|taxa-de-actividade-2025": {
+   "estado": {
+    "dentro do valor de referência (acima de −# pp)": 1
+   },
+   "nome": {
+    "Taxa de atividade, variação em três anos": 1
+   },
+   "unidade": {
+    "Variação em três anos, em pontos percentuais · #": 1
+   }
+  },
+  "uniao|pt|taxa-de-cambio-efectiva-real-2025": {
+   "estado": {
+    "dentro dos valores de referência (entre −# e # %)": 1
+   },
+   "nome": {
+    "Taxa de câmbio efetiva real, variação em três anos": 1
+   },
+   "unidade": {
+    "Variação em três anos, em percentagem · #": 1
+   }
+  },
+  "uniao|pt|taxa-de-desemprego-2025": {
+   "nome": {
+    "Taxa de desemprego": 1
+   },
+   "unidade": {
+    "Percentagem da população ativa · #": 1
+   }
+  },
+  "uniao|pt|taxa-de-desemprego-mip-2025": {
+   "estado": {
+    "dentro do valor de referência (abaixo de # %)": 1
+   },
+   "nome": {
+    "Taxa de desemprego": 1
+   },
+   "unidade": {
+    "Percentagem da população ativa · #": 1
+   }
+  },
+  "uniao|pt|taxa-de-emprego-2025": {
+   "nome": {
+    "Taxa de emprego": 1
+   },
+   "unidade": {
+    "Percentagem da população dos # aos # anos · #": 1
+   }
+  }
+ }
+}

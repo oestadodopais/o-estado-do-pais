@@ -1,0 +1,65 @@
+{
+  "o_que": "A L1 do check:lugar página a página: a lista da construção da cabeça de partida (d9b168b9) e a de dist/, escritas pela régua da casa com AMOSTRA alta.",
+  "comando": "AMOSTRA=100000 node scripts/check-lugar.mjs (em cada árvore, sobre a sua construção)",
+  "antes": {
+    "paginas": 2342,
+    "contagem_impressa": 2342,
+    "teto": 2342
+  },
+  "depois": {
+    "paginas": 2342,
+    "contagem_impressa": 2342,
+    "teto": 2342,
+    "codigo": 0
+  },
+  "entraram": [],
+  "sairam": [],
+  "pioraram": [
+    {
+      "url": "/en/ledger/disparidade-salarial-entre-sexos-2024",
+      "antes": 1,
+      "depois": 2
+    },
+    {
+      "url": "/livro-razao/disparidade-salarial-entre-sexos-2024",
+      "antes": 1,
+      "depois": 2
+    }
+  ],
+  "melhoraram": [
+    {
+      "url": "/en/ledger/disparidade-de-emprego-entre-sexos-2025",
+      "antes": 2,
+      "depois": 1
+    },
+    {
+      "url": "/en/ledger/ihpc-variacao-homologa",
+      "antes": 3,
+      "depois": 2
+    },
+    {
+      "url": "/en/ledger/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+      "antes": 3,
+      "depois": 2
+    },
+    {
+      "url": "/livro-razao/disparidade-de-emprego-entre-sexos-2025",
+      "antes": 2,
+      "depois": 1
+    },
+    {
+      "url": "/livro-razao/ihpc-variacao-homologa",
+      "antes": 3,
+      "depois": 2
+    },
+    {
+      "url": "/livro-razao/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025",
+      "antes": 3,
+      "depois": 2
+    }
+  ],
+  "conhecido_positivo": {
+    "o_que": "a lista de antes tem as páginas que a contagem impressa diz",
+    "encontrado": true
+  }
+}

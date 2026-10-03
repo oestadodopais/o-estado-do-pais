@@ -1,0 +1,59 @@
+{
+  "o_que": "As decisões do construtor do R2 sobre os 27 achados da triagem (design/especime-v3/critica/AUDITORIA-R2-rotulos-2026-10-03.md), achado a achado; o relatório do bloco diz a forma de antes e a de depois de cada um.",
+  "estados": {
+    "1": "feito",
+    "2": "feito",
+    "3": "feito",
+    "4": "parado",
+    "5": "feito",
+    "6": "feito_em_parte",
+    "7": "feito",
+    "8": "feito",
+    "9": "feito_em_parte",
+    "10": "feito_em_parte",
+    "11": "por_verificar",
+    "12": "feito",
+    "13": "feito",
+    "14": "feito_em_parte",
+    "15": "feito",
+    "16": "feito",
+    "17": "feito",
+    "18": "feito",
+    "19": "recusado",
+    "20": "feito",
+    "21": "feito",
+    "22": "feito",
+    "23": "feito",
+    "24": "feito_em_parte",
+    "25": "feito_em_parte",
+    "26": "feito",
+    "27": "feito"
+  },
+  "contagens": {
+    "feito": 18,
+    "parado": 1,
+    "feito_em_parte": 6,
+    "por_verificar": 1,
+    "recusado": 1
+  },
+  "parado": [
+    "achado 4: o excerto da linha diz «Share of exports of advanced economies — Percentage of OECD and non-OECD EU countries total - 3-year change»; a forma da triagem («no mercado mundial», «share of world exports») nomeia outra coisa; nada mudou no cartão"
+  ],
+  "verify": [
+    "achado 6: o acréscimo da Madeira não se escreve na pergunta do salário mínimo; nenhuma origem declarada diz o valor regional da Madeira (a nota da linha cita o decreto regional, mas a nota não é uma origem que a K16 aceite)",
+    "achado 6: o cartão do Eurostat (doze meses, 1 073) não ganha «(continente)»; o excerto da linha diz «Portugal»",
+    "achado 9: a água não faturada fica com «%»; o excerto da linha está «[a verificar]», e não há literal que diga de que é a percentagem",
+    "achado 10: o VAB fica por explicar na dobra; nenhuma origem declarada o define",
+    "achado 11: a dobra do PIB por habitante das regiões (paridade do poder de compra) fica por escrever; nenhuma origem declarada diz o que o índice mede",
+    "achado 11: os cartões do poder de compra de Évora e do Alentejo Central nas páginas das áreas ficam sem pergunta; nenhuma origem declarada a sustenta (a nota da medida dos concelhos já explica o índice)",
+    "achado 14: a dobra do fator de sustentabilidade («como se lê») fica por escrever; o relatório que a linha cita não é uma origem declarada",
+    "achado 24: «% do orçamento» fica; os excertos das duas linhas não dizem «prevista»",
+    "achado 25: a dobra que explica «reexpressa» fica por escrever; nenhuma origem declarada diz o que o relatório de 2021 mudou ao valor de 2013",
+    "achado 24: a unidade das pensões fica «euros por pensionista por ano», como a linha a escreve (a triagem: «a linha decide»); o título do INE diz «Valor médio das pensões da segurança social (Série 2017 - €/ N.º)», que aponta para por pensão, e a metainformação do INE que o diria não é origem declarada"
+  ],
+  "notas": {
+    "11": "nenhum rótulo mudou: as dobras da triagem pedem origens que digam o que o índice mede, e nenhuma está declarada; a nota da medida dos concelhos já explicava o índice do poder de compra antes do bloco",
+    "18": "a regra dos 40 % do rendimento já estava na pergunta da sobrecarga do custo da habitação antes do bloco",
+    "24": "a dobra da linha de pobreza já dizia «uma pessoa que vive sozinha» antes do bloco"
+  }
+}

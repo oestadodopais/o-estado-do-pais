@@ -1,0 +1,8 @@
+
+> o-estado-do-pais@0.1.0 provar:guardas
+> node scripts/provar-guardas.mjs
+
+
+[90m  guardas · 134 conferência(s) sobre os guardas de execução do bloco F0.4[0m
+  [32m✓[0m cada guarda recusa o que promete recusar e aceita o que promete aceitar.
+
