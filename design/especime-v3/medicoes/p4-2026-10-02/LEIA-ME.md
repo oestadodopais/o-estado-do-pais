@@ -171,3 +171,19 @@ A corrida final correu pela tranca (`sh scripts/leituras/portoes.sh`) na cabeça
 - A unidade antiga na legenda e no cabeçalho da tabela do mapa da dívida em «Lugares», se o lugar de direção a quiser igual à do cartão.
 - As 11 linhas do INE cujo excerto não é o registo da resposta, que a regra das casas decimais não lê: refazer o excerto no motor.
 - A leitura a frio desta passagem, por outra família.
+
+## P4-d · a média na unidade, e o mapa da dívida com as palavras do cartão
+
+*Claude Opus 5.5, 02.10.2026, na mesma worktree, sobre `2ab86a0c`. As medidas têm o prefixo `p4d_` em `medidas.json`, e os ficheiros estão em `p4-d/`.*
+
+**O que mudou.**
+1. A unidade da casa do cartão do índice de dívida passa a `% da receita média de três anos` / `% of the three-year average revenue` (`src/data/concelhos.mjs`): a de antes lia-se como a soma dos três anos, e o valor é sobre a média. O apoio que o portão exige na derivação de cada linha não muda.
+2. O mapa da dívida em «Lugares» diz, na legenda e no cabeçalho da tabela, a mesma unidade e o teto, «o limite legal é 150 %», com o 150 lido da linha `indice-de-divida-limite-legal` por `<Claim/>`, com a sua marca, nas duas edições. O portão de HTML aceita a marca `data-unidade-da-casa-do-mapa` só no mapa da sua medida, na legenda ou no cabeçalho, com o texto da declaração e com cada linha da tabela a dizer o apoio, e exige-a 4 vezes; a N1M do `check:navegacao` e a célula ID7 conferem a unidade, a palavra e o teto. O mapa dos ganhos, o recibo, o índice do livro-razão e as linhas da página de área ficam como estavam.
+
+**As plantas.** Na célula ID, 9 de 9 a morder, três novas: a unidade sem a média, a legenda do mapa na forma antiga e o teto do cabeçalho escrito à mão (`p4-d/indice-de-divida.json`). Na N1M, as 3 do mapa da dívida a morder: a unidade da tabela tirada, a legenda na forma antiga e o teto escrito à mão (`p4-d/check-navegacao.log`). Nos portões, 3 de 3 a morder, com os bytes repostos: a unidade sem a média no cartão, a unidade antiga na legenda do mapa e a unidade do mapa fora da legenda (`plantas-portoes-p4-d/`). As 4 capturas do cartão de Évora refeitas sobre a construção de `120e7409`, em `design/especime-v3/capturas/p4-2026-10-02/p4-d-cartao-indice-evora-*.png`, com o manifesto em `capturas-p4-d.json` e 0 problemas. O inventário das frases ganhou 6 cadeias, com a entrada da revisão; `CHAVES-EN.md` regista a chave nova e a unidade nova; o mapa do repositório foi posto em dia (244 citações na linha citada, 0 longe).
+
+**Os commits.** `120e7409` (as duas mudanças, as células e as plantas), o commit desta secção (as capturas, as medidas, o mapa do repositório e a resposta curta), e o seguinte, com os códigos dos portões em `portoes-d/`.
+
+**O custo.** 52 177 símbolos e 1 081 segundos até esta secção, das duas leituras em ficheiro (`custo-inicio-p4-d.json` e `custo-fim-p4-d.json`); o modelo foi o Claude Opus 5.5.
+
+**Os portões.** A corrida final corre pela tranca na cabeça do commit desta secção, e os códigos, lidos dos ficheiros, entram no commit seguinte, em `portoes-d/`, com esta linha posta em dia.
