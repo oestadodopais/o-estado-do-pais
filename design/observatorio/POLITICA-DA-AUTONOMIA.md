@@ -48,7 +48,7 @@ O lugar de direção é o Claude Fable 5 (briefs, revisão, fusão, política, r
 - A casa não escreve para o alcance: mede-se por citações, não por visitas; não muda uma conclusão para agradar a um leitor, a um comprador ou a um financiador.
 - A casa não publica um número que não tenha lido na fonte, não aproxima o que não existe, e diz as ausências.
 - A casa não chama jornalista à IA e não se diz jornalística; é um observatório com estudos, e o que a lei exigir a uma publicação periódica cumpre-se pelo nome próprio das coisas (`DILIGENCIA-LEGAL.md`).
-- A casa não guarda dados pessoais dos leitores nem os põe no repositório; os ficheiros da ronda de leitores nunca entram num repositório público.
+- Este projeto só guarda dados pessoais de quem usa a caixa das sugestões, pelo tempo e para o fim que a nota da caixa diz, e nunca os põe no repositório; os ficheiros da ronda de leitores nunca entram num repositório público. (Decisão do diretor de 03.10.2026, `DECISIONS.md` §1.154.)
 
 ## 7 · Como esta política se mantém
 

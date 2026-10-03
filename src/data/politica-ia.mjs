@@ -456,9 +456,15 @@ export const POLITICA = {
         pt: 'Este projeto não chama jornalista à inteligência artificial e não se diz jornalístico.',
         en: 'This project does not call artificial intelligence a journalist and does not call itself journalism.',
       },
+      /* A quinta recusa mudou com a caixa das sugestões, por decisão do diretor de 03.10.2026 (§1.154), no texto
+         que ele aprovou; o §6 de `design/observatorio/POLITICA-DA-AUTONOMIA.md` diz o mesmo, com a data. */
       {
-        pt: 'Este projeto não guarda dados pessoais dos leitores nem os põe no repositório.',
-        en: 'This project keeps no personal data of its readers and puts none in the repository.',
+        pt:
+          'Este projeto só guarda dados pessoais de quem usa a caixa das sugestões, pelo tempo e para o fim ' +
+          'que a nota da caixa diz, e nunca os põe no repositório.',
+        en:
+          'This project keeps personal data only of those who use the suggestions box, for the time and the ' +
+          "purpose that the box's note states, and never puts it in the repository.",
       },
     ],
   },
