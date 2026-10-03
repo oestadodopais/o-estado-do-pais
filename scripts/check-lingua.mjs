@@ -1122,7 +1122,8 @@ if (erros.length) {
 console.log(
   verde('  língua ✓ ') +
     `${unidadesDoLivro.size} unidade(s) do livro-razão: ${Object.keys(UNIDADES).length} traduzida(s), ` +
-    `${Object.keys(UNIDADES_EM_PORTUGUES).length} em português com razão escrita · ` +
+    /* R2 (03.10.2026, item 4 do mandato): a linha diz também QUAIS ficam em português, e não só quantas. */
+    `${Object.keys(UNIDADES_EM_PORTUGUES).length} em português com razão escrita (${Object.keys(UNIDADES_EM_PORTUGUES).map((u) => `«${u}»`).join(', ')}) · ` +
     `${comLocalizador} localizador(es), todos dentro de documento português · ` +
     `${titulosDoLivro.size} título(s) de documento com língua declarada ` +
     `(${Object.values(LINGUA_DOS_TITULOS).filter((l) => l === 'pt').length} pt, ` +

@@ -1369,3 +1369,28 @@ isso o pequeno dos rótulos entra sem uma palavra nova em nenhuma das edições.
 | `estado.lei.oLimiteLegalE` | o limite legal é | the legal limit is | na legenda e no cabeçalho da tabela do mapa da dívida em «Lugares», seguida do teto lido da linha `indice-de-divida-limite-legal` («150 %»), com a sua marca |
 
 **A unidade da casa do índice de dívida muda de texto** (`unidadeDaCasa` em `src/data/concelhos.mjs`): «% da receita de três anos» → «% da receita média de três anos»; «% of three-year revenue» → «% of the three-year average revenue». A unidade de antes lia-se como a soma dos três anos, e o valor é sobre a média, que a derivação de cada linha e a dobra do cartão dizem. O apoio que o portão exige na derivação não muda.
+
+### R2 · os rótulos do sítio (03.10.2026)
+
+*O bloco R2, pela auditoria dos rótulos de 03.10.2026 e pela triagem do lugar de direção. As cadeias abaixo foram lidas de `src/i18n/strings.mjs` na construção do bloco.*
+
+**Oito chaves novas, o estado contra o valor de referência dito por quem o fixa** (o achado 20; substituem `estado.fora`, `estado.dentro`, `estado.foraBanda`, `estado.dentroBanda` e `estado.dono`, que saíram):
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `estado.doDono.comissao.dentro` · `.fora` | dentro do valor de referência da Comissão · fora do valor de referência da Comissão | within the Commission’s reference value · outside the Commission’s reference value | o painel do Procedimento; em inglês o dono vai antes do nome, e por isso cada forma é inteira e não uma soma de pedaços |
+| `estado.doDono.comissao.dentroBanda` · `.foraBanda` | dentro dos valores de referência da Comissão · fora dos valores de referência da Comissão | within the Commission’s reference values · outside the Commission’s reference values | as duas medidas com uma banda de dois lados |
+| `estado.doDono.pacto.dentro` · `.fora` | dentro do limite do Pacto de Estabilidade · fora do limite do Pacto de Estabilidade | within the Stability Pact limit · outside the Stability Pact limit | o saldo das contas públicas: um limite ao défice |
+| `estado.doDono.conselho.dentro` · `.fora` | dentro da trajetória da despesa aprovada pelo Conselho da UE · fora da trajetória da despesa aprovada pelo Conselho da UE | within the expenditure path approved by the Council of the EU · outside the expenditure path approved by the Council of the EU | o crescimento da despesa líquida: uma trajetória |
+
+**A faixa do concelho** (os achados 21 e 22): oito chaves novas (`lugarD`, `semValorC`, `comparacaoLinhaC`, `comparacaoBaseA`, `comparacaoBaseB`, `mediaAcima`, `mediaAbaixo`, `mediaIgual`), quatro que mudam de texto, e uma que sai (`comparacaoBase`):
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `municipio.faixaDoConcelho.lugarC` · `.lugarD` | « concelhos com valor » · «, » | « municipalities with a value » · «, » | entre as duas entra o nome da medida, declarado na tabela das ordens (`naFrase`: «no índice de dívida» / «for the debt index») |
+| `municipio.faixaDoConcelho.semValorB` · `.semValorC` | « concelhos com valor » · «.» | « municipalities with a value » · «.» | o mesmo, na frase de um concelho sem valor |
+| `municipio.faixaDoConcelho.comparacaoLinhaA` · `.comparacaoLinhaB` · `.comparacaoLinhaC` | «, onde » · « é de » · «.» | «, where » · « is » · «.» | entre a primeira e a segunda entra o que é o valor de Portugal (`ondePortugal`: «o ganho médio» / «the average»), e depois do valor a unidade da linha nacional, pelo dicionário das unidades |
+| `municipio.faixaDoConcelho.comparacaoBaseA` · `.comparacaoBaseB` | « (» · «).» | « (» · «).» | à volta da base do índice, escrita como a unidade de cada linha a escreve |
+| `municipio.faixaDoConcelho.mediaAcima` · `.mediaAbaixo` · `.mediaIgual` | acima da média de Portugal · abaixo da média de Portugal · igual à média de Portugal | above Portugal’s average · below Portugal’s average · level with Portugal’s average | a palavra do lado na comparação com a base do índice; as palavras «acima de Portugal» e «abaixo de Portugal» ficam na comparação com a linha nacional e na leitura do lugar |
+
+**O que não é uma chave de `strings.mjs`, e onde vive:** a unidade de cada cartão nacional que difere da unidade da linha (`UNIDADES_DOS_CARTOES`, em `src/data/unidades-dos-cartoes.mjs`, nas duas línguas e com o apoio de cada uma); a unidade do índice de dívida («% da receita média dos três anos anteriores» / «% of the average revenue of the previous three years», em `src/data/concelhos.mjs`); as notas das medidas dos concelhos (`src/data/concelhos.mjs`; a inglesa da dívida e a do prazo citam o termo da DGAL em português, com a marca da língua); os nomes dos cartões (`src/data/figuras.mjs`, `src/data/dominios.mjs`, `src/data/nomes-das-medidas.mjs`); as perguntas novas de sete cartões (`DEFINICOES_DAS_MEDIDAS`); e as palavras da medida na frase da faixa (`naFrase` e `ondePortugal`, em `src/data/faixa-do-concelho.mjs`).
