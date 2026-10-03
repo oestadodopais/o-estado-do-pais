@@ -34,5 +34,5 @@
 - **A unidade.** `% da receita média de três anos` / `% of the three-year average revenue`, no cartão do índice de dívida das 616 páginas de concelho; a planta da unidade sem a média morde.
 - **O mapa da dívida em «Lugares».** A legenda e o cabeçalho da tabela dizem a mesma unidade e «o limite legal é 150 %», com o 150 lido da linha do limite e a sua marca, nas duas edições; a planta da forma antiga morde na célula ID, na N1M e no portão de HTML.
 - **Plantas**: 9 de 9 na célula ID, 3 do mapa na N1M, 3 de 3 nos portões. **Capturas**: as 4 do cartão de Évora refeitas, com 0 problemas.
-- **Portões da passagem**: correm pela tranca na cabeça do commit desta resposta, e os códigos entram no commit seguinte, em `portoes-d/`.
+- **Portões da passagem**: na cabeça `d896577c`, pela tranca, `build` 0, `verify` 0 e `typecheck` 0 (`portoes-d/`).
 - **Custo da passagem**: 52 177 símbolos e 1 081 segundos, das duas leituras em ficheiro.

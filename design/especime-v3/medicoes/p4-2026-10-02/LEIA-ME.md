@@ -186,4 +186,4 @@ A corrida final correu pela tranca (`sh scripts/leituras/portoes.sh`) na cabeça
 
 **O custo.** 52 177 símbolos e 1 081 segundos até esta secção, das duas leituras em ficheiro (`custo-inicio-p4-d.json` e `custo-fim-p4-d.json`); o modelo foi o Claude Opus 5.5.
 
-**Os portões.** A corrida final corre pela tranca na cabeça do commit desta secção, e os códigos, lidos dos ficheiros, entram no commit seguinte, em `portoes-d/`, com esta linha posta em dia.
+**Os portões.** A corrida final correu pela tranca (`sh scripts/leituras/portoes.sh`) na cabeça `d896577c`, a do commit desta secção, com a cabeça ao lado dos códigos (`portoes-d/cabeca`): `build` 0, `verify` 0 e `typecheck` 0, lidos de `portoes-d/build.codigo`, `portoes-d/verify.codigo` e `portoes-d/typecheck.codigo`. Os registos levam `<worktree>` e `<casa>` no lugar dos caminhos da máquina.
