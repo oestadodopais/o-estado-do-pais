@@ -1237,11 +1237,30 @@ export const STRINGS = {
          O DONO DO VALOR DE REFERÊNCIA CONTINUA DITO, na linha da leitura
          (`rotulo`) e na frase que diz o que ele é (`frase`): o que saiu foi a
          palavra «limiar», não a atribuição. */
-      fora: 'fora do valor de referência',
-      dentro: 'dentro do valor de referência',
-      foraBanda: 'fora dos valores de referência',
-      dentroBanda: 'dentro dos valores de referência',
-      dono: { pacto: ' do Pacto', conselho: ' do Conselho da UE' },
+      /* O ESTADO DIZ CONTRA O QUÊ (bloco R2, 03.10.2026, achado 20 da auditoria dos rótulos). As palavras eram «fora do
+         valor de referência» com o dono acrescentado só ao Pacto e ao Conselho, e um leitor não sabia de quem era a
+         referência da Comissão, nem que a do Pacto é um limite e a do Conselho uma trajetória. Cada forma passa a
+         dizer quem a fixa, inteira, por quem a fixa (o campo `limiarFixadoPor` da declaração da medida): a Comissão,
+         pelo painel do Procedimento; o Pacto de Estabilidade, pelo limite do défice (`eurostat-gfs-pacto`: «a Member
+         State's government deficit may not exceed 3%»); e o Conselho da UE, pela trajetória da despesa que aprovou
+         (`cfp-trajetoria`: «trajetória de crescimento da despesa líquida, que depois foi aprovada pelo Conselho da
+         UE»). A direção (`direcao`) continua a dizer o lado do número, calculada à parte. */
+      doDono: {
+        comissao: {
+          dentro: 'dentro do valor de referência da Comissão',
+          fora: 'fora do valor de referência da Comissão',
+          dentroBanda: 'dentro dos valores de referência da Comissão',
+          foraBanda: 'fora dos valores de referência da Comissão',
+        },
+        pacto: {
+          dentro: 'dentro do limite do Pacto de Estabilidade',
+          fora: 'fora do limite do Pacto de Estabilidade',
+        },
+        conselho: {
+          dentro: 'dentro da trajetória da despesa aprovada pelo Conselho da UE',
+          fora: 'fora da trajetória da despesa aprovada pelo Conselho da UE',
+        },
+      },
       direcao: { acima: 'acima de', abaixo: 'abaixo de', entre: 'entre', noLimiar: 'igual a', e: 'e' },
       acima: 'acima do valor de referência',
       abaixo: 'abaixo do valor de referência',
@@ -2478,10 +2497,14 @@ export const STRINGS = {
        * chaves: em português é «.º» depois de qualquer número; em inglês, o
        * sufixo que a regra do inglês escolhe, como na faixa da União. */
       faixaDoConcelho: {
+        /* R2 (03.10.2026, achados 21 e 22): a frase do lugar nomeia a medida («… concelhos com valor no índice de
+           dívida, …»), pelas palavras que a tabela das ordens declara para cada uma (`naFrase`), e a comparação diz o
+           que é o valor de Portugal: a linha nacional, com a sua unidade, ou a média do país que é a base do índice. */
         lugarA: ' está em ',
         ordinal: { st: '.º', nd: '.º', rd: '.º', th: '.º' },
         lugarB: ' lugar entre os ',
-        lugarC: ' concelhos com valor, ',
+        lugarC: ' concelhos com valor ',
+        lugarD: ', ',
         ordem: {
           'do-mais-alto': 'do mais alto para o mais baixo',
           'do-mais-baixo': 'do mais baixo para o mais alto',
@@ -2491,14 +2514,20 @@ export const STRINGS = {
         aParVariosB: ' outros concelhos com o mesmo valor',
         fim: '.',
         semValorA: ' não tem valor publicado neste período, e por isso não tem lugar entre os ',
-        semValorB: ' concelhos com valor.',
+        semValorB: ' concelhos com valor ',
+        semValorC: '.',
         comparacaoA: 'Está ',
-        comparacaoLinhaA: ' (',
-        comparacaoLinhaB: ').',
-        comparacaoBase: ', que é a base do índice.',
+        comparacaoLinhaA: ', onde ',
+        comparacaoLinhaB: ' é de ',
+        comparacaoLinhaC: '.',
+        comparacaoBaseA: ' (',
+        comparacaoBaseB: ').',
         acima: 'acima de Portugal',
         abaixo: 'abaixo de Portugal',
         igual: 'igual a Portugal',
+        mediaAcima: 'acima da média de Portugal',
+        mediaAbaixo: 'abaixo da média de Portugal',
+        mediaIgual: 'igual à média de Portugal',
         semComparacao: 'Sem comparação com Portugal no mesmo período.',
       },
       /* O VALOR QUE A FONTE NÃO PUBLICOU (B1, peça 2; a nota D4 da maqueta).
@@ -3421,11 +3450,23 @@ export const STRINGS = {
     estado: {
       /** Ver a razão na edição portuguesa, e o registo em `CHAVES-EN.md`. */
       /* Ver a razão na edição portuguesa (item 8 do P1, 15.09.2026). */
-      fora: 'outside the reference value',
-      dentro: 'within the reference value',
-      foraBanda: 'outside the reference values',
-      dentroBanda: 'within the reference values',
-      dono: { pacto: ' of the Pact', conselho: ' of the Council of the EU' },
+      /* Ver a razão na edição portuguesa (bloco R2, 03.10.2026, achado 20). */
+      doDono: {
+        comissao: {
+          dentro: 'within the Commission’s reference value',
+          fora: 'outside the Commission’s reference value',
+          dentroBanda: 'within the Commission’s reference values',
+          foraBanda: 'outside the Commission’s reference values',
+        },
+        pacto: {
+          dentro: 'within the Stability Pact limit',
+          fora: 'outside the Stability Pact limit',
+        },
+        conselho: {
+          dentro: 'within the expenditure path approved by the Council of the EU',
+          fora: 'outside the expenditure path approved by the Council of the EU',
+        },
+      },
       direcao: { acima: 'above', abaixo: 'below', entre: 'between', noLimiar: 'equal to', e: 'and' },
       acima: 'above the reference value',
       abaixo: 'below the reference value',
@@ -3984,7 +4025,8 @@ export const STRINGS = {
         lugarA: ' ranks ',
         ordinal: { st: 'st', nd: 'nd', rd: 'rd', th: 'th' },
         lugarB: ' of the ',
-        lugarC: ' municipalities with a value, ',
+        lugarC: ' municipalities with a value ',
+        lugarD: ', ',
         ordem: {
           'do-mais-alto': 'from the highest to the lowest',
           'do-mais-baixo': 'from the lowest to the highest',
@@ -3994,14 +4036,20 @@ export const STRINGS = {
         aParVariosB: ' other municipalities with the same value',
         fim: '.',
         semValorA: ' has no published value for this period, so it has no place among the ',
-        semValorB: ' municipalities with a value.',
+        semValorB: ' municipalities with a value ',
+        semValorC: '.',
         comparacaoA: 'It is ',
-        comparacaoLinhaA: ' (',
-        comparacaoLinhaB: ').',
-        comparacaoBase: ', which is the base of the index.',
+        comparacaoLinhaA: ', where ',
+        comparacaoLinhaB: ' is ',
+        comparacaoLinhaC: '.',
+        comparacaoBaseA: ' (',
+        comparacaoBaseB: ').',
         acima: 'above Portugal',
         abaixo: 'below Portugal',
         igual: 'level with Portugal',
+        mediaAcima: 'above Portugal’s average',
+        mediaAbaixo: 'below Portugal’s average',
+        mediaIgual: 'level with Portugal’s average',
         semComparacao: 'No comparison with Portugal for the same period.',
       },
       /* Ver a razão na edição portuguesa (B1, peça 2). */

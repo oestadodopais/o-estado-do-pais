@@ -9,7 +9,13 @@ const estado = estadoDaMedida(linha, limiar);
 const comparacao = comparacaoComOLimiar(linha, limiar);
 const banda = Boolean(limiar?.inferior && limiar?.superior);
 const pintado = estado === 'fora' || estado === 'dentro';
-const palavra = pintado ? s.estado[`${estado}${banda ? 'Banda' : ''}`] + (s.estado.dono[dono] ?? '') : null;
+/* R2 (03.10.2026, achado 20): a forma inteira diz quem fixa a referência, pela tabela `estado.doDono` de
+   `strings.mjs`. Um dono ou uma forma que a tabela não tenha fecha a construção, em vez de render uma referência
+   sem dono. */
+const palavra = pintado ? s.estado.doDono[dono]?.[`${estado}${banda ? 'Banda' : ''}`] ?? null : null;
+if (pintado && !palavra) {
+  throw new Error(`VeredictoDaReferencia: a tabela estado.doDono não tem a forma «${estado}${banda ? 'Banda' : ''}» do dono «${dono}».`);
+}
 const entre = banda && comparacao === null && estado === 'dentro';
 const ponta = banda ? limiar[comparacao === 'abaixo' ? 'inferior' : 'superior'] : limiar;
 const direcao = entre ? s.estado.direcao.entre : s.estado.direcao[comparacao];

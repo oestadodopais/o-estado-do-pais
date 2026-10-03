@@ -135,7 +135,13 @@ const LISTA_PDM = [
   {
     claim: 'posicao-de-investimento-internacional-2025',
     quadro: 'pdm',
-    nome: { pt: 'Posição de investimento internacional', en: 'Net international investment position' },
+    /* R2 (03.10.2026, achado 17): o nome em palavras comuns, com o termo da fonte entre parênteses (o Banco de Portugal,
+       `bdp-pii`: «o saldo entre os ativos financeiros e os passivos que os residentes de uma economia têm relativamente
+       ao resto do mundo»). */
+    nome: {
+      pt: 'O que o país tem no exterior menos o que deve (posição de investimento internacional)',
+      en: 'What the country owns abroad minus what it owes (net international investment position)',
+    },
     nomeNoVeredicto: { pt: 'a posição de investimento internacional', en: 'the international investment position' },
     medida: {
       pt: ['Percentagem do PIB · ', { ref: '2025' }],
@@ -151,7 +157,10 @@ const LISTA_PDM = [
     /* O NOME DIZ A VARIAÇÃO (bloco K2, 02.10.2026, item 2 do brief): o valor é a variação em três anos do índice, e
        o nome de nível lia-se como o custo. A linha da unidade continua a dizer o período (decisão 2 do brief); o
        veredicto e a lista da lede dizem a mesma coisa, sem a vírgula do nome, que partiria a lista. */
-    nome: { pt: 'Custo unitário do trabalho, variação em três anos', en: 'Unit labour cost, three-year change' },
+    /* R2 (03.10.2026, achados 13 e 16): o nome em palavras comuns, com o termo da fonte entre parênteses (a descrição
+       do conjunto, `eurostat-tipslm10-descricao`: «the ratio of labour cost to labour productivity»); a variação em três
+       anos passa para a unidade do cartão («% de variação em três anos»), que já a diz. */
+    nome: { pt: 'Custo do trabalho por unidade produzida (custo unitário do trabalho)', en: 'Labour cost per unit of output (unit labour cost)' },
     nomeNoVeredicto: { pt: 'a variação em três anos do custo unitário do trabalho', en: 'the three-year change in unit labour cost' },
     nomeNaFrase: { pt: 'variação em três anos do custo unitário do trabalho', en: 'three-year change in unit labour cost' },
     /* A UNIDADE DO VALOR NA FAIXA DA UNIÃO (passagem K2-c, 02.10.2026, achado 6 da leitura a frio do Codex): «21,3» com
@@ -189,6 +198,11 @@ const LISTA_PDM = [
     /* O NOME DIZ A VARIAÇÃO (bloco K2-b, 02.10.2026, a decisão do lugar de direção sobre os seis cartões que o §0 do
        brief K2 não contou): o valor é a variação em três anos da quota, como a unidade da linha diz, e o nome de nível
        lia-se como a quota. */
+    /* R2 (03.10.2026): o achado 4 da auditoria dos rótulos PAROU. A forma da triagem («Quota das exportações no mercado
+       mundial» / «share of world exports») nomeia outra coisa: o excerto da linha diz «Share of exports of advanced
+       economies — Percentage of OECD and non-OECD EU countries total - 3-year change», e a quota é no total das
+       exportações dos países da OCDE e dos países da União fora dela, e não no mercado mundial. O nome e a unidade
+       ficam como estavam até o lugar de direção decidir (o relatório do bloco R2). */
     nome: { pt: 'Quota nas exportações, variação em três anos', en: 'Share of exports, three-year change' },
     nomeNoVeredicto: { pt: 'a variação em três anos da quota nas exportações', en: 'the three-year change in the share of exports' },
     nomeNaFrase: { pt: 'variação em três anos da quota nas exportações', en: 'three-year change in the share of exports' },
@@ -243,7 +257,9 @@ const LISTA_PDM = [
   {
     claim: 'divida-das-empresas-2025',
     quadro: 'pdm',
-    nome: { pt: 'Dívida das empresas', en: 'Corporate debt' },
+    /* R2 (03.10.2026, achado 7, Blocking): as empresas da medida são só as não financeiras (o título do conjunto,
+       «Non-financial corporations debt, consolidated»); o resto da fronteira do setor está na dobra. */
+    nome: { pt: 'Dívida das empresas (não financeiras)', en: 'Debt of (non-financial) companies' },
     nomeNoVeredicto: { pt: 'a dívida das empresas' },
     medida: {
       pt: ['Percentagem do PIB · ', { ref: '2025' }],
@@ -269,11 +285,16 @@ const LISTA_PDM = [
   {
     claim: 'fluxo-de-credito-as-empresas-2025',
     quadro: 'pdm',
-    nome: { pt: 'Fluxo de crédito às empresas', en: 'Credit flow to corporations' },
+    /* R2 (03.10.2026, achado 7, Blocking): a mesma fronteira da dívida das empresas (o título do conjunto,
+       «Non-financial corporations excluding foreign direct investments credit flow»); a exclusão do investimento direto
+       estrangeiro está na dobra. */
+    nome: { pt: 'Fluxo de crédito às empresas (não financeiras)', en: 'Credit flow to (non-financial) companies' },
     nomeNoVeredicto: { pt: 'o fluxo de crédito às empresas' },
     medida: {
-      pt: ['Percentagem do stock no final do período anterior · ', { ref: '2025' }],
-      en: ['Percentage of the stock at the end of the previous period · ', { ref: '2025' }],
+      /* R2 (03.10.2026, achado 15): «stock» lia-se como um inventário e «período» escondia que é o ano; a mesma forma
+         da unidade do cartão (`src/data/unidades-dos-cartoes.mjs`), escrita por extenso nesta linha. */
+      pt: ['Percentagem da dívida no fim do ano anterior · ', { ref: '2025' }],
+      en: ['Percentage of debt at the end of the previous year · ', { ref: '2025' }],
     },
     /* nota: «… 13%.» */
     limiar: { nl: '13', lado: 'superior', simbolo: '%' },
@@ -285,8 +306,10 @@ const LISTA_PDM = [
     nome: { pt: 'Fluxo de crédito às famílias', en: 'Credit flow to households' },
     nomeNoVeredicto: { pt: 'o fluxo de crédito às famílias' },
     medida: {
-      pt: ['Percentagem do stock no final do período anterior · ', { ref: '2025' }],
-      en: ['Percentage of the stock at the end of the previous period · ', { ref: '2025' }],
+      /* R2 (03.10.2026, achado 15): «stock» lia-se como um inventário e «período» escondia que é o ano; a mesma forma
+         da unidade do cartão (`src/data/unidades-dos-cartoes.mjs`), escrita por extenso nesta linha. */
+      pt: ['Percentagem da dívida no fim do ano anterior · ', { ref: '2025' }],
+      en: ['Percentage of debt at the end of the previous year · ', { ref: '2025' }],
     },
     /* nota: «… 14%.» */
     limiar: { nl: '14', lado: 'superior', simbolo: '%' },
@@ -298,8 +321,10 @@ const LISTA_PDM = [
     nome: { pt: 'Saldo da balança corrente', en: 'Current account balance' },
     nomeNoVeredicto: { pt: 'o saldo da balança corrente' },
     medida: {
-      pt: ['Percentagem do PIB, média de três anos · ', { ref: '2025' }],
-      en: ['Percentage of GDP, three-year average · ', { ref: '2025' }],
+      /* R2 (03.10.2026, achado 10): «média de três anos» não dizia que anos; a linha da Comissão diz a média móvel para
+         trás, a do ano e dos dois anteriores. */
+      pt: ['Percentagem do PIB, média do ano e dos dois anteriores · ', { ref: '2025' }],
+      en: ['Percentage of GDP, average of the year and the two before · ', { ref: '2025' }],
     },
     /* nota: «… -4/+6%.» É uma BANDA, e é a nota que a declara com os dois
        lados: o défice não passa de 4% e o excedente não passa de 6%. */
@@ -315,12 +340,19 @@ const LISTA_PDM = [
     quadro: 'pdm',
     /* O NOME DIZ A VARIAÇÃO (bloco K2, item 2; o exemplo do brief): o valor, 2,6, é a variação em três anos em
        pontos percentuais, e o nome de uma taxa lia-se como a taxa. */
-    nome: { pt: 'Taxa de atividade, variação em três anos', en: 'Activity rate, three-year change' },
+    /* R2 (03.10.2026, achados 13 e 16): o nome em palavras comuns, com o termo da fonte entre parênteses (o glossário,
+       `glossario-atividade`: «The economically active population comprises employed and unemployed persons»); a
+       diferença em três anos passa para a unidade do cartão. A triagem escrevia «Pessoas dos 15 aos 64 anos que…»: as
+       idades ficam na dobra e na pergunta, porque um nome não traz algarismos (a regra dos nomes, no cabeçalho de
+       `src/data/nomes-das-medidas.mjs`, e o portão de HTML recusaria os dois sem marca). */
+    nome: { pt: 'Pessoas que trabalham ou procuram trabalho (taxa de atividade)', en: 'People who work or are looking for work (activity rate)' },
     nomeNoVeredicto: { pt: 'a variação em três anos da taxa de atividade', en: 'the three-year change in the activity rate' },
     nomeNaFrase: { pt: 'variação em três anos da taxa de atividade', en: 'three-year change in the activity rate' },
     medida: {
-      pt: ['Variação em três anos, em pontos percentuais · ', { ref: '2025' }],
-      en: ['Three-year change, in percentage points · ', { ref: '2025' }],
+      /* R2 (03.10.2026, achado 13): uma diferença entre duas percentagens conta-se em pontos, e não é uma variação
+         percentual; a mesma palavra da unidade do cartão. */
+      pt: ['Diferença em três anos, em pontos percentuais · ', { ref: '2025' }],
+      en: ['Difference over three years, in percentage points · ', { ref: '2025' }],
     },
     /* nota: «… -0.2pp.» A nota escreve o limiar por extenso e não truncado, e é
        dela que o algarismo sai: −0,2, com o símbolo «pp» que ela usa e que não
@@ -332,7 +364,11 @@ const LISTA_PDM = [
     claim: 'taxa-de-cambio-efectiva-real-2025',
     quadro: 'pdm',
     /* O NOME DIZ A VARIAÇÃO (bloco K2, item 2): o valor é a variação em três anos da taxa. */
-    nome: { pt: 'Taxa de câmbio efetiva real, variação em três anos', en: 'Real effective exchange rate, three-year change' },
+    /* R2 (03.10.2026, achados 13 e 16): o nome em palavras comuns, com o termo da fonte entre parênteses (o título do
+       conjunto, «Real effective exchange rate - percentage changes, 42 trading partners», e a descrição,
+       `eurostat-tipser10-descricao`: «a country's price or cost competitiveness relative to its principal
+       competitors»); a variação em três anos passa para a unidade do cartão. */
+    nome: { pt: 'Preços face aos parceiros comerciais, com o câmbio (taxa de câmbio efetiva real)', en: 'Prices compared with trading partners, including the exchange rate (real effective exchange rate)' },
     nomeNoVeredicto: { pt: 'a variação em três anos da taxa de câmbio efetiva real', en: 'the three-year change in the real effective exchange rate' },
     nomeNaFrase: { pt: 'variação em três anos da taxa de câmbio efetiva real', en: 'three-year change in the real effective exchange rate' },
     medida: {
@@ -393,8 +429,10 @@ const LISTA_PDM = [
     nome: { pt: 'Taxa de desemprego', en: 'Unemployment rate' },
     nomeNoVeredicto: { pt: 'a taxa de desemprego' },
     medida: {
-      pt: ['Percentagem da população ativa · ', { ref: '2025' }],
-      en: ['Percentage of the labour force · ', { ref: '2025' }],
+      /* R2 (03.10.2026, achado 9): a população ativa em palavras comuns, como a unidade do cartão; o termo fica na
+         dobra. */
+      pt: ['Percentagem de quem trabalha ou procura trabalho · ', { ref: '2025' }],
+      en: ['Percentage of people working or looking for work · ', { ref: '2025' }],
     },
     /* nota: «… 10%.» */
     limiar: { nl: '10', lado: 'superior', simbolo: '%' },
@@ -454,8 +492,10 @@ const LISTA_SOCIAL = [
     documento: 'convergence.md:59 · «Unemployment rate | 10% | ✓ | …»',
     nome: { pt: 'Taxa de desemprego', en: 'Unemployment rate' },
     medida: {
-      pt: ['Percentagem da população ativa · ', { ref: '2025' }],
-      en: ['Percentage of the labour force · ', { ref: '2025' }],
+      /* R2 (03.10.2026, achado 9): a população ativa em palavras comuns, como a unidade do cartão; o termo fica na
+         dobra. */
+      pt: ['Percentagem de quem trabalha ou procura trabalho · ', { ref: '2025' }],
+      en: ['Percentage of people working or looking for work · ', { ref: '2025' }],
     },
   },
   {
@@ -464,8 +504,10 @@ const LISTA_SOCIAL = [
     documento: 'convergence.md:61 · «Long-term unemployment | aux | ✓ | …»',
     nome: { pt: 'Desemprego de longa duração', en: 'Long-term unemployment' },
     medida: {
-      pt: ['Percentagem da população ativa · ', { ref: '2025' }],
-      en: ['Percentage of the labour force · ', { ref: '2025' }],
+      /* R2 (03.10.2026, achado 9): a população ativa em palavras comuns, como a unidade do cartão; o termo fica na
+         dobra. */
+      pt: ['Percentagem de quem trabalha ou procura trabalho · ', { ref: '2025' }],
+      en: ['Percentage of people working or looking for work · ', { ref: '2025' }],
     },
   },
   {
@@ -473,9 +515,11 @@ const LISTA_SOCIAL = [
     quadro: 'social',
     documento: 'convergence.md:73 · «NEET | aux | ✓ | …»',
     nome: { pt: 'Jovens sem emprego, escola ou formação', en: 'Young people not in employment, education or training' },
+    /* R2 (03.10.2026, achado 1, Blocking): «Percentagem da população» nomeava uma população maior do que a da linha,
+       que é a dos 15 aos 29 anos (a etiqueta da idade no excerto da linha). */
     medida: {
-      pt: ['Percentagem da população · ', { ref: '2025' }],
-      en: ['Percentage of the population · ', { ref: '2025' }],
+      pt: ['Percentagem das pessoas dos ', { nl: '15', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '29', motivo: 'escala-de-instrumento' }, ' anos · ', { ref: '2025' }],
+      en: ['Percentage of people aged ', { nl: '15', motivo: 'escala-de-instrumento' }, ' to ', { nl: '29', motivo: 'escala-de-instrumento' }, ' · ', { ref: '2025' }],
     },
   },
   {
@@ -502,10 +546,16 @@ const LISTA_SOCIAL = [
     claim: 'racio-s80-s20-2025',
     quadro: 'social',
     documento: 'convergence.md:71 · «Income inequality (S80/S20 or Gini) | ✓ | …»',
-    nome: { pt: 'Desigualdade de rendimento', en: 'Income inequality' },
+    /* R2 (03.10.2026, achado 14): «Desigualdade de rendimento» não dizia como se lê o número; o nome diz o que se
+       compara (o glossário, `glossario-s80s20`: «the ratio of total income received by the 20 % of the population with
+       the highest income (the top quintile) to that received by the 20 % of the population with the lowest income»), e
+       a unidade do cartão diz «vezes». */
+    nome: { pt: 'Rendimento do quinto mais rico face ao quinto mais pobre', en: 'Income of the richest fifth compared with the poorest fifth' },
+    /* R2 (03.10.2026, achado 14): o nome diz agora o que se compara, e a linha da unidade diz como se lê o número, a
+       mesma unidade do cartão («vezes»). */
     medida: {
-      pt: ['Rácio entre o quinto mais rico e o quinto mais pobre · ', { ref: '2025' }],
-      en: ['Ratio of the richest fifth to the poorest fifth · ', { ref: '2025' }],
+      pt: ['Vezes · ', { ref: '2025' }],
+      en: ['Times · ', { ref: '2025' }],
     },
   },
   {
@@ -2321,13 +2371,10 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
      fica como a fonte a escreve, no recibo e no cartão; o recibo mostra esta pergunta com as duas origens. */
   'disparidade-de-emprego-entre-sexos-2025': {
     origens: ['eurostat-tesem060-descricao', 'ce-swd-2026-222-disparidade-de-emprego'],
-    /* A UNIDADE QUE O CARTÃO MOSTRA (passagem K2-c, 02.10.2026, achado 1 da leitura a frio do Codex): a linha do
-       valor dizia «5,4 % da população», a etiqueta que o Eurostat escreve, e só a dobra dizia que o número é a
-       diferença entre duas taxas. O cartão passa a mostrar a unidade da casa, que vem desta definição: cada forma é
-       um pedaço da pergunta declarada na sua língua (a K16 confere-o), e a pergunta tem as suas origens auditadas. A
-       etiqueta da fonte fica no recibo e na linha, como a fonte a escreve; o portão de HTML confere a unidade da casa
-       contra esta declaração. */
-    unidade: { pt: 'pontos percentuais', en: 'percentage points' },
+    /* A UNIDADE QUE O CARTÃO MOSTRA (passagem K2-c, 02.10.2026, achado 1 da leitura a frio do Codex) vivia aqui,
+       como `unidade`, e mudou de casa no bloco R2 (03.10.2026): a unidade de cada cartão nacional declara-se numa
+       fonte só, `UNIDADES_DOS_CARTOES` em `src/data/unidades-dos-cartoes.mjs`, onde esta conserva a regra da K2-c
+       (cada forma é um pedaço desta pergunta na sua língua, o apoio `{ pergunta: true }`). */
     /* OS PONTOS PERCENTUAIS EM PALAVRAS COMUNS (bloco P4, 02.10.2026, item 3 do brief P4; a §1.152, decisão 4). A
        pergunta dizia «em pontos percentuais» sem dizer o que são; passa à forma única das definições, as palavras
        comuns primeiro e o termo da fonte entre parênteses, como a da taxa de atividade: a diferença entre as duas
@@ -2411,6 +2458,102 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
       'What share of people, whether their home is owned with or without a mortgage or rented at market price or at a reduced rent or free (all tenure statuses), are in households where total housing costs, after deducting housing allowances, take more than ',
       { nl: '40', motivo: 'escala-de-instrumento' },
       ' % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?',
+    ],
+  },
+  /* ---------------------------------------------------------------------------------------------------------------
+     AS PERGUNTAS QUE O BLOCO R2 ACRESCENTA (03.10.2026, os achados 5, 6, 12, 18 e 24 da auditoria dos rótulos, aceites
+     na dobra). Estes cartões rendiam-se sem pergunta: nas páginas de assunto a dobra tinha só a metade da leitura que
+     diz o que o número é, e nas páginas das áreas, onde o cartão não leva leitura, não tinha dobra nenhuma. A triagem
+     mandou a dobra dizer o que o nome deixa de fora, e a dobra é a pergunta declarada, na forma única da §1.152: as
+     palavras comuns primeiro e o termo da fonte entre parênteses. Cada pedaço apoia-se num literal de uma origem que
+     já estava selada (as origens das leituras do L1 e do RP1) ou num campo selado da linha, e a K16 audita-os
+     (`tests/cartao/perguntas-provadas.json`, escrita por
+     `design/especime-v3/medicoes/r2-2026-10-03/auditoria-das-perguntas-r2.mjs`).
+     --------------------------------------------------------------------------------------------------------------- */
+  'criancas-em-creche-2025': {
+    /* Achado 5: «fora da família», com o termo da fonte. As duas origens do Eurostat: a descrição do conjunto
+       («cared for by formal arrangements other than by the family») e a página que define os cuidados formais
+       («planned through public organizations and recognized private bodies»). */
+    origens: ['eurostat-tepsr_sp210-descricao', 'eurostat-cuidado-formal'],
+    pt: [
+      'Que parte das crianças com menos de três anos é cuidada fora da família, num programa planeado por entidades públicas ou privadas reconhecidas (os cuidados formais para a infância)?',
+    ],
+    en: [
+      'What share of children under three are cared for outside the family, in a programme planned by public or recognised private bodies (formal childcare)?',
+    ],
+  },
+  'retribuicao-minima-mensal-garantida-continente-2026': {
+    /* Achado 6: o valor é o do continente (o artigo 2.º do decreto-lei, `dl-139-2025-ambito`), e os Açores somam-lhe
+       um acréscimo por lei regional (`dre-dlr-37-2023-a`). A Madeira fica de fora: nenhuma origem declarada diz o seu
+       valor, e o relatório do bloco R2 regista-o com [verify]. A percentagem dos Açores não se escreve na pergunta:
+       seria um algarismo sem motivo declarado que lhe sirva, e a pergunta diz o que o leitor precisa (que nos Açores
+       o valor é outro). O preâmbulo do decreto-lei (`dl-139-2025-preambulo`) não é origem desta pergunta: o recibo da
+       linha rende as origens da pergunta, e o excerto do preâmbulo nomeia o Governo pelo seu número de ordem, que a K8
+       do `check:cartao` só aceita na página das áreas; o nome da medida apoia-se no decreto dos Açores e no excerto da
+       própria linha. */
+    origens: ['dl-139-2025-ambito', 'dre-dlr-37-2023-a'],
+    pt: [
+      'Qual é o valor mínimo que a lei garante por mês a quem trabalha por conta de outrem no continente, sem o acréscimo que a lei dos Açores lhe soma (a retribuição mínima mensal garantida)?',
+    ],
+    en: [
+      'What is the lowest monthly pay the law guarantees to employees on the mainland, without the increase that Azores law adds to it (the guaranteed minimum monthly wage)?',
+    ],
+  },
+  'pib-real-per-capita-2025': {
+    /* Achado 12: a unidade do cartão passou a «euros por pessoa, a preços de 2015», e a dobra guarda o termo da fonte,
+       «volumes encadeados». */
+    origens: ['eurostat-tipsna40-descricao', 'eurostat-nama10-volumes'],
+    pt: [
+      'Quanto valem, por pessoa, os bens e serviços finais que a economia produz num ano, descontada a subida dos preços (o PIB real por habitante, em volumes encadeados)?',
+    ],
+    en: [
+      'How much are the final goods and services the economy produces in a year worth per person, leaving out price rises (real GDP per capita, in chain linked volumes)?',
+    ],
+  },
+  'disparidade-salarial-entre-sexos-2024': {
+    /* Achado 18: o ganho bruto por hora, em percentagem do dos homens, nas empresas com dez ou mais trabalhadores (a
+       definição e a cobertura dos metadados do Eurostat). */
+    origens: ['eurostat-earn-grgpg2-definicao', 'eurostat-earn-grgpg2-cobertura'],
+    pt: [
+      'Quanto menos ganham as mulheres do que os homens por hora de trabalho, antes de descontos, em percentagem do ganho dos homens, nas empresas com ',
+      { nl: '10', motivo: 'escala-de-instrumento' },
+      ' ou mais trabalhadores (a disparidade salarial não ajustada)?',
+    ],
+    en: [
+      'How much less do women earn than men per hour of work, before deductions, as a percentage of men’s earnings, in enterprises with ',
+      { nl: '10', motivo: 'escala-de-instrumento' },
+      ' or more employees (the unadjusted gender pay gap)?',
+    ],
+  },
+  'necessidades-medicas-nao-satisfeitas-2025': {
+    /* Achado 18: quem diz ter ficado sem cuidados médicos por custo, espera ou distância (a descrição do conjunto). */
+    origens: ['eurostat-tespm110-descricao'],
+    pt: [
+      'Que parte das pessoas diz ter precisado de um exame ou tratamento médico e não o ter tido por razões financeiras, por estar em lista de espera ou por ficar longe (as necessidades de cuidados médicos por satisfazer, declaradas pela própria pessoa)?',
+    ],
+    en: [
+      'What share of people say they needed a medical examination or treatment and did not get it because of the cost, a waiting list or the distance (self-reported unmet needs for medical care)?',
+    ],
+  },
+  'independencia-da-justica-2025': {
+    /* Achado 18: quem considera boa a independência da justiça (a descrição do conjunto e o nível da resposta, «Very
+       good or fairly good»). */
+    origens: ['eurostat-sdg_16_40-descricao', 'eurostat-sdg_16_40-nivel'],
+    pt: [
+      'Que parte das pessoas inquiridas considera muito boa ou razoavelmente boa a independência dos tribunais e dos juízes (a perceção da independência da justiça)?',
+    ],
+    en: [
+      'What share of respondents rate the independence of the courts and judges as very good or fairly good (perceived independence of the justice system)?',
+    ],
+  },
+  'ganho-medio-mensal-2024': {
+    /* Achado 24: os trabalhadores a tempo completo e o ganho antes de descontos (a metainformação do indicador do INE). */
+    origens: ['ine-ganho-conceito', 'ine-ganho-nota'],
+    pt: [
+      'Quanto ganham por mês, em média e antes de descontos, os trabalhadores por conta de outrem a tempo completo com remuneração completa (o ganho médio mensal)?',
+    ],
+    en: [
+      'How much do full-time employees on full pay earn per month, on average and before deductions (average monthly earnings)?',
     ],
   },
   ...PERGUNTAS_RP1,

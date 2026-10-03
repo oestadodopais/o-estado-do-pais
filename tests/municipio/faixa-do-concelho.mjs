@@ -47,6 +47,7 @@ import { faixasDoPortao, linhaDePortugalDoPortao, valorDoPortao, baseDoPortao, c
 import { posicaoNaFaixa, sufixoOrdinalDoPortao } from '../../scripts/series-do-portao.mjs';
 import { FAIXA_DAS_MEDIDAS_DO_CONCELHO } from '../../src/data/faixa-do-concelho.mjs';
 import { t } from '../../src/i18n/strings.mjs';
+import { unidadeDaLinha } from '../../src/i18n/unidades.mjs';
 
 const ROTA = { pt: (slug) => `municipios/${slug}/index.html`, en: (slug) => `en/municipalities/${slug}/index.html` };
 const RECIBO = { pt: (id) => `livro-razao/${id}/index.html`, en: (id) => `en/ledger/${id}/index.html` };
@@ -73,20 +74,28 @@ export const ORDINAIS_DA_TABELA = Object.freeze({
 /**
  * As frases que a faixa de um cartão tem de dizer, recompostas aqui das palavras declaradas e das contas.
  *
- * @param {{ nome: string, valor: string|null, lugar: number|null, conta: number, aPar: number, ordem: string,
- *   comparacao: { tipo: 'linha', valor: string, lado: string } | { tipo: 'base', lado: string } | null }} c
+ * Desde o bloco R2 (03.10.2026, achados 21 e 22), a frase do lugar nomeia a medida pelas palavras que a tabela das
+ * ordens declara (`naFrase`), e a comparação diz o que é o valor de Portugal: na linha nacional, as palavras declaradas
+ * (`ondePortugal`) e a unidade da linha nacional, pelo dicionário das unidades; na base do índice, a média de Portugal
+ * e a base que a unidade de cada linha escreve, lida pelos portões.
+ *
+ * @param {{ chave: string, nome: string, valor: string|null, lugar: number|null, conta: number, aPar: number, ordem: string,
+ *   comparacao: { tipo: 'linha', valor: string, unidade: string, lado: string } | { tipo: 'base', base: string, lado: string } | null }} c
  * @param {'pt'|'en'} lang
  */
 export function frasesEsperadas(c, lang) {
   const F = t(lang).municipio.faixaDoConcelho;
+  const declaracao = FAIXA_DAS_MEDIDAS_DO_CONCELHO[c.chave] ?? {};
+  const naFrase = declaracao.naFrase?.[lang] ?? '';
   const aPar = c.aPar === 1 ? F.aParUm : c.aPar > 1 ? `${F.aParVariosA}${c.aPar}${F.aParVariosB}` : '';
   const lugar =
     c.lugar !== null
-      ? `${c.nome} (${c.valor})${F.lugarA}${c.lugar}${sufixoOrdinalDoPortao(c.lugar, F.ordinal)}${F.lugarB}${c.conta}${F.lugarC}${F.ordem[c.ordem]}${aPar}${F.fim}`
-      : `${c.nome}${F.semValorA}${c.conta}${F.semValorB}`;
+      ? `${c.nome} (${c.valor})${F.lugarA}${c.lugar}${sufixoOrdinalDoPortao(c.lugar, F.ordinal)}${F.lugarB}${c.conta}${F.lugarC}${naFrase}${F.lugarD}${F.ordem[c.ordem]}${aPar}${F.fim}`
+      : `${c.nome}${F.semValorA}${c.conta}${F.semValorB}${naFrase}${F.semValorC}`;
+  const media = { acima: F.mediaAcima, abaixo: F.mediaAbaixo, igual: F.mediaIgual };
   let comparacao = null;
-  if (c.comparacao?.tipo === 'linha' && c.lugar !== null) comparacao = `${F.comparacaoA}${F[c.comparacao.lado]}${F.comparacaoLinhaA}${c.comparacao.valor}${F.comparacaoLinhaB}`;
-  else if (c.comparacao?.tipo === 'base' && c.lugar !== null) comparacao = `${F.comparacaoA}${F[c.comparacao.lado]}${F.comparacaoBase}`;
+  if (c.comparacao?.tipo === 'linha' && c.lugar !== null) comparacao = `${F.comparacaoA}${F[c.comparacao.lado]}${F.comparacaoLinhaA}${declaracao.ondePortugal?.[lang] ?? ''}${F.comparacaoLinhaB}${c.comparacao.valor} ${c.comparacao.unidade}${F.comparacaoLinhaC}`;
+  else if (c.comparacao?.tipo === 'base' && c.lugar !== null) comparacao = `${F.comparacaoA}${media[c.comparacao.lado]}${F.comparacaoBaseA}${c.comparacao.base}${F.comparacaoBaseB}`;
   else if (!c.comparacao) comparacao = F.semComparacao;
   return { lugar: norm(lugar), comparacao: comparacao === null ? null : norm(comparacao) };
 }
@@ -181,16 +190,17 @@ export function conferirPagina(root, { slug, nome, lang, rota, faixas, recibo })
     if (declarada && 'linha' in declarada) {
       idNacional = linhaDePortugalDoPortao(faixas.linhas, id, conta.ids);
       nPortugal = idNacional ? valorDoPortao(faixas.linhas.get(idNacional)) : null;
-      if (idNacional && nPortugal !== null) comparacao = { tipo: 'linha', valor: norm(faixas.linhas.get(idNacional).value), lado: null };
+      if (idNacional && nPortugal !== null) comparacao = { tipo: 'linha', valor: norm(faixas.linhas.get(idNacional).value), unidade: unidadeDaLinha(faixas.linhas.get(idNacional).unit, lang).texto, lado: null };
     } else if (declarada && 'base' in declarada) {
       nPortugal = baseDoPortao(faixas.linhas.get(id));
-      if (nPortugal !== null) comparacao = { tipo: 'base', lado: null };
+      if (nPortugal !== null) comparacao = { tipo: 'base', base: String(nPortugal).replace('.', ','), lado: null };
     }
     if (comparacao && temValor) comparacao.lado = este.n > nPortugal ? 'acima' : este.n < nPortugal ? 'abaixo' : 'igual';
 
     /* FC4 · a frase do lugar */
     const esperada = frasesEsperadas(
       {
+        chave,
         nome,
         valor: temValor ? norm(faixas.linhas.get(id).value) : null,
         lugar: temValor ? conta.lugar(slug) : null,
@@ -488,5 +498,32 @@ export function plantasDasFaixasDosConcelhos(dist) {
     const erros = conferirOrdinais(undefined, (n, s) => (n % 10 === 1 ? s.st : n % 10 === 2 ? s.nd : n % 10 === 3 ? s.rd : s.th));
     resultados.push({ nome: 'l2b-faixa-o-ordinal-sem-a-excecao-dos-11-a-13', celula: 'FC7', mordeu: erros.some((e) => e.startsWith('FC7 ·')) && conferirOrdinais().length === 0, queixa: erros[0] ?? 'nenhum erro' });
   }
+  /* R2 (03.10.2026, achados 21 e 22): a frase do lugar sem as palavras da medida, a comparação com a linha de Portugal
+     sem a unidade dela, e a base do índice trocada na comparação do poder de compra têm de morder. */
+  planta('r2-faixa-sem-as-palavras-da-medida', 'FC4', {
+    trocar: (root) => {
+      const f = root.querySelector('[data-faixa-concelho="indice"] [data-faixa-concelho-frase]');
+      const naFrase = FAIXA_DAS_MEDIDAS_DO_CONCELHO.indice.naFrase.pt;
+      if (!f || !f.innerHTML.includes(` ${naFrase}`)) return false;
+      f.set_content(f.innerHTML.replace(` ${naFrase}`, ''));
+      return true;
+    },
+  });
+  planta('r2-comparacao-sem-a-unidade-de-portugal', 'FC5', {
+    trocar: (root) => {
+      const s = doGanho(root)?.querySelector('[data-faixa-comparacao="linha"] .claim-sufixo');
+      if (!s) return false;
+      s.remove();
+      return true;
+    },
+  });
+  planta('r2-base-do-indice-trocada', 'FC5', {
+    trocar: (root) => {
+      const b = root.querySelector('[data-faixa-concelho="poderDeCompra"] [data-base-do-indice]');
+      if (!b) return false;
+      b.set_content('101');
+      return true;
+    },
+  });
   return { controlo, resultados };
 }

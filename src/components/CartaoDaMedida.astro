@@ -85,6 +85,7 @@ import ReguaDoCartao from './ReguaDoCartao.astro';
 import FaixaDaUniao from './FaixaDaUniao.astro';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { unidadeDoCartao } from '../data/unidades-dos-cartoes.mjs';
 import { provenienciaIncompleta, derivacaoDaLinha } from '../lib/ledger.mjs';
 import { nomeDoCartao, nomeDaLinhaDerivada, eNomeDeMedida } from '../lib/nomes.mjs';
 import { DEFINICOES_DAS_MEDIDAS } from '../data/figuras.mjs';
@@ -92,6 +93,7 @@ import { partesDaLeitura } from '../lib/leitura-da-medida.mjs';
 import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
 import { reguaDoCartao } from '../lib/enquadramento.mjs';
 import { serieDaLinha } from '../lib/series.mjs';
+import { REFERENCIAS_DAS_MEDIDAS } from '../data/referencias-das-medidas.mjs';
 
 /* `...resto` deixa quem chama pendurar as suas marcas no cartão sem que este
    componente saiba o que elas são: é assim que a página de uma área lhe põe
@@ -101,7 +103,10 @@ import { serieDaLinha } from '../lib/series.mjs';
    bloco L1): só esses levam a leitura por baixo do número, e a leitura tem de
    existir nas duas edições (`src/lib/leitura-da-medida.mjs` fecha a construção
    se não existir). As outras páginas que rendem este componente não a pedem. */
-const { linha: c, lang = 'pt', leitura: comLeitura = false, ...resto } = Astro.props;
+/* `referencia` (bloco R2, 03.10.2026, achado 20): a página de área pede, no primeiro cartão de cada dono de um valor de
+   referência, a frase que diz o que a referência é, dentro da dobra. Um cartão nacional com leitura não a pede: a
+   leitura e a página de assunto já a dizem. */
+const { linha: c, lang = 'pt', leitura: comLeitura = false, referencia: comReferencia = false, ...resto } = Astro.props;
 const s = t(lang);
 
 const unidade = unidadeDaLinha(c.unit, lang);
@@ -121,12 +126,16 @@ const definicao = /** @type {Record<string, { pt: readonly unknown[], en: readon
 )[c.id];
 const frase = definicao ? definicao[lang] ?? definicao.pt : null;
 
-/* A UNIDADE DA CASA (passagem K2-c, 02.10.2026, achado 1 da leitura a frio do Codex). Onde a definição declarada
-   traz uma unidade (`unidade` em `DEFINICOES_DAS_MEDIDAS`), a linha do valor mostra-a em vez da etiqueta da fonte:
-   «5,4 pontos percentuais», e não «5,4 % da população», onde o número é a diferença entre duas taxas. A etiqueta
-   fica no recibo e na linha, como a fonte a escreve. O portão de HTML confere o texto contra a declaração, e o selo
-   do cartão aceita esta marca como a unidade da mesma linha (`scripts/selo-do-cartao.mjs`). */
-const unidadeDaCasa = /** @type {Record<string, { unidade?: Record<string, string> }>} */ (DEFINICOES_DAS_MEDIDAS)[c.id]?.unidade?.[lang] ?? null;
+/* A UNIDADE DA CASA (passagem K2-c, 02.10.2026, achado 1 da leitura a frio do Codex; generalizada no bloco R2,
+   03.10.2026). Onde o cartão de uma linha tem unidade declarada (`UNIDADES_DOS_CARTOES`, em
+   `src/data/unidades-dos-cartoes.mjs`, a fonte única da unidade de um cartão nacional), a linha do valor mostra-a em
+   vez da etiqueta da fonte: «5,4 pontos percentuais», e não «5,4 % da população», onde o número é a diferença entre
+   duas taxas; «8,0 % das pessoas dos 15 aos 29 anos», e não «8,0 % da população». A etiqueta fica no recibo e na
+   linha, como a fonte a escreve. A unidade é uma lista de pedaços, e um algarismo dela (uma idade, um ano de
+   referência) rende-se pela marca declarada do `Frase`. O portão de HTML confere o texto contra a declaração e cada
+   apoio no campo que ele diz, e o selo do cartão aceita esta marca como a unidade da mesma linha
+   (`scripts/selo-do-cartao.mjs`). */
+const unidadeDaCasa = unidadeDoCartao(c.id, lang);
 
 /* ---------------------------------------------------------------------------
  * UM CARTÃO SEM NOME NÃO É UM CARTÃO (achado 3 da leitura a frio de 15.09.2026)
@@ -177,6 +186,13 @@ const leitura = comLeitura ? partesDaLeitura(c.id, lang) : null;
 const mostraUniao = reguaDoCartao(c.id).ue !== null || (comLeitura && serieDaLinha(c.id) !== null);
 const ressalva = mostraUniao ? ressalvaDaUniao(c.id, lang) : null;
 const aritmetica = nome === null ? derivacaoDaLinha(c, lang) : null;
+/* A FRASE DO QUE É A REFERÊNCIA (bloco R2, achado 20): a do dono declarado da medida, lida de `strings.mjs`. A vista
+   só a pede para um cartão que mostra o estado; uma medida sem dono declarado fecha a construção. */
+const donoDaReferencia = comReferencia && !comLeitura ? REFERENCIAS_DAS_MEDIDAS.get(c.id)?.limiarFixadoPor ?? null : null;
+const fraseDaReferencia = donoDaReferencia ? s.estado[donoDaReferencia]?.frase ?? null : null;
+if (comReferencia && !comLeitura && !fraseDaReferencia) {
+  throw new Error(`cartão de «${c.id}»: a página pede a frase do valor de referência e a medida não tem dono com frase declarada`);
+}
 /* O NOME DE UMA LINHA QUE NÃO SE RENDE COMO CARTÃO (bloco P3, 16.09.2026,
    item 1). A decisão do P2 fica: uma linha sem nome em degrau nenhum da escada
    do cartão rende-se como linha do livro-razão, com a sua aritmética. O que
@@ -210,7 +226,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
         <span class="cartao-medida-quantidade">
         <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" plano separarUnidade>
         {unidadeDaCasa ? (
-          <span slot="sufixo" class="cartao-medida-unidade" data-unidade-da-casa={c.id}>{unidadeDaCasa}</span>
+          <span slot="sufixo" class="cartao-medida-unidade" data-unidade-da-casa={c.id}><Frase partes={unidadeDaCasa} lang={lang} /></span>
         ) : (
           <CampoDaLinha slot="sufixo"
             id={c.id}
@@ -269,7 +285,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
         <span class="cartao-medida-quantidade">
         <Claim id={c.id} lang={lang} as="span" class="cartao-medida-num" plano separarUnidade>
         {unidadeDaCasa ? (
-          <span slot="sufixo" class="cartao-medida-unidade" data-unidade-da-casa={c.id}>{unidadeDaCasa}</span>
+          <span slot="sufixo" class="cartao-medida-unidade" data-unidade-da-casa={c.id}><Frase partes={unidadeDaCasa} lang={lang} /></span>
         ) : (
           <CampoDaLinha slot="sufixo"
             id={c.id}
@@ -333,7 +349,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
           listas de «Lugares»: um `<details>` nativo, fechado em todas as larguras, que não custa a quem não o quer. A
           ordem que um leitor vê é o nome, o valor com a unidade, a comparação e só depois isto; a célula da ordem do
           `check:cartao` lê-a no documento. A pergunta conserva a marca `data-cartao-definicao` que a K6 confere. */}
-      {(leitura?.oQueE || frase) && (
+      {(leitura?.oQueE || frase || fraseDaReferencia) && (
         <details class="cartao-medida-dobra" data-cartao-dobra={c.id}>
           <summary class="cartao-medida-dobra-abrir">
             <span class="cartao-medida-dobra-seta" aria-hidden="true"></span>
@@ -348,6 +364,9 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
             <p class="cartao-medida-frase" data-cartao-definicao={c.id}>
               <Frase partes={frase} lang={lang} selos={true} />
             </p>
+          )}
+          {fraseDaReferencia && (
+            <p class="cartao-medida-frase cartao-medida-referencia" data-referencia-na-dobra={c.id}>{fraseDaReferencia}</p>
           )}
         </details>
       )}

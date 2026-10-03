@@ -19,10 +19,17 @@ export function veredictoEsperado(id, lang, linha = linhas.get(id), referencia =
   const acima = superior && valor > numero(escrito(superior));
   const estado = abaixo || acima ? 'fora' : 'dentro';
   const ingles = lang === 'en';
-  const palavra = ingles
-    ? `${estado === 'fora' ? 'outside' : 'within'} the reference value${banda ? 's' : ''}`
-    : `${estado === 'fora' ? 'fora' : 'dentro'} ${banda ? 'dos valores' : 'do valor'} de referência`;
-  const dono = { pacto: ingles ? ' of the Pact' : ' do Pacto', conselho: ingles ? ' of the Council of the EU' : ' do Conselho da UE' }[referencia?.limiarFixadoPor] ?? '';
+  /* R2 (03.10.2026, achado 20): a forma inteira diz quem fixa a referência. As palavras escrevem-se aqui por conta
+     própria, e não se leem de `strings.mjs`: a K15 é a segunda conta. */
+  const fora = estado === 'fora';
+  const dono = referencia?.limiarFixadoPor ?? 'comissao';
+  const palavra = dono === 'pacto'
+    ? (ingles ? `${fora ? 'outside' : 'within'} the Stability Pact limit` : `${fora ? 'fora' : 'dentro'} do limite do Pacto de Estabilidade`)
+    : dono === 'conselho'
+      ? (ingles ? `${fora ? 'outside' : 'within'} the expenditure path approved by the Council of the EU` : `${fora ? 'fora' : 'dentro'} da trajetória da despesa aprovada pelo Conselho da UE`)
+      : (ingles
+        ? `${fora ? 'outside' : 'within'} the Commission’s reference value${banda ? 's' : ''}`
+        : `${fora ? 'fora' : 'dentro'} ${banda ? 'dos valores' : 'do valor'} de referência da Comissão`);
   const simbolo = r.simbolo?.trim() ?? '%';
   let direcao;
   if (banda && estado === 'dentro') {
@@ -34,7 +41,7 @@ export function veredictoEsperado(id, lang, linha = linhas.get(id), referencia =
       ? (ingles ? 'above' : 'acima de') : (ingles ? 'equal to' : 'igual a');
     direcao = `${relacao} ${escrito(ponta)}`;
   }
-  return { estado, texto: `${palavra}${dono} (${direcao} ${simbolo})` };
+  return { estado, texto: `${palavra} (${direcao} ${simbolo})` };
 }
 
 export function auditarVeredicto(cartao, id, lang, linha, referencia) {

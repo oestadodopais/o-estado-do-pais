@@ -91,14 +91,16 @@ export const NOMES_DO_PROJETO = {
     pt: 'Sobrecarga do custo da habitação, inquilinos a preço de mercado na União Europeia',
     en: 'Housing cost overburden, tenants at market rent in the European Union',
   },
+  /* R2 (03.10.2026, achado 17): o mesmo nome da linha do ano seguinte, em `src/data/dominios.mjs`. */
   'saldo-das-administracoes-publicas-2024': {
-    pt: 'Saldo das administrações públicas', en: 'General government balance',
+    pt: 'Saldo das contas públicas (receitas menos despesas)', en: 'Government balance (revenue minus spending)',
   },
   'disparidade-salarial-entre-sexos-2023': {
     pt: 'Disparidade salarial entre sexos', en: 'Gender pay gap',
   },
+  /* R2 (03.10.2026, achado 17): o mesmo nome da linha do ano seguinte, em `src/data/dominios.mjs`. */
   'crescimento-da-despesa-liquida-2024': {
-    pt: 'Crescimento da despesa líquida', en: 'Net expenditure growth',
+    pt: 'Crescimento da despesa que a regra europeia conta (despesa líquida)', en: 'Growth of the spending counted by the European rule (net expenditure)',
   },
   /* ---------------------------------------------------------- água e ambiente */
   'agua-nao-faturada-portugal-2024': {
@@ -107,9 +109,11 @@ export const NOMES_DO_PROJETO = {
   },
 
   /* ------------------------------------------------------ trabalho e pensões */
+  /* R2 (03.10.2026, achado 5, Blocking): «Crianças em creche» estreitava os cuidados formais e calava a idade (o título
+     do conjunto, «Children aged less than 3 years in formal childcare»). */
   'criancas-em-creche-2025': {
-    pt: 'Crianças em creche',
-    en: 'Children in formal childcare',
+    pt: 'Crianças com menos de três anos em creche ou outros cuidados formais',
+    en: 'Children under three in formal childcare',
   },
   'disparidade-de-emprego-entre-sexos-2025': {
     pt: 'Diferença de emprego entre homens e mulheres',
@@ -145,9 +149,12 @@ export const NOMES_DO_PROJETO = {
      estas cinco ganham o nome que a norma §1.5 lhes pede desde o princípio: o
      do projeto. Cada nome diz o que a linha mede, pelas palavras do rótulo da
      fonte que a linha guarda. */
+  /* R2 (03.10.2026, achado 17): o que o investimento é, em palavras comuns, com o termo da fonte entre parênteses (o
+     glossário, `eurostat-glossario-fbcf`: «acquisitions, less disposals, of fixed assets», que são os que «are used
+     repeatedly, or continuously, for more than one year» na produção). */
   'formacao-bruta-de-capital-fixo-2025': {
-    pt: 'Investimento (formação bruta de capital fixo)',
-    en: 'Investment (gross fixed capital formation)',
+    pt: 'Investimento em bens duradouros para produzir (formação bruta de capital fixo)',
+    en: 'Investment in durable goods used for production (gross fixed capital formation)',
   },
   'despesa-em-id-2024': {
     pt: 'Despesa em investigação e desenvolvimento',
@@ -390,24 +397,25 @@ export const NOMES_DO_PROJETO = {
 
   /* ------------------------------ o concelho de Évora: o Plano de Recuperação */
   'evora-prr-aprovado-2026': {
-    pt: 'Verbas do PRR aprovadas para Évora',
-    en: 'PRR funds approved for Évora',
+    /* R2 (03.10.2026, achado 25): a sigla por extenso no nome de cada cartão, porque cada cartão se lê sozinho. */
+    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) aprovadas para Évora',
+    en: 'Recovery and Resilience Plan (PRR) funds approved for Évora',
   },
   'evora-prr-pago-2026': {
-    pt: 'Verbas do PRR pagas em Évora',
-    en: 'PRR funds paid in Évora',
+    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) pagas em Évora',
+    en: 'Recovery and Resilience Plan (PRR) funds paid in Évora',
   },
   'evora-prr-vencido-aprovado-2026': {
     pt: 'Verbas aprovadas em projetos fora de prazo',
     en: 'Approved funds in projects past their deadline',
   },
   'evora-prr-municipio-contratado': {
-    pt: 'Verbas do PRR contratadas pelo município de Évora',
-    en: 'PRR funds contracted by the municipality of Évora',
+    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) contratadas pelo município de Évora',
+    en: 'Recovery and Resilience Plan (PRR) funds contracted by the municipality of Évora',
   },
   'evora-prr-universidade-contratado': {
-    pt: 'Verbas do PRR contratadas pela Universidade de Évora',
-    en: 'PRR funds contracted by the University of Évora',
+    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) contratadas pela Universidade de Évora',
+    en: 'Recovery and Resilience Plan (PRR) funds contracted by the University of Évora',
   },
 
   /* --------------------------------- o concelho de Évora: quem governa a câmara */

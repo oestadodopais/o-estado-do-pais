@@ -160,7 +160,7 @@ export function faixaDoConcelho(chave, slug, idDoConcelho) {
   const aPar = este ? comValor.filter((c) => c.slug !== slug && c.n === este.n).length : 0;
 
   /* A comparação com Portugal: a linha nacional da mesma medida e do mesmo período, ou a base do índice. */
-  /** @type {{ tipo: 'linha', id: string, n: number } | { tipo: 'base', n: number } | null} */
+  /** @type {{ tipo: 'linha', id: string, n: number } | { tipo: 'base', n: number, base: string } | null} */
   let portugal = null;
   const comparacao = declaracao.comparacao;
   if (comparacao && 'linha' in comparacao) {
@@ -170,7 +170,8 @@ export function faixaDoConcelho(chave, slug, idDoConcelho) {
   } else if (comparacao && 'base' in comparacao) {
     const base = baseDoIndice(getClaim(idDoConcelho));
     const n = base === null ? null : parsePtNumber(base);
-    if (n !== null) portugal = { tipo: 'base', n };
+    /* R2 (03.10.2026, achado 22): a base escrita como a unidade da linha a escreve, para a frase da comparação. */
+    if (n !== null && base !== null) portugal = { tipo: 'base', n, base: String(base) };
   }
   const lado = este && portugal ? (este.n > portugal.n ? 'acima' : este.n < portugal.n ? 'abaixo' : 'igual') : null;
   const esquerdaDoConcelho = este ? posicao(este.n, min, max) : null;
@@ -182,6 +183,10 @@ export function faixaDoConcelho(chave, slug, idDoConcelho) {
     claim: idDoConcelho,
     periodo,
     ordem,
+    /* R2 (03.10.2026, achados 21 e 22): as palavras da medida na frase do lugar e o que é o valor de Portugal na
+       comparação, declarados na tabela das ordens. */
+    naFrase: declaracao.naFrase ?? null,
+    ondePortugal: declaracao.ondePortugal ?? null,
     conta: comValor.length,
     lugar,
     aPar,

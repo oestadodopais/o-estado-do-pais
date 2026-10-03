@@ -156,11 +156,13 @@ const PERCENTAGEM_DO_PIB_EN = 'as a percentage of GDP, the value of everything t
 export const LEITURAS_DAS_MEDIDAS = {
   /* ------------------------------------------------- 1 · Economia e finanças públicas */
   'pib-real-per-capita-2025': {
-    /* K2 (02.10.2026, item 4 do brief): a frase diz o que a unidade chama «volumes encadeados», que nenhuma página
+    /* R2 (03.10.2026, achado 12): a unidade do cartão passou a «euros por pessoa, a preços de 2015», e a frase diz que é a
+       fonte, e não a unidade, que chama aos números «volumes encadeados» (o excerto da linha); o resto fica.
+       K2 (02.10.2026, item 4 do brief): a frase diz o que a unidade chama «volumes encadeados», que nenhuma página
        explicava (a leitura a frio da N1c, achado 4). Os literais estão na auditoria (a unidade da linha e a
        metainformação das contas nacionais do Eurostat). */
-    pt: ['É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a unidade chama volumes encadeados.', SUBIU, MEDIA_UE],
-    en: ['It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the unit calls chain linked volumes.', ROSE, EU_AVERAGE],
+    pt: ['É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.', SUBIU, MEDIA_UE],
+    en: ['It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.', ROSE, EU_AVERAGE],
   },
   'saldo-das-administracoes-publicas-2025': {
     pt: [

@@ -278,9 +278,11 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
       pt: 'As contas públicas estão em equilíbrio?',
       en: 'Are the public accounts in balance?',
     },
+    /* R2 (03.10.2026, achado 17): o nome em palavras comuns, com o que o saldo é entre parênteses (a página do
+       Eurostat, `eurostat-gfs-saldo`: «The difference between total revenue and total expenditure»). */
     nome: {
-      pt: 'Saldo das administrações públicas',
-      en: 'General government balance',
+      pt: 'Saldo das contas públicas (receitas menos despesas)',
+      en: 'Government balance (revenue minus spending)',
     },
     unidade: { pt: 'Percentagem do PIB', en: 'Percentage of GDP' },
     /* O limite de défice de 3 % do PIB, do lado do défice: um saldo abaixo de
@@ -326,7 +328,11 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
       pt: 'O Estado gasta dentro da regra europeia?',
       en: 'Does the State spend within the European rule?',
     },
-    nome: { pt: 'Crescimento da despesa líquida', en: 'Net expenditure growth' },
+    /* R2 (03.10.2026, achado 17, com o [verify] do auditor conferido): a despesa líquida é a que a trajetória aprovada
+       pelo Conselho da UE conta (o parecer do Conselho das Finanças Públicas, `cfp-trajetoria`: «comprometeu-se com uma
+       determinada trajetória de crescimento da despesa líquida, que depois foi aprovada pelo Conselho da UE»); as
+       exclusões estão na dobra do cartão nas páginas de assunto. */
+    nome: { pt: 'Crescimento da despesa que a regra europeia conta (despesa líquida)', en: 'Growth of the spending counted by the European rule (net expenditure)' },
     unidade: { pt: 'Percentagem', en: 'Percentage' },
     /* O teto recomendado pela trajetória do Conselho da UE, lido no parecer do
        Conselho das Finanças Públicas. É um limiar publicado, como os do
@@ -485,9 +491,12 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
       pt: 'Qual é o salário mínimo em vigor?',
       en: 'What is the minimum wage in force?',
     },
+    /* R2 (03.10.2026, achado 6, Blocking): o valor do diploma é o do continente (o artigo 2.º, «O presente decreto-lei é
+       aplicável a todo o território continental», no localizador da linha e em `dl-139-2025-ambito`); a dobra diz o
+       acréscimo dos Açores. */
     nome: {
-      pt: 'Retribuição mínima mensal garantida',
-      en: 'Guaranteed minimum monthly wage',
+      pt: 'Salário mínimo mensal (continente)',
+      en: 'Monthly minimum wage (mainland Portugal)',
     },
     unidade: { pt: 'Euros por mês', en: 'Euros per month' },
     limiar: null,
