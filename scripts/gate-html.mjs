@@ -247,7 +247,7 @@ const FORMAS_DO_NOME = [
 const veONome = (texto) => typeof texto === 'string' && FORMAS_DO_NOME.some((forma) => texto.includes(forma));
 let paginasComONome = 0;
 /** S1 (02.10.2026): as contas da caixa das sugestões, para a saída do portão. */
-const SUGESTOES_NO_PORTAO = { paginas: 0, portas: 0, paginasDaCaixa: 0, enderecosNoMapa: 0, plantas: 0 };
+const SUGESTOES_NO_PORTAO = { paginas: 0, portas: 0, paginasDaCaixa: 0, enderecosNoMapa: 0, plantas: 0, migracoes: 0 };
 
 const RESTANTES = path.join(ROOT, 'ortografia', 'restantes.yml');
 
@@ -7700,16 +7700,22 @@ for (const file of ficheirosHtml(DIST)) {
    que não morda fecha a construção), e depois o mapa do sítio construído e as
    regras do registo da base contra as palavras que o leitor lê. */
 {
-  const ficheiroDaBase = path.join(ROOT, 'supabase', 'migrations', '2026-10-02-caixa-das-sugestoes.sql');
-  if (!fs.existsSync(ficheiroDaBase)) {
-    erros.push({ rel: 'supabase/migrations', msg: 'S1 regras: falta o registo da base da caixa das sugestões, e sem ele as regras que a nota diz não se conferem.' });
+  /* TODAS AS MIGRAÇÕES, POR ORDEM DE NOME (S1-b, 03.10.2026, o achado 8 da leitura a frio do Sol): a
+     regra em vigor é a da última definição de cada coisa, e uma migração nova que mude uma regra entra na
+     conferência sem que ninguém tenha de a nomear aqui. */
+  const pastaDaBase = path.join(ROOT, 'supabase', 'migrations');
+  const migracoes = fs.existsSync(pastaDaBase)
+    ? fs.readdirSync(pastaDaBase).filter((f) => f.endsWith('.sql')).sort().map((nome) => ({ nome, sql: fs.readFileSync(path.join(pastaDaBase, nome), 'utf8') }))
+    : [];
+  SUGESTOES_NO_PORTAO.migracoes = migracoes.length;
+  if (!migracoes.length) {
+    erros.push({ rel: 'supabase/migrations', msg: 'S1 regras: faltam as migrações da base da caixa das sugestões, e sem elas as regras que a nota diz não se conferem.' });
   } else {
-    const sql = fs.readFileSync(ficheiroDaBase, 'utf8');
-    for (const planta of plantasDaCaixa(sql)) {
+    for (const planta of plantasDaCaixa(migracoes)) {
       SUGESTOES_NO_PORTAO.plantas++;
       if (!planta.mordeu) erros.push({ rel: 'scripts/sugestoes-do-portao.mjs', msg: `S1: a planta em memória «${planta.nome}» não mordeu; a conferência dela não vê o que existe para ver.` });
     }
-    for (const msg of conferirRegrasDaBase(sql)) erros.push({ rel: 'src/data/sugestoes.mjs', msg });
+    for (const msg of conferirRegrasDaBase(migracoes)) erros.push({ rel: 'supabase/migrations', msg });
   }
   const mapa = conferirMapaDasSugestoes(DIST);
   SUGESTOES_NO_PORTAO.enderecosNoMapa = mapa.enderecos;
@@ -8749,7 +8755,7 @@ console.log(
       ` · UE1b: ${UE1B.portas} porta(s) dos recibos das linhas para as séries, ${UE1B.legendas} legenda(s) das marcas com ${UE1B.marcasNasLegendas} marca(s)` +
       ` · UE1d: ${UE1D.definicoes} definição(ões) declarada(s) nos recibos das séries` +
       ` · UE1e: ${UE1E.semPortugal} recibo(s) das séries sem Portugal na definição, ${UE1E.formaDaSerie} com a forma do recibo da série (${UE1E.formasDeclaradas} declarada(s))` +
-      ` · S1: ${SUGESTOES_NO_PORTAO.portas} porta(s) das sugestões em ${SUGESTOES_NO_PORTAO.paginas} página(s), ${SUGESTOES_NO_PORTAO.paginasDaCaixa} página(s) da caixa conferida(s), ${SUGESTOES_NO_PORTAO.enderecosNoMapa} endereço(s) lidos no mapa do sítio, ${SUGESTOES_NO_PORTAO.plantas} planta(s) em memória` +
+      ` · S1: ${SUGESTOES_NO_PORTAO.portas} porta(s) das sugestões em ${SUGESTOES_NO_PORTAO.paginas} página(s), ${SUGESTOES_NO_PORTAO.paginasDaCaixa} página(s) da caixa conferida(s), ${SUGESTOES_NO_PORTAO.enderecosNoMapa} endereço(s) lidos no mapa do sítio, ${SUGESTOES_NO_PORTAO.plantas} planta(s) em memória, ${SUGESTOES_NO_PORTAO.migracoes} migração(ões) da base lidas por ordem` +
       ` · L2b: ${ORIGENS_DOS_CONCELHOS.lugares} lugar(es), ${ORIGENS_DOS_CONCELHOS.contas} contagem(ns) e ${ORIGENS_DOS_CONCELHOS.empates} empate(s) recontados das linhas dos concelhos, ${ORIGENS_DOS_CONCELHOS.valoresNaFaixa} valor(es) do concelho e ${ORIGENS_DOS_CONCELHOS.portugal} de Portugal nas faixas, pela marca do cartão`,
   ),
 );

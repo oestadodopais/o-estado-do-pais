@@ -20,12 +20,16 @@
  *             a porta das sugestões;
  *   MAPA    · `conferirMapaDasSugestoes()`: no mapa do sítio construído, a página
  *             do formulário das duas edições e nenhuma das do resultado;
- *   REGRAS  · `conferirRegrasDaBase()`: as palavras que a nota e a página do
- *             limite dizem (cinco por hora, uma hora, noventa dias, um ano) e os
- *             limites de cada caixa são os números do registo da base
- *             (`supabase/migrations/2026-10-02-caixa-das-sugestoes.sql`). Se a base
- *             mudar e a nota não, o leitor lê uma regra falsa, e a construção
- *             fecha.
+ *   REGRAS  · `conferirRegrasDaBase()`: desde a passagem S1-b (03.10.2026, o
+ *             achado 8 da leitura a frio do Sol), lê todas as migrações de
+ *             `supabase/migrations/` por ordem de nome, segue o que cada uma cria,
+ *             apaga, agenda e desagenda, e confere as regras em vigor no fim contra
+ *             a tabela declarada (`REGRAS_DA_CAIXA`) e contra as palavras que o
+ *             leitor lê: a chave exigida (e nenhuma função sem ela viva), a tranca,
+ *             o teto do dia, a marca de 64 caracteres, a limpeza das marcas, a
+ *             janela de uma hora, cinco por marca, a retenção de noventa dias e de
+ *             um ano, e a tarefa que apaga as marcas de hora a hora. Se a base mudar
+ *             e a nota não, o leitor lê uma regra falsa, e a construção fecha.
  *
  * A LISTA DO `noindex` é `ROTAS_SEM_INDICE`: as quatro do resultado, e mais
  * nenhuma desta família. As palavras e os caminhos vêm dos ficheiros declarados
@@ -316,37 +320,149 @@ const POR_EXTENSO = {
 };
 
 /**
- * REGRAS · os números do registo da base contra as palavras que o leitor lê.
- * @param {string} sql o texto do registo da base
+ * AS REGRAS DECLARADAS DA CAIXA (S1-b, 03.10.2026, o achado 8 da leitura a frio do Sol): o que a
+ * última definição de cada coisa nas migrações tem de fazer. Os números são os do §0 do brief e da
+ * segunda migração; a nota, a página do limite, o formulário e a função dizem ou usam os mesmos, e esta
+ * célula confere os dois lados. Mudar uma regra é uma migração nova, esta tabela e os textos, no mesmo
+ * commit: se só a base mudar, a construção fecha.
+ */
+export const REGRAS_DA_CAIXA = {
+  porMarcaPorHora: 5,
+  janelaDaMarcaHoras: 1,
+  porDia: 200,
+  janelaDoDiaHoras: 24,
+  comprimentoDaMarca: 64,
+  retencaoDecididaDias: 90,
+  retencaoPorDecidirAnos: 1,
+};
+
+/** O texto de uma migração sem os comentários de linha (`--`), que não são regra nenhuma. */
+const semComentarios = (sql) => sql.replace(/(^|[^:'\w])--[^\n]*/g, '$1');
+
+/** Os tipos de uma lista de parâmetros («p_chave text, p_lingua text» ou «text, text»), normalizados. */
+const tiposDe = (parametros) =>
+  parametros
+    .split(',')
+    .map((x) => x.trim().split(/\s+/).pop() ?? '')
+    .filter(Boolean)
+    .join(',');
+
+/**
+ * A HISTÓRIA DAS MIGRAÇÕES, POR ORDEM DE NOME: cada função `public.enviar_sugestao` criada ou apagada, e
+ * cada tarefa do `pg_cron` agendada ou desagendada, pela ordem em que as migrações as fazem. Devolve o que
+ * fica no fim: as funções vivas (pela assinatura) e as tarefas vivas (pelo nome).
+ * @param {{ nome: string, sql: string }[]} migracoes
+ */
+export function estadoDasMigracoes(migracoes) {
+  const ordenadas = [...migracoes].sort((a, b) => (a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0));
+  const texto = ordenadas.map((m) => semComentarios(m.sql)).join('\n');
+  /** @type {{ i: number, faz: () => void }[]} */
+  const eventos = [];
+  /** @type {Map<string, { parametros: string, corpo: string }>} */
+  const funcoes = new Map();
+  /** @type {Map<string, { quando: string, comando: string }>} */
+  const tarefas = new Map();
+  for (const m of texto.matchAll(/create\s+(?:or\s+replace\s+)?function\s+public\.enviar_sugestao\s*\(([^)]*)\)[\s\S]*?\$\$([\s\S]*?)\$\$/gi)) {
+    eventos.push({ i: m.index ?? 0, faz: () => funcoes.set(tiposDe(m[1]), { parametros: m[1].trim(), corpo: m[2] }) });
+  }
+  for (const m of texto.matchAll(/drop\s+function\s+(?:if\s+exists\s+)?public\.enviar_sugestao\s*\(([^)]*)\)/gi)) {
+    eventos.push({ i: m.index ?? 0, faz: () => funcoes.delete(tiposDe(m[1])) });
+  }
+  for (const m of texto.matchAll(/cron\.schedule\(\s*'([^']+)'\s*,\s*'([^']+)'\s*,\s*\$\$([\s\S]*?)\$\$\s*\)/gi)) {
+    eventos.push({ i: m.index ?? 0, faz: () => tarefas.set(m[1], { quando: m[2], comando: m[3] }) });
+  }
+  for (const m of texto.matchAll(/cron\.unschedule\(\s*'([^']+)'\s*\)/gi)) {
+    eventos.push({ i: m.index ?? 0, faz: () => tarefas.delete(m[1]) });
+  }
+  for (const e of eventos.sort((a, b) => a.i - b.i)) e.faz();
+  return { funcoes, tarefas, texto, ficheiros: ordenadas.map((m) => m.nome) };
+}
+
+/**
+ * REGRAS · as regras em vigor no fim das migrações, contra a tabela declarada e contra as palavras que o
+ * leitor lê: a chave exigida (e nenhuma função sem ela viva), a tranca, o teto do dia, a marca de 64
+ * caracteres, a limpeza das marcas expiradas, a janela de uma hora, o limite por marca, a retenção das
+ * sugestões e a tarefa que apaga as marcas de hora a hora; e os limites de cada coluna contra o
+ * formulário e a função.
+ * @param {{ nome: string, sql: string }[]} migracoes
  * @param {typeof SUGESTOES} textos
  * @param {typeof LIMITES_DAS_SUGESTOES} limites
  * @returns {string[]}
  */
-export function conferirRegrasDaBase(sql, textos = SUGESTOES, limites = LIMITES_DAS_SUGESTOES) {
+export function conferirRegrasDaBase(migracoes, textos = SUGESTOES, limites = LIMITES_DAS_SUGESTOES) {
   const erros = [];
-  const numero = (re, oQue) => {
-    const m = sql.match(re);
-    if (!m) erros.push(`S1 regras: o registo da base não diz ${oQue} (${re}).`);
+  if (!migracoes.length) return ['S1 regras: não há migração nenhuma da caixa das sugestões.'];
+  const { funcoes, tarefas, texto } = estadoDasMigracoes(migracoes);
+  /** Um número de uma expressão num texto, ou null com o erro dito. */
+  const numero = (onde, re, oQue) => {
+    const m = onde.match(re);
+    if (!m) erros.push(`S1 regras: a regra em vigor não diz ${oQue}.`);
     return m ? Number(m[1]) : null;
+  };
+  /** O número em vigor tem de ser o declarado. */
+  const igual = (n, declarado, oQue) => {
+    if (n !== null && n !== declarado) erros.push(`S1 regras: ${oQue} é ${n} na regra em vigor, e a regra declarada é ${declarado}.`);
   };
   /** A frase tem de dizer o número por extenso, num dos feitios da tabela. */
   const diz = (n, frase, molde, oQue) => {
     if (n === null) return;
     const formas = POR_EXTENSO[/** @type {1|5|90} */ (n)];
     if (!formas) {
-      erros.push(`S1 regras: ${oQue} é ${n} no registo da base, e esta célula não sabe dizê-lo por extenso; escreva-o na tabela POR_EXTENSO e no texto.`);
+      erros.push(`S1 regras: ${oQue} é ${n}, e esta célula não sabe dizê-lo por extenso; escreva-o na tabela POR_EXTENSO e no texto.`);
       return;
     }
     for (const lang of /** @type {Lingua[]} */ (['pt', 'en'])) {
       if (!formas[lang].some((p) => frase[lang].includes(molde[lang](p)))) {
-        erros.push(`S1 regras: ${oQue} é ${n} no registo da base, e o texto ${lang} não o diz («${frase[lang]}»).`);
+        erros.push(`S1 regras: ${oQue} é ${n}, e o texto ${lang} não o diz («${frase[lang]}»).`);
       }
     }
   };
-  diz(numero(/if v_n > (\d+) then/, 'o limite por marca e por hora'), textos.resultados.limite, { pt: (p) => `${p} sugestões`, en: (p) => `${p} suggestions` }, 'o limite por marca e por hora');
-  diz(numero(/interval '(\d+) hours?'\)\s*\n\s*on conflict/, 'o prazo da marca'), textos.nota, { pt: (p) => `durante ${p} hora`, en: (p) => `for ${p} hour` }, 'o prazo da marca');
-  diz(numero(/decidido_em < now\(\) - interval '(\d+) days'/, 'a retenção de uma sugestão decidida'), textos.nota, { pt: (p) => `ao fim de ${p} dias`, en: (p) => `after ${p} days` }, 'a retenção de uma sugestão decidida');
-  diz(numero(/criado_em < now\(\) - interval '(\d+) years?'/, 'a retenção de uma sugestão por decidir'), textos.nota, { pt: (p) => `ao fim de ${p} ano`, en: (p) => `after ${p} year` }, 'a retenção de uma sugestão por decidir');
+
+  /* A FUNÇÃO: uma só viva, e é a que exige a chave. */
+  const vivas = [...funcoes.values()];
+  const semChave = vivas.filter((f) => !/^p_chave\s/.test(f.parametros));
+  if (semChave.length) erros.push(`S1 regras: há ${semChave.length} função(ões) enviar_sugestao vivas sem a chave como primeiro parâmetro (${semChave.map((f) => `(${f.parametros})`).join('; ')}); a chave exigida é a proteção da base contra quem a chame por fora da Vercel.`);
+  if (vivas.length !== 1) erros.push(`S1 regras: há ${vivas.length} função(ões) enviar_sugestao vivas no fim das migrações, e tem de haver uma.`);
+  const corpo = vivas.find((f) => /^p_chave\s/.test(f.parametros))?.corpo ?? '';
+  if (corpo) {
+    if (!/raise\s+exception\s+'chave'/i.test(corpo) || !/digest\(\s*p_chave\s*,/i.test(corpo)) {
+      erros.push('S1 regras: a função em vigor não exige a chave (falta a comparação do resumo de p_chave e a recusa «chave»).');
+    }
+    const tranca = corpo.search(/pg_advisory_xact_lock\s*\(/i);
+    const contagem = corpo.search(/into\s+v_dia\b/i);
+    if (tranca < 0 || contagem < 0 || tranca > contagem) erros.push('S1 regras: a função em vigor conta o teto do dia sem a tranca antes da contagem, e dois envios ao mesmo tempo passam os dois.');
+    igual(numero(corpo, /into\s+v_dia\s+from\s+sugestoes\s+where\s+criado_em\s*>\s*now\(\)\s*-\s*interval\s+'(\d+)\s+hours?'/i, 'a janela do teto do dia'), REGRAS_DA_CAIXA.janelaDoDiaHoras, 'a janela do teto do dia, em horas,');
+    igual(numero(corpo, /if\s+v_dia\s*>=\s*(\d+)\s+then\s+raise\s+exception\s+'cheia'/i, 'o teto do dia'), REGRAS_DA_CAIXA.porDia, 'o teto do dia');
+    igual(numero(corpo, /length\(\s*p_marca\s*\)\s*<>\s*(\d+)\s+then\s+raise\s+exception\s+'marca'/i, 'o comprimento da marca'), REGRAS_DA_CAIXA.comprimentoDaMarca, 'o comprimento da marca');
+    if (!/delete\s+from\s+sugestoes_limites\s+where\s+ate\s*<\s*now\(\)/i.test(corpo)) erros.push('S1 regras: a função em vigor não apaga as marcas expiradas antes de contar (a limpeza).');
+    const janela = numero(corpo, /values\s*\(\s*p_marca\s*,\s*1\s*,\s*now\(\)\s*\+\s*interval\s+'(\d+)\s+hours?'\s*\)/i, 'a janela da marca');
+    igual(janela, REGRAS_DA_CAIXA.janelaDaMarcaHoras, 'a janela da marca, em horas,');
+    diz(janela, textos.nota, { pt: (p) => `durante ${p} hora`, en: (p) => `for ${p} hour` }, 'a janela da marca');
+    const porMarca = numero(corpo, /if\s+v_n\s*>\s*(\d+)\s+then\s+raise\s+exception\s+'limite'/i, 'o limite por marca e por hora');
+    igual(porMarca, REGRAS_DA_CAIXA.porMarcaPorHora, 'o limite por marca e por hora');
+    diz(porMarca, textos.resultados.limite, { pt: (p) => `${p} sugestões`, en: (p) => `${p} suggestions` }, 'o limite por marca e por hora');
+  }
+
+  /* AS TAREFAS: a retenção das sugestões, e as marcas apagadas de hora a hora. */
+  const retencao = tarefas.get('sugestoes-retencao');
+  if (!retencao) erros.push('S1 regras: a tarefa da retenção (sugestoes-retencao) não está agendada no fim das migrações.');
+  else {
+    const dias = numero(retencao.comando, /decidido_em\s*<\s*now\(\)\s*-\s*interval\s+'(\d+)\s+days'/i, 'a retenção de uma sugestão decidida');
+    igual(dias, REGRAS_DA_CAIXA.retencaoDecididaDias, 'a retenção de uma sugestão decidida, em dias,');
+    diz(dias, textos.nota, { pt: (p) => `ao fim de ${p} dias`, en: (p) => `after ${p} days` }, 'a retenção de uma sugestão decidida');
+    const anos = numero(retencao.comando, /criado_em\s*<\s*now\(\)\s*-\s*interval\s+'(\d+)\s+years?'/i, 'a retenção de uma sugestão por decidir');
+    igual(anos, REGRAS_DA_CAIXA.retencaoPorDecidirAnos, 'a retenção de uma sugestão por decidir, em anos,');
+    diz(anos, textos.nota, { pt: (p) => `ao fim de ${p} ano`, en: (p) => `after ${p} year` }, 'a retenção de uma sugestão por decidir');
+  }
+  const marcas = tarefas.get('sugestoes-marcas');
+  if (!marcas) erros.push('S1 regras: a tarefa que apaga as marcas de hora a hora (sugestoes-marcas) não está agendada no fim das migrações.');
+  else {
+    const campos = marcas.quando.trim().split(/\s+/);
+    if (campos.length !== 5 || campos.slice(1).some((c) => c !== '*')) erros.push(`S1 regras: a tarefa das marcas corre «${marcas.quando}», e tem de correr de hora a hora.`);
+    if (!/delete\s+from\s+public\.sugestoes_limites\s+where\s+ate\s*<\s*now\(\)/i.test(marcas.comando)) erros.push('S1 regras: a tarefa das marcas não apaga as marcas expiradas.');
+  }
+
+  /* AS COLUNAS: o que a base guarda, contra o formulário e a função. */
   for (const [coluna, limite] of /** @type {[string, number][]} */ ([
     ['pagina', limites.pagina],
     ['procurou', limites.texto],
@@ -354,7 +470,7 @@ export function conferirRegrasDaBase(sql, textos = SUGESTOES, limites = LIMITES_
     ['outro', limites.texto],
     ['contacto', limites.contacto],
   ])) {
-    const n = numero(new RegExp(`char_length\\(${coluna}\\) <= (\\d+)`), `o limite da coluna ${coluna}`);
+    const n = numero(texto, new RegExp(`char_length\\(${coluna}\\) <= (\\d+)`), `o limite da coluna ${coluna}`);
     if (n !== null && n !== limite) erros.push(`S1 regras: a base guarda até ${n} caracteres em ${coluna}, e o formulário e a função usam ${limite}.`);
   }
   return erros;
@@ -363,10 +479,22 @@ export function conferirRegrasDaBase(sql, textos = SUGESTOES, limites = LIMITES_
 /**
  * AS PLANTAS DA CAIXA, em memória, em cada corrida: cada uma tem de ser recusada
  * pela conferência com a queixa esperada. Devolve as que não morderam.
- * @param {string} sql
+ * @param {{ nome: string, sql: string }[]} migracoes
  * @returns {{ nome: string, mordeu: boolean }[]}
  */
-export function plantasDaCaixa(sql) {
+export function plantasDaCaixa(migracoes) {
+  const ordenadas = [...migracoes].sort((a, b) => (a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0));
+  /** Uma cópia das migrações com uma troca num ficheiro; a troca tem de mudar o ficheiro. */
+  const troca = (indice, re, por) =>
+    ordenadas.map((m, i) => {
+      if (i !== indice) return { ...m };
+      const sql = m.sql.replace(re, por);
+      if (sql === m.sql) throw new Error(`S1: a planta das regras não achou ${re} em ${m.nome}`);
+      return { ...m, sql };
+    });
+  const naUltima = (re, por) => troca(ordenadas.length - 1, re, por);
+  const naPrimeira = (re, por) => troca(0, re, por);
+  const depoisDaUltima = (sql) => [...ordenadas.map((m) => ({ ...m })), { nome: '9999-12-31-planta.sql', sql }];
   const lang = /** @type {Lingua} */ ('pt');
   const formulario = routePath('sugestoes', lang);
   const pagina = (porta) => parse(`<html><body><main><h1>x</h1></main><footer><span data-porta-correccoes>c</span>${porta}</footer></body></html>`);
@@ -383,10 +511,19 @@ export function plantasDaCaixa(sql) {
         conferirPortaDasSugestoes(parse(`<html><body><main>${boa}</main><footer><span data-porta-correccoes>c</span></footer></body></html>`), { caminho: '/lugares', lang }),
     },
     { nome: 'porta-escondida', espera: /escondida/, erros: () => conferirPortaDasSugestoes(pagina(boa.replace('<span data-porta-sugestoes>', '<span data-porta-sugestoes hidden>')), { caminho: '/lugares', lang }) },
-    { nome: 'regras-controlo', espera: null, erros: () => conferirRegrasDaBase(sql) },
-    { nome: 'regras-limite-mudado', espera: /limite por marca/, erros: () => conferirRegrasDaBase(sql.replace(/if v_n > \d+ then/, 'if v_n > 10 then')) },
-    { nome: 'regras-retencao-mudada', espera: /sugestão decidida/, erros: () => conferirRegrasDaBase(sql.replace(/decidido_em < now\(\) - interval '\d+ days'/, "decidido_em < now() - interval '30 days'")) },
-    { nome: 'regras-coluna-mais-curta', espera: /em procurou/, erros: () => conferirRegrasDaBase(sql.replace(/char_length\(procurou\) <= \d+/, 'char_length(procurou) <= 1000')) },
+    { nome: 'regras-controlo', espera: null, erros: () => conferirRegrasDaBase(migracoes) },
+    /* S1-b (o achado 8): as plantas mexem na ÚLTIMA definição de cada coisa, ou acrescentam uma migração
+       depois da última, que é o que a célula tem de seguir. */
+    { nome: 'regras-limite-mudado', espera: /limite por marca e por hora é 10/, erros: () => conferirRegrasDaBase(naUltima(/if v_n > \d+ then/, 'if v_n > 10 then')) },
+    { nome: 'regras-limpeza-tirada', espera: /não apaga as marcas expiradas antes de contar/, erros: () => conferirRegrasDaBase(naUltima(/\n\s*delete from sugestoes_limites where ate < now\(\);/, '')) },
+    { nome: 'regras-teto-tirado', espera: /o teto do dia é 200000/, erros: () => conferirRegrasDaBase(naUltima(/if v_dia >= \d+ then/, 'if v_dia >= 200000 then')) },
+    { nome: 'regras-tranca-tirada', espera: /sem a tranca antes da contagem/, erros: () => conferirRegrasDaBase(naUltima(/\n\s*perform pg_advisory_xact_lock\([^)]*\)\);/, '')) },
+    { nome: 'regras-chave-tirada', espera: /não exige a chave/, erros: () => conferirRegrasDaBase(naUltima(/\n\s*raise exception 'chave';/, '')) },
+    { nome: 'regras-funcao-antiga-viva', espera: /sem a chave como primeiro parâmetro/, erros: () => conferirRegrasDaBase(naUltima(/drop function if exists public\.enviar_sugestao\([^)]*\);/, '')) },
+    { nome: 'regras-retencao-desagendada', espera: /a tarefa da retenção \(sugestoes-retencao\) não está agendada/, erros: () => conferirRegrasDaBase(depoisDaUltima("select cron.unschedule('sugestoes-retencao');")) },
+    { nome: 'regras-retencao-mudada', espera: /sugestão decidida, em dias, é 30/, erros: () => conferirRegrasDaBase(naPrimeira(/decidido_em < now\(\) - interval '\d+ days'/, "decidido_em < now() - interval '30 days'")) },
+    { nome: 'regras-marcas-diarias', espera: /tem de correr de hora a hora/, erros: () => conferirRegrasDaBase(naUltima(/'sugestoes-marcas', '[^']+'/, "'sugestoes-marcas', '7 4 * * *'")) },
+    { nome: 'regras-coluna-mais-curta', espera: /em procurou/, erros: () => conferirRegrasDaBase(naPrimeira(/char_length\(procurou\) <= \d+/, 'char_length(procurou) <= 1000')) },
   ];
   return casos.map((c) => {
     const erros = c.erros();
