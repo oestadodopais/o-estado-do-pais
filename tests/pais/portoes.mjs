@@ -408,7 +408,7 @@ planta('p4d-mapa-unidade-fora-da-legenda','scripts/gate-html.mjs',[
 /* S1 (02.10.2026): a caixa das sugestões. A porta do rodapé conta-se em todas as páginas, uma por página, com o
    destino e o `?de=` do caminho da página; as páginas do resultado levam `noindex` e ficam fora do mapa do sítio; a
    nota do que fica guardado é a declarada; o campo armadilhado não se anuncia; o formulário não manda campo nenhum
-   além dos seis; e a página das correções tem a frase com a porta das sugestões. `--prefixo s1-` corre só estas. */
+   além dos declarados; e a página das correções tem a frase com a porta das sugestões. `--prefixo s1-` corre só estas. */
 planta('s1-porta-sugestoes-a-dobrar','scripts/gate-html.mjs',[
  ['lugares/index.html',r=>r.querySelector('[data-porta-sugestoes]').insertAdjacentHTML('afterend','<span data-porta-sugestoes><a href="/sugestoes?de=%2Flugares">Sugestões</a></span>')]
 ],[/S1 porta: esta página tem 2 porta\(s\) das sugestões/]);
@@ -446,4 +446,26 @@ planta('s1-voz-nota-mudada-com-language','scripts/check-voz.mjs',[
 planta('s1b-limite-antigo-de-volta','scripts/check-voz.mjs',[
  ['sugestoes/limite/index.html',r=>r.querySelector('[data-sugestoes-resultado="limite"]').set_content('Chegaram cinco sugestões deste endereço na última hora. Volte mais tarde.')]
 ],[/FRASE RETIRADA QUE VOLTOU A RENDER-SE/,/na última hora/]);
+/* S1-c (03.10.2026, decisão do diretor, §1.154): o campo do contacto saiu do formulário, a nota passou ao texto que
+   o diretor aprovou, e a quinta recusa do Método mudou. O contacto de volta morde no portão de HTML, pelo nome e pela
+   lista dos campos, e o seu rótulo de volta morde na sentinela das frases retiradas; a nota com uma palavra mudada deixa
+   a linha viva do texto aprovado sem se render; «este sítio» fora da cadeia dispensada da nota volta a morder no
+   arame da voz; e a recusa do Método com uma palavra mudada deixa a sua linha viva sem se render. `--prefixo s1c-` corre
+   só estas. */
+const CAMPO_DO_CONTACTO='<p class="sugestoes-campo"><label for="sugestao-contacto">Contacto, se quiser resposta (opcional)</label><input id="sugestao-contacto" name="contacto" type="email" maxlength="200" autocomplete="email"></p>';
+planta('s1c-contacto-de-volta','scripts/gate-html.mjs',[
+ ['sugestoes/index.html',r=>r.querySelector('[data-sugestoes-nota]').insertAdjacentHTML('beforebegin',CAMPO_DO_CONTACTO)]
+],[/S1 formulário: o formulário pede um contacto/,/S1 formulário: os campos são lingua, sitio, procurou, estudo, outro, contacto, e são só lingua, sitio, procurou, estudo, outro/]);
+planta('s1c-voz-rotulo-do-contacto-de-volta','scripts/check-voz.mjs',[
+ ['sugestoes/index.html',r=>r.querySelector('[data-sugestoes-nota]').insertAdjacentHTML('beforebegin',CAMPO_DO_CONTACTO)]
+],[/FRASE RETIRADA QUE VOLTOU A RENDER-SE/,/Contacto, se quiser resposta \(opcional\)/]);
+planta('s1c-voz-nota-com-outra-palavra','scripts/check-voz.mjs',[
+ ['sugestoes/index.html',r=>{const n=r.querySelector('[data-sugestoes-nota]');n.set_content(n.innerHTML.replace('noventa dias','trinta dias'));}]
+],[/linha «viva» que não se rende em rota nenhuma/,/O que fica guardado: o que escrever, a língua e a página de onde veio/]);
+planta('s1c-voz-este-sitio-fora-da-nota','scripts/check-voz.mjs',[
+ ['sugestoes/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>As sugestões fazem crescer este sítio.</p>')]
+],[/frase com marcador da voz e sem declaração de autorreferência/,/marcador\(es\): ste sítio/]);
+planta('s1c-voz-recusa-do-metodo-mudada','scripts/check-voz.mjs',[
+ ['metodo/index.html',r=>{const li=r.querySelectorAll('.politica-recusas li').find(x=>x.textContent.includes('só guarda dados pessoais'));li.set_content(li.innerHTML.replace('pelo tempo','por todo o tempo'));}]
+],[/linha «viva» que não se rende em rota nenhuma/,/Este projeto só guarda dados pessoais de quem usa a caixa das sugestões/]);
 
