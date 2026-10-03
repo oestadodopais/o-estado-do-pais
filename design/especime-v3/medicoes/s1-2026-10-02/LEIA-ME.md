@@ -228,6 +228,10 @@ O ponto 3 mandava parar se a amarra (`scripts/check-ledger.mjs`) prendesse o fic
 - A célula da função, em `celula-da-funcao-c.json`: todos os casos verdes e todas as plantas a morder com a queixa que nomeiam, com a cópia de controlo verde.
 - Sobre o `dist/` desta passagem, em `plantas-c/`: as cinco plantas novas, e outra vez as dez do S1 e a da S1-b, todas a morder com os bytes repostos (`s1c_plantas_do_dist_do_prefixo_s1c_que_morderam`, `s1c_plantas_do_dist_do_prefixo_s1_que_morderam`, `s1c_plantas_do_dist_do_prefixo_s1b_que_morderam`).
 
+### As capturas
+
+4 imagens e 0 problemas (`s1c_capturas`, `s1c_capturas_problemas`), em `design/especime-v3/capturas/s1-2026-10-02/s1c-formulario-<língua>-<largura>.png`, com o manifesto em `capturas-s1c.json`, sobre a construção da corrida final. Em todas, o formulário sem o campo do contacto (`s1c_capturas_sem_o_campo_do_contacto`) e a nota igual à declarada (`s1c_capturas_com_a_nota_aprovada`); o contacto plantado depois de cada imagem foi visto pela mesma leitura; e a quinta recusa rendida no Método é a declarada nas duas edições (`s1c_recusas_rendidas_iguais_a_declarada`).
+
 ### Os commits da passagem
 
 - `29b57384` o contacto sai e a nota aprovada (os textos, a vista, a folha, a função, a célula, o portão e o procedimento da caixa);
@@ -235,16 +239,16 @@ O ponto 3 mandava parar se a amarra (`scripts/check-ledger.mjs`) prendesse o fic
 - `92d19f0a` o inventário da voz, a exceção de contexto e a dispensa de «language»;
 - `dd656d59` as cinco plantas sobre o `dist/`;
 - `68b9148b` o mapa do repositório;
-- o das provas, das medidas, do captor e deste relatório, que é a cabeça da corrida final dos portões;
+- `b0b93695` as provas, as medidas, o captor e este relatório, a cabeça da corrida final dos portões;
 - e o último, com os códigos dessa corrida, as capturas, as medidas postas em dia, o custo e a resposta curta.
 
 ### Os portões da passagem
 
-A corrida final corre por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça do commit deste relatório. Os códigos, lidos de `portoes-c/<portão>.codigo`, entram no último commit com a cabeça ao lado: `s1c_portao_build_codigo`, `s1c_portao_verify_codigo` e `s1c_portao_typecheck_codigo`.
+A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça `b0b93695`, o commit das provas e deste relatório: `build` 0, `verify` 0 e `typecheck` 0 (`s1c_portao_build_codigo`, `s1c_portao_verify_codigo`, `s1c_portao_typecheck_codigo`), lidos de `portoes-c/<portão>.codigo`, com a cabeça em `portoes-c/cabeca`. A cabeça foi a mesma no princípio e no fim da corrida, foi a que o portão da construção construiu (`s1c_portao_cabeca_e_a_construida`), e nenhum ficheiro mudou durante a corrida além da pasta dela (`s1c_portao_ficheiros_mudados_durante_a_corrida`). A amarra das decisões corre no `ledger:check`, dentro do `build` e do `verify`. Nos registos da corrida, o caminho da worktree está trocado por `<worktree>`.
 
 ### O custo da passagem
 
-Das duas leituras do contador de símbolos restantes, em `custo-inicio-c.json` e `custo-fim-c.json`, e das horas lidas do relógio: `s1c_simbolos_gastos` e `s1c_segundos_de_parede`. A passagem correu numa só sessão do Claude Opus 5.5, sem subagentes.
+288 689 símbolos e 3 996 segundos de parede (`s1c_simbolos_gastos`, `s1c_segundos_de_parede`), das duas leituras do contador de símbolos restantes, em `custo-inicio-c.json` e `custo-fim-c.json`, e das horas lidas do relógio. A passagem correu numa só sessão do Claude Opus 5.5, sem subagentes. A semana da subscrição do Claude estava a 47 por cento no fim (`custo-fim-c.json`).
 
 ### O que ficou por fazer
 
