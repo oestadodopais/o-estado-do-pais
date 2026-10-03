@@ -322,6 +322,25 @@ const { ROUTES, routePath, LANGS } = await import(pathToFileURL(path.join(RAIZ, 
   medicao('s1b_ficheiros_do_bloco_com_o_identificador_da_equipa', equipa ? comEquipa.length : NAO, 'o identificador lido do registo antigo do lugar de direção (git show 7fdd4794), procurado nos ficheiros seguidos do bloco', 'o mesmo identificador é achado num ficheiro de outro bloco (BRIEF-decisoes-2026-08-20.md)', equipa && (le(path.join(RAIZ, 'BRIEF-decisoes-2026-08-20.md')) ?? '').includes(equipa));
   medicao('s1b_ficheiros_do_bloco_lidos_na_procura', doBloco.length, 'git ls-files dos caminhos do bloco', 'o guião da prova da plataforma está entre eles', doBloco.includes('design/especime-v3/medicoes/s1-2026-10-02/prova-do-caminho/prova-da-plataforma.sh'));
 
+  /* O nome que a redação do guião do S1 trazia (o princípio do identificador, lido da versão anterior à passagem e
+     nunca escrito aqui), nos ficheiros do bloco; e as versões da história do ramo com o identificador ou o nome. */
+  const guiaoAntigo = execFileSync('git', ['show', 'cc93092c~1:design/especime-v3/medicoes/s1-2026-10-02/prova-do-caminho/prova-da-plataforma.sh'], { cwd: RAIZ, encoding: 'utf8' });
+  const nomeAntigo = (guiaoAntigo.match(/sed -E 's\/([a-z0-9-]+)\[-a-z0-9\]\*\/<equipa>/) ?? [])[1] ?? null;
+  const comNome = nomeAntigo ? doBloco.filter((f) => (le(path.join(RAIZ, f)) ?? '').includes(nomeAntigo)) : [];
+  medicao('s1b_ficheiros_do_bloco_com_o_nome_da_equipa_do_s1', nomeAntigo ? comNome.length : NAO, 'o nome lido da redação do guião do S1 (git show cc93092c~1), procurado nos ficheiros seguidos do bloco', 'o mesmo nome é achado num ficheiro de outro bloco (BRIEF-decisoes-2026-08-20.md), e é o princípio do identificador', Boolean(nomeAntigo) && Boolean(equipa?.startsWith(nomeAntigo)) && (le(path.join(RAIZ, 'BRIEF-decisoes-2026-08-20.md')) ?? '').includes(nomeAntigo));
+  const versoes = [];
+  if (equipa && nomeAntigo) {
+    for (const c of execFileSync('git', ['rev-list', '--reverse', `${BASE_DO_BLOCO}..HEAD`], { cwd: RAIZ, encoding: 'utf8' }).split('\n').filter(Boolean)) {
+      for (const f of execFileSync('git', ['diff-tree', '--no-commit-id', '--name-only', '-r', c], { cwd: RAIZ, encoding: 'utf8' }).split('\n').filter(Boolean)) {
+        let texto;
+        try { texto = execFileSync('git', ['show', `${c}:${f}`], { cwd: RAIZ, encoding: 'utf8', maxBuffer: 1 << 30, stdio: ['ignore', 'pipe', 'ignore'] }); } catch { continue; }
+        if (texto.includes(equipa) || texto.includes(nomeAntigo)) versoes.push({ commit: c.slice(0, 8), ficheiro: f });
+      }
+    }
+  }
+  medicao('s1b_versoes_da_historia_do_ramo_com_o_nome_da_equipa', equipa && nomeAntigo ? versoes.length : NAO, `cada ficheiro mudado em cada commit de ${BASE_DO_BLOCO}..HEAD (git diff-tree e git show), com o identificador ou o nome`, 'o registo do lugar de direção no commit do brief é uma delas', versoes.some((v) => v.commit === 'd0615da6'));
+  medidas.at(-1).versoes = versoes;
+
   /* As horas dos envios de ensaio no relatório, ao segundo do registo (o achado 15). */
   const relatorio = le(path.join(PASTA, 'LEIA-ME.md')) ?? '';
   const envios = leJson(B('prova-do-caminho/respostas.json'))?.envios_que_a_base_guardou ?? [];
@@ -332,6 +351,18 @@ const { ROUTES, routePath, LANGS } = await import(pathToFileURL(path.join(RAIZ, 
     const c = le(B(`portoes-b/${g}.codigo`));
     medicao(`s1b_portao_${g}_codigo`, c === null ? NAO : Number(c.trim()), `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes-b · portoes-b/${g}.codigo`, 'a pasta tem a cabeça da corrida', fs.existsSync(B('portoes-b/cabeca')));
   }
+  /* A cabeça da corrida final: a mesma no princípio e no fim, a que o portão da construção construiu, uma antepassada
+     da cabeça em que o guião corre, e nenhum ficheiro mudado durante a corrida além da própria pasta da corrida. */
+  const cabecaDaCorrida = (le(B('portoes-b/cabeca')) ?? '').trim();
+  const cabecaNoFim = (le(B('portoes-b/cabeca.fim')) ?? '').trim();
+  const construida = leJson(path.join(RAIZ, 'dist/version.json'))?.commit ?? null;
+  const antepassada = (de) => { try { execFileSync('git', ['merge-base', '--is-ancestor', de, 'HEAD'], { cwd: RAIZ }); return true; } catch { return false; } };
+  const estadoNoFim = le(B('portoes-b/estado.fim'));
+  const mudadosNaCorrida = estadoNoFim === null ? null : estadoNoFim.split('\n').filter((l) => l.trim() && !l.includes('design/especime-v3/medicoes/s1-2026-10-02/portoes-b/'));
+  medicao('s1b_portao_cabeca_igual_no_fim', cabecaDaCorrida ? (cabecaDaCorrida === cabecaNoFim ? 1 : 0) : NAO, 'portoes-b/cabeca contra portoes-b/cabeca.fim, as duas escritas por portoes.sh', 'a cabeça da corrida é um commit do histórico', Boolean(cabecaDaCorrida) && antepassada(cabecaDaCorrida));
+  medicao('s1b_portao_cabeca_e_a_construida', cabecaDaCorrida && construida ? (construida === cabecaDaCorrida ? 1 : 0) : NAO, 'dist/version.json, o campo commit, contra portoes-b/cabeca', 'o ficheiro da construção tem commit', Boolean(construida));
+  medicao('s1b_portao_cabeca_antepassada_da_atual', cabecaDaCorrida ? (antepassada(cabecaDaCorrida) ? 1 : 0) : NAO, 'git merge-base --is-ancestor <portoes-b/cabeca> HEAD', 'a cabeça atual é antepassada de si própria', antepassada('HEAD'));
+  medicao('s1b_portao_ficheiros_mudados_durante_a_corrida', mudadosNaCorrida === null ? NAO : mudadosNaCorrida.length, 'as linhas de portoes-b/estado.fim (git status --short no fim da corrida) que não são a pasta da própria corrida', 'a pasta da corrida aparece no estado do fim', (estadoNoFim ?? '').includes('portoes-b/'));
   const ini = leJson(B('custo-inicio-b.json'));
   const fim = leJson(B('custo-fim-b.json'));
   medicao('s1b_simbolos_gastos', ini && fim ? ini.simbolos_restantes_no_inicio - fim.simbolos_restantes_no_fim : NAO, 'custo-inicio-b.json menos custo-fim-b.json, o contador que a ferramenta mostra ao construtor', 'os dois ficheiros dizem de onde vem o número', Boolean(ini?.o_que && fim?.o_que));

@@ -1,7 +1,7 @@
 {
   "bloco": "S1",
   "guiao": "design/especime-v3/medicoes/s1-2026-10-02/medir-s1.mjs",
-  "cabeca": "21f1a2c5577da75596ad6fd814c02394e343505b",
+  "cabeca": "c4ff98b54353d245126f09e2ae330661b9b43d29",
   "medidas": [
     {
       "nome": "textos_da_pagina_iguais_ao_brief",
@@ -77,7 +77,7 @@
     },
     {
       "nome": "construcao_da_cabeca",
-      "valor": 0,
+      "valor": 1,
       "comando": "dist/version.json, o campo commit, contra git rev-parse HEAD",
       "conhecido_positivo": {
         "o_que": "o ficheiro tem commit",
@@ -86,7 +86,7 @@
     },
     {
       "nome": "paginas_da_caixa_construidas",
-      "valor": "NÃO LIDO",
+      "valor": 10,
       "comando": "as cinco rotas da caixa nas duas edições, cada uma com o seu index.html em dist/",
       "conhecido_positivo": {
         "o_que": "a página do formulário português existe",
@@ -95,7 +95,7 @@
     },
     {
       "nome": "paginas_da_caixa_com_noindex",
-      "valor": "NÃO LIDO",
+      "valor": 8,
       "comando": "as páginas da caixa com <meta name=\"robots\" content=\"noindex, follow\">",
       "conhecido_positivo": {
         "o_que": "a do obrigado português leva-o",
@@ -104,7 +104,7 @@
     },
     {
       "nome": "formularios_no_mapa_do_sitio",
-      "valor": "NÃO LIDO",
+      "valor": 2,
       "comando": "os <loc> de dist/sitemap-N.xml com o caminho do formulário de cada edição",
       "conhecido_positivo": {
         "o_que": "o mapa tem a página das correções",
@@ -113,7 +113,7 @@
     },
     {
       "nome": "paginas_do_resultado_no_mapa_do_sitio",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "os <loc> de dist/sitemap-N.xml com o caminho de uma página do resultado",
       "conhecido_positivo": {
         "o_que": "o mesmo leitor vê os dois formulários",
@@ -122,7 +122,7 @@
     },
     {
       "nome": "paginas_html_construidas",
-      "valor": "NÃO LIDO",
+      "valor": 7477,
       "comando": "os ficheiros .html de dist/",
       "conhecido_positivo": {
         "o_que": "a página do formulário é um deles",
@@ -131,7 +131,7 @@
     },
     {
       "nome": "paginas_com_uma_porta_das_sugestoes",
-      "valor": "NÃO LIDO",
+      "valor": 7452,
       "comando": "os .html de dist/ com exatamente um atributo data-porta-sugestoes",
       "conhecido_positivo": {
         "o_que": "a primeira página tem-na",
@@ -140,7 +140,7 @@
     },
     {
       "nome": "paginas_com_a_porta_das_correcoes",
-      "valor": "NÃO LIDO",
+      "valor": 7452,
       "comando": "os .html de dist/ com data-porta-correccoes",
       "conhecido_positivo": {
         "o_que": "a primeira página tem-na",
@@ -824,12 +824,40 @@
     },
     {
       "nome": "s1b_ficheiros_do_bloco_lidos_na_procura",
-      "valor": 94,
+      "valor": 127,
       "comando": "git ls-files dos caminhos do bloco",
       "conhecido_positivo": {
         "o_que": "o guião da prova da plataforma está entre eles",
         "encontrado": true
       }
+    },
+    {
+      "nome": "s1b_ficheiros_do_bloco_com_o_nome_da_equipa_do_s1",
+      "valor": 0,
+      "comando": "o nome lido da redação do guião do S1 (git show cc93092c~1), procurado nos ficheiros seguidos do bloco",
+      "conhecido_positivo": {
+        "o_que": "o mesmo nome é achado num ficheiro de outro bloco (BRIEF-decisoes-2026-08-20.md), e é o princípio do identificador",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "s1b_versoes_da_historia_do_ramo_com_o_nome_da_equipa",
+      "valor": 2,
+      "comando": "cada ficheiro mudado em cada commit de 62ed13c6..HEAD (git diff-tree e git show), com o identificador ou o nome",
+      "conhecido_positivo": {
+        "o_que": "o registo do lugar de direção no commit do brief é uma delas",
+        "encontrado": true
+      },
+      "versoes": [
+        {
+          "commit": "d0615da6",
+          "ficheiro": "design/especime-v3/medicoes/s1-2026-10-02/prova-do-caminho-do-lugar-de-direcao/vercel-inspect.txt"
+        },
+        {
+          "commit": "b4ab49e4",
+          "ficheiro": "design/especime-v3/medicoes/s1-2026-10-02/prova-do-caminho/prova-da-plataforma.sh"
+        }
+      ]
     },
     {
       "nome": "s1b_envios_de_ensaio_com_a_hora_do_registo_no_relatorio",
@@ -842,43 +870,79 @@
     },
     {
       "nome": "s1b_portao_build_codigo",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes-b · portoes-b/build.codigo",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça da corrida",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "s1b_portao_verify_codigo",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes-b · portoes-b/verify.codigo",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça da corrida",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "s1b_portao_typecheck_codigo",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes-b · portoes-b/typecheck.codigo",
       "conhecido_positivo": {
         "o_que": "a pasta tem a cabeça da corrida",
-        "encontrado": false
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "s1b_portao_cabeca_igual_no_fim",
+      "valor": 1,
+      "comando": "portoes-b/cabeca contra portoes-b/cabeca.fim, as duas escritas por portoes.sh",
+      "conhecido_positivo": {
+        "o_que": "a cabeça da corrida é um commit do histórico",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "s1b_portao_cabeca_e_a_construida",
+      "valor": 1,
+      "comando": "dist/version.json, o campo commit, contra portoes-b/cabeca",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro da construção tem commit",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "s1b_portao_cabeca_antepassada_da_atual",
+      "valor": 1,
+      "comando": "git merge-base --is-ancestor <portoes-b/cabeca> HEAD",
+      "conhecido_positivo": {
+        "o_que": "a cabeça atual é antepassada de si própria",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "s1b_portao_ficheiros_mudados_durante_a_corrida",
+      "valor": 0,
+      "comando": "as linhas de portoes-b/estado.fim (git status --short no fim da corrida) que não são a pasta da própria corrida",
+      "conhecido_positivo": {
+        "o_que": "a pasta da corrida aparece no estado do fim",
+        "encontrado": true
       }
     },
     {
       "nome": "s1b_simbolos_gastos",
-      "valor": "NÃO LIDO",
+      "valor": 282775,
       "comando": "custo-inicio-b.json menos custo-fim-b.json, o contador que a ferramenta mostra ao construtor",
       "conhecido_positivo": {
         "o_que": "os dois ficheiros dizem de onde vem o número",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "s1b_segundos_de_parede",
-      "valor": "NÃO LIDO",
+      "valor": 3246,
       "comando": "fim_utc de custo-fim-b.json menos inicio_utc de custo-inicio-b.json",
       "conhecido_positivo": {
         "o_que": "o início vem de um relógio lido",
