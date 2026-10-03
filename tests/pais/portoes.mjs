@@ -338,6 +338,16 @@ planta('r2-portao-unidade-da-casa-com-outra-idade','scripts/gate-html.mjs',[
 planta('r2-portao-algarismo-da-unidade-sem-marca','scripts/gate-html.mjs',[
  ['emprego/index.html',r=>r.querySelector('[data-unidade-da-casa="taxa-de-emprego-2025"]').set_content('% das pessoas dos 20 aos 64 anos')]
 ],[/algarismos fora do livro-razão: "20"/]);
+/* R2 (03.10.2026): a L1 dispensa a porta da origem de uma definição quando é o próprio documento da linha, no recibo
+   dessa linha (a pergunta nova do salário mínimo apoia-se no mesmo decreto-lei de onde vem o valor). A dispensa é do
+   destino exato do pedido e só dentro da origem: uma terceira porta para o mesmo documento fora dela conta, e a mesma
+   marca numa página que não é um recibo conta. */
+planta('r2-l1-porta-da-origem-repetida-fora','scripts/check-lugar.mjs',[
+ ['livro-razao/retribuicao-minima-mensal-garantida-continente-2026/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p><a href="https://dre.pt/application/conteudo/992879809">Decreto-Lei n.º 139/2025</a></p>')]
+],[/L1 · páginas com dois destinos iguais fora da mobília: \d+, acima do teto/]);
+planta('r2-l1-dispensa-so-no-recibo','scripts/check-lugar.mjs',[
+ ['temas/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<div data-def-origem="planta"><a class="def-origem-doc" href="/lugares/">Os lugares</a></div><p class="linha-pedido"><a class="ligacao-externa" href="/lugares/">Os lugares</a></p>')]
+],[/L1 · páginas com dois destinos iguais fora da mobília: \d+, acima do teto/]);
 planta('k2c-portao-classe-etaria-trocada','scripts/gate-html.mjs',[
  ['uniao-europeia/index.html',r=>r.querySelector('[data-verbatim="origem-eurostat-tipslm90-sexo-coordenadas"]').set_content('Age class: From 15 to 24 years')]
 ],[/a citação "origem-eurostat-tipslm90-sexo-coordenadas" não foi transcrita fielmente/]);

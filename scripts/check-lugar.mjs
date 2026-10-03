@@ -1078,6 +1078,20 @@ for (const ficheiro of paginas) {
        a A4 do `check:pais` confere que está onde ele a declara e em mais lado
        nenhum. Contá-la como segunda porta era contar a obrigação como escolha. */
     if (a.matches('a.marcador.marcador-de-titulo') && href === routePath('marcador', lang)) continue;
+    /* E A PORTA DA ORIGEM DE UMA DEFINIÇÃO QUE É O PRÓPRIO DOCUMENTO DA LINHA, no recibo dessa linha, pela
+       mesma regra (bloco R2, 03.10.2026). Cada origem de uma definição rende o seu documento como porta para o
+       endereço (a decisão do lugar de direção de 09.09.2026, em `src/components/OrigemDaDefinicao.astro`), e o
+       recibo rende o pedido da linha, cujo `href` o portão de HTML confere contra `source_url`. Quando a
+       pergunta de uma medida se apoia no mesmo documento de onde o valor vem (o salário mínimo: o artigo 2.º
+       do decreto-lei diz o território, o artigo 3.º diz o valor), as duas portas são obrigatórias e vão para o
+       mesmo sítio; contá-las como duas portas era contar a obrigação como escolha. Só se dispensa a porta
+       `a.def-origem-doc` dentro de `[data-def-origem]`, só na rota da linha, e só quando o destino é o EXATO
+       do pedido da mesma página: uma terceira porta para o mesmo documento noutro sítio da página continua a
+       contar, e a planta `r2-l1-porta-da-origem-repetida-fora` prova-o. */
+    if (chaveDaRota === 'linha' && a.matches('a.def-origem-doc') && a.closest('[data-def-origem]')) {
+      const pedido = corpo.querySelector('p.linha-pedido a.ligacao-externa')?.getAttribute('href') ?? null;
+      if (pedido && href.split('#')[0].replace(/\/$/, '') === pedido.split('#')[0].replace(/\/$/, '')) continue;
+    }
     const chave = href.split('#')[0].replace(/\/$/, '') || (href.startsWith('/') ? '/' : '');
     if (!chave) continue;
     destinos.set(chave, (destinos.get(chave) ?? 0) + 1);
