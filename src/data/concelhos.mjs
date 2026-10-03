@@ -85,9 +85,13 @@ export const MEDIDAS_DO_CONCELHO = [
     unidade: { pt: 'Pessoas', en: 'People' },
     prefixo: { pt: '', en: '' },
     ref: '2025',
+    /* R2 (03.10.2026, achado 23): a frase descrevia a fonte e não o número; passa a dizer o que se conta, com o termo
+       da fonte entre parênteses (o título do quadro, «População residente (N.º) × sexo × grupo etário»). */
     nota: {
-      pt: ['Estimativa anual do INE para o concelho.'],
-      en: ['The statistics institute’s annual estimate for the municipality.'],
+      pt: ['Estima quantas pessoas vivem no concelho (população residente), pela estimativa anual do INE.'],
+      /* «have their home», e não «live»: «live» é uma frase retirada do inventário das frases (a cobertura da casa, F1.10),
+         e a régua da voz morde-a dentro de uma frase nova. */
+      en: ['Estimates how many people have their home in the municipality (resident population), from the statistics institute’s annual estimate.'],
     },
   },
   {
@@ -111,9 +115,11 @@ export const MEDIDAS_DO_CONCELHO = [
     unidade: { pt: 'Pessoas', en: 'People' },
     prefixo: { pt: 'dezembro de ', en: 'December ' },
     ref: '2025',
+    /* R2 (03.10.2026, achado 23): a frase deixava implícito que se contam pessoas desempregadas; passa a dizê-lo, com o
+       termo da fonte entre parênteses (o título do quadro do IEFP, «Desemprego registado por concelhos»). */
     nota: {
-      pt: ['Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho.'],
-      en: ['Registered with the employment service at month end, monthly file by municipality.'],
+      pt: ['Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).'],
+      en: ['Counts the unemployed people registered with the employment service at month end (registered unemployment).'],
     },
   },
   {
@@ -137,9 +143,12 @@ export const MEDIDAS_DO_CONCELHO = [
     unidade: { pt: 'Empresas', en: 'Enterprises' },
     prefixo: { pt: '', en: '' },
     ref: '2024',
+    /* R2 (03.10.2026, achado 23): a frase descrevia a fonte e não o número; passa a dizer o que se conta, com o nome do
+       sistema da fonte entre parênteses, e «atribuídas ao concelho» pelo que a nota já dizia (cada empresa conta num
+       único concelho). */
     nota: {
-      pt: ['Sistema de contas integradas das empresas; cada empresa conta num único concelho.'],
-      en: ['Integrated business accounts; each enterprise counts in a single municipality.'],
+      pt: ['Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas).'],
+      en: ['Counts the non-financial enterprises attributed to the municipality (integrated business accounts system).'],
     },
   },
   {
@@ -157,9 +166,13 @@ export const MEDIDAS_DO_CONCELHO = [
     /* A MESMA RAZÃO DO PRAZO MÉDIO (achado D6, 21.09.2026): a primeira frase
        descrevia a fonte e o cartão leva uma frase de definição só. A ressalva do
        que a coluna exclui é do recibo, e está na nota da própria linha. */
+    /* R2 (03.10.2026, achado 2, Blocking, aceite na dobra): «o que a câmara deve» lia-se como toda a dívida, e a coluna
+       é a que conta para o limite legal (o localizador da linha: «a dívida total que exclui as dívidas não
+       orçamentais, as exceções e o FAM»); o nome fica, porque «dívida total» é o termo da DGAL. A frase é a da
+       triagem; o localizador nomeia também o FAM, que a frase deixa de fora (o relatório do bloco R2). */
     nota: {
-      pt: ['O que a câmara deve no fim do ano, pela série anual da Direção-Geral das Autarquias Locais.'],
-      en: ['What the council owes at the end of the year, from the annual series of the Directorate-General for Local Authorities.'],
+      pt: ['A dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais e as exceções da lei).'],
+      en: ['The council’s debt that counts towards the legal limit at year end (DGAL’s “', { termo: 'dívida total', lingua: 'pt-PT' }, '”, without non-budget debts and the exceptions in the law).'],
     },
   },
   {
@@ -191,9 +204,18 @@ export const MEDIDAS_DO_CONCELHO = [
        medida, e exige que a derivação da linha diga o apoio na mesma língua (`apoioDaUnidadeDaCasa`).
        A MÉDIA ENTRA NA UNIDADE (passagem P4-d, 02.10.2026): «% da receita de três anos» lia-se como a soma dos três
        anos, e o valor é sobre a média; a unidade passa a dizê-lo, como a derivação e a dobra já diziam. O mapa da
-       dívida em «Lugares» diz a mesma unidade, na legenda e no cabeçalho da tabela. */
-    unidadeDaCasa: { pt: '% da receita média de três anos', en: '% of the three-year average revenue' },
-    apoioDaUnidadeDaCasa: { pt: 'média da receita corrente líquida dos três anos anteriores', en: 'three-year average of net current revenue' },
+       dívida em «Lugares» diz a mesma unidade, na legenda e no cabeçalho da tabela.
+       OS TRÊS ANOS SÃO OS ANTERIORES (bloco R2, 03.10.2026, achado 3 da auditoria dos rótulos, aceite em parte): «de
+       três anos» deixava ler outra janela, e a receita da lei é a dos três anos anteriores, como a derivação diz. O
+       apoio passa à forma geral das unidades da casa (a lista de literais de `src/data/unidades-dos-cartoes.mjs`) e
+       vale nas duas edições: a derivação portuguesa diz «dos três anos anteriores», que a inglesa não diz, e a
+       unidade inglesa também diz «previous». A dobra já dizia «receita corrente líquida cobrada nos três anos
+       anteriores» e fica. */
+    unidadeDaCasa: { pt: '% da receita média dos três anos anteriores', en: '% of the average revenue of the previous three years' },
+    apoioDaUnidadeDaCasa: [
+      { campo: 'derivation', literal: 'média da receita corrente líquida dos três anos anteriores' },
+      { campo: 'derivation_en', literal: 'three-year average of net current revenue' },
+    ],
     nota: {
       pt: ['A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média.'],
       en: ['Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average.'],
@@ -218,9 +240,13 @@ export const MEDIDAS_DO_CONCELHO = [
        publica os dados das contas das câmaras.», que descreve a FONTE e não a
        medida: um leitor que veja «137 · Dias» fica sem saber dias de quê. A frase
        é a do diretor, de 17.09.2026, e diz o que se conta. */
+    /* R2 (03.10.2026, achado 26): o termo da fonte entre parênteses, e a média dita. O termo é o do título da lista da
+       DGAL, «Lista do prazo médio de pagamento registado por município», no singular (a triagem escrevia «pagamentos»). */
     nota: {
-      pt: ['Dias que a câmara demora a pagar aos fornecedores, pela lista anual da Direção-Geral das Autarquias Locais.'],
-      en: ['Days the council takes to pay its suppliers, from the annual list of the Directorate-General for Local Authorities.'],
+      pt: ['O número médio de dias que a câmara demora a pagar aos fornecedores (prazo médio de pagamento), pela lista anual da DGAL.'],
+      /* O termo da fonte é o da DGAL, em português e com a marca da língua, como na nota da dívida; «average payment time»
+         é o nome inglês do cartão e uma frase retirada do inventário das frases (a peça 2 do B1). */
+      en: ['The average number of days the council takes to pay its suppliers (DGAL’s “', { termo: 'prazo médio de pagamento', lingua: 'pt-PT' }, '”, from its annual list).'],
     },
   },
   {

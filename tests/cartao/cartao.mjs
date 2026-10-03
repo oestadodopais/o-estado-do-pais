@@ -256,6 +256,7 @@ import { lerSeriesDoPortao, lerPaisesDoPortao, serieDaLinhaDoPortao } from '../.
 import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa, plantasDosEmpates } from './faixa.mjs';
 import { RESSALVAS_DA_UNIAO } from '../../src/data/ressalvas-da-uniao.mjs';
 import { FAIXA_DAS_MEDIDAS_DO_CONCELHO } from '../../src/data/faixa-do-concelho.mjs';
+import { UNIDADES_DOS_CARTOES } from '../../src/data/unidades-dos-cartoes.mjs';
 
 /**
  * K14 · A RESSALVA NUM CARTÃO OU NUM RECIBO: uma e uma só marca
@@ -1686,6 +1687,7 @@ if (PROVA) {
     const base = lerAuditoriaDasPerguntas();
     const definicoes = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS);
     const origensReais = /** @type {Record<string, any>} */ (ORIGENS_DAS_DEFINICOES);
+    const unidadesReais = /** @type {Record<string, any>} */ (UNIDADES_DOS_CARTOES);
     /** @param {(a: any) => void} estraga */
     const auditoriaCom = (estraga) => { const c = structuredClone(base); estraga(c); return c; };
     /** @param {any} a @param {string} id */
@@ -1715,9 +1717,18 @@ if (PROVA) {
         { origens: { ...origensReais, 'eurostat-tesem130-denominador': { ...origensReais['eurostat-tesem130-denominador'], selo: undefined } } }],
       ['o sha256 tirado', 'origem «eurostat-tipspd30»', 'o selo não diz o sha256',
         { origens: { ...origensReais, 'eurostat-tipspd30': { ...origensReais['eurostat-tipspd30'], selo: { ...origensReais['eurostat-tipspd30'].selo, sha256: '' } } } }],
-      /* K2-c: a unidade da casa fora da pergunta, e as coordenadas de uma origem que a resposta não escreve. */
+      /* K2-c: a unidade da casa fora da pergunta, e as coordenadas de uma origem que a resposta não escreve. Desde o
+         bloco R2 (03.10.2026) a unidade da casa declara-se em `UNIDADES_DOS_CARTOES`, e é aí que a planta a estraga. */
       ['a unidade da casa fora da pergunta', 'disparidade-de-emprego-entre-sexos-2025', 'não é um pedaço da pergunta declarada',
-        { definicoes: { ...definicoes, 'disparidade-de-emprego-entre-sexos-2025': { ...definicoes['disparidade-de-emprego-entre-sexos-2025'], unidade: { pt: '% da população', en: 'percentage points' } } } }],
+        { unidades: { ...unidadesReais, 'disparidade-de-emprego-entre-sexos-2025': { ...unidadesReais['disparidade-de-emprego-entre-sexos-2025'], pt: ['% da população'] } } }],
+      /* R2 (03.10.2026): o apoio de uma unidade da casa num campo da linha que não o tem, numa origem que não o diz, e
+         uma unidade sem apoio nenhum. */
+      ['um apoio da unidade da casa que a linha não tem', 'jovens-nem-2025', 'no campo «excerpt» da linha, e não está lá',
+        { unidades: { ...unidadesReais, 'jovens-nem-2025': { ...unidadesReais['jovens-nem-2025'], apoio: [{ campo: 'excerpt', literal: 'Age class: From 15 to 24 years' }] } } }],
+      ['um apoio da unidade da casa que a origem não diz', 'competencias-digitais-2025', 'da origem «eurostat-tepsr_sp410-descricao», e não está lá',
+        { unidades: { ...unidadesReais, 'competencias-digitais-2025': { ...unidadesReais['competencias-digitais-2025'], apoio: [{ origem: 'eurostat-tepsr_sp410-descricao', campo: 'excerto', literal: 'individuals aged 15-74' }] } } }],
+      ['uma unidade da casa sem apoio', 'licencas-de-construcao-2025', 'não declara apoio nenhum',
+        { unidades: { ...unidadesReais, 'licencas-de-construcao-2025': { ...unidadesReais['licencas-de-construcao-2025'], apoio: [] } } }],
       ['as coordenadas de outra classe etária', 'origem «eurostat-tipslm90-sexo»', 'não são um segmento do excerto',
         { origens: { ...origensReais, 'eurostat-tipslm90-sexo': { ...origensReais['eurostat-tipslm90-sexo'], coordenadas: 'Age class: From 15 to 24 years' } } }],
     ];

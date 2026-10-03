@@ -31,6 +31,8 @@
  *
  * A MÉDIA NA UNIDADE (passagem P4-d): «% da receita de três anos» lia-se como a soma dos três anos; a unidade passou a
  * «% da receita média de três anos» / «% of the three-year average revenue», e há uma planta com a unidade de antes.
+ * OS ANOS ANTERIORES (bloco R2, 03.10.2026, achado 3): a unidade passou a «% da receita média dos três anos anteriores» /
+ * «% of the average revenue of the previous three years», lida da declaração da medida, e há uma planta com a da P4-d.
  *
  * AS PLANTAS (`--prova`) estragam cópias em memória de uma página e têm de morder: a unidade antiga de volta, o teto
  * escrito à mão, as palavras do estado de antes, o estado trocado, a dobra mudada, e as palavras de antes no cartão
@@ -63,7 +65,7 @@ if (!TETO) {
 /* As palavras esperadas, escritas aqui pela régua e não lidas da vista: o que o diretor e o lugar de direção
    aprovaram, nas duas edições. */
 const PALAVRAS = {
-  pt: { dentro: 'dentro do limite legal, que é', fora: 'fora do limite legal, que é', antigaUnidade: '% (limite legal = 150)', semAMedia: '% da receita de três anos', camaras: 'dentro do limite legal, que é', camarasAntes: 'dentro do limite legal (', oLimite: 'o limite legal é' },
+  pt: { dentro: 'dentro do limite legal, que é', fora: 'fora do limite legal, que é', antigaUnidade: '% (limite legal = 150)', semAMedia: '% da receita de três anos', semOsAnteriores: '% da receita média de três anos', camaras: 'dentro do limite legal, que é', camarasAntes: 'dentro do limite legal (', oLimite: 'o limite legal é' },
   en: { dentro: 'within the legal limit, which is', fora: 'outside the legal limit, which is', antigaUnidade: '% (legal cap = 150)', semAMedia: '% of three-year revenue', camaras: 'within the legal limit, which is', camarasAntes: 'within the legal limit (', oLimite: 'the legal limit is' },
 };
 const ROTAS = { pt: 'municipios', en: path.join('en', 'municipalities') };
@@ -211,6 +213,8 @@ if (process.argv.includes('--prova')) {
     ['a unidade antiga de volta', 'pt', (r) => { const u = r.querySelector('[data-medida-chave="indice"] [data-unidade-da-casa]'); u.set_content(PALAVRAS.pt.antigaUnidade); }, /ID2 · .*unidade antiga|ID2 · .*a unidade diz/],
     /* P4-d: a unidade da passagem P4-c, sem a média, lida como a soma dos três anos. */
     ['a unidade sem a média', 'en', (r) => { const u = r.querySelector('[data-medida-chave="indice"] [data-unidade-da-casa]'); u.set_content(PALAVRAS.en.semAMedia); }, /ID2 · .*a unidade diz «% of three-year revenue»/],
+    /* R2 (03.10.2026, achado 3): a unidade da passagem P4-d, sem os anos anteriores, que deixava ler outra janela. */
+    ['a unidade sem os anos anteriores', 'pt', (r) => { const u = r.querySelector('[data-medida-chave="indice"] [data-unidade-da-casa]'); u.set_content(PALAVRAS.pt.semOsAnteriores); }, /ID2 · .*a unidade diz «% da receita média de três anos»/],
     ['o teto escrito à mão', 'en', (r) => { const v = r.querySelector('[data-regua="limite"] [data-claim]'); v.replaceWith(`${TETO.value} ${TETO.unit}`); }, /ID3 · .*o teto não é a linha/],
     ['as palavras do estado de antes', 'pt', (r) => { r.querySelector('[data-regua="limite"] [data-voz]').set_content('dentro do limite legal'); }, /ID3 · .*a linha do estado diz «dentro do limite legal»/],
     ['o estado trocado', 'en', (r) => { r.querySelector('[data-regua="limite"] [data-voz]').set_content(PALAVRAS.en.fora); }, /ID3 · .*a linha do estado diz «outside the legal limit, which is»/],

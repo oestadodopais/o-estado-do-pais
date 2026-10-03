@@ -46,6 +46,57 @@ function definicaoDoPortao(id, lang, forma = 'cartao') {
   return normalizeWhitespace(texto);
 }
 /**
+ * O APOIO DE UMA UNIDADE DA CASA (bloco R2, 03.10.2026), lido pelo portão por conta própria. A passagem K2-c pedia que a
+ * unidade da casa de um cartão nacional fosse um pedaço da pergunta declarada, e a passagem P4-c que a derivação de
+ * cada linha de um concelho dissesse o apoio que a medida declara; o bloco R2 generaliza as duas: cada unidade da casa
+ * declara os literais que a sustentam, e cada um tem de estar mesmo no campo que diz, na linha do cartão (`excerpt`,
+ * `unit`, `name`, `document.title`, `document.locator`, `derivation`, `derivation_en`), numa origem declarada em
+ * `ORIGENS_DAS_DEFINICOES` (`excerto`, `excertoEn`, `documento`), ou, com `{ pergunta: true }`, a unidade de cada
+ * língua tem de ser um pedaço da pergunta declarada da mesma medida (a regra da K2-c). Um literal com menos de quatro
+ * caracteres não prende nada, como na K16. Devolve a lista do que falta; vazia, a unidade tem apoio.
+ *
+ * @param {unknown} apoio @param {any} linha @param {string} id @param {Record<string, string>} textos
+ * @returns {string[]}
+ */
+const CAMPOS_DO_APOIO_NA_LINHA = new Set(['excerpt', 'unit', 'name', 'document.title', 'document.locator', 'derivation', 'derivation_en']);
+const CAMPOS_DO_APOIO_NA_ORIGEM = new Set(['excerto', 'excertoEn', 'documento']);
+function faltasDoApoioDaUnidade(apoio, linha, id, textos) {
+  if (!Array.isArray(apoio) || apoio.length === 0) return ['a declaração não diz apoio nenhum'];
+  /** @type {string[]} */
+  const faltas = [];
+  for (const a of apoio) {
+    if (a && a.pergunta === true) {
+      for (const l of /** @type {const} */ (['pt', 'en'])) {
+        const pergunta = definicaoDoPortao(id, l, 'cartao');
+        const u = normalizeWhitespace(String(textos?.[l] ?? ''));
+        if (!u || pergunta === null || !pergunta.includes(u)) faltas.push(`a unidade «${u}» (${l}) não é um pedaço da pergunta declarada de "${id}"`);
+      }
+      continue;
+    }
+    const literal = a?.literal;
+    if (typeof literal !== 'string' || literal.trim().length < 4) {
+      faltas.push('um apoio cita um literal com menos de quatro caracteres, que não prende nada');
+      continue;
+    }
+    if (a.origem) {
+      const o = /** @type {Record<string, any>} */ (ORIGENS_DAS_DEFINICOES)[a.origem];
+      if (!o || !CAMPOS_DO_APOIO_NA_ORIGEM.has(a.campo) || typeof o[a.campo] !== 'string') {
+        faltas.push(`o apoio cita o campo «${a.campo}» da origem «${a.origem}», que não existe ou não pode apoiar`);
+      } else if (!o[a.campo].includes(literal)) {
+        faltas.push(`«${literal}» não está no campo «${a.campo}» da origem «${a.origem}»`);
+      }
+      continue;
+    }
+    if (!CAMPOS_DO_APOIO_NA_LINHA.has(a?.campo)) {
+      faltas.push(`o apoio cita o campo «${a?.campo}» da linha, que não pode apoiar`);
+      continue;
+    }
+    const valor = a.campo === 'document.title' ? linha?.document?.title : a.campo === 'document.locator' ? linha?.document?.locator : linha?.[a.campo];
+    if (typeof valor !== 'string' || !valor.includes(literal)) faltas.push(`«${literal}» não está no campo «${a.campo}» da linha "${id}"`);
+  }
+  return faltas;
+}
+/**
  * O QUE NOMEIA PORTUGAL NA DEFINIÇÃO DE UM RECIBO DE SÉRIE (a passagem UE1e,
  * 30.09.2026, pela §1.140). O recibo é a tabela dos 27 países, e uma definição
  * que nomeie Portugal faz o número de cada outro país ler-se como se fosse sobre
@@ -134,7 +185,8 @@ import {
   POR_VERIFICAR,
 } from '../src/lib/ledger.mjs';
 import { VERBATIM, normalizeWhitespace } from '../src/data/verbatim.mjs';
-import { FIGURAS, FIGURAS_PDM, FIGURAS_SOCIAL, DEFINICOES_DAS_MEDIDAS } from '../src/data/figuras.mjs';
+import { FIGURAS, FIGURAS_PDM, FIGURAS_SOCIAL, DEFINICOES_DAS_MEDIDAS, ORIGENS_DAS_DEFINICOES } from '../src/data/figuras.mjs';
+import { UNIDADES_DOS_CARTOES } from '../src/data/unidades-dos-cartoes.mjs';
 import { EDITIONS, workById, studyLabel } from '../src/data/studies.mjs';
 import { LEITURAS } from '../src/data/leituras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
@@ -6215,12 +6267,25 @@ for (const file of ficheirosHtml(DIST)) {
     );
   }
 
-  /* --- a unidade da casa de um cartão (passagem K2-c, 02.10.2026, achado 1 da leitura a frio do Codex) ---
-     Onde a definição declarada traz uma unidade (`unidade` em `DEFINICOES_DAS_MEDIDAS`), o cartão mostra-a em vez da
+  /* --- a unidade da casa de um cartão (passagem K2-c, 02.10.2026, achado 1 da leitura a frio do Codex; bloco R2) ---
+     Onde o cartão de uma linha tem unidade declarada (`UNIDADES_DOS_CARTOES`, em `src/data/unidades-dos-cartoes.mjs`,
+     desde o bloco R2 a fonte única; até lá, `unidade` em `DEFINICOES_DAS_MEDIDAS`), o cartão mostra-a em vez da
      etiqueta da fonte, que fica no recibo. A marca entra por uma porta estreita: só dentro do cartão da sua própria
-     linha, com o texto da declaração na língua da página, carácter a carácter; e a declaração tem de ser um pedaço da
-     pergunta declarada da mesma medida, cujas origens a K16 audita. O selo do cartão (`seloDoValorDoCartao`) aceita
-     esta marca como a unidade da mesma linha, e só ela. */
+     linha, com o texto da declaração na língua da página, carácter a carácter; e cada apoio que a declaração diz tem
+     de estar no campo que ele nomeia (`faltasDoApoioDaUnidade`). O selo do cartão (`seloDoValorDoCartao`) aceita esta
+     marca como a unidade da mesma linha, e só ela. */
+  /* R2 (03.10.2026): o cartão de uma linha com unidade declarada imprime essa unidade, e uma só vez; imprimir a da
+     linha seria a etiqueta da fonte de volta, sem que a declaração a tivesse lido. As medidas dos concelhos têm a
+     porta da passagem P4-c, abaixo. */
+  for (const cartao of body.querySelectorAll('[data-cartao-medida]')) {
+    const idDoCartao = cartao.getAttribute('data-cartao-medida') ?? '';
+    if (cartao.getAttribute('data-medida-chave')) continue;
+    if (!Object.prototype.hasOwnProperty.call(UNIDADES_DOS_CARTOES, idDoCartao)) continue;
+    const casas = cartao.querySelectorAll('[data-unidade-da-casa]').filter((n) => n.getAttribute('data-unidade-da-casa') === idDoCartao);
+    if (casas.length !== 1) {
+      err(`R2: o cartão de "${idDoCartao}" tem unidade declarada em UNIDADES_DOS_CARTOES e imprime ${casas.length === 0 ? 'outra (a etiqueta da linha)' : `${casas.length} unidades da casa`}: a unidade de um cartão diz-se pela declaração, uma vez.`);
+    }
+  }
   for (const el of body.querySelectorAll('[data-unidade-da-casa]')) {
     const id = el.getAttribute('data-unidade-da-casa') ?? '';
     const lang = linguaPagina === 'en' ? 'en' : 'pt';
@@ -6235,9 +6300,9 @@ for (const file of ficheirosHtml(DIST)) {
       UNIDADES_DA_CASA.doConcelho++;
       const medida = MEDIDAS_DO_CONCELHO.find((m) => m.chave === daMedida);
       const declaradaDaMedida = medida?.unidadeDaCasa?.[lang] ?? null;
-      const apoio = medida?.apoioDaUnidadeDaCasa?.[lang] ?? null;
+      const apoio = medida?.apoioDaUnidadeDaCasa ?? null;
       const textoDaMedida = normalizeWhitespace(decodeEntities(textoDe(el)));
-      if (typeof declaradaDaMedida !== 'string' || typeof apoio !== 'string') {
+      if (typeof declaradaDaMedida !== 'string' || !Array.isArray(apoio) || apoio.length === 0) {
         err(`P4-c: a unidade da casa de "${id}" diz ser da medida «${daMedida}», e a medida não declara unidade da casa e apoio em ${lang}.`);
         continue;
       }
@@ -6248,31 +6313,33 @@ for (const file of ficheirosHtml(DIST)) {
       if (textoDaMedida !== declaradaDaMedida) {
         err(`P4-c: a unidade da casa de "${id}" diz «${textoDaMedida}» e a medida «${daMedida}» declara «${declaradaDaMedida}» (${lang}).`);
       }
-      const daLinha = claims.get(id);
-      const derivacao = lang === 'en' ? daLinha?.derivation_en : daLinha?.derivation;
-      if (typeof derivacao !== 'string' || !derivacao.includes(apoio)) {
-        err(`P4-c: a unidade da casa de "${id}" («${declaradaDaMedida}») não tem apoio na linha: a derivação ${lang === 'en' ? 'inglesa ' : ''}da linha tem de dizer «${apoio}».`);
+      /* R2 (03.10.2026): o apoio é a lista geral, lida por `faltasDoApoioDaUnidade`, e vale nas duas edições: a
+         derivação portuguesa diz «dos três anos anteriores», que a inglesa não diz, e a unidade inglesa também o diz. */
+      for (const falta of faltasDoApoioDaUnidade(apoio, claims.get(id), id, medida.unidadeDaCasa)) {
+        err(`P4-c: a unidade da casa de "${id}" («${declaradaDaMedida}») não tem apoio na linha: ${falta}.`);
       }
       continue;
     }
     /* A conta das unidades da casa das medidas nacionais, que a guarda do fim exige acima de zero, não conta as dos
        concelhos: cada uma tem a sua guarda. */
     UNIDADES_DA_CASA.vistas++;
-    const declarada = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[id]?.unidade?.[lang] ?? null;
+    const entrada = Object.prototype.hasOwnProperty.call(UNIDADES_DOS_CARTOES, id) ? /** @type {Record<string, any>} */ (UNIDADES_DOS_CARTOES)[id] : null;
+    const textoDaDeclaracao = (/** @type {'pt'|'en'} */ l) =>
+      Array.isArray(entrada?.[l]) ? normalizeWhitespace(entrada[l].map((/** @type {any} */ p) => (typeof p === 'string' ? p : String(p?.nl ?? ''))).join('')) : '';
+    const declarada = textoDaDeclaracao(lang);
     const texto = normalizeWhitespace(decodeEntities(textoDe(el)));
-    if (typeof declarada !== 'string' || !declarada) {
-      err(`K2-c: a unidade da casa de "${id}" aparece na página e a definição de "${id}" não declara unidade nenhuma em ${lang}.`);
+    if (!declarada) {
+      err(`K2-c: a unidade da casa de "${id}" aparece na página e UNIDADES_DOS_CARTOES não declara unidade nenhuma para essa linha em ${lang}.`);
       continue;
     }
     if (el.closest?.('[data-cartao-medida]')?.getAttribute('data-cartao-medida') !== id) {
       err(`K2-c: a unidade da casa de "${id}" está fora do cartão da sua linha: só a linha do valor desse cartão a pode mostrar.`);
     }
     if (texto !== declarada) {
-      err(`K2-c: a unidade da casa de "${id}" diz «${texto}» e a definição declara «${declarada}» (${lang}).`);
+      err(`K2-c: a unidade da casa de "${id}" diz «${texto}» e a declaração diz «${declarada}» (${lang}).`);
     }
-    const pergunta = definicaoDoPortao(id, lang, 'cartao');
-    if (pergunta === null || !pergunta.includes(declarada)) {
-      err(`K2-c: a unidade da casa de "${id}" («${declarada}») não é um pedaço da pergunta declarada da medida (${lang}).`);
+    for (const falta of faltasDoApoioDaUnidade(entrada.apoio, claims.get(id), id, { pt: textoDaDeclaracao('pt'), en: textoDaDeclaracao('en') })) {
+      err(`R2: a unidade da casa de "${id}" («${declarada}») não tem apoio: ${falta}.`);
     }
   }
 
@@ -6287,27 +6354,24 @@ for (const file of ficheirosHtml(DIST)) {
     const chaveDoMapa = el.getAttribute('data-unidade-da-casa-do-mapa') ?? '';
     const medida = MEDIDAS_DO_CONCELHO.find((m) => m.chave === chaveDoMapa);
     const declarada = medida?.unidadeDaCasa?.[lang] ?? null;
-    const apoio = medida?.apoioDaUnidadeDaCasa?.[lang] ?? null;
+    const apoio = medida?.apoioDaUnidadeDaCasa ?? null;
     const mapaDaCasa = el.closest?.('[data-forma="mapa-por-concelho"]') ?? null;
     const noSitio = (el.closest?.('thead') ?? null) !== null || (el.closest?.('.forma-mapa-unidade') ?? null) !== null;
     if (rota?.key !== 'lugares' || mapaDaCasa === null || mapaDaCasa.getAttribute('data-instrumento') !== `mapa-por-concelho-${chaveDoMapa}` || !noSitio) {
       err(`P4-d: a unidade da casa do mapa «${chaveDoMapa}» está fora da legenda ou do cabeçalho da tabela do mapa dessa medida em «Lugares».`);
       continue;
     }
-    if (typeof declarada !== 'string' || typeof apoio !== 'string') {
+    if (typeof declarada !== 'string' || !Array.isArray(apoio) || apoio.length === 0) {
       err(`P4-d: a unidade da casa do mapa diz ser da medida «${chaveDoMapa}», e a medida não declara unidade da casa e apoio em ${lang}.`);
       continue;
     }
     const textoDoMapa = normalizeWhitespace(decodeEntities(textoDe(el)));
     if (textoDoMapa !== declarada) err(`P4-d: a unidade da casa do mapa «${chaveDoMapa}» diz «${textoDoMapa}» e a medida declara «${declarada}» (${lang}).`);
     const idsDoMapa = mapaDaCasa.querySelectorAll('tbody [data-claim]').map((n) => n.getAttribute('data-claim'));
-    const semApoio = idsDoMapa.filter((x) => {
-      const l = claims.get(x);
-      const d = lang === 'en' ? l?.derivation_en : l?.derivation;
-      return typeof d !== 'string' || !d.includes(apoio);
-    });
+    /* R2 (03.10.2026): cada linha da tabela, pela lista geral do apoio, que vale nas duas edições. */
+    const semApoio = idsDoMapa.filter((x) => faltasDoApoioDaUnidade(apoio, claims.get(x), String(x), medida.unidadeDaCasa).length > 0);
     if (!idsDoMapa.length || semApoio.length) {
-      err(`P4-d: a unidade da casa do mapa «${chaveDoMapa}» não tem apoio na tabela: ${idsDoMapa.length ? `${semApoio.length} linha(s) sem «${apoio}» na derivação (${semApoio.slice(0, 3).join(', ')})` : 'a tabela não tem linhas'}.`);
+      err(`P4-d: a unidade da casa do mapa «${chaveDoMapa}» não tem apoio na tabela: ${idsDoMapa.length ? `${semApoio.length} linha(s) sem o apoio que a medida declara na derivação (${semApoio.slice(0, 3).join(', ')})` : 'a tabela não tem linhas'}.`);
     }
   }
 
@@ -8656,10 +8720,10 @@ for (const [id] of SERIES_DO_PORTAO) {
     }
   }
 }
-/* K2-c: o cartão da diferença de emprego entre sexos mostra a unidade da casa nas duas edições, nas páginas do emprego
-   e da área do trabalho; uma corrida que não veja nenhuma deixou de conferir o que diz conferir. */
+/* K2-c e R2: os cartões com unidade declarada em UNIDADES_DOS_CARTOES mostram-na nas duas edições, nas páginas dos
+   assuntos e das áreas; uma corrida que não veja nenhuma deixou de conferir o que diz conferir. */
 if (UNIDADES_DA_CASA.vistas === 0) {
-  erros.push({ rel: 'dist', msg: 'K2-c: nenhuma unidade da casa vista em página nenhuma, e a definição da diferença de emprego entre sexos declara uma: o leitor está cego.' });
+  erros.push({ rel: 'dist', msg: 'K2-c: nenhuma unidade da casa vista em página nenhuma, e UNIDADES_DOS_CARTOES declara unidades para cartões que as páginas rendem: o leitor está cego.' });
 }
 /* P4-d: o mapa da dívida em «Lugares» diz a unidade da casa na legenda e no cabeçalho da tabela, nas duas edições. */
 if (UNIDADES_DA_CASA.doMapa !== 4) {
