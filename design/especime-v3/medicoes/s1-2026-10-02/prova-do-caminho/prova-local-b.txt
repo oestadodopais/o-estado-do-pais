@@ -1,0 +1,17 @@
+a base é simulada pelo guião; a base real não foi chamada
+01-get · 2026-10-03T10:20:01Z · 303 · /sugestoes · base 0
+02-armadilha · 2026-10-03T10:20:02Z · 303 · /sugestoes/obrigado · base 0
+03-vazia · 2026-10-03T10:20:03Z · 303 · /sugestoes/vazia · base 0
+04-boa-pt · 2026-10-03T10:20:04Z · 303 · /sugestoes/obrigado · base 1 (guardou)
+05-boa-en · 2026-10-03T10:20:05Z · 303 · /en/suggestions/thank-you · base 1 (guardou)
+06-referer-de-outra-origem · 2026-10-03T10:20:06Z · 303 · /sugestoes/obrigado · base 1 (guardou)
+07-sem-ip · 2026-10-03T10:20:07Z · 303 · /sugestoes/nao-chegou · base 0
+08-sem-chave · 2026-10-03T10:20:08Z · 303 · /sugestoes/nao-chegou · base 0
+09-limite-1 · 2026-10-03T10:20:09Z · 303 · /sugestoes/obrigado · base 1 (guardou)
+09-limite-2 · 2026-10-03T10:20:10Z · 303 · /sugestoes/obrigado · base 1 (guardou)
+09-limite-3 · 2026-10-03T10:20:11Z · 303 · /sugestoes/limite · base 1 (limite)
+09-limite-4 · 2026-10-03T10:20:12Z · 303 · /sugestoes/limite · base 1 (limite)
+09-limite-5 · 2026-10-03T10:20:13Z · 303 · /sugestoes/limite · base 1 (limite)
+09-limite-6 · 2026-10-03T10:20:14Z · 303 · /sugestoes/limite · base 1 (limite)
+10-hora-seguinte · 2026-10-03T11:00:31Z · 303 · /sugestoes/obrigado · base 1 (guardou)
+corrida de 2026-10-03T19:17:44Z a 2026-10-03T19:17:44Z · 6 envios guardados pela base simulada

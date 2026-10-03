@@ -11,7 +11,9 @@
 # O nome da equipa da conta, que vai no endereço da pré-visualização, sai redigido como <equipa>; nenhum endereço IP,
 # nenhum segredo e nenhuma sessão se gravam. Os pedidos não levam texto de sugestão nenhum.
 U="$1"; O="$(dirname "$0")"
-redige() { sed -E 's/nunos-projects[-a-z0-9]*/<equipa>/g; s#https://vercel\.com/[^ ]*#https://vercel.com/<…>#g'; }
+# A redação não nomeia a equipa: troca o que vem entre o identificador da implantação e «.vercel.app» no
+# endereço da pré-visualização, seja qual for (S1-b, o achado 13 da leitura a frio do Sol).
+redige() { sed -E 's#(o-estado-do-pais-[a-z0-9]+-)[a-z0-9-]+(\.vercel\.app)#\1<equipa>\2#g; s#https://vercel\.com/[^ ]*#https://vercel.com/<…>#g'; }
 vercel inspect "$U" > "$O/vercel-inspect.cru" 2>&1; echo $? > "$O/vercel-inspect.codigo"
 grep -E '^\s*(id|target|status|url)\s|λ|api/sugestoes|\[[a-z]{3}[0-9]\]' "$O/vercel-inspect.cru" | redige > "$O/vercel-inspect.txt"
 rm -f "$O/vercel-inspect.cru"

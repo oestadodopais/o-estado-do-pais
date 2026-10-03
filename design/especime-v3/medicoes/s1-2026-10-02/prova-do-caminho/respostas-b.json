@@ -1,0 +1,225 @@
+{
+  "bloco": "S1-b",
+  "o_que": "a função api/sugestoes.js importada em Node, com um sal e uma chave de ensaio desta corrida, o endereço de documentação 203.0.113.7 e uma base SIMULADA que faz o que a última definição da função enviar_sugestao faz nas migrações; a base real não foi chamada",
+  "base_real_chamada": false,
+  "inicio_utc": "2026-10-03T19:17:44Z",
+  "fim_utc": "2026-10-03T19:17:44Z",
+  "envios_guardados_pela_base_simulada": [
+    "04-boa-pt",
+    "05-boa-en",
+    "06-referer-de-outra-origem",
+    "09-limite-1",
+    "09-limite-2",
+    "10-hora-seguinte"
+  ],
+  "respostas": [
+    {
+      "nome": "01-get",
+      "instante_simulado": "2026-10-03T10:20:01Z",
+      "estado": 303,
+      "location": "/sugestoes",
+      "chamadas_a_base": 0,
+      "base_simulada": []
+    },
+    {
+      "nome": "02-armadilha",
+      "instante_simulado": "2026-10-03T10:20:02Z",
+      "estado": 303,
+      "location": "/sugestoes/obrigado",
+      "chamadas_a_base": 0,
+      "base_simulada": []
+    },
+    {
+      "nome": "03-vazia",
+      "instante_simulado": "2026-10-03T10:20:03Z",
+      "estado": 303,
+      "location": "/sugestoes/vazia",
+      "chamadas_a_base": 0,
+      "base_simulada": []
+    },
+    {
+      "nome": "04-boa-pt",
+      "instante_simulado": "2026-10-03T10:20:04Z",
+      "estado": 303,
+      "location": "/sugestoes/obrigado",
+      "chamadas_a_base": 1,
+      "base_simulada": [
+        {
+          "respondeu": "guardou",
+          "guardou": {
+            "lingua": "pt",
+            "pagina": "/lugares/evora",
+            "preenchidos": [
+              "p_procurou"
+            ],
+            "marcas_vivas": 1
+          }
+        }
+      ]
+    },
+    {
+      "nome": "05-boa-en",
+      "instante_simulado": "2026-10-03T10:20:05Z",
+      "estado": 303,
+      "location": "/en/suggestions/thank-you",
+      "chamadas_a_base": 1,
+      "base_simulada": [
+        {
+          "respondeu": "guardou",
+          "guardou": {
+            "lingua": "en",
+            "pagina": null,
+            "preenchidos": [
+              "p_estudo"
+            ],
+            "marcas_vivas": 1
+          }
+        }
+      ]
+    },
+    {
+      "nome": "06-referer-de-outra-origem",
+      "instante_simulado": "2026-10-03T10:20:06Z",
+      "estado": 303,
+      "location": "/sugestoes/obrigado",
+      "chamadas_a_base": 1,
+      "base_simulada": [
+        {
+          "respondeu": "guardou",
+          "guardou": {
+            "lingua": "pt",
+            "pagina": null,
+            "preenchidos": [
+              "p_outro"
+            ],
+            "marcas_vivas": 1
+          }
+        }
+      ]
+    },
+    {
+      "nome": "07-sem-ip",
+      "instante_simulado": "2026-10-03T10:20:07Z",
+      "estado": 303,
+      "location": "/sugestoes/nao-chegou",
+      "chamadas_a_base": 0,
+      "base_simulada": []
+    },
+    {
+      "nome": "08-sem-chave",
+      "instante_simulado": "2026-10-03T10:20:08Z",
+      "estado": 303,
+      "location": "/sugestoes/nao-chegou",
+      "chamadas_a_base": 0,
+      "base_simulada": []
+    },
+    {
+      "nome": "09-limite-1",
+      "instante_simulado": "2026-10-03T10:20:09Z",
+      "estado": 303,
+      "location": "/sugestoes/obrigado",
+      "chamadas_a_base": 1,
+      "base_simulada": [
+        {
+          "respondeu": "guardou",
+          "guardou": {
+            "lingua": "pt",
+            "pagina": null,
+            "preenchidos": [
+              "p_outro"
+            ],
+            "marcas_vivas": 1
+          }
+        }
+      ]
+    },
+    {
+      "nome": "09-limite-2",
+      "instante_simulado": "2026-10-03T10:20:10Z",
+      "estado": 303,
+      "location": "/sugestoes/obrigado",
+      "chamadas_a_base": 1,
+      "base_simulada": [
+        {
+          "respondeu": "guardou",
+          "guardou": {
+            "lingua": "pt",
+            "pagina": null,
+            "preenchidos": [
+              "p_outro"
+            ],
+            "marcas_vivas": 1
+          }
+        }
+      ]
+    },
+    {
+      "nome": "09-limite-3",
+      "instante_simulado": "2026-10-03T10:20:11Z",
+      "estado": 303,
+      "location": "/sugestoes/limite",
+      "chamadas_a_base": 1,
+      "base_simulada": [
+        {
+          "respondeu": "limite"
+        }
+      ]
+    },
+    {
+      "nome": "09-limite-4",
+      "instante_simulado": "2026-10-03T10:20:12Z",
+      "estado": 303,
+      "location": "/sugestoes/limite",
+      "chamadas_a_base": 1,
+      "base_simulada": [
+        {
+          "respondeu": "limite"
+        }
+      ]
+    },
+    {
+      "nome": "09-limite-5",
+      "instante_simulado": "2026-10-03T10:20:13Z",
+      "estado": 303,
+      "location": "/sugestoes/limite",
+      "chamadas_a_base": 1,
+      "base_simulada": [
+        {
+          "respondeu": "limite"
+        }
+      ]
+    },
+    {
+      "nome": "09-limite-6",
+      "instante_simulado": "2026-10-03T10:20:14Z",
+      "estado": 303,
+      "location": "/sugestoes/limite",
+      "chamadas_a_base": 1,
+      "base_simulada": [
+        {
+          "respondeu": "limite"
+        }
+      ]
+    },
+    {
+      "nome": "10-hora-seguinte",
+      "instante_simulado": "2026-10-03T11:00:31Z",
+      "estado": 303,
+      "location": "/sugestoes/obrigado",
+      "chamadas_a_base": 1,
+      "base_simulada": [
+        {
+          "respondeu": "guardou",
+          "guardou": {
+            "lingua": "pt",
+            "pagina": null,
+            "preenchidos": [
+              "p_outro"
+            ],
+            "marcas_vivas": 2
+          }
+        }
+      ]
+    }
+  ]
+}

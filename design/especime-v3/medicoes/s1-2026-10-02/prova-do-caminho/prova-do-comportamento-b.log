@@ -1,0 +1,17 @@
+01-get · 303 · /sugestoes · base 0
+02-armadilha · 303 · /sugestoes/obrigado · base 0
+03-vazia · 303 · /sugestoes/vazia · base 0
+04-boa-pt · 303 · /sugestoes/obrigado · base 1 (guardou)
+05-boa-en · 303 · /en/suggestions/thank-you · base 1 (guardou)
+06-referer-de-outra-origem · 303 · /sugestoes/obrigado · base 1 (guardou)
+07-sem-ip · 303 · /sugestoes/nao-chegou · base 0
+08-sem-chave · 303 · /sugestoes/nao-chegou · base 0
+09-limite-1 · 303 · /sugestoes/obrigado · base 1 (guardou)
+09-limite-2 · 303 · /sugestoes/obrigado · base 1 (guardou)
+09-limite-3 · 303 · /sugestoes/limite · base 1 (limite)
+09-limite-4 · 303 · /sugestoes/limite · base 1 (limite)
+09-limite-5 · 303 · /sugestoes/limite · base 1 (limite)
+09-limite-6 · 303 · /sugestoes/limite · base 1 (limite)
+10-hora-seguinte · 303 · /sugestoes/obrigado · base 1 (guardou)
+
+6 envios guardados pela base simulada; a base real não foi chamada.
