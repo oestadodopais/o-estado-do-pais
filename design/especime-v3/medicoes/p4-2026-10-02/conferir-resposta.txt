@@ -2,7 +2,7 @@ relatório: design/especime-v3/medicoes/p4-2026-10-02/RESPOSTA-construtor-p4.md
 pasta das medições: design/especime-v3/medicoes/p4-2026-10-02
 ficheiros JSON lidos: 20
 conhecido-positivo (o número 987654321, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
-números conferidos: 121
-números com ficheiro: 121
+números conferidos: 124
+números com ficheiro: 124
 números sem ficheiro: 0
-apagado antes de contar: codigo 36, enderecos 0, seccoes 2, datas 3, resumos 0, ordinais 5, identificadores 15, anos 0
+apagado antes de contar: codigo 40, enderecos 0, seccoes 2, datas 3, resumos 0, ordinais 5, identificadores 15, anos 0
