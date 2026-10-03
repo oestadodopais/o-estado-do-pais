@@ -1,0 +1,51 @@
+{
+  "registado_em": "2026-10-03T05:38:42+00:00",
+  "copia": "<o pacote da leitura, fora do repositório>",
+  "plantas": [
+    {
+      "id": "s1-1",
+      "ficheiro": "relatorio-construtor.md",
+      "descricao": "o relatório diz 18 capturas onde o manifesto tem 16",
+      "sha256_antes": "992fbba856fe0602657511e54b293487d26a1d1521ac1ffcee1b62f06c735bfe",
+      "sha256_depois": "ce7e816b13faf7d2319acf47ed47da1f977be29b64d4eefd9473bba456e8c22a",
+      "contexto_antes": "mo, com os códigos da corrida final, as capturas, as medidas, o custo e a resposta curta, que só acrescenta provas a esta pasta e às capturas.\n\n## As capturas\n\n16 capturas (`capturas`) em `design/especime-v3/capturas/s1-2026-10-02/`, pelo captor `captar-s1.mjs`, sobre a construção da cabeça `b4ab49e4` da corrida final: a página d",
+      "contexto_depois": "mo, com os códigos da corrida final, as capturas, as medidas, o custo e a resposta curta, que só acrescenta provas a esta pasta e às capturas.\n\n## As capturas\n\n18 capturas (`capturas`) em `design/especime-v3/capturas/s1-2026-10-02/`, pelo captor `captar-s1.mjs`, sobre a construção da cabeça `b4ab49e4` da corrida final: a página d"
+    },
+    {
+      "id": "s1-2",
+      "ficheiro": "api/sugestoes.js",
+      "descricao": "a cópia da função só dispara a armadilha quando o campo escondido diz exatamente «robot»; o diff dispara com qualquer valor",
+      "sha256_antes": "c8c0d1ae5bab798e83b6b7347f009f33db1373a231cac850fb9406000c2fba69",
+      "sha256_depois": "6c76814a925eb488c0a844fb7441704cf60280749c3c56df6e52e99928ea115d",
+      "contexto_antes": "gua') === 'en' ? 'en' : 'pt';\n\n  /* A armadilha: um campo que o leitor não vê e que um robô preenche. Finge-se que\n     correu bem, e nada vai à base. */\n  if (campo(dados, 'sitio', 10) !== null) return resultado('obrigado', lingua);\n\n  const procurou = campo(dados, 'procurou', LIMITES_DAS_SUGESTOES.texto);\n  const estudo = campo(dados, 'estudo', LIMIT",
+      "contexto_depois": "gua') === 'en' ? 'en' : 'pt';\n\n  /* A armadilha: um campo que o leitor não vê e que um robô preenche. Finge-se que\n     correu bem, e nada vai à base. */\n  if (campo(dados, 'sitio', 10) === 'robot') return resultado('obrigado', lingua);\n\n  const procurou = campo(dados, 'procurou', LIMITES_DAS_SUGESTOES.texto);\n  const estudo = campo(dados, 'estudo', LIMIT"
+    },
+    {
+      "id": "s1-3",
+      "ficheiro": "built/sugestoes/index.html",
+      "descricao": "a página portuguesa construída envia o formulário por GET, com o texto do leitor no endereço, contra a função e o relatório",
+      "sha256_antes": "68fb415633b8f416cd79ed2694c299d866958aa7a8aa6e6521429a7db4fb3d7e",
+      "sha256_depois": "7a2c04bd179a20a7b6c81a7be399bad60143ece73b7cb1c3349129f99acd6f41",
+      "contexto_antes": "e entra no plano. Para corrigir um número ou uma frase, a porta é outra: <a href=\"/correcoes\">a página das correções</a>.</p></div><form class=\"sugestoes-form\" method=\"post\" action=\"/api/sugestoes\" data-sugestoes-formulario><input type=\"hidden\" name=\"lingua\" value=\"pt\"><div class=\"sugestoes-armadilha\" aria-hidden=\"true\" data-sugestoes-armadilha><label for",
+      "contexto_depois": "e entra no plano. Para corrigir um número ou uma frase, a porta é outra: <a href=\"/correcoes\">a página das correções</a>.</p></div><form class=\"sugestoes-form\" method=\"get\" action=\"/api/sugestoes\" data-sugestoes-formulario><input type=\"hidden\" name=\"lingua\" value=\"pt\"><div class=\"sugestoes-armadilha\" aria-hidden=\"true\" data-sugestoes-armadilha><label for"
+    },
+    {
+      "id": "s1-4",
+      "ficheiro": "src/data/sugestoes.mjs",
+      "descricao": "a cópia da nota inglesa diz sessenta dias onde a base apaga aos noventa e o diff diz ninety",
+      "sha256_antes": "e857afa7b982ea754e92dfa7f4104a6af4f16fad220eb283a22d25b01460d6e2",
+      "sha256_depois": "a90fbdd56c4f3fdcd1cad77b2e3d19e53bc70c838cd25c3c46881f0027aad6bc",
+      "contexto_antes": "pted mark of it stays for one hour, only to stop ' +\n      'mass sending. The data is held on servers in the European Union. A decided suggestion is ' +\n      'deleted after ninety days; an undecided one after a year. The contact is used only to reply. ' +\n      'To know what you sent or to ask for it to be deleted, write to correcoes@oestadod",
+      "contexto_depois": "pted mark of it stays for one hour, only to stop ' +\n      'mass sending. The data is held on servers in the European Union. A decided suggestion is ' +\n      'deleted after sixty days; an undecided one after a year. The contact is used only to reply. ' +\n      'To know what you sent or to ask for it to be deleted, write to correcoes@oestadod"
+    },
+    {
+      "id": "s1-5",
+      "ficheiro": "tests/sugestoes/funcao.mjs",
+      "descricao": "a cópia da célula espera que a recusa «limite» leve ao obrigado; o diff e a função levam à página do limite",
+      "sha256_antes": "67e77c0249af1bd480cd20c8a002f954a913b5a46866f39e977f36d76ce02ac4",
+      "sha256_depois": "3637d8a7a9b8c8520469534e6ce73c4209454bc5740d2d310dc8fc101e9f16a1",
+      "contexto_antes": "', outro: 'a sexta da hora' }, cabecalhos: { 'x-forwarded-for': IP } }),\n    base: 'limite',\n    confere: (r) => {\n      const erros = [];\n      redireciona(r, resultadoEm('limite', 'pt'), erros);\n      if (r.chamadas.length !== 1) erros.push(`a base foi chamada ${r.chamadas.length} vez(es)`);\n      return erros;\n    },\n  },\n  cheia: {\n    pedido: () =",
+      "contexto_depois": "', outro: 'a sexta da hora' }, cabecalhos: { 'x-forwarded-for': IP } }),\n    base: 'limite',\n    confere: (r) => {\n      const erros = [];\n      redireciona(r, resultadoEm('obrigado', 'pt'), erros);\n      if (r.chamadas.length !== 1) erros.push(`a base foi chamada ${r.chamadas.length} vez(es)`);\n      return erros;\n    },\n  },\n  cheia: {\n    pedido: () ="
+    }
+  ]
+}
