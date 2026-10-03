@@ -1,5 +1,7 @@
 /**
- * AS MEDIDAS DO BLOCO S1 (a caixa das sugestões), escritas em `medidas.json` ao lado deste guião.
+ * AS MEDIDAS DO BLOCO S1 (a caixa das sugestões), escritas em `medidas.json` ao lado deste guião, com as da
+ * passagem S1-b (03.10.2026), que começam por `s1b_`. As medidas do S1 tal como estavam no fim do bloco ficam em
+ * `medidas-s1.json`, a cópia do `medidas.json` da cabeça 7fdd4794, que é o que a secção do S1 do relatório cita.
  *
  * Cada medição leva o nome, o valor, o comando que a repete e um conhecido-positivo: uma coisa que o MESMO leitor tem
  * de encontrar, para que um zero ou um valor não seja o silêncio de um leitor cego. O que este guião não conseguir ler
@@ -52,6 +54,13 @@ const { ROUTES, routePath, LANGS } = await import(pathToFileURL(path.join(RAIZ, 
   }
   const iguais = declarados.filter((d) => citados.has(d)).length;
   medicao('textos_da_pagina_iguais_ao_brief', s5 ? iguais : NAO, 'node design/especime-v3/medicoes/s1-2026-10-02/medir-s1.mjs · os textos de src/data/sugestoes.mjs que são, byte a byte, um texto entre «…» do §5 do brief', 'o parágrafo português do brief é encontrado entre os citados', citados.has(SUGESTOES.paragrafo.pt));
+  /* Os dois textos da página do limite que a passagem S1-b mudou, tal como a mensagem do lugar de direção dessa
+     passagem os deu (o ponto 4), e que o brief não tem. */
+  const DECISAO_S1B = new Set([
+    'Chegaram cinco sugestões deste endereço numa hora. Volte mais tarde.',
+    'Five suggestions arrived from this address within one hour. Please come back later.',
+  ]);
+  medicao('s1b_textos_da_pagina_iguais_a_decisao', declarados.filter((d) => DECISAO_S1B.has(d)).length, 'o mesmo guião · os textos de src/data/sugestoes.mjs iguais, byte a byte, aos dois da página do limite da mensagem do lugar de direção da passagem S1-b', 'a frase portuguesa do limite é a da decisão', DECISAO_S1B.has(SUGESTOES.resultados.limite.pt));
   medicao('textos_da_pagina_declarados', declarados.length, 'o mesmo guião · as cadeias do §5.4 e do §5.5 em src/data/sugestoes.mjs, nas duas línguas', 'a nota inglesa está entre as declaradas', declarados.includes(SUGESTOES.nota.en));
 }
 
@@ -243,6 +252,90 @@ const { ROUTES, routePath, LANGS } = await import(pathToFileURL(path.join(RAIZ, 
   medicao('simbolos_gastos', ini && fim ? ini.simbolos_restantes_no_inicio - fim.simbolos_restantes_no_fim : NAO, 'custo-inicio.json menos custo-fim.json, o contador que a ferramenta mostra ao construtor', 'os dois ficheiros dizem de onde vem o número', Boolean(ini?.o_que && fim?.o_que));
   const segundos = ini && fim ? Math.round((Date.parse(fim.fim_utc) - Date.parse(ini.inicio_utc)) / 1000) : null;
   medicao('segundos_de_parede', segundos ?? NAO, 'fim_utc de custo-fim.json menos inicio_utc de custo-inicio.json', 'o início vem de um relógio lido', Boolean(ini?.inicio_origem));
+}
+
+/* 9 · A PASSAGEM S1-b (03.10.2026): cada ponto da mensagem do lugar de direção, pelas suas provas. */
+{
+  const B = (f) => path.join(PASTA, f);
+  const celula = leJson(B('celula-da-funcao-b.json'));
+  const plantas = celula?.plantas?.filter((x) => x.nome !== 'controlo-sem-troca') ?? [];
+  medicao('s1b_casos_da_celula_da_funcao', celula ? celula.casos.length : NAO, 'node tests/sugestoes/funcao.mjs --prova --json design/especime-v3/medicoes/s1-2026-10-02/celula-da-funcao-b.json', 'o caso da chave em falta está entre os casos e passa', celula?.casos?.some((c) => c.caso === 'sem-chave' && c.passou));
+  medicao('s1b_casos_da_celula_da_funcao_verdes', celula ? celula.casos.filter((c) => c.passou).length : NAO, 'o mesmo ficheiro · os casos com passou', 'o caso da marca de hora a hora passa', celula?.casos?.some((c) => c.caso === 'marca-de-hora-a-hora' && c.passou));
+  medicao('s1b_plantas_da_celula_da_funcao', celula ? plantas.length : NAO, 'o mesmo ficheiro · as plantas além do controlo', 'a planta da chave invertida mordeu com a queixa esperada', plantas.some((x) => x.nome === 'chave-invertida' && x.mordeu));
+  medicao('s1b_plantas_da_celula_que_morderam_com_a_queixa', celula ? plantas.filter((x) => x.mordeu).length : NAO, 'o mesmo ficheiro · as plantas que morderam com a queixa que nomeiam', 'a planta da fuga do sal mordeu', plantas.some((x) => x.nome === 'fuga-do-sal' && x.mordeu));
+
+  const { estadoDasMigracoes, plantasDaCaixa, conferirRegrasDaBase } = await import(pathToFileURL(path.join(RAIZ, 'scripts/sugestoes-do-portao.mjs')).href);
+  const pastaDaBase = path.join(RAIZ, 'supabase/migrations');
+  const migracoes = fs.readdirSync(pastaDaBase).filter((f) => f.endsWith('.sql')).sort().map((nome) => ({ nome, sql: fs.readFileSync(path.join(pastaDaBase, nome), 'utf8') }));
+  const estado = estadoDasMigracoes(migracoes);
+  const vivas = [...estado.funcoes.values()];
+  medicao('s1b_migracoes_lidas', migracoes.length, 'ls supabase/migrations/*.sql, lidas por ordem de nome por estadoDasMigracoes() de scripts/sugestoes-do-portao.mjs', 'a segunda migração está entre as lidas', estado.ficheiros.includes('2026-10-03-chave-tranca-e-marca-horaria.sql'));
+  medicao('s1b_funcoes_vivas_no_fim_das_migracoes', vivas.length, 'estadoDasMigracoes() · as funções enviar_sugestao vivas no fim', 'a viva tem a chave como primeiro parâmetro', vivas.every((f) => /^p_chave\s/.test(f.parametros)));
+  medicao('s1b_tarefas_vivas_no_fim_das_migracoes', estado.tarefas.size, 'estadoDasMigracoes() · as tarefas do pg_cron vivas no fim', 'a das marcas de hora a hora está viva', estado.tarefas.has('sugestoes-marcas'));
+  const erradas = conferirRegrasDaBase(migracoes);
+  const plantasDaCaixaB = plantasDaCaixa(migracoes);
+  medicao('s1b_regras_em_falta', erradas.length, 'conferirRegrasDaBase() de scripts/sugestoes-do-portao.mjs sobre as migrações', 'as plantas das regras correm sobre as mesmas migrações', plantasDaCaixaB.length > 0);
+  medicao('s1b_plantas_em_memoria_da_caixa', plantasDaCaixaB.length, 'plantasDaCaixa() de scripts/sugestoes-do-portao.mjs, que o portão de HTML corre em cada corrida', 'a planta da chave tirada é uma delas e mordeu', plantasDaCaixaB.some((x) => x.nome === 'regras-chave-tirada' && x.mordeu));
+  medicao('s1b_plantas_em_memoria_da_caixa_que_morderam', plantasDaCaixaB.filter((x) => x.mordeu).length, 'a mesma função · as plantas que morderam', 'a planta da limpeza tirada mordeu', plantasDaCaixaB.some((x) => x.nome === 'regras-limpeza-tirada' && x.mordeu));
+
+  const priv = leJson(B('privacidade-b.json'));
+  medicao('s1b_privacidade_plantas_de_api', priv ? priv.api.plantas.length : NAO, 'PYTHONDONTWRITEBYTECODE=1 python3 scripts/check-privacidade.py --prova --json design/especime-v3/medicoes/s1-2026-10-02/privacidade-b.json', 'a planta do sal entre aspas mordeu', priv?.api?.plantas?.some((x) => x.id === 'segredo-sal-entre-aspas' && x.mordeu));
+  medicao('s1b_privacidade_plantas_de_api_que_morderam', priv ? priv.api.plantas.filter((x) => x.mordeu).length : NAO, 'o mesmo ficheiro · as plantas de api/ que morderam', 'a planta da chave entre aspas mordeu', priv?.api?.plantas?.some((x) => x.id === 'segredo-chave-entre-aspas' && x.mordeu));
+  medicao('s1b_privacidade_segredos_em_api', priv ? priv.api.segredos.length : NAO, 'o mesmo ficheiro · os segredos achados em api/', 'a chave pública da base foi vista', (priv?.api?.chaves_publicas_vistas ?? 0) > 0);
+
+  const prefixo = leJson(B('plantas-b/plantas-portoes-s1.json'));
+  medicao('s1b_plantas_sobre_o_dist_do_prefixo_s1', prefixo ? prefixo.length : NAO, 'OEDP_MEDICOES=design/especime-v3/medicoes/s1-2026-10-02/plantas-b node tests/pais/portoes.mjs --prefixo s1-, sobre a construção da passagem', 'a planta do campo a mais mordeu', prefixo?.some((x) => x.nome === 's1-campo-a-mais' && x.passou));
+  medicao('s1b_plantas_sobre_o_dist_do_prefixo_s1_que_morderam', prefixo ? prefixo.filter((x) => x.passou && x.ficheiros.every((f) => f.antes === f.reposto)).length : NAO, 'o mesmo ficheiro · as plantas que morderam com a queixa e repuseram os bytes', 'a planta do mapa com uma página do resultado mordeu', prefixo?.some((x) => x.nome === 's1-mapa-com-resultado' && x.passou));
+  const lista = leJson(B('plantas-b/plantas-portoes-lista.json'));
+  medicao('s1b_plantas_da_lista_que_morderam', lista ? lista.filter((x) => x.passou && x.ficheiros.every((f) => f.antes === f.reposto)).length : NAO, 'OEDP_MEDICOES=design/especime-v3/medicoes/s1-2026-10-02/plantas-b node tests/pais/portoes.mjs --lista s1-voz-language-de-volta,s1-voz-nota-mudada-com-language,s1b-limite-antigo-de-volta', 'a planta da frase antiga do limite mordeu', lista?.some((x) => x.nome === 's1b-limite-antigo-de-volta' && x.passou));
+  const alvos = leJson(B('alvos-b.json'));
+  const dv = alvos?.dist_varrido;
+  const semS = new Set(dv?.paginasSemPortaDasSugestoes ?? []);
+  const semC = new Set(dv?.paginasSemPortaDasCorrecoes ?? []);
+  medicao('s1b_alvos_h16_verde', alvos ? (alvos.celulas.find((c) => c.nome === 'H16')?.passa ? 1 : 0) : NAO, 'node tests/acessibilidade/alvos.mjs --json design/especime-v3/medicoes/s1-2026-10-02/alvos-b.json · a célula H16', 'a varredura guardou as páginas sem cada porta', Array.isArray(dv?.paginasSemPortaDasSugestoes));
+  medicao('s1b_alvos_paginas_so_sem_uma_das_portas', dv ? [...semS].filter((x) => !semC.has(x)).length + [...semC].filter((x) => !semS.has(x)).length : NAO, 'o mesmo ficheiro · as páginas que estão num conjunto e não no outro', 'os dois conjuntos têm páginas (os documentos alojados)', semS.size > 0 && semC.size > 0);
+  medicao('s1b_alvos_celulas_vermelhas', alvos ? alvos.celulas.filter((c) => !c.passa).length : NAO, 'o mesmo ficheiro · as células que não passam', 'a H16 está entre as células', alvos?.celulas?.some((c) => c.nome === 'H16'));
+  const plantasAlvos = leJson(B('alvos-plantas-b.json'));
+  const identidades = plantasAlvos?.plantas?.find((x) => x.nome.startsWith('sugestoes-identidades'));
+  medicao('s1b_planta_das_identidades_pegou', plantasAlvos ? (identidades?.bom ? 1 : 0) : NAO, 'node tests/acessibilidade/alvos.mjs --vermelhos --so sugestoes-identidades --json design/especime-v3/medicoes/s1-2026-10-02/alvos-plantas-b.json', 'a H16 caiu com ela', identidades?.caiu?.includes('H16'));
+
+  const deploy = (le(B('verify-deploy-b.log')) ?? '').replace(/\x1b\[[0-9;]*m/g, '');
+  const controlosVerdes = (deploy.match(/^\s*✓ controlo gravado/gm) ?? []).length;
+  medicao('s1b_verify_deploy_controlos_gravados_verdes', controlosVerdes, 'node scripts/verify-deploy.mjs > design/especime-v3/medicoes/s1-2026-10-02/verify-deploy-b.log · as linhas «controlo gravado» com ✓', 'o mesmo registo tem a pergunta da região da função no ar', /api\/sugestoes região da função/.test(deploy));
+  medicao('s1b_verify_deploy_controlos_gravados_vermelhos', (deploy.match(/^\s*✗ controlo gravado/gm) ?? []).length, 'o mesmo registo · as linhas «controlo gravado» com ✗', 'o registo tem linhas do controlo', controlosVerdes > 0);
+
+  const prova = leJson(B('prova-do-caminho/respostas-b.json'));
+  const rr = prova?.respostas ?? [];
+  const seis = rr.filter((x) => x.nome.startsWith('09-limite-'));
+  medicao('s1b_prova_pedidos', prova ? rr.length : NAO, 'node design/especime-v3/medicoes/s1-2026-10-02/prova-do-caminho/prova-do-comportamento-b.mjs', 'o guião diz que a base real não foi chamada', prova?.base_real_chamada === false);
+  medicao('s1b_prova_envios_guardados_pela_base_simulada', prova ? prova.envios_guardados_pela_base_simulada.length : NAO, 'o mesmo ficheiro · os envios a que a base simulada respondeu «guardou»', 'o bom em português foi guardado com a página do ?de=', rr.some((x) => x.nome === '04-boa-pt' && x.base_simulada.some((b) => b.guardou?.pagina === '/lugares/evora')));
+  medicao('s1b_prova_chamadas_a_base_sem_ip_e_sem_chave', prova ? rr.filter((x) => ['07-sem-ip', '08-sem-chave'].includes(x.nome)).reduce((s, x) => s + x.chamadas_a_base, 0) : NAO, 'o mesmo ficheiro · as chamadas à base dos pedidos sem endereço e sem chave', 'os dois foram para o não chegou', rr.filter((x) => ['07-sem-ip', '08-sem-chave'].includes(x.nome)).every((x) => x.location === routePath('sugestoesNaoChegou', 'pt')));
+  medicao('s1b_prova_primeiro_dos_seis_recusado', prova ? seis.findIndex((x) => x.location === routePath('sugestoesLimite', 'pt')) + 1 : NAO, 'o mesmo ficheiro · o primeiro dos seis seguidos que a função mandou para a página do limite', 'a base simulada respondeu «limite» a esse envio', seis.some((x) => x.base_simulada.some((b) => b.respondeu === 'limite')));
+  medicao('s1b_prova_marcas_vivas_depois_da_hora_mudar', prova ? (rr.find((x) => x.nome === '10-hora-seguinte')?.base_simulada?.[0]?.guardou?.marcas_vivas ?? NAO) : NAO, 'o mesmo ficheiro · as marcas vivas na base simulada depois do envio da hora seguinte', 'o envio da hora seguinte foi guardado', rr.some((x) => x.nome === '10-hora-seguinte' && x.location === routePath('sugestoesObrigado', 'pt')));
+
+  /* O identificador da equipa da Vercel, procurado nos ficheiros do bloco sem estar escrito neste guião: lê-se do
+     registo do lugar de direção tal como estava antes da redação (a cabeça 7fdd4794), pela forma do endereço. */
+  const antigo = execFileSync('git', ['show', '7fdd4794:design/especime-v3/medicoes/s1-2026-10-02/prova-do-caminho-do-lugar-de-direcao/vercel-inspect.txt'], { cwd: RAIZ, encoding: 'utf8' });
+  const equipa = (antigo.match(/o-estado-do-pais-[a-z0-9]+-([a-z0-9-]+)\.vercel\.app/) ?? [])[1] ?? null;
+  const doBloco = execFileSync('git', ['ls-files', 'design/especime-v3/medicoes/s1-2026-10-02', 'api', 'tests/sugestoes', 'scripts/sugestoes-do-portao.mjs', 'scripts/verify-deploy.mjs', 'scripts/verify-deploy-regioes.json', 'src/data/sugestoes.mjs'], { cwd: RAIZ, encoding: 'utf8' }).split('\n').filter(Boolean);
+  const comEquipa = equipa ? doBloco.filter((f) => (le(path.join(RAIZ, f)) ?? '').includes(equipa)) : [];
+  medicao('s1b_ficheiros_do_bloco_com_o_identificador_da_equipa', equipa ? comEquipa.length : NAO, 'o identificador lido do registo antigo do lugar de direção (git show 7fdd4794), procurado nos ficheiros seguidos do bloco', 'o mesmo identificador é achado num ficheiro de outro bloco (BRIEF-decisoes-2026-08-20.md)', equipa && (le(path.join(RAIZ, 'BRIEF-decisoes-2026-08-20.md')) ?? '').includes(equipa));
+  medicao('s1b_ficheiros_do_bloco_lidos_na_procura', doBloco.length, 'git ls-files dos caminhos do bloco', 'o guião da prova da plataforma está entre eles', doBloco.includes('design/especime-v3/medicoes/s1-2026-10-02/prova-do-caminho/prova-da-plataforma.sh'));
+
+  /* As horas dos envios de ensaio no relatório, ao segundo do registo (o achado 15). */
+  const relatorio = le(path.join(PASTA, 'LEIA-ME.md')) ?? '';
+  const envios = leJson(B('prova-do-caminho/respostas.json'))?.envios_que_a_base_guardou ?? [];
+  const certos = envios.filter((e) => relatorio.split('\n').some((l) => l.includes(e.id) && l.includes(e.hora_utc.slice(11, 19)))).length;
+  medicao('s1b_envios_de_ensaio_com_a_hora_do_registo_no_relatorio', certos, 'as linhas do LEIA-ME.md com o identificador de cada envio guardado e a sua hora de respostas.json', 'o registo tem os envios guardados', envios.length > 0);
+
+  for (const g of ['build', 'verify', 'typecheck']) {
+    const c = le(B(`portoes-b/${g}.codigo`));
+    medicao(`s1b_portao_${g}_codigo`, c === null ? NAO : Number(c.trim()), `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes-b · portoes-b/${g}.codigo`, 'a pasta tem a cabeça da corrida', fs.existsSync(B('portoes-b/cabeca')));
+  }
+  const ini = leJson(B('custo-inicio-b.json'));
+  const fim = leJson(B('custo-fim-b.json'));
+  medicao('s1b_simbolos_gastos', ini && fim ? ini.simbolos_restantes_no_inicio - fim.simbolos_restantes_no_fim : NAO, 'custo-inicio-b.json menos custo-fim-b.json, o contador que a ferramenta mostra ao construtor', 'os dois ficheiros dizem de onde vem o número', Boolean(ini?.o_que && fim?.o_que));
+  medicao('s1b_segundos_de_parede', ini && fim ? Math.round((Date.parse(fim.fim_utc) - Date.parse(ini.inicio_utc)) / 1000) : NAO, 'fim_utc de custo-fim-b.json menos inicio_utc de custo-inicio-b.json', 'o início vem de um relógio lido', Boolean(ini?.inicio_origem));
 }
 
 const saida = { bloco: 'S1', guiao: 'design/especime-v3/medicoes/s1-2026-10-02/medir-s1.mjs', cabeca: git('rev-parse', 'HEAD'), medidas };

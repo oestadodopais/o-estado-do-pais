@@ -1,0 +1,52 @@
+[
+  {
+    "nome": "s1-voz-language-de-volta",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "FRASE RETIRADA QUE VOLTOU A RENDER-SE",
+      "«Language»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/suggestions/index.html",
+        "antes": "28f05b2d3ec41f0147bbd614632ba070b0afe08330ce446f93835ab1f9ca75d0",
+        "reposto": "28f05b2d3ec41f0147bbd614632ba070b0afe08330ce446f93835ab1f9ca75d0"
+      }
+    ]
+  },
+  {
+    "nome": "s1-voz-nota-mudada-com-language",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "FRASE RETIRADA QUE VOLTOU A RENDER-SE"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/suggestions/index.html",
+        "antes": "28f05b2d3ec41f0147bbd614632ba070b0afe08330ce446f93835ab1f9ca75d0",
+        "reposto": "28f05b2d3ec41f0147bbd614632ba070b0afe08330ce446f93835ab1f9ca75d0"
+      }
+    ]
+  },
+  {
+    "nome": "s1b-limite-antigo-de-volta",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "FRASE RETIRADA QUE VOLTOU A RENDER-SE",
+      "na última hora"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/sugestoes/limite/index.html",
+        "antes": "1a6c1f5158083e5d0c2acb5dd540e220dfc1c82f33275f04c85e05c5c015b78d",
+        "reposto": "1a6c1f5158083e5d0c2acb5dd540e220dfc1c82f33275f04c85e05c5c015b78d"
+      }
+    ]
+  }
+]

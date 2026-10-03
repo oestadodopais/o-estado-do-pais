@@ -1,0 +1,52 @@
+
+[90m  o que está no ar · xn--oestadodopas-2fb.pt[0m
+[90m    no ar        62ed13c  (2026-10-02T17:44:06.990Z)[0m
+[90m    origin/main  62ed13c[0m
+[90m    main         62ed13c[0m
+[90m    HEAD         cc93092  (onde se está a trabalhar; não decide nada)[0m
+
+[90m  as invariantes de produção · xn--oestadodopas-2fb.pt[0m
+    [32m✓[0m / responde                                 [90mobservado «200» · esperado «200»[0m
+    [32m✓[0m / x-content-type-options                   [90mobservado «nosniff» · esperado «nosniff»[0m
+    [32m✓[0m / referrer-policy                          [90mobservado «strict-origin-when-cross-origin» · esperado «strict-origin-when-cross-origin»[0m
+    [32m✓[0m / x-frame-options                          [90mobservado «SAMEORIGIN» · esperado «SAMEORIGIN»[0m
+    [32m✓[0m / strict-transport-security                [90mobservado «max-age=15552000» · esperado «max-age=15552000»[0m
+    [32m✓[0m / permissions-policy                       [90mobservado «camera=(), microphone=(), geolocation=()» · esperado «camera=(), microphone=(), geolocation=()»[0m
+    [32m✓[0m /en/ledger responde                        [90mobservado «200» · esperado «200»[0m
+    [32m✓[0m /en/ledger x-content-type-options          [90mobservado «nosniff» · esperado «nosniff»[0m
+    [32m✓[0m /en/ledger referrer-policy                 [90mobservado «strict-origin-when-cross-origin» · esperado «strict-origin-when-cross-origin»[0m
+    [32m✓[0m /en/ledger x-frame-options                 [90mobservado «SAMEORIGIN» · esperado «SAMEORIGIN»[0m
+    [32m✓[0m /en/ledger strict-transport-security       [90mobservado «max-age=15552000» · esperado «max-age=15552000»[0m
+    [32m✓[0m /en/ledger permissions-policy              [90mobservado «camera=(), microphone=(), geolocation=()» · esperado «camera=(), microphone=(), geolocation=()»[0m
+    [32m✓[0m o-estado-do-pais.vercel.app x-robots-tag   [90mobservado «noindex» · esperado «noindex»[0m
+    [32m✓[0m xn--oestadodopas-2fb.pt x-robots-tag       [90mobservado (ausente) · esperado (ausente)[0m
+    [32m✓[0m oestadodopais.pt/x estado                  [90mobservado «308» · esperado «308»[0m
+    [32m✓[0m oestadodopais.pt/x location                [90mobservado «https://xn--oestadodopas-2fb.pt/x» · esperado «https://xn--oestadodopas-2fb.pt/x»[0m
+    [32m✓[0m www.oestadodopais.pt/x estado              [90mobservado «308» · esperado «308»[0m
+    [32m✓[0m www.oestadodopais.pt/x location            [90mobservado «https://xn--oestadodopas-2fb.pt/x» · esperado «https://xn--oestadodopas-2fb.pt/x»[0m
+    [32m✓[0m www.xn--oestadodopas-2fb.pt/x estado       [90mobservado «308» · esperado «308»[0m
+    [32m✓[0m www.xn--oestadodopas-2fb.pt/x location     [90mobservado «https://xn--oestadodopas-2fb.pt/x» · esperado «https://xn--oestadodopas-2fb.pt/x»[0m
+    [32m✓[0m /en/nao-existe estado                      [90mobservado «404» · esperado «404»[0m
+    [32m✓[0m /en/nao-existe lang                        [90mobservado «en» · esperado «en»[0m
+    [32m✓[0m /nao-existe estado                         [90mobservado «404» · esperado «404»[0m
+    [32m✓[0m /nao-existe lang                           [90mobservado «pt-PT» · esperado «pt-PT»[0m
+    [32m✓[0m /en/404 estado                             [90mobservado «200» · esperado «200»[0m
+    [32m✓[0m /en/404 lang                               [90mobservado «en» · esperado «en»[0m
+    [32m✓[0m /404 estado                                [90mobservado «404» · esperado «404»[0m
+    [32m✓[0m /404 lang                                  [90mobservado «pt-PT» · esperado «pt-PT»[0m
+    [32m✓[0m controlo gravado https://vercel.com/api/user sha256 [90mobservado «5da6243fa2af22fd7fc9a3b365e54c96c8ab72e7e7477572285e08b67cc872a3» · esperado «5da6243fa2af22fd7fc9a3b365e54c96c8ab72e7e7477572285e08b67cc872a3»[0m
+    [32m✓[0m controlo gravado https://vercel.com/api/user região [90mobservado «sfo1» · esperado «sfo1»[0m
+    [32m✓[0m controlo gravado https://vercel.com/docs/headers/response-headers sha256 [90mobservado «96f190d23b283b91c10192e5694128e4d43af69220aaf26c71e1f0e962e2b235» · esperado «96f190d23b283b91c10192e5694128e4d43af69220aaf26c71e1f0e962e2b235»[0m
+    [32m✓[0m controlo gravado https://vercel.com/docs/headers/response-headers região [90mobservado «iad1» · esperado «iad1»[0m
+    [32m✓[0m controlo gravado: a leitura errada é recusada [90mobservado «true» · esperado «true»[0m
+    [31m✗[0m /api/sugestoes estado                      [90mobservado «404» · esperado «303»[0m
+    [31m✗[0m /api/sugestoes location                    [90mobservado (ausente) · esperado «/sugestoes»[0m
+[90m      x-vercel-id observado: «lhr1::grbzm-1791055333097-64734cd1ebdd»[0m
+    [31m✗[0m /api/sugestoes região da função            [90mobservado «lhr1» · esperado «dub1»[0m
+
+[31m  NÃO CONFERE — 3 problema(s):[0m
+[31m    ✗ /api/sugestoes estado: observado «404», esperado «303».[0m
+[31m    ✗ /api/sugestoes location: observado (ausente), esperado «/sugestoes».[0m
+[31m    ✗ /api/sugestoes região da função: observado «lhr1», esperado «dub1».[0m
+
+[33m  Nada se lança enquanto o que está no ar não for o que está no repositório.[0m

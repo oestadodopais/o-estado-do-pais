@@ -1,0 +1,565 @@
+{
+  "bloco": "S1",
+  "guiao": "design/especime-v3/medicoes/s1-2026-10-02/medir-s1.mjs",
+  "cabeca": "b4ab49e48a0af779657898c213cfa13fb7368e5f",
+  "medidas": [
+    {
+      "nome": "textos_da_pagina_iguais_ao_brief",
+      "valor": 24,
+      "comando": "node design/especime-v3/medicoes/s1-2026-10-02/medir-s1.mjs · os textos de src/data/sugestoes.mjs que são, byte a byte, um texto entre «…» do §5 do brief",
+      "conhecido_positivo": {
+        "o_que": "o parágrafo português do brief é encontrado entre os citados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "textos_da_pagina_declarados",
+      "valor": 24,
+      "comando": "o mesmo guião · as cadeias do §5.4 e do §5.5 em src/data/sugestoes.mjs, nas duas línguas",
+      "conhecido_positivo": {
+        "o_que": "a nota inglesa está entre as declaradas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "medicoes_do_brief_escritas",
+      "valor": 13,
+      "comando": "design/observatorio/medidas/BRIEF-S1.json · as medições",
+      "conhecido_positivo": {
+        "o_que": "o guião do brief corre e escreve medições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "medicoes_do_brief_reproduzidas",
+      "valor": 13,
+      "comando": "OEDP_MEDIDAS_JSON=<temporário> python3 design/observatorio/medidas/BRIEF-S1.py, comparado medição a medição com BRIEF-S1.json",
+      "conhecido_positivo": {
+        "o_que": "cada conhecido-positivo do guião foi encontrado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_declaradas_antes",
+      "valor": 35,
+      "comando": "git show 62ed13c6:src/lib/routes.mjs · as chaves de ROUTES",
+      "conhecido_positivo": {
+        "o_que": "a das correções é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_declaradas_agora",
+      "valor": 40,
+      "comando": "Object.keys(ROUTES) de src/lib/routes.mjs",
+      "conhecido_positivo": {
+        "o_que": "a das sugestões é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_novas_do_bloco",
+      "valor": 5,
+      "comando": "as chaves de agora que a base do bloco não tinha",
+      "conhecido_positivo": {
+        "o_que": "as quatro do resultado estão entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "construcao_da_cabeca",
+      "valor": 1,
+      "comando": "dist/version.json, o campo commit, contra git rev-parse HEAD",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro tem commit",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_da_caixa_construidas",
+      "valor": 10,
+      "comando": "as cinco rotas da caixa nas duas edições, cada uma com o seu index.html em dist/",
+      "conhecido_positivo": {
+        "o_que": "a página do formulário português existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_da_caixa_com_noindex",
+      "valor": 8,
+      "comando": "as páginas da caixa com <meta name=\"robots\" content=\"noindex, follow\">",
+      "conhecido_positivo": {
+        "o_que": "a do obrigado português leva-o",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formularios_no_mapa_do_sitio",
+      "valor": 2,
+      "comando": "os <loc> de dist/sitemap-N.xml com o caminho do formulário de cada edição",
+      "conhecido_positivo": {
+        "o_que": "o mapa tem a página das correções",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_do_resultado_no_mapa_do_sitio",
+      "valor": 0,
+      "comando": "os <loc> de dist/sitemap-N.xml com o caminho de uma página do resultado",
+      "conhecido_positivo": {
+        "o_que": "o mesmo leitor vê os dois formulários",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_html_construidas",
+      "valor": 7477,
+      "comando": "os ficheiros .html de dist/",
+      "conhecido_positivo": {
+        "o_que": "a página do formulário é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_com_uma_porta_das_sugestoes",
+      "valor": 7452,
+      "comando": "os .html de dist/ com exatamente um atributo data-porta-sugestoes",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem-na",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_com_a_porta_das_correcoes",
+      "valor": 7452,
+      "comando": "os .html de dist/ com data-porta-correccoes",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem-na",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_na_pasta_das_funcoes",
+      "valor": 1,
+      "comando": "ls api/",
+      "conhecido_positivo": {
+        "o_que": "a função das sugestões está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "casos_da_celula_da_funcao",
+      "valor": 12,
+      "comando": "node tests/sugestoes/funcao.mjs --prova --json design/especime-v3/medicoes/s1-2026-10-02/celula-da-funcao.json",
+      "conhecido_positivo": {
+        "o_que": "o caso da armadilha está entre os casos e passa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "casos_da_celula_da_funcao_verdes",
+      "valor": 12,
+      "comando": "o mesmo ficheiro · os casos com passou",
+      "conhecido_positivo": {
+        "o_que": "o caso do limite passa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_celula_da_funcao",
+      "valor": 15,
+      "comando": "o mesmo ficheiro · as plantas além do controlo",
+      "conhecido_positivo": {
+        "o_que": "a planta da armadilha invertida mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_celula_da_funcao_que_morderam",
+      "valor": 15,
+      "comando": "o mesmo ficheiro · as plantas com mordeu",
+      "conhecido_positivo": {
+        "o_que": "a cópia de controlo sem troca passou",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "privacidade_ficheiros_de_api_lidos",
+      "valor": 1,
+      "comando": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/check-privacidade.py --prova --json design/especime-v3/medicoes/s1-2026-10-02/privacidade.json",
+      "conhecido_positivo": {
+        "o_que": "a chave pública da base é vista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "privacidade_segredos_em_api",
+      "valor": 0,
+      "comando": "o mesmo ficheiro · os segredos achados em api/",
+      "conhecido_positivo": {
+        "o_que": "a planta da chave secreta mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "privacidade_caminhos_e_nomes_em_api",
+      "valor": 0,
+      "comando": "o mesmo ficheiro · os caminhos e nomes achados em api/",
+      "conhecido_positivo": {
+        "o_que": "a planta do nome do Git mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "privacidade_plantas_de_api",
+      "valor": 10,
+      "comando": "o mesmo ficheiro · as plantas de api/",
+      "conhecido_positivo": {
+        "o_que": "todas morderam",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mortos_ficheiros_lidos",
+      "valor": 318,
+      "comando": "node scripts/check-mortos.mjs --prova > design/especime-v3/medicoes/s1-2026-10-02/mortos.log",
+      "conhecido_positivo": {
+        "o_que": "a prova viu a pasta api/ e o seu morto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_portas_das_sugestoes",
+      "valor": 7452,
+      "comando": "npm run build · a linha «S1:» da saída do portão de HTML, em portoes/build.log",
+      "conhecido_positivo": {
+        "o_que": "a linha diz quantas páginas leu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_paginas_lidas_pela_porta",
+      "valor": 7452,
+      "comando": "a mesma linha",
+      "conhecido_positivo": {
+        "o_que": "as portas contadas são as páginas lidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_paginas_da_caixa_conferidas",
+      "valor": 12,
+      "comando": "a mesma linha",
+      "conhecido_positivo": {
+        "o_que": "o portão leu o mapa do sítio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_plantas_em_memoria",
+      "valor": 10,
+      "comando": "a mesma linha",
+      "conhecido_positivo": {
+        "o_que": "o portão correu as plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_portao_sobre_o_dist",
+      "valor": 8,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/s1-2026-10-02 node tests/pais/portoes.mjs --prefixo s1-",
+      "conhecido_positivo": {
+        "o_que": "a planta do noindex tirado mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_portao_sobre_o_dist_que_morderam",
+      "valor": 8,
+      "comando": "o mesmo ficheiro · as plantas com passou",
+      "conhecido_positivo": {
+        "o_que": "cada planta repôs os bytes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_sentinela_da_voz",
+      "valor": 2,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/s1-2026-10-02 node tests/pais/portoes.mjs --lista s1-voz-language-de-volta,s1-voz-nota-mudada-com-language",
+      "conhecido_positivo": {
+        "o_que": "a palavra sozinha voltou a morder",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_sentinela_da_voz_que_morderam",
+      "valor": 2,
+      "comando": "o mesmo ficheiro · as plantas com passou",
+      "conhecido_positivo": {
+        "o_que": "cada planta repôs os bytes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_paginas_index_lidas",
+      "valor": 7476,
+      "comando": "o mesmo ficheiro · dist_varrido.n, as páginas index.html do dist/",
+      "conhecido_positivo": {
+        "o_que": "a varredura contou a porta das correções",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_paginas_com_a_porta_das_sugestoes_no_footer",
+      "valor": 7451,
+      "comando": "o mesmo ficheiro · dist_varrido.sugestoesEmMarco",
+      "conhecido_positivo": {
+        "o_que": "a mesma varredura vê a porta das correções no rodapé",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_paginas_sem_a_porta_das_sugestoes",
+      "valor": 25,
+      "comando": "o mesmo ficheiro · dist_varrido.semPortaDasSugestoes",
+      "conhecido_positivo": {
+        "o_que": "as páginas sem a das correções são as mesmas em número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_paginas_com_a_porta_fora_do_footer",
+      "valor": 0,
+      "comando": "o mesmo ficheiro · fora do <footer> mais as que têm mais de uma",
+      "conhecido_positivo": {
+        "o_que": "a varredura leu páginas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_rotas_medidas",
+      "valor": 62,
+      "comando": "node tests/acessibilidade/alvos.mjs --json design/especime-v3/medicoes/s1-2026-10-02/alvos.json",
+      "conhecido_positivo": {
+        "o_que": "a página do formulário é uma das rotas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_h16_verde",
+      "valor": 1,
+      "comando": "o mesmo ficheiro · a célula H16",
+      "conhecido_positivo": {
+        "o_que": "a prova da H16 fala do campo armadilhado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alvos_celulas_vermelhas",
+      "valor": 0,
+      "comando": "o mesmo ficheiro · as células que não passam",
+      "conhecido_positivo": {
+        "o_que": "a H1 (o axe) está entre as células",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_h16",
+      "valor": 3,
+      "comando": "node tests/acessibilidade/alvos.mjs --vermelhos --so sugestoes- --json design/especime-v3/medicoes/s1-2026-10-02/alvos-plantas.json",
+      "conhecido_positivo": {
+        "o_que": "a planta do botão a 30 px fez cair a H16",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_h16_que_pegaram",
+      "valor": 3,
+      "comando": "o mesmo ficheiro · as plantas com bom",
+      "conhecido_positivo": {
+        "o_que": "a planta da porta no <main> mudou o HTML",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_inventario_do_bloco",
+      "valor": 26,
+      "comando": "as linhas de design/especime-v3/INVENTARIO-FRASES.md com o bloco s1",
+      "conhecido_positivo": {
+        "o_que": "a da nota portuguesa é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "excecoes_de_contexto_do_bloco",
+      "valor": 2,
+      "comando": "as linhas «contexto» de design/especime-v3/VOZ-MARCADORES.md com uma rota da caixa",
+      "conhecido_positivo": {
+        "o_que": "a da página de onde veio é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_na_linha",
+      "valor": 232,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md > conferir-mapa.txt",
+      "conhecido_positivo": {
+        "o_que": "o guião diz as citações longe da linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_longe_da_linha",
+      "valor": 0,
+      "comando": "o mesmo ficheiro",
+      "conhecido_positivo": {
+        "o_que": "o guião conferiu citações",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_longe_da_linha_na_base_do_bloco",
+      "valor": 0,
+      "comando": "git archive d0615da6 scripts tests src design/observatorio para uma pasta temporária, e o guião do mapa sobre ela",
+      "conhecido_positivo": {
+        "o_que": "o guião conferiu citações na base",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "voz_marcadores",
+      "valor": 65,
+      "comando": "npm run build · a linha «voz ✓» do check:voz, em portoes/build.log, sem as cores do terminal",
+      "conhecido_positivo": {
+        "o_que": "o número é o das linhas da tabela dos marcadores de VOZ-MARCADORES.md",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "voz_excecoes",
+      "valor": 18,
+      "comando": "a mesma linha",
+      "conhecido_positivo": {
+        "o_que": "o número é o das linhas da tabela das exceções de VOZ-MARCADORES.md",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "prova_pedidos",
+      "valor": 11,
+      "comando": "node design/especime-v3/medicoes/s1-2026-10-02/prova-do-caminho/prova-do-comportamento.mjs",
+      "conhecido_positivo": {
+        "o_que": "o GET levou ao formulário",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "prova_envios_guardados_pela_base",
+      "valor": 5,
+      "comando": "o mesmo ficheiro · os envios a que a base respondeu 200",
+      "conhecido_positivo": {
+        "o_que": "o bom em português foi guardado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "prova_chamadas_a_base_da_armadilha_e_da_vazia",
+      "valor": 0,
+      "comando": "o mesmo ficheiro · as chamadas à base da armadilha e da vazia",
+      "conhecido_positivo": {
+        "o_que": "o bom em inglês chamou a base",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "prova_primeiro_dos_seis_recusado",
+      "valor": 4,
+      "comando": "o mesmo ficheiro · o primeiro dos seis envios seguidos que a função mandou para a página do limite",
+      "conhecido_positivo": {
+        "o_que": "a base respondeu «limite» a esse envio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "prova_envios_antes_dos_seis_na_mesma_marca",
+      "valor": 2,
+      "comando": "o mesmo ficheiro · os envios bons que somaram à mesma marca antes dos seis",
+      "conhecido_positivo": {
+        "o_que": "os dois foram para o obrigado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plataforma_funcao_em_dub1",
+      "valor": 1,
+      "comando": "vercel inspect <endereço da pré-visualização>, gravado em prova-do-caminho/vercel-inspect.txt",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro diz o estado da implantação",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas",
+      "valor": 16,
+      "comando": "node design/especime-v3/medicoes/s1-2026-10-02/captar-s1.mjs · o manifesto capturas-s1.json",
+      "conhecido_positivo": {
+        "o_que": "a do formulário português a 390 está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_problemas",
+      "valor": 0,
+      "comando": "o mesmo manifesto · os problemas",
+      "conhecido_positivo": {
+        "o_que": "o manifesto diz os pedidos de fora recusados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_build_codigo",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes · portoes/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça da corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_verify_codigo",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes · portoes/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça da corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_typecheck_codigo",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/s1-2026-10-02/portoes · portoes/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem a cabeça da corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_gastos",
+      "valor": 810299,
+      "comando": "custo-inicio.json menos custo-fim.json, o contador que a ferramenta mostra ao construtor",
+      "conhecido_positivo": {
+        "o_que": "os dois ficheiros dizem de onde vem o número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_de_parede",
+      "valor": 6091,
+      "comando": "fim_utc de custo-fim.json menos inicio_utc de custo-inicio.json",
+      "conhecido_positivo": {
+        "o_que": "o início vem de um relógio lido",
+        "encontrado": true
+      }
+    }
+  ]
+}

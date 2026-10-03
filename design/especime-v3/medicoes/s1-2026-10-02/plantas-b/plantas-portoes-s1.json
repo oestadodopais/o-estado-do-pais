@@ -1,0 +1,163 @@
+[
+  {
+    "nome": "s1-porta-sugestoes-a-dobrar",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "S1 porta: esta página tem 2 porta\\(s\\) das sugestões"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/lugares/index.html",
+        "antes": "c63db86464bea562617f32a9788b286a2c4333edab5db20bff48525b19e34b6c",
+        "reposto": "c63db86464bea562617f32a9788b286a2c4333edab5db20bff48525b19e34b6c"
+      }
+    ]
+  },
+  {
+    "nome": "s1-porta-sugestoes-de-errado",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "S1 porta: a porta das sugestões diz \\?de=\"\\/lugares\", e o caminho desta página é \"\\/temas\""
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "8b944ba6368a39fbd073356e3b5ab321520fe66126d07455660d7257b0121710",
+        "reposto": "8b944ba6368a39fbd073356e3b5ab321520fe66126d07455660d7257b0121710"
+      }
+    ]
+  },
+  {
+    "nome": "s1-resultado-sem-noindex",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "S1 resultado: a página do resultado tem de levar uma marca robots «noindex, follow»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/sugestoes/obrigado/index.html",
+        "antes": "2c2644ef21839b5f4b501939b6a72233ae4c8dc0ee3c85ac7aa17769c5086c91",
+        "reposto": "2c2644ef21839b5f4b501939b6a72233ae4c8dc0ee3c85ac7aa17769c5086c91"
+      }
+    ]
+  },
+  {
+    "nome": "s1-nota-mudada",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "S1 formulário \\(a nota do que fica guardado\\): o texto rendido não é o declarado"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/sugestoes/index.html",
+        "antes": "68fb415633b8f416cd79ed2694c299d866958aa7a8aa6e6521429a7db4fb3d7e",
+        "reposto": "68fb415633b8f416cd79ed2694c299d866958aa7a8aa6e6521429a7db4fb3d7e"
+      }
+    ]
+  },
+  {
+    "nome": "s1-armadilha-anunciada",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "S1 formulário: o campo armadilhado não está fora da árvore de acessibilidade"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/suggestions/index.html",
+        "antes": "28f05b2d3ec41f0147bbd614632ba070b0afe08330ce446f93835ab1f9ca75d0",
+        "reposto": "28f05b2d3ec41f0147bbd614632ba070b0afe08330ce446f93835ab1f9ca75d0"
+      }
+    ]
+  },
+  {
+    "nome": "s1-campo-a-mais",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "S1 formulário: os campos são ip, "
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/sugestoes/index.html",
+        "antes": "68fb415633b8f416cd79ed2694c299d866958aa7a8aa6e6521429a7db4fb3d7e",
+        "reposto": "68fb415633b8f416cd79ed2694c299d866958aa7a8aa6e6521429a7db4fb3d7e"
+      }
+    ]
+  },
+  {
+    "nome": "s1-mapa-com-resultado",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "S1 mapa: a página do resultado \"\\/sugestoes\\/obrigado\" está no mapa do sítio"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/sitemap-0.xml",
+        "antes": "03721b269f03321cff82e6f3b55478f1b67b4003cbc7fba68bdb86f2e063129e",
+        "reposto": "03721b269f03321cff82e6f3b55478f1b67b4003cbc7fba68bdb86f2e063129e"
+      }
+    ]
+  },
+  {
+    "nome": "s1-correcoes-sem-a-frase",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "S1 correções: a página tem 0 bloco\\(s\\) \\[data-sugestoes-nas-correcoes\\]"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/correcoes/index.html",
+        "antes": "d8111e0558d0bf40f03fce2b352decfe83a3f0369172a2f20e84e80e341bd8d3",
+        "reposto": "d8111e0558d0bf40f03fce2b352decfe83a3f0369172a2f20e84e80e341bd8d3"
+      }
+    ]
+  },
+  {
+    "nome": "s1-voz-language-de-volta",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "FRASE RETIRADA QUE VOLTOU A RENDER-SE",
+      "«Language»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/suggestions/index.html",
+        "antes": "28f05b2d3ec41f0147bbd614632ba070b0afe08330ce446f93835ab1f9ca75d0",
+        "reposto": "28f05b2d3ec41f0147bbd614632ba070b0afe08330ce446f93835ab1f9ca75d0"
+      }
+    ]
+  },
+  {
+    "nome": "s1-voz-nota-mudada-com-language",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "FRASE RETIRADA QUE VOLTOU A RENDER-SE"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/suggestions/index.html",
+        "antes": "28f05b2d3ec41f0147bbd614632ba070b0afe08330ce446f93835ab1f9ca75d0",
+        "reposto": "28f05b2d3ec41f0147bbd614632ba070b0afe08330ce446f93835ab1f9ca75d0"
+      }
+    ]
+  }
+]
