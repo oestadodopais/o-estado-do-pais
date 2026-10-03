@@ -321,10 +321,23 @@ planta('l2b-b-portao-lugar-numa-contagem','scripts/gate-html.mjs',[
    uma citação registada, conferida carácter a carácter. `--prefixo k2c-` corre só estas. */
 planta('k2c-portao-unidade-da-casa-trocada','scripts/gate-html.mjs',[
  ['emprego/index.html',r=>r.querySelector('[data-unidade-da-casa="disparidade-de-emprego-entre-sexos-2025"]').set_content('% da população')]
-],[/K2-c: a unidade da casa de "disparidade-de-emprego-entre-sexos-2025" diz «% da população» e a definição declara «pontos percentuais»/]);
+],[/K2-c: a unidade da casa de "disparidade-de-emprego-entre-sexos-2025" diz «% da população» e a declaração diz «pontos percentuais»/]);
 planta('k2c-portao-unidade-da-casa-de-outra-linha','scripts/gate-html.mjs',[
  ['en/employment/index.html',r=>r.querySelector('[data-unidade-da-casa="disparidade-de-emprego-entre-sexos-2025"]').setAttribute('data-unidade-da-casa','taxa-de-emprego-2025')]
-],[/o valor da afirmação "disparidade-de-emprego-entre-sexos-2025" aparece sem selo para a sua própria linha na forma do cartão/,/K2-c: a unidade da casa de "taxa-de-emprego-2025" aparece na página e a definição de "taxa-de-emprego-2025" não declara unidade nenhuma/]);
+],[/o valor da afirmação "disparidade-de-emprego-entre-sexos-2025" aparece sem selo para a sua própria linha na forma do cartão/,/K2-c: a unidade da casa de "taxa-de-emprego-2025" está fora do cartão da sua linha/]);
+/* R2 (03.10.2026, o bloco dos rótulos): a unidade de um cartão nacional declara-se em `UNIDADES_DOS_CARTOES`, com o seu
+   apoio, e o portão de HTML só a aceita no cartão da sua linha, com o texto da declaração; o cartão de uma linha com
+   unidade declarada não pode voltar a imprimir a etiqueta da linha; e um algarismo de uma unidade declarada só entra
+   pela marca da régua do instrumento. `--prefixo r2-` corre só estas. */
+planta('r2-portao-cartao-com-a-etiqueta-da-linha','scripts/gate-html.mjs',[
+ ['emprego/index.html',r=>r.querySelector('[data-unidade-da-casa="jovens-nem-2025"]').replaceWith('<span class="cartao-medida-unidade" data-linha-campo="unit" data-linha-claim="jovens-nem-2025">% da população</span>')]
+],[/R2: o cartão de "jovens-nem-2025" tem unidade declarada em UNIDADES_DOS_CARTOES e imprime outra \(a etiqueta da linha\)/]);
+planta('r2-portao-unidade-da-casa-com-outra-idade','scripts/gate-html.mjs',[
+ ['en/employment/index.html',r=>r.querySelector('[data-unidade-da-casa="jovens-nem-2025"]').set_content('% of people aged <span data-nonledger="escala-de-instrumento">15</span> to <span data-nonledger="escala-de-instrumento">24</span>')]
+],[/K2-c: a unidade da casa de "jovens-nem-2025" diz «% of people aged 15 to 24» e a declaração diz «% of people aged 15 to 29»/]);
+planta('r2-portao-algarismo-da-unidade-sem-marca','scripts/gate-html.mjs',[
+ ['emprego/index.html',r=>r.querySelector('[data-unidade-da-casa="taxa-de-emprego-2025"]').set_content('% das pessoas dos 20 aos 64 anos')]
+],[/algarismos fora do livro-razão: "20"/]);
 planta('k2c-portao-classe-etaria-trocada','scripts/gate-html.mjs',[
  ['uniao-europeia/index.html',r=>r.querySelector('[data-verbatim="origem-eurostat-tipslm90-sexo-coordenadas"]').set_content('Age class: From 15 to 24 years')]
 ],[/a citação "origem-eurostat-tipslm90-sexo-coordenadas" não foi transcrita fielmente/]);

@@ -51,6 +51,7 @@ import {
   textoDaDefinicao,
 } from '../../src/data/figuras.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
+import { UNIDADES_DOS_CARTOES } from '../../src/data/unidades-dos-cartoes.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 export const AUDITORIA_DAS_PERGUNTAS = path.join(AQUI, 'perguntas-provadas.json');
@@ -89,6 +90,7 @@ export function auditarPerguntas({
   definicoes = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS),
   origens = /** @type {Record<string, any>} */ (ORIGENS_DAS_DEFINICOES),
   linhas = loadClaims(),
+  unidades = /** @type {Record<string, any>} */ (UNIDADES_DOS_CARTOES),
 } = {}) {
   /** @type {string[]} */
   const erros = [];
@@ -203,17 +205,48 @@ export function auditarPerguntas({
   }
   contas.origens_usadas = usadasEmTudo.size;
 
-  /* A UNIDADE DA CASA (passagem K2-c, 02.10.2026). Onde a definição declara uma unidade para o cartão mostrar, cada
-     forma tem de ser um pedaço da pergunta declarada na mesma língua: é assim que ela «vem da definição», e herda as
-     origens que a auditoria acima confere pedaço a pedaço. */
-  for (const [id, d] of Object.entries(definicoes)) {
-    if (!d?.unidade) continue;
+  /* A UNIDADE DA CASA (passagem K2-c, 02.10.2026; bloco R2, 03.10.2026). A unidade de um cartão nacional que difere da
+     unidade da linha declara-se numa fonte só, `UNIDADES_DOS_CARTOES` (`src/data/unidades-dos-cartoes.mjs`), com os
+     apoios que a sustentam. Esta célula audita-os como audita os pedaços das perguntas, com o seu próprio leitor: um
+     apoio `{ pergunta: true }` quer a unidade de cada língua como pedaço da pergunta declarada (a regra da K2-c, e a
+     pergunta herda as origens que a auditoria acima confere); um apoio com literal quer o literal no campo que diz, da
+     linha da própria medida (os campos selados da linha, e também o nome, o localizador e as derivações, que são da
+     linha e não da casa) ou de uma origem declarada. Uma unidade sem apoio nenhum fecha a construção. */
+  const CAMPOS_DA_LINHA_NA_UNIDADE = new Set([...CAMPOS_DA_LINHA, 'name', 'document.locator', 'derivation', 'derivation_en']);
+  const textoDaUnidade = (/** @type {any} */ partes) =>
+    Array.isArray(partes) ? partes.map((p) => (typeof p === 'string' ? p : String(p?.nl ?? ''))).join('') : '';
+  for (const [id, u] of Object.entries(unidades)) {
     contas.unidades_da_casa = (contas.unidades_da_casa ?? 0) + 1;
+    const apoios = Array.isArray(u?.apoio) ? u.apoio : [];
+    if (!apoios.length) falha(id, 'a unidade da casa não declara apoio nenhum');
     for (const lang of /** @type {const} */ (['pt', 'en'])) {
-      const u = d.unidade[lang];
-      const pergunta = textoDaDefinicao(d[lang] ?? []);
-      if (typeof u !== 'string' || !u.trim() || !pergunta.includes(u)) {
-        falha(id, `a unidade da casa «${u ?? ''}» (${lang}) não é um pedaço da pergunta declarada («${curto(pergunta)}»)`);
+      if (!textoDaUnidade(u?.[lang]).trim()) falha(id, `a unidade da casa não tem forma em ${lang}`);
+    }
+    const linha = linhas.get(id);
+    for (const a of apoios) {
+      if (a?.pergunta === true) {
+        for (const lang of /** @type {const} */ (['pt', 'en'])) {
+          const t = textoDaUnidade(u?.[lang]);
+          const pergunta = textoDaDefinicao(definicoes[id]?.[lang] ?? []);
+          if (!t || !pergunta.includes(t)) falha(id, `a unidade da casa «${t}» (${lang}) não é um pedaço da pergunta declarada («${curto(pergunta)}»)`);
+        }
+        continue;
+      }
+      const literal = a?.literal;
+      if (typeof literal !== 'string' || literal.trim().length < LITERAL_MINIMO) {
+        falha(id, `a unidade da casa cita um literal com menos de ${LITERAL_MINIMO} caracteres, que não prende nada`);
+        continue;
+      }
+      if (a.origem) {
+        const o = origens[a.origem];
+        if (!o || !CAMPOS_DA_ORIGEM.has(a.campo) || typeof o[a.campo] !== 'string' || !o[a.campo].includes(literal)) {
+          falha(id, `a unidade da casa cita «${curto(literal)}» no campo «${a.campo}» da origem «${a.origem}», e não está lá`);
+        }
+        continue;
+      }
+      const valor = a.campo === 'document.locator' ? linha?.document?.locator : CAMPOS_DA_LINHA_NA_UNIDADE.has(a.campo) ? campoDaLinha(linha, a.campo) : undefined;
+      if (typeof valor !== 'string' || !valor.includes(literal)) {
+        falha(id, `a unidade da casa cita «${curto(literal)}» no campo «${a.campo}» da linha, e não está lá`);
       }
     }
   }
