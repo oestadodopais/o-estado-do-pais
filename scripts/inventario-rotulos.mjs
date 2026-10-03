@@ -53,6 +53,7 @@
  *
  *   node scripts/inventario-rotulos.mjs [--prova] [--json <ficheiro>]     (OEDP_DIST mede outra construção)
  *   node scripts/inventario-rotulos.mjs --escrever                         (escreve o inventário declarado)
+ *   node scripts/inventario-rotulos.mjs --inventario <ficheiro>            (só o inventário de uma construção, sem o comparar)
  *
  * Sai 0 com tudo conforme e, com `--prova`, as plantas a morder; 1 se não.
  */
@@ -633,6 +634,15 @@ if (eDireto) {
   const prova = process.argv.includes('--prova');
   const { erros, contas, inventario } = conferirConstrucao(dist);
   const construido = inventarioOrdenado(inventario);
+  /* --inventario <ficheiro>: escreve só o inventário de uma construção (OEDP_DIST pode ser outra, por exemplo a de uma
+     cabeça antiga), sem o comparar com a declaração de hoje nem falhar por isso; é como um bloco mede a forma de antes. */
+  const iInventario = process.argv.indexOf('--inventario');
+  if (iInventario >= 0) {
+    const destino = process.argv[iInventario + 1];
+    fs.writeFileSync(destino, JSON.stringify({ o_que: 'O inventário dos rótulos de uma construção, escrito por --inventario, sem comparação com a declaração em vigor.', construcao: (() => { try { return JSON.parse(fs.readFileSync(path.join(dist, 'version.json'), 'utf8')).commit ?? null; } catch { return null; } })(), contas, rotulos_fora_da_declaracao_de_hoje: erros.length, inventario: construido }, null, 1) + '\n');
+    console.log(`R2 · o inventário da construção escrito em ${path.relative(process.cwd(), destino)}: ${Object.keys(construido).length} chaves, ${contas.cartoes} cartões; ${erros.length} rótulo(s) diferentes da declaração de hoje.`);
+    process.exit(0);
+  }
   let comparacaoComODeclarado = null;
   if (escrever) {
     if (erros.length) {
