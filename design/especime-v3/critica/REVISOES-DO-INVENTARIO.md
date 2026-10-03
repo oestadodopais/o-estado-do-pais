@@ -594,3 +594,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | --- | --- | --- | --- |
 | s1 | 26 cadeias novas, nenhuma retirada | por ler | Claude Opus 5.5, construtor do S1: o título, o parágrafo, a descrição, os quatro rótulos e a nota do que fica guardado da página das sugestões, as quatro frases das páginas do resultado e a frase da página das correções com a porta das sugestões, nas duas línguas. Os textos são os do brief à letra, menos a frase das correções, que é do construtor; a nota é rascunho à espera do diretor. Duas exceções de contexto novas em `VOZ-MARCADORES.md`, cada uma na sua rota, e a dispensa da frase inteira da nota inglesa na sentinela de «Language». |
 
+## S1-b · a passagem de correção da caixa das sugestões, 03.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| s1-b | 2 cadeias novas, 2 retiradas | por ler | Claude Opus 5.5, construtor da passagem S1-b: as duas frases da página do limite («numa hora» / «within one hour», no texto do lugar de direção) entram, e as duas que o S1 tinha acrescentado («na última hora» / «in the last hour») passam a retiradas, com a razão: a janela da marca começa no primeiro envio (o achado 6 da leitura a frio do Sol). |
+

@@ -3816,9 +3816,21 @@ a dispensa da frase inteira em `scripts/medir-defeitos.mjs` e mais nenhuma.
 | navegacao | Thank you. The suggestion arrived. It is not published and a reply is not guaranteed; what enters the plan appears on these pages. | s1 | viva | A mesma frase na edição inglesa. |
 | navegacao | A sugestão vinha vazia. Escreva pelo menos numa das três caixas. | s1 | viva | A página da sugestão vazia. |
 | navegacao | The suggestion was empty. Write in at least one of the three boxes. | s1 | viva | A mesma frase na edição inglesa. |
-| navegacao | Chegaram cinco sugestões deste endereço na última hora. Volte mais tarde. | s1 | viva | A página do limite da hora; o número por extenso é a regra do registo da base, e o portão de HTML confere-o. |
-| navegacao | Five suggestions arrived from this address in the last hour. Please come back later. | s1 | viva | A mesma frase na edição inglesa. |
+| navegacao | Chegaram cinco sugestões deste endereço na última hora. Volte mais tarde. | s1-b | retirada | S1-b (03.10.2026): a página dizia «na última hora», e a janela da marca começa no primeiro envio e dura uma hora (o achado 6 da leitura a frio do Sol); o texto passou a «numa hora», por decisão do lugar de direção. |
+| navegacao | Five suggestions arrived from this address in the last hour. Please come back later. | s1-b | retirada | A gémea inglesa da de cima, retirada pela mesma razão (S1-b, o achado 6). |
 | navegacao | A caixa não conseguiu guardar a sugestão. Volte a tentar mais tarde. | s1 | viva | A página do não chegou: a base não respondeu, a caixa do dia estava cheia, ou faltava o sal da marca. |
 | navegacao | The box could not keep the suggestion. Please try again later. | s1 | viva | A mesma frase na edição inglesa. |
 | navegacao | Para dizer o que procurou e não encontrou, ou que estudo gostava de ler, a porta é outra: a página das sugestões . | s1 | viva | A frase da página das correções para quem chegar à porta errada (§5.1 do brief), escrita pelo construtor no molde da última frase do parágrafo do formulário, e por ler pelo lugar de direção. |
 | navegacao | To say what you looked for and did not find, or which study you would like to read, the door is another one: the suggestions page . | s1 | viva | A mesma frase na edição inglesa. |
+
+## S1-b · a passagem de correção da caixa das sugestões, 03.10.2026
+
+A página do limite deixa de dizer «na última hora», porque a janela da marca começa no primeiro envio e dura uma hora (o
+achado 6 da leitura a frio do Sol, `design/especime-v3/critica/LEITURA-S1-2026-10-03.md`): o texto novo é do lugar de
+direção, e as duas frases antigas ficam `retiradas` na secção do S1, com a razão.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Chegaram cinco sugestões deste endereço numa hora. Volte mais tarde. | s1-b | viva | A página do limite da hora, no texto do lugar de direção da passagem S1-b; o número por extenso é a regra das migrações da base, e o portão de HTML confere-o. |
+| navegacao | Five suggestions arrived from this address within one hour. Please come back later. | s1-b | viva | A mesma frase na edição inglesa. |
+
