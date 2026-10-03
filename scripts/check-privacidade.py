@@ -3,7 +3,9 @@
 S1 (02.10.2026, ponto 6 do brief): também não entram em `api/`, a pasta das funções que correm na Vercel
 ao lado do sítio, que é código público como o resto do repositório. E uma célula nova prova que `api/` não
 tem segredo nenhum: nenhuma chave secreta da base (`sb_secret_`), nenhum papel de serviço (`service_role`) e
-nenhum `SUGESTOES_SAL=` com valor, que é o sal da marca do endereço e vive só na Vercel. O conhecido-positivo
+nenhum `SUGESTOES_SAL=` com valor, que é o sal da marca do endereço e vive só na Vercel; desde a passagem S1-b
+(03.10.2026), também nenhum `SUGESTOES_CHAVE=` com valor (a chave que a função da base exige), e os dois nomes
+apanham-se também entre aspas, na forma de uma propriedade. O conhecido-positivo
 da célula é a chave pública da base (`sb_publishable_`), que o código da função leva de propósito e que o
 mesmo leitor tem de ver. As plantas são cópias em memória do código da função, com um segredo ou um caminho
 plantado, e cada uma tem de morder; as cadeias plantadas compõem-se aqui por partes, para nenhuma chave
@@ -29,10 +31,13 @@ def conferir(ficheiros):
     return {'ficheiros': vistos, 'quantidade': len(achados), 'achados': achados}
 
 # A célula dos segredos (S1): o que não pode estar em `api/`. As marcas compõem-se por partes de propósito.
+# S1-b (03.10.2026, o achado 9 da leitura a frio do Sol): o nome do sal e o da chave da função apanham-se também
+# entre aspas, na forma de uma propriedade («"SUGESTOES_SAL": "…"»), e não só na forma de uma atribuição.
 SEGREDOS = [
     ('chave secreta da base', re.compile(rb'sb_' + rb'secret_')),
     ('papel de serviço', re.compile(rb'service' + rb'_role')),
-    ('o sal da marca com valor', re.compile(rb'SUGESTOES_' + rb'SAL\s*[:=]\s*["\']?[^\s"\';,)]+')),
+    ('o sal da marca com valor', re.compile(rb'SUGESTOES_' + rb'SAL["\']?\s*[:=]\s*["\']?[^\s"\';,)]+')),
+    ('a chave da função com valor', re.compile(rb'SUGESTOES_' + rb'CHAVE["\']?\s*[:=]\s*["\']?[^\s"\';,)]+')),
 ]
 PUBLICA = re.compile(rb'sb_' + rb'publishable_[A-Za-z0-9_-]+')
 
@@ -62,12 +67,19 @@ def medir_api(raiz, prova):
             ('segredo-chave-secreta', b'const k = "' + b'sb_' + b'secret_' + b'0' * 24 + b'";'),
             ('segredo-papel-de-servico', b'// a chave do ' + b'service' + b'_role vai aqui'),
             ('segredo-sal-com-valor', b'SUGESTOES_' + b'SAL=' + b'0' * 16),
+            ('segredo-sal-entre-aspas', b'{ "SUGESTOES_' + b'SAL": "' + b'0' * 16 + b'" }'),
+            ('segredo-chave-com-valor', b'SUGESTOES_' + b'CHAVE=' + b'0' * 16),
+            ('segredo-chave-entre-aspas', b"{ 'SUGESTOES_" + b"CHAVE': '" + b'0' * 16 + b"' }"),
         ]
         for nome, linha in plantados:
             plantas.append({'id': nome, 'mordeu': bool(segredos_em(corpo + b'\n' + linha + b'\n'))})
-        # O nome do sal sem valor, como o código o lê do ambiente, não é segredo nenhum.
+        # O nome do sal e o da chave sem valor, como o código os lê do ambiente, não são segredo nenhum.
         plantas.append({'id': 'sal-lido-do-ambiente-sem-valor',
                         'mordeu': not segredos_em(b'const sal = process.env.SUGESTOES_' + b'SAL;')})
+        plantas.append({'id': 'chave-lida-do-ambiente-sem-valor',
+                        'mordeu': not segredos_em(b"const chave = (process.env.SUGESTOES_" + b"CHAVE ?? '').trim();")})
+        plantas.append({'id': 'nome-vazio-entre-aspas-sem-valor',
+                        'mordeu': not segredos_em(b'{ "SUGESTOES_' + b'SAL": "" }')})
         for i, caminho in enumerate(detetor.proibidos()):
             plantas.append({'id': f'api-caminho-{i + 1}',
                             'mordeu': conferir([('api-plantado.js', corpo + b'\n// ' + caminho + b'\n')])['quantidade'] == 1})
