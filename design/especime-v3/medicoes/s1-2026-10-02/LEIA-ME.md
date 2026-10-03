@@ -143,7 +143,7 @@ A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da má
 | 9, as fugas | em todos os casos da célula, nenhuma resposta (o corpo e os cabeçalhos) traz o sal, a chave ou um endereço do leitor; o detetor dos segredos apanha também a chave com valor e as duas formas entre aspas | `fuga-do-sal`, `fuga-da-chave`, `fuga-do-endereco`, na célula; `segredo-sal-entre-aspas`, `segredo-chave-com-valor`, `segredo-chave-entre-aspas`, no detetor, com os três controlos sem valor que não podem morder | `s1b_privacidade_plantas_de_api_que_morderam`, `s1b_privacidade_segredos_em_api` |
 | 16, a H16 | as páginas sem a porta das sugestões comparam-se, uma a uma, com as que não têm a das correções | `sugestoes-identidades-trocadas`: uma página perde uma porta e outra perde a outra, com os mesmos totais | `s1b_alvos_paginas_so_sem_uma_das_portas`, `s1b_planta_das_identidades_pegou` |
 | 17, a região no `verify:deploy` | antes de ir ao ar, a leitura da região corre sobre duas respostas reais da Vercel gravadas em `scripts/verify-deploy-regioes.json`, com o endereço, a hora, o cliente e o sha256 do que se guardou, uma de cada feitio do cabeçalho | a leitura errada (a primeira região em vez da última) tem de ser recusada pelo controlo, em cada corrida | `s1b_verify_deploy_controlos_gravados_verdes`, `s1b_verify_deploy_controlos_gravados_vermelhos` |
-| 13, a equipa | o guião da prova da plataforma redige o endereço sem nomear a equipa; nenhum ficheiro do bloco a tem | a procura acha o identificador num ficheiro de outro bloco, que é o conhecido-positivo | `s1b_ficheiros_do_bloco_com_o_identificador_da_equipa` em `s1b_ficheiros_do_bloco_lidos_na_procura` |
+| 13, a equipa | o guião da prova da plataforma redige o endereço sem nomear a equipa; nenhum ficheiro do bloco tem o identificador, nem o nome que a redação do S1 trazia, que é o princípio dele (a história do ramo ainda o tem: abaixo, no que ficou por fazer) | a procura acha o identificador e o nome num ficheiro de outro bloco, que são os conhecidos-positivos | `s1b_ficheiros_do_bloco_com_o_identificador_da_equipa` e `s1b_ficheiros_do_bloco_com_o_nome_da_equipa_do_s1`, em `s1b_ficheiros_do_bloco_lidos_na_procura` |
 | 15, as horas | as horas dos envios de ensaio, na secção do S1, são as do registo, ao segundo | (a medida é a planta: confere cada linha contra o registo) | `s1b_envios_de_ensaio_com_a_hora_do_registo_no_relatorio` |
 
 ### Uma coisa que achei ao medir antes de construir, e o que fiz com ela
@@ -182,21 +182,23 @@ Não mudei nada por elas; a nota é dele e está a decidir-se.
 - `cc93092c` a redação sem a equipa e a prova do comportamento;
 - `6d374df2` a planta da frase antiga do limite;
 - `21f1a2c5` o mapa do repositório;
-- o das provas, das medidas e deste relatório, que é a cabeça da corrida final dos portões;
+- `c4ff98b5` as provas, as medidas e este relatório, a cabeça da corrida final dos portões;
 - e o último, com os códigos dessa corrida, as medidas postas em dia, o custo e a resposta curta.
 
 ### Os portões da passagem
 
-A corrida final corre por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça do commit deste relatório. Os códigos, lidos de `portoes-b/<portão>.codigo`, entram no último commit com a cabeça ao lado: `s1b_portao_build_codigo`, `s1b_portao_verify_codigo` e `s1b_portao_typecheck_codigo`.
+A corrida final correu por `sh scripts/leituras/portoes.sh`, com a tranca da máquina, na cabeça `c4ff98b5`, o commit das provas e deste relatório: `build` 0, `verify` 0 e `typecheck` 0 (`s1b_portao_build_codigo`, `s1b_portao_verify_codigo`, `s1b_portao_typecheck_codigo`), lidos de `portoes-b/<portão>.codigo`, com a cabeça em `portoes-b/cabeca`. A cabeça foi a mesma no princípio e no fim da corrida (`s1b_portao_cabeca_igual_no_fim`), foi a que o portão da construção construiu (`s1b_portao_cabeca_e_a_construida`), e nenhum ficheiro mudou durante a corrida além da pasta dela (`s1b_portao_ficheiros_mudados_durante_a_corrida`). Nos registos da corrida, o caminho da worktree está trocado por `<worktree>`.
 
 ### O custo da passagem
 
-Das duas leituras do contador de símbolos restantes, em `custo-inicio-b.json` e `custo-fim-b.json`, e das horas lidas do relógio: `s1b_simbolos_gastos` e `s1b_segundos_de_parede`. A passagem correu numa só sessão do Claude Opus 5.5, sem subagentes, com um resumo do contexto a meio; as duas leituras são do mesmo contador da sessão, que desceu de uma para a outra através do resumo.
+282 775 símbolos e 3 246 segundos de parede (`s1b_simbolos_gastos`, `s1b_segundos_de_parede`), das duas leituras do contador de símbolos restantes, em `custo-inicio-b.json` e `custo-fim-b.json`, e das horas lidas do relógio. A passagem correu numa só sessão do Claude Opus 5.5, sem subagentes, com um resumo do contexto a meio; as duas leituras são do mesmo contador da sessão, que desceu de uma para a outra através do resumo. A semana da subscrição do Claude estava a 42 por cento no fim (`custo-fim-b.json`); a leitura do princípio da passagem não guardou a semana, e não a escrevo de memória.
 
 ### O que ficou por fazer
 
 - **A prova contra a base real**, depois de aterrar (acima).
 - **As duas decisões do diretor** do princípio deste relatório: a recusa do Método e a nota. As duas consequências acima juntam-se à nota.
 - **O identificador da equipa fora do bloco.** Está ainda em ficheiros de outros blocos (`BRIEF-decisoes-2026-08-20.md`, `design/especime-v3/PLANO-redesenho-v3.md`, dois briefs em `design/especime-v3/briefs/`, `design/especime-v3/medicoes/higiene-construtor.md` e `design/especime-v3/notas/pos-fusao.md`). Não são registos meus, e não lhes toquei.
+- **O nome da equipa na história do ramo.** Os ficheiros de agora não o têm, mas 2 versões da história do ramo têm-no (`s1b_versoes_da_historia_do_ramo_com_o_nome_da_equipa`, com a lista na medida): o registo do lugar de direção no commit do brief (`d0615da6`) e a redação do meu guião do S1 (`b4ab49e4`). Um `git merge --ff-only` leva-as para a história da `main`, onde o mesmo nome já está nos ficheiros de outros blocos do ponto anterior. Tirá-las pede reescrever o ramo, e a casa publica uma cabeça reescrita num ramo novo: é uma decisão da aterragem, e não a tomei.
 - **A leitura a frio da passagem** e a releitura do diff do inventário (o bloco `s1-b` está «por ler»).
+- **O que o S1 deixou por fazer**, e que esta passagem não tocou: apagar as linhas de ensaio do S1 na base e a pré-visualização do S1, e o passo da leitura da caixa no `CLAUDE.md` ao aterrar (a secção «O que ficou por fazer, e porquê», acima).
 

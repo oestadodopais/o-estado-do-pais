@@ -15,8 +15,9 @@
 - **A célula da função**: 17 casos verdes e 28 plantas, cada uma a morder com a queixa que nomeia.
 - **A prova do comportamento não chamou a base real.** A chave só existe na Vercel, e por isso a prova usou uma chave de ensaio e uma base simulada: 15 pedidos e 6 envios guardados pela simulação. Que a base real aceita a chave verdadeira prova-se só no primeiro envio depois de aterrar, porque o `verify:deploy` faz um GET e não manda sugestão nenhuma.
 - **Duas consequências da migração, para a nota do diretor.** O limite passa a ser cinco por hora do relógio, e a mesma pessoa pode mandar mais cinco logo depois de a hora mudar. Uma marca vive entre uma hora e quase duas (inferido da agenda da tarefa).
-- **Portões**: a corrida final na cabeça do relatório, com os códigos em `portoes-b/`, no último commit.
-- **Por fazer**: as duas decisões do diretor (a recusa do Método e a nota); a prova contra a base real depois de aterrar; o identificador da equipa em ficheiros de outros blocos, que não são meus; a leitura a frio da passagem.
+- **Portões**: `build` 0, `verify` 0 e `typecheck` 0 na cabeça `c4ff98b5`, lidos de `portoes-b/`.
+- **Custo da passagem**: 282 775 símbolos e 3 246 segundos de parede, das duas leituras em ficheiro.
+- **Por fazer**: as duas decisões do diretor (a recusa do Método e a nota); a prova contra a base real depois de aterrar; o identificador da equipa em ficheiros de outros blocos, que não são meus; o nome da equipa em 2 versões da história do ramo (o registo do lugar de direção no commit do brief e a redação do meu guião do S1), que um `--ff-only` leva para a `main` e que só sai reescrevendo o ramo, decisão da aterragem; a leitura a frio da passagem.
 
 ## O S1
 
