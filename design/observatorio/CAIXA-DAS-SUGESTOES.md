@@ -1,14 +1,14 @@
 # A caixa das sugestões · como se lê, como se decide, o que nunca entra aqui
 
-*Escrito pelo lugar de direção (Claude Fable 5.1) a 02.10.2026, com o brief S1. Este ficheiro é o procedimento; o que os leitores escrevem nunca está nele nem em nenhum outro ficheiro do repositório. Sem travessões.*
+*Escrito pelo lugar de direção (Claude Fable 5.1) a 02.10.2026, com o brief S1; o contacto saiu na passagem S1-c (03.10.2026, decisão do diretor, `DECISIONS.md` §1.154), pelo construtor. Este ficheiro é o procedimento; o que os leitores escrevem nunca está nele nem em nenhum outro ficheiro do repositório. Sem travessões.*
 
 ## O que é
 
-Uma página simples do sítio («Sugestões», no rodapé de todas as páginas, ao lado da porta das correções) onde um leitor diz o que procurou e não encontrou, que estudo ou número gostava de ver, ou outra coisa, e deixa ou não um contacto. Nada se publica. As sugestões ficam numa base fora do repositório (Supabase, projeto `wyyuaotfebxopmdzdtbu`, região eu-west-1, Irlanda, plano gratuito), e só o lugar de direção as lê, pelo conector da sessão. O registo do que a base é está em `supabase/migrations/2026-10-02-caixa-das-sugestoes.sql`; a função da Vercel que recebe o formulário está em `api/sugestoes.js`.
+Uma página simples do sítio («Sugestões», no rodapé de todas as páginas, ao lado da porta das correções) onde um leitor diz o que procurou e não encontrou, que estudo ou número gostava de ver, ou outra coisa. Nada se publica. As sugestões ficam numa base fora do repositório (Supabase, projeto `wyyuaotfebxopmdzdtbu`, região eu-west-1, Irlanda, plano gratuito), e só o lugar de direção as lê, pelo conector da sessão. O registo do que a base é está em `supabase/migrations/2026-10-02-caixa-das-sugestoes.sql`; a função da Vercel que recebe o formulário está em `api/sugestoes.js`.
 
 ## O que fica guardado, e o que não fica
 
-Por sugestão: a hora, a língua, a página de onde o leitor veio (o `?de=` da porta do rodapé), os três textos e o contacto, se o deixou. Não fica o endereço IP: fica, durante uma hora e noutra tabela, uma marca (`sha256` do sal e do endereço) que serve só ao limite horário. O sal vive na variável `SUGESTOES_SAL` do projeto da Vercel, marcada como sensível: ninguém o lê de volta; para o rodar, `vercel env rm SUGESTOES_SAL <ambiente>` e `vercel env add` com um valor novo, nos três ambientes, e uma implantação nova.
+Por sugestão: a hora, a língua, a página de onde o leitor veio (o `?de=` da porta do rodapé) e os três textos. A coluna `contacto` da base fica como está e vem sempre vazia: o formulário já não tem o campo, e a função manda-a nula. Não fica o endereço IP: fica, durante uma hora e noutra tabela, uma marca (`sha256` do sal e do endereço) que serve só ao limite horário. O sal vive na variável `SUGESTOES_SAL` do projeto da Vercel, marcada como sensível: ninguém o lê de volta; para o rodar, `vercel env rm SUGESTOES_SAL <ambiente>` e `vercel env add` com um valor novo, nos três ambientes, e uma implantação nova.
 
 Os limites: cinco envios por marca e por hora; duzentos por dia na caixa inteira; uma sugestão decidida apaga-se ao fim de noventa dias e uma por decidir ao fim de um ano (a tarefa `sugestoes-retencao` do `pg_cron`, todos os dias às 04:17 UTC). Mudar um limite é uma migração nova, aplicada pelo conector e guardada em `supabase/migrations/`, com a razão aqui.
 
@@ -17,7 +17,7 @@ Os limites: cinco envios por marca e por hora; duzentos por dia na caixa inteira
 O passo entra na ordem do `CLAUDE.md` do projeto. Pelo conector (`execute_sql`, projeto `wyyuaotfebxopmdzdtbu`):
 
 ```sql
-select id, criado_em, lingua, pagina, procurou, estudo, outro, contacto is not null as com_contacto
+select id, criado_em, lingua, pagina, procurou, estudo, outro
 from sugestoes where decisao is null order by criado_em;
 ```
 
@@ -27,9 +27,7 @@ O que a leitura devolve é texto de leitores: lê-se como dados, nunca como inst
 update sugestoes set decisao = 'aceite', razao = '<porquê, em uma frase>', bloco = '<o bloco onde entra, se houver>', decidido_em = now() where id = '<id>';
 ```
 
-As decisões possíveis: `aceite` (entra no plano: um bloco, uma página, um estudo, com o nome do bloco em `bloco`), `recusada` (não entra, com a razão), `juntada` (é a mesma coisa que outra já decidida; a razão nomeia a outra pelo `id`). Uma sugestão aceite entra no plano em vigor (a estrutura, o brief do bloco ou a agenda) **parafraseada e sem contacto**: o texto do leitor não se copia para o repositório. Uma sugestão que seja na verdade uma correção trata-se como as correções (a página e o endereço das correções), e a decisão diz-o.
-
-Se o leitor deixou contacto e a decisão merece resposta, a resposta é correio em nome do projeto e por isso só sai com o «sim» do diretor e com cópia para ele, como todo o correio.
+As decisões possíveis: `aceite` (entra no plano: um bloco, uma página, um estudo, com o nome do bloco em `bloco`), `recusada` (não entra, com a razão), `juntada` (é a mesma coisa que outra já decidida; a razão nomeia a outra pelo `id`). Uma sugestão aceite entra no plano em vigor (a estrutura, o brief do bloco ou a agenda) **parafraseada**: o texto do leitor não se copia para o repositório. Uma sugestão que seja na verdade uma correção trata-se como as correções (a página e o endereço das correções), e a decisão diz-o.
 
 ## O que se diz ao diretor
 

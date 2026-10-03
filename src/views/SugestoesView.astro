@@ -24,6 +24,9 @@
  *
  * OS TEXTOS são os do brief, à letra, em `src/data/sugestoes.mjs`, e os limites
  * de cada caixa são os mesmos que a função usa para cortar o que envia.
+ *
+ * SEM CONTACTO (passagem S1-c, 03.10.2026, decisão do diretor, §1.154): o campo
+ * do contacto saiu do formulário, e a caixa não tem resposta.
  */
 import Base from '../layouts/Base.astro';
 import { routePath } from '../lib/routes.mjs';
@@ -66,16 +69,6 @@ const caixas = /** @type {const} */ (['procurou', 'estudo', 'outro']);
         </p>
       ))
     }
-    <p class="sugestoes-campo">
-      <label for="sugestao-contacto">{rotulos.contacto[lang]}</label>
-      <input
-        id="sugestao-contacto"
-        name="contacto"
-        type="email"
-        maxlength={LIMITES_DAS_SUGESTOES.contacto}
-        autocomplete="email"
-      />
-    </p>
     <p class="sugestoes-nota" data-sugestoes-nota>{notaAntes}<a class="ligacao-email" href={`mailto:${endereco}`}>{endereco}</a>{notaDepois}</p>
     <p class="sugestoes-accoes">
       <button type="submit" class="sugestoes-enviar">{SUGESTOES.botao[lang]}</button>

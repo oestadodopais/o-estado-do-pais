@@ -2,7 +2,7 @@
 /**
  * ---------------------------------------------------------------------------
  * A CÉLULA DA FUNÇÃO DAS SUGESTÕES (bloco S1, 02.10.2026, ponto 7 do brief;
- * passagem S1-b, 03.10.2026)
+ * passagens S1-b e S1-c, 03.10.2026)
  * ---------------------------------------------------------------------------
  * Importa o `GET` e o `POST` de `api/sugestoes.js` com um `fetch` substituído, um
  * sal e uma chave de ensaio gerados em cada corrida (nunca escritos em lado
@@ -21,6 +21,10 @@
  *                              branco como `null`, e leva ao obrigado;
  *   boa-en                   · a edição inglesa leva às páginas inglesas, e sem `Referer` a página
  *                              vai como `null`;
+ *   contacto                 · uma sugestão com um campo `contacto` preenchido chega à base sem ele:
+ *                              o parâmetro do contacto vai vazio, e o que o leitor escreveu não vai
+ *                              em parâmetro nenhum (S1-c: o campo saiu do formulário, e a caixa não
+ *                              tem resposta);
  *   limite                   · a recusa `limite` da base leva à página do limite;
  *   cheia                    · a recusa `cheia` leva à página do não chegou;
  *   chave-recusada           · a recusa `chave` da base leva à página do não chegou;
@@ -41,7 +45,8 @@
  * E EM TODOS OS CASOS (S1-b, os achados 2 e 9 da leitura a frio): cada corpo que vai à base leva os
  * oito parâmetros da função da base e mais nenhum, com a chave limpa das pontas e uma marca de 64
  * caracteres hexadecimais; e nenhuma resposta, no corpo ou nos cabeçalhos, traz o sal, a chave ou um
- * endereço do leitor.
+ * endereço do leitor. Desde a S1-c, também: o parâmetro do contacto vai sempre vazio, e o contacto de
+ * ensaio que os casos escrevem no campo `contacto` não aparece em corpo nenhum.
  *
  * Os caminhos esperados saem da tabela das rotas (`routePath`) e não de uma lista escrita aqui: é
  * assim que esta célula prova que a função manda o leitor para as páginas que a construção faz.
@@ -67,6 +72,8 @@ const FUNCAO = path.join(RAIZ, 'api', 'sugestoes.js');
 /** Endereços de documentação (RFC 5737): não são de ninguém. */
 const IP = '203.0.113.7';
 const IP_DE_PASSAGEM = '198.51.100.23';
+/** Um contacto de ensaio (RFC 2606: `example.org` é um domínio de documentação, de ninguém). */
+const CONTACTO = 'leitor@example.org';
 /** O anfitrião do ensaio; o pedido chega em `http`, como a Vercel compõe o `request.url`. */
 const ANFITRIAO = 'ensaio.invalid';
 const URL_DO_PEDIDO = `http://${ANFITRIAO}/api/sugestoes`;
@@ -163,6 +170,9 @@ function confereSempre(r, segredos) {
     if (JSON.stringify(chaves) !== JSON.stringify(OITO)) erros.push(`um corpo enviado à base leva ${chaves.join(', ')}, e não os oito parâmetros da função da base`);
     if (c.p_chave !== segredos.chave.trim()) erros.push('um corpo enviado à base não leva a chave limpa das pontas');
     if (!/^[0-9a-f]{64}$/.test(String(c.p_marca))) erros.push(`a marca enviada à base não tem 64 caracteres hexadecimais (tem ${String(c.p_marca).length})`);
+    /* S1-c: o leitor já não deixa contacto, e nada do que ele escreva num campo `contacto` vai à base. */
+    if (c.p_contacto !== null) erros.push(`o contacto que o leitor escreveu chegou à base (p_contacto foi ${JSON.stringify(c.p_contacto)}, e vai sempre null)`);
+    else if (String(chamada.init?.body).includes(CONTACTO)) erros.push('o contacto que o leitor escreveu chegou à base, dentro de outro parâmetro');
   }
   const resposta = [r.corpo, ...r.cabecalhos.flat()].join('\n');
   for (const [nome, valor] of [['o sal', segredos.sal], ['a chave', segredos.chave.trim()], ['o endereço do leitor', IP], ['o endereço de passagem', IP_DE_PASSAGEM]]) {
@@ -215,7 +225,7 @@ const CASOS = {
     return { respostas: [r], erros };
   },
   vazia: async (m, s) => {
-    const r = await corre(m, s, { campos: { lingua: 'pt', procurou: '   ', estudo: '', outro: '\r\n', contacto: 'leitor@example.org' }, cabecalhos: { 'x-forwarded-for': IP } });
+    const r = await corre(m, s, { campos: { lingua: 'pt', procurou: '   ', estudo: '', outro: '\r\n', contacto: CONTACTO }, cabecalhos: { 'x-forwarded-for': IP } });
     const erros = [];
     redireciona(r, resultadoEm('vazia', 'pt'), erros);
     naoChamou(r, 'a sugestão vazia', erros);
@@ -223,7 +233,7 @@ const CASOS = {
   },
   boa: async (m, s) => {
     const r = await corre(m, s, {
-      campos: { lingua: 'pt', sitio: '', procurou: '  uma procura de ensaio\r\nem duas linhas  ', estudo: '', outro: '   ', contacto: '' },
+      campos: { lingua: 'pt', sitio: '', procurou: '  uma procura de ensaio\r\nem duas linhas  ', estudo: '', outro: '   ', contacto: CONTACTO },
       cabecalhos: { 'x-forwarded-for': `${IP}, ${IP_DE_PASSAGEM}`, referer: `${ORIGEM_PUBLICA}/sugestoes?de=%2Flugares%2Fevora` },
     });
     const erros = [];
@@ -233,7 +243,7 @@ const CASOS = {
       if (c.p_lingua !== 'pt') erros.push(`a língua foi ${JSON.stringify(c.p_lingua)}`);
       if (c.p_pagina !== '/lugares/evora') erros.push(`a página foi ${JSON.stringify(c.p_pagina)}, e não a do ?de= do Referer da origem do pedido`);
       if (c.p_procurou !== 'uma procura de ensaio\nem duas linhas') erros.push(`o texto foi ${JSON.stringify(c.p_procurou)}`);
-      for (const k of ['p_estudo', 'p_outro', 'p_contacto']) {
+      for (const k of ['p_estudo', 'p_outro']) {
         if (c[k] !== null) erros.push(`${k} foi ${JSON.stringify(c[k])}, e um campo em branco vai como null`);
       }
       if (c.p_marca !== marcaDe(s.sal, IP, AGORA)) erros.push('a marca não é sha256(sal | ip | hora) do primeiro endereço de x-forwarded-for e da hora UTC');
@@ -241,7 +251,7 @@ const CASOS = {
     return { respostas: [r], erros };
   },
   'boa-en': async (m, s) => {
-    const r = await corre(m, s, { campos: { lingua: 'en', estudo: 'a study of the rehearsal', contacto: ' leitor@example.org ' }, cabecalhos: { 'x-forwarded-for': IP } });
+    const r = await corre(m, s, { campos: { lingua: 'en', estudo: 'a study of the rehearsal', contacto: ` ${CONTACTO} ` }, cabecalhos: { 'x-forwarded-for': IP } });
     const erros = [];
     redireciona(r, resultadoEm('obrigado', 'en'), erros);
     const c = chamadaUnica(r, erros);
@@ -249,9 +259,16 @@ const CASOS = {
       if (c.p_lingua !== 'en') erros.push(`a língua foi ${JSON.stringify(c.p_lingua)}`);
       if (c.p_pagina !== null) erros.push(`sem Referer a página foi ${JSON.stringify(c.p_pagina)}, e não null`);
       if (c.p_estudo !== 'a study of the rehearsal') erros.push(`o estudo foi ${JSON.stringify(c.p_estudo)}`);
-      if (c.p_contacto !== 'leitor@example.org') erros.push(`o contacto foi ${JSON.stringify(c.p_contacto)}`);
       if (c.p_procurou !== null) erros.push(`o campo em branco foi ${JSON.stringify(c.p_procurou)}`);
     }
+    return { respostas: [r], erros };
+  },
+  contacto: async (m, s) => {
+    const r = await corre(m, s, { campos: { lingua: 'pt', procurou: 'uma sugestão com um contacto', contacto: CONTACTO }, cabecalhos: { 'x-forwarded-for': IP } });
+    const erros = [];
+    redireciona(r, resultadoEm('obrigado', 'pt'), erros);
+    const c = chamadaUnica(r, erros);
+    if (c && c.p_procurou !== 'uma sugestão com um contacto') erros.push(`o texto foi ${JSON.stringify(c.p_procurou)}`);
     return { respostas: [r], erros };
   },
   limite: async (m, s) => {
@@ -405,6 +422,9 @@ const PLANTAS = [
   { nome: 'fuga-do-sal', caso: 'boa', espera: /a resposta traz o sal/, de: "headers: { location: caminho, 'cache-control': 'no-store' }", para: "headers: { location: caminho, 'cache-control': 'no-store', 'x-ensaio': process.env.SUGESTOES_SAL ?? '' }" },
   { nome: 'fuga-da-chave', caso: 'boa', espera: /a resposta traz a chave/, de: 'return new Response(null, { status: 303,', para: "return new Response((process.env.SUGESTOES_CHAVE ?? '').trim() || null, { status: 303," },
   { nome: 'fuga-do-endereco', caso: 'boa', espera: /a resposta traz o endereço do leitor/, de: "if (resposta.ok) return resultado('obrigado', lingua);", para: "if (resposta.ok) { const r = resultado('obrigado', lingua); r.headers.set('x-ensaio', ip); return r; }" },
+  /* S1-c: o contacto de volta ao corpo, no seu parâmetro ou escondido noutro. */
+  { nome: 'contacto-de-volta', caso: 'contacto', espera: /o contacto que o leitor escreveu chegou à base \(p_contacto foi/, de: '        p_contacto: null,\n', para: "        p_contacto: campo(dados, 'contacto', 200),\n" },
+  { nome: 'contacto-escondido-noutro-parametro', caso: 'contacto', espera: /chegou à base, dentro de outro parâmetro/, de: '        p_outro: outro,\n', para: "        p_outro: outro ?? campo(dados, 'contacto', 200),\n" },
   { nome: 'lingua-sempre-portuguesa', caso: 'boa-en', espera: /o location é/, de: "dados.get('lingua') === 'en' ? 'en' : 'pt'", para: "dados.get('lingua') === 'en' ? 'pt' : 'pt'" },
   { nome: 'limite-invertido', caso: 'limite', espera: /o location é/, de: "erro?.message === 'limite'", para: "erro?.message !== 'limite'" },
   { nome: 'cheia-como-limite', caso: 'cheia', espera: /o location é/, de: "if (erro?.message === 'limite')", para: "if (erro?.message === 'limite' || erro?.message === 'cheia')" },
@@ -472,7 +492,7 @@ const plantasMas = plantas.filter((p) => !p.passou);
 const casosSemPlanta = prova ? Object.keys(CASOS).filter((c) => !PLANTAS.some((p) => p.caso === c)) : [];
 
 const relatorio = {
-  celula: 'a função das sugestões (bloco S1, passagem S1-b)',
+  celula: 'a função das sugestões (bloco S1, passagens S1-b e S1-c)',
   funcao: 'api/sugestoes.js',
   casos,
   plantas,

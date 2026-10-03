@@ -13,7 +13,8 @@
  *   PÁGINAS · `conferirPaginaDasSugestoes()`: a página do formulário sem
  *             `noindex`, com o parágrafo, os rótulos, a nota e o botão iguais aos
  *             declarados, o formulário que vai por POST a `/api/sugestoes` com os
- *             seis campos e mais nenhum, o campo armadilhado fora da árvore de
+ *             cinco campos e mais nenhum (sem o do contacto, que saiu na passagem
+ *             S1-c por decisão do diretor), o campo armadilhado fora da árvore de
  *             acessibilidade e do teclado, os limites de cada caixa, e nenhum
  *             guião no `<main>`; as quatro do resultado com `noindex, follow`, a
  *             sua frase e as duas portas; e, na página das correções, a frase com
@@ -50,8 +51,11 @@ import { ENDERECO_CORRECOES } from '../src/data/metodo.mjs';
 
 /** As páginas desta família que levam `noindex` e ficam fora do mapa do sítio. */
 export const ROTAS_SEM_INDICE = new Set(Object.values(ROTAS_DO_RESULTADO));
-/** Os campos do formulário, e mais nenhum: o que o leitor manda é só isto. */
-export const CAMPOS_DO_FORMULARIO = ['lingua', 'sitio', 'procurou', 'estudo', 'outro', 'contacto'];
+/**
+ * Os campos do formulário, e mais nenhum: o que o leitor manda é só isto. O do contacto saiu na passagem
+ * S1-c (03.10.2026, decisão do diretor, §1.154): a caixa não tem resposta, e o formulário não o pede.
+ */
+export const CAMPOS_DO_FORMULARIO = ['lingua', 'sitio', 'procurou', 'estudo', 'outro'];
 const CAIXAS = ['procurou', 'estudo', 'outro'];
 const MARCO = 'footer,[role="contentinfo"],nav[aria-label],nav[aria-labelledby]';
 
@@ -263,12 +267,10 @@ export function conferirPaginaDasSugestoes(root, rota) {
     if (rotuloDe(caixa[0]) !== SUGESTOES.rotulos[nome][lang]) erros.push(`S1 formulário: o rótulo da caixa "${nome}" não é o declarado.`);
     if (escondidoPor(caixa[0])) erros.push(`S1 formulário: a caixa "${nome}" está escondida.`);
   }
-  const contacto = form.querySelector('input[name="contacto"]');
-  if (!contacto || contacto.getAttribute('type') !== 'email') erros.push('S1 formulário: o contacto não é um campo de correio (type="email").');
-  else {
-    if (contacto.getAttribute('maxlength') !== String(LIMITES_DAS_SUGESTOES.contacto)) erros.push('S1 formulário: o contacto aceita mais do que o limite.');
-    if (contacto.hasAttribute('required')) erros.push('S1 formulário: o contacto é opcional, e está obrigatório.');
-    if (rotuloDe(contacto) !== SUGESTOES.rotulos.contacto[lang]) erros.push('S1 formulário: o rótulo do contacto não é o declarado.');
+  /* S1-c: o campo do contacto saiu por decisão do diretor (§1.154), e a caixa não tem resposta. A lista dos campos
+     já o recusa; esta conferência di-lo pelo nome, para que voltar a pô-lo seja uma decisão e não um descuido. */
+  if (form.querySelector('[name="contacto"]') || form.querySelector('input[type="email"]')) {
+    erros.push('S1 formulário: o formulário pede um contacto, e o campo do contacto saiu por decisão do diretor (S1-c, §1.154): a caixa não tem resposta.');
   }
   const nota = blocoDeclarado(form, '[data-sugestoes-nota]', SUGESTOES.nota[lang], 'S1 formulário (a nota do que fica guardado)', erros);
   if (nota && !nota.querySelector(`a[href="mailto:${ENDERECO_CORRECOES}"]`)) {
@@ -468,7 +470,7 @@ export function conferirRegrasDaBase(migracoes, textos = SUGESTOES, limites = LI
     ['procurou', limites.texto],
     ['estudo', limites.texto],
     ['outro', limites.texto],
-    ['contacto', limites.contacto],
+    /* A coluna do contacto fica na base como está, e a função manda-a sempre vazia (S1-c): não tem limite a conferir. */
   ])) {
     const n = numero(texto, new RegExp(`char_length\\(${coluna}\\) <= (\\d+)`), `o limite da coluna ${coluna}`);
     if (n !== null && n !== limite) erros.push(`S1 regras: a base guarda até ${n} caracteres em ${coluna}, e o formulário e a função usam ${limite}.`);
