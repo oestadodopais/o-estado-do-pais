@@ -1,0 +1,21 @@
+{
+  "o_que": "O tamanho do índice do livro-razão (bytes de HTML) na construção de d9b168b9 e na de dist/, e o cartão do índice no feixe do desenho nas duas corridas do design:feixe.",
+  "indice_antes_bytes": 390350,
+  "indice_depois_bytes": 391404,
+  "indice_diferenca_bytes": 1054,
+  "cartao_kib": 597.7,
+  "primeira_corrida": {
+    "cartao_bytes": 612016,
+    "aceite": false,
+    "tecto_kib": 596.75
+  },
+  "segunda_corrida": {
+    "cartao_bytes": 612016,
+    "aceite": true,
+    "tecto_kib": 657.4697265625
+  },
+  "conhecido_positivo": {
+    "o_que": "o cartão aparece nas duas corridas, reprovado na primeira e aceite na segunda",
+    "encontrado": true
+  }
+}

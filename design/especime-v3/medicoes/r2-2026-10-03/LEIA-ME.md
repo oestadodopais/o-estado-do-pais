@@ -112,10 +112,16 @@ Cada um destes fecha-se da mesma maneira: pede-se a metainformação pelo client
 | `check:lugar`, L1 | dispensa a porta `a.def-origem-doc` dentro de `[data-def-origem]`, na rota da linha, quando o destino é o exato do pedido da mesma página | 2 plantas: uma terceira porta para o mesmo documento fora da origem conta (`r2-l1-porta-da-origem-repetida-fora`), e a mesma marca numa página que não é um recibo conta (`r2-l1-dispensa-so-no-recibo`); as plantas de antes (`rp1-portas-extra`, `r1-porta-da-politica-fora-do-rotulo`) continuam no ficheiro |
 | `check:voz` | o inventário das frases e as exceções da voz | 40 linhas novas, 33 retiradas com a razão, 3 apagadas (as formas curtas do estado sem o dono, que vivem dentro das formas novas); uma frase retirada continua a morder dentro de outra |
 | `check:lingua` | a linha diz quais unidades ficam em português | 2, «avisos» e «factor», com a razão |
+| `check:cartao`, a RP1 | lê a unidade do cartão do salário pela marca da linha ou pela declarada (`[data-linha-campo="unit"], [data-unidade-da-casa]`) | que a unidade vem antes da marca do provisório; a planta «unidade depois do provisório» morde nas 2 edições |
+| `design:feixe`, o tecto de tamanho | o número medido do maior cartão passa a 597,7 KiB, com a data e a corrida, pela regra escrita no guião (o tecto é o medido mais 10 %) | que nenhum cartão do feixe cresce sem alguém olhar; a planta do tamanho morde |
 
 ## A L1 do `check:lugar`, página a página
 
 `l1-r2.mjs` corre a régua da casa com a amostra aberta sobre a construção de depois e compara com a lista que a régua de partida escreveu sobre a construção de `d9b168b9`: 2342 páginas antes e 2342 depois, com o teto em 2342; 0 páginas entraram e 0 saíram. Antes da dispensa, a mesma régua contava 2344 (`l1-antes-da-dispensa-check-lugar.txt`): as 2 edições do recibo do salário mínimo. O guião sai com 1, e di-lo: 2 páginas que já estavam na conta passaram a ter mais um destino repetido, as 2 edições do recibo da disparidade salarial, porque a pergunta nova cita 2 origens do mesmo documento do Eurostat (a definição e a cobertura) e cada origem rende a porta do seu documento; e 6 páginas que já estavam na conta passaram a ter menos um (os 3 recibos cuja origem era o documento da linha, nas 2 edições). A contagem da régua não muda com isto, porque a L1 conta páginas; fica dito para o lugar de direção decidir se 2 origens do mesmo documento numa pergunta pedem uma porta só.
+
+## A primeira corrida final, e o que a fechou
+
+A primeira corrida dos três portões pela tranca correu na cabeça `6897e365` (o commit das medições e do relatório), e os ficheiros ficam em `portoes-a/`: `build` 0, `verify` 1 e `typecheck` 0. O `verify` fechou no `check:cartao`, no segundo guião da cadeia (`tests/cartao/rp1.mjs`): a RP1 procurava a unidade do cartão do salário só pela marca da linha, e o cartão imprime desde o bloco a unidade declarada, com o euro por extenso. As medições do bloco tinham corrido o primeiro guião da cadeia (`tests/cartao/cartao.mjs`) e não o `npm run check:cartao` inteiro: é a lição, e as conferências entre commits correm-se pelo nome do `package.json`. Corrigida a RP1, as conferências do `verify` depois do `check:cartao` correram uma a uma sobre a mesma construção (`entre-commits/restantes.sh`): todas a 0 menos o `design:feixe`, que fechava porque os nomes mais longos puseram o cartão do índice do livro-razão 1 KiB acima do tecto; o índice cresceu 1 054 bytes de HTML (390 350 na construção de `d9b168b9`, 391 404 na de `6897e365`), sem nenhuma fila nova. O número medido mudou pela regra escrita no guião, e o `design:feixe` passou a 0 (`entre-commits/design-feixe-depois.log`). As 2 mudanças estão em `391f73ed`, e a corrida final repetiu-se na cabeça seguinte (a secção «Os portões»).
 
 ## As decisões escritas em vigor nos ficheiros tocados
 
@@ -139,6 +145,8 @@ Cada um destes fecha-se da mesma maneira: pede-se a metainformação pelo client
 | `d1c96482` | item 3: a dispensa da L1, com 2 plantas |
 | `43cebeae` | item 1: o `--inventario` da régua |
 | `f13705cd` | item 5: o mapa do repositório posto em dia (a secção do R2, a cadeia do `verify`, a linha do `check:rotulos` e as citações que andaram) |
+| `6897e365` | itens 6 e 7: as medições, as capturas e este relatório (a primeira corrida final, em `portoes-a/`) |
+| `391f73ed` | item 2: a RP1 lê a unidade declarada do cartão; o número medido do feixe do desenho; o mapa |
 
 ## O que ficou por fazer, e o que é do lugar de direção
 
@@ -149,6 +157,7 @@ Cada um destes fecha-se da mesma maneira: pede-se a metainformação pelo client
 - **A dobra da dívida dos concelhos** segue a forma da triagem, que não diz o FAM (o Fundo de Apoio Municipal), que o auditor também apontava; a forma da triagem é final e foi a que se escreveu.
 - **A comparação inglesa do ganho** diz «euros per month», a entrada do dicionário para a unidade da linha nacional, onde a triagem escrevia «euros a month».
 - **Os nomes das variações dos preços** continuam a dizer «variação num ano» (os nomes do RP1), e a unidade nova também diz a variação («% de variação em doze meses»): a repetição fica para a leitura a frio dizer se pesa.
+- **O cartão do índice do livro-razão no feixe do desenho.** O guião escreve que o dia em que o tecto voltasse a bater seria o dia de decidir o cartão como recorte do índice; bateu por 1 KiB de nomes mais longos e não por filas novas, e o número medido mudou pela regra. A decisão do recorte fica para o lugar de direção.
 - **A leitura a frio do bloco**, por outra família.
 
 ## Os portões

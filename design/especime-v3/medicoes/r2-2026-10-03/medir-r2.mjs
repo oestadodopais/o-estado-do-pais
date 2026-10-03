@@ -247,6 +247,15 @@ medicao('unidades_das_linhas_com_o_simbolo_do_euro', [...unidades.keys()].filter
   medicao('citacoes_de_decisoes_perto_do_diff', perto, 'as linhas «(perto do diff)» da mesma saída', 'a §1.143 citada em src/data/faixa-do-concelho.mjs está entre elas', /src\/data\/faixa-do-concelho\.mjs:\d+ \(perto do diff\)/.test(t));
 }
 
+/* 9d · o índice do livro-razão e o seu cartão no feixe do desenho, pelo guião tamanho-do-indice-r2.mjs */
+{
+  const t = existe(`${PASTA}/tamanho-do-indice-r2.json`) ? ler(`${PASTA}/tamanho-do-indice-r2.json`) : null;
+  const cmd = `node ${PASTA}/tamanho-do-indice-r2.mjs <construção de d9b168b9>`;
+  medicao('indice_do_livro_bytes_antes', t?.indice_antes_bytes ?? 'NÃO LIDO', cmd, 'o cartão aparece nas duas corridas do design:feixe, reprovado e depois aceite', Boolean(t?.conhecido_positivo?.encontrado));
+  medicao('indice_do_livro_bytes_depois', t?.indice_depois_bytes ?? 'NÃO LIDO', cmd, 'o mesmo', Boolean(t?.conhecido_positivo?.encontrado));
+  medicao('cartao_do_indice_no_feixe_kib', t?.cartao_kib ?? 'NÃO LIDO', cmd, 'o mesmo', Boolean(t?.conhecido_positivo?.encontrado));
+}
+
 /* 10 · o custo e os portões */
 {
   const ini = ler(`${PASTA}/custo-inicio.json`);
@@ -255,6 +264,16 @@ medicao('unidades_das_linhas_com_o_simbolo_do_euro', [...unidades.keys()].filter
   medicao('simbolos_restantes_no_fim', fim?.simbolos_restantes_no_fim ?? 'NÃO LIDO', `${PASTA}/custo-fim.json`, 'o ficheiro diz a hora do fim', Boolean(fim?.fim_utc));
   medicao('simbolos_gastos_pelo_contador', fim ? ini.simbolos_restantes_no_inicio - fim.simbolos_restantes_no_fim : 'NÃO LIDO', 'a diferença das duas leituras do contador', 'as duas leituras existem', Boolean(fim));
   medicao('segundos_de_parede', fim ? Math.round((Date.parse(fim.fim_utc) - Date.parse(ini.inicio_utc)) / 1000) : 'NÃO LIDO', 'fim_utc menos inicio_utc', 'as duas horas existem', Boolean(fim));
+  /* a primeira corrida final, na cabeça 6897e365, que fechou no check:cartao (a RP1) e cujos ficheiros ficam em portoes-a/ */
+  for (const g of ['build', 'verify', 'typecheck']) {
+    const f = `${PASTA}/portoes-a/${g}.codigo`;
+    medicao(`portao_a_${g}`, existe(f) ? Number(fs.readFileSync(f, 'utf8').trim()) : 'NÃO LIDO', `sh scripts/leituras/portoes.sh <worktree> ${PASTA}/portoes (a corrida de 6897e365, guardada em portoes-a/)`, `o ficheiro ${g}.codigo existe e a cabeça ao lado é 6897e365`, existe(f) && fs.readFileSync(`${PASTA}/portoes-a/cabeca`, 'utf8').startsWith('6897e365'));
+  }
+  /* as conferências do verify depois do check:cartao, corridas uma a uma sobre a mesma construção (entre-commits/restantes.sh) */
+  for (const n of ['check-cartao', 'check-rotulos', 'check-navegacao', 'check-primeira', 'sinais', 'check-nomes', 'check-palavras', 'design-feixe', 'design-feixe-depois', 'check-privacidade']) {
+    const f = `${PASTA}/entre-commits/${n}.codigo`;
+    medicao(`entre_commits_${n.replace(/-/g, '_')}`, existe(f) ? Number(fs.readFileSync(f, 'utf8').trim()) : 'NÃO LIDO', n === 'design-feixe-depois' ? 'npm run design:feixe, depois de mudar o número medido' : `npm run ${n.replace('-', ':')} (entre-commits/restantes.sh)`, `o registo ${n}.log existe`, existe(`${PASTA}/entre-commits/${n}.log`));
+  }
   for (const g of ['build', 'verify', 'typecheck']) {
     const f = `${PASTA}/portoes/${g}.codigo`;
     medicao(`portao_${g}`, existe(f) ? Number(fs.readFileSync(f, 'utf8').trim()) : 'NÃO LIDO', `sh scripts/leituras/portoes.sh <worktree> ${PASTA}/portoes`, `o ficheiro ${g}.codigo existe`, existe(f));

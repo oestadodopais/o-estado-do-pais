@@ -1,8 +1,8 @@
 {
   "bloco": "R2",
   "guiao": "design/especime-v3/medicoes/r2-2026-10-03/medir-r2.mjs",
-  "cabeca": "f13705cde56eb9f7eaac59eea0195292236def4c",
-  "construcao": "f13705cde56eb9f7eaac59eea0195292236def4c",
+  "cabeca": "391f73edabc655664e816b30ec885da4fff50715",
+  "construcao": "6897e3659068a17f3739ef69ce5063973371a466",
   "medidas": [
     {
       "nome": "linhas_do_livro",
@@ -726,7 +726,7 @@
     },
     {
       "nome": "mapa_citacoes_conferidas",
-      "valor": 266,
+      "valor": 268,
       "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
       "conhecido_positivo": {
         "o_que": "há citações conferidas",
@@ -779,6 +779,33 @@
       }
     },
     {
+      "nome": "indice_do_livro_bytes_antes",
+      "valor": 390350,
+      "comando": "node design/especime-v3/medicoes/r2-2026-10-03/tamanho-do-indice-r2.mjs <construção de d9b168b9>",
+      "conhecido_positivo": {
+        "o_que": "o cartão aparece nas duas corridas do design:feixe, reprovado e depois aceite",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "indice_do_livro_bytes_depois",
+      "valor": 391404,
+      "comando": "node design/especime-v3/medicoes/r2-2026-10-03/tamanho-do-indice-r2.mjs <construção de d9b168b9>",
+      "conhecido_positivo": {
+        "o_que": "o mesmo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartao_do_indice_no_feixe_kib",
+      "valor": 597.7,
+      "comando": "node design/especime-v3/medicoes/r2-2026-10-03/tamanho-do-indice-r2.mjs <construção de d9b168b9>",
+      "conhecido_positivo": {
+        "o_que": "o mesmo",
+        "encontrado": true
+      }
+    },
+    {
       "nome": "simbolos_restantes_no_inicio",
       "valor": 15000000,
       "comando": "design/especime-v3/medicoes/r2-2026-10-03/custo-inicio.json",
@@ -812,6 +839,123 @@
       "conhecido_positivo": {
         "o_que": "as duas horas existem",
         "encontrado": false
+      }
+    },
+    {
+      "nome": "portao_a_build",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes (a corrida de 6897e365, guardada em portoes-a/)",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro build.codigo existe e a cabeça ao lado é 6897e365",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_a_verify",
+      "valor": 1,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes (a corrida de 6897e365, guardada em portoes-a/)",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro verify.codigo existe e a cabeça ao lado é 6897e365",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_a_typecheck",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes (a corrida de 6897e365, guardada em portoes-a/)",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro typecheck.codigo existe e a cabeça ao lado é 6897e365",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entre_commits_check_cartao",
+      "valor": 0,
+      "comando": "npm run check:cartao (entre-commits/restantes.sh)",
+      "conhecido_positivo": {
+        "o_que": "o registo check-cartao.log existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entre_commits_check_rotulos",
+      "valor": 0,
+      "comando": "npm run check:rotulos (entre-commits/restantes.sh)",
+      "conhecido_positivo": {
+        "o_que": "o registo check-rotulos.log existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entre_commits_check_navegacao",
+      "valor": 0,
+      "comando": "npm run check:navegacao (entre-commits/restantes.sh)",
+      "conhecido_positivo": {
+        "o_que": "o registo check-navegacao.log existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entre_commits_check_primeira",
+      "valor": 0,
+      "comando": "npm run check:primeira (entre-commits/restantes.sh)",
+      "conhecido_positivo": {
+        "o_que": "o registo check-primeira.log existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entre_commits_sinais",
+      "valor": 0,
+      "comando": "npm run sinais (entre-commits/restantes.sh)",
+      "conhecido_positivo": {
+        "o_que": "o registo sinais.log existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entre_commits_check_nomes",
+      "valor": 0,
+      "comando": "npm run check:nomes (entre-commits/restantes.sh)",
+      "conhecido_positivo": {
+        "o_que": "o registo check-nomes.log existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entre_commits_check_palavras",
+      "valor": 0,
+      "comando": "npm run check:palavras (entre-commits/restantes.sh)",
+      "conhecido_positivo": {
+        "o_que": "o registo check-palavras.log existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entre_commits_design_feixe",
+      "valor": 1,
+      "comando": "npm run design:feixe (entre-commits/restantes.sh)",
+      "conhecido_positivo": {
+        "o_que": "o registo design-feixe.log existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entre_commits_design_feixe_depois",
+      "valor": 0,
+      "comando": "npm run design:feixe, depois de mudar o número medido",
+      "conhecido_positivo": {
+        "o_que": "o registo design-feixe-depois.log existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entre_commits_check_privacidade",
+      "valor": 0,
+      "comando": "npm run check:privacidade (entre-commits/restantes.sh)",
+      "conhecido_positivo": {
+        "o_que": "o registo check-privacidade.log existe",
+        "encontrado": true
       }
     },
     {
