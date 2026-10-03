@@ -115,6 +115,10 @@ A corrida final correu pela tranca (`sh scripts/leituras/portoes.sh`) na cabeça
 
 A corrida final do construtor, na cabeça `716af503`, deu `build` 0, `verify` 1 e `typecheck` 0 (`portoes/`): o `verify` fechou no portão dos briefs, porque a medição 5 de `design/observatorio/medidas/BRIEF-P4.py` corria o guião das decisões da árvore de trabalho, que o item 6 corrigiu, e lia 0 onde o §0 mediu 1. A correção é do lugar de direção e não do construtor (o commit `f5458f71`, P4-b): a medição passa a correr o guião tal como estava em `642e9d56`. A segunda corrida, pela tranca, na cabeça `f5458f71`: `build` 0, `verify` 0, `typecheck` 0, com os códigos lidos de ficheiro em `portoes-b/` e a cabeça ao lado.
 
+## Os portões, a corrida da aterragem (o lugar de direção, 03.10.2026)
+
+O ramo foi rebaseado sobre `main` (`62ed13c6`, os registos da §1.152, sem ficheiros em comum) e publicado como `p4-2026-10-03`, pela regra da casa de uma cabeça rebaseada ir num ramo novo. A corrida dos três portões pela tranca na cabeça rebaseada `49bd3051`: `build` 0, `verify` 0, `typecheck` 0, com os códigos lidos de ficheiro em `portoes-e/` e a cabeça ao lado.
+
 ## O que ficou por fazer, e porquê
 
 - **As duas réguas a 1.** A régua das correções de UX do bloco A (10 células) e a matriz (3) ficam vermelhas pelos achados acima. Fechá-las pede mudar a forma da primeira página e da página do concelho, ou levar os endereços antigos de volta à região, e isso é um bloco que o lugar de direção decide; as células não se afrouxaram.
