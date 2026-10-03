@@ -12,13 +12,18 @@
  * OS TEXTOS SÃO OS DO BRIEF, À LETRA (`design/observatorio/BRIEF-S1-a-caixa-das-sugestoes.md`,
  * §5.4 e §5.5), nas duas línguas, e o guião das medições do bloco compara cada
  * um com o brief, byte a byte; os dois da página do limite são os que o lugar de
- * direção deu na passagem S1-b, e o guião compara-os com esses. Ficam inteiros, cada um numa cadeia só: a porta
+ * direção deu na passagem S1-b e a nota é a que o diretor aprovou (abaixo), e o
+ * guião compara-os com esses. Ficam inteiros, cada um numa cadeia só: a porta
  * de uma frase (a das correções, o endereço de correio) sai de dentro da cadeia
  * na vista, por `pedacosDaFrase()`, e nunca a corta aqui.
  *
- * A NOTA DO QUE FICA GUARDADO (`nota`) É UM RASCUNHO: rascunho do lugar de
- * direção de 02.10.2026, à espera do diretor. A exposição legal é dele, e o
- * bloco não aterra sem o «sim» dele a este texto (§5.4 do brief).
+ * A NOTA DO QUE FICA GUARDADO (`nota`):
+ * texto aprovado pelo diretor a 03.10.2026 (§1.154),
+ * à letra, nas duas línguas. Diz o que fica guardado e por quanto tempo, quem
+ * aloja e trata os dados, porque se guardam, quem responde pelo tratamento e onde
+ * se pede o que se enviou, e o direito de reclamar à autoridade de controlo. Com
+ * a mesma decisão, o campo do contacto saiu do formulário (passagem S1-c): a
+ * caixa não tem resposta.
  *
  * Três textos não estão no §5 do brief, e cada um diz de onde vem:
  *   · `voltar` · as palavras do protótipo da função que o lugar de direção
@@ -64,7 +69,7 @@ export const SUGESTOES = {
     en: 'What did you look for here and not find? Which study would you like to read?',
   },
 
-  /** Os rótulos das três caixas, do contacto e do campo armadilhado. */
+  /** Os rótulos das três caixas e do campo armadilhado. */
   rotulos: {
     procurou: { pt: 'O que procurou e não encontrou?', en: 'What did you look for and not find?' },
     estudo: {
@@ -72,7 +77,6 @@ export const SUGESTOES = {
       en: 'Which study or number would you like to see here?',
     },
     outro: { pt: 'Outra coisa', en: 'Anything else' },
-    contacto: { pt: 'Contacto, se quiser resposta (opcional)', en: 'Contact, if you want a reply (optional)' },
     sitio: { pt: 'Deixe em branco', en: 'Leave blank' },
   },
 
@@ -80,22 +84,30 @@ export const SUGESTOES = {
   botao: { pt: 'Enviar a sugestão', en: 'Send the suggestion' },
 
   /**
-   * A nota do que fica guardado. Rascunho do lugar de direção de 02.10.2026, à
-   * espera do diretor (ver o cabeçalho deste ficheiro).
+   * A nota do que fica guardado: texto aprovado pelo diretor a 03.10.2026
+   * (§1.154), à letra (ver o cabeçalho deste ficheiro).
    */
   nota: {
     pt:
-      'O que fica guardado: o que escrever, a língua, a página de onde veio e, se o deixar, o contacto. ' +
-      'O endereço IP não se guarda: fica durante uma hora uma marca cifrada dele, só para travar envios ' +
-      'em massa. Os dados ficam em servidores na União Europeia. Uma sugestão decidida apaga-se ao fim ' +
-      'de noventa dias; uma por decidir, ao fim de um ano. O contacto serve só para responder. Para ' +
-      'saber o que enviou ou pedir que se apague, escreva para correcoes@oestadodopais.pt.',
+      'O que fica guardado: o que escrever, a língua e a página de onde veio. O endereço IP não se ' +
+      'guarda: fica durante uma hora um resumo dele feito com um sal, só para travar envios em massa, e ' +
+      'apaga-se a seguir. Os dados ficam em servidores na União Europeia, nos dois serviços que alojam ' +
+      'este sítio e a caixa (a Vercel e a Supabase), que os tratam por conta do projeto. Guardam-se ' +
+      'porque os enviou: ao carregar em «Enviar a sugestão», aceita que fiquem guardados para este fim. ' +
+      'Uma sugestão decidida apaga-se ao fim de noventa dias; uma por decidir, ao fim de um ano. Por ' +
+      'este tratamento responde a direção deste projeto, pelo endereço correcoes@oestadodopais.pt. Para ' +
+      'saber o que enviou, corrigi-lo ou pedir que se apague, escreva para esse endereço; pode também ' +
+      'reclamar junto da Comissão Nacional de Proteção de Dados (cnpd.pt).',
     en:
-      'What is kept: what you write, the language, the page you came from and, if you leave it, the ' +
-      'contact. The IP address is not kept: an encrypted mark of it stays for one hour, only to stop ' +
-      'mass sending. The data is held on servers in the European Union. A decided suggestion is ' +
-      'deleted after ninety days; an undecided one after a year. The contact is used only to reply. ' +
-      'To know what you sent or to ask for it to be deleted, write to correcoes@oestadodopais.pt.',
+      'What is kept: what you write, the language and the page you came from. The IP address is not ' +
+      'kept: a salted hash of it stays for one hour, only to stop mass sending, and is then deleted. The ' +
+      'data is held on servers in the European Union, in the two services that host this site and the ' +
+      "box (Vercel and Supabase), which process it on the project's behalf. It is kept because you sent " +
+      'it: by pressing "Send the suggestion" you accept that it is kept for this purpose. A decided ' +
+      'suggestion is deleted after ninety days; an undecided one after a year. The project\'s direction ' +
+      'is responsible for this processing, at correcoes@oestadodopais.pt. To know what you sent, to ' +
+      'correct it or to ask for it to be deleted, write to that address; you may also complain to the ' +
+      'Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt).',
   },
 
   /** O que o leitor lê depois de enviar: uma frase por resultado. */
@@ -160,9 +172,11 @@ export const ROTAS_DO_RESULTADO = {
  * OS LIMITES DO QUE O FORMULÁRIO ACEITA E DO QUE A FUNÇÃO ENVIA, em caracteres.
  * Um só sítio para os dois: o `maxlength` de cada caixa e o corte da função saem
  * daqui, e o portão de HTML compara-os com os `char_length` do registo da base,
- * para que o leitor nunca escreva mais do que a base guarda.
+ * para que o leitor nunca escreva mais do que a base guarda. Desde a passagem
+ * S1-c (03.10.2026, §1.154) não há limite do contacto: o campo saiu do
+ * formulário, e a função manda a coluna da base, que fica como está, sempre vazia.
  */
-export const LIMITES_DAS_SUGESTOES = { pagina: 300, texto: 2000, contacto: 200 };
+export const LIMITES_DAS_SUGESTOES = { pagina: 300, texto: 2000 };
 
 /**
  * Corta uma frase nos três pedaços de uma porta: o que vem antes, a porta, e o

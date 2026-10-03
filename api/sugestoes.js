@@ -27,6 +27,11 @@
  *     vez de cair na marca de todos; e o `?de=` só se lê de um `Referer` da origem
  *     do próprio pedido (o achado 10).
  *
+ * A PASSAGEM S1-c (03.10.2026, decisão do diretor, §1.154): o campo do contacto
+ * saiu do formulário, e a caixa não tem resposta. A função manda o parâmetro do
+ * contacto sempre vazio, diga o pedido o que disser num campo `contacto`; a
+ * coluna da base e o parâmetro da função da base ficam como estão.
+ *
  * A chave pública abaixo é a do projeto da base (a documentação da Supabase diz
  * que é segura no código-fonte): sozinha, só chega à função `enviar_sugestao`, e a
  * função recusa quem não traga a outra chave, a que só a Vercel tem.
@@ -137,7 +142,6 @@ export async function POST(request) {
   const procurou = campo(dados, 'procurou', LIMITES_DAS_SUGESTOES.texto);
   const estudo = campo(dados, 'estudo', LIMITES_DAS_SUGESTOES.texto);
   const outro = campo(dados, 'outro', LIMITES_DAS_SUGESTOES.texto);
-  const contacto = campo(dados, 'contacto', LIMITES_DAS_SUGESTOES.contacto);
   if (procurou === null && estudo === null && outro === null) return resultado('vazia', lingua);
 
   /* Sem o sal não há marca, e sem a chave a base recusa: nos dois casos a sugestão
@@ -169,7 +173,8 @@ export async function POST(request) {
         p_procurou: procurou,
         p_estudo: estudo,
         p_outro: outro,
-        p_contacto: contacto,
+        /* Sempre vazio (S1-c): o leitor já não deixa contacto. */
+        p_contacto: null,
         p_marca: marca,
       }),
     });
