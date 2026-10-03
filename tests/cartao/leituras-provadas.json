@@ -590,8 +590,8 @@
       ],
       "folhas": [
         {
-          "pt": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a unidade chama volumes encadeados.",
-          "en": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the unit calls chain linked volumes.",
+          "pt": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+          "en": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
           "partes": [
             {
               "pt": "É o valor de tudo o que o país produziu",
@@ -667,10 +667,15 @@
               ]
             },
             {
-              "pt": ", a que a unidade chama volumes encadeados",
-              "en": ", which the unit calls chain linked volumes",
+              "pt": ", a que a fonte chama volumes encadeados",
+              "en": ", which the source calls chain linked volumes",
               "classe": "diz",
               "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Chain linked volumes (2015)"
+                },
                 {
                   "linha": "propria",
                   "campo": "unit",

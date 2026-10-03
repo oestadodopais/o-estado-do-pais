@@ -34,6 +34,8 @@
 import Claim from '../Claim.astro';
 import NomeDoPais from '../serie/NomeDoPais.astro';
 import { faixaDoConcelho } from '../../lib/faixa-do-concelho.mjs';
+import { getClaim } from '../../lib/ledger.mjs';
+import { unidadeDaLinha } from '../../i18n/unidades.mjs';
 
 const { tile, slug, nome, lang = 'pt', s } = Astro.props;
 const f = tile?.claim ? faixaDoConcelho(tile.chave, slug, tile.claim) : null;
@@ -47,6 +49,15 @@ const sufixo = (n) => {
   return [p.ordinal.th, p.ordinal.st, p.ordinal.nd, p.ordinal.rd][n % 10] ?? p.ordinal.th;
 };
 const caminho = f ? f.tiques.map((x) => `M${x} 0V10`).join('') : '';
+/* R2 (03.10.2026, achados 21 e 22): a medida na frase do lugar, e na comparação com a linha de Portugal o que é o valor
+   dela e a unidade dela (a unidade da linha nacional, pelo dicionário das unidades; nunca escrita aqui). A base do
+   índice escreve-se como a unidade de cada linha a escreve, com a marca da régua do índice, e a célula FC confere-a. */
+const naFrase = f?.naFrase?.[lang] ?? null;
+if (f && !naFrase) throw new Error(`faixa do concelho: a medida «${f.chave}» não declara as palavras da frase (naFrase) em ${lang}.`);
+const ondePortugal = f?.ondePortugal?.[lang] ?? null;
+const unidadeDePortugal = f?.portugal?.tipo === 'linha' ? unidadeDaLinha(getClaim(f.portugal.id).unit, lang) : null;
+if (f?.portugal?.tipo === 'linha' && !ondePortugal) throw new Error(`faixa do concelho: a medida «${f.chave}» compara com uma linha de Portugal e não declara o que ela é (ondePortugal) em ${lang}.`);
+const media = { acima: 'mediaAcima', abaixo: 'mediaAbaixo', igual: 'mediaIgual' };
 ---
 
 {
@@ -75,21 +86,21 @@ const caminho = f ? f.tiques.map((x) => `M${x} 0V10`).join('') : '';
       </div>
       {f.lugar !== null ? (
         <p class="fc-frase" data-faixa-concelho-frase={f.chave}>
-          <span data-lugar>{nome}</span>{' ('}<Claim id={f.claim} lang={lang} as="span" class="fc-valor" />{')'}{p.lugarA}<span class="fc-lugar" data-concelho-lugar={`${f.chave}#${f.slug}`}>{f.lugar}</span>{sufixo(f.lugar)}{p.lugarB}<span class="fc-conta" data-concelho-conta={f.chave}>{f.conta}</span>{p.lugarC}{p.ordem[f.ordem]}{f.aPar === 1 ? p.aParUm : f.aPar > 1 ? <>{p.aParVariosA}<span class="fc-conta" data-concelho-a-par={`${f.chave}#${f.slug}`}>{f.aPar}</span>{p.aParVariosB}</> : null}{p.fim}
+          <span data-lugar>{nome}</span>{' ('}<Claim id={f.claim} lang={lang} as="span" class="fc-valor" />{')'}{p.lugarA}<span class="fc-lugar" data-concelho-lugar={`${f.chave}#${f.slug}`}>{f.lugar}</span>{sufixo(f.lugar)}{p.lugarB}<span class="fc-conta" data-concelho-conta={f.chave}>{f.conta}</span>{p.lugarC}{naFrase}{p.lugarD}{p.ordem[f.ordem]}{f.aPar === 1 ? p.aParUm : f.aPar > 1 ? <>{p.aParVariosA}<span class="fc-conta" data-concelho-a-par={`${f.chave}#${f.slug}`}>{f.aPar}</span>{p.aParVariosB}</> : null}{p.fim}
         </p>
       ) : (
         <p class="fc-frase" data-faixa-concelho-frase={f.chave}>
-          <span data-lugar>{nome}</span>{p.semValorA}<span class="fc-conta" data-concelho-conta={f.chave}>{f.conta}</span>{p.semValorB}
+          <span data-lugar>{nome}</span>{p.semValorA}<span class="fc-conta" data-concelho-conta={f.chave}>{f.conta}</span>{p.semValorB}{naFrase}{p.semValorC}
         </p>
       )}
       {f.lado && f.portugal?.tipo === 'linha' && (
         <p class="fc-comparacao" data-faixa-comparacao="linha">
-          {p.comparacaoA}<span data-voz>{p[f.lado]}</span>{p.comparacaoLinhaA}<Claim id={f.portugal.id} lang={lang} as="span" class="fc-valor" />{p.comparacaoLinhaB}
+          {p.comparacaoA}<span data-voz>{p[f.lado]}</span>{p.comparacaoLinhaA}{ondePortugal}{p.comparacaoLinhaB}<Claim id={f.portugal.id} lang={lang} as="span" class="fc-valor" sufixo={` ${unidadeDePortugal?.texto ?? ''}`} />{p.comparacaoLinhaC}
         </p>
       )}
       {f.lado && f.portugal?.tipo === 'base' && (
         <p class="fc-comparacao" data-faixa-comparacao="base">
-          {p.comparacaoA}<span data-voz>{p[f.lado]}</span>{p.comparacaoBase}
+          {p.comparacaoA}<span data-voz>{p[media[f.lado]]}</span>{p.comparacaoBaseA}<span data-nonledger="escala-de-instrumento" data-base-do-indice={f.claim}>{f.portugal.base}</span>{p.comparacaoBaseB}
         </p>
       )}
       {!f.portugal && (

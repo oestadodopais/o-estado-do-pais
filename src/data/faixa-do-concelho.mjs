@@ -31,13 +31,18 @@
  * cartões que já existem na página do concelho».
  *
  * As razões são da casa, para quem lê o código e o relatório do bloco; não se rendem.
+ *
+ * AS PALAVRAS DA MEDIDA NA FRASE (bloco R2, 03.10.2026, achados 21 e 22 da auditoria dos rótulos). A frase do lugar
+ * dizia «entre os 307 concelhos com valor, do mais baixo para o mais alto» sem dizer em quê; passa a nomear a medida
+ * (`naFrase`, as palavras do nome do cartão com a contração da frase), e a comparação com a linha de Portugal diz o
+ * que é o valor de Portugal (`ondePortugal`). Rendem-se; a célula FC recompõe a frase com elas.
  */
 
 /** @typedef {'do-mais-alto' | 'do-mais-baixo'} OrdemDaFaixa */
 /** @typedef {{ linha: string } | { base: true } | null} ComparacaoDaFaixa */
 
 /**
- * @type {Record<string, { faixa: boolean, porqueAFaixa: string, ordem: OrdemDaFaixa | null, porqueAOrdem: string | null, comparacao: ComparacaoDaFaixa, porqueAComparacao: string | null }>}
+ * @type {Record<string, { faixa: boolean, porqueAFaixa: string, ordem: OrdemDaFaixa | null, porqueAOrdem: string | null, naFrase?: { pt: string, en: string }, comparacao: ComparacaoDaFaixa, ondePortugal?: { pt: string, en: string }, porqueAComparacao: string | null }>}
  */
 export const FAIXA_DAS_MEDIDAS_DO_CONCELHO = {
   populacao: {
@@ -54,6 +59,7 @@ export const FAIXA_DAS_MEDIDAS_DO_CONCELHO = {
     porqueAFaixa: 'É um índice por habitante, face à média do país: compara concelhos de tamanhos diferentes.',
     ordem: 'do-mais-alto',
     porqueAOrdem: 'Um índice maior é mais poder de compra por pessoa, face à média do país.',
+    naFrase: { pt: 'no poder de compra por habitante', en: 'for purchasing power per inhabitant' },
     comparacao: { base: true },
     porqueAComparacao:
       'A unidade de cada uma das 308 linhas escreve a base do índice, «índice (Portugal = 100)»: o valor de Portugal no mesmo período e na mesma medida é a base, e não há linha nacional à parte.',
@@ -91,6 +97,7 @@ export const FAIXA_DAS_MEDIDAS_DO_CONCELHO = {
     ordem: 'do-mais-baixo',
     porqueAOrdem:
       'Um índice maior é uma dívida mais perto do limite que a lei fixa (150 nesta escala), ou acima dele: conta-se do mais baixo.',
+    naFrase: { pt: 'no índice de dívida', en: 'for the debt index' },
     comparacao: null,
     porqueAComparacao:
       'O índice mede cada câmara contra o seu próprio limite legal, e o livro-razão não tem uma linha de Portugal deste índice.',
@@ -100,6 +107,9 @@ export const FAIXA_DAS_MEDIDAS_DO_CONCELHO = {
     porqueAFaixa: 'É um prazo em dias, que não cresce com o tamanho da câmara: compara câmaras de tamanhos diferentes.',
     ordem: 'do-mais-baixo',
     porqueAOrdem: 'Mais dias é pagar mais tarde aos fornecedores: conta-se do mais baixo.',
+    /* «the average time to pay suppliers», e não «average payment time», que é uma frase retirada do inventário das
+       frases (a peça 2 do B1) e que a régua da voz morde dentro de outra. */
+    naFrase: { pt: 'no prazo médio de pagamento', en: 'for the average time to pay suppliers' },
     comparacao: null,
     porqueAComparacao:
       'O livro-razão não tem a linha de Portugal da lista da Direção-Geral das Autarquias Locais de dezembro de 2025.',
@@ -110,7 +120,9 @@ export const FAIXA_DAS_MEDIDAS_DO_CONCELHO = {
     ordem: 'do-mais-alto',
     porqueAOrdem:
       'Um ganho maior é mais dinheiro por mês para quem trabalha por conta de outrem a tempo completo.',
+    naFrase: { pt: 'no ganho médio mensal', en: 'for average monthly earnings' },
     comparacao: { linha: 'ganho-medio-mensal-2024' },
+    ondePortugal: { pt: 'o ganho médio', en: 'the average' },
     porqueAComparacao:
       'A linha de Portugal do mesmo indicador do INE (0012656), na mesma unidade e em 2024, como as 308 linhas dos concelhos.',
   },

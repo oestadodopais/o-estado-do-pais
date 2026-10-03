@@ -31,6 +31,11 @@
       "quem": "Claude Opus 5.5",
       "quando": "2026-10-02",
       "o_que": "o P4, item 3 do brief: os pontos percentuais na pergunta da diferença de emprego entre sexos e os regimes de ocupação na da sobrecarga do custo da habitação no total, explicados em palavras comuns pela forma única, pedaço a pedaço. Escrito por design/especime-v3/medicoes/p4-2026-10-02/auditoria-das-perguntas-p4.mjs"
+    },
+    {
+      "quem": "Claude Opus 5.5",
+      "quando": "2026-10-03",
+      "o_que": "o R2, os achados 5, 6, 12, 18 e 24 da auditoria dos rótulos, aceites na dobra: sete perguntas novas para cartões que se rendiam sem pergunta, pela forma única, pedaço a pedaço. Escrito por design/especime-v3/medicoes/r2-2026-10-03/auditoria-das-perguntas-r2.mjs"
     }
   ],
   "perguntas": [
@@ -2247,6 +2252,407 @@
               "origem": "ce-swd-2026-222-disparidade-de-emprego",
               "campo": "excerto",
               "literal": "(percentage points, population aged 20-64"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "criancas-em-creche-2025",
+      "origens": [
+        "eurostat-tepsr_sp210-descricao",
+        "eurostat-cuidado-formal"
+      ],
+      "pergunta": {
+        "pt": "Que parte das crianças com menos de três anos é cuidada fora da família, num programa planeado por entidades públicas ou privadas reconhecidas (os cuidados formais para a infância)?",
+        "en": "What share of children under three are cared for outside the family, in a programme planned by public or recognised private bodies (formal childcare)?"
+      },
+      "mudanca": "R2 (03.10.2026, achado 5): a pergunta nova diz que o cuidado é fora da família e o que são os cuidados formais, com o termo da fonte entre parênteses.",
+      "pedacos": [
+        {
+          "pt": "Que parte das crianças com menos de três anos ",
+          "en": "What share of children under three ",
+          "apoios": [
+            {
+              "origem": "eurostat-tepsr_sp210-descricao",
+              "campo": "excerto",
+              "literal": "the percentage of children (under 3 years old)"
+            },
+            {
+              "linha": "criancas-em-creche-2025",
+              "campo": "excerpt",
+              "literal": "Children aged less than 3 years"
+            }
+          ]
+        },
+        {
+          "pt": "é cuidada fora da família, ",
+          "en": "are cared for outside the family, ",
+          "apoios": [
+            {
+              "origem": "eurostat-tepsr_sp210-descricao",
+              "campo": "excerto",
+              "literal": "cared for by formal arrangements other than by the family"
+            }
+          ]
+        },
+        {
+          "pt": "num programa planeado por entidades públicas ou privadas reconhecidas ",
+          "en": "in a programme planned by public or recognised private bodies ",
+          "apoios": [
+            {
+              "origem": "eurostat-cuidado-formal",
+              "campo": "excerto",
+              "literal": "planned through public organizations and recognized private bodies"
+            }
+          ]
+        },
+        {
+          "pt": "(os cuidados formais para a infância)?",
+          "en": "(formal childcare)?",
+          "apoios": [
+            {
+              "origem": "eurostat-cuidado-formal",
+              "campo": "excerto",
+              "literal": "Formal childcare is a formal education programme"
+            },
+            {
+              "linha": "criancas-em-creche-2025",
+              "campo": "document.title",
+              "literal": "formal childcare"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "retribuicao-minima-mensal-garantida-continente-2026",
+      "origens": [
+        "dl-139-2025-ambito",
+        "dre-dlr-37-2023-a"
+      ],
+      "pergunta": {
+        "pt": "Qual é o valor mínimo que a lei garante por mês a quem trabalha por conta de outrem no continente, sem o acréscimo que a lei dos Açores lhe soma (a retribuição mínima mensal garantida)?",
+        "en": "What is the lowest monthly pay the law guarantees to employees on the mainland, without the increase that Azores law adds to it (the guaranteed minimum monthly wage)?"
+      },
+      "mudanca": "R2 (03.10.2026, achado 6): a pergunta nova diz que o valor é o do continente e que os Açores lhe somam um acréscimo; a Madeira fica de fora, porque nenhuma origem declarada a diz ([verify] no relatório do bloco).",
+      "pedacos": [
+        {
+          "pt": "Qual é o valor mínimo que a lei garante por mês a quem trabalha por conta de outrem ",
+          "en": "What is the lowest monthly pay the law guarantees to employees ",
+          "apoios": [
+            {
+              "origem": "dre-dlr-37-2023-a",
+              "campo": "excerto",
+              "literal": "O montante da retribuição mínima mensal garantida, estabelecido ao nível nacional para os trabalhadores por conta de outrem"
+            }
+          ]
+        },
+        {
+          "pt": "no continente, ",
+          "en": "on the mainland, ",
+          "apoios": [
+            {
+              "origem": "dl-139-2025-ambito",
+              "campo": "excerto",
+              "literal": "O presente decreto-lei é aplicável a todo o território continental"
+            }
+          ]
+        },
+        {
+          "pt": "sem o acréscimo que a lei dos Açores lhe soma ",
+          "en": "without the increase that Azores law adds to it ",
+          "apoios": [
+            {
+              "origem": "dre-dlr-37-2023-a",
+              "campo": "excerto",
+              "literal": "tem, na Região Autónoma dos Açores, o acréscimo de 5 %"
+            }
+          ]
+        },
+        {
+          "pt": "(a retribuição mínima mensal garantida)?",
+          "en": "(the guaranteed minimum monthly wage)?",
+          "apoios": [
+            {
+              "origem": "dre-dlr-37-2023-a",
+              "campo": "excerto",
+              "literal": "O montante da retribuição mínima mensal garantida"
+            },
+            {
+              "linha": "retribuicao-minima-mensal-garantida-continente-2026",
+              "campo": "excerpt",
+              "literal": "O valor da RMMG"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pib-real-per-capita-2025",
+      "origens": [
+        "eurostat-tipsna40-descricao",
+        "eurostat-nama10-volumes"
+      ],
+      "pergunta": {
+        "pt": "Quanto valem, por pessoa, os bens e serviços finais que a economia produz num ano, descontada a subida dos preços (o PIB real por habitante, em volumes encadeados)?",
+        "en": "How much are the final goods and services the economy produces in a year worth per person, leaving out price rises (real GDP per capita, in chain linked volumes)?"
+      },
+      "mudanca": "R2 (03.10.2026, achado 12): a unidade do cartão passou a «euros por pessoa, a preços de 2015», e a pergunta nova guarda o termo da fonte, «volumes encadeados».",
+      "pedacos": [
+        {
+          "pt": "Quanto valem, por pessoa, os bens e serviços finais que a economia produz num ano, ",
+          "en": "How much are the final goods and services the economy produces in a year worth per person, ",
+          "apoios": [
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "GDP measures the value of total final output of goods and services produced by an economy"
+            },
+            {
+              "origem": "eurostat-tipsna40-descricao",
+              "campo": "excerto",
+              "literal": "the ratio of real gross domestic product to the average population of a specific year"
+            }
+          ]
+        },
+        {
+          "pt": "descontada a subida dos preços ",
+          "en": "leaving out price rises ",
+          "apoios": [
+            {
+              "origem": "eurostat-nama10-volumes",
+              "campo": "excerto",
+              "literal": "Volume figures show the development of aggregates excluding inflation"
+            }
+          ]
+        },
+        {
+          "pt": "(o PIB real por habitante, em volumes encadeados)?",
+          "en": "(real GDP per capita, in chain linked volumes)?",
+          "apoios": [
+            {
+              "linha": "pib-real-per-capita-2025",
+              "campo": "excerpt",
+              "literal": "Real GDP per capita — Chain linked volumes (2015), euro per capita"
+            },
+            {
+              "origem": "eurostat-nama10-volumes",
+              "campo": "excerto",
+              "literal": "presented as chain linked volumes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "disparidade-salarial-entre-sexos-2024",
+      "origens": [
+        "eurostat-earn-grgpg2-definicao",
+        "eurostat-earn-grgpg2-cobertura"
+      ],
+      "pergunta": {
+        "pt": "Quanto menos ganham as mulheres do que os homens por hora de trabalho, antes de descontos, em percentagem do ganho dos homens, nas empresas com 10 ou mais trabalhadores (a disparidade salarial não ajustada)?",
+        "en": "How much less do women earn than men per hour of work, before deductions, as a percentage of men’s earnings, in enterprises with 10 or more employees (the unadjusted gender pay gap)?"
+      },
+      "mudanca": "R2 (03.10.2026, achado 18): a pergunta nova diz a regra da contagem, o ganho bruto por hora em percentagem do dos homens, nas empresas com dez ou mais trabalhadores.",
+      "pedacos": [
+        {
+          "pt": "Quanto menos ganham as mulheres do que os homens por hora de trabalho, antes de descontos, ",
+          "en": "How much less do women earn than men per hour of work, before deductions, ",
+          "apoios": [
+            {
+              "origem": "eurostat-earn-grgpg2-definicao",
+              "campo": "excerto",
+              "literal": "the difference between average gross hourly earnings of male paid employees and of female paid employees"
+            }
+          ]
+        },
+        {
+          "pt": "em percentagem do ganho dos homens, ",
+          "en": "as a percentage of men’s earnings, ",
+          "apoios": [
+            {
+              "origem": "eurostat-earn-grgpg2-definicao",
+              "campo": "excerto",
+              "literal": "as a percentage of average gross hourly earnings of male paid employees"
+            }
+          ]
+        },
+        {
+          "pt": "nas empresas com 10 ou mais trabalhadores ",
+          "en": "in enterprises with 10 or more employees ",
+          "apoios": [
+            {
+              "origem": "eurostat-earn-grgpg2-cobertura",
+              "campo": "excerto",
+              "literal": "only enterprises with 10 employees or more"
+            }
+          ]
+        },
+        {
+          "pt": "(a disparidade salarial não ajustada)?",
+          "en": "(the unadjusted gender pay gap)?",
+          "apoios": [
+            {
+              "origem": "eurostat-earn-grgpg2-definicao",
+              "campo": "excerto",
+              "literal": "The unadjusted gender pay gap (GPG)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "necessidades-medicas-nao-satisfeitas-2025",
+      "origens": [
+        "eurostat-tespm110-descricao"
+      ],
+      "pergunta": {
+        "pt": "Que parte das pessoas diz ter precisado de um exame ou tratamento médico e não o ter tido por razões financeiras, por estar em lista de espera ou por ficar longe (as necessidades de cuidados médicos por satisfazer, declaradas pela própria pessoa)?",
+        "en": "What share of people say they needed a medical examination or treatment and did not get it because of the cost, a waiting list or the distance (self-reported unmet needs for medical care)?"
+      },
+      "mudanca": "R2 (03.10.2026, achado 18): a pergunta nova diz a regra da contagem, quem diz ter ficado sem cuidados médicos por custo, espera ou distância.",
+      "pedacos": [
+        {
+          "pt": "Que parte das pessoas diz ter precisado de um exame ou tratamento médico ",
+          "en": "What share of people say they needed a medical examination or treatment ",
+          "apoios": [
+            {
+              "origem": "eurostat-tespm110-descricao",
+              "campo": "excerto",
+              "literal": "a person’s own assessment of whether he or she needed examination or treatment"
+            }
+          ]
+        },
+        {
+          "pt": "e não o ter tido ",
+          "en": "and did not get it ",
+          "apoios": [
+            {
+              "origem": "eurostat-tespm110-descricao",
+              "campo": "excerto",
+              "literal": "but did not have it or did not seek it"
+            }
+          ]
+        },
+        {
+          "pt": "por razões financeiras, por estar em lista de espera ou por ficar longe ",
+          "en": "because of the cost, a waiting list or the distance ",
+          "apoios": [
+            {
+              "origem": "eurostat-tespm110-descricao",
+              "campo": "excerto",
+              "literal": "‘Financial reasons’, ‘Waiting list’ and ‘Too far to travel’"
+            }
+          ]
+        },
+        {
+          "pt": "(as necessidades de cuidados médicos por satisfazer, declaradas pela própria pessoa)?",
+          "en": "(self-reported unmet needs for medical care)?",
+          "apoios": [
+            {
+              "origem": "eurostat-tespm110-descricao",
+              "campo": "excerto",
+              "literal": "Self-reported unmet needs for medical care"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "independencia-da-justica-2025",
+      "origens": [
+        "eurostat-sdg_16_40-descricao",
+        "eurostat-sdg_16_40-nivel"
+      ],
+      "pergunta": {
+        "pt": "Que parte das pessoas inquiridas considera muito boa ou razoavelmente boa a independência dos tribunais e dos juízes (a perceção da independência da justiça)?",
+        "en": "What share of respondents rate the independence of the courts and judges as very good or fairly good (perceived independence of the justice system)?"
+      },
+      "mudanca": "R2 (03.10.2026, achado 18): a pergunta nova diz a regra da contagem, quem considera muito boa ou razoavelmente boa a independência dos tribunais e dos juízes.",
+      "pedacos": [
+        {
+          "pt": "Que parte das pessoas inquiridas ",
+          "en": "What share of respondents ",
+          "apoios": [
+            {
+              "origem": "eurostat-sdg_16_40-descricao",
+              "campo": "excerto",
+              "literal": "explore respondents’ perceptions about the independence of the judiciary"
+            }
+          ]
+        },
+        {
+          "pt": "considera muito boa ou razoavelmente boa a independência dos tribunais e dos juízes ",
+          "en": "rate the independence of the courts and judges as very good or fairly good ",
+          "apoios": [
+            {
+              "origem": "eurostat-sdg_16_40-nivel",
+              "campo": "excerto",
+              "literal": "Very good or fairly good"
+            },
+            {
+              "origem": "eurostat-sdg_16_40-descricao",
+              "campo": "excerto",
+              "literal": "the perceived independence of the courts and judges"
+            }
+          ]
+        },
+        {
+          "pt": "(a perceção da independência da justiça)?",
+          "en": "(perceived independence of the justice system)?",
+          "apoios": [
+            {
+              "linha": "independencia-da-justica-2025",
+              "campo": "document.title",
+              "literal": "Perceived independence of the justice system"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ganho-medio-mensal-2024",
+      "origens": [
+        "ine-ganho-conceito",
+        "ine-ganho-nota"
+      ],
+      "pergunta": {
+        "pt": "Quanto ganham por mês, em média e antes de descontos, os trabalhadores por conta de outrem a tempo completo com remuneração completa (o ganho médio mensal)?",
+        "en": "How much do full-time employees on full pay earn per month, on average and before deductions (average monthly earnings)?"
+      },
+      "mudanca": "R2 (03.10.2026, achado 24): a pergunta nova diz a população e o que entra no ganho, os trabalhadores por conta de outrem a tempo completo com remuneração completa, antes de descontos.",
+      "pedacos": [
+        {
+          "pt": "Quanto ganham por mês, em média e antes de descontos, os trabalhadores por conta de outrem a tempo completo com remuneração completa ",
+          "en": "How much do full-time employees on full pay earn per month, on average and before deductions ",
+          "apoios": [
+            {
+              "origem": "ine-ganho-conceito",
+              "campo": "excerto",
+              "literal": "Montante ilíquido em dinheiro e/ou géneros pago ao trabalhador com caráter regular"
+            },
+            {
+              "origem": "ine-ganho-nota",
+              "campo": "excerto",
+              "literal": "trabalhadores por conta de outrem a tempo completo com remuneração completa"
+            },
+            {
+              "linha": "ganho-medio-mensal-2024",
+              "campo": "document.title",
+              "literal": "Ganho médio mensal"
+            }
+          ]
+        },
+        {
+          "pt": "(o ganho médio mensal)?",
+          "en": "(average monthly earnings)?",
+          "apoios": [
+            {
+              "linha": "ganho-medio-mensal-2024",
+              "campo": "document.title",
+              "literal": "Ganho médio mensal"
             }
           ]
         }
