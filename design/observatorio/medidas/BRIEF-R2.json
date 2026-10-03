@@ -1,0 +1,124 @@
+{
+  "brief": "design/observatorio/BRIEF-R2-os-rotulos-do-sitio.md",
+  "guiao": "design/observatorio/medidas/BRIEF-R2.py",
+  "cabeca_lida": "197c6dd4",
+  "medidas": [
+    {
+      "nome": "linhas_do_livro",
+      "valor": 3009,
+      "comando": "git ls-tree -r 197c6dd4:ledger/claims · os .yml",
+      "conhecido_positivo": {
+        "o_que": "a do índice de dívida de Évora é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_distintas_nas_linhas",
+      "valor": 41,
+      "comando": "o campo unit de cada linha, formas distintas",
+      "conhecido_positivo": {
+        "o_que": "«euros por mês» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_com_o_simbolo_do_euro_em_vez_da_palavra",
+      "valor": 3,
+      "comando": "as unidades que começam por «€», contra a regra de livro.mjs («euros por mês», não «€ por mês»)",
+      "conhecido_positivo": {
+        "o_que": "«€ por mês» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_que_dizem_um_limite_na_propria_unidade",
+      "valor": 1,
+      "comando": "as unidades com a palavra «limite»",
+      "conhecido_positivo": {
+        "o_que": "a do índice de dívida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_de_indice_com_base_cem",
+      "valor": 2,
+      "comando": "as unidades com «= 100»",
+      "conhecido_positivo": {
+        "o_que": "«índice (Portugal = 100)» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "nomes_de_medida_distintos_nas_linhas",
+      "valor": 28,
+      "comando": "o campo name de cada linha, formas distintas",
+      "conhecido_positivo": {
+        "o_que": "o título do INE do poder de compra é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_do_dicionario_das_unidades_inglesas",
+      "valor": 25,
+      "comando": "git show 197c6dd4:src/i18n/unidades.mjs · as linhas «'pt': 'en'»",
+      "conhecido_positivo": {
+        "o_que": "a do índice de dívida está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "unidades_das_linhas_sem_entrada_inglesa",
+      "valor": 16,
+      "comando": "as unidades das linhas que não têm entrada no dicionário (rendem-se em português na edição inglesa)",
+      "conhecido_positivo": {
+        "o_que": "«factor» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_construidas_lidas_pelo_inventario",
+      "valor": 7466,
+      "comando": "o campo paginas de inventario-rotulos-R2.json",
+      "conhecido_positivo": {
+        "o_que": "a contagem de cartões é maior do que zero",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cartoes_de_medida_nas_paginas",
+      "valor": 5248,
+      "comando": "o campo cartoes do mesmo ficheiro",
+      "conhecido_positivo": {
+        "o_que": "há cartões em inglês e em português",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas_distintas_da_unidade_nos_cartoes_portugueses",
+      "valor": 34,
+      "comando": "as formas distintas do campo unidade nas chaves pt: do inventário",
+      "conhecido_positivo": {
+        "o_que": "«% da receita média de três anos» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas_distintas_do_estado_nos_cartoes_portugueses",
+      "valor": 25,
+      "comando": "as formas distintas do campo estado nas chaves pt:",
+      "conhecido_positivo": {
+        "o_que": "«dentro do limite legal, que é #» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas_distintas_da_dobra_nos_cartoes_portugueses",
+      "valor": 8,
+      "comando": "as formas distintas do campo dobra (a definição) nas chaves pt:",
+      "conhecido_positivo": {
+        "o_que": "a definição da dívida contra a receita de três anos é uma delas",
+        "encontrado": true
+      }
+    }
+  ]
+}
