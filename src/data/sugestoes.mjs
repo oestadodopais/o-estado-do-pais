@@ -11,7 +11,8 @@
  *
  * OS TEXTOS SÃO OS DO BRIEF, À LETRA (`design/observatorio/BRIEF-S1-a-caixa-das-sugestoes.md`,
  * §5.4 e §5.5), nas duas línguas, e o guião das medições do bloco compara cada
- * um com o brief, byte a byte. Ficam inteiros, cada um numa cadeia só: a porta
+ * um com o brief, byte a byte; os dois da página do limite são os que o lugar de
+ * direção deu na passagem S1-b, e o guião compara-os com esses. Ficam inteiros, cada um numa cadeia só: a porta
  * de uma frase (a das correções, o endereço de correio) sai de dentro da cadeia
  * na vista, por `pedacosDaFrase()`, e nunca a corta aqui.
  *
@@ -111,9 +112,14 @@ export const SUGESTOES = {
       pt: 'A sugestão vinha vazia. Escreva pelo menos numa das três caixas.',
       en: 'The suggestion was empty. Write in at least one of the three boxes.',
     },
+    /* O TEXTO DA PÁGINA DO LIMITE MUDOU NA PASSAGEM S1-b (03.10.2026), por decisão do
+       lugar de direção sobre o achado 6 da leitura a frio
+       (`design/especime-v3/critica/LEITURA-S1-2026-10-03.md`): a janela da marca começa
+       no primeiro envio e dura uma hora, e por isso a página diz «numa hora» e não «na
+       última hora». O texto novo é do lugar de direção (§5.5 do brief). */
     limite: {
-      pt: 'Chegaram cinco sugestões deste endereço na última hora. Volte mais tarde.',
-      en: 'Five suggestions arrived from this address in the last hour. Please come back later.',
+      pt: 'Chegaram cinco sugestões deste endereço numa hora. Volte mais tarde.',
+      en: 'Five suggestions arrived from this address within one hour. Please come back later.',
     },
     naoChegou: {
       pt: 'A caixa não conseguiu guardar a sugestão. Volte a tentar mais tarde.',
