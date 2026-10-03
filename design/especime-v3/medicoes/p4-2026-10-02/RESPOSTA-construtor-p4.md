@@ -28,3 +28,11 @@
 - **Portões da passagem**: na cabeça `66dfc531`, pela tranca, `build` 0, `verify` 0 e `typecheck` 0 (`portoes-c/`).
 - **Por fazer**: as duas réguas à mão a 1; a unidade antiga na legenda e na tabela do mapa da dívida em «Lugares», se o lugar de direção a quiser igual; as 11 linhas do INE em prosa, no motor; a leitura a frio da passagem.
 - **Custo da passagem**: 241 964 símbolos e 4 780 segundos, das duas leituras em ficheiro.
+
+## P4-d · a média na unidade e o mapa da dívida (02.10.2026)
+
+- **A unidade.** `% da receita média de três anos` / `% of the three-year average revenue`, no cartão do índice de dívida das 616 páginas de concelho; a planta da unidade sem a média morde.
+- **O mapa da dívida em «Lugares».** A legenda e o cabeçalho da tabela dizem a mesma unidade e «o limite legal é 150 %», com o 150 lido da linha do limite e a sua marca, nas duas edições; a planta da forma antiga morde na célula ID, na N1M e no portão de HTML.
+- **Plantas**: 9 de 9 na célula ID, 3 do mapa na N1M, 3 de 3 nos portões. **Capturas**: as 4 do cartão de Évora refeitas, com 0 problemas.
+- **Portões da passagem**: correm pela tranca na cabeça do commit desta resposta, e os códigos entram no commit seguinte, em `portoes-d/`.
+- **Custo da passagem**: 52 177 símbolos e 1 081 segundos, das duas leituras em ficheiro.

@@ -272,6 +272,36 @@ const PC = `${PASTA}/portoes-c`;
 const portoesC = fs.existsSync(`${PC}/cabeca`) ? { cabeca: (ler(`${PC}/cabeca`) ?? '').trim(), build: codigo(`${PC}/build.codigo`), verify: codigo(`${PC}/verify.codigo`), typecheck: codigo(`${PC}/typecheck.codigo`) } : 'por correr: os portões da P4-c correm depois do último commit da passagem, e os códigos entram no commit seguinte';
 medida('p4c_portoes', portoesC, `sh scripts/leituras/portoes.sh <worktree> ${PC}`, 'o guião escreve a cabeça ao lado dos códigos', typeof portoesC === 'string' || /^[0-9a-f]{40}$/.test(portoesC.cabeca));
 
+/* ============================================================================================ a passagem P4-d */
+const { MEDIDAS_DO_CONCELHO } = await import(path.resolve('src/data/concelhos.mjs'));
+const casaD = MEDIDAS_DO_CONCELHO.find((m) => m.chave === 'indice')?.unidadeDaCasa ?? null;
+const concelhosC = git('show', 'a43787cc:src/data/concelhos.mjs').saida;
+medida('p4d_unidade_da_casa', casaD ?? NAO, 'src/data/concelhos.mjs, unidadeDaCasa da medida «indice»',
+  'a declaração da passagem P4-c, em a43787cc, era «% da receita de três anos», sem a média', concelhosC.includes("unidadeDaCasa: { pt: '% da receita de três anos'"),
+  { antes: { pt: '% da receita de três anos', en: '% of three-year revenue' } });
+const idD = lerJson(`${PASTA}/p4-d/indice-de-divida.json`);
+medida('p4d_cartao_e_mapa_da_divida', idD ? { ...idD.contas, falhas: idD.falhas.length, plantas: `${idD.plantas.filter((x) => x.mordeu).length} de ${idD.plantas.length}` } : NAO,
+  'node tests/municipio/indice-de-divida.mjs --prova --json (p4-d/indice-de-divida.json), no check:lugares',
+  'a planta da unidade sem a média e a da legenda do mapa na forma antiga mordem',
+  idD && idD.plantas.some((x) => x.nome === 'a unidade sem a média' && x.mordeu) && idD.plantas.some((x) => x.nome === 'a legenda do mapa da dívida na forma antiga' && x.mordeu));
+const navD = semCor(ler(`${PASTA}/p4-d/check-navegacao.log`));
+medida('p4d_n1m_do_mapa_da_divida', { codigo: codigo(`${PASTA}/p4-d/check-navegacao.codigo`), plantas_p4d: ['unidade da tabela retirada', 'a legenda da dívida na forma antiga', 'o teto da tabela escrito à mão'].filter((n) => new RegExp(`"nome": "${n}",\\s*"mordeu": true`).test(navD)).length },
+  'npm run check:navegacao (p4-d/check-navegacao.log), a N1M de tests/inicio/concelhos-nos-lugares.mjs', 'as três plantas do mapa da dívida mordem no registo',
+  ['unidade da tabela retirada', 'a legenda da dívida na forma antiga', 'o teto da tabela escrito à mão'].every((n) => new RegExp(`"nome": "${n}",\\s*"mordeu": true`).test(navD)));
+const plD = lerJson(`${PASTA}/plantas-portoes-p4-d/plantas-portoes-p4d.json`) ?? [];
+medida('p4d_plantas_dos_portoes', plD.length ? `${plD.filter((x) => x.codigo === 1 && x.passou).length} de ${plD.length}` : NAO,
+  'OEDP_MEDICOES=<pasta> node tests/pais/portoes.mjs --prefixo p4d- (plantas-portoes-p4-d/plantas-portoes-p4d.json)', 'cada planta repõe os bytes que mudou (sha256 antes igual ao reposto)',
+  plD.length > 0 && plD.every((x) => x.ficheiros.every((f) => f.antes === f.reposto)));
+const capD = lerJson(`${PASTA}/capturas-p4-d.json`);
+medida('p4d_capturas', capD ? { capturas: capD.capturas, problemas: capD.problemas.length, construcao: capD.construcao.commit, diz: capD.resultados.map((r) => `${r.lang} ${r.largura}: ${r.diz.valor} ${r.diz.unidade} · ${r.diz.estado} ${r.diz.teto}`) } : NAO,
+  `node ${PASTA}/captar-p4-d.mjs (capturas-p4-d.json, com o sha256 de cada imagem)`, 'cada imagem tem o seu sha256 no manifesto', capD && capD.resultados.every((r) => /^[0-9a-f]{64}$/.test(r.sha256)));
+const ciD = lerJson(`${PASTA}/custo-inicio-p4-d.json`), cfD = lerJson(`${PASTA}/custo-fim-p4-d.json`);
+medida('p4d_custo', ciD && cfD ? { simbolos: ciD.simbolos_restantes_no_inicio - cfD.simbolos_restantes_no_fim, segundos: Math.round((Date.parse(cfD.fim_utc) - Date.parse(ciD.inicio_utc)) / 1000) } : NAO,
+  'custo-inicio-p4-d.json e custo-fim-p4-d.json: as duas leituras do contador «total_tokens left» e as duas horas do relógio', 'as duas leituras existem e a do fim é menor', ciD && cfD && cfD.simbolos_restantes_no_fim < ciD.simbolos_restantes_no_inicio);
+const PD = `${PASTA}/portoes-d`;
+const portoesD = fs.existsSync(`${PD}/cabeca`) ? { cabeca: (ler(`${PD}/cabeca`) ?? '').trim(), build: codigo(`${PD}/build.codigo`), verify: codigo(`${PD}/verify.codigo`), typecheck: codigo(`${PD}/typecheck.codigo`) } : 'por correr: os portões da P4-d correm depois do último commit da passagem, e os códigos entram no commit seguinte';
+medida('p4d_portoes', portoesD, `sh scripts/leituras/portoes.sh <worktree> ${PD}`, 'o guião escreve a cabeça ao lado dos códigos', typeof portoesD === 'string' || /^[0-9a-f]{40}$/.test(portoesD.cabeca));
+
 /* as capturas, o custo e os portões */
 medida('capturas', cap ? { capturas: cap.capturas, problemas: cap.problemas.length, construcao: cap.construcao.commit } : NAO, `node ${PASTA}/captar-p4.mjs (capturas-p4.json, com o sha256 de cada imagem)`,
   'cada imagem tem o seu sha256 no manifesto', cap && cap.resultados.every((r) => /^[0-9a-f]{64}$/.test(r.sha256)));
@@ -283,7 +313,7 @@ const portoes = fs.existsSync(`${P}/cabeca`) ? { cabeca: (ler(`${P}/cabeca`) ?? 
 medida('portoes', portoes, `sh scripts/leituras/portoes.sh <worktree> ${P}`, 'o guião escreve a cabeça ao lado dos códigos', typeof portoes === 'string' || /^[0-9a-f]{40}$/.test(portoes.cabeca));
 
 const falhas = medidas.filter((m) => m.valor === NAO || !m.conhecido_positivo.encontrado);
-const saida = { bloco: 'P4', construtor: 'Claude Opus 5.5', base: BASE, cabeca: git('rev-parse', 'HEAD').saida.trim(), guiao: `${PASTA}/medir-p4.mjs`, escrito_em: new Date().toISOString(), medidas_escritas: medidas.length, medidas_do_p4: medidas.filter((m) => !m.nome.startsWith('p4c_')).length, medidas_da_p4c: medidas.filter((m) => m.nome.startsWith('p4c_')).length, medidas };
+const saida = { bloco: 'P4', construtor: 'Claude Opus 5.5', base: BASE, cabeca: git('rev-parse', 'HEAD').saida.trim(), guiao: `${PASTA}/medir-p4.mjs`, escrito_em: new Date().toISOString(), medidas_escritas: medidas.length, medidas_do_p4: medidas.filter((m) => !/^p4[cd]_/.test(m.nome)).length, medidas_da_p4c: medidas.filter((m) => m.nome.startsWith('p4c_')).length, medidas_da_p4d: medidas.filter((m) => m.nome.startsWith('p4d_')).length, medidas };
 fs.writeFileSync(`${PASTA}/medidas.json`, JSON.stringify(saida, null, 2) + '\n');
 console.log(`P4: ${medidas.length} medidas escritas em ${PASTA}/medidas.json; ${falhas.length} por ler ou com o conhecido-positivo por encontrar.`);
 for (const f of falhas) console.log(`  ${f.nome}: ${f.valor === NAO ? NAO : 'conhecido-positivo por encontrar'} (${f.conhecido_positivo.o_que})`);

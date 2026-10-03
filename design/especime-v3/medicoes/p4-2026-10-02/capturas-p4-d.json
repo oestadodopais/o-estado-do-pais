@@ -1,0 +1,80 @@
+{
+  "bloco": "P4-d",
+  "cabeca": "120e74093114f9b6f87543d146074bf5847b4490",
+  "construcao": {
+    "commit": "120e74093114f9b6f87543d146074bf5847b4490",
+    "ref": "p4-2026-10-02",
+    "construido_em": "2026-10-03T05:51:32.664Z"
+  },
+  "inicio": "2026-10-03T05:53:31.084Z",
+  "fim": "2026-10-03T05:53:33.788Z",
+  "capturas": 4,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-d-cartao-indice-evora-pt-390.png",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 390,
+      "diz": {
+        "valor": "105,5",
+        "unidade": "% da receita média de três anos",
+        "estado": "dentro do limite legal, que é",
+        "teto": "150 %",
+        "teto_linha": "indice-de-divida-limite-legal",
+        "marcas_da_fonte": 1,
+        "dobra": "A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média."
+      },
+      "sha256": "345e5244e045d3e1f40f5b2f16d8849b4e7201d87e35f2e8fde2817f72c13694"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-d-cartao-indice-evora-pt-1280.png",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 1280,
+      "diz": {
+        "valor": "105,5",
+        "unidade": "% da receita média de três anos",
+        "estado": "dentro do limite legal, que é",
+        "teto": "150 %",
+        "teto_linha": "indice-de-divida-limite-legal",
+        "marcas_da_fonte": 1,
+        "dobra": "A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média."
+      },
+      "sha256": "579152bfabb258fcfb88eb5faebd94827443e730feaa65699a08e211ca22cdb7"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-d-cartao-indice-evora-en-390.png",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 390,
+      "diz": {
+        "valor": "105,5",
+        "unidade": "% of the three-year average revenue",
+        "estado": "within the legal limit, which is",
+        "teto": "150 %",
+        "teto_linha": "indice-de-divida-limite-legal",
+        "marcas_da_fonte": 1,
+        "dobra": "Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average."
+      },
+      "sha256": "907bb6c88519617e448656c9a8a676edcc7766d50d286c0e9be331d8a391ff14"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/p4-2026-10-02/p4-d-cartao-indice-evora-en-1280.png",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 1280,
+      "diz": {
+        "valor": "105,5",
+        "unidade": "% of the three-year average revenue",
+        "estado": "within the legal limit, which is",
+        "teto": "150 %",
+        "teto_linha": "indice-de-divida-limite-legal",
+        "marcas_da_fonte": 1,
+        "dobra": "Debt as a percentage of the average net current revenue that the municipality collected in the previous three years; the law allows one and a half times that average."
+      },
+      "sha256": "f2529d4886efb0dd35d543206aad0bc6555ab28038a74682d2794fcab5101e8c"
+    }
+  ]
+}

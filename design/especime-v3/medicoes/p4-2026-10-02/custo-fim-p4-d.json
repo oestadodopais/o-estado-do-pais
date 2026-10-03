@@ -1,0 +1,7 @@
+{
+  "o_que": "a segunda leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), na passagem P4-d, escrita à mão pelo construtor, e a hora do relógio da máquina; tomada antes de escrever a secção P4-d do relatório e antes da corrida final dos portões da passagem",
+  "simbolos_restantes_no_fim": 13257459,
+  "lido_no_fim": "na linha «total_tokens left» do resultado da última ferramenta antes desta escrita (a conferência do mapa do repositório)",
+  "fim_utc": "2026-10-03T05:54:57Z",
+  "fim_origem": "date -u, na mesma chamada que escreveu este ficheiro"
+}

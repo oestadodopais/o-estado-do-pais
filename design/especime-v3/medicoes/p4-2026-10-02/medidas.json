@@ -2,12 +2,13 @@
   "bloco": "P4",
   "construtor": "Claude Opus 5.5",
   "base": "afc4fb20",
-  "cabeca": "66dfc531ee2171193a70471dbda8500169a1f13a",
+  "cabeca": "120e74093114f9b6f87543d146074bf5847b4490",
   "guiao": "design/especime-v3/medicoes/p4-2026-10-02/medir-p4.mjs",
-  "escrito_em": "2026-10-02T23:08:24.994Z",
-  "medidas_escritas": 37,
+  "escrito_em": "2026-10-03T05:54:57.902Z",
+  "medidas_escritas": 44,
   "medidas_do_p4": 28,
   "medidas_da_p4c": 9,
+  "medidas_da_p4d": 7,
   "medidas": [
     {
       "nome": "folhas_que_seguem_a_preferencia_do_aparelho",
@@ -657,6 +658,101 @@
         "typecheck": 0
       },
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/p4-2026-10-02/portoes-c",
+      "conhecido_positivo": {
+        "o_que": "o guião escreve a cabeça ao lado dos códigos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4d_unidade_da_casa",
+      "valor": {
+        "pt": "% da receita média de três anos",
+        "en": "% of the three-year average revenue"
+      },
+      "comando": "src/data/concelhos.mjs, unidadeDaCasa da medida «indice»",
+      "conhecido_positivo": {
+        "o_que": "a declaração da passagem P4-c, em a43787cc, era «% da receita de três anos», sem a média",
+        "encontrado": true
+      },
+      "antes": {
+        "pt": "% da receita de três anos",
+        "en": "% of three-year revenue"
+      }
+    },
+    {
+      "nome": "p4d_cartao_e_mapa_da_divida",
+      "valor": {
+        "paginas": 616,
+        "com_valor": 614,
+        "sem_valor": 2,
+        "dentro": 594,
+        "fora": 20,
+        "mapas": 2,
+        "falhas": 0,
+        "plantas": "9 de 9"
+      },
+      "comando": "node tests/municipio/indice-de-divida.mjs --prova --json (p4-d/indice-de-divida.json), no check:lugares",
+      "conhecido_positivo": {
+        "o_que": "a planta da unidade sem a média e a da legenda do mapa na forma antiga mordem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4d_n1m_do_mapa_da_divida",
+      "valor": {
+        "codigo": 0,
+        "plantas_p4d": 3
+      },
+      "comando": "npm run check:navegacao (p4-d/check-navegacao.log), a N1M de tests/inicio/concelhos-nos-lugares.mjs",
+      "conhecido_positivo": {
+        "o_que": "as três plantas do mapa da dívida mordem no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4d_plantas_dos_portoes",
+      "valor": "3 de 3",
+      "comando": "OEDP_MEDICOES=<pasta> node tests/pais/portoes.mjs --prefixo p4d- (plantas-portoes-p4-d/plantas-portoes-p4d.json)",
+      "conhecido_positivo": {
+        "o_que": "cada planta repõe os bytes que mudou (sha256 antes igual ao reposto)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4d_capturas",
+      "valor": {
+        "capturas": 4,
+        "problemas": 0,
+        "construcao": "120e74093114f9b6f87543d146074bf5847b4490",
+        "diz": [
+          "pt 390: 105,5 % da receita média de três anos · dentro do limite legal, que é 150 %",
+          "pt 1280: 105,5 % da receita média de três anos · dentro do limite legal, que é 150 %",
+          "en 390: 105,5 % of the three-year average revenue · within the legal limit, which is 150 %",
+          "en 1280: 105,5 % of the three-year average revenue · within the legal limit, which is 150 %"
+        ]
+      },
+      "comando": "node design/especime-v3/medicoes/p4-2026-10-02/captar-p4-d.mjs (capturas-p4-d.json, com o sha256 de cada imagem)",
+      "conhecido_positivo": {
+        "o_que": "cada imagem tem o seu sha256 no manifesto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4d_custo",
+      "valor": {
+        "simbolos": 52177,
+        "segundos": 1081
+      },
+      "comando": "custo-inicio-p4-d.json e custo-fim-p4-d.json: as duas leituras do contador «total_tokens left» e as duas horas do relógio",
+      "conhecido_positivo": {
+        "o_que": "as duas leituras existem e a do fim é menor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "p4d_portoes",
+      "valor": "por correr: os portões da P4-d correm depois do último commit da passagem, e os códigos entram no commit seguinte",
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/p4-2026-10-02/portoes-d",
       "conhecido_positivo": {
         "o_que": "o guião escreve a cabeça ao lado dos códigos",
         "encontrado": true
