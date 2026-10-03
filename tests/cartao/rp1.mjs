@@ -108,9 +108,13 @@ const semApoio = lerAuditoriaDasLeituras();
 semApoio.medidas.find(m=>m.id===salario).folhas.find(f=>f.pt===' euros por mês').partes[0].apoios=[];
 assert.ok(conferirAuditoriaDasLeituras({auditoria:semApoio}).erros.some(e=>e.includes('não tem apoio nenhum')));
 plantas.push({nome:'sufixo da unidade sem literal',mordeu:true});
+/* R2 (03.10.2026): a unidade do cartão é a da linha (`data-linha-campo="unit"`) ou, desde o bloco dos rótulos, a
+   declarada em `UNIDADES_DOS_CARTOES` (`data-unidade-da-casa`; a do salário escreve o euro por extenso). O que esta
+   célula protege não muda: a unidade vem antes da marca do provisório, e a planta que a põe depois continua a morder. */
+const UNIDADE_DO_CARTAO = '[data-linha-campo="unit"], [data-unidade-da-casa]';
 function unidadeAntesDaRessalva(card) {
   const quantidade=card.querySelector('.cartao-medida-quantidade');
-  const unidade=quantidade?.querySelector('[data-linha-campo="unit"]');
+  const unidade=quantidade?.querySelector(UNIDADE_DO_CARTAO);
   const ressalva=quantidade?.querySelector('.claim-provisorio');
   return Boolean(unidade && ressalva && quantidade.innerHTML.indexOf(unidade.toString()) < quantidade.innerHTML.indexOf(ressalva.toString()));
 }
@@ -151,7 +155,7 @@ if (!process.argv.includes('--declaracoes')) {
         assert.ok(titulo.textContent.includes(' '+unidade.textContent));
         assert.ok(unidadeAntesDaRessalva(card),'unidade antes do provisório');
         const estrago=parse(card.toString());
-        const u=estrago.querySelector('[data-linha-campo="unit"]');
+        const u=estrago.querySelector('.cartao-medida-quantidade').querySelector(UNIDADE_DO_CARTAO);
         const html=u.toString();u.remove();estrago.querySelector('.cartao-medida-quantidade').insertAdjacentHTML('beforeend',html);
         assert.equal(unidadeAntesDaRessalva(estrago),false);
         plantas.push({nome:'unidade depois do provisório, '+lang,mordeu:true});
