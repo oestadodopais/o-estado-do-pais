@@ -24,7 +24,13 @@
  *   ID4 · sem valor (a marca que a Direção-Geral imprime), o cartão não tem unidade nem linha do estado;
  *   ID5 · a dobra «O que é este número» é a nota declarada da medida, sem mudança;
  *   ID6 · o cartão «Câmaras com a dívida acima do limite legal», na página «Lugares», diz as mesmas palavras,
- *         «dentro do limite legal, que é», e não as de antes, «dentro do limite legal (».
+ *         «dentro do limite legal, que é», e não as de antes, «dentro do limite legal (»;
+ *   ID7 · o mapa da dívida em «Lugares» diz, na legenda e no cabeçalho da tabela, a unidade da casa e o teto
+ *         (passagem P4-d, 02.10.2026): «% da receita média de três anos · o limite legal é 150 %», com o 150 lido da
+ *         linha do teto, e não a unidade antiga da linha.
+ *
+ * A MÉDIA NA UNIDADE (passagem P4-d): «% da receita de três anos» lia-se como a soma dos três anos; a unidade passou a
+ * «% da receita média de três anos» / «% of the three-year average revenue», e há uma planta com a unidade de antes.
  *
  * AS PLANTAS (`--prova`) estragam cópias em memória de uma página e têm de morder: a unidade antiga de volta, o teto
  * escrito à mão, as palavras do estado de antes, o estado trocado, a dobra mudada, e as palavras de antes no cartão
@@ -57,8 +63,8 @@ if (!TETO) {
 /* As palavras esperadas, escritas aqui pela régua e não lidas da vista: o que o diretor e o lugar de direção
    aprovaram, nas duas edições. */
 const PALAVRAS = {
-  pt: { dentro: 'dentro do limite legal, que é', fora: 'fora do limite legal, que é', antigaUnidade: '% (limite legal = 150)', camaras: 'dentro do limite legal, que é', camarasAntes: 'dentro do limite legal (' },
-  en: { dentro: 'within the legal limit, which is', fora: 'outside the legal limit, which is', antigaUnidade: '% (legal cap = 150)', camaras: 'within the legal limit, which is', camarasAntes: 'within the legal limit (' },
+  pt: { dentro: 'dentro do limite legal, que é', fora: 'fora do limite legal, que é', antigaUnidade: '% (limite legal = 150)', semAMedia: '% da receita de três anos', camaras: 'dentro do limite legal, que é', camarasAntes: 'dentro do limite legal (', oLimite: 'o limite legal é' },
+  en: { dentro: 'within the legal limit, which is', fora: 'outside the legal limit, which is', antigaUnidade: '% (legal cap = 150)', semAMedia: '% of three-year revenue', camaras: 'within the legal limit, which is', camarasAntes: 'within the legal limit (', oLimite: 'the legal limit is' },
 };
 const ROTAS = { pt: 'municipios', en: path.join('en', 'municipalities') };
 const LUGARES = { pt: path.join('lugares', 'index.html'), en: path.join('en', 'places', 'index.html') };
@@ -148,6 +154,31 @@ function confereCamaras(raiz, lang, onde) {
   return f;
 }
 
+/** As falhas da legenda e do cabeçalho da tabela do mapa da dívida de uma página «Lugares» (ID7, passagem P4-d). */
+function confereMapa(raiz, lang, onde) {
+  const mapa = raiz.querySelector('[data-instrumento="mapa-por-concelho-indice"]');
+  if (!mapa) return [`ID7 · ${onde}: não há mapa da dívida.`];
+  const f = [];
+  const P = PALAVRAS[lang];
+  for (const [nome, seletor] of [['a legenda', '.forma-mapa-unidade'], ['o cabeçalho da tabela', 'thead th:last-child']]) {
+    const sitio = mapa.querySelector(seletor);
+    if (!sitio) { f.push(`ID7 · ${onde}: o mapa não tem ${nome}.`); continue; }
+    const texto = normal(sitio.text);
+    if (texto.includes(P.antigaUnidade)) f.push(`ID7 · ${onde}: ${nome} escreve a unidade antiga, «${P.antigaUnidade}».`);
+    const casa = sitio.querySelectorAll('[data-unidade-da-casa-do-mapa="indice"]');
+    if (casa.length !== 1 || normal(casa[0].text) !== MEDIDA.unidadeDaCasa[lang]) f.push(`ID7 · ${onde}: ${nome} não diz a unidade da casa, «${MEDIDA.unidadeDaCasa[lang]}» (diz «${texto.slice(0, 80)}»).`);
+    const voz = sitio.querySelectorAll('[data-voz]');
+    if (voz.length !== 1 || normal(voz[0].text) !== P.oLimite) f.push(`ID7 · ${onde}: ${nome} não diz «${P.oLimite}» antes do teto.`);
+    const valores = sitio.querySelectorAll('[data-claim]');
+    const sufixo = valores.length === 1 ? valores[0].parentNode?.querySelector('.claim-sufixo') : null;
+    const lido = valores.length === 1 ? `${normal(valores[0].text)} ${normal(sufixo?.text)}` : null;
+    if (valores.length !== 1 || valores[0].getAttribute('data-claim') !== TETO.id || lido !== `${TETO.value} ${TETO.unit}`) {
+      f.push(`ID7 · ${onde}: o teto ${nome === 'a legenda' ? 'da legenda' : 'do cabeçalho'} não é a linha «${TETO.id}» com «${TETO.value} ${TETO.unit}»${lido ? ` (lido «${lido}»)` : ''}.`);
+    }
+  }
+  return f;
+}
+
 /* ------------------------------------------------------------------------------------------------- a corrida */
 const falhas = [];
 const contas = { paginas: 0, com_valor: 0, sem_valor: 0, dentro: 0, fora: 0 };
@@ -163,7 +194,10 @@ for (const lang of /** @type {const} */ (['pt', 'en'])) {
     falhas.push(...conferePagina(parse(fs.readFileSync(f, 'utf8')), lang, `${ROTAS[lang]}/${slug}`, contas));
   }
   const l = path.join(DIST, LUGARES[lang]);
-  falhas.push(...confereCamaras(parse(fs.readFileSync(l, 'utf8')), lang, LUGARES[lang]));
+  const raizDosLugares = parse(fs.readFileSync(l, 'utf8'));
+  falhas.push(...confereCamaras(raizDosLugares, lang, LUGARES[lang]));
+  falhas.push(...confereMapa(raizDosLugares, lang, LUGARES[lang]));
+  contas.mapas = (contas.mapas ?? 0) + 1;
 }
 if (paginas.pt.length !== paginas.en.length || paginas.pt.length < 300) {
   falhas.push(`ID1 · as páginas de concelho são ${paginas.pt.length} em português e ${paginas.en.length} em inglês: a régua não viu os 308 nas duas edições.`);
@@ -175,6 +209,8 @@ if (process.argv.includes('--prova')) {
   const evora = { pt: path.join(DIST, 'municipios', 'evora', 'index.html'), en: path.join(DIST, 'en', 'municipalities', 'evora', 'index.html') };
   const PLANTAS = [
     ['a unidade antiga de volta', 'pt', (r) => { const u = r.querySelector('[data-medida-chave="indice"] [data-unidade-da-casa]'); u.set_content(PALAVRAS.pt.antigaUnidade); }, /ID2 · .*unidade antiga|ID2 · .*a unidade diz/],
+    /* P4-d: a unidade da passagem P4-c, sem a média, lida como a soma dos três anos. */
+    ['a unidade sem a média', 'en', (r) => { const u = r.querySelector('[data-medida-chave="indice"] [data-unidade-da-casa]'); u.set_content(PALAVRAS.en.semAMedia); }, /ID2 · .*a unidade diz «% of three-year revenue»/],
     ['o teto escrito à mão', 'en', (r) => { const v = r.querySelector('[data-regua="limite"] [data-claim]'); v.replaceWith(`${TETO.value} ${TETO.unit}`); }, /ID3 · .*o teto não é a linha/],
     ['as palavras do estado de antes', 'pt', (r) => { r.querySelector('[data-regua="limite"] [data-voz]').set_content('dentro do limite legal'); }, /ID3 · .*a linha do estado diz «dentro do limite legal»/],
     ['o estado trocado', 'en', (r) => { r.querySelector('[data-regua="limite"] [data-voz]').set_content(PALAVRAS.en.fora); }, /ID3 · .*a linha do estado diz «outside the legal limit, which is»/],
@@ -184,6 +220,18 @@ if (process.argv.includes('--prova')) {
     const r = parse(fs.readFileSync(evora[lang], 'utf8'));
     estraga(r);
     const queixas = conferePagina(r, lang, `planta: ${nome}`, { paginas: 0, com_valor: 0, sem_valor: 0, dentro: 0, fora: 0 });
+    const mordeu = queixas.some((q) => mordida.test(q));
+    plantas.push({ nome, mordeu, queixa: queixas.find((q) => mordida.test(q)) ?? queixas[0] ?? null });
+    if (!mordeu) falhas.push(`A planta não mordeu: ${nome}${queixas.length ? ` (queixou-se de outra coisa: ${queixas[0]})` : ''}`);
+  }
+  /* As plantas do mapa da dívida (ID7, passagem P4-d): a legenda na forma antiga, e o teto do cabeçalho escrito à mão. */
+  for (const [nome, lang, estraga, mordida] of [
+    ['a legenda do mapa da dívida na forma antiga', 'pt', (r) => r.querySelector('[data-instrumento="mapa-por-concelho-indice"] .forma-mapa-unidade').set_content(`<span data-linha-campo="unit">${PALAVRAS.pt.antigaUnidade}</span>`), /ID7 · .*a legenda escreve a unidade antiga/],
+    ['o teto do cabeçalho da tabela escrito à mão', 'en', (r) => { const v = r.querySelector('[data-instrumento="mapa-por-concelho-indice"] thead [data-claim]'); v.replaceWith(`${TETO.value}`); }, /ID7 · .*o teto do cabeçalho não é a linha/],
+  ]) {
+    const r = parse(fs.readFileSync(path.join(DIST, LUGARES[lang]), 'utf8'));
+    estraga(r);
+    const queixas = confereMapa(r, lang, `planta: ${nome}`);
     const mordeu = queixas.some((q) => mordida.test(q));
     plantas.push({ nome, mordeu, queixa: queixas.find((q) => mordida.test(q)) ?? queixas[0] ?? null });
     if (!mordeu) falhas.push(`A planta não mordeu: ${nome}${queixas.length ? ` (queixou-se de outra coisa: ${queixas[0]})` : ''}`);
@@ -203,7 +251,7 @@ if (process.argv.includes('--prova')) {
 const relatorio = { contas, falhas, plantas, teto: { linha: TETO.id, valor: TETO.value, unidade: TETO.unit }, unidade_da_casa: MEDIDA.unidadeDaCasa };
 const j = process.argv.indexOf('--json');
 if (j >= 0) fs.writeFileSync(process.argv[j + 1], JSON.stringify(relatorio, null, 2) + '\n');
-console.log(`índice de dívida · ${contas.paginas} página(s) de concelho, ${contas.com_valor} com valor (${contas.dentro} dentro e ${contas.fora} fora do limite), ${contas.sem_valor} sem valor` +
+console.log(`índice de dívida · ${contas.paginas} página(s) de concelho, ${contas.com_valor} com valor (${contas.dentro} dentro e ${contas.fora} fora do limite), ${contas.sem_valor} sem valor · ${contas.mapas ?? 0} mapa(s) da dívida em «Lugares»` +
   (plantas.length ? ` · ${plantas.length} planta(s), ${plantas.filter((p) => p.mordeu).length} a morder` : ''));
 for (const p of plantas) console.log(`  ${p.mordeu ? 'mordeu' : 'NÃO MORDEU'} · ${p.nome}`);
 if (falhas.length) {

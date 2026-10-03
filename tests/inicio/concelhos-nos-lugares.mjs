@@ -30,9 +30,24 @@ export function conferirConcelhosNosLugares(dist, trocar = null) {
       const alvos = new Map(MUNICIPIOS_COM_PAGINA.map((m) => [m.slug, chave === 'indice' ? m.distancia.indice : m.relance.find((r) => r.claim?.includes('-ganho-medio-mensal-'))?.claim]));
       const unidades = [...new Set([...alvos.values()].map((id) => linha(id).unit))];
       const unidade = unidades.length === 1 ? unidadeDaLinha(unidades[0], lang).texto : null;
-      for (const seletor of ['thead [data-linha-campo="unit"]', '.forma-mapa-unidade [data-linha-campo="unit"]']) {
-        const campo = mapa.querySelector(seletor);
-        if (!unidade || normal(campo?.textContent) !== normal(unidade) || ![...alvos.values()].includes(campo?.getAttribute('data-linha-claim'))) erros.push(`N1M ${lang} ${chave}: a unidade do mapa ou da tabela não vem das linhas.`);
+      /* P4-d (02.10.2026): o mapa da dívida diz a unidade da casa do cartão do índice e o teto, na legenda e no
+         cabeçalho da tabela. A unidade é a declaração da medida, e o teto é a linha que a medida declara, com o valor, a
+         unidade e a marca dessa linha. O mapa dos ganhos continua com a unidade das suas linhas. */
+      const medidaDoMapa = MEDIDAS_DO_CONCELHO.find((m) => m.chave === chave);
+      if (medidaDoMapa?.unidadeDaCasa && medidaDoMapa?.tecto) {
+        const teto = linha(medidaDoMapa.tecto);
+        for (const seletor of ['thead th', '.forma-mapa-unidade']) {
+          const sitio = mapa.querySelectorAll(seletor).find((n) => n.querySelector('[data-unidade-da-casa-do-mapa]')) ?? mapa.querySelectorAll(seletor).find((n) => n.querySelector('[data-linha-campo="unit"]')) ?? null;
+          const casa = sitio?.querySelector(`[data-unidade-da-casa-do-mapa="${chave}"]`);
+          const valor = sitio?.querySelector('[data-claim]');
+          if (!casa || normal(casa.textContent) !== medidaDoMapa.unidadeDaCasa[lang] || sitio.querySelectorAll('[data-linha-campo="unit"]').length) erros.push(`N1M ${lang} ${chave}: a unidade do mapa ou da tabela não é a unidade da casa da medida.`);
+          if (!valor || valor.getAttribute('data-claim') !== teto.id || normal(valor.textContent) !== normal(teto.value) || normal(valor.parentNode?.querySelector('.claim-sufixo')?.textContent) !== unidadeDaLinha(teto.unit, lang).texto || sitio.querySelector('.src-chip')?.getAttribute('href') !== `${lang === 'pt' ? '/livro-razao' : '/en/ledger'}/${teto.id}`) erros.push(`N1M ${lang} ${chave}: o teto do mapa ou da tabela não é a linha do limite com o seu valor, a sua unidade e a sua marca.`);
+        }
+      } else {
+        for (const seletor of ['thead [data-linha-campo="unit"]', '.forma-mapa-unidade [data-linha-campo="unit"]']) {
+          const campo = mapa.querySelector(seletor);
+          if (!unidade || normal(campo?.textContent) !== normal(unidade) || ![...alvos.values()].includes(campo?.getAttribute('data-linha-claim'))) erros.push(`N1M ${lang} ${chave}: a unidade do mapa ou da tabela não vem das linhas.`);
+        }
       }
       const contexto = root.querySelector(`[data-contexto-municipal="${chave}"]`);
       const datas = chave === 'indice' ? recontagemDasCamaras(linha).datas : [...alvos.values()].map((id) => ({ id, periodo: linha(id).reference_date }));
@@ -82,7 +97,11 @@ export function conferirConcelhosNosLugares(dist, trocar = null) {
 export function plantasDosConcelhos(dist) {
   return [
     ['marca do mapa retirada', (r) => r.querySelector('[data-forma="mapa-por-concelho"]').removeAttribute('data-instrumento'), /^N1M pt indice: falta a marca/],
-    ['unidade da tabela retirada', (r) => r.querySelector('thead [data-linha-campo="unit"]').remove(), /^N1M pt indice: a unidade/],
+    /* P4-d: a unidade da tabela do mapa da dívida é a da casa; a planta tira-a desse mapa, e a da forma antiga põe-lhe de
+       volta a unidade da linha, «% (limite legal = 150)», no lugar da unidade e do teto da legenda. */
+    ['unidade da tabela retirada', (r) => r.querySelector('[data-instrumento="mapa-por-concelho-indice"] thead [data-unidade-da-casa-do-mapa]').remove(), /^N1M pt indice: a unidade/],
+    ['a legenda da dívida na forma antiga', (r) => r.querySelector('[data-instrumento="mapa-por-concelho-indice"] .forma-mapa-unidade').set_content('<span class="campo-valor" lang="pt-PT" data-linha-claim="agueda-indice-de-divida-2024" data-linha-campo="unit">% (limite legal = 150)</span>'), /^N1M pt indice: a unidade do mapa ou da tabela não é a unidade da casa/],
+    ['o teto da tabela escrito à mão', (r) => { const v = r.querySelector('[data-instrumento="mapa-por-concelho-indice"] thead [data-claim]'); v.replaceWith('150'); }, /^N1M pt indice: o teto do mapa ou da tabela/],
     ['unidade da legenda retirada', (r) => r.querySelector('[data-instrumento="mapa-por-concelho-ganho"] .forma-mapa-unidade').remove(), /^N1M pt ganho: a unidade/],
     ['base do limite retirada', (r) => r.querySelector('[data-camaras-base]').remove(), /^N1M pt: falta a base/],
     ['porta das câmaras para si própria', (r) => r.querySelector('[data-cartao-camaras]').insertAdjacentHTML('beforeend', '<a href="/lugares/">Os lugares →</a>'), /^V2 pt: o cartão das câmaras não leva porta/],

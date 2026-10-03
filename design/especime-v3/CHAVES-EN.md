@@ -1357,3 +1357,15 @@ isso o pequeno dos rótulos entra sem uma palavra nova em nenhuma das edições.
 | `camaras.dentro` · `camaras.sem` | « dentro do limite legal (» · «); » → « dentro do limite legal, que é » · «; » | « within the legal limit (» · «); » → « within the legal limit, which is » · «; » | o cartão «Câmaras com a dívida acima do limite legal» diz as mesmas palavras do cartão do índice, «dentro do limite legal, que é 150 %» |
 
 **A unidade da casa do índice de dívida** não é uma chave de `strings.mjs`: declara-se uma vez na medida, em `src/data/concelhos.mjs` (`unidadeDaCasa`: «% da receita de três anos» / «% of three-year revenue»), com o apoio que a derivação de cada linha tem de dizer (`apoioDaUnidadeDaCasa`: «média da receita corrente líquida dos três anos anteriores» / «three-year average of net current revenue»). A unidade da linha, «% (limite legal = 150)» / «% (legal cap = 150)», fica no recibo e no livro-razão.
+
+#### P4-d · a média na unidade, e o mapa da dívida com as palavras do cartão (02.10.2026)
+
+*A passagem P4-d. As cadeias abaixo foram lidas de `src/i18n/strings.mjs` e de `src/data/concelhos.mjs` na construção da passagem.*
+
+**Uma chave nova:**
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `estado.lei.oLimiteLegalE` | o limite legal é | the legal limit is | na legenda e no cabeçalho da tabela do mapa da dívida em «Lugares», seguida do teto lido da linha `indice-de-divida-limite-legal` («150 %»), com a sua marca |
+
+**A unidade da casa do índice de dívida muda de texto** (`unidadeDaCasa` em `src/data/concelhos.mjs`): «% da receita de três anos» → «% da receita média de três anos»; «% of three-year revenue» → «% of the three-year average revenue». A unidade de antes lia-se como a soma dos três anos, e o valor é sobre a média, que a derivação de cada linha e a dobra do cartão dizem. O apoio que o portão exige na derivação não muda.

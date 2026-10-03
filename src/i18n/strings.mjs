@@ -1265,6 +1265,9 @@ export const STRINGS = {
            palavras sozinhas ficam onde já estavam (as classes do mapa e a leitura do lugar). */
         foraQueE: 'fora do limite legal, que é',
         dentroQueE: 'dentro do limite legal, que é',
+        /* O TETO NA LEGENDA E NO CABEÇALHO DA TABELA DO MAPA DA DÍVIDA (passagem P4-d, 02.10.2026), com o 150 lido da
+           linha do limite. */
+        oLimiteLegalE: 'o limite legal é',
         rotulo: 'limite legal',
       },
       /* O limite de défice do saldo das administrações públicas. A frase é a da
@@ -3438,6 +3441,8 @@ export const STRINGS = {
         /* Ver a razão na edição portuguesa (passagem P4-c, 02.10.2026). */
         foraQueE: 'outside the legal limit, which is',
         dentroQueE: 'within the legal limit, which is',
+        /* Ver a razão na edição portuguesa (passagem P4-d, 02.10.2026). */
+        oLimiteLegalE: 'the legal limit is',
         rotulo: 'legal limit',
       },
       pacto: {

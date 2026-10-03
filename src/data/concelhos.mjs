@@ -188,8 +188,11 @@ export const MEDIDAS_DO_CONCELHO = [
        multiplica por 150, com o limite a 1,5 vezes essa média), e o cartão diz na unidade de que é a percentagem; o
        teto passa para a linha do estado, lido da linha do limite. A unidade da linha fica no recibo e no livro-razão,
        como o motor a escreve. O portão de HTML confere o texto contra esta declaração, só no cartão de uma linha desta
-       medida, e exige que a derivação da linha diga o apoio na mesma língua (`apoioDaUnidadeDaCasa`). */
-    unidadeDaCasa: { pt: '% da receita de três anos', en: '% of three-year revenue' },
+       medida, e exige que a derivação da linha diga o apoio na mesma língua (`apoioDaUnidadeDaCasa`).
+       A MÉDIA ENTRA NA UNIDADE (passagem P4-d, 02.10.2026): «% da receita de três anos» lia-se como a soma dos três
+       anos, e o valor é sobre a média; a unidade passa a dizê-lo, como a derivação e a dobra já diziam. O mapa da
+       dívida em «Lugares» diz a mesma unidade, na legenda e no cabeçalho da tabela. */
+    unidadeDaCasa: { pt: '% da receita média de três anos', en: '% of the three-year average revenue' },
     apoioDaUnidadeDaCasa: { pt: 'média da receita corrente líquida dos três anos anteriores', en: 'three-year average of net current revenue' },
     nota: {
       pt: ['A dívida em percentagem da média da receita corrente líquida cobrada nos três anos anteriores; a lei permite uma vez e meia essa média.'],

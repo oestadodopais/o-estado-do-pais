@@ -3751,7 +3751,7 @@ já declaradas aqui), e a descrição nova da página da União, que diz também
 
 ## P4-c · o cartão do índice de dívida diz de que é a percentagem e qual é o teto, 02.10.2026
 
-*A passagem P4-c, pela leitura do diretor de 02.10.2026 à noite na página de Évora: «105,5 % (limite legal = 150)» lia-se «105,5 % de 150». A unidade do cartão passa a ser a da casa, declarada na medida («% da receita de três anos», que é um dado e não uma frase: entra pela marca `data-unidade-da-casa` e o portão de HTML confere-a contra a declaração), e a linha do estado diz o teto, com o 150 lido da linha do limite.*
+*A passagem P4-c, pela leitura do diretor de 02.10.2026 à noite na página de Évora: «105,5 % (limite legal = 150)» lia-se «105,5 % de 150». A unidade do cartão passa a ser a da casa, declarada na medida («% da receita de três anos», desde a passagem P4-d «% da receita média de três anos»; é um dado e não uma frase: entra pela marca `data-unidade-da-casa` e o portão de HTML confere-a contra a declaração), e a linha do estado diz o teto, com o 150 lido da linha do limite.*
 
 | classe | texto | bloco | estado | razão |
 |---|---|---|---|---|
@@ -3761,3 +3761,16 @@ já declaradas aqui), e a descrição nova da página da União, que diz também
 | conteudo | outside the legal limit, which is | p4-c | viva | A mesma linha do estado na edição inglesa, nos concelhos cujo índice passa o teto (passagem P4-c, 02.10.2026). |
 | conteudo | de câmaras; dentro do limite legal, que é % ; sem valor publicado | p4-c | viva | O cartão «Câmaras com a dívida acima do limite legal», na página «Lugares», com as palavras do cartão do índice de dívida (passagem P4-c, 02.10.2026); as contagens e o limite, que a régua da voz tira antes de comparar, são conferidos pela V2 do `check:pais` contra as linhas, e a célula ID6 confere as palavras. |
 | conteudo | of councils; within the legal limit, which is % ; with no published value | p4-c | viva | A mesma frase na edição inglesa (passagem P4-c, 02.10.2026). |
+
+## P4-d · a média na unidade, e o mapa da dívida com as palavras do cartão, 02.10.2026
+
+*A passagem P4-d: a unidade da casa do índice de dívida passa a «% da receita média de três anos» / «% of the three-year average revenue», e o mapa da dívida em «Lugares» diz, na legenda e no cabeçalho da tabela, essa unidade e o teto, com o 150 lido da linha do limite e a sua marca. A unidade e o teto saem dos blocos abaixo quando a régua da voz os lê (a unidade é a declaração da medida, que o portão de HTML confere pela marca `data-unidade-da-casa-do-mapa`; o 150 é um valor selado), e por isso as linhas ficam com o que sobra deles.*
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | o limite legal é | p4-d | viva | Na legenda e no cabeçalho da tabela do mapa da dívida em «Lugares», seguida do teto lido da linha `indice-de-divida-limite-legal`, com a sua marca (passagem P4-d, 02.10.2026). A célula ID7 de `tests/municipio/indice-de-divida.mjs` e a N1M de `tests/inicio/concelhos-nos-lugares.mjs` conferem a palavra, a unidade e o teto nas duas edições. |
+| conteudo | the legal limit is | p4-d | viva | A mesma palavra na edição inglesa (passagem P4-d, 02.10.2026). |
+| conteudo | % da receita média de três anos · o limite legal é % | p4-d | viva | A legenda do mapa da dívida em «Lugares»: a unidade do cartão do índice de dívida e o teto, que a régua da voz lê como um bloco, sem o 150 (passagem P4-d, 02.10.2026). |
+| conteudo | % of the three-year average revenue · the legal limit is % | p4-d | viva | A mesma legenda na edição inglesa (passagem P4-d, 02.10.2026). |
+| conteudo | Valor ( % da receita média de três anos ; o limite legal é % ) | p4-d | viva | O cabeçalho da coluna dos valores na tabela do mapa da dívida em «Lugares», com a unidade e o teto do cartão, que a régua da voz lê sem o 150 (passagem P4-d, 02.10.2026). |
+| conteudo | Value ( % of the three-year average revenue ; the legal limit is % ) | p4-d | viva | O mesmo cabeçalho na edição inglesa (passagem P4-d, 02.10.2026). |

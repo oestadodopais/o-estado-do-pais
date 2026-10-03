@@ -390,3 +390,16 @@ planta('p4c-recibo-sem-a-porta-do-teto','tests/cartao/cartao.mjs',[
 planta('p4c-camaras-palavras-de-antes','scripts/check-pais.mjs',[
  ['lugares/index.html',r=>{const c=r.querySelector('[data-cartao-camaras] [data-camaras-regua]');c.set_content(c.innerHTML.replace('dentro do limite legal, que é ','dentro do limite legal (').replace('; <span data-prova="camaras_sem_valor"',') ; <span data-prova="camaras_sem_valor"'));}]
 ],[/V2 pt: a régua difere das contagens e do limite lidos nas linhas/]);
+/* P4-d (02.10.2026): a média entra na unidade do cartão do índice de dívida, «% da receita média de três anos», e o mapa da
+   dívida em «Lugares» diz a mesma unidade e o teto na legenda e no cabeçalho da tabela. A unidade de antes da média no
+   cartão, a unidade antiga da linha na legenda do mapa e a unidade do mapa posta fora da legenda têm de morder no
+   portão de HTML. */
+planta('p4d-unidade-sem-a-media','scripts/gate-html.mjs',[
+ ['municipios/evora/index.html',r=>r.querySelector('[data-cartao-medida="evora-indice-de-divida-2024"] [data-unidade-da-casa]').set_content('% da receita de três anos')]
+],[/P4-c: a unidade da casa de "evora-indice-de-divida-2024" diz «% da receita de três anos»/]);
+planta('p4d-mapa-unidade-antiga','scripts/gate-html.mjs',[
+ ['lugares/index.html',r=>r.querySelector('[data-instrumento="mapa-por-concelho-indice"] .forma-mapa-unidade [data-unidade-da-casa-do-mapa]').set_content('% (limite legal = 150)')]
+],[/P4-d: a unidade da casa do mapa «indice» diz «% \(limite legal = 150\)»/]);
+planta('p4d-mapa-unidade-fora-da-legenda','scripts/gate-html.mjs',[
+ ['en/places/index.html',r=>r.querySelector('[data-contexto-municipal="indice"]').insertAdjacentHTML('beforeend','<span data-unidade-da-casa-do-mapa="indice">% of the three-year average revenue</span>')]
+],[/P4-d: a unidade da casa do mapa «indice» está fora da legenda ou do cabeçalho da tabela/]);
