@@ -441,4 +441,9 @@ planta('s1-voz-language-de-volta','scripts/check-voz.mjs',[
 planta('s1-voz-nota-mudada-com-language','scripts/check-voz.mjs',[
  ['en/suggestions/index.html',r=>{const n=r.querySelector('[data-sugestoes-nota]');n.set_content(n.innerHTML.replace('ninety days','sixty days'));}]
 ],[/FRASE RETIRADA QUE VOLTOU A RENDER-SE/]);
+/* S1-b (03.10.2026): a página do limite dizia «na última hora», e a frase saiu (o achado 6 da leitura a frio do Sol).
+   Se voltar, a sentinela das frases retiradas tem de a morder. `--prefixo s1b-` corre só esta. */
+planta('s1b-limite-antigo-de-volta','scripts/check-voz.mjs',[
+ ['sugestoes/limite/index.html',r=>r.querySelector('[data-sugestoes-resultado="limite"]').set_content('Chegaram cinco sugestões deste endereço na última hora. Volte mais tarde.')]
+],[/FRASE RETIRADA QUE VOLTOU A RENDER-SE/,/na última hora/]);
 
