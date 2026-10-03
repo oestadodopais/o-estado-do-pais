@@ -1,0 +1,50 @@
+[
+  {
+    "nome": "p4d-unidade-sem-a-media",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "P4-c: a unidade da casa de \"evora-indice-de-divida-2024\" diz «% da receita de três anos»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/evora/index.html",
+        "antes": "0365f43e08a49b07c8bb8eb80cae87f6b084a1d6e40faf1c9c8996bf5cfdcc7c",
+        "reposto": "0365f43e08a49b07c8bb8eb80cae87f6b084a1d6e40faf1c9c8996bf5cfdcc7c"
+      }
+    ]
+  },
+  {
+    "nome": "p4d-mapa-unidade-antiga",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "P4-d: a unidade da casa do mapa «indice» diz «% \\(limite legal = 150\\)»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/lugares/index.html",
+        "antes": "61f87ceca025b3ee248ef6614a3f226ee2888c6ae7cd57843ccbecbfdd40563b",
+        "reposto": "61f87ceca025b3ee248ef6614a3f226ee2888c6ae7cd57843ccbecbfdd40563b"
+      }
+    ]
+  },
+  {
+    "nome": "p4d-mapa-unidade-fora-da-legenda",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "P4-d: a unidade da casa do mapa «indice» está fora da legenda ou do cabeçalho da tabela"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/places/index.html",
+        "antes": "a0ca028c98e03359d54553f7355cddb924f8efb361acf6b10e2e4f7bdb0746e8",
+        "reposto": "a0ca028c98e03359d54553f7355cddb924f8efb361acf6b10e2e4f7bdb0746e8"
+      }
+    ]
+  }
+]

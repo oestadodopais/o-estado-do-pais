@@ -67,7 +67,10 @@ const entrada = ENTRADAS.find((e) => e.id === 'lugares');
         <span data-definicao-municipal><Frase partes={contextos[chave].definicao} lang={lang} /></span>
         {contextos[chave].nacional && <span data-referencia-portugal>{' Portugal: '}<Claim id={contextos[chave].nacional.id} lang={lang} chip sufixo={`\u00a0${contextos[chave].unidade}`} />.</span>}
       </p>
-      <MapaPorConcelho s={s} lang={lang} mapa={mapa} paleta={paleta} rotulos={rotulos} rota={(slug) => routePath('municipio', lang, { slug })} nomeada={`k-${medida.chave.toLowerCase()}`} chave={chave} />
+      {/* P4-d (02.10.2026): o mapa da dívida diz, na legenda e no cabeçalho da tabela, a unidade da casa e o teto do
+          cartão do índice de dívida, lidos da declaração da medida e da linha do limite. O mapa dos ganhos não declara
+          unidade da casa, e continua com a unidade das suas linhas. */}
+      <MapaPorConcelho s={s} lang={lang} mapa={mapa} paleta={paleta} rotulos={rotulos} rota={(slug) => routePath('municipio', lang, { slug })} nomeada={`k-${medida.chave.toLowerCase()}`} chave={chave} unidadeDaCasa={MEDIDAS_DO_CONCELHO.find((m) => m.chave === chave)?.unidadeDaCasa ?? null} tecto={MEDIDAS_DO_CONCELHO.find((m) => m.chave === chave)?.tecto ?? null} />
     </article>
   ))}
   {AUSENCIAS_DO_DOMINIO_1.map((a) => (

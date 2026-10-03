@@ -75,7 +75,7 @@ import { unidadeDaLinha } from '../../i18n/unidades.mjs';
    de portas, não de uma porta ao lado. Cada NOME da tabela passa a ser a porta da
    página daquele concelho, que é onde as outras linhas dele vivem (§1 do brief, a
    linha dos 308 concelhos). */
-const { s, lang, mapa, paleta = 'escala', rotulos, nomeada, chave, rota } = Astro.props;
+const { s, lang, mapa, paleta = 'escala', rotulos, nomeada, chave, rota, unidadeDaCasa = null, tecto = null } = Astro.props;
 if (typeof rota !== 'function') {
   throw new Error(
     '<MapaPorConcelho> sem "rota": cada nome da tabela é a porta da página do seu ' +
@@ -97,6 +97,14 @@ if (!fontesDaUnidade.length || new Set(fontesDaUnidade.map((c) => c.unit)).size 
 }
 const linhaDaUnidade = fontesDaUnidade[0];
 const unidade = unidadeDaLinha(linhaDaUnidade.unit, lang);
+/* A UNIDADE DA CASA E O TETO NO MAPA DA DÍVIDA (passagem P4-d, 02.10.2026). Onde a medida declara a unidade da casa e
+   o teto (o índice de dívida), a legenda e o cabeçalho da tabela dizem as palavras do cartão: «% da receita média de
+   três anos · o limite legal é 150 %», com o 150 lido da linha do teto por <Claim/>, com a sua marca. A marca
+   `data-unidade-da-casa-do-mapa` entra no portão de HTML por uma porta estreita: só neste mapa, só na legenda ou no
+   cabeçalho, com o texto da declaração, e com cada linha da tabela a dizer o apoio na sua derivação. */
+const casa = unidadeDaCasa?.[lang] ?? null;
+const linhaDoTeto = casa && tecto ? getClaim(tecto) : null;
+const unidadeDoTeto = linhaDoTeto ? unidadeDaLinha(linhaDoTeto.unit ?? '', lang).texto : null;
 ---
 
 <figure class="forma forma-mapa" data-instrumento={`mapa-por-concelho-${chave}`} data-forma="mapa-por-concelho">
@@ -136,7 +144,11 @@ const unidade = unidadeDaLinha(linhaDaUnidade.unit, lang);
     {/* A ESCALA, COM OS CORTES ESCRITOS. Cada corte é uma marca de régua e vai
         debaixo do seu motivo declarado; o rótulo de cada classe é uma palavra da
         edição e não um número. */}
-    <p class="forma-mapa-unidade"><CampoDaLinha id={linhaDaUnidade.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} /></p>
+    {linhaDoTeto ? (
+      <p class="forma-mapa-unidade"><span data-unidade-da-casa-do-mapa={chave}>{casa}</span>{' · '}<span data-voz>{s.estado.lei.oLimiteLegalE}</span>{' '}<Claim id={linhaDoTeto.id} lang={lang} chip={true} sufixo={` ${unidadeDoTeto}`} /></p>
+    ) : (
+      <p class="forma-mapa-unidade"><CampoDaLinha id={linhaDaUnidade.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} /></p>
+    )}
     <ul class="forma-mapa-escala">
       {
         rotulos.map((partes, i) => (
@@ -171,7 +183,11 @@ const unidade = unidadeDaLinha(linhaDaUnidade.unit, lang);
         <thead>
           <tr>
             <th scope="col">{s.dominios.mapaTabelaConcelho}</th>
-            <th scope="col">{s.dominios.mapaTabelaValor} (<CampoDaLinha id={linhaDaUnidade.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} />)</th>
+            {linhaDoTeto ? (
+              <th scope="col">{s.dominios.mapaTabelaValor} (<span data-unidade-da-casa-do-mapa={chave}>{casa}</span>{'; '}<span data-voz>{s.estado.lei.oLimiteLegalE}</span>{' '}<Claim id={linhaDoTeto.id} lang={lang} chip={true} sufixo={` ${unidadeDoTeto}`} />)</th>
+            ) : (
+              <th scope="col">{s.dominios.mapaTabelaValor} (<CampoDaLinha id={linhaDaUnidade.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} />)</th>
+            )}
           </tr>
         </thead>
         <tbody>

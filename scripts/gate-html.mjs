@@ -567,7 +567,7 @@ const UE1D = { definicoes: 0 };
    recibo da série, e as formas declaradas. */
 const UE1E = { semPortugal: 0, formaDaSerie: 0, formasDeclaradas: 0 };
 /* K2-c: as unidades da casa vistas nos cartões (a conta que o fim da corrida exige diferente de zero). */
-const UNIDADES_DA_CASA = { vistas: 0, doConcelho: 0 };
+const UNIDADES_DA_CASA = { vistas: 0, doConcelho: 0, doMapa: 0 };
 /* O TETO DO ÍNDICE DE DÍVIDA (passagem P4-c, 02.10.2026): a linha que a medida do concelho declara como teto, lida da
    declaração; o cartão do índice mostra-a na linha do estado, sem marca própria, e só ela entra por essa porta. */
 const TETO_DO_INDICE = MEDIDAS_DO_CONCELHO.find((m) => m.chave === 'indice')?.tecto ?? null;
@@ -6244,6 +6244,41 @@ for (const file of ficheirosHtml(DIST)) {
     }
   }
 
+  /* --- a unidade da casa no mapa da dívida em «Lugares» (passagem P4-d, 02.10.2026) ---
+     A legenda e o cabeçalho da tabela do mapa do índice de dívida dizem a unidade do cartão («% da receita média de três
+     anos») e o teto, este por <Claim/> com a sua marca. A unidade entra por uma porta estreita: só na rota «Lugares»,
+     só dentro do mapa da sua medida, só na legenda da unidade ou no cabeçalho da tabela, com o texto da declaração
+     carácter a carácter, e com cada linha da tabela desse mapa a dizer o apoio na sua derivação, na língua da página. */
+  for (const el of body.querySelectorAll('[data-unidade-da-casa-do-mapa]')) {
+    UNIDADES_DA_CASA.doMapa++;
+    const lang = linguaPagina === 'en' ? 'en' : 'pt';
+    const chaveDoMapa = el.getAttribute('data-unidade-da-casa-do-mapa') ?? '';
+    const medida = MEDIDAS_DO_CONCELHO.find((m) => m.chave === chaveDoMapa);
+    const declarada = medida?.unidadeDaCasa?.[lang] ?? null;
+    const apoio = medida?.apoioDaUnidadeDaCasa?.[lang] ?? null;
+    const mapaDaCasa = el.closest?.('[data-forma="mapa-por-concelho"]') ?? null;
+    const noSitio = (el.closest?.('thead') ?? null) !== null || (el.closest?.('.forma-mapa-unidade') ?? null) !== null;
+    if (rota?.key !== 'lugares' || mapaDaCasa === null || mapaDaCasa.getAttribute('data-instrumento') !== `mapa-por-concelho-${chaveDoMapa}` || !noSitio) {
+      err(`P4-d: a unidade da casa do mapa «${chaveDoMapa}» está fora da legenda ou do cabeçalho da tabela do mapa dessa medida em «Lugares».`);
+      continue;
+    }
+    if (typeof declarada !== 'string' || typeof apoio !== 'string') {
+      err(`P4-d: a unidade da casa do mapa diz ser da medida «${chaveDoMapa}», e a medida não declara unidade da casa e apoio em ${lang}.`);
+      continue;
+    }
+    const textoDoMapa = normalizeWhitespace(decodeEntities(textoDe(el)));
+    if (textoDoMapa !== declarada) err(`P4-d: a unidade da casa do mapa «${chaveDoMapa}» diz «${textoDoMapa}» e a medida declara «${declarada}» (${lang}).`);
+    const idsDoMapa = mapaDaCasa.querySelectorAll('tbody [data-claim]').map((n) => n.getAttribute('data-claim'));
+    const semApoio = idsDoMapa.filter((x) => {
+      const l = claims.get(x);
+      const d = lang === 'en' ? l?.derivation_en : l?.derivation;
+      return typeof d !== 'string' || !d.includes(apoio);
+    });
+    if (!idsDoMapa.length || semApoio.length) {
+      err(`P4-d: a unidade da casa do mapa «${chaveDoMapa}» não tem apoio na tabela: ${idsDoMapa.length ? `${semApoio.length} linha(s) sem «${apoio}» na derivação (${semApoio.slice(0, 3).join(', ')})` : 'a tabela não tem linhas'}.`);
+    }
+  }
+
   /* --- os campos de uma linha do livro-razão, na página dessa linha --- */
   /**
    * O CAMINHO DO CABEÇALHO É UMA LISTA DE NOMES (F1.10, §2.5, 09.09.2026).
@@ -8565,6 +8600,10 @@ for (const [id] of SERIES_DO_PORTAO) {
    e da área do trabalho; uma corrida que não veja nenhuma deixou de conferir o que diz conferir. */
 if (UNIDADES_DA_CASA.vistas === 0) {
   erros.push({ rel: 'dist', msg: 'K2-c: nenhuma unidade da casa vista em página nenhuma, e a definição da diferença de emprego entre sexos declara uma: o leitor está cego.' });
+}
+/* P4-d: o mapa da dívida em «Lugares» diz a unidade da casa na legenda e no cabeçalho da tabela, nas duas edições. */
+if (UNIDADES_DA_CASA.doMapa !== 4) {
+  erros.push({ rel: 'dist', msg: `P4-d: o mapa da dívida devia dizer a unidade da casa 4 vezes (a legenda e o cabeçalho da tabela, nas duas edições de «Lugares»), e diz ${UNIDADES_DA_CASA.doMapa}.` });
 }
 /* P4-c: o cartão do índice de dívida mostra a unidade da casa nas páginas dos concelhos, nas duas edições. */
 if (UNIDADES_DA_CASA.doConcelho === 0) {
