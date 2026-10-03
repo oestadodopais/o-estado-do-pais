@@ -8,8 +8,9 @@
 - **A nota** é o texto aprovado, à letra, nas duas línguas, e o comentário do ficheiro diz «texto aprovado pelo diretor a 03.10.2026 (§1.154)». O portão das regras não mordeu em número nenhum. «alojam este sítio» / «host this site» acordava o arame da voz: uma exceção de contexto só na rota da caixa, com a planta de «este sítio» noutra frase; a dispensa de «language» passou ao texto novo.
 - **A recusa do Método** nas duas edições e no §6 da política da autonomia, com a data. A amarra das decisões governa só o Sobre e o Método (`src/data/sobre.mjs`, `src/data/metodo.mjs`): nenhum ficheiro tocado está nela, e por isso não há resumo a pedir para a §1.154, e os portões correram inteiros.
 - **Plantas**: as duas da célula; cinco novas sobre o `dist/` (o contacto de volta no portão e na sentinela, a nota com outra palavra, «este sítio» fora da nota, a recusa mudada), e outra vez as dez do S1 e a da S1-b, todas a morder.
-- **Capturas**: o formulário a 390 e a 1 280 px, nas duas edições, com o prefixo `s1c-`.
-- **Portões**: a corrida final na cabeça do relatório, com os códigos em `portoes-c/`, no último commit.
+- **Capturas**: o formulário a 390 e a 1 280 px, nas duas edições, com o prefixo `s1c-`: 4 imagens e 0 problemas.
+- **Portões**: `build` 0, `verify` 0 e `typecheck` 0 na cabeça `b0b93695`, lidos de `portoes-c/`.
+- **Custo da passagem**: 288 689 símbolos e 3 996 segundos de parede, das duas leituras em ficheiro.
 - **Por fazer**: a §1.154, que é do lugar de direção; a prova contra a base real depois de aterrar; a hora no procedimento da caixa; o nome da equipa na história do ramo; a leitura a frio das passagens; o que o S1 deixou.
 
 
