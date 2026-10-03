@@ -599,4 +599,5 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | s1-b | 2 cadeias novas, 2 retiradas | por ler | Claude Opus 5.5, construtor da passagem S1-b: as duas frases da página do limite («numa hora» / «within one hour», no texto do lugar de direção) entram, e as duas que o S1 tinha acrescentado («na última hora» / «in the last hour») passam a retiradas, com a razão: a janela da marca começa no primeiro envio (o achado 6 da leitura a frio do Sol). |
+| s1-c | 4 cadeias novas, 4 retiradas | por ler | Claude Opus 5.5, construtor da passagem S1-c, 03.10.2026: a nota do que fica guardado no texto aprovado pelo diretor (§1.154) e a quinta recusa do Método no texto dele, nas duas línguas, entram; o rótulo do contacto e a nota antiga, nas duas línguas, passam a retirados, com a razão: o campo do contacto saiu do formulário e a nota mudou por decisão do diretor. |
 

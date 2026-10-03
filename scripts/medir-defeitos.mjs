@@ -1537,29 +1537,42 @@ for (const frases of frasesDaVozPorRota.values()) for (const t of frases) rendid
  */
 const escapaParaRe = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /**
- * UMA RETIRADA DENTRO DE UMA FRASE DECLARADA, E SÓ DESSA (bloco S1, 02.10.2026).
+ * UMA RETIRADA DENTRO DE UMA FRASE DECLARADA, E SÓ DESSA (bloco S1, 02.10.2026; o texto da passagem S1-c,
+ * 03.10.2026).
  *
  * «Language» saiu da mobília com a segunda porta da língua (B1, peça 3), e a
  * sentinela procura-a por palavra inteira e sem maiúsculas em todo o texto
  * rendido. A nota do que fica guardado da caixa das sugestões, na edição
- * inglesa, diz «the language» no meio de uma frase, e é o texto do brief à letra
- * (§5.4 do brief S1), que o construtor não muda. A dispensa é para ESSA frase
- * inteira, tal como a régua a lê, e para mais nenhuma: a palavra sozinha, noutra
- * frase, ou nesta frase com uma palavra mudada, continua a morder, e a planta
- * `s1-voz-language-de-volta` (`tests/pais/portoes.mjs`) prova-o. Se a nota
- * mudar, a dispensa deixa de casar e a sentinela volta a morder, que é o que
- * obriga quem a mudar a passar por aqui.
+ * inglesa, diz «the language» no meio de uma frase, e é o texto aprovado pelo
+ * diretor a 03.10.2026 (§1.154), à letra, que o construtor não muda. A dispensa
+ * é para ESSA frase inteira, tal como a régua a lê (com o apóstrofo e as aspas
+ * escapados pelo Astro), e para mais nenhuma: a palavra sozinha, noutra frase,
+ * ou nesta frase com uma palavra mudada, continua a morder, e as plantas
+ * `s1-voz-language-de-volta` e `s1-voz-nota-mudada-com-language`
+ * (`tests/pais/portoes.mjs`) provam-no. Se a nota mudar, a dispensa deixa de
+ * casar e a sentinela volta a morder, que é o que obriga quem a mudar a passar
+ * por aqui.
  */
-const NOTA_INGLESA_DA_CAIXA =
-  'What is kept: what you write, the language, the page you came from and, if you leave it, the contact. ' +
-  'The IP address is not kept: an encrypted mark of it stays for one hour, only to stop mass sending. ' +
-  'The data is held on servers in the European Union. A decided suggestion is deleted after ninety days; ' +
-  'an undecided one after a year. The contact is used only to reply. To know what you sent or to ask for ' +
-  'it to be deleted, write to';
+const NOTA_INGLESA_DA_CAIXA_ANTES_DO_ENDERECO =
+  'What is kept: what you write, the language and the page you came from. The IP address is not kept: a salted ' +
+  'hash of it stays for one hour, only to stop mass sending, and is then deleted. The data is held on servers in ' +
+  'the European Union, in the two services that host this site and the box (Vercel and Supabase), which process ' +
+  'it on the project&#39;s behalf. It is kept because you sent it: by pressing &quot;Send the suggestion&quot; you ' +
+  'accept that it is kept for this purpose. A decided suggestion is deleted after ninety days; an undecided one ' +
+  'after a year. The project&#39;s direction is responsible for this processing, at';
+const NOTA_INGLESA_DA_CAIXA_DEPOIS_DO_ENDERECO =
+  'To know what you sent, to correct it or to ask for it to be deleted, write to that address; you may also ' +
+  'complain to the Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt).';
 /* As duas leituras da mesma frase: a da medida 8, com o endereço da ligação, e a da medida 9, que lê o texto
    fora das ligações e por isso o perde. As duas são a mesma nota, e só a nota. */
 const RETIRADAS_DENTRO_DE_FRASE = new Map([
-  ['Language', new Set([`${NOTA_INGLESA_DA_CAIXA} correcoes@oestadodopais.pt .`, `${NOTA_INGLESA_DA_CAIXA} .`])],
+  [
+    'Language',
+    new Set([
+      `${NOTA_INGLESA_DA_CAIXA_ANTES_DO_ENDERECO} correcoes@oestadodopais.pt . ${NOTA_INGLESA_DA_CAIXA_DEPOIS_DO_ENDERECO}`,
+      `${NOTA_INGLESA_DA_CAIXA_ANTES_DO_ENDERECO} . ${NOTA_INGLESA_DA_CAIXA_DEPOIS_DO_ENDERECO}`,
+    ]),
+  ],
 ]);
 function ondeVolta(frase) {
   const re = new RegExp(`(?<![\\p{L}\\p{N}])${escapaParaRe(frase)}(?![\\p{L}\\p{N}])`, 'iu');
