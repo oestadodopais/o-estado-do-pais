@@ -142,7 +142,12 @@ const TIPOS_ORIGEM = path.join(RAIZ, 'public', 'tipos');
  * escrito para que essa decisão não seja uma surpresa.
  */
 /** O maior cartão medido, em KiB, e a corrida que o mediu. */
-const MAIOR_CARTAO_MEDIDO_KIB = 542.5; // o índice do livro-razão, 16.09.2026, ramo `porta-2026-09-15`
+/* A CATRACA MEXEU A 03.10.2026 (o S1, a caixa das sugestões): o cartão do índice do livro-razão mediu 596,8 KiB na corrida
+   dos portões da cabeça rebaseada `35a12e15` (o `verify` do S1), 0,05 KiB acima do tecto de 542,5 + 10 %, porque o índice
+   tem hoje 3 009 linhas e cada página leva a porta nova das sugestões no rodapé. O número medido passa ao de hoje, como a
+   regra acima manda, com a data e a corrida ao lado. Fica escrito o que a regra também diz: o dia em que este número voltar
+   a bater é o dia de o cartão passar a ser um recorte do índice, e não o índice inteiro. */
+const MAIOR_CARTAO_MEDIDO_KIB = 596.8; // o índice do livro-razão, 03.10.2026, o verify do S1 na cabeça `35a12e15` (antes 542,5 a 16.09.2026, ramo `porta-2026-09-15`)
 /** A margem escrita por cima do medido. */
 const MARGEM_DO_TECTO = 0.1;
 const LIMITE_BYTES = Math.round(MAIOR_CARTAO_MEDIDO_KIB * (1 + MARGEM_DO_TECTO) * 1024);
