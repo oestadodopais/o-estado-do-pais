@@ -1,6 +1,17 @@
-# Resposta do construtor do S1, com a passagem S1-b
+# Resposta do construtor do S1, com as passagens S1-b e S1-c
 
-*Claude Opus 5.5 (a definição `construtor`), ramo `s1-2026-10-02`: o S1 a 02.10.2026 e a passagem S1-b a 03.10.2026. O relatório inteiro é `LEIA-ME.md`, na mesma pasta, com a secção «S1-b» no fim; os números da passagem estão em `medidas.json` (prefixo `s1b_`) e os do S1 em `medidas-s1.json`. Sem travessões.*
+*Claude Opus 5.5 (a definição `construtor`), ramo `s1-2026-10-02`: o S1 a 02.10.2026 e as passagens S1-b e S1-c a 03.10.2026. O relatório inteiro é `LEIA-ME.md`, na mesma pasta, com as secções «S1-b» e «S1-c» no fim; os números da S1-c estão em `medidas.json` (prefixo `s1c_`), os da S1-b em `medidas-s1b.json` (prefixo `s1b_`) e os do S1 em `medidas-s1.json`. Sem travessões.*
+
+## A passagem S1-c
+
+- **O contacto sai** do formulário nas duas edições, dos textos (o rótulo deixa de existir e fica retirado no inventário), da tabela dos limites, da função (`p_contacto` vai sempre `null`; a base fica como está), do procedimento da caixa (as frases do contacto e da resposta por correio saem) e das capturas. O portão de HTML recusa um contacto no formulário pelo nome; a célula prova, com um caso novo, duas conferências em todos os casos e duas plantas, que nada do que o leitor escreva num campo `contacto` chega à base.
+- **A nota** é o texto aprovado, à letra, nas duas línguas, e o comentário do ficheiro diz «texto aprovado pelo diretor a 03.10.2026 (§1.154)». O portão das regras não mordeu em número nenhum. «alojam este sítio» / «host this site» acordava o arame da voz: uma exceção de contexto só na rota da caixa, com a planta de «este sítio» noutra frase; a dispensa de «language» passou ao texto novo.
+- **A recusa do Método** nas duas edições e no §6 da política da autonomia, com a data. A amarra das decisões governa só o Sobre e o Método (`src/data/sobre.mjs`, `src/data/metodo.mjs`): nenhum ficheiro tocado está nela, e por isso não há resumo a pedir para a §1.154, e os portões correram inteiros.
+- **Plantas**: as duas da célula; cinco novas sobre o `dist/` (o contacto de volta no portão e na sentinela, a nota com outra palavra, «este sítio» fora da nota, a recusa mudada), e outra vez as dez do S1 e a da S1-b, todas a morder.
+- **Capturas**: o formulário a 390 e a 1 280 px, nas duas edições, com o prefixo `s1c-`.
+- **Portões**: a corrida final na cabeça do relatório, com os códigos em `portoes-c/`, no último commit.
+- **Por fazer**: a §1.154, que é do lugar de direção; a prova contra a base real depois de aterrar; a hora no procedimento da caixa; o nome da equipa na história do ramo; a leitura a frio das passagens; o que o S1 deixou.
+
 
 ## A passagem S1-b
 

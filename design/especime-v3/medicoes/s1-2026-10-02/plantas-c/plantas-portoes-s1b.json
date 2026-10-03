@@ -1,0 +1,19 @@
+[
+  {
+    "nome": "s1b-limite-antigo-de-volta",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "FRASE RETIRADA QUE VOLTOU A RENDER-SE",
+      "na última hora"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/sugestoes/limite/index.html",
+        "antes": "ae5d8ab628ad9c38988ffa1a3785d772e03672a02f920d241878c17e0133fef0",
+        "reposto": "ae5d8ab628ad9c38988ffa1a3785d772e03672a02f920d241878c17e0133fef0"
+      }
+    ]
+  }
+]
