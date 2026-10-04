@@ -1,0 +1,79 @@
+{
+  "brief": "design/observatorio/BRIEF-OE1-o-dinheiro-do-estado-por-ministerio.md",
+  "guiao": "design/observatorio/medidas/BRIEF-OE1.py",
+  "cabeca_lida": "1c4dde2f",
+  "medidas": [
+    {
+      "nome": "linhas_do_livro",
+      "valor": 3009,
+      "comando": "git ls-tree -r 1c4dde2f:ledger/claims · os .yml",
+      "conhecido_positivo": {
+        "o_que": "a da dívida pública de 2025 é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_da_entidade_orcamental",
+      "valor": 0,
+      "comando": "as linhas cuja fonte ou endereço é a Entidade Orçamental ou a antiga DGO",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha a DGAL nas linhas das câmaras",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_da_despesa_por_funcao_do_eurostat",
+      "valor": 0,
+      "comando": "as linhas que citam o conjunto gov_10a_exp ou a classificação das funções",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha as linhas do défice e da dívida do Eurostat",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_saldo_das_administracoes_publicas",
+      "valor": 3,
+      "comando": "os ids que começam por saldo-das-administracoes-publicas",
+      "conhecido_positivo": {
+        "o_que": "a de 2025 é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_da_divida_publica",
+      "valor": 5,
+      "comando": "os ids que começam por divida-publica",
+      "conhecido_positivo": {
+        "o_que": "a de 2025 na notificação do INE é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_fonte_no_dados_gov",
+      "valor": 5,
+      "comando": "as linhas cujo endereço da fonte é no dados.gov.pt",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha endereços do Eurostat",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "areas_do_governo_declaradas",
+      "valor": 9,
+      "comando": "git show 1c4dde2f:src/data/areas.mjs · as entradas com slug",
+      "conhecido_positivo": {
+        "o_que": "as finanças são uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_orcamento_de_evora",
+      "valor": 1,
+      "comando": "os ids com evora-orcamento",
+      "conhecido_positivo": {
+        "o_que": "a de 2025",
+        "encontrado": true
+      }
+    }
+  ]
+}
