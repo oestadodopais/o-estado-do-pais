@@ -11,6 +11,7 @@
  * estrago plantado tem de se ver no código de saída.
  *
  *   node tests/livro/indice.mjs
+ *   node tests/livro/indice.mjs --prova                     (localizadores, em memória)
  *   node tests/livro/indice.mjs --json <ficheiro>
  *   node tests/livro/indice.mjs --contra <ficheiro.json>   (I10: o antes)
  *   node tests/livro/indice.mjs --navegador                (I3b e I7, rápidas)
@@ -196,7 +197,7 @@ const LINHAS_DA_REGUA = loadClaims();
  *
  * A LISTA É FECHADA e está escrita aqui à mão, com a forma de cada localizador,
  * porque uma régua que a importasse do motor confirmava o motor e não o sítio.
- * As quatro formas são as que os leitores da casa produzem, e mais nenhuma:
+ * As quatro formas iniciais são as que os leitores da casa produziam:
  *
  *   `IndicadorDsg`                    a chave da designação do indicador na
  *                                     resposta do `json_indicador` do INE
@@ -219,6 +220,43 @@ const LINHAS_DA_REGUA = loadClaims();
  * @type {{ nome: string, forma: RegExp, onde: string }[]}
  */
 const LOCALIZADORES_CONHECIDOS = [
+  // OE1: localizadores escritos pelos leitores nomeados em cada entrada.
+  // A lista continua fechada; os quatro formatos anteriores permanecem iguais.
+  {
+    nome: 'dimension.cofog99.category.label.GFnn',
+    forma: /^dimension\.cofog99\.category\.label\.GF(?:0[1-9]|10)$/,
+    onde: 'publisher/oe1_eurostat.py: rótulo da função na resposta JSON-stat',
+  },
+  {
+    nome: 'folha OE1 e célula do rótulo',
+    forma: /^(?:FUNCIONAL![CD](?:[2-9]|1[0-2])|INDICADORES_AC![BC](?:[2-9]|1[01]))$/,
+    onde: 'publisher/oe1_dados.py: célula do rótulo nas folhas XLS',
+  },
+  {
+    nome: 'Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn',
+    forma: /^Mapa1\/Registos\/Registo\[(?:[1-9]|1\d|20)\]\/DesignacaoPrograma; Programa=P-(?:00[1-9]|01\d|020)$/,
+    onde: 'publisher/oe1_xml.py: campo DesignacaoPrograma no registo XML',
+  },
+  {
+    nome: 'página e código ministerial do Mapa 4',
+    forma: /^p\. [1-6], POR MINISTÉRIOS, código (?:0[1-9]|1[0-6])$/,
+    onde: 'publisher/oe1_pdf.py: rótulo da rubrica orgânica no Mapa 4',
+  },
+  {
+    nome: 'página, rótulo e última coluna de um total dos mapas',
+    forma: /^p\. [1-9]\d*, [^,\r\n]+, última coluna$/,
+    onde: 'publisher/oe1_pdf.py: linha identificada pelo rótulo nos mapas PDF',
+  },
+  {
+    nome: 'páginas 49 e 50, rótulo e coluna da síntese de agosto',
+    forma: /^p\. (?:49 do ficheiro, página impressa 45|50 do ficheiro, página impressa 46), (?:Receita efetiva|Despesa efetiva|Saldo global|Ativos financeiros líquidos de reembolsos|Passivos financeiros líquidos de amortizações), (?:Orçamento Inicial|Execução Acumulada) 2026$/,
+    onde: 'publisher/oe1_pdf.py: rótulo das contas da síntese mensal',
+  },
+  {
+    nome: 'página 72, programa ou total da síntese de agosto',
+    forma: /^p\. 72 do ficheiro, página impressa 68, (?:programa (?:00[1-9]|01\d|020)|Subtotal despesa efetiva consolidada dos Programas Orçamentais \(1\)|Fluxos para outros Programas Orçamentais \(2\)|Diferenças de consolidação \(3\)), Execução Acumulada 2026$/,
+    onde: 'publisher/oe1_pdf.py: rótulo dos programas e dos totais na síntese mensal',
+  },
   { nome: 'IndicadorDsg', forma: /^IndicadorDsg$/, onde: 'a resposta do json_indicador do INE' },
   { nome: 'label', forma: /^label$/, onde: 'a resposta JSON-stat do Eurostat' },
   {
@@ -368,10 +406,13 @@ const celulas = [];
 /** @type {Record<string, unknown>} */
 const medida = {};
 
+const corposDasCelulas = new Map();
+
 /** @param {string} id @param {string} nome */
 function celula(id, nome, corpo) {
   /** @type {string[]} */
   const falhas = [];
+  corposDasCelulas.set(id, corpo);
   const nota = corpo(falhas) ?? '';
   celulas.push({ id, nome, passa: falhas.length === 0, nota, falhas });
 }
@@ -1571,7 +1612,84 @@ async function comNavegador() {
 /* A saída                                                                    */
 /* ========================================================================== */
 
+/**
+ * OE1-c: as doze plantas correm pelas mesmas células I1 e I3 da régua.
+ * Cada tentativa substitui uma linha por uma cópia em memória e repõe o mapa
+ * e as medidas no fim. Nenhum YAML, rótulo ou localizador em disco é escrito.
+ */
+function provaLocalizadores() {
+  celula('I1p', 'as plantas dos localizadores recusam a origem desconhecida', (falhas) => {
+    if (['I1', 'I3'].some((id) => !celulas.find((c) => c.id === id)?.passa)) {
+      falhas.push('As plantas dos localizadores exigem I1 e I3 limpas antes do estrago.');
+      return '';
+    }
+    const antigos = LOCALIZADORES_CONHECIDOS.slice(7).map((formato) => {
+      const linha = [...LINHAS_DA_REGUA.values()].find((l) => formato.forma.test(l.name_source ?? ''));
+      const aceite = Boolean(linha && localizadorConhecido(linha.name_source));
+      if (!aceite) falhas.push(`O formato anterior ${formato.nome} perdeu o conhecido positivo.`);
+      return { formato: formato.nome, id: linha?.id, aceite };
+    });
+    const estragos = [
+      ['Outra dimensão JSON-stat', 0, 'dimension.geo.category.label.GF01'],
+      ['Função fora da lista', 0, 'dimension.cofog99.category.label.GF11'],
+      ['Coluna numérica em vez do rótulo XLS', 1, 'FUNCIONAL!E2'],
+      ['Folha XLS desconhecida', 1, 'DESCONHECIDA!C2'],
+      ['Campo numérico em vez do rótulo XML', 2, 'Mapa1/Registos/Registo[1]/TotalEmEuros; Programa=P-001'],
+      ['Registo XML zero', 2, 'Mapa1/Registos/Registo[0]/DesignacaoPrograma; Programa=P-001'],
+      ['Código ministerial zero', 3, 'p. 1, POR MINISTÉRIOS, código 00'],
+      ['Total sem página', 4, 'p. , DESPESA TOTAL, última coluna'],
+      ['Página impressa trocada', 5, 'p. 49 do ficheiro, página impressa 46, Despesa efetiva, Execução Acumulada 2026'],
+      ['Coluna da síntese desconhecida', 5, 'p. 49 do ficheiro, página impressa 45, Despesa efetiva, Outra coluna 2026'],
+      ['Programa da síntese zero', 6, 'p. 72 do ficheiro, página impressa 68, programa 000, Execução Acumulada 2026'],
+      ['Localizador livre', 0, 'uma cadeia sem localizador'],
+    ];
+    const plantas = [];
+    for (const [nome, grupo, valor] of estragos) {
+      const formato = LOCALIZADORES_CONHECIDOS[grupo];
+      const par = [...LINHAS_DA_REGUA].find(([id, linha]) =>
+        linha.study === 'oe-2026' && !CARTOES_DA_REGUA.has(id) &&
+        typeof linha.name === 'string' && linha.name !== linha.document?.title &&
+        formato.forma.test(linha.name_source ?? ''));
+      if (!par) {
+        falhas.push(`A planta ${nome} não tem uma linha limpa do formato ${formato.nome}.`);
+        continue;
+      }
+      const [id, original] = par;
+      const copia = structuredClone(original);
+      copia.name_source = valor;
+      const antes = { I1: medida.I1, I3: medida.I3 };
+      const queixas = { I1: [], I3: [] };
+      try {
+        LINHAS_DA_REGUA.set(id, copia);
+        corposDasCelulas.get('I1')(queixas.I1);
+        corposDasCelulas.get('I3')(queixas.I3);
+      } finally {
+        LINHAS_DA_REGUA.set(id, original);
+        Object.assign(medida, antes);
+      }
+      const origem = queixas.I1.find((q) => q.startsWith(`ledger/claims/${id}.yml:`) &&
+        q.includes(`e o localizador ${JSON.stringify(valor)}, que não é nenhuma das 11 formas`));
+      const buscas = ['pt', 'en'].map((lang) =>
+        `/dados/livro-indice.${lang}.json: 1 entrada(s) com um nome que não é o da sua linha.`);
+      const mordeu = Boolean(origem) && buscas.every((q) => queixas.I3.includes(q));
+      plantas.push({ nome, id, localizador: valor, mordeu, queixa_I1: origem ?? null, queixas_I3: queixas.I3 });
+      if (!mordeu) falhas.push(`A planta ${nome} não mordeu com as queixas esperadas de I1 e I3.`);
+      console.log(`  ${mordeu ? 'mordeu' : 'não mordeu'} · localizador · ${nome}`);
+    }
+    // A reposição é conferida pelas duas células, para além do finally.
+    for (const id of ['I1', 'I3']) {
+      const queixas = [];
+      corposDasCelulas.get(id)(queixas);
+      if (queixas.length) falhas.push(`${id} não ficou limpa depois das plantas.`);
+    }
+    medida.plantas_localizadores = { formatos_anteriores: antigos, plantas };
+    console.log(JSON.stringify({ plantas_localizadores: medida.plantas_localizadores }));
+    return `${plantas.length} plantas, cada uma com a sua queixa de I1 e I3; ${antigos.length} formatos anteriores conferidos.`;
+  });
+}
+
 const fim = async () => {
+  if (argv.includes('--prova')) provaLocalizadores();
   if (NAVEGADOR) await comNavegador();
 
   console.log('');

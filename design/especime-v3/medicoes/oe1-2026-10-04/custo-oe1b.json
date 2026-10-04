@@ -1,13 +1,13 @@
 {
   "passagem": "OE1-b",
   "inicio": "2026-10-04T05:28:59.102Z",
-  "medido_em": "2026-10-04T08:01:20.918506+00:00",
-  "segundos": 9141,
+  "medido_em": "2026-10-04T08:32:03.224792+00:00",
+  "segundos": 10984,
   "sessoes": [
     {
       "sessao": "01a10508-9b42-72e2-a474-124da3a642e1",
       "modelo": "gpt-6-astra",
-      "ultima_medicao": "2026-10-04T08:01:01.346Z",
+      "ultima_medicao": "2026-10-04T08:31:49.607Z",
       "contador_anterior": {
         "input_tokens": 18554708,
         "cached_input_tokens": 17633408,
@@ -17,20 +17,20 @@
         "total_tokens": 18664120
       },
       "contador_atual": {
-        "input_tokens": 40774550,
-        "cached_input_tokens": 39351936,
+        "input_tokens": 45537503,
+        "cached_input_tokens": 44031488,
         "cache_write_input_tokens": 0,
-        "output_tokens": 261547,
-        "reasoning_output_tokens": 135440,
-        "total_tokens": 41036097
+        "output_tokens": 287461,
+        "reasoning_output_tokens": 152285,
+        "total_tokens": 45824964
       },
       "incremento": {
-        "input_tokens": 22219842,
-        "cached_input_tokens": 21718528,
+        "input_tokens": 26982795,
+        "cached_input_tokens": 26398080,
         "cache_write_input_tokens": 0,
-        "output_tokens": 152135,
-        "reasoning_output_tokens": 93907,
-        "total_tokens": 22371977
+        "output_tokens": 178049,
+        "reasoning_output_tokens": 110752,
+        "total_tokens": 27160844
       }
     },
     {
@@ -58,30 +58,30 @@
     {
       "sessao": "01a105a3-396f-73f0-86b9-6afbef32c668",
       "modelo": "codex-auto-review",
-      "ultima_medicao": "2026-10-04T07:44:49.051Z",
+      "ultima_medicao": "2026-10-04T08:11:49.618Z",
       "contador_anterior": {},
       "contador_atual": {
-        "input_tokens": 165461,
-        "cached_input_tokens": 94208,
+        "input_tokens": 296915,
+        "cached_input_tokens": 186880,
         "cache_write_input_tokens": 0,
-        "output_tokens": 861,
-        "reasoning_output_tokens": 539,
-        "total_tokens": 166322
+        "output_tokens": 1165,
+        "reasoning_output_tokens": 705,
+        "total_tokens": 298080
       },
       "incremento": {
-        "input_tokens": 165461,
-        "cached_input_tokens": 94208,
+        "input_tokens": 296915,
+        "cached_input_tokens": 186880,
         "cache_write_input_tokens": 0,
-        "output_tokens": 861,
-        "reasoning_output_tokens": 539,
-        "total_tokens": 166322
+        "output_tokens": 1165,
+        "reasoning_output_tokens": 705,
+        "total_tokens": 298080
       }
     }
   ],
-  "tokens_totais": 22722066,
-  "tokens_entrada_cache": 21950976,
-  "tokens_entrada_sem_cache": 617397,
-  "tokens_saida": 153693,
+  "tokens_totais": 27642691,
+  "tokens_entrada_cache": 26723200,
+  "tokens_entrada_sem_cache": 739580,
+  "tokens_saida": 179911,
   "limite": "Incremento desde o último contador anterior à ordem OE1-b até ao último disponível. Inclui cache e revisões automáticas; não é preço monetário.",
   "conhecido_positivo": true
 }
