@@ -1,0 +1,53 @@
+{
+  "o_que": "as ligações internas (<a href=\"/...\">) das páginas construídas, resolvidas pela regra da Vercel e pela regra do existeConstruido() do portão de HTML",
+  "paginas_lidas": 7479,
+  "ligacoes_lidas": 214379,
+  "destinos_que_so_a_regra_do_portao_aceita": 0,
+  "exemplos_so_pelo_portao": [],
+  "destinos_que_nenhuma_regra_aceita": 6,
+  "exemplos_nenhuma": [
+    {
+      "destino": "/estudos/evora-quem-governou-a-camara-2009-2025/texto",
+      "em": [
+        "/areas/administracao-interna/index.html",
+        "/areas/economia-e-coesao-territorial/index.html"
+      ]
+    },
+    {
+      "destino": "/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/texto",
+      "em": [
+        "/areas/economia-e-coesao-territorial/index.html",
+        "/areas/trabalho-solidariedade-e-seguranca-social/index.html"
+      ]
+    },
+    {
+      "destino": "/estudos/avaliacao-economica-regional-de-portugal-2026/texto",
+      "em": [
+        "/areas/economia-e-coesao-territorial/index.html"
+      ]
+    },
+    {
+      "destino": "/estudos/evora-contas-da-camara-2010-2025/texto",
+      "em": [
+        "/areas/economia-e-coesao-territorial/index.html"
+      ]
+    },
+    {
+      "destino": "/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/text",
+      "em": [
+        "/en/areas/economia-e-coesao-territorial/index.html",
+        "/en/areas/trabalho-solidariedade-e-seguranca-social/index.html"
+      ]
+    },
+    {
+      "destino": "/en/studies/evora-contas-da-camara-2010-2025/text",
+      "em": [
+        "/en/areas/economia-e-coesao-territorial/index.html"
+      ]
+    }
+  ],
+  "conhecido_positivo": {
+    "o_que": "uma ligação para /404, que só existe como 404.html, cai na conta das que só a regra do portão aceita",
+    "encontrado": true
+  }
+}

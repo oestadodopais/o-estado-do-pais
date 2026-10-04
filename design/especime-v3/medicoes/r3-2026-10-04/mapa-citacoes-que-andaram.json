@@ -1,0 +1,63 @@
+{
+  "guiao": "design/especime-v3/medicoes/r3-2026-10-04/comparar-mapa.py",
+  "longe_na_base": 25,
+  "longe_agora": 34,
+  "novas_longe": 10,
+  "novas_longe_em_ficheiros_tocados_pelo_bloco": 10,
+  "novas": [
+    {
+      "texto": "let paridadeConferida = false",
+      "esta_em": "'src/i18n/strings.mjs:4272'",
+      "em_ficheiro_tocado_pelo_bloco": true
+    },
+    {
+      "texto": "as sete conferências L1 a L7",
+      "esta_em": "'scripts/gate-html.mjs:1690'",
+      "em_ficheiro_tocado_pelo_bloco": true
+    },
+    {
+      "texto": "Fontes e verificação",
+      "esta_em": "'scripts/gate-html.mjs:2291'",
+      "em_ficheiro_tocado_pelo_bloco": true
+    },
+    {
+      "texto": "UMA SENTINELA APANHA A FRASE DENTRO DE OUTRA FRASE",
+      "esta_em": "'scripts/medir-defeitos.mjs:1532'",
+      "em_ficheiro_tocado_pelo_bloco": true
+    },
+    {
+      "texto": "A FRASE DO VEREDICTO SAI DO INVENTÁRIO NA PRIMEIRA PÁGINA",
+      "esta_em": "'scripts/medir-defeitos.mjs:677'",
+      "em_ficheiro_tocado_pelo_bloco": true
+    },
+    {
+      "texto": "What this number is",
+      "esta_em": "'src/i18n/strings.mjs:4211'",
+      "em_ficheiro_tocado_pelo_bloco": true
+    },
+    {
+      "texto": "OS MILHARES DE UMA CONTAGEM DA PROVA, na cópia do portão",
+      "esta_em": "'scripts/gate-html.mjs:906'",
+      "em_ficheiro_tocado_pelo_bloco": true
+    },
+    {
+      "texto": "OS PAÍSES ENTRARAM A 02.10.2026 (a passagem UE2-b",
+      "esta_em": "'src/i18n/strings.mjs:1130'",
+      "em_ficheiro_tocado_pelo_bloco": true
+    },
+    {
+      "texto": "A RECONCILIAÇÃO NA NOTA (bloco P4, 02.10.2026, item 4 do bri",
+      "esta_em": "'scripts/check-datas.mjs:375'",
+      "em_ficheiro_tocado_pelo_bloco": true
+    },
+    {
+      "texto": "UMA RETIRADA DENTRO DE UMA FRASE DECLARADA, E SÓ DESSA (bloc",
+      "esta_em": "'scripts/medir-defeitos.mjs:1548'",
+      "em_ficheiro_tocado_pelo_bloco": true
+    }
+  ],
+  "conhecido_positivo": {
+    "o_que": "a corrida da base tem citações longe da linha, e o mesmo leitor encontra-as",
+    "encontrado": true
+  }
+}

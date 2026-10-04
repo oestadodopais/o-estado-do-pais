@@ -1,0 +1,24 @@
+{
+  "guiao": "design/especime-v3/medicoes/r3-2026-10-04/varrer-caminhos.py",
+  "detetor": "design/especime-v3/medicoes/c1-2026-09-28/medir-c1.py, tem_caminho",
+  "pastas": [
+    "design/especime-v3/medicoes/r3-2026-10-04",
+    "design/especime-v3/capturas/r3-2026-10-04"
+  ],
+  "ficheiros_lidos": 148,
+  "imagens_lidas": 17,
+  "ficheiros_apontados": [],
+  "quantidade_apontada": 0,
+  "conhecido_positivo": [
+    {
+      "o_que": "o relatório com a pasta pessoal da máquina no fim",
+      "encontrado": true
+    },
+    {
+      "o_que": "o relatório com o nome da conta da máquina no fim",
+      "esperado": "detetar",
+      "encontrado": true
+    }
+  ],
+  "o_proprio_resultado_limpo": true
+}

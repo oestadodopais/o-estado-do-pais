@@ -1,0 +1,6 @@
+Excerto do registo do verify da corrida de ensaio dos portões (scripts/leituras/portoes.sh), na cabeça 9f9777aaf99db694c5dd992265f01f8774fe5bad, das 2026-10-04T05:08:39Z às 2026-10-04T05:20:10Z: a I6 do check:indice mordeu a primeira forma da porta da página do marcador no índice, que escrevia a cadeia do marcador sem a sua marca. Código do verify nessa corrida: 1; build 0; typecheck 0.
+
+  ✗ I6 · o marcador com um destino só
+        54 ligação(ões) em «pt» e 67 em «en», uma página cada · 98 marcador(es) dentro de um selo (excepção da Emenda 2) · 2 cadeia(s) dentro de documentos alojados, que são o texto do documento
+        · /en/index: a cadeia do marcador escrita sem a marca ("[a verificar]").
+        · /indice: a cadeia do marcador escrita sem a marca ("[a verificar]").

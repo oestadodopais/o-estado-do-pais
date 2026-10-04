@@ -1,0 +1,85 @@
+{
+  "o_que": "como a Vercel resolve um pedido sem extensão quando existe o ficheiro .html irmão: os pedidos foram feitos ao sítio no ar, só de leitura, antes de a página /en/index existir; a construção que estava no ar tinha en/index.html (a primeira página inglesa) e não tinha en/index/",
+  "hora_utc": "2026-10-04T03:45:24Z",
+  "hora_origem": "date -u na mesma chamada do terminal, logo a seguir aos nove pedidos",
+  "cliente": "curl 8.7.1 (x86_64-apple-darwin25.0) libcurl/8.7.1 (SecureTransport) LibreSSL/3.3.6 zlib/1.2.12 nghttp2/1.68.1, sem seguir redirecionamentos, um GET por endereço",
+  "leitura": "/en/index respondeu 404 com en/index.html presente, e /en/index.html respondeu 200 com a primeira página inglesa: a Vercel não junta .html a um pedido sem extensão; /sobre respondeu 200 de sobre/index.html e /sobre/index respondeu 404: um pedido sem extensão resolve-se como a pasta com o seu index.html",
+  "pedidos": [
+    {
+      "endereco": "https://xn--oestadodopas-2fb.pt/en/index",
+      "codigo_http": 404,
+      "bytes": 4056,
+      "sha256": "24852cb3af04b1e63fd3b128cfb988bada9d2306e9959ab5ed46cc98805218c3",
+      "titulo": "Page not found · O Estado do País",
+      "canonica": "https://xn--oestadodopas-2fb.pt/en/404"
+    },
+    {
+      "endereco": "https://xn--oestadodopas-2fb.pt/index",
+      "codigo_http": 404,
+      "bytes": 4043,
+      "sha256": "28e37650187520fa95907ebd3dd5c76cfce5cc3114fb89ad8f4686747bfbbf06",
+      "titulo": "Página não encontrada · O Estado do País",
+      "canonica": "https://xn--oestadodopas-2fb.pt/404"
+    },
+    {
+      "endereco": "https://xn--oestadodopas-2fb.pt/en/index.html",
+      "codigo_http": 200,
+      "bytes": 83818,
+      "sha256": "44a4a5eb9c21752b2be0ea03bf6c13ef33b8a30a7df46f25cfd47671d0e5372c",
+      "titulo": "O Estado do País",
+      "canonica": "https://xn--oestadodopas-2fb.pt/en"
+    },
+    {
+      "endereco": "https://xn--oestadodopas-2fb.pt/index.html",
+      "codigo_http": 200,
+      "bytes": 84256,
+      "sha256": "b4c803daac7b5a12bc06b6b0e5c3ba43ce59766e85a30538103e7dd228c74a1b",
+      "titulo": "O Estado do País",
+      "canonica": "https://xn--oestadodopas-2fb.pt/"
+    },
+    {
+      "endereco": "https://xn--oestadodopas-2fb.pt/sobre/index",
+      "codigo_http": 404,
+      "bytes": 4043,
+      "sha256": "28e37650187520fa95907ebd3dd5c76cfce5cc3114fb89ad8f4686747bfbbf06",
+      "titulo": "Página não encontrada · O Estado do País",
+      "canonica": "https://xn--oestadodopas-2fb.pt/404"
+    },
+    {
+      "endereco": "https://xn--oestadodopas-2fb.pt/sobre",
+      "codigo_http": 200,
+      "bytes": 5546,
+      "sha256": "7025084dd1da98d24b45a2f62d93172098d871f83ff5fb4dbb8b89cea84db3f6",
+      "titulo": "Sobre · O Estado do País",
+      "canonica": "https://xn--oestadodopas-2fb.pt/sobre"
+    },
+    {
+      "endereco": "https://xn--oestadodopas-2fb.pt/en/about/index",
+      "codigo_http": 404,
+      "bytes": 4056,
+      "sha256": "24852cb3af04b1e63fd3b128cfb988bada9d2306e9959ab5ed46cc98805218c3",
+      "titulo": "Page not found · O Estado do País",
+      "canonica": "https://xn--oestadodopas-2fb.pt/en/404"
+    },
+    {
+      "endereco": "https://xn--oestadodopas-2fb.pt/en",
+      "codigo_http": 200,
+      "bytes": 83818,
+      "sha256": "44a4a5eb9c21752b2be0ea03bf6c13ef33b8a30a7df46f25cfd47671d0e5372c",
+      "titulo": "O Estado do País",
+      "canonica": "https://xn--oestadodopas-2fb.pt/en"
+    },
+    {
+      "endereco": "https://xn--oestadodopas-2fb.pt/en/",
+      "codigo_http": 200,
+      "bytes": 83818,
+      "sha256": "44a4a5eb9c21752b2be0ea03bf6c13ef33b8a30a7df46f25cfd47671d0e5372c",
+      "titulo": "O Estado do País",
+      "canonica": "https://xn--oestadodopas-2fb.pt/en"
+    }
+  ],
+  "conhecido_positivo": {
+    "o_que": "o corpo de /en/index.html é o mesmo da primeira página inglesa (/en e /en/), byte a byte",
+    "encontrado": true
+  }
+}

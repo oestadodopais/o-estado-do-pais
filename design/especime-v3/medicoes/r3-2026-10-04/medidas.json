@@ -1,0 +1,937 @@
+{
+  "bloco": "R3",
+  "brief": "design/observatorio/BRIEF-R3-o-indice-do-sitio.md",
+  "guiao": "design/especime-v3/medicoes/r3-2026-10-04/medir-r3.mjs",
+  "cabeca": "294f3abfea1448a207c572bfff33f26034457ac0",
+  "construcao": "294f3abfea1448a207c572bfff33f26034457ac0",
+  "total_de_medidas": 103,
+  "medidas": [
+    {
+      "nome": "rotas_declaradas",
+      "valor": 41,
+      "comando": "node: Object.keys(ROUTES) de src/lib/routes.mjs",
+      "conhecido_positivo": {
+        "o_que": "a chave indice é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_declaradas_em_como_entra",
+      "valor": 41,
+      "comando": "node: Object.keys(COMO_ENTRA) de src/lib/indice.mjs",
+      "conhecido_positivo": {
+        "o_que": "a chave indice está declarada como «fora» (a própria página)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_que_entram_como_porta",
+      "valor": 15,
+      "comando": "node: COMO_ENTRA de src/lib/indice.mjs, contadas pela maneira de entrar",
+      "conhecido_positivo": {
+        "o_que": "a soma das quatro maneiras é o número de chaves",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_que_entram_como_lista",
+      "valor": 13,
+      "comando": "node: COMO_ENTRA de src/lib/indice.mjs, contadas pela maneira de entrar",
+      "conhecido_positivo": {
+        "o_que": "a soma das quatro maneiras é o número de chaves",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_que_entram_como_pela_lista",
+      "valor": 3,
+      "comando": "node: COMO_ENTRA de src/lib/indice.mjs, contadas pela maneira de entrar",
+      "conhecido_positivo": {
+        "o_que": "a soma das quatro maneiras é o número de chaves",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_que_entram_como_fora",
+      "valor": 10,
+      "comando": "node: COMO_ENTRA de src/lib/indice.mjs, contadas pela maneira de entrar",
+      "conhecido_positivo": {
+        "o_que": "a soma das quatro maneiras é o número de chaves",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_do_rodape",
+      "valor": 7,
+      "comando": "node: ROTAS_RODAPE de src/lib/navegacao.mjs",
+      "conhecido_positivo": {
+        "o_que": "a porta do índice é uma delas, e é a última",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "chaves_novas_em_strings",
+      "valor": 9,
+      "comando": "node: as chaves de STRINGS.pt na cabeça contra as de 358e3649",
+      "conhecido_positivo": {
+        "o_que": "nav.indice é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "chaves_novas_iguais_nas_duas_edicoes",
+      "valor": true,
+      "comando": "node: cada chave nova de STRINGS.pt existe em STRINGS.en",
+      "conhecido_positivo": {
+        "o_que": "a chave nova indice.seccoes.projeto existe na edição inglesa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_do_livro_razao_mudados_no_bloco",
+      "valor": 0,
+      "comando": "git diff --name-only 358e3649..HEAD -- ledger/",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando sobre o último commit que tocou em ledger/claims (a9a3fc1d) lista ficheiros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "temas_com_pagina",
+      "valor": 7,
+      "comando": "node: ENTRADAS de src/data/primeira-pagina.mjs sem a porta «Lugares»",
+      "conhecido_positivo": {
+        "o_que": "o tema «Preços» é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "temas_com_pergunta_declarada",
+      "valor": 0,
+      "comando": "node: as entradas de ENTRADAS com o campo «pergunta»",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor encontra o campo «pergunta» nos estudos de Évora de WORKS",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_sem_sucessor",
+      "valor": 11,
+      "comando": "node: WORKS sem sucedidoPor",
+      "conhecido_positivo": {
+        "o_que": "o Évora 2027 é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_sem_sucessor_com_pergunta",
+      "valor": 4,
+      "comando": "node: WORKS sem sucedidoPor e com o campo «pergunta»",
+      "conhecido_positivo": {
+        "o_que": "o estudo das contas da Câmara de Évora tem-na",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_indexaveis",
+      "valor": 5,
+      "comando": "node: WORKS com indexavel() de src/data/leituras.mjs (com leitura escrita e sem sucessor)",
+      "conhecido_positivo": {
+        "o_que": "o Évora 2027 é indexável",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "construcao_da_cabeca",
+      "valor": true,
+      "comando": "dist/version.json contra git rev-parse HEAD",
+      "conhecido_positivo": {
+        "o_que": "o version.json tem um commit escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_do_indice_construidas",
+      "valor": 2,
+      "comando": "ls dist/indice/index.html dist/en/index/index.html",
+      "conhecido_positivo": {
+        "o_que": "a primeira página inglesa continua em dist/en/index.html, e é outra página",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "enderecos_no_mapa_do_sitio",
+      "valor": 7404,
+      "comando": "os <loc> de dist/sitemap-*.xml",
+      "conhecido_positivo": {
+        "o_que": "as duas páginas do índice estão lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_html_construidas",
+      "valor": 7479,
+      "comando": "os ficheiros .html de dist/",
+      "conhecido_positivo": {
+        "o_que": "a página dos temas é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_com_rodape",
+      "valor": 7454,
+      "comando": "os ficheiros .html de dist/ com <nav class=\"rodape-nav\">",
+      "conhecido_positivo": {
+        "o_que": "a página dos temas tem rodapé",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_com_as_sete_portas_do_rodape",
+      "valor": 7454,
+      "comando": "as páginas com rodapé cuja navegação tem sete ligações sem hreflang",
+      "conhecido_positivo": {
+        "o_que": "a página dos temas tem a porta do índice no rodapé",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_com_a_porta_do_indice_no_rodape",
+      "valor": 7454,
+      "comando": "as páginas com rodapé cuja navegação liga ao índice da sua edição",
+      "conhecido_positivo": {
+        "o_que": "a página inglesa dos temas liga a /en/index",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_do_indice_pt",
+      "valor": 398,
+      "comando": "node tests/indice/indice.mjs --prova --json design/especime-v3/medicoes/r3-2026-10-04/celula-indice.json",
+      "conhecido_positivo": {
+        "o_que": "cada porta tem um destino distinto (as portas e os destinos são o mesmo número)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "enderecos_do_mapa_conferidos_pt",
+      "valor": 392,
+      "comando": "a mesma corrida da célula (I2)",
+      "conhecido_positivo": {
+        "o_que": "a célula viu os endereços do mapa desta edição",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_de_leitor_no_indice_pt",
+      "valor": 28,
+      "comando": "a mesma corrida da célula (I3)",
+      "conhecido_positivo": {
+        "o_que": "a célula viu rotas de leitor construídas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "concelhos_no_indice_pt",
+      "valor": 308,
+      "comando": "a mesma corrida da célula (I4)",
+      "conhecido_positivo": {
+        "o_que": "as portas dos concelhos são as páginas de concelho construídas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "gavetas_dos_concelhos_pt",
+      "valor": 29,
+      "comando": "a mesma corrida da célula (I4)",
+      "conhecido_positivo": {
+        "o_que": "há gavetas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_no_indice_pt",
+      "valor": 11,
+      "comando": "a mesma corrida da célula (I5)",
+      "conhecido_positivo": {
+        "o_que": "os estudos do índice são os estudos sem sucessor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_de_o_que_mudou_pt",
+      "valor": 8,
+      "comando": "a mesma corrida da célula (I6)",
+      "conhecido_positivo": {
+        "o_que": "há linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_do_indice_en",
+      "valor": 398,
+      "comando": "node tests/indice/indice.mjs --prova --json design/especime-v3/medicoes/r3-2026-10-04/celula-indice.json",
+      "conhecido_positivo": {
+        "o_que": "cada porta tem um destino distinto (as portas e os destinos são o mesmo número)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "enderecos_do_mapa_conferidos_en",
+      "valor": 392,
+      "comando": "a mesma corrida da célula (I2)",
+      "conhecido_positivo": {
+        "o_que": "a célula viu os endereços do mapa desta edição",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_de_leitor_no_indice_en",
+      "valor": 28,
+      "comando": "a mesma corrida da célula (I3)",
+      "conhecido_positivo": {
+        "o_que": "a célula viu rotas de leitor construídas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "concelhos_no_indice_en",
+      "valor": 308,
+      "comando": "a mesma corrida da célula (I4)",
+      "conhecido_positivo": {
+        "o_que": "as portas dos concelhos são as páginas de concelho construídas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "gavetas_dos_concelhos_en",
+      "valor": 29,
+      "comando": "a mesma corrida da célula (I4)",
+      "conhecido_positivo": {
+        "o_que": "há gavetas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_no_indice_en",
+      "valor": 11,
+      "comando": "a mesma corrida da célula (I5)",
+      "conhecido_positivo": {
+        "o_que": "os estudos do índice são os estudos sem sucessor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_de_o_que_mudou_en",
+      "valor": 8,
+      "comando": "a mesma corrida da célula (I6)",
+      "conhecido_positivo": {
+        "o_que": "há linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "erros_da_celula_do_indice",
+      "valor": 0,
+      "comando": "a mesma corrida da célula",
+      "conhecido_positivo": {
+        "o_que": "as plantas da mesma corrida deram as queixas delas (a célula vê erros quando os há)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_celula_do_indice",
+      "valor": 13,
+      "comando": "a mesma corrida da célula, com --prova",
+      "conhecido_positivo": {
+        "o_que": "a planta «uma rota tirada do índice» mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_celula_que_morderam",
+      "valor": 13,
+      "comando": "a mesma corrida da célula, com --prova",
+      "conhecido_positivo": {
+        "o_que": "a planta «uma porta pelo ficheiro .html irmão» mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "regioes_no_indice",
+      "valor": 9,
+      "comando": "as portas de dist/indice/index.html cuja rota é «regiao», fora de «O que mudou»",
+      "conhecido_positivo": {
+        "o_que": "a região do Alentejo (/regioes/alentejo) é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "distritos_e_ilhas_no_indice",
+      "valor": 29,
+      "comando": "as portas de dist/indice/index.html cuja rota é «distrito», fora de «O que mudou»",
+      "conhecido_positivo": {
+        "o_que": "o distrito de Évora (/distritos/evora) é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "areas_de_governo_no_indice",
+      "valor": 9,
+      "comando": "as portas de dist/indice/index.html cuja rota é «area», fora de «O que mudou»",
+      "conhecido_positivo": {
+        "o_que": "a área da Justiça (/areas/justica) é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_no_indice",
+      "valor": 10,
+      "comando": "as portas de dist/indice/index.html cuja rota é «serie», fora de «O que mudou»",
+      "conhecido_positivo": {
+        "o_que": "a série da taxa de desemprego (/livro-razao/series/taxa-de-desemprego-mip-2025-paises) é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_do_projeto_no_indice",
+      "valor": 4,
+      "comando": "as portas da secção «O projeto» de dist/indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "o Método é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "temas_no_indice",
+      "valor": 7,
+      "comando": "as portas de tema (a.indice-porta-tema) de dist/indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "a porta da habitação é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_do_indice_com_noindex",
+      "valor": 6,
+      "comando": "as portas de estudo do índice português cuja página construída leva a marca robots com noindex",
+      "conhecido_positivo": {
+        "o_que": "o estudo «Onde está a água?» é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_do_indice_no_mapa",
+      "valor": 5,
+      "comando": "as portas de estudo do índice português que estão em dist/sitemap-*.xml",
+      "conhecido_positivo": {
+        "o_que": "o Évora 2027 está no mapa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_de_o_que_mudou_com_o_lugar_escrito_pt",
+      "valor": 8,
+      "comando": "as linhas de «O que mudou» de dist/indice/index.html com o nome do lugar (.indice-mudou-lugar) escrito",
+      "conhecido_positivo": {
+        "o_que": "numa cópia sem o lugar da primeira linha, o mesmo detetor conta menos uma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_de_o_que_mudou_que_se_leem_iguais_pt",
+      "valor": 0,
+      "comando": "as mesmas linhas de dist/indice/index.html, pelo texto à vista de cada uma (sem o que só um leitor de ecrã ouve)",
+      "conhecido_positivo": {
+        "o_que": "com a primeira linha repetida, o mesmo detetor conta mais uma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_reunidas_em_o_que_mudou_pt",
+      "valor": 0,
+      "comando": "as linhas de «O que mudou» de dist/indice/index.html cuja linha está reunida noutra (MEDIDA_REUNIDA, src/lib/pais.mjs)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor encontra a linha reunida no registo construído da mesma edição",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_de_o_que_mudou_com_o_lugar_escrito_en",
+      "valor": 8,
+      "comando": "as linhas de «O que mudou» de dist/en/index/index.html com o nome do lugar (.indice-mudou-lugar) escrito",
+      "conhecido_positivo": {
+        "o_que": "numa cópia sem o lugar da primeira linha, o mesmo detetor conta menos uma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_de_o_que_mudou_que_se_leem_iguais_en",
+      "valor": 0,
+      "comando": "as mesmas linhas de dist/en/index/index.html, pelo texto à vista de cada uma (sem o que só um leitor de ecrã ouve)",
+      "conhecido_positivo": {
+        "o_que": "com a primeira linha repetida, o mesmo detetor conta mais uma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_reunidas_em_o_que_mudou_en",
+      "valor": 0,
+      "comando": "as linhas de «O que mudou» de dist/en/index/index.html cuja linha está reunida noutra (MEDIDA_REUNIDA, src/lib/pais.mjs)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor encontra a linha reunida no registo construído da mesma edição",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_dos_portoes_r3",
+      "valor": 11,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/r3-2026-10-04 node tests/pais/portoes.mjs --prefixo r3-",
+      "conhecido_positivo": {
+        "o_que": "a planta do rodapé sem a porta do índice está lá e passou",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_dos_portoes_r3_que_passaram",
+      "valor": 11,
+      "comando": "o mesmo registo: código 1, as mordidas todas e os bytes repostos",
+      "conhecido_positivo": {
+        "o_que": "a planta da L2a dos concelhos abertos passou",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_com_as_sete_portas_conferidas_no_portao",
+      "valor": 7454,
+      "comando": "o registo do build em design/especime-v3/medicoes/r3-2026-10-04/portoes/build.log, a linha «R3 ·» do portão de HTML",
+      "conhecido_positivo": {
+        "o_que": "a linha do portão está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_em_memoria_do_rodape_no_portao",
+      "valor": 10,
+      "comando": "a mesma linha do portão",
+      "conhecido_positivo": {
+        "o_que": "a mesma linha do portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_do_check_lugar",
+      "valor": 2342,
+      "comando": "o registo do verify em design/especime-v3/medicoes/r3-2026-10-04/portoes/verify.log, a linha da L1 do check:lugar",
+      "conhecido_positivo": {
+        "o_que": "o teto da mesma linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "teto_da_l1_do_check_lugar",
+      "valor": 2342,
+      "comando": "a mesma linha da L1",
+      "conhecido_positivo": {
+        "o_que": "a mesma linha da L1",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_build",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r3-2026-10-04/portoes, o ficheiro build.codigo",
+      "conhecido_positivo": {
+        "o_que": "a cabeça dos portões está escrita ao lado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_verify",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r3-2026-10-04/portoes, o ficheiro verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "a cabeça dos portões está escrita ao lado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_typecheck",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r3-2026-10-04/portoes, o ficheiro typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "a cabeça dos portões está escrita ao lado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cabeca_dos_portoes",
+      "valor": "294f3abfea1448a207c572bfff33f26034457ac0",
+      "comando": "o ficheiro design/especime-v3/medicoes/r3-2026-10-04/portoes/cabeca",
+      "conhecido_positivo": {
+        "o_que": "a cabeça no fim da corrida é a mesma do princípio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas",
+      "valor": 16,
+      "comando": "node design/especime-v3/medicoes/r3-2026-10-04/captar-r3.mjs",
+      "conhecido_positivo": {
+        "o_que": "há uma captura da página inglesa a 390 px",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "problemas_das_capturas",
+      "valor": 0,
+      "comando": "o mesmo manifesto",
+      "conhecido_positivo": {
+        "o_que": "o captor mediu a largura do documento em cada página",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "transbordo_maximo_px",
+      "valor": 0,
+      "comando": "o mesmo manifesto: a largura do documento menos a da janela, a maior das dez páginas",
+      "conhecido_positivo": {
+        "o_que": "as dez páginas inteiras foram medidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "larguras_das_capturas",
+      "valor": 5,
+      "comando": "o mesmo manifesto",
+      "conhecido_positivo": {
+        "o_que": "a de 1 600 px é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_das_listas_abaixo_de_44_px",
+      "valor": 0,
+      "comando": "o mesmo manifesto: as portas das listas à vista (fora das gavetas fechadas) com menos de 44 px de altura, somadas nas dez páginas",
+      "conhecido_positivo": {
+        "o_que": "o captor mediu a porta das listas mais baixa em cada página",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "porta_das_listas_mais_baixa_px",
+      "valor": 44,
+      "comando": "o mesmo manifesto: a porta das listas mais baixa das dez páginas",
+      "conhecido_positivo": {
+        "o_que": "as dez páginas inteiras foram medidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "outras_ligacoes_abaixo_de_44_px_por_pagina",
+      "valor": 11,
+      "comando": "o mesmo manifesto: as outras ligações do corpo com a caixa abaixo de 44 px, o máximo por página somado por classe (as marcas da fonte de «O que mudou», a porta do rótulo de IA e o marcador de um título por confirmar), que a régua dos alvos mede pelo toque",
+      "conhecido_positivo": {
+        "o_que": "são todas de uma classe conhecida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas_da_fonte_abaixo_de_44_px_por_pagina",
+      "valor": 8,
+      "comando": "o mesmo manifesto, a classe «marca da fonte»",
+      "conhecido_positivo": {
+        "o_que": "são as das linhas de «O que mudou»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_com_itens_em_fila",
+      "valor": 0,
+      "comando": "o mesmo manifesto: as portas das listas que são caixas flexíveis com mais de um item em fila, somadas nas dez páginas",
+      "conhecido_positivo": {
+        "o_que": "a porta plantada em cada página foi vista pelo mesmo detetor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_com_itens_em_fila_com_o_defeito",
+      "valor": 10,
+      "comando": "node design/especime-v3/medicoes/r3-2026-10-04/captar-r3.mjs sobre a construção da cabeça 97724ae2, antes da correção das portas das séries (capturas-r3-com-o-defeito.json): as portas com itens em fila por página, o máximo",
+      "conhecido_positivo": {
+        "o_que": "são as portas das séries (o mesmo número de séries que o índice lista)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_captor_com_o_defeito",
+      "valor": 1,
+      "comando": "o código dessa corrida do captor",
+      "conhecido_positivo": {
+        "o_que": "a corrida queixou-se das portas com as partes do nome lado a lado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "porta_mais_baixa_na_gaveta_aberta_px",
+      "valor": 44,
+      "comando": "o mesmo manifesto: a porta de concelho mais baixa da gaveta de Évora aberta, nas quatro capturas de perto",
+      "conhecido_positivo": {
+        "o_que": "a gaveta abriu nas quatro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "gavetas_abertas_a_chegar",
+      "valor": 0,
+      "comando": "o mesmo manifesto",
+      "conhecido_positivo": {
+        "o_que": "a gaveta de Évora abriu com um toque",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_medidas_pela_regua_dos_alvos",
+      "valor": 64,
+      "comando": "o registo do verify em design/especime-v3/medicoes/r3-2026-10-04/portoes/verify.log, a primeira linha da régua dos alvos",
+      "conhecido_positivo": {
+        "o_que": "a lista FAMILIAS de tests/acessibilidade/alvos.mjs tem a família do índice e dá 64 rotas nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "larguras_da_regua_dos_alvos",
+      "valor": 5,
+      "comando": "a mesma linha",
+      "conhecido_positivo": {
+        "o_que": "a mesma linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "violacoes_do_axe_na_regua_dos_alvos",
+      "valor": 0,
+      "comando": "a linha da H1 da régua dos alvos, no mesmo registo",
+      "conhecido_positivo": {
+        "o_que": "a H1 passou (a marca ✓ na linha)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "caixas_sem_o_alvo_na_regua_dos_alvos",
+      "valor": 0,
+      "comando": "a linha da H2 da régua dos alvos, no mesmo registo",
+      "conhecido_positivo": {
+        "o_que": "a H2 passou (a marca ✓ na linha)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_na_linha",
+      "valor": 267,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "conhecido_positivo": {
+        "o_que": "a régua leu o mapa e conferiu citações na linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_longe_da_linha",
+      "valor": 34,
+      "comando": "a mesma corrida",
+      "conhecido_positivo": {
+        "o_que": "a mesma corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_nao_encontradas",
+      "valor": 0,
+      "comando": "a mesma corrida",
+      "conhecido_positivo": {
+        "o_que": "a mesma corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_base_citacoes_na_linha",
+      "valor": 250,
+      "comando": "a mesma régua sobre uma extração de 358e3649 (git archive, sem checkout)",
+      "conhecido_positivo": {
+        "o_que": "a mesma corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_base_citacoes_longe_da_linha",
+      "valor": 25,
+      "comando": "a mesma corrida",
+      "conhecido_positivo": {
+        "o_que": "a mesma corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_que_andaram_com_o_bloco",
+      "valor": 10,
+      "comando": "python3 design/especime-v3/medicoes/r3-2026-10-04/comparar-mapa.py (mapa-citacoes-que-andaram.json): as citações longe da linha que não estavam longe na base e citam um ficheiro mudado em 358e3649..HEAD",
+      "conhecido_positivo": {
+        "o_que": "a corrida da base tem citações longe da linha, e o mesmo leitor encontra-as",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "vercel_en_index_sem_a_pasta",
+      "valor": 404,
+      "comando": "curl, um GET por endereço, a 2026-10-04T03:45:24Z (sondagem-vercel.json)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo pedido a /en/index.html deu 200 com a primeira página inglesa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "vercel_en_index_html",
+      "valor": 200,
+      "comando": "a mesma sondagem",
+      "conhecido_positivo": {
+        "o_que": "a canónica da resposta é /en",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "vercel_sobre",
+      "valor": 200,
+      "comando": "a mesma sondagem",
+      "conhecido_positivo": {
+        "o_que": "o pedido a /sobre/index deu 404",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_verify_deploy_antes",
+      "valor": 1,
+      "comando": "node scripts/verify-deploy.mjs > design/especime-v3/medicoes/r3-2026-10-04/verify-deploy-antes-de-aterrar.log, antes de aterrar",
+      "conhecido_positivo": {
+        "o_que": "as quatro queixas da conferência (g) estão no registo, e são as únicas da secção NÃO CONFERE",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ligacoes_paginas_lidas",
+      "valor": 7479,
+      "comando": "node design/especime-v3/medicoes/r3-2026-10-04/ligacoes-pela-regra-da-vercel.mjs",
+      "conhecido_positivo": {
+        "o_que": "a ligação plantada para /404 caiu na conta das que só a regra do portão aceita",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ligacoes_lidas",
+      "valor": 214379,
+      "comando": "a mesma corrida",
+      "conhecido_positivo": {
+        "o_que": "a mesma corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ligacoes_so_pelo_portao",
+      "valor": 0,
+      "comando": "a mesma corrida",
+      "conhecido_positivo": {
+        "o_que": "a mesma corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ligacoes_que_nenhuma_regra_aceita",
+      "valor": 6,
+      "comando": "a mesma corrida",
+      "conhecido_positivo": {
+        "o_que": "um dos exemplos é um endereço antigo /texto numa página de área",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_em_vigor_antes",
+      "valor": 41,
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py <os ficheiros a tocar> > design/especime-v3/medicoes/r3-2026-10-04/decisoes-em-vigor-antes.txt",
+      "conhecido_positivo": {
+        "o_que": "a §1.98 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_lidos_antes",
+      "valor": 19,
+      "comando": "a mesma corrida",
+      "conhecido_positivo": {
+        "o_que": "a mesma corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_em_vigor_depois",
+      "valor": 53,
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo 358e3649..HEAD > design/especime-v3/medicoes/r3-2026-10-04/decisoes-em-vigor-depois.txt",
+      "conhecido_positivo": {
+        "o_que": "a §1.154 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_restantes_no_inicio",
+      "valor": 15000000,
+      "comando": "design/especime-v3/medicoes/r3-2026-10-04/custo-inicio.json, escrito à mão pelo construtor",
+      "conhecido_positivo": {
+        "o_que": "a hora do início está escrita",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_restantes_no_fim",
+      "valor": 13714763,
+      "comando": "design/especime-v3/medicoes/r3-2026-10-04/custo-fim.json, escrito à mão pelo construtor",
+      "conhecido_positivo": {
+        "o_que": "a hora do fim está escrita",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_gastos_pelo_contador",
+      "valor": 1285237,
+      "comando": "a diferença entre os dois contadores",
+      "conhecido_positivo": {
+        "o_que": "os dois contadores foram lidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_de_parede",
+      "valor": 20130,
+      "comando": "a diferença entre as duas horas dos ficheiros do custo",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leem-se como datas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_da_passagem_final",
+      "valor": 329258,
+      "comando": "a leitura anterior guardada em design/especime-v3/medicoes/r3-2026-10-04/custo-fim.json menos a última",
+      "conhecido_positivo": {
+        "o_que": "a leitura anterior está escrita, com a hora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_da_passagem_final",
+      "valor": 3819,
+      "comando": "a diferença entre a hora da leitura anterior e a do fim, no mesmo ficheiro",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leem-se como datas",
+        "encontrado": true
+      }
+    }
+  ]
+}

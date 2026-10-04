@@ -1,0 +1,3 @@
+[90mcheck-datas: história completa · 25 edição(ões) do ficheiro refeitas do `git`.[0m
+[31mcheck-datas: 1 falha(s).[0m
+  [31m·[0m /indice: a edição evora-contas-da-camara-2010-2025/pt imprime «12.08.2026» e src/data/datas-de-publicacao.json diz que evora-contas-da-camara-2010-2025 (pt) entrou a 01.10.2026 (commit 779bb7b6). Uma data que pertence ao conjunto das declaradas mas NÃO a esta edição é o que a conta 1a sozinha deixava passar.

@@ -1,0 +1,34 @@
+A mesma régua sobre uma extração de 358e3649 (git archive das pastas design, scripts, src, tests, api e supabase para uma pasta temporária, sem checkout): as três citações por encontrar são de ficheiros que a extração não levou (CLAUDE.md, DECISIONS.md e public/js/paises.js).
+
+citações conferidas na linha citada (±7): 250
+citação está no ficheiro, mas longe da linha citada: 25
+   mapa l.163 «Sem esta comparação, a marca seria uma dispensa: seis dos tí» citada em ['scripts/gate-html.mjs:2213', 'scripts/gate-html.mjs:2361'] → está em ['scripts/gate-html.mjs:2371']
+   mapa l.167 «algarismos fora do livro-razão» citada em ['scripts/gate-html.mjs:7654'] → está em ['scripts/gate-html.mjs:7686']
+   mapa l.168 «uma cadeia mudada de um lado fica diferente do outro» citada em ['scripts/gate-html.mjs:4901', 'scripts/gate-html.mjs:5223', 'scripts/gate-html.mjs:5013', 'scripts/gate-html.mjs:5080'] → está em ['scripts/gate-html.mjs:218']
+   mapa l.170 «dentro de um marco» citada em ['scripts/gate-html.mjs:5191', 'scripts/gate-html.mjs:5119'] → está em ['scripts/gate-html.mjs:5201']
+   mapa l.172 «uma ausência nunca se desenha» citada em ['scripts/gate-html.mjs:7443'] → está em ['scripts/gate-html.mjs:7475']
+   mapa l.182 «se uma faltar, o selo dessa linha aponta para um 404» citada em ['scripts/gate-html.mjs:8128', 'scripts/gate-html.mjs:8570', 'scripts/gate-html.mjs:8456', 'scripts/gate-html.mjs:8229'] → está em ['scripts/gate-html.mjs:8630']
+   mapa l.189 «B2: as quatro contagens partilham uma porta visível, validad» citada em ['scripts/pais-camaras.mjs:1', 'scripts/check-pais.mjs:284', 'scripts/gate-html.mjs:7331', 'scripts/pais-camaras.mjs:61'] → está em ['scripts/gate-html.mjs:7363']
+   mapa l.199 «A LEITURA DO CARTÃO, pela mesma regra do item da régua» citada em ['scripts/gate-html.mjs:3390'] → está em ['scripts/gate-html.mjs:3400']
+   mapa l.383 «A PÁGINA DE UMA SÉRIE (bloco UE1, 29.09.2026)» citada em ['src/lib/routes.mjs:297', 'src/views/SerieView.astro:3', 'src/lib/caminho.mjs:144'] → está em ['src/lib/caminho.mjs:151']
+   mapa l.384 «AS ORIGENS DAS LINHAS DE SÉRIE (bloco UE1» citada em ['scripts/gate-html.mjs:5783', 'scripts/series-do-portao.mjs:2', 'scripts/medir-defeitos.mjs:222'] → está em ['scripts/gate-html.mjs:5815', 'scripts/medir-defeitos.mjs:222']
+   mapa l.390 «UE1b (29.09.2026): o que quer dizer cada marca» citada em ['src/views/SerieView.astro:21', 'scripts/gate-html.mjs:4547'] → está em ['scripts/gate-html.mjs:4557']
+   mapa l.391 «UE1b (29.09.2026): a porta do recibo da linha portuguesa» citada em ['src/views/LinhaView.astro:132', 'scripts/gate-html.mjs:4613'] → está em ['scripts/gate-html.mjs:4623']
+   mapa l.393 «A DEFINIÇÃO DECLARADA DE UMA MEDIDA, COMO TEXTO» citada em ['src/views/SerieView.astro:30', 'scripts/gate-html.mjs:11', 'scripts/gate-html.mjs:4482', 'src/data/medidas-rp1.mjs:254'] → está em ['scripts/gate-html.mjs:19']
+   mapa l.393 «O QUE NOMEIA PORTUGAL NA DEFINIÇÃO DE UM RECIBO DE SÉRIE» citada em ['src/views/SerieView.astro:30', 'scripts/gate-html.mjs:11', 'scripts/gate-html.mjs:4482', 'src/data/medidas-rp1.mjs:254'] → está em ['scripts/gate-html.mjs:47']
+   mapa l.417 «AS ORIGENS DA FAIXA DO CONCELHO (bloco L2b» citada em ['scripts/gate-html.mjs:5884', 'scripts/concelhos-do-portao.mjs:2', 'scripts/gate-html.mjs:3412'] → está em ['scripts/gate-html.mjs:583']
+   mapa l.417 «A FAIXA DO CONCELHO, pela mesma regra da leitura do cartão» citada em ['scripts/gate-html.mjs:5884', 'scripts/concelhos-do-portao.mjs:2', 'scripts/gate-html.mjs:3412'] → está em ['scripts/gate-html.mjs:3422']
+   mapa l.434 «a unidade da casa de um cartão (passagem K2-c» citada em ['src/components/CartaoDaMedida.astro:124', 'scripts/gate-html.mjs:6184', 'tests/cartao/perguntas.mjs:204'] → está em ['scripts/gate-html.mjs:6216']
+   mapa l.444 «QUANTOS PAÍSES A TABELA TEM (bloco UE2, 02.10.2026)» citada em ['scripts/gate-html.mjs:5919', 'tests/pais/portoes.mjs:329'] → está em ['scripts/gate-html.mjs:5951']
+   mapa l.464 «A UNIDADE DA CASA DE UMA MEDIDA DE CONCELHO (passagem P4-c» citada em ['src/data/concelhos.mjs:185', 'src/components/lugar/CartaoDoLugar.astro:61', 'scripts/gate-html.mjs:6195', 'src/components/lugar/CartaoDoLugar.astro:94'] → está em ['scripts/gate-html.mjs:6225', 'tests/pais/portoes.mjs:371']
+   mapa l.464 «O TETO NA LINHA DO ESTADO DO CARTÃO DO ÍNDICE DE DÍVIDA (pas» citada em ['src/data/concelhos.mjs:185', 'src/components/lugar/CartaoDoLugar.astro:61', 'scripts/gate-html.mjs:6195', 'src/components/lugar/CartaoDoLugar.astro:94'] → está em ['scripts/gate-html.mjs:3309', 'tests/cartao/cartao.mjs:794']
+   mapa l.475 «A PORTA DAS SUGESTÕES, E AS PÁGINAS DA CAIXA (bloco S1, 02.1» citada em ['scripts/sugestoes-do-portao.mjs:3', 'scripts/sugestoes-do-portao.mjs:487', 'scripts/sugestoes-do-portao.mjs:270', 'scripts/gate-html.mjs:5218'] → está em ['scripts/gate-html.mjs:5240']
+   mapa l.475 «A CAIXA DAS SUGESTÕES, DEPOIS DO VARRIMENTO (bloco S1, 02.10» citada em ['scripts/sugestoes-do-portao.mjs:3', 'scripts/sugestoes-do-portao.mjs:487', 'scripts/sugestoes-do-portao.mjs:270', 'scripts/gate-html.mjs:5218'] → está em ['scripts/gate-html.mjs:7696']
+   mapa l.475 «TODAS AS MIGRAÇÕES, POR ORDEM DE NOME (S1-b, 03.10.2026» citada em ['scripts/sugestoes-do-portao.mjs:3', 'scripts/sugestoes-do-portao.mjs:487', 'scripts/sugestoes-do-portao.mjs:270', 'scripts/gate-html.mjs:5218'] → está em ['scripts/gate-html.mjs:7701']
+   mapa l.475 «S1 (02.10.2026): a caixa das sugestões» citada em ['scripts/sugestoes-do-portao.mjs:3', 'scripts/sugestoes-do-portao.mjs:487', 'scripts/sugestoes-do-portao.mjs:270', 'scripts/gate-html.mjs:5218'] → está em ['scripts/gate-html.mjs:10', 'tests/pais/portoes.mjs:406']
+   mapa l.478 «S1-c (03.10.2026, decisão do diretor, §1.154): o campo do co» citada em ['scripts/medir-defeitos.mjs:489', 'src/data/politica-ia.mjs:459', 'tests/pais/portoes.mjs:396'] → está em ['tests/pais/portoes.mjs:447']
+citação não encontrada em nenhum dos ficheiros citados na mesma linha: 3
+   mapa l.287 «Um portão nunca se enfraquece no que protege; a forma em que» refs ['CLAUDE.md:34', 'design/observatorio/BRIEF-B1-as-quatro-paginas.md:29', 'design/observatorio/POLITICA-DA-AUTONOMIA.md:3']
+   mapa l.298 «Um byte NUL no `src/lib/ledger.mjs` faz o `grep` mentir por » refs ['DECISIONS.md:11708', 'DECISIONS.md:12734', 'scripts/check-ledger.mjs:1026', 'scripts/check-ledger.mjs:1118']
+   mapa l.442 «O TOQUE NUMA MARCA DA FAIXA DOS PAÍSES (bloco UE2, 02.10.202» refs ['public/js/paises.js:2']
+linha citada para lá do fim do ficheiro: 0
