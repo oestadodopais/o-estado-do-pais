@@ -4300,7 +4300,8 @@ function eLigacaoInterna(href) {
 }
 
 function baseDeResolucao(rel, caminho) {
-  if (!rel.endsWith('index.html')) return caminho;
+  // H2, I192: uma âncora do 404 refere-se ao ficheiro servido, não à porta /404.
+  if (!rel.endsWith('index.html')) return '/' + rel.split(path.sep).join('/');
   return caminho.endsWith('/') ? caminho : `${caminho}/`;
 }
 
@@ -4562,6 +4563,11 @@ for (const file of ficheirosHtml(DIST)) {
   });
 
   const err = (msg) => erros.push({ rel, msg });
+
+  // H2, I190: antes das saídas de documentos alojados, em qualquer página.
+  for (const a of root.querySelectorAll('a a')) {
+    err(`H2 ligação dentro de outra: ${a.getAttribute('href') ?? '(sem href)'}`);
+  }
 
   /* O nome de quem responde não se rende em página nenhuma (M5, 22.09.2026).
      Corre antes de tudo o resto e antes de qualquer saída antecipada, para
@@ -7993,10 +7999,9 @@ const CONSTRUIDOS = new Set();
 }
 function existeConstruido(caminho) {
   if (caminho === CAMINHO_DA_PROVA) return true; // escrito no fim deste varrimento
-  if (CONSTRUIDOS.has(caminho)) return true;
+  if (path.posix.extname(caminho)) return CONSTRUIDOS.has(caminho);
   const limpo = caminho.replace(/\/$/, '');
   return (
-    CONSTRUIDOS.has(limpo + '.html') ||
     CONSTRUIDOS.has(limpo + '/index.html') ||
     (limpo === '' && CONSTRUIDOS.has('/index.html'))
   );

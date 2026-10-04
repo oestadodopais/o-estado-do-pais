@@ -1427,3 +1427,9 @@ isso o pequeno dos rótulos entra sem uma palavra nova em nenhuma das edições.
 | `indice.seccoes.estudos` | Os estudos | Studies | a secção dos estudos |
 | `indice.seccoes.numeros` | Os números e as fontes | Numbers and sources | a secção do índice das linhas, do dos concelhos, das séries, das correções e da página do marcador; o inglês é o nome da porta do rodapé, `nav.livro` |
 | `indice.seccoes.projeto` | O projeto | The project | a secção do Sobre, do Método, da agenda e das sugestões; «o projeto» é a palavra do §6 da estrutura para o todo quando tem de ser nomeado |
+
+## H2 · o estudo em curso, 04.10.2026
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `primeira.emCurso` | em curso | ongoing | Estado declarado na ficha, ao lado da data nos estudos recentes da primeira página. |

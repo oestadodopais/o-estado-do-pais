@@ -571,3 +571,30 @@ planta('oe1e-ressalva-de-outra-linha','scripts/gate-html.mjs',[
 planta('oe1e-ressalva-na-lingua-errada','scripts/gate-html.mjs',[
  ['en/ledger/oe-2026-despesa-ministerio-saude/index.html',r=>r.querySelector('.linha-cabeca [data-linha-campo="ressalva"]').set_content(getClaim('oe-2026-despesa-ministerio-saude').ressalva)]
 ],[/ressalva de oe-2026-despesa-ministerio-saude não é a declarada na edição en/]);
+
+/* H2: plantas fora do verify, que repõem os bytes antes da corrida verde final. */
+planta('h2-em-curso-retirado','scripts/check-pais.mjs',[
+ ['index.html',r=>r.querySelector('#trabalhos [data-estudo]').remove()]
+],[/E1 pt: os três estudos não têm os em curso à cabeça/]);
+planta('h2-em-curso-fora-da-cabeca','scripts/check-pais.mjs',[
+ ['en/index.html',r=>{const a=r.querySelectorAll('#trabalhos [data-estudo]');const primeiro=a[0].outerHTML;a[0].remove();a[1].insertAdjacentHTML('afterend',primeiro);}]
+],[/E1 en: os três estudos não têm os em curso à cabeça/]);
+planta('h2-em-curso-sem-marca','scripts/check-pais.mjs',[
+ ['en/index.html',r=>r.querySelector('[data-estudo-em-curso]').remove()]
+],[/E1 en: marca em curso ausente/]);
+planta('h2-ligacao-dentro-de-outra','scripts/gate-html.mjs',[
+ ['en/studies/index.html',r=>r.querySelector('a.arquivo-porta').insertAdjacentHTML('beforeend','<a href="/en/to-verify">a verificar</a>')]
+],[/H2 ligação dentro de outra: \/en\/to-verify/]);
+planta('h2-porta-so-com-html-irmao','scripts/gate-html.mjs',[
+ ['index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<a href="/404">Página de erro</a>')]
+],[/a ligação interna "\/404" não corresponde a nada construído/]);
+planta('h2-indicador-fora-do-endereco','scripts/check-lugar.mjs',[
+ ['index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>indicador https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2</p>')]
+],[/L3 · palavras fora do vocabulário fechado +1 +\(teto 0\) ACIMA DO TETO/]);
+planta('h2-area-porta-antiga','scripts/check-areas.mjs',[
+ ['areas/ambiente-e-energia/index.html',r=>{const a=r.querySelector('[data-area-peca="trabalho"] a');a.setAttribute('href',a.getAttribute('href')+'/texto');}]
+],[/H2 A2 porta antiga do texto/]);
+
+planta('h2-voz-estado-trocado','scripts/check-voz.mjs',[
+ ['en/index.html',r=>r.querySelector('[data-estudo-em-curso]').set_content('estado sem declaração')]
+],[/bloco por classificar em \/en: «Évora Culture published on estado sem declaração»/]);

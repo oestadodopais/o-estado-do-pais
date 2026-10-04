@@ -626,3 +626,5 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | oe1-e | 2 novas | por ler | Codex gpt-6-astra: os dois rótulos distinguem a conta de apoio de uma ressalva da aritmética do valor. Repõe-se também o cabeçalho original da tabela C1f, sem mudar as suas linhas. A leitura cruzada fica pendente antes da fusão. |
+
+| h2 | composição condicional | por ler | Codex gpt-6-astra: as palavras do estado declarado dos estudos recentes. Leitura a frio pelo Claude Opus, antes da fusão. |

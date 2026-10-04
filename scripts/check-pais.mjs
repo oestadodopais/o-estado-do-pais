@@ -343,10 +343,18 @@ for (const lang of ['pt', 'en']) {
   }
   const recentes = WORKS.map((w,i) => {
     const e = w.editions.find(e => e.lang === lang) ?? w.editions[0];
-    return { slug: w.slug, i, data: datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data ?? '' };
-  }).sort((a,b) => b.data.localeCompare(a.data) || a.i-b.i).slice(0,3).map(e=>e.slug);
+    if (w.emCurso && (!w.emCurso.razao?.trim() || (w.emCurso.ate && !/^\d{4}-\d{2}-\d{2}$/.test(w.emCurso.ate))))
+      erros.push(`E1 ${lang}: declaração emCurso incompleta em ${w.slug}.`);
+    return { slug: w.slug, i, emCurso: Boolean(w.emCurso), data: datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data ?? '' };
+  }).sort((a,b) => Number(b.emCurso) - Number(a.emCurso) || b.data.localeCompare(a.data) || a.i-b.i).slice(0,3).map(e=>e.slug);
   const rendidos = home.querySelectorAll('#trabalhos [data-estudo]').map(e => e.getAttribute('data-estudo'));
-  if (JSON.stringify(recentes) !== JSON.stringify(rendidos)) erros.push(`E1 ${lang}: os três estudos não são os mais recentes.`);
+  if (JSON.stringify(recentes) !== JSON.stringify(rendidos)) erros.push(`E1 ${lang}: os três estudos não têm os em curso à cabeça, seguidos dos mais recentes.`);
+  for (const el of home.querySelectorAll('#trabalhos [data-estudo]')) {
+    const w = WORKS.find(w => w.slug === el.getAttribute('data-estudo'));
+    const marcas = el.querySelectorAll('[data-estudo-em-curso]');
+    if (marcas.length !== (w?.emCurso ? 1 : 0) || marcas.some(m => normal(m.textContent) !== (lang === 'en' ? 'ongoing' : 'em curso') || !m.closest('.estudo-meta')?.querySelector('time')))
+      erros.push(`E1 ${lang}: marca em curso ausente, indevida ou fora da data em ${w?.slug}.`);
+  }
   /* E2 · A LISTA DOS ESTUDOS É UMA SÓ (bloco R1, 23.09.2026, I144). Todos os
      estudos do arquivo, cada um uma vez, do mais recente para o mais antigo pela
      data de `datas-de-publicacao.json` (num empate, a ordem do arquivo), cada um

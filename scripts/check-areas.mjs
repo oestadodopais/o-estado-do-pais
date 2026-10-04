@@ -345,6 +345,10 @@ function A2(m) {
       if (!existe(porta)) erros.push(`${p.rota}: o trabalho "${t.id}" não tem página em ${porta}.`);
       if (!portas.has(porta)) erros.push(`${p.rota}: não abre a porta do trabalho "${t.id}".`);
     }
+    // H2, I191: nenhuma porta das áreas precisa do redirecionamento do texto antigo.
+    for (const porta of portas) {
+      if (/\/(?:texto|text)(?:[/?#]|$)/.test(porta)) erros.push(`${p.rota}: H2 A2 porta antiga do texto: ${porta}.`);
+    }
     for (const c of e.pecas.conjuntos) {
       const chaveDaRota = INTERNAL_SOURCES.find((s) => s.id === c.id)?.conjunto ?? null;
       if (!chaveDaRota) {
