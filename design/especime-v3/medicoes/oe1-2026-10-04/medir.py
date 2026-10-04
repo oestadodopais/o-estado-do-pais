@@ -174,15 +174,24 @@ def main():
         measures["verificacoes_apos_l1"] = count_measure(tail, lambda r: r["codigo"] == 0)
     clock_tests = json.loads((HERE / "plantas-tempos.json").read_text())["casos"]
     measures["provas_da_precisao_dos_tempos"] = count_measure(clock_tests, lambda t: t["passou"])
+    cpath = HERE / "oe1c-provas.json"
+    cproof = json.loads(cpath.read_text()) if cpath.exists() else None
+    if cproof:
+        for path, sha in cproof["implementacao"].items():
+            assert hashlib.sha256((SITE / path).read_bytes()).hexdigest() == sha, "Código diferente da prova OE1-c"
+        assert cproof["lista_igual_a_proposta"] and cproof["teto_e_margem_iguais"]
+        measures.update(cproof["medidas"])
     proposal = json.loads((HERE / "proposta-localizadores.json").read_text())
     digest = hashlib.sha256((SITE / "tests/livro/indice.mjs").read_bytes()).hexdigest()
-    assert digest in {proposal["guarda_sha256"], proposal["candidato_sha256"]}
-    proposal_applied = digest == proposal["candidato_sha256"]
+    proved_digest = cproof["implementacao"]["tests/livro/indice.mjs"] if cproof else None
+    assert digest in {proposal["guarda_sha256"], proposal["candidato_sha256"], proved_digest}
+    proposal_applied = digest in {proposal["candidato_sha256"], proved_digest}
     measures["plantas_da_proposta_de_localizadores"] = count_measure(proposal["plantas"], lambda t: t["mordeu"])
     bundle = json.loads((HERE / "proposta-feixe.json").read_text())
     bundle_digest = hashlib.sha256((SITE / "scripts/design-bundle.mjs").read_bytes()).hexdigest()
-    assert bundle_digest in {bundle["guarda_sha256"], bundle["candidato_sha256"]}
-    bundle_applied = bundle_digest == bundle["candidato_sha256"]
+    proved_bundle = cproof["implementacao"]["scripts/design-bundle.mjs"] if cproof else None
+    assert bundle_digest in {bundle["guarda_sha256"], bundle["candidato_sha256"], proved_bundle}
+    bundle_applied = bundle_digest in {bundle["candidato_sha256"], proved_bundle}
     measures["plantas_do_recorte_proposto"] = count_measure(bundle["plantas"], lambda t: t["mordeu"])
     data = dict(medido_em=datetime.now(timezone.utc).isoformat(), modelo="Codex gpt-6-astra", cabecas=heads,
                 commits=commits, medidas=measures, eurostat_paises_com_dez_funcoes=coverage,
@@ -201,6 +210,9 @@ def main():
         data["verificacao_final"] = {n: dict(codigo_ficheiro="portoes/"+n+".codigo",
             cabeca_ficheiro="portoes/"+(n+".cabeca" if n in {"motor", "ledger"} else "cabeca")) for n in gates}
         data["nota_do_fecho"] = "A medição é um instantâneo datado. Os ficheiros de verificacao_final são escritos pela corrida posterior ao commit e conferidos por --conferir-final."
+    if cproof:
+        data["oe1c"] = dict(provas=cproof, custo_na_medicao=json.loads((HERE / "custo-oe1c.json").read_text()),
+            resultado_final="oe1c-final.json", resposta_final="OE1-c-resultado.md")
     assert all(m["conhecido_positivo"] for m in measures.values())
     (HERE / "medidas.json").write_text(encoded(data))
     table = ["| Id | Fonte | Valor literal da fonte, ou cálculo assinalado | Unidade | Período | Localizador |", "|---|---|---|---|---|---|"]
@@ -354,6 +366,48 @@ A atualização de scripts/lugar-tetos-b1.json é uma medição de apoio ao pont
         report += ("O recorte está aplicado apenas ao exportador dos espécimes.\n\n" if bundle_applied else "A proposta não está aplicada. Esta alteração do exportador dos espécimes fica fora das cinco adaptações enumeradas no OE1-b e requer ampliação do perímetro. É a segunda razão por que o verify continua por fechar.\n\n")
         report += "\nCódigos finais: " + ", ".join(f"[{n}](portoes/{n}.codigo)" if close else f"{n}={g['codigo']}" for n,g in gates.items()) + ". As cabeças estão ao lado, na mesma pasta.\n\n"
         report += "Custo desta passagem: [custo-oe1b.json](custo-oe1b.json), medido pelo incremento dos contadores desde a ordem OE1-b, com construção e revisões automáticas discriminadas. O ficheiro conserva o corte temporal e é atualizado após a corrida final.\n\n"
+    if cproof:
+        crop = cproof["feixe"]["recorte"]
+        report += f"""## OE1-c
+
+As duas extensões autorizadas estão aplicadas. Esta passagem conserva os bytes das 186 linhas e de todo o livro do sítio. O motor mantém a cabeça 9bfbb777f7d2f5af8b185475c8dd8027ebd76bad e não recebeu alterações.
+
+| Ficheiro | Mudança e prova |
+|---|---|
+| tests/livro/indice.mjs | Recebe exatamente as sete expressões da proposta, com o leitor nomeado; as quatro anteriores permanecem iguais. As doze plantas substituem uma linha por uma cópia em memória, chamam as mesmas células I1 e I3 e exigem a queixa do localizador daquela linha e as duas queixas da busca. A reposição volta a conferir I1 e I3 limpas. |
+| package.json | Acrescenta --prova ao comando check:indice para as doze plantas correrem dentro do verify. |
+| scripts/design-bundle.mjs | Recorta só o espécime 13 para as primeiras oito entradas, na ordem original, com a nota e a porta para a página completa. A quarta planta retira o limite em memória e exige que o cartão 13 falhe apenas pelo teto. |
+| medir-oe1c.py; oe1c-provas.json | Conferem a lista contra o patch autorizado, os valores do teto e da margem contra a cabeça anterior, os registos das plantas e os bytes das 186 linhas. No modo --final leem os códigos e as cabeças e escrevem o resultado da corrida e a resposta pedida. |
+| medir.py; medidas.json | Incorporam as cinco medidas OE1-c, cada uma com conhecido positivo, e os resumos dos ficheiros efetivamente ensaiados. --conferir-final conserva a exigência de cinco zeros, tempos atuais e cabeças finais. |
+| custo.py; custo-oe1c.json | Medem o incremento dos contadores desde a ordem OE1-c, separado da passagem anterior. |
+| LEIA-ME.md; RESPOSTA-construtor-oe1.md; registos desta pasta | Guardam o estado, as provas e as limitações; o primeiro commit incluiu os cinco corrida-sitio.* e custo-oe1b.json que estavam por comitar. |
+
+Os ensaios preparatórios estão a 0 em [oe1c-indice.codigo](oe1c-indice.codigo) e [oe1c-feixe.codigo](oe1c-feixe.codigo). I1, I3, as doze plantas dos localizadores, os quatro formatos anteriores e as quatro plantas do feixe passaram. A lista das queixas efetivas está em [oe1c-provas.json](oe1c-provas.json), com os resumos dos ficheiros de código ensaiados.
+
+O primeiro ensaio da nova planta do feixe saiu a 1: a comparação do teste convertia o domínio legível com acento para punycode, mas o exportador escreve o domínio legível. O teste passou a comparar o endereço literal que o exportador já escreve. A página, as oito entradas e a ordem estavam corretas. O registo da falha conserva-se em oe1c-feixe-primeira.log; nenhuma regra do teto foi mudada.
+
+| Medida do recorte | Resultado do ensaio |
+|---|---:|
+| Entradas na página integral | {crop['entradas_na_pagina']} |
+| Entradas no espécime | {crop['entradas_no_recorte']} |
+| Bytes do espécime | {crop['bytes_cartao']} |
+| Bytes sem o recorte, na planta | {crop['bytes_sem_recorte']} |
+| Teto em bytes, inalterado | {crop['teto_bytes']} |
+| Margem, inalterada | {crop['margem']} |
+
+O SHA-256 da página integral manteve-se {crop['pagina_sha256']}. A planta sem recorte retém o título e a nota da configuração atual, por isso os seus bytes diferem do espécime integral anterior ao OE1-c.
+
+A corrida inteira seguinte é feita na cabeça que inclui este relatório, pela tranca. Os códigos efetivos são lidos de [motor.codigo](portoes/motor.codigo), [ledger.codigo](portoes/ledger.codigo), [build.codigo](portoes/build.codigo), [verify.codigo](portoes/verify.codigo) e [typecheck.codigo](portoes/typecheck.codigo), com as cabeças ao lado. O [resultado final OE1-c](OE1-c-resultado.md) e [oe1c-final.json](oe1c-final.json) são escritos depois dessa corrida, sem atribuir à cabeça final os resultados preparatórios. --conferir-final exige os cinco zeros. Outro vermelho faz parar para relato.
+
+As queixas «história do valor» e data-linha-claim fora do livro, dentro do JSON das plantas anteriores, são resultados esperados dessas plantas, não defeitos da cabeça. Não foram alteradas.
+
+As decisões em vigor estão registadas em decisoes-oe1c.log. Os commits desta passagem, anteriores ao commit do relatório, constam da lista de commits acima; a cabeça final está em portoes/cabeca.
+
+O custo desta passagem é o corte de [custo-oe1c.json](custo-oe1c.json), pelos contadores, com cache e revisões automáticas separados. O modo --oe1c de custo.py usa o momento da ordem OE1-c. Modelo: Codex gpt-6-astra. Os registos da execução final são escritos depois do commit, para poderem nomear a cabeça que foi realmente testada.
+
+As lacunas de receita consolidada AC+SS, saldo dos mapas, despesa bruta da Segurança Social e necessidades de financiamento mensais mantêm as razões descritas no início deste relatório. Não se acrescentou um valor para as preencher.
+
+"""
     report += "## Custo medido\n\nModelo: Codex gpt-6-astra, confirmado pelo registo da sessão. O custo em símbolos é o acumulado dos eventos token_count até à medição, separado entre construção e revisão automática. Inclui entradas lidas da cache; não é o preço monetário. Mensagens posteriores à medição ficam fora desse corte.\n\n```json\n" + encoded(costs) + "```\n\n"
     report += "## Tabela integral das linhas\n\n" + "\n".join(table) + "\n"
     (HERE / "LEIA-ME.md").write_text(report)
@@ -398,6 +452,24 @@ Custo OE1-b ao corte: {(bcost or {}).get('tokens_totais', 'por medir')} símbolo
             short += "\nFalta autorizar [a proposta dos sete formatos de localizador](" + folder + "indice-localizadores.patch). O ensaio em memória passou; a guarda aplicada permanece intacta e o verify continua por fechar.\n"
         if not bundle_applied:
             short += "\nFalta também autorizar [o recorte do espécime do índice](" + folder + "feixe-recorte.patch): oito entradas, página integral intacta e teto conservado. O ensaio passou; o exportador aplicado ainda excede o teto.\n"
+        (SITE / "RESPOSTA-construtor-oe1.md").write_text(short)
+    if cproof and close:
+        short = f"""OE1-c: as duas extensões estão aplicadas e ensaiadas. O OE1 integral continua parcial pelas lacunas de fonte.
+
+Motor: `{heads['motor']}`. Sítio: [cabeça final](""" + folder + """portoes/cabeca), incluindo o commit desta resposta.
+
+Commits anteriores ao fecho: """ + ", ".join("`" + c.split()[0][:8] + "`" for c in reversed(commits['sitio'])) + """. O motor não recebeu commits nesta passagem.
+
+Doze plantas dos localizadores e quatro do feixe morderam. As 186 linhas conservam os seus bytes; os quatro formatos anteriores, o teto e a margem mantêm-se.
+
+Códigos da corrida final: """ + ", ".join(f"[{n}]({folder}portoes/{n}.codigo)" for n in gates) + """. Os códigos e as cabeças são lidos de ficheiro depois da corrida inteira pela tranca; --conferir-final exige os cinco zeros e a cabeça atual.
+
+[Resultado final com cabeças, commits, códigos e custo](""" + folder + """OE1-c-resultado.md). [Relatório, secção OE1-c](""" + folder + """LEIA-ME.md). [Tabela integral das 186 linhas](""" + folder + """LINHAS.md).
+
+Continuam por selar a receita consolidada AC+SS e o saldo nos mapas, a divergência da despesa bruta da Segurança Social e as necessidades de financiamento mensais. As razões mantêm-se no relatório.
+
+Custo OE1-c: [contadores e segundos ao corte](""" + folder + """custo-oe1c.json). Modelo: Codex gpt-6-astra. Relatório e resposta curta comitados; registos da execução final escritos depois do commit. Nenhum push.
+"""
         (SITE / "RESPOSTA-construtor-oe1.md").write_text(short)
     print(encoded(dict(linhas=len(rows), medidas=len(measures), conhecidos_positivos=all(m["conhecido_positivo"] for m in measures.values()), portoes=gates)))
 

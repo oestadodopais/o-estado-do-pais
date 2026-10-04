@@ -74,8 +74,11 @@ motor, cabeça na medição preparatória: `9bfbb777f7d2f5af8b185475c8dd8027ebd7
 * `9bfbb777f7d2f5af8b185475c8dd8027ebd76bad OE1: selar 186 linhas e provar os leitores e a travessia literal`
 * `aa537323722eea9001daccabf394fd5e3ccdb546 OE1: guardar fontes oficiais e aquisição reproduzível`
 
-sitio, cabeça na medição preparatória: `dc53e891c131b95ae90821703ab6e8397b0efd6d`.
+sitio, cabeça na medição preparatória: `9038e1e6a8001bce90b5496083ee373d0a162ab3`.
 
+* `9038e1e6a8001bce90b5496083ee373d0a162ab3 OE1-c: recortar o espécime do livro e provar o teto com o recorte retirado`
+* `24b21fe9d842a33e622d85e510998ee8d335fbc8 OE1-c: reconhecer os sete localizadores e plantar as recusas em I1 e I3`
+* `0bb9958ae6e6aeb00355bb87a54213d1173d2735 OE1-b: fechar o relatório com duas extensões pendentes`
 * `dc53e891c131b95ae90821703ab6e8397b0efd6d OE1-b: guardar as provas e as propostas adicionais`
 * `27f06c275b9fd0551867eec5da66353f3bffc1d8 OE1-b: reconferir a L1 com a construção de partida`
 * `ff8692ba096b493174e44eaf3d3695c4f56ded6f OE1-b: comitar o relatório, as plantas e as medições da integração`
@@ -196,7 +199,7 @@ O check:indice recusou 150 rótulos publicados porque a sua lista fechada ainda 
 
 A proposta em indice-localizadores.patch acrescenta apenas essas sete formas a tests/livro/indice.mjs, cada uma com o leitor que a escreve nomeado. O ensaio corre a proposta em memória: índice a 0, 150 rótulos reconhecidos, quatro formatos anteriores conservados e doze plantas recusadas. A guarda aplicada foi conservada durante esse ensaio. As provas estão em proposta-localizadores.json e proposta-indice.log.
 
-A proposta não está aplicada. Esta extensão da guarda da origem dos nomes fica fora das cinco adaptações expressamente enumeradas no OE1-b e requer ampliação do perímetro. O verify continua por fechar por esta razão.
+A proposta está aplicada; os códigos finais abaixo conferem a cabeça entregue.
 
 ### OE1-b: o recorte do espécime de desenho
 
@@ -204,12 +207,51 @@ O design:feixe recusou o cartão 13, que copia o índice inteiro: 908545 bytes, 
 
 O ensaio gerou os cartões numa pasta temporária, sem alterar o gerador aplicado. As três plantas existentes do feixe morderam. Uma quarta retirou o recorte e voltou a exceder o teto do cartão 13. As provas estão em proposta-feixe.json e nos registos ao lado.
 
-A proposta não está aplicada. Esta alteração do exportador dos espécimes fica fora das cinco adaptações enumeradas no OE1-b e requer ampliação do perímetro. É a segunda razão por que o verify continua por fechar.
+O recorte está aplicado apenas ao exportador dos espécimes.
 
 
 Códigos finais: [motor](portoes/motor.codigo), [build](portoes/build.codigo), [verify](portoes/verify.codigo), [typecheck](portoes/typecheck.codigo), [ledger](portoes/ledger.codigo). As cabeças estão ao lado, na mesma pasta.
 
 Custo desta passagem: [custo-oe1b.json](custo-oe1b.json), medido pelo incremento dos contadores desde a ordem OE1-b, com construção e revisões automáticas discriminadas. O ficheiro conserva o corte temporal e é atualizado após a corrida final.
+
+## OE1-c
+
+As duas extensões autorizadas estão aplicadas. Esta passagem conserva os bytes das 186 linhas e de todo o livro do sítio. O motor mantém a cabeça 9bfbb777f7d2f5af8b185475c8dd8027ebd76bad e não recebeu alterações.
+
+| Ficheiro | Mudança e prova |
+|---|---|
+| tests/livro/indice.mjs | Recebe exatamente as sete expressões da proposta, com o leitor nomeado; as quatro anteriores permanecem iguais. As doze plantas substituem uma linha por uma cópia em memória, chamam as mesmas células I1 e I3 e exigem a queixa do localizador daquela linha e as duas queixas da busca. A reposição volta a conferir I1 e I3 limpas. |
+| package.json | Acrescenta --prova ao comando check:indice para as doze plantas correrem dentro do verify. |
+| scripts/design-bundle.mjs | Recorta só o espécime 13 para as primeiras oito entradas, na ordem original, com a nota e a porta para a página completa. A quarta planta retira o limite em memória e exige que o cartão 13 falhe apenas pelo teto. |
+| medir-oe1c.py; oe1c-provas.json | Conferem a lista contra o patch autorizado, os valores do teto e da margem contra a cabeça anterior, os registos das plantas e os bytes das 186 linhas. No modo --final leem os códigos e as cabeças e escrevem o resultado da corrida e a resposta pedida. |
+| medir.py; medidas.json | Incorporam as cinco medidas OE1-c, cada uma com conhecido positivo, e os resumos dos ficheiros efetivamente ensaiados. --conferir-final conserva a exigência de cinco zeros, tempos atuais e cabeças finais. |
+| custo.py; custo-oe1c.json | Medem o incremento dos contadores desde a ordem OE1-c, separado da passagem anterior. |
+| LEIA-ME.md; RESPOSTA-construtor-oe1.md; registos desta pasta | Guardam o estado, as provas e as limitações; o primeiro commit incluiu os cinco corrida-sitio.* e custo-oe1b.json que estavam por comitar. |
+
+Os ensaios preparatórios estão a 0 em [oe1c-indice.codigo](oe1c-indice.codigo) e [oe1c-feixe.codigo](oe1c-feixe.codigo). I1, I3, as doze plantas dos localizadores, os quatro formatos anteriores e as quatro plantas do feixe passaram. A lista das queixas efetivas está em [oe1c-provas.json](oe1c-provas.json), com os resumos dos ficheiros de código ensaiados.
+
+O primeiro ensaio da nova planta do feixe saiu a 1: a comparação do teste convertia o domínio legível com acento para punycode, mas o exportador escreve o domínio legível. O teste passou a comparar o endereço literal que o exportador já escreve. A página, as oito entradas e a ordem estavam corretas. O registo da falha conserva-se em oe1c-feixe-primeira.log; nenhuma regra do teto foi mudada.
+
+| Medida do recorte | Resultado do ensaio |
+|---|---:|
+| Entradas na página integral | 428 |
+| Entradas no espécime | 8 |
+| Bytes do espécime | 235855 |
+| Bytes sem o recorte, na planta | 908678 |
+| Teto em bytes, inalterado | 672236 |
+| Margem, inalterada | 0.1 |
+
+O SHA-256 da página integral manteve-se 8a3b6f08b71795b3865cd2c3c09e549c0a8f00ac0c2b65256fa437fd23bdad4e. A planta sem recorte retém o título e a nota da configuração atual, por isso os seus bytes diferem do espécime integral anterior ao OE1-c.
+
+A corrida inteira seguinte é feita na cabeça que inclui este relatório, pela tranca. Os códigos efetivos são lidos de [motor.codigo](portoes/motor.codigo), [ledger.codigo](portoes/ledger.codigo), [build.codigo](portoes/build.codigo), [verify.codigo](portoes/verify.codigo) e [typecheck.codigo](portoes/typecheck.codigo), com as cabeças ao lado. O [resultado final OE1-c](OE1-c-resultado.md) e [oe1c-final.json](oe1c-final.json) são escritos depois dessa corrida, sem atribuir à cabeça final os resultados preparatórios. --conferir-final exige os cinco zeros. Outro vermelho faz parar para relato.
+
+As queixas «história do valor» e data-linha-claim fora do livro, dentro do JSON das plantas anteriores, são resultados esperados dessas plantas, não defeitos da cabeça. Não foram alteradas.
+
+As decisões em vigor estão registadas em decisoes-oe1c.log. Os commits desta passagem, anteriores ao commit do relatório, constam da lista de commits acima; a cabeça final está em portoes/cabeca.
+
+O custo desta passagem é o corte de [custo-oe1c.json](custo-oe1c.json), pelos contadores, com cache e revisões automáticas separados. O modo --oe1c de custo.py usa o momento da ordem OE1-c. Modelo: Codex gpt-6-astra. Os registos da execução final são escritos depois do commit, para poderem nomear a cabeça que foi realmente testada.
+
+As lacunas de receita consolidada AC+SS, saldo dos mapas, despesa bruta da Segurança Social e necessidades de financiamento mensais mantêm as razões descritas no início deste relatório. Não se acrescentou um valor para as preencher.
 
 ## Custo medido
 
