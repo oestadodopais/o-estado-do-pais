@@ -10,10 +10,10 @@
  * fontes, o projeto, e «O que mudou». Nada aqui se escreve à mão: tudo vem de `indiceDoSitio()`
  * (`src/lib/indice.mjs`), que lê a tabela das rotas e os módulos que dão os caminhos às páginas.
  *
- * A FORMA (§3, ponto 4, do brief). Uma coluna de secções na disposição A da casa (o nome da secção
- * na coluna do rótulo, as portas no corpo; uma coluna abaixo de 780 px), listas simples, e os
- * concelhos em gavetas fechadas, uma por distrito ou ilha (`Gaveta.astro`, um `<details>` que abre
- * sem guião). Nenhum guião.
+ * A FORMA (§3, ponto 4, do brief). Uma coluna em todas as larguras: o nome de cada secção por cima
+ * das suas portas, listas simples (os nomes dos lugares em colunas de nomes, que continuam a ser uma
+ * lista), e os concelhos em gavetas fechadas, uma por distrito ou ilha (`Gaveta.astro`, um
+ * `<details>` que abre sem guião). Nenhum guião.
  *
  * UMA PORTA POR COISA. Nenhum destino se repete no corpo da página: a L1 do `check:lugar` conta as
  * páginas com um destino repetido fora do cabeçalho e do rodapé, e o índice não entra nessa conta.
@@ -57,8 +57,8 @@ const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'n
   {seccoes.map((chave) => {
     const seccao = indice[chave];
     return (
-      <section class="metodo-secao indice-secao" aria-labelledby={`indice-${chave}`} data-indice-seccao={chave}>
-        <div><h2 id={`indice-${chave}`}>{seccao.titulo}</h2></div>
+      <section class="indice-secao" aria-labelledby={`indice-${chave}`} data-indice-seccao={chave}>
+        <h2 class="indice-secao-titulo" id={`indice-${chave}`}>{seccao.titulo}</h2>
         <div class="indice-corpo">
           <PortasDoIndice portas={seccao.portas} lang={lang} />
           {chave === 'lugares' && (
@@ -82,8 +82,8 @@ const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'n
   })}
 
   {indice.mudou.mudancas.length > 0 && (
-    <section class="metodo-secao indice-secao" aria-labelledby="indice-mudou" data-indice-seccao="mudou">
-      <div><h2 id="indice-mudou">{indice.mudou.titulo}</h2></div>
+    <section class="indice-secao" aria-labelledby="indice-mudou" data-indice-seccao="mudou">
+      <h2 class="indice-secao-titulo" id="indice-mudou">{indice.mudou.titulo}</h2>
       <div class="indice-corpo">
         <ol class="lugar-mudou" data-mudou-ambito="indice">
           {indice.mudou.mudancas.map((e) => (
