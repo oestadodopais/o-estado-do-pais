@@ -1,0 +1,97 @@
+{
+  "brief": "design/observatorio/BRIEF-R3-o-indice-do-sitio.md",
+  "guiao": "design/observatorio/medidas/BRIEF-R3.py",
+  "cabeca_lida": "1c4dde2f",
+  "medidas": [
+    {
+      "nome": "rotas_declaradas",
+      "valor": 40,
+      "comando": "git show 1c4dde2f:src/lib/routes.mjs · as chaves de ROUTES",
+      "conhecido_positivo": {
+        "o_que": "a das sugestões é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_de_indice_declaradas",
+      "valor": 0,
+      "comando": "as chaves de ROUTES que começam por «indice»",
+      "conhecido_positivo": {
+        "o_que": "a mesma leitura vê a chave lugares",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_do_menu",
+      "valor": 6,
+      "comando": "git show 1c4dde2f:src/lib/navegacao.mjs · ROTAS_NAV",
+      "conhecido_positivo": {
+        "o_que": "a União é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_do_rodape",
+      "valor": 6,
+      "comando": "git show 1c4dde2f:src/lib/navegacao.mjs · ROTAS_RODAPE",
+      "conhecido_positivo": {
+        "o_que": "o livro é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_de_pagina_portugueses",
+      "valor": 32,
+      "comando": "git ls-tree -r 1c4dde2f:src/pages · os .astro fora de en/",
+      "conhecido_positivo": {
+        "o_que": "a primeira página é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_de_pagina_ingleses",
+      "valor": 32,
+      "comando": "git ls-tree -r 1c4dde2f:src/pages/en · os .astro",
+      "conhecido_positivo": {
+        "o_que": "a primeira página inglesa é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_declarados",
+      "valor": 17,
+      "comando": "git show 1c4dde2f:src/data/studies.mjs · as entradas com slug",
+      "conhecido_positivo": {
+        "o_que": "o Évora 2027 é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_com_sucessor",
+      "valor": 6,
+      "comando": "as entradas de studies.mjs com o campo sucedidoPor",
+      "conhecido_positivo": {
+        "o_que": "há pelo menos um (as seis edições antigas de Évora)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "filtro_do_mapa_do_sitio_declarado",
+      "valor": true,
+      "comando": "git show 1c4dde2f:astro.config.mjs · a chamada sitemap com o filtro",
+      "conhecido_positivo": {
+        "o_que": "o filtro fala das páginas de linha do livro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_do_rodape_para_um_indice",
+      "valor": 0,
+      "comando": "git show 1c4dde2f:src/components/SiteFooter.astro · a palavra «indice»",
+      "conhecido_positivo": {
+        "o_que": "o rodapé tem a porta das correções",
+        "encontrado": true
+      }
+    }
+  ]
+}
