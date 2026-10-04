@@ -32,7 +32,7 @@
  * o identificador no metadado, que é o que ela tem.
  */
 import CampoDaLinha from './CampoDaLinha.astro';
-import { nomeDaMedida, nomeDoCartao, eNomeDeMedida } from '../lib/nomes.mjs';
+import { nomeDaMedida, nomeDoCartao, nomeDoCartaoComAUnidade, eNomeDeMedida } from '../lib/nomes.mjs';
 import { linguaDoRotuloDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
 
 /* A CLASSE É DE QUEM CHAMA, E A MARCA É DESTE COMPONENTE (F1.10, §2.5).
@@ -46,11 +46,14 @@ import { linguaDoRotuloDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua
    ou da PORDATA entre o primeiro e o segundo. A escolha é de quem chama, porque é
    quem chama que sabe em que superfície está; a MARCA, que é o que faz do nome uma
    coisa conferida, continua a ser deste componente. */
+/* `cartao-com-unidade` (passagem R2-b, 04.10.2026): a escada do cartão, com o nome de nível primeiro quando a unidade
+   declarada do cartão diz a variação; só a pede quem imprime essa unidade ao pé do nome. */
 const { linha: c, lang = 'pt', class: klass = 'livro-item-nome', escada = 'livro' } = Astro.props;
-if (escada !== 'livro' && escada !== 'cartao') {
-  throw new Error(`<NomeDaMedida>: escada desconhecida «${escada}» (é «livro» ou «cartao»).`);
+if (escada !== 'livro' && escada !== 'cartao' && escada !== 'cartao-com-unidade') {
+  throw new Error(`<NomeDaMedida>: escada desconhecida «${escada}» (é «livro», «cartao» ou «cartao-com-unidade»).`);
 }
-const nome = escada === 'cartao' ? nomeDoCartao(c, lang) : nomeDaMedida(c, lang);
+const nome =
+  escada === 'cartao' ? nomeDoCartao(c, lang) : escada === 'cartao-com-unidade' ? nomeDoCartaoComAUnidade(c, lang) : nomeDaMedida(c, lang);
 if (nome !== null && !eNomeDeMedida(nome)) {
   throw new Error(`nomes: nome mal formado para a linha "${c.id}"`);
 }

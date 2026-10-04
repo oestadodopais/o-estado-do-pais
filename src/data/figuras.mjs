@@ -201,14 +201,23 @@ const LISTA_PDM = [
     /* R2 (03.10.2026): o achado 4 da auditoria dos rótulos PAROU. A forma da triagem («Quota das exportações no mercado
        mundial» / «share of world exports») nomeia outra coisa: o excerto da linha diz «Share of exports of advanced
        economies — Percentage of OECD and non-OECD EU countries total - 3-year change», e a quota é no total das
-       exportações dos países da OCDE e dos países da União fora dela, e não no mercado mundial. O nome e a unidade
-       ficam como estavam até o lugar de direção decidir (o relatório do bloco R2). */
-    nome: { pt: 'Quota nas exportações, variação em três anos', en: 'Share of exports, three-year change' },
+       exportações dos países da OCDE e dos países da União fora dela, e não no mercado mundial. */
+    /* R2-b (04.10.2026): a forma decidida pelo lugar de direção segue o excerto. O nome diz a quota de Portugal nas
+       exportações das economias avançadas (o título do conjunto, «Share of exports of advanced economies», e a descrição
+       do Eurostat, «shares of exports of goods and services of EU Member States in relation to total exports»), com o
+       termo da fonte entre parênteses: «Export market shares» é o título com que o Eurostat arruma este indicador na
+       metainformação do Procedimento (a cópia do motor da página de metainformação dos indicadores do painel). A
+       variação passa para a unidade («% de variação em três anos», em `UNIDADES_DOS_CARTOES`), e a dobra diz o que são
+       as economias avançadas. O nome no veredicto e na frase continua a dizer a variação, porque lá não há unidade. */
+    nome: {
+      pt: 'Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)',
+      en: 'Portugal’s share of advanced economies’ exports (export market share)',
+    },
     nomeNoVeredicto: { pt: 'a variação em três anos da quota nas exportações', en: 'the three-year change in the share of exports' },
     nomeNaFrase: { pt: 'variação em três anos da quota nas exportações', en: 'three-year change in the share of exports' },
     medida: {
-      pt: ['Percentagem do total OCDE e UE não-OCDE, variação em três anos · ', { ref: '2025' }],
-      en: ['Percentage of the OECD and non-OECD EU total, three-year change · ', { ref: '2025' }],
+      pt: ['Variação em três anos, em percentagem · ', { ref: '2025' }],
+      en: ['Three-year change, as a percentage · ', { ref: '2025' }],
     },
     /* nota: «… -3%.» */
     limiar: { nl: '3', sinal: '−', lado: 'inferior', simbolo: '%' },
@@ -2092,12 +2101,15 @@ export const DEFINICOES_DAS_MEDIDAS = /** @type {const} */ ({
        against advanced economies». A quota era da casa. */
     /* UE2-b (02.10.2026): a forma em palavras comuns, a única (a decisão do lugar de direção sobre o achado 14 da leitura
        a frio do UE2): o termo técnico da fonte fica entre parênteses, a seguir às palavras que o explicam. */
+    /* R2-b (04.10.2026, o achado 4 da auditoria dos rótulos): a dobra diz o que são as economias avançadas pelo termo da
+       fonte, entre parênteses a seguir aos países que a descrição do Eurostat conta; a ordem inglesa põe os três anos à
+       cabeça para o termo ficar ao pé dos países. */
     origens: ['pdm-exportacoes', 'eurostat-tipsbp60-descricao', 'eurostat-sec2010-ocde'],
     pt: [
-      'Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)?',
+      'Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (as economias avançadas)?',
     ],
     en: [
-      'How much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD changed over three years (export performance against advanced economies)?',
+      'Over three years, how much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD (the advanced economies) changed?',
     ],
   },
   'divida-das-empresas-2025': {

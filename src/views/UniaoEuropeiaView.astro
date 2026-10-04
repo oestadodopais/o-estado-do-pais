@@ -100,6 +100,7 @@ import { dataDaCasa } from '../lib/datas.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/inicio.css';
+import { nomeComAVariacaoNaUnidade } from '../data/unidades-dos-cartoes.mjs';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
@@ -164,7 +165,9 @@ const cartaoDaMedida = (f, estado) => {
     id: f.claim,
     destino: `#m-${f.claim}`,
     destinoRotulo: null,
-    nome: f.nome[lang],
+    /* R2-b (04.10.2026): a linha da unidade do cartão desta página diz a variação; onde a unidade declarada também a
+       diz, o nome é o de nível (`NOMES_COM_A_VARIACAO_NA_UNIDADE`). */
+    nome: nomeComAVariacaoNaUnidade(f.claim, lang) ?? f.nome[lang],
     medida: f.medida[lang],
     estado,
     /* QUEM FIXOU O LIMIAR (F1.10, item 8.5): as treze do Procedimento dizem-no na

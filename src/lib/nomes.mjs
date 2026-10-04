@@ -64,6 +64,7 @@ import { MEDIDAS_DO_DOMINIO_1 } from '../data/dominios.mjs';
    declaram; esta nomeia as 81 que só tinham o título do documento ou o rótulo
    que a fonte imprime. A razão por extenso está no ficheiro. */
 import { NOMES_DO_PROJETO, NOMES_DAS_LINHAS_DERIVADAS } from '../data/nomes-das-medidas.mjs';
+import { nomeComAVariacaoNaUnidade } from '../data/unidades-dos-cartoes.mjs';
 import { POR_VERIFICAR, documentoDaLinha } from './ledger.mjs';
 /* O NOME OFICIAL VEM DE ONDE ELE É LIDO, que é o ficheiro do motor. Não fecha
    ciclo: `enquadramento.mjs` importa o livro-razão e o marcador, e não os nomes. */
@@ -158,7 +159,10 @@ export function eNomeDeMedida(x) {
     o.fonte === 'figuras' ||
     o.fonte === 'medidas' ||
     o.fonte === 'projeto' ||
-    o.fonte === 'oficial';
+    o.fonte === 'oficial' ||
+    /* R2-b (04.10.2026): o nome de nível de um cartão cuja unidade declarada diz a variação
+       (`NOMES_COM_A_VARIACAO_NA_UNIDADE`, em `src/data/unidades-dos-cartoes.mjs`). */
+    o.fonte === 'cartao';
   const campoOk = o.campo === null || o.campo === 'name' || o.campo === 'document.title';
   if (!fonteOk || !campoOk) return false;
   /* Um e só um dos dois: a marca do markup sai daqui. */
@@ -242,6 +246,21 @@ export function nomeDoCartao(claim, lang) {
  * buscar a lista à mesma função que a escreve confirmava a função e não o
  * ficheiro de dados.
  */
+
+/**
+ * O NOME DE UM CARTÃO QUE IMPRIME A UNIDADE DECLARADA (passagem R2-b, 04.10.2026): o nome de nível, quando a unidade
+ * declarada diz a variação (`nomeComAVariacaoNaUnidade`), e a escada do cartão em todos os outros casos. Só quem
+ * imprime essa unidade ao pé do nome pede esta escada.
+ *
+ * @param {Linha} claim
+ * @param {Lingua} lang
+ * @returns {NomeDaMedida|null}
+ */
+export function nomeDoCartaoComAUnidade(claim, lang) {
+  const nivel = nomeComAVariacaoNaUnidade(claim.id, lang);
+  if (nivel) return { texto: nivel, fonte: 'cartao', campo: null };
+  return nomeDoCartao(claim, lang);
+}
 
 /**
  * ===========================================================================

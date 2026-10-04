@@ -76,6 +76,7 @@ import { areaDoSlug, nomeDoEstudo, temTexto } from '../lib/areas.mjs';
 import { LEI_ORGANICA } from '../data/areas.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { REFERENCIAS_DAS_MEDIDAS } from '../data/referencias-das-medidas.mjs';
+import { termoDoCartao } from '../data/termos-dos-cartoes.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -115,6 +116,22 @@ const portaLegal = [LEI_ORGANICA.diplomaCurto, ...area.pecas.artigos].join(' · 
    mesma que as páginas de assunto já rendem por baixo dos três cartões das contas públicas). Nas páginas das áreas o
    cartão não tem leitura, e a frase vai na dobra do primeiro cartão de cada dono que mostra o estado, pela ordem da
    página: uma vez por dono, e não a cada cartão. */
+/* O TERMO EXPLICADO NA PRIMEIRA VEZ (passagem R2-b, 04.10.2026): o valor acrescentado bruto, a paridade do poder de
+   compra, o fator de sustentabilidade e «reexpressa» explicam-se em palavras comuns na dobra do primeiro cartão de cada
+   termo, pela ordem da página (`TERMOS_DOS_CARTOES`, em `src/data/termos-dos-cartoes.mjs`), pela mesma regra da frase do
+   valor de referência: uma vez por página, e não a cada cartão. */
+const primeirosDeCadaTermo = new Map();
+{
+  const vistos = new Set();
+  for (const g of area.pecas.gruposDeMedidas) {
+    for (const m of g.medidas) {
+      const termo = termoDoCartao(m.id);
+      if (!termo || vistos.has(termo)) continue;
+      vistos.add(termo);
+      primeirosDeCadaTermo.set(m.id, termo);
+    }
+  }
+}
 const primeirasDeCadaDono = new Set();
 {
   const vistos = new Set();
@@ -223,6 +240,7 @@ const primeirasDeCadaDono = new Set();
                       linha={getClaim(m.id)}
                       lang={lang}
                       referencia={primeirasDeCadaDono.has(m.id)}
+                      termo={primeirosDeCadaTermo.get(m.id) ?? null}
                       data-area-peca="medida"
                     />
                   ))}

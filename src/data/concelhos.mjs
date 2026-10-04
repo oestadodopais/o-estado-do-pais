@@ -170,9 +170,13 @@ export const MEDIDAS_DO_CONCELHO = [
        é a que conta para o limite legal (o localizador da linha: «a dívida total que exclui as dívidas não
        orçamentais, as exceções e o FAM»); o nome fica, porque «dívida total» é o termo da DGAL. A frase é a da
        triagem; o localizador nomeia também o FAM, que a frase deixa de fora (o relatório do bloco R2). */
+    /* R2-b (04.10.2026, a decisão do lugar de direção): a frase diz também o FAM, porque a coluna o exclui. O localizador
+       de cada uma das linhas diz «Dívida total (Exclui dívidas não orçamentais, exceções previstas na Lei n.º 73/2013, no
+       OE/2024 e FAM)», e o quadro da DGAL, transcrito no inventário das fontes, chama à coluna que se desconta
+       «Contribuição para o Fundo de Apoio Municipal - FAM». */
     nota: {
-      pt: ['A dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais e as exceções da lei).'],
-      en: ['The council’s debt that counts towards the legal limit at year end (DGAL’s “', { termo: 'dívida total', lingua: 'pt-PT' }, '”, without non-budget debts and the exceptions in the law).'],
+      pt: ['A dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais, as exceções da lei e a contribuição para o Fundo de Apoio Municipal).'],
+      en: ['The council’s debt that counts towards the legal limit at year end (DGAL’s “', { termo: 'dívida total', lingua: 'pt-PT' }, '”, without non-budget debts, the exceptions in the law and the contribution to the municipal support fund, the “', { termo: 'Fundo de Apoio Municipal', lingua: 'pt-PT' }, '”).'],
     },
   },
   {
