@@ -1,0 +1,51 @@
+{
+  "registado_em": "2026-10-04T00:12:30+00:00",
+  "copia": "<o pacote da leitura, fora do repositório>",
+  "plantas": [
+    {
+      "id": "r2-1",
+      "ficheiro": "relatorio-construtor.md",
+      "descricao": "o relatório diz 121 de 160 campos mudados; as medições dizem 112",
+      "sha256_antes": "a3f271ae0f25983676b07aef10e0d9e67f1216d8d25a810e55e51416f917b0a9",
+      "sha256_depois": "90fc114221bcfe1002ae26824a667ba30a137a56773ca341b9d8663546076af2",
+      "contexto_antes": "em linha | 27 achados: 18 feitos, 6 feitos em parte, 1 por fazer com [verify], 1 parado, 1 recusado pela triagem (`achados_*`); 23 achados com rótulos mudados, 112 de 160 campos lidos nas duas construções (`achados-antes-depois.json`); a unidade de 56 cartões declarada em `UNIDADES_DOS_CARTOES` | cumprido em parte: o que o excerto não ",
+      "contexto_depois": "em linha | 27 achados: 18 feitos, 6 feitos em parte, 1 por fazer com [verify], 1 parado, 1 recusado pela triagem (`achados_*`); 23 achados com rótulos mudados, 121 de 160 campos lidos nas duas construções (`achados-antes-depois.json`); a unidade de 56 cartões declarada em `UNIDADES_DOS_CARTOES` | cumprido em parte: o que o excerto não "
+    },
+    {
+      "id": "r2-2",
+      "ficheiro": "src/data/figuras.mjs",
+      "descricao": "a cópia da declaração diz dos 15 aos 24 anos; o diff, a fonte e as páginas dizem dos 15 aos 29",
+      "sha256_antes": "f0e9a7efe63c0167a4d73cc2c6c5dea5744985e6958bb4d24591a0281133132c",
+      "sha256_depois": "1a20f17d7252412ccaf01d4685b714ebc6529397add2d9bacca2f73428792fb4",
+      "contexto_antes": " education or training' },\n    /* R2 (03.10.2026, achado 1, Blocking): «Percentagem da população» nomeava uma população maior do que a da linha,\n       que é a dos 15 aos 29 anos (a etiqueta da idade no excerto da linha). */\n    medida: {\n      pt: ['Percentagem das pessoas dos ', { nl: '15', motivo: 'escala-de-instrumento' }, ' aos ', ",
+      "contexto_depois": " education or training' },\n    /* R2 (03.10.2026, achado 1, Blocking): «Percentagem da população» nomeava uma população maior do que a da linha,\n       que é a dos 15 aos 24 anos (a etiqueta da idade no excerto da linha). */\n    medida: {\n      pt: ['Percentagem das pessoas dos ', { nl: '15', motivo: 'escala-de-instrumento' }, ' aos ', "
+    },
+    {
+      "id": "r2-3",
+      "ficheiro": "built/municipios/evora/index.html",
+      "descricao": "a página de Évora construída imprime a unidade do índice de dívida sem a média, contra a declaração e o relatório",
+      "sha256_antes": "49e4445ec43e976e49f0665013dc97ff13e44a1f73b154a8c0d24d9c30d60240",
+      "sha256_depois": "6ba7448f3871a3c63883446abe622dd0f8fee090d458932fdb4000d33d5f8d54",
+      "contexto_antes": "=\"cartao-medida-valor\"><span class=\"cartao-medida-quantidade\"><span data-claim=\"evora-indice-de-divida-2024\" class=\"claim-value cartao-medida-num\">105,5</span> <span class=\"cartao-medida-unidade\" data-unidade-da-casa=\"evora-indice-de-divida-2024\" data-unidade-da-medida=\"indice\">% da receita média dos três anos anteriores</span></span><span class=\"cartao-medida-periodo\"> · <span data-nonledger=\"data-de-referencia\">2024</span></span><a class=\"src-chip\" href=\"/livro-razao/evora-indice-de",
+      "contexto_depois": "=\"cartao-medida-valor\"><span class=\"cartao-medida-quantidade\"><span data-claim=\"evora-indice-de-divida-2024\" class=\"claim-value cartao-medida-num\">105,5</span> <span class=\"cartao-medida-unidade\" data-unidade-da-casa=\"evora-indice-de-divida-2024\" data-unidade-da-medida=\"indice\">% da receita dos três anos anteriores</span></span><span class=\"cartao-medida-periodo\"> · <span data-nonledger=\"data-de-referencia\">2024</span></span><a class=\"src-chip\" href=\"/livro-razao/evora-indice-de"
+    },
+    {
+      "id": "r2-5",
+      "ficheiro": "src/i18n/unidades.mjs",
+      "descricao": "a cópia do dicionário traduz «€ por mês» por «euros per year»",
+      "sha256_antes": "58985837f463e09e932cf9cd15e8ca2e14715292f4f7450751c187abe032e82e",
+      "sha256_depois": "426f69266fdf4f636afc98e845d88e4f246cd3bb2d5482f2bbd1e962b03cbcb7",
+      "contexto_antes": "  `dinheiroComPalavra()`, abaixo): «euros per month», como a entrada «euros por mês» já dizia. A chave continua a\n     ser a cadeia exacta do livro-razão. */\n  '€ por mês': 'euros per month',\n  '€ por ano': 'euros per year',\n  '€ por pensionista por ano': 'euros per pensioner per year',\n  'por mil pessoas em idade ativa': 'per thousand people of wor",
+      "contexto_depois": "  `dinheiroComPalavra()`, abaixo): «euros per month», como a entrada «euros por mês» já dizia. A chave continua a\n     ser a cadeia exacta do livro-razão. */\n  '€ por mês': 'euros per year',\n  '€ por ano': 'euros per year',\n  '€ por pensionista por ano': 'euros per pensioner per year',\n  'por mil pessoas em idade ativa': 'per thousand people of wor"
+    },
+    {
+      "id": "r2-4",
+      "ficheiro": "scripts/inventario-rotulos.mjs",
+      "descricao": "a cópia da régua só fecha a construção por uma unidade de linha sem declaração na edição portuguesa (a primeira das duas células da unidade); a inglesa passa",
+      "sha256_antes": "13ad15bcf733f6ff1b116e093cd2ed46a25941c772ed14bc711941b8c2dcb736",
+      "sha256_depois": "ad4407f816fef77646fc4f5f136aecfd1830afafcd7dcda6915e23e532ce11ab",
+      "contexto_antes": "bute('data-linha-claim') !== id || unidadeVista !== u.texto) {\n          erro('unidade', chave, `a unidade diz «${unidadeVista}» e a da linha é «${u.texto}»`);\n        }\n        if (!u.aceite) erro('unidade', chave, `imprime a unidade da linha «${u.linha}», que não está na lista das que um cartão imprime como estão, e o cartão não tem unidade declarada: um rótulo sem declaração`);\n        if (u.portu",
+      "contexto_depois": "bute('data-linha-claim') !== id || unidadeVista !== u.texto) {\n          erro('unidade', chave, `a unidade diz «${unidadeVista}» e a da linha é «${u.texto}»`);\n        }\n        if (!u.aceite && chave.startsWith('pt:')) erro('unidade', chave, `imprime a unidade da linha «${u.linha}», que não está na lista das que um cartão imprime como estão, e o cartão não tem unidade declarada: um rótulo sem declaração`);\n        if (u.portu"
+    }
+  ]
+}
