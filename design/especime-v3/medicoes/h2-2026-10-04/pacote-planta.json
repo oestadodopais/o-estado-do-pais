@@ -1,7 +1,9 @@
 {
-  "comando": "python3 tests/leituras/pacote.py --json design/especime-v3/medicoes/h2-2026-10-04/pacote-plantas.json",
+  "comando": "python3 tests/leituras/pacote.py --json <provas>/pacote-plantas.json",
   "codigo": 0,
-  "inicio": "2026-10-04T21:58:57.695969+00:00",
-  "segundos": 0.689,
-  "cabeca": "5f7cf57d0ab6a24af520d14db3b288654365e4e1"
+  "inicio": "2026-10-04T23:27:17.248066+00:00",
+  "segundos": 0.939,
+  "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+  "estado": "",
+  "estado_fim": ""
 }

@@ -1,0 +1,20 @@
+[
+  {
+    "nome": "h2b-horizonte-trocado",
+    "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "H2-b: o horizonte do estudo em curso difere da ficha"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "634c428a18951eedc9868fb4433a997117a9a650c600ece788e2ad5442c36be6",
+        "reposto": "634c428a18951eedc9868fb4433a997117a9a650c600ece788e2ad5442c36be6"
+      }
+    ]
+  }
+]

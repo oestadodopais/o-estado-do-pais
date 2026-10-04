@@ -1,0 +1,9 @@
+{
+  "comando": "node tests/inicio/estudos-em-curso.mjs",
+  "codigo": 0,
+  "inicio": "2026-10-04T23:27:16.986820+00:00",
+  "segundos": 0.071,
+  "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+  "estado": "",
+  "estado_fim": ""
+}

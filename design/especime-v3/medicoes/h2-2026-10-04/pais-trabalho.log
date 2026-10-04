@@ -1,6 +1,6 @@
 
 > o-estado-do-pais@0.1.0 check:pais
-> node scripts/check-pais.mjs && node tests/inicio/linhas-da-casa.mjs --prova
+> node scripts/check-pais.mjs && node tests/inicio/linhas-da-casa.mjs --prova && node tests/inicio/estudos-em-curso.mjs
 
 T9: 30 cartões com valor de referência nos temas e nas entradas, 10 fora e 20 dentro, cada um com a cor do seu estado.
 B1 país: 47 medidas, 9 temas, 7858 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 47 mudanças, 98 títulos de edição.
@@ -614,3 +614,5 @@ B1 país: todas as conferências a 0.
     }
   ]
 }
+mordeu · prazo passado · E1: prazo emCurso passado em planta-do-prazo (2026-10-03, construção 2026-10-04); a ficha tem de ser decidida: prolongar a data ou tirar o campo emCurso.
+H2-b: 28 controlos e plantas do prazo e da composição dos estudos, data da construção 2026-10-04, sem escrever em dist/.

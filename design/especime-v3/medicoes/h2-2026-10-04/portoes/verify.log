@@ -422,7 +422,7 @@ História do valor: 2 controlos e 4 plantas.
 [90m       17  páginas de leitura (edições com registo de conteúdo) registos/manifest.json[0m
 [90m           uma só fonte[0m
 
-[90m  hoje é 04.10.2026; uma afirmação datada de hoje confere-se como corrente.[0m
+[90m  hoje é 05.10.2026; uma afirmação datada de hoje confere-se como corrente.[0m
 
   [32m✓[0m VISAO.md                                          2 corrente(s) ·  5 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 7 avaliada(s), chão 4
 [90m      VISAO.md:23 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
@@ -1537,7 +1537,7 @@ História do valor: 2 controlos e 4 plantas.
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção f7048ce08956d89fbefc54ebd40ea8b75b830d47; 110 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção 1bf209d7d77e4ead4419203fb11f0ed774bc1367; 110 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes
@@ -2308,7 +2308,8 @@ B1 país: todas as conferências a 0.
     }
   ]
 }
-H2: 20 controlos e plantas da composição dos estudos, sem escrever em dist/.
+mordeu · prazo passado · E1: prazo emCurso passado em planta-do-prazo (2026-10-03, construção 2026-10-04); a ficha tem de ser decidida: prolongar a data ou tirar o campo emCurso.
+H2-b: 28 controlos e plantas do prazo e da composição dos estudos, data da construção 2026-10-04, sem escrever em dist/.
 
 > o-estado-do-pais@0.1.0 check:voz
 > node scripts/check-voz.mjs
@@ -2467,7 +2468,7 @@ A leitura do olho, provada contra o motor:
 
 [90m  prova ✓ 10 forma(s) mortas vistas e 2 viva(s) deixadas em paz, e a pasta api/ lida e com o seu morto visto, num directório temporário.[0m
 
-  [32m✓[0m identificadores · 336 ficheiro(s) lidos, nenhuma declaração morta
+  [32m✓[0m identificadores · 337 ficheiro(s) lidos, nenhuma declaração morta
 
 
 > o-estado-do-pais@0.1.0 check:indice
@@ -5448,7 +5449,7 @@ sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .si
 {"recorte_livro":{"ficheiro":"13-pagina-livro-razao.html","entradas_na_pagina":428,"entradas_no_recorte":8,"primeiras_preservadas":true,"nota_e_porta_preservadas":true,"pagina_conservada":true,"pagina_sha256":"3c8a516892721a46eeac44e03414d45694bb7229de65b381c36621e849c1f8d1","bytes_cartao":237857,"bytes_sem_recorte":1135656,"teto_bytes":673249,"margem":0.1,"planta":{"nome":"recorte retirado","mordeu":true,"queixa":"1109.0 KiB acima do tecto de 657.4697265625 KiB"}}}
 
 [1m  O feixe de cartões do sistema de desenho[0m
-[90m  design-system/ · de dist/ no commit f7048ce · 20 cartões, 11 ficheiros de letra e um README[0m
+[90m  design-system/ · de dist/ no commit 1bf209d · 20 cartões, 11 ficheiros de letra e um README[0m
 
 [90m  ficheiro                          grupo          bytes  ok[0m
   01-cor.html                       Fundamentos   380206  [32m✓[0m
@@ -5458,8 +5459,8 @@ sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .si
   05-mapa.html                      Disposições   444997  [32m✓[0m
   06-estados.html                   Componentes   375911  [32m✓[0m
   07-cartoes.html                   Componentes   289007  [32m✓[0m
-  10-pagina-primeira.html           Páginas       437120  [32m✓[0m
-  11-pagina-primeira-escuro.html    Páginas       437991  [32m✓[0m
+  10-pagina-primeira.html           Páginas       437130  [32m✓[0m
+  11-pagina-primeira-escuro.html    Páginas       438001  [32m✓[0m
   12-pagina-linha-livro-razao.html  Páginas       227293  [32m✓[0m
   13-pagina-livro-razao.html        Páginas       237857  [32m✓[0m
   14-pagina-municipio.html          Páginas       300931  [32m✓[0m

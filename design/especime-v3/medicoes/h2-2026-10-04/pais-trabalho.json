@@ -1,7 +1,9 @@
 {
   "comando": "npm run check:pais",
   "codigo": 0,
-  "inicio": "2026-10-04T21:57:57.137509+00:00",
-  "segundos": 41.793,
-  "cabeca": "5f7cf57d0ab6a24af520d14db3b288654365e4e1"
+  "inicio": "2026-10-04T23:25:43.301007+00:00",
+  "segundos": 37.727,
+  "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+  "estado": "",
+  "estado_fim": ""
 }

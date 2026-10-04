@@ -18,6 +18,18 @@
       "passou": true
     },
     {
+      "nome": "planta do argumento ponto: a montagem conserva a pontuação",
+      "passou": true
+    },
+    {
+      "nome": "planta: ficheiro seguido alterado recusa o pacote com a razão",
+      "passou": true
+    },
+    {
+      "nome": "planta: árvore do motor com alteração seguida também é recusada",
+      "passou": true
+    },
+    {
       "nome": "a montagem corre a zero",
       "passou": true
     },
