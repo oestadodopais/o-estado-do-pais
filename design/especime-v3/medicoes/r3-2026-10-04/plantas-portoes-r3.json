@@ -42,8 +42,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/indice/index.html",
-        "antes": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48",
-        "reposto": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48"
+        "antes": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad",
+        "reposto": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad"
       }
     ]
   },
@@ -58,8 +58,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/indice/index.html",
-        "antes": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48",
-        "reposto": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48"
+        "antes": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad",
+        "reposto": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad"
       }
     ]
   },
@@ -74,8 +74,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/indice/index.html",
-        "antes": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48",
-        "reposto": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48"
+        "antes": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad",
+        "reposto": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad"
       }
     ]
   },
@@ -90,8 +90,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/indice/index.html",
-        "antes": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48",
-        "reposto": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48"
+        "antes": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad",
+        "reposto": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad"
       }
     ]
   },
@@ -106,8 +106,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/indice/index.html",
-        "antes": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48",
-        "reposto": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48"
+        "antes": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad",
+        "reposto": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad"
       }
     ]
   },
@@ -122,8 +122,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/en/index/index.html",
-        "antes": "632920d9d8de3d9b953ceab4d42b8d4424f0d9d55900e2a612b02438ff3cb14f",
-        "reposto": "632920d9d8de3d9b953ceab4d42b8d4424f0d9d55900e2a612b02438ff3cb14f"
+        "antes": "0500f51212fb0061690f414349a943c90cf02bab6b3dba50fed06a4b584571e5",
+        "reposto": "0500f51212fb0061690f414349a943c90cf02bab6b3dba50fed06a4b584571e5"
       }
     ]
   },
@@ -138,8 +138,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/indice/index.html",
-        "antes": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48",
-        "reposto": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48"
+        "antes": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad",
+        "reposto": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad"
       }
     ]
   },
@@ -154,8 +154,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/indice/index.html",
-        "antes": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48",
-        "reposto": "6432a2c7176f676ba54baf4ad3b5f0d3fd566b25547b357cb298d02fca6f5d48"
+        "antes": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad",
+        "reposto": "1a3e577ad1e27c9a55ceabf12eb3171744c9811be459e560443cf9e18efff6ad"
       }
     ]
   },
@@ -171,8 +171,40 @@
     "ficheiros": [
       {
         "ficheiro": "dist/en/index/index.html",
-        "antes": "632920d9d8de3d9b953ceab4d42b8d4424f0d9d55900e2a612b02438ff3cb14f",
-        "reposto": "632920d9d8de3d9b953ceab4d42b8d4424f0d9d55900e2a612b02438ff3cb14f"
+        "antes": "0500f51212fb0061690f414349a943c90cf02bab6b3dba50fed06a4b584571e5",
+        "reposto": "0500f51212fb0061690f414349a943c90cf02bab6b3dba50fed06a4b584571e5"
+      }
+    ]
+  },
+  {
+    "nome": "r3-ambito-do-indice-noutra-pagina",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "A1: municipios\\/evora\\/index\\.html: uma lista «O que mudou» com o âmbito do índice numa página que não é o índice"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/municipios/evora/index.html",
+        "antes": "74643bb5dd85ebeb85a39d5c6668c90a2d61476fea3d20cd956cd4ddfee34ac9",
+        "reposto": "74643bb5dd85ebeb85a39d5c6668c90a2d61476fea3d20cd956cd4ddfee34ac9"
+      }
+    ]
+  },
+  {
+    "nome": "r3-registo-mesma-linha-pela-ordem-errada",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "A3: correcoes\\/index\\.html: duas entradas da mesma linha no mesmo dia estão da mais antiga para a mais recente"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/correcoes/index.html",
+        "antes": "591de2486b3e3b4de770c076c1238c5364b13eacf3d45647f807113c2441daca",
+        "reposto": "591de2486b3e3b4de770c076c1238c5364b13eacf3d45647f807113c2441daca"
       }
     ]
   }

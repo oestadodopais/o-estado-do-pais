@@ -1,7 +1,7 @@
 {
   "o_que": "as ligações internas (<a href=\"/...\">) das páginas construídas, resolvidas pela regra da Vercel e pela regra do existeConstruido() do portão de HTML",
-  "paginas_lidas": 7479,
-  "ligacoes_lidas": 214379,
+  "paginas_lidas": 7511,
+  "ligacoes_lidas": 215067,
   "destinos_que_so_a_regra_do_portao_aceita": 0,
   "exemplos_so_pelo_portao": [],
   "destinos_que_nenhuma_regra_aceita": 6,

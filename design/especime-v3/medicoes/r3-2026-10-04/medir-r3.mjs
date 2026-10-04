@@ -166,6 +166,10 @@ for (const [chave, nome, positivo] of [
   const alvo = { regiao: '/regioes/alentejo', distrito: '/distritos/evora', area: '/areas/justica', serie: '/livro-razao/series/taxa-de-desemprego-mip-2025-paises' }[chave];
   medicao(nome, familias[chave] ?? 0, `as portas de dist/indice/index.html cuja rota é «${chave}», fora de «O que mudou»`, `${positivo} (${alvo}) é uma delas`, docPt.querySelectorAll('main a[href]').some((a) => a.getAttribute('href') === alvo));
 }
+const idsNoTempo = new Set((await import(pathToFileURL(path.join(RAIZ, 'src/lib/series.mjs')).href)).allSeries().filter((x) => x.eixo === 'periodo').map((x) => String(x.id)));
+const portasDeSerie = docPt.querySelectorAll('main a[href]').filter((a) => !a.closest('[data-mudou-ambito]')).map((a) => matchPath(a.getAttribute('href'))).filter((r) => r?.key === 'serie');
+medicao('series_no_tempo_no_indice', portasDeSerie.filter((r) => idsNoTempo.has(String(r.params?.slug))).length, 'as portas de série de dist/indice/index.html cuja série tem o eixo «periodo» em allSeries()', 'a série «serie-ipc-indice» é uma delas', portasDeSerie.some((r) => r.params?.slug === 'serie-ipc-indice'));
+medicao('series_no_tempo_construidas', idsNoTempo.size, 'as séries de allSeries() com o eixo «periodo»', 'a série «serie-ipc-indice» é uma delas', idsNoTempo.has('serie-ipc-indice'));
 const projeto = docPt.querySelectorAll('main [data-indice-seccao="projeto"] a[href]').map((a) => a.getAttribute('href'));
 medicao('portas_do_projeto_no_indice', projeto.length, 'as portas da secção «O projeto» de dist/indice/index.html', 'o Método é uma delas', projeto.includes('/metodo'));
 const temasNoIndice = docPt.querySelectorAll('main a.indice-porta-tema').length;
@@ -225,8 +229,13 @@ medicao('cabeca_dos_portoes', (lerTexto('portoes/cabeca') ?? NAO).trim(), `o fic
 const rebase = lerJson('rebase-r3b.json');
 const paiDaBase = execFileSync('git', ['rev-parse', `${BASE}^`], { encoding: 'utf8' }).trim();
 medicao('main_do_rebase', rebase?.main ?? NAO, `git -C <árvore principal> rev-parse main, antes do rebase (${PASTA}/rebase-r3b.json)`, 'o commit do brief no ramo rebaseado tem esse main por pai', rebase?.main === paiDaBase);
-medicao('commits_rebaseados', rebase?.commits_rebaseados ?? NAO, 'o mesmo registo (git rev-list --count main..cabeça rebaseada)', 'a cabeça descende do main do rebase', (() => { try { execFileSync('git', ['merge-base', '--is-ancestor', rebase?.main ?? 'x', 'HEAD']); return true; } catch { return false; } })());
-const anteriores = ['portoes-97724ae2', 'portoes-83cf51cc', 'portoes-ceeadf34', 'portoes-294f3abf'];
+const descende = (antepassado, de) => { try { execFileSync('git', ['merge-base', '--is-ancestor', antepassado, de]); return true; } catch { return false; } };
+const segundo = rebase?.rebases?.at(-1);
+const primeiro = rebase?.rebases?.[0];
+medicao('commits_rebaseados', segundo?.commits_rebaseados ?? NAO, 'o mesmo registo, o segundo rebase (git rev-list --count main..cabeça rebaseada)', 'a cabeça descende do main do rebase', descende(rebase?.main ?? 'x', 'HEAD'));
+medicao('main_do_primeiro_rebase', primeiro?.main ?? NAO, 'o mesmo registo, o primeiro rebase', 'a cabeça da corrida dos portões desse rebase descende dele', descende(primeiro?.main ?? 'x', (lerTexto('portoes-9d75d831/cabeca') ?? 'x').trim()));
+medicao('commits_do_primeiro_rebase', primeiro?.commits_rebaseados ?? NAO, 'o mesmo registo, o primeiro rebase', 'a cabeça rebaseada do primeiro está escrita, com quarenta caracteres', String(primeiro?.cabeca_rebaseada ?? '').length === 40);
+const anteriores = ['portoes-97724ae2', 'portoes-83cf51cc', 'portoes-ceeadf34', 'portoes-294f3abf', 'portoes-9d75d831'];
 const aZero = anteriores.filter((d) => ['build', 'verify', 'typecheck'].every((g) => (lerTexto(`${d}/${g}.codigo`) ?? 'x').trim() === '0'));
 medicao('corridas_anteriores_com_os_tres_a_0', aZero.length, `os ficheiros .codigo de ${anteriores.join(', ')}, nesta pasta`, 'cada pasta tem a cabeça da corrida escrita, com quarenta caracteres', anteriores.every((d) => (lerTexto(`${d}/cabeca`) ?? '').trim().length === 40));
 

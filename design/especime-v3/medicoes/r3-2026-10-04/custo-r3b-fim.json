@@ -1,0 +1,7 @@
+{
+  "o_que": "o fim da passagem R3-b: o contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), escrito à mão pelo construtor logo depois de o ler, e a hora do relógio da máquina na chamada que escreveu este ficheiro",
+  "simbolos_restantes_no_fim": 13445364,
+  "lido_no_fim": "o contador mostrado depois das provas finais na cabeça rebaseada sobre o main do RP3 e da conferência do mapa, antes de correr o guião das medidas, de escrever o relatório e a resposta curta e de commitar as provas",
+  "fim_utc": "2026-10-04T11:20:16Z",
+  "fim_origem": "date -u +%Y-%m-%dT%H:%M:%SZ, na chamada que escreveu este ficheiro"
+}

@@ -43,6 +43,7 @@ for (const [entrada, saida] of [['LEIA-ME.modelo.md', 'LEIA-ME.md'], ['RESPOSTA.
     if (nome === 'n_medidas') return formata(medidas.total_de_medidas);
     if (nome === 'cabeca_dos_portoes_curta') return String(porNome.get('cabeca_dos_portoes') ?? '').slice(0, 8);
     if (nome === 'main_do_rebase_curto') return String(porNome.get('main_do_rebase') ?? '').slice(0, 8);
+    if (nome === 'base_do_ramo_curta') return BASE;
     if (nome.startsWith('commit:')) {
       const h = commitPeloAssunto(nome.slice('commit:'.length));
       if (!h) { faltas.push(nome); return `⟦${nome}⟧`; }
