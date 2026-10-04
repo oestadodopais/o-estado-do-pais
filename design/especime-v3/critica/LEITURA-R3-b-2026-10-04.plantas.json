@@ -1,0 +1,65 @@
+{
+ "registado_em": "2026-10-04T11:25:11+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "r3b-p1-mais-antiga-no-mesmo-dia",
+   "ficheiro": "src/lib/mudancas.mjs",
+   "descricao": "mudancasDoIndice() fica com a entrada de menor número no mesmo dia (a mais antiga); o comentário e o registo dizem a mais recente",
+   "sha256_antes": "c23a16a522d88df62742d2525fb99e2e6de91e02b2d784e172b1e096dc9a58a2",
+   "sha256_depois": "11a58865345820117a7efa728e3d691253d961384283e93e1b1965013cf28f48",
+   "contexto_antes": "m.tipo !== 'correcao' || Object.hasOwn(MEDIDA_REUNIDA, m.claim)) continue;\n    const atual = maisRecente.get(m.claim);\n    if (!atual || m.data > atual.data || (m.data === atual.data && m.n > atual.n)) maisRecente.set(m.claim, m);\n  }\n  return [...maisRecente.values()].sort(porData).slice(0, TETO_DAS_MUDANCAS);\n}\n",
+   "contexto_depois": "m.tipo !== 'correcao' || Object.hasOwn(MEDIDA_REUNIDA, m.claim)) continue;\n    const atual = maisRecente.get(m.claim);\n    if (!atual || m.data > atual.data || (m.data === atual.data && m.n < atual.n)) maisRecente.set(m.claim, m);\n  }\n  return [...maisRecente.values()].sort(porData).slice(0, TETO_DAS_MUDANCAS);\n}\n"
+  },
+  {
+   "id": "r3b-p2-mapa-fora-da-tabela-calado",
+   "ficheiro": "tests/indice/indice.mjs",
+   "descricao": "a I2 volta a saltar em silêncio um endereço do mapa que a tabela não reconhece; o comentário acima e o diff dizem que é erro",
+   "sha256_antes": "6f0eb53828b04bb32ad203074f893236494e4ad593d89f17677ab7e88588ea28",
+   "sha256_depois": "2efc820131a2975ce3f67fd414bbf9db0d5687a3ad33166ea901e2530ca6253c",
+   "contexto_antes": " endereço que a tabela não reconhece era\n     saltado em silêncio nas duas edições, e uma página inesperada escapava à comparação. */\n  for (const c of mapa) {\n    if (!matchPath(c)) erros.push(`I2: ${c} está no mapa do sítio e não é uma rota da tabela das rotas; o mapa só pode ter páginas da tabela.`);\n  }\n  /* As chaves das páginas construídas, por edição. */\n  const porChave = new Map();\n  for (const p of paginas) {\n    const r = matchPath(p);\n    if (!r) co",
+   "contexto_depois": " endereço que a tabela não reconhece era\n     saltado em silêncio nas duas edições, e uma página inesperada escapava à comparação. */\n  for (const c of mapa) {\n    if (!matchPath(c)) continue;\n  }\n  /* As chaves das páginas construídas, por edição. */\n  const porChave = new Map();\n  for (const p of paginas) {\n    const r = matchPath(p);\n    if (!r) co"
+  },
+  {
+   "id": "r3b-p3-ambito-sem-rota",
+   "ficheiro": "scripts/check-pais.mjs",
+   "descricao": "a admissão da A1 para o âmbito do índice deixa de olhar à rota da página; o comentário e a planta de Évora dizem que olha",
+   "sha256_antes": "afa8d9ff31181ed7809ed4c1a2c256aef65396e68b07d42f3605262ef4108e53",
+   "sha256_depois": "0b7db3a3c4755acab9dd1953160a372da41184de4a1779ee95c87c69f7fe1a64",
+   "contexto_antes": "     const dentro = ambito === 'pais'\n          ? (tipo === 'projeto' || (tipo === 'correcao' && doLugar === PAIS))\n          : ambito === 'indice'\n            ? rotaDaPagina?.key === 'indice' && tipo === 'correcao' && doLugar !== null\n            : (tipo === 'correcao' && doLugar === ambito);\n        if (!dentro)\n          erros.push(`A1: ${onde}: a linha ${chave} é de «${doLugar ?? 'nenhum ",
+   "contexto_depois": "     const dentro = ambito === 'pais'\n          ? (tipo === 'projeto' || (tipo === 'correcao' && doLugar === PAIS))\n          : ambito === 'indice'\n            ? tipo === 'correcao' && doLugar !== null\n            : (tipo === 'correcao' && doLugar === ambito);\n        if (!dentro)\n          erros.push(`A1: ${onde}: a linha ${chave} é de «${doLugar ?? 'nenhum "
+  },
+  {
+   "id": "r3b-p4-contagem-das-plantas",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 16 plantas da célula na passagem; o celula-indice.json e o registo das plantas dizem 17",
+   "sha256_antes": "8fd4947e1bfeed6bd74f7db8630649e47a9df83610a6beebc905b0a9774b71ab",
+   "sha256_depois": "a677fe240f6fae74617e8ad9cb1243b9575c84afbf7851ab75842769265d1f77",
+   "contexto_antes": "a em todas as larguras, como o brief diz. Os nomes dos lugares ficam em colunas de nomes dentro da lista, que continua a ser uma lista simples.\n\n## As plantas\n\n- **A célula do índice** (`tests/indice/indice.mjs --prova`): 17 plantas em memória, cada uma com a queixa que tem de dar, todas a morder, depois de o índice intacto passar. As quatro do brief: uma rota tirada do índice (a agenda), um concelho a menos, uma porta que não resolve, uma página do resultado no índice. E mais nove: uma porta para uma página que só existe como ficheiro `.html` irmão (`/404`, que a regra da Vercel recusa e a regra permissiva aceitaria), um endereço do mapa sem porta, o próprio índice fora do mapa, um estudo da lista em falta, um concelho na gaveta de outro distrito, uma gaveta aberta, uma linha repetida em «O que mudou», uma linha reunida que entra como cópia de outra e se lê igual a ela, e o lugar de uma linha trocado. E as quatro da passagem R3-b, cada uma só com as suas queixas (abaixo). O registo está em `celula-indice.json`.\n- **O portão de HTML**: 10 plantas em memória das portas do rodapé em cada corrida (o rodapé intacto nas duas edições, seis portas, a porta do índice da outra ",
+   "contexto_depois": "a em todas as larguras, como o brief diz. Os nomes dos lugares ficam em colunas de nomes dentro da lista, que continua a ser uma lista simples.\n\n## As plantas\n\n- **A célula do índice** (`tests/indice/indice.mjs --prova`): 16 plantas em memória, cada uma com a queixa que tem de dar, todas a morder, depois de o índice intacto passar. As quatro do brief: uma rota tirada do índice (a agenda), um concelho a menos, uma porta que não resolve, uma página do resultado no índice. E mais nove: uma porta para uma página que só existe como ficheiro `.html` irmão (`/404`, que a regra da Vercel recusa e a regra permissiva aceitaria), um endereço do mapa sem porta, o próprio índice fora do mapa, um estudo da lista em falta, um concelho na gaveta de outro distrito, uma gaveta aberta, uma linha repetida em «O que mudou», uma linha reunida que entra como cópia de outra e se lê igual a ela, e o lugar de uma linha trocado. E as quatro da passagem R3-b, cada uma só com as suas queixas (abaixo). O registo está em `celula-indice.json`.\n- **O portão de HTML**: 10 plantas em memória das portas do rodapé em cada corrida (o rodapé intacto nas duas edições, seis portas, a porta do índice da outra "
+  },
+  {
+   "id": "r3b-p5-porta-de-serie-que-nao-resolve",
+   "ficheiro": "built/en/index/index.html",
+   "descricao": "a porta da série derivada no índice inglês construído aponta para um identificador que não existe (…-2015-02); o índice português e o mapa do sítio dizem …-2015-01",
+   "sha256_antes": "0500f51212fb0061690f414349a943c90cf02bab6b3dba50fed06a4b584571e5",
+   "sha256_depois": "56cd5fc9a20e5f40e6fcb3e324166505dcfffc82ae5a9912924ef2ee33c00755",
+   "contexto_antes": "medida\" data-nome=\"figuras\" data-de-linha=\"taxa-de-desemprego-mip-2025\">Unemployment rate</span> in the EU countries</span></a></li><li><a class=\"indice-porta\" href=\"/en/ledger/series/serie-cem-euros-de-2015-01\"><span><span class=\"nome-da-serie indice-nome-da-medida\" data-nome=\"serie\" data-da-serie=\"serie-cem-euros-de-2015-01\">What one hundred euros buy, at the prices ",
+   "contexto_depois": "medida\" data-nome=\"figuras\" data-de-linha=\"taxa-de-desemprego-mip-2025\">Unemployment rate</span> in the EU countries</span></a></li><li><a class=\"indice-porta\" href=\"/en/ledger/series/serie-cem-euros-de-2015-02\"><span><span class=\"nome-da-serie indice-nome-da-medida\" data-nome=\"serie\" data-da-serie=\"serie-cem-euros-de-2015-01\">What one hundred euros buy, at the prices "
+  }
+ ],
+ "leitura": {
+  "modelo": "gpt-6.1-sol",
+  "raciocinio": "xhigh",
+  "inicio_utc": "2026-10-04T11:25:11Z",
+  "fim_utc": "2026-10-04T11:34:42Z",
+  "tokens_used": 175820,
+  "plantas_mordidas": {
+   "r3b-p1-mais-antiga-no-mesmo-dia": "achado 2",
+   "r3b-p2-mapa-fora-da-tabela-calado": "achado 3",
+   "r3b-p3-ambito-sem-rota": "achado 5",
+   "r3b-p4-contagem-das-plantas": "não mordida (o leitor viu a contagem certa nos registos, mas não apontou a do relatório)",
+   "r3b-p5-porta-de-serie-que-nao-resolve": "achado 1"
+  }
+ }
+}

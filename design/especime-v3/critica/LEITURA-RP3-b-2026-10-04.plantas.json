@@ -1,0 +1,65 @@
+{
+ "registado_em": "2026-10-04T09:59:18+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "rp3b-p1-empate-aceite",
+   "ficheiro": "src/lib/series.mjs",
+   "descricao": "a S13 deixa de parar quando duas correções do mesmo período têm a mesma data mais recente (fica só a falta de correção); o comentário e o README dizem que o empate para",
+   "sha256_antes": "f5f9b4f70641ce3be88df399d1c0d045659e88f6872735c1d28960ca5aa3e777",
+   "sha256_depois": "841730f4c0d1f3e12d24d2d2a281e0abadfab74fabb8f969fde0aae8c659bd60",
+   "contexto_antes": "const maisRecente = cs.reduce((m, c) => (String(c.date) > m ? String(c.date) : m), '');\n      const ultimas = cs.filter((c) => String(c.date) === maisRecente);\n      if (ultimas.length !== 1) {\n        erro(`S13: o ponto ${per} tem ${ultimas.length} correções com a data mais recente (${maisRecente}), e nenhuma é a última.`);\n        continue;\n      }\n",
+   "contexto_depois": "const maisRecente = cs.reduce((m, c) => (String(c.date) > m ? String(c.date) : m), '');\n      const ultimas = cs.filter((c) => String(c.date) === maisRecente);\n      if (ultimas.length < 1) {\n        erro(`S13: o ponto ${per} tem ${ultimas.length} correções com a data mais recente (${maisRecente}), e nenhuma é a última.`);\n        continue;\n      }\n"
+  },
+  {
+   "id": "rp3b-p2-marca-facultativa",
+   "ficheiro": "scripts/medir-defeitos.mjs",
+   "descricao": "a falta de data-da-serie só é erro quando o atributo existe vazio; sem o atributo (null) a identidade volta a não se conferir",
+   "sha256_antes": "0d129a6e3004e844a01013adb840d2203259405a8c52f8f7bef5cff80c29150e",
+   "sha256_depois": "77d546eec1b269743a9895a7ccb5b7ab92ed81d32c9267905be2189bd7e39e68",
+   "contexto_antes": "gora\n       a falta da marca é ela própria um erro, e a conferência da identidade corre\n       sempre. */\n    const daSerie = el.getAttribute('data-da-serie');\n    if (fonte === 'serie' && !daSerie) {\n      nomesForaDaFonte.push({\n        caminho: caminho || '/',\n        fonte,\n        texto: t,\n        porque: 'a marca «data-nome=\"serie\"» não diz de que sér",
+   "contexto_depois": "gora\n       a falta da marca é ela própria um erro, e a conferência da identidade corre\n       sempre. */\n    const daSerie = el.getAttribute('data-da-serie');\n    if (fonte === 'serie' && daSerie === '') {\n      nomesForaDaFonte.push({\n        caminho: caminho || '/',\n        fonte,\n        texto: t,\n        porque: 'a marca «data-nome=\"serie\"» não diz de que sér"
+  },
+  {
+   "id": "rp3b-p3-correcao-vazia",
+   "ficheiro": "motor/publisher/export_series.py",
+   "descricao": "a VP1 do motor aceita uma correção com um campo vazio (só exige o tipo cadeia); a docstring e o README dizem «não vazias»",
+   "sha256_antes": "2c14a8bf0f04d95d3667ca6b047a18533cc26bfe01deb08ac4505e39014142b0",
+   "sha256_depois": "4ce18773024bbfb6c98c559ffafcb49a455caefab8c6828c0faed3a9fb09f142",
+   "contexto_antes": "ão não tem os sete campos da forma, pela ordem dela \"\n                   f\"({', '.join(CAMPOS_DA_CORRECAO_PERIODO)})\")\n    for k in CAMPOS_DA_CORRECAO_PERIODO:\n        if not isinstance(c[k], str) or not c[k].strip():\n            raise Fail(f\"VP1: {sid}: a correção de {c.get('periodo')} tem «{k}» vazio ou que não é uma cadeia\")\n    if c[\"periodo\"] not in periodos:\n        ra",
+   "contexto_depois": "ão não tem os sete campos da forma, pela ordem dela \"\n                   f\"({', '.join(CAMPOS_DA_CORRECAO_PERIODO)})\")\n    for k in CAMPOS_DA_CORRECAO_PERIODO:\n        if not isinstance(c[k], str):\n            raise Fail(f\"VP1: {sid}: a correção de {c.get('periodo')} tem «{k}» vazio ou que não é uma cadeia\")\n    if c[\"periodo\"] not in periodos:\n        ra"
+  },
+  {
+   "id": "rp3b-p4-contagem-das-plantas",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 19 de 20 plantas do check:series com o motor; o registo das plantas diz 20 de 20",
+   "sha256_antes": "f41834b566ab32a6c2acc0cd74e6e32c1bbb3762e6f71ad0b1f477169a2d9f93",
+   "sha256_depois": "2452d43cfc537a363d2821cd9b068ab41626e87479a00aa8ceae1619c7564b4e",
+   "contexto_antes": "trolo, «limiar» num literal transcrito, passou com 0; cada página reposta byte a byte. No `check:series` com o motor ao lado (`rp3b/plantas-series-rp3b.json`): 20 de 20 plantas morderam (eram 15), e a metade do motor leu os 3 991 pontos pela estrutura da resposta; sem o motor, as 17 plantas da cadeia `verify` morderam, as sintéticas d",
+   "contexto_depois": "trolo, «limiar» num literal transcrito, passou com 0; cada página reposta byte a byte. No `check:series` com o motor ao lado (`rp3b/plantas-series-rp3b.json`): 19 de 20 plantas morderam (eram 15), e a metade do motor leu os 3 991 pontos pela estrutura da resposta; sem o motor, as 17 plantas da cadeia `verify` morderam, as sintéticas d"
+  },
+  {
+   "id": "rp3b-p5-motivo-transcrito",
+   "ficheiro": "scripts/campos-da-serie.mjs",
+   "descricao": "a lista fechada volta a classificar o motivo de uma correção como transcrito, reabrindo o buraco do achado 8; o cabeçalho do próprio ficheiro e o diff dizem da-casa",
+   "sha256_antes": "596dec24bb544f6999c9cc0c812b0d6521867a7911fc05d2fe4f7f97dec4810f",
+   "sha256_depois": "304574590cb901e582368c18ea1ea497eaa46e532381e7f39d6788826348423e",
+   "contexto_antes": "/^bandeiras\\.[^.]+$/, classe: 'transcrito' },\n  { forma: /^lacunas\\.\\d+\\.razao$/, classe: 'transcrito' },\n  { forma: /^derivation(_en)?$/, classe: 'da-casa' },\n  { forma: /^corrections\\.\\d+\\.reason(_en)?$/, classe: 'da-casa' },\n  { forma: /^(id|source|source_url|unit|periodicidade|check|document\\.edition|document\\.url)$/, classe: 'valor' },\n  { forma: /^pedidos\\.\\d+\\.(url|cliente|user",
+   "contexto_depois": "/^bandeiras\\.[^.]+$/, classe: 'transcrito' },\n  { forma: /^lacunas\\.\\d+\\.razao$/, classe: 'transcrito' },\n  { forma: /^derivation(_en)?$/, classe: 'da-casa' },\n  { forma: /^corrections\\.\\d+\\.reason(_en)?$/, classe: 'transcrito' },\n  { forma: /^(id|source|source_url|unit|periodicidade|check|document\\.edition|document\\.url)$/, classe: 'valor' },\n  { forma: /^pedidos\\.\\d+\\.(url|cliente|user"
+  }
+ ],
+ "leitura": {
+  "modelo": "gpt-6.1-sol",
+  "raciocinio": "xhigh",
+  "inicio_utc": "2026-10-04T09:59:18Z",
+  "fim_utc": "2026-10-04T10:09:19Z",
+  "tokens_used": 158090,
+  "plantas_mordidas": {
+   "rp3b-p1-empate-aceite": "achado 1",
+   "rp3b-p2-marca-facultativa": "achado 2",
+   "rp3b-p3-correcao-vazia": "achado 4",
+   "rp3b-p4-contagem-das-plantas": "achado 6",
+   "rp3b-p5-motivo-transcrito": "achado 3"
+  }
+ }
+}
