@@ -1,0 +1,25 @@
+{
+  "ficheiros_sinteticos": true,
+  "casos": [
+    {
+      "nome": "Início no mesmo segundo, com fim posterior, é aceite",
+      "passou": true
+    },
+    {
+      "nome": "Um código antigo com fim anterior é recusado",
+      "passou": true
+    },
+    {
+      "nome": "Uma corrida sem fim é recusada",
+      "passou": true
+    },
+    {
+      "nome": "Fim anterior aos microssegundos da nova corrida é recusado",
+      "passou": true
+    },
+    {
+      "nome": "Um código de falha conserva-se como falha",
+      "passou": true
+    }
+  ]
+}

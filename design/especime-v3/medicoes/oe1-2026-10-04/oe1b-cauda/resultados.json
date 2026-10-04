@@ -1,0 +1,80 @@
+[
+  {
+    "comando": "npm run provar:eyetext",
+    "codigo": 0,
+    "inicio": "2026-10-04T07:44:49.150533+00:00",
+    "fim": "2026-10-04T07:44:49.450505+00:00"
+  },
+  {
+    "comando": "npm run provar:guardas",
+    "codigo": 0,
+    "inicio": "2026-10-04T07:44:49.450614+00:00",
+    "fim": "2026-10-04T07:44:49.589911+00:00"
+  },
+  {
+    "comando": "npm run check:mortos",
+    "codigo": 0,
+    "inicio": "2026-10-04T07:44:49.590017+00:00",
+    "fim": "2026-10-04T07:44:51.525204+00:00"
+  },
+  {
+    "comando": "npm run check:indice",
+    "codigo": 1,
+    "inicio": "2026-10-04T07:44:51.525311+00:00",
+    "fim": "2026-10-04T07:45:04.544774+00:00"
+  },
+  {
+    "comando": "npm run check:cartao",
+    "codigo": 0,
+    "inicio": "2026-10-04T07:45:04.544940+00:00",
+    "fim": "2026-10-04T07:45:12.276635+00:00"
+  },
+  {
+    "comando": "npm run check:navegacao",
+    "codigo": 0,
+    "inicio": "2026-10-04T07:45:12.276753+00:00",
+    "fim": "2026-10-04T07:45:22.671462+00:00"
+  },
+  {
+    "comando": "npm run check:primeira",
+    "codigo": 0,
+    "inicio": "2026-10-04T07:45:22.671581+00:00",
+    "fim": "2026-10-04T07:47:03.338463+00:00"
+  },
+  {
+    "comando": "npm run sinais",
+    "codigo": 0,
+    "inicio": "2026-10-04T07:47:03.338732+00:00",
+    "fim": "2026-10-04T07:47:04.458165+00:00"
+  },
+  {
+    "comando": "npm run check:nomes",
+    "codigo": 0,
+    "inicio": "2026-10-04T07:47:04.458317+00:00",
+    "fim": "2026-10-04T07:47:07.773680+00:00"
+  },
+  {
+    "comando": "npm run check:palavras",
+    "codigo": 0,
+    "inicio": "2026-10-04T07:47:07.773809+00:00",
+    "fim": "2026-10-04T07:48:48.099981+00:00"
+  },
+  {
+    "comando": "npm run design:feixe",
+    "codigo": 1,
+    "inicio": "2026-10-04T07:48:48.100335+00:00",
+    "fim": "2026-10-04T07:48:50.009713+00:00"
+  },
+  {
+    "comando": "npm run check:privacidade",
+    "codigo": 0,
+    "inicio": "2026-10-04T07:48:50.009854+00:00",
+    "fim": "2026-10-04T07:49:07.010707+00:00"
+  },
+  {
+    "comando": "npm run check:sugestoes",
+    "codigo": 0,
+    "inicio": "2026-10-04T07:49:07.010982+00:00",
+    "fim": "2026-10-04T07:49:07.158483+00:00"
+  }
+]

@@ -3,8 +3,10 @@
     design/especime-v3/INVENTARIO-FRASES.md:2669
     design/especime-v3/INVENTARIO-FRASES.md:2899
     design/especime-v3/INVENTARIO-FRASES.md:320
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:1 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-voz.log:3 (perto do diff)
     src/lib/ledger.mjs:2336
     src/lib/ledger.mjs:718
 §1.4 · `excerpt` ficou `[a verificar]` em quase todas as linhas semeadas
@@ -13,21 +15,24 @@
     design/especime-v3/INVENTARIO-FRASES.md:2906
     design/especime-v3/INVENTARIO-FRASES.md:2923
     design/especime-v3/INVENTARIO-FRASES.md:2936
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:10 (perto do diff)
 §1.6 · Formatação portuguesa dos números nas duas edições — por agora
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
     design/especime-v3/medicoes/oe1-2026-10-04/decisoes-motor.log:1 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:16 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
 §1.17 · O motivo de uma correção passou a existir nas duas línguas
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:20 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
     src/lib/ledger.mjs:1589
     src/lib/ledger.mjs:799
     src/lib/ledger.mjs:824
 §1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
     design/especime-v3/medicoes/oe1-2026-10-04/decisoes-motor.log:3 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:1 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:26 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
     ledger/claims/despesa-por-funcao-2024-gf01-es.yml:44 (perto do diff)
     ledger/claims/despesa-por-funcao-2024-gf01-pt.yml:44 (perto do diff)
     ledger/claims/despesa-por-funcao-2024-gf01-ue.yml:39 (perto do diff)
@@ -218,53 +223,89 @@
     src/i18n/unidades.mjs:250
     src/lib/ledger.mjs:348
 §1.28 · A bandeira que a fonte punha e o livro-razão não
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:220 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
     src/lib/ledger.mjs:1631 (perto do diff)
 §1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
     design/especime-v3/medicoes/oe1-2026-10-04/decisoes-motor.log:5 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:224 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
 §1.32 · O tubo: setenta linhas atravessaram, e o sítio confere-as à chegada
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
     design/especime-v3/medicoes/oe1-2026-10-04/decisoes-motor.log:9 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:228 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
 §1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:232 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
+§1.38 · A ortografia do sítio passa a ser uma só
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-ledger-dependencias.log:333 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-ledger-preparacao.log:333 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-portoes-inventario-antigo/build.log:342 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-portoes-inventario-antigo/ledger.log:333 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-portoes-inventario-antigo/verify.log:337 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/portoes/build.log:342 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/portoes/ledger.log:333 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.log:337 (perto do diff)
 §1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:235 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
     src/data/studies.mjs:271
     src/data/studies.mjs:327
     src/data/studies.mjs:38
     src/lib/ledger.mjs:80
 §1.44 · A revisão cruzada da identidade v2
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:242 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
 §1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
     design/especime-v3/medicoes/oe1-2026-10-04/decisoes-motor.log:12 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:245 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
     src/lib/ledger.mjs:1845
     src/lib/ledger.mjs:543
 §1.49 · A republicação: o instantâneo de 2026-08-19 atravessa, os documentos são republicados, e a cópia arquivada entra
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:251 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
     src/data/studies.mjs:200
     src/data/studies.mjs:232
     src/data/studies.mjs:320
 §1.52 · A direção lê a pré-visualização n.º 1: cinco emendas, quatro decisões de forma, e o tema deixa de ser uma pergunta
     design/especime-v3/INVENTARIO-FRASES.md:1269
     design/especime-v3/INVENTARIO-FRASES.md:1272
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:257 (perto do diff)
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-portoes-inventario-antigo/build.log:460 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-portoes-inventario-antigo/verify.log:455 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/portoes/build.log:460 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.log:455 (perto do diff)
 §1.66 · As correções de UX depois da auditoria de 25.08, bloco A
     design/especime-v3/INVENTARIO-FRASES.md:1134
     design/especime-v3/INVENTARIO-FRASES.md:816
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:260 (perto do diff)
 §1.68 · As páginas dos 308 concelhos
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:263 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
     src/data/studies.mjs:626
     src/data/studies.mjs:700
+§1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-portoes-inventario-antigo/verify.log:1591 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-portoes-inventario-antigo/verify.log:1592 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-portoes-inventario-antigo/verify.log:1593 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-portoes-inventario-antigo/verify.log:1594 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-portoes-inventario-antigo/verify.log:1596 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.log:1591 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.log:1592 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.log:1593 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.log:1594 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.log:1596 (perto do diff)
 §1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
     design/especime-v3/INVENTARIO-FRASES.md:1255
     design/especime-v3/INVENTARIO-FRASES.md:1299
@@ -309,12 +350,14 @@
     design/especime-v3/INVENTARIO-FRASES.md:915
     design/especime-v3/INVENTARIO-FRASES.md:971
     design/especime-v3/medicoes/oe1-2026-10-04/decisoes-motor.log:33 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:190 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:268 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:443 (perto do diff)
     design/especime-v3/medicoes/oe1-2026-10-04/leitura-involucro-antes.log:5 (perto do diff)
     design/especime-v3/medicoes/oe1-2026-10-04/leitura-resposta-antes.log:5 (perto do diff)
 §1.99 · A fase 1 do plano, o segundo dia: os nomes e as datas, a acessibilidade e os alvos, a leitura breve no cartão, o conserto a quente das datas dos estudos, e o fecho do dia com cinco ramos a meio
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:315 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
     src/data/studies.mjs:16
 §1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
     design/especime-v3/INVENTARIO-FRASES.md:2004
@@ -322,8 +365,10 @@
     design/especime-v3/INVENTARIO-FRASES.md:2006
     design/especime-v3/INVENTARIO-FRASES.md:2007
     design/especime-v3/INVENTARIO-FRASES.md:2566
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:319 (perto do diff)
 §1.102 · A sessão de 08.09: o corredor parado por uma função apagada, as leituras a frio com o plano novo do Codex, a sonda ao INE, o F1.1d medido às cegas, e o F1.10 retomado
     design/especime-v3/INVENTARIO-FRASES.md:2582
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:325 (perto do diff)
 §1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
     design/especime-v3/INVENTARIO-FRASES.md:1294
     design/especime-v3/INVENTARIO-FRASES.md:1295
@@ -379,42 +424,62 @@
     design/especime-v3/INVENTARIO-FRASES.md:308
     design/especime-v3/INVENTARIO-FRASES.md:309
     design/especime-v3/INVENTARIO-FRASES.md:310
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:327 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
 §1.110 · «A casa» sai do Método e do Sobre
     design/especime-v3/INVENTARIO-FRASES.md:2919
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:384 (perto do diff)
 §1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
     design/especime-v3/medicoes/oe1-2026-10-04/decisoes-motor.log:17 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:386 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
+§1.118 · O M3, a segunda metade: a conferência estrutural no motor, e os nomes confirmados de volta aos recibos
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-portoes-inventario-antigo/verify.log:826 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.log:826 (perto do diff)
+§1.119 · A I129: o grupo etário passa a estar escrito na linha e na definição, e a célula que não deixa uma definição contradizer a sua linha
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-portoes-inventario-antigo/verify.log:825 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.log:825 (perto do diff)
+§1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
+    design/especime-v3/medicoes/oe1-2026-10-04/oe1b-portoes-inventario-antigo/verify.log:824 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.log:824 (perto do diff)
 §1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
     design/especime-v3/INVENTARIO-FRASES.md:3008
     design/especime-v3/INVENTARIO-FRASES.md:3065
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:390 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
     src/data/areas.mjs:740 (perto do diff)
     src/data/areas.mjs:753
 §1.126 · O Portal BASE caído no motor e no Método (R1, mandato 10)
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:397 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
 §1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
     design/especime-v3/medicoes/oe1-2026-10-04/decisoes-motor.log:19 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:400 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
     src/i18n/unidades.mjs:246
     src/i18n/unidades.mjs:60 (perto do diff)
 §1.129 · A peça 1 do B2, o veredicto: o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio da correção e o Opus acaba, e o diretor fixa a regra do sentido
     design/especime-v3/INVENTARIO-FRASES.md:3189 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:406 (perto do diff)
 §1.133 · O leitor comum primeiro: a decisão do diretor de 28.09.2026 sobre o público, o que se lê à primeira, e quem procura as relações nos dados
     design/especime-v3/INVENTARIO-FRASES.md:3077
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:408 (perto do diff)
 §1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
     design/especime-v3/INVENTARIO-FRASES.md:3528
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:410 (perto do diff)
 §1.143 · A primeira leitura por leitores comuns (30.09.2026): as portas dizem o que têm, a primeira página é o único lugar de «O que se passa», e uma coisa, um lugar, também na navegação
     design/especime-v3/INVENTARIO-FRASES.md:3706
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:412 (perto do diff)
 §1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:81 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:86 (perto do diff)
     design/especime-v3/medicoes/oe1-2026-10-04/decisoes-motor.log:21 (perto do diff)
-    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:221 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:414 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/medir.py:255 (perto do diff)
     src/data/studies.mjs:189
     src/data/studies.mjs:214
     src/data/studies.mjs:229
@@ -423,12 +488,20 @@
     src/data/studies.mjs:351
     src/data/studies.mjs:821
     src/data/studies.mjs:96
+§1.148 · O E1 construído pelo Opus em cinco passagens e lido a frio três vezes pelo Codex: os quatro estudos de Évora no ar, as regras do lugar de direção nos pontos de paragem, o erro do limiar que era meu, e a aterragem do E0 e dos registos da §1.147
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:426 (perto do diff)
 §1.149 · A leitura do diretor de 01.10.2026 no telemóvel: o mapa de «Lugares» vem primeiro e as listas de nomes dobram-se; o mapa sai da primeira página, que fica com a porta; e a aterragem da §1.148
     design/especime-v3/INVENTARIO-FRASES.md:3608
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:426 (perto do diff)
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:428 (perto do diff)
 §1.150 · O L2a construído pelo Opus e lido a frio pelo Sol: o mapa primeiro em «Lugares», as listas dobradas, a primeira página com a porta; as decisões do lugar de direção nos pontos deixados; e a aterragem da §1.149
     design/especime-v3/INVENTARIO-FRASES.md:3649
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:428 (perto do diff)
+§1.151 · O L2b e o K2 construídos pelo Opus e lidos a frio pelo Sol: o concelho entre os 308 só nas taxas e nos rácios, o cartão para o telemóvel, o espaço antes de «%» como forma da casa em todas as superfícies (a §1.43, a §1.44 e a identidade §11 cedem à §1.135), e a aterragem da §1.150
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:430 (perto do diff)
 §1.152 · O UE2 construído pelo Opus e lido a frio pelo Sol: a página da União como a página dos países, as definições em palavras comuns como única forma em todo o sítio, o espaço antes de «%» confirmado pelo diretor, e a aterragem da §1.151
     design/especime-v3/INVENTARIO-FRASES.md:3741
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:430 (perto do diff)
 §1.154 · A caixa das sugestões no ar (o S1, construído pelo Opus, lido a frio pelo Sol, endurecido com a chave que só a Vercel tem, com as três decisões do diretor de 03.10.2026), a quinta recusa do Método reescrita, a leitura de fora do Opus de 03.10 avaliada e o que ela muda no plano
     design/especime-v3/INVENTARIO-FRASES.md:3811
     design/especime-v3/INVENTARIO-FRASES.md:3812
@@ -438,6 +511,7 @@
     design/especime-v3/INVENTARIO-FRASES.md:3853
     design/especime-v3/INVENTARIO-FRASES.md:3855
     design/especime-v3/medicoes/oe1-2026-10-04/decisoes-motor.log:29 (perto do diff)
-35 decisão(ões) citada(s) em 255 ficheiro(s) de texto
+    design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log:432 (perto do diff)
+43 decisão(ões) citada(s) em 323 ficheiro(s) de texto
 0 ficheiro(s) binário(s) saltado(s)
 conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível
