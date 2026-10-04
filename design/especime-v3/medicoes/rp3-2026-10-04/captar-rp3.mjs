@@ -123,7 +123,9 @@ const manifesto = {
   bloco: 'RP3', construcao: versao, cabeca_esperada: esperado, larguras, series: pontosDaSerie, capturas: resultados.length,
   capturas_antes: resultadosAntes.length, pedidos_recusados_para_fora: recusados.length, problemas, resultados, antes: resultadosAntes,
 };
-await fs.writeFile(path.join(raiz, pastaRelativa, 'capturas-rp3.json'), JSON.stringify(manifesto, null, 2) + '\n');
+/* A passagem RP3-b capta outra vez na cabeça rebaseada para comparar imagem a imagem com as da primeira entrega, e escreve o
+   manifesto noutro ficheiro da pasta (`RP3_CAPTURAS_MANIFESTO`), para que o da primeira entrega fique como estava. */
+await fs.writeFile(path.join(raiz, pastaRelativa, process.env.RP3_CAPTURAS_MANIFESTO ?? 'capturas-rp3.json'), JSON.stringify(manifesto, null, 2) + '\n');
 console.log(`RP3 capturas: ${resultados.length} imagens dos recibos e ${resultadosAntes.length} do antes, ${problemas.length} problema(s), ${recusados.length} pedido(s) para fora recusados`);
 for (const p of problemas) console.log(`  · ${p}`);
 process.exit(problemas.length ? 1 : 0);

@@ -1,0 +1,337 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/rp3-2026-10-04/rp3b/comparar-capturas.py. Não se edita à mão.",
+  "construcao_da_primeira_entrega": "39f15b8eb38ea7bfd727da2b4ee0d2e6601df947",
+  "construcao_da_cabeca_rebaseada": "b3e9e0ac337a960f80fcc641efb001b669bc107c",
+  "imagens": 40,
+  "iguais": 40,
+  "diferentes": [],
+  "problemas_na_cabeca_rebaseada": [],
+  "pedidos_para_fora_recusados_na_cabeca_rebaseada": 0,
+  "conhecido_positivo": {
+    "o_que": "o sha256 refeito dos bytes de cada imagem dos dois lados é o que o seu manifesto diz (o método de comparação lê as imagens, não só os manifestos)",
+    "encontrado": true
+  },
+  "as_imagens_da_cabeca_rebaseada": "apagadas depois desta comparação, por serem todas iguais às da primeira entrega",
+  "pares": [
+    {
+      "imagem": "antes-anual-en-1024.png",
+      "sha256_primeira_entrega": "21f009c6a6b0ba9e3b6aecfb8427a5ffa24b93b8b52300a52ca5433944d2293a",
+      "sha256_cabeca_rebaseada": "21f009c6a6b0ba9e3b6aecfb8427a5ffa24b93b8b52300a52ca5433944d2293a",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-anual-en-1280.png",
+      "sha256_primeira_entrega": "9c022e0a92a75411214d1ce9b8acee98ac2d675757fc9747894b769f910c41b2",
+      "sha256_cabeca_rebaseada": "9c022e0a92a75411214d1ce9b8acee98ac2d675757fc9747894b769f910c41b2",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-anual-en-1600.png",
+      "sha256_primeira_entrega": "a607dc43631070ad3fe0b4ed95a1bc549fd8a970915bbdbb27081bf00b7ed6df",
+      "sha256_cabeca_rebaseada": "a607dc43631070ad3fe0b4ed95a1bc549fd8a970915bbdbb27081bf00b7ed6df",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-anual-en-390.png",
+      "sha256_primeira_entrega": "a80acb123429f743d95c376d661d65bbdace7eee98be6d08cd1820b7240664b6",
+      "sha256_cabeca_rebaseada": "a80acb123429f743d95c376d661d65bbdace7eee98be6d08cd1820b7240664b6",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-anual-en-768.png",
+      "sha256_primeira_entrega": "f02fc7e59ecf6e284e2e0e7fa36de9b6d3e4aee20fc6e7939d02e7931670abf7",
+      "sha256_cabeca_rebaseada": "f02fc7e59ecf6e284e2e0e7fa36de9b6d3e4aee20fc6e7939d02e7931670abf7",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-anual-pt-1024.png",
+      "sha256_primeira_entrega": "5503acd3b7d0f2821887ae4b988c7888eff237b094c8883422c0e0c28e6a0570",
+      "sha256_cabeca_rebaseada": "5503acd3b7d0f2821887ae4b988c7888eff237b094c8883422c0e0c28e6a0570",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-anual-pt-1280.png",
+      "sha256_primeira_entrega": "391bc1a568ca3d4cf9841563b1fda4df9a3f2fe0cba3cb60ba9354907d39cf6b",
+      "sha256_cabeca_rebaseada": "391bc1a568ca3d4cf9841563b1fda4df9a3f2fe0cba3cb60ba9354907d39cf6b",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-anual-pt-1600.png",
+      "sha256_primeira_entrega": "8b24a156650c0fd601bce32563d8db9e751b00424a36812d5912f399c154be92",
+      "sha256_cabeca_rebaseada": "8b24a156650c0fd601bce32563d8db9e751b00424a36812d5912f399c154be92",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-anual-pt-390.png",
+      "sha256_primeira_entrega": "d2365308f23bac58bb198c36cc9d0122e8c52c8b1e99f3626407263e3e9d817c",
+      "sha256_cabeca_rebaseada": "d2365308f23bac58bb198c36cc9d0122e8c52c8b1e99f3626407263e3e9d817c",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-anual-pt-768.png",
+      "sha256_primeira_entrega": "76b80553825a783b2b537576db737e332e4831cd60143497f1f500623ad93c58",
+      "sha256_cabeca_rebaseada": "76b80553825a783b2b537576db737e332e4831cd60143497f1f500623ad93c58",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-mensal-en-1024.png",
+      "sha256_primeira_entrega": "6775e07bc80014f1b33649b96ca4a6a623a3ba1450bb9e9bcadc7edda2ca0492",
+      "sha256_cabeca_rebaseada": "6775e07bc80014f1b33649b96ca4a6a623a3ba1450bb9e9bcadc7edda2ca0492",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-mensal-en-1280.png",
+      "sha256_primeira_entrega": "d1784cbd4aa5b1662e5b3c18daebb2f56ba71007d901bced9ecdc28a3c6d8c69",
+      "sha256_cabeca_rebaseada": "d1784cbd4aa5b1662e5b3c18daebb2f56ba71007d901bced9ecdc28a3c6d8c69",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-mensal-en-1600.png",
+      "sha256_primeira_entrega": "fbc44a36b48f49d361d4bc8351cdb569287c4f0cb8e2be66b6003d2e7b35acd4",
+      "sha256_cabeca_rebaseada": "fbc44a36b48f49d361d4bc8351cdb569287c4f0cb8e2be66b6003d2e7b35acd4",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-mensal-en-390.png",
+      "sha256_primeira_entrega": "4e3c888df96f13decf0e163e67f452faa458aaf46879c1a5f16d1716e384e886",
+      "sha256_cabeca_rebaseada": "4e3c888df96f13decf0e163e67f452faa458aaf46879c1a5f16d1716e384e886",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-mensal-en-768.png",
+      "sha256_primeira_entrega": "3c04c55b16fd717f48e886d680d5cd84166d735c08b915bcffd8f499c70a850f",
+      "sha256_cabeca_rebaseada": "3c04c55b16fd717f48e886d680d5cd84166d735c08b915bcffd8f499c70a850f",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-mensal-pt-1024.png",
+      "sha256_primeira_entrega": "963bf08bd65c0a59f99211c0e62037ca9e7886adedcacfdf7b6839511bab07d2",
+      "sha256_cabeca_rebaseada": "963bf08bd65c0a59f99211c0e62037ca9e7886adedcacfdf7b6839511bab07d2",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-mensal-pt-1280.png",
+      "sha256_primeira_entrega": "4a328cfdf41324e511dbb92218b1fdda26ecee59c464f8a9cb7e514ed5f6dbf0",
+      "sha256_cabeca_rebaseada": "4a328cfdf41324e511dbb92218b1fdda26ecee59c464f8a9cb7e514ed5f6dbf0",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-mensal-pt-1600.png",
+      "sha256_primeira_entrega": "a7faac8fd3c79a1113d57f9d24c5184ab5419cf9358f5fc52dc881375406c3d3",
+      "sha256_cabeca_rebaseada": "a7faac8fd3c79a1113d57f9d24c5184ab5419cf9358f5fc52dc881375406c3d3",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-mensal-pt-390.png",
+      "sha256_primeira_entrega": "4e0b07a93c1fce30205bf3e2e27dec81ee5728530871600c7c829aeb21f2fa2e",
+      "sha256_cabeca_rebaseada": "4e0b07a93c1fce30205bf3e2e27dec81ee5728530871600c7c829aeb21f2fa2e",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "antes-mensal-pt-768.png",
+      "sha256_primeira_entrega": "2838f8ea094f37921ffe09850b48eecac0ee8cebc0d1316f98a96338d3c14d29",
+      "sha256_cabeca_rebaseada": "2838f8ea094f37921ffe09850b48eecac0ee8cebc0d1316f98a96338d3c14d29",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-anual-en-1024.png",
+      "sha256_primeira_entrega": "d9a5eeec979ae49c4f322a097cf07d78b651b2e537b70fbb1cba370899845a8a",
+      "sha256_cabeca_rebaseada": "d9a5eeec979ae49c4f322a097cf07d78b651b2e537b70fbb1cba370899845a8a",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-anual-en-1280.png",
+      "sha256_primeira_entrega": "bf53a425f420191f97aac348b791d7cf1d38d1936b47464f22e9b0877815ca3b",
+      "sha256_cabeca_rebaseada": "bf53a425f420191f97aac348b791d7cf1d38d1936b47464f22e9b0877815ca3b",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-anual-en-1600.png",
+      "sha256_primeira_entrega": "bc613f5f5c0c06f672248caa390dc085da02e746bab06b56b823d75651193194",
+      "sha256_cabeca_rebaseada": "bc613f5f5c0c06f672248caa390dc085da02e746bab06b56b823d75651193194",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-anual-en-390.png",
+      "sha256_primeira_entrega": "d0b0b1165d58267ac8f451e98aca5c9864544eaf4985fdae5f15a63a9764debd",
+      "sha256_cabeca_rebaseada": "d0b0b1165d58267ac8f451e98aca5c9864544eaf4985fdae5f15a63a9764debd",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-anual-en-768.png",
+      "sha256_primeira_entrega": "c123ab6a5a744cb076434c06bad28881899a530abc87d886a1a45d37da4a13e8",
+      "sha256_cabeca_rebaseada": "c123ab6a5a744cb076434c06bad28881899a530abc87d886a1a45d37da4a13e8",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-anual-pt-1024.png",
+      "sha256_primeira_entrega": "9c7b7257995d6d71e9724f416d7591e96401df46f26978b949d4878045214b4a",
+      "sha256_cabeca_rebaseada": "9c7b7257995d6d71e9724f416d7591e96401df46f26978b949d4878045214b4a",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-anual-pt-1280.png",
+      "sha256_primeira_entrega": "c3dfae12d2511bb1429c9ccbc0e1a8a31a97b56d6709613510241c1f1eda03cb",
+      "sha256_cabeca_rebaseada": "c3dfae12d2511bb1429c9ccbc0e1a8a31a97b56d6709613510241c1f1eda03cb",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-anual-pt-1600.png",
+      "sha256_primeira_entrega": "5ee936f3d80d4302c89caf53edd9447c61ca11b597f5232c3fc33b615afd4484",
+      "sha256_cabeca_rebaseada": "5ee936f3d80d4302c89caf53edd9447c61ca11b597f5232c3fc33b615afd4484",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-anual-pt-390.png",
+      "sha256_primeira_entrega": "3815630f2af1818d10215773f93bea8b1ab7ed1871825657c7e70e363829da1a",
+      "sha256_cabeca_rebaseada": "3815630f2af1818d10215773f93bea8b1ab7ed1871825657c7e70e363829da1a",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-anual-pt-768.png",
+      "sha256_primeira_entrega": "c333f8d5932a420c48977031b462bd981fd295b5f73721a389f87ea41307c1dc",
+      "sha256_cabeca_rebaseada": "c333f8d5932a420c48977031b462bd981fd295b5f73721a389f87ea41307c1dc",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-mensal-en-1024.png",
+      "sha256_primeira_entrega": "84ccbe721275cda15c27217a57edf888018671a8f82130e2bcdd2e9c3a570fd3",
+      "sha256_cabeca_rebaseada": "84ccbe721275cda15c27217a57edf888018671a8f82130e2bcdd2e9c3a570fd3",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-mensal-en-1280.png",
+      "sha256_primeira_entrega": "bb047a3e5acffed0979edfbe94dd8d02667aa0024414a27258a66d52c77b27af",
+      "sha256_cabeca_rebaseada": "bb047a3e5acffed0979edfbe94dd8d02667aa0024414a27258a66d52c77b27af",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-mensal-en-1600.png",
+      "sha256_primeira_entrega": "989dbb24b2363a42e14c63d2d850f6d19dd236c71e8851c783a0e909b2a1a041",
+      "sha256_cabeca_rebaseada": "989dbb24b2363a42e14c63d2d850f6d19dd236c71e8851c783a0e909b2a1a041",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-mensal-en-390.png",
+      "sha256_primeira_entrega": "cf994980faa13478389a04a786affddabf5507e95419903fe66ff4baf1b2043f",
+      "sha256_cabeca_rebaseada": "cf994980faa13478389a04a786affddabf5507e95419903fe66ff4baf1b2043f",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-mensal-en-768.png",
+      "sha256_primeira_entrega": "f3a5594cc023d81f2fe6ec6daad106aa7b26b4215d659f8fb39f3dd8c7bb1605",
+      "sha256_cabeca_rebaseada": "f3a5594cc023d81f2fe6ec6daad106aa7b26b4215d659f8fb39f3dd8c7bb1605",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-mensal-pt-1024.png",
+      "sha256_primeira_entrega": "30636041be8ad2d8b2d319e0bb42802da998c7bee16739da1740628a503ddc9e",
+      "sha256_cabeca_rebaseada": "30636041be8ad2d8b2d319e0bb42802da998c7bee16739da1740628a503ddc9e",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-mensal-pt-1280.png",
+      "sha256_primeira_entrega": "6b9f8411e3e30535726009d48f840ded5d7a8bae6ad609a19c3ce0e7960be02a",
+      "sha256_cabeca_rebaseada": "6b9f8411e3e30535726009d48f840ded5d7a8bae6ad609a19c3ce0e7960be02a",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-mensal-pt-1600.png",
+      "sha256_primeira_entrega": "0fed56c98f8a07e95cd76b6f8e08659af0272d26ce2757beb971c788b7f94865",
+      "sha256_cabeca_rebaseada": "0fed56c98f8a07e95cd76b6f8e08659af0272d26ce2757beb971c788b7f94865",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-mensal-pt-390.png",
+      "sha256_primeira_entrega": "32b84baeed2f949a41a9bb69ca85ba6a4abfb809556206f2803cb5a319f4fc19",
+      "sha256_cabeca_rebaseada": "32b84baeed2f949a41a9bb69ca85ba6a4abfb809556206f2803cb5a319f4fc19",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    },
+    {
+      "imagem": "recibo-mensal-pt-768.png",
+      "sha256_primeira_entrega": "062f000ba894c5e95b0fea7b007a39b893c590c5653218af033dcf4191fb913b",
+      "sha256_cabeca_rebaseada": "062f000ba894c5e95b0fea7b007a39b893c590c5653218af033dcf4191fb913b",
+      "os_bytes_da_primeira_dizem_o_mesmo": true,
+      "os_bytes_da_rebaseada_dizem_o_mesmo": true,
+      "iguais": true
+    }
+  ]
+}

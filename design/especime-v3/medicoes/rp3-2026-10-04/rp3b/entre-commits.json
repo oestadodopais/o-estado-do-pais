@@ -1,0 +1,72 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/rp3-2026-10-04/rp3b/entre-commits.py.",
+  "corridas": [
+    {
+      "conferencia": "o construtor das séries (o motor)",
+      "comando": "python3 publisher/export_series.py --site <worktree do sítio>",
+      "codigo": 0,
+      "antes_do_commit": "47f12e1 (motor)"
+    },
+    {
+      "conferencia": "a suíte do RP3 no motor, com as plantas novas",
+      "comando": "python3 -m publisher.dominios_series_test",
+      "codigo": 0,
+      "antes_do_commit": "47f12e1 (motor)"
+    },
+    {
+      "conferencia": "ledger:check, com as plantas novas da S13 e da S14",
+      "comando": "npm run ledger:check",
+      "codigo": 0,
+      "antes_do_commit": "5a6a1169"
+    },
+    {
+      "conferencia": "typecheck",
+      "comando": "npm run typecheck",
+      "codigo": 0,
+      "antes_do_commit": "5a6a1169"
+    },
+    {
+      "conferencia": "check:voz, com a marca da série obrigatória",
+      "comando": "node scripts/check-voz.mjs",
+      "codigo": 0,
+      "antes_do_commit": "46a42f0c"
+    },
+    {
+      "conferencia": "check:lugar, com a lista fechada e a exceção da API do INE",
+      "comando": "node scripts/check-lugar.mjs",
+      "codigo": 0,
+      "antes_do_commit": "a147d48f"
+    },
+    {
+      "conferencia": "check:palavras, com os buracos novos",
+      "comando": "node tests/voz/palavras-proibidas.mjs --prova",
+      "codigo": 0,
+      "antes_do_commit": "a147d48f"
+    },
+    {
+      "conferencia": "gate:html, com a lista fechada",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 0,
+      "antes_do_commit": "a147d48f"
+    },
+    {
+      "conferencia": "check:mortos",
+      "comando": "node scripts/check-mortos.mjs --prova",
+      "codigo": 0,
+      "antes_do_commit": "a147d48f"
+    },
+    {
+      "conferencia": "check:series com o motor ao lado",
+      "comando": "RESEARCHHUB_DIR=<motor> node tests/series/series.mjs --prova",
+      "codigo": 0,
+      "antes_do_commit": "23fc9c5e"
+    },
+    {
+      "conferencia": "check:series sem o motor",
+      "comando": "node tests/series/series.mjs --prova",
+      "codigo": 0,
+      "antes_do_commit": "23fc9c5e"
+    }
+  ],
+  "todas_a_zero": true
+}

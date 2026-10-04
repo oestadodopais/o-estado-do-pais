@@ -1,0 +1,8 @@
+relatório: design/especime-v3/medicoes/rp3-2026-10-04/RESPOSTA-construtor-rp3.md
+pasta das medições: design/especime-v3/medicoes/rp3-2026-10-04
+ficheiros JSON lidos: 22
+conhecido-positivo (o número 987654321, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
+números conferidos: 36
+números com ficheiro: 36
+números sem ficheiro: 0
+apagado antes de contar: codigo 57, enderecos 0, seccoes 1, datas 1, resumos 0, ordinais 1, identificadores 15, anos 2
