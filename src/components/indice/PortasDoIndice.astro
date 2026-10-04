@@ -50,14 +50,18 @@ const r = ROTULOS_B1[lang === 'en' ? 'en' : 'pt'];
       </li>
     ) : p.tipo === 'serie' ? (
       <li>
-        <a class="indice-porta" href={p.href}><NomeDaMedida linha={p.linha} lang={lang} escada="cartao" class="indice-nome-da-medida" />{' '}{p.sufixo}</a>
+        {/* UM SÓ ITEM DENTRO DA PORTA: a porta é uma caixa flexível (o alvo de 44 px), e o nome da medida e as
+            palavras do recibo, soltos lá dentro, eram dois itens lado a lado, com o espaço entre eles perdido
+            («Dívida públicanos países da União», visto na captura de 390 px). Dentro de um elemento em linha leem-se
+            como uma frase. */}
+        <a class="indice-porta" href={p.href}><span><NomeDaMedida linha={p.linha} lang={lang} escada="cartao" class="indice-nome-da-medida" />{' '}{p.sufixo}</span></a>
       </li>
     ) : (
       <li>
         {p.tipo === 'lugar'
           ? <a class="indice-porta" href={p.href} data-lugar>{p.rotulo}</a>
           : <a class="indice-porta" href={p.href}>{p.rotulo}</a>}
-        {p.filhos && p.filhos.length > 0 && <Astro.self portas={p.filhos} lang={lang} nivel={nivel + 1} />}
+        {p.filhos && p.filhos.length > 0 && <Astro.self portas={p.filhos} lang={lang} nivel={nivel + 1} classe={p.colunas ? `indice-lista-em-colunas${p.colunas === 'largas' ? ' indice-lista-em-colunas-largas' : ''}` : null} />}
       </li>
     )
   ))}

@@ -121,7 +121,7 @@ export const COMO_ENTRA = {
 }
 
 /**
- * @typedef {{ tipo: 'pagina'|'lugar', chave: ChaveDeRota, href: string, rotulo: string, filhos?: Porta[] }} PortaSimples
+ * @typedef {{ tipo: 'pagina'|'lugar', chave: ChaveDeRota, href: string, rotulo: string, filhos?: Porta[], colunas?: 'estreitas'|'largas' }} PortaSimples
  * @typedef {{ tipo: 'entrada', chave: ChaveDeRota, href: string, rotulo: string, linha: string }} PortaDeTema
  * @typedef {{ tipo: 'estudo', chave: 'estudo', href: string, ficha: ReturnType<typeof todosOsEstudos>[number] }} PortaDeEstudo
  * @typedef {{ tipo: 'serie', chave: 'serie', href: string, linha: Linha, sufixo: string, nome: string }} PortaDeSerie
@@ -132,16 +132,18 @@ export const COMO_ENTRA = {
 const COLACAO = { pt: new Intl.Collator('pt'), en: new Intl.Collator('en') };
 
 /**
- * Uma página fixa, com o nome que a página já tem.
+ * Uma página fixa, com o nome que a página já tem. As portas que ela lista por baixo dela podem ir em colunas de
+ * nomes (`colunas`), quando são nomes curtos: as regiões em colunas estreitas, as áreas de governo em largas.
  * @param {ChaveDeRota} chave
  * @param {Lingua} lang
  * @param {string} rotulo
  * @param {Porta[]} [filhos]
+ * @param {'estreitas'|'largas'} [colunas]
  * @returns {PortaSimples}
  */
-function pagina(chave, lang, rotulo, filhos) {
+function pagina(chave, lang, rotulo, filhos, colunas) {
   if (COMO_ENTRA[chave].como !== 'porta') throw new Error(`índice: «${chave}» não é uma porta fixa em COMO_ENTRA.`);
-  return { tipo: 'pagina', chave, href: routePath(chave, lang), rotulo, ...(filhos ? { filhos } : {}) };
+  return { tipo: 'pagina', chave, href: routePath(chave, lang), rotulo, ...(filhos ? { filhos } : {}), ...(colunas ? { colunas } : {}) };
 }
 
 /**
@@ -254,11 +256,11 @@ export function indiceDoSitio(lang) {
   return {
     pais: {
       titulo: s.indice.seccoes.pais,
-      portas: [pagina('home', lang, r.pais), pagina('temas', lang, s.nav.temas, temas(lang)), pagina('areas', lang, s.nav.areas, areas)],
+      portas: [pagina('home', lang, r.pais), pagina('temas', lang, s.nav.temas, temas(lang)), pagina('areas', lang, s.nav.areas, areas, 'largas')],
     },
     lugares: {
       titulo: s.indice.seccoes.lugares,
-      portas: [pagina('lugares', lang, s.nav.lugares), pagina('regioes', lang, s.nav.regioes, regioes)],
+      portas: [pagina('lugares', lang, s.nav.lugares), pagina('regioes', lang, s.nav.regioes, regioes, 'estreitas')],
       distritos: { titulo: nomeDaSeccao(2), portas: distritos },
       concelhos: { titulo: nomeDaSeccao(0), grupos: concelhosPorDistrito(lang) },
     },

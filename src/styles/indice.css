@@ -120,7 +120,9 @@
   margin: 4px 0 0;
 }
 
-/* Os nomes dos lugares em colunas: duas a 390 px, mais com mais papel. */
+/* As listas de nomes curtos em colunas de nomes (os distritos e as ilhas, os concelhos de cada gaveta, as regiões e
+   as portas do projeto): duas a 390 px, mais com mais papel; as áreas de governo, de nomes mais longos, em colunas
+   largas. Continuam a ser uma lista, lida pela ordem. */
 .indice-subtitulo {
   font-family: var(--f-versal);
   font-size: 14px;
@@ -128,9 +130,12 @@
   font-weight: 600;
   margin: 14px 0 0;
 }
-.indice-lista-de-lugares {
+.indice-lista-em-colunas {
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   column-gap: clamp(14px, 2.4vw, 28px);
+}
+.indice-lista-em-colunas-largas {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 .indice-concelhos .gaveta:last-child {
   border-bottom: 1px solid var(--rule);
