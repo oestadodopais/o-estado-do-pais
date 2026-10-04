@@ -27,6 +27,13 @@ const formata = (v) => {
   return String(v);
 };
 const commits = execFileSync('git', ['log', '--reverse', '--format=- `%h` %s', `${BASE}..HEAD`], { encoding: 'utf8' }).trim();
+/* ⟦commit:<começo do assunto>⟧ é o resumo curto do commit do ramo cujo assunto começa assim (a passagem R3-b: os resumos
+   mudaram com o rebase, e o relatório não os escreve à mão). Um começo que não seja de exatamente um commit fecha a corrida. */
+const doRamo = execFileSync('git', ['log', '--format=%h%x09%s', `${BASE}..HEAD`], { encoding: 'utf8' }).trim().split('\n').map((l) => l.split('\t'));
+const commitPeloAssunto = (comeco) => {
+  const achados = doRamo.filter(([, assunto]) => assunto.startsWith(comeco));
+  return achados.length === 1 ? achados[0][0] : null;
+};
 let falhou = false;
 for (const [entrada, saida] of [['LEIA-ME.modelo.md', 'LEIA-ME.md'], ['RESPOSTA.modelo.md', 'RESPOSTA-construtor-r3.md']]) {
   const modelo = fs.readFileSync(path.join(PASTA, entrada), 'utf8');
@@ -35,6 +42,12 @@ for (const [entrada, saida] of [['LEIA-ME.modelo.md', 'LEIA-ME.md'], ['RESPOSTA.
     if (nome === 'COMMITS') return commits;
     if (nome === 'n_medidas') return formata(medidas.total_de_medidas);
     if (nome === 'cabeca_dos_portoes_curta') return String(porNome.get('cabeca_dos_portoes') ?? '').slice(0, 8);
+    if (nome === 'main_do_rebase_curto') return String(porNome.get('main_do_rebase') ?? '').slice(0, 8);
+    if (nome.startsWith('commit:')) {
+      const h = commitPeloAssunto(nome.slice('commit:'.length));
+      if (!h) { faltas.push(nome); return `⟦${nome}⟧`; }
+      return h;
+    }
     if (!porNome.has(nome) || porNome.get(nome) === 'NÃO LIDO') { faltas.push(nome); return `⟦${nome}⟧`; }
     return formata(porNome.get(nome));
   });

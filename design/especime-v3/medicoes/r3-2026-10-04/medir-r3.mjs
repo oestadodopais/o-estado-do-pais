@@ -86,6 +86,8 @@ const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => new URL(m[1]).
 medicao('enderecos_no_mapa_do_sitio', locs.length, 'os <loc> de dist/sitemap-*.xml', 'as duas páginas do índice estão lá', locs.includes(routePath('indice', 'pt')) && locs.includes(routePath('indice', 'en')));
 /* AS SETE PORTAS DO RODAPÉ, CONTADAS EM CADA PÁGINA DE dist/ POR UMA LEITURA DESTE GUIÃO (e não pela do portão). */
 let comRodape = 0, comSete = 0, comIndice = 0, paginas = 0;
+/* A PASSAGEM R3-b: as listas com o âmbito do índice, nas duas páginas do índice e fora delas. */
+let ambitoNoIndice = 0, ambitoForaDoIndice = 0;
 const anda = (dir) => {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const f = path.join(dir, e.name);
@@ -93,6 +95,10 @@ const anda = (dir) => {
     if (!e.name.endsWith('.html')) continue;
     paginas++;
     const cru = fs.readFileSync(f, 'utf8');
+    if (cru.includes('data-mudou-ambito="indice"')) {
+      if (f === path.join(DIST, 'indice', 'index.html') || f === path.join(DIST, 'en', 'index', 'index.html')) ambitoNoIndice++;
+      else ambitoForaDoIndice++;
+    }
     const m = /<nav class="rodape-nav"[^>]*>([\s\S]*?)<\/nav>/.exec(cru);
     if (!m) continue;
     comRodape++;
@@ -124,10 +130,29 @@ for (const lang of ['pt', 'en']) {
 medicao('erros_da_celula_do_indice', celula ? celula.erros.length : NAO, 'a mesma corrida da célula', 'as plantas da mesma corrida deram as queixas delas (a célula vê erros quando os há)', celula && celula.plantas.length > 0 && celula.plantas.every((p) => p.mordeu && p.queixas.length > 0));
 medicao('plantas_da_celula_do_indice', celula ? celula.plantas.length : NAO, 'a mesma corrida da célula, com --prova', 'a planta «uma rota tirada do índice» mordeu', celula?.plantas.some((p) => p.nome === 'r3-celula-rota-tirada' && p.mordeu));
 medicao('plantas_da_celula_que_morderam', celula ? celula.plantas.filter((p) => p.mordeu).length : NAO, 'a mesma corrida da célula, com --prova', 'a planta «uma porta pelo ficheiro .html irmão» mordeu', celula?.plantas.some((p) => p.nome === 'r3-celula-porta-pelo-ficheiro-irmao' && p.mordeu));
+
+/* --- a passagem R3-b, pela leitura a frio do Sol ------------------------------------------------- */
+const NOMES_R3B = ['r3-celula-mapa-com-endereco-fora-da-tabela', 'r3-celula-lista-so-num-comentario', 'r3-celula-construcao-com-307-concelhos', 'r3-celula-duas-entradas-no-mesmo-dia-pela-ordem-errada'];
+const novasDaCelula = celula?.plantas.filter((p) => NOMES_R3B.includes(p.nome)) ?? [];
+medicao('plantas_r3b_da_celula_so_com_as_suas_queixas', celula ? novasDaCelula.filter((p) => p.mordeu && p.so_as_dela === true).length : NAO, 'a mesma corrida da célula: as quatro plantas da passagem R3-b que morderam com as suas queixas e só com elas', 'as quatro estão no registo da corrida', novasDaCelula.length === NOMES_R3B.length);
+const fonteDaCelula = fs.readFileSync(path.join(RAIZ, 'tests/indice/indice.mjs'), 'utf8');
+const mConcelhos = /const CONCELHOS_DE_PORTUGAL = (\d+);/.exec(fonteDaCelula);
+medicao('concelhos_de_portugal_escritos_na_celula', mConcelhos ? Number(mConcelhos[1]) : NAO, 'a constante CONCELHOS_DE_PORTUGAL de tests/indice/indice.mjs, lida do código', 'a célula contou o mesmo número de portas de concelho distintas no índice português', Boolean(mConcelhos) && celula?.contas?.pt?.concelhos?.portas === Number(mConcelhos[1]));
+/* A ordem do mesmo dia no registo construído: os pares da mesma linha no mesmo dia, e os que estão da mais antiga para a mais recente. */
+const doRegisto = parse(fs.readFileSync(path.join(DIST, 'correcoes', 'index.html'), 'utf8')).querySelectorAll('[data-mudou-registo] li[data-correcao-entrada]');
+const diaDe = (li) => li.querySelector('[data-correcao-campo="date"]')?.getAttribute('datetime');
+const nDe = (li) => Number(li.querySelector('[data-correcao-campo="date"]')?.getAttribute('data-correcao-n'));
+const paresDoDia = (lis) => lis.flatMap((li, k) => (k > 0 && li.getAttribute('data-correcao-entrada') === lis[k - 1].getAttribute('data-correcao-entrada') && diaDe(li) === diaDe(lis[k - 1]) ? [[lis[k - 1], li]] : []));
+const foraDeOrdem = (pares) => pares.filter(([a, b]) => nDe(b) > nDe(a)).length;
+const pares = paresDoDia(doRegisto);
+medicao('registo_pares_da_mesma_linha_no_mesmo_dia', pares.length, 'dist/correcoes/index.html: as entradas seguidas da mesma linha com a mesma data', 'a linha estudos-evora-publicados de 12.08.2026 é um deles', pares.some(([a]) => a.getAttribute('data-correcao-entrada') === 'estudos-evora-publicados' && diaDe(a) === '2026-08-12'));
+medicao('registo_pares_fora_de_ordem', foraDeOrdem(pares), 'os mesmos pares, com o número da segunda entrada maior do que o da primeira', 'com o primeiro par trocado, o mesmo detetor conta um', pares.length > 0 && foraDeOrdem([[pares[0][1], pares[0][0]]]) === 1);
 /* Os estudos do índice que levam noindex, contados nas páginas construídas. */
 const docPt = parse(fs.readFileSync(indicePt, 'utf8'));
 /* AS PORTAS DE CADA FAMÍLIA NO ÍNDICE PORTUGUÊS, lidas da página construída pela tabela das rotas. */
 const { matchPath } = await import(pathToFileURL(path.join(RAIZ, 'src/lib/routes.mjs')).href);
+medicao('enderecos_do_mapa_fora_da_tabela', locs.filter((c) => !matchPath(c)).length, 'os <loc> de dist/sitemap-*.xml que matchPath() de src/lib/routes.mjs não reconhece', 'o mesmo detetor não reconhece /caminho-que-nao-e-rota e reconhece /indice', matchPath('/caminho-que-nao-e-rota') === null && matchPath(routePath('indice', 'pt')) !== null);
+medicao('listas_com_o_ambito_do_indice_fora_do_indice', ambitoForaDoIndice, 'as páginas de dist/ com data-mudou-ambito="indice" que não são as duas páginas do índice', 'o mesmo detetor acha a marca nas duas páginas do índice', ambitoNoIndice === 2);
 const familias = {};
 for (const a of docPt.querySelectorAll('main a[href]')) {
   if (a.closest('[data-mudou-ambito]') || a.closest('[data-rotulo-ia="topo"]')) continue;
@@ -197,6 +222,13 @@ for (const g of ['build', 'verify', 'typecheck']) {
   medicao(`codigo_do_${g}`, codigo === null ? NAO : Number(codigo.trim()), `sh scripts/leituras/portoes.sh <worktree> ${PASTA}/portoes, o ficheiro ${g}.codigo`, 'a cabeça dos portões está escrita ao lado', (lerTexto('portoes/cabeca') ?? '').trim().length === 40);
 }
 medicao('cabeca_dos_portoes', (lerTexto('portoes/cabeca') ?? NAO).trim(), `o ficheiro ${PASTA}/portoes/cabeca`, 'a cabeça no fim da corrida é a mesma do princípio', (lerTexto('portoes/cabeca') ?? 'a').trim() === (lerTexto('portoes/cabeca.fim') ?? 'b').trim());
+const rebase = lerJson('rebase-r3b.json');
+const paiDaBase = execFileSync('git', ['rev-parse', `${BASE}^`], { encoding: 'utf8' }).trim();
+medicao('main_do_rebase', rebase?.main ?? NAO, `git -C <árvore principal> rev-parse main, antes do rebase (${PASTA}/rebase-r3b.json)`, 'o commit do brief no ramo rebaseado tem esse main por pai', rebase?.main === paiDaBase);
+medicao('commits_rebaseados', rebase?.commits_rebaseados ?? NAO, 'o mesmo registo (git rev-list --count main..cabeça rebaseada)', 'a cabeça descende do main do rebase', (() => { try { execFileSync('git', ['merge-base', '--is-ancestor', rebase?.main ?? 'x', 'HEAD']); return true; } catch { return false; } })());
+const anteriores = ['portoes-97724ae2', 'portoes-83cf51cc', 'portoes-ceeadf34', 'portoes-294f3abf'];
+const aZero = anteriores.filter((d) => ['build', 'verify', 'typecheck'].every((g) => (lerTexto(`${d}/${g}.codigo`) ?? 'x').trim() === '0'));
+medicao('corridas_anteriores_com_os_tres_a_0', aZero.length, `os ficheiros .codigo de ${anteriores.join(', ')}, nesta pasta`, 'cada pasta tem a cabeça da corrida escrita, com quarenta caracteres', anteriores.every((d) => (lerTexto(`${d}/cabeca`) ?? '').trim().length === 40));
 
 /* --- as capturas --------------------------------------------------------- */
 const capturas = lerJson('capturas-r3.json');
@@ -288,6 +320,12 @@ const daPassagem = anterior && custoFim ? anterior.simbolos_restantes - custoFim
 medicao('simbolos_da_passagem_final', daPassagem, `a leitura anterior guardada em ${PASTA}/custo-fim.json menos a última`, 'a leitura anterior está escrita, com a hora', typeof anterior?.simbolos_restantes === 'number' && Boolean(anterior?.hora_utc));
 const segundosDaPassagem = anterior && custoFim ? Math.round((Date.parse(custoFim.fim_utc) - Date.parse(anterior.hora_utc)) / 1000) : NAO;
 medicao('segundos_da_passagem_final', segundosDaPassagem, 'a diferença entre a hora da leitura anterior e a do fim, no mesmo ficheiro', 'as duas horas leem-se como datas', typeof segundosDaPassagem === 'number' && segundosDaPassagem > 0);
+const r3bInicio = lerJson('custo-r3b-inicio.json');
+const r3bFim = lerJson('custo-r3b-fim.json');
+const simbolosR3b = r3bInicio && r3bFim ? r3bInicio.simbolos_restantes_no_inicio - r3bFim.simbolos_restantes_no_fim : NAO;
+medicao('simbolos_da_passagem_r3b', simbolosR3b, `${PASTA}/custo-r3b-inicio.json menos ${PASTA}/custo-r3b-fim.json, escritos à mão pelo construtor`, 'as duas leituras têm a hora escrita', Boolean(r3bInicio?.inicio_utc) && Boolean(r3bFim?.fim_utc));
+const segundosR3b = r3bInicio && r3bFim ? Math.round((Date.parse(r3bFim.fim_utc) - Date.parse(r3bInicio.inicio_utc)) / 1000) : NAO;
+medicao('segundos_da_passagem_r3b', segundosR3b, 'a diferença entre as duas horas dos ficheiros do custo da passagem R3-b', 'as duas horas leem-se como datas', typeof segundosR3b === 'number' && segundosR3b > 0);
 
 const saida = { bloco: 'R3', brief: 'design/observatorio/BRIEF-R3-o-indice-do-sitio.md', guiao: `${PASTA}/medir-r3.mjs`, cabeca, construcao: versao.commit, total_de_medidas: medidas.length, medidas };
 fs.writeFileSync(path.join(PASTA, 'medidas.json'), JSON.stringify(saida, null, 2) + '\n');
