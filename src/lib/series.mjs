@@ -926,11 +926,14 @@ function validarSerieNoTempo(id, s, series, hoje, agora) {
   }
   if (!STUDY_IDS.has(/** @type {string} */ (s.study))) erro(`S12: o estudo «${String(s.study)}» não consta de src/data/studies.mjs.`);
 
-  // S13 · as correções, uma por ponto mudado
+  // S13 · as correções, uma por ponto mudado. A ÚLTIMA É A DE DATA MAIS RECENTE, e não a última da lista
+  // (passagem RP3-b, o achado 6 da leitura a frio): uma correção mais nova escrita antes de uma mais antiga
+  // deixava o ponto valer a antiga. Duas correções do mesmo período com a mesma data param, porque nenhuma é
+  // a última; e o valor antigo e o novo são cadeias não vazias, como o motivo.
   if (!Array.isArray(s.corrections)) erro('S13: «corrections» não é uma lista.');
   else {
-    /** @type {Map<string, Record<string, unknown>>} */
-    const ultimaPorPeriodo = new Map();
+    /** @type {Map<string, Record<string, unknown>[]>} */
+    const porPeriodo = new Map();
     for (const c of s.corrections) {
       if (!eMapa(c) || Object.keys(c).join(' ') !== CAMPOS_DA_CORRECAO_NO_TEMPO.join(' ')) {
         erro('S13: uma correção não traz os sete campos da forma, pela ordem dela.');
@@ -938,13 +941,29 @@ function validarSerieNoTempo(id, s, series, hoje, agora) {
       }
       if (!periodos.includes(String(c.periodo))) erro(`S13: uma correção nomeia o período ${String(c.periodo)}, que não é um ponto.`);
       if (!['correcao', 'atualizacao'].includes(String(c.kind))) erro(`S13: a natureza de uma correção é «correcao» ou «atualizacao», e esta diz «${String(c.kind)}».`);
-      if (typeof c.date !== 'string' || !DATA.test(c.date)) erro('S13: a data de uma correção não é AAAA-MM-DD.');
+      if (typeof c.date !== 'string' || !DATA.test(c.date)) {
+        erro('S13: a data de uma correção não é AAAA-MM-DD.');
+        continue;
+      }
+      for (const k of ['old_value', 'new_value']) {
+        if (typeof c[k] !== 'string' || !String(c[k]).trim()) erro(`S13: a correção de ${String(c.periodo)} não traz «${k}» como uma cadeia com o valor.`);
+      }
       for (const k of ['reason', 'reason_en']) if (typeof c[k] !== 'string' || !String(c[k]).trim()) erro(`S13: uma correção não diz «${k}».`);
-      ultimaPorPeriodo.set(String(c.periodo), c);
+      const doPeriodo = porPeriodo.get(String(c.periodo)) ?? [];
+      doPeriodo.push(c);
+      porPeriodo.set(String(c.periodo), doPeriodo);
     }
-    for (const [per, c] of ultimaPorPeriodo) {
+    for (const [per, cs] of porPeriodo) {
+      const maisRecente = cs.reduce((m, c) => (String(c.date) > m ? String(c.date) : m), '');
+      const ultimas = cs.filter((c) => String(c.date) === maisRecente);
+      if (ultimas.length !== 1) {
+        erro(`S13: o ponto ${per} tem ${ultimas.length} correções com a data mais recente (${maisRecente}), e nenhuma é a última.`);
+        continue;
+      }
       const ponto = lista.find((p) => eMapa(p) && p.periodo === per);
-      if (ponto && eMapa(ponto) && ponto.valor !== c.new_value) erro(`S13: o ponto ${per} vale «${String(ponto.valor)}» e a última correção dele diz «${String(c.new_value)}».`);
+      if (ponto && eMapa(ponto) && ponto.valor !== ultimas[0].new_value) {
+        erro(`S13: o ponto ${per} vale «${String(ponto.valor)}» e a correção mais recente dele (${maisRecente}) diz «${String(ultimas[0].new_value)}».`);
+      }
     }
   }
   return { errors, pontos: lista.length, marcas };

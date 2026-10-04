@@ -657,6 +657,12 @@ if (tabelaDosPaises && leitura.series.size) {
   const eurostat = 'serie-ihpc-variacao-homologa-ue';
   const derivadaRp3 = 'serie-cem-euros-de-2015-01';
   if (leitura.series.has(ine) && leitura.series.has(eurostat) && leitura.series.has(derivadaRp3)) {
+    /* O valor do primeiro ponto da série do INE, lido da própria série, para as plantas da S13 (passagem RP3-b,
+       o achado 6): nenhum valor se escreve aqui à mão. */
+    const v1992 = String(/** @type {any} */ (leitura.series.get(ine)).pontos[0].valor);
+    const correcao = (/** @type {Record<string, unknown>} */ campos) => ({
+      periodo: '1992-01', date: '2026-10-04', kind: 'atualizacao', old_value: '9,30', new_value: v1992, reason: 'x', reason_en: 'x', ...campos,
+    });
     plantas.push(
       { regra: 'S9', nome: 'uma chave que não pertence à forma de uma série no tempo', espera: 'S9: campo desconhecido',
         series: copiaDasSeries(ine, (s) => { s.nota_solta = 'x'; }) },
@@ -680,8 +686,21 @@ if (tabelaDosPaises && leitura.series.size) {
         series: copiaDasSeries(ine, (s) => { s.source_url = s.pedidos[0].url; }) },
       { regra: 'S13', nome: 'uma correção que não é a do valor publicado', espera: 'S13: o ponto 1992-01',
         series: copiaDasSeries(ine, (s) => { s.corrections = [{ periodo: '1992-01', date: '2026-10-04', kind: 'atualizacao', old_value: '9,40', new_value: '9,39', reason: 'x', reason_en: 'x' }]; }) },
-      { regra: 'S14', nome: 'uma linha presa desfasada do seu ponto', espera: 'S14: o ponto 2026-08',
+      /* RP3-b (o achado 6): a correção mais recente é a de data maior, e não a última da lista; o valor antigo e
+         o novo são cadeias; e duas correções do mesmo ponto com a mesma data param. */
+      { regra: 'S13', nome: 'uma correção mais nova escrita antes de uma mais antiga, com o ponto a valer a antiga', espera: `S13: o ponto 1992-01 vale «${v1992}» e a correção mais recente dele (2026-10-04)`,
+        series: copiaDasSeries(ine, (s) => { s.corrections = [correcao({ new_value: '9,39' }), correcao({ date: '2026-10-01' })]; }) },
+      { regra: 'S13', nome: 'uma correção com o valor antigo nulo', espera: 'S13: a correção de 1992-01 não traz «old_value»',
+        series: copiaDasSeries(ine, (s) => { s.corrections = [correcao({ old_value: null })]; }) },
+      { regra: 'S13', nome: 'duas correções do mesmo ponto com a mesma data', espera: 'S13: o ponto 1992-01 tem 2 correções com a data mais recente',
+        series: copiaDasSeries(ine, (s) => { s.corrections = [correcao(), correcao({ new_value: '9,39' })]; }) },
+      /* RP3-b (o achado 11 da leitura a frio): esta planta troca o VALOR da linha presa, e é isso que diz; o
+         cartão desfasado (a série com um ponto mais novo do que o do cartão) é da S5 do check:series, que tem a
+         sua planta. A S14 ganha a do período que a série não tem. */
+      { regra: 'S14', nome: 'o valor da linha presa trocado (não é o do ponto do seu período)', espera: 'S14: o ponto 2026-08',
         claims: copiaDasLinhas('ipc-variacao-homologa', (l) => { l.value = '3,31'; }) },
+      { regra: 'S14', nome: 'a linha presa num período que a série não tem', espera: 'S14: a série «serie-ipc-variacao-homologa» não tem o ponto 2026-10',
+        claims: copiaDasLinhas('ipc-variacao-homologa', (l) => { l.reference_date = '2026-10'; }) },
       { regra: 'S14', nome: 'uma linha que nomeia uma série de outras coordenadas', espera: 'S14: as coordenadas da linha',
         claims: copiaDasLinhas('ipc-variacao-homologa', (l) => { l.serie = 'serie-ipc-alimentacao-variacao-homologa'; }) },
       { regra: 'S14', nome: 'a linha da União presa à série de Portugal', espera: 'S14: a série «serie-ihpc-variacao-homologa» fixa a geografia PT',
