@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
-import { spawnSync } from 'node:child_process';
+import { spawnSync, execFileSync } from 'node:child_process';
 import { parse } from 'node-html-parser';
 import { routePath } from '../../src/lib/routes.mjs';
 import { t } from '../../src/i18n/strings.mjs';
@@ -30,6 +30,9 @@ function planta(nome,script,alteracoes,mordidas) {
  if(apenas && nome!==apenas)return;
  if(prefixo && !nome.startsWith(prefixo))return;
  if(lista && !lista.has(nome))return;
+ const cabeca=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
+ const estado=execFileSync('git',['status','--porcelain','--untracked-files=no'],{encoding:'utf8'});
+ if(process.env.OEDP_EXIGIR_ARVORE_LIMPA==='1' && estado)throw Error(`${nome}: a prova exige uma árvore seguida limpa.`);
  const originais=new Map(alteracoes.map(([f])=>[f,fs.readFileSync(path.join('dist',f),'utf8')]));
  let r;
  try {
@@ -42,7 +45,7 @@ function planta(nome,script,alteracoes,mordidas) {
  fs.writeFileSync(path.join(pasta,`planta-${nome}.log`),saida.replaceAll(process.cwd(), '<sitio>').replace(/\/Users\/[^/\s]+/g, '<pasta-local>'));
  const ficheiros=[...originais].map(([f,s])=>({ficheiro:`dist/${f}`,antes:sha(s),reposto:sha(fs.readFileSync(path.join('dist',f)))}));
  const passou=r.status===1&&mordidas.every(re=>re.test(saida))&&ficheiros.every(f=>f.antes===f.reposto);
- const registo={nome,comando:`node ${script}`,codigo:r.status,mordidas:mordidas.map(re=>re.source),passou,ficheiros};registos.push(registo);
+ const registo={nome,cabeca,estado,comando:`node ${script}`,codigo:r.status,mordidas:mordidas.map(re=>re.source),passou,ficheiros};registos.push(registo);
  fs.writeFileSync(path.join(pasta,apenas ? `plantas-portoes-${apenas}.json` : prefixo ? `plantas-portoes-${prefixo.replace(/-$/,'')}.json` : lista ? 'plantas-portoes-lista.json' : 'plantas-portoes.json'),JSON.stringify(registos,null,2)+'\n');
  console.log(`${passou?'OK':'FALHA'} ${nome}: código ${r.status}`);
  if(!passou)throw Error(`${nome}: a planta não teve todas as mordidas previstas. Ver o registo.`);
@@ -598,3 +601,7 @@ planta('h2-area-porta-antiga','scripts/check-areas.mjs',[
 planta('h2-voz-estado-trocado','scripts/check-voz.mjs',[
  ['en/index.html',r=>r.querySelector('[data-estudo-em-curso]').set_content('estado sem declaração')]
 ],[/bloco por classificar em \/en: «Évora Culture published on estado sem declaração»/]);
+/* H2-b: o ano declarado só sai da régua dos números depois da comparação. */
+planta('h2b-horizonte-trocado','scripts/gate-html.mjs',[
+ ['index.html',r=>r.querySelector('[data-estudo-em-curso]').set_content('em curso até 1999')]
+],[/H2-b: o horizonte do estudo em curso difere da ficha/]);

@@ -6,6 +6,7 @@ import { REGUAS_DECLARADAS } from '../src/lib/enquadramento.mjs';
 import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
+import { metaDoEstudoConferida } from './meta-do-estudo.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa, serieDaLinhaDoPortao } from './series-do-portao.mjs';
 import { PALAVRAS_DAS_MARCAS_DO_INE } from '../src/data/series-no-tempo.mjs';
 import { faixasDoPortao, linhaDePortugalDoPortao, MEDIDAS_SEM_FAIXA, conferirTabelaDaVista } from './concelhos-do-portao.mjs';
@@ -5931,6 +5932,13 @@ for (const file of ficheirosHtml(DIST)) {
   }
 
   const aRemover = [];
+  /* H2-b: o ano do acompanhamento vem da ficha, não do livro de medições.
+     Só sai do varrimento depois de conferir a composição inteira e a rota. */
+  for (const el of body.querySelectorAll('[data-estudo-em-curso]')) {
+    if (rota?.key !== 'home' || !metaDoEstudoConferida(el.closest('.estudo-meta'), rota.lang))
+      err('H2-b: o horizonte do estudo em curso difere da ficha ou está fora da primeira página.');
+    else aRemover.push(el);
+  }
   /* B1, peça 3: datas de mudanças e de publicação, comparadas com os seus
      registos. Nenhuma marca dispensa o parágrafo ou o contentor inteiro.
 

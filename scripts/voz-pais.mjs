@@ -97,7 +97,8 @@ export function verificaVozPais(raiz) {
         /* A mobília da primeira página nova (bloco PP1): as cadeias declaradas em `strings.mjs`, as
            entradas das declarações do lugar de direção, e as três portas. As três cadeias da pesquisa
            dos lugares saíram com ela (L2a): a pesquisa vive em «Lugares», e aqui seria uma segunda cópia. */
-        s.primeira.oQueSePassa, s.primeira.numerosMaisRecentes, s.primeira.porOndeComecar, s.primeira.veredicto, s.primeira.emCurso,
+        s.primeira.oQueSePassa, s.primeira.numerosMaisRecentes, s.primeira.porOndeComecar, s.primeira.veredicto,
+        ...WORKS.filter(w=>w.emCurso).map(w=>s.primeira.emCurso.replace('{ano}', w.emCurso.ate?.slice(0, 4) ?? '[verify]')),
         `${s.primeira.todosOsTemas} →`, `${s.nav.livro} →`, `${ROTULOS_B1[lang].mudou} →`, `${s.nav.uniaoEuropeia} →`,
         ROTULOS_B1[lang].lugares,
         ...ENTRADAS.flatMap(e => [e.nome[lang], e.linha[lang], linhaDoIndice(e, lang), ...e.seccoes.map(s => s.nome[lang])]),

@@ -1432,4 +1432,4 @@ isso o pequeno dos rótulos entra sem uma palavra nova em nenhuma das edições.
 
 | chave | pt | en | nota |
 |---|---|---|---|
-| `primeira.emCurso` | em curso | ongoing | Estado declarado na ficha, ao lado da data nos estudos recentes da primeira página. |
+| `primeira.emCurso` | em curso até {ano} | ongoing until {ano} | Horizonte lido de `emCurso.ate`, ao lado da data nos estudos recentes da primeira página (H2-b). |

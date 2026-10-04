@@ -1800,7 +1800,7 @@ export const STRINGS = {
     primeira: {
       oQueSePassa: 'O que se passa',
       numerosMaisRecentes: 'Os números mais recentes são de ',
-      emCurso: 'em curso',
+      emCurso: 'em curso até {ano}',
       porOndeComecar: 'Por onde começar',
       numerosDoBloco: 'Os números deste bloco',
       fonte: 'Fonte',
@@ -3723,7 +3723,7 @@ export const STRINGS = {
     primeira: {
       oQueSePassa: 'What is happening',
       numerosMaisRecentes: 'The most recent figures are for ',
-      emCurso: 'ongoing',
+      emCurso: 'ongoing until {ano}',
       porOndeComecar: 'Where to start',
       numerosDoBloco: 'The figures in this block',
       fonte: 'Source',
