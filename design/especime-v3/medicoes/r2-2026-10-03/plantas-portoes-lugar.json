@@ -1,0 +1,40 @@
+[
+  {
+    "nome": "lugar",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L1 .*ACIMA DO TETO",
+      "L4 .*ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "6eabe86f2b48d5e014fba84708cc7a8c93b072e434cd352f501aed181fe41449",
+        "reposto": "6eabe86f2b48d5e014fba84708cc7a8c93b072e434cd352f501aed181fe41449"
+      },
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "4b413f3468b8fd5a9e1e6ca609af168214007fc41afef6c706e345e15761e7b8",
+        "reposto": "4b413f3468b8fd5a9e1e6ca609af168214007fc41afef6c706e345e15761e7b8"
+      }
+    ]
+  },
+  {
+    "nome": "lugar-marcador-de-titulo",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L1 .*ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/studies/index.html",
+        "antes": "3cc1a0ea9f41d38d2c4cabf342b8c96590dcb6cab2447aeb4a3b6e97a45ec68f",
+        "reposto": "3cc1a0ea9f41d38d2c4cabf342b8c96590dcb6cab2447aeb4a3b6e97a45ec68f"
+      }
+    ]
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "o_que": "Os pedidos ao motor que a passagem R2-b deixa, um a um: o que afirma um facto sobre uma linha sem origem selada fica com o termo da fonte até um bloco do motor (o E2, pela decisão do lugar de direção de 04.10.2026) selar a origem que falta. Cada pedido diz a linha, o que o rótulo diria, o que falta selar e onde a fonte o publica, quando se sabe.",
+  "decisao": "design/especime-v3/critica/LEITURA-R2-2026-10-04.md, a secção «O que mais a R2-b faz», o ponto dos dez [verify]",
+  "pedidos": [
+    {
+      "n": 1,
+      "achado": 6,
+      "linha": "retribuicao-minima-mensal-garantida-continente-2026",
+      "o_que_o_rotulo_diria": "a pergunta do salário mínimo diria também o valor da Madeira, como diz o acréscimo dos Açores",
+      "o_que_falta": "o Decreto Legislativo Regional n.º 1/2026/M como origem declarada (a nota interna da linha diz que o motor o leu a 23.09.2026, com o PDF em files.diariodarepublica.pt, mas não é origem nem linha do sítio); até lá a ressalva do recibo diz que o diploma da Madeira não é fonte de nenhuma linha deste livro, com o marcador"
+    },
+    {
+      "n": 2,
+      "achado": 6,
+      "linha": "retribuicao-minima-mensal-doze-meses-2026",
+      "o_que_o_rotulo_diria": "o cartão do Eurostat (o salário mínimo em doze meses) diria «(continente)»",
+      "o_que_falta": "uma origem do Eurostat que diga que o valor de Portugal na base earn_mw_cur é o do continente (o excerto da linha diz «Portugal»)"
+    },
+    {
+      "n": 3,
+      "achado": 9,
+      "linha": "agua-nao-faturada-portugal-2024",
+      "o_que_o_rotulo_diria": "a unidade diria de que é a percentagem",
+      "o_que_falta": "o excerto da própria linha, que está «[a verificar]», lido no Relatório Anual dos Serviços de Águas e Resíduos em Portugal (RASARP); o cartão está declarado em dívida em CARTOES_COM_A_UNIDADE_DA_LINHA_EM_DIVIDA"
+    },
+    {
+      "n": 4,
+      "achado": 11,
+      "linha": "evora-poder-de-compra-2023",
+      "o_que_o_rotulo_diria": "a pergunta do cartão do poder de compra de Évora na página da área (o que o índice mede, com a base de Portugal)",
+      "o_que_falta": "a metainformação do INE do indicador 0014580 («Poder de compra per capita (PT=100)») como origem selada; a nota da medida dos concelhos já explica o índice nos cartões das páginas de concelho"
+    },
+    {
+      "n": 5,
+      "achado": 11,
+      "linha": "alentejo-central-poder-de-compra-2023",
+      "o_que_o_rotulo_diria": "a pergunta do cartão do poder de compra do Alentejo Central na página da área",
+      "o_que_falta": "a mesma metainformação do INE do indicador 0014580, como origem selada"
+    },
+    {
+      "n": 6,
+      "achado": 24,
+      "linha": "evora-execucao-da-receita-2025",
+      "o_que_o_rotulo_diria": "«% da receita prevista no orçamento» no lugar de «% do orçamento»",
+      "o_que_falta": "um excerto da Prestação de Contas que diga «prevista» (o excerto da linha, p. 111, diz o total, o cobrado e a percentagem, sem a palavra); o mesmo vale para a linha de 2021"
+    },
+    {
+      "n": 7,
+      "achado": 24,
+      "linha": "pensao-media-anual-2025",
+      "o_que_o_rotulo_diria": "a unidade diria se o valor médio é por pensão ou por pensionista",
+      "o_que_falta": "a metainformação do INE do indicador «Valor médio das pensões da segurança social (Série 2017 - €/ N.º)», que diz o que o «N.º» conta; até lá a unidade fica «euros por pensionista por ano», como a linha a escreve"
+    }
+  ]
+}

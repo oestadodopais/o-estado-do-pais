@@ -1,0 +1,207 @@
+{
+  "erros": [],
+  "contas": {
+    "paginas": 7466,
+    "paginas_com_cartoes": 656,
+    "cartoes": 5290,
+    "familias": {
+      "nacional": 318,
+      "uniao": 42,
+      "concelho": 4928,
+      "camaras": 2
+    },
+    "nomes": {
+      "projeto": 214,
+      "medidas": 24,
+      "figuras": 66,
+      "cartao": 14
+    },
+    "estados": 688,
+    "unidades": {
+      "declaradas": 780,
+      "da_linha": 4442,
+      "em_divida": 2,
+      "na_faixa_dos_paises": 18
+    },
+    "faixas": {
+      "lugar": 2464,
+      "comparacao": 2464,
+      "presentes": 2464
+    },
+    "dobras": {
+      "perguntas": 138,
+      "notas": 4928,
+      "referencias": 12,
+      "termos": 8,
+      "uniao": 42,
+      "paises": 20
+    },
+    "faixas_dos_paises": 20,
+    "ressalvas": 2
+  },
+  "chaves": 376,
+  "formas_por_campo": {
+    "dobra": 164,
+    "nome": 374,
+    "periodo": 272,
+    "regua": 106,
+    "unidade": 332,
+    "comparacao": 12,
+    "faixa": 49,
+    "estado": 60,
+    "dobra-referencia": 12,
+    "faixa-ue": 20,
+    "dobra-termo": 8,
+    "ressalva": 2
+  },
+  "em_dia_com_o_declarado": true,
+  "diferencas_do_declarado": 0,
+  "comparado_com_o_declarado": {
+    "chaves": 376,
+    "campos": 1362,
+    "formas": 1411,
+    "ocorrencias": 26844
+  },
+  "plantas": [
+    {
+      "nome": "r2-nome-trocado-num-cartao-nacional",
+      "campo": "nome",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-nome-pelo-titulo-da-fonte",
+      "campo": "nome",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-unidade-da-casa-trocada",
+      "campo": "unidade",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-unidade-da-linha-em-vez-da-declarada",
+      "campo": "unidade",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-unidade-da-linha-nao-aceite",
+      "campo": "unidade",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-estado-sem-o-dono",
+      "campo": "estado",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-estado-do-dono-errado",
+      "campo": "estado",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-faixa-sem-a-medida",
+      "campo": "faixa",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-comparacao-de-antes",
+      "campo": "faixa",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-pergunta-trocada",
+      "campo": "dobra",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-pergunta-tirada",
+      "campo": "dobra",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-nota-do-concelho-de-antes",
+      "campo": "dobra",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-referencia-na-dobra-de-outro-dono",
+      "campo": "dobra",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-unidade-do-cartao-da-uniao-de-antes",
+      "campo": "unidade",
+      "mordeu": true
+    },
+    {
+      "nome": "r2-cartao-sem-chave",
+      "campo": "chave",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-estado-que-falta-num-cartao-nacional",
+      "campo": "estado",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-estado-do-limite-que-falta",
+      "campo": "estado",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-frase-do-lugar-que-falta",
+      "campo": "faixa",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-unidade-da-faixa-dos-paises-pela-serie",
+      "campo": "unidade",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-termo-trocado",
+      "campo": "dobra",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-termo-repetido",
+      "campo": "dobra",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-ressalva-escrita-a-mao",
+      "campo": "ressalva",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-diploma-dos-acores-dado-como-por-ler",
+      "campo": "ressalva",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-nome-de-nivel-trocado",
+      "campo": "nome",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-concelho-sem-o-cartao",
+      "campo": "contagem",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-estado-a-menos-na-contagem",
+      "campo": "estado",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-frase-do-lugar-a-menos-na-contagem",
+      "campo": "faixa",
+      "mordeu": true
+    },
+    {
+      "nome": "r2b-chave-declarada-que-nao-se-rende",
+      "campo": "chave",
+      "mordeu": true
+    }
+  ]
+}

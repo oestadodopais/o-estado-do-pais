@@ -1,0 +1,12 @@
+{
+  "o_que": "a primeira leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), na passagem R2-b, escrita à mão pelo construtor, e a hora do relógio da máquina na primeira chamada ao relógio da passagem",
+  "simbolos_restantes_no_inicio": 13550405,
+  "lido_no_inicio": "na mensagem do lugar de direção que abre a passagem R2-b, antes de qualquer ferramenta da passagem",
+  "inicio_utc": "2026-10-04T01:34:16Z",
+  "inicio_origem": "date -u, na primeira chamada da passagem (a que confirmou a cabeça d64bf975)",
+  "semana_da_conta_no_inicio": {
+    "o_que": "a percentagem da semana e das cinco horas da subscrição do Claude, lidas da linha de estado (escrita às 01:33 UTC de 04.10.2026) por scripts/leituras/uso.py no início da passagem",
+    "sete_dias_usados_por_cento": 51,
+    "cinco_horas_usadas_por_cento": 7
+  }
+}

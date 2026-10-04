@@ -1,0 +1,54 @@
+{
+  "o_que": "A L1 do check:lugar página a página: a lista da construção da cabeça entregue do R2 (6a711d3e) e a de dist/, escritas pela régua da casa com AMOSTRA alta.",
+  "comando": "AMOSTRA=100000 node scripts/check-lugar.mjs (em cada árvore, sobre a sua construção)",
+  "antes": {
+    "paginas": 2342,
+    "contagem_impressa": 2342,
+    "teto": 2342
+  },
+  "depois": {
+    "paginas": 2342,
+    "contagem_impressa": 2342,
+    "teto": 2342,
+    "codigo": 0
+  },
+  "entraram": [],
+  "sairam": [],
+  "pioraram": [],
+  "melhoraram": [
+    {
+      "url": "/en/european-union",
+      "antes": 34,
+      "depois": 33
+    },
+    {
+      "url": "/en/ledger/disparidade-salarial-entre-sexos-2024",
+      "antes": 2,
+      "depois": 1
+    },
+    {
+      "url": "/en/ledger/remuneracao-bruta-mensal-media",
+      "antes": 3,
+      "depois": 2
+    },
+    {
+      "url": "/livro-razao/disparidade-salarial-entre-sexos-2024",
+      "antes": 2,
+      "depois": 1
+    },
+    {
+      "url": "/livro-razao/remuneracao-bruta-mensal-media",
+      "antes": 3,
+      "depois": 2
+    },
+    {
+      "url": "/uniao-europeia",
+      "antes": 34,
+      "depois": 33
+    }
+  ],
+  "conhecido_positivo": {
+    "o_que": "a lista de antes tem as páginas que a contagem impressa diz",
+    "encontrado": true
+  }
+}

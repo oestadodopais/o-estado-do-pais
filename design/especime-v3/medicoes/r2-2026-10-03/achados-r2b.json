@@ -1,0 +1,68 @@
+{
+  "o_que": "As decisões da passagem R2-b sobre os 27 achados da triagem, depois da leitura a frio do Sol e das decisões do lugar de direção (design/especime-v3/critica/LEITURA-R2-2026-10-04.md): o achado 4 pela forma do excerto; as explicações de termos escritas (o 10, o 11 em parte, o 14 e o 25); o FAM na dobra da dívida (o 2); e os factos sem origem selada com o termo da fonte, como pedidos ao motor (pedidos-ao-motor-r2b.json). O registo do R2 fica em achados-r2.json.",
+  "estados": {
+    "1": "feito",
+    "2": "feito",
+    "3": "feito",
+    "4": "feito",
+    "5": "feito",
+    "6": "feito_em_parte",
+    "7": "feito",
+    "8": "feito",
+    "9": "feito_em_parte",
+    "10": "feito",
+    "11": "feito_em_parte",
+    "12": "feito",
+    "13": "feito",
+    "14": "feito",
+    "15": "feito",
+    "16": "feito",
+    "17": "feito",
+    "18": "feito",
+    "19": "recusado",
+    "20": "feito",
+    "21": "feito",
+    "22": "feito",
+    "23": "feito",
+    "24": "feito_em_parte",
+    "25": "feito",
+    "26": "feito",
+    "27": "feito"
+  },
+  "contagens": {
+    "feito": 22,
+    "feito_em_parte": 4,
+    "recusado": 1
+  },
+  "mudou_na_r2b": {
+    "2": "a dobra diz também a contribuição para o Fundo de Apoio Municipal, que a coluna da DGAL exclui (o localizador de cada linha e o quadro da DGAL)",
+    "4": "o nome, a unidade, a linha da unidade do cartão da União e a pergunta pela forma do excerto",
+    "10": "o valor acrescentado bruto explicado em palavras comuns na dobra do primeiro cartão que o usa",
+    "11": "a paridade do poder de compra explicada na dobra do primeiro cartão do PIB por habitante; as perguntas do poder de compra ficam pedidas ao motor",
+    "14": "o fator de sustentabilidade explicado como multiplicador da pensão",
+    "25": "«reexpressa» explicada na dobra do cartão da dívida do início do mandato"
+  },
+  "pedidos_ao_motor": {
+    "6": [
+      1,
+      2
+    ],
+    "9": [
+      3
+    ],
+    "11": [
+      4,
+      5
+    ],
+    "24": [
+      6,
+      7
+    ]
+  },
+  "verify": [
+    "achado 6: o acréscimo da Madeira (pedido 1) e «(continente)» no cartão do Eurostat (pedido 2)",
+    "achado 9: de que é a percentagem da água não faturada (pedido 3)",
+    "achado 11: as perguntas do poder de compra de Évora e do Alentejo Central (pedidos 4 e 5)",
+    "achado 24: «% da receita prevista no orçamento» (pedido 6) e as pensões por pensão ou por pensionista (pedido 7)"
+  ]
+}

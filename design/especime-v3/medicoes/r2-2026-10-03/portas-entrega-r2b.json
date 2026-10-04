@@ -1,0 +1,29 @@
+{
+  "o_que": "As portas das origens das definições numa construção: os invólucros, as origens, as portas e os invólucros com um endereço com mais de uma porta.",
+  "construcao": null,
+  "involucros": 88,
+  "origens": 190,
+  "portas": 190,
+  "involucros_com_porta_repetida": 10,
+  "exemplos": [
+    "en/european-union · 1 endereço(s) com mais de uma porta",
+    "en/european-union · 1 endereço(s) com mais de uma porta",
+    "en/ledger/disparidade-salarial-entre-sexos-2024 · 1 endereço(s) com mais de uma porta",
+    "en/ledger/independencia-da-justica-2025 · 1 endereço(s) com mais de uma porta",
+    "en/ledger/remuneracao-bruta-mensal-media · 1 endereço(s) com mais de uma porta",
+    "livro-razao/disparidade-salarial-entre-sexos-2024 · 1 endereço(s) com mais de uma porta",
+    "livro-razao/independencia-da-justica-2025 · 1 endereço(s) com mais de uma porta",
+    "livro-razao/remuneracao-bruta-mensal-media · 1 endereço(s) com mais de uma porta",
+    "uniao-europeia · 1 endereço(s) com mais de uma porta",
+    "uniao-europeia · 1 endereço(s) com mais de uma porta"
+  ],
+  "disparidade_no_recibo_portugues": {
+    "origens": 2,
+    "portas": 2,
+    "enderecos": 1
+  },
+  "conhecido_positivo": {
+    "o_que": "o recibo da disparidade salarial tem duas origens no mesmo endereço",
+    "encontrado": true
+  }
+}
