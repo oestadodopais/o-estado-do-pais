@@ -1,0 +1,9 @@
+{
+  "o_que": "o começo da passagem R3-b (as emendas da leitura a frio do Sol, a cópia da leitura e o rebase): o contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), escrito à mão pelo construtor, e a hora do relógio da máquina",
+  "simbolos_restantes_no_inicio": 13677481,
+  "lido_no_inicio": "o contador mostrado no resultado da entrega do relatório do R3, a última leitura antes de a mensagem do coordenador com a passagem R3-b chegar",
+  "simbolos_restantes_na_primeira_hora": 13674248,
+  "lido_na_primeira_hora": "o contador mostrado logo a seguir à primeira chamada da passagem, a que leu o relógio",
+  "inicio_utc": "2026-10-04T09:42:40Z",
+  "inicio_origem": "date -u +%Y-%m-%dT%H:%M:%SZ, na primeira chamada da passagem R3-b"
+}

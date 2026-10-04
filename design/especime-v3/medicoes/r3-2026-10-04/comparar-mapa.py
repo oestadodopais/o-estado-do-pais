@@ -2,9 +2,10 @@
 """R3: as citações do mapa do repositório que ficaram longe da linha citada com este bloco.
 
 Compara as duas corridas de `scripts/leituras/conferir-mapa.py` guardadas nesta pasta, a da cabeça do brief
-(`conferir-mapa-base.txt`, sobre uma extração de 358e3649) e a da cabeça do bloco (`conferir-mapa.txt`), pelo texto citado,
-e diz quais das citações longe da linha são novas e quantas delas citam um ficheiro que o bloco mudou
-(`git diff --name-only 358e3649..HEAD`). O conhecido-positivo: a corrida da base tem citações longe da linha, e o mesmo
+(`conferir-mapa-base.txt`, sobre uma extração do commit do brief no ramo) e a da cabeça do bloco (`conferir-mapa.txt`), pelo
+texto citado, e diz quais das citações longe da linha são novas e quantas delas citam um ficheiro que o bloco mudou
+(`git diff --name-only <brief>..HEAD`). O commit do brief procura-se pelo assunto, como em `medir-r3.mjs`: o rebase da
+passagem R3-b mudou-lhe o resumo (era 358e3649; a corrida dessa cabeça ficou em `conferir-mapa-base-358e3649.txt`). O conhecido-positivo: a corrida da base tem citações longe da linha, e o mesmo
 leitor das linhas encontra-as.
 Uso, da raiz da worktree:  python3 design/especime-v3/medicoes/r3-2026-10-04/comparar-mapa.py
 """
@@ -28,12 +29,16 @@ def ficheiros(lista):
 
 
 base, agora = longe('conferir-mapa-base.txt'), longe('conferir-mapa.txt')
-tocados = set(subprocess.run(['git', 'diff', '--name-only', '358e3649..HEAD'], capture_output=True, text=True, check=True).stdout.split())
+BASE = subprocess.run(['git', 'log', '-1', '--format=%h', '--grep=^R3: o brief «o índice do sítio»', 'HEAD'], capture_output=True, text=True, check=True).stdout.strip()
+if not BASE:
+    raise SystemExit('A base do ramo (o commit do brief do R3) não está na história da cabeça.')
+tocados = set(subprocess.run(['git', 'diff', '--name-only', f'{BASE}..HEAD'], capture_output=True, text=True, check=True).stdout.split())
 textos_da_base = {b[0] for b in base}
 novas = [a for a in agora if a[0] not in textos_da_base]
 do_bloco = [a for a in novas if ficheiros(a[2]) & tocados]
 saida = {
     'guiao': str(PASTA / 'comparar-mapa.py'),
+    'base': BASE,
     'longe_na_base': len(base),
     'longe_agora': len(agora),
     'novas_longe': len(novas),
