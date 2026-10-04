@@ -570,7 +570,7 @@ As ressalvas continuam a vir do motor por família, com as contas que as
 sustentam. `src/lib/ledger.mjs` distingue a conta de uma ressalva da aritmética
 do valor; `src/views/LinhaView.astro` publica essa distinção nas duas línguas.
 `tests/linha/cadeias-proveniencia.mjs` recusa uma conta numa transcrição sem
-ressalva. `tests/pais/portoes.mjs`, pelo comando `check:ressalvas` no `verify`,
+ressalva. `tests/pais/portoes.mjs`, pelo comando `check:ressalvas`, fora do `verify` como as outras plantas sobre o `dist/` (a célula D do `verify:depois-do-build` recusa escritas durante as conferências),
 retira e troca ressalvas em cópias dos recibos construídos e repõe os bytes.
 
 `src/components/ItemDoLivro.astro` e `src/views/LivroView.astro` mostram o período

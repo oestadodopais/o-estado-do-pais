@@ -418,7 +418,7 @@ As ressalvas do OE1-d tinham um erro de conteúdo e erros de alcance. A segunda 
 | src/views/LinhaView.astro; src/i18n/strings.mjs; INVENTARIO-FRASES.md; REVISOES-DO-INVENTARIO.md | Dois rótulos novos para a conta da ressalva, declarados no inventário; leitura cruzada por ler. Cabeçalho C1f reposto. |
 | src/components/ItemDoLivro.astro; src/views/LivroView.astro; tests/livro/indice.mjs | Período visível nas listas e plantas de retirada e troca. |
 | scripts/inventario-rotulos.mjs | Exige a contagem fechada das entradas e dos recibos, com as duas línguas. |
-| tests/pais/portoes.mjs; package.json | Três estragos em recibos reais, repostos, no comando check:ressalvas ao fim do verify pela tranca. |
+| tests/pais/portoes.mjs; package.json | Três estragos em recibos reais, repostos, no comando check:ressalvas. *Nota do lugar de direção (04.10.2026, 14:05 UTC): o comando saiu da cadeia do `verify` depois de a corrida «portão» do ramo (37206416072) fechar na célula D do `verify:depois-do-build`, que recusa qualquer escrita no `dist/` ou em ficheiros seguidos durante as conferências; as plantas sobre o `dist/` da casa correm fora do `verify`, como prova do bloco (`npm run check:ressalvas`), e assim ficam estas; a cadeia do `verify` não perde nenhuma conferência que corra sem escrever.* |
 | medir-oe1d.py; medir-oe1e.py; medir-l1.mjs; custo.py | Corrigem a contagem autorreferente, medem esta passagem com plantas e registam L1 e contadores próprios. |
 | MAPA-DO-REPOSITORIO-para-construtores.md | Localiza as novas conferências; conflito do rebase resolvido conservando as dezassete plantas do R3 e as referências atualizadas. |
 
