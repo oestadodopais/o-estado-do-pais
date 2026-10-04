@@ -45,6 +45,7 @@
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
+import NomeDaMedida from '../components/NomeDaMedida.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import HistoricoDaLinha from '../components/HistoricoDaLinha.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
@@ -58,6 +59,7 @@ import {
   derivacaoDaLinha,
   excertoComposto,
   notaDeBandeira,
+  ressalvaDaLinha as ressalvaPublicadaDaLinha,
   atribuicaoDaLinha,
   verificacoesDaLinha,
   VERIFICACOES_MOSTRADAS,
@@ -114,6 +116,7 @@ const derivacao = derivacaoDaLinha(claim, lang);
    (IDENTIDADE.md §4), ao pé da proveniência, e não junto ao número: o selo já é
    a porta para aqui (§5.1). Sem cor nova (§2), sem segundo marcador (§6). */
 const bandeira = notaDeBandeira(claim, lang);
+const ressalvaPublicada = ressalvaPublicadaDaLinha(claim, lang);
 /* A SEGUNDA DATA DA NORMA (§2.5, bloco P2 item 2): quando a fonte volta a
    publicar esta linha. Sai do calendário das fontes e é `null` onde a fonte não
    anunciou dia nenhum, que é o caso da maior parte. */
@@ -709,6 +712,14 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
       </Fragment>
       </Claim>
     </h1>
+    {claim.study === 'oe-2026' && (
+      <p class="linha-nota"><NomeDaMedida linha={claim} lang={lang} class="" /></p>
+    )}
+    {ressalvaPublicada && (
+      <p class="linha-nota" id="ressalva">
+        <CampoDaLinha id={id} campo="ressalva" valor={ressalvaPublicada} lang={lang} />
+      </p>
+    )}
     {/* ------------------------------------------------------------------
         O SELO DEBAIXO DO NÚMERO SAIU (F1.10, §7.2, 09.09.2026)
         ------------------------------------------------------------------

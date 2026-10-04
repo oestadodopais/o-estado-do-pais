@@ -2784,6 +2784,7 @@ const CAMPOS_DA_LINHA = new Set([
   'excerpt',
   'source_flag',
   'source_flag_note',
+  'ressalva',
   'derivation',
   'derived_from',
   'attributed_to',
@@ -2909,7 +2910,7 @@ const SEPARADOR_ATRIBUICAO = ' · ';
  * carácter — o que muda é o que ele espera, que passa a depender da edição,
  * como já dependia na `derivation` e na nota de bandeira.
  */
-const CAMPOS_DA_LINHA_POR_LINGUA = new Set(['derivation', 'source_flag_note', 'unit']);
+const CAMPOS_DA_LINHA_POR_LINGUA = new Set(['derivation', 'source_flag_note', 'ressalva', 'unit']);
 
 /**
  * `derived_from` é uma lista, e o gabarito desenha-a como uma lista de
@@ -2992,6 +2993,8 @@ function campoDaLinha(claim, campo, lang) {
       return derivacaoDaLinha(claim, lang);
     case 'source_flag_note':
       return notaDeBandeira(claim, lang);
+    case 'ressalva':
+      return lang === 'en' ? claim.ressalva_en ?? null : lang === 'pt' ? claim.ressalva ?? null : null;
     case 'derived_from':
       return Array.isArray(claim.derived_from) && claim.derived_from.length
         ? claim.derived_from.join(' ')
@@ -3023,6 +3026,31 @@ function campoDaLinha(claim, campo, lang) {
           : null;
       }
       return claim[campo] ?? null;
+    }
+  }
+}
+
+// OE1-d: declarar uma ressalva obriga a publicá-la, não apenas a conferir
+// as que sobreviveram ao gabarito. No recibo tem de estar junto do valor.
+function confereRessalvaPublicada(container, claim, lang) {
+  const expected = lang === 'en' ? claim.ressalva_en : claim.ressalva;
+  if (expected === undefined) return [];
+  const nodes = container?.querySelectorAll(`[data-linha-claim="${claim.id}"][data-linha-campo="ressalva"]`) ?? [];
+  if (nodes.length !== 1) return [`ressalva de ${claim.id} ausente ou repetida na edição ${lang}`];
+  if (textoTranscrito(nodes[0]) !== normalizeWhitespace(String(expected))) {
+    return [`ressalva de ${claim.id} não é a declarada na edição ${lang}`];
+  }
+  return [];
+}
+
+// Plantas em memória: a presença e a língua têm de morder separadamente.
+{
+  const claim = { id: 'planta-ressalva', ressalva: 'Unidade conferida.', ressalva_en: 'Unit checked.' };
+  const html = text => parse(`<p data-linha-claim="planta-ressalva" data-linha-campo="ressalva">${text}</p>`);
+  for (const [lang, text] of [['pt', claim.ressalva], ['en', claim.ressalva_en]]) {
+    if (confereRessalvaPublicada(html(text), claim, lang).length) throw new Error('OE1-d: ressalva conhecida recusada');
+    for (const root of [parse('<p></p>'), html('Ressalva inventada.'), html(lang === 'en' ? claim.ressalva : claim.ressalva_en)]) {
+      if (!confereRessalvaPublicada(root, claim, lang).length) throw new Error('OE1-d: planta de ressalva não mordeu');
     }
   }
 }
@@ -6754,6 +6782,14 @@ for (const file of ficheirosHtml(DIST)) {
         }
       }
     }
+  }
+
+  if (claimDaPagina) {
+    for (const msg of confereRessalvaPublicada(body.querySelector('.linha-cabeca'), claimDaPagina, linguaPagina)) err(msg);
+  }
+  for (const item of body.querySelectorAll('.livro-item[data-linha-id]')) {
+    const claim = claims.get(item.getAttribute('data-linha-id'));
+    if (claim) for (const msg of confereRessalvaPublicada(item, claim, linguaPagina)) err(msg);
   }
 
   /**

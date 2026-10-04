@@ -56,6 +56,10 @@
 export const UNIDADES = {
   // OE1: tradução de dicionário da unidade monetária.
   'milhões de euros': 'million euros',
+  // OE1-d: factos de dicionário, incluindo o período acumulado da linha.
+  'milhões de euros, acumulados de janeiro a julho': 'million euros, cumulative January to July',
+  'milhões de euros, acumulados de janeiro a agosto': 'million euros, cumulative January to August',
+  '%, sobre valores acumulados de janeiro a julho': '%, based on cumulative January to July values',
   /* RP1: tradução de unidades publicadas pelo INE e pelo Eurostat. Desde o K2-b (02.10.2026) o dinheiro escreve-se
      com a palavra e não com o símbolo, nas duas edições (§1.127, decisão 4; a regra portuguesa é
      `dinheiroComPalavra()`, abaixo): «euros per month», como a entrada «euros por mês» já dizia. A chave continua a

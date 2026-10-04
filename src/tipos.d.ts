@@ -208,6 +208,8 @@ interface Linha {
   source_flag?: unknown;
   source_flag_note?: unknown;
   source_flag_note_en?: unknown;
+  ressalva?: unknown;
+  ressalva_en?: unknown;
   derivation: unknown;
   derivation_en?: unknown;
   derived_from: unknown;

@@ -28,9 +28,13 @@ reference_date: "2026"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "296420.8"
 
-# null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: null
-derivation_en: null
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "O ficheiro da fonte não imprime a unidade; a escala em milhões de euros foi conferida com a receita, a despesa e o saldo da síntese de julho, em seis correspondências exatas. A despesa orçamental, os ativos e passivos e a despesa efetiva não fecham entre si na fonte: a diferença medida é de 802,9 milhões de euros; os valores são transcritos como a fonte os publica. Receita e despesa orçamentais incluem operações financeiras; receita e despesa efetivas excluem-nas. Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis."
+ressalva_en: "The source file does not print the unit; the scale in million euros was checked against revenue, expenditure and the balance in the July summary, with six exact matches. Budgetary expenditure, financial assets and liabilities, and effective expenditure do not reconcile in the source: the measured difference is 802.9 million euros; the values are transcribed as published. Budgetary revenue and expenditure include financial transactions; effective revenue and expenditure exclude them. The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
+
+# Aritmética da ressalva; o valor continua a ser o publicado pela fonte.
+derivation: "A diferença referida na ressalva é a despesa orçamental menos os ativos e passivos da despesa, menos a despesa efetiva: 296420,8 - 191368,9 - 104249 = 802,9 milhões de euros. Os três valores são os indicadores orçamentados da administração central; esta conta não altera o valor transcrito desta linha."
+derivation_en: "The difference in the caveat is budgetary expenditure minus financial assets and liabilities on the expenditure side, minus effective expenditure: 296420.8 - 191368.9 - 104249 = 802.9 million euros. The three values are central administration budget indicators; this calculation does not change the transcribed value of this row."
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: null

@@ -77,8 +77,42 @@ for(const [nome, mudar] of [
 ]) plantaBandeira(nome, antigo, mudar);
 assert.deepEqual(validateLedger().errors, []);
 controlos.push({nome:'Bandeiras: JSON-stat e formatos anteriores, antes e depois das plantas',passou:true});
+// OE1-d: a mesma régua lê o mapa alterado em memória e exige a queixa do campo.
+const ressalvas = [], geografias = [];
+function plantaDaLinha(nome, id, mudar, queixa, destino) {
+  const original = linhas.get(id);
+  const c = structuredClone(original);
+  mudar(c); linhas.set(id, c);
+  try {
+    const falha = validateLedger().errors.find(e => e.startsWith(`[${id}.yml] ${queixa}`));
+    assert.ok(falha, nome + ': a régua não recusou a alteração pela razão prevista');
+    destino.push({nome, mordeu: true, falha});
+  } finally { linhas.set(id, original); }
+}
+for (const [nome, mudar, queixa] of [
+  ['Ressalva: falta a versão inglesa', c=>{c.ressalva='Aviso da casa.'; delete c.ressalva_en;}, '"ressalva_en" tem de ser texto não vazio'],
+  ['Ressalva: texto vazio', c=>{c.ressalva=' '; c.ressalva_en='A notice.';}, '"ressalva" tem de ser texto não vazio'],
+  ['Ressalva: número inventado', c=>{c.ressalva='A diferença é 987654321.'; c.ressalva_en='The difference is 987654321.';}, '"ressalva" contém o número "987654321" sem esse número completo'],
+]) plantaDaLinha(nome, 'oe-2026-despesa-ministerio-saude', mudar, queixa, ressalvas);
+for (const [nome, id, mudar] of [
+  ['JSON-stat: linha portuguesa com pedido e corpo de Espanha', novo, c=>{
+    c.source_url=c.source_url.replace('geo=PT','geo=ES');
+    c.document.edition='gov_10a_exp; geo=ES';
+    jsonDaLinha(c,j=>{j.dimension.geo.category={index:{ES:0},label:{ES:'Spain'}};});
+  }],
+  ['JSON-stat: etiqueta de Espanha sob o código de Portugal', novo, c=>jsonDaLinha(c,j=>{j.dimension.geo.category.label.PT='Spain';})],
+  ['JSON-stat: edição de outro país', novo, c=>{c.document.edition='gov_10a_exp; geo=ES';}],
+  ['JSON-stat: agregado sem bandeira com país trocado', 'despesa-por-funcao-2024-gf01-ue', c=>{
+    assert.equal(c.source_flag, undefined);
+    c.source_url=c.source_url.replace('geo=EU27_2020','geo=ES');
+    c.document.edition='gov_10a_exp; geo=ES';
+    jsonDaLinha(c,j=>{j.dimension.geo.category={index:{ES:0},label:{ES:'Spain'}};});
+  }],
+]) plantaDaLinha(nome, id, mudar, 'JSON-stat gov_10a_exp: geografia divergente', geografias);
+assert.deepEqual(validateLedger().errors, []);
+controlos.push({nome:'Ressalvas e geografias intactas depois das plantas, com bandeiras antigas preservadas',passou:true});
 const livro=validateLedger();
-const r={controlos,plantas,bandeiras,contagens:{controlos:controlos.length,plantas:plantas.length,bandeiras:bandeiras.length},erros_do_livro:livro.errors,avisos_do_livro:livro.warnings};
+const r={controlos,plantas,bandeiras,ressalvas,geografias,contagens:{controlos:controlos.length,plantas:plantas.length,bandeiras:bandeiras.length,ressalvas:ressalvas.length,geografias:geografias.length},erros_do_livro:livro.errors,avisos_do_livro:livro.warnings};
 const j=process.argv.indexOf('--json');if(j>=0)fs.writeFileSync(process.argv[j+1],JSON.stringify(r,null,2)+'\n');
 console.log(JSON.stringify(r,null,2));
 process.exitCode=livro.errors.length?1:0;

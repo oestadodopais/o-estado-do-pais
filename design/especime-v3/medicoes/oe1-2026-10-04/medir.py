@@ -441,7 +441,7 @@ Custo OE1-b ao corte: {(bcost or {}).get('tokens_totais', 'por medir')} símbolo
 """
     if not proposal_applied:
         short += "\nFalta ainda autorizar a proposta indice-localizadores.patch, que ensaiou os sete formatos dos localizadores no verificador do índice com código 0. A guarda aplicada continua a recusar esses formatos e o verify fica por fechar.\n"
-    (SITE / "RESPOSTA-construtor-oe1.md").write_text(short)
+    (HERE / "RESPOSTA-construtor-oe1.md").write_text(short)
     if close:
         short = short.replace("Commits:", "Commits anteriores ao fecho:")
         short = short.replace(f"* Sítio: `{heads['sitio']}`.", "* Sítio: [cabeça final registada](" + folder + "portoes/cabeca), incluindo o commit desta resposta.")
@@ -452,7 +452,7 @@ Custo OE1-b ao corte: {(bcost or {}).get('tokens_totais', 'por medir')} símbolo
             short += "\nFalta autorizar [a proposta dos sete formatos de localizador](" + folder + "indice-localizadores.patch). O ensaio em memória passou; a guarda aplicada permanece intacta e o verify continua por fechar.\n"
         if not bundle_applied:
             short += "\nFalta também autorizar [o recorte do espécime do índice](" + folder + "feixe-recorte.patch): oito entradas, página integral intacta e teto conservado. O ensaio passou; o exportador aplicado ainda excede o teto.\n"
-        (SITE / "RESPOSTA-construtor-oe1.md").write_text(short)
+        (HERE / "RESPOSTA-construtor-oe1.md").write_text(short)
     if cproof and close:
         short = f"""OE1-c: as duas extensões estão aplicadas e ensaiadas. O OE1 integral continua parcial pelas lacunas de fonte.
 
@@ -470,7 +470,7 @@ Continuam por selar a receita consolidada AC+SS e o saldo nos mapas, a divergên
 
 Custo OE1-c: [contadores e segundos ao corte](""" + folder + """custo-oe1c.json). Modelo: Codex gpt-6-astra. Relatório e resposta curta comitados; registos da execução final escritos depois do commit. Nenhum push.
 """
-        (SITE / "RESPOSTA-construtor-oe1.md").write_text(short)
+        (HERE / "RESPOSTA-construtor-oe1.md").write_text(short)
     print(encoded(dict(linhas=len(rows), medidas=len(measures), conhecidos_positivos=all(m["conhecido_positivo"] for m in measures.values()), portoes=gates)))
 
 

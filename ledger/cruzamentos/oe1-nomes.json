@@ -1,0 +1,12 @@
+{
+  "exporter": "ResearchHub/publisher/export_site_rows.py",
+  "origin": "ResearchHub",
+  "files": {
+    "medidas-oe1.mjs": {
+      "origin_path": "publisher/oe1_nomes.mjs",
+      "origin_sha256": "0f2a4f525524784f493c92947847ff9d8e88ea5167eecc68230b7cf55ec97d8a",
+      "exported_sha256": "0f2a4f525524784f493c92947847ff9d8e88ea5167eecc68230b7cf55ec97d8a",
+      "exporter": "ResearchHub/publisher/export_site_rows.py"
+    }
+  }
+}

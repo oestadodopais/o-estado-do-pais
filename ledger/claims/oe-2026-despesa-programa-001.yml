@@ -28,6 +28,10 @@ reference_date: "2026"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "<Registo>\n      <Programa>P-001</Programa>\n      <DesignacaoPrograma>ÓRGÃOS DE SOBERANIA</DesignacaoPrograma>\n      <Ministério>ENCARGOS GERAIS DO ESTADO</Ministério>\n      <TotalEmEuros>7733610763</TotalEmEuros>\n    </Registo>"
 
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Não é um ministério: são os encargos do Estado fora dos ministérios, como a dívida e as transferências. Estes valores incluem operações financeiras. As transferências internas permanecem nos valores brutos. Somar subsetores não dá um total consolidado, nem subtrair estes totais dá o saldo efetivo. Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis."
+ressalva_en: "This is not a ministry: these are State charges outside ministries, such as debt and transfers. These values include financial transactions. Internal transfers remain in gross values. Adding subsectors does not produce a consolidated total, and subtracting these totals does not produce the effective balance. The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
+
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
 derivation_en: null
