@@ -1409,3 +1409,21 @@ isso o pequeno dos rótulos entra sem uma palavra nova em nenhuma das edições.
 | `TERMOS_DOS_CARTOES` (`src/data/termos-dos-cartoes.mjs`) | as quatro explicações (o valor acrescentado bruto, a paridade do poder de compra, o fator de sustentabilidade e «reexpressa») | as quatro, pela mesma regra | cada uma com o texto da fonte contra o qual foi lida, em `lidoContra` |
 | `DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO` (`src/data/dominios.mjs`) | Nos Açores, a lei regional soma-lhe um acréscimo, e o diploma é uma das fontes da pergunta abaixo. · Na Madeira, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: | In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. · In Madeira, the value is set by a separate regional decree, which is not a source of any line in this ledger: | a ressalva compõe-se da lista; o marcador «a verificar» fica na frase da Madeira |
 | a nota da dívida dos concelhos (`src/data/concelhos.mjs`) | … sem as dívidas não orçamentais, as exceções da lei e a contribuição para o Fundo de Apoio Municipal). | … without non-budget debts, the exceptions in the law and the contribution to the municipal support fund, the “Fundo de Apoio Municipal”). | o nome do fundo fica em português, com `lang`, como a I91 manda para um nome |
+
+### R3 · o índice do sítio (04.10.2026)
+
+*O bloco R3, pela ideia do diretor de 04.10.2026: a página «Índice» / «Index», com a porta no rodapé de todas as páginas. As cadeias abaixo foram lidas de `src/i18n/strings.mjs` na construção do bloco. Os nomes das portas não são chaves novas: são os que cada página já tem (o menu, o rodapé, o caminho do cabeçalho, as declarações dos temas e os dados), e os nomes das subsecções dos lugares vêm das declarações da porta «Lugares».*
+
+**Nove chaves novas:**
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `nav.indice` | Índice | Index | a sétima porta do rodapé, o `<h1>` da página e a última migalha do caminho dela; uma cadeia só para as três |
+| `indice.metaTitle` | Índice · O Estado do País | Index · O Estado do País | o título do `<head>`, na forma das outras páginas fixas |
+| `indice.metaDescription` | O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta. | The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door. | a descrição do `<head>`: as secções da página |
+| `indice.seccoes.pais` | O país | The country | a secção da primeira página, dos temas e das áreas de governo |
+| `indice.seccoes.lugares` | Os lugares | Places | a secção dos lugares; o inglês sem artigo, como a porta do menu |
+| `indice.seccoes.uniao` | A União Europeia | The European Union | a secção da página dos países da União |
+| `indice.seccoes.estudos` | Os estudos | Studies | a secção dos estudos |
+| `indice.seccoes.numeros` | Os números e as fontes | Numbers and sources | a secção do índice das linhas, do dos concelhos, das séries, das correções e da página do marcador; o inglês é o nome da porta do rodapé, `nav.livro` |
+| `indice.seccoes.projeto` | O projeto | The project | a secção do Sobre, do Método, da agenda e das sugestões; «o projeto» é a palavra do §6 da estrutura para o todo quando tem de ser nomeado |
