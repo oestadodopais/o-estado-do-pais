@@ -1,13 +1,11 @@
 ---
 import SerieView from '../../../../views/SerieView.astro';
-import SerieNoTempoView from '../../../../views/SerieNoTempoView.astro';
-import { getSerie } from '../../../../lib/series.mjs';
 import { allSeries } from '../../../../lib/series.mjs';
 
 export function getStaticPaths() {
-  return allSeries().map((s) => ({ params: { slug: s.id } }));
+  return allSeries().filter((s) => s.eixo === 'pais').map((s) => ({ params: { slug: s.id } }));
 }
 
 const { slug } = Astro.params;
 ---
-{getSerie(String(slug)).eixo === 'periodo' ? <SerieNoTempoView lang="en" id={slug} /> : <SerieView lang="en" id={slug} />}
+<SerieView lang="en" id={slug} />

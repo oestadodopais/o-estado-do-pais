@@ -1,0 +1,75 @@
+/* O RECIBO DE UMA SÉRIE NO TEMPO (bloco RP3, 04.10.2026).
+ *
+ * As peças que o recibo de uma série no tempo acrescenta às do recibo de uma série de
+ * países (`serie.css`, que ele também importa): a lista dos pedidos, dobrada, as
+ * lacunas, a conta de uma série derivada e a coluna dos períodos. Nenhuma cor nova: os
+ * tokens de sempre.
+ *
+ * UMA FOLHA À PARTE, E NÃO UM ACRESCENTO A `serie.css`: o Astro junta as folhas por
+ * ficheiro de página e embute-as no HTML, e o ficheiro de página das séries de países
+ * importa `serie.css`; um acrescento a ela mudava os bytes dos vinte recibos das séries
+ * de países sem lhes mudar nada à vista. Pela mesma razão o recibo no tempo tem o seu
+ * ficheiro de página (`src/pages/livro-razao/series/[...serie].astro`). O §1 do brief
+ * RP3 diz que nenhuma página do leitor além dos recibos novos muda, e a comparação das
+ * construções (`design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json`) mede-o
+ * byte a byte.
+ */
+.serie-nome-na-fonte,
+.serie-conta p,
+.serie-lacunas p,
+.serie-correcoes li {
+  overflow-wrap: anywhere;
+}
+
+.serie-tabela-tempo tbody th {
+  white-space: nowrap;
+}
+
+.serie-lacunas-lista {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.serie-pedidos {
+  margin-top: 12px;
+}
+
+.serie-pedidos summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.serie-pedidos-lista {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.serie-pedidos-lista li {
+  margin: 0 0 12px;
+  overflow-wrap: anywhere;
+}
+
+.serie-pedido-ficha {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 2px 12px;
+  margin: 6px 0 0;
+  font-size: 13px;
+}
+
+.serie-pedido-ficha dt {
+  color: var(--muted);
+}
+
+.serie-pedido-ficha dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .serie-pedido-ficha {
+    grid-template-columns: 1fr;
+  }
+}
