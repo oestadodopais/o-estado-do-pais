@@ -19,7 +19,8 @@
  *        ar a 04.10.2026: `/en/index` dava 404 com `en/index.html` presente); para `/en/index` o
  *        irmão seria a primeira página inglesa, e um resolvedor que o aceitasse daria por boa uma
  *        porta que no ar não abre o índice;
- *   I2 · o índice e o mapa do sítio dizem as mesmas páginas do leitor: cada endereço do mapa é uma
+ *   I2 · o índice e o mapa do sítio dizem as mesmas páginas do leitor (e as duas páginas do índice estão
+ *        no mapa): cada endereço do mapa é uma
  *        porta do índice da mesma edição, menos as famílias por dado que entram pela sua lista (as
  *        linhas, pelo índice das linhas; os livros dos concelhos, pelo índice dos concelhos do
  *        livro-razão), cuja lista tem de ser uma porta, e menos a própria página; e cada porta do
@@ -44,9 +45,9 @@
  * PLANTAS (`--prova`), em memória, sobre cópias do HTML construído e do mapa lido, cada uma com a
  * queixa que tem de dar: uma rota tirada do índice, um concelho a menos, uma porta que não resolve,
  * uma porta para uma página que só existe como ficheiro `.html` irmão, uma página do resultado no
- * índice, um endereço do mapa sem porta, um estudo da lista em falta, um concelho na gaveta de
- * outro distrito, uma gaveta aberta, e uma linha repetida em «O que mudou». O índice intacto tem de
- * passar antes delas.
+ * índice, um endereço do mapa sem porta, o próprio índice fora do mapa, um estudo da lista em falta,
+ * um concelho na gaveta de outro distrito, uma gaveta aberta, e uma linha repetida em «O que mudou».
+ * O índice intacto tem de passar antes delas.
  *
  * Uso: node tests/indice/indice.mjs [--prova] [--json <ficheiro>]   (`OEDP_DIST` mede outra construção)
  */
@@ -168,7 +169,8 @@ export function conferirIndice({ indice, mapa, paginas, existe }) {
       if (!resolve(d, existe)) erros.push(`I1 ${lang}: a porta «${texto(a)}» para ${d} não resolve num ficheiro construído (a pasta com o seu index.html, ou o ficheiro com extensão).`);
     }
 
-    /* I2 · o mapa do sítio, de um lado e do outro. */
+    /* I2 · o mapa do sítio, de um lado e do outro; e a própria página está nele (o mapa conhece a rota nova). */
+    if (!mapa.has(proprio)) erros.push(`I2 ${lang}: a página do índice ${proprio} não está no mapa do sítio.`);
     let doMapa = 0;
     for (const c of mapa) {
       const r = matchPath(c);
@@ -326,6 +328,7 @@ export function plantasDoIndice(base) {
     ['r3-celula-porta-pelo-ficheiro-irmao', () => comPt((d) => d.querySelector('main [data-indice-seccao="projeto"] ul')?.insertAdjacentHTML('beforeend', '<li><a href="/404">404</a></li>')), [/I1 pt: a porta «404» para \/404 não resolve/]],
     ['r3-celula-pagina-do-resultado', () => comPt((d) => d.querySelector('main [data-indice-seccao="projeto"] ul')?.insertAdjacentHTML('beforeend', `<li><a href="${routePath('sugestoesObrigado', 'pt')}">Obrigado</a></li>`)), [/I3 pt: a página do resultado \/sugestoes\/obrigado está no índice/]],
     ['r3-celula-mapa-com-pagina-sem-porta', () => ({ ...base, mapa: new Set([...base.mapa, normalizePath(routePath('sugestoesVazia', 'en'))]) }), [/I2 en: \/en\/suggestions\/empty está no mapa do sítio e não tem porta no índice/]],
+    ['r3-celula-indice-fora-do-mapa', () => ({ ...base, mapa: new Set([...base.mapa].filter((c) => c !== normalizePath(routePath('indice', 'pt')))) }), [/I2 pt: a página do índice \/indice não está no mapa do sítio/]],
     ['r3-celula-estudo-em-falta', () => comEn((d) => d.querySelector('main [data-estudo-edicao]')?.remove()), [/I5 en: o índice tem 10 estudo\(s\) e a lista dos estudos 11/]],
     ['r3-celula-concelho-noutra-gaveta', () => comPt((d) => {
       const gavetas = d.querySelectorAll('main details');
