@@ -1,0 +1,34 @@
+{
+  "corrida": 37238803296,
+  "cabeca": "f7048ce08956d89fbefc54ebd40ea8b75b830d47",
+  "imagem": "ubuntu-24.04",
+  "casos": [
+    {
+      "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+      "antes": {
+        "escrito": "1791148453470999000",
+        "inode": "2440523",
+        "tamanho": "19",
+        "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+      },
+      "depois": {
+        "escrito": "1791148453470999000",
+        "inode": "2440531",
+        "tamanho": "19",
+        "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+      },
+      "passos_da_troca": 1,
+      "codigo_da_troca": 0,
+      "falhas": [
+        "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+      ],
+      "mordeu": true
+    }
+  ],
+  "comando": "gh run view 37238803296 --log",
+  "log_sha256": "70ce8735614137c9c43fc6e0c6cd2e9e434c21e0b342b2476ab8b6a4e6262544",
+  "conhecido_positivo": {
+    "o_que": "mesma cabeça, imagem no log, cópia com bytes e hora iguais, inode distinto e D a recusar",
+    "encontrado": true
+  }
+}

@@ -1,0 +1,394 @@
+[
+  {
+    "linha_mapa": 69,
+    "ficheiro": "src/i18n/strings.mjs",
+    "antes": 4346,
+    "depois": 4388,
+    "ancora": "let paridadeConferida = false"
+  },
+  {
+    "linha_mapa": 147,
+    "ficheiro": "scripts/provar-guardas.mjs",
+    "antes": 874,
+    "depois": 906,
+    "ancora": "A PARIDADE DAS CHAVES CONFERE-SE UMA VEZ POR PROCESSO"
+  },
+  {
+    "linha_mapa": 155,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 305,
+    "depois": 384,
+    "ancora": "não existe dist/. Corra o build primeiro"
+  },
+  {
+    "linha_mapa": 159,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 1739,
+    "depois": 1818,
+    "ancora": "as sete conferências L1 a L7"
+  },
+  {
+    "linha_mapa": 168,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 2129,
+    "depois": 2419,
+    "ancora": "Fontes e verificação"
+  },
+  {
+    "linha_mapa": 170,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 2213,
+    "depois": 2504,
+    "ancora": "Sem esta comparação, a marca seria uma dispensa: seis dos títulos das oito edições trazem um ano escrito"
+  },
+  {
+    "linha_mapa": 174,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 7750,
+    "depois": 7928,
+    "ancora": "algarismos fora do livro-razão"
+  },
+  {
+    "linha_mapa": 175,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 5082,
+    "depois": 342,
+    "ancora": "uma cadeia mudada de um lado fica diferente do outro"
+  },
+  {
+    "linha_mapa": 177,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 5193,
+    "depois": 5387,
+    "ancora": "dentro de um marco"
+  },
+  {
+    "linha_mapa": 179,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 7539,
+    "depois": 7717,
+    "ancora": "uma ausência nunca se desenha"
+  },
+  {
+    "linha_mapa": 189,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 8666,
+    "depois": 8885,
+    "ancora": "se uma faltar, o selo dessa linha aponta para um 404"
+  },
+  {
+    "linha_mapa": 196,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 7427,
+    "depois": 7605,
+    "ancora": "B2: as quatro contagens partilham uma porta visível, validada por V2"
+  },
+  {
+    "linha_mapa": 206,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 3464,
+    "depois": 3560,
+    "ancora": "A LEITURA DO CARTÃO, pela mesma regra do item da régua"
+  },
+  {
+    "linha_mapa": 322,
+    "ficheiro": "scripts/medir-defeitos.mjs",
+    "antes": 1556,
+    "depois": 1591,
+    "ancora": "UMA SENTINELA APANHA A FRASE DENTRO DE OUTRA FRASE"
+  },
+  {
+    "linha_mapa": 381,
+    "ficheiro": "scripts/medir-defeitos.mjs",
+    "antes": 667,
+    "depois": 680,
+    "ancora": "A FRASE DO VEREDICTO SAI DO INVENTÁRIO NA PRIMEIRA PÁGINA"
+  },
+  {
+    "linha_mapa": 392,
+    "ficheiro": "src/lib/caminho.mjs",
+    "antes": 144,
+    "depois": 155,
+    "ancora": "A PÁGINA DE UMA SÉRIE (bloco UE1, 29.09.2026)"
+  },
+  {
+    "linha_mapa": 393,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 5857,
+    "depois": 6014,
+    "ancora": "AS ORIGENS DAS LINHAS DE SÉRIE (bloco UE1"
+  },
+  {
+    "linha_mapa": 399,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 4621,
+    "depois": 4723,
+    "ancora": "UE1b (29.09.2026): o que quer dizer cada marca"
+  },
+  {
+    "linha_mapa": 400,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 4687,
+    "depois": 4809,
+    "ancora": "UE1b (29.09.2026): a porta do recibo da linha portuguesa"
+  },
+  {
+    "linha_mapa": 402,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 11,
+    "depois": 67,
+    "ancora": "A DEFINIÇÃO DECLARADA DE UMA MEDIDA, COMO TEXTO"
+  },
+  {
+    "linha_mapa": 402,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 113,
+    "depois": 168,
+    "ancora": "O QUE NOMEIA PORTUGAL NA DEFINIÇÃO DE UM RECIBO DE SÉRIE"
+  },
+  {
+    "linha_mapa": 426,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 5958,
+    "depois": 6121,
+    "ancora": "AS ORIGENS DA FAIXA DO CONCELHO (bloco L2b"
+  },
+  {
+    "linha_mapa": 426,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 3486,
+    "depois": 3582,
+    "ancora": "A FAIXA DO CONCELHO, pela mesma regra da leitura do cartão"
+  },
+  {
+    "linha_mapa": 437,
+    "ficheiro": "src/i18n/strings.mjs",
+    "antes": 3072,
+    "depois": 4327,
+    "ancora": "What this number is"
+  },
+  {
+    "linha_mapa": 441,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 955,
+    "depois": 1034,
+    "ancora": "OS MILHARES DE UMA CONTAGEM DA PROVA, na cópia do portão"
+  },
+  {
+    "linha_mapa": 443,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 6258,
+    "depois": 6423,
+    "ancora": "a unidade da casa de um cartão (passagem K2-c"
+  },
+  {
+    "linha_mapa": 453,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 5993,
+    "depois": 6158,
+    "ancora": "QUANTOS PAÍSES A TABELA TEM (bloco UE2, 02.10.2026)"
+  },
+  {
+    "linha_mapa": 458,
+    "ficheiro": "src/i18n/strings.mjs",
+    "antes": 1122,
+    "depois": 1132,
+    "ancora": "OS PAÍSES ENTRARAM A 02.10.2026 (a passagem UE2-b"
+  },
+  {
+    "linha_mapa": 466,
+    "ficheiro": "scripts/check-pais.mjs",
+    "antes": 439,
+    "depois": 445,
+    "ancora": "N3 · O TEMA CLARO POR OMISSÃO, O ESCURO SÓ PELA ESCOLHA DO LEITOR (bloco P4"
+  },
+  {
+    "linha_mapa": 469,
+    "ficheiro": "scripts/check-datas.mjs",
+    "antes": 369,
+    "depois": 375,
+    "ancora": "A RECONCILIAÇÃO NA NOTA (bloco P4, 02.10.2026, item 4 do brief P4; a I184)"
+  },
+  {
+    "linha_mapa": 473,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 6282,
+    "depois": 6445,
+    "ancora": "A UNIDADE DA CASA DE UMA MEDIDA DE CONCELHO (passagem P4-c"
+  },
+  {
+    "linha_mapa": 473,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 3375,
+    "depois": 3469,
+    "ancora": "O TETO NA LINHA DO ESTADO DO CARTÃO DO ÍNDICE DE DÍVIDA (passagem P4-c"
+  },
+  {
+    "linha_mapa": 484,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 5218,
+    "depois": 5426,
+    "ancora": "A PORTA DAS SUGESTÕES, E AS PÁGINAS DA CAIXA (bloco S1, 02.10.2026)"
+  },
+  {
+    "linha_mapa": 484,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 7606,
+    "depois": 7938,
+    "ancora": "A CAIXA DAS SUGESTÕES, DEPOIS DO VARRIMENTO (bloco S1, 02.10.2026)"
+  },
+  {
+    "linha_mapa": 484,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 7611,
+    "depois": 7943,
+    "ancora": "TODAS AS MIGRAÇÕES, POR ORDEM DE NOME (S1-b, 03.10.2026"
+  },
+  {
+    "linha_mapa": 484,
+    "ficheiro": "tests/pais/portoes.mjs",
+    "antes": 355,
+    "depois": 440,
+    "ancora": "S1 (02.10.2026): a caixa das sugestões"
+  },
+  {
+    "linha_mapa": 487,
+    "ficheiro": "scripts/medir-defeitos.mjs",
+    "antes": 489,
+    "depois": 495,
+    "ancora": "A CAIXA DAS SUGESTÕES (bloco S1, 02.10.2026): a página"
+  },
+  {
+    "linha_mapa": 487,
+    "ficheiro": "tests/pais/portoes.mjs",
+    "antes": 396,
+    "depois": 481,
+    "ancora": "S1-c (03.10.2026, decisão do diretor, §1.154): o campo do contacto saiu"
+  },
+  {
+    "linha_mapa": 489,
+    "ficheiro": "scripts/medir-defeitos.mjs",
+    "antes": 1591,
+    "depois": 1607,
+    "ancora": "UMA RETIRADA DENTRO DE UMA FRASE DECLARADA, E SÓ DESSA (bloco S1, 02.10.2026)"
+  },
+  {
+    "linha_mapa": 497,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 41,
+    "depois": 95,
+    "ancora": "O APOIO DE UMA UNIDADE DA CASA (bloco R2, 03.10.2026), lido pelo portão por conta própria"
+  },
+  {
+    "linha_mapa": 497,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 6267,
+    "depois": 6430,
+    "ancora": "R2 (03.10.2026): o cartão de uma linha com unidade declarada imprime essa unidade, e uma só vez"
+  },
+  {
+    "linha_mapa": 498,
+    "ficheiro": "scripts/inventario-rotulos.mjs",
+    "antes": 663,
+    "depois": 731,
+    "ancora": "export function plantas(dist)"
+  },
+  {
+    "linha_mapa": 512,
+    "ficheiro": "scripts/inventario-rotulos.mjs",
+    "antes": 584,
+    "depois": 652,
+    "ancora": "A CONSTRUÇÃO CONTRA O INVENTÁRIO DECLARADO, COM AS CONTAGENS"
+  },
+  {
+    "linha_mapa": 512,
+    "ficheiro": "scripts/inventario-rotulos.mjs",
+    "antes": 853,
+    "depois": 941,
+    "ancora": "AS PLANTAS DA CONSTRUÇÃO INTEIRA"
+  },
+  {
+    "linha_mapa": 513,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 56,
+    "depois": 110,
+    "ancora": "OS NÚMEROS DA UNIDADE PRESOS AO APOIO, E A ORIGEM DO APOIO PRESA À LINHA"
+  },
+  {
+    "linha_mapa": 513,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 8711,
+    "depois": 8927,
+    "ancora": "R2-b (04.10.2026, achado 6 da leitura a frio): o autoteste"
+  },
+  {
+    "linha_mapa": 516,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 6325,
+    "depois": 6488,
+    "ancora": "R2-b (04.10.2026): a faixa dos 27 da página da União diz a unidade pela declaração"
+  },
+  {
+    "linha_mapa": 516,
+    "ficheiro": "scripts/inventario-rotulos.mjs",
+    "antes": 436,
+    "depois": 494,
+    "ancora": "A FAIXA DOS 27 DA PÁGINA DA UNIÃO (passagem R2-b"
+  },
+  {
+    "linha_mapa": 517,
+    "ficheiro": "scripts/inventario-rotulos.mjs",
+    "antes": 508,
+    "depois": 567,
+    "ancora": "export function conferirDiplomasRegionais"
+  },
+  {
+    "linha_mapa": 527,
+    "ficheiro": "scripts/medir-defeitos.mjs",
+    "antes": 803,
+    "depois": 817,
+    "ancora": "OS NOMES DO PROJETO DAS SÉRIES NO TEMPO SEM CARTÃO (bloco RP3, 04.10.2026)"
+  },
+  {
+    "linha_mapa": 528,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 4698,
+    "depois": 4736,
+    "ancora": "RP3: o recibo de uma série no tempo tem cada ponto da série uma vez"
+  },
+  {
+    "linha_mapa": 528,
+    "ficheiro": "scripts/gate-html.mjs",
+    "antes": 8913,
+    "depois": 8989,
+    "ancora": "RP3: cada série no tempo com o seu recibo inteiro nas duas edições"
+  },
+  {
+    "linha_mapa": 529,
+    "ficheiro": "scripts/check-lugar.mjs",
+    "antes": 2111,
+    "depois": 2128,
+    "ancora": "O AUTOTESTE DA MARCA DAS SÉRIES (bloco RP3, 04.10.2026; passagem RP3-b)"
+  },
+  {
+    "linha_mapa": 530,
+    "ficheiro": "scripts/medir-defeitos.mjs",
+    "antes": 1310,
+    "depois": 1324,
+    "ancora": "RP3): a marca diz de que série é, e o texto tem de ser o nome dela nesta"
+  },
+  {
+    "linha_mapa": 543,
+    "ficheiro": "scripts/check-pais.mjs",
+    "antes": 584,
+    "depois": 592,
+    "ancora": "O ÍNDICE (bloco R3, 04.10.2026) mostra as últimas linhas do livro que mudaram"
+  },
+  {
+    "linha_mapa": 546,
+    "ficheiro": "scripts/check-pais.mjs",
+    "antes": 564,
+    "depois": 570,
+    "ancora": "O ÂMBITO DO ÍNDICE SÓ NA PÁGINA DO ÍNDICE"
+  }
+]

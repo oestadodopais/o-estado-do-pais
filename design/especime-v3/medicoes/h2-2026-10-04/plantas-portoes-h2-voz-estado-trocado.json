@@ -1,0 +1,18 @@
+[
+  {
+    "nome": "h2-voz-estado-trocado",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "bloco por classificar em \\/en: «Évora Culture published on estado sem declaração»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047",
+        "reposto": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047"
+      }
+    ]
+  }
+]

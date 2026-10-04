@@ -1,0 +1,7 @@
+{
+  "comando": "gh run view 37199669028 --attempt 1 --log-failed",
+  "codigo": 0,
+  "inicio": "2026-10-04T21:57:40.274457+00:00",
+  "segundos": 1.143,
+  "cabeca": "5f7cf57d0ab6a24af520d14db3b288654365e4e1"
+}

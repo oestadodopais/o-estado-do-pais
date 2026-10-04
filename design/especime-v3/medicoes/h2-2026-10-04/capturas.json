@@ -1,0 +1,353 @@
+{
+  "cabeca": "f7048ce08956d89fbefc54ebd40ea8b75b830d47",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-pt-390.png",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6743,
+        "estudos": [
+          {
+            "slug": "evora-2027-capital-europeia-da-cultura",
+            "marca": "em curso"
+          },
+          {
+            "slug": "evora-contas-da-camara-2010-2025",
+            "marca": null
+          },
+          {
+            "slug": "evora-quem-governou-a-camara-2009-2025",
+            "marca": null
+          }
+        ],
+        "marcas": 1,
+        "ligacoes_encaixadas": 0
+      },
+      "sha256": "85ec462f92b825b2adcda2733353cdbac36e9f497530b12ba5b05b35bb9f8346"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-pt-390.png",
+      "lang": "pt",
+      "largura": 390,
+      "tipo": "recorte",
+      "sha256": "4c21d72f6e2d92b24ce3380a21f2ab799d90a3fa1b8e3ff4082e4790dc732da3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-pt-768.png",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 5222,
+        "estudos": [
+          {
+            "slug": "evora-2027-capital-europeia-da-cultura",
+            "marca": "em curso"
+          },
+          {
+            "slug": "evora-contas-da-camara-2010-2025",
+            "marca": null
+          },
+          {
+            "slug": "evora-quem-governou-a-camara-2009-2025",
+            "marca": null
+          }
+        ],
+        "marcas": 1,
+        "ligacoes_encaixadas": 0
+      },
+      "sha256": "a8389ef19881b82ed957838b2ffac04e64f8da52cc7ea43ddd6ef3fc62f243d9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-pt-768.png",
+      "lang": "pt",
+      "largura": 768,
+      "tipo": "recorte",
+      "sha256": "21920fc194fdd1bb5617de39e4f4bf4cc375658bc351da666b83b85e99f3f455"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-pt-1024.png",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 4859,
+        "estudos": [
+          {
+            "slug": "evora-2027-capital-europeia-da-cultura",
+            "marca": "em curso"
+          },
+          {
+            "slug": "evora-contas-da-camara-2010-2025",
+            "marca": null
+          },
+          {
+            "slug": "evora-quem-governou-a-camara-2009-2025",
+            "marca": null
+          }
+        ],
+        "marcas": 1,
+        "ligacoes_encaixadas": 0
+      },
+      "sha256": "d1a0b1cbd2ba0a884c85f0d0d7ad398cc0604dde3950d14c8a0dca35378dfa47"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-pt-1024.png",
+      "lang": "pt",
+      "largura": 1024,
+      "tipo": "recorte",
+      "sha256": "4d06c20f4d9db478762cf8011cff49f797bcc45225996a03f767d55a4d457997"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-pt-1280.png",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4719,
+        "estudos": [
+          {
+            "slug": "evora-2027-capital-europeia-da-cultura",
+            "marca": "em curso"
+          },
+          {
+            "slug": "evora-contas-da-camara-2010-2025",
+            "marca": null
+          },
+          {
+            "slug": "evora-quem-governou-a-camara-2009-2025",
+            "marca": null
+          }
+        ],
+        "marcas": 1,
+        "ligacoes_encaixadas": 0
+      },
+      "sha256": "9ff00d44c03f81388fb16daea06953a04bbc35d933afb0f0e50834677f2c0d3f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-pt-1280.png",
+      "lang": "pt",
+      "largura": 1280,
+      "tipo": "recorte",
+      "sha256": "72c4403195ce1e0ae284cd068dd8a831f34bf3c5c8bd1dac0a742211e9215cd7"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-pt-1600.png",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 4737,
+        "estudos": [
+          {
+            "slug": "evora-2027-capital-europeia-da-cultura",
+            "marca": "em curso"
+          },
+          {
+            "slug": "evora-contas-da-camara-2010-2025",
+            "marca": null
+          },
+          {
+            "slug": "evora-quem-governou-a-camara-2009-2025",
+            "marca": null
+          }
+        ],
+        "marcas": 1,
+        "ligacoes_encaixadas": 0
+      },
+      "sha256": "086af50df4589e6e3e10d5975f8a442dfea506444dff535b182ddd65dbcbfa1d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-pt-1600.png",
+      "lang": "pt",
+      "largura": 1600,
+      "tipo": "recorte",
+      "sha256": "7a2782c2b8ca14c78757e22fd8d34ec544b753fe22e8be570e5075d26ebdd039"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-en-390.png",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6671,
+        "estudos": [
+          {
+            "slug": "evora-2027-capital-europeia-da-cultura",
+            "marca": "ongoing"
+          },
+          {
+            "slug": "evora-contas-da-camara-2010-2025",
+            "marca": null
+          },
+          {
+            "slug": "evora-quem-governou-a-camara-2009-2025",
+            "marca": null
+          }
+        ],
+        "marcas": 1,
+        "ligacoes_encaixadas": 0
+      },
+      "sha256": "202c4daca8fc8291837e58dc014e1a10fd84f7f634a4819136ebb8ce97b149cc"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-en-390.png",
+      "lang": "en",
+      "largura": 390,
+      "tipo": "recorte",
+      "sha256": "92897a5ce51867001fbee55a4ad7c266a21b507e147ec0df9e002cefb605c365"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-en-768.png",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 5290,
+        "estudos": [
+          {
+            "slug": "evora-2027-capital-europeia-da-cultura",
+            "marca": "ongoing"
+          },
+          {
+            "slug": "evora-contas-da-camara-2010-2025",
+            "marca": null
+          },
+          {
+            "slug": "evora-quem-governou-a-camara-2009-2025",
+            "marca": null
+          }
+        ],
+        "marcas": 1,
+        "ligacoes_encaixadas": 0
+      },
+      "sha256": "ad3c205da33d2697c50cf45d0a09a16e06e004632df443f4c0fb780cc800205c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-en-768.png",
+      "lang": "en",
+      "largura": 768,
+      "tipo": "recorte",
+      "sha256": "66ac91285931802b0aad0d8e48df6f6faa0289dec2005c0402e0db62791e40dd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-en-1024.png",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 4965,
+        "estudos": [
+          {
+            "slug": "evora-2027-capital-europeia-da-cultura",
+            "marca": "ongoing"
+          },
+          {
+            "slug": "evora-contas-da-camara-2010-2025",
+            "marca": null
+          },
+          {
+            "slug": "evora-quem-governou-a-camara-2009-2025",
+            "marca": null
+          }
+        ],
+        "marcas": 1,
+        "ligacoes_encaixadas": 0
+      },
+      "sha256": "38206ea1d52d15e0f032aaa2b00ee0b0b0f4a3299fbfbc319c9c3a95866c287a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-en-1024.png",
+      "lang": "en",
+      "largura": 1024,
+      "tipo": "recorte",
+      "sha256": "c0792ce0dfca9489b0cedad5a959e5872e71f0c6b459c823779f4499314dbc16"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-en-1280.png",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4793,
+        "estudos": [
+          {
+            "slug": "evora-2027-capital-europeia-da-cultura",
+            "marca": "ongoing"
+          },
+          {
+            "slug": "evora-contas-da-camara-2010-2025",
+            "marca": null
+          },
+          {
+            "slug": "evora-quem-governou-a-camara-2009-2025",
+            "marca": null
+          }
+        ],
+        "marcas": 1,
+        "ligacoes_encaixadas": 0
+      },
+      "sha256": "f8aa61d1883928645847c848892c21d460edbc5b3bdb1aee780be6dd5ad2a2e1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-en-1280.png",
+      "lang": "en",
+      "largura": 1280,
+      "tipo": "recorte",
+      "sha256": "c2bf1b76d0f9683d865a070036db1e212bafd7d0e759c2fde8873e877a762382"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-en-1600.png",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 4811,
+        "estudos": [
+          {
+            "slug": "evora-2027-capital-europeia-da-cultura",
+            "marca": "ongoing"
+          },
+          {
+            "slug": "evora-contas-da-camara-2010-2025",
+            "marca": null
+          },
+          {
+            "slug": "evora-quem-governou-a-camara-2009-2025",
+            "marca": null
+          }
+        ],
+        "marcas": 1,
+        "ligacoes_encaixadas": 0
+      },
+      "sha256": "ab487c7886bcd23a14268f7fdfbca8e2ef32cb46fe54aa8c3668911c311826ec"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-en-1600.png",
+      "lang": "en",
+      "largura": 1600,
+      "tipo": "recorte",
+      "sha256": "964955544c245d549566624639a992ac73572030bba1bfd61930b1790b4e78b2"
+    }
+  ],
+  "problemas": []
+}

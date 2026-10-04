@@ -1,0 +1,21 @@
+{
+  "comando": "gh run view 37199669028 --attempt <tentativa> --json databaseId,attempt,headSha,status,conclusion,url",
+  "tentativas": [
+    {
+      "attempt": 1,
+      "conclusion": "failure",
+      "databaseId": 37199669028,
+      "headSha": "b748a6b4b5f6b3949b4fb9805720dcf2016b3a53",
+      "status": "completed",
+      "url": "https://github.com/oestadodopais/o-estado-do-pais/actions/runs/37199669028/attempts/1"
+    },
+    {
+      "attempt": 2,
+      "conclusion": "success",
+      "databaseId": 37199669028,
+      "headSha": "b748a6b4b5f6b3949b4fb9805720dcf2016b3a53",
+      "status": "completed",
+      "url": "https://github.com/oestadodopais/o-estado-do-pais/actions/runs/37199669028/attempts/2"
+    }
+  ]
+}

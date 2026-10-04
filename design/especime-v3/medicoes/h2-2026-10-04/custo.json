@@ -1,0 +1,23 @@
+{
+  "modelo": "gpt-6-astra",
+  "inicio": "2026-10-04T21:45:38.766Z",
+  "leitura": "2026-10-04T22:28:29.828Z",
+  "fecho": "2026-10-04T22:28:58.589379+00:00",
+  "segundos_ate_leitura": 2571.062,
+  "segundos_ate_fecho": 2599.823,
+  "tokens_used": null,
+  "total_cumulativo_parcial": {
+    "input_tokens": 12946473,
+    "cached_input_tokens": 12594048,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 64893,
+    "reasoning_output_tokens": 19348,
+    "total_tokens": 13011366
+  },
+  "estado": "parcial: a sessão ainda não escreveu a linha tokens used",
+  "comando": "python3 design/especime-v3/medicoes/h2-2026-10-04/custo-h2.py <registo-do-construtor>",
+  "conhecido_positivo": {
+    "o_que": "modelo e identidade lidos no cabeçalho; um único rollout correspondente com contador cumulativo",
+    "encontrado": true
+  }
+}

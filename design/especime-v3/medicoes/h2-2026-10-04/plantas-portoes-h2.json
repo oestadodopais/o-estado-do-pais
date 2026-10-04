@@ -1,0 +1,114 @@
+[
+  {
+    "nome": "h2-em-curso-retirado",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "E1 pt: os três estudos não têm os em curso à cabeça"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba",
+        "reposto": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba"
+      }
+    ]
+  },
+  {
+    "nome": "h2-em-curso-fora-da-cabeca",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "E1 en: os três estudos não têm os em curso à cabeça"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047",
+        "reposto": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047"
+      }
+    ]
+  },
+  {
+    "nome": "h2-em-curso-sem-marca",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "E1 en: marca em curso ausente"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047",
+        "reposto": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047"
+      }
+    ]
+  },
+  {
+    "nome": "h2-ligacao-dentro-de-outra",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "H2 ligação dentro de outra: \\/en\\/to-verify"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/studies/index.html",
+        "antes": "9ce4a6474305d90f1387d836c99b120c502a385043943fd5588c68a6cb300175",
+        "reposto": "9ce4a6474305d90f1387d836c99b120c502a385043943fd5588c68a6cb300175"
+      }
+    ]
+  },
+  {
+    "nome": "h2-porta-so-com-html-irmao",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a ligação interna \"\\/404\" não corresponde a nada construído"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba",
+        "reposto": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba"
+      }
+    ]
+  },
+  {
+    "nome": "h2-indicador-fora-do-endereco",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L3 · palavras fora do vocabulário fechado +1 +\\(teto 0\\) ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba",
+        "reposto": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba"
+      }
+    ]
+  },
+  {
+    "nome": "h2-area-porta-antiga",
+    "comando": "node scripts/check-areas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "H2 A2 porta antiga do texto"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/areas/ambiente-e-energia/index.html",
+        "antes": "228e9762d74f562b1cf65bcdf2911ff75902f0c68ac8804fab684109b202d1b1",
+        "reposto": "228e9762d74f562b1cf65bcdf2911ff75902f0c68ac8804fab684109b202d1b1"
+      }
+    ]
+  }
+]
