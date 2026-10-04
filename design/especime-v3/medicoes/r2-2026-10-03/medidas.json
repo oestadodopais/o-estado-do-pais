@@ -1,8 +1,8 @@
 {
   "bloco": "R2",
   "guiao": "design/especime-v3/medicoes/r2-2026-10-03/medir-r2.mjs",
-  "cabeca": "391f73edabc655664e816b30ec885da4fff50715",
-  "construcao": "6897e3659068a17f3739ef69ce5063973371a466",
+  "cabeca": "f61e014aee53621a964fb24d9491535c04d2f04f",
+  "construcao": "f61e014aee53621a964fb24d9491535c04d2f04f",
   "medidas": [
     {
       "nome": "linhas_do_livro",
@@ -816,29 +816,29 @@
     },
     {
       "nome": "simbolos_restantes_no_fim",
-      "valor": "NÃO LIDO",
+      "valor": 13563663,
       "comando": "design/especime-v3/medicoes/r2-2026-10-03/custo-fim.json",
       "conhecido_positivo": {
         "o_que": "o ficheiro diz a hora do fim",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "simbolos_gastos_pelo_contador",
-      "valor": "NÃO LIDO",
+      "valor": 1436337,
       "comando": "a diferença das duas leituras do contador",
       "conhecido_positivo": {
         "o_que": "as duas leituras existem",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "segundos_de_parede",
-      "valor": "NÃO LIDO",
+      "valor": 10744,
       "comando": "fim_utc menos inicio_utc",
       "conhecido_positivo": {
         "o_que": "as duas horas existem",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
@@ -960,29 +960,29 @@
     },
     {
       "nome": "portao_build",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes",
       "conhecido_positivo": {
         "o_que": "o ficheiro build.codigo existe",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "portao_verify",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes",
       "conhecido_positivo": {
         "o_que": "o ficheiro verify.codigo existe",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "portao_typecheck",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes",
       "conhecido_positivo": {
         "o_que": "o ficheiro typecheck.codigo existe",
-        "encontrado": false
+        "encontrado": true
       }
     }
   ]

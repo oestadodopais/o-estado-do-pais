@@ -1,0 +1,157 @@
+§1.1 · O mapa passou de `<canvas>` para SVG construído no servidor
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:1 (perto do diff)
+§1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:3 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:133
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:234
+§1.4 · `excerpt` ficou `[a verificar]` em quase todas as linhas semeadas
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:11 (perto do diff)
+§1.5 · A linha de método e a linha de autoria não são traduzidas
+    design/especime-v3/medicoes/r2-2026-10-03/LEIA-ME.md:128 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:21 (perto do diff)
+§1.06 · sem título em DECISIONS.md
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:25 (perto do diff)
+§1.19 · Os estudos migram para dois sítios, não um
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:27 (perto do diff)
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:31 (perto do diff)
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:39 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:66
+§1.34 · O primeiro tipo de página de município, e o que ele se recusa a dizer
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:45 (perto do diff)
+§1.35 · As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:50 (perto do diff)
+§1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:52 (perto do diff)
+§1.39 · O sítio passa a dizer o que é, e o Método a provar o que faz
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:56 (perto do diff)
+§1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:62 (perto do diff)
+§1.41 · A revisão cruzada do bloco V, e o que ela mudou
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:69 (perto do diff)
+§1.42 · Segunda revisão cruzada do bloco V
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:72 (perto do diff)
+§1.44 · A revisão cruzada da identidade v2
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:77 (perto do diff)
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:80 (perto do diff)
+§1.50 · O redesenho v3 abre: a letra passa a ser alojada aqui, e a cor passa a ser o par de estados
+    scripts/design-bundle.mjs:600
+    scripts/design-bundle.mjs:604
+§1.52 · A direção lê a pré-visualização n.º 1: cinco emendas, quatro decisões de forma, e o tema deixa de ser uma pergunta
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:83 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:456 (perto do diff)
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:90 (perto do diff)
+§1.66 · As correções de UX depois da auditoria de 25.08, bloco A
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:96 (perto do diff)
+§1.68 · As páginas dos 308 concelhos
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:99 (perto do diff)
+§1.75 · As regiões
+    scripts/design-bundle.mjs:1579
+§1.82 · Correções pequenas, quinta passagem (I91, segunda metade; I92): a língua dos nomes e dos rótulos na edição inglesa
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:102 (perto do diff)
+§1.85 · A tipografia: a pergunta das famílias livres fecha sem mudança; a Spectral e a Bitter ficam; o Parnaso depende do pacote de teste do diretor
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:105 (perto do diff)
+§1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:107 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:210
+§1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:111 (perto do diff)
+§1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:116 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:358 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/medidas.json:759 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/medir-r2.mjs:245 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/medir-r2.mjs:246 (perto do diff)
+§1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:190 (perto do diff)
+§1.102 · A sessão de 08.09: o corredor parado por uma função apagada, as leituras a frio com o plano novo do Codex, a sonda ao INE, o F1.1d medido às cegas, e o F1.10 retomado
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:199 (perto do diff)
+§1.105 · A porta do Método para os estudos chama a página pelo nome dela
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:202 (perto do diff)
+§1.106 · «Trabalho» sai do Método como nome de um estudo, e «vaga» sai da voz do leitor
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:204 (perto do diff)
+§1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:207 (perto do diff)
+§1.109 · A regra 9 do Método deixa de nomear o diretor
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:267 (perto do diff)
+§1.110 · «A casa» sai do Método e do Sobre
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:271 (perto do diff)
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    design/especime-v3/medicoes/r2-2026-10-03/LEIA-ME.md:128 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:274 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:136
+§1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:277 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:132
+    scripts/design-bundle.mjs:1262
+    scripts/design-bundle.mjs:526
+    scripts/design-bundle.mjs:533
+§1.118 · O M3, a segunda metade: a conferência estrutural no motor, e os nomes confirmados de volta aos recibos
+    design/especime-v3/medicoes/r2-2026-10-03/entre-commits/check-briefs.log:329 (perto do diff)
+§1.119 · A I129: o grupo etário passa a estar escrito na linha e na definição, e a célula que não deixa uma definição contradizer a sua linha
+    design/especime-v3/medicoes/r2-2026-10-03/entre-commits/check-briefs.log:328 (perto do diff)
+§1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:280 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/entre-commits/check-briefs.log:327 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:115
+§1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
+    design/especime-v3/medicoes/r2-2026-10-03/LEIA-ME.md:129 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:283 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:212
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:291 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:135
+§1.129 · A peça 1 do B2, o veredicto: o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio da correção e o Opus acaba, e o diretor fixa a regra do sentido
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:294 (perto do diff)
+§1.130 · O brief do L1, a leitura de cada medida: a regra do sentido vira uma gramática com ramos, as 36 leituras do lugar de direção ensaiadas a seco, e um bloco que não aterra sem outra família
+    design/especime-v3/medicoes/r2-2026-10-03/LEIA-ME.md:127 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:297 (perto do diff)
+§1.133 · O leitor comum primeiro: a decisão do diretor de 28.09.2026 sobre o público, o que se lê à primeira, e quem procura as relações nos dados
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:300 (perto do diff)
+§1.135 · O C1 construído pelo Codex e lido a frio seis vezes pelo Opus: as correções de confiança, a primeira atualização de uma linha cruzada, a regra 15 que lê o acesso em vigor, a guarda da pasta pessoal, e a aterragem
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:303 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:135
+§1.138 · O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:305 (perto do diff)
+§1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
+    design/especime-v3/medicoes/r2-2026-10-03/LEIA-ME.md:126 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:307 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:393
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:394
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:441 (perto do diff)
+§1.143 · A primeira leitura por leitores comuns (30.09.2026): as portas dizem o que têm, a primeira página é o único lugar de «O que se passa», e uma coisa, um lugar, também na navegação
+    design/especime-v3/medicoes/r2-2026-10-03/LEIA-ME.md:124 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/LEIA-ME.md:88 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/check-navegacao.json:562 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/check-navegacao.log:562 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:328 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/medidas.json:777 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/medir-r2.mjs:247 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:416
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:441 (perto do diff)
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:344 (perto do diff)
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:68
+§1.148 · O E1 construído pelo Opus em cinco passagens e lido a frio três vezes pelo Codex: os quatro estudos de Évora no ar, as regras do lugar de direção nos pontos de paragem, o erro do limiar que era meu, e a aterragem do E0 e dos registos da §1.147
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:346 (perto do diff)
+§1.149 · A leitura do diretor de 01.10.2026 no telemóvel: o mapa de «Lugares» vem primeiro e as listas de nomes dobram-se; o mapa sai da primeira página, que fica com a porta; e a aterragem da §1.148
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:346 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:348 (perto do diff)
+    scripts/design-bundle.mjs:1682
+    scripts/design-bundle.mjs:1794
+    scripts/design-bundle.mjs:1888
+§1.150 · O L2a construído pelo Opus e lido a frio pelo Sol: o mapa primeiro em «Lugares», as listas dobradas, a primeira página com a porta; as decisões do lugar de direção nos pontos deixados; e a aterragem da §1.149
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:348 (perto do diff)
+§1.151 · O L2b e o K2 construídos pelo Opus e lidos a frio pelo Sol: o concelho entre os 308 só nas taxas e nos rácios, o cartão para o telemóvel, o espaço antes de «%» como forma da casa em todas as superfícies (a §1.43, a §1.44 e a identidade §11 cedem à §1.135), e a aterragem da §1.150
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:351 (perto do diff)
+§1.152 · O UE2 construído pelo Opus e lido a frio pelo Sol: a página da União como a página dos países, as definições em palavras comuns como única forma em todo o sítio, o espaço antes de «%» confirmado pelo diretor, e a aterragem da §1.151
+    design/especime-v3/medicoes/r2-2026-10-03/LEIA-ME.md:125 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/LEIA-ME.md:99 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/auditoria-das-perguntas-r2.mjs:8 (perto do diff)
+    design/especime-v3/medicoes/r2-2026-10-03/decisoes-em-vigor.txt:351 (perto do diff)
+55 decisão(ões) citada(s) em 103 ficheiro(s) de texto
+16 ficheiro(s) binário(s) saltado(s): design/especime-v3/capturas/r2-2026-10-03/depois-emprego-en-1280.png, design/especime-v3/capturas/r2-2026-10-03/depois-emprego-en-390.png, design/especime-v3/capturas/r2-2026-10-03/depois-emprego-pt-1280.png, …
+conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível

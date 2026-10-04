@@ -134,6 +134,8 @@ A primeira corrida dos três portões pela tranca correu na cabeça `6897e365` (
 - **§1.115** (os nomes oficiais por conferir) e **§1.5**, citadas em `src/data/nomes-das-medidas.mjs`: os nomes que o bloco mudou são nomes do projeto declarados, e nenhum nome oficial mudou; o `check:nomes` corre no `verify`.
 - **§1.124** (a leitura de fora de 23.09.2026), citada em `src/data/figuras.mjs`: a média da União do cartão que ela calou continua calada.
 
+As 2 mudanças de código depois de `f13705cd` (a RP1 e o número medido do feixe do desenho) não ficam perto de nenhuma decisão citada: o guião sobre `f13705cd..391f73ed` (`decisoes-em-vigor-depois.txt`) só encontra em `scripts/design-bundle.mjs` citações longe do pedaço mudado (a §1.50, a §1.75, a §1.117 e a §1.149), e nenhuma em `tests/cartao/rp1.mjs`.
+
 ## Os commits
 
 | commit | o que leva |
@@ -162,8 +164,8 @@ A primeira corrida dos três portões pela tranca correu na cabeça `6897e365` (
 
 ## Os portões
 
-A corrida final corre pela tranca (`sh scripts/leituras/portoes.sh`) na cabeça do commit deste relatório, com os ficheiros em `portoes/` e a cabeça ao lado dos códigos; os códigos, lidos de ficheiro, entram no commit seguinte, com esta secção e o custo.
+A corrida final correu pela tranca (`sh scripts/leituras/portoes.sh`) na cabeça `f61e014a`, a do último commit de código, medições e relatório antes deste, com a cabeça ao lado dos códigos (`portoes/cabeca`, igual a `portoes/cabeca.fim`) e a árvore limpa fora da pasta de saída (`portoes/estado.fim`): `build` 0, `verify` 0 e `typecheck` 0, lidos de `portoes/build.codigo`, `portoes/verify.codigo` e `portoes/typecheck.codigo`, das 23:50 de 03.10 às 00:07 de 04.10.2026 (UTC). Os registos levam `<worktree>`, `<repositório>` e `<casa>` no lugar dos caminhos da máquina. A primeira corrida, na cabeça `6897e365`, deu `verify` 1 e está em `portoes-a/` (a secção «A primeira corrida final»). Este commit só junta os ficheiros desta pasta (os códigos, o custo, `medidas.json`, este relatório e a resposta curta), e nenhum deles entra na construção.
 
 ## O custo
 
-No commit seguinte, das duas leituras em ficheiro (`custo-inicio.json` e `custo-fim.json`).
+1436337 símbolos e 10744 segundos, das duas leituras em ficheiro (`custo-inicio.json` e `custo-fim.json`: o contador «total_tokens left» que a ferramenta mostra ao agente e o relógio da máquina), do início do bloco até à corrida final dos portões; o contador conta a sessão inteira, com a compactação do contexto a meio. A semana da subscrição do Claude passou de 43 % a 49 % (a linha de estado, por `scripts/leituras/uso.py`). O modelo foi o Claude Opus 5.5 em todo o bloco, sem subagentes.
