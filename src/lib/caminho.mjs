@@ -205,7 +205,7 @@ function etiquetaDaRota(chave, lang) {
 /**
  * A folha do caminho: o nome desta página, com a origem dele.
  *
- * @typedef {{ tipo: 'chave'|'lugar'|'nome'|'estudo', texto: string, fonte?: string }} FolhaDeTexto
+ * @typedef {{ tipo: 'chave'|'lugar'|'nome'|'estudo', texto: string, fonte?: string, daSerie?: string }} FolhaDeTexto
  * @typedef {{ tipo: 'medida', linha: Linha }} FolhaDeMedida
  * @typedef {FolhaDeTexto|FolhaDeMedida} Folha
  */
@@ -275,7 +275,10 @@ export function folhaDoCaminho(chave, params, lang) {
           const doCartao = getClaim(declarado.linha);
           return nomeDaMedida(doCartao, lang) === null ? null : { tipo: 'medida', linha: doCartao };
         }
-        return { tipo: 'nome', texto: declarado.nome[lang], fonte: 'serie' };
+        /* A marca diz de que série é o nome (`data-da-serie`), e a régua das frases
+           confere-o contra o nome DESSA série, como o do título do recibo: dois nomes
+           declarados trocados entre si não passam. */
+        return { tipo: 'nome', texto: declarado.nome[lang], fonte: 'serie', daSerie: serie.id };
       }
       const c = getClaim(String(serie.linha_de_portugal));
       if (!c) return null;

@@ -70,7 +70,7 @@ const folha = caminho?.folha ?? null;
         </span>
       )}
       {folha && folha.tipo === 'nome' && (
-        <span class="caminho-aqui" aria-current="page" data-nome={folha.fonte}>
+        <span class="caminho-aqui" aria-current="page" data-nome={folha.fonte} data-da-serie={folha.daSerie}>
           {folha.texto}
         </span>
       )}
