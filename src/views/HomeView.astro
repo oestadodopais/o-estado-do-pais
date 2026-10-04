@@ -88,7 +88,7 @@ const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
 
   <section class="pais-sec" id="trabalhos" aria-labelledby="estudos-k">
     <div class="sec-head"><h2 class="eyebrow" id="estudos-k">{r.estudosRecentes}</h2></div>
-    {recentes.map((e) => <EstudoDaLista e={e} lang={lang} />)}
+    {recentes.map((e) => <EstudoDaLista e={e} lang={lang} mostrarEmCurso />)}
   </section>
 
   {/* O VEREDICTO DOS VALORES DE REFERÊNCIA DA COMISSÃO EUROPEIA: o parágrafo calculado de antes

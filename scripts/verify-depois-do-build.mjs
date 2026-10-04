@@ -534,6 +534,8 @@ async function principal() {
   const t0 = Date.now();
   const p = await plantas();
   for (const c of p.casos) console.log(`  ${c.mordeu ? '✓' : '✗'} planta · ${c.planta}`);
+  // A mesma medição fica legível no registo do runner e no ensaio local.
+  for (const c of p.casos.filter(c => c.antes)) console.log(`  I194 ${JSON.stringify(c)}`);
   if (!p.ok) {
     console.error('\n  VERIFY DEPOIS DO BUILD · uma planta não mordeu: as células não provam o que dizem. Nenhuma conferência correu.\n');
     process.exit(1);

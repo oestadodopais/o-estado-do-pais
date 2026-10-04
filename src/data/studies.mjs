@@ -164,6 +164,9 @@ export const WORKS = [
   {
     id: 'evora-2027-capital-europeia-da-cultura',
     slug: 'evora-2027-capital-europeia-da-cultura',
+    // H2: acompanha-se a candidatura a Capital Europeia da Cultura até ao fim de 2027.
+    // A data é o horizonte do acompanhamento; o estado só muda pela ficha, não pelo relógio.
+    emCurso: { razao: 'Acompanhamento da candidatura a Capital Europeia da Cultura.', ate: '2027-12-31' },
     tema: 'cultura',
     subject: 'evora',
     editions: [

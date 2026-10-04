@@ -591,10 +591,12 @@ const EXCECOES_DO_VOCABULARIO = [
        um valor e fica na conta: `https://www.ine.pt/ine/json_indicador/pindica.jsp?…`. A régua
        conta a palavra inteira entre letras, e o sublinhado não é letra, por isso «indicador»
        dentro de `json_indicador` conta. É o nome de um caminho da API da fonte, e não uma palavra
-       da casa a chamar «indicador» a uma medida; o padrão só apanha o bloco que traz o endereço. */
+       da casa a chamar «indicador» a uma medida. H2, I193: só o endereço sai da conta,
+       nunca a prosa que partilha o bloco com ele. */
     conta: 'indicador',
     porque: '«indicador» dentro do endereço da API do INE (`json_indicador`), que é um caminho da fonte e não uma palavra da casa',
-    padrao: /www\.ine\.pt\/ine\/json_indicador\//,
+    padrao: /(?<![\w/])https?:\/\/www\.ine\.pt\/ine\/json_indicador\/[^\s<>"'«»]+/,
+    soTrecho: true,
   },
 ];
 
@@ -1371,16 +1373,8 @@ for (const ficheiro of paginas) {
       /* Conta por bloco, para que uma exceção possa dispensar o bloco dela. */
       let n = 0;
       for (const b of blocos) {
-        const nb = contaPalavra(b, palavra);
-        if (!nb) continue;
-        const i = EXCECOES_DO_VOCABULARIO.findIndex(
-          (e) => palavraDaExcecao(e.conta, palavra) && e.padrao.test(b),
-        );
-        if (i >= 0) {
-          usoDasExcecoes.set(i, (usoDasExcecoes.get(i) ?? 0) + nb);
-          continue;
-        }
-        n += nb;
+        n += contaForaDasExcecoes(b, palavra, (i, desconto) =>
+          usoDasExcecoes.set(i, (usoDasExcecoes.get(i) ?? 0) + desconto));
       }
       if (!n) continue;
       medidas.l3_vocabulario += n;
@@ -1975,6 +1969,31 @@ function contaPalavra(texto, palavra) {
   const escapada = palavra.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const re = new RegExp(`(?<![\\p{L}])${escapada}(?![\\p{L}])`, 'gu');
   return (texto.match(re) ?? []).length;
+}
+
+// H2: a mesma conta na célula e nas plantas; uma exceção de endereço só tira o seu trecho.
+function contaForaDasExcecoes(b, palavra, regista = () => {}) {
+  const nb = contaPalavra(b, palavra);
+  if (!nb) return 0;
+  const i = EXCECOES_DO_VOCABULARIO.findIndex(e => palavraDaExcecao(e.conta, palavra) && e.padrao.test(b));
+  if (i < 0) return nb;
+  const e = EXCECOES_DO_VOCABULARIO[i];
+  const desconto = e.soTrecho
+    ? [...b.matchAll(new RegExp(e.padrao.source, e.padrao.flags + 'g'))].reduce((n, m) => n + contaPalavra(m[0], palavra), 0)
+    : nb;
+  regista(i, desconto);
+  return nb - desconto;
+}
+
+{
+  const url = 'https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2';
+  const casos = [[url, 0], [`indicador ${url}`, 1], [`${url} indicador`, 1],
+    [`${url} e ${url} indicador`, 1], [url.replace('www.ine.pt', 'www.ine.pt.exemplo'), 1]];
+  for (const [texto, esperado] of casos) {
+    if (contaForaDasExcecoes(texto, 'indicador') !== esperado)
+      falhas.push('H2 I193: a exceção do endereço descontou prosa ou não descontou o endereço.');
+  }
+  console.log(`  H2 I193: ${casos.length} controlos do endereço e da prosa no mesmo bloco`);
 }
 
 /* -------------------------------------------------------------------- L4 */

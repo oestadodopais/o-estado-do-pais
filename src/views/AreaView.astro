@@ -9,8 +9,7 @@
  *     coisa, «área do XXV Governo Constitucional», que é o que ela é e não o que
  *     fizemos com ela (Emenda 18b);
  *   · os trabalhos do arquivo cujas linhas tratam de uma matéria desta área,
- *     cada um com a sua porta e, quando existe nesta edição, a porta do seu
- *     texto;
+ *     cada um com a sua porta para a página do estudo;
  *   · os estudos de dados, que entram como uma peça e não como novecentas;
  *   · as medidas, agrupadas pela MATÉRIA que as pôs aqui, e cada uma no CARTÃO
  *     DE UMA MEDIDA (`CartaoDaMedida`, bloco P2, 15.09.2026): o nome em
@@ -72,7 +71,7 @@
 import Base from '../layouts/Base.astro';
 import CartaoDaMedida from '../components/CartaoDaMedida.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
-import { areaDoSlug, nomeDoEstudo, temTexto } from '../lib/areas.mjs';
+import { areaDoSlug, nomeDoEstudo } from '../lib/areas.mjs';
 import { LEI_ORGANICA } from '../data/areas.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { REFERENCIAS_DAS_MEDIDAS } from '../data/referencias-das-medidas.mjs';
@@ -189,14 +188,9 @@ const primeirasDeCadaDono = new Set();
             <ul class="areas-pecas">
               {area.pecas.trabalhos.map((p) => (
                 <li class="areas-peca" data-area-peca="trabalho">
-                  <a href={routePath('estudo', lang, { slug: p.slug })}>
-                    <TituloDeTrabalho titulo={nomeDoEstudo(p.id, lang)} lang={lang} />
-                  </a>
-                  {temTexto(p.slug, lang) && (
-                    <a class="areas-peca-porta" href={routePath('texto', lang, { slug: p.slug })}>
-                      {s.areas.textoDoTrabalho}
-                    </a>
-                  )}
+                  {/* H2, I190 e I191: uma porta por estudo, no próprio título.
+                      A antiga porta «Ler» duplicaria o destino depois de sair a rota /texto. */}
+                  <TituloDeTrabalho as="a" href={routePath('estudo', lang, { slug: p.slug })} titulo={nomeDoEstudo(p.id, lang)} lang={lang} />
                 </li>
               ))}
             </ul>
@@ -213,9 +207,7 @@ const primeirasDeCadaDono = new Set();
             <ul class="areas-pecas">
               {area.pecas.conjuntos.map((p) => (
                 <li class="areas-peca" data-area-peca="conjunto">
-                  <a href={routePath(p.conjunto, lang)}>
-                    <TituloDeTrabalho titulo={nomeDoEstudo(p.id, lang)} lang={lang} />
-                  </a>
+                  <TituloDeTrabalho as="a" href={routePath(p.conjunto, lang)} titulo={nomeDoEstudo(p.id, lang)} lang={lang} />
                 </li>
               ))}
             </ul>

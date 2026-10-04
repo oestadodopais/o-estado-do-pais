@@ -48,7 +48,9 @@ export function temasDoPais(lang, resumo = false) {
 }
 /** @param {'pt'|'en'} lang */
 export function estudosRecentes(lang) {
+  // H2: os estudos em curso à cabeça; dentro de cada grupo, a data e a ordem do arquivo.
   return WORKS.map(w => fichaDoEstudo(w, lang)).sort((a, b) =>
+    Number(Boolean(b.work.emCurso)) - Number(Boolean(a.work.emCurso)) ||
     (b.data ?? '').localeCompare(a.data ?? '') || WORKS.indexOf(a.work) - WORKS.indexOf(b.work));
 }
 /* «O que mudou» mudou de casa a 22.09.2026 (B1c): a lista da primeira página,

@@ -3971,3 +3971,15 @@ marcador da voz (`VOZ-MARCADORES.md`).
 | --- | --- | --- | --- | --- |
 | navegacao | A conta da ressalva | oe1-e | viva | Nomeia a conta de apoio de uma ressalva numa linha transcrita, sem a apresentar como cálculo do valor. |
 | navegacao | The caveat calculation | oe1-e | viva | O mesmo rótulo na edição inglesa; as contas dos valores calculados mantêm o seu título. |
+
+## H2 · o estado dos estudos recentes, 04.10.2026
+
+Composição de conteúdo dependente da ficha, conferida por `scripts/meta-do-estudo.mjs`
+e pela E1 do `check:pais`. As palavras ficam declaradas aqui; não são linhas
+«vivas» obrigatórias quando o último estudo deixa de estar em curso. A régua
+só dispensa da classificação estática a linha inteira depois de comparar
+lugar, tema, data e estado, e conserva a varredura dos marcadores da voz.
+
+| chave | português | inglês | classe |
+|---|---|---|---|
+| `primeira.emCurso` | em curso | ongoing | conteúdo, estado declarado na ficha |

@@ -55,6 +55,7 @@ import { NOMES_COM_A_VARIACAO_NA_UNIDADE } from '../src/data/unidades-dos-cartoe
 import { temAviso } from '../src/lib/aviso-do-motor.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { NOMES_DAS_SERIES } from '../src/data/series-no-tempo.mjs';
+import { metaDoEstudoConferida } from './meta-do-estudo.mjs';
 import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -1000,6 +1001,11 @@ function frasesDaCasa(root, rotaKey) {
   for (const el of root.querySelectorAll(BLOCOS_DA_VOZ)) {
     if (el.querySelector(BLOCOS_DA_VOZ)) continue;
     if (marcados.has(el)) continue;
+    /* H2: composição variável do estudo, palavra a palavra, na mesma corrida.
+       Nenhuma dispensa pela mera classe: uma palavra ou estado errado continua
+       a ser recolhido e fica por classificar. A varredura da voz continua a lê-la. */
+    if (rotaKey === 'home' && el.classList.contains('estudo-meta') &&
+        metaDoEstudoConferida(el, root.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt')) continue;
     /* ----------------------------------------------------------------------
        UM BLOCO COM UMA MARCA DE ORIGEM LÁ DENTRO DEIXA DE SER SALTADO INTEIRO
        (F0.9, segunda passagem, 03.09.2026; leitura a frio do Codex, Blocking 3)
