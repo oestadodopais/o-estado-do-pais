@@ -26,7 +26,7 @@ import ValorDaProva from '../components/ValorDaProva.astro';
 import Marcador from '../components/Marcador.astro';
 import LegendaDaMarca from '../components/LegendaDaMarca.astro';
 import CampoDeBusca from '../components/inicio/CampoDeBusca.astro';
-import { allClaims, provenienciaIncompleta } from '../lib/ledger.mjs';
+import { allClaims, provenienciaIncompleta, ressalvaDaLinha } from '../lib/ledger.mjs';
 import { ESTUDO_DOS_CONCELHOS } from '../lib/livro-concelhos.mjs';
 import { caminhoDoLivro } from '../lib/livro.mjs';
 import { routePath } from '../lib/routes.mjs';
@@ -316,6 +316,12 @@ const p = prova(lang);
                   </span>
                 )}
               </div>
+              {ressalvaDaLinha(c, lang) && (
+                <details>
+                  <summary>{s.prov.ressalva}</summary>
+                  <p class="linha-nota"><CampoDaLinha id={c.id} campo="ressalva" valor={ressalvaDaLinha(c, lang)} lang={lang} /></p>
+                </details>
+              )}
             </div>
           </div>
         ))}

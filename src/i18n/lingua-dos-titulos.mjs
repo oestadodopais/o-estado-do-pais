@@ -495,6 +495,9 @@ export const LINGUA_DAS_EDICOES = {
   /* OE1: línguas conferidas nos documentos e nas células de origem. */
   "2026": null,
   "gov_10a_exp": null,
+  'gov_10a_exp; geo=PT': null,
+  'gov_10a_exp; geo=ES': null,
+  'gov_10a_exp; geo=EU27_2020': null,
   '0014647, geocod=PT, dim_3=045': null,
   '0014647, geocod=PT, dim_3=0722': null,
   '0014647, geocod=PT, dim_3=041': null,

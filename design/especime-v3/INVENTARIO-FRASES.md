@@ -3422,7 +3422,7 @@ protegidas pelo detetor de privacidade sobre as páginas construídas. O nome
 
 ## C1f · os acessos do PRR reconstituídos pela história do Git
 
-| Classe | Frase | Bloco | Estado | Razão |
+| classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
 | conteudo | 54 revisões de proveniência | c1f | viva | Contagem do livro após as dez entradas de acesso, sem mudança dos valores. |
 | conteudo | 54 provenance revisions | c1f | viva | Contagem do livro após as dez entradas de acesso, sem mudança dos valores. |
@@ -3957,3 +3957,10 @@ marcador da voz (`VOZ-MARCADORES.md`).
 | navegacao | The project | r3 | viva | O mesmo nome na edição inglesa. |
 | navegacao | O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta. | r3 | viva | A descrição do `<head>` da página do índice: as secções que ela tem, e que cada coisa tem a sua porta. |
 | navegacao | The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door. | r3 | viva | A mesma descrição na edição inglesa. |
+
+## OE1-d · a ressalva publicada no índice, 04.10.2026
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Ressalva | oe1-d | viva | Abre a ressalva da própria linha, escrita pelo motor e conferida no recibo e no índice. |
+| navegacao | Caveat | oe1-d | viva | Abre na edição inglesa o mesmo campo, sem recurso à língua portuguesa. |
