@@ -1308,8 +1308,21 @@ for (const file of ficheiros) {
     nomesPorFonte[fonte] += 1;
     /* O NOME DE UMA SÉRIE NO TEMPO É CONFERIDO CONTRA A SUA PRÓPRIA SÉRIE (bloco
        RP3): a marca diz de que série é, e o texto tem de ser o nome dela nesta
-       edição, e não só um nome do ficheiro. */
+       edição, e não só um nome do ficheiro. A MARCA DA SÉRIE É OBRIGATÓRIA (passagem
+       RP3-b, o achado 7 da leitura a frio): sem `data-da-serie`, o nome de outra
+       série declarada passava pela pergunta geral «é um nome do ficheiro?»; agora
+       a falta da marca é ela própria um erro, e a conferência da identidade corre
+       sempre. */
     const daSerie = el.getAttribute('data-da-serie');
+    if (fonte === 'serie' && !daSerie) {
+      nomesForaDaFonte.push({
+        caminho: caminho || '/',
+        fonte,
+        texto: t,
+        porque: 'a marca «data-nome="serie"» não diz de que série é o nome (falta «data-da-serie»), e sem ela a identidade não se confere',
+      });
+      continue;
+    }
     if (fonte === 'serie' && daSerie) {
       const par = NOMES_POR_SERIE.get(daSerie);
       const lingua = root.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt';
