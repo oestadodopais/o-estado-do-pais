@@ -1,0 +1,26 @@
+ M design/especime-v3/medicoes/r3-2026-10-04/LEIA-ME.modelo.md
+ M design/especime-v3/medicoes/r3-2026-10-04/RESPOSTA.modelo.md
+ M design/especime-v3/medicoes/r3-2026-10-04/comparar-mapa.py
+R  design/especime-v3/medicoes/r3-2026-10-04/conferir-mapa-base.txt -> design/especime-v3/medicoes/r3-2026-10-04/conferir-mapa-base-358e3649.txt
+ M design/especime-v3/medicoes/r3-2026-10-04/escrever-relatorio-r3.mjs
+ M design/especime-v3/medicoes/r3-2026-10-04/medir-r3.mjs
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/build.codigo -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/build.codigo
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/build.fim -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/build.fim
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/build.inicio -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/build.inicio
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/build.log -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/build.log
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/cabeca -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/cabeca
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/cabeca.fim -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/cabeca.fim
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/estado.fim -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/estado.fim
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/typecheck.codigo -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/typecheck.codigo
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/typecheck.fim -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/typecheck.fim
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/typecheck.inicio -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/typecheck.inicio
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/typecheck.log -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/typecheck.log
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/verify.codigo -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/verify.codigo
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/verify.fim -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/verify.fim
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/verify.inicio -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/verify.inicio
+R  design/especime-v3/medicoes/r3-2026-10-04/portoes/verify.log -> design/especime-v3/medicoes/r3-2026-10-04/portoes-294f3abf/verify.log
+?? design/especime-v3/medicoes/r3-2026-10-04/conferir-mapa-base.txt
+?? design/especime-v3/medicoes/r3-2026-10-04/custo-r3b-inicio.json
+?? design/especime-v3/medicoes/r3-2026-10-04/portoes/
+?? design/especime-v3/medicoes/r3-2026-10-04/rebase-r3b.json
+?? node_modules

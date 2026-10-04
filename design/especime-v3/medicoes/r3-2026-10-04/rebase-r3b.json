@@ -1,0 +1,41 @@
+{
+  "o_que": "o rebase da passagem R3-b: o main sobre que o ramo r3-2026-10-04-b foi rebaseado, lido com git -C <árvore principal> rev-parse main, e as cabeças antes e depois",
+  "main": "7af9073132b92ed7aca7fec0c906f1a08626d446",
+  "main_lido_as": [
+    "2026-10-04T09:42:40Z, na primeira chamada da passagem",
+    "2026-10-04T09:57:19Z, logo antes do rebase (a hora do ficheiro onde a leitura ficou escrita)"
+  ],
+  "rebase_comecou_as": "2026-10-04T09:57:31Z (a hora do registo da primeira paragem do rebase)",
+  "cabeca_antes_do_rebase": "ae7c8107554ae09f70a4b79e3fee1fe83e4418fd",
+  "cabeca_rebaseada": "7919ec0cc6da2db6ab1d46a30842100667ce6e9e",
+  "commits_rebaseados": 22,
+  "conflitos_resolvidos_a_mao": [
+    {
+      "ficheiro": "package.json",
+      "commit": "a célula do índice (d6f57ab8 no ramo de antes)",
+      "como": "a cadeia do verify de main, com o check:rotulos, e o check:indice-do-sitio no fim"
+    },
+    {
+      "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+      "commit": "o mesmo",
+      "como": "as secções do R2 e do R2-b, e a do R3 a seguir"
+    },
+    {
+      "ficheiro": "design/especime-v3/critica/REVISOES-DO-INVENTARIO.md",
+      "commit": "o mesmo",
+      "como": "as secções do R2 e do R2-b, e a do R3 a seguir"
+    },
+    {
+      "ficheiro": "design/especime-v3/CHAVES-EN.md",
+      "commit": "os registos (2da8d112 no ramo de antes)",
+      "como": "a secção do R2, e a do R3 a seguir"
+    },
+    {
+      "ficheiro": "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "commit": "o mesmo",
+      "como": "a secção do R2, e a do R3 a seguir; as citações da secção do R3 que o rebase moveu ficaram em dia num commit à parte"
+    }
+  ],
+  "merge_base_depois": "7af9073132b92ed7aca7fec0c906f1a08626d446",
+  "marcas_de_conflito_na_arvore": "nenhuma: git grep das três marcas sobre a árvore deu o código 1, e o mesmo comando acha uma cadeia conhecida em package.json"
+}
