@@ -1,15 +1,15 @@
-OE1-c: as duas extensões estão aplicadas e ensaiadas. O OE1 integral continua parcial pelas lacunas de fonte.
+OE1-d: as dez correções estão implementadas e os portões estão verdes. O OE1 integral continua parcial pelas lacunas de fonte.
 
-Motor: `9bfbb777f7d2f5af8b185475c8dd8027ebd76bad`. Sítio: [cabeça final](design/especime-v3/medicoes/oe1-2026-10-04/portoes/cabeca), incluindo o commit desta resposta.
+Motor `1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3`, sobre master `47f12e15c927bf238522ac680b1f54c9de29f55d`. Sítio: ramo oe1-2026-10-04-b, cabeça de código `8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5`, sobre main `b2fbdd28de97df4a0507eedc18448924060c84d2`. O commit que contém esta resposta acrescenta apenas provas a essa cabeça de código.
 
-Commits anteriores ao fecho: `e1a28383`, `0c4c5fc2`, `a369b0ef`, `2522ac16`, `ff8692ba`, `27f06c27`, `dc53e891`, `0bb9958a`, `24b21fe9`, `9038e1e6`. O motor não recebeu commits nesta passagem.
+Inclui a correção do guião de prova para ler a queixa em stderr e stdout, sem mudar a recusa exigida, mais o SHA-256 do guião executado. O código construído e as linhas permanecem iguais.
 
-Doze plantas dos localizadores e quatro do feixe morderam. As 186 linhas conservam os seus bytes; os quatro formatos anteriores, o teto e a margem mantêm-se.
+Códigos lidos: motor 0; ledger 0; build 0; verify 0; typecheck 0. --conferir-final a zero antes do último commit. As cabeças, os códigos e os tempos estão em [portoes](portoes/).
 
-Códigos da corrida final: [motor](design/especime-v3/medicoes/oe1-2026-10-04/portoes/motor.codigo), [build](design/especime-v3/medicoes/oe1-2026-10-04/portoes/build.codigo), [verify](design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.codigo), [typecheck](design/especime-v3/medicoes/oe1-2026-10-04/portoes/typecheck.codigo), [ledger](design/especime-v3/medicoes/oe1-2026-10-04/portoes/ledger.codigo). Os códigos e as cabeças são lidos de ficheiro depois da corrida inteira pela tranca; --conferir-final exige os cinco zeros e a cabeça atual.
+186 nomes e ressalvas nas duas línguas; 62 unidades acumuladas; 372 recibos e 372 entradas de índice conferidos. Valores, excertos e coordenadas intactos. 25 medidas com conhecido positivo; L1 2714, sem aumento do teto.
 
-[Resultado final com cabeças, commits, códigos e custo](design/especime-v3/medicoes/oe1-2026-10-04/OE1-c-resultado.md). [Relatório, secção OE1-c](design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md). [Tabela integral das 186 linhas](design/especime-v3/medicoes/oe1-2026-10-04/LINHAS.md).
+[Relatório, commits e exemplos por família](LEIA-ME.md). [Tabela das 186 linhas](LINHAS.md). [Medições](medidas-oe1d.json).
 
-Continuam por selar a receita consolidada AC+SS e o saldo nos mapas, a divergência da despesa bruta da Segurança Social e as necessidades de financiamento mensais. As razões mantêm-se no relatório.
+Continuam por selar a receita consolidada AC+SS e o saldo nos mapas, a divergência da despesa bruta da Segurança Social e as necessidades de financiamento mensais. Falta a leitura cruzada das duas linhas do inventário antes da fusão. A página do governo é outro bloco.
 
-Custo OE1-c: [contadores e segundos ao corte](design/especime-v3/medicoes/oe1-2026-10-04/custo-oe1c.json). Modelo: Codex gpt-6-astra. Relatório e resposta curta comitados; registos da execução final escritos depois do commit. Nenhum push.
+Custo desta passagem: 36 663 737 símbolos contabilizados, dos quais 35 026 560 de entrada em cache, 1 444 641 de entrada sem cache e 192 536 de saída; 6 166 segundos desde a ordem OE1-d até ao corte de 2026-10-04T11:41:38.942662+00:00. Modelo: Codex gpt-6-astra. Nenhum push.

@@ -1,0 +1,21 @@
+§1.6 · Formatação portuguesa dos números nas duas edições — por agora
+    publisher/export_site_rows.py:425
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    publisher/export_site_rows.py:811
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    publisher/README.md:73
+    publisher/export_site_rows.py:24
+    publisher/oe1_build.py:3
+§1.32 · O tubo: setenta linhas atravessaram, e o sítio confere-as à chegada
+    publisher/README.md:73
+    publisher/oe1_build.py:3
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    publisher/README.md:260
+    publisher/README.md:328
+    publisher/README.md:374
+    publisher/export_site_rows.py:1051
+§1.154 · A caixa das sugestões no ar (o S1, construído pelo Opus, lido a frio pelo Sol, endurecido com a chave que só a Vercel tem, com as três decisões do diretor de 03.10.2026), a quinta recusa do Método reescrita, a leitura de fora do Opus de 03.10 avaliada e o que ela muda no plano
+    publisher/oe1_build.py:4
+6 decisão(ões) citada(s) em 10 ficheiro(s) de texto
+0 ficheiro(s) binário(s) saltado(s)
+conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível

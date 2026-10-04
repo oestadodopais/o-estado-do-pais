@@ -2390,5 +2390,205 @@
     },
     "resultado_final": "oe1c-final.json",
     "resposta_final": "OE1-c-resultado.md"
+  },
+  "passagem_atual": "OE1-d",
+  "prova_atual": "medidas-oe1d.json",
+  "nota_historico": "A prova atual está em oe1d e no ficheiro prova_atual. Os restantes campos conservam o instantâneo das passagens anteriores.",
+  "oe1d": {
+    "medido_em": "2026-10-04T11:27:13.323488+00:00",
+    "cabecas": {
+      "motor": "1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3",
+      "sitio": "8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5",
+      "main": "b2fbdd28de97df4a0507eedc18448924060c84d2",
+      "master": "47f12e15c927bf238522ac680b1f54c9de29f55d"
+    },
+    "medidas": {
+      "livro_motor_intacto": {
+        "valor": "66820436eec71467c8660de15a23f7d7f5dd53bf382fdeead3c73bde6ea095c2",
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Acrescentar um byte à cópia é recusado.",
+        "queixa_da_planta": "Bytes do motor diferentes da base selada"
+      },
+      "manifesto_motor_intacto": {
+        "valor": "a20b260fc1dd2bf92b9a38fcbde021c276de07a55af87b16fbef2be47448e9ae",
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Acrescentar um byte à cópia é recusado.",
+        "queixa_da_planta": "Bytes do motor diferentes da base selada"
+      },
+      "linhas_do_motor": {
+        "valor": 186,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Retirar uma entrada diminui a contagem em um.",
+        "queixa_da_planta": "linhas_do_motor: contagem divergente"
+      },
+      "linhas_exportadas": {
+        "valor": 186,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Retirar uma entrada diminui a contagem em um.",
+        "queixa_da_planta": "linhas_exportadas: contagem divergente"
+      },
+      "valores_excertos_rotulos_e_coordenadas": {
+        "valor": 186,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Trocar um valor na cópia é recusado.",
+        "queixa_da_planta": "despesa-por-funcao-2024-gf01-es: campo alterado: value"
+      },
+      "documentos_e_edicoes": {
+        "valor": 186,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Inventar o localizador do documento na cópia é recusado.",
+        "queixa_da_planta": "despesa-por-funcao-2024-gf01-es: documento ou edição fora da mudança autorizada"
+      },
+      "nomes_modulo_igual_ao_gerador": {
+        "valor": "0f2a4f525524784f493c92947847ff9d8e88ea5167eecc68230b7cf55ec97d8a",
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Trocar um nome na cópia do módulo é recusado.",
+        "queixa_da_planta": "Módulo de nomes diferente do gerador"
+      },
+      "nomes_nas_duas_linguas": {
+        "valor": 186,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Retirar uma entrada diminui a contagem em um.",
+        "queixa_da_planta": "nomes_nas_duas_linguas: contagem divergente"
+      },
+      "nomes_sem_algarismos": {
+        "valor": 372,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Acrescentar um período ao nome na cópia é recusado.",
+        "queixa_da_planta": "despesa-por-funcao-2024-gf01-es: nome vazio, sem língua ou com algarismo"
+      },
+      "ressalvas_nas_duas_linguas": {
+        "valor": 186,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Retirar uma língua da ressalva na cópia é recusado.",
+        "queixa_da_planta": "despesa-por-funcao-2024-gf01-es: ressalva sem as duas línguas"
+      },
+      "linhas_xls": {
+        "valor": 41,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Retirar uma entrada diminui a contagem em um.",
+        "queixa_da_planta": "linhas_xls: contagem divergente"
+      },
+      "inferencias_xls_publicadas": {
+        "valor": 41,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Retirar o aviso da unidade da cópia é recusado.",
+        "queixa_da_planta": "oe-2026-despesa-funcao-01: inferência da unidade não publicada nas duas línguas"
+      },
+      "nao_fecho_conferido_em_decimal": {
+        "valor": "802,9",
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Somar um ao primeiro indicador na cópia altera a diferença e é recusado.",
+        "queixa_da_planta": "A diferença real dos três indicadores não é a declarada"
+      },
+      "linhas_com_nao_fecho": {
+        "valor": 3,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Retirar uma entrada diminui a contagem em um.",
+        "queixa_da_planta": "linhas_com_nao_fecho: contagem divergente"
+      },
+      "unidades_acumuladas": {
+        "valor": 62,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Retirar o acumulado da unidade na cópia é recusado.",
+        "queixa_da_planta": "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central: unidade ou acumulado divergente"
+      },
+      "linhas_de_execucao": {
+        "valor": 62,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Retirar uma entrada diminui a contagem em um.",
+        "queixa_da_planta": "linhas_de_execucao: contagem divergente"
+      },
+      "resumos_das_linhas_conferidos": {
+        "valor": 186,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Acrescentar um byte a um YAML na cópia é recusado.",
+        "queixa_da_planta": "despesa-por-funcao-2024-gf01-es: bytes diferentes da travessia"
+      },
+      "resumo_dos_nomes_conferido": {
+        "valor": "0f2a4f525524784f493c92947847ff9d8e88ea5167eecc68230b7cf55ec97d8a",
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Acrescentar um byte ao módulo na cópia é recusado.",
+        "queixa_da_planta": "Resumo dos nomes diferente do registo"
+      },
+      "html_cabeca": {
+        "valor": "8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5",
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Trocar a cabeça da construção é recusado.",
+        "queixa_da_planta": "HTML: a construção não é da cabeça atual"
+      },
+      "edicoes_sem_declaracao_orfa": {
+        "valor": true,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Reintroduzir gov_10a_exp no módulo em memória faz o portão da língua recusar a edição órfã.",
+        "queixa_da_planta": "Edições: a régua recusa a declaração que nenhuma linha usa"
+      },
+      "html_recibos_nas_duas_linguas": {
+        "valor": 372,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Retirar uma entrada diminui a contagem em um.",
+        "queixa_da_planta": "html_recibos_nas_duas_linguas: contagem divergente"
+      },
+      "html_entradas_nos_dois_indices": {
+        "valor": 372,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Retirar uma entrada diminui a contagem em um.",
+        "queixa_da_planta": "html_entradas_nos_dois_indices: contagem divergente"
+      },
+      "html_planta_nome": {
+        "valor": true,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Retirar nome na cabeça da cópia do recibo é recusado.",
+        "queixa_da_planta": "despesa-por-funcao-2024-gf01-es: nome do projeto ausente ou repetido"
+      },
+      "html_planta_ressalva": {
+        "valor": true,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Retirar ressalva na cabeça da cópia do recibo é recusado.",
+        "queixa_da_planta": "despesa-por-funcao-2024-gf01-es: campo HTML ausente ou repetido: ressalva"
+      },
+      "html_planta_unidade": {
+        "valor": true,
+        "passou": true,
+        "conhecido_positivo": true,
+        "planta": "Trocar a unidade na cabeça da cópia do recibo é recusado.",
+        "queixa_da_planta": "despesa-por-funcao-2024-gf01-es: unidade impressa divergente"
+      }
+    },
+    "codigos_lidos": {
+      "motor": 0,
+      "ledger": 0,
+      "build": 0,
+      "verify": 0,
+      "typecheck": 0
+    },
+    "prova_integral": "medidas-oe1d.json",
+    "l1": "l1-oe1d.json",
+    "custo": "custo-oe1d.json",
+    "protocolo": "Cabeça do código ensaiada; o commit seguinte acrescenta apenas provas. As restantes secções conservam as medições históricas."
   }
 }

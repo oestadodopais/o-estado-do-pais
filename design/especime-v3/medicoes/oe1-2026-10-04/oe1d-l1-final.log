@@ -1,0 +1,19 @@
+{
+  "cabeca": "8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5",
+  "contagens": {
+    "estudos": 2714,
+    "l1_paginas": 2714,
+    "teto_lido": 2714,
+    "recibos_oe1": 372
+  },
+  "conhecidos_positivos": [
+    {
+      "nome": "Uma entrada retirada da lista deixa de reconciliar com a contagem da régua",
+      "mordeu": true
+    },
+    {
+      "nome": "Uma contagem do registo trocada em memória é recusada pela régua do teto",
+      "mordeu": true
+    }
+  ]
+}

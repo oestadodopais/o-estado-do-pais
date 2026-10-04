@@ -1,0 +1,343 @@
+
+  sítio: <sitio>
+
+  manifesto oe1 · 186 linhas · 3 grupos excluídos
+
+    oe-2026-despesa-programa-001                 engine value          7 733 610 763
+    oe-2026-despesa-programa-002                 engine value          1 017 609 023
+    oe-2026-despesa-programa-003                 engine value          600 621 919
+    oe-2026-despesa-programa-004                 engine value          36 874 099 579
+    oe-2026-despesa-programa-005                 engine value          175 017 466 000
+    oe-2026-despesa-programa-006                 engine value          4 788 735 429
+    oe-2026-despesa-programa-007                 engine value          1 127 993 543
+    oe-2026-despesa-programa-008                 engine value          164 357 497
+    oe-2026-despesa-programa-009                 engine value          3 836 890 866
+    oe-2026-despesa-programa-010                 engine value          10 119 512 834
+    oe-2026-despesa-programa-011                 engine value          2 460 413 497
+    oe-2026-despesa-programa-012                 engine value          3 310 310 353
+    oe-2026-despesa-programa-013                 engine value          8 170 453 174
+    oe-2026-despesa-programa-014                 engine value          6 478 853 190
+    oe-2026-despesa-programa-015                 engine value          46 823 532 502
+    oe-2026-despesa-programa-016                 engine value          37 673 710 106
+    oe-2026-despesa-programa-017                 engine value          3 117 623 807
+    oe-2026-despesa-programa-018                 engine value          876 923 548
+    oe-2026-despesa-programa-019                 engine value          186 328 537
+    oe-2026-despesa-programa-020                 engine value          2 093 343 793
+    oe-2026-despesa-ministerio-encargos-gerais-do-estado engine value          7 733 610 763
+      ↳ #page=1 from the declared document.page
+    oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros engine value          1 017 609 023
+      ↳ #page=1 from the declared document.page
+    oe-2026-despesa-ministerio-negocios-estrangeiros engine value          600 621 919
+      ↳ #page=2 from the declared document.page
+    oe-2026-despesa-ministerio-financas          engine value          211 891 565 579
+      ↳ #page=2 from the declared document.page
+    oe-2026-despesa-ministerio-economia-e-coesao-territorial engine value          5 916 728 972
+      ↳ #page=3 from the declared document.page
+    oe-2026-despesa-ministerio-reforma-do-estado engine value          164 357 497
+      ↳ #page=3 from the declared document.page
+    oe-2026-despesa-ministerio-defesa-nacional   engine value          3 836 890 866
+      ↳ #page=3 from the declared document.page
+    oe-2026-despesa-ministerio-infraestruturas-e-habitacao engine value          10 119 512 834
+      ↳ #page=4 from the declared document.page
+    oe-2026-despesa-ministerio-justica           engine value          2 460 413 497
+      ↳ #page=4 from the declared document.page
+    oe-2026-despesa-ministerio-administracao-interna engine value          3 310 310 353
+      ↳ #page=4 from the declared document.page
+    oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao engine value          14 649 306 364
+      ↳ #page=5 from the declared document.page
+    oe-2026-despesa-ministerio-saude             engine value          46 823 532 502
+      ↳ #page=5 from the declared document.page
+    oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social engine value          37 673 710 106
+      ↳ #page=5 from the declared document.page
+    oe-2026-despesa-ministerio-ambiente-e-energia engine value          3 117 623 807
+      ↳ #page=6 from the declared document.page
+    oe-2026-despesa-ministerio-cultura-juventude-e-desporto engine value          1 063 252 085
+      ↳ #page=6 from the declared document.page
+    oe-2026-despesa-ministerio-agricultura-e-mar engine value          2 093 343 793
+      ↳ #page=6 from the declared document.page
+    oe-2026-despesa-bruta-administracao-central  engine value          352 472 389 960
+      ↳ #page=6 from the declared document.page
+    oe-2026-despesa-consolidada-administracao-central engine value          245 121 564 003
+      ↳ #page=6 from the declared document.page
+    oe-2026-receita-bruta-administracao-central  engine value          354 784 746 550
+      ↳ #page=6 from the declared document.page
+    oe-2026-receita-consolidada-administracao-central engine value          298 378 541 802
+      ↳ #page=6 from the declared document.page
+    oe-2026-despesa-total                        engine value          237 671 399 053
+      ↳ #page=2 from the declared document.page
+    oe-2026-despesa-consolidada-seguranca-social engine value          89 625 306 487,00
+      ↳ #page=2 from the declared document.page
+    oe-2026-receita-consolidada-seguranca-social engine value          96 083 302 726,00
+      ↳ #page=2 from the declared document.page
+    oe-2026-receita-efetiva-administracao-central-seguranca-social engine value          129 181,8
+      ↳ #page=49 from the declared document.page
+    execucao-2026-08-receita-efetiva-administracao-central-seguranca-social engine value          79 618,7
+      ↳ #page=49 from the declared document.page
+    oe-2026-despesa-efetiva-administracao-central-seguranca-social engine value          130 971,6
+      ↳ #page=49 from the declared document.page
+    execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social engine value          80 464,5
+      ↳ #page=49 from the declared document.page
+    oe-2026-saldo-global-administracao-central-seguranca-social engine value          −1 789,8
+      ↳ #page=49 from the declared document.page
+    execucao-2026-08-saldo-global-administracao-central-seguranca-social engine value          −845,8
+      ↳ #page=49 from the declared document.page
+    oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social engine value          −10 551,7
+      ↳ #page=49 from the declared document.page
+    execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social engine value          1 491,8
+      ↳ #page=49 from the declared document.page
+    oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social engine value          −1 420,4
+      ↳ #page=49 from the declared document.page
+    execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social engine value          625,5
+      ↳ #page=49 from the declared document.page
+    execucao-2026-08-receita-efetiva-administracao-central engine value          58 070,1
+      ↳ #page=50 from the declared document.page
+    execucao-2026-08-despesa-efetiva-administracao-central engine value          64 038,6
+      ↳ #page=50 from the declared document.page
+    execucao-2026-08-saldo-global-administracao-central engine value          −5 968,5
+      ↳ #page=50 from the declared document.page
+    execucao-2026-08-despesa-programa-001        engine value          5 044,9
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-002        engine value          347,5
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-003        engine value          265,3
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-004        engine value          5 337,6
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-005        engine value          5 212,7
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-006        engine value          1 134,6
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-007        engine value          799,9
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-008        engine value          92,2
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-009        engine value          1 633,8
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-010        engine value          3 434,9
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-011        engine value          1 233,6
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-012        engine value          1 844,5
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-013        engine value          4 902,5
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-014        engine value          2 621,1
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-015        engine value          11 822,6
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-016        engine value          17 636,8
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-017        engine value          1 004,0
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-018        engine value          288,7
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-019        engine value          92,3
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-despesa-programa-020        engine value          836,4
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-subtotal-programas          engine value          65 585,6
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-fluxos-entre-programas      engine value          1 610,3
+      ↳ #page=72 from the declared document.page
+    execucao-2026-08-diferencas-consolidacao-programas engine value          63,3
+      ↳ #page=72 from the declared document.page
+    oe-2026-despesa-funcao-01                    engine value          34 593,1
+    oe-2026-despesa-funcao-02                    engine value          3 384,9
+    oe-2026-despesa-funcao-03                    engine value          5 495,1
+    oe-2026-despesa-funcao-04                    engine value          12 267,1
+    oe-2026-despesa-funcao-05                    engine value          2 392
+    oe-2026-despesa-funcao-06                    engine value          1 534,1
+    oe-2026-despesa-funcao-07                    engine value          17 799,3
+    oe-2026-despesa-funcao-08                    engine value          1 092,1
+    oe-2026-despesa-funcao-09                    engine value          11 372,8
+    oe-2026-despesa-funcao-10                    engine value          14 317,9
+    oe-2026-diferencas-consolidacao-funcional    engine value          0,5
+    oe-2026-receita-orcamental-administracao-central engine value          297 892,4
+    oe-2026-despesa-orcamental-administracao-central engine value          296 420,8
+    oe-2026-receita-efetiva-administracao-central engine value          96 020,6
+    oe-2026-despesa-efetiva-administracao-central engine value          104 249
+    oe-2026-saldo-global-administracao-central   engine value          −8 228,4
+    oe-2026-despesa-primaria-administracao-central engine value          97 232,4
+    oe-2026-saldo-primario-administracao-central engine value          −1 211,8
+    oe-2026-ativos-e-passivos-da-despesa-administracao-central engine value          191 368,9
+    oe-2026-ativos-e-passivos-da-receita-administracao-central engine value          201 871,7
+    execucao-2026-07-despesa-funcao-01           engine value          20 258,7
+    execucao-2026-07-despesa-funcao-02           engine value          1 245,4
+    execucao-2026-07-despesa-funcao-03           engine value          2 817,7
+    execucao-2026-07-despesa-funcao-04           engine value          4 964
+    execucao-2026-07-despesa-funcao-05           engine value          728,4
+    execucao-2026-07-despesa-funcao-06           engine value          645
+    execucao-2026-07-despesa-funcao-07           engine value          10 879,2
+    execucao-2026-07-despesa-funcao-08           engine value          469,7
+    execucao-2026-07-despesa-funcao-09           engine value          6 584,4
+    execucao-2026-07-despesa-funcao-10           engine value          7 813,3
+    execucao-2026-07-diferencas-consolidacao-funcional engine value          53,1
+    execucao-2026-07-receita-orcamental-administracao-central engine value          122 039,9
+    execucao-2026-07-despesa-orcamental-administracao-central engine value          126 422,5
+    execucao-2026-07-receita-efetiva-administracao-central engine value          51 377,1
+    execucao-2026-07-despesa-efetiva-administracao-central engine value          56 458,9
+    execucao-2026-07-saldo-global-administracao-central engine value          −5 081,8
+    execucao-2026-07-despesa-primaria-administracao-central engine value          51 548
+    execucao-2026-07-saldo-primario-administracao-central engine value          −170,9
+    execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central engine value          69 963,6
+    execucao-2026-07-ativos-e-passivos-da-receita-administracao-central engine value          70 662,8
+    execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica engine value          281,7
+    despesa-por-funcao-2024-gf01-pt              engine value          5,8
+    despesa-por-funcao-2024-gf01-pt              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf02-pt              engine value          0,9
+    despesa-por-funcao-2024-gf02-pt              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf03-pt              engine value          1,6
+    despesa-por-funcao-2024-gf03-pt              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf04-pt              engine value          3,6
+    despesa-por-funcao-2024-gf04-pt              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf05-pt              engine value          0,7
+    despesa-por-funcao-2024-gf05-pt              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf06-pt              engine value          0,6
+    despesa-por-funcao-2024-gf06-pt              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf07-pt              engine value          6,8
+    despesa-por-funcao-2024-gf07-pt              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf08-pt              engine value          0,8
+    despesa-por-funcao-2024-gf08-pt              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf09-pt              engine value          4,3
+    despesa-por-funcao-2024-gf09-pt              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf10-pt              engine value          17,1
+    despesa-por-funcao-2024-gf10-pt              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf01-es              engine value          5,8
+    despesa-por-funcao-2024-gf01-es              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf02-es              engine value          0,9
+    despesa-por-funcao-2024-gf02-es              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf03-es              engine value          1,8
+    despesa-por-funcao-2024-gf03-es              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf04-es              engine value          5,1
+    despesa-por-funcao-2024-gf04-es              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf05-es              engine value          1,0
+    despesa-por-funcao-2024-gf05-es              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf06-es              engine value          0,5
+    despesa-por-funcao-2024-gf06-es              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf07-es              engine value          6,5
+    despesa-por-funcao-2024-gf07-es              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf08-es              engine value          1,2
+    despesa-por-funcao-2024-gf08-es              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf09-es              engine value          4,1
+    despesa-por-funcao-2024-gf09-es              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf10-es              engine value          18,7
+    despesa-por-funcao-2024-gf10-es              bandeira 'p': literal conferido junto do valor
+    despesa-por-funcao-2024-gf01-ue              engine value          6,1
+    despesa-por-funcao-2024-gf02-ue              engine value          1,5
+    despesa-por-funcao-2024-gf03-ue              engine value          1,7
+    despesa-por-funcao-2024-gf04-ue              engine value          5,3
+    despesa-por-funcao-2024-gf05-ue              engine value          0,8
+    despesa-por-funcao-2024-gf06-ue              engine value          0,7
+    despesa-por-funcao-2024-gf07-ue              engine value          7,3
+    despesa-por-funcao-2024-gf08-ue              engine value          1,2
+    despesa-por-funcao-2024-gf09-ue              engine value          4,7
+    despesa-por-funcao-2024-gf10-ue              engine value          19,6
+      sem recorte: oe-2026-despesa-ministerio-encargos-gerais-do-estado · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-negocios-estrangeiros · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-financas · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-economia-e-coesao-territorial · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-reforma-do-estado · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-defesa-nacional · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-infraestruturas-e-habitacao · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-justica · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-administracao-interna · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-saude · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-ambiente-e-energia · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-cultura-juventude-e-desporto · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-ministerio-agricultura-e-mar · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-bruta-administracao-central · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-consolidada-administracao-central · no record in the vertical's snippets.json
+      sem recorte: oe-2026-receita-bruta-administracao-central · no record in the vertical's snippets.json
+      sem recorte: oe-2026-receita-consolidada-administracao-central · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-total · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-consolidada-seguranca-social · no record in the vertical's snippets.json
+      sem recorte: oe-2026-receita-consolidada-seguranca-social · no record in the vertical's snippets.json
+      sem recorte: oe-2026-receita-efetiva-administracao-central-seguranca-social · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-receita-efetiva-administracao-central-seguranca-social · no record in the vertical's snippets.json
+      sem recorte: oe-2026-despesa-efetiva-administracao-central-seguranca-social · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social · no record in the vertical's snippets.json
+      sem recorte: oe-2026-saldo-global-administracao-central-seguranca-social · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-saldo-global-administracao-central-seguranca-social · no record in the vertical's snippets.json
+      sem recorte: oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social · no record in the vertical's snippets.json
+      sem recorte: oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-receita-efetiva-administracao-central · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-efetiva-administracao-central · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-saldo-global-administracao-central · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-001 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-002 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-003 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-004 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-005 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-006 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-007 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-008 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-009 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-010 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-011 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-012 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-013 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-014 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-015 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-016 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-017 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-018 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-019 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-despesa-programa-020 · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-subtotal-programas · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-fluxos-entre-programas · no record in the vertical's snippets.json
+      sem recorte: execucao-2026-08-diferencas-consolidacao-programas · no record in the vertical's snippets.json
+    oe-2026-cem-euros-ministerio-encargos-gerais-do-estado derived               2,19   (= 2.19, engine agrees)
+    oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros derived               0,29   (= 0.29, engine agrees)
+    oe-2026-cem-euros-ministerio-negocios-estrangeiros derived               0,17   (= 0.17, engine agrees)
+    oe-2026-cem-euros-ministerio-financas        derived               60,12   (= 60.12, engine agrees)
+    oe-2026-cem-euros-ministerio-economia-e-coesao-territorial derived               1,68   (= 1.68, engine agrees)
+    oe-2026-cem-euros-ministerio-reforma-do-estado derived               0,05   (= 0.05, engine agrees)
+    oe-2026-cem-euros-ministerio-defesa-nacional derived               1,09   (= 1.09, engine agrees)
+    oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao derived               2,87   (= 2.87, engine agrees)
+    oe-2026-cem-euros-ministerio-justica         derived               0,70   (= 0.7, engine agrees)
+    oe-2026-cem-euros-ministerio-administracao-interna derived               0,94   (= 0.94, engine agrees)
+    oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao derived               4,16   (= 4.16, engine agrees)
+    oe-2026-cem-euros-ministerio-saude           derived               13,28   (= 13.28, engine agrees)
+    oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social derived               10,69   (= 10.69, engine agrees)
+    oe-2026-cem-euros-ministerio-ambiente-e-energia derived               0,88   (= 0.88, engine agrees)
+    oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto derived               0,30   (= 0.3, engine agrees)
+    oe-2026-cem-euros-ministerio-agricultura-e-mar derived               0,59   (= 0.59, engine agrees)
+    oe-2026-cem-euros-funcao-01                  derived               33,18   (= 33.18, engine agrees)
+    oe-2026-cem-euros-funcao-02                  derived               3,25   (= 3.25, engine agrees)
+    oe-2026-cem-euros-funcao-03                  derived               5,27   (= 5.27, engine agrees)
+    oe-2026-cem-euros-funcao-04                  derived               11,77   (= 11.77, engine agrees)
+    oe-2026-cem-euros-funcao-05                  derived               2,29   (= 2.29, engine agrees)
+    oe-2026-cem-euros-funcao-06                  derived               1,47   (= 1.47, engine agrees)
+    oe-2026-cem-euros-funcao-07                  derived               17,07   (= 17.07, engine agrees)
+    oe-2026-cem-euros-funcao-08                  derived               1,05   (= 1.05, engine agrees)
+    oe-2026-cem-euros-funcao-09                  derived               10,91   (= 10.91, engine agrees)
+    oe-2026-cem-euros-funcao-10                  derived               13,73   (= 13.73, engine agrees)
+    execucao-2026-07-cem-euros-funcao-01         derived               35,88   (= 35.88, engine agrees)
+    execucao-2026-07-cem-euros-funcao-02         derived               2,21   (= 2.21, engine agrees)
+    execucao-2026-07-cem-euros-funcao-03         derived               4,99   (= 4.99, engine agrees)
+    execucao-2026-07-cem-euros-funcao-04         derived               8,79   (= 8.79, engine agrees)
+    execucao-2026-07-cem-euros-funcao-05         derived               1,29   (= 1.29, engine agrees)
+    execucao-2026-07-cem-euros-funcao-06         derived               1,14   (= 1.14, engine agrees)
+    execucao-2026-07-cem-euros-funcao-07         derived               19,27   (= 19.27, engine agrees)
+    execucao-2026-07-cem-euros-funcao-08         derived               0,83   (= 0.83, engine agrees)
+    execucao-2026-07-cem-euros-funcao-09         derived               11,66   (= 11.66, engine agrees)
+    execucao-2026-07-cem-euros-funcao-10         derived               13,84   (= 13.84, engine agrees)
+
+  recortes: 0 de 59 linha(s) com página · 0 bytes
+
+  0 nova(s) · 57 alterada(s) · 129 inalterada(s) · registo a escrever
+  dívida de proveniência que atravessa: 0 linha(s) com excerto "[a verificar]" — nenhuma
+  rótulo da fonte: 150 de 186 linha(s), 92 rótulo(s) distinto(s): ADMINISTRAÇÃO INTERNA · AGRICULTURA E MAR · AMBIENTE E ENERGIA · ASSUNTOS ECONÓMICOS · ATIVOS E PASSIVOS DA DESPESA · ATIVOS E PASSIVOS DA RECEITA · Agricultura e Mar · Ambiente e Energia · Ativos financeiros líquidos de reembolsos · COESÃO TERRITORIAL · CULTURA · CULTURA, JUVENTUDE E DESPORTO · Coesão Territorial · Cultura · DEFESA · DEFESA NACIONAL · DESPESA EFETIVA · DESPESA ORÇAMENTAL · DESPESA PRIMÁRIA · DESPESA TOTAL · DESPESA TOTAL CONSOLIDADA · DESPORTO, RECREAÇÃO, CULTURA E RELIGIÃO · DIFERENÇAS DE CONSOLIDAÇÃO · Defence · Defesa · Despesa efetiva · Despesa total consolidada no âmbito do setor … · Diferenças de consolidação (3) · ECONOMIA · ECONOMIA E COESAO TERRITORIAL · EDUCAÇÃO · EDUCAÇÃO, CIÊNCIA E INOVAÇÃO · ENCARGOS GERAIS DO ESTADO · ENSINO SUPERIOR, CIÊNCIA E INOVAÇÃO · Economia · Economic affairs · Education · Educação · Ensino Superior, Ciência e Inovação · Environmental protection · FINANÇAS · Finanças · Fluxos para outros Programas Orçamentais (2) · GESTÃO DA DÍVIDA PÚBLICA · GOVERNAÇÃO · General public services · Gestão da Dívida Pública · Governação · HABITAÇÃO E INFRAESTRUTURAS COLETIVAS · Health · Housing and community amenities · INFRAESTRUTURAS E HABITACÃO · INFRAESTRUTURAS E HABITAÇÃO · Infraestruturas e Habitação · JUSTIÇA · JUVENTUDE E DESPORTO · Justiça · Juventude e Desporto · NEGÓCIOS ESTRANGEIROS · PRESIDÊNCIA DO CONSELHO DE MINISTROS · PROTEÇÃO DO AMBIENTE · PROTEÇÃO SOCIAL · Passivos financeiros líquidos de amortizações · Public order and safety · RECEITA EFETIVA · RECEITA ORÇAMENTAL · RECEITA TOTAL · RECEITA TOTAL CONSOLIDADA · REFORMA DO ESTADO · REPRESENTAÇÃO EXTERNA · Receita efetiva · Receita total consolidada no âmbito do setor … · Recreation, culture and religion · Reforma do Estado · Representação Externa · SALDO GLOBAL · SALDO GLOBAL DAS AP EM CP · SALDO PRIMÁRIO · SAÚDE · SEGURANÇA E ORDEM PÚBLICA · SEGURANÇA INTERNA · SERVIÇOS GERAIS DAS ADMINISTRAÇÕES PÚBLICAS · Saldo global · Saúde · Segurança Interna · Social protection · Subtotal despesa efetiva consolidada dos Prog… · TRABALHO, SOLIDARIEDADE E SEGURANÇA SOCIAL · Total da Administração Central e Segurança So… · Trabalho, Solidariedade e Segurança Social · ÓRGÃOS DE SOBERANIA · Órgãos de Soberania
+  sem rótulo impresso: 36 de 186 linha(s), a que a página chama pelo título do documento: oe-2026-cem-euros-ministerio-encargos-gerais-do-estado, oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros, oe-2026-cem-euros-ministerio-negocios-estrangeiros, oe-2026-cem-euros-ministerio-financas, oe-2026-cem-euros-ministerio-economia-e-coesao-territorial, oe-2026-cem-euros-ministerio-reforma-do-estado, oe-2026-cem-euros-ministerio-defesa-nacional, oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao e mais 28
+  pending_page: 0 linha(s) sem sítio desenhado onde ser impressa
+
+  Escritas 186 linhas em <sitio>/ledger/claims
+  Registo em <sitio>/ledger/cruzamentos/oe1.json
+  Recortes: 0 ficheiro(s) escrito(s) de 0 em <sitio>/public/recortes
+  Manifesto dos recortes em <motor>/publisher/recortes/manifest.oe1.json
+

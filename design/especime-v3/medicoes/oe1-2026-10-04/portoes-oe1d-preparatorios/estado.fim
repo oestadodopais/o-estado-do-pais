@@ -1,0 +1,29 @@
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/motor.cabeca
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/motor.fim
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/motor.inicio
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/motor.log
+?? design/especime-v3/medicoes/oe1-2026-10-04/corrida-oe1d-preparatoria.cabeca
+?? design/especime-v3/medicoes/oe1-2026-10-04/corrida-oe1d-preparatoria.inicio
+?? design/especime-v3/medicoes/oe1-2026-10-04/custo-oe1d.json
+?? design/especime-v3/medicoes/oe1-2026-10-04/l1-oe1d.json
+?? design/especime-v3/medicoes/oe1-2026-10-04/medidas-oe1d.json
+?? design/especime-v3/medicoes/oe1-2026-10-04/medir-oe1d.py
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-l1-check-lugar.log
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-motor-commit.cabeca
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-motor-commit.codigo
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-motor-commit.fim
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-motor-commit.inicio
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-motor-commit.log
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-motor-commit2.cabeca
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-motor-commit2.inicio
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-test.cabeca
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-test.codigo
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-test.fim
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-test.inicio
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-test.log
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-travessia.cabeca
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-travessia.codigo
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-travessia.fim
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-travessia.inicio
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-travessia.log
+?? design/especime-v3/medicoes/oe1-2026-10-04/portoes-oe1d-preparatorios/
