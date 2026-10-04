@@ -179,6 +179,21 @@ def html_measures(measures, rows, names, current_head):
     measures.prove("html_cabeca", version,
                    lambda v: require(v.get("commit") == current_head, "HTML: a construção não é da cabeça atual"),
                    lambda v: v.update(commit="0" * 40), "Trocar a cabeça da construção é recusado.", version["commit"])
+    def editions(candidate):
+        # A mesma régua da construção, com a planta apenas no módulo em memória.
+        script = "import {LINGUA_DAS_EDICOES as edicoes} from './src/i18n/lingua-dos-titulos.mjs';"
+        if candidate["entrada_orfa"]:
+            script += "edicoes['gov_10a_exp'] = null;"
+        script += "await import('./scripts/check-lingua.mjs');"
+        result = subprocess.run(["node", "--input-type=module", "-e", script], cwd=SITE,
+                                text=True, capture_output=True)
+        if candidate["entrada_orfa"]:
+            assert result.returncode == 1 and "a declaração de língua nomeia a edição «gov_10a_exp»" in result.stdout, \
+                "Edições: a planta não produziu a queixa específica da régua"
+        require(result.returncode == 0, "Edições: a régua recusa a declaração que nenhuma linha usa")
+    measures.prove("edicoes_sem_declaracao_orfa", {"entrada_orfa": False}, editions,
+                   lambda candidate: candidate.update(entrada_orfa=True),
+                   "Reintroduzir gov_10a_exp no módulo em memória faz o portão da língua recusar a edição órfã.")
     script = "import {unidadeDaLinha} from './src/i18n/unidades.mjs'; let b=''; for await(const c of process.stdin)b+=c; console.log(JSON.stringify(Object.fromEntries(JSON.parse(b).map(u=>[u,{pt:unidadeDaLinha(u,'pt'),en:unidadeDaLinha(u,'en')}]))));"
     result = subprocess.run(["node", "--input-type=module", "-e", script], cwd=SITE,
                             input=json.dumps(sorted({r["unit"] for r in rows.values()})), text=True, capture_output=True)
