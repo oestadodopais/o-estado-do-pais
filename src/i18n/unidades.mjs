@@ -54,6 +54,8 @@
  * raras, para que quem lê veja primeiro o que mais se rende.
  */
 export const UNIDADES = {
+  // OE1: tradução de dicionário da unidade monetária.
+  'milhões de euros': 'million euros',
   /* RP1: tradução de unidades publicadas pelo INE e pelo Eurostat. Desde o K2-b (02.10.2026) o dinheiro escreve-se
      com a palavra e não com o símbolo, nas duas edições (§1.127, decisão 4; a regra portuguesa é
      `dinheiroComPalavra()`, abaixo): «euros per month», como a entrada «euros por mês» já dizia. A chave continua a

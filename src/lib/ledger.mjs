@@ -1658,10 +1658,54 @@ export function validateLedger() {
             && normalValor(objeto.ind_string) === normalValor(c.value) + ' ' + c.source_flag;
         } catch { bandeiraLiteral = false; }
       }
+      // OE1-b: resposta JSON-stat literal de uma única célula, sem fabricar um excerto.
+      if (c.source === 'Eurostat' && c.excerpt.trimStart().startsWith('{')) {
+        try {
+          const j = JSON.parse(c.excerpt);
+          const u = new URL(String(c.source_url));
+          const dims = ['freq', 'unit', 'sector', 'cofog99', 'na_item', 'geo', 'time'];
+          // O literal numérico compara-se em decimal, sem arredondar em float64.
+          const literal = c.excerpt.match(/"value"\s*:\s*\{\s*"0"\s*:\s*(-?\d+(?:\.\d+)?)\s*\}/)?.[1];
+          const valor = parsePtDecimal(c.value);
+          bandeiraLiteral = c.source_flag === 'p' && u.origin === 'https://ec.europa.eu'
+            && u.pathname === '/eurostat/api/dissemination/statistics/1.0/data/gov_10a_exp'
+            && j.extension?.id === 'GOV_10A_EXP'
+            && j.id.length === dims.length && dims.every(d => j.id.includes(d))
+            && j.size.length === dims.length && j.size.every((/** @type {unknown} */ n) => n === 1)
+            && dims.every(d => u.searchParams.getAll(d).length === 1
+              && JSON.stringify(j.dimension[d].category.index) === JSON.stringify({[String(u.searchParams.get(d))]: 0}))
+            && u.searchParams.get('time') === c.reference_date
+            && JSON.stringify(j.status) === JSON.stringify({'0': c.source_flag})
+            && j.extension.status.label[c.source_flag] === 'provisional'
+            && Object.keys(j.value).length === 1 && Object.hasOwn(j.value, '0')
+            && literal !== undefined && valor !== null && Decimal.de(literal).igual(valor);
+        } catch { bandeiraLiteral = false; }
+      } else if (c.source === 'Eurostat') {
+        // O formato anterior conserva o país, o período, o valor e a bandeira.
+        // Os nomes nacionais são os de dimension.geo na fonte. O quadro regional
+        // anterior escreve o código geo e consulta várias regiões no mesmo pedido.
+        const nomes = /** @type {Record<string, string>} */ ({
+          PT: 'Portugal', EU27_2020: 'European Union - 27 countries (from 2020)',
+        });
+        try {
+          const u = new URL(String(c.source_url));
+          const partes = c.excerpt.trimEnd().match(/\u2014 ([^\u2014]+) \u2014 (\d{4}): (-?\d+(?:\.\d+)?) ([a-z]+)$/);
+          const valor = parsePtDecimal(c.value);
+          const geos = u.searchParams.getAll('geo');
+          const regional = partes?.[1].match(/^geo ([A-Z0-9]+) \(.+\)$/);
+          const lugar = geos.length === 1 ? partes?.[1] === nomes[geos[0]]
+            : u.pathname.endsWith('/nama_10r_2gdp') && regional != null && geos.includes(regional[1]);
+          bandeiraLiteral = u.origin === 'https://ec.europa.eu'
+            && u.pathname.startsWith('/eurostat/api/dissemination/statistics/1.0/data/')
+            && lugar && partes !== null
+            && partes[2] === c.reference_date && partes[4] === c.source_flag
+            && valor !== null && Decimal.de(partes[3]).igual(valor);
+        } catch { bandeiraLiteral = false; }
+      }
       if (!bandeiraLiteral) {
         errors.push(
           `${onde} declara a bandeira "${c.source_flag}" mas o "excerpt" não conserva a bandeira junto do valor. ` +
-            `A fonte escreve a bandeira a seguir ao valor, separada por um espaço: transcreva-a assim.`,
+            `Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte.`,
         );
       }
     }

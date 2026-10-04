@@ -563,6 +563,12 @@ export const EXCLUIDOS = [
  */
 export const INTERNAL_SOURCES = [
   {
+    // OE1-b: estas linhas aguardam a página do governo, que é um bloco seguinte.
+    // Este registo não cria um trabalho em WORKS, uma página ou uma rota.
+    id: 'oe-2026',
+    label: { pt: 'O dinheiro do Estado por ministério e por função (OE1)', en: 'State money by ministry and function (OE1)' },
+  },
+  {
     id: 'o-estado-do-pais',
     label: { pt: 'O Estado do País, apuramento próprio', en: 'O Estado do País, own count' },
   },
