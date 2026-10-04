@@ -44,6 +44,7 @@ import { conferirPecasDaFaixa } from '../cartao/faixa.mjs';
 import { PALAVRAS_DA_FAIXA, MEDIDAS_FORA_DOS_QUADROS } from '../../src/data/faixa-da-uniao.mjs';
 import { RESSALVAS_DA_UNIAO } from '../../src/data/ressalvas-da-uniao.mjs';
 import { FIGURAS, DEFINICOES_DAS_MEDIDAS } from '../../src/data/figuras.mjs';
+import { UNIDADES_DOS_CARTOES } from '../../src/data/unidades-dos-cartoes.mjs';
 import { t } from '../../src/i18n/strings.mjs';
 
 const norm = (s) => String(s ?? '').replace(/\s+/g, ' ').trim();
@@ -252,8 +253,18 @@ export function conferirSeccaoDosPaises(root, lang, rota, { series, paises }) {
     if (!nome || nome.getAttribute('data-de-linha') !== String(serie.linha_de_portugal)) {
       erro('F20g', sid, `o nome da faixa não é o de um cartão da linha «${serie.linha_de_portugal}»`);
     }
-    const unidade = faixa.querySelectorAll('.paises-unidade [data-serie-campo="unit"]');
-    if (unidade.length !== 1 || unidade[0].getAttribute('data-serie') !== sid) erro('F20g', sid, 'a unidade não é o campo «unit» da série');
+    /* A UNIDADE PELA DECLARAÇÃO, COMO NO CARTÃO (passagem R2-b, 04.10.2026). Onde a linha portuguesa tem unidade
+       declarada (`UNIDADES_DOS_CARTOES`), a faixa diz essa, com a marca da unidade da casa e a da faixa, e o texto da
+       declaração na língua da página; onde não tem, diz o campo «unit» da série, como antes. Uma de cada vez, e uma só. */
+    const declarada = /** @type {Record<string, any>} */ (UNIDADES_DOS_CARTOES)[String(serie.linha_de_portugal)];
+    const daSerie = faixa.querySelectorAll('.paises-unidade [data-serie-campo="unit"]');
+    const daCasa = faixa.querySelectorAll('.paises-unidade [data-unidade-da-casa]');
+    if (declarada) {
+      const texto = norm((declarada[lang] ?? []).map((/** @type {any} */ p) => (typeof p === 'string' ? p : String(p?.nl ?? ''))).join(''));
+      if (daSerie.length !== 0 || daCasa.length !== 1 || daCasa[0].getAttribute('data-unidade-da-casa') !== String(serie.linha_de_portugal) || daCasa[0].getAttribute('data-unidade-na-faixa') !== sid || norm(daCasa[0].text) !== texto) {
+        erro('F20g', sid, `a linha «${serie.linha_de_portugal}» tem unidade declarada, e a faixa não a diz («${texto}»), uma vez e com as marcas da casa e da faixa`);
+      }
+    } else if (daCasa.length !== 0 || daSerie.length !== 1 || daSerie[0].getAttribute('data-serie') !== sid) erro('F20g', sid, 'a unidade não é o campo «unit» da série');
     const periodo = faixa.querySelectorAll('.paises-unidade [data-linha-de-serie]');
     if (periodo.length !== 1 || periodo[0].getAttribute('data-linha-de-serie') !== sid || periodo[0].getAttribute('data-de-campo') !== 'periodo') {
       erro('F20g', sid, 'o período do cabeçalho não é o campo «periodo» da série');
@@ -481,6 +492,20 @@ export function plantasDaSeccao(html, lang, rota, ctx) {
     u.insertAdjacentHTML('afterend', html);
     return true;
   }, 'logo por baixo do nome');
+  /* R2-b (04.10.2026): a unidade da série de volta numa faixa cuja linha tem unidade declarada, e a unidade declarada
+     numa faixa cuja linha não a tem. */
+  planta('a unidade da série numa faixa com unidade declarada', 'F20g', (r) => {
+    const u = r.querySelector('[data-faixa-paises="taxa-de-emprego-2025-paises"] .paises-unidade [data-unidade-da-casa]');
+    if (!u) return false;
+    u.replaceWith('<span data-serie="taxa-de-emprego-2025-paises" data-serie-campo="unit" class="campo-da-serie">% da população</span>');
+    return true;
+  }, 'tem unidade declarada, e a faixa não a diz');
+  planta('a unidade declarada numa faixa sem declaração', 'F20g', (r) => {
+    const u = r.querySelector('[data-faixa-paises="divida-publica-2025-paises"] .paises-unidade [data-serie-campo="unit"]');
+    if (!u) return false;
+    u.replaceWith('<span data-unidade-da-casa="divida-publica-2025" data-unidade-na-faixa="divida-publica-2025-paises">% do PIB</span>');
+    return true;
+  }, 'a unidade não é o campo «unit» da série');
   return resultados;
 }
 

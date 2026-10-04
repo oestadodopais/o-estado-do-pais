@@ -60,10 +60,23 @@ function definicaoDoPortao(id, lang, forma = 'cartao') {
  */
 const CAMPOS_DO_APOIO_NA_LINHA = new Set(['excerpt', 'unit', 'name', 'document.title', 'document.locator', 'derivation', 'derivation_en']);
 const CAMPOS_DO_APOIO_NA_ORIGEM = new Set(['excerto', 'excertoEn', 'documento']);
+/**
+ * OS NÚMEROS DA UNIDADE PRESOS AO APOIO, E A ORIGEM DO APOIO PRESA À LINHA (passagem R2-b, 04.10.2026, achado 6 da
+ * leitura a frio do Sol). Um apoio literal provava que o literal estava no campo que dizia, e não que a unidade impressa
+ * dizia o que ele diz: «dos 21 aos 65 anos» passava com o excerto «From 20 to 64 years». Agora cada número da unidade
+ * impressa, em cada língua (idades, anos, percentagens), tem de ser um número de um literal de apoio que esteja mesmo no
+ * seu campo; e uma origem citada como apoio tem de ser da linha do cartão: uma das origens da pergunta declarada da
+ * mesma medida, que o recibo da linha rende, ou o próprio endereço da linha. Um apoio `{ pergunta: true }` não prende
+ * números: a unidade com algarismos precisa de um literal.
+ */
+const numerosDe = (/** @type {unknown} */ t) => [...String(t ?? '').matchAll(/\d+(?:[.,]\d+)?/g)].map((m) => m[0].replace(',', '.'));
 function faltasDoApoioDaUnidade(apoio, linha, id, textos) {
   if (!Array.isArray(apoio) || apoio.length === 0) return ['a declaração não diz apoio nenhum'];
   /** @type {string[]} */
   const faltas = [];
+  /** @type {string[]} */
+  const literaisAchados = [];
+  const origensDaLinha = new Set(/** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[id]?.origens ?? []);
   for (const a of apoio) {
     if (a && a.pergunta === true) {
       for (const l of /** @type {const} */ (['pt', 'en'])) {
@@ -84,7 +97,9 @@ function faltasDoApoioDaUnidade(apoio, linha, id, textos) {
         faltas.push(`o apoio cita o campo «${a.campo}» da origem «${a.origem}», que não existe ou não pode apoiar`);
       } else if (!o[a.campo].includes(literal)) {
         faltas.push(`«${literal}» não está no campo «${a.campo}» da origem «${a.origem}»`);
-      }
+      } else if (!origensDaLinha.has(a.origem) && o.url !== linha?.source_url) {
+        faltas.push(`a origem «${a.origem}» não é da linha "${id}": não está entre as origens da pergunta declarada da medida nem é o endereço da linha`);
+      } else literaisAchados.push(literal);
       continue;
     }
     if (!CAMPOS_DO_APOIO_NA_LINHA.has(a?.campo)) {
@@ -93,6 +108,13 @@ function faltasDoApoioDaUnidade(apoio, linha, id, textos) {
     }
     const valor = a.campo === 'document.title' ? linha?.document?.title : a.campo === 'document.locator' ? linha?.document?.locator : linha?.[a.campo];
     if (typeof valor !== 'string' || !valor.includes(literal)) faltas.push(`«${literal}» não está no campo «${a.campo}» da linha "${id}"`);
+    else literaisAchados.push(literal);
+  }
+  const numerosDosLiterais = new Set(literaisAchados.flatMap(numerosDe));
+  for (const l of /** @type {const} */ (['pt', 'en'])) {
+    for (const n of numerosDe(textos?.[l])) {
+      if (!numerosDosLiterais.has(n)) faltas.push(`o número «${n}» da unidade (${l}) não está em nenhum literal de apoio que a linha ou uma origem dela diga`);
+    }
   }
   return faltas;
 }
@@ -629,7 +651,7 @@ const UE1D = { definicoes: 0 };
    recibo da série, e as formas declaradas. */
 const UE1E = { semPortugal: 0, formaDaSerie: 0, formasDeclaradas: 0 };
 /* K2-c: as unidades da casa vistas nos cartões (a conta que o fim da corrida exige diferente de zero). */
-const UNIDADES_DA_CASA = { vistas: 0, doConcelho: 0, doMapa: 0 };
+const UNIDADES_DA_CASA = { vistas: 0, doConcelho: 0, doMapa: 0, naFaixa: 0 };
 /* O TETO DO ÍNDICE DE DÍVIDA (passagem P4-c, 02.10.2026): a linha que a medida do concelho declara como teto, lida da
    declaração; o cartão do índice mostra-a na linha do estado, sem marca própria, e só ela entra por essa porta. */
 const TETO_DO_INDICE = MEDIDAS_DO_CONCELHO.find((m) => m.chave === 'indice')?.tecto ?? null;
@@ -6332,9 +6354,19 @@ for (const file of ficheirosHtml(DIST)) {
       err(`K2-c: a unidade da casa de "${id}" aparece na página e UNIDADES_DOS_CARTOES não declara unidade nenhuma para essa linha em ${lang}.`);
       continue;
     }
-    if (el.closest?.('[data-cartao-medida]')?.getAttribute('data-cartao-medida') !== id) {
+    /* R2-b (04.10.2026): a faixa dos 27 da página da União diz a unidade pela declaração, como o cartão; a porta é a
+       faixa da série dessa linha (`data-faixa-paises`) e só ela, com a marca que diz de que série é. */
+    const serieDaUnidade = el.getAttribute('data-unidade-na-faixa') ?? null;
+    const naFaixaDaSuaSerie =
+      serieDaUnidade !== null &&
+      serieDaUnidade === (serieDaLinhaDoPortao(SERIES_DO_PORTAO, id)?.id ?? null) &&
+      el.closest?.('[data-faixa-paises]')?.getAttribute('data-faixa-paises') === serieDaUnidade;
+    if (serieDaUnidade !== null && !naFaixaDaSuaSerie) {
+      err(`R2-b: a unidade da casa de "${id}" diz ser da faixa «${serieDaUnidade}», e não está na faixa da série dessa linha.`);
+    } else if (serieDaUnidade === null && el.closest?.('[data-cartao-medida]')?.getAttribute('data-cartao-medida') !== id) {
       err(`K2-c: a unidade da casa de "${id}" está fora do cartão da sua linha: só a linha do valor desse cartão a pode mostrar.`);
     }
+    if (naFaixaDaSuaSerie) UNIDADES_DA_CASA.naFaixa++;
     if (texto !== declarada) {
       err(`K2-c: a unidade da casa de "${id}" diz «${texto}» e a declaração diz «${declarada}» (${lang}).`);
     }
@@ -8725,9 +8757,33 @@ for (const [id] of SERIES_DO_PORTAO) {
 if (UNIDADES_DA_CASA.vistas === 0) {
   erros.push({ rel: 'dist', msg: 'K2-c: nenhuma unidade da casa vista em página nenhuma, e UNIDADES_DOS_CARTOES declara unidades para cartões que as páginas rendem: o leitor está cego.' });
 }
+/* R2-b: as faixas dos 27 cuja linha portuguesa tem unidade declarada dizem-na, nas duas edições da página da União. */
+{
+  const esperadas = [...SERIES_DO_PORTAO.values()].filter((x) => x.eixo === 'pais' && Object.prototype.hasOwnProperty.call(UNIDADES_DOS_CARTOES, x.linha_de_portugal)).length * 2;
+  if (UNIDADES_DA_CASA.naFaixa !== esperadas) {
+    erros.push({ rel: 'dist', msg: `R2-b: as faixas dos 27 deviam dizer a unidade declarada ${esperadas} vezes (as séries cuja linha portuguesa a tem, nas duas edições), e dizem ${UNIDADES_DA_CASA.naFaixa}.` });
+  }
+}
 /* P4-d: o mapa da dívida em «Lugares» diz a unidade da casa na legenda e no cabeçalho da tabela, nas duas edições. */
 if (UNIDADES_DA_CASA.doMapa !== 4) {
   erros.push({ rel: 'dist', msg: `P4-d: o mapa da dívida devia dizer a unidade da casa 4 vezes (a legenda e o cabeçalho da tabela, nas duas edições de «Lugares»), e diz ${UNIDADES_DA_CASA.doMapa}.` });
+}
+/* R2-b (04.10.2026, achado 6 da leitura a frio): o autoteste da ligação entre a unidade impressa e o apoio. A mesma função
+   que confere cada unidade da casa tem de recusar a taxa de emprego declarada «dos 21 aos 65 anos» com o apoio dela
+   («From 20 to 64 years»), e o apoio dos jovens citado de uma origem que não é da linha; se não recusar, o portão está
+   cego para o que diz conferir. */
+{
+  const emprego = /** @type {Record<string, any>} */ (UNIDADES_DOS_CARTOES)['taxa-de-emprego-2025'];
+  const jovens = /** @type {Record<string, any>} */ (UNIDADES_DOS_CARTOES)['jovens-nem-2025'];
+  const idades = faltasDoApoioDaUnidade(emprego?.apoio, claims.get('taxa-de-emprego-2025'), 'taxa-de-emprego-2025', { pt: '% das pessoas dos 21 aos 65 anos', en: '% of people aged 21 to 65' });
+  const daOutra = faltasDoApoioDaUnidade([{ origem: 'eurostat-tepsr_sp410-descricao', campo: 'excerto', literal: 'individuals aged 16-74' }], claims.get('jovens-nem-2025'), 'jovens-nem-2025', { pt: '% das pessoas', en: '% of people' });
+  const certa = faltasDoApoioDaUnidade(emprego?.apoio, claims.get('taxa-de-emprego-2025'), 'taxa-de-emprego-2025', { pt: '% das pessoas dos 20 aos 64 anos', en: '% of people aged 20 to 64' });
+  const mordeu = idades.some((f) => f.includes('«21»')) && idades.some((f) => f.includes('«65»')) && daOutra.some((f) => f.includes('não é da linha'));
+  if (!mordeu || certa.length || !jovens) {
+    erros.push({ rel: 'dist', msg: `R2-b: o autoteste da ligação entre a unidade e o apoio falhou (21 a 65: ${idades.length} falta(s); origem de outra linha: ${daOutra.length}; a declaração certa: ${certa.length} falta(s)): o portão não prende os números da unidade ao excerto.` });
+  } else {
+    console.log(`  R2-b, o autoteste da unidade: «dos 21 aos 65 anos» recusada (${idades.length} falta(s)), a origem de outra linha recusada, a declaração certa aceite.`);
+  }
 }
 /* P4-c: o cartão do índice de dívida mostra a unidade da casa nas páginas dos concelhos, nas duas edições. */
 if (UNIDADES_DA_CASA.doConcelho === 0) {

@@ -51,6 +51,7 @@ import { DOMINIOS } from '../src/data/dominios.mjs';
 import { FIGURAS } from '../src/data/figuras.mjs';
 import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO, NOMES_DAS_LINHAS_DERIVADAS } from '../src/data/nomes-das-medidas.mjs';
+import { NOMES_COM_A_VARIACAO_NA_UNIDADE } from '../src/data/unidades-dos-cartoes.mjs';
 import { temAviso } from '../src/lib/aviso-do-motor.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
@@ -788,6 +789,10 @@ const NOMES_POR_FONTE = {
      ficheiro por conta própria e confere, carácter a carácter, que o texto
      rendido é o nome DAQUELA linha. */
   oficial: new Set([...NOMES_OFICIAIS.values()].map((n) => n.pt)),
+  /* O NOME DE NÍVEL DE UM CARTÃO CUJA UNIDADE DECLARADA DIZ A VARIAÇÃO (passagem R2-b, 04.10.2026). Seis cartões de preços
+     dizem a variação na unidade declarada e o nome de nível ao pé dela; fora do cartão, o nome do K2-b continua a dizer a
+     variação. A régua lê a tabela por conta própria, como lê os outros ficheiros. */
+  cartao: new Set(Object.values(NOMES_COM_A_VARIACAO_NA_UNIDADE).flatMap((n) => Object.values(n ?? {}))),
   /* AS OITO MEDIDAS DE UM CONCELHO (B1, peça 2, 21.09.2026). O nome de cada uma
      é declarado uma vez em `src/data/concelhos.mjs`, para os 308 e para as duas
      edições, e é esse nome que o cartão de uma página de lugar escreve. Sem esta
@@ -830,6 +835,7 @@ const NOMES_POR_LINHA = {
      traduz: o par tem as duas chaves com o mesmo texto, para que a conferência
      por edição seja a mesma pergunta que faz às outras fontes. */
   oficial: NOMES_OFICIAIS,
+  cartao: new Map(Object.entries(NOMES_COM_A_VARIACAO_NA_UNIDADE)),
   /* O nome DAQUELA linha, para as 308 × 8: o par sai da mesma lista de que a
      página o tira, mas lido aqui, do lado da régua. */
   concelho: new Map(

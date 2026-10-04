@@ -44,12 +44,19 @@
  * O INVENTÁRIO DECLARADO, `design/especime-v3/rotulos/INVENTARIO.json`: as formas distintas de cada campo, por chave e
  * por edição, com quantas vezes cada uma se rende (os algarismos do período, do estado e da faixa apagados). Escreve-o
  * `--escrever`, que um bloco corre quando muda rótulos, para o diff mostrar ao leitor de outra família cada rótulo que
- * mudou. Sem `--escrever` a régua não escreve na árvore: confere, e compara as formas do nome, da unidade e da dobra com
- * as do inventário declarado (são as que só uma declaração muda), e uma forma que não esteja lá, ou uma chave nova,
- * fecha a construção: um rótulo novo entra pela declaração.
+ * mudou. Sem `--escrever` a régua não escreve na árvore: confere, e compara TODOS os campos de cada chave com o
+ * inventário declarado, com as contagens (passagem R2-b, 04.10.2026, achados 4 e 5 da leitura a frio do Sol): uma forma
+ * que se renda mais ou menos vezes do que o declarado, uma forma ou uma chave nova, e uma chave declarada que não se
+ * rende fecham a construção. É assim que um concelho a menos aparece, embora os 308 partilhem a chave da medida.
+ *
+ * O QUE FALTA TAMBÉM MORDE (R2-b, achado 5): um cartão nacional cuja medida tem valor de referência declarado diz o
+ * estado; um cartão de concelho com valor de uma medida com teto diz a linha do estado, uma vez; um cartão de uma
+ * medida com faixa declarada tem uma frase do lugar e uma da comparação, e um de uma medida sem faixa não tem nenhuma.
  *
  * AS PLANTAS (`--prova`): cópias em memória de páginas construídas, uma por campo e por regra, e cada uma tem de morder
- * com a queixa esperada; as páginas intactas têm de passar (o controlo).
+ * com a queixa esperada; as páginas intactas têm de passar (o controlo). E as plantas da construção inteira
+ * (`plantasDaConstrucao`): uma página trocada no inventário desta construção, comparado com o declarado (um concelho
+ * sem o cartão, uma linha do estado e uma frase da faixa a menos, uma chave declarada que deixa de se render).
  *
  *   node scripts/inventario-rotulos.mjs [--prova] [--json <ficheiro>]     (OEDP_DIST mede outra construção)
  *   node scripts/inventario-rotulos.mjs --escrever                         (escreve o inventário declarado)
@@ -63,8 +70,8 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
 
 import { loadClaims } from '../src/lib/ledger.mjs';
-import { FIGURAS, DEFINICOES_DAS_MEDIDAS, textoDaDefinicao } from '../src/data/figuras.mjs';
-import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
+import { FIGURAS, DEFINICOES_DAS_MEDIDAS, ORIGENS_DAS_DEFINICOES, textoDaDefinicao } from '../src/data/figuras.mjs';
+import { MEDIDAS_DO_DOMINIO_1, DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO, ressalvaDosDiplomasRegionais } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO } from '../src/data/nomes-das-medidas.mjs';
 import { MEDIDAS_DO_CONCELHO } from '../src/data/concelhos.mjs';
 import { UNIDADES, UNIDADES_EM_PORTUGUES } from '../src/i18n/unidades.mjs';
@@ -72,10 +79,13 @@ import {
   UNIDADES_DOS_CARTOES,
   UNIDADES_DA_LINHA_ACEITES_NUM_CARTAO,
   CARTOES_COM_A_UNIDADE_DA_LINHA_EM_DIVIDA,
+  NOMES_COM_A_VARIACAO_NA_UNIDADE,
 } from '../src/data/unidades-dos-cartoes.mjs';
+import { TERMOS_DOS_CARTOES } from '../src/data/termos-dos-cartoes.mjs';
 import { REFERENCIAS_DAS_MEDIDAS } from '../src/data/referencias-das-medidas.mjs';
 import { FAIXA_DAS_MEDIDAS_DO_CONCELHO } from '../src/data/faixa-do-concelho.mjs';
 import { t } from '../src/i18n/strings.mjs';
+import { getSerie } from '../src/lib/series.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const INVENTARIO_DECLARADO = path.join(RAIZ, 'design', 'especime-v3', 'rotulos', 'INVENTARIO.json');
@@ -108,8 +118,15 @@ function primeiraFrase(partes) {
   return norm(fim ? texto.slice(0, (fim.index ?? 0) + 1) : texto);
 }
 
+/** O nome de nível de um cartão cuja unidade declarada diz a variação (R2-b), lido da tabela. @param {string} id @param {'pt'|'en'} lang */
+function nomeDeNivel(id, lang) {
+  const n = /** @type {Record<string, any>} */ (NOMES_COM_A_VARIACAO_NA_UNIDADE)[id];
+  return n && Object.prototype.hasOwnProperty.call(UNIDADES_DOS_CARTOES, id) ? n[lang] ?? n.pt : null;
+}
 /** O nome do projeto declarado de uma linha, pela ordem das declarações. @param {string} id @param {'pt'|'en'} lang */
 function nomeDeclarado(id, lang) {
+  const nivel = nomeDeNivel(id, lang);
+  if (nivel) return { texto: nivel, fonte: 'cartao' };
   const f = FIGURAS.find((x) => x.claim === id);
   if (f?.nome) return { texto: f.nome[lang] ?? f.nome.pt, fonte: 'figuras' };
   const m = MEDIDAS_DO_DOMINIO_1.find((x) => x.claim === id);
@@ -211,6 +228,8 @@ export function conferirPagina(root, { rota, lang, inventario, contas }) {
     c[campo][forma] = (c[campo][forma] ?? 0) + 1;
   };
   const s = t(lang);
+  /** Os termos já explicados nesta página, pela ordem dos cartões (R2-b). */
+  const termosVistos = new Set();
 
   for (const cartao of root.querySelectorAll('article.cartao-medida')) {
     contas.cartoes++;
@@ -271,6 +290,10 @@ export function conferirPagina(root, { rota, lang, inventario, contas }) {
         junta(familia, chave, 'estado', forma);
         if (!formas || !formas.has(forma)) erro('estado', chave, `o estado diz «${forma}», que não é uma forma declarada para o dono da referência da medida`);
         else contas.estados++;
+      } else if (formas) {
+        /* R2-b (04.10.2026, achado 5 da leitura a frio): a régua só conferia o estado que existia; um cartão cuja medida
+           tem valor de referência declarado e que não diz o estado é um rótulo em falta. */
+        erro('estado', chave, 'a medida tem valor de referência declarado e o cartão não diz o estado');
       }
       for (const item of cartao.querySelectorAll('[data-regua="ue"] .cartao-medida-regua-k [data-voz]')) {
         if (visivel(item) !== norm(s.cartao.uniaoEuropeia)) erro('estado', chave, `o rótulo da União na régua diz «${visivel(item)}»`);
@@ -296,6 +319,23 @@ export function conferirPagina(root, { rota, lang, inventario, contas }) {
         else contas.dobras.referencias++;
         junta(familia, chave, 'dobra-referencia', visivel(p));
       }
+      /* O TERMO EXPLICADO (passagem R2-b, 04.10.2026): o primeiro cartão de cada termo declarado em `TERMOS_DOS_CARTOES`,
+         pela ordem da página, explica-o na dobra, com o texto declarado; os outros cartões do termo não o repetem. */
+      const termos = Object.entries(TERMOS_DOS_CARTOES).filter(([, x]) => x.cartoes.includes(/** @type {string} */ (id))).map(([k]) => k);
+      const termo = termos.length === 1 ? termos[0] : null;
+      if (termos.length > 1) erro('dobra', chave, `o cartão está em ${termos.length} termos declarados, e explica no máximo um`);
+      const explicacoes = cartao.querySelectorAll('[data-termo-na-dobra]');
+      const esperado = termo && !termosVistos.has(termo) ? termo : null;
+      if (esperado) {
+        termosVistos.add(esperado);
+        const texto = norm(textoDosPedacos(/** @type {Record<string, any>} */ (TERMOS_DOS_CARTOES)[esperado][lang]));
+        if (explicacoes.length !== 1 || explicacoes[0].getAttribute('data-termo-na-dobra') !== esperado || visivel(explicacoes[0]) !== texto) {
+          erro('dobra', chave, `o primeiro cartão do termo «${esperado}» na página ${explicacoes.length ? `explica «${visivel(explicacoes[0]).slice(0, 70)}»` : 'não o explica'} e a declaração diz «${texto.slice(0, 70)}»`);
+        } else contas.dobras.termos++;
+      } else if (explicacoes.length) {
+        erro('dobra', chave, `o cartão explica o termo «${explicacoes[0].getAttribute('data-termo-na-dobra')}» e não é o primeiro cartão desse termo na página, ou o termo não é dele`);
+      }
+      for (const p of explicacoes) junta(familia, chave, 'dobra-termo', visivel(p));
     } else if (familia === 'concelho') {
       const medida = MEDIDAS_DO_CONCELHO.find((m) => m.chave === chaveDoConcelho);
       if (!medida) {
@@ -317,13 +357,24 @@ export function conferirPagina(root, { rota, lang, inventario, contas }) {
           contas.unidades.da_linha++;
         }
       }
-      for (const v of cartao.querySelectorAll('[data-regua="limite"] [data-voz]')) {
+      const linhasDoEstado = cartao.querySelectorAll('[data-regua="limite"] [data-voz]');
+      for (const v of linhasDoEstado) {
         const forma = visivel(v);
         junta(familia, chave, 'estado', forma);
         if (forma !== norm(s.estado.lei.dentroQueE) && forma !== norm(s.estado.lei.foraQueE)) erro('estado', chave, `a linha do estado diz «${forma}», que não é uma forma declarada do limite legal`);
         else contas.estados++;
       }
+      /* R2-b (04.10.2026, achado 5): uma medida com teto declarado diz o estado em cada cartão com valor, uma vez. */
+      if (medida.tecto && !semValor && linhasDoEstado.length !== 1) erro('estado', chave, `a medida tem teto declarado e o cartão com valor tem ${linhasDoEstado.length} linha(s) do estado, e não uma`);
       const { lugar, comparacao } = formasDaFaixa(/** @type {string} */ (chaveDoConcelho), lang);
+      /* R2-b (04.10.2026, achado 5): uma medida com faixa declarada tem, em cada cartão, uma frase do lugar e uma da
+         comparação; uma medida sem faixa não tem nenhuma. A régua conferia só as frases que existiam. */
+      const comFaixa = Boolean(FAIXA_DAS_MEDIDAS_DO_CONCELHO[/** @type {string} */ (chaveDoConcelho)]?.faixa);
+      const nLugar = cartao.querySelectorAll('[data-faixa-concelho-frase]').length;
+      const nComparacao = cartao.querySelectorAll('[data-faixa-comparacao]').length;
+      if (comFaixa && (nLugar !== 1 || nComparacao !== 1)) erro('faixa', chave, `a medida tem faixa declarada e o cartão tem ${nLugar} frase(s) do lugar e ${nComparacao} da comparação, e não uma de cada`);
+      if (!comFaixa && (nLugar || nComparacao)) erro('faixa', chave, `a medida não tem faixa declarada e o cartão tem ${nLugar + nComparacao} frase(s) da faixa`);
+      else if (comFaixa) contas.faixas.presentes++;
       for (const f of cartao.querySelectorAll('[data-faixa-concelho-frase]')) {
         const copia = parse(f.outerHTML);
         for (const l of copia.querySelectorAll('[data-lugar]')) l.set_content('L');
@@ -369,7 +420,8 @@ export function conferirPagina(root, { rota, lang, inventario, contas }) {
       erro('chave', id, 'um cartão da faixa da União sem figura declarada');
       continue;
     }
-    if (nome !== norm(f.nome[lang] ?? f.nome.pt)) erro('nome', id, `o nome do cartão da União diz «${nome}» e a figura declara «${norm(f.nome[lang] ?? f.nome.pt)}»`);
+    const nomeDaFigura = norm(nomeDeNivel(id, lang) ?? f.nome[lang] ?? f.nome.pt);
+    if (nome !== nomeDaFigura) erro('nome', id, `o nome do cartão da União diz «${nome}» e a declaração diz «${nomeDaFigura}»`);
     const medida = norm(textoDosPedacos(f.medida?.[lang]));
     if (unidade !== medida) erro('unidade', id, `a linha da unidade do cartão da União diz «${unidade}» e a figura declara «${medida}»`);
     const veredicto = li.querySelector('[data-veredicto-referencia]');
@@ -380,6 +432,41 @@ export function conferirPagina(root, { rota, lang, inventario, contas }) {
       if (!formas || !formas.has(forma)) erro('estado', id, `o estado do cartão da União diz «${forma}», que não é uma forma declarada para o dono`);
       else contas.estados++;
     }
+  }
+  /* A FAIXA DOS 27 DA PÁGINA DA UNIÃO (passagem R2-b, 04.10.2026): a unidade diz-se pela declaração, como no cartão, e o
+     nome segue-a (o de nível quando a unidade declarada diz a variação); o que a medida conta é a definição declarada. A
+     chave é a linha portuguesa da série. */
+  for (const a of root.querySelectorAll('article.paises-medida[data-faixa-paises]')) {
+    const serie = /** @type {string} */ (a.getAttribute('data-faixa-paises'));
+    const id = serie.replace(/-paises$/, '');
+    contas.faixas_dos_paises = (contas.faixas_dos_paises ?? 0) + 1;
+    const nomeEl = a.querySelector('.paises-nome-texto');
+    const nome = visivel(nomeEl);
+    const unidadeEl = a.querySelector('.paises-unidade [data-unidade-da-casa], .paises-unidade [data-serie-campo="unit"]');
+    const unidade = visivel(unidadeEl);
+    const oQueConta = visivel(a.querySelector('.paises-o-que-conta'));
+    junta('paises', id, 'nome', nome);
+    junta('paises', id, 'unidade', unidade);
+    junta('paises', id, 'dobra', oQueConta);
+    const casa = /** @type {Record<string, any>} */ (UNIDADES_DOS_CARTOES)[id];
+    if (casa) {
+      const esperada = norm(textoDosPedacos(casa[lang]));
+      if (!unidadeEl || unidadeEl.getAttribute('data-unidade-da-casa') !== id || unidadeEl.getAttribute('data-unidade-na-faixa') !== serie || unidade !== esperada) {
+        erro('unidade', `paises:${id}`, `a unidade da faixa dos 27 diz «${unidade}» e a declaração do cartão diz «${esperada}»`);
+      } else contas.unidades.na_faixa_dos_paises = (contas.unidades.na_faixa_dos_paises ?? 0) + 1;
+    } else {
+      const u = String(getSerie(serie)?.unit ?? '');
+      const esperada = norm(comAPalavra(lang === 'en' && Object.prototype.hasOwnProperty.call(UNIDADES, u) ? /** @type {Record<string, string>} */ (UNIDADES)[u] : u));
+      if (!unidadeEl || unidadeEl.getAttribute('data-serie-campo') !== 'unit' || unidade !== esperada) {
+        erro('unidade', `paises:${id}`, `a unidade da faixa dos 27 diz «${unidade}» e a da série é «${esperada}»`);
+      }
+    }
+    const nomeEsperado = norm((casa ? nomeDeNivel(id, lang) : null) ?? nomeDeclarado(id, lang)?.texto ?? '');
+    if (!nomeEsperado || nome !== nomeEsperado) erro('nome', `paises:${id}`, `o nome da faixa dos 27 diz «${nome}» e a declaração diz «${nomeEsperado}»`);
+    const declarada = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[id];
+    const definicao = declarada ? norm(textoDaDefinicao((declarada.serie ?? declarada)[lang] ?? [])) : '';
+    if (!definicao || oQueConta !== definicao) erro('dobra', `paises:${id}`, `o que a faixa dos 27 diz que a medida conta («${oQueConta.slice(0, 70)}») não é a definição declarada`);
+    else contas.dobras.paises++;
   }
   for (const d of root.querySelectorAll('details.dobra[data-leitura]')) {
     const id = /** @type {string} */ (d.getAttribute('data-leitura'));
@@ -393,6 +480,45 @@ export function conferirPagina(root, { rota, lang, inventario, contas }) {
     const esperada = declarada ? norm(textoDaDefinicao(declarada[lang] ?? declarada.pt)) : '';
     if (def !== esperada) erro('dobra', id, `a definição da dobra da União diz «${def.slice(0, 70)}» e a declaração diz «${esperada.slice(0, 70)}»`);
     else contas.dobras.uniao++;
+  }
+  /* A RESSALVA DE ALCANCE DO RECIBO DO SALÁRIO MÍNIMO (passagem R2-b, 04.10.2026): o que ela diz dos diplomas regionais
+     é a composição da lista declarada, e não um texto escrito à mão. */
+  const L = DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO.linha;
+  if (rota === `/livro-razao/${L}` || rota === `/en/ledger/${L}`) {
+    const alcance = root.querySelector('p.linha-alcance');
+    const esperada = norm((ressalvaDosDiplomasRegionais()[lang] ?? []).map((p) => (typeof p === 'string' ? p : `[${p.marcador}]`)).join(''));
+    const vista = visivel(alcance);
+    junta('recibo', L, 'ressalva', vista);
+    if (!alcance || vista !== esperada) erro('ressalva', L, `a ressalva do recibo diz «${vista.slice(0, 90)}» e a lista dos diplomas regionais compõe «${esperada.slice(0, 90)}»`);
+    else contas.ressalvas = (contas.ressalvas ?? 0) + 1;
+  }
+  return erros;
+}
+
+/**
+ * A LISTA DOS DIPLOMAS REGIONAIS CONTRA AS ORIGENS DA PERGUNTA (passagem R2-b, 04.10.2026). Uma região que a lista dá
+ * como lida tem uma origem que existe, que é origem da pergunta da linha e que nomeia a região como o diploma a escreve;
+ * uma região que a lista dá como por ler não pode ter, entre as origens da pergunta, um diploma que a nomeie. É a
+ * contradição de antes (a ressalva a dizer «não foi lido» por cima do diploma dos Açores, lido a 24.09.2026), dita onde
+ * se apanha.
+ *
+ * @param {typeof DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO} [lista]
+ * @returns {string[]}
+ */
+export function conferirDiplomasRegionais(lista = DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO) {
+  /** @type {string[]} */
+  const erros = [];
+  const origens = /** @type {Record<string, any>} */ (DEFINICOES_DAS_MEDIDAS)[lista.linha]?.origens ?? [];
+  const O = /** @type {Record<string, any>} */ (ORIGENS_DAS_DEFINICOES);
+  const nomeia = (/** @type {string} */ o, /** @type {string} */ regiao) => String(O[o]?.excerto ?? '').includes(regiao) || String(O[o]?.documento ?? '').includes(regiao);
+  for (const r of lista.regioes) {
+    if (r.origem) {
+      if (!O[r.origem] || !origens.includes(r.origem)) erros.push(`R2-ressalva · ${lista.linha}: a lista dá a «${r.chave}» a origem «${r.origem}», que não é uma origem declarada da pergunta da linha`);
+      else if (!nomeia(r.origem, r.nomeNaFonte)) erros.push(`R2-ressalva · ${lista.linha}: a origem «${r.origem}» de «${r.chave}» não nomeia «${r.nomeNaFonte}»`);
+    } else {
+      const achada = origens.find((o) => nomeia(o, r.nomeNaFonte));
+      if (achada) erros.push(`R2-ressalva · ${lista.linha}: a lista diz que o diploma de «${r.chave}» não é fonte de nenhuma linha, e a origem «${achada}» da pergunta nomeia «${r.nomeNaFonte}»`);
+    }
   }
   return erros;
 }
@@ -415,8 +541,8 @@ const rotaDe = (dist, p) => '/' + path.relative(dist, path.dirname(p)).split(pat
 const linguaDe = (rota) => (rota === '/en' || rota.startsWith('/en/') ? 'en' : 'pt');
 const contasNovas = () => ({
   paginas: 0, paginas_com_cartoes: 0, cartoes: 0, familias: {}, nomes: {}, estados: 0,
-  unidades: { declaradas: 0, da_linha: 0, em_divida: 0 }, faixas: { lugar: 0, comparacao: 0 },
-  dobras: { perguntas: 0, notas: 0, referencias: 0, uniao: 0 },
+  unidades: { declaradas: 0, da_linha: 0, em_divida: 0 }, faixas: { lugar: 0, comparacao: 0, presentes: 0 },
+  dobras: { perguntas: 0, notas: 0, referencias: 0, termos: 0, uniao: 0, paises: 0 },
 });
 
 /** @param {string} dist */
@@ -429,12 +555,16 @@ export function conferirConstrucao(dist) {
   for (const p of paginas(dist)) {
     contas.paginas++;
     const html = fs.readFileSync(p, 'utf8');
-    if (!html.includes('cartao-medida') && !html.includes('class="cartao"') && !html.includes('data-leitura=')) continue;
-    contas.paginas_com_cartoes++;
+    const comCartoes = html.includes('cartao-medida') || html.includes('class="cartao"') || html.includes('data-leitura=');
+    if (!comCartoes && !html.includes('linha-alcance')) continue;
+    if (comCartoes) contas.paginas_com_cartoes++;
     const rota = rotaDe(dist, p);
     erros.push(...conferirPagina(parse(html), { rota, lang: linguaDe(rota), inventario, contas }));
   }
   if (contas.cartoes === 0) erros.push('R2 · a régua não viu cartão nenhum: o leitor está cego');
+  /* R2-b: a lista dos diplomas regionais contra as origens da pergunta, e a ressalva vista nas duas edições do recibo. */
+  erros.push(...conferirDiplomasRegionais());
+  if ((contas.ressalvas ?? 0) !== 2) erros.push(`R2-ressalva · a ressalva do recibo do salário mínimo foi conferida em ${contas.ressalvas ?? 0} página(s), e o recibo tem duas edições`);
   return { erros, contas, inventario };
 }
 
@@ -450,43 +580,77 @@ export function inventarioOrdenado(inventario) {
   return out;
 }
 
-/** Os campos que só uma declaração muda, e que o inventário declarado prende. */
-const CAMPOS_PRESOS = ['nome', 'unidade', 'dobra', 'dobra-referencia'];
-
 /**
- * As formas da construção que o inventário declarado não tem, nos campos presos, e as chaves novas.
+ * A CONSTRUÇÃO CONTRA O INVENTÁRIO DECLARADO, COM AS CONTAGENS (passagem R2-b, 04.10.2026, achados 4 e 5 da leitura a
+ * frio do Sol). Até aqui só o nome, a unidade e a dobra se comparavam, e só pela presença da forma: um concelho a menos
+ * não aparecia (os cartões dos 308 partilham a chave da medida, e cada forma conta 308 vezes), uma linha do estado ou
+ * uma frase da faixa em falta não aparecia, e uma chave declarada que deixava de se render era um aviso. Agora cada
+ * campo de cada chave conta: a forma tem de se render exatamente as vezes que o inventário declarado diz, em cada
+ * edição, e uma chave ou uma forma a mais ou a menos fecha a construção. Um rótulo que mude por uma razão boa (um
+ * concelho novo com valor, um empate novo numa faixa) entra pela declaração: corre-se `--escrever` e o diff mostra a
+ * contagem que mudou a quem lê.
  *
  * @param {Record<string, any>} construido @param {Record<string, any>} declarado
  */
 export function diferencasDoDeclarado(construido, declarado) {
   /** @type {string[]} */
-  const novas = [];
-  /** @type {string[]} */
-  const velhas = [];
-  for (const [k, campos] of Object.entries(construido)) {
+  const diferencas = [];
+  const comparadas = { chaves: 0, campos: 0, formas: 0, ocorrencias: 0 };
+  const chaves = [...new Set([...Object.keys(construido), ...Object.keys(declarado)])].sort();
+  for (const k of chaves) {
+    const c = construido[k];
     const d = declarado[k];
     if (!d) {
-      novas.push(`a chave «${k}» não está no inventário declarado`);
+      diferencas.push(`a chave «${k}» rende-se e não está no inventário declarado`);
       continue;
     }
-    for (const c of CAMPOS_PRESOS) {
-      for (const forma of Object.keys(campos[c] ?? {})) {
-        if (!Object.prototype.hasOwnProperty.call(d[c] ?? {}, forma)) novas.push(`«${k}» · ${c}: «${forma.slice(0, 80)}» não está no inventário declarado`);
+    if (!c) {
+      diferencas.push(`a chave «${k}» do inventário declarado não se rende nesta construção`);
+      continue;
+    }
+    comparadas.chaves++;
+    for (const campo of [...new Set([...Object.keys(c), ...Object.keys(d)])].sort()) {
+      comparadas.campos++;
+      const fc = c[campo] ?? {};
+      const fd = d[campo] ?? {};
+      for (const forma of [...new Set([...Object.keys(fc), ...Object.keys(fd)])].sort()) {
+        comparadas.formas++;
+        const n = fc[forma] ?? 0;
+        const m = fd[forma] ?? 0;
+        comparadas.ocorrencias += n;
+        if (n !== m) diferencas.push(`«${k}» · ${campo}: «${forma}» rende-se ${n} vez(es) e o inventário declarado diz ${m}`);
       }
     }
   }
-  for (const [k, campos] of Object.entries(declarado)) {
-    if (!construido[k]) {
-      velhas.push(`a chave «${k}» do inventário declarado já não se rende`);
-      continue;
-    }
-    for (const c of CAMPOS_PRESOS) {
-      for (const forma of Object.keys(campos[c] ?? {})) {
-        if (!Object.prototype.hasOwnProperty.call(construido[k][c] ?? {}, forma)) velhas.push(`«${k}» · ${c}: «${forma.slice(0, 80)}» já não se rende`);
+  return { diferencas, comparadas };
+}
+
+/**
+ * O inventário de uma construção com uma página trocada por outra, sem reler as outras páginas: o que a página intacta
+ * juntava sai, o que a página estragada junta entra. É como as plantas da construção inteira simulam um concelho a menos
+ * ou uma chave que deixa de se render (passagem R2-b).
+ *
+ * @param {Record<string, any>} construido @param {Map<string, any>} intacta @param {Map<string, any>} estragada
+ */
+export function inventarioComAPaginaTrocada(construido, intacta, estragada) {
+  /** @type {Record<string, any>} */
+  const out = JSON.parse(JSON.stringify(construido));
+  for (const [inv, sinal] of [[intacta, -1], [estragada, 1]]) {
+    for (const [k, e] of /** @type {Map<string, any>} */ (inv)) {
+      out[k] ??= {};
+      for (const [campo, formas] of Object.entries(e.campos)) {
+        out[k][campo] ??= {};
+        for (const [forma, n] of Object.entries(/** @type {Record<string, number>} */ (formas))) {
+          const v = (out[k][campo][forma] ?? 0) + sinal * n;
+          if (v === 0) delete out[k][campo][forma];
+          else out[k][campo][forma] = v;
+        }
+        if (Object.keys(out[k][campo]).length === 0) delete out[k][campo];
       }
+      if (Object.keys(out[k]).length === 0) delete out[k];
     }
   }
-  return { novas, velhas };
+  return out;
 }
 
 /* --------------------------------------------------------------------------- as plantas */
@@ -622,7 +786,129 @@ export function plantas(dist) {
     c.removeAttribute('data-cartao-medida');
     return true;
   }, /^R2-chave · \/precos · \?: um cartão de medida sem a marca da sua linha/);
+  /* R2-b (04.10.2026, achado 5 da leitura a frio): o que falta também morde, e não só o que está errado. */
+  planta('r2b-estado-que-falta-num-cartao-nacional', 'estado', 'estado-e-economia/index.html', (r) => {
+    const v = r.querySelector('[data-cartao-medida="divida-publica-2025"] [data-veredicto-referencia]');
+    if (!v) return false;
+    v.remove();
+    return true;
+  }, /^R2-estado · \/estado-e-economia · divida-publica-2025: a medida tem valor de referência declarado e o cartão não diz o estado/);
+  planta('r2b-estado-do-limite-que-falta', 'estado', 'municipios/evora/index.html', (r) => {
+    const v = r.querySelector('article.cartao-medida[data-medida-chave="indice"] [data-regua="limite"]');
+    if (!v) return false;
+    v.remove();
+    return true;
+  }, /^R2-estado · \/municipios\/evora · concelho:indice: a medida tem teto declarado e o cartão com valor tem 0 linha\(s\) do estado/);
+  planta('r2b-frase-do-lugar-que-falta', 'faixa', 'en/municipalities/evora/index.html', (r) => {
+    const f = r.querySelector('article.cartao-medida[data-medida-chave="ganho"] [data-faixa-concelho-frase]');
+    if (!f) return false;
+    f.remove();
+    return true;
+  }, /^R2-faixa · \/en\/municipalities\/evora · concelho:ganho: a medida tem faixa declarada e o cartão tem 0 frase\(s\) do lugar e 1 da comparação/);
+  /* R2-b (04.10.2026): a unidade da faixa dos 27 pela declaração, o termo explicado na primeira vez e o nome de nível. */
+  planta('r2b-unidade-da-faixa-dos-paises-pela-serie', 'unidade', 'uniao-europeia/index.html', (r) => {
+    const u = r.querySelector('article.paises-medida[data-faixa-paises="taxa-de-emprego-2025-paises"] [data-unidade-da-casa]');
+    if (!u) return false;
+    u.replaceWith('<span data-serie="taxa-de-emprego-2025-paises" data-serie-campo="unit" class="campo-da-serie">% da população</span>');
+    return true;
+  }, /^R2-unidade · \/uniao-europeia · paises:taxa-de-emprego-2025: a unidade da faixa dos 27 diz «% da população» e a declaração do cartão diz «% das pessoas dos 20 aos 64 anos»/);
+  planta('r2b-termo-trocado', 'dobra', 'areas/economia-e-coesao-territorial/index.html', (r) => {
+    const p = r.querySelector('[data-termo-na-dobra="vab"]');
+    if (!p) return false;
+    p.set_content('O VAB é a riqueza das empresas.');
+    return true;
+  }, /^R2-dobra · .*: o primeiro cartão do termo «vab» na página explica «O VAB é a riqueza das empresas\.»/);
+  planta('r2b-termo-repetido', 'dobra', 'en/areas/economia-e-coesao-territorial/index.html', (r) => {
+    const p = r.querySelector('[data-termo-na-dobra="vab"]');
+    const cartoes = r.querySelectorAll('article.cartao-medida').filter((c) => ['evora-vab-empresarial-2024', 'evora-concentracao-vab4-2024', 'portugal-concentracao-vab4-2024'].includes(c.getAttribute('data-cartao-medida') ?? ''));
+    const segundo = cartoes.find((c) => !c.querySelector('[data-termo-na-dobra]'));
+    if (!p || !segundo) return false;
+    segundo.insertAdjacentHTML('beforeend', p.outerHTML);
+    return true;
+  }, /^R2-dobra · \/en\/areas\/economia-e-coesao-territorial · .*: o cartão explica o termo «vab» e não é o primeiro cartão desse termo na página/);
+  planta('r2b-ressalva-escrita-a-mao', 'ressalva', 'livro-razao/retribuicao-minima-mensal-garantida-continente-2026/index.html', (r) => {
+    const p = r.querySelector('p.linha-alcance');
+    if (!p) return false;
+    p.set_content('Este valor é o do território continental. Os Açores e a Madeira fixam o seu por diploma regional próprio, que não foi lido: [a verificar].');
+    return true;
+  }, /^R2-ressalva · \/livro-razao\/retribuicao-minima-mensal-garantida-continente-2026 · retribuicao-minima-mensal-garantida-continente-2026: a ressalva do recibo diz «Este valor é o do território continental\. Os Açores e a Madeira fixam/);
+  {
+    /* A lista a dar o diploma dos Açores por ler, com ele entre as origens da pergunta: a contradição de antes. */
+    const lista = { ...DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO, regioes: DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO.regioes.map((r) => (r.chave === 'acores' ? { ...r, origem: null } : r)) };
+    const erros = conferirDiplomasRegionais(lista);
+    const mordeu = erros.some((e) => /a lista diz que o diploma de «acores» não é fonte de nenhuma linha, e a origem «dre-dlr-37-2023-a» da pergunta nomeia «Região Autónoma dos Açores»/.test(e));
+    resultados.push({ nome: 'r2b-diploma-dos-acores-dado-como-por-ler', campo: 'ressalva', mordeu, ...(mordeu ? {} : { queixa: erros.join(' | ') || 'nenhuma queixa' }) });
+    if (conferirDiplomasRegionais().length) controlo.push('r2b-diploma-dos-acores-dado-como-por-ler: a lista intacta não passa');
+  }
+  planta('r2b-nome-de-nivel-trocado', 'nome', 'precos/index.html', (r) => {
+    const n = r.querySelector('[data-cartao-medida="ipc-combustiveis-variacao-homologa"] .cartao-medida-nome');
+    if (!n) return false;
+    n.set_content('Preços dos combustíveis, variação num ano');
+    return true;
+  }, /^R2-nome · \/precos · ipc-combustiveis-variacao-homologa: o nome diz «Preços dos combustíveis, variação num ano» \(cartao\) e a declaração \(cartao\) diz «Preços dos combustíveis»/);
   return { resultados, controlo };
+}
+
+/**
+ * AS PLANTAS DA CONSTRUÇÃO INTEIRA (passagem R2-b, 04.10.2026, achados 4 e 5 da leitura a frio). Cada uma troca uma
+ * página no inventário da construção (`inventarioComAPaginaTrocada`) e compara o resultado com o inventário declarado:
+ * a diferença esperada tem de aparecer. É a prova de que a contagem morde onde a conferência de uma página sozinha não
+ * vê nada: um concelho sem o cartão, uma linha do estado e uma frase da faixa a menos, e uma chave declarada que deixa
+ * de se render.
+ *
+ * @param {string} dist @param {Record<string, any>} construido @param {Record<string, any>} declarado
+ */
+export function plantasDaConstrucao(dist, construido, declarado) {
+  /** @type {{ nome: string, campo: string, mordeu: boolean, queixa?: string }[]} */
+  const resultados = [];
+  const inventarioDaPagina = (rel, root) => {
+    const rota = '/' + path.dirname(rel).split(path.sep).join('/').replace(/^\.$/, '');
+    const inventario = new Map();
+    conferirPagina(root, { rota, lang: linguaDe(rota), inventario, contas: contasNovas() });
+    return inventario;
+  };
+  const planta = (nome, campo, rel, trocar, mordida) => {
+    const p = path.join(dist, rel);
+    if (!fs.existsSync(p)) {
+      resultados.push({ nome, campo, mordeu: false, queixa: `não existe ${rel}` });
+      return;
+    }
+    const html = fs.readFileSync(p, 'utf8');
+    const root = parse(html);
+    if (!trocar(root)) {
+      resultados.push({ nome, campo, mordeu: false, queixa: 'a planta não encontrou o que estragar' });
+      return;
+    }
+    const trocado = inventarioOrdenado(new Map(Object.entries(inventarioComAPaginaTrocada(construido, inventarioDaPagina(rel, parse(html)), inventarioDaPagina(rel, root))).map(([k, campos]) => [k, { campos }])));
+    const { diferencas } = diferencasDoDeclarado(trocado, declarado);
+    const mordeu = diferencas.some((e) => mordida.test(e));
+    resultados.push({ nome, campo, mordeu, ...(mordeu ? {} : { queixa: diferencas.slice(0, 3).join(' | ') || 'nenhuma diferença' }) });
+  };
+  planta('r2b-concelho-sem-o-cartao', 'contagem', 'municipios/evora/index.html', (r) => {
+    const c = r.querySelector('article.cartao-medida[data-medida-chave="indice"]');
+    if (!c) return false;
+    c.remove();
+    return true;
+  }, /^«concelho\|pt\|concelho:indice» · nome: «Índice de dívida» rende-se 307 vez\(es\) e o inventário declarado diz 308$/);
+  planta('r2b-estado-a-menos-na-contagem', 'estado', 'en/state-and-economy/index.html', (r) => {
+    const v = r.querySelector('[data-cartao-medida="divida-publica-2025"] [data-veredicto-referencia]');
+    if (!v) return false;
+    v.remove();
+    return true;
+  }, /^«nacional\|en\|divida-publica-2025» · estado: «outside the Commission’s reference value \(above # %\)» rende-se 1 vez\(es\) e o inventário declarado diz 2$/);
+  planta('r2b-frase-do-lugar-a-menos-na-contagem', 'faixa', 'municipios/evora/index.html', (r) => {
+    const f = r.querySelector('article.cartao-medida[data-medida-chave="indice"] [data-faixa-concelho-frase]');
+    if (!f) return false;
+    f.remove();
+    return true;
+  }, /^«concelho\|pt\|concelho:indice» · faixa: «L \(#\) está em #\.º lugar entre os # concelhos com valor no índice de dívida, do mais baixo para o mais alto\.» rende-se \d+ vez\(es\) e o inventário declarado diz \d+$/);
+  planta('r2b-chave-declarada-que-nao-se-rende', 'chave', 'areas/administracao-interna/index.html', (r) => {
+    const c = r.querySelector('article.cartao-medida[data-cartao-medida="evora-camara-lugares"]');
+    if (!c) return false;
+    c.remove();
+    return true;
+  }, /^a chave «nacional\|pt\|evora-camara-lugares» do inventário declarado não se rende nesta construção$/);
+  return resultados;
 }
 
 /* --------------------------------------------------------------------------- a corrida */
@@ -667,14 +953,18 @@ if (eDireto) {
     console.log(`R2 · o inventário declarado escrito: ${Object.keys(construido).length} chaves, ${contas.cartoes} cartões, ${contas.paginas} páginas.`);
     process.exit(0);
   }
+  /** @type {Record<string, any>} */
+  let declarado = {};
   if (!fs.existsSync(INVENTARIO_DECLARADO)) {
     erros.push(`R2 · não existe o inventário declarado (${path.relative(RAIZ, INVENTARIO_DECLARADO)}): escreve-se com --escrever`);
   } else {
-    const declarado = JSON.parse(fs.readFileSync(INVENTARIO_DECLARADO, 'utf8')).inventario ?? {};
+    declarado = JSON.parse(fs.readFileSync(INVENTARIO_DECLARADO, 'utf8')).inventario ?? {};
     comparacaoComODeclarado = diferencasDoDeclarado(construido, declarado);
-    for (const n of comparacaoComODeclarado.novas) erros.push(`R2-declarado · ${n}: um rótulo novo entra pela declaração (corre-se --escrever depois de o ler)`);
+    for (const n of comparacaoComODeclarado.diferencas) erros.push(`R2-declarado · ${n}: um rótulo ou uma contagem que muda entra pela declaração (corre-se --escrever depois de o ler)`);
   }
   const prov = prova ? plantas(dist) : { resultados: [], controlo: [] };
+  /* R2-b: as plantas da construção inteira, sobre o inventário desta construção e o declarado. */
+  if (prova) prov.resultados.push(...plantasDaConstrucao(dist, construido, declarado));
   for (const c of prov.controlo) erros.push(`R2 · o controlo das plantas não passou: ${c}`);
   for (const p of prov.resultados) if (!p.mordeu) erros.push(`R2 · a planta não mordeu: ${p.nome} (${p.queixa})`);
   const formas = {};
@@ -686,8 +976,9 @@ if (eDireto) {
     contas,
     chaves: Object.keys(construido).length,
     formas_por_campo: formas,
-    em_dia_com_o_declarado: comparacaoComODeclarado ? comparacaoComODeclarado.novas.length === 0 : null,
-    formas_declaradas_que_ja_nao_se_rendem: comparacaoComODeclarado ? comparacaoComODeclarado.velhas.length : null,
+    em_dia_com_o_declarado: comparacaoComODeclarado ? comparacaoComODeclarado.diferencas.length === 0 : null,
+    diferencas_do_declarado: comparacaoComODeclarado ? comparacaoComODeclarado.diferencas.length : null,
+    comparado_com_o_declarado: comparacaoComODeclarado ? comparacaoComODeclarado.comparadas : null,
     plantas: prov.resultados,
   };
   const j = process.argv.indexOf('--json');
@@ -698,7 +989,10 @@ if (eDireto) {
     `R2 · rótulos: ${contas.paginas} página(s) lidas, ${contas.paginas_com_cartoes} com cartões, ${contas.cartoes} cartão(ões) ` +
       `(${Object.entries(contas.familias).map(([k, v]) => `${k} ${v}`).join(', ')}), ${relatorio.chaves} chave(s); ` +
       `unidades declaradas ${contas.unidades.declaradas}, da linha ${contas.unidades.da_linha}, em dívida ${contas.unidades.em_divida}; ` +
-      `estados ${contas.estados}; frases da faixa ${contas.faixas.lugar}+${contas.faixas.comparacao}; ` +
+      `estados ${contas.estados}; frases da faixa ${contas.faixas.lugar}+${contas.faixas.comparacao} (${contas.faixas.presentes} cartões com a faixa inteira); ` +
+      (comparacaoComODeclarado
+        ? `contra o declarado: ${comparacaoComODeclarado.comparadas.chaves} chave(s), ${comparacaoComODeclarado.comparadas.campos} campo(s), ${comparacaoComODeclarado.comparadas.formas} forma(s) com a contagem, ${comparacaoComODeclarado.comparadas.ocorrencias} ocorrência(s), ${comparacaoComODeclarado.diferencas.length} diferença(s); `
+        : '') +
       `dobras ${contas.dobras.perguntas} perguntas, ${contas.dobras.notas} notas, ${contas.dobras.referencias} referências, ${contas.dobras.uniao} na União; ` +
       `${prova ? `${prov.resultados.filter((p) => p.mordeu).length} de ${prov.resultados.length} plantas a morder; ` : ''}` +
       `${erros.length} erro(s).`,

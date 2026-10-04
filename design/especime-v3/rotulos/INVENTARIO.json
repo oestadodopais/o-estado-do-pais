@@ -1,6 +1,6 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "d9b168b950c2dc84b7402983bd684c814a5a10a5",
+ "cabeca": "d64bf97500414e9de4e576dc2dd150703fc6810b",
  "contas": {
   "paginas": 7466,
   "paginas_com_cartoes": 656,
@@ -12,26 +12,33 @@
    "camaras": 2
   },
   "nomes": {
-   "projeto": 224,
+   "projeto": 214,
    "medidas": 24,
-   "figuras": 70
+   "figuras": 66,
+   "cartao": 14
   },
   "estados": 688,
   "unidades": {
-   "declaradas": 776,
+   "declaradas": 780,
    "da_linha": 4442,
-   "em_divida": 6
+   "em_divida": 2,
+   "na_faixa_dos_paises": 18
   },
   "faixas": {
    "lugar": 2464,
-   "comparacao": 2464
+   "comparacao": 2464,
+   "presentes": 2464
   },
   "dobras": {
    "perguntas": 138,
    "notas": 4928,
    "referencias": 12,
-   "uniao": 42
-  }
+   "termos": 8,
+   "uniao": 42,
+   "paises": 20
+  },
+  "faixas_dos_paises": 20,
+  "ressalvas": 2
  },
  "inventario": {
   "camaras|en|camaras": {
@@ -85,7 +92,7 @@
   },
   "concelho|en|concelho:divida": {
    "dobra": {
-    "The council’s debt that counts towards the legal limit at year end (DGAL’s “dívida total”, without non-budget debts and the exceptions in the law).": 308
+    "The council’s debt that counts towards the legal limit at year end (DGAL’s “dívida total”, without non-budget debts, the exceptions in the law and the contribution to the municipal support fund, the “Fundo de Apoio Municipal”).": 308
    },
    "nome": {
     "Total municipal debt": 308
@@ -261,7 +268,7 @@
   },
   "concelho|pt|concelho:divida": {
    "dobra": {
-    "A dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais e as exceções da lei).": 308
+    "A dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais, as exceções da lei e a contribuição para o Fundo de Apoio Municipal).": 308
    },
    "nome": {
     "Dívida total da câmara": 308
@@ -413,10 +420,10 @@
   },
   "dobra|en|desempenho-das-exportacoes-2025": {
    "dobra": {
-    "How much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD changed over three years (export performance against advanced economies)?": 1
+    "Over three years, how much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD (the advanced economies) changed?": 1
    },
    "nome": {
-    "Share of exports, three-year change": 1
+    "Portugal’s share of advanced economies’ exports (export market share)": 1
    }
   },
   "dobra|en|desemprego-de-longa-duracao-2025": {
@@ -581,10 +588,10 @@
   },
   "dobra|pt|desempenho-das-exportacoes-2025": {
    "dobra": {
-    "Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)?": 1
+    "Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (as economias avançadas)?": 1
    },
    "nome": {
-    "Quota nas exportações, variação em três anos": 1
+    "Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)": 1
    }
   },
   "dobra|pt|desemprego-de-longa-duracao-2025": {
@@ -863,13 +870,13 @@
   },
   "nacional|en|desempenho-das-exportacoes-2025": {
    "dobra": {
-    "How much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD changed over three years (export performance against advanced economies)?": 2
+    "Over three years, how much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD (the advanced economies) changed?": 2
    },
    "estado": {
     "within the Commission’s reference value (above −# %)": 2
    },
    "nome": {
-    "Share of exports, three-year change": 2
+    "Portugal’s share of advanced economies’ exports (export market share)": 2
    },
    "periodo": {
     "in #": 2
@@ -878,7 +885,7 @@
     "#:#within the Commission’s reference value (above −# %)": 2
    },
    "unidade": {
-    "% of the OECD and non-OECD EU countries total, three-year change": 2
+    "% change over three years": 2
    }
   },
   "nacional|en|desemprego-de-longa-duracao-2025": {
@@ -1085,6 +1092,9 @@
    }
   },
   "nacional|en|evora-concentracao-vab4-2024": {
+   "dobra-termo": {
+    "Gross value added is the value of what is produced minus the value of the goods and services used up in producing it.": 1
+   },
    "nome": {
     "Share of the four largest companies in gross value added, in Évora": 1
    },
@@ -1206,6 +1216,9 @@
    }
   },
   "nacional|en|evora-divida-inicio-mandato-reexpressa": {
+   "dobra-termo": {
+    "Restated means presented again later: it is the debt at the start of the term as a later management report of the council presents it.": 1
+   },
    "nome": {
     "Debt at the start of the term, restated": 1
    },
@@ -1636,6 +1649,9 @@
    }
   },
   "nacional|en|factor-sustentabilidade-2026": {
+   "dobra-termo": {
+    "The factor multiplies the amount of the pension: below one, the pension falls, and the gap to one is the share that is cut.": 1
+   },
    "nome": {
     "Pension sustainability factor": 1
    },
@@ -1756,7 +1772,7 @@
     "How much have food and non-alcoholic beverage prices changed since the same month a year earlier?": 1
    },
    "nome": {
-    "Prices of food and non-alcoholic beverages, change over a year": 1
+    "Prices of food and non-alcoholic beverages": 1
    },
    "periodo": {
     "in August #": 1
@@ -1773,7 +1789,7 @@
     "How much have fuel and lubricant prices for vehicles changed since the same month a year earlier?": 1
    },
    "nome": {
-    "Fuel prices, change over a year": 1
+    "Fuel prices": 1
    },
    "periodo": {
     "in August #": 1
@@ -1790,7 +1806,7 @@
     "How much have the prices of electricity, gas and other fuels used at home changed since the same month a year earlier?": 1
    },
    "nome": {
-    "Home energy prices, change over a year": 1
+    "Home energy prices": 1
    },
    "periodo": {
     "in August #": 1
@@ -1807,7 +1823,7 @@
     "How much have rents actually paid for housing changed since the same month a year earlier?": 1
    },
    "nome": {
-    "Rent prices, change over a year": 1
+    "Rent prices": 1
    },
    "periodo": {
     "in August #": 1
@@ -1824,7 +1840,7 @@
     "How much has the average level of consumer prices excluding housing changed over the last twelve months?": 1
    },
    "nome": {
-    "Prices excluding housing, twelve-month average change": 1
+    "Prices excluding housing": 1
    },
    "periodo": {
     "in August #": 1
@@ -2030,6 +2046,9 @@
    }
   },
   "nacional|en|pib-pc-acores-2024": {
+   "dobra-termo": {
+    "Output per inhabitant is converted, with purchasing power parities, into a fictive currency that removes price differences between countries, and is given against the EU average, which is 100.": 1
+   },
    "nome": {
     "Gross domestic product per inhabitant in the Azores": 1
    },
@@ -2215,7 +2234,7 @@
     "Among the # EU countries in #, the lowest value is −# (Finland) and the highest is # (Hungary); the EU average is #. Portugal (#) ranks #nd from the highest.": 1
    },
    "nome": {
-    "House prices, annual change": 2
+    "House prices": 2
    },
    "periodo": {
     "in #": 2
@@ -2624,13 +2643,13 @@
   },
   "nacional|pt|desempenho-das-exportacoes-2025": {
    "dobra": {
-    "Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)?": 2
+    "Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (as economias avançadas)?": 2
    },
    "estado": {
     "dentro do valor de referência da Comissão (acima de −# %)": 2
    },
    "nome": {
-    "Quota nas exportações, variação em três anos": 2
+    "Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)": 2
    },
    "periodo": {
     "em #": 2
@@ -2639,7 +2658,7 @@
     "#:#dentro do valor de referência da Comissão (acima de −# %)": 2
    },
    "unidade": {
-    "% do total OCDE e UE não-OCDE, variação em três anos": 2
+    "% de variação em três anos": 2
    }
   },
   "nacional|pt|desemprego-de-longa-duracao-2025": {
@@ -2846,6 +2865,9 @@
    }
   },
   "nacional|pt|evora-concentracao-vab4-2024": {
+   "dobra-termo": {
+    "O valor acrescentado bruto (VAB) é o valor do que se produz menos o valor dos bens e serviços consumidos para o produzir.": 1
+   },
    "nome": {
     "Peso das quatro maiores empresas no valor acrescentado, em Évora": 1
    },
@@ -2967,6 +2989,9 @@
    }
   },
   "nacional|pt|evora-divida-inicio-mandato-reexpressa": {
+   "dobra-termo": {
+    "Reexpressa quer dizer apresentada de novo mais tarde: é a dívida do início do mandato como a apresenta um relatório de gestão posterior da câmara.": 1
+   },
    "nome": {
     "Dívida do início do mandato, reexpressa": 1
    },
@@ -3397,6 +3422,9 @@
    }
   },
   "nacional|pt|factor-sustentabilidade-2026": {
+   "dobra-termo": {
+    "O fator multiplica o montante da pensão: abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta.": 1
+   },
    "nome": {
     "Fator de sustentabilidade das pensões": 1
    },
@@ -3517,7 +3545,7 @@
     "Quanto mudaram os preços dos alimentos e das bebidas não alcoólicas face ao mesmo mês do ano anterior?": 1
    },
    "nome": {
-    "Preços dos alimentos e das bebidas não alcoólicas, variação num ano": 1
+    "Preços dos alimentos e das bebidas não alcoólicas": 1
    },
    "periodo": {
     "em agosto de #": 1
@@ -3534,7 +3562,7 @@
     "Quanto mudaram os preços dos combustíveis e dos lubrificantes para os veículos face ao mesmo mês do ano anterior?": 1
    },
    "nome": {
-    "Preços dos combustíveis, variação num ano": 1
+    "Preços dos combustíveis": 1
    },
    "periodo": {
     "em agosto de #": 1
@@ -3551,7 +3579,7 @@
     "Quanto mudaram os preços da eletricidade, do gás e dos outros combustíveis usados em casa face ao mesmo mês do ano anterior?": 1
    },
    "nome": {
-    "Preços da energia em casa, variação num ano": 1
+    "Preços da energia em casa": 1
    },
    "periodo": {
     "em agosto de #": 1
@@ -3568,7 +3596,7 @@
     "Quanto mudaram as rendas efetivamente pagas pela habitação face ao mesmo mês do ano anterior?": 1
    },
    "nome": {
-    "Preços das rendas, variação num ano": 1
+    "Preços das rendas": 1
    },
    "periodo": {
     "em agosto de #": 1
@@ -3585,7 +3613,7 @@
     "Quanto mudou o nível médio dos preços no consumidor sem a habitação nos últimos doze meses?": 1
    },
    "nome": {
-    "Preços sem a habitação, variação média em doze meses": 1
+    "Preços sem a habitação": 1
    },
    "periodo": {
     "em agosto de #": 1
@@ -3791,6 +3819,9 @@
    }
   },
   "nacional|pt|pib-pc-acores-2024": {
+   "dobra-termo": {
+    "O produto por habitante converte-se, pelas paridades do poder de compra, numa moeda fictícia que tira as diferenças de preços entre países, e diz-se face à média da União, que é 100.": 1
+   },
    "nome": {
     "Produto interno bruto por habitante nos Açores": 1
    },
@@ -3976,7 +4007,7 @@
     "Entre os # países da União, em #, o valor mais baixo é −# (Finlândia) e o mais alto # (Hungria); a média da União é #. Portugal (#) está em #.º lugar, do mais alto para o mais baixo.": 1
    },
    "nome": {
-    "Preços da habitação, variação anual": 2
+    "Preços da habitação": 2
    },
    "periodo": {
     "em #": 2
@@ -4253,6 +4284,236 @@
     "% das pessoas dos 20 aos 64 anos": 2
    }
   },
+  "paises|en|desemprego-de-longa-duracao-2025": {
+   "dobra": {
+    "What share of people aged 15 to 74 who work or are looking for work (the labour force) is out of work and has been actively seeking employment for at least a year?": 1
+   },
+   "nome": {
+    "Long-term unemployment": 1
+   },
+   "unidade": {
+    "% of people working or looking for work": 1
+   }
+  },
+  "paises|en|divida-publica-2025": {
+   "dobra": {
+    "How much does general government owe, as a percentage of the value of the final goods and services the economy produces in a year (GDP)?": 1
+   },
+   "nome": {
+    "Government debt": 1
+   },
+   "unidade": {
+    "% of GDP": 1
+   }
+  },
+  "paises|en|ihpc-variacao-homologa": {
+   "dobra": {
+    "How much have consumer prices changed since the same month a year earlier, on the harmonised measure used to compare European Union countries?": 1
+   },
+   "nome": {
+    "Inflation in the European comparison": 1
+   },
+   "unidade": {
+    "% change over twelve months": 1
+   }
+  },
+  "paises|en|precos-da-habitacao-2025": {
+   "dobra": {
+    "How much have the transaction prices of homes purchased by households changed in a year?": 1
+   },
+   "nome": {
+    "House prices": 1
+   },
+   "unidade": {
+    "average annual % change": 1
+   }
+  },
+  "paises|en|racio-s80-s20-2025": {
+   "dobra": {
+    "How many times greater is the total income of the fifth of the population with the highest income than that of the fifth with the lowest?": 1
+   },
+   "nome": {
+    "Income of the richest fifth compared with the poorest fifth": 1
+   },
+   "unidade": {
+    "times": 1
+   }
+  },
+  "paises|en|risco-de-pobreza-ou-exclusao-2025": {
+   "dobra": {
+    "What share of the population is in at least one of three situations: income below 60 % of the income that leaves half of the country’s population above it and half below, the median (at risk of poverty); at least seven out of thirteen deprivations because of a lack of resources (severe material and social deprivation); or living in a household where almost nobody works (very low work intensity), counting each person only once?": 1
+   },
+   "nome": {
+    "At risk of poverty or social exclusion": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "paises|en|sobrecarga-do-custo-da-habitacao-2025": {
+   "dobra": {
+    "What share of people, whether their home is owned with or without a mortgage or rented at market price or at a reduced rent or free (all tenure statuses), are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?": 1
+   },
+   "nome": {
+    "Housing cost overburden": 1
+   },
+   "unidade": {
+    "% of the population": 1
+   }
+  },
+  "paises|en|sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": {
+   "dobra": {
+    "What share of tenants at market rent are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?": 1
+   },
+   "nome": {
+    "Housing cost overburden, tenants at market rent": 1
+   },
+   "unidade": {
+    "% of tenants at market rent": 1
+   }
+  },
+  "paises|en|taxa-de-desemprego-mip-2025": {
+   "dobra": {
+    "What share of people aged 15 to 74 who work or are looking for work (the labour force) is unemployed?": 1
+   },
+   "nome": {
+    "Unemployment rate": 1
+   },
+   "unidade": {
+    "% of people working or looking for work": 1
+   }
+  },
+  "paises|en|taxa-de-emprego-2025": {
+   "dobra": {
+    "What share of people aged 20 to 64 is employed?": 1
+   },
+   "nome": {
+    "Employment rate": 1
+   },
+   "unidade": {
+    "% of people aged 20 to 64": 1
+   }
+  },
+  "paises|pt|desemprego-de-longa-duracao-2025": {
+   "dobra": {
+    "Que parte das pessoas dos 15 aos 74 anos que trabalham ou procuram trabalho (a população ativa) está sem trabalho e procura emprego ativamente há pelo menos um ano?": 1
+   },
+   "nome": {
+    "Desemprego de longa duração": 1
+   },
+   "unidade": {
+    "% de quem trabalha ou procura trabalho": 1
+   }
+  },
+  "paises|pt|divida-publica-2025": {
+   "dobra": {
+    "Quanto devem as administrações públicas, em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?": 1
+   },
+   "nome": {
+    "Dívida pública": 1
+   },
+   "unidade": {
+    "% do PIB": 1
+   }
+  },
+  "paises|pt|ihpc-variacao-homologa": {
+   "dobra": {
+    "Quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que permite comparar os países da União Europeia?": 1
+   },
+   "nome": {
+    "Inflação na comparação europeia": 1
+   },
+   "unidade": {
+    "% de variação em doze meses": 1
+   }
+  },
+  "paises|pt|precos-da-habitacao-2025": {
+   "dobra": {
+    "Quanto mudaram num ano os preços de transação das casas compradas pelas famílias?": 1
+   },
+   "nome": {
+    "Preços da habitação": 1
+   },
+   "unidade": {
+    "% de variação anual média": 1
+   }
+  },
+  "paises|pt|racio-s80-s20-2025": {
+   "dobra": {
+    "Quantas vezes é maior o rendimento total do quinto da população com mais rendimento do que o do quinto com menos?": 1
+   },
+   "nome": {
+    "Rendimento do quinto mais rico face ao quinto mais pobre": 1
+   },
+   "unidade": {
+    "vezes": 1
+   }
+  },
+  "paises|pt|risco-de-pobreza-ou-exclusao-2025": {
+   "dobra": {
+    "Que parte da população está em pelo menos uma de três situações: rendimento abaixo de 60 % do rendimento que deixa metade da população do país acima dele e metade abaixo, o mediano (risco de pobreza); pelo menos sete de treze privações por falta de recursos (privação material e social grave); ou viver num agregado onde quase ninguém trabalha (intensidade de trabalho muito baixa), contando cada pessoa uma única vez?": 1
+   },
+   "nome": {
+    "Risco de pobreza ou exclusão social": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "paises|pt|sobrecarga-do-custo-da-habitacao-2025": {
+   "dobra": {
+    "Que parte das pessoas, em casa própria com ou sem crédito ou arrendada a preço de mercado ou a renda reduzida ou gratuita (todos os regimes de ocupação), vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?": 1
+   },
+   "nome": {
+    "Sobrecarga do custo da habitação": 1
+   },
+   "unidade": {
+    "% da população": 1
+   }
+  },
+  "paises|pt|sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025": {
+   "dobra": {
+    "Que parte dos inquilinos a preço de mercado vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?": 1
+   },
+   "nome": {
+    "Sobrecarga do custo da habitação, inquilinos a preço de mercado": 1
+   },
+   "unidade": {
+    "% dos inquilinos a preço de mercado": 1
+   }
+  },
+  "paises|pt|taxa-de-desemprego-mip-2025": {
+   "dobra": {
+    "Que parte das pessoas dos 15 aos 74 anos que trabalham ou procuram trabalho (a população ativa) está sem emprego?": 1
+   },
+   "nome": {
+    "Taxa de desemprego": 1
+   },
+   "unidade": {
+    "% de quem trabalha ou procura trabalho": 1
+   }
+  },
+  "paises|pt|taxa-de-emprego-2025": {
+   "dobra": {
+    "Que parte das pessoas dos 20 aos 64 anos tem emprego?": 1
+   },
+   "nome": {
+    "Taxa de emprego": 1
+   },
+   "unidade": {
+    "% das pessoas dos 20 aos 64 anos": 1
+   }
+  },
+  "recibo|en|retribuicao-minima-mensal-garantida-continente-2026": {
+   "ressalva": {
+    "This value is for mainland Portugal. In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. In Madeira, the value is set by a separate regional decree, which is not a source of any line in this ledger: [a verificar].": 1
+   }
+  },
+  "recibo|pt|retribuicao-minima-mensal-garantida-continente-2026": {
+   "ressalva": {
+    "Este valor é o do território continental. Nos Açores, a lei regional soma-lhe um acréscimo, e o diploma é uma das fontes da pergunta abaixo. Na Madeira, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: [a verificar].": 1
+   }
+  },
   "uniao|en|abandono-escolar-precoce-2025": {
    "nome": {
     "Early school leaving": 1
@@ -4277,10 +4538,10 @@
     "within the Commission’s reference value (above −# %)": 1
    },
    "nome": {
-    "Share of exports, three-year change": 1
+    "Portugal’s share of advanced economies’ exports (export market share)": 1
    },
    "unidade": {
-    "Percentage of the OECD and non-OECD EU total, three-year change · #": 1
+    "Three-year change, as a percentage · #": 1
    }
   },
   "uniao|en|desemprego-de-longa-duracao-2025": {
@@ -4370,7 +4631,7 @@
     "outside the Commission’s reference value (above # %)": 1
    },
    "nome": {
-    "House prices, annual change": 1
+    "House prices": 1
    },
    "unidade": {
     "Annual change, as a percentage · #": 1
@@ -4484,10 +4745,10 @@
     "dentro do valor de referência da Comissão (acima de −# %)": 1
    },
    "nome": {
-    "Quota nas exportações, variação em três anos": 1
+    "Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)": 1
    },
    "unidade": {
-    "Percentagem do total OCDE e UE não-OCDE, variação em três anos · #": 1
+    "Variação em três anos, em percentagem · #": 1
    }
   },
   "uniao|pt|desemprego-de-longa-duracao-2025": {
@@ -4577,7 +4838,7 @@
     "fora do valor de referência da Comissão (acima de # %)": 1
    },
    "nome": {
-    "Preços da habitação, variação anual": 1
+    "Preços da habitação": 1
    },
    "unidade": {
     "Variação anual, em percentagem · #": 1

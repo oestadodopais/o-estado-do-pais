@@ -1729,6 +1729,14 @@ if (PROVA) {
         { unidades: { ...unidadesReais, 'competencias-digitais-2025': { ...unidadesReais['competencias-digitais-2025'], apoio: [{ origem: 'eurostat-tepsr_sp410-descricao', campo: 'excerto', literal: 'individuals aged 15-74' }] } } }],
       ['uma unidade da casa sem apoio', 'licencas-de-construcao-2025', 'não declara apoio nenhum',
         { unidades: { ...unidadesReais, 'licencas-de-construcao-2025': { ...unidadesReais['licencas-de-construcao-2025'], apoio: [] } } }],
+      /* R2-b (04.10.2026, achado 6 da leitura a frio): as idades da unidade que o excerto de apoio não diz (21 a 65 com
+         o excerto 20 a 64), e o apoio citado de uma origem que não é da linha. */
+      ['as idades da unidade que o apoio não diz', 'taxa-de-emprego-2025', 'o número «21» da unidade da casa (pt) não está em nenhum literal de apoio achado',
+        { unidades: { ...unidadesReais, 'taxa-de-emprego-2025': { ...unidadesReais['taxa-de-emprego-2025'],
+          pt: ['% das pessoas dos ', { nl: '21', motivo: 'escala-de-instrumento' }, ' aos ', { nl: '65', motivo: 'escala-de-instrumento' }, ' anos'],
+          en: ['% of people aged ', { nl: '21', motivo: 'escala-de-instrumento' }, ' to ', { nl: '65', motivo: 'escala-de-instrumento' }] } } }],
+      ['o apoio de uma origem que não é da linha', 'jovens-nem-2025', 'que não é da linha',
+        { unidades: { ...unidadesReais, 'jovens-nem-2025': { ...unidadesReais['jovens-nem-2025'], apoio: [...unidadesReais['jovens-nem-2025'].apoio, { origem: 'eurostat-tepsr_sp410-descricao', campo: 'excerto', literal: 'individuals aged 16-74' }] } } }],
       ['as coordenadas de outra classe etária', 'origem «eurostat-tipslm90-sexo»', 'não são um segmento do excerto',
         { origens: { ...origensReais, 'eurostat-tipslm90-sexo': { ...origensReais['eurostat-tipslm90-sexo'], coordenadas: 'Age class: From 15 to 24 years' } } }],
     ];
