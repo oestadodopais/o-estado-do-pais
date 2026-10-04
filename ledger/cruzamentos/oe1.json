@@ -364,7 +364,7 @@
     "execucao-2026-07-cem-euros-funcao-01": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "47d9dc76891d2ed5a6e02b1bc68f801cd1a557f840ba36dede486ed74d4ae4b4",
+      "exported_row_sha256": "c2cb85484e93c885ff1a2595e37f090d0c88221cbdcd87074afe166e9a733387",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e3f6aee1233520b16acb930ab7919baf207ac893fda75055ffef0edc3d425564",
       "rh_id": "execucao-2026-07-cem-euros-funcao-01",
@@ -375,7 +375,7 @@
     "execucao-2026-07-cem-euros-funcao-02": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "51cdcd1d45efec1178d534024652ae35bab29259e6a028451ba00cda3471d5b0",
+      "exported_row_sha256": "1666cf974761b14739240b9beef747b17e8eb907fa3e8d6ee2489dbe93365999",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "a540ddd095841fc93009dfbc5ec4e66795d27c0e52c3547771f96b9b83780923",
       "rh_id": "execucao-2026-07-cem-euros-funcao-02",
@@ -386,7 +386,7 @@
     "execucao-2026-07-cem-euros-funcao-03": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "0fffc60bad00ee7d4c82c280e545f1cb9762f94686fc6f1316a16abdc112d61d",
+      "exported_row_sha256": "ea733854284fb9922dce59d87e9f7341542a13684eeb13490c69ed0a8782f1c3",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "79bf31d51dada603bb211017019db95e0c7ef9a3e9fbcabd5182ce9a88bf0d87",
       "rh_id": "execucao-2026-07-cem-euros-funcao-03",
@@ -397,7 +397,7 @@
     "execucao-2026-07-cem-euros-funcao-04": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "3d21cd8f12e832c35172bf01640ebebb23a83f57875ea4a67263bcf1bf47c1b4",
+      "exported_row_sha256": "ac38749b11069e0c3357abe7723c727ed611d562a1334b2cbd7530e76b4d7aca",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f6585363e53d614c8f20d5b1502cf4e2a12578ed9966f8ffd2b4244596522e71",
       "rh_id": "execucao-2026-07-cem-euros-funcao-04",
@@ -408,7 +408,7 @@
     "execucao-2026-07-cem-euros-funcao-05": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "0cf236c55b180966f7a4728f021fda244d6d5d211bb107df2cff30a4473f6ac4",
+      "exported_row_sha256": "db2c56288b3574d37389c425e2f1d5c0f5831ef75caa7dd62165c65900d8e654",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "35c6fa0dbd9aad3a4469cc48b2b1668061bc0747a356689a92ff94e293547c22",
       "rh_id": "execucao-2026-07-cem-euros-funcao-05",
@@ -419,7 +419,7 @@
     "execucao-2026-07-cem-euros-funcao-06": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "12acfe12f641d1d6b5fdfcf32a2648596fce37cfdba3531c719b489ad64b18a7",
+      "exported_row_sha256": "3f51adbb48083ca056fdba9eb2153af0d6f57261908b406240c2bae24ee6171b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b27f781435c6441b6f9444422c5d2933bd066a364828f026cb246b15274c4f4e",
       "rh_id": "execucao-2026-07-cem-euros-funcao-06",
@@ -430,7 +430,7 @@
     "execucao-2026-07-cem-euros-funcao-07": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "01769a59d476d639758d557ca318b87b20ccd4f85478af3e1f16943606f7744b",
+      "exported_row_sha256": "06e9af3b98e24f89d420324c7177e457face78b5796afd90898968ae4061a5a3",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "eeea18905f571fbbaf57b829f92422a0b5f754c401822564eeaf16fb3f53f2a7",
       "rh_id": "execucao-2026-07-cem-euros-funcao-07",
@@ -441,7 +441,7 @@
     "execucao-2026-07-cem-euros-funcao-08": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "1c9fd7e4b69e8d43cd3243239fa0cb2f2e902dafa5a7083d11affb6578cf667b",
+      "exported_row_sha256": "ca9fece426d3b7752eb889bf61ac31f70f05642fc98f0baeffc54c5888a969c5",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "90bdaa86dcb69a6ec94140985736618b814fe05f792b4dd3f1596d00ac7d94c1",
       "rh_id": "execucao-2026-07-cem-euros-funcao-08",
@@ -452,7 +452,7 @@
     "execucao-2026-07-cem-euros-funcao-09": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "96d142d991442bce026171dd6bd145502af6123d147dfbe1cb4ed4474f0639b1",
+      "exported_row_sha256": "f849391f609a988f38b9b0c5ac20febcdce2288a0aacd0d4575953f526c91939",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "58de89b98d42a57333dc84ef1a47c9691ffe8de01359cd3f3d3f167e79e54643",
       "rh_id": "execucao-2026-07-cem-euros-funcao-09",
@@ -463,7 +463,7 @@
     "execucao-2026-07-cem-euros-funcao-10": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "8f2fe4a4e0eee2c49ede518f6bcd84bee0d3b1945f1bb1f907f19d98297ddc90",
+      "exported_row_sha256": "c1af6260b170232105544317b5361f19b99795c742eafd72ae2f6f0e3ec3dbac",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "361d325001a8ec913e7e481cc0f75ca6829c5e06f648e346fbd7bf02335dd4d3",
       "rh_id": "execucao-2026-07-cem-euros-funcao-10",
@@ -485,7 +485,7 @@
     "execucao-2026-07-despesa-funcao-01": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "e0b719e844abe2776176146ee113eb851725f946527f5a64d11e58621f23dc71",
+      "exported_row_sha256": "bbc1f41f3b643960528d431f31b979aca439a0c38b11b3491c11df69fafd6b8b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "25d02a2d187f090b0fec11c191dabe8891955d85f0bccfedb96f9b2d2b46431f",
       "rh_id": "execucao-2026-07-despesa-funcao-01",
@@ -496,7 +496,7 @@
     "execucao-2026-07-despesa-funcao-02": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "8a55f8154a14a72945a358234083b73b6ba1ddd56615f649562cbce2b3852285",
+      "exported_row_sha256": "bfc5a52246d6bf90f45236afca53314ed9321e97b370ff72d4cc0ea7774fb813",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4f9c1024bbb99501a3171690cc75ff30d14a8ce1727baa69b8539a6839bc6ec6",
       "rh_id": "execucao-2026-07-despesa-funcao-02",
@@ -507,7 +507,7 @@
     "execucao-2026-07-despesa-funcao-03": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "b705b2c8c81c559e6be3cde3724756456b9cf17e757c8bce8d2ce3a68104ed01",
+      "exported_row_sha256": "f7347880e0d09b7c03f3850935197f395a9a8aea513a8b2d95e15c4b2feb31f6",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cf207b7d3fff0e8ff5aa5d055725e7faec961d21a7a6d8e35f19ee6aeca02098",
       "rh_id": "execucao-2026-07-despesa-funcao-03",
@@ -518,7 +518,7 @@
     "execucao-2026-07-despesa-funcao-04": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "a7c1872c5cf06d2e764142184c90331732a2ec6af50025428b36a92c68642a97",
+      "exported_row_sha256": "7482dd2dc63ef75693ba3a35c6175afaa55a94814b9ba8f11976b071fdfb2c68",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e521a3c57f2a09f0fd6f45dd12219c4699450b25aa23a2d0ebf3cb77f9455020",
       "rh_id": "execucao-2026-07-despesa-funcao-04",
@@ -529,7 +529,7 @@
     "execucao-2026-07-despesa-funcao-05": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "3dcbca74b8d721b291c73d230d167290076ed069cb55a71ad6b5e5ddce5e32cc",
+      "exported_row_sha256": "e85813c026e18b3eeb7d1f2f33240c79c2a4c4abd1ed6a20e2329b89b4e57613",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f0ffea18c44d9baa2e789eef37a4b35ca617e3e8a358bb6534a78971a6cfa0a6",
       "rh_id": "execucao-2026-07-despesa-funcao-05",
@@ -540,7 +540,7 @@
     "execucao-2026-07-despesa-funcao-06": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "2aac7e2d7d9e26a3d925e997d2309f10c163954a7c8c39be45d7ef5ad8335ae5",
+      "exported_row_sha256": "d9722dc8563cb90a880dc0d2ac584d8d8e2a3a9486c70d820b5768f9e04bb5ce",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "685721f1a9f6debcf857d1950d32aa5bf74150d2ba7af7b68848d90c96bdf9e6",
       "rh_id": "execucao-2026-07-despesa-funcao-06",
@@ -551,7 +551,7 @@
     "execucao-2026-07-despesa-funcao-07": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "d0aa4b35037db993eb28a806cd2e514c79b1ef226aa8f2dea854df07c636dc27",
+      "exported_row_sha256": "0ba2213c60e6ade9bc57e6a0abe4527b9c54c0257337d09294361590142cf2be",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d09445b91bd9b6530dae62f2c62b31a180b358319e57861f4269381359eec7a2",
       "rh_id": "execucao-2026-07-despesa-funcao-07",
@@ -562,7 +562,7 @@
     "execucao-2026-07-despesa-funcao-08": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "fde8c486abde102f6496db24b337ae1f3aef32c2dde50529248c139ba66ce569",
+      "exported_row_sha256": "e8d99f86fffde96a1f98aa30f15c7c97d642310e209827315050a764a7283b41",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "26e713c39373f9a24fe8426f7e2370ea9e56a93f52631fb1fdb031ae261d07c9",
       "rh_id": "execucao-2026-07-despesa-funcao-08",
@@ -573,7 +573,7 @@
     "execucao-2026-07-despesa-funcao-09": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "a5772d668984726b927ac1527a4bfa0bfaa3c8e19d985ea0db29a3347329162f",
+      "exported_row_sha256": "c248daa1bce30f01f51190a43cac32bf21708056d035a4697b3e18982522679a",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "db697e9a742055e275c9b1a2783cf9cc9c9a245ef49bf5e4688ce57807bebdfb",
       "rh_id": "execucao-2026-07-despesa-funcao-09",
@@ -584,7 +584,7 @@
     "execucao-2026-07-despesa-funcao-10": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "7c01c7bcb5b52b9412b4b88eecb9d02aa8388472fb63600a0f7734e947036d19",
+      "exported_row_sha256": "864ddf660f45579a5156d493e57981d7046b84a7ede1441c4603ac810168f3df",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "20ec1f64fe1763d4d926fa01ab6fd922e1be2ede098cc25273a66cdb6a67147b",
       "rh_id": "execucao-2026-07-despesa-funcao-10",
@@ -617,7 +617,7 @@
     "execucao-2026-07-diferencas-consolidacao-funcional": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "9b3cdd36248e8c417945701a1d869cf4c13218c8c79a861e5baaf7d75fa0d5a1",
+      "exported_row_sha256": "81e2665f7729938048352f4fe1c118206680154b1fd400b32b045499b8bb2998",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "84ae70967bc53564fc0c69d04382270ad4c5b47a92a8638038f90ad567c1f4ae",
       "rh_id": "execucao-2026-07-diferencas-consolidacao-funcional",
@@ -683,7 +683,7 @@
     "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "51163edceb71fc46f150905d35ab886b21a4ad1aaf09e3a879cf61fad9b25b06",
+      "exported_row_sha256": "b29a200af4409d2467f0ccec277aa9b307351d7f2fd9e8394ac417ccf882da92",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "059d28bc9e86b37c8952614ff05963ff4887a4aa3897634099428cd7b6631dec",
       "rh_id": "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social",
@@ -694,7 +694,7 @@
     "execucao-2026-08-despesa-efetiva-administracao-central": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "263177a86eeb460afe8aa557afb9fad59de40a6ed817e73a94c2fd0c6c698b7c",
+      "exported_row_sha256": "bc59400b04cbc0c6e8e7f3bd49b64a427ea0304058e2c26afb0adc2d3e548c55",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ada012e0ee37802401ac9907693f21f2ac664bcb3ae7dfca7816d2a5a01ab9a2",
       "rh_id": "execucao-2026-08-despesa-efetiva-administracao-central",
@@ -705,7 +705,7 @@
     "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "c84201c69d1380e2cb0d71d3becbf77ec32b15b9472036179524e1316916ca23",
+      "exported_row_sha256": "6d5f24ca80ee462842203b1ef860d49d2c974760acfd2df5b41195df0f778c58",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "45463c4c450886fa6e976e733856c80fd89bf93af8561f461a05366f2dfa0807",
       "rh_id": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
@@ -958,7 +958,7 @@
     "execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "0796d33fc3309db47db1f20e203b51fd621ba9e1c8d6d20e11ed4a48cb9b72c7",
+      "exported_row_sha256": "2305388de6a9bfe1d6c1c7626920caab2dc45f7d1a2521c8e78d761df7652b48",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "56dd2eebeadbc166f74d87681b927f4cba9fcb491598f62788a0e16b2e8c6184",
       "rh_id": "execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social",
@@ -969,7 +969,7 @@
     "execucao-2026-08-receita-efetiva-administracao-central": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "cb915e4069e7074a6f3bc6038eef874aa70328b30d8ca6945db9221c555c2bae",
+      "exported_row_sha256": "7d69b6daa5bd3c2fad19d0d9c5cb41cb8a50ed6ba9acd3fbec6d921ee840f273",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d43dd851d1ef6d89263341dd3ef7c159c6f494348fa9a1b5be7fbae09ef4269c",
       "rh_id": "execucao-2026-08-receita-efetiva-administracao-central",
@@ -980,7 +980,7 @@
     "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "006e64fa2a4ec2ff431ab5d6d8e477698f39a39023b38308b01c804c440d354f",
+      "exported_row_sha256": "b08b6e67eb4952f1bce287dfbd32b3e9dd517588c7eaa4a1885e3a816af79351",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "858e178fc909a9f09588fb436424fae523e463ab90688b7570b7391f890557df",
       "rh_id": "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
@@ -991,7 +991,7 @@
     "execucao-2026-08-saldo-global-administracao-central": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "2bad9769522c25019214c3a13a2a45ad7c3d12104c51a12a5aa78e2eda8f8602",
+      "exported_row_sha256": "1407f1d1e51c2c8f66595fc030577146b70addc6501f6129c4b1065cab267aeb",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "fd40dfed0173ceba9a962176aa1967d2a0a74510d5ade850c103b9bb3530401d",
       "rh_id": "execucao-2026-08-saldo-global-administracao-central",
@@ -1002,7 +1002,7 @@
     "execucao-2026-08-saldo-global-administracao-central-seguranca-social": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "35ec0b672b6ac97d66ffed0500fda25a52779975d87fceb921849fca68d9a3ec",
+      "exported_row_sha256": "a8a56993e7ae514a88349aa10296a5aad32a670ab65d78722b713833a7506515",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1862f08c9afec3c8d7e24430616f9b4c055b888287c8ad65161753827befac99",
       "rh_id": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
@@ -1046,7 +1046,7 @@
     "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "fe6be79c7f51558d0ca2ff7bed435c64d0a52153bd64e8d8b519d8d2cf6f8bfa",
+      "exported_row_sha256": "c206b00a0a0f6bf6b99b109c9faea35e38eea37fd78cf4b0d0508c2dc092229f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "069cc9c07295830efd713997af71acedc223f8f703bc26de987e0e8a373088ad",
       "rh_id": "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social",
@@ -1057,7 +1057,7 @@
     "oe-2026-cem-euros-funcao-01": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "7b62262c30357997a24aa1da9f1dcc79d3989db831181fd066a7a892d33b6665",
+      "exported_row_sha256": "fa89ccd124f47ad7bf3fe54eb3569d6e70a4b9a97966bf8c6d7257246d009ee9",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d74d5107a4e83ca865769d8db5e6b703a06aa50b9d347b53bc57bef82319c273",
       "rh_id": "oe-2026-cem-euros-funcao-01",
@@ -1068,7 +1068,7 @@
     "oe-2026-cem-euros-funcao-02": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "fddef75b02ddb79f0906d115c626f73a2794dc9669248d934cba82a0e7347ab9",
+      "exported_row_sha256": "6d14ce1396b2efcac387f73ed4db63314092546c84728f633b47c6603dbbc2ba",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "8e0427a8989ba597cee48dfeccb140301b141ba91c8483a213b97c0f04dbfeeb",
       "rh_id": "oe-2026-cem-euros-funcao-02",
@@ -1079,7 +1079,7 @@
     "oe-2026-cem-euros-funcao-03": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "e143b9720efe3c4a8855560f41295dece42bf2d15cdd32b73f456e0a42b6c288",
+      "exported_row_sha256": "ee836500a3956f3436a143984c027cdb6e4d3619048d6d86d53c648cce8ab281",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "3edd5aef5fdb2f8afa0a7b191027bd88d26413523c7a65df209436ca35390bc7",
       "rh_id": "oe-2026-cem-euros-funcao-03",
@@ -1090,7 +1090,7 @@
     "oe-2026-cem-euros-funcao-04": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "e82d05a9c8a9461f263c244f294258aa96da0ad216482ffd6ab31b1bada473c0",
+      "exported_row_sha256": "658e98309f85e0dd1d4e9938c6f573731dd7fd8df03f883fe7a709755dfe4fc5",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4428de2feab4c39672a291aec430d77dbb85fdc57a0793ae9dfcfbdac5669ea5",
       "rh_id": "oe-2026-cem-euros-funcao-04",
@@ -1101,7 +1101,7 @@
     "oe-2026-cem-euros-funcao-05": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "0529c8f6590596d567bae32b25deeda00694f1cbebbf91a2c2c6e8ab99d518da",
+      "exported_row_sha256": "b22991290f11035218dc7496be1262d25622add440ffcd4235ddc918ea6a4cba",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "df1b758221d88927228cd5872c9636f3d75ddf50534614b17368770aafd38b4e",
       "rh_id": "oe-2026-cem-euros-funcao-05",
@@ -1112,7 +1112,7 @@
     "oe-2026-cem-euros-funcao-06": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "4ef091cce0e0ed0362668b7182c1539a9d6556a1fd5659d0181e26b53b79503f",
+      "exported_row_sha256": "a0f0cb08577c13b629beba658b694e7bbfb864c618039d717e43c25e723798f4",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "e91aaf28535878f70318df574376d112b6b43f297e6726428dea5528d2563a8e",
       "rh_id": "oe-2026-cem-euros-funcao-06",
@@ -1123,7 +1123,7 @@
     "oe-2026-cem-euros-funcao-07": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "a0a6c3cbd667945467a4e864d02addd6d874e3fa86c41370f3d53814a2a83225",
+      "exported_row_sha256": "6a8c1dca1975e7f5cf55b08a6eee6dbdccee53ba136f9fe4f5659ae6498e30c6",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "67320ee279add6c61b5a5711bc5158cd2cfb53c0d672fc995851f5b8b409c1be",
       "rh_id": "oe-2026-cem-euros-funcao-07",
@@ -1134,7 +1134,7 @@
     "oe-2026-cem-euros-funcao-08": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "dcc78efca0463fd56819a07f8c8a289a945816931f4204e421b4d0c0db9c0306",
+      "exported_row_sha256": "a3539ec5bd3782a02e9219bd43312da38c0d9e04c49cdd2bfb962931381807d1",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b102661492bb62d68ec0074efbe8b6a43282e0344bd9dc9be8f9ba9c0015f404",
       "rh_id": "oe-2026-cem-euros-funcao-08",
@@ -1145,7 +1145,7 @@
     "oe-2026-cem-euros-funcao-09": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "8d77500a3a5f46f2c0bfdddf3c2939853844dc36ea0a430b8a446eb6bb8df04f",
+      "exported_row_sha256": "4b07f4b986c43fc292cb5e942235aa197e629793ad87b36da09b57cb4364136f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2dd830da20cb0aa91baf43db4de7c44c8774c1f896d290fc65212133123e76c5",
       "rh_id": "oe-2026-cem-euros-funcao-09",
@@ -1156,7 +1156,7 @@
     "oe-2026-cem-euros-funcao-10": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "53388d9c986d5d7b42f4d2d553cd2687ae722a472a067e3276a2418565afa873",
+      "exported_row_sha256": "4671970398ccb517ee1032483f481ff035cb057a6f41f9e440bc92c84064e7fa",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "94f97abc1195fdcd87edbbc3cf17e843bea7b3ec23f09584ec718713530c09ff",
       "rh_id": "oe-2026-cem-euros-funcao-10",
@@ -1244,7 +1244,7 @@
     "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "9845f85b77b4d30fe9f9652145ddf7e63b6271118989ae021e7cee4f35fc4533",
+      "exported_row_sha256": "7ccdb4baac6f63424faf9c48bd9dd58649367aa20401fdb56d1313cadfbfe06e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "ac6f10607d1d03531d2a6b4e6a0813a18d91c59ebe237d1ee2fcfc5064c45c30",
       "rh_id": "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado",
@@ -1299,7 +1299,7 @@
     "oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "30b47e5f95a90aa6ae9785772e71c8b1590cbe4e19249f47e7e4050180b4dd24",
+      "exported_row_sha256": "726e0260c9d76e5ec95373b23808c31d608fcc3169f102f0ee0ab5dbeb29d00f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f497e315e8f2c33c41551d05fb646892199f69aa9eadb8b1cfdefe4ea8ecc19e",
       "rh_id": "oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros",
@@ -1387,7 +1387,7 @@
     "oe-2026-despesa-efetiva-administracao-central-seguranca-social": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "6d8218427cdd0657ddc771410467924496a255acae59fd857617e08ee4d1c504",
+      "exported_row_sha256": "bc13ad92c00de0e1fb43d55e61c24bb9f3e2157e1d9120f4b90087f74c3dc363",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "0d00130e383695f4b127d22b2bc3672c0ce9e44c99743be4cfc91edaf7fed023",
       "rh_id": "oe-2026-despesa-efetiva-administracao-central-seguranca-social",
@@ -1398,7 +1398,7 @@
     "oe-2026-despesa-funcao-01": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "0de7f48ff523a21b71b5b2f1193634930f43f66a93142a04b3b21a3b738ee188",
+      "exported_row_sha256": "0cfb232589949b2b9e4a9f76b0ab782edff610c0d34a8876fea0b92783a8160e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "03e2454d365100c4fb71f27f58e0534909272b7944309ee5a253552f4efc5af6",
       "rh_id": "oe-2026-despesa-funcao-01",
@@ -1409,7 +1409,7 @@
     "oe-2026-despesa-funcao-02": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "53a551ad49a56b1dd3de8d923d29f44f909637027b5369f3fb2aded3d26ab6d6",
+      "exported_row_sha256": "ed79b7f033f953a73cc97724ab9890a6e7018fe61035f4656db07de9416a971f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b4dd72d0ba429b39ab3e9be045893f78795c83117feddcb910e47e234e11de33",
       "rh_id": "oe-2026-despesa-funcao-02",
@@ -1420,7 +1420,7 @@
     "oe-2026-despesa-funcao-03": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "be1a4193bde44aa38c78ddb2d1fd682b7d76a617cd40d0b6b88d0d328e2c2f87",
+      "exported_row_sha256": "5e54c16c8db754e52941307d1e426f12c46ae0bd0cb77e98719ad24a6dcae78a",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "9e30c5fff084f0f4a8c0eff27ca24ecb9c4b47bec460868737de10291bc52d14",
       "rh_id": "oe-2026-despesa-funcao-03",
@@ -1431,7 +1431,7 @@
     "oe-2026-despesa-funcao-04": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "4f6f41dd0677d692c0557cee1ae966e54a4e6ef2e68c9ffc6db52a617a445ff4",
+      "exported_row_sha256": "6cb8349a1c78159b10529459e95110fc6e230af1161703c297ee3c4824a99f3b",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "87232b4f2a3ebac3feeced8600c4474d450ece919ab040f37b992200ef9b05c4",
       "rh_id": "oe-2026-despesa-funcao-04",
@@ -1442,7 +1442,7 @@
     "oe-2026-despesa-funcao-05": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "697ae85934d6757de594c3f71766e3bc826b1a72fd335ed8b5d0d922dc015607",
+      "exported_row_sha256": "8c28b6c46b73889bce4836d6f9738990561b9ff353f8d94085cc0ba327a6a45f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f46094497f75882ca38d55e8c838ec589c0cba1de4bb435dcd8b1a0892401f9e",
       "rh_id": "oe-2026-despesa-funcao-05",
@@ -1453,7 +1453,7 @@
     "oe-2026-despesa-funcao-06": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "946900ab2a92689e1921772edab8f4832378932eff87ac52fdf24190c81a301d",
+      "exported_row_sha256": "1e027697f3db8d63e4e84bbd36104c12d639107355a4c07223d99196dfe5368e",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "20103a8af6577831e5c2f34c29543a232ae6055e1a937ba02fb5cc21b9ae3b06",
       "rh_id": "oe-2026-despesa-funcao-06",
@@ -1464,7 +1464,7 @@
     "oe-2026-despesa-funcao-07": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "de4614935fa6731aba609bd10d5e7fc8e99500d205063f4cee01fadffb5d7267",
+      "exported_row_sha256": "55a5a7eef01c36d415cfef9d9c204ff3f1fd28a855d56be10d83fc99b166638a",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "907280c445a6f6a724b5429e8e180e99aa3164e250e0ad3f221648261819e189",
       "rh_id": "oe-2026-despesa-funcao-07",
@@ -1475,7 +1475,7 @@
     "oe-2026-despesa-funcao-08": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "3d64d641d7a50016c11d306e2d9edd39a2d339f4ef6f610134709e56a76865b1",
+      "exported_row_sha256": "487d3819b04f950bed59a33f81566c515cca693dc9796366ba5f7da14f7aa743",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "cff5ac45b785823e76c4bf4b5e376894202ef7c155cb7476e8e29a74ee042d74",
       "rh_id": "oe-2026-despesa-funcao-08",
@@ -1486,7 +1486,7 @@
     "oe-2026-despesa-funcao-09": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "9d505047e4fcb7febeb01e6f7e6755e7d7fe92df9196371a4ab480513498c11e",
+      "exported_row_sha256": "b5f80eb8153cafd83b6e1fffe29064c2f485aaed9cb55182276415274f95a89f",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "b7f35fe857f87cc5039daceab7e61308eedd15463e59d2b1487ad2b3dcc25205",
       "rh_id": "oe-2026-despesa-funcao-09",
@@ -1497,7 +1497,7 @@
     "oe-2026-despesa-funcao-10": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "d55e4d52dc58849b1e8ea0863a1c4ccc4dde2402cacd3494bf12fe96f0c9ef29",
+      "exported_row_sha256": "406781682c98aa552867a40f2cfe25b2b618be5087dbb3d3d4c34fa9e0907bc6",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "1100dc04f5de304848e2002b02a0c505f913e1fe4eaafe2d22452780ada6c263",
       "rh_id": "oe-2026-despesa-funcao-10",
@@ -1937,7 +1937,7 @@
     "oe-2026-diferencas-consolidacao-funcional": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "e1c97ef258d6ff19c8b2016c22e778504691727b90c2ecae6acfe6d040793cfc",
+      "exported_row_sha256": "f8734335b57a9acbc31674d4a4df8f74a89e67ef0064117fe0c080b5b6f329eb",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "2303d252aa4e564cfac7b808666f04a8213d4247658c4414d986144ee77a2e34",
       "rh_id": "oe-2026-diferencas-consolidacao-funcional",
@@ -1948,7 +1948,7 @@
     "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "ba64a09fa19a9ccda4afca2268a04505c7a64d7b485c32c01a0710dc96109c4b",
+      "exported_row_sha256": "1ef9276bdb0b52f3085d285c7de7434c384a19bc238a8ce28ccf156dec0b8321",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "06eb5cfa9a092b33e583e3f7e8061cef83661291778d7940cb806689ea162307",
       "rh_id": "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social",
@@ -2003,7 +2003,7 @@
     "oe-2026-receita-efetiva-administracao-central-seguranca-social": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "ea421b1a391e3a265f2a1e6b8629ea284ade9e7766d1c4ca8939fff82ff19017",
+      "exported_row_sha256": "30e03a66500cad14cd68e97ef9c14c105ed335267f5d1daf6aba807213e2c6e7",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "f4768a9fda785c94d45475d0ce94a4f9286c07b320b2efb9b5a2e7def952e60a",
       "rh_id": "oe-2026-receita-efetiva-administracao-central-seguranca-social",
@@ -2036,7 +2036,7 @@
     "oe-2026-saldo-global-administracao-central-seguranca-social": {
       "corrections_at_export": 0,
       "exported_at": "2026-10-04",
-      "exported_row_sha256": "8a16d9e6ec1b5aa77666347c566f18ef75742a05e3e81489f67fa322e49dd5f4",
+      "exported_row_sha256": "eaab8f57ca86d986800c499e2dc1d7a73be6a68b1d958dd35111adf85fc45eda",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "7cce7b505d4b26741d078a38b0f03022baa1046184a03d9eaae937c94b5f9754",
       "rh_id": "oe-2026-saldo-global-administracao-central-seguranca-social",

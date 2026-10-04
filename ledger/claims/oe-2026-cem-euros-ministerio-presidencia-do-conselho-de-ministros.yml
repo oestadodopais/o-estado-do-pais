@@ -24,8 +24,8 @@ ressalva: "As partes foram arredondadas separadamente; a sua soma pode não ser 
 ressalva_en: "The shares were rounded separately; their sum may not be exactly one hundred per cent. The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "Dividir a despesa bruta deste ministério pela despesa bruta da administração central, multiplicar por cem e arredondar a duas casas decimais. Inclui operações financeiras e transferências internas; não mede a repartição da despesa efetiva consolidada."
-derivation_en: "Divide this ministry's gross expenditure by central government's gross expenditure, multiply by one hundred and round to two decimal places. Includes financial transactions and internal transfers; it does not measure the allocation of consolidated effective expenditure."
+derivation: "Dividir a despesa bruta da Presidência do Conselho de Ministros pela despesa bruta da administração central, multiplicar por cem e arredondar a duas casas decimais. Inclui operações financeiras e transferências internas; não mede a repartição da despesa efetiva consolidada."
+derivation_en: "Divide gross expenditure of the Presidency of the Council of Ministers by central government's gross expenditure, multiply by one hundred and round to two decimal places. Includes financial transactions and internal transfers; it does not measure the allocation of consolidated effective expenditure."
 derived_from:
   - "oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros"
   - "oe-2026-despesa-bruta-administracao-central"

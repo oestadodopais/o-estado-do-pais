@@ -30,8 +30,8 @@ reference_date: "2026-08"
 excerpt: "     Receita efetiva                                       87 945,1       96 020,6    54 124,1      58 070,1            60,5             7,3"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis."
-ressalva_en: "The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
+ressalva: "O saldo global é a receita efetiva menos a despesa efetiva. Os passivos financeiros líquidos são a receita de passivos menos as amortizações, não a parcela da despesa efetiva financiada por dívida. O financiamento inclui ainda ativos financeiros e variações de tesouraria. Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis."
+ressalva_en: "The overall balance is effective revenue minus effective expenditure. Net financial liabilities are receipts from liabilities minus repayments, not the share of effective expenditure financed by debt. Financing also includes financial assets and changes in cash balances. The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
