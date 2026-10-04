@@ -84,7 +84,7 @@ const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'n
     <section class="indice-secao" aria-labelledby="indice-mudou" data-indice-seccao="mudou">
       <h2 class="indice-secao-titulo" id="indice-mudou">{indice.mudou.titulo}</h2>
       <div class="indice-corpo">
-        <ol class="lugar-mudou" data-mudou-ambito="indice">
+        <ol class="lugar-mudou indice-mudou" data-mudou-ambito="indice">
           {indice.mudou.mudancas.map((e) => (
             <li data-mudanca="correcao" data-correcao-entrada={e.claim}>
               <time
@@ -96,6 +96,18 @@ const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'n
               >
                 {dataDaCasa(e.data)}
               </time>
+              {/* O LUGAR DE CADA LINHA, ESCRITO E SEM PORTA (a passagem final do R3, pelas capturas). A
+                  lista do índice junta linhas de todos os lugares, como o registo, e um número sem o seu
+                  lugar lê-se como de Portugal: a dívida das famílias da União, que entra na lista quando
+                  as duas taxas de desemprego passam a contar uma vez, ler-se-ia como a de Portugal.
+                  O nome é o que o registo escreve ao pé da mesma entrada (`lugarDaLinha()`, em
+                  `src/lib/mudancas.mjs`), e a célula do índice confere-o contra o registo construído; a
+                  porta do lugar é a da sua secção, nesta mesma página, e uma segunda porta para o mesmo
+                  destino é o que a L1 conta. Não leva a marca dos lugares (`data-lugar`): a régua das
+                  frases tira da descrição do `<head>` o nome de cada lugar marcado, e «União Europeia»
+                  está na descrição desta página, que deixava de ser a frase declarada. O nome não é
+                  uma frase da casa, e a régua não o recolhe, porque não é um bloco. */}
+              <span class="indice-mudou-lugar">{e.lugar.nome}</span>
               {/* O NOME E A UNIDADE COM AS MARCAS DO REGISTO (`RegistoCorrecoes.astro`): o nome
                   declarado com `data-nome`, o nome lido de um campo da linha pelo `CampoDaLinha`
                   com a língua da fonte, e a unidade pelo `CampoDaLinha` do campo `unit`. A página de
