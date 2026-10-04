@@ -1,0 +1,33 @@
+§1.6 · Formatação portuguesa dos números nas duas edições — por agora
+    publisher/export_site_rows.py:419
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    publisher/export_site_rows.py:750
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    publisher/README.md:72
+    publisher/export_site_rows.py:24
+    publisher/oe1_build.py:3 (perto do diff)
+§1.32 · O tubo: setenta linhas atravessaram, e o sítio confere-as à chegada
+    publisher/README.md:72
+    publisher/oe1_build.py:3 (perto do diff)
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    publisher/README.md:225
+    publisher/README.md:293
+    publisher/README.md:339
+    publisher/export_site_rows.py:990
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    core/gate.py:201 (perto do diff)
+§1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
+    publisher/oe1_site_support.patch:151 (perto do diff)
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    core/gate.py:231
+    core/gate_baselines.json:678
+    core/gate_baselines.json:694
+    core/gate_baselines.json:710
+    core/gate_baselines.json:726
+    core/gate_baselines.json:742
+    core/gate_baselines.json:758
+§1.154 · A caixa das sugestões no ar (o S1, construído pelo Opus, lido a frio pelo Sol, endurecido com a chave que só a Vercel tem, com as três decisões do diretor de 03.10.2026), a quinta recusa do Método reescrita, a leitura de fora do Opus de 03.10 avaliada e o que ela muda no plano
+    publisher/oe1_build.py:4 (perto do diff)
+9 decisão(ões) citada(s) em 196 ficheiro(s) de texto
+24 ficheiro(s) binário(s) saltado(s): content/20 Orcamento do Estado/source/dados/dados-conhecer-orcamento-2026-funcional.xls, content/20 Orcamento do Estado/source/dados/dados-conhecer-orcamento-2026-indicadores-ac.xls, content/20 Orcamento do Estado/source/dados/dados-conhecer-orcamento-2026-indicadores-ap-cn.xlsx, …
+conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível

@@ -1,0 +1,69 @@
+{
+  "origem": "Eventos token_count das sessões deste bloco, filtrados pela worktree em memória.",
+  "medido_em": "2026-10-04T05:21:25.627861+00:00",
+  "segundos": 5472,
+  "sessoes": [
+    {
+      "sessao": "01a10508-9b42-72e2-a474-124da3a642e1",
+      "modelo": "gpt-6-astra",
+      "inicio": "2026-10-04T03:50:12.668Z",
+      "ultima_medicao": "2026-10-04T05:21:07.359Z",
+      "tokens": {
+        "input_tokens": 17766381,
+        "cached_input_tokens": 16864768,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 101916,
+        "reasoning_output_tokens": 38900,
+        "total_tokens": 17868297
+      }
+    },
+    {
+      "sessao": "01a10508-9ba7-7fd3-a0c0-98b5b23cb7e6",
+      "modelo": "codex-auto-review",
+      "inicio": "2026-10-04T03:54:27.768Z",
+      "ultima_medicao": "2026-10-04T04:02:37.534Z",
+      "tokens": {
+        "input_tokens": 631399,
+        "cached_input_tokens": 512768,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1735,
+        "reasoning_output_tokens": 568,
+        "total_tokens": 633134
+      }
+    },
+    {
+      "sessao": "01a10519-b978-74e3-95b1-33b78f209ff4",
+      "modelo": "codex-auto-review",
+      "inicio": "2026-10-04T04:08:54.411Z",
+      "ultima_medicao": "2026-10-04T04:57:16.268Z",
+      "tokens": {
+        "input_tokens": 434558,
+        "cached_input_tokens": 293376,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1091,
+        "reasoning_output_tokens": 392,
+        "total_tokens": 435649
+      }
+    },
+    {
+      "sessao": "01a1054d-e993-7053-9e91-8018659acb14",
+      "modelo": "codex-auto-review",
+      "inicio": "2026-10-04T05:05:54.618Z",
+      "ultima_medicao": "2026-10-04T05:11:02.685Z",
+      "tokens": {
+        "input_tokens": 87684,
+        "cached_input_tokens": 33024,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 500,
+        "reasoning_output_tokens": 293,
+        "total_tokens": 88184
+      }
+    }
+  ],
+  "tokens_totais": 19025264,
+  "tokens_entrada_cache": 17703936,
+  "tokens_entrada_sem_cache": 1216086,
+  "tokens_saida": 105242,
+  "limite": "Corte no último contador disponível; mensagens e trabalho posteriores não estão incluídos.",
+  "conhecido_positivo": true
+}
