@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<arvore>/design/especime-v3/medicoes/oe1-2026-10-04/medir.py", line 409, in <module>
+    assert g["codigo"] == 0, f"{n}: código diferente de zero ou corrida por terminar"
+           ^^^^^^^^^^^^^^^^
+AssertionError: verify: código diferente de zero ou corrida por terminar

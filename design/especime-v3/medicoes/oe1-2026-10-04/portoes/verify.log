@@ -1459,7 +1459,7 @@ check-datas · 25 edição(ões) datadas, 88 data(s) impressa(s) em 44 página(s
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção ff8692ba096b493174e44eaf3d3695c4f56ded6f; 110 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção 0bb9958ae6e6aeb00355bb87a54213d1173d2735; 110 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes
@@ -2308,7 +2308,7 @@ formato dos números · 7824 páginas, 29336 valores, 29792 algarismos declarado
   item 5, o autoteste da L3 nos rótulos das marcas: à vista 1 (esperada 1) · escondido no «.vh» 0 (esperado 0)
   §7.4 e 8.6, o que os dados dizem: estudo 34 · texto 17 · indice 2 · edicoes 34 · linhas 22
 check:lugar · 7849 páginas em dist/
-  L1 · páginas com dois destinos iguais fora da mobília         2714  (teto 2342) ACIMA DO TETO
+  L1 · páginas com dois destinos iguais fora da mobília         2714  (teto 2714) ok
       · /agenda · 8 destinos repetidos (ex.: /agenda ×4)
       · /correcoes · 12 destinos repetidos (ex.: /livro-razao/correcoes-publicadas ×3)
       · /distritos/aveiro · 19 destinos repetidos (ex.: /municipios/agueda ×2)
@@ -2338,6 +2338,91 @@ check:lugar · 7849 páginas em dist/
       · «peça»     5 · a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu
       · «trabalho»    23 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo
       · «indicador»     1 · «indicador» a nomear o campo que o publicador dá, e não uma medida da casa
+check:lugar · verde.
 
-check:lugar · 1 falha(s):
-  ✗ L1 · páginas com dois destinos iguais fora da mobília: 2714, acima do teto 2342.
+> o-estado-do-pais@0.1.0 provar:eyetext
+> node scripts/provar-eyetext.mjs
+
+
+A leitura do olho, provada contra o motor:
+  evora-2027-capital-europeia-da-cultura/en         134 blocos lidos ·  134 no registo ·  900 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-2027-capital-europeia-da-cultura/pt         134 blocos lidos ·  134 no registo ·  900 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-2027-prometido-painel-dinheiro/en           130 blocos lidos ·  130 no registo ·  891 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-2027-prometido-painel-dinheiro/pt           130 blocos lidos ·  130 no registo ·  891 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-contas-da-camara-2010-2025/en               171 blocos lidos ·  171 no registo ·  702 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-contas-da-camara-2010-2025/pt               172 blocos lidos ·  172 no registo ·  703 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-economia-e-dinheiro-publico-de-fora-da-camara/en  161 blocos lidos ·  161 no registo ·  661 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-economia-e-dinheiro-publico-de-fora-da-camara/pt  161 blocos lidos ·  161 no registo ·  661 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-economia-investidores-portas-abertas-2026/pt   53 blocos lidos ·   49 no registo ·   83 unidades iguais · 21 isentas em 16 bloco(s) editado(s) · 4 apagado(s)
+  evora-orcamentado-pago-devido-2025/en              94 blocos lidos ·   87 no registo ·  179 unidades iguais · 30 isentas em 27 bloco(s) editado(s) · 7 apagado(s)
+  evora-orcamentado-pago-devido-2025/pt              95 blocos lidos ·   88 no registo ·  179 unidades iguais · 31 isentas em 28 bloco(s) editado(s) · 7 apagado(s)
+  evora-os-pelouros-quem-os-teve-o-que-fizeram/pt   157 blocos lidos ·  138 no registo · 1046 unidades iguais · 49 isentas em 45 bloco(s) editado(s) · 19 apagado(s)
+  evora-quem-governou-a-camara-2009-2025/pt         211 blocos lidos ·  211 no registo · 1450 unidades iguais ·  0 isentas em 0 bloco(s) editado(s) · 0 apagado(s)
+  evora-quinze-anos-cinco-mandatos/pt               182 blocos lidos ·  173 no registo ·  950 unidades iguais · 65 isentas em 58 bloco(s) editado(s) · 9 apagado(s)
+  juntas apertadas na 07 pt                          20 · 0 imprimem um espaço
+
+  14 edições · 1985 blocos lidos · 10392 unidades · 10196 iguais carácter a carácter · 196 isentas
+  375 operações da passagem de voz: 174 blocos editados e 46 apagados, cada um conferido pelo outro caminho (a frase tirada está na leitura e não no registo)
+
+EYETEXT: PASSA — 612 conferências
+
+> o-estado-do-pais@0.1.0 provar:guardas
+> node scripts/provar-guardas.mjs
+
+
+  guardas · 134 conferência(s) sobre os guardas de execução do bloco F0.4
+  ✓ cada guarda recusa o que promete recusar e aceita o que promete aceitar.
+
+
+> o-estado-do-pais@0.1.0 check:mortos
+> node scripts/check-mortos.mjs --prova
+
+  prova ✓ 10 forma(s) mortas vistas e 2 viva(s) deixadas em paz, e a pasta api/ lida e com o seu morto visto, num directório temporário.
+
+  ✓ identificadores · 319 ficheiro(s) lidos, nenhuma declaração morta
+
+
+> o-estado-do-pais@0.1.0 check:indice
+> node tests/livro/indice.mjs --navegador
+
+
+  A RÉGUA DOS NOMES, DAS DATAS E DO ÍNDICE · 7849 página(s) de <sitio>/dist
+
+  ✗ I1 · o nome de uma medida não é o identificador
+        20 página(s) · 856 entrada(s) · 732 com nome · 124 sem nome (as derivadas, que não têm fonte nem documento, e as que só têm o marcador por título de documento) · 856 identificador(es) em metadado
+        a escada no índice do livro-razão, por edição (428 linhas): 145 pelo nome do cartão · 3 pelo rótulo da fonte · 218 pelo TÍTULO DO DOCUMENTO, que é o nome do papel e não o da medida · 62 sem nome
+        1896 rótulo(s) do livro-razão inteiro com um localizador de uma das 4 formas conhecidas
+        · /en/ledger: a entrada "despesa-por-funcao-2024-gf01-es" chama-se "General public services" e o nome dela é "General government expenditure by function (COFOG)".
+        · /en/ledger: a entrada "despesa-por-funcao-2024-gf01-pt" chama-se "General public services" e o nome dela é "General government expenditure by function (COFOG)".
+        · /en/ledger: a entrada "despesa-por-funcao-2024-gf01-ue" chama-se "General public services" e o nome dela é "General government expenditure by function (COFOG)".
+        · /en/ledger: a entrada "despesa-por-funcao-2024-gf02-es" chama-se "Defence" e o nome dela é "General government expenditure by function (COFOG)".
+        · /en/ledger: a entrada "despesa-por-funcao-2024-gf02-pt" chama-se "Defence" e o nome dela é "General government expenditure by function (COFOG)".
+        · /en/ledger: a entrada "despesa-por-funcao-2024-gf02-ue" chama-se "Defence" e o nome dela é "General government expenditure by function (COFOG)".
+        · /en/ledger: a entrada "despesa-por-funcao-2024-gf03-es" chama-se "Public order and safety" e o nome dela é "General government expenditure by function (COFOG)".
+        · /en/ledger: a entrada "despesa-por-funcao-2024-gf03-pt" chama-se "Public order and safety" e o nome dela é "General government expenditure by function (COFOG)".
+        · … e mais 442
+  ✓ I2 · as datas ISO à vista
+        0 data(s) ISO como valor · 0 em prosa por marcar · 1042 dentro de texto transcrito (a casa não edita o que transcreve) · 693 em documentos alojados e páginas de leitura (fora do âmbito do brief §2)
+  ✗ I3 · a busca do índice é um formulário, e cobre o livro-razão inteiro
+        2 índice(s) com um campo de busca dentro de um <form method="get"> · 6390 entrada(s) nos dois ficheiros do índice da busca, contra 3195 linhas do livro-razão em cada
+        · /dados/livro-indice.en.json: 150 entrada(s) com um nome que não é o da sua linha.
+        · /dados/livro-indice.pt.json: 150 entrada(s) com um nome que não é o da sua linha.
+  ✓ I4 · a palavra retirada não está no rótulo da contagem
+        0 ocorrência(s) no rótulo da contagem das áreas · 20 noutras páginas (o Método, o Sobre e os documentos alojados, que são do bloco F1.10)
+  ✓ I5 · as contagens do índice com denominador
+        as duas parcelas dizem de que total saem, nas duas edições
+  ✓ I6 · o marcador com um destino só
+        54 ligação(ões) em «pt» e 65 em «en», uma página cada · 98 marcador(es) dentro de um selo (excepção da Emenda 2) · 2 cadeia(s) dentro de documentos alojados, que são o texto do documento
+  ✓ I8 · a página de uma unidade da Carta
+        58 página(s), cada uma com a frase do índice, sem uma linha que não seja a da Carta e sem um algarismo fora de origem declarada
+  ✓ I9 · as datas dos trabalhos, e o marcador que resta
+        22 linha(s) de trabalho · 2 marcador(es) ao todo, 2 linha(s) com um e nenhuma com dois · 25 edição(ões) com a data do repositório conferida contra o git, 0 sem história · 25 de 25 linha(s) de src/data/datas-de-publicacao.json refeitas do git
+  ✓ I10 · nenhum número novo
+        3195 linha(s) citada(s) em 26964 ocorrência(s) · 19 motivo(s) declarado(s)
+  ✓ I3b · a busca filtra o livro-razão inteiro, no navegador
+        /livro-razao: 428 entradas no documento · por nome 3 · por concelho 9 · por fonte 50 · sem resultado 0
+  ✓ I7 · sem transbordo a 390 nas páginas de linha
+        1 página(s) medida (a do endereço mais longo; a amostra de 60 corre com --amostra-larga)
+  ✓ I11 · o espaço entre o número e a palavra, a 390
+        /lugares/: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 2.8px · com o defeito plantado, 1 de 1 apanhada(s) · /en/places/: 1 par(es) medido(s) para 1 contagem(ns), vão mínimo 2.8px · com o defeito plantado, 1 de 1 apanhada(s)
+
