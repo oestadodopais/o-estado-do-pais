@@ -25,6 +25,7 @@ repo="$1"; base="$2"; cabeca="$3"; pacote="$4"; brief="$5"; relatorio="$6"; shif
 # código 2 deixava um pacote meio feito com a promessa por cumprir.
 guiao="$(dirname "$0")/conferir-relatorio.py"
 numeros_tmp="$(mktemp)"
+trap 'rm -f "$numeros_tmp"' EXIT
 codigo=0
 python3 "$guiao" "$relatorio" "$(dirname "$relatorio")" > "$numeros_tmp" 2>&1 || codigo=$?
 echo "código de saída do conferir-relatorio.py: $codigo" >> "$numeros_tmp"

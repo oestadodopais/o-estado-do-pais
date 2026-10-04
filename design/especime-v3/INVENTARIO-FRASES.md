@@ -3982,4 +3982,4 @@ lugar, tema, data e estado, e conserva a varredura dos marcadores da voz.
 
 | chave | português | inglês | classe |
 |---|---|---|---|
-| `primeira.emCurso` | em curso | ongoing | conteúdo, estado declarado na ficha |
+| `primeira.emCurso` | em curso até {ano} | ongoing until {ano} | conteúdo, estado declarado na ficha |

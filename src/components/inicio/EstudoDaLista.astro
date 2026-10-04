@@ -18,6 +18,6 @@ const r = ROTULOS_B1[lang];
   <h3 class="estudo-item-titulo"><TituloDeTrabalho as="a" href={e.rota} edicao={e.edicao} lang={lang} />
     {e.edicao.lang !== lang && <span class="estudo-lingua"> {r.outraLingua}</span>}
   </h3>
-  <p class="estudo-meta"><span>{e.lugar}</span><span>{e.tema}</span><span>{r.publicado}{' '}<time datetime={e.data} data-nonledger="data-do-repositorio">{dataDaCasa(e.data)}</time></span>{mostrarEmCurso && e.work.emCurso && <span data-estudo-em-curso>{t(lang).primeira.emCurso}</span>}</p>
+  <p class="estudo-meta"><span>{e.lugar}</span><span>{e.tema}</span><span>{r.publicado}{' '}<time datetime={e.data} data-nonledger="data-do-repositorio">{dataDaCasa(e.data)}</time></span>{mostrarEmCurso && e.work.emCurso && <span data-estudo-em-curso>{t(lang).primeira.emCurso.replace('{ano}', e.work.emCurso.ate?.slice(0, 4) ?? '[verify]')}</span>}</p>
   <p class="estudo-resumo lugar-estudo-leitura" data-verbatim={e.temLeitura ? undefined : e.work.verbatimDaAbertura?.[lang]}><Frase partes={e.resumo} lang={lang} selos /></p>
 </article>

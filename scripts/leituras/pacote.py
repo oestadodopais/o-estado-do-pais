@@ -54,13 +54,17 @@ def diferenca(repo, base, cabeca, f):
 
 def principal():
     repo, base, cabeca, destino, brief, relatorio, numeros, *construidos = sys.argv[1:]
-    repo_dado = repo
+    # Nunca substituir o argumento literal: «.» apagava todos os pontos do texto.
+    repo_dado = str(Path(repo).absolute())
     repo, destino = Path(repo).resolve(), Path(destino)
     retira = shlex.split(os.environ.get('PACOTE_RETIRA', ''))
     motor = shlex.split(os.environ.get('PACOTE_MOTOR', ''))
     extra = shlex.split(os.environ.get('PACOTE_EXTRA', ''))
     if motor and len(motor) < 3:
         raise ValueError('PACOTE_MOTOR exige árvore, base e cabeça, seguidas dos padrões opcionais.')
+    for arvore, nome in [(repo, 'repositório')] + ([(Path(motor[0]).resolve(), 'motor')] if motor else []):
+        if git(arvore, 'status', '--porcelain', '--untracked-files=no').strip():
+            raise ValueError(f'O pacote recusa a árvore do {nome}: há modificações em ficheiros seguidos por comitar.')
     # Confere os dois intervalos antes de criar o pacote.
     mudados = caminhos(repo, base, cabeca)
     do_motor = caminhos(motor[0], motor[1], motor[2]) if motor else []

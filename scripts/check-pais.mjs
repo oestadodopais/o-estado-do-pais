@@ -21,9 +21,11 @@ import { conferirBlocosDaPagina, idsDosBlocos } from '../tests/inicio/blocos.mjs
 import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
 import { conferirEntradas, conferirOrdemDaHabitacao } from '../tests/inicio/entradas.mjs';
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
+import { conferirPrazosEmCurso, dataDaConstrucao } from './estudos-em-curso.mjs';
 const raiz = process.cwd();
 const dist = path.resolve(process.env.OEDP_DIST ?? 'dist');
 const erros = [];
+erros.push(...conferirPrazosEmCurso(WORKS, dataDaConstrucao(dist)));
 const normal = s => (s ?? '').replace(/\s+/g, ' ').trim();
 const le = rel => parse(fs.readFileSync(path.join(dist, rel, 'index.html'), 'utf8'));
 const linha = id => load(fs.readFileSync(path.join(raiz, 'ledger/claims', `${id}.yml`), 'utf8'));
@@ -343,8 +345,6 @@ for (const lang of ['pt', 'en']) {
   }
   const recentes = WORKS.map((w,i) => {
     const e = w.editions.find(e => e.lang === lang) ?? w.editions[0];
-    if (w.emCurso && (!w.emCurso.razao?.trim() || (w.emCurso.ate && !/^\d{4}-\d{2}-\d{2}$/.test(w.emCurso.ate))))
-      erros.push(`E1 ${lang}: declaração emCurso incompleta em ${w.slug}.`);
     return { slug: w.slug, i, emCurso: Boolean(w.emCurso), data: datas.find(d => d.slug === w.slug && d.lang === e.lang)?.data ?? '' };
   }).sort((a,b) => Number(b.emCurso) - Number(a.emCurso) || b.data.localeCompare(a.data) || a.i-b.i).slice(0,3).map(e=>e.slug);
   const rendidos = home.querySelectorAll('#trabalhos [data-estudo]').map(e => e.getAttribute('data-estudo'));
@@ -352,7 +352,8 @@ for (const lang of ['pt', 'en']) {
   for (const el of home.querySelectorAll('#trabalhos [data-estudo]')) {
     const w = WORKS.find(w => w.slug === el.getAttribute('data-estudo'));
     const marcas = el.querySelectorAll('[data-estudo-em-curso]');
-    if (marcas.length !== (w?.emCurso ? 1 : 0) || marcas.some(m => normal(m.textContent) !== (lang === 'en' ? 'ongoing' : 'em curso') || !m.closest('.estudo-meta')?.querySelector('time')))
+    const marcaEsperada = `${lang === 'en' ? 'ongoing until' : 'em curso até'} ${w?.emCurso?.ate?.slice(0, 4)}`;
+    if (marcas.length !== (w?.emCurso ? 1 : 0) || marcas.some(m => normal(m.textContent) !== marcaEsperada || !m.closest('.estudo-meta')?.querySelector('time')))
       erros.push(`E1 ${lang}: marca em curso ausente, indevida ou fora da data em ${w?.slug}.`);
   }
   /* E2 · A LISTA DOS ESTUDOS É UMA SÓ (bloco R1, 23.09.2026, I144). Todos os

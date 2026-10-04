@@ -9,7 +9,7 @@ import { ROTULOS_B1 } from '../src/data/rotulos-b1.mjs';
 const datas = JSON.parse(fs.readFileSync(new URL('../src/data/datas-de-publicacao.json', import.meta.url), 'utf8')).edicoes;
 const norm = s => (s ?? '').replace(/\s+/g, ' ').trim();
 export function metaDoEstudoConferida(el, lang, works = WORKS) {
-  const artigo = el.closest('#trabalhos [data-estudo]');
+  const artigo = el?.closest('#trabalhos [data-estudo]');
   const w = works.find(w => w.slug === artigo?.getAttribute('data-estudo'));
   if (!w || !['pt', 'en'].includes(lang)) return false;
   const e = w.editions.find(e => e.lang === lang) ?? w.editions[0];
@@ -19,7 +19,7 @@ export function metaDoEstudoConferida(el, lang, works = WORKS) {
   const spans = el.children;
   const esperado = [w.subject ? SUBJECTS[w.subject]?.[lang] : 'Portugal', tema,
     `${ROTULOS_B1[lang].publicado} ${data.split('-').reverse().join('.')}`,
-    ...(w.emCurso ? [lang === 'pt' ? 'em curso' : 'ongoing'] : [])];
+    ...(w.emCurso ? [`${lang === 'pt' ? 'em curso até' : 'ongoing until'} ${w.emCurso.ate?.slice(0, 4)}`] : [])];
   const time = spans[2]?.querySelectorAll('time') ?? [];
   return spans.length === esperado.length && spans.every((s, i) => s.rawTagName === 'span' && norm(s.textContent) === esperado[i])
     && norm(el.textContent) === norm(spans.map(s => s.textContent).join(''))
