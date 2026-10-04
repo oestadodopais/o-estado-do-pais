@@ -1,15 +1,17 @@
 §1.1 · O mapa passou de `<canvas>` para SVG construído no servidor
-    src/i18n/strings.mjs:3054
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    src/i18n/strings.mjs:3075
 §1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
     design/especime-v3/INVENTARIO-FRASES.md:1810
     design/especime-v3/INVENTARIO-FRASES.md:2668
     design/especime-v3/INVENTARIO-FRASES.md:2898
     design/especime-v3/INVENTARIO-FRASES.md:320
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:138
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:240
-    src/i18n/strings.mjs:560
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:141
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:243
+    src/i18n/strings.mjs:563
     src/lib/ledger.mjs:2454
     src/lib/ledger.mjs:734
 §1.4 · `excerpt` ficou `[a verificar]` em quase todas as linhas semeadas
@@ -20,30 +22,36 @@
     design/especime-v3/INVENTARIO-FRASES.md:2935
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:115
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:117
-    src/i18n/strings.mjs:1092
-    src/i18n/strings.mjs:1554
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    src/i18n/strings.mjs:1095
+    src/i18n/strings.mjs:1557
 §1.5 · A linha de método e a linha de autoria não são traduzidas
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
     src/data/nomes-das-medidas.mjs:150
     src/data/nomes-das-medidas.mjs:7
-    src/i18n/strings.mjs:2358
+    src/i18n/strings.mjs:2379
     src/views/LinhaView.astro:124
     src/views/LinhaView.astro:1628
 §1.6 · Formatação portuguesa dos números nas duas edições — por agora
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
 §1.17 · O motivo de uma correção passou a existir nas duas línguas
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
     ledger/README.md:736
     src/lib/ledger.mjs:1700
     src/lib/ledger.mjs:815
     src/lib/ledger.mjs:840
 §1.19 · Os estudos migram para dois sítios, não um
-    scripts/gate-html.mjs:1370
-    scripts/gate-html.mjs:5529
-    scripts/gate-html.mjs:9370
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    scripts/gate-html.mjs:1374
+    scripts/gate-html.mjs:5546
+    scripts/gate-html.mjs:9405
 §1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
     ledger/README.md:632
     ledger/README.md:69
@@ -233,87 +241,99 @@
     ledger/claims/oe-2026-saldo-global-administracao-central-seguranca-social.yml:44
     ledger/claims/oe-2026-saldo-global-administracao-central.yml:43
     ledger/claims/oe-2026-saldo-primario-administracao-central.yml:43
-    scripts/gate-html.mjs:272
-    scripts/gate-html.mjs:277
-    scripts/gate-html.mjs:2894
-    scripts/gate-html.mjs:3077
-    scripts/gate-html.mjs:3782
-    scripts/gate-html.mjs:3986
-    scripts/gate-html.mjs:4000
+    scripts/gate-html.mjs:274
+    scripts/gate-html.mjs:279
+    scripts/gate-html.mjs:2898
+    scripts/gate-html.mjs:3081
+    scripts/gate-html.mjs:3786
+    scripts/gate-html.mjs:3990
+    scripts/gate-html.mjs:4004
     src/i18n/unidades.mjs:226
     src/i18n/unidades.mjs:254
     src/lib/ledger.mjs:364
 §1.28 · A bandeira que a fonte punha e o livro-razão não
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
     src/lib/ledger.mjs:1749
 §1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:71
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:74
     ledger/README.md:239
     ledger/README.md:563
     ledger/README.md:790
-    scripts/gate-html.mjs:1022
-    scripts/gate-html.mjs:1056
-    scripts/gate-html.mjs:2772
+    scripts/gate-html.mjs:1026
+    scripts/gate-html.mjs:1060
+    scripts/gate-html.mjs:2776
     src/views/LinhaView.astro:155
     src/views/LinhaView.astro:1703
 §1.32 · O tubo: setenta linhas atravessaram, e o sítio confere-as à chegada
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
     ledger/README.md:790
 §1.34 · O primeiro tipo de página de município, e o que ele se recusa a dizer
-    scripts/gate-html.mjs:3412
-    scripts/gate-html.mjs:3530
-    scripts/gate-html.mjs:4225
-    scripts/gate-html.mjs:7549
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    scripts/gate-html.mjs:3416
+    scripts/gate-html.mjs:3534
+    scripts/gate-html.mjs:4229
+    scripts/gate-html.mjs:7571
 §1.35 · As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
-    src/i18n/strings.mjs:2912
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    src/i18n/strings.mjs:2933
 §1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
     ledger/README.md:211
     ledger/README.md:423
     ledger/README.md:893
-    scripts/gate-html.mjs:5337
-    src/i18n/strings.mjs:358
-    src/i18n/strings.mjs:415
+    scripts/gate-html.mjs:5341
+    src/i18n/strings.mjs:361
+    src/i18n/strings.mjs:418
 §1.39 · O sítio passa a dizer o que é, e o Método a provar o que faz
-    scripts/gate-html.mjs:5212
-    scripts/gate-html.mjs:8482
-    scripts/gate-html.mjs:9238
-    src/i18n/strings.mjs:1764
-    src/i18n/strings.mjs:402
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    scripts/gate-html.mjs:5216
+    scripts/gate-html.mjs:8517
+    scripts/gate-html.mjs:9273
+    src/i18n/strings.mjs:1767
+    src/i18n/strings.mjs:405
 §1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
     ledger/README.md:845
-    scripts/gate-html.mjs:206
-    scripts/gate-html.mjs:4089
-    scripts/gate-html.mjs:427
-    scripts/gate-html.mjs:519
+    scripts/gate-html.mjs:208
+    scripts/gate-html.mjs:4093
+    scripts/gate-html.mjs:431
+    scripts/gate-html.mjs:523
     src/data/studies.mjs:271
     src/data/studies.mjs:327
     src/data/studies.mjs:38
-    src/i18n/strings.mjs:2265
-    src/i18n/strings.mjs:2270
+    src/i18n/strings.mjs:2286
+    src/i18n/strings.mjs:2291
     src/lib/ledger.mjs:80
 §1.41 · A revisão cruzada do bloco V, e o que ela mudou
-    scripts/gate-html.mjs:3213
-    scripts/gate-html.mjs:3256
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    scripts/gate-html.mjs:3217
+    scripts/gate-html.mjs:3260
 §1.42 · Segunda revisão cruzada do bloco V
-    scripts/gate-html.mjs:3235
-    scripts/gate-html.mjs:3256
-    scripts/gate-html.mjs:3658
-    scripts/gate-html.mjs:7840
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    scripts/gate-html.mjs:3239
+    scripts/gate-html.mjs:3260
+    scripts/gate-html.mjs:3662
+    scripts/gate-html.mjs:7862
 §1.44 · A revisão cruzada da identidade v2
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
     ledger/README.md:569
-    scripts/gate-html.mjs:1048
+    scripts/gate-html.mjs:1052
 §1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
     ledger/README.md:1028
     ledger/README.md:1036
@@ -325,14 +345,16 @@
     ledger/README.md:500
     ledger/README.md:537
     ledger/README.md:854
-    scripts/gate-html.mjs:1057
-    src/i18n/strings.mjs:2445
+    scripts/gate-html.mjs:1061
+    src/i18n/strings.mjs:2466
     src/lib/ledger.mjs:1963
     src/lib/ledger.mjs:559
 §1.48 · A direção decide: a licença do conjunto é CC BY 4.0, e a regra 6 diz o que se faz
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
     src/views/LivroView.astro:439
 §1.49 · A republicação: o instantâneo de 2026-08-19 atravessa, os documentos são republicados, e a cópia arquivada entra
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
     src/data/studies.mjs:200
     src/data/studies.mjs:232
@@ -341,35 +363,43 @@
 §1.52 · A direção lê a pré-visualização n.º 1: cinco emendas, quatro decisões de forma, e o tema deixa de ser uma pergunta
     design/especime-v3/INVENTARIO-FRASES.md:1268
     design/especime-v3/INVENTARIO-FRASES.md:1271
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:462
-    scripts/gate-html.mjs:5165
-    src/i18n/strings.mjs:274
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:465
+    scripts/gate-html.mjs:5169
+    src/i18n/strings.mjs:277
 §1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
-    scripts/gate-html.mjs:213
-    scripts/gate-html.mjs:4201
-    scripts/gate-html.mjs:9238
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    scripts/gate-html.mjs:215
+    scripts/gate-html.mjs:4205
+    scripts/gate-html.mjs:9273
 §1.66 · As correções de UX depois da auditoria de 25.08, bloco A
     design/especime-v3/INVENTARIO-FRASES.md:1133
     design/especime-v3/INVENTARIO-FRASES.md:815
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
     src/views/LivroView.astro:121
 §1.68 · As páginas dos 308 concelhos
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
-    scripts/gate-html.mjs:221
-    scripts/gate-html.mjs:5008
+    scripts/gate-html.mjs:223
+    scripts/gate-html.mjs:5012
     src/data/studies.mjs:626
     src/data/studies.mjs:700
 §1.82 · Correções pequenas, quinta passagem (I91, segunda metade; I92): a língua dos nomes e dos rótulos na edição inglesa
-    scripts/gate-html.mjs:1771
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    scripts/gate-html.mjs:1775
 §1.85 · A tipografia: a pergunta das famílias livres fecha sem mudança; a Spectral e a Bitter ficam; o Parnaso depende do pacote de teste do diretor
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:47
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
 §1.90 · As linhas do primeiro domínio da primeira vaga: economia e finanças públicas com trabalho, do inventário ao livro-razão
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:215
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:218
 §1.91 · A cabeça nova como contentor: a faixa de cartões, o mapa como navegação, as três camadas com a mesma cabeça
-    scripts/gate-html.mjs:1018
-    scripts/gate-html.mjs:6190
-    scripts/gate-html.mjs:7221
-    scripts/gate-html.mjs:8496
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    scripts/gate-html.mjs:1022
+    scripts/gate-html.mjs:6207
+    scripts/gate-html.mjs:7243
+    scripts/gate-html.mjs:8531
 §1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
     design/especime-v3/INVENTARIO-FRASES.md:1254
     design/especime-v3/INVENTARIO-FRASES.md:1298
@@ -415,12 +445,13 @@
     design/especime-v3/INVENTARIO-FRASES.md:970
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:67
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:68
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
     src/i18n/strings.mjs:112
     src/i18n/strings.mjs:141
-    src/i18n/strings.mjs:1672
-    src/i18n/strings.mjs:1712
+    src/i18n/strings.mjs:1675
+    src/i18n/strings.mjs:1715
     src/i18n/strings.mjs:207
-    src/i18n/strings.mjs:2422
+    src/i18n/strings.mjs:2443
     src/i18n/strings.mjs:31
     src/i18n/strings.mjs:80
     src/views/LinhaView.astro:379
@@ -429,7 +460,8 @@
     tests/livro/indice.mjs:75
     tests/livro/indice.mjs:763
 §1.99 · A fase 1 do plano, o segundo dia: os nomes e as datas, a acessibilidade e os alvos, a leitura breve no cartão, o conserto a quente das datas dos estudos, e o fecho do dia com cinco ramos a meio
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
     src/data/studies.mjs:16
 §1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
@@ -438,10 +470,12 @@
     design/especime-v3/INVENTARIO-FRASES.md:2005
     design/especime-v3/INVENTARIO-FRASES.md:2006
     design/especime-v3/INVENTARIO-FRASES.md:2565
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
     scripts/provar-guardas.mjs:663
-    src/i18n/strings.mjs:1187
+    src/i18n/strings.mjs:1190
 §1.102 · A sessão de 08.09: o corredor parado por uma função apagada, as leituras a frio com o plano novo do Codex, a sonda ao INE, o F1.1d medido às cegas, e o F1.10 retomado
     design/especime-v3/INVENTARIO-FRASES.md:2581
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
 §1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
     design/especime-v3/INVENTARIO-FRASES.md:1293
     design/especime-v3/INVENTARIO-FRASES.md:1294
@@ -497,76 +531,93 @@
     design/especime-v3/INVENTARIO-FRASES.md:308
     design/especime-v3/INVENTARIO-FRASES.md:309
     design/especime-v3/INVENTARIO-FRASES.md:310
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
-    scripts/gate-html.mjs:4373
-    scripts/gate-html.mjs:4429
-    scripts/gate-html.mjs:4570
-    src/i18n/strings.mjs:1219
-    src/i18n/strings.mjs:1320
+    scripts/gate-html.mjs:4377
+    scripts/gate-html.mjs:4433
+    scripts/gate-html.mjs:4574
+    src/i18n/strings.mjs:1222
+    src/i18n/strings.mjs:1323
 §1.109 · A regra 9 do Método deixa de nomear o diretor
-    scripts/gate-html.mjs:4374
-    scripts/gate-html.mjs:4429
-    scripts/gate-html.mjs:4570
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    scripts/gate-html.mjs:4378
+    scripts/gate-html.mjs:4433
+    scripts/gate-html.mjs:4574
 §1.110 · «A casa» sai do Método e do Sobre
     design/especime-v3/INVENTARIO-FRASES.md:2918
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:116
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
 §1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:141
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:144
     src/data/nomes-das-medidas.mjs:148
 §1.117 · A peça 3 do B1, o país: o Codex constrói, o lugar de direção corrige o seu próprio guião, o Opus lê a frio
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:137
-    scripts/gate-html.mjs:5167
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:140
+    scripts/gate-html.mjs:5171
 §1.120 · «O que mudou» no seu lugar: a página do país curta, o registo inteiro numa página, e dois erros de medição do lugar de direção
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:120
-    scripts/gate-html.mjs:4395
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:123
+    scripts/gate-html.mjs:4399
 §1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
     design/especime-v3/INVENTARIO-FRASES.md:3007
     design/especime-v3/INVENTARIO-FRASES.md:3064
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:411
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:217
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:220
 §1.126 · O Portal BASE caído no motor e no Método (R1, mandato 10)
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
 §1.127 · O brief do B2: o bloco do veredicto em duas peças, o que o lugar de direção mediu antes de o escrever, e as decisões que ele fixa
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:140
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:143
     src/i18n/unidades.mjs:250
     src/i18n/unidades.mjs:64
 §1.129 · A peça 1 do B2, o veredicto: o Codex constrói e para nos dois pontos certos, o Opus lê a frio, o Codex esgota-se a meio da correção e o Opus acaba, e o diretor fixa a regra do sentido
     design/especime-v3/INVENTARIO-FRASES.md:3185
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
 §1.130 · O brief do L1, a leitura de cada medida: a regra do sentido vira uma gramática com ramos, as 36 leituras do lugar de direção ensaiadas a seco, e um bloco que não aterra sem outra família
-    src/i18n/strings.mjs:2528
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    src/i18n/strings.mjs:2549
 §1.133 · O leitor comum primeiro: a decisão do diretor de 28.09.2026 sobre o público, o que se lê à primeira, e quem procura as relações nos dados
     design/especime-v3/INVENTARIO-FRASES.md:3076
-    src/i18n/strings.mjs:1775
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    src/i18n/strings.mjs:1796
 §1.135 · O C1 construído pelo Codex e lido a frio seis vezes pelo Opus: as correções de confiança, a primeira atualização de uma linha cruzada, a regra 15 que lê o acesso em vigor, a guarda da pasta pessoal, e a aterragem
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:140
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:143
 §1.138 · O nome e o utilizador fora da árvore pública: o pedido do diretor de 29.09.2026, a auditoria dos segredos, a redação, e o detetor do nome alargado
-    scripts/gate-html.mjs:358
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    scripts/gate-html.mjs:360
 §1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
     design/especime-v3/INVENTARIO-FRASES.md:3524
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:500
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:399
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:400
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:447
-    scripts/gate-html.mjs:169
-    scripts/gate-html.mjs:74
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:402
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:403
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:450
+    scripts/gate-html.mjs:171
+    scripts/gate-html.mjs:76
     src/views/LinhaView.astro:140
 §1.143 · A primeira leitura por leitores comuns (30.09.2026): as portas dizem o que têm, a primeira página é o único lugar de «O que se passa», e uma coisa, um lugar, também na navegação
     design/especime-v3/INVENTARIO-FRASES.md:3702
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:422
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:447
-    scripts/gate-html.mjs:6119
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:425
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:450
+    scripts/gate-html.mjs:6136
 §1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
-    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:92
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:99
     design/especime-v3/medicoes/oe1-2026-10-04/medir.py:299
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:73
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:76
     src/data/studies.mjs:189
     src/data/studies.mjs:214
     src/data/studies.mjs:229
@@ -577,12 +628,15 @@
     src/data/studies.mjs:96
 §1.149 · A leitura do diretor de 01.10.2026 no telemóvel: o mapa de «Lugares» vem primeiro e as listas de nomes dobram-se; o mapa sai da primeira página, que fica com a porta; e a aterragem da §1.148
     design/especime-v3/INVENTARIO-FRASES.md:3604
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
     tests/livro/indice.mjs:1486
 §1.150 · O L2a construído pelo Opus e lido a frio pelo Sol: o mapa primeiro em «Lugares», as listas dobradas, a primeira página com a porta; as decisões do lugar de direção nos pontos deixados; e a aterragem da §1.149
     design/especime-v3/INVENTARIO-FRASES.md:3645
-    src/i18n/strings.mjs:687
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
+    src/i18n/strings.mjs:690
 §1.152 · O UE2 construído pelo Opus e lido a frio pelo Sol: a página da União como a página dos países, as definições em palavras comuns como única forma em todo o sítio, o espaço antes de «%» confirmado pelo diretor, e a aterragem da §1.151
     design/especime-v3/INVENTARIO-FRASES.md:3737
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
 §1.154 · A caixa das sugestões no ar (o S1, construído pelo Opus, lido a frio pelo Sol, endurecido com a chave que só a Vercel tem, com as três decisões do diretor de 03.10.2026), a quinta recusa do Método reescrita, a leitura de fora do Opus de 03.10 avaliada e o que ela muda no plano
     design/especime-v3/INVENTARIO-FRASES.md:3807
     design/especime-v3/INVENTARIO-FRASES.md:3808
@@ -592,9 +646,10 @@
     design/especime-v3/INVENTARIO-FRASES.md:3849
     design/especime-v3/INVENTARIO-FRASES.md:3851
     design/especime-v3/critica/REVISOES-DO-INVENTARIO.md:603
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:476
+    design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md:344
     design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:479
-    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:484
-55 decisão(ões) citada(s) em 216 ficheiro(s) de texto
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:482
+    design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md:487
+55 decisão(ões) citada(s) em 217 ficheiro(s) de texto
 0 ficheiro(s) binário(s) saltado(s)
 conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível

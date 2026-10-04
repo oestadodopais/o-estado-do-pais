@@ -1,13 +1,13 @@
 {
   "passagem": "OE1-d",
   "inicio": "2026-10-04T09:58:52.100Z",
-  "medido_em": "2026-10-04T11:41:38.942662+00:00",
-  "segundos": 6166,
+  "medido_em": "2026-10-04T12:13:41.916243+00:00",
+  "segundos": 8089,
   "sessoes": [
     {
       "sessao": "01a10508-9b42-72e2-a474-124da3a642e1",
       "modelo": "gpt-6-astra",
-      "ultima_medicao": "2026-10-04T11:41:07.226Z",
+      "ultima_medicao": "2026-10-04T12:13:04.042Z",
       "contador_anterior": {
         "input_tokens": 55280704,
         "cached_input_tokens": 53649920,
@@ -17,20 +17,20 @@
         "total_tokens": 55612710
       },
       "contador_atual": {
-        "input_tokens": 81017696,
-        "cached_input_tokens": 78468992,
+        "input_tokens": 87706818,
+        "cached_input_tokens": 85037056,
         "cache_write_input_tokens": 0,
-        "output_tokens": 459616,
-        "reasoning_output_tokens": 232997,
-        "total_tokens": 81477312
+        "output_tokens": 489517,
+        "reasoning_output_tokens": 245500,
+        "total_tokens": 88196335
       },
       "incremento": {
-        "input_tokens": 25736992,
-        "cached_input_tokens": 24819072,
+        "input_tokens": 32426114,
+        "cached_input_tokens": 31387136,
         "cache_write_input_tokens": 0,
-        "output_tokens": 127610,
-        "reasoning_output_tokens": 60737,
-        "total_tokens": 25864602
+        "output_tokens": 157511,
+        "reasoning_output_tokens": 73240,
+        "total_tokens": 32583625
       }
     },
     {
@@ -102,30 +102,52 @@
     {
       "sessao": "01a1067e-946a-7712-8851-8aaf7d84ee44",
       "modelo": "codex-auto-review",
-      "ultima_medicao": "2026-10-04T11:19:43.461Z",
+      "ultima_medicao": "2026-10-04T11:45:48.374Z",
       "contador_anterior": {},
       "contador_atual": {
-        "input_tokens": 389782,
-        "cached_input_tokens": 326656,
+        "input_tokens": 630706,
+        "cached_input_tokens": 511232,
         "cache_write_input_tokens": 0,
-        "output_tokens": 923,
-        "reasoning_output_tokens": 395,
-        "total_tokens": 390705
+        "output_tokens": 1443,
+        "reasoning_output_tokens": 697,
+        "total_tokens": 632149
       },
       "incremento": {
-        "input_tokens": 389782,
-        "cached_input_tokens": 326656,
+        "input_tokens": 630706,
+        "cached_input_tokens": 511232,
         "cache_write_input_tokens": 0,
-        "output_tokens": 923,
-        "reasoning_output_tokens": 395,
-        "total_tokens": 390705
+        "output_tokens": 1443,
+        "reasoning_output_tokens": 697,
+        "total_tokens": 632149
+      }
+    },
+    {
+      "sessao": "01a106c1-4718-78f2-bd45-7d90fe0dfb2e",
+      "modelo": "codex-auto-review",
+      "ultima_medicao": "2026-10-04T11:51:54.119Z",
+      "contador_anterior": {},
+      "contador_atual": {
+        "input_tokens": 60878,
+        "cached_input_tokens": 34304,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 251,
+        "reasoning_output_tokens": 120,
+        "total_tokens": 61129
+      },
+      "incremento": {
+        "input_tokens": 60878,
+        "cached_input_tokens": 34304,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 251,
+        "reasoning_output_tokens": 120,
+        "total_tokens": 61129
       }
     }
   ],
-  "tokens_totais": 36663737,
-  "tokens_entrada_cache": 35026560,
-  "tokens_entrada_sem_cache": 1444641,
-  "tokens_saida": 192536,
+  "tokens_totais": 43685333,
+  "tokens_entrada_cache": 41813504,
+  "tokens_entrada_sem_cache": 1648621,
+  "tokens_saida": 223208,
   "limite": "Incremento desde o último contador anterior à ordem OE1-d até ao último disponível. Inclui cache e revisões automáticas; não é preço monetário.",
   "conhecido_positivo": true
 }

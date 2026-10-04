@@ -1,8 +1,8 @@
 {
   "o_que_e": "OE1-d: medição integral da L1 na construção da cabeça integrada. Nenhuma alteração da régua ou aumento do teto.",
-  "data": "2026-10-04T11:23:27.358Z",
-  "cabeca": "8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5",
-  "construcao": "8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5",
+  "data": "2026-10-04T11:55:47.686Z",
+  "cabeca": "914c53e1a76f541c513b576d0a603b4b7de29261",
+  "construcao": "914c53e1a76f541c513b576d0a603b4b7de29261",
   "origem": "design/especime-v3/medicoes/oe1-2026-10-04/oe1d-l1-check-lugar.log",
   "codigo_da_regua": 0,
   "contagens": {

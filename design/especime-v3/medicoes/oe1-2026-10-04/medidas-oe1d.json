@@ -1,23 +1,37 @@
 {
   "bloco": "OE1-d",
   "passou": true,
-  "medido_em": "2026-10-04T11:27:13.323488+00:00",
+  "medido_em": "2026-10-04T11:55:33.095175+00:00",
   "cabecas": {
     "motor": "1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3",
-    "sitio": "8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5",
-    "main": "b2fbdd28de97df4a0507eedc18448924060c84d2",
+    "sitio": "914c53e1a76f541c513b576d0a603b4b7de29261",
+    "main": "b748a6b4b5f6b3949b4fb9805720dcf2016b3a53",
     "master": "47f12e15c927bf238522ac680b1f54c9de29f55d"
   },
   "bases": {
     "observacoes_motor": "9bfbb777f7d2f5af8b185475c8dd8027ebd76bad",
     "linhas_sitio": "bde06bf00e5e416f177c50a439018f95c162a6d0",
-    "rebase_main": "b2fbdd28de97df4a0507eedc18448924060c84d2",
+    "rebase_main": "b748a6b4b5f6b3949b4fb9805720dcf2016b3a53",
     "rebase_master": "47f12e15c927bf238522ac680b1f54c9de29f55d"
   },
-  "guiao_sha256": "f5f4ab3742be77f7d5178a0f047d1b198c50f47eb2625be9dc96fe40acebc0b7",
+  "guiao_sha256": "be6c14d68ea0ffe3182969777c6ff523e6b0825807537a1a2943dad3c6daad6f",
   "politica": "Medição na cabeça do código, antes do último commit reservado às provas.",
   "html_conferido": true,
   "medidas": {
+    "base_main_integrada": {
+      "valor": "b748a6b4b5f6b3949b4fb9805720dcf2016b3a53",
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Trocar a base integrada na cópia é recusado.",
+      "queixa_da_planta": "A referência principal ainda não foi integrada"
+    },
+    "base_master_integrada": {
+      "valor": "47f12e15c927bf238522ac680b1f54c9de29f55d",
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Trocar a base integrada na cópia é recusado.",
+      "queixa_da_planta": "A referência principal ainda não foi integrada"
+    },
     "livro_motor_intacto": {
       "valor": "66820436eec71467c8660de15a23f7d7f5dd53bf382fdeead3c73bde6ea095c2",
       "passou": true,
@@ -145,7 +159,7 @@
       "queixa_da_planta": "Resumo dos nomes diferente do registo"
     },
     "html_cabeca": {
-      "valor": "8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5",
+      "valor": "914c53e1a76f541c513b576d0a603b4b7de29261",
       "passou": true,
       "conhecido_positivo": true,
       "planta": "Trocar a cabeça da construção é recusado.",

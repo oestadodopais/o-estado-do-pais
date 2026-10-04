@@ -8,7 +8,7 @@ O teste de aceitação integral do §2 não está cumprido. Foram construídas e
 |---|---|
 | 1. Fontes à mão da máquina | 11 XML recebidos por endereços publicados; 14 conjuntos do dados.gov.pt com código de licença cc-by; matrizes Eurostat de 2024 e 2025 e 30 pedidos individuais; mapas PDF; sínteses de julho e agosto e anexo XLSX de agosto. Recibos de pedido, data, estado HTTP, bytes e SHA-256 no motor. |
 | 2. Leitores | Leitores separados para XML, XLS, JSON-stat e PDF; cliente comum na aquisição. Provas no módulo publisher.oe1_test, registado em core.gate. O anexo XLSX é uma segunda leitura de 26 valores da síntese. |
-| 3. Linhas | Parcial: 16 rubricas orgânicas do Mapa quatro, incluindo os Encargos Gerais do Estado e a Presidência do Conselho de Ministros; 20 programas no orçamento; 20 programas executados até agosto; dez funções no orçamento e dez executadas até julho; 30 células Eurostat; totais, indicadores, diferenças de consolidação e 36 derivadas. Faltam os totais consolidados de receita e saldo dos mapas e as necessidades de financiamento mensais. A tabela integral está neste relatório e em LINHAS.md. |
+| 3. Linhas | Parcial: 16 rubricas orgânicas do Mapa 4, incluindo os Encargos Gerais do Estado e a Presidência do Conselho de Ministros; 20 programas no orçamento; 20 programas executados até agosto; dez funções no orçamento e dez executadas até julho; 30 células Eurostat; totais, indicadores, diferenças de consolidação e 36 derivadas. Faltam os totais consolidados de receita e saldo dos mapas e as necessidades de financiamento mensais. A tabela integral está neste relatório e em LINHAS.md. |
 | 4. Portões | Códigos e cabeças lidos de ficheiro na tabela abaixo. Uma cabeça diferente não é uma prova da cabeça final. |
 | 5. Relatório | Este ficheiro, LINHAS.md, medidas.json e as provas atuais medidas-oe1d.json, medir-oe1d.py, custo-oe1d.json e a resposta curta. Cada contagem tem um conhecido positivo executado pelo guião. |
 
@@ -49,7 +49,7 @@ A proposta `publisher/oe1_site_support.patch`, no motor, identificou cinco adapt
 
 As decisões do §5 foram respeitadas: o bloco entrega dados para a futura página do governo; as linhas usam os recibos da família de páginas já existente no livro-razão, sem novos componentes ou declarações de rota; todas as linhas publicadas declaram o perímetro; as fontes que atravessam têm corpos e pedidos reproduzíveis. O ponto da biblioteca foi resolvido por endereços publicados, com os 401 conservados como prova da limitação inicial.
 
-O protocolo final é o do OE1-d: o código é comitado antes da corrida completa; --conferir-final exige cinco zeros, tempos completos e a cabeça corrente. Um último commit, reservado às provas e ao relatório, conserva esses resultados e não muda o código construído ou as linhas. Inclui o ajuste de recolha do guião de prova, identificado pelo seu SHA-256. A secção OE1-d distingue a cabeça de código do commit que a entrega com as provas.
+O protocolo final é o do OE1-d: o código é comitado antes da corrida completa; --conferir-final exige cinco zeros, tempos completos e a cabeça corrente. Um último commit, reservado às provas e ao relatório, conserva esses resultados e não muda o código construído ou as linhas. A secção OE1-d distingue a cabeça de código do commit que a entrega com as provas.
 
 ## Portões lidos de ficheiro
 
@@ -58,14 +58,14 @@ Corrida integral pela tranca, com o invólucro npm-sem-caminhos.py. O ledger cor
 | Portão | Código lido | Cabeça da corrida |
 |---|---|---|
 | motor | [0](portoes/motor.codigo) | `1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3` |
-| ledger | [0](portoes/ledger.codigo) | `8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5` |
-| build | [0](portoes/build.codigo) | `8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5` |
-| verify | [0](portoes/verify.codigo) | `8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5` |
-| typecheck | [0](portoes/typecheck.codigo) | `8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5` |
+| ledger | [0](portoes/ledger.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
+| build | [0](portoes/build.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
+| verify | [0](portoes/verify.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
+| typecheck | [0](portoes/typecheck.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
 
 ## Commits e cabeças
 
-Motor `1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3`, sobre master `47f12e15c927bf238522ac680b1f54c9de29f55d`. Sítio, cabeça de código `8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5`, sobre main `b2fbdd28de97df4a0507eedc18448924060c84d2`; o commit seguinte só guarda provas.
+Motor `1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3`, sobre master `47f12e15c927bf238522ac680b1f54c9de29f55d`. Sítio, cabeça de código `914c53e1a76f541c513b576d0a603b4b7de29261`, sobre main `b748a6b4b5f6b3949b4fb9805720dcf2016b3a53`; o commit seguinte só guarda provas.
 
 Motor:
 
@@ -76,23 +76,25 @@ Motor:
 
 Sítio, depois do rebase:
 
-- `a310a7f9 OE1: o brief «o dinheiro do Estado por ministério e por função, selado no motor» com o §0 medido, pela ideia do diretor de 04.10.2026 e pela leitura de fora de 03.10`
-- `7f0851eb OE1: receber 186 linhas pelo tubo do motor`
-- `272bdff2 OE1: relatar a selagem parcial, as lacunas de fonte e os portões`
-- `006995b7 OE1-b: integrar o conjunto e conferir as bandeiras Eurostat nos dois formatos`
-- `dbe6f39a OE1-b: reconferir as duas contagens do livro no inventário`
-- `494c40f0 OE1-b: comitar o relatório, as plantas e as medições da integração`
-- `48c36202 OE1-b: reconferir a L1 com a construção de partida`
-- `d8f88664 OE1-b: guardar as provas e as propostas adicionais`
-- `beb0e14e OE1-b: fechar o relatório com duas extensões pendentes`
-- `616c211f OE1-c: reconhecer os sete localizadores e plantar as recusas em I1 e I3`
-- `850a623a OE1-c: recortar o espécime do livro e provar o teto com o recorte retirado`
-- `584b4228 OE1-c: registar as plantas, as medições e o protocolo da corrida final`
-- `f03f7d46 OE1-c: guardar a corrida final verde e os seus contadores`
-- `79e0b633 OE1-d: dizer a medida, o acumulado e a ressalva nas duas edições`
-- `cc4711df OE1-d: conferir unidades e ressalvas depois de integrar R2 e RP3`
-- `e99b0473 OE1-d: fechar avisos, registo da voz e medição reproduzível`
-- `8f0ce3ce OE1-d: retirar a edição órfã e provar o formato da medição L1`
+- `e9404ce3 OE1: o brief «o dinheiro do Estado por ministério e por função, selado no motor» com o §0 medido, pela ideia do diretor de 04.10.2026 e pela leitura de fora de 03.10`
+- `cff8e8bc OE1: receber 186 linhas pelo tubo do motor`
+- `10bfb1f3 OE1: relatar a selagem parcial, as lacunas de fonte e os portões`
+- `481fa94d OE1-b: integrar o conjunto e conferir as bandeiras Eurostat nos dois formatos`
+- `4961e27d OE1-b: reconferir as duas contagens do livro no inventário`
+- `3f5b6eea OE1-b: comitar o relatório, as plantas e as medições da integração`
+- `88f53ac5 OE1-b: reconferir a L1 com a construção de partida`
+- `d618fc5e OE1-b: guardar as provas e as propostas adicionais`
+- `227bb6a0 OE1-b: fechar o relatório com duas extensões pendentes`
+- `81428daf OE1-c: reconhecer os sete localizadores e plantar as recusas em I1 e I3`
+- `5103d851 OE1-c: recortar o espécime do livro e provar o teto com o recorte retirado`
+- `a912de40 OE1-c: registar as plantas, as medições e o protocolo da corrida final`
+- `b37cb066 OE1-c: guardar a corrida final verde e os seus contadores`
+- `d6e101ff OE1-d: dizer a medida, o acumulado e a ressalva nas duas edições`
+- `a2476b71 OE1-d: conferir unidades e ressalvas depois de integrar R2 e RP3`
+- `38d947bf OE1-d: fechar avisos, registo da voz e medição reproduzível`
+- `e3620a0b OE1-d: retirar a edição órfã e provar o formato da medição L1`
+- `5b3d1637 OE1-d: guardar portões verdes, medições e relato final`
+- `914c53e1 OE1-d: provar as bases integradas e conservar as referências do R3`
 
 ## Decisões em vigor
 
@@ -261,6 +263,10 @@ O custo desta passagem é o corte de [custo-oe1c.json](custo-oe1c.json), pelos c
 As lacunas de receita consolidada AC+SS, saldo dos mapas, despesa bruta da Segurança Social e necessidades de financiamento mensais mantêm as razões descritas no início deste relatório. Não se acrescentou um valor para as preencher.
 
 
+
+
+
+
 <!-- INICIO OE1-D -->
 ## OE1-d
 
@@ -280,8 +286,8 @@ A leitura a frio do Opus foi lida integralmente. Pela triagem do mandato, os ach
 | Nome do estudo | O código OE1 saiu do título interno nas duas línguas. Os 372 recibos mostram o nome da edição, sem ligação a uma página inexistente. |
 | Resposta curta | Movida por git mv para esta pasta de medições. Não existe resposta na raiz. O guião antigo foi ajustado para não a recriar. |
 | Cabeçalhos PDF | Unidades e títulos de colunas impressos são lidos e conferidos, incluindo ano, perímetro e alinhamento. As ausências de unidade no XLS continuam explícitas e apoiadas nas seis correspondências de escala. |
-| L1 | 2714 páginas, teto 2714, 372 recibos OE1. Construção e medição na cabeça `8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5`. Nenhum aumento do teto. |
-| Fecho | Cinco códigos zero, --conferir-final a zero e 25 medidas com conhecido positivo. O último commit é reservado às provas desta cabeça de código. |
+| L1 | 2714 páginas, teto 2714, 372 recibos OE1. Construção e medição na cabeça `914c53e1a76f541c513b576d0a603b4b7de29261`. Nenhum aumento do teto. |
+| Fecho | Cinco códigos zero, --conferir-final a zero e 27 medidas com conhecido positivo. O último commit é reservado às provas desta cabeça de código. |
 
 ### Ficheiros e razão de cada mudança
 
@@ -315,15 +321,15 @@ No sítio, as plantas do ledger retiram cada língua da ressalva, introduzem nú
 
 A prova das edições corre a mesma régua da língua sobre o módulo íntegro e, num processo separado, repõe em memória a declaração órfã gov_10a_exp. Exige código um e a queixa específica da edição sem linha, sem alterar o ficheiro em disco.
 
-Na recolha final, o guião procurou inicialmente a queixa apenas em stdout, mas o portão escreve as recusas em stderr. O registo oe1d-medicao-recolha-incompleta conserva essa falha do guião. A correção lê ambos os fluxos, mantendo código um e a mesma queixa obrigatórios; não muda a régua. O guião corrigido voltou a executar as vinte e cinco medidas a zero. Esta correção do instrumento de prova, e o registo do seu próprio SHA-256, entram no último commit de provas; o código construído do sítio e as linhas não mudam. O resumo do guião executado é `f5f4ab3742be77f7d5178a0f047d1b198c50f47eb2625be9dc96fe40acebc0b7`.
+Na recolha final, o guião procurou inicialmente a queixa apenas em stdout, mas o portão escreve as recusas em stderr. O registo oe1d-medicao-recolha-incompleta conserva essa falha do guião. A correção lê ambos os fluxos, mantendo código um e a mesma queixa obrigatórios; não muda a régua. O guião corrigido executou novamente as medidas a zero. A correção do instrumento e o registo do seu próprio SHA-256 ficaram comitados antes da corrida final após o R3; o último commit só acrescenta provas. Duas plantas adicionais recusam uma base de main ou master que não esteja integrada. O resumo do guião executado é `be6c14d68ea0ffe3182969777c6ff523e6b0825807537a1a2943dad3c6daad6f`.
 
-O guião [medir-oe1d.py](medir-oe1d.py) conferiu 25 medidas, cada uma com o seu conhecido positivo. [medidas-oe1d.json](medidas-oe1d.json) contém os resultados, queixas das plantas e resumos das 186 linhas. A leitura HTML verifica o nome, a ressalva, a unidade e o estudo nos 372 recibos, mais o nome, a ressalva e a unidade nas 372 entradas dos dois índices. As plantas trabalham em cópias e não adulteram ficheiros de produção.
+O guião [medir-oe1d.py](medir-oe1d.py) conferiu 27 medidas, cada uma com o seu conhecido positivo. [medidas-oe1d.json](medidas-oe1d.json) contém os resultados, queixas das plantas e resumos das 186 linhas. A leitura HTML verifica o nome, a ressalva, a unidade e o estudo nos 372 recibos, mais o nome, a ressalva e a unidade nas 372 entradas dos dois índices. As plantas trabalham em cópias e não adulteram ficheiros de produção.
 
 A guarda --conferir-final foi vista novamente a morder enquanto esta corrida ainda estava na fila: saiu com código um apesar dos códigos verdes antigos, pela queixa de corrida por terminar. A prova está em oe1d-planta-corrida-incompleta.log; não foi contada como falha da cabeça nem como portão final verde.
 
 ### Integração e prova da cabeça
 
-O sítio foi rebaseado na própria worktree, no ramo oe1-2026-10-04-b, sobre main `b2fbdd28de97df4a0507eedc18448924060c84d2`. O motor foi rebaseado sobre master `47f12e15c927bf238522ac680b1f54c9de29f55d`. Os conflitos do inventário e das guardas foram resolvidos conservando as retiradas do R2, o campo serie e as provas do RP3, além das duas ressalvas. As referências principais foram relidas antes da corrida final.
+O sítio foi rebaseado na própria worktree, no ramo oe1-2026-10-04-b, sobre main `b748a6b4b5f6b3949b4fb9805720dcf2016b3a53`. O motor foi rebaseado sobre master `47f12e15c927bf238522ac680b1f54c9de29f55d`. Na primeira integração, os conflitos do inventário e das guardas foram resolvidos conservando as retiradas do R2, o campo serie e as provas do RP3, além das duas ressalvas. Depois de uma corrida verde, main avançou com o R3 entre a leitura da referência e o commit de provas. Esse resultado anterior está preservado em portoes-oe1d-antes-r3 e não prova a cabeça atual. O ramo foi novamente rebaseado; os conflitos do mapa e do inventário foram resolvidos à mão, conservando as secções dos dois blocos. As referências novas do R3 afetadas pela integração e a contagem dos campos foram atualizadas. O conferidor do mapa encontra todas as citações no ficheiro citado e nenhuma referência para lá do fim; regista ainda cinquenta e duas citações longe do número de linha indicado, listadas em oe1d-mapa-integrado.log. Não é uma prova de que todas as linhas do mapa estejam atualizadas. A nova medição lê a base efetivamente integrada e planta uma base falsa, recusada para cada árvore. As referências principais foram relidas antes da nova corrida integral.
 
 A corrida preparatória em cc4711df deu build=1, verify=1, ledger=0 e typecheck=0: os dois vermelhos eram a entrada em falta do bloco OE1-d no registo do inventário. A entrada por ler, prevista pela regra, resolveu a falta sem mudar o portão. As saídas preparatórias permanecem em portoes-oe1d-preparatorios. As queixas de estragos dentro dos JSON das plantas são resultados esperados, não erros da cabeça.
 
@@ -332,16 +338,16 @@ O segundo ensaio, em e99b0473, deu build=1 pela declaração antiga da edição 
 | Portão | Código lido | Cabeça da corrida |
 |---|---|---|
 | motor | [0](portoes/motor.codigo) | `1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3` |
-| ledger | [0](portoes/ledger.codigo) | `8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5` |
-| build | [0](portoes/build.codigo) | `8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5` |
-| verify | [0](portoes/verify.codigo) | `8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5` |
-| typecheck | [0](portoes/typecheck.codigo) | `8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5` |
+| ledger | [0](portoes/ledger.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
+| build | [0](portoes/build.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
+| verify | [0](portoes/verify.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
+| typecheck | [0](portoes/typecheck.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
 
-O registo [oe1d-conferir-final.log](oe1d-conferir-final.log) contém o --conferir-final a zero na cabeça de código `8f0ce3ce92cca2b266cdb15c8bab4ed6cd9812e5`. Depois da corrida, o último commit do sítio acrescenta apenas provas, o ajuste do guião de recolha acima descrito, relatório e resposta. A sua diferença para esta cabeça é conferida por caminhos; não altera o código construído, linhas ou dados publicados. A cabeça entregue identifica-se pelo commit que contém esta secção; os ficheiros portoes/cabeca e portoes/cabeca.fim identificam explicitamente o seu pai de código ensaiado. O motor termina em `1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3`.
+O registo [oe1d-conferir-final.log](oe1d-conferir-final.log) contém o --conferir-final a zero na cabeça de código `914c53e1a76f541c513b576d0a603b4b7de29261`. Depois da corrida, o último commit do sítio acrescenta apenas provas, relatório e resposta; nenhum ficheiro de código ou guião de medição muda nesse commit. A sua diferença para esta cabeça é conferida por caminhos; não altera o código construído, linhas ou dados publicados. A cabeça entregue identifica-se pelo commit que contém esta secção; os ficheiros portoes/cabeca e portoes/cabeca.fim identificam explicitamente o seu pai de código ensaiado. O motor termina em `1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3`.
 
 ### Decisões em vigor nos ficheiros tocados
 
-Motor: §1.6, §1.24, §1.31, §1.32, §1.47, §1.154. Sítio: §1.1, §1.3, §1.4, §1.5, §1.6, §1.17, §1.19, §1.24, §1.28, §1.31, §1.32, §1.34, §1.35, §1.36, §1.39, §1.40, §1.41, §1.42, §1.44, §1.47, §1.48, §1.49, §1.52, §1.64, §1.66, §1.68, §1.82, §1.85, §1.90, §1.91, §1.98, §1.99, §1.101, §1.102, §1.108, §1.109, §1.110, §1.115, §1.117, §1.120, §1.124, §1.126, §1.127, §1.129, §1.130, §1.133, §1.135, §1.138, §1.140, §1.143, §1.145, §1.149, §1.150, §1.152, §1.154. Os localizadores por ficheiro e o conhecido positivo da leitura estão em [decisoes-oe1d-motor.log](decisoes-oe1d-motor.log) e [decisoes-oe1d-sitio.log](decisoes-oe1d-sitio.log), respetivamente dez e 216 ficheiros. Nenhum ficheiro protegido do motor foi alterado pelos commits do bloco.
+Motor: §1.6, §1.24, §1.31, §1.32, §1.47, §1.154. Sítio: §1.1, §1.3, §1.4, §1.5, §1.6, §1.17, §1.19, §1.24, §1.28, §1.31, §1.32, §1.34, §1.35, §1.36, §1.39, §1.40, §1.41, §1.42, §1.44, §1.47, §1.48, §1.49, §1.52, §1.64, §1.66, §1.68, §1.82, §1.85, §1.90, §1.91, §1.98, §1.99, §1.101, §1.102, §1.108, §1.109, §1.110, §1.115, §1.117, §1.120, §1.124, §1.126, §1.127, §1.129, §1.130, §1.133, §1.135, §1.138, §1.140, §1.143, §1.145, §1.149, §1.150, §1.152, §1.154. Os localizadores por ficheiro e o conhecido positivo da leitura estão em [decisoes-oe1d-motor.log](decisoes-oe1d-motor.log) e [decisoes-oe1d-sitio.log](decisoes-oe1d-sitio.log), respetivamente 10 e 217 ficheiros. Nenhum ficheiro protegido do motor foi alterado pelos commits do bloco.
 
 ### Três exemplos de nome por família
 
@@ -370,7 +376,7 @@ Os textos seguintes são lidos do módulo gerado, sem reescrita no relatório.
 
 ### Custo e o que fica por fazer
 
-36 663 737 símbolos contabilizados, dos quais 35 026 560 de entrada em cache, 1 444 641 de entrada sem cache e 192 536 de saída; 6 166 segundos desde a ordem OE1-d até ao corte de 2026-10-04T11:41:38.942662+00:00. Modelo de construção: Codex gpt-6-astra. O [contador](custo-oe1d.json) inclui cache e revisões automáticas; não é um preço monetário. O corte é explícito e não inclui utilização posterior ao último evento disponível.
+43 685 333 símbolos contabilizados, dos quais 41 813 504 de entrada em cache, 1 648 621 de entrada sem cache e 223 208 de saída; 8 089 segundos desde a ordem OE1-d até ao corte de 2026-10-04T12:13:41.916243+00:00. Modelo de construção: Codex gpt-6-astra. O [contador](custo-oe1d.json) inclui cache e revisões automáticas; não é um preço monetário. O corte é explícito e não inclui utilização posterior ao último evento disponível.
 
 O teste de aceitação integral do OE1 continua parcial pelas lacunas de fonte: receita consolidada AC+SS e saldo correspondente não impressos nos mapas lidos; dois totais brutos divergentes da Segurança Social; necessidades de financiamento mensais sem linha publicável na fonte lida. Não se escolheu um total nem se transformou saldo em dívida. A diferença AC e a escala inferida são agora avisos publicados, não lacunas escondidas numa nota. A leitura cruzada das duas linhas novas do inventário fica por fazer antes da fusão. A página do governo pertence a outro bloco. Nenhum push.
 <!-- FIM OE1-D -->
