@@ -1,0 +1,284 @@
+{
+  "medido_em": "2026-10-04T09:17:22.349300+00:00",
+  "cabecas": {
+    "motor": "9bfbb777f7d2f5af8b185475c8dd8027ebd76bad",
+    "sitio": "bde06bf00e5e416f177c50a439018f95c162a6d0"
+  },
+  "portoes": {
+    "motor": {
+      "codigo": 0,
+      "cabeca": "9bfbb777f7d2f5af8b185475c8dd8027ebd76bad",
+      "origem": "portoes/motor.codigo"
+    },
+    "ledger": {
+      "codigo": 0,
+      "cabeca": "bde06bf00e5e416f177c50a439018f95c162a6d0",
+      "origem": "portoes/ledger.codigo"
+    },
+    "build": {
+      "codigo": 0,
+      "cabeca": "bde06bf00e5e416f177c50a439018f95c162a6d0",
+      "origem": "portoes/build.codigo"
+    },
+    "verify": {
+      "codigo": 0,
+      "cabeca": "bde06bf00e5e416f177c50a439018f95c162a6d0",
+      "origem": "portoes/verify.codigo"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "cabeca": "bde06bf00e5e416f177c50a439018f95c162a6d0",
+      "origem": "portoes/typecheck.codigo"
+    }
+  },
+  "commits": [
+    "24b21fe9d842a33e622d85e510998ee8d335fbc8 OE1-c: reconhecer os sete localizadores e plantar as recusas em I1 e I3",
+    "9038e1e6a8001bce90b5496083ee373d0a162ab3 OE1-c: recortar o espécime do livro e provar o teto com o recorte retirado",
+    "bde06bf00e5e416f177c50a439018f95c162a6d0 OE1-c: registar as plantas, as medições e o protocolo da corrida final"
+  ],
+  "fecho_verificado": true,
+  "custo": {
+    "passagem": "OE1-c",
+    "inicio": "2026-10-04T08:35:43.029Z",
+    "medido_em": "2026-10-04T09:17:13.221229+00:00",
+    "segundos": 2490,
+    "sessoes": [
+      {
+        "sessao": "01a10508-9b42-72e2-a474-124da3a642e1",
+        "modelo": "gpt-6-astra",
+        "ultima_medicao": "2026-10-04T09:16:51.340Z",
+        "contador_anterior": {
+          "input_tokens": 45722686,
+          "cached_input_tokens": 44213376,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 289298,
+          "reasoning_output_tokens": 152981,
+          "total_tokens": 46011984
+        },
+        "contador_atual": {
+          "input_tokens": 54613150,
+          "cached_input_tokens": 52987264,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 329225,
+          "reasoning_output_tokens": 170998,
+          "total_tokens": 54942375
+        },
+        "incremento": {
+          "input_tokens": 8890464,
+          "cached_input_tokens": 8773888,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 39927,
+          "reasoning_output_tokens": 18017,
+          "total_tokens": 8930391
+        }
+      },
+      {
+        "sessao": "01a1060d-f53e-75f0-8d39-31a4d663521f",
+        "modelo": "codex-auto-review",
+        "ultima_medicao": "2026-10-04T08:52:25.274Z",
+        "contador_anterior": {},
+        "contador_atual": {
+          "input_tokens": 221069,
+          "cached_input_tokens": 133888,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 817,
+          "reasoning_output_tokens": 461,
+          "total_tokens": 221886
+        },
+        "incremento": {
+          "input_tokens": 221069,
+          "cached_input_tokens": 133888,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 817,
+          "reasoning_output_tokens": 461,
+          "total_tokens": 221886
+        }
+      }
+    ],
+    "tokens_totais": 9152277,
+    "tokens_entrada_cache": 8907776,
+    "tokens_entrada_sem_cache": 203757,
+    "tokens_saida": 40744,
+    "limite": "Incremento desde o último contador anterior à ordem OE1-c até ao último disponível. Inclui cache e revisões automáticas; não é preço monetário.",
+    "conhecido_positivo": true
+  },
+  "linhas_conservadas": 186,
+  "provas_na_corrida_final": {
+    "localizadores": {
+      "formatos_anteriores": [
+        {
+          "formato": "IndicadorDsg",
+          "id": "abrantes-empresas-2024",
+          "aceite": true
+        },
+        {
+          "formato": "label",
+          "id": "disparidade-salarial-entre-sexos-2023",
+          "aceite": true
+        },
+        {
+          "formato": "p.<n>, linha <n>, campo <n>",
+          "id": "abrantes-prazo-medio-de-pagamento-2025-12",
+          "aceite": true
+        },
+        {
+          "formato": "<folha>, linha <n>, coluna <n>",
+          "id": "abrantes-desemprego-registado-2025-12",
+          "aceite": true
+        }
+      ],
+      "plantas": [
+        {
+          "nome": "Outra dimensão JSON-stat",
+          "id": "despesa-por-funcao-2024-gf01-es",
+          "localizador": "dimension.geo.category.label.GF01",
+          "mordeu": true,
+          "queixa_I1": "ledger/claims/despesa-por-funcao-2024-gf01-es.yml: traz o rótulo \"General public services\" e o localizador \"dimension.geo.category.label.GF01\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+          "queixas_I3": [
+            "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+            "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+          ]
+        },
+        {
+          "nome": "Função fora da lista",
+          "id": "despesa-por-funcao-2024-gf01-es",
+          "localizador": "dimension.cofog99.category.label.GF11",
+          "mordeu": true,
+          "queixa_I1": "ledger/claims/despesa-por-funcao-2024-gf01-es.yml: traz o rótulo \"General public services\" e o localizador \"dimension.cofog99.category.label.GF11\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+          "queixas_I3": [
+            "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+            "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+          ]
+        },
+        {
+          "nome": "Coluna numérica em vez do rótulo XLS",
+          "id": "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
+          "localizador": "FUNCIONAL!E2",
+          "mordeu": true,
+          "queixa_I1": "ledger/claims/execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central.yml: traz o rótulo \"ATIVOS E PASSIVOS DA DESPESA\" e o localizador \"FUNCIONAL!E2\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+          "queixas_I3": [
+            "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+            "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+          ]
+        },
+        {
+          "nome": "Folha XLS desconhecida",
+          "id": "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
+          "localizador": "DESCONHECIDA!C2",
+          "mordeu": true,
+          "queixa_I1": "ledger/claims/execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central.yml: traz o rótulo \"ATIVOS E PASSIVOS DA DESPESA\" e o localizador \"DESCONHECIDA!C2\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+          "queixas_I3": [
+            "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+            "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+          ]
+        },
+        {
+          "nome": "Campo numérico em vez do rótulo XML",
+          "id": "oe-2026-despesa-programa-001",
+          "localizador": "Mapa1/Registos/Registo[1]/TotalEmEuros; Programa=P-001",
+          "mordeu": true,
+          "queixa_I1": "ledger/claims/oe-2026-despesa-programa-001.yml: traz o rótulo \"ÓRGÃOS DE SOBERANIA\" e o localizador \"Mapa1/Registos/Registo[1]/TotalEmEuros; Programa=P-001\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+          "queixas_I3": [
+            "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+            "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+          ]
+        },
+        {
+          "nome": "Registo XML zero",
+          "id": "oe-2026-despesa-programa-001",
+          "localizador": "Mapa1/Registos/Registo[0]/DesignacaoPrograma; Programa=P-001",
+          "mordeu": true,
+          "queixa_I1": "ledger/claims/oe-2026-despesa-programa-001.yml: traz o rótulo \"ÓRGÃOS DE SOBERANIA\" e o localizador \"Mapa1/Registos/Registo[0]/DesignacaoPrograma; Programa=P-001\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+          "queixas_I3": [
+            "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+            "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+          ]
+        },
+        {
+          "nome": "Código ministerial zero",
+          "id": "oe-2026-despesa-ministerio-administracao-interna",
+          "localizador": "p. 1, POR MINISTÉRIOS, código 00",
+          "mordeu": true,
+          "queixa_I1": "ledger/claims/oe-2026-despesa-ministerio-administracao-interna.yml: traz o rótulo \"ADMINISTRAÇÃO INTERNA\" e o localizador \"p. 1, POR MINISTÉRIOS, código 00\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+          "queixas_I3": [
+            "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+            "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+          ]
+        },
+        {
+          "nome": "Total sem página",
+          "id": "oe-2026-despesa-bruta-administracao-central",
+          "localizador": "p. , DESPESA TOTAL, última coluna",
+          "mordeu": true,
+          "queixa_I1": "ledger/claims/oe-2026-despesa-bruta-administracao-central.yml: traz o rótulo \"DESPESA TOTAL\" e o localizador \"p. , DESPESA TOTAL, última coluna\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+          "queixas_I3": [
+            "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+            "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+          ]
+        },
+        {
+          "nome": "Página impressa trocada",
+          "id": "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+          "localizador": "p. 49 do ficheiro, página impressa 46, Despesa efetiva, Execução Acumulada 2026",
+          "mordeu": true,
+          "queixa_I1": "ledger/claims/execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social.yml: traz o rótulo \"Ativos financeiros líquidos de reembolso\" e o localizador \"p. 49 do ficheiro, página impressa 46, Despesa efetiva, Execução Acumulada 2026\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+          "queixas_I3": [
+            "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+            "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+          ]
+        },
+        {
+          "nome": "Coluna da síntese desconhecida",
+          "id": "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+          "localizador": "p. 49 do ficheiro, página impressa 45, Despesa efetiva, Outra coluna 2026",
+          "mordeu": true,
+          "queixa_I1": "ledger/claims/execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social.yml: traz o rótulo \"Ativos financeiros líquidos de reembolso\" e o localizador \"p. 49 do ficheiro, página impressa 45, Despesa efetiva, Outra coluna 2026\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+          "queixas_I3": [
+            "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+            "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+          ]
+        },
+        {
+          "nome": "Programa da síntese zero",
+          "id": "execucao-2026-08-despesa-programa-001",
+          "localizador": "p. 72 do ficheiro, página impressa 68, programa 000, Execução Acumulada 2026",
+          "mordeu": true,
+          "queixa_I1": "ledger/claims/execucao-2026-08-despesa-programa-001.yml: traz o rótulo \"Órgãos de Soberania\" e o localizador \"p. 72 do ficheiro, página impressa 68, programa 000, Execução Acumulada 2026\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+          "queixas_I3": [
+            "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+            "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+          ]
+        },
+        {
+          "nome": "Localizador livre",
+          "id": "despesa-por-funcao-2024-gf01-es",
+          "localizador": "uma cadeia sem localizador",
+          "mordeu": true,
+          "queixa_I1": "ledger/claims/despesa-por-funcao-2024-gf01-es.yml: traz o rótulo \"General public services\" e o localizador \"uma cadeia sem localizador\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+          "queixas_I3": [
+            "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+            "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+          ]
+        }
+      ]
+    },
+    "recorte": {
+      "ficheiro": "13-pagina-livro-razao.html",
+      "entradas_na_pagina": 428,
+      "entradas_no_recorte": 8,
+      "primeiras_preservadas": true,
+      "nota_e_porta_preservadas": true,
+      "pagina_conservada": true,
+      "pagina_sha256": "8a3b6f08b71795b3865cd2c3c09e549c0a8f00ac0c2b65256fa437fd23bdad4e",
+      "bytes_cartao": 235855,
+      "bytes_sem_recorte": 908678,
+      "teto_bytes": 672236,
+      "margem": 0.1,
+      "planta": {
+        "nome": "recorte retirado",
+        "mordeu": true,
+        "queixa": "887.4 KiB acima do tecto de 656.48046875 KiB"
+      }
+    }
+  }
+}

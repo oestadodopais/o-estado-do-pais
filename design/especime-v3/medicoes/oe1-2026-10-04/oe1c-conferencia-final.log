@@ -1,0 +1,28 @@
+{
+  "motor": {
+    "codigo": 0,
+    "cabeca": "9bfbb777f7d2f5af8b185475c8dd8027ebd76bad",
+    "origem": "portoes/motor.codigo"
+  },
+  "ledger": {
+    "codigo": 0,
+    "cabeca": "bde06bf00e5e416f177c50a439018f95c162a6d0",
+    "origem": "portoes/ledger.codigo"
+  },
+  "build": {
+    "codigo": 0,
+    "cabeca": "bde06bf00e5e416f177c50a439018f95c162a6d0",
+    "origem": "portoes/build.codigo"
+  },
+  "verify": {
+    "codigo": 0,
+    "cabeca": "bde06bf00e5e416f177c50a439018f95c162a6d0",
+    "origem": "portoes/verify.codigo"
+  },
+  "typecheck": {
+    "codigo": 0,
+    "cabeca": "bde06bf00e5e416f177c50a439018f95c162a6d0",
+    "origem": "portoes/typecheck.codigo"
+  }
+}
+
