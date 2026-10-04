@@ -1,0 +1,64 @@
+{
+ "registado_em": "2026-10-04T12:18:13+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "oe1d-p1-ressalva-com-outro-numero",
+   "ficheiro": "ledger/claims/oe-2026-ativos-e-passivos-da-despesa-administracao-central.yml",
+   "descricao": "a ressalva portuguesa da linha dos ativos e passivos diz 803,9 milhões; as outras duas linhas da conta, a ressalva inglesa e a diferença refeita dizem 802,9",
+   "sha256_antes": "dc448fd49a3c814f2b037426a69d20b10aed4f58d7532ab210cfe8dc422892aa",
+   "sha256_depois": "a1a501697142d736686c4cb587881becbb6215fbdecb0891aad4d2a3a02d53ee",
+   "contexto_antes": "\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"191368.9\"\n\n# Ressalva publicada da casa, conferida no motor, nas duas línguas.\nressalva: \"O ficheiro da fonte não imprime a unidade; a escala em milhões de euros foi conferida com a receita, a despesa e o saldo da síntese de julho, em seis correspondências exatas. A despesa orçamental, os ativos e passivos e a despesa efetiva não fecham entre si na fonte: a diferença medida é de 802,9 milhões de euros; os valores são transcritos como a fonte os publica. Receita e despesa orçamentais incluem operações financeiras; receita e despesa efetivas excluem-nas. Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis.\"\nressalva_en: \"The source file does not print the unit; the scale in million euros was checked against revenue, expenditure and the balance in the July summary,",
+   "contexto_depois": "\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"191368.9\"\n\n# Ressalva publicada da casa, conferida no motor, nas duas línguas.\nressalva: \"O ficheiro da fonte não imprime a unidade; a escala em milhões de euros foi conferida com a receita, a despesa e o saldo da síntese de julho, em seis correspondências exatas. A despesa orçamental, os ativos e passivos e a despesa efetiva não fecham entre si na fonte: a diferença medida é de 803,9 milhões de euros; os valores são transcritos como a fonte os publica. Receita e despesa orçamentais incluem operações financeiras; receita e despesa efetivas excluem-nas. Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis.\"\nressalva_en: \"The source file does not print the unit; the scale in million euros was checked against revenue, expenditure and the balance in the July summary,"
+  },
+  {
+   "id": "oe1d-p2-encargos-chamados-ministerio",
+   "ficheiro": "src/data/medidas-oe1.mjs",
+   "descricao": "o nome português dos Encargos Gerais do Estado passa a dizer «do Ministério dos Encargos Gerais do Estado»; a ressalva da própria linha, o modelo do motor e o inglês dizem que não é um ministério",
+   "sha256_antes": "0f2a4f525524784f493c92947847ff9d8e88ea5167eecc68230b7cf55ec97d8a",
+   "sha256_depois": "11548de9868dceeb7474d2fc8bd3eb3580738705ea45a779530d97dbb517b6e1",
+   "contexto_antes": " the Ministry of Education, Science and Innovation (central administration, gross)\"\n  },\n  \"oe-2026-despesa-ministerio-encargos-gerais-do-estado\": {\n    \"pt\": \"Despesa orçamentada dos Encargos Gerais do Estado (administração central, despesa bruta)\",\n    \"en\": \"Budgeted expenditure of General State Charges (central administration, gross)\"\n  },\n  \"oe-2026-despesa-ministerio-financas\": {\n    \"pt\": \"Despesa ",
+   "contexto_depois": " the Ministry of Education, Science and Innovation (central administration, gross)\"\n  },\n  \"oe-2026-despesa-ministerio-encargos-gerais-do-estado\": {\n    \"pt\": \"Despesa orçamentada do Ministério dos Encargos Gerais do Estado (administração central, despesa bruta)\",\n    \"en\": \"Budgeted expenditure of General State Charges (central administration, gross)\"\n  },\n  \"oe-2026-despesa-ministerio-financas\": {\n    \"pt\": \"Despesa "
+  },
+  {
+   "id": "oe1d-p3-rotulo-do-pdf-outra-vez-aberto",
+   "ficheiro": "tests/livro/indice.mjs",
+   "descricao": "a forma «página, rótulo e última coluna» volta a aceitar qualquer rótulo (a lista fechada dos rótulos sai da expressão); o diff e o relatório dizem lista fechada",
+   "sha256_antes": "dd198269c0fb1c87d4dc06a117ae7e2291fa8a3436f5050c0bd26d54c6ceb85b",
+   "sha256_depois": "0623c97357338391a59dc8e8fd43fc00864f2bea66aec39d3983c2f07b52a8b7",
+   "contexto_antes": "]|1[0-6])$/,\n    onde: 'publisher/oe1_pdf.py: rótulo da rubrica orgânica no Mapa 4',\n  },\n  {\n    nome: 'página, rótulo e última coluna de um total dos mapas',\n    forma: /^p\\. (?:6, (?:DESPESA TOTAL|DESPESA TOTAL CONSOLIDADA|RECEITA TOTAL|RECEITA TOTAL CONSOLIDADA)|2, (?:Total da Administração Central e Segurança Social consolidado|Despesa total consolidada no âmbito do setor da Segurança Social|Receita total consolidada no âmbito do setor da Segurança Social)), última coluna$/,\n    onde: 'publisher/oe1_pdf.py: linha identificada pelo rótulo nos mapas PDF',\n  },\n  {\n    nome: 'páginas 49 e 50, rótulo e coluna da síntese de agosto',\n   ",
+   "contexto_depois": "]|1[0-6])$/,\n    onde: 'publisher/oe1_pdf.py: rótulo da rubrica orgânica no Mapa 4',\n  },\n  {\n    nome: 'página, rótulo e última coluna de um total dos mapas',\n    forma: /^p\\. [1-9]\\d*, [^,\\r\\n]+, última coluna$/,\n    onde: 'publisher/oe1_pdf.py: linha identificada pelo rótulo nos mapas PDF',\n  },\n  {\n    nome: 'páginas 49 e 50, rótulo e coluna da síntese de agosto',\n   "
+  },
+  {
+   "id": "oe1d-p4-contagem-das-ressalvas",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 168 pares de ressalvas; as 186 linhas em ledger/claims/ têm todas os dois campos",
+   "sha256_antes": "e3f1e9d017944a76e1c58ac0793313039bda6a31578db510a7e3206de7049bf3",
+   "sha256_depois": "22d4054f98107d8c6ee481adb4386c66d8ae03369b078872954c3be55fd204e6",
+   "contexto_antes": "ifesto do motor conservam os bytes de `9bfbb777`. O que atravessou de novo foi a apresentação: 186 nomes nas duas línguas, 62 unidades com o período acumulado, 186 pares de ressalvas e a declaração geográfica das 30 edições Eurostat. As três contas que demonstram o não fecho explicam a ressalva; não convertem valores publicados em valores d",
+   "contexto_depois": "ifesto do motor conservam os bytes de `9bfbb777`. O que atravessou de novo foi a apresentação: 186 nomes nas duas línguas, 62 unidades com o período acumulado, 168 pares de ressalvas e a declaração geográfica das 30 edições Eurostat. As três contas que demonstram o não fecho explicam a ressalva; não convertem valores publicados em valores d"
+  },
+  {
+   "id": "oe1d-p5-recibo-com-outro-nome",
+   "ficheiro": "built/en/ledger/oe-2026-despesa-ministerio-saude/index.html",
+   "descricao": "o nome no corpo do recibo inglês da Saúde diz «Ministry of Education»; o módulo dos nomes, o título da página, o recibo português e o índice dizem Health",
+   "sha256_antes": "bcbefa4a6e55e77fc18cca1b302c7c3e1911277716bf710c662aab7de871be27",
+   "sha256_depois": "850c37884c297ae2213770f277632104c9ae6e7af1e9e222028a32901612be1a",
+   "contexto_antes": "minho-sep\" aria-hidden=\"true\">›</span><a href=\"/en/ledger\">Numbers and sources</a><span class=\"caminho-sep\" aria-hidden=\"true\">›</span><span class=\"caminho-aqui\" aria-current=\"page\"><span class=\"caminho-medida\" data-nome=\"projeto\" data-de-linha=\"oe-2026-despesa-ministerio-saude\">Budgeted expenditure of the Ministry of Health (central administration, gross)</span></span></nav></div></header><main id=\"conteudo\"><div class=\"rotulo-ia rotulo-ia-topo\" data-rotulo-ia=\"topo\"><p class=\"rot",
+   "contexto_depois": "minho-sep\" aria-hidden=\"true\">›</span><a href=\"/en/ledger\">Numbers and sources</a><span class=\"caminho-sep\" aria-hidden=\"true\">›</span><span class=\"caminho-aqui\" aria-current=\"page\"><span class=\"caminho-medida\" data-nome=\"projeto\" data-de-linha=\"oe-2026-despesa-ministerio-saude\">Budgeted expenditure of the Ministry of Education (central administration, gross)</span></span></nav></div></header><main id=\"conteudo\"><div class=\"rotulo-ia rotulo-ia-topo\" data-rotulo-ia=\"topo\"><p class=\"rot"
+  }
+ ],
+ "leitura": {
+  "modelo": "claude-opus-5-5 (a definição leitor)",
+  "inicio_utc": "2026-10-04T12:20:00Z",
+  "fim_utc": "2026-10-04T12:45:00Z",
+  "tokens_pela_ferramenta": 433350,
+  "plantas_mordidas": {
+   "oe1d-p1-ressalva-com-outro-numero": "achado 4",
+   "oe1d-p2-encargos-chamados-ministerio": "achado 5",
+   "oe1d-p3-rotulo-do-pdf-outra-vez-aberto": "achado 6",
+   "oe1d-p4-contagem-das-ressalvas": "achado 7",
+   "oe1d-p5-recibo-com-outro-nome": "achado 3"
+  }
+ }
+}
