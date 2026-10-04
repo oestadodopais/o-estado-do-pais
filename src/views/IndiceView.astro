@@ -59,17 +59,17 @@ const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'n
       <section class="indice-secao" aria-labelledby={`indice-${chave}`} data-indice-seccao={chave}>
         <h2 class="indice-secao-titulo" id={`indice-${chave}`}>{seccao.titulo}</h2>
         <div class="indice-corpo">
-          <PortasDoIndice portas={seccao.portas} lang={lang} />
+          <PortasDoIndice portas={seccao.portas} lang={lang} classe={chave === 'projeto' ? 'indice-lista-em-colunas' : null} />
           {chave === 'lugares' && (
             <>
               <h3 class="indice-subtitulo" data-indice-distritos>{indice.lugares.distritos.titulo}</h3>
-              <PortasDoIndice portas={indice.lugares.distritos.portas} lang={lang} classe="indice-lista-de-lugares" />
+              <PortasDoIndice portas={indice.lugares.distritos.portas} lang={lang} classe="indice-lista-em-colunas" />
               <h3 class="indice-subtitulo" data-indice-concelhos>{indice.lugares.concelhos.titulo}</h3>
               <div class="indice-concelhos">
                 {indice.lugares.concelhos.grupos.map((g) => (
                   <Gaveta chave={`concelhos-${g.slug}`}>
                     <Fragment slot="nome"><span class="gaveta-nome" data-lugar data-indice-distrito={g.slug}>{g.nome}</span></Fragment>
-                    <PortasDoIndice portas={g.portas} lang={lang} classe="indice-lista-de-lugares" />
+                    <PortasDoIndice portas={g.portas} lang={lang} classe="indice-lista-em-colunas" />
                   </Gaveta>
                 ))}
               </div>
