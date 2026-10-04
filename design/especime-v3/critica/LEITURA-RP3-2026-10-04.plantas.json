@@ -1,0 +1,65 @@
+{
+ "registado_em": "2026-10-04T07:58:02+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "rp3-p1-ponto-trocado",
+   "ficheiro": "ledger/series/serie-ihpc-rendas-variacao-homologa.yml",
+   "descricao": "o ponto 2026-08 da série das rendas passa de 5,2 a 5,3; o excerto literal, o recibo construído e o §3 do brief continuam a dizer 5,2",
+   "sha256_antes": "153f5112e5e068f85e3c5ea86369946f2a559d896b7a4290c1392182752c5f6d",
+   "sha256_depois": "f9803f14c2bd0ac6798d594d27d6ca4defd3cc48c142891b2e9e5300fae7294e",
+   "contexto_antes": "rto: \"\\\"2026-06\\\":365 · \\\"365\\\":5.2\"\n    bandeira: null\n  - periodo: \"2026-07\"\n    valor: \"5,3\"\n    excerto: \"\\\"2026-07\\\":366 · \\\"366\\\":5.3\"\n    bandeira: null\n  - periodo: \"2026-08\"\n    valor: \"5,2\"\n    excerto: \"\\\"2026-08\\\":367 · \\\"367\\\":5.2\"\n    bandeira: null\n\n# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a\n# expressã",
+   "contexto_depois": "rto: \"\\\"2026-06\\\":365 · \\\"365\\\":5.2\"\n    bandeira: null\n  - periodo: \"2026-07\"\n    valor: \"5,3\"\n    excerto: \"\\\"2026-07\\\":366 · \\\"366\\\":5.3\"\n    bandeira: null\n  - periodo: \"2026-08\"\n    valor: \"5,3\"\n    excerto: \"\\\"2026-08\\\":367 · \\\"367\\\":5.2\"\n    bandeira: null\n\n# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a\n# expressã"
+  },
+  {
+   "id": "rp3-p2-contagem-do-relatorio",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem dos pontos no relatório passa de 4 131 a 4 113 numa das suas ocorrências; o medidas.json e os ficheiros das séries somam 4 131",
+   "sha256_antes": "63811f955038e9fc4241d36b1348ce30c107063d76b7e7bd61d8da01ffe889ee",
+   "sha256_depois": "fe2411bcbd320d081c033b96b57293d9dc6729c7fed6fa9b81cc55540f1f0257",
+   "contexto_antes": "ero de pontos e no último valor (16 de 16).\n- **Cada ponto com o seu período, o seu valor tal como a fonte o escreve, o seu excerto literal e a sua bandeira.** 4 131 pontos; os 3 991 das séries lidas da fonte têm excerto (no INE o objeto literal do bloco do período, no Eurostat os fragmentos dos bytes, o período com o seu índice e o valor com o mesmo índice), e os 140 da deriva",
+   "contexto_depois": "ero de pontos e no último valor (16 de 16).\n- **Cada ponto com o seu período, o seu valor tal como a fonte o escreve, o seu excerto literal e a sua bandeira.** 4 113 pontos; os 3 991 das séries lidas da fonte têm excerto (no INE o objeto literal do bloco do período, no Eurostat os fragmentos dos bytes, o período com o seu índice e o valor com o mesmo índice), e os 140 da deriva"
+  },
+  {
+   "id": "rp3-p3-regra-enfraquecida",
+   "ficheiro": "src/lib/series.mjs",
+   "descricao": "a S14 deixa de comparar a unidade da linha com a da série (a linha do código sai, trocada por um comentário); o ledger/series/README.md e o ledger/README.md continuam a dizer que a unidade é conferida",
+   "sha256_antes": "52e32c41e797778d4f08d10ee72cfa655be4510ec8b49736a435dab28aea4f64",
+   "sha256_depois": "e84097a503da88a5310fe2be3455794060f151b6e59c7655f661950c71b1983d",
+   "contexto_antes": " s.eixo !== 'periodo') {\n    out.push(`a linha nomeia a série «${String(campos.serie)}», que não é uma série no tempo de ledger/series/.`);\n    return out;\n  }\n  if (c.unit !== s.unit) out.push(`a unidade da linha («${String(c.unit)}») não é a da série «${sid}» («${String(s.unit)}»).`);\n  const docL = eMapa(c.document) ? c.document : null;\n  const docS = eMapa(s.document) ? s.document : null;\n  const cl = coordenadasDaEdicao(docL?.edition);\n  c",
+   "contexto_depois": " s.eixo !== 'periodo') {\n    out.push(`a linha nomeia a série «${String(campos.serie)}», que não é uma série no tempo de ledger/series/.`);\n    return out;\n  }\n  /* A unidade confere-se na S9, com a forma da série. */\n  const docL = eMapa(c.document) ? c.document : null;\n  const docS = eMapa(s.document) ? s.document : null;\n  const cl = coordenadasDaEdicao(docL?.edition);\n  c"
+  },
+  {
+   "id": "rp3-p4-recibo-com-valor-trocado",
+   "ficheiro": "built/livro-razao/series/serie-linha-de-risco-de-pobreza/index.html",
+   "descricao": "o recibo português da linha de pobreza imprime 8 697 no ponto de 2025 dentro do data-ponto; a série sela 8 679, e o recibo inglês também o imprime",
+   "sha256_antes": "6ded5561577ff48e1fb85e779dfec62053e89d588efb3d7e6834a9afceac4e6c",
+   "sha256_depois": "8b9c747530a503083ddd027fa236fc972436346263973663e4d0c7732f78e69d",
+   "contexto_antes": "nha\" data-linha-de-serie=\"serie-linha-de-risco-de-pobreza\" data-de-campo=\"pontos.28.periodo\">2025</span></th><td class=\"serie-num\"><span class=\"ponto-da-serie\" data-ponto=\"serie-linha-de-risco-de-pobreza#2025\">8 679</span></td><td class=\"serie-marca\"></td></tr></tbody></table><div class=\"serie-marcas\" data-serie-marcas=\"serie-linha-de-risco-de-pobreza\"><h3 class=\"serie-marc",
+   "contexto_depois": "nha\" data-linha-de-serie=\"serie-linha-de-risco-de-pobreza\" data-de-campo=\"pontos.28.periodo\">2025</span></th><td class=\"serie-num\"><span class=\"ponto-da-serie\" data-ponto=\"serie-linha-de-risco-de-pobreza#2025\">8 697</span></td><td class=\"serie-marca\"></td></tr></tbody></table><div class=\"serie-marcas\" data-serie-marcas=\"serie-linha-de-risco-de-pobreza\"><h3 class=\"serie-marc"
+  },
+  {
+   "id": "rp3-p5-coordenada-do-motor",
+   "ficheiro": "motor/publisher/dominios_series.py",
+   "descricao": "a declaração da S12 no construtor do motor passa a pedir a classe CP042 (e não CP041, as rendas); a série selada, o seu excerto e o pedido registado dizem CP041",
+   "sha256_antes": "e2eecc305e77062591fe9eb9393d34abd23e098ed51b5ba5aadca75d7c533ded",
+   "sha256_depois": "8763a29164398804b4da948906ab355f809a0d3ae96b9fc5a0aa224d56530c37",
+   "contexto_antes": "_minr\",\n         pick={\"freq\": \"M\", \"unit\": \"RCH_A\", \"coicop18\": \"CP0722\", \"geo\": \"EU27_2020\"}, periodicidade=\"mensal\",\n         unidade=\"%\", desde=\"1996-01\"),\n    dict(id=\"serie-ihpc-rendas-variacao-homologa\", fonte=\"Eurostat\", codigo=\"prc_hicp_minr\",\n         pick={\"freq\": \"M\", \"unit\": \"RCH_A\", \"coicop18\": \"CP041\", \"geo\": \"PT\"}, periodicidade=\"mensal\",\n         unidade=\"%\", desde=\"1996-01\"),\n    dict(id=\"serie-ihpc-energia-da-casa-variacao-homologa\", fonte=\"Eurostat\", codigo=\"prc_hicp",
+   "contexto_depois": "_minr\",\n         pick={\"freq\": \"M\", \"unit\": \"RCH_A\", \"coicop18\": \"CP0722\", \"geo\": \"EU27_2020\"}, periodicidade=\"mensal\",\n         unidade=\"%\", desde=\"1996-01\"),\n    dict(id=\"serie-ihpc-rendas-variacao-homologa\", fonte=\"Eurostat\", codigo=\"prc_hicp_minr\",\n         pick={\"freq\": \"M\", \"unit\": \"RCH_A\", \"coicop18\": \"CP042\", \"geo\": \"PT\"}, periodicidade=\"mensal\",\n         unidade=\"%\", desde=\"1996-01\"),\n    dict(id=\"serie-ihpc-energia-da-casa-variacao-homologa\", fonte=\"Eurostat\", codigo=\"prc_hicp"
+  }
+ ],
+ "leitura": {
+  "modelo": "gpt-6.1-sol",
+  "raciocinio": "xhigh",
+  "inicio_utc": "2026-10-04T07:59:21Z",
+  "fim_utc": "2026-10-04T08:14:11Z",
+  "tokens_used": 260773,
+  "plantas_mordidas": {
+   "rp3-p1-ponto-trocado": "achado 2",
+   "rp3-p2-contagem-do-relatorio": "achado 10",
+   "rp3-p3-regra-enfraquecida": "achado 4",
+   "rp3-p4-recibo-com-valor-trocado": "achado 1",
+   "rp3-p5-coordenada-do-motor": "achado 3"
+  }
+ }
+}
