@@ -1,11 +1,12 @@
 /* =========================================================================
    O ÍNDICE · `/indice` · `/en/index` (bloco R3, 04.10.2026, o brief R3, §3, ponto 4)
    =========================================================================
-   Uma coluna de secções na disposição A da casa (`.metodo-secao`, em `site.css`: o nome da secção
-   na coluna do rótulo e as portas no corpo, uma coluna só abaixo de 780 px), listas simples e as
-   gavetas da página dos lugares. Cada porta tem o alvo de 44 px, como as listas de «Lugares»; os
-   nomes compridos partem-se onde for preciso, para nenhuma linha empurrar a página para o lado a
-   390 px. Nenhuma cor nova: a tinta, o cinzento das linhas e o filete da casa. */
+   Uma coluna em todas as larguras, como o brief manda: o nome de cada secção por cima das suas
+   portas, com o filete e o corpo do título das secções da casa (os de `.metodo-secao`, em
+   `site.css`), listas simples, e as gavetas da página dos lugares. Cada porta tem o alvo de 44 px,
+   como as listas de «Lugares»; os nomes compridos partem-se onde for preciso, para nenhuma linha
+   empurrar a página para o lado a 390 px. Nenhuma cor nova: a tinta, o cinzento das linhas e o
+   filete da casa. */
 
 .indice-titulo {
   font-family: var(--f-prosa);
@@ -14,6 +15,16 @@
   font-weight: 400;
   line-height: 1.08;
   margin: clamp(4px, 1vw, 10px) 0 clamp(18px, 2.6vw, 28px);
+}
+
+.indice-secao {
+  border-top: 1px solid var(--rule);
+  padding: clamp(22px, 3vw, 32px) 0;
+  max-width: 1080px;
+}
+.indice-secao-titulo {
+  font-size: clamp(19px, 2vw, 23px);
+  margin: 0 0 12px;
 }
 
 .indice-corpo {
