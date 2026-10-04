@@ -17,6 +17,7 @@ export function conferirSerieDoBloco(root, lang) {
   const porta = s?.closest('a');
   if (porta?.getAttribute('href') !== routePath('serie', lang, { slug: esperado.serie })) erros.push('RP4 · porta do bloco para outro recibo');
   const barra = b?.querySelector('[data-forma="barras"]');
+  if (!barra?.closest('.pp-ilustracao') || porta?.parentNode !== barra?.closest('.pp-ilustracao')) erros.push('RP4 · barras e série fora do mesmo contentor');
   if (!barra || b.innerHTML.indexOf(porta?.outerHTML ?? '') < b.innerHTML.indexOf(barra.outerHTML)) erros.push('RP4 · a série não fica depois das barras');
   return erros;
 }
@@ -35,5 +36,9 @@ export function plantasDaSerieDoBloco(html, lang) {
   r.querySelector('[data-bloco="precos"] svg[data-forma="serie-do-pais"]')?.remove();
   const queixa = conferirSerieDoBloco(r, lang).find((e) => /falta a série/.test(e));
   out.push({ nome: 'gráfico retirado do bloco', controlo: limpo.length, mordeu: !limpo.length && Boolean(queixa), queixa: queixa ?? null });
+  const fora = parse(html); const p = fora.querySelector('[data-bloco-serie]');
+  const bloco = fora.querySelector('[data-bloco="precos"]'); const pedaco = p.outerHTML; p.remove(); bloco.insertAdjacentHTML('beforeend', pedaco);
+  const queixaFora = conferirSerieDoBloco(fora, lang).find(e => /mesmo contentor/.test(e));
+  out.push({ nome: 'gráfico fora da coluna das barras', controlo: limpo.length, mordeu: !limpo.length && Boolean(queixaFora), queixa: queixaFora ?? null });
   return out;
 }

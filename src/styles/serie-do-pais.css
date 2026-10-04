@@ -8,3 +8,4 @@
 .cartao-medida-serie:focus-visible, .pp-serie:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 .serie-grafico { max-width: 42rem; margin: 12px 0 24px; }
 .pp-serie-nome { display: block; font: 14px var(--f-instr); margin-bottom: 8px; }
+.pp-ilustracao { grid-area: desenho; min-width: 0; }

@@ -243,6 +243,12 @@ export const UNIDADES_DOS_CARTOES = {
     ],
     achado: '9: a mesma variação homóloga, na classe das rendas.',
   },
+  'ihpc-variacao-homologa-ue': {
+    pt: ['% de variação em doze meses'],
+    en: ['% change over twelve months'],
+    apoio: [{ campo: 'excerpt', literal: 'Annual rate of change' }],
+    achado: 'RP4: a variação anual do IHPC da União, na mesma forma da inflação; o excerto da própria linha nomeia a taxa anual.',
+  },
   'ihpc-variacao-homologa': {
     pt: ['% de variação em doze meses'],
     en: ['% change over twelve months'],
