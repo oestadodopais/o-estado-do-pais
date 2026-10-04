@@ -26,8 +26,6 @@ HERE = Path(__file__).resolve().parent
 SITE = HERE.parents[3]
 OLD_SITE = "bde06bf0"
 OLD_ENGINE = "9bfbb777"
-MAIN_BASE = "b2fbdd28"
-MASTER_BASE = "47f12e15"
 FIXED = ("id", "value", "excerpt", "name", "name_source", "source_url",
          "reference_date", "derived_from", "check")
 GEO = {"pt": "PT", "es": "ES", "ue": "EU27_2020"}
@@ -250,7 +248,13 @@ def main():
     measures = Measures()
     heads = dict(motor=head(motor), sitio=head(SITE), main=head(SITE, "main"), master=head(motor, "master"))
     bases = dict(observacoes_motor=head(motor, OLD_ENGINE), linhas_sitio=head(SITE, OLD_SITE),
-                 rebase_main=head(SITE, MAIN_BASE), rebase_master=head(motor, MASTER_BASE))
+                 rebase_main=git(SITE, "merge-base", "HEAD", "main").decode().strip(),
+                 rebase_master=git(motor, "merge-base", "HEAD", "master").decode().strip())
+    for ref in ("main", "master"):
+        measures.prove("base_" + ref + "_integrada", {"base": bases["rebase_" + ref], "referencia": heads[ref]},
+                       lambda candidate: require(candidate["base"] == candidate["referencia"], "A referência principal ainda não foi integrada"),
+                       lambda candidate: candidate.update(base="0" * 40),
+                       "Trocar a base integrada na cópia é recusado.", bases["rebase_" + ref])
     engine_paths = ("content/20 Orcamento do Estado/ledger.json", "publisher/manifest.oe1.json")
     for key, rel in zip(("livro_motor_intacto", "manifesto_motor_intacto"), engine_paths):
         body, old = (motor / rel).read_bytes(), git(motor, "show", OLD_ENGINE + ":" + rel)
