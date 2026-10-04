@@ -1,0 +1,1117 @@
+{
+  "bloco": "RP3-b",
+  "guiao": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/medir-rp3b.py",
+  "ramo": "rp3-2026-10-04-b",
+  "cabeca_do_codigo": "b3e9e0ac337a960f80fcc641efb001b669bc107c",
+  "medidas_escritas": 108,
+  "medidas": [
+    {
+      "nome": "ramo",
+      "valor": "rp3-2026-10-04-b",
+      "comando": "git rev-parse --abbrev-ref HEAD",
+      "conhecido_positivo": {
+        "o_que": "é o ramo novo da passagem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "main_do_rebase",
+      "valor": "7af9073132b92ed7aca7fec0c906f1a08626d446",
+      "comando": "git rev-parse 7af90731 (o main confirmado na árvore principal com git rev-parse main antes do rebase)",
+      "conhecido_positivo": {
+        "o_que": "é a base comum do ramo novo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "commits_do_ramo_antigo",
+      "valor": 15,
+      "comando": "git log 1c4dde2f..rp3-2026-10-04",
+      "conhecido_positivo": {
+        "o_que": "o primeiro é o das séries no livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "commits_do_ramo_novo",
+      "valor": 16,
+      "comando": "git log 7af90731..HEAD",
+      "conhecido_positivo": {
+        "o_que": "o ramo novo tem mais commits do que o antigo (o mapa da passagem)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "correspondencia_dos_commits",
+      "valor": [
+        {
+          "antigo": "35c3be98",
+          "novo": "05312266",
+          "assunto": "RP3: as dezasseis séries no tempo no livro-razão, o campo serie nas sete linhas presas, e as regras S9 a S14"
+        },
+        {
+          "antigo": "d1b21e2b",
+          "novo": "97349184",
+          "assunto": "RP3: o recibo de uma série no tempo, nas duas edições"
+        },
+        {
+          "antigo": "8f8366c8",
+          "novo": "45cc0f24",
+          "assunto": "RP3: os portões sobre dist/ leem o recibo de uma série no tempo, com a forma de cada um conservada"
+        },
+        {
+          "antigo": "4bbc22f9",
+          "novo": "6f21e2ca",
+          "assunto": "RP3: as células S do check:series, na cadeia do verify"
+        },
+        {
+          "antigo": "9e865ddc",
+          "novo": "664f1948",
+          "assunto": "RP3: o mapa do repositório com as séries no tempo"
+        },
+        {
+          "antigo": "6e5adb1d",
+          "novo": "ac990e47",
+          "assunto": "RP3: a folha do caminho de uma série no tempo diz de que série é o nome"
+        },
+        {
+          "antigo": "fb8dcca4",
+          "novo": "fbdd217e",
+          "assunto": "RP3: o mapa diz onde a folha do caminho de uma série no tempo leva a marca da série"
+        },
+        {
+          "antigo": "f487fb9d",
+          "novo": "b779c233",
+          "assunto": "RP3: o recibo de uma série no tempo no seu ficheiro de página e com a sua folha de estilo"
+        },
+        {
+          "antigo": "39f15b8e",
+          "novo": "aefe2838",
+          "assunto": "RP3: o README das séries diz o ficheiro de página e a folha do recibo no tempo"
+        },
+        {
+          "antigo": "7f93add0",
+          "novo": "f15d6761",
+          "assunto": "RP3: as provas do bloco, o relatório e a resposta do construtor"
+        },
+        {
+          "antigo": "5a6a1169",
+          "novo": "7d41881c",
+          "assunto": "RP3-b: a S13 escolhe a correção mais recente pela data, e a planta da S14 diz o que troca"
+        },
+        {
+          "antigo": "46a42f0c",
+          "novo": "f2ba4e24",
+          "assunto": "RP3-b: a régua das frases exige a marca da série em cada nome de série"
+        },
+        {
+          "antigo": "a147d48f",
+          "novo": "ebffdb76",
+          "assunto": "RP3-b: uma lista fechada dos campos transcritos de uma série, a mesma nas três réguas"
+        },
+        {
+          "antigo": "23fc9c5e",
+          "novo": "96f90cce",
+          "assunto": "RP3-b: a metade do motor da S3 lê a célula do Eurostat e o bloco do INE"
+        },
+        {
+          "antigo": "a60a728b",
+          "novo": "1020900d",
+          "assunto": "RP3-b: a leitura a frio do RP3, tal como veio"
+        }
+      ],
+      "comando": "os commits do ramo antigo e do rebaseado, emparelhados pelo assunto",
+      "conhecido_positivo": {
+        "o_que": "cada commit do ramo antigo tem o seu no ramo novo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "commits_so_do_ramo_novo",
+      "valor": [
+        "b3e9e0ac RP3-b: o mapa do repositório com a passagem RP3-b e as citações do rebase"
+      ],
+      "comando": "os commits do ramo novo sem par no antigo",
+      "conhecido_positivo": {
+        "o_que": "há o do mapa da passagem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_conflitos_do_rebase",
+      "valor": [
+        "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+        "package.json"
+      ],
+      "comando": "git merge-tree --write-tree --name-only --no-messages 7af90731 rp3-2026-10-04 (os ficheiros em conflito entre o main e o ramo antigo)",
+      "conhecido_positivo": {
+        "o_que": "o merge-tree diz que há conflitos (código 1) e a primeira linha é a árvore",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cadeia_do_verify_fim",
+      "valor": [
+        "npm run check:sugestoes",
+        "npm run check:rotulos",
+        "npm run check:series"
+      ],
+      "comando": "o fim da cadeia «verify» de package.json",
+      "conhecido_positivo": {
+        "o_que": "o check:series e o check:rotulos têm os seus guiões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cadeia_do_verify_passos",
+      "valor": 41,
+      "comando": "os passos da cadeia «verify»",
+      "conhecido_positivo": {
+        "o_que": "cada passo aparece uma vez",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_r2_antes_do_rp3",
+      "valor": true,
+      "comando": "a ordem das secções do R2 e do RP3 no mapa",
+      "conhecido_positivo": {
+        "o_que": "as duas secções estão no mapa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_portao_build_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro existe e é um inteiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_portao_build_segundos",
+      "valor": 141,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/build.fim menos build.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_portao_verify_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro existe e é um inteiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_portao_verify_segundos",
+      "valor": 920,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/verify.fim menos verify.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_portao_typecheck_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro existe e é um inteiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_portao_typecheck_segundos",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/typecheck.fim menos typecheck.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_cabeca_do_codigo",
+      "valor": "b3e9e0ac337a960f80fcc641efb001b669bc107c",
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/cabeca",
+      "conhecido_positivo": {
+        "o_que": "a cabeça do fim é a mesma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_paginas_construidas",
+      "valor": 7484,
+      "comando": "«N page(s) built» em design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/build.log",
+      "conhecido_positivo": {
+        "o_que": "o registo traz a linha do Astro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_verify_ledger_check_series",
+      "valor": "séries · 26 série(s) de 4411 ponto(s), 24 com marca da fonte · 16 no tempo · 7 linha(s) presa(s) à sua série · 29 planta(s), uma ou mais por regra, vistas a morder",
+      "comando": "a linha em design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha diz «planta(s)»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_verify_check_series",
+      "valor": "check:series · 16 série(s) no tempo de 4131 ponto(s) · 1 derivada(s) com 140 ponto(s) refeitos · 7 linha(s) presa(s), 6 cartão(ões) no último ponto · 32 recibo(s) lidos · metade do motor da S3: sem RESEARCHHUB_DIR: a metade do motor não corre aqui · 17 de 17 planta(s) morderam",
+      "comando": "a linha em design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha diz «planta(s) morderam»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_verify_check_palavras",
+      "valor": "23 de 23 plantas vistas (14 palavras, 9 buracos da superfície) · 7509 página(s) medidas em repouso, 0 achados · 59 página(s) com a superfície estreitada por rota declarada",
+      "comando": "a linha em design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha diz «buracos da superfície»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_verify_autoteste_da_check_lugar",
+      "valor": "RP3, o autoteste da marca das séries: «threshold» e «indicador» nos campos transcritos 0 (esperado 0) · «limiar» na prosa da casa a conta em palavras 1, o motivo de uma correção 1, o motivo inglês de uma correção 1, um invólucro sem campo 1 (esperado 1 em cada) · o seletor e a lista fechada de acordo",
+      "comando": "a linha em design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha diz «de acordo»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_verify_rotulos",
+      "valor": "R2 · rótulos: 7508 página(s) lidas, 656 com cartões, 5290 cartão(ões) (nacional 318, uniao 42, concelho 4928, camaras 2), 376 chave(s); unidades declaradas 780, da linha 4442, em dívida 2; estados 688; frases da faixa 2464+2464 (2464 cartões com a faixa inteira); contra o declarado: 376 chave(s), 1362 campo(s), 1411 forma(s) com a contagem, 26844 ocorrência(s), 0 diferença(s); dobras 138 perguntas, 4928 notas, 12 referências, 42 na União; 28 de 28 plantas a morder; 0 erro(s).",
+      "comando": "a linha em design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha diz «página(s) lidas»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_check_palavras_buracos",
+      "valor": 9,
+      "comando": "os buracos da superfície em design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_ledger_check_plantas_das_series",
+      "valor": 29,
+      "comando": "as plantas das séries do ledger:check em design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_excecao_json_indicador_usos",
+      "valor": 12,
+      "comando": "a exceção do caminho da API do INE em design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a check:lugar falha uma exceção que não foi precisa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_plantas_sobre_dist",
+      "valor": 9,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas-portoes-rp3.json (plantas-rp3.mjs na cabeça rebaseada)",
+      "conhecido_positivo": {
+        "o_que": "a construção é a da cabeça rebaseada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_plantas_sobre_dist_que_morderam",
+      "valor": 9,
+      "comando": "as plantas com «passou»",
+      "conhecido_positivo": {
+        "o_que": "cada planta repôs as suas páginas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_controlos_sobre_dist",
+      "valor": 1,
+      "comando": "os controlos (a mesma troca num literal transcrito)",
+      "conhecido_positivo": {
+        "o_que": "o controlo saiu com 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_nomes_das_plantas_sobre_dist",
+      "valor": [
+        "rp3-html-ponto-trocado",
+        "rp3-html-linha-tirada",
+        "rp3-html-algarismo-solto",
+        "rp3-formas-data-do-ponto",
+        "rp3-lugar-limiar-na-conta",
+        "rp3-voz-nome-de-outra-serie",
+        "rp3-lugar-limiar-num-motivo",
+        "rp3-lugar-limiar-num-literal",
+        "rp3-html-campo-fora-da-lista",
+        "rp3-voz-nome-de-outra-serie-sem-a-marca"
+      ],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas-portoes-rp3.json",
+      "conhecido_positivo": {
+        "o_que": "há a planta da marca da série obrigatória",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_plantas_das_celulas_s",
+      "valor": 20,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas-series-rp3b.json (check:series --prova com o motor ao lado)",
+      "conhecido_positivo": {
+        "o_que": "há as plantas da célula do Eurostat",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_plantas_das_celulas_s_que_morderam",
+      "valor": 20,
+      "comando": "as plantas com «mordeu»",
+      "conhecido_positivo": {
+        "o_que": "cada uma diz a primeira queixa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_celulas_s_pontos_no_corpo",
+      "valor": 3991,
+      "comando": "a metade do motor da S3, pela estrutura da resposta",
+      "conhecido_positivo": {
+        "o_que": "correu com o motor ao lado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_plantas_das_celulas_s_sem_motor",
+      "valor": 17,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/series-sem-motor.log",
+      "conhecido_positivo": {
+        "o_que": "as plantas sintéticas correm sem o motor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_vp2_antes_e_depois",
+      "valor": {
+        "valor_numa_anotacao": {
+          "antes": "passou",
+          "depois": "parou: VP2: serie-ihpc-rendas-variacao-homologa: o ponto 2026-08 diz «5,2» e a célula 367 da resposta «9.9»"
+        },
+        "marca_omitida": {
+          "antes": "passou",
+          "depois": "parou: VP2: serie-ihpc-variacao-homologa: a marca de 2026-09 é «None» e a célula 368 da resposta tem «e» em status"
+        }
+      },
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/vp2-antes-e-depois.json (vp2-antes-e-depois.py)",
+      "conhecido_positivo": {
+        "o_que": "a VP2 de antes deixa passar as duas e a de depois para-as",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_exportacoes",
+      "valor": {
+        "main": {
+          "commit": "7af9073132b92ed7aca7fec0c906f1a08626d446",
+          "codigo": 0
+        },
+        "primeira": {
+          "commit": "aefe28384e9b83c394e12c9a7d8bbd098163f12a",
+          "codigo": 0
+        },
+        "cabeca": {
+          "commit": "b3e9e0ac337a960f80fcc641efb001b669bc107c",
+          "codigo": 0
+        }
+      },
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/exportacoes.txt (git archive de cada commit, mapa:unidades e astro build, com as mesmas dependências)",
+      "conhecido_positivo": {
+        "o_que": "as três construções estão lá, cada uma com o seu commit",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_construcoes",
+      "valor": [
+        "aefe28384e9b83c394e12c9a7d8bbd098163f12a",
+        "b3e9e0ac337a960f80fcc641efb001b669bc107c"
+      ],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "os commits das duas construções são os pedidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_paginas_html_na_base",
+      "valor": 7509,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_paginas_html_na_cabeca",
+      "valor": 7509,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_paginas_novas",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_paginas_comuns",
+      "valor": 7509,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_paginas_iguais_byte_a_byte",
+      "valor": 7509,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_paginas_iguais_sem_a_construcao",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_paginas_que_mudaram",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_outros_ficheiros_comuns_iguais",
+      "valor": 3111,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_outros_ficheiros_que_mudaram",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_paginas_que_sairam",
+      "valor": [],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_outros_ficheiros_que_sairam",
+      "valor": [],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_outros_ficheiros_novos",
+      "valor": [],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_paginas_novas_fora_dos_recibos",
+      "valor": [],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_paginas_que_mudaram_lista",
+      "valor": [],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_outros_ficheiros_que_mudaram_por_outra_razao",
+      "valor": [],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_paginas_novas_sao_os_recibos",
+      "valor": false,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "o campo leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_paginas_que_mudaram_por_razao",
+      "valor": {},
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "o campo leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_outros_ficheiros_que_mudaram_por_razao",
+      "valor": {},
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.json (paginas-rp3.mjs, a construção de aefe2838 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "o campo leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_passagem_comparacao_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_construcoes",
+      "valor": [
+        "7af9073132b92ed7aca7fec0c906f1a08626d446",
+        "b3e9e0ac337a960f80fcc641efb001b669bc107c"
+      ],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "os commits das duas construções são os pedidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_paginas_html_na_base",
+      "valor": 7477,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_paginas_html_na_cabeca",
+      "valor": 7509,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_paginas_novas",
+      "valor": 32,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_paginas_comuns",
+      "valor": 7477,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_paginas_iguais_byte_a_byte",
+      "valor": 7477,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_paginas_iguais_sem_a_construcao",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_paginas_que_mudaram",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_outros_ficheiros_comuns_iguais",
+      "valor": 99,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_outros_ficheiros_que_mudaram",
+      "valor": 3012,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a soma das comuns fecha (iguais, iguais sem a construção e mudadas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_paginas_que_sairam",
+      "valor": [],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_outros_ficheiros_que_sairam",
+      "valor": [],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_outros_ficheiros_novos",
+      "valor": [],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_paginas_novas_fora_dos_recibos",
+      "valor": [],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_paginas_que_mudaram_lista",
+      "valor": [],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_outros_ficheiros_que_mudaram_por_outra_razao",
+      "valor": [],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_paginas_novas_sao_os_recibos",
+      "valor": true,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "o campo leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_paginas_que_mudaram_por_razao",
+      "valor": {},
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "o campo leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_outros_ficheiros_que_mudaram_por_razao",
+      "valor": {
+        "só a coluna serie": 1,
+        "só o campo serie": 3010,
+        "só os endereços dos recibos novos (32)": 1
+      },
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.json (paginas-rp3.mjs, a construção de 7af90731 contra a de b3e9e0ac)",
+      "conhecido_positivo": {
+        "o_que": "o campo leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_comparacao_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_capturas_construcao",
+      "valor": "b3e9e0ac337a960f80fcc641efb001b669bc107c",
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/capturas-rp3b.json",
+      "conhecido_positivo": {
+        "o_que": "é a cabeça rebaseada dos portões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_capturas_imagens",
+      "valor": 40,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/capturas-rp3b-comparacao.json (comparar-capturas.py, sobre design/especime-v3/medicoes/rp3-2026-10-04/rp3b/capturas-rp3b.json, de captar-rp3.mjs na cabeça rebaseada, e capturas-rp3.json)",
+      "conhecido_positivo": {
+        "o_que": "o sha256 refeito dos bytes de cada imagem dos dois lados é o que o seu manifesto diz (o método de comparação lê as imagens, não só os manifestos)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_capturas_iguais",
+      "valor": 40,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/capturas-rp3b-comparacao.json (comparar-capturas.py, sobre design/especime-v3/medicoes/rp3-2026-10-04/rp3b/capturas-rp3b.json, de captar-rp3.mjs na cabeça rebaseada, e capturas-rp3.json)",
+      "conhecido_positivo": {
+        "o_que": "o sha256 refeito dos bytes de cada imagem dos dois lados é o que o seu manifesto diz (o método de comparação lê as imagens, não só os manifestos)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_capturas_diferentes",
+      "valor": [],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/capturas-rp3b-comparacao.json (comparar-capturas.py, sobre design/especime-v3/medicoes/rp3-2026-10-04/rp3b/capturas-rp3b.json, de captar-rp3.mjs na cabeça rebaseada, e capturas-rp3.json)",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_capturas_problemas",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/capturas-rp3b.json (a tabela, as marcas, as lacunas, os pedidos fechados, o transbordo)",
+      "conhecido_positivo": {
+        "o_que": "o captor mediu as 20 páginas dos recibos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_captar_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/rp3b/captar-rp3b.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo diz quantas imagens",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_core_gate_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/core-gate.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo diz «GATE: PASS»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_dominios_series_test_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/dominios-series-test.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo diz «DOMINIOS_SERIES_TEST: PASS»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_series_paises_test_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/series-paises-test.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo diz «SERIES_PAISES_TEST: PASS»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_export_site_rows_test_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/export-site-rows-test.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo diz «PASS»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_dominios_series_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/dominios-series.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo diz «DOMINIOS_SERIES: PASS»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_export_series_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/export-series.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo diz «EXPORT_SERIES: PASS»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_core_gate_segundos",
+      "valor": 279,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/core-gate.fim menos core-gate.inicio",
+      "conhecido_positivo": {
+        "o_que": "a cabeça do fim é a do começo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_cabeca",
+      "valor": "47f12e15c927bf238522ac680b1f54c9de29f55d",
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/core-gate.cabeca",
+      "conhecido_positivo": {
+        "o_que": "é a cabeça da worktree do motor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_plantas_da_suite",
+      "valor": 30,
+      "comando": "«plantas: N morderam» em design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/dominios-series-test.log",
+      "conhecido_positivo": {
+        "o_que": "a suíte passou",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_conferencias_da_suite",
+      "valor": 55,
+      "comando": "«PASS · N conferências» em design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/dominios-series-test.log",
+      "conhecido_positivo": {
+        "o_que": "a linha leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_commits_do_ramo",
+      "valor": [
+        "1889dc1",
+        "ee8bf17",
+        "f2ef453",
+        "f97e66e",
+        "47f12e1"
+      ],
+      "comando": "git log --reverse --format=%h d2495a7..HEAD no motor",
+      "conhecido_positivo": {
+        "o_que": "o último é a cabeça do motor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_main_no_fecho",
+      "valor": "7af9073132b92ed7aca7fec0c906f1a08626d446",
+      "comando": "git -C <árvore principal do sítio> rev-parse main, no fecho das provas",
+      "conhecido_positivo": {
+        "o_que": "é o main do rebase, e por isso, nesse momento, o ramo aterrava por avanço rápido",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_master_no_fecho",
+      "valor": "d2495a7d0d023dccb6eb4014b917bf06554438f6",
+      "comando": "git -C <árvore principal do motor> rev-parse master, no fecho das provas",
+      "conhecido_positivo": {
+        "o_que": "é d2495a7, a base do ramo do motor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_commits",
+      "valor": [
+        "47f12e1 RP3-b: a VP2 do Eurostat lê a célula, e a VP1 e a VP6 exigem correções completas"
+      ],
+      "comando": "git log f97e66e..HEAD no motor",
+      "conhecido_positivo": {
+        "o_que": "o commit da passagem diz RP3-b",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_motor_master",
+      "valor": "d2495a7d0d023dccb6eb4014b917bf06554438f6",
+      "comando": "git rev-parse master na árvore principal do motor, igual a d2495a7 (o motor não precisou de rebase)",
+      "conhecido_positivo": {
+        "o_que": "é a base do ramo do motor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_conferencias_entre_commits",
+      "valor": 11,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/entre-commits.json (entre-commits.py, os códigos lidos dos ficheiros das corridas)",
+      "conhecido_positivo": {
+        "o_que": "todas saíram com 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_mapa_citacoes_perto",
+      "valor": 313,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/conferir-mapa-rp3b.txt",
+      "conhecido_positivo": {
+        "o_que": "o guião correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_mapa_citacoes_longe",
+      "valor": 36,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/conferir-mapa-rp3b.txt",
+      "conhecido_positivo": {
+        "o_que": "o mapa do main tem as mesmas longe na árvore do main",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_mapa_citacoes_por_achar",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/conferir-mapa-rp3b.txt",
+      "conhecido_positivo": {
+        "o_que": "o guião conta esta classe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_mapa_longe_as_mesmas_do_main",
+      "valor": true,
+      "comando": "as citações longe de design/especime-v3/medicoes/rp3-2026-10-04/rp3b/conferir-mapa-rp3b.txt e de design/especime-v3/medicoes/rp3-2026-10-04/rp3b/conferir-mapa-main.txt, comparadas pelo texto citado",
+      "conhecido_positivo": {
+        "o_que": "as duas listas leram-se com o número que o guião diz",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_mapa_main_citacoes_longe",
+      "valor": 36,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/conferir-mapa-main.txt (o mapa do main sobre a árvore do main)",
+      "conhecido_positivo": {
+        "o_que": "o guião correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "critica_md_sha256",
+      "valor": "ea1fc403bcb74613fd6f274c74c480b9a1ddb259c3e9986df2f6fa07eaad9392",
+      "comando": "sha256 de design/especime-v3/critica/LEITURA-RP3-2026-10-04.md",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro no commit é o mesmo do disco",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "critica_plantas_sha256",
+      "valor": "228bb1dc773edb06eb888f792f05282d6c346117ffa0e337bb09755ccffa241c",
+      "comando": "sha256 de design/especime-v3/critica/LEITURA-RP3-2026-10-04.plantas.json",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro no commit é o mesmo do disco",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_custo_simbolos",
+      "valor": 439340,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/custo-rp3b.json (custo-rp3.py --desde, sobre o registo da sessão)",
+      "conhecido_positivo": {
+        "o_que": "as leituras desta passagem descem, e a primeira é posterior à hora dada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_custo_segundos",
+      "valor": 5540,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/custo-rp3b.json",
+      "conhecido_positivo": {
+        "o_que": "é positivo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp3b_custo_subagentes",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/custo-rp3b.json (as chamadas da ferramenta Agent no registo, no mesmo intervalo)",
+      "conhecido_positivo": {
+        "o_que": "o contador das chamadas acha as do Bash no mesmo intervalo",
+        "encontrado": true
+      }
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 *Claude Opus 5.5 (a definição `construtor`), 04.10.2026, sem subagentes. O sítio: o ramo `rp3-2026-10-04` sobre `main` `1c4dde2f`; o build, o verify e o typecheck correram na cabeça do código `39f15b8e`, e o último commit do ramo é o das provas, que só acrescenta ficheiros nesta pasta e na das capturas. O motor: o ramo `rp3-2026-10-04` do ResearchHub sobre `master` `d2495a7`, cabeça `f97e66e`, com o `core.gate` a 0 nela. Cada número deste relatório está num JSON desta pasta: `medidas.json`, escrito por `medir-rp3.py`, que lê os outros (`motor/motor-rp3.json`, escrito por `motor-rp3.py` a partir da worktree do motor; `capturas-rp3.json`, por `captar-rp3.mjs`; `paginas-rp3.json`, por `paginas-rp3.mjs`, e `paginas-rp3-fb8dcca4.json`, a mesma comparação na primeira corrida final; `plantas-rp3.json`, pelo `check:series` com `--json`; `plantas-portoes-rp3.json`, por `plantas-rp3.mjs`; `brief-rp3-reproduzido.json`; `fusao-de-ensaio.json`, por `fusao-de-ensaio.py`; `caminhos-trocados.json`, por `trocar-caminhos.py`; `custo-rp3.json`, por `custo-rp3.py`), cada medida com o comando e um conhecido-positivo; e o relatório passa o `conferir-relatorio.py`.*
 
+*Desde a passagem RP3-b (a secção do fim): o ramo que aterra é `rp3-2026-10-04-b`, rebaseado sobre o `main`, e as secções da primeira entrega citam os commits do ramo `rp3-2026-10-04`, cujos nomes no ramo rebaseado estão na tabela da secção RP3-b.*
+
 ## O que o leitor vê
 
 Uma página nova por série, nas 2 edições, na rota das séries do UE1 (`/livro-razao/series/<id>/` e `/en/ledger/series/<id>/`): 16 séries, 32 recibos. Cada recibo diz o nome do projeto (o do cartão da medida, quando a medida tem cartão, ou um nome declarado), o nome com que a fonte publica a série, a periodicidade, o primeiro e o último período e a unidade; a tabela de todos os pontos, com o período, o valor como a fonte o escreve e a marca da fonte onde ela a põe, e o que quer dizer cada marca; os períodos que a fonte não publica, com a razão que ela dá ou a frase de que não dá nenhuma; a conta em palavras da derivada; a prova (a página da série na fonte, o pedido, o literal da série, as datas) e a lista dos pedidos do cliente da casa, fechada, cada um com o endereço, a hora, o cliente, o nome com que o projeto se apresenta, o resumo e os bytes; as correções; e as linhas do livro-razão que são pontos da série. Nenhum gráfico. Nenhuma outra página do leitor muda (32 páginas novas, os recibos; 0 que saíram; das 7 477 páginas comuns às duas construções, 7 477 iguais byte a byte). As capturas estão em `design/especime-v3/capturas/rp3-2026-10-04/`.
@@ -164,3 +166,67 @@ O motor, ramo `rp3-2026-10-04`, por cima de `d2495a7`, cada commit pelo `core.ga
 ## O custo
 
 1 628 722 símbolos, do começo do bloco à última leitura do contador antes do commit das provas (`custo-rp3.json`, lido do registo da sessão), em 15 804 segundos, com o Claude Opus 5.5 e sem subagentes. O total que a ferramenta reporta ao lugar de direção no fim é o que conta.
+
+## A passagem RP3-b
+
+*Pedida pelo lugar de direção a 04.10.2026, depois da leitura a frio do Codex `gpt-6.1-sol` (`design/especime-v3/critica/LEITURA-RP3-2026-10-04.md`, copiada tal como veio, com o registo dos estragos em `LEITURA-RP3-2026-10-04.plantas.json`): os 5 estragos plantados nas cópias do pacote foram mordidos (os achados 1, 2, 3, 4 e 10, que não existem nesta árvore), o achado 9 é do pacote, e os achados reais são o 5, o 6, o 7, o 8 e o 11. A passagem emendou os cinco e rebaseou o ramo do sítio sobre o `main` de agora: o ramo que aterra é `rp3-2026-10-04-b`, e os portões correram na cabeça do código `b3e9e0ac`. Os números desta secção estão em `rp3b/medidas-rp3b.json`, escrito por `rp3b/medir-rp3b.py`, cada medida com o comando e um conhecido-positivo.*
+
+### Os achados, o que mudou, a planta e o commit
+
+| achado | o que estava | o que mudou | a planta que morde | commit |
+|---|---|---|---|---|
+| 5 | a VP2 do Eurostat no motor procurava os fragmentos do excerto nos bytes inteiros do corpo, e um valor escrito só numa anotação, com outro número na célula, passava, como uma marca «e» omitida no ponto e no excerto | a VP2 acha o período no índice da dimensão do tempo, compõe o índice plano pelos passos de `id` e `size` com as categorias da edição, lê `value[<índice>]` e `status[<índice>]` como os bytes os escrevem, e exige que o valor e a marca do ponto sejam esses e que o excerto seja exatamente os fragmentos dessas posições, cada um uma vez dentro do seu objeto, com os limites de cada objeto lidos pelo descodificador do JSON; o mesmo na metade do motor da célula S3 do `check:series`, que passa a ler a célula do Eurostat e, no INE, o objeto dentro do bloco do seu período, e a conferir os bytes de cada corpo pelo seu sha256 | no motor, o valor só numa anotação (um corpo forjado com os resumos postos em dia, para que só a célula o apanhe) e a marca «e» omitida; a VP2 de antes deixa passar as duas e a de agora para-as (`rp3b/vp2-antes-e-depois.json`); no sítio, as mesmas duas num corpo sintético, que correm sempre, e, com o motor ao lado, nos corpos alojados das séries S12 e S4 do brief, e o objeto de outro período num ponto do INE (a série S7) | `47f12e1` (motor), `96f90cce` |
+| 6 | a S13 tomava como última correção a que vinha por último na lista, e aceitava um `old_value` nulo; a VP6 aceitava um par antigo e novo sem os outros campos | a S13 toma a de data mais recente (duas do mesmo ponto com a mesma data param), exige o valor antigo e o novo como cadeias e o ponto no `new_value` dessa; no motor, a VP1 exige em cada correção os sete campos, todos cadeias não vazias, e a VP6, quando um ponto publicado muda, exige a correção completa e que a mais recente o leve ao valor de agora | no `ledger:check`, a correção mais nova antes da mais antiga, o valor antigo nulo e as duas com a mesma data; no motor, o par sem o resto (na VP1, e na VP6 sozinha), a mais recente a dizer outro valor e as duas com a mesma data, com o controlo da correção certa a atravessar | `47f12e1` (motor), `7d41881c` |
+| 7 | a régua das frases só conferia a identidade de um nome de série quando a marca `data-da-serie` estava presente | a marca passa a ser obrigatória em todo o elemento com `data-nome="serie"`, a sua falta é um erro, e a conferência da identidade corre sempre | a troca do nome na folha do caminho sem a marca, que era o controlo de `plantas-rp3.mjs` e passava, passa a planta e morde | `f2ba4e24` |
+| 8 | a check:lugar e a superfície da régua da voz isentavam todos os campos marcados de uma série menos a conta em palavras, e com eles o motivo de uma correção, que é prosa do projeto; a check:lugar isentava ainda um invólucro `data-serie` sem campo | uma lista fechada, num sítio só (`scripts/campos-da-serie.mjs`), com os transcritos da fonte (o nome, o título do conjunto, o literal, o excerto de um ponto, a etiqueta de uma marca, a razão de uma lacuna), a prosa da casa (a conta em palavras e o motivo de uma correção) e os valores; as duas réguas isentam só os transcritos, e o portão de HTML admite só os campos da lista. Com a lista, o endereço de um pedido ao INE, que é um valor e não uma transcrição, passou a ser medido pela L3, que conta «indicador» dentro de `json_indicador` (o sublinhado não é letra): a L3 ganhou uma exceção com nome para esse caminho da API, que a corrida usa 12 vezes | «limiar» e «the house» no motivo de uma correção, nas duas edições, mordem na régua das palavras (dois buracos novos) e na check:lugar (o autoteste, que prova também o invólucro sem campo e o acordo entre o seletor e a lista, e uma planta sobre o `dist/`); a mesma palavra num literal transcrito não morde; um campo fora da lista fecha o portão de HTML | `ebffdb76` |
+| 11 | a planta da S14 rotulada «linha presa desfasada» trocava o valor, e não o período | o rótulo diz o que a planta troca; a S14 ganha a planta do período que a série não tem; o README das séries diz que o desfasamento (um cartão atrás do último ponto) é da S5 do `check:series` | a linha presa num período que a série não tem | `7d41881c` |
+
+### As plantas da passagem
+
+Sobre o `dist/` da cabeça rebaseada (`rp3b/plantas-portoes-rp3.json`, por `plantas-rp3.mjs`): 9 de 9 plantas morderam (eram 6), entre elas as da passagem (a troca do nome sem a marca da série, «limiar» no motivo de uma correção, um campo fora da lista), e 1 controlo, «limiar» num literal transcrito, passou com 0; cada página reposta byte a byte. No `check:series` com o motor ao lado (`rp3b/plantas-series-rp3b.json`): 20 de 20 plantas morderam (eram 15), e a metade do motor leu os 3 991 pontos pela estrutura da resposta; sem o motor, as 17 plantas da cadeia `verify` morderam, as sintéticas da célula incluídas. No `ledger:check`, 29 plantas das séries a morder (eram 25). Na régua das palavras, os buracos da superfície passaram de 7 a 9 (23 de 23 plantas vistas (14 palavras, 9 buracos da superfície) · 7509 página(s) medidas em repouso, 0 achados · 59 página(s) com a superfície estreitada por rota declarada). No motor, a suíte tem 30 plantas, todas a morder (eram 24). Entre os commits correram as conferências que cada emenda toca, 11 corridas, todas a 0 (`rp3b/entre-commits.json`).
+
+### O rebase
+
+O `main` confirmado na árvore principal antes do rebase era `7af90731`, e o ramo novo `rp3-2026-10-04-b` foi criado nesta worktree e rebaseado sobre ele, sem `git checkout` na árvore principal. Houve conflito em 2 ficheiros, os mesmos que o `git merge-tree` do `main` com o ramo antigo aponta, e resolvi-os à mão: no `package.json`, a cadeia do `verify` acaba agora em `check:sugestoes`, `check:rotulos` e `check:series`, por esta ordem (o `check:rotulos` do R2 saiu do meio da cadeia para este fim, e o `check:series` também), com 41 passos, cada um uma vez; e no mapa do repositório ficaram as secções dos dois lados, a do R2 antes da do RP3, e as citações de linha que os dois lados tinham movido voltaram à linha certa (o mapa acha 313 citações na linha citada, 36 longe, as mesmas 36 que o mapa do `main` acha na árvore do `main`, e 0 por achar). O motor não precisou de rebase: o `master` continua em `d2495a7`.
+
+Os commits do ramo `rp3-2026-10-04`, e os seus nomes no ramo rebaseado:
+
+- `35c3be98` → `05312266` as dezasseis séries no tempo no livro-razão, o campo serie nas sete linhas presas, e as regras S9 a S14
+- `d1b21e2b` → `97349184` o recibo de uma série no tempo, nas duas edições
+- `8f8366c8` → `45cc0f24` os portões sobre dist/ leem o recibo de uma série no tempo, com a forma de cada um conservada
+- `4bbc22f9` → `6f21e2ca` as células S do check:series, na cadeia do verify
+- `9e865ddc` → `664f1948` o mapa do repositório com as séries no tempo
+- `6e5adb1d` → `ac990e47` a folha do caminho de uma série no tempo diz de que série é o nome
+- `fb8dcca4` → `fbdd217e` o mapa diz onde a folha do caminho de uma série no tempo leva a marca da série
+- `f487fb9d` → `b779c233` o recibo de uma série no tempo no seu ficheiro de página e com a sua folha de estilo
+- `39f15b8e` → `aefe2838` o README das séries diz o ficheiro de página e a folha do recibo no tempo
+- `7f93add0` → `f15d6761` as provas do bloco, o relatório e a resposta do construtor
+- `5a6a1169` → `7d41881c` a S13 escolhe a correção mais recente pela data, e a planta da S14 diz o que troca
+- `46a42f0c` → `f2ba4e24` a régua das frases exige a marca da série em cada nome de série
+- `a147d48f` → `ebffdb76` uma lista fechada dos campos transcritos de uma série, a mesma nas três réguas
+- `23fc9c5e` → `96f90cce` a metade do motor da S3 lê a célula do Eurostat e o bloco do INE
+- `a60a728b` → `1020900d` a leitura a frio do RP3, tal como veio
+
+E os da passagem RP3-b, no ramo rebaseado: `7d41881c`, `f2ba4e24`, `ebffdb76`, `96f90cce`, `1020900d`, e `b3e9e0ac`. No motor: `47f12e1` (a VP2 do Eurostat lê a célula, e a VP1 e a VP6 exigem correções completas).
+
+### As construções e as capturas, na cabeça rebaseada
+
+Três construções feitas da mesma maneira, o `astro build` de uma exportação de cada commit com as mesmas dependências, as três a 0 (`rp3b/exportacoes.txt`), comparadas ficheiro a ficheiro por `paginas-rp3.mjs`:
+
+- **O que a passagem mudou**, da cabeça rebaseada da primeira entrega (`aefe2838`) à da passagem (`b3e9e0ac`), em `rp3b/paginas-rp3b-passagem.json`: 0 páginas novas, 0 saíram, e as 7 509 páginas são todas iguais byte a byte, como os 3 111 outros ficheiros da construção. A passagem mudou réguas, o motor e as provas, e nenhum byte do que o leitor recebe.
+- **O que a aterragem muda no sítio**, do `main` `7af90731` à cabeça `b3e9e0ac`, em `rp3b/paginas-rp3b-main.json`: 32 páginas novas, e são os recibos das séries no tempo nas duas edições; 0 saíram; as 7 477 páginas comuns, as do R2 incluídas, são todas iguais byte a byte; e fora das páginas mudam 3 012 ficheiros, pelas razões da primeira entrega: 3 010 ficheiros JSON só pela chave `serie`, 1 CSV só pela coluna `serie` e 1 mapa do sítio só pelos endereços dos recibos novos.
+
+As capturas dos dois recibos e do antes, nas duas edições e nas cinco larguras, refeitas na cabeça rebaseada por `captar-rp3.mjs` (`rp3b/capturas-rp3b.json`, 0 problemas), são as da primeira entrega imagem a imagem: 40 de 40 com o mesmo sha256, refeito dos bytes dos dois lados (`rp3b/capturas-rp3b-comparacao.json`). Por isso as imagens novas não ficaram no repositório, e as de `design/especime-v3/capturas/rp3-2026-10-04/` mostram a cabeça que aterra.
+
+### Os portões
+
+Na cabeça rebaseada `b3e9e0ac`, pela tranca da máquina, cada um no seu comando, com o código escrito num ficheiro acabado de escrever em `portoes-rp3b/`: `npm run build` a 0 em 141 segundos (7 484 páginas construídas), `npm run verify` a 0 em 920 segundos, `npm run typecheck` a 0 em menos de um segundo (as duas horas no mesmo segundo). No motor, `python3 -m core.gate` correu no pre-commit do commit da passagem e outra vez na cabeça final `47f12e1`, a 0 em 279 segundos (`rp3b/motor/core-gate.codigo`), com a suíte do RP3 dentro (55 conferências e 30 plantas, todas a morder). Os registos levam os caminhos da máquina trocados por marcas.
+
+### O custo da passagem
+
+439 340 símbolos, da primeira leitura do contador depois da mensagem do lugar de direção à última antes do commit das provas (`custo-rp3b.json`, lido do registo da sessão), em 5 540 segundos, com o Claude Opus 5.5 e sem subagentes (as chamadas da ferramenta dos subagentes contadas no mesmo registo). O total que a ferramenta reporta ao lugar de direção no fim é o que conta.
+
+### O que ficou por fazer, depois da passagem
+
+- A segunda leitura a frio, se o lugar de direção a quiser, sobre o ramo rebaseado.
+- O que a primeira entrega deixou por fazer continua: a linha do índice harmonizado de Portugal em dia, as séries das 5 linhas sem série, uma porta para os recibos, o comprimento do recibo mensal e o corredor das séries.

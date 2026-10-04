@@ -118,6 +118,18 @@
       "<worktree do sítio>": 2
     }
   },
+  "design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/build.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/typecheck.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/portoes-rp3b/verify.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
   "design/especime-v3/medicoes/rp3-2026-10-04/portoes/build.log": {
     "restos_do_utilizador": 0,
     "trocas": {
@@ -133,6 +145,118 @@
     "trocas": {
       "<worktree do sítio>": 2
     }
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/captar-rp3b.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/comparar-capturas.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/custo-rp3b.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/medir-rp3b.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/core-gate.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/dominios-series-test.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/dominios-series.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/estado.fim.txt": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/estado.txt": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/export-series.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/export-site-rows-test.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/motor/series-paises-test.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-main.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/paginas-rp3b-passagem.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas-rp3.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas/planta-rp3-formas-data-do-ponto.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas/planta-rp3-html-algarismo-solto.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas/planta-rp3-html-campo-fora-da-lista.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas/planta-rp3-html-linha-tirada.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas/planta-rp3-html-ponto-trocado.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas/planta-rp3-lugar-limiar-na-conta.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas/planta-rp3-lugar-limiar-num-literal.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas/planta-rp3-lugar-limiar-num-motivo.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas/planta-rp3-voz-nome-de-outra-serie-sem-a-marca.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/plantas/planta-rp3-voz-nome-de-outra-serie.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/series-com-motor.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/series-sem-motor.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/rp3-2026-10-04/rp3b/trocar-caminhos.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
   },
   "design/especime-v3/medicoes/rp3-2026-10-04/series-com-motor.log": {
     "restos_do_utilizador": 0,

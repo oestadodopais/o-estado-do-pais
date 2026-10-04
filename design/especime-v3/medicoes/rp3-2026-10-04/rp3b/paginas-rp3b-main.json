@@ -1,0 +1,32 @@
+{
+  "bloco": "RP3",
+  "construcao_da_base": "7af9073132b92ed7aca7fec0c906f1a08626d446",
+  "construcao_da_cabeca": "b3e9e0ac337a960f80fcc641efb001b669bc107c",
+  "como": "astro build de uma exportação de cada commit (git archive), com as mesmas dependências",
+  "ficheiros_na_base": 10588,
+  "ficheiros_na_cabeca": 10620,
+  "paginas_html_na_base": 7477,
+  "paginas_html_na_cabeca": 7509,
+  "series_no_tempo": 16,
+  "paginas_novas": 32,
+  "paginas_novas_sao_os_recibos": true,
+  "paginas_novas_fora_dos_recibos": [],
+  "outros_ficheiros_novos": [],
+  "paginas_que_sairam": [],
+  "outros_ficheiros_que_sairam": [],
+  "paginas_comuns": 7477,
+  "paginas_iguais_byte_a_byte": 7477,
+  "paginas_iguais_sem_a_construcao": 0,
+  "paginas_que_mudaram": 0,
+  "paginas_que_mudaram_por_razao": {},
+  "paginas_que_mudaram_lista": [],
+  "amostra_das_que_mudaram": [],
+  "outros_ficheiros_comuns_iguais": 99,
+  "outros_ficheiros_que_mudaram_por_razao": {
+    "só a coluna serie": 1,
+    "só o campo serie": 3010,
+    "só os endereços dos recibos novos (32)": 1
+  },
+  "outros_ficheiros_que_mudaram_por_outra_razao": [],
+  "outros_ficheiros_que_mudaram": 3012
+}

@@ -1,0 +1,12 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/rp3-2026-10-04/rp3b/vp2-antes-e-depois.py. A VP2 de antes é a do motor em f97e66e; a de depois, a da cabeça.",
+  "cabeca_do_motor": "47f12e15c927bf238522ac680b1f54c9de29f55d",
+  "valor_numa_anotacao": {
+    "antes": "passou",
+    "depois": "parou: VP2: serie-ihpc-rendas-variacao-homologa: o ponto 2026-08 diz «5,2» e a célula 367 da resposta «9.9»"
+  },
+  "marca_omitida": {
+    "antes": "passou",
+    "depois": "parou: VP2: serie-ihpc-variacao-homologa: a marca de 2026-09 é «None» e a célula 368 da resposta tem «e» em status"
+  }
+}

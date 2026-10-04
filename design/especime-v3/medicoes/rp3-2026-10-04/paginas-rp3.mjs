@@ -152,7 +152,9 @@ const saida = {
   outros_ficheiros_que_mudaram_por_outra_razao: outros.mudaram.filter((x) => !x.porque),
   outros_ficheiros_que_mudaram: outros.mudaram.length,
 };
-fs.writeFileSync(path.join(PASTA, 'paginas-rp3.json'), JSON.stringify(saida, null, 2) + '\n');
+/* A passagem RP3-b compara outras construções (a base nova do rebase e a cabeça rebaseada, e a cabeça rebaseada da primeira
+   entrega e a da passagem) e escreve noutro ficheiro da pasta (`RP3_PAGINAS_SAIDA`), para que o da primeira entrega fique como estava. */
+fs.writeFileSync(path.join(PASTA, process.env.RP3_PAGINAS_SAIDA ?? 'paginas-rp3.json'), JSON.stringify(saida, null, 2) + '\n');
 console.log(`RP3 páginas: ${saida.paginas_novas} novas (os recibos: ${saida.paginas_novas_sao_os_recibos}), ${saida.paginas_que_sairam.length} saíram, ` +
   `${saida.paginas_comuns} comuns: ${saida.paginas_iguais_byte_a_byte} iguais byte a byte, ${saida.paginas_iguais_sem_a_construcao} iguais sem a construção, ` +
   `${saida.paginas_que_mudaram} mudaram (${JSON.stringify(saida.paginas_que_mudaram_por_razao)}); outros ficheiros: ${outros.iguais} iguais, ` +

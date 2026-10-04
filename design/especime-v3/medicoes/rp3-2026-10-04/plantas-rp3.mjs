@@ -25,7 +25,10 @@ import { spawnSync } from 'node:child_process';
 import { parse } from 'node-html-parser';
 
 const PASTA = 'design/especime-v3/medicoes/rp3-2026-10-04';
-const REGISTOS = path.join(PASTA, 'plantas');
+/* A passagem RP3-b corre as mesmas plantas na cabeça rebaseada e guarda-as à parte (`RP3_PLANTAS_PASTA`), para que as
+   da primeira entrega fiquem como estavam. */
+const SAIDA = process.env.RP3_PLANTAS_PASTA ?? PASTA;
+const REGISTOS = path.join(SAIDA, 'plantas');
 fs.mkdirSync(REGISTOS, { recursive: true });
 const sha = (s) => createHash('sha256').update(s).digest('hex');
 const versao = JSON.parse(fs.readFileSync('dist/version.json', 'utf8'));
@@ -57,7 +60,7 @@ function planta(nome, script, alteracoes, mordidas, { controlo = false } = {}) {
     ? r.status === 0 && vistas.every((v) => !v.vista) && ficheiros.every((f) => f.antes === f.reposto)
     : r.status === 1 && vistas.every((v) => v.vista) && ficheiros.every((f) => f.antes === f.reposto);
   registos.push({ nome, controlo, comando: `node ${script}`, codigo: r.status, segundos: Math.round((Date.now() - inicio) / 100) / 10, mordidas: vistas, passou, ficheiros });
-  fs.writeFileSync(path.join(PASTA, 'plantas-portoes-rp3.json'), JSON.stringify({ bloco: 'RP3', construcao: versao.commit, plantas: registos }, null, 2) + '\n');
+  fs.writeFileSync(path.join(SAIDA, 'plantas-portoes-rp3.json'), JSON.stringify({ bloco: 'RP3', construcao: versao.commit, plantas: registos }, null, 2) + '\n');
   console.log(`${passou ? 'OK' : 'FALHA'} ${nome}: código ${r.status}${passou ? '' : ` · ${vistas.filter((v) => !v.vista).map((v) => v.mordida).join(' · ')}`}`);
 }
 

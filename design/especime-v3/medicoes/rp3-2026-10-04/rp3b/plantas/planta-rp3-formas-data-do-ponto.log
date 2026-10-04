@@ -1,0 +1,8 @@
+F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.
+[31m
+  PORTÃO DAS FORMAS · 1 problema(s):
+[0m
+  · dist/livro-razao/series/serie-remuneracao-bruta-mensal-media/index.html: a data do campo "pontos.0.periodo" da série "serie-remuneracao-bruta-mensal-media" não é a da série.
+      na série: 2025-T1 · na forma da casa: 1.º trimestre de 2025
+      renderizado: primeiro trimestre de 2025
+
