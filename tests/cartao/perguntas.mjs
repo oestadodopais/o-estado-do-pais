@@ -223,6 +223,12 @@ export function auditarPerguntas({
       if (!textoDaUnidade(u?.[lang]).trim()) falha(id, `a unidade da casa não tem forma em ${lang}`);
     }
     const linha = linhas.get(id);
+    /* R2-b (04.10.2026, achado 6 da leitura a frio do Sol): cada número da unidade, em cada língua, tem de ser um número
+       de um literal de apoio achado no seu campo, e uma origem do apoio tem de ser da linha (uma origem da pergunta
+       declarada da medida, que o recibo rende, ou o endereço da própria linha). Leitor próprio: os números contam-se
+       aqui, e não pela função do portão. */
+    const achados = [];
+    const daLinha = new Set(definicoes[id]?.origens ?? []);
     for (const a of apoios) {
       if (a?.pergunta === true) {
         for (const lang of /** @type {const} */ (['pt', 'en'])) {
@@ -241,12 +247,22 @@ export function auditarPerguntas({
         const o = origens[a.origem];
         if (!o || !CAMPOS_DA_ORIGEM.has(a.campo) || typeof o[a.campo] !== 'string' || !o[a.campo].includes(literal)) {
           falha(id, `a unidade da casa cita «${curto(literal)}» no campo «${a.campo}» da origem «${a.origem}», e não está lá`);
-        }
+        } else if (!daLinha.has(a.origem) && o.url !== linha?.source_url) {
+          falha(id, `a unidade da casa cita a origem «${a.origem}», que não é da linha (nem da pergunta declarada da medida, nem o endereço da linha)`);
+        } else achados.push(literal);
         continue;
       }
       const valor = a.campo === 'document.locator' ? linha?.document?.locator : CAMPOS_DA_LINHA_NA_UNIDADE.has(a.campo) ? campoDaLinha(linha, a.campo) : undefined;
       if (typeof valor !== 'string' || !valor.includes(literal)) {
         falha(id, `a unidade da casa cita «${curto(literal)}» no campo «${a.campo}» da linha, e não está lá`);
+      } else achados.push(literal);
+    }
+    const numeros = (/** @type {string} */ t) => (String(t).match(/\d+(?:[.,]\d+)?/g) ?? []).map((x) => x.replace(',', '.'));
+    const dosLiterais = new Set(achados.flatMap(numeros));
+    for (const lang of /** @type {const} */ (['pt', 'en'])) {
+      for (const x of numeros(textoDaUnidade(u?.[lang]))) {
+        if (!dosLiterais.has(x)) falha(id, `o número «${x}» da unidade da casa (${lang}) não está em nenhum literal de apoio achado`);
+        else contas.numeros_das_unidades = (contas.numeros_das_unidades ?? 0) + 1;
       }
     }
   }

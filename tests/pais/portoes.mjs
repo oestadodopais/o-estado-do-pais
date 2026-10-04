@@ -348,6 +348,17 @@ planta('r2-l1-porta-da-origem-repetida-fora','scripts/check-lugar.mjs',[
 planta('r2-l1-dispensa-so-no-recibo','scripts/check-lugar.mjs',[
  ['temas/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<div data-def-origem="planta"><a class="def-origem-doc" href="/lugares/">Os lugares</a></div><p class="linha-pedido"><a class="ligacao-externa" href="/lugares/">Os lugares</a></p>')]
 ],[/L1 · páginas com dois destinos iguais fora da mobília: \d+, acima do teto/]);
+/* R2-b (04.10.2026): a unidade declarada da faixa dos 27 só na faixa da série da sua linha; uma porta por endereço nas
+   origens de uma definição, nem menos nem mais (a 8.4 do check:lugar). `--prefixo r2b-` corre só estas. */
+planta('r2b-portao-unidade-da-faixa-de-outra-serie','scripts/gate-html.mjs',[
+ ['uniao-europeia/index.html',r=>r.querySelector('[data-faixa-paises="taxa-de-emprego-2025-paises"] [data-unidade-da-casa]').setAttribute('data-unidade-na-faixa','divida-publica-2025-paises')]
+],[/R2-b: a unidade da casa de "taxa-de-emprego-2025" diz ser da faixa «divida-publica-2025-paises», e não está na faixa da série dessa linha/]);
+planta('r2b-lugar-porta-repetida-nas-origens','scripts/check-lugar.mjs',[
+ ['livro-razao/disparidade-salarial-entre-sexos-2024/index.html',r=>{const sp=r.querySelector('[data-def-origem="eurostat-earn-grgpg2-cobertura"] .def-origem-doc');sp.replaceWith('<a class="lig def-origem-doc" href="https://ec.europa.eu/eurostat/cache/metadata/en/earn_grgpg2_esms.htm" data-verbatim="origem-eurostat-earn-grgpg2-cobertura-documento" lang="en">Gender pay gap in unadjusted form (earn_grgpg2) · Reference metadata</a>');}]
+],[/8\.4 · definições de painel fora da declaração: \d+, acima do teto 0/]);
+planta('r2b-lugar-origem-sem-porta','scripts/check-lugar.mjs',[
+ ['livro-razao/disparidade-salarial-entre-sexos-2024/index.html',r=>{const a=r.querySelector('[data-def-origem="eurostat-earn-grgpg2-definicao"] a.def-origem-doc');a.replaceWith('<span class="def-origem-doc" data-verbatim="origem-eurostat-earn-grgpg2-definicao-documento" lang="en">Gender pay gap in unadjusted form (earn_grgpg2) · Reference metadata</span>');}]
+],[/8\.4 · definições de painel fora da declaração: \d+, acima do teto 0/]);
 planta('k2c-portao-classe-etaria-trocada','scripts/gate-html.mjs',[
  ['uniao-europeia/index.html',r=>r.querySelector('[data-verbatim="origem-eurostat-tipslm90-sexo-coordenadas"]').set_content('Age class: From 15 to 24 years')]
 ],[/a citação "origem-eurostat-tipslm90-sexo-coordenadas" não foi transcrita fielmente/]);

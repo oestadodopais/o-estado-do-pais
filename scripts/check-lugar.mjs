@@ -1561,12 +1561,23 @@ for (const ficheiro of paginas) {
         anota('d84_definicoes_fora', `${url} · «${nome}»: a origem «${o.chave}» não se rende na página`);
         continue;
       }
-      const porta = bloco
-        .querySelectorAll('a[href]')
-        .some((a) => (a.getAttribute('href') ?? '') === o.url);
-      if (!porta) {
+      /* UMA PORTA POR ENDEREÇO (passagem R2-b, 04.10.2026). Duas origens de uma definição podem ser dois excertos do
+         mesmo documento: a primeira leva a porta e a seguinte diz o nome do documento sem porta, com a marca da origem
+         que a leva (`data-mesma-porta`). A régua continua a exigir que cada origem chegue ao seu endereço, agora pelo
+         invólucro da definição, e exige uma porta por endereço, nem menos nem mais: um destino repetido volta a ser uma
+         falta aqui. */
+      const portasDoEndereco = (involucro?.querySelectorAll?.('[data-def-origem] a[href]') ?? []).filter(
+        (a) => (a.getAttribute('href') ?? '') === o.url,
+      );
+      const portaNoBloco = bloco.querySelectorAll('a[href]').some((a) => (a.getAttribute('href') ?? '') === o.url);
+      const remete = bloco.querySelector('[data-mesma-porta]')?.getAttribute('data-mesma-porta') ?? null;
+      const portaDaOutra = remete !== null && rendidas.get(remete)?.querySelectorAll('a[href]').some((a) => (a.getAttribute('href') ?? '') === o.url);
+      if (portasDoEndereco.length === 0 || (!portaNoBloco && !portaDaOutra)) {
         medidas.d84_definicoes_fora++;
         anota('d84_definicoes_fora', `${url} · «${nome}»: a origem «${o.chave}» não tem porta para «${o.url}»`);
+      } else if (portasDoEndereco.length > 1) {
+        medidas.d84_definicoes_fora++;
+        anota('d84_definicoes_fora', `${url} · «${nome}»: o endereço «${o.url}» tem ${portasDoEndereco.length} portas nas origens da definição, e é uma por endereço`);
       }
       /* ---------------------------------------------------------------------
          CADA CAMPO POR IGUALDADE, NO ELEMENTO DELE (achado 6 da releitura do
