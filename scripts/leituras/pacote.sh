@@ -4,6 +4,9 @@
 #   PACOTE_EXTRA="<caminho> <caminho>" copia também esses caminhos do repositório tal como estão na cabeça
 #   (ficheiros ou pastas), para o que o diff não traz: as páginas congeladas de um brief entram com o brief,
 #   antes do intervalo do diff, e a leitura do R1 a 23.09.2026 ficou sem elas (M25, a segunda metade).
+#   PACOTE_RETIRA="<padrão> <padrão>" retira só secções do diff; os ficheiros ficam inteiros.
+#   PACOTE_MOTOR="<árvore> <base> <cabeça> [<padrão>...]" junta os ficheiros e o diff do motor.
+#   Padrões glob de caminhos relativos; aspas interiores protegem caminhos com espaços.
 #   <pacote>/brief.md, relatorio-construtor.md, diff.patch (base..cabeça, sem binários e sem o relatório),
 #   os ficheiros mudados nos seus caminhos tal como estão na cabeça, built/<caminho> copiado de
 #   <repositório>/dist/, e numeros-do-relatorio.txt com a saída do conferir-relatorio.py sobre o relatório.
@@ -32,41 +35,6 @@ if [ "$codigo" -ge 2 ]; then
   exit 1
 fi
 
-mkdir -p "$pacote"
-mv "$numeros_tmp" "$pacote/numeros-do-relatorio.txt"
-cp "$brief" "$pacote/brief.md"
-cp "$relatorio" "$pacote/relatorio-construtor.md"
-# O que o diff não traz e a leitura precisa (PACOTE_EXTRA): copiado da cabeça, nunca do disco.
-n_extra=0
-for e in ${PACOTE_EXTRA:-}; do
-  for f in $(git -C "$repo" -c core.quotepath=off ls-tree -r --name-only "$cabeca" -- "$e"); do
-    mkdir -p "$pacote/$(dirname "$f")"
-    git -C "$repo" -c core.quotepath=off show "$cabeca:$f" > "$pacote/$f" && n_extra=$((n_extra+1))
-  done
-done
-rel_relatorio=$(cd "$repo" && git ls-files --full-name "$relatorio" 2>/dev/null || true)
-git -C "$repo" -c core.quotepath=off diff "$base..$cabeca" -- . ':(exclude)*.png' ':(exclude)*.jpg' ':(exclude)*.webp' ${rel_relatorio:+":(exclude)$rel_relatorio"} > "$pacote/diff.patch"
-# Os caminhos leem-se linha a linha, porque há caminhos com espaços («content/12 Concelhos/…»), e com
-# `core.quotepath=off` porque o git escapa os acentos por omissão («Penaliza\303\247\303\265es…») e um
-# caminho escapado não existe: a peça do estudo 11 ficou fora do pacote do M4b a 23.09.2026 por isto.
-lista="$pacote/.mudados"
-git -C "$repo" -c core.quotepath=off diff --name-only "$base..$cabeca" | grep -v -E '\.(png|jpg|webp)$' > "$lista"
-n=0
-while IFS= read -r f; do
-  [ -z "$f" ] && continue
-  [ "$f" = "$rel_relatorio" ] && continue
-  if git -C "$repo" cat-file -e "$cabeca:$f" 2>/dev/null; then
-    mkdir -p "$pacote/$(dirname "$f")"
-    git -C "$repo" show "$cabeca:$f" > "$pacote/$f"
-    n=$((n+1))
-  fi
-done < "$lista"
-rm -f "$lista"
-b=0
-for p in "$@"; do
-  mkdir -p "$pacote/built/$(dirname "$p")"
-  cp "$repo/dist/$p" "$pacote/built/$p"
-  b=$((b+1))
-done
-
-echo "pacote em $pacote: diff $(wc -l < "$pacote/diff.patch" | tr -d ' ') linhas, $n ficheiros mudados copiados, mais $n_extra extra(s) de PACOTE_EXTRA, da cabeça $cabeca, $b páginas construídas, números do relatório conferidos (código $codigo, em numeros-do-relatorio.txt)"
+# O Python lê os caminhos com NUL e os padrões com shlex, sem expansão pela shell.
+python3 "$(dirname "$0")/pacote.py" "$repo" "$base" "$cabeca" "$pacote" "$brief" "$relatorio" "$numeros_tmp" "$@"
+rm -f "$numeros_tmp"
