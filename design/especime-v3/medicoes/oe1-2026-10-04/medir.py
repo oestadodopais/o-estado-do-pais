@@ -40,7 +40,12 @@ def count_measure(rows, predicate):
 def gate(name):
     base = HERE / "portoes"
     p = base / (name + ".codigo")
-    value = int(p.read_text().strip()) if p.exists() else None
+    def stamp(file):
+        return datetime.fromisoformat(file.read_text().strip().replace("Z", "+00:00")) if file.exists() else None
+    start, end = stamp(base / (name + ".inicio")), stamp(base / (name + ".fim"))
+    runstart = start if name == "motor" else stamp(HERE / "corrida-sitio.inicio")
+    finished = start is not None and end is not None and end >= start and runstart is not None and start >= runstart
+    value = int(p.read_text().strip()) if p.exists() and finished else None
     headfile = base / (name + ".cabeca" if name in {"motor", "ledger"} else "cabeca")
     head = headfile.read_text().strip() if headfile.exists() else None
     return dict(codigo=value, cabeca=head, origem="portoes/" + name + ".codigo")
@@ -51,6 +56,7 @@ def md(value):
 
 
 def main():
+    close = "--fecho" in sys.argv
     ledger, manifest, rounding = build()
     rows = ledger["claims"]
     committed = json.loads((MOTOR / "content/20 Orcamento do Estado/ledger.json").read_text())
@@ -135,12 +141,34 @@ def main():
     support_changed = git(SITE, "diff", "--name-only", bases["sitio"], "--", *support).splitlines()
     integration = dict(ficheiros_da_proposta=support, ficheiros_alterados=support_changed,
                        proposta_aplicada=len(support_changed) == len(support))
+    bcost_path = HERE / "custo-oe1b.json"
+    bcost = json.loads(bcost_path.read_text()) if bcost_path.exists() else None
+    btests_path = HERE / "oe1b-plantas.log"
+    btests = json.loads(btests_path.read_text())["bandeiras"] if btests_path.exists() else []
+    if btests:
+        measures["plantas_bandeira_oe1b"] = count_measure(btests, lambda t: t["mordeu"])
+        measures["ficheiros_integrados_oe1b"] = count_measure(support_changed, lambda f: f in support)
+    inventory_counts = []
+    if bcost is not None and (SITE / "dist/livro-razao/index.html").exists():
+        js = "import fs from 'node:fs';import {parse} from 'node-html-parser';console.log(JSON.stringify(['dist/livro-razao/index.html','dist/en/ledger/index.html'].map(f=>parse(fs.readFileSync(f,'utf8')).querySelector('p.livro-contas').textContent.trim().replace(/\\s+/g,' '))));"
+        inventory_counts = json.loads(subprocess.check_output(["node", "--input-type=module", "-e", js], cwd=SITE, text=True))
+        inventory = (SITE / "design/especime-v3/INVENTARIO-FRASES.md").read_text()
+        assert all("| conteudo | " + s + " | k2 | viva |" in inventory for s in inventory_counts)
+        measures["contagens_reconferidas_no_inventario"] = count_measure(inventory_counts, lambda s: s in inventory)
     data = dict(medido_em=datetime.now(timezone.utc).isoformat(), modelo="Codex gpt-6-astra", cabecas=heads,
                 commits=commits, medidas=measures, eurostat_paises_com_dez_funcoes=coverage,
                 arredondamento=rounding, divergencias=dict(seguranca_social_bruta_mapa1=gross1,
                 seguranca_social_bruta_mapa8=gross8, diferenca_euros=str(number(gross8) - number(gross1)),
                 indicadores_ac_despesa_diferenca_milhoes=str(financial_gap)), portoes=gates, custo=costs,
-                integracao=integration, conferencias=tests["conferencias"], erros_do_sitio=site_errors)
+                integracao=integration, conferencias=tests["conferencias"], erros_do_sitio=site_errors,
+                oe1b=dict(custo=bcost, plantas=btests, contagens_no_html=inventory_counts))
+    if close:
+        data["cabecas_na_medicao"] = data.pop("cabecas")
+        data["portoes_na_medicao"] = data.pop("portoes")
+        data["oe1b"]["custo_na_medicao"] = data["oe1b"].pop("custo")
+        data["verificacao_final"] = {n: dict(codigo_ficheiro="portoes/"+n+".codigo",
+            cabeca_ficheiro="portoes/"+(n+".cabeca" if n in {"motor", "ledger"} else "cabeca")) for n in gates}
+        data["nota_do_fecho"] = "A medição é um instantâneo datado. Os ficheiros de verificacao_final são escritos pela corrida posterior ao commit e conferidos por --conferir-final."
     assert all(m["conhecido_positivo"] for m in measures.values())
     (HERE / "medidas.json").write_text(encoded(data))
     table = ["| Id | Fonte | Valor literal da fonte, ou cálculo assinalado | Unidade | Período | Localizador |", "|---|---|---|---|---|---|"]
@@ -198,31 +226,68 @@ O módulo de testes planta alterações em valores, ano XML e XLS, unidade, prog
 
 A primeira corrida do motor falhou por impedimento de localhost na caixa de areia, caches ausentes e uma regressão na aceitação das bandeiras antigas. A regressão foi corrigida, mantendo o formato antigo e acrescentando o caso JSON-stat de uma célula. As três caches de recortes foram copiadas das fixtures versionadas desta mesma worktree, conservando o cabeçalho que declara a origem; não foram regeneradas a partir de PDFs nem apresentadas como uma nova leitura das fontes.
 
-A proposta `publisher/oe1_site_support.patch`, no motor, contém cinco adaptações identificadas no sítio: registo do conjunto, línguas, unidade, declaração de que as linhas aguardam a futura página do governo e conferência da bandeira no JSON literal. O `git apply --check` confirmou que a proposta se aplica à árvore, sem a aplicar. A proposta não foi validada pelos portões do sítio. O mandato original admite no sítio apenas linhas exportadas, relatório e medições, pelo que esta alteração de código exige uma decisão sobre o perímetro. Ficheiros da proposta efetivamente alterados nesta árvore: **{len(support_changed)} de 5**. Não se apresenta a exportação como aceitação pelo sítio.
+A proposta `publisher/oe1_site_support.patch`, no motor, identificou cinco adaptações no sítio. O mandato OE1-b autorizou essa integração, o nome do conjunto e as plantas das bandeiras. Ficheiros da proposta efetivamente alterados nesta árvore: **{len(support_changed)} de 5**. A aplicação inclui o nome pedido no OE1-b e reforça a comparação do valor em decimal e a ligação da bandeira ao país e ao período. A secção OE1-b descreve as alterações. Os portões abaixo dizem o resultado real, independentemente da existência da proposta.
 
 As decisões do §5 foram respeitadas: o bloco entrega dados e nenhuma página; todas as linhas publicadas declaram o perímetro; as fontes que atravessam têm corpos e pedidos reproduzíveis. O ponto da biblioteca foi resolvido por endereços publicados, com os 401 conservados como prova da limitação inicial.
 
-Os registos da medição final são escritos depois do último commit, porque um ficheiro não pode conter o resumo do commit que o contém. O commit final guarda os guiões, o relatório e a resposta curta; as cabeças e os resultados posteriores são os ficheiros da última corrida na worktree. O estado final do Git é entregue sem o disfarçar.
+O relatório, os guiões e a resposta curta ficam comitados antes da última corrida. Os códigos, as cabeças, os tempos e o custo são ficheiros de execução, escritos depois desse commit. As referências abaixo apontam para esses ficheiros, permitindo registar a cabeça final sem voltar a alterar a prosa comitada. O modo --conferir-final do guião recusa um código diferente de zero, uma corrida por terminar ou uma cabeça diferente da atual.
 
 ## Portões lidos de ficheiro
 
 As corridas do sítio usam `scripts/leituras/portoes.sh`. Um invólucro temporário do npm retira caminhos locais antes de escrever a saída e conserva cada código. Durante a chamada do build, com a mesma tranca ainda tomada, também corre `npm run ledger:check` e guarda o seu código separado. Não altera comandos do projeto nem transforma falhas em sucesso.
 
-O registo do ledger contém {len(site_errors)} recusas: {sum('"study" é "oe-2026"' in e for e in site_errors)} por conjunto ainda não registado e {sum('declara a bandeira "p"' in e for e in site_errors)} porque o verificador do sítio só reconhece o formato antigo da bandeira Eurostat. O JSON oficial guarda a bandeira no índice da célula, não como texto depois do número. O motor prova essa associação; o sítio ainda não recebeu a adaptação proposta. O build e o verify param neste primeiro portão, pelo que os passos seguintes não foram executados.
+O registo atual do ledger contém {len(site_errors)} recusas. Na passagem inicial havia 186 por conjunto ainda não registado e 20 por formato da bandeira. O JSON oficial guarda a bandeira no índice da célula, não como texto depois do número. O OE1-b acrescenta essa conferência ao sítio. Só um código zero de cada comando abaixo comprova a conclusão de todos os seus passos.
 
 | Portão | Código | Cabeça registada | É a cabeça atual? |
 |---|---|---|---|
 """
     for name, g in gates.items():
-        report += f"| {name} | {g['codigo'] if g['codigo'] is not None else 'não corrido'} | {g['cabeca'] or 'sem registo'} | {'sim' if g['cabeca_final'] else 'não'} |\n"
+        if close:
+            meta = data["verificacao_final"][name]
+            report += f"| {name} | [ler código]({meta['codigo_ficheiro']}) | [ler cabeça]({meta['cabeca_ficheiro']}) | conferida por --conferir-final |\n"
+        else:
+            report += f"| {name} | {g['codigo'] if g['codigo'] is not None else 'em curso ou sem registo'} | {g['cabeca'] or 'sem registo'} | {'sim' if g['cabeca_final'] else 'não'} |\n"
     report += "\n## Commits e cabeças\n\n"
+    if close:
+        report += "A cabeça final do sítio, incluindo o commit deste relatório, está em [portoes/cabeca](portoes/cabeca). A lista seguinte é a dos commits anteriores ao commit de fecho.\n\n"
     for name in ["motor", "sitio"]:
-        report += f"{name}: `{heads[name]}`.\n\n" + ("\n".join("* `" + c + "`" for c in commits[name]) or "Ainda sem commit do bloco.") + "\n\n"
+        report += f"{name}{', cabeça na medição preparatória' if close else ''}: `{heads[name]}`.\n\n" + ("\n".join("* `" + c + "`" for c in commits[name]) or "Ainda sem commit do bloco.") + "\n\n"
     report += "## Decisões em vigor\n\nA leitura antes das alterações identificou, nos ficheiros do motor, §1.6, §1.24, §1.31, §1.47, §1.108, §1.115, §1.126 e §1.145. Nos ficheiros de referência do sítio: §1.17, §1.24, §1.31, §1.32, §1.36, §1.40, §1.44 e §1.47. A proposta de integração adicional cita ficheiros abrangidos por §1.3, §1.17, §1.24, §1.28, §1.40, §1.47, §1.49, §1.68, §1.99, §1.124, §1.127 e §1.145. Os ficheiros novos foram explicitamente recusados pelo guião antes de existirem em HEAD; essa ausência não foi contada como leitura bem-sucedida. A lista final por ficheiro é guardada em decisoes-motor.log e decisoes-sitio.log após os commits.\n\n"
     report += "## Conferências e plantas executadas\n\n| Conferência | Resultado | Estrago plantado pela função de recusa |\n|---|---|---|\n"
     for t in tests["conferencias"]:
         report += "| " + md(t["nome"]) + " | passou | " + ("sim" if t["planta"] else "não") + " |\n"
     report += "\nAs recusas de bandeira junto de outro valor e de outro país também alteram entradas, mas verificam diretamente o resultado falso do detetor, em vez de esperar uma exceção.\n\n"
+    if bcost is not None:
+        report += """## OE1-b
+
+Esta passagem integra as mesmas 186 linhas. O livro do motor, os YAML e o registo da travessia conservam os seus bytes; as lacunas de fonte descritas acima mantêm-se.
+
+| Ficheiro | Alteração e razão |
+|---|---|
+| src/data/studies.mjs | Regista oe-2026 em INTERNAL_SOURCES com o nome «O dinheiro do Estado por ministério e por função (OE1)» e a nota de que aguarda a página do governo. Não acrescenta WORKS, conjunto ou rota. |
+| src/data/areas.mjs | Declara que estas linhas aguardam a página do governo; o agregado da União conserva a regra europeia existente. Não atribui funções a ministérios. |
+| src/i18n/lingua-dos-titulos.mjs | Declara a língua dos títulos, rótulos, fonte e edições lidos nas fontes, conservando os nomes. |
+| src/i18n/unidades.mjs | Acrescenta apenas «milhões de euros» para «million euros», facto de dicionário. Não altera a unidade de nenhuma linha. O recurso a português com lang mantém-se para unidades sem tradução declarada. |
+| src/lib/ledger.mjs | Confere as sete coordenadas, o único índice de valor, o índice da bandeira e o seu significado no JSON-stat. Compara o literal numérico em decimal. No formato anterior confere valor, período e localização indicada no pedido; conserva o formato regional com várias coordenadas. |
+| tests/linha/cadeias-proveniencia.mjs | Executa as plantas dos dois formatos no mesmo validateLedger chamado pelo ledger:check. Altera cópias em memória e repõe as linhas originais. |
+| design/especime-v3/INVENTARIO-FRASES.md | Reconfere duas contagens geradas pelo livro: 3195 linhas e 366 derivadas, nas duas línguas. Copia o texto do HTML e conserva a classificação e o formato do K2. Não altera palavras das páginas nem a emenda de voz do inventário. |
+| Guiões e registos desta pasta; RESPOSTA-construtor-oe1.md | Atualizam a medição, o custo incremental, os portões e a resposta curta; incluem os registos da passagem anterior que estavam por commitar. |
+
+O primeiro ledger:check desta passagem encontrou uma dependência ausente nas cópias temporárias de um teste: a worktree usava os módulos do diretório ascendente, mas a cópia isolada não os encontrava. Foi criada uma ligação relativa, ignorada pelo Git, para as dependências já instaladas. Nenhum pacote foi instalado ou alterado. A segunda corrida tem o código em oe1b-ledger-dependencias.codigo.
+
+A primeira corrida completa encontrou quatro erros no inventário: as duas contagens antigas já não se rendiam e as duas novas ainda não estavam medidas. Esses códigos e mensagens estão em oe1b-portoes-inventario-antigo/. A recontagem atualiza apenas essas duas linhas de medição, dentro do perímetro de relatórios e medições; não acrescenta prosa às páginas. O campo k2 conserva quem fixou a classificação e o formato, e a razão identifica a recontagem OE1-b. Não se declara uma nova leitura editorial ou uma comunicação com a direção.
+
+As plantas obrigam a recusar outro valor, outro país, outra célula, outro período, valor ausente, duas células, bandeira ausente ou deslocada, significado alterado, dimensão repetida e diferença numérica além da precisão float64. Os dois formatos reais passam antes e depois das plantas. No formato regional anterior, o pedido contém várias regiões e o excerto tem de nomear uma delas; não se afirma que o pedido identifique uma única região.
+
+A guarda do fecho também foi vista a morder: --conferir-final saiu com código 1 enquanto a nova corrida estava por terminar, apesar de ainda existirem códigos antigos nos ficheiros. O registo é oe1b-planta-corrida-incompleta.log. A cabeça testada é portoes/cabeca, lida depois da obtenção da tranca; corrida-sitio.cabeca regista apenas a cabeça no momento de entrar na fila.
+
+| Planta | Mordeu |
+|---|---|
+"""
+        for t in btests:
+            report += f"| {md(t['nome'])} | {'sim' if t['mordeu'] else 'não'} |\n"
+        report += "\nCódigos finais: " + ", ".join(f"[{n}](portoes/{n}.codigo)" if close else f"{n}={g['codigo']}" for n,g in gates.items()) + ". As cabeças estão ao lado, na mesma pasta.\n\n"
+        report += "Custo desta passagem: [custo-oe1b.json](custo-oe1b.json), medido pelo incremento dos contadores desde a ordem OE1-b, com construção e revisões automáticas discriminadas. O ficheiro conserva o corte temporal e é atualizado após a corrida final.\n\n"
     report += "## Custo medido\n\nModelo: Codex gpt-6-astra, confirmado pelo registo da sessão. O custo em símbolos é o acumulado dos eventos token_count até à medição, separado entre construção e revisão automática. Inclui entradas lidas da cache; não é o preço monetário. Mensagens posteriores à medição ficam fora desse corte.\n\n```json\n" + encoded(costs) + "```\n\n"
     report += "## Tabela integral das linhas\n\n" + "\n".join(table) + "\n"
     (HERE / "LEIA-ME.md").write_text(report)
@@ -250,13 +315,28 @@ Códigos lidos de ficheiro: motor **{gates['motor']['codigo']}**; ledger **{gate
 
 [Relatório]({folder}LEIA-ME.md) e [tabela integral, com ids, fontes, valores, períodos e localizadores]({folder}LINHAS.md).
 
-Ficaram por fechar a receita consolidada AC+SS e o saldo nos mapas, a divergência da despesa bruta da Segurança Social e as necessidades de financiamento mensais. A proposta de integração em cinco ficheiros do sítio aguarda autorização para alargar o perímetro; não foi aplicada. O sítio recusa o estudo por registar e o formato JSON literal da bandeira Eurostat.
+Ficaram por fechar a receita consolidada AC+SS e o saldo nos mapas, a divergência da despesa bruta da Segurança Social e as necessidades de financiamento mensais. O OE1-b integra o conjunto no sítio e prova os dois formatos da bandeira, sem página, trabalho no arquivo ou definição de rota novos.
 
-Custo ao corte: {costs.get('tokens_totais', 'por medir')} símbolos, incluindo {costs.get('tokens_entrada_cache', 'por medir')} de cache, e {costs.get('segundos', 'por medir')} segundos. Modelo: Codex gpt-6-astra. As medições posteriores ao último commit ficam na worktree, identificadas no relatório.
+Custo OE1-b ao corte: {(bcost or {}).get('tokens_totais', 'por medir')} símbolos, incluindo {(bcost or {}).get('tokens_entrada_cache', 'por medir')} de cache, e {(bcost or {}).get('segundos', 'por medir')} segundos. Modelo: Codex gpt-6-astra. O custo da construção inicial permanece no relatório. As medições posteriores ao último commit ficam na worktree, identificadas no relatório.
 """
     (SITE / "RESPOSTA-construtor-oe1.md").write_text(short)
+    if close:
+        short = short.replace("Commits:", "Commits anteriores ao fecho:")
+        short = short.replace(f"* Sítio: `{heads['sitio']}`.", "* Sítio: [cabeça final registada](" + folder + "portoes/cabeca), incluindo o commit desta resposta.")
+        a, b = short.index("Códigos lidos de ficheiro:"), short.index("| Linhas exportadas")
+        short = short[:a] + "Códigos finais lidos de ficheiro: " + ", ".join(f"[{n}]({folder}portoes/{n}.codigo)" for n in gates) + ". As cabeças acompanham os registos; --conferir-final exige zero e a cabeça atual.\n\n" + short[b:]
+        short = short[:short.index("Custo OE1-b ao corte:")] + "Custo OE1-b: [contadores e segundos ao último corte](" + folder + "custo-oe1b.json). Modelo: Codex gpt-6-astra. Os relatórios ficam comitados; os ficheiros da última execução são escritos depois do commit.\n"
+        (SITE / "RESPOSTA-construtor-oe1.md").write_text(short)
     print(encoded(dict(linhas=len(rows), medidas=len(measures), conhecidos_positivos=all(m["conhecido_positivo"] for m in measures.values()), portoes=gates)))
 
 
 if __name__ == "__main__":
-    main()
+    if "--conferir-final" in sys.argv:
+        results = {n: gate(n) for n in ["motor", "ledger", "build", "verify", "typecheck"]}
+        for n, g in results.items():
+            assert g["codigo"] == 0, f"{n}: código diferente de zero ou corrida por terminar"
+            assert g["cabeca"] == git(MOTOR if n == "motor" else SITE, "rev-parse", "HEAD"), f"{n}: outra cabeça"
+        assert (HERE / "portoes/cabeca.fim").read_text().strip() == git(SITE, "rev-parse", "HEAD")
+        print(encoded(results))
+    else:
+        main()

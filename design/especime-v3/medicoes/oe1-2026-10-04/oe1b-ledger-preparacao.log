@@ -336,5 +336,41 @@
   bytes de controlo · 3 de 3 ficheiro(s) sem nenhum · 3 planta(s) vista(s)
   ✓ os ficheiros desta régua leem-se como texto, do primeiro byte ao último.
 
-{"controlos":11,"plantas":8,"controlos_integros":11,"plantas_mordidas":8}
-História do valor: 2 controlos e 4 plantas.
+node:internal/modules/run_main:105
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: node:internal/modules/package_json_reader:255
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'js-yaml' imported from <ficheiro-local>
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:255:9)
+    at packageResolve (node:internal/modules/esm/resolve:767:81)
+    at moduleResolve (node:internal/modules/esm/resolve:853:18)
+    at defaultResolve (node:internal/modules/esm/resolve:983:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:801:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:725:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:708:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:309:38)
+    at #link (node:internal/modules/esm/module_job:208:49) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.4.1
+
+
+1 !== 0
+
+    at file://<sitio>/tests/linha/historia-da-proveniencia.mjs:87:10
+    at ModuleJob.run (node:internal/modules/esm/module_job:370:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:99:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual'
+}
+
+Node.js v24.4.1
