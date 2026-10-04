@@ -1,0 +1,65 @@
+{
+ "registado_em": "2026-10-04T09:24:18+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "r3-p1-celula-aceita-o-irmao",
+   "ficheiro": "tests/indice/indice.mjs",
+   "descricao": "a I1 da célula passa a aceitar, para um caminho sem extensão, o ficheiro .html irmão quando a pasta não existe; o comentário da própria célula e o diff dizem que nunca o aceita",
+   "sha256_antes": "00ad9e1439af204fdb8529f285068e081b0437226f2a02c412ace0dff2166353",
+   "sha256_depois": "b1273d56c51b2a7527ebaf61432bff4a1cc8403194e222aa7697e6422c5c009b",
+   "contexto_antes": "oolean} existe\n */\nexport function resolve(caminho, existe = (f) => fs.existsSync(f) && fs.statSync(f).isFile()) {\n  const limpo = caminho.replace(/\\/+$/, '');\n  if (/\\.[a-z0-9]+$/i.test(limpo)) return existe(path.join(DIST, limpo.replace(/^\\//, ''))) ? limpo : null;\n  const f = limpo === '' ? path.join(DIST, 'index.html') : path.join(DIST, limpo.replace(/^\\//, ''), 'index.html');\n  return existe(f) ? f : null;\n}\n\n/** As portas do corpo de uma página do índice, com as dispensas da L1 e sem as da lista das mudanças. */\nfunction portasDoIndice(doc, lang) {\n  const main =",
+   "contexto_depois": "oolean} existe\n */\nexport function resolve(caminho, existe = (f) => fs.existsSync(f) && fs.statSync(f).isFile()) {\n  const limpo = caminho.replace(/\\/+$/, '');\n  if (/\\.[a-z0-9]+$/i.test(limpo)) return existe(path.join(DIST, limpo.replace(/^\\//, ''))) ? limpo : null;\n  const f = limpo === '' ? path.join(DIST, 'index.html') : path.join(DIST, limpo.replace(/^\\//, ''), 'index.html');\n  if (existe(f)) return f;\n  const irmao = path.join(DIST, limpo.replace(/^\\//, '') + '.html');\n  return existe(irmao) ? irmao : null;\n}\n\n/** As portas do corpo de uma página do índice, com as dispensas da L1 e sem as da lista das mudanças. */\nfunction portasDoIndice(doc, lang) {\n  const main ="
+  },
+  {
+   "id": "r3-p2-contagem-do-relatorio",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem dos concelhos nas gavetas passa de 308 a 307 numa frase do relatório; o medidas.json, a célula e as páginas construídas dizem 308",
+   "sha256_antes": "6619423b389ca63c13ee9734f26747a26ae428579244fa87e040ba06ea44aaef",
+   "sha256_depois": "8776b10022492ec821313e3894bd7937e3fa41fd30785407ddf7758c8663a4c6",
+   "contexto_antes": "1 dos desvios, abaixo: os temas não declaram pergunta |\n| os lugares | a página dos lugares, o índice das regiões e as 9 regiões, os 29 distritos e ilhas, e os 308 concelhos em 29 gavetas fechadas, uma por distrito ou ilha | a I4 da célula |\n| a União | a página dos países | |\n| os estudos sem sucessor, por data, com a pergunta | os 11 da lista ",
+   "contexto_depois": "1 dos desvios, abaixo: os temas não declaram pergunta |\n| os lugares | a página dos lugares, o índice das regiões e as 9 regiões, os 29 distritos e ilhas, e os 307 concelhos em 29 gavetas fechadas, uma por distrito ou ilha | a I4 da célula |\n| a União | a página dos países | |\n| os estudos sem sucessor, por data, com a pergunta | os 11 da lista "
+  },
+  {
+   "id": "r3-p3-porta-que-nao-resolve",
+   "ficheiro": "built/en/index/index.html",
+   "descricao": "a porta «Agenda» do índice inglês construído aponta para /en/agendas, que não existe no mapa do sítio nem como página; o índice português aponta para /agenda",
+   "sha256_antes": "632920d9d8de3d9b953ceab4d42b8d4424f0d9d55900e2a612b02438ff3cb14f",
+   "sha256_depois": "38afb541f669f74144972ddd305b5f52c8659d57a4a8b1326f02f697c576c260",
+   "contexto_antes": "dice-lista indice-lista-em-colunas\"><li><a class=\"indice-porta\" href=\"/en/about\">About</a></li><li><a class=\"indice-porta\" href=\"/en/method\">Method</a></li><li><a class=\"indice-porta\" href=\"/en/agenda\">Agenda</a></li><li><a class=\"indice-porta\" href=\"/en/suggestions\">Suggestions</a></li></ul></div></section><section class=\"indice-secao\" aria-labelledby=\"indice-mudou\" da",
+   "contexto_depois": "dice-lista indice-lista-em-colunas\"><li><a class=\"indice-porta\" href=\"/en/about\">About</a></li><li><a class=\"indice-porta\" href=\"/en/method\">Method</a></li><li><a class=\"indice-porta\" href=\"/en/agendas\">Agenda</a></li><li><a class=\"indice-porta\" href=\"/en/suggestions\">Suggestions</a></li></ul></div></section><section class=\"indice-secao\" aria-labelledby=\"indice-mudou\" da"
+  },
+  {
+   "id": "r3-p4-cadeia-inglesa-trocada",
+   "ficheiro": "src/i18n/strings.mjs",
+   "descricao": "o nome inglês da secção «Os números e as fontes» passa a «Figures and sources»; o CHAVES-EN.md, a porta do rodapé e a página construída dizem «Numbers and sources»",
+   "sha256_antes": "db64459e170a51576fb65d9e14ac187f5a49be196ce769e654f76d8f5c03d311",
+   "sha256_depois": "90c52c84968bdf989e7f2f13382558092265edae151cc99e97c83998ef36a96c",
+   "contexto_antes": "each with its door.',\n      seccoes: {\n        pais: 'The country',\n        lugares: 'Places',\n        uniao: 'The European Union',\n        estudos: 'Studies',\n        numeros: 'Numbers and sources',\n        projeto: 'The project',\n      },\n    },\n    /* Ver a razão na edição portuguesa (bloco PP1, 28.09.2026). */\n    primeira: {\n      oQueSePassa: 'What is happening',\n      numerosMaisRe",
+   "contexto_depois": "each with its door.',\n      seccoes: {\n        pais: 'The country',\n        lugares: 'Places',\n        uniao: 'The European Union',\n        estudos: 'Studies',\n        numeros: 'Figures and sources',\n        projeto: 'The project',\n      },\n    },\n    /* Ver a razão na edição portuguesa (bloco PP1, 28.09.2026). */\n    primeira: {\n      oQueSePassa: 'What is happening',\n      numerosMaisRe"
+  },
+  {
+   "id": "r3-p5-portao-do-rodape-com-outro-nome",
+   "ficheiro": "scripts/indice-do-portao.mjs",
+   "descricao": "a lista fechada do portão do rodapé passa a esperar «Site index» na sétima porta inglesa; as páginas construídas imprimem «Index» e o registo do verify diz 0 erros",
+   "sha256_antes": "282e5d35f2f4d8513dc788287fcce250a23bfacbc6420818d85d684e1a057fb9",
+   "sha256_depois": "223c3bb5273cbcd9d8834d328d00caf9ef04040eb1ff0163213c4f94c5290fe6",
+   "contexto_antes": "  ['/en/method', 'Method'],\n    ['/en/corrections', 'Corrections'],\n    ['/en/agenda', 'Agenda'],\n    ['/en/european-union', 'Portugal in the European Union'],\n    ['/en/index', 'Index'],\n  ],\n};\n\nconst desfaz = (s) =>\n  String(s ?? '')\n    .replace(/&quot;/g, '\"')\n    .replace(/&#39;/g, \"'\")\n    .replace(/&lt;/g, '<')\n    .replace(/&gt;/g, '>')",
+   "contexto_depois": "  ['/en/method', 'Method'],\n    ['/en/corrections', 'Corrections'],\n    ['/en/agenda', 'Agenda'],\n    ['/en/european-union', 'Portugal in the European Union'],\n    ['/en/index', 'Site index'],\n  ],\n};\n\nconst desfaz = (s) =>\n  String(s ?? '')\n    .replace(/&quot;/g, '\"')\n    .replace(/&#39;/g, \"'\")\n    .replace(/&lt;/g, '<')\n    .replace(/&gt;/g, '>')"
+  }
+ ],
+ "leitura": {
+  "modelo": "gpt-6.1-sol",
+  "raciocinio": "xhigh",
+  "inicio_utc": "2026-10-04T09:25:00Z",
+  "fim_utc": "2026-10-04T09:39:25Z",
+  "tokens_used": 188618,
+  "plantas_mordidas": {
+   "r3-p1-celula-aceita-o-irmao": "achado 3",
+   "r3-p2-contagem-do-relatorio": "achado 10",
+   "r3-p3-porta-que-nao-resolve": "achado 1",
+   "r3-p4-cadeia-inglesa-trocada": "achado 11",
+   "r3-p5-portao-do-rodape-com-outro-nome": "achado 2"
+  }
+ }
+}
