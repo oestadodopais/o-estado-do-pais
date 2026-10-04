@@ -66,6 +66,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
+import { classeDoCampoDaSerie } from './campos-da-serie.mjs';
 
 /**
  * As palavras, e o que se escreve em vez de cada uma.
@@ -282,19 +283,19 @@ export function superficieDe(html, opcoes = {}) {
   )) {
     campo.remove();
   }
-  /* OS CAMPOS DE UMA LINHA DE SÉRIE TRANSCRITOS DA FONTE (bloco RP3, 04.10.2026). Uma
-     série é uma linha do livro-razão com vários pontos (`ledger/series/README.md`), e
-     o que a fonte escreve dela (o nome, o título do conjunto, o literal, a etiqueta de
-     uma marca, a razão de uma lacuna) rende-se com `data-serie-campo` e é comparado
-     pelo portão de HTML com o ficheiro da série, carácter a carácter, como um campo
-     de uma linha: sai da superfície pela mesma razão que `data-linha-campo` sai. A
-     conta em palavras de uma série derivada (`derivation`, `derivation_en`) é prosa
-     deste projeto e FICA na superfície: é mais estreito do que a regra das linhas,
-     de propósito. A planta está em `tests/voz/palavras-proibidas.mjs`. */
+  /* OS CAMPOS DE UMA LINHA DE SÉRIE TRANSCRITOS DA FONTE (bloco RP3, 04.10.2026; passagem
+     RP3-b). Uma série é uma linha do livro-razão com vários pontos
+     (`ledger/series/README.md`), e o que a fonte escreve dela (o nome, o título do
+     conjunto, o literal, o excerto de um ponto, a etiqueta de uma marca, a razão de uma
+     lacuna) rende-se com `data-serie-campo` e é comparado pelo portão de HTML com o
+     ficheiro da série, carácter a carácter: sai da superfície pela mesma razão que
+     `data-linha-campo` sai. DESDE A RP3-b (o achado 8 da leitura a frio) saem SÓ os campos
+     da lista fechada de `scripts/campos-da-serie.mjs` (a mesma da check:lugar e do portão
+     de HTML): a conta em palavras de uma derivada e o motivo de uma correção são prosa
+     deste projeto e FICAM na superfície, e os identificadores e os valores também. As
+     plantas estão em `tests/voz/palavras-proibidas.mjs`. */
   for (const campo of root.querySelectorAll('[data-serie][data-serie-campo]')) {
-    const qual = campo.getAttribute('data-serie-campo') ?? '';
-    if (qual === 'derivation' || qual === 'derivation_en') continue;
-    campo.remove();
+    if (classeDoCampoDaSerie(campo.getAttribute('data-serie-campo') ?? '') === 'transcrito') campo.remove();
   }
   /* A REGIÃO TRANSCRITA DESTA ROTA, se a rota declarar uma. */
   if (opcoes.retira) for (const fora of root.querySelectorAll(opcoes.retira)) fora.remove();

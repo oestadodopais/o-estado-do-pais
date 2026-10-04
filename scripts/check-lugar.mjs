@@ -54,6 +54,7 @@ import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse, NodeType } from 'node-html-parser';
+import { SELETOR_DOS_CAMPOS_TRANSCRITOS, desacordosDoSeletor } from './campos-da-serie.mjs';
 
 import { matchPath, routePath, normalizePath, LANGS } from '../src/lib/routes.mjs';
 import { loadClaims } from '../src/lib/ledger.mjs';
@@ -583,6 +584,18 @@ const EXCECOES_DO_VOCABULARIO = [
     porque: '«indicador» a nomear o campo que o publicador dá, e não uma medida da casa',
     padrao: /O indicador que o publicador dá por concelho/,
   },
+  {
+    /* «indicador» DENTRO DO ENDEREÇO DA API DO INE (passagem RP3-b, 04.10.2026). Desde a RP3-b
+       só os campos transcritos de uma série saem do texto da casa (`scripts/campos-da-serie.mjs`),
+       e o endereço de um pedido ao INE, que o recibo de uma série no tempo mostra como texto, é
+       um valor e fica na conta: `https://www.ine.pt/ine/json_indicador/pindica.jsp?…`. A régua
+       conta a palavra inteira entre letras, e o sublinhado não é letra, por isso «indicador»
+       dentro de `json_indicador` conta. É o nome de um caminho da API da fonte, e não uma palavra
+       da casa a chamar «indicador» a uma medida; o padrão só apanha o bloco que traz o endereço. */
+    conta: 'indicador',
+    porque: '«indicador» dentro do endereço da API do INE (`json_indicador`), que é um caminho da fonte e não uma palavra da casa',
+    padrao: /www\.ine\.pt\/ine\/json_indicador\//,
+  },
 ];
 
 /* ---------------------------------------------------------------------------
@@ -609,17 +622,20 @@ const ORIGEM_DECLARADA = [
   '[data-nome]',
   '[data-medida-nome]',
   '[data-medida-unidade]',
-  /* O CAMPO DE UMA LINHA DE SÉRIE (bloco RP3, 04.10.2026), a marca irmã de
-     `data-linha-claim`: o que a fonte escreve de uma série (o nome do conjunto, o
-     título, o literal, a etiqueta de uma marca, a razão de uma lacuna) rende-se com
-     `data-serie` e `data-serie-campo`, e o portão de HTML compara-o com o ficheiro da
-     série carácter a carácter. É uma transcrição, e contá-la na 8.5 ou na L3 «seria a
-     régua a exigir que a casa emendasse uma citação» (`blocosDaCasa`, abaixo): o nome do
-     conjunto do Eurostat da linha de pobreza é «At-risk-of-poverty thresholds», e o
-     literal do INE escreve «IndicadorDsg». A CONTA EM PALAVRAS de uma série derivada
-     (`derivation`, `derivation_en`) é prosa deste projeto e FICA no texto da casa. O
-     autoteste do fim do ficheiro prova os dois lados a cada corrida. */
-  '[data-serie]:not([data-serie-campo="derivation"]):not([data-serie-campo="derivation_en"])',
+  /* O CAMPO TRANSCRITO DE UMA LINHA DE SÉRIE (bloco RP3, 04.10.2026; passagem RP3-b), a
+     marca irmã de `data-linha-claim`: o que a fonte escreve de uma série (o nome, o título
+     do conjunto, o literal, o excerto de um ponto, a etiqueta de uma marca, a razão de
+     uma lacuna) rende-se com `data-serie` e `data-serie-campo`, e o portão de HTML
+     compara-o com o ficheiro da série carácter a carácter. É uma transcrição, e contá-la
+     na 8.5 ou na L3 «seria a régua a exigir que a casa emendasse uma citação»
+     (`blocosDaCasa`, abaixo): o nome do conjunto do Eurostat da linha de pobreza é
+     «At-risk-of-poverty thresholds», e o literal do INE escreve «IndicadorDsg». DESDE A
+     RP3-b (o achado 8 da leitura a frio) a isenção é uma LISTA FECHADA, a mesma do portão
+     de HTML e da régua da voz (`scripts/campos-da-serie.mjs`): a conta em palavras de uma
+     derivada e o motivo de uma correção são prosa deste projeto e ficam no texto da casa,
+     os identificadores e os valores também, e um invólucro `data-serie` sem campo já não
+     isenta nada. O autoteste do fim do ficheiro prova os lados a cada corrida. */
+  SELETOR_DOS_CAMPOS_TRANSCRITOS,
 ].join(',');
 
 /**
@@ -2092,33 +2108,45 @@ for (const l of LANGS) {
 }
 
 /**
- * O AUTOTESTE DA MARCA DAS SÉRIES (bloco RP3, 04.10.2026). Dois documentos de
- * rascunho com a forma do recibo de uma série: «threshold» e «indicador» dentro de
- * um campo transcrito da série não contam na 8.5 nem na L3; «limiar» dentro da conta
- * em palavras de uma série derivada conta na 8.5, porque é prosa deste projeto. Falha
- * em qualquer dos sentidos fecha a construção.
+ * O AUTOTESTE DA MARCA DAS SÉRIES (bloco RP3, 04.10.2026; passagem RP3-b). Documentos de rascunho com a
+ * forma do recibo de uma série: «threshold» e «indicador» dentro de um campo transcrito da série (o nome, o
+ * literal) não contam na 8.5 nem na L3; «limiar» dentro da conta em palavras de uma derivada, dentro do
+ * motivo de uma correção (nas duas línguas) e dentro de um invólucro `data-serie` sem campo conta na 8.5,
+ * porque é prosa deste projeto. E o seletor diz o mesmo que a lista fechada (`desacordosDoSeletor`). Uma
+ * falha em qualquer dos sentidos fecha a construção.
  */
 {
-  const molde = (campo, dentro) =>
+  const molde = (/** @type {string} */ atributos, /** @type {string} */ dentro) =>
     parse(
       `<!doctype html><html lang="pt"><head><title>x</title></head><body><p>` +
-        `<span class="campo-da-serie" data-serie="serie-x" data-serie-campo="${campo}">${dentro}</span></p></body></html>`,
+        `<span class="campo-da-serie" ${atributos}>${dentro}</span></p></body></html>`,
     );
-  const daFonte = blocosDaCasa(molde('name', 'At-risk-of-poverty thresholds · IndicadorDsg indicador'));
-  const daCasa = blocosDaCasa(molde('derivation', 'A conta passa o limiar.'));
+  const daFonte = [
+    ...blocosDaCasa(molde('data-serie="serie-x" data-serie-campo="name"', 'At-risk-of-poverty thresholds')),
+    ...blocosDaCasa(molde('data-serie="serie-x" data-serie-campo="excerpt"', 'IndicadorDsg indicador')),
+  ];
+  const daCasa = [
+    ['a conta em palavras', 'data-serie="serie-x" data-serie-campo="derivation"'],
+    ['o motivo de uma correção', 'data-serie="serie-x" data-serie-campo="corrections.0.reason"'],
+    ['o motivo inglês de uma correção', 'data-serie="serie-x" data-serie-campo="corrections.0.reason_en"'],
+    ['um invólucro sem campo', 'data-serie="serie-x"'],
+  ];
   const naFonte85 = daFonte.filter((b) => /limiar|threshold/i.test(b)).length;
   const naFonteL3 = daFonte.reduce((n, b) => n + contaPalavra(b, 'indicador'), 0);
-  const naCasa85 = daCasa.filter((b) => /limiar|threshold/i.test(b)).length;
+  const naCasa = daCasa.map(([nome, atributos]) => [nome, blocosDaCasa(molde(atributos, 'A conta passa o limiar.')).filter((b) => /limiar/i.test(b)).length]);
+  const desacordos = desacordosDoSeletor(parse);
   console.log(
-    `  RP3, o autoteste da marca das séries: «threshold» e «indicador» num campo transcrito ${naFonte85 + naFonteL3} ` +
-      `(esperado 0) · «limiar» na conta em palavras ${naCasa85} (esperado 1)`,
+    `  RP3, o autoteste da marca das séries: «threshold» e «indicador» nos campos transcritos ${naFonte85 + naFonteL3} ` +
+      `(esperado 0) · «limiar» na prosa da casa ${naCasa.map(([nome, n]) => `${nome} ${n}`).join(', ')} (esperado 1 em cada) · ` +
+      `o seletor e a lista fechada ${desacordos.length ? 'em desacordo' : 'de acordo'}`,
   );
   if (naFonte85 + naFonteL3 !== 0) {
     falhas.push('RP3 · o autoteste da marca das séries falhou: um campo transcrito de uma série contou como texto da casa.');
   }
-  if (naCasa85 !== 1) {
-    falhas.push('RP3 · o autoteste da marca das séries falhou do outro lado: a conta em palavras de uma série derivada saiu do texto da casa.');
+  for (const [nome, n] of naCasa) {
+    if (n !== 1) falhas.push(`RP3 · o autoteste da marca das séries falhou do outro lado: ${nome} de uma série saiu do texto da casa.`);
   }
+  for (const d of desacordos) falhas.push(`RP3 · o seletor dos campos transcritos não diz o mesmo que a lista fechada: ${d}.`);
 }
 
 if (origensVistas !== ORIGENS_ESPERADAS) {

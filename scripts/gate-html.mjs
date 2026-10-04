@@ -18,6 +18,7 @@ import {
   conferirRegrasDaBase,
   plantasDaCaixa,
 } from './sugestoes-do-portao.mjs';
+import { classeDoCampoDaSerie } from './campos-da-serie.mjs';
 /**
  * OS CAMPOS DE TEXTO DE UMA SÉRIE NO TEMPO QUE O RECIBO PODE RENDER (bloco RP3,
  * 04.10.2026), e o texto que cada um tem de ter: o nome na fonte, a conta em
@@ -6030,7 +6031,11 @@ for (const file of ficheirosHtml(DIST)) {
     const campo = el.getAttribute('data-serie-campo') ?? '';
     const serie = SERIES_DO_PORTAO.get(sid);
     let esperado = null;
-    if (serie) {
+    /* A LISTA FECHADA DOS CAMPOS (passagem RP3-b, o achado 8): um campo só se admite se estiver em
+       `scripts/campos-da-serie.mjs`, a mesma lista que diz à check:lugar e à régua da voz quais são
+       transcrição da fonte; um campo fora dela (um `document.<qualquer>` que a lista não nomeia, por
+       exemplo) não se compara com nada e fecha a construção. */
+    if (serie && classeDoCampoDaSerie(campo) !== null) {
       if (campo === 'unit') esperado = unidadeDaLinha(serie.unit, linguaDaSerie).texto;
       else if (campo.startsWith('document.')) esperado = serie.document?.[campo.slice('document.'.length)] ?? null;
       else if (campo.startsWith('bandeiras.')) esperado = serie.bandeiras?.[campo.slice('bandeiras.'.length)] ?? null;

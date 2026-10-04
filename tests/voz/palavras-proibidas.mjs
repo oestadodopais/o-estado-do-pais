@@ -135,6 +135,19 @@ function dentroDaMarca(html, atributo, pedaco) {
   return `${html.slice(0, j + 1)}${pedaco}${html.slice(j + 1)}`;
 }
 
+/**
+ * Um campo de uma série, com o texto dado, acrescentado no fim do conteúdo principal de um recibo (passagem RP3-b):
+ * para plantar num campo que o recibo de hoje não rende (o motivo de uma correção, que nenhuma série tem ainda).
+ *
+ * @param {string} html @param {string} campo @param {string} pedaco
+ * @returns {string|null}
+ */
+function campoDaSerieNoFim(html, campo, pedaco) {
+  const i = html.lastIndexOf('</main>');
+  if (i < 0) return null;
+  return `${html.slice(0, i)}<p><span class="campo-da-serie" data-serie="serie-planta" data-serie-campo="${campo}">${pedaco}</span></p>${html.slice(i)}`;
+}
+
 /** @param {RegExp} marca @returns {string|null} */
 function primeiraPagina(marca, contem = null) {
   /** @param {string} dir @returns {string|null} */
@@ -204,16 +217,31 @@ const BURACOS = [
     morde: html => html.replace(/(<a class="texto-secao-topo"[^>]*>)/, '$1As regras da casa. '),
     naoMorde: html => dentroDaMarca(html, 'data-registo-unidade', '<span>As regras da casa.</span>'),
   },
-  /* O RECIBO DE UMA SÉRIE NO TEMPO (bloco RP3, 04.10.2026): os campos de uma série saem da
-     superfície como os de uma linha, menos a conta em palavras de uma série derivada, que é
-     prosa deste projeto e fica. A planta morde dentro da conta e não morde dentro da
-     expressão, que é um campo da série como o `check` de uma linha. */
+  /* O RECIBO DE UMA SÉRIE NO TEMPO (bloco RP3, 04.10.2026; passagem RP3-b). Saem da superfície
+     só os campos transcritos da fonte, pela lista fechada de `scripts/campos-da-serie.mjs`: a
+     conta em palavras de uma derivada e o motivo de uma correção são prosa deste projeto e
+     ficam. As plantas mordem dentro da conta e dentro do motivo (nas duas edições), e não
+     mordem dentro de um campo transcrito (o literal, a razão de uma lacuna, o nome). */
   {
-    nome: 'a conta em palavras de uma série derivada é prosa deste projeto, e um campo da série não é',
+    nome: 'a conta em palavras de uma série derivada é prosa deste projeto, e o literal da fonte não é',
     chave: 'limiar',
     pagina: () => primeiraPagina(/^livro-razao\/series\/[^/]+\/index\.html$/, 'data-serie-campo="derivation"'),
     morde: (html) => dentroDaMarca(html, 'data-serie-campo="derivation"', 'O valor passa o limiar. '),
-    naoMorde: (html) => dentroDaMarca(html, 'data-serie-campo="check"', 'O valor passa o limiar. '),
+    naoMorde: (html) => campoDaSerieNoFim(html, 'excerpt', 'O valor passa o limiar.'),
+  },
+  {
+    nome: 'o motivo de uma correção de uma série é prosa deste projeto, e a razão de uma lacuna da fonte não é (RP3-b)',
+    chave: 'limiar',
+    pagina: () => primeiraPagina(/^livro-razao\/series\/serie-[^/]+\/index\.html$/),
+    morde: (html) => campoDaSerieNoFim(html, 'corrections.0.reason', 'O valor passa o limiar.'),
+    naoMorde: (html) => campoDaSerieNoFim(html, 'lacunas.0.razao', 'O valor passa o limiar.'),
+  },
+  {
+    nome: 'o motivo inglês de uma correção de uma série é prosa deste projeto, e o nome na fonte não é (RP3-b)',
+    chave: 'the house',
+    pagina: () => primeiraPagina(/^en\/ledger\/series\/serie-[^/]+\/index\.html$/),
+    morde: (html) => campoDaSerieNoFim(html, 'corrections.0.reason_en', 'The value is set by the house.'),
+    naoMorde: (html) => campoDaSerieNoFim(html, 'name', 'The value is set by the house.'),
   },
 ];
 
