@@ -121,7 +121,7 @@ export const COMO_ENTRA = {
 }
 
 /**
- * @typedef {{ tipo: 'pagina'|'lugar', chave: ChaveDeRota, href: string, rotulo: string, filhos?: Porta[], marcador?: boolean }} PortaSimples
+ * @typedef {{ tipo: 'pagina'|'lugar', chave: ChaveDeRota, href: string, rotulo: string, filhos?: Porta[] }} PortaSimples
  * @typedef {{ tipo: 'entrada', chave: ChaveDeRota, href: string, rotulo: string, linha: string }} PortaDeTema
  * @typedef {{ tipo: 'estudo', chave: 'estudo', href: string, ficha: ReturnType<typeof todosOsEstudos>[number] }} PortaDeEstudo
  * @typedef {{ tipo: 'serie', chave: 'serie', href: string, linha: Linha, sufixo: string, nome: string }} PortaDeSerie
@@ -269,10 +269,11 @@ export function indiceDoSitio(lang) {
       portas: [
         pagina('livro', lang, s.nav.livro, [pagina('livroConcelhos', lang, s.nav.municipios), ...series(lang)]),
         pagina('correcoes', lang, s.nav.correcoes),
-        /* A PÁGINA DO MARCADOR chama-se pelo seu `<h1>`, como no caminho do cabeçalho; e, porque
-           numa lista o «este» não tem marcador ao lado, a vista põe o próprio marcador a seguir ao
-           nome, dentro da porta (`marcador: true`). As duas cadeias já existem. */
-        { ...pagina('marcador', lang, s.marcador.h1), marcador: true },
+        /* A PÁGINA DO MARCADOR chama-se pelo seu `<h1>`, como no caminho do cabeçalho. A cadeia do
+           marcador não entra na porta: escrita sem a sua marca, é o que a I6 do `check:indice`
+           recusa (um marcador, uma forma, uma porta), e com a marca seria uma segunda porta para a
+           mesma página no mesmo ecrã. */
+        pagina('marcador', lang, s.marcador.h1),
       ],
     },
     projeto: {
