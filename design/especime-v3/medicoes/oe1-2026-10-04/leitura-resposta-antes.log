@@ -1,0 +1,5 @@
+não se leu o ficheiro pedido RESPOSTA-construtor-oe1.md: git show HEAD:RESPOSTA-construtor-oe1.md: fatal: path 'RESPOSTA-construtor-oe1.md' does not exist in 'HEAD'
+1 ficheiro(s) pedido(s) por ler: a lista acima não vale por eles
+0 decisão(ões) citada(s) em 0 ficheiro(s) de texto
+0 ficheiro(s) binário(s) saltado(s)
+conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível
