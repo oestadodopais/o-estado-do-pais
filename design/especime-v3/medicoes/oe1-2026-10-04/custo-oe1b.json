@@ -1,0 +1,65 @@
+{
+  "passagem": "OE1-b",
+  "inicio": "2026-10-04T05:28:59.102Z",
+  "medido_em": "2026-10-04T06:09:22.059723+00:00",
+  "segundos": 2422,
+  "sessoes": [
+    {
+      "sessao": "01a10508-9b42-72e2-a474-124da3a642e1",
+      "modelo": "gpt-6-astra",
+      "ultima_medicao": "2026-10-04T06:05:33.019Z",
+      "contador_anterior": {
+        "input_tokens": 18554708,
+        "cached_input_tokens": 17633408,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 109412,
+        "reasoning_output_tokens": 41533,
+        "total_tokens": 18664120
+      },
+      "contador_atual": {
+        "input_tokens": 24955537,
+        "cached_input_tokens": 23859968,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 156596,
+        "reasoning_output_tokens": 71312,
+        "total_tokens": 25112133
+      },
+      "incremento": {
+        "input_tokens": 6400829,
+        "cached_input_tokens": 6226560,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 47184,
+        "reasoning_output_tokens": 29779,
+        "total_tokens": 6448013
+      }
+    },
+    {
+      "sessao": "01a10563-03a8-7853-bb06-9f6b87899de7",
+      "modelo": "codex-auto-review",
+      "ultima_medicao": "2026-10-04T06:01:28.021Z",
+      "contador_anterior": {},
+      "contador_atual": {
+        "input_tokens": 183070,
+        "cached_input_tokens": 138240,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 697,
+        "reasoning_output_tokens": 429,
+        "total_tokens": 183767
+      },
+      "incremento": {
+        "input_tokens": 183070,
+        "cached_input_tokens": 138240,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 697,
+        "reasoning_output_tokens": 429,
+        "total_tokens": 183767
+      }
+    }
+  ],
+  "tokens_totais": 6631780,
+  "tokens_entrada_cache": 6364800,
+  "tokens_entrada_sem_cache": 219099,
+  "tokens_saida": 47881,
+  "limite": "Incremento desde o último contador anterior à ordem OE1-b até ao último disponível. Inclui cache e revisões automáticas; não é preço monetário.",
+  "conhecido_positivo": true
+}

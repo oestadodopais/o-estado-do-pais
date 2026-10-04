@@ -3,11 +3,11 @@ OE1 parcial. O teste de aceitação do §2 não está cumprido.
 Cabeças dos dois ramos `oe1-2026-10-04`:
 
 * Motor: `9bfbb777f7d2f5af8b185475c8dd8027ebd76bad`.
-* Sítio: `e1a283838807219d41455e4d9956d07b8e6db37f`.
+* Sítio: [cabeça final registada](design/especime-v3/medicoes/oe1-2026-10-04/portoes/cabeca), incluindo o commit desta resposta.
 
-Commits: motor `aa537323`, `9bfbb777`; sítio `e1a28383`.
+Commits anteriores ao fecho: motor `aa537323`, `9bfbb777`; sítio `e1a28383`, `0c4c5fc2`, `a369b0ef`, `2522ac16`.
 
-Códigos lidos de ficheiro: motor **0**; ledger **1**; build **1**; verify **1**; typecheck **0**. As cabeças acompanham os registos em `portoes/`.
+Códigos finais lidos de ficheiro: [motor](design/especime-v3/medicoes/oe1-2026-10-04/portoes/motor.codigo), [build](design/especime-v3/medicoes/oe1-2026-10-04/portoes/build.codigo), [verify](design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.codigo), [typecheck](design/especime-v3/medicoes/oe1-2026-10-04/portoes/typecheck.codigo), [ledger](design/especime-v3/medicoes/oe1-2026-10-04/portoes/ledger.codigo). As cabeças acompanham os registos; --conferir-final exige zero e a cabeça atual.
 
 | Linhas exportadas | Número |
 |---|---:|
@@ -21,6 +21,6 @@ Códigos lidos de ficheiro: motor **0**; ledger **1**; build **1**; verify **1**
 
 [Relatório](design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md) e [tabela integral, com ids, fontes, valores, períodos e localizadores](design/especime-v3/medicoes/oe1-2026-10-04/LINHAS.md).
 
-Ficaram por fechar a receita consolidada AC+SS e o saldo nos mapas, a divergência da despesa bruta da Segurança Social e as necessidades de financiamento mensais. A proposta de integração em cinco ficheiros do sítio aguarda autorização para alargar o perímetro; não foi aplicada. O sítio recusa o estudo por registar e o formato JSON literal da bandeira Eurostat.
+Ficaram por fechar a receita consolidada AC+SS e o saldo nos mapas, a divergência da despesa bruta da Segurança Social e as necessidades de financiamento mensais. O OE1-b integra o conjunto no sítio e prova os dois formatos da bandeira, sem página, trabalho no arquivo ou definição de rota novos.
 
-Custo ao corte: 19025264 símbolos, incluindo 17703936 de cache, e 5472 segundos. Modelo: Codex gpt-6-astra. As medições posteriores ao último commit ficam na worktree, identificadas no relatório.
+Custo OE1-b: [contadores e segundos ao último corte](design/especime-v3/medicoes/oe1-2026-10-04/custo-oe1b.json). Modelo: Codex gpt-6-astra. Os relatórios ficam comitados; os ficheiros da última execução são escritos depois do commit.

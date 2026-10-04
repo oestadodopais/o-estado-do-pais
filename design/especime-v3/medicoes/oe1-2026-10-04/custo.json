@@ -1,20 +1,20 @@
 {
   "origem": "Eventos token_count das sessões deste bloco, filtrados pela worktree em memória.",
-  "medido_em": "2026-10-04T05:21:25.627861+00:00",
-  "segundos": 5472,
+  "medido_em": "2026-10-04T05:26:03.809683+00:00",
+  "segundos": 5751,
   "sessoes": [
     {
       "sessao": "01a10508-9b42-72e2-a474-124da3a642e1",
       "modelo": "gpt-6-astra",
       "inicio": "2026-10-04T03:50:12.668Z",
-      "ultima_medicao": "2026-10-04T05:21:07.359Z",
+      "ultima_medicao": "2026-10-04T05:25:05.205Z",
       "tokens": {
-        "input_tokens": 17766381,
-        "cached_input_tokens": 16864768,
+        "input_tokens": 18344701,
+        "cached_input_tokens": 17428736,
         "cache_write_input_tokens": 0,
-        "output_tokens": 101916,
-        "reasoning_output_tokens": 38900,
-        "total_tokens": 17868297
+        "output_tokens": 106989,
+        "reasoning_output_tokens": 40568,
+        "total_tokens": 18451690
       }
     },
     {
@@ -49,21 +49,21 @@
       "sessao": "01a1054d-e993-7053-9e91-8018659acb14",
       "modelo": "codex-auto-review",
       "inicio": "2026-10-04T05:05:54.618Z",
-      "ultima_medicao": "2026-10-04T05:11:02.685Z",
+      "ultima_medicao": "2026-10-04T05:24:14.039Z",
       "tokens": {
-        "input_tokens": 87684,
-        "cached_input_tokens": 33024,
+        "input_tokens": 137480,
+        "cached_input_tokens": 68608,
         "cache_write_input_tokens": 0,
-        "output_tokens": 500,
-        "reasoning_output_tokens": 293,
-        "total_tokens": 88184
+        "output_tokens": 633,
+        "reasoning_output_tokens": 359,
+        "total_tokens": 138113
       }
     }
   ],
-  "tokens_totais": 19025264,
-  "tokens_entrada_cache": 17703936,
-  "tokens_entrada_sem_cache": 1216086,
-  "tokens_saida": 105242,
+  "tokens_totais": 19658586,
+  "tokens_entrada_cache": 18303488,
+  "tokens_entrada_sem_cache": 1244650,
+  "tokens_saida": 110448,
   "limite": "Corte no último contador disponível; mensagens e trabalho posteriores não estão incluídos.",
   "conhecido_positivo": true
 }

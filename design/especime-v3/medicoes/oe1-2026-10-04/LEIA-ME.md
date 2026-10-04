@@ -45,35 +45,40 @@ O módulo de testes planta alterações em valores, ano XML e XLS, unidade, prog
 
 A primeira corrida do motor falhou por impedimento de localhost na caixa de areia, caches ausentes e uma regressão na aceitação das bandeiras antigas. A regressão foi corrigida, mantendo o formato antigo e acrescentando o caso JSON-stat de uma célula. As três caches de recortes foram copiadas das fixtures versionadas desta mesma worktree, conservando o cabeçalho que declara a origem; não foram regeneradas a partir de PDFs nem apresentadas como uma nova leitura das fontes.
 
-A proposta `publisher/oe1_site_support.patch`, no motor, contém cinco adaptações identificadas no sítio: registo do conjunto, línguas, unidade, declaração de que as linhas aguardam a futura página do governo e conferência da bandeira no JSON literal. O `git apply --check` confirmou que a proposta se aplica à árvore, sem a aplicar. A proposta não foi validada pelos portões do sítio. O mandato original admite no sítio apenas linhas exportadas, relatório e medições, pelo que esta alteração de código exige uma decisão sobre o perímetro. Ficheiros da proposta efetivamente alterados nesta árvore: **0 de 5**. Não se apresenta a exportação como aceitação pelo sítio.
+A proposta `publisher/oe1_site_support.patch`, no motor, identificou cinco adaptações no sítio. O mandato OE1-b autorizou essa integração, o nome do conjunto e as plantas das bandeiras. Ficheiros da proposta efetivamente alterados nesta árvore: **5 de 5**. A aplicação inclui o nome pedido no OE1-b e reforça a comparação do valor em decimal e a ligação da bandeira ao país e ao período. A secção OE1-b descreve as alterações. Os portões abaixo dizem o resultado real, independentemente da existência da proposta.
 
 As decisões do §5 foram respeitadas: o bloco entrega dados e nenhuma página; todas as linhas publicadas declaram o perímetro; as fontes que atravessam têm corpos e pedidos reproduzíveis. O ponto da biblioteca foi resolvido por endereços publicados, com os 401 conservados como prova da limitação inicial.
 
-Os registos da medição final são escritos depois do último commit, porque um ficheiro não pode conter o resumo do commit que o contém. O commit final guarda os guiões, o relatório e a resposta curta; as cabeças e os resultados posteriores são os ficheiros da última corrida na worktree. O estado final do Git é entregue sem o disfarçar.
+O relatório, os guiões e a resposta curta ficam comitados antes da última corrida. Os códigos, as cabeças, os tempos e o custo são ficheiros de execução, escritos depois desse commit. As referências abaixo apontam para esses ficheiros, permitindo registar a cabeça final sem voltar a alterar a prosa comitada. O modo --conferir-final do guião recusa um código diferente de zero, uma corrida por terminar ou uma cabeça diferente da atual.
 
 ## Portões lidos de ficheiro
 
 As corridas do sítio usam `scripts/leituras/portoes.sh`. Um invólucro temporário do npm retira caminhos locais antes de escrever a saída e conserva cada código. Durante a chamada do build, com a mesma tranca ainda tomada, também corre `npm run ledger:check` e guarda o seu código separado. Não altera comandos do projeto nem transforma falhas em sucesso.
 
-O registo do ledger contém 206 recusas: 186 por conjunto ainda não registado e 20 porque o verificador do sítio só reconhece o formato antigo da bandeira Eurostat. O JSON oficial guarda a bandeira no índice da célula, não como texto depois do número. O motor prova essa associação; o sítio ainda não recebeu a adaptação proposta. O build e o verify param neste primeiro portão, pelo que os passos seguintes não foram executados.
+O registo atual do ledger contém 0 recusas. Na passagem inicial havia 186 por conjunto ainda não registado e 20 por formato da bandeira. O JSON oficial guarda a bandeira no índice da célula, não como texto depois do número. O OE1-b acrescenta essa conferência ao sítio. Só um código zero de cada comando abaixo comprova a conclusão de todos os seus passos.
 
 | Portão | Código | Cabeça registada | É a cabeça atual? |
 |---|---|---|---|
-| motor | 0 | 9bfbb777f7d2f5af8b185475c8dd8027ebd76bad | sim |
-| build | 1 | e1a283838807219d41455e4d9956d07b8e6db37f | sim |
-| verify | 1 | e1a283838807219d41455e4d9956d07b8e6db37f | sim |
-| typecheck | 0 | e1a283838807219d41455e4d9956d07b8e6db37f | sim |
-| ledger | 1 | e1a283838807219d41455e4d9956d07b8e6db37f | sim |
+| motor | [ler código](portoes/motor.codigo) | [ler cabeça](portoes/motor.cabeca) | conferida por --conferir-final |
+| build | [ler código](portoes/build.codigo) | [ler cabeça](portoes/cabeca) | conferida por --conferir-final |
+| verify | [ler código](portoes/verify.codigo) | [ler cabeça](portoes/cabeca) | conferida por --conferir-final |
+| typecheck | [ler código](portoes/typecheck.codigo) | [ler cabeça](portoes/cabeca) | conferida por --conferir-final |
+| ledger | [ler código](portoes/ledger.codigo) | [ler cabeça](portoes/ledger.cabeca) | conferida por --conferir-final |
 
 ## Commits e cabeças
 
-motor: `9bfbb777f7d2f5af8b185475c8dd8027ebd76bad`.
+A cabeça final do sítio, incluindo o commit deste relatório, está em [portoes/cabeca](portoes/cabeca). A lista seguinte é a dos commits anteriores ao commit de fecho.
+
+motor, cabeça na medição preparatória: `9bfbb777f7d2f5af8b185475c8dd8027ebd76bad`.
 
 * `9bfbb777f7d2f5af8b185475c8dd8027ebd76bad OE1: selar 186 linhas e provar os leitores e a travessia literal`
 * `aa537323722eea9001daccabf394fd5e3ccdb546 OE1: guardar fontes oficiais e aquisição reproduzível`
 
-sitio: `e1a283838807219d41455e4d9956d07b8e6db37f`.
+sitio, cabeça na medição preparatória: `2522ac1621a01ab62c30695b50a0558d8229a02b`.
 
+* `2522ac1621a01ab62c30695b50a0558d8229a02b OE1-b: reconferir as duas contagens do livro no inventário`
+* `a369b0ef023879b1f5cebe1090dba60887d41b28 OE1-b: integrar o conjunto e conferir as bandeiras Eurostat nos dois formatos`
+* `0c4c5fc2dba94af00323a8cb056084104e677271 OE1: relatar a selagem parcial, as lacunas de fonte e os portões`
 * `e1a283838807219d41455e4d9956d07b8e6db37f OE1: receber 186 linhas pelo tubo do motor`
 
 ## Decisões em vigor
@@ -117,6 +122,52 @@ A leitura antes das alterações identificou, nos ficheiros do motor, §1.6, §1
 
 As recusas de bandeira junto de outro valor e de outro país também alteram entradas, mas verificam diretamente o resultado falso do detetor, em vez de esperar uma exceção.
 
+## OE1-b
+
+Esta passagem integra as mesmas 186 linhas. O livro do motor, os YAML e o registo da travessia conservam os seus bytes; as lacunas de fonte descritas acima mantêm-se.
+
+| Ficheiro | Alteração e razão |
+|---|---|
+| src/data/studies.mjs | Regista oe-2026 em INTERNAL_SOURCES com o nome «O dinheiro do Estado por ministério e por função (OE1)» e a nota de que aguarda a página do governo. Não acrescenta WORKS, conjunto ou rota. |
+| src/data/areas.mjs | Declara que estas linhas aguardam a página do governo; o agregado da União conserva a regra europeia existente. Não atribui funções a ministérios. |
+| src/i18n/lingua-dos-titulos.mjs | Declara a língua dos títulos, rótulos, fonte e edições lidos nas fontes, conservando os nomes. |
+| src/i18n/unidades.mjs | Acrescenta apenas «milhões de euros» para «million euros», facto de dicionário. Não altera a unidade de nenhuma linha. O recurso a português com lang mantém-se para unidades sem tradução declarada. |
+| src/lib/ledger.mjs | Confere as sete coordenadas, o único índice de valor, o índice da bandeira e o seu significado no JSON-stat. Compara o literal numérico em decimal. No formato anterior confere valor, período e localização indicada no pedido; conserva o formato regional com várias coordenadas. |
+| tests/linha/cadeias-proveniencia.mjs | Executa as plantas dos dois formatos no mesmo validateLedger chamado pelo ledger:check. Altera cópias em memória e repõe as linhas originais. |
+| design/especime-v3/INVENTARIO-FRASES.md | Reconfere duas contagens geradas pelo livro: 3195 linhas e 366 derivadas, nas duas línguas. Copia o texto do HTML e conserva a classificação e o formato do K2. Não altera palavras das páginas nem a emenda de voz do inventário. |
+| Guiões e registos desta pasta; RESPOSTA-construtor-oe1.md | Atualizam a medição, o custo incremental, os portões e a resposta curta; incluem os registos da passagem anterior que estavam por commitar. |
+
+O primeiro ledger:check desta passagem encontrou uma dependência ausente nas cópias temporárias de um teste: a worktree usava os módulos do diretório ascendente, mas a cópia isolada não os encontrava. Foi criada uma ligação relativa, ignorada pelo Git, para as dependências já instaladas. Nenhum pacote foi instalado ou alterado. A segunda corrida tem o código em oe1b-ledger-dependencias.codigo.
+
+A primeira corrida completa encontrou quatro erros no inventário: as duas contagens antigas já não se rendiam e as duas novas ainda não estavam medidas. Esses códigos e mensagens estão em oe1b-portoes-inventario-antigo/. A recontagem atualiza apenas essas duas linhas de medição, dentro do perímetro de relatórios e medições; não acrescenta prosa às páginas. O campo k2 conserva quem fixou a classificação e o formato, e a razão identifica a recontagem OE1-b. Não se declara uma nova leitura editorial ou uma comunicação com a direção.
+
+As plantas obrigam a recusar outro valor, outro país, outra célula, outro período, valor ausente, duas células, bandeira ausente ou deslocada, significado alterado, dimensão repetida e diferença numérica além da precisão float64. Os dois formatos reais passam antes e depois das plantas. No formato regional anterior, o pedido contém várias regiões e o excerto tem de nomear uma delas; não se afirma que o pedido identifique uma única região.
+
+A guarda do fecho também foi vista a morder: --conferir-final saiu com código 1 enquanto a nova corrida estava por terminar, apesar de ainda existirem códigos antigos nos ficheiros. O registo é oe1b-planta-corrida-incompleta.log. A cabeça testada é portoes/cabeca, lida depois da obtenção da tranca; corrida-sitio.cabeca regista apenas a cabeça no momento de entrar na fila.
+
+| Planta | Mordeu |
+|---|---|
+| JSON-stat: bandeira junto de outro valor | sim |
+| JSON-stat: bandeira no índice de outra célula | sim |
+| JSON-stat: outro país no corpo | sim |
+| JSON-stat: outro país no pedido | sim |
+| JSON-stat: outro período | sim |
+| JSON-stat: valor ausente | sim |
+| JSON-stat: duas células | sim |
+| JSON-stat: bandeira retirada | sim |
+| JSON-stat: significado da bandeira alterado | sim |
+| JSON-stat: diferença além da precisão float64 | sim |
+| JSON-stat: dimensão repetida | sim |
+| Antigo: bandeira retirada | sim |
+| Antigo: bandeira junto de outro valor | sim |
+| Antigo: outro país no excerto | sim |
+| Antigo: outro país no pedido | sim |
+| Antigo: bandeira fora do fim | sim |
+
+Códigos finais: [motor](portoes/motor.codigo), [build](portoes/build.codigo), [verify](portoes/verify.codigo), [typecheck](portoes/typecheck.codigo), [ledger](portoes/ledger.codigo). As cabeças estão ao lado, na mesma pasta.
+
+Custo desta passagem: [custo-oe1b.json](custo-oe1b.json), medido pelo incremento dos contadores desde a ordem OE1-b, com construção e revisões automáticas discriminadas. O ficheiro conserva o corte temporal e é atualizado após a corrida final.
+
 ## Custo medido
 
 Modelo: Codex gpt-6-astra, confirmado pelo registo da sessão. O custo em símbolos é o acumulado dos eventos token_count até à medição, separado entre construção e revisão automática. Inclui entradas lidas da cache; não é o preço monetário. Mensagens posteriores à medição ficam fora desse corte.
@@ -124,21 +175,21 @@ Modelo: Codex gpt-6-astra, confirmado pelo registo da sessão. O custo em símbo
 ```json
 {
   "origem": "Eventos token_count das sessões deste bloco, filtrados pela worktree em memória.",
-  "medido_em": "2026-10-04T05:21:25.627861+00:00",
-  "segundos": 5472,
+  "medido_em": "2026-10-04T05:26:03.809683+00:00",
+  "segundos": 5751,
   "sessoes": [
     {
       "sessao": "01a10508-9b42-72e2-a474-124da3a642e1",
       "modelo": "gpt-6-astra",
       "inicio": "2026-10-04T03:50:12.668Z",
-      "ultima_medicao": "2026-10-04T05:21:07.359Z",
+      "ultima_medicao": "2026-10-04T05:25:05.205Z",
       "tokens": {
-        "input_tokens": 17766381,
-        "cached_input_tokens": 16864768,
+        "input_tokens": 18344701,
+        "cached_input_tokens": 17428736,
         "cache_write_input_tokens": 0,
-        "output_tokens": 101916,
-        "reasoning_output_tokens": 38900,
-        "total_tokens": 17868297
+        "output_tokens": 106989,
+        "reasoning_output_tokens": 40568,
+        "total_tokens": 18451690
       }
     },
     {
@@ -173,21 +224,21 @@ Modelo: Codex gpt-6-astra, confirmado pelo registo da sessão. O custo em símbo
       "sessao": "01a1054d-e993-7053-9e91-8018659acb14",
       "modelo": "codex-auto-review",
       "inicio": "2026-10-04T05:05:54.618Z",
-      "ultima_medicao": "2026-10-04T05:11:02.685Z",
+      "ultima_medicao": "2026-10-04T05:24:14.039Z",
       "tokens": {
-        "input_tokens": 87684,
-        "cached_input_tokens": 33024,
+        "input_tokens": 137480,
+        "cached_input_tokens": 68608,
         "cache_write_input_tokens": 0,
-        "output_tokens": 500,
-        "reasoning_output_tokens": 293,
-        "total_tokens": 88184
+        "output_tokens": 633,
+        "reasoning_output_tokens": 359,
+        "total_tokens": 138113
       }
     }
   ],
-  "tokens_totais": 19025264,
-  "tokens_entrada_cache": 17703936,
-  "tokens_entrada_sem_cache": 1216086,
-  "tokens_saida": 105242,
+  "tokens_totais": 19658586,
+  "tokens_entrada_cache": 18303488,
+  "tokens_entrada_sem_cache": 1244650,
+  "tokens_saida": 110448,
   "limite": "Corte no último contador disponível; mensagens e trabalho posteriores não estão incluídos.",
   "conhecido_positivo": true
 }
