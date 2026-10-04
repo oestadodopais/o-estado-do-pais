@@ -11,7 +11,10 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 const PASTA = 'design/especime-v3/medicoes/r3-2026-10-04';
-const BASE = '358e3649';
+/* A BASE DO RAMO É O COMMIT DO BRIEF, procurado pelo assunto na história da cabeça, e não um resumo escrito: o rebase
+   da passagem R3-b deu-lhe outro resumo (era `358e3649` no ramo `r3-2026-10-04`). */
+const BASE = execFileSync('git', ['log', '-1', '--format=%h', '--grep=^R3: o brief «o índice do sítio»', 'HEAD'], { encoding: 'utf8' }).trim();
+if (!BASE) throw new Error('A base do ramo (o commit do brief do R3) não está na história da cabeça.');
 const medidas = JSON.parse(fs.readFileSync(path.join(PASTA, 'medidas.json'), 'utf8'));
 const porNome = new Map(medidas.medidas.map((m) => [m.nome, m.valor]));
 const formata = (v) => {

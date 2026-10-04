@@ -16,7 +16,10 @@ import { parse } from 'node-html-parser';
 const RAIZ = process.cwd();
 const PASTA = 'design/especime-v3/medicoes/r3-2026-10-04';
 const DIST = path.join(RAIZ, 'dist');
-const BASE = '358e3649';
+/* A BASE DO RAMO É O COMMIT DO BRIEF, procurado pelo assunto na história da cabeça, e não um resumo escrito: o rebase
+   da passagem R3-b deu-lhe outro resumo (era `358e3649` no ramo `r3-2026-10-04`). */
+const BASE = execFileSync('git', ['log', '-1', '--format=%h', '--grep=^R3: o brief «o índice do sítio»', 'HEAD'], { encoding: 'utf8' }).trim();
+if (!BASE) throw new Error('A base do ramo (o commit do brief do R3) não está na história da cabeça.');
 const NAO = 'NÃO LIDO';
 /** O teto das listas «O que mudou», escrito aqui como na A2 do `check:pais`. */
 const TETO_DO_QUE_MUDOU = 8;
