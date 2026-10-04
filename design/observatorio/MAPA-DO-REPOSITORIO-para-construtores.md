@@ -544,3 +544,21 @@ O mandato é `design/observatorio/BRIEF-R3-o-indice-do-sitio.md`, e as provas e 
 - **Três armadilhas.** Um resolvedor de portas que tente `<caminho>.html` antes da pasta abre a primeira página inglesa no lugar de `/en/index`: o `existeConstruido()` do portão de HTML aceita `/x` pelo ficheiro `x.html`, e por isso não distingue uma porta partida de uma que resolve nesse endereço; a célula do índice resolve pela regra da Vercel, com a planta da porta `/404`, que só existe como `404.html`. A lista dos estudos (`/en/studies`) rende o marcador de um título por confirmar dentro da porta do estudo, uma ligação dentro de outra; o índice não o repete. E o mapa do sítio exclui por escrito os estudos sem leitura escrita (seis dos onze sem sucessor, com `noindex`), que a lista dos estudos mostra: o índice lista-os, e a célula aceita uma porta fora do mapa só quando a página leva `noindex` e a lista da família a mostra.
 - **A passagem final, pelas capturas.** «O que mudou» do índice conta uma linha por medida e escreve o lugar de cada linha. Duas linhas que a casa declara a mesma medida (`src/lib/pais.mjs:10`, «export const MEDIDA_REUNIDA») entram pela linha que fica (`src/lib/mudancas.mjs:333`, «UMA MEDIDA, UMA VEZ (a passagem final do R3, pelas capturas)»), e o nome do lugar vai escrito e sem porta, na forma de três colunas do registo (`src/views/IndiceView.astro:99`, «O LUGAR DE CADA LINHA, ESCRITO E SEM PORTA»). Não leva `data-lugar`: a régua das frases tira da descrição do `<head>` o nome de cada lugar marcado na página, e a descrição do índice tem «União Europeia». A I6 da célula confere o lugar contra o registo construído, recusa uma linha reunida e recusa duas linhas que se leiam iguais (`tests/indice/indice.mjs:339`, «O que o leitor lê de cada linha»).
 - **A passagem R3-b, pela leitura a frio do Sol (04.10.2026).** No mesmo dia, duas entradas da mesma linha ordenam-se da mais recente para a mais antiga em todas as listas que leem o registo (`src/lib/mudancas.mjs:250`, «DUAS ENTRADAS DA MESMA LINHA NO MESMO DIA, A MAIS RECENTE PRIMEIRO»), e `mudancasDoIndice()` escolhe a entrada mais recente de cada linha pela data e pelo número; a A2 e a A3 do `check:pais` recusam a ordem antiga (`scripts/check-pais.mjs:482`), e a A1 só aceita o âmbito do índice na página do índice, pela rota lida do caminho do ficheiro (`scripts/check-pais.mjs:564`, «O ÂMBITO DO ÍNDICE SÓ NA PÁGINA DO ÍNDICE»). Na célula: o mapa do sítio só pode ter rotas da tabela (`tests/indice/indice.mjs:174`, «O MAPA SÓ TEM ROTAS DA TABELA»), a lista de uma família mostra uma porta quando tem uma ligação para ela no `<main>`, analisado como HTML (`tests/indice/indice.mjs:225`), os 308 concelhos são um facto escrito, com a fonte (`tests/indice/indice.mjs:89`, «OS CONCELHOS DE PORTUGAL SÃO 308»), e a I6 prova a frescura de cada linha por conta própria (`tests/indice/indice.mjs:314`, «A ENTRADA MAIS RECENTE DE CADA LINHA, PROVADA AQUI»). As plantas: quatro na célula (`tests/indice/indice.mjs:464`, «A PASSAGEM R3-b. Um endereço do mapa») e duas nos portões sobre o `dist/` (`tests/pais/portoes.mjs:544`, «R3-b (04.10.2026, as emendas da leitura a frio do Sol)»).
+
+## OE1-d: nomes, unidades acumuladas e ressalvas do orçamento
+
+`src/data/medidas-oe1.mjs` é gerado pelo motor e entra na escada de
+`src/data/nomes-das-medidas.mjs`. A travessia fica em
+`ledger/cruzamentos/oe1-nomes.json`; o conjunto continua sem página do governo.
+
+`src/lib/ledger.mjs` admite as duas línguas da ressalva publicada e confere
+o apoio dos seus números e a geografia JSON-stat. `LinhaView.astro` mostra-a
+junto do valor; `LivroView.astro` e `ItemDoLivro.astro` marcam-na numa dobra.
+O portão de HTML exige-a onde a linha a declara. As unidades acumuladas vêm
+da linha e de `src/i18n/unidades.mjs`, conferidas também por
+`scripts/inventario-rotulos.mjs`. O campo `serie` do RP3 mantém-se.
+
+As plantas dos localizadores vivem em `tests/livro/indice.mjs`; as dos campos
+e da geografia em `tests/linha/cadeias-proveniencia.mjs` e
+`scripts/provar-guardas.mjs`. A medição e a resposta ficam em
+`design/especime-v3/medicoes/oe1-2026-10-04/`.

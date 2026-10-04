@@ -53,6 +53,11 @@
  * estado; um cartão de concelho com valor de uma medida com teto diz a linha do estado, uma vez; um cartão de uma
  * medida com faixa declarada tem uma frase do lugar e uma da comparação, e um de uma medida sem faixa não tem nenhuma.
  *
+ * OE1-d: os recibos e as entradas do livro também conferem a unidade escrita na linha, incluindo o acumulado da
+ * execução. O inglês vem de UNIDADES, sem criar uma declaração de cartão. Esta conferência lê o campo e as marcas
+ * do HTML, separadamente do inventário dos cartões R2. Todos os recibos OE1 têm de ser vistos nas duas edições;
+ * cada entrada que o índice rende é conferida, sem pressupor quantas entradas cabem na sua organização.
+ *
  * AS PLANTAS (`--prova`): cópias em memória de páginas construídas, uma por campo e por regra, e cada uma tem de morder
  * com a queixa esperada; as páginas intactas têm de passar (o controlo). E as plantas da construção inteira
  * (`plantasDaConstrucao`): uma página trocada no inventário desta construção, comparado com o declarado (um concelho
@@ -147,6 +152,50 @@ function unidadeEsperada(id, lang) {
   const aceite = Object.prototype.hasOwnProperty.call(UNIDADES_DA_LINHA_ACEITES_NUM_CARTAO, u) || emDivida;
   const portugues = lang === 'en' && Object.prototype.hasOwnProperty.call(UNIDADES_EM_PORTUGUES, u);
   return { texto: norm(comAPalavra(traduzida)), casa: false, aceite, emDivida, portugues, linha: u, de: emDivida ? 'em dívida' : 'da linha' };
+}
+
+/**
+ * Unidade do próprio livro, sem chamar a função das vistas nem a regra dos cartões.
+ * As classes permitem encontrar uma unidade cuja marca de campo tenha desaparecido.
+ * @param {import('node-html-parser').HTMLElement} root
+ * @param {{rota: string, lang: 'pt'|'en', contas: Record<string, any>}} ctx
+ * @returns {string[]}
+ */
+export function conferirUnidadesOe1(root, { rota, lang, contas }) {
+  const erros = [];
+  contas.oe1 ??= { recibos: { pt: 0, en: 0 }, entradas: { pt: 0, en: 0 }, acumuladas: { pt: 0, en: 0 } };
+  const conferir = (id, elementos, familia) => {
+    const linha = LINHAS.get(id);
+    if (linha?.study !== 'oe-2026') return;
+    const u = String(linha.unit ?? '');
+    const traduzida = lang === 'en' && Object.prototype.hasOwnProperty.call(UNIDADES, u)
+      ? /** @type {Record<string, string>} */ (UNIDADES)[u] : u;
+    const esperada = norm(comAPalavra(traduzida));
+    if (elementos.length !== 1) {
+      erros.push(`OE1-unidade · ${rota} · ${id}: ${familia} tem ${elementos.length} campos de unidade e deve ter um`);
+      return;
+    }
+    const el = elementos[0];
+    const vista = visivel(el);
+    if (vista !== esperada || el.getAttribute('data-linha-campo') !== 'unit' || el.getAttribute('data-linha-claim') !== id || el.hasAttribute('data-unidade-da-casa')) {
+      erros.push(`OE1-unidade · ${rota} · ${id}: a unidade diz «${vista}» e o campo unit da linha nesta edição diz «${esperada}», com as marcas da própria linha`);
+      return;
+    }
+    if (lang === 'en' && traduzida === u && /acumulados/.test(u)) {
+      erros.push(`OE1-unidade · ${rota} · ${id}: a unidade acumulada não tem a entrada inglesa no dicionário`);
+      return;
+    }
+    contas.oe1[familia][lang]++;
+    if (/acumulados/.test(u)) contas.oe1.acumuladas[lang]++;
+  };
+  const recibo = /^\/(?:livro-razao|en\/ledger)\/([^/]+)$/.exec(rota);
+  if (recibo && LINHAS.get(recibo[1])?.study === 'oe-2026') {
+    conferir(recibo[1], root.querySelectorAll('.linha-valor-unidade'), 'recibos');
+  }
+  for (const item of root.querySelectorAll('.livro-item[data-linha-id]')) {
+    conferir(item.getAttribute('data-linha-id') ?? '', item.querySelectorAll('.livro-item-unidade'), 'entradas');
+  }
+  return erros;
 }
 
 /** As formas declaradas do veredicto de um dono, com o lugar do valor de referência como «#». */
@@ -492,6 +541,7 @@ export function conferirPagina(root, { rota, lang, inventario, contas }) {
     if (!alcance || vista !== esperada) erro('ressalva', L, `a ressalva do recibo diz «${vista.slice(0, 90)}» e a lista dos diplomas regionais compõe «${esperada.slice(0, 90)}»`);
     else contas.ressalvas = (contas.ressalvas ?? 0) + 1;
   }
+  erros.push(...conferirUnidadesOe1(root, { rota, lang, contas }));
   return erros;
 }
 
@@ -543,6 +593,7 @@ const contasNovas = () => ({
   paginas: 0, paginas_com_cartoes: 0, cartoes: 0, familias: {}, nomes: {}, estados: 0,
   unidades: { declaradas: 0, da_linha: 0, em_divida: 0 }, faixas: { lugar: 0, comparacao: 0, presentes: 0 },
   dobras: { perguntas: 0, notas: 0, referencias: 0, termos: 0, uniao: 0, paises: 0 },
+  oe1: { recibos: { pt: 0, en: 0 }, entradas: { pt: 0, en: 0 }, acumuladas: { pt: 0, en: 0 } },
 });
 
 /** @param {string} dist */
@@ -555,16 +606,22 @@ export function conferirConstrucao(dist) {
   for (const p of paginas(dist)) {
     contas.paginas++;
     const html = fs.readFileSync(p, 'utf8');
-    const comCartoes = html.includes('cartao-medida') || html.includes('class="cartao"') || html.includes('data-leitura=');
-    if (!comCartoes && !html.includes('linha-alcance')) continue;
-    if (comCartoes) contas.paginas_com_cartoes++;
     const rota = rotaDe(dist, p);
+    const comCartoes = html.includes('cartao-medida') || html.includes('class="cartao"') || html.includes('data-leitura=');
+    const recibo = /^\/(?:livro-razao|en\/ledger)\/([^/]+)$/.exec(rota);
+    const reciboOe1 = Boolean(recibo && LINHAS.get(recibo[1])?.study === 'oe-2026');
+    if (!comCartoes && !html.includes('linha-alcance') && !html.includes('livro-item') && !reciboOe1) continue;
+    if (comCartoes) contas.paginas_com_cartoes++;
     erros.push(...conferirPagina(parse(html), { rota, lang: linguaDe(rota), inventario, contas }));
   }
   if (contas.cartoes === 0) erros.push('R2 · a régua não viu cartão nenhum: o leitor está cego');
   /* R2-b: a lista dos diplomas regionais contra as origens da pergunta, e a ressalva vista nas duas edições do recibo. */
   erros.push(...conferirDiplomasRegionais());
   if ((contas.ressalvas ?? 0) !== 2) erros.push(`R2-ressalva · a ressalva do recibo do salário mínimo foi conferida em ${contas.ressalvas ?? 0} página(s), e o recibo tem duas edições`);
+  const linhasOe1 = [...LINHAS.values()].filter((l) => l.study === 'oe-2026').length;
+  for (const lang of ['pt', 'en']) {
+    if (contas.oe1.recibos[lang] !== linhasOe1) erros.push(`OE1-unidade · ${lang}: ${contas.oe1.recibos[lang]} recibos conferidos e o livro declara ${linhasOe1}`);
+  }
   return { erros, contas, inventario };
 }
 
@@ -846,6 +903,18 @@ export function plantas(dist) {
     n.set_content('Preços dos combustíveis, variação num ano');
     return true;
   }, /^R2-nome · \/precos · ipc-combustiveis-variacao-homologa: o nome diz «Preços dos combustíveis, variação num ano» \(cartao\) e a declaração \(cartao\) diz «Preços dos combustíveis»/);
+  planta('oe1-unidade-sem-acumulado', 'unidade', 'livro-razao/execucao-2026-07-despesa-funcao-01/index.html', (r) => {
+    const u = r.querySelector('.linha-valor-unidade');
+    if (!u || visivel(u) !== 'milhões de euros, acumulados de janeiro a julho') return false;
+    u.set_content('milhões de euros');
+    return true;
+  }, /^OE1-unidade · \/livro-razao\/execucao-2026-07-despesa-funcao-01 · execucao-2026-07-despesa-funcao-01: a unidade diz «milhões de euros» e o campo unit da linha nesta edição diz «milhões de euros, acumulados de janeiro a julho»/);
+  planta('oe1-unidade-com-mes-trocado-em-ingles', 'unidade', 'en/ledger/execucao-2026-08-despesa-programa-001/index.html', (r) => {
+    const u = r.querySelector('.linha-valor-unidade');
+    if (!u || visivel(u) !== 'million euros, cumulative January to August') return false;
+    u.set_content('million euros, cumulative January to July');
+    return true;
+  }, /^OE1-unidade · \/en\/ledger\/execucao-2026-08-despesa-programa-001 · execucao-2026-08-despesa-programa-001: a unidade diz «million euros, cumulative January to July» e o campo unit da linha nesta edição diz «million euros, cumulative January to August»/);
   return { resultados, controlo };
 }
 
@@ -994,6 +1063,7 @@ if (eDireto) {
         ? `contra o declarado: ${comparacaoComODeclarado.comparadas.chaves} chave(s), ${comparacaoComODeclarado.comparadas.campos} campo(s), ${comparacaoComODeclarado.comparadas.formas} forma(s) com a contagem, ${comparacaoComODeclarado.comparadas.ocorrencias} ocorrência(s), ${comparacaoComODeclarado.diferencas.length} diferença(s); `
         : '') +
       `dobras ${contas.dobras.perguntas} perguntas, ${contas.dobras.notas} notas, ${contas.dobras.referencias} referências, ${contas.dobras.uniao} na União; ` +
+      `OE1: unidades em ${contas.oe1.recibos.pt}+${contas.oe1.recibos.en} recibos, ${contas.oe1.entradas.pt}+${contas.oe1.entradas.en} entradas do livro; ` +
       `${prova ? `${prov.resultados.filter((p) => p.mordeu).length} de ${prov.resultados.length} plantas a morder; ` : ''}` +
       `${erros.length} erro(s).`,
   );

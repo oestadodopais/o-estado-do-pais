@@ -15,6 +15,7 @@ import { ANCORA_DA_POLITICA } from '../../../../src/data/politica-ia.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '../../../..');
+const passagemD = process.argv.includes('--oe1d');
 const original = 'design/especime-v3/medicoes/oe1-2026-10-04/oe1b-base/l1-check-lugar.log';
 const receipt = JSON.parse(fs.readFileSync(path.join(AQUI, 'base-l1.json'), 'utf8'));
 assert(receipt.reposicao_conferida && receipt.cabeca_conservada && receipt.codigo_da_medicao === 0, 'A comparação exige a base medida e os ficheiros repostos.');
@@ -35,10 +36,40 @@ assert([0, 1].includes(r.status));
 const teto = JSON.parse(fs.readFileSync(path.join(RAIZ, 'scripts/lugar-tetos-b1.json'), 'utf8'));
 if (teto.medicao === 'design/especime-v3/medicoes/oe1-2026-10-04/l1-oe1b.json') assert.equal(r.status, 0, 'A régua tem de passar com a medição atualizada.');
 const log = limpa(r.stdout + r.stderr);
-fs.writeFileSync(path.join(AQUI, 'oe1b-l1-check-lugar.log'), log);
+fs.writeFileSync(path.join(AQUI, passagemD ? 'oe1d-l1-check-lugar.log' : 'oe1b-l1-check-lugar.log'), log);
 const depois = lista(log);
 const crossing = JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger/cruzamentos/oe1.json'), 'utf8'));
 const novas = new Set(Object.keys(crossing.rows).flatMap(slug => LANGS.map(lang => routePath('linha', lang, { slug }))));
+if (passagemD) {
+  // O R2 mudou a regra L1 e o RP3 acrescentou recibos. A comparação antiga
+  // permanece como prova histórica; a cabeça integrada tem uma medição própria.
+  assert.equal(r.status, 0, 'A régua da cabeça integrada tem de estar verde.');
+  const head = execFileSync('git', ['rev-parse', 'HEAD'], {cwd: RAIZ, encoding: 'utf8'}).trim();
+  const stamp = JSON.parse(fs.readFileSync(path.join(RAIZ, 'dist/version.json'), 'utf8'));
+  assert.equal(stamp.commit, head, 'A L1 exige a construção da cabeça que está a ser medida.');
+  assert(depois.size <= teto.l1_paginas, 'A medição não autoriza aumentar o teto.');
+  const recibos = [...novas].filter(url => fs.existsSync(path.join(RAIZ, 'dist', url.slice(1), 'index.html')));
+  assert.equal(recibos.length, novas.size, 'Todos os recibos têm de estar construídos.');
+  const linhas = log.split('\n');
+  const indice = linhas.findIndex(l => /^\s+· \S+ · \d+ destinos repetidos/.test(l));
+  assert(indice >= 0, 'O conhecido positivo exige uma entrada contada.');
+  const adulterado = linhas.filter((_, i) => i !== indice).join('\n');
+  assert.throws(() => lista(adulterado), /lista inteira/);
+  const data = {
+    o_que_e: 'OE1-d: medição integral da L1 na construção da cabeça integrada. Nenhuma alteração da régua ou aumento do teto.',
+    data: new Date().toISOString(),
+    cabeca: head,
+    construcao: stamp.commit,
+    origem: 'design/especime-v3/medicoes/oe1-2026-10-04/oe1d-l1-check-lugar.log',
+    codigo_da_regua: r.status,
+    contagens: {l1_paginas: depois.size, teto_lido: teto.l1_paginas, recibos_oe1: recibos.length},
+    conhecidos_positivos: [{nome: 'Uma entrada retirada da lista deixa de reconciliar com a contagem da régua', mordeu: true}],
+    paginas: Object.fromEntries(depois),
+  };
+  fs.writeFileSync(path.join(AQUI, 'l1-oe1d.json'), JSON.stringify(data, null, 2) + '\n');
+  console.log(JSON.stringify({cabeca: data.cabeca, contagens: data.contagens, conhecidos_positivos: data.conhecidos_positivos}, null, 2));
+  process.exit(0);
+}
 function confere(a, d, esperadas) {
   for (const [url, v] of a) assert.deepEqual(d.get(url), v, `Página antiga alterada: ${url}`);
   const entradas = [...d.keys()].filter(u => !a.has(u));
