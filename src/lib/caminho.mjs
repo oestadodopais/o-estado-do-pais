@@ -60,6 +60,7 @@ import { dominioDoSlug } from '../data/dominios.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { getClaim } from './ledger.mjs';
 import { getSerie, hasSerie } from './series.mjs';
+import { NOMES_DAS_SERIES } from '../data/series-no-tempo.mjs';
 import { nomeDaMedida } from './nomes.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
 import { SUGESTOES } from '../data/sugestoes.mjs';
@@ -263,7 +264,20 @@ export function folhaDoCaminho(chave, params, lang) {
       /* A folha de uma série é o nome da medida de que ela é o corte entre
          países: a linha portuguesa que a série nomeia, pela mesma escada. */
       const serie = slug && hasSerie(slug) ? getSerie(slug) : null;
-      const c = serie ? getClaim(String(serie.linha_de_portugal)) : null;
+      if (!serie) return null;
+      /* UMA SÉRIE NO TEMPO (bloco RP3, 04.10.2026): o nome do projeto que
+         `src/data/series-no-tempo.mjs` declara, o do cartão da medida (pela mesma
+         escada) ou o nome próprio da série, com a marca do ficheiro. */
+      if (serie.eixo === 'periodo') {
+        const declarado = NOMES_DAS_SERIES[serie.id];
+        if (!declarado) return null;
+        if ('linha' in declarado) {
+          const doCartao = getClaim(declarado.linha);
+          return nomeDaMedida(doCartao, lang) === null ? null : { tipo: 'medida', linha: doCartao };
+        }
+        return { tipo: 'nome', texto: declarado.nome[lang], fonte: 'serie' };
+      }
+      const c = getClaim(String(serie.linha_de_portugal));
       if (!c) return null;
       return nomeDaMedida(c, lang) === null ? null : { tipo: 'medida', linha: c };
     }

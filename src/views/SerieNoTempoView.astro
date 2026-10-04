@@ -1,0 +1,348 @@
+---
+/**
+ * O RECIBO DE UMA SÉRIE NO TEMPO (bloco RP3, 04.10.2026, o ponto 6 do mandato).
+ *
+ * Uma página por série com `eixo: periodo` e por edição, na rota das séries
+ * (`/livro-razao/series/<id>`, a do UE1, que tem dois segmentos para não se contar
+ * entre as afirmações): o nome do projeto e o da fonte, a periodicidade, o
+ * primeiro e o último período e a unidade, a tabela de TODOS os pontos (o
+ * período, o valor e a marca da fonte onde ela a põe), o que quer dizer cada
+ * marca, os períodos que a fonte não publica, a conta de uma série derivada, a
+ * prova (a página da série na fonte, o literal da série, as datas e os pedidos,
+ * cada um com o endereço, a hora, o cliente, o nome com que o projeto se
+ * apresenta, o resumo e os bytes), as correções, e as linhas do livro-razão que
+ * são pontos desta série. Disposição B da `IDENTIDADE.md` §3, como o recibo de
+ * uma série de países e o de uma linha.
+ *
+ * NENHUM ALGARISMO SEM ORIGEM. Cada valor vai por `PontoDaSerie`
+ * (`data-ponto="<id>#<período>"`), cada campo por `CampoDaSerie`
+ * (`data-serie-campo`), cada período e cada data por `DataDaSerie` (o motivo
+ * `data-da-linha` com `data-linha-de-serie` e o campo, recomposto pela F1 do
+ * `check:formas`). O portão de HTML confere os três, e a S6 do `check:series`
+ * reconta a tabela contra a série nas duas edições.
+ *
+ * NADA DE CARTÃO DE PARTILHA POR SÉRIE: a série entra no estudo de dados dos
+ * domínios, como as linhas dos concelhos (a decisão 4 do brief RP3).
+ */
+import Base from '../layouts/Base.astro';
+import NomeDaSerie from '../components/serie/NomeDaSerie.astro';
+import NomeDaMedida from '../components/NomeDaMedida.astro';
+import PontoDaSerie from '../components/serie/PontoDaSerie.astro';
+import CampoDaSerie from '../components/serie/CampoDaSerie.astro';
+import DataDaSerie from '../components/serie/DataDaSerie.astro';
+import DataDaLinha from '../components/DataDaLinha.astro';
+import { allClaims } from '../lib/ledger.mjs';
+import { getSerie, pontosDaSerie } from '../lib/series.mjs';
+import { NOMES_DAS_SERIES, PALAVRAS_DAS_MARCAS_DO_INE, PALAVRAS_DA_PERIODICIDADE } from '../data/series-no-tempo.mjs';
+import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
+import { nomeDoCartao } from '../lib/nomes.mjs';
+import { getClaim } from '../lib/ledger.mjs';
+import { routePath, LANGS } from '../lib/routes.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { studyLabel } from '../data/studies.mjs';
+import { SITE_NAME } from '../../site.config.mjs';
+import { t } from '../i18n/strings.mjs';
+import '../styles/linha.css';
+import '../styles/serie.css';
+
+const { lang = 'pt', id } = Astro.props;
+const s = t(lang);
+const st = s.livro.serieNoTempo;
+const serie = getSerie(id);
+if (serie.eixo !== 'periodo') throw new Error(`série «${id}»: o recibo de uma série no tempo é só para eixo: periodo.`);
+const pontos = pontosDaSerie(serie);
+const derivada = Array.isArray(serie.derived_from) && serie.derived_from.length > 0;
+const documento = /** @type {Record<string, string> | null} */ (serie.document ?? null);
+const bandeiras = /** @type {Record<string, string>} */ (serie.bandeiras ?? {});
+const pedidos = /** @type {Record<string, any>[]} */ (Array.isArray(serie.pedidos) ? serie.pedidos : []);
+const lacunas = /** @type {{ periodo: string, razao: string | null }[]} */ (Array.isArray(serie.lacunas) ? serie.lacunas : []);
+const correcoes = /** @type {Record<string, string>[]} */ (Array.isArray(serie.corrections) ? serie.corrections : []);
+const origens = /** @type {string[]} */ (derivada ? serie.derived_from : []);
+/* A LÍNGUA DO QUE A FONTE ESCREVE: o INE escreve em português, o Eurostat em
+   inglês. Um texto da fonte noutra língua que não a da página leva a marca. */
+const linguaDaFonte = serie.source === 'INE' ? 'pt' : serie.source === 'Eurostat' ? 'en' : null;
+const marcaDaLingua = linguaDaFonte && linguaDaFonte !== lang ? linguaDaFonte : null;
+/* AS MARCAS DA TABELA, pela ordem em que aparecem nela, cada uma com as palavras
+   do projeto (as da faixa da União para o Eurostat, as do cartão para o INE) e a
+   definição que a resposta traz: o que falta fecha a construção aqui. */
+const marcasNaTabela = [...new Set(pontos.map((p) => (p.bandeira ? String(p.bandeira) : '')).filter(Boolean))];
+const palavrasDasMarcas = /** @type {Record<string, string>} */ (serie.source === 'INE' ? PALAVRAS_DAS_MARCAS_DO_INE[lang] : PALAVRAS_DA_FAIXA[lang].ressalvas);
+for (const marca of marcasNaTabela) {
+  if (!bandeiras[marca]) throw new Error(`série «${id}»: a marca «${marca}» está na tabela e a série não traz a definição dela.`);
+  if (!palavrasDasMarcas[marca]) throw new Error(`série «${id}»: a marca «${marca}» não tem palavras declaradas (${lang}).`);
+}
+const unidade = unidadeDaLinha(serie.unit, lang);
+const periodicidade = PALAVRAS_DA_PERIODICIDADE[lang][String(serie.periodicidade)];
+if (!periodicidade) throw new Error(`série «${id}»: a periodicidade «${String(serie.periodicidade)}» não tem palavra declarada (${lang}).`);
+/* O NOME DO PROJETO, EM TEXTO, para o título da aba e a descrição: o do cartão, ou
+   o declarado. O corpo rende-o com a marca, por `NomeDaSerie`. */
+const declarado = NOMES_DAS_SERIES[id];
+if (!declarado) throw new Error(`série «${id}»: o nome do projeto não está declarado.`);
+const nomeEmTexto = 'linha' in declarado ? nomeDoCartao(getClaim(declarado.linha), lang)?.texto : declarado.nome[lang];
+if (!nomeEmTexto) throw new Error(`série «${id}»: o nome do projeto não se resolve.`);
+/* AS LINHAS DO LIVRO-RAZÃO QUE SÃO PONTOS DESTA SÉRIE (o campo `serie`, que a
+   regra S14 confere), pela ordem do período. */
+const linhasPresas = allClaims()
+  .filter((c) => /** @type {Record<string, unknown>} */ (/** @type {unknown} */ (c)).serie === id)
+  .sort((a, b) => String(a.reference_date).localeCompare(String(b.reference_date)));
+const outraLingua = LANGS.find((l) => l !== lang) ?? 'pt';
+const path = routePath('serie', lang, { slug: id });
+const titulo = `${nomeEmTexto} · ${st.metaSufixo} · ${s.livro.eyebrow} · ${SITE_NAME}`;
+/* A DESCRIÇÃO NÃO LEVA ALGARISMOS: o `<head>` não tem onde os provar. */
+const descricao = `${s.livro.serie.eyebrow} · ${nomeEmTexto} · ${derivada ? SITE_NAME : String(serie.source)}`;
+const campoDaConta = lang === 'en' ? 'derivation_en' : 'derivation';
+---
+
+<Base lang={lang} path={path} title={titulo} description={descricao}>
+  <div class="linha-cabeca serie-cabeca">
+    <span class="eyebrow">{s.livro.serie.eyebrow}</span>
+    <h1 class="serie-titulo">
+      <NomeDaSerie id={id} lang={lang} class="serie-titulo-nome" />
+    </h1>
+    {
+      !derivada && (
+        <p class="serie-nome-na-fonte">
+          <span class="linha-campo-k">{st.fonteK}</span>{' '}
+          <CampoDaSerie serie={id} campo="name" valor={String(serie.name)} lingua={marcaDaLingua} />
+        </p>
+      )
+    }
+    <p class="serie-periodo">
+      <span class="linha-campo-k">{st.periodosK}</span>{' '}
+      <DataDaSerie serie={id} campo="primeiro_periodo" valor={String(serie.primeiro_periodo)} lang={lang} />
+      {` ${st.ate} `}
+      <DataDaSerie serie={id} campo="ultimo_periodo" valor={String(serie.ultimo_periodo)} lang={lang} />
+      {' · '}
+      <span class="linha-campo-k">{st.periodicidadeK}</span>{' '}
+      <CampoDaSerie serie={id} campo="periodicidade" valor={periodicidade} />
+      {' · '}
+      <CampoDaSerie serie={id} campo="unit" valor={unidade.texto} lingua={unidade.lingua} />
+    </p>
+    <p class="linha-id">
+      <span class="linha-id-k">{s.livro.linha.identificadorK}</span>{' '}
+      <CampoDaSerie serie={id} campo="id" valor={id} as="code" />
+    </p>
+  </div>
+
+  <div class="linha">
+    <div class="linha-corpo">
+      {
+        !derivada && documento && (
+          <p class="linha-atribuicao">
+            <span>{s.livro.linha.publicadoPor}</span>{' '}
+            <CampoDaSerie serie={id} campo="source" valor={String(serie.source)} />
+            {', '}<span>{s.livro.linha.publicadoEm}</span>{' «'}
+            <CampoDaSerie serie={id} campo="document.title" valor={documento.title} lingua={marcaDaLingua} />
+            {'» ('}<CampoDaSerie serie={id} campo="document.edition" valor={documento.edition} />{').'}
+          </p>
+        )
+      }
+
+      {
+        derivada && (
+          <section class="linha-bloco serie-conta" aria-labelledby="conta">
+            <h2 class="linha-bloco-titulo" id="conta">{st.derivadaK}</h2>
+            <p>{st.derivadaFrase}</p>
+            <p>
+              <CampoDaSerie serie={id} campo={campoDaConta} valor={String(lang === 'en' ? serie.derivation_en : serie.derivation)} />
+            </p>
+            <p>
+              <span class="linha-campo-k">{st.origemK}</span>{' '}
+              {origens.map((o) => (
+                <a href={routePath('serie', lang, { slug: o })} data-serie-de-origem={o}>
+                  <NomeDaSerie id={o} lang={lang} />
+                </a>
+              ))}
+            </p>
+            <p>
+              <span class="linha-campo-k">{st.expressaoK}</span>{' '}
+              <CampoDaSerie serie={id} campo="check" valor={String(serie.check)} as="code" />
+            </p>
+          </section>
+        )
+      }
+
+      <section class="linha-bloco serie-pontos" aria-labelledby="pontos">
+        <h2 class="linha-bloco-titulo" id="pontos">{st.pontosK}</h2>
+        <div class:list={['serie-pontos-corpo', marcasNaTabela.length > 0 && 'serie-pontos-com-marcas']}>
+          <table class="serie-tabela serie-tabela-tempo" data-serie-tabela={id}>
+            <thead>
+              <tr>
+                <th scope="col">{st.periodoK}</th>
+                <th scope="col" class="serie-num">{s.livro.serie.valorK}</th>
+                <th scope="col">{s.livro.serie.marcaK}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {pontos.map((p, i) => {
+                const periodo = String(p.periodo);
+                const marca = p.bandeira ? String(p.bandeira) : null;
+                return (
+                  <tr data-serie-ponto={`${id}#${periodo}`}>
+                    <th scope="row">
+                      <DataDaSerie serie={id} campo={`pontos.${i}.periodo`} valor={periodo} lang={lang} />
+                    </th>
+                    <td class="serie-num"><PontoDaSerie serie={id} chave={periodo} /></td>
+                    <td class="serie-marca">{marca && <span data-ponto-bandeira={`${id}#${periodo}`}>{marca}</span>}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          {
+            marcasNaTabela.length > 0 && (
+              <div class="serie-marcas" data-serie-marcas={id}>
+                <h3 class="serie-marcas-titulo">{s.livro.serie.marcasK}</h3>
+                <dl class="serie-marcas-lista">
+                  {marcasNaTabela.map((marca) => (
+                    <div class="serie-marca-entrada">
+                      <dt>
+                        <span data-serie-marca={`${id}#${marca}`}>{marca}</span>
+                      </dt>
+                      <dd>
+                        <span class="serie-marca-palavras" data-serie-marca-palavras={`${id}#${marca}`}>{palavrasDasMarcas[marca]}</span>
+                        {'; '}{serie.source === 'INE' ? st.naRespostaDoIne : s.livro.serie.naResposta}{' «'}
+                        <CampoDaSerie serie={id} campo={`bandeiras.${marca}`} valor={bandeiras[marca]} lingua={marcaDaLingua} class="serie-marca-rotulo" />
+                        {'»'}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+                <p class="serie-marcas-nota">{serie.source === 'INE' ? st.marcasFraseDoIne : s.livro.serie.marcasFrase}</p>
+              </div>
+            )
+          }
+        </div>
+      </section>
+
+      {
+        lacunas.length > 0 && (
+          <section class="linha-bloco serie-lacunas" aria-labelledby="lacunas">
+            <h2 class="linha-bloco-titulo" id="lacunas">{st.lacunasK}</h2>
+            <p>{st.lacunasFrase}</p>
+            <ul class="serie-lacunas-lista">
+              {lacunas.map((l, i) => (
+                <li data-serie-lacuna={`${id}#${l.periodo}`}>
+                  <DataDaSerie serie={id} campo={`lacunas.${i}.periodo`} valor={l.periodo} lang={lang} />
+                  {' · '}
+                  {l.razao === null ? <span>{st.lacunaSemRazao}</span> : <CampoDaSerie serie={id} campo={`lacunas.${i}.razao`} valor={l.razao} lingua={marcaDaLingua} />}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      {
+        !derivada && documento && (
+          <section class="linha-bloco serie-prova" aria-labelledby="prova-k" id="prova">
+            <h2 class="linha-bloco-titulo" id="prova-k">{s.livro.linha.provaK}</h2>
+            <p>
+              <span class="linha-campo-k">{s.livro.serie.paginaDaFonteK}</span>{' '}
+              <a href={documento.url}><CampoDaSerie serie={id} campo="document.url" valor={documento.url} /></a>
+            </p>
+            <p>
+              <span class="linha-campo-k">{s.livro.serie.pedidoK}</span>{' '}
+              <a href={String(serie.source_url)} class="serie-pedido"><CampoDaSerie serie={id} campo="source_url" valor={String(serie.source_url)} /></a>
+            </p>
+            <p>
+              <span class="linha-campo-k">{s.livro.serie.literalK}</span>{' '}
+              <CampoDaSerie serie={id} campo="excerpt" valor={String(serie.excerpt)} lingua={marcaDaLingua} as="q" />
+            </p>
+            <p>
+              <span class="linha-campo-k">{s.livro.serie.lidoK}</span>{' '}
+              <DataDaSerie serie={id} campo="access_date" valor={String(serie.access_date)} lang={lang} />
+            </p>
+            <p>
+              <span class="linha-campo-k">{s.livro.serie.publicadoK}</span>{' '}
+              <DataDaSerie serie={id} campo="published_at" valor={String(serie.published_at)} lang={lang} />
+            </p>
+            <details class="serie-pedidos">
+              <summary>{st.pedidosK}</summary>
+              <p>{st.pedidosFrase}</p>
+              <ol class="serie-pedidos-lista">
+                {pedidos.map((q, i) => (
+                  <li data-serie-pedido={`${id}#${i}`}>
+                    {/* O ENDEREÇO DE CADA PEDIDO ESCREVE-SE E NÃO SE LIGA: o do último ponto é o do
+                        «O pedido», logo acima, com a ligação, e duas portas para o mesmo destino no
+                        mesmo ecrã são o que a L1 do `check:lugar` conta. */}
+                    <CampoDaSerie serie={id} campo={`pedidos.${i}.url`} valor={String(q.url)} class="serie-pedido" />
+                    <dl class="serie-pedido-ficha">
+                      <dt>{st.horaK}</dt>
+                      <dd><DataDaSerie serie={id} campo={`pedidos.${i}.lido_em`} valor={String(q.lido_em)} lang={lang} /></dd>
+                      <dt>{st.clienteK}</dt>
+                      <dd><CampoDaSerie serie={id} campo={`pedidos.${i}.cliente`} valor={String(q.cliente)} as="code" /></dd>
+                      <dt>{st.nomeK}</dt>
+                      <dd><CampoDaSerie serie={id} campo={`pedidos.${i}.user_agent`} valor={String(q.user_agent)} as="code" /></dd>
+                      <dt>{st.resumoK}</dt>
+                      <dd><CampoDaSerie serie={id} campo={`pedidos.${i}.sha256`} valor={String(q.sha256)} as="code" /></dd>
+                      <dt>{st.bytesK}</dt>
+                      <dd><CampoDaSerie serie={id} campo={`pedidos.${i}.bytes`} valor={String(q.bytes)} /></dd>
+                      <dt>{st.pontosDoPedidoK}</dt>
+                      <dd>
+                        <DataDaSerie serie={id} campo={`pedidos.${i}.primeiro`} valor={String(q.primeiro)} lang={lang} />
+                        {` ${st.ate} `}
+                        <DataDaSerie serie={id} campo={`pedidos.${i}.ultimo`} valor={String(q.ultimo)} lang={lang} />
+                      </dd>
+                    </dl>
+                  </li>
+                ))}
+              </ol>
+            </details>
+          </section>
+        )
+      }
+
+      <section class="linha-bloco serie-correcoes" aria-labelledby="correcoes-da-serie">
+        <h2 class="linha-bloco-titulo" id="correcoes-da-serie">{st.correcoesK}</h2>
+        {
+          correcoes.length === 0 ? (
+            <p>{st.semCorrecoes}</p>
+          ) : (
+            <ul>
+              {correcoes.map((c, i) => (
+                <li data-serie-correcao={`${id}#${i}`}>
+                  <DataDaSerie serie={id} campo={`corrections.${i}.periodo`} valor={c.periodo} lang={lang} />
+                  {' · '}
+                  <DataDaSerie serie={id} campo={`corrections.${i}.date`} valor={c.date} lang={lang} />
+                  {' · '}
+                  <CampoDaSerie serie={id} campo={`corrections.${i}.old_value`} valor={c.old_value} />
+                  {' → '}
+                  <CampoDaSerie serie={id} campo={`corrections.${i}.new_value`} valor={c.new_value} />
+                  {' · '}
+                  <CampoDaSerie serie={id} campo={`corrections.${i}.${lang === 'en' ? 'reason_en' : 'reason'}`} valor={lang === 'en' ? c.reason_en : c.reason} />
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </section>
+    </div>
+
+    <aside class="aparelho" aria-labelledby="aparelho">
+      <h2 class="aparelho-titulo" id="aparelho">{s.livro.linha.aparelhoK}</h2>
+      <dl class="aparelho-ficha">
+        {
+          linhasPresas.length > 0 && (
+            <>
+              <dt>{st.linhasK}</dt>
+              {linhasPresas.map((c) => (
+                <dd data-linha-da-serie={c.id}>
+                  <a href={routePath('linha', lang, { slug: c.id })}>
+                    <NomeDaMedida linha={c} lang={lang} escada="cartao" class="serie-linha-nome" />
+                  </a>
+                  {' · '}
+                  <DataDaLinha id={c.id} campo="reference_date" valor={String(c.reference_date)} lang={lang} />
+                </dd>
+              ))}
+            </>
+          )
+        }
+        <dt>{s.livro.serie.estudoK}</dt>
+        <dd><span data-nonledger="proveniencia">{studyLabel(String(serie.study), lang)}</span></dd>
+        <dt>{s.livro.serie.outraEdicaoK}</dt>
+        <dd><a href={routePath('serie', outraLingua, { slug: id })} hreflang={outraLingua === 'en' ? 'en' : 'pt-PT'}>{s.livro.serie.noutraEdicao}</a></dd>
+      </dl>
+    </aside>
+  </div>
+</Base>
