@@ -1,0 +1,8 @@
+
+> o-estado-do-pais@0.1.0 check:mortos
+> node scripts/check-mortos.mjs --prova
+
+[90m  prova ✓ 10 forma(s) mortas vistas e 2 viva(s) deixadas em paz, e a pasta api/ lida e com o seu morto visto, num directório temporário.[0m
+
+  [32m✓[0m identificadores · 336 ficheiro(s) lidos, nenhuma declaração morta
+

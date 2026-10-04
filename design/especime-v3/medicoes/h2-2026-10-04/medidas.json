@@ -1,0 +1,681 @@
+{
+  "base": "ce325a3cd772b4317436345cec720cd739c2279d",
+  "cabeca_codigo": "f7048ce08956d89fbefc54ebd40ea8b75b830d47",
+  "modelo": "gpt-6-astra",
+  "medidas": [
+    {
+      "nome": "medicoes_do_brief_reproduzidas",
+      "valor": 11,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · comparação integral do JSON do §0",
+      "conhecido_positivo": {
+        "o_que": "todos os valores, comandos e controlos são iguais ao ficheiro de referência",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_html",
+      "valor": 7883,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · varrimento de todos os HTML em dist/",
+      "conhecido_positivo": {
+        "o_que": "as duas primeiras páginas e o erro existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ligacoes_dentro_de_outras",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · querySelectorAll(\"a a\") em cada HTML",
+      "conhecido_positivo": {
+        "o_que": "o mesmo seletor conta a ligação plantada num excerto em memória",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_de_area",
+      "valor": 20,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · HTML de dist/areas e dist/en/areas",
+      "conhecido_positivo": {
+        "o_que": "há páginas nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_antigas_nas_areas",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · href de cada página de área",
+      "conhecido_positivo": {
+        "o_que": "o padrão vê /estudos/ensaio/texto e /en/studies/ensaio/text",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_recentes_pt",
+      "valor": 3,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · artigos de #trabalhos",
+      "conhecido_positivo": {
+        "o_que": "o estudo declarado em curso está à cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas_em_curso_pt",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · marcas em #trabalhos",
+      "conhecido_positivo": {
+        "o_que": "a palavra à cabeça é a da edição",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_recentes_en",
+      "valor": 3,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · artigos de #trabalhos",
+      "conhecido_positivo": {
+        "o_que": "o estudo declarado em curso está à cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas_em_curso_en",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · marcas em #trabalhos",
+      "conhecido_positivo": {
+        "o_que": "a palavra à cabeça é a da edição",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_so_com_ficheiro_html",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · ficheiros .html sem pasta gémea",
+      "conhecido_positivo": {
+        "o_que": "a página padrão 404.html está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_sobre_dist",
+      "valor": 8,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · registos de tests/pais/portoes.mjs",
+      "conhecido_positivo": {
+        "o_que": "todas saem a um, dão a mordida pedida e repõem cada sha256",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "controlos_do_pacote",
+      "valor": 17,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · tests/leituras/pacote.py",
+      "conhecido_positivo": {
+        "o_que": "o controlo de montagem e as plantas dos dois lados passaram",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corridas_locais_i194",
+      "valor": 20,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · repetir-i194.mjs",
+      "conhecido_positivo": {
+        "o_que": "a troca tem bytes e hora iguais, outro inode e a mordida da D em cada corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_por_corrida_i194",
+      "valor": 12,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · repetir-i194.mjs",
+      "conhecido_positivo": {
+        "o_que": "todas as corridas têm o mesmo conjunto de plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "celula_d_alterada",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · comparação literal de celulaDoDist com a base",
+      "conhecido_positivo": {
+        "o_que": "a função existe nas duas versões e os seus bytes são iguais",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_de_conteudo_alterados",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · git diff da base à cabeça em ledger, registos e studies-src",
+      "conhecido_positivo": {
+        "o_que": "o Git leu uma linha de livro da base",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "questoes_fechadas",
+      "valor": 5,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · linhas I190 a I194 do ISSUES.md",
+      "conhecido_positivo": {
+        "o_que": "as cinco questões existem e têm commit no fecho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "citacoes_mapa_conferidas",
+      "valor": 380,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · mapa.log, conferir-mapa.py",
+      "conhecido_positivo": {
+        "o_que": "o conferidor leu citações reais e saiu a zero",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "citacoes_mapa_com_desvio",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · mapa.log, conferir-mapa.py",
+      "conhecido_positivo": {
+        "o_que": "há citações conferidas, portanto o varrimento não foi vazio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_build",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · leitura de portoes/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro só tem o código e as cabeças inicial e final são as do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_build",
+      "valor": 167,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · datas de portoes/build.inicio e .fim",
+      "conhecido_positivo": {
+        "o_que": "as duas datas são válidas e ordenadas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_verify",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · leitura de portoes/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro só tem o código e as cabeças inicial e final são as do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_verify",
+      "valor": 987,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · datas de portoes/verify.inicio e .fim",
+      "conhecido_positivo": {
+        "o_que": "as duas datas são válidas e ordenadas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_typecheck",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · leitura de portoes/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro só tem o código e as cabeças inicial e final são as do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_typecheck",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · datas de portoes/typecheck.inicio e .fim",
+      "conhecido_positivo": {
+        "o_que": "as duas datas são válidas e ordenadas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_pagina_inteira",
+      "valor": 10,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · capturas.json e ficheiros PNG",
+      "conhecido_positivo": {
+        "o_que": "cada largura existe nas duas edições, sem problemas, com sha256 refeito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_recorte",
+      "valor": 10,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · capturas.json",
+      "conhecido_positivo": {
+        "o_que": "os recortes existem nas mesmas edições e larguras",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corrida_github",
+      "valor": 37238803296,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · gh run view do ensaio",
+      "conhecido_positivo": {
+        "o_que": "a corrida é da mesma cabeça e acabou verde",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_i194_medidas_no_runner",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · github-h2.py, registo do GitHub",
+      "conhecido_positivo": {
+        "o_que": "a premissa e a mordida foram lidas no ubuntu-24.04",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ramos_de_ensaio_remotos_restantes",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · git ls-remote --heads origin do ramo de ensaio",
+      "conhecido_positivo": {
+        "o_que": "a remoção saiu a zero e a consulta ao remoto também",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_ate_fecho",
+      "valor": 2599.823,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · custo-h2.py, relógios da sessão",
+      "conhecido_positivo": {
+        "o_que": "o modelo e o contador foram lidos na mesma sessão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_parciais",
+      "valor": 13011366,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · custo-h2.py, token_count do próprio rollout",
+      "conhecido_positivo": {
+        "o_que": "o contador contém entradas e saídas e o total é a sua soma",
+        "encontrado": true
+      }
+    }
+  ],
+  "primeiras": {
+    "pt": [
+      {
+        "slug": "evora-2027-capital-europeia-da-cultura",
+        "marca": "em curso"
+      },
+      {
+        "slug": "evora-contas-da-camara-2010-2025",
+        "marca": null
+      },
+      {
+        "slug": "evora-quem-governou-a-camara-2009-2025",
+        "marca": null
+      }
+    ],
+    "en": [
+      {
+        "slug": "evora-2027-capital-europeia-da-cultura",
+        "marca": "ongoing"
+      },
+      {
+        "slug": "evora-contas-da-camara-2010-2025",
+        "marca": null
+      },
+      {
+        "slug": "evora-quem-governou-a-camara-2009-2025",
+        "marca": null
+      }
+    ]
+  },
+  "paginas_so_ficheiro": [
+    {
+      "ficheiro": "404.html",
+      "motivo": "Página de erro padrão do Astro, servida pela Vercel como ficheiro de erro."
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "h2-em-curso-retirado",
+      "comando": "node scripts/check-pais.mjs",
+      "codigo": 1,
+      "mordidas": [
+        "E1 pt: os três estudos não têm os em curso à cabeça"
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/index.html",
+          "antes": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba",
+          "reposto": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba"
+        }
+      ]
+    },
+    {
+      "nome": "h2-em-curso-fora-da-cabeca",
+      "comando": "node scripts/check-pais.mjs",
+      "codigo": 1,
+      "mordidas": [
+        "E1 en: os três estudos não têm os em curso à cabeça"
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/en/index.html",
+          "antes": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047",
+          "reposto": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047"
+        }
+      ]
+    },
+    {
+      "nome": "h2-em-curso-sem-marca",
+      "comando": "node scripts/check-pais.mjs",
+      "codigo": 1,
+      "mordidas": [
+        "E1 en: marca em curso ausente"
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/en/index.html",
+          "antes": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047",
+          "reposto": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047"
+        }
+      ]
+    },
+    {
+      "nome": "h2-ligacao-dentro-de-outra",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordidas": [
+        "H2 ligação dentro de outra: \\/en\\/to-verify"
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/en/studies/index.html",
+          "antes": "9ce4a6474305d90f1387d836c99b120c502a385043943fd5588c68a6cb300175",
+          "reposto": "9ce4a6474305d90f1387d836c99b120c502a385043943fd5588c68a6cb300175"
+        }
+      ]
+    },
+    {
+      "nome": "h2-porta-so-com-html-irmao",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordidas": [
+        "a ligação interna \"\\/404\" não corresponde a nada construído"
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/index.html",
+          "antes": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba",
+          "reposto": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba"
+        }
+      ]
+    },
+    {
+      "nome": "h2-indicador-fora-do-endereco",
+      "comando": "node scripts/check-lugar.mjs",
+      "codigo": 1,
+      "mordidas": [
+        "L3 · palavras fora do vocabulário fechado +1 +\\(teto 0\\) ACIMA DO TETO"
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/index.html",
+          "antes": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba",
+          "reposto": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba"
+        }
+      ]
+    },
+    {
+      "nome": "h2-area-porta-antiga",
+      "comando": "node scripts/check-areas.mjs",
+      "codigo": 1,
+      "mordidas": [
+        "H2 A2 porta antiga do texto"
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/areas/ambiente-e-energia/index.html",
+          "antes": "228e9762d74f562b1cf65bcdf2911ff75902f0c68ac8804fab684109b202d1b1",
+          "reposto": "228e9762d74f562b1cf65bcdf2911ff75902f0c68ac8804fab684109b202d1b1"
+        }
+      ]
+    },
+    {
+      "nome": "h2-voz-estado-trocado",
+      "comando": "node scripts/check-voz.mjs",
+      "codigo": 1,
+      "mordidas": [
+        "bloco por classificar em \\/en: «Évora Culture published on estado sem declaração»"
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/en/index.html",
+          "antes": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047",
+          "reposto": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047"
+        }
+      ]
+    }
+  ],
+  "portoes": {
+    "build": {
+      "codigo": 0,
+      "inicio": "2026-10-04T22:07:45Z",
+      "fim": "2026-10-04T22:10:32Z",
+      "segundos": 167,
+      "log_sha256": "46a49c60d2d6cbee308b0432967d8805936e3cf1ab28e8607a04294f1f11793e"
+    },
+    "verify": {
+      "codigo": 0,
+      "inicio": "2026-10-04T22:10:32Z",
+      "fim": "2026-10-04T22:26:59Z",
+      "segundos": 987,
+      "log_sha256": "b6ee058853b2c4861b6b8be1327e88206d9c7003ba4f906ce97e54c552127670"
+    },
+    "typecheck": {
+      "codigo": 0,
+      "inicio": "2026-10-04T22:26:59Z",
+      "fim": "2026-10-04T22:26:59Z",
+      "segundos": 0,
+      "log_sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
+    }
+  },
+  "capturas": {
+    "larguras": [
+      390,
+      768,
+      1024,
+      1280,
+      1600
+    ],
+    "total": 20
+  },
+  "github": {
+    "conclusion": "success",
+    "databaseId": 37238803296,
+    "headSha": "f7048ce08956d89fbefc54ebd40ea8b75b830d47",
+    "jobs": [
+      {
+        "completedAt": "2026-10-04T22:22:53Z",
+        "conclusion": "success",
+        "databaseId": 111543157070,
+        "name": "portao",
+        "startedAt": "2026-10-04T22:07:33Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-04T22:07:34Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-04T22:07:33Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-04T22:08:13Z",
+            "conclusion": "success",
+            "name": "A árvore",
+            "number": 2,
+            "startedAt": "2026-10-04T22:07:34Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-04T22:08:23Z",
+            "conclusion": "success",
+            "name": "O Node",
+            "number": 3,
+            "startedAt": "2026-10-04T22:08:13Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-04T22:08:27Z",
+            "conclusion": "success",
+            "name": "npm ci",
+            "number": 4,
+            "startedAt": "2026-10-04T22:08:23Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-04T22:09:06Z",
+            "conclusion": "success",
+            "name": "O Chromium do Playwright",
+            "number": 5,
+            "startedAt": "2026-10-04T22:08:27Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-04T22:14:13Z",
+            "conclusion": "success",
+            "name": "npm run build",
+            "number": 6,
+            "startedAt": "2026-10-04T22:09:06Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-04T22:22:49Z",
+            "conclusion": "success",
+            "name": "npm run verify, sem repetir o build",
+            "number": 7,
+            "startedAt": "2026-10-04T22:14:13Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-04T22:22:49Z",
+            "conclusion": "success",
+            "name": "npm run typecheck",
+            "number": 8,
+            "startedAt": "2026-10-04T22:22:49Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-04T22:22:49Z",
+            "conclusion": "success",
+            "name": "Os dois ficheiros da prova existem",
+            "number": 9,
+            "startedAt": "2026-10-04T22:22:49Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-04T22:22:50Z",
+            "conclusion": "success",
+            "name": "A prova desta corrida",
+            "number": 10,
+            "startedAt": "2026-10-04T22:22:49Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-04T22:22:50Z",
+            "conclusion": "success",
+            "name": "Post O Node",
+            "number": 19,
+            "startedAt": "2026-10-04T22:22:50Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-04T22:22:50Z",
+            "conclusion": "success",
+            "name": "Post A árvore",
+            "number": 20,
+            "startedAt": "2026-10-04T22:22:50Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-04T22:22:50Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 21,
+            "startedAt": "2026-10-04T22:22:50Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/oestadodopais/o-estado-do-pais/actions/runs/37238803296/job/111543157070"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/oestadodopais/o-estado-do-pais/actions/runs/37238803296"
+  },
+  "i194_remota": {
+    "corrida": 37238803296,
+    "cabeca": "f7048ce08956d89fbefc54ebd40ea8b75b830d47",
+    "imagem": "ubuntu-24.04",
+    "casos": [
+      {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148453470999000",
+          "inode": "2440523",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148453470999000",
+          "inode": "2440531",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    ],
+    "comando": "gh run view 37238803296 --log",
+    "log_sha256": "70ce8735614137c9c43fc6e0c6cd2e9e434c21e0b342b2476ab8b6a4e6262544",
+    "conhecido_positivo": {
+      "o_que": "mesma cabeça, imagem no log, cópia com bytes e hora iguais, inode distinto e D a recusar",
+      "encontrado": true
+    }
+  },
+  "custo": {
+    "modelo": "gpt-6-astra",
+    "inicio": "2026-10-04T21:45:38.766Z",
+    "leitura": "2026-10-04T22:28:29.828Z",
+    "fecho": "2026-10-04T22:28:58.589379+00:00",
+    "segundos_ate_leitura": 2571.062,
+    "segundos_ate_fecho": 2599.823,
+    "tokens_used": null,
+    "total_cumulativo_parcial": {
+      "input_tokens": 12946473,
+      "cached_input_tokens": 12594048,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 64893,
+      "reasoning_output_tokens": 19348,
+      "total_tokens": 13011366
+    },
+    "estado": "parcial: a sessão ainda não escreveu a linha tokens used",
+    "comando": "python3 design/especime-v3/medicoes/h2-2026-10-04/custo-h2.py <registo-do-construtor>",
+    "conhecido_positivo": {
+      "o_que": "modelo e identidade lidos no cabeçalho; um único rollout correspondente com contador cumulativo",
+      "encontrado": true
+    }
+  },
+  "commits": [
+    "5f7cf57d0ab6a24af520d14db3b288654365e4e1 H2: executar a substituição da planta I194 num passo indivisível",
+    "ea5a0ed8c5903a1aedfea2ba06e177e6ec534025 H2: montar pacotes com exclusões declaradas e ficheiros do motor",
+    "bfa81e08843bfc8a8bd4cee25069d14601ff1b22 H2: declarar estudos em curso e fechar as falhas de ligações e vocabulário",
+    "f7048ce08956d89fbefc54ebd40ea8b75b830d47 H2: fechar questões e registar as regras e as plantas"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "comando": "node tests/pais/portoes.mjs --prefixo h2-",
+  "codigo": 0,
+  "inicio": "2026-10-04T21:59:43.428118+00:00",
+  "segundos": 85.741,
+  "cabeca": "ea5a0ed8c5903a1aedfea2ba06e177e6ec534025"
+}

@@ -1,0 +1,7 @@
+{
+  "comando": "python3 design/especime-v3/medicoes/h2-2026-10-04/limpar-registos.py",
+  "registos": [
+    "portoes/verify.log",
+    "portoes/build.log"
+  ]
+}

@@ -1,0 +1,18 @@
+
+> o-estado-do-pais@0.1.0 cartoes
+> node scripts/cartoes.mjs
+
+[90m  cartões · lote 1 de 9 · 200 PNG escritos até aqui[0m
+[90m  cartões · lote 2 de 9 · 400 PNG escritos até aqui[0m
+[90m  cartões · lote 3 de 9 · 600 PNG escritos até aqui[0m
+[90m  cartões · lote 4 de 9 · 800 PNG escritos até aqui[0m
+[90m  cartões · lote 5 de 9 · 1000 PNG escritos até aqui[0m
+[90m  cartões · lote 6 de 9 · 1200 PNG escritos até aqui[0m
+[90m  cartões · lote 7 de 9 · 1400 PNG escritos até aqui[0m
+[90m  cartões · lote 8 de 9 · 1600 PNG escritos até aqui[0m
+[90m  cartões · lote 9 de 9 · 1720 PNG escritos até aqui[0m
+[90m
+  cartões · 860 cartões × 2 medidas = 1720 PNG e 1720 registos · 30.86 MB · 8073 medições de texto · 28.2s[0m
+[90m  paleta · 1720 de 1720 PNG em paleta exacta (tipo de cor 3), no máximo 88 cores num cartão · 0 em RGBA[0m
+  [32m✓[0m os cartões estão em dist/cartoes/, e o portão vai conferi-los.
+

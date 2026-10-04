@@ -1,0 +1,24 @@
+portao	npm run verify, sem repetir o build	﻿2026-10-04T11:50:35.9021096Z ##[group]Run npm run verify:depois-do-build
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:35.9021495Z [36;1mnpm run verify:depois-do-build[0m
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:35.9118873Z shell: /usr/bin/bash -e {0}
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:35.9119187Z ##[endgroup]
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:36.0224474Z 
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:36.0225736Z > o-estado-do-pais@0.1.0 verify:depois-do-build
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:36.0226398Z > node scripts/verify-depois-do-build.mjs
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:36.0226739Z 
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0007419Z   ✓ planta · a cadeia limpa passa, e o que o build já correu não corre outra vez
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0009086Z   ✓ planta · uma conferência nova só no verify corre sozinha
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0010473Z   ✓ planta · uma conferência tirada da escolha fecha a célula U
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0011781Z   ✓ planta · uma conferência vermelha fecha a corrida, e as outras acabam
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0013316Z   ✓ planta · uma conferência que escreve no dist/ fecha a célula D
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0014438Z   ✓ planta · um dist/ de outra cabeça fecha a célula C
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0015639Z   ✓ planta · um passo vazio na cadeia não passa despercebido à contagem
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0016323Z 
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0017069Z   ✓ planta · uma conferência que escreve no dist/ e repõe os bytes fecha a célula D
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0019011Z   VERIFY DEPOIS DO BUILD · uma planta não mordeu: as células não provam o que dizem. Nenhuma conferência correu.
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0021381Z   ✗ planta · uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0022922Z 
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0023818Z   ✓ planta · uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0025245Z   ✓ planta · um cadeia.json de outra construção fecha a célula C
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0026567Z   ✓ planta · uma conferência que escreve na árvore corre sozinha, depois do grupo
+portao	npm run verify, sem repetir o build	2026-10-04T11:50:37.0138057Z ##[error]Process completed with exit code 1.

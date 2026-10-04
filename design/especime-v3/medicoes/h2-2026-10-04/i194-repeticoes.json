@@ -1,0 +1,506 @@
+{
+  "comando": "node design/especime-v3/medicoes/h2-2026-10-04/repetir-i194.mjs",
+  "corridas": [
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148101834000000",
+          "inode": "226553230",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148101834000000",
+          "inode": "226553241",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148102694000000",
+          "inode": "226553430",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148102694000000",
+          "inode": "226553441",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148103549000000",
+          "inode": "226553685",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148103549000000",
+          "inode": "226553702",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148104397000000",
+          "inode": "226553863",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148104397000000",
+          "inode": "226553870",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148105246000000",
+          "inode": "226554124",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148105246000000",
+          "inode": "226554139",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148106105999000",
+          "inode": "226554395",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148106105999000",
+          "inode": "226554410",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148106960000000",
+          "inode": "226554602",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148106960000000",
+          "inode": "226554609",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148107813999000",
+          "inode": "226554793",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148107813999000",
+          "inode": "226554808",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148108668999000",
+          "inode": "226555068",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148108668999000",
+          "inode": "226555075",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148109526000000",
+          "inode": "226555182",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148109526000000",
+          "inode": "226555189",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148110398000000",
+          "inode": "226555295",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148110398000000",
+          "inode": "226555302",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148111266999000",
+          "inode": "226555408",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148111266999000",
+          "inode": "226555415",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148112134000000",
+          "inode": "226555521",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148112134000000",
+          "inode": "226555528",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148112994999000",
+          "inode": "226555634",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148112994999000",
+          "inode": "226555641",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148113844000000",
+          "inode": "226555747",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148113844000000",
+          "inode": "226555754",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148114703999000",
+          "inode": "226555861",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148114703999000",
+          "inode": "226555868",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148115555999000",
+          "inode": "226555974",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148115555999000",
+          "inode": "226555981",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148116404000000",
+          "inode": "226556087",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148116404000000",
+          "inode": "226556094",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148117256000000",
+          "inode": "226556200",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148117256000000",
+          "inode": "226556207",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    },
+    {
+      "ok": true,
+      "plantas": 12,
+      "troca": {
+        "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+        "antes": {
+          "escrito": "1791148118108000000",
+          "inode": "226556314",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "depois": {
+          "escrito": "1791148118108000000",
+          "inode": "226556321",
+          "tamanho": "19",
+          "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
+        },
+        "passos_da_troca": 1,
+        "codigo_da_troca": 0,
+        "falhas": [
+          "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+        ],
+        "mordeu": true
+      }
+    }
+  ],
+  "segundos": 17.131
+}
