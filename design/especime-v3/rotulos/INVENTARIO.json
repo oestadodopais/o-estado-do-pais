@@ -1,25 +1,25 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "d64bf97500414e9de4e576dc2dd150703fc6810b",
+ "cabeca": "3565635afc26d3dfd6210e92abda7b8fd6b232bc",
  "contas": {
-  "paginas": 7466,
-  "paginas_com_cartoes": 656,
-  "cartoes": 5290,
+  "paginas": 7882,
+  "paginas_com_cartoes": 688,
+  "cartoes": 5292,
   "familias": {
-   "nacional": 318,
+   "nacional": 320,
    "uniao": 42,
    "concelho": 4928,
    "camaras": 2
   },
   "nomes": {
-   "projeto": 214,
+   "projeto": 216,
    "medidas": 24,
    "figuras": 66,
    "cartao": 14
   },
   "estados": 688,
   "unidades": {
-   "declaradas": 780,
+   "declaradas": 782,
    "da_linha": 4442,
    "em_divida": 2,
    "na_faixa_dos_paises": 18
@@ -36,6 +36,20 @@
    "termos": 8,
    "uniao": 42,
    "paises": 20
+  },
+  "oe1": {
+   "recibos": {
+    "pt": 186,
+    "en": 186
+   },
+   "entradas": {
+    "pt": 186,
+    "en": 186
+   },
+   "acumuladas": {
+    "pt": 124,
+    "en": 124
+   }
   },
   "faixas_dos_paises": 20,
   "ressalvas": 2
@@ -1745,6 +1759,17 @@
    },
    "regua": {
     "July #:#European Union:#": 1
+   },
+   "unidade": {
+    "% change over twelve months": 1
+   }
+  },
+  "nacional|en|ihpc-variacao-homologa-ue": {
+   "nome": {
+    "Inflation in the European Union": 1
+   },
+   "periodo": {
+    "in August #": 1
    },
    "unidade": {
     "% change over twelve months": 1
@@ -3518,6 +3543,17 @@
    },
    "regua": {
     "julho de #:#União Europeia:#": 1
+   },
+   "unidade": {
+    "% de variação em doze meses": 1
+   }
+  },
+  "nacional|pt|ihpc-variacao-homologa-ue": {
+   "nome": {
+    "Inflação na União Europeia": 1
+   },
+   "periodo": {
+    "em agosto de #": 1
    },
    "unidade": {
     "% de variação em doze meses": 1
