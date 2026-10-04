@@ -17,6 +17,12 @@
  * A língua escolhe apenas a forma escrita. O ano isolado mantém-se e uma
  * cadeia fora das formas declaradas passa intacta, sem adivinhar uma data.
  *
+ * RP3 (04.10.2026, a decisão 7 do brief: «a gramática dos períodos ganha o
+ * trimestre e o semestre nas séries»): o semestre conserva semestre e ano
+ * («1.º semestre de 2026», «1st half of 2026»), e a hora de um pedido, que o
+ * recibo de uma série mostra, escreve-se com a data da casa e a hora UTC que o
+ * pedido registou («04.10.2026, 03:46:17 UTC»), sem fuso nenhum acrescentado.
+ *
  * @param {unknown} valor
  * @param {'pt'|'en'} [lang]
  */
@@ -33,6 +39,12 @@ export function dataDaCasa(valor, lang = 'pt') {
   if (trimestre) return lang === 'en'
     ? `${trimestre[2]}${['st', 'nd', 'rd', 'th'][Number(trimestre[2]) - 1]} quarter of ${trimestre[1]}`
     : `${trimestre[2]}.º trimestre de ${trimestre[1]}`;
+  const semestre = /^(\d{4})-S([12])$/.exec(periodo);
+  if (semestre) return lang === 'en'
+    ? `${semestre[2]}${['st', 'nd'][Number(semestre[2]) - 1]} half of ${semestre[1]}`
+    : `${semestre[2]}.º semestre de ${semestre[1]}`;
+  const hora = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}:\d{2}:\d{2})Z$/.exec(periodo);
+  if (hora) return `${hora[3]}.${hora[2]}.${hora[1]}, ${hora[4]} UTC`;
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(valor ?? ''));
   return m ? `${m[3]}.${m[2]}.${m[1]}` : String(valor ?? '');
 }

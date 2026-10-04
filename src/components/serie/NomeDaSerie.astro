@@ -1,0 +1,23 @@
+---
+/**
+ * O NOME DO PROJETO DE UMA SÉRIE NO TEMPO (bloco RP3, 04.10.2026).
+ *
+ * Lido de `src/data/series-no-tempo.mjs` e de mais lado nenhum. Uma série cuja
+ * medida tem cartão leva o nome desse cartão, pela escada do cartão e com a marca
+ * dele (`NomeDaMedida`, `data-nome` e `data-de-linha`); uma série sem cartão leva
+ * o nome declarado, com `data-nome="serie"` e o identificador da série em
+ * `data-da-serie`, que a régua da voz confere carácter a carácter. Um nome que
+ * não está declarado atira na construção: o recibo de uma série não inventa nome.
+ */
+import NomeDaMedida from '../NomeDaMedida.astro';
+import { NOMES_DAS_SERIES } from '../../data/series-no-tempo.mjs';
+import { getClaim } from '../../lib/ledger.mjs';
+
+const { id, lang, class: klass = '' } = Astro.props;
+if (!lang) throw new Error(`<NomeDaSerie id="${id}"> sem "lang": o nome muda com a língua da página.`);
+const declarado = NOMES_DAS_SERIES[id];
+if (!declarado) throw new Error(`série «${id}»: o nome do projeto não está declarado em src/data/series-no-tempo.mjs.`);
+const linha = 'linha' in declarado ? getClaim(declarado.linha) : null;
+const nome = 'nome' in declarado ? declarado.nome[lang] : null;
+---
+{linha ? <NomeDaMedida linha={linha} lang={lang} escada="cartao" class={klass} /> : <span class:list={['nome-da-serie', klass]} data-nome="serie" data-da-serie={id}>{nome}</span>}

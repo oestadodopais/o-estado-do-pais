@@ -1,5 +1,7 @@
 ---
 import SerieView from '../../../../views/SerieView.astro';
+import SerieNoTempoView from '../../../../views/SerieNoTempoView.astro';
+import { getSerie } from '../../../../lib/series.mjs';
 import { allSeries } from '../../../../lib/series.mjs';
 
 export function getStaticPaths() {
@@ -8,4 +10,4 @@ export function getStaticPaths() {
 
 const { slug } = Astro.params;
 ---
-<SerieView lang="en" id={slug} />
+{getSerie(String(slug)).eixo === 'periodo' ? <SerieNoTempoView lang="en" id={slug} /> : <SerieView lang="en" id={slug} />}

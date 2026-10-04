@@ -11,14 +11,19 @@
  *
  * O separador dos milhares sai em U+00A0, pela razão escrita em `Claim.astro`,
  * e é a única coisa que muda na cadeia.
+ *
+ * A CHAVE DO PONTO (bloco RP3, 04.10.2026): a geografia numa série de países
+ * (`geo`), o período numa série no tempo (`chave`, «2026-08»); a marca é a mesma,
+ * `data-ponto="<id>#<chave>"`, e o portão de HTML acha o ponto pela forma da série.
  */
 import { getSerie, pontoDaSerie } from '../../lib/series.mjs';
 
-const { serie: id, geo, class: klass = '' } = Astro.props;
-const ponto = pontoDaSerie(getSerie(id), geo);
+const { serie: id, class: klass = '' } = Astro.props;
+const chave = Astro.props.chave ?? Astro.props.geo;
+const ponto = pontoDaSerie(getSerie(id), chave);
 if (!ponto || typeof ponto.valor !== 'string') {
-  throw new Error(`série «${id}»: não há ponto «${geo}».`);
+  throw new Error(`série «${id}»: não há ponto «${chave}».`);
 }
 const valor = ponto.valor.replace(/(?<=\d)[   ](?=\d)/g, ' ');
 ---
-<span class:list={['ponto-da-serie', klass]} data-ponto={`${id}#${geo}`}>{valor}</span>
+<span class:list={['ponto-da-serie', klass]} data-ponto={`${id}#${chave}`}>{valor}</span>
