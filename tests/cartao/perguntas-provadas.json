@@ -36,6 +36,11 @@
       "quem": "Claude Opus 5.5",
       "quando": "2026-10-03",
       "o_que": "o R2, os achados 5, 6, 12, 18 e 24 da auditoria dos rótulos, aceites na dobra: sete perguntas novas para cartões que se rendiam sem pergunta, pela forma única, pedaço a pedaço. Escrito por design/especime-v3/medicoes/r2-2026-10-03/auditoria-das-perguntas-r2.mjs"
+    },
+    {
+      "quem": "Claude Opus 5.5",
+      "quando": "2026-10-04",
+      "o_que": "a passagem R2-b, o achado 4 da auditoria dos rótulos pela decisão do lugar de direção: a pergunta da quota das exportações diz o que são as economias avançadas pelo termo da fonte, pedaço a pedaço. Escrito por design/especime-v3/medicoes/r2-2026-10-03/auditoria-das-perguntas-r2b.mjs"
     }
   ],
   "perguntas": [
@@ -318,14 +323,14 @@
         "eurostat-sec2010-ocde"
       ],
       "pergunta": {
-        "pt": "Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)?",
-        "en": "How much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD changed over three years (export performance against advanced economies)?"
+        "pt": "Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (as economias avançadas)?",
+        "en": "Over three years, how much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD (the advanced economies) changed?"
       },
-      "mudanca": "UE2-b: a forma em palavras comuns passa a ser a única (a decisão do lugar de direção sobre o achado 14 da leitura a frio do UE2). As economias avançadas dizem-se pelo que a descrição do Eurostat conta, e a OCDE pelo nome por extenso, que o SEC 2010 escreve ao lado da sigla.",
+      "mudanca": "R2-b (04.10.2026, o achado 4 da auditoria dos rótulos, pela decisão do lugar de direção): a dobra diz o que são as economias avançadas pelo termo da fonte, entre parênteses a seguir aos países que a descrição do Eurostat conta; a ordem inglesa põe os três anos à cabeça, para o termo ficar ao pé dos países.",
       "pedacos": [
         {
           "pt": "Quanto mudou em três anos ",
-          "en": "How much has ",
+          "en": "Over three years, how much has ",
           "apoios": [
             {
               "origem": "pdm-exportacoes",
@@ -358,28 +363,33 @@
         },
         {
           "pt": "e dos países da União que não são da OCDE ",
-          "en": "and of EU countries outside the OECD changed over three years ",
+          "en": "and of EU countries outside the OECD ",
           "apoios": [
             {
               "origem": "eurostat-tipsbp60-descricao",
               "campo": "excerto",
               "literal": "OECD countries and non-OECD EU Member States"
+            }
+          ]
+        },
+        {
+          "pt": "(as economias avançadas)?",
+          "en": "(the advanced economies) changed?",
+          "apoios": [
+            {
+              "origem": "eurostat-tipsbp60-descricao",
+              "campo": "documento",
+              "literal": "Share of exports of advanced economies"
+            },
+            {
+              "origem": "pdm-exportacoes",
+              "campo": "excerto",
+              "literal": "export performance against advanced economies"
             },
             {
               "origem": "pdm-exportacoes",
               "campo": "excerto",
               "literal": "3-year percentage change"
-            }
-          ]
-        },
-        {
-          "pt": "(o desempenho das exportações face às economias avançadas)?",
-          "en": "(export performance against advanced economies)?",
-          "apoios": [
-            {
-              "origem": "pdm-exportacoes",
-              "campo": "excerto",
-              "literal": "export performance against advanced economies"
             }
           ]
         }

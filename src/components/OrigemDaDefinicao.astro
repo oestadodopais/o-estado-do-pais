@@ -74,24 +74,48 @@ const chaveDoExcerto = (o) =>
   o.chave === 'bdp-pii' && lang === 'en'
     ? `origem-${o.chave}-excerto-en`
     : `origem-${o.chave}-excerto`;
+
+/* UMA PORTA POR DOCUMENTO (passagem R2-b, 04.10.2026, a decisão do lugar de direção sobre o recibo da disparidade
+   salarial). Duas origens de uma definição podem ser dois excertos do mesmo documento (a definição e a cobertura da
+   disparidade salarial, na mesma página de metainformação do Eurostat); cada uma rendia o documento como porta, e o
+   recibo abria o mesmo endereço duas vezes. A primeira origem de cada endereço leva a porta; as seguintes dizem o nome do
+   documento, com a mesma marca, sem porta, porque a porta está logo acima. A régua 8.4 do `check:lugar` exige uma porta
+   por endereço no invólucro da definição, nem menos nem mais. */
+const portaDe = new Map();
+/** A chave da origem que leva a porta do endereço de cada origem (a própria, para a primeira de cada endereço). */
+const chaveDaPorta = origens.map((o) => {
+  if (!portaDe.has(o.url)) portaDe.set(o.url, o.chave);
+  return portaDe.get(o.url);
+});
 ---
 
 {
-  origens.map((o) => (
+  origens.map((o, i) => (
     <div class="def-origem" data-def-origem={o.chave}>
       <p class="def-origem-linha">
         <span class="def-origem-k">{s.prov.definicaoDe}</span>{' '}
         <span data-verbatim={`origem-${o.chave}-publicador`}>{o.publicador}</span>
         {' · '}
-        <a
-          class="lig def-origem-doc"
-          href={o.url}
-          rel="noopener noreferrer external"
-          data-verbatim={`origem-${o.chave}-documento`}
-          lang={linguaDoDocumento(o)}
-        >
-          {o.documento}
-        </a>
+        {chaveDaPorta[i] === o.chave ? (
+          <a
+            class="lig def-origem-doc"
+            href={o.url}
+            rel="noopener noreferrer external"
+            data-verbatim={`origem-${o.chave}-documento`}
+            lang={linguaDoDocumento(o)}
+          >
+            {o.documento}
+          </a>
+        ) : (
+          <span
+            class="def-origem-doc def-origem-doc-mesmo"
+            data-verbatim={`origem-${o.chave}-documento`}
+            data-mesma-porta={chaveDaPorta[i]}
+            lang={linguaDoDocumento(o)}
+          >
+            {o.documento}
+          </span>
+        )}
         {/* A COORDENADA QUE A RESPOSTA FIXA, AO LADO DO TÍTULO DO CONJUNTO (passagem K2-c, 02.10.2026): quando o título
             diz outra coisa («aged 15-24» num indicador dos 15 aos 29), a etiqueta da dimensão e a da categoria, como o
             excerto da linha as escreve. O separador é o «·» da casa, o mesmo entre o publicador e o documento: o

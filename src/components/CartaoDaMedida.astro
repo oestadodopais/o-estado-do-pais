@@ -94,6 +94,7 @@ import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
 import { reguaDoCartao } from '../lib/enquadramento.mjs';
 import { serieDaLinha } from '../lib/series.mjs';
 import { REFERENCIAS_DAS_MEDIDAS } from '../data/referencias-das-medidas.mjs';
+import { TERMOS_DOS_CARTOES } from '../data/termos-dos-cartoes.mjs';
 
 /* `...resto` deixa quem chama pendurar as suas marcas no cartão sem que este
    componente saiba o que elas são: é assim que a página de uma área lhe põe
@@ -106,7 +107,9 @@ import { REFERENCIAS_DAS_MEDIDAS } from '../data/referencias-das-medidas.mjs';
 /* `referencia` (bloco R2, 03.10.2026, achado 20): a página de área pede, no primeiro cartão de cada dono de um valor de
    referência, a frase que diz o que a referência é, dentro da dobra. Um cartão nacional com leitura não a pede: a
    leitura e a página de assunto já a dizem. */
-const { linha: c, lang = 'pt', leitura: comLeitura = false, referencia: comReferencia = false, ...resto } = Astro.props;
+/* `termo` (passagem R2-b, 04.10.2026): a página de área pede, no primeiro cartão de cada termo declarado em
+   `TERMOS_DOS_CARTOES`, a explicação do termo em palavras comuns, dentro da dobra. */
+const { linha: c, lang = 'pt', leitura: comLeitura = false, referencia: comReferencia = false, termo = null, ...resto } = Astro.props;
 const s = t(lang);
 
 const unidade = unidadeDaLinha(c.unit, lang);
@@ -193,6 +196,11 @@ const fraseDaReferencia = donoDaReferencia ? s.estado[donoDaReferencia]?.frase ?
 if (comReferencia && !comLeitura && !fraseDaReferencia) {
   throw new Error(`cartão de «${c.id}»: a página pede a frase do valor de referência e a medida não tem dono com frase declarada`);
 }
+/* A EXPLICAÇÃO DO TERMO (passagem R2-b): a declarada para o termo que a página pede, e só para um cartão desse termo. */
+const explicacaoDoTermo = termo ? (TERMOS_DOS_CARTOES[termo]?.cartoes.includes(c.id) ? TERMOS_DOS_CARTOES[termo][lang] ?? null : null) : null;
+if (termo && !explicacaoDoTermo) {
+  throw new Error(`cartão de «${c.id}»: a página pede a explicação do termo «${termo}», que não está declarada para este cartão em TERMOS_DOS_CARTOES`);
+}
 /* O NOME DE UMA LINHA QUE NÃO SE RENDE COMO CARTÃO (bloco P3, 16.09.2026,
    item 1). A decisão do P2 fica: uma linha sem nome em degrau nenhum da escada
    do cartão rende-se como linha do livro-razão, com a sua aritmética. O que
@@ -276,7 +284,9 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
           que não a da página; a marca (`data-nome` com o identificador da linha, ou
           `data-linha-campo`) é a mesma que o índice já leva, e é ela que faz do nome
           uma coisa conferida e não uma dispensa. */}
-      <NomeDaMedida linha={c} lang={lang} escada="cartao" class="cartao-medida-nome" />
+      {/* R2-b (04.10.2026): o cartão que imprime a unidade declarada pede a escada que dá o nome de nível quando essa
+          unidade diz a variação (`NOMES_COM_A_VARIACAO_NA_UNIDADE`). */}
+      <NomeDaMedida linha={c} lang={lang} escada={unidadeDaCasa ? 'cartao-com-unidade' : 'cartao'} class="cartao-medida-nome" />
 
       {/* B2: o valor leva a unidade; o período e a marca vêm depois.
           auditaSelo aceita só este invólucro, com uma unidade da mesma linha,
@@ -349,7 +359,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
           listas de «Lugares»: um `<details>` nativo, fechado em todas as larguras, que não custa a quem não o quer. A
           ordem que um leitor vê é o nome, o valor com a unidade, a comparação e só depois isto; a célula da ordem do
           `check:cartao` lê-a no documento. A pergunta conserva a marca `data-cartao-definicao` que a K6 confere. */}
-      {(leitura?.oQueE || frase || fraseDaReferencia) && (
+      {(leitura?.oQueE || frase || fraseDaReferencia || explicacaoDoTermo) && (
         <details class="cartao-medida-dobra" data-cartao-dobra={c.id}>
           <summary class="cartao-medida-dobra-abrir">
             <span class="cartao-medida-dobra-seta" aria-hidden="true"></span>
@@ -367,6 +377,11 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
           )}
           {fraseDaReferencia && (
             <p class="cartao-medida-frase cartao-medida-referencia" data-referencia-na-dobra={c.id}>{fraseDaReferencia}</p>
+          )}
+          {explicacaoDoTermo && (
+            <p class="cartao-medida-frase cartao-medida-termo" data-termo-na-dobra={termo}>
+              <Frase partes={explicacaoDoTermo} lang={lang} />
+            </p>
           )}
         </details>
       )}

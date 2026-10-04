@@ -61,6 +61,69 @@ import { referenciaDaMedida } from './referencias-das-medidas.mjs';
 import { hasClaim } from '../lib/ledger.mjs';
 
 /**
+ * O QUE O LIVRO TEM DOS DIPLOMAS REGIONAIS DO SALÁRIO MÍNIMO (passagem R2-b, 04.10.2026, a decisão do lugar de direção
+ * sobre o recibo da linha do continente). O decreto-lei vale para o continente; cada região autónoma fixa o seu valor por
+ * diploma regional. Para cada região, a lista diz a origem declarada que o recibo rende (`origem`, uma chave de
+ * `ORIGENS_DAS_DEFINICOES` que é origem da pergunta da linha) ou `null` quando o diploma não é fonte de nenhuma linha deste
+ * livro, e o nome da região como o diploma o escreve (`nomeNaFonte`), com que a régua dos rótulos procura, nas origens da
+ * pergunta, um diploma que a lista diga por ler. A ressalva compõe-se daqui e não se escreve à mão: foi à mão que ela
+ * ficou a dizer «não foi lido» depois de o diploma dos Açores ter sido lido.
+ */
+export const DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO = {
+  linha: 'retribuicao-minima-mensal-garantida-continente-2026',
+  regioes: [
+    {
+      chave: 'acores',
+      nomeNaFonte: 'Região Autónoma dos Açores',
+      origem: 'dre-dlr-37-2023-a',
+      lida: {
+        pt: 'Nos Açores, a lei regional soma-lhe um acréscimo, e o diploma é uma das fontes da pergunta abaixo. ',
+        en: 'In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. ',
+      },
+      porLer: {
+        pt: 'Nos Açores, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: ',
+        en: 'In the Azores, the value is set by a separate regional decree, which is not a source of any line in this ledger: ',
+      },
+    },
+    {
+      chave: 'madeira',
+      nomeNaFonte: 'Região Autónoma da Madeira',
+      origem: null,
+      lida: {
+        pt: 'Na Madeira, o diploma regional que fixa o valor é uma das fontes da pergunta abaixo. ',
+        en: 'In Madeira, the regional decree that sets the value is one of the sources of the question below. ',
+      },
+      porLer: {
+        pt: 'Na Madeira, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: ',
+        en: 'In Madeira, the value is set by a separate regional decree, which is not a source of any line in this ledger: ',
+      },
+    },
+  ],
+};
+
+/**
+ * A ressalva de alcance da linha do continente, composta da lista: o território, e para cada região a forma «lida» quando
+ * a lista lhe dá uma origem e a forma «por ler», com o marcador, quando não dá.
+ *
+ * @param {typeof DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO} [lista]
+ */
+export function ressalvaDosDiplomasRegionais(lista = DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO) {
+  /** @type {{ pt: any[], en: any[] }} */
+  const out = { pt: ['Este valor é o do território continental. '], en: ['This value is for mainland Portugal. '] };
+  for (const r of lista.regioes) {
+    for (const l of /** @type {const} */ (['pt', 'en'])) {
+      if (r.origem) out[l].push(r.lida[l]);
+      else out[l].push(r.porLer[l], { marcador: 'a verificar', gloss: 'to verify' }, '. ');
+    }
+  }
+  for (const l of /** @type {const} */ (['pt', 'en'])) {
+    const ultimo = out[l].length - 1;
+    if (typeof out[l][ultimo] === 'string') out[l][ultimo] = out[l][ultimo].replace(/ $/, '');
+  }
+  return out;
+}
+
+/**
  * Um domínio da carta.
  *
  * @typedef {{
@@ -508,18 +571,11 @@ export const MEDIDAS_DO_DOMINIO_1 = /** @type {const} */ ([
        regional próprio, que o inventário das fontes não leu. Paráfrase da
        fronteira territorial e não citação: a citação exacta vive no campo
        `document.locator` da linha, para quem quiser conferi-la. */
-    ressalva: {
-      pt: [
-        'Este valor é o do território continental. Os Açores e a Madeira fixam o seu por diploma regional próprio, que não foi lido: ',
-        { marcador: 'a verificar', gloss: 'to verify' },
-        '.',
-      ],
-      en: [
-        'This value is for mainland Portugal. The Azores and Madeira set their own value by separate regional decree, which has not been read: ',
-        { marcador: 'a verificar', gloss: 'to verify' },
-        '.',
-      ],
-    },
+    /* R2-b (04.10.2026, a decisão do lugar de direção): a ressalva dizia que os dois diplomas regionais não tinham sido
+       lidos, e o recibo da mesma linha rende, por baixo dela, o diploma dos Açores como origem da pergunta, lido a
+       24.09.2026. A ressalva passa a dizer o que foi lido e o que não foi, composta da lista abaixo
+       (`DIPLOMAS_REGIONAIS_DO_SALARIO_MINIMO`), que a régua dos rótulos confere contra as origens da pergunta. */
+    ressalva: ressalvaDosDiplomasRegionais(),
   },
 ]);
 

@@ -94,7 +94,9 @@ export const UNIDADES_DOS_CARTOES = {
     en: ['% of people working or looking for work'],
     apoio: [
       { campo: 'excerpt', literal: 'Percentage of population in the labour force' },
-      { origem: 'glossario-atividade', campo: 'excerto', literal: 'The economically active population comprises employed and unemployed persons' },
+      /* R2-b (04.10.2026, achado 6 da leitura a frio): a origem do apoio é uma das origens da pergunta da própria linha,
+         que o recibo dela rende; o glossário da atividade não era. */
+      { origem: 'eurostat-tipsun20-descricao', campo: 'excerto', literal: 'The labour force is the total number of people employed and unemployed.' },
     ],
     achado: '9: «% da população ativa» é o termo da fonte; a unidade diz em palavras comuns de quem é a percentagem, e a dobra guarda o termo.',
   },
@@ -103,7 +105,7 @@ export const UNIDADES_DOS_CARTOES = {
     en: ['% of people working or looking for work'],
     apoio: [
       { campo: 'excerpt', literal: 'Percentage of population in the labour force' },
-      { origem: 'glossario-atividade', campo: 'excerto', literal: 'The economically active population comprises employed and unemployed persons' },
+      { origem: 'eurostat-tipsun20-descricao', campo: 'excerto', literal: 'The labour force is the total number of people employed and unemployed.' },
     ],
     achado: '9: a mesma unidade da taxa de desemprego do painel social, porque é a mesma população.',
   },
@@ -281,6 +283,15 @@ export const UNIDADES_DOS_CARTOES = {
     en: ['% change over three years'],
     apoio: [{ campo: 'excerpt', literal: 'Percentage change (t/t-3)' }],
     achado: '13 e 16: a mesma forma do custo unitário do trabalho.',
+  },
+  'desempenho-das-exportacoes-2025': {
+    pt: ['% de variação em três anos'],
+    en: ['% change over three years'],
+    apoio: [
+      { campo: 'excerpt', literal: '3-year change' },
+      { origem: 'eurostat-tipsbp60-descricao', campo: 'excerto', literal: 'calculated as the 3 year % change' },
+    ],
+    achado: '4 (passagem R2-b, 04.10.2026, a decisão do lugar de direção sobre o achado parado): a forma segue o excerto da linha («Share of exports of advanced economies» e «3-year change»); a unidade diz a variação em três anos, e o total de que a quota é parte vai para o nome e para a dobra.',
   },
   'taxa-de-actividade-2025': {
     pt: ['diferença em três anos, em pontos percentuais'],
@@ -497,9 +508,42 @@ export const UNIDADES_DA_LINHA_ACEITES_NUM_CARTAO = {
 export const CARTOES_COM_A_UNIDADE_DA_LINHA_EM_DIVIDA = {
   'agua-nao-faturada-portugal-2024':
     '[verify] A unidade é «%», e a triagem do achado 9 manda dizer de que é a percentagem; o excerto da linha está por confirmar («[a verificar]»), e por isso não há literal da fonte que diga de quê.',
-  'desempenho-das-exportacoes-2025':
-    'O achado 4 da auditoria dos rótulos PAROU no bloco R2: a forma da triagem («Quota das exportações no mercado mundial», «% de variação em três anos») nomeia o mercado mundial, e o excerto da linha diz «Share of exports of advanced economies» e «Percentage of OECD and non-OECD EU countries total - 3-year change». O nome e a unidade ficam como estavam até o lugar de direção decidir (o relatório do bloco R2).',
 };
+
+/**
+ * OS NOMES QUE DEIXAM A VARIAÇÃO PARA A UNIDADE (passagem R2-b, 04.10.2026, a decisão do lugar de direção sobre o que o
+ * construtor do R2 deixou). O bloco K2-b pôs a variação no nome dos cartões de preços, porque o nome de nível se lia como
+ * um preço; o R2 pôs a variação na unidade declarada do mesmo cartão («% de variação em doze meses»), e o cartão passou a
+ * dizê-la duas vezes. Onde a unidade declarada a diz ao pé do valor (o cartão nacional, o cartão da página da União e a
+ * faixa dos países), o nome é o de nível; onde o nome aparece sem essa unidade (a primeira página, o índice do
+ * livro-razão, o recibo), fica o nome do K2-b, que diz a variação. A régua dos rótulos e a da voz leem esta tabela por
+ * conta própria (a marca `data-nome="cartao"`).
+ *
+ * @type {Record<string, { pt: string, en: string }>}
+ */
+export const NOMES_COM_A_VARIACAO_NA_UNIDADE = {
+  'ipc-alimentacao-variacao-homologa': { pt: 'Preços dos alimentos e das bebidas não alcoólicas', en: 'Prices of food and non-alcoholic beverages' },
+  'ipc-energia-em-casa-variacao-homologa': { pt: 'Preços da energia em casa', en: 'Home energy prices' },
+  'ipc-combustiveis-variacao-homologa': { pt: 'Preços dos combustíveis', en: 'Fuel prices' },
+  'ipc-rendas-variacao-homologa': { pt: 'Preços das rendas', en: 'Rent prices' },
+  'ipc-sem-habitacao-variacao-media-12-meses': { pt: 'Preços sem a habitação', en: 'Prices excluding housing' },
+  'precos-da-habitacao-2025': { pt: 'Preços da habitação', en: 'House prices' },
+};
+
+/**
+ * O nome de nível de um cartão cuja unidade declarada diz a variação, ou `null`. Só vale com a unidade declarada: um
+ * nome sem variação ao pé de uma unidade que também não a diz seria o defeito que o K2-b corrigiu.
+ *
+ * @param {string} id
+ * @param {'pt'|'en'|string} lang
+ * @returns {string | null}
+ */
+export function nomeComAVariacaoNaUnidade(id, lang) {
+  if (!Object.prototype.hasOwnProperty.call(NOMES_COM_A_VARIACAO_NA_UNIDADE, id)) return null;
+  if (!Object.prototype.hasOwnProperty.call(UNIDADES_DOS_CARTOES, id)) return null;
+  const n = NOMES_COM_A_VARIACAO_NA_UNIDADE[id];
+  return lang === 'en' ? n.en : n.pt;
+}
 
 /**
  * A unidade da casa de um cartão nacional, na língua da página, ou `null` quando o cartão imprime a da linha.

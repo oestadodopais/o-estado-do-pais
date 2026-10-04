@@ -47,6 +47,7 @@ import { faixaDaMedida } from '../lib/faixa-da-uniao.mjs';
 import { getSerie, AGREGADO_DA_UNIAO } from '../lib/series.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { unidadeDoCartao } from '../data/unidades-dos-cartoes.mjs';
 import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
 import { t } from '../i18n/strings.mjs';
 import '../styles/cartao-medida.css';
@@ -61,6 +62,11 @@ if (!f) {
 const serie = getSerie(f.serie);
 const linha = getClaim(idDaLinha);
 const unidade = unidadeDaLinha(String(serie.unit), lang);
+/* A UNIDADE PELA DECLARAÇÃO, COMO OS CARTÕES (passagem R2-b, 04.10.2026, a decisão do lugar de direção): onde o cartão da
+   linha portuguesa tem unidade declarada (`UNIDADES_DOS_CARTOES`), a faixa dos 27 diz a mesma, com a mesma marca e o mesmo
+   apoio, que o portão de HTML confere dentro da faixa da série dessa linha; onde não tem, a faixa diz a unidade da série,
+   como a fonte a escreve. O nome segue a unidade: com a unidade declarada, o nome de nível quando ela diz a variação. */
+const unidadeDaCasa = unidadeDoCartao(idDaLinha, lang);
 const ressalva = ressalvaDaUniao(idDaLinha, lang);
 const declarada = /** @type {Record<string, { pt: readonly unknown[], en: readonly unknown[], serie?: { pt: readonly unknown[], en: readonly unknown[] } }>} */ (DEFINICOES_DAS_MEDIDAS)[idDaLinha];
 if (!declarada) {
@@ -72,7 +78,7 @@ const definicao = (declarada.serie ?? declarada)[lang];
 
 <article class="paises-medida" data-faixa-paises={f.serie} id={`p-${f.serie}`} aria-labelledby={`pn-${f.serie}`}>
   <h3 class="paises-nome" id={`pn-${f.serie}`}>
-    <NomeDaMedida linha={linha} lang={lang} escada="cartao" class="paises-nome-texto" />
+    <NomeDaMedida linha={linha} lang={lang} escada={unidadeDaCasa ? 'cartao-com-unidade' : 'cartao'} class="paises-nome-texto" />
   </h3>
   {/* O QUE A MEDIDA CONTA (a passagem UE2-b): a população e a base da comparação de cada número da faixa, pela
       definição declarada, a mesma do recibo da série. */}
@@ -80,7 +86,11 @@ const definicao = (declarada.serie ?? declarada)[lang];
     <Frase partes={definicao} lang={lang} selos={true} />
   </p>
   <p class="paises-unidade">
-    <CampoDaSerie serie={f.serie} campo="unit" valor={unidade.texto} lingua={unidade.lingua} />
+    {unidadeDaCasa ? (
+      <span class="paises-unidade-texto" data-unidade-da-casa={idDaLinha} data-unidade-na-faixa={f.serie}><Frase partes={unidadeDaCasa} lang={lang} /></span>
+    ) : (
+      <CampoDaSerie serie={f.serie} campo="unit" valor={unidade.texto} lingua={unidade.lingua} />
+    )}
     {' · '}
     <DataDaSerie serie={f.serie} campo="periodo" valor={String(serie.periodo)} lang={lang} />
   </p>
