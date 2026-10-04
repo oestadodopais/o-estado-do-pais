@@ -556,11 +556,21 @@ function anda(dir) {
            página fecha a construção desde 22.09.2026, pela leitura do lugar de
            direção: a notícia de um estudo é a secção «Estudos recentes», e a
            lista de todos é a página dos estudos. Continuam no registo. */
+        /* O ÍNDICE (bloco R3, 04.10.2026) mostra as últimas linhas do livro que mudaram, de
+           qualquer lugar, uma vez cada linha; as publicações e as mudanças declaradas do projeto
+           têm a porta delas noutra secção da mesma página (a razão está em `mudancasDoIndice()`,
+           `src/lib/mudancas.mjs`). A repetição de uma linha conta-se logo a seguir. */
         const dentro = ambito === 'pais'
           ? (tipo === 'projeto' || (tipo === 'correcao' && doLugar === PAIS))
-          : (tipo === 'correcao' && doLugar === ambito);
+          : ambito === 'indice'
+            ? tipo === 'correcao' && doLugar !== null
+            : (tipo === 'correcao' && doLugar === ambito);
         if (!dentro)
           erros.push(`A1: ${onde}: a linha ${chave} é de «${doLugar ?? 'nenhum lugar'}» e a página é de «${ambito}».`);
+      }
+      if (ambito === 'indice') {
+        const linhas = itens.map((li) => chaveDaMudanca(li).claim);
+        if (new Set(linhas).size !== linhas.length) erros.push(`A1: ${onde}: o índice repete uma linha do livro em «O que mudou»; cada linha entra uma vez, com a sua entrada mais recente.`);
       }
       const quando = itens.map(li => li.querySelector('time')?.getAttribute('datetime'));
       if (quando.some((d,i) => i>0 && d > quando[i-1])) erros.push(`A2: ${onde}: as mudanças não estão da mais recente para a mais antiga.`);

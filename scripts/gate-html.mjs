@@ -63,6 +63,8 @@ function campoDaSerieNoTempo(serie, campo, lang) {
   return null;
 }
 
+/* R3 (04.10.2026): as sete portas do rodapé, com a do índice, lidas por um módulo próprio do portão. */
+import { conferirPortasDoRodape, plantasDasPortasDoRodape } from './indice-do-portao.mjs';
 /**
  * A DEFINIÇÃO DECLARADA DE UMA MEDIDA, COMO TEXTO (a passagem UE1d, 29.09.2026,
  * pelo lugar de direção). As palavras e os algarismos declarados (`nl`) da
@@ -368,6 +370,8 @@ const veONome = (texto) => typeof texto === 'string' && FORMAS_DO_NOME.some((for
 let paginasComONome = 0;
 /** S1 (02.10.2026): as contas da caixa das sugestões, para a saída do portão. */
 const SUGESTOES_NO_PORTAO = { paginas: 0, portas: 0, paginasDaCaixa: 0, enderecosNoMapa: 0, plantas: 0, migracoes: 0 };
+/** R3 (04.10.2026): as contas das sete portas do rodapé, para a saída do portão. */
+const RODAPE_NO_PORTAO = { paginas: 0, plantas: 0 };
 
 const RESTANTES = path.join(ROOT, 'ortografia', 'restantes.yml');
 
@@ -5409,6 +5413,19 @@ for (const file of ficheirosHtml(DIST)) {
 
   /**
    * ---------------------------------------------------------------------
+   * AS SETE PORTAS DO RODAPÉ, COM A DO ÍNDICE (bloco R3, 04.10.2026)
+   * ---------------------------------------------------------------------
+   * Nas mesmas páginas que levam a porta das correções e a das sugestões: a
+   * navegação do rodapé com as sete portas pela ordem, cada uma com o destino e
+   * o nome da edição da página, e a troca de língua no fim. A lista e as plantas
+   * vivem em `scripts/indice-do-portao.mjs`; as plantas correm uma vez por
+   * corrida, depois do varrimento.
+   */
+  RODAPE_NO_PORTAO.paginas++;
+  for (const e of conferirPortasDoRodape(root, { lang: rota?.lang ?? linguaPagina ?? 'pt' })) err(e);
+
+  /**
+   * ---------------------------------------------------------------------
    * UM SÓ `<h1>` POR PÁGINA (bloco F1.7, item 3, 04.09.2026)
    * ---------------------------------------------------------------------
    * A regra já existia para os documentos alojados (`verificaDocumento()`) e
@@ -6571,7 +6588,12 @@ for (const file of ficheirosHtml(DIST)) {
     // uma medida do país) e o registo ficou com todas: a conferência não muda,
     // muda a lista de rotas onde a marca é legítima, e a planta que o prova
     // continua a trocar a unidade de uma entrada pela de outra linha.
-    const unidadeDeCorrecaoDoPais = ['home', 'correcoes'].includes(rota?.key) && campo === 'unit' &&
+    /* R3 (04.10.2026): a lista «O que mudou» do índice tem a forma das outras, e a unidade de cada
+       entrada entra pela mesma porta, só dentro da lista com o âmbito do índice. A comparação literal
+       do campo e a auditoria dos selos continuam a correr; a planta `r3-unidade-de-outra-linha`
+       (`tests/pais/portoes.mjs`) troca a unidade de uma entrada pela de outra linha. */
+    const unidadeDeCorrecaoDoPais = (['home', 'correcoes'].includes(rota?.key) ||
+      (rota?.key === 'indice' && el.closest('[data-mudou-ambito="indice"]') !== null)) && campo === 'unit' &&
       el.closest('[data-correcao-entrada]')?.getAttribute('data-correcao-entrada') === id;
     /* E0b: o registo nomeia também a medida pelo campo da fonte. Só o nome,
        só nesta entrada da própria linha; a comparação literal abaixo e a
@@ -7899,6 +7921,19 @@ for (const file of ficheirosHtml(DIST)) {
   SUGESTOES_NO_PORTAO.enderecosNoMapa = mapa.enderecos;
   for (const msg of mapa.erros) erros.push({ rel: 'dist/sitemap-0.xml', msg });
   if (SUGESTOES_NO_PORTAO.portas === 0) erros.push({ rel: 'dist', msg: 'S1 porta: a conferência não viu porta das sugestões nenhuma.' });
+}
+
+/* AS SETE PORTAS DO RODAPÉ, DEPOIS DO VARRIMENTO (bloco R3, 04.10.2026): as plantas em memória,
+   cada uma recusada pela conferência com a queixa esperada, e o rodapé intacto aceite nas duas
+   edições; uma planta que não morda fecha a construção, e uma corrida que não conferiu página
+   nenhuma também. */
+{
+  for (const planta of plantasDasPortasDoRodape()) {
+    RODAPE_NO_PORTAO.plantas++;
+    if (!planta.mordeu) erros.push({ rel: 'scripts/indice-do-portao.mjs', msg: `R3: a planta em memória «${planta.nome}» não mordeu; a conferência das portas do rodapé não vê o que existe para ver.` });
+  }
+  if (RODAPE_NO_PORTAO.paginas === 0) erros.push({ rel: 'dist', msg: 'R3 rodapé: a conferência das sete portas do rodapé não viu página nenhuma.' });
+  console.log(`  R3 · as sete portas do rodapé conferidas em ${RODAPE_NO_PORTAO.paginas} página(s), com ${RODAPE_NO_PORTAO.plantas} planta(s) em memória.`);
 }
 
 /**

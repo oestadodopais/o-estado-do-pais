@@ -613,3 +613,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | r2b | 12 cadeias novas, 6 retiradas, 1 apagada | por ler | Claude Opus 5.5, construtor da passagem R2-b, pelas decisões do lugar de direção depois da leitura a frio do Sol (`design/especime-v3/critica/LEITURA-R2-2026-10-04.md`): a pergunta da quota das exportações pela forma do excerto (o achado 4 da auditoria dos rótulos); as explicações em palavras comuns do valor acrescentado bruto, do fator de sustentabilidade e de «reexpressa» (a da paridade do poder de compra leva um algarismo declarado e a régua salta-a); a dobra da dívida dos concelhos com a contribuição para o Fundo de Apoio Municipal; e a ressalva do recibo do salário mínimo composta da lista dos diplomas regionais. A palavra «Fundo», retirada com a peça 2 do B1 (um rótulo das contas do município), vive agora dentro do nome próprio do fundo na dobra inglesa da dívida, e por isso sai do ficheiro em vez de continuar retirada, a saída documentada para uma cadeia curta que vive dentro de uma maior. Duas linhas da secção do R2 (a dobra da dívida sem o fundo) passam a retiradas. Escrito por `design/especime-v3/medicoes/r2-2026-10-03/inventario-frases-r2b.mjs`. A leitura cruzada do diff faz-se antes da fusão. |
+
+## R3 · o índice do sítio, 04.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| r3 | 12 cadeias novas, nenhuma retirada | por ler | Claude Opus 5.5, construtor do R3: o título da página do índice, os nomes das secções que ainda não estavam declarados e a descrição do `<head>`, nas duas línguas. As portas são ligações e não se classificam; os nomes, os títulos, as datas, as perguntas e os valores são origens. |

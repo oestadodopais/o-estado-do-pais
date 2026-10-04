@@ -3930,3 +3930,30 @@ mínimo composta da lista dos diplomas regionais. Os nomes de nível dos cartõe
 | conteudo | The factor multiplies the amount of the pension: below one, the pension falls, and the gap to one is the share that is cut. | r2b | viva | A mesma explicação na edição inglesa. |
 | conteudo | Este valor é o do território continental. Nos Açores, a lei regional soma-lhe um acréscimo, e o diploma é uma das fontes da pergunta abaixo. Na Madeira, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado . | r2b | viva | A ressalva de alcance do recibo do salário mínimo, composta da lista dos diplomas regionais: diz o que foi lido (o diploma dos Açores, origem da pergunta) e o que não é fonte (o da Madeira, com o marcador). |
 | conteudo | This value is for mainland Portugal. In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. In Madeira, the value is set by a separate regional decree, which is not a source of any line in this ledger: [a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published . | r2b | viva | A mesma ressalva na edição inglesa. |
+
+## R3 · o índice do sítio, 04.10.2026
+
+A página «Índice» (`/indice`, `/en/index`) entra no inventário no commit em que nasce (o brief R3, §3, ponto 5). As portas
+são ligações, e o texto de uma porta é um destino e não uma frase: não se classifica. Os nomes dos lugares, os títulos dos
+estudos, as datas, as perguntas transcritas e os valores de «O que mudou» são origens. O que se classifica é o título da
+página, os nomes das secções que ainda não estavam declarados e a descrição do `<head>`; os outros nomes de secção
+(«Os estudos», «Os distritos e as ilhas», «Os concelhos», «O que mudou», «Places», «Studies», «Numbers and sources»)
+já estavam no inventário. A classe segue a das outras páginas de índice: o título é **conteúdo**, como «Temas» e
+«Sugestões», porque é o objeto da página; os nomes das secções e a descrição são **navegação**, como «Os distritos e as
+ilhas» e a descrição da página dos temas, porque nomeiam grupos de portas e dizem para onde a página leva. Nenhuma tem
+marcador da voz (`VOZ-MARCADORES.md`).
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Índice | r3 | viva | O título da página do índice (bloco R3), que é também a porta do rodapé e a última migalha do caminho dela (`nav.indice`). |
+| conteudo | Index | r3 | viva | O mesmo título na edição inglesa. |
+| navegacao | O país | r3 | viva | O nome da secção do índice com a primeira página, os temas e as áreas de governo (`indice.seccoes.pais`). |
+| navegacao | The country | r3 | viva | O mesmo nome na edição inglesa. |
+| navegacao | Os lugares | r3 | viva | O nome da secção do índice com a página dos lugares, as regiões, os distritos e as ilhas, e os concelhos. |
+| navegacao | A União Europeia | r3 | viva | O nome da secção do índice com a página dos países da União. |
+| navegacao | The European Union | r3 | viva | O mesmo nome na edição inglesa. |
+| navegacao | Os números e as fontes | r3 | viva | O nome da secção do índice com o índice das linhas, o dos concelhos, as séries, as correções e a página do marcador. A edição inglesa diz «Numbers and sources», que já estava declarado. |
+| navegacao | O projeto | r3 | viva | O nome da secção do índice com o Sobre, o Método, a agenda e as sugestões. |
+| navegacao | The project | r3 | viva | O mesmo nome na edição inglesa. |
+| navegacao | O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta. | r3 | viva | A descrição do `<head>` da página do índice: as secções que ela tem, e que cada coisa tem a sua porta. |
+| navegacao | The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door. | r3 | viva | A mesma descrição na edição inglesa. |
