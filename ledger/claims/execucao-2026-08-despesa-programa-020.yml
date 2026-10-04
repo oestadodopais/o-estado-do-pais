@@ -30,8 +30,8 @@ reference_date: "2026-08"
 excerpt: "          020 - Agricultura e Mar                                                            613,7           836,4      222,6          36,3          0,4"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "Os programas estão consolidados dentro de cada programa; a sua soma ainda inclui fluxos entre programas. Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis."
-ressalva_en: "Each programme is consolidated internally; their sum still includes flows between programmes. The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
+ressalva: "A despesa efetiva consolidada exclui ativos e passivos financeiros e transferências internas entre os serviços considerados. Neste caso, a consolidação é dentro de cada programa; a soma dos programas ainda inclui transferências entre programas."
+ressalva_en: "Consolidated effective expenditure excludes financial assets and liabilities and internal transfers between the services covered. Here, consolidation is within each programme; adding up programmes still includes transfers between programmes."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

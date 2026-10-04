@@ -39,7 +39,7 @@ function planta(nome,script,alteracoes,mordidas) {
   r=spawnSync(process.execPath,[script],{encoding:'utf8',maxBuffer:64*1024*1024});
  }finally{for(const [f,s] of originais)fs.writeFileSync(path.join('dist',f),s);}
  const saida=r.stdout+r.stderr;
- fs.writeFileSync(path.join(pasta,`planta-${nome}.log`),saida);
+ fs.writeFileSync(path.join(pasta,`planta-${nome}.log`),saida.replaceAll(process.cwd(), '<sitio>').replace(/\/Users\/[^/\s]+/g, '<pasta-local>'));
  const ficheiros=[...originais].map(([f,s])=>({ficheiro:`dist/${f}`,antes:sha(s),reposto:sha(fs.readFileSync(path.join('dist',f)))}));
  const passou=r.status===1&&mordidas.every(re=>re.test(saida))&&ficheiros.every(f=>f.antes===f.reposto);
  const registo={nome,comando:`node ${script}`,codigo:r.status,mordidas:mordidas.map(re=>re.source),passou,ficheiros};registos.push(registo);
@@ -559,3 +559,15 @@ planta('r3-registo-mesma-linha-pela-ordem-errada','scripts/check-pais.mjs',[
   itens[i-1].insertAdjacentHTML('beforebegin',segunda);
  }]
 ],[/A3: correcoes\/index\.html: duas entradas da mesma linha no mesmo dia estão da mais antiga para a mais recente/]);
+
+/* OE1-e: estragos sobre recibos realmente construídos, repostos no finally
+   da mesma planta. Correm em série no verify, pela tranca da construção. */
+planta('oe1e-ressalva-retirada','scripts/gate-html.mjs',[
+ ['livro-razao/oe-2026-despesa-ministerio-saude/index.html',r=>r.querySelector('.linha-cabeca [data-linha-campo="ressalva"]').remove()]
+],[/ressalva de oe-2026-despesa-ministerio-saude ausente ou repetida na edição pt/]);
+planta('oe1e-ressalva-de-outra-linha','scripts/gate-html.mjs',[
+ ['livro-razao/oe-2026-despesa-ministerio-saude/index.html',r=>r.querySelector('.linha-cabeca [data-linha-campo="ressalva"]').set_content(getClaim('oe-2026-despesa-ministerio-encargos-gerais-do-estado').ressalva)]
+],[/ressalva de oe-2026-despesa-ministerio-saude não é a declarada na edição pt/]);
+planta('oe1e-ressalva-na-lingua-errada','scripts/gate-html.mjs',[
+ ['en/ledger/oe-2026-despesa-ministerio-saude/index.html',r=>r.querySelector('.linha-cabeca [data-linha-campo="ressalva"]').set_content(getClaim('oe-2026-despesa-ministerio-saude').ressalva)]
+],[/ressalva de oe-2026-despesa-ministerio-saude não é a declarada na edição en/]);

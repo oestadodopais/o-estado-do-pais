@@ -29,8 +29,8 @@ reference_date: "2026"
 excerpt: "<Registo>\n      <Programa>P-018</Programa>\n      <DesignacaoPrograma>CULTURA</DesignacaoPrograma>\n      <Ministério>CULTURA, JUVENTUDE E DESPORTO</Ministério>\n      <TotalEmEuros>876923548</TotalEmEuros>\n    </Registo>"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "Estes valores incluem operações financeiras. As transferências internas permanecem nos valores brutos. Somar subsetores não dá um total consolidado, nem subtrair estes totais dá o saldo efetivo. Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis."
-ressalva_en: "These values include financial transactions. Internal transfers remain in gross values. Adding subsectors does not produce a consolidated total, and subtracting these totals does not produce the effective balance. The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
+ressalva: "A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
+ressalva_en: "Gross expenditure includes financial transactions and transfers between State services, as added up in the budget map."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

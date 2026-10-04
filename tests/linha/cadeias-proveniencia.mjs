@@ -109,6 +109,14 @@ for (const [nome, id, mudar] of [
     jsonDaLinha(c,j=>{j.dimension.geo.category={index:{ES:0},label:{ES:'Spain'}};});
   }],
 ]) plantaDaLinha(nome, id, mudar, 'JSON-stat gov_10a_exp: geografia divergente', geografias);
+// OE1-e: a conta numa transcrição só pode apoiar a ressalva publicada.
+plantaDaLinha('Conta numa linha transcrita sem ressalva', 'oe-2026-despesa-ministerio-saude', c=>{
+  c.derivation='Conta de apoio.'; c.derivation_en='Supporting calculation.';
+  delete c.ressalva; delete c.ressalva_en;
+}, 'uma linha transcrita com "derivation" exige a ressalva nas duas línguas', ressalvas);
+plantaDaLinha('Conta da ressalva sem a versão inglesa', 'oe-2026-despesa-efetiva-administracao-central', c=>{
+  delete c.ressalva_en;
+}, 'uma linha transcrita com "derivation" exige a ressalva nas duas línguas', ressalvas);
 assert.deepEqual(validateLedger().errors, []);
 controlos.push({nome:'Ressalvas e geografias intactas depois das plantas, com bandeiras antigas preservadas',passou:true});
 const livro=validateLedger();

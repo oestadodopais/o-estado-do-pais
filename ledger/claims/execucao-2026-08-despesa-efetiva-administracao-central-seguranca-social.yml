@@ -30,8 +30,8 @@ reference_date: "2026-08"
 excerpt: "    Despesa efetiva                                      119 047,6     130 971,6     72 877,7     80 464,5            61,4           10,4"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "O saldo global é a receita efetiva menos a despesa efetiva. Os passivos financeiros líquidos são a receita de passivos menos as amortizações, não a parcela da despesa efetiva financiada por dívida. O financiamento inclui ainda ativos financeiros e variações de tesouraria. Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis."
-ressalva_en: "The overall balance is effective revenue minus effective expenditure. Net financial liabilities are receipts from liabilities minus repayments, not the share of effective expenditure financed by debt. Financing also includes financial assets and changes in cash balances. The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
+ressalva: "A despesa efetiva consolidada exclui ativos e passivos financeiros e transferências internas entre os serviços considerados."
+ressalva_en: "Consolidated effective expenditure excludes financial assets and liabilities and internal transfers between the services covered."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
