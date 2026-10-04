@@ -96,6 +96,8 @@ import { unidadesDoMapa, distritoDoMapa } from '../src/lib/mapa.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(RAIZ, 'dist');
+const LIVRO_ANTES_DA_PROVA = process.argv.includes('--prova')
+  ? fs.readFileSync(path.join(DIST, 'livro-razao/index.html')) : null;
 const SAIDA = path.join(RAIZ, 'design-system');
 const TIPOS_ORIGEM = path.join(RAIZ, 'public', 'tipos');
 
@@ -950,7 +952,7 @@ const folhaDeOrdem = (familias) => ORDEM_FAMILIAS.filter((f) => familias.include
  * pacotes minificados de `dist/_astro/`: quem desenha lê as razões. Quais são
  * elas é que se mede na página construída (`folhaDaPagina`).
  */
-function cartaoDePagina({ rota, grupo, viewport, titulo, tema = null, nota = '', recorte = null }) {
+function cartaoDePagina({ rota, grupo, viewport, titulo, tema = null, nota = '', recorte = null, limiteDeLinhas = null }) {
   const root = arvore(rota);
   /* O título da página vai para dentro de um comentário: um `--` ali fecharia
      o comentário antes de tempo e o resto do cartão viraria texto. */
@@ -959,6 +961,17 @@ function cartaoDePagina({ rota, grupo, viewport, titulo, tema = null, nota = '',
     .replace(/[<>]/g, '');
   const familias = folhaDaPagina(rota, root);
   const codigo = tiraCodigo(root);
+  // OE1: o espécime do índice passa a recorte, como manda a regra do teto.
+  // A página construída conserva todas as entradas; só esta cópia é cortada.
+  if (limiteDeLinhas !== null) {
+    if (!Number.isInteger(limiteDeLinhas) || limiteDeLinhas < 1) morre('O recorte exige um limite inteiro positivo.');
+    const listas = root.querySelectorAll('.livro-lista');
+    if (listas.length !== 1) morre(`O recorte do livro exige uma lista; encontrou ${listas.length}.`);
+    const entradas = listas[0].querySelectorAll('.livro-item');
+    if (entradas.length <= limiteDeLinhas) morre('O índice já não excede o recorte declarado; reconferir o espécime.');
+    for (const entrada of entradas.slice(limiteDeLinhas)) entrada.remove();
+    root.querySelector('main').insertAdjacentHTML('beforeend', `<p class="sec-sub" data-ds-recorte>${escapa(nota)} <a href="/${rota.replace(/index\.html$/, '')}">Página completa</a>.</p>`);
+  }
   /* N1: Lugares recebeu dois mapas e duas tabelas municipais. O feixe mostra
      um recorte declarado da porta geográfica, conservando o teto e a regra de
      autonomia do retrato. O HTML construído permanece inteiro e intocado. */
@@ -2165,7 +2178,11 @@ const PAGINAS = [
       'Este cartão embute o bloco escuro de `tokens.css` sem o comando, para que o papel escuro se veja na ferramenta de desenho.',
   },
   { ficheiro: '12-pagina-linha-livro-razao.html', rota: 'livro-razao/divida-publica-2025/index.html', titulo: 'Página: linha do livro-razão' },
-  { ficheiro: '13-pagina-livro-razao.html', rota: 'livro-razao/index.html', titulo: 'Página: índice do livro-razão' },
+  {
+    ficheiro: '13-pagina-livro-razao.html', rota: 'livro-razao/index.html', titulo: 'Página: índice do livro-razão, recorte',
+    limiteDeLinhas: 8,
+    nota: 'Recorte das primeiras oito entradas, na ordem do índice. O livro e a pesquisa continuam inteiros na página completa.',
+  },
   { ficheiro: '14-pagina-municipio.html', rota: 'municipios/evora/index.html', titulo: 'Página: município' },
   /* B1, peça 2: o retrato do índice dos concelhos passa a ser o da página dos
      lugares, que ficou no lugar dele. */
@@ -2191,6 +2208,7 @@ for (const p of PAGINAS) {
     tema: p.tema ?? null,
     nota: p.nota ?? '',
     recorte: p.recorte ?? null,
+    limiteDeLinhas: p.limiteDeLinhas ?? null,
   });
   regista(
     p.ficheiro,
@@ -2470,6 +2488,40 @@ if (process.argv.includes('--prova')) {
     if (!confere(amostra.ficheiro, html).falhas.some((f) => mordida.test(f))) morre(`A planta do feixe não mordeu: ${nome}.`);
     console.log(`  mordeu · feixe · ${nome}`);
   }
+
+  // OE1-c: o conhecido positivo conserva as primeiras oito entradas e a porta.
+  // A quarta planta retira apenas o limite, na cópia em memória do cartão 13.
+  const config = PAGINAS.find((p) => p.ficheiro === '13-pagina-livro-razao.html');
+  const livro = cartoes.find((c) => c.ficheiro === config?.ficheiro);
+  if (!config || config.limiteDeLinhas !== 8 || !livro || confere(livro.ficheiro, livro.html).falhas.length) {
+    morre('A planta do livro não tem conhecido positivo limpo com oito entradas.');
+  }
+  const ids = (html) => parse(html).querySelectorAll('.livro-item').map((el) => el.getAttribute('data-linha-id'));
+  const originais = ids(LIVRO_ANTES_DA_PROVA.toString('utf8'));
+  const recortadas = ids(livro.html);
+  const nota = parse(livro.html).querySelector('[data-ds-recorte]');
+  if (recortadas.length !== 8 || JSON.stringify(recortadas) !== JSON.stringify(originais.slice(0, 8)) ||
+      !nota?.text.includes(config.nota) || nota.querySelector('a')?.getAttribute('href') !== `${BASE}/livro-razao/`) {
+    morre('O recorte do livro perdeu a ordem, a nota ou a porta para a página completa.');
+  }
+  const inteiro = cartaoDePagina({ ...config, grupo: 'Páginas', viewport: 1240, limiteDeLinhas: null });
+  const resultado = confere(livro.ficheiro, inteiro.html);
+  const queixa = resultado.falhas.find((f) => /KiB acima do tecto de/.test(f));
+  if (!queixa || resultado.falhas.length !== 1 || JSON.stringify(ids(inteiro.html)) !== JSON.stringify(originais)) {
+    morre('A planta do recorte retirado não mordeu apenas pelo teto do cartão 13.');
+  }
+  if (!LIVRO_ANTES_DA_PROVA.equals(fs.readFileSync(path.join(DIST, config.rota)))) {
+    morre('A planta alterou a página construída do livro.');
+  }
+  console.log('  mordeu · feixe · recorte retirado');
+  console.log(JSON.stringify({ recorte_livro: {
+    ficheiro: livro.ficheiro, entradas_na_pagina: originais.length, entradas_no_recorte: recortadas.length,
+    primeiras_preservadas: true, nota_e_porta_preservadas: true, pagina_conservada: true,
+    pagina_sha256: crypto.createHash('sha256').update(LIVRO_ANTES_DA_PROVA).digest('hex'),
+    bytes_cartao: Buffer.byteLength(livro.html, 'utf8'), bytes_sem_recorte: resultado.bytes,
+    teto_bytes: LIMITE_BYTES, margem: MARGEM_DO_TECTO,
+    planta: { nome: 'recorte retirado', mordeu: true, queixa },
+  } }));
 }
 
 const larguraFicheiro = Math.max(8, ...resultados.map((r) => r.ficheiro.length));
