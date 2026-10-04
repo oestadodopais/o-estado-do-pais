@@ -1,0 +1,63 @@
+---
+/**
+ * AS PORTAS DO ÍNDICE (bloco R3, 04.10.2026, o brief R3, §3, pontos 1 e 4).
+ *
+ * Uma lista simples, uma porta por linha, e por baixo de uma porta as portas das páginas que ela
+ * lista: os temas por baixo de «Temas», as áreas por baixo de «Áreas de governo», as regiões por
+ * baixo de «Regiões», os estudos por baixo de «Estudos», o índice dos concelhos do livro-razão e as
+ * séries por baixo de «Números e fontes». Sem guião, e com o alvo de 44 px em cada porta (a folha
+ * `src/styles/indice.css`).
+ *
+ * CADA ESPÉCIE DE PORTA LEVA A MARCA DA SUA ORIGEM, como nas outras páginas:
+ *   · uma página fixa, o nome que o menu, o rodapé ou o caminho já lhe dão;
+ *   · um lugar, o nome que a Carta lhe dá, com `data-lugar`;
+ *   · um tema, o nome e a linha curta das declarações dos temas, como na página dos temas;
+ *   · um estudo, o título dele, que é a própria porta (`TituloDeTrabalho` com `as="a"`), e não uma
+ *     porta à volta do título: o marcador de um título por confirmar é uma ligação, e uma ligação
+ *     dentro de outra não existe em HTML; a seguir, a língua da edição quando não é a da página, a
+ *     data em que a edição entrou neste repositório e a pergunta transcrita, onde o estudo a tem;
+ *   · uma série, o nome da medida da linha portuguesa (`NomeDaMedida`, pela escada do cartão) e as
+ *     palavras com que o recibo da série o completa.
+ */
+import TituloDeTrabalho from '../TituloDeTrabalho.astro';
+import NomeDaMedida from '../NomeDaMedida.astro';
+import { dataDaCasa } from '../../lib/datas.mjs';
+import { POR_VERIFICAR } from '../../data/marcador.mjs';
+import { ROTULOS_B1 } from '../../data/rotulos-b1.mjs';
+
+const { portas, lang = 'pt', nivel = 1, classe = null } = Astro.props;
+const r = ROTULOS_B1[lang === 'en' ? 'en' : 'pt'];
+---
+<ul class:list={['indice-lista', nivel > 1 && 'indice-lista-filha', classe]}>
+  {portas.map((p) => (
+    p.tipo === 'estudo' ? (
+      <li class="indice-estudo" data-estudo={p.ficha.work.slug} data-estudo-edicao={`${p.ficha.work.slug}/${p.ficha.edicao.lang}`}>
+        <TituloDeTrabalho as="a" href={p.href} class="indice-porta indice-porta-estudo" edicao={p.ficha.edicao} lang={lang} />
+        {p.ficha.edicao.lang !== lang && <span class="indice-lingua"> {r.outraLingua}</span>}
+        {p.ficha.data && (
+          <p class="indice-meta">
+            <time datetime={p.ficha.data} data-nonledger="data-do-repositorio">{dataDaCasa(p.ficha.data)}</time>
+          </p>
+        )}
+        {p.ficha.pergunta && <p class="indice-pergunta" data-verbatim={p.ficha.verbatimDaPergunta}>{p.ficha.pergunta}</p>}
+      </li>
+    ) : p.tipo === 'entrada' ? (
+      <li>
+        <a class="indice-porta indice-porta-tema" href={p.href}>
+          <span class="indice-nome">{p.rotulo}</span>{' '}<span class="indice-linha">{p.linha}</span>
+        </a>
+      </li>
+    ) : p.tipo === 'serie' ? (
+      <li>
+        <a class="indice-porta" href={p.href}><NomeDaMedida linha={p.linha} lang={lang} escada="cartao" class="indice-nome-da-medida" />{' '}{p.sufixo}</a>
+      </li>
+    ) : (
+      <li>
+        {p.tipo === 'lugar'
+          ? <a class="indice-porta" href={p.href} data-lugar>{p.rotulo}</a>
+          : <a class="indice-porta" href={p.href}>{p.rotulo}{p.marcador && <>{' '}<span class="indice-marcador" lang="pt-PT">{POR_VERIFICAR}</span></>}</a>}
+        {p.filhos && p.filhos.length > 0 && <Astro.self portas={p.filhos} lang={lang} nivel={nivel + 1} />}
+      </li>
+    )
+  ))}
+</ul>

@@ -1,0 +1,9 @@
+---
+/* O índice inglês (bloco R3, 04.10.2026), em `/en/index`. Vive numa pasta chamada `index` ao lado
+   de `src/pages/en/index.astro`, que é a primeira página inglesa: o Astro só trata `index` como a
+   página de uma pasta quando é o nome do ficheiro, e uma pasta com esse nome é um segmento do
+   caminho. A construção escreve `dist/en/index/index.html` ao lado de `dist/en/index.html`, e a
+   Vercel serve cada um pelo seu pedido (a medida está ao pé da rota, em `src/lib/routes.mjs`). */
+import IndiceView from '../../../views/IndiceView.astro';
+---
+<IndiceView lang="en" />

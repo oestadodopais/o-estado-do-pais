@@ -107,6 +107,9 @@ export const PAI_DA_ROTA = {
   marcador: 'home',
   agenda: 'home',
   uniaoEuropeia: 'home',
+  /* O ÍNDICE (bloco R3, 04.10.2026) é uma página fixa como a agenda: o caminho dele é
+     «Início › Índice». */
+  indice: 'home',
   /* N1: as sete páginas de assunto pertencem ao índice dos temas. */
   entradaDinheiro: 'temas',
   entradaSalarios: 'temas',
@@ -189,6 +192,8 @@ function etiquetaDaRota(chave, lang) {
     metodo: s.nav.metodo,
     correcoes: s.nav.correcoes,
     sobre: s.nav.sobre,
+    /* O índice chama-se como a porta do rodapé que o abre, e como o seu `<h1>` (bloco R3). */
+    indice: s.nav.indice,
     livroConcelhos: s.nav.municipios,
     marcador: s.marcador.h1,
     /* A página das sugestões chama-se pelo seu `<h1>`, que é também o rótulo da

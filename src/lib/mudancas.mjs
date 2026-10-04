@@ -299,3 +299,34 @@ export function mudancasDoLugar(chave, lang) {
     .filter((m) => noAmbitoDoLugar(m, chave))
     .slice(0, TETO_DAS_MUDANCAS);
 }
+
+/**
+ * O ÂMBITO DO ÍNDICE (bloco R3, 04.10.2026): as últimas linhas do livro-razão que mudaram, uma
+ * vez cada, com a entrada mais recente de cada uma, no máximo oito.
+ *
+ * O ÍNDICE TEM UMA PORTA POR COISA, e é isso que decide o que entra. Cada linha desta lista abre o
+ * recibo da sua linha pelo selo, onde a história inteira está, e o recibo de uma linha não tem
+ * outra porta no índice. As outras duas classes do registo têm a porta delas noutra secção da
+ * mesma página: um estudo publicado está na secção dos estudos, do mais recente para o mais
+ * antigo e com a data dele (é a razão por que a página de um lugar também não os repete, mais
+ * acima neste ficheiro), e uma mudança declarada do projeto é de Portugal, cuja porta é a da
+ * primeira página. Repetir uma porta no mesmo ecrã é o que a L1 do `check:lugar` conta.
+ *
+ * UMA LINHA, UMA VEZ, e não uma entrada, uma linha (§1.117), e pela mesma razão: duas entradas da
+ * mesma linha dariam dois selos para o mesmo recibo. A entrada que fica é a primeira que o
+ * registo dá, que é a mais recente; as outras continuam no registo, que é a porta
+ * «Correções» do índice, e no recibo da linha.
+ *
+ * @param {'pt'|'en'} lang
+ */
+export function mudancasDoIndice(lang) {
+  const vistas = new Set();
+  const saida = [];
+  for (const m of mudancasDoRegisto(lang)) {
+    if (m.tipo !== 'correcao' || vistas.has(m.claim)) continue;
+    vistas.add(m.claim);
+    saida.push(m);
+    if (saida.length === TETO_DAS_MUDANCAS) break;
+  }
+  return saida;
+}

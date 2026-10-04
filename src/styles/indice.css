@@ -1,0 +1,133 @@
+/* =========================================================================
+   O ÍNDICE · `/indice` · `/en/index` (bloco R3, 04.10.2026, o brief R3, §3, ponto 4)
+   =========================================================================
+   Uma coluna de secções na disposição A da casa (`.metodo-secao`, em `site.css`: o nome da secção
+   na coluna do rótulo e as portas no corpo, uma coluna só abaixo de 780 px), listas simples e as
+   gavetas da página dos lugares. Cada porta tem o alvo de 44 px, como as listas de «Lugares»; os
+   nomes compridos partem-se onde for preciso, para nenhuma linha empurrar a página para o lado a
+   390 px. Nenhuma cor nova: a tinta, o cinzento das linhas e o filete da casa. */
+
+.indice-titulo {
+  font-family: var(--f-prosa);
+  letter-spacing: -.014em;
+  font-size: clamp(28px, 4.4vw, 42px);
+  font-weight: 400;
+  line-height: 1.08;
+  margin: clamp(4px, 1vw, 10px) 0 clamp(18px, 2.6vw, 28px);
+}
+
+.indice-corpo {
+  min-width: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.indice-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+.indice-lista li {
+  margin: 0;
+  min-width: 0;
+}
+
+.indice-porta {
+  font-family: var(--f-prosa);
+  font-size: 17px;
+  line-height: 1.3;
+  color: var(--ink);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.indice-porta:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* As portas das páginas que uma porta lista, por baixo dela: um passo para dentro e o filete da
+   casa à esquerda, que diz de quem são. */
+.indice-lista-filha {
+  margin: 0 0 8px 2px;
+  padding-left: 16px;
+  border-left: 1px solid var(--rule);
+}
+.indice-lista-filha .indice-porta {
+  font-size: 16px;
+}
+
+/* Um tema: o nome e, por baixo, a linha curta que a página dos temas também mostra. */
+.indice-porta-tema {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6px 0;
+}
+.indice-nome {
+  font-weight: 600;
+}
+.indice-linha {
+  font-size: 14.5px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* Um estudo: o título é a porta, e por baixo a data em que a edição entrou e a pergunta. */
+.indice-estudo {
+  padding: 4px 0 12px;
+}
+.indice-porta-estudo {
+  font-weight: 600;
+  line-height: 1.25;
+}
+.indice-lingua {
+  font-family: var(--f-instr);
+  font-size: 13px;
+  color: var(--muted);
+}
+.indice-meta {
+  font-family: var(--f-instr);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-size: 12.5px;
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin: 0;
+}
+.indice-pergunta {
+  font-family: var(--f-prosa);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 64ch;
+  margin: 4px 0 0;
+}
+
+.indice-marcador {
+  font-family: var(--f-instr);
+}
+
+/* Os nomes dos lugares em colunas: duas a 390 px, mais com mais papel. */
+.indice-subtitulo {
+  font-family: var(--f-versal);
+  font-size: 14px;
+  letter-spacing: .03em;
+  font-weight: 600;
+  margin: 14px 0 0;
+}
+.indice-lista-de-lugares {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  column-gap: clamp(14px, 2.4vw, 28px);
+}
+.indice-concelhos .gaveta:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+.indice-concelhos .gaveta-corpo {
+  padding-bottom: 10px;
+}

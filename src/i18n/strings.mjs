@@ -212,6 +212,9 @@ export const STRINGS = {
       metodo: 'Método',
       correcoes: 'Correções',
       sobre: 'Sobre',
+      /* O ÍNDICE (bloco R3, 04.10.2026): a sétima porta do rodapé, o `<h1>` da página e a
+         última migalha do caminho dela, uma cadeia só para as três. */
+      indice: 'Índice',
       saltar: 'Saltar para o conteúdo',
       /* O comando que abre a navegação no telemóvel. É a mesma palavra nas duas
          edições, e está na lista de identidades aceites do `CHAVES-EN.md`. */
@@ -1770,6 +1773,24 @@ export const STRINGS = {
       metaTitle: 'Temas · O Estado do País',
       metaDescription: 'Os assuntos e os lugares de Portugal, com uma página para os números de cada assunto.',
     },
+    /* O ÍNDICE (bloco R3, 04.10.2026, o brief R3, §3, ponto 1). A página lista o que o sítio
+       tem, por secção, e as portas geram-se da tabela das rotas e dos dados
+       (`src/lib/indice.mjs`): aqui vivem só o título do `<head>`, a descrição e os nomes das
+       secções. Os nomes das portas são os que cada página já tem (o do menu, o do rodapé, o do
+       caminho, o dos dados), e nenhum se escreve outra vez aqui. Sem algarismos, e sem nenhuma
+       das palavras de `VOZ-MARCADORES.md` fora de uma ligação. */
+    indice: {
+      metaTitle: 'Índice · O Estado do País',
+      metaDescription: 'O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta.',
+      seccoes: {
+        pais: 'O país',
+        lugares: 'Os lugares',
+        uniao: 'A União Europeia',
+        estudos: 'Os estudos',
+        numeros: 'Os números e as fontes',
+        projeto: 'O projeto',
+      },
+    },
     /* A PRIMEIRA PÁGINA DE UM LEITOR COMUM (bloco PP1, 28.09.2026; a decisão do diretor de
        28.09.2026, `DECISIONS.md` §1.133). As palavras dos cinco blocos e das seis entradas são do
        lugar de direção e vivem em `src/data/primeira-pagina.mjs`; aqui fica a mobília à volta
@@ -3125,6 +3146,8 @@ export const STRINGS = {
       metodo: 'Method',
       correcoes: 'Corrections',
       sobre: 'About',
+      /* Ver a razão na edição portuguesa (bloco R3). */
+      indice: 'Index',
       saltar: 'Skip to content',
       menu: 'Menu',
       rotuloPrincipal: 'Main navigation',
@@ -3677,6 +3700,19 @@ export const STRINGS = {
     temas: {
       metaTitle: 'Themes · O Estado do País',
       metaDescription: 'Subjects and places in Portugal: a page of figures for each subject.',
+    },
+    /* Ver a razão na edição portuguesa (bloco R3, 04.10.2026). */
+    indice: {
+      metaTitle: 'Index · O Estado do País',
+      metaDescription: 'The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door.',
+      seccoes: {
+        pais: 'The country',
+        lugares: 'Places',
+        uniao: 'The European Union',
+        estudos: 'Studies',
+        numeros: 'Numbers and sources',
+        projeto: 'The project',
+      },
     },
     /* Ver a razão na edição portuguesa (bloco PP1, 28.09.2026). */
     primeira: {
