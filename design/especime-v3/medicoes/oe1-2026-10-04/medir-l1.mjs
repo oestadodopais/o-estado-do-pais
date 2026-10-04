@@ -62,10 +62,27 @@ if (passagemD) {
     construcao: stamp.commit,
     origem: 'design/especime-v3/medicoes/oe1-2026-10-04/oe1d-l1-check-lugar.log',
     codigo_da_regua: r.status,
-    contagens: {l1_paginas: depois.size, teto_lido: teto.l1_paginas, recibos_oe1: recibos.length},
+    // «estudos» é o nome histórico do campo que check-lugar lê; conta páginas.
+    contagens: {estudos: depois.size, l1_paginas: depois.size, teto_lido: teto.l1_paginas, recibos_oe1: recibos.length},
     conhecidos_positivos: [{nome: 'Uma entrada retirada da lista deixa de reconciliar com a contagem da régua', mordeu: true}],
     paginas: Object.fromEntries(depois),
   };
+  fs.writeFileSync(path.join(AQUI, 'l1-oe1d.json'), JSON.stringify(data, null, 2) + '\n');
+  const plantCode = `import fs from 'node:fs';
+const read = fs.readFileSync;
+fs.readFileSync = function(file, ...args) {
+  const body = read.call(this, file, ...args);
+  if (String(file).endsWith('/oe1-2026-10-04/l1-oe1d.json')) {
+    const copy = JSON.parse(String(body)); copy.contagens.estudos += 1;
+    return JSON.stringify(copy);
+  }
+  return body;
+};
+await import('./scripts/check-lugar.mjs');`;
+  const planted = spawnSync(process.execPath, ['--input-type=module', '-e', plantCode], {cwd: RAIZ, encoding: 'utf8'});
+  assert.equal(planted.status, 1, 'A contagem adulterada tem de ser recusada pela régua.');
+  assert((planted.stdout + planted.stderr).includes('B1 L1: o teto tem de ser o número inteiro medido no registo.'), 'A planta exige a queixa do teto e do registo.');
+  data.conhecidos_positivos.push({nome: 'Uma contagem do registo trocada em memória é recusada pela régua do teto', mordeu: true});
   fs.writeFileSync(path.join(AQUI, 'l1-oe1d.json'), JSON.stringify(data, null, 2) + '\n');
   console.log(JSON.stringify({cabeca: data.cabeca, contagens: data.contagens, conhecidos_positivos: data.conhecidos_positivos}, null, 2));
   process.exit(0);
