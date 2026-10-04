@@ -1,0 +1,43 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "despesa-por-funcao-2024-gf04-ue"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "5,3"
+unit: "% do PIB"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Economic affairs"
+name_source: "dimension.cofog99.category.label.GF04"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Eurostat"
+document:
+  title: "General government expenditure by function (COFOG)"
+  edition: "gov_10a_exp"
+  locator: null
+  kind: "serie"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_exp?format=JSON&lang=EN&freq=A&unit=PC_GDP&sector=S13&na_item=TE&time=2024&geo=EU27_2020&cofog99=GF04"
+access_date: "2026-10-04"
+reference_date: "2024"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "{\"version\":\"2.0\",\"class\":\"dataset\",\"label\":\"General government expenditure by function (COFOG)\",\"source\":\"ESTAT\",\"updated\":\"2026-09-16T23:00:00+0200\",\"value\":{\"0\":5.3},\"id\":[\"freq\",\"unit\",\"sector\",\"cofog99\",\"na_item\",\"geo\",\"time\"],\"size\":[1,1,1,1,1,1,1],\"dimension\":{\"freq\":{\"label\":\"Time frequency\",\"category\":{\"index\":{\"A\":0},\"label\":{\"A\":\"Annual\"}}},\"unit\":{\"label\":\"Unit of measure\",\"category\":{\"index\":{\"PC_GDP\":0},\"label\":{\"PC_GDP\":\"Percentage of gross domestic product (GDP)\"}}},\"sector\":{\"label\":\"Sector\",\"category\":{\"index\":{\"S13\":0},\"label\":{\"S13\":\"General government\"}}},\"cofog99\":{\"label\":\"Classification of the functions of government (COFOG 1999)\",\"category\":{\"index\":{\"GF04\":0},\"label\":{\"GF04\":\"Economic affairs\"}}},\"na_item\":{\"label\":\"National accounts indicator (ESA 2010)\",\"category\":{\"index\":{\"TE\":0},\"label\":{\"TE\":\"Total general government expenditure\"}}},\"geo\":{\"label\":\"Geopolitical entity (reporting)\",\"category\":{\"index\":{\"EU27_2020\":0},\"label\":{\"EU27_2020\":\"European Union - 27 countries (from 2020)\"}}},\"time\":{\"label\":\"Time\",\"category\":{\"index\":{\"2024\":0},\"label\":{\"2024\":\"2024\"}}}},\"extension\":{\"lang\":\"EN\",\"id\":\"GOV_10A_EXP\",\"agencyId\":\"ESTAT\",\"version\":\"1.0\",\"datastructure\":{\"id\":\"GOV_10A_EXP\",\"agencyId\":\"ESTAT\",\"version\":\"75.0\"},\"annotation\":[{\"type\":\"CREATED\",\"date\":\"2015-02-18T08:43:09+0100\"},{\"type\":\"DISSEMINATION_DOI_XML\",\"title\":\"<adms:identifier xmlns:adms=\\\"http://www.w3.org/ns/adms#\\\" xmlns:skos=\\\"http://www.w3.org/2004/02/skos/core.html\\\" xmlns:dct=\\\"http://purl.org/dc/terms/\\\" xmlns:rdf=\\\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\\\"><adms:Identifier rdf:about=\\\"https://doi.org/10.2908/GOV_10A_EXP\\\"><skos:notation rdf:datatype=\\\"http://purl.org/spar/datacite/doi\\\">10.2908/GOV_10A_EXP</skos:notation><dct:creator rdf:resource=\\\"http://publications.europa.eu/resource/authority/corporate-body/ESTAT\\\"/><dct:issued rdf:datatype=\\\"http://www.w3.org/2001/XMLSchema#date\\\">2023-01-19</dct:issued></adms:Identifier></adms:identifier>\"},{\"type\":\"DISSEMINATION_OBJECT_TYPE\",\"title\":\"DATASET\"},{\"type\":\"DISSEMINATION_TIMESTAMP_DATA\",\"date\":\"2026-09-16T11:00:00+0200\"},{\"type\":\"DISSEMINATION_TIMESTAMP_GLOBAL\",\"date\":\"2026-09-16T11:00:00+0200\"},{\"type\":\"DISSEMINATION_TIMESTAMP_PLANNED\",\"date\":\"2026-09-16T11:00:00+0200\"},{\"type\":\"ESMS_HTML\",\"title\":\"Explanatory texts (metadata)\",\"href\":\"https://ec.europa.eu/eurostat/cache/metadata/en/gov_10a_exp_esms.htm\"},{\"type\":\"ESMS_SDMX\",\"title\":\"Explanatory texts (metadata)\",\"href\":\"https://ec.europa.eu/eurostat/api/dissemination/files?file=metadata/gov_10a_exp_esms.sdmx.zip\"},{\"type\":\"OBS_COUNT\",\"title\":\"21429240\"},{\"type\":\"OBS_PERIOD_OVERALL_LATEST\",\"title\":\"2025\"},{\"type\":\"OBS_PERIOD_OVERALL_OLDEST\",\"title\":\"1990\"},{\"type\":\"SOURCE_INSTITUTIONS\",\"text\":\"Eurostat\"},{\"type\":\"UPDATE_DATA\",\"date\":\"2026-09-16T23:00:00+0200\"},{\"type\":\"UPDATE_STRUCTURE\",\"date\":\"2026-04-22T11:00:00+0200\"}],\"positions-with-no-data\":{\"freq\":[],\"unit\":[],\"sector\":[],\"cofog99\":[],\"na_item\":[],\"geo\":[],\"time\":[]}}}"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: freq=A; unit=PC_GDP; sector=S13; cofog99=GF04; na_item=TE; geo=EU27_2020; time=2024; value[0]. Todas as administrações públicas (S13), despesa total (TE), contabilidade nacional. O agregado da União é o publicado pelo Eurostat, não a média aritmética dos países. O localizador é o pedido integral em source_url, com todas as coordenadas. Excerto integral da resposta JSON, sem composição de etiquetas. Reutilização dos dados autorizada com indicação da fonte, conforme https://ec.europa.eu/eurostat/help/copyright-notice. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · despesa-por-funcao-2024-gf04-ue."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

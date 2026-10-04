@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "1 491,8"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Ativos financeiros líquidos de reembolsos"
+name_source: "p. 49 do ficheiro, página impressa 45, Ativos financeiros líquidos de reembolsos, Execução Acumulada 2026"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Entidade Orçamental"
+document:
+  title: "Síntese da Execução Orçamental | agosto 2026"
+  edition: "2026"
+  locator: "p. 49 do ficheiro, página impressa 45, Ativos financeiros líquidos de reembolsos, Execução Acumulada 2026"
+  page: 49
+  kind: "pdf"
+source_url: "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf#page=49"
+access_date: "2026-10-04"
+reference_date: "2026-08"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "      Ativos financeiros líquidos de reembolsos            2 412,7      -10 551,7     1 735,0      1 491,8"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: p. 49 do ficheiro, página impressa 45, Ativos financeiros líquidos de reembolsos, Execução Acumulada 2026. Conta consolidada de administracao central seguranca social. Execução acumulada de janeiro a agosto, não apenas do mês de agosto. Saldo global é receita efetiva menos despesa efetiva. Passivos financeiros líquidos são receita de passivos menos amortizações, não a parcela da despesa efetiva financiada por dívida. O financiamento inclui ativos financeiros e variações de tesouraria. Licença aberta não indicada no documento. A página da Entidade Orçamental declara todos os direitos reservados. Publicam-se os números, excertos e referências; o PDF não é alojado no sítio. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

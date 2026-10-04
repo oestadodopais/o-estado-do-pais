@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "execucao-2026-07-cem-euros-funcao-09"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "11,66"
+unit: "%"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2026-07"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "Dividir a despesa efetiva consolidada desta função pela despesa efetiva consolidada da administração central no mesmo período, multiplicar por cem e arredondar a duas casas decimais. O total inclui as diferenças de consolidação, que não são uma função."
+derivation_en: "Divide this function's consolidated effective expenditure by central government's consolidated effective expenditure in the same period, multiply by one hundred and round to two decimal places. The total includes consolidation differences, which are not a function."
+derived_from:
+  - "execucao-2026-07-despesa-funcao-09"
+  - "execucao-2026-07-despesa-efetiva-administracao-central"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( execucao-2026-07-despesa-funcao-09 / execucao-2026-07-despesa-efetiva-administracao-central * 100 , 2 )"
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] Dividir a despesa efetiva consolidada desta função pela despesa efetiva consolidada da administração central no mesmo período, multiplicar por cem e arredondar a duas casas decimais. O total inclui as diferenças de consolidação, que não são uma função. · [note do motor] Euros de cada 100 euros da despesa definida no denominador. Arredondamento a duas casas decimais, metades para fora de zero. O somatório das parcelas arredondadas pode não ser 100. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · execucao-2026-07-cem-euros-funcao-09."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

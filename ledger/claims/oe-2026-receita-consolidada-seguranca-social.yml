@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "oe-2026-receita-consolidada-seguranca-social"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "96 083 302 726,00"
+unit: "euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "Receita total consolidada no âmbito do setor da Segurança Social"
+name_source: "p. 2, Receita total consolidada no âmbito do setor da Segurança Social, última coluna"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Entidade Orçamental"
+document:
+  title: "Mapa 9"
+  edition: "2026"
+  locator: "p. 2, Receita total consolidada no âmbito do setor da Segurança Social, última coluna"
+  page: 2
+  kind: "pdf"
+source_url: "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2026/OrcamentoEstadoAprovado/MapasContabilisticos/OE2026_doc10_Mapa09.pdf#page=2"
+access_date: "2026-10-04"
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "                                                            Receita total consolidada no âmbito do setor da Segurança Social                                  5 675 980 393,00   2 917 932 591,00   5 147 281 411,00    39 483 402 954,00    42 503 946 379,00    367 184 953,00   96 083 302 726,00"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: p. 2, Receita total consolidada no âmbito do setor da Segurança Social, última coluna. Fonte originária impressa no mapa: IGFSS, IP; documento publicado pela Entidade Orçamental. Total publicado no mapa da lei, com operações financeiras. A consolidação é a que o mapa define para o perímetro nomeado no rótulo. Não se subtraem estes totais para obter saldo efetivo. Não se somam os subsetores para obter um total consolidado. Licença aberta não indicada no documento. A página da Entidade Orçamental declara todos os direitos reservados. Publicam-se os números, excertos e referências; o PDF não é alojado no sítio. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · oe-2026-receita-consolidada-seguranca-social."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
