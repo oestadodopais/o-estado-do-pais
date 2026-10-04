@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-04T22:33:11+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/lib/pais.mjs",
+   "descricao": "os estudos em curso vão para o fim e não para a cabeça",
+   "sha256_antes": "36a731a46ba1ea7219430256fa59a5600c839501a03b7cef44ac092e4dd5496e",
+   "sha256_depois": "843e714768b9d4d2764906d239c288da3f69eff794a23367f1c2c3ce1acc5c19",
+   "contexto_antes": " {\n  // H2: os estudos em curso à cabeça; dentro de cada grupo, a data e a ordem do arquivo.\n  return WORKS.map(w => fichaDoEstudo(w, lang)).sort((a, b) =>\n    Number(Boolean(b.work.emCurso)) - Number(Boolean(a.work.emCurso)) ||\n    (b.data ?? '').localeCompare(a.data ?? '') || WORKS.indexOf(a.work) - WORKS.indexOf(b.work));\n}\n/* «O que mudou» mudou de casa a 22.09.2026 (B1c): a lista ",
+   "contexto_depois": " {\n  // H2: os estudos em curso à cabeça; dentro de cada grupo, a data e a ordem do arquivo.\n  return WORKS.map(w => fichaDoEstudo(w, lang)).sort((a, b) =>\n    Number(Boolean(a.work.emCurso)) - Number(Boolean(b.work.emCurso)) ||\n    (b.data ?? '').localeCompare(a.data ?? '') || WORKS.indexOf(a.work) - WORKS.indexOf(b.work));\n}\n/* «O que mudou» mudou de casa a 22.09.2026 (B1c): a lista "
+  },
+  {
+   "id": "P2",
+   "ficheiro": "scripts/gate-html.mjs",
+   "descricao": "o resolvedor volta a aceitar o ficheiro .html irmão de um caminho sem extensão (a I192 reaberta)",
+   "sha256_antes": "1b0706e3d8eb58011936bbcaf03c14f17feb92a8af41d883895226cd1eba70c1",
+   "sha256_depois": "bf9d4b4e052c44aa70b216b19adef7b0cf33c71ceaf8f6c786a0e54164b22f36",
+   "contexto_antes": "in('/'));\n    }\n  };\n  anda(DIST);\n}\nfunction existeConstruido(caminho) {\n  if (caminho === CAMINHO_DA_PROVA) return true; // escrito no fim deste varrimento\n  if (path.posix.extname(caminho)) return CONSTRUIDOS.has(caminho);\n  const limpo = caminho.replace(/\\/$/, '');\n  return (\n    CONSTRUIDOS.has(limpo + '/index.html') ||\n    (limpo === '' && CONSTRUIDOS.has('/index.html'))\n  );\n",
+   "contexto_depois": "in('/'));\n    }\n  };\n  anda(DIST);\n}\nfunction existeConstruido(caminho) {\n  if (caminho === CAMINHO_DA_PROVA) return true; // escrito no fim deste varrimento\n  if (path.posix.extname(caminho) || CONSTRUIDOS.has(caminho + '.html')) return true;\n  const limpo = caminho.replace(/\\/$/, '');\n  return (\n    CONSTRUIDOS.has(limpo + '/index.html') ||\n    (limpo === '' && CONSTRUIDOS.has('/index.html'))\n  );\n"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "scripts/check-lugar.mjs",
+   "descricao": "a isenção do endereço volta a descontar o bloco inteiro (a I193 reaberta), contra o comentário e os controlos",
+   "sha256_antes": "705c192e944817d74964e2f95e8e235aac5cc7ca74cf62725ccdc27ce8de4826",
+   "sha256_depois": "1a65b28d27540fe0b7fd4f607ea16a806cf5e9f20634e9ec30e8d1795d2a2084",
+   "contexto_antes": "json_indicador`), que é um caminho da fonte e não uma palavra da casa',\n    padrao: /(?<![\\w/])https?:\\/\\/www\\.ine\\.pt\\/ine\\/json_indicador\\/[^\\s<>\"'«»]+/,\n    soTrecho: true,\n  },\n];\n\n/* ---------------------------------------------------------------------------\n * A LEITURA DO TEXTO DA CASA\n * --------------------------------------",
+   "contexto_depois": "json_indicador`), que é um caminho da fonte e não uma palavra da casa',\n    padrao: /(?<![\\w/])https?:\\/\\/www\\.ine\\.pt\\/ine\\/json_indicador\\/[^\\s<>\"'«»]+/,\n    soTrecho: false,\n  },\n];\n\n/* ---------------------------------------------------------------------------\n * A LEITURA DO TEXTO DA CASA\n * --------------------------------------"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 19 páginas de áreas onde o medidas.json diz 20",
+   "sha256_antes": "0cc407ce19c0d292115956c699a546ccb6c1df67cb4eee5d25ed2d42a2a72e18",
+   "sha256_depois": "aec243ae6752fc1d4b4af52ea92eae627e07eccb78d51c721c8f0260cfa7adfc",
+   "contexto_antes": "ntes da saída antecipada dos documentos. | Varrimento integral em `medir-h2.mjs`; planta da ligação encaixada. |\n| 3 · I191 | 0 portas para `/texto` ou `/text` nas 20 páginas de áreas. O título liga à página do estudo; a porta auxiliar redundante foi retirada. | A2 de `check:areas`, `check:mortos` e planta da rota antiga. |\n| 4 · I192 | Cami",
+   "contexto_depois": "ntes da saída antecipada dos documentos. | Varrimento integral em `medir-h2.mjs`; planta da ligação encaixada. |\n| 3 · I191 | 0 portas para `/texto` ou `/text` nas 19 páginas de áreas. O título liga à página do estudo; a porta auxiliar redundante foi retirada. | A2 de `check:areas`, `check:mortos` e planta da rota antiga. |\n| 4 · I192 | Cami"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/index.html",
+   "descricao": "a marca «em curso» desaparece da primeira página construída, contra o relatório (1 marca) e o código",
+   "sha256_antes": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba",
+   "sha256_depois": "c71102b2749abda1be189765dbf4f9f24e146b80f92a70c48d2902721a6f82c0",
+   "contexto_antes": "/span><span>Cultura</span><span>publicado a <time datetime=\"2026-10-01\" data-nonledger=\"data-do-repositorio\">01.10.2026</time></span><span data-estudo-em-curso>em curso</span></p><p class=\"estudo-resumo lugar-estudo-leitura\">O dinheiro do Estado é o que chegou; o da câmara é o que falta. Os documentos mostram três totais difer",
+   "contexto_depois": "/span><span>Cultura</span><span>publicado a <time datetime=\"2026-10-01\" data-nonledger=\"data-do-repositorio\">01.10.2026</time></span><span data-estudo-em-curso>em breve</span></p><p class=\"estudo-resumo lugar-estudo-leitura\">O dinheiro do Estado é o que chegou; o da câmara é o que falta. Os documentos mostram três totais difer"
+  }
+ ]
+}
