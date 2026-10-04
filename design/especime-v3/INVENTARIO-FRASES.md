@@ -3983,3 +3983,26 @@ lugar, tema, data e estado, e conserva a varredura dos marcadores da voz.
 | chave | português | inglês | classe |
 |---|---|---|---|
 | `primeira.emCurso` | em curso até {ano} | ongoing until {ano} | conteúdo, estado declarado na ficha |
+
+
+## RP4 · palavras do desenho e da tabela das séries
+
+O título do SVG é conteúdo composto, conferido carácter a carácter pela F21 em `tests/formas/serie-do-pais.mjs`: nome declarado da série, primeiro período e último período por extenso. Não é uma frase fixa: quando o livro ganha um ponto, o extremo muda. A régua lexical não extrai o interior do SVG nem os cabeçalhos destas tabelas de dados; as cadeias usadas ficam aqui registadas, sem as declarar falsamente como frases fixas rendidas. A planta de uma série trocada e a recomposição do título guardam a ligação ao livro. A S6 confere os cabeçalhos da tabela pela cadência e a expressão da lacuna contra a série.
+
+| cadeia de conteúdo | pt | en |
+|---|---|---|
+| `livro.serieNoTempo.grafico` | {nome}, de {primeiro} a {ultimo} | {nome}, from {primeiro} to {ultimo} |
+| `livro.serieNoTempo.periodoPorExtenso` | {periodo} de {ano} | {periodo} of {ano} |
+| `livro.serieNoTempo.anoK` | Ano | Year |
+| `livro.serieNoTempo.semValor` | sem valor | no value |
+| `livro.serieNoTempo.meses` | jan. · fev. · mar. · abr. · mai. · jun. · jul. · ago. · set. · out. · nov. · dez. | Jan · Feb · Mar · Apr · May · Jun · Jul · Aug · Sep · Oct · Nov · Dec |
+| `livro.serieNoTempo.trimestres` | Primeiro trimestre · Segundo trimestre · Terceiro trimestre · Quarto trimestre | First quarter · Second quarter · Third quarter · Fourth quarter |
+| `livro.serieNoTempo.semestres` | Primeiro semestre · Segundo semestre | First half · Second half |
+| `livro.serieNoTempo.numeros` | zero · um · dois · três · quatro · cinco · seis · sete · oito · nove · dez · onze · doze · treze · catorze · quinze · dezasseis · dezassete · dezoito · dezanove | zero · one · two · three · four · five · six · seven · eight · nine · ten · eleven · twelve · thirteen · fourteen · fifteen · sixteen · seventeen · eighteen · nineteen |
+| `livro.serieNoTempo.dezenas` | vinte · trinta · quarenta · cinquenta · sessenta · setenta · oitenta · noventa | twenty · thirty · forty · fifty · sixty · seventy · eighty · ninety |
+| `livro.serieNoTempo.centenas` | cento · duzentos · trezentos · quatrocentos · quinhentos · seiscentos · setecentos · oitocentos · novecentos | one hundred · two hundred · three hundred · four hundred · five hundred · six hundred · seven hundred · eight hundred · nine hundred |
+| `livro.serieNoTempo.cem` | cem | one hundred |
+| `livro.serieNoTempo.mil` | mil | thousand |
+| `livro.serieNoTempo.uneNumero` |  e  |  and  |
+
+O cartão da União, que o livro já prendia à série mas nenhuma página rendia, entra em Preços. A leitura vive em `src/data/leitura-ihpc-uniao.mjs`, nas duas línguas, e passa pela K17 como as outras. As folhas do sinal vêm da leitura do IHPC da casa; a folha que muda o âmbito diz «os preços na União Europeia estavam, na medida harmonizada,» e «prices in the European Union were, on the harmonised measure,». O âmbito apoia-se no excerto da própria linha e a definição no literal já selado do Eurostat. A auditoria é `tests/cartao/leituras-provadas.json`. Não é uma frase fixa do inventário: cada ramo é conferido contra a declaração e os valores selados.

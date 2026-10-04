@@ -77,6 +77,8 @@
  * pela marca `data-cartao-definicao`.
  */
 import Claim from './Claim.astro';
+import { routePath } from '../lib/routes.mjs';
+import SerieDoPais from './formas/SerieDoPais.astro';
 import Provenance from './Provenance.astro';
 import CampoDaLinha from './CampoDaLinha.astro';
 import NomeDaMedida from './NomeDaMedida.astro';
@@ -321,6 +323,9 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
         )}
         <Provenance id={c.id} lang={lang} />
       </p>
+
+      {/* RP4: a série inteira é a porta do seu recibo, depois do valor. */}
+      {c.serie && <a class="cartao-medida-serie" data-cartao-serie={c.serie} href={routePath('serie', lang, { slug: c.serie })}><SerieDoPais ids={[c.serie]} lang={lang} /></a>}
 
       {/* (d) A RÉGUA. Rende-se só onde houver linha selada ou valor de referência
           declarado; onde não houver, não se desenha e não se escreve a ausência por

@@ -44,6 +44,8 @@
  * `--json <ficheiro>` escreve as contas e as plantas (o registo `plantas-rp3.json` do
  * bloco é escrito assim, pelo guião das medições, fora da cadeia).
  */
+import { t } from '../../src/i18n/strings.mjs';
+import { ENTRADAS } from '../../src/data/primeira-pagina.mjs';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
@@ -255,7 +257,7 @@ function celulasDoLivro(series, linhas) {
       erros.S5.push(`${quem}: o valor e o período da linha (${l.reference_date}: ${l.value}) não são o ponto da série «${s.id}» com o mesmo período.`);
       continue;
     }
-    if (Object.prototype.hasOwnProperty.call(DOMINIO_DAS_MEDIDAS, lid)) {
+    if (Object.prototype.hasOwnProperty.call(DOMINIO_DAS_MEDIDAS, lid) || ENTRADAS.some((e) => e.seccoes.some((s) => s.cartoes.includes(lid)))) {
       if (ponto !== pontos[pontos.length - 1]) {
         erros.S5.push(`${quem}: é um cartão nacional e o seu período (${l.reference_date}) não é o último ponto da série «${s.id}» (${pontos[pontos.length - 1]?.periodo}): o cartão está desfasado da série.`);
       } else {
@@ -566,21 +568,48 @@ function celulaDosRecibos(s, htmlPorLingua) {
       erros.push(`${quem}: o recibo não tem a tabela da série.`);
       continue;
     }
+    /* RP4: uma linha por ano, com cada ponto na coluna da sua cadência.
+       O período completo permanece em cada célula para quem lê sem o desenho. */
     const linhas = tabela.querySelectorAll('tbody tr');
+    const cadencias = { mensal: 12, trimestral: 4, semestral: 2, anual: 1 };
+    const n = cadencias[s.periodicidade];
+    const st = t(lang).livro.serieNoTempo;
+    const rotulos = s.periodicidade === 'mensal' ? st.meses : s.periodicidade === 'trimestral' ? st.trimestres : s.periodicidade === 'semestral' ? st.semestres : [t(lang).livro.serie.valorK];
+    if (JSON.stringify(tabela.querySelectorAll('thead th').map(texto)) !== JSON.stringify([st.anoK, ...rotulos])) erros.push(`${quem}: os cabeçalhos não são os períodos da cadência`);
+    const anoInicial = Number(s.primeiro_periodo.slice(0, 4));
+    const anoFinal = Number(s.ultimo_periodo.slice(0, 4));
+    if (linhas.length !== anoFinal - anoInicial + 1) erros.push(`${quem}: a tabela não tem uma linha por ano`);
     const vistos = [];
-    for (const tr of linhas) {
-      const ponto = tr.querySelector('[data-ponto]');
-      const data = tr.querySelector('[data-nonledger="data-da-linha"]');
-      const marca = tr.querySelector('[data-ponto-bandeira]');
-      const chave = String(ponto?.getAttribute('data-ponto') ?? '');
-      vistos.push([chave, semEspacos(texto(ponto)), texto(data), marca ? texto(marca) : null]);
-      /* NENHUM ALGARISMO FORA DAS ORIGENS ADMITIDAS, numa cópia da linha da tabela. */
+    for (const [i, tr] of linhas.entries()) {
+      const ano = String(anoInicial + i);
+      if (tr.getAttribute('data-serie-ano') !== ano || texto(tr.querySelector('th')) !== ano) erros.push(`${quem}: o ano da linha da tabela não é ${ano}`);
+      const celulas = tr.querySelectorAll('td');
+      if (celulas.length !== n) erros.push(`${quem}: a linha do ano não tem as colunas da cadência`);
+      for (const [j, td] of celulas.entries()) {
+        const per = s.periodicidade === 'anual' ? ano : `${ano}-${s.periodicidade === 'mensal' ? String(j + 1).padStart(2, '0') : `${s.periodicidade === 'trimestral' ? 'T' : 'S'}${j + 1}`}`;
+        if (td.getAttribute('data-serie-celula') !== per) erros.push(`${quem}: a célula não está na coluna de ${per}`);
+        const ponto = td.querySelector('[data-ponto]');
+        const esperado = s.pontos.find((p) => p.periodo === per);
+        const lacuna = s.lacunas.find((p) => p.periodo === per);
+        const data = td.querySelector('[data-nonledger="data-da-linha"]');
+        const marca = td.querySelector('[data-ponto-bandeira]');
+        if (esperado) {
+          if (td.querySelectorAll('[data-ponto]').length !== 1) erros.push(`${quem}: ponto em falta ou repetido em ${per}`);
+          if (ponto?.getAttribute('data-ponto') !== `${s.id}#${per}`) erros.push(`${quem}: ponto na coluna de outro período`);
+          vistos.push([ponto?.getAttribute('data-ponto') ?? '', semEspacos(texto(ponto)), texto(data), marca ? texto(marca) : null]);
+          if (marca && marca.getAttribute('data-ponto-bandeira') !== `${s.id}#${per}`) erros.push(`${quem}: marca de outro período`);
+        } else if (lacuna) {
+          const l = td.querySelector('[data-serie-lacuna-tabela]');
+          const palavras = lang === 'pt' ? 'sem valor' : 'no value';
+          if (ponto || marca || l?.getAttribute('data-serie-lacuna-tabela') !== `${s.id}#${per}` || texto(data) !== periodoNaPagina(per, lang) || texto(l) !== `${periodoNaPagina(per, lang)} ${palavras}`) erros.push(`${quem}: a lacuna não é a declarada em ${per}`);
+        } else if (texto(td) || ponto) erros.push(`${quem}: valor fora dos períodos da série`);
+      }
       const copia = parse(tr.outerHTML);
-      for (const el of copia.querySelectorAll('[data-ponto], [data-nonledger="data-da-linha"], [data-ponto-bandeira]')) el.remove();
-      if (/\d/.test(texto(copia))) erros.push(`${quem}: a linha de ${chave} tem algarismos fora das origens admitidas («${texto(copia).slice(0, 60)}»).`);
+      for (const el of copia.querySelectorAll('th, [data-ponto], [data-nonledger="data-da-linha"], [data-ponto-bandeira]')) el.remove();
+      if (/\d/.test(texto(copia))) erros.push(`${quem}: a linha do ano ${ano} tem algarismos fora das origens admitidas`);
     }
     const esperados = (s.pontos ?? []).map((p) => [`${s.id}#${p.periodo}`, semEspacos(p.valor), periodoNaPagina(String(p.periodo), lang), p.bandeira ?? null]);
-    if (vistos.length !== esperados.length) erros.push(`${quem}: a tabela tem ${vistos.length} linhas e a série ${esperados.length} pontos.`);
+    if (vistos.length !== esperados.length) erros.push(`${quem}: a tabela tem ${vistos.length} pontos e a série ${esperados.length} pontos.`);
     for (let i = 0; i < Math.min(vistos.length, esperados.length); i++) {
       const [ck, cv, cd, cm] = vistos[i];
       const [ek, ev, ed, em] = esperados[i];
@@ -702,6 +731,8 @@ if (PROVA && noTempo.length) {
     celulasDoLivro(series, copiaDasLinhas('ipc-variacao-homologa', (l) => { l.value = '3,31'; })).erros);
   planta('S5', 'um cartão desfasado: a série tem um ponto mais novo', 'o cartão está desfasado da série', () =>
     celulasDoLivro(copiaDasSeries('serie-ipc-variacao-homologa', (s) => { s.pontos.push({ periodo: '2026-09', valor: '3,40', excerto: 'x', bandeira: null }); }), linhas).erros);
+  planta('S5', 'o novo cartão da União desfasado da sua série', 'o cartão está desfasado da série', () =>
+    celulasDoLivro(copiaDasSeries('serie-ihpc-variacao-homologa-ue', (s) => { s.pontos.push({ periodo: '2026-09', valor: '3,40', excerto: 'x', bandeira: null }); }), linhas).erros);
   if (temDist) {
     const id = 'serie-remuneracao-bruta-mensal-media';
     const s = series.get(id);
@@ -709,13 +740,24 @@ if (PROVA && noTempo.length) {
     const en = reciboEmDisco(id, 'en');
     const estraga = (html, de, para) => html.replace(de, para);
     planta('S6', 'um valor trocado na tabela', 'a linha 1 da tabela diz', () => ({ S6: celulaDosRecibos(s, { pt: estraga(pt, '>1 534<', '>1 535<'), en }) }));
-    planta('S6', 'uma linha tirada da tabela', 'a tabela tem 5 linhas', () => {
+    planta('S6', 'um ponto tirado da tabela', 'ponto em falta', () => {
       const root = parse(pt);
-      root.querySelector(`[data-serie-tabela="${id}"] tbody tr`)?.remove();
+      root.querySelector(`[data-serie-tabela="${id}"] [data-ponto]`)?.remove();
       return { S6: celulaDosRecibos(s, { pt: root.toString(), en }) };
     });
+    planta('S6', 'duas colunas trocadas', 'célula não está na coluna', () => {
+      const root = parse(pt); const celulas = root.querySelectorAll(`[data-serie-tabela="${id}"] tbody tr td`);
+      const a = celulas[0].outerHTML; const b = celulas[1].outerHTML;
+      celulas[0].replaceWith(b); celulas[1].replaceWith(a);
+      return { S6: celulaDosRecibos(s, { pt: root.toString(), en }) };
+    });
+    planta('S6', 'uma lacuna apagada da tabela anual', 'lacuna não é a declarada', () => {
+      const sid = 'serie-linha-de-risco-de-pobreza'; const root = parse(reciboEmDisco(sid, 'pt'));
+      root.querySelector('[data-serie-lacuna-tabela]')?.remove();
+      return { S6: celulaDosRecibos(series.get(sid), { pt: root.toString(), en: reciboEmDisco(sid, 'en') }) };
+    });
     planta('S6', 'um algarismo solto na tabela', 'algarismos fora das origens admitidas', () => ({
-      S6: celulaDosRecibos(s, { pt: estraga(pt, '<td class="serie-marca">', '<td class="serie-marca">7 '), en }),
+      S6: celulaDosRecibos(s, { pt: pt.replace(/(<td[^>]*data-serie-celula[^>]*>)/, '$1 7 '), en }),
     }));
     planta('S6', 'as duas edições com valores diferentes', 'a linha 1 da tabela diz', () => ({ S6: celulaDosRecibos(s, { pt, en: estraga(en, '>1 534<', '>1 533<') }) }));
     planta('S6', 'o período escrito fora da regra da casa', 'a linha 1 da tabela diz', () => {

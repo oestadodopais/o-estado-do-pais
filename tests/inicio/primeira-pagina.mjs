@@ -15,6 +15,7 @@
  * Uso: node tests/inicio/primeira-pagina.mjs [--prova] [--json saída]   (OEDP_DIST aponta outra construção)
  */
 import fs from 'node:fs';
+import { conferirSerieDoBloco, plantasDaSerieDoBloco } from './serie-do-bloco.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { conferirAuditoriaDosBlocos, conferirBlocosDaPagina, plantasDosBlocos, idsDosBlocos, ENTRADAS, parse } from './blocos.mjs';
@@ -45,6 +46,14 @@ for (const p of paginas) {
   if (!fs.existsSync(f)) { erros.push(`PP1 · ${p.rota}: a página não existe na construção`); continue; }
   const r = conferirBlocosDaPagina(parse(fs.readFileSync(f, 'utf8')), p.lang, p.rota, { ids: p.ids, primeira: p.primeira });
   erros.push(...r.erros);
+  if (p.primeira) {
+    const html = fs.readFileSync(f, 'utf8');
+    erros.push(...conferirSerieDoBloco(parse(html), p.lang));
+    if (process.argv.includes('--prova')) for (const x of plantasDaSerieDoBloco(html, p.lang)) {
+      relatorio.plantas.push(x);
+      if (!x.mordeu) erros.push(`RP4 NÃO MORDEU ${x.nome}: ${x.queixa}`);
+    }
+  }
   relatorio.paginas.push({ rota: p.rota, ...r.contas, erros: r.erros.length });
 }
 const e = conferirEntradas(DIST);
