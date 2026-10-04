@@ -325,7 +325,7 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
       </p>
 
       {/* RP4: a série inteira é a porta do seu recibo, depois do valor. */}
-      {c.serie && <a class="cartao-medida-serie" data-cartao-serie={c.serie} href={routePath('serie', lang, { slug: c.serie })}><SerieDoPais ids={[c.serie]} lang={lang} /></a>}
+      {c.serie && <a class="cartao-medida-serie" data-cartao-serie={c.serie} href={routePath('serie', lang, { slug: c.serie })}><SerieDoPais ids={[c.serie]} lang={lang} largura={240} altura={160} /></a>}
 
       {/* (d) A RÉGUA. Rende-se só onde houver linha selada ou valor de referência
           declarado; onde não houver, não se desenha e não se escreve a ausência por
