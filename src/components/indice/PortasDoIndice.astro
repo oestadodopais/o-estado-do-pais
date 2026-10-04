@@ -22,7 +22,6 @@
 import TituloDeTrabalho from '../TituloDeTrabalho.astro';
 import NomeDaMedida from '../NomeDaMedida.astro';
 import { dataDaCasa } from '../../lib/datas.mjs';
-import { POR_VERIFICAR } from '../../data/marcador.mjs';
 import { ROTULOS_B1 } from '../../data/rotulos-b1.mjs';
 import { HREFLANG } from '../../lib/routes.mjs';
 
@@ -57,7 +56,7 @@ const r = ROTULOS_B1[lang === 'en' ? 'en' : 'pt'];
       <li>
         {p.tipo === 'lugar'
           ? <a class="indice-porta" href={p.href} data-lugar>{p.rotulo}</a>
-          : <a class="indice-porta" href={p.href}>{p.rotulo}{p.marcador && <>{' '}<span class="indice-marcador" lang="pt-PT">{POR_VERIFICAR}</span></>}</a>}
+          : <a class="indice-porta" href={p.href}>{p.rotulo}</a>}
         {p.filhos && p.filhos.length > 0 && <Astro.self portas={p.filhos} lang={lang} nivel={nivel + 1} />}
       </li>
     )

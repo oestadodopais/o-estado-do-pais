@@ -120,10 +120,6 @@
   margin: 4px 0 0;
 }
 
-.indice-marcador {
-  font-family: var(--f-instr);
-}
-
 /* Os nomes dos lugares em colunas: duas a 390 px, mais com mais papel. */
 .indice-subtitulo {
   font-family: var(--f-versal);
