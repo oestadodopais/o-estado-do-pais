@@ -22,23 +22,31 @@
  *        irmão seria a primeira página inglesa, e um resolvedor que o aceitasse daria por boa uma
  *        porta que no ar não abre o índice;
  *   I2 · o índice e o mapa do sítio dizem as mesmas páginas do leitor (e as duas páginas do índice estão
- *        no mapa): cada endereço do mapa é uma
+ *        no mapa, e o mapa só tem rotas da tabela: um endereço que `matchPath()` não reconhece é um erro, e
+ *        não um endereço saltado em silêncio, desde a passagem R3-b): cada endereço do mapa é uma
  *        porta do índice da mesma edição, menos as famílias por dado que entram pela sua lista (as
  *        linhas, pelo índice das linhas; os livros dos concelhos, pelo índice dos concelhos do
  *        livro-razão), cuja lista tem de ser uma porta, e menos a própria página; e cada porta do
  *        índice está no mapa, menos as páginas que levam `noindex` e que a lista da sua família
  *        também lista (os estudos sem leitura escrita, que a lista dos estudos mostra e o filtro do
- *        mapa do sítio exclui por escrito, em `astro.config.mjs`);
+ *        mapa do sítio exclui por escrito, em `astro.config.mjs`); «a lista mostra-a» quer dizer uma
+ *        ligação `<a href>` para ela dentro do `<main>` da página da lista, analisada como HTML, e não a
+ *        cadeia `href="…"` no texto cru, que um comentário também trazia (a passagem R3-b);
  *   I3 · todas as rotas de leitor da tabela estão no índice, nas duas edições: cada chave com páginas
  *        construídas tem a porta de cada uma, menos as páginas do resultado da caixa das sugestões,
  *        que não podem estar (§1.154), as famílias que entram pela sua lista, as edições datadas
  *        dos estudos com sucessor (§1.145) e a própria página;
  *   I4 · os 308 concelhos estão todos, uma vez cada, dentro de uma gaveta fechada, e cada gaveta tem
- *        exatamente os concelhos que a página construída do seu distrito ou ilha lista;
+ *        exatamente os concelhos que a página construída do seu distrito ou ilha lista; e 308 é um facto
+ *        escrito aqui, e não a contagem da construção: as portas distintas, as páginas construídas e a
+ *        soma das gavetas têm de ser 308 (a passagem R3-b: um concelho que faltasse de forma coerente na
+ *        construção, no mapa, na página do distrito e no índice passava);
  *   I5 · os estudos do índice são os da lista dos estudos da mesma edição, pela mesma ordem, cada um
  *        com a mesma porta e a mesma data;
  *   I6 · «O que mudou» do índice é o começo do registo: as primeiras oito linhas distintas entre as
- *        correções e as atualizações do registo construído, cada uma com a sua entrada mais recente,
+ *        correções e as atualizações do registo construído, cada uma com a sua entrada mais recente
+ *        (escolhida aqui pela data e, no mesmo dia, pelo número da entrada, e não pela posição no
+ *        registo, desde a passagem R3-b),
  *        a mesma data, os mesmos dois valores e o mesmo lugar escrito, e com a marca da fonte para o
  *        recibo da sua linha; uma linha reunida noutra (`MEDIDA_REUNIDA`) não entra, porque a medida
  *        entra pela linha que fica; e nenhuma linha da lista se lê igual a outra (a passagem final do
@@ -53,7 +61,10 @@
  * uma porta para uma página que só existe como ficheiro `.html` irmão, uma página do resultado no
  * índice, um endereço do mapa sem porta, o próprio índice fora do mapa, um estudo da lista em falta,
  * um concelho na gaveta de outro distrito, uma gaveta aberta, uma linha repetida em «O que mudou», uma
- * linha reunida que entra como cópia de outra e se lê igual a ela, e o lugar de uma linha trocado.
+ * linha reunida que entra como cópia de outra e se lê igual a ela, e o lugar de uma linha trocado; e as
+ * quatro da passagem R3-b: um endereço do mapa fora da tabela das rotas, a porta de um estudo que a lista
+ * só traz num comentário, uma construção coerente com 307 concelhos, e duas entradas da mesma linha no
+ * mesmo dia pela ordem errada no registo. Uma planta pode exigir que as suas sejam as únicas queixas.
  * O índice intacto tem de passar antes delas.
  *
  * Uso: node tests/indice/indice.mjs [--prova] [--json <ficheiro>]   (`OEDP_DIST` mede outra construção)
@@ -74,6 +85,14 @@ const RESULTADO_DA_CAIXA = new Set(['sugestoesObrigado', 'sugestoesVazia', 'suge
 const LISTA_DA_FAMILIA = { estudo: 'estudos' };
 /** O teto do que uma lista «O que mudou» mostra, escrito aqui e não importado (é o da A2 do `check:pais`). */
 const TETO = 8;
+/**
+ * OS CONCELHOS DE PORTUGAL SÃO 308, e o número escreve-se aqui como um facto, não se conta na construção
+ * (a passagem R3-b, o achado 8 da leitura a frio do Sol): são os municípios da Carta Administrativa
+ * Oficial de Portugal (CAOP) de 2025, da Direção-Geral do Território, cujos três extratos o projeto aloja
+ * em `public/dados/` (`src/data/carta-dos-lugares.mjs`) e que o `check:mapa` (R2) conta uma vez cada nas
+ * páginas de distrito. Se a Carta mudar o número, muda esta linha, com a fonte.
+ */
+const CONCELHOS_DE_PORTUGAL = 308;
 
 const desfaz = (s) =>
   String(s ?? '')
@@ -147,11 +166,16 @@ const ler = (caminho) => {
 /**
  * TODAS AS CONFERÊNCIAS, sobre o que lhe derem: as páginas do índice já lidas, o mapa e as páginas
  * construídas. As plantas chamam esta função com cópias estragadas.
- * @param {{ indice: Record<string, string>, mapa: Set<string>, paginas: string[], existe?: (f: string) => boolean }} entrada
+ * @param {{ indice: Record<string, string>, mapa: Set<string>, paginas: string[], existe?: (f: string) => boolean, lerPagina?: (caminho: string) => string | null }} entrada
  */
-export function conferirIndice({ indice, mapa, paginas, existe }) {
+export function conferirIndice({ indice, mapa, paginas, existe, lerPagina = ler }) {
   const erros = [];
   const contas = {};
+  /* I2 · O MAPA SÓ TEM ROTAS DA TABELA (a passagem R3-b): um endereço que a tabela não reconhece era
+     saltado em silêncio nas duas edições, e uma página inesperada escapava à comparação. */
+  for (const c of mapa) {
+    if (!matchPath(c)) erros.push(`I2: ${c} está no mapa do sítio e não é uma rota da tabela das rotas; o mapa só pode ter páginas da tabela.`);
+  }
   /* As chaves das páginas construídas, por edição. */
   const porChave = new Map();
   for (const p of paginas) {
@@ -195,10 +219,16 @@ export function conferirIndice({ indice, mapa, paginas, existe }) {
     for (const d of noIndice) {
       if (mapa.has(d)) continue;
       const r = matchPath(d);
-      const pagina = ler(d);
+      const pagina = lerPagina(d);
       const comNoindex = pagina !== null && /<meta[^>]+name="robots"[^>]+content="[^"]*noindex/i.test(pagina);
       const lista = r ? LISTA_DA_FAMILIA[/** @type {keyof typeof LISTA_DA_FAMILIA} */ (r.key)] : undefined;
-      const naLista = lista ? (ler(routePath(/** @type {ChaveDeRota} */ (lista), lang)) ?? '').includes(`href="${d}"`) : false;
+      /* A LISTA MOSTRA A PORTA quando tem uma ligação para ela dentro do `<main>`, analisado como HTML, fora de
+         um elemento escondido; a cadeia `href="…"` no texto cru também se achava num comentário (a passagem
+         R3-b, o achado 7). */
+      const mainDaLista = lista ? parse(lerPagina(routePath(/** @type {ChaveDeRota} */ (lista), lang)) ?? '').querySelector('main') : null;
+      const naLista = mainDaLista
+        ? mainDaLista.querySelectorAll('a[href]').some((a) => a.closest('[hidden]') === null && destino(a.getAttribute('href')) === d)
+        : false;
       if (!(comNoindex && naLista)) erros.push(`I2 ${lang}: a porta ${d} não está no mapa do sítio${comNoindex ? '' : ' e a página não leva noindex'}${lista ? (naLista ? '' : ', e a lista da família não a lista') : ', e a família dela não tem lista que a mostre'}.`);
     }
     contas[lang].enderecosDoMapa = doMapa;
@@ -215,7 +245,7 @@ export function conferirIndice({ indice, mapa, paginas, existe }) {
       }
       rotas++;
       for (const c of caminhos) {
-        if (chave === 'estudo' && /data-sucessor-edicao/.test(ler(c) ?? '')) {
+        if (chave === 'estudo' && /data-sucessor-edicao/.test(lerPagina(c) ?? '')) {
           if (noIndice.has(c)) erros.push(`I3 ${lang}: a edição datada ${c} tem sucessor e está no índice; fica fora, como na lista dos estudos (§1.145).`);
           continue;
         }
@@ -239,9 +269,9 @@ export function conferirIndice({ indice, mapa, paginas, existe }) {
       if (g.hasAttribute('open')) erros.push(`I4 ${lang}: a gaveta «${nome}» chega aberta; os concelhos chegam dobrados por distrito.`);
       dentro += aqui.length;
       aqui.forEach((c) => vistos.add(c));
-      const distrito = (porChave.get(`distrito|${lang}`) ?? []).find((d) => texto(parse(ler(d) ?? '').querySelector('main h1')) === nome);
+      const distrito = (porChave.get(`distrito|${lang}`) ?? []).find((d) => texto(parse(lerPagina(d) ?? '').querySelector('main h1')) === nome);
       if (!distrito) { erros.push(`I4 ${lang}: a gaveta «${nome}» não é o nome de nenhuma página de distrito construída.`); continue; }
-      const daPagina = new Set(parse(ler(distrito) ?? '').querySelector('main')?.querySelectorAll('a[href]').map((a) => destino(a.getAttribute('href'))).filter(eConcelho) ?? []);
+      const daPagina = new Set(parse(lerPagina(distrito) ?? '').querySelector('main')?.querySelectorAll('a[href]').map((a) => destino(a.getAttribute('href'))).filter(eConcelho) ?? []);
       const aMais = aqui.filter((c) => !daPagina.has(c));
       const aMenos = [...daPagina].filter((c) => !aqui.includes(c));
       if (aMais.length || aMenos.length || new Set(aqui).size !== aqui.length) {
@@ -252,10 +282,16 @@ export function conferirIndice({ indice, mapa, paginas, existe }) {
     if (concelhosNoIndice.length !== concelhosConstruidos || vistos.size !== concelhosConstruidos || dentro !== concelhosNoIndice.length) {
       erros.push(`I4 ${lang}: o índice tem ${concelhosNoIndice.length} porta(s) de concelho, ${dentro} dentro das gavetas, ${vistos.size} distinta(s), e foram construídas ${concelhosConstruidos} páginas de concelho.`);
     }
+    /* E SÃO 308 (a passagem R3-b): a conferência de cima prova que o índice bate com a construção; esta
+       prova que a construção, as gavetas e o índice têm os concelhos de Portugal todos. */
+    const distintosNoIndice = new Set(concelhosNoIndice).size;
+    if (distintosNoIndice !== CONCELHOS_DE_PORTUGAL || concelhosConstruidos !== CONCELHOS_DE_PORTUGAL || dentro !== CONCELHOS_DE_PORTUGAL) {
+      erros.push(`I4 ${lang}: os concelhos de Portugal são ${CONCELHOS_DE_PORTUGAL}; o índice tem ${distintosNoIndice} porta(s) distinta(s) de concelho, as gavetas somam ${dentro}, e foram construídas ${concelhosConstruidos} páginas de concelho.`);
+    }
     contas[lang].concelhos = { portas: concelhosNoIndice.length, gavetas: gavetas.length, construidos: concelhosConstruidos };
 
     /* I5 · os estudos, os da lista dos estudos. */
-    const daLista = parse(ler(routePath('estudos', lang)) ?? '').querySelectorAll('[data-estudo-edicao]');
+    const daLista = parse(lerPagina(routePath('estudos', lang)) ?? '').querySelectorAll('[data-estudo-edicao]');
     const doIndice = doc.querySelectorAll('main [data-estudo-edicao]');
     const ficha = (el) => [el.getAttribute('data-estudo-edicao'), destino(el.querySelector('a[href]')?.getAttribute('href') ?? ''), texto(el.querySelector('time'))].join(' · ');
     const a = doIndice.map(ficha);
@@ -267,7 +303,7 @@ export function conferirIndice({ indice, mapa, paginas, existe }) {
     contas[lang].estudos = a.length;
 
     /* I6 · «O que mudou», o começo do registo. */
-    const registo = parse(ler(routePath('correcoes', lang)) ?? '').querySelectorAll('[data-mudou-registo] li[data-mudanca="correcao"]');
+    const registo = parse(lerPagina(routePath('correcoes', lang)) ?? '').querySelectorAll('[data-mudou-registo] li[data-mudanca="correcao"]');
     /* O lugar escrito: no registo é a porta do lugar; no índice é o nome sem porta. */
     const daEntrada = (li) => {
       const data = li.querySelector('[data-correcao-campo="date"]');
@@ -275,21 +311,32 @@ export function conferirIndice({ indice, mapa, paginas, existe }) {
         texto(li.querySelector('[data-correcao-campo="old_value"]')), texto(li.querySelector('[data-correcao-campo="new_value"]')),
         texto(li.querySelector('.registo-lugar, .indice-mudou-lugar'))].join(' · ');
     };
-    const esperadas = [];
-    const linhas = new Set();
-    for (const li of registo) {
+    /* A ENTRADA MAIS RECENTE DE CADA LINHA, PROVADA AQUI (a passagem R3-b, o achado 5): a de maior data e, no
+       mesmo dia, a de maior número, seja qual for a posição dela no registo. A primeira forma copiava a primeira
+       ocorrência de cada linha, e com ela a ordem do registo, que punha a entrada 0 antes da 1 no mesmo dia. Entre
+       linhas diferentes com a mesma data, a ordem é a da primeira vez que o registo mostra cada linha. */
+    const frescas = new Map();
+    registo.forEach((li, ordem) => {
       const linha = li.getAttribute('data-correcao-entrada');
-      if (linhas.has(linha) || Object.hasOwn(MEDIDA_REUNIDA, linha ?? '')) continue;
-      linhas.add(linha);
-      esperadas.push(daEntrada(li));
-      if (esperadas.length === TETO) break;
-    }
+      if (!linha || Object.hasOwn(MEDIDA_REUNIDA, linha)) return;
+      const d = li.querySelector('[data-correcao-campo="date"]');
+      const data = d?.getAttribute('datetime') ?? '';
+      const n = Number(d?.getAttribute('data-correcao-n') ?? -1);
+      const atual = frescas.get(linha);
+      if (!atual) frescas.set(linha, { li, data, n, ordem });
+      else if (data > atual.data || (data === atual.data && n > atual.n)) frescas.set(linha, { li, data, n, ordem: atual.ordem });
+    });
+    const esperadas = [...frescas.values()]
+      .sort((x, y) => y.data.localeCompare(x.data) || x.ordem - y.ordem)
+      .slice(0, TETO)
+      .map((x) => daEntrada(x.li));
     const listas = doc.querySelectorAll('main [data-mudou-ambito="indice"]');
     const itens = listas.flatMap((l) => l.querySelectorAll('li'));
     const lidas = itens.map(daEntrada);
     if (listas.length !== 1 || JSON.stringify(lidas) !== JSON.stringify(esperadas)) {
+      const k = lidas.findIndex((x, i) => x !== esperadas[i]);
       erros.push(`I6 ${lang}: «O que mudou» do índice tem ${lidas.length} linha(s) em ${listas.length} lista(s), e o começo do registo dá ${esperadas.length}` +
-        `${lidas.find((x, i) => x !== esperadas[i]) ? `; a primeira que difere: ${lidas.find((x, i) => x !== esperadas[i])}` : ''}.`);
+        `${k >= 0 ? `; a primeira que difere: ${lidas[k]}, e o registo dá ${esperadas[k] ?? 'nada'}` : ''}.`);
     }
     /* O que o leitor lê de cada linha: o texto à vista, sem o que só um leitor de ecrã ouve, com um espaço
        entre os pedaços que a disposição separa (a data, o lugar, o nome, os valores e a marca da fonte). */
@@ -349,6 +396,22 @@ export function plantasDoIndice(base) {
     return { ...base, indice: { ...base.indice, en: doc.toString() } };
   };
   const porta = (doc, href) => doc.querySelectorAll('main a[href]').find((a) => a.getAttribute('href') === href);
+  /* As plantas da passagem R3-b trocam também as páginas que a célula lê (o registo, a lista dos estudos, uma página
+     de distrito): `comPaginas` dá à célula um leitor que devolve as cópias estragadas e lê o resto do disco. */
+  const comPaginas = (extra, trocadas) => ({ ...base, ...extra, lerPagina: (c) => trocadas.get(normalizePath(c)) ?? ler(c) });
+  const docPt = parse(base.indice.pt ?? '');
+  /* A primeira linha de «O que mudou» do índice português, e o número da sua entrada. */
+  const primeiraMudanca = docPt.querySelector('main [data-mudou-ambito="indice"] li');
+  const linhaDaPrimeira = primeiraMudanca?.getAttribute('data-correcao-entrada') ?? '';
+  const nDaPrimeira = Number(primeiraMudanca?.querySelector('[data-correcao-campo="date"]')?.getAttribute('data-correcao-n') ?? -1);
+  /* A primeira porta do índice português que não está no mapa do sítio (um estudo sem leitura escrita, com noindex). */
+  const portaSemMapa = portasDoIndice(docPt, 'pt').portas.map((a) => destino(a.getAttribute('href'))).find((d) => !base.mapa.has(d)) ?? '';
+  /* O primeiro concelho da primeira gaveta, e a página do seu distrito. */
+  const primeiraGaveta = docPt.querySelector('main details');
+  const concelhoTirado = destino(primeiraGaveta?.querySelector('a[href]')?.getAttribute('href') ?? '');
+  const nomeDaGaveta = texto(primeiraGaveta?.querySelector('summary'));
+  const distritoDaGaveta = base.paginas.filter((c) => matchPath(c)?.key === 'distrito' && matchPath(c)?.lang === 'pt')
+    .find((c) => texto(parse(ler(c) ?? '').querySelector('main h1')) === nomeDaGaveta) ?? '';
   const casos = [
     ['r3-celula-rota-tirada', () => comPt((d) => porta(d, routePath('agenda', 'pt'))?.parentNode?.remove()), [/I2 pt: \/agenda está no mapa do sítio e não tem porta no índice/, /I3 pt: a página \/agenda \(rota «agenda»\)/]],
     ['r3-celula-concelho-a-menos', () => comPt((d) => d.querySelector('main details a[href]')?.parentNode?.remove()), [/I4 pt: a gaveta «Aveiro» tem 18 concelho\(s\)/, /I4 pt: o índice tem 307 porta\(s\) de concelho/]],
@@ -397,12 +460,58 @@ export function plantasDoIndice(base) {
     ['r3-celula-lugar-trocado-em-o-que-mudou', () => comPt((d) => {
       const lugar = d.querySelector('main [data-mudou-ambito="indice"] .indice-mudou-lugar');
       if (lugar) lugar.set_content(texto(lugar) === 'Portugal' ? 'Évora' : 'Portugal');
-    }), [/I6 pt: «O que mudou» do índice tem 8 linha\(s\) em 1 lista\(s\), e o começo do registo dá 8; a primeira que difere: .* · (Évora|Portugal)\./]],
+    }), [/I6 pt: «O que mudou» do índice tem 8 linha\(s\) em 1 lista\(s\), e o começo do registo dá 8; a primeira que difere: (\S+) · .* · (Évora|Portugal), e o registo dá \1 · /]],
+    /* A PASSAGEM R3-b. Um endereço do mapa que a tabela das rotas não reconhece (o achado 7). */
+    ['r3-celula-mapa-com-endereco-fora-da-tabela', () => ({ ...base, mapa: new Set([...base.mapa, '/caminho-que-nao-e-rota']) }),
+      [/^I2: \/caminho-que-nao-e-rota está no mapa do sítio e não é uma rota da tabela das rotas/], true],
+    /* A porta de um estudo com noindex que a lista dos estudos só traz num comentário (o achado 7): a ligação sai do
+       <main> e fica num comentário dentro dele, onde a cadeia href="…" do texto cru ainda a achava. A I5 também se
+       queixa, porque o estudo da lista fica sem porta. */
+    ['r3-celula-lista-so-num-comentario', () => {
+      const caminhoDaLista = normalizePath(routePath('estudos', 'pt'));
+      const lista = parse(ler(caminhoDaLista) ?? '');
+      for (const a of lista.querySelectorAll('main a[href]').filter((x) => destino(x.getAttribute('href')) === portaSemMapa)) a.remove();
+      const copia = lista.toString().replace('</main>', `<!-- <a href="${portaSemMapa}">${portaSemMapa}</a> --></main>`);
+      return comPaginas({}, new Map([[caminhoDaLista, copia]]));
+    }, [new RegExp(`^I2 pt: a porta ${portaSemMapa} não está no mapa do sítio, e a lista da família não a lista\\.`), /^I5 pt: /], true],
+    /* Uma construção coerente com 307 concelhos (o achado 8): o primeiro concelho da primeira gaveta sai do índice,
+       das páginas construídas, do mapa do sítio e da página do seu distrito. As conferências de concordância passam
+       todas; só a dos 308 morde. */
+    ['r3-celula-construcao-com-307-concelhos', () => {
+      const indice = parse(base.indice.pt ?? '');
+      for (const a of indice.querySelectorAll('main details a[href]').filter((x) => destino(x.getAttribute('href')) === concelhoTirado)) a.parentNode?.remove();
+      const distrito = parse(ler(distritoDaGaveta) ?? '');
+      for (const a of distrito.querySelectorAll('main a[href]').filter((x) => destino(x.getAttribute('href')) === concelhoTirado)) a.remove();
+      return comPaginas({
+        indice: { ...base.indice, pt: indice.toString() },
+        paginas: base.paginas.filter((c) => c !== concelhoTirado),
+        mapa: new Set([...base.mapa].filter((c) => c !== concelhoTirado)),
+      }, new Map([[normalizePath(distritoDaGaveta), distrito.toString()]]));
+    }, [/^I4 pt: os concelhos de Portugal são 308; o índice tem 307 porta\(s\) distinta\(s\) de concelho, as gavetas somam 307, e foram construídas 307 páginas de concelho\./], true],
+    /* Duas entradas da mesma linha no mesmo dia pela ordem errada (o achado 5): o registo ganha, depois da entrada que
+       o índice mostra, uma entrada mais recente da mesma linha no mesmo dia (o número a seguir e outro valor novo),
+       como a ordem antiga as punha. Copiar a primeira ocorrência dava por boa a entrada velha. */
+    ['r3-celula-duas-entradas-no-mesmo-dia-pela-ordem-errada', () => {
+      const caminhoDoRegisto = normalizePath(routePath('correcoes', 'pt'));
+      const registo = parse(ler(caminhoDoRegisto) ?? '');
+      const original = registo.querySelectorAll('[data-mudou-registo] li[data-mudanca="correcao"]')
+        .find((li) => li.getAttribute('data-correcao-entrada') === linhaDaPrimeira);
+      if (original) {
+        const nova = parse(original.toString());
+        for (const el of nova.querySelectorAll('[data-correcao-n]')) el.setAttribute('data-correcao-n', String(nDaPrimeira + 1));
+        nova.querySelector('[data-correcao-campo="new_value"]')?.set_content('valor plantado');
+        original.insertAdjacentHTML('afterend', nova.toString());
+      }
+      return comPaginas({}, new Map([[caminhoDoRegisto, registo.toString()]]));
+    }, [new RegExp(`^I6 pt: «O que mudou» do índice tem 8 linha\\(s\\) em 1 lista\\(s\\), e o começo do registo dá 8; a primeira que difere: ${linhaDaPrimeira} · ${nDaPrimeira} · .*, e o registo dá ${linhaDaPrimeira} · ${nDaPrimeira + 1} · .* · valor plantado · `)], true],
   ];
-  return casos.map(([nome, faz, mordidas]) => {
+  /* `soEstas`: a planta só morde se as queixas forem todas das que ela nomeia (as plantas da passagem R3-b provam
+     que é a conferência nova que morde, e não outra pelo caminho). */
+  return casos.map(([nome, faz, mordidas, soEstas = false]) => {
     const r = conferirIndice(faz());
-    const mordeu = mordidas.every((re) => r.erros.some((e) => re.test(e)));
-    return { nome, mordeu, queixas: r.erros.slice(0, 6) };
+    const todas = mordidas.every((re) => r.erros.some((e) => re.test(e)));
+    const soAsDela = !soEstas || r.erros.every((e) => mordidas.some((re) => re.test(e)));
+    return { nome, mordeu: todas && soAsDela, so_as_dela: soEstas ? soAsDela : undefined, queixas: r.erros.slice(0, 6) };
   });
 }
 
