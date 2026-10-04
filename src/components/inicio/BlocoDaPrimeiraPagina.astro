@@ -27,6 +27,9 @@
  * fora das marcas, carácter a carácter. O título da dobra («Os números deste bloco») fica fora da marca
  * e no inventário, como a palavra «Fonte».
  */
+import NomeDaSerie from '../serie/NomeDaSerie.astro';
+import SerieDoPais from '../formas/SerieDoPais.astro';
+import { routePath } from '../../lib/routes.mjs';
 import Frase from '../Frase.astro';
 import Claim from '../Claim.astro';
 import CampoDaLinha from '../CampoDaLinha.astro';
@@ -54,6 +57,7 @@ const destino = ENTRADAS.find((e) => e.id === porta.entrada);
     <Titulo class="pp-titulo" id={idDoTitulo} data-bloco-titulo data-bloco-declarado><Frase partes={b.titulo} lang={lang} /></Titulo>
     <p class="pp-frase" data-bloco-frase data-bloco-declarado><Frase partes={b.frase} lang={lang} selos /></p>
     {b.desenho && <DesenhoDoBloco modelo={b.desenho} lang={lang} bloco={b.id} />}
+    {b.serie && <a class="pp-serie" data-bloco-serie={b.serie} href={routePath('serie', lang, { slug: b.serie })}><NomeDaSerie id={b.serie} lang={lang} class="pp-serie-nome" /><SerieDoPais ids={[b.serie]} lang={lang} /></a>}
     <div class="pp-notas">
     <p class="pp-ressalva" data-bloco-ressalva data-bloco-declarado><Frase partes={b.ressalva} lang={lang} /></p>
     {b.pecas.filter((p) => p.mostra).map((p) => p.caixa ? (

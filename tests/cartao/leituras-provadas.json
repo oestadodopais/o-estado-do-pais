@@ -26,6 +26,11 @@
       "quem": "Claude Opus 5.5",
       "quando": "2026-10-02",
       "o_que": "o K2, items 3 e 4 do brief: a diferença de emprego entre sexos diz que é a diferença entre duas taxas, em pontos percentuais (com a origem nova do quadro do Painel Social no Relatório por País de Portugal); a quota nas exportações diz em palavras comuns o que é a quota e quem são as economias avançadas; o PIB por habitante diz o que a unidade chama volumes encadeados"
+    },
+    {
+      "quem": "Codex gpt-6-astra",
+      "quando": "2026-10-04",
+      "o_que": "RP4: leitura do cartão da União em Preços. As folhas do sinal reutilizam os literais do IHPC da casa; o âmbito está no excerto da própria linha. Não se atribui à União o objetivo da área do euro. Proposta para a leitura a frio do bloco."
     }
   ],
   "comuns": [
@@ -6426,6 +6431,93 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ihpc-variacao-homologa-ue",
+      "origens": [
+        "rp1-ihpc-comparavel",
+        "rp1-ihpc-homologa"
+      ],
+      "folhas": [
+        {
+          "pt": "os preços na União Europeia estavam, na medida harmonizada,",
+          "en": "prices in the European Union were, on the harmonised measure,",
+          "partes": [
+            {
+              "pt": "os preços na União Europeia estavam, na medida harmonizada,",
+              "en": "prices in the European Union were, on the harmonised measure,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-comparavel",
+                  "campo": "excerto",
+                  "literal": "The Harmonised Index of Consumer Prices ( HICP) gives comparable measures of inflation for the countries and country groups for which it is produced. It is a macroeconomic indicator that measures the change over time of the prices of consumer goods and services acquired by households."
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "European Union - 27 countries (from 2020)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " acima dos de há um ano.",
+          "en": " above a year earlier.",
+          "partes": [
+            {
+              "pt": " acima dos de há um ano.",
+              "en": " above a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "the annual rate of change, representing the percentage change in a reference month compared to the same month of the previous year (also called annual inflation)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " face aos de há um ano, ou seja, abaixo deles.",
+          "en": " compared with a year earlier, that is, below.",
+          "partes": [
+            {
+              "pt": " face aos de há um ano, ou seja, abaixo deles.",
+              "en": " compared with a year earlier, that is, below.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "the annual rate of change, representing the percentage change in a reference month compared to the same month of the previous year (also called annual inflation)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pt": " ao mesmo nível de há um ano.",
+          "en": " at the same level as a year earlier.",
+          "partes": [
+            {
+              "pt": " ao mesmo nível de há um ano.",
+              "en": " at the same level as a year earlier.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "the annual rate of change, representing the percentage change in a reference month compared to the same month of the previous year (also called annual inflation)"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "algarismos": []
     }
   ]
 }

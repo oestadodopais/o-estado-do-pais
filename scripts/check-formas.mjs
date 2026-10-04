@@ -129,6 +129,7 @@
  */
 
 import fs from 'node:fs';
+import { conferirSerie, plantasDaSerie, provasDoModulo } from '../tests/formas/serie-do-pais.mjs';
 import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -203,7 +204,7 @@ const FORMAS_DOS_DOMINIOS = [
    da declaração do resolvedor, e não se escreve aqui outra vez: as duas não podem divergir. */
 const FORMAS = new Set([...FORMAS_DOS_DOMINIOS, ...FORMAS_DOS_BLOCOS]);
 /* O conhecido-positivo da lista fechada: o mesmo teste recusa um nome que não é nenhum dos oito. */
-if (FORMAS.has('barras-empilhadas') || !FORMAS.has('colunas') || FORMAS.size !== 8) {
+if (FORMAS.has('barras-empilhadas') || !FORMAS.has('colunas') || !FORMAS.has('serie-do-pais') || FORMAS.size !== 8) {
   throw new Error('check:formas: a lista das formas não é a das quatro dos domínios e das quatro dos blocos.');
 }
 
@@ -265,6 +266,10 @@ const MOTIVOS_DO_DOMINIO = new Set([
   'data-de-leitura-de-uma-definicao',
 ]);
 
+const provasRP4 = provasDoModulo();
+const plantasRP4 = [];
+let desenhosRP4 = 0;
+const recibosRP4 = new Set();
 const claims = loadClaims();
 /** UE1: as linhas de série, pelo leitor próprio dos portões (F1 e F19). */
 const SERIES_DO_PORTAO = lerSeriesDoPortao();
@@ -532,6 +537,22 @@ for (const ficheiro of paginasDe(DIST)) {
   const rel = path.relative(RAIZ, ficheiro);
   contas.paginas++;
 
+  /* F21 · RP4: a geometria recomposta do livro, incluindo cada marca dos eixos.
+     As plantas só mexem em cadeias em memória, nunca no dist/. */
+  for (const svg of root.querySelectorAll('svg[data-forma="serie-do-pais"]')) {
+    desenhosRP4++;
+    const lang = rota?.lang === 'en' ? 'en' : 'pt';
+    for (const e of conferirSerie(svg, lang)) err(`${rel}: ${e}`);
+    if (svg.getAttribute('data-modo') !== 'unidade') err(`${rel}: F21 · nenhuma página usa o modo indexado neste bloco`);
+    if (rota?.key === 'serie') {
+      if (svg.getAttribute('data-series') !== rota.params.slug) err(`${rel}: F21 · o gráfico do recibo não é da sua série`);
+      recibosRP4.add(`${lang}:${rota.params.slug}`);
+    }
+    if (!plantasRP4.some((p) => p.lang === lang)) {
+      for (const p of plantasDaSerie(svg.outerHTML, lang)) { plantasRP4.push({ lang, ...p }); if (!p.mordeu) err(`${rel}: F21 · planta ${p.nome} não mordeu: ${p.queixa}`); }
+    }
+  }
+
   /* F19, UE1 (29.09.2026): a faixa da União em cada cartão nacional das medidas
      com série de países, refeita dos pontos (`tests/cartao/faixa.mjs`, que a K18
      do `check:cartao` também chama). Nas duas páginas dos temas correm também as
@@ -793,7 +814,7 @@ for (const ficheiro of paginasDe(DIST)) {
         );
       }
     }
-    for (const svg of forma.querySelectorAll('svg')) {
+    for (const svg of (forma.rawTagName === 'svg' ? [forma] : forma.querySelectorAll('svg'))) {
       for (const t of svg.querySelectorAll('text, tspan, title, desc')) {
         if (t.querySelector('text, tspan')) continue;
         const conteudo = texto(t);
@@ -1429,6 +1450,14 @@ if (SERIES_DE_PAISES.size) {
 }
 
 /* ========================================================================== */
+
+for (const serie of SERIES_DO_PORTAO.values()) if (serie.eixo === 'periodo') for (const lang of LANGS) {
+  if (!recibosRP4.has(`${lang}:${serie.id}`)) err(`F21 · falta o gráfico do recibo de ${serie.id} (${lang})`);
+}
+if (!desenhosRP4 || plantasRP4.length === 0) err('F21 · não viu desenhos ou plantas');
+console.log(`F21 · ${desenhosRP4} desenhos recompostos · ${provasRP4.length} provas do módulo · ${plantasRP4.filter((p) => p.mordeu).length} de ${plantasRP4.length} plantas em memória`);
+const jsonRP4 = process.argv.indexOf('--json-rp4');
+if (jsonRP4 !== -1) fs.writeFileSync(process.argv[jsonRP4 + 1], JSON.stringify({ desenhos: desenhosRP4, recibos: [...recibosRP4], provas: provasRP4, plantas: plantasRP4, erros }, null, 2) + '\n');
 
 if (erros.length > 0) {
   console.error(vermelho(`\n  PORTÃO DAS FORMAS · ${erros.length} problema(s):\n`));

@@ -36,6 +36,7 @@
 
 import { BLOCOS_DA_PRIMEIRA_PAGINA, ENTRADAS } from '../data/primeira-pagina.mjs';
 import { REFERENCIAS_DAS_MEDIDAS } from '../data/referencias-das-medidas.mjs';
+import { getSerie } from './series.mjs';
 import { hasClaim, getClaim, parsePtNumber } from './ledger.mjs';
 import { valorDeReferenciaDoMotor } from './enquadramento.mjs';
 import { dataDaCasa } from './datas.mjs';
@@ -45,6 +46,16 @@ import { reguaDaMedida } from './enquadramento.mjs';
 import { DOMINIO_DAS_MEDIDAS } from '../data/dominios.mjs';
 import { WORKS } from '../data/studies.mjs';
 import { estudosRecentes } from './pais.mjs';
+
+/** RP4: uma série desconhecida ou de países é um defeito, mesmo num bloco oculto.
+ * @param {{serie?: unknown}} bloco
+ * @returns {string|null}
+ */
+export function serieDoBloco(bloco) {
+  if (bloco.serie === undefined) return null;
+  if (typeof bloco.serie !== 'string' || getSerie(bloco.serie).eixo !== 'periodo') throw new Error('primeira página: a série do bloco não é uma série no tempo.');
+  return bloco.serie;
+}
 
 /** As quatro formas declaradas pelo brief, e mais nenhuma. */
 export const FORMAS_DOS_BLOCOS = /** @type {const} */ (['barras', 'paineis', 'pares', 'colunas']);
@@ -423,6 +434,7 @@ function modeloDoDesenho(b, lang, linhas, comValor) {
  *   numeros: { linha: string, sufixo: string, nome: { linha: string, qualificador: 'ue'|null } }[],
  *   fonte: { publicador: string, linha: string, periodos: { linha: string, valor: string }[] }[],
  *   maisRecente: { linha: string, periodo: string, fim: string }|null,
+ *   serie: string|null,
  * }} BlocoResolvido
  */
 
@@ -435,6 +447,7 @@ function modeloDoDesenho(b, lang, linhas, comValor) {
 export function blocoResolvido(id, lang) {
   const b = /** @type {any} */ (BLOCOS_DA_PRIMEIRA_PAGINA.find((x) => x.id === id));
   if (!b) throw defeito(id, 'não há bloco declarado com este nome.');
+  const serie = serieDoBloco(b);
   /** @type {string[]} */
   const falhas = [];
   const condicoes = (b.condicao ?? []).map((/** @type {any} */ c) => avaliarCondicao(c));
@@ -503,7 +516,7 @@ export function blocoResolvido(id, lang) {
   }));
   return {
     id, entrada: b.entrada, lang, mostra, falhas, condicoes,
-    titulo, frase, ressalva, pecas, desenho,
+    titulo, frase, ressalva, pecas, desenho, serie,
     linhas: todas, comValor: comValorVisto, numeros,
     fonte: mostra ? fonteDasLinhas(comValorVisto) : [],
     maisRecente: mostra ? maisRecente(todas) : null,

@@ -73,3 +73,13 @@
     grid-template-columns: 1fr;
   }
 }
+
+.serie-pontos-corpo { display: block; min-width: 0; }
+
+/* RP4: a tabela dobra por anos. Só a tabela se desloca, também ao teclado. */
+.serie-tabela-janela { position: relative; max-width: 100%; overflow-x: auto; }
+.serie-tabela-janela:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.serie-tabela-tempo { width: max-content; min-width: 100%; max-width: none; font-size: 13px; }
+.serie-tabela-tempo th, .serie-tabela-tempo td { padding: 7px 10px; white-space: nowrap; }
+.serie-tabela-tempo tbody th { position: sticky; left: 0; background: var(--paper); border-right: 1px solid var(--g3); }
+.serie-tabela-tempo .serie-marca { margin-left: 3px; font-size: 11px; }

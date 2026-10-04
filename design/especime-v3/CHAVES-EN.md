@@ -1433,3 +1433,24 @@ isso o pequeno dos rótulos entra sem uma palavra nova em nenhuma das edições.
 | chave | pt | en | nota |
 |---|---|---|---|
 | `primeira.emCurso` | em curso até {ano} | ongoing until {ano} | Horizonte lido de `emCurso.ate`, ao lado da data nos estudos recentes da primeira página (H2-b). |
+
+
+## RP4 · o gráfico e a tabela por anos
+
+As palavras do título acessível e dos cabeçalhos saem destas cadeias. O nome sai da mesma declaração que `NomeDaSerie`; os períodos são os extremos efetivos da série, com o ano por extenso. O inglês usa “half” para o semestre e espaços nos números compostos, sem travessões.
+
+| chave | pt | en |
+|---|---|---|
+| `livro.serieNoTempo.grafico` | {nome}, de {primeiro} a {ultimo} | {nome}, from {primeiro} to {ultimo} |
+| `livro.serieNoTempo.periodoPorExtenso` | {periodo} de {ano} | {periodo} of {ano} |
+| `livro.serieNoTempo.anoK` | Ano | Year |
+| `livro.serieNoTempo.semValor` | sem valor | no value |
+| `livro.serieNoTempo.meses` | jan. · fev. · mar. · abr. · mai. · jun. · jul. · ago. · set. · out. · nov. · dez. | Jan · Feb · Mar · Apr · May · Jun · Jul · Aug · Sep · Oct · Nov · Dec |
+| `livro.serieNoTempo.trimestres` | Primeiro trimestre · Segundo trimestre · Terceiro trimestre · Quarto trimestre | First quarter · Second quarter · Third quarter · Fourth quarter |
+| `livro.serieNoTempo.semestres` | Primeiro semestre · Segundo semestre | First half · Second half |
+| `livro.serieNoTempo.numeros` | zero · um · dois · três · quatro · cinco · seis · sete · oito · nove · dez · onze · doze · treze · catorze · quinze · dezasseis · dezassete · dezoito · dezanove | zero · one · two · three · four · five · six · seven · eight · nine · ten · eleven · twelve · thirteen · fourteen · fifteen · sixteen · seventeen · eighteen · nineteen |
+| `livro.serieNoTempo.dezenas` | vinte · trinta · quarenta · cinquenta · sessenta · setenta · oitenta · noventa | twenty · thirty · forty · fifty · sixty · seventy · eighty · ninety |
+| `livro.serieNoTempo.centenas` | cento · duzentos · trezentos · quatrocentos · quinhentos · seiscentos · setecentos · oitocentos · novecentos | one hundred · two hundred · three hundred · four hundred · five hundred · six hundred · seven hundred · eight hundred · nine hundred |
+| `livro.serieNoTempo.cem` | cem | one hundred |
+| `livro.serieNoTempo.mil` | mil | thousand |
+| `livro.serieNoTempo.uneNumero` |  e  |  and  |
