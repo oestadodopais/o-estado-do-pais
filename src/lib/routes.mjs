@@ -339,6 +339,29 @@ export const ROUTES = {
    * ela não existia; a explicação vivia numa oração do Método.
    */
   marcador: { pt: '/a-verificar', en: '/en/to-verify' },
+  /**
+   * O ÍNDICE (bloco R3, 04.10.2026, pela ideia do diretor dessa madrugada): uma
+   * página onde o leitor vê tudo o que o sítio tem, por secção, com uma porta
+   * para cada coisa, sem ter de navegar. Nenhuma linha dela se escreve à mão: as
+   * secções e as portas geram-se desta tabela e dos módulos que já dão os
+   * caminhos às páginas (`src/lib/indice.mjs`), e a célula
+   * `check:indice-do-sitio` (`tests/indice/indice.mjs`) fecha a construção
+   * quando o índice e o mapa do sítio discordam sobre as páginas do leitor. A
+   * porta está no rodapé de todas as páginas, nas duas edições.
+   *
+   * O CAMINHO INGLÊS É `/en/index`, E A PRIMEIRA PÁGINA INGLESA É `/en`. A
+   * construção escreve `dist/en/index/index.html` ao lado de `dist/en/index.html`,
+   * que é a primeira página, e a Vercel serve cada um pelo seu pedido: medido no
+   * ar a 04.10.2026 às 03:45:24 UTC, `/en/index` dava 404 com `en/index.html`
+   * presente e `/en/index.html` dava 200, e `/sobre` dava 200 de
+   * `sobre/index.html`. A Vercel não junta `.html` a um pedido sem extensão (o
+   * `vercel.json` não tem `cleanUrls`), e resolve `/en/index` como a pasta
+   * `en/index/`, pela mesma regra de todas as outras páginas. Quem confere
+   * portas neste repositório resolve-as pela mesma regra (a célula do índice
+   * di-lo), porque um resolvedor que tentasse `x.html` primeiro abriria a
+   * primeira página no lugar do índice.
+   */
+  indice: { pt: '/indice', en: '/en/index' },
 };
 
 /**
