@@ -1,0 +1,70 @@
+{
+  "brief": "design/observatorio/BRIEF-RP3-as-series-no-motor-e-no-livro.md",
+  "guiao": "design/observatorio/medidas/BRIEF-RP3.py",
+  "cabeca_lida": "334cc740",
+  "medidas": [
+    {
+      "nome": "linhas_do_livro",
+      "valor": 2984,
+      "comando": "git ls-tree -r --name-only 334cc740 -- ledger/claims/ · *.yml",
+      "conhecido_positivo": {
+        "o_que": "a lista traz a linha do PIB real por habitante",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_build",
+      "valor": 303.7,
+      "comando": "git show 334cc740:design/especime-v3/medicoes/l1-2026-09-24/portoes/build.json · «segundos»",
+      "conhecido_positivo": {
+        "o_que": "o mesmo ficheiro traz o código 0 dessa corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_verify",
+      "valor": 486.9,
+      "comando": "git show 334cc740:design/especime-v3/medicoes/l1-2026-09-24/portoes/verify.json · «segundos»",
+      "conhecido_positivo": {
+        "o_que": "o mesmo ficheiro traz o código 0 dessa corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_construidas",
+      "valor": 7354,
+      "comando": "git show 334cc740:design/especime-v3/medicoes/l1-2026-09-24/portoes/build.log · «N page(s) built»",
+      "conhecido_positivo": {
+        "o_que": "o registo traz a linha do Astro com as páginas construídas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_lidas_para_os_grupos",
+      "valor": 2655,
+      "comando": "git cat-file --batch sobre as linhas de 334cc740, agrupadas por document.edition e unit · linhas com id, unit, edition e reference_date",
+      "conhecido_positivo": {
+        "o_que": "a linha do PIB real por habitante foi lida com os quatro campos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "grupos_com_varios_periodos",
+      "valor": 45,
+      "comando": "git cat-file --batch sobre as linhas de 334cc740, agrupadas por document.edition e unit · famílias com dois ou mais reference_date distintos",
+      "conhecido_positivo": {
+        "o_que": "a família da dívida pública tem os dois anos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "grupos_que_misturam_uniao",
+      "valor": 28,
+      "comando": "git cat-file --batch sobre as linhas de 334cc740, agrupadas por document.edition e unit · famílias com ids «-ue» e sem «-ue» juntos",
+      "conhecido_positivo": {
+        "o_que": "a família da dívida pública junta a linha da União",
+        "encontrado": true
+      }
+    }
+  ]
+}

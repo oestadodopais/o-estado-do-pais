@@ -1,0 +1,20 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/rp3-2026-10-04/custo-rp3.py a partir do registo da sessão do construtor. Não se edita à mão.",
+  "modelo": "Claude Opus 5.5",
+  "subagentes": 0,
+  "leituras_do_contador": 1416,
+  "primeira_leitura": {
+    "hora": "2026-10-04T03:27:37.076Z",
+    "restam": 15000000
+  },
+  "ultima_leitura": {
+    "hora": "2026-10-04T07:51:01.087Z",
+    "restam": 13371278
+  },
+  "simbolos_gastos": 1628722,
+  "segundos_entre_as_leituras": 15804,
+  "conhecido_positivo": {
+    "o_que": "a primeira leitura é o total da sessão, 15 000 000, e as leituras descem",
+    "encontrado": true
+  }
+}

@@ -1,0 +1,1 @@
+python3 scripts/leituras/decisoes-em-vigor.py --repo <worktree do motor> --intervalo d2495a7..f97e66e

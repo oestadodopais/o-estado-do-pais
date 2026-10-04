@@ -1,0 +1,719 @@
+{
+  "bloco": "RP3",
+  "construcao": {
+    "commit": "39f15b8eb38ea7bfd727da2b4ee0d2e6601df947",
+    "ref": "rp3-2026-10-04",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-04T07:30:42.669Z"
+  },
+  "cabeca_esperada": "39f15b8eb38ea7bfd727da2b4ee0d2e6601df947",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "series": {
+    "serie-ihpc-variacao-homologa": {
+      "pontos": 357,
+      "marcas": 1,
+      "lacunas": 0
+    },
+    "serie-linha-de-risco-de-pobreza": {
+      "pontos": 29,
+      "marcas": 2,
+      "lacunas": 2
+    }
+  },
+  "capturas": 20,
+  "capturas_antes": 20,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-mensal-pt-390.png",
+      "sha256": "32b84baeed2f949a41a9bb69ca85ba6a4abfb809556206f2803cb5a319f4fc19",
+      "serie": "serie-ihpc-variacao-homologa",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "corpo": 390,
+        "altura": 14610,
+        "h1": "Inflação na comparação europeia",
+        "linhas_da_tabela": 357,
+        "pontos": 357,
+        "marcas_na_tabela": 1,
+        "lacunas": 0,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-anual-pt-390.png",
+      "sha256": "3815630f2af1818d10215773f93bea8b1ab7ed1871825657c7e70e363829da1a",
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "corpo": 390,
+        "altura": 3330,
+        "h1": "Linha de risco de pobreza",
+        "linhas_da_tabela": 29,
+        "pontos": 29,
+        "marcas_na_tabela": 2,
+        "lacunas": 2,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-mensal-pt-768.png",
+      "sha256": "062f000ba894c5e95b0fea7b007a39b893c590c5653218af033dcf4191fb913b",
+      "serie": "serie-ihpc-variacao-homologa",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "corpo": 768,
+        "altura": 14239,
+        "h1": "Inflação na comparação europeia",
+        "linhas_da_tabela": 357,
+        "pontos": 357,
+        "marcas_na_tabela": 1,
+        "lacunas": 0,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-anual-pt-768.png",
+      "sha256": "c333f8d5932a420c48977031b462bd981fd295b5f73721a389f87ea41307c1dc",
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "corpo": 768,
+        "altura": 2965,
+        "h1": "Linha de risco de pobreza",
+        "linhas_da_tabela": 29,
+        "pontos": 29,
+        "marcas_na_tabela": 2,
+        "lacunas": 2,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-mensal-pt-1024.png",
+      "sha256": "30636041be8ad2d8b2d319e0bb42802da998c7bee16739da1740628a503ddc9e",
+      "serie": "serie-ihpc-variacao-homologa",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "corpo": 1024,
+        "altura": 14185,
+        "h1": "Inflação na comparação europeia",
+        "linhas_da_tabela": 357,
+        "pontos": 357,
+        "marcas_na_tabela": 1,
+        "lacunas": 0,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-anual-pt-1024.png",
+      "sha256": "9c7b7257995d6d71e9724f416d7591e96401df46f26978b949d4878045214b4a",
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "corpo": 1024,
+        "altura": 2805,
+        "h1": "Linha de risco de pobreza",
+        "linhas_da_tabela": 29,
+        "pontos": 29,
+        "marcas_na_tabela": 2,
+        "lacunas": 2,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-mensal-pt-1280.png",
+      "sha256": "6b9f8411e3e30535726009d48f840ded5d7a8bae6ad609a19c3ce0e7960be02a",
+      "serie": "serie-ihpc-variacao-homologa",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "corpo": 1280,
+        "altura": 14185,
+        "h1": "Inflação na comparação europeia",
+        "linhas_da_tabela": 357,
+        "pontos": 357,
+        "marcas_na_tabela": 1,
+        "lacunas": 0,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-anual-pt-1280.png",
+      "sha256": "c3dfae12d2511bb1429c9ccbc0e1a8a31a97b56d6709613510241c1f1eda03cb",
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "corpo": 1280,
+        "altura": 2809,
+        "h1": "Linha de risco de pobreza",
+        "linhas_da_tabela": 29,
+        "pontos": 29,
+        "marcas_na_tabela": 2,
+        "lacunas": 2,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-mensal-pt-1600.png",
+      "sha256": "0fed56c98f8a07e95cd76b6f8e08659af0272d26ce2757beb971c788b7f94865",
+      "serie": "serie-ihpc-variacao-homologa",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "corpo": 1600,
+        "altura": 14192,
+        "h1": "Inflação na comparação europeia",
+        "linhas_da_tabela": 357,
+        "pontos": 357,
+        "marcas_na_tabela": 1,
+        "lacunas": 0,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-anual-pt-1600.png",
+      "sha256": "5ee936f3d80d4302c89caf53edd9447c61ca11b597f5232c3fc33b615afd4484",
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "corpo": 1600,
+        "altura": 2815,
+        "h1": "Linha de risco de pobreza",
+        "linhas_da_tabela": 29,
+        "pontos": 29,
+        "marcas_na_tabela": 2,
+        "lacunas": 2,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-mensal-en-390.png",
+      "sha256": "cf994980faa13478389a04a786affddabf5507e95419903fe66ff4baf1b2043f",
+      "serie": "serie-ihpc-variacao-homologa",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "corpo": 390,
+        "altura": 14676,
+        "h1": "Inflation in the European comparison",
+        "linhas_da_tabela": 357,
+        "pontos": 357,
+        "marcas_na_tabela": 1,
+        "lacunas": 0,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-anual-en-390.png",
+      "sha256": "d0b0b1165d58267ac8f451e98aca5c9864544eaf4985fdae5f15a63a9764debd",
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "corpo": 390,
+        "altura": 3378,
+        "h1": "At-risk-of-poverty line",
+        "linhas_da_tabela": 29,
+        "pontos": 29,
+        "marcas_na_tabela": 2,
+        "lacunas": 2,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-mensal-en-768.png",
+      "sha256": "f3a5594cc023d81f2fe6ec6daad106aa7b26b4215d659f8fb39f3dd8c7bb1605",
+      "serie": "serie-ihpc-variacao-homologa",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "corpo": 768,
+        "altura": 14239,
+        "h1": "Inflation in the European comparison",
+        "linhas_da_tabela": 357,
+        "pontos": 357,
+        "marcas_na_tabela": 1,
+        "lacunas": 0,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-anual-en-768.png",
+      "sha256": "c123ab6a5a744cb076434c06bad28881899a530abc87d886a1a45d37da4a13e8",
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "corpo": 768,
+        "altura": 2965,
+        "h1": "At-risk-of-poverty line",
+        "linhas_da_tabela": 29,
+        "pontos": 29,
+        "marcas_na_tabela": 2,
+        "lacunas": 2,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-mensal-en-1024.png",
+      "sha256": "84ccbe721275cda15c27217a57edf888018671a8f82130e2bcdd2e9c3a570fd3",
+      "serie": "serie-ihpc-variacao-homologa",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "corpo": 1024,
+        "altura": 14228,
+        "h1": "Inflation in the European comparison",
+        "linhas_da_tabela": 357,
+        "pontos": 357,
+        "marcas_na_tabela": 1,
+        "lacunas": 0,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-anual-en-1024.png",
+      "sha256": "d9a5eeec979ae49c4f322a097cf07d78b651b2e537b70fbb1cba370899845a8a",
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "corpo": 1024,
+        "altura": 2831,
+        "h1": "At-risk-of-poverty line",
+        "linhas_da_tabela": 29,
+        "pontos": 29,
+        "marcas_na_tabela": 2,
+        "lacunas": 2,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-mensal-en-1280.png",
+      "sha256": "bb047a3e5acffed0979edfbe94dd8d02667aa0024414a27258a66d52c77b27af",
+      "serie": "serie-ihpc-variacao-homologa",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "corpo": 1280,
+        "altura": 14265,
+        "h1": "Inflation in the European comparison",
+        "linhas_da_tabela": 357,
+        "pontos": 357,
+        "marcas_na_tabela": 1,
+        "lacunas": 0,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-anual-en-1280.png",
+      "sha256": "bf53a425f420191f97aac348b791d7cf1d38d1936b47464f22e9b0877815ca3b",
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "corpo": 1280,
+        "altura": 2871,
+        "h1": "At-risk-of-poverty line",
+        "linhas_da_tabela": 29,
+        "pontos": 29,
+        "marcas_na_tabela": 2,
+        "lacunas": 2,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-mensal-en-1600.png",
+      "sha256": "989dbb24b2363a42e14c63d2d850f6d19dd236c71e8851c783a0e909b2a1a041",
+      "serie": "serie-ihpc-variacao-homologa",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "corpo": 1600,
+        "altura": 14271,
+        "h1": "Inflation in the European comparison",
+        "linhas_da_tabela": 357,
+        "pontos": 357,
+        "marcas_na_tabela": 1,
+        "lacunas": 0,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/recibo-anual-en-1600.png",
+      "sha256": "bc613f5f5c0c06f672248caa390dc085da02e746bab06b56b823d75651193194",
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "corpo": 1600,
+        "altura": 2877,
+        "h1": "At-risk-of-poverty line",
+        "linhas_da_tabela": 29,
+        "pontos": 29,
+        "marcas_na_tabela": 2,
+        "lacunas": 2,
+        "pedidos_fechados": true,
+        "transborda": false
+      }
+    }
+  ],
+  "antes": [
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-mensal-pt-390.png",
+      "sha256": "4e0b07a93c1fce30205bf3e2e27dec81ee5728530871600c7c829aeb21f2fa2e",
+      "linha": "ihpc-variacao-homologa",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3294,
+        "h1": "3,6 %"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-anual-pt-390.png",
+      "sha256": "d2365308f23bac58bb198c36cc9d0122e8c52c8b1e99f3626407263e3e9d817c",
+      "linha": "linha-de-risco-de-pobreza-2025",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 2985,
+        "h1": "8 679 euros por ano"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-mensal-pt-768.png",
+      "sha256": "2838f8ea094f37921ffe09850b48eecac0ee8cebc0d1316f98a96338d3c14d29",
+      "linha": "ihpc-variacao-homologa",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2911,
+        "h1": "3,6 %"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-anual-pt-768.png",
+      "sha256": "76b80553825a783b2b537576db737e332e4831cd60143497f1f500623ad93c58",
+      "linha": "linha-de-risco-de-pobreza-2025",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2658,
+        "h1": "8 679 euros por ano"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-mensal-pt-1024.png",
+      "sha256": "963bf08bd65c0a59f99211c0e62037ca9e7886adedcacfdf7b6839511bab07d2",
+      "linha": "ihpc-variacao-homologa",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2035,
+        "h1": "3,6 %"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-anual-pt-1024.png",
+      "sha256": "5503acd3b7d0f2821887ae4b988c7888eff237b094c8883422c0e0c28e6a0570",
+      "linha": "linha-de-risco-de-pobreza-2025",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 1722,
+        "h1": "8 679 euros por ano"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-mensal-pt-1280.png",
+      "sha256": "4a328cfdf41324e511dbb92218b1fdda26ecee59c464f8a9cb7e514ed5f6dbf0",
+      "linha": "ihpc-variacao-homologa",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2056,
+        "h1": "3,6 %"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-anual-pt-1280.png",
+      "sha256": "391bc1a568ca3d4cf9841563b1fda4df9a3f2fe0cba3cb60ba9354907d39cf6b",
+      "linha": "linha-de-risco-de-pobreza-2025",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1743,
+        "h1": "8 679 euros por ano"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-mensal-pt-1600.png",
+      "sha256": "a7faac8fd3c79a1113d57f9d24c5184ab5419cf9358f5fc52dc881375406c3d3",
+      "linha": "ihpc-variacao-homologa",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2062,
+        "h1": "3,6 %"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-anual-pt-1600.png",
+      "sha256": "8b24a156650c0fd601bce32563d8db9e751b00424a36812d5912f399c154be92",
+      "linha": "linha-de-risco-de-pobreza-2025",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 1750,
+        "h1": "8 679 euros por ano"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-mensal-en-390.png",
+      "sha256": "4e3c888df96f13decf0e163e67f452faa458aaf46879c1a5f16d1716e384e886",
+      "linha": "ihpc-variacao-homologa",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3360,
+        "h1": "3,6 %"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-anual-en-390.png",
+      "sha256": "a80acb123429f743d95c376d661d65bbdace7eee98be6d08cd1820b7240664b6",
+      "linha": "linha-de-risco-de-pobreza-2025",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3033,
+        "h1": "8 679 euros per year"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-mensal-en-768.png",
+      "sha256": "3c04c55b16fd717f48e886d680d5cd84166d735c08b915bcffd8f499c70a850f",
+      "linha": "ihpc-variacao-homologa",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2911,
+        "h1": "3,6 %"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-anual-en-768.png",
+      "sha256": "f02fc7e59ecf6e284e2e0e7fa36de9b6d3e4aee20fc6e7939d02e7931670abf7",
+      "linha": "linha-de-risco-de-pobreza-2025",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2658,
+        "h1": "8 679 euros per year"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-mensal-en-1024.png",
+      "sha256": "6775e07bc80014f1b33649b96ca4a6a623a3ba1450bb9e9bcadc7edda2ca0492",
+      "linha": "ihpc-variacao-homologa",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2035,
+        "h1": "3,6 %"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-anual-en-1024.png",
+      "sha256": "21f009c6a6b0ba9e3b6aecfb8427a5ffa24b93b8b52300a52ca5433944d2293a",
+      "linha": "linha-de-risco-de-pobreza-2025",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 1700,
+        "h1": "8 679 euros per year"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-mensal-en-1280.png",
+      "sha256": "d1784cbd4aa5b1662e5b3c18daebb2f56ba71007d901bced9ecdc28a3c6d8c69",
+      "linha": "ihpc-variacao-homologa",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2092,
+        "h1": "3,6 %"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-anual-en-1280.png",
+      "sha256": "9c022e0a92a75411214d1ce9b8acee98ac2d675757fc9747894b769f910c41b2",
+      "linha": "linha-de-risco-de-pobreza-2025",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1757,
+        "h1": "8 679 euros per year"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-mensal-en-1600.png",
+      "sha256": "fbc44a36b48f49d361d4bc8351cdb569287c4f0cb8e2be66b6003d2e7b35acd4",
+      "linha": "ihpc-variacao-homologa",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2098,
+        "h1": "3,6 %"
+      },
+      "transborda": false
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp3-2026-10-04/antes-anual-en-1600.png",
+      "sha256": "a607dc43631070ad3fe0b4ed95a1bc549fd8a970915bbdbb27081bf00b7ed6df",
+      "linha": "linha-de-risco-de-pobreza-2025",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 1763,
+        "h1": "8 679 euros per year"
+      },
+      "transborda": false
+    }
+  ]
+}
