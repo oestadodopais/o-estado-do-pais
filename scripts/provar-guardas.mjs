@@ -30,6 +30,7 @@ import {
   correcoesDaLinha,
   listaDaLinha,
   documentoDaLinha,
+  errosDaRessalva,
 } from '../src/lib/ledger.mjs';
 import { eManifestoDosRegistos, eRegistoDeConteudo } from '../src/lib/registos.mjs';
 import { ePaisDoMapa, eDistritoDoMapa, eManifestoDoMapa } from '../src/lib/mapa.mjs';
@@ -865,8 +866,36 @@ caso(
    igualdade passou de 24 a 25: a corrida com a lista nova e a igualdade velha
    recusou o caso, que é a prova de que ele morde num campo a mais como num a
    menos. */
-caso('CAMPOS/tamanho', true, CAMPOS.length === 25, 'os 25 campos do formato de uma linha, com o `serie` do RP3.');
+caso('CAMPOS/tamanho', true, CAMPOS.length === 27, 'os vinte e sete campos: série do RP3 e duas línguas da ressalva do OE1.');
 caso('CAMPOS/serie', true, CAMPOS.indexOf('serie') === CAMPOS.indexOf('reference_date') + 1, 'o `serie` logo a seguir ao `reference_date`, onde o exportador o escreve.');
+caso('CAMPOS/ressalva', true, CAMPOS.includes('ressalva') && CAMPOS.includes('ressalva_en'),
+  'A prosa que o leitor tem de ver pertence ao formato publicado da própria linha.');
+const RESSALVA_BASE = {
+  ...LINHA_BASE, excerpt: 'A diferença publicada é 802,9; a receita é 296 420,8.',
+  ressalva: 'Diferença de 802,9.', ressalva_en: 'Difference of 802.9.',
+};
+caso('ressalva/duas-linguas-e-decimais', true, errosDaRessalva(RESSALVA_BASE).length === 0,
+  'O mesmo número completo, com vírgula ou ponto decimal, está apoiado no excerto.');
+caso('ressalva/sem-par', true,
+  errosDaRessalva({ ...RESSALVA_BASE, ressalva_en: undefined }).some(e => e.startsWith('"ressalva_en" tem de ser texto não vazio')),
+  'A ressalva tem de existir nas duas línguas.');
+caso('ressalva/vazia', true,
+  errosDaRessalva({ ...RESSALVA_BASE, ressalva_en: ' ' }).some(e => e.startsWith('"ressalva_en" tem de ser texto não vazio')),
+  'Uma cadeia de espaços não é a ressalva inglesa.');
+caso('ressalva/numero-inventado', true,
+  errosDaRessalva({ ...RESSALVA_BASE, ressalva: 'Diferença de 999.' }).some(e => e.includes('número "999" sem esse número completo')),
+  'A prosa publicada não pode acrescentar um número à prova.');
+caso('ressalva/parte-de-outro-numero', true,
+  errosDaRessalva({ ...RESSALVA_BASE, excerpt: '8029', ressalva: '802', ressalva_en: '802' }).length === 2,
+  'O número oitocentos e dois não existe dentro do número oito mil e vinte e nove.');
+caso('ressalva/conta-declarada', true,
+  errosDaRessalva({ ...RESSALVA_BASE, excerpt: 'Sem número no excerto.',
+    derivation: '296 420,8 menos 191 368,9 menos 104 249 dá 802,9.',
+    derivation_en: '296,420.8 minus 191,368.9 minus 104,249 equals 802.9.' }).length === 0,
+  'A conta declarada pode sustentar a ressalva de um valor publicado.');
+caso('ressalva/alem-da-precisao-binaria', true,
+  errosDaRessalva({ ...RESSALVA_BASE, ressalva: '802,9000000000000001' }).length === 1,
+  'A comparação é decimal exata, sem arredondamento de float64.');
 caso(
   'CAMPOS_DA_VERIFICACAO/tamanho',
   true,

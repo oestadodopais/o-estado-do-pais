@@ -217,7 +217,8 @@ const LINHAS_DA_REGUA = loadClaims();
  * coordenadas de página, 278 `Quadro_I, linha 4, coluna 13`, 7 `label`). Uma
  * forma nova entra aqui à mão, com o leitor que a escreve nomeado ao lado.
  *
- * @type {{ nome: string, forma: RegExp, onde: string }[]}
+ * @typedef {{id?: unknown, reference_date?: unknown, document?: {locator?: unknown}|null}} ContextoDoLocalizador
+ * @type {{ nome: string, forma: RegExp, onde: string, confere?: (onde: string, linha?: ContextoDoLocalizador) => boolean }[]}
  */
 const LOCALIZADORES_CONHECIDOS = [
   // OE1: localizadores escritos pelos leitores nomeados em cada entrada.
@@ -231,6 +232,7 @@ const LOCALIZADORES_CONHECIDOS = [
     nome: 'folha OE1 e célula do rótulo',
     forma: /^(?:FUNCIONAL![CD](?:[2-9]|1[0-2])|INDICADORES_AC![BC](?:[2-9]|1[01]))$/,
     onde: 'publisher/oe1_dados.py: célula do rótulo nas folhas XLS',
+    confere: rotuloXlsConfere,
   },
   {
     nome: 'Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn',
@@ -244,7 +246,7 @@ const LOCALIZADORES_CONHECIDOS = [
   },
   {
     nome: 'página, rótulo e última coluna de um total dos mapas',
-    forma: /^p\. [1-9]\d*, [^,\r\n]+, última coluna$/,
+    forma: /^p\. (?:6, (?:DESPESA TOTAL|DESPESA TOTAL CONSOLIDADA|RECEITA TOTAL|RECEITA TOTAL CONSOLIDADA)|2, (?:Total da Administração Central e Segurança Social consolidado|Despesa total consolidada no âmbito do setor da Segurança Social|Receita total consolidada no âmbito do setor da Segurança Social)), última coluna$/,
     onde: 'publisher/oe1_pdf.py: linha identificada pelo rótulo nos mapas PDF',
   },
   {
@@ -271,12 +273,35 @@ const LOCALIZADORES_CONHECIDOS = [
   },
 ];
 
-/** @param {unknown} onde @returns {boolean} */
-function localizadorConhecido(onde) {
+/**
+ * OE1-d: no orçamento a coluna seguinte contém o valor; na execução há mais
+ * uma coluna de mês antes do rótulo. A união das letras das duas folhas não
+ * chega: a coluna D do orçamento funcional é numérica, mesmo sendo a letra do
+ * rótulo na execução. O período, o identificador e o localizador do valor têm
+ * de declarar a mesma grelha; não se altera nenhuma coordenada da linha.
+ * @param {string} onde @param {ContextoDoLocalizador} [linha] @returns {boolean}
+ */
+function rotuloXlsConfere(onde, linha) {
+  const celula = /^(FUNCIONAL|INDICADORES_AC)!([BCD])(\d+)$/.exec(onde);
+  if (!celula || !linha || typeof linha.id !== 'string') return false;
+  const [, folha, coluna, numero] = celula;
+  const orcamento = linha.reference_date === '2026' && linha.id.startsWith('oe-2026-');
+  const execucao = linha.reference_date === '2026-07' && linha.id.startsWith('execucao-2026-07-');
+  if (!orcamento && !execucao) return false;
+  const rotulo = folha === 'FUNCIONAL' ? (orcamento ? 'C' : 'D') : (orcamento ? 'B' : 'C');
+  const valor = folha === 'FUNCIONAL' ? (orcamento ? 'D' : 'E') : (orcamento ? 'C' : 'D');
+  const ultima = folha === 'FUNCIONAL' ? 12 : (orcamento ? 10 : 11);
+  const localizadorDoValor = linha.document?.locator;
+  return coluna === rotulo && Number(numero) >= 2 && Number(numero) <= ultima &&
+    typeof localizadorDoValor === 'string' && localizadorDoValor.startsWith(`${folha}!${valor}${numero}; `);
+}
+
+/** @param {unknown} onde @param {ContextoDoLocalizador} [linha] @returns {boolean} */
+function localizadorConhecido(onde, linha) {
   return (
     typeof onde === 'string' &&
     onde.trim() !== '' &&
-    LOCALIZADORES_CONHECIDOS.some((l) => l.forma.test(onde))
+    LOCALIZADORES_CONHECIDOS.some((l) => l.forma.test(onde) && (!l.confere || l.confere(onde, linha)))
   );
 }
 
@@ -312,7 +337,7 @@ function nomeEsperadoComDegrau(id, lang) {
     typeof nome === 'string' &&
     nome.trim() !== '' &&
     nome !== MARCADOR &&
-    localizadorConhecido(/** @type {{ name_source?: unknown }} */ (linha).name_source)
+    localizadorConhecido(/** @type {{ name_source?: unknown }} */ (linha).name_source, linha)
   ) {
     return { texto: nome, degrau: 'name' };
   }
@@ -502,7 +527,7 @@ celula('I1', 'o nome de uma medida não é o identificador', (falhas) => {
     const rotulo = /** @type {{ name?: unknown, name_source?: unknown }} */ (linha).name;
     if (!(typeof rotulo === 'string' && rotulo.trim() !== '' && rotulo !== MARCADOR)) continue;
     const onde = /** @type {{ name_source?: unknown }} */ (linha).name_source;
-    if (localizadorConhecido(onde)) {
+    if (localizadorConhecido(onde, linha)) {
       comLocalizador++;
       continue;
     }
@@ -1613,9 +1638,12 @@ async function comNavegador() {
 /* ========================================================================== */
 
 /**
- * OE1-c: as doze plantas correm pelas mesmas células I1 e I3 da régua.
+ * OE1-c e OE1-d: as plantas correm pelas mesmas células I1 e I3 da régua.
  * Cada tentativa substitui uma linha por uma cópia em memória e repõe o mapa
  * e as medidas no fim. Nenhum YAML, rótulo ou localizador em disco é escrito.
+ * O nome do projeto não dispensa a origem do rótulo: I1 exige-a sempre. I3
+ * continua a conferir a escada, cujo primeiro degrau não muda quando se estraga
+ * um localizador. Uma planta própria troca esse nome para provar a mordida I3.
  */
 function provaLocalizadores() {
   celula('I1p', 'as plantas dos localizadores recusam a origem desconhecida', (falhas) => {
@@ -1625,7 +1653,7 @@ function provaLocalizadores() {
     }
     const antigos = LOCALIZADORES_CONHECIDOS.slice(7).map((formato) => {
       const linha = [...LINHAS_DA_REGUA.values()].find((l) => formato.forma.test(l.name_source ?? ''));
-      const aceite = Boolean(linha && localizadorConhecido(linha.name_source));
+      const aceite = Boolean(linha && localizadorConhecido(linha.name_source, linha));
       if (!aceite) falhas.push(`O formato anterior ${formato.nome} perdeu o conhecido positivo.`);
       return { formato: formato.nome, id: linha?.id, aceite };
     });
@@ -1642,14 +1670,16 @@ function provaLocalizadores() {
       ['Coluna da síntese desconhecida', 5, 'p. 49 do ficheiro, página impressa 45, Despesa efetiva, Outra coluna 2026'],
       ['Programa da síntese zero', 6, 'p. 72 do ficheiro, página impressa 68, programa 000, Execução Acumulada 2026'],
       ['Localizador livre', 0, 'uma cadeia sem localizador'],
+      ['Rótulo de total inventado', 4, 'p. 6, RECEITA INVENTADA, última coluna'],
+      ['Coluna do valor orçamental disfarçada de rótulo', 1, 'FUNCIONAL!D2', 'oe-2026-despesa-funcao-01'],
     ];
     const plantas = [];
-    for (const [nome, grupo, valor] of estragos) {
+    for (const [nome, grupo, valor, escolhido] of estragos) {
       const formato = LOCALIZADORES_CONHECIDOS[grupo];
       const par = [...LINHAS_DA_REGUA].find(([id, linha]) =>
-        linha.study === 'oe-2026' && !CARTOES_DA_REGUA.has(id) &&
+        linha.study === 'oe-2026' && (!escolhido || id === escolhido) &&
         typeof linha.name === 'string' && linha.name !== linha.document?.title &&
-        formato.forma.test(linha.name_source ?? ''));
+        formato.forma.test(linha.name_source ?? '') && localizadorConhecido(linha.name_source, linha));
       if (!par) {
         falhas.push(`A planta ${nome} não tem uma linha limpa do formato ${formato.nome}.`);
         continue;
@@ -1659,10 +1689,16 @@ function provaLocalizadores() {
       copia.name_source = valor;
       const antes = { I1: medida.I1, I3: medida.I3 };
       const queixas = { I1: [], I3: [] };
+      const nomesAntes = ['pt', 'en'].map((lang) => nomeEsperadoComDegrau(id, lang));
+      const projeto = nomesAntes.every((nome) => nome?.degrau === 'cartao');
+      let nomeProjetoPreservado = false;
       try {
         LINHAS_DA_REGUA.set(id, copia);
         corposDasCelulas.get('I1')(queixas.I1);
         corposDasCelulas.get('I3')(queixas.I3);
+        nomeProjetoPreservado = projeto && ['pt', 'en'].every((lang, i) =>
+          nomeEsperadoComDegrau(id, lang)?.degrau === 'cartao' &&
+          nomeEsperado(id, lang) === nomesAntes[i]?.texto);
       } finally {
         LINHAS_DA_REGUA.set(id, original);
         Object.assign(medida, antes);
@@ -1671,10 +1707,41 @@ function provaLocalizadores() {
         q.includes(`e o localizador ${JSON.stringify(valor)}, que não é nenhuma das 11 formas`));
       const buscas = ['pt', 'en'].map((lang) =>
         `/dados/livro-indice.${lang}.json: 1 entrada(s) com um nome que não é o da sua linha.`);
-      const mordeu = Boolean(origem) && buscas.every((q) => queixas.I3.includes(q));
-      plantas.push({ nome, id, localizador: valor, mordeu, queixa_I1: origem ?? null, queixas_I3: queixas.I3 });
-      if (!mordeu) falhas.push(`A planta ${nome} não mordeu com as queixas esperadas de I1 e I3.`);
+      const buscaConferida = projeto ? nomeProjetoPreservado && queixas.I3.length === 0 :
+        buscas.every((q) => queixas.I3.includes(q));
+      const mordeu = Boolean(origem) && buscaConferida;
+      plantas.push({ nome, id, localizador: valor, mordeu, queixa_I1: origem ?? null,
+        nome_projeto_preservado: nomeProjetoPreservado, queixas_I3: queixas.I3 });
+      if (!mordeu) falhas.push(`A planta ${nome} não mordeu em I1 ou I3 deixou de conferir o degrau do nome.`);
       console.log(`  ${mordeu ? 'mordeu' : 'não mordeu'} · localizador · ${nome}`);
+    }
+    const parProjeto = [...LINHAS_DA_REGUA].find(([id, linha]) =>
+      linha.study === 'oe-2026' && CARTOES_DA_REGUA.has(id));
+    let plantaNomeProjeto = null;
+    if (!parProjeto) {
+      falhas.push('A planta do nome do projeto não encontrou uma linha OE1 no primeiro degrau.');
+    } else {
+      const [id] = parProjeto;
+      const original = CARTOES_DA_REGUA.get(id);
+      const copia = structuredClone(original);
+      copia.pt = 'Nome inventado para esta planta';
+      copia.en = 'Invented name for this plant';
+      const antes = { I1: medida.I1, I3: medida.I3 };
+      const queixas = { I1: [], I3: [] };
+      try {
+        CARTOES_DA_REGUA.set(id, copia);
+        corposDasCelulas.get('I1')(queixas.I1);
+        corposDasCelulas.get('I3')(queixas.I3);
+      } finally {
+        CARTOES_DA_REGUA.set(id, original);
+        Object.assign(medida, antes);
+      }
+      const esperadas = ['pt', 'en'].map((lang) =>
+        `/dados/livro-indice.${lang}.json: 1 entrada(s) com um nome que não é o da sua linha.`);
+      const mordeu = esperadas.every((q) => queixas.I3.includes(q));
+      plantaNomeProjeto = { nome: 'Nome do projeto inventado', id, mordeu, queixas_I3: queixas.I3 };
+      if (!mordeu) falhas.push('A planta do nome do projeto não mordeu em I3 nas duas edições.');
+      console.log(`  ${mordeu ? 'mordeu' : 'não mordeu'} · nome do projeto inventado`);
     }
     // A reposição é conferida pelas duas células, para além do finally.
     for (const id of ['I1', 'I3']) {
@@ -1682,9 +1749,9 @@ function provaLocalizadores() {
       corposDasCelulas.get(id)(queixas);
       if (queixas.length) falhas.push(`${id} não ficou limpa depois das plantas.`);
     }
-    medida.plantas_localizadores = { formatos_anteriores: antigos, plantas };
+    medida.plantas_localizadores = { formatos_anteriores: antigos, plantas, planta_nome_projeto: plantaNomeProjeto };
     console.log(JSON.stringify({ plantas_localizadores: medida.plantas_localizadores }));
-    return `${plantas.length} plantas, cada uma com a sua queixa de I1 e I3; ${antigos.length} formatos anteriores conferidos.`;
+    return `${plantas.length} plantas dos localizadores com queixa própria de I1 e o degrau conferido por I3; uma planta do nome do projeto com queixas de I3; ${antigos.length} formatos anteriores conferidos.`;
   });
 }
 

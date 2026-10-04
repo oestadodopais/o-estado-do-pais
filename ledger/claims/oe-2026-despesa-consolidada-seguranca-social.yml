@@ -29,6 +29,10 @@ reference_date: "2026"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "                                            Despesa total consolidada no âmbito do setor da Segurança Social                                                           5 675 980 393,00    2 917 932 591,00    5 120 234 764,00   34 513 601 840,00 41 037 228 974,00       367 184 953,00   89 625 306 487,00"
 
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis."
+ressalva_en: "The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
+
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
 derivation_en: null

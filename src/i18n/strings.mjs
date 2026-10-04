@@ -292,6 +292,7 @@ export const STRINGS = {
     },
 
     prov: {
+      ressalva: 'Ressalva',
       calculado: 'calculado',
       /* QUEM ESCREVEU A DEFINIÇÃO, E NÃO QUEM PUBLICOU O NÚMERO (achado 2 da
          leitura a frio de 15.09.2026, pelo caminho do rótulo). A origem de uma
@@ -3179,6 +3180,7 @@ export const STRINGS = {
     },
 
     prov: {
+      ressalva: 'Caveat',
       calculado: 'calculated',
       /** Ver a razão na edição portuguesa (achado 2, 15.09.2026). */
       definicaoDe: 'Definition by',

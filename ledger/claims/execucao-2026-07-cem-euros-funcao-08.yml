@@ -7,7 +7,7 @@ id: "execucao-2026-07-cem-euros-funcao-08"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "0,83"
-unit: "%"
+unit: "%, sobre valores acumulados de janeiro a julho"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: null
@@ -18,6 +18,10 @@ reference_date: "2026-07"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: null
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "As partes foram arredondadas separadamente; a sua soma pode não ser exatamente cem por cento. O ficheiro da fonte não imprime a unidade; a escala em milhões de euros foi conferida com a receita, a despesa e o saldo da síntese de julho, em seis correspondências exatas. Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis."
+ressalva_en: "The shares were rounded separately; their sum may not be exactly one hundred per cent. The source file does not print the unit; the scale in million euros was checked against revenue, expenditure and the balance in the July summary, with six exact matches. The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "Dividir a despesa efetiva consolidada desta função pela despesa efetiva consolidada da administração central no mesmo período, multiplicar por cem e arredondar a duas casas decimais. O total inclui as diferenças de consolidação, que não são uma função."

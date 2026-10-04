@@ -319,6 +319,9 @@ export const CAMPOS = /** @type {const} */ ([
   'source_flag',
   'source_flag_note',
   'source_flag_note_en',
+  // Ressalva publicada, nas duas línguas. Escrita no motor e atravessada pelo tubo.
+  'ressalva',
+  'ressalva_en',
   'derivation',
   'derivation_en',
   'derived_from',
@@ -846,6 +849,101 @@ export function notaDeBandeira(claim, lang) {
   if (lang === 'en') return textoOuNulo(claim.source_flag_note_en);
   if (lang === 'pt') return textoOuNulo(claim.source_flag_note);
   return null;
+}
+
+/** A ressalva da própria linha, sem recurso à outra língua.
+ * @param {Linha | null | undefined} claim
+ * @param {string} lang
+ * @returns {string | null}
+ */
+export function ressalvaDaLinha(claim, lang) {
+  if (!claim) return null;
+  if (lang === 'pt') return textoOuNulo(claim.ressalva);
+  if (lang === 'en') return textoOuNulo(claim.ressalva_en);
+  return null;
+}
+
+/** Tokens inteiros: nunca se procura um algarismo dentro de outro número.
+ * @param {unknown} text
+ */
+function numerosDaProsa(text) {
+  return typeof text === 'string'
+    ? [...text.matchAll(/[-−]?\d+(?:(?:[.,]\d+)|(?:[ \u00a0\u202f]\d{3}(?!\d)))*/g)].map(m => m[0])
+    : [];
+}
+
+/** Vírgula e ponto decimais são equivalentes. Com ambos, o último separa a
+ * fração e o anterior tem de separar grupos completos de milhares. Um número
+ * mal formado não se parte em pedaços que possam caber na prova.
+ * @param {string} token
+ * @returns {string | null}
+ */
+function numeroDaRessalva(token) {
+  let s = token.replace(/−/g, '-').replace(/[ \u00a0\u202f]/g, '');
+  if (s.includes(',') && s.includes('.')) {
+    const decimal = s.lastIndexOf(',') > s.lastIndexOf('.') ? ',' : '.';
+    const thousands = decimal === ',' ? '.' : ',';
+    const parts = s.split(decimal);
+    if (parts.length !== 2 || !new RegExp(`^-?\\d{1,3}(?:\\${thousands}\\d{3})+$`).test(parts[0])
+      || !/^\d+$/.test(parts[1])) return null;
+    s = parts[0].replaceAll(thousands, '') + '.' + parts[1];
+  } else {
+    s = s.replace(',', '.');
+  }
+  return /^-?\d+(?:\.\d+)?$/.test(s) ? Decimal.de(s).normaliza().toString() : null;
+}
+
+/** A prosa publicada só pode usar números completos do excerto ou da conta.
+ * @param {Linha} claim
+ * @returns {string[]}
+ */
+export function errosDaRessalva(claim) {
+  const fields = /** @type {const} */ (['ressalva', 'ressalva_en']);
+  if (!fields.some(field => Object.hasOwn(claim, field))) return [];
+  const errors = [];
+  const support = new Set([claim.excerpt, claim.derivation, claim.derivation_en]
+    .flatMap(numerosDaProsa).map(numeroDaRessalva).filter(n => n !== null));
+  for (const field of fields) {
+    const text = claim[field];
+    if (typeof text !== 'string' || text.trim() === '') {
+      errors.push(`"${field}" tem de ser texto não vazio; as duas línguas da ressalva são obrigatórias.`);
+      continue;
+    }
+    for (const token of numerosDaProsa(text)) {
+      const number = numeroDaRessalva(token);
+      if (number === null || !support.has(number)) {
+        errors.push(`"${field}" contém o número "${token}" sem esse número completo no excerto ou na derivação.`);
+      }
+    }
+  }
+  return errors;
+}
+
+/** A geografia do JSON-stat tem de concordar com as quatro declarações da linha.
+ * A edição declara a coordenada, e o sufixo distingue as três geografias OE1.
+ * A etiqueta é a publicada no corpo em inglês, não uma tradução da casa.
+ * @param {Linha} claim
+ */
+export function geografiaJsonStatCofog(claim) {
+  const geos = /** @type {Record<string, [string, string]>} */ ({
+    pt: ['PT', 'Portugal'], es: ['ES', 'Spain'],
+    ue: ['EU27_2020', 'European Union - 27 countries (from 2020)'],
+  });
+  try {
+    const suffix = claim.id.match(/^despesa-por-funcao-\d{4}-gf(?:0[1-9]|10)-(pt|es|ue)$/)?.[1];
+    if (suffix === undefined) return false;
+    const [geo, label] = geos[suffix];
+    const url = new URL(String(claim.source_url));
+    const body = JSON.parse(String(claim.excerpt));
+    const category = body.dimension?.geo?.category;
+    return url.origin === 'https://ec.europa.eu'
+      && url.pathname === '/eurostat/api/dissemination/statistics/1.0/data/gov_10a_exp'
+      && body.extension?.id === 'GOV_10A_EXP'
+      && JSON.stringify(url.searchParams.getAll('geo')) === JSON.stringify([geo])
+      && documentoDaLinha(claim)?.edition === `gov_10a_exp; geo=${geo}`
+      && JSON.stringify(category?.index) === JSON.stringify({[geo]: 0})
+      && JSON.stringify(category?.label) === JSON.stringify({[geo]: label});
+  } catch { return false; }
 }
 
 /**
@@ -1610,6 +1708,13 @@ export function validateLedger() {
     }
     if (ausente(c.derivation) && !ausente(c.derivation_en)) {
       errors.push(`${onde} tem "derivation_en" sem "derivation". A linha portuguesa é a primeira.`);
+    }
+    for (const error of errosDaRessalva(c)) errors.push(`${onde} ${error}`);
+    // A geografia protege também as células sem bandeira, incluindo a União.
+    if (c.source === 'Eurostat' && typeof c.excerpt === 'string' && c.excerpt.trimStart().startsWith('{')
+      && (String(c.source_url).includes('/data/gov_10a_exp') || String(doc?.edition).startsWith('gov_10a_exp'))
+      && !geografiaJsonStatCofog(c)) {
+      errors.push(`${onde} JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo.`);
     }
     /* A bandeira da fonte. Mesma regra das duas línguas — e mais uma: uma nota
        sem bandeira é a casa a dizer que a fonte marcou alguma coisa sem dizer o

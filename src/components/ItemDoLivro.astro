@@ -91,7 +91,7 @@
 import Claim from './Claim.astro';
 import CampoDaLinha from './CampoDaLinha.astro';
 import NomeDaMedida from './NomeDaMedida.astro';
-import { provenienciaIncompleta } from '../lib/ledger.mjs';
+import { provenienciaIncompleta, ressalvaDaLinha } from '../lib/ledger.mjs';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { linguaDoTituloDoDocumento, linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
@@ -116,6 +116,7 @@ const unidade = unidadeDaLinha(c.unit, lang);
    campo do documento continua onde estava. */
 const nome = nomeDaMedida(c, lang);
 const documentoNoNome = nome?.campo === 'document.title';
+const ressalva = ressalvaDaLinha(c, lang);
 ---
 
 <div
@@ -182,5 +183,11 @@ const documentoNoNome = nome?.campo === 'document.title';
         </span>
       )}
     </div>
+    {ressalva && (
+      <details>
+        <summary>{s.prov.ressalva}</summary>
+        <p class="linha-nota"><CampoDaLinha id={c.id} campo="ressalva" valor={ressalva} lang={lang} /></p>
+      </details>
+    )}
   </div>
 </div>

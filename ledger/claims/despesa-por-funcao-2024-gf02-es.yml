@@ -18,7 +18,7 @@ name_source: "dimension.cofog99.category.label.GF02"
 source: "Eurostat"
 document:
   title: "General government expenditure by function (COFOG)"
-  edition: "gov_10a_exp"
+  edition: "gov_10a_exp; geo=ES"
   locator: null
   kind: "serie"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_exp?format=JSON&lang=EN&freq=A&unit=PC_GDP&sector=S13&na_item=TE&time=2024&geo=ES&cofog99=GF02"
@@ -32,6 +32,10 @@ excerpt: "{\"version\":\"2.0\",\"class\":\"dataset\",\"label\":\"General governm
 source_flag: "p"
 source_flag_note: "Valor provisório."
 source_flag_note_en: "Provisional value."
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "O agregado da União Europeia é o que o Eurostat publica, não uma média simples dos países. Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis."
+ressalva_en: "The European Union aggregate is the one published by Eurostat, not a simple average of countries. The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

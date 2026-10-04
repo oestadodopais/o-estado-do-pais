@@ -7,7 +7,7 @@ id: "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "79 618,7"
-unit: "milhões de euros"
+unit: "milhões de euros, acumulados de janeiro a agosto"
 
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
@@ -28,6 +28,10 @@ reference_date: "2026-08"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "    Receita efetiva                                      118 916,3     129 181,8     74 182,1     79 618,7            61,6             7,3"
+
+# Ressalva publicada da casa, conferida no motor, nas duas línguas.
+ressalva: "Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis."
+ressalva_en: "The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

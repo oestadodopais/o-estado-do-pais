@@ -49,6 +49,11 @@ reference_date: "2024"           # AAAA / AAAA-MM / AAAA-T1 a AAAA-T4 / AAAA-MM-
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "[a verificar]"
 
+# Opcionais, escritos pelo motor: as duas línguas ou nenhum dos campos.
+# A ressalva da casa é publicada ao pé do valor; note continua interna.
+# ressalva: "O ficheiro da fonte não imprime a unidade."
+# ressalva_en: "The source file does not print the unit."
+
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 # Quando existe, tem de existir nas duas línguas — a página da linha publica-a.
 derivation: null
@@ -606,6 +611,20 @@ publicados como estão**. O portão de HTML confere cada campo renderizado contr
 o campo da linha, carácter a carácter, e não deixa passar nem uma paráfrase nem
 um espaço a mais. Escrever no `excerpt` uma frase «parecida» com a da fonte não
 passa a ser verdade por ficar bonita na página.
+
+**`ressalva` e `ressalva_en` são publicadas.** Os dois campos opcionais são
+escritos pelo motor e atravessam pelo exportador, nunca à mão no sítio. Quando
+existe um, os dois têm de conter texto. O recibo mostra a ressalva junto do
+valor, e o índice marca-a numa dobra. Uma ressalva não substitui o excerto
+literal: é prosa da casa sobre o alcance ou uma limitação da medida.
+
+O `ledger:check` recusa números na ressalva que não ocorram como números
+completos no excerto ou na derivação declarada. Uma conta que sustenta uma
+ressalva pode usar `derivation` e `derivation_en` sem transformar o valor
+transcrito numa linha derivada: `derived_from` continua vazio. No OE1, o motor
+reavalia em decimal exato a diferença entre os três indicadores da despesa
+antes de exportar a sua explicação. O `check`, quando existe, continua a ter
+de dar exatamente o valor da linha, sem tolerância.
 
 **`note` não é publicada.** É a única parte do formato que fica para dentro:
 mistura detalhe de proveniência com recado para quem trabalha na linha
