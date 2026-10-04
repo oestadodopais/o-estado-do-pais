@@ -1,0 +1,106 @@
+{
+  "brief": "design/observatorio/BRIEF-H2-a-passagem-de-higiene-de-04-10.md",
+  "guiao": "design/observatorio/medidas/BRIEF-H2.py",
+  "cabeca_lida": "905105b7",
+  "medidas": [
+    {
+      "nome": "estudos_recentes_na_primeira_pagina",
+      "valor": 3,
+      "comando": "git show 905105b7:src/views/HomeView.astro · o corte de estudosRecentes(lang).slice(0, N)",
+      "conhecido_positivo": {
+        "o_que": "a chamada a estudosRecentes existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_sem_sucessor",
+      "valor": 11,
+      "comando": "git show 905105b7:src/data/studies.mjs · as entradas de WORKS sem o campo sucedidoPor",
+      "conhecido_positivo": {
+        "o_que": "o estudo de Évora 2027 é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_sem_sucessor_datados_a_01_10_2026",
+      "valor": 4,
+      "comando": "git show 905105b7:src/data/studies.mjs · dessas entradas, as que têm uma edição com date: '2026-10-01'",
+      "conhecido_positivo": {
+        "o_que": "o estudo de Évora 2027 é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_com_campo_em_curso",
+      "valor": 0,
+      "comando": "git show 905105b7:src/data/studies.mjs · as entradas com o campo emCurso (que o H2 cria)",
+      "conhecido_positivo": {
+        "o_que": "o campo pergunta existe, para o padrão funcionar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "chamadas_a_routePath_texto_na_pagina_da_area",
+      "valor": 1,
+      "comando": "git show 905105b7:src/views/AreaView.astro · as chamadas routePath('texto', …)",
+      "conhecido_positivo": {
+        "o_que": "a vista chama routePath",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_que_embrulham_o_titulo_na_lista_dos_estudos",
+      "valor": 1,
+      "comando": "git show 905105b7:src/views/EstudosView.astro · as portas <a class=\"arquivo-porta\"> que embrulham o TituloDeTrabalho",
+      "conhecido_positivo": {
+        "o_que": "a vista importa o TituloDeTrabalho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "existeConstruido_aceita_o_ficheiro_html_irmao",
+      "valor": 1,
+      "comando": "git show 905105b7:scripts/gate-html.mjs · a função existeConstruido() aceita CONSTRUIDOS.has(limpo + '.html')",
+      "conhecido_positivo": {
+        "o_que": "a função existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "isencoes_json_indicador_na_check_lugar",
+      "valor": 1,
+      "comando": "git show 905105b7:scripts/check-lugar.mjs · as isenções com o padrão json_indicador",
+      "conhecido_positivo": {
+        "o_que": "a palavra «indicador» está nas contas da régua",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_copia_com_a_mesma_hora_no_verify_depois_do_build",
+      "valor": 1,
+      "comando": "git show 905105b7:scripts/verify-depois-do-build.mjs · a planta «uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D»",
+      "conhecido_positivo": {
+        "o_que": "a célula D existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "variaveis_PACOTE_RETIRA_e_PACOTE_MOTOR_no_pacote_sh",
+      "valor": 0,
+      "comando": "git show 905105b7:scripts/leituras/pacote.sh · as ocorrências de PACOTE_RETIRA e PACOTE_MOTOR",
+      "conhecido_positivo": {
+        "o_que": "a variável PACOTE_EXTRA, que já existe, está no guião",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "questoes_I190_a_I194_abertas",
+      "valor": 5,
+      "comando": "git show 905105b7:design/especime-v3/ISSUES.md · as linhas I190 a I194 com o estado **aberta**",
+      "conhecido_positivo": {
+        "o_que": "a I190 está na lista",
+        "encontrado": true
+      }
+    }
+  ]
+}
