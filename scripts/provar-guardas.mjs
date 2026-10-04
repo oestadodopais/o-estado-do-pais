@@ -860,8 +860,13 @@ caso(
 /* As afirmações de compilação de `src/tipos.d.ts` prendem `Linha` a `CAMPOS` e
    `VerificacaoDaLinha` a `CAMPOS_DA_VERIFICACAO`. Aqui confere-se que as duas
    listas são o que se pensa que são, para que uma afirmação de compilação verde
-   sobre uma lista encolhida não passe por prova. */
-caso('CAMPOS/tamanho', true, CAMPOS.length === 24, 'os 24 campos do formato de uma linha.');
+   sobre uma lista encolhida não passe por prova. O bloco RP3 (04.10.2026)
+   acrescentou o campo `serie`, que o §2 do brief manda pôr em `CAMPOS`, e a
+   igualdade passou de 24 a 25: a corrida com a lista nova e a igualdade velha
+   recusou o caso, que é a prova de que ele morde num campo a mais como num a
+   menos. */
+caso('CAMPOS/tamanho', true, CAMPOS.length === 25, 'os 25 campos do formato de uma linha, com o `serie` do RP3.');
+caso('CAMPOS/serie', true, CAMPOS.indexOf('serie') === CAMPOS.indexOf('reference_date') + 1, 'o `serie` logo a seguir ao `reference_date`, onde o exportador o escreve.');
 caso(
   'CAMPOS_DA_VERIFICACAO/tamanho',
   true,

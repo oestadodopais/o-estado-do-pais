@@ -1,0 +1,615 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/dominios_series.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "serie-cem-euros-de-2015-01"
+eixo: "periodo"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve. Numa série
+# derivada fica a null: a proveniência é a das origens.
+name: null
+name_source: null
+unit: "euros"
+# A cadência dos pontos.
+periodicidade: "mensal"
+
+# Proveniência.
+source: null
+document: null
+source_url: null
+access_date: null
+published_at: null
+# Os pedidos do cliente da casa de onde os pontos saíram: o endereço, a hora, o
+# cliente, o nome com que a casa se apresentou, o resumo e o tamanho do corpo, e o
+# primeiro e o último ponto que cada um deu.
+pedidos: []
+
+# O literal da série: o rótulo e as coordenadas como a resposta os escreve.
+excerpt: null
+primeiro_periodo: "2015-01"
+ultimo_periodo: "2026-08"
+# Os períodos da cadência que a fonte não publica, com a razão que ela dá (null quando
+# a resposta não dá razão nenhuma).
+lacunas: []
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta lhes dá.
+bandeiras: {}
+
+# Os pontos, pela ordem do tempo.
+pontos:
+  - periodo: "2015-01"
+    valor: "100,000"
+    excerto: null
+    bandeira: null
+  - periodo: "2015-02"
+    valor: "100,074"
+    excerto: null
+    bandeira: null
+  - periodo: "2015-03"
+    valor: "98,218"
+    excerto: null
+    bandeira: null
+  - periodo: "2015-04"
+    valor: "97,901"
+    excerto: null
+    bandeira: null
+  - periodo: "2015-05"
+    valor: "97,485"
+    excerto: null
+    bandeira: null
+  - periodo: "2015-06"
+    valor: "97,563"
+    excerto: null
+    bandeira: null
+  - periodo: "2015-07"
+    valor: "98,276"
+    excerto: null
+    bandeira: null
+  - periodo: "2015-08"
+    valor: "98,606"
+    excerto: null
+    bandeira: null
+  - periodo: "2015-09"
+    valor: "97,834"
+    excerto: null
+    bandeira: null
+  - periodo: "2015-10"
+    valor: "97,747"
+    excerto: null
+    bandeira: null
+  - periodo: "2015-11"
+    valor: "97,940"
+    excerto: null
+    bandeira: null
+  - periodo: "2015-12"
+    valor: "98,196"
+    excerto: null
+    bandeira: null
+  - periodo: "2016-01"
+    valor: "99,226"
+    excerto: null
+    bandeira: null
+  - periodo: "2016-02"
+    valor: "99,671"
+    excerto: null
+    bandeira: null
+  - periodo: "2016-03"
+    valor: "97,778"
+    excerto: null
+    bandeira: null
+  - periodo: "2016-04"
+    valor: "97,437"
+    excerto: null
+    bandeira: null
+  - periodo: "2016-05"
+    valor: "97,162"
+    excerto: null
+    bandeira: null
+  - periodo: "2016-06"
+    valor: "97,033"
+    excerto: null
+    bandeira: null
+  - periodo: "2016-07"
+    valor: "97,679"
+    excerto: null
+    bandeira: null
+  - periodo: "2016-08"
+    valor: "97,897"
+    excerto: null
+    bandeira: null
+  - periodo: "2016-09"
+    valor: "97,222"
+    excerto: null
+    bandeira: null
+  - periodo: "2016-10"
+    valor: "96,890"
+    excerto: null
+    bandeira: null
+  - periodo: "2016-11"
+    valor: "97,380"
+    excerto: null
+    bandeira: null
+  - periodo: "2016-12"
+    valor: "97,342"
+    excerto: null
+    bandeira: null
+  - periodo: "2017-01"
+    valor: "97,922"
+    excerto: null
+    bandeira: null
+  - periodo: "2017-02"
+    valor: "98,148"
+    excerto: null
+    bandeira: null
+  - periodo: "2017-03"
+    valor: "96,457"
+    excerto: null
+    bandeira: null
+  - periodo: "2017-04"
+    valor: "95,546"
+    excerto: null
+    bandeira: null
+  - periodo: "2017-05"
+    valor: "95,772"
+    excerto: null
+    bandeira: null
+  - periodo: "2017-06"
+    valor: "96,159"
+    excerto: null
+    bandeira: null
+  - periodo: "2017-07"
+    valor: "96,805"
+    excerto: null
+    bandeira: null
+  - periodo: "2017-08"
+    valor: "96,798"
+    excerto: null
+    bandeira: null
+  - periodo: "2017-09"
+    valor: "95,890"
+    excerto: null
+    bandeira: null
+  - periodo: "2017-10"
+    valor: "95,560"
+    excerto: null
+    bandeira: null
+  - periodo: "2017-11"
+    valor: "95,894"
+    excerto: null
+    bandeira: null
+  - periodo: "2017-12"
+    valor: "95,935"
+    excerto: null
+    bandeira: null
+  - periodo: "2018-01"
+    valor: "96,922"
+    excerto: null
+    bandeira: null
+  - periodo: "2018-02"
+    valor: "97,584"
+    excerto: null
+    bandeira: null
+  - periodo: "2018-03"
+    valor: "95,798"
+    excerto: null
+    bandeira: null
+  - periodo: "2018-04"
+    valor: "95,170"
+    excerto: null
+    bandeira: null
+  - periodo: "2018-05"
+    valor: "94,784"
+    excerto: null
+    bandeira: null
+  - periodo: "2018-06"
+    valor: "94,723"
+    excerto: null
+    bandeira: null
+  - periodo: "2018-07"
+    valor: "95,304"
+    excerto: null
+    bandeira: null
+  - periodo: "2018-08"
+    valor: "95,634"
+    excerto: null
+    bandeira: null
+  - periodo: "2018-09"
+    valor: "94,568"
+    excerto: null
+    bandeira: null
+  - periodo: "2018-10"
+    valor: "94,653"
+    excerto: null
+    bandeira: null
+  - periodo: "2018-11"
+    valor: "95,079"
+    excerto: null
+    bandeira: null
+  - periodo: "2018-12"
+    valor: "95,303"
+    excerto: null
+    bandeira: null
+  - periodo: "2019-01"
+    valor: "96,463"
+    excerto: null
+    bandeira: null
+  - periodo: "2019-02"
+    valor: "96,676"
+    excerto: null
+    bandeira: null
+  - periodo: "2019-03"
+    valor: "94,994"
+    excerto: null
+    bandeira: null
+  - periodo: "2019-04"
+    valor: "94,441"
+    excerto: null
+    bandeira: null
+  - periodo: "2019-05"
+    valor: "94,386"
+    excerto: null
+    bandeira: null
+  - periodo: "2019-06"
+    valor: "94,357"
+    excerto: null
+    bandeira: null
+  - periodo: "2019-07"
+    valor: "95,606"
+    excerto: null
+    bandeira: null
+  - periodo: "2019-08"
+    valor: "95,716"
+    excerto: null
+    bandeira: null
+  - periodo: "2019-09"
+    valor: "94,674"
+    excerto: null
+    bandeira: null
+  - periodo: "2019-10"
+    valor: "94,638"
+    excerto: null
+    bandeira: null
+  - periodo: "2019-11"
+    valor: "94,778"
+    excerto: null
+    bandeira: null
+  - periodo: "2019-12"
+    valor: "94,904"
+    excerto: null
+    bandeira: null
+  - periodo: "2020-01"
+    valor: "95,698"
+    excerto: null
+    bandeira: null
+  - periodo: "2020-02"
+    valor: "96,310"
+    excerto: null
+    bandeira: null
+  - periodo: "2020-03"
+    valor: "94,948"
+    excerto: null
+    bandeira: null
+  - periodo: "2020-04"
+    valor: "94,649"
+    excerto: null
+    bandeira: null
+  - periodo: "2020-05"
+    valor: "95,075"
+    excerto: null
+    bandeira: null
+  - periodo: "2020-06"
+    valor: "94,240"
+    excerto: null
+    bandeira: null
+  - periodo: "2020-07"
+    valor: "95,469"
+    excerto: null
+    bandeira: null
+  - periodo: "2020-08"
+    valor: "95,727"
+    excerto: null
+    bandeira: null
+  - periodo: "2020-09"
+    valor: "94,806"
+    excerto: null
+    bandeira: null
+  - periodo: "2020-10"
+    valor: "94,707"
+    excerto: null
+    bandeira: null
+  - periodo: "2020-11"
+    valor: "94,988"
+    excerto: null
+    bandeira: null
+  - periodo: "2020-12"
+    valor: "95,122"
+    excerto: null
+    bandeira: null
+  - periodo: "2021-01"
+    valor: "95,410"
+    excerto: null
+    bandeira: null
+  - periodo: "2021-02"
+    valor: "95,848"
+    excerto: null
+    bandeira: null
+  - periodo: "2021-03"
+    valor: "94,519"
+    excerto: null
+    bandeira: null
+  - periodo: "2021-04"
+    valor: "94,129"
+    excerto: null
+    bandeira: null
+  - periodo: "2021-05"
+    valor: "93,906"
+    excerto: null
+    bandeira: null
+  - periodo: "2021-06"
+    valor: "93,763"
+    excerto: null
+    bandeira: null
+  - periodo: "2021-07"
+    valor: "94,091"
+    excerto: null
+    bandeira: null
+  - periodo: "2021-08"
+    valor: "94,279"
+    excerto: null
+    bandeira: null
+  - periodo: "2021-09"
+    valor: "93,425"
+    excerto: null
+    bandeira: null
+  - periodo: "2021-10"
+    valor: "93,004"
+    excerto: null
+    bandeira: null
+  - periodo: "2021-11"
+    valor: "92,595"
+    excerto: null
+    bandeira: null
+  - periodo: "2021-12"
+    valor: "92,581"
+    excerto: null
+    bandeira: null
+  - periodo: "2022-01"
+    valor: "92,326"
+    excerto: null
+    bandeira: null
+  - periodo: "2022-02"
+    valor: "91,990"
+    excerto: null
+    bandeira: null
+  - periodo: "2022-03"
+    valor: "89,736"
+    excerto: null
+    bandeira: null
+  - periodo: "2022-04"
+    valor: "87,803"
+    excerto: null
+    bandeira: null
+  - periodo: "2022-05"
+    valor: "86,951"
+    excerto: null
+    bandeira: null
+  - periodo: "2022-06"
+    valor: "86,238"
+    excerto: null
+    bandeira: null
+  - periodo: "2022-07"
+    valor: "86,273"
+    excerto: null
+    bandeira: null
+  - periodo: "2022-08"
+    valor: "86,538"
+    excerto: null
+    bandeira: null
+  - periodo: "2022-09"
+    valor: "85,490"
+    excerto: null
+    bandeira: null
+  - periodo: "2022-10"
+    valor: "84,441"
+    excerto: null
+    bandeira: null
+  - periodo: "2022-11"
+    valor: "84,226"
+    excerto: null
+    bandeira: null
+  - periodo: "2022-12"
+    valor: "84,478"
+    excerto: null
+    bandeira: null
+  - periodo: "2023-01"
+    valor: "85,202"
+    excerto: null
+    bandeira: null
+  - periodo: "2023-02"
+    valor: "84,982"
+    excerto: null
+    bandeira: null
+  - periodo: "2023-03"
+    valor: "83,528"
+    excerto: null
+    bandeira: null
+  - periodo: "2023-04"
+    valor: "83,060"
+    excerto: null
+    bandeira: null
+  - periodo: "2023-05"
+    valor: "83,619"
+    excerto: null
+    bandeira: null
+  - periodo: "2023-06"
+    valor: "83,407"
+    excerto: null
+    bandeira: null
+  - periodo: "2023-07"
+    valor: "83,705"
+    excerto: null
+    bandeira: null
+  - periodo: "2023-08"
+    valor: "83,438"
+    excerto: null
+    bandeira: null
+  - periodo: "2023-09"
+    valor: "82,539"
+    excerto: null
+    bandeira: null
+  - periodo: "2023-10"
+    valor: "82,691"
+    excerto: null
+    bandeira: null
+  - periodo: "2023-11"
+    valor: "82,948"
+    excerto: null
+    bandeira: null
+  - periodo: "2023-12"
+    valor: "83,293"
+    excerto: null
+    bandeira: null
+  - periodo: "2024-01"
+    valor: "83,285"
+    excerto: null
+    bandeira: null
+  - periodo: "2024-02"
+    valor: "83,260"
+    excerto: null
+    bandeira: null
+  - periodo: "2024-03"
+    valor: "81,658"
+    excerto: null
+    bandeira: null
+  - periodo: "2024-04"
+    valor: "81,268"
+    excerto: null
+    bandeira: null
+  - periodo: "2024-05"
+    valor: "81,132"
+    excerto: null
+    bandeira: null
+  - periodo: "2024-06"
+    valor: "81,139"
+    excerto: null
+    bandeira: null
+  - periodo: "2024-07"
+    valor: "81,638"
+    excerto: null
+    bandeira: null
+  - periodo: "2024-08"
+    valor: "81,915"
+    excerto: null
+    bandeira: null
+  - periodo: "2024-09"
+    valor: "80,867"
+    excerto: null
+    bandeira: null
+  - periodo: "2024-10"
+    valor: "80,815"
+    excerto: null
+    bandeira: null
+  - periodo: "2024-11"
+    valor: "80,946"
+    excerto: null
+    bandeira: null
+  - periodo: "2024-12"
+    valor: "80,859"
+    excerto: null
+    bandeira: null
+  - periodo: "2025-01"
+    valor: "81,225"
+    excerto: null
+    bandeira: null
+  - periodo: "2025-02"
+    valor: "81,315"
+    excerto: null
+    bandeira: null
+  - periodo: "2025-03"
+    valor: "80,174"
+    excerto: null
+    bandeira: null
+  - periodo: "2025-04"
+    valor: "79,599"
+    excerto: null
+    bandeira: null
+  - periodo: "2025-05"
+    valor: "79,342"
+    excerto: null
+    bandeira: null
+  - periodo: "2025-06"
+    valor: "79,257"
+    excerto: null
+    bandeira: null
+  - periodo: "2025-07"
+    valor: "79,536"
+    excerto: null
+    bandeira: null
+  - periodo: "2025-08"
+    valor: "79,711"
+    excerto: null
+    bandeira: null
+  - periodo: "2025-09"
+    valor: "78,974"
+    excerto: null
+    bandeira: null
+  - periodo: "2025-10"
+    valor: "78,965"
+    excerto: null
+    bandeira: null
+  - periodo: "2025-11"
+    valor: "79,199"
+    excerto: null
+    bandeira: null
+  - periodo: "2025-12"
+    valor: "79,130"
+    excerto: null
+    bandeira: null
+  - periodo: "2026-01"
+    valor: "79,695"
+    excerto: null
+    bandeira: null
+  - periodo: "2026-02"
+    valor: "79,639"
+    excerto: null
+    bandeira: null
+  - periodo: "2026-03"
+    valor: "78,060"
+    excerto: null
+    bandeira: null
+  - periodo: "2026-04"
+    valor: "77,021"
+    excerto: null
+    bandeira: null
+  - periodo: "2026-05"
+    valor: "76,830"
+    excerto: null
+    bandeira: null
+  - periodo: "2026-06"
+    valor: "76,787"
+    excerto: null
+    bandeira: null
+  - periodo: "2026-07"
+    valor: "77,192"
+    excerto: null
+    bandeira: null
+  - periodo: "2026-08"
+    valor: "77,167"
+    excerto: null
+    bandeira: null
+
+# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a
+# expressão que o sítio refaz ponto a ponto na construção.
+derivation: "Para cada mês t desde janeiro de 2015: 100 × I(janeiro de 2015) ÷ I(t), em que I é o índice de preços no consumidor do INE (base 2025 = 100, Portugal, total); o resultado arredonda-se às casas decimais com que o INE publica o índice. É o que cem euros compram no mês t, contado em euros de janeiro de 2015."
+derivation_en: "For each month t from January 2015: 100 × I(January 2015) ÷ I(t), where I is the INE consumer price index (base 2025 = 100, Portugal, total); the result is rounded to the decimal places INE publishes the index with. It is what one hundred euros buy in month t, counted in January 2015 euros."
+derived_from:
+  - "serie-ipc-indice"
+check: "round ( 100 * serie-ipc-indice[2015-01] / serie-ipc-indice[t] , 3 )"
+
+attributed_to: null
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "RP3. Série derivada da serie-ipc-indice, ponto a ponto, pela conta 'round ( 100 * serie-ipc-indice[2015-01] / serie-ipc-indice[t] , 3 )', refeita pelo avaliador exato da casa (core.derivations), com 3 casa(s) decimal(is), as da metainformação do índice de origem."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

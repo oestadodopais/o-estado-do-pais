@@ -1,0 +1,1303 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/dominios_series.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "serie-ihpc-combustiveis-variacao-homologa-ue"
+eixo: "periodo"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve. Numa série
+# derivada fica a null: a proveniência é a das origens.
+name: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data"
+name_source: "label"
+unit: "%"
+# A cadência dos pontos.
+periodicidade: "mensal"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data"
+  edition: "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=CP0722, geo=EU27_2020"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP0722&geo=EU27_2020&sinceTimePeriod=1996-01"
+access_date: "2026-10-04"
+published_at: "2026-10-02"
+# Os pedidos do cliente da casa de onde os pontos saíram: o endereço, a hora, o
+# cliente, o nome com que a casa se apresentou, o resumo e o tamanho do corpo, e o
+# primeiro e o último ponto que cada um deu.
+pedidos:
+  - url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP0722&geo=EU27_2020&sinceTimePeriod=1996-01"
+    lido_em: "2026-10-04T03:55:13Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "250d402db99b5d53e1a53cbbe67d2d2fbb272ca923e29ea7d616b2f89cc94a87"
+    bytes: 20412
+    primeiro: "2000-12"
+    ultimo: "2026-08"
+
+# O literal da série: o rótulo e as coordenadas como a resposta os escreve.
+excerpt: "\"label\":\"Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data\" · \"M\":\"Monthly\" · \"RCH_A\":\"Annual rate of change\" · \"CP0722\":\"Fuels and lubricants for personal transport equipment (ND)\" · \"EU27_2020\":\"European Union - 27 countries (from 2020)\""
+primeiro_periodo: "2000-12"
+ultimo_periodo: "2026-08"
+# Os períodos da cadência que a fonte não publica, com a razão que ela dá (null quando
+# a resposta não dá razão nenhuma).
+lacunas: []
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta lhes dá.
+bandeiras: {}
+
+# Os pontos, pela ordem do tempo.
+pontos:
+  - periodo: "2000-12"
+    valor: "9,2"
+    excerto: "\"2000-12\":59 · \"59\":9.2"
+    bandeira: null
+  - periodo: "2001-01"
+    valor: "3,9"
+    excerto: "\"2001-01\":60 · \"60\":3.9"
+    bandeira: null
+  - periodo: "2001-02"
+    valor: "4,7"
+    excerto: "\"2001-02\":61 · \"61\":4.7"
+    bandeira: null
+  - periodo: "2001-03"
+    valor: "0,3"
+    excerto: "\"2001-03\":62 · \"62\":0.3"
+    bandeira: null
+  - periodo: "2001-04"
+    valor: "4,5"
+    excerto: "\"2001-04\":63 · \"63\":4.5"
+    bandeira: null
+  - periodo: "2001-05"
+    valor: "6,9"
+    excerto: "\"2001-05\":64 · \"64\":6.9"
+    bandeira: null
+  - periodo: "2001-06"
+    valor: "0,5"
+    excerto: "\"2001-06\":65 · \"65\":0.5"
+    bandeira: null
+  - periodo: "2001-07"
+    valor: "−3,2"
+    excerto: "\"2001-07\":66 · \"66\":-3.2"
+    bandeira: null
+  - periodo: "2001-08"
+    valor: "−3,1"
+    excerto: "\"2001-08\":67 · \"67\":-3.1"
+    bandeira: null
+  - periodo: "2001-09"
+    valor: "−5,5"
+    excerto: "\"2001-09\":68 · \"68\":-5.5"
+    bandeira: null
+  - periodo: "2001-10"
+    valor: "−7,2"
+    excerto: "\"2001-10\":69 · \"69\":-7.2"
+    bandeira: null
+  - periodo: "2001-11"
+    valor: "−10,1"
+    excerto: "\"2001-11\":70 · \"70\":-10.1"
+    bandeira: null
+  - periodo: "2001-12"
+    valor: "−8,4"
+    excerto: "\"2001-12\":71 · \"71\":-8.4"
+    bandeira: null
+  - periodo: "2002-01"
+    valor: "−3,5"
+    excerto: "\"2002-01\":72 · \"72\":-3.5"
+    bandeira: null
+  - periodo: "2002-02"
+    valor: "−4,8"
+    excerto: "\"2002-02\":73 · \"73\":-4.8"
+    bandeira: null
+  - periodo: "2002-03"
+    valor: "−2,2"
+    excerto: "\"2002-03\":74 · \"74\":-2.2"
+    bandeira: null
+  - periodo: "2002-04"
+    valor: "0,0"
+    excerto: "\"2002-04\":75 · \"75\":0.0"
+    bandeira: null
+  - periodo: "2002-05"
+    valor: "−4,2"
+    excerto: "\"2002-05\":76 · \"76\":-4.2"
+    bandeira: null
+  - periodo: "2002-06"
+    valor: "−4,4"
+    excerto: "\"2002-06\":77 · \"77\":-4.4"
+    bandeira: null
+  - periodo: "2002-07"
+    valor: "−0,6"
+    excerto: "\"2002-07\":78 · \"78\":-0.6"
+    bandeira: null
+  - periodo: "2002-08"
+    valor: "1,7"
+    excerto: "\"2002-08\":79 · \"79\":1.7"
+    bandeira: null
+  - periodo: "2002-09"
+    valor: "1,9"
+    excerto: "\"2002-09\":80 · \"80\":1.9"
+    bandeira: null
+  - periodo: "2002-10"
+    valor: "6,1"
+    excerto: "\"2002-10\":81 · \"81\":6.1"
+    bandeira: null
+  - periodo: "2002-11"
+    valor: "6,1"
+    excerto: "\"2002-11\":82 · \"82\":6.1"
+    bandeira: null
+  - periodo: "2002-12"
+    valor: "7,7"
+    excerto: "\"2002-12\":83 · \"83\":7.7"
+    bandeira: null
+  - periodo: "2003-01"
+    valor: "10,1"
+    excerto: "\"2003-01\":84 · \"84\":10.1"
+    bandeira: null
+  - periodo: "2003-02"
+    valor: "12,1"
+    excerto: "\"2003-02\":85 · \"85\":12.1"
+    bandeira: null
+  - periodo: "2003-03"
+    valor: "10,8"
+    excerto: "\"2003-03\":86 · \"86\":10.8"
+    bandeira: null
+  - periodo: "2003-04"
+    valor: "2,3"
+    excerto: "\"2003-04\":87 · \"87\":2.3"
+    bandeira: null
+  - periodo: "2003-05"
+    valor: "−0,7"
+    excerto: "\"2003-05\":88 · \"88\":-0.7"
+    bandeira: null
+  - periodo: "2003-06"
+    valor: "0,5"
+    excerto: "\"2003-06\":89 · \"89\":0.5"
+    bandeira: null
+  - periodo: "2003-07"
+    valor: "1,1"
+    excerto: "\"2003-07\":90 · \"90\":1.1"
+    bandeira: null
+  - periodo: "2003-08"
+    valor: "2,2"
+    excerto: "\"2003-08\":91 · \"91\":2.2"
+    bandeira: null
+  - periodo: "2003-09"
+    valor: "0,7"
+    excerto: "\"2003-09\":92 · \"92\":0.7"
+    bandeira: null
+  - periodo: "2003-10"
+    valor: "−1,3"
+    excerto: "\"2003-10\":93 · \"93\":-1.3"
+    bandeira: null
+  - periodo: "2003-11"
+    valor: "1,1"
+    excerto: "\"2003-11\":94 · \"94\":1.1"
+    bandeira: null
+  - periodo: "2003-12"
+    valor: "1,0"
+    excerto: "\"2003-12\":95 · \"95\":1.0"
+    bandeira: null
+  - periodo: "2004-01"
+    valor: "−1,5"
+    excerto: "\"2004-01\":96 · \"96\":-1.5"
+    bandeira: null
+  - periodo: "2004-02"
+    valor: "−3,4"
+    excerto: "\"2004-02\":97 · \"97\":-3.4"
+    bandeira: null
+  - periodo: "2004-03"
+    valor: "−2,7"
+    excerto: "\"2004-03\":98 · \"98\":-2.7"
+    bandeira: null
+  - periodo: "2004-04"
+    valor: "3,1"
+    excerto: "\"2004-04\":99 · \"99\":3.1"
+    bandeira: null
+  - periodo: "2004-05"
+    valor: "11,6"
+    excerto: "\"2004-05\":100 · \"100\":11.6"
+    bandeira: null
+  - periodo: "2004-06"
+    valor: "10,3"
+    excerto: "\"2004-06\":101 · \"101\":10.3"
+    bandeira: null
+  - periodo: "2004-07"
+    valor: "10,2"
+    excerto: "\"2004-07\":102 · \"102\":10.2"
+    bandeira: null
+  - periodo: "2004-08"
+    valor: "10,2"
+    excerto: "\"2004-08\":103 · \"103\":10.2"
+    bandeira: null
+  - periodo: "2004-09"
+    valor: "9,9"
+    excerto: "\"2004-09\":104 · \"104\":9.9"
+    bandeira: null
+  - periodo: "2004-10"
+    valor: "14,5"
+    excerto: "\"2004-10\":105 · \"105\":14.5"
+    bandeira: null
+  - periodo: "2004-11"
+    valor: "12,6"
+    excerto: "\"2004-11\":106 · \"106\":12.6"
+    bandeira: null
+  - periodo: "2004-12"
+    valor: "9,3"
+    excerto: "\"2004-12\":107 · \"107\":9.3"
+    bandeira: null
+  - periodo: "2005-01"
+    valor: "6,5"
+    excerto: "\"2005-01\":108 · \"108\":6.5"
+    bandeira: null
+  - periodo: "2005-02"
+    valor: "8,1"
+    excerto: "\"2005-02\":109 · \"109\":8.1"
+    bandeira: null
+  - periodo: "2005-03"
+    valor: "9,0"
+    excerto: "\"2005-03\":110 · \"110\":9.0"
+    bandeira: null
+  - periodo: "2005-04"
+    valor: "11,0"
+    excerto: "\"2005-04\":111 · \"111\":11.0"
+    bandeira: null
+  - periodo: "2005-05"
+    valor: "5,6"
+    excerto: "\"2005-05\":112 · \"112\":5.6"
+    bandeira: null
+  - periodo: "2005-06"
+    valor: "9,0"
+    excerto: "\"2005-06\":113 · \"113\":9.0"
+    bandeira: null
+  - periodo: "2005-07"
+    valor: "12,5"
+    excerto: "\"2005-07\":114 · \"114\":12.5"
+    bandeira: null
+  - periodo: "2005-08"
+    valor: "12,5"
+    excerto: "\"2005-08\":115 · \"115\":12.5"
+    bandeira: null
+  - periodo: "2005-09"
+    valor: "18,0"
+    excerto: "\"2005-09\":116 · \"116\":18.0"
+    bandeira: null
+  - periodo: "2005-10"
+    valor: "13,5"
+    excerto: "\"2005-10\":117 · \"117\":13.5"
+    bandeira: null
+  - periodo: "2005-11"
+    valor: "9,4"
+    excerto: "\"2005-11\":118 · \"118\":9.4"
+    bandeira: null
+  - periodo: "2005-12"
+    valor: "11,0"
+    excerto: "\"2005-12\":119 · \"119\":11.0"
+    bandeira: null
+  - periodo: "2006-01"
+    valor: "14,4"
+    excerto: "\"2006-01\":120 · \"120\":14.4"
+    bandeira: null
+  - periodo: "2006-02"
+    valor: "12,3"
+    excerto: "\"2006-02\":121 · \"121\":12.3"
+    bandeira: null
+  - periodo: "2006-03"
+    valor: "9,6"
+    excerto: "\"2006-03\":122 · \"122\":9.6"
+    bandeira: null
+  - periodo: "2006-04"
+    valor: "9,9"
+    excerto: "\"2006-04\":123 · \"123\":9.9"
+    bandeira: null
+  - periodo: "2006-05"
+    valor: "12,7"
+    excerto: "\"2006-05\":124 · \"124\":12.7"
+    bandeira: null
+  - periodo: "2006-06"
+    valor: "10,6"
+    excerto: "\"2006-06\":125 · \"125\":10.6"
+    bandeira: null
+  - periodo: "2006-07"
+    valor: "8,6"
+    excerto: "\"2006-07\":126 · \"126\":8.6"
+    bandeira: null
+  - periodo: "2006-08"
+    valor: "6,7"
+    excerto: "\"2006-08\":127 · \"127\":6.7"
+    bandeira: null
+  - periodo: "2006-09"
+    valor: "−4,0"
+    excerto: "\"2006-09\":128 · \"128\":-4.0"
+    bandeira: null
+  - periodo: "2006-10"
+    valor: "−6,9"
+    excerto: "\"2006-10\":129 · \"129\":-6.9"
+    bandeira: null
+  - periodo: "2006-11"
+    valor: "−2,6"
+    excerto: "\"2006-11\":130 · \"130\":-2.6"
+    bandeira: null
+  - periodo: "2006-12"
+    valor: "−0,8"
+    excerto: "\"2006-12\":131 · \"131\":-0.8"
+    bandeira: null
+  - periodo: "2007-01"
+    valor: "−3,0"
+    excerto: "\"2007-01\":132 · \"132\":-3.0"
+    bandeira: null
+  - periodo: "2007-02"
+    valor: "−2,8"
+    excerto: "\"2007-02\":133 · \"133\":-2.8"
+    bandeira: null
+  - periodo: "2007-03"
+    valor: "0,2"
+    excerto: "\"2007-03\":134 · \"134\":0.2"
+    bandeira: null
+  - periodo: "2007-04"
+    valor: "−1,1"
+    excerto: "\"2007-04\":135 · \"135\":-1.1"
+    bandeira: null
+  - periodo: "2007-05"
+    valor: "−0,8"
+    excerto: "\"2007-05\":136 · \"136\":-0.8"
+    bandeira: null
+  - periodo: "2007-06"
+    valor: "0,3"
+    excerto: "\"2007-06\":137 · \"137\":0.3"
+    bandeira: null
+  - periodo: "2007-07"
+    valor: "−0,9"
+    excerto: "\"2007-07\":138 · \"138\":-0.9"
+    bandeira: null
+  - periodo: "2007-08"
+    valor: "−2,7"
+    excerto: "\"2007-08\":139 · \"139\":-2.7"
+    bandeira: null
+  - periodo: "2007-09"
+    valor: "4,1"
+    excerto: "\"2007-09\":140 · \"140\":4.1"
+    bandeira: null
+  - periodo: "2007-10"
+    valor: "8,6"
+    excerto: "\"2007-10\":141 · \"141\":8.6"
+    bandeira: null
+  - periodo: "2007-11"
+    valor: "14,6"
+    excerto: "\"2007-11\":142 · \"142\":14.6"
+    bandeira: null
+  - periodo: "2007-12"
+    valor: "13,7"
+    excerto: "\"2007-12\":143 · \"143\":13.7"
+    bandeira: null
+  - periodo: "2008-01"
+    valor: "15,4"
+    excerto: "\"2008-01\":144 · \"144\":15.4"
+    bandeira: null
+  - periodo: "2008-02"
+    valor: "14,6"
+    excerto: "\"2008-02\":145 · \"145\":14.6"
+    bandeira: null
+  - periodo: "2008-03"
+    valor: "14,4"
+    excerto: "\"2008-03\":146 · \"146\":14.4"
+    bandeira: null
+  - periodo: "2008-04"
+    valor: "11,8"
+    excerto: "\"2008-04\":147 · \"147\":11.8"
+    bandeira: null
+  - periodo: "2008-05"
+    valor: "14,8"
+    excerto: "\"2008-05\":148 · \"148\":14.8"
+    bandeira: null
+  - periodo: "2008-06"
+    valor: "18,0"
+    excerto: "\"2008-06\":149 · \"149\":18.0"
+    bandeira: null
+  - periodo: "2008-07"
+    valor: "18,2"
+    excerto: "\"2008-07\":150 · \"150\":18.2"
+    bandeira: null
+  - periodo: "2008-08"
+    valor: "14,5"
+    excerto: "\"2008-08\":151 · \"151\":14.5"
+    bandeira: null
+  - periodo: "2008-09"
+    valor: "12,6"
+    excerto: "\"2008-09\":152 · \"152\":12.6"
+    bandeira: null
+  - periodo: "2008-10"
+    valor: "5,5"
+    excerto: "\"2008-10\":153 · \"153\":5.5"
+    bandeira: null
+  - periodo: "2008-11"
+    valor: "−8,4"
+    excerto: "\"2008-11\":154 · \"154\":-8.4"
+    bandeira: null
+  - periodo: "2008-12"
+    valor: "−15,3"
+    excerto: "\"2008-12\":155 · \"155\":-15.3"
+    bandeira: null
+  - periodo: "2009-01"
+    valor: "−17,1"
+    excerto: "\"2009-01\":156 · \"156\":-17.1"
+    bandeira: null
+  - periodo: "2009-02"
+    valor: "−14,6"
+    excerto: "\"2009-02\":157 · \"157\":-14.6"
+    bandeira: null
+  - periodo: "2009-03"
+    valor: "−18,1"
+    excerto: "\"2009-03\":158 · \"158\":-18.1"
+    bandeira: null
+  - periodo: "2009-04"
+    valor: "−16,2"
+    excerto: "\"2009-04\":159 · \"159\":-16.2"
+    bandeira: null
+  - periodo: "2009-05"
+    valor: "−18,6"
+    excerto: "\"2009-05\":160 · \"160\":-18.6"
+    bandeira: null
+  - periodo: "2009-06"
+    valor: "−17,6"
+    excerto: "\"2009-06\":161 · \"161\":-17.6"
+    bandeira: null
+  - periodo: "2009-07"
+    valor: "−19,2"
+    excerto: "\"2009-07\":162 · \"162\":-19.2"
+    bandeira: null
+  - periodo: "2009-08"
+    valor: "−12,5"
+    excerto: "\"2009-08\":163 · \"163\":-12.5"
+    bandeira: null
+  - periodo: "2009-09"
+    valor: "−13,4"
+    excerto: "\"2009-09\":164 · \"164\":-13.4"
+    bandeira: null
+  - periodo: "2009-10"
+    valor: "−8,4"
+    excerto: "\"2009-10\":165 · \"165\":-8.4"
+    bandeira: null
+  - periodo: "2009-11"
+    valor: "3,5"
+    excerto: "\"2009-11\":166 · \"166\":3.5"
+    bandeira: null
+  - periodo: "2009-12"
+    valor: "11,8"
+    excerto: "\"2009-12\":167 · \"167\":11.8"
+    bandeira: null
+  - periodo: "2010-01"
+    valor: "17,3"
+    excerto: "\"2010-01\":168 · \"168\":17.3"
+    bandeira: null
+  - periodo: "2010-02"
+    valor: "14,1"
+    excerto: "\"2010-02\":169 · \"169\":14.1"
+    bandeira: null
+  - periodo: "2010-03"
+    valor: "20,0"
+    excerto: "\"2010-03\":170 · \"170\":20.0"
+    bandeira: null
+  - periodo: "2010-04"
+    valor: "19,5"
+    excerto: "\"2010-04\":171 · \"171\":19.5"
+    bandeira: null
+  - periodo: "2010-05"
+    valor: "18,3"
+    excerto: "\"2010-05\":172 · \"172\":18.3"
+    bandeira: null
+  - periodo: "2010-06"
+    valor: "11,6"
+    excerto: "\"2010-06\":173 · \"173\":11.6"
+    bandeira: null
+  - periodo: "2010-07"
+    valor: "12,4"
+    excerto: "\"2010-07\":174 · \"174\":12.4"
+    bandeira: null
+  - periodo: "2010-08"
+    valor: "8,5"
+    excerto: "\"2010-08\":175 · \"175\":8.5"
+    bandeira: null
+  - periodo: "2010-09"
+    valor: "11,0"
+    excerto: "\"2010-09\":176 · \"176\":11.0"
+    bandeira: null
+  - periodo: "2010-10"
+    valor: "12,1"
+    excerto: "\"2010-10\":177 · \"177\":12.1"
+    bandeira: null
+  - periodo: "2010-11"
+    valor: "10,3"
+    excerto: "\"2010-11\":178 · \"178\":10.3"
+    bandeira: null
+  - periodo: "2010-12"
+    valor: "15,5"
+    excerto: "\"2010-12\":179 · \"179\":15.5"
+    bandeira: null
+  - periodo: "2011-01"
+    valor: "14,8"
+    excerto: "\"2011-01\":180 · \"180\":14.8"
+    bandeira: null
+  - periodo: "2011-02"
+    valor: "15,7"
+    excerto: "\"2011-02\":181 · \"181\":15.7"
+    bandeira: null
+  - periodo: "2011-03"
+    valor: "15,2"
+    excerto: "\"2011-03\":182 · \"182\":15.2"
+    bandeira: null
+  - periodo: "2011-04"
+    valor: "14,5"
+    excerto: "\"2011-04\":183 · \"183\":14.5"
+    bandeira: null
+  - periodo: "2011-05"
+    valor: "12,7"
+    excerto: "\"2011-05\":184 · \"184\":12.7"
+    bandeira: null
+  - periodo: "2011-06"
+    valor: "12,0"
+    excerto: "\"2011-06\":185 · \"185\":12.0"
+    bandeira: null
+  - periodo: "2011-07"
+    valor: "13,0"
+    excerto: "\"2011-07\":186 · \"186\":13.0"
+    bandeira: null
+  - periodo: "2011-08"
+    valor: "13,4"
+    excerto: "\"2011-08\":187 · \"187\":13.4"
+    bandeira: null
+  - periodo: "2011-09"
+    valor: "14,4"
+    excerto: "\"2011-09\":188 · \"188\":14.4"
+    bandeira: null
+  - periodo: "2011-10"
+    valor: "14,1"
+    excerto: "\"2011-10\":189 · \"189\":14.1"
+    bandeira: null
+  - periodo: "2011-11"
+    valor: "13,4"
+    excerto: "\"2011-11\":190 · \"190\":13.4"
+    bandeira: null
+  - periodo: "2011-12"
+    valor: "9,1"
+    excerto: "\"2011-12\":191 · \"191\":9.1"
+    bandeira: null
+  - periodo: "2012-01"
+    valor: "9,6"
+    excerto: "\"2012-01\":192 · \"192\":9.6"
+    bandeira: null
+  - periodo: "2012-02"
+    valor: "10,7"
+    excerto: "\"2012-02\":193 · \"193\":10.7"
+    bandeira: null
+  - periodo: "2012-03"
+    valor: "9,9"
+    excerto: "\"2012-03\":194 · \"194\":9.9"
+    bandeira: null
+  - periodo: "2012-04"
+    valor: "9,4"
+    excerto: "\"2012-04\":195 · \"195\":9.4"
+    bandeira: null
+  - periodo: "2012-05"
+    valor: "7,1"
+    excerto: "\"2012-05\":196 · \"196\":7.1"
+    bandeira: null
+  - periodo: "2012-06"
+    valor: "5,5"
+    excerto: "\"2012-06\":197 · \"197\":5.5"
+    bandeira: null
+  - periodo: "2012-07"
+    valor: "5,3"
+    excerto: "\"2012-07\":198 · \"198\":5.3"
+    bandeira: null
+  - periodo: "2012-08"
+    valor: "9,9"
+    excerto: "\"2012-08\":199 · \"199\":9.9"
+    bandeira: null
+  - periodo: "2012-09"
+    valor: "10,7"
+    excerto: "\"2012-09\":200 · \"200\":10.7"
+    bandeira: null
+  - periodo: "2012-10"
+    valor: "8,6"
+    excerto: "\"2012-10\":201 · \"201\":8.6"
+    bandeira: null
+  - periodo: "2012-11"
+    valor: "4,8"
+    excerto: "\"2012-11\":202 · \"202\":4.8"
+    bandeira: null
+  - periodo: "2012-12"
+    valor: "4,0"
+    excerto: "\"2012-12\":203 · \"203\":4.0"
+    bandeira: null
+  - periodo: "2013-01"
+    valor: "1,1"
+    excerto: "\"2013-01\":204 · \"204\":1.1"
+    bandeira: null
+  - periodo: "2013-02"
+    valor: "1,5"
+    excerto: "\"2013-02\":205 · \"205\":1.5"
+    bandeira: null
+  - periodo: "2013-03"
+    valor: "−2,3"
+    excerto: "\"2013-03\":206 · \"206\":-2.3"
+    bandeira: null
+  - periodo: "2013-04"
+    valor: "−4,6"
+    excerto: "\"2013-04\":207 · \"207\":-4.6"
+    bandeira: null
+  - periodo: "2013-05"
+    valor: "−4,1"
+    excerto: "\"2013-05\":208 · \"208\":-4.1"
+    bandeira: null
+  - periodo: "2013-06"
+    valor: "−1,0"
+    excerto: "\"2013-06\":209 · \"209\":-1.0"
+    bandeira: null
+  - periodo: "2013-07"
+    valor: "0,1"
+    excerto: "\"2013-07\":210 · \"210\":0.1"
+    bandeira: null
+  - periodo: "2013-08"
+    valor: "−3,2"
+    excerto: "\"2013-08\":211 · \"211\":-3.2"
+    bandeira: null
+  - periodo: "2013-09"
+    valor: "−4,3"
+    excerto: "\"2013-09\":212 · \"212\":-4.3"
+    bandeira: null
+  - periodo: "2013-10"
+    valor: "−4,9"
+    excerto: "\"2013-10\":213 · \"213\":-4.9"
+    bandeira: null
+  - periodo: "2013-11"
+    valor: "−3,4"
+    excerto: "\"2013-11\":214 · \"214\":-3.4"
+    bandeira: null
+  - periodo: "2013-12"
+    valor: "−1,5"
+    excerto: "\"2013-12\":215 · \"215\":-1.5"
+    bandeira: null
+  - periodo: "2014-01"
+    valor: "−2,5"
+    excerto: "\"2014-01\":216 · \"216\":-2.5"
+    bandeira: null
+  - periodo: "2014-02"
+    valor: "−4,5"
+    excerto: "\"2014-02\":217 · \"217\":-4.5"
+    bandeira: null
+  - periodo: "2014-03"
+    valor: "−3,9"
+    excerto: "\"2014-03\":218 · \"218\":-3.9"
+    bandeira: null
+  - periodo: "2014-04"
+    valor: "−2,4"
+    excerto: "\"2014-04\":219 · \"219\":-2.4"
+    bandeira: null
+  - periodo: "2014-05"
+    valor: "−0,1"
+    excerto: "\"2014-05\":220 · \"220\":-0.1"
+    bandeira: null
+  - periodo: "2014-06"
+    valor: "0,2"
+    excerto: "\"2014-06\":221 · \"221\":0.2"
+    bandeira: null
+  - periodo: "2014-07"
+    valor: "−0,8"
+    excerto: "\"2014-07\":222 · \"222\":-0.8"
+    bandeira: null
+  - periodo: "2014-08"
+    valor: "−2,5"
+    excerto: "\"2014-08\":223 · \"223\":-2.5"
+    bandeira: null
+  - periodo: "2014-09"
+    valor: "−3,3"
+    excerto: "\"2014-09\":224 · \"224\":-3.3"
+    bandeira: null
+  - periodo: "2014-10"
+    valor: "−2,7"
+    excerto: "\"2014-10\":225 · \"225\":-2.7"
+    bandeira: null
+  - periodo: "2014-11"
+    valor: "−4,1"
+    excerto: "\"2014-11\":226 · \"226\":-4.1"
+    bandeira: null
+  - periodo: "2014-12"
+    valor: "−10,5"
+    excerto: "\"2014-12\":227 · \"227\":-10.5"
+    bandeira: null
+  - periodo: "2015-01"
+    valor: "−15,6"
+    excerto: "\"2015-01\":228 · \"228\":-15.6"
+    bandeira: null
+  - periodo: "2015-02"
+    valor: "−13,4"
+    excerto: "\"2015-02\":229 · \"229\":-13.4"
+    bandeira: null
+  - periodo: "2015-03"
+    valor: "−9,5"
+    excerto: "\"2015-03\":230 · \"230\":-9.5"
+    bandeira: null
+  - periodo: "2015-04"
+    valor: "−9,1"
+    excerto: "\"2015-04\":231 · \"231\":-9.1"
+    bandeira: null
+  - periodo: "2015-05"
+    valor: "−7,2"
+    excerto: "\"2015-05\":232 · \"232\":-7.2"
+    bandeira: null
+  - periodo: "2015-06"
+    valor: "−7,7"
+    excerto: "\"2015-06\":233 · \"233\":-7.7"
+    bandeira: null
+  - periodo: "2015-07"
+    valor: "−8,5"
+    excerto: "\"2015-07\":234 · \"234\":-8.5"
+    bandeira: null
+  - periodo: "2015-08"
+    valor: "−11,1"
+    excerto: "\"2015-08\":235 · \"235\":-11.1"
+    bandeira: null
+  - periodo: "2015-09"
+    valor: "−14,4"
+    excerto: "\"2015-09\":236 · \"236\":-14.4"
+    bandeira: null
+  - periodo: "2015-10"
+    valor: "−13,9"
+    excerto: "\"2015-10\":237 · \"237\":-13.9"
+    bandeira: null
+  - periodo: "2015-11"
+    valor: "−11,3"
+    excerto: "\"2015-11\":238 · \"238\":-11.3"
+    bandeira: null
+  - periodo: "2015-12"
+    valor: "−8,5"
+    excerto: "\"2015-12\":239 · \"239\":-8.5"
+    bandeira: null
+  - periodo: "2016-01"
+    valor: "−6,1"
+    excerto: "\"2016-01\":240 · \"240\":-6.1"
+    bandeira: null
+  - periodo: "2016-02"
+    valor: "−10,6"
+    excerto: "\"2016-02\":241 · \"241\":-10.6"
+    bandeira: null
+  - periodo: "2016-03"
+    valor: "−12,7"
+    excerto: "\"2016-03\":242 · \"242\":-12.7"
+    bandeira: null
+  - periodo: "2016-04"
+    valor: "−11,6"
+    excerto: "\"2016-04\":243 · \"243\":-11.6"
+    bandeira: null
+  - periodo: "2016-05"
+    valor: "−10,9"
+    excerto: "\"2016-05\":244 · \"244\":-10.9"
+    bandeira: null
+  - periodo: "2016-06"
+    valor: "−8,6"
+    excerto: "\"2016-06\":245 · \"245\":-8.6"
+    bandeira: null
+  - periodo: "2016-07"
+    valor: "−9,7"
+    excerto: "\"2016-07\":246 · \"246\":-9.7"
+    bandeira: null
+  - periodo: "2016-08"
+    valor: "−7,8"
+    excerto: "\"2016-08\":247 · \"247\":-7.8"
+    bandeira: null
+  - periodo: "2016-09"
+    valor: "−2,5"
+    excerto: "\"2016-09\":248 · \"248\":-2.5"
+    bandeira: null
+  - periodo: "2016-10"
+    valor: "1,0"
+    excerto: "\"2016-10\":249 · \"249\":1.0"
+    bandeira: null
+  - periodo: "2016-11"
+    valor: "0,4"
+    excerto: "\"2016-11\":250 · \"250\":0.4"
+    bandeira: null
+  - periodo: "2016-12"
+    valor: "6,1"
+    excerto: "\"2016-12\":251 · \"251\":6.1"
+    bandeira: null
+  - periodo: "2017-01"
+    valor: "13,5"
+    excerto: "\"2017-01\":252 · \"252\":13.5"
+    bandeira: null
+  - periodo: "2017-02"
+    valor: "16,5"
+    excerto: "\"2017-02\":253 · \"253\":16.5"
+    bandeira: null
+  - periodo: "2017-03"
+    valor: "13,0"
+    excerto: "\"2017-03\":254 · \"254\":13.0"
+    bandeira: null
+  - periodo: "2017-04"
+    valor: "10,9"
+    excerto: "\"2017-04\":255 · \"255\":10.9"
+    bandeira: null
+  - periodo: "2017-05"
+    valor: "5,6"
+    excerto: "\"2017-05\":256 · \"256\":5.6"
+    bandeira: null
+  - periodo: "2017-06"
+    valor: "0,7"
+    excerto: "\"2017-06\":257 · \"257\":0.7"
+    bandeira: null
+  - periodo: "2017-07"
+    valor: "1,4"
+    excerto: "\"2017-07\":258 · \"258\":1.4"
+    bandeira: null
+  - periodo: "2017-08"
+    valor: "4,6"
+    excerto: "\"2017-08\":259 · \"259\":4.6"
+    bandeira: null
+  - periodo: "2017-09"
+    valor: "5,0"
+    excerto: "\"2017-09\":260 · \"260\":5.0"
+    bandeira: null
+  - periodo: "2017-10"
+    valor: "3,2"
+    excerto: "\"2017-10\":261 · \"261\":3.2"
+    bandeira: null
+  - periodo: "2017-11"
+    valor: "6,2"
+    excerto: "\"2017-11\":262 · \"262\":6.2"
+    bandeira: null
+  - periodo: "2017-12"
+    valor: "3,3"
+    excerto: "\"2017-12\":263 · \"263\":3.3"
+    bandeira: null
+  - periodo: "2018-01"
+    valor: "2,3"
+    excerto: "\"2018-01\":264 · \"264\":2.3"
+    bandeira: null
+  - periodo: "2018-02"
+    valor: "1,3"
+    excerto: "\"2018-02\":265 · \"265\":1.3"
+    bandeira: null
+  - periodo: "2018-03"
+    valor: "1,6"
+    excerto: "\"2018-03\":266 · \"266\":1.6"
+    bandeira: null
+  - periodo: "2018-04"
+    valor: "3,7"
+    excerto: "\"2018-04\":267 · \"267\":3.7"
+    bandeira: null
+  - periodo: "2018-05"
+    valor: "9,8"
+    excerto: "\"2018-05\":268 · \"268\":9.8"
+    bandeira: null
+  - periodo: "2018-06"
+    valor: "13,8"
+    excerto: "\"2018-06\":269 · \"269\":13.8"
+    bandeira: null
+  - periodo: "2018-07"
+    valor: "14,6"
+    excerto: "\"2018-07\":270 · \"270\":14.6"
+    bandeira: null
+  - periodo: "2018-08"
+    valor: "13,7"
+    excerto: "\"2018-08\":271 · \"271\":13.7"
+    bandeira: null
+  - periodo: "2018-09"
+    valor: "13,0"
+    excerto: "\"2018-09\":272 · \"272\":13.0"
+    bandeira: null
+  - periodo: "2018-10"
+    valor: "13,9"
+    excerto: "\"2018-10\":273 · \"273\":13.9"
+    bandeira: null
+  - periodo: "2018-11"
+    valor: "10,0"
+    excerto: "\"2018-11\":274 · \"274\":10.0"
+    bandeira: null
+  - periodo: "2018-12"
+    valor: "4,3"
+    excerto: "\"2018-12\":275 · \"275\":4.3"
+    bandeira: null
+  - periodo: "2019-01"
+    valor: "−0,5"
+    excerto: "\"2019-01\":276 · \"276\":-0.5"
+    bandeira: null
+  - periodo: "2019-02"
+    valor: "1,5"
+    excerto: "\"2019-02\":277 · \"277\":1.5"
+    bandeira: null
+  - periodo: "2019-03"
+    valor: "4,7"
+    excerto: "\"2019-03\":278 · \"278\":4.7"
+    bandeira: null
+  - periodo: "2019-04"
+    valor: "5,4"
+    excerto: "\"2019-04\":279 · \"279\":5.4"
+    bandeira: null
+  - periodo: "2019-05"
+    valor: "3,5"
+    excerto: "\"2019-05\":280 · \"280\":3.5"
+    bandeira: null
+  - periodo: "2019-06"
+    valor: "−0,5"
+    excerto: "\"2019-06\":281 · \"281\":-0.5"
+    bandeira: null
+  - periodo: "2019-07"
+    valor: "−0,7"
+    excerto: "\"2019-07\":282 · \"282\":-0.7"
+    bandeira: null
+  - periodo: "2019-08"
+    valor: "−2,1"
+    excerto: "\"2019-08\":283 · \"283\":-2.1"
+    bandeira: null
+  - periodo: "2019-09"
+    valor: "−3,7"
+    excerto: "\"2019-09\":284 · \"284\":-3.7"
+    bandeira: null
+  - periodo: "2019-10"
+    valor: "−4,9"
+    excerto: "\"2019-10\":285 · \"285\":-4.9"
+    bandeira: null
+  - periodo: "2019-11"
+    valor: "−3,8"
+    excerto: "\"2019-11\":286 · \"286\":-3.8"
+    bandeira: null
+  - periodo: "2019-12"
+    valor: "2,1"
+    excerto: "\"2019-12\":287 · \"287\":2.1"
+    bandeira: null
+  - periodo: "2020-01"
+    valor: "6,2"
+    excerto: "\"2020-01\":288 · \"288\":6.2"
+    bandeira: null
+  - periodo: "2020-02"
+    valor: "2,1"
+    excerto: "\"2020-02\":289 · \"289\":2.1"
+    bandeira: null
+  - periodo: "2020-03"
+    valor: "−5,3"
+    excerto: "\"2020-03\":290 · \"290\":-5.3"
+    bandeira: null
+  - periodo: "2020-04"
+    valor: "−15,6"
+    excerto: "\"2020-04\":291 · \"291\":-15.6"
+    bandeira: null
+  - periodo: "2020-05"
+    valor: "−19,5"
+    excerto: "\"2020-05\":292 · \"292\":-19.5"
+    bandeira: null
+  - periodo: "2020-06"
+    valor: "−14,5"
+    excerto: "\"2020-06\":293 · \"293\":-14.5"
+    bandeira: null
+  - periodo: "2020-07"
+    valor: "−11,9"
+    excerto: "\"2020-07\":294 · \"294\":-11.9"
+    bandeira: null
+  - periodo: "2020-08"
+    valor: "−10,9"
+    excerto: "\"2020-08\":295 · \"295\":-10.9"
+    bandeira: null
+  - periodo: "2020-09"
+    valor: "−11,2"
+    excerto: "\"2020-09\":296 · \"296\":-11.2"
+    bandeira: null
+  - periodo: "2020-10"
+    valor: "−11,6"
+    excerto: "\"2020-10\":297 · \"297\":-11.6"
+    bandeira: null
+  - periodo: "2020-11"
+    valor: "−12,3"
+    excerto: "\"2020-11\":298 · \"298\":-12.3"
+    bandeira: null
+  - periodo: "2020-12"
+    valor: "−10,5"
+    excerto: "\"2020-12\":299 · \"299\":-10.5"
+    bandeira: null
+  - periodo: "2021-01"
+    valor: "−7,5"
+    excerto: "\"2021-01\":300 · \"300\":-7.5"
+    bandeira: null
+  - periodo: "2021-02"
+    valor: "−2,2"
+    excerto: "\"2021-02\":301 · \"301\":-2.2"
+    bandeira: null
+  - periodo: "2021-03"
+    valor: "8,0"
+    excerto: "\"2021-03\":302 · \"302\":8.0"
+    bandeira: null
+  - periodo: "2021-04"
+    valor: "18,2"
+    excerto: "\"2021-04\":303 · \"303\":18.2"
+    bandeira: null
+  - periodo: "2021-05"
+    valor: "22,7"
+    excerto: "\"2021-05\":304 · \"304\":22.7"
+    bandeira: null
+  - periodo: "2021-06"
+    valor: "20,0"
+    excerto: "\"2021-06\":305 · \"305\":20.0"
+    bandeira: null
+  - periodo: "2021-07"
+    valor: "20,3"
+    excerto: "\"2021-07\":306 · \"306\":20.3"
+    bandeira: null
+  - periodo: "2021-08"
+    valor: "21,1"
+    excerto: "\"2021-08\":307 · \"307\":21.1"
+    bandeira: null
+  - periodo: "2021-09"
+    valor: "22,9"
+    excerto: "\"2021-09\":308 · \"308\":22.9"
+    bandeira: null
+  - periodo: "2021-10"
+    valor: "29,1"
+    excerto: "\"2021-10\":309 · \"309\":29.1"
+    bandeira: null
+  - periodo: "2021-11"
+    valor: "33,4"
+    excerto: "\"2021-11\":310 · \"310\":33.4"
+    bandeira: null
+  - periodo: "2021-12"
+    valor: "27,0"
+    excerto: "\"2021-12\":311 · \"311\":27.0"
+    bandeira: null
+  - periodo: "2022-01"
+    valor: "24,1"
+    excerto: "\"2022-01\":312 · \"312\":24.1"
+    bandeira: null
+  - periodo: "2022-02"
+    valor: "24,3"
+    excerto: "\"2022-02\":313 · \"313\":24.3"
+    bandeira: null
+  - periodo: "2022-03"
+    valor: "38,1"
+    excerto: "\"2022-03\":314 · \"314\":38.1"
+    bandeira: null
+  - periodo: "2022-04"
+    valor: "30,1"
+    excerto: "\"2022-04\":315 · \"315\":30.1"
+    bandeira: null
+  - periodo: "2022-05"
+    valor: "33,4"
+    excerto: "\"2022-05\":316 · \"316\":33.4"
+    bandeira: null
+  - periodo: "2022-06"
+    valor: "39,2"
+    excerto: "\"2022-06\":317 · \"317\":39.2"
+    bandeira: null
+  - periodo: "2022-07"
+    valor: "30,9"
+    excerto: "\"2022-07\":318 · \"318\":30.9"
+    bandeira: null
+  - periodo: "2022-08"
+    valor: "20,8"
+    excerto: "\"2022-08\":319 · \"319\":20.8"
+    bandeira: null
+  - periodo: "2022-09"
+    valor: "19,4"
+    excerto: "\"2022-09\":320 · \"320\":19.4"
+    bandeira: null
+  - periodo: "2022-10"
+    valor: "16,4"
+    excerto: "\"2022-10\":321 · \"321\":16.4"
+    bandeira: null
+  - periodo: "2022-11"
+    valor: "12,4"
+    excerto: "\"2022-11\":322 · \"322\":12.4"
+    bandeira: null
+  - periodo: "2022-12"
+    valor: "7,6"
+    excerto: "\"2022-12\":323 · \"323\":7.6"
+    bandeira: null
+  - periodo: "2023-01"
+    valor: "9,6"
+    excerto: "\"2023-01\":324 · \"324\":9.6"
+    bandeira: null
+  - periodo: "2023-02"
+    valor: "6,1"
+    excerto: "\"2023-02\":325 · \"325\":6.1"
+    bandeira: null
+  - periodo: "2023-03"
+    valor: "−9,5"
+    excerto: "\"2023-03\":326 · \"326\":-9.5"
+    bandeira: null
+  - periodo: "2023-04"
+    valor: "−4,5"
+    excerto: "\"2023-04\":327 · \"327\":-4.5"
+    bandeira: null
+  - periodo: "2023-05"
+    valor: "−11,4"
+    excerto: "\"2023-05\":328 · \"328\":-11.4"
+    bandeira: null
+  - periodo: "2023-06"
+    valor: "−15,7"
+    excerto: "\"2023-06\":329 · \"329\":-15.7"
+    bandeira: null
+  - periodo: "2023-07"
+    valor: "−11,8"
+    excerto: "\"2023-07\":330 · \"330\":-11.8"
+    bandeira: null
+  - periodo: "2023-08"
+    valor: "0,0"
+    excerto: "\"2023-08\":331 · \"331\":0.0"
+    bandeira: null
+  - periodo: "2023-09"
+    valor: "2,7"
+    excerto: "\"2023-09\":332 · \"332\":2.7"
+    bandeira: null
+  - periodo: "2023-10"
+    valor: "−1,7"
+    excerto: "\"2023-10\":333 · \"333\":-1.7"
+    bandeira: null
+  - periodo: "2023-11"
+    valor: "−3,0"
+    excerto: "\"2023-11\":334 · \"334\":-3.0"
+    bandeira: null
+  - periodo: "2023-12"
+    valor: "0,2"
+    excerto: "\"2023-12\":335 · \"335\":0.2"
+    bandeira: null
+  - periodo: "2024-01"
+    valor: "−4,1"
+    excerto: "\"2024-01\":336 · \"336\":-4.1"
+    bandeira: null
+  - periodo: "2024-02"
+    valor: "−1,0"
+    excerto: "\"2024-02\":337 · \"337\":-1.0"
+    bandeira: null
+  - periodo: "2024-03"
+    valor: "0,5"
+    excerto: "\"2024-03\":338 · \"338\":0.5"
+    bandeira: null
+  - periodo: "2024-04"
+    valor: "2,4"
+    excerto: "\"2024-04\":339 · \"339\":2.4"
+    bandeira: null
+  - periodo: "2024-05"
+    valor: "4,4"
+    excerto: "\"2024-05\":340 · \"340\":4.4"
+    bandeira: null
+  - periodo: "2024-06"
+    valor: "1,4"
+    excerto: "\"2024-06\":341 · \"341\":1.4"
+    bandeira: null
+  - periodo: "2024-07"
+    valor: "1,3"
+    excerto: "\"2024-07\":342 · \"342\":1.3"
+    bandeira: null
+  - periodo: "2024-08"
+    valor: "−6,1"
+    excerto: "\"2024-08\":343 · \"343\":-6.1"
+    bandeira: null
+  - periodo: "2024-09"
+    valor: "−11,7"
+    excerto: "\"2024-09\":344 · \"344\":-11.7"
+    bandeira: null
+  - periodo: "2024-10"
+    valor: "−9,3"
+    excerto: "\"2024-10\":345 · \"345\":-9.3"
+    bandeira: null
+  - periodo: "2024-11"
+    valor: "−6,5"
+    excerto: "\"2024-11\":346 · \"346\":-6.5"
+    bandeira: null
+  - periodo: "2024-12"
+    valor: "−2,6"
+    excerto: "\"2024-12\":347 · \"347\":-2.6"
+    bandeira: null
+  - periodo: "2025-01"
+    valor: "0,7"
+    excerto: "\"2025-01\":348 · \"348\":0.7"
+    bandeira: null
+  - periodo: "2025-02"
+    valor: "−1,7"
+    excerto: "\"2025-02\":349 · \"349\":-1.7"
+    bandeira: null
+  - periodo: "2025-03"
+    valor: "−5,0"
+    excerto: "\"2025-03\":350 · \"350\":-5.0"
+    bandeira: null
+  - periodo: "2025-04"
+    valor: "−8,8"
+    excerto: "\"2025-04\":351 · \"351\":-8.8"
+    bandeira: null
+  - periodo: "2025-05"
+    valor: "−8,6"
+    excerto: "\"2025-05\":352 · \"352\":-8.6"
+    bandeira: null
+  - periodo: "2025-06"
+    valor: "−5,7"
+    excerto: "\"2025-06\":353 · \"353\":-5.7"
+    bandeira: null
+  - periodo: "2025-07"
+    valor: "−5,3"
+    excerto: "\"2025-07\":354 · \"354\":-5.3"
+    bandeira: null
+  - periodo: "2025-08"
+    valor: "−3,7"
+    excerto: "\"2025-08\":355 · \"355\":-3.7"
+    bandeira: null
+  - periodo: "2025-09"
+    valor: "0,0"
+    excerto: "\"2025-09\":356 · \"356\":0.0"
+    bandeira: null
+  - periodo: "2025-10"
+    valor: "−0,6"
+    excerto: "\"2025-10\":357 · \"357\":-0.6"
+    bandeira: null
+  - periodo: "2025-11"
+    valor: "0,5"
+    excerto: "\"2025-11\":358 · \"358\":0.5"
+    bandeira: null
+  - periodo: "2025-12"
+    valor: "−1,9"
+    excerto: "\"2025-12\":359 · \"359\":-1.9"
+    bandeira: null
+  - periodo: "2026-01"
+    valor: "−3,9"
+    excerto: "\"2026-01\":360 · \"360\":-3.9"
+    bandeira: null
+  - periodo: "2026-02"
+    valor: "−3,4"
+    excerto: "\"2026-02\":361 · \"361\":-3.4"
+    bandeira: null
+  - periodo: "2026-03"
+    valor: "12,9"
+    excerto: "\"2026-03\":362 · \"362\":12.9"
+    bandeira: null
+  - periodo: "2026-04"
+    valor: "20,8"
+    excerto: "\"2026-04\":363 · \"363\":20.8"
+    bandeira: null
+  - periodo: "2026-05"
+    valor: "20,7"
+    excerto: "\"2026-05\":364 · \"364\":20.7"
+    bandeira: null
+  - periodo: "2026-06"
+    valor: "13,7"
+    excerto: "\"2026-06\":365 · \"365\":13.7"
+    bandeira: null
+  - periodo: "2026-07"
+    valor: "16,9"
+    excerto: "\"2026-07\":366 · \"366\":16.9"
+    bandeira: null
+  - periodo: "2026-08"
+    valor: "23,8"
+    excerto: "\"2026-08\":367 · \"367\":23.8"
+    bandeira: null
+
+# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a
+# expressão que o sítio refaz ponto a ponto na construção.
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "RP3. Coordenadas: prc_hicp_minr, freq=M, unit=RCH_A, coicop18=CP0722, geo=EU27_2020. Pedido com sinceTimePeriod=1996-01, o «data start» do conjunto no índice de conteúdos alojado (eurostat/toc.txt); a resposta traz 369 período(s), e o primeiro com valor para a coordenada é 2000-12. Corpo alojado: rp3/175-eurostat-serie-ihpc-combustiveis-variacao-homologa-ue.json (sha256 250d402db99b5d53…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

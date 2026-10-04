@@ -26,6 +26,9 @@ source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=001453
 access_date: "2026-09-26"
 published_at: "2026-08-28"
 reference_date: "2025"
+# A série no tempo de que esta linha é o ponto do seu período, nomeada e não
+# inferida (bloco RP3). Escrito pelo motor, nunca à mão.
+serie: "serie-pensao-media-anual"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"8 066\", \"valor\" : \"8066\" }"

@@ -1,0 +1,75 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/dominios_series.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "serie-beneficiarios-do-rsi-por-mil"
+eixo: "periodo"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve. Numa série
+# derivada fica a null: a proveniência é a das origens.
+name: "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática"
+name_source: "IndicadorDsg"
+unit: "por mil pessoas em idade ativa"
+# A cadência dos pontos.
+periodicidade: "anual"
+
+# Proveniência.
+source: "INE"
+document:
+  title: "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática"
+  edition: "0013420, geocod=PT"
+  kind: "serie"
+  url: "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0013420&lingua=PT"
+source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0013420&Dim1=S7A2023,S7A2024&Dim2=PT&lang=PT"
+access_date: "2026-10-04"
+published_at: "2025-10-06"
+# Os pedidos do cliente da casa de onde os pontos saíram: o endereço, a hora, o
+# cliente, o nome com que a casa se apresentou, o resumo e o tamanho do corpo, e o
+# primeiro e o último ponto que cada um deu.
+pedidos:
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0013420&Dim1=S7A2023,S7A2024&Dim2=PT&lang=PT"
+    lido_em: "2026-10-04T03:50:08Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "2b1abec3617166700ca2683b65074b8a53c041ca48ac8e8a2c6cbaf8bfda5b8a"
+    bytes: 812
+    primeiro: "2023"
+    ultimo: "2024"
+
+# O literal da série: o rótulo e as coordenadas como a resposta os escreve.
+excerpt: "\"IndicadorCod\" : \"0013420\" · \"IndicadorDsg\" : \"Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática\""
+primeiro_periodo: "2023"
+ultimo_periodo: "2024"
+# Os períodos da cadência que a fonte não publica, com a razão que ela dá (null quando
+# a resposta não dá razão nenhuma).
+lacunas: []
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta lhes dá.
+bandeiras: {}
+
+# Os pontos, pela ordem do tempo.
+pontos:
+  - periodo: "2023"
+    valor: "26,13"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"ind_string\" : \"26,13\", \"valor\" : \"26.13\" }"
+    bandeira: null
+  - periodo: "2024"
+    valor: "24,22"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"ind_string\" : \"24,22\", \"valor\" : \"24.22\" }"
+    bandeira: null
+
+# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a
+# expressão que o sítio refaz ponto a ponto na construção.
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+
+attributed_to:
+  - "INE"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "RP3. Coordenadas: 0013420, geocod=PT. Metainformação: rp3/015-ine-0013420-meta.json (sha256 fc11ee7f164807ef…), primeiro período publicado «2023», último «2024», 2 casa(s) decimal(is). Um só pedido com todos os períodos. Licença: INE, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -26,6 +26,9 @@ source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=001475
 access_date: "2026-09-26"
 published_at: "2026-08-14"
 reference_date: "2026-T2"
+# A série no tempo de que esta linha é o ponto do seu período, nomeada e não
+# inferida (bloco RP3). Escrito pelo motor, nunca à mão.
+serie: "serie-remuneracao-bruta-mensal-media"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"dim_4\" : \"T\", \"dim_4_t\" : \"Total\", \"sinal_conv\" : \"&\", \"sinal_conv_desc\" : \"Dado provisório\", \"ind_string\" : \"1 835 &\", \"valor\" : \"1835\" }"

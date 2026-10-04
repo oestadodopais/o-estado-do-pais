@@ -1,0 +1,347 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/dominios_series.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "serie-precos-da-habitacao-variacao-homologa"
+eixo: "periodo"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve. Numa série
+# derivada fica a null: a proveniência é a das origens.
+name: "House price index - quarterly data"
+name_source: "label"
+unit: "%"
+# A cadência dos pontos.
+periodicidade: "trimestral"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "House price index - quarterly data"
+  edition: "prc_hpi_q, freq=Q, unit=RCH_A, purchase=TOTAL, geo=PT"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/prc_hpi_q/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hpi_q?format=JSON&lang=EN&unit=RCH_A&purchase=TOTAL&geo=PT&sinceTimePeriod=2005-Q1"
+access_date: "2026-10-04"
+published_at: "2026-10-01"
+# Os pedidos do cliente da casa de onde os pontos saíram: o endereço, a hora, o
+# cliente, o nome com que a casa se apresentou, o resumo e o tamanho do corpo, e o
+# primeiro e o último ponto que cada um deu.
+pedidos:
+  - url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hpi_q?format=JSON&lang=EN&unit=RCH_A&purchase=TOTAL&geo=PT&sinceTimePeriod=2005-Q1"
+    lido_em: "2026-10-04T03:55:19Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "d43fd07bb52a2bb2f4788bd21cdd2cf441ce2fdb3eac25c85883a5fc7bfe5bd3"
+    bytes: 6517
+    primeiro: "2009-T1"
+    ultimo: "2026-T2"
+
+# O literal da série: o rótulo e as coordenadas como a resposta os escreve.
+excerpt: "\"label\":\"House price index - quarterly data\" · \"Q\":\"Quarterly\" · \"TOTAL\":\"Total\" · \"RCH_A\":\"Annual rate of change\" · \"PT\":\"Portugal\""
+primeiro_periodo: "2009-T1"
+ultimo_periodo: "2026-T2"
+# Os períodos da cadência que a fonte não publica, com a razão que ela dá (null quando
+# a resposta não dá razão nenhuma).
+lacunas: []
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta lhes dá.
+bandeiras: {}
+
+# Os pontos, pela ordem do tempo.
+pontos:
+  - periodo: "2009-T1"
+    valor: "−3,3"
+    excerto: "\"2009-Q1\":16 · \"16\":-3.3"
+    bandeira: null
+  - periodo: "2009-T2"
+    valor: "−2,7"
+    excerto: "\"2009-Q2\":17 · \"17\":-2.7"
+    bandeira: null
+  - periodo: "2009-T3"
+    valor: "0,1"
+    excerto: "\"2009-Q3\":18 · \"18\":0.1"
+    bandeira: null
+  - periodo: "2009-T4"
+    valor: "2,3"
+    excerto: "\"2009-Q4\":19 · \"19\":2.3"
+    bandeira: null
+  - periodo: "2010-T1"
+    valor: "2,0"
+    excerto: "\"2010-Q1\":20 · \"20\":2.0"
+    bandeira: null
+  - periodo: "2010-T2"
+    valor: "1,4"
+    excerto: "\"2010-Q2\":21 · \"21\":1.4"
+    bandeira: null
+  - periodo: "2010-T3"
+    valor: "0,6"
+    excerto: "\"2010-Q3\":22 · \"22\":0.6"
+    bandeira: null
+  - periodo: "2010-T4"
+    valor: "−0,9"
+    excerto: "\"2010-Q4\":23 · \"23\":-0.9"
+    bandeira: null
+  - periodo: "2011-T1"
+    valor: "−2,1"
+    excerto: "\"2011-Q1\":24 · \"24\":-2.1"
+    bandeira: null
+  - periodo: "2011-T2"
+    valor: "−4,6"
+    excerto: "\"2011-Q2\":25 · \"25\":-4.6"
+    bandeira: null
+  - periodo: "2011-T3"
+    valor: "−5,4"
+    excerto: "\"2011-Q3\":26 · \"26\":-5.4"
+    bandeira: null
+  - periodo: "2011-T4"
+    valor: "−7,5"
+    excerto: "\"2011-Q4\":27 · \"27\":-7.5"
+    bandeira: null
+  - periodo: "2012-T1"
+    valor: "−8,2"
+    excerto: "\"2012-Q1\":28 · \"28\":-8.2"
+    bandeira: null
+  - periodo: "2012-T2"
+    valor: "−8,3"
+    excerto: "\"2012-Q2\":29 · \"29\":-8.3"
+    bandeira: null
+  - periodo: "2012-T3"
+    valor: "−7,7"
+    excerto: "\"2012-Q3\":30 · \"30\":-7.7"
+    bandeira: null
+  - periodo: "2012-T4"
+    valor: "−4,0"
+    excerto: "\"2012-Q4\":31 · \"31\":-4.0"
+    bandeira: null
+  - periodo: "2013-T1"
+    valor: "−4,5"
+    excerto: "\"2013-Q1\":32 · \"32\":-4.5"
+    bandeira: null
+  - periodo: "2013-T2"
+    valor: "−2,5"
+    excerto: "\"2013-Q2\":33 · \"33\":-2.5"
+    bandeira: null
+  - periodo: "2013-T3"
+    valor: "−1,0"
+    excerto: "\"2013-Q3\":34 · \"34\":-1.0"
+    bandeira: null
+  - periodo: "2013-T4"
+    valor: "0,6"
+    excerto: "\"2013-Q4\":35 · \"35\":0.6"
+    bandeira: null
+  - periodo: "2014-T1"
+    valor: "4,0"
+    excerto: "\"2014-Q1\":36 · \"36\":4.0"
+    bandeira: null
+  - periodo: "2014-T2"
+    valor: "5,9"
+    excerto: "\"2014-Q2\":37 · \"37\":5.9"
+    bandeira: null
+  - periodo: "2014-T3"
+    valor: "4,9"
+    excerto: "\"2014-Q3\":38 · \"38\":4.9"
+    bandeira: null
+  - periodo: "2014-T4"
+    valor: "2,2"
+    excerto: "\"2014-Q4\":39 · \"39\":2.2"
+    bandeira: null
+  - periodo: "2015-T1"
+    valor: "0,8"
+    excerto: "\"2015-Q1\":40 · \"40\":0.8"
+    bandeira: null
+  - periodo: "2015-T2"
+    valor: "2,9"
+    excerto: "\"2015-Q2\":41 · \"41\":2.9"
+    bandeira: null
+  - periodo: "2015-T3"
+    valor: "3,4"
+    excerto: "\"2015-Q3\":42 · \"42\":3.4"
+    bandeira: null
+  - periodo: "2015-T4"
+    valor: "5,0"
+    excerto: "\"2015-Q4\":43 · \"43\":5.0"
+    bandeira: null
+  - periodo: "2016-T1"
+    valor: "6,9"
+    excerto: "\"2016-Q1\":44 · \"44\":6.9"
+    bandeira: null
+  - periodo: "2016-T2"
+    valor: "6,3"
+    excerto: "\"2016-Q2\":45 · \"45\":6.3"
+    bandeira: null
+  - periodo: "2016-T3"
+    valor: "7,6"
+    excerto: "\"2016-Q3\":46 · \"46\":7.6"
+    bandeira: null
+  - periodo: "2016-T4"
+    valor: "7,6"
+    excerto: "\"2016-Q4\":47 · \"47\":7.6"
+    bandeira: null
+  - periodo: "2017-T1"
+    valor: "7,9"
+    excerto: "\"2017-Q1\":48 · \"48\":7.9"
+    bandeira: null
+  - periodo: "2017-T2"
+    valor: "8,0"
+    excerto: "\"2017-Q2\":49 · \"49\":8.0"
+    bandeira: null
+  - periodo: "2017-T3"
+    valor: "10,4"
+    excerto: "\"2017-Q3\":50 · \"50\":10.4"
+    bandeira: null
+  - periodo: "2017-T4"
+    valor: "10,5"
+    excerto: "\"2017-Q4\":51 · \"51\":10.5"
+    bandeira: null
+  - periodo: "2018-T1"
+    valor: "12,2"
+    excerto: "\"2018-Q1\":52 · \"52\":12.2"
+    bandeira: null
+  - periodo: "2018-T2"
+    valor: "11,2"
+    excerto: "\"2018-Q2\":53 · \"53\":11.2"
+    bandeira: null
+  - periodo: "2018-T3"
+    valor: "8,5"
+    excerto: "\"2018-Q3\":54 · \"54\":8.5"
+    bandeira: null
+  - periodo: "2018-T4"
+    valor: "9,3"
+    excerto: "\"2018-Q4\":55 · \"55\":9.3"
+    bandeira: null
+  - periodo: "2019-T1"
+    valor: "9,2"
+    excerto: "\"2019-Q1\":56 · \"56\":9.2"
+    bandeira: null
+  - periodo: "2019-T2"
+    valor: "9,5"
+    excerto: "\"2019-Q2\":57 · \"57\":9.5"
+    bandeira: null
+  - periodo: "2019-T3"
+    valor: "10,7"
+    excerto: "\"2019-Q3\":58 · \"58\":10.7"
+    bandeira: null
+  - periodo: "2019-T4"
+    valor: "10,4"
+    excerto: "\"2019-Q4\":59 · \"59\":10.4"
+    bandeira: null
+  - periodo: "2020-T1"
+    valor: "10,6"
+    excerto: "\"2020-Q1\":60 · \"60\":10.6"
+    bandeira: null
+  - periodo: "2020-T2"
+    valor: "9,7"
+    excerto: "\"2020-Q2\":61 · \"61\":9.7"
+    bandeira: null
+  - periodo: "2020-T3"
+    valor: "6,9"
+    excerto: "\"2020-Q3\":62 · \"62\":6.9"
+    bandeira: null
+  - periodo: "2020-T4"
+    valor: "7,9"
+    excerto: "\"2020-Q4\":63 · \"63\":7.9"
+    bandeira: null
+  - periodo: "2021-T1"
+    valor: "6,6"
+    excerto: "\"2021-Q1\":64 · \"64\":6.6"
+    bandeira: null
+  - periodo: "2021-T2"
+    valor: "7,8"
+    excerto: "\"2021-Q2\":65 · \"65\":7.8"
+    bandeira: null
+  - periodo: "2021-T3"
+    valor: "11,5"
+    excerto: "\"2021-Q3\":66 · \"66\":11.5"
+    bandeira: null
+  - periodo: "2021-T4"
+    valor: "11,6"
+    excerto: "\"2021-Q4\":67 · \"67\":11.6"
+    bandeira: null
+  - periodo: "2022-T1"
+    valor: "13,0"
+    excerto: "\"2022-Q1\":68 · \"68\":13.0"
+    bandeira: null
+  - periodo: "2022-T2"
+    valor: "13,2"
+    excerto: "\"2022-Q2\":69 · \"69\":13.2"
+    bandeira: null
+  - periodo: "2022-T3"
+    valor: "13,2"
+    excerto: "\"2022-Q3\":70 · \"70\":13.2"
+    bandeira: null
+  - periodo: "2022-T4"
+    valor: "11,3"
+    excerto: "\"2022-Q4\":71 · \"71\":11.3"
+    bandeira: null
+  - periodo: "2023-T1"
+    valor: "8,7"
+    excerto: "\"2023-Q1\":72 · \"72\":8.7"
+    bandeira: null
+  - periodo: "2023-T2"
+    valor: "8,7"
+    excerto: "\"2023-Q2\":73 · \"73\":8.7"
+    bandeira: null
+  - periodo: "2023-T3"
+    valor: "7,6"
+    excerto: "\"2023-Q3\":74 · \"74\":7.6"
+    bandeira: null
+  - periodo: "2023-T4"
+    valor: "7,8"
+    excerto: "\"2023-Q4\":75 · \"75\":7.8"
+    bandeira: null
+  - periodo: "2024-T1"
+    valor: "7,0"
+    excerto: "\"2024-Q1\":76 · \"76\":7.0"
+    bandeira: null
+  - periodo: "2024-T2"
+    valor: "7,8"
+    excerto: "\"2024-Q2\":77 · \"77\":7.8"
+    bandeira: null
+  - periodo: "2024-T3"
+    valor: "9,8"
+    excerto: "\"2024-Q3\":78 · \"78\":9.8"
+    bandeira: null
+  - periodo: "2024-T4"
+    valor: "11,6"
+    excerto: "\"2024-Q4\":79 · \"79\":11.6"
+    bandeira: null
+  - periodo: "2025-T1"
+    valor: "16,3"
+    excerto: "\"2025-Q1\":80 · \"80\":16.3"
+    bandeira: null
+  - periodo: "2025-T2"
+    valor: "17,2"
+    excerto: "\"2025-Q2\":81 · \"81\":17.2"
+    bandeira: null
+  - periodo: "2025-T3"
+    valor: "17,7"
+    excerto: "\"2025-Q3\":82 · \"82\":17.7"
+    bandeira: null
+  - periodo: "2025-T4"
+    valor: "18,9"
+    excerto: "\"2025-Q4\":83 · \"83\":18.9"
+    bandeira: null
+  - periodo: "2026-T1"
+    valor: "17,8"
+    excerto: "\"2026-Q1\":84 · \"84\":17.8"
+    bandeira: null
+  - periodo: "2026-T2"
+    valor: "16,5"
+    excerto: "\"2026-Q2\":85 · \"85\":16.5"
+    bandeira: null
+
+# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a
+# expressão que o sítio refaz ponto a ponto na construção.
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "RP3. Coordenadas: prc_hpi_q, freq=Q, unit=RCH_A, purchase=TOTAL, geo=PT. Pedido com sinceTimePeriod=2005-Q1, o «data start» do conjunto no índice de conteúdos alojado (eurostat/toc.txt); a resposta traz 86 período(s), e o primeiro com valor para a coordenada é 2009-T1. Corpo alojado: rp3/178-eurostat-serie-precos-da-habitacao-variacao-homologa.json (sha256 d43fd07bb52a2bb2…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []
