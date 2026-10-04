@@ -2,8 +2,8 @@
   "erros": [],
   "contas": {
     "pt": {
-      "portas": 398,
-      "destinos": 398,
+      "portas": 414,
+      "destinos": 414,
       "seccoes": [
         "pais",
         "lugares",
@@ -13,7 +13,7 @@
         "projeto",
         "mudou"
       ],
-      "enderecosDoMapa": 392,
+      "enderecosDoMapa": 408,
       "rotasDeLeitor": 28,
       "concelhos": {
         "portas": 308,
@@ -24,8 +24,8 @@
       "mudou": 8
     },
     "en": {
-      "portas": 398,
-      "destinos": 398,
+      "portas": 414,
+      "destinos": 414,
       "seccoes": [
         "pais",
         "lugares",
@@ -35,7 +35,7 @@
         "projeto",
         "mudou"
       ],
-      "enderecosDoMapa": 392,
+      "enderecosDoMapa": 408,
       "rotasDeLeitor": 28,
       "concelhos": {
         "portas": 308,
@@ -46,8 +46,8 @@
       "mudou": 8
     }
   },
-  "enderecos_no_mapa": 7404,
-  "paginas_construidas": 7478,
+  "enderecos_no_mapa": 7436,
+  "paginas_construidas": 7510,
   "plantas": [
     {
       "nome": "r3-celula-rota-tirada",
@@ -64,7 +64,8 @@
         "I2 pt: /municipios/agueda está no mapa do sítio e não tem porta no índice.",
         "I3 pt: a página /municipios/agueda (rota «municipio») foi construída e não tem porta no índice.",
         "I4 pt: a gaveta «Aveiro» tem 18 concelho(s) e a página do distrito lista 19; a menos: /municipios/agueda.",
-        "I4 pt: o índice tem 307 porta(s) de concelho, 307 dentro das gavetas, 307 distinta(s), e foram construídas 308 páginas de concelho."
+        "I4 pt: o índice tem 307 porta(s) de concelho, 307 dentro das gavetas, 307 distinta(s), e foram construídas 308 páginas de concelho.",
+        "I4 pt: os concelhos de Portugal são 308; o índice tem 307 porta(s) distinta(s) de concelho, as gavetas somam 307, e foram construídas 308 páginas de concelho."
       ]
     },
     {
@@ -135,7 +136,7 @@
       "nome": "r3-celula-linha-repetida-em-o-que-mudou",
       "mordeu": true,
       "queixas": [
-        "I6 en: «O que mudou» do índice tem 9 linha(s) em 1 lista(s), e o começo do registo dá 8; a primeira que difere: correcoes-publicadas · 1 · 2026-10-02 · 5 · 7 · O Estado do País.",
+        "I6 en: «O que mudou» do índice tem 9 linha(s) em 1 lista(s), e o começo do registo dá 8; a primeira que difere: correcoes-publicadas · 1 · 2026-10-02 · 5 · 7 · O Estado do País, e o registo dá nada.",
         "I6 en: duas linhas de «O que mudou» leem-se iguais («02.10.2026 O Estado do País Published corrections 5 → 7 corrections row»); a mesma medida em duas linhas declara-se em MEDIDA_REUNIDA, e duas medidas não podem ter o mesmo nome no mesmo lugar.",
         "I7 en: 1 destino(s) repetido(s) no corpo do índice, por exemplo /en/ledger/correcoes-publicadas."
       ]
@@ -144,7 +145,7 @@
       "nome": "r3-celula-linha-reunida-que-se-le-igual",
       "mordeu": true,
       "queixas": [
-        "I6 en: «O que mudou» do índice tem 8 linha(s) em 1 lista(s), e o começo do registo dá 8; a primeira que difere: taxa-de-desemprego-2025 · 1 · 2026-10-02 · 5 · 7 · O Estado do País.",
+        "I6 en: «O que mudou» do índice tem 8 linha(s) em 1 lista(s), e o começo do registo dá 8; a primeira que difere: taxa-de-desemprego-2025 · 1 · 2026-10-02 · 5 · 7 · O Estado do País, e o registo dá fluxo-de-credito-as-empresas-2025 · 0 · 2026-10-02 · 3 · 3,0 · Portugal.",
         "I6 en: duas linhas de «O que mudou» leem-se iguais («02.10.2026 O Estado do País Published corrections 5 → 7 corrections row»); a mesma medida em duas linhas declara-se em MEDIDA_REUNIDA, e duas medidas não podem ter o mesmo nome no mesmo lugar."
       ]
     },
@@ -152,7 +153,40 @@
       "nome": "r3-celula-lugar-trocado-em-o-que-mudou",
       "mordeu": true,
       "queixas": [
-        "I6 pt: «O que mudou» do índice tem 8 linha(s) em 1 lista(s), e o começo do registo dá 8; a primeira que difere: correcoes-publicadas · 1 · 2026-10-02 · 5 · 7 · Portugal."
+        "I6 pt: «O que mudou» do índice tem 8 linha(s) em 1 lista(s), e o começo do registo dá 8; a primeira que difere: correcoes-publicadas · 1 · 2026-10-02 · 5 · 7 · Portugal, e o registo dá correcoes-publicadas · 1 · 2026-10-02 · 5 · 7 · O Estado do País."
+      ]
+    },
+    {
+      "nome": "r3-celula-mapa-com-endereco-fora-da-tabela",
+      "mordeu": true,
+      "so_as_dela": true,
+      "queixas": [
+        "I2: /caminho-que-nao-e-rota está no mapa do sítio e não é uma rota da tabela das rotas; o mapa só pode ter páginas da tabela."
+      ]
+    },
+    {
+      "nome": "r3-celula-lista-so-num-comentario",
+      "mordeu": true,
+      "so_as_dela": true,
+      "queixas": [
+        "I2 pt: a porta /estudos/onde-esta-a-agua não está no mapa do sítio, e a lista da família não a lista.",
+        "I5 pt: o índice tem 11 estudo(s) e a lista dos estudos 11, ou por outra ordem, porta ou data; o primeiro que difere: onde-esta-a-agua/pt · /estudos/onde-esta-a-agua · 12.08.2026 contra onde-esta-a-agua/pt · / · 12.08.2026."
+      ]
+    },
+    {
+      "nome": "r3-celula-construcao-com-307-concelhos",
+      "mordeu": true,
+      "so_as_dela": true,
+      "queixas": [
+        "I4 pt: os concelhos de Portugal são 308; o índice tem 307 porta(s) distinta(s) de concelho, as gavetas somam 307, e foram construídas 307 páginas de concelho."
+      ]
+    },
+    {
+      "nome": "r3-celula-duas-entradas-no-mesmo-dia-pela-ordem-errada",
+      "mordeu": true,
+      "so_as_dela": true,
+      "queixas": [
+        "I6 pt: «O que mudou» do índice tem 8 linha(s) em 1 lista(s), e o começo do registo dá 8; a primeira que difere: correcoes-publicadas · 1 · 2026-10-02 · 5 · 7 · O Estado do País, e o registo dá correcoes-publicadas · 2 · 2026-10-02 · 5 · valor plantado · O Estado do País."
       ]
     }
   ]

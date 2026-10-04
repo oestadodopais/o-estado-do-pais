@@ -1,8 +1,8 @@
 relatório: design/especime-v3/medicoes/r3-2026-10-04/LEIA-ME.md
 pasta das medições: design/especime-v3/medicoes/r3-2026-10-04
-ficheiros JSON lidos: 12
+ficheiros JSON lidos: 16
 conhecido-positivo (o número 987654321, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
-números conferidos: 145
-números com ficheiro: 145
+números conferidos: 188
+números com ficheiro: 188
 números sem ficheiro: 0
-apagado antes de contar: codigo 175, enderecos 0, seccoes 14, datas 1, resumos 0, ordinais 6, identificadores 49, anos 0
+apagado antes de contar: codigo 255, enderecos 0, seccoes 14, datas 2, resumos 5, ordinais 11, identificadores 106, anos 0

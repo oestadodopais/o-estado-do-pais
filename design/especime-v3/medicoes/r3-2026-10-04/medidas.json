@@ -2,9 +2,9 @@
   "bloco": "R3",
   "brief": "design/observatorio/BRIEF-R3-o-indice-do-sitio.md",
   "guiao": "design/especime-v3/medicoes/r3-2026-10-04/medir-r3.mjs",
-  "cabeca": "294f3abfea1448a207c572bfff33f26034457ac0",
-  "construcao": "294f3abfea1448a207c572bfff33f26034457ac0",
-  "total_de_medidas": 103,
+  "cabeca": "a6a577feed154622bf427fb94aa47f71fdd7bd85",
+  "construcao": "a6a577feed154622bf427fb94aa47f71fdd7bd85",
+  "total_de_medidas": 118,
   "medidas": [
     {
       "nome": "rotas_declaradas",
@@ -72,7 +72,7 @@
     {
       "nome": "chaves_novas_em_strings",
       "valor": 9,
-      "comando": "node: as chaves de STRINGS.pt na cabeça contra as de 358e3649",
+      "comando": "node: as chaves de STRINGS.pt na cabeça contra as de 7efcc9ae",
       "conhecido_positivo": {
         "o_que": "nav.indice é uma delas",
         "encontrado": true
@@ -90,9 +90,9 @@
     {
       "nome": "ficheiros_do_livro_razao_mudados_no_bloco",
       "valor": 0,
-      "comando": "git diff --name-only 358e3649..HEAD -- ledger/",
+      "comando": "git diff --name-only 7efcc9ae..HEAD -- ledger/",
       "conhecido_positivo": {
-        "o_que": "o mesmo comando sobre o último commit que tocou em ledger/claims (a9a3fc1d) lista ficheiros",
+        "o_que": "o mesmo comando sobre o último commit que tocou em ledger/claims (05312266) lista ficheiros",
         "encontrado": true
       }
     },
@@ -161,7 +161,7 @@
     },
     {
       "nome": "enderecos_no_mapa_do_sitio",
-      "valor": 7404,
+      "valor": 7436,
       "comando": "os <loc> de dist/sitemap-*.xml",
       "conhecido_positivo": {
         "o_que": "as duas páginas do índice estão lá",
@@ -170,7 +170,7 @@
     },
     {
       "nome": "paginas_html_construidas",
-      "valor": 7479,
+      "valor": 7511,
       "comando": "os ficheiros .html de dist/",
       "conhecido_positivo": {
         "o_que": "a página dos temas é um deles",
@@ -179,7 +179,7 @@
     },
     {
       "nome": "paginas_com_rodape",
-      "valor": 7454,
+      "valor": 7486,
       "comando": "os ficheiros .html de dist/ com <nav class=\"rodape-nav\">",
       "conhecido_positivo": {
         "o_que": "a página dos temas tem rodapé",
@@ -188,7 +188,7 @@
     },
     {
       "nome": "paginas_com_as_sete_portas_do_rodape",
-      "valor": 7454,
+      "valor": 7486,
       "comando": "as páginas com rodapé cuja navegação tem sete ligações sem hreflang",
       "conhecido_positivo": {
         "o_que": "a página dos temas tem a porta do índice no rodapé",
@@ -197,7 +197,7 @@
     },
     {
       "nome": "paginas_com_a_porta_do_indice_no_rodape",
-      "valor": 7454,
+      "valor": 7486,
       "comando": "as páginas com rodapé cuja navegação liga ao índice da sua edição",
       "conhecido_positivo": {
         "o_que": "a página inglesa dos temas liga a /en/index",
@@ -206,7 +206,7 @@
     },
     {
       "nome": "portas_do_indice_pt",
-      "valor": 398,
+      "valor": 414,
       "comando": "node tests/indice/indice.mjs --prova --json design/especime-v3/medicoes/r3-2026-10-04/celula-indice.json",
       "conhecido_positivo": {
         "o_que": "cada porta tem um destino distinto (as portas e os destinos são o mesmo número)",
@@ -215,7 +215,7 @@
     },
     {
       "nome": "enderecos_do_mapa_conferidos_pt",
-      "valor": 392,
+      "valor": 408,
       "comando": "a mesma corrida da célula (I2)",
       "conhecido_positivo": {
         "o_que": "a célula viu os endereços do mapa desta edição",
@@ -269,7 +269,7 @@
     },
     {
       "nome": "portas_do_indice_en",
-      "valor": 398,
+      "valor": 414,
       "comando": "node tests/indice/indice.mjs --prova --json design/especime-v3/medicoes/r3-2026-10-04/celula-indice.json",
       "conhecido_positivo": {
         "o_que": "cada porta tem um destino distinto (as portas e os destinos são o mesmo número)",
@@ -278,7 +278,7 @@
     },
     {
       "nome": "enderecos_do_mapa_conferidos_en",
-      "valor": 392,
+      "valor": 408,
       "comando": "a mesma corrida da célula (I2)",
       "conhecido_positivo": {
         "o_que": "a célula viu os endereços do mapa desta edição",
@@ -341,7 +341,7 @@
     },
     {
       "nome": "plantas_da_celula_do_indice",
-      "valor": 13,
+      "valor": 17,
       "comando": "a mesma corrida da célula, com --prova",
       "conhecido_positivo": {
         "o_que": "a planta «uma rota tirada do índice» mordeu",
@@ -350,10 +350,64 @@
     },
     {
       "nome": "plantas_da_celula_que_morderam",
-      "valor": 13,
+      "valor": 17,
       "comando": "a mesma corrida da célula, com --prova",
       "conhecido_positivo": {
         "o_que": "a planta «uma porta pelo ficheiro .html irmão» mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_r3b_da_celula_so_com_as_suas_queixas",
+      "valor": 4,
+      "comando": "a mesma corrida da célula: as quatro plantas da passagem R3-b que morderam com as suas queixas e só com elas",
+      "conhecido_positivo": {
+        "o_que": "as quatro estão no registo da corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "concelhos_de_portugal_escritos_na_celula",
+      "valor": 308,
+      "comando": "a constante CONCELHOS_DE_PORTUGAL de tests/indice/indice.mjs, lida do código",
+      "conhecido_positivo": {
+        "o_que": "a célula contou o mesmo número de portas de concelho distintas no índice português",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "registo_pares_da_mesma_linha_no_mesmo_dia",
+      "valor": 1,
+      "comando": "dist/correcoes/index.html: as entradas seguidas da mesma linha com a mesma data",
+      "conhecido_positivo": {
+        "o_que": "a linha estudos-evora-publicados de 12.08.2026 é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "registo_pares_fora_de_ordem",
+      "valor": 0,
+      "comando": "os mesmos pares, com o número da segunda entrada maior do que o da primeira",
+      "conhecido_positivo": {
+        "o_que": "com o primeiro par trocado, o mesmo detetor conta um",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "enderecos_do_mapa_fora_da_tabela",
+      "valor": 0,
+      "comando": "os <loc> de dist/sitemap-*.xml que matchPath() de src/lib/routes.mjs não reconhece",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor não reconhece /caminho-que-nao-e-rota e reconhece /indice",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "listas_com_o_ambito_do_indice_fora_do_indice",
+      "valor": 0,
+      "comando": "as páginas de dist/ com data-mudou-ambito=\"indice\" que não são as duas páginas do índice",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha a marca nas duas páginas do índice",
         "encontrado": true
       }
     },
@@ -386,10 +440,28 @@
     },
     {
       "nome": "series_no_indice",
-      "valor": 10,
+      "valor": 26,
       "comando": "as portas de dist/indice/index.html cuja rota é «serie», fora de «O que mudou»",
       "conhecido_positivo": {
         "o_que": "a série da taxa de desemprego (/livro-razao/series/taxa-de-desemprego-mip-2025-paises) é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_no_tempo_no_indice",
+      "valor": 16,
+      "comando": "as portas de série de dist/indice/index.html cuja série tem o eixo «periodo» em allSeries()",
+      "conhecido_positivo": {
+        "o_que": "a série «serie-ipc-indice» é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_no_tempo_construidas",
+      "valor": 16,
+      "comando": "as séries de allSeries() com o eixo «periodo»",
+      "conhecido_positivo": {
+        "o_que": "a série «serie-ipc-indice» é uma delas",
         "encontrado": true
       }
     },
@@ -485,7 +557,7 @@
     },
     {
       "nome": "plantas_dos_portoes_r3",
-      "valor": 11,
+      "valor": 13,
       "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/r3-2026-10-04 node tests/pais/portoes.mjs --prefixo r3-",
       "conhecido_positivo": {
         "o_que": "a planta do rodapé sem a porta do índice está lá e passou",
@@ -494,7 +566,7 @@
     },
     {
       "nome": "plantas_dos_portoes_r3_que_passaram",
-      "valor": 11,
+      "valor": 13,
       "comando": "o mesmo registo: código 1, as mordidas todas e os bytes repostos",
       "conhecido_positivo": {
         "o_que": "a planta da L2a dos concelhos abertos passou",
@@ -503,7 +575,7 @@
     },
     {
       "nome": "paginas_com_as_sete_portas_conferidas_no_portao",
-      "valor": 7454,
+      "valor": 7486,
       "comando": "o registo do build em design/especime-v3/medicoes/r3-2026-10-04/portoes/build.log, a linha «R3 ·» do portão de HTML",
       "conhecido_positivo": {
         "o_que": "a linha do portão está no registo",
@@ -566,10 +638,55 @@
     },
     {
       "nome": "cabeca_dos_portoes",
-      "valor": "294f3abfea1448a207c572bfff33f26034457ac0",
+      "valor": "a6a577feed154622bf427fb94aa47f71fdd7bd85",
       "comando": "o ficheiro design/especime-v3/medicoes/r3-2026-10-04/portoes/cabeca",
       "conhecido_positivo": {
         "o_que": "a cabeça no fim da corrida é a mesma do princípio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "main_do_rebase",
+      "valor": "b2fbdd28de97df4a0507eedc18448924060c84d2",
+      "comando": "git -C <árvore principal> rev-parse main, antes do rebase (design/especime-v3/medicoes/r3-2026-10-04/rebase-r3b.json)",
+      "conhecido_positivo": {
+        "o_que": "o commit do brief no ramo rebaseado tem esse main por pai",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "commits_rebaseados",
+      "valor": 25,
+      "comando": "o mesmo registo, o segundo rebase (git rev-list --count main..cabeça rebaseada)",
+      "conhecido_positivo": {
+        "o_que": "a cabeça descende do main do rebase",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "main_do_primeiro_rebase",
+      "valor": "7af9073132b92ed7aca7fec0c906f1a08626d446",
+      "comando": "o mesmo registo, o primeiro rebase",
+      "conhecido_positivo": {
+        "o_que": "a cabeça da corrida dos portões desse rebase descende dele",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "commits_do_primeiro_rebase",
+      "valor": 22,
+      "comando": "o mesmo registo, o primeiro rebase",
+      "conhecido_positivo": {
+        "o_que": "a cabeça rebaseada do primeiro está escrita, com quarenta caracteres",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corridas_anteriores_com_os_tres_a_0",
+      "valor": 5,
+      "comando": "os ficheiros .codigo de portoes-97724ae2, portoes-83cf51cc, portoes-ceeadf34, portoes-294f3abf, portoes-9d75d831, nesta pasta",
+      "conhecido_positivo": {
+        "o_que": "cada pasta tem a cabeça da corrida escrita, com quarenta caracteres",
         "encontrado": true
       }
     },
@@ -659,7 +776,7 @@
       "valor": 10,
       "comando": "node design/especime-v3/medicoes/r3-2026-10-04/captar-r3.mjs sobre a construção da cabeça 97724ae2, antes da correção das portas das séries (capturas-r3-com-o-defeito.json): as portas com itens em fila por página, o máximo",
       "conhecido_positivo": {
-        "o_que": "são as portas das séries (o mesmo número de séries que o índice lista)",
+        "o_que": "são as portas das séries de países, as que o índice listava nessa construção (as séries no tempo do RP3 entraram depois)",
         "encontrado": true
       }
     },
@@ -728,7 +845,7 @@
     },
     {
       "nome": "mapa_citacoes_na_linha",
-      "valor": 267,
+      "valor": 335,
       "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
       "conhecido_positivo": {
         "o_que": "a régua leu o mapa e conferiu citações na linha",
@@ -737,7 +854,7 @@
     },
     {
       "nome": "mapa_citacoes_longe_da_linha",
-      "valor": 34,
+      "valor": 45,
       "comando": "a mesma corrida",
       "conhecido_positivo": {
         "o_que": "a mesma corrida",
@@ -755,8 +872,8 @@
     },
     {
       "nome": "mapa_base_citacoes_na_linha",
-      "valor": 250,
-      "comando": "a mesma régua sobre uma extração de 358e3649 (git archive, sem checkout)",
+      "valor": 304,
+      "comando": "a mesma régua sobre uma extração de 7efcc9ae (git archive, sem checkout)",
       "conhecido_positivo": {
         "o_que": "a mesma corrida",
         "encontrado": true
@@ -764,7 +881,7 @@
     },
     {
       "nome": "mapa_base_citacoes_longe_da_linha",
-      "valor": 25,
+      "valor": 45,
       "comando": "a mesma corrida",
       "conhecido_positivo": {
         "o_que": "a mesma corrida",
@@ -773,8 +890,8 @@
     },
     {
       "nome": "mapa_citacoes_que_andaram_com_o_bloco",
-      "valor": 10,
-      "comando": "python3 design/especime-v3/medicoes/r3-2026-10-04/comparar-mapa.py (mapa-citacoes-que-andaram.json): as citações longe da linha que não estavam longe na base e citam um ficheiro mudado em 358e3649..HEAD",
+      "valor": 0,
+      "comando": "python3 design/especime-v3/medicoes/r3-2026-10-04/comparar-mapa.py (mapa-citacoes-que-andaram.json): as citações longe da linha que não estavam longe na base e citam um ficheiro mudado em 7efcc9ae..HEAD",
       "conhecido_positivo": {
         "o_que": "a corrida da base tem citações longe da linha, e o mesmo leitor encontra-as",
         "encontrado": true
@@ -818,7 +935,7 @@
     },
     {
       "nome": "ligacoes_paginas_lidas",
-      "valor": 7479,
+      "valor": 7511,
       "comando": "node design/especime-v3/medicoes/r3-2026-10-04/ligacoes-pela-regra-da-vercel.mjs",
       "conhecido_positivo": {
         "o_que": "a ligação plantada para /404 caiu na conta das que só a regra do portão aceita",
@@ -827,7 +944,7 @@
     },
     {
       "nome": "ligacoes_lidas",
-      "valor": 214379,
+      "valor": 215067,
       "comando": "a mesma corrida",
       "conhecido_positivo": {
         "o_que": "a mesma corrida",
@@ -872,8 +989,8 @@
     },
     {
       "nome": "decisoes_em_vigor_depois",
-      "valor": 53,
-      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo 358e3649..HEAD > design/especime-v3/medicoes/r3-2026-10-04/decisoes-em-vigor-depois.txt",
+      "valor": 61,
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py --intervalo 7efcc9ae..HEAD > design/especime-v3/medicoes/r3-2026-10-04/decisoes-em-vigor-depois.txt",
       "conhecido_positivo": {
         "o_que": "a §1.154 está na lista",
         "encontrado": true
@@ -928,6 +1045,24 @@
       "nome": "segundos_da_passagem_final",
       "valor": 3819,
       "comando": "a diferença entre a hora da leitura anterior e a do fim, no mesmo ficheiro",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leem-se como datas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_da_passagem_r3b",
+      "valor": 232117,
+      "comando": "design/especime-v3/medicoes/r3-2026-10-04/custo-r3b-inicio.json menos design/especime-v3/medicoes/r3-2026-10-04/custo-r3b-fim.json, escritos à mão pelo construtor",
+      "conhecido_positivo": {
+        "o_que": "as duas leituras têm a hora escrita",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_da_passagem_r3b",
+      "valor": 5856,
+      "comando": "a diferença entre as duas horas dos ficheiros do custo da passagem R3-b",
       "conhecido_positivo": {
         "o_que": "as duas horas leem-se como datas",
         "encontrado": true

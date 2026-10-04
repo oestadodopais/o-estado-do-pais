@@ -1,13 +1,13 @@
 {
   "bloco": "R3",
-  "cabeca": "294f3abfea1448a207c572bfff33f26034457ac0",
+  "cabeca": "a6a577feed154622bf427fb94aa47f71fdd7bd85",
   "construcao": {
-    "commit": "294f3abfea1448a207c572bfff33f26034457ac0",
-    "ref": "r3-2026-10-04",
-    "construido_em": "2026-10-04T08:41:11.946Z"
+    "commit": "a6a577feed154622bf427fb94aa47f71fdd7bd85",
+    "ref": "r3-2026-10-04-b",
+    "construido_em": "2026-10-04T10:42:53.451Z"
   },
-  "inicio": "2026-10-04T09:16:52.066Z",
-  "fim": "2026-10-04T09:17:03.104Z",
+  "inicio": "2026-10-04T11:15:06.349Z",
+  "fim": "2026-10-04T11:15:17.564Z",
   "larguras": [
     390,
     768,
@@ -30,7 +30,7 @@
         "conhecido_positivo_dos_itens_em_fila": true,
         "janela": 390,
         "documento": 390,
-        "altura": 7670,
+        "altura": 8436,
         "h1": "Índice",
         "seccoes": [
           "pais",
@@ -41,10 +41,10 @@
           "projeto",
           "mudou"
         ],
-        "portas": 407,
-        "portas_a_vista": 99,
+        "portas": 423,
+        "portas_a_vista": 115,
         "portas_dentro_das_gavetas": 308,
-        "portas_das_listas_a_vista": 90,
+        "portas_das_listas_a_vista": 106,
         "porta_das_listas_mais_baixa_px": 44,
         "portas_das_listas_abaixo_de_44": 0,
         "outras_ligacoes_a_vista": 9,
@@ -57,7 +57,7 @@
         "resumo_mais_baixo_px": 44,
         "descricao": "O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta."
       },
-      "sha256": "67413c9816f957c1c9c2ae49588498a8f0788b6bb02bc57dad248a7c8c5799e6"
+      "sha256": "c59211c946596d769dcb67f446663826c8d2a54f0ad3e32047e25a61428e6b5d"
     },
     {
       "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-pt-768.png",
@@ -70,7 +70,7 @@
         "conhecido_positivo_dos_itens_em_fila": true,
         "janela": 768,
         "documento": 768,
-        "altura": 6261,
+        "altura": 6965,
         "h1": "Índice",
         "seccoes": [
           "pais",
@@ -81,10 +81,10 @@
           "projeto",
           "mudou"
         ],
-        "portas": 407,
-        "portas_a_vista": 99,
+        "portas": 423,
+        "portas_a_vista": 115,
         "portas_dentro_das_gavetas": 308,
-        "portas_das_listas_a_vista": 90,
+        "portas_das_listas_a_vista": 106,
         "porta_das_listas_mais_baixa_px": 44,
         "portas_das_listas_abaixo_de_44": 0,
         "outras_ligacoes_a_vista": 9,
@@ -97,7 +97,7 @@
         "resumo_mais_baixo_px": 44,
         "descricao": "O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta."
       },
-      "sha256": "37083b4980e993123f99c49ce8dcf69eb51e56ff5a8cfa71a29825cbb01af0d9"
+      "sha256": "cecc199bf9c1d8708ba90c2be93a9c18add552c64722afb5870d7a9ffad6699b"
     },
     {
       "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-pt-1024.png",
@@ -110,7 +110,7 @@
         "conhecido_positivo_dos_itens_em_fila": true,
         "janela": 1024,
         "documento": 1024,
-        "altura": 6187,
+        "altura": 6891,
         "h1": "Índice",
         "seccoes": [
           "pais",
@@ -121,10 +121,10 @@
           "projeto",
           "mudou"
         ],
-        "portas": 407,
-        "portas_a_vista": 99,
+        "portas": 423,
+        "portas_a_vista": 115,
         "portas_dentro_das_gavetas": 308,
-        "portas_das_listas_a_vista": 90,
+        "portas_das_listas_a_vista": 106,
         "porta_das_listas_mais_baixa_px": 44,
         "portas_das_listas_abaixo_de_44": 0,
         "outras_ligacoes_a_vista": 9,
@@ -137,7 +137,7 @@
         "resumo_mais_baixo_px": 44,
         "descricao": "O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta."
       },
-      "sha256": "180dacf9db3e0a5a7f97446352e1fd1cb1d988e75345d87d803b1bdd72050fed"
+      "sha256": "e84ad150e0e3affb6daa563972a52cfd71a09dc870feefb32c7b4a84c3d47a04"
     },
     {
       "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-pt-1280.png",
@@ -150,7 +150,7 @@
         "conhecido_positivo_dos_itens_em_fila": true,
         "janela": 1280,
         "documento": 1280,
-        "altura": 6155,
+        "altura": 6859,
         "h1": "Índice",
         "seccoes": [
           "pais",
@@ -161,10 +161,10 @@
           "projeto",
           "mudou"
         ],
-        "portas": 407,
-        "portas_a_vista": 99,
+        "portas": 423,
+        "portas_a_vista": 115,
         "portas_dentro_das_gavetas": 308,
-        "portas_das_listas_a_vista": 90,
+        "portas_das_listas_a_vista": 106,
         "porta_das_listas_mais_baixa_px": 44,
         "portas_das_listas_abaixo_de_44": 0,
         "outras_ligacoes_a_vista": 9,
@@ -177,7 +177,7 @@
         "resumo_mais_baixo_px": 44,
         "descricao": "O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta."
       },
-      "sha256": "5accc11649646e707767a6d9de4cfccbf23b6535dee7a9cb5adf39d710a647f6"
+      "sha256": "cc3afd07097fc65814a747fcda86e0adcb23724d6c89abc925f5abbd688f918e"
     },
     {
       "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-pt-1600.png",
@@ -190,7 +190,7 @@
         "conhecido_positivo_dos_itens_em_fila": true,
         "janela": 1600,
         "documento": 1600,
-        "altura": 6161,
+        "altura": 6865,
         "h1": "Índice",
         "seccoes": [
           "pais",
@@ -201,10 +201,10 @@
           "projeto",
           "mudou"
         ],
-        "portas": 407,
-        "portas_a_vista": 99,
+        "portas": 423,
+        "portas_a_vista": 115,
         "portas_dentro_das_gavetas": 308,
-        "portas_das_listas_a_vista": 90,
+        "portas_das_listas_a_vista": 106,
         "porta_das_listas_mais_baixa_px": 44,
         "portas_das_listas_abaixo_de_44": 0,
         "outras_ligacoes_a_vista": 9,
@@ -217,7 +217,7 @@
         "resumo_mais_baixo_px": 44,
         "descricao": "O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta."
       },
-      "sha256": "404e807e3ec54dbb02fa07c85f8ef16bb73a7c688d7845992c8951700ecaf6d4"
+      "sha256": "2e6edf4450af27609518eaf1339ff5a62206ea214860e073aaad995b6e0da39a"
     },
     {
       "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-en-390.png",
@@ -230,7 +230,7 @@
         "conhecido_positivo_dos_itens_em_fila": true,
         "janela": 390,
         "documento": 390,
-        "altura": 7804,
+        "altura": 8591,
         "h1": "Index",
         "seccoes": [
           "pais",
@@ -241,10 +241,10 @@
           "projeto",
           "mudou"
         ],
-        "portas": 409,
-        "portas_a_vista": 101,
+        "portas": 425,
+        "portas_a_vista": 117,
         "portas_dentro_das_gavetas": 308,
-        "portas_das_listas_a_vista": 90,
+        "portas_das_listas_a_vista": 106,
         "porta_das_listas_mais_baixa_px": 44,
         "portas_das_listas_abaixo_de_44": 0,
         "outras_ligacoes_a_vista": 11,
@@ -258,7 +258,7 @@
         "resumo_mais_baixo_px": 44,
         "descricao": "The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door."
       },
-      "sha256": "558dbba2f0b684d7fd63d42fa703663690a25b2d5f564591bbef0d4ef097a4f5"
+      "sha256": "c92f963053d2c06c800858856e7bb83dcf6d1f3c1e3b719d346e165dec32681f"
     },
     {
       "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-en-768.png",
@@ -271,7 +271,7 @@
         "conhecido_positivo_dos_itens_em_fila": true,
         "janela": 768,
         "documento": 768,
-        "altura": 6291,
+        "altura": 6995,
         "h1": "Index",
         "seccoes": [
           "pais",
@@ -282,10 +282,10 @@
           "projeto",
           "mudou"
         ],
-        "portas": 409,
-        "portas_a_vista": 101,
+        "portas": 425,
+        "portas_a_vista": 117,
         "portas_dentro_das_gavetas": 308,
-        "portas_das_listas_a_vista": 90,
+        "portas_das_listas_a_vista": 106,
         "porta_das_listas_mais_baixa_px": 44,
         "portas_das_listas_abaixo_de_44": 0,
         "outras_ligacoes_a_vista": 11,
@@ -299,7 +299,7 @@
         "resumo_mais_baixo_px": 44,
         "descricao": "The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door."
       },
-      "sha256": "56fa851db251684e24b79502effb2f408223969a0a0a7d6d264b5b87e6996817"
+      "sha256": "224f3535e508e8fc98475aa647a354530d3b176353840cb40de2de15ccb0e1ac"
     },
     {
       "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-en-1024.png",
@@ -312,7 +312,7 @@
         "conhecido_positivo_dos_itens_em_fila": true,
         "janela": 1024,
         "documento": 1024,
-        "altura": 6181,
+        "altura": 6885,
         "h1": "Index",
         "seccoes": [
           "pais",
@@ -323,10 +323,10 @@
           "projeto",
           "mudou"
         ],
-        "portas": 409,
-        "portas_a_vista": 101,
+        "portas": 425,
+        "portas_a_vista": 117,
         "portas_dentro_das_gavetas": 308,
-        "portas_das_listas_a_vista": 90,
+        "portas_das_listas_a_vista": 106,
         "porta_das_listas_mais_baixa_px": 44,
         "portas_das_listas_abaixo_de_44": 0,
         "outras_ligacoes_a_vista": 11,
@@ -340,7 +340,7 @@
         "resumo_mais_baixo_px": 44,
         "descricao": "The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door."
       },
-      "sha256": "a9bb8ade8bc48a46fa83e916abf0c075c2e6519a9afc517d495085b5fa2bd051"
+      "sha256": "288a103c723f0cfe37a8a0b00c6cb16ace5ee6299b4eb63447cdb2d73f70f8ec"
     },
     {
       "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-en-1280.png",
@@ -353,7 +353,7 @@
         "conhecido_positivo_dos_itens_em_fila": true,
         "janela": 1280,
         "documento": 1280,
-        "altura": 6191,
+        "altura": 6895,
         "h1": "Index",
         "seccoes": [
           "pais",
@@ -364,10 +364,10 @@
           "projeto",
           "mudou"
         ],
-        "portas": 409,
-        "portas_a_vista": 101,
+        "portas": 425,
+        "portas_a_vista": 117,
         "portas_dentro_das_gavetas": 308,
-        "portas_das_listas_a_vista": 90,
+        "portas_das_listas_a_vista": 106,
         "porta_das_listas_mais_baixa_px": 44,
         "portas_das_listas_abaixo_de_44": 0,
         "outras_ligacoes_a_vista": 11,
@@ -381,7 +381,7 @@
         "resumo_mais_baixo_px": 44,
         "descricao": "The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door."
       },
-      "sha256": "d520b5f3b7ed77e3b7cebc0e821e2bed0dab754abb221dc960b2de057cd2c886"
+      "sha256": "191f7ddbcbafe9eeb734bf1731b219303110af37e8862193f9098d2d44536736"
     },
     {
       "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-en-1600.png",
@@ -394,7 +394,7 @@
         "conhecido_positivo_dos_itens_em_fila": true,
         "janela": 1600,
         "documento": 1600,
-        "altura": 6197,
+        "altura": 6901,
         "h1": "Index",
         "seccoes": [
           "pais",
@@ -405,10 +405,10 @@
           "projeto",
           "mudou"
         ],
-        "portas": 409,
-        "portas_a_vista": 101,
+        "portas": 425,
+        "portas_a_vista": 117,
         "portas_dentro_das_gavetas": 308,
-        "portas_das_listas_a_vista": 90,
+        "portas_das_listas_a_vista": 106,
         "porta_das_listas_mais_baixa_px": 44,
         "portas_das_listas_abaixo_de_44": 0,
         "outras_ligacoes_a_vista": 11,
@@ -422,7 +422,7 @@
         "resumo_mais_baixo_px": 44,
         "descricao": "The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door."
       },
-      "sha256": "a330c125ca140c30afaa6bd60eae4c699b3d2136b8e7d7da50fffbdafb6a67a6"
+      "sha256": "500e6deb3d469eab8f6f43aff84ab16329fd3c628a34ee03ec7d5b6ef9e657a7"
     },
     {
       "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-gaveta-evora-pt-390.png",
