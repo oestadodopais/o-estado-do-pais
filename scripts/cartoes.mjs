@@ -59,6 +59,7 @@
  * Os cartões vivem em `dist/` e mais lado nenhum. Não se commetem.
  */
 
+import { spawnSync } from 'node:child_process';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -661,8 +662,39 @@ function rotasConstruidas() {
 
 const inicio = Date.now();
 const destino = path.join(DIST, PASTA);
-fs.rmSync(destino, { recursive: true, force: true });
-fs.mkdirSync(destino, { recursive: true });
+
+/**
+ * ---------------------------------------------------------------------------
+ * OS CARTÕES DESENHAM-SE EM LOTES, CADA LOTE NO SEU PROCESSO (04.10.2026)
+ * ---------------------------------------------------------------------------
+ * O rasterizador guarda a imagem de cada `render()` fora da pilha do Node e não
+ * a liberta enquanto o processo vive: medido na máquina da casa com uma sonda
+ * de 300 desenhos de 1200×630, a memória residente cresce cerca de 3 MB por
+ * desenho, e um coletor pedido de propósito (`--expose-gc`) não a devolve. Com
+ * 860 cartões em duas medidas (1 720 desenhos) o processo chega a 11 GB de
+ * pico; na construção da Vercel, com menos memória, o passo parou aos 600
+ * cartões e ficou 45 minutos sem acabar, duas vezes (`b920f49a` e `ae9c4f13`,
+ * 04.10.2026), e a Vercel matou a construção no seu limite. Até ao OE1 eram 488
+ * cartões, e cabiam.
+ *
+ * A saída: o processo-pai decide os cartões e lança um processo-filho por cada
+ * lote de LOTE cartões, com os mesmos argumentos mais `--lote i/n`; o filho
+ * desenha só o seu lote, escreve os ficheiros e devolve na última linha um
+ * resumo em JSON, e ao sair devolve a memória ao sistema. O pai soma os resumos
+ * e escreve a mesma conta de sempre. Os ficheiros, os registos e os resumos
+ * sha256 são os mesmos que uma passagem só dava (conferido: a soma dos sha256
+ * dos 3 440 ficheiros é igual antes e depois desta mudança).
+ */
+const LOTE = 100;
+const argLote = process.argv.indexOf('--lote');
+const lote = argLote >= 0 ? process.argv[argLote + 1].split('/').map(Number) : null;
+if (lote && (lote.length !== 2 || !Number.isInteger(lote[0]) || !Number.isInteger(lote[1]) || lote[0] < 0 || lote[0] >= lote[1])) {
+  morre(`--lote pede «i/n» com 0 ≤ i < n; recebeu «${process.argv[argLote + 1]}».`);
+}
+if (!lote) {
+  fs.rmSync(destino, { recursive: true, force: true });
+  fs.mkdirSync(destino, { recursive: true });
+}
 
 const rotas = rotasConstruidas();
 const cartoes = cartoesAConstruir(rotas);
@@ -674,11 +706,39 @@ let maisCores = 0;
 let provados = 0;
 const recusas = [];
 medeAMemoria(0);
-let desenhados = 0;
-for (const cartao of cartoes) {
-  /* Uma linha a cada cem cartões: numa construção que não acaba, o registo diz onde ficou. */
-  if (desenhados > 0 && desenhados % 100 === 0) console.log(`  cartões · ${desenhados} de ${cartoes.length} desenhados`);
-  desenhados += 1;
+let medicoesDeTexto = 0;
+if (!lote) {
+  const n = Math.ceil(cartoes.length / LOTE);
+  const guiao = fileURLToPath(import.meta.url);
+  const args = process.argv.slice(2);
+  for (let i = 0; i < n; i++) {
+    const r = spawnSync(process.execPath, [guiao, ...args, '--lote', `${i}/${n}`], {
+      stdio: ['ignore', 'pipe', 'inherit'],
+      encoding: 'utf8',
+      maxBuffer: 64 * 1024 * 1024,
+    });
+    if (r.status !== 0) morre(`o lote ${i + 1} de ${n} dos cartões saiu com o código ${r.status}.`);
+    const linhas = r.stdout.trimEnd().split('\n');
+    for (const l of linhas.slice(0, -1)) console.log(l);
+    let resumo;
+    try {
+      resumo = JSON.parse(linhas[linhas.length - 1]);
+    } catch {
+      morre(`o lote ${i + 1} de ${n} dos cartões não devolveu o resumo em JSON na última linha.`);
+    }
+    escritos += resumo.escritos;
+    bytes += resumo.bytes;
+    emPaleta += resumo.emPaleta;
+    if (resumo.maisCores > maisCores) maisCores = resumo.maisCores;
+    provados += resumo.provados;
+    recusas.push(...resumo.recusas);
+    medicoesDeTexto += resumo.medicoes;
+    /* Uma linha por lote: numa construção que não acaba, o registo diz onde ficou. */
+    console.log(cinza(`  cartões · lote ${i + 1} de ${n} · ${escritos} PNG escritos até aqui`));
+  }
+}
+const meus = lote ? cartoes.slice(lote[0] * LOTE, (lote[0] + 1) * LOTE) : [];
+for (const cartao of meus) {
   const modelo = modeloDoCartao(cartao);
   for (const dim of DIMENSOES) {
     const { svg, copia } = desenha(modelo, dim);
@@ -745,12 +805,16 @@ for (const cartao of cartoes) {
 }
 
 medeAMemoria(escritos);
+if (lote) {
+  console.log(JSON.stringify({ escritos, bytes, emPaleta, maisCores, provados, recusas, medicoes: medidas.size }));
+  process.exit(0);
+}
 
 const segundos = ((Date.now() - inicio) / 1000).toFixed(1);
 console.log(
   cinza(
     `\n  cartões · ${cartoes.length} cartões × ${DIMENSOES.length} medidas = ${escritos} PNG e ${escritos} registos · ` +
-      `${(bytes / 1024 / 1024).toFixed(2)} MB · ${medidas.size} medições de texto · ${segundos}s`,
+      `${(bytes / 1024 / 1024).toFixed(2)} MB · ${medicoesDeTexto} medições de texto · ${segundos}s`,
   ),
 );
 console.log(
