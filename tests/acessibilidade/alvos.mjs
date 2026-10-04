@@ -207,6 +207,9 @@ const FAMILIAS = [
      que partilham a mesma vista; a do obrigado é a que um leitor vê quando tudo correu bem. */
   ['sugestoes', null],
   ['sugestoesObrigado', null],
+  /* O ÍNDICE (bloco R3, 04.10.2026, o brief R3, §3, ponto 4): as portas das listas e o resumo de cada gaveta dos
+     concelhos com o alvo de 44 px, e o axe a zero, nas larguras desta régua. */
+  ['indice', null],
 ];
 
 /**
