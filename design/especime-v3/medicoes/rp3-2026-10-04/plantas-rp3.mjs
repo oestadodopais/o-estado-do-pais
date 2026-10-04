@@ -12,8 +12,8 @@
  *     casa (o outro lado, um campo transcrito, é o recibo da S9 tal como está: o nome do conjunto do Eurostat diz
  *     «thresholds», e a corrida verde da check:lugar não o conta);
  *   · a régua das frases (`check:voz`): o nome declarado de outra série na folha do caminho do recibo da derivada,
- *     que só morde porque a folha leva agora a marca da série; e o controlo, a mesma troca com a folha sem a marca,
- *     que o portão deixa passar (sai com 0 e não diz nada da folha).
+ *     e a mesma troca com a folha sem a marca da série, que até à passagem RP3-b era o controlo que passava e desde
+ *     ela morde, porque a marca é obrigatória.
  *
  * Uso (da raiz do sítio): node design/especime-v3/medicoes/rp3-2026-10-04/plantas-rp3.mjs
  */
@@ -92,15 +92,16 @@ planta('rp3-voz-nome-de-outra-serie', 'scripts/check-voz.mjs', [
   [reciboPt(D1), (r) => r.querySelector(`.caminho-aqui[data-da-serie="${D1}"]`).set_content('Preços dos combustíveis na comparação europeia, variação num ano')],
 ], [new RegExp(`não é o nome da série "${D1}"`)]);
 
-/* O CONTROLO DA PLANTA ANTERIOR: a mesma troca com a folha na forma de antes deste bloco (sem a marca da série), que
-   a régua das frases deixava passar, porque o nome trocado também é um nome declarado. */
+/* A MESMA TROCA SEM A MARCA DA SÉRIE (passagem RP3-b, o achado 7 da leitura a frio): era o controlo da planta
+   anterior, e passava, porque o nome trocado também é um nome declarado; desde a RP3-b a marca é obrigatória e a sua
+   falta é um erro da régua das frases, e por isso deixa de ser controlo e passa a planta que morde. */
 planta('rp3-voz-nome-de-outra-serie-sem-a-marca', 'scripts/check-voz.mjs', [
   [reciboPt(D1), (r) => {
     const folha = r.querySelector(`.caminho-aqui[data-da-serie="${D1}"]`);
     folha.removeAttribute('data-da-serie');
     folha.set_content('Preços dos combustíveis na comparação europeia, variação num ano');
   }],
-], [new RegExp(`não é o nome da série "${D1}"`), /data-nome="serie"/], { controlo: true });
+], [/falta «data-da-serie»/]);
 
 const falharam = registos.filter((r) => !r.passou);
 console.log(`RP3 plantas sobre dist/: ${registos.filter((r) => !r.controlo && r.passou).length} de ${registos.filter((r) => !r.controlo).length} morderam, ` +
