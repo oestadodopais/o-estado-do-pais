@@ -1,0 +1,26 @@
+---
+/**
+ * O RECIBO DE UMA SÉRIE NO TEMPO (bloco RP3, 04.10.2026), na mesma rota das
+ * séries de países (`routePath('serie', …)`) e num ficheiro de página à parte.
+ *
+ * PORQUE UM FICHEIRO À PARTE: o Astro junta as folhas de estilo por ficheiro de
+ * página, e não por vista rendida. Com as duas formas no mesmo ficheiro, as regras
+ * do recibo no tempo entravam na folha embutida dos vinte recibos das séries de
+ * países, sem lhes mudarem nada à vista mas mudando-lhes os bytes, e o §1 do brief
+ * RP3 diz que nenhuma página do leitor além dos recibos novos muda. A comparação
+ * das construções da base e da cabeça (`paginas-rp3.mjs`) mede-o byte a byte.
+ *
+ * O PARÂMETRO É DE RESTO (`[...serie]`) para não colidir com o `[slug]` das
+ * séries de países no mesmo diretório; os caminhos não se cruzam, porque cada
+ * série tem um eixo só, e cada ficheiro gera só os do seu.
+ */
+import SerieNoTempoView from '../../../../views/SerieNoTempoView.astro';
+import { allSeries } from '../../../../lib/series.mjs';
+
+export function getStaticPaths() {
+  return allSeries().filter((s) => s.eixo === 'periodo').map((s) => ({ params: { serie: s.id } }));
+}
+
+const { serie } = Astro.params;
+---
+<SerieNoTempoView lang="en" id={serie} />

@@ -2,18 +2,16 @@
 /**
  * Uma página por linha de série do livro-razão (bloco UE1, 29.09.2026), nas
  * duas edições e da mesma construção. Os caminhos saem das próprias séries.
- * Uma série no tempo (`eixo: periodo`, bloco RP3) tem o seu recibo, e uma série
- * de países o do UE1.
+ * Desde o bloco RP3 (04.10.2026), só as séries de países (`eixo: pais`): as
+ * séries no tempo têm o seu ficheiro de página, `[...serie].astro`, ao lado.
  */
 import SerieView from '../../../views/SerieView.astro';
-import SerieNoTempoView from '../../../views/SerieNoTempoView.astro';
-import { getSerie } from '../../../lib/series.mjs';
 import { allSeries } from '../../../lib/series.mjs';
 
 export function getStaticPaths() {
-  return allSeries().map((s) => ({ params: { slug: s.id } }));
+  return allSeries().filter((s) => s.eixo === 'pais').map((s) => ({ params: { slug: s.id } }));
 }
 
 const { slug } = Astro.params;
 ---
-{getSerie(String(slug)).eixo === 'periodo' ? <SerieNoTempoView lang="pt" id={slug} /> : <SerieView lang="pt" id={slug} />}
+<SerieView lang="pt" id={slug} />
