@@ -115,9 +115,9 @@ function razaoDoErro(erro) {
  *
  * O QUE CADA UM EXIGE É O QUE QUEM O CHAMA PRECISA, E NÃO MAIS. `eLinha()`
  * exige um `id` que é cadeia não vazia, porque é a chave do mapa e é a única
- * coisa que o CARREGADOR usa; quem diz se os outros 23 campos estão certos é
+ * coisa que o CARREGADOR usa; quem diz se os outros 24 campos estão certos é
  * `validateLedger()`, uma linha de cada vez e com a frase do que falta. Um
- * guarda que exigisse aqui os 24 campos trocaria vinte e quatro frases
+ * guarda que exigisse aqui os 25 campos trocaria vinte e cinco frases
  * explicativas por um `throw` na primeira linha estragada, e o relatório do
  * livro-razão deixaria de servir para o que serve.
  */
@@ -302,6 +302,19 @@ export const CAMPOS = /** @type {const} */ ([
    */
   'published_at',
   'reference_date',
+  /**
+   * A SÉRIE NO TEMPO DE QUE A LINHA É O PONTO DO SEU PERÍODO (bloco RP3, 04.10.2026).
+   *
+   * Opcional, e só onde o motor o escreve (o manifesto declara-o e o exportador
+   * prova-o, a V18). Nomeia uma linha de série de `ledger/series/` com
+   * `eixo: periodo`: a mesma unidade, as coordenadas da linha (uma linha do
+   * Eurostat do RP1b não escreve a geografia na edição, e a série escreve-a), e o
+   * ponto do período da linha com o valor e a marca dela. A identidade é
+   * explícita, e nunca se infere do identificador nem da edição e da unidade (a
+   * decisão 2 do brief RP3): quem confere é a regra S14 de `validateSeries()`, e o
+   * cartão preso à série é a célula S5 do `check:series`.
+   */
+  'serie',
   'excerpt',
   'source_flag',
   'source_flag_note',

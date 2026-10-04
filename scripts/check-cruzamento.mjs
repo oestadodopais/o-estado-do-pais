@@ -1271,14 +1271,27 @@ function confereSeries(regsDeSeries, erros, comOrigem) {
       ? path.resolve(process.env.RESEARCHHUB_DIR)
       : path.join(path.dirname(RAIZ), 'ResearchHub');
     const cache = new Map();
+    /* AS DUAS ORIGENS DE UMA SÉRIE NO MOTOR (bloco RP3, 04.10.2026): as séries de
+       países vêm de `series.json` (o UE1) e as séries no tempo de
+       `series-periodo.json` (o RP3), no mesmo estudo. Um id está num dos dois e
+       só num: os dois ficheiros leem-se, e um id nos dois é um erro. */
+    const ORIGENS_DAS_SERIES = ['series.json', 'series-periodo.json'];
     for (const { ficheiro, dados } of regsDeSeries) {
       for (const [id, e] of Object.entries(dados.series)) {
-        const f = path.join(raizMotor, 'content', e.rh_study, 'series.json');
-        if (!cache.has(f)) cache.set(f, fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null);
-        const doc = cache.get(f);
-        const linha = doc?.series?.find((s) => s.id === e.rh_id);
+        const achadas = [];
+        for (const nome of ORIGENS_DAS_SERIES) {
+          const f = path.join(raizMotor, 'content', e.rh_study, nome);
+          if (!cache.has(f)) cache.set(f, fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null);
+          const linhaAqui = cache.get(f)?.series?.find((s) => s.id === e.rh_id);
+          if (linhaAqui) achadas.push(linhaAqui);
+        }
+        if (achadas.length > 1) {
+          erros.push(`--with-origin: [${ficheiro}] ${id}: a série "${e.rh_id}" está nas duas origens do motor (${ORIGENS_DAS_SERIES.join(', ')}).`);
+          continue;
+        }
+        const linha = achadas[0];
         if (!linha) {
-          erros.push(`--with-origin: [${ficheiro}] ${id}: o motor não tem a série "${e.rh_id}" em ${e.rh_study}/series.json.`);
+          erros.push(`--with-origin: [${ficheiro}] ${id}: o motor não tem a série "${e.rh_id}" em ${e.rh_study}/{${ORIGENS_DAS_SERIES.join(',')}}.`);
           continue;
         }
         origem++;

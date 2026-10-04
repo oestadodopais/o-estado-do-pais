@@ -202,6 +202,8 @@ interface Linha {
   access_date: unknown;
   published_at?: unknown;
   reference_date: unknown;
+  /** A série no tempo de que a linha é o ponto do seu período (bloco RP3); opcional. */
+  serie?: unknown;
   excerpt: unknown;
   source_flag?: unknown;
   source_flag_note?: unknown;
@@ -231,7 +233,10 @@ interface Linha {
  * é `validateSeries()`, e por isso ficam `unknown` até lá.
  */
 interface PontoDaSerie {
-  geo: unknown;
+  /** A geografia, numa série de países (`eixo: pais`). */
+  geo?: unknown;
+  /** O período na forma da casa, numa série no tempo (`eixo: periodo`, bloco RP3). */
+  periodo?: unknown;
   valor: unknown;
   excerto: unknown;
   bandeira: unknown;
@@ -248,21 +253,33 @@ interface Serie {
   name: unknown;
   name_source: unknown;
   unit: unknown;
-  periodo: unknown;
+  /** O período de todos os pontos, numa série de países. */
+  periodo?: unknown;
   source: unknown;
   document: unknown;
   source_url: unknown;
   access_date: unknown;
   published_at: unknown;
   excerpt: unknown;
-  linha_da_uniao: unknown;
-  linha_de_portugal: unknown;
+  /** As gémeas, numa série de países. */
+  linha_da_uniao?: unknown;
+  linha_de_portugal?: unknown;
   bandeiras: unknown;
   pontos: unknown;
   attributed_to: unknown;
   study: unknown;
   note?: unknown;
   corrections: unknown;
+  /* Os campos das séries no tempo (`eixo: periodo`, bloco RP3). */
+  periodicidade?: unknown;
+  pedidos?: unknown;
+  primeiro_periodo?: unknown;
+  ultimo_periodo?: unknown;
+  lacunas?: unknown;
+  derivation?: unknown;
+  derivation_en?: unknown;
+  derived_from?: unknown;
+  check?: unknown;
   /** O ficheiro de onde a série veio; posto pelo carregador. */
   __file?: string;
 }

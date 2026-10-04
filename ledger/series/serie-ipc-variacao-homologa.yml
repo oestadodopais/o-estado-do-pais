@@ -1,0 +1,2003 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/dominios_series.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "serie-ipc-variacao-homologa"
+eixo: "periodo"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve. Numa série
+# derivada fica a null: a proveniência é a das origens.
+name: "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor"
+name_source: "IndicadorDsg"
+unit: "%"
+# A cadência dos pontos.
+periodicidade: "mensal"
+
+# Proveniência.
+source: "INE"
+document:
+  title: "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor"
+  edition: "0014663, geocod=PT, dim_3=T"
+  kind: "serie"
+  url: "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014663&lingua=PT"
+source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A202601,S3A202602,S3A202603,S3A202604,S3A202605,S3A202606,S3A202607,S3A202608&Dim2=PT&Dim3=T&lang=PT"
+access_date: "2026-10-04"
+published_at: "2026-09-10"
+# Os pedidos do cliente da casa de onde os pontos saíram: o endereço, a hora, o
+# cliente, o nome com que a casa se apresentou, o resumo e o tamanho do corpo, e o
+# primeiro e o último ponto que cada um deu.
+pedidos:
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A199201,S3A199202,S3A199203,S3A199204,S3A199205,S3A199206,S3A199207,S3A199208,S3A199209,S3A199210,S3A199211,S3A199212&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:46:17Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "fd36921b5a6a60de2bee45f93c1239aa69d83cd9246d84fadaad6f2e1e82b41d"
+    bytes: 2845
+    primeiro: "1992-01"
+    ultimo: "1992-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A199301,S3A199302,S3A199303,S3A199304,S3A199305,S3A199306,S3A199307,S3A199308,S3A199309,S3A199310,S3A199311,S3A199312&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:46:21Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "f83ac93539f10159de55e52ed3de5aaabc915ab150428109d70b85732ecf6c72"
+    bytes: 2838
+    primeiro: "1993-01"
+    ultimo: "1993-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A199401,S3A199402,S3A199403,S3A199404,S3A199405,S3A199406,S3A199407,S3A199408,S3A199409,S3A199410,S3A199411,S3A199412&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:46:24Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "3a5862e8c7533d27a53adebd9f66908995cd7a0440c0f89153e50ab4084bc78c"
+    bytes: 2839
+    primeiro: "1994-01"
+    ultimo: "1994-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A199501,S3A199502,S3A199503,S3A199504,S3A199505,S3A199506,S3A199507,S3A199508,S3A199509,S3A199510,S3A199511,S3A199512&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:46:27Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "64ff887e76a8a62f1ef7bbc0c1fccc2e1ac1116894a043b14f54bba46e228553"
+    bytes: 2834
+    primeiro: "1995-01"
+    ultimo: "1995-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A199601,S3A199602,S3A199603,S3A199604,S3A199605,S3A199606,S3A199607,S3A199608,S3A199609,S3A199610,S3A199611,S3A199612&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:46:31Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "6cf3be23093fab11b20b36c1d932efd096edfdb89833e46a5b4649055d4ec722"
+    bytes: 2839
+    primeiro: "1996-01"
+    ultimo: "1996-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A199701,S3A199702,S3A199703,S3A199704,S3A199705,S3A199706,S3A199707,S3A199708,S3A199709,S3A199710,S3A199711,S3A199712&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:46:35Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "b65611cd84cee479939cff72540a8efe14304440a2d590fecd51fe1ef0e388de"
+    bytes: 2838
+    primeiro: "1997-01"
+    ultimo: "1997-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A199801,S3A199802,S3A199803,S3A199804,S3A199805,S3A199806,S3A199807,S3A199808,S3A199809,S3A199810,S3A199811,S3A199812&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:46:38Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "258f7375c1a3d813b1e06f59400c5ef924b39c3b9ff65209cd59143e9602018e"
+    bytes: 2837
+    primeiro: "1998-01"
+    ultimo: "1998-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A199901,S3A199902,S3A199903,S3A199904,S3A199905,S3A199906,S3A199907,S3A199908,S3A199909,S3A199910,S3A199911,S3A199912&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:46:41Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "3fff566a3e992c6eb0661166cb20bea671b443c09b6e1b375d0e47b0f8954d53"
+    bytes: 2838
+    primeiro: "1999-01"
+    ultimo: "1999-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A200001,S3A200002,S3A200003,S3A200004,S3A200005,S3A200006,S3A200007,S3A200008,S3A200009,S3A200010,S3A200011,S3A200012&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:46:44Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "ebffe895630704e42fd9301650b0677ffa4705d52701df300c278d215f070eb3"
+    bytes: 2839
+    primeiro: "2000-01"
+    ultimo: "2000-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A200101,S3A200102,S3A200103,S3A200104,S3A200105,S3A200106,S3A200107,S3A200108,S3A200109,S3A200110,S3A200111,S3A200112&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:46:47Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "70f0e2a6d84b8b0d1b4964827b26a8b3e2c9c7314614afad586fa5c4ea1a4f95"
+    bytes: 2838
+    primeiro: "2001-01"
+    ultimo: "2001-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A200201,S3A200202,S3A200203,S3A200204,S3A200205,S3A200206,S3A200207,S3A200208,S3A200209,S3A200210,S3A200211,S3A200212&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:46:51Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "e11967c20e768b45301d33772c2506ae7acaebc73cfca068d588527ec46b6498"
+    bytes: 2838
+    primeiro: "2002-01"
+    ultimo: "2002-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A200301,S3A200302,S3A200303,S3A200304,S3A200305,S3A200306,S3A200307,S3A200308,S3A200309,S3A200310,S3A200311,S3A200312&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:46:54Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "90303021fb62a55ed9b493403f73386ecb1dcd22b22cc520f4d9dbdefd89c610"
+    bytes: 2837
+    primeiro: "2003-01"
+    ultimo: "2003-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A200401,S3A200402,S3A200403,S3A200404,S3A200405,S3A200406,S3A200407,S3A200408,S3A200409,S3A200410,S3A200411,S3A200412&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:46:57Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "a21b3890e1deda0093d241a0c83c7a56952336edd50de7a8ce2da88bea42013a"
+    bytes: 2839
+    primeiro: "2004-01"
+    ultimo: "2004-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A200501,S3A200502,S3A200503,S3A200504,S3A200505,S3A200506,S3A200507,S3A200508,S3A200509,S3A200510,S3A200511,S3A200512&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:00Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "c35fca33df2ee35e1aa1bd02130fc4c428a991dfc24e8d3c7b5c851a0c3563e5"
+    bytes: 2839
+    primeiro: "2005-01"
+    ultimo: "2005-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A200601,S3A200602,S3A200603,S3A200604,S3A200605,S3A200606,S3A200607,S3A200608,S3A200609,S3A200610,S3A200611,S3A200612&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:03Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "ce6bfd0d194d6fccbd5f1a137b8bbce7a27365503289f85bd2b688a92292a1a6"
+    bytes: 2837
+    primeiro: "2006-01"
+    ultimo: "2006-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A200701,S3A200702,S3A200703,S3A200704,S3A200705,S3A200706,S3A200707,S3A200708,S3A200709,S3A200710,S3A200711,S3A200712&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:07Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "12cdd2e960c3d368c383fdd833f1ac55f9881f04d8d638efdeac68163839e364"
+    bytes: 2839
+    primeiro: "2007-01"
+    ultimo: "2007-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A200801,S3A200802,S3A200803,S3A200804,S3A200805,S3A200806,S3A200807,S3A200808,S3A200809,S3A200810,S3A200811,S3A200812&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:10Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "01ee11e9f247be0efc2f41a17ba10fc75f7f4290544416cab2a3c0d81c7f81ec"
+    bytes: 2837
+    primeiro: "2008-01"
+    ultimo: "2008-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A200901,S3A200902,S3A200903,S3A200904,S3A200905,S3A200906,S3A200907,S3A200908,S3A200909,S3A200910,S3A200911,S3A200912&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:13Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "29f14984c751ac23efd6d5cb4e47805454cf5e1f7b2c9888c86703938e3fa302"
+    bytes: 2858
+    primeiro: "2009-01"
+    ultimo: "2009-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A201001,S3A201002,S3A201003,S3A201004,S3A201005,S3A201006,S3A201007,S3A201008,S3A201009,S3A201010,S3A201011,S3A201012&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:16Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "7b7e006b5114b7954795ecee3af70d29d9d903529e292d6bfbfe775510820d29"
+    bytes: 2838
+    primeiro: "2010-01"
+    ultimo: "2010-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A201101,S3A201102,S3A201103,S3A201104,S3A201105,S3A201106,S3A201107,S3A201108,S3A201109,S3A201110,S3A201111,S3A201112&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:19Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "27a21ac1c26f14953d4cc36e7b600e91e773456a6575344f6ff0bd292fa1c3a9"
+    bytes: 2837
+    primeiro: "2011-01"
+    ultimo: "2011-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A201201,S3A201202,S3A201203,S3A201204,S3A201205,S3A201206,S3A201207,S3A201208,S3A201209,S3A201210,S3A201211,S3A201212&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:22Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "8e3e1814485b23fdcc84ead77081aca8c5ee67eef4e869a159f796a6497410c4"
+    bytes: 2837
+    primeiro: "2012-01"
+    ultimo: "2012-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A201301,S3A201302,S3A201303,S3A201304,S3A201305,S3A201306,S3A201307,S3A201308,S3A201309,S3A201310,S3A201311,S3A201312&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:26Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "ec04d96507907a505c5a5b1e15481c0e666cae1900ffbfcc332c50113bedcb9e"
+    bytes: 2844
+    primeiro: "2013-01"
+    ultimo: "2013-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A201401,S3A201402,S3A201403,S3A201404,S3A201405,S3A201406,S3A201407,S3A201408,S3A201409,S3A201410,S3A201411,S3A201412&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:29Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "14cfc532c82e1f95002bcdd4e8d6d0a4d8eba9cbaff9acec5f1dddec50ab9b50"
+    bytes: 2854
+    primeiro: "2014-01"
+    ultimo: "2014-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A201501,S3A201502,S3A201503,S3A201504,S3A201505,S3A201506,S3A201507,S3A201508,S3A201509,S3A201510,S3A201511,S3A201512&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:32Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "0220dc5085a1dfddc26e1b684543e5d36120719ec8875e60033a16e3bb0d2bcc"
+    bytes: 2840
+    primeiro: "2015-01"
+    ultimo: "2015-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A201601,S3A201602,S3A201603,S3A201604,S3A201605,S3A201606,S3A201607,S3A201608,S3A201609,S3A201610,S3A201611,S3A201612&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:35Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "0960b2a5550fbb567af6d2ea576bc726072fd515f87f2811016faa95c19f27df"
+    bytes: 2838
+    primeiro: "2016-01"
+    ultimo: "2016-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A201701,S3A201702,S3A201703,S3A201704,S3A201705,S3A201706,S3A201707,S3A201708,S3A201709,S3A201710,S3A201711,S3A201712&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:38Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "6b54d7ba388d8b1e8c0daca15b196f123b7b290381a812ab850508ac938f00c9"
+    bytes: 2838
+    primeiro: "2017-01"
+    ultimo: "2017-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A201801,S3A201802,S3A201803,S3A201804,S3A201805,S3A201806,S3A201807,S3A201808,S3A201809,S3A201810,S3A201811,S3A201812&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:42Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "28df92a0df9ff732f66d11d6bbf2b7172475a0b0eccceab318f7ab15fb92d6e9"
+    bytes: 2837
+    primeiro: "2018-01"
+    ultimo: "2018-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A201901,S3A201902,S3A201903,S3A201904,S3A201905,S3A201906,S3A201907,S3A201908,S3A201909,S3A201910,S3A201911,S3A201912&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:45Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "d85914031131459ead49d998420ea40f68cfcb4171f41efaa345107944c1fb90"
+    bytes: 2845
+    primeiro: "2019-01"
+    ultimo: "2019-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A202001,S3A202002,S3A202003,S3A202004,S3A202005,S3A202006,S3A202007,S3A202008,S3A202009,S3A202010,S3A202011,S3A202012&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:48Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "2323f1d4cfcae70e7f13dc556ed641164382bbf3c836a2f43631de15ce319ceb"
+    bytes: 2852
+    primeiro: "2020-01"
+    ultimo: "2020-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A202101,S3A202102,S3A202103,S3A202104,S3A202105,S3A202106,S3A202107,S3A202108,S3A202109,S3A202110,S3A202111,S3A202112&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:51Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "5f2ac61d1de2981d84970f398a2d241fcdbf90f9f697f597372143955612ce64"
+    bytes: 2838
+    primeiro: "2021-01"
+    ultimo: "2021-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A202201,S3A202202,S3A202203,S3A202204,S3A202205,S3A202206,S3A202207,S3A202208,S3A202209,S3A202210,S3A202211,S3A202212&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:54Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "816563550ae32080a4dea478dcda15bfcd5437d32383b7c9ed36a9f74439877a"
+    bytes: 2837
+    primeiro: "2022-01"
+    ultimo: "2022-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A202301,S3A202302,S3A202303,S3A202304,S3A202305,S3A202306,S3A202307,S3A202308,S3A202309,S3A202310,S3A202311,S3A202312&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:47:57Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "4ea0e90d1e583f567b5d621fba008ad0ab27c59edee28e7654da0d29dc74a2c9"
+    bytes: 2839
+    primeiro: "2023-01"
+    ultimo: "2023-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A202401,S3A202402,S3A202403,S3A202404,S3A202405,S3A202406,S3A202407,S3A202408,S3A202409,S3A202410,S3A202411,S3A202412&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:48:00Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "5b85b76805940d235b87d4cdfcfc6415310c42c5840b0daa90e8218bbc95c38f"
+    bytes: 2838
+    primeiro: "2024-01"
+    ultimo: "2024-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A202501,S3A202502,S3A202503,S3A202504,S3A202505,S3A202506,S3A202507,S3A202508,S3A202509,S3A202510,S3A202511,S3A202512&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:48:03Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "733ffdd5bec97f14af08e4b18ca09640bc65bd6d5bd842fd57140d21e05a73f1"
+    bytes: 2837
+    primeiro: "2025-01"
+    ultimo: "2025-12"
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014663&Dim1=S3A202601,S3A202602,S3A202603,S3A202604,S3A202605,S3A202606,S3A202607,S3A202608&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:48:06Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "a0b550a27bb31ee1a3d21eee8b89e0a922a3372899486c1d40c8878e06ee3f2f"
+    bytes: 2078
+    primeiro: "2026-01"
+    ultimo: "2026-08"
+
+# O literal da série: o rótulo e as coordenadas como a resposta os escreve.
+excerpt: "\"IndicadorCod\" : \"0014663\" · \"IndicadorDsg\" : \"Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor\""
+primeiro_periodo: "1992-01"
+ultimo_periodo: "2026-08"
+# Os períodos da cadência que a fonte não publica, com a razão que ela dá (null quando
+# a resposta não dá razão nenhuma).
+lacunas: []
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta lhes dá.
+bandeiras: {}
+
+# Os pontos, pela ordem do tempo.
+pontos:
+  - periodo: "1992-01"
+    valor: "9,41"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"9,41\", \"valor\" : \"9.41\" }"
+    bandeira: null
+  - periodo: "1992-02"
+    valor: "8,83"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"8,83\", \"valor\" : \"8.83\" }"
+    bandeira: null
+  - periodo: "1992-03"
+    valor: "9,26"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"9,26\", \"valor\" : \"9.26\" }"
+    bandeira: null
+  - periodo: "1992-04"
+    valor: "10,16"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"10,16\", \"valor\" : \"10.16\" }"
+    bandeira: null
+  - periodo: "1992-05"
+    valor: "10,31"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"10,31\", \"valor\" : \"10.31\" }"
+    bandeira: null
+  - periodo: "1992-06"
+    valor: "10,02"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"10,02\", \"valor\" : \"10.02\" }"
+    bandeira: null
+  - periodo: "1992-07"
+    valor: "9,99"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"9,99\", \"valor\" : \"9.99\" }"
+    bandeira: null
+  - periodo: "1992-08"
+    valor: "9,76"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"9,76\", \"valor\" : \"9.76\" }"
+    bandeira: null
+  - periodo: "1992-09"
+    valor: "9,56"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"9,56\", \"valor\" : \"9.56\" }"
+    bandeira: null
+  - periodo: "1992-10"
+    valor: "9,33"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"9,33\", \"valor\" : \"9.33\" }"
+    bandeira: null
+  - periodo: "1992-11"
+    valor: "9,16"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"9,16\", \"valor\" : \"9.16\" }"
+    bandeira: null
+  - periodo: "1992-12"
+    valor: "8,93"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"8,93\", \"valor\" : \"8.93\" }"
+    bandeira: null
+  - periodo: "1993-01"
+    valor: "8,60"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"8,60\", \"valor\" : \"8.6\" }"
+    bandeira: null
+  - periodo: "1993-02"
+    valor: "8,15"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"8,15\", \"valor\" : \"8.15\" }"
+    bandeira: null
+  - periodo: "1993-03"
+    valor: "7,56"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"7,56\", \"valor\" : \"7.56\" }"
+    bandeira: null
+  - periodo: "1993-04"
+    valor: "6,55"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6,55\", \"valor\" : \"6.55\" }"
+    bandeira: null
+  - periodo: "1993-05"
+    valor: "6,12"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6,12\", \"valor\" : \"6.12\" }"
+    bandeira: null
+  - periodo: "1993-06"
+    valor: "5,95"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"5,95\", \"valor\" : \"5.95\" }"
+    bandeira: null
+  - periodo: "1993-07"
+    valor: "6,12"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6,12\", \"valor\" : \"6.12\" }"
+    bandeira: null
+  - periodo: "1993-08"
+    valor: "6,06"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6,06\", \"valor\" : \"6.06\" }"
+    bandeira: null
+  - periodo: "1993-09"
+    valor: "6,34"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6,34\", \"valor\" : \"6.34\" }"
+    bandeira: null
+  - periodo: "1993-10"
+    valor: "6,54"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6,54\", \"valor\" : \"6.54\" }"
+    bandeira: null
+  - periodo: "1993-11"
+    valor: "6,85"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6,85\", \"valor\" : \"6.85\" }"
+    bandeira: null
+  - periodo: "1993-12"
+    valor: "6,71"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6,71\", \"valor\" : \"6.71\" }"
+    bandeira: null
+  - periodo: "1994-01"
+    valor: "6,49"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6,49\", \"valor\" : \"6.49\" }"
+    bandeira: null
+  - periodo: "1994-02"
+    valor: "6,28"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6,28\", \"valor\" : \"6.28\" }"
+    bandeira: null
+  - periodo: "1994-03"
+    valor: "6,09"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6,09\", \"valor\" : \"6.09\" }"
+    bandeira: null
+  - periodo: "1994-04"
+    valor: "6,09"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6,09\", \"valor\" : \"6.09\" }"
+    bandeira: null
+  - periodo: "1994-05"
+    valor: "5,84"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"5,84\", \"valor\" : \"5.84\" }"
+    bandeira: null
+  - periodo: "1994-06"
+    valor: "5,75"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"5,75\", \"valor\" : \"5.75\" }"
+    bandeira: null
+  - periodo: "1994-07"
+    valor: "5,31"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"5,31\", \"valor\" : \"5.31\" }"
+    bandeira: null
+  - periodo: "1994-08"
+    valor: "5,09"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"5,09\", \"valor\" : \"5.09\" }"
+    bandeira: null
+  - periodo: "1994-09"
+    valor: "4,89"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,89\", \"valor\" : \"4.89\" }"
+    bandeira: null
+  - periodo: "1994-10"
+    valor: "4,73"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,73\", \"valor\" : \"4.73\" }"
+    bandeira: null
+  - periodo: "1994-11"
+    valor: "4,29"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,29\", \"valor\" : \"4.29\" }"
+    bandeira: null
+  - periodo: "1994-12"
+    valor: "4,34"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,34\", \"valor\" : \"4.34\" }"
+    bandeira: null
+  - periodo: "1995-01"
+    valor: "4,55"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,55\", \"valor\" : \"4.55\" }"
+    bandeira: null
+  - periodo: "1995-02"
+    valor: "4,57"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,57\", \"valor\" : \"4.57\" }"
+    bandeira: null
+  - periodo: "1995-03"
+    valor: "4,82"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,82\", \"valor\" : \"4.82\" }"
+    bandeira: null
+  - periodo: "1995-04"
+    valor: "4,68"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,68\", \"valor\" : \"4.68\" }"
+    bandeira: null
+  - periodo: "1995-05"
+    valor: "4,37"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,37\", \"valor\" : \"4.37\" }"
+    bandeira: null
+  - periodo: "1995-06"
+    valor: "4,00"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,00\", \"valor\" : \"4\" }"
+    bandeira: null
+  - periodo: "1995-07"
+    valor: "3,86"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,86\", \"valor\" : \"3.86\" }"
+    bandeira: null
+  - periodo: "1995-08"
+    valor: "4,10"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,10\", \"valor\" : \"4.1\" }"
+    bandeira: null
+  - periodo: "1995-09"
+    valor: "4,14"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,14\", \"valor\" : \"4.14\" }"
+    bandeira: null
+  - periodo: "1995-10"
+    valor: "4,10"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,10\", \"valor\" : \"4.1\" }"
+    bandeira: null
+  - periodo: "1995-11"
+    valor: "3,97"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,97\", \"valor\" : \"3.97\" }"
+    bandeira: null
+  - periodo: "1995-12"
+    valor: "3,55"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,55\", \"valor\" : \"3.55\" }"
+    bandeira: null
+  - periodo: "1996-01"
+    valor: "2,56"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,56\", \"valor\" : \"2.56\" }"
+    bandeira: null
+  - periodo: "1996-02"
+    valor: "2,58"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,58\", \"valor\" : \"2.58\" }"
+    bandeira: null
+  - periodo: "1996-03"
+    valor: "2,47"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,47\", \"valor\" : \"2.47\" }"
+    bandeira: null
+  - periodo: "1996-04"
+    valor: "2,85"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,85\", \"valor\" : \"2.85\" }"
+    bandeira: null
+  - periodo: "1996-05"
+    valor: "3,31"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,31\", \"valor\" : \"3.31\" }"
+    bandeira: null
+  - periodo: "1996-06"
+    valor: "3,49"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,49\", \"valor\" : \"3.49\" }"
+    bandeira: null
+  - periodo: "1996-07"
+    valor: "3,61"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,61\", \"valor\" : \"3.61\" }"
+    bandeira: null
+  - periodo: "1996-08"
+    valor: "3,48"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,48\", \"valor\" : \"3.48\" }"
+    bandeira: null
+  - periodo: "1996-09"
+    valor: "3,33"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,33\", \"valor\" : \"3.33\" }"
+    bandeira: null
+  - periodo: "1996-10"
+    valor: "2,92"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,92\", \"valor\" : \"2.92\" }"
+    bandeira: null
+  - periodo: "1996-11"
+    valor: "3,04"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,04\", \"valor\" : \"3.04\" }"
+    bandeira: null
+  - periodo: "1996-12"
+    valor: "3,19"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,19\", \"valor\" : \"3.19\" }"
+    bandeira: null
+  - periodo: "1997-01"
+    valor: "3,34"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,34\", \"valor\" : \"3.34\" }"
+    bandeira: null
+  - periodo: "1997-02"
+    valor: "2,91"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,91\", \"valor\" : \"2.91\" }"
+    bandeira: null
+  - periodo: "1997-03"
+    valor: "2,68"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,68\", \"valor\" : \"2.68\" }"
+    bandeira: null
+  - periodo: "1997-04"
+    valor: "2,02"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,02\", \"valor\" : \"2.02\" }"
+    bandeira: null
+  - periodo: "1997-05"
+    valor: "2,26"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,26\", \"valor\" : \"2.26\" }"
+    bandeira: null
+  - periodo: "1997-06"
+    valor: "2,04"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,04\", \"valor\" : \"2.04\" }"
+    bandeira: null
+  - periodo: "1997-07"
+    valor: "1,91"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,91\", \"valor\" : \"1.91\" }"
+    bandeira: null
+  - periodo: "1997-08"
+    valor: "2,10"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,10\", \"valor\" : \"2.1\" }"
+    bandeira: null
+  - periodo: "1997-09"
+    valor: "2,05"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,05\", \"valor\" : \"2.05\" }"
+    bandeira: null
+  - periodo: "1997-10"
+    valor: "2,05"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,05\", \"valor\" : \"2.05\" }"
+    bandeira: null
+  - periodo: "1997-11"
+    valor: "2,27"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,27\", \"valor\" : \"2.27\" }"
+    bandeira: null
+  - periodo: "1997-12"
+    valor: "2,46"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,46\", \"valor\" : \"2.46\" }"
+    bandeira: null
+  - periodo: "1998-01"
+    valor: "1,98"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,98\", \"valor\" : \"1.98\" }"
+    bandeira: null
+  - periodo: "1998-02"
+    valor: "1,76"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,76\", \"valor\" : \"1.76\" }"
+    bandeira: null
+  - periodo: "1998-03"
+    valor: "1,90"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,90\", \"valor\" : \"1.9\" }"
+    bandeira: null
+  - periodo: "1998-04"
+    valor: "2,47"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,47\", \"valor\" : \"2.47\" }"
+    bandeira: null
+  - periodo: "1998-05"
+    valor: "2,48"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,48\", \"valor\" : \"2.48\" }"
+    bandeira: null
+  - periodo: "1998-06"
+    valor: "2,88"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,88\", \"valor\" : \"2.88\" }"
+    bandeira: null
+  - periodo: "1998-07"
+    valor: "3,07"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,07\", \"valor\" : \"3.07\" }"
+    bandeira: null
+  - periodo: "1998-08"
+    valor: "2,60"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,60\", \"valor\" : \"2.6\" }"
+    bandeira: null
+  - periodo: "1998-09"
+    valor: "2,54"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,54\", \"valor\" : \"2.54\" }"
+    bandeira: null
+  - periodo: "1998-10"
+    valor: "2,96"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,96\", \"valor\" : \"2.96\" }"
+    bandeira: null
+  - periodo: "1998-11"
+    valor: "3,06"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,06\", \"valor\" : \"3.06\" }"
+    bandeira: null
+  - periodo: "1998-12"
+    valor: "3,17"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,17\", \"valor\" : \"3.17\" }"
+    bandeira: null
+  - periodo: "1999-01"
+    valor: "2,70"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,70\", \"valor\" : \"2.7\" }"
+    bandeira: null
+  - periodo: "1999-02"
+    valor: "2,78"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,78\", \"valor\" : \"2.78\" }"
+    bandeira: null
+  - periodo: "1999-03"
+    valor: "2,94"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,94\", \"valor\" : \"2.94\" }"
+    bandeira: null
+  - periodo: "1999-04"
+    valor: "2,86"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,86\", \"valor\" : \"2.86\" }"
+    bandeira: null
+  - periodo: "1999-05"
+    valor: "2,34"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,34\", \"valor\" : \"2.34\" }"
+    bandeira: null
+  - periodo: "1999-06"
+    valor: "2,37"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,37\", \"valor\" : \"2.37\" }"
+    bandeira: null
+  - periodo: "1999-07"
+    valor: "2,13"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,13\", \"valor\" : \"2.13\" }"
+    bandeira: null
+  - periodo: "1999-08"
+    valor: "1,96"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,96\", \"valor\" : \"1.96\" }"
+    bandeira: null
+  - periodo: "1999-09"
+    valor: "2,06"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,06\", \"valor\" : \"2.06\" }"
+    bandeira: null
+  - periodo: "1999-10"
+    valor: "1,97"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,97\", \"valor\" : \"1.97\" }"
+    bandeira: null
+  - periodo: "1999-11"
+    valor: "2,06"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,06\", \"valor\" : \"2.06\" }"
+    bandeira: null
+  - periodo: "1999-12"
+    valor: "1,96"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,96\", \"valor\" : \"1.96\" }"
+    bandeira: null
+  - periodo: "2000-01"
+    valor: "2,09"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,09\", \"valor\" : \"2.09\" }"
+    bandeira: null
+  - periodo: "2000-02"
+    valor: "1,83"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,83\", \"valor\" : \"1.83\" }"
+    bandeira: null
+  - periodo: "2000-03"
+    valor: "1,55"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,55\", \"valor\" : \"1.55\" }"
+    bandeira: null
+  - periodo: "2000-04"
+    valor: "2,08"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,08\", \"valor\" : \"2.08\" }"
+    bandeira: null
+  - periodo: "2000-05"
+    valor: "2,54"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,54\", \"valor\" : \"2.54\" }"
+    bandeira: null
+  - periodo: "2000-06"
+    valor: "2,89"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,89\", \"valor\" : \"2.89\" }"
+    bandeira: null
+  - periodo: "2000-07"
+    valor: "3,25"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,25\", \"valor\" : \"3.25\" }"
+    bandeira: null
+  - periodo: "2000-08"
+    valor: "3,45"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,45\", \"valor\" : \"3.45\" }"
+    bandeira: null
+  - periodo: "2000-09"
+    valor: "3,38"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,38\", \"valor\" : \"3.38\" }"
+    bandeira: null
+  - periodo: "2000-10"
+    valor: "3,52"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,52\", \"valor\" : \"3.52\" }"
+    bandeira: null
+  - periodo: "2000-11"
+    valor: "3,73"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,73\", \"valor\" : \"3.73\" }"
+    bandeira: null
+  - periodo: "2000-12"
+    valor: "3,86"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,86\", \"valor\" : \"3.86\" }"
+    bandeira: null
+  - periodo: "2001-01"
+    valor: "4,45"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,45\", \"valor\" : \"4.45\" }"
+    bandeira: null
+  - periodo: "2001-02"
+    valor: "4,82"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,82\", \"valor\" : \"4.82\" }"
+    bandeira: null
+  - periodo: "2001-03"
+    valor: "5,12"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"5,12\", \"valor\" : \"5.12\" }"
+    bandeira: null
+  - periodo: "2001-04"
+    valor: "4,49"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,49\", \"valor\" : \"4.49\" }"
+    bandeira: null
+  - periodo: "2001-05"
+    valor: "4,77"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,77\", \"valor\" : \"4.77\" }"
+    bandeira: null
+  - periodo: "2001-06"
+    valor: "4,53"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,53\", \"valor\" : \"4.53\" }"
+    bandeira: null
+  - periodo: "2001-07"
+    valor: "4,30"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,30\", \"valor\" : \"4.3\" }"
+    bandeira: null
+  - periodo: "2001-08"
+    valor: "4,06"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,06\", \"valor\" : \"4.06\" }"
+    bandeira: null
+  - periodo: "2001-09"
+    valor: "4,12"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,12\", \"valor\" : \"4.12\" }"
+    bandeira: null
+  - periodo: "2001-10"
+    valor: "4,09"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,09\", \"valor\" : \"4.09\" }"
+    bandeira: null
+  - periodo: "2001-11"
+    valor: "3,96"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,96\", \"valor\" : \"3.96\" }"
+    bandeira: null
+  - periodo: "2001-12"
+    valor: "3,78"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,78\", \"valor\" : \"3.78\" }"
+    bandeira: null
+  - periodo: "2002-01"
+    valor: "3,57"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,57\", \"valor\" : \"3.57\" }"
+    bandeira: null
+  - periodo: "2002-02"
+    valor: "3,26"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,26\", \"valor\" : \"3.26\" }"
+    bandeira: null
+  - periodo: "2002-03"
+    valor: "3,26"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,26\", \"valor\" : \"3.26\" }"
+    bandeira: null
+  - periodo: "2002-04"
+    valor: "3,51"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,51\", \"valor\" : \"3.51\" }"
+    bandeira: null
+  - periodo: "2002-05"
+    valor: "3,33"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,33\", \"valor\" : \"3.33\" }"
+    bandeira: null
+  - periodo: "2002-06"
+    valor: "3,39"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,39\", \"valor\" : \"3.39\" }"
+    bandeira: null
+  - periodo: "2002-07"
+    valor: "3,45"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,45\", \"valor\" : \"3.45\" }"
+    bandeira: null
+  - periodo: "2002-08"
+    valor: "3,73"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,73\", \"valor\" : \"3.73\" }"
+    bandeira: null
+  - periodo: "2002-09"
+    valor: "3,70"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,70\", \"valor\" : \"3.7\" }"
+    bandeira: null
+  - periodo: "2002-10"
+    valor: "3,97"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,97\", \"valor\" : \"3.97\" }"
+    bandeira: null
+  - periodo: "2002-11"
+    valor: "4,03"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,03\", \"valor\" : \"4.03\" }"
+    bandeira: null
+  - periodo: "2002-12"
+    valor: "3,97"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,97\", \"valor\" : \"3.97\" }"
+    bandeira: null
+  - periodo: "2003-01"
+    valor: "3,96"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,96\", \"valor\" : \"3.96\" }"
+    bandeira: null
+  - periodo: "2003-02"
+    valor: "4,12"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,12\", \"valor\" : \"4.12\" }"
+    bandeira: null
+  - periodo: "2003-03"
+    valor: "3,75"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,75\", \"valor\" : \"3.75\" }"
+    bandeira: null
+  - periodo: "2003-04"
+    valor: "3,70"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,70\", \"valor\" : \"3.7\" }"
+    bandeira: null
+  - periodo: "2003-05"
+    valor: "3,60"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,60\", \"valor\" : \"3.6\" }"
+    bandeira: null
+  - periodo: "2003-06"
+    valor: "3,27"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,27\", \"valor\" : \"3.27\" }"
+    bandeira: null
+  - periodo: "2003-07"
+    valor: "2,79"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,79\", \"valor\" : \"2.79\" }"
+    bandeira: null
+  - periodo: "2003-08"
+    valor: "2,76"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,76\", \"valor\" : \"2.76\" }"
+    bandeira: null
+  - periodo: "2003-09"
+    valor: "3,02"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,02\", \"valor\" : \"3.02\" }"
+    bandeira: null
+  - periodo: "2003-10"
+    valor: "2,91"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,91\", \"valor\" : \"2.91\" }"
+    bandeira: null
+  - periodo: "2003-11"
+    valor: "2,46"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,46\", \"valor\" : \"2.46\" }"
+    bandeira: null
+  - periodo: "2003-12"
+    valor: "2,37"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,37\", \"valor\" : \"2.37\" }"
+    bandeira: null
+  - periodo: "2004-01"
+    valor: "2,23"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,23\", \"valor\" : \"2.23\" }"
+    bandeira: null
+  - periodo: "2004-02"
+    valor: "2,09"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,09\", \"valor\" : \"2.09\" }"
+    bandeira: null
+  - periodo: "2004-03"
+    valor: "2,25"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,25\", \"valor\" : \"2.25\" }"
+    bandeira: null
+  - periodo: "2004-04"
+    valor: "2,34"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,34\", \"valor\" : \"2.34\" }"
+    bandeira: null
+  - periodo: "2004-05"
+    valor: "2,43"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,43\", \"valor\" : \"2.43\" }"
+    bandeira: null
+  - periodo: "2004-06"
+    valor: "2,67"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,67\", \"valor\" : \"2.67\" }"
+    bandeira: null
+  - periodo: "2004-07"
+    valor: "2,77"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,77\", \"valor\" : \"2.77\" }"
+    bandeira: null
+  - periodo: "2004-08"
+    valor: "2,36"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,36\", \"valor\" : \"2.36\" }"
+    bandeira: null
+  - periodo: "2004-09"
+    valor: "2,09"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,09\", \"valor\" : \"2.09\" }"
+    bandeira: null
+  - periodo: "2004-10"
+    valor: "2,19"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,19\", \"valor\" : \"2.19\" }"
+    bandeira: null
+  - periodo: "2004-11"
+    valor: "2,47"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,47\", \"valor\" : \"2.47\" }"
+    bandeira: null
+  - periodo: "2004-12"
+    valor: "2,49"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,49\", \"valor\" : \"2.49\" }"
+    bandeira: null
+  - periodo: "2005-01"
+    valor: "2,02"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,02\", \"valor\" : \"2.02\" }"
+    bandeira: null
+  - periodo: "2005-02"
+    valor: "2,13"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,13\", \"valor\" : \"2.13\" }"
+    bandeira: null
+  - periodo: "2005-03"
+    valor: "2,24"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,24\", \"valor\" : \"2.24\" }"
+    bandeira: null
+  - periodo: "2005-04"
+    valor: "2,07"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,07\", \"valor\" : \"2.07\" }"
+    bandeira: null
+  - periodo: "2005-05"
+    valor: "1,83"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,83\", \"valor\" : \"1.83\" }"
+    bandeira: null
+  - periodo: "2005-06"
+    valor: "1,62"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,62\", \"valor\" : \"1.62\" }"
+    bandeira: null
+  - periodo: "2005-07"
+    valor: "2,12"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,12\", \"valor\" : \"2.12\" }"
+    bandeira: null
+  - periodo: "2005-08"
+    valor: "2,59"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,59\", \"valor\" : \"2.59\" }"
+    bandeira: null
+  - periodo: "2005-09"
+    valor: "2,87"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,87\", \"valor\" : \"2.87\" }"
+    bandeira: null
+  - periodo: "2005-10"
+    valor: "2,69"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,69\", \"valor\" : \"2.69\" }"
+    bandeira: null
+  - periodo: "2005-11"
+    valor: "2,56"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,56\", \"valor\" : \"2.56\" }"
+    bandeira: null
+  - periodo: "2005-12"
+    valor: "2,58"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,58\", \"valor\" : \"2.58\" }"
+    bandeira: null
+  - periodo: "2006-01"
+    valor: "2,70"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,70\", \"valor\" : \"2.7\" }"
+    bandeira: null
+  - periodo: "2006-02"
+    valor: "2,96"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,96\", \"valor\" : \"2.96\" }"
+    bandeira: null
+  - periodo: "2006-03"
+    valor: "3,90"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,90\", \"valor\" : \"3.9\" }"
+    bandeira: null
+  - periodo: "2006-04"
+    valor: "3,73"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,73\", \"valor\" : \"3.73\" }"
+    bandeira: null
+  - periodo: "2006-05"
+    valor: "3,75"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,75\", \"valor\" : \"3.75\" }"
+    bandeira: null
+  - periodo: "2006-06"
+    valor: "3,67"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,67\", \"valor\" : \"3.67\" }"
+    bandeira: null
+  - periodo: "2006-07"
+    valor: "3,12"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,12\", \"valor\" : \"3.12\" }"
+    bandeira: null
+  - periodo: "2006-08"
+    valor: "2,85"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,85\", \"valor\" : \"2.85\" }"
+    bandeira: null
+  - periodo: "2006-09"
+    valor: "3,08"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,08\", \"valor\" : \"3.08\" }"
+    bandeira: null
+  - periodo: "2006-10"
+    valor: "2,67"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,67\", \"valor\" : \"2.67\" }"
+    bandeira: null
+  - periodo: "2006-11"
+    valor: "2,38"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,38\", \"valor\" : \"2.38\" }"
+    bandeira: null
+  - periodo: "2006-12"
+    valor: "2,51"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,51\", \"valor\" : \"2.51\" }"
+    bandeira: null
+  - periodo: "2007-01"
+    valor: "2,57"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,57\", \"valor\" : \"2.57\" }"
+    bandeira: null
+  - periodo: "2007-02"
+    valor: "2,35"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,35\", \"valor\" : \"2.35\" }"
+    bandeira: null
+  - periodo: "2007-03"
+    valor: "2,33"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,33\", \"valor\" : \"2.33\" }"
+    bandeira: null
+  - periodo: "2007-04"
+    valor: "2,74"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,74\", \"valor\" : \"2.74\" }"
+    bandeira: null
+  - periodo: "2007-05"
+    valor: "2,45"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,45\", \"valor\" : \"2.45\" }"
+    bandeira: null
+  - periodo: "2007-06"
+    valor: "2,44"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,44\", \"valor\" : \"2.44\" }"
+    bandeira: null
+  - periodo: "2007-07"
+    valor: "2,38"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,38\", \"valor\" : \"2.38\" }"
+    bandeira: null
+  - periodo: "2007-08"
+    valor: "2,06"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,06\", \"valor\" : \"2.06\" }"
+    bandeira: null
+  - periodo: "2007-09"
+    valor: "2,09"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,09\", \"valor\" : \"2.09\" }"
+    bandeira: null
+  - periodo: "2007-10"
+    valor: "2,57"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,57\", \"valor\" : \"2.57\" }"
+    bandeira: null
+  - periodo: "2007-11"
+    valor: "2,79"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,79\", \"valor\" : \"2.79\" }"
+    bandeira: null
+  - periodo: "2007-12"
+    valor: "2,68"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,68\", \"valor\" : \"2.68\" }"
+    bandeira: null
+  - periodo: "2008-01"
+    valor: "2,83"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,83\", \"valor\" : \"2.83\" }"
+    bandeira: null
+  - periodo: "2008-02"
+    valor: "2,86"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,86\", \"valor\" : \"2.86\" }"
+    bandeira: null
+  - periodo: "2008-03"
+    valor: "3,10"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,10\", \"valor\" : \"3.1\" }"
+    bandeira: null
+  - periodo: "2008-04"
+    valor: "2,48"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,48\", \"valor\" : \"2.48\" }"
+    bandeira: null
+  - periodo: "2008-05"
+    valor: "2,78"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,78\", \"valor\" : \"2.78\" }"
+    bandeira: null
+  - periodo: "2008-06"
+    valor: "3,35"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,35\", \"valor\" : \"3.35\" }"
+    bandeira: null
+  - periodo: "2008-07"
+    valor: "3,05"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,05\", \"valor\" : \"3.05\" }"
+    bandeira: null
+  - periodo: "2008-08"
+    valor: "3,02"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,02\", \"valor\" : \"3.02\" }"
+    bandeira: null
+  - periodo: "2008-09"
+    valor: "3,10"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,10\", \"valor\" : \"3.1\" }"
+    bandeira: null
+  - periodo: "2008-10"
+    valor: "2,38"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,38\", \"valor\" : \"2.38\" }"
+    bandeira: null
+  - periodo: "2008-11"
+    valor: "1,38"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,38\", \"valor\" : \"1.38\" }"
+    bandeira: null
+  - periodo: "2008-12"
+    valor: "0,78"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,78\", \"valor\" : \"0.78\" }"
+    bandeira: null
+  - periodo: "2009-01"
+    valor: "0,26"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,26\", \"valor\" : \"0.26\" }"
+    bandeira: null
+  - periodo: "2009-02"
+    valor: "0,20"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,20\", \"valor\" : \"0.2\" }"
+    bandeira: null
+  - periodo: "2009-03"
+    valor: "−0,48"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,48\", \"valor\" : \"-0.48\" }"
+    bandeira: null
+  - periodo: "2009-04"
+    valor: "−0,54"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,54\", \"valor\" : \"-0.54\" }"
+    bandeira: null
+  - periodo: "2009-05"
+    valor: "−1,17"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-1,17\", \"valor\" : \"-1.17\" }"
+    bandeira: null
+  - periodo: "2009-06"
+    valor: "−1,59"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-1,59\", \"valor\" : \"-1.59\" }"
+    bandeira: null
+  - periodo: "2009-07"
+    valor: "−1,54"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-1,54\", \"valor\" : \"-1.54\" }"
+    bandeira: null
+  - periodo: "2009-08"
+    valor: "−1,33"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-1,33\", \"valor\" : \"-1.33\" }"
+    bandeira: null
+  - periodo: "2009-09"
+    valor: "−1,66"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-1,66\", \"valor\" : \"-1.66\" }"
+    bandeira: null
+  - periodo: "2009-10"
+    valor: "−1,46"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-1,46\", \"valor\" : \"-1.46\" }"
+    bandeira: null
+  - periodo: "2009-11"
+    valor: "−0,59"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,59\", \"valor\" : \"-0.59\" }"
+    bandeira: null
+  - periodo: "2009-12"
+    valor: "−0,05"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,05\", \"valor\" : \"-0.05\" }"
+    bandeira: null
+  - periodo: "2010-01"
+    valor: "0,12"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,12\", \"valor\" : \"0.12\" }"
+    bandeira: null
+  - periodo: "2010-02"
+    valor: "0,20"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,20\", \"valor\" : \"0.2\" }"
+    bandeira: null
+  - periodo: "2010-03"
+    valor: "0,57"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,57\", \"valor\" : \"0.57\" }"
+    bandeira: null
+  - periodo: "2010-04"
+    valor: "0,72"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,72\", \"valor\" : \"0.72\" }"
+    bandeira: null
+  - periodo: "2010-05"
+    valor: "1,06"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,06\", \"valor\" : \"1.06\" }"
+    bandeira: null
+  - periodo: "2010-06"
+    valor: "1,17"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,17\", \"valor\" : \"1.17\" }"
+    bandeira: null
+  - periodo: "2010-07"
+    valor: "1,89"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,89\", \"valor\" : \"1.89\" }"
+    bandeira: null
+  - periodo: "2010-08"
+    valor: "1,98"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,98\", \"valor\" : \"1.98\" }"
+    bandeira: null
+  - periodo: "2010-09"
+    valor: "1,97"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,97\", \"valor\" : \"1.97\" }"
+    bandeira: null
+  - periodo: "2010-10"
+    valor: "2,35"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,35\", \"valor\" : \"2.35\" }"
+    bandeira: null
+  - periodo: "2010-11"
+    valor: "2,29"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,29\", \"valor\" : \"2.29\" }"
+    bandeira: null
+  - periodo: "2010-12"
+    valor: "2,52"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,52\", \"valor\" : \"2.52\" }"
+    bandeira: null
+  - periodo: "2011-01"
+    valor: "3,60"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,60\", \"valor\" : \"3.6\" }"
+    bandeira: null
+  - periodo: "2011-02"
+    valor: "3,56"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,56\", \"valor\" : \"3.56\" }"
+    bandeira: null
+  - periodo: "2011-03"
+    valor: "4,02"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,02\", \"valor\" : \"4.02\" }"
+    bandeira: null
+  - periodo: "2011-04"
+    valor: "4,04"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,04\", \"valor\" : \"4.04\" }"
+    bandeira: null
+  - periodo: "2011-05"
+    valor: "3,84"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,84\", \"valor\" : \"3.84\" }"
+    bandeira: null
+  - periodo: "2011-06"
+    valor: "3,41"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,41\", \"valor\" : \"3.41\" }"
+    bandeira: null
+  - periodo: "2011-07"
+    valor: "3,15"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,15\", \"valor\" : \"3.15\" }"
+    bandeira: null
+  - periodo: "2011-08"
+    valor: "2,91"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,91\", \"valor\" : \"2.91\" }"
+    bandeira: null
+  - periodo: "2011-09"
+    valor: "3,55"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,55\", \"valor\" : \"3.55\" }"
+    bandeira: null
+  - periodo: "2011-10"
+    valor: "4,20"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,20\", \"valor\" : \"4.2\" }"
+    bandeira: null
+  - periodo: "2011-11"
+    valor: "3,93"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,93\", \"valor\" : \"3.93\" }"
+    bandeira: null
+  - periodo: "2011-12"
+    valor: "3,61"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,61\", \"valor\" : \"3.61\" }"
+    bandeira: null
+  - periodo: "2012-01"
+    valor: "3,51"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,51\", \"valor\" : \"3.51\" }"
+    bandeira: null
+  - periodo: "2012-02"
+    valor: "3,60"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,60\", \"valor\" : \"3.6\" }"
+    bandeira: null
+  - periodo: "2012-03"
+    valor: "3,15"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,15\", \"valor\" : \"3.15\" }"
+    bandeira: null
+  - periodo: "2012-04"
+    valor: "3,01"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,01\", \"valor\" : \"3.01\" }"
+    bandeira: null
+  - periodo: "2012-05"
+    valor: "2,70"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,70\", \"valor\" : \"2.7\" }"
+    bandeira: null
+  - periodo: "2012-06"
+    valor: "2,71"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,71\", \"valor\" : \"2.71\" }"
+    bandeira: null
+  - periodo: "2012-07"
+    valor: "2,77"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,77\", \"valor\" : \"2.77\" }"
+    bandeira: null
+  - periodo: "2012-08"
+    valor: "3,08"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,08\", \"valor\" : \"3.08\" }"
+    bandeira: null
+  - periodo: "2012-09"
+    valor: "2,88"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,88\", \"valor\" : \"2.88\" }"
+    bandeira: null
+  - periodo: "2012-10"
+    valor: "2,13"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,13\", \"valor\" : \"2.13\" }"
+    bandeira: null
+  - periodo: "2012-11"
+    valor: "1,89"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,89\", \"valor\" : \"1.89\" }"
+    bandeira: null
+  - periodo: "2012-12"
+    valor: "1,92"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,92\", \"valor\" : \"1.92\" }"
+    bandeira: null
+  - periodo: "2013-01"
+    valor: "0,17"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,17\", \"valor\" : \"0.17\" }"
+    bandeira: null
+  - periodo: "2013-02"
+    valor: "−0,03"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,03\", \"valor\" : \"-0.03\" }"
+    bandeira: null
+  - periodo: "2013-03"
+    valor: "0,45"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,45\", \"valor\" : \"0.45\" }"
+    bandeira: null
+  - periodo: "2013-04"
+    valor: "0,18"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,18\", \"valor\" : \"0.18\" }"
+    bandeira: null
+  - periodo: "2013-05"
+    valor: "0,71"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,71\", \"valor\" : \"0.71\" }"
+    bandeira: null
+  - periodo: "2013-06"
+    valor: "0,98"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,98\", \"valor\" : \"0.98\" }"
+    bandeira: null
+  - periodo: "2013-07"
+    valor: "0,76"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,76\", \"valor\" : \"0.76\" }"
+    bandeira: null
+  - periodo: "2013-08"
+    valor: "0,15"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,15\", \"valor\" : \"0.15\" }"
+    bandeira: null
+  - periodo: "2013-09"
+    valor: "0,12"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,12\", \"valor\" : \"0.12\" }"
+    bandeira: null
+  - periodo: "2013-10"
+    valor: "−0,25"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,25\", \"valor\" : \"-0.25\" }"
+    bandeira: null
+  - periodo: "2013-11"
+    valor: "−0,15"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,15\", \"valor\" : \"-0.15\" }"
+    bandeira: null
+  - periodo: "2013-12"
+    valor: "0,20"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,20\", \"valor\" : \"0.2\" }"
+    bandeira: null
+  - periodo: "2014-01"
+    valor: "0,06"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,06\", \"valor\" : \"0.06\" }"
+    bandeira: null
+  - periodo: "2014-02"
+    valor: "−0,08"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,08\", \"valor\" : \"-0.08\" }"
+    bandeira: null
+  - periodo: "2014-03"
+    valor: "−0,37"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,37\", \"valor\" : \"-0.37\" }"
+    bandeira: null
+  - periodo: "2014-04"
+    valor: "−0,14"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,14\", \"valor\" : \"-0.14\" }"
+    bandeira: null
+  - periodo: "2014-05"
+    valor: "−0,44"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,44\", \"valor\" : \"-0.44\" }"
+    bandeira: null
+  - periodo: "2014-06"
+    valor: "−0,42"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,42\", \"valor\" : \"-0.42\" }"
+    bandeira: null
+  - periodo: "2014-07"
+    valor: "−0,87"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,87\", \"valor\" : \"-0.87\" }"
+    bandeira: null
+  - periodo: "2014-08"
+    valor: "−0,36"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,36\", \"valor\" : \"-0.36\" }"
+    bandeira: null
+  - periodo: "2014-09"
+    valor: "−0,37"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,37\", \"valor\" : \"-0.37\" }"
+    bandeira: null
+  - periodo: "2014-10"
+    valor: "0,00"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,00\", \"valor\" : \"0\" }"
+    bandeira: null
+  - periodo: "2014-11"
+    valor: "0,02"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,02\", \"valor\" : \"0.02\" }"
+    bandeira: null
+  - periodo: "2014-12"
+    valor: "−0,36"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,36\", \"valor\" : \"-0.36\" }"
+    bandeira: null
+  - periodo: "2015-01"
+    valor: "−0,39"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,39\", \"valor\" : \"-0.39\" }"
+    bandeira: null
+  - periodo: "2015-02"
+    valor: "−0,21"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,21\", \"valor\" : \"-0.21\" }"
+    bandeira: null
+  - periodo: "2015-03"
+    valor: "0,31"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,31\", \"valor\" : \"0.31\" }"
+    bandeira: null
+  - periodo: "2015-04"
+    valor: "0,40"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,40\", \"valor\" : \"0.4\" }"
+    bandeira: null
+  - periodo: "2015-05"
+    valor: "0,95"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,95\", \"valor\" : \"0.95\" }"
+    bandeira: null
+  - periodo: "2015-06"
+    valor: "0,80"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,80\", \"valor\" : \"0.8\" }"
+    bandeira: null
+  - periodo: "2015-07"
+    valor: "0,77"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,77\", \"valor\" : \"0.77\" }"
+    bandeira: null
+  - periodo: "2015-08"
+    valor: "0,66"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,66\", \"valor\" : \"0.66\" }"
+    bandeira: null
+  - periodo: "2015-09"
+    valor: "0,88"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,88\", \"valor\" : \"0.88\" }"
+    bandeira: null
+  - periodo: "2015-10"
+    valor: "0,63"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,63\", \"valor\" : \"0.63\" }"
+    bandeira: null
+  - periodo: "2015-11"
+    valor: "0,64"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,64\", \"valor\" : \"0.64\" }"
+    bandeira: null
+  - periodo: "2015-12"
+    valor: "0,40"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,40\", \"valor\" : \"0.4\" }"
+    bandeira: null
+  - periodo: "2016-01"
+    valor: "0,78"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,78\", \"valor\" : \"0.78\" }"
+    bandeira: null
+  - periodo: "2016-02"
+    valor: "0,40"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,40\", \"valor\" : \"0.4\" }"
+    bandeira: null
+  - periodo: "2016-03"
+    valor: "0,45"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,45\", \"valor\" : \"0.45\" }"
+    bandeira: null
+  - periodo: "2016-04"
+    valor: "0,48"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,48\", \"valor\" : \"0.48\" }"
+    bandeira: null
+  - periodo: "2016-05"
+    valor: "0,33"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,33\", \"valor\" : \"0.33\" }"
+    bandeira: null
+  - periodo: "2016-06"
+    valor: "0,55"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,55\", \"valor\" : \"0.55\" }"
+    bandeira: null
+  - periodo: "2016-07"
+    valor: "0,61"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,61\", \"valor\" : \"0.61\" }"
+    bandeira: null
+  - periodo: "2016-08"
+    valor: "0,72"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,72\", \"valor\" : \"0.72\" }"
+    bandeira: null
+  - periodo: "2016-09"
+    valor: "0,63"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,63\", \"valor\" : \"0.63\" }"
+    bandeira: null
+  - periodo: "2016-10"
+    valor: "0,88"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,88\", \"valor\" : \"0.88\" }"
+    bandeira: null
+  - periodo: "2016-11"
+    valor: "0,58"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,58\", \"valor\" : \"0.58\" }"
+    bandeira: null
+  - periodo: "2016-12"
+    valor: "0,88"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,88\", \"valor\" : \"0.88\" }"
+    bandeira: null
+  - periodo: "2017-01"
+    valor: "1,33"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,33\", \"valor\" : \"1.33\" }"
+    bandeira: null
+  - periodo: "2017-02"
+    valor: "1,55"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,55\", \"valor\" : \"1.55\" }"
+    bandeira: null
+  - periodo: "2017-03"
+    valor: "1,37"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,37\", \"valor\" : \"1.37\" }"
+    bandeira: null
+  - periodo: "2017-04"
+    valor: "1,98"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,98\", \"valor\" : \"1.98\" }"
+    bandeira: null
+  - periodo: "2017-05"
+    valor: "1,45"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,45\", \"valor\" : \"1.45\" }"
+    bandeira: null
+  - periodo: "2017-06"
+    valor: "0,91"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,91\", \"valor\" : \"0.91\" }"
+    bandeira: null
+  - periodo: "2017-07"
+    valor: "0,90"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,90\", \"valor\" : \"0.9\" }"
+    bandeira: null
+  - periodo: "2017-08"
+    valor: "1,14"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,14\", \"valor\" : \"1.14\" }"
+    bandeira: null
+  - periodo: "2017-09"
+    valor: "1,39"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,39\", \"valor\" : \"1.39\" }"
+    bandeira: null
+  - periodo: "2017-10"
+    valor: "1,39"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,39\", \"valor\" : \"1.39\" }"
+    bandeira: null
+  - periodo: "2017-11"
+    valor: "1,55"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,55\", \"valor\" : \"1.55\" }"
+    bandeira: null
+  - periodo: "2017-12"
+    valor: "1,47"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,47\", \"valor\" : \"1.47\" }"
+    bandeira: null
+  - periodo: "2018-01"
+    valor: "1,03"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,03\", \"valor\" : \"1.03\" }"
+    bandeira: null
+  - periodo: "2018-02"
+    valor: "0,58"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,58\", \"valor\" : \"0.58\" }"
+    bandeira: null
+  - periodo: "2018-03"
+    valor: "0,69"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,69\", \"valor\" : \"0.69\" }"
+    bandeira: null
+  - periodo: "2018-04"
+    valor: "0,40"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,40\", \"valor\" : \"0.4\" }"
+    bandeira: null
+  - periodo: "2018-05"
+    valor: "1,04"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,04\", \"valor\" : \"1.04\" }"
+    bandeira: null
+  - periodo: "2018-06"
+    valor: "1,52"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,52\", \"valor\" : \"1.52\" }"
+    bandeira: null
+  - periodo: "2018-07"
+    valor: "1,58"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,58\", \"valor\" : \"1.58\" }"
+    bandeira: null
+  - periodo: "2018-08"
+    valor: "1,22"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,22\", \"valor\" : \"1.22\" }"
+    bandeira: null
+  - periodo: "2018-09"
+    valor: "1,40"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,40\", \"valor\" : \"1.4\" }"
+    bandeira: null
+  - periodo: "2018-10"
+    valor: "0,96"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,96\", \"valor\" : \"0.96\" }"
+    bandeira: null
+  - periodo: "2018-11"
+    valor: "0,86"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,86\", \"valor\" : \"0.86\" }"
+    bandeira: null
+  - periodo: "2018-12"
+    valor: "0,66"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,66\", \"valor\" : \"0.66\" }"
+    bandeira: null
+  - periodo: "2019-01"
+    valor: "0,48"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,48\", \"valor\" : \"0.48\" }"
+    bandeira: null
+  - periodo: "2019-02"
+    valor: "0,94"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,94\", \"valor\" : \"0.94\" }"
+    bandeira: null
+  - periodo: "2019-03"
+    valor: "0,85"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,85\", \"valor\" : \"0.85\" }"
+    bandeira: null
+  - periodo: "2019-04"
+    valor: "0,77"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,77\", \"valor\" : \"0.77\" }"
+    bandeira: null
+  - periodo: "2019-05"
+    valor: "0,42"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,42\", \"valor\" : \"0.42\" }"
+    bandeira: null
+  - periodo: "2019-06"
+    valor: "0,39"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,39\", \"valor\" : \"0.39\" }"
+    bandeira: null
+  - periodo: "2019-07"
+    valor: "−0,32"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,32\", \"valor\" : \"-0.32\" }"
+    bandeira: null
+  - periodo: "2019-08"
+    valor: "−0,09"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,09\", \"valor\" : \"-0.09\" }"
+    bandeira: null
+  - periodo: "2019-09"
+    valor: "−0,11"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,11\", \"valor\" : \"-0.11\" }"
+    bandeira: null
+  - periodo: "2019-10"
+    valor: "0,02"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,02\", \"valor\" : \"0.02\" }"
+    bandeira: null
+  - periodo: "2019-11"
+    valor: "0,32"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,32\", \"valor\" : \"0.32\" }"
+    bandeira: null
+  - periodo: "2019-12"
+    valor: "0,42"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,42\", \"valor\" : \"0.42\" }"
+    bandeira: null
+  - periodo: "2020-01"
+    valor: "0,80"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,80\", \"valor\" : \"0.8\" }"
+    bandeira: null
+  - periodo: "2020-02"
+    valor: "0,38"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,38\", \"valor\" : \"0.38\" }"
+    bandeira: null
+  - periodo: "2020-03"
+    valor: "0,05"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,05\", \"valor\" : \"0.05\" }"
+    bandeira: null
+  - periodo: "2020-04"
+    valor: "−0,22"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,22\", \"valor\" : \"-0.22\" }"
+    bandeira: null
+  - periodo: "2020-05"
+    valor: "−0,72"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,72\", \"valor\" : \"-0.72\" }"
+    bandeira: null
+  - periodo: "2020-06"
+    valor: "0,13"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,13\", \"valor\" : \"0.13\" }"
+    bandeira: null
+  - periodo: "2020-07"
+    valor: "0,14"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,14\", \"valor\" : \"0.14\" }"
+    bandeira: null
+  - periodo: "2020-08"
+    valor: "−0,01"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,01\", \"valor\" : \"-0.01\" }"
+    bandeira: null
+  - periodo: "2020-09"
+    valor: "−0,14"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,14\", \"valor\" : \"-0.14\" }"
+    bandeira: null
+  - periodo: "2020-10"
+    valor: "−0,07"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,07\", \"valor\" : \"-0.07\" }"
+    bandeira: null
+  - periodo: "2020-11"
+    valor: "−0,22"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,22\", \"valor\" : \"-0.22\" }"
+    bandeira: null
+  - periodo: "2020-12"
+    valor: "−0,23"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"-0,23\", \"valor\" : \"-0.23\" }"
+    bandeira: null
+  - periodo: "2021-01"
+    valor: "0,30"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,30\", \"valor\" : \"0.3\" }"
+    bandeira: null
+  - periodo: "2021-02"
+    valor: "0,48"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,48\", \"valor\" : \"0.48\" }"
+    bandeira: null
+  - periodo: "2021-03"
+    valor: "0,45"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,45\", \"valor\" : \"0.45\" }"
+    bandeira: null
+  - periodo: "2021-04"
+    valor: "0,55"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,55\", \"valor\" : \"0.55\" }"
+    bandeira: null
+  - periodo: "2021-05"
+    valor: "1,24"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,24\", \"valor\" : \"1.24\" }"
+    bandeira: null
+  - periodo: "2021-06"
+    valor: "0,51"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"0,51\", \"valor\" : \"0.51\" }"
+    bandeira: null
+  - periodo: "2021-07"
+    valor: "1,47"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,47\", \"valor\" : \"1.47\" }"
+    bandeira: null
+  - periodo: "2021-08"
+    valor: "1,54"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,54\", \"valor\" : \"1.54\" }"
+    bandeira: null
+  - periodo: "2021-09"
+    valor: "1,48"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,48\", \"valor\" : \"1.48\" }"
+    bandeira: null
+  - periodo: "2021-10"
+    valor: "1,83"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,83\", \"valor\" : \"1.83\" }"
+    bandeira: null
+  - periodo: "2021-11"
+    valor: "2,58"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,58\", \"valor\" : \"2.58\" }"
+    bandeira: null
+  - periodo: "2021-12"
+    valor: "2,74"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,74\", \"valor\" : \"2.74\" }"
+    bandeira: null
+  - periodo: "2022-01"
+    valor: "3,34"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,34\", \"valor\" : \"3.34\" }"
+    bandeira: null
+  - periodo: "2022-02"
+    valor: "4,19"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"4,19\", \"valor\" : \"4.19\" }"
+    bandeira: null
+  - periodo: "2022-03"
+    valor: "5,33"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"5,33\", \"valor\" : \"5.33\" }"
+    bandeira: null
+  - periodo: "2022-04"
+    valor: "7,20"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"7,20\", \"valor\" : \"7.2\" }"
+    bandeira: null
+  - periodo: "2022-05"
+    valor: "8,00"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"8,00\", \"valor\" : \"8\" }"
+    bandeira: null
+  - periodo: "2022-06"
+    valor: "8,73"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"8,73\", \"valor\" : \"8.73\" }"
+    bandeira: null
+  - periodo: "2022-07"
+    valor: "9,06"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"9,06\", \"valor\" : \"9.06\" }"
+    bandeira: null
+  - periodo: "2022-08"
+    valor: "8,94"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"8,94\", \"valor\" : \"8.94\" }"
+    bandeira: null
+  - periodo: "2022-09"
+    valor: "9,28"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"9,28\", \"valor\" : \"9.28\" }"
+    bandeira: null
+  - periodo: "2022-10"
+    valor: "10,14"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"10,14\", \"valor\" : \"10.14\" }"
+    bandeira: null
+  - periodo: "2022-11"
+    valor: "9,94"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"9,94\", \"valor\" : \"9.94\" }"
+    bandeira: null
+  - periodo: "2022-12"
+    valor: "9,59"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"9,59\", \"valor\" : \"9.59\" }"
+    bandeira: null
+  - periodo: "2023-01"
+    valor: "8,36"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"8,36\", \"valor\" : \"8.36\" }"
+    bandeira: null
+  - periodo: "2023-02"
+    valor: "8,25"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"8,25\", \"valor\" : \"8.25\" }"
+    bandeira: null
+  - periodo: "2023-03"
+    valor: "7,43"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"7,43\", \"valor\" : \"7.43\" }"
+    bandeira: null
+  - periodo: "2023-04"
+    valor: "5,71"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"5,71\", \"valor\" : \"5.71\" }"
+    bandeira: null
+  - periodo: "2023-05"
+    valor: "3,98"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,98\", \"valor\" : \"3.98\" }"
+    bandeira: null
+  - periodo: "2023-06"
+    valor: "3,39"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,39\", \"valor\" : \"3.39\" }"
+    bandeira: null
+  - periodo: "2023-07"
+    valor: "3,07"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,07\", \"valor\" : \"3.07\" }"
+    bandeira: null
+  - periodo: "2023-08"
+    valor: "3,72"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,72\", \"valor\" : \"3.72\" }"
+    bandeira: null
+  - periodo: "2023-09"
+    valor: "3,58"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,58\", \"valor\" : \"3.58\" }"
+    bandeira: null
+  - periodo: "2023-10"
+    valor: "2,12"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,12\", \"valor\" : \"2.12\" }"
+    bandeira: null
+  - periodo: "2023-11"
+    valor: "1,54"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,54\", \"valor\" : \"1.54\" }"
+    bandeira: null
+  - periodo: "2023-12"
+    valor: "1,42"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,42\", \"valor\" : \"1.42\" }"
+    bandeira: null
+  - periodo: "2024-01"
+    valor: "2,30"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,30\", \"valor\" : \"2.3\" }"
+    bandeira: null
+  - periodo: "2024-02"
+    valor: "2,07"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,07\", \"valor\" : \"2.07\" }"
+    bandeira: null
+  - periodo: "2024-03"
+    valor: "2,29"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,29\", \"valor\" : \"2.29\" }"
+    bandeira: null
+  - periodo: "2024-04"
+    valor: "2,21"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,21\", \"valor\" : \"2.21\" }"
+    bandeira: null
+  - periodo: "2024-05"
+    valor: "3,06"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,06\", \"valor\" : \"3.06\" }"
+    bandeira: null
+  - periodo: "2024-06"
+    valor: "2,79"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,79\", \"valor\" : \"2.79\" }"
+    bandeira: null
+  - periodo: "2024-07"
+    valor: "2,53"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,53\", \"valor\" : \"2.53\" }"
+    bandeira: null
+  - periodo: "2024-08"
+    valor: "1,86"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,86\", \"valor\" : \"1.86\" }"
+    bandeira: null
+  - periodo: "2024-09"
+    valor: "2,07"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,07\", \"valor\" : \"2.07\" }"
+    bandeira: null
+  - periodo: "2024-10"
+    valor: "2,32"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,32\", \"valor\" : \"2.32\" }"
+    bandeira: null
+  - periodo: "2024-11"
+    valor: "2,47"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,47\", \"valor\" : \"2.47\" }"
+    bandeira: null
+  - periodo: "2024-12"
+    valor: "3,01"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,01\", \"valor\" : \"3.01\" }"
+    bandeira: null
+  - periodo: "2025-01"
+    valor: "2,54"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,54\", \"valor\" : \"2.54\" }"
+    bandeira: null
+  - periodo: "2025-02"
+    valor: "2,39"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,39\", \"valor\" : \"2.39\" }"
+    bandeira: null
+  - periodo: "2025-03"
+    valor: "1,85"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,85\", \"valor\" : \"1.85\" }"
+    bandeira: null
+  - periodo: "2025-04"
+    valor: "2,10"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,10\", \"valor\" : \"2.1\" }"
+    bandeira: null
+  - periodo: "2025-05"
+    valor: "2,26"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,26\", \"valor\" : \"2.26\" }"
+    bandeira: null
+  - periodo: "2025-06"
+    valor: "2,37"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,37\", \"valor\" : \"2.37\" }"
+    bandeira: null
+  - periodo: "2025-07"
+    valor: "2,64"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,64\", \"valor\" : \"2.64\" }"
+    bandeira: null
+  - periodo: "2025-08"
+    valor: "2,76"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,76\", \"valor\" : \"2.76\" }"
+    bandeira: null
+  - periodo: "2025-09"
+    valor: "2,40"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,40\", \"valor\" : \"2.4\" }"
+    bandeira: null
+  - periodo: "2025-10"
+    valor: "2,34"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,34\", \"valor\" : \"2.34\" }"
+    bandeira: null
+  - periodo: "2025-11"
+    valor: "2,21"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,21\", \"valor\" : \"2.21\" }"
+    bandeira: null
+  - periodo: "2025-12"
+    valor: "2,19"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,19\", \"valor\" : \"2.19\" }"
+    bandeira: null
+  - periodo: "2026-01"
+    valor: "1,92"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"1,92\", \"valor\" : \"1.92\" }"
+    bandeira: null
+  - periodo: "2026-02"
+    valor: "2,10"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,10\", \"valor\" : \"2.1\" }"
+    bandeira: null
+  - periodo: "2026-03"
+    valor: "2,71"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"2,71\", \"valor\" : \"2.71\" }"
+    bandeira: null
+  - periodo: "2026-04"
+    valor: "3,35"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,35\", \"valor\" : \"3.35\" }"
+    bandeira: null
+  - periodo: "2026-05"
+    valor: "3,27"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,27\", \"valor\" : \"3.27\" }"
+    bandeira: null
+  - periodo: "2026-06"
+    valor: "3,22"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,22\", \"valor\" : \"3.22\" }"
+    bandeira: null
+  - periodo: "2026-07"
+    valor: "3,04"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,04\", \"valor\" : \"3.04\" }"
+    bandeira: null
+  - periodo: "2026-08"
+    valor: "3,30"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"3,30\", \"valor\" : \"3.3\" }"
+    bandeira: null
+
+# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a
+# expressão que o sítio refaz ponto a ponto na construção.
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+
+attributed_to:
+  - "INE"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "RP3. Coordenadas: 0014663, geocod=PT, dim_3=T. Metainformação: rp3/001-ine-0014663-meta.json (sha256 c04b10f6ef580907…), primeiro período publicado «Janeiro de 1992», último «Agosto de 2026», 2 casa(s) decimal(is). A API recusou a lista inteira dos períodos num Dim1 (Erro: -6502 -  ORA-06502: PL/SQL: numeric or value error: character string buffer too small, pedido rp3/016-ine-serie-ipc-variacao-homologa.json), e a série lê-se de 35 pedidos, um por ano. Licença: INE, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,103 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/dominios_series.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "serie-pensao-media-anual"
+eixo: "periodo"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve. Numa série
+# derivada fica a null: a proveniência é a das origens.
+name: "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática"
+name_source: "IndicadorDsg"
+unit: "€ por pensionista por ano"
+# A cadência dos pontos.
+periodicidade: "anual"
+
+# Proveniência.
+source: "INE"
+document:
+  title: "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática"
+  edition: "0014532, geocod=PT, dim_3=T"
+  kind: "serie"
+  url: "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014532&lingua=PT"
+source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014532&Dim1=S7A2017,S7A2018,S7A2019,S7A2020,S7A2021,S7A2022,S7A2023,S7A2024,S7A2025&Dim2=PT&Dim3=T&lang=PT"
+access_date: "2026-10-04"
+published_at: "2026-08-28"
+# Os pedidos do cliente da casa de onde os pontos saíram: o endereço, a hora, o
+# cliente, o nome com que a casa se apresentou, o resumo e o tamanho do corpo, e o
+# primeiro e o último ponto que cada um deu.
+pedidos:
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014532&Dim1=S7A2017,S7A2018,S7A2019,S7A2020,S7A2021,S7A2022,S7A2023,S7A2024,S7A2025&Dim2=PT&Dim3=T&lang=PT"
+    lido_em: "2026-10-04T03:50:05Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "da1c42f6182f9456ef41185411586f3327f2603f923cbe64e46ce1b74021afb2"
+    bytes: 2134
+    primeiro: "2017"
+    ultimo: "2025"
+
+# O literal da série: o rótulo e as coordenadas como a resposta os escreve.
+excerpt: "\"IndicadorCod\" : \"0014532\" · \"IndicadorDsg\" : \"Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática\""
+primeiro_periodo: "2017"
+ultimo_periodo: "2025"
+# Os períodos da cadência que a fonte não publica, com a razão que ela dá (null quando
+# a resposta não dá razão nenhuma).
+lacunas: []
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta lhes dá.
+bandeiras: {}
+
+# Os pontos, pela ordem do tempo.
+pontos:
+  - periodo: "2017"
+    valor: "5 381"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"5 381\", \"valor\" : \"5381\" }"
+    bandeira: null
+  - periodo: "2018"
+    valor: "5 634"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"5 634\", \"valor\" : \"5634\" }"
+    bandeira: null
+  - periodo: "2019"
+    valor: "5 854"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"5 854\", \"valor\" : \"5854\" }"
+    bandeira: null
+  - periodo: "2020"
+    valor: "6 057"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6 057\", \"valor\" : \"6057\" }"
+    bandeira: null
+  - periodo: "2021"
+    valor: "6 202"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6 202\", \"valor\" : \"6202\" }"
+    bandeira: null
+  - periodo: "2022"
+    valor: "6 627"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6 627\", \"valor\" : \"6627\" }"
+    bandeira: null
+  - periodo: "2023"
+    valor: "6 916"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"6 916\", \"valor\" : \"6916\" }"
+    bandeira: null
+  - periodo: "2024"
+    valor: "7 665"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"7 665\", \"valor\" : \"7665\" }"
+    bandeira: null
+  - periodo: "2025"
+    valor: "8 066"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"ind_string\" : \"8 066\", \"valor\" : \"8066\" }"
+    bandeira: null
+
+# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a
+# expressão que o sítio refaz ponto a ponto na construção.
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+
+attributed_to:
+  - "INE"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "RP3. Coordenadas: 0014532, geocod=PT, dim_3=T. Metainformação: rp3/014-ine-0014532-meta.json (sha256 ee713b33d230c1af…), primeiro período publicado «2017», último «2025», 0 casa(s) decimal(is). Um só pedido com todos os períodos. Licença: INE, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,92 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/dominios_series.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "serie-remuneracao-bruta-mensal-media"
+eixo: "periodo"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve. Numa série
+# derivada fica a null: a proveniência é a das origens.
+name: "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações"
+name_source: "IndicadorDsg"
+unit: "€ por mês"
+# A cadência dos pontos.
+periodicidade: "trimestral"
+
+# Proveniência.
+source: "INE"
+document:
+  title: "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações"
+  edition: "0014751, geocod=PT, dim_3=T, dim_4=T"
+  kind: "serie"
+  url: "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0014751&lingua=PT"
+source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014751&Dim1=S3A202503,S3A202504,S3A202505,S3A202506,S3A202507,S3A202508,S3A202509,S3A202510,S3A202511,S3A202512,S3A202601,S3A202602,S3A202603,S3A202604,S3A202605,S3A202606&Dim2=PT&Dim3=T&Dim4=T&lang=PT"
+access_date: "2026-10-04"
+published_at: "2026-08-14"
+# Os pedidos do cliente da casa de onde os pontos saíram: o endereço, a hora, o
+# cliente, o nome com que a casa se apresentou, o resumo e o tamanho do corpo, e o
+# primeiro e o último ponto que cada um deu.
+pedidos:
+  - url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014751&Dim1=S3A202503,S3A202504,S3A202505,S3A202506,S3A202507,S3A202508,S3A202509,S3A202510,S3A202511,S3A202512,S3A202601,S3A202602,S3A202603,S3A202604,S3A202605,S3A202606&Dim2=PT&Dim3=T&Dim4=T&lang=PT"
+    lido_em: "2026-10-04T03:50:01Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "c81887737ac1ad791a8944fa0028ededd87bd0587f3035b3207daa79722cb6d3"
+    bytes: 4660
+    primeiro: "2025-T1"
+    ultimo: "2026-T2"
+
+# O literal da série: o rótulo e as coordenadas como a resposta os escreve.
+excerpt: "\"IndicadorCod\" : \"0014751\" · \"IndicadorDsg\" : \"Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações\""
+primeiro_periodo: "2025-T1"
+ultimo_periodo: "2026-T2"
+# Os períodos da cadência que a fonte não publica, com a razão que ela dá (null quando
+# a resposta não dá razão nenhuma).
+lacunas: []
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta lhes dá.
+bandeiras:
+  "&": "Dado provisório"
+
+# Os pontos, pela ordem do tempo.
+pontos:
+  - periodo: "2025-T1"
+    valor: "1 534"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"dim_4\" : \"T\", \"dim_4_t\" : \"Total\", \"ind_string\" : \"1 534\", \"valor\" : \"1534\" }"
+    bandeira: null
+  - periodo: "2025-T2"
+    valor: "1 746"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"dim_4\" : \"T\", \"dim_4_t\" : \"Total\", \"ind_string\" : \"1 746\", \"valor\" : \"1746\" }"
+    bandeira: null
+  - periodo: "2025-T3"
+    valor: "1 617"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"dim_4\" : \"T\", \"dim_4_t\" : \"Total\", \"ind_string\" : \"1 617\", \"valor\" : \"1617\" }"
+    bandeira: null
+  - periodo: "2025-T4"
+    valor: "1 883"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"dim_4\" : \"T\", \"dim_4_t\" : \"Total\", \"ind_string\" : \"1 883\", \"valor\" : \"1883\" }"
+    bandeira: null
+  - periodo: "2026-T1"
+    valor: "1 616"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"dim_4\" : \"T\", \"dim_4_t\" : \"Total\", \"ind_string\" : \"1 616\", \"valor\" : \"1616\" }"
+    bandeira: null
+  - periodo: "2026-T2"
+    valor: "1 835"
+    excerto: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"T\", \"dim_3_t\" : \"Total\", \"dim_4\" : \"T\", \"dim_4_t\" : \"Total\", \"sinal_conv\" : \"&\", \"sinal_conv_desc\" : \"Dado provisório\", \"ind_string\" : \"1 835 &\", \"valor\" : \"1835\" }"
+    bandeira: "&"
+
+# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a
+# expressão que o sítio refaz ponto a ponto na construção.
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+
+attributed_to:
+  - "INE"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "RP3. Coordenadas: 0014751, geocod=PT, dim_3=T, dim_4=T. Metainformação: rp3/013-ine-0014751-meta.json (sha256 ed27f8721b94ec70…), primeiro período publicado «Março de 2025», último «Junho de 2026», 0 casa(s) decimal(is). Um só pedido com todos os períodos. Os 10 meses que acabam um trimestre móvel que não é civil não são pontos da série trimestral (a nota metodológica alojada em source/rp1/018-…). Licença: INE, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

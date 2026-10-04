@@ -26,6 +26,9 @@ source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=001466
 access_date: "2026-09-26"
 published_at: "2026-09-10"
 reference_date: "2026-08"
+# A série no tempo de que esta linha é o ponto do seu período, nomeada e não
+# inferida (bloco RP3). Escrito pelo motor, nunca à mão.
+serie: "serie-ipc-alimentacao-variacao-homologa"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"01\", \"dim_3_t\" : \"Produtos alimentares e bebidas não alcoólicas\", \"ind_string\" : \"2,14\", \"valor\" : \"2.14\" }"

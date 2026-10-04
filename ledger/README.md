@@ -1048,11 +1048,25 @@ cada linha, a história daquela linha.
 ## As linhas de série (`series/`, bloco UE1, 29.09.2026)
 
 Uma linha de série é uma linha do livro-razão com vários pontos dentro: o corte
-entre países (`eixo: pais`) desde o bloco UE1, e a série no tempo do RP3 na
-mesma forma. Vive em `series/`, um ficheiro por série, gerada pelo motor e
-atravessada por `cruzamentos/series.json`, como as linhas cruzadas. As regras
-que o `ledger:check` impõe (S1 a S8), a forma e a tabela dos nomes dos países
-estão em `series/README.md`.
+entre países (`eixo: pais`) desde o bloco UE1, e a série no tempo (`eixo:
+periodo`) desde o bloco RP3 (04.10.2026). Vive em `series/`, um ficheiro por
+série, gerada pelo motor e atravessada por `cruzamentos/series.json`, como as
+linhas cruzadas. As regras que o `ledger:check` impõe (S1 a S8 às séries de
+países, S9 a S13 às séries no tempo, S14 ao campo `serie`), as formas e a tabela
+dos nomes dos países estão em `series/README.md`.
+
+### `serie`: a série no tempo de que a linha é o ponto (bloco RP3)
+
+Opcional. O identificador de uma série no tempo de `series/`, numa linha que é o
+ponto do seu período nessa série: a mesma unidade, as coordenadas da linha (uma
+linha do Eurostat do RP1b não escreve a geografia na edição, e a série
+escreve-a), e o ponto do período da linha com o valor da linha, cadeia a cadeia,
+e a mesma marca. **Escreve-o o motor e mais ninguém**: o manifesto dos domínios
+declara-o (`ResearchHub/publisher/dominios_series.py`, `LINHAS_PRESAS`) e o
+exportador prova-o antes de escrever (a V18). A regra é a S14, e a célula S5 do
+`check:series` exige ainda que uma linha que é um cartão nacional seja o último
+ponto da sua série: um cartão atrás da série é um cartão desfasado. Nenhuma
+linha ganha o campo por inferência do identificador ou da edição.
 
 ## O que NÃO é uma afirmação
 

@@ -649,6 +649,47 @@ if (tabelaDosPaises && leitura.series.size) {
     { regra: 'S8', nome: 'uma correção sem os seus campos', espera: 'S8: uma correção não traz',
       series: copiaDasSeries(alvo, (s) => { s.corrections = [{ geo: 'BE' }]; }) },
   ];
+  /* AS SÉRIES NO TEMPO (bloco RP3, 04.10.2026): uma planta, ou mais, por regra
+     nova, S9 a S14, nas mesmas cópias em memória, sobre uma série do INE, uma do
+     Eurostat, a derivada e uma linha presa à sua série. Só entram quando as
+     séries estão no disco: são elas que a régua confere. */
+  const ine = 'serie-ipc-variacao-homologa';
+  const eurostat = 'serie-ihpc-variacao-homologa-ue';
+  const derivadaRp3 = 'serie-cem-euros-de-2015-01';
+  if (leitura.series.has(ine) && leitura.series.has(eurostat) && leitura.series.has(derivadaRp3)) {
+    plantas.push(
+      { regra: 'S9', nome: 'uma chave que não pertence à forma de uma série no tempo', espera: 'S9: campo desconhecido',
+        series: copiaDasSeries(ine, (s) => { s.nota_solta = 'x'; }) },
+      { regra: 'S9', nome: 'um período repetido', espera: 'S9: os períodos não são crescentes',
+        series: copiaDasSeries(ine, (s) => { s.pontos[1] = structuredClone(s.pontos[0]); }) },
+      { regra: 'S9', nome: 'um ponto tirado do meio sem lacuna declarada', espera: 'S9: faltam na cadência',
+        series: copiaDasSeries(ine, (s) => { s.pontos.splice(10, 1); }) },
+      { regra: 'S10', nome: 'um valor do INE fora do seu excerto', espera: 'S10: o valor de 1992-01',
+        series: copiaDasSeries(ine, (s) => { s.pontos[0].valor = '9,42'; }) },
+      { regra: 'S10', nome: 'um valor do Eurostat com o índice de outro ponto', espera: 'S10: o valor de 2000-12',
+        series: copiaDasSeries(eurostat, (s) => { s.pontos[0].excerto = s.pontos[0].excerto.replace(/"(\d+)":(-?[\d.]+)$/, (_, n, v) => `"${Number(n) + 1}":${v}`); }) },
+      { regra: 'S11', nome: 'um ponto trocado na série derivada', espera: 'S11: o ponto 2026-08',
+        series: copiaDasSeries(derivadaRp3, (s) => { s.pontos[s.pontos.length - 1].valor = '77,168'; }) },
+      { regra: 'S11', nome: 'uma série derivada com proveniência própria', espera: 'S11: uma série derivada tem «source» a null',
+        series: copiaDasSeries(derivadaRp3, (s) => { s.source = 'INE'; }) },
+      { regra: 'S12', nome: 'um pedido que não abre num ponto', espera: 'S12: o pedido de 1991-12',
+        series: copiaDasSeries(ine, (s) => { s.pedidos[0].primeiro = '1991-12'; }) },
+      { regra: 'S12', nome: 'um pedido que não cobre o seu último mês', espera: 'S12: os pedidos não cobrem os pontos',
+        series: copiaDasSeries(ine, (s) => { s.pedidos[0].ultimo = '1992-11'; }) },
+      { regra: 'S12', nome: 'o endereço de outro pedido no source_url', espera: 'S12: source_url não é',
+        series: copiaDasSeries(ine, (s) => { s.source_url = s.pedidos[0].url; }) },
+      { regra: 'S13', nome: 'uma correção que não é a do valor publicado', espera: 'S13: o ponto 1992-01',
+        series: copiaDasSeries(ine, (s) => { s.corrections = [{ periodo: '1992-01', date: '2026-10-04', kind: 'atualizacao', old_value: '9,40', new_value: '9,39', reason: 'x', reason_en: 'x' }]; }) },
+      { regra: 'S14', nome: 'uma linha presa desfasada do seu ponto', espera: 'S14: o ponto 2026-08',
+        claims: copiaDasLinhas('ipc-variacao-homologa', (l) => { l.value = '3,31'; }) },
+      { regra: 'S14', nome: 'uma linha que nomeia uma série de outras coordenadas', espera: 'S14: as coordenadas da linha',
+        claims: copiaDasLinhas('ipc-variacao-homologa', (l) => { l.serie = 'serie-ipc-alimentacao-variacao-homologa'; }) },
+      { regra: 'S14', nome: 'a linha da União presa à série de Portugal', espera: 'S14: a série «serie-ihpc-variacao-homologa» fixa a geografia PT',
+        claims: copiaDasLinhas('ihpc-variacao-homologa-ue', (l) => { l.serie = 'serie-ihpc-variacao-homologa'; }) },
+    );
+  } else {
+    errosDasSeries.push(`as séries no tempo do RP3 (${ine}, ${eurostat}, ${derivadaRp3}) não estão em ledger/series/, e as plantas das regras S9 a S14 não têm onde morder.`);
+  }
   for (const p of plantas) {
     const r = validateSeries({
       series: p.series ?? leitura.series,
@@ -682,6 +723,7 @@ if (tabelaDosPaises && leitura.series.size) {
   console.log(
     cinza(
       `  séries · ${r.stats.series} série(s) de ${r.stats.pontos} ponto(s), ${r.stats.marcas} com marca da fonte ` +
+        `· ${r.stats.noTempo} no tempo · ${r.stats.presas} linha(s) presa(s) à sua série ` +
         `· ${plantasDasSeries} planta(s), uma ou mais por regra, vistas a morder`,
     ),
   );
@@ -699,7 +741,7 @@ if (errosDasSeries.length) {
 console.log(
   '  ' +
     verde('✓') +
-    ' cada série tem os 27 países e a União, cada valor dentro do seu excerto, e as gémeas batem como números.',
+    ' cada série de países tem os 27 e a União e as gémeas batem como números; cada série no tempo tem a cadência com as lacunas declaradas, cada valor no seu excerto, a derivada refeita, e cada linha presa é o ponto do seu período.',
 );
 console.log('');
 

@@ -1,0 +1,291 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/dominios_series.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "serie-salario-minimo-mensal"
+eixo: "periodo"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve. Numa série
+# derivada fica a null: a proveniência é a das origens.
+name: "Monthly minimum wages - bi-annual data"
+name_source: "label"
+unit: "euros por mês"
+# A cadência dos pontos.
+periodicidade: "semestral"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "Monthly minimum wages - bi-annual data"
+  edition: "earn_mw_cur, freq=S, currency=EUR, geo=PT"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/earn_mw_cur/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/earn_mw_cur?format=JSON&lang=EN&currency=EUR&geo=PT&sinceTimePeriod=1999-S1"
+access_date: "2026-10-04"
+published_at: "2026-07-31"
+# Os pedidos do cliente da casa de onde os pontos saíram: o endereço, a hora, o
+# cliente, o nome com que a casa se apresentou, o resumo e o tamanho do corpo, e o
+# primeiro e o último ponto que cada um deu.
+pedidos:
+  - url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/earn_mw_cur?format=JSON&lang=EN&currency=EUR&geo=PT&sinceTimePeriod=1999-S1"
+    lido_em: "2026-10-04T03:55:21Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "82bf5d3a3b5cd5be503a9a168f5926da7f36fd05da8f03e4597d1d2d5fe02f28"
+    bytes: 4742
+    primeiro: "1999-S1"
+    ultimo: "2026-S2"
+
+# O literal da série: o rótulo e as coordenadas como a resposta os escreve.
+excerpt: "\"label\":\"Monthly minimum wages - bi-annual data\" · \"S\":\"Half-yearly, semesterly\" · \"EUR\":\"Euro\" · \"PT\":\"Portugal\""
+primeiro_periodo: "1999-S1"
+ultimo_periodo: "2026-S2"
+# Os períodos da cadência que a fonte não publica, com a razão que ela dá (null quando
+# a resposta não dá razão nenhuma).
+lacunas: []
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta lhes dá.
+bandeiras: {}
+
+# Os pontos, pela ordem do tempo.
+pontos:
+  - periodo: "1999-S1"
+    valor: "357"
+    excerto: "\"1999-S1\":0 · \"0\":357"
+    bandeira: null
+  - periodo: "1999-S2"
+    valor: "357"
+    excerto: "\"1999-S2\":1 · \"1\":357"
+    bandeira: null
+  - periodo: "2000-S1"
+    valor: "371"
+    excerto: "\"2000-S1\":2 · \"2\":371"
+    bandeira: null
+  - periodo: "2000-S2"
+    valor: "371"
+    excerto: "\"2000-S2\":3 · \"3\":371"
+    bandeira: null
+  - periodo: "2001-S1"
+    valor: "390"
+    excerto: "\"2001-S1\":4 · \"4\":390"
+    bandeira: null
+  - periodo: "2001-S2"
+    valor: "390"
+    excerto: "\"2001-S2\":5 · \"5\":390"
+    bandeira: null
+  - periodo: "2002-S1"
+    valor: "406"
+    excerto: "\"2002-S1\":6 · \"6\":406"
+    bandeira: null
+  - periodo: "2002-S2"
+    valor: "406"
+    excerto: "\"2002-S2\":7 · \"7\":406"
+    bandeira: null
+  - periodo: "2003-S1"
+    valor: "416"
+    excerto: "\"2003-S1\":8 · \"8\":416"
+    bandeira: null
+  - periodo: "2003-S2"
+    valor: "416"
+    excerto: "\"2003-S2\":9 · \"9\":416"
+    bandeira: null
+  - periodo: "2004-S1"
+    valor: "426"
+    excerto: "\"2004-S1\":10 · \"10\":426"
+    bandeira: null
+  - periodo: "2004-S2"
+    valor: "426"
+    excerto: "\"2004-S2\":11 · \"11\":426"
+    bandeira: null
+  - periodo: "2005-S1"
+    valor: "437"
+    excerto: "\"2005-S1\":12 · \"12\":437"
+    bandeira: null
+  - periodo: "2005-S2"
+    valor: "437"
+    excerto: "\"2005-S2\":13 · \"13\":437"
+    bandeira: null
+  - periodo: "2006-S1"
+    valor: "450"
+    excerto: "\"2006-S1\":14 · \"14\":450"
+    bandeira: null
+  - periodo: "2006-S2"
+    valor: "450"
+    excerto: "\"2006-S2\":15 · \"15\":450"
+    bandeira: null
+  - periodo: "2007-S1"
+    valor: "470"
+    excerto: "\"2007-S1\":16 · \"16\":470"
+    bandeira: null
+  - periodo: "2007-S2"
+    valor: "470"
+    excerto: "\"2007-S2\":17 · \"17\":470"
+    bandeira: null
+  - periodo: "2008-S1"
+    valor: "497"
+    excerto: "\"2008-S1\":18 · \"18\":497"
+    bandeira: null
+  - periodo: "2008-S2"
+    valor: "497"
+    excerto: "\"2008-S2\":19 · \"19\":497"
+    bandeira: null
+  - periodo: "2009-S1"
+    valor: "525"
+    excerto: "\"2009-S1\":20 · \"20\":525"
+    bandeira: null
+  - periodo: "2009-S2"
+    valor: "525"
+    excerto: "\"2009-S2\":21 · \"21\":525"
+    bandeira: null
+  - periodo: "2010-S1"
+    valor: "554"
+    excerto: "\"2010-S1\":22 · \"22\":554"
+    bandeira: null
+  - periodo: "2010-S2"
+    valor: "554"
+    excerto: "\"2010-S2\":23 · \"23\":554"
+    bandeira: null
+  - periodo: "2011-S1"
+    valor: "566"
+    excerto: "\"2011-S1\":24 · \"24\":566"
+    bandeira: null
+  - periodo: "2011-S2"
+    valor: "566"
+    excerto: "\"2011-S2\":25 · \"25\":566"
+    bandeira: null
+  - periodo: "2012-S1"
+    valor: "566"
+    excerto: "\"2012-S1\":26 · \"26\":566"
+    bandeira: null
+  - periodo: "2012-S2"
+    valor: "566"
+    excerto: "\"2012-S2\":27 · \"27\":566"
+    bandeira: null
+  - periodo: "2013-S1"
+    valor: "566"
+    excerto: "\"2013-S1\":28 · \"28\":566"
+    bandeira: null
+  - periodo: "2013-S2"
+    valor: "566"
+    excerto: "\"2013-S2\":29 · \"29\":566"
+    bandeira: null
+  - periodo: "2014-S1"
+    valor: "566"
+    excerto: "\"2014-S1\":30 · \"30\":566"
+    bandeira: null
+  - periodo: "2014-S2"
+    valor: "566"
+    excerto: "\"2014-S2\":31 · \"31\":566"
+    bandeira: null
+  - periodo: "2015-S1"
+    valor: "589"
+    excerto: "\"2015-S1\":32 · \"32\":589"
+    bandeira: null
+  - periodo: "2015-S2"
+    valor: "589"
+    excerto: "\"2015-S2\":33 · \"33\":589"
+    bandeira: null
+  - periodo: "2016-S1"
+    valor: "618"
+    excerto: "\"2016-S1\":34 · \"34\":618"
+    bandeira: null
+  - periodo: "2016-S2"
+    valor: "618"
+    excerto: "\"2016-S2\":35 · \"35\":618"
+    bandeira: null
+  - periodo: "2017-S1"
+    valor: "650"
+    excerto: "\"2017-S1\":36 · \"36\":650"
+    bandeira: null
+  - periodo: "2017-S2"
+    valor: "650"
+    excerto: "\"2017-S2\":37 · \"37\":650"
+    bandeira: null
+  - periodo: "2018-S1"
+    valor: "677"
+    excerto: "\"2018-S1\":38 · \"38\":677"
+    bandeira: null
+  - periodo: "2018-S2"
+    valor: "677"
+    excerto: "\"2018-S2\":39 · \"39\":677"
+    bandeira: null
+  - periodo: "2019-S1"
+    valor: "700"
+    excerto: "\"2019-S1\":40 · \"40\":700"
+    bandeira: null
+  - periodo: "2019-S2"
+    valor: "700"
+    excerto: "\"2019-S2\":41 · \"41\":700"
+    bandeira: null
+  - periodo: "2020-S1"
+    valor: "741"
+    excerto: "\"2020-S1\":42 · \"42\":741"
+    bandeira: null
+  - periodo: "2020-S2"
+    valor: "741"
+    excerto: "\"2020-S2\":43 · \"43\":741"
+    bandeira: null
+  - periodo: "2021-S1"
+    valor: "776"
+    excerto: "\"2021-S1\":44 · \"44\":776"
+    bandeira: null
+  - periodo: "2021-S2"
+    valor: "776"
+    excerto: "\"2021-S2\":45 · \"45\":776"
+    bandeira: null
+  - periodo: "2022-S1"
+    valor: "823"
+    excerto: "\"2022-S1\":46 · \"46\":823"
+    bandeira: null
+  - periodo: "2022-S2"
+    valor: "823"
+    excerto: "\"2022-S2\":47 · \"47\":823"
+    bandeira: null
+  - periodo: "2023-S1"
+    valor: "887"
+    excerto: "\"2023-S1\":48 · \"48\":887"
+    bandeira: null
+  - periodo: "2023-S2"
+    valor: "887"
+    excerto: "\"2023-S2\":49 · \"49\":887"
+    bandeira: null
+  - periodo: "2024-S1"
+    valor: "957"
+    excerto: "\"2024-S1\":50 · \"50\":957"
+    bandeira: null
+  - periodo: "2024-S2"
+    valor: "957"
+    excerto: "\"2024-S2\":51 · \"51\":957"
+    bandeira: null
+  - periodo: "2025-S1"
+    valor: "1 015"
+    excerto: "\"2025-S1\":52 · \"52\":1015"
+    bandeira: null
+  - periodo: "2025-S2"
+    valor: "1 015"
+    excerto: "\"2025-S2\":53 · \"53\":1015"
+    bandeira: null
+  - periodo: "2026-S1"
+    valor: "1 073"
+    excerto: "\"2026-S1\":54 · \"54\":1073"
+    bandeira: null
+  - periodo: "2026-S2"
+    valor: "1 073"
+    excerto: "\"2026-S2\":55 · \"55\":1073"
+    bandeira: null
+
+# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a
+# expressão que o sítio refaz ponto a ponto na construção.
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "RP3. Coordenadas: earn_mw_cur, freq=S, currency=EUR, geo=PT. Pedido com sinceTimePeriod=1999-S1, o «data start» do conjunto no índice de conteúdos alojado (eurostat/toc.txt); a resposta traz 56 período(s), e o primeiro com valor para a coordenada é 1999-S1. Corpo alojado: rp3/179-eurostat-serie-salario-minimo-mensal.json (sha256 82bf5d3a3b5cd5be…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

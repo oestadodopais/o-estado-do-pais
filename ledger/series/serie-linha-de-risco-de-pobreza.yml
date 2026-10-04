@@ -1,0 +1,188 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/dominios_series.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "serie-linha-de-risco-de-pobreza"
+eixo: "periodo"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve. Numa série
+# derivada fica a null: a proveniência é a das origens.
+name: "At-risk-of-poverty thresholds"
+name_source: "label"
+unit: "€ por ano"
+# A cadência dos pontos.
+periodicidade: "anual"
+
+# Proveniência.
+source: "Eurostat"
+document:
+  title: "At-risk-of-poverty thresholds"
+  edition: "ilc_li01, freq=A, statinfo=MED_EI, hhcomp=A1, rskpovth=B_60, unit=EUR, geo=PT"
+  kind: "serie"
+  url: "https://ec.europa.eu/eurostat/databrowser/view/ilc_li01/default/table?lang=en"
+source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_li01?format=JSON&lang=EN&statinfo=MED_EI&hhcomp=A1&rskpovth=B_60&unit=EUR&geo=PT&sinceTimePeriod=1995"
+access_date: "2026-10-04"
+published_at: "2026-09-17"
+# Os pedidos do cliente da casa de onde os pontos saíram: o endereço, a hora, o
+# cliente, o nome com que a casa se apresentou, o resumo e o tamanho do corpo, e o
+# primeiro e o último ponto que cada um deu.
+pedidos:
+  - url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/ilc_li01?format=JSON&lang=EN&statinfo=MED_EI&hhcomp=A1&rskpovth=B_60&unit=EUR&geo=PT&sinceTimePeriod=1995"
+    lido_em: "2026-10-04T03:55:09Z"
+    cliente: "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    user_agent: "OEstadoDoPais/corredor"
+    sha256: "c84eb68df7444802ab49609812c8f096f6799c84411efdcb907fc0544aefccb2"
+    bytes: 4445
+    primeiro: "1995"
+    ultimo: "2025"
+
+# O literal da série: o rótulo e as coordenadas como a resposta os escreve.
+excerpt: "\"label\":\"At-risk-of-poverty thresholds\" · \"A\":\"Annual\" · \"MED_EI\":\"Median equivalised income\" · \"A1\":\"One adult\" · \"B_60\":\"Below 60%\" · \"EUR\":\"Euro\" · \"PT\":\"Portugal\""
+primeiro_periodo: "1995"
+ultimo_periodo: "2025"
+# Os períodos da cadência que a fonte não publica, com a razão que ela dá (null quando
+# a resposta não dá razão nenhuma).
+lacunas:
+  - periodo: "2002"
+    razao: null
+  - periodo: "2003"
+    razao: null
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta lhes dá.
+bandeiras:
+  "b": "break in time series"
+
+# Os pontos, pela ordem do tempo.
+pontos:
+  - periodo: "1995"
+    valor: "2 602"
+    excerto: "\"1995\":0 · \"0\":2602"
+    bandeira: null
+  - periodo: "1996"
+    valor: "2 788"
+    excerto: "\"1996\":1 · \"1\":2788"
+    bandeira: null
+  - periodo: "1997"
+    valor: "2 967"
+    excerto: "\"1997\":2 · \"2\":2967"
+    bandeira: null
+  - periodo: "1998"
+    valor: "3 017"
+    excerto: "\"1998\":3 · \"3\":3017"
+    bandeira: null
+  - periodo: "1999"
+    valor: "3 168"
+    excerto: "\"1999\":4 · \"4\":3168"
+    bandeira: null
+  - periodo: "2000"
+    valor: "3 397"
+    excerto: "\"2000\":5 · \"5\":3397"
+    bandeira: null
+  - periodo: "2001"
+    valor: "3 589"
+    excerto: "\"2001\":6 · \"6\":3589"
+    bandeira: null
+  - periodo: "2004"
+    valor: "4 149"
+    excerto: "\"2004\":9 · \"9\":4149 · \"9\":\"b\""
+    bandeira: "b"
+  - periodo: "2005"
+    valor: "4 317"
+    excerto: "\"2005\":10 · \"10\":4317"
+    bandeira: null
+  - periodo: "2006"
+    valor: "4 386"
+    excerto: "\"2006\":11 · \"11\":4386"
+    bandeira: null
+  - periodo: "2007"
+    valor: "4 544"
+    excerto: "\"2007\":12 · \"12\":4544"
+    bandeira: null
+  - periodo: "2008"
+    valor: "4 886"
+    excerto: "\"2008\":13 · \"13\":4886"
+    bandeira: null
+  - periodo: "2009"
+    valor: "4 969"
+    excerto: "\"2009\":14 · \"14\":4969"
+    bandeira: null
+  - periodo: "2010"
+    valor: "5 207"
+    excerto: "\"2010\":15 · \"15\":5207"
+    bandeira: null
+  - periodo: "2011"
+    valor: "5 046"
+    excerto: "\"2011\":16 · \"16\":5046"
+    bandeira: null
+  - periodo: "2012"
+    valor: "4 994"
+    excerto: "\"2012\":17 · \"17\":4994"
+    bandeira: null
+  - periodo: "2013"
+    valor: "4 906"
+    excerto: "\"2013\":18 · \"18\":4906"
+    bandeira: null
+  - periodo: "2014"
+    valor: "4 937"
+    excerto: "\"2014\":19 · \"19\":4937"
+    bandeira: null
+  - periodo: "2015"
+    valor: "5 061"
+    excerto: "\"2015\":20 · \"20\":5061"
+    bandeira: null
+  - periodo: "2016"
+    valor: "5 269"
+    excerto: "\"2016\":21 · \"21\":5269"
+    bandeira: null
+  - periodo: "2017"
+    valor: "5 443"
+    excerto: "\"2017\":22 · \"22\":5443"
+    bandeira: null
+  - periodo: "2018"
+    valor: "5 607"
+    excerto: "\"2018\":23 · \"23\":5607"
+    bandeira: null
+  - periodo: "2019"
+    valor: "6 014"
+    excerto: "\"2019\":24 · \"24\":6014"
+    bandeira: null
+  - periodo: "2020"
+    valor: "6 480"
+    excerto: "\"2020\":25 · \"25\":6480"
+    bandeira: null
+  - periodo: "2021"
+    valor: "6 653"
+    excerto: "\"2021\":26 · \"26\":6653 · \"26\":\"b\""
+    bandeira: "b"
+  - periodo: "2022"
+    valor: "6 608"
+    excerto: "\"2022\":27 · \"27\":6608"
+    bandeira: null
+  - periodo: "2023"
+    valor: "7 095"
+    excerto: "\"2023\":28 · \"28\":7095"
+    bandeira: null
+  - periodo: "2024"
+    valor: "7 588"
+    excerto: "\"2024\":29 · \"29\":7588"
+    bandeira: null
+  - periodo: "2025"
+    valor: "8 679"
+    excerto: "\"2025\":30 · \"30\":8679"
+    bandeira: null
+
+# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a
+# expressão que o sítio refaz ponto a ponto na construção.
+derivation: null
+derivation_en: null
+derived_from: []
+check: null
+
+attributed_to:
+  - "Eurostat"
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "RP3. Coordenadas: ilc_li01, freq=A, statinfo=MED_EI, hhcomp=A1, rskpovth=B_60, unit=EUR, geo=PT. Pedido com sinceTimePeriod=1995, o «data start» do conjunto no índice de conteúdos alojado (eurostat/toc.txt); a resposta traz 31 período(s), e o primeiro com valor para a coordenada é 1995. Corpo alojado: rp3/173-eurostat-serie-linha-de-risco-de-pobreza.json (sha256 c84eb68df7444802…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Licença: Eurostat, CC BY 4.0."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []
