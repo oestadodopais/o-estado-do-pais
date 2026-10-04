@@ -26,6 +26,7 @@ GATE  dominios_test          ok
 GATE  dominios_rp1_test      ok
 GATE  oe1_test               ok
 GATE  series_paises_test     ok
+GATE  dominios_series_test   ok
 GATE  provas_test            ok
 GATE  refresh_dimensoes_test ok
 GATE  enquadramento_coordenadas_test ok
@@ -42,7 +43,7 @@ GATE  deps                   ok
 GATE  fixtures               ok
 GATE  paridade               ok
 GATE  nomes exportados       ok
-GATE  livros declarados      ok (18 livro(s) em 691 JSON sob content/, 2 exceção(ões) escrita(s), 0 ilegível(eis))
+GATE  livros declarados      ok (18 livro(s) em 867 JSON sob content/, 2 exceção(ões) escrita(s), 0 ilegível(eis))
 GATE  dataset agua-2026-07   ok
 GATE  dataset regional-2026-08 ok
 GATE  derivations Onde Está a Água — Technical Source ok

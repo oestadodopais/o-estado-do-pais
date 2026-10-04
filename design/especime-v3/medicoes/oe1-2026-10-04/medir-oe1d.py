@@ -188,7 +188,7 @@ def html_measures(measures, rows, names, current_head):
         result = subprocess.run(["node", "--input-type=module", "-e", script], cwd=SITE,
                                 text=True, capture_output=True)
         if candidate["entrada_orfa"]:
-            assert result.returncode == 1 and "a declaração de língua nomeia a edição «gov_10a_exp»" in result.stdout, \
+            assert result.returncode == 1 and "a declaração de língua nomeia a edição «gov_10a_exp»" in result.stdout + result.stderr, \
                 "Edições: a planta não produziu a queixa específica da régua"
         require(result.returncode == 0, "Edições: a régua recusa a declaração que nenhuma linha usa")
     measures.prove("edicoes_sem_declaracao_orfa", {"entrada_orfa": False}, editions,
@@ -362,6 +362,7 @@ def main():
     if args.html:
         html_measures(measures, rows, names, heads["sitio"])
     output = dict(bloco="OE1-d", passou=True, medido_em=datetime.now(timezone.utc).isoformat(), cabecas=heads, bases=bases,
+                  guiao_sha256=sha(Path(__file__).read_bytes()),
                   politica="Medição na cabeça do código, antes do último commit reservado às provas.",
                   html_conferido=args.html, medidas=measures.items,
                   resumos={sid: sha(body) for sid, body in sorted(bodies.items())})
