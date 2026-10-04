@@ -2,8 +2,8 @@
   "bloco": "R2-b",
   "guiao": "design/especime-v3/medicoes/r2-2026-10-03/medir-r2b.mjs",
   "as_medidas_do_r2": "design/especime-v3/medicoes/r2-2026-10-03/medidas-r2.json (escritas por medir-r2.mjs na cabeça f61e014a, guardadas no commit 6a711d3e)",
-  "cabeca": "659abb7b572cf4e188ecd41a393971f57a339f28",
-  "construcao": "659abb7b572cf4e188ecd41a393971f57a339f28",
+  "cabeca": "90ff5531cee5e0634f13ec0e59cf6ca436188058",
+  "construcao": "90ff5531cee5e0634f13ec0e59cf6ca436188058",
   "medidas": [
     {
       "nome": "r2b_regua_paginas_lidas",
@@ -682,56 +682,110 @@
     },
     {
       "nome": "r2b_simbolos_restantes_no_fim",
-      "valor": "NÃO LIDO",
+      "valor": 13149259,
       "comando": "design/especime-v3/medicoes/r2-2026-10-03/custo-fim-r2-b.json",
       "conhecido_positivo": {
         "o_que": "o ficheiro diz a hora do fim",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "r2b_simbolos_gastos",
-      "valor": "NÃO LIDO",
+      "valor": 401146,
       "comando": "a diferença das duas leituras do contador",
       "conhecido_positivo": {
         "o_que": "as duas leituras existem",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "r2b_segundos_de_parede",
-      "valor": "NÃO LIDO",
+      "valor": 7239,
       "comando": "fim_utc menos inicio_utc",
       "conhecido_positivo": {
         "o_que": "as duas horas existem",
-        "encontrado": false
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r2b_portao_a_build",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes-b (a corrida de 1a9bdca8, guardada em portoes-b-a/)",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro build.codigo existe e a cabeça ao lado é 1a9bdca8",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r2b_portao_a_verify",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes-b (a corrida de 1a9bdca8, guardada em portoes-b-a/)",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro verify.codigo existe e a cabeça ao lado é 1a9bdca8",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r2b_portao_a_typecheck",
+      "valor": 1,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes-b (a corrida de 1a9bdca8, guardada em portoes-b-a/)",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro typecheck.codigo existe e a cabeça ao lado é 1a9bdca8",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r2b_typecheck_entre_commits",
+      "valor": 0,
+      "comando": "npm run typecheck, depois de o tipo ganhar a fonte «cartao»",
+      "conhecido_positivo": {
+        "o_que": "o registo existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r2b_semana_da_conta_no_inicio_por_cento",
+      "valor": 51,
+      "comando": "design/especime-v3/medicoes/r2-2026-10-03/custo-inicio-r2-b.json",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro diz a hora de início",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r2b_semana_da_conta_no_fim_por_cento",
+      "valor": 56,
+      "comando": "design/especime-v3/medicoes/r2-2026-10-03/custo-fim-r2-b.json",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro diz a hora do fim",
+        "encontrado": true
       }
     },
     {
       "nome": "r2b_portao_build",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes-b",
       "conhecido_positivo": {
         "o_que": "o ficheiro build.codigo existe",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "r2b_portao_verify",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes-b",
       "conhecido_positivo": {
         "o_que": "o ficheiro verify.codigo existe",
-        "encontrado": false
+        "encontrado": true
       }
     },
     {
       "nome": "r2b_portao_typecheck",
-      "valor": "NÃO LIDO",
+      "valor": 0,
       "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/r2-2026-10-03/portoes-b",
       "conhecido_positivo": {
         "o_que": "o ficheiro typecheck.codigo existe",
-        "encontrado": false
+        "encontrado": true
       }
     }
   ]
