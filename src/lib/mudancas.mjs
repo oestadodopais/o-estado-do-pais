@@ -167,6 +167,8 @@ function lugarDaLinha(id, lang) {
  * @property {string} data
  * @property {{ chave: string, nome: string, rota: string }} lugar
  * @property {string} chaveDaMudanca a identidade da linha, que o portão reconstrói
+ * @property {string} [claim] a linha do livro-razão, numa correção
+ * @property {number} [n] o número da entrada na história da linha, numa correção (a mais antiga é a 0)
  */
 
 /** As mudanças declaradas do projeto. Pertencem ao país: são do sítio inteiro.
@@ -243,7 +245,15 @@ function correcoesDasLinhas(lang) {
 
 /** A ordem do registo e de todas as listas: da mais recente para a mais antiga,
  * e dentro do mesmo dia uma ordem estável que não depende da leitura dos
- * ficheiros. */
+ * ficheiros.
+ *
+ * DUAS ENTRADAS DA MESMA LINHA NO MESMO DIA, A MAIS RECENTE PRIMEIRO (a passagem R3-b, o achado 5 da
+ * leitura a frio do Sol, 04.10.2026). O desempate pela identidade da mudança punha a entrada 0 antes da
+ * 1, porque a identidade acaba no número da entrada: no registo, a linha `estudos-evora-publicados` de
+ * 12.08.2026 lia-se de 4 para 3 e só depois de volta a 4, e uma lista que guardasse a primeira de cada
+ * linha guardava a mais antiga. À mesma data e na mesma classe, as correções ordenam-se pela linha e,
+ * dentro da mesma linha, pelo número da entrada, do maior para o menor; as linhas diferentes ficam na
+ * ordem de antes. (O número compara-se como número: na identidade era texto, e «10» vinha antes de «2».) */
 /** @type {Record<string, number>} */
 const ORDEM_DAS_CLASSES = { projeto: 0, publicacao: 1, correcao: 2 };
 /** @param {MudancaDoRegisto} a @param {MudancaDoRegisto} b */
@@ -251,6 +261,9 @@ function porData(a, b) {
   return (
     b.data.localeCompare(a.data) ||
     ORDEM_DAS_CLASSES[a.tipo] - ORDEM_DAS_CLASSES[b.tipo] ||
+    (a.tipo === 'correcao' && b.tipo === 'correcao'
+      ? (a.claim ?? '').localeCompare(b.claim ?? '') || (b.n ?? 0) - (a.n ?? 0)
+      : 0) ||
     a.chaveDaMudanca.localeCompare(b.chaveDaMudanca)
   );
 }
@@ -313,9 +326,11 @@ export function mudancasDoLugar(chave, lang) {
  * primeira página. Repetir uma porta no mesmo ecrã é o que a L1 do `check:lugar` conta.
  *
  * UMA LINHA, UMA VEZ, e não uma entrada, uma linha (§1.117), e pela mesma razão: duas entradas da
- * mesma linha dariam dois selos para o mesmo recibo. A entrada que fica é a primeira que o
- * registo dá, que é a mais recente; as outras continuam no registo, que é a porta
- * «Correções» do índice, e no recibo da linha.
+ * mesma linha dariam dois selos para o mesmo recibo. A entrada que fica é a mais recente da linha,
+ * escolhida aqui pela data e, no mesmo dia, pelo número da entrada, e não pela posição no registo
+ * (a passagem R3-b: com a ordem antiga, a primeira de uma linha alterada duas vezes no mesmo dia era
+ * a mais antiga); as outras continuam no registo, que é a porta «Correções» do índice, e no recibo
+ * da linha.
  *
  * UMA MEDIDA, UMA VEZ (a passagem final do R3, pelas capturas): duas linhas que a casa declara a
  * mesma medida (`MEDIDA_REUNIDA`, em `pais.mjs`, a peça 3 do B1) entram pela linha que fica, como
@@ -326,13 +341,12 @@ export function mudancasDoLugar(chave, lang) {
  * @param {'pt'|'en'} lang
  */
 export function mudancasDoIndice(lang) {
-  const vistas = new Set();
-  const saida = [];
+  /** @type {Map<string, ReturnType<typeof correcoesDasLinhas>[number]>} */
+  const maisRecente = new Map();
   for (const m of mudancasDoRegisto(lang)) {
-    if (m.tipo !== 'correcao' || vistas.has(m.claim) || Object.hasOwn(MEDIDA_REUNIDA, m.claim)) continue;
-    vistas.add(m.claim);
-    saida.push(m);
-    if (saida.length === TETO_DAS_MUDANCAS) break;
+    if (m.tipo !== 'correcao' || Object.hasOwn(MEDIDA_REUNIDA, m.claim)) continue;
+    const atual = maisRecente.get(m.claim);
+    if (!atual || m.data > atual.data || (m.data === atual.data && m.n > atual.n)) maisRecente.set(m.claim, m);
   }
-  return saida;
+  return [...maisRecente.values()].sort(porData).slice(0, TETO_DAS_MUDANCAS);
 }
