@@ -1,0 +1,50 @@
+[
+  {
+    "nome": "r2b-portao-unidade-da-faixa-de-outra-serie",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "R2-b: a unidade da casa de \"taxa-de-emprego-2025\" diz ser da faixa «divida-publica-2025-paises», e não está na faixa da série dessa linha"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/uniao-europeia/index.html",
+        "antes": "cf75a97c6630992dde3483daef77263557e7fbb48481f08cd10d6207383ff76a",
+        "reposto": "cf75a97c6630992dde3483daef77263557e7fbb48481f08cd10d6207383ff76a"
+      }
+    ]
+  },
+  {
+    "nome": "r2b-lugar-porta-repetida-nas-origens",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "8\\.4 · definições de painel fora da declaração: \\d+, acima do teto 0"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/disparidade-salarial-entre-sexos-2024/index.html",
+        "antes": "485e073315d5765273c3009a5405e6b087d1ce524d8b99dadf0305aa11ccb5ee",
+        "reposto": "485e073315d5765273c3009a5405e6b087d1ce524d8b99dadf0305aa11ccb5ee"
+      }
+    ]
+  },
+  {
+    "nome": "r2b-lugar-origem-sem-porta",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "8\\.4 · definições de painel fora da declaração: \\d+, acima do teto 0"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/disparidade-salarial-entre-sexos-2024/index.html",
+        "antes": "485e073315d5765273c3009a5405e6b087d1ce524d8b99dadf0305aa11ccb5ee",
+        "reposto": "485e073315d5765273c3009a5405e6b087d1ce524d8b99dadf0305aa11ccb5ee"
+      }
+    ]
+  }
+]

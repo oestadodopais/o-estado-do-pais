@@ -1,0 +1,18 @@
+{
+  "o_que": "As portas das origens das definições numa construção: os invólucros, as origens, as portas e os invólucros com um endereço com mais de uma porta.",
+  "construcao": "659abb7b572cf4e188ecd41a393971f57a339f28",
+  "involucros": 88,
+  "origens": 190,
+  "portas": 180,
+  "involucros_com_porta_repetida": 0,
+  "exemplos": [],
+  "disparidade_no_recibo_portugues": {
+    "origens": 2,
+    "portas": 1,
+    "enderecos": 1
+  },
+  "conhecido_positivo": {
+    "o_que": "o recibo da disparidade salarial tem duas origens no mesmo endereço",
+    "encontrado": true
+  }
+}

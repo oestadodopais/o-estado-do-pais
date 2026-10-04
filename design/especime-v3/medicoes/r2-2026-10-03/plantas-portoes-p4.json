@@ -26,8 +26,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/en/housing/index.html",
-        "antes": "3831ff6084ba915b5f522cb9d3d7c3a9771aca68395be871b12283db7bcef050",
-        "reposto": "3831ff6084ba915b5f522cb9d3d7c3a9771aca68395be871b12283db7bcef050"
+        "antes": "6e416a9f46436b08e480105b918744254489cab3790548973dd51eb594df4875",
+        "reposto": "6e416a9f46436b08e480105b918744254489cab3790548973dd51eb594df4875"
       }
     ]
   },
@@ -74,8 +74,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/municipios/evora/index.html",
-        "antes": "49e4445ec43e976e49f0665013dc97ff13e44a1f73b154a8c0d24d9c30d60240",
-        "reposto": "49e4445ec43e976e49f0665013dc97ff13e44a1f73b154a8c0d24d9c30d60240"
+        "antes": "a609941a805892b74d14531ed1f5224b8a054344f66ca4f7a8adb2660af68522",
+        "reposto": "a609941a805892b74d14531ed1f5224b8a054344f66ca4f7a8adb2660af68522"
       }
     ]
   },
@@ -90,8 +90,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/en/municipalities/evora/index.html",
-        "antes": "6c09f9dab79ff24d73deadb4e7c59a18160f3e241c87b59dd9672922fbade83a",
-        "reposto": "6c09f9dab79ff24d73deadb4e7c59a18160f3e241c87b59dd9672922fbade83a"
+        "antes": "a28574c0924fe7acf1af9431566a3056025fd3dd3945ff38620aeb9455c95abf",
+        "reposto": "a28574c0924fe7acf1af9431566a3056025fd3dd3945ff38620aeb9455c95abf"
       }
     ]
   },
@@ -106,8 +106,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/municipios/agueda/index.html",
-        "antes": "3ccb67c97c40c9342c4b98a86bb34691ea3cad5dfa880011e74df97f2832c9aa",
-        "reposto": "3ccb67c97c40c9342c4b98a86bb34691ea3cad5dfa880011e74df97f2832c9aa"
+        "antes": "097f04affe184005c8dc17983cf624d9a2d2d05e65a09feedf25043ce3055920",
+        "reposto": "097f04affe184005c8dc17983cf624d9a2d2d05e65a09feedf25043ce3055920"
       }
     ]
   },
@@ -122,8 +122,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/en/municipalities/agueda/index.html",
-        "antes": "9c54076c98447b6fb48d5223a29db151992a7a3dddfe37b81a55fac7d90c68b2",
-        "reposto": "9c54076c98447b6fb48d5223a29db151992a7a3dddfe37b81a55fac7d90c68b2"
+        "antes": "11d1da2e7d041a61fd81abbb253c9fb02ec9d2e0b58b361d82649d10119e7275",
+        "reposto": "11d1da2e7d041a61fd81abbb253c9fb02ec9d2e0b58b361d82649d10119e7275"
       }
     ]
   },
@@ -170,8 +170,8 @@
     "ficheiros": [
       {
         "ficheiro": "dist/municipios/evora/index.html",
-        "antes": "49e4445ec43e976e49f0665013dc97ff13e44a1f73b154a8c0d24d9c30d60240",
-        "reposto": "49e4445ec43e976e49f0665013dc97ff13e44a1f73b154a8c0d24d9c30d60240"
+        "antes": "a609941a805892b74d14531ed1f5224b8a054344f66ca4f7a8adb2660af68522",
+        "reposto": "a609941a805892b74d14531ed1f5224b8a054344f66ca4f7a8adb2660af68522"
       }
     ]
   },

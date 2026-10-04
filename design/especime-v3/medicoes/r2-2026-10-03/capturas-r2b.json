@@ -1,0 +1,808 @@
+{
+  "bloco": "R2-b",
+  "cabeca": "659abb7b572cf4e188ecd41a393971f57a339f28",
+  "construcao": {
+    "commit": "659abb7b572cf4e188ecd41a393971f57a339f28",
+    "ref": "r2-2026-10-03",
+    "construido_em": "2026-10-04T02:38:21.454Z"
+  },
+  "inicio": "2026-10-04T02:52:35.142Z",
+  "fim": "2026-10-04T02:53:03.918Z",
+  "capturas": 44,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-uniao-cartao-pt-390.png",
+      "pagina": "uniao-cartao",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 12407,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "li.cartao[data-cartao=\"desempenho-das-exportacoes-2025\"]",
+        "texto": "Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)8,2fonte · EurostatVariação em três anos, em percentagem · 2025dentro do valor de referência da Comissão (acima de −3 %)5 de 21 das medidas dos dois quadros da União Europeia"
+      },
+      "sha256": "9e4fab2886f6a147a4e32325066deec6b1d5864c16ac82c0da6bc688d90df2e9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-uniao-cartao-pt-1280.png",
+      "pagina": "uniao-cartao",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 6621,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "li.cartao[data-cartao=\"desempenho-das-exportacoes-2025\"]",
+        "texto": "Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)8,2fonte · EurostatVariação em três anos, em percentagem · 2025dentro do valor de referência da Comissão (acima de −3 %)5 de 21 das medidas dos dois quadros da União Europeia"
+      },
+      "sha256": "75e1f2551c1a2358927c7fe5a189760d2fce1bbf025bcfbd8e6a5014f310d590"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-uniao-cartao-en-390.png",
+      "pagina": "uniao-cartao",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 12268,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "li.cartao[data-cartao=\"desempenho-das-exportacoes-2025\"]",
+        "texto": "Portugal’s share of advanced economies’ exports (export market share)8,2source · EurostatThree-year change, as a percentage · 2025within the Commission’s reference value (above −3 %)5 of 21 of the measures of the two European Union scoreboards"
+      },
+      "sha256": "bb035810ca799ef10191e3b6377c0851b49448a40f0dc294fcbf7264f62e659c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-uniao-cartao-en-1280.png",
+      "pagina": "uniao-cartao",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 6552,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "li.cartao[data-cartao=\"desempenho-das-exportacoes-2025\"]",
+        "texto": "Portugal’s share of advanced economies’ exports (export market share)8,2source · EurostatThree-year change, as a percentage · 2025within the Commission’s reference value (above −3 %)5 of 21 of the measures of the two European Union scoreboards"
+      },
+      "sha256": "cb9598c53f46dab70aa473087b6d80690eecbfb9de07de7b1235db3c6bc90b92"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-uniao-faixa-pt-390.png",
+      "pagina": "uniao-faixa",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 1683,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.paises-medida[data-faixa-paises=\"precos-da-habitacao-2025-paises\"]",
+        "texto": "Preços da habitaçãoQuanto mudaram num ano os preços de transação das casas compradas pelas famílias?% de variação anual média · 2025Portugalmédia da UniãoBélgica 3,2 e Alemanha 3,2Bulgária 14,6Chéquia 10,4Dinamarca 7,5 e Irlanda 7,5Bélgica 3,2 e Alemanha 3,2Estónia 5,2Dinamarca 7,5 e Irlanda 7,5Grécia 8,1 (valor estimado e provisório)Espanha 12,7França 0,7Croácia 13,9Itália 4,0Chipre 4,5Letónia 7,6Lituânia 9,8Luxemburgo 1,6Hungria 18,3 (dado provisório)Malta 6,0 (dado provisório)Países Baixos 8,5Áustria 2,6Polónia 4,9Portugal 17,6Roménia 5,7Eslovénia 7,3Eslováquia 12,4Finlândia −2,3Suécia 1,0m"
+      },
+      "sha256": "f4b18d00d435424fe0ca2a6a42731d038982e32f3d56885e07326c714b973e48"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-uniao-faixa-pt-1280.png",
+      "pagina": "uniao-faixa",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 1231,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.paises-medida[data-faixa-paises=\"precos-da-habitacao-2025-paises\"]",
+        "texto": "Preços da habitaçãoQuanto mudaram num ano os preços de transação das casas compradas pelas famílias?% de variação anual média · 2025Portugalmédia da UniãoBélgica 3,2 e Alemanha 3,2Bulgária 14,6Chéquia 10,4Dinamarca 7,5 e Irlanda 7,5Bélgica 3,2 e Alemanha 3,2Estónia 5,2Dinamarca 7,5 e Irlanda 7,5Grécia 8,1 (valor estimado e provisório)Espanha 12,7França 0,7Croácia 13,9Itália 4,0Chipre 4,5Letónia 7,6Lituânia 9,8Luxemburgo 1,6Hungria 18,3 (dado provisório)Malta 6,0 (dado provisório)Países Baixos 8,5Áustria 2,6Polónia 4,9Portugal 17,6Roménia 5,7Eslovénia 7,3Eslováquia 12,4Finlândia −2,3Suécia 1,0m"
+      },
+      "sha256": "7be217a4ea69c6ae7b02a6909a1b13b474d010b51ec91b4e24e30c277c7fda82"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-uniao-faixa-en-390.png",
+      "pagina": "uniao-faixa",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 1629,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.paises-medida[data-faixa-paises=\"precos-da-habitacao-2025-paises\"]",
+        "texto": "House pricesHow much have the transaction prices of homes purchased by households changed in a year?average annual % change · 2025PortugalEU averageBelgium 3,2 and Germany 3,2Bulgaria 14,6Czechia 10,4Denmark 7,5 and Ireland 7,5Belgium 3,2 and Germany 3,2Estonia 5,2Denmark 7,5 and Ireland 7,5Greece 8,1 (estimated and provisional value)Spain 12,7France 0,7Croatia 13,9Italy 4,0Cyprus 4,5Latvia 7,6Lithuania 9,8Luxembourg 1,6Hungary 18,3 (provisional data)Malta 6,0 (provisional data)Netherlands 8,5Austria 2,6Poland 4,9Portugal 17,6Romania 5,7Slovenia 7,3Slovakia 12,4Finland −2,3Sweden 1,0EU average"
+      },
+      "sha256": "d4205d43c3be183a9871a27a4e2063ff3e7f12bb59447e367e34d1bf6c1ba82b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-uniao-faixa-en-1280.png",
+      "pagina": "uniao-faixa",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 1184,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.paises-medida[data-faixa-paises=\"precos-da-habitacao-2025-paises\"]",
+        "texto": "House pricesHow much have the transaction prices of homes purchased by households changed in a year?average annual % change · 2025PortugalEU averageBelgium 3,2 and Germany 3,2Bulgaria 14,6Czechia 10,4Denmark 7,5 and Ireland 7,5Belgium 3,2 and Germany 3,2Estonia 5,2Denmark 7,5 and Ireland 7,5Greece 8,1 (estimated and provisional value)Spain 12,7France 0,7Croatia 13,9Italy 4,0Cyprus 4,5Latvia 7,6Lithuania 9,8Luxembourg 1,6Hungary 18,3 (provisional data)Malta 6,0 (provisional data)Netherlands 8,5Austria 2,6Poland 4,9Portugal 17,6Romania 5,7Slovenia 7,3Slovakia 12,4Finland −2,3Sweden 1,0EU average"
+      },
+      "sha256": "624ab84285036029afd6703d8f7eade6ae445b9824c95eb2158acc7c598de8c0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-estado-pt-390.png",
+      "pagina": "estado",
+      "rota": "/estado-e-economia/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 4980,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida[data-cartao-medida=\"desempenho-das-exportacoes-2025\"]",
+        "texto": "Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)8,2 % de variação em três anosem 2025fonte · Eurostat A variação em três anos é menor do que a medida em 2024. Para a Comissão Europeia, uma perda de mais de 3 % em três anos é sinal de possível desequilíbrio: Portugal está acima desse valor.2024:17,1dentro do valor de referência da Comissão (acima de −3 %)O que é este númeroÉ quanto mudou em três anos a quota de Portugal nas exportações das economias avançadas: a parte que as exportações de bens e serviços de Portugal têm no total das exportações dos p"
+      },
+      "sha256": "bf286fe4d4e226381c0936ccea437218c9eb2bf8903387df4fa01a862cdf4d7b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-estado-pt-1280.png",
+      "pagina": "estado",
+      "rota": "/estado-e-economia/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 1915,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida[data-cartao-medida=\"desempenho-das-exportacoes-2025\"]",
+        "texto": "Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)8,2 % de variação em três anosem 2025fonte · Eurostat A variação em três anos é menor do que a medida em 2024. Para a Comissão Europeia, uma perda de mais de 3 % em três anos é sinal de possível desequilíbrio: Portugal está acima desse valor.2024:17,1dentro do valor de referência da Comissão (acima de −3 %)O que é este númeroÉ quanto mudou em três anos a quota de Portugal nas exportações das economias avançadas: a parte que as exportações de bens e serviços de Portugal têm no total das exportações dos p"
+      },
+      "sha256": "dae4293f0a544a599cc9ba43fdac08eeb52e14cb8936f260799006d36d0a86a1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-estado-en-390.png",
+      "pagina": "estado",
+      "rota": "/en/state-and-economy/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 4917,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida[data-cartao-medida=\"desempenho-das-exportacoes-2025\"]",
+        "texto": "Portugal’s share of advanced economies’ exports (export market share)8,2 % change over three yearsin 2025source · Eurostat The three-year change is smaller than the one measured in 2024. For the European Commission, a loss of more than 3 % over three years is a sign of a possible imbalance: Portugal is above that value.2024:17,1within the Commission’s reference value (above −3 %)What this number isIt is how much Portugal’s share of the exports of advanced economies changed over three years: the part that Portugal’s exports of goods and services make up of the total exports of OECD countries an"
+      },
+      "sha256": "2c311161f214ed6c91929955ae618bc8a80d11cfc559586b11b7cacaf410abca"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-estado-en-1280.png",
+      "pagina": "estado",
+      "rota": "/en/state-and-economy/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 1915,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida[data-cartao-medida=\"desempenho-das-exportacoes-2025\"]",
+        "texto": "Portugal’s share of advanced economies’ exports (export market share)8,2 % change over three yearsin 2025source · Eurostat The three-year change is smaller than the one measured in 2024. For the European Commission, a loss of more than 3 % over three years is a sign of a possible imbalance: Portugal is above that value.2024:17,1within the Commission’s reference value (above −3 %)What this number isIt is how much Portugal’s share of the exports of advanced economies changed over three years: the part that Portugal’s exports of goods and services make up of the total exports of OECD countries an"
+      },
+      "sha256": "8a357ebcbbd242f87ae57cc33b64c08b4c4960e95929e9710adba7373ec02e09"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-vab-pt-390.png",
+      "pagina": "area-vab",
+      "rota": "/areas/economia-e-coesao-territorial/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 9829,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"vab\"])",
+        "texto": "Peso das quatro maiores empresas no valor acrescentado, em Évora21,5 % do VAB empresarialem 2024fonte · INEO que é este númeroO valor acrescentado bruto (VAB) é o valor do que se produz menos o valor dos bens e serviços consumidos para o produzir."
+      },
+      "sha256": "741465e851150deb4fbd56e8c5d012d2f68adbf96b23c80fff941172f4cbb8e3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-vab-pt-1280.png",
+      "pagina": "area-vab",
+      "rota": "/areas/economia-e-coesao-territorial/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 9412,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"vab\"])",
+        "texto": "Peso das quatro maiores empresas no valor acrescentado, em Évora21,5 % do VAB empresarialem 2024fonte · INEO que é este númeroO valor acrescentado bruto (VAB) é o valor do que se produz menos o valor dos bens e serviços consumidos para o produzir."
+      },
+      "sha256": "15c88253a761c0d2561bc6d19652e6aa20788ab0879e8cfc3a0046e4556888dc"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-vab-en-390.png",
+      "pagina": "area-vab",
+      "rota": "/en/areas/economia-e-coesao-territorial/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 9787,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"vab\"])",
+        "texto": "Share of the four largest companies in gross value added, in Évora21,5 % of gross value added by enterprisesin 2024source · INEWhat this number isGross value added is the value of what is produced minus the value of the goods and services used up in producing it."
+      },
+      "sha256": "f3c50abf388774b2b83d2b6e03dcfd9cb2646b8b29646a7518428cbc74e9bb65"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-vab-en-1280.png",
+      "pagina": "area-vab",
+      "rota": "/en/areas/economia-e-coesao-territorial/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 9248,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"vab\"])",
+        "texto": "Share of the four largest companies in gross value added, in Évora21,5 % of gross value added by enterprisesin 2024source · INEWhat this number isGross value added is the value of what is produced minus the value of the goods and services used up in producing it."
+      },
+      "sha256": "56a1a640272b5182df6541167a61eaa779861535a9c43c5e7c4b2003a23d2e9b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-ppc-pt-390.png",
+      "pagina": "area-ppc",
+      "rota": "/areas/economia-e-coesao-territorial/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 8394,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"paridade-do-poder-de-compra\"])",
+        "texto": "Produto interno bruto por habitante nos Açores73 índice (UE-27 = 100) (dado provisório)em 2024fonte · EurostatO que é este númeroO produto por habitante converte-se, pelas paridades do poder de compra, numa moeda fictícia que tira as diferenças de preços entre países, e diz-se face à média da União, que é 100."
+      },
+      "sha256": "50e6822ab14fd9c0b2a1b8ae83c34cd457f73df36c234c347b55966723681ff3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-ppc-pt-1280.png",
+      "pagina": "area-ppc",
+      "rota": "/areas/economia-e-coesao-territorial/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 8203,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"paridade-do-poder-de-compra\"])",
+        "texto": "Produto interno bruto por habitante nos Açores73 índice (UE-27 = 100) (dado provisório)em 2024fonte · EurostatO que é este númeroO produto por habitante converte-se, pelas paridades do poder de compra, numa moeda fictícia que tira as diferenças de preços entre países, e diz-se face à média da União, que é 100."
+      },
+      "sha256": "5228808fca86b950cf6ff7e4ad0cb9ee561c89d7c28b6ebc60112c39e6742695"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-ppc-en-390.png",
+      "pagina": "area-ppc",
+      "rota": "/en/areas/economia-e-coesao-territorial/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 8168,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"paridade-do-poder-de-compra\"])",
+        "texto": "Gross domestic product per inhabitant in the Azores73 index (EU-27 = 100) (provisional data)in 2024source · EurostatWhat this number isOutput per inhabitant is converted, with purchasing power parities, into a fictive currency that removes price differences between countries, and is given against the EU average, which is 100."
+      },
+      "sha256": "cc213dee40fd311dff27e8bb70dad40874a99009d1d24022223dc2d4caeb6765"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-ppc-en-1280.png",
+      "pagina": "area-ppc",
+      "rota": "/en/areas/economia-e-coesao-territorial/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 8022,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"paridade-do-poder-de-compra\"])",
+        "texto": "Gross domestic product per inhabitant in the Azores73 index (EU-27 = 100) (provisional data)in 2024source · EurostatWhat this number isOutput per inhabitant is converted, with purchasing power parities, into a fictive currency that removes price differences between countries, and is given against the EU average, which is 100."
+      },
+      "sha256": "9f7786d8a896b8a773e4f29f72da918955f97563c13ac9a25ead31fb2c3ebaff"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-reexpressa-pt-390.png",
+      "pagina": "area-reexpressa",
+      "rota": "/areas/economia-e-coesao-territorial/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 2162,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"reexpressa\"])",
+        "texto": "Dívida do início do mandato, reexpressa95 082 509,86 eurosem outubro de 2013fonte · Município de ÉvoraO que é este númeroReexpressa quer dizer apresentada de novo mais tarde: é a dívida do início do mandato como a apresenta um relatório de gestão posterior da câmara."
+      },
+      "sha256": "cddba57550256f4716c06b92186b583a5fbf4bb0ba30ea9829863f912c451cf3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-reexpressa-pt-1280.png",
+      "pagina": "area-reexpressa",
+      "rota": "/areas/economia-e-coesao-territorial/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 2176,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"reexpressa\"])",
+        "texto": "Dívida do início do mandato, reexpressa95 082 509,86 eurosem outubro de 2013fonte · Município de ÉvoraO que é este númeroReexpressa quer dizer apresentada de novo mais tarde: é a dívida do início do mandato como a apresenta um relatório de gestão posterior da câmara."
+      },
+      "sha256": "ec257a095144f19c9231f9e6065b2a89211a2a95dbdde3075c10aae3b84f3f47"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-reexpressa-en-390.png",
+      "pagina": "area-reexpressa",
+      "rota": "/en/areas/economia-e-coesao-territorial/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 2136,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"reexpressa\"])",
+        "texto": "Debt at the start of the term, restated95 082 509,86 eurosin October 2013source · Município de ÉvoraWhat this number isRestated means presented again later: it is the debt at the start of the term as a later management report of the council presents it."
+      },
+      "sha256": "1da2e8f2c63184f8fbf51360e9476e1f20c5bc25274eeda6f0d88501ec86e7e6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-reexpressa-en-1280.png",
+      "pagina": "area-reexpressa",
+      "rota": "/en/areas/economia-e-coesao-territorial/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 2131,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"reexpressa\"])",
+        "texto": "Debt at the start of the term, restated95 082 509,86 eurosin October 2013source · Município de ÉvoraWhat this number isRestated means presented again later: it is the debt at the start of the term as a later management report of the council presents it."
+      },
+      "sha256": "a2e6af00e02ba3844ef3a7b971609dcd30e805382b8e6e5407af37706026555b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-fator-pt-390.png",
+      "pagina": "area-fator",
+      "rota": "/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 4060,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"fator-de-sustentabilidade\"])",
+        "texto": "Fator de sustentabilidade das pensões0,8237 multiplicador da pensãoem 2026fonte · Grupo de Trabalho para a Reforma da Segurança SocialO que é este númeroO fator multiplica o montante da pensão: abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta."
+      },
+      "sha256": "39b7baf19be4b4d6896aa52c8f81a813e12c4ae689812d7d02d047f64d327e5c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-fator-pt-1280.png",
+      "pagina": "area-fator",
+      "rota": "/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 3913,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"fator-de-sustentabilidade\"])",
+        "texto": "Fator de sustentabilidade das pensões0,8237 multiplicador da pensãoem 2026fonte · Grupo de Trabalho para a Reforma da Segurança SocialO que é este númeroO fator multiplica o montante da pensão: abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta."
+      },
+      "sha256": "42a09a2ed370bc1ecebb0c947f15325fb53c99677b412ac92cff578c18ee7575"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-fator-en-390.png",
+      "pagina": "area-fator",
+      "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 3941,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"fator-de-sustentabilidade\"])",
+        "texto": "Pension sustainability factor0,8237 pension multiplierin 2026source · Grupo de Trabalho para a Reforma da Segurança SocialWhat this number isThe factor multiplies the amount of the pension: below one, the pension falls, and the gap to one is the share that is cut."
+      },
+      "sha256": "1dce7203a734fab74c35a336fe1b9e62374546c17c4fcb27fd15db0fcb8b1066"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-area-fator-en-1280.png",
+      "pagina": "area-fator",
+      "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 3896,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida:has([data-termo-na-dobra=\"fator-de-sustentabilidade\"])",
+        "texto": "Pension sustainability factor0,8237 pension multiplierin 2026source · Grupo de Trabalho para a Reforma da Segurança SocialWhat this number isThe factor multiplies the amount of the pension: below one, the pension falls, and the gap to one is the share that is cut."
+      },
+      "sha256": "d1eb6c2aaa538812681820f4cb384dda5c6c5030b5bb2ab8874d328eff9c3839"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-precos-pt-390.png",
+      "pagina": "precos",
+      "rota": "/precos/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 1732,
+        "width": 390,
+        "height": 1288
+      },
+      "diz": {
+        "seletor": "article.cartao-medida[data-cartao-medida=\"ipc-combustiveis-variacao-homologa\"]",
+        "texto": "Preços dos combustíveis23,78 % de variação em doze mesesem agosto de 2026fonte · INE A variação é maior do que a do mês anterior.julho de 2026:16,58O que é este númeroEm agosto de 2026 os preços dos combustíveis e dos lubrificantes para os veículos estavam 23,78 % acima dos de há um ano.Quanto mudaram os preços dos combustíveis e dos lubrificantes para os veículos face ao mesmo mês do ano anterior?"
+      },
+      "sha256": "351baa7ae1105baccc6f3bbb599d366ec3b05a656fae4565878659c96151d363"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-precos-pt-1280.png",
+      "pagina": "precos",
+      "rota": "/precos/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 835,
+        "width": 1280,
+        "height": 1042
+      },
+      "diz": {
+        "seletor": "article.cartao-medida[data-cartao-medida=\"ipc-combustiveis-variacao-homologa\"]",
+        "texto": "Preços dos combustíveis23,78 % de variação em doze mesesem agosto de 2026fonte · INE A variação é maior do que a do mês anterior.julho de 2026:16,58O que é este númeroEm agosto de 2026 os preços dos combustíveis e dos lubrificantes para os veículos estavam 23,78 % acima dos de há um ano.Quanto mudaram os preços dos combustíveis e dos lubrificantes para os veículos face ao mesmo mês do ano anterior?"
+      },
+      "sha256": "2f555e083911641e70482f0191569c6800b4e814fbbaa216738ddb560bbb87a2"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-precos-en-390.png",
+      "pagina": "precos",
+      "rota": "/en/prices/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 1711,
+        "width": 390,
+        "height": 1315
+      },
+      "diz": {
+        "seletor": "article.cartao-medida[data-cartao-medida=\"ipc-combustiveis-variacao-homologa\"]",
+        "texto": "Fuel prices23,78 % change over twelve monthsin August 2026source · INE The change is larger than the previous month’s.July 2026:16,58What this number isIn August 2026 the prices of fuels and lubricants for vehicles were 23,78 % above a year earlier.How much have fuel and lubricant prices for vehicles changed since the same month a year earlier?"
+      },
+      "sha256": "a3516a033c76390ed9d2825c7b0caf2dd851d5e4f37543bdf0518d68d27eb21d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-precos-en-1280.png",
+      "pagina": "precos",
+      "rota": "/en/prices/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 835,
+        "width": 1280,
+        "height": 997
+      },
+      "diz": {
+        "seletor": "article.cartao-medida[data-cartao-medida=\"ipc-combustiveis-variacao-homologa\"]",
+        "texto": "Fuel prices23,78 % change over twelve monthsin August 2026source · INE The change is larger than the previous month’s.July 2026:16,58What this number isIn August 2026 the prices of fuels and lubricants for vehicles were 23,78 % above a year earlier.How much have fuel and lubricant prices for vehicles changed since the same month a year earlier?"
+      },
+      "sha256": "2bb9d88566d82109e46a5b3dbd985a72b8c8d75e68157c7b6343930b18e972c8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-evora-pt-390.png",
+      "pagina": "evora",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 1167,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida[data-medida-chave=\"divida\"]",
+        "texto": "Dívida total da câmara54 681 562 euros · 2024fonte · Direção-Geral das Autarquias Locais (DGAL)O que é este númeroA dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais, as exceções da lei e a contribuição para o Fundo de Apoio Municipal)."
+      },
+      "sha256": "ea38357e917012b80194dbc2f64ccf50e7af4290390e3e541c26539baa6b9563"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-evora-pt-1280.png",
+      "pagina": "evora",
+      "rota": "/municipios/evora/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 635,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida[data-medida-chave=\"divida\"]",
+        "texto": "Dívida total da câmara54 681 562 euros · 2024fonte · Direção-Geral das Autarquias Locais (DGAL)O que é este númeroA dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais, as exceções da lei e a contribuição para o Fundo de Apoio Municipal)."
+      },
+      "sha256": "dea119fa6a2e6ecf12bcdcaeb0f2a1ae0af773024740df7213b103b2cc72d44e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-evora-en-390.png",
+      "pagina": "evora",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 1167,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida[data-medida-chave=\"divida\"]",
+        "texto": "Total municipal debt54 681 562 euros · 2024source · Direção-Geral das Autarquias Locais (DGAL)What this number isThe council’s debt that counts towards the legal limit at year end (DGAL’s “dívida total”, without non-budget debts, the exceptions in the law and the contribution to the municipal support fund, the “Fundo de Apoio Municipal”)."
+      },
+      "sha256": "c6cd8a6815f2e291971568b2fc231aeb19a8567b696fcbae3ff8946b2afb25c6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-evora-en-1280.png",
+      "pagina": "evora",
+      "rota": "/en/municipalities/evora/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 635,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "article.cartao-medida[data-medida-chave=\"divida\"]",
+        "texto": "Total municipal debt54 681 562 euros · 2024source · Direção-Geral das Autarquias Locais (DGAL)What this number isThe council’s debt that counts towards the legal limit at year end (DGAL’s “dívida total”, without non-budget debts, the exceptions in the law and the contribution to the municipal support fund, the “Fundo de Apoio Municipal”)."
+      },
+      "sha256": "c78df3bcabf509268bad4a9598104c188b8d1e59f5755703cd4ed2d877b2835b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-recibo-salario-pt-390.png",
+      "pagina": "recibo-salario",
+      "rota": "/livro-razao/retribuicao-minima-mensal-garantida-continente-2026/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 430,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "p.linha-alcance",
+        "texto": "Este valor é o do território continental. Nos Açores, a lei regional soma-lhe um acréscimo, e o diploma é uma das fontes da pergunta abaixo. Na Madeira, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado."
+      },
+      "sha256": "421c3fdc3e45ee48bf1d2a5af3ad93102d693a0c9785682f960baf694164925c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-recibo-salario-pt-1280.png",
+      "pagina": "recibo-salario",
+      "rota": "/livro-razao/retribuicao-minima-mensal-garantida-continente-2026/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 493,
+        "width": 1280,
+        "height": 1461
+      },
+      "diz": {
+        "seletor": "p.linha-alcance",
+        "texto": "Este valor é o do território continental. Nos Açores, a lei regional soma-lhe um acréscimo, e o diploma é uma das fontes da pergunta abaixo. Na Madeira, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado."
+      },
+      "sha256": "388c95c4b0a8d3923e7bca2d7c6267faf5f42de4e45243b6b6cf539a518537ef"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-recibo-salario-en-390.png",
+      "pagina": "recibo-salario",
+      "rota": "/en/ledger/retribuicao-minima-mensal-garantida-continente-2026/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 448,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "p.linha-alcance",
+        "texto": "This value is for mainland Portugal. In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. In Madeira, the value is set by a separate regional decree, which is not a source of any line in this ledger: [a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published."
+      },
+      "sha256": "8611ee28a40ff8d0270513d887e5ae35c46abde443dc955dd34066edcca9e993"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-recibo-salario-en-1280.png",
+      "pagina": "recibo-salario",
+      "rota": "/en/ledger/retribuicao-minima-mensal-garantida-continente-2026/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 493,
+        "width": 1280,
+        "height": 1479
+      },
+      "diz": {
+        "seletor": "p.linha-alcance",
+        "texto": "This value is for mainland Portugal. In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. In Madeira, the value is set by a separate regional decree, which is not a source of any line in this ledger: [a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published."
+      },
+      "sha256": "f49f4c1c1418b82579a7d9c2a2237e97c73f214254db159d040989e68e167365"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-recibo-disparidade-pt-390.png",
+      "pagina": "recibo-disparidade",
+      "rota": "/livro-razao/disparidade-salarial-entre-sexos-2024/",
+      "lang": "pt",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 448,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "[data-definicao=\"disparidade-salarial-entre-sexos-2024\"]",
+        "texto": "Quanto menos ganham as mulheres do que os homens por hora de trabalho, antes de descontos, em percentagem do ganho dos homens, nas empresas com 10 ou mais trabalhadores (a disparidade salarial não ajustada)?Definição de Eurostat · Gender pay gap in unadjusted form (earn_grgpg2) · Reference metadataExcertoThe unadjusted gender pay gap (GPG) represents the difference between average gross hourly earnings of male paid employees and of female paid employees as a percentage of average gross hourly earnings of male paid employees.lido na fonte a 24.09.2026Definição de Eurostat · Gender pay gap in un"
+      },
+      "sha256": "112271aca58deafc1164b4ee880eb5740877d137345b373af7dee040d88c97c8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-recibo-disparidade-pt-1280.png",
+      "pagina": "recibo-disparidade",
+      "rota": "/livro-razao/disparidade-salarial-entre-sexos-2024/",
+      "lang": "pt",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 493,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "[data-definicao=\"disparidade-salarial-entre-sexos-2024\"]",
+        "texto": "Quanto menos ganham as mulheres do que os homens por hora de trabalho, antes de descontos, em percentagem do ganho dos homens, nas empresas com 10 ou mais trabalhadores (a disparidade salarial não ajustada)?Definição de Eurostat · Gender pay gap in unadjusted form (earn_grgpg2) · Reference metadataExcertoThe unadjusted gender pay gap (GPG) represents the difference between average gross hourly earnings of male paid employees and of female paid employees as a percentage of average gross hourly earnings of male paid employees.lido na fonte a 24.09.2026Definição de Eurostat · Gender pay gap in un"
+      },
+      "sha256": "516025c1e2b0f4bd2872fb3433f81ea8bae8bac23138a0a6e35f76e6dcd1caab"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-recibo-disparidade-en-390.png",
+      "pagina": "recibo-disparidade",
+      "rota": "/en/ledger/disparidade-salarial-entre-sexos-2024/",
+      "lang": "en",
+      "largura": 390,
+      "recorte": {
+        "x": 0,
+        "y": 430,
+        "width": 390,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "[data-definicao=\"disparidade-salarial-entre-sexos-2024\"]",
+        "texto": "How much less do women earn than men per hour of work, before deductions, as a percentage of men’s earnings, in enterprises with 10 or more employees (the unadjusted gender pay gap)?Definition by Eurostat · Gender pay gap in unadjusted form (earn_grgpg2) · Reference metadataExcerptThe unadjusted gender pay gap (GPG) represents the difference between average gross hourly earnings of male paid employees and of female paid employees as a percentage of average gross hourly earnings of male paid employees.read at the source on 24.09.2026Definition by Eurostat · Gender pay gap in unadjusted form (ea"
+      },
+      "sha256": "03096f6ee5b8e016d836bda9cb1257623173f0df895153c2a046807c9b0f3b00"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r2-2026-10-03/r2b-recibo-disparidade-en-1280.png",
+      "pagina": "recibo-disparidade",
+      "rota": "/en/ledger/disparidade-salarial-entre-sexos-2024/",
+      "lang": "en",
+      "largura": 1280,
+      "recorte": {
+        "x": 0,
+        "y": 493,
+        "width": 1280,
+        "height": 1600
+      },
+      "diz": {
+        "seletor": "[data-definicao=\"disparidade-salarial-entre-sexos-2024\"]",
+        "texto": "How much less do women earn than men per hour of work, before deductions, as a percentage of men’s earnings, in enterprises with 10 or more employees (the unadjusted gender pay gap)?Definition by Eurostat · Gender pay gap in unadjusted form (earn_grgpg2) · Reference metadataExcerptThe unadjusted gender pay gap (GPG) represents the difference between average gross hourly earnings of male paid employees and of female paid employees as a percentage of average gross hourly earnings of male paid employees.read at the source on 24.09.2026Definition by Eurostat · Gender pay gap in unadjusted form (ea"
+      },
+      "sha256": "48cc6249d64534ce66722fc99a91451d1a461074afc86f1a4b0cc81fc6313651"
+    }
+  ]
+}

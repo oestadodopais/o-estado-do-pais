@@ -12,3 +12,16 @@
 - **Portões**: na cabeça `f61e014a`, pela tranca, `build` 0, `verify` 0 e `typecheck` 0, lidos de `portoes/`. A primeira corrida, em `6897e365`, deu `verify` 1 (`portoes-a/`): a RP1 do `check:cartao` procurava a unidade do cartão do salário pela marca da linha; corrigida em `391f73ed`, com o número medido do cartão do índice no `design:feixe` (os nomes mais longos puseram-no 1 KiB acima do tecto), e a planta de cada uma morde.
 - **Custo**: 1436337 símbolos e 10744 segundos, das duas leituras em ficheiro; o Claude Opus 5.5 em todo o bloco.
 - **Para o lugar de direção**: o recibo do salário mínimo diz que os decretos regionais não foram lidos, e a pergunta nova rende no mesmo recibo o dos Açores lido a 24.09.2026; o achado 4; os 10 pontos [verify]; as faixas dos países da União com a unidade da série; o cartão do índice no feixe do desenho como recorte; a leitura a frio.
+
+## R2-b · a passagem de correção (04.10.2026)
+
+*Sobre `d64bf975`, a leitura a frio do Sol com a triagem do lugar de direção. A secção «R2-b» de `LEIA-ME.md` diz tudo; as medidas da passagem estão em `medidas.json` (as do R2 ficam em `medidas-r2.json`).*
+
+- **A régua (achados 4 e 5).** Compara todos os campos de cada chave com o inventário declarado, com as contagens: 376 chaves, 1411 formas e 26844 ocorrências, 0 diferenças; uma chave declarada que não se rende é erro, e o que falta morde (o estado, a linha do teto, as duas frases da faixa). 28 plantas a morder, 13 novas, entre elas a de uma página de concelho sem o cartão, que morde pela contagem.
+- **Os números da unidade (achado 6).** Cada número da unidade impressa tem de estar num literal de apoio achado no seu campo, e a origem do apoio tem de ser da linha: o autoteste do portão recusa «dos 21 aos 65 anos» com 4 faltas, e a K16 tem 17 plantas a morder, com a de 21 a 65.
+- **As formas.** O achado 4 pela forma do excerto (o nome, a unidade, a pergunta); o valor acrescentado bruto, a paridade do poder de compra, o fator de sustentabilidade e «reexpressa» explicados em palavras comuns, cada um com o texto da fonte contra o qual foi lido; 6 nomes de nível onde a unidade declarada diz a variação; as faixas dos 27 com a unidade pela declaração (18 em 20); a ressalva do salário mínimo composta da lista dos diplomas regionais; uma porta por documento nas origens (as portas passaram de 190 a 180, e as definições com um endereço repetido de 10 a 0); a dobra da dívida com o fundo de apoio municipal.
+- **Os pedidos ao motor**: 7, um a um, em `pedidos-ao-motor-r2b.json` (a Madeira, «(continente)» no cartão do Eurostat, a água não faturada, as duas perguntas do poder de compra, a receita prevista no orçamento, as pensões).
+- **Achados**: 22 feitos, 4 em parte (os 6, 9, 11 e 24, com os pedidos), 1 recusado pela triagem (o 19).
+- **A L1**: 2342 páginas na entrega e 2342 depois; 0 entraram, 0 pioraram, 6 melhoraram.
+- **Capturas**: 44, a 390 e a 1 280 px nas duas edições, com 0 problemas.
+- **Por fazer**: os 7 pedidos ao motor; o recorte do índice no feixe do desenho, noutro bloco; as plantas `l1-` e `rp1`, que estragam a página dos temas de antes do N1 (dívida anterior ao R2); o rebase sobre `main` (do lugar de direção; depois dele, o inventário dos rótulos reescreve-se com `--escrever` se uma contagem mudar); a leitura a frio da passagem.

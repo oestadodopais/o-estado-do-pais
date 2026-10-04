@@ -1,0 +1,3170 @@
+{
+ "o_que": "As formas de antes (a construção de d9b168b9), da entrega do R2 (a de 6a711d3e) e de depois da passagem R2-b (a de dist/) dos rótulos que cada achado e cada mudança da passagem tocam, lidas pela régua do inventário dos rótulos.",
+ "antes": "d9b168b9 (cópia de git archive, sem version.json)",
+ "entrega": "6a711d3e (cópia de git archive)",
+ "depois": "659abb7b572cf4e188ecd41a393971f57a339f28",
+ "conhecido_positivo": {
+  "achado_4_mudou_na_r2b": true,
+  "achado_19_nao_mudou": true
+ },
+ "achados": [
+  {
+   "achado": 1,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|jovens-nem-2025",
+     "campo": "unidade",
+     "antes": [
+      "% da população"
+     ],
+     "entrega": [
+      "% das pessoas dos 15 aos 29 anos"
+     ],
+     "depois": [
+      "% das pessoas dos 15 aos 29 anos"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|jovens-nem-2025",
+     "campo": "unidade",
+     "antes": [
+      "% of the population"
+     ],
+     "entrega": [
+      "% of people aged 15 to 29"
+     ],
+     "depois": [
+      "% of people aged 15 to 29"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|competencias-digitais-2025",
+     "campo": "unidade",
+     "antes": [
+      "% dos indivíduos"
+     ],
+     "entrega": [
+      "% das pessoas dos 16 aos 74 anos"
+     ],
+     "depois": [
+      "% das pessoas dos 16 aos 74 anos"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|competencias-digitais-2025",
+     "campo": "unidade",
+     "antes": [
+      "% of individuals"
+     ],
+     "entrega": [
+      "% of people aged 16 to 74"
+     ],
+     "depois": [
+      "% of people aged 16 to 74"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 4,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 2,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "concelho|pt|concelho:divida",
+     "campo": "nome",
+     "antes": [
+      "Dívida total da câmara"
+     ],
+     "entrega": [
+      "Dívida total da câmara"
+     ],
+     "depois": [
+      "Dívida total da câmara"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "concelho|en|concelho:divida",
+     "campo": "nome",
+     "antes": [
+      "Total municipal debt"
+     ],
+     "entrega": [
+      "Total municipal debt"
+     ],
+     "depois": [
+      "Total municipal debt"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "concelho|pt|concelho:divida",
+     "campo": "dobra",
+     "antes": [
+      "O que a câmara deve no fim do ano, pela série anual da Direção-Geral das Autarquias Locais."
+     ],
+     "entrega": [
+      "A dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais e as exceções da lei)."
+     ],
+     "depois": [
+      "A dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais, as exceções da lei e a contribuição para o Fundo de Apoio Municipal)."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "concelho|en|concelho:divida",
+     "campo": "dobra",
+     "antes": [
+      "What the council owes at the end of the year, from the annual series of the Directorate-General for Local Authorities."
+     ],
+     "entrega": [
+      "The council’s debt that counts towards the legal limit at year end (DGAL’s “dívida total”, without non-budget debts and the exceptions in the law)."
+     ],
+     "depois": [
+      "The council’s debt that counts towards the legal limit at year end (DGAL’s “dívida total”, without non-budget debts, the exceptions in the law and the contribution to the municipal support fund, the “Fundo de Apoio Municipal”)."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    }
+   ],
+   "campos_que_mudaram": 2,
+   "campos_que_mudaram_na_r2b": 2
+  },
+  {
+   "achado": 3,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "concelho|pt|concelho:indice",
+     "campo": "unidade",
+     "antes": [
+      "% da receita média de três anos"
+     ],
+     "entrega": [
+      "% da receita média dos três anos anteriores"
+     ],
+     "depois": [
+      "% da receita média dos três anos anteriores"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "concelho|en|concelho:indice",
+     "campo": "unidade",
+     "antes": [
+      "% of the three-year average revenue"
+     ],
+     "entrega": [
+      "% of the average revenue of the previous three years"
+     ],
+     "depois": [
+      "% of the average revenue of the previous three years"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "camaras|pt|camaras",
+     "campo": "unidade",
+     "antes": [
+      "câmaras"
+     ],
+     "entrega": [
+      "câmaras"
+     ],
+     "depois": [
+      "câmaras"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "camaras|en|camaras",
+     "campo": "unidade",
+     "antes": [
+      "councils"
+     ],
+     "entrega": [
+      "councils"
+     ],
+     "depois": [
+      "councils"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 2,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 4,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|desempenho-das-exportacoes-2025",
+     "campo": "nome",
+     "antes": [
+      "Quota nas exportações, variação em três anos"
+     ],
+     "entrega": [
+      "Quota nas exportações, variação em três anos"
+     ],
+     "depois": [
+      "Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|desempenho-das-exportacoes-2025",
+     "campo": "nome",
+     "antes": [
+      "Share of exports, three-year change"
+     ],
+     "entrega": [
+      "Share of exports, three-year change"
+     ],
+     "depois": [
+      "Portugal’s share of advanced economies’ exports (export market share)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|desempenho-das-exportacoes-2025",
+     "campo": "unidade",
+     "antes": [
+      "% do total OCDE e UE não-OCDE, variação em três anos"
+     ],
+     "entrega": [
+      "% do total OCDE e UE não-OCDE, variação em três anos"
+     ],
+     "depois": [
+      "% de variação em três anos"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|desempenho-das-exportacoes-2025",
+     "campo": "unidade",
+     "antes": [
+      "% of the OECD and non-OECD EU countries total, three-year change"
+     ],
+     "entrega": [
+      "% of the OECD and non-OECD EU countries total, three-year change"
+     ],
+     "depois": [
+      "% change over three years"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|desempenho-das-exportacoes-2025",
+     "campo": "dobra",
+     "antes": [
+      "Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)?"
+     ],
+     "entrega": [
+      "Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (o desempenho das exportações face às economias avançadas)?"
+     ],
+     "depois": [
+      "Quanto mudou em três anos a parte que as exportações de bens e serviços do país têm no total das exportações dos países da Organização para a Cooperação e Desenvolvimento Económico (OCDE) e dos países da União que não são da OCDE (as economias avançadas)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|desempenho-das-exportacoes-2025",
+     "campo": "dobra",
+     "antes": [
+      "How much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD changed over three years (export performance against advanced economies)?"
+     ],
+     "entrega": [
+      "How much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD changed over three years (export performance against advanced economies)?"
+     ],
+     "depois": [
+      "Over three years, how much has the part that the country’s exports of goods and services make up of the total exports of the countries of the Organisation for Economic Cooperation and Development (OECD) and of EU countries outside the OECD (the advanced economies) changed?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "pt",
+     "chave": "uniao|pt|desempenho-das-exportacoes-2025",
+     "campo": "nome",
+     "antes": [
+      "Quota nas exportações, variação em três anos"
+     ],
+     "entrega": [
+      "Quota nas exportações, variação em três anos"
+     ],
+     "depois": [
+      "Quota de Portugal nas exportações das economias avançadas (quota de mercado das exportações)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "uniao|en|desempenho-das-exportacoes-2025",
+     "campo": "nome",
+     "antes": [
+      "Share of exports, three-year change"
+     ],
+     "entrega": [
+      "Share of exports, three-year change"
+     ],
+     "depois": [
+      "Portugal’s share of advanced economies’ exports (export market share)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "pt",
+     "chave": "uniao|pt|desempenho-das-exportacoes-2025",
+     "campo": "unidade",
+     "antes": [
+      "Percentagem do total OCDE e UE não-OCDE, variação em três anos · #"
+     ],
+     "entrega": [
+      "Percentagem do total OCDE e UE não-OCDE, variação em três anos · #"
+     ],
+     "depois": [
+      "Variação em três anos, em percentagem · #"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "uniao|en|desempenho-das-exportacoes-2025",
+     "campo": "unidade",
+     "antes": [
+      "Percentage of the OECD and non-OECD EU total, three-year change · #"
+     ],
+     "entrega": [
+      "Percentage of the OECD and non-OECD EU total, three-year change · #"
+     ],
+     "depois": [
+      "Three-year change, as a percentage · #"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    }
+   ],
+   "campos_que_mudaram": 10,
+   "campos_que_mudaram_na_r2b": 10
+  },
+  {
+   "achado": 5,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|criancas-em-creche-2025",
+     "campo": "nome",
+     "antes": [
+      "Crianças em creche"
+     ],
+     "entrega": [
+      "Crianças com menos de três anos em creche ou outros cuidados formais"
+     ],
+     "depois": [
+      "Crianças com menos de três anos em creche ou outros cuidados formais"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|criancas-em-creche-2025",
+     "campo": "nome",
+     "antes": [
+      "Children in formal childcare"
+     ],
+     "entrega": [
+      "Children under three in formal childcare"
+     ],
+     "depois": [
+      "Children under three in formal childcare"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|criancas-em-creche-2025",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "Que parte das crianças com menos de três anos é cuidada fora da família, num programa planeado por entidades públicas ou privadas reconhecidas (os cuidados formais para a infância)?"
+     ],
+     "depois": [
+      "Que parte das crianças com menos de três anos é cuidada fora da família, num programa planeado por entidades públicas ou privadas reconhecidas (os cuidados formais para a infância)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|criancas-em-creche-2025",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "What share of children under three are cared for outside the family, in a programme planned by public or recognised private bodies (formal childcare)?"
+     ],
+     "depois": [
+      "What share of children under three are cared for outside the family, in a programme planned by public or recognised private bodies (formal childcare)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 4,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 6,
+   "estado": "feito_em_parte",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|retribuicao-minima-mensal-garantida-continente-2026",
+     "campo": "nome",
+     "antes": [
+      "Retribuição mínima mensal garantida"
+     ],
+     "entrega": [
+      "Salário mínimo mensal (continente)"
+     ],
+     "depois": [
+      "Salário mínimo mensal (continente)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|retribuicao-minima-mensal-garantida-continente-2026",
+     "campo": "nome",
+     "antes": [
+      "Guaranteed minimum monthly wage"
+     ],
+     "entrega": [
+      "Monthly minimum wage (mainland Portugal)"
+     ],
+     "depois": [
+      "Monthly minimum wage (mainland Portugal)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|retribuicao-minima-mensal-garantida-continente-2026",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "Qual é o valor mínimo que a lei garante por mês a quem trabalha por conta de outrem no continente, sem o acréscimo que a lei dos Açores lhe soma (a retribuição mínima mensal garantida)?"
+     ],
+     "depois": [
+      "Qual é o valor mínimo que a lei garante por mês a quem trabalha por conta de outrem no continente, sem o acréscimo que a lei dos Açores lhe soma (a retribuição mínima mensal garantida)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|retribuicao-minima-mensal-garantida-continente-2026",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "What is the lowest monthly pay the law guarantees to employees on the mainland, without the increase that Azores law adds to it (the guaranteed minimum monthly wage)?"
+     ],
+     "depois": [
+      "What is the lowest monthly pay the law guarantees to employees on the mainland, without the increase that Azores law adds to it (the guaranteed minimum monthly wage)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|retribuicao-minima-mensal-doze-meses-2026",
+     "campo": "nome",
+     "antes": [
+      "Salário mínimo por mês"
+     ],
+     "entrega": [
+      "Salário mínimo por mês"
+     ],
+     "depois": [
+      "Salário mínimo por mês"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|retribuicao-minima-mensal-doze-meses-2026",
+     "campo": "nome",
+     "antes": [
+      "Monthly minimum wage"
+     ],
+     "entrega": [
+      "Monthly minimum wage"
+     ],
+     "depois": [
+      "Monthly minimum wage"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 4,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 7,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|divida-das-empresas-2025",
+     "campo": "nome",
+     "antes": [
+      "Dívida das empresas"
+     ],
+     "entrega": [
+      "Dívida das empresas (não financeiras)"
+     ],
+     "depois": [
+      "Dívida das empresas (não financeiras)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|divida-das-empresas-2025",
+     "campo": "nome",
+     "antes": [
+      "Corporate debt"
+     ],
+     "entrega": [
+      "Debt of (non-financial) companies"
+     ],
+     "depois": [
+      "Debt of (non-financial) companies"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|fluxo-de-credito-as-empresas-2025",
+     "campo": "nome",
+     "antes": [
+      "Fluxo de crédito às empresas"
+     ],
+     "entrega": [
+      "Fluxo de crédito às empresas (não financeiras)"
+     ],
+     "depois": [
+      "Fluxo de crédito às empresas (não financeiras)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|fluxo-de-credito-as-empresas-2025",
+     "campo": "nome",
+     "antes": [
+      "Credit flow to corporations"
+     ],
+     "entrega": [
+      "Credit flow to (non-financial) companies"
+     ],
+     "depois": [
+      "Credit flow to (non-financial) companies"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|divida-das-familias-2025",
+     "campo": "nome",
+     "antes": [
+      "Dívida das famílias"
+     ],
+     "entrega": [
+      "Dívida das famílias"
+     ],
+     "depois": [
+      "Dívida das famílias"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|divida-das-familias-2025",
+     "campo": "nome",
+     "antes": [
+      "Household debt"
+     ],
+     "entrega": [
+      "Household debt"
+     ],
+     "depois": [
+      "Household debt"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "uniao|pt|divida-das-empresas-2025",
+     "campo": "nome",
+     "antes": [
+      "Dívida das empresas"
+     ],
+     "entrega": [
+      "Dívida das empresas (não financeiras)"
+     ],
+     "depois": [
+      "Dívida das empresas (não financeiras)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "uniao|en|divida-das-empresas-2025",
+     "campo": "nome",
+     "antes": [
+      "Corporate debt"
+     ],
+     "entrega": [
+      "Debt of (non-financial) companies"
+     ],
+     "depois": [
+      "Debt of (non-financial) companies"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 6,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 8,
+   "estado": "feito",
+   "campos": [],
+   "campos_que_mudaram": 0,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 9,
+   "estado": "feito_em_parte",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|taxa-de-emprego-2025",
+     "campo": "unidade",
+     "antes": [
+      "% da população"
+     ],
+     "entrega": [
+      "% das pessoas dos 20 aos 64 anos"
+     ],
+     "depois": [
+      "% das pessoas dos 20 aos 64 anos"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|taxa-de-emprego-2025",
+     "campo": "unidade",
+     "antes": [
+      "% of the population"
+     ],
+     "entrega": [
+      "% of people aged 20 to 64"
+     ],
+     "depois": [
+      "% of people aged 20 to 64"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|taxa-de-desemprego-2025",
+     "campo": "unidade",
+     "antes": [
+      "% da população ativa"
+     ],
+     "entrega": [
+      "% de quem trabalha ou procura trabalho"
+     ],
+     "depois": [
+      "% de quem trabalha ou procura trabalho"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|taxa-de-desemprego-2025",
+     "campo": "unidade",
+     "antes": [
+      "% of the labour force"
+     ],
+     "entrega": [
+      "% of people working or looking for work"
+     ],
+     "depois": [
+      "% of people working or looking for work"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|desemprego-de-longa-duracao-2025",
+     "campo": "unidade",
+     "antes": [
+      "% da população ativa"
+     ],
+     "entrega": [
+      "% de quem trabalha ou procura trabalho"
+     ],
+     "depois": [
+      "% de quem trabalha ou procura trabalho"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|desemprego-de-longa-duracao-2025",
+     "campo": "unidade",
+     "antes": [
+      "% of the labour force"
+     ],
+     "entrega": [
+      "% of people working or looking for work"
+     ],
+     "depois": [
+      "% of people working or looking for work"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|ipc-variacao-homologa",
+     "campo": "unidade",
+     "antes": [
+      "%"
+     ],
+     "entrega": [
+      "% de variação em doze meses"
+     ],
+     "depois": [
+      "% de variação em doze meses"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|ipc-variacao-homologa",
+     "campo": "unidade",
+     "antes": [
+      "%"
+     ],
+     "entrega": [
+      "% change over twelve months"
+     ],
+     "depois": [
+      "% change over twelve months"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|ipc-variacao-media-12-meses",
+     "campo": "unidade",
+     "antes": [
+      "%"
+     ],
+     "entrega": [
+      "% de variação média em doze meses"
+     ],
+     "depois": [
+      "% de variação média em doze meses"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|ipc-variacao-media-12-meses",
+     "campo": "unidade",
+     "antes": [
+      "%"
+     ],
+     "entrega": [
+      "average % change over twelve months"
+     ],
+     "depois": [
+      "average % change over twelve months"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|risco-de-pobreza-ou-exclusao-2025",
+     "campo": "unidade",
+     "antes": [
+      "%"
+     ],
+     "entrega": [
+      "% da população"
+     ],
+     "depois": [
+      "% da população"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|risco-de-pobreza-ou-exclusao-2025",
+     "campo": "unidade",
+     "antes": [
+      "%"
+     ],
+     "entrega": [
+      "% of the population"
+     ],
+     "depois": [
+      "% of the population"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|penalizacao-antecipacao-um-ano-com-factor-2026",
+     "campo": "unidade",
+     "antes": [
+      "%"
+     ],
+     "entrega": [
+      "% da pensão"
+     ],
+     "depois": [
+      "% da pensão"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|penalizacao-antecipacao-um-ano-com-factor-2026",
+     "campo": "unidade",
+     "antes": [
+      "%"
+     ],
+     "entrega": [
+      "% of the pension"
+     ],
+     "depois": [
+      "% of the pension"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|agua-nao-faturada-portugal-2024",
+     "campo": "unidade",
+     "antes": [
+      "%"
+     ],
+     "entrega": [
+      "%"
+     ],
+     "depois": [
+      "%"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|agua-nao-faturada-portugal-2024",
+     "campo": "unidade",
+     "antes": [
+      "%"
+     ],
+     "entrega": [
+      "%"
+     ],
+     "depois": [
+      "%"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 14,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 10,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|saldo-da-balanca-corrente-2025",
+     "campo": "unidade",
+     "antes": [
+      "% do PIB (média de três anos)"
+     ],
+     "entrega": [
+      "% do PIB, média do ano e dos dois anteriores"
+     ],
+     "depois": [
+      "% do PIB, média do ano e dos dois anteriores"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|saldo-da-balanca-corrente-2025",
+     "campo": "unidade",
+     "antes": [
+      "% of GDP (three-year average)"
+     ],
+     "entrega": [
+      "% of GDP, average of the year and the two before"
+     ],
+     "depois": [
+      "% of GDP, average of the year and the two before"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|divida-publica-2025",
+     "campo": "unidade",
+     "antes": [
+      "% do PIB"
+     ],
+     "entrega": [
+      "% do PIB"
+     ],
+     "depois": [
+      "% do PIB"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|divida-publica-2025",
+     "campo": "unidade",
+     "antes": [
+      "% of GDP"
+     ],
+     "entrega": [
+      "% of GDP"
+     ],
+     "depois": [
+      "% of GDP"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|divida-publica-2025",
+     "campo": "dobra",
+     "antes": [
+      "Quanto devem as administrações públicas, em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?"
+     ],
+     "entrega": [
+      "Quanto devem as administrações públicas, em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?"
+     ],
+     "depois": [
+      "Quanto devem as administrações públicas, em percentagem do valor dos bens e serviços finais que a economia produz num ano (o PIB)?"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|divida-publica-2025",
+     "campo": "dobra",
+     "antes": [
+      "How much does general government owe, as a percentage of the value of the final goods and services the economy produces in a year (GDP)?"
+     ],
+     "entrega": [
+      "How much does general government owe, as a percentage of the value of the final goods and services the economy produces in a year (GDP)?"
+     ],
+     "depois": [
+      "How much does general government owe, as a percentage of the value of the final goods and services the economy produces in a year (GDP)?"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|evora-vab-empresarial-2024",
+     "campo": "unidade",
+     "antes": [
+      "euros"
+     ],
+     "entrega": [
+      "euros"
+     ],
+     "depois": [
+      "euros"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|evora-vab-empresarial-2024",
+     "campo": "unidade",
+     "antes": [
+      "euros"
+     ],
+     "entrega": [
+      "euros"
+     ],
+     "depois": [
+      "euros"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|evora-concentracao-vab4-2024",
+     "campo": "dobra-termo",
+     "antes": [],
+     "entrega": [],
+     "depois": [
+      "O valor acrescentado bruto (VAB) é o valor do que se produz menos o valor dos bens e serviços consumidos para o produzir."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|evora-concentracao-vab4-2024",
+     "campo": "dobra-termo",
+     "antes": [],
+     "entrega": [],
+     "depois": [
+      "Gross value added is the value of what is produced minus the value of the goods and services used up in producing it."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    }
+   ],
+   "campos_que_mudaram": 4,
+   "campos_que_mudaram_na_r2b": 2
+  },
+  {
+   "achado": 11,
+   "estado": "feito_em_parte",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|pib-pc-alentejo-2024",
+     "campo": "unidade",
+     "antes": [
+      "índice (UE-27 = 100)"
+     ],
+     "entrega": [
+      "índice (UE-27 = 100)"
+     ],
+     "depois": [
+      "índice (UE-27 = 100)"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|pib-pc-alentejo-2024",
+     "campo": "unidade",
+     "antes": [
+      "index (EU-27 = 100)"
+     ],
+     "entrega": [
+      "index (EU-27 = 100)"
+     ],
+     "depois": [
+      "index (EU-27 = 100)"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|pib-pc-alentejo-2024",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [],
+     "depois": [],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|pib-pc-alentejo-2024",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [],
+     "depois": [],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|pib-pc-acores-2024",
+     "campo": "dobra-termo",
+     "antes": [],
+     "entrega": [],
+     "depois": [
+      "O produto por habitante converte-se, pelas paridades do poder de compra, numa moeda fictícia que tira as diferenças de preços entre países, e diz-se face à média da União, que é 100."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|pib-pc-acores-2024",
+     "campo": "dobra-termo",
+     "antes": [],
+     "entrega": [],
+     "depois": [
+      "Output per inhabitant is converted, with purchasing power parities, into a fictive currency that removes price differences between countries, and is given against the EU average, which is 100."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|evora-poder-de-compra-2023",
+     "campo": "unidade",
+     "antes": [
+      "índice (Portugal = 100)"
+     ],
+     "entrega": [
+      "índice (Portugal = 100)"
+     ],
+     "depois": [
+      "índice (Portugal = 100)"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|evora-poder-de-compra-2023",
+     "campo": "unidade",
+     "antes": [
+      "index (Portugal = 100)"
+     ],
+     "entrega": [
+      "index (Portugal = 100)"
+     ],
+     "depois": [
+      "index (Portugal = 100)"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|evora-poder-de-compra-2023",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [],
+     "depois": [],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|evora-poder-de-compra-2023",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [],
+     "depois": [],
+     "mudou": false,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 2,
+   "campos_que_mudaram_na_r2b": 2
+  },
+  {
+   "achado": 12,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|pib-real-per-capita-2025",
+     "campo": "unidade",
+     "antes": [
+      "euros por habitante · volumes encadeados (2015)"
+     ],
+     "entrega": [
+      "euros por pessoa, a preços de 2015"
+     ],
+     "depois": [
+      "euros por pessoa, a preços de 2015"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|pib-real-per-capita-2025",
+     "campo": "unidade",
+     "antes": [
+      "euro per capita · chain linked volumes (2015)"
+     ],
+     "entrega": [
+      "euros per person, at 2015 prices"
+     ],
+     "depois": [
+      "euros per person, at 2015 prices"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|pib-real-per-capita-2025",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "Quanto valem, por pessoa, os bens e serviços finais que a economia produz num ano, descontada a subida dos preços (o PIB real por habitante, em volumes encadeados)?"
+     ],
+     "depois": [
+      "Quanto valem, por pessoa, os bens e serviços finais que a economia produz num ano, descontada a subida dos preços (o PIB real por habitante, em volumes encadeados)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|pib-real-per-capita-2025",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "How much are the final goods and services the economy produces in a year worth per person, leaving out price rises (real GDP per capita, in chain linked volumes)?"
+     ],
+     "depois": [
+      "How much are the final goods and services the economy produces in a year worth per person, leaving out price rises (real GDP per capita, in chain linked volumes)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 4,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 13,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|taxa-de-actividade-2025",
+     "campo": "unidade",
+     "antes": [
+      "variação em três anos, pontos percentuais"
+     ],
+     "entrega": [
+      "diferença em três anos, em pontos percentuais"
+     ],
+     "depois": [
+      "diferença em três anos, em pontos percentuais"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|taxa-de-actividade-2025",
+     "campo": "unidade",
+     "antes": [
+      "three-year change, percentage points"
+     ],
+     "entrega": [
+      "difference over three years, in percentage points"
+     ],
+     "depois": [
+      "difference over three years, in percentage points"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|custo-unitario-do-trabalho-2025",
+     "campo": "unidade",
+     "antes": [
+      "variação em três anos, %"
+     ],
+     "entrega": [
+      "% de variação em três anos"
+     ],
+     "depois": [
+      "% de variação em três anos"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|custo-unitario-do-trabalho-2025",
+     "campo": "unidade",
+     "antes": [
+      "three-year change, %"
+     ],
+     "entrega": [
+      "% change over three years"
+     ],
+     "depois": [
+      "% change over three years"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|taxa-de-cambio-efectiva-real-2025",
+     "campo": "unidade",
+     "antes": [
+      "variação em três anos, %"
+     ],
+     "entrega": [
+      "% de variação em três anos"
+     ],
+     "depois": [
+      "% de variação em três anos"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|taxa-de-cambio-efectiva-real-2025",
+     "campo": "unidade",
+     "antes": [
+      "three-year change, %"
+     ],
+     "entrega": [
+      "% change over three years"
+     ],
+     "depois": [
+      "% change over three years"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|disparidade-de-emprego-entre-sexos-2025",
+     "campo": "unidade",
+     "antes": [
+      "pontos percentuais"
+     ],
+     "entrega": [
+      "pontos percentuais"
+     ],
+     "depois": [
+      "pontos percentuais"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|disparidade-de-emprego-entre-sexos-2025",
+     "campo": "unidade",
+     "antes": [
+      "percentage points"
+     ],
+     "entrega": [
+      "percentage points"
+     ],
+     "depois": [
+      "percentage points"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 6,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 14,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|racio-s80-s20-2025",
+     "campo": "nome",
+     "antes": [
+      "Desigualdade de rendimento"
+     ],
+     "entrega": [
+      "Rendimento do quinto mais rico face ao quinto mais pobre"
+     ],
+     "depois": [
+      "Rendimento do quinto mais rico face ao quinto mais pobre"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|racio-s80-s20-2025",
+     "campo": "nome",
+     "antes": [
+      "Income inequality"
+     ],
+     "entrega": [
+      "Income of the richest fifth compared with the poorest fifth"
+     ],
+     "depois": [
+      "Income of the richest fifth compared with the poorest fifth"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|racio-s80-s20-2025",
+     "campo": "unidade",
+     "antes": [
+      "rácio"
+     ],
+     "entrega": [
+      "vezes"
+     ],
+     "depois": [
+      "vezes"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|racio-s80-s20-2025",
+     "campo": "unidade",
+     "antes": [
+      "ratio"
+     ],
+     "entrega": [
+      "times"
+     ],
+     "depois": [
+      "times"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|factor-sustentabilidade-2026",
+     "campo": "unidade",
+     "antes": [
+      "factor"
+     ],
+     "entrega": [
+      "multiplicador da pensão"
+     ],
+     "depois": [
+      "multiplicador da pensão"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|factor-sustentabilidade-2026",
+     "campo": "unidade",
+     "antes": [
+      "factor"
+     ],
+     "entrega": [
+      "pension multiplier"
+     ],
+     "depois": [
+      "pension multiplier"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|factor-sustentabilidade-2026",
+     "campo": "dobra-termo",
+     "antes": [],
+     "entrega": [],
+     "depois": [
+      "O fator multiplica o montante da pensão: abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|factor-sustentabilidade-2026",
+     "campo": "dobra-termo",
+     "antes": [],
+     "entrega": [],
+     "depois": [
+      "The factor multiplies the amount of the pension: below one, the pension falls, and the gap to one is the share that is cut."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    }
+   ],
+   "campos_que_mudaram": 8,
+   "campos_que_mudaram_na_r2b": 2
+  },
+  {
+   "achado": 15,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|fluxo-de-credito-as-empresas-2025",
+     "campo": "unidade",
+     "antes": [
+      "% do stock no final do período anterior"
+     ],
+     "entrega": [
+      "% da dívida no fim do ano anterior"
+     ],
+     "depois": [
+      "% da dívida no fim do ano anterior"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|fluxo-de-credito-as-empresas-2025",
+     "campo": "unidade",
+     "antes": [
+      "% of the stock at the end of the previous period"
+     ],
+     "entrega": [
+      "% of debt at the end of the previous year"
+     ],
+     "depois": [
+      "% of debt at the end of the previous year"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|fluxo-de-credito-as-familias-2025",
+     "campo": "unidade",
+     "antes": [
+      "% do stock no final do período anterior"
+     ],
+     "entrega": [
+      "% da dívida no fim do ano anterior"
+     ],
+     "depois": [
+      "% da dívida no fim do ano anterior"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|fluxo-de-credito-as-familias-2025",
+     "campo": "unidade",
+     "antes": [
+      "% of the stock at the end of the previous period"
+     ],
+     "entrega": [
+      "% of debt at the end of the previous year"
+     ],
+     "depois": [
+      "% of debt at the end of the previous year"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 4,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 16,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|custo-unitario-do-trabalho-2025",
+     "campo": "nome",
+     "antes": [
+      "Custo unitário do trabalho, variação em três anos"
+     ],
+     "entrega": [
+      "Custo do trabalho por unidade produzida (custo unitário do trabalho)"
+     ],
+     "depois": [
+      "Custo do trabalho por unidade produzida (custo unitário do trabalho)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|custo-unitario-do-trabalho-2025",
+     "campo": "nome",
+     "antes": [
+      "Unit labour cost, three-year change"
+     ],
+     "entrega": [
+      "Labour cost per unit of output (unit labour cost)"
+     ],
+     "depois": [
+      "Labour cost per unit of output (unit labour cost)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|taxa-de-cambio-efectiva-real-2025",
+     "campo": "nome",
+     "antes": [
+      "Taxa de câmbio efetiva real, variação em três anos"
+     ],
+     "entrega": [
+      "Preços face aos parceiros comerciais, com o câmbio (taxa de câmbio efetiva real)"
+     ],
+     "depois": [
+      "Preços face aos parceiros comerciais, com o câmbio (taxa de câmbio efetiva real)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|taxa-de-cambio-efectiva-real-2025",
+     "campo": "nome",
+     "antes": [
+      "Real effective exchange rate, three-year change"
+     ],
+     "entrega": [
+      "Prices compared with trading partners, including the exchange rate (real effective exchange rate)"
+     ],
+     "depois": [
+      "Prices compared with trading partners, including the exchange rate (real effective exchange rate)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|taxa-de-actividade-2025",
+     "campo": "nome",
+     "antes": [
+      "Taxa de atividade, variação em três anos"
+     ],
+     "entrega": [
+      "Pessoas que trabalham ou procuram trabalho (taxa de atividade)"
+     ],
+     "depois": [
+      "Pessoas que trabalham ou procuram trabalho (taxa de atividade)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|taxa-de-actividade-2025",
+     "campo": "nome",
+     "antes": [
+      "Activity rate, three-year change"
+     ],
+     "entrega": [
+      "People who work or are looking for work (activity rate)"
+     ],
+     "depois": [
+      "People who work or are looking for work (activity rate)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 6,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 17,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|saldo-das-administracoes-publicas-2025",
+     "campo": "nome",
+     "antes": [
+      "Saldo das administrações públicas"
+     ],
+     "entrega": [
+      "Saldo das contas públicas (receitas menos despesas)"
+     ],
+     "depois": [
+      "Saldo das contas públicas (receitas menos despesas)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|saldo-das-administracoes-publicas-2025",
+     "campo": "nome",
+     "antes": [
+      "General government balance"
+     ],
+     "entrega": [
+      "Government balance (revenue minus spending)"
+     ],
+     "depois": [
+      "Government balance (revenue minus spending)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|posicao-de-investimento-internacional-2025",
+     "campo": "nome",
+     "antes": [
+      "Posição de investimento internacional"
+     ],
+     "entrega": [
+      "O que o país tem no exterior menos o que deve (posição de investimento internacional)"
+     ],
+     "depois": [
+      "O que o país tem no exterior menos o que deve (posição de investimento internacional)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|posicao-de-investimento-internacional-2025",
+     "campo": "nome",
+     "antes": [
+      "Net international investment position"
+     ],
+     "entrega": [
+      "What the country owns abroad minus what it owes (net international investment position)"
+     ],
+     "depois": [
+      "What the country owns abroad minus what it owes (net international investment position)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|formacao-bruta-de-capital-fixo-2025",
+     "campo": "nome",
+     "antes": [
+      "Investimento (formação bruta de capital fixo)"
+     ],
+     "entrega": [
+      "Investimento em bens duradouros para produzir (formação bruta de capital fixo)"
+     ],
+     "depois": [
+      "Investimento em bens duradouros para produzir (formação bruta de capital fixo)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|formacao-bruta-de-capital-fixo-2025",
+     "campo": "nome",
+     "antes": [
+      "Investment (gross fixed capital formation)"
+     ],
+     "entrega": [
+      "Investment in durable goods used for production (gross fixed capital formation)"
+     ],
+     "depois": [
+      "Investment in durable goods used for production (gross fixed capital formation)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|crescimento-da-despesa-liquida-2025",
+     "campo": "nome",
+     "antes": [
+      "Crescimento da despesa líquida"
+     ],
+     "entrega": [
+      "Crescimento da despesa que a regra europeia conta (despesa líquida)"
+     ],
+     "depois": [
+      "Crescimento da despesa que a regra europeia conta (despesa líquida)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|crescimento-da-despesa-liquida-2025",
+     "campo": "nome",
+     "antes": [
+      "Net expenditure growth"
+     ],
+     "entrega": [
+      "Growth of the spending counted by the European rule (net expenditure)"
+     ],
+     "depois": [
+      "Growth of the spending counted by the European rule (net expenditure)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 8,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 18,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|sobrecarga-do-custo-da-habitacao-2025",
+     "campo": "dobra",
+     "antes": [
+      "Que parte das pessoas, em casa própria com ou sem crédito ou arrendada a preço de mercado ou a renda reduzida ou gratuita (todos os regimes de ocupação), vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?"
+     ],
+     "entrega": [
+      "Que parte das pessoas, em casa própria com ou sem crédito ou arrendada a preço de mercado ou a renda reduzida ou gratuita (todos os regimes de ocupação), vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?"
+     ],
+     "depois": [
+      "Que parte das pessoas, em casa própria com ou sem crédito ou arrendada a preço de mercado ou a renda reduzida ou gratuita (todos os regimes de ocupação), vive em agregados onde o custo total da habitação, descontados os apoios à habitação, leva mais de 40 % do que o agregado recebe do trabalho, de investimentos e de prestações sociais, depois de pagos os impostos e as contribuições sociais (o rendimento disponível), também descontados os apoios à habitação?"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|sobrecarga-do-custo-da-habitacao-2025",
+     "campo": "dobra",
+     "antes": [
+      "What share of people, whether their home is owned with or without a mortgage or rented at market price or at a reduced rent or free (all tenure statuses), are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?"
+     ],
+     "entrega": [
+      "What share of people, whether their home is owned with or without a mortgage or rented at market price or at a reduced rent or free (all tenure statuses), are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?"
+     ],
+     "depois": [
+      "What share of people, whether their home is owned with or without a mortgage or rented at market price or at a reduced rent or free (all tenure statuses), are in households where total housing costs, after deducting housing allowances, take more than 40 % of what the household receives from work, investment and social benefits, after paying taxes and social contributions (disposable income), also after deducting housing allowances?"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|disparidade-salarial-entre-sexos-2024",
+     "campo": "unidade",
+     "antes": [
+      "%"
+     ],
+     "entrega": [
+      "% do ganho por hora dos homens"
+     ],
+     "depois": [
+      "% do ganho por hora dos homens"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|disparidade-salarial-entre-sexos-2024",
+     "campo": "unidade",
+     "antes": [
+      "%"
+     ],
+     "entrega": [
+      "% of men’s hourly earnings"
+     ],
+     "depois": [
+      "% of men’s hourly earnings"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|disparidade-salarial-entre-sexos-2024",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "Quanto menos ganham as mulheres do que os homens por hora de trabalho, antes de descontos, em percentagem do ganho dos homens, nas empresas com 10 ou mais trabalhadores (a disparidade salarial não ajustada)?"
+     ],
+     "depois": [
+      "Quanto menos ganham as mulheres do que os homens por hora de trabalho, antes de descontos, em percentagem do ganho dos homens, nas empresas com 10 ou mais trabalhadores (a disparidade salarial não ajustada)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|disparidade-salarial-entre-sexos-2024",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "How much less do women earn than men per hour of work, before deductions, as a percentage of men’s earnings, in enterprises with 10 or more employees (the unadjusted gender pay gap)?"
+     ],
+     "depois": [
+      "How much less do women earn than men per hour of work, before deductions, as a percentage of men’s earnings, in enterprises with 10 or more employees (the unadjusted gender pay gap)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|necessidades-medicas-nao-satisfeitas-2025",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "Que parte das pessoas diz ter precisado de um exame ou tratamento médico e não o ter tido por razões financeiras, por estar em lista de espera ou por ficar longe (as necessidades de cuidados médicos por satisfazer, declaradas pela própria pessoa)?"
+     ],
+     "depois": [
+      "Que parte das pessoas diz ter precisado de um exame ou tratamento médico e não o ter tido por razões financeiras, por estar em lista de espera ou por ficar longe (as necessidades de cuidados médicos por satisfazer, declaradas pela própria pessoa)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|necessidades-medicas-nao-satisfeitas-2025",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "What share of people say they needed a medical examination or treatment and did not get it because of the cost, a waiting list or the distance (self-reported unmet needs for medical care)?"
+     ],
+     "depois": [
+      "What share of people say they needed a medical examination or treatment and did not get it because of the cost, a waiting list or the distance (self-reported unmet needs for medical care)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|independencia-da-justica-2025",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "Que parte das pessoas inquiridas considera muito boa ou razoavelmente boa a independência dos tribunais e dos juízes (a perceção da independência da justiça)?"
+     ],
+     "depois": [
+      "Que parte das pessoas inquiridas considera muito boa ou razoavelmente boa a independência dos tribunais e dos juízes (a perceção da independência da justiça)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|independencia-da-justica-2025",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "What share of respondents rate the independence of the courts and judges as very good or fairly good (perceived independence of the justice system)?"
+     ],
+     "depois": [
+      "What share of respondents rate the independence of the courts and judges as very good or fairly good (perceived independence of the justice system)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 8,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 19,
+   "estado": "recusado",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|jovens-nem-2025",
+     "campo": "regua",
+     "antes": [
+      "#:#União Europeia:#"
+     ],
+     "entrega": [
+      "#:#União Europeia:#"
+     ],
+     "depois": [
+      "#:#União Europeia:#"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|jovens-nem-2025",
+     "campo": "regua",
+     "antes": [
+      "#:#European Union:#"
+     ],
+     "entrega": [
+      "#:#European Union:#"
+     ],
+     "depois": [
+      "#:#European Union:#"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 0,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 20,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|taxa-de-desemprego-mip-2025",
+     "campo": "estado",
+     "antes": [
+      "dentro do valor de referência (abaixo de # %)"
+     ],
+     "entrega": [
+      "dentro do valor de referência da Comissão (abaixo de # %)"
+     ],
+     "depois": [
+      "dentro do valor de referência da Comissão (abaixo de # %)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|taxa-de-desemprego-mip-2025",
+     "campo": "estado",
+     "antes": [
+      "within the reference value (below # %)"
+     ],
+     "entrega": [
+      "within the Commission’s reference value (below # %)"
+     ],
+     "depois": [
+      "within the Commission’s reference value (below # %)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|divida-publica-2025",
+     "campo": "estado",
+     "antes": [
+      "fora do valor de referência (acima de # %)"
+     ],
+     "entrega": [
+      "fora do valor de referência da Comissão (acima de # %)"
+     ],
+     "depois": [
+      "fora do valor de referência da Comissão (acima de # %)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|divida-publica-2025",
+     "campo": "estado",
+     "antes": [
+      "outside the reference value (above # %)"
+     ],
+     "entrega": [
+      "outside the Commission’s reference value (above # %)"
+     ],
+     "depois": [
+      "outside the Commission’s reference value (above # %)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|crescimento-da-despesa-liquida-2025",
+     "campo": "estado",
+     "antes": [
+      "fora do valor de referência do Conselho da UE (acima de # %)"
+     ],
+     "entrega": [
+      "fora da trajetória da despesa aprovada pelo Conselho da UE (acima de # %)"
+     ],
+     "depois": [
+      "fora da trajetória da despesa aprovada pelo Conselho da UE (acima de # %)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|crescimento-da-despesa-liquida-2025",
+     "campo": "estado",
+     "antes": [
+      "outside the reference value of the Council of the EU (above # %)"
+     ],
+     "entrega": [
+      "outside the expenditure path approved by the Council of the EU (above # %)"
+     ],
+     "depois": [
+      "outside the expenditure path approved by the Council of the EU (above # %)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|divida-publica-2025",
+     "campo": "dobra-referencia",
+     "antes": [],
+     "entrega": [
+      "O valor de referência é o do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia."
+     ],
+     "depois": [
+      "O valor de referência é o do painel do Procedimento relativo aos Desequilíbrios Macroeconómicos, fixado no regulamento que criou o Procedimento e revisto pela Comissão Europeia."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|divida-publica-2025",
+     "campo": "dobra-referencia",
+     "antes": [],
+     "entrega": [
+      "The reference value is the one of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission."
+     ],
+     "depois": [
+      "The reference value is the one of the Macroeconomic Imbalance Procedure scoreboard, set in the regulation that created the Procedure and revised by the European Commission."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 8,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 21,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "concelho|pt|concelho:indice",
+     "campo": "faixa",
+     "antes": [
+      "L (#) está em #.º lugar entre os # concelhos com valor, do mais baixo para o mais alto, a par de # outros concelhos com o mesmo valor.",
+      "L (#) está em #.º lugar entre os # concelhos com valor, do mais baixo para o mais alto, a par de outro concelho com o mesmo valor.",
+      "L (#) está em #.º lugar entre os # concelhos com valor, do mais baixo para o mais alto.",
+      "L não tem valor publicado neste período, e por isso não tem lugar entre os # concelhos com valor."
+     ],
+     "entrega": [
+      "L (#) está em #.º lugar entre os # concelhos com valor no índice de dívida, do mais baixo para o mais alto, a par de # outros concelhos com o mesmo valor.",
+      "L (#) está em #.º lugar entre os # concelhos com valor no índice de dívida, do mais baixo para o mais alto, a par de outro concelho com o mesmo valor.",
+      "L (#) está em #.º lugar entre os # concelhos com valor no índice de dívida, do mais baixo para o mais alto.",
+      "L não tem valor publicado neste período, e por isso não tem lugar entre os # concelhos com valor no índice de dívida."
+     ],
+     "depois": [
+      "L (#) está em #.º lugar entre os # concelhos com valor no índice de dívida, do mais baixo para o mais alto, a par de # outros concelhos com o mesmo valor.",
+      "L (#) está em #.º lugar entre os # concelhos com valor no índice de dívida, do mais baixo para o mais alto, a par de outro concelho com o mesmo valor.",
+      "L (#) está em #.º lugar entre os # concelhos com valor no índice de dívida, do mais baixo para o mais alto.",
+      "L não tem valor publicado neste período, e por isso não tem lugar entre os # concelhos com valor no índice de dívida."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "concelho|en|concelho:indice",
+     "campo": "faixa",
+     "antes": [
+      "L (#) ranks #nd of the # municipalities with a value, from the lowest to the highest, level with another municipality with the same value.",
+      "L (#) ranks #nd of the # municipalities with a value, from the lowest to the highest.",
+      "L (#) ranks #rd of the # municipalities with a value, from the lowest to the highest, level with # other municipalities with the same value.",
+      "L (#) ranks #rd of the # municipalities with a value, from the lowest to the highest, level with another municipality with the same value.",
+      "L (#) ranks #rd of the # municipalities with a value, from the lowest to the highest.",
+      "L (#) ranks #st of the # municipalities with a value, from the lowest to the highest, level with another municipality with the same value.",
+      "L (#) ranks #st of the # municipalities with a value, from the lowest to the highest.",
+      "L (#) ranks #th of the # municipalities with a value, from the lowest to the highest, level with # other municipalities with the same value.",
+      "L (#) ranks #th of the # municipalities with a value, from the lowest to the highest, level with another municipality with the same value.",
+      "L (#) ranks #th of the # municipalities with a value, from the lowest to the highest.",
+      "L has no published value for this period, so it has no place among the # municipalities with a value."
+     ],
+     "entrega": [
+      "L (#) ranks #nd of the # municipalities with a value for the debt index, from the lowest to the highest, level with another municipality with the same value.",
+      "L (#) ranks #nd of the # municipalities with a value for the debt index, from the lowest to the highest.",
+      "L (#) ranks #rd of the # municipalities with a value for the debt index, from the lowest to the highest, level with # other municipalities with the same value.",
+      "L (#) ranks #rd of the # municipalities with a value for the debt index, from the lowest to the highest, level with another municipality with the same value.",
+      "L (#) ranks #rd of the # municipalities with a value for the debt index, from the lowest to the highest.",
+      "L (#) ranks #st of the # municipalities with a value for the debt index, from the lowest to the highest, level with another municipality with the same value.",
+      "L (#) ranks #st of the # municipalities with a value for the debt index, from the lowest to the highest.",
+      "L (#) ranks #th of the # municipalities with a value for the debt index, from the lowest to the highest, level with # other municipalities with the same value.",
+      "L (#) ranks #th of the # municipalities with a value for the debt index, from the lowest to the highest, level with another municipality with the same value.",
+      "L (#) ranks #th of the # municipalities with a value for the debt index, from the lowest to the highest.",
+      "L has no published value for this period, so it has no place among the # municipalities with a value for the debt index."
+     ],
+     "depois": [
+      "L (#) ranks #nd of the # municipalities with a value for the debt index, from the lowest to the highest, level with another municipality with the same value.",
+      "L (#) ranks #nd of the # municipalities with a value for the debt index, from the lowest to the highest.",
+      "L (#) ranks #rd of the # municipalities with a value for the debt index, from the lowest to the highest, level with # other municipalities with the same value.",
+      "L (#) ranks #rd of the # municipalities with a value for the debt index, from the lowest to the highest, level with another municipality with the same value.",
+      "L (#) ranks #rd of the # municipalities with a value for the debt index, from the lowest to the highest.",
+      "L (#) ranks #st of the # municipalities with a value for the debt index, from the lowest to the highest, level with another municipality with the same value.",
+      "L (#) ranks #st of the # municipalities with a value for the debt index, from the lowest to the highest.",
+      "L (#) ranks #th of the # municipalities with a value for the debt index, from the lowest to the highest, level with # other municipalities with the same value.",
+      "L (#) ranks #th of the # municipalities with a value for the debt index, from the lowest to the highest, level with another municipality with the same value.",
+      "L (#) ranks #th of the # municipalities with a value for the debt index, from the lowest to the highest.",
+      "L has no published value for this period, so it has no place among the # municipalities with a value for the debt index."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 2,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 22,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "concelho|pt|concelho:ganho",
+     "campo": "comparacao",
+     "antes": [
+      "Está abaixo de Portugal (#).",
+      "Está acima de Portugal (#)."
+     ],
+     "entrega": [
+      "Está abaixo de Portugal, onde o ganho médio é de # euros por mês.",
+      "Está acima de Portugal, onde o ganho médio é de # euros por mês."
+     ],
+     "depois": [
+      "Está abaixo de Portugal, onde o ganho médio é de # euros por mês.",
+      "Está acima de Portugal, onde o ganho médio é de # euros por mês."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "concelho|en|concelho:ganho",
+     "campo": "comparacao",
+     "antes": [
+      "It is above Portugal (#).",
+      "It is below Portugal (#)."
+     ],
+     "entrega": [
+      "It is above Portugal, where the average is # euros per month.",
+      "It is below Portugal, where the average is # euros per month."
+     ],
+     "depois": [
+      "It is above Portugal, where the average is # euros per month.",
+      "It is below Portugal, where the average is # euros per month."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "concelho|pt|concelho:poderDeCompra",
+     "campo": "comparacao",
+     "antes": [
+      "Está abaixo de Portugal, que é a base do índice.",
+      "Está acima de Portugal, que é a base do índice."
+     ],
+     "entrega": [
+      "Está abaixo da média de Portugal (#).",
+      "Está acima da média de Portugal (#)."
+     ],
+     "depois": [
+      "Está abaixo da média de Portugal (#).",
+      "Está acima da média de Portugal (#)."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "concelho|en|concelho:poderDeCompra",
+     "campo": "comparacao",
+     "antes": [
+      "It is above Portugal, which is the base of the index.",
+      "It is below Portugal, which is the base of the index."
+     ],
+     "entrega": [
+      "It is above Portugal’s average (#).",
+      "It is below Portugal’s average (#)."
+     ],
+     "depois": [
+      "It is above Portugal’s average (#).",
+      "It is below Portugal’s average (#)."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 4,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 23,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "concelho|pt|concelho:populacao",
+     "campo": "dobra",
+     "antes": [
+      "Estimativa anual do INE para o concelho."
+     ],
+     "entrega": [
+      "Estima quantas pessoas vivem no concelho (população residente), pela estimativa anual do INE."
+     ],
+     "depois": [
+      "Estima quantas pessoas vivem no concelho (população residente), pela estimativa anual do INE."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "concelho|en|concelho:populacao",
+     "campo": "dobra",
+     "antes": [
+      "The statistics institute’s annual estimate for the municipality."
+     ],
+     "entrega": [
+      "Estimates how many people have their home in the municipality (resident population), from the statistics institute’s annual estimate."
+     ],
+     "depois": [
+      "Estimates how many people have their home in the municipality (resident population), from the statistics institute’s annual estimate."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "concelho|pt|concelho:empresas",
+     "campo": "dobra",
+     "antes": [
+      "Sistema de contas integradas das empresas; cada empresa conta num único concelho."
+     ],
+     "entrega": [
+      "Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas)."
+     ],
+     "depois": [
+      "Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas)."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "concelho|en|concelho:empresas",
+     "campo": "dobra",
+     "antes": [
+      "Integrated business accounts; each enterprise counts in a single municipality."
+     ],
+     "entrega": [
+      "Counts the non-financial enterprises attributed to the municipality (integrated business accounts system)."
+     ],
+     "depois": [
+      "Counts the non-financial enterprises attributed to the municipality (integrated business accounts system)."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "concelho|pt|concelho:desempregoRegistado",
+     "campo": "dobra",
+     "antes": [
+      "Inscritos no fim do mês nos serviços de emprego, ficheiro mensal por concelho."
+     ],
+     "entrega": [
+      "Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado)."
+     ],
+     "depois": [
+      "Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado)."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "concelho|en|concelho:desempregoRegistado",
+     "campo": "dobra",
+     "antes": [
+      "Registered with the employment service at month end, monthly file by municipality."
+     ],
+     "entrega": [
+      "Counts the unemployed people registered with the employment service at month end (registered unemployment)."
+     ],
+     "depois": [
+      "Counts the unemployed people registered with the employment service at month end (registered unemployment)."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 6,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 24,
+   "estado": "feito_em_parte",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|ganho-medio-mensal-2024",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "Quanto ganham por mês, em média e antes de descontos, os trabalhadores por conta de outrem a tempo completo com remuneração completa (o ganho médio mensal)?"
+     ],
+     "depois": [
+      "Quanto ganham por mês, em média e antes de descontos, os trabalhadores por conta de outrem a tempo completo com remuneração completa (o ganho médio mensal)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|ganho-medio-mensal-2024",
+     "campo": "dobra",
+     "antes": [],
+     "entrega": [
+      "How much do full-time employees on full pay earn per month, on average and before deductions (average monthly earnings)?"
+     ],
+     "depois": [
+      "How much do full-time employees on full pay earn per month, on average and before deductions (average monthly earnings)?"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|pensao-media-anual-2025",
+     "campo": "unidade",
+     "antes": [
+      "euros por pensionista por ano"
+     ],
+     "entrega": [
+      "euros por pensionista por ano"
+     ],
+     "depois": [
+      "euros por pensionista por ano"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|pensao-media-anual-2025",
+     "campo": "unidade",
+     "antes": [
+      "euros per pensioner per year"
+     ],
+     "entrega": [
+      "euros per pensioner per year"
+     ],
+     "depois": [
+      "euros per pensioner per year"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|linha-de-risco-de-pobreza-2025",
+     "campo": "unidade",
+     "antes": [
+      "euros por ano"
+     ],
+     "entrega": [
+      "euros por ano"
+     ],
+     "depois": [
+      "euros por ano"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|linha-de-risco-de-pobreza-2025",
+     "campo": "unidade",
+     "antes": [
+      "euros per year"
+     ],
+     "entrega": [
+      "euros per year"
+     ],
+     "depois": [
+      "euros per year"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|linha-de-risco-de-pobreza-2025",
+     "campo": "dobra",
+     "antes": [
+      "Abaixo de que rendimento anual fica em risco de pobreza uma pessoa que vive sozinha?"
+     ],
+     "entrega": [
+      "Abaixo de que rendimento anual fica em risco de pobreza uma pessoa que vive sozinha?"
+     ],
+     "depois": [
+      "Abaixo de que rendimento anual fica em risco de pobreza uma pessoa que vive sozinha?"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|linha-de-risco-de-pobreza-2025",
+     "campo": "dobra",
+     "antes": [
+      "Below what annual income is a person living alone at risk of poverty?"
+     ],
+     "entrega": [
+      "Below what annual income is a person living alone at risk of poverty?"
+     ],
+     "depois": [
+      "Below what annual income is a person living alone at risk of poverty?"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|evora-execucao-da-receita-2025",
+     "campo": "unidade",
+     "antes": [
+      "% do orçamento"
+     ],
+     "entrega": [
+      "% do orçamento"
+     ],
+     "depois": [
+      "% do orçamento"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|evora-execucao-da-receita-2025",
+     "campo": "unidade",
+     "antes": [
+      "% of the budget"
+     ],
+     "entrega": [
+      "% of the budget"
+     ],
+     "depois": [
+      "% of the budget"
+     ],
+     "mudou": false,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 2,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 25,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|evora-pelouros-2025-presidente",
+     "campo": "unidade",
+     "antes": [
+      "pelouros"
+     ],
+     "entrega": [
+      "áreas de responsabilidade (pelouros)"
+     ],
+     "depois": [
+      "áreas de responsabilidade (pelouros)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|evora-pelouros-2025-presidente",
+     "campo": "unidade",
+     "antes": [
+      "portfolios"
+     ],
+     "entrega": [
+      "areas of responsibility (portfolios)"
+     ],
+     "depois": [
+      "areas of responsibility (portfolios)"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|evora-prr-aprovado-2026",
+     "campo": "nome",
+     "antes": [
+      "Verbas do PRR aprovadas para Évora"
+     ],
+     "entrega": [
+      "Verbas do Plano de Recuperação e Resiliência (PRR) aprovadas para Évora"
+     ],
+     "depois": [
+      "Verbas do Plano de Recuperação e Resiliência (PRR) aprovadas para Évora"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|evora-prr-aprovado-2026",
+     "campo": "nome",
+     "antes": [
+      "PRR funds approved for Évora"
+     ],
+     "entrega": [
+      "Recovery and Resilience Plan (PRR) funds approved for Évora"
+     ],
+     "depois": [
+      "Recovery and Resilience Plan (PRR) funds approved for Évora"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|evora-divida-inicio-mandato-reexpressa",
+     "campo": "dobra-termo",
+     "antes": [],
+     "entrega": [],
+     "depois": [
+      "Reexpressa quer dizer apresentada de novo mais tarde: é a dívida do início do mandato como a apresenta um relatório de gestão posterior da câmara."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|evora-divida-inicio-mandato-reexpressa",
+     "campo": "dobra-termo",
+     "antes": [],
+     "entrega": [],
+     "depois": [
+      "Restated means presented again later: it is the debt at the start of the term as a later management report of the council presents it."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    }
+   ],
+   "campos_que_mudaram": 6,
+   "campos_que_mudaram_na_r2b": 2
+  },
+  {
+   "achado": 26,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "concelho|pt|concelho:pmp",
+     "campo": "dobra",
+     "antes": [
+      "Dias que a câmara demora a pagar aos fornecedores, pela lista anual da Direção-Geral das Autarquias Locais."
+     ],
+     "entrega": [
+      "O número médio de dias que a câmara demora a pagar aos fornecedores (prazo médio de pagamento), pela lista anual da DGAL."
+     ],
+     "depois": [
+      "O número médio de dias que a câmara demora a pagar aos fornecedores (prazo médio de pagamento), pela lista anual da DGAL."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "concelho|en|concelho:pmp",
+     "campo": "dobra",
+     "antes": [
+      "Days the council takes to pay its suppliers, from the annual list of the Directorate-General for Local Authorities."
+     ],
+     "entrega": [
+      "The average number of days the council takes to pay its suppliers (DGAL’s “prazo médio de pagamento”, from its annual list)."
+     ],
+     "depois": [
+      "The average number of days the council takes to pay its suppliers (DGAL’s “prazo médio de pagamento”, from its annual list)."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 2,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": 27,
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|evora-camara-lugares",
+     "campo": "unidade",
+     "antes": [
+      "lugares"
+     ],
+     "entrega": [
+      "lugares na câmara"
+     ],
+     "depois": [
+      "lugares na câmara"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|evora-camara-lugares",
+     "campo": "unidade",
+     "antes": [
+      "seats"
+     ],
+     "entrega": [
+      "council seats"
+     ],
+     "depois": [
+      "council seats"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|licencas-de-construcao-2025",
+     "campo": "unidade",
+     "antes": [
+      "m² por 1000 habitantes"
+     ],
+     "entrega": [
+      "metros quadrados por mil habitantes"
+     ],
+     "depois": [
+      "metros quadrados por mil habitantes"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|licencas-de-construcao-2025",
+     "campo": "unidade",
+     "antes": [
+      "m² per 1000 inhabitants"
+     ],
+     "entrega": [
+      "square metres per thousand residents"
+     ],
+     "depois": [
+      "square metres per thousand residents"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 4,
+   "campos_que_mudaram_na_r2b": 0
+  },
+  {
+   "achado": "R2-b · os nomes das variações",
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|ipc-combustiveis-variacao-homologa",
+     "campo": "nome",
+     "antes": [
+      "Preços dos combustíveis, variação num ano"
+     ],
+     "entrega": [
+      "Preços dos combustíveis, variação num ano"
+     ],
+     "depois": [
+      "Preços dos combustíveis"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|ipc-combustiveis-variacao-homologa",
+     "campo": "nome",
+     "antes": [
+      "Fuel prices, change over a year"
+     ],
+     "entrega": [
+      "Fuel prices, change over a year"
+     ],
+     "depois": [
+      "Fuel prices"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|ipc-rendas-variacao-homologa",
+     "campo": "nome",
+     "antes": [
+      "Preços das rendas, variação num ano"
+     ],
+     "entrega": [
+      "Preços das rendas, variação num ano"
+     ],
+     "depois": [
+      "Preços das rendas"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|ipc-rendas-variacao-homologa",
+     "campo": "nome",
+     "antes": [
+      "Rent prices, change over a year"
+     ],
+     "entrega": [
+      "Rent prices, change over a year"
+     ],
+     "depois": [
+      "Rent prices"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "pt",
+     "chave": "nacional|pt|precos-da-habitacao-2025",
+     "campo": "nome",
+     "antes": [
+      "Preços da habitação, variação anual"
+     ],
+     "entrega": [
+      "Preços da habitação, variação anual"
+     ],
+     "depois": [
+      "Preços da habitação"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "nacional|en|precos-da-habitacao-2025",
+     "campo": "nome",
+     "antes": [
+      "House prices, annual change"
+     ],
+     "entrega": [
+      "House prices, annual change"
+     ],
+     "depois": [
+      "House prices"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "pt",
+     "chave": "uniao|pt|precos-da-habitacao-2025",
+     "campo": "nome",
+     "antes": [
+      "Preços da habitação, variação anual"
+     ],
+     "entrega": [
+      "Preços da habitação, variação anual"
+     ],
+     "depois": [
+      "Preços da habitação"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "uniao|en|precos-da-habitacao-2025",
+     "campo": "nome",
+     "antes": [
+      "House prices, annual change"
+     ],
+     "entrega": [
+      "House prices, annual change"
+     ],
+     "depois": [
+      "House prices"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    }
+   ],
+   "campos_que_mudaram": 8,
+   "campos_que_mudaram_na_r2b": 8
+  },
+  {
+   "achado": "R2-b · as faixas dos 27",
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "paises|pt|taxa-de-emprego-2025",
+     "campo": "unidade",
+     "antes": null,
+     "entrega": [
+      "% da população"
+     ],
+     "depois": [
+      "% das pessoas dos 20 aos 64 anos"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "paises|en|taxa-de-emprego-2025",
+     "campo": "unidade",
+     "antes": null,
+     "entrega": [
+      "% of the population"
+     ],
+     "depois": [
+      "% of people aged 20 to 64"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "pt",
+     "chave": "paises|pt|precos-da-habitacao-2025",
+     "campo": "nome",
+     "antes": null,
+     "entrega": [
+      "Preços da habitação, variação anual"
+     ],
+     "depois": [
+      "Preços da habitação"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "paises|en|precos-da-habitacao-2025",
+     "campo": "nome",
+     "antes": null,
+     "entrega": [
+      "House prices, annual change"
+     ],
+     "depois": [
+      "House prices"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "pt",
+     "chave": "paises|pt|precos-da-habitacao-2025",
+     "campo": "unidade",
+     "antes": null,
+     "entrega": [
+      "variação anual média, %"
+     ],
+     "depois": [
+      "% de variação anual média"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "paises|en|precos-da-habitacao-2025",
+     "campo": "unidade",
+     "antes": null,
+     "entrega": [
+      "average annual change, %"
+     ],
+     "depois": [
+      "average annual % change"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "pt",
+     "chave": "paises|pt|divida-publica-2025",
+     "campo": "unidade",
+     "antes": null,
+     "entrega": [
+      "% do PIB"
+     ],
+     "depois": [
+      "% do PIB"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    },
+    {
+     "lang": "en",
+     "chave": "paises|en|divida-publica-2025",
+     "campo": "unidade",
+     "antes": null,
+     "entrega": [
+      "% of GDP"
+     ],
+     "depois": [
+      "% of GDP"
+     ],
+     "mudou": true,
+     "mudou_na_r2b": false
+    }
+   ],
+   "campos_que_mudaram": 8,
+   "campos_que_mudaram_na_r2b": 6
+  },
+  {
+   "achado": "R2-b · a ressalva do salário mínimo",
+   "estado": "feito",
+   "campos": [
+    {
+     "lang": "pt",
+     "chave": "recibo|pt|retribuicao-minima-mensal-garantida-continente-2026",
+     "campo": "ressalva",
+     "antes": null,
+     "entrega": [
+      "Este valor é o do território continental. Os Açores e a Madeira fixam o seu por diploma regional próprio, que não foi lido: [a verificar]."
+     ],
+     "depois": [
+      "Este valor é o do território continental. Nos Açores, a lei regional soma-lhe um acréscimo, e o diploma é uma das fontes da pergunta abaixo. Na Madeira, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: [a verificar]."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    },
+    {
+     "lang": "en",
+     "chave": "recibo|en|retribuicao-minima-mensal-garantida-continente-2026",
+     "campo": "ressalva",
+     "antes": null,
+     "entrega": [
+      "This value is for mainland Portugal. The Azores and Madeira set their own value by separate regional decree, which has not been read: [a verificar]."
+     ],
+     "depois": [
+      "This value is for mainland Portugal. In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. In Madeira, the value is set by a separate regional decree, which is not a source of any line in this ledger: [a verificar]."
+     ],
+     "mudou": true,
+     "mudou_na_r2b": true
+    }
+   ],
+   "campos_que_mudaram": 2,
+   "campos_que_mudaram_na_r2b": 2
+  }
+ ]
+}
