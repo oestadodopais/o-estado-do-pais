@@ -1,0 +1,19 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/rp3-2026-10-04/fusao-de-ensaio.py. Não se edita à mão.",
+  "main": "7af9073132b92ed7aca7fec0c906f1a08626d446",
+  "cabeca": "39f15b8eb38ea7bfd727da2b4ee0d2e6601df947",
+  "base_comum": "1c4dde2f5419fc22888e14d23cb49a2bbac97505",
+  "codigo_do_git": 1,
+  "conflitos": [
+    "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+    "package.json"
+  ],
+  "fundidos_sem_conflito": [
+    "scripts/check-lugar.mjs",
+    "scripts/gate-html.mjs",
+    "scripts/medir-defeitos.mjs",
+    "src/i18n/strings.mjs",
+    "tests/cartao/cartao.mjs"
+  ],
+  "saida": "5c1baf6bec2c3f646363db59e8d7d4b08e8a1ece\ndesign/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md\npackage.json\n\nAuto-merging design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md\nCONFLICT (content): Merge conflict in design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md\nAuto-merging package.json\nCONFLICT (content): Merge conflict in package.json\nAuto-merging scripts/check-lugar.mjs\nAuto-merging scripts/gate-html.mjs\nAuto-merging scripts/medir-defeitos.mjs\nAuto-merging src/i18n/strings.mjs\nAuto-merging tests/cartao/cartao.mjs\n"
+}

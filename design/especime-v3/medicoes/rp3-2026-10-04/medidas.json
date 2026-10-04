@@ -1,0 +1,2136 @@
+{
+  "bloco": "RP3",
+  "guiao": "design/especime-v3/medicoes/rp3-2026-10-04/medir-rp3.py",
+  "cabeca_do_codigo": "39f15b8eb38ea7bfd727da2b4ee0d2e6601df947",
+  "cabeca_do_motor": "f97e66e5ca59215d7b004eb0ad61773f3676d0c8",
+  "base": "1c4dde2f",
+  "medidas_escritas": 156,
+  "medidas": [
+    {
+      "nome": "series_no_tempo_no_livro",
+      "valor": 16,
+      "comando": "ls ledger/series/*.yml · eixo: periodo",
+      "conhecido_positivo": {
+        "o_que": "a derivada D1 está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_de_paises_no_livro",
+      "valor": 10,
+      "comando": "ls ledger/series/*.yml · eixo: pais",
+      "conhecido_positivo": {
+        "o_que": "a série da dívida pública do UE1 continua lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_lidas_da_fonte",
+      "valor": 15,
+      "comando": "as séries no tempo com «source» (as do §3 do brief, sem a derivada)",
+      "conhecido_positivo": {
+        "o_que": "a derivada não tem fonte",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos_no_tempo",
+      "valor": 4131,
+      "comando": "a soma dos «pontos» das séries com eixo: periodo",
+      "conhecido_positivo": {
+        "o_que": "o último ponto da S1 é 2026-08 com «3,30»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos_com_excerto",
+      "valor": 3991,
+      "comando": "os pontos das séries no tempo com «excerto» não nulo",
+      "conhecido_positivo": {
+        "o_que": "nenhum ponto da derivada tem excerto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos_da_derivada",
+      "valor": 140,
+      "comando": "o comprimento de «pontos» em serie-cem-euros-de-2015-01",
+      "conhecido_positivo": {
+        "o_que": "o primeiro ponto é 2015-01 com «100,000»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "tabela_das_series",
+      "valor": [
+        {
+          "id": "serie-beneficiarios-do-rsi-por-mil",
+          "fonte": "INE",
+          "edicao": "0013420, geocod=PT",
+          "periodicidade": "anual",
+          "unidade": "por mil pessoas em idade ativa",
+          "primeiro": "2023",
+          "ultimo": "2024",
+          "pontos": 2,
+          "ultimo_valor": "24,22",
+          "ultima_bandeira": null,
+          "lacunas": [],
+          "pontos_com_marca": 0,
+          "pedidos": 1,
+          "bytes_dos_corpos": 812,
+          "bytes_do_ficheiro": 3656,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-cem-euros-de-2015-01",
+          "fonte": "derivada",
+          "edicao": null,
+          "periodicidade": "mensal",
+          "unidade": "euros",
+          "primeiro": "2015-01",
+          "ultimo": "2026-08",
+          "pontos": 140,
+          "ultimo_valor": "77,167",
+          "ultima_bandeira": null,
+          "lacunas": [],
+          "pontos_com_marca": 0,
+          "pedidos": 0,
+          "bytes_dos_corpos": 0,
+          "bytes_do_ficheiro": 13881,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-ihpc-combustiveis-variacao-homologa-ue",
+          "fonte": "Eurostat",
+          "edicao": "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=CP0722, geo=EU27_2020",
+          "periodicidade": "mensal",
+          "unidade": "%",
+          "primeiro": "2000-12",
+          "ultimo": "2026-08",
+          "pontos": 309,
+          "ultimo_valor": "23,8",
+          "ultima_bandeira": null,
+          "lacunas": [],
+          "pontos_com_marca": 0,
+          "pedidos": 1,
+          "bytes_dos_corpos": 20412,
+          "bytes_do_ficheiro": 36777,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-ihpc-combustiveis-variacao-homologa",
+          "fonte": "Eurostat",
+          "edicao": "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=CP0722, geo=PT",
+          "periodicidade": "mensal",
+          "unidade": "%",
+          "primeiro": "1997-01",
+          "ultimo": "2026-08",
+          "pontos": 356,
+          "ultimo_valor": "24,0",
+          "ultima_bandeira": null,
+          "lacunas": [],
+          "pontos_com_marca": 0,
+          "pedidos": 1,
+          "bytes_dos_corpos": 20656,
+          "bytes_do_ficheiro": 41574,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-ihpc-energia-da-casa-variacao-homologa",
+          "fonte": "Eurostat",
+          "edicao": "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=CP045, geo=PT",
+          "periodicidade": "mensal",
+          "unidade": "%",
+          "primeiro": "1997-01",
+          "ultimo": "2026-08",
+          "pontos": 356,
+          "ultimo_valor": "1,5",
+          "ultima_bandeira": null,
+          "lacunas": [],
+          "pontos_com_marca": 0,
+          "pedidos": 1,
+          "bytes_dos_corpos": 20491,
+          "bytes_do_ficheiro": 41199,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-ihpc-rendas-variacao-homologa",
+          "fonte": "Eurostat",
+          "edicao": "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=CP041, geo=PT",
+          "periodicidade": "mensal",
+          "unidade": "%",
+          "primeiro": "1997-01",
+          "ultimo": "2026-08",
+          "pontos": 356,
+          "ultimo_valor": "5,2",
+          "ultima_bandeira": null,
+          "lacunas": [],
+          "pontos_com_marca": 0,
+          "pedidos": 1,
+          "bytes_dos_corpos": 20376,
+          "bytes_do_ficheiro": 40760,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-ihpc-variacao-homologa-ue",
+          "fonte": "Eurostat",
+          "edicao": "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=TOTAL, geo=EU27_2020",
+          "periodicidade": "mensal",
+          "unidade": "%",
+          "primeiro": "2000-12",
+          "ultimo": "2026-08",
+          "pontos": 309,
+          "ultimo_valor": "3,2",
+          "ultima_bandeira": null,
+          "lacunas": [],
+          "pontos_com_marca": 0,
+          "pedidos": 1,
+          "bytes_dos_corpos": 20121,
+          "bytes_do_ficheiro": 35989,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-ihpc-variacao-homologa",
+          "fonte": "Eurostat",
+          "edicao": "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=TOTAL, geo=PT",
+          "periodicidade": "mensal",
+          "unidade": "%",
+          "primeiro": "1997-01",
+          "ultimo": "2026-09",
+          "pontos": 357,
+          "ultimo_valor": "3,6",
+          "ultima_bandeira": "e",
+          "lacunas": [],
+          "pontos_com_marca": 1,
+          "pedidos": 1,
+          "bytes_dos_corpos": 20442,
+          "bytes_do_ficheiro": 40989,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-ipc-alimentacao-variacao-homologa",
+          "fonte": "INE",
+          "edicao": "0014663, geocod=PT, dim_3=01",
+          "periodicidade": "mensal",
+          "unidade": "%",
+          "primeiro": "1992-01",
+          "ultimo": "2026-08",
+          "pontos": 416,
+          "ultimo_valor": "2,14",
+          "ultima_bandeira": null,
+          "lacunas": [],
+          "pontos_com_marca": 0,
+          "pedidos": 35,
+          "bytes_dos_corpos": 116605,
+          "bytes_do_ficheiro": 131120,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-ipc-indice",
+          "fonte": "INE",
+          "edicao": "0014639, geocod=PT, dim_3=T",
+          "periodicidade": "mensal",
+          "unidade": "índice (base 2025 = 100)",
+          "primeiro": "1948-01",
+          "ultimo": "2026-08",
+          "pontos": 944,
+          "ultimo_valor": "103,276",
+          "ultima_bandeira": null,
+          "lacunas": [],
+          "pontos_com_marca": 0,
+          "pedidos": 79,
+          "bytes_dos_corpos": 223540,
+          "bytes_do_ficheiro": 257036,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-ipc-variacao-homologa",
+          "fonte": "INE",
+          "edicao": "0014663, geocod=PT, dim_3=T",
+          "periodicidade": "mensal",
+          "unidade": "%",
+          "primeiro": "1992-01",
+          "ultimo": "2026-08",
+          "pontos": 416,
+          "ultimo_valor": "3,30",
+          "ultima_bandeira": null,
+          "lacunas": [],
+          "pontos_com_marca": 0,
+          "pedidos": 35,
+          "bytes_dos_corpos": 98636,
+          "bytes_do_ficheiro": 112990,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-linha-de-risco-de-pobreza",
+          "fonte": "Eurostat",
+          "edicao": "ilc_li01, freq=A, statinfo=MED_EI, hhcomp=A1, rskpovth=B_60, unit=EUR, geo=PT",
+          "periodicidade": "anual",
+          "unidade": "€ por ano",
+          "primeiro": "1995",
+          "ultimo": "2025",
+          "pontos": 29,
+          "ultimo_valor": "8 679",
+          "ultima_bandeira": null,
+          "lacunas": [
+            "2002",
+            "2003"
+          ],
+          "pontos_com_marca": 2,
+          "pedidos": 1,
+          "bytes_dos_corpos": 4445,
+          "bytes_do_ficheiro": 6467,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-pensao-media-anual",
+          "fonte": "INE",
+          "edicao": "0014532, geocod=PT, dim_3=T",
+          "periodicidade": "anual",
+          "unidade": "€ por pensionista por ano",
+          "primeiro": "2017",
+          "ultimo": "2025",
+          "pontos": 9,
+          "ultimo_valor": "8 066",
+          "ultima_bandeira": null,
+          "lacunas": [],
+          "pontos_com_marca": 0,
+          "pedidos": 1,
+          "bytes_dos_corpos": 2134,
+          "bytes_do_ficheiro": 5343,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-precos-da-habitacao-variacao-homologa",
+          "fonte": "Eurostat",
+          "edicao": "prc_hpi_q, freq=Q, unit=RCH_A, purchase=TOTAL, geo=PT",
+          "periodicidade": "trimestral",
+          "unidade": "%",
+          "primeiro": "2009-T1",
+          "ultimo": "2026-T2",
+          "pontos": 70,
+          "ultimo_valor": "16,5",
+          "ultima_bandeira": null,
+          "lacunas": [],
+          "pontos_com_marca": 0,
+          "pedidos": 1,
+          "bytes_dos_corpos": 6517,
+          "bytes_do_ficheiro": 10624,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-remuneracao-bruta-mensal-media",
+          "fonte": "INE",
+          "edicao": "0014751, geocod=PT, dim_3=T, dim_4=T",
+          "periodicidade": "trimestral",
+          "unidade": "€ por mês",
+          "primeiro": "2025-T1",
+          "ultimo": "2026-T2",
+          "pontos": 6,
+          "ultimo_valor": "1 835",
+          "ultima_bandeira": "&",
+          "lacunas": [],
+          "pontos_com_marca": 1,
+          "pedidos": 1,
+          "bytes_dos_corpos": 4660,
+          "bytes_do_ficheiro": 5787,
+          "igual_ao_motor": true
+        },
+        {
+          "id": "serie-salario-minimo-mensal",
+          "fonte": "Eurostat",
+          "edicao": "earn_mw_cur, freq=S, currency=EUR, geo=PT",
+          "periodicidade": "semestral",
+          "unidade": "euros por mês",
+          "primeiro": "1999-S1",
+          "ultimo": "2026-S2",
+          "pontos": 56,
+          "ultimo_valor": "1 073",
+          "ultima_bandeira": null,
+          "lacunas": [],
+          "pontos_com_marca": 0,
+          "pedidos": 1,
+          "bytes_dos_corpos": 4742,
+          "bytes_do_ficheiro": 9006,
+          "igual_ao_motor": true
+        }
+      ],
+      "comando": "cada ledger/series/<id>.yml com eixo: periodo, e os bytes dos corpos em motor/motor-rp3.json",
+      "conhecido_positivo": {
+        "o_que": "a S9 declara as lacunas 2002 e 2003",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_iguais_no_motor_e_no_sitio",
+      "valor": 16,
+      "comando": "o primeiro e o último período, os pontos e o último valor de cada série no sítio contra motor/motor-rp3.json",
+      "conhecido_positivo": {
+        "o_que": "a comparação vê uma diferença plantada (um ponto a mais)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "bytes_das_series_no_livro",
+      "valor": 793198,
+      "comando": "a soma dos tamanhos dos dezasseis ficheiros",
+      "conhecido_positivo": {
+        "o_que": "o maior é o da S3, a série mais longa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "testemunha_do_brief",
+      "valor": [
+        {
+          "serie": "serie-ihpc-combustiveis-variacao-homologa",
+          "periodos": [
+            "2026-07"
+          ],
+          "valor_do_brief": "16,7",
+          "frase_no_brief": true,
+          "valores_na_serie": [
+            "16,7"
+          ],
+          "igual": true
+        },
+        {
+          "serie": "serie-ihpc-combustiveis-variacao-homologa",
+          "periodos": [
+            "2026-08"
+          ],
+          "valor_do_brief": "24,0",
+          "frase_no_brief": true,
+          "valores_na_serie": [
+            "24,0"
+          ],
+          "igual": true
+        },
+        {
+          "serie": "serie-ihpc-combustiveis-variacao-homologa-ue",
+          "periodos": [
+            "2026-07"
+          ],
+          "valor_do_brief": "16,9",
+          "frase_no_brief": true,
+          "valores_na_serie": [
+            "16,9"
+          ],
+          "igual": true
+        },
+        {
+          "serie": "serie-ihpc-combustiveis-variacao-homologa-ue",
+          "periodos": [
+            "2026-08"
+          ],
+          "valor_do_brief": "23,8",
+          "frase_no_brief": true,
+          "valores_na_serie": [
+            "23,8"
+          ],
+          "igual": true
+        },
+        {
+          "serie": "serie-ihpc-rendas-variacao-homologa",
+          "periodos": [
+            "2026-07"
+          ],
+          "valor_do_brief": "5,3",
+          "frase_no_brief": true,
+          "valores_na_serie": [
+            "5,3"
+          ],
+          "igual": true
+        },
+        {
+          "serie": "serie-ihpc-rendas-variacao-homologa",
+          "periodos": [
+            "2026-08"
+          ],
+          "valor_do_brief": "5,2",
+          "frase_no_brief": true,
+          "valores_na_serie": [
+            "5,2"
+          ],
+          "igual": true
+        },
+        {
+          "serie": "serie-ihpc-energia-da-casa-variacao-homologa",
+          "periodos": [
+            "2026-07"
+          ],
+          "valor_do_brief": "1,2",
+          "frase_no_brief": true,
+          "valores_na_serie": [
+            "1,2"
+          ],
+          "igual": true
+        },
+        {
+          "serie": "serie-ihpc-energia-da-casa-variacao-homologa",
+          "periodos": [
+            "2026-08"
+          ],
+          "valor_do_brief": "1,5",
+          "frase_no_brief": true,
+          "valores_na_serie": [
+            "1,5"
+          ],
+          "igual": true
+        },
+        {
+          "serie": "serie-precos-da-habitacao-variacao-homologa",
+          "periodos": [
+            "2025-T4"
+          ],
+          "valor_do_brief": "18,9",
+          "frase_no_brief": true,
+          "valores_na_serie": [
+            "18,9"
+          ],
+          "igual": true
+        },
+        {
+          "serie": "serie-precos-da-habitacao-variacao-homologa",
+          "periodos": [
+            "2026-T1"
+          ],
+          "valor_do_brief": "17,8",
+          "frase_no_brief": true,
+          "valores_na_serie": [
+            "17,8"
+          ],
+          "igual": true
+        },
+        {
+          "serie": "serie-precos-da-habitacao-variacao-homologa",
+          "periodos": [
+            "2026-T2"
+          ],
+          "valor_do_brief": "16,5",
+          "frase_no_brief": true,
+          "valores_na_serie": [
+            "16,5"
+          ],
+          "igual": true
+        },
+        {
+          "serie": "serie-salario-minimo-mensal",
+          "periodos": [
+            "2025-S1",
+            "2025-S2"
+          ],
+          "valor_do_brief": "1 015",
+          "frase_no_brief": true,
+          "valores_na_serie": [
+            "1 015",
+            "1 015"
+          ],
+          "igual": true
+        },
+        {
+          "serie": "serie-salario-minimo-mensal",
+          "periodos": [
+            "2026-S1",
+            "2026-S2"
+          ],
+          "valor_do_brief": "1 073",
+          "frase_no_brief": true,
+          "valores_na_serie": [
+            "1 073",
+            "1 073"
+          ],
+          "igual": true
+        }
+      ],
+      "comando": "cada valor que o §3 do brief cita (lido pelo lugar de direção na API a 03.10.2026) contra o ponto da série",
+      "conhecido_positivo": {
+        "o_que": "as treze frases estão no brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "testemunha_do_brief_iguais",
+      "valor": 13,
+      "comando": "as entradas da testemunha com o ponto igual",
+      "conhecido_positivo": {
+        "o_que": "a comparação vê uma diferença plantada (24,1 contra 24,0)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_o_campo_serie",
+      "valor": 7,
+      "comando": "grep -c '^serie: ' ledger/claims/*.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha da pensão média aponta a série da pensão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_presas",
+      "valor": [
+        {
+          "linha": "beneficiarios-do-rsi-por-mil-2024",
+          "serie": "serie-beneficiarios-do-rsi-por-mil"
+        },
+        {
+          "linha": "ihpc-variacao-homologa-ue",
+          "serie": "serie-ihpc-variacao-homologa-ue"
+        },
+        {
+          "linha": "ipc-alimentacao-variacao-homologa",
+          "serie": "serie-ipc-alimentacao-variacao-homologa"
+        },
+        {
+          "linha": "ipc-variacao-homologa",
+          "serie": "serie-ipc-variacao-homologa"
+        },
+        {
+          "linha": "linha-de-risco-de-pobreza-2025",
+          "serie": "serie-linha-de-risco-de-pobreza"
+        },
+        {
+          "linha": "pensao-media-anual-2025",
+          "serie": "serie-pensao-media-anual"
+        },
+        {
+          "linha": "remuneracao-bruta-mensal-media",
+          "serie": "serie-remuneracao-bruta-mensal-media"
+        }
+      ],
+      "comando": "as linhas com o campo serie e a série de cada uma",
+      "conhecido_positivo": {
+        "o_que": "a linha parada não tem o campo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_ponto_7_sem_serie_no_s3",
+      "valor": [
+        {
+          "linha": "ipc-variacao-media-12-meses",
+          "edicao": "0014666, geocod=PT, dim_3=T",
+          "codigo_tem_serie_no_tempo": false,
+          "tem_o_campo_serie": false
+        },
+        {
+          "linha": "ipc-sem-habitacao-variacao-media-12-meses",
+          "edicao": "0014666, geocod=PT, dim_3=001",
+          "codigo_tem_serie_no_tempo": false,
+          "tem_o_campo_serie": false
+        },
+        {
+          "linha": "ipc-combustiveis-variacao-homologa",
+          "edicao": "0014647, geocod=PT, dim_3=0722",
+          "codigo_tem_serie_no_tempo": false,
+          "tem_o_campo_serie": false
+        },
+        {
+          "linha": "ipc-rendas-variacao-homologa",
+          "edicao": "0014647, geocod=PT, dim_3=041",
+          "codigo_tem_serie_no_tempo": false,
+          "tem_o_campo_serie": false
+        },
+        {
+          "linha": "ipc-energia-em-casa-variacao-homologa",
+          "edicao": "0014647, geocod=PT, dim_3=045",
+          "codigo_tem_serie_no_tempo": false,
+          "tem_o_campo_serie": false
+        }
+      ],
+      "comando": "a edição de cada linha contra os códigos das séries no tempo",
+      "conhecido_positivo": {
+        "o_que": "o código 0014663 das linhas presas do IPC tem série (a comparação pode dizer que sim)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_ponto_7_sem_serie_no_s3_contagem",
+      "valor": 5,
+      "comando": "as linhas acima sem série com o seu código e sem o campo",
+      "conhecido_positivo": {
+        "o_que": "são cinco nomes na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_escalares_mudadas",
+      "valor": 7,
+      "comando": "git diff --numstat 1c4dde2f 39f15b8e -- ledger/claims/",
+      "conhecido_positivo": {
+        "o_que": "são as linhas presas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_escalares_linhas_acrescentadas_e_tiradas",
+      "valor": {
+        "acrescentadas": 21,
+        "tiradas": 0
+      },
+      "comando": "a soma das colunas do numstat acima",
+      "conhecido_positivo": {
+        "o_que": "cada linha presa ganhou o campo e o seu comentário (3 linhas)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_presas_que_sao_cartoes_nacionais",
+      "valor": {
+        "beneficiarios-do-rsi-por-mil-2024": true,
+        "ihpc-variacao-homologa-ue": false,
+        "ipc-alimentacao-variacao-homologa": true,
+        "ipc-variacao-homologa": true,
+        "linha-de-risco-de-pobreza-2025": true,
+        "pensao-media-anual-2025": true,
+        "remuneracao-bruta-mensal-media": true
+      },
+      "comando": "DOMINIO_DAS_MEDIDAS de src/data/dominios.mjs, lido pelo node, para cada linha presa",
+      "conhecido_positivo": {
+        "o_que": "a tabela tem cartões e a linha do índice harmonizado de Portugal é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_periodo_anterior_que_sao_cartoes",
+      "valor": 0,
+      "comando": "as chaves de DOMINIO_DAS_MEDIDAS acabadas em -periodo-anterior",
+      "conhecido_positivo": {
+        "o_que": "a tabela leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha_parada",
+      "valor": {
+        "linha": "ihpc-variacao-homologa",
+        "serie": "serie-ihpc-variacao-homologa",
+        "periodo_da_linha": "2026-08",
+        "valor": "3,6",
+        "ultimo_ponto": "2026-09",
+        "ultimo_valor": "3,6",
+        "ultima_bandeira": "e",
+        "serie_atualizada": "2026-10-02"
+      },
+      "comando": "motor/motor-rp3.json · linhas_paradas, e ledger/claims/ihpc-variacao-homologa.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha no sítio diz 2026-08 e a série acaba em 2026-09 com a marca «e»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "s15_mesmos_bytes_que_a_linha",
+      "valor": true,
+      "comando": "o sha256 do corpo que a linha do salário mínimo cita contra o do pedido da S15 (motor/motor-rp3.json · s15_e_a_linha)",
+      "conhecido_positivo": {
+        "o_que": "os dois resumos leram-se e têm 64 hexadecimais",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha_coerente",
+      "valor": {
+        "linha": "retribuicao-minima-mensal-doze-meses-2026",
+        "serie": "serie-salario-minimo-mensal",
+        "ano": "2026",
+        "valor": "1 073",
+        "periodos": [
+          "2026-S1",
+          "2026-S2"
+        ]
+      },
+      "comando": "motor/motor-rp3.json · linhas_coerentes",
+      "conhecido_positivo": {
+        "o_que": "a linha do salário mínimo vale, no sítio, o valor da coerência",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_tentativas",
+      "valor": 184,
+      "comando": "motor/motor-rp3.json · pedidos.tentativas (as linhas de pedidos.jsonl no motor)",
+      "conhecido_positivo": {
+        "o_que": "há tentativas aos dois anfitriões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_por_estado",
+      "valor": {
+        "lido 200": 180,
+        "recusado 502": 3,
+        "recusado 414": 1
+      },
+      "comando": "motor/motor-rp3.json · pedidos.por_estado",
+      "conhecido_positivo": {
+        "o_que": "há três respostas 502 do INE, repetidas e lidas depois",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_por_anfitriao",
+      "valor": {
+        "www.ine.pt": 175,
+        "ec.europa.eu": 9
+      },
+      "comando": "motor/motor-rp3.json · pedidos.por_anfitriao",
+      "conhecido_positivo": {
+        "o_que": "o Eurostat teve nove pedidos (as nove séries do Eurostat, e um corpo cada)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recusas_ora_06502",
+      "valor": 2,
+      "comando": "os corpos de 200 com «ORA-06502» (o Dim1 inteiro recusado)",
+      "conhecido_positivo": {
+        "o_que": "as duas são da S1 e da S2",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recusa_414",
+      "valor": 1,
+      "comando": "os pedidos com HTTP 414 (o Dim1 inteiro da S3, longo demais)",
+      "conhecido_positivo": {
+        "o_que": "é a da S3",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corpos_alojados",
+      "valor": 180,
+      "comando": "motor/motor-rp3.json · alojados.no_fetch",
+      "conhecido_positivo": {
+        "o_que": "o manifesto tem o mesmo número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "bytes_alojados",
+      "valor": 1888871,
+      "comando": "a soma dos bytes das entradas rp3/ do FETCH.json",
+      "conhecido_positivo": {
+        "o_que": "é menos do que o teto vezes os corpos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "maior_corpo_lido",
+      "valor": 349569,
+      "comando": "o maior «bytes» de pedidos.jsonl",
+      "conhecido_positivo": {
+        "o_que": "é a metainformação do 0014639, abaixo do teto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "maior_ficheiro_de_fonte_em_git",
+      "valor": 6714448,
+      "comando": "o maior ficheiro de content/*/source/ em git, no motor",
+      "conhecido_positivo": {
+        "o_que": "é o PDF do Eurostat do estudo 13 que o comentário do teto nomeia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "teto_do_corpo",
+      "valor": 8388608,
+      "comando": "TETO_DO_CORPO em publisher/dominios_fetch.py (8 MiB)",
+      "conhecido_positivo": {
+        "o_que": "o teto está em cada pedido registado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "metainformacao_do_ine",
+      "valor": {
+        "0014663": {
+          "Periodic": "Mensal",
+          "PrimeiroPeriodo": "Janeiro de 1992",
+          "UltimoPeriodo": "Agosto de 2026",
+          "PrecisaoDecimal": "2",
+          "DataUltimaAtualizacao": "2026-09-10"
+        },
+        "0014639": {
+          "Periodic": "Mensal",
+          "PrimeiroPeriodo": "Janeiro de 1948",
+          "UltimoPeriodo": "Agosto de 2026",
+          "PrecisaoDecimal": "3",
+          "DataUltimaAtualizacao": "2026-09-10"
+        },
+        "0014751": {
+          "Periodic": "Trimestral",
+          "PrimeiroPeriodo": "Março de 2025",
+          "UltimoPeriodo": "Junho de 2026",
+          "PrecisaoDecimal": "0",
+          "DataUltimaAtualizacao": "2026-08-14"
+        },
+        "0014532": {
+          "Periodic": "Anual",
+          "PrimeiroPeriodo": "2017",
+          "UltimoPeriodo": "2025",
+          "PrecisaoDecimal": "0",
+          "DataUltimaAtualizacao": "2026-08-28"
+        },
+        "0013420": {
+          "Periodic": "Anual",
+          "PrimeiroPeriodo": "2023",
+          "UltimoPeriodo": "2024",
+          "PrecisaoDecimal": "2",
+          "DataUltimaAtualizacao": "2025-10-06"
+        }
+      },
+      "comando": "motor/motor-rp3.json · metainformacao_do_ine (os campos da metainformação de cada código, como a resposta os escreve)",
+      "conhecido_positivo": {
+        "o_que": "o 0014663 começa em janeiro de 1992, como o §3 dizia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "casas_decimais_da_derivada",
+      "valor": 3,
+      "comando": "a PrecisaoDecimal do 0014639, que o construtor usa para arredondar a D1",
+      "conhecido_positivo": {
+        "o_que": "o último ponto da D1 tem essas casas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_da_s3",
+      "valor": "0014639",
+      "comando": "motor/motor-rp3.json · escolha_da_s3 (escrito por escolher-s3.py)",
+      "conhecido_positivo": {
+        "o_que": "o 0014641 é anual e falha o primeiro critério",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "candidatos_da_s3",
+      "valor": 8,
+      "comando": "os candidatos em escolha-s3.json (os códigos que o §3 dá a escolher)",
+      "conhecido_positivo": {
+        "o_que": "o 0014667 está entre eles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "candidatos_da_s3_que_passam_1_a_3",
+      "valor": [
+        "0014639",
+        "0014659"
+      ],
+      "comando": "os candidatos mensais, do consumo individual, com Portugal e o total",
+      "conhecido_positivo": {
+        "o_que": "o 0014639 está entre eles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "candidatos_da_s3_que_passam_todos",
+      "valor": [
+        "0014639"
+      ],
+      "comando": "os candidatos com os quatro critérios",
+      "conhecido_positivo": {
+        "o_que": "eram oito candidatos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_do_codigo_mudados_entre_o_antes_e_a_base",
+      "valor": 0,
+      "comando": "git diff --name-only 6ef944d6 1c4dde2f -- src scripts tests ledger public api supabase mapa package.json package-lock.json astro.config.mjs site.config.mjs tsconfig.json tsconfig.check.json vercel.json",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando até à cabeça do código vê os ficheiros do bloco",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_build_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/portoes/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro existe e é um inteiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_build_segundos",
+      "valor": 142,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/portoes/build.fim menos build.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_verify_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/portoes/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro existe e é um inteiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_verify_segundos",
+      "valor": 902,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/portoes/verify.fim menos verify.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_typecheck_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/portoes/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro existe e é um inteiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_typecheck_segundos",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/portoes/typecheck.fim menos typecheck.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_cabeca",
+      "valor": "39f15b8eb38ea7bfd727da2b4ee0d2e6601df947",
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/portoes/cabeca",
+      "conhecido_positivo": {
+        "o_que": "a cabeça do fim é a mesma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_construidas",
+      "valor": 7484,
+      "comando": "«N page(s) built» em design/especime-v3/medicoes/rp3-2026-10-04/portoes/build.log",
+      "conhecido_positivo": {
+        "o_que": "o registo traz a linha do Astro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "base_build_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/s1-2026-10-02/portoes-d/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro existe e é um inteiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "base_build_segundos",
+      "valor": 140,
+      "comando": "design/especime-v3/medicoes/s1-2026-10-02/portoes-d/build.fim menos build.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "base_verify_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/s1-2026-10-02/portoes-d/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro existe e é um inteiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "base_verify_segundos",
+      "valor": 876,
+      "comando": "design/especime-v3/medicoes/s1-2026-10-02/portoes-d/verify.fim menos verify.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "base_typecheck_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/s1-2026-10-02/portoes-d/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro existe e é um inteiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "base_typecheck_segundos",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/s1-2026-10-02/portoes-d/typecheck.fim menos typecheck.inicio",
+      "conhecido_positivo": {
+        "o_que": "as duas horas leram-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "base_cabeca",
+      "valor": "6ef944d67b9605c77426b85e687d5cafdaa820a9",
+      "comando": "cat design/especime-v3/medicoes/s1-2026-10-02/portoes-d/cabeca",
+      "conhecido_positivo": {
+        "o_que": "é a cabeça do código do S1, 6ef944d6",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "base_paginas_construidas",
+      "valor": 7452,
+      "comando": "«N page(s) built» em design/especime-v3/medicoes/s1-2026-10-02/portoes-d/build.log",
+      "conhecido_positivo": {
+        "o_que": "o registo traz a linha do Astro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "diferenca_segundos_build",
+      "valor": 2,
+      "comando": "os segundos do build da cabeça menos os da base",
+      "conhecido_positivo": {
+        "o_que": "as duas corridas acabaram com 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "diferenca_segundos_verify",
+      "valor": 26,
+      "comando": "os segundos do verify da cabeça menos os da base",
+      "conhecido_positivo": {
+        "o_que": "as duas corridas acabaram com 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "diferenca_paginas_construidas",
+      "valor": 32,
+      "comando": "as páginas da cabeça menos as da base",
+      "conhecido_positivo": {
+        "o_que": "é o dobro das séries no tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_ledger_check_rp3_por_regra",
+      "valor": {
+        "S9": 3,
+        "S10": 2,
+        "S11": 2,
+        "S12": 3,
+        "S13": 1,
+        "S14": 3
+      },
+      "comando": "as plantas com «regra: 'S9'» a «'S14'» em scripts/check-ledger.mjs, por regra",
+      "conhecido_positivo": {
+        "o_que": "a soma é a contagem total",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "guarda_dos_campos_antes",
+      "valor": 24,
+      "comando": "git show 1c4dde2f:scripts/provar-guardas.mjs · «CAMPOS.length === N»",
+      "conhecido_positivo": {
+        "o_que": "a corrida com a igualdade velha recusou o caso",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "guarda_dos_campos_agora",
+      "valor": 25,
+      "comando": "scripts/provar-guardas.mjs · «CAMPOS.length === N»",
+      "conhecido_positivo": {
+        "o_que": "é um a mais do que antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_ledger_check_rp3",
+      "valor": 14,
+      "comando": "as plantas com «regra: 'S9'» a «'S14'» em scripts/check-ledger.mjs",
+      "conhecido_positivo": {
+        "o_que": "há pelo menos uma por regra, da S9 à S14",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_ledger_check_series",
+      "valor": "séries · 26 série(s) de 4411 ponto(s), 24 com marca da fonte · 16 no tempo · 7 linha(s) presa(s) à sua série · 25 planta(s), uma ou mais por regra, vistas a morder",
+      "comando": "a linha das séries do ledger:check em portoes/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha diz as dezasseis séries no tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_check_series",
+      "valor": "check:series · 16 série(s) no tempo de 4131 ponto(s) · 1 derivada(s) com 140 ponto(s) refeitos · 7 linha(s) presa(s), 6 cartão(ões) no último ponto · 32 recibo(s) lidos · metade do motor da S3: sem RESEARCHHUB_DIR: a metade do motor não corre aqui · 15 de 15 planta(s) morderam",
+      "comando": "a linha do check:series em portoes/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha diz as plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_check_palavras",
+      "valor": "21 de 21 plantas vistas (14 palavras, 7 buracos da superfície) · 7509 página(s) medidas em repouso, 0 achados · 59 página(s) com a superfície estreitada por rota declarada",
+      "comando": "a linha do check:palavras em portoes/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha diz os buracos da superfície",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_autoteste_da_check_lugar",
+      "valor": "RP3, o autoteste da marca das séries: «threshold» e «indicador» num campo transcrito 0 (esperado 0) · «limiar» na conta em palavras 1 (esperado 1)",
+      "comando": "a linha do autoteste em portoes/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha diz os dois lados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_check_cruzamento_series",
+      "valor": "séries · 26 linha(s) de série em 1 registo(s) · 4 planta(s) vista(s)",
+      "comando": "a linha das séries do check:cruzamento em portoes/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha diz as plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "base_check_palavras_plantas",
+      "valor": 20,
+      "comando": "a linha do check:palavras em design/especime-v3/medicoes/s1-2026-10-02/portoes-d/verify.log (a corrida do antes)",
+      "conhecido_positivo": {
+        "o_que": "a linha diz as palavras e os buracos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "base_check_palavras_buracos",
+      "valor": 6,
+      "comando": "a mesma linha, os buracos da superfície",
+      "conhecido_positivo": {
+        "o_que": "a linha leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cruzamento_com_origem_codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<motor> node scripts/check-cruzamento.mjs --with-origin, na cabeça 39f15b8e",
+      "conhecido_positivo": {
+        "o_que": "a linha das séries leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cruzamento_com_origem_series_conferidas_contra_o_motor",
+      "valor": 26,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/cruzamento-com-origem.log · a linha das séries",
+      "conhecido_positivo": {
+        "o_que": "é o número das séries no livro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_guardas",
+      "valor": "guardas · 135 conferência(s) sobre os guardas de execução do bloco F0.4",
+      "comando": "a linha do provar:guardas em portoes/verify.log",
+      "conhecido_positivo": {
+        "o_que": "a linha diz as conferências",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_html_na_base",
+      "valor": 7477,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · paginas_html_na_base (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_html_na_cabeca",
+      "valor": 7509,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · paginas_html_na_cabeca (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_novas",
+      "valor": 32,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · paginas_novas (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_novas_sao_os_recibos",
+      "valor": true,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · paginas_novas_sao_os_recibos (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_sairam",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · paginas_que_sairam (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_comuns",
+      "valor": 7477,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · paginas_comuns (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_iguais_byte_a_byte",
+      "valor": 7477,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · paginas_iguais_byte_a_byte (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_iguais_sem_a_construcao",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · paginas_iguais_sem_a_construcao (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · paginas_que_mudaram (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_por_razao",
+      "valor": {},
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · paginas_que_mudaram_por_razao (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "outros_ficheiros_novos",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · outros_ficheiros_novos (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "outros_ficheiros_que_sairam",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · outros_ficheiros_que_sairam (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "outros_ficheiros_que_mudaram",
+      "valor": 3012,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · outros_ficheiros_que_mudaram (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "outros_ficheiros_que_mudaram_por_razao",
+      "valor": {
+        "só a coluna serie": 1,
+        "só o campo serie": 3010,
+        "só os endereços dos recibos novos (32)": 1
+      },
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · outros_ficheiros_que_mudaram_por_razao (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "outros_ficheiros_que_mudaram_por_outra_razao",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · outros_ficheiros_que_mudaram_por_outra_razao (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "outros_ficheiros_comuns_iguais",
+      "valor": 99,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3.json · outros_ficheiros_comuns_iguais (paginas-rp3.mjs sobre a construção da base e a da cabeça)",
+      "conhecido_positivo": {
+        "o_que": "as duas construções são da base e da cabeça do código",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "antes_da_folha_a_parte_paginas_que_mudaram",
+      "valor": 20,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3-fb8dcca4.json (a mesma comparação na cabeça fb8dcca4, antes da folha à parte)",
+      "conhecido_positivo": {
+        "o_que": "eram os recibos das séries de países",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "antes_da_folha_a_parte_razao",
+      "valor": {
+        "só a folha de estilo embutida": 20
+      },
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3-fb8dcca4.json · paginas_que_mudaram_por_razao",
+      "conhecido_positivo": {
+        "o_que": "a razão leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "so_com_a_folha_a_parte_paginas_que_mudaram",
+      "valor": 20,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/paginas-rp3-637a8044.json (a mesma comparação depois da primeira emenda, só com a folha à parte)",
+      "conhecido_positivo": {
+        "o_que": "eram ainda os recibos das séries de países",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corrida_portoes_fb8dcca4",
+      "valor": {
+        "build": 0,
+        "verify": 0,
+        "typecheck": 0
+      },
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/portoes-fb8dcca4/*.codigo",
+      "conhecido_positivo": {
+        "o_que": "a cabeça dessa corrida é a do nome da pasta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corrida_portoes_637a8044",
+      "valor": {
+        "build": 0,
+        "verify": 0,
+        "typecheck": 0
+      },
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/portoes-637a8044/*.codigo",
+      "conhecido_positivo": {
+        "o_que": "a cabeça dessa corrida é a do nome da pasta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_dos_recibos",
+      "valor": 20,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/capturas-rp3.json · capturas",
+      "conhecido_positivo": {
+        "o_que": "a construção capturada é a da cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_larguras",
+      "valor": [
+        390,
+        768,
+        1024,
+        1280,
+        1600
+      ],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/capturas-rp3.json · larguras",
+      "conhecido_positivo": {
+        "o_que": "as duas que o mandato pede estão lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_do_antes",
+      "valor": 20,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/capturas-rp3.json · capturas_antes",
+      "conhecido_positivo": {
+        "o_que": "há uma por largura e por edição de cada linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_do_recibo_mensal_maior",
+      "valor": 14676,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/capturas-rp3.json · a maior «altura» do recibo da S4 (357 pontos)",
+      "conhecido_positivo": {
+        "o_que": "o recibo mostra os pontos todos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "altura_do_recibo_mensal_menor",
+      "valor": 14185,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/capturas-rp3.json · a menor «altura» do recibo da S4",
+      "conhecido_positivo": {
+        "o_que": "leram-se as 10 capturas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_problemas",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/capturas-rp3.json · problemas",
+      "conhecido_positivo": {
+        "o_que": "o captor confere a tabela contra a série",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_pedidos_para_fora",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/capturas-rp3.json · pedidos_recusados_para_fora",
+      "conhecido_positivo": {
+        "o_que": "o captor tem a rota que recusa o que não é da origem local",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_das_celulas_s",
+      "valor": 15,
+      "comando": "node tests/series/series.mjs --prova --json design/especime-v3/medicoes/rp3-2026-10-04/plantas-rp3.json",
+      "conhecido_positivo": {
+        "o_que": "há plantas das seis células",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_das_celulas_s_que_morderam",
+      "valor": 15,
+      "comando": "as plantas com «mordeu»",
+      "conhecido_positivo": {
+        "o_que": "cada uma diz a primeira queixa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_das_celulas_s_por_celula",
+      "valor": {
+        "S1": 2,
+        "S2": 2,
+        "S3": 2,
+        "S4": 2,
+        "S5": 2,
+        "S6": 5
+      },
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/plantas-rp3.json · as plantas por célula",
+      "conhecido_positivo": {
+        "o_que": "a soma é o total",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "celulas_s_cartoes_no_ultimo_ponto",
+      "valor": 6,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/plantas-rp3.json · contas.cartoesNoUltimo (os cartões nacionais presos, no último ponto)",
+      "conhecido_positivo": {
+        "o_que": "há 7 linhas presas e uma é a da União, que não é um cartão nacional",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "celulas_s_linhas_presas",
+      "valor": 7,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/plantas-rp3.json · contas.linhasPresas",
+      "conhecido_positivo": {
+        "o_que": "é o número das linhas com o campo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "celulas_s_recibos_lidos",
+      "valor": 32,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/plantas-rp3.json · contas.recibos",
+      "conhecido_positivo": {
+        "o_que": "é o dobro das séries no tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "celulas_s_pontos_refeitos",
+      "valor": 140,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/plantas-rp3.json · contas.pontosRefeitos",
+      "conhecido_positivo": {
+        "o_que": "são os pontos da derivada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "celulas_s_erros",
+      "valor": 0,
+      "comando": "a soma dos erros das seis células na cabeça",
+      "conhecido_positivo": {
+        "o_que": "a contagem dos pontos é a do livro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "celulas_s_motor_pontos_no_corpo",
+      "valor": 3991,
+      "comando": "a metade do motor da S3, com RESEARCHHUB_DIR na worktree do motor",
+      "conhecido_positivo": {
+        "o_que": "é o número dos pontos com excerto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_sobre_dist",
+      "valor": 7,
+      "comando": "node design/especime-v3/medicoes/rp3-2026-10-04/plantas-rp3.mjs",
+      "conhecido_positivo": {
+        "o_que": "a construção é a da cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_sobre_dist_que_morderam",
+      "valor": 6,
+      "comando": "as plantas com «passou» (código 1, cada mordida vista, páginas repostas)",
+      "conhecido_positivo": {
+        "o_que": "cada planta repôs as suas páginas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_sobre_dist_plantas",
+      "valor": 6,
+      "comando": "as entradas sem «controlo»",
+      "conhecido_positivo": {
+        "o_que": "há pelo menos uma por portão mudado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_sobre_dist_controlos",
+      "valor": 1,
+      "comando": "as entradas com «controlo» (a mesma troca na forma antiga)",
+      "conhecido_positivo": {
+        "o_que": "o controlo saiu com 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_sobre_dist_controlos_sem_mordida",
+      "valor": 1,
+      "comando": "os controlos com «passou» (código 0, nenhuma mordida)",
+      "conhecido_positivo": {
+        "o_que": "a planta da mesma troca com a marca mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_core_gate_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/motor/core-gate.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo diz «GATE: PASS»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_dominios_series_test_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/motor/dominios-series-test.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo diz «DOMINIOS_SERIES_TEST: PASS»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_series_paises_test_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/motor/series-paises-test.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo diz «SERIES_PAISES_TEST: PASS»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_export_site_rows_test_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/motor/export-site-rows-test.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo diz «PASS»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_dominios_series_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/motor/dominios-series.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo diz «DOMINIOS_SERIES: PASS»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_export_series_codigo",
+      "valor": 0,
+      "comando": "cat design/especime-v3/medicoes/rp3-2026-10-04/motor/export-series.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo diz «EXPORT_SERIES: PASS»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_ficheiros_mudados_no_ramo",
+      "valor": 391,
+      "comando": "git diff --name-only d2495a7..HEAD no motor (motor/motor-rp3.json)",
+      "conhecido_positivo": {
+        "o_que": "o ramo mudou ficheiros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_ficheiros_de_outras_corridas_mudados",
+      "valor": 0,
+      "comando": "os mudados no ramo em indicators/*.json, .maintenance-locks/, sweeps/ e publisher/recortes/manifest.regioes.json",
+      "conhecido_positivo": {
+        "o_que": "o filtro reconhece indicators/vintages.json e não um JSON de indicators/out/",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_linhas_tiradas_dos_leitores",
+      "valor": 0,
+      "comando": "git diff --numstat d2495a7..HEAD -- publisher/dominios_readers.py no motor (motor/motor-rp3.json · modulos_mudados)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo ficheiro ganhou as linhas dos leitores de série",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_modulos_mudados",
+      "valor": {
+        "core/gate.py": {
+          "acrescentadas": 9,
+          "tiradas": 0
+        },
+        "publisher/README.md": {
+          "acrescentadas": 37,
+          "tiradas": 2
+        },
+        "publisher/dominios_build.py": {
+          "acrescentadas": 6,
+          "tiradas": 0
+        },
+        "publisher/dominios_fetch.py": {
+          "acrescentadas": 39,
+          "tiradas": 5
+        },
+        "publisher/dominios_readers.py": {
+          "acrescentadas": 313,
+          "tiradas": 0
+        },
+        "publisher/dominios_series.py": {
+          "acrescentadas": 992,
+          "tiradas": 0
+        },
+        "publisher/dominios_series_test.py": {
+          "acrescentadas": 336,
+          "tiradas": 0
+        },
+        "publisher/export_series.py": {
+          "acrescentadas": 489,
+          "tiradas": 12
+        },
+        "publisher/export_site_rows.py": {
+          "acrescentadas": 61,
+          "tiradas": 2
+        },
+        "publisher/manifest.dominios.json": {
+          "acrescentadas": 14,
+          "tiradas": 7
+        },
+        "publisher/series_paises_test.py": {
+          "acrescentadas": 24,
+          "tiradas": 12
+        }
+      },
+      "comando": "motor/motor-rp3.json · modulos_mudados",
+      "conhecido_positivo": {
+        "o_que": "o construtor novo está entre eles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_commits_do_ramo",
+      "valor": 4,
+      "comando": "git log --format=%h d2495a7..HEAD no motor (motor/motor-rp3.json · commits_do_ramo)",
+      "conhecido_positivo": {
+        "o_que": "o último é a cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_plantas_por_grupo",
+      "valor": {
+        "formas de período": 7,
+        "o teto do corpo": 2,
+        "VP1": 1,
+        "VP2": 4,
+        "VP3": 1,
+        "VP4": 1,
+        "VP6": 2,
+        "VS5": 1,
+        "V18": 2,
+        "o construtor": 3
+      },
+      "comando": "os nomes das plantas em design/especime-v3/medicoes/rp3-2026-10-04/motor/dominios-series-test.log, por grupo",
+      "conhecido_positivo": {
+        "o_que": "cada nome declarado está na lista da suíte, e a lista não tem mais nenhum",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_cabeca",
+      "valor": "f97e66e5ca59215d7b004eb0ad61773f3676d0c8",
+      "comando": "git rev-parse HEAD na worktree do motor (motor/motor-rp3.json)",
+      "conhecido_positivo": {
+        "o_que": "a árvore do motor estava limpa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_plantas_da_suite",
+      "valor": 24,
+      "comando": "«plantas: N morderam» em design/especime-v3/medicoes/rp3-2026-10-04/motor/dominios-series-test.log",
+      "conhecido_positivo": {
+        "o_que": "a suíte passou",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_conferencias_da_suite",
+      "valor": 48,
+      "comando": "«PASS · N conferências» em design/especime-v3/medicoes/rp3-2026-10-04/motor/dominios-series-test.log",
+      "conhecido_positivo": {
+        "o_que": "a linha leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_core_gate_segundos",
+      "valor": 268,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/motor/core-gate.fim menos core-gate.inicio",
+      "conhecido_positivo": {
+        "o_que": "a suíte do RP3 corre no portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "brief_s0_reproduzido_iguais",
+      "valor": 7,
+      "comando": "python3 design/observatorio/medidas/BRIEF-RP3.py contra design/observatorio/medidas/BRIEF-RP3.json, medida a medida",
+      "conhecido_positivo": {
+        "o_que": "o §0 tem as linhas do livro de 334cc740",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_perto",
+      "valor": 280,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/conferir-mapa.txt",
+      "conhecido_positivo": {
+        "o_que": "o guião correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_longe",
+      "valor": 25,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/conferir-mapa.txt",
+      "conhecido_positivo": {
+        "o_que": "a base tinha as mesmas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_por_achar",
+      "valor": 0,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/conferir-mapa.txt",
+      "conhecido_positivo": {
+        "o_que": "o guião conta esta classe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_longe_antes_de_acertar",
+      "valor": 39,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/conferir-mapa-antes-de-acertar.txt (o mapa novo sobre o código do bloco, antes de repor as linhas)",
+      "conhecido_positivo": {
+        "o_que": "o guião correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_repostas",
+      "valor": 14,
+      "comando": "as longe antes de acertar menos as longe agora",
+      "conhecido_positivo": {
+        "o_que": "as longe agora são as da base",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa_citacoes_longe_na_base",
+      "valor": 25,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/conferir-mapa-base.txt (o mapa da base sobre a árvore da base)",
+      "conhecido_positivo": {
+        "o_que": "o guião correu na base",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_em_vigor_sitio",
+      "valor": 48,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/decisoes-em-vigor-sitio.txt",
+      "conhecido_positivo": {
+        "o_que": "o conhecido-positivo do guião passou",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_em_vigor_sitio_ficheiros",
+      "valor": 56,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/decisoes-em-vigor-sitio.txt · os ficheiros de texto lidos",
+      "conhecido_positivo": {
+        "o_que": "a linha final leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_perto_do_diff_sitio",
+      "valor": 22,
+      "comando": "as decisões com uma citação «perto do diff» em design/especime-v3/medicoes/rp3-2026-10-04/decisoes-em-vigor-sitio.txt",
+      "conhecido_positivo": {
+        "o_que": "a §1.24 está entre elas (a página de cada linha)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_perto_do_diff_sitio_lista",
+      "valor": [
+        "§1.3",
+        "§1.24",
+        "§1.31",
+        "§1.38",
+        "§1.40",
+        "§1.41",
+        "§1.47",
+        "§1.52",
+        "§1.90",
+        "§1.91",
+        "§1.115",
+        "§1.117",
+        "§1.120",
+        "§1.124",
+        "§1.127",
+        "§1.132",
+        "§1.135",
+        "§1.138",
+        "§1.140",
+        "§1.143",
+        "§1.145",
+        "§1.154"
+      ],
+      "comando": "a lista das mesmas, em design/especime-v3/medicoes/rp3-2026-10-04/decisoes-em-vigor-sitio.txt",
+      "conhecido_positivo": {
+        "o_que": "a lista tem o comprimento da contagem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_intervalo_sitio",
+      "valor": "1c4dde2f..39f15b8e",
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/decisoes-em-vigor-sitio.comando",
+      "conhecido_positivo": {
+        "o_que": "o comando escreveu-se ao lado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_que_sairam_no_diff_sitio",
+      "valor": 0,
+      "comando": "as citações «saiu no diff» em design/especime-v3/medicoes/rp3-2026-10-04/decisoes-em-vigor-sitio.txt",
+      "conhecido_positivo": {
+        "o_que": "o guião escreve essa marca quando a há",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_em_vigor_motor",
+      "valor": 12,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/decisoes-em-vigor-motor.txt",
+      "conhecido_positivo": {
+        "o_que": "o conhecido-positivo do guião passou",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_em_vigor_motor_ficheiros",
+      "valor": 391,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/decisoes-em-vigor-motor.txt · os ficheiros de texto lidos",
+      "conhecido_positivo": {
+        "o_que": "a linha final leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_perto_do_diff_motor",
+      "valor": 9,
+      "comando": "as decisões com uma citação «perto do diff» em design/especime-v3/medicoes/rp3-2026-10-04/decisoes-em-vigor-motor.txt",
+      "conhecido_positivo": {
+        "o_que": "a §1.24 está entre elas (a página de cada linha)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_perto_do_diff_motor_lista",
+      "valor": [
+        "§1.24",
+        "§1.31",
+        "§1.32",
+        "§1.47",
+        "§1.68",
+        "§1.87",
+        "§1.115",
+        "§1.124",
+        "§1.132"
+      ],
+      "comando": "a lista das mesmas, em design/especime-v3/medicoes/rp3-2026-10-04/decisoes-em-vigor-motor.txt",
+      "conhecido_positivo": {
+        "o_que": "a lista tem o comprimento da contagem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_intervalo_motor",
+      "valor": "d2495a7..f97e66e",
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/decisoes-em-vigor-motor.comando",
+      "conhecido_positivo": {
+        "o_que": "o comando escreveu-se ao lado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_que_sairam_no_diff_motor",
+      "valor": 0,
+      "comando": "as citações «saiu no diff» em design/especime-v3/medicoes/rp3-2026-10-04/decisoes-em-vigor-motor.txt",
+      "conhecido_positivo": {
+        "o_que": "o guião escreve essa marca quando a há",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_simbolos",
+      "valor": 1628722,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/custo-rp3.json (custo-rp3.py sobre o registo da sessão)",
+      "conhecido_positivo": {
+        "o_que": "a primeira leitura é o total da sessão, 15 000 000, e as leituras descem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo_segundos",
+      "valor": 15804,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/custo-rp3.json",
+      "conhecido_positivo": {
+        "o_que": "é positivo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao_de_ensaio_conflitos",
+      "valor": 2,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/fusao-de-ensaio.json (git merge-tree --write-tree --name-only main HEAD)",
+      "conhecido_positivo": {
+        "o_que": "a saída do git leu-se e nomeia os ficheiros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao_de_ensaio_fundidos_sem_conflito",
+      "valor": 5,
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/fusao-de-ensaio.json",
+      "conhecido_positivo": {
+        "o_que": "a lista vem das linhas «Auto-merging» do git",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao_de_ensaio_main",
+      "valor": "7af9073132b92ed7aca7fec0c906f1a08626d446",
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/fusao-de-ensaio.json · main (git rev-parse main)",
+      "conhecido_positivo": {
+        "o_que": "é um resumo de commit",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao_de_ensaio_conflitos_lista",
+      "valor": [
+        "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+        "package.json"
+      ],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/fusao-de-ensaio.json · conflitos",
+      "conhecido_positivo": {
+        "o_que": "o package.json está entre eles ou não, e a lista leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao_de_ensaio_fundidos_lista",
+      "valor": [
+        "scripts/check-lugar.mjs",
+        "scripts/gate-html.mjs",
+        "scripts/medir-defeitos.mjs",
+        "src/i18n/strings.mjs",
+        "tests/cartao/cartao.mjs"
+      ],
+      "comando": "design/especime-v3/medicoes/rp3-2026-10-04/fusao-de-ensaio.json · fundidos_sem_conflito",
+      "conhecido_positivo": {
+        "o_que": "a lista leu-se",
+        "encontrado": true
+      }
+    }
+  ]
+}

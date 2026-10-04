@@ -1,0 +1,26 @@
+  serie-ipc-variacao-homologa                       1992-01 → 2026-08   416 pontos · último 3,30 · 35 pedido(s), 98636 bytes · 0 lacuna(s)
+  serie-ipc-alimentacao-variacao-homologa           1992-01 → 2026-08   416 pontos · último 2,14 · 35 pedido(s), 116605 bytes · 0 lacuna(s)
+  serie-ipc-indice                                  1948-01 → 2026-08   944 pontos · último 103,276 · 79 pedido(s), 223540 bytes · 0 lacuna(s)
+  serie-ihpc-variacao-homologa                      1997-01 → 2026-09   357 pontos · último 3,6 e · 1 pedido(s), 20442 bytes · 0 lacuna(s)
+  serie-ihpc-variacao-homologa-ue                   2000-12 → 2026-08   309 pontos · último 3,2 · 1 pedido(s), 20121 bytes · 0 lacuna(s)
+  serie-remuneracao-bruta-mensal-media              2025-T1 → 2026-T2     6 pontos · último 1 835 & · 1 pedido(s), 4660 bytes · 0 lacuna(s)
+  serie-pensao-media-anual                             2017 → 2025        9 pontos · último 8 066 · 1 pedido(s), 2134 bytes · 0 lacuna(s)
+  serie-beneficiarios-do-rsi-por-mil                   2023 → 2024        2 pontos · último 24,22 · 1 pedido(s), 812 bytes · 0 lacuna(s)
+  serie-linha-de-risco-de-pobreza                      1995 → 2025       29 pontos · último 8 679 · 1 pedido(s), 4445 bytes · 2 lacuna(s)
+  serie-ihpc-combustiveis-variacao-homologa         1997-01 → 2026-08   356 pontos · último 24,0 · 1 pedido(s), 20656 bytes · 0 lacuna(s)
+  serie-ihpc-combustiveis-variacao-homologa-ue      2000-12 → 2026-08   309 pontos · último 23,8 · 1 pedido(s), 20412 bytes · 0 lacuna(s)
+  serie-ihpc-rendas-variacao-homologa               1997-01 → 2026-08   356 pontos · último 5,2 · 1 pedido(s), 20376 bytes · 0 lacuna(s)
+  serie-ihpc-energia-da-casa-variacao-homologa      1997-01 → 2026-08   356 pontos · último 1,5 · 1 pedido(s), 20491 bytes · 0 lacuna(s)
+  serie-precos-da-habitacao-variacao-homologa       2009-T1 → 2026-T2    70 pontos · último 16,5 · 1 pedido(s), 6517 bytes · 0 lacuna(s)
+  serie-salario-minimo-mensal                       1999-S1 → 2026-S2    56 pontos · último 1 073 · 1 pedido(s), 4742 bytes · 0 lacuna(s)
+  serie-cem-euros-de-2015-01                        2015-01 → 2026-08   140 pontos · último 77,167 · 0 pedido(s), 0 bytes · 0 lacuna(s)
+  presa ipc-variacao-homologa                    → serie-ipc-variacao-homologa · 2026-08 3,30
+  presa ipc-alimentacao-variacao-homologa        → serie-ipc-alimentacao-variacao-homologa · 2026-08 2,14
+  presa ihpc-variacao-homologa-ue                → serie-ihpc-variacao-homologa-ue · 2026-08 3,2
+  presa remuneracao-bruta-mensal-media           → serie-remuneracao-bruta-mensal-media · 2026-T2 1 835
+  presa pensao-media-anual-2025                  → serie-pensao-media-anual · 2025 8 066
+  presa beneficiarios-do-rsi-por-mil-2024        → serie-beneficiarios-do-rsi-por-mil · 2024 24,22
+  presa linha-de-risco-de-pobreza-2025           → serie-linha-de-risco-de-pobreza · 2025 8 679
+  parada ihpc-variacao-homologa                  → serie-ihpc-variacao-homologa · a linha diz 2026-08 3,6 e a série acaba em 2026-09 3,6 e
+  coerente retribuicao-minima-mensal-doze-meses-2026 → serie-salario-minimo-mensal · 2026 1 073 em 2026-S1, 2026-S2
+DOMINIOS_SERIES: PASS · 16 séries de 4131 pontos

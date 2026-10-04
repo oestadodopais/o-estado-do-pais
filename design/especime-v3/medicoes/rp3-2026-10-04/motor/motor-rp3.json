@@ -1,0 +1,826 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/rp3-2026-10-04/motor-rp3.py a partir da worktree do motor. Não se edita à mão.",
+  "commits_do_ramo": [
+    "1889dc1",
+    "ee8bf17",
+    "f2ef453",
+    "f97e66e"
+  ],
+  "modulos_mudados": {
+    "core/gate.py": {
+      "acrescentadas": 9,
+      "tiradas": 0
+    },
+    "publisher/README.md": {
+      "acrescentadas": 37,
+      "tiradas": 2
+    },
+    "publisher/dominios_build.py": {
+      "acrescentadas": 6,
+      "tiradas": 0
+    },
+    "publisher/dominios_fetch.py": {
+      "acrescentadas": 39,
+      "tiradas": 5
+    },
+    "publisher/dominios_readers.py": {
+      "acrescentadas": 313,
+      "tiradas": 0
+    },
+    "publisher/dominios_series.py": {
+      "acrescentadas": 992,
+      "tiradas": 0
+    },
+    "publisher/dominios_series_test.py": {
+      "acrescentadas": 336,
+      "tiradas": 0
+    },
+    "publisher/export_series.py": {
+      "acrescentadas": 489,
+      "tiradas": 12
+    },
+    "publisher/export_site_rows.py": {
+      "acrescentadas": 61,
+      "tiradas": 2
+    },
+    "publisher/manifest.dominios.json": {
+      "acrescentadas": 14,
+      "tiradas": 7
+    },
+    "publisher/series_paises_test.py": {
+      "acrescentadas": 24,
+      "tiradas": 12
+    }
+  },
+  "intervalo_do_ramo": "d2495a7..HEAD",
+  "ficheiros_mudados_no_ramo": 391,
+  "ficheiros_de_outras_corridas_mudados": [],
+  "conhecido_positivo_de_outras_corridas": true,
+  "cabeca_do_motor": "f97e66e5ca59215d7b004eb0ad61773f3676d0c8",
+  "arvore_do_motor_limpa": true,
+  "ficheiros_lidos": {
+    "content/13 Dominios/series-periodo.json": {
+      "bytes": 1033626,
+      "sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca"
+    },
+    "indicators/out/rp3-2026-10-04/pedidos.jsonl": {
+      "bytes": 212762,
+      "sha256": "3a2ba2384f776134a57002fa5178e8cbceecd7211e4c543d15f4889a22970137"
+    },
+    "indicators/out/rp3-2026-10-04/016-ine-serie-ipc-variacao-homologa.json": {
+      "bytes": 293,
+      "sha256": "83da2a646644076e6e4ffba56c3748d496456d05416f83be9e4c5cf34e0de2ae"
+    },
+    "indicators/out/rp3-2026-10-04/052-ine-serie-ipc-alimentacao-variacao-homologa.json": {
+      "bytes": 293,
+      "sha256": "5f16d3ddf38a1bd9cd93e4980deaf9323b6eb63dc96f4883c69ed38a2644fc14"
+    },
+    "indicators/out/rp3-2026-10-04/escolha-s3.json": {
+      "bytes": 7372,
+      "sha256": "90999468a74261c80fa16be8d3e9dc8b4509ff45fa2fe3155c40c141abd764a0"
+    },
+    "indicators/out/rp3-2026-10-04/001-ine-0014663-meta.json": {
+      "bytes": 105872,
+      "sha256": "c04b10f6ef580907f5f2beda2b4d926eedb6030395313f2d77f5816ffbd58672"
+    },
+    "indicators/out/rp3-2026-10-04/005-ine-0014639-meta.json": {
+      "bytes": 349569,
+      "sha256": "6071bd5148f5b14bc4f85e1c826a31afb7e606deac02ef97fdcc53d7d32ffc0f"
+    },
+    "indicators/out/rp3-2026-10-04/013-ine-0014751-meta.json": {
+      "bytes": 7146,
+      "sha256": "ed27f8721b94ec701babf1fd5c0aa4dddfa97a099ebf67f009c049756bb88603"
+    },
+    "indicators/out/rp3-2026-10-04/014-ine-0014532-meta.json": {
+      "bytes": 81632,
+      "sha256": "ee713b33d230c1af7fd11bdc368fb483f9fbe9894be6b8dbdf0691267b3618c2"
+    },
+    "indicators/out/rp3-2026-10-04/015-ine-0013420-meta.json": {
+      "bytes": 78945,
+      "sha256": "fc11ee7f164807eff0a5e9366841bf81e251ba2647ca3c566bcea1f6887aebd8"
+    },
+    "content/13 Dominios/source/FETCH.json": {
+      "bytes": 302889,
+      "sha256": "49437a053a9e444c2a9eb12f13c90b96df6302ac35761b66e188103da4b9cc7c"
+    },
+    "content/13 Dominios/source/MANIFEST.sha256": {
+      "bytes": 33574,
+      "sha256": "172eddafd47b8d691d7fbe457b07096f002a815653af883580b9d0f4d7f1fbbe"
+    }
+  },
+  "series": [
+    {
+      "id": "serie-ipc-variacao-homologa",
+      "fonte": "INE",
+      "edicao": "0014663, geocod=PT, dim_3=T",
+      "periodicidade": "mensal",
+      "unidade": "%",
+      "nome_da_fonte": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+      "primeiro": "1992-01",
+      "ultimo": "2026-08",
+      "pontos": 416,
+      "ultimo_valor": "3,30",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 0,
+      "marcas": [],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 35,
+      "bytes_dos_corpos": 98636,
+      "maior_corpo": 2858,
+      "aceitou_o_pedido_inteiro": false,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2026-09-10",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-ipc-alimentacao-variacao-homologa",
+      "fonte": "INE",
+      "edicao": "0014663, geocod=PT, dim_3=01",
+      "periodicidade": "mensal",
+      "unidade": "%",
+      "nome_da_fonte": "Índice de preços no consumidor (Taxa de variação homóloga - Base 2025 - %) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+      "primeiro": "1992-01",
+      "ultimo": "2026-08",
+      "pontos": 416,
+      "ultimo_valor": "2,14",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 0,
+      "marcas": [],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 35,
+      "bytes_dos_corpos": 116605,
+      "maior_corpo": 3377,
+      "aceitou_o_pedido_inteiro": false,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2026-09-10",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-ipc-indice",
+      "fonte": "INE",
+      "edicao": "0014639, geocod=PT, dim_3=T",
+      "periodicidade": "mensal",
+      "unidade": "índice (base 2025 = 100)",
+      "nome_da_fonte": "Índice de preços no consumidor (IPC, Base - 2025) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+      "primeiro": "1948-01",
+      "ultimo": "2026-08",
+      "pontos": 944,
+      "ultimo_valor": "103,276",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 0,
+      "marcas": [],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 79,
+      "bytes_dos_corpos": 223540,
+      "maior_corpo": 2855,
+      "aceitou_o_pedido_inteiro": false,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2026-09-10",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-ihpc-variacao-homologa",
+      "fonte": "Eurostat",
+      "edicao": "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=TOTAL, geo=PT",
+      "periodicidade": "mensal",
+      "unidade": "%",
+      "nome_da_fonte": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "primeiro": "1997-01",
+      "ultimo": "2026-09",
+      "pontos": 357,
+      "ultimo_valor": "3,6",
+      "ultima_bandeira": "e",
+      "pontos_com_marca": 1,
+      "marcas": [
+        "e"
+      ],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 1,
+      "bytes_dos_corpos": 20442,
+      "maior_corpo": 20442,
+      "aceitou_o_pedido_inteiro": null,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2026-10-02",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-ihpc-variacao-homologa-ue",
+      "fonte": "Eurostat",
+      "edicao": "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=TOTAL, geo=EU27_2020",
+      "periodicidade": "mensal",
+      "unidade": "%",
+      "nome_da_fonte": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "primeiro": "2000-12",
+      "ultimo": "2026-08",
+      "pontos": 309,
+      "ultimo_valor": "3,2",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 0,
+      "marcas": [],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 1,
+      "bytes_dos_corpos": 20121,
+      "maior_corpo": 20121,
+      "aceitou_o_pedido_inteiro": null,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2026-10-02",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-remuneracao-bruta-mensal-media",
+      "fonte": "INE",
+      "edicao": "0014751, geocod=PT, dim_3=T, dim_4=T",
+      "periodicidade": "trimestral",
+      "unidade": "€ por mês",
+      "nome_da_fonte": "Remuneração bruta mensal média por trabalhador (€) por Componente remuneratória e Natureza dos bens e serviços transacionados (CAE Rev. 4); Trimestral - Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações",
+      "primeiro": "2025-T1",
+      "ultimo": "2026-T2",
+      "pontos": 6,
+      "ultimo_valor": "1 835",
+      "ultima_bandeira": "&",
+      "pontos_com_marca": 1,
+      "marcas": [
+        "&"
+      ],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 1,
+      "bytes_dos_corpos": 4660,
+      "maior_corpo": 4660,
+      "aceitou_o_pedido_inteiro": true,
+      "periodos_fora_da_cadencia_na_resposta": 10,
+      "published_at": "2026-08-14",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-pensao-media-anual",
+      "fonte": "INE",
+      "edicao": "0014532, geocod=PT, dim_3=T",
+      "periodicidade": "anual",
+      "unidade": "€ por pensionista por ano",
+      "nome_da_fonte": "Valor médio das pensões da segurança social (Série 2017 - €/ N.º) por Local de residência (NUTS - 2024) e Tipo de pensão; Anual - Instituto de Informática",
+      "primeiro": "2017",
+      "ultimo": "2025",
+      "pontos": 9,
+      "ultimo_valor": "8 066",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 0,
+      "marcas": [],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 1,
+      "bytes_dos_corpos": 2134,
+      "maior_corpo": 2134,
+      "aceitou_o_pedido_inteiro": true,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2026-08-28",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-beneficiarios-do-rsi-por-mil",
+      "fonte": "INE",
+      "edicao": "0013420, geocod=PT",
+      "periodicidade": "anual",
+      "unidade": "por mil pessoas em idade ativa",
+      "nome_da_fonte": "Beneficiárias/os do rendimento social de inserção, da segurança social por 1000 habitantes em idade ativa (‰) por Local de residência (NUTS - 2024); Anual - Instituto de Informática",
+      "primeiro": "2023",
+      "ultimo": "2024",
+      "pontos": 2,
+      "ultimo_valor": "24,22",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 0,
+      "marcas": [],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 1,
+      "bytes_dos_corpos": 812,
+      "maior_corpo": 812,
+      "aceitou_o_pedido_inteiro": true,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2025-10-06",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-linha-de-risco-de-pobreza",
+      "fonte": "Eurostat",
+      "edicao": "ilc_li01, freq=A, statinfo=MED_EI, hhcomp=A1, rskpovth=B_60, unit=EUR, geo=PT",
+      "periodicidade": "anual",
+      "unidade": "€ por ano",
+      "nome_da_fonte": "At-risk-of-poverty thresholds",
+      "primeiro": "1995",
+      "ultimo": "2025",
+      "pontos": 29,
+      "ultimo_valor": "8 679",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 2,
+      "marcas": [
+        "b"
+      ],
+      "lacunas": [
+        "2002",
+        "2003"
+      ],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 1,
+      "bytes_dos_corpos": 4445,
+      "maior_corpo": 4445,
+      "aceitou_o_pedido_inteiro": null,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2026-09-17",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-ihpc-combustiveis-variacao-homologa",
+      "fonte": "Eurostat",
+      "edicao": "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=CP0722, geo=PT",
+      "periodicidade": "mensal",
+      "unidade": "%",
+      "nome_da_fonte": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "primeiro": "1997-01",
+      "ultimo": "2026-08",
+      "pontos": 356,
+      "ultimo_valor": "24,0",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 0,
+      "marcas": [],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 1,
+      "bytes_dos_corpos": 20656,
+      "maior_corpo": 20656,
+      "aceitou_o_pedido_inteiro": null,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2026-10-02",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-ihpc-combustiveis-variacao-homologa-ue",
+      "fonte": "Eurostat",
+      "edicao": "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=CP0722, geo=EU27_2020",
+      "periodicidade": "mensal",
+      "unidade": "%",
+      "nome_da_fonte": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "primeiro": "2000-12",
+      "ultimo": "2026-08",
+      "pontos": 309,
+      "ultimo_valor": "23,8",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 0,
+      "marcas": [],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 1,
+      "bytes_dos_corpos": 20412,
+      "maior_corpo": 20412,
+      "aceitou_o_pedido_inteiro": null,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2026-10-02",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-ihpc-rendas-variacao-homologa",
+      "fonte": "Eurostat",
+      "edicao": "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=CP041, geo=PT",
+      "periodicidade": "mensal",
+      "unidade": "%",
+      "nome_da_fonte": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "primeiro": "1997-01",
+      "ultimo": "2026-08",
+      "pontos": 356,
+      "ultimo_valor": "5,2",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 0,
+      "marcas": [],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 1,
+      "bytes_dos_corpos": 20376,
+      "maior_corpo": 20376,
+      "aceitou_o_pedido_inteiro": null,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2026-10-02",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-ihpc-energia-da-casa-variacao-homologa",
+      "fonte": "Eurostat",
+      "edicao": "prc_hicp_minr, freq=M, unit=RCH_A, coicop18=CP045, geo=PT",
+      "periodicidade": "mensal",
+      "unidade": "%",
+      "nome_da_fonte": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+      "primeiro": "1997-01",
+      "ultimo": "2026-08",
+      "pontos": 356,
+      "ultimo_valor": "1,5",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 0,
+      "marcas": [],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 1,
+      "bytes_dos_corpos": 20491,
+      "maior_corpo": 20491,
+      "aceitou_o_pedido_inteiro": null,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2026-10-02",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-precos-da-habitacao-variacao-homologa",
+      "fonte": "Eurostat",
+      "edicao": "prc_hpi_q, freq=Q, unit=RCH_A, purchase=TOTAL, geo=PT",
+      "periodicidade": "trimestral",
+      "unidade": "%",
+      "nome_da_fonte": "House price index - quarterly data",
+      "primeiro": "2009-T1",
+      "ultimo": "2026-T2",
+      "pontos": 70,
+      "ultimo_valor": "16,5",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 0,
+      "marcas": [],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 1,
+      "bytes_dos_corpos": 6517,
+      "maior_corpo": 6517,
+      "aceitou_o_pedido_inteiro": null,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2026-10-01",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-salario-minimo-mensal",
+      "fonte": "Eurostat",
+      "edicao": "earn_mw_cur, freq=S, currency=EUR, geo=PT",
+      "periodicidade": "semestral",
+      "unidade": "euros por mês",
+      "nome_da_fonte": "Monthly minimum wages - bi-annual data",
+      "primeiro": "1999-S1",
+      "ultimo": "2026-S2",
+      "pontos": 56,
+      "ultimo_valor": "1 073",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 0,
+      "marcas": [],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 1,
+      "bytes_dos_corpos": 4742,
+      "maior_corpo": 4742,
+      "aceitou_o_pedido_inteiro": null,
+      "periodos_fora_da_cadencia_na_resposta": 0,
+      "published_at": "2026-07-31",
+      "access_date": "2026-10-04",
+      "derivada_de": []
+    },
+    {
+      "id": "serie-cem-euros-de-2015-01",
+      "fonte": "derivada",
+      "edicao": null,
+      "periodicidade": "mensal",
+      "unidade": "euros",
+      "nome_da_fonte": null,
+      "primeiro": "2015-01",
+      "ultimo": "2026-08",
+      "pontos": 140,
+      "ultimo_valor": "77,167",
+      "ultima_bandeira": null,
+      "pontos_com_marca": 0,
+      "marcas": [],
+      "lacunas": [],
+      "lacunas_com_razao_da_fonte": 0,
+      "pedidos": 0,
+      "bytes_dos_corpos": 0,
+      "maior_corpo": 0,
+      "aceitou_o_pedido_inteiro": null,
+      "periodos_fora_da_cadencia_na_resposta": null,
+      "published_at": null,
+      "access_date": null,
+      "derivada_de": [
+        "serie-ipc-indice"
+      ]
+    }
+  ],
+  "series_no_ficheiro": 16,
+  "pontos_no_ficheiro": 4131,
+  "pontos_com_excerto": 3991,
+  "linhas_presas": [
+    {
+      "linha": "ipc-variacao-homologa",
+      "serie": "serie-ipc-variacao-homologa",
+      "periodo": "2026-08",
+      "valor": "3,30",
+      "e_o_ultimo": true,
+      "geografia_na_serie": null
+    },
+    {
+      "linha": "ipc-alimentacao-variacao-homologa",
+      "serie": "serie-ipc-alimentacao-variacao-homologa",
+      "periodo": "2026-08",
+      "valor": "2,14",
+      "e_o_ultimo": true,
+      "geografia_na_serie": null
+    },
+    {
+      "linha": "ihpc-variacao-homologa-ue",
+      "serie": "serie-ihpc-variacao-homologa-ue",
+      "periodo": "2026-08",
+      "valor": "3,2",
+      "e_o_ultimo": true,
+      "geografia_na_serie": "EU27_2020"
+    },
+    {
+      "linha": "remuneracao-bruta-mensal-media",
+      "serie": "serie-remuneracao-bruta-mensal-media",
+      "periodo": "2026-T2",
+      "valor": "1 835",
+      "e_o_ultimo": true,
+      "geografia_na_serie": null
+    },
+    {
+      "linha": "pensao-media-anual-2025",
+      "serie": "serie-pensao-media-anual",
+      "periodo": "2025",
+      "valor": "8 066",
+      "e_o_ultimo": true,
+      "geografia_na_serie": null
+    },
+    {
+      "linha": "beneficiarios-do-rsi-por-mil-2024",
+      "serie": "serie-beneficiarios-do-rsi-por-mil",
+      "periodo": "2024",
+      "valor": "24,22",
+      "e_o_ultimo": true,
+      "geografia_na_serie": null
+    },
+    {
+      "linha": "linha-de-risco-de-pobreza-2025",
+      "serie": "serie-linha-de-risco-de-pobreza",
+      "periodo": "2025",
+      "valor": "8 679",
+      "e_o_ultimo": true,
+      "geografia_na_serie": null
+    }
+  ],
+  "linhas_paradas": [
+    {
+      "linha": "ihpc-variacao-homologa",
+      "serie": "serie-ihpc-variacao-homologa",
+      "periodo_da_linha": "2026-08",
+      "valor": "3,6",
+      "ultimo_ponto": "2026-09",
+      "ultimo_valor": "3,6",
+      "ultima_bandeira": "e",
+      "serie_atualizada": "2026-10-02"
+    }
+  ],
+  "linhas_coerentes": [
+    {
+      "linha": "retribuicao-minima-mensal-doze-meses-2026",
+      "serie": "serie-salario-minimo-mensal",
+      "ano": "2026",
+      "valor": "1 073",
+      "periodos": [
+        "2026-S1",
+        "2026-S2"
+      ]
+    }
+  ],
+  "pedidos": {
+    "tentativas": 184,
+    "por_estado": {
+      "lido 200": 180,
+      "recusado 502": 3,
+      "recusado 414": 1
+    },
+    "por_anfitriao": {
+      "www.ine.pt": 175,
+      "ec.europa.eu": 9
+    },
+    "recusas_ora_06502": [
+      {
+        "nome": "ine-serie-ipc-variacao-homologa.json",
+        "file": "016-ine-serie-ipc-variacao-homologa.json",
+        "bytes": 293,
+        "sha256": "83da2a646644076e6e4ffba56c3748d496456d05416f83be9e4c5cf34e0de2ae"
+      },
+      {
+        "nome": "ine-serie-ipc-alimentacao-variacao-homologa.json",
+        "file": "052-ine-serie-ipc-alimentacao-variacao-homologa.json",
+        "bytes": 293,
+        "sha256": "5f16d3ddf38a1bd9cd93e4980deaf9323b6eb63dc96f4883c69ed38a2644fc14"
+      }
+    ],
+    "recusa_414": [
+      {
+        "nome": "ine-serie-ipc-indice.json",
+        "http": 414,
+        "bytes": 0,
+        "erro": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014639&Dim1=S3A194801,S3A194802,S3A194803,S3A194804,S3A194805,S3A194806,S3A194807,S3A194808,S3A194",
+        "file": "091-ine-serie-ipc-indice.json"
+      }
+    ],
+    "teto_em_cada_pedido": [
+      8388608
+    ],
+    "user_agent": [
+      "OEstadoDoPais/corredor"
+    ],
+    "cliente": [
+      "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional"
+    ],
+    "primeiro": "2026-10-04T03:43:40Z",
+    "ultimo": "2026-10-04T03:56:20Z",
+    "maior_corpo_lido": 349569
+  },
+  "alojados": {
+    "no_fetch": 180,
+    "no_manifesto": 180,
+    "bytes": 1888871
+  },
+  "metainformacao_do_ine": {
+    "0014663": {
+      "Periodic": "Mensal",
+      "PrimeiroPeriodo": "Janeiro de 1992",
+      "UltimoPeriodo": "Agosto de 2026",
+      "PrecisaoDecimal": "2",
+      "DataUltimaAtualizacao": "2026-09-10"
+    },
+    "0014639": {
+      "Periodic": "Mensal",
+      "PrimeiroPeriodo": "Janeiro de 1948",
+      "UltimoPeriodo": "Agosto de 2026",
+      "PrecisaoDecimal": "3",
+      "DataUltimaAtualizacao": "2026-09-10"
+    },
+    "0014751": {
+      "Periodic": "Trimestral",
+      "PrimeiroPeriodo": "Março de 2025",
+      "UltimoPeriodo": "Junho de 2026",
+      "PrecisaoDecimal": "0",
+      "DataUltimaAtualizacao": "2026-08-14"
+    },
+    "0014532": {
+      "Periodic": "Anual",
+      "PrimeiroPeriodo": "2017",
+      "UltimoPeriodo": "2025",
+      "PrecisaoDecimal": "0",
+      "DataUltimaAtualizacao": "2026-08-28"
+    },
+    "0013420": {
+      "Periodic": "Anual",
+      "PrimeiroPeriodo": "2023",
+      "UltimoPeriodo": "2024",
+      "PrecisaoDecimal": "2",
+      "DataUltimaAtualizacao": "2025-10-06"
+    }
+  },
+  "s15_e_a_linha": {
+    "corpo_da_linha": "eurostat/earn_mw_cur.json",
+    "sha256_da_linha": "82bf5d3a3b5cd5be503a9a168f5926da7f36fd05da8f03e4597d1d2d5fe02f28",
+    "lido_em_da_linha": "2026-09-01T13:21:32+00:00",
+    "sha256_da_serie": "82bf5d3a3b5cd5be503a9a168f5926da7f36fd05da8f03e4597d1d2d5fe02f28",
+    "mesmos_bytes": true
+  },
+  "escolha_da_s3": {
+    "escolhido": "0014639",
+    "fixas": [
+      [
+        "Dim3",
+        "T"
+      ]
+    ],
+    "candidatos": [
+      {
+        "codigo": "0014639",
+        "nome": "Índice de preços no consumidor (IPC, Base - 2025) por Localização geográfica e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+        "criterios": {
+          "1_mensal": true,
+          "2_consumo_individual": true,
+          "3_pt_e_total": true,
+          "4_nome_do_brief": true
+        },
+        "primeiro": "Janeiro de 1948",
+        "ultimo": "Agosto de 2026",
+        "casas_decimais": "3"
+      },
+      {
+        "codigo": "0014640",
+        "nome": "Índice de preços no consumidor (IPC, Base - 2025) por Localização geográfica e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+        "criterios": {
+          "1_mensal": true,
+          "2_consumo_individual": false,
+          "3_pt_e_total": true,
+          "4_nome_do_brief": false
+        },
+        "primeiro": "Janeiro de 1948",
+        "ultimo": "Agosto de 2026",
+        "casas_decimais": "3"
+      },
+      {
+        "codigo": "0014641",
+        "nome": "Índice de preços no consumidor (IPC, Base - 2025) por Localização geográfica e Consumo individual por objetivo; Anual - INE, Índice de preços no consumidor",
+        "criterios": {
+          "1_mensal": false,
+          "2_consumo_individual": true,
+          "3_pt_e_total": true,
+          "4_nome_do_brief": true
+        },
+        "primeiro": "1948",
+        "ultimo": "2025",
+        "casas_decimais": "3"
+      },
+      {
+        "codigo": "0014642",
+        "nome": "Índice de preços no consumidor (IPC, Base - 2025) por Localização geográfica e Agregados especiais; Anual - INE, Índice de preços no consumidor",
+        "criterios": {
+          "1_mensal": false,
+          "2_consumo_individual": false,
+          "3_pt_e_total": true,
+          "4_nome_do_brief": false
+        },
+        "primeiro": "1948",
+        "ultimo": "2025",
+        "casas_decimais": "3"
+      },
+      {
+        "codigo": "0014659",
+        "nome": "Índice de preços no consumidor (IPC, Base - 2025) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Mensal - INE, Índice de preços no consumidor",
+        "criterios": {
+          "1_mensal": true,
+          "2_consumo_individual": true,
+          "3_pt_e_total": true,
+          "4_nome_do_brief": false
+        },
+        "primeiro": "Janeiro de 1991",
+        "ultimo": "Agosto de 2026",
+        "casas_decimais": "3"
+      },
+      {
+        "codigo": "0014660",
+        "nome": "Índice de preços no consumidor (IPC, Base - 2025) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Mensal - INE, Índice de preços no consumidor",
+        "criterios": {
+          "1_mensal": true,
+          "2_consumo_individual": false,
+          "3_pt_e_total": true,
+          "4_nome_do_brief": false
+        },
+        "primeiro": "Janeiro de 1991",
+        "ultimo": "Agosto de 2026",
+        "casas_decimais": "3"
+      },
+      {
+        "codigo": "0014667",
+        "nome": "Índice de preços no consumidor (IPC, Base - 2025) por Localização geográfica (NUTS II - 2024) e Consumo individual por objetivo; Anual - INE, Índice de preços no consumidor",
+        "criterios": {
+          "1_mensal": false,
+          "2_consumo_individual": true,
+          "3_pt_e_total": true,
+          "4_nome_do_brief": false
+        },
+        "primeiro": "1991",
+        "ultimo": "2025",
+        "casas_decimais": "3"
+      },
+      {
+        "codigo": "0014668",
+        "nome": "Índice de preços no consumidor (IPC, Base - 2025) por Localização geográfica (NUTS II - 2024) e Agregados especiais; Anual - INE, Índice de preços no consumidor",
+        "criterios": {
+          "1_mensal": false,
+          "2_consumo_individual": false,
+          "3_pt_e_total": true,
+          "4_nome_do_brief": false
+        },
+        "primeiro": "1991",
+        "ultimo": "2025",
+        "casas_decimais": "3"
+      }
+    ]
+  },
+  "teto_do_corpo": {
+    "maior_ficheiro_de_fonte_em_git": "content/13 Dominios/source/eurostat/esa2010-KS-02-13-269-EN.pdf",
+    "bytes": 6714448,
+    "ficheiros_de_fonte_em_git": 351,
+    "teto": 8388608
+  }
+}

@@ -1,0 +1,11 @@
+
+> o-estado-do-pais@0.1.0 provar:guardas
+> node scripts/provar-guardas.mjs
+
+
+[90m  guardas · 134 conferência(s) sobre os guardas de execução do bloco F0.4[0m
+[31m  OS GUARDAS NÃO PASSAM · 1 caso(s):[0m
+
+    [31m✗[0m CAMPOS/tamanho: esperava ACEITE e foi RECUSADO.
+        os 24 campos do formato de uma linha.
+

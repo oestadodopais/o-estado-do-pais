@@ -1,0 +1,40 @@
+§1.6 · Formatação portuguesa dos números nas duas edições — por agora
+    publisher/export_site_rows.py:425
+§1.09 · sem título em DECISIONS.md
+    publisher/dominios_build.py:932
+§1.24 · O livro-razão passou a ter páginas, e o selo passou a ser uma porta
+    publisher/export_site_rows.py:803 (perto do diff)
+    publisher/fixtures/rp3/claims/beneficiarios-do-rsi-por-mil-2024.yml:48 (perto do diff)
+    publisher/fixtures/rp3/claims/ihpc-variacao-homologa-ue.yml:48 (perto do diff)
+    publisher/fixtures/rp3/claims/ipc-alimentacao-variacao-homologa.yml:48 (perto do diff)
+    publisher/fixtures/rp3/claims/ipc-variacao-homologa.yml:48 (perto do diff)
+    publisher/fixtures/rp3/claims/linha-de-risco-de-pobreza-2025.yml:48 (perto do diff)
+    publisher/fixtures/rp3/claims/pensao-media-anual-2025.yml:48 (perto do diff)
+    publisher/fixtures/rp3/claims/remuneracao-bruta-mensal-media.yml:53 (perto do diff)
+§1.31 · O motor e o publicador, e os dois campos que o material de Évora pediu
+    publisher/README.md:56 (perto do diff)
+    publisher/export_site_rows.py:24 (perto do diff)
+§1.32 · O tubo: setenta linhas atravessaram, e o sítio confere-as à chegada
+    publisher/README.md:56 (perto do diff)
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    publisher/README.md:243 (perto do diff)
+    publisher/README.md:311
+    publisher/README.md:357
+    publisher/export_site_rows.py:1043
+§1.68 · As páginas dos 308 concelhos
+    publisher/dominios_build.py:60 (perto do diff)
+    publisher/dominios_build.py:932
+§1.87 · Correções pequenas, sétima passagem (I97, I98, I100): a língua dos organismos e das edições, o feixe do desenho, a régua das áreas
+    publisher/dominios_build.py:44 (perto do diff)
+§1.115 · Sete nomes do INE por conferir estiveram no ar como nomes oficiais: a correção, e o que muda para não voltar a acontecer
+    core/gate.py:208 (perto do diff)
+§1.124 · A leitura de fora de 23.09.2026: o que o lugar de direção conferiu, o que decidiu, e a notificação do INE do mesmo dia
+    publisher/dominios_build.py:733
+    publisher/dominios_fetch.py:187 (perto do diff)
+§1.132 · O RP1 construído pelo Codex em três peças e lido a frio duas vezes pelo Opus, as decisões do diretor de 26.09 à tarde sobre o orçamento e o tracker, os briefs do RP2 e do RP3, e a aterragem
+    publisher/dominios_readers.py:458 (perto do diff)
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    core/gate.py:238
+12 decisão(ões) citada(s) em 391 ficheiro(s) de texto
+0 ficheiro(s) binário(s) saltado(s)
+conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível

@@ -1,0 +1,161 @@
+{
+  "bloco": "RP3",
+  "construcao": "39f15b8eb38ea7bfd727da2b4ee0d2e6601df947",
+  "plantas": [
+    {
+      "nome": "rp3-html-ponto-trocado",
+      "controlo": false,
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "segundos": 21.3,
+      "mordidas": [
+        {
+          "mordida": "o ponto «2026-T2» da série «serie-remuneracao-bruta-mensal-media» foi renderizado como",
+          "vista": true
+        }
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/livro-razao/series/serie-remuneracao-bruta-mensal-media/index.html",
+          "antes": "9f0bf6388cfd4619b252b9c96d3091a0c4770beb8ad68e60609f6f021820b7a8",
+          "reposto": "9f0bf6388cfd4619b252b9c96d3091a0c4770beb8ad68e60609f6f021820b7a8"
+        }
+      ]
+    },
+    {
+      "nome": "rp3-html-linha-tirada",
+      "controlo": false,
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "segundos": 21.3,
+      "mordidas": [
+        {
+          "mordida": "RP3: a tabela do recibo da série «serie-remuneracao-bruta-mensal-media» não é a dos pontos da série",
+          "vista": true
+        },
+        {
+          "mordida": "RP3: o recibo da série no tempo \"serie-remuneracao-bruta-mensal-media\" não mostrou os 6 pontos da série na edição \"en\"",
+          "vista": true
+        }
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/en/ledger/series/serie-remuneracao-bruta-mensal-media/index.html",
+          "antes": "781f1bb3457e4c3896647665c1388ccddfe29c6df994b6c7b5bca8babce92060",
+          "reposto": "781f1bb3457e4c3896647665c1388ccddfe29c6df994b6c7b5bca8babce92060"
+        }
+      ]
+    },
+    {
+      "nome": "rp3-html-algarismo-solto",
+      "controlo": false,
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "segundos": 20.3,
+      "mordidas": [
+        {
+          "mordida": "algarismos fora do livro-razão: \"7\"",
+          "vista": true
+        }
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/livro-razao/series/serie-cem-euros-de-2015-01/index.html",
+          "antes": "9aaee2792d10eb46a309258d6fb5d78b47f0222066f0e70a60c4257e2bdf9aec",
+          "reposto": "9aaee2792d10eb46a309258d6fb5d78b47f0222066f0e70a60c4257e2bdf9aec"
+        }
+      ]
+    },
+    {
+      "nome": "rp3-formas-data-do-ponto",
+      "controlo": false,
+      "comando": "node scripts/check-formas.mjs",
+      "codigo": 1,
+      "segundos": 5.5,
+      "mordidas": [
+        {
+          "mordida": "a data do campo \"pontos\\.0\\.periodo\" da série \"serie-remuneracao-bruta-mensal-media\" não é a da série",
+          "vista": true
+        }
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/livro-razao/series/serie-remuneracao-bruta-mensal-media/index.html",
+          "antes": "9f0bf6388cfd4619b252b9c96d3091a0c4770beb8ad68e60609f6f021820b7a8",
+          "reposto": "9f0bf6388cfd4619b252b9c96d3091a0c4770beb8ad68e60609f6f021820b7a8"
+        }
+      ]
+    },
+    {
+      "nome": "rp3-lugar-limiar-na-conta",
+      "controlo": false,
+      "comando": "node scripts/check-lugar.mjs",
+      "codigo": 1,
+      "segundos": 22.6,
+      "mordidas": [
+        {
+          "mordida": "8\\.5 .*ACIMA DO TETO",
+          "vista": true
+        }
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/livro-razao/series/serie-cem-euros-de-2015-01/index.html",
+          "antes": "9aaee2792d10eb46a309258d6fb5d78b47f0222066f0e70a60c4257e2bdf9aec",
+          "reposto": "9aaee2792d10eb46a309258d6fb5d78b47f0222066f0e70a60c4257e2bdf9aec"
+        }
+      ]
+    },
+    {
+      "nome": "rp3-voz-nome-de-outra-serie",
+      "controlo": false,
+      "comando": "node scripts/check-voz.mjs",
+      "codigo": 1,
+      "segundos": 30.9,
+      "mordidas": [
+        {
+          "mordida": "não é o nome da série \"serie-cem-euros-de-2015-01\"",
+          "vista": true
+        }
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/livro-razao/series/serie-cem-euros-de-2015-01/index.html",
+          "antes": "9aaee2792d10eb46a309258d6fb5d78b47f0222066f0e70a60c4257e2bdf9aec",
+          "reposto": "9aaee2792d10eb46a309258d6fb5d78b47f0222066f0e70a60c4257e2bdf9aec"
+        }
+      ]
+    },
+    {
+      "nome": "rp3-voz-nome-de-outra-serie-sem-a-marca",
+      "controlo": true,
+      "comando": "node scripts/check-voz.mjs",
+      "codigo": 0,
+      "segundos": 30.9,
+      "mordidas": [
+        {
+          "mordida": "não é o nome da série \"serie-cem-euros-de-2015-01\"",
+          "vista": false
+        },
+        {
+          "mordida": "data-nome=\"serie\"",
+          "vista": false
+        }
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/livro-razao/series/serie-cem-euros-de-2015-01/index.html",
+          "antes": "9aaee2792d10eb46a309258d6fb5d78b47f0222066f0e70a60c4257e2bdf9aec",
+          "reposto": "9aaee2792d10eb46a309258d6fb5d78b47f0222066f0e70a60c4257e2bdf9aec"
+        }
+      ]
+    }
+  ]
+}
