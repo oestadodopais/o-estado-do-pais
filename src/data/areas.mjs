@@ -702,6 +702,12 @@ export const AREAS = [
  */
 export const SEM_AREA = [
   {
+    estudos: ['oe-2026'],
+    id: /^(?!.*-ue$)(?:oe-2026-|execucao-2026-|despesa-por-funcao-2024-)/,
+    assunto: 'O Orçamento do Estado e a execução, base de dados do bloco OE1',
+    motivo: 'O OE1 sela os dados para a futura página do governo. Não atribui a despesa por função a ministérios, nem apresenta o orçamento bruto como despesa efetiva. A sua integração nas áreas e a página do governo pertencem ao bloco seguinte. O agregado europeu mantém a regra própria já declarada.',
+  },
+  {
     assunto: 'A variação dos preços no consumidor',
     id: /^(?:ipc-(?:variacao-homologa|variacao-media-12-meses|alimentacao-variacao-homologa|energia-em-casa-variacao-homologa|combustiveis-variacao-homologa|rendas-variacao-homologa|sem-habitacao-variacao-media-12-meses)|ihpc-variacao-homologa)(?:-periodo-anterior)?$/,
     motivo: 'Estas séries medem a variação dos preços no consumidor. As matérias transcritas não nomeiam a inflação nem o nível geral dos preços. A utilização da média sem habitação como referência das rendas não a transforma numa medida dos preços da habitação. As linhas continuam nos temas nacionais; não se atribui uma matéria ministerial que a declaração não nomeia.',
