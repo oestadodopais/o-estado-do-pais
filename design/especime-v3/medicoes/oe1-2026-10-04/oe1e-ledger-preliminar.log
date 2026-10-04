@@ -1,0 +1,395 @@
+
+> o-estado-do-pais@0.1.0 ledger:check
+> node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/linha/historia-da-proveniencia.mjs && node tests/linha/historia-do-valor.mjs
+
+{
+  "controlos": [
+    {
+      "nome": "cadeia de source",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de source_url",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.title",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.edition",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.locator",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de access_date",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de excerpt",
+      "passou": true
+    },
+    {
+      "nome": "instantâneo com as cinco condições",
+      "passou": true
+    },
+    {
+      "nome": "Bandeiras: JSON-stat e formatos anteriores, antes e depois das plantas",
+      "passou": true
+    },
+    {
+      "nome": "Ressalvas e geografias intactas depois das plantas, com bandeiras antigas preservadas",
+      "passou": true
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "source: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "source: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "source: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "source_url: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\": o último \"new_value\" é https://fonte.invalid/b, mas a linha declara https://fonte.invalid/c."
+    },
+    {
+      "nome": "source_url: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-03: cadeia contraditória; \"old_value\" é https://fonte.invalid/a, mas antes vigorava https://fonte.invalid/b."
+    },
+    {
+      "nome": "source_url: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.title: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.title: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.title: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.edition: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.edition: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.edition: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.locator: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.locator: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.locator: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "access_date: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\": o último \"new_value\" é 2026-08-02, mas a linha declara 2026-08-03."
+    },
+    {
+      "nome": "access_date: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\" a 2026-08-03: cadeia contraditória; \"old_value\" é 2026-08-01, mas antes vigorava 2026-08-02."
+    },
+    {
+      "nome": "access_date: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\" a 2026-07-31: o acesso não pode ser posterior à mudança que o declara."
+    },
+    {
+      "nome": "excerpt: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "excerpt: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "excerpt: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "documento sem classe ficheiro",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "documento sem lista de ficheiros",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "endereço novo diferente do vigente",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/outro/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "recurso de outro conjunto",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/outro-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "recurso posterior à entrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-203527-9f913853/listagem-de-entidades-prr-20260819.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "ficheiro sem a data do recurso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "razão portuguesa sem endereço",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "razão inglesa sem endereço",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    }
+  ],
+  "bandeiras": [
+    {
+      "nome": "JSON-stat: bandeira junto de outro valor",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: bandeira no índice de outra célula",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: outro país no corpo",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: outro país no pedido",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: outro período",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: valor ausente",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: duas células",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: bandeira retirada",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: significado da bandeira alterado",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: diferença além da precisão float64",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: dimensão repetida",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: bandeira retirada",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: bandeira junto de outro valor",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: outro país no excerto",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: outro país no pedido",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: bandeira fora do fim",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    }
+  ],
+  "ressalvas": [
+    {
+      "nome": "Ressalva: falta a versão inglesa",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] \"ressalva_en\" tem de ser texto não vazio; as duas línguas da ressalva são obrigatórias."
+    },
+    {
+      "nome": "Ressalva: texto vazio",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] \"ressalva\" tem de ser texto não vazio; as duas línguas da ressalva são obrigatórias."
+    },
+    {
+      "nome": "Ressalva: número inventado",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] \"ressalva\" contém o número \"987654321\" sem esse número completo no excerto ou na derivação."
+    },
+    {
+      "nome": "Conta numa linha transcrita sem ressalva",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] uma linha transcrita com \"derivation\" exige a ressalva nas duas línguas; a conta não pode explicar o valor publicado."
+    },
+    {
+      "nome": "Conta da ressalva sem a versão inglesa",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-efetiva-administracao-central.yml] uma linha transcrita com \"derivation\" exige a ressalva nas duas línguas; a conta não pode explicar o valor publicado."
+    }
+  ],
+  "geografias": [
+    {
+      "nome": "JSON-stat: linha portuguesa com pedido e corpo de Espanha",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    },
+    {
+      "nome": "JSON-stat: etiqueta de Espanha sob o código de Portugal",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    },
+    {
+      "nome": "JSON-stat: edição de outro país",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    },
+    {
+      "nome": "JSON-stat: agregado sem bandeira com país trocado",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-ue.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    }
+  ],
+  "contagens": {
+    "controlos": 10,
+    "plantas": 29,
+    "bandeiras": 16,
+    "ressalvas": 5,
+    "geografias": 4
+  },
+  "erros_do_livro": [],
+  "avisos_do_livro": [
+    "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço."
+  ]
+}
+
+  aritmética · 77 conferência(s): a especificação partilhada com o motor e os estragos plantados num livro-razão de mentira
+  ✓ os quatro empates a meio, a divisão exata e as duas derivações que o float64 aceitava.
+
+  livro-razão · 3195 afirmações
+
+  10 aviso(s):
+    · [evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-pago-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-pago-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    · [evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+
+  ✓ 3195 afirmações válidas · 366 derivadas · 370 com aritmética reavaliada no build · 2046 com o rótulo da fonte
+
+  casas decimais do excerto · 1367 linha(s) lida(s): 117 pelo literal do valor no fim do excerto e 1250 pela forma que o INE publica (1 com o sinal da fonte declarado); 1431 por ler (sem nenhum dos dois), 378 derivada(s) fora da regra · 19 planta(s), 19 certa(s)
+  casas decimais do excerto · linhas do INE sem a forma publicada: 0
+  casas decimais do excerto · 11 linha(s) do INE com o excerto sem o registo da resposta, pelo caminho geral: alentejo-central-poder-de-compra-2023, divida-publica-2024-notificacao-ine-2026-09, divida-publica-2025-notificacao-ine-2026-09, evora-concentracao-vab4-2024, evora-empresas-2024, evora-poder-de-compra-2023, evora-populacao-2021, evora-populacao-2025, evora-vab-empresarial-2024, portugal-concentracao-vab4-2024, saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09
+  ✓ nenhuma linha sem derivação escreve menos casas decimais do que o excerto da sua fonte.
+  ✓ 0 marcador(es) «[a verificar]» em notas não publicadas, todos datados e dentro do prazo · 5 plantas apanhadas pelo detetor
+
+  Dívida de proveniência: 8 afirmação(ões) com campos "[a verificar]"
+    agua-nao-faturada-portugal-2024 → source_url, excerpt
+    avisos-pt2030-abertos → source, source_url, access_date, excerpt, document.title, document.edition
+    avisos-pt2030-pessoas-singulares → source, source_url, access_date, excerpt, document.title, document.edition
+    ciclo-substituicao-condutas → source, source_url, access_date, reference_date, excerpt, document.title, document.edition
+    evora-prr-aprovado-2026 → excerpt
+    evora-prr-pago-2026 → excerpt
+    evora-prr-vencido-aprovado-2026 → excerpt
+    saldo-natural-portugal-2025 → source_url, access_date, excerpt, document.title, document.edition
+    Isto não impede o build. Impede que se diga que o livro-razão está fechado.
+
+  séries · 26 série(s) de 4411 ponto(s), 24 com marca da fonte · 16 no tempo · 7 linha(s) presa(s) à sua série · 29 planta(s), uma ou mais por regra, vistas a morder
+  ✓ cada série de países tem os 27 e a União e as gémeas batem como números; cada série no tempo tem a cadência com as lacunas declaradas, cada valor no seu excerto, a derivada refeita, e cada linha presa é o ponto do seu período.
+
+
+  amarra das decisões · 118 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»
+  ✓ cada texto no ar tem uma decisão registada que o governa, e cada frase que a constituição lhe cita está lá.
+
+  bytes de controlo · 3 de 3 ficheiro(s) sem nenhum · 3 planta(s) vista(s)
+  ✓ os ficheiros desta régua leem-se como texto, do primeiro byte ao último.
+
+{"controlos":11,"plantas":8,"controlos_integros":11,"plantas_mordidas":8}
+História do valor: 2 controlos e 4 plantas.

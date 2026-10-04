@@ -1,0 +1,3 @@
+[oe1-2026-10-04-b 7b6572ea] OE1-e: mostrar o período de cada linha e medir as correções com plantas
+ 9 files changed, 582 insertions(+), 24 deletions(-)
+ create mode 100644 design/especime-v3/medicoes/oe1-2026-10-04/medir-oe1e.py

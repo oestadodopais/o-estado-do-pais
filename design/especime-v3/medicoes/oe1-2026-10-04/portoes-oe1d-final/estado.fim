@@ -1,0 +1,41 @@
+ M design/especime-v3/medicoes/oe1-2026-10-04/corrida-sitio.cabeca
+ M design/especime-v3/medicoes/oe1-2026-10-04/corrida-sitio.inicio
+ M design/especime-v3/medicoes/oe1-2026-10-04/decisoes-oe1d-sitio.log
+ M design/especime-v3/medicoes/oe1-2026-10-04/l1-oe1d.json
+ M design/especime-v3/medicoes/oe1-2026-10-04/medidas-oe1d.json
+ M design/especime-v3/medicoes/oe1-2026-10-04/oe1d-l1-check-lugar.log
+ M design/especime-v3/medicoes/oe1-2026-10-04/oe1d-l1-final.cabeca
+ M design/especime-v3/medicoes/oe1-2026-10-04/oe1d-l1-final.fim
+ M design/especime-v3/medicoes/oe1-2026-10-04/oe1d-l1-final.inicio
+ M design/especime-v3/medicoes/oe1-2026-10-04/oe1d-l1-final.log
+ M design/especime-v3/medicoes/oe1-2026-10-04/oe1d-medicao-final.cabeca
+ M design/especime-v3/medicoes/oe1-2026-10-04/oe1d-medicao-final.fim
+ M design/especime-v3/medicoes/oe1-2026-10-04/oe1d-medicao-final.inicio
+ M design/especime-v3/medicoes/oe1-2026-10-04/oe1d-medicao-final.log
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/build.fim
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/build.inicio
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/build.log
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/cabeca
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/cabeca.fim
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/estado.fim
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/ledger.cabeca
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/ledger.fim
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/ledger.inicio
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/typecheck.fim
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/typecheck.inicio
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.fim
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.inicio
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.log
+?? design/especime-v3/medicoes/oe1-2026-10-04/decisoes-oe1d-motor.codigo
+?? design/especime-v3/medicoes/oe1-2026-10-04/decisoes-oe1d-sitio.codigo
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-bases.cabeca
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-bases.codigo
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-bases.fim
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-bases.inicio
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-bases.log
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-mapa-integrado.cabeca
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-mapa-integrado.codigo
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-mapa-integrado.fim
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-mapa-integrado.inicio
+?? design/especime-v3/medicoes/oe1-2026-10-04/oe1d-mapa-integrado.log
+?? design/especime-v3/medicoes/oe1-2026-10-04/portoes-oe1d-antes-r3/

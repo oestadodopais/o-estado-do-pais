@@ -1,0 +1,486 @@
+{
+  "conferencias": [
+    {
+      "nome": "As linhas do manifesto têm os dois nomes",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Nenhum nome contém algarismos",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Livro e manifesto preservados",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Módulo determinista mesmo com ordem diferente",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Ministério distingue orçamento e despesa bruta",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Rubricas que não são ministérios conservam a natureza",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Grafia corrente tem os acentos",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "COFOG distingue o país e a função",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Derivada diz a função e o denominador",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Nome não distingue programa de ministério",
+      "passou": true,
+      "planta": true,
+      "queixa": "Nomes: nome sem distinção entre oe-2026-despesa-programa-015 e oe-2026-despesa-ministerio-saude"
+    },
+    {
+      "nome": "Rótulo fora do vocabulário",
+      "passou": true,
+      "planta": true,
+      "queixa": "Nomes: rótulo inesperado em oe-2026-despesa-programa-001"
+    },
+    {
+      "nome": "Linha em falta no livro",
+      "passou": true,
+      "planta": true,
+      "queixa": "Nomes: livro sem as linhas esperadas ou com repetição"
+    },
+    {
+      "nome": "Linha em falta no manifesto",
+      "passou": true,
+      "planta": true,
+      "queixa": "Nomes: manifesto sem as linhas esperadas"
+    },
+    {
+      "nome": "Período não entra no nome",
+      "passou": true,
+      "planta": true,
+      "queixa": "Nomes: algarismo no nome de oe-2026-despesa-ministerio-saude"
+    },
+    {
+      "nome": "Nome sem a grandeza e o perímetro",
+      "passou": true,
+      "planta": true,
+      "queixa": "Nomes: nome não corresponde à grandeza e ao perímetro de oe-2026-despesa-ministerio-saude"
+    },
+    {
+      "nome": "Denominador efetivo usado numa parte da despesa bruta",
+      "passou": true,
+      "planta": true,
+      "queixa": "Nomes: denominador ou numerador inesperado"
+    },
+    {
+      "nome": "Função inglesa não corresponde à classificação portuguesa",
+      "passou": true,
+      "planta": true,
+      "queixa": "Nomes: rótulo inesperado em despesa-por-funcao-2024-gf01-pt"
+    }
+  ]
+}
+OE1_NOMES_TEST: PASS · 17 conferências
+{
+  "conferencias": [
+    {
+      "nome": "As páginas originais conservam as cinquenta e nove linhas PDF seladas",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Unidade do mapa orgânico trocada",
+      "passou": true,
+      "planta": true,
+      "queixa": "pdf/OE2026_doc05_Mapa04.pdf, p. 1: cabeçalho ausente ou ambíguo; esperado: IMPORTÂNCIAS EM EUROS"
+    },
+    {
+      "nome": "Colunas do mapa orgânico trocadas",
+      "passou": true,
+      "planta": true,
+      "queixa": "pdf/OE2026_doc05_Mapa04.pdf, p. 1: cabeçalho ausente ou ambíguo; esperado: POR CAPÍTULOS POR MINISTÉRIOS"
+    },
+    {
+      "nome": "Cabeçalho dos totais da receita trocado",
+      "passou": true,
+      "planta": true,
+      "queixa": "pdf/OE2026_doc06_Mapa05.pdf, p. 6: cabeçalho ausente ou ambíguo; esperado: POR ARTIGOS POR GRUPOS POR CAPÍTULOS"
+    },
+    {
+      "nome": "Unidade do total combinado trocada",
+      "passou": true,
+      "planta": true,
+      "queixa": "pdf/OE2026_doc02_Mapa01.pdf, p. 2: cabeçalho ausente ou ambíguo; esperado: PROGRAMA / MINISTÉRIO TOTAL EM EUROS"
+    },
+    {
+      "nome": "Unidade da despesa da segurança social trocada",
+      "passou": true,
+      "planta": true,
+      "queixa": "pdf/OE2026_doc09_Mapa08.pdf, p. 2: cabeçalho ausente ou ambíguo; esperado: Em euros"
+    },
+    {
+      "nome": "Coluna total da segurança social renomeada",
+      "passou": true,
+      "planta": true,
+      "queixa": "pdf/OE2026_doc09_Mapa08.pdf, p. 2: cabeçalho ausente ou ambíguo; esperado: OSS"
+    },
+    {
+      "nome": "Ano da receita da segurança social trocado",
+      "passou": true,
+      "planta": true,
+      "queixa": "pdf/OE2026_doc10_Mapa09.pdf, p. 2: cabeçalho ausente ou ambíguo; esperado: 2026"
+    },
+    {
+      "nome": "Unidade da conta consolidada trocada",
+      "passou": true,
+      "planta": true,
+      "queixa": "SEO agosto, p. 49: cabeçalho ausente ou ambíguo; esperado: Período: janeiro a agosto (milhões de euros)"
+    },
+    {
+      "nome": "Cabeçalho da execução da conta consolidada trocado",
+      "passou": true,
+      "planta": true,
+      "queixa": "SEO agosto, p. 49: cabeçalho divergente; esperado: CGE Execução Acumulada"
+    },
+    {
+      "nome": "Ano da coluna do orçamento trocado",
+      "passou": true,
+      "planta": true,
+      "queixa": "SEO agosto, p. 49: cabeçalho divergente; esperado: 2025 2026 2025 2026 2026 Relativa (%)"
+    },
+    {
+      "nome": "Perímetro da conta da administração central trocado",
+      "passou": true,
+      "planta": true,
+      "queixa": "SEO agosto, p. 50: cabeçalho ausente ou ambíguo; esperado: Conta Consolidada da Administração Central"
+    },
+    {
+      "nome": "Grupo da execução deslocado sem mudar as palavras",
+      "passou": true,
+      "planta": true,
+      "queixa": "SEO agosto, p. 50: anos não correspondem aos cabeçalhos; esperados: CGE 2025 | Orçamento Inicial 2026 | Execução Acumulada 2025 | Execução Acumulada 2026 | Grau de Execução (%) 2026"
+    },
+    {
+      "nome": "Cabeçalho da execução por programa trocado",
+      "passou": true,
+      "planta": true,
+      "queixa": "SEO agosto, p. 72: cabeçalho divergente; esperado: Execução Acumulada Contributo"
+    },
+    {
+      "nome": "Anos da execução por programa trocados",
+      "passou": true,
+      "planta": true,
+      "queixa": "SEO agosto, p. 72: cabeçalho divergente; esperado: 2025 2026 Absoluta Relativa (%)"
+    },
+    {
+      "nome": "Julho confirma unidade e colunas das seis correspondências de escala",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Cabeçalho da execução de julho trocado",
+      "passou": true,
+      "planta": true,
+      "queixa": "SEO julho, p. 48: cabeçalho divergente; esperado: CGE Execução Acumulada"
+    },
+    {
+      "nome": "Período da conta de julho trocado",
+      "passou": true,
+      "planta": true,
+      "queixa": "SEO julho, p. 48: cabeçalho ausente ou ambíguo; esperado: Período: janeiro a julho (milhões de euros)"
+    },
+    {
+      "nome": "Modelos dos nomes e oito plantas",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Livro regenerado byte a byte",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Manifesto regenerado sem valores ou excertos",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Todas as fontes consumidas têm recibo e resumo",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Excerto PDF é uma linha literal da página",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Bandeiras provisórias preservadas",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Livro manualmente adulterado",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Programa não fecha com ministério",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Funções excedem o limite de arredondamento",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Unidade de milhões confundida com euros",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Bandeira removida da linha",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Denominador zero",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Derivação mistura unidades",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Derivação mistura períodos",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Bytes alterados sem reparar o recibo",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Ano XML alterado com resumo reparado",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Unidade XML alterada",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Programa duplicado",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Ano XLS alterado com resumo reparado",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Célula ausente não vira zero",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Bandeira não suportada",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "País trocado no corpo",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Licença aberta retirada",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "YAML relido conserva quebras literais",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Travessia prova todas as linhas e contas",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Travessia conserva cada espaço e quebra do excerto",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Excerto literal fabricado recusado",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "JSON literal com bandeira e valor no mesmo índice",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Bandeira junto de outro valor é recusada",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Bandeira de outro país é recusada",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Determinismo do YAML",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Apresentação conserva observações e coordenadas",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Ressalvas justificadas nas duas línguas",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "A ressalva distingue passivos e financiamento por dívida",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "As funções dizem que operações excluem",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Aviso financeiro perdido: planta sem aviso",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Perímetro funcional perdido: planta sem aviso",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "As cinquenta e nove rubricas, totais, programas e quotas dizem operações financeiras",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Rubrica PDF sem aviso financeiro",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Cada aviso está apenas na família e geografia a que pertence",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Ressalva fora do alcance: Escala fora",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Ressalva fora do alcance: Agregado fora",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Ressalva fora do alcance: Comparação fora",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Ressalva fora do alcance: Conteúdo não provado",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "As quatro linhas sem aviso dispensam os dois campos",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "A família financeira não depende da pasta da prova",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "A igualdade EGE é refeita antes de se publicar",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "A igualdade EGE não aceita o nome de outro programa",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "O significado do saldo é conferido pela conta",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Todas as execuções declaram o acumulado",
+      "passou": true,
+      "planta": false
+    },
+    {
+      "nome": "Ressalva recusa diferença não demonstrada",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Ressalva recusa escala não reconciliada",
+      "passou": true,
+      "planta": true
+    },
+    {
+      "nome": "Portugal com pedido e corpo de Espanha",
+      "passou": true,
+      "planta": true
+    }
+  ],
+  "arredondamento": {
+    "oe-2026": {
+      "diferenca": "-0.1",
+      "limite": "0.60",
+      "parcelas": 11
+    },
+    "execucao-2026-07": {
+      "diferenca": "0.0",
+      "limite": "0.60",
+      "parcelas": 11
+    }
+  }
+}
+OE1_TEST: PASS · 71 conferências

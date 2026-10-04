@@ -1,0 +1,131 @@
+{
+  "passagem": "OE1-e",
+  "inicio": "2026-10-04T12:46:19.207Z",
+  "medido_em": "2026-10-04T13:37:08.012492+00:00",
+  "segundos": 3048,
+  "sessoes": [
+    {
+      "sessao": "01a10508-9b42-72e2-a474-124da3a642e1",
+      "modelo": "gpt-6-astra",
+      "ultima_medicao": "2026-10-04T13:36:39.944Z",
+      "contador_anterior": {
+        "input_tokens": 88179069,
+        "cached_input_tokens": 85496320,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 492471,
+        "reasoning_output_tokens": 246729,
+        "total_tokens": 88671540
+      },
+      "contador_atual": {
+        "input_tokens": 102059051,
+        "cached_input_tokens": 98953600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 548794,
+        "reasoning_output_tokens": 267026,
+        "total_tokens": 102607845
+      },
+      "incremento": {
+        "input_tokens": 13879982,
+        "cached_input_tokens": 13457280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 56323,
+        "reasoning_output_tokens": 20297,
+        "total_tokens": 13936305
+      }
+    },
+    {
+      "sessao": "01a106f3-6881-7843-8232-f66e9df2a256",
+      "modelo": "codex-auto-review",
+      "ultima_medicao": "2026-10-04T12:58:32.259Z",
+      "contador_anterior": {},
+      "contador_atual": {
+        "input_tokens": 37311,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 186,
+        "reasoning_output_tokens": 119,
+        "total_tokens": 37497
+      },
+      "incremento": {
+        "input_tokens": 37311,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 186,
+        "reasoning_output_tokens": 119,
+        "total_tokens": 37497
+      }
+    },
+    {
+      "sessao": "01a106f4-300e-7573-852f-ad5c4e310c45",
+      "modelo": "gpt-6-astra",
+      "ultima_medicao": "2026-10-04T12:50:11.639Z",
+      "contador_anterior": {},
+      "contador_atual": {
+        "input_tokens": 510046,
+        "cached_input_tokens": 452608,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4715,
+        "reasoning_output_tokens": 522,
+        "total_tokens": 514761
+      },
+      "incremento": {
+        "input_tokens": 510046,
+        "cached_input_tokens": 452608,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4715,
+        "reasoning_output_tokens": 522,
+        "total_tokens": 514761
+      }
+    },
+    {
+      "sessao": "01a106f4-5ad1-7820-9059-9ee361726418",
+      "modelo": "gpt-6-astra",
+      "ultima_medicao": "2026-10-04T13:11:28.443Z",
+      "contador_anterior": {},
+      "contador_atual": {
+        "input_tokens": 3116526,
+        "cached_input_tokens": 2969216,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29455,
+        "reasoning_output_tokens": 3128,
+        "total_tokens": 3145981
+      },
+      "incremento": {
+        "input_tokens": 3116526,
+        "cached_input_tokens": 2969216,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29455,
+        "reasoning_output_tokens": 3128,
+        "total_tokens": 3145981
+      }
+    },
+    {
+      "sessao": "01a10705-d1a1-7632-969b-50d63f67f10d",
+      "modelo": "codex-auto-review",
+      "ultima_medicao": "2026-10-04T13:37:07.785Z",
+      "contador_anterior": {},
+      "contador_atual": {
+        "input_tokens": 454718,
+        "cached_input_tokens": 332544,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1180,
+        "reasoning_output_tokens": 597,
+        "total_tokens": 455898
+      },
+      "incremento": {
+        "input_tokens": 454718,
+        "cached_input_tokens": 332544,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1180,
+        "reasoning_output_tokens": 597,
+        "total_tokens": 455898
+      }
+    }
+  ],
+  "tokens_totais": 18090442,
+  "tokens_entrada_cache": 17216512,
+  "tokens_entrada_sem_cache": 782071,
+  "tokens_saida": 91859,
+  "limite": "Incremento desde o último contador anterior à ordem OE1-e até ao último disponível. Inclui cache e revisões automáticas; não é preço monetário.",
+  "conhecido_positivo": true
+}

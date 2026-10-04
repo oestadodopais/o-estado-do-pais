@@ -10,7 +10,7 @@ O teste de aceitação integral do §2 não está cumprido. Foram construídas e
 | 2. Leitores | Leitores separados para XML, XLS, JSON-stat e PDF; cliente comum na aquisição. Provas no módulo publisher.oe1_test, registado em core.gate. O anexo XLSX é uma segunda leitura de 26 valores da síntese. |
 | 3. Linhas | Parcial: 16 rubricas orgânicas do Mapa 4, incluindo os Encargos Gerais do Estado e a Presidência do Conselho de Ministros; 20 programas no orçamento; 20 programas executados até agosto; dez funções no orçamento e dez executadas até julho; 30 células Eurostat; totais, indicadores, diferenças de consolidação e 36 derivadas. Faltam os totais consolidados de receita e saldo dos mapas e as necessidades de financiamento mensais. A tabela integral está neste relatório e em LINHAS.md. |
 | 4. Portões | Códigos e cabeças lidos de ficheiro na tabela abaixo. Uma cabeça diferente não é uma prova da cabeça final. |
-| 5. Relatório | Este ficheiro, LINHAS.md, medidas.json e as provas atuais medidas-oe1d.json, medir-oe1d.py, custo-oe1d.json e a resposta curta. Cada contagem tem um conhecido positivo executado pelo guião. |
+| 5. Relatório | Este ficheiro, LINHAS.md, medidas.json e as provas atuais medidas-oe1e.json, medir-oe1e.py, custo-oe1e.json e a resposta curta. Cada contagem tem um conhecido positivo executado pelo guião. |
 
 ## O que a leitura corrigiu e o que ficou por selar
 
@@ -25,7 +25,7 @@ O teste de aceitação integral do §2 não está cumprido. Foram construídas e
 9. O Eurostat de 2024 tem as dez funções dos 27 países. Em 2025, apenas LU tem as dez. Portugal e Espanha conservam a bandeira provisória p, com explicação em português e inglês. A União é o agregado publicado, não uma média calculada.
 10. O modelo de Évora citado no brief vem do Município de Évora, não da DGAL. O §0 foi reproduzido: 3009 linhas iniciais, zero EO e zero COFOG Eurostat. Não se alterou a linha de Évora.
 
-As diferenças de perímetro do brief constam agora das ressalvas publicadas; a regra de citar os ficheiros oficiais mantém-se no registo: mapas e Eurostat têm perímetros diferentes; citam-se dados e documentos oficiais, nunca os portais oe.gov.pt ou Mais Transparência. As quotas ministeriais usam despesa **bruta da AC**, com operações financeiras e transferências internas. As quotas funcionais usam despesa **efetiva consolidada da AC**, incluindo no denominador a diferença de consolidação. Não são repartições da mesma grandeza.
+As diferenças de perímetro constam agora das ressalvas publicadas nas famílias a que se aplicam; a regra de citar os ficheiros oficiais mantém-se no registo: mapas e Eurostat têm perímetros diferentes; citam-se dados e documentos oficiais, nunca os portais oe.gov.pt ou Mais Transparência. As quotas ministeriais usam despesa **bruta da AC**, com operações financeiras e transferências internas. As quotas funcionais usam despesa **efetiva consolidada da AC**, incluindo no denominador a diferença de consolidação. Não são repartições da mesma grandeza.
 
 ## Fontes e licenças
 
@@ -49,23 +49,23 @@ A proposta `publisher/oe1_site_support.patch`, no motor, identificou cinco adapt
 
 As decisões do §5 foram respeitadas: o bloco entrega dados para a futura página do governo; as linhas usam os recibos da família de páginas já existente no livro-razão, sem novos componentes ou declarações de rota; todas as linhas publicadas declaram o perímetro; as fontes que atravessam têm corpos e pedidos reproduzíveis. O ponto da biblioteca foi resolvido por endereços publicados, com os 401 conservados como prova da limitação inicial.
 
-O protocolo final é o do OE1-d: o código é comitado antes da corrida completa; --conferir-final exige cinco zeros, tempos completos e a cabeça corrente. Um último commit, reservado às provas e ao relatório, conserva esses resultados e não muda o código construído ou as linhas. A secção OE1-d distingue a cabeça de código do commit que a entrega com as provas.
+O protocolo final, conservado no OE1-e, é este: o código é comitado antes da corrida completa; --conferir-final exige cinco zeros, tempos completos e a cabeça corrente. Um último commit, reservado às provas e ao relatório, conserva esses resultados e não muda o código construído ou as linhas. A secção OE1-e distingue a cabeça de código do commit que a entrega com as provas.
 
 ## Portões lidos de ficheiro
 
-Corrida integral pela tranca, com o invólucro npm-sem-caminhos.py. O ledger corre com a mesma tranca. Códigos lidos depois do fim de cada processo, na cabeça de código que antecede o último commit de provas.
+Corrida completa pela tranca, ledger incluído. O último commit só guarda as provas da cabeça de código.
 
 | Portão | Código lido | Cabeça da corrida |
 |---|---|---|
-| motor | [0](portoes/motor.codigo) | `1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3` |
-| ledger | [0](portoes/ledger.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
-| build | [0](portoes/build.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
-| verify | [0](portoes/verify.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
-| typecheck | [0](portoes/typecheck.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
+| motor | [0](portoes/motor.codigo) | `38457b2723c47ea126984be6c5c1f778967e6847` |
+| ledger | [0](portoes/ledger.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
+| build | [0](portoes/build.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
+| verify | [0](portoes/verify.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
+| typecheck | [0](portoes/typecheck.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
 
 ## Commits e cabeças
 
-Motor `1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3`, sobre master `47f12e15c927bf238522ac680b1f54c9de29f55d`. Sítio, cabeça de código `914c53e1a76f541c513b576d0a603b4b7de29261`, sobre main `b748a6b4b5f6b3949b4fb9805720dcf2016b3a53`; o commit seguinte só guarda provas.
+Motor `38457b2723c47ea126984be6c5c1f778967e6847`, sobre master `47f12e15c927bf238522ac680b1f54c9de29f55d`. Sítio, cabeça de código `f5549dc8be22f4e936d62fbdfe4eac94b538db97`, sobre main `f27aa38a0939d11908863afe6ee117da03404f5f`; o commit seguinte entrega apenas as provas.
 
 Motor:
 
@@ -73,28 +73,32 @@ Motor:
 - `a1ef2b7 OE1: selar 186 linhas e provar os leitores e a travessia literal`
 - `cf218da OE1-d: conferir cabeçalhos e publicar nomes, acumulados e ressalvas`
 - `1f7520e Publica os limites das contas e das funções na ressalva`
+- `38457b2 OE1-e: provar o alcance das ressalvas e a queixa de cada cabeçalho`
 
 Sítio, depois do rebase:
 
-- `e9404ce3 OE1: o brief «o dinheiro do Estado por ministério e por função, selado no motor» com o §0 medido, pela ideia do diretor de 04.10.2026 e pela leitura de fora de 03.10`
-- `cff8e8bc OE1: receber 186 linhas pelo tubo do motor`
-- `10bfb1f3 OE1: relatar a selagem parcial, as lacunas de fonte e os portões`
-- `481fa94d OE1-b: integrar o conjunto e conferir as bandeiras Eurostat nos dois formatos`
-- `4961e27d OE1-b: reconferir as duas contagens do livro no inventário`
-- `3f5b6eea OE1-b: comitar o relatório, as plantas e as medições da integração`
-- `88f53ac5 OE1-b: reconferir a L1 com a construção de partida`
-- `d618fc5e OE1-b: guardar as provas e as propostas adicionais`
-- `227bb6a0 OE1-b: fechar o relatório com duas extensões pendentes`
-- `81428daf OE1-c: reconhecer os sete localizadores e plantar as recusas em I1 e I3`
-- `5103d851 OE1-c: recortar o espécime do livro e provar o teto com o recorte retirado`
-- `a912de40 OE1-c: registar as plantas, as medições e o protocolo da corrida final`
-- `b37cb066 OE1-c: guardar a corrida final verde e os seus contadores`
-- `d6e101ff OE1-d: dizer a medida, o acumulado e a ressalva nas duas edições`
-- `a2476b71 OE1-d: conferir unidades e ressalvas depois de integrar R2 e RP3`
-- `38d947bf OE1-d: fechar avisos, registo da voz e medição reproduzível`
-- `e3620a0b OE1-d: retirar a edição órfã e provar o formato da medição L1`
-- `5b3d1637 OE1-d: guardar portões verdes, medições e relato final`
-- `914c53e1 OE1-d: provar as bases integradas e conservar as referências do R3`
+- `fe296a51 OE1: o brief «o dinheiro do Estado por ministério e por função, selado no motor» com o §0 medido, pela ideia do diretor de 04.10.2026 e pela leitura de fora de 03.10`
+- `f881fbf6 OE1: receber 186 linhas pelo tubo do motor`
+- `3af4d137 OE1: relatar a selagem parcial, as lacunas de fonte e os portões`
+- `66b1317d OE1-b: integrar o conjunto e conferir as bandeiras Eurostat nos dois formatos`
+- `f6274a36 OE1-b: reconferir as duas contagens do livro no inventário`
+- `e5fa5473 OE1-b: comitar o relatório, as plantas e as medições da integração`
+- `35f0fc39 OE1-b: reconferir a L1 com a construção de partida`
+- `09c12e98 OE1-b: guardar as provas e as propostas adicionais`
+- `899f3c3e OE1-b: fechar o relatório com duas extensões pendentes`
+- `a6f1ca07 OE1-c: reconhecer os sete localizadores e plantar as recusas em I1 e I3`
+- `c72b69c4 OE1-c: recortar o espécime do livro e provar o teto com o recorte retirado`
+- `00298a0b OE1-c: registar as plantas, as medições e o protocolo da corrida final`
+- `6c224cf0 OE1-c: guardar a corrida final verde e os seus contadores`
+- `4dc99ef6 OE1-d: dizer a medida, o acumulado e a ressalva nas duas edições`
+- `9be5a921 OE1-d: conferir unidades e ressalvas depois de integrar R2 e RP3`
+- `01714689 OE1-d: fechar avisos, registo da voz e medição reproduzível`
+- `8916f9c8 OE1-d: retirar a edição órfã e provar o formato da medição L1`
+- `74e7126b OE1-d: guardar portões verdes, medições e relato final`
+- `ca1de3de OE1-d: provar as bases integradas e conservar as referências do R3`
+- `a0902a08 OE1-d: guardar as provas verdes da cabeça integrada com o R3`
+- `5888f607 OE1-e: publicar apenas as ressalvas aplicáveis e provar os recibos`
+- `f5549dc8 OE1-e: mostrar o período de cada linha e medir as correções com plantas`
 
 ## Decisões em vigor
 
@@ -268,7 +272,9 @@ As lacunas de receita consolidada AC+SS, saldo dos mapas, despesa bruta da Segur
 
 
 <!-- INICIO OE1-D -->
-## OE1-d
+## OE1-d, registo histórico
+
+A secção OE1-e corrige abaixo as afirmações de conteúdo, alcance e medição desta passagem. Os instrumentos históricos são reproduzíveis pela cabeça que o registo nomeia.
 
 As dez correções autorizadas estão implementadas. As 186 linhas conservam os valores, excertos, rótulos de fonte e coordenadas anteriores. O livro e o manifesto do motor conservam os bytes de `9bfbb777`. O que atravessou de novo foi a apresentação: 186 nomes nas duas línguas, 62 unidades com o período acumulado, 186 pares de ressalvas e a declaração geográfica das 30 edições Eurostat. As três contas que demonstram o não fecho explicam a ressalva; não convertem valores publicados em valores derivados.
 
@@ -280,7 +286,7 @@ A leitura a frio do Opus foi lida integralmente. Pela triagem do mandato, os ach
 |---|---|
 | Nomes do projeto | 186 pares, 372 nomes sem algarismos, iguais ao módulo regenerado pelo motor. Visíveis nos 372 recibos e nas 372 entradas dos dois índices. |
 | Acumulado na unidade | 62 linhas de execução. O mês final mantém-se em reference_date; a unidade declara janeiro a julho ou janeiro a agosto. A régua R2 confere a unidade da própria linha e a língua, sem uma segunda declaração concorrente. |
-| Ressalva publicada | 186 pares junto ao valor nos recibos e assinalados no índice. Os 41 XLS publicam a inferência da escala; as três linhas AC publicam a diferença decimal de 802,9 milhões e a conta. Os avisos de perímetro, consolidação, operações financeiras, dívida, arredondamento e Encargos Gerais do Estado saíram da nota interna para a página. |
+| Ressalva publicada | 186 pares junto ao valor nos recibos e assinalados no índice. Os 41 XLS publicam a inferência da escala; as três linhas AC publicam a diferença decimal de 802,9 milhões e a conta. A ressalva foi publicada, mas faltava o aviso financeiro nas rubricas e totais lidos de PDF; havia avisos fora do alcance e o exemplo dos Encargos era falso. A secção OE1-e regista a correção. |
 | Localizadores fechados | Os rótulos PDF são uma lista fechada, ligada à página. As células XLS aceitam apenas a coluna do rótulo e a folha/período correspondentes. Nenhum localizador da linha mudou. |
 | Geografia JSON-stat | Pedido, edição, coordenada e etiqueta do corpo têm de concordar com a geografia declarada pela linha, mesmo sem bandeira provisória. |
 | Nome do estudo | O código OE1 saiu do título interno nas duas línguas. Os 372 recibos mostram o nome da edição, sem ligação a uma página inexistente. |
@@ -301,7 +307,7 @@ A leitura a frio do Opus foi lida integralmente. Pela triagem do mandato, os ach
 | src/data/medidas-oe1.mjs; src/data/nomes-das-medidas.mjs | O módulo gerado entra pela escada já usada pelos nomes RP1. |
 | src/data/studies.mjs | Título interno legível, nas duas línguas, sem código de bloco. Nenhuma entrada WORKS ou rota. |
 | src/i18n/unidades.mjs; src/i18n/lingua-dos-titulos.mjs | Três unidades acumuladas traduzidas; as três edições geográficas são códigos, não prosa numa língua. Sai a declaração antiga gov_10a_exp, que deixou de ser usada. |
-| src/i18n/strings.mjs; design/especime-v3/INVENTARIO-FRASES.md; design/especime-v3/critica/REVISOES-DO-INVENTARIO.md | Os dois rótulos Ressalva e Caveat são navegação declarada. A leitura cruzada do diff está honestamente por ler antes da fusão. As quatro retiradas do R2 foram preservadas no rebase. |
+| src/i18n/strings.mjs; design/especime-v3/INVENTARIO-FRASES.md; design/especime-v3/critica/REVISOES-DO-INVENTARIO.md | Os dois rótulos Ressalva e Caveat são navegação declarada. A leitura cruzada do diff está honestamente por ler antes da fusão. A medição OE1-e conferiu as trinta e três retiradas declaradas do R2 e as seis do R2-b; a contagem anterior de quatro estava errada. |
 | src/lib/ledger.mjs; src/tipos.d.ts; ledger/README.md | CAMPOS e Linha incluem o par opcional; note continua interna. Recusa língua ausente e número completo sem apoio no excerto ou derivação. Confere as quatro declarações geográficas. Conserva o campo serie vindo do RP3. |
 | src/views/LinhaView.astro | Nome do projeto e ressalva junto ao valor, nas duas edições, com as marcas de origem da própria linha. |
 | src/views/LivroView.astro; src/components/ItemDoLivro.astro | A entrada do índice mostra o nome e assinala a ressalva num details com summary. |
@@ -315,9 +321,9 @@ A leitura a frio do Opus foi lida integralmente. Pela triagem do mandato, os ach
 
 ### Plantas e medição
 
-O motor executou 59 conferências no módulo OE1. O leitor PDF contém 18 controlos, dois íntegros e dezasseis estragos, incluindo cabeçalho, unidade, ano, perímetro e alinhamento. Os nomes têm 17 conferências, oito delas plantas. As ressalvas recusam a diferença AC adulterada e a escala sem correspondência; a geografia recusa Portugal com corpo e pedido de Espanha. Duas plantas retiram os avisos financeiros acrescentados na última revisão das notas.
+O registo histórico das 59 conferências OE1 identifica a cabeça `cf218da`; não constitui por si uma corrida na cabeça final do OE1-d. A passagem OE1-e mede novamente o módulo e nomeia a cabeça real. O leitor PDF contém 18 controlos, dois íntegros e dezasseis estragos, incluindo cabeçalho, unidade, ano, perímetro e alinhamento. Os nomes têm 17 conferências, oito delas plantas. As ressalvas recusam a diferença AC adulterada e a escala sem correspondência; a geografia recusa Portugal com corpo e pedido de Espanha. Duas plantas retiram os avisos financeiros acrescentados na última revisão das notas.
 
-No sítio, as plantas do ledger retiram cada língua da ressalva, introduzem número sem apoio e trocam pedido, edição, etiqueta e geografia. O portão HTML retira ou troca a ressalva e a sua língua em cópias de recibos. O índice planta rótulo PDF e coluna XLS inventados, conservando as plantas anteriores e a recusa de um nome de casa adulterado. A régua dos rótulos retira o acumulado de julho e troca agosto por julho em inglês. Os formatos antigo e novo da bandeira continuam ensaiados.
+No sítio, as plantas do ledger retiram cada língua da ressalva, introduzem número sem apoio e trocam pedido, edição, etiqueta e geografia. As provas HTML desta passagem eram fragmentos construídos para a guarda. A passagem OE1-e acrescenta as três plantas sobre recibos realmente construídos em dist. O índice planta rótulo PDF e coluna XLS inventados, conservando as plantas anteriores e a recusa de um nome de casa adulterado. A régua dos rótulos retira o acumulado de julho e troca agosto por julho em inglês. Os formatos antigo e novo da bandeira continuam ensaiados.
 
 A prova das edições corre a mesma régua da língua sobre o módulo íntegro e, num processo separado, repõe em memória a declaração órfã gov_10a_exp. Exige código um e a queixa específica da edição sem linha, sem alterar o ficheiro em disco.
 
@@ -337,11 +343,11 @@ O segundo ensaio, em e99b0473, deu build=1 pela declaração antiga da edição 
 
 | Portão | Código lido | Cabeça da corrida |
 |---|---|---|
-| motor | [0](portoes/motor.codigo) | `1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3` |
-| ledger | [0](portoes/ledger.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
-| build | [0](portoes/build.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
-| verify | [0](portoes/verify.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
-| typecheck | [0](portoes/typecheck.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
+| motor | [0](portoes-oe1d-final/motor.codigo) | `1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3` |
+| ledger | [0](portoes-oe1d-final/ledger.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
+| build | [0](portoes-oe1d-final/build.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
+| verify | [0](portoes-oe1d-final/verify.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
+| typecheck | [0](portoes-oe1d-final/typecheck.codigo) | `914c53e1a76f541c513b576d0a603b4b7de29261` |
 
 O registo [oe1d-conferir-final.log](oe1d-conferir-final.log) contém o --conferir-final a zero na cabeça de código `914c53e1a76f541c513b576d0a603b4b7de29261`. Depois da corrida, o último commit do sítio acrescenta apenas provas, relatório e resposta; nenhum ficheiro de código ou guião de medição muda nesse commit. A sua diferença para esta cabeça é conferida por caminhos; não altera o código construído, linhas ou dados publicados. A cabeça entregue identifica-se pelo commit que contém esta secção; os ficheiros portoes/cabeca e portoes/cabeca.fim identificam explicitamente o seu pai de código ensaiado. O motor termina em `1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3`.
 
@@ -380,6 +386,100 @@ Os textos seguintes são lidos do módulo gerado, sem reescrita no relatório.
 
 O teste de aceitação integral do OE1 continua parcial pelas lacunas de fonte: receita consolidada AC+SS e saldo correspondente não impressos nos mapas lidos; dois totais brutos divergentes da Segurança Social; necessidades de financiamento mensais sem linha publicável na fonte lida. Não se escolheu um total nem se transformou saldo em dívida. A diferença AC e a escala inferida são agora avisos publicados, não lacunas escondidas numa nota. A leitura cruzada das duas linhas novas do inventário fica por fazer antes da fusão. A página do governo pertence a outro bloco. Nenhum push.
 <!-- FIM OE1-D -->
+
+<!-- INICIO OE1-E -->
+## OE1-e
+
+As ressalvas do OE1-d tinham um erro de conteúdo e erros de alcance. A segunda leitura foi lida inteira antes da alteração; os achados três a sete eram estragos das cópias do pacote, conforme a triagem recebida. Esta passagem corrige os restantes achados sem mudar nenhum valor, excerto, coordenada, nome do projeto ou unidade acumulada. O livro e o manifesto do motor continuam byte a byte iguais aos de `9bfbb777`.
+
+### Mandato desta passagem e medida
+
+| Item | Resultado e prova |
+|---|---|
+| Um. Encargos Gerais do Estado | A ressalva deixa de afirmar o conteúdo da rubrica. Compara o valor com o programa de Órgãos de Soberania; o motor refaz a igualdade e recusa a troca do valor ou do nome do programa. |
+| Dois. Operações financeiras | Aviso em cinquenta e nove linhas: dezasseis rubricas, sete totais dos mapas, vinte programas e dezasseis quotas orgânicas. A seleção usa a família; retirar o aviso da Saúde lida do PDF é recusado. |
+| Três. Perímetro em palavras | Despesa bruta, despesa efetiva consolidada e classificação Eurostat explicadas nas famílias respetivas, nas duas línguas. |
+| Quatro. Avisos aplicáveis | Cento e oitenta e dois pares e quatro ausências completas; quarenta e uma inferências de unidade só nas transcrições XLS; dez avisos do agregado só na União; setenta comparações só nas funções. Plantas põem cada aviso fora do seu alcance e são recusadas. |
+| Cinco. Período no índice | As entradas mostram reference_date na forma da casa, com a marca da própria linha. A I2p confere todos os índices do livro; quatro plantas retiram ou trocam o ano em português e inglês. |
+| Seis. PDF | Dezasseis plantas exigem a queixa completa que nomeia a unidade, coluna, ano, perímetro ou alinhamento esperado. Dois controlos íntegros e as cinquenta e nove linhas PDF preservadas. |
+| Sete. HTML real | Três plantas do verify alteram recibos construídos: ressalva retirada, de outra linha e noutra língua. Exigem código um, queixa específica e reposição dos bytes. |
+| Oito. Contagens independentes | Sessenta e duas execuções e cento e oitenta e seis entradas por edição são números fechados. Duas plantas retiram uma entrada do índice e exigem a queixa de cento e oitenta e cinco em vez de cento e oitenta e seis. |
+| Nove. Conta de uma ressalva | As três contas do não fecho e a igualdade dos Encargos têm rótulo próprio nas duas edições. Uma transcrição com derivation sem ressalva é recusada. As trinta e seis contas de valores mantêm o rótulo Aritmética. |
+| Dez. Relatório e inventário | Secção C1f inteira igual à anterior ao OE1-d. Trinta e três retiradas R2 e seis R2-b conferidas por declaração. Setenta e uma conferências OE1 registadas na cabeça final do motor. |
+
+### Ficheiros e razão
+
+| Ficheiro ou conjunto | Mudança |
+|---|---|
+| motor: publisher/oe1_apresentacao.py; publisher/oe1_test.py | Ressalvas por família, igualdade EGE refeita, saldos conferidos e plantas de presença, alcance e falsidade. |
+| motor: publisher/oe1_pdf.py; publisher/oe1_pdf_test.py | O diagnóstico nomeia o cabeçalho esperado e cada planta exige a frase completa. |
+| ledger/claims, as cento e oitenta e seis linhas; ledger/cruzamentos/oe1.json | Recebidos pelo exportador comum na cabeça `38457b2723c47ea126984be6c5c1f778967e6847`; só ressalva, ressalva_en e as contas de apoio podem diferir da travessia OE1-d. |
+| src/lib/ledger.mjs; ledger/README.md; tests/linha/cadeias-proveniencia.mjs | Distinção e guarda da conta da ressalva. Mantêm as regras já existentes para contagens da casa e sobre ficheiros alojados. |
+| src/views/LinhaView.astro; src/i18n/strings.mjs; INVENTARIO-FRASES.md; REVISOES-DO-INVENTARIO.md | Dois rótulos novos para a conta da ressalva, declarados no inventário; leitura cruzada por ler. Cabeçalho C1f reposto. |
+| src/components/ItemDoLivro.astro; src/views/LivroView.astro; tests/livro/indice.mjs | Período visível nas listas e plantas de retirada e troca. |
+| scripts/inventario-rotulos.mjs | Exige a contagem fechada das entradas e dos recibos, com as duas línguas. |
+| tests/pais/portoes.mjs; package.json | Três estragos em recibos reais, repostos, no comando check:ressalvas ao fim do verify pela tranca. |
+| medir-oe1d.py; medir-oe1e.py; medir-l1.mjs; custo.py | Corrigem a contagem autorreferente, medem esta passagem com plantas e registam L1 e contadores próprios. |
+| MAPA-DO-REPOSITORIO-para-construtores.md | Localiza as novas conferências; conflito do rebase resolvido conservando as dezassete plantas do R3 e as referências atualizadas. |
+
+### Ressalvas por família
+
+| Família | Linhas | Com ressalva | Sem ressalva | Razão |
+|---|---:|---:|---:|---|
+| Rubricas do Mapa quatro | 16 | 16 | 0 | Despesa bruta e operações financeiras; igualdade dos Encargos Gerais do Estado na sua linha. |
+| Programas orçamentados e executados | 40 | 40 | 0 | Despesa bruta no orçamento; despesa efetiva consolidada dentro de cada programa na execução. |
+| Funções orçamentadas e executadas | 20 | 20 | 0 | Escala inferida só nas transcrições, perímetro efetivo consolidado, consolidação, arredondamento e limite de comparação. |
+| Funções Eurostat | 30 | 30 | 0 | Classificação e perímetro em contabilidade nacional; agregado apenas nas linhas da União. |
+| Totais, indicadores e diferenças | 44 | 40 | 4 | Avisos próprios dos totais dos mapas, da escala dos indicadores, do não fecho, dos saldos e dos passivos. Quatro linhas sem aviso aplicável. |
+| Quotas calculadas | 36 | 36 | 0 | Arredondamento e denominador bruto ou efetivo consolidado. Sem aviso de unidade inferida; comparação só nas funções. |
+| Total | 186 | 182 | 4 | Par presente nas duas línguas ou inteiramente ausente. |
+
+Linhas sem ressalva: `execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social`, `execucao-2026-08-diferencas-consolidacao-programas`, `execucao-2026-08-fluxos-entre-programas`, `oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social`. Os campos não são escritos nessas linhas. A proveniência continua disponível pelo recibo.
+
+Ressalva integral dos Encargos Gerais do Estado, copiada da travessia:
+
+Português: Não é um ministério. Nesta edição do orçamento, a rubrica dos Encargos Gerais do Estado tem o mesmo valor do programa 001, Órgãos de Soberania. A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma.
+
+Inglês: This is not a ministry. In this budget edition, General State Charges has the same value as programme 001, Sovereign Bodies. Gross expenditure includes financial transactions and transfers between State services, as added up in the budget map.
+
+O identificador do programa é apoiado pela conta declarada `7733610763 - 7733610763 = 0 euros`, refeita antes da exportação. Esta quarta conta numa transcrição serve a ressalva, como as três contas da diferença de 802,9 milhões; não transforma o valor publicado em cálculo da casa. Na quota derivada, a mesma igualdade é acrescentada à conta já existente. Não se alargou a guarda que recusa algarismos sem apoio.
+
+### Plantas e prova da cabeça
+
+O módulo OE1 executou **setenta e uma conferências**, código zero em [oe1e-test.codigo](oe1e-test.codigo), na cabeça `38457b2723c47ea126984be6c5c1f778967e6847`, registada em [oe1e-test.cabeca](oe1e-test.cabeca). O core.gate voltou a zero nessa cabeça. As dezoito conferências PDF estão incluídas, duas íntegras e dezasseis plantas com igualdade da queixa inteira. Os nomes continuam a passar as suas dezassete conferências, sem mudar o módulo gerado.
+
+[medidas-oe1e.json](medidas-oe1e.json) regista **32 medidas, cada uma com conhecido positivo**. O instrumento foi comitado antes da construção; SHA-256 `934406bb21192e358753ad28f32e75708e85dfe0b76eefb5bf937d1ca844c45f`. Confere as cento e oitenta e seis linhas, os trezentos e setenta e dois recibos e as trezentas e setenta e duas entradas dos índices. As oitenta contas impressas são oito contas de ressalva e setenta e duas contas de valores, somando as duas línguas. As três plantas de HTML real ficam em plantas-portoes-oe1e.json, com códigos, queixas e resumos antes e depois da reposição.
+
+A correção do relato R2 mede as declarações efetivas: trinta e três frases retiradas no R2 e seis no R2-b. O antigo --confere do R2 exige também uma secção que o R2-b alterou legitimamente. O instrumento lê apenas as declarações de retirada, confere cada frase no inventário atual e planta uma frase voltada a viva. A secção C1f é comparada inteira com `b37cb066`; a planta troca só o cabeçalho.
+
+A L1 foi medida na construção de `f5549dc8be22f4e936d62fbdfe4eac94b538db97`: **2714 páginas**, teto **2714**, trezentos e setenta e dois recibos OE1. O teto e a margem não mudaram. A prova está em l1-oe1e.json; o instrumento conserva as plantas de lista incompleta e de contagem adulterada do registo que a régua lê.
+
+O sítio foi rebaseado, na sua worktree, sobre main `f27aa38a0939d11908863afe6ee117da03404f5f`. O master do motor mantém-se em `47f12e15c927bf238522ac680b1f54c9de29f55d`, já integrado. A corrida final usa o código do sítio `f5549dc8be22f4e936d62fbdfe4eac94b538db97`. O último commit seguinte contém apenas provas, relatório e resposta; identifica-se pelo commit que contém esta secção. O pai é a cabeça de código escrita em portoes/cabeca e portoes/cabeca.fim. Nenhum ficheiro de código ou linha muda nesse último commit. Os portões do OE1-d foram preservados em portoes-oe1d-final.
+
+| Portão | Código lido | Cabeça da corrida |
+|---|---|---|
+| motor | [0](portoes/motor.codigo) | `38457b2723c47ea126984be6c5c1f778967e6847` |
+| ledger | [0](portoes/ledger.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
+| build | [0](portoes/build.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
+| verify | [0](portoes/verify.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
+| typecheck | [0](portoes/typecheck.codigo) | `f5549dc8be22f4e936d62fbdfe4eac94b538db97` |
+
+Os códigos foram lidos dos ficheiros depois da corrida completa pela tranca. [oe1e-conferir-final.codigo](oe1e-conferir-final.codigo) contém zero para a mesma cabeça de código. O commit final do motor é a cabeça testada. Nenhum push.
+
+### Decisões em vigor
+
+Motor, quatro ficheiros: nenhuma decisão citada nesses quatro ficheiros, segundo o guião. Sítio, duzentos e cinco ficheiros: §1.1, §1.3, §1.4, §1.5, §1.17, §1.24, §1.28, §1.31, §1.32, §1.35, §1.36, §1.39, §1.40, §1.44, §1.47, §1.48, §1.49, §1.52, §1.66, §1.85, §1.90, §1.98, §1.101, §1.102, §1.108, §1.110, §1.115, §1.117, §1.120, §1.124, §1.127, §1.129, §1.130, §1.133, §1.135, §1.140, §1.143, §1.145, §1.149, §1.150, §1.152, §1.154. As listas por ficheiro e o conhecido positivo da leitura estão em decisoes-oe1e-motor.log e decisoes-oe1e-sitio.log, ambos com código zero. Os caminhos protegidos do motor conservam-se intactos.
+
+### Custo e trabalho pendente
+
+18 090 442 símbolos contabilizados, dos quais 17 216 512 de entrada em cache, 782 071 de entrada sem cache e 91 859 de saída; 3 048 segundos até 2026-10-04T13:37:08.012492+00:00. Modelo: Codex gpt-6-astra. O contador inclui cache e revisões automáticas; não é preço monetário. O corte não inclui utilização posterior ao último evento disponível. O detalhe está em custo-oe1e.json.
+
+Continuam por selar a receita consolidada AC+SS e o saldo dos mapas, por não estarem impressos nos mapas lidos; a despesa bruta da Segurança Social, pelos dois totais divergentes; e as necessidades de financiamento mensais, por faltar uma linha publicável na fonte lida. Não se inventou nenhuma delas. A página do governo é outro bloco. A leitura cruzada dos quatro rótulos de navegação introduzidos no OE1-d e no OE1-e continua por ler antes da fusão. As referências históricas do mapa longe da linha indicada permanecem documentadas no OE1-d; esta passagem não afirma tê-las corrigido todas.
+<!-- FIM OE1-E -->
+
+
+
+
 
 ## Custo da passagem inicial, registo histórico
 
