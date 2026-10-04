@@ -8,9 +8,10 @@
  *   · o portão de HTML: um valor trocado num `data-ponto` de uma série no tempo, uma linha tirada da tabela de um
  *     recibo (a tabela inteira e o recibo inteiro nas duas edições), e um algarismo solto no recibo da derivada;
  *   · o `check:formas` (F1): o período de um ponto escrito fora da regra da casa;
- *   · a check:lugar (8.5): «limiar» na conta em palavras da derivada, que é prosa deste projeto e fica no texto da
- *     casa (o outro lado, um campo transcrito, é o recibo da S9 tal como está: o nome do conjunto do Eurostat diz
- *     «thresholds», e a corrida verde da check:lugar não o conta);
+ *   · a check:lugar (8.5): «limiar» na conta em palavras da derivada e, desde a passagem RP3-b, no motivo de uma
+ *     correção, que são prosa deste projeto e ficam no texto da casa; e o controlo, a mesma palavra num literal
+ *     transcrito da fonte, que não conta (passa com 0);
+ *   · o portão de HTML, desde a RP3-b: um campo de série fora da lista fechada de `scripts/campos-da-serie.mjs`;
  *   · a régua das frases (`check:voz`): o nome declarado de outra série na folha do caminho do recibo da derivada,
  *     e a mesma troca com a folha sem a marca da série, que até à passagem RP3-b era o controlo que passava e desde
  *     ela morde, porque a marca é obrigatória.
@@ -91,6 +92,21 @@ planta('rp3-lugar-limiar-na-conta', 'scripts/check-lugar.mjs', [
 planta('rp3-voz-nome-de-outra-serie', 'scripts/check-voz.mjs', [
   [reciboPt(D1), (r) => r.querySelector(`.caminho-aqui[data-da-serie="${D1}"]`).set_content('Preços dos combustíveis na comparação europeia, variação num ano')],
 ], [new RegExp(`não é o nome da série "${D1}"`)]);
+
+/* A LISTA FECHADA DOS CAMPOS TRANSCRITOS (passagem RP3-b, o achado 8 da leitura a frio). «limiar» dentro do motivo
+   de uma correção de uma série é prosa deste projeto e a 8.5 da check:lugar fecha a construção; dentro de um literal
+   transcrito da fonte não conta (o controlo passa com 0). E um campo fora da lista fecha o portão de HTML. */
+const motivoNoFim = (campo) => (r) => r.querySelector('main').insertAdjacentHTML('beforeend',
+  `<p><span class="campo-da-serie" data-serie="${D1}" data-serie-campo="${campo}">O valor passa o limiar.</span></p>`);
+planta('rp3-lugar-limiar-num-motivo', 'scripts/check-lugar.mjs', [
+  [reciboPt(D1), motivoNoFim('corrections.0.reason')],
+], [/8\.5 .*ACIMA DO TETO/]);
+planta('rp3-lugar-limiar-num-literal', 'scripts/check-lugar.mjs', [
+  [reciboPt(D1), motivoNoFim('excerpt')],
+], [/8\.5 .*ACIMA DO TETO/], { controlo: true });
+planta('rp3-html-campo-fora-da-lista', 'scripts/gate-html.mjs', [
+  [reciboPt(REMUNERACAO), (r) => r.querySelector(`[data-serie="${REMUNERACAO}"][data-serie-campo="name"]`).setAttribute('data-serie-campo', 'document.label')],
+], [/o campo «document\.label» da série «serie-remuneracao-bruta-mensal-media» não é um campo que o recibo possa render/]);
 
 /* A MESMA TROCA SEM A MARCA DA SÉRIE (passagem RP3-b, o achado 7 da leitura a frio): era o controlo da planta
    anterior, e passava, porque o nome trocado também é um nome declarado; desde a RP3-b a marca é obrigatória e a sua
