@@ -24,6 +24,7 @@ import NomeDaMedida from '../NomeDaMedida.astro';
 import { dataDaCasa } from '../../lib/datas.mjs';
 import { POR_VERIFICAR } from '../../data/marcador.mjs';
 import { ROTULOS_B1 } from '../../data/rotulos-b1.mjs';
+import { HREFLANG } from '../../lib/routes.mjs';
 
 const { portas, lang = 'pt', nivel = 1, classe = null } = Astro.props;
 const r = ROTULOS_B1[lang === 'en' ? 'en' : 'pt'];
@@ -39,7 +40,8 @@ const r = ROTULOS_B1[lang === 'en' ? 'en' : 'pt'];
             <time datetime={p.ficha.data} data-nonledger="data-do-repositorio">{dataDaCasa(p.ficha.data)}</time>
           </p>
         )}
-        {p.ficha.pergunta && <p class="indice-pergunta" data-verbatim={p.ficha.verbatimDaPergunta}>{p.ficha.pergunta}</p>}
+        {/* A pergunta está na língua da edição: numa página da outra língua leva a marca dela. */}
+        {p.ficha.pergunta && <p class="indice-pergunta" data-verbatim={p.ficha.verbatimDaPergunta} lang={p.ficha.edicao.lang !== lang ? HREFLANG[p.ficha.edicao.lang] : undefined}>{p.ficha.pergunta}</p>}
       </li>
     ) : p.tipo === 'entrada' ? (
       <li>
