@@ -12,7 +12,9 @@
  * mapa do sítio (`dist/sitemap-*.xml`), as páginas de cada família, a lista dos estudos, as páginas
  * dos distritos e o registo das mudanças. Não importa `src/lib/indice.mjs`, nem as vistas, nem os
  * módulos de dados que o índice lê: uma conferência que usasse o código da página confirmava-se a
- * si própria.
+ * si própria. A única declaração que lê fora da construção, além das rotas, é a das medidas
+ * reunidas (`MEDIDA_REUNIDA`, em `src/lib/pais.mjs`): é a casa a dizer que duas linhas são a mesma
+ * medida, nenhuma página a escreve, e a regra que a usa está escrita aqui e não importada.
  *
  *   I1 · cada porta do índice resolve num ficheiro construído pela regra da Vercel: um caminho sem
  *        extensão é uma pasta com o seu `index.html`, e nunca o ficheiro `.html` irmão (medido no
@@ -37,7 +39,11 @@
  *        com a mesma porta e a mesma data;
  *   I6 · «O que mudou» do índice é o começo do registo: as primeiras oito linhas distintas entre as
  *        correções e as atualizações do registo construído, cada uma com a sua entrada mais recente,
- *        a mesma data e os mesmos dois valores, e com a marca da fonte para o recibo da sua linha;
+ *        a mesma data, os mesmos dois valores e o mesmo lugar escrito, e com a marca da fonte para o
+ *        recibo da sua linha; uma linha reunida noutra (`MEDIDA_REUNIDA`) não entra, porque a medida
+ *        entra pela linha que fica; e nenhuma linha da lista se lê igual a outra (a passagem final do
+ *        R3: as duas taxas de desemprego de 2025, uma por baixo da outra, eram duas linhas iguais
+ *        para quem lê);
  *   I7 · nenhum destino se repete no corpo do índice (a regra da L1 do `check:lugar`, com as mesmas
  *        duas dispensas: a porta obrigatória do rótulo de IA e o marcador de um título por
  *        confirmar).
@@ -46,7 +52,8 @@
  * queixa que tem de dar: uma rota tirada do índice, um concelho a menos, uma porta que não resolve,
  * uma porta para uma página que só existe como ficheiro `.html` irmão, uma página do resultado no
  * índice, um endereço do mapa sem porta, o próprio índice fora do mapa, um estudo da lista em falta,
- * um concelho na gaveta de outro distrito, uma gaveta aberta, e uma linha repetida em «O que mudou».
+ * um concelho na gaveta de outro distrito, uma gaveta aberta, uma linha repetida em «O que mudou», uma
+ * linha reunida que entra como cópia de outra e se lê igual a ela, e o lugar de uma linha trocado.
  * O índice intacto tem de passar antes delas.
  *
  * Uso: node tests/indice/indice.mjs [--prova] [--json <ficheiro>]   (`OEDP_DIST` mede outra construção)
@@ -55,6 +62,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { LANGS, matchPath, normalizePath, routePath } from '../../src/lib/routes.mjs';
+import { MEDIDA_REUNIDA } from '../../src/lib/pais.mjs';
 
 const DIST = process.env.OEDP_DIST ?? 'dist';
 
@@ -260,16 +268,18 @@ export function conferirIndice({ indice, mapa, paginas, existe }) {
 
     /* I6 · «O que mudou», o começo do registo. */
     const registo = parse(ler(routePath('correcoes', lang)) ?? '').querySelectorAll('[data-mudou-registo] li[data-mudanca="correcao"]');
+    /* O lugar escrito: no registo é a porta do lugar; no índice é o nome sem porta. */
     const daEntrada = (li) => {
       const data = li.querySelector('[data-correcao-campo="date"]');
       return [li.getAttribute('data-correcao-entrada'), data?.getAttribute('data-correcao-n'), data?.getAttribute('datetime'),
-        texto(li.querySelector('[data-correcao-campo="old_value"]')), texto(li.querySelector('[data-correcao-campo="new_value"]'))].join(' · ');
+        texto(li.querySelector('[data-correcao-campo="old_value"]')), texto(li.querySelector('[data-correcao-campo="new_value"]')),
+        texto(li.querySelector('.registo-lugar, .indice-mudou-lugar'))].join(' · ');
     };
     const esperadas = [];
     const linhas = new Set();
     for (const li of registo) {
       const linha = li.getAttribute('data-correcao-entrada');
-      if (linhas.has(linha)) continue;
+      if (linhas.has(linha) || Object.hasOwn(MEDIDA_REUNIDA, linha ?? '')) continue;
       linhas.add(linha);
       esperadas.push(daEntrada(li));
       if (esperadas.length === TETO) break;
@@ -280,6 +290,24 @@ export function conferirIndice({ indice, mapa, paginas, existe }) {
     if (listas.length !== 1 || JSON.stringify(lidas) !== JSON.stringify(esperadas)) {
       erros.push(`I6 ${lang}: «O que mudou» do índice tem ${lidas.length} linha(s) em ${listas.length} lista(s), e o começo do registo dá ${esperadas.length}` +
         `${lidas.find((x, i) => x !== esperadas[i]) ? `; a primeira que difere: ${lidas.find((x, i) => x !== esperadas[i])}` : ''}.`);
+    }
+    /* O que o leitor lê de cada linha: o texto à vista, sem o que só um leitor de ecrã ouve, com um espaço
+       entre os pedaços que a disposição separa (a data, o lugar, o nome, os valores e a marca da fonte). */
+    const lidoPeloLeitor = (li) => {
+      const copia = parse(li.toString());
+      for (const el of copia.querySelectorAll('.vh, [hidden], [aria-hidden="true"]')) el.remove();
+      const pedacos = [];
+      const anda = (n) => {
+        if (n.nodeType === 3) pedacos.push(n.rawText);
+        else for (const f of n.childNodes ?? []) anda(f);
+      };
+      anda(copia);
+      return desfaz(pedacos.join(' ')).replace(/\s+/g, ' ').trim();
+    };
+    const leituras = itens.map(lidoPeloLeitor);
+    const iguais = [...new Set(leituras.filter((l, i) => leituras.indexOf(l) !== i))];
+    for (const l of iguais) {
+      erros.push(`I6 ${lang}: duas linhas de «O que mudou» leem-se iguais («${l}»); a mesma medida em duas linhas declara-se em MEDIDA_REUNIDA, e duas medidas não podem ter o mesmo nome no mesmo lugar.`);
     }
     for (const li of itens) {
       const linha = li.getAttribute('data-correcao-entrada');
@@ -345,6 +373,31 @@ export function plantasDoIndice(base) {
       const li = ol?.querySelector('li');
       if (ol && li) ol.insertAdjacentHTML('beforeend', li.toString());
     }), [/I6 en: «O que mudou» do índice tem 9 linha\(s\)/, /I7 en: 1 destino\(s\) repetido\(s\)/]],
+    /* Uma linha reunida noutra entra como cópia da primeira linha da lista, com a identidade da linha
+       reunida, e a lista continua com oito: o começo do registo não a tem, e as duas leem-se iguais.
+       Não depende de que linhas estão hoje na lista. */
+    ['r3-celula-linha-reunida-que-se-le-igual', () => comEn((d) => {
+      const reunida = Object.keys(MEDIDA_REUNIDA)[0];
+      const ol = d.querySelector('main [data-mudou-ambito="indice"]');
+      const itens = ol?.querySelectorAll('li') ?? [];
+      const primeira = itens[0];
+      if (!ol || !primeira || !reunida) return;
+      const original = primeira.getAttribute('data-correcao-entrada') ?? '';
+      const copia = parse(primeira.toString());
+      const li = copia.querySelector('li');
+      li?.setAttribute('data-correcao-entrada', reunida);
+      for (const el of copia.querySelectorAll('[data-correcao-claim]')) el.setAttribute('data-correcao-claim', reunida);
+      for (const a of copia.querySelectorAll('a.src-chip[href]')) {
+        a.setAttribute('href', String(a.getAttribute('href')).replace(original, reunida));
+      }
+      itens[itens.length - 1]?.remove();
+      primeira.insertAdjacentHTML('afterend', copia.toString());
+    }), [new RegExp(`I6 en: «O que mudou» do índice tem 8 linha\\(s\\) em 1 lista\\(s\\), e o começo do registo dá 8; a primeira que difere: ${Object.keys(MEDIDA_REUNIDA)[0]} · `), /I6 en: duas linhas de «O que mudou» leem-se iguais/]],
+    /* O lugar escrito de uma linha trocado por outro: o registo escreve outro lugar para a mesma entrada. */
+    ['r3-celula-lugar-trocado-em-o-que-mudou', () => comPt((d) => {
+      const lugar = d.querySelector('main [data-mudou-ambito="indice"] .indice-mudou-lugar');
+      if (lugar) lugar.set_content(texto(lugar) === 'Portugal' ? 'Évora' : 'Portugal');
+    }), [/I6 pt: «O que mudou» do índice tem 8 linha\(s\) em 1 lista\(s\), e o começo do registo dá 8; a primeira que difere: .* · (Évora|Portugal)\./]],
   ];
   return casos.map(([nome, faz, mordidas]) => {
     const r = conferirIndice(faz());

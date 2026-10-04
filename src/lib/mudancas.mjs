@@ -28,7 +28,7 @@ import { LUGAR_DECLARADO_DAS_LINHAS } from '../data/lugar-das-linhas.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
 import { entradasDoRegisto, getClaim, motivoDaEntrada } from './ledger.mjs';
 import { nomeDoCartao, nomeDaLinhaDerivada } from './nomes.mjs';
-import { estudosRecentes, LINHAS_DA_LEITURA_DO_PAIS } from './pais.mjs';
+import { estudosRecentes, LINHAS_DA_LEITURA_DO_PAIS, MEDIDA_REUNIDA } from './pais.mjs';
 import { routePath } from './routes.mjs';
 
 /**
@@ -317,13 +317,19 @@ export function mudancasDoLugar(chave, lang) {
  * registo dá, que é a mais recente; as outras continuam no registo, que é a porta
  * «Correções» do índice, e no recibo da linha.
  *
+ * UMA MEDIDA, UMA VEZ (a passagem final do R3, pelas capturas): duas linhas que a casa declara a
+ * mesma medida (`MEDIDA_REUNIDA`, em `pais.mjs`, a peça 3 do B1) entram pela linha que fica, como
+ * nos temas. As duas taxas de desemprego de 2025 mudaram no mesmo dia com os mesmos dois valores,
+ * e o índice mostrava-as uma por baixo da outra, iguais a quem lê. A linha reunida continua no
+ * registo, com a sua entrada, e no seu recibo.
+ *
  * @param {'pt'|'en'} lang
  */
 export function mudancasDoIndice(lang) {
   const vistas = new Set();
   const saida = [];
   for (const m of mudancasDoRegisto(lang)) {
-    if (m.tipo !== 'correcao' || vistas.has(m.claim)) continue;
+    if (m.tipo !== 'correcao' || vistas.has(m.claim) || Object.hasOwn(MEDIDA_REUNIDA, m.claim)) continue;
     vistas.add(m.claim);
     saida.push(m);
     if (saida.length === TETO_DAS_MUDANCAS) break;
