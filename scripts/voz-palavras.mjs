@@ -282,6 +282,20 @@ export function superficieDe(html, opcoes = {}) {
   )) {
     campo.remove();
   }
+  /* OS CAMPOS DE UMA LINHA DE SÉRIE TRANSCRITOS DA FONTE (bloco RP3, 04.10.2026). Uma
+     série é uma linha do livro-razão com vários pontos (`ledger/series/README.md`), e
+     o que a fonte escreve dela (o nome, o título do conjunto, o literal, a etiqueta de
+     uma marca, a razão de uma lacuna) rende-se com `data-serie-campo` e é comparado
+     pelo portão de HTML com o ficheiro da série, carácter a carácter, como um campo
+     de uma linha: sai da superfície pela mesma razão que `data-linha-campo` sai. A
+     conta em palavras de uma série derivada (`derivation`, `derivation_en`) é prosa
+     deste projeto e FICA na superfície: é mais estreito do que a regra das linhas,
+     de propósito. A planta está em `tests/voz/palavras-proibidas.mjs`. */
+  for (const campo of root.querySelectorAll('[data-serie][data-serie-campo]')) {
+    const qual = campo.getAttribute('data-serie-campo') ?? '';
+    if (qual === 'derivation' || qual === 'derivation_en') continue;
+    campo.remove();
+  }
   /* A REGIÃO TRANSCRITA DESTA ROTA, se a rota declarar uma. */
   if (opcoes.retira) for (const fora of root.querySelectorAll(opcoes.retira)) fora.remove();
   /* A DOBRA FECHADA NÃO É SUPERFÍCIE, e o rótulo dela é; a dobra ABERTA é. */

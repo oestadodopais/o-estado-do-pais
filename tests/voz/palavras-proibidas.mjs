@@ -204,6 +204,17 @@ const BURACOS = [
     morde: html => html.replace(/(<a class="texto-secao-topo"[^>]*>)/, '$1As regras da casa. '),
     naoMorde: html => dentroDaMarca(html, 'data-registo-unidade', '<span>As regras da casa.</span>'),
   },
+  /* O RECIBO DE UMA SÉRIE NO TEMPO (bloco RP3, 04.10.2026): os campos de uma série saem da
+     superfície como os de uma linha, menos a conta em palavras de uma série derivada, que é
+     prosa deste projeto e fica. A planta morde dentro da conta e não morde dentro da
+     expressão, que é um campo da série como o `check` de uma linha. */
+  {
+    nome: 'a conta em palavras de uma série derivada é prosa deste projeto, e um campo da série não é',
+    chave: 'limiar',
+    pagina: () => primeiraPagina(/^livro-razao\/series\/[^/]+\/index\.html$/, 'data-serie-campo="derivation"'),
+    morde: (html) => dentroDaMarca(html, 'data-serie-campo="derivation"', 'O valor passa o limiar. '),
+    naoMorde: (html) => dentroDaMarca(html, 'data-serie-campo="check"', 'O valor passa o limiar. '),
+  },
 ];
 
 const linhas = [];

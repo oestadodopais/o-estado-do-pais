@@ -7,6 +7,7 @@ import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa, serieDaLinhaDoPortao } from './series-do-portao.mjs';
+import { PALAVRAS_DAS_MARCAS_DO_INE } from '../src/data/series-no-tempo.mjs';
 import { faixasDoPortao, linhaDePortugalDoPortao, MEDIDAS_SEM_FAIXA, conferirTabelaDaVista } from './concelhos-do-portao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../src/data/faixa-da-uniao.mjs';
 /* S1 (02.10.2026): a caixa das sugestões, lida por um módulo próprio do portão. */
@@ -17,6 +18,50 @@ import {
   conferirRegrasDaBase,
   plantasDaCaixa,
 } from './sugestoes-do-portao.mjs';
+/**
+ * OS CAMPOS DE TEXTO DE UMA SÉRIE NO TEMPO QUE O RECIBO PODE RENDER (bloco RP3,
+ * 04.10.2026), e o texto que cada um tem de ter: o nome na fonte, a conta em
+ * palavras da língua da página (`derivation` na portuguesa, `derivation_en` na
+ * inglesa, e nunca a outra), a expressão, a razão de uma lacuna, os campos de um
+ * pedido (o endereço, o cliente, o nome com que o projeto se apresenta, o resumo e
+ * os bytes) e os de uma correção; e a palavra da periodicidade, pela cópia do
+ * portão da tabela das duas edições. `null` para um campo que o recibo não pode
+ * render, que o laço recusa.
+ *
+ * @param {any} serie @param {string} campo @param {'pt'|'en'} lang
+ * @returns {string | null}
+ */
+const PERIODICIDADE_DO_PORTAO = {
+  pt: { mensal: 'mensal', trimestral: 'trimestral', semestral: 'semestral', anual: 'anual' },
+  en: { mensal: 'monthly', trimestral: 'quarterly', semestral: 'half-yearly', anual: 'annual' },
+};
+function campoDaSerieNoTempo(serie, campo, lang) {
+  if (campo === 'name' || campo === 'check') return typeof serie[campo] === 'string' ? serie[campo] : null;
+  if (campo === 'derivation' || campo === 'derivation_en') {
+    const daLingua = lang === 'en' ? 'derivation_en' : 'derivation';
+    return campo === daLingua && typeof serie[campo] === 'string' ? serie[campo] : null;
+  }
+  if (campo === 'periodicidade') return PERIODICIDADE_DO_PORTAO[lang]?.[serie.periodicidade] ?? null;
+  const pedido = /^pedidos\.(\d+)\.(url|cliente|user_agent|sha256|bytes)$/.exec(campo);
+  if (pedido) {
+    const q = Array.isArray(serie.pedidos) ? serie.pedidos[Number(pedido[1])] : null;
+    return q && q[pedido[2]] !== undefined && q[pedido[2]] !== null ? String(q[pedido[2]]) : null;
+  }
+  const lacuna = /^lacunas\.(\d+)\.razao$/.exec(campo);
+  if (lacuna) {
+    const l = Array.isArray(serie.lacunas) ? serie.lacunas[Number(lacuna[1])] : null;
+    return l && typeof l.razao === 'string' ? l.razao : null;
+  }
+  const correcao = /^corrections\.(\d+)\.(old_value|new_value|reason|reason_en)$/.exec(campo);
+  if (correcao) {
+    const c = Array.isArray(serie.corrections) ? serie.corrections[Number(correcao[1])] : null;
+    if (!c) return null;
+    if ((correcao[2] === 'reason' && lang === 'en') || (correcao[2] === 'reason_en' && lang !== 'en')) return null;
+    return typeof c[correcao[2]] === 'string' ? c[correcao[2]] : null;
+  }
+  return null;
+}
+
 /**
  * A DEFINIÇÃO DECLARADA DE UMA MEDIDA, COMO TEXTO (a passagem UE1d, 29.09.2026,
  * pelo lugar de direção). As palavras e os algarismos declarados (`nl`) da
@@ -342,6 +387,14 @@ const claims = loadClaims();
    pelo leitor próprio dos portões (`scripts/series-do-portao.mjs`), e não pelo
    módulo que as páginas usam. */
 const SERIES_DO_PORTAO = lerSeriesDoPortao();
+/* AS SÉRIES DE PAÍSES E AS SÉRIES NO TEMPO (bloco RP3, 04.10.2026). As conferências
+   do UE1 que são do corte entre países (a definição da medida no recibo, a porta do
+   recibo da linha portuguesa, as contagens dos vinte recibos) contam só as séries de
+   países; as séries no tempo têm as suas, abaixo. */
+const SERIES_DE_PAISES = new Map([...SERIES_DO_PORTAO].filter(([, s]) => s.eixo === 'pais'));
+const SERIES_NO_TEMPO = new Map([...SERIES_DO_PORTAO].filter(([, s]) => s.eixo === 'periodo'));
+/** RP3: os pontos de cada série no tempo vistos no seu recibo, por «língua:id». */
+const PONTOS_NOS_RECIBOS_NO_TEMPO = new Map();
 const PAISES_DO_PORTAO = lerPaisesDoPortao();
 /* AS 308 LINHAS DE CADA MEDIDA DE CONCELHO (bloco L2b, 01.10.2026), pelo leitor próprio dos portões
    (`scripts/concelhos-do-portao.mjs`), e não pelo resolvedor da faixa. É daqui que se recontam o lugar de
@@ -4639,8 +4692,23 @@ for (const file of ficheirosHtml(DIST)) {
       const serie = SERIES_DO_PORTAO.get(sid);
       /* O QUE A MEDIDA CONTA (a passagem UE1c, os achados 9 e 10 da leitura a
          frio; na forma da UE1d, 29.09.2026): por baixo do título, a definição
-         declarada da medida, carácter a carácter, em cada um dos vinte recibos. */
-      {
+         declarada da medida, carácter a carácter, em cada um dos vinte recibos.
+         Só nas séries de países: uma série no tempo não é o corte de uma linha
+         portuguesa entre os 27 (bloco RP3). */
+      if (serie.eixo === 'periodo') {
+        /* RP3: o recibo de uma série no tempo tem cada ponto da série uma vez, e
+           nenhum que a série não tenha; o valor de cada um confere-se no laço das
+           origens (`data-ponto`), e aqui conta-se o conjunto. */
+        const chaves = root.querySelectorAll(`[data-serie-tabela="${sid}"] [data-ponto]`).map((e) => String(e.getAttribute('data-ponto')));
+        const esperadas = (serie.pontos ?? []).map((p) => `${sid}#${p.periodo}`);
+        if (chaves.join(' ') !== esperadas.join(' ')) {
+          const faltam = esperadas.filter((k) => !chaves.includes(k));
+          const sobram = chaves.filter((k) => !esperadas.includes(k));
+          err(`RP3: a tabela do recibo da série «${sid}» não é a dos pontos da série, pela ordem dela (faltam ${faltam.length}: ${faltam.slice(0, 3).join(', ')}; sobram ${sobram.length}: ${sobram.slice(0, 3).join(', ')}).`);
+        } else {
+          PONTOS_NOS_RECIBOS_NO_TEMPO.set(`${rota.lang}:${sid}`, chaves.length);
+        }
+      } else {
         const linguaDoRecibo = rota.lang === 'en' ? 'en' : 'pt';
         const medidaDaSerie = String(serie.linha_de_portugal);
         /* UE1e: a forma do recibo da série, onde a declaração a tem, e a do cartão onde não tem. */
@@ -4687,8 +4755,13 @@ for (const file of ficheirosHtml(DIST)) {
           const palavras = entrada?.querySelector(`[data-serie-marca-palavras="${sid}#${marca}"]`);
           const definicao = entrada?.querySelector(`[data-serie][data-serie-campo="bandeiras.${marca}"]`);
           if (textoTranscrito(e) !== marca) err(`UE1b: a legenda do recibo da série «${sid}» escreve a marca «${textoTranscrito(e)}» onde diz «${marca}».`);
-          if (!palavras || textoTranscrito(palavras) !== PALAVRAS_DA_FAIXA[lingua]?.ressalvas?.[marca]) {
-            err(`UE1b: na legenda do recibo da série «${sid}», as palavras da marca «${marca}» são «${palavras ? textoTranscrito(palavras) : 'nenhumas'}» e as declaradas são «${PALAVRAS_DA_FAIXA[lingua]?.ressalvas?.[marca] ?? 'nenhumas'}».`);
+          /* RP3: a marca do INE numa série no tempo diz-se com as palavras do cartão
+             (`PALAVRAS_DAS_MARCAS_DO_INE`); as do Eurostat, com as da faixa. */
+          const declaradas = serie.eixo === 'periodo' && serie.source === 'INE'
+            ? PALAVRAS_DAS_MARCAS_DO_INE[lingua]?.[marca]
+            : PALAVRAS_DA_FAIXA[lingua]?.ressalvas?.[marca];
+          if (!palavras || textoTranscrito(palavras) !== declaradas) {
+            err(`UE1b: na legenda do recibo da série «${sid}», as palavras da marca «${marca}» são «${palavras ? textoTranscrito(palavras) : 'nenhumas'}» e as declaradas são «${declaradas ?? 'nenhumas'}».`);
           }
           if (!definicao || definicao.getAttribute('data-serie') !== sid) err(`UE1b: na legenda do recibo da série «${sid}», a marca «${marca}» não tem a definição da série.`);
           UE1B.marcasNasLegendas++;
@@ -5910,7 +5983,10 @@ for (const file of ficheirosHtml(DIST)) {
   const serieDaMarca = (el, atributo) => {
     const [sid, geo] = String(el.getAttribute(atributo) ?? '').split('#');
     const serie = SERIES_DO_PORTAO.get(sid) ?? null;
-    return { sid, geo, serie, ponto: serie?.pontos?.find((p) => p.geo === geo) ?? null };
+    /* A chave do ponto: a geografia numa série de países, o período numa série no
+       tempo (bloco RP3). */
+    const campoDaChave = serie?.eixo === 'periodo' ? 'periodo' : 'geo';
+    return { sid, geo, serie, ponto: serie?.pontos?.find((p) => p[campoDaChave] === geo) ?? null };
   };
   for (const el of body.querySelectorAll('[data-ponto]')) {
     ORIGENS_DAS_SERIES.pontos++;
@@ -5959,6 +6035,7 @@ for (const file of ficheirosHtml(DIST)) {
       else if (campo.startsWith('document.')) esperado = serie.document?.[campo.slice('document.'.length)] ?? null;
       else if (campo.startsWith('bandeiras.')) esperado = serie.bandeiras?.[campo.slice('bandeiras.'.length)] ?? null;
       else if (['id', 'source', 'source_url', 'excerpt'].includes(campo)) esperado = serie[campo] ?? null;
+      else if (serie.eixo === 'periodo') esperado = campoDaSerieNoTempo(serie, campo, linguaDaSerie);
     }
     if (esperado === null || esperado === undefined) {
       err(`UE1: o campo «${campo}» da série «${sid}» não é um campo que o recibo possa render.`);
@@ -8790,8 +8867,8 @@ if (UNIDADES_DA_CASA.doConcelho === 0) {
   erros.push({ rel: 'dist', msg: 'P4-c: nenhuma unidade da casa de uma medida de concelho vista em página nenhuma, e o índice de dívida declara uma: o leitor está cego.' });
 }
 /* UE1d: a definição declarada em cada um dos recibos das séries, nas duas edições. */
-if (UE1D.definicoes !== LANGS.length * SERIES_DO_PORTAO.size) {
-  erros.push({ rel: 'ledger/series', msg: `UE1d: os recibos das séries têm ${UE1D.definicoes} definição(ões) declarada(s), e são ${LANGS.length * SERIES_DO_PORTAO.size} recibos.` });
+if (UE1D.definicoes !== LANGS.length * SERIES_DE_PAISES.size) {
+  erros.push({ rel: 'ledger/series', msg: `UE1d: os recibos das séries de países têm ${UE1D.definicoes} definição(ões) declarada(s), e são ${LANGS.length * SERIES_DE_PAISES.size} recibos.` });
 }
 /* UE1e: cada forma do recibo da série é a pergunta do cartão sem o lugar, sem
    mais nenhuma palavra mudada, e não nomeia Portugal; e os vinte recibos foram
@@ -8816,11 +8893,11 @@ for (const [idDaForma, d] of Object.entries(/** @type {Record<string, any>} */ (
     }
   }
 }
-if (UE1E.semPortugal !== LANGS.length * SERIES_DO_PORTAO.size) {
-  erros.push({ rel: 'ledger/series', msg: `UE1e: ${UE1E.semPortugal} recibo(s) das séries vistos sem Portugal na definição, e são ${LANGS.length * SERIES_DO_PORTAO.size} recibos.` });
+if (UE1E.semPortugal !== LANGS.length * SERIES_DE_PAISES.size) {
+  erros.push({ rel: 'ledger/series', msg: `UE1e: ${UE1E.semPortugal} recibo(s) das séries de países vistos sem Portugal na definição, e são ${LANGS.length * SERIES_DE_PAISES.size} recibos.` });
 }
-/* UE1b: a porta de cada série, nas duas edições, no recibo da linha portuguesa. */
-for (const [id] of SERIES_DO_PORTAO) {
+/* UE1b: a porta de cada série de países, nas duas edições, no recibo da linha portuguesa. */
+for (const [id] of SERIES_DE_PAISES) {
   for (const lang of LANGS) {
     if (!portasDasSeriesVistas.has(`${lang}:${id}`)) {
       erros.push({
@@ -8830,7 +8907,16 @@ for (const [id] of SERIES_DO_PORTAO) {
     }
   }
 }
-if (SERIES_DO_PORTAO.size && (ORIGENS_DAS_SERIES.pontos === 0 || ORIGENS_DAS_SERIES.paises === 0)) {
+/* RP3: cada série no tempo com o seu recibo inteiro nas duas edições. */
+for (const [id, serie] of SERIES_NO_TEMPO) {
+  for (const lang of LANGS) {
+    const vistos = PONTOS_NOS_RECIBOS_NO_TEMPO.get(`${lang}:${id}`);
+    if (vistos !== (serie.pontos ?? []).length) {
+      erros.push({ rel: routePath('serie', lang, { slug: id }), msg: `RP3: o recibo da série no tempo "${id}" não mostrou os ${(serie.pontos ?? []).length} pontos da série na edição "${lang}" (viu ${vistos ?? 'nenhum'}).` });
+    }
+  }
+}
+if (SERIES_DE_PAISES.size && (ORIGENS_DAS_SERIES.pontos === 0 || ORIGENS_DAS_SERIES.paises === 0)) {
   erros.push({ rel: 'ledger/series', msg: 'UE1: há séries e nenhuma página rendeu um ponto ou um nome de país: o detetor não viu nada.' });
 }
 /* L2b-c (o achado 4 da leitura a frio): a direção de cada medida na tabela da vista tem de bater com a autoridade
