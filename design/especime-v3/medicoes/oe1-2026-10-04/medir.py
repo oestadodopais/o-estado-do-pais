@@ -44,7 +44,10 @@ def gate(name):
         return datetime.fromisoformat(file.read_text().strip().replace("Z", "+00:00")) if file.exists() else None
     start, end = stamp(base / (name + ".inicio")), stamp(base / (name + ".fim"))
     runstart = start if name == "motor" else stamp(HERE / "corrida-sitio.inicio")
-    finished = start is not None and end is not None and end >= start and runstart is not None and start >= runstart
+    # O portoes.sh escreve segundos inteiros; o corredor escreve microssegundos.
+    finished = (start is not None and end is not None and runstart is not None
+                and end >= start and end >= runstart
+                and start >= runstart.replace(microsecond=0))
     value = int(p.read_text().strip()) if p.exists() and finished else None
     headfile = base / (name + ".cabeca" if name in {"motor", "ledger"} else "cabeca")
     head = headfile.read_text().strip() if headfile.exists() else None
@@ -155,13 +158,42 @@ def main():
         inventory = (SITE / "design/especime-v3/INVENTARIO-FRASES.md").read_text()
         assert all("| conteudo | " + s + " | k2 | viva |" in inventory for s in inventory_counts)
         measures["contagens_reconferidas_no_inventario"] = count_measure(inventory_counts, lambda s: s in inventory)
+    l1_path = HERE / "l1-oe1b.json"
+    l1 = json.loads(l1_path.read_text()) if l1_path.exists() else None
+    if l1 is not None:
+        assert all(p["mordeu"] for p in l1["conhecidos_positivos"])
+        measures["l1_recibos_novos"] = count_measure(l1["entradas"], lambda p: True)
+        measures["l1_plantas"] = count_measure(l1["conhecidos_positivos"], lambda p: p["mordeu"])
+    tail_path = HERE / "oe1b-cauda/resultados.json"
+    tail = json.loads(tail_path.read_text()) if tail_path.exists() else None
+    if tail is not None:
+        chain = json.loads((SITE / "package.json").read_text())["scripts"]["verify"].split(" && ")
+        expected = chain[chain.index("npm run check:lugar") + 1:]
+        assert [r["comando"] for r in tail] == expected
+        assert int((HERE / "oe1b-cauda.codigo").read_text()) == int(any(r["codigo"] != 0 for r in tail))
+        measures["verificacoes_apos_l1"] = count_measure(tail, lambda r: r["codigo"] == 0)
+    clock_tests = json.loads((HERE / "plantas-tempos.json").read_text())["casos"]
+    measures["provas_da_precisao_dos_tempos"] = count_measure(clock_tests, lambda t: t["passou"])
+    proposal = json.loads((HERE / "proposta-localizadores.json").read_text())
+    digest = hashlib.sha256((SITE / "tests/livro/indice.mjs").read_bytes()).hexdigest()
+    assert digest in {proposal["guarda_sha256"], proposal["candidato_sha256"]}
+    proposal_applied = digest == proposal["candidato_sha256"]
+    measures["plantas_da_proposta_de_localizadores"] = count_measure(proposal["plantas"], lambda t: t["mordeu"])
+    bundle = json.loads((HERE / "proposta-feixe.json").read_text())
+    bundle_digest = hashlib.sha256((SITE / "scripts/design-bundle.mjs").read_bytes()).hexdigest()
+    assert bundle_digest in {bundle["guarda_sha256"], bundle["candidato_sha256"]}
+    bundle_applied = bundle_digest == bundle["candidato_sha256"]
+    measures["plantas_do_recorte_proposto"] = count_measure(bundle["plantas"], lambda t: t["mordeu"])
     data = dict(medido_em=datetime.now(timezone.utc).isoformat(), modelo="Codex gpt-6-astra", cabecas=heads,
                 commits=commits, medidas=measures, eurostat_paises_com_dez_funcoes=coverage,
                 arredondamento=rounding, divergencias=dict(seguranca_social_bruta_mapa1=gross1,
                 seguranca_social_bruta_mapa8=gross8, diferenca_euros=str(number(gross8) - number(gross1)),
                 indicadores_ac_despesa_diferenca_milhoes=str(financial_gap)), portoes=gates, custo=costs,
                 integracao=integration, conferencias=tests["conferencias"], erros_do_sitio=site_errors,
-                oe1b=dict(custo=bcost, plantas=btests, contagens_no_html=inventory_counts))
+                oe1b=dict(custo=bcost, plantas=btests, contagens_no_html=inventory_counts, verificacoes_apos_l1=tail,
+                    provas_tempos=clock_tests, proposta_localizadores=dict(aplicada=proposal_applied, provas=proposal),
+                    proposta_feixe=dict(aplicada=bundle_applied, provas=bundle),
+                    l1=dict(ficheiro="l1-oe1b.json", contagens=l1["contagens"], conhecidos_positivos=l1["conhecidos_positivos"]) if l1 else None))
     if close:
         data["cabecas_na_medicao"] = data.pop("cabecas")
         data["portoes_na_medicao"] = data.pop("portoes")
@@ -228,7 +260,7 @@ A primeira corrida do motor falhou por impedimento de localhost na caixa de arei
 
 A proposta `publisher/oe1_site_support.patch`, no motor, identificou cinco adaptações no sítio. O mandato OE1-b autorizou essa integração, o nome do conjunto e as plantas das bandeiras. Ficheiros da proposta efetivamente alterados nesta árvore: **{len(support_changed)} de 5**. A aplicação inclui o nome pedido no OE1-b e reforça a comparação do valor em decimal e a ligação da bandeira ao país e ao período. A secção OE1-b descreve as alterações. Os portões abaixo dizem o resultado real, independentemente da existência da proposta.
 
-As decisões do §5 foram respeitadas: o bloco entrega dados e nenhuma página; todas as linhas publicadas declaram o perímetro; as fontes que atravessam têm corpos e pedidos reproduzíveis. O ponto da biblioteca foi resolvido por endereços publicados, com os 401 conservados como prova da limitação inicial.
+As decisões do §5 foram respeitadas: o bloco entrega dados para a futura página do governo; as linhas usam os recibos da família de páginas já existente no livro-razão, sem novos componentes ou declarações de rota; todas as linhas publicadas declaram o perímetro; as fontes que atravessam têm corpos e pedidos reproduzíveis. O ponto da biblioteca foi resolvido por endereços publicados, com os 401 conservados como prova da limitação inicial.
 
 O relatório, os guiões e a resposta curta ficam comitados antes da última corrida. Os códigos, as cabeças, os tempos e o custo são ficheiros de execução, escritos depois desse commit. As referências abaixo apontam para esses ficheiros, permitindo registar a cabeça final sem voltar a alterar a prosa comitada. O modo --conferir-final do guião recusa um código diferente de zero, uma corrida por terminar ou uma cabeça diferente da atual.
 
@@ -271,7 +303,16 @@ Esta passagem integra as mesmas 186 linhas. O livro do motor, os YAML e o regist
 | src/lib/ledger.mjs | Confere as sete coordenadas, o único índice de valor, o índice da bandeira e o seu significado no JSON-stat. Compara o literal numérico em decimal. No formato anterior confere valor, período e localização indicada no pedido; conserva o formato regional com várias coordenadas. |
 | tests/linha/cadeias-proveniencia.mjs | Executa as plantas dos dois formatos no mesmo validateLedger chamado pelo ledger:check. Altera cópias em memória e repõe as linhas originais. |
 | design/especime-v3/INVENTARIO-FRASES.md | Reconfere duas contagens geradas pelo livro: 3195 linhas e 366 derivadas, nas duas línguas. Copia o texto do HTML e conserva a classificação e o formato do K2. Não altera palavras das páginas nem a emenda de voz do inventário. |
-| Guiões e registos desta pasta; RESPOSTA-construtor-oe1.md | Atualizam a medição, o custo incremental, os portões e a resposta curta; incluem os registos da passagem anterior que estavam por commitar. |
+| medir.py; medidas.json | Reconstroem as contagens, os conhecidos positivos e o relatório; distinguem provas preparatórias dos ficheiros da corrida final. |
+| custo.py; custo-oe1b.json | Medem o incremento dos contadores desde a ordem OE1-b e o tempo decorrido. |
+| npm-sem-caminhos.py | Conserva os códigos, retira identificadores locais da saída e admite uma pasta separada para a comparação da base. |
+| base-l1.py; base-l1.json | Constroem a versão de partida nesta worktree e conferem a reposição dos ficheiros. |
+| medir-l1.mjs; l1-oe1b.json; scripts/lugar-tetos-b1.json | Comparam as listas completas, os padrões e as plantas; registam a contagem medida da L1. |
+| cauda-verify.py; oe1b-cauda/ | Correm os comandos que a falha L1 tinha impedido de executar e conservam cada resultado, incluindo as falhas. |
+| provar-tempos.py; plantas-tempos.json | Conferem a diferença de precisão dos relógios e a recusa de resultados antigos ou incompletos. |
+| provar-localizadores.py; indice-localizadores.patch | Ensaiam a proposta dos sete formatos sem alterar a guarda aplicada. |
+| provar-feixe.py; feixe-recorte.patch | Ensaiam o recorte do espécime numa pasta temporária, com a página e o teto intactos. |
+| LEIA-ME.md; LINHAS.md; RESPOSTA-construtor-oe1.md; registos desta pasta | Reúnem as linhas, os resultados e as limitações; incluem os registos anteriores que estavam por commitar. |
 
 O primeiro ledger:check desta passagem encontrou uma dependência ausente nas cópias temporárias de um teste: a worktree usava os módulos do diretório ascendente, mas a cópia isolada não os encontrava. Foi criada uma ligação relativa, ignorada pelo Git, para as dependências já instaladas. Nenhum pacote foi instalado ou alterado. A segunda corrida tem o código em oe1b-ledger-dependencias.codigo.
 
@@ -286,6 +327,31 @@ A guarda do fecho também foi vista a morder: --conferir-final saiu com código 
 """
         for t in btests:
             report += f"| {md(t['nome'])} | {'sim' if t['mordeu'] else 'não'} |\n"
+        if l1 is not None:
+            c = l1["contagens"]
+            report += f"""
+### OE1-b: a medição da L1
+
+Depois da recontagem do inventário, o build, o ledger e o typecheck passaram, mas o verify recusou a L1: {c['estudos']} páginas com destinos repetidos, acima do teto de {c['antes']}. Os registos dessa corrida estão em oe1b-portoes-l1-anterior/.
+
+A primeira comparação recusou a medição antiga do E1: já havia diferenças anteriores ao OE1 em páginas como /correcoes. A base foi por isso construída de novo nesta mesma worktree, com os ficheiros afetados repostos temporariamente a partir de {l1['commit_da_base']}, pela tranca, e todos os bytes atuais e o dist repostos no fim. base-l1.json identifica os ficheiros e prova a reposição. Os cabeçalhos Git dessa comparação conservam a cabeça da worktree; o commit dos ficheiros temporários está declarado separadamente. Não são os portões da cabeça final.
+
+medir-l1.mjs corre a régua sem limite de amostra. Encontrou exatamente {c['entradas']} entradas, as 186 linhas OE1 nas duas línguas, zero saídas e zero alterações nas {c['antes']} entradas anteriores. Comparou ainda os padrões de links com {c['linhas_antigas_conferidas_no_html']} recibos antigos: nenhum padrão novo. Quatro plantas recusam recibo em falta, agravamento antigo, página extra e padrão desconhecido.
+
+A atualização de scripts/lugar-tetos-b1.json é uma medição de apoio ao ponto 5 do OE1-b. Aponta a l1-oe1b.json e usa a contagem medida de {c['estudos']}; scripts/check-lugar.mjs permanece igual. A razão segue a regra escrita no início dessa régua: o teto pode acompanhar recibos novos com os mesmos padrões, mas não o agravamento de uma página antiga. Não se alteraram componentes, palavras das páginas, WORKS ou a declaração das rotas.
+
+"""
+        if tail is not None:
+            report += f"Os {len(tail)} comandos posteriores à L1 foram também corridos separadamente: {sum(r["codigo"] == 0 for r in tail)} a 0 e {sum(r["codigo"] != 0 for r in tail)} com falha, para conferir os passos que a falha anterior impediu de executar. Os códigos e tempos estão em oe1b-cauda/resultados.json. Esta prova preparatória não substitui a corrida inteira na cabeça final, pela tranca.\n\n"
+        report += "A precisão dos tempos também foi conferida: cinco casos isolados em plantas-tempos.json. Um início no mesmo segundo do corredor é aceite quando o fim é posterior; um fim antigo, um fim ausente e uma corrida anterior aos microssegundos do novo início são recusados. Um código de falha conserva-se como falha.\n\n"
+        report += "### OE1-b: localizadores dos nomes no índice\n\n"
+        report += "O check:indice recusou 150 rótulos publicados porque a sua lista fechada ainda só conhece quatro formatos de name_source. O motor escreve mais sete formatos: caminho da dimensão COFOG, célula XLS, campo XML, código ministerial e três formas de localizar linhas nos PDF. Não se mudou um rótulo nem se fabricou um localizador para caber na lista antiga.\n\n"
+        report += "A proposta em indice-localizadores.patch acrescenta apenas essas sete formas a tests/livro/indice.mjs, cada uma com o leitor que a escreve nomeado. O ensaio corre a proposta em memória: índice a 0, 150 rótulos reconhecidos, quatro formatos anteriores conservados e doze plantas recusadas. A guarda aplicada foi conservada durante esse ensaio. As provas estão em proposta-localizadores.json e proposta-indice.log.\n\n"
+        report += ("A proposta está aplicada; os códigos finais abaixo conferem a cabeça entregue.\n\n" if proposal_applied else "A proposta não está aplicada. Esta extensão da guarda da origem dos nomes fica fora das cinco adaptações expressamente enumeradas no OE1-b e requer ampliação do perímetro. O verify continua por fechar por esta razão.\n\n")
+        report += "### OE1-b: o recorte do espécime de desenho\n\n"
+        report += f"O design:feixe recusou o cartão 13, que copia o índice inteiro: 908545 bytes, acima do teto de 656,48046875 KiB. A regra escrita em scripts/design-bundle.mjs manda que, na próxima ultrapassagem, o retrato passe a recorte. A proposta feixe-recorte.patch conserva as primeiras oito entradas na ordem da página e declara o recorte no próprio espécime. No ensaio, o cartão mediu {bundle['bytes_cartao']} bytes; a página conservou as {bundle['conteudo']['origem']} entradas e o mesmo SHA-256. O teto e a margem não mudam.\n\n"
+        report += "O ensaio gerou os cartões numa pasta temporária, sem alterar o gerador aplicado. As três plantas existentes do feixe morderam. Uma quarta retirou o recorte e voltou a exceder o teto do cartão 13. As provas estão em proposta-feixe.json e nos registos ao lado.\n\n"
+        report += ("O recorte está aplicado apenas ao exportador dos espécimes.\n\n" if bundle_applied else "A proposta não está aplicada. Esta alteração do exportador dos espécimes fica fora das cinco adaptações enumeradas no OE1-b e requer ampliação do perímetro. É a segunda razão por que o verify continua por fechar.\n\n")
         report += "\nCódigos finais: " + ", ".join(f"[{n}](portoes/{n}.codigo)" if close else f"{n}={g['codigo']}" for n,g in gates.items()) + ". As cabeças estão ao lado, na mesma pasta.\n\n"
         report += "Custo desta passagem: [custo-oe1b.json](custo-oe1b.json), medido pelo incremento dos contadores desde a ordem OE1-b, com construção e revisões automáticas discriminadas. O ficheiro conserva o corte temporal e é atualizado após a corrida final.\n\n"
     report += "## Custo medido\n\nModelo: Codex gpt-6-astra, confirmado pelo registo da sessão. O custo em símbolos é o acumulado dos eventos token_count até à medição, separado entre construção e revisão automática. Inclui entradas lidas da cache; não é o preço monetário. Mensagens posteriores à medição ficam fora desse corte.\n\n```json\n" + encoded(costs) + "```\n\n"
@@ -315,10 +381,12 @@ Códigos lidos de ficheiro: motor **{gates['motor']['codigo']}**; ledger **{gate
 
 [Relatório]({folder}LEIA-ME.md) e [tabela integral, com ids, fontes, valores, períodos e localizadores]({folder}LINHAS.md).
 
-Ficaram por fechar a receita consolidada AC+SS e o saldo nos mapas, a divergência da despesa bruta da Segurança Social e as necessidades de financiamento mensais. O OE1-b integra o conjunto no sítio e prova os dois formatos da bandeira, sem página, trabalho no arquivo ou definição de rota novos.
+Ficaram por fechar a receita consolidada AC+SS e o saldo nos mapas, a divergência da despesa bruta da Segurança Social e as necessidades de financiamento mensais. O OE1-b integra o conjunto, prova os dois formatos da bandeira e reconfere a L1 dos recibos gerados pelo livro. Nenhuma página do governo, entrada em WORKS ou declaração de rota foi acrescentada.
 
 Custo OE1-b ao corte: {(bcost or {}).get('tokens_totais', 'por medir')} símbolos, incluindo {(bcost or {}).get('tokens_entrada_cache', 'por medir')} de cache, e {(bcost or {}).get('segundos', 'por medir')} segundos. Modelo: Codex gpt-6-astra. O custo da construção inicial permanece no relatório. As medições posteriores ao último commit ficam na worktree, identificadas no relatório.
 """
+    if not proposal_applied:
+        short += "\nFalta ainda autorizar a proposta indice-localizadores.patch, que ensaiou os sete formatos dos localizadores no verificador do índice com código 0. A guarda aplicada continua a recusar esses formatos e o verify fica por fechar.\n"
     (SITE / "RESPOSTA-construtor-oe1.md").write_text(short)
     if close:
         short = short.replace("Commits:", "Commits anteriores ao fecho:")
@@ -326,6 +394,10 @@ Custo OE1-b ao corte: {(bcost or {}).get('tokens_totais', 'por medir')} símbolo
         a, b = short.index("Códigos lidos de ficheiro:"), short.index("| Linhas exportadas")
         short = short[:a] + "Códigos finais lidos de ficheiro: " + ", ".join(f"[{n}]({folder}portoes/{n}.codigo)" for n in gates) + ". As cabeças acompanham os registos; --conferir-final exige zero e a cabeça atual.\n\n" + short[b:]
         short = short[:short.index("Custo OE1-b ao corte:")] + "Custo OE1-b: [contadores e segundos ao último corte](" + folder + "custo-oe1b.json). Modelo: Codex gpt-6-astra. Os relatórios ficam comitados; os ficheiros da última execução são escritos depois do commit.\n"
+        if not proposal_applied:
+            short += "\nFalta autorizar [a proposta dos sete formatos de localizador](" + folder + "indice-localizadores.patch). O ensaio em memória passou; a guarda aplicada permanece intacta e o verify continua por fechar.\n"
+        if not bundle_applied:
+            short += "\nFalta também autorizar [o recorte do espécime do índice](" + folder + "feixe-recorte.patch): oito entradas, página integral intacta e teto conservado. O ensaio passou; o exportador aplicado ainda excede o teto.\n"
         (SITE / "RESPOSTA-construtor-oe1.md").write_text(short)
     print(encoded(dict(linhas=len(rows), medidas=len(measures), conhecidos_positivos=all(m["conhecido_positivo"] for m in measures.values()), portoes=gates)))
 

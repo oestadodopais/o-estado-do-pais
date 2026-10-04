@@ -1,5 +1,5 @@
 {
-  "medido_em": "2026-10-04T06:12:04.063385+00:00",
+  "medido_em": "2026-10-04T08:10:26.393835+00:00",
   "modelo": "Codex gpt-6-astra",
   "commits": {
     "motor": [
@@ -7,6 +7,9 @@
       "aa537323722eea9001daccabf394fd5e3ccdb546 OE1: guardar fontes oficiais e aquisição reproduzível"
     ],
     "sitio": [
+      "dc53e891c131b95ae90821703ab6e8397b0efd6d OE1-b: guardar as provas e as propostas adicionais",
+      "27f06c275b9fd0551867eec5da66353f3bffc1d8 OE1-b: reconferir a L1 com a construção de partida",
+      "ff8692ba096b493174e44eaf3d3695c4f56ded6f OE1-b: comitar o relatório, as plantas e as medições da integração",
       "2522ac1621a01ab62c30695b50a0558d8229a02b OE1-b: reconferir as duas contagens do livro no inventário",
       "a369b0ef023879b1f5cebe1090dba60887d41b28 OE1-b: integrar o conjunto e conferir as bandeiras Eurostat nos dois formatos",
       "0c4c5fc2dba94af00323a8cb056084104e677271 OE1: relatar a selagem parcial, as lacunas de fonte e os portões",
@@ -111,6 +114,36 @@
     },
     "contagens_reconferidas_no_inventario": {
       "valor": 2,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada que contribui para a contagem diminui a medida em um."
+    },
+    "l1_recibos_novos": {
+      "valor": 372,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada que contribui para a contagem diminui a medida em um."
+    },
+    "l1_plantas": {
+      "valor": 4,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada que contribui para a contagem diminui a medida em um."
+    },
+    "verificacoes_apos_l1": {
+      "valor": 11,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada que contribui para a contagem diminui a medida em um."
+    },
+    "provas_da_precisao_dos_tempos": {
+      "valor": 5,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada que contribui para a contagem diminui a medida em um."
+    },
+    "plantas_da_proposta_de_localizadores": {
+      "valor": 12,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada que contribui para a contagem diminui a medida em um."
+    },
+    "plantas_do_recorte_proposto": {
+      "valor": 4,
       "conhecido_positivo": true,
       "planta": "Retirar uma entrada que contribui para a contagem diminui a medida em um."
     }
@@ -493,16 +526,467 @@
       "3 195 afirmações · 366 de 3 195 calculadas · 2 767 de 3 195 linhas de concelhos",
       "3 195 claims · 366 of 3 195 calculated · 2 767 of 3 195 municipality rows"
     ],
+    "verificacoes_apos_l1": [
+      {
+        "comando": "npm run provar:eyetext",
+        "codigo": 0,
+        "inicio": "2026-10-04T07:44:49.150533+00:00",
+        "fim": "2026-10-04T07:44:49.450505+00:00"
+      },
+      {
+        "comando": "npm run provar:guardas",
+        "codigo": 0,
+        "inicio": "2026-10-04T07:44:49.450614+00:00",
+        "fim": "2026-10-04T07:44:49.589911+00:00"
+      },
+      {
+        "comando": "npm run check:mortos",
+        "codigo": 0,
+        "inicio": "2026-10-04T07:44:49.590017+00:00",
+        "fim": "2026-10-04T07:44:51.525204+00:00"
+      },
+      {
+        "comando": "npm run check:indice",
+        "codigo": 1,
+        "inicio": "2026-10-04T07:44:51.525311+00:00",
+        "fim": "2026-10-04T07:45:04.544774+00:00"
+      },
+      {
+        "comando": "npm run check:cartao",
+        "codigo": 0,
+        "inicio": "2026-10-04T07:45:04.544940+00:00",
+        "fim": "2026-10-04T07:45:12.276635+00:00"
+      },
+      {
+        "comando": "npm run check:navegacao",
+        "codigo": 0,
+        "inicio": "2026-10-04T07:45:12.276753+00:00",
+        "fim": "2026-10-04T07:45:22.671462+00:00"
+      },
+      {
+        "comando": "npm run check:primeira",
+        "codigo": 0,
+        "inicio": "2026-10-04T07:45:22.671581+00:00",
+        "fim": "2026-10-04T07:47:03.338463+00:00"
+      },
+      {
+        "comando": "npm run sinais",
+        "codigo": 0,
+        "inicio": "2026-10-04T07:47:03.338732+00:00",
+        "fim": "2026-10-04T07:47:04.458165+00:00"
+      },
+      {
+        "comando": "npm run check:nomes",
+        "codigo": 0,
+        "inicio": "2026-10-04T07:47:04.458317+00:00",
+        "fim": "2026-10-04T07:47:07.773680+00:00"
+      },
+      {
+        "comando": "npm run check:palavras",
+        "codigo": 0,
+        "inicio": "2026-10-04T07:47:07.773809+00:00",
+        "fim": "2026-10-04T07:48:48.099981+00:00"
+      },
+      {
+        "comando": "npm run design:feixe",
+        "codigo": 1,
+        "inicio": "2026-10-04T07:48:48.100335+00:00",
+        "fim": "2026-10-04T07:48:50.009713+00:00"
+      },
+      {
+        "comando": "npm run check:privacidade",
+        "codigo": 0,
+        "inicio": "2026-10-04T07:48:50.009854+00:00",
+        "fim": "2026-10-04T07:49:07.010707+00:00"
+      },
+      {
+        "comando": "npm run check:sugestoes",
+        "codigo": 0,
+        "inicio": "2026-10-04T07:49:07.010982+00:00",
+        "fim": "2026-10-04T07:49:07.158483+00:00"
+      }
+    ],
+    "provas_tempos": [
+      {
+        "nome": "Início no mesmo segundo, com fim posterior, é aceite",
+        "passou": true
+      },
+      {
+        "nome": "Um código antigo com fim anterior é recusado",
+        "passou": true
+      },
+      {
+        "nome": "Uma corrida sem fim é recusada",
+        "passou": true
+      },
+      {
+        "nome": "Fim anterior aos microssegundos da nova corrida é recusado",
+        "passou": true
+      },
+      {
+        "nome": "Um código de falha conserva-se como falha",
+        "passou": true
+      }
+    ],
+    "proposta_localizadores": {
+      "aplicada": false,
+      "provas": {
+        "linhas": 150,
+        "grupos": [
+          {
+            "nome": "dimension.cofog99.category.label.GFnn",
+            "leitor": "publisher/oe1_eurostat.py: rótulo da função na resposta JSON-stat",
+            "linhas": [
+              "despesa-por-funcao-2024-gf01-es",
+              "despesa-por-funcao-2024-gf01-pt",
+              "despesa-por-funcao-2024-gf01-ue",
+              "despesa-por-funcao-2024-gf02-es",
+              "despesa-por-funcao-2024-gf02-pt",
+              "despesa-por-funcao-2024-gf02-ue",
+              "despesa-por-funcao-2024-gf03-es",
+              "despesa-por-funcao-2024-gf03-pt",
+              "despesa-por-funcao-2024-gf03-ue",
+              "despesa-por-funcao-2024-gf04-es",
+              "despesa-por-funcao-2024-gf04-pt",
+              "despesa-por-funcao-2024-gf04-ue",
+              "despesa-por-funcao-2024-gf05-es",
+              "despesa-por-funcao-2024-gf05-pt",
+              "despesa-por-funcao-2024-gf05-ue",
+              "despesa-por-funcao-2024-gf06-es",
+              "despesa-por-funcao-2024-gf06-pt",
+              "despesa-por-funcao-2024-gf06-ue",
+              "despesa-por-funcao-2024-gf07-es",
+              "despesa-por-funcao-2024-gf07-pt",
+              "despesa-por-funcao-2024-gf07-ue",
+              "despesa-por-funcao-2024-gf08-es",
+              "despesa-por-funcao-2024-gf08-pt",
+              "despesa-por-funcao-2024-gf08-ue",
+              "despesa-por-funcao-2024-gf09-es",
+              "despesa-por-funcao-2024-gf09-pt",
+              "despesa-por-funcao-2024-gf09-ue",
+              "despesa-por-funcao-2024-gf10-es",
+              "despesa-por-funcao-2024-gf10-pt",
+              "despesa-por-funcao-2024-gf10-ue"
+            ]
+          },
+          {
+            "nome": "folha OE1 e célula do rótulo",
+            "leitor": "publisher/oe1_dados.py: célula do rótulo nas folhas XLS",
+            "linhas": [
+              "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
+              "execucao-2026-07-ativos-e-passivos-da-receita-administracao-central",
+              "execucao-2026-07-despesa-efetiva-administracao-central",
+              "execucao-2026-07-despesa-funcao-01",
+              "execucao-2026-07-despesa-funcao-02",
+              "execucao-2026-07-despesa-funcao-03",
+              "execucao-2026-07-despesa-funcao-04",
+              "execucao-2026-07-despesa-funcao-05",
+              "execucao-2026-07-despesa-funcao-06",
+              "execucao-2026-07-despesa-funcao-07",
+              "execucao-2026-07-despesa-funcao-08",
+              "execucao-2026-07-despesa-funcao-09",
+              "execucao-2026-07-despesa-funcao-10",
+              "execucao-2026-07-despesa-orcamental-administracao-central",
+              "execucao-2026-07-despesa-primaria-administracao-central",
+              "execucao-2026-07-diferencas-consolidacao-funcional",
+              "execucao-2026-07-receita-efetiva-administracao-central",
+              "execucao-2026-07-receita-orcamental-administracao-central",
+              "execucao-2026-07-saldo-global-administracao-central",
+              "execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica",
+              "execucao-2026-07-saldo-primario-administracao-central",
+              "oe-2026-ativos-e-passivos-da-despesa-administracao-central",
+              "oe-2026-ativos-e-passivos-da-receita-administracao-central",
+              "oe-2026-despesa-efetiva-administracao-central",
+              "oe-2026-despesa-funcao-01",
+              "oe-2026-despesa-funcao-02",
+              "oe-2026-despesa-funcao-03",
+              "oe-2026-despesa-funcao-04",
+              "oe-2026-despesa-funcao-05",
+              "oe-2026-despesa-funcao-06",
+              "oe-2026-despesa-funcao-07",
+              "oe-2026-despesa-funcao-08",
+              "oe-2026-despesa-funcao-09",
+              "oe-2026-despesa-funcao-10",
+              "oe-2026-despesa-orcamental-administracao-central",
+              "oe-2026-despesa-primaria-administracao-central",
+              "oe-2026-diferencas-consolidacao-funcional",
+              "oe-2026-receita-efetiva-administracao-central",
+              "oe-2026-receita-orcamental-administracao-central",
+              "oe-2026-saldo-global-administracao-central",
+              "oe-2026-saldo-primario-administracao-central"
+            ]
+          },
+          {
+            "nome": "Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn",
+            "leitor": "publisher/oe1_xml.py: campo DesignacaoPrograma no registo XML",
+            "linhas": [
+              "oe-2026-despesa-programa-001",
+              "oe-2026-despesa-programa-002",
+              "oe-2026-despesa-programa-003",
+              "oe-2026-despesa-programa-004",
+              "oe-2026-despesa-programa-005",
+              "oe-2026-despesa-programa-006",
+              "oe-2026-despesa-programa-007",
+              "oe-2026-despesa-programa-008",
+              "oe-2026-despesa-programa-009",
+              "oe-2026-despesa-programa-010",
+              "oe-2026-despesa-programa-011",
+              "oe-2026-despesa-programa-012",
+              "oe-2026-despesa-programa-013",
+              "oe-2026-despesa-programa-014",
+              "oe-2026-despesa-programa-015",
+              "oe-2026-despesa-programa-016",
+              "oe-2026-despesa-programa-017",
+              "oe-2026-despesa-programa-018",
+              "oe-2026-despesa-programa-019",
+              "oe-2026-despesa-programa-020"
+            ]
+          },
+          {
+            "nome": "página e código ministerial do Mapa 4",
+            "leitor": "publisher/oe1_pdf.py: rótulo da rubrica orgânica no Mapa 4",
+            "linhas": [
+              "oe-2026-despesa-ministerio-administracao-interna",
+              "oe-2026-despesa-ministerio-agricultura-e-mar",
+              "oe-2026-despesa-ministerio-ambiente-e-energia",
+              "oe-2026-despesa-ministerio-cultura-juventude-e-desporto",
+              "oe-2026-despesa-ministerio-defesa-nacional",
+              "oe-2026-despesa-ministerio-economia-e-coesao-territorial",
+              "oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao",
+              "oe-2026-despesa-ministerio-encargos-gerais-do-estado",
+              "oe-2026-despesa-ministerio-financas",
+              "oe-2026-despesa-ministerio-infraestruturas-e-habitacao",
+              "oe-2026-despesa-ministerio-justica",
+              "oe-2026-despesa-ministerio-negocios-estrangeiros",
+              "oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros",
+              "oe-2026-despesa-ministerio-reforma-do-estado",
+              "oe-2026-despesa-ministerio-saude",
+              "oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social"
+            ]
+          },
+          {
+            "nome": "página, rótulo e última coluna de um total dos mapas",
+            "leitor": "publisher/oe1_pdf.py: linha identificada pelo rótulo nos mapas PDF",
+            "linhas": [
+              "oe-2026-despesa-bruta-administracao-central",
+              "oe-2026-despesa-consolidada-administracao-central",
+              "oe-2026-despesa-consolidada-seguranca-social",
+              "oe-2026-despesa-total",
+              "oe-2026-receita-bruta-administracao-central",
+              "oe-2026-receita-consolidada-administracao-central",
+              "oe-2026-receita-consolidada-seguranca-social"
+            ]
+          },
+          {
+            "nome": "páginas 49 e 50, rótulo e coluna da síntese de agosto",
+            "leitor": "publisher/oe1_pdf.py: rótulo das contas da síntese mensal",
+            "linhas": [
+              "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+              "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+              "execucao-2026-08-despesa-efetiva-administracao-central",
+              "execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social",
+              "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
+              "execucao-2026-08-receita-efetiva-administracao-central",
+              "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+              "execucao-2026-08-saldo-global-administracao-central",
+              "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+              "oe-2026-despesa-efetiva-administracao-central-seguranca-social",
+              "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social",
+              "oe-2026-receita-efetiva-administracao-central-seguranca-social",
+              "oe-2026-saldo-global-administracao-central-seguranca-social"
+            ]
+          },
+          {
+            "nome": "página 72, programa ou total da síntese de agosto",
+            "leitor": "publisher/oe1_pdf.py: rótulo dos programas e dos totais na síntese mensal",
+            "linhas": [
+              "execucao-2026-08-despesa-programa-001",
+              "execucao-2026-08-despesa-programa-002",
+              "execucao-2026-08-despesa-programa-003",
+              "execucao-2026-08-despesa-programa-004",
+              "execucao-2026-08-despesa-programa-005",
+              "execucao-2026-08-despesa-programa-006",
+              "execucao-2026-08-despesa-programa-007",
+              "execucao-2026-08-despesa-programa-008",
+              "execucao-2026-08-despesa-programa-009",
+              "execucao-2026-08-despesa-programa-010",
+              "execucao-2026-08-despesa-programa-011",
+              "execucao-2026-08-despesa-programa-012",
+              "execucao-2026-08-despesa-programa-013",
+              "execucao-2026-08-despesa-programa-014",
+              "execucao-2026-08-despesa-programa-015",
+              "execucao-2026-08-despesa-programa-016",
+              "execucao-2026-08-despesa-programa-017",
+              "execucao-2026-08-despesa-programa-018",
+              "execucao-2026-08-despesa-programa-019",
+              "execucao-2026-08-despesa-programa-020",
+              "execucao-2026-08-diferencas-consolidacao-programas",
+              "execucao-2026-08-fluxos-entre-programas",
+              "execucao-2026-08-subtotal-programas"
+            ]
+          }
+        ],
+        "plantas": [
+          {
+            "nome": "Outra dimensão JSON-stat",
+            "mordeu": true
+          },
+          {
+            "nome": "Função fora da lista",
+            "mordeu": true
+          },
+          {
+            "nome": "Coluna numérica em vez do rótulo XLS",
+            "mordeu": true
+          },
+          {
+            "nome": "Folha XLS desconhecida",
+            "mordeu": true
+          },
+          {
+            "nome": "Campo numérico em vez do rótulo XML",
+            "mordeu": true
+          },
+          {
+            "nome": "Registo XML zero",
+            "mordeu": true
+          },
+          {
+            "nome": "Código ministerial zero",
+            "mordeu": true
+          },
+          {
+            "nome": "Total sem página",
+            "mordeu": true
+          },
+          {
+            "nome": "Página impressa trocada",
+            "mordeu": true
+          },
+          {
+            "nome": "Coluna da síntese desconhecida",
+            "mordeu": true
+          },
+          {
+            "nome": "Programa da síntese zero",
+            "mordeu": true
+          },
+          {
+            "nome": "Localizador livre",
+            "mordeu": true
+          }
+        ],
+        "formatos_anteriores": [
+          {
+            "formato": "IndicadorDsg",
+            "id": "abrantes-empresas-2024",
+            "aceito": true
+          },
+          {
+            "formato": "label",
+            "id": "disparidade-salarial-entre-sexos-2023",
+            "aceito": true
+          },
+          {
+            "formato": "p.<n>, linha <n>, campo <n>",
+            "id": "abrantes-prazo-medio-de-pagamento-2025-12",
+            "aceito": true
+          },
+          {
+            "formato": "<folha>, linha <n>, coluna <n>",
+            "id": "abrantes-desemprego-registado-2025-12",
+            "aceito": true
+          }
+        ],
+        "estado": "proposta não aplicada",
+        "codigo_indice": 0,
+        "guarda_conservada": true,
+        "guarda_sha256": "c0afc843c5d910856974a2507c0dfbec8788df81a3685a3cd0358e41a5b30808",
+        "candidato_sha256": "461fd01d66a555772c295e9ad04d15d778dc3e754735b0114dfb7451c100dbd2"
+      }
+    },
+    "proposta_feixe": {
+      "aplicada": false,
+      "provas": {
+        "estado": "proposta não aplicada",
+        "bytes_cartao": 235855,
+        "conteudo": {
+          "origem": 428,
+          "recorte": 8,
+          "primeiras_preservadas": true
+        },
+        "pagina_conservada": true,
+        "guiao_conservado": true,
+        "guarda_sha256": "55b6c7cdaa8b01ccf83c3b4479b9b7a9cf986394d71b3ddd370dbbc43e9874cd",
+        "candidato_sha256": "7bd13c47715cbbe4a0ad296aea5c67381f4ac51a2a877409be05805987561cd5",
+        "codigo": 0,
+        "planta_sem_recorte": 1,
+        "plantas_do_feixe": [
+          "tamanho",
+          "dependência SVG",
+          "imagem externa"
+        ],
+        "teto_conservado": true,
+        "plantas": [
+          {
+            "nome": "tamanho",
+            "mordeu": true
+          },
+          {
+            "nome": "dependência SVG",
+            "mordeu": true
+          },
+          {
+            "nome": "imagem externa",
+            "mordeu": true
+          },
+          {
+            "nome": "Retirar o recorte excede o teto do cartão 13",
+            "mordeu": true
+          }
+        ]
+      }
+    },
+    "l1": {
+      "ficheiro": "l1-oe1b.json",
+      "contagens": {
+        "estudos": 2714,
+        "antes": 2342,
+        "entradas": 372,
+        "saidas": 0,
+        "antigas_alteradas": 0,
+        "linhas_antigas_conferidas_no_html": 1610,
+        "padroes_antigos": 13
+      },
+      "conhecidos_positivos": [
+        {
+          "nome": "Um recibo OE1 em falta é recusado",
+          "mordeu": true
+        },
+        {
+          "nome": "Um destino repetido a mais numa página antiga é recusado",
+          "mordeu": true
+        },
+        {
+          "nome": "Uma página extra fora do OE1 é recusada",
+          "mordeu": true
+        },
+        {
+          "nome": "Um padrão desconhecido é recusado",
+          "mordeu": true
+        }
+      ]
+    },
     "custo_na_medicao": {
       "passagem": "OE1-b",
       "inicio": "2026-10-04T05:28:59.102Z",
-      "medido_em": "2026-10-04T06:09:22.059723+00:00",
-      "segundos": 2422,
+      "medido_em": "2026-10-04T08:01:20.918506+00:00",
+      "segundos": 9141,
       "sessoes": [
         {
           "sessao": "01a10508-9b42-72e2-a474-124da3a642e1",
           "modelo": "gpt-6-astra",
-          "ultima_medicao": "2026-10-04T06:05:33.019Z",
+          "ultima_medicao": "2026-10-04T08:01:01.346Z",
           "contador_anterior": {
             "input_tokens": 18554708,
             "cached_input_tokens": 17633408,
@@ -512,20 +996,20 @@
             "total_tokens": 18664120
           },
           "contador_atual": {
-            "input_tokens": 24955537,
-            "cached_input_tokens": 23859968,
+            "input_tokens": 40774550,
+            "cached_input_tokens": 39351936,
             "cache_write_input_tokens": 0,
-            "output_tokens": 156596,
-            "reasoning_output_tokens": 71312,
-            "total_tokens": 25112133
+            "output_tokens": 261547,
+            "reasoning_output_tokens": 135440,
+            "total_tokens": 41036097
           },
           "incremento": {
-            "input_tokens": 6400829,
-            "cached_input_tokens": 6226560,
+            "input_tokens": 22219842,
+            "cached_input_tokens": 21718528,
             "cache_write_input_tokens": 0,
-            "output_tokens": 47184,
-            "reasoning_output_tokens": 29779,
-            "total_tokens": 6448013
+            "output_tokens": 152135,
+            "reasoning_output_tokens": 93907,
+            "total_tokens": 22371977
           }
         },
         {
@@ -549,19 +1033,41 @@
             "reasoning_output_tokens": 429,
             "total_tokens": 183767
           }
+        },
+        {
+          "sessao": "01a105a3-396f-73f0-86b9-6afbef32c668",
+          "modelo": "codex-auto-review",
+          "ultima_medicao": "2026-10-04T07:44:49.051Z",
+          "contador_anterior": {},
+          "contador_atual": {
+            "input_tokens": 165461,
+            "cached_input_tokens": 94208,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 861,
+            "reasoning_output_tokens": 539,
+            "total_tokens": 166322
+          },
+          "incremento": {
+            "input_tokens": 165461,
+            "cached_input_tokens": 94208,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 861,
+            "reasoning_output_tokens": 539,
+            "total_tokens": 166322
+          }
         }
       ],
-      "tokens_totais": 6631780,
-      "tokens_entrada_cache": 6364800,
-      "tokens_entrada_sem_cache": 219099,
-      "tokens_saida": 47881,
+      "tokens_totais": 22722066,
+      "tokens_entrada_cache": 21950976,
+      "tokens_entrada_sem_cache": 617397,
+      "tokens_saida": 153693,
       "limite": "Incremento desde o último contador anterior à ordem OE1-b até ao último disponível. Inclui cache e revisões automáticas; não é preço monetário.",
       "conhecido_positivo": true
     }
   },
   "cabecas_na_medicao": {
     "motor": "9bfbb777f7d2f5af8b185475c8dd8027ebd76bad",
-    "sitio": "2522ac1621a01ab62c30695b50a0558d8229a02b"
+    "sitio": "dc53e891c131b95ae90821703ab6e8397b0efd6d"
   },
   "portoes_na_medicao": {
     "motor": {
@@ -571,26 +1077,26 @@
       "cabeca_final": true
     },
     "build": {
-      "codigo": null,
-      "cabeca": "a369b0ef023879b1f5cebe1090dba60887d41b28",
+      "codigo": 0,
+      "cabeca": "ff8692ba096b493174e44eaf3d3695c4f56ded6f",
       "origem": "portoes/build.codigo",
       "cabeca_final": false
     },
     "verify": {
-      "codigo": null,
-      "cabeca": "a369b0ef023879b1f5cebe1090dba60887d41b28",
+      "codigo": 1,
+      "cabeca": "ff8692ba096b493174e44eaf3d3695c4f56ded6f",
       "origem": "portoes/verify.codigo",
       "cabeca_final": false
     },
     "typecheck": {
-      "codigo": null,
-      "cabeca": "a369b0ef023879b1f5cebe1090dba60887d41b28",
+      "codigo": 0,
+      "cabeca": "ff8692ba096b493174e44eaf3d3695c4f56ded6f",
       "origem": "portoes/typecheck.codigo",
       "cabeca_final": false
     },
     "ledger": {
-      "codigo": null,
-      "cabeca": "a369b0ef023879b1f5cebe1090dba60887d41b28",
+      "codigo": 0,
+      "cabeca": "ff8692ba096b493174e44eaf3d3695c4f56ded6f",
       "origem": "portoes/ledger.codigo",
       "cabeca_final": false
     }
