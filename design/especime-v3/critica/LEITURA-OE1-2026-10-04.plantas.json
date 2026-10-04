@@ -1,0 +1,64 @@
+{
+ "registado_em": "2026-10-04T09:22:22+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "oe1-p1-valor-trocado",
+   "ficheiro": "ledger/claims/oe-2026-despesa-ministerio-saude.yml",
+   "descricao": "o valor da rubrica da Saúde passa de 46 823 532 502 a 46 823 532 503; o excerto literal, o recibo construído, o LINHAS.md e o livro do motor dizem 502",
+   "sha256_antes": "6c6dc2a2e43674c35de70dfc00ae44a582bb8da362f31d9c577dee0f03831f73",
+   "sha256_depois": "4d5031912dbaf59a831332e0d0a63df8b34d805de98cf7dfac9753ab7b940c75",
+   "contexto_antes": "i parte scripts/check-cruzamento.mjs.\n\nid: \"oe-2026-despesa-ministerio-saude\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"46 823 532 502\"\nunit: \"euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"SAÚ",
+   "contexto_depois": "i parte scripts/check-cruzamento.mjs.\n\nid: \"oe-2026-despesa-ministerio-saude\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"46 823 532 503\"\nunit: \"euros\"\n\n# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,\n# e onde nele foi lido. Escrito pelo motor, nunca à mão.\nname: \"SAÚ"
+  },
+  {
+   "id": "oe1-p2-contagem-do-relatorio",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a contagem das linhas no relatório passa de 186 a 168 na frase de abertura; o LINHAS.md, as 186 linhas em ledger/claims/ e o medidas.json dizem 186",
+   "sha256_antes": "5eb955f460ff5f51fc57abbe685fdd41651b8135144ce7927544f16348bcbfbc",
+   "sha256_depois": "7c6161a046e72120fdd24455b168211ccba87d91e068bf9be2bb233ed71f57d5",
+   "contexto_antes": "# OE1: o dinheiro do Estado\n\nO teste de aceitação integral do §2 não está cumprido. Foram construídas e exportadas **186 linhas**, das quais **150 transcrevem valores publicados** e **36 são contas declaradas**. As lacunas de fonte estão identificadas abaixo. Os resultados efetivos dos po",
+   "contexto_depois": "# OE1: o dinheiro do Estado\n\nO teste de aceitação integral do §2 não está cumprido. Foram construídas e exportadas **168 linhas**, das quais **150 transcrevem valores publicados** e **36 são contas declaradas**. As lacunas de fonte estão identificadas abaixo. Os resultados efetivos dos po"
+  },
+  {
+   "id": "oe1-p3-localizador-alargado",
+   "ficheiro": "tests/livro/indice.mjs",
+   "descricao": "a forma do localizador do Mapa 4 (as rubricas por ministério) passa de páginas 1 a 6 e códigos 01 a 16 a qualquer página e qualquer código; o diff.patch traz a forma apertada",
+   "sha256_antes": "00cfc5df5b63d54dfcb73129a9bf895eac844f105ab031751609d7652b8a840e",
+   "sha256_depois": "e4dff6e4b477ca05ee19bdd3ca2200ff55672a08fcbec41f9123b7e9a412d947",
+   "contexto_antes": "00[1-9]|01\\d|020)$/,\n    onde: 'publisher/oe1_xml.py: campo DesignacaoPrograma no registo XML',\n  },\n  {\n    nome: 'página e código ministerial do Mapa 4',\n    forma: /^p\\. [1-6], POR MINISTÉRIOS, código (?:0[1-9]|1[0-6])$/,\n    onde: 'publisher/oe1_pdf.py: rótulo da rubrica orgânica no Mapa 4',\n  },\n  {\n    nome: 'página, rótulo e última coluna de um total dos mapas',\n    forma: /",
+   "contexto_depois": "00[1-9]|01\\d|020)$/,\n    onde: 'publisher/oe1_xml.py: campo DesignacaoPrograma no registo XML',\n  },\n  {\n    nome: 'página e código ministerial do Mapa 4',\n    forma: /^p\\. \\d+, POR MINISTÉRIOS, código \\d+$/,\n    onde: 'publisher/oe1_pdf.py: rótulo da rubrica orgânica no Mapa 4',\n  },\n  {\n    nome: 'página, rótulo e última coluna de um total dos mapas',\n    forma: /"
+  },
+  {
+   "id": "oe1-p4-recibo-com-valor-trocado",
+   "ficheiro": "built/livro-razao/oe-2026-despesa-ministerio-saude/index.html",
+   "descricao": "o recibo português da rubrica da Saúde imprime 46 823 532 520 no corpo; a linha sela 502 e o recibo inglês também o imprime",
+   "sha256_antes": "354defd37981879138c4f7bb31ba47b54e195bb543db1d378539fa24e46c665e",
+   "sha256_depois": "0818c7c283796f363677768af05713209f3e58e827317eaf5f32d93bd832d70b",
+   "contexto_antes": "an></p></div><div class=\"linha-cabeca\"><span class=\"eyebrow\">Linha do livro-razão</span><h1 class=\"linha-valor\"><span data-claim=\"oe-2026-despesa-ministerio-saude\" class=\"claim-value linha-valor-num\">46 823 532 502</span> <span class=\"campo-valor linha-valor-unidade\" lang=\"pt-PT\" data-linha-claim=\"oe-2026-despesa-ministerio-saude\" data-linha-campo=\"unit\">euros</span></h1>",
+   "contexto_depois": "an></p></div><div class=\"linha-cabeca\"><span class=\"eyebrow\">Linha do livro-razão</span><h1 class=\"linha-valor\"><span data-claim=\"oe-2026-despesa-ministerio-saude\" class=\"claim-value linha-valor-num\">46 823 532 520</span> <span class=\"campo-valor linha-valor-unidade\" lang=\"pt-PT\" data-linha-claim=\"oe-2026-despesa-ministerio-saude\" data-linha-campo=\"unit\">euros</span></h1>"
+  },
+  {
+   "id": "oe1-p5-pagina-do-manifesto",
+   "ficheiro": "motor/publisher/manifest.oe1.json",
+   "descricao": "o manifesto do motor diz page 4 para a rubrica da Saúde; o localizador da linha, o YAML do sítio e o livro do motor dizem p. 5",
+   "sha256_antes": "a20b260fc1dd2bf92b9a38fcbde021c276de07a55af87b16fbef2be47448e9ae",
+   "sha256_depois": "c50d16ea06af6e4615ea654639fa3d02499bbc70175fc7ce6202d55f7b23a526",
+   "contexto_antes": "e\": \"rh_value\",\n      \"source\": \"Entidade Orçamental\",\n      \"document\": {\n        \"title\": \"MAPA 4\",\n        \"edition\": \"2026\",\n        \"kind\": \"pdf\",\n        \"locator\": \"p. 5, POR MINISTÉRIOS, código 12\",\n        \"page\": 5\n      },\n      \"excerpt_mode\": \"literal\"\n    },\n    {\n      \"rh_study\": \"20 Orcamento do Estado\",\n      \"rh_id\": \"oe-2026-despesa-ministerio-trabalho-solidarie",
+   "contexto_depois": "e\": \"rh_value\",\n      \"source\": \"Entidade Orçamental\",\n      \"document\": {\n        \"title\": \"MAPA 4\",\n        \"edition\": \"2026\",\n        \"kind\": \"pdf\",\n        \"locator\": \"p. 5, POR MINISTÉRIOS, código 12\",\n        \"page\": 4\n      },\n      \"excerpt_mode\": \"literal\"\n    },\n    {\n      \"rh_study\": \"20 Orcamento do Estado\",\n      \"rh_id\": \"oe-2026-despesa-ministerio-trabalho-solidarie"
+  }
+ ],
+ "leitura": {
+  "modelo": "claude-opus-5-5 (a definição leitor)",
+  "inicio_utc": "2026-10-04T09:23:00Z",
+  "fim_utc": "2026-10-04T09:52:00Z",
+  "tokens_pela_ferramenta": 443724,
+  "plantas_mordidas": {
+   "oe1-p1-valor-trocado": "achado 2",
+   "oe1-p2-contagem-do-relatorio": "achado 12",
+   "oe1-p3-localizador-alargado": "achado 9",
+   "oe1-p4-recibo-com-valor-trocado": "achado 1",
+   "oe1-p5-pagina-do-manifesto": "achado 11"
+  }
+ }
+}
