@@ -268,6 +268,35 @@ const MOTIVOS_DO_DOMINIO = new Set([
 const claims = loadClaims();
 /** UE1: as linhas de série, pelo leitor próprio dos portões (F1 e F19). */
 const SERIES_DO_PORTAO = lerSeriesDoPortao();
+/* RP3 (04.10.2026): as contagens da faixa e da secção dos países (F19, F20) são das
+   séries de países; as séries no tempo não têm faixa. */
+const SERIES_DE_PAISES = new Map([...SERIES_DO_PORTAO].filter(([, s]) => s.eixo === 'pais'));
+
+/**
+ * O CAMPO DE DATA DE UMA SÉRIE QUE UMA DATA DIZ MOSTRAR, pelo caminho do campo
+ * (bloco RP3, 04.10.2026). Numa série de países: o período, a data da leitura e a
+ * da publicação, como no UE1. Numa série no tempo, também o primeiro e o último
+ * período, o período de cada ponto (`pontos.<n>.periodo`), a hora, o primeiro e o
+ * último ponto de cada pedido (`pedidos.<n>.lido_em`, `.primeiro`, `.ultimo`), o
+ * período de cada lacuna e o período e a data de cada correção. `null` para um
+ * caminho que não é um destes, que a F1 recusa.
+ *
+ * @param {any} serie @param {string} campo
+ * @returns {string | null}
+ */
+function campoDeDataDaSerie(serie, campo) {
+  const topo = serie.eixo === 'periodo'
+    ? ['access_date', 'published_at', 'primeiro_periodo', 'ultimo_periodo']
+    : ['periodo', 'access_date', 'published_at'];
+  if (topo.includes(campo)) return typeof serie[campo] === 'string' ? serie[campo] : null;
+  if (serie.eixo !== 'periodo') return null;
+  const m = /^(pontos|pedidos|lacunas|corrections)\.(\d+)\.(periodo|lido_em|primeiro|ultimo|date)$/.exec(campo);
+  if (!m) return null;
+  const permitidos = { pontos: ['periodo'], pedidos: ['lido_em', 'primeiro', 'ultimo'], lacunas: ['periodo'], corrections: ['periodo', 'date'] };
+  if (!permitidos[m[1]].includes(m[3])) return null;
+  const item = Array.isArray(serie[m[1]]) ? serie[m[1]][Number(m[2])] : null;
+  return item && typeof item[m[3]] === 'string' ? item[m[3]] : null;
+}
 const PAISES_DO_PORTAO = lerPaisesDoPortao();
 
 /** @param {string} dir */
@@ -509,7 +538,7 @@ for (const ficheiro of paginasDe(DIST)) {
      plantas em memória, e cada uma tem de morder. */
   if (html.includes('data-cartao-medida') || html.includes('data-faixa-ue')) {
     const lingua = rota?.lang === 'en' ? 'en' : 'pt';
-    const f19 = conferirFaixas(root, lingua, caminho, { series: SERIES_DO_PORTAO, paises: PAISES_DO_PORTAO });
+    const f19 = conferirFaixas(root, lingua, caminho, { series: SERIES_DE_PAISES, paises: PAISES_DO_PORTAO });
     for (const e of f19.erros) err(`${rel}: ${e}`);
     contas.faixas += f19.contas.faixas;
     contas.marcas_das_faixas += f19.contas.marcas;
@@ -528,7 +557,7 @@ for (const ficheiro of paginasDe(DIST)) {
      plantas em memória, que têm de morder. Uma faixa dos países noutra página fecha a construção. */
   if (rota?.key === 'uniaoEuropeia') {
     const lingua = rota.lang === 'en' ? 'en' : 'pt';
-    const ctx = { series: SERIES_DO_PORTAO, paises: PAISES_DO_PORTAO };
+    const ctx = { series: SERIES_DE_PAISES, paises: PAISES_DO_PORTAO };
     const f20 = conferirSeccaoDosPaises(root, lingua, caminho, ctx);
     for (const e of f20.erros) err(`${rel}: ${e}`);
     contas.seccoes_dos_paises += f20.contas.seccoes;
@@ -581,7 +610,7 @@ for (const ficheiro of paginasDe(DIST)) {
       const sid = el.getAttribute('data-linha-de-serie') ?? '';
       const campo = el.getAttribute('data-de-campo') ?? '';
       const serie = SERIES_DO_PORTAO.get(sid);
-      const bruto = serie && ['periodo', 'access_date', 'published_at'].includes(campo) ? serie[campo] : null;
+      const bruto = serie ? campoDeDataDaSerie(serie, campo) : null;
       if (typeof bruto !== 'string') {
         err(`${rel}: uma data diz vir do campo "${campo}" da série "${sid}", e a série não o tem.`);
         continue;
@@ -965,7 +994,7 @@ if (contas.paginas === 0) {
 }
 
 /* N1: as plantas da faixa precisam do conjunto dos cartões, distribuído por assuntos. */
-for (const lang of LANGS) for (const planta of plantasDaFaixa(documentoDosAssuntos(DIST, lang).outerHTML, lang, `assuntos-${lang}`, { series: SERIES_DO_PORTAO, paises: PAISES_DO_PORTAO })) {
+for (const lang of LANGS) for (const planta of plantasDaFaixa(documentoDosAssuntos(DIST, lang).outerHTML, lang, `assuntos-${lang}`, { series: SERIES_DE_PAISES, paises: PAISES_DO_PORTAO })) {
   contas.plantas_das_faixas++;
   if (!planta.passou) err(`F19: a planta «${planta.nome}» não mordeu (${planta.porque}).`);
 }
@@ -1338,25 +1367,25 @@ if (dominios.length > 0 && contas.formas > 0) {
 /* F19 · o conhecido-positivo: cada série de países tem a sua faixa nas duas
    páginas dos temas, e as plantas correram. Zero faixas com séries no livro é
    um detetor que não viu nada. */
-if (SERIES_DO_PORTAO.size && contas.faixas_nos_temas !== 2 * SERIES_DO_PORTAO.size) {
-  err(`F19: as páginas dos temas rendem ${contas.faixas_nos_temas} faixa(s) da União e há ${SERIES_DO_PORTAO.size} série(s) de países; esperavam-se ${2 * SERIES_DO_PORTAO.size}, uma por série e por edição.`);
+if (SERIES_DE_PAISES.size && contas.faixas_nos_temas !== 2 * SERIES_DE_PAISES.size) {
+  err(`F19: as páginas dos temas rendem ${contas.faixas_nos_temas} faixa(s) da União e há ${SERIES_DE_PAISES.size} série(s) de países; esperavam-se ${2 * SERIES_DE_PAISES.size}, uma por série e por edição.`);
 }
-if (SERIES_DO_PORTAO.size && contas.plantas_das_faixas === 0) {
+if (SERIES_DE_PAISES.size && contas.plantas_das_faixas === 0) {
   err('F19: nenhuma planta da faixa correu: a célula não provou que morde.');
 }
 
 /* F20 · o conhecido-positivo: a secção dos países nas duas edições da página da União, com uma faixa por série de
    países em cada uma, e as plantas a correr; e a planta da tabela, uma vez por corrida e sem página. */
-if (SERIES_DO_PORTAO.size) {
-  if (contas.seccoes_dos_paises !== 2 || contas.faixas_dos_paises !== 2 * SERIES_DO_PORTAO.size) {
-    err(`F20: a página da União rende ${contas.seccoes_dos_paises} secção(ões) dos países com ${contas.faixas_dos_paises} faixa(s), e há ${SERIES_DO_PORTAO.size} série(s) de países; esperavam-se 2 secções e ${2 * SERIES_DO_PORTAO.size} faixas, uma por série e por edição.`);
+if (SERIES_DE_PAISES.size) {
+  if (contas.seccoes_dos_paises !== 2 || contas.faixas_dos_paises !== 2 * SERIES_DE_PAISES.size) {
+    err(`F20: a página da União rende ${contas.seccoes_dos_paises} secção(ões) dos países com ${contas.faixas_dos_paises} faixa(s), e há ${SERIES_DE_PAISES.size} série(s) de países; esperavam-se 2 secções e ${2 * SERIES_DE_PAISES.size} faixas, uma por série e por edição.`);
   }
   if (contas.plantas_dos_paises === 0) err('F20: nenhuma planta da secção dos países correu: a célula não provou que morde.');
   /* UE2-b: cada faixa das duas edições diz o que a medida conta, e a conta esperada sai das séries. */
-  if (contas.definicoes_dos_paises !== 2 * SERIES_DO_PORTAO.size) {
-    err(`F20g: ${contas.definicoes_dos_paises} faixa(s) dos países dizem a definição declarada da medida, e são ${2 * SERIES_DO_PORTAO.size}, uma por série e por edição.`);
+  if (contas.definicoes_dos_paises !== 2 * SERIES_DE_PAISES.size) {
+    err(`F20g: ${contas.definicoes_dos_paises} faixa(s) dos países dizem a definição declarada da medida, e são ${2 * SERIES_DE_PAISES.size}, uma por série e por edição.`);
   }
-  const tabela = plantaDaTabela(SERIES_DO_PORTAO);
+  const tabela = plantaDaTabela(SERIES_DE_PAISES);
   contas.plantas_dos_paises++;
   if (!tabela.passou) err(`F20: a planta «${tabela.nome}» não mordeu (${tabela.porque}).`);
 }
@@ -1366,13 +1395,13 @@ if (SERIES_DO_PORTAO.size) {
    cada marca que um ponto leva), com as suas plantas. E o conhecido-positivo das
    ressalvas: cada ponta cujo ponto leva marca mostra-a nas duas páginas dos
    temas, e o número esperado sai das séries e não de uma contagem à mão. */
-if (SERIES_DO_PORTAO.size) {
-  const palavrasDaFaixa = conferirPalavrasDaFaixa(SERIES_DO_PORTAO);
+if (SERIES_DE_PAISES.size) {
+  const palavrasDaFaixa = conferirPalavrasDaFaixa(SERIES_DE_PAISES);
   for (const e of palavrasDaFaixa.erros) err(`src/data/faixa-da-uniao.mjs: ${e}`);
   contas.ordinais_conferidos = palavrasDaFaixa.contas.ordinais;
   contas.marcas_com_palavras = palavrasDaFaixa.contas.marcas;
   if (!palavrasDaFaixa.erros.length) {
-    for (const planta of plantasDasPalavrasDaFaixa(SERIES_DO_PORTAO)) {
+    for (const planta of plantasDasPalavrasDaFaixa(SERIES_DE_PAISES)) {
       contas.plantas_das_palavras++;
       if (!planta.passou) err(`F19: a planta «${planta.nome}» não mordeu (${planta.porque}).`);
     }
@@ -1380,13 +1409,13 @@ if (SERIES_DO_PORTAO.size) {
   /* UE1c (o achado 5): os empates num extremo, feitos em memória, com a marca só
      num dos países empatados; cada planta tem de morder e o seu controlo passar. */
   for (const lingua of ['pt', 'en']) {
-    for (const planta of plantasDosEmpates(SERIES_DO_PORTAO, PAISES_DO_PORTAO, lingua)) {
+    for (const planta of plantasDosEmpates(SERIES_DE_PAISES, PAISES_DO_PORTAO, lingua)) {
       contas.plantas_dos_empates++;
       if (!planta.passou) err(`F19: a planta «${planta.nome}» (${lingua}) não mordeu (${planta.porque}).`);
     }
   }
   let pontasComMarca = 0;
-  for (const serie of SERIES_DO_PORTAO.values()) {
+  for (const serie of SERIES_DE_PAISES.values()) {
     try {
       const c = contaDaFaixa(serie);
       for (const geo of [c.baixo[0], c.alto[0]]) if (serie.pontos.find((p) => p.geo === geo)?.bandeira) pontasComMarca++;

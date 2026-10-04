@@ -54,6 +54,7 @@ import { NOMES_DO_PROJETO, NOMES_DAS_LINHAS_DERIVADAS } from '../src/data/nomes-
 import { NOMES_COM_A_VARIACAO_NA_UNIDADE } from '../src/data/unidades-dos-cartoes.mjs';
 import { temAviso } from '../src/lib/aviso-do-motor.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
+import { NOMES_DAS_SERIES } from '../src/data/series-no-tempo.mjs';
 import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -804,7 +805,20 @@ const NOMES_POR_FONTE = {
       (m.relance ?? []).flatMap((x) => Object.values(x.nome ?? {})),
     ),
   ),
+  /* OS NOMES DO PROJETO DAS SÉRIES NO TEMPO SEM CARTÃO (bloco RP3, 04.10.2026). Uma
+     série cuja medida tem cartão leva o nome do cartão, com a marca dele; as outras
+     levam o nome declarado em `src/data/series-no-tempo.mjs`, que a régua lê por
+     conta própria e confere contra a série que a marca nomeia (`data-da-serie`). */
+  serie: new Set(
+    Object.values(NOMES_DAS_SERIES).flatMap((d) => ('nome' in d ? Object.values(d.nome) : [])),
+  ),
 };
+/** O nome declarado de cada série no tempo sem cartão, pelo identificador da série. */
+const NOMES_POR_SERIE = new Map(
+  Object.entries(NOMES_DAS_SERIES)
+    .filter(([, d]) => 'nome' in d)
+    .map(([id, d]) => [id, /** @type {{ nome: Record<string, string> }} */ (d).nome]),
+);
 
 /**
  * ---------------------------------------------------------------------------
@@ -1292,6 +1306,26 @@ for (const file of ficheiros) {
       continue;
     }
     nomesPorFonte[fonte] += 1;
+    /* O NOME DE UMA SÉRIE NO TEMPO É CONFERIDO CONTRA A SUA PRÓPRIA SÉRIE (bloco
+       RP3): a marca diz de que série é, e o texto tem de ser o nome dela nesta
+       edição, e não só um nome do ficheiro. */
+    const daSerie = el.getAttribute('data-da-serie');
+    if (fonte === 'serie' && daSerie) {
+      const par = NOMES_POR_SERIE.get(daSerie);
+      const lingua = root.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt';
+      const esperado = par ? norm(par[lingua] ?? '') : null;
+      if (esperado !== t) {
+        nomesForaDaFonte.push({
+          caminho: caminho || '/',
+          fonte,
+          texto: t,
+          porque: par
+            ? `o texto marcado não é o nome da série "${daSerie}" nesta edição (src/data/series-no-tempo.mjs diz «${esperado}»)`
+            : `a marca diz que o nome é da série "${daSerie}", que src/data/series-no-tempo.mjs não nomeia`,
+        });
+      }
+      continue;
+    }
     /* O NOME DE UMA MEDIDA É CONFERIDO CONTRA A SUA PRÓPRIA LINHA (Blocking 4).
        Quando a marca diz de que linha o nome é, a pergunta deixa de ser «está
        neste ficheiro?» e passa a ser «é o nome DESTA linha, nesta edição?». */

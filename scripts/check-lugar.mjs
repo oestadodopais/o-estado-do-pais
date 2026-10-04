@@ -609,6 +609,17 @@ const ORIGEM_DECLARADA = [
   '[data-nome]',
   '[data-medida-nome]',
   '[data-medida-unidade]',
+  /* O CAMPO DE UMA LINHA DE SÉRIE (bloco RP3, 04.10.2026), a marca irmã de
+     `data-linha-claim`: o que a fonte escreve de uma série (o nome do conjunto, o
+     título, o literal, a etiqueta de uma marca, a razão de uma lacuna) rende-se com
+     `data-serie` e `data-serie-campo`, e o portão de HTML compara-o com o ficheiro da
+     série carácter a carácter. É uma transcrição, e contá-la na 8.5 ou na L3 «seria a
+     régua a exigir que a casa emendasse uma citação» (`blocosDaCasa`, abaixo): o nome do
+     conjunto do Eurostat da linha de pobreza é «At-risk-of-poverty thresholds», e o
+     literal do INE escreve «IndicadorDsg». A CONTA EM PALAVRAS de uma série derivada
+     (`derivation`, `derivation_en`) é prosa deste projeto e FICA no texto da casa. O
+     autoteste do fim do ficheiro prova os dois lados a cada corrida. */
+  '[data-serie]:not([data-serie-campo="derivation"]):not([data-serie-campo="derivation_en"])',
 ].join(',');
 
 /**
@@ -2077,6 +2088,36 @@ for (const l of LANGS) {
       `item 5 · o autoteste da L3 falhou do outro lado: «selo» escondido num «.vh» foi contado ` +
         `${conta0} vez(es) e devia ser 0. O que o leitor não vê não é a prosa que esta medida governa.`,
     );
+  }
+}
+
+/**
+ * O AUTOTESTE DA MARCA DAS SÉRIES (bloco RP3, 04.10.2026). Dois documentos de
+ * rascunho com a forma do recibo de uma série: «threshold» e «indicador» dentro de
+ * um campo transcrito da série não contam na 8.5 nem na L3; «limiar» dentro da conta
+ * em palavras de uma série derivada conta na 8.5, porque é prosa deste projeto. Falha
+ * em qualquer dos sentidos fecha a construção.
+ */
+{
+  const molde = (campo, dentro) =>
+    parse(
+      `<!doctype html><html lang="pt"><head><title>x</title></head><body><p>` +
+        `<span class="campo-da-serie" data-serie="serie-x" data-serie-campo="${campo}">${dentro}</span></p></body></html>`,
+    );
+  const daFonte = blocosDaCasa(molde('name', 'At-risk-of-poverty thresholds · IndicadorDsg indicador'));
+  const daCasa = blocosDaCasa(molde('derivation', 'A conta passa o limiar.'));
+  const naFonte85 = daFonte.filter((b) => /limiar|threshold/i.test(b)).length;
+  const naFonteL3 = daFonte.reduce((n, b) => n + contaPalavra(b, 'indicador'), 0);
+  const naCasa85 = daCasa.filter((b) => /limiar|threshold/i.test(b)).length;
+  console.log(
+    `  RP3, o autoteste da marca das séries: «threshold» e «indicador» num campo transcrito ${naFonte85 + naFonteL3} ` +
+      `(esperado 0) · «limiar» na conta em palavras ${naCasa85} (esperado 1)`,
+  );
+  if (naFonte85 + naFonteL3 !== 0) {
+    falhas.push('RP3 · o autoteste da marca das séries falhou: um campo transcrito de uma série contou como texto da casa.');
+  }
+  if (naCasa85 !== 1) {
+    falhas.push('RP3 · o autoteste da marca das séries falhou do outro lado: a conta em palavras de uma série derivada saiu do texto da casa.');
   }
 }
 

@@ -326,7 +326,9 @@ const PECAS_PERMITIDAS = new Set([
   'cartao-medida-dobra',
 ]);
 /** As séries de países e a tabela dos nomes, pelo leitor próprio dos portões (K1, K18). */
-const SERIES_DA_K18 = lerSeriesDoPortao();
+/* A K18 é a faixa da União, e a faixa é das séries de países: as séries no tempo do
+   RP3 (04.10.2026) não têm faixa nem palavras da faixa, e ficam fora desta leitura. */
+const SERIES_DA_K18 = new Map([...lerSeriesDoPortao()].filter(([, s]) => s.eixo === 'pais'));
 const PAISES_DA_K18 = lerPaisesDoPortao();
 
 /**
