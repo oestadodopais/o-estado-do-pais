@@ -1,0 +1,1170 @@
+{
+  "medido_em": "2026-10-04T08:47:45.543818+00:00",
+  "modelo": "Codex gpt-6-astra",
+  "cabecas_na_medicao": {
+    "motor": "9bfbb777f7d2f5af8b185475c8dd8027ebd76bad",
+    "sitio": "9038e1e6a8001bce90b5496083ee373d0a162ab3"
+  },
+  "implementacao": {
+    "tests/livro/indice.mjs": "00cfc5df5b63d54dfcb73129a9bf895eac844f105ab031751609d7652b8a840e",
+    "scripts/design-bundle.mjs": "04b8fe980456cbbb285024da9b3f4a8303b7d434bf1ae6b3c8f7a93aa877e1d9",
+    "package.json": "64a2e20ac94171719f4dc8311671a5794d9a14481e6724059fc087625ad9662d"
+  },
+  "localizadores": {
+    "formatos_anteriores": [
+      {
+        "formato": "IndicadorDsg",
+        "id": "abrantes-empresas-2024",
+        "aceite": true
+      },
+      {
+        "formato": "label",
+        "id": "disparidade-salarial-entre-sexos-2023",
+        "aceite": true
+      },
+      {
+        "formato": "p.<n>, linha <n>, campo <n>",
+        "id": "abrantes-prazo-medio-de-pagamento-2025-12",
+        "aceite": true
+      },
+      {
+        "formato": "<folha>, linha <n>, coluna <n>",
+        "id": "abrantes-desemprego-registado-2025-12",
+        "aceite": true
+      }
+    ],
+    "plantas": [
+      {
+        "nome": "Outra dimensão JSON-stat",
+        "id": "despesa-por-funcao-2024-gf01-es",
+        "localizador": "dimension.geo.category.label.GF01",
+        "mordeu": true,
+        "queixa_I1": "ledger/claims/despesa-por-funcao-2024-gf01-es.yml: traz o rótulo \"General public services\" e o localizador \"dimension.geo.category.label.GF01\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+        "queixas_I3": [
+          "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+          "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+        ]
+      },
+      {
+        "nome": "Função fora da lista",
+        "id": "despesa-por-funcao-2024-gf01-es",
+        "localizador": "dimension.cofog99.category.label.GF11",
+        "mordeu": true,
+        "queixa_I1": "ledger/claims/despesa-por-funcao-2024-gf01-es.yml: traz o rótulo \"General public services\" e o localizador \"dimension.cofog99.category.label.GF11\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+        "queixas_I3": [
+          "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+          "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+        ]
+      },
+      {
+        "nome": "Coluna numérica em vez do rótulo XLS",
+        "id": "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
+        "localizador": "FUNCIONAL!E2",
+        "mordeu": true,
+        "queixa_I1": "ledger/claims/execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central.yml: traz o rótulo \"ATIVOS E PASSIVOS DA DESPESA\" e o localizador \"FUNCIONAL!E2\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+        "queixas_I3": [
+          "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+          "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+        ]
+      },
+      {
+        "nome": "Folha XLS desconhecida",
+        "id": "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
+        "localizador": "DESCONHECIDA!C2",
+        "mordeu": true,
+        "queixa_I1": "ledger/claims/execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central.yml: traz o rótulo \"ATIVOS E PASSIVOS DA DESPESA\" e o localizador \"DESCONHECIDA!C2\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+        "queixas_I3": [
+          "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+          "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+        ]
+      },
+      {
+        "nome": "Campo numérico em vez do rótulo XML",
+        "id": "oe-2026-despesa-programa-001",
+        "localizador": "Mapa1/Registos/Registo[1]/TotalEmEuros; Programa=P-001",
+        "mordeu": true,
+        "queixa_I1": "ledger/claims/oe-2026-despesa-programa-001.yml: traz o rótulo \"ÓRGÃOS DE SOBERANIA\" e o localizador \"Mapa1/Registos/Registo[1]/TotalEmEuros; Programa=P-001\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+        "queixas_I3": [
+          "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+          "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+        ]
+      },
+      {
+        "nome": "Registo XML zero",
+        "id": "oe-2026-despesa-programa-001",
+        "localizador": "Mapa1/Registos/Registo[0]/DesignacaoPrograma; Programa=P-001",
+        "mordeu": true,
+        "queixa_I1": "ledger/claims/oe-2026-despesa-programa-001.yml: traz o rótulo \"ÓRGÃOS DE SOBERANIA\" e o localizador \"Mapa1/Registos/Registo[0]/DesignacaoPrograma; Programa=P-001\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+        "queixas_I3": [
+          "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+          "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+        ]
+      },
+      {
+        "nome": "Código ministerial zero",
+        "id": "oe-2026-despesa-ministerio-administracao-interna",
+        "localizador": "p. 1, POR MINISTÉRIOS, código 00",
+        "mordeu": true,
+        "queixa_I1": "ledger/claims/oe-2026-despesa-ministerio-administracao-interna.yml: traz o rótulo \"ADMINISTRAÇÃO INTERNA\" e o localizador \"p. 1, POR MINISTÉRIOS, código 00\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+        "queixas_I3": [
+          "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+          "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+        ]
+      },
+      {
+        "nome": "Total sem página",
+        "id": "oe-2026-despesa-bruta-administracao-central",
+        "localizador": "p. , DESPESA TOTAL, última coluna",
+        "mordeu": true,
+        "queixa_I1": "ledger/claims/oe-2026-despesa-bruta-administracao-central.yml: traz o rótulo \"DESPESA TOTAL\" e o localizador \"p. , DESPESA TOTAL, última coluna\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+        "queixas_I3": [
+          "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+          "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+        ]
+      },
+      {
+        "nome": "Página impressa trocada",
+        "id": "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+        "localizador": "p. 49 do ficheiro, página impressa 46, Despesa efetiva, Execução Acumulada 2026",
+        "mordeu": true,
+        "queixa_I1": "ledger/claims/execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social.yml: traz o rótulo \"Ativos financeiros líquidos de reembolso\" e o localizador \"p. 49 do ficheiro, página impressa 46, Despesa efetiva, Execução Acumulada 2026\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+        "queixas_I3": [
+          "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+          "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+        ]
+      },
+      {
+        "nome": "Coluna da síntese desconhecida",
+        "id": "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+        "localizador": "p. 49 do ficheiro, página impressa 45, Despesa efetiva, Outra coluna 2026",
+        "mordeu": true,
+        "queixa_I1": "ledger/claims/execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social.yml: traz o rótulo \"Ativos financeiros líquidos de reembolso\" e o localizador \"p. 49 do ficheiro, página impressa 45, Despesa efetiva, Outra coluna 2026\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+        "queixas_I3": [
+          "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+          "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+        ]
+      },
+      {
+        "nome": "Programa da síntese zero",
+        "id": "execucao-2026-08-despesa-programa-001",
+        "localizador": "p. 72 do ficheiro, página impressa 68, programa 000, Execução Acumulada 2026",
+        "mordeu": true,
+        "queixa_I1": "ledger/claims/execucao-2026-08-despesa-programa-001.yml: traz o rótulo \"Órgãos de Soberania\" e o localizador \"p. 72 do ficheiro, página impressa 68, programa 000, Execução Acumulada 2026\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+        "queixas_I3": [
+          "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+          "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+        ]
+      },
+      {
+        "nome": "Localizador livre",
+        "id": "despesa-por-funcao-2024-gf01-es",
+        "localizador": "uma cadeia sem localizador",
+        "mordeu": true,
+        "queixa_I1": "ledger/claims/despesa-por-funcao-2024-gf01-es.yml: traz o rótulo \"General public services\" e o localizador \"uma cadeia sem localizador\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+        "queixas_I3": [
+          "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+          "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+        ]
+      }
+    ]
+  },
+  "feixe": {
+    "recorte": {
+      "ficheiro": "13-pagina-livro-razao.html",
+      "entradas_na_pagina": 428,
+      "entradas_no_recorte": 8,
+      "primeiras_preservadas": true,
+      "nota_e_porta_preservadas": true,
+      "pagina_conservada": true,
+      "pagina_sha256": "8a3b6f08b71795b3865cd2c3c09e549c0a8f00ac0c2b65256fa437fd23bdad4e",
+      "bytes_cartao": 235855,
+      "bytes_sem_recorte": 908678,
+      "teto_bytes": 672236,
+      "margem": 0.1,
+      "planta": {
+        "nome": "recorte retirado",
+        "mordeu": true,
+        "queixa": "887.4 KiB acima do tecto de 656.48046875 KiB"
+      }
+    },
+    "plantas": [
+      {
+        "nome": "tamanho",
+        "mordeu": true
+      },
+      {
+        "nome": "dependência SVG",
+        "mordeu": true
+      },
+      {
+        "nome": "imagem externa",
+        "mordeu": true
+      },
+      {
+        "nome": "recorte retirado",
+        "mordeu": true
+      }
+    ]
+  },
+  "linhas": [
+    {
+      "id": "oe-2026-despesa-programa-001",
+      "sha256": "77cbf3afe8d0ef805953f3dfcf06db865502c55492c273067f248fa3aa3f004e",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-002",
+      "sha256": "229642607e2c66e0a25ae8a58468d974fcf4bf62b9feddded9d8584a4df29b1a",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-003",
+      "sha256": "a5b77c4ddf1c93665f7b294bc82c3431531aa052fc25f0f6b891067742dbfb65",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-004",
+      "sha256": "e491c167687c119d38cc5a3b89733252c565c57633a70052e9d9d7dabdd4dba2",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-005",
+      "sha256": "09a356bd3b3f6da7f0a06766fb3e4a50715cadd6456b08ac3a9d85f30b80ad69",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-006",
+      "sha256": "77fa6f7d7b8afeafd7ea959cbff57c758edd2c2f2b7e0e71661507ed85b1e72e",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-007",
+      "sha256": "5e810228e827cdddbb82fdabdec4d96c91d7d549cfb698c9c8746dbbbd075e79",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-008",
+      "sha256": "f406a6672ef76e3469c64b9538d0dea055f97940ab039d7af3f470edb528d3ca",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-009",
+      "sha256": "93836e53c560b17dc0163f8c3792854d2a5bf2732173fa62edf4a34f2458d934",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-010",
+      "sha256": "d8b92e5cadbd4403989f8721ba24241765ab020a9bfd640164090e6c1e5573de",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-011",
+      "sha256": "260130489e58ef73a06b136585d944113c2d127a7e32412c65669c7327c9a938",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-012",
+      "sha256": "a43f8c64a52381c809c8460f9f90545a7bfb85f6ce7241cf3fadcbabafc32ab8",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-013",
+      "sha256": "20ee880c4d5e35f4f984a9faa31d37df7aa99cf937fb903114ae5877d527541e",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-014",
+      "sha256": "2fe82c0df7b658d63862df71400a3f1340842046141cd227e45f4e37b5158539",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-015",
+      "sha256": "d7735ddc2db713c7d5a498db0e097da0125519701274290545636061ea76398a",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-016",
+      "sha256": "ad338a16cb6f69a32bd4ef6355cc3e62d11e7894cfb99ffdc52bb54d1f21108a",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-017",
+      "sha256": "d54ec2c88e066de0478368cd138283dd64f4a43c9013adba3b56c28395773d06",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-018",
+      "sha256": "8b201bd679ffa1b035805d033ad6229db43aa45ed356c73cfd63889b47f0b48d",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-019",
+      "sha256": "751fa40d8aa5bfe53f91cb849693f96db2f3faddb7a4613821b355ad37a18c9e",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-programa-020",
+      "sha256": "acce072b913e29024b55c10045e8f56cb14113ca87eafa2a24086f90fceafb37",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-encargos-gerais-do-estado",
+      "sha256": "401abc908a7274ec6e6797a69145ee51fdbccec196e5f062e346b03e8029d0f6",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros",
+      "sha256": "47f02c15aedd9b446c2fe164864433a0dc1f8cfe1d3491223529a666a7cd55f6",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-negocios-estrangeiros",
+      "sha256": "1a7b8ecbc767bc1d17109c95aa08543ef5eab1dd0a4498380bfca3589bbe7453",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-financas",
+      "sha256": "79f2118155e486f1ec19efcc8f48226cff78561db6176dc41f6f23f5b24d351c",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-economia-e-coesao-territorial",
+      "sha256": "ddc7135738dffec7b78a2acc6d773d4a81ef26ea5788fe765336115b8285b10d",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-reforma-do-estado",
+      "sha256": "169dfa617a178250e6ffee173e65250265f09b571be4bdcda8e236776f00ed5e",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-defesa-nacional",
+      "sha256": "89d9e9109f9e17d11606a96a0f572dfe492d3153aefe14cfb01bd37e1155ccaa",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-infraestruturas-e-habitacao",
+      "sha256": "ff253301f0ed44ae068b9d3f40c0233c31d397565467b57b9b968983485b9847",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-justica",
+      "sha256": "f0e09d6f498e20b34ec58bce32ac4d639802c81f3ad3c9999fbdbfa5f6db8504",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-administracao-interna",
+      "sha256": "46d6298b7433218239ca8545640eb309110fc52d65fb4b324bfdc0eb0a25392e",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao",
+      "sha256": "c74b47447d5d18ae9594b52e2cfa58126b09312160b2504939c0b1243dd8e6d1",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-saude",
+      "sha256": "6c6dc2a2e43674c35de70dfc00ae44a582bb8da362f31d9c577dee0f03831f73",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social",
+      "sha256": "5ee94babce9f63bc9bade2d0b9db053ea222c255421651a4cc2dd29a711a5b05",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-ambiente-e-energia",
+      "sha256": "b963ceb4896d2e93192f393bcce3c39e2e63a9bc83aff3669d3efdfea02f23b2",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-cultura-juventude-e-desporto",
+      "sha256": "dd2e6344e11f34f856bfe03d53c2777cc2fdf34c37629c451430e7c775fee4ad",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-ministerio-agricultura-e-mar",
+      "sha256": "3fd14ee50988fd8b59e3f3ea592b1532571b9446876e7654a69a0d243c0a99fd",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-bruta-administracao-central",
+      "sha256": "84b8a0a76e9e9eff854feee8d7476e17573271159b5bf51d226282fd559c472c",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-consolidada-administracao-central",
+      "sha256": "3642298d6f65fb5ac0118abcddbdd3260268261642e838107214c802a656f5e2",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-receita-bruta-administracao-central",
+      "sha256": "17307b9354d882b87036728c56a8ee961a72ec801f6602db3254025f2c5d898d",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-receita-consolidada-administracao-central",
+      "sha256": "37523de77adf56f211ba737f20524362ccebc02880415d56e98c7d4a29bbc2b8",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-total",
+      "sha256": "72d7a5bea796708caebc2284dc30d0687fbf0a1421b4e795df5c0ce7114b2abd",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-consolidada-seguranca-social",
+      "sha256": "f32ca57a687eed5a85e3b4307f4cdad289cae0197bb8fd197fcb790628f1a5be",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-receita-consolidada-seguranca-social",
+      "sha256": "4313b0f0f73cabb775fc830d3eb7e4b41f2dbb701085a7916c701b7c385eb9c1",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-receita-efetiva-administracao-central-seguranca-social",
+      "sha256": "46ada0692e5bd28fb474ddf8c7cd6ecd79694291bfd0495146ef5394cd17c7f9",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
+      "sha256": "c4588fd6f94874147876a824dba4235f49ee370cc8ff62286231691c20622bf9",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-efetiva-administracao-central-seguranca-social",
+      "sha256": "11a0892a7811a2e43861c27be1eb2bcafcce0902fe75f452cd330f2d183b2243",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+      "sha256": "b871dc736a0f5c152a18732e1bc3942808f3537f2580b77ce97a7e88ded2c489",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-saldo-global-administracao-central-seguranca-social",
+      "sha256": "1d0ddb8248708d8b8b07b9c647cb71a323a41d4e32b0fb192bb45e3c7254077a",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+      "sha256": "913a13c0fd18a8e5418be0a0fee6c5d17562b97216cc15ff6c77b836660e0f70",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+      "sha256": "9679834d2e20d6086ab6f1c4b73c692f479dc12f0220ad06fb5cebcddc3b8a57",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+      "sha256": "673398e9697c90f194da637f7ab25cff86d40a96b08efced19dcd21950df6a3d",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social",
+      "sha256": "02cc1c7093e6fff4c4d4a46066ec847b0244761a087a1e78de76a2cda1d8125c",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social",
+      "sha256": "d54315cc1d19e8adc0232055096165a9e169292f94169d944f4e58d162dad9a7",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-receita-efetiva-administracao-central",
+      "sha256": "0a0f51b154153e5110d9308f60c9f32461c94799b951b71d020fb9d6ae7c869e",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-efetiva-administracao-central",
+      "sha256": "49fd1ada107e691687110308067709da4c04ed32d998de94e20fe1b6186af9f7",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-saldo-global-administracao-central",
+      "sha256": "e231993ae4702d5f2f17ff0ca4d8d7f374a206949560b67f731587c20bebf08a",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-001",
+      "sha256": "40c2702efc8faaf131e6e2266ad0b9b3bdc4aea32ad671e86b6a2f34ed926983",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-002",
+      "sha256": "f958c48b56f80444ab2b85e617d98e58947f108d939cd42e588bbfbb27aed258",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-003",
+      "sha256": "36f2489feca9e2691c04ae9b2342f16b6b095f18c4451f7c4df27be83801949d",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-004",
+      "sha256": "931d30495c25a02187ac949371fc7cac67b82edf7fefd2d38dea1341ef8dd4da",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-005",
+      "sha256": "178b52f03b71ff27586d1080f057f396f3166f8d02438a85df2f2870b91b2762",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-006",
+      "sha256": "ebb485ca32103b6115280a7891eda54d5b9e0d7a560e46762fa06055b77b0a00",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-007",
+      "sha256": "8b9141d6d01d8affa27d1465b3cc6e79531b49124bbcdbdbb66ead49d9fc6e6c",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-008",
+      "sha256": "9e712da6874e3958da95946e6d8f03b35a1ff6a1470dd1cf11b0a3a13eaf20bb",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-009",
+      "sha256": "4c3b5e245016231f2ae390c672bd41369923a4cdee6b38fb73a649e6c922bf55",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-010",
+      "sha256": "0251eb2e701b58c4a31495e83994148ea122354e33ac210e9b40f8caf62394ef",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-011",
+      "sha256": "e6bde78d760f277371bee77e55ec1acb794a35c64846961451ba3a9706216f1b",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-012",
+      "sha256": "d8a0ae1ed2ccff695a1a9ba7de7aa45a45f766821c19de59747fb17f0a0444a5",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-013",
+      "sha256": "aa404702726596983912ae0a53a558759e647a4f266650f999c558d4c2f7723c",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-014",
+      "sha256": "9f89deb046720e60f2d64f5e72688dcc96c8c7e41a6a2dd0c80019cd59753e72",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-015",
+      "sha256": "882325911ab02875643d23ffb42bb2954c202f06f5a156501a387f74ce3ef110",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-016",
+      "sha256": "bd0fa41ad6bf77305f8b8d71195367c70ca9d8b72a81b747b03836b49c71aa11",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-017",
+      "sha256": "8373756bc219b9c46776ed1d51a54d70ee515ae9fb5f296d8196556fb72a44dc",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-018",
+      "sha256": "a05c3ba6a09c8f225ac46a2872b66496903c126c938a6b7ea94660b8a06631c4",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-019",
+      "sha256": "2e31c7c4e3ebc863af5710f7475ead419ca23dd67805ead89600c0c0a06dc6e4",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-despesa-programa-020",
+      "sha256": "6505184f21ba16c77b4aa66ebbb974596385533a783fa1ff3200532069bdf1f9",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-subtotal-programas",
+      "sha256": "c71bc81e303088c9efbe0f29a07af1915070f2f3b371875ede282beaa7274882",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-fluxos-entre-programas",
+      "sha256": "3f3a8aafe0a2b77020df2a6ba2ebd033e2e38491cc430561282b87fa96af6a93",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-08-diferencas-consolidacao-programas",
+      "sha256": "24fb645217b8acc65d2defc21f6365e3bb0dcc6d0fc2c286086bb19cfa58db9b",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-funcao-01",
+      "sha256": "04dba6d7d5c458eb7d6e444a3389f7ec699089086267448bb5f68d7395142827",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-funcao-02",
+      "sha256": "6b02bc33c6d95ec536718396ee79d18bbe110520e464bfd6a366a17956fb298b",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-funcao-03",
+      "sha256": "33e1b0b519f0dd5f25ea1186d43b6dab1933782e9e45c3d469590420183513b7",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-funcao-04",
+      "sha256": "e3bc7f4379a4bb6036d950e1fcf10a1bdacbefc215a2b624f504c8444d9e06a2",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-funcao-05",
+      "sha256": "9ede690a90550b60133ec4ef389e3723038bbe85b474ef82b7e0ceaf5a0a2db6",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-funcao-06",
+      "sha256": "33c74372983584b508ef6ccc5d7e2fc18f378bfcf4f67ddfee27ef6f531f357b",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-funcao-07",
+      "sha256": "727b79127c7c002e204d807d385f8195d5406fd9053f931e7de261a6d4f995b9",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-funcao-08",
+      "sha256": "44f835f57bd0a1fbdf4c673afb8978f24ddaf6be81396eda52e48f597debde33",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-funcao-09",
+      "sha256": "347849550eeca28867ea40be65615a18fa7c047664cb2aac614a88d4536d4cc8",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-funcao-10",
+      "sha256": "5ae3a427a05be01ec9ed7cfc696f0a9982956f4a19e00522074e0f967197a6f8",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-diferencas-consolidacao-funcional",
+      "sha256": "6de3563ff66c01f75cfa128cdf8792aae85c833a9bd236e5b1c09b636476e555",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-receita-orcamental-administracao-central",
+      "sha256": "c4c6b8a825fb689000dc902362611fead6f23c7a931c9acd6a661947fd6100cf",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-orcamental-administracao-central",
+      "sha256": "d3675863bec987c2c05ca85efb1690fc86e182eb2a4e937b6da42c0dab46691b",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-receita-efetiva-administracao-central",
+      "sha256": "e6eb04b1a744a321ce53a3689a76e0778b7e29e48746c39ce4b650d4df5c30b0",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-efetiva-administracao-central",
+      "sha256": "2ab61bdef75bba03423c308466dcbf4415e88dc4bc4cd2e0d2397bfb28c17f6d",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-saldo-global-administracao-central",
+      "sha256": "de70c32eb9ece1c0e5abfefa10b4a704061812d1f9efcea25d209b24cb8e14ae",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-despesa-primaria-administracao-central",
+      "sha256": "130d00b8011cb8902e3ae79dd4b9fba98e567f9cf35f88f649d96c701c65253a",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-saldo-primario-administracao-central",
+      "sha256": "f89c7bd2d43471d71959375c2b7815b404acd024203f1c61e22734d0a67e6df7",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-ativos-e-passivos-da-despesa-administracao-central",
+      "sha256": "44f6a0e7eea5d864cea7d61716ce60a8fa7a27597fe918aca0f92f3270629e05",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-ativos-e-passivos-da-receita-administracao-central",
+      "sha256": "0f6b4c266d645cbe4b39f5ac7d71cc33b3b7c9273d6ed97c598ff179b6b36bfa",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-despesa-funcao-01",
+      "sha256": "d760bf2dae3f052eb5fc9801484201d67344509a416315f89a09131a24ec41d6",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-despesa-funcao-02",
+      "sha256": "83781ea797a55407ba7f21ece12ed4536933470a26e4bd9147a45ddbe7c2aef4",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-despesa-funcao-03",
+      "sha256": "ee3e3f0abff2e0ae2d4e95163c2ff127c48f86e0b78599eb0f106e4adcc05fc6",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-despesa-funcao-04",
+      "sha256": "280b14a21964c863d19706bc14ad323f872d74cff53a38efcd9361805d68538b",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-despesa-funcao-05",
+      "sha256": "2183391235e2e07278e651a94b13f250977586018d70b39fa2b0dac266452733",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-despesa-funcao-06",
+      "sha256": "5f0282a4725589b2dff81bfe81a6163414293226306f2472eb9ee24e23725dc3",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-despesa-funcao-07",
+      "sha256": "9e681694d7e6bc9cb781ff76185ed9a427d379a0af209b043957613cce0af4e6",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-despesa-funcao-08",
+      "sha256": "c80c584cc244592fb39e146f4f9cd61bd382e63c76cde20b0f1382b04141f0e6",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-despesa-funcao-09",
+      "sha256": "1258aa2532143374990c41652766e4f1a0d9c4fa2ce18ead72238943b6dcc436",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-despesa-funcao-10",
+      "sha256": "a84eaa48956ade2efc83d4bc1b690afc1c3aa960ae265d3b4f4da7f9119a2f94",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-diferencas-consolidacao-funcional",
+      "sha256": "bb737a5b301b2ef74f9cb98d39a7fafe244a581526880c4427d42d77b3c4349c",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-receita-orcamental-administracao-central",
+      "sha256": "3dd53ed8c649e51f409798980144d88708e450a4bcd489361877adc3935c4b74",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-despesa-orcamental-administracao-central",
+      "sha256": "071b057caf3f8c91a593c0a17b8fb0d94ec2d7da890ba3b78ff6ad390f43cc9f",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-receita-efetiva-administracao-central",
+      "sha256": "bf6e4f3025c21540cfbc3cbe4bde53ece6f4e0831a882f1ce6a0c1f2b2dd823d",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-despesa-efetiva-administracao-central",
+      "sha256": "46f3d826e5454dbcb556ba3aee8d5e0f670e13343e6de6d63d8c4e4504cfae44",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-saldo-global-administracao-central",
+      "sha256": "72fd4a4c28516c40f50732bc9387dc82ca175cb8a59e24fca31f5c7a594885c8",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-despesa-primaria-administracao-central",
+      "sha256": "de197770c794cd5f63ad38c2454a7eefc921bca6559731f8aed6645d8a42ce82",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-saldo-primario-administracao-central",
+      "sha256": "cd7a753c6e20160221b97ae65caa7229e62ddd65558f073453f1bb47cac3206a",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
+      "sha256": "47101446cf1228671035aeba9596e2a704d4e69260475e5f0c264e14a36d8ab1",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-ativos-e-passivos-da-receita-administracao-central",
+      "sha256": "d634d0248f1b7ea6e37825b43ab10e1762701022a2edaed1fe2da58c5c55d295",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica",
+      "sha256": "ee2e1a380003ce4ba1b0aff5b40173eccd7ee8fdd462ded25655d0baa57f1c2c",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf01-pt",
+      "sha256": "98bd31bef7733edb9e3e48acafed42b782fb49d62d809ff721512c54e721be72",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf02-pt",
+      "sha256": "9e569c50e40818c180cd7a72999b5d118294da9e7a5764f4e119e1d339bc348e",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf03-pt",
+      "sha256": "5e89b510e5399043837d3f93be850237244d35952dd11d1e0392f81834cfc361",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf04-pt",
+      "sha256": "b0fba26f89e7c51a648f985e2c1420a835e821629a46812f2045d1b8366eb6d0",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf05-pt",
+      "sha256": "f5caa0165bb0e94ac1646672520b80d75a22c195ac71830863467d39fb0fd00b",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf06-pt",
+      "sha256": "be054b2e0ad8cf1799c4b02e9dd1e279812959cc674625705abca6ac345872c7",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf07-pt",
+      "sha256": "4e98305d639162a5cda18527d0ade6d25c44b8dd38cd6a3c41ba7a6f6bdd2fa5",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf08-pt",
+      "sha256": "f18167a06e72e9b725a646bf75e2942fc1250a41bb88d99054c36100d78567be",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf09-pt",
+      "sha256": "da31bd8b188268bf6e704b3b0eb1ab510fcb760f3d23bfd1c5af1b97a2a394ed",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf10-pt",
+      "sha256": "1662b57843f76c269878bf001943808a4d78a6381ec6beedfcac7e26f9b98b8e",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf01-es",
+      "sha256": "39e3cf4b84cef3d3f48498ab45bbfc50d8cf12da1c81cc7d61a31f063908b7bf",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf02-es",
+      "sha256": "c459f53da776d8c017edd0cbf8063982ee03ed9c3abbf0529a765364788bb8cc",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf03-es",
+      "sha256": "dbff4f1a8d58823e13d104515744ec93408a6c848e2f2d3968812eb27af24a27",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf04-es",
+      "sha256": "cd277dc942d20ff71aae0eaccf31da0e5d1d0abac1aff16bfeba6c1f24ccf11c",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf05-es",
+      "sha256": "4d6cf06b513fde95d9e4212665b8220bc1a9658e2c7210de161207767de75e44",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf06-es",
+      "sha256": "d023eece9987593eed4632887906d4fcd60b40c1ad5d2ddb0c0c31c5ee2da44b",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf07-es",
+      "sha256": "3e55b2505cdd8cdf3b2cbed3d9926a07b9025e66ebe0dcda14c81ed8a41ff605",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf08-es",
+      "sha256": "d943d16316a5808a5e6c0997e3ada99cefe8f5308baa0ee3de8952450db4d3aa",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf09-es",
+      "sha256": "59afc4941d0af968443458327041d2a62a9b8ec411b752ec042fd89766cddc0b",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf10-es",
+      "sha256": "08a36655e419a54edd64e49dd7d202021ebe54e3470261067c62e9de8cd65a33",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf01-ue",
+      "sha256": "7bd1771e28da3a1bca8b6af221897a626b0c7b2db4fd4f82a8305bf256440350",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf02-ue",
+      "sha256": "fea5bf7639e219d5930d3e3500aa4b4f45a4df80b0c49c9a31eed4aee215127d",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf03-ue",
+      "sha256": "8b8752d5a4b0f3367522a7d21bd2ba87955a499f52aa33ac7722461722ddb2f3",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf04-ue",
+      "sha256": "45f9fc3416c03d1380face8ad40e2eee929edda3fb9775235ba4d653986ea05e",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf05-ue",
+      "sha256": "424fb8a92b0c0589ba8e6249809f9c0feebec176f3caaa05c3f258a8dfabfe0d",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf06-ue",
+      "sha256": "d00214bc1c81378472df626f4eec856f527bf050175ce64c9b02436e965d60f5",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf07-ue",
+      "sha256": "a37b39244292597ce219a981ed0d1f7e3b7bbefb10e269bda9af6f8f205b6616",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf08-ue",
+      "sha256": "267ea60968487ab11b86dc5c7a5c60870370183cb19671d736f301e0006e8697",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf09-ue",
+      "sha256": "cd1f1871a40738a36289f4d44cca6aa0150b9860a2bab9ad05d7e847716d2bd8",
+      "igual": true
+    },
+    {
+      "id": "despesa-por-funcao-2024-gf10-ue",
+      "sha256": "85eb0f42806b2e9b2e0bd09f7bd010494c297152f25a489fad3197289066c3c9",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado",
+      "sha256": "fcfab898931eddad67cead2eac296e99eebaa1c281d0dcda1172f23656cfd91c",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros",
+      "sha256": "86df77ca099bfaac898c509f7eae9207f90912047d77662d6cb77c3644125af2",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-negocios-estrangeiros",
+      "sha256": "19fe68e94d7638f801df29bdecb426096ea9a6a7fe23c950f7cf1b002f9da639",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-financas",
+      "sha256": "aff7249c5f8793cf257fc1416f68a418d6a50eaa613e90e9f9bcf2728d88490c",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-economia-e-coesao-territorial",
+      "sha256": "dadef5881d4e26bce054177f386c97e52e7ad8ae23f70c018093d65f9786eff4",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-reforma-do-estado",
+      "sha256": "9c52b0ae768ad723eb3de062b5398ab031b36e887368263e9619b52ee02a264f",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-defesa-nacional",
+      "sha256": "4984754a2434774e7fcfa67f17cde1134542f314d0a9b50a5c1ebfffe1989400",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao",
+      "sha256": "56fa6b3f633072383e7c97070bf8d3c1aeee44a5d8c912bcb6096d4cd2c34e14",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-justica",
+      "sha256": "3a6586fe0103fe541c34b779949c8f101aa84df3234d8d5be3004620851ecc49",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-administracao-interna",
+      "sha256": "f476566d07f5ae389b7f9f708fd84b015a85eb346dead70b657b4575a59f336e",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+      "sha256": "ea924628a25154ca60411b24f5e936acbbe99e7e5daf684ea8d85921a4c7ae5f",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-saude",
+      "sha256": "60f3e5a50dc49e1752d411ce96186560d87235023bedd62c974945ab5141d2fd",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social",
+      "sha256": "719d6a095a302384e2329bd6388a0fc3122d63bee247cbe4be97c1dc77a0ad84",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-ambiente-e-energia",
+      "sha256": "0aff06917dcdec7fa12c567ed0c3b9d402611c02437366434f973fa371639522",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto",
+      "sha256": "1984e4aa9d5f795efbe79b787aff6bb11b57984955e55e70f52471e4362986e3",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-ministerio-agricultura-e-mar",
+      "sha256": "36f85805f141b01ab6eed8cca0e2a2cca989ec3a38aab1d572736a9204163b65",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-funcao-01",
+      "sha256": "0754991a5016c5f269c9a9139f583e3331cda0d73fab087db04c2d2dbb737a3b",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-funcao-02",
+      "sha256": "f9ff63c6c7453c9bbb41f243248d5fdc0ed2303a86ce9616d00fc9c499f57a2b",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-funcao-03",
+      "sha256": "c1a6ec29c17e93208695744c577aaf11e93659ae28ecd81b551416d3a5caa059",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-funcao-04",
+      "sha256": "630d38d6afee0b177ac0e69ecf8b0af2826a304edc4b55e952153f5b45649990",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-funcao-05",
+      "sha256": "56ef35671c1f35ea97f167f9bfe93308670a82be05cbad4929eb1342988210f3",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-funcao-06",
+      "sha256": "54797f860f43c68eb4bf5d8aaaa67b08e411f0b296ed507772b91505a99b3116",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-funcao-07",
+      "sha256": "a93ff3c2dfaa37fab7349fb10c033f4cdbc91bcd5456c874cda18304d352ca55",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-funcao-08",
+      "sha256": "102180efd4b3749f166be4a03bccff21682fb1e268fb1053c6c0ee58114ff32e",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-funcao-09",
+      "sha256": "44547fab5bc88f10e1fe1921650bba5abeea017466ea846ded556f86a9f8ac4c",
+      "igual": true
+    },
+    {
+      "id": "oe-2026-cem-euros-funcao-10",
+      "sha256": "d2ce09fcd3760ac89fa4629d6e01a26287486eaa5a41e820e703367e348a6b94",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-cem-euros-funcao-01",
+      "sha256": "c82839fee531900604d75a44c3f1bb7fff810ddd743c9f6393ac82c553a2ad10",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-cem-euros-funcao-02",
+      "sha256": "5c51707d399c8e88951b1b64dcc1f5fe4fca3691b68e79f88152e6c05de32fe7",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-cem-euros-funcao-03",
+      "sha256": "33754e8101a5fe34ec718d7e912fb05c49c2322b4b6dacdc349d8ff7c787685f",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-cem-euros-funcao-04",
+      "sha256": "08e042d2a1fc95cac1203d77cbbf2b33ce7203a401ab5b46fed836729a5838b6",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-cem-euros-funcao-05",
+      "sha256": "524a210ea9ddbefcb61c3dcb592e0b604b1a84627dff67c503c7d7f36ccd7d56",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-cem-euros-funcao-06",
+      "sha256": "a1a6fb8c13301eb671560c6a0b0e402b5da7fd2adea0c2aaf0ce9b089ba98266",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-cem-euros-funcao-07",
+      "sha256": "04f2c176772cc52b0c2d6c6b333377290b06f63b393d3ae3b311d3f33b4d671f",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-cem-euros-funcao-08",
+      "sha256": "81099d465738f4a262522e4103c0f7c83dbb6289b7901e486b4c42b1617ccf24",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-cem-euros-funcao-09",
+      "sha256": "92fbc4cc372d4ebd035eb8abc41dad331928655e9712df8481e348488cf62dd3",
+      "igual": true
+    },
+    {
+      "id": "execucao-2026-07-cem-euros-funcao-10",
+      "sha256": "53bb634550f79f00cc6c4573e2f7db920166d285e51006a1fc43052c9b6d7d3a",
+      "igual": true
+    }
+  ],
+  "medidas": {
+    "plantas_localizadores_oe1c": {
+      "valor": 12,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada que contribui para a contagem diminui a medida em um."
+    },
+    "formatos_anteriores_oe1c": {
+      "valor": 4,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada que contribui para a contagem diminui a medida em um."
+    },
+    "formatos_novos_oe1c": {
+      "valor": 7,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada que contribui para a contagem diminui a medida em um."
+    },
+    "plantas_feixe_oe1c": {
+      "valor": 4,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada que contribui para a contagem diminui a medida em um."
+    },
+    "linhas_conservadas_oe1c": {
+      "valor": 186,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada que contribui para a contagem diminui a medida em um."
+    }
+  },
+  "lista_igual_a_proposta": true,
+  "teto_e_margem_iguais": true
+}
