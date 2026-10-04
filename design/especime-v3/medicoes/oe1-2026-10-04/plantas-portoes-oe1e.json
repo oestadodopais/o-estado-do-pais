@@ -1,0 +1,50 @@
+[
+  {
+    "nome": "oe1e-ressalva-retirada",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "ressalva de oe-2026-despesa-ministerio-saude ausente ou repetida na edição pt"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/oe-2026-despesa-ministerio-saude/index.html",
+        "antes": "d6bfcdb7418cbb4db72273fe9f444afbb29960a9996074e0106472f338b4d589",
+        "reposto": "d6bfcdb7418cbb4db72273fe9f444afbb29960a9996074e0106472f338b4d589"
+      }
+    ]
+  },
+  {
+    "nome": "oe1e-ressalva-de-outra-linha",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "ressalva de oe-2026-despesa-ministerio-saude não é a declarada na edição pt"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/oe-2026-despesa-ministerio-saude/index.html",
+        "antes": "d6bfcdb7418cbb4db72273fe9f444afbb29960a9996074e0106472f338b4d589",
+        "reposto": "d6bfcdb7418cbb4db72273fe9f444afbb29960a9996074e0106472f338b4d589"
+      }
+    ]
+  },
+  {
+    "nome": "oe1e-ressalva-na-lingua-errada",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "ressalva de oe-2026-despesa-ministerio-saude não é a declarada na edição en"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/ledger/oe-2026-despesa-ministerio-saude/index.html",
+        "antes": "7813c14a525fb394b065478a0f8cabd99eb07510404bef4d7bf7dbe22bf2424c",
+        "reposto": "7813c14a525fb394b065478a0f8cabd99eb07510404bef4d7bf7dbe22bf2424c"
+      }
+    ]
+  }
+]

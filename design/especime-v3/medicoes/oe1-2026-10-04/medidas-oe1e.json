@@ -1,0 +1,497 @@
+{
+  "bloco": "OE1-e",
+  "passou": true,
+  "medido_em": "2026-10-04T13:17:03.555578+00:00",
+  "cabecas": {
+    "motor": "38457b2723c47ea126984be6c5c1f778967e6847",
+    "sitio": "f5549dc8be22f4e936d62fbdfe4eac94b538db97",
+    "main": "f27aa38a0939d11908863afe6ee117da03404f5f",
+    "master": "47f12e15c927bf238522ac680b1f54c9de29f55d"
+  },
+  "bases": {
+    "oe1d_sitio": "6f6c7a6712fc2fb9c29bae23a8bfd19d2ea54dde",
+    "oe1d_motor": "1f7520e4dcafb394bcb2ee2b61c7579759d2d3a3",
+    "observacoes_motor": "9bfbb777f7d2f5af8b185475c8dd8027ebd76bad",
+    "rebase_main": "f27aa38a0939d11908863afe6ee117da03404f5f",
+    "rebase_master": "47f12e15c927bf238522ac680b1f54c9de29f55d"
+  },
+  "guiao_sha256": "934406bb21192e358753ad28f32e75708e85dfe0b76eefb5bf937d1ca844c45f",
+  "infraestrutura_oe1d_sha256": "c33e3bdc9b4cb26694e237dbf54e71391393ed06e8476fda377eed9839f2c044",
+  "politica": "Medição da cabeça do código, antes do último commit só com provas; as plantas alteram cópias em memória.",
+  "html_conferido": true,
+  "medidas": {
+    "base_main_integrada": {
+      "valor": "f27aa38a0939d11908863afe6ee117da03404f5f",
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Trocar a base integrada na cópia é recusado.",
+      "queixa_da_planta": "Base main: a referência principal ainda não foi integrada"
+    },
+    "base_master_integrada": {
+      "valor": "47f12e15c927bf238522ac680b1f54c9de29f55d",
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Trocar a base integrada na cópia é recusado.",
+      "queixa_da_planta": "Base master: a referência principal ainda não foi integrada"
+    },
+    "observacoes_motor_intactas": {
+      "valor": "66820436eec71467c8660de15a23f7d7f5dd53bf382fdeead3c73bde6ea095c2",
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Acrescentar um byte à cópia é recusado.",
+      "queixa_da_planta": "Motor: bytes diferentes das observações seladas"
+    },
+    "manifesto_motor_intacto": {
+      "valor": "a20b260fc1dd2bf92b9a38fcbde021c276de07a55af87b16fbef2be47448e9ae",
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Acrescentar um byte à cópia é recusado.",
+      "queixa_da_planta": "Motor: bytes diferentes das observações seladas"
+    },
+    "linhas_do_motor": {
+      "valor": 186,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada da cópia é recusado.",
+      "queixa_da_planta": "linhas_do_motor: contagem divergente"
+    },
+    "linhas_exportadas": {
+      "valor": 186,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada da cópia é recusado.",
+      "queixa_da_planta": "linhas_exportadas: contagem divergente"
+    },
+    "so_ressalvas_e_contas_podem_mudar": {
+      "valor": 186,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Trocar um valor na cópia é recusado.",
+      "queixa_da_planta": "despesa-por-funcao-2024-gf01-es: alteração fora dos quatro campos autorizados"
+    },
+    "linhas_de_execucao": {
+      "valor": 62,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada da cópia é recusado.",
+      "queixa_da_planta": "linhas_de_execucao: contagem divergente"
+    },
+    "unidades_identicas_ao_oe1d": {
+      "valor": 186,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Retirar o acumulado da cópia é recusado.",
+      "queixa_da_planta": "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central: unidade diferente do OE1-d"
+    },
+    "nomes_identicos_ao_oe1d": {
+      "valor": "0f2a4f525524784f493c92947847ff9d8e88ea5167eecc68230b7cf55ec97d8a",
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Acrescentar um byte à cópia do módulo é recusado.",
+      "queixa_da_planta": "Nomes: módulo diferente da base ou do gerador"
+    },
+    "familias": {
+      "valor": {
+        "ministerios": 16,
+        "programas": 40,
+        "funcoes": 20,
+        "eurostat": 30,
+        "totais": 44,
+        "derivadas": 36
+      },
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma linha da classificação em memória é recusado.",
+      "queixa_da_planta": "Famílias: cobertura divergente"
+    },
+    "ressalvas_pareadas_so_onde_preciso": {
+      "valor": {
+        "com_ressalva": 182,
+        "sem_ressalva": 4
+      },
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma língua da cópia é recusado.",
+      "queixa_da_planta": "oe-2026-despesa-ministerio-encargos-gerais-do-estado: ressalva sem par"
+    },
+    "linhas_com_ressalva": {
+      "valor": 182,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada da cópia é recusado.",
+      "queixa_da_planta": "linhas_com_ressalva: contagem divergente"
+    },
+    "escala_so_nas_transcritas_xls": {
+      "valor": 41,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Acrescentar o aviso a uma linha fora do alcance na cópia é recusado.",
+      "queixa_da_planta": "escala_so_nas_transcritas_xls: aviso fora do alcance ou ausente"
+    },
+    "agregado_so_na_uniao": {
+      "valor": 10,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Acrescentar o aviso a uma linha fora do alcance na cópia é recusado.",
+      "queixa_da_planta": "agregado_so_na_uniao: aviso fora do alcance ou ausente"
+    },
+    "comparacao_so_nas_funcoes": {
+      "valor": 70,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Acrescentar o aviso a uma linha fora do alcance na cópia é recusado.",
+      "queixa_da_planta": "comparacao_so_nas_funcoes: aviso fora do alcance ou ausente"
+    },
+    "aviso_financeiro_nas_familias_dos_mapas": {
+      "valor": 59,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Retirar o aviso da rubrica Saúde, lida do PDF, é recusado.",
+      "queixa_da_planta": "Operações financeiras: aviso ausente numa das cinquenta e nove linhas"
+    },
+    "ege_igualdade_e_limite_do_aviso": {
+      "valor": "7733610763 - 7733610763 = 0",
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Trocar o valor do programa na cópia desfaz a igualdade.",
+      "queixa_da_planta": "EGE: a igualdade dos valores não fecha"
+    },
+    "nao_fecho_refeito_em_decimal": {
+      "valor": "802,9",
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Alterar o primeiro indicador da cópia muda a diferença.",
+      "queixa_da_planta": "Não fecho: diferença divergente"
+    },
+    "quatro_contas_so_da_ressalva": {
+      "valor": 4,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Retirar a ressalva de uma transcrita com conta é recusado.",
+      "queixa_da_planta": "Contas: valor publicado convertido em derivado ou conta sem ressalva"
+    },
+    "resumos_das_linhas_conferidos": {
+      "valor": 186,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Acrescentar um byte ao YAML da cópia é recusado.",
+      "queixa_da_planta": "Travessia: resumo YAML divergente"
+    },
+    "resumo_dos_nomes_conferido": {
+      "valor": "0f2a4f525524784f493c92947847ff9d8e88ea5167eecc68230b7cf55ec97d8a",
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Acrescentar um byte ao módulo da cópia é recusado.",
+      "queixa_da_planta": "Travessia: resumo dos nomes divergente"
+    },
+    "c1f_reposto_integralmente": {
+      "valor": "6aa2620aeae80200f362bca3f8ec9684a606c168aa83b05d571042cbea483bdd",
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Trocar só o cabeçalho da cópia da secção C1f é recusado.",
+      "queixa_da_planta": "Inventário: a secção C1f difere da versão anterior ao OE1-d"
+    },
+    "retiradas_r2": {
+      "valor": 33,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Voltar a pôr viva uma frase retirada só na cópia do inventário é recusado.",
+      "queixa_da_planta": "R2: uma frase que devia estar retirada está viva"
+    },
+    "retiradas_r2b": {
+      "valor": 6,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Voltar a pôr viva uma frase retirada só na cópia do inventário é recusado.",
+      "queixa_da_planta": "R2-b: uma frase que devia estar retirada está viva"
+    },
+    "html_cabeca": {
+      "valor": "f5549dc8be22f4e936d62fbdfe4eac94b538db97",
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Trocar a cabeça da cópia da construção é recusado.",
+      "queixa_da_planta": "HTML: a construção não é da cabeça atual"
+    },
+    "html_recibos_nas_duas_linguas": {
+      "valor": 372,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada da cópia é recusado.",
+      "queixa_da_planta": "html_recibos_nas_duas_linguas: contagem divergente"
+    },
+    "html_entradas_nos_dois_indices": {
+      "valor": 372,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Retirar uma entrada da cópia é recusado.",
+      "queixa_da_planta": "html_entradas_nos_dois_indices: contagem divergente"
+    },
+    "html_campos_recibos": {
+      "valor": 372,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Trocar a ressalva numa cópia do HTML construído é recusado.",
+      "queixa_da_planta": "despesa-por-funcao-2024-gf01-es: ressalva impressa divergente"
+    },
+    "html_campos_indices": {
+      "valor": 372,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Trocar a ressalva numa cópia do HTML construído é recusado.",
+      "queixa_da_planta": "despesa-por-funcao-2024-gf01-es: ressalva impressa divergente"
+    },
+    "html_periodos_dos_indices": {
+      "valor": 372,
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Trocar o período na cópia da entrada é recusado.",
+      "queixa_da_planta": "despesa-por-funcao-2024-gf01-es: período do índice divergente"
+    },
+    "html_contas_com_rotulo_proprio": {
+      "valor": {
+        "transcritas": 8,
+        "derivadas": 72
+      },
+      "passou": true,
+      "conhecido_positivo": true,
+      "planta": "Chamar aritmética do valor à conta da ressalva da cópia é recusado.",
+      "queixa_da_planta": "oe-2026-despesa-ministerio-encargos-gerais-do-estado: rótulo da conta divergente"
+    }
+  },
+  "familias": {
+    "ministerios": {
+      "linhas": 16,
+      "com_ressalva": 16,
+      "sem_ressalva": []
+    },
+    "programas": {
+      "linhas": 40,
+      "com_ressalva": 40,
+      "sem_ressalva": []
+    },
+    "funcoes": {
+      "linhas": 20,
+      "com_ressalva": 20,
+      "sem_ressalva": []
+    },
+    "eurostat": {
+      "linhas": 30,
+      "com_ressalva": 30,
+      "sem_ressalva": []
+    },
+    "totais": {
+      "linhas": 44,
+      "com_ressalva": 40,
+      "sem_ressalva": [
+        "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+        "execucao-2026-08-diferencas-consolidacao-programas",
+        "execucao-2026-08-fluxos-entre-programas",
+        "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social"
+      ]
+    },
+    "derivadas": {
+      "linhas": 36,
+      "com_ressalva": 36,
+      "sem_ressalva": []
+    }
+  },
+  "inventario_nota": "O guião R2 --confere também exige a secção que escreveu antes do R2-b; essa secção foi alterada pelo R2-b. Esta medição confere as trinta e três retiradas declaradas do R2 e as seis do R2-b contra o inventário atual.",
+  "ege": {
+    "oe-2026-despesa-ministerio-encargos-gerais-do-estado": {
+      "ressalva": "Não é um ministério. Nesta edição do orçamento, a rubrica dos Encargos Gerais do Estado tem o mesmo valor do programa 001, Órgãos de Soberania. A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma.",
+      "ressalva_en": "This is not a ministry. In this budget edition, General State Charges has the same value as programme 001, Sovereign Bodies. Gross expenditure includes financial transactions and transfers between State services, as added up in the budget map."
+    },
+    "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado": {
+      "ressalva": "Não é um ministério. Nesta edição do orçamento, a rubrica dos Encargos Gerais do Estado tem o mesmo valor do programa 001, Órgãos de Soberania. As partes foram arredondadas separadamente; a sua soma pode não ser exatamente cem por cento. A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma.",
+      "ressalva_en": "This is not a ministry. In this budget edition, General State Charges has the same value as programme 001, Sovereign Bodies. The shares were rounded separately; their sum may not be exactly one hundred per cent. Gross expenditure includes financial transactions and transfers between State services, as added up in the budget map."
+    }
+  },
+  "resumos": {
+    "despesa-por-funcao-2024-gf01-es": "6c99825abca504ab9fec37a741a375687993bf72aed5b8b09d26bba5a7cc6932",
+    "despesa-por-funcao-2024-gf01-pt": "020e2a1723ab522c73a1ff384158ce935830858321ef61d8873ab2baea2d78c2",
+    "despesa-por-funcao-2024-gf01-ue": "e18806d13e775a1f83b45688338a63bc193396d1d8007b87187a5ec0da200242",
+    "despesa-por-funcao-2024-gf02-es": "d382d86a6cd7de28f2038f07e0d5dfed774928cfec6c8013c90fb14a05fd721b",
+    "despesa-por-funcao-2024-gf02-pt": "a49e6cfd4de29794c1ac12177f5f6ef94c7d0470946505b23789d67d123a7f9e",
+    "despesa-por-funcao-2024-gf02-ue": "15be427588b38d43b1990c115c8e5a328d7f1d32b28af39e67847d0f4aad8d0b",
+    "despesa-por-funcao-2024-gf03-es": "4f806f4adec1f3bb2bdc7ba3175b1a8c16d048f796778b2dd7314f77a96af775",
+    "despesa-por-funcao-2024-gf03-pt": "08cc97892e4546dea8815cc11cf15d8166d8f67272dc331278f3082674777f80",
+    "despesa-por-funcao-2024-gf03-ue": "90854528fe21947047992b6492a545d92e3de051be281d46aaf9bf63f9e4ac12",
+    "despesa-por-funcao-2024-gf04-es": "658bf4b5b861a31b8ec836654b5613f82c19f2a24eaede4c816c8c08655a3e06",
+    "despesa-por-funcao-2024-gf04-pt": "78d3c3037c33aa787915b20b90e98e7963a6d887acc0593e0b7edd5f719ac613",
+    "despesa-por-funcao-2024-gf04-ue": "f1d618b0cced4ad59ce99850723a7446327f38da41e85dd41454b8d985935a54",
+    "despesa-por-funcao-2024-gf05-es": "e3df71935ec7dccdfe57597422f4ec1d5b0c3f29240a2a322ef48ac129f7f4bb",
+    "despesa-por-funcao-2024-gf05-pt": "5566ee01fdcab155d6e1004b12c0b7c70b5c0896afe62f14a7fa96c9192c1a41",
+    "despesa-por-funcao-2024-gf05-ue": "2bc4bfc22b29e7e2d0d664b3687a4d97b7f72591373330778c09688574c58db0",
+    "despesa-por-funcao-2024-gf06-es": "2c617546c862dc9578bea4b7691574ac4311253ca9f4fb24f3fafe6c9c62d0fc",
+    "despesa-por-funcao-2024-gf06-pt": "c3df46f500a76df89a599c68b7be3bf290d308616c7186c17f07068db246bac4",
+    "despesa-por-funcao-2024-gf06-ue": "88ba3de7eca46a7812abb941cbb77e0166c1820ae304c6d3ec06ad8f00fb766a",
+    "despesa-por-funcao-2024-gf07-es": "2750ed3ec577c061d54bbaf672fc93d2dd55b2efc20da917e6bff655dba019e5",
+    "despesa-por-funcao-2024-gf07-pt": "f7f8a24048cbdf56cad510a0385be7bcdb9f44512596aa4085c029adc7ac253e",
+    "despesa-por-funcao-2024-gf07-ue": "2ab2b3590f04f8a2e1bfe4c28cbd4be943671dce6f2a6cb0dae7304435dea6ee",
+    "despesa-por-funcao-2024-gf08-es": "cfb803e99c3751003b97ce35ffc3523fa6185a3c736090b76d544cdbc45eefa9",
+    "despesa-por-funcao-2024-gf08-pt": "9e71eb8b2dc78078cd02097c7e6d474a59e57882ad191a344ab83a0f5c23dbf5",
+    "despesa-por-funcao-2024-gf08-ue": "a39c6547dca5a49d31e0476d8aeb40b0641f9950909afbaf873d7d1fa20724f0",
+    "despesa-por-funcao-2024-gf09-es": "55205ca546c3cd4bd2a640180608214f064f91e8cafb803bcd24f739f91d0def",
+    "despesa-por-funcao-2024-gf09-pt": "25cb489c15ceed715234fd7bf30c3b34bbd66b60c2da59f7a16e74331453e6d2",
+    "despesa-por-funcao-2024-gf09-ue": "abc33de6b731acf459d3bff746b292da4e89c27230acb97255fdddd634dd22de",
+    "despesa-por-funcao-2024-gf10-es": "b9e510ad151690e1ef386c6a49822adc286491f5fffc5458865e742f1af3b112",
+    "despesa-por-funcao-2024-gf10-pt": "2c842050d369a3bf94afd09286cbe810254a2d1ad78e902ce89d6a5324b22e62",
+    "despesa-por-funcao-2024-gf10-ue": "04a64fa3d84c58f84460a3ee9b92e618a3906c452d2918c1dab281bfd118d817",
+    "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central": "c5fbf614788f910ff22e3b48ea9df8bc7870d6067a9c0be161af3ed4e7ad35d7",
+    "execucao-2026-07-ativos-e-passivos-da-receita-administracao-central": "3f50e801098cda016f15950ae353609f850a8935d7117878127acf46a6353ca5",
+    "execucao-2026-07-cem-euros-funcao-01": "e927d45d0013812b4d1c901aa9859cde63e2c69d58405386ce6a62bc9ecfcbd9",
+    "execucao-2026-07-cem-euros-funcao-02": "67509ebdeb7b51c095bd02939fdf043324d17abe2bfc473b1f2b3c63c762b31b",
+    "execucao-2026-07-cem-euros-funcao-03": "d952f804e1b8dd54297d27eda961da989290aa8397f64817063d663e08092e75",
+    "execucao-2026-07-cem-euros-funcao-04": "fe8e2d217329d8153beceaab04c9e37c871b1989bb2fcdedb050a2d001dbaf67",
+    "execucao-2026-07-cem-euros-funcao-05": "24c378774d764668b08d919dfb6e8d57424431229295b4a6328f259a88b3b40f",
+    "execucao-2026-07-cem-euros-funcao-06": "0024a6d835164539b4a4f23d6578406ed6074494952cb411b35ec0d9c847b5e6",
+    "execucao-2026-07-cem-euros-funcao-07": "e2ccbd63fe34820ea05f08d8d3740af565e3e69c04de8be32ccaa2c06f814467",
+    "execucao-2026-07-cem-euros-funcao-08": "3556e1beaa283c414bb65fcfd4eb6ed8c4eeb0ee190ba30954c8bc7cf48e3113",
+    "execucao-2026-07-cem-euros-funcao-09": "efdd704680153114ba4be3a392c35ca21c1abefb4211405a721c0c78698e327a",
+    "execucao-2026-07-cem-euros-funcao-10": "720f3a78e63fbcbd4b45c60e7ba55b114127c371efec2961f229bbbea8a49a38",
+    "execucao-2026-07-despesa-efetiva-administracao-central": "01c7faf3c940e39ae654c0116c35949966350db74358c85bc1a38929d5217728",
+    "execucao-2026-07-despesa-funcao-01": "62b9bf5ed16d4335ce67f5bdb06084c39405da533c89bb07d3e3baec9bf596b5",
+    "execucao-2026-07-despesa-funcao-02": "59004257f91cf153555210fce3b63d984290c5825f57974c4f18eaf441bf7d75",
+    "execucao-2026-07-despesa-funcao-03": "412b4c798b0dbbe28cf7e27e35b0b8b2a2bc2dd4af2956888b5b8a53a8fb243c",
+    "execucao-2026-07-despesa-funcao-04": "bd7df102e4261753ef7b5197f7f688f872ad5afbc97cc75db7b5d6375ec33bf5",
+    "execucao-2026-07-despesa-funcao-05": "657b129dc2417657a0363fbf686c0aef8dad08b28d386f47c6cdd9d70e62a698",
+    "execucao-2026-07-despesa-funcao-06": "068c56bdfd0c70c09633ae7b160efb9a2759c6f727ff182e9b35e53a634eb9ce",
+    "execucao-2026-07-despesa-funcao-07": "9ea32988d62a373a99518d9fecb326ad0711966673a1623e9732ec76811ce143",
+    "execucao-2026-07-despesa-funcao-08": "725c3b03f261140ae6b4985e2c539e9a6b8394c5f3fd46aad3d328ab4985fe4a",
+    "execucao-2026-07-despesa-funcao-09": "03d57de15bef8022b97b0b5cc3b7efde01bce86b2f1dbd4a3b4f4e1a590ad077",
+    "execucao-2026-07-despesa-funcao-10": "0965f3c097d3b9adb7757d66eeb1b87f9391f155f922f51b1f35fdc67fbf364d",
+    "execucao-2026-07-despesa-orcamental-administracao-central": "6d50413330a17b75da3b6dadc88942d411ba62de0f058d99f91ded8def3fd48a",
+    "execucao-2026-07-despesa-primaria-administracao-central": "553affaf969ca7468117f0699e140e41a22f319cc3cf53a9630d653e0c61a650",
+    "execucao-2026-07-diferencas-consolidacao-funcional": "8d4d8e5c202a132e1c804962132c20733684243d109bd644b77068e4348b4346",
+    "execucao-2026-07-receita-efetiva-administracao-central": "c3c93e7eb05ea79d2a1f984df7ad4d996733243f5d2b185a0af92f07a9c82b27",
+    "execucao-2026-07-receita-orcamental-administracao-central": "f534929cdbb207ebf045bc97c254204a1129cb2692cf233bde1da82054ec1998",
+    "execucao-2026-07-saldo-global-administracao-central": "53041741bc051b3afac91bb4a754f038214a860796edba77cb0f060cc90a606e",
+    "execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica": "9708096c05385df6b1b21b060278e46b06cea5c31e14b01be1c5090419d55e3b",
+    "execucao-2026-07-saldo-primario-administracao-central": "ff21225583326141c54f38c90107af75b10ae39b9d88e9d77330c5177559e5f9",
+    "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social": "1a0e033af95a1430cd318af14499d262c40d7a115a7e4fae6a90468705ea7641",
+    "execucao-2026-08-despesa-efetiva-administracao-central": "4238bf1f812765b24f64bc80aa2c7a838d8fca08369f296bad66577a3046ef27",
+    "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social": "1ad9588a9572678c17871a9eadedf6516ffb3c4414845b2a127d41b5a4440d2b",
+    "execucao-2026-08-despesa-programa-001": "71980aeb19746a6b9a838fa4dbb312c6898d94f72c8423cee4e8149f69d50bc5",
+    "execucao-2026-08-despesa-programa-002": "bf3f06e6001b091da6335c2cdec34207f1e1abbcad6c9f0fb4bac0a587719263",
+    "execucao-2026-08-despesa-programa-003": "b6da429415d97cc7cf849e2bb8c95a54c36f8d38d24935f3f6fb8d0d2591bbe9",
+    "execucao-2026-08-despesa-programa-004": "1198aa20f1f9551ea5e18fbafe9fdcb32d1468f1b802dd505b3bb8c83781a6a4",
+    "execucao-2026-08-despesa-programa-005": "89f6f12d1b3372bb45688105af596aab1b901d5e2fa15f4c5e786da3f8aa6d3f",
+    "execucao-2026-08-despesa-programa-006": "16f3226a0fe004c603c6927954596925574f0e8fffa1359466b59211beefb499",
+    "execucao-2026-08-despesa-programa-007": "5c02af29aa4518840ae54699dc44b8d12eb365976b7c0245967747056bab1cd5",
+    "execucao-2026-08-despesa-programa-008": "032cbbc44bb2ee6ff5d53fe2467d76e796dc6ed33b472a6e961164d9c06e777a",
+    "execucao-2026-08-despesa-programa-009": "91be0cf66ec578a4b217540a1933e43fa48a0bba81b3fa08e722fd36decda094",
+    "execucao-2026-08-despesa-programa-010": "bddbc67df5c2db72b9f7c785f54772653146e291cedeed575c56ffcf306e393f",
+    "execucao-2026-08-despesa-programa-011": "32b01c14f8e8e8c6d2fa09c3d74234da4f71b0bcc95d5a3afaa2a34ddaafb586",
+    "execucao-2026-08-despesa-programa-012": "5ac06f4564a2eef647efb000214dbeebfe2b9666be6f67465b051d561cb82632",
+    "execucao-2026-08-despesa-programa-013": "a195874566281082944b28c7d288ee8c7e3245a248105fd6f3081cf0e2f99f61",
+    "execucao-2026-08-despesa-programa-014": "2024ee40c2219e85537c1abde331a72b5a47696e88343ee60ff703500689e4f9",
+    "execucao-2026-08-despesa-programa-015": "ddd889c9f93bb82e50110efe403732c592978b336d1f92806d81910cd9760d46",
+    "execucao-2026-08-despesa-programa-016": "d070335ad047438bb80194b51cf5d7cb56c9c601b426bed0e251c5ac21a2dfef",
+    "execucao-2026-08-despesa-programa-017": "e3bcf6fea3137c20fd70e873259341eece10e573ed0892de857a1feb18b3a561",
+    "execucao-2026-08-despesa-programa-018": "2b035599df64b8c1373976ff4c8200bc0374bb5c36f4eaf2339cb82f09e4ed37",
+    "execucao-2026-08-despesa-programa-019": "69922ece212479dba97d814dc17367784ec75287552f42335205ac675e397e43",
+    "execucao-2026-08-despesa-programa-020": "d51a975edf251898d168dff1b4c1d4848ed84d529012e1a14fa6d02669b37166",
+    "execucao-2026-08-diferencas-consolidacao-programas": "cb151b4d44f38243515c3fd7a67725f069315cfb537b548841b99efd8479a9c7",
+    "execucao-2026-08-fluxos-entre-programas": "11714120cc1b60ee8661bb3bb0b0ef74044acb1a5092cbb2626060ebb339d40d",
+    "execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social": "7c43036c8ce170afa787bda187cc93af0091394432914b8e8845ce5f0bffdcef",
+    "execucao-2026-08-receita-efetiva-administracao-central": "b2ee3189771c6fad611568522648cdd10a22d32de2391d01389e561487e7478b",
+    "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social": "6b1db99aa7bd1c8337b6ad00ac897fc363ff40a5013179341ce30849275f7cb5",
+    "execucao-2026-08-saldo-global-administracao-central": "1d392cd5ffac2d856ddbbb840ce626303464cbbef7a22cb48f438bb02f9925e9",
+    "execucao-2026-08-saldo-global-administracao-central-seguranca-social": "5412575e23dac35460e1a78b331144a8335293f58088f6a77aff0b9694082080",
+    "execucao-2026-08-subtotal-programas": "25bd33b4d72c7926544cb4c883a33a3a62f6f95fd0f75b59a9941b953677a234",
+    "oe-2026-ativos-e-passivos-da-despesa-administracao-central": "5637c83173302c9e61d31cadb00ddc0749368d22901736acaccc5c1b51496f0c",
+    "oe-2026-ativos-e-passivos-da-receita-administracao-central": "58a088e1f99d27447e57d21f2c86cb65e07a66bbc62616ddafcb680f3aa6c69b",
+    "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social": "9679834d2e20d6086ab6f1c4b73c692f479dc12f0220ad06fb5cebcddc3b8a57",
+    "oe-2026-cem-euros-funcao-01": "c854d82940b0a8d12e205e2ebe681bbe5da76e852d534774bcb7d423966f5d01",
+    "oe-2026-cem-euros-funcao-02": "4f6e132735709bfdd55d25c0014c73cbe027a7e85939dc56f41354865186960b",
+    "oe-2026-cem-euros-funcao-03": "592e427fa12e0f94ab6153416a99b2649469529fc413118d6443637e0b1f13b8",
+    "oe-2026-cem-euros-funcao-04": "0718bbb9c240f78449461ecc257acfef7e3621fab2f5cbc5369994f2436a4f3b",
+    "oe-2026-cem-euros-funcao-05": "8eaa3aaec67186d81b0bdc751cb771dc9bf0049fcd2616a56770f025b36a4f54",
+    "oe-2026-cem-euros-funcao-06": "4139bc943cef850f738ec14783391e81eadeb7e69150e0a2ebcb95cff5105b1b",
+    "oe-2026-cem-euros-funcao-07": "97b9ea90b2b4a5b1d8d02ac9ff47d95753220c8b09f4135a365cab735fbdad30",
+    "oe-2026-cem-euros-funcao-08": "100e3ff1c3fc84f449f24bc3b1d61b9852ad29dc0b60c755b3a51a06590a7c3d",
+    "oe-2026-cem-euros-funcao-09": "92eaa9123324879e6e497d09b49035f3e855035b6bbebdc87d3a729c5c464bb4",
+    "oe-2026-cem-euros-funcao-10": "ecceefa0a4c86c4ea841a77b4317f7058a98bb8f495978922de935d33a15b850",
+    "oe-2026-cem-euros-ministerio-administracao-interna": "813e31b58c8899c08a06c95af7b615e33352bd230bd123034b94c81d95d850d6",
+    "oe-2026-cem-euros-ministerio-agricultura-e-mar": "adf7f968bf1a848ccf8bbe397c4b1cbf655332ac9721a4b96bd872c9e7da5ea5",
+    "oe-2026-cem-euros-ministerio-ambiente-e-energia": "bc6436299baf053919c1ec5d52c892524472d932b191d631ac5dbca3e5dd021a",
+    "oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto": "674af9055ff559baeabf7c65f09212dd2aff373904df4f03169f4937edc4d986",
+    "oe-2026-cem-euros-ministerio-defesa-nacional": "24b362bd2053f592516ad40a445f6fbc5cbca76dcd52cdc8592c7a3c7cbe88d4",
+    "oe-2026-cem-euros-ministerio-economia-e-coesao-territorial": "6a8980be4e8541f548209b0d07648785f84ae36abbe719fe37514e4837ae80e2",
+    "oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao": "d3ee5461cd95fed3cdb746cfd2882fb9b05ee167dd886c87531e327e7448a879",
+    "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado": "e13853c0f68e323f2a7bb0e3a3450642e8c31a2d7ab467f8b27524b4e0d4c23e",
+    "oe-2026-cem-euros-ministerio-financas": "1fd436ccd01fc640230e5d41d652010c80fad7d321318da8d12d5a2cee485a39",
+    "oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao": "c0f34c7d91aac36f383715788ed4aa42a37e17764d49c5d681bc4e638c17cfaa",
+    "oe-2026-cem-euros-ministerio-justica": "ef20f6560d1d0825b541682ac2b66b40775d258bd1d4ef87559721217df3d26e",
+    "oe-2026-cem-euros-ministerio-negocios-estrangeiros": "e081a12facef0622d7c05ca33dc2ff6a593b4f40c19284e93c2506674e9b70c1",
+    "oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros": "1613e6708b83f943f6e227b4a288f3565d0c100ef697915cc215f56e874d238a",
+    "oe-2026-cem-euros-ministerio-reforma-do-estado": "786f54c31405f53ec76bec5fbe417fdb7d773ba99efd2e5e5c6d2d1b1f92e6d4",
+    "oe-2026-cem-euros-ministerio-saude": "28dbc2f0dd1aa1b7626b8864668164de0f9d6abcebe4ae07007bb0db6b1ea63f",
+    "oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social": "755f46b16dc7a6ab37788bfe246d5b49cc06d0cf23c2715fa62e2a88122ccb05",
+    "oe-2026-despesa-bruta-administracao-central": "7abb6d5a7a21ae340e3e574b17de23bfbf174edbb5becf6470f280cd815fa160",
+    "oe-2026-despesa-consolidada-administracao-central": "aabbb11ae6dce84d0f2be49ae4ba8bc6d3de22750c409484f01f7602bcd5777c",
+    "oe-2026-despesa-consolidada-seguranca-social": "ae3a500d1c1ecb0b089edcff803588e448db9b2c106ddf46cbaeb5fc1f0dad43",
+    "oe-2026-despesa-efetiva-administracao-central": "436ffd9f884b6a008eb3b5a96563715ae819f8da06457168ac8e92b862530849",
+    "oe-2026-despesa-efetiva-administracao-central-seguranca-social": "ad589060e9b5d1ea2855d4af8003fb22fb22f878f1175c8011dde065317fb0db",
+    "oe-2026-despesa-funcao-01": "3401b71f517e511be29ab4a84a6a217fc4143a0d2a1c6727678cd28a1c1e8137",
+    "oe-2026-despesa-funcao-02": "70ee404ee32b831b589d1fe662209255d3287864bf103fa93108442dbd9d6359",
+    "oe-2026-despesa-funcao-03": "f9710ff19ddad9e1efae8addc36a8ba35d1f28106384b9869bf017598a32362a",
+    "oe-2026-despesa-funcao-04": "d0acec10ece3e9cd9406d2630b6de961eb00d8a0d655facdb2057d77aab6b556",
+    "oe-2026-despesa-funcao-05": "22acdee5a22859b194217921a83be1d7beb69cf548fbe8af0dac2963f646dde8",
+    "oe-2026-despesa-funcao-06": "fa343b0484953ff7eeddcdabadcc0142c2d6da1ad6d5f93f709d35603e2eea50",
+    "oe-2026-despesa-funcao-07": "380395dafac22af0ba7314f49de19f6342d157ac897536563e57adcee36bac4b",
+    "oe-2026-despesa-funcao-08": "a82afa18c6fe7bae866dd29ada46c157e626abe05c29c50497cee750c589cc47",
+    "oe-2026-despesa-funcao-09": "024475c9e675109a5dd66763722028a8d3100468e50cac71960cd0c16921d73e",
+    "oe-2026-despesa-funcao-10": "72931c59b2aff7a89cd04634a5738b6008ec97a6ccc62b47de00d3e69efddc71",
+    "oe-2026-despesa-ministerio-administracao-interna": "8aa705f608757c56925c58f593a8266f06f5e64d526b302ea747eccc628065be",
+    "oe-2026-despesa-ministerio-agricultura-e-mar": "0d43fddec57153a5424969b67c859cd5bc5dbca2761c57a62bd449202217e2df",
+    "oe-2026-despesa-ministerio-ambiente-e-energia": "0fc1793a561797b664186b5b9843c721ae6a72480970dec8094ca13f89d4e1fb",
+    "oe-2026-despesa-ministerio-cultura-juventude-e-desporto": "b7d2eadf937f3a503e40f6b2fa673f55dac115b6d88aeb82cd1c0700129ae3e2",
+    "oe-2026-despesa-ministerio-defesa-nacional": "88d8841f0e4a53817de6b290a3d8af5eb77a64e8f1a032319448fde6a8b8eaa0",
+    "oe-2026-despesa-ministerio-economia-e-coesao-territorial": "b62c80e8babbb7c305976a298906f56624676d11521b6110c8db59dcb2a12134",
+    "oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao": "9f945ef4950c7785cde3b70711f952c99561dc29d324ecd8c1a8ceaa5c16a0f2",
+    "oe-2026-despesa-ministerio-encargos-gerais-do-estado": "9d8428bed5a228c18cf9120eceb969c9dd6377b2c84a9ab9f9e33754f1df66d1",
+    "oe-2026-despesa-ministerio-financas": "ae86e71f4f64701a27f4a92d4ca77ca9f29bd93a02cd8e1f03441e4e43a03d69",
+    "oe-2026-despesa-ministerio-infraestruturas-e-habitacao": "25e7b50db946fd4fb34a16d78a89149b1e4af17565481ed7247251f3eb74b3d0",
+    "oe-2026-despesa-ministerio-justica": "4e008487b49065182c52634f29debea2925dbe470c90c5e995c8585df19a543e",
+    "oe-2026-despesa-ministerio-negocios-estrangeiros": "5b401b0a26dbb633db0da765487616f2815432c41574b8f4425e8d0cdbbace5c",
+    "oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros": "9f50671855479a39da4ca9ed058778ab97a583a9360798ffdbd60dea7b0aa250",
+    "oe-2026-despesa-ministerio-reforma-do-estado": "4ec518e28e3e0234c8c911bc3eec2878e6573a7b33355e64ff14584472bdc4f8",
+    "oe-2026-despesa-ministerio-saude": "f9b6e608c377abee109cee1cf84cdc3e09fb25b024a620126786256786ad1261",
+    "oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social": "5984d328a30a65695d1b54617ca25c69c29ee708baff842102c6c1575461312e",
+    "oe-2026-despesa-orcamental-administracao-central": "78b28b9b869413e0a1829c7d78762be339a12fd124077831f7f1039f48457a0c",
+    "oe-2026-despesa-primaria-administracao-central": "2530948e6d4135ae4a23f9df68169d9600466682ffdf5fbca8cf74bd2bc9ce69",
+    "oe-2026-despesa-programa-001": "581c101b26acb0fb60c4fabab645b4cac25caf776348f681cc7da9549f94006a",
+    "oe-2026-despesa-programa-002": "95e0480e144d8501f59d5396a978d4d2ee272c37a44fceeb84677b806c296f36",
+    "oe-2026-despesa-programa-003": "fb1b0fdec6bb04f6af3242ebcc7ec4914d8cd8e01ead0c5bd5b084d97b1a74d8",
+    "oe-2026-despesa-programa-004": "db077c9b5381104753545976f72bbcd24410990b72ea9b18ec101df81497adf4",
+    "oe-2026-despesa-programa-005": "c4179943d59b7a5e1c8d7b455dd84051dab3bc702a2972ba9052c58c4b8483a6",
+    "oe-2026-despesa-programa-006": "46c144fc0f3ceb11784a185504d9801f6a9378c648da2fa14eb242b9b8b0fd7a",
+    "oe-2026-despesa-programa-007": "65f0773b16e4b458e0469d844efcd7b7d6d4ad314b2cbbbc48933744bedc62a1",
+    "oe-2026-despesa-programa-008": "1d812ff1dd5970f14b077cac1e1974aaf5216ae223e368208159d8d392af3530",
+    "oe-2026-despesa-programa-009": "c62b2ccfd36f3652b808555e76edd065cdf8361de6e368df484b3d806f4bf874",
+    "oe-2026-despesa-programa-010": "dd7167494299fb4f12a8afc8ed1463ce31c5a9721c93e88ca6287f026cf9bd3f",
+    "oe-2026-despesa-programa-011": "ab8b64918d0853f13bfdf87099e7e71b786be9729696f806c54675bb5dc5f2af",
+    "oe-2026-despesa-programa-012": "19c696e0df0ce2161d9bfe3696e0136fcdc40146644ba91a9875b5b2a9bf3ce7",
+    "oe-2026-despesa-programa-013": "075fb178732ea08501c0f0d40b6bf21b63cf14d0cdfa80adf2ba1e9d0493399e",
+    "oe-2026-despesa-programa-014": "4c2761657d8859eeeac6ff79fdd6db2c0500ec77b9377a130e7d192bdf9c6fdb",
+    "oe-2026-despesa-programa-015": "2d96ae8180e0acd3fa7d4361ee4d159900b6a22b318094321b4b1c545ef1c365",
+    "oe-2026-despesa-programa-016": "92cd83d4e28aff6baabb0a169c44ea2360c7dc1a3014fa771f7b1f789379c418",
+    "oe-2026-despesa-programa-017": "d604f76abd663ed7afb6055104a6a98f925e5af82f349db200c2d5b4cb3c3e29",
+    "oe-2026-despesa-programa-018": "2858525b033b7d2fcf819fde61820bc4c6dff97d3ad26bbef2a820b5aebc0d2b",
+    "oe-2026-despesa-programa-019": "d3c8f8c2195a1c0e1888529fe94f50583dab05e92388429554a955cf3d2dc37f",
+    "oe-2026-despesa-programa-020": "ffde57012d952369253aa36f3706b3031c90cdfbe89875e2ada8d85068ebf8be",
+    "oe-2026-despesa-total": "743539ecaf8383c7cb3cf82299e031d6655caa1241a320920ec22eb8eeb98dd1",
+    "oe-2026-diferencas-consolidacao-funcional": "1077067f1e229083012a2c80f92e3641bb3e85f14daebb344f69a41b2315f7d7",
+    "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social": "c69650011675667730cf4f7d1e8d3696e06cde89d92605b69866270a7ef7795b",
+    "oe-2026-receita-bruta-administracao-central": "ef896fe5d70d0d6f607b82d58efa4e20a291436ca3f3b5e62be3e1eceb5c0d7c",
+    "oe-2026-receita-consolidada-administracao-central": "fe8e8aa9eb78e4a35502ac43498529d083996f73683df02ed8c1b0cee9330e81",
+    "oe-2026-receita-consolidada-seguranca-social": "6b2e372e7b815830aa84083e40c33bb104b05ac4a7cf2217bf0f972763666c7e",
+    "oe-2026-receita-efetiva-administracao-central": "33fb6e8573effcb06cc62e2fa962ffcb9f49ecb3cb35862a7dd7d9b9e87898f5",
+    "oe-2026-receita-efetiva-administracao-central-seguranca-social": "beeaa9019c883a88b5046dfb1f95203349a4e77cbdc36ab9e2eec55f1ce230bb",
+    "oe-2026-receita-orcamental-administracao-central": "e22b6ea76822ba7673b5a2dbac52023c676b0d2a293221665b92093f5200446e",
+    "oe-2026-saldo-global-administracao-central": "884c255ed9b19342600c4e4ef4bb945db1c584aec8e126736000b8a713cef50f",
+    "oe-2026-saldo-global-administracao-central-seguranca-social": "2a8debcd95fd57a8b13827a8b097f0a490fa51f3660977294780d265114980be",
+    "oe-2026-saldo-primario-administracao-central": "ae3533148b7f0858c93482caf923dce069b289730002df5c306848c481a18549"
+  }
+}
