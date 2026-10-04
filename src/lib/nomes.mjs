@@ -77,7 +77,7 @@ import { nomeOficial } from './enquadramento.mjs';
  * do livro-razão que sustenta um `data-linha-campo`. Exactamente um dos dois é
  * não nulo: um nome ou é prosa declarada da casa, ou é a transcrição de um campo.
  *
- * @typedef {{ texto: string, fonte: 'figuras'|'medidas'|'projeto'|'oficial'|null, campo: 'name'|'document.title'|null }} NomeDaMedida
+ * @typedef {{ texto: string, fonte: 'figuras'|'medidas'|'projeto'|'oficial'|'cartao'|null, campo: 'name'|'document.title'|null }} NomeDaMedida
  */
 
 /**
