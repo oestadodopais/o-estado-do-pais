@@ -46,6 +46,7 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import { SITE_HOST, SITE_HOST_UNACCENTED } from '../site.config.mjs';
 import { routePath } from '../src/lib/routes.mjs';
+import { t } from '../src/i18n/strings.mjs';
 
 const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
 const verde = (s) => `\x1b[32m${s}\x1b[0m`;
@@ -299,6 +300,18 @@ conferir('/api/sugestoes location', funcao.cabecalho('location'), routePath('sug
 const idDaVercel = funcao.cabecalho('x-vercel-id');
 console.log(cinza(`      x-vercel-id observado: ${mostrar(idDaVercel)}`));
 conferir('/api/sugestoes região da função', regiaoDaFuncao(idDaVercel), 'dub1');
+
+/* (g) O ÍNDICE (bloco R3, 04.10.2026): as duas páginas respondem 200, cada uma com o título do índice da sua edição. A
+   inglesa vive em `/en/index`, ao lado da primeira página inglesa (`en/index.html`). Antes de aterrar mediu-se no ar que a
+   Vercel resolve um pedido sem extensão como a pasta com o seu `index.html` e não lhe junta `.html` (`/en/index` dava 404
+   com `en/index.html` presente; a prova está em `design/especime-v3/medicoes/r3-2026-10-04/sondagem-vercel.json`). Esta é
+   a prova depois de aterrar: se a Vercel servisse a primeira página inglesa a `/en/index`, o título seria o dela. */
+for (const edicao of /** @type {const} */ (['pt', 'en'])) {
+  const caminho = routePath('indice', edicao);
+  const r = await ler(`https://${host}${caminho}`, { comCorpo: true });
+  conferir(`${caminho} estado`, r.estado, 200);
+  conferir(`${caminho} título`, r.corpo.match(/<title>([^<]*)<\/title>/)?.[1] ?? null, t(edicao).indice.metaTitle);
+}
 
 console.log();
 
