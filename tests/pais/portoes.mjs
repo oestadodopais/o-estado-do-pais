@@ -541,3 +541,21 @@ planta('r3-lugar-porta-repetida','scripts/check-lugar.mjs',[
 planta('r3-lugar-concelhos-abertos','scripts/check-lugar.mjs',[
  ['en/index/index.html',r=>r.querySelectorAll('main details').forEach(d=>d.setAttribute('open',''))]
 ],[/L2 · segundas listas dos concelhos +1 +\(teto 0\) ACIMA DO TETO/,/\/en\/index\/? · 308 concelhos ligados fora de uma lista fechada/]);
+/* R3-b (04.10.2026, as emendas da leitura a frio do Sol): o âmbito do índice numa página de concelho (o achado 9), que a
+   A1 aceitava pela marca sem olhar à rota da página; e duas entradas da mesma linha no mesmo dia pela ordem antiga, a
+   mais antiga primeiro, no registo (o achado 5), que a A3 passa a recusar. A segunda pede a construção com a ordem nova:
+   troca as duas entradas do primeiro par que o registo construído tiver. Correm com as do R3, por `--prefixo r3-`. */
+planta('r3-ambito-do-indice-noutra-pagina','scripts/check-pais.mjs',[
+ ['municipios/evora/index.html',r=>r.querySelector('[data-mudou-ambito]').setAttribute('data-mudou-ambito','indice')]
+],[/A1: municipios\/evora\/index\.html: uma lista «O que mudou» com o âmbito do índice numa página que não é o índice/]);
+planta('r3-registo-mesma-linha-pela-ordem-errada','scripts/check-pais.mjs',[
+ ['correcoes/index.html',r=>{
+  const itens=r.querySelectorAll('[data-mudou-registo] li[data-correcao-entrada]');
+  const dia=li=>li.querySelector('[data-correcao-campo="date"]')?.getAttribute('datetime');
+  const i=itens.findIndex((li,k)=>k>0&&li.getAttribute('data-correcao-entrada')===itens[k-1].getAttribute('data-correcao-entrada')&&dia(li)===dia(itens[k-1]));
+  if(i<1)return;
+  const segunda=itens[i].toString();
+  itens[i].remove();
+  itens[i-1].insertAdjacentHTML('beforebegin',segunda);
+ }]
+],[/A3: correcoes\/index\.html: duas entradas da mesma linha no mesmo dia estão da mais antiga para a mais recente/]);

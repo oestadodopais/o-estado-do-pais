@@ -13,7 +13,7 @@ import { REGIOES } from '../src/data/regioes.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { LUGAR_DECLARADO_DAS_LINHAS } from '../src/data/lugar-das-linhas.mjs';
 import { ROTULOS_B1 } from '../src/data/rotulos-b1.mjs';
-import { routePath } from '../src/lib/routes.mjs';
+import { matchPath, normalizePath, routePath } from '../src/lib/routes.mjs';
 import { t } from '../src/i18n/strings.mjs';
 import { verificaVeredictoDoPais } from './pais-veredicto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
@@ -479,6 +479,23 @@ function confereTema(doc, rel, lang) {
   if (!folhas.length) erros.push('N3: nenhuma folha construída lida em _astro/; a célula não mediu nada.');
   else if (!escolhas) erros.push('N3: nenhuma folha construída tem a paleta escura no seletor da escolha do leitor.');
 }
+/* DUAS ENTRADAS DA MESMA LINHA NO MESMO DIA, A MAIS RECENTE PRIMEIRO (a passagem R3-b, o achado 5 da leitura a
+   frio do Sol, 04.10.2026). A A2 e a A3 conferiam só que as datas não sobem; dentro do mesmo dia, duas entradas da
+   mesma linha podiam vir da mais antiga para a mais recente, e vinham (`estudos-evora-publicados`, 12.08.2026, a
+   entrada 0 antes da 1). Devolve a primeira linha fora de ordem, ou `null`. */
+function mesmaLinhaForaDeOrdem(itens) {
+  const ultimo = new Map();
+  for (const li of itens) {
+    const linha = li.getAttribute('data-correcao-entrada');
+    const d = li.querySelector('[data-correcao-campo="date"]');
+    if (!linha || !d) continue;
+    const k = `${linha}|${d.getAttribute('datetime')}`;
+    const n = Number(d.getAttribute('data-correcao-n'));
+    if (ultimo.has(k) && n > ultimo.get(k)) return `${linha} (${d.getAttribute('datetime')}, a entrada ${n} depois da ${ultimo.get(k)})`;
+    ultimo.set(k, n);
+  }
+  return null;
+}
 function anda(dir) {
   for (const f of fs.readdirSync(dir, {withFileTypes:true})) {
     const abs = path.join(dir,f.name);
@@ -514,6 +531,11 @@ function anda(dir) {
        arquivo o declarar por confirmar. A classe é o que distingue esta marca
        das outras que a mesma sinopse possa trazer. */
     const onde = path.relative(dist, abs);
+    /* A ROTA DA PÁGINA, lida do caminho do ficheiro pela tabela das rotas (a passagem R3-b, o achado 9 da leitura a
+       frio do Sol): o âmbito do índice na A1 só vale na página do índice. */
+    const rotaDaPagina = f.name === 'index.html'
+      ? matchPath(normalizePath('/' + path.relative(dist, path.dirname(abs)).split(path.sep).join('/')))
+      : null;
     const daEdicao = [
       ...doc.querySelectorAll('[data-estudo][data-estudo-edicao]').map(el => [el, el.getAttribute('data-estudo-edicao')]),
       ...doc.querySelectorAll('li[data-mudanca="publicacao"]').map(el => [el, el.querySelector('[data-publicacao-estudo]')?.getAttribute('data-publicacao-estudo') ?? '']),
@@ -539,6 +561,11 @@ function anda(dir) {
       listasMedidas++;
       const ambito = lista.getAttribute('data-mudou-ambito');
       const itens = lista.querySelectorAll('li[data-mudanca]');
+      /* O ÂMBITO DO ÍNDICE SÓ NA PÁGINA DO ÍNDICE (a passagem R3-b): a marca sozinha abria a regra larga do índice
+         (as linhas de qualquer lugar) a uma lista de outra página, e uma página de concelho passava a aceitar uma
+         correção de Portugal ou de outro concelho. */
+      if (ambito === 'indice' && rotaDaPagina?.key !== 'indice')
+        erros.push(`A1: ${onde}: uma lista «O que mudou» com o âmbito do índice numa página que não é o índice; esse âmbito só vale na página do índice.`);
       if (itens.length !== lista.querySelectorAll('li').length)
         erros.push(`A1: ${onde}: uma linha de «O que mudou» sem classe declarada.`);
       if (itens.length > TETO) erros.push(`A2: ${onde}: ${itens.length} mudanças, e o teto é ${TETO}.`);
@@ -563,7 +590,7 @@ function anda(dir) {
         const dentro = ambito === 'pais'
           ? (tipo === 'projeto' || (tipo === 'correcao' && doLugar === PAIS))
           : ambito === 'indice'
-            ? tipo === 'correcao' && doLugar !== null
+            ? rotaDaPagina?.key === 'indice' && tipo === 'correcao' && doLugar !== null
             : (tipo === 'correcao' && doLugar === ambito);
         if (!dentro)
           erros.push(`A1: ${onde}: a linha ${chave} é de «${doLugar ?? 'nenhum lugar'}» e a página é de «${ambito}».`);
@@ -574,6 +601,8 @@ function anda(dir) {
       }
       const quando = itens.map(li => li.querySelector('time')?.getAttribute('datetime'));
       if (quando.some((d,i) => i>0 && d > quando[i-1])) erros.push(`A2: ${onde}: as mudanças não estão da mais recente para a mais antiga.`);
+      const foraDeOrdemNaLista = mesmaLinhaForaDeOrdem(itens);
+      if (foraDeOrdemNaLista) erros.push(`A2: ${onde}: duas entradas da mesma linha no mesmo dia estão da mais antiga para a mais recente: ${foraDeOrdemNaLista}.`);
       confereCorrecoes(lista, `${onde} (${ambito})`);
     }
     for (const registo of doc.querySelectorAll('[data-mudou-registo]')) {
@@ -613,6 +642,8 @@ function anda(dir) {
       }
       const quando = itens.map(li => li.querySelector('time')?.getAttribute('datetime'));
       if (quando.some((d,i) => i>0 && d > quando[i-1])) erros.push(`A3: ${onde}: o registo não está da mais recente para a mais antiga.`);
+      const foraDeOrdemNoRegisto = mesmaLinhaForaDeOrdem(itens);
+      if (foraDeOrdemNoRegisto) erros.push(`A3: ${onde}: duas entradas da mesma linha no mesmo dia estão da mais antiga para a mais recente: ${foraDeOrdemNoRegisto}.`);
       confereCorrecoes(registo, `${onde} (registo)`);
     }
   }
