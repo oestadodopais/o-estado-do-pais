@@ -465,11 +465,32 @@ export async function plantas() {
     casos.push({ planta: 'uma conferência que escreve no dist/ e repõe os bytes fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.includes('dist/x/index.html') && f.includes('foi escrito')) });
 
     prepara();
-    /* A mesma hora de escrita, até ao nanossegundo, noutro inode: `touch -r`
-       copia as horas do original para a cópia, e o `mv` põe a cópia no lugar
-       dele. Só a comparação do inode o vê. */
-    r = await corre({ build, verify: `${limpa.verify} && cp dist/x/index.html dist/x/.copia && touch -r dist/x/index.html dist/x/.copia && mv dist/x/.copia dist/x/index.html` });
-    casos.push({ planta: 'uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.includes('dist/x/index.html') && f.includes('substituído')) });
+    /* H2, I194: os && da redação anterior eram separadores de CONFERÊNCIAS.
+       cp, touch e mv podiam correr em paralelo, e não na ordem escrita.
+       Um só processo executa agora as três operações síncronas. `touch -r`
+       conserva os nanossegundos que um Date do JavaScript arredondaria.
+       A planta mede as suas premissas e exige a mordida pelo inode, não
+       apenas um vermelho provocado por uma operação que não chegou a correr. */
+    fs.writeFileSync(path.join(base, 'trocar.cjs'), `
+      const fs = require('node:fs');
+      const { execFileSync } = require('node:child_process');
+      fs.copyFileSync('dist/x/index.html', 'dist/x/.copia');
+      execFileSync('touch', ['-r', 'dist/x/index.html', 'dist/x/.copia']);
+      fs.renameSync('dist/x/.copia', 'dist/x/index.html');
+    `);
+    const antesDaTroca = estadoDoFicheiro(path.join(dist, 'x/index.html'), true);
+    const passoDaTroca = `${node} trocar.cjs`;
+    r = await corre({ build, verify: `${limpa.verify} && ${passoDaTroca}` });
+    const depoisDaTroca = estadoDoFicheiro(path.join(dist, 'x/index.html'), true);
+    const trocas = r.corridos.filter(c => c.passo === passoDaTroca);
+    const premissas = antesDaTroca.resumo === depoisDaTroca.resumo
+      && antesDaTroca.escrito === depoisDaTroca.escrito
+      && antesDaTroca.inode !== depoisDaTroca.inode;
+    casos.push({ planta: 'uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D',
+      antes: antesDaTroca, depois: depoisDaTroca, passos_da_troca: trocas.length,
+      codigo_da_troca: trocas[0]?.codigo, falhas: r.celulas.D.falhas,
+      mordeu: premissas && trocas.length === 1 && trocas[0].codigo === 0
+        && !r.ok && r.celulas.D.falhas.some((f) => f.includes('dist/x/index.html') && f.includes('substituído')) });
 
     prepara();
     r = await corre({ build, verify: `${limpa.verify} && ${escreveERepoe('fonte.txt')}` });
@@ -518,7 +539,10 @@ async function principal() {
     process.exit(1);
   }
   console.log(`  as ${p.casos.length} plantas morderam em ${((Date.now() - t0) / 1000).toFixed(1)} s\n`);
-  if (args.includes('--prova')) process.exit(0);
+  if (args.includes('--prova')) {
+    if (json) fs.writeFileSync(json, JSON.stringify(p, null, 2) + '\n');
+    process.exit(0);
+  }
 
   const scripts = JSON.parse(fs.readFileSync(path.join(RAIZ, 'package.json'), 'utf8')).scripts ?? {};
   if (args.includes('--a-seco')) {
