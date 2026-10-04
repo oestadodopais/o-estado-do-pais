@@ -20,9 +20,14 @@
  *        cadência declarada em `lacunas` (com a razão da fonte, ou null quando ela não dá);
  *   S3 · o valor de cada ponto literalmente no seu excerto (no INE, o `ind_string` na
  *        forma do INE; no Eurostat, o fragmento do valor com o índice que o fragmento
- *        do período dá); e, quando o motor está ao lado (`RESEARCHHUB_DIR`), o excerto
- *        de cada ponto e o literal da série dentro do corpo alojado do seu pedido, com o
- *        resumo do manifesto. Sem o motor, esta metade diz que não correu;
+ *        do período dá); e, quando o motor está ao lado (`RESEARCHHUB_DIR`), cada ponto
+ *        lido no corpo alojado do seu pedido (os bytes com o resumo da série, do registo
+ *        e do manifesto) PELA ESTRUTURA DA RESPOSTA, desde a passagem RP3-b: no Eurostat
+ *        a célula (o período no índice do tempo, o índice plano pelos passos do cubo, o
+ *        valor e a marca em `value` e `status`, e cada fragmento dentro do seu objeto);
+ *        no INE o objeto dentro do bloco do seu período, pelo rótulo da metainformação.
+ *        Sem o motor, esta metade diz que não correu, e as plantas da célula correm num
+ *        corpo sintético;
  *   S4 · a série derivada refeita ponto a ponto por uma conta desta célula, em decimais
  *        exatos, e as casas que a expressão manda;
  *   S5 · o cartão preso à série: cada linha com o campo `serie` é o ponto do seu
@@ -40,6 +45,7 @@
  * bloco é escrito assim, pelo guião das medições, fora da cadeia).
  */
 import fs from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
@@ -262,31 +268,243 @@ function celulasDoLivro(series, linhas) {
 
 /* --------------------------------------------- a metade do motor da S3 (opcional) */
 
-function metadeDoMotor(series) {
+/*
+ * A LEITURA ESTRUTURAL DOS CORPOS (passagem RP3-b, o achado 5 da leitura a frio). Até à RP3-b esta metade
+ * procurava os fragmentos do excerto nos bytes inteiros do corpo, e um valor escrito numa anotação, com outro
+ * número na célula, passava; agora lê a célula: no Eurostat, o período no índice da dimensão do tempo, o índice
+ * plano pelos passos de `id` e `size` com as categorias da edição, o valor e a marca em `value[<índice>]` e
+ * `status[<índice>]` como os bytes os escrevem, e cada fragmento uma vez dentro do seu objeto; no INE, o
+ * objeto dentro do bloco do seu período (achado pelo rótulo da metainformação), com as coordenadas, o valor e a
+ * marca dele. As duas leituras são funções puras, para as plantas as chamarem sobre corpos mexidos em memória.
+ */
+
+/** O índice do fim de um valor JSON que começa em `texto[i]` (cadeias com escapes, objetos e listas aninhados). */
+function fimDoValorJson(texto, i) {
+  const c = texto[i];
+  if (c === '"') {
+    let k = i + 1;
+    while (k < texto.length && texto[k] !== '"') k += texto[k] === '\\' ? 2 : 1;
+    return k + 1;
+  }
+  if (c === '{' || c === '[') {
+    let fundo = 0;
+    for (let k = i; k < texto.length; k++) {
+      const d = texto[k];
+      if (d === '"') {
+        k = fimDoValorJson(texto, k) - 1;
+      } else if (d === '{' || d === '[') fundo++;
+      else if (d === '}' || d === ']') {
+        fundo--;
+        if (fundo === 0) return k + 1;
+      }
+    }
+    return -1;
+  }
+  const m = /^-?\d+(\.\d+)?([eE][+-]?\d+)?|^true|^false|^null/.exec(texto.slice(i, i + 40));
+  return m ? i + m[0].length : -1;
+}
+
+/** Os membros de um objeto JSON que abre em `texto[i]`: { chave: [início, fim] } do valor de cada um. */
+function membrosJson(texto, i) {
+  /** @type {Record<string, [number, number]>} */
+  const out = {};
+  if (texto[i] !== '{') return out;
+  let k = i + 1;
+  const espaco = /[\s,]/;
+  while (k < texto.length) {
+    while (espaco.test(texto[k])) k++;
+    if (texto[k] === '}') return out;
+    const fimChave = fimDoValorJson(texto, k);
+    const chave = JSON.parse(texto.slice(k, fimChave));
+    k = fimChave;
+    while (/\s/.test(texto[k])) k++;
+    if (texto[k] !== ':') return out;
+    k++;
+    while (/\s/.test(texto[k])) k++;
+    const fim = fimDoValorJson(texto, k);
+    out[chave] = [k, fim];
+    k = fim;
+  }
+  return out;
+}
+
+/** As coordenadas de uma edição «<código>, <dim>=<cat>, …». */
+function coordenadasDaEdicaoDaSerie(edicao) {
+  const [, ...pares] = String(edicao ?? '').split(', ');
+  return Object.fromEntries(pares.map((par) => par.split('=')));
+}
+
+/** Quantas vezes um fragmento aparece dentro de um sítio [início, fim] do texto. */
+function vezesEm(texto, fragmento, sitio) {
+  if (!sitio) return 0;
+  const parte = texto.slice(sitio[0], sitio[1]);
+  let n = 0;
+  for (let k = parte.indexOf(fragmento); k >= 0; k = parte.indexOf(fragmento, k + 1)) n++;
+  return n;
+}
+
+/**
+ * O erro da célula de um ponto do Eurostat, ou `null` quando a célula é a do ponto.
+ * @param {string} raw @param {any} serie @param {any} ponto
+ */
+function erroDaCelulaDoEurostat(raw, serie, ponto) {
+  let doc;
+  let literal;
+  try {
+    doc = JSON.parse(raw);
+    literal = JSON.parse(raw, (_k, v, ctx) => (typeof v === 'number' && ctx ? ctx.source : v));
+  } catch {
+    return 'o corpo não é JSON';
+  }
+  const coords = coordenadasDaEdicaoDaSerie(serie.document?.edition);
+  const ids = doc.id;
+  const size = doc.size;
+  if (!Array.isArray(ids) || !Array.isArray(size) || ids.length !== size.length || !ids.includes('time')) return 'a resposta não tem a forma de um cubo com o tempo';
+  const outras = ids.filter((d) => d !== 'time');
+  if (outras.slice().sort().join() !== Object.keys(coords).sort().join()) return `a edição nomeia ${Object.keys(coords).sort()} e o cubo tem ${outras}`;
+  const passos = size.map(() => 1);
+  for (let k = size.length - 2; k >= 0; k--) passos[k] = passos[k + 1] * size[k + 1];
+  let base = 0;
+  for (const [k, d] of ids.entries()) {
+    if (d === 'time') continue;
+    const indice = doc.dimension?.[d]?.category?.index ?? {};
+    if (!(coords[d] in indice)) return `a dimensão ${d} não tem a categoria ${coords[d]}`;
+    base += indice[coords[d]] * passos[k];
+  }
+  const tempos = doc.dimension?.time?.category?.index ?? {};
+  const codigo = String(ponto.periodo).replace(/-T([1-4])$/, coords.freq === 'Q' ? '-Q$1' : '-T$1');
+  if (!(codigo in tempos)) return `o período ${ponto.periodo} não está no índice do tempo`;
+  const posicao = tempos[codigo];
+  const n = base + posicao * passos[ids.indexOf('time')];
+  const texto = literal.value?.[String(n)];
+  if (texto === undefined || texto === null) return `a célula ${n} não tem valor`;
+  const marca = literal.status?.[String(n)] ?? null;
+  const naFonte = String(ponto.valor).replace(/\u2212/g, '-').replace(/[\u202f\u00a0 ]/g, '').replace(',', '.');
+  if (String(texto) !== naFonte) return `o ponto diz «${ponto.valor}» e a célula ${n} da resposta «${texto}»`;
+  if ((ponto.bandeira ?? null) !== marca) return `a marca do ponto é «${ponto.bandeira ?? null}» e a célula ${n} da resposta tem «${marca}» em status`;
+  const partes = [`${JSON.stringify(codigo)}:${posicao}`, `"${n}":${texto}`];
+  if (marca !== null) partes.push(`"${n}":${JSON.stringify(marca)}`);
+  if (String(ponto.excerto) !== partes.join(' · ')) return `o excerto não é o das posições da célula ${n} (esperava ${partes.join(' · ')})`;
+  const topo = membrosJson(raw, raw.indexOf('{'));
+  const dim = topo.dimension ? membrosJson(raw, topo.dimension[0]) : {};
+  const tempo = dim.time ? membrosJson(raw, dim.time[0]) : {};
+  const cat = tempo.category ? membrosJson(raw, tempo.category[0]) : {};
+  if (vezesEm(raw, partes[0], cat.index) !== 1) return `o fragmento do período não está uma vez dentro do índice do tempo`;
+  if (vezesEm(raw, partes[1], topo.value) !== 1) return `o fragmento do valor não está uma vez dentro de «value»`;
+  if (marca !== null && vezesEm(raw, partes[2], topo.status) !== 1) return `o fragmento da marca não está uma vez dentro de «status»`;
+  return null;
+}
+
+/** O rótulo de cada período da casa na metainformação de um indicador do INE. */
+function rotulosDoIne(metaRaw) {
+  /** @type {Record<string, string>} */
+  const rotulo = {};
+  const meta = JSON.parse(metaRaw)[0];
+  for (const g of meta?.Dimensoes?.Categoria_Dim ?? []) {
+    for (const itens of Object.values(g)) {
+      for (const c of /** @type {any[]} */ (itens)) {
+        if (String(c.dim_num) !== '1') continue;
+        const cod = String(c.categ_cod);
+        if (/^S7A\d{4}$/.test(cod)) rotulo[cod.slice(3)] = c.categ_dsg;
+        else {
+          const ano = cod.slice(3, 7);
+          const mes = Number(cod.slice(7, 9));
+          rotulo[`${ano}-${String(mes).padStart(2, '0')}`] = c.categ_dsg;
+          if (mes % 3 === 0) rotulo[`${ano}-T${mes / 3}`] = c.categ_dsg;
+        }
+      }
+    }
+  }
+  return rotulo;
+}
+
+/**
+ * O erro do objeto de um ponto do INE no bloco do seu período, ou `null`.
+ * @param {string} raw @param {Record<string, string>} rotulos @param {any} serie @param {any} ponto
+ */
+function erroDoBlocoDoIne(raw, rotulos, serie, ponto) {
+  const rotulo = rotulos[ponto.periodo];
+  if (!rotulo) return `a metainformação não tem o período ${ponto.periodo}`;
+  const chave = JSON.stringify(rotulo).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const m = new RegExp(`${chave}\\s*:\\s*\\[`).exec(raw);
+  if (!m) return `o corpo não tem o bloco de ${ponto.periodo}`;
+  const inicio = m.index + m[0].length - 1;
+  const fim = fimDoValorJson(raw, inicio);
+  const bloco = raw.slice(inicio, fim).replace(/\s+/g, ' ');
+  if (!bloco.includes(String(ponto.excerto))) return `o excerto de ${ponto.periodo} não está no bloco do seu período`;
+  let obj;
+  try {
+    obj = JSON.parse(String(ponto.excerto));
+  } catch {
+    return `o excerto de ${ponto.periodo} não é um objeto da resposta`;
+  }
+  const coords = coordenadasDaEdicaoDaSerie(serie.document?.edition);
+  for (const [k, v] of Object.entries(coords)) if (obj[k] !== v) return `o objeto de ${ponto.periodo} diz ${k}=${obj[k]}`;
+  const marca = obj.sinal_conv || null;
+  let texto = String(obj.ind_string ?? '');
+  if (marca) {
+    if (!texto.endsWith(` ${marca}`)) return `a marca de ${ponto.periodo} não acompanha o valor`;
+    texto = texto.slice(0, -(marca.length + 1));
+  }
+  const noIne = String(ponto.valor).replace(/\u2212/g, '-').replace(/[\u202f\u00a0]/g, ' ');
+  if (texto !== noIne || (ponto.bandeira ?? null) !== marca) return `o ponto ${ponto.periodo} diz «${ponto.valor}» ${ponto.bandeira ?? null} e o objeto «${texto}» ${marca}`;
+  return null;
+}
+
+/** A fonte do motor: o registo dos pedidos, o manifesto e a leitura de um corpo pelo seu caminho. */
+function fonteDoMotor(motor) {
+  const raiz = path.join(motor, 'content', '13 Dominios', 'source');
+  return {
+    fetch: JSON.parse(fs.readFileSync(path.join(raiz, 'FETCH.json'), 'utf8')).files,
+    manifesto: new Map(fs.readFileSync(path.join(raiz, 'MANIFEST.sha256'), 'utf8').split('\n').filter(Boolean).map((l) => {
+      const i = l.indexOf('  ');
+      return [l.slice(i + 2), l.slice(0, i)];
+    })),
+    ler: (/** @type {string} */ rel) => fs.readFileSync(path.join(raiz, rel)),
+  };
+}
+
+const INE_META = (/** @type {string} */ codigo) => `https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=${codigo}&lang=PT`;
+
+/** O corpo alojado de um endereço, conferido pelo resumo dos seus bytes, do registo e do manifesto. */
+function corpoDoEndereco(fonte, url, resumo) {
+  const achado = Object.entries(fonte.fetch).find(([rel, f]) => rel.startsWith('rp3/') && f.url === url && f.estado === 'lido');
+  if (!achado) return { erro: `o pedido ${url.slice(0, 80)} não tem corpo alojado` };
+  const bytes = fonte.ler(achado[0]);
+  const daqui = createHash('sha256').update(bytes).digest('hex');
+  const esperado = resumo ?? achado[1].sha256;
+  if (daqui !== esperado || achado[1].sha256 !== esperado || fonte.manifesto.get(achado[0]) !== esperado) {
+    return { erro: `o corpo de ${url.slice(0, 80)} não dá o resumo da série, do registo e do manifesto` };
+  }
+  return { raw: bytes.toString('utf8') };
+}
+
+function metadeDoMotor(series, fonte = null) {
   const motor = process.env.RESEARCHHUB_DIR ? path.resolve(process.env.RESEARCHHUB_DIR) : null;
-  if (!motor) return { correu: false, erros: [], pontos: 0, razao: 'sem RESEARCHHUB_DIR: a metade do motor não corre aqui' };
-  const fonte = path.join(motor, 'content', '13 Dominios', 'source');
-  const fetch = JSON.parse(fs.readFileSync(path.join(fonte, 'FETCH.json'), 'utf8')).files;
-  const manifesto = new Map(fs.readFileSync(path.join(fonte, 'MANIFEST.sha256'), 'utf8').split('\n').filter(Boolean).map((l) => {
-    const i = l.indexOf('  ');
-    return [l.slice(i + 2), l.slice(0, i)];
-  }));
+  if (!fonte && !motor) return { correu: false, erros: [], pontos: 0, razao: 'sem RESEARCHHUB_DIR: a metade do motor não corre aqui' };
+  const f = fonte ?? fonteDoMotor(/** @type {string} */ (motor));
   const erros = [];
   let pontos = 0;
   for (const [id, s] of series) {
     if (s.eixo !== 'periodo' || !(s.pedidos ?? []).length) continue;
     const corpos = new Map();
     for (const q of s.pedidos) {
-      const achado = Object.entries(fetch).find(([rel, f]) => rel.startsWith('rp3/') && f.url === q.url && f.estado === 'lido');
-      if (!achado || achado[1].sha256 !== q.sha256 || manifesto.get(achado[0]) !== q.sha256) {
-        erros.push(`check:series · ${id}: o pedido ${q.url.slice(0, 80)} não tem corpo alojado com o resumo da série.`);
-        continue;
-      }
-      const raw = fs.readFileSync(path.join(fonte, achado[0]), 'utf8');
-      corpos.set(q, { raw, colapsado: raw.replace(/\s+/g, ' ') });
+      const c = corpoDoEndereco(f, q.url, q.sha256);
+      if (c.erro) erros.push(`check:series · ${id}: ${c.erro}.`);
+      else corpos.set(q, c.raw);
     }
     for (const parte of String(s.excerpt).split(' · ')) {
-      if (![...corpos.values()].some((c) => c.raw.includes(parte))) erros.push(`check:series · ${id}: o literal da série tem «${parte.slice(0, 60)}», que o corpo não escreve.`);
+      if (![...corpos.values()].some((raw) => raw.includes(parte))) erros.push(`check:series · ${id}: o literal da série tem «${parte.slice(0, 60)}», que o corpo não escreve.`);
+    }
+    let rotulos = null;
+    if (s.source === 'INE') {
+      const codigo = String(s.document?.edition ?? '').split(', ')[0];
+      const meta = corpoDoEndereco(f, INE_META(codigo), null);
+      if (meta.erro) {
+        erros.push(`check:series · ${id}: a metainformação: ${meta.erro}.`);
+        continue;
+      }
+      rotulos = rotulosDoIne(meta.raw);
     }
     for (const p of s.pontos) {
       const o = ordem(p.periodo);
@@ -295,9 +513,9 @@ function metadeDoMotor(series) {
         const b = ordem(x.ultimo);
         return a && b && o && (a[0] < o[0] || (a[0] === o[0] && a[1] <= o[1])) && (o[0] < b[0] || (o[0] === b[0] && o[1] <= b[1]));
       });
-      const c = q ? corpos.get(q) : null;
-      const dentro = c && (s.source === 'INE' ? c.colapsado.includes(p.excerto) : String(p.excerto).split(' · ').every((x) => c.raw.includes(x)));
-      if (!dentro) erros.push(`check:series · ${id}: o excerto de ${p.periodo} não está no corpo do seu pedido.`);
+      const raw = q ? corpos.get(q) : null;
+      const erro = !raw ? 'não tem corpo' : s.source === 'INE' ? erroDoBlocoDoIne(raw, /** @type {any} */ (rotulos), s, p) : erroDaCelulaDoEurostat(raw, s, p);
+      if (erro) erros.push(`check:series · ${id}: ${p.periodo}: ${erro}.`);
       else pontos++;
     }
   }
@@ -434,6 +652,48 @@ if (PROVA && noTempo.length) {
     celulasDoLivro(copiaDasSeries('serie-pensao-media-anual', (s) => { s.pontos[0].valor = '5 001'; }), linhas).erros);
   planta('S3', 'um valor do Eurostat com o índice de outro período', 'não está no seu excerto com o índice', () =>
     celulasDoLivro(copiaDasSeries('serie-salario-minimo-mensal', (s) => { s.pontos[0].excerto = s.pontos[0].excerto.replace('"0":357', '"1":357'); }), linhas).erros);
+  /* S3 · A CÉLULA DO EUROSTAT E O BLOCO DO INE (passagem RP3-b, o achado 5 da leitura a frio). Num corpo
+     sintético do Eurostat, que corre sempre: o verde e as duas plantas (o valor do ponto só numa anotação, com
+     outro número na célula; a marca «e» da célula omitida no ponto e no excerto). Com o motor ao lado, as mesmas
+     duas plantas sobre os corpos alojados da S12 e da S4, mexidos em memória, e a do objeto de outro período
+     num corpo do INE. */
+  const CORPO_SINTETICO = JSON.stringify({
+    version: '2.0', class: 'dataset', label: 'Planta', value: { 0: 1.5, 1: 2.5 }, status: { 1: 'e' },
+    id: ['freq', 'geo', 'time'], size: [1, 1, 2],
+    dimension: { freq: { category: { index: { M: 0 } } }, geo: { category: { index: { PT: 0 } } }, time: { category: { index: { '2026-01': 0, '2026-02': 1 } } } },
+    extension: { status: { label: { e: 'estimated' } } },
+  });
+  const SERIE_SINTETICA = { id: 'serie-planta', source: 'Eurostat', document: { edition: 'planta, freq=M, geo=PT' } };
+  const P1 = { periodo: '2026-01', valor: '1,5', excerto: '"2026-01":0 · "0":1.5', bandeira: null };
+  const P2 = { periodo: '2026-02', valor: '2,5', excerto: '"2026-02":1 · "1":2.5 · "1":"e"', bandeira: 'e' };
+  for (const ponto of [P1, P2]) {
+    const e = erroDaCelulaDoEurostat(CORPO_SINTETICO, SERIE_SINTETICA, ponto);
+    if (e) erros.S3.push(`check:series · o verde sintético da célula do Eurostat falhou em ${ponto.periodo}: ${e}`);
+  }
+  const anotado = (raw, n, valor, outro) => raw.replace(`"${n}":${valor}`, `"${n}":${outro}`).replace('"extension":{', `"extension":{"annotation":{"${n}":${valor}},`);
+  planta('S3', 'o valor do ponto só numa anotação, e outro na célula (corpo sintético)', 'a célula 0 da resposta «9.9»', () =>
+    ({ S3: [erroDaCelulaDoEurostat(anotado(CORPO_SINTETICO, 0, '1.5', '9.9'), SERIE_SINTETICA, P1)].filter(Boolean) }));
+  planta('S3', 'a marca «e» da célula omitida no ponto e no excerto (corpo sintético)', 'tem «e» em status', () =>
+    ({ S3: [erroDaCelulaDoEurostat(CORPO_SINTETICO, SERIE_SINTETICA, { ...P2, excerto: '"2026-02":1 · "1":2.5', bandeira: null })].filter(Boolean) }));
+  if (motor.correu) {
+    const fonte = fonteDoMotor(path.resolve(String(process.env.RESEARCHHUB_DIR)));
+    const s12 = series.get('serie-ihpc-rendas-variacao-homologa');
+    const s4 = series.get('serie-ihpc-variacao-homologa');
+    const s7 = series.get('serie-pensao-media-anual');
+    const corpoDe = (s) => String(corpoDoEndereco(fonte, s.pedidos[0].url, s.pedidos[0].sha256).raw ?? '');
+    const ultimo12 = s12.pontos[s12.pontos.length - 1];
+    const [, n12, v12] = /^"[^"]+":\d+ · "(\d+)":(-?[\d.]+)$/.exec(ultimo12.excerto) ?? [];
+    planta('S3', 'o valor do ponto só numa anotação, e outro na célula (o corpo da S12)', `a célula ${n12} da resposta «9.9»`, () =>
+      ({ S3: [erroDaCelulaDoEurostat(anotado(corpoDe(s12), n12, v12, '9.9'), s12, ultimo12)].filter(Boolean) }));
+    const ultimo4 = s4.pontos[s4.pontos.length - 1];
+    planta('S3', 'a marca «e» da célula omitida no ponto e no excerto (o corpo da S4)', 'tem «e» em status', () =>
+      ({ S3: [erroDaCelulaDoEurostat(corpoDe(s4), s4, { ...ultimo4, excerto: ultimo4.excerto.split(' · ').slice(0, 2).join(' · '), bandeira: null })].filter(Boolean) }));
+    const meta7 = corpoDoEndereco(fonte, INE_META(String(s7.document.edition).split(', ')[0]), null).raw;
+    const p2024 = s7.pontos.find((x) => x.periodo === '2024');
+    const p2025 = s7.pontos.find((x) => x.periodo === '2025');
+    planta('S3', 'o objeto de outro período no excerto de um ponto do INE (o corpo da S7)', 'não está no bloco do seu período', () =>
+      ({ S3: [erroDoBlocoDoIne(corpoDe(s7), rotulosDoIne(String(meta7)), s7, { ...p2024, valor: p2025.valor, excerto: p2025.excerto })].filter(Boolean) }));
+  }
   planta('S4', 'um ponto trocado na série derivada', 'não é a conta refeita', () =>
     celulasDoLivro(copiaDasSeries('serie-cem-euros-de-2015-01', (s) => { s.pontos[s.pontos.length - 1].valor = '77,168'; }), linhas).erros);
   planta('S4', 'a origem mexida por baixo da derivada', 'não é a conta refeita', () =>
