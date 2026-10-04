@@ -1,0 +1,39 @@
+
+> o-estado-do-pais@0.1.0 design:feixe
+> node scripts/design-bundle.mjs --prova
+
+  mordeu · feixe · tamanho
+  mordeu · feixe · dependência SVG
+  mordeu · feixe · imagem externa
+
+  O feixe de cartões do sistema de desenho
+  design-system/ · de dist/ no commit ff8692b · 20 cartões, 11 ficheiros de letra e um README
+
+  ficheiro                          grupo          bytes  ok
+  01-cor.html                       Fundamentos   380180  ✓
+  02-tipo.html                      Fundamentos   376326  ✓
+  03-selo-e-marcador.html           Componentes   414074  ✓
+  04-regua.html                     Disposições   383770  ✓
+  05-mapa.html                      Disposições   444997  ✓
+  06-estados.html                   Componentes   375814  ✓
+  07-cartoes.html                   Componentes   289331  ✓
+  10-pagina-primeira.html           Páginas       439085  ✓
+  11-pagina-primeira-escuro.html    Páginas       439956  ✓
+  12-pagina-linha-livro-razao.html  Páginas       227235  ✓
+  13-pagina-livro-razao.html        Páginas       908545  ✗  887.3 KiB acima do tecto de 656.48046875 KiB
+  14-pagina-municipio.html          Páginas       300219  ✓
+  15-pagina-lugares.html            Páginas       491221  ✓
+  16-pagina-metodo.html             Páginas       257122  ✓
+  17-pagina-agenda.html             Páginas       293838  ✓
+  18-pagina-estudos.html            Páginas       214337  ✓
+  19-pagina-sobre.html              Páginas       199754  ✓
+  20-pagina-correcoes.html          Páginas       298957  ✓
+  21-pagina-404.html                Páginas       198487  ✓
+  30-regras.html                    Fundamentos   240811  ✓
+
+  7005.9 KiB de cartões · maior cartão 887.3 KiB · tecto 656.48046875 KiB
+  11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto
+  ligações internas absolutas em https://oestadodopaís.pt · 17 ligações para fontes, intactas · 12 endereços escritos no texto das páginas (transcrições, não pedidos)
+
+  ✗ 1 cartão(ões) reprovado(s).
+

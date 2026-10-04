@@ -1,0 +1,39 @@
+{
+  "estado": "proposta não aplicada",
+  "bytes_cartao": 235855,
+  "conteudo": {
+    "origem": 428,
+    "recorte": 8,
+    "primeiras_preservadas": true
+  },
+  "pagina_conservada": true,
+  "guiao_conservado": true,
+  "guarda_sha256": "55b6c7cdaa8b01ccf83c3b4479b9b7a9cf986394d71b3ddd370dbbc43e9874cd",
+  "candidato_sha256": "7bd13c47715cbbe4a0ad296aea5c67381f4ac51a2a877409be05805987561cd5",
+  "codigo": 0,
+  "planta_sem_recorte": 1,
+  "plantas_do_feixe": [
+    "tamanho",
+    "dependência SVG",
+    "imagem externa"
+  ],
+  "teto_conservado": true,
+  "plantas": [
+    {
+      "nome": "tamanho",
+      "mordeu": true
+    },
+    {
+      "nome": "dependência SVG",
+      "mordeu": true
+    },
+    {
+      "nome": "imagem externa",
+      "mordeu": true
+    },
+    {
+      "nome": "Retirar o recorte excede o teto do cartão 13",
+      "mordeu": true
+    }
+  ]
+}

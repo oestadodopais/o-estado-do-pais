@@ -1,0 +1,46 @@
+--- a/tests/livro/indice.mjs
++++ b/tests/livro/indice.mjs
+@@ -219,6 +219,43 @@
+  * @type {{ nome: string, forma: RegExp, onde: string }[]}
+  */
+ const LOCALIZADORES_CONHECIDOS = [
++  // OE1: localizadores escritos pelos leitores nomeados em cada entrada.
++  // A lista continua fechada; os quatro formatos anteriores permanecem iguais.
++  {
++    nome: 'dimension.cofog99.category.label.GFnn',
++    forma: /^dimension\.cofog99\.category\.label\.GF(?:0[1-9]|10)$/,
++    onde: 'publisher/oe1_eurostat.py: rótulo da função na resposta JSON-stat',
++  },
++  {
++    nome: 'folha OE1 e célula do rótulo',
++    forma: /^(?:FUNCIONAL![CD](?:[2-9]|1[0-2])|INDICADORES_AC![BC](?:[2-9]|1[01]))$/,
++    onde: 'publisher/oe1_dados.py: célula do rótulo nas folhas XLS',
++  },
++  {
++    nome: 'Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn',
++    forma: /^Mapa1\/Registos\/Registo\[(?:[1-9]|1\d|20)\]\/DesignacaoPrograma; Programa=P-(?:00[1-9]|01\d|020)$/,
++    onde: 'publisher/oe1_xml.py: campo DesignacaoPrograma no registo XML',
++  },
++  {
++    nome: 'página e código ministerial do Mapa 4',
++    forma: /^p\. [1-6], POR MINISTÉRIOS, código (?:0[1-9]|1[0-6])$/,
++    onde: 'publisher/oe1_pdf.py: rótulo da rubrica orgânica no Mapa 4',
++  },
++  {
++    nome: 'página, rótulo e última coluna de um total dos mapas',
++    forma: /^p\. [1-9]\d*, [^,\r\n]+, última coluna$/,
++    onde: 'publisher/oe1_pdf.py: linha identificada pelo rótulo nos mapas PDF',
++  },
++  {
++    nome: 'páginas 49 e 50, rótulo e coluna da síntese de agosto',
++    forma: /^p\. (?:49 do ficheiro, página impressa 45|50 do ficheiro, página impressa 46), (?:Receita efetiva|Despesa efetiva|Saldo global|Ativos financeiros líquidos de reembolsos|Passivos financeiros líquidos de amortizações), (?:Orçamento Inicial|Execução Acumulada) 2026$/,
++    onde: 'publisher/oe1_pdf.py: rótulo das contas da síntese mensal',
++  },
++  {
++    nome: 'página 72, programa ou total da síntese de agosto',
++    forma: /^p\. 72 do ficheiro, página impressa 68, (?:programa (?:00[1-9]|01\d|020)|Subtotal despesa efetiva consolidada dos Programas Orçamentais \(1\)|Fluxos para outros Programas Orçamentais \(2\)|Diferenças de consolidação \(3\)), Execução Acumulada 2026$/,
++    onde: 'publisher/oe1_pdf.py: rótulo dos programas e dos totais na síntese mensal',
++  },
+   { nome: 'IndicadorDsg', forma: /^IndicadorDsg$/, onde: 'a resposta do json_indicador do INE' },
+   { nome: 'label', forma: /^label$/, onde: 'a resposta JSON-stat do Eurostat' },
+   {

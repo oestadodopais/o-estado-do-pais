@@ -1,0 +1,63 @@
+
+> o-estado-do-pais@0.1.0 check:primeira
+> node tests/inicio/primeira-pagina.mjs --prova && node tests/inicio/geometria.mjs --prova && node tests/inicio/lugares-no-navegador.mjs --prova && node tests/inicio/tema-e-menu.mjs --prova
+
+check:primeira · auditoria: 81 folhas, 128 partes (76 diz, 24 conta, 28 liga), 103 apoios, 14 algarismos · 16 páginas, 10 blocos rendidos e recontados · entradas: 0 cartões nos temas, 94 nas entradas, 0 fora por declaração, 16 páginas das entradas no mapa do sítio · 47 de 47 plantas mordidas
+check:primeira · todas as conferências a 0.
+/ a 390 px (light): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.688 px por unidade, faixa de 354.0 px · casa:unica: 4 barras, 6.337 px por unidade, faixa de 240.4 px · trabalho:painel-0: 2 barras, 1.724 px por unidade, faixa de 240.4 px · trabalho:desemprego: 4 barras, 17.237 px por unidade, faixa de 240.4 px · estado:unica: 3 barras, 1.807 px por unidade, faixa de 170.0 px · estado · referência: a linha a 108.4 px da base, os 60 a 108.4 px · pobreza:painel-0: 2 barras, 6.894 px por unidade, faixa de 240.4 px · pobreza:painel-1: 2 barras, 34.471 px por unidade, faixa de 240.4 px
+/ a 1280 px (light): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.129 px por unidade, faixa de 335.5 px · casa:unica: 4 barras, 3.540 px por unidade, faixa de 134.8 px · trabalho:painel-0: 2 barras, 3.114 px por unidade, faixa de 433.5 px · trabalho:desemprego: 4 barras, 31.141 px por unidade, faixa de 433.5 px · estado:unica: 3 barras, 2.342 px por unidade, faixa de 220.0 px · estado · referência: a linha a 140.5 px da base, os 60 a 140.5 px · pobreza:painel-0: 2 barras, 3.852 px por unidade, faixa de 134.8 px · pobreza:painel-1: 2 barras, 19.261 px por unidade, faixa de 134.8 px
+/ a 390 px (dark): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.688 px por unidade, faixa de 354.0 px · casa:unica: 4 barras, 6.337 px por unidade, faixa de 240.4 px · trabalho:painel-0: 2 barras, 1.724 px por unidade, faixa de 240.4 px · trabalho:desemprego: 4 barras, 17.237 px por unidade, faixa de 240.4 px · estado:unica: 3 barras, 1.807 px por unidade, faixa de 170.0 px · estado · referência: a linha a 108.4 px da base, os 60 a 108.4 px · pobreza:painel-0: 2 barras, 6.894 px por unidade, faixa de 240.4 px · pobreza:painel-1: 2 barras, 34.471 px por unidade, faixa de 240.4 px
+/ a 1280 px (dark): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.129 px por unidade, faixa de 335.5 px · casa:unica: 4 barras, 3.540 px por unidade, faixa de 134.8 px · trabalho:painel-0: 2 barras, 3.114 px por unidade, faixa de 433.5 px · trabalho:desemprego: 4 barras, 31.141 px por unidade, faixa de 433.5 px · estado:unica: 3 barras, 2.342 px por unidade, faixa de 220.0 px · estado · referência: a linha a 140.5 px da base, os 60 a 140.5 px · pobreza:painel-0: 2 barras, 3.852 px por unidade, faixa de 134.8 px · pobreza:painel-1: 2 barras, 19.261 px por unidade, faixa de 134.8 px
+/en/ a 390 px (light): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.688 px por unidade, faixa de 354.0 px · casa:unica: 4 barras, 6.337 px por unidade, faixa de 240.4 px · trabalho:painel-0: 2 barras, 1.724 px por unidade, faixa de 240.4 px · trabalho:desemprego: 4 barras, 17.237 px por unidade, faixa de 240.4 px · estado:unica: 3 barras, 1.807 px por unidade, faixa de 170.0 px · estado · referência: a linha a 108.4 px da base, os 60 a 108.4 px · pobreza:painel-0: 2 barras, 6.894 px por unidade, faixa de 240.4 px · pobreza:painel-1: 2 barras, 34.471 px por unidade, faixa de 240.4 px
+/en/ a 1280 px (light): 5 blocos, 0 falhas · precos:unica: 5 barras, 10.129 px por unidade, faixa de 335.5 px · casa:unica: 4 barras, 3.540 px por unidade, faixa de 134.8 px · trabalho:painel-0: 2 barras, 3.114 px por unidade, faixa de 433.5 px · trabalho:desemprego: 4 barras, 31.141 px por unidade, faixa de 433.5 px · estado:unica: 3 barras, 2.342 px por unidade, faixa de 220.0 px · estado · referência: a linha a 140.5 px da base, os 60 a 140.5 px · pobreza:painel-0: 2 barras, 3.852 px por unidade, faixa de 134.8 px · pobreza:painel-1: 2 barras, 19.261 px por unidade, faixa de 134.8 px
+  apanhada · um número solto → PP1 · / (planta) · precos: o bloco escreve um algarismo sem marca de origem: «Os preços no seu conjunto medem-se num cabaz de bens e se…»
+  apanhada · um valor trocado → PP1 · / (planta) · precos: o valor desenhado de ipc-combustiveis-variacao-homologa é «23,87» e a linha diz «23,78»
+  apanhada · o identificador de outra linha → PP1 · / (planta) · precos: o valor desenhado de ipc-alimentacao-variacao-homologa é «5,22» e a linha diz «2,14»
+  apanhada · uma linha retirada → PP1 · / (planta) · pobreza: o desenho não tem a linha racio-s80-s20-2025-ue
+  apanhada · um número das palavras fixas mudado → PP1 · / (planta) · casa: o texto rendido da frase difere do que o resolvedor dá: «Em Portugal, a parte das pessoas que gastam mais de 45 % …» contra «Em Portugal, a parte das pessoas que gastam mais de 40 % …»
+  apanhada · a unidade dentro do elemento do valor → PP1 · / (planta) · precos: o valor desenhado de ipc-combustiveis-variacao-homologa é «23,78 %» e a linha diz «23,78»
+  apanhada · um travessão → PP1 · / (planta) · estado: da frase tem um travessão: «A dívida pública desceu de 2024 para 2025 — e está acima …»
+  apanhada · um painel da habitação com outra escala escrita → [desenho] G1 · na escala «casa:unica», sobrecarga-do-custo-da-habitacao-2025 mede 39.92 px; na escala dos outros mediria 27.73 px
+  apanhada · um painel da habitação mais estreito → [desenho] G1 · na escala «casa:unica», sobrecarga-do-custo-da-habitacao-2025 mede 39.92 px; na escala dos outros mediria 14.24 px
+  apanhada · uma barra fora da origem → [desenho] G3 · as barras de ipc-combustiveis-variacao-homologa, ipc-rendas-variacao-homologa, ipc-alimentacao-variacao-homologa, ipc-energia-em-casa-variacao-homologa, ipc-variacao-homologa não partem da mesma origem
+  apanhada · a linha do limiar nos 50 → [desenho] G4 · a linha de referência está a 90.4 px da base; os 60 da escala estão a 108.4 px
+  apanhada · a linha a entrar no painel da União → [desenho] G4 · a linha do valor de referência entra no painel da União, onde a Comissão não aplica o limiar
+  apanhada · uma cor numa coluna → [cor] G5 · rgb(31, 78, 140) em span.pp-col-barra
+  apanhada · o âmbar no rótulo → [cor] G5 · âmbar fora da linha de referência, em p.pp-ref-rotulo
+geometria · 6 corridas sem falhas · 14 de 14 plantas apanhadas.
+✓ a porta · pt 390: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /lugares (200)
+✓ a porta · pt 1280: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /lugares (200)
+✓ a porta · en 390: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /en/places (200)
+✓ a porta · en 1280: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /en/places (200)
+✓ a ordem · pt 390 (uma coluna): pesquisa 289 · mapa 411–935 à esquerda 18 · regiões 954 · distritos 999 · nomes à vista 0
+✓ a ordem · pt 768 (uma coluna): pesquisa 304 · mapa 427–925 à esquerda 31 · regiões 945 · distritos 990 · nomes à vista 0
+✓ a ordem · pt 1024 (duas colunas): pesquisa 336 · mapa 336–962 à esquerda 553 · regiões 475 · distritos 520 · nomes à vista 0
+✓ a ordem · pt 1280 (duas colunas): pesquisa 341 · mapa 341–967 à esquerda 756 · regiões 492 · distritos 537 · nomes à vista 0
+✓ a ordem · pt 1600 (duas colunas): pesquisa 341 · mapa 341–967 à esquerda 916 · regiões 495 · distritos 540 · nomes à vista 0
+✓ a ordem · en 390 (uma coluna): pesquisa 289 · mapa 411–935 à esquerda 18 · regiões 954 · distritos 999 · nomes à vista 0
+✓ a ordem · en 768 (uma coluna): pesquisa 304 · mapa 427–925 à esquerda 31 · regiões 945 · distritos 990 · nomes à vista 0
+✓ a ordem · en 1024 (duas colunas): pesquisa 336 · mapa 336–962 à esquerda 553 · regiões 475 · distritos 520 · nomes à vista 0
+✓ a ordem · en 1280 (duas colunas): pesquisa 341 · mapa 341–967 à esquerda 756 · regiões 492 · distritos 537 · nomes à vista 0
+✓ a ordem · en 1600 (duas colunas): pesquisa 341 · mapa 341–967 à esquerda 916 · regiões 495 · distritos 540 · nomes à vista 0
+✓ as gavetas · pt sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter 9, depois do segundo Enter 0 · distritos, 29 nomes · à vista antes 0, depois do Enter 29, depois do segundo Enter 0
+✓ as gavetas · en sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter 9, depois do segundo Enter 0 · distritos, 29 nomes · à vista antes 0, depois do Enter 29, depois do segundo Enter 0
+✓ a pesquisa · pt sem guião: a pesquisa não procura: «mourao» + Enter aterra em /lugares?concelho=mourao (200), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de /distritos/evora escondida com a gaveta fechada true, à vista com ela aberta true, abre (200) e nela a porta de Mourão à vista 1×, que abre (200)
+✓ a pesquisa · en sem guião: a pesquisa não procura: «mourao» + Enter aterra em /en/places?concelho=mourao (200), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de /en/districts/evora escondida com a gaveta fechada true, à vista com ela aberta true, abre (200) e nela a porta de Mourão à vista 1×, que abre (200)
+  mordeu · o mapa depois das gavetas em «Lugares», a 390 · pt 390 (uma coluna): pesquisa 289 · mapa 520–1044 à esquerda 18 · regiões 412 · distritos 457 · nomes à vista 0
+  mordeu · a porta «Lugares» da primeira página para uma página que não existe · en 390: porta «Lugares» 1× · sinal à vista 40×53 px · o toque aterra em /en/places-that-do-not-exist (404)
+  mordeu · o <summary> das regiões trocado por um bloco qualquer · pt sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter ?, depois do segundo Enter ? · distritos, 29 nomes · à vista antes 0, depois do Enter 29, depois do segundo Enter 0
+  mordeu · o <summary> dos distritos e das ilhas trocado por um bloco qualquer · en sem guião: regioes, 9 nomes · à vista antes 0, depois do Enter 9, depois do segundo Enter 0 · distritos, 29 nomes · à vista antes 0, depois do Enter ?, depois do segundo Enter ?
+  mordeu · a porta do distrito de Mourão tirada da gaveta dos distritos e das ilhas · pt sem guião: a pesquisa não procura: «mourao» + Enter aterra em /lugares?concelho=mourao (200), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de NENHUM distrito escondida com a gaveta fechada ?, à vista com ela aberta ?, abre (?) e nela a porta de Mourão à vista 0×, que abre (?)
+  mordeu · o formulário de «Lugares» sem destino · en sem guião: a pesquisa não procura: «mourao» + Enter aterra em /en/places-that-do-not-exist?concelho=mourao (404), com 0 resultado(s) à vista · o caminho pelas gavetas: a porta de /en/districts/evora escondida com a gaveta fechada true, à vista com ela aberta true, abre (200) e nela a porta de Mourão à vista 1×, que abre (200)
+a porta e a página dos lugares · 18 medições no navegador, todas a cumprir · 6 de 6 plantas mordidas.
+tema e menu · TM1 24 corrida(s), TM2 30, TM3 6, TM4 42 · 9 planta(s), 9 a morder
+  mordeu · a paleta escura pela preferência do sistema
+  mordeu · a guarda tirada do <head>
+  mordeu · um manipulador que aplica o claro a todos os cliques
+  mordeu · a guarda no fim do <body>
+  mordeu · o comando tirado do cabeçalho
+  mordeu · um botão do tema com 30 px
+  mordeu · uma sétima porta no menu
+  mordeu · a letra do menu de antes do P4
+  mordeu · o menu sem dobrar a 320 px
+tema e menu · todas as células a 0.

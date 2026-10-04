@@ -1,0 +1,274 @@
+{
+  "linhas": 150,
+  "grupos": [
+    {
+      "nome": "dimension.cofog99.category.label.GFnn",
+      "leitor": "publisher/oe1_eurostat.py: rótulo da função na resposta JSON-stat",
+      "linhas": [
+        "despesa-por-funcao-2024-gf01-es",
+        "despesa-por-funcao-2024-gf01-pt",
+        "despesa-por-funcao-2024-gf01-ue",
+        "despesa-por-funcao-2024-gf02-es",
+        "despesa-por-funcao-2024-gf02-pt",
+        "despesa-por-funcao-2024-gf02-ue",
+        "despesa-por-funcao-2024-gf03-es",
+        "despesa-por-funcao-2024-gf03-pt",
+        "despesa-por-funcao-2024-gf03-ue",
+        "despesa-por-funcao-2024-gf04-es",
+        "despesa-por-funcao-2024-gf04-pt",
+        "despesa-por-funcao-2024-gf04-ue",
+        "despesa-por-funcao-2024-gf05-es",
+        "despesa-por-funcao-2024-gf05-pt",
+        "despesa-por-funcao-2024-gf05-ue",
+        "despesa-por-funcao-2024-gf06-es",
+        "despesa-por-funcao-2024-gf06-pt",
+        "despesa-por-funcao-2024-gf06-ue",
+        "despesa-por-funcao-2024-gf07-es",
+        "despesa-por-funcao-2024-gf07-pt",
+        "despesa-por-funcao-2024-gf07-ue",
+        "despesa-por-funcao-2024-gf08-es",
+        "despesa-por-funcao-2024-gf08-pt",
+        "despesa-por-funcao-2024-gf08-ue",
+        "despesa-por-funcao-2024-gf09-es",
+        "despesa-por-funcao-2024-gf09-pt",
+        "despesa-por-funcao-2024-gf09-ue",
+        "despesa-por-funcao-2024-gf10-es",
+        "despesa-por-funcao-2024-gf10-pt",
+        "despesa-por-funcao-2024-gf10-ue"
+      ]
+    },
+    {
+      "nome": "folha OE1 e célula do rótulo",
+      "leitor": "publisher/oe1_dados.py: célula do rótulo nas folhas XLS",
+      "linhas": [
+        "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
+        "execucao-2026-07-ativos-e-passivos-da-receita-administracao-central",
+        "execucao-2026-07-despesa-efetiva-administracao-central",
+        "execucao-2026-07-despesa-funcao-01",
+        "execucao-2026-07-despesa-funcao-02",
+        "execucao-2026-07-despesa-funcao-03",
+        "execucao-2026-07-despesa-funcao-04",
+        "execucao-2026-07-despesa-funcao-05",
+        "execucao-2026-07-despesa-funcao-06",
+        "execucao-2026-07-despesa-funcao-07",
+        "execucao-2026-07-despesa-funcao-08",
+        "execucao-2026-07-despesa-funcao-09",
+        "execucao-2026-07-despesa-funcao-10",
+        "execucao-2026-07-despesa-orcamental-administracao-central",
+        "execucao-2026-07-despesa-primaria-administracao-central",
+        "execucao-2026-07-diferencas-consolidacao-funcional",
+        "execucao-2026-07-receita-efetiva-administracao-central",
+        "execucao-2026-07-receita-orcamental-administracao-central",
+        "execucao-2026-07-saldo-global-administracao-central",
+        "execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica",
+        "execucao-2026-07-saldo-primario-administracao-central",
+        "oe-2026-ativos-e-passivos-da-despesa-administracao-central",
+        "oe-2026-ativos-e-passivos-da-receita-administracao-central",
+        "oe-2026-despesa-efetiva-administracao-central",
+        "oe-2026-despesa-funcao-01",
+        "oe-2026-despesa-funcao-02",
+        "oe-2026-despesa-funcao-03",
+        "oe-2026-despesa-funcao-04",
+        "oe-2026-despesa-funcao-05",
+        "oe-2026-despesa-funcao-06",
+        "oe-2026-despesa-funcao-07",
+        "oe-2026-despesa-funcao-08",
+        "oe-2026-despesa-funcao-09",
+        "oe-2026-despesa-funcao-10",
+        "oe-2026-despesa-orcamental-administracao-central",
+        "oe-2026-despesa-primaria-administracao-central",
+        "oe-2026-diferencas-consolidacao-funcional",
+        "oe-2026-receita-efetiva-administracao-central",
+        "oe-2026-receita-orcamental-administracao-central",
+        "oe-2026-saldo-global-administracao-central",
+        "oe-2026-saldo-primario-administracao-central"
+      ]
+    },
+    {
+      "nome": "Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn",
+      "leitor": "publisher/oe1_xml.py: campo DesignacaoPrograma no registo XML",
+      "linhas": [
+        "oe-2026-despesa-programa-001",
+        "oe-2026-despesa-programa-002",
+        "oe-2026-despesa-programa-003",
+        "oe-2026-despesa-programa-004",
+        "oe-2026-despesa-programa-005",
+        "oe-2026-despesa-programa-006",
+        "oe-2026-despesa-programa-007",
+        "oe-2026-despesa-programa-008",
+        "oe-2026-despesa-programa-009",
+        "oe-2026-despesa-programa-010",
+        "oe-2026-despesa-programa-011",
+        "oe-2026-despesa-programa-012",
+        "oe-2026-despesa-programa-013",
+        "oe-2026-despesa-programa-014",
+        "oe-2026-despesa-programa-015",
+        "oe-2026-despesa-programa-016",
+        "oe-2026-despesa-programa-017",
+        "oe-2026-despesa-programa-018",
+        "oe-2026-despesa-programa-019",
+        "oe-2026-despesa-programa-020"
+      ]
+    },
+    {
+      "nome": "página e código ministerial do Mapa 4",
+      "leitor": "publisher/oe1_pdf.py: rótulo da rubrica orgânica no Mapa 4",
+      "linhas": [
+        "oe-2026-despesa-ministerio-administracao-interna",
+        "oe-2026-despesa-ministerio-agricultura-e-mar",
+        "oe-2026-despesa-ministerio-ambiente-e-energia",
+        "oe-2026-despesa-ministerio-cultura-juventude-e-desporto",
+        "oe-2026-despesa-ministerio-defesa-nacional",
+        "oe-2026-despesa-ministerio-economia-e-coesao-territorial",
+        "oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao",
+        "oe-2026-despesa-ministerio-encargos-gerais-do-estado",
+        "oe-2026-despesa-ministerio-financas",
+        "oe-2026-despesa-ministerio-infraestruturas-e-habitacao",
+        "oe-2026-despesa-ministerio-justica",
+        "oe-2026-despesa-ministerio-negocios-estrangeiros",
+        "oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros",
+        "oe-2026-despesa-ministerio-reforma-do-estado",
+        "oe-2026-despesa-ministerio-saude",
+        "oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social"
+      ]
+    },
+    {
+      "nome": "página, rótulo e última coluna de um total dos mapas",
+      "leitor": "publisher/oe1_pdf.py: linha identificada pelo rótulo nos mapas PDF",
+      "linhas": [
+        "oe-2026-despesa-bruta-administracao-central",
+        "oe-2026-despesa-consolidada-administracao-central",
+        "oe-2026-despesa-consolidada-seguranca-social",
+        "oe-2026-despesa-total",
+        "oe-2026-receita-bruta-administracao-central",
+        "oe-2026-receita-consolidada-administracao-central",
+        "oe-2026-receita-consolidada-seguranca-social"
+      ]
+    },
+    {
+      "nome": "páginas 49 e 50, rótulo e coluna da síntese de agosto",
+      "leitor": "publisher/oe1_pdf.py: rótulo das contas da síntese mensal",
+      "linhas": [
+        "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+        "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+        "execucao-2026-08-despesa-efetiva-administracao-central",
+        "execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social",
+        "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
+        "execucao-2026-08-receita-efetiva-administracao-central",
+        "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+        "execucao-2026-08-saldo-global-administracao-central",
+        "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+        "oe-2026-despesa-efetiva-administracao-central-seguranca-social",
+        "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social",
+        "oe-2026-receita-efetiva-administracao-central-seguranca-social",
+        "oe-2026-saldo-global-administracao-central-seguranca-social"
+      ]
+    },
+    {
+      "nome": "página 72, programa ou total da síntese de agosto",
+      "leitor": "publisher/oe1_pdf.py: rótulo dos programas e dos totais na síntese mensal",
+      "linhas": [
+        "execucao-2026-08-despesa-programa-001",
+        "execucao-2026-08-despesa-programa-002",
+        "execucao-2026-08-despesa-programa-003",
+        "execucao-2026-08-despesa-programa-004",
+        "execucao-2026-08-despesa-programa-005",
+        "execucao-2026-08-despesa-programa-006",
+        "execucao-2026-08-despesa-programa-007",
+        "execucao-2026-08-despesa-programa-008",
+        "execucao-2026-08-despesa-programa-009",
+        "execucao-2026-08-despesa-programa-010",
+        "execucao-2026-08-despesa-programa-011",
+        "execucao-2026-08-despesa-programa-012",
+        "execucao-2026-08-despesa-programa-013",
+        "execucao-2026-08-despesa-programa-014",
+        "execucao-2026-08-despesa-programa-015",
+        "execucao-2026-08-despesa-programa-016",
+        "execucao-2026-08-despesa-programa-017",
+        "execucao-2026-08-despesa-programa-018",
+        "execucao-2026-08-despesa-programa-019",
+        "execucao-2026-08-despesa-programa-020",
+        "execucao-2026-08-diferencas-consolidacao-programas",
+        "execucao-2026-08-fluxos-entre-programas",
+        "execucao-2026-08-subtotal-programas"
+      ]
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "Outra dimensão JSON-stat",
+      "mordeu": true
+    },
+    {
+      "nome": "Função fora da lista",
+      "mordeu": true
+    },
+    {
+      "nome": "Coluna numérica em vez do rótulo XLS",
+      "mordeu": true
+    },
+    {
+      "nome": "Folha XLS desconhecida",
+      "mordeu": true
+    },
+    {
+      "nome": "Campo numérico em vez do rótulo XML",
+      "mordeu": true
+    },
+    {
+      "nome": "Registo XML zero",
+      "mordeu": true
+    },
+    {
+      "nome": "Código ministerial zero",
+      "mordeu": true
+    },
+    {
+      "nome": "Total sem página",
+      "mordeu": true
+    },
+    {
+      "nome": "Página impressa trocada",
+      "mordeu": true
+    },
+    {
+      "nome": "Coluna da síntese desconhecida",
+      "mordeu": true
+    },
+    {
+      "nome": "Programa da síntese zero",
+      "mordeu": true
+    },
+    {
+      "nome": "Localizador livre",
+      "mordeu": true
+    }
+  ],
+  "formatos_anteriores": [
+    {
+      "formato": "IndicadorDsg",
+      "id": "abrantes-empresas-2024",
+      "aceito": true
+    },
+    {
+      "formato": "label",
+      "id": "disparidade-salarial-entre-sexos-2023",
+      "aceito": true
+    },
+    {
+      "formato": "p.<n>, linha <n>, campo <n>",
+      "id": "abrantes-prazo-medio-de-pagamento-2025-12",
+      "aceito": true
+    },
+    {
+      "formato": "<folha>, linha <n>, coluna <n>",
+      "id": "abrantes-desemprego-registado-2025-12",
+      "aceito": true
+    }
+  ],
+  "estado": "proposta não aplicada",
+  "codigo_indice": 0,
+  "guarda_conservada": true,
+  "guarda_sha256": "c0afc843c5d910856974a2507c0dfbec8788df81a3685a3cd0358e41a5b30808",
+  "candidato_sha256": "461fd01d66a555772c295e9ad04d15d778dc3e754735b0114dfb7451c100dbd2"
+}

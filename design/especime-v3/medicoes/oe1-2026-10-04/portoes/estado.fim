@@ -1,14 +1,5 @@
- M RESPOSTA-construtor-oe1.md
- M design/especime-v3/medicoes/oe1-2026-10-04/LEIA-ME.md
- M design/especime-v3/medicoes/oe1-2026-10-04/corrida-sitio.cabeca
- M design/especime-v3/medicoes/oe1-2026-10-04/corrida-sitio.fim
- M design/especime-v3/medicoes/oe1-2026-10-04/corrida-sitio.inicio
- M design/especime-v3/medicoes/oe1-2026-10-04/corrida-sitio.log
- M design/especime-v3/medicoes/oe1-2026-10-04/custo.json
- M design/especime-v3/medicoes/oe1-2026-10-04/custo.py
  M design/especime-v3/medicoes/oe1-2026-10-04/decisoes-sitio.log
- M design/especime-v3/medicoes/oe1-2026-10-04/medidas.json
- M design/especime-v3/medicoes/oe1-2026-10-04/medir.py
+ M design/especime-v3/medicoes/oe1-2026-10-04/portoes/build.codigo
  M design/especime-v3/medicoes/oe1-2026-10-04/portoes/build.fim
  M design/especime-v3/medicoes/oe1-2026-10-04/portoes/build.inicio
  M design/especime-v3/medicoes/oe1-2026-10-04/portoes/build.log
@@ -16,41 +7,10 @@
  M design/especime-v3/medicoes/oe1-2026-10-04/portoes/cabeca.fim
  M design/especime-v3/medicoes/oe1-2026-10-04/portoes/estado.fim
  M design/especime-v3/medicoes/oe1-2026-10-04/portoes/ledger.cabeca
- M design/especime-v3/medicoes/oe1-2026-10-04/portoes/ledger.codigo
  M design/especime-v3/medicoes/oe1-2026-10-04/portoes/ledger.fim
  M design/especime-v3/medicoes/oe1-2026-10-04/portoes/ledger.inicio
- M design/especime-v3/medicoes/oe1-2026-10-04/portoes/ledger.log
- M design/especime-v3/medicoes/oe1-2026-10-04/portoes/motor.fim
- M design/especime-v3/medicoes/oe1-2026-10-04/portoes/motor.inicio
  M design/especime-v3/medicoes/oe1-2026-10-04/portoes/typecheck.fim
  M design/especime-v3/medicoes/oe1-2026-10-04/portoes/typecheck.inicio
  M design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.fim
  M design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.inicio
  M design/especime-v3/medicoes/oe1-2026-10-04/portoes/verify.log
-?? design/especime-v3/medicoes/oe1-2026-10-04/custo-oe1b.json
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-ledger-dependencias.cabeca
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-ledger-dependencias.codigo
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-ledger-dependencias.fim
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-ledger-dependencias.inicio
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-ledger-dependencias.log
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-ledger-preparacao.cabeca
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-ledger-preparacao.codigo
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-ledger-preparacao.fim
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-ledger-preparacao.inicio
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-ledger-preparacao.log
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-lingua.cabeca
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-lingua.codigo
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-lingua.fim
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-lingua.inicio
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-lingua.log
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-nomes.cabeca
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-nomes.codigo
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-nomes.fim
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-nomes.inicio
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-nomes.log
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-plantas.cabeca
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-plantas.codigo
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-plantas.fim
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-plantas.inicio
-?? design/especime-v3/medicoes/oe1-2026-10-04/oe1b-plantas.log
-?? node_modules

@@ -1,0 +1,50 @@
+--- a/scripts/design-bundle.mjs
++++ b/scripts/design-bundle.mjs
+@@ -934,7 +934,7 @@
+  * pacotes minificados de `dist/_astro/`: quem desenha lê as razões. Quais são
+  * elas é que se mede na página construída (`folhaDaPagina`).
+  */
+-function cartaoDePagina({ rota, grupo, viewport, titulo, tema = null, nota = '', recorte = null }) {
++function cartaoDePagina({ rota, grupo, viewport, titulo, tema = null, nota = '', recorte = null, limiteDeLinhas = null }) {
+   const root = arvore(rota);
+   /* O título da página vai para dentro de um comentário: um `--` ali fecharia
+      o comentário antes de tempo e o resto do cartão viraria texto. */
+@@ -943,6 +943,17 @@
+     .replace(/[<>]/g, '');
+   const familias = folhaDaPagina(rota, root);
+   const codigo = tiraCodigo(root);
++  // OE1: o espécime do índice passa a recorte, como manda a regra do teto.
++  // A página construída conserva todas as entradas; só esta cópia é cortada.
++  if (limiteDeLinhas !== null) {
++    if (!Number.isInteger(limiteDeLinhas) || limiteDeLinhas < 1) morre('O recorte exige um limite inteiro positivo.');
++    const listas = root.querySelectorAll('.livro-lista');
++    if (listas.length !== 1) morre(`O recorte do livro exige uma lista; encontrou ${listas.length}.`);
++    const entradas = listas[0].querySelectorAll('.livro-item');
++    if (entradas.length <= limiteDeLinhas) morre('O índice já não excede o recorte declarado; reconferir o espécime.');
++    for (const entrada of entradas.slice(limiteDeLinhas)) entrada.remove();
++    root.querySelector('main').insertAdjacentHTML('beforeend', `<p class="sec-sub" data-ds-recorte>${escapa(nota)} <a href="/${rota.replace(/index\.html$/, '')}">Página completa</a>.</p>`);
++  }
+   /* N1: Lugares recebeu dois mapas e duas tabelas municipais. O feixe mostra
+      um recorte declarado da porta geográfica, conservando o teto e a regra de
+      autonomia do retrato. O HTML construído permanece inteiro e intocado. */
+@@ -2149,7 +2160,11 @@
+       'Este cartão embute o bloco escuro de `tokens.css` sem o comando, para que o papel escuro se veja na ferramenta de desenho.',
+   },
+   { ficheiro: '12-pagina-linha-livro-razao.html', rota: 'livro-razao/divida-publica-2025/index.html', titulo: 'Página: linha do livro-razão' },
+-  { ficheiro: '13-pagina-livro-razao.html', rota: 'livro-razao/index.html', titulo: 'Página: índice do livro-razão' },
++  {
++    ficheiro: '13-pagina-livro-razao.html', rota: 'livro-razao/index.html', titulo: 'Página: índice do livro-razão, recorte',
++    limiteDeLinhas: 8,
++    nota: 'Recorte das primeiras oito entradas, na ordem do índice. O livro e a pesquisa continuam inteiros na página completa.',
++  },
+   { ficheiro: '14-pagina-municipio.html', rota: 'municipios/evora/index.html', titulo: 'Página: município' },
+   /* B1, peça 2: o retrato do índice dos concelhos passa a ser o da página dos
+      lugares, que ficou no lugar dele. */
+@@ -2175,6 +2190,7 @@
+     tema: p.tema ?? null,
+     nota: p.nota ?? '',
+     recorte: p.recorte ?? null,
++    limiteDeLinhas: p.limiteDeLinhas ?? null,
+   });
+   regista(
+     p.ficheiro,
