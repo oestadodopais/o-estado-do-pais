@@ -1,90 +1,90 @@
 {
-  "cabeca": "f7048ce08956d89fbefc54ebd40ea8b75b830d47",
-  "metodo": "Inspeção pelo construtor com view_image, das páginas inteiras e dos recortes, depois da captura.",
+  "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+  "metodo": "Inspeção pelo construtor com view_image, das páginas inteiras e dos recortes H2-b, depois da captura.",
   "ficheiros_vistos": [
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-pt-390.png",
-      "sha256": "85ec462f92b825b2adcda2733353cdbac36e9f497530b12ba5b05b35bb9f8346"
+      "sha256": "266333301798289ff76e86690d5b4d3c0307f6821ab38f58bea1513255e72e60"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-pt-390.png",
-      "sha256": "4c21d72f6e2d92b24ce3380a21f2ab799d90a3fa1b8e3ff4082e4790dc732da3"
+      "sha256": "95e3a48a0e64b6dd9df3a34e34108d6d9910ebc5f26667f3db5044a314c687f2"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-pt-768.png",
-      "sha256": "a8389ef19881b82ed957838b2ffac04e64f8da52cc7ea43ddd6ef3fc62f243d9"
+      "sha256": "f94e226993530a94bfe2f2312ba3fdd15d86b6e0f9a48ce4ed2b5effcca49311"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-pt-768.png",
-      "sha256": "21920fc194fdd1bb5617de39e4f4bf4cc375658bc351da666b83b85e99f3f455"
+      "sha256": "3997f4ef89aa155fb894c679155c7a0cc24e71e239252a6b9b8c33cd1e5de31c"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-pt-1024.png",
-      "sha256": "d1a0b1cbd2ba0a884c85f0d0d7ad398cc0604dde3950d14c8a0dca35378dfa47"
+      "sha256": "516296f6613f9ffa6eaac69785259db5af5541409ef541ad95cac4f23650f63c"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-pt-1024.png",
-      "sha256": "4d06c20f4d9db478762cf8011cff49f797bcc45225996a03f767d55a4d457997"
+      "sha256": "d22ad705733df01a6472b64bfbbb694ed53c54e4151534c754eb05c038d3be7d"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-pt-1280.png",
-      "sha256": "9ff00d44c03f81388fb16daea06953a04bbc35d933afb0f0e50834677f2c0d3f"
+      "sha256": "1f68a3dd2a107a0440c6d16beda8154977fa8c3a626b795fc4873714e8c4aa51"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-pt-1280.png",
-      "sha256": "72c4403195ce1e0ae284cd068dd8a831f34bf3c5c8bd1dac0a742211e9215cd7"
+      "sha256": "ea6426027db26deece18656033d78d5c8b72042544686d3ecb479839343256a6"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-pt-1600.png",
-      "sha256": "086af50df4589e6e3e10d5975f8a442dfea506444dff535b182ddd65dbcbfa1d"
+      "sha256": "b56e596adf46df25351bc5052e1d70626e5e48e145ddb3eec85edbc04acae656"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-pt-1600.png",
-      "sha256": "7a2782c2b8ca14c78757e22fd8d34ec544b753fe22e8be570e5075d26ebdd039"
+      "sha256": "04597044276948c2e98106a0ab90a3e374eb637a8a6a8f8fd1a615dbdb7931b1"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-en-390.png",
-      "sha256": "202c4daca8fc8291837e58dc014e1a10fd84f7f634a4819136ebb8ce97b149cc"
+      "sha256": "2ecb801a2a29671302915961b8fd8833a0edf327becc3f44c3318c78baa6ff4a"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-en-390.png",
-      "sha256": "92897a5ce51867001fbee55a4ad7c266a21b507e147ec0df9e002cefb605c365"
+      "sha256": "baba596559d1a5675644d58d6be1d750f1469368fbe3f73c9c74547d0dc36a75"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-en-768.png",
-      "sha256": "ad3c205da33d2697c50cf45d0a09a16e06e004632df443f4c0fb780cc800205c"
+      "sha256": "2d83cef01449565a1e01f49e816e79d66c1a3f11d9e90fdb40b93243512dff5c"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-en-768.png",
-      "sha256": "66ac91285931802b0aad0d8e48df6f6faa0289dec2005c0402e0db62791e40dd"
+      "sha256": "e028718cdce57a2c3fe9d2a5bc11423ca71efd5c9ef978a2ea2557583bd328f5"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-en-1024.png",
-      "sha256": "38206ea1d52d15e0f032aaa2b00ee0b0b0f4a3299fbfbc319c9c3a95866c287a"
+      "sha256": "b40364ed36fa08d7a36d3d4a2fb5e26acb0caac4a9328fabce2e7fb86e673704"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-en-1024.png",
-      "sha256": "c0792ce0dfca9489b0cedad5a959e5872e71f0c6b459c823779f4499314dbc16"
+      "sha256": "71a739b3a600a446469102d41a26cfee456fdeccbfa9dc55556d65170b30c945"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-en-1280.png",
-      "sha256": "f8aa61d1883928645847c848892c21d460edbc5b3bdb1aee780be6dd5ad2a2e1"
+      "sha256": "1397d07b72add680a40c1db81beea02440e603c42211f503d2208c16035145d3"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-en-1280.png",
-      "sha256": "c2bf1b76d0f9683d865a070036db1e212bafd7d0e759c2fde8873e877a762382"
+      "sha256": "de7348b030933e75f5181ca9dfdda20449aa13d223569c580d2f0dbd6e7da642"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-primeira-en-1600.png",
-      "sha256": "ab487c7886bcd23a14268f7fdfbca8e2ef32cb46fe54aa8c3668911c311826ec"
+      "sha256": "b5d34957bfa667d0c35944137d1afbdeabe52ff0631634e1923d35554f0491f3"
     },
     {
       "ficheiro": "design/especime-v3/capturas/h2-2026-10-04/depois-estudos-en-1600.png",
-      "sha256": "964955544c245d549566624639a992ac73572030bba1bfd61930b1790b4e78b2"
+      "sha256": "e3149d29c0e20b7df5a5f7b6525e6069be34d48d295586b19b42622aceaebd24"
     }
   ],
   "criterios": [
-    "Estudo em curso à cabeça, com a marca em palavras no grupo da data.",
+    "Marca com o horizonte da ficha: em curso até 2027 / ongoing until 2027.",
     "Título, data, marca e resumo legíveis nos recortes.",
     "Ausência de sobreposições e de cortes visíveis nos estudos.",
     "Organização da primeira página e dos blocos nas cinco larguras."

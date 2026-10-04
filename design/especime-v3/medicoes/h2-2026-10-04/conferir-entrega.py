@@ -5,7 +5,7 @@ from pathlib import Path
 pasta=Path(__file__).resolve().parent
 raiz=Path.cwd()
 cabeca=(pasta/'portoes/cabeca').read_text().strip()
-base='ce325a3cd772b4317436345cec720cd739c2279d'
+base='acc928f23f5954d1cfc51a11fa86e94d4f6da56e'
 def git(*args):return subprocess.check_output(['git',*args],text=True).strip()
 novos=git('diff','--name-only',base,cabeca).splitlines()
 capturas=raiz/'design/especime-v3/capturas/h2-2026-10-04'
@@ -15,9 +15,9 @@ proibidos=[str(raiz),str(Path.home()),Path.home().name]
 def ve(s):
     return any(p.lower() in s.lower() for p in proibidos) or bool(re.search(r'/(?:private/)?var/folders/[a-z0-9]{2}/',s))
 assert ve(str(raiz/'ficheiro-plantado')),'O detetor não encontra o conhecido-positivo.'
+ficheiros=[f for f in ficheiros if f.name!='privacidade-entrega.json']
 falhas=[]
 for f in ficheiros:
-    if f.name=='privacidade-entrega.json':continue
     if ve(f.read_text(errors='replace')):falhas.append(str(f.relative_to(raiz) if f.is_absolute() else f))
 trailers=[]
 for commit in git('rev-list',f'{base}..{cabeca}').splitlines():

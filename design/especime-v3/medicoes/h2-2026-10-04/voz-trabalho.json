@@ -1,7 +1,9 @@
 {
   "comando": "npm run check:voz",
   "codigo": 0,
-  "inicio": "2026-10-04T22:02:58.538215+00:00",
-  "segundos": 31.559,
-  "cabeca": "ea5a0ed8c5903a1aedfea2ba06e177e6ec534025"
+  "inicio": "2026-10-04T23:26:46.508714+00:00",
+  "segundos": 30.433,
+  "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+  "estado": "",
+  "estado_fim": ""
 }

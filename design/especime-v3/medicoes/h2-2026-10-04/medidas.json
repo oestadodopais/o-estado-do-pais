@@ -1,6 +1,7 @@
 {
   "base": "ce325a3cd772b4317436345cec720cd739c2279d",
-  "cabeca_codigo": "f7048ce08956d89fbefc54ebd40ea8b75b830d47",
+  "base_h2b": "acc928f23f5954d1cfc51a11fa86e94d4f6da56e",
+  "cabeca_codigo": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
   "modelo": "gpt-6-astra",
   "medidas": [
     {
@@ -32,10 +33,19 @@
     },
     {
       "nome": "paginas_de_area",
-      "valor": 20,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · HTML de dist/areas e dist/en/areas",
+      "valor": 18,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · check:areas, áreas declaradas nas duas edições",
       "conhecido_positivo": {
-        "o_que": "há páginas nas duas edições",
+        "o_que": "a contagem da régua coincide com as rotas das áreas, excluindo os índices",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_html_sob_pastas_das_areas",
+      "valor": 20,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · varrimento de dist/areas e dist/en/areas, incluindo índices",
+      "conhecido_positivo": {
+        "o_que": "os índices existem e não pertencem à lista das páginas de área",
         "encontrado": true
       }
     },
@@ -62,7 +72,7 @@
       "valor": 1,
       "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · marcas em #trabalhos",
       "conhecido_positivo": {
-        "o_que": "a palavra à cabeça é a da edição",
+        "o_que": "a palavra e o horizonte à cabeça são os da edição e da ficha",
         "encontrado": true
       }
     },
@@ -80,7 +90,7 @@
       "valor": 1,
       "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · marcas em #trabalhos",
       "conhecido_positivo": {
-        "o_que": "a palavra à cabeça é a da edição",
+        "o_que": "a palavra e o horizonte à cabeça são os da edição e da ficha",
         "encontrado": true
       }
     },
@@ -104,7 +114,7 @@
     },
     {
       "nome": "controlos_do_pacote",
-      "valor": 17,
+      "valor": 20,
       "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · tests/leituras/pacote.py",
       "conhecido_positivo": {
         "o_que": "o controlo de montagem e as plantas dos dois lados passaram",
@@ -185,7 +195,7 @@
     },
     {
       "nome": "segundos_build",
-      "valor": 167,
+      "valor": 164,
       "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · datas de portoes/build.inicio e .fim",
       "conhecido_positivo": {
         "o_que": "as duas datas são válidas e ordenadas",
@@ -203,7 +213,7 @@
     },
     {
       "nome": "segundos_verify",
-      "valor": 987,
+      "valor": 986,
       "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · datas de portoes/verify.inicio e .fim",
       "conhecido_positivo": {
         "o_que": "as duas datas são válidas e ordenadas",
@@ -249,16 +259,16 @@
     {
       "nome": "corrida_github",
       "valor": 37238803296,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · gh run view do ensaio",
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · gh run view do ensaio H2, conservado",
       "conhecido_positivo": {
-        "o_que": "a corrida é da mesma cabeça e acabou verde",
+        "o_que": "a corrida histórica é da cabeça da prova I194 e acabou verde",
         "encontrado": true
       }
     },
     {
       "nome": "plantas_i194_medidas_no_runner",
       "valor": 1,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · github-h2.py, registo do GitHub",
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · github-h2.py, registo histórico do GitHub",
       "conhecido_positivo": {
         "o_que": "a premissa e a mordida foram lidas no ubuntu-24.04",
         "encontrado": true
@@ -290,13 +300,76 @@
         "o_que": "o contador contém entradas e saídas e o total é a sua soma",
         "encontrado": true
       }
+    },
+    {
+      "nome": "tokens_used_h2",
+      "valor": 432918,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · registo do lançador, lido pelo lugar de direção",
+      "conhecido_positivo": {
+        "o_que": "a linha transcrita na proveniência tem o mesmo total",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_h2b_parciais",
+      "valor": 3102.098,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · custo-h2b.py",
+      "conhecido_positivo": {
+        "o_que": "o evento inicial e os contadores da passagem foram encontrados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_h2b_parciais",
+      "valor": 13730468,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · custo-h2b.py",
+      "conhecido_positivo": {
+        "o_que": "a diferença dos contadores é a soma das entradas e saídas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "registos_de_trabalho_limpos",
+      "valor": 8,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · correr.py, cabeça e git status --porcelain --untracked-files=no antes do comando",
+      "conhecido_positivo": {
+        "o_que": "todos os registos são desta cabeça, sem diferenças seguidas antes ou depois",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_h2_na_cabeca_limpa",
+      "valor": 8,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · tests/pais/portoes.mjs --prefixo h2-",
+      "conhecido_positivo": {
+        "o_que": "cada planta escreve a mesma cabeça e um estado seguido vazio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_h2b_sobre_dist",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · tests/pais/portoes.mjs --prefixo h2b-",
+      "conhecido_positivo": {
+        "o_que": "o ano trocado foi recusado e os bytes repostos, na cabeça limpa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "controlos_prazo_e_composicao",
+      "valor": 28,
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · tests/inicio/estudos-em-curso.mjs",
+      "conhecido_positivo": {
+        "o_que": "o comando passou e contou controlos incluindo o prazo passado",
+        "encontrado": true
+      }
     }
   ],
   "primeiras": {
     "pt": [
       {
         "slug": "evora-2027-capital-europeia-da-cultura",
-        "marca": "em curso"
+        "marca": "em curso até 2027"
       },
       {
         "slug": "evora-contas-da-camara-2010-2025",
@@ -310,7 +383,7 @@
     "en": [
       {
         "slug": "evora-2027-capital-europeia-da-cultura",
-        "marca": "ongoing"
+        "marca": "ongoing until 2027"
       },
       {
         "slug": "evora-contas-da-camara-2010-2025",
@@ -322,6 +395,26 @@
       }
     ]
   },
+  "paginas_de_area": [
+    "dist/areas/financas/index.html",
+    "dist/en/areas/financas/index.html",
+    "dist/areas/economia-e-coesao-territorial/index.html",
+    "dist/en/areas/economia-e-coesao-territorial/index.html",
+    "dist/areas/infraestruturas-e-habitacao/index.html",
+    "dist/en/areas/infraestruturas-e-habitacao/index.html",
+    "dist/areas/justica/index.html",
+    "dist/en/areas/justica/index.html",
+    "dist/areas/administracao-interna/index.html",
+    "dist/en/areas/administracao-interna/index.html",
+    "dist/areas/educacao-ciencia-e-inovacao/index.html",
+    "dist/en/areas/educacao-ciencia-e-inovacao/index.html",
+    "dist/areas/saude/index.html",
+    "dist/en/areas/saude/index.html",
+    "dist/areas/trabalho-solidariedade-e-seguranca-social/index.html",
+    "dist/en/areas/trabalho-solidariedade-e-seguranca-social/index.html",
+    "dist/areas/ambiente-e-energia/index.html",
+    "dist/en/areas/ambiente-e-energia/index.html"
+  ],
   "paginas_so_ficheiro": [
     {
       "ficheiro": "404.html",
@@ -331,6 +424,8 @@
   "plantas": [
     {
       "nome": "h2-em-curso-retirado",
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
       "comando": "node scripts/check-pais.mjs",
       "codigo": 1,
       "mordidas": [
@@ -340,13 +435,15 @@
       "ficheiros": [
         {
           "ficheiro": "dist/index.html",
-          "antes": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba",
-          "reposto": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba"
+          "antes": "634c428a18951eedc9868fb4433a997117a9a650c600ece788e2ad5442c36be6",
+          "reposto": "634c428a18951eedc9868fb4433a997117a9a650c600ece788e2ad5442c36be6"
         }
       ]
     },
     {
       "nome": "h2-em-curso-fora-da-cabeca",
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
       "comando": "node scripts/check-pais.mjs",
       "codigo": 1,
       "mordidas": [
@@ -356,13 +453,15 @@
       "ficheiros": [
         {
           "ficheiro": "dist/en/index.html",
-          "antes": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047",
-          "reposto": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047"
+          "antes": "84dfb960c43b4708ac8e1232aef812716d4f1ed6d775502e53971d17ba8de981",
+          "reposto": "84dfb960c43b4708ac8e1232aef812716d4f1ed6d775502e53971d17ba8de981"
         }
       ]
     },
     {
       "nome": "h2-em-curso-sem-marca",
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
       "comando": "node scripts/check-pais.mjs",
       "codigo": 1,
       "mordidas": [
@@ -372,13 +471,15 @@
       "ficheiros": [
         {
           "ficheiro": "dist/en/index.html",
-          "antes": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047",
-          "reposto": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047"
+          "antes": "84dfb960c43b4708ac8e1232aef812716d4f1ed6d775502e53971d17ba8de981",
+          "reposto": "84dfb960c43b4708ac8e1232aef812716d4f1ed6d775502e53971d17ba8de981"
         }
       ]
     },
     {
       "nome": "h2-ligacao-dentro-de-outra",
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
       "comando": "node scripts/gate-html.mjs",
       "codigo": 1,
       "mordidas": [
@@ -395,6 +496,8 @@
     },
     {
       "nome": "h2-porta-so-com-html-irmao",
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
       "comando": "node scripts/gate-html.mjs",
       "codigo": 1,
       "mordidas": [
@@ -404,13 +507,15 @@
       "ficheiros": [
         {
           "ficheiro": "dist/index.html",
-          "antes": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba",
-          "reposto": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba"
+          "antes": "634c428a18951eedc9868fb4433a997117a9a650c600ece788e2ad5442c36be6",
+          "reposto": "634c428a18951eedc9868fb4433a997117a9a650c600ece788e2ad5442c36be6"
         }
       ]
     },
     {
       "nome": "h2-indicador-fora-do-endereco",
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
       "comando": "node scripts/check-lugar.mjs",
       "codigo": 1,
       "mordidas": [
@@ -420,13 +525,15 @@
       "ficheiros": [
         {
           "ficheiro": "dist/index.html",
-          "antes": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba",
-          "reposto": "8fc6973792194ee0eef478dff8876ff6398f17e0a14438b1b87616322e356bba"
+          "antes": "634c428a18951eedc9868fb4433a997117a9a650c600ece788e2ad5442c36be6",
+          "reposto": "634c428a18951eedc9868fb4433a997117a9a650c600ece788e2ad5442c36be6"
         }
       ]
     },
     {
       "nome": "h2-area-porta-antiga",
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
       "comando": "node scripts/check-areas.mjs",
       "codigo": 1,
       "mordidas": [
@@ -443,6 +550,8 @@
     },
     {
       "nome": "h2-voz-estado-trocado",
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
       "comando": "node scripts/check-voz.mjs",
       "codigo": 1,
       "mordidas": [
@@ -452,31 +561,133 @@
       "ficheiros": [
         {
           "ficheiro": "dist/en/index.html",
-          "antes": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047",
-          "reposto": "17ced3198c927d5bdb1971d94fa8547bb7fb01eae073284b73b6d4088634a047"
+          "antes": "84dfb960c43b4708ac8e1232aef812716d4f1ed6d775502e53971d17ba8de981",
+          "reposto": "84dfb960c43b4708ac8e1232aef812716d4f1ed6d775502e53971d17ba8de981"
         }
       ]
+    }
+  ],
+  "plantas_h2b": [
+    {
+      "nome": "h2b-horizonte-trocado",
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
+      "comando": "node scripts/gate-html.mjs",
+      "codigo": 1,
+      "mordidas": [
+        "H2-b: o horizonte do estudo em curso difere da ficha"
+      ],
+      "passou": true,
+      "ficheiros": [
+        {
+          "ficheiro": "dist/index.html",
+          "antes": "634c428a18951eedc9868fb4433a997117a9a650c600ece788e2ad5442c36be6",
+          "reposto": "634c428a18951eedc9868fb4433a997117a9a650c600ece788e2ad5442c36be6"
+        }
+      ]
+    }
+  ],
+  "registos_trabalho": [
+    {
+      "ficheiro": "pais-trabalho",
+      "comando": "npm run check:pais",
+      "codigo": 0,
+      "inicio": "2026-10-04T23:25:43.301007+00:00",
+      "segundos": 37.727,
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
+      "estado_fim": ""
+    },
+    {
+      "ficheiro": "html-trabalho",
+      "comando": "npm run gate:html",
+      "codigo": 0,
+      "inicio": "2026-10-04T23:25:20.400722+00:00",
+      "segundos": 22.856,
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
+      "estado_fim": ""
+    },
+    {
+      "ficheiro": "lugar-trabalho",
+      "comando": "npm run check:lugar",
+      "codigo": 0,
+      "inicio": "2026-10-04T23:26:21.072072+00:00",
+      "segundos": 24.923,
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
+      "estado_fim": ""
+    },
+    {
+      "ficheiro": "mapa",
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "codigo": 0,
+      "inicio": "2026-10-04T23:27:17.101721+00:00",
+      "segundos": 0.103,
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
+      "estado_fim": ""
+    },
+    {
+      "ficheiro": "areas-trabalho",
+      "comando": "npm run check:areas",
+      "codigo": 0,
+      "inicio": "2026-10-04T23:26:46.039271+00:00",
+      "segundos": 0.425,
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
+      "estado_fim": ""
+    },
+    {
+      "ficheiro": "voz-trabalho",
+      "comando": "npm run check:voz",
+      "codigo": 0,
+      "inicio": "2026-10-04T23:26:46.508714+00:00",
+      "segundos": 30.433,
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
+      "estado_fim": ""
+    },
+    {
+      "ficheiro": "em-curso-trabalho",
+      "comando": "node tests/inicio/estudos-em-curso.mjs",
+      "codigo": 0,
+      "inicio": "2026-10-04T23:27:16.986820+00:00",
+      "segundos": 0.071,
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
+      "estado_fim": ""
+    },
+    {
+      "ficheiro": "pacote-planta",
+      "comando": "python3 tests/leituras/pacote.py --json <provas>/pacote-plantas.json",
+      "codigo": 0,
+      "inicio": "2026-10-04T23:27:17.248066+00:00",
+      "segundos": 0.939,
+      "cabeca": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+      "estado": "",
+      "estado_fim": ""
     }
   ],
   "portoes": {
     "build": {
       "codigo": 0,
-      "inicio": "2026-10-04T22:07:45Z",
-      "fim": "2026-10-04T22:10:32Z",
-      "segundos": 167,
-      "log_sha256": "46a49c60d2d6cbee308b0432967d8805936e3cf1ab28e8607a04294f1f11793e"
+      "inicio": "2026-10-04T23:29:45Z",
+      "fim": "2026-10-04T23:32:29Z",
+      "segundos": 164,
+      "log_sha256": "08f89c62b9dbb38109718edd32c060378e8aa745c502e03b7ccb73b2be540c55"
     },
     "verify": {
       "codigo": 0,
-      "inicio": "2026-10-04T22:10:32Z",
-      "fim": "2026-10-04T22:26:59Z",
-      "segundos": 987,
-      "log_sha256": "b6ee058853b2c4861b6b8be1327e88206d9c7003ba4f906ce97e54c552127670"
+      "inicio": "2026-10-04T23:32:29Z",
+      "fim": "2026-10-04T23:48:55Z",
+      "segundos": 986,
+      "log_sha256": "af431f9a6fcb2b83f68c3748aaf16aeffdf91082f169057c29e60f0987a24607"
     },
     "typecheck": {
       "codigo": 0,
-      "inicio": "2026-10-04T22:26:59Z",
-      "fim": "2026-10-04T22:26:59Z",
+      "inicio": "2026-10-04T23:48:55Z",
+      "fim": "2026-10-04T23:48:55Z",
       "segundos": 0,
       "log_sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
     }
@@ -656,7 +867,7 @@
     "fecho": "2026-10-04T22:28:58.589379+00:00",
     "segundos_ate_leitura": 2571.062,
     "segundos_ate_fecho": 2599.823,
-    "tokens_used": null,
+    "tokens_used": 432918,
     "total_cumulativo_parcial": {
       "input_tokens": 12946473,
       "cached_input_tokens": 12594048,
@@ -665,10 +876,56 @@
       "reasoning_output_tokens": 19348,
       "total_tokens": 13011366
     },
-    "estado": "parcial: a sessão ainda não escreveu a linha tokens used",
+    "estado": "final H2: linha do lançador recolhida; contador parcial original conservado",
     "comando": "python3 design/especime-v3/medicoes/h2-2026-10-04/custo-h2.py <registo-do-construtor>",
     "conhecido_positivo": {
       "o_que": "modelo e identidade lidos no cabeçalho; um único rollout correspondente com contador cumulativo",
+      "encontrado": true
+    },
+    "proveniencia_final": {
+      "origem": "registo do lançador da sessão de construção H2, fora do repositório",
+      "lido_por": "lugar de direção",
+      "leitura_declarada": "04.10.2026, 22:31 UTC",
+      "transmitido_em": "mandato H2-b",
+      "linha": "tokens used\n432,918",
+      "reconferido_pelo_construtor": true
+    }
+  },
+  "custo_h2b": {
+    "modelo": "gpt-6-astra",
+    "inicio": "2026-10-04T22:58:02.025Z",
+    "leitura": "2026-10-04T23:49:08.943Z",
+    "fecho": "2026-10-04T23:49:44.123487+00:00",
+    "segundos_ate_fecho": 3102.098,
+    "tokens_used": null,
+    "estado": "parcial H2-b: linha final [verify]",
+    "total_cumulativo_parcial": {
+      "input_tokens": 13675370,
+      "cached_input_tokens": 13439488,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 55098,
+      "reasoning_output_tokens": 28557,
+      "total_tokens": 13730468
+    },
+    "contador_antes_da_passagem": {
+      "input_tokens": 13537983,
+      "cached_input_tokens": 13174272,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 69207,
+      "reasoning_output_tokens": 21142,
+      "total_tokens": 13607190
+    },
+    "contador_na_leitura": {
+      "input_tokens": 27213353,
+      "cached_input_tokens": 26613760,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 124305,
+      "reasoning_output_tokens": 49699,
+      "total_tokens": 27337658
+    },
+    "comando": "python3 design/especime-v3/medicoes/h2-2026-10-04/custo-h2b.py <registo-do-lançador>",
+    "conhecido_positivo": {
+      "o_que": "modelo confirmado no contexto do turno; mandato H2-b encontrado na mensagem do utilizador; diferença dos contadores não negativa e soma das entradas e saídas igual ao total",
       "encontrado": true
     }
   },
@@ -676,6 +933,11 @@
     "5f7cf57d0ab6a24af520d14db3b288654365e4e1 H2: executar a substituição da planta I194 num passo indivisível",
     "ea5a0ed8c5903a1aedfea2ba06e177e6ec534025 H2: montar pacotes com exclusões declaradas e ficheiros do motor",
     "bfa81e08843bfc8a8bd4cee25069d14601ff1b22 H2: declarar estudos em curso e fechar as falhas de ligações e vocabulário",
-    "f7048ce08956d89fbefc54ebd40ea8b75b830d47 H2: fechar questões e registar as regras e as plantas"
+    "f7048ce08956d89fbefc54ebd40ea8b75b830d47 H2: fechar questões e registar as regras e as plantas",
+    "bc76aa9f7267c6f3cde81c5bb912fa74c0f8c893 H2: guardar a prova verde e as capturas da cabeça do código",
+    "1bf209d7d77e4ead4419203fb11f0ed774bc1367 H2-b: decidir prazos vencidos e corrigir a montagem e as provas"
+  ],
+  "commits_h2b": [
+    "1bf209d7d77e4ead4419203fb11f0ed774bc1367 H2-b: decidir prazos vencidos e corrigir a montagem e as provas"
   ]
 }

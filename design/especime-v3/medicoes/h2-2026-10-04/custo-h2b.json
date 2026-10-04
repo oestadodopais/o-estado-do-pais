@@ -1,0 +1,38 @@
+{
+  "modelo": "gpt-6-astra",
+  "inicio": "2026-10-04T22:58:02.025Z",
+  "leitura": "2026-10-04T23:49:08.943Z",
+  "fecho": "2026-10-04T23:49:44.123487+00:00",
+  "segundos_ate_fecho": 3102.098,
+  "tokens_used": null,
+  "estado": "parcial H2-b: linha final [verify]",
+  "total_cumulativo_parcial": {
+    "input_tokens": 13675370,
+    "cached_input_tokens": 13439488,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 55098,
+    "reasoning_output_tokens": 28557,
+    "total_tokens": 13730468
+  },
+  "contador_antes_da_passagem": {
+    "input_tokens": 13537983,
+    "cached_input_tokens": 13174272,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 69207,
+    "reasoning_output_tokens": 21142,
+    "total_tokens": 13607190
+  },
+  "contador_na_leitura": {
+    "input_tokens": 27213353,
+    "cached_input_tokens": 26613760,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 124305,
+    "reasoning_output_tokens": 49699,
+    "total_tokens": 27337658
+  },
+  "comando": "python3 design/especime-v3/medicoes/h2-2026-10-04/custo-h2b.py <registo-do-lançador>",
+  "conhecido_positivo": {
+    "o_que": "modelo confirmado no contexto do turno; mandato H2-b encontrado na mensagem do utilizador; diferença dos contadores não negativa e soma das entradas e saídas igual ao total",
+    "encontrado": true
+  }
+}

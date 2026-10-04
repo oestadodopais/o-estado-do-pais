@@ -5,7 +5,7 @@
   "fecho": "2026-10-04T22:28:58.589379+00:00",
   "segundos_ate_leitura": 2571.062,
   "segundos_ate_fecho": 2599.823,
-  "tokens_used": null,
+  "tokens_used": 432918,
   "total_cumulativo_parcial": {
     "input_tokens": 12946473,
     "cached_input_tokens": 12594048,
@@ -14,10 +14,18 @@
     "reasoning_output_tokens": 19348,
     "total_tokens": 13011366
   },
-  "estado": "parcial: a sessão ainda não escreveu a linha tokens used",
+  "estado": "final H2: linha do lançador recolhida; contador parcial original conservado",
   "comando": "python3 design/especime-v3/medicoes/h2-2026-10-04/custo-h2.py <registo-do-construtor>",
   "conhecido_positivo": {
     "o_que": "modelo e identidade lidos no cabeçalho; um único rollout correspondente com contador cumulativo",
     "encontrado": true
+  },
+  "proveniencia_final": {
+    "origem": "registo do lançador da sessão de construção H2, fora do repositório",
+    "lido_por": "lugar de direção",
+    "leitura_declarada": "04.10.2026, 22:31 UTC",
+    "transmitido_em": "mandato H2-b",
+    "linha": "tokens used\n432,918",
+    "reconferido_pelo_construtor": true
   }
 }

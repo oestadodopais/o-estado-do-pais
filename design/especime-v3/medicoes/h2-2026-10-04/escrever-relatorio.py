@@ -12,7 +12,7 @@ commits='\n'.join(f"- `{s.split(' ',1)[0]}`: {s.split(' ',1)[1]}" for s in m['co
 ficheiros='\n'.join(f"| `{p['ficheiro']}` | {p['motivo']} |" for p in m['paginas_so_ficheiro'])
 texto=f'''# H2 · a passagem de higiene de 04.10.2026
 
-Depois das emendas H2-b, a implementação e as provas locais estão verdes na cabeça de código `{m['cabeca_codigo']}`. O ensaio histórico do H2 está verde na cabeça `{m['github']['headSha']}`; não houve publicação nesta passagem. A aceitação que exige uma corrida posterior de `main` depende da aterragem pelo diretor; este construtor não publicou `main` nem `h2-2026-10-04`. A linha final do H2 já foi recolhida; a desta passagem H2-b continua em `[verify]`, separada do contador parcial medido.
+Depois das emendas H2-b, a implementação e as provas locais estão verdes na cabeça de código `{m['cabeca_codigo']}`. O ensaio histórico do H2 está verde na cabeça `{m['github']['headSha']}`; não houve publicação nesta passagem. A aceitação que exige o portão verde no ramo e em `main` confirma-se na aterragem pelo diretor; este construtor não publicou `main` nem `h2-2026-10-04`. A linha final do H2 já foi recolhida; a desta passagem H2-b continua em `[verify]`, separada do contador parcial medido.
 
 ## A reprodução antes de mexer
 
@@ -31,7 +31,7 @@ OEDP_MEDIDAS_JSON=design/especime-v3/medicoes/h2-2026-10-04/brief-reproduzido.js
 | 3 · I191 | {v['portas_antigas_nas_areas']} portas para `/texto` ou `/text` nas {v['paginas_de_area']} páginas de área das duas edições. As pastas das áreas contêm {v['ficheiros_html_sob_pastas_das_areas']} ficheiros HTML, contando também os índices. O título liga à página do estudo; a porta auxiliar redundante foi retirada. | A2 de `check:areas`, `check:mortos` e planta da rota antiga. |
 | 4 · I192 | Caminhos sem extensão só resolvem pela pasta com `index.html`; ficheiros com extensão resolvem pelo nome exato. Há {v['paginas_so_com_ficheiro_html']} página só em ficheiro, enumerada abaixo. | Planta de `/404` quando só existe `404.html`; a âncora interna do próprio ficheiro resolve a partir de `/404.html`. |
 | 5 · I193 | A isenção conta apenas as palavras dentro do endereço completo da API do INE. Prosa antes ou depois do endereço continua sujeita à régua. | Controlos em memória de `check:lugar` e planta com prosa no mesmo bloco. |
-| 6 · I194 | No H2, {v['corridas_locais_i194']} repetições locais, cada uma com {v['plantas_por_corrida_i194']} controlos e plantas. A troca mede bytes e hora iguais, outro inode e a mordida da D. A função `celulaDoDist` tem {v['celula_d_alterada']} alterações, por comparação literal com a base. A corrida remota `{m['github']['databaseId']}` passou. | `i194-repeticoes.json`, `github-i194.json`, `github-ensaio.json` e os logs. A corrida de `main` ainda fica por fazer na aterragem. |
+| 6 · I194 | No H2, {v['corridas_locais_i194']} repetições locais, cada uma com {v['plantas_por_corrida_i194']} controlos e plantas. A troca mede bytes e hora iguais, outro inode e a mordida da D. A função `celulaDoDist` tem {v['celula_d_alterada']} alterações, por comparação literal com a base. A corrida remota `{m['github']['databaseId']}` passou. | `i194-repeticoes.json`, `github-i194.json`, `github-ensaio.json` e os logs. A confirmação de aceitação no ramo e em `main` fica para a aterragem pelo diretor. |
 | 7 · M49 | `PACOTE_RETIRA` filtra secções do diff e conserva os ficheiros; `PACOTE_MOTOR` leva ficheiros e diff da cabeça do motor com as exclusões declaradas. {v['controlos_do_pacote']} controlos e plantas passaram. | `tests/leituras/pacote.py`, `pacote-plantas.json`; cobre os dois lados, caminhos com espaços e acentos, bytes vindos do Git, extras e a conferência prévia do relatório. |
 | 8 · registos | As {v['questoes_fechadas']} questões estão fechadas com data e commit; a M49 está feita. Inventário, chaves inglesas, revisão por ler e mapa atualizados. As {v['citacoes_mapa_conferidas']} citações do mapa conferem, com {v['citacoes_mapa_com_desvio']} desvios. Há {v['capturas_pagina_inteira']} capturas inteiras e {v['capturas_recorte']} recortes. | Esta pasta, as capturas, `mapa.log`, `medidas.json` e o resultado de `conferir-relatorio.py`. |
 
@@ -75,7 +75,7 @@ A redação anterior punha preparação, cópia, `touch -r` e substituição na 
 
 Foi consultada a corrida histórica `37199669028`: tentativa inicial vermelha e repetição verde na mesma cabeça, guardadas em `github-historico.json`; a queixa original está em `i194-historico.log`. Esses logs não medem a ordem exata dos processos da tentativa antiga, pelo que não a invento. A falha de ordenação está demonstrada pela leitura do divisor da cadeia e da planta; a nova premissa foi medida localmente e no runner.
 
-O único ramo publicado no H2 foi `h2-ensaio-i194-2026-10-04`, na cabeça `{m['github']['headSha']}`. O H2-b não publicou nenhum ramo. A [corrida `{m['github']['databaseId']}`]({m['github']['url']}) passou no `ubuntu-24.04`; `github-i194.json` conserva a medida da troca e a mordida. O ramo remoto foi apagado depois da conclusão; a consulta posterior encontra {v['ramos_de_ensaio_remotos_restantes']} referências (`github-ramo-apagado.json`). A exigência de duas corridas remotas, ramo e `main`, não é declarada cumprida: a segunda depende da publicação de `main`, excluída do mandato deste construtor.
+O único ramo publicado no H2 foi `h2-ensaio-i194-2026-10-04`, na cabeça `{m['github']['headSha']}`. O H2-b não publicou nenhum ramo. A [corrida `{m['github']['databaseId']}`]({m['github']['url']}) passou no `ubuntu-24.04`; `github-i194.json` conserva a medida da troca e a mordida. O ramo remoto foi apagado depois da conclusão; a consulta posterior encontra {v['ramos_de_ensaio_remotos_restantes']} referências (`github-ramo-apagado.json`). A exigência de duas corridas remotas, ramo e `main`, não é declarada cumprida: a confirmação do portão no ramo e em `main` cabe ao diretor na aterragem, fora do mandato desta passagem.
 
 ## Os portões na cabeça do código
 
@@ -89,7 +89,7 @@ Corrida pela tranca da máquina. Os códigos abaixo foram lidos de `portoes/buil
 |---|---:|---:|---|---|
 {portoes}
 
-Os tempos dos portões usam carimbos com resolução de 1 segundo; o valor nulo de `typecheck` significa que terminou no mesmo segundo em que começou.
+Os tempos dos portões usam carimbos com resolução de 1 segundo; uma duração nula significa que a conferência terminou no mesmo segundo em que começou.
 
 Entre commits correram as conferências tocadas pela mudança. Os registos originais do H2 foram feitos sobre árvores por comitar: os resumos de commit que escrevi não identificavam todo o código testado. O H2-b substitui os registos de `check:pais`, `gate:html`, `check:lugar` e do mapa por corridas na cabeça do código, com `git status --porcelain --untracked-files=no` vazio antes e depois. Os registos adicionais e cada planta sobre o `dist/` também escrevem cabeça e estado. Os restantes registos antigos conservam valor histórico, não são apresentados como provas da cabeça H2-b. No fecho correram os portões inteiros. Não houve paragem por um portão de número, fonte ou pessoa. A comparação com a base encontra {v['ficheiros_de_conteudo_alterados']} ficheiros alterados em `ledger/`, `registos/` ou `studies-src/`.
 
@@ -103,7 +103,7 @@ A inspeção visual efetiva está registada em `leitura-visual.json`, com os fic
 
 {commits}
 
-Todos levam os trailers `Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>` e `Claude-Session: https://claude.ai/code/session_019Dr4reeqSo5uscMFC16k9g`. O commit de entrega seguinte contém apenas esta pasta de medições e a pasta de capturas; o seu resumo está na resposta ao diretor, fora do próprio commit para não criar uma referência circular. Nenhum código mudou depois da cabeça verde acima.
+Todos levam os trailers `Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>` e `Claude-Session: https://claude.ai/code/session_019Dr4reeqSo5uscMFC16k9g`. O commit de entrega seguinte contém apenas esta pasta de medições e a pasta de capturas; o seu resumo está na resposta ao diretor, fora do próprio commit para não criar uma referência circular. Nenhum código do sítio mudou depois da cabeça verde acima; o fecho apenas reúne as provas e os seus guiões de recolha e conferência.
 
 Cada medida em `medidas.json` leva comando e conhecido-positivo. O coletor recusa uma premissa falsa; não se limita a imprimir contagens. `conferir-relatorio.py` foi corrido sobre este relatório e esta pasta, com o resultado em `conferencia-relatorio.json`, e o log e o código em `relatorio-trabalho.log` e `relatorio-trabalho.codigo`.
 
@@ -113,7 +113,7 @@ Modelo lido no registo de lançamento: `{m['modelo']}`. O instante inicial, o in
 
 **Linha final «tokens used» do H2: {numero(c['tokens_used'])}.** Proveniência: o registo do lançador, lido pelo lugar de direção às 22:31 UTC de 04.10.2026 e comunicado no mandato H2-b; a linha foi também reconferida pelo construtor. O contador parcial anterior permanece em `custo.json` ao lado do total final e da proveniência. O tempo acima continua a ser o que foi medido até à leitura original.
 
-A leitura a frio do H2 está em `LEITURA-H2-2026-10-04.md`. Ficam a releitura das emendas H2-b, a aterragem e a corrida de `main` sob responsabilidade do diretor, e a recolha da linha final do custo desta passagem após o encerramento. O ramo de trabalho não foi publicado. As chaves inglesas continuam com a revisão humana marcada por ler; não se atribui a este construtor essa revisão.
+A leitura a frio do H2 está em `LEITURA-H2-2026-10-04.md`. Ficam a releitura das emendas H2-b e a aterragem com a confirmação do portão no ramo e em `main` sob responsabilidade do diretor, e a recolha da linha final do custo desta passagem após o encerramento. O ramo de trabalho não foi publicado. As chaves inglesas continuam com a revisão humana marcada por ler; não se atribui a este construtor essa revisão.
 '''
 texto+=f'''
 ## H2-b · as emendas depois da leitura a frio
@@ -142,7 +142,7 @@ O último commit, posterior a esta cabeça, contém só provas e capturas. O seu
 
 Modelo desta passagem: `{cb['modelo']}`. Até `{cb['fecho']}` decorreram {numero(cb['segundos_ate_fecho'])} segundos desde o mandato H2-b. O parcial medido desta passagem é {numero(ub['total_tokens'])} símbolos: {numero(ub['input_tokens'])} de entrada, dos quais {numero(ub['cached_input_tokens'])} em cache, e {numero(ub['output_tokens'])} de saída. É a diferença entre o contador anterior ao mandato e o último contador da mesma sessão, ambos conservados em `custo-h2b.json`; não inclui o trabalho H2 anterior. Linha final «tokens used» desta passagem: `[verify]`.
 
-Não houve `push` nesta passagem. Ficam a releitura H2-b, a revisão humana das cadeias novas, a aterragem com a confirmação em `main` pelo lugar de direção e a recolha da linha final de custo. Nenhum bloqueio de número, fonte ou pessoa foi contornado.
+Não houve `push` nesta passagem. Ficam a releitura H2-b, a revisão humana das cadeias novas, a aterragem com a confirmação do portão no ramo e em `main` pelo lugar de direção e a recolha da linha final de custo. Nenhum bloqueio de número, fonte ou pessoa foi contornado.
 '''
 (pasta/'LEIA-ME.md').write_text(texto)
 print('Relatório escrito a partir de medidas.json.')

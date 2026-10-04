@@ -1,26 +1,11 @@
 {
   "comando": "python3 design/especime-v3/medicoes/h2-2026-10-04/conferir-entrega.py",
-  "cabeca_codigo": "f7048ce08956d89fbefc54ebd40ea8b75b830d47",
-  "ficheiros_lidos": 154,
+  "cabeca_codigo": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
+  "ficheiros_lidos": 165,
   "falhas": [],
   "trailers": [
     {
-      "commit": "f7048ce08956d89fbefc54ebd40ea8b75b830d47",
-      "co_autoria": true,
-      "sessao": true
-    },
-    {
-      "commit": "bfa81e08843bfc8a8bd4cee25069d14601ff1b22",
-      "co_autoria": true,
-      "sessao": true
-    },
-    {
-      "commit": "ea5a0ed8c5903a1aedfea2ba06e177e6ec534025",
-      "co_autoria": true,
-      "sessao": true
-    },
-    {
-      "commit": "5f7cf57d0ab6a24af520d14db3b288654365e4e1",
+      "commit": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
       "co_autoria": true,
       "sessao": true
     }
