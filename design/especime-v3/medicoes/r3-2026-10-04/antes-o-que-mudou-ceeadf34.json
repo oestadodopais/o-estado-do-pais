@@ -1,0 +1,16 @@
+{
+  "o_que": "o fim de «O que mudou» na captura da página portuguesa a 390 px, na cabeça ceeadf34: as duas taxas de desemprego de 2025, uma por baixo da outra, iguais a quem lê",
+  "cabeca": "ceeadf3480b240a14742a486ba3ba4f04ecbd266",
+  "captura_de_origem": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-pt-390.png, na corrida do captor dessa cabeça (capturas-r3-ceeadf34.json)",
+  "sha256_da_captura_de_origem": "2369913b2bbba6f3ac235cf8e0f64674162ff812d2672bffac32c8ad2364c4b8",
+  "sha256_no_manifesto_dessa_corrida": "2369913b2bbba6f3ac235cf8e0f64674162ff812d2672bffac32c8ad2364c4b8",
+  "recorte_em_px": {
+    "x": 0,
+    "y": 7000,
+    "largura": 390,
+    "altura": 472
+  },
+  "recorte": "antes-o-que-mudou-ceeadf34-pt-390.png",
+  "sha256_do_recorte": "3818fe28303e012b4c339b0ea2e16df075380987dc38cb6669d602519ef79197",
+  "feito_com": "Pillow, Image.crop((0, 7000, 390, 7472)), sobre a captura de origem antes de o captor a reescrever"
+}

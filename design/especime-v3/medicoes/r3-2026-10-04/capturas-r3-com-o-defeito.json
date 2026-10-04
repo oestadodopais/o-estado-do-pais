@@ -1,0 +1,571 @@
+{
+  "bloco": "R3",
+  "cabeca": "97724ae261505b4c61a63f13f2ff9f40df642bce",
+  "construcao": {
+    "commit": "97724ae261505b4c61a63f13f2ff9f40df642bce",
+    "ref": "r3-2026-10-04",
+    "construido_em": "2026-10-04T05:26:36.090Z"
+  },
+  "inicio": "2026-10-04T06:33:22.186Z",
+  "fim": "2026-10-04T06:33:33.154Z",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "capturas": 16,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [
+    "indice/pt/390: 10 porta(s) com as partes do nome lado a lado",
+    "indice/pt/768: 10 porta(s) com as partes do nome lado a lado",
+    "indice/pt/1024: 10 porta(s) com as partes do nome lado a lado",
+    "indice/pt/1280: 10 porta(s) com as partes do nome lado a lado",
+    "indice/pt/1600: 10 porta(s) com as partes do nome lado a lado",
+    "indice/en/390: 10 porta(s) com as partes do nome lado a lado",
+    "indice/en/768: 10 porta(s) com as partes do nome lado a lado",
+    "indice/en/1024: 10 porta(s) com as partes do nome lado a lado",
+    "indice/en/1280: 10 porta(s) com as partes do nome lado a lado",
+    "indice/en/1600: 10 porta(s) com as partes do nome lado a lado"
+  ],
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-pt-390.png",
+      "tipo": "pagina",
+      "rota": "/indice/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "portas_com_itens_em_fila": 10,
+        "conhecido_positivo_dos_itens_em_fila": true,
+        "janela": 390,
+        "documento": 390,
+        "altura": 7664,
+        "h1": "Índice",
+        "seccoes": [
+          "pais",
+          "lugares",
+          "uniao",
+          "estudos",
+          "numeros",
+          "projeto",
+          "mudou"
+        ],
+        "portas": 407,
+        "portas_a_vista": 99,
+        "portas_dentro_das_gavetas": 308,
+        "portas_das_listas_a_vista": 90,
+        "porta_das_listas_mais_baixa_px": 44,
+        "portas_das_listas_abaixo_de_44": 0,
+        "outras_ligacoes_a_vista": 9,
+        "outras_ligacoes_abaixo_de_44_por_classe": {
+          "rótulo de IA": 1,
+          "marca da fonte": 8
+        },
+        "gavetas": 29,
+        "gavetas_fechadas": 29,
+        "resumo_mais_baixo_px": 44,
+        "descricao": "O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta."
+      },
+      "sha256": "b96a865c7530ea88149e95b23787261f9d7fa8dfc4c10517e4fac401859cec9c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-pt-768.png",
+      "tipo": "pagina",
+      "rota": "/indice/",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "portas_com_itens_em_fila": 10,
+        "conhecido_positivo_dos_itens_em_fila": true,
+        "janela": 768,
+        "documento": 768,
+        "altura": 6825,
+        "h1": "Índice",
+        "seccoes": [
+          "pais",
+          "lugares",
+          "uniao",
+          "estudos",
+          "numeros",
+          "projeto",
+          "mudou"
+        ],
+        "portas": 407,
+        "portas_a_vista": 99,
+        "portas_dentro_das_gavetas": 308,
+        "portas_das_listas_a_vista": 90,
+        "porta_das_listas_mais_baixa_px": 44,
+        "portas_das_listas_abaixo_de_44": 0,
+        "outras_ligacoes_a_vista": 9,
+        "outras_ligacoes_abaixo_de_44_por_classe": {
+          "rótulo de IA": 1,
+          "marca da fonte": 8
+        },
+        "gavetas": 29,
+        "gavetas_fechadas": 29,
+        "resumo_mais_baixo_px": 44,
+        "descricao": "O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta."
+      },
+      "sha256": "505d254d54aece282107189f2429675c2f3ba3b2d0ce097d9c0765064eb38e24"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-pt-1024.png",
+      "tipo": "pagina",
+      "rota": "/indice/",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "portas_com_itens_em_fila": 10,
+        "conhecido_positivo_dos_itens_em_fila": true,
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 6881,
+        "h1": "Índice",
+        "seccoes": [
+          "pais",
+          "lugares",
+          "uniao",
+          "estudos",
+          "numeros",
+          "projeto",
+          "mudou"
+        ],
+        "portas": 407,
+        "portas_a_vista": 99,
+        "portas_dentro_das_gavetas": 308,
+        "portas_das_listas_a_vista": 90,
+        "porta_das_listas_mais_baixa_px": 44,
+        "portas_das_listas_abaixo_de_44": 0,
+        "outras_ligacoes_a_vista": 9,
+        "outras_ligacoes_abaixo_de_44_por_classe": {
+          "rótulo de IA": 1,
+          "marca da fonte": 8
+        },
+        "gavetas": 29,
+        "gavetas_fechadas": 29,
+        "resumo_mais_baixo_px": 44,
+        "descricao": "O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta."
+      },
+      "sha256": "4e068e56cda65746d14dc3ab4acc4f43d96f35107bc57ace34b9cb0888006f16"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-pt-1280.png",
+      "tipo": "pagina",
+      "rota": "/indice/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "portas_com_itens_em_fila": 10,
+        "conhecido_positivo_dos_itens_em_fila": true,
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6859,
+        "h1": "Índice",
+        "seccoes": [
+          "pais",
+          "lugares",
+          "uniao",
+          "estudos",
+          "numeros",
+          "projeto",
+          "mudou"
+        ],
+        "portas": 407,
+        "portas_a_vista": 99,
+        "portas_dentro_das_gavetas": 308,
+        "portas_das_listas_a_vista": 90,
+        "porta_das_listas_mais_baixa_px": 44,
+        "portas_das_listas_abaixo_de_44": 0,
+        "outras_ligacoes_a_vista": 9,
+        "outras_ligacoes_abaixo_de_44_por_classe": {
+          "rótulo de IA": 1,
+          "marca da fonte": 8
+        },
+        "gavetas": 29,
+        "gavetas_fechadas": 29,
+        "resumo_mais_baixo_px": 44,
+        "descricao": "O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta."
+      },
+      "sha256": "659032a52d4d2400437f72c36d5e46294334ee689d277af65a8f679e0e0f346e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-pt-1600.png",
+      "tipo": "pagina",
+      "rota": "/indice/",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "portas_com_itens_em_fila": 10,
+        "conhecido_positivo_dos_itens_em_fila": true,
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 6865,
+        "h1": "Índice",
+        "seccoes": [
+          "pais",
+          "lugares",
+          "uniao",
+          "estudos",
+          "numeros",
+          "projeto",
+          "mudou"
+        ],
+        "portas": 407,
+        "portas_a_vista": 99,
+        "portas_dentro_das_gavetas": 308,
+        "portas_das_listas_a_vista": 90,
+        "porta_das_listas_mais_baixa_px": 44,
+        "portas_das_listas_abaixo_de_44": 0,
+        "outras_ligacoes_a_vista": 9,
+        "outras_ligacoes_abaixo_de_44_por_classe": {
+          "rótulo de IA": 1,
+          "marca da fonte": 8
+        },
+        "gavetas": 29,
+        "gavetas_fechadas": 29,
+        "resumo_mais_baixo_px": 44,
+        "descricao": "O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta."
+      },
+      "sha256": "ca81eab54fdad543c69458c6aa878c38501c7351f11ff9c82730a18f86a4611e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-en-390.png",
+      "tipo": "pagina",
+      "rota": "/en/index/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "portas_com_itens_em_fila": 10,
+        "conhecido_positivo_dos_itens_em_fila": true,
+        "janela": 390,
+        "documento": 390,
+        "altura": 7811,
+        "h1": "Index",
+        "seccoes": [
+          "pais",
+          "lugares",
+          "uniao",
+          "estudos",
+          "numeros",
+          "projeto",
+          "mudou"
+        ],
+        "portas": 409,
+        "portas_a_vista": 101,
+        "portas_dentro_das_gavetas": 308,
+        "portas_das_listas_a_vista": 90,
+        "porta_das_listas_mais_baixa_px": 44,
+        "portas_das_listas_abaixo_de_44": 0,
+        "outras_ligacoes_a_vista": 11,
+        "outras_ligacoes_abaixo_de_44_por_classe": {
+          "rótulo de IA": 1,
+          "marcador": 2,
+          "marca da fonte": 8
+        },
+        "gavetas": 29,
+        "gavetas_fechadas": 29,
+        "resumo_mais_baixo_px": 44,
+        "descricao": "The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door."
+      },
+      "sha256": "4ad2cfc1cd1baa745747e8dc7320cd9410265eef10b3a780e52cf39baafa13c0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-en-768.png",
+      "tipo": "pagina",
+      "rota": "/en/index/",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "portas_com_itens_em_fila": 10,
+        "conhecido_positivo_dos_itens_em_fila": true,
+        "janela": 768,
+        "documento": 768,
+        "altura": 6851,
+        "h1": "Index",
+        "seccoes": [
+          "pais",
+          "lugares",
+          "uniao",
+          "estudos",
+          "numeros",
+          "projeto",
+          "mudou"
+        ],
+        "portas": 409,
+        "portas_a_vista": 101,
+        "portas_dentro_das_gavetas": 308,
+        "portas_das_listas_a_vista": 90,
+        "porta_das_listas_mais_baixa_px": 44,
+        "portas_das_listas_abaixo_de_44": 0,
+        "outras_ligacoes_a_vista": 11,
+        "outras_ligacoes_abaixo_de_44_por_classe": {
+          "rótulo de IA": 1,
+          "marcador": 2,
+          "marca da fonte": 8
+        },
+        "gavetas": 29,
+        "gavetas_fechadas": 29,
+        "resumo_mais_baixo_px": 44,
+        "descricao": "The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door."
+      },
+      "sha256": "f0d95ca9da768253e57fae7d91ff3ad5d1fa238df37832fe12c9791218058ed9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-en-1024.png",
+      "tipo": "pagina",
+      "rota": "/en/index/",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "portas_com_itens_em_fila": 10,
+        "conhecido_positivo_dos_itens_em_fila": true,
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 6881,
+        "h1": "Index",
+        "seccoes": [
+          "pais",
+          "lugares",
+          "uniao",
+          "estudos",
+          "numeros",
+          "projeto",
+          "mudou"
+        ],
+        "portas": 409,
+        "portas_a_vista": 101,
+        "portas_dentro_das_gavetas": 308,
+        "portas_das_listas_a_vista": 90,
+        "porta_das_listas_mais_baixa_px": 44,
+        "portas_das_listas_abaixo_de_44": 0,
+        "outras_ligacoes_a_vista": 11,
+        "outras_ligacoes_abaixo_de_44_por_classe": {
+          "rótulo de IA": 1,
+          "marcador": 2,
+          "marca da fonte": 8
+        },
+        "gavetas": 29,
+        "gavetas_fechadas": 29,
+        "resumo_mais_baixo_px": 44,
+        "descricao": "The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door."
+      },
+      "sha256": "b006adb764c29544f5a70f803ff66d37912a168d87041f6d4064b9fc40b35855"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-en-1280.png",
+      "tipo": "pagina",
+      "rota": "/en/index/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "portas_com_itens_em_fila": 10,
+        "conhecido_positivo_dos_itens_em_fila": true,
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6895,
+        "h1": "Index",
+        "seccoes": [
+          "pais",
+          "lugares",
+          "uniao",
+          "estudos",
+          "numeros",
+          "projeto",
+          "mudou"
+        ],
+        "portas": 409,
+        "portas_a_vista": 101,
+        "portas_dentro_das_gavetas": 308,
+        "portas_das_listas_a_vista": 90,
+        "porta_das_listas_mais_baixa_px": 44,
+        "portas_das_listas_abaixo_de_44": 0,
+        "outras_ligacoes_a_vista": 11,
+        "outras_ligacoes_abaixo_de_44_por_classe": {
+          "rótulo de IA": 1,
+          "marcador": 2,
+          "marca da fonte": 8
+        },
+        "gavetas": 29,
+        "gavetas_fechadas": 29,
+        "resumo_mais_baixo_px": 44,
+        "descricao": "The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door."
+      },
+      "sha256": "62b2cb8f3f4d647635412cd7bc542c903883b6045cb7f2962e5b551950726eef"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-en-1600.png",
+      "tipo": "pagina",
+      "rota": "/en/index/",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "portas_com_itens_em_fila": 10,
+        "conhecido_positivo_dos_itens_em_fila": true,
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 6901,
+        "h1": "Index",
+        "seccoes": [
+          "pais",
+          "lugares",
+          "uniao",
+          "estudos",
+          "numeros",
+          "projeto",
+          "mudou"
+        ],
+        "portas": 409,
+        "portas_a_vista": 101,
+        "portas_dentro_das_gavetas": 308,
+        "portas_das_listas_a_vista": 90,
+        "porta_das_listas_mais_baixa_px": 44,
+        "portas_das_listas_abaixo_de_44": 0,
+        "outras_ligacoes_a_vista": 11,
+        "outras_ligacoes_abaixo_de_44_por_classe": {
+          "rótulo de IA": 1,
+          "marcador": 2,
+          "marca da fonte": 8
+        },
+        "gavetas": 29,
+        "gavetas_fechadas": 29,
+        "resumo_mais_baixo_px": 44,
+        "descricao": "The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each with its door."
+      },
+      "sha256": "35c45621b43cec4a7a0270cf5a1a8287b2befb030dafc0692a590ff753ca4e97"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-gaveta-evora-pt-390.png",
+      "tipo": "gaveta",
+      "distrito": "evora",
+      "lang": "pt",
+      "largura": 390,
+      "aberta": true,
+      "concelhos": 14,
+      "porta_mais_baixa_px": 44,
+      "documento": 390,
+      "sha256": "1ee4d89e579bef0985edd1922bbf15a5b82720340a982df8449808cbe7053aaa"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-gaveta-evora-pt-1280.png",
+      "tipo": "gaveta",
+      "distrito": "evora",
+      "lang": "pt",
+      "largura": 1280,
+      "aberta": true,
+      "concelhos": 14,
+      "porta_mais_baixa_px": 44,
+      "documento": 1280,
+      "sha256": "d43d4e3960589b28a294869868e1ae5c9abf371a5c35815b49960c5dd8f1b651"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-gaveta-evora-en-390.png",
+      "tipo": "gaveta",
+      "distrito": "evora",
+      "lang": "en",
+      "largura": 390,
+      "aberta": true,
+      "concelhos": 14,
+      "porta_mais_baixa_px": 44,
+      "documento": 390,
+      "sha256": "a93429961611fc71ba880cd2fec88d739175df0438712b9f37249432f865de55"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-indice-gaveta-evora-en-1280.png",
+      "tipo": "gaveta",
+      "distrito": "evora",
+      "lang": "en",
+      "largura": 1280,
+      "aberta": true,
+      "concelhos": 14,
+      "porta_mais_baixa_px": 44,
+      "documento": 1280,
+      "sha256": "d43d4e3960589b28a294869868e1ae5c9abf371a5c35815b49960c5dd8f1b651"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-rodape-pt-390.png",
+      "tipo": "rodape",
+      "rota": "/temas/",
+      "lang": "pt",
+      "largura": 390,
+      "portas": [
+        [
+          "/",
+          "Início"
+        ],
+        [
+          "/livro-razao",
+          "Números e fontes"
+        ],
+        [
+          "/metodo",
+          "Método"
+        ],
+        [
+          "/correcoes",
+          "Correções"
+        ],
+        [
+          "/agenda",
+          "Agenda"
+        ],
+        [
+          "/uniao-europeia",
+          "Portugal na União Europeia"
+        ],
+        [
+          "/indice",
+          "Índice"
+        ],
+        [
+          "/en/themes/",
+          "English"
+        ]
+      ],
+      "sha256": "82329946f1d416c56da7d2bdf2f771648db976eba7d2da1b8265dd313f88cc38"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/r3-2026-10-04/depois-rodape-en-390.png",
+      "tipo": "rodape",
+      "rota": "/en/themes/",
+      "lang": "en",
+      "largura": 390,
+      "portas": [
+        [
+          "/en",
+          "Home"
+        ],
+        [
+          "/en/ledger",
+          "Numbers and sources"
+        ],
+        [
+          "/en/method",
+          "Method"
+        ],
+        [
+          "/en/corrections",
+          "Corrections"
+        ],
+        [
+          "/en/agenda",
+          "Agenda"
+        ],
+        [
+          "/en/european-union",
+          "Portugal in the European Union"
+        ],
+        [
+          "/en/index",
+          "Index"
+        ],
+        [
+          "/temas/",
+          "Português"
+        ]
+      ],
+      "sha256": "997c5d635fa91921f33d4612285a32726c9d4ddc854e3e02e13f18aae2d3a677"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "o_que": "a última leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), escrita à mão pelo construtor logo depois de a ler, e a hora do relógio da máquina na chamada que escreveu este ficheiro",
+  "simbolos_restantes_no_fim": 13714763,
+  "lido_no_fim": "o contador mostrado depois das provas finais sobre a construção da cabeça dos portões da passagem final (as capturas, as plantas, a célula e a régua das ligações), antes de correr o guião das medidas, de escrever o relatório e a resposta curta e de commitar as provas",
+  "sessao": "uma sessão só, com um resumo do contexto a meio (a ferramenta compactou a conversa uma vez); o contador é o da sessão inteira",
+  "fim_utc": "2026-10-04T09:20:54Z",
+  "fim_origem": "date -u +%Y-%m-%dT%H:%M:%SZ, na chamada que escreveu este ficheiro",
+  "leitura_anterior": {
+    "o_que": "a leitura que este ficheiro guardava antes da passagem final, quando as provas da cabeça ceeadf34 estavam feitas; a passagem final começou depois dela",
+    "simbolos_restantes": 14044021,
+    "hora_utc": "2026-10-04T08:17:15Z"
+  }
+}

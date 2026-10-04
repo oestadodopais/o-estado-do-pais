@@ -1,0 +1,16 @@
+R3, a passagem final: a construção de ensaio com o lugar de cada linha de «O que mudou» marcado `data-lugar`.
+O `npm run build` dessa árvore, antes do commit, correu pela tranca da máquina (com-tranca.sh) e saiu com o código 1, lido do ficheiro do código dessa corrida.
+O trecho do registo é o do `check:voz`, copiado sem as cores do terminal. A régua das frases troca, na descrição do <head>,
+o nome de cada lugar marcado na página por «<lugar>»; a descrição do índice tem «União Europeia», e deixou de ser a frase declarada.
+A marca saiu do nome do lugar no commit da passagem final, e o nome não é recolhido pela régua por não ser um bloco.
+
+> o-estado-do-pais@0.1.0 check:voz
+> node scripts/check-voz.mjs
+  B1: 36 páginas pela lista fechada; 7 temas conferidos.
+  PORTÃO DA VOZ · 4 problema(s)
+    · bloco por classificar em /en/index: «The country and its themes, places, the <lugar>, studies, numbers and sources, and what changed, each with its door.»
+    · bloco por classificar em /indice: «O país e os seus temas, os lugares, a <lugar>, os estudos, os números e as fontes, e o que mudou, cada um com a sua porta.»
+    · design/especime-v3/INVENTARIO-FRASES.md:3882: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «O país e os seus temas, os lugares, a União Europeia, os estudos, os números e as fontes, e o que mudou, cada »
+    · design/especime-v3/INVENTARIO-FRASES.md:3883: linha «viva» que não se rende em rota nenhuma. Ou a frase mudou e a linha ficou para trás, ou a rota saiu: nos dois casos a linha sai do ficheiro, ou passa a «retirada» com a razão escrita.
+      «The country and its themes, places, the European Union, studies, numbers and sources, and what changed, each w»

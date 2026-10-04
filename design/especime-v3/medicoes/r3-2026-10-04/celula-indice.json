@@ -1,0 +1,159 @@
+{
+  "erros": [],
+  "contas": {
+    "pt": {
+      "portas": 398,
+      "destinos": 398,
+      "seccoes": [
+        "pais",
+        "lugares",
+        "uniao",
+        "estudos",
+        "numeros",
+        "projeto",
+        "mudou"
+      ],
+      "enderecosDoMapa": 392,
+      "rotasDeLeitor": 28,
+      "concelhos": {
+        "portas": 308,
+        "gavetas": 29,
+        "construidos": 308
+      },
+      "estudos": 11,
+      "mudou": 8
+    },
+    "en": {
+      "portas": 398,
+      "destinos": 398,
+      "seccoes": [
+        "pais",
+        "lugares",
+        "uniao",
+        "estudos",
+        "numeros",
+        "projeto",
+        "mudou"
+      ],
+      "enderecosDoMapa": 392,
+      "rotasDeLeitor": 28,
+      "concelhos": {
+        "portas": 308,
+        "gavetas": 29,
+        "construidos": 308
+      },
+      "estudos": 11,
+      "mudou": 8
+    }
+  },
+  "enderecos_no_mapa": 7404,
+  "paginas_construidas": 7478,
+  "plantas": [
+    {
+      "nome": "r3-celula-rota-tirada",
+      "mordeu": true,
+      "queixas": [
+        "I2 pt: /agenda está no mapa do sítio e não tem porta no índice.",
+        "I3 pt: a página /agenda (rota «agenda») foi construída e não tem porta no índice."
+      ]
+    },
+    {
+      "nome": "r3-celula-concelho-a-menos",
+      "mordeu": true,
+      "queixas": [
+        "I2 pt: /municipios/agueda está no mapa do sítio e não tem porta no índice.",
+        "I3 pt: a página /municipios/agueda (rota «municipio») foi construída e não tem porta no índice.",
+        "I4 pt: a gaveta «Aveiro» tem 18 concelho(s) e a página do distrito lista 19; a menos: /municipios/agueda.",
+        "I4 pt: o índice tem 307 porta(s) de concelho, 307 dentro das gavetas, 307 distinta(s), e foram construídas 308 páginas de concelho."
+      ]
+    },
+    {
+      "nome": "r3-celula-porta-que-nao-resolve",
+      "mordeu": true,
+      "queixas": [
+        "I1 en: a porta «Agenda» para /en/agenda-que-nao-existe não resolve num ficheiro construído (a pasta com o seu index.html, ou o ficheiro com extensão).",
+        "I2 en: /en/agenda está no mapa do sítio e não tem porta no índice.",
+        "I2 en: a porta /en/agenda-que-nao-existe não está no mapa do sítio e a página não leva noindex, e a família dela não tem lista que a mostre.",
+        "I3 en: a página /en/agenda (rota «agenda») foi construída e não tem porta no índice."
+      ]
+    },
+    {
+      "nome": "r3-celula-porta-pelo-ficheiro-irmao",
+      "mordeu": true,
+      "queixas": [
+        "I1 pt: a porta «404» para /404 não resolve num ficheiro construído (a pasta com o seu index.html, ou o ficheiro com extensão).",
+        "I2 pt: a porta /404 não está no mapa do sítio e a página não leva noindex, e a família dela não tem lista que a mostre."
+      ]
+    },
+    {
+      "nome": "r3-celula-pagina-do-resultado",
+      "mordeu": true,
+      "queixas": [
+        "I2 pt: a porta /sugestoes/obrigado não está no mapa do sítio, e a família dela não tem lista que a mostre.",
+        "I3 pt: a página do resultado /sugestoes/obrigado está no índice, e as páginas do resultado ficam fora dos índices (§1.154)."
+      ]
+    },
+    {
+      "nome": "r3-celula-mapa-com-pagina-sem-porta",
+      "mordeu": true,
+      "queixas": [
+        "I2 en: /en/suggestions/empty está no mapa do sítio e não tem porta no índice."
+      ]
+    },
+    {
+      "nome": "r3-celula-indice-fora-do-mapa",
+      "mordeu": true,
+      "queixas": [
+        "I2 pt: a página do índice /indice não está no mapa do sítio."
+      ]
+    },
+    {
+      "nome": "r3-celula-estudo-em-falta",
+      "mordeu": true,
+      "queixas": [
+        "I2 en: /en/studies/evora-contas-da-camara-2010-2025 está no mapa do sítio e não tem porta no índice.",
+        "I3 en: a página /en/studies/evora-contas-da-camara-2010-2025 (rota «estudo») foi construída e não tem porta no índice.",
+        "I5 en: o índice tem 10 estudo(s) e a lista dos estudos 11, ou por outra ordem, porta ou data; o primeiro que difere: evora-quem-governou-a-camara-2009-2025/pt · /en/studies/evora-quem-governou-a-camara-2009-2025 · 01.10.2026 contra evora-contas-da-camara-2010-2025/en · /en/studies/evora-contas-da-camara-2010-2025 · 01.10.2026."
+      ]
+    },
+    {
+      "nome": "r3-celula-concelho-noutra-gaveta",
+      "mordeu": true,
+      "queixas": [
+        "I4 pt: a gaveta «Aveiro» tem 18 concelho(s) e a página do distrito lista 19; a menos: /municipios/agueda.",
+        "I4 pt: a gaveta «Beja» tem 15 concelho(s) e a página do distrito lista 14; a mais: /municipios/agueda."
+      ]
+    },
+    {
+      "nome": "r3-celula-gaveta-aberta",
+      "mordeu": true,
+      "queixas": [
+        "I4 pt: a gaveta «Aveiro» chega aberta; os concelhos chegam dobrados por distrito."
+      ]
+    },
+    {
+      "nome": "r3-celula-linha-repetida-em-o-que-mudou",
+      "mordeu": true,
+      "queixas": [
+        "I6 en: «O que mudou» do índice tem 9 linha(s) em 1 lista(s), e o começo do registo dá 8; a primeira que difere: correcoes-publicadas · 1 · 2026-10-02 · 5 · 7 · O Estado do País.",
+        "I6 en: duas linhas de «O que mudou» leem-se iguais («02.10.2026 O Estado do País Published corrections 5 → 7 corrections row»); a mesma medida em duas linhas declara-se em MEDIDA_REUNIDA, e duas medidas não podem ter o mesmo nome no mesmo lugar.",
+        "I7 en: 1 destino(s) repetido(s) no corpo do índice, por exemplo /en/ledger/correcoes-publicadas."
+      ]
+    },
+    {
+      "nome": "r3-celula-linha-reunida-que-se-le-igual",
+      "mordeu": true,
+      "queixas": [
+        "I6 en: «O que mudou» do índice tem 8 linha(s) em 1 lista(s), e o começo do registo dá 8; a primeira que difere: taxa-de-desemprego-2025 · 1 · 2026-10-02 · 5 · 7 · O Estado do País.",
+        "I6 en: duas linhas de «O que mudou» leem-se iguais («02.10.2026 O Estado do País Published corrections 5 → 7 corrections row»); a mesma medida em duas linhas declara-se em MEDIDA_REUNIDA, e duas medidas não podem ter o mesmo nome no mesmo lugar."
+      ]
+    },
+    {
+      "nome": "r3-celula-lugar-trocado-em-o-que-mudou",
+      "mordeu": true,
+      "queixas": [
+        "I6 pt: «O que mudou» do índice tem 8 linha(s) em 1 lista(s), e o começo do registo dá 8; a primeira que difere: correcoes-publicadas · 1 · 2026-10-02 · 5 · 7 · Portugal."
+      ]
+    }
+  ]
+}

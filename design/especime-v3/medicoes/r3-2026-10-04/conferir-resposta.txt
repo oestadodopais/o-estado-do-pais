@@ -1,0 +1,8 @@
+relatório: design/especime-v3/medicoes/r3-2026-10-04/RESPOSTA-construtor-r3.md
+pasta das medições: design/especime-v3/medicoes/r3-2026-10-04
+ficheiros JSON lidos: 12
+conhecido-positivo (o número 987654321, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
+números conferidos: 26
+números com ficheiro: 26
+números sem ficheiro: 0
+apagado antes de contar: codigo 29, enderecos 0, seccoes 0, datas 1, resumos 0, ordinais 0, identificadores 2, anos 0
