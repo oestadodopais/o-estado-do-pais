@@ -503,3 +503,41 @@ planta('s1c-voz-recusa-do-metodo-mudada','scripts/check-voz.mjs',[
  ['metodo/index.html',r=>{const li=r.querySelectorAll('.politica-recusas li').find(x=>x.textContent.includes('só guarda dados pessoais'));li.set_content(li.innerHTML.replace('pelo tempo','por todo o tempo'));}]
 ],[/linha «viva» que não se rende em rota nenhuma/,/Este projeto só guarda dados pessoais de quem usa a caixa das sugestões/]);
 
+/* R3 (04.10.2026): o índice. As sete portas do rodapé contam-se em todas as páginas, com o destino e o nome de cada
+   edição; a unidade de uma linha entra na lista «O que mudou» do índice pela porta estreita da entrada da própria
+   linha; a lista do índice tem as linhas que mudaram, uma vez cada, e nenhuma publicação; as datas dos estudos do
+   índice prendem-se à sua edição; a página está no inventário das frases; e a L1 e a L2a do `check:lugar` medem-na.
+   `--prefixo r3-` corre só estas. */
+planta('r3-rodape-sem-a-porta-do-indice','scripts/gate-html.mjs',[
+ ['temas/index.html',r=>r.querySelector('nav.rodape-nav a[href="/indice"]').remove()]
+],[/R3 rodapé: o rodapé tem 6 porta\(s\) e são 7/]);
+planta('r3-rodape-indice-da-outra-edicao','scripts/gate-html.mjs',[
+ ['en/themes/index.html',r=>r.querySelector('nav.rodape-nav a[href="/en/index"]').setAttribute('href','/indice')]
+],[/R3 rodapé: a porta 7 do rodapé é «Index» para \/indice; nesta edição é «Index» para \/en\/index/]);
+planta('r3-unidade-de-outra-linha','scripts/gate-html.mjs',[
+ ['indice/index.html',r=>r.querySelector('[data-mudou-ambito="indice"] [data-correcao-entrada] [data-linha-campo="unit"]').set_content('unidade de outra linha')]
+],[/unidade de outra linha/]);
+planta('r3-unidade-com-a-marca-de-outra-linha','scripts/gate-html.mjs',[
+ ['indice/index.html',r=>r.querySelector('[data-mudou-ambito="indice"] [data-correcao-entrada] [data-linha-campo="unit"]').setAttribute('data-linha-claim','taxa-de-emprego-2025')]
+],[/data-linha-claim="taxa-de-emprego-2025" numa página que não é do livro-razão/]);
+planta('r3-indice-repete-uma-linha','scripts/check-pais.mjs',[
+ ['indice/index.html',r=>{const ol=r.querySelector('[data-mudou-ambito="indice"]');ol.insertAdjacentHTML('beforeend',ol.querySelector('li').toString());}]
+],[/A1: indice\/index.html: o índice repete uma linha do livro em «O que mudou»/]);
+planta('r3-indice-com-uma-publicacao','scripts/check-pais.mjs',[
+ ['indice/index.html',r=>r.querySelector('[data-mudou-ambito="indice"]').insertAdjacentHTML('afterbegin','<li data-mudanca="publicacao"><time datetime="2026-10-01" data-publicacao-estudo="evora-2027-capital-europeia-da-cultura/pt">01.10.2026</time></li>')]
+],[/A1: indice\/index.html: a linha publicacao\|evora-2027-capital-europeia-da-cultura é de «nenhum lugar» e a página é de «indice»/]);
+planta('r3-datas-do-indice-trocada','scripts/check-datas.mjs',[
+ ['indice/index.html',r=>r.querySelector('[data-estudo-edicao] time').set_content('12.08.2026')]
+],[/\/indice: a edição evora-contas-da-camara-2010-2025\/pt imprime «12\.08\.2026»/]);
+planta('r3-indice-sem-um-estudo','scripts/check-datas.mjs',[
+ ['en/index/index.html',r=>r.querySelector('[data-estudo-edicao]').remove()]
+],[/\/en\/index: declara 10 edição\(ões\) de estudo e os dados dizem 11/]);
+planta('r3-voz-frase-por-classificar','scripts/check-voz.mjs',[
+ ['indice/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>Uma frase nova que ninguém declarou.</p>')]
+],[/bloco por classificar em \/indice: «Uma frase nova que ninguém declarou\.»/]);
+planta('r3-lugar-porta-repetida','scripts/check-lugar.mjs',[
+ ['indice/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p><a href="/agenda">Agenda</a></p>')]
+],[/L1 · páginas com dois destinos iguais fora da mobília +\d+ +\(teto \d+\) ACIMA DO TETO/]);
+planta('r3-lugar-concelhos-abertos','scripts/check-lugar.mjs',[
+ ['en/index/index.html',r=>r.querySelectorAll('main details').forEach(d=>d.setAttribute('open',''))]
+],[/L2 · segundas listas dos concelhos +1 +\(teto 0\) ACIMA DO TETO/,/\/en\/index\/? · 308 concelhos ligados fora de uma lista fechada/]);

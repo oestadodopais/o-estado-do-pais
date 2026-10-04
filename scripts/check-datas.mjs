@@ -146,6 +146,14 @@ const ROTA_DO_LUGAR = /^\/(?:en\/municipalities|municipios)\/[^/]+$/;
  * Os endereços /texto e /text são redirecionamentos conferidos por gate:html.
  */
 const ROTA_DA_EDICAO = /^\/(?:estudos|en\/studies)\/([^/]+)$/;
+/* O ÍNDICE (bloco R3, 04.10.2026) lista os estudos sem sucessor por data, cada um com a data em que
+   a sua edição entrou neste repositório, e prende-a pela MESMA regra da lista dos estudos: o bloco
+   `[data-estudo-edicao]` diz o trabalho e a língua, a porta dele diz o destino, e uma data só. As
+   edições que se esperam saem dos dados (os estudos sem sucessor, §1.145), e não «pelo menos uma»:
+   um estudo que caísse do índice deixava de imprimir a data dele, e a conta fechava. Os dois
+   caminhos são os da tabela das rotas, escritos aqui como os outros desta conta. */
+const INDICES_DO_SITIO = new Set(['/indice', '/en/index']);
+const ESTUDOS_DO_INDICE = WORKS.filter((w) => !w.sucedidoPor).length;
 
 /* --- 1a. nenhuma data impressa fora do que o ficheiro declara ------------- */
 
@@ -168,7 +176,7 @@ const paraPrender = [];
 for (const f of paginas) {
   const cru = fs.readFileSync(f, 'utf8');
   const rota = rotaDe(f);
-  const eIndice = INDICES.has(rota) || ROTA_DO_LUGAR.test(rota) || ['/', '/en'].includes(rota);
+  const eIndice = INDICES.has(rota) || ROTA_DO_LUGAR.test(rota) || ['/', '/en'].includes(rota) || INDICES_DO_SITIO.has(rota);
   const daEdicao = ROTA_DA_EDICAO.exec(rota);
   /* A prova barata primeiro: a marca é uma cadeia, e a esmagadora maioria das
      páginas do sítio não a tem nem é uma das rotas que imprimem datas. */
@@ -447,6 +455,11 @@ for (const { rota, doc, slug } of paraPrender) {
   if (INDICES.has(rota)) {
     paginasPrendidas++;
     prendeNoIndice(rota, doc);
+    continue;
+  }
+  if (INDICES_DO_SITIO.has(rota)) {
+    paginasPrendidas++;
+    prendeEdicoesB1(rota, doc, null, ESTUDOS_DO_INDICE);
     continue;
   }
   if (slug !== null) {

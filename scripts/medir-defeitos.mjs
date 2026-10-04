@@ -451,6 +451,11 @@ const ROTAS_COM_ORIGEM_LIDA = new Set([
      bloco entregava dezoito linhas de prosa que nenhuma régua vê. */
   'dominios',
   'dominio',
+  /* O ÍNDICE (bloco R3, 04.10.2026) entra com a página, pela mesma regra: é uma rota nova, e as suas
+     frases classificam-se no commit em que ela nasce. Os nomes dos lugares (`data-lugar`), os títulos
+     dos estudos, as datas, as perguntas transcritas e os valores de «O que mudou» são origens, e o
+     bloco lê-se com elas tiradas. */
+  'indice',
 ]);
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
 const ROTAS_DO_INVENTARIO = new Set([
@@ -540,6 +545,11 @@ const ROTAS_DO_INVENTARIO = new Set([
      isso conta-se uma vez e não dezoito. */
   'dominios',
   'dominio',
+  /* O ÍNDICE (bloco R3, 04.10.2026) entra no commit em que nasce, que é a regra desta lista. É uma
+     página do leitor: a Emenda 15 governa-a, e a sua autorreferência vai a zero. As portas são
+     ligações, e o texto de uma porta é um destino e não uma frase; o que se classifica é o título,
+     os nomes das secções, a descrição do `<head>` e o que se lê fora das portas. */
+  'indice',
 ]);
 
 /**
