@@ -34,6 +34,9 @@
  *      origem transcrita, porque a casa não edita o que transcreve, ou quando a
  *      página é um documento alojado ou uma página de leitura, que o brief põe
  *      fora do âmbito. As duas contagens saem impressas.
+ * I2p · **cada entrada dos índices mostra o período da sua própria linha**, na
+ *      forma da casa e com a marca da origem. Com `--prova`, a retirada e a
+ *      troca do período numa cópia do índice têm de dar a queixa dessa linha.
  * I3 (G3) · **a busca existe, é um formulário, e o índice dela é o livro-razão
  *      inteiro.** Um `input[type=search]` em `/livro-razao` e em `/en/ledger`,
  *      dentro de um `<form method="get">` cujo destino EXISTE em `dist/`, com
@@ -143,6 +146,29 @@ const ISO_G = new RegExp(ISO.source, 'g');
 const SO_ISO = new RegExp('^\\s*(?:' + ISO.source.slice(2, -2) + ')\\s*$');
 /** O único marcador de incerteza do sítio (`IDENTIDADE.md` §6). */
 const MARCADOR = '[a verificar]';
+/** A forma da data, refeita sem chamar a função que escreve a página. */
+function periodoEsperado(valor, lang) {
+  const bruto = String(valor ?? '');
+  const mes = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(bruto);
+  if (mes) {
+    const meses = lang === 'en'
+      ? ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+      : ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+    return `${meses[Number(mes[2]) - 1]}${lang === 'en' ? ' ' : ' de '}${mes[1]}`;
+  }
+  const trimestre = /^(\d{4})-T([1-4])$/.exec(bruto);
+  if (trimestre) return lang === 'en'
+    ? `${trimestre[2]}${['st', 'nd', 'rd', 'th'][Number(trimestre[2]) - 1]} quarter of ${trimestre[1]}`
+    : `${trimestre[2]}.º trimestre de ${trimestre[1]}`;
+  const semestre = /^(\d{4})-S([12])$/.exec(bruto);
+  if (semestre) return lang === 'en'
+    ? `${semestre[2]}${['st', 'nd'][Number(semestre[2]) - 1]} half of ${semestre[1]}`
+    : `${semestre[2]}.º semestre de ${semestre[1]}`;
+  const hora = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}:\d{2}:\d{2})Z$/.exec(bruto);
+  if (hora) return `${hora[3]}.${hora[2]}.${hora[1]}, ${hora[4]} UTC`;
+  const dia = /^(\d{4})-(\d{2})-(\d{2})$/.exec(bruto);
+  return dia ? `${dia[3]}.${dia[2]}.${dia[1]}` : bruto;
+}
 /** As duas páginas do marcador, uma por edição. */
 const PORTA_DO_MARCADOR = { pt: '/a-verificar', en: '/en/to-verify' };
 /** A forma de um identificador de linha: minúsculas, algarismos e hífenes. */
@@ -415,6 +441,7 @@ function existeNoDist(caminho) {
 }
 
 const ePaginaDeIndiceDoLivro = (r) => r === '/livro-razao' || r === '/en/ledger';
+const ePaginaDeListaDoLivro = (r) => /^(?:\/livro-razao(?:\/concelhos(?:\/[^/]+)?)?|\/en\/ledger(?:\/municipalities(?:\/[^/]+)?)?)$/.test(r);
 const ePaginaDeArea = (r) => /^\/(?:en\/)?areas\/[^/]+$/.test(r);
 const ePaginaDeLinha = (r) => /^\/(?:livro-razao|en\/ledger)\/[^/]+$/.test(r) && !/\/(?:concelhos|municipalities)$/.test(r);
 const ePaginaDeUnidade = (r) => /^\/(?:distritos|en\/districts)\/[^/]+$/.test(r);
@@ -616,6 +643,59 @@ celula('I2', 'as datas ISO à vista', (falhas) => {
     fora_do_ambito: foraDoAmbito,
   };
   return `${soData} data(s) ISO como valor · ${emProsa} em prosa por marcar · ${emProsaTranscrita} dentro de texto transcrito (a casa não edita o que transcreve) · ${foraDoAmbito} em documentos alojados e páginas de leitura (fora do âmbito do brief §2)`;
+});
+
+/** Cada período fica dentro da entrada, com a origem da mesma linha. */
+function conferirPeriodosDoIndice(raiz, pag, falhas) {
+  let entradas = 0;
+  let periodos = 0;
+  for (const item of raiz.querySelectorAll('.livro-item[data-linha-id]')) {
+    entradas++;
+    const id = item.getAttribute('data-linha-id');
+    const linha = LINHAS_DA_REGUA.get(id);
+    if (!linha) {
+      falhas.push(`${pag.rota}: ${id}: a entrada não tem linha no livro-razão.`);
+      continue;
+    }
+    const campos = item.querySelectorAll('[data-de-campo="reference_date"], [data-linha-campo="reference_date"]');
+    if (linha.reference_date === null || linha.reference_date === undefined) {
+      if (campos.length) falhas.push(`${pag.rota}: ${id}: o índice mostra um período que a linha não declara.`);
+      continue;
+    }
+    if (campos.length !== 1) {
+      falhas.push(`${pag.rota}: ${id}: a entrada tem ${campos.length} campos de período e deve ter um.`);
+      continue;
+    }
+    const campo = campos[0];
+    const esperado = periodoEsperado(linha.reference_date, pag.lang);
+    const marcador = linha.reference_date === MARCADOR;
+    const marcaCerta = marcador
+      ? campo.getAttribute('data-linha-claim') === id && campo.getAttribute('data-linha-campo') === 'reference_date'
+      : campo.getAttribute('data-de-linha') === id && campo.getAttribute('data-de-campo') === 'reference_date' && campo.getAttribute('data-nonledger') === 'data-da-linha';
+    if (texto(campo) !== esperado || !marcaCerta) {
+      falhas.push(`${pag.rota}: ${id}: o período diz «${texto(campo)}» e a linha exige «${esperado}», com a marca da própria linha.`);
+      continue;
+    }
+    periodos++;
+  }
+  return { entradas, periodos };
+}
+
+celula('I2p', 'o período de cada entrada dos índices é o da sua linha', (falhas) => {
+  const alvo = paginas.filter((pag) => ePaginaDeListaDoLivro(pag.rota));
+  if (!alvo.some((pag) => pag.rota === '/livro-razao') || !alvo.some((pag) => pag.rota === '/en/ledger')) {
+    falhas.push('Falta uma das duas edições do índice do livro-razão para conferir os períodos.');
+  }
+  let entradas = 0;
+  let periodos = 0;
+  for (const pag of alvo) {
+    const visto = conferirPeriodosDoIndice(dom(pag), pag, falhas);
+    entradas += visto.entradas;
+    periodos += visto.periodos;
+  }
+  if (!entradas) falhas.push('Nenhuma entrada de índice foi conferida: a régua dos períodos está cega.');
+  medida.I2p = { paginas: alvo.length, entradas, periodos };
+  return `${periodos} período(s) conferido(s) em ${entradas} entrada(s) de ${alvo.length} página(s) de índice`;
 });
 
 /* --------------------------------------------------------------------- I3 */
@@ -1755,8 +1835,52 @@ function provaLocalizadores() {
   });
 }
 
+function provaPeriodos() {
+  celula('I2pp', 'as plantas do período recusam a falta e a troca da data', (falhas) => {
+    const plantas = [];
+    for (const lang of ['pt', 'en']) {
+      const pag = paginas.find((p) => p.lang === lang && ePaginaDeIndiceDoLivro(p.rota));
+      if (!pag) {
+        falhas.push(`A planta dos períodos não encontrou o índice ${lang}.`);
+        continue;
+      }
+      const intacta = [];
+      conferirPeriodosDoIndice(parse(pag.html), pag, intacta);
+      if (intacta.length) {
+        falhas.push(`O índice ${lang} não passa o controlo dos períodos: ${intacta[0]}`);
+        continue;
+      }
+      for (const estrago of ['retirado', 'trocado']) {
+        const copia = parse(pag.html);
+        const id = 'despesa-por-funcao-2024-gf01-pt';
+        const campo = copia.querySelector(`.livro-item[data-linha-id="${id}"] [data-de-campo="reference_date"]`);
+        if (!campo) {
+          falhas.push(`A planta do período ${estrago} não encontrou a data da linha ${id} em ${lang}.`);
+          continue;
+        }
+        if (estrago === 'retirado') campo.remove();
+        else campo.set_content('2026');
+        const queixas = [];
+        conferirPeriodosDoIndice(copia, pag, queixas);
+        const esperada = estrago === 'retirado'
+          ? `${pag.rota}: ${id}: a entrada tem 0 campos de período e deve ter um.`
+          : `${pag.rota}: ${id}: o período diz «2026» e a linha exige «2024», com a marca da própria linha.`;
+        const mordeu = queixas.includes(esperada);
+        plantas.push({ nome: `Período ${estrago}, ${lang}`, id, mordeu, queixa: queixas.find((q) => q === esperada) ?? null });
+        if (!mordeu) falhas.push(`A planta do período ${estrago} em ${lang} não deu a queixa da própria linha.`);
+      }
+    }
+    medida.plantas_periodos = plantas;
+    console.log(JSON.stringify({ plantas_periodos: plantas }));
+    return `${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas dos períodos a morder, em cópias dos índices construídos`;
+  });
+}
+
 const fim = async () => {
-  if (argv.includes('--prova')) provaLocalizadores();
+  if (argv.includes('--prova')) {
+    provaLocalizadores();
+    provaPeriodos();
+  }
   if (NAVEGADOR) await comNavegador();
 
   console.log('');

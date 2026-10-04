@@ -25,7 +25,7 @@
  *   · o identificador;
  *   · a unidade, a fonte e a data de leitura, cada uma marcada `data-linha-*` e
  *     conferida pelo portão contra o campo da própria linha;
- *   · e, quando quem chama as pede, a data de referência e o documento.
+ *   · a data de referência, por defeito, e o documento quando quem chama o pede.
  *
  * O NOME DA MEDIDA, DESDE 29.08.2026, E DE ONDE ELE VEM.
  *
@@ -77,11 +77,10 @@
  * e o identificador no metadado. Uma linha derivada tem a aritmética escrita na
  * sua página.
  *
- * A DATA DE REFERÊNCIA E O DOCUMENTO ficam atrás de uma opção porque as duas
- * vistas do livro-razão não os rendiam, e acrescentá-los ali mudaria páginas de
- * outro bloco sem que ninguém o tivesse pedido. A página de uma área pede-os,
- * porque é ali que uma medida aparece longe do seu contexto e «4 976 172,24»
- * sem período e sem documento não se lê.
+ * A DATA DE REFERÊNCIA aparece por defeito desde OE1-e: cada entrada do índice
+ * diz o período da sua própria linha, na forma da casa. O documento continua
+ * opcional. Quem usa a peça fora do índice pode dispensar a referência se o
+ * contexto já a diz; uma lista de anos diferentes tem de os distinguir.
  *
  * O MARCADOR DE INCERTEZA VEM DE GRAÇA, e é a razão mais forte para reutilizar:
  * `CampoDaLinha` rende `[a verificar]` na forma da casa nas duas edições (em
@@ -102,7 +101,7 @@ import { nomeDaMedida } from '../lib/nomes.mjs';
    `data-area-peca="medida"` sem que a linha-espécime passe a conhecer as áreas.
    O item é filho direto de `.livro-lista`, que é uma grelha: um invólucro à
    volta dele partia a grelha. */
-const { linha: c, lang = 'pt', referencia = false, documento = false, ...resto } = Astro.props;
+const { linha: c, lang = 'pt', referencia = true, documento = false, ...resto } = Astro.props;
 const s = t(lang);
 /* A UNIDADE É UM RÓTULO, E UM RÓTULO DIZ-SE NA LÍNGUA DA PÁGINA (I92).
    O dicionário está em `src/i18n/unidades.mjs` e traz a marca de língua com o

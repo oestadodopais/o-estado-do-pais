@@ -132,8 +132,8 @@ const p = prova(lang);
  * o id, a unidade e o selo, e deixava de fora quem publicou o número e quando
  * foi lido, que é o que separa duas linhas com o mesmo valor.
  *
- * A linha passa a ter cinco campos, sempre pela mesma ordem e sempre nas mesmas
- * posições: **id · valor com selo · unidade · fonte · lido a**.
+ * OE1-e acrescenta o período da própria linha, pela forma das datas da casa:
+ * **id · valor com selo · unidade · referência · fonte · lido a**.
  *
  * UM CAMPO QUE A LINHA NÃO TEM NÃO SE RENDE, nem vazio nem com um traço: 19
  * linhas são derivadas e não têm fonte nem data de leitura, porque não há
@@ -291,6 +291,12 @@ const p = prova(lang);
                   class="livro-item-unidade"
                   lingua={unidadeDaLinha(c.unit, lang).lingua}
                 />
+                {c.reference_date !== null && c.reference_date !== undefined && (
+                  <span class="livro-item-campo">
+                    <span class="livro-item-k">{s.prov.referencia}</span>{' '}
+                    <CampoDaLinha id={c.id} campo="reference_date" valor={c.reference_date} lang={lang} />
+                  </span>
+                )}
                 {c.source !== null && c.source !== undefined && (
                   <span class="livro-item-campo">
                     <span class="livro-item-k">{s.prov.fonte}</span>{' '}

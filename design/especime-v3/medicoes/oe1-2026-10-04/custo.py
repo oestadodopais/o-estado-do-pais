@@ -6,10 +6,10 @@ from pathlib import Path
 
 root = str(Path(sys.argv[1]).resolve())
 directory = Path.home() / ".codex" / "sessions" / "2026" / "10" / "04"
-passagem = next((p for p in ["oe1b", "oe1c", "oe1d"] if "--" + p in sys.argv), None)
+passagem = next((p for p in ["oe1b", "oe1c", "oe1d", "oe1e"] if "--" + p in sys.argv), None)
 if passagem:
-    rotulo = {"oe1b": "OE1-b", "oe1c": "OE1-c", "oe1d": "OE1-d"}[passagem]
-    prefixo = {"oe1b": "OE1-b, do lugar de direção", "oe1c": "# OE1-c ·", "oe1d": "# OE1-d ·"}[passagem]
+    rotulo = {"oe1b": "OE1-b", "oe1c": "OE1-c", "oe1d": "OE1-d", "oe1e": "OE1-e"}[passagem]
+    prefixo = {"oe1b": "OE1-b, do lugar de direção", "oe1c": "# OE1-c ·", "oe1d": "# OE1-d ·", "oe1e": "# OE1-e ·"}[passagem]
     # Só metadados e contadores saem deste processo. A ordem identifica o corte.
     allowed = {root, str(Path.cwd().resolve())}
     records = []

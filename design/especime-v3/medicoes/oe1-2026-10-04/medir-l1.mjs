@@ -15,7 +15,8 @@ import { ANCORA_DA_POLITICA } from '../../../../src/data/politica-ia.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '../../../..');
-const passagemD = process.argv.includes('--oe1d');
+const passagem = process.argv.includes('--oe1e') ? 'oe1e' : 'oe1d';
+const passagemD = process.argv.includes('--oe1d') || process.argv.includes('--oe1e');
 const original = 'design/especime-v3/medicoes/oe1-2026-10-04/oe1b-base/l1-check-lugar.log';
 const receipt = JSON.parse(fs.readFileSync(path.join(AQUI, 'base-l1.json'), 'utf8'));
 assert(receipt.reposicao_conferida && receipt.cabeca_conservada && receipt.codigo_da_medicao === 0, 'A comparação exige a base medida e os ficheiros repostos.');
@@ -36,7 +37,7 @@ assert([0, 1].includes(r.status));
 const teto = JSON.parse(fs.readFileSync(path.join(RAIZ, 'scripts/lugar-tetos-b1.json'), 'utf8'));
 if (teto.medicao === 'design/especime-v3/medicoes/oe1-2026-10-04/l1-oe1b.json') assert.equal(r.status, 0, 'A régua tem de passar com a medição atualizada.');
 const log = limpa(r.stdout + r.stderr);
-fs.writeFileSync(path.join(AQUI, passagemD ? 'oe1d-l1-check-lugar.log' : 'oe1b-l1-check-lugar.log'), log);
+fs.writeFileSync(path.join(AQUI, passagemD ? `${passagem}-l1-check-lugar.log` : 'oe1b-l1-check-lugar.log'), log);
 const depois = lista(log);
 const crossing = JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger/cruzamentos/oe1.json'), 'utf8'));
 const novas = new Set(Object.keys(crossing.rows).flatMap(slug => LANGS.map(lang => routePath('linha', lang, { slug }))));
@@ -56,23 +57,23 @@ if (passagemD) {
   const adulterado = linhas.filter((_, i) => i !== indice).join('\n');
   assert.throws(() => lista(adulterado), /lista inteira/);
   const data = {
-    o_que_e: 'OE1-d: medição integral da L1 na construção da cabeça integrada. Nenhuma alteração da régua ou aumento do teto.',
+    o_que_e: `${passagem === 'oe1e' ? 'OE1-e' : 'OE1-d'}: medição integral da L1 na construção da cabeça integrada. Nenhuma alteração da régua ou aumento do teto.`,
     data: new Date().toISOString(),
     cabeca: head,
     construcao: stamp.commit,
-    origem: 'design/especime-v3/medicoes/oe1-2026-10-04/oe1d-l1-check-lugar.log',
+    origem: `design/especime-v3/medicoes/oe1-2026-10-04/${passagem}-l1-check-lugar.log`,
     codigo_da_regua: r.status,
     // «estudos» é o nome histórico do campo que check-lugar lê; conta páginas.
     contagens: {estudos: depois.size, l1_paginas: depois.size, teto_lido: teto.l1_paginas, recibos_oe1: recibos.length},
     conhecidos_positivos: [{nome: 'Uma entrada retirada da lista deixa de reconciliar com a contagem da régua', mordeu: true}],
     paginas: Object.fromEntries(depois),
   };
-  fs.writeFileSync(path.join(AQUI, 'l1-oe1d.json'), JSON.stringify(data, null, 2) + '\n');
+  fs.writeFileSync(path.join(AQUI, `l1-${passagem}.json`), JSON.stringify(data, null, 2) + '\n');
   const plantCode = `import fs from 'node:fs';
 const read = fs.readFileSync;
 fs.readFileSync = function(file, ...args) {
   const body = read.call(this, file, ...args);
-  if (String(file).endsWith('/oe1-2026-10-04/l1-oe1d.json')) {
+  if (String(file).endsWith('/${teto.medicao}')) {
     const copy = JSON.parse(String(body)); copy.contagens.estudos += 1;
     return JSON.stringify(copy);
   }
@@ -83,7 +84,7 @@ await import('./scripts/check-lugar.mjs');`;
   assert.equal(planted.status, 1, 'A contagem adulterada tem de ser recusada pela régua.');
   assert((planted.stdout + planted.stderr).includes('B1 L1: o teto tem de ser o número inteiro medido no registo.'), 'A planta exige a queixa do teto e do registo.');
   data.conhecidos_positivos.push({nome: 'Uma contagem do registo trocada em memória é recusada pela régua do teto', mordeu: true});
-  fs.writeFileSync(path.join(AQUI, 'l1-oe1d.json'), JSON.stringify(data, null, 2) + '\n');
+  fs.writeFileSync(path.join(AQUI, `l1-${passagem}.json`), JSON.stringify(data, null, 2) + '\n');
   console.log(JSON.stringify({cabeca: data.cabeca, contagens: data.contagens, conhecidos_positivos: data.conhecidos_positivos}, null, 2));
   process.exit(0);
 }
