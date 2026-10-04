@@ -1,0 +1,5 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/nomes.mjs(261,37): error TS2322: Type '"cartao"' is not assignable to type '"figuras" | "medidas" | "oficial" | "projeto" | null'.

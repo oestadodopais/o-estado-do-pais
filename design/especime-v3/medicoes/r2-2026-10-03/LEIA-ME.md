@@ -288,8 +288,10 @@ Com `OEDP_MEDICOES` a apontar para esta pasta: `r2b-` 3, `r2-` 5, `k2c-` 3, `p4`
 | `398b3339` | as formas: o achado 4 pelo excerto, os termos explicados, os nomes de nível, a faixa dos 27, a ressalva do salário mínimo, uma porta por documento e o FAM |
 | `48421f0c` | a régua que conta e o que falta morde, os números da unidade presos ao apoio, e as células que mudaram de forma, com as plantas |
 | `659abb7b` | o inventário das frases, as chaves inglesas, a revisão do inventário e o mapa do repositório |
+| `1a9bdca8` | as medições da passagem, as capturas, esta secção e a resposta curta (a primeira corrida final, em `portoes-b-a/`) |
+| `90ff5531` | o tipo do nome de uma medida conhece a fonte `cartao` |
 
-O commit desta secção leva as medições, as capturas e a resposta curta; o seguinte, os códigos da corrida final dos portões em `portoes-b/`.
+O commit seguinte junta os códigos da corrida final em `portoes-b/`, o custo e as medidas postas em dia.
 
 ### As capturas
 
@@ -305,4 +307,8 @@ O commit desta secção leva as medições, as capturas e a resposta curta; o se
 
 ### Os portões da passagem
 
-A corrida final corre pela tranca (`sh scripts/leituras/portoes.sh`) na cabeça do commit desta secção, com os ficheiros em `portoes-b/` e a cabeça ao lado dos códigos; os códigos, lidos de ficheiro, e o custo entram no commit seguinte.
+A primeira corrida final correu pela tranca (`sh scripts/leituras/portoes.sh`) na cabeça `1a9bdca8`, a do commit desta secção, com os ficheiros em `portoes-b-a/`: `build` 0, `verify` 0 e `typecheck` 1. O typecheck recusava o objeto que a escada nova do nome devolve, porque o tipo `NomeDaMedida` de `src/lib/nomes.mjs` não conhecia a fonte `cartao`: as conferências entre commits correram as células que a mudança tocava, e não o typecheck, e é a lição. O tipo ganhou a fonte em `90ff5531` (só o comentário de tipo muda) e o typecheck deu 0 (`entre-commits/typecheck-r2b.log`). A corrida final repetiu-se pela tranca na cabeça `90ff5531`, com a cabeça ao lado dos códigos (`portoes-b/cabeca`, igual a `portoes-b/cabeca.fim`) e a árvore limpa fora desta pasta (`portoes-b/estado.fim`): `build` 0, `verify` 0 e `typecheck` 0, lidos de `portoes-b/build.codigo`, `portoes-b/verify.codigo` e `portoes-b/typecheck.codigo`, das 03:16 às 03:33 de 04.10.2026 (UTC). Os registos levam `<worktree>`, `<repositório>` e `<casa>` no lugar dos caminhos da máquina. O commit que junta estes códigos só leva ficheiros desta pasta, e nenhum entra na construção.
+
+### O custo da passagem
+
+401146 símbolos e 7239 segundos, das duas leituras em ficheiro (`custo-inicio-r2-b.json` e `custo-fim-r2-b.json`: o contador «total_tokens left» que a ferramenta mostra ao agente e o relógio da máquina), do início da passagem até à corrida final dos portões. A semana da subscrição do Claude passou de 51 % a 56 % (a linha de estado, por `scripts/leituras/uso.py`). O modelo foi o Claude Opus 5.5 em toda a passagem, sem subagentes.

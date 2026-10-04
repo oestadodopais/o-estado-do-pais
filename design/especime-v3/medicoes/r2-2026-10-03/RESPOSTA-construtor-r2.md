@@ -24,4 +24,6 @@
 - **Achados**: 22 feitos, 4 em parte (os 6, 9, 11 e 24, com os pedidos), 1 recusado pela triagem (o 19).
 - **A L1**: 2342 páginas na entrega e 2342 depois; 0 entraram, 0 pioraram, 6 melhoraram.
 - **Capturas**: 44, a 390 e a 1 280 px nas duas edições, com 0 problemas.
+- **Portões**: na cabeça `90ff5531`, pela tranca, `build` 0, `verify` 0 e `typecheck` 0, lidos de `portoes-b/`. A primeira corrida, em `1a9bdca8`, deu `typecheck` 1 (`portoes-b-a/`): o tipo do nome de uma medida não conhecia a fonte `cartao`, e ganhou-a em `90ff5531`.
+- **Custo**: 401146 símbolos e 7239 segundos, das duas leituras em ficheiro; o Claude Opus 5.5 em toda a passagem.
 - **Por fazer**: os 7 pedidos ao motor; o recorte do índice no feixe do desenho, noutro bloco; as plantas `l1-` e `rp1`, que estragam a página dos temas de antes do N1 (dívida anterior ao R2); o rebase sobre `main` (do lugar de direção; depois dele, o inventário dos rótulos reescreve-se com `--escrever` se uma contagem mudar); a leitura a frio da passagem.

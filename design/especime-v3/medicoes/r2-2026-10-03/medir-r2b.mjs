@@ -175,6 +175,14 @@ const versao = ler('dist/version.json');
   medicao('r2b_simbolos_restantes_no_fim', fim?.simbolos_restantes_no_fim ?? 'NÃO LIDO', `${PASTA}/custo-fim-r2-b.json`, 'o ficheiro diz a hora do fim', Boolean(fim?.fim_utc));
   medicao('r2b_simbolos_gastos', fim ? ini.simbolos_restantes_no_inicio - fim.simbolos_restantes_no_fim : 'NÃO LIDO', 'a diferença das duas leituras do contador', 'as duas leituras existem', Boolean(fim));
   medicao('r2b_segundos_de_parede', fim ? Math.round((Date.parse(fim.fim_utc) - Date.parse(ini.inicio_utc)) / 1000) : 'NÃO LIDO', 'fim_utc menos inicio_utc', 'as duas horas existem', Boolean(fim));
+  /* a primeira corrida final, em 1a9bdca8, que deu typecheck 1 (o tipo do nome de uma medida sem a fonte «cartao»), guardada em portoes-b-a/ */
+  for (const g of ['build', 'verify', 'typecheck']) {
+    const f = `${PASTA}/portoes-b-a/${g}.codigo`;
+    medicao(`r2b_portao_a_${g}`, existe(f) ? Number(fs.readFileSync(f, 'utf8').trim()) : 'NÃO LIDO', `sh scripts/leituras/portoes.sh <worktree> ${PASTA}/portoes-b (a corrida de 1a9bdca8, guardada em portoes-b-a/)`, `o ficheiro ${g}.codigo existe e a cabeça ao lado é 1a9bdca8`, existe(f) && fs.readFileSync(`${PASTA}/portoes-b-a/cabeca`, 'utf8').startsWith('1a9bdca8'));
+  }
+  medicao('r2b_typecheck_entre_commits', codigo('entre-commits/typecheck-r2b'), 'npm run typecheck, depois de o tipo ganhar a fonte «cartao»', 'o registo existe', existe(`${PASTA}/entre-commits/typecheck-r2b.log`));
+  medicao('r2b_semana_da_conta_no_inicio_por_cento', ini.semana_da_conta_no_inicio?.sete_dias_usados_por_cento ?? 'NÃO LIDO', `${PASTA}/custo-inicio-r2-b.json`, 'o ficheiro diz a hora de início', Boolean(ini.inicio_utc));
+  medicao('r2b_semana_da_conta_no_fim_por_cento', fim?.semana_da_conta_no_fim?.sete_dias_usados_por_cento ?? 'NÃO LIDO', `${PASTA}/custo-fim-r2-b.json`, 'o ficheiro diz a hora do fim', Boolean(fim?.fim_utc));
   for (const g of ['build', 'verify', 'typecheck']) {
     const f = `${PASTA}/portoes-b/${g}.codigo`;
     medicao(`r2b_portao_${g}`, existe(f) ? Number(fs.readFileSync(f, 'utf8').trim()) : 'NÃO LIDO', `sh scripts/leituras/portoes.sh <worktree> ${PASTA}/portoes-b`, `o ficheiro ${g}.codigo existe`, existe(f));

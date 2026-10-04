@@ -1,0 +1,12 @@
+{
+  "o_que": "a última leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), na passagem R2-b, escrita à mão pelo construtor depois da corrida final dos portões, e a hora do relógio da máquina nessa altura",
+  "simbolos_restantes_no_fim": 13149259,
+  "lido_no_fim": "no resultado da chamada que leu os códigos da corrida final dos portões na cabeça 90ff5531",
+  "fim_utc": "2026-10-04T03:34:55Z",
+  "fim_origem": "date -u, na mesma chamada que leu o uso das subscrições",
+  "semana_da_conta_no_fim": {
+    "o_que": "a percentagem da semana da subscrição do Claude, lida da linha de estado (escrita às 03:34 UTC de 04.10.2026) por scripts/leituras/uso.py",
+    "sete_dias_usados_por_cento": 56
+  },
+  "modelo": "Claude Opus 5.5 (a definição construtor)"
+}
