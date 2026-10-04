@@ -15,7 +15,9 @@ with subprocess.Popen([env["OE1_REAL_NPM"], *sys.argv[1:]], env=env,
     status = command.wait()
 if sys.argv[1:] == ["run", "build"]:
     # O portoes.sh mantém a tranca enquanto este invólucro executa o ledger.
-    base = Path("design/especime-v3/medicoes/oe1-2026-10-04/portoes/ledger")
+    base = Path(env.get("OE1_GATE_OUTPUT", "design/especime-v3/medicoes/oe1-2026-10-04/portoes")) / "ledger"
+    if base.is_absolute() or ".." in base.parts:
+        raise ValueError("A pasta dos portões tem de ser relativa")
     def write(ext, value):
         base.with_name(base.name + ext).write_text(clean(value))
     write(".inicio", datetime.now(timezone.utc).isoformat() + "\n")

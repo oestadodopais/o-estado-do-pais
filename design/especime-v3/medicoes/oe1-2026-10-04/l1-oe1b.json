@@ -1,0 +1,4875 @@
+{
+  "o_que_e": "OE1-b: a contagem L1 cresce apenas pelos recibos das 186 linhas nas duas línguas. A lista anterior permanece igual, incluindo os destinos repetidos e o exemplo contado. Os pares das linhas novas usam padrões presentes nas linhas antigas. Atualiza-se a medição do teto, sem alterar a régua, as páginas ou as suas palavras.",
+  "data": "2026-10-04T07:32:50.155Z",
+  "cabeca": "ff8692ba096b493174e44eaf3d3695c4f56ded6f",
+  "origem_anterior": "design/especime-v3/medicoes/oe1-2026-10-04/oe1b-base/l1-check-lugar.log",
+  "commit_da_base": "eee1677fff963ce0758a23067b9fdf32185f3147",
+  "origem": "design/especime-v3/medicoes/oe1-2026-10-04/oe1b-l1-check-lugar.log",
+  "comando": "AMOSTRA=100000 node scripts/check-lugar.mjs",
+  "codigo_da_regua": 0,
+  "contagens": {
+    "estudos": 2714,
+    "antes": 2342,
+    "entradas": 372,
+    "saidas": 0,
+    "antigas_alteradas": 0,
+    "linhas_antigas_conferidas_no_html": 1610,
+    "padroes_antigos": 13
+  },
+  "conhecidos_positivos": [
+    {
+      "nome": "Um recibo OE1 em falta é recusado",
+      "mordeu": true
+    },
+    {
+      "nome": "Um destino repetido a mais numa página antiga é recusado",
+      "mordeu": true
+    },
+    {
+      "nome": "Uma página extra fora do OE1 é recusada",
+      "mordeu": true
+    },
+    {
+      "nome": "Um padrão desconhecido é recusado",
+      "mordeu": true
+    }
+  ],
+  "entradas": [
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf01-es",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf01-pt",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf01-ue",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf02-es",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf02-pt",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf02-ue",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf03-es",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf03-pt",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf03-ue",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf04-es",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf04-pt",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf04-ue",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf05-es",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf05-pt",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf05-ue",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf06-es",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf06-pt",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf06-ue",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf07-es",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf07-pt",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf07-ue",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf08-es",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf08-pt",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf08-ue",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf09-es",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf09-pt",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf09-ue",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf10-es",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf10-pt",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/despesa-por-funcao-2024-gf10-ue",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-ativos-e-passivos-da-receita-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-cem-euros-funcao-01",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-cem-euros-funcao-02",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-cem-euros-funcao-03",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-cem-euros-funcao-04",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-cem-euros-funcao-05",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-cem-euros-funcao-06",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-cem-euros-funcao-07",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-cem-euros-funcao-08",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-cem-euros-funcao-09",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-cem-euros-funcao-10",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-despesa-efetiva-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-despesa-funcao-01",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-despesa-funcao-02",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-despesa-funcao-03",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-despesa-funcao-04",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-despesa-funcao-05",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-despesa-funcao-06",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-despesa-funcao-07",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-despesa-funcao-08",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-despesa-funcao-09",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-despesa-funcao-10",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-despesa-orcamental-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-despesa-primaria-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-diferencas-consolidacao-funcional",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-receita-efetiva-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-receita-orcamental-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-saldo-global-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-07-saldo-primario-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-efetiva-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-001",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-002",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-003",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-004",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-005",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-006",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-007",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-008",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-009",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-010",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-011",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-012",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-013",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-014",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-015",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-016",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-017",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-018",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-019",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-despesa-programa-020",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-diferencas-consolidacao-programas",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-fluxos-entre-programas",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-receita-efetiva-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-saldo-global-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/execucao-2026-08-subtotal-programas",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-ativos-e-passivos-da-despesa-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-ativos-e-passivos-da-receita-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-funcao-01",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-funcao-02",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-funcao-03",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-funcao-04",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-funcao-05",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-funcao-06",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-funcao-07",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-funcao-08",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-funcao-09",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-funcao-10",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-administracao-interna",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-agricultura-e-mar",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-ambiente-e-energia",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-defesa-nacional",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-economia-e-coesao-territorial",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-encargos-gerais-do-estado",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-financas",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-justica",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-negocios-estrangeiros",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-reforma-do-estado",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-saude",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-bruta-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-consolidada-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-consolidada-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-efetiva-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-efetiva-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-funcao-01",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-funcao-02",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-funcao-03",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-funcao-04",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-funcao-05",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-funcao-06",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-funcao-07",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-funcao-08",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-funcao-09",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-funcao-10",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-administracao-interna",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-agricultura-e-mar",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-ambiente-e-energia",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-cultura-juventude-e-desporto",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-defesa-nacional",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-economia-e-coesao-territorial",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-encargos-gerais-do-estado",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-financas",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-infraestruturas-e-habitacao",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-justica",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-negocios-estrangeiros",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-reforma-do-estado",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-saude",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-orcamental-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-primaria-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-001",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-002",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-003",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-004",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-005",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-006",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-007",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-008",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-009",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-010",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-011",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-012",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-013",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-014",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-015",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-016",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-017",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-018",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-019",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-programa-020",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-despesa-total",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-diferencas-consolidacao-funcional",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-receita-bruta-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-receita-consolidada-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-receita-consolidada-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-receita-efetiva-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-receita-efetiva-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-receita-orcamental-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-saldo-global-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-saldo-global-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/en/ledger/oe-2026-saldo-primario-administracao-central",
+      "destinos": 1,
+      "exemplo": "/en/method",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/en/method",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf01-es",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf01-pt",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf01-ue",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf02-es",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf02-pt",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf02-ue",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf03-es",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf03-pt",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf03-ue",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf04-es",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf04-pt",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf04-ue",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf05-es",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf05-pt",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf05-ue",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf06-es",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf06-pt",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf06-ue",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf07-es",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf07-pt",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf07-ue",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf08-es",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf08-pt",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf08-ue",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf09-es",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf09-pt",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf09-ue",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf10-es",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf10-pt",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/despesa-por-funcao-2024-gf10-ue",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-ativos-e-passivos-da-receita-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-cem-euros-funcao-01",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-cem-euros-funcao-02",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-cem-euros-funcao-03",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-cem-euros-funcao-04",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-cem-euros-funcao-05",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-cem-euros-funcao-06",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-cem-euros-funcao-07",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-cem-euros-funcao-08",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-cem-euros-funcao-09",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-cem-euros-funcao-10",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-despesa-efetiva-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-despesa-funcao-01",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-despesa-funcao-02",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-despesa-funcao-03",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-despesa-funcao-04",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-despesa-funcao-05",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-despesa-funcao-06",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-despesa-funcao-07",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-despesa-funcao-08",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-despesa-funcao-09",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-despesa-funcao-10",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-despesa-orcamental-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-despesa-primaria-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-diferencas-consolidacao-funcional",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-receita-efetiva-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-receita-orcamental-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-saldo-global-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-07-saldo-primario-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-efetiva-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-001",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-002",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-003",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-004",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-005",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-006",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-007",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-008",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-009",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-010",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-011",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-012",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-013",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-014",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-015",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-016",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-017",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-018",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-019",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-despesa-programa-020",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-diferencas-consolidacao-programas",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-fluxos-entre-programas",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-receita-efetiva-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-saldo-global-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/execucao-2026-08-subtotal-programas",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-ativos-e-passivos-da-despesa-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-ativos-e-passivos-da-receita-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-funcao-01",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-funcao-02",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-funcao-03",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-funcao-04",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-funcao-05",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-funcao-06",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-funcao-07",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-funcao-08",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-funcao-09",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-funcao-10",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-administracao-interna",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-agricultura-e-mar",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-ambiente-e-energia",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-defesa-nacional",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-economia-e-coesao-territorial",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-encargos-gerais-do-estado",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-financas",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-justica",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-negocios-estrangeiros",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-reforma-do-estado",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-saude",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-bruta-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-consolidada-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-consolidada-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-efetiva-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-efetiva-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-funcao-01",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-funcao-02",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-funcao-03",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-funcao-04",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-funcao-05",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-funcao-06",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-funcao-07",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-funcao-08",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-funcao-09",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-funcao-10",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-administracao-interna",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-agricultura-e-mar",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-ambiente-e-energia",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-cultura-juventude-e-desporto",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-defesa-nacional",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-economia-e-coesao-territorial",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-encargos-gerais-do-estado",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-financas",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-infraestruturas-e-habitacao",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-justica",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-negocios-estrangeiros",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-reforma-do-estado",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-saude",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-orcamental-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-primaria-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-001",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-002",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-003",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-004",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-005",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-006",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-007",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-008",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-009",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-010",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-011",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-012",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-013",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-014",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-015",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-016",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-017",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-018",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-019",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-programa-020",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-despesa-total",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-diferencas-consolidacao-funcional",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-receita-bruta-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-receita-consolidada-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-receita-consolidada-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-receita-efetiva-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-receita-efetiva-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-receita-orcamental-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-saldo-global-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-saldo-global-administracao-central-seguranca-social",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    },
+    {
+      "url": "/livro-razao/oe-2026-saldo-primario-administracao-central",
+      "destinos": 1,
+      "exemplo": "/metodo",
+      "vezes": 2,
+      "pares": [
+        {
+          "destino": "/metodo",
+          "vezes": 2,
+          "padrao": "a<dd<dl.linha-verificacoes || a<p.rodape-nav<aside.aparelho"
+        }
+      ]
+    }
+  ]
+}
