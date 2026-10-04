@@ -3,7 +3,7 @@
   item 5, o autoteste da L3 nos rótulos das marcas: à vista 1 (esperada 1) · escondido no «.vh» 0 (esperado 0)
   RP3, o autoteste da marca das séries: «threshold» e «indicador» nos campos transcritos 0 (esperado 0) · «limiar» na prosa da casa a conta em palavras 1, o motivo de uma correção 1, o motivo inglês de uma correção 1, um invólucro sem campo 1 (esperado 1 em cada) · o seletor e a lista fechada de acordo
   §7.4 e 8.6, o que os dados dizem: estudo 34 · texto 17 · indice 2 · edicoes 34 · linhas 22
-check:lugar · 7881 páginas em dist/
+check:lugar · 7883 páginas em dist/
   L1 · páginas com dois destinos iguais fora da mobília         2714  (teto 2714) ok
       · /agenda · 8 destinos repetidos (ex.: /agenda ×4)
       · /correcoes · 12 destinos repetidos (ex.: /livro-razao/correcoes-publicadas ×3)
@@ -2740,7 +2740,7 @@ check:lugar · 7881 páginas em dist/
   §7.4 e 8.6, o que a régua leu: estudo 34 · texto 17 · indice 2 · edicoes 34 · linhas 22
   as exceções, e quantas vezes cada uma foi precisa:
       · «peça»     5 · a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu
-      · «trabalho»    23 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo
+      · «trabalho»    25 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo
       · «indicador»     1 · «indicador» a nomear o campo que o publicador dá, e não uma medida da casa
       · «indicador»    12 · «indicador» dentro do endereço da API do INE (`json_indicador`), que é um caminho da fonte e não uma palavra da casa
 check:lugar · verde.
