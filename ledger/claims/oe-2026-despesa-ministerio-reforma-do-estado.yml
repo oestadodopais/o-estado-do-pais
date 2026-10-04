@@ -30,8 +30,8 @@ reference_date: "2026"
 excerpt: "           06 - REFORMA DO ESTADO                                                                 164 357 497"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis."
-ressalva_en: "The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
+ressalva: "A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
+ressalva_en: "Gross expenditure includes financial transactions and transfers between State services, as added up in the budget map."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null

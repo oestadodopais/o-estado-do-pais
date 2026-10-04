@@ -620,3 +620,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | r3 | 12 cadeias novas, nenhuma retirada | por ler | Claude Opus 5.5, construtor do R3: o título da página do índice, os nomes das secções que ainda não estavam declarados e a descrição do `<head>`, nas duas línguas. As portas são ligações e não se classificam; os nomes, os títulos, as datas, as perguntas e os valores são origens. |
+
+## OE1-e · a conta da ressalva, 04.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| oe1-e | 2 novas | por ler | Codex gpt-6-astra: os dois rótulos distinguem a conta de apoio de uma ressalva da aritmética do valor. Repõe-se também o cabeçalho original da tabela C1f, sem mudar as suas linhas. A leitura cruzada fica pendente antes da fusão. |

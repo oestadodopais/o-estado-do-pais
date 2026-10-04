@@ -684,6 +684,15 @@ export function eDerivada(claim) {
   return Array.isArray(claim?.derived_from) && claim.derived_from.length > 0;
 }
 
+/** A conta de uma ressalva não é a aritmética do valor transcrito.
+ * As contagens da casa e dos ficheiros mantêm a sua regra própria.
+ * @param {Linha | null | undefined} claim
+ */
+export function eContaDaRessalva(claim) {
+  return !eDerivada(claim) && !eDaCasa(claim) && !eContadaSobreFicheiro(claim)
+    && !ausente(claim?.derivation) && !ausente(claim?.ressalva) && !ausente(claim?.ressalva_en);
+}
+
 /** O nome da casa, tal como aparece no campo `source`. */
 export const CASA = 'O Estado do País';
 
@@ -810,7 +819,7 @@ export function excertoComposto(claim) {
 }
 
 /**
- * A aritmética de uma linha derivada, na língua de uma edição.
+ * A aritmética do valor calculado ou da ressalva de uma linha transcrita, na língua da edição.
  *
  * Mesma regra do motivo de uma correção (§1.17): a explicação da conta é prosa
  * da casa, existe nas duas línguas — `derivation` em português, `derivation_en`
@@ -1708,6 +1717,12 @@ export function validateLedger() {
     }
     if (ausente(c.derivation) && !ausente(c.derivation_en)) {
       errors.push(`${onde} tem "derivation_en" sem "derivation". A linha portuguesa é a primeira.`);
+    }
+    // OE1-e: uma linha transcrita só leva uma conta para sustentar uma ressalva.
+    if (!derivada && !eDaCasa(c) && !eContadaSobreFicheiro(c)
+      && (!ausente(c.derivation) || !ausente(c.derivation_en))
+      && (ausente(c.ressalva) || ausente(c.ressalva_en))) {
+      errors.push(`${onde} uma linha transcrita com "derivation" exige a ressalva nas duas línguas; a conta não pode explicar o valor publicado.`);
     }
     for (const error of errosDaRessalva(c)) errors.push(`${onde} ${error}`);
     // A geografia protege também as células sem bandeira, incluindo a União.

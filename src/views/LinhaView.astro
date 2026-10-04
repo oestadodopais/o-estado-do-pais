@@ -56,6 +56,7 @@ import {
   provenienciaIncompleta,
   eDaCasa,
   eDerivada,
+  eContaDaRessalva,
   derivacaoDaLinha,
   excertoComposto,
   notaDeBandeira,
@@ -1216,7 +1217,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
       {
         derivacao && (
           <section class="linha-bloco" aria-labelledby="aritmetica">
-            <h2 class="linha-bloco-titulo" id="aritmetica">{s.prov.derivacao}</h2>
+            <h2 class="linha-bloco-titulo" id="aritmetica">{eContaDaRessalva(claim) ? s.prov.contaRessalva : s.prov.derivacao}</h2>
             <p class="linha-derivacao">
               {/* `leis`: a aritmética é prosa da casa, e na edição inglesa cita
                   diplomas pelo nome português. A I95 contou 313 nomes assim sem

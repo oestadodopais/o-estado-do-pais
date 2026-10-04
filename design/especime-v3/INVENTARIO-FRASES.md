@@ -3422,7 +3422,7 @@ protegidas pelo detetor de privacidade sobre as páginas construídas. O nome
 
 ## C1f · os acessos do PRR reconstituídos pela história do Git
 
-| classe | texto | bloco | estado | razão |
+| Classe | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
 | conteudo | 54 revisões de proveniência | c1f | viva | Contagem do livro após as dez entradas de acesso, sem mudança dos valores. |
 | conteudo | 54 provenance revisions | c1f | viva | Contagem do livro após as dez entradas de acesso, sem mudança dos valores. |
@@ -3964,3 +3964,10 @@ marcador da voz (`VOZ-MARCADORES.md`).
 | --- | --- | --- | --- | --- |
 | navegacao | Ressalva | oe1-d | viva | Abre a ressalva da própria linha, escrita pelo motor e conferida no recibo e no índice. |
 | navegacao | Caveat | oe1-d | viva | Abre na edição inglesa o mesmo campo, sem recurso à língua portuguesa. |
+
+## OE1-e · a conta que sustenta uma ressalva, 04.10.2026
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | A conta da ressalva | oe1-e | viva | Nomeia a conta de apoio de uma ressalva numa linha transcrita, sem a apresentar como cálculo do valor. |
+| navegacao | The caveat calculation | oe1-e | viva | O mesmo rótulo na edição inglesa; as contas dos valores calculados mantêm o seu título. |

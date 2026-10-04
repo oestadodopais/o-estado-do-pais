@@ -30,12 +30,12 @@ reference_date: "2026"
 excerpt: "           01 - ENCARGOS GERAIS DO ESTADO                                                        7 733 610 763"
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "Não é um ministério: são os encargos do Estado fora dos ministérios, como a dívida e as transferências. Os mapas e a execução orçamental usam contabilidade pública e o perímetro indicado no nome. O Eurostat usa contabilidade nacional e inclui também as administrações regional e local. Estas grandezas não são diretamente comparáveis."
-ressalva_en: "This is not a ministry: these are State charges outside ministries, such as debt and transfers. The budget maps and budget execution use public budget accounting and the scope stated in the name. Eurostat uses national accounts and also includes regional and local government. These measures are not directly comparable."
+ressalva: "Não é um ministério. Nesta edição do orçamento, a rubrica dos Encargos Gerais do Estado tem o mesmo valor do programa 001, Órgãos de Soberania. A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
+ressalva_en: "This is not a ministry. In this budget edition, General State Charges has the same value as programme 001, Sovereign Bodies. Gross expenditure includes financial transactions and transfers between State services, as added up in the budget map."
 
-# null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: null
-derivation_en: null
+# Aritmética da ressalva; o valor continua a ser o publicado pela fonte.
+derivation: "A igualdade referida na ressalva compara os Encargos Gerais do Estado com o programa 001, Órgãos de Soberania: 7733610763 - 7733610763 = 0 euros. A conta não descreve o conteúdo da rubrica."
+derivation_en: "The equality in the caveat compares General State Charges with programme 001, Sovereign Bodies: 7733610763 - 7733610763 = 0 euros. This calculation does not describe what the heading contains."
 derived_from: []
 # Expressão verificada no build: tem de dar exactamente o valor acima.
 check: null

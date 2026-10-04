@@ -54,7 +54,8 @@ excerpt: "[a verificar]"
 # ressalva: "O ficheiro da fonte não imprime a unidade."
 # ressalva_en: "The source file does not print the unit."
 
-# null quando o valor é publicado; a aritmética explicada quando é calculado.
+# A aritmética do valor calculado; numa linha transcrita, só a conta de uma ressalva.
+# Sem conta a declarar, null. Uma conta de ressalva exige ressalva e ressalva_en.
 # Quando existe, tem de existir nas duas línguas — a página da linha publica-a.
 derivation: null
 derivation_en: null
@@ -623,7 +624,13 @@ completos no excerto ou na derivação declarada. Uma conta que sustenta uma
 ressalva pode usar `derivation` e `derivation_en` sem transformar o valor
 transcrito numa linha derivada: `derived_from` continua vazio. No OE1, o motor
 reavalia em decimal exato a diferença entre os três indicadores da despesa
-antes de exportar a sua explicação. O `check`, quando existe, continua a ter
+antes de exportar a sua explicação. Também refaz a igualdade entre os Encargos
+Gerais do Estado e o programa de Órgãos de Soberania, sem inferir o conteúdo
+da rubrica. O recibo rotula estas contas como «A conta da ressalva», nunca
+como a aritmética do valor. O livro recusa uma conta numa linha transcrita
+sem as duas línguas da ressalva. As contagens próprias da casa e as contagens
+sobre ficheiros alojados conservam as regras que já as validam.
+O `check`, quando existe, continua a ter
 de dar exatamente o valor da linha, sem tolerância.
 
 **`note` não é publicada.** É a única parte do formato que fica para dentro:
