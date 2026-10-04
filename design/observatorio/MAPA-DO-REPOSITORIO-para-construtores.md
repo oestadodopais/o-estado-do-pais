@@ -562,3 +562,21 @@ As plantas dos localizadores vivem em `tests/livro/indice.mjs`; as dos campos
 e da geografia em `tests/linha/cadeias-proveniencia.mjs` e
 `scripts/provar-guardas.mjs`. A medição e a resposta ficam em
 `design/especime-v3/medicoes/oe1-2026-10-04/`.
+
+
+## OE1-e: alcance das ressalvas e período no índice
+
+As ressalvas continuam a vir do motor por família, com as contas que as
+sustentam. `src/lib/ledger.mjs` distingue a conta de uma ressalva da aritmética
+do valor; `src/views/LinhaView.astro` publica essa distinção nas duas línguas.
+`tests/linha/cadeias-proveniencia.mjs` recusa uma conta numa transcrição sem
+ressalva. `tests/pais/portoes.mjs`, pelo comando `check:ressalvas` no `verify`,
+retira e troca ressalvas em cópias dos recibos construídos e repõe os bytes.
+
+`src/components/ItemDoLivro.astro` e `src/views/LivroView.astro` mostram o período
+da própria linha. `tests/livro/indice.mjs` confere-o e planta a ausência e a
+troca do ano nas duas edições. `scripts/inventario-rotulos.mjs` exige as cento
+e oitenta e seis entradas OE1 de cada edição e planta uma entrada em falta.
+O instrumento `medir-oe1e.py` e as provas desta passagem ficam na pasta de
+medições OE1 indicada acima; os nomes, os acumulados e as observações ficam
+iguais aos da passagem anterior.

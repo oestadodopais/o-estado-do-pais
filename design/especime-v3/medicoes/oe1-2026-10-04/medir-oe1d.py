@@ -348,7 +348,7 @@ def main():
     measures.prove("unidades_acumuladas", rows, units,
                    lambda value: value[executed[0]].update(unit=old[executed[0]]["unit"]),
                    "Retirar o acumulado da unidade na cópia é recusado.", len(executed))
-    measures.count("linhas_de_execucao", executed, len(executed))
+    measures.count("linhas_de_execucao", executed, 62)
 
     crossing = json.loads((SITE / "ledger/cruzamentos/oe1.json").read_text())["rows"]
     def hashes(candidate):

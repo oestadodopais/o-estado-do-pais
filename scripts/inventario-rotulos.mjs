@@ -56,7 +56,7 @@
  * OE1-d: os recibos e as entradas do livro também conferem a unidade escrita na linha, incluindo o acumulado da
  * execução. O inglês vem de UNIDADES, sem criar uma declaração de cartão. Esta conferência lê o campo e as marcas
  * do HTML, separadamente do inventário dos cartões R2. Todos os recibos OE1 têm de ser vistos nas duas edições;
- * cada entrada que o índice rende é conferida, sem pressupor quantas entradas cabem na sua organização.
+ * OE1-e exige também as 186 entradas do índice em cada edição e planta a retirada de uma entrada construída.
  *
  * AS PLANTAS (`--prova`): cópias em memória de páginas construídas, uma por campo e por regra, e cada uma tem de morder
  * com a queixa esperada; as páginas intactas têm de passar (o controlo). E as plantas da construção inteira
@@ -95,6 +95,8 @@ import { getSerie } from '../src/lib/series.mjs';
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const INVENTARIO_DECLARADO = path.join(RAIZ, 'design', 'especime-v3', 'rotulos', 'INVENTARIO.json');
 const LINHAS = loadClaims();
+/** O conjunto fechado OE1, conferido contra as linhas e contra cada edição construída. */
+const LINHAS_OE1_ESPERADAS = 186;
 
 /* --------------------------------------------------------------------------- os leitores próprios */
 
@@ -192,7 +194,16 @@ export function conferirUnidadesOe1(root, { rota, lang, contas }) {
   if (recibo && LINHAS.get(recibo[1])?.study === 'oe-2026') {
     conferir(recibo[1], root.querySelectorAll('.linha-valor-unidade'), 'recibos');
   }
-  for (const item of root.querySelectorAll('.livro-item[data-linha-id]')) {
+  const itens = root.querySelectorAll('.livro-item[data-linha-id]');
+  if (rota === '/livro-razao' || rota === '/en/ledger') {
+    const entradas = itens.filter((item) => LINHAS.get(item.getAttribute('data-linha-id'))?.study === 'oe-2026');
+    if (entradas.length !== LINHAS_OE1_ESPERADAS) {
+      erros.push(`OE1-unidade · ${rota}: o índice tem ${entradas.length} entradas OE1 e deve ter ${LINHAS_OE1_ESPERADAS}`);
+    }
+    const ids = entradas.map((item) => item.getAttribute('data-linha-id'));
+    if (new Set(ids).size !== ids.length) erros.push(`OE1-unidade · ${rota}: o índice repete uma entrada OE1`);
+  }
+  for (const item of itens) {
     conferir(item.getAttribute('data-linha-id') ?? '', item.querySelectorAll('.livro-item-unidade'), 'entradas');
   }
   return erros;
@@ -619,8 +630,10 @@ export function conferirConstrucao(dist) {
   erros.push(...conferirDiplomasRegionais());
   if ((contas.ressalvas ?? 0) !== 2) erros.push(`R2-ressalva · a ressalva do recibo do salário mínimo foi conferida em ${contas.ressalvas ?? 0} página(s), e o recibo tem duas edições`);
   const linhasOe1 = [...LINHAS.values()].filter((l) => l.study === 'oe-2026').length;
+  if (linhasOe1 !== LINHAS_OE1_ESPERADAS) erros.push(`OE1-unidade · o livro tem ${linhasOe1} linhas OE1 e o conjunto fechado declara ${LINHAS_OE1_ESPERADAS}`);
   for (const lang of ['pt', 'en']) {
-    if (contas.oe1.recibos[lang] !== linhasOe1) erros.push(`OE1-unidade · ${lang}: ${contas.oe1.recibos[lang]} recibos conferidos e o livro declara ${linhasOe1}`);
+    if (contas.oe1.recibos[lang] !== LINHAS_OE1_ESPERADAS) erros.push(`OE1-unidade · ${lang}: ${contas.oe1.recibos[lang]} recibos conferidos e o conjunto fechado declara ${LINHAS_OE1_ESPERADAS}`);
+    if (contas.oe1.entradas[lang] !== LINHAS_OE1_ESPERADAS) erros.push(`OE1-unidade · ${lang}: ${contas.oe1.entradas[lang]} entradas do índice conferidas e o conjunto fechado declara ${LINHAS_OE1_ESPERADAS}`);
   }
   return { erros, contas, inventario };
 }
@@ -915,6 +928,14 @@ export function plantas(dist) {
     u.set_content('million euros, cumulative January to July');
     return true;
   }, /^OE1-unidade · \/en\/ledger\/execucao-2026-08-despesa-programa-001 · execucao-2026-08-despesa-programa-001: a unidade diz «million euros, cumulative January to July» e o campo unit da linha nesta edição diz «million euros, cumulative January to August»/);
+  for (const [lang, rel, rota] of [['pt', 'livro-razao/index.html', '/livro-razao'], ['en', 'en/ledger/index.html', '/en/ledger']]) {
+    planta(`oe1-entrada-retirada-do-indice-${lang}`, 'contagem', rel, (r) => {
+      const item = r.querySelector('.livro-item[data-linha-id="oe-2026-despesa-ministerio-saude"]');
+      if (!item) return false;
+      item.remove();
+      return true;
+    }, new RegExp(`^OE1-unidade · ${rota}: o índice tem 185 entradas OE1 e deve ter 186$`));
+  }
   return { resultados, controlo };
 }
 
