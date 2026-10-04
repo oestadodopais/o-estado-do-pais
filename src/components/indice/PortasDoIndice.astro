@@ -21,6 +21,7 @@
  */
 import TituloDeTrabalho from '../TituloDeTrabalho.astro';
 import NomeDaMedida from '../NomeDaMedida.astro';
+import NomeDaSerie from '../serie/NomeDaSerie.astro';
 import { dataDaCasa } from '../../lib/datas.mjs';
 import { ROTULOS_B1 } from '../../data/rotulos-b1.mjs';
 import { HREFLANG } from '../../lib/routes.mjs';
@@ -54,7 +55,13 @@ const r = ROTULOS_B1[lang === 'en' ? 'en' : 'pt'];
             palavras do recibo, soltos lá dentro, eram dois itens lado a lado, com o espaço entre eles perdido
             («Dívida públicanos países da União», visto na captura de 390 px). Dentro de um elemento em linha leem-se
             como uma frase. */}
-        <a class="indice-porta" href={p.href}><span><NomeDaMedida linha={p.linha} lang={lang} escada="cartao" class="indice-nome-da-medida" />{' '}{p.sufixo}</span></a>
+        {p.eixo === 'periodo' ? (
+          /* UMA SÉRIE NO TEMPO (a passagem R3-b, depois do RP3): o nome pelo `NomeDaSerie`, com a marca da série, e
+             a palavra do recibo a seguir, separada como no título da aba do recibo. */
+          <a class="indice-porta" href={p.href}><span><NomeDaSerie id={p.id} lang={lang} class="indice-nome-da-medida" />{' · '}{p.sufixo}</span></a>
+        ) : (
+          <a class="indice-porta" href={p.href}><span><NomeDaMedida linha={p.linha} lang={lang} escada="cartao" class="indice-nome-da-medida" />{' '}{p.sufixo}</span></a>
+        )}
       </li>
     ) : (
       <li>

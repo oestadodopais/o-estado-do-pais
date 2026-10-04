@@ -42,6 +42,7 @@ import { slugsDasUnidades, unidadeDoMapa } from './mapa.mjs';
 import { slugsDasRegioes, regiaoDoSlug } from './regioes.mjs';
 import { areasComPagina } from './areas.mjs';
 import { allSeries } from './series.mjs';
+import { NOMES_DAS_SERIES } from '../data/series-no-tempo.mjs';
 import { getClaim } from './ledger.mjs';
 import { nomeDoCartao } from './nomes.mjs';
 import { todosOsEstudos } from './estudos-b1.mjs';
@@ -124,7 +125,7 @@ export const COMO_ENTRA = {
  * @typedef {{ tipo: 'pagina'|'lugar', chave: ChaveDeRota, href: string, rotulo: string, filhos?: Porta[], colunas?: 'estreitas'|'largas' }} PortaSimples
  * @typedef {{ tipo: 'entrada', chave: ChaveDeRota, href: string, rotulo: string, linha: string }} PortaDeTema
  * @typedef {{ tipo: 'estudo', chave: 'estudo', href: string, ficha: ReturnType<typeof todosOsEstudos>[number] }} PortaDeEstudo
- * @typedef {{ tipo: 'serie', chave: 'serie', href: string, linha: Linha, sufixo: string, nome: string }} PortaDeSerie
+ * @typedef {{ tipo: 'serie', chave: 'serie', href: string, eixo: 'pais'|'periodo', id: string, linha: Linha|null, sufixo: string, nome: string }} PortaDeSerie
  * @typedef {PortaSimples|PortaDeTema|PortaDeEstudo|PortaDeSerie} Porta
  */
 
@@ -188,8 +189,15 @@ function concelhosPorDistrito(lang) {
 
 /**
  * Cada série, com o nome do seu recibo: o nome da medida da linha portuguesa, pela escada do
- * cartão, e a cadeia que o recibo põe a seguir a ele. Só a série de países tem essas palavras
- * declaradas; uma série com outro eixo fecha a construção até alguém dizer como se chama.
+ * cartão, e a cadeia que o recibo põe a seguir a ele. Uma série com um eixo cujas palavras não
+ * estão declaradas fecha a construção até alguém dizer como se chama.
+ *
+ * AS SÉRIES NO TEMPO (eixo `periodo`, do bloco RP3, que aterrou antes deste ramo, e a guarda de
+ * cima apanhou-as no rebase da passagem R3-b): o nome do projeto que `src/data/series-no-tempo.mjs`
+ * declara (o do cartão da medida, ou um nome declarado), o mesmo que o recibo da série põe no seu
+ * título, seguido da palavra do recibo para o que ele é (`livro.serieNoTempo.metaSufixo`, «a série no
+ * tempo»), como o título da aba do recibo. A porta rende o nome pelo `NomeDaSerie` do RP3, com a marca
+ * da série que a régua das frases exige.
  * @param {Lingua} lang
  * @returns {PortaDeSerie[]}
  */
@@ -197,15 +205,28 @@ function series(lang) {
   const s = t(lang);
   return allSeries()
     .map((serie) => {
+      const id = String(serie.id);
+      const href = routePath('serie', lang, { slug: id });
+      if (serie.eixo === 'periodo') {
+        const declarado = NOMES_DAS_SERIES[id];
+        if (!declarado) throw new Error(`índice: a série no tempo «${id}» não tem nome declarado em src/data/series-no-tempo.mjs.`);
+        const linha = 'linha' in declarado ? getClaim(declarado.linha) : null;
+        const nome = linha ? nomeDoCartao(linha, lang)?.texto : 'nome' in declarado ? declarado.nome[lang] : undefined;
+        if (!nome) throw new Error(`índice: a série no tempo «${id}» não tem nome nesta edição.`);
+        return {
+          tipo: /** @type {const} */ ('serie'), chave: /** @type {const} */ ('serie'), eixo: /** @type {const} */ ('periodo'),
+          id, href, linha, sufixo: s.livro.serieNoTempo.metaSufixo, nome,
+        };
+      }
       if (serie.eixo !== 'pais') {
-        throw new Error(`índice: a série «${serie.id}» tem o eixo «${String(serie.eixo)}», e o índice só sabe o nome das séries de países.`);
+        throw new Error(`índice: a série «${id}» tem o eixo «${String(serie.eixo)}», e o índice só sabe o nome das séries de países e das séries no tempo.`);
       }
       const linha = getClaim(String(serie.linha_de_portugal));
       const nome = nomeDoCartao(linha, lang);
-      if (!nome) throw new Error(`índice: a série «${serie.id}» não tem nome de cartão.`);
+      if (!nome) throw new Error(`índice: a série «${id}» não tem nome de cartão.`);
       return {
-        tipo: /** @type {const} */ ('serie'), chave: /** @type {const} */ ('serie'),
-        href: routePath('serie', lang, { slug: String(serie.id) }), linha, sufixo: s.livro.serie.nosPaises, nome: nome.texto,
+        tipo: /** @type {const} */ ('serie'), chave: /** @type {const} */ ('serie'), eixo: /** @type {const} */ ('pais'),
+        id, href, linha, sufixo: s.livro.serie.nosPaises, nome: nome.texto,
       };
     })
     .sort((a, b) => COLACAO[lang].compare(a.nome, b.nome));
