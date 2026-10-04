@@ -1,0 +1,36 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "oe-2026-cem-euros-ministerio-administracao-interna"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "0,94"
+unit: "%"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: null
+document: null
+source_url: null
+access_date: null
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: null
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: "Dividir a despesa bruta deste ministério pela despesa bruta da administração central, multiplicar por cem e arredondar a duas casas decimais. Inclui operações financeiras e transferências internas; não mede a repartição da despesa efetiva consolidada."
+derivation_en: "Divide this ministry's gross expenditure by central government's gross expenditure, multiply by one hundred and round to two decimal places. Includes financial transactions and internal transfers; it does not measure the allocation of consolidated effective expenditure."
+derived_from:
+  - "oe-2026-despesa-ministerio-administracao-interna"
+  - "oe-2026-despesa-bruta-administracao-central"
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: "round ( oe-2026-despesa-ministerio-administracao-interna / oe-2026-despesa-bruta-administracao-central * 100 , 2 )"
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[derivation do motor] Dividir a despesa bruta deste ministério pela despesa bruta da administração central, multiplicar por cem e arredondar a duas casas decimais. Inclui operações financeiras e transferências internas; não mede a repartição da despesa efetiva consolidada. · [note do motor] Euros de cada 100 euros da despesa definida no denominador. Arredondamento a duas casas decimais, metades para fora de zero. O somatório das parcelas arredondadas pode não ser 100. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · oe-2026-cem-euros-ministerio-administracao-interna."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "1 017 609 023"
+unit: "euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "PRESIDÊNCIA DO CONSELHO DE MINISTROS"
+name_source: "p. 1, POR MINISTÉRIOS, código 02"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Entidade Orçamental"
+document:
+  title: "MAPA 4"
+  edition: "2026"
+  locator: "p. 1, POR MINISTÉRIOS, código 02"
+  page: 1
+  kind: "pdf"
+source_url: "https://www.eo.gov.pt/politicaorcamental/OrcamentodeEstado/2026/OrcamentoEstadoAprovado/MapasContabilisticos/OE2026_doc05_Mapa04.pdf#page=1"
+access_date: "2026-10-04"
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "           02 - PRESIDÊNCIA DO CONSELHO DE MINISTROS                                             1 017 609 023"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: p. 1, POR MINISTÉRIOS, código 02. Administração central. Despesa bruta por classificação orgânica, incluindo operações financeiras e transferências internas. ENCARGOS GERAIS DO ESTADO é uma rubrica orgânica, não um ministério governamental. Licença aberta não indicada no documento. A página da Entidade Orçamental declara todos os direitos reservados. Publicam-se os números, excertos e referências; o PDF não é alojado no sítio. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

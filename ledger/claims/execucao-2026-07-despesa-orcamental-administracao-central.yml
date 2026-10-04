@@ -1,0 +1,43 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "execucao-2026-07-despesa-orcamental-administracao-central"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "126 422,5"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "DESPESA ORÇAMENTAL"
+name_source: "INDICADORES_AC!C3"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Entidade Orçamental"
+document:
+  title: "Execução orçamental de julho 2026 – Indicadores da Administração Central (contabilidade pública)"
+  edition: "2026"
+  locator: "INDICADORES_AC!D3; Execução orçamental de julho 2026 – Indicadores da Administração Central (contabilidade pública)"
+  kind: "ficheiro"
+source_url: "https://dados.gov.pt/s/resources/execucao-orcamental-indicadores-da-administracao-central-em-contabilidade-publica/20260902-175028-173f9a48/execucao-indicadores-ac-202607.xls"
+access_date: "2026-10-04"
+reference_date: "2026-07"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "126422.5"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: INDICADORES_AC!D3; Execução orçamental de julho 2026 – Indicadores da Administração Central (contabilidade pública). Licença CC BY, código cc-by no catálogo da API dados.gov.pt, sem versão indicada. Administração central em contabilidade pública, salvo a linha que o rótulo identifica como saldo das administrações públicas. Valores acumulados de janeiro até ao mês de referência. Receita e despesa orçamentais incluem operações financeiras; receita e despesa efetivas excluem-nas. Não se pressupõe fecho aritmético entre os totais e os agregados financeiros deste ficheiro: o relatório identifica a divergência da despesa no orçamento. Excerto da célula numérica em formato General, sem fabricar uma frase. Os XLS não imprimem a unidade. A escala em milhões de euros é conferida pela reconciliação com a conta da administração central na síntese oficial e pelo fecho das funções, conforme o relatório do bloco. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · execucao-2026-07-despesa-orcamental-administracao-central."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []

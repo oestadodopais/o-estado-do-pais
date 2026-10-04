@@ -1,0 +1,43 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "oe-2026-despesa-programa-003"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "600 621 919"
+unit: "euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "REPRESENTAÇÃO EXTERNA"
+name_source: "Mapa1/Registos/Registo[3]/DesignacaoPrograma; Programa=P-003"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "Entidade Orçamental"
+document:
+  title: "MAPA 1 - MAPA DAS DESPESAS POR MISSÃO DE BASE ORGÂNICA, DESAGREGADAS POR PROGRAMAS DOS SUBSETORES"
+  edition: "2026"
+  locator: "Mapa1/Registos/Registo[3]/TotalEmEuros; Programa=P-003"
+  kind: "ficheiro"
+source_url: "https://www.eo.gov.pt/politicaorcamental/OrcamentodoEstado_ficheirosdeDados/Mapa1-2026.xml"
+access_date: "2026-10-04"
+reference_date: "2026"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "<Registo>\n      <Programa>P-003</Programa>\n      <DesignacaoPrograma>REPRESENTAÇÃO EXTERNA</DesignacaoPrograma>\n      <Ministério>NEGÓCIOS ESTRANGEIROS</Ministério>\n      <TotalEmEuros>600621919</TotalEmEuros>\n    </Registo>"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: Mapa1/Registos/Registo[3]/TotalEmEuros; Programa=P-003. Administração central. Despesa bruta do programa, incluindo operações financeiras e transferências internas. Ministério, tal como a fonte: NEGÓCIOS ESTRANGEIROS. Não representa despesa efetiva consolidada. Licença aberta não indicada no XML; a página da Entidade Orçamental declara todos os direitos reservados. Publicam-se a transcrição e a referência, sem alojar o ficheiro no sítio. O Eurostat cobre todas as administrações públicas, incluindo as administrações regional e local; os mapas da lei cobrem a administração central e a segurança social, com o perímetro específico indicado nesta linha. Não são grandezas diretamente comparáveis. Cita-se o ficheiro de dados ou o documento oficial, nunca os portais oe.gov.pt ou Mais Transparência, que têm avisos de direitos. · Cruzado de ResearchHub content/20 Orcamento do Estado · oe-2026-despesa-programa-003."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
