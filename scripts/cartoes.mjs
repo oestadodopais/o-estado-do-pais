@@ -210,8 +210,17 @@ const TIPO = {
   aparelho: 'Bitter',
 };
 
+/* O ESPAÇO FINO DOS MILHARES (U+202F) NÃO EXISTE NOS CINCO TIPOS DO CARTÃO (medido a 04.10.2026 com o
+   fontTools sobre `tipos-cartao/`: nenhum tem o glifo; todos têm o U+00A0). O livro-razão escreve os
+   milhares com U+202F, e um texto com um glifo que o tipo não tem manda o rasterizador procurar outro tipo:
+   na máquina da casa é rápido, e na construção da Vercel, sem tipos do sistema, o lançamento do OE1
+   (`b920f49a`, 04.10.2026 às 14:37 UTC) ficou 45 minutos neste passo sem acabar, com 372 cartões novos
+   cheios de valores com milhares, e a Vercel matou a construção. Aqui, antes de medir e de desenhar, o
+   espaço fino passa a espaço inseparável normal, que os tipos têm e que se lê igual; a cópia visível do
+   registo fica como o modelo a escreveu, e o portão compara os valores com os dois espaços como um só. */
 const escapa = (s) =>
   String(s)
+    .replace(/\u202f/g, '\u00a0')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -665,7 +674,11 @@ let maisCores = 0;
 let provados = 0;
 const recusas = [];
 medeAMemoria(0);
+let desenhados = 0;
 for (const cartao of cartoes) {
+  /* Uma linha a cada cem cartões: numa construção que não acaba, o registo diz onde ficou. */
+  if (desenhados > 0 && desenhados % 100 === 0) console.log(`  cartões · ${desenhados} de ${cartoes.length} desenhados`);
+  desenhados += 1;
   const modelo = modeloDoCartao(cartao);
   for (const dim of DIMENSOES) {
     const { svg, copia } = desenha(modelo, dim);
