@@ -455,8 +455,10 @@ planta('s1-porta-sugestoes-de-errado','scripts/gate-html.mjs',[
 planta('s1-resultado-sem-noindex','scripts/gate-html.mjs',[
  ['sugestoes/obrigado/index.html',r=>r.querySelector('meta[name="robots"]').remove()]
 ],[/S1 resultado: a página do resultado tem de levar uma marca robots «noindex, follow»/]);
+/* H3 (05.10.2026): a nota passou a uma linha e a porta da página «Privacidade»; os prazos moram nessa página, e a planta
+   da nota muda agora uma palavra da linha. */
 planta('s1-nota-mudada','scripts/gate-html.mjs',[
- ['sugestoes/index.html',r=>{const n=r.querySelector('[data-sugestoes-nota]');n.set_content(n.innerHTML.replace('noventa dias','trinta dias'));}]
+ ['sugestoes/index.html',r=>{const n=r.querySelector('[data-sugestoes-nota]');n.set_content(n.innerHTML.replace('decidir a sugestão','publicar a sugestão'));}]
 ],[/S1 formulário \(a nota do que fica guardado\): o texto rendido não é o declarado/]);
 planta('s1-armadilha-anunciada','scripts/gate-html.mjs',[
  ['en/suggestions/index.html',r=>r.querySelector('[data-sugestoes-armadilha]').removeAttribute('aria-hidden')]
@@ -475,8 +477,10 @@ planta('s1-correcoes-sem-a-frase','scripts/gate-html.mjs',[
 planta('s1-voz-language-de-volta','scripts/check-voz.mjs',[
  ['en/suggestions/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>Language</p>')]
 ],[/FRASE RETIRADA QUE VOLTOU A RENDER-SE/,/«Language»/]);
+/* H3 (05.10.2026): a frase com «the language» passou da nota inglesa para o texto inglês da página «Privacidade», e a
+   dispensa foi com ela; a planta muda uma palavra desse texto, que deixa de ser a frase dispensada. */
 planta('s1-voz-nota-mudada-com-language','scripts/check-voz.mjs',[
- ['en/suggestions/index.html',r=>{const n=r.querySelector('[data-sugestoes-nota]');n.set_content(n.innerHTML.replace('ninety days','sixty days'));}]
+ ['en/privacy/index.html',r=>{const n=r.querySelector('[data-privacidade-texto]');n.set_content(n.innerHTML.replace('ninety days','sixty days'));}]
 ],[/FRASE RETIRADA QUE VOLTOU A RENDER-SE/]);
 /* S1-b (03.10.2026): a página do limite dizia «na última hora», e a frase saiu (o achado 6 da leitura a frio do Sol).
    Se voltar, a sentinela das frases retiradas tem de a morder. `--prefixo s1b-` corre só esta. */
@@ -496,9 +500,10 @@ planta('s1c-contacto-de-volta','scripts/gate-html.mjs',[
 planta('s1c-voz-rotulo-do-contacto-de-volta','scripts/check-voz.mjs',[
  ['sugestoes/index.html',r=>r.querySelector('[data-sugestoes-nota]').insertAdjacentHTML('beforebegin',CAMPO_DO_CONTACTO)]
 ],[/FRASE RETIRADA QUE VOLTOU A RENDER-SE/,/Contacto, se quiser resposta \(opcional\)/]);
+/* H3 (05.10.2026): a nota viva é a linha nova, e é ela que a planta muda. */
 planta('s1c-voz-nota-com-outra-palavra','scripts/check-voz.mjs',[
- ['sugestoes/index.html',r=>{const n=r.querySelector('[data-sugestoes-nota]');n.set_content(n.innerHTML.replace('noventa dias','trinta dias'));}]
-],[/linha «viva» que não se rende em rota nenhuma/,/O que fica guardado: o que escrever, a língua e a página de onde veio/]);
+ ['sugestoes/index.html',r=>{const n=r.querySelector('[data-sugestoes-nota]');n.set_content(n.innerHTML.replace('decidir a sugestão','publicar a sugestão'));}]
+],[/linha «viva» que não se rende em rota nenhuma/,/Só guardamos o que escrever e a página de onde veio, para decidir a sugestão/]);
 planta('s1c-voz-este-sitio-fora-da-nota','scripts/check-voz.mjs',[
  ['sugestoes/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>As sugestões fazem crescer este sítio.</p>')]
 ],[/frase com marcador da voz e sem declaração de autorreferência/,/marcador\(es\): ste sítio/]);
@@ -605,3 +610,45 @@ planta('h2-voz-estado-trocado','scripts/check-voz.mjs',[
 planta('h2b-horizonte-trocado','scripts/gate-html.mjs',[
  ['index.html',r=>r.querySelector('[data-estudo-em-curso]').set_content('em curso até 1999')]
 ],[/H2-b: o horizonte do estudo em curso difere da ficha/]);
+
+/* H3 (05.10.2026, a passagem de higiene): a caixa das sugestões numa linha, a página «Privacidade», a frase dos cookies e
+   os países sobrepostos nas faixas dos 27. Fora do verify, com os bytes repostos. `--prefixo h3-` corre só estas. */
+planta('h3-formulario-sem-a-porta-da-privacidade','scripts/gate-html.mjs',[
+ ['sugestoes/index.html',r=>{const a=r.querySelector('[data-sugestoes-nota] a');a.replaceWith(a.text);}]
+],[/H3 formulário \(a porta da nota para a página «Privacidade»\): tem 0 ligação\(ões\), e tem de ter uma/]);
+planta('h3-rodape-sem-a-porta-da-privacidade','scripts/gate-html.mjs',[
+ ['temas/index.html',r=>r.querySelector('[data-porta-privacidade]').remove()]
+],[/H3 porta: esta página tem 0 porta\(s\) da privacidade/]);
+planta('h3-rodape-privacidade-da-outra-edicao','scripts/gate-html.mjs',[
+ ['en/themes/index.html',r=>r.querySelector('[data-porta-privacidade] a').setAttribute('href','/privacidade')]
+],[/H3 porta: a porta da privacidade leva a "\/privacidade", e a página desta edição é "\/en\/privacy"/]);
+planta('h3-privacidade-texto-mudado','scripts/gate-html.mjs',[
+ ['privacidade/index.html',r=>{const n=r.querySelector('[data-privacidade-texto]');n.set_content(n.innerHTML.replace('noventa dias','trinta dias'));}]
+],[/H3 privacidade: o texto rendido não é o declarado/]);
+planta('h3-cookies-guiao-de-seguimento','scripts/gate-html.mjs',[
+ ['agenda/index.html',r=>r.querySelector('head').insertAdjacentHTML('beforeend','<script async src="https://www.googletagmanager.com/gtag/js?id=G-PLANTA"></script>')]
+],[/H3 cookies: a página «Privacidade» diz «Este sítio não usa cookies nem segue quem o lê\.», e dist\/agenda\/index\.html tem um guião de outra origem/]);
+planta('h3-cookies-guiao-que-escreve','scripts/gate-html.mjs',[
+ ['en/agenda/index.html',r=>r.querySelector('head').insertAdjacentHTML('beforeend','<script>document.cookie="visto=1; path=/";</script>')]
+],[/H3 cookies: .* dist\/en\/agenda\/index\.html tem um guião em linha que escreve ou lê cookies/]);
+planta('h3-faixa-title-sem-um-pais','scripts/gate-html.mjs',[
+ ['emprego/index.html',r=>{const m=r.querySelector('[data-faixa-marca="desemprego-de-longa-duracao-2025-paises#SE"]');const t=m.getAttribute('title');m.setAttribute('title',t.slice(0,t.lastIndexOf(' e '))+t.slice(t.lastIndexOf(' ')));}]
+],[/H3: o title da marca «SE» da série «desemprego-de-longa-duracao-2025-paises» diz/]);
+planta('h3-faixa-title-com-outro-valor','scripts/gate-html.mjs',[
+ ['en/employment/index.html',r=>{const m=r.querySelector('[data-faixa-marca="desemprego-de-longa-duracao-2025-paises#PT"]');const t=m.getAttribute('title');m.setAttribute('title',t.slice(0,t.lastIndexOf(' ')+1)+'9,9');}]
+],[/H3: o title da marca «PT» da série «desemprego-de-longa-duracao-2025-paises» diz «Portugal 9,9»/]);
+planta('h3-faixa-cartao-pontos-iguais-no-mesmo-sitio','scripts/check-formas.mjs',[
+ ['emprego/index.html',r=>{const a=r.querySelector('[data-faixa-ue] [data-faixa-marca="desemprego-de-longa-duracao-2025-paises#EE"]');const b=r.querySelector('[data-faixa-ue] [data-faixa-marca="desemprego-de-longa-duracao-2025-paises#SE"]');b.setAttribute('style',a.getAttribute('style'));}]
+],[/F19c · .*desemprego-de-longa-duracao-2025: a marca de SE está a -6 px do eixo e a regra dá 6 px/]);
+planta('h3-faixa-uniao-pontos-iguais-no-mesmo-sitio','scripts/check-formas.mjs',[
+ ['uniao-europeia/index.html',r=>{const a=r.querySelector('[data-faixa-paises] [data-faixa-marca="desemprego-de-longa-duracao-2025-paises#EE"]');const b=r.querySelector('[data-faixa-paises] [data-faixa-marca="desemprego-de-longa-duracao-2025-paises#FR"]');b.setAttribute('style',a.getAttribute('style'));}]
+],[/F20c · .*desemprego-de-longa-duracao-2025-paises: a marca de FR está a -6 px do eixo e a regra dá -2 px/]);
+planta('h3-faixa-uniao-etiqueta-sem-um-pais','scripts/check-formas.mjs',[
+ ['en/european-union/index.html',r=>{const e=r.querySelector('[data-toque-de="desemprego-de-longa-duracao-2025-paises#HR"]');e.querySelectorAll('[data-pais]').at(-1).replaceWith('');}]
+],[/F20h · .*desemprego-de-longa-duracao-2025-paises: a etiqueta de HR: os nomes são de EE, FR, HR, e são de EE, FR, HR, SE/]);
+planta('h3-indice-sem-a-privacidade','tests/indice/indice.mjs',[
+ ['indice/index.html',r=>r.querySelector('main a[href="/privacidade"]').remove()]
+],[/I3 pt: a página \/privacidade \(rota «privacidade»\) foi construída e não tem porta no índice/]);
+planta('h3-voz-este-sitio-noutra-frase-da-privacidade','scripts/check-voz.mjs',[
+ ['privacidade/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>Este sítio diz o que guarda.</p>')]
+],[/marcador\(es\): ste sítio/]);
