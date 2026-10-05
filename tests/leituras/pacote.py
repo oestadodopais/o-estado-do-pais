@@ -50,7 +50,7 @@ with tempfile.TemporaryDirectory(prefix='oedp-pacote-h2-') as tmp:
         return dest
     normal=montar(tmp/'normal',env)
     exige('controlo sem variáveis conserva o diff gerado', 'gerados/' in (normal/'diff.patch').read_text())
-    exige('a cópia vem da cabeça', (normal/'fonte.mjs').read_text()=='export const texto = "novo";\n')
+    exige('controlo limpo: a cópia conserva os bytes esperados', (normal/'fonte.mjs').read_text()=='export const texto = "novo";\n')
     exige('a página construída chega', (normal/'built/index.html').read_bytes()==(sitio/'dist/index.html').read_bytes())
     relativo=tmp/'relativo'
     r=subprocess.run(['sh',str(RAIZ/'scripts/leituras/pacote.sh'),'.',base,cabeca,str(relativo),'brief.md','medicoes/relatorio.md','index.html'],cwd=sitio,env=env,capture_output=True,text=True)
@@ -59,12 +59,20 @@ with tempfile.TemporaryDirectory(prefix='oedp-pacote-h2-') as tmp:
     escrever(sitio,'fonte.mjs','bytes posteriores ao commit\n')
     sujo=tmp/'sujo'
     r=subprocess.run([*cmd,str(sujo),str(sitio/'brief.md'),str(sitio/'medicoes/relatorio.md')],env=env,capture_output=True,text=True)
-    exige('planta: ficheiro seguido alterado recusa o pacote com a razão',r.returncode!=0 and not sujo.exists() and 'modificações em ficheiros seguidos' in r.stderr)
+    exige('planta: bytes do sítio diferentes da cabeça são recusados antes da cópia',
+          (sitio/'fonte.mjs').read_text()!=git(sitio,'show',f'{cabeca}:fonte.mjs')+'\n'
+          and r.returncode!=0 and not sujo.exists()
+          and 'O pacote recusa a árvore do repositório: há modificações em ficheiros seguidos por comitar.' in r.stderr)
+    casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stderr.splitlines() if l.startswith('ValueError: O pacote recusa')))
     escrever(sitio,'fonte.mjs','export const texto = "novo";\n')
     env.update(PACOTE_RETIRA='gerados/*',PACOTE_MOTOR=f'"{motor}" {base_motor} {cabeca_motor} fontes/*',PACOTE_EXTRA='extra')
     escrever(motor,'publisher/cópia com espaço.py','bytes posteriores ao commit\n')
     r=subprocess.run([*cmd,str(tmp/'motor-sujo'),str(sitio/'brief.md'),str(sitio/'medicoes/relatorio.md')],env=env,capture_output=True,text=True)
-    exige('planta: árvore do motor com alteração seguida também é recusada',r.returncode!=0 and not (tmp/'motor-sujo').exists() and 'árvore do motor' in r.stderr)
+    exige('planta: bytes do motor diferentes da cabeça são recusados antes da cópia',
+          (motor/'publisher/cópia com espaço.py').read_text()!=git(motor,'show',f'{cabeca_motor}:publisher/cópia com espaço.py')+'\n'
+          and r.returncode!=0 and not (tmp/'motor-sujo').exists()
+          and 'O pacote recusa a árvore do motor: há modificações em ficheiros seguidos por comitar.' in r.stderr)
+    casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stderr.splitlines() if l.startswith('ValueError: O pacote recusa')))
     escrever(motor,'publisher/cópia com espaço.py','print("ensaio")\n')
     pacote=montar(tmp/'com-motor',env)
     def conferir(p):
@@ -93,10 +101,19 @@ with tempfile.TemporaryDirectory(prefix='oedp-pacote-h2-') as tmp:
     cmd[-1]=cabeca_aviso
     aviso=montar(tmp/'com-aviso',env)
     exige('um relatório não conferido chega com o código de aviso', 'código de saída do conferir-relatorio.py: 1' in (aviso/'numeros-do-relatorio.txt').read_text())
-    (sitio/'medicoes/relatorio.md').unlink()
+    # O relatório inexistente não altera um ficheiro seguido. A recusa tem de
+    # vir da conferência do relatório, e não da guarda da árvore limpa.
+    assert git(sitio,'status','--porcelain','--untracked-files=no')==''
     recusado=tmp/'recusado'
-    r=subprocess.run([*cmd,str(recusado),str(sitio/'brief.md'),str(sitio/'medicoes/relatorio.md')],env=env,capture_output=True)
-    exige('a planta do relatório ilegível impede a criação do pacote',r.returncode!=0 and not recusado.exists())
+    r=subprocess.run([*cmd,str(recusado),str(sitio/'brief.md'),str(sitio/'medicoes/relatorio-ausente.md')],env=env,capture_output=True,text=True)
+    exige('planta: relatório inexistente recusa pela conferência do relatório',
+          r.returncode!=0 and not recusado.exists()
+          and 'conferir-relatorio.py: não existe o relatório' in r.stdout
+          and 'código de saída do conferir-relatorio.py: 2' in r.stdout
+          and 'O pacote não se cria.' in r.stderr
+          and 'modificações em ficheiros seguidos' not in r.stderr
+          and git(sitio,'status','--porcelain','--untracked-files=no')=='')
+    casos[-1].update(codigo=r.returncode, queixa=next(l for l in r.stdout.splitlines() if l.startswith('conferir-relatorio.py: não existe o relatório')).replace(str(tmp), '<ensaio>'))
 saida={'ok':all(c['passou'] for c in casos),'casos':casos}
 if '--json' in sys.argv: Path(sys.argv[sys.argv.index('--json')+1]).write_text(json.dumps(saida,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(saida,ensure_ascii=False,indent=2))
