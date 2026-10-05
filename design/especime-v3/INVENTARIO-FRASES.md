@@ -3424,8 +3424,8 @@ protegidas pelo detetor de privacidade sobre as páginas construídas. O nome
 
 | Classe | Frase | Bloco | Estado | Razão |
 | --- | --- | --- | --- | --- |
-| conteudo | 54 revisões de proveniência | c1f | viva | Contagem do livro após as dez entradas de acesso, sem mudança dos valores. |
-| conteudo | 54 provenance revisions | c1f | viva | Contagem do livro após as dez entradas de acesso, sem mudança dos valores. |
+| conteudo | 54 revisões de proveniência | c1f | retirada | O C2 acrescentou dezoito entradas de proveniência (o acesso e o excerto das nove linhas relidas); a contagem vigente está na secção C2. |
+| conteudo | 54 provenance revisions | c1f | retirada | O C2 acrescentou dezoito entradas de proveniência (o acesso e o excerto das nove linhas relidas); a contagem vigente está na secção C2. |
 
 ## PP1 · a primeira página de um leitor comum (28.09.2026)
 
@@ -4024,3 +4024,10 @@ A primeira página lê a unidade em `unidades-dos-cartoes.mjs` para a linha que 
 | `livro.serieNoTempo.uneDezena` | e, entre espaços | hífen |
 
 Os anos ingleses usam pares, como «nineteen ninety-two» e «twenty twenty-six», e o começo do milénio conserva «two thousand» e os anos seguintes por extenso. O conversor tem provas próprias. As exclusões só aparecem quando uma linha fica sem base utilizável no modo indexado; nenhuma página deste bloco usa esse modo.
+
+## C2 · as nove revisões da Eurostat de 02.10.2026, relidas (05.10.2026)
+
+| Classe | Frase | Bloco | Estado | Razão |
+| --- | --- | --- | --- | --- |
+| conteudo | 72 revisões de proveniência | c2 | viva | Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
+| conteudo | 72 provenance revisions | c2 | viva | Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
