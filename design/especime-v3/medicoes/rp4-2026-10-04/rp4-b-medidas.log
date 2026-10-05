@@ -1,0 +1,25 @@
+{
+  "cabeca": "2523e3a022daec489476b9c77b5707892aca9c84",
+  "portoes": {
+    "build": {
+      "codigo": 0,
+      "inicio": "2026-10-05T07:51:25Z",
+      "fim": "2026-10-05T07:54:33Z",
+      "segundos": 188
+    },
+    "verify": {
+      "codigo": 0,
+      "inicio": "2026-10-05T07:54:33Z",
+      "fim": "2026-10-05T08:11:33Z",
+      "segundos": 1020
+    },
+    "typecheck": {
+      "codigo": 0,
+      "inicio": "2026-10-05T08:11:33Z",
+      "fim": "2026-10-05T08:11:33Z",
+      "segundos": 0
+    }
+  },
+  "plantas_k20": 22,
+  "capturas": 60
+}

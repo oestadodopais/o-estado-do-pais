@@ -1,0 +1,63 @@
+{
+  "comando": "python3 design/especime-v3/medicoes/rp4-2026-10-04/conferir-higiene.py",
+  "ficheiros": 382,
+  "quantidade": 4,
+  "achados": [
+    "DECISIONS.md",
+    "design/especime-v3/medicoes/h2-2026-10-04/github-ensaio.log",
+    "design/especime-v3/medicoes/h2-2026-10-04/i194-historico.log",
+    "design/especime-v3/medicoes/h2-2026-10-04/limpar-registos.py"
+  ],
+  "conhecido_positivo": {
+    "classes_detetadas": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "frase_limpa_sem_achado": true
+  },
+  "herdados_de_main": [
+    {
+      "ficheiro": "DECISIONS.md",
+      "identico_a_main": true,
+      "sha256": "53b7dd4b09ff3141a96a597c2e42e7d765502a887907f46cd0ad0e3c28dbcdad",
+      "classes": {
+        "caminho_absoluto": true,
+        "pasta_pessoal_ou_nome_do_utilizador": false,
+        "nome_de_autor": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/h2-2026-10-04/github-ensaio.log",
+      "identico_a_main": true,
+      "sha256": "70ce8735614137c9c43fc6e0c6cd2e9e434c21e0b342b2476ab8b6a4e6262544",
+      "classes": {
+        "caminho_absoluto": true,
+        "pasta_pessoal_ou_nome_do_utilizador": false,
+        "nome_de_autor": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/h2-2026-10-04/i194-historico.log",
+      "identico_a_main": true,
+      "sha256": "d8266f398be38404f6c48eee56835a3f82a75c77776ca59f3ef9b3a017dadb9f",
+      "classes": {
+        "caminho_absoluto": true,
+        "pasta_pessoal_ou_nome_do_utilizador": false,
+        "nome_de_autor": false
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/h2-2026-10-04/limpar-registos.py",
+      "identico_a_main": true,
+      "sha256": "cc841cbd286e35d666d5ea65f2593b45cdfd599abe417e9cd796a0d41501d2d6",
+      "classes": {
+        "caminho_absoluto": true,
+        "pasta_pessoal_ou_nome_do_utilizador": false,
+        "nome_de_autor": false
+      }
+    }
+  ]
+}

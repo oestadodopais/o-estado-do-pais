@@ -1,0 +1,256 @@
+{
+  "geometria": [
+    {
+      "lang": "pt",
+      "nome": "ponto deslocado",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · coordenadas ou identidade dos segmentos diferem do livro"
+    },
+    {
+      "lang": "pt",
+      "nome": "marca trocada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · marcas do eixo valor diferem da recomposição"
+    },
+    {
+      "lang": "pt",
+      "nome": "série trocada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · coordenadas ou identidade dos segmentos diferem do livro"
+    },
+    {
+      "lang": "pt",
+      "nome": "guião no desenho",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · guião ou animação no desenho estático"
+    },
+    {
+      "lang": "pt",
+      "nome": "traço transformado",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · elemento ou atributo que altera a forma estática"
+    },
+    {
+      "lang": "pt",
+      "nome": "traço escondido por classe",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · classe do traço alterada"
+    },
+    {
+      "lang": "pt",
+      "nome": "algarismo fora da escala",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · geometria ou texto acrescentado fora da escala"
+    },
+    {
+      "lang": "en",
+      "nome": "ponto deslocado",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · coordenadas ou identidade dos segmentos diferem do livro"
+    },
+    {
+      "lang": "en",
+      "nome": "marca trocada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · marcas do eixo valor diferem da recomposição"
+    },
+    {
+      "lang": "en",
+      "nome": "série trocada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · coordenadas ou identidade dos segmentos diferem do livro"
+    },
+    {
+      "lang": "en",
+      "nome": "guião no desenho",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · guião ou animação no desenho estático"
+    },
+    {
+      "lang": "en",
+      "nome": "traço transformado",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · elemento ou atributo que altera a forma estática"
+    },
+    {
+      "lang": "en",
+      "nome": "traço escondido por classe",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · classe do traço alterada"
+    },
+    {
+      "lang": "en",
+      "nome": "algarismo fora da escala",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · geometria ou texto acrescentado fora da escala"
+    }
+  ],
+  "modulo": [
+    {
+      "nome": "determinismo, todos os pontos e todas as séries da casa",
+      "passou": true
+    },
+    {
+      "nome": "escala conhecida: zero e dez nas pontas do campo",
+      "passou": true
+    },
+    {
+      "nome": "um ponto a menos muda as coordenadas",
+      "passou": true
+    },
+    {
+      "nome": "uma lacuna declarada quebra a linha sem interpolar",
+      "passou": true
+    },
+    {
+      "nome": "unidades diferentes recusadas no modo unidade",
+      "passou": true
+    },
+    {
+      "nome": "duas cadências e unidades indexadas a cem em janeiro de dois mil e quinze",
+      "passou": true
+    },
+    {
+      "nome": "linha sem o período de base recusada com razão",
+      "passou": true
+    },
+    {
+      "nome": "base nula recusada",
+      "passou": true
+    },
+    {
+      "nome": "períodos por extenso nas duas edições",
+      "passou": true
+    }
+  ],
+  "cartoes": [
+    {
+      "lang": "pt",
+      "nome": "cartão sem série a desenhar",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "K20 · ipc-variacao-media-12-meses: cartão sem série a desenhar"
+    },
+    {
+      "lang": "pt",
+      "nome": "gráfico retirado",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "K20 · ipc-variacao-homologa: falta o desenho da série da linha"
+    },
+    {
+      "lang": "pt",
+      "nome": "porta noutra edição",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "K20 · ipc-variacao-homologa: porta para outro recibo ou edição"
+    },
+    {
+      "lang": "pt",
+      "nome": "gráfico depois da leitura",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "K20 · ipc-variacao-homologa: gráfico fora do lugar depois do valor"
+    },
+    {
+      "lang": "en",
+      "nome": "cartão sem série a desenhar",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "K20 · ipc-variacao-media-12-meses: cartão sem série a desenhar"
+    },
+    {
+      "lang": "en",
+      "nome": "gráfico retirado",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "K20 · ipc-variacao-homologa: falta o desenho da série da linha"
+    },
+    {
+      "lang": "en",
+      "nome": "porta noutra edição",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "K20 · ipc-variacao-homologa: porta para outro recibo ou edição"
+    },
+    {
+      "lang": "en",
+      "nome": "gráfico depois da leitura",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "K20 · ipc-variacao-homologa: gráfico fora do lugar depois do valor"
+    }
+  ],
+  "primeira": [
+    {
+      "lang": "pt",
+      "nome": "série inexistente",
+      "controlo": true,
+      "mordeu": true,
+      "queixa": "livro-razão: a série «serie-inexistente» não existe em ledger/series/."
+    },
+    {
+      "lang": "pt",
+      "nome": "série de países",
+      "controlo": true,
+      "mordeu": true,
+      "queixa": "primeira página: a série do bloco não é uma série no tempo."
+    },
+    {
+      "lang": "pt",
+      "nome": "gráfico retirado do bloco",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "RP4 · falta a série da inflação no bloco dos preços"
+    },
+    {
+      "lang": "pt",
+      "nome": "gráfico fora da coluna das barras",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "RP4 · barras e série fora do mesmo contentor"
+    },
+    {
+      "lang": "en",
+      "nome": "série inexistente",
+      "controlo": true,
+      "mordeu": true,
+      "queixa": "livro-razão: a série «serie-inexistente» não existe em ledger/series/."
+    },
+    {
+      "lang": "en",
+      "nome": "série de países",
+      "controlo": true,
+      "mordeu": true,
+      "queixa": "primeira página: a série do bloco não é uma série no tempo."
+    },
+    {
+      "lang": "en",
+      "nome": "gráfico retirado do bloco",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "RP4 · falta a série da inflação no bloco dos preços"
+    },
+    {
+      "lang": "en",
+      "nome": "gráfico fora da coluna das barras",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "RP4 · barras e série fora do mesmo contentor"
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "d64bf97500414e9de4e576dc2dd150703fc6810b",
+ "cabeca": "2523e3a022daec489476b9c77b5707892aca9c84",
  "contas": {
-  "paginas": 7466,
-  "paginas_com_cartoes": 656,
+  "paginas": 7882,
+  "paginas_com_cartoes": 688,
   "cartoes": 5290,
   "familias": {
    "nacional": 318,
@@ -36,6 +36,20 @@
    "termos": 8,
    "uniao": 42,
    "paises": 20
+  },
+  "oe1": {
+   "recibos": {
+    "pt": 186,
+    "en": 186
+   },
+   "entradas": {
+    "pt": 186,
+    "en": 186
+   },
+   "acumuladas": {
+    "pt": 124,
+    "en": 124
+   }
   },
   "faixas_dos_paises": 20,
   "ressalvas": 2

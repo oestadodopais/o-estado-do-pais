@@ -1,0 +1,34 @@
+---
+/** RP4: só a escala escreve algarismos; cada segmento é recomposto pela F21. */
+import { serieDoPais, segmentoVisivel } from '../../lib/formas/serie-do-pais.mjs';
+import { tituloDaSerie, legendasDasExclusoes } from '../../lib/formas/palavras-da-serie.mjs';
+import '../../styles/serie-do-pais.css';
+
+const { ids, lang, modo = 'unidade', largura = 360, altura = 200, nomeVisivel = false } = Astro.props;
+const desenho = serieDoPais(ids, modo, largura, altura);
+const titulo = tituloDaSerie(desenho.linhas, lang, nomeVisivel);
+if (/\d/.test(titulo)) throw new Error('RP4: o título do desenho tem algarismos fora da escala.');
+const g = desenho.campo;
+const exclusoes = legendasDasExclusoes(desenho.excluidas, lang);
+---
+<svg class="serie-do-pais" style={`max-width: ${largura}px;`} data-titulo={nomeVisivel ? 'periodo-unidade' : 'nome-periodo'} data-forma="serie-do-pais" data-series={ids.join(',')} data-modo={modo} viewBox={`0 0 ${largura} ${altura}`} role="img">
+  <title>{titulo}</title>
+  {desenho.marcasY.map((m) => <g data-eixo="valor">
+    <line class:list={['serie-do-pais-guia', m.valor === 0 && 'serie-do-pais-zero']} x1={g.esquerda} x2={g.direita} y1={m.y} y2={m.y} />
+    <text data-nonledger="escala-de-instrumento" x={m.x} y={m.y} text-anchor="end" dominant-baseline="middle">{m.texto}</text>
+  </g>)}
+  {desenho.marcasX.map((m) => <g data-eixo="tempo">
+    <line class="serie-do-pais-guia" x1={m.x} x2={m.x} y1={g.fundo} y2={g.fundo + 4} />
+    <text data-nonledger="escala-de-instrumento" x={m.x} y={m.y} text-anchor={m.ancora}>{m.texto}</text>
+  </g>)}
+  {desenho.linhas.map(l => l.segmentos.map(pontos => {
+    const segmento = segmentoVisivel(pontos);
+    return segmento.tipo === 'ponto'
+      ? <circle class="serie-do-pais-linha" data-serie-linha={l.id} cx={segmento.cx} cy={segmento.cy} r={segmento.r} />
+      : <polyline class="serie-do-pais-linha" data-serie-linha={l.id} points={segmento.pontos} />;
+  }))}
+</svg>
+
+{exclusoes.length > 0 && <ul class="serie-exclusoes" data-serie-exclusoes={ids.join(',')}>
+  {exclusoes.map(l => <li data-serie-excluida={l.id}>{l.texto}</li>)}
+</ul>}

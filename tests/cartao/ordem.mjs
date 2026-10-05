@@ -30,7 +30,7 @@
 import { parse } from 'node-html-parser';
 import { t } from '../../src/i18n/strings.mjs';
 
-const COMPARACAO = ['cartao-medida-regua', 'cartao-medida-faixa', 'cartao-medida-faixa-concelho', 'cartao-medida-ressalva'];
+const COMPARACAO = ['cartao-medida-serie', 'cartao-medida-regua', 'cartao-medida-faixa', 'cartao-medida-faixa-concelho', 'cartao-medida-ressalva'];
 
 /** O nome de uma peça de um cartão de medida, pela classe. @param {any} el */
 function pecaDoCartao(el) {

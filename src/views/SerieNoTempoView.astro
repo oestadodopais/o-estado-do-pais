@@ -24,6 +24,8 @@
  * NADA DE CARTÃO DE PARTILHA POR SÉRIE: a série entra no estudo de dados dos
  * domínios, como as linhas dos concelhos (a decisão 4 do brief RP3).
  */
+import SerieDoPais from '../components/formas/SerieDoPais.astro';
+import { tabelaPorAnos } from '../lib/formas/serie-do-pais.mjs';
 import Base from '../layouts/Base.astro';
 import NomeDaSerie from '../components/serie/NomeDaSerie.astro';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
@@ -52,6 +54,8 @@ const st = s.livro.serieNoTempo;
 const serie = getSerie(id);
 if (serie.eixo !== 'periodo') throw new Error(`série «${id}»: o recibo de uma série no tempo é só para eixo: periodo.`);
 const pontos = pontosDaSerie(serie);
+const anos = tabelaPorAnos(serie);
+const colunas = serie.periodicidade === 'mensal' ? st.meses : serie.periodicidade === 'trimestral' ? st.trimestres : serie.periodicidade === 'semestral' ? st.semestres : [s.livro.serie.valorK];
 const derivada = Array.isArray(serie.derived_from) && serie.derived_from.length > 0;
 const documento = /** @type {Record<string, string> | null} */ (serie.document ?? null);
 const bandeiras = /** @type {Record<string, string>} */ (serie.bandeiras ?? {});
@@ -165,31 +169,31 @@ const campoDaConta = lang === 'en' ? 'derivation_en' : 'derivation';
 
       <section class="linha-bloco serie-pontos" aria-labelledby="pontos">
         <h2 class="linha-bloco-titulo" id="pontos">{st.pontosK}</h2>
-        <div class:list={['serie-pontos-corpo', marcasNaTabela.length > 0 && 'serie-pontos-com-marcas']}>
+        <div class="serie-grafico"><SerieDoPais ids={[id]} lang={lang} /></div>
+        <div class="serie-pontos-corpo">
+          <div class="serie-tabela-janela" tabindex="0" role="region" aria-labelledby="pontos">
           <table class="serie-tabela serie-tabela-tempo" data-serie-tabela={id}>
             <thead>
-              <tr>
-                <th scope="col">{st.periodoK}</th>
-                <th scope="col" class="serie-num">{s.livro.serie.valorK}</th>
-                <th scope="col">{s.livro.serie.marcaK}</th>
-              </tr>
+              <tr><th scope="col">{st.anoK}</th>{colunas.map((c) => <th scope="col">{c}</th>)}</tr>
             </thead>
             <tbody>
-              {pontos.map((p, i) => {
-                const periodo = String(p.periodo);
-                const marca = p.bandeira ? String(p.bandeira) : null;
-                return (
-                  <tr data-serie-ponto={`${id}#${periodo}`}>
-                    <th scope="row">
-                      <DataDaSerie serie={id} campo={`pontos.${i}.periodo`} valor={periodo} lang={lang} />
-                    </th>
-                    <td class="serie-num"><PontoDaSerie serie={id} chave={periodo} /></td>
-                    <td class="serie-marca">{marca && <span data-ponto-bandeira={`${id}#${periodo}`}>{marca}</span>}</td>
-                  </tr>
-                );
-              })}
+              {anos.map(({ ano, celulas }) => <tr data-serie-ano={ano}>
+                <th scope="row" data-nonledger="escala-de-instrumento">{ano}</th>
+                {celulas.map(({ periodo, ponto, lacuna }) => <td class="serie-num" data-serie-celula={periodo}>
+                  {ponto && <>
+                    <DataDaSerie serie={id} campo={`pontos.${ponto.indice}.periodo`} valor={periodo} lang={lang} class="vh" />{' '}
+                    <PontoDaSerie serie={id} chave={periodo} />
+                    {ponto.bandeira && <span class="serie-marca" data-ponto-bandeira={`${id}#${periodo}`}>{ponto.bandeira}</span>}
+                  </>}
+                  {lacuna && <span data-serie-lacuna-tabela={`${id}#${periodo}`}>
+                    <DataDaSerie serie={id} campo={`lacunas.${lacuna.indice}.periodo`} valor={periodo} lang={lang} class="vh" />{' '}
+                    <span>{st.semValor}</span>
+                  </span>}
+                </td>)}
+              </tr>)}
             </tbody>
           </table>
+          </div>
           {
             marcasNaTabela.length > 0 && (
               <div class="serie-marcas" data-serie-marcas={id}>

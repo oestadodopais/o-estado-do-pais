@@ -27,6 +27,11 @@
  * fora das marcas, carácter a carácter. O título da dobra («Os números deste bloco») fica fora da marca
  * e no inventário, como a palavra «Fonte».
  */
+import { NOMES_DAS_SERIES } from '../../data/series-no-tempo.mjs';
+import { unidadeDoCartao } from '../../data/unidades-dos-cartoes.mjs';
+import NomeDaSerie from '../serie/NomeDaSerie.astro';
+import SerieDoPais from '../formas/SerieDoPais.astro';
+import { routePath } from '../../lib/routes.mjs';
 import Frase from '../Frase.astro';
 import Claim from '../Claim.astro';
 import CampoDaLinha from '../CampoDaLinha.astro';
@@ -43,6 +48,9 @@ import { linguaDaFonte } from '../../i18n/lingua-dos-titulos.mjs';
 const { id, lang = 'pt', nivel = 'h3' } = Astro.props;
 const s = t(lang);
 const b = blocoResolvido(id, lang);
+const declaracaoDaSerie = b.serie ? NOMES_DAS_SERIES[b.serie] : null;
+const unidadeDaSerie = declaracaoDaSerie && 'linha' in declaracaoDaSerie ? unidadeDoCartao(declaracaoDaSerie.linha, lang) : null;
+if (b.serie && !unidadeDaSerie) throw new Error('RP4: a série do bloco exige a unidade declarada da linha.');
 const Titulo = nivel;
 const idDoTitulo = `bloco-${id}-t`;
 const porta = PORTAS_DOS_BLOCOS[id];
@@ -53,7 +61,10 @@ const destino = ENTRADAS.find((e) => e.id === porta.entrada);
   <section class="pp-bloco" data-bloco={b.id} data-instrumento={`bloco-${b.id}`} aria-labelledby={idDoTitulo}>
     <Titulo class="pp-titulo" id={idDoTitulo} data-bloco-titulo data-bloco-declarado><Frase partes={b.titulo} lang={lang} /></Titulo>
     <p class="pp-frase" data-bloco-frase data-bloco-declarado><Frase partes={b.frase} lang={lang} selos /></p>
-    {b.desenho && <DesenhoDoBloco modelo={b.desenho} lang={lang} bloco={b.id} />}
+    {b.serie ? <div class="pp-ilustracao">
+      {b.desenho && <DesenhoDoBloco modelo={b.desenho} lang={lang} bloco={b.id} />}
+      <a class="pp-serie" data-bloco-serie={b.serie} href={routePath('serie', lang, { slug: b.serie })}><NomeDaSerie id={b.serie} lang={lang} class="pp-serie-nome" /><span class="pp-serie-unidade" data-bloco-serie-unidade={b.serie} data-bloco-declarado><Frase partes={unidadeDaSerie} lang={lang} /></span><SerieDoPais ids={[b.serie]} lang={lang} nomeVisivel /></a>
+    </div> : b.desenho && <DesenhoDoBloco modelo={b.desenho} lang={lang} bloco={b.id} />}
     <div class="pp-notas">
     <p class="pp-ressalva" data-bloco-ressalva data-bloco-declarado><Frase partes={b.ressalva} lang={lang} /></p>
     {b.pecas.filter((p) => p.mostra).map((p) => p.caixa ? (

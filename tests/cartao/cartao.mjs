@@ -252,6 +252,7 @@ import {
   linguaDoTituloDoDocumento,
 } from '../../src/i18n/lingua-dos-titulos.mjs';
 import { hasClaim, loadClaims } from '../../src/lib/ledger.mjs';
+import { conferirSeriesDosCartoes, plantasDosCartoesComSerie } from './series.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, serieDaLinhaDoPortao } from '../../scripts/series-do-portao.mjs';
 import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa, plantasDosEmpates } from './faixa.mjs';
 import { RESSALVAS_DA_UNIAO } from '../../src/data/ressalvas-da-uniao.mjs';
@@ -303,6 +304,7 @@ const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
 const PECAS_PERMITIDAS = new Set([
   'cartao-medida-nome',
   'cartao-medida-valor',
+  'cartao-medida-serie', // RP4: a condição, a ordem e a porta são conferidas pela K20.
   /* L1, 24.09.2026: a leitura do que o número significa, por baixo dele. É o
      bloco novo do bloco, e o único: o que a K17 confere (o texto, os ramos, os
      algarismos e as linhas citadas) vive em `tests/cartao/leituras.mjs`. */
@@ -574,6 +576,7 @@ function corre(dist) {
         }
       }
 
+      erros.push(...conferirSeriesDosCartoes(root, langPagina).erros.map((e) => `${e} · ${rota}`));
       for (const cartao of root.querySelectorAll('[data-cartao-medida]')) {
         const id = cartao.getAttribute('data-cartao-medida') ?? '';
         contas.cartoes++;
@@ -1913,6 +1916,22 @@ if (PROVA) {
     r.contas.leituras_plantas = plantas.length;
     r.contas.leituras_plantas_mordidas = plantas.filter((x) => x.mordeu).length;
   }
+}
+
+/* K20: as linhas presas veem-se na série própria ou na comparação do cartão. */
+{
+  const vistos = { pt: new Set(), en: new Set() };
+  const plantas = [];
+  for (const lang of ['pt', 'en']) {
+    const doc = documentoDosAssuntos(DIST, lang);
+    for (const id of conferirSeriesDosCartoes(doc, lang).vistos) vistos[lang].add(id);
+    if (PROVA) plantas.push(...plantasDosCartoesComSerie(doc.outerHTML, lang).map((p) => ({ lang, ...p })));
+  }
+  for (const lang of ['pt', 'en']) for (const c of loadClaims().values()) {
+    if (c.serie && !vistos[lang].has(c.id)) r.erros.push(`K20 · ${lang}/${c.id}: linha presa sem desenho num cartão`);
+  }
+  r.contas.series_k20 = { pt: [...vistos.pt], en: [...vistos.en], plantas };
+  for (const p of plantas) if (!p.mordeu) r.erros.push(`K20 NÃO MORDEU ${p.nome}: ${p.queixa}`);
 }
 
 /* K19 · AS PLANTAS DA ORDEM DO CARTÃO (bloco K2, 02.10.2026), sobre cópias em memória de páginas construídas. */

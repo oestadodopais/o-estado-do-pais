@@ -227,7 +227,7 @@ try {
     if (!r.blocos) falhas.push(`${rota} a ${largura} px (${tema}): nenhum bloco medido; a célula não mediu nada`);
   }
 
-  /* ------------------------------------------------------------ as catorze plantas da maqueta */
+  /* ------------------------------------------------------------ as plantas da maqueta */
   const plantas = [];
   if (process.argv.includes('--prova')) {
     const original = await fs.readFile(path.join(DIST, 'index.html'), 'utf8');
@@ -247,6 +247,7 @@ try {
       ['a linha do limiar nos 50', (r) => { const x = bloco(r, 'estado').querySelector('.pp-ref'); estilo(x, (s) => s.replace(/bottom:[\d.]+%/, `bottom:${(50 / 93.5 * 100).toFixed(4)}%`)); }, /G4 · a linha de referência está a/],
       ['a linha a entrar no painel da União', (r) => estilo(bloco(r, 'estado').querySelector('.pp-ref'), (s) => `${s};right:-160px`), /G4 · a linha do valor de referência entra no painel da União/],
       ['uma cor numa coluna', (r) => estilo(bloco(r, 'estado').querySelector('[data-barra="divida-publica-2025-ue"] .pp-col-barra'), (s) => `${s};background:var(--cobalt)`), /G5 · rgb\(31, 78, 140\) em span\.pp-col-barra/],
+      ['preenchimento preto nas guias da série', (r) => estilo(bloco(r, 'precos').querySelector('.serie-do-pais-guia'), (s) => `${s};fill:rgb(0, 0, 0)`), /G5 · rgb\(0, 0, 0\) em line/],
       ['o âmbar no rótulo', (r) => bloco(r, 'estado').querySelector('.pp-ref-rotulo').setAttribute('style', `${bloco(r, 'estado').querySelector('.pp-ref-rotulo').getAttribute('style')};color:var(--amber)`), /G5 · âmbar fora da linha de referência, em p\.pp-ref-rotulo/],
     ];
     for (const [nome, estraga, espera] of PLANTAS) {

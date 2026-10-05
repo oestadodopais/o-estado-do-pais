@@ -1,0 +1,25 @@
+{
+  "inicio": "2026-10-05T06:55:57.855560+00:00",
+  "intervalo_segundos": 300,
+  "limite_segundos": 1800,
+  "conferencias": [
+    {
+      "hora": "2026-10-05T06:55:57.855560+00:00",
+      "presente": false
+    },
+    {
+      "hora": "2026-10-05T07:01:35.752166+00:00",
+      "presente": false
+    },
+    {
+      "hora": "2026-10-05T07:06:30.939034+00:00",
+      "presente": false
+    },
+    {
+      "hora": "2026-10-05T07:11:37.010674+00:00",
+      "presente": true
+    }
+  ],
+  "resultado": "leitura e plantas recebidas antes do rebase",
+  "fim": "2026-10-05T07:11:37.010674+00:00"
+}
