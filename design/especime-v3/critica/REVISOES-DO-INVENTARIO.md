@@ -650,3 +650,10 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | --- | --- | --- | --- |
 | h3 | 8 cadeias novas, 2 retiradas | por ler | Claude Opus 5.5, construtor do H3: a linha da nota da caixa das sugestões e a sua porta, o título, o texto e a descrição da página «Privacidade», nas duas línguas, todos do diretor à letra (o §5 do brief H3) menos o inglês do texto da página, que é a edição fiel; e as duas linhas da nota de 03.10.2026, retiradas com a razão. Três exceções da voz mudaram em `VOZ-MARCADORES.md` (duas entram, uma alarga as rotas, uma sai), e a dispensa de «language» passou da nota para o texto inglês da página. A leitura cruzada faz-se antes da fusão. |
 | h3 (a aterragem) | 1 cadeia mudada nas duas línguas | por ler | O lugar de direção (Claude Fable 5.1), na aterragem do H3 a 05.10.2026, pela I206: a quinta recusa da política da inteligência artificial passa a remeter o prazo para a página «Privacidade» em vez da nota da caixa, que já não o diz; a frase é a mesma no resto. |
+
+## EX1 · o espaço das explicações e a leitura semanal, 05.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| ex1 | 16 cadeias novas | por ler | Claude Opus 5.5, construtor do EX1: o título do bloco «Para perceber», os títulos e as descrições da lista das explicações e da leitura da semana, o resumo da lista dos números de uma figura e a descrição da primeira explicação, nas duas línguas. O texto das explicações e as frases da leitura da semana não entram: saem do inventário só conferidos pelas células da explicação e da semana, na mesma corrida do `check:voz`. Uma exceção de contexto nova em `VOZ-MARCADORES.md`, na rota de uma explicação: o nome do Ministério do Trabalho, Solidariedade e Segurança Social, que o marcador «o trabalho» mordia. |
+

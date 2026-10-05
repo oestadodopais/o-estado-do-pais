@@ -17,6 +17,8 @@ import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
 import { linhaDoIndice } from '../src/lib/assuntos.mjs';
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
 import { t } from '../src/i18n/strings.mjs';
+import { conferirTituloNumaPorta } from '../tests/explicacoes/explicacao.mjs';
+import { conferirPortaDaSemana, diasAceites } from '../tests/explicacoes/semana.mjs';
 const normal = s => s.replace(/\s+/g,' ').trim();
 /* A MENÇÃO DA FONTE DO SINAL DA PORTA DOS LUGARES (bloco L2a, 01.10.2026), lida
    do manifesto do motor por este leitor e não pelo módulo que a página usa. */
@@ -71,6 +73,17 @@ export function verificaVozPais(raiz) {
       const dispensados = new Set(main.querySelectorAll('[data-rotulo-ia="topo"], [data-cartao-medida], [data-nome], [data-mudanca-campo], [data-publicacao-estudo], [data-correcao-entrada], [data-nonledger="data-do-repositorio"], [data-nonledger="data-da-linha"]'));
       for (const m of main.querySelectorAll('[data-fonte-do-sinal]')) if (texto(m) === FONTE_DA_CARTA) dispensados.add(m);
       if (blocosConferidos) for (const b of main.querySelectorAll('[data-bloco]')) dispensados.add(b);
+      /* «PARA PERCEBER» (bloco EX1, 05.10.2026): o título é a cadeia da casa, na lista abaixo; as duas portas (o título da
+         explicação mais recente e a primeira frase da leitura da semana) só saem da lista conferidas pelas células da
+         explicação e da semana, na mesma corrida; uma recusa fica escrita, e a prosa delas é medida como qualquer outra. */
+      if (primeira) for (const pp of main.querySelectorAll('[data-para-perceber]')) {
+        const portas = [...pp.querySelectorAll('[data-explicacao-porta]'), ...pp.querySelectorAll('[data-semana-frase]')];
+        const queixas = portas.flatMap((el) => el.hasAttribute('data-explicacao-porta')
+          ? conferirTituloNumaPorta(el, lang)
+          : conferirPortaDaSemana(el, lang, diasAceites(path.join(raiz, 'dist'))));
+        if (queixas.length) erros.push(...queixas.map((q) => `B1 lista fechada país: ${rota || '/'}: «Para perceber» não conferido: ${q}`));
+        else for (const el of portas) dispensados.add(el);
+      }
       for (const c of main.querySelectorAll('[data-cartao-camaras]')) dispensados.add(c);
       /* A marca só sai da lista depois de a V1 conferir a frase inteira. */
       if (rota === '' || rota === 'en') for (const v of main.querySelectorAll('[data-veredicto-pais]')) dispensados.add(v);
@@ -98,6 +111,8 @@ export function verificaVozPais(raiz) {
            entradas das declarações do lugar de direção, e as três portas. As três cadeias da pesquisa
            dos lugares saíram com ela (L2a): a pesquisa vive em «Lugares», e aqui seria uma segunda cópia. */
         s.primeira.oQueSePassa, s.primeira.numerosMaisRecentes, s.primeira.porOndeComecar, s.primeira.veredicto,
+        /* O título do bloco «Para perceber» (bloco EX1, 05.10.2026). */
+        s.primeira.paraPerceber,
         ...WORKS.filter(w=>w.emCurso).map(w=>s.primeira.emCurso.replace('{ano}', w.emCurso.ate?.slice(0, 4) ?? '[verify]')),
         `${s.primeira.todosOsTemas} →`, `${s.nav.livro} →`, `${ROTULOS_B1[lang].mudou} →`, `${s.nav.uniaoEuropeia} →`,
         ROTULOS_B1[lang].lugares,

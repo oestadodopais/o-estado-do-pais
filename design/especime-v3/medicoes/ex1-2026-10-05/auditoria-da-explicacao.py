@@ -1,0 +1,210 @@
+#!/usr/bin/env python3
+"""A auditoria das palavras da primeira explicação (bloco EX1, 05.10.2026, o ponto 3 do mandato).
+
+Escreve a secção «explicacoes» de tests/cartao/leituras-provadas.json: cada folha de texto da declaração
+src/data/explicacoes/dinheiro-do-estado-2026.mjs, nas duas edições, dividida em partes, e cada parte com a sua classe
+e, quando diz o que uma coisa é, o literal que a apoia (numa origem declarada ou num campo publicado de uma linha que a
+explicação nomeia). A célula X (tests/explicacoes/explicacao.mjs) confere que as partes juntas são cada folha, que cada
+literal está mesmo no campo que cita, que cada «conta» vive num ramo do sinal ou em palavras guardadas por condições,
+que cada «aponta» nomeia uma secção que está acima, e que cada «liga» só tem pontuação e palavras da lista fechada.
+Não infere que o literal quer dizer o que a parte diz: isso é a leitura de quem assina (Claude Opus 5.5, 05.10.2026).
+
+Corre-se da raiz do sítio: python3 design/especime-v3/medicoes/ex1-2026-10-05/auditoria-da-explicacao.py
+Com --conferir, não escreve: sai a 1 se o ficheiro não tiver a secção que este guião compõe.
+"""
+import json, pathlib, sys
+
+RAIZ = pathlib.Path(__file__).resolve().parents[4]
+FICHEIRO = RAIZ / 'tests' / 'cartao' / 'leituras-provadas.json'
+
+DG = 'dados-gov-oe-despesa-funcional'
+CF = 'eurostat-cofog-divisao-01'
+DIV = 'eurostat-tipsgo10-descricao'
+PIB = 'eurostat-tipsna40-descricao'
+SAL = 'eurostat-gfs-saldo'
+
+def o(origem, literal, campo='excerto'):
+    return {'origem': origem, 'campo': campo, 'literal': literal}
+
+def l(linha, campo, literal):
+    return {'linha': linha, 'campo': campo, 'literal': literal}
+
+def diz(pt, en, *apoios):
+    return {'pt': pt, 'en': en, 'classe': 'diz', 'apoios': list(apoios)}
+
+def conta(pt, en):
+    return {'pt': pt, 'en': en, 'classe': 'conta'}
+
+def liga(pt, en):
+    return {'pt': pt, 'en': en, 'classe': 'liga'}
+
+def aponta(pt, en, secao):
+    return {'pt': pt, 'en': en, 'classe': 'aponta', 'secao': secao}
+
+F07 = 'oe-2026-cem-euros-funcao-07'
+FUNCAO_07 = 'oe-2026-despesa-funcao-07'
+MF = 'oe-2026-cem-euros-ministerio-financas'
+DMF = 'oe-2026-despesa-ministerio-financas'
+DMS = 'oe-2026-despesa-ministerio-saude'
+DMT = 'oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social'
+DME = 'oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao'
+EXD = 'execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social'
+EXR = 'execucao-2026-08-receita-efetiva-administracao-central-seguranca-social'
+P016 = 'execucao-2026-08-despesa-programa-016'
+P015 = 'execucao-2026-08-despesa-programa-015'
+P005 = 'execucao-2026-08-despesa-programa-005'
+DV = 'divida-publica-2025'
+DVUE = 'divida-publica-2025-ue'
+SALDO = 'saldo-das-administracoes-publicas-2025'
+
+POR_CEM = (l(F07, 'derivation', 'multiplicar por cem'), l(F07, 'derivation_en', 'multiply by one hundred'))
+AFETACAO = o(DG, 'afetação dos recursos públicos')
+
+FOLHAS = [
+    ('titulo[0]', [diz('Para onde vai o dinheiro do Estado', 'Where the State’s money goes', AFETACAO), liga(' em ', ' in ')]),
+    ('abertura[0][0]', [diz('O Orçamento do Estado', 'The State Budget', o(DG, 'Orçamento do Estado')), liga(' para ', ' for ')]),
+    ('abertura[0][2]', [
+        diz(' diz, euro a euro,', ' says, euro by euro,', l(DMF, 'unit', 'euros'), o(DG, 'contemplam as despesas a pagar no ano')),
+        diz(' para onde vai o dinheiro.', ' where the money goes.', AFETACAO),
+        diz(' De cada cem euros, ', ' Of every hundred euros, ', *POR_CEM),
+    ]),
+    ('abertura[0][4]', [diz(' vão para a ', ' go to ', AFETACAO)]),
+    ('abertura[0][6]', [liga(', ', ', ')]),
+    ('abertura[0][8]', [liga(' para a ', ' to ')]),
+    ('abertura[0][10]', [liga(', ', ', ')]),
+    ('abertura[0][12]', [liga(' para a ', ' to ')]),
+    ('abertura[0][14]', [liga(' e ', ' and ')]),
+    ('abertura[0][16]', [liga(' para os ', ' to ')]),
+    ('abertura[0][18]', [liga('.', '.')]),
+    ('abertura[0][19].se[0]', [conta(' A maior fatia, ', ' The largest share, ')]),
+    ('abertura[0][19].se[2]', [conta(', é a dos ', ', is ')]),
+    ('abertura[0][19].se[4]', [
+        diz(', onde a classificação das funções', ', where the classification of functions', o(DG, 'Classificação das Funções do Governo')),
+        diz(' conta os juros da dívida', ' counts the interest on the debt', o(CF, 'Public debt transactions')),
+        diz(' e as transferências entre administrações.', ' and the transfers between levels of government.', o(CF, 'Transfers of a general character between different levels of government')),
+    ]),
+    ('seccoes[0].titulo', [diz('Por função', 'By function', l(FUNCAO_07, 'document.title', 'classificação funcional'))]),
+    ('seccoes[0].conteudo[0].figura.titulo', [
+        diz('As dez funções', 'The ten functions', l(FUNCAO_07, 'document.title', 'classificação funcional')),
+        diz(', de cada cem euros', ', of every hundred euros', *POR_CEM),
+    ]),
+    ('seccoes[0].conteudo[1].paragrafo[0]', [liga('A ', '')]),
+    ('seccoes[0].conteudo[1].paragrafo[2]', [diz(' leva ', ' takes ', AFETACAO)]),
+    ('seccoes[0].conteudo[1].paragrafo[4]', [liga(', a ', ', ')]),
+    ('seccoes[0].conteudo[1].paragrafo[6]', [liga(' ', ' ')]),
+    ('seccoes[0].conteudo[1].paragrafo[8]', [liga(', a ', ', ')]),
+    ('seccoes[0].conteudo[1].paragrafo[10]', [liga(' ', ' ')]),
+    ('seccoes[0].conteudo[1].paragrafo[12]', [liga(', a ', ', ')]),
+    ('seccoes[0].conteudo[1].paragrafo[14]', [liga(' ', ' ')]),
+    ('seccoes[0].conteudo[1].paragrafo[16]', [liga(' e o ', ' and ')]),
+    ('seccoes[0].conteudo[1].paragrafo[18]', [liga(' ', ' ')]),
+    ('seccoes[0].conteudo[1].paragrafo[20]', [liga('.', '.')]),
+    ('seccoes[1].titulo', [diz('Por ministério', 'By ministry', l(DMF, 'document.locator', 'POR MINISTÉRIOS'))]),
+    ('seccoes[1].conteudo[0].paragrafo[0].se[0]', [
+        diz('Visto pelos ministérios', 'Seen by ministry', l(DMF, 'document.locator', 'POR MINISTÉRIOS')),
+        conta(', o maior é', ', the largest is'),
+        diz(' o das Finanças', ' Finance', l(DMF, 'excerpt', 'FINANÇAS')),
+        liga(', com ', ', with '),
+    ]),
+    ('seccoes[1].conteudo[0].paragrafo[0].se[2]', [diz(' de cada cem euros, ', ' of every hundred euros, ', l(MF, 'derivation', 'multiplicar por cem'), l(MF, 'derivation_en', 'multiply by one hundred'))]),
+    ('seccoes[1].conteudo[0].paragrafo[0].se[3].sufixo', [diz(' euros', ' euros', l(DMF, 'unit', 'euros'))]),
+    ('seccoes[1].conteudo[0].paragrafo[0].se[4].se[0]', [conta('; seguem-se', '; then come'), diz(' a Saúde (', ' Health (', l(DMS, 'excerpt', 'SAÚDE'))]),
+    ('seccoes[1].conteudo[0].paragrafo[0].se[4].se[2]', [liga('), ', '), '), diz('o Trabalho, Solidariedade e Segurança Social (', 'Labour, Solidarity and Social Security (', l(DMT, 'excerpt', 'TRABALHO, SOLIDARIEDADE E SEGURANÇA SOCIAL'))]),
+    ('seccoes[1].conteudo[0].paragrafo[0].se[4].se[4]', [liga(') e ', ') and '), diz('a Educação, Ciência e Inovação (', 'Education, Science and Innovation (', l(DME, 'excerpt', 'EDUCAÇÃO, CIÊNCIA E INOVAÇÃO'))]),
+    ('seccoes[1].conteudo[0].paragrafo[0].se[4].se[6]', [liga(')', ')')]),
+    ('seccoes[1].conteudo[0].paragrafo[0].se[5]', [liga('.', '.')]),
+    ('seccoes[1].conteudo[1].figura.titulo', [
+        diz('Os dezasseis ministérios', 'The sixteen ministries', l(DMF, 'document.locator', 'POR MINISTÉRIOS')),
+        diz(', de cada cem euros', ', of every hundred euros', l(MF, 'derivation', 'multiplicar por cem'), l(MF, 'derivation_en', 'multiply by one hundred')),
+    ]),
+    ('seccoes[2].titulo', [diz('O que já se gastou este ano', 'What has been spent this year', l(EXD, 'name', 'Despesa efetiva'), l(EXD, 'unit', 'acumulados de janeiro a agosto'))]),
+    ('seccoes[2].conteudo[0].paragrafo[0]', [diz('Até ', 'By ', l(EXD, 'unit', 'acumulados de janeiro a agosto'))]),
+    ('seccoes[2].conteudo[0].paragrafo[2]', [
+        liga(', ', ', '),
+        diz('a administração central e a segurança social', 'central government and social security', l(EXD, 'nome', 'da administração central e da segurança social'), o(DG, 'Administração Central')),
+        diz(' tinham gasto ', ' had spent ', l(EXD, 'name', 'Despesa efetiva')),
+    ]),
+    ('seccoes[2].conteudo[0].paragrafo[3].sufixo', [diz(' milhões de euros', ' million euros', l(EXD, 'unit', 'milhões de euros'))]),
+    ('seccoes[2].conteudo[0].paragrafo[4]', [diz(' e recebido ', ' and taken in ', l(EXR, 'name', 'Receita efetiva'))]),
+    ('seccoes[2].conteudo[0].paragrafo[5].sufixo', [diz(' milhões', ' million', l(EXR, 'unit', 'milhões de euros'))]),
+    ('seccoes[2].conteudo[0].paragrafo[6].se[0]', [
+        conta('; os programas que mais gastaram foram', '; the programmes that spent the most were'),
+        diz(' o do Trabalho, Solidariedade e Segurança Social (', ' Labour, Solidarity and Social Security (', l(P016, 'name', 'Trabalho, Solidariedade e Segurança Social')),
+    ]),
+    ('seccoes[2].conteudo[0].paragrafo[6].se[1].sufixo', [diz(' milhões', ' million', l(P016, 'unit', 'milhões de euros'))]),
+    ('seccoes[2].conteudo[0].paragrafo[6].se[2]', [liga('), ', '), '), diz('o da Saúde (', 'Health (', l(P015, 'name', 'Saúde'))]),
+    ('seccoes[2].conteudo[0].paragrafo[6].se[3].sufixo', [diz(' milhões', ' million', l(P015, 'unit', 'milhões de euros'))]),
+    ('seccoes[2].conteudo[0].paragrafo[6].se[4]', [liga(') e ', ') and '), diz('o da Gestão da Dívida Pública (', 'Public Debt Management (', l(P005, 'name', 'Gestão da Dívida Pública'))]),
+    ('seccoes[2].conteudo[0].paragrafo[6].se[5].sufixo', [diz(' milhões', ' million', l(P005, 'unit', 'milhões de euros'))]),
+    ('seccoes[2].conteudo[0].paragrafo[6].se[6]', [liga(')', ')')]),
+    ('seccoes[2].conteudo[0].paragrafo[7]', [liga('.', '.')]),
+    ('seccoes[3].titulo', [diz('A dívida e o saldo', 'Debt and the balance', l(DV, 'excerpt', 'General government gross debt'), l(SALDO, 'document.title', 'deficit/surplus'))]),
+    ('seccoes[3].conteudo[0].paragrafo[0]', [diz('No fim de ', 'At the end of ', o(DIV, 'outstanding at the end of the year'))]),
+    ('seccoes[3].conteudo[0].paragrafo[2]', [liga(', ', ', '), diz('a dívida pública valia ', 'public debt was worth ', o(DIV, 'debt means total gross debt'), l(DV, 'excerpt', 'General government gross debt'))]),
+    ('seccoes[3].conteudo[0].paragrafo[3].sufixo', [liga(' %', ' %')]),
+    ('seccoes[3].conteudo[0].paragrafo[4]', [
+        diz(' do que o país produz num ano', ' of what the country produces in a year', o(PIB, 'GDP measures the value of total final output of goods and services produced by an economy'), l(DV, 'unit', '% do PIB')),
+        liga(', contra ', ', against '),
+    ]),
+    ('seccoes[3].conteudo[0].paragrafo[5].sufixo', [liga(' %', ' %')]),
+    ('seccoes[3].conteudo[0].paragrafo[6]', [
+        diz(' na média da União Europeia', ' on average in the European Union', l(DVUE, 'excerpt', 'European Union - 27 countries (from 2020)')),
+        liga(', e ', ', and '),
+        diz('as contas públicas fecharam o ano', 'the public accounts closed the year', l(SALDO, 'excerpt', 'General government'), o(SAL, 'The difference between total revenue and total expenditure'), {'linha': SALDO, 'campo': 'reference_date', 'forma': 'ano'}),
+        liga(' com um ', ' with a '),
+    ]),
+    ('seccoes[3].conteudo[0].paragrafo[7].positivo[0]', [conta('excedente', 'surplus')]),
+    ('seccoes[3].conteudo[0].paragrafo[7].negativo[0]', [conta('défice', 'deficit')]),
+    ('seccoes[3].conteudo[0].paragrafo[8]', [liga(' de ', ' of ')]),
+    ('seccoes[3].conteudo[0].paragrafo[9].sufixo', [liga(' %', ' %')]),
+    ('seccoes[3].conteudo[0].paragrafo[10]', [diz(' do produto.', ' of output.', l(SALDO, 'unit', '% do PIB'))]),
+    ('naoDiz[0][0].se[0]', [
+        diz('O orçamento é uma previsão', 'The budget is a forecast', o(DG, 'contemplam as despesas a pagar no ano')),
+        diz(': o que se gasta de facto lê-se na execução', ': what is actually spent is read in the budget execution', l(EXD, 'document.title', 'Síntese da Execução Orçamental'), l(EXD, 'nome', 'executada')),
+        diz(', mês a mês', ', month by month', l(EXD, 'document.title', 'Síntese da Execução Orçamental | agosto 2026')),
+        diz(', e a de agosto', ', and August’s', l(EXD, 'unit', 'acumulados de janeiro a agosto')),
+        aponta(' está acima.', ' is above.', 'execucao'),
+    ]),
+    ('naoDiz[0][1].se[0]', [
+        diz(' Os juros da dívida', ' The interest on the debt', o(CF, 'Public debt transactions')),
+        conta(' não estão ainda no livro-razão deste projeto como linha própria', ' is not yet in this project’s ledger as a line of its own'),
+        conta('; quando entrarem, esta explicação diz quanto são.', '; when it is, this explainer will say how much it is.'),
+    ]),
+]
+
+def entrada():
+    folhas = []
+    for caminho, partes in FOLHAS:
+        folhas.append({'caminho': caminho, 'pt': ''.join(p['pt'] for p in partes), 'en': ''.join(p['en'] for p in partes), 'partes': partes})
+    usadas = []
+    for _, partes in FOLHAS:
+        for p in partes:
+            for a in p.get('apoios', []):
+                if 'origem' in a and a['origem'] not in usadas:
+                    usadas.append(a['origem'])
+    return {
+        'slug': 'dinheiro-do-estado-2026',
+        'quem': 'Claude Opus 5.5',
+        'quando': '2026-10-05',
+        'o_que': 'a primeira leitura, sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X10 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam',
+        'origens': usadas,
+        'folhas': folhas,
+    }
+
+def main():
+    raw = FICHEIRO.read_text(encoding='utf-8')
+    d = json.loads(raw)
+    nova = entrada()
+    if '--conferir' in sys.argv:
+        atual = next((x for x in d.get('explicacoes', []) if x.get('slug') == nova['slug']), None)
+        if atual != nova:
+            print('a secção «explicacoes» do ficheiro não é a que este guião compõe')
+            sys.exit(1)
+        print(f"a secção confere: {len(nova['folhas'])} folhas, {sum(len(f['partes']) for f in nova['folhas'])} partes, {len(nova['origens'])} origens")
+        return
+    d['explicacoes'] = [x for x in d.get('explicacoes', []) if x.get('slug') != nova['slug']] + [nova]
+    FICHEIRO.write_text(json.dumps(d, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    print(f"escrita a secção «explicacoes»: {len(nova['folhas'])} folhas, {sum(len(f['partes']) for f in nova['folhas'])} partes, {len(nova['origens'])} origens ({', '.join(nova['origens'])})")
+
+if __name__ == '__main__':
+    main()

@@ -6427,5 +6427,1354 @@
         }
       ]
     }
+  ],
+  "explicacoes": [
+    {
+      "slug": "dinheiro-do-estado-2026",
+      "quem": "Claude Opus 5.5",
+      "quando": "2026-10-05",
+      "o_que": "a primeira leitura, sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X10 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam",
+      "origens": [
+        "dados-gov-oe-despesa-funcional",
+        "eurostat-cofog-divisao-01",
+        "eurostat-tipsgo10-descricao",
+        "eurostat-tipsna40-descricao",
+        "eurostat-gfs-saldo"
+      ],
+      "folhas": [
+        {
+          "caminho": "titulo[0]",
+          "pt": "Para onde vai o dinheiro do Estado em ",
+          "en": "Where the State’s money goes in ",
+          "partes": [
+            {
+              "pt": "Para onde vai o dinheiro do Estado",
+              "en": "Where the State’s money goes",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "afetação dos recursos públicos"
+                }
+              ]
+            },
+            {
+              "pt": " em ",
+              "en": " in ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][0]",
+          "pt": "O Orçamento do Estado para ",
+          "en": "The State Budget for ",
+          "partes": [
+            {
+              "pt": "O Orçamento do Estado",
+              "en": "The State Budget",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "Orçamento do Estado"
+                }
+              ]
+            },
+            {
+              "pt": " para ",
+              "en": " for ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][2]",
+          "pt": " diz, euro a euro, para onde vai o dinheiro. De cada cem euros, ",
+          "en": " says, euro by euro, where the money goes. Of every hundred euros, ",
+          "partes": [
+            {
+              "pt": " diz, euro a euro,",
+              "en": " says, euro by euro,",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-ministerio-financas",
+                  "campo": "unit",
+                  "literal": "euros"
+                },
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "contemplam as despesas a pagar no ano"
+                }
+              ]
+            },
+            {
+              "pt": " para onde vai o dinheiro.",
+              "en": " where the money goes.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "afetação dos recursos públicos"
+                }
+              ]
+            },
+            {
+              "pt": " De cada cem euros, ",
+              "en": " Of every hundred euros, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-cem-euros-funcao-07",
+                  "campo": "derivation",
+                  "literal": "multiplicar por cem"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-funcao-07",
+                  "campo": "derivation_en",
+                  "literal": "multiply by one hundred"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][4]",
+          "pt": " vão para a ",
+          "en": " go to ",
+          "partes": [
+            {
+              "pt": " vão para a ",
+              "en": " go to ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "afetação dos recursos públicos"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][6]",
+          "pt": ", ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][8]",
+          "pt": " para a ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " para a ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][10]",
+          "pt": ", ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][12]",
+          "pt": " para a ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " para a ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][14]",
+          "pt": " e ",
+          "en": " and ",
+          "partes": [
+            {
+              "pt": " e ",
+              "en": " and ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][16]",
+          "pt": " para os ",
+          "en": " to ",
+          "partes": [
+            {
+              "pt": " para os ",
+              "en": " to ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][18]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][19].se[0]",
+          "pt": " A maior fatia, ",
+          "en": " The largest share, ",
+          "partes": [
+            {
+              "pt": " A maior fatia, ",
+              "en": " The largest share, ",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][19].se[2]",
+          "pt": ", é a dos ",
+          "en": ", is ",
+          "partes": [
+            {
+              "pt": ", é a dos ",
+              "en": ", is ",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "abertura[0][19].se[4]",
+          "pt": ", onde a classificação das funções conta os juros da dívida e as transferências entre administrações.",
+          "en": ", where the classification of functions counts the interest on the debt and the transfers between levels of government.",
+          "partes": [
+            {
+              "pt": ", onde a classificação das funções",
+              "en": ", where the classification of functions",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "Classificação das Funções do Governo"
+                }
+              ]
+            },
+            {
+              "pt": " conta os juros da dívida",
+              "en": " counts the interest on the debt",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "excerto",
+                  "literal": "Public debt transactions"
+                }
+              ]
+            },
+            {
+              "pt": " e as transferências entre administrações.",
+              "en": " and the transfers between levels of government.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "excerto",
+                  "literal": "Transfers of a general character between different levels of government"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].titulo",
+          "pt": "Por função",
+          "en": "By function",
+          "partes": [
+            {
+              "pt": "Por função",
+              "en": "By function",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-funcao-07",
+                  "campo": "document.title",
+                  "literal": "classificação funcional"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[0].figura.titulo",
+          "pt": "As dez funções, de cada cem euros",
+          "en": "The ten functions, of every hundred euros",
+          "partes": [
+            {
+              "pt": "As dez funções",
+              "en": "The ten functions",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-funcao-07",
+                  "campo": "document.title",
+                  "literal": "classificação funcional"
+                }
+              ]
+            },
+            {
+              "pt": ", de cada cem euros",
+              "en": ", of every hundred euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-cem-euros-funcao-07",
+                  "campo": "derivation",
+                  "literal": "multiplicar por cem"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-funcao-07",
+                  "campo": "derivation_en",
+                  "literal": "multiply by one hundred"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[1].paragrafo[0]",
+          "pt": "A ",
+          "en": "",
+          "partes": [
+            {
+              "pt": "A ",
+              "en": "",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[1].paragrafo[2]",
+          "pt": " leva ",
+          "en": " takes ",
+          "partes": [
+            {
+              "pt": " leva ",
+              "en": " takes ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "afetação dos recursos públicos"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[1].paragrafo[4]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[1].paragrafo[6]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[1].paragrafo[8]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[1].paragrafo[10]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[1].paragrafo[12]",
+          "pt": ", a ",
+          "en": ", ",
+          "partes": [
+            {
+              "pt": ", a ",
+              "en": ", ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[1].paragrafo[14]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[1].paragrafo[16]",
+          "pt": " e o ",
+          "en": " and ",
+          "partes": [
+            {
+              "pt": " e o ",
+              "en": " and ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[1].paragrafo[18]",
+          "pt": " ",
+          "en": " ",
+          "partes": [
+            {
+              "pt": " ",
+              "en": " ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[0].conteudo[1].paragrafo[20]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].titulo",
+          "pt": "Por ministério",
+          "en": "By ministry",
+          "partes": [
+            {
+              "pt": "Por ministério",
+              "en": "By ministry",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-ministerio-financas",
+                  "campo": "document.locator",
+                  "literal": "POR MINISTÉRIOS"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[0]",
+          "pt": "Visto pelos ministérios, o maior é o das Finanças, com ",
+          "en": "Seen by ministry, the largest is Finance, with ",
+          "partes": [
+            {
+              "pt": "Visto pelos ministérios",
+              "en": "Seen by ministry",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-ministerio-financas",
+                  "campo": "document.locator",
+                  "literal": "POR MINISTÉRIOS"
+                }
+              ]
+            },
+            {
+              "pt": ", o maior é",
+              "en": ", the largest is",
+              "classe": "conta"
+            },
+            {
+              "pt": " o das Finanças",
+              "en": " Finance",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-ministerio-financas",
+                  "campo": "excerpt",
+                  "literal": "FINANÇAS"
+                }
+              ]
+            },
+            {
+              "pt": ", com ",
+              "en": ", with ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[2]",
+          "pt": " de cada cem euros, ",
+          "en": " of every hundred euros, ",
+          "partes": [
+            {
+              "pt": " de cada cem euros, ",
+              "en": " of every hundred euros, ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-cem-euros-ministerio-financas",
+                  "campo": "derivation",
+                  "literal": "multiplicar por cem"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-ministerio-financas",
+                  "campo": "derivation_en",
+                  "literal": "multiply by one hundred"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[3].sufixo",
+          "pt": " euros",
+          "en": " euros",
+          "partes": [
+            {
+              "pt": " euros",
+              "en": " euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-ministerio-financas",
+                  "campo": "unit",
+                  "literal": "euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[4].se[0]",
+          "pt": "; seguem-se a Saúde (",
+          "en": "; then come Health (",
+          "partes": [
+            {
+              "pt": "; seguem-se",
+              "en": "; then come",
+              "classe": "conta"
+            },
+            {
+              "pt": " a Saúde (",
+              "en": " Health (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-ministerio-saude",
+                  "campo": "excerpt",
+                  "literal": "SAÚDE"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[4].se[2]",
+          "pt": "), o Trabalho, Solidariedade e Segurança Social (",
+          "en": "), Labour, Solidarity and Social Security (",
+          "partes": [
+            {
+              "pt": "), ",
+              "en": "), ",
+              "classe": "liga"
+            },
+            {
+              "pt": "o Trabalho, Solidariedade e Segurança Social (",
+              "en": "Labour, Solidarity and Social Security (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social",
+                  "campo": "excerpt",
+                  "literal": "TRABALHO, SOLIDARIEDADE E SEGURANÇA SOCIAL"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[4].se[4]",
+          "pt": ") e a Educação, Ciência e Inovação (",
+          "en": ") and Education, Science and Innovation (",
+          "partes": [
+            {
+              "pt": ") e ",
+              "en": ") and ",
+              "classe": "liga"
+            },
+            {
+              "pt": "a Educação, Ciência e Inovação (",
+              "en": "Education, Science and Innovation (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao",
+                  "campo": "excerpt",
+                  "literal": "EDUCAÇÃO, CIÊNCIA E INOVAÇÃO"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[4].se[6]",
+          "pt": ")",
+          "en": ")",
+          "partes": [
+            {
+              "pt": ")",
+              "en": ")",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[5]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[1].figura.titulo",
+          "pt": "Os dezasseis ministérios, de cada cem euros",
+          "en": "The sixteen ministries, of every hundred euros",
+          "partes": [
+            {
+              "pt": "Os dezasseis ministérios",
+              "en": "The sixteen ministries",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-despesa-ministerio-financas",
+                  "campo": "document.locator",
+                  "literal": "POR MINISTÉRIOS"
+                }
+              ]
+            },
+            {
+              "pt": ", de cada cem euros",
+              "en": ", of every hundred euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "oe-2026-cem-euros-ministerio-financas",
+                  "campo": "derivation",
+                  "literal": "multiplicar por cem"
+                },
+                {
+                  "linha": "oe-2026-cem-euros-ministerio-financas",
+                  "campo": "derivation_en",
+                  "literal": "multiply by one hundred"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].titulo",
+          "pt": "O que já se gastou este ano",
+          "en": "What has been spent this year",
+          "partes": [
+            {
+              "pt": "O que já se gastou este ano",
+              "en": "What has been spent this year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+                  "campo": "name",
+                  "literal": "Despesa efetiva"
+                },
+                {
+                  "linha": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "acumulados de janeiro a agosto"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[0]",
+          "pt": "Até ",
+          "en": "By ",
+          "partes": [
+            {
+              "pt": "Até ",
+              "en": "By ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "acumulados de janeiro a agosto"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[2]",
+          "pt": ", a administração central e a segurança social tinham gasto ",
+          "en": ", central government and social security had spent ",
+          "partes": [
+            {
+              "pt": ", ",
+              "en": ", ",
+              "classe": "liga"
+            },
+            {
+              "pt": "a administração central e a segurança social",
+              "en": "central government and social security",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+                  "campo": "nome",
+                  "literal": "da administração central e da segurança social"
+                },
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "Administração Central"
+                }
+              ]
+            },
+            {
+              "pt": " tinham gasto ",
+              "en": " had spent ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+                  "campo": "name",
+                  "literal": "Despesa efetiva"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[3].sufixo",
+          "pt": " milhões de euros",
+          "en": " million euros",
+          "partes": [
+            {
+              "pt": " milhões de euros",
+              "en": " million euros",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[4]",
+          "pt": " e recebido ",
+          "en": " and taken in ",
+          "partes": [
+            {
+              "pt": " e recebido ",
+              "en": " and taken in ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
+                  "campo": "name",
+                  "literal": "Receita efetiva"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[5].sufixo",
+          "pt": " milhões",
+          "en": " million",
+          "partes": [
+            {
+              "pt": " milhões",
+              "en": " million",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[6].se[0]",
+          "pt": "; os programas que mais gastaram foram o do Trabalho, Solidariedade e Segurança Social (",
+          "en": "; the programmes that spent the most were Labour, Solidarity and Social Security (",
+          "partes": [
+            {
+              "pt": "; os programas que mais gastaram foram",
+              "en": "; the programmes that spent the most were",
+              "classe": "conta"
+            },
+            {
+              "pt": " o do Trabalho, Solidariedade e Segurança Social (",
+              "en": " Labour, Solidarity and Social Security (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-programa-016",
+                  "campo": "name",
+                  "literal": "Trabalho, Solidariedade e Segurança Social"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[6].se[1].sufixo",
+          "pt": " milhões",
+          "en": " million",
+          "partes": [
+            {
+              "pt": " milhões",
+              "en": " million",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-programa-016",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[6].se[2]",
+          "pt": "), o da Saúde (",
+          "en": "), Health (",
+          "partes": [
+            {
+              "pt": "), ",
+              "en": "), ",
+              "classe": "liga"
+            },
+            {
+              "pt": "o da Saúde (",
+              "en": "Health (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-programa-015",
+                  "campo": "name",
+                  "literal": "Saúde"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[6].se[3].sufixo",
+          "pt": " milhões",
+          "en": " million",
+          "partes": [
+            {
+              "pt": " milhões",
+              "en": " million",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-programa-015",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[6].se[4]",
+          "pt": ") e o da Gestão da Dívida Pública (",
+          "en": ") and Public Debt Management (",
+          "partes": [
+            {
+              "pt": ") e ",
+              "en": ") and ",
+              "classe": "liga"
+            },
+            {
+              "pt": "o da Gestão da Dívida Pública (",
+              "en": "Public Debt Management (",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-programa-005",
+                  "campo": "name",
+                  "literal": "Gestão da Dívida Pública"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[6].se[5].sufixo",
+          "pt": " milhões",
+          "en": " million",
+          "partes": [
+            {
+              "pt": " milhões",
+              "en": " million",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-programa-005",
+                  "campo": "unit",
+                  "literal": "milhões de euros"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[6].se[6]",
+          "pt": ")",
+          "en": ")",
+          "partes": [
+            {
+              "pt": ")",
+              "en": ")",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[2].conteudo[0].paragrafo[7]",
+          "pt": ".",
+          "en": ".",
+          "partes": [
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].titulo",
+          "pt": "A dívida e o saldo",
+          "en": "Debt and the balance",
+          "partes": [
+            {
+              "pt": "A dívida e o saldo",
+              "en": "Debt and the balance",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "divida-publica-2025",
+                  "campo": "excerpt",
+                  "literal": "General government gross debt"
+                },
+                {
+                  "linha": "saldo-das-administracoes-publicas-2025",
+                  "campo": "document.title",
+                  "literal": "deficit/surplus"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[0]",
+          "pt": "No fim de ",
+          "en": "At the end of ",
+          "partes": [
+            {
+              "pt": "No fim de ",
+              "en": "At the end of ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsgo10-descricao",
+                  "campo": "excerto",
+                  "literal": "outstanding at the end of the year"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[2]",
+          "pt": ", a dívida pública valia ",
+          "en": ", public debt was worth ",
+          "partes": [
+            {
+              "pt": ", ",
+              "en": ", ",
+              "classe": "liga"
+            },
+            {
+              "pt": "a dívida pública valia ",
+              "en": "public debt was worth ",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsgo10-descricao",
+                  "campo": "excerto",
+                  "literal": "debt means total gross debt"
+                },
+                {
+                  "linha": "divida-publica-2025",
+                  "campo": "excerpt",
+                  "literal": "General government gross debt"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[3].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[4]",
+          "pt": " do que o país produz num ano, contra ",
+          "en": " of what the country produces in a year, against ",
+          "partes": [
+            {
+              "pt": " do que o país produz num ano",
+              "en": " of what the country produces in a year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsna40-descricao",
+                  "campo": "excerto",
+                  "literal": "GDP measures the value of total final output of goods and services produced by an economy"
+                },
+                {
+                  "linha": "divida-publica-2025",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                }
+              ]
+            },
+            {
+              "pt": ", contra ",
+              "en": ", against ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[5].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[6]",
+          "pt": " na média da União Europeia, e as contas públicas fecharam o ano com um ",
+          "en": " on average in the European Union, and the public accounts closed the year with a ",
+          "partes": [
+            {
+              "pt": " na média da União Europeia",
+              "en": " on average in the European Union",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "divida-publica-2025-ue",
+                  "campo": "excerpt",
+                  "literal": "European Union - 27 countries (from 2020)"
+                }
+              ]
+            },
+            {
+              "pt": ", e ",
+              "en": ", and ",
+              "classe": "liga"
+            },
+            {
+              "pt": "as contas públicas fecharam o ano",
+              "en": "the public accounts closed the year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "saldo-das-administracoes-publicas-2025",
+                  "campo": "excerpt",
+                  "literal": "General government"
+                },
+                {
+                  "origem": "eurostat-gfs-saldo",
+                  "campo": "excerto",
+                  "literal": "The difference between total revenue and total expenditure"
+                },
+                {
+                  "linha": "saldo-das-administracoes-publicas-2025",
+                  "campo": "reference_date",
+                  "forma": "ano"
+                }
+              ]
+            },
+            {
+              "pt": " com um ",
+              "en": " with a ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[7].positivo[0]",
+          "pt": "excedente",
+          "en": "surplus",
+          "partes": [
+            {
+              "pt": "excedente",
+              "en": "surplus",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[7].negativo[0]",
+          "pt": "défice",
+          "en": "deficit",
+          "partes": [
+            {
+              "pt": "défice",
+              "en": "deficit",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[8]",
+          "pt": " de ",
+          "en": " of ",
+          "partes": [
+            {
+              "pt": " de ",
+              "en": " of ",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[9].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[10]",
+          "pt": " do produto.",
+          "en": " of output.",
+          "partes": [
+            {
+              "pt": " do produto.",
+              "en": " of output.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "saldo-das-administracoes-publicas-2025",
+                  "campo": "unit",
+                  "literal": "% do PIB"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "naoDiz[0][0].se[0]",
+          "pt": "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a de agosto está acima.",
+          "en": "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and August’s is above.",
+          "partes": [
+            {
+              "pt": "O orçamento é uma previsão",
+              "en": "The budget is a forecast",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "contemplam as despesas a pagar no ano"
+                }
+              ]
+            },
+            {
+              "pt": ": o que se gasta de facto lê-se na execução",
+              "en": ": what is actually spent is read in the budget execution",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+                  "campo": "document.title",
+                  "literal": "Síntese da Execução Orçamental"
+                },
+                {
+                  "linha": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+                  "campo": "nome",
+                  "literal": "executada"
+                }
+              ]
+            },
+            {
+              "pt": ", mês a mês",
+              "en": ", month by month",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+                  "campo": "document.title",
+                  "literal": "Síntese da Execução Orçamental | agosto 2026"
+                }
+              ]
+            },
+            {
+              "pt": ", e a de agosto",
+              "en": ", and August’s",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+                  "campo": "unit",
+                  "literal": "acumulados de janeiro a agosto"
+                }
+              ]
+            },
+            {
+              "pt": " está acima.",
+              "en": " is above.",
+              "classe": "aponta",
+              "secao": "execucao"
+            }
+          ]
+        },
+        {
+          "caminho": "naoDiz[0][1].se[0]",
+          "pt": " Os juros da dívida não estão ainda no livro-razão deste projeto como linha própria; quando entrarem, esta explicação diz quanto são.",
+          "en": " The interest on the debt is not yet in this project’s ledger as a line of its own; when it is, this explainer will say how much it is.",
+          "partes": [
+            {
+              "pt": " Os juros da dívida",
+              "en": " The interest on the debt",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "excerto",
+                  "literal": "Public debt transactions"
+                }
+              ]
+            },
+            {
+              "pt": " não estão ainda no livro-razão deste projeto como linha própria",
+              "en": " is not yet in this project’s ledger as a line of its own",
+              "classe": "conta"
+            },
+            {
+              "pt": "; quando entrarem, esta explicação diz quanto são.",
+              "en": "; when it is, this explainer will say how much it is.",
+              "classe": "conta"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

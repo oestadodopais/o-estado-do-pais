@@ -460,6 +460,12 @@ const ROTAS_COM_ORIGEM_LIDA = new Set([
      dos estudos, as datas, as perguntas transcritas e os valores de «O que mudou» são origens, e o
      bloco lê-se com elas tiradas. */
   'indice',
+  /* AS EXPLICAÇÕES E A LEITURA DA SEMANA (bloco EX1, 05.10.2026) entram com as páginas, pela mesma regra: são rotas
+     novas, e as suas frases classificam-se no commit em que nascem. Os valores, os períodos, os nomes e as contagens são
+     origens, e o bloco lê-se com elas tiradas. */
+  'explicacoes',
+  'leituraDaSemana',
+  'explicacao',
 ]);
 const MEDIDA_DECLARADA = '[data-medida-nome],[data-medida-unidade]';
 const ROTAS_DO_INVENTARIO = new Set([
@@ -558,6 +564,13 @@ const ROTAS_DO_INVENTARIO = new Set([
      ligações, e o texto de uma porta é um destino e não uma frase; o que se classifica é o título,
      os nomes das secções, a descrição do `<head>` e o que se lê fora das portas. */
   'indice',
+  /* AS EXPLICAÇÕES E A LEITURA DA SEMANA (bloco EX1, 05.10.2026) entram no commit em que nascem. São páginas do leitor:
+     a Emenda 15 governa-as, e a sua autorreferência vai a zero. O texto de uma explicação e as frases compostas da
+     leitura da semana saem do inventário só conferidos (as marcas `data-explicacao-declarado` e
+     `data-semana-declarado`, abaixo); a mobília das três páginas classifica-se aqui. */
+  'explicacoes',
+  'leituraDaSemana',
+  'explicacao',
 ]);
 
 /**
@@ -685,6 +698,20 @@ const ROTAS_DAS_ENTRADAS = new Set(['entradaDinheiro', 'entradaSalarios', 'entra
 const CARTAO_DOS_TEMAS = '[data-cartao-medida]';
 /** As rotas onde a marca dos blocos tira texto do inventário: as páginas onde a célula dos blocos corre. */
 const ROTAS_DOS_BLOCOS = new Set(['home']);
+/**
+ * AS PALAVRAS DECLARADAS DE UMA EXPLICAÇÃO E AS FRASES COMPOSTAS DA LEITURA DA SEMANA (bloco EX1, 05.10.2026). O texto
+ * de uma explicação é do lugar de direção (`src/data/explicacoes/`), auditado parte a parte, e muda com os ramos e com as
+ * condições; as frases da leitura da semana compõem-se, em cada construção, das cadeias da casa com os campos do livro.
+ * Uma linha do inventário por ramo rendido faria uma atualização dos dados fechar a construção, como nos blocos da
+ * primeira página. Quem as confere são as células da explicação e da semana (`tests/explicacoes/explicacao.mjs` e
+ * `tests/explicacoes/semana.mjs`), que o `check:voz` corre na mesma corrida, em cada uma destas rotas; a varredura do
+ * tripwire da voz continua a lê-las. A MARCA SÓ VALE ONDE A CÉLULA CORRE: noutra rota, o texto marcado conta-se como
+ * qualquer outro.
+ */
+const EXPLICACAO_DECLARADA = '[data-explicacao-declarado]';
+const ROTAS_DAS_EXPLICACOES = new Set(['explicacao', 'explicacoes', 'indice', 'home']);
+const SEMANA_DECLARADA = '[data-semana-declarado]';
+const ROTAS_DA_SEMANA = new Set(['leituraDaSemana', 'explicacoes', 'home']);
 /**
  * A FRASE DO VEREDICTO SAI DO INVENTÁRIO NA PRIMEIRA PÁGINA, E SÓ LÁ (bloco PP1, 28.09.2026). A linha dela
  * no inventário era a frase com os valores e os nomes tirados, e por isso contava as vírgulas da lista
@@ -1002,6 +1029,15 @@ function frasesDaCasa(root, rotaKey) {
     for (const d of el.querySelectorAll('*')) marcados.add(d);
   }
   if (ROTAS_DOS_BLOCOS.has(rotaKey)) for (const el of root.querySelectorAll(BLOCO_DECLARADO)) {
+    marcados.add(el);
+    for (const d of el.querySelectorAll('*')) marcados.add(d);
+  }
+  /* EX1 (05.10.2026): as palavras de uma explicação e as frases da semana, só nas rotas onde as células correm. */
+  if (ROTAS_DAS_EXPLICACOES.has(rotaKey)) for (const el of root.querySelectorAll(EXPLICACAO_DECLARADA)) {
+    marcados.add(el);
+    for (const d of el.querySelectorAll('*')) marcados.add(d);
+  }
+  if (ROTAS_DA_SEMANA.has(rotaKey)) for (const el of root.querySelectorAll(SEMANA_DECLARADA)) {
     marcados.add(el);
     for (const d of el.querySelectorAll('*')) marcados.add(d);
   }
