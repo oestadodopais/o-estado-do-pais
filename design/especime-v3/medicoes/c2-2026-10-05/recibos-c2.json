@@ -1,0 +1,451 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/recibos-c2.mjs. Não se edita à mão.",
+  "construcao": {
+    "commit": "82406f855ea08e22cd2eb350adde00448447748e",
+    "ref": "c2-2026-10-05",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-05T15:58:23.920Z"
+  },
+  "recibos_lidos": 18,
+  "recibos_certos": 18,
+  "conhecido_positivo": {
+    "o_que": "num recibo estragado em memória (a porta da atualização tirada, a frase do valor em uso posta, o dia da publicação trocado pelo do acesso), as três medidas dão falso",
+    "encontrado": true
+  },
+  "recibos": [
+    {
+      "id": "custo-unitario-do-trabalho-2024",
+      "lang": "pt",
+      "rota": "livro-razao/custo-unitario-do-trabalho-2024/index.html",
+      "titulo": "17,9",
+      "valor_da_linha": "17,9",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 02.10.2026 (o carimbo do conjunto passou de 28.09.2026 a 02.10.2026); a reconferência semanal de 05.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2024",
+      "lang": "en",
+      "rota": "en/ledger/custo-unitario-do-trabalho-2024/index.html",
+      "titulo": "17,9",
+      "valor_da_linha": "17,9",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 02.10.2026 (the dataset stamp moved from 28.09.2026 to 02.10.2026); the weekly check of 05.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "despesa-em-id-2024-ue",
+      "lang": "pt",
+      "rota": "livro-razao/despesa-em-id-2024-ue/index.html",
+      "titulo": "2,26",
+      "valor_da_linha": "2,26",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "O Eurostat reviu o valor da União a 29.09.2026 (o carimbo do conjunto passou de 18.03.2026 a 29.09.2026); a reconferência semanal de 05.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "despesa-em-id-2024-ue",
+      "lang": "en",
+      "rota": "en/ledger/despesa-em-id-2024-ue/index.html",
+      "titulo": "2,26",
+      "valor_da_linha": "2,26",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "Eurostat revised the EU value on 29.09.2026 (the dataset stamp moved from 18.03.2026 to 29.09.2026); the weekly check of 05.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2024",
+      "lang": "pt",
+      "rota": "livro-razao/formacao-bruta-de-capital-fixo-2024/index.html",
+      "titulo": "20,5",
+      "valor_da_linha": "20,5",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 02.10.2026 (o carimbo do conjunto passou de 28.09.2026 a 02.10.2026); a reconferência semanal de 05.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2024",
+      "lang": "en",
+      "rota": "en/ledger/formacao-bruta-de-capital-fixo-2024/index.html",
+      "titulo": "20,5",
+      "valor_da_linha": "20,5",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 02.10.2026 (the dataset stamp moved from 28.09.2026 to 02.10.2026); the weekly check of 05.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025",
+      "lang": "pt",
+      "rota": "livro-razao/formacao-bruta-de-capital-fixo-2025/index.html",
+      "titulo": "21,0",
+      "valor_da_linha": "21,0",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 02.10.2026 (o carimbo do conjunto passou de 28.09.2026 a 02.10.2026); a reconferência semanal de 05.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025",
+      "lang": "en",
+      "rota": "en/ledger/formacao-bruta-de-capital-fixo-2025/index.html",
+      "titulo": "21,0",
+      "valor_da_linha": "21,0",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 02.10.2026 (the dataset stamp moved from 28.09.2026 to 02.10.2026); the weekly check of 05.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "pib-real-per-capita-2024",
+      "lang": "pt",
+      "rota": "livro-razao/pib-real-per-capita-2024/index.html",
+      "titulo": "20 520",
+      "valor_da_linha": "20 520",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 02.10.2026 (o carimbo do conjunto passou de 28.09.2026 a 02.10.2026); a reconferência semanal de 05.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "pib-real-per-capita-2024",
+      "lang": "en",
+      "rota": "en/ledger/pib-real-per-capita-2024/index.html",
+      "titulo": "20 520",
+      "valor_da_linha": "20 520",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 02.10.2026 (the dataset stamp moved from 28.09.2026 to 02.10.2026); the weekly check of 05.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "pib-real-per-capita-2025",
+      "lang": "pt",
+      "rota": "livro-razao/pib-real-per-capita-2025/index.html",
+      "titulo": "20 700",
+      "valor_da_linha": "20 700",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 02.10.2026 (o carimbo do conjunto passou de 28.09.2026 a 02.10.2026); a reconferência semanal de 05.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "pib-real-per-capita-2025",
+      "lang": "en",
+      "rota": "en/ledger/pib-real-per-capita-2025/index.html",
+      "titulo": "20 700",
+      "valor_da_linha": "20 700",
+      "entrada": 1,
+      "porta": "#alteracao-1",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 02.10.2026 (the dataset stamp moved from 28.09.2026 to 02.10.2026); the weekly check of 05.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "posicao-de-investimento-internacional-2024",
+      "lang": "pt",
+      "rota": "livro-razao/posicao-de-investimento-internacional-2024/index.html",
+      "titulo": "−58,3",
+      "valor_da_linha": "−58,3",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 02.10.2026 (o carimbo do conjunto passou de 11.09.2026 a 02.10.2026); a reconferência semanal de 05.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "posicao-de-investimento-internacional-2024",
+      "lang": "en",
+      "rota": "en/ledger/posicao-de-investimento-internacional-2024/index.html",
+      "titulo": "−58,3",
+      "valor_da_linha": "−58,3",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 02.10.2026 (the dataset stamp moved from 11.09.2026 to 02.10.2026); the weekly check of 05.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "posicao-de-investimento-internacional-2025",
+      "lang": "pt",
+      "rota": "livro-razao/posicao-de-investimento-internacional-2025/index.html",
+      "titulo": "−49,6",
+      "valor_da_linha": "−49,6",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 02.10.2026 (o carimbo do conjunto passou de 11.09.2026 a 02.10.2026); a reconferência semanal de 05.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "posicao-de-investimento-internacional-2025",
+      "lang": "en",
+      "rota": "en/ledger/posicao-de-investimento-internacional-2025/index.html",
+      "titulo": "−49,6",
+      "valor_da_linha": "−49,6",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 02.10.2026 (the dataset stamp moved from 11.09.2026 to 02.10.2026); the weekly check of 05.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "saldo-da-balanca-corrente-2024",
+      "lang": "pt",
+      "rota": "livro-razao/saldo-da-balanca-corrente-2024/index.html",
+      "titulo": "0,4",
+      "valor_da_linha": "0,4",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "O Eurostat reviu o valor de Portugal a 02.10.2026 (o carimbo do conjunto passou de 08.07.2026 a 02.10.2026); a reconferência semanal de 05.10.2026 viu a revisão.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    },
+    {
+      "id": "saldo-da-balanca-corrente-2024",
+      "lang": "en",
+      "rota": "en/ledger/saldo-da-balanca-corrente-2024/index.html",
+      "titulo": "0,4",
+      "valor_da_linha": "0,4",
+      "entrada": 0,
+      "porta": "#alteracao-0",
+      "releituras_mostradas": [
+        3,
+        2
+      ],
+      "razao_lida": "Eurostat revised Portugal's value on 02.10.2026 (the dataset stamp moved from 08.07.2026 to 02.10.2026); the weekly check of 05.10.2026 caught the revision.",
+      "ok": {
+        "valor_no_titulo": true,
+        "entrada_da_atualizacao": true,
+        "razao_na_lingua_da_edicao": true,
+        "diverge_abre_a_atualizacao": true,
+        "igual_de_05_10_a_mais_recente": true,
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
+      },
+      "todas": true
+    }
+  ]
+}

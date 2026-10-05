@@ -1,0 +1,17 @@
+{
+  "pastas": [
+    "design/especime-v3/medicoes/c2-2026-10-05",
+    "design/especime-v3/capturas/c2-2026-10-05"
+  ],
+  "conhecidos_positivos_apontados": {
+    "a casa": true,
+    "o nome do utilizador": true,
+    "a pasta temporária": true,
+    "o autor do Git": true,
+    "a worktree": true
+  },
+  "negativo_com_as_marcas_apontado": false,
+  "ficheiros_varridos": 239,
+  "ficheiros_com_caminho": [],
+  "passou": true
+}

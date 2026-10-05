@@ -186,5 +186,77 @@
       "old_value": "3",
       "new_value": "3,0"
     }
+  ],
+  "custo-unitario-do-trabalho-2024": [
+    {
+      "date": "2026-10-05",
+      "kind": "atualizacao",
+      "old_value": "17,7",
+      "new_value": "17,9"
+    }
+  ],
+  "despesa-em-id-2024-ue": [
+    {
+      "date": "2026-10-05",
+      "kind": "atualizacao",
+      "old_value": "2,24",
+      "new_value": "2,26"
+    }
+  ],
+  "formacao-bruta-de-capital-fixo-2024": [
+    {
+      "date": "2026-10-05",
+      "kind": "atualizacao",
+      "old_value": "20,4",
+      "new_value": "20,5"
+    }
+  ],
+  "formacao-bruta-de-capital-fixo-2025": [
+    {
+      "date": "2026-10-05",
+      "kind": "atualizacao",
+      "old_value": "20,7",
+      "new_value": "21,0"
+    }
+  ],
+  "pib-real-per-capita-2024": [
+    {
+      "date": "2026-10-05",
+      "kind": "atualizacao",
+      "old_value": "20 430",
+      "new_value": "20 520"
+    }
+  ],
+  "pib-real-per-capita-2025": [
+    {
+      "date": "2026-10-05",
+      "kind": "atualizacao",
+      "old_value": "20 600",
+      "new_value": "20 700"
+    }
+  ],
+  "posicao-de-investimento-internacional-2024": [
+    {
+      "date": "2026-10-05",
+      "kind": "atualizacao",
+      "old_value": "−58,9",
+      "new_value": "−58,3"
+    }
+  ],
+  "posicao-de-investimento-internacional-2025": [
+    {
+      "date": "2026-10-05",
+      "kind": "atualizacao",
+      "old_value": "−50,2",
+      "new_value": "−49,6"
+    }
+  ],
+  "saldo-da-balanca-corrente-2024": [
+    {
+      "date": "2026-10-05",
+      "kind": "atualizacao",
+      "old_value": "0,3",
+      "new_value": "0,4"
+    }
   ]
 }

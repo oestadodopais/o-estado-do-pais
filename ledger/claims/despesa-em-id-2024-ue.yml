@@ -6,7 +6,7 @@
 id: "despesa-em-id-2024-ue"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "2,24"
+value: "2,26"
 unit: "% do PIB"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -17,11 +17,12 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tipsst10/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsst10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP"
-access_date: "2026-09-15"
+access_date: "2026-10-05"
+published_at: "2026-09-29"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Gross domestic expenditure on research and development (R&D) — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2024: 2.24 e"
+excerpt: "Gross domestic expenditure on research and development (R&D) — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2024: 2.26 e"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -45,6 +46,32 @@ corrections:
     o valor não mudou.
   reason_en: The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026;
     the value has not changed.
+- date: '2026-10-05'
+  kind: atualizacao
+  old_value: 2,24
+  new_value: 2,26
+  reason: O Eurostat reviu o valor da União a 29.09.2026 (o carimbo do conjunto passou de 18.03.2026 a 29.09.2026); a reconferência
+    semanal de 05.10.2026 viu a revisão.
+  reason_en: Eurostat revised the EU value on 29.09.2026 (the dataset stamp moved from 18.03.2026 to 29.09.2026); the weekly
+    check of 05.10.2026 caught the revision.
+- date: '2026-10-05'
+  kind: proveniencia
+  field: access_date
+  old_value: '2026-09-15'
+  new_value: '2026-10-05'
+  reason: O valor novo foi lido a 05.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026,
+    é a do valor 2,24.
+  reason_en: The new value was read on 05.10.2026, the day of the check that caught the revision; the earlier reading, of
+    15.09.2026, is that of the value 2,24.
+- date: '2026-10-05'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Gross domestic expenditure on research and development (R&D) — Percentage of gross domestic product (GDP) —
+    European Union - 27 countries (from 2020) — 2024: 2.24 e'
+  new_value: 'Gross domestic expenditure on research and development (R&D) — Percentage of gross domestic product (GDP) —
+    European Union - 27 countries (from 2020) — 2024: 2.26 e'
+  reason: O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 05.10.2026.
+  reason_en: The excerpt now transcribes the revised value the source prints for the same observation, read on 05.10.2026.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 
@@ -64,6 +91,10 @@ verifications:
     result: "diverge"
     by: "painel-semanal"
     found: "2.26"
+  - date: "2026-10-05"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsst10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP"
+    result: "igual"
+    by: "painel-semanal"
 
 source_flag: "e"
 

@@ -1,0 +1,389 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/leituras-c2.mjs. Não se edita à mão.",
+  "modo": "antes",
+  "cabeca": "006685ae2355c602b8a133cc51c7b104745bedd9",
+  "linhas_do_livro_mudadas_na_arvore": 0,
+  "leituras_lidas": 48,
+  "cartoes_que_usam_as_nove": 6,
+  "conhecido_positivo": {
+    "o_que": "o cartão do PIB real por habitante, cuja linha própria é uma das nove, está entre os cartões achados",
+    "encontrado": true
+  },
+  "cartoes": [
+    {
+      "id": "pib-real-per-capita-2025",
+      "linhas_das_nove_que_toca": [
+        "pib-real-per-capita-2025",
+        "pib-real-per-capita-2024"
+      ],
+      "valores": {
+        "proprio": "20 600",
+        "anterior": {
+          "id": "pib-real-per-capita-2024",
+          "valor": "20 430"
+        },
+        "ue": {
+          "id": "pib-real-per-capita-2025-ue",
+          "valor": "31 890"
+        }
+      },
+      "edicoes": {
+        "pt": {
+          "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados. Subiu face a 2024. Está abaixo da média da União Europeia.",
+          "ramos": [
+            {
+              "no": "compara-anterior",
+              "caminho": "pt[1]",
+              "escolha": "maior",
+              "porque": "20 600 contra 20 430 (pib-real-per-capita-2024)"
+            },
+            {
+              "no": "compara-ue",
+              "caminho": "pt[2]",
+              "escolha": "menor",
+              "porque": "20 600 contra 31 890 (pib-real-per-capita-2025-ue)"
+            }
+          ],
+          "citadas": []
+        },
+        "en": {
+          "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes. Up from 2024. Below the European Union average.",
+          "ramos": [
+            {
+              "no": "compara-anterior",
+              "caminho": "en[1]",
+              "escolha": "maior",
+              "porque": "20 600 contra 20 430 (pib-real-per-capita-2024)"
+            },
+            {
+              "no": "compara-ue",
+              "caminho": "en[2]",
+              "escolha": "menor",
+              "porque": "20 600 contra 31 890 (pib-real-per-capita-2025-ue)"
+            }
+          ],
+          "citadas": []
+        }
+      }
+    },
+    {
+      "id": "saldo-da-balanca-corrente-2025",
+      "linhas_das_nove_que_toca": [
+        "saldo-da-balanca-corrente-2024"
+      ],
+      "valores": {
+        "proprio": "1,4",
+        "anterior": {
+          "id": "saldo-da-balanca-corrente-2024",
+          "valor": "0,3"
+        },
+        "ue": null
+      },
+      "edicoes": {
+        "pt": {
+          "texto": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou. Subiu face a 2024. Para a Comissão Europeia, um saldo abaixo de −4 % ou acima de 6 % é sinal de possível desequilíbrio: Portugal está entre os dois.",
+          "ramos": [
+            {
+              "no": "sinal",
+              "caminho": "pt[2]",
+              "escolha": "positivo",
+              "porque": "o valor da linha é 1,4"
+            },
+            {
+              "no": "compara-anterior",
+              "caminho": "pt[3]",
+              "escolha": "maior",
+              "porque": "1,4 contra 0,3 (saldo-da-balanca-corrente-2024)"
+            },
+            {
+              "no": "comparacao",
+              "caminho": "pt[9]",
+              "escolha": "entre",
+              "porque": "comparacaoComOLimiar() sobre 1,4"
+            }
+          ],
+          "citadas": []
+        },
+        "en": {
+          "texto": "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid. Up from 2024. For the European Commission, a balance below −4 % or above 6 % is a sign of a possible imbalance: Portugal is between the two.",
+          "ramos": [
+            {
+              "no": "sinal",
+              "caminho": "en[2]",
+              "escolha": "positivo",
+              "porque": "o valor da linha é 1,4"
+            },
+            {
+              "no": "compara-anterior",
+              "caminho": "en[3]",
+              "escolha": "maior",
+              "porque": "1,4 contra 0,3 (saldo-da-balanca-corrente-2024)"
+            },
+            {
+              "no": "comparacao",
+              "caminho": "en[9]",
+              "escolha": "entre",
+              "porque": "comparacaoComOLimiar() sobre 1,4"
+            }
+          ],
+          "citadas": []
+        }
+      }
+    },
+    {
+      "id": "posicao-de-investimento-internacional-2025",
+      "linhas_das_nove_que_toca": [
+        "posicao-de-investimento-internacional-2025",
+        "posicao-de-investimento-internacional-2024"
+      ],
+      "valores": {
+        "proprio": "−50,2",
+        "anterior": {
+          "id": "posicao-de-investimento-internacional-2024",
+          "valor": "−58,9"
+        },
+        "ue": null
+      },
+      "edicoes": {
+        "pt": {
+          "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano. Negativa quer dizer que o país deve ao exterior mais do que tem lá. A responsabilidade líquida perante o exterior encolheu face a 2024. Para a Comissão Europeia, uma posição abaixo de −35 % do PIB é sinal de possível desequilíbrio: Portugal está abaixo.",
+          "ramos": [
+            {
+              "no": "sinal",
+              "caminho": "pt[2]",
+              "escolha": "negativo",
+              "porque": "o valor da linha é −50,2"
+            },
+            {
+              "no": "compara-anterior",
+              "caminho": "pt[2].sinal.negativo[1]",
+              "escolha": "maior",
+              "porque": "−50,2 contra −58,9 (posicao-de-investimento-internacional-2024)"
+            },
+            {
+              "no": "estado",
+              "caminho": "pt[6]",
+              "escolha": "fora",
+              "porque": "estadoDaMedida() sobre −50,2"
+            }
+          ],
+          "citadas": []
+        },
+        "en": {
+          "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year. Negative means the country owes abroad more than it owns there. The net external liability shrank from 2024. For the European Commission, a position below −35 % of GDP is a sign of a possible imbalance: Portugal is below it.",
+          "ramos": [
+            {
+              "no": "sinal",
+              "caminho": "en[2]",
+              "escolha": "negativo",
+              "porque": "o valor da linha é −50,2"
+            },
+            {
+              "no": "compara-anterior",
+              "caminho": "en[2].sinal.negativo[1]",
+              "escolha": "maior",
+              "porque": "−50,2 contra −58,9 (posicao-de-investimento-internacional-2024)"
+            },
+            {
+              "no": "estado",
+              "caminho": "en[6]",
+              "escolha": "fora",
+              "porque": "estadoDaMedida() sobre −50,2"
+            }
+          ],
+          "citadas": []
+        }
+      }
+    },
+    {
+      "id": "custo-unitario-do-trabalho-2025",
+      "linhas_das_nove_que_toca": [
+        "custo-unitario-do-trabalho-2024"
+      ],
+      "valores": {
+        "proprio": "21,3",
+        "anterior": {
+          "id": "custo-unitario-do-trabalho-2024",
+          "valor": "17,7"
+        },
+        "ue": {
+          "id": "custo-unitario-do-trabalho-2025-ue",
+          "valor": "15,2"
+        }
+      },
+      "edicoes": {
+        "pt": {
+          "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz. A variação em três anos é maior do que a medida em 2024. A variação é maior do que a da União Europeia. Para a Comissão Europeia, uma subida acima de 9 % em três anos é sinal de possível desequilíbrio: Portugal está acima.",
+          "ramos": [
+            {
+              "no": "sinal",
+              "caminho": "pt[1]",
+              "escolha": "positivo",
+              "porque": "o valor da linha é 21,3"
+            },
+            {
+              "no": "compara-anterior",
+              "caminho": "pt[2]",
+              "escolha": "maior",
+              "porque": "21,3 contra 17,7 (custo-unitario-do-trabalho-2024)"
+            },
+            {
+              "no": "compara-ue",
+              "caminho": "pt[3]",
+              "escolha": "maior",
+              "porque": "21,3 contra 15,2 (custo-unitario-do-trabalho-2025-ue)"
+            },
+            {
+              "no": "estado",
+              "caminho": "pt[9]",
+              "escolha": "fora",
+              "porque": "estadoDaMedida() sobre 21,3"
+            }
+          ],
+          "citadas": []
+        },
+        "en": {
+          "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces. The three-year change is larger than the one measured in 2024. The change is larger than the European Union’s. For the European Commission, a rise above 9 % over three years is a sign of a possible imbalance: Portugal is above it.",
+          "ramos": [
+            {
+              "no": "sinal",
+              "caminho": "en[1]",
+              "escolha": "positivo",
+              "porque": "o valor da linha é 21,3"
+            },
+            {
+              "no": "compara-anterior",
+              "caminho": "en[2]",
+              "escolha": "maior",
+              "porque": "21,3 contra 17,7 (custo-unitario-do-trabalho-2024)"
+            },
+            {
+              "no": "compara-ue",
+              "caminho": "en[3]",
+              "escolha": "maior",
+              "porque": "21,3 contra 15,2 (custo-unitario-do-trabalho-2025-ue)"
+            },
+            {
+              "no": "estado",
+              "caminho": "en[9]",
+              "escolha": "fora",
+              "porque": "estadoDaMedida() sobre 21,3"
+            }
+          ],
+          "citadas": []
+        }
+      }
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025",
+      "linhas_das_nove_que_toca": [
+        "formacao-bruta-de-capital-fixo-2025",
+        "formacao-bruta-de-capital-fixo-2024"
+      ],
+      "valores": {
+        "proprio": "20,7",
+        "anterior": {
+          "id": "formacao-bruta-de-capital-fixo-2024",
+          "valor": "20,4"
+        },
+        "ue": {
+          "id": "formacao-bruta-de-capital-fixo-2025-ue",
+          "valor": "21,4"
+        }
+      },
+      "edicoes": {
+        "pt": {
+          "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano. Subiu face a 2024. Está abaixo da média da União Europeia.",
+          "ramos": [
+            {
+              "no": "compara-anterior",
+              "caminho": "pt[2]",
+              "escolha": "maior",
+              "porque": "20,7 contra 20,4 (formacao-bruta-de-capital-fixo-2024)"
+            },
+            {
+              "no": "compara-ue",
+              "caminho": "pt[3]",
+              "escolha": "menor",
+              "porque": "20,7 contra 21,4 (formacao-bruta-de-capital-fixo-2025-ue)"
+            }
+          ],
+          "citadas": []
+        },
+        "en": {
+          "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year. Up from 2024. Below the European Union average.",
+          "ramos": [
+            {
+              "no": "compara-anterior",
+              "caminho": "en[2]",
+              "escolha": "maior",
+              "porque": "20,7 contra 20,4 (formacao-bruta-de-capital-fixo-2024)"
+            },
+            {
+              "no": "compara-ue",
+              "caminho": "en[3]",
+              "escolha": "menor",
+              "porque": "20,7 contra 21,4 (formacao-bruta-de-capital-fixo-2025-ue)"
+            }
+          ],
+          "citadas": []
+        }
+      }
+    },
+    {
+      "id": "despesa-em-id-2024",
+      "linhas_das_nove_que_toca": [
+        "despesa-em-id-2024-ue"
+      ],
+      "valores": {
+        "proprio": "1,73",
+        "anterior": {
+          "id": "despesa-em-id-2023",
+          "valor": "1,68"
+        },
+        "ue": {
+          "id": "despesa-em-id-2024-ue",
+          "valor": "2,24"
+        }
+      },
+      "edicoes": {
+        "pt": {
+          "texto": "É o que se gastou no país em investigação e desenvolvimento num ano, pelas empresas, pelo Estado, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que o país produz num ano. Subiu face a 2023. Está abaixo da média da União Europeia.",
+          "ramos": [
+            {
+              "no": "compara-anterior",
+              "caminho": "pt[2]",
+              "escolha": "maior",
+              "porque": "1,73 contra 1,68 (despesa-em-id-2023)"
+            },
+            {
+              "no": "compara-ue",
+              "caminho": "pt[3]",
+              "escolha": "menor",
+              "porque": "1,73 contra 2,24 (despesa-em-id-2024-ue)"
+            }
+          ],
+          "citadas": []
+        },
+        "en": {
+          "texto": "It is what was spent in the country on research and development in a year, by companies, the State, higher education and non-profit institutions, as a percentage of GDP, the value of everything the country produces in a year. Up from 2023. Below the European Union average.",
+          "ramos": [
+            {
+              "no": "compara-anterior",
+              "caminho": "en[2]",
+              "escolha": "maior",
+              "porque": "1,73 contra 1,68 (despesa-em-id-2023)"
+            },
+            {
+              "no": "compara-ue",
+              "caminho": "en[3]",
+              "escolha": "menor",
+              "porque": "1,73 contra 2,24 (despesa-em-id-2024-ue)"
+            }
+          ],
+          "citadas": []
+        }
+      }
+    }
+  ]
+}

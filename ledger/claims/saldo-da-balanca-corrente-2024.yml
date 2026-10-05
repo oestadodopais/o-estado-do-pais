@@ -6,7 +6,7 @@
 id: "saldo-da-balanca-corrente-2024"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "0,3"
+value: "0,4"
 unit: "% do PIB (média de três anos)"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -17,11 +17,12 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tipsbp10/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp10?format=JSON&lang=EN&geo=PT&unit=PC_GDP_3Y&partner=WRL_REST"
-access_date: "2026-09-15"
+access_date: "2026-10-05"
+published_at: "2026-10-02"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Current account balance - 3 year average — Percentage of GDP - three-year average — Portugal — 2024: 0.3"
+excerpt: "Current account balance - 3 year average — Percentage of GDP - three-year average — Portugal — 2024: 0.4"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -33,7 +34,31 @@ study: "quadro-institucional"
 note: "Período anterior da medida «saldo-da-balanca-corrente-2025»: o mesmo pedido ao Eurostat devolve a série inteira, e esta linha é o período 2024. Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: -4/+6%. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-10-05'
+  kind: atualizacao
+  old_value: 0,3
+  new_value: 0,4
+  reason: O Eurostat reviu o valor de Portugal a 02.10.2026 (o carimbo do conjunto passou de 08.07.2026 a 02.10.2026); a reconferência
+    semanal de 05.10.2026 viu a revisão.
+  reason_en: Eurostat revised Portugal's value on 02.10.2026 (the dataset stamp moved from 08.07.2026 to 02.10.2026); the
+    weekly check of 05.10.2026 caught the revision.
+- date: '2026-10-05'
+  kind: proveniencia
+  field: access_date
+  old_value: '2026-09-15'
+  new_value: '2026-10-05'
+  reason: O valor novo foi lido a 05.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026,
+    é a do valor 0,3.
+  reason_en: The new value was read on 05.10.2026, the day of the check that caught the revision; the earlier reading, of
+    15.09.2026, is that of the value 0,3.
+- date: '2026-10-05'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Current account balance - 3 year average — Percentage of GDP - three-year average — Portugal — 2024: 0.3'
+  new_value: 'Current account balance - 3 year average — Percentage of GDP - three-year average — Portugal — 2024: 0.4'
+  reason: O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 05.10.2026.
+  reason_en: The excerpt now transcribes the revised value the source prints for the same observation, read on 05.10.2026.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 
@@ -53,3 +78,7 @@ verifications:
     result: "diverge"
     by: "painel-semanal"
     found: "0.4"
+  - date: "2026-10-05"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp10?format=JSON&lang=EN&geo=PT&unit=PC_GDP_3Y&partner=WRL_REST"
+    result: "igual"
+    by: "painel-semanal"
