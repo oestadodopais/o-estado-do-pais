@@ -1,0 +1,11 @@
+{
+  "inicio": "2026-10-05T06:55:57.855560+00:00",
+  "intervalo_segundos": 300,
+  "limite_segundos": 1800,
+  "conferencias": [
+    {
+      "hora": "2026-10-05T06:55:57.855560+00:00",
+      "presente": false
+    }
+  ]
+}

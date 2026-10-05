@@ -4005,4 +4005,4 @@ O título do SVG é conteúdo composto, conferido carácter a carácter pela F21
 | `livro.serieNoTempo.mil` | mil | thousand |
 | `livro.serieNoTempo.uneNumero` |  e  |  and  |
 
-O cartão da União, que o livro já prendia à série mas nenhuma página rendia, entra em Preços. A leitura vive em `src/data/leitura-ihpc-uniao.mjs`, nas duas línguas, e passa pela K17 como as outras. As folhas do sinal vêm da leitura do IHPC da casa; a folha que muda o âmbito diz «os preços na União Europeia estavam, na medida harmonizada,» e «prices in the European Union were, on the harmonised measure,». O âmbito apoia-se no excerto da própria linha e a definição no literal já selado do Eurostat. A auditoria é `tests/cartao/leituras-provadas.json`. Não é uma frase fixa do inventário: cada ramo é conferido contra a declaração e os valores selados.
+Na passagem RP4-b sai a leitura do cartão europeu autónomo e a sua auditoria. O desenho europeu entra no cartão da comparação com a legenda `cartao.uniaoEuropeia`, «União Europeia» e «European Union», já inventariada. A K20 confere a legenda contra a cadeia da casa nas duas edições, com plantas da sua ausência e troca.

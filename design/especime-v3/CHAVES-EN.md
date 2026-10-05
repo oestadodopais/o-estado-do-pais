@@ -1455,4 +1455,4 @@ As palavras do título acessível e dos cabeçalhos saem destas cadeias. O nome 
 | `livro.serieNoTempo.mil` | mil | thousand |
 | `livro.serieNoTempo.uneNumero` |  e  |  and  |
 
-O cartão europeu reutiliza a unidade declarada da inflação: «% de variação em doze meses» e «% change over twelve months», em `src/data/unidades-dos-cartoes.mjs`. O apoio é «Annual rate of change», no excerto da própria linha. Não há uma unidade nova no livro.
+A passagem RP4-b retira o cartão europeu autónomo e a sua unidade declarada. A legenda do desenho da comparação reutiliza `cartao.uniaoEuropeia`: «União Europeia» e «European Union», já presentes nas cadeias e neste inventário.

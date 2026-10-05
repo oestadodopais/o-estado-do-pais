@@ -113,3 +113,13 @@ Ficam a leitura a frio do pacote, incluindo a escolha editorial do cartão europ
 O guião geral `estado.py`, pedido pelo contexto do projeto no fecho, não conseguiu as leituras remotas na sandbox. A sua tentativa interna de `git fetch` no motor foi recusada antes da escrita e não foi repetida com mais permissões. Esta entrega não declara o estado remoto, uma publicação ou uma corrida da CI.
 
 Reprodução das medidas: `node design/especime-v3/medicoes/rp4-2026-10-04/medir.mjs`. Cada medida em `medidas.json` traz o comando e o conhecido-positivo. A conferência dos números do relatório usa `python3 scripts/leituras/conferir-relatorio.py <relatório> <pasta>`; o resultado fica em `conferencia-relatorio.json` e no respetivo ficheiro de código.
+
+## RP4-b
+
+Passagem de 05.10.2026, pelo mandato de direção depois da leitura a frio. O registo acima conserva a primeira entrega. Esta secção substitui a decisão do cartão europeu e identifica as provas refeitas nesta passagem. A I196 continua fechada: o brief corrigido mede a cabeça histórica `905105b7`.
+
+A decisão da antiga I195 do RP4, agora I197, está implementada em `2348c727`. O cartão `ihpc-variacao-homologa` desenha a série da linha europeia que a sua régua mostra, com «União Europeia» e a porta para o recibo europeu na edição da página. A regra abrange a série própria e a série da comparação declarada. Saíram o cartão europeu autónomo, a leitura, a sua auditoria e a unidade que só ele usava. A E2 voltou ao catálogo nacional. As cadeias globais do desenho continuam em uso nos recibos; nenhuma delas era exclusiva do cartão retirado.
+
+As conferências intermédias do cartão, das séries, das entradas, da voz e dos tipos passaram. As plantas da K20 incluem um cartão sem série própria nem comparação com série, a ausência da série própria, a ausência da comparação, a troca da série, da legenda e da porta, a ordem e um cartão com ambas as séries. A S5 continua a recusar uma comparação europeia desfasada. Os registos `rp4-b-cartao.json`, `rp4-b-series.json` e `rp4-b-entradas.json` guardam os controlos e as mordidas; estas conferências não substituem os portões finais.
+
+A leitura a frio ainda não tinha chegado ao terminar a decisão. A espera e cada conferência ficam em `rp4-b-espera.json`. A tabela dos achados, os códigos finais, as cabeças após o rebase e o custo serão fechados antes da entrega. O custo parcial é lido da sessão por `custo-rp4-b.py`; a linha final `tokens used` só fica disponível depois de o lançador terminar.
