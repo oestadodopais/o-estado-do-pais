@@ -8,6 +8,8 @@ import { parse } from 'node-html-parser';
 import { loadClaims } from '../../../../src/lib/ledger.mjs';
 import { conferirSeriesDosCartoes, plantasDosCartoesComSerie } from '../../../../tests/cartao/series.mjs';
 import { documentoDosAssuntos } from '../../../../tests/inicio/paginas-dos-assuntos.mjs';
+import { conferirSerie, plantasDaSerie, provasDoModulo } from '../../../../tests/formas/serie-do-pais.mjs';
+import { conferirSerieDoBloco, plantasDaSerieDoBloco } from '../../../../tests/inicio/serie-do-bloco.mjs';
 import { conferirEntradas, plantasDasEntradas } from '../../../../tests/inicio/entradas.mjs';
 const O = 'design/especime-v3/medicoes/rp4-2026-10-04';
 const ler = f => fs.readFileSync(path.join(O, f), 'utf8').trim();
@@ -25,6 +27,19 @@ const portoes = Object.fromEntries(['build','verify','typecheck'].map(g => {
  const inicio = ler(`portoes/${g}.inicio`), fim = ler(`portoes/${g}.fim`);
  return [g, { codigo:c, inicio, fim, segundos:(Date.parse(fim)-Date.parse(inicio))/1000 }];
 }));
+const formas={desenhos:0,erros:[],modulo:provasDoModulo(),plantas:[],primeira:[]};
+for(const f of fs.readdirSync('dist',{recursive:true}).filter(f=>f.endsWith('.html'))){
+ const html=fs.readFileSync(path.join('dist',f),'utf8');if(!html.includes('data-forma="serie-do-pais"'))continue;
+ const root=parse(html), lang=root.querySelector('html')?.getAttribute('lang')==='en'?'en':'pt';
+ for(const svg of root.querySelectorAll('svg[data-forma="serie-do-pais"]')){formas.desenhos++;formas.erros.push(...conferirSerie(svg,lang));}
+ if(f==='index.html'||f==='en/index.html'){
+  formas.erros.push(...conferirSerieDoBloco(root,lang));
+  formas.plantas.push(...plantasDaSerie(html,lang).map(p=>({lang,...p})));
+  formas.primeira.push(...plantasDaSerieDoBloco(html,lang).map(p=>({lang,...p})));
+ }
+}
+assert.deepEqual(formas.erros,[]);assert([...formas.plantas,...formas.primeira].every(p=>p.mordeu));
+fs.writeFileSync(path.join(O,'rp4-b-reais-provas.json'),JSON.stringify(formas,null,2)+'\n');
 const cartoes = {};
 for (const lang of ['pt','en']) {
  const doc = documentoDosAssuntos('dist', lang);
@@ -53,8 +68,8 @@ for (const id of ['I195','I196','I197']) assert.equal(issues.split('\n').filter(
 const leitura = 'design/especime-v3/critica/LEITURA-RP4-2026-10-05.md';
 const plantas = 'design/especime-v3/critica/LEITURA-RP4-2026-10-05.plantas.json';
 const resultado = {comando:'node '+O+'/medir-rp4-b.mjs',cabeca_do_codigo:cabeca,main:git('rev-parse','main'),portoes,
- cartoes,entradas,series:{contas:series.contas,plantas:series.plantas},
- capturas:{cabeca:capturas.cabeca,ficheiros:capturas.capturas.length,larguras:capturas.larguras,erros:capturas.erros,plantas:capturas.plantas,paginasDosCartoes:capturas.paginasDosCartoes},
+ formas,cartoes,entradas,series:{contas:series.contas,plantas:series.plantas},
+ capturas:{cabeca:capturas.cabeca,ficheiros:capturas.capturas.length,larguras:capturas.larguras,letra_minima:Math.min(...capturas.capturas.map(c=>c.letraMinima)),letra_maxima:Math.max(...capturas.capturas.map(c=>c.letraMaxima)),erros:capturas.erros,plantas:capturas.plantas,paginasDosCartoes:capturas.paginasDosCartoes},
  livro:{ficheiros_alterados:protegidos?protegidos.split('\n').length:0},
  leitura:[leitura,plantas].map(f=>({ficheiro:f,presente:fs.existsSync(f),sha256:fs.existsSync(f)?hash(fs.readFileSync(f)):null})),
  commits:git('log','--format=%H %s','main..'+cabeca).split('\n'),

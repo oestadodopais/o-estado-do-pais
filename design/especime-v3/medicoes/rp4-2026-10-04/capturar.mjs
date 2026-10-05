@@ -41,6 +41,7 @@ try {
         const desenhos = [...document.querySelectorAll('svg[data-forma="serie-do-pais"]')];
         const letras = desenhos.flatMap(s => [...s.querySelectorAll('text')].map(t => parseFloat(getComputedStyle(t).fontSize) * t.getScreenCTM().a));
         const letraMinima = Math.min(...letras);
+        const letraMaxima = Math.max(...letras);
         const rect = e => { const r = e.getBoundingClientRect(); return { x: r.x, y: r.y + scrollY, largura: r.width, altura: r.height }; };
         const bloco = document.querySelector('[data-bloco="precos"]');
         const barras = bloco?.querySelector('[data-forma="barras"]');
@@ -48,11 +49,11 @@ try {
         const posicaoNoBloco = barras && serie ? { barras: rect(barras), serie: rect(serie) } : null;
         const marcasFora = desenhos.flatMap(s => [...s.querySelectorAll('text')].filter(t => { const b = t.getBBox(); const v = s.viewBox.baseVal; return b.x < -1 || b.y < -1 || b.x + b.width > v.width + 1 || b.y + b.height > v.height + 1; }).map(t => t.textContent));
         return { largura: innerWidth, pagina: document.documentElement.scrollWidth, altura: document.documentElement.scrollHeight,
-          letraMinima, posicaoNoBloco, desenhos: desenhos.map(s => ({ serie: s.dataset.series, ...rect(s), titulo: s.querySelector('title')?.textContent })), marcasFora,
+          letraMinima, letraMaxima, posicaoNoBloco, desenhos: desenhos.map(s => ({ serie: s.dataset.series, ...rect(s), titulo: s.querySelector('title')?.textContent })), marcasFora,
           tabelas: [...document.querySelectorAll('[data-serie-tabela]')].map(t => ({ serie: t.dataset.serieTabela, anos: t.querySelectorAll('tbody tr').length, pontos: t.querySelectorAll('[data-ponto]').length, largura: t.scrollWidth, janela: t.parentElement.clientWidth })),
           cartoes: [...document.querySelectorAll('[data-cartao-serie]')].map(a => ({ cartao: a.closest('[data-cartao-medida]')?.dataset.cartaoMedida, linha: a.dataset.cartaoSerieLinha, serie: a.dataset.cartaoSerie, porta: a.getAttribute('href') })) };
       });
-      if (medida.letraMinima < 11.5) erros.push(`letras dos eixos demasiado pequenas: ${lang}/${rota}/${largura}`);
+      if (medida.letraMinima < 11 || medida.letraMaxima > 16) erros.push(`letras dos eixos fora dos limites: ${lang}/${rota}/${largura}`);
       if (medida.pagina > largura || medida.marcasFora.length || !medida.desenhos.length) erros.push({ rota, largura, medida });
       if (largura === 390 && rota.includes('serie-ipc-indice')) {
         const estilo = await pagina.addStyleTag({ content: '.serie-tabela-janela { position: static !important; }' });
@@ -78,6 +79,14 @@ try {
         const mordeu = medida.letraMinima >= 11.5 && minimo < 11.5;
         plantas.push({ nome: 'letras dos eixos reduzidas', lang, controlo: medida.letraMinima, minimo, mordeu });
         if (!mordeu) erros.push('a planta das letras dos eixos não mordeu');
+      }
+      if (largura === 768 && rota.includes('/areas/')) {
+        const estilo = await pagina.addStyleTag({content: '.serie-do-pais { max-width: none !important; }'});
+        const maximo = await pagina.evaluate(() => Math.max(...[...document.querySelectorAll('.serie-do-pais text')].map(t => parseFloat(getComputedStyle(t).fontSize) * t.getScreenCTM().a)));
+        await estilo.evaluate(e => e.remove());
+        const mordeu = medida.letraMaxima <= 16 && maximo > 16;
+        plantas.push({nome:'gráfico sem largura máxima',lang,controlo:medida.letraMaxima,maximo,mordeu});
+        if (!mordeu) erros.push('a planta da largura máxima não mordeu');
       }
       if (medida.posicaoNoBloco) {
         const { barras, serie } = medida.posicaoNoBloco;
