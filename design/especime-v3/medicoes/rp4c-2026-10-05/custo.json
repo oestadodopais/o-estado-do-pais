@@ -1,0 +1,24 @@
+{
+  "o_que": "o custo do bloco RP4-c, lido do registo da sessão do construtor (custo.py)",
+  "registo_sha256": "e29ca7308d9d9d0c761f6e9e9811b67024a72ce11a400e44995d94c9c98b42db",
+  "respostas_do_modelo": 240,
+  "modelos": {
+    "claude-opus-5-5": 588
+  },
+  "simbolos": {
+    "input_tokens": 480,
+    "cache_creation_input_tokens": 2658934,
+    "cache_read_input_tokens": 115809661,
+    "output_tokens": 48118
+  },
+  "simbolos_de_entrada": 118469075,
+  "simbolos_de_entrada_quer_dizer": "a entrada de cada resposta, somada: a nova, a escrita na cache e a lida da cache",
+  "simbolos_de_saida_minimo": 48118,
+  "respostas_com_a_saida_de_um_momento_do_fluxo": 178,
+  "simbolos_de_saida_quer_dizer": "um mínimo: em tantas respostas quantas a contagem ao lado, o registo guardou a saída de um momento do fluxo e não a final",
+  "primeira_entrada": "2026-10-05T18:01:31.285Z",
+  "ultima_entrada": "2026-10-05T19:55:34.552Z",
+  "lido_em": "2026-10-05T19:55:34Z",
+  "segundos": 6843,
+  "segundos_quer_dizer": "da primeira entrada do registo da sessão até ao momento desta leitura"
+}

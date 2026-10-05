@@ -1,0 +1,43 @@
+
+> o-estado-do-pais@0.1.0 design:feixe
+> node scripts/design-bundle.mjs --prova
+
+  mordeu · feixe · tamanho
+  mordeu · feixe · dependência SVG
+  mordeu · feixe · imagem externa
+  mordeu · feixe · recorte retirado
+{"recorte_livro":{"ficheiro":"13-pagina-livro-razao.html","entradas_na_pagina":428,"entradas_no_recorte":8,"primeiras_preservadas":true,"nota_e_porta_preservadas":true,"pagina_conservada":true,"pagina_sha256":"cc83a3eb392ba427b4851999725d1b5f8a9c199dd3e998527c8593263765d21c","bytes_cartao":237857,"bytes_sem_recorte":1135422,"teto_bytes":673249,"margem":0.1,"planta":{"nome":"recorte retirado","mordeu":true,"queixa":"1108.8 KiB acima do tecto de 657.4697265625 KiB"}}}
+
+[1m  O feixe de cartões do sistema de desenho[0m
+[90m  design-system/ · de dist/ no commit 6e0c94f · 20 cartões, 11 ficheiros de letra e um README[0m
+
+[90m  ficheiro                          grupo          bytes  ok[0m
+  01-cor.html                       Fundamentos   380206  [32m✓[0m
+  02-tipo.html                      Fundamentos   376352  [32m✓[0m
+  03-selo-e-marcador.html           Componentes   414180  [32m✓[0m
+  04-regua.html                     Disposições   383852  [32m✓[0m
+  05-mapa.html                      Disposições   444997  [32m✓[0m
+  06-estados.html                   Componentes   375911  [32m✓[0m
+  07-cartoes.html                   Componentes   288787  [32m✓[0m
+  10-pagina-primeira.html           Páginas       608421  [32m✓[0m
+  11-pagina-primeira-escuro.html    Páginas       609292  [32m✓[0m
+  12-pagina-linha-livro-razao.html  Páginas       227293  [32m✓[0m
+  13-pagina-livro-razao.html        Páginas       237857  [32m✓[0m
+  14-pagina-municipio.html          Páginas       300931  [32m✓[0m
+  15-pagina-lugares.html            Páginas       491279  [32m✓[0m
+  16-pagina-metodo.html             Páginas       257220  [32m✓[0m
+  17-pagina-agenda.html             Páginas       293896  [32m✓[0m
+  18-pagina-estudos.html            Páginas       214252  [32m✓[0m
+  19-pagina-sobre.html              Páginas       199616  [32m✓[0m
+  20-pagina-correcoes.html          Páginas       318504  [32m✓[0m
+  21-pagina-404.html                Páginas       198545  [32m✓[0m
+  30-regras.html                    Fundamentos   240811  [32m✓[0m
+
+[90m  6701.4 KiB de cartões · maior cartão 595.0 KiB · tecto 657.4697265625 KiB[0m
+[90m  11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto[0m
+[90m  ligações internas absolutas em https://oestadodopaís.pt · 17 ligações para fontes, intactas · 12 endereços escritos no texto das páginas (transcrições, não pedidos)[0m
+[90m  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida[0m
+
+[90m  7899 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.[0m
+  [32m✓[0m 20 cartões, 11 ficheiros de letra e um README em design-system/.
+

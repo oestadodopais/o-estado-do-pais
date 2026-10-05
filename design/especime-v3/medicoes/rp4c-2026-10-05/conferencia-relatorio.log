@@ -1,0 +1,8 @@
+relatório: design/especime-v3/medicoes/rp4c-2026-10-05/LEIA-ME.md
+pasta das medições: design/especime-v3/medicoes/rp4c-2026-10-05
+ficheiros JSON lidos: 16
+conhecido-positivo (o número 987654321, ausente dos ficheiros, apontado pelo mesmo detetor): encontrado
+números conferidos: 200
+números com ficheiro: 200
+números sem ficheiro: 0
+apagado antes de contar: codigo 99, enderecos 0, seccoes 3, datas 1, resumos 0, ordinais 2, identificadores 46, anos 12
