@@ -6,7 +6,7 @@
 id: "posicao-de-investimento-internacional-2025"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "−50,2"
+value: "−49,6"
 unit: "% do PIB"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -17,11 +17,11 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tipsii10/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsii10?format=JSON&lang=EN&geo=PT&unit=PC_GDP&partner=WRL_REST"
-access_date: "2026-08-12"
+access_date: "2026-10-05"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Net international investment position - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: -50.2"
+excerpt: "Net international investment position - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: -49.6"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -33,7 +33,33 @@ study: "quadro-institucional"
 note: "Limiar do Procedimento relativo aos Desequilíbrios Macroeconómicos: -35%. Valor confirmado contra a Comissão Europeia, SWD(2026) 222 (Relatório por País 2026 — Portugal): -50.2. Excerto composto a partir das etiquetas da própria resposta do Eurostat; o endereço em source_url devolve o mesmo valor."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+- date: '2026-10-05'
+  kind: atualizacao
+  old_value: −50,2
+  new_value: −49,6
+  reason: O Eurostat reviu o valor de Portugal a 02.10.2026 (o carimbo do conjunto passou de 11.09.2026 a 02.10.2026); a reconferência
+    semanal de 05.10.2026 viu a revisão.
+  reason_en: Eurostat revised Portugal's value on 02.10.2026 (the dataset stamp moved from 11.09.2026 to 02.10.2026); the
+    weekly check of 05.10.2026 caught the revision.
+- date: '2026-10-05'
+  kind: proveniencia
+  field: access_date
+  old_value: '2026-08-12'
+  new_value: '2026-10-05'
+  reason: O valor novo foi lido a 05.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 12.08.2026,
+    é a do valor −50,2.
+  reason_en: The new value was read on 05.10.2026, the day of the check that caught the revision; the earlier reading, of
+    12.08.2026, is that of the value −50,2.
+- date: '2026-10-05'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Net international investment position - annual data — Percentage of gross domestic product (GDP) — Portugal
+    — 2025: -50.2'
+  new_value: 'Net international investment position - annual data — Percentage of gross domestic product (GDP) — Portugal
+    — 2025: -49.6'
+  reason: O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 05.10.2026.
+  reason_en: The excerpt now transcribes the revised value the source prints for the same observation, read on 05.10.2026.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 verifications:
