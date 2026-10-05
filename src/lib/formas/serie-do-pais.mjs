@@ -5,7 +5,8 @@
  * origem. Não há janela, amostragem nem interpolação de lacunas.
  *
  * A base do índice é o período que contém janeiro de 2015, para todas as
- * séries. Sem esse ponto, ou com base nula, o desenho é recusado com a razão.
+ * séries. Sem esse ponto, ou com base nula, a linha fica fora com a razão.
+ * Só se recusa o desenho quando nenhuma linha tem base utilizável.
  * A escala inclui zero e usa passos 1, 2 ou 5 vezes uma potência de dez.
  * As coordenadas arredondam uma vez, a três casas, só ao sair para o SVG.
  */
@@ -45,14 +46,19 @@ export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, 
   const series = ids.map(lerSerie);
   if (series.some((s) => s.eixo !== 'periodo')) throw new Error('serie-do-pais: só entram séries no tempo.');
   if (modo === 'unidade' && new Set(series.map((s) => s.unit)).size !== 1) throw new Error('serie-do-pais: unidades diferentes exigem o modo indice.');
-  const linhas = series.map((s) => {
+  /** @type {{id: string, base: string, motivo: 'ausente'|'nula'}[]} */
+  const excluidas = [];
+  const linhas = series.flatMap((s) => {
     const cadencia = /** @type {keyof typeof CADENCIAS} */ (s.periodicidade);
     if (!(cadencia in CADENCIAS)) throw new Error(`serie-do-pais: cadência desconhecida em ${s.id}.`);
     const pontos = /** @type {{periodo: string, valor: string}[]} */ (s.pontos);
     if (!pontos?.length) throw new Error(`serie-do-pais: ${s.id} não tem pontos.`);
     const base = BASE_DO_INDICE[cadencia];
     const valorBase = modo === 'indice' ? parsePtNumber(pontos.find((p) => p.periodo === base)?.valor) : 1;
-    if (valorBase === null || valorBase === 0) throw new Error(`serie-do-pais: ${s.id} não tem ponto de base não nulo em ${base}.`);
+    if (valorBase === null || valorBase === 0) {
+      excluidas.push({ id: s.id, base, motivo: valorBase === null ? 'ausente' : 'nula' });
+      return [];
+    }
     const lacunas = new Set((/** @type {{periodo: string}[]} */ (s.lacunas ?? [])).map((l) => l.periodo));
     const dados = pontos.map((p, i) => {
       const valor = parsePtNumber(p.valor);
@@ -69,8 +75,9 @@ export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, 
       }
       return { periodo: p.periodo, x, valor: modo === 'indice' ? (valor / valorBase) * 100 : valor, quebra };
     });
-    return { id: s.id, base: modo === 'indice' ? base : null, dados };
+    return [{ id: s.id, base: modo === 'indice' ? base : null, dados }];
   });
+  if (!linhas.length) throw new Error('serie-do-pais: nenhuma linha tem período de base não nulo: ' + excluidas.map(l => `${l.id} (${l.base}, ${l.motivo})`).join('; '));
   const todos = linhas.flatMap((l) => l.dados);
   const xMin = Math.min(...todos.map((p) => p.x));
   const xMax = Math.max(...todos.map((p) => p.x));
@@ -100,7 +107,7 @@ export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, 
   if (ultimoAno !== primeiroAno) anos.push(ultimoAno);
   const marcasX = anos.map((ano, i) => ({ valor: ano, texto: String(ano), x: x(i === 0 ? xMin : ano === ultimoAno ? xMax : ano * 12), y: coordenada(altura - 8), ancora: i === 0 ? 'start' : i === anos.length - 1 ? 'end' : 'middle' }));
   return {
-    modo, largura, altura, campo, marcasX, marcasY,
+    modo, largura, altura, campo, marcasX, marcasY, excluidas,
     linhas: linhas.map((l) => {
       /** @type {string[][]} */
       const segmentos = [];
@@ -131,4 +138,14 @@ export function tabelaPorAnos(s) {
       return { periodo, ponto: pontos.get(periodo) ?? null, lacuna: lacunas.get(periodo) ?? null };
     }) };
   });
+}
+
+/** Um segmento isolado tem área visível; não é uma linha de um vértice.
+ * @param {string} pontos
+ * @returns {{tipo: 'ponto', cx: string, cy: string, r: string}|{tipo: 'linha', pontos: string}}
+ */
+export function segmentoVisivel(pontos) {
+  if (pontos.includes(' ')) return { tipo: 'linha', pontos };
+  const [cx, cy] = pontos.split(',');
+  return { tipo: 'ponto', cx, cy, r: '2' };
 }
