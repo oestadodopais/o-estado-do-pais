@@ -1,3 +1,12 @@
-?? design/especime-v3/capturas/h3-2026-10-05/
-?? design/especime-v3/medicoes/h3-2026-10-05/
+ M design/especime-v3/medicoes/h3-2026-10-05/portoes/build.fim
+ M design/especime-v3/medicoes/h3-2026-10-05/portoes/build.inicio
+ M design/especime-v3/medicoes/h3-2026-10-05/portoes/build.log
+ M design/especime-v3/medicoes/h3-2026-10-05/portoes/cabeca
+ M design/especime-v3/medicoes/h3-2026-10-05/portoes/cabeca.fim
+ M design/especime-v3/medicoes/h3-2026-10-05/portoes/estado.fim
+ M design/especime-v3/medicoes/h3-2026-10-05/portoes/typecheck.fim
+ M design/especime-v3/medicoes/h3-2026-10-05/portoes/typecheck.inicio
+ M design/especime-v3/medicoes/h3-2026-10-05/portoes/verify.fim
+ M design/especime-v3/medicoes/h3-2026-10-05/portoes/verify.inicio
+ M design/especime-v3/medicoes/h3-2026-10-05/portoes/verify.log
 ?? node_modules
