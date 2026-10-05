@@ -1,0 +1,30 @@
+{
+  "o_que": "a limpeza dos caminhos da máquina nos registos desta pasta (limpar-registos.py)",
+  "ficheiros_limpos": [
+    {
+      "ficheiro": "conferencias/astro-build.log",
+      "trocas": 1,
+      "sha256_antes": "aeef47286ec1d8e20ab96332c5888944684de33849178893cedddf87aa8a835b",
+      "sha256_depois": "e8ce924d10f31bc7f4763debb82b105ac33a88ef6241d15b2790f27f98095b7b"
+    },
+    {
+      "ficheiro": "portoes/build.log",
+      "trocas": 1,
+      "sha256_antes": "0d8aee61ee5b3dd9fc49760a958692f5f4d06ff564c19fa99660c418cef7f49f",
+      "sha256_depois": "3b6a01a2810afdfdbcad1c20a4d4c4d410616fbb5e31caac95077324574efb4f"
+    },
+    {
+      "ficheiro": "portoes/verify.log",
+      "trocas": 2,
+      "sha256_antes": "d444a92ce81bcb47857f29c927444f3986c44e134c5d51289859722473d81bb6",
+      "sha256_depois": "3db819855636553078354cb04653e993c84a3f105d4e5108775f3c7b044bab45"
+    }
+  ],
+  "ficheiros_limpos_quantos": 3,
+  "trocas": 4,
+  "restos_depois": [],
+  "segunda_corrida": {
+    "trocas": 0,
+    "restos_depois": []
+  }
+}
