@@ -30,9 +30,11 @@
  * bad way». O que a política diz por extenso, o Sobre diz numa frase, e em mais
  * lado nenhum (norma §1.4: o sítio explica-se uma vez).
  *
- * O QUE ELA DECLARA, e não é mais do que isto: quem exerce um cargo público é
- * nomeado nos seus atos públicos, a partir dos documentos oficiais, no bem e no
- * mal; ninguém é nomeado com base em rumores. A segunda proteção, o direito de resposta,
+ * O QUE ELA DECLARA, e não é mais do que isto: quem exerce um cargo público
+ * responde aqui pelos seus atos públicos, no bem e no mal, a partir dos documentos
+ * oficiais (05.10.2026, §1.164: a mesma norma dita pela afirmativa; a metade negativa,
+ * «ninguém é nomeado com base em rumores», saiu porque o diretor a leu como desculpa, e
+ * «a partir dos documentos oficiais» já exclui o rumor). A segunda proteção, o direito de resposta,
  * vive na página das correções, que é onde a resposta se pede. A terceira é o
  * canal das correções, que já existia.
  *
@@ -45,15 +47,15 @@
 export const SOBRE = {
   pt: {
     texto:
-      'O Estado do País mede a sociedade portuguesa, no seu contexto interno e na sua posição em relação ao exterior, e mantém dessa medição um registo contínuo, claro e permanente. É produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana, numa tentativa de explorar as possibilidades tecnológicas do presente e de levar ao limite a independência e o rigor.',
+      'O Estado do País mede a sociedade portuguesa, no seu contexto interno e na sua posição em relação ao exterior, e mantém dessa medição um registo contínuo, claro e permanente. É produzido maioritariamente por inteligência artificial, com o mínimo de intervenção humana, para explorar o que a tecnologia de hoje permite e, com ela, construir um sítio de informação sobre Portugal que seja independente e rigoroso.',
     nomes:
-      'Quem exerce um cargo público é nomeado nos seus atos públicos, a partir dos documentos oficiais, no que fez bem e no que fez mal; ninguém é nomeado com base em rumores.',
+      'Quem exerce um cargo público responde aqui pelos seus atos públicos, no que fez bem e no que fez mal, a partir dos documentos oficiais.',
   },
   en: {
     texto:
-      'O Estado do País measures Portuguese society, in its internal context and in its position in relation to the outside, and keeps of that measurement a continuous, clear and permanent record. It is produced mostly by artificial intelligence, with the minimum of human intervention, in an attempt to explore the technological possibilities of the present and to push independence and rigour to their limit.',
+      'O Estado do País measures Portuguese society, in its internal context and in its position in relation to the outside, and keeps of that measurement a continuous, clear and permanent record. It is produced mostly by artificial intelligence, with the minimum of human intervention, to explore what today’s technology makes possible and, with it, to build a site of information about Portugal that is independent and rigorous.',
     nomes:
-      'Anyone who holds public office is named in connection with their public acts, from the official documents, for what they did well and what they did badly; nobody is named on the basis of rumour.',
+      'Anyone who holds public office answers here for their public acts, for what they did well and what they did badly, from the official documents.',
   },
 };
 
