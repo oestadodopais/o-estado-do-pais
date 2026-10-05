@@ -21,10 +21,11 @@
  *          carácter, resolvida aqui por conta própria (`definicaoDaFaixa()`), e sem nomear Portugal, porque a faixa é
  *          dos 27 (a regra da UE1e para o recibo da série). É ela que diz a população e a base da comparação;
  *   F20h · as etiquetas do toque: uma por marca e mais nenhuma, todas escondidas no documento servido (`hidden`),
- *          cada uma com o grupo dos pontos que têm o valor da sua marca (quase sempre um país só: marcas com o mesmo
- *          valor estão no mesmo sítio, e o toque não as separa), pela ordem da série, cada ponto com o nome do país
- *          da tabela de autoridade (ou as palavras da União), o seu valor e a sua ressalva pelas palavras declaradas,
- *          com as palavras da lista entre eles, e nada mais;
+ *          cada uma com o grupo dos pontos que têm o valor da sua marca (quase sempre um país só), pela ordem da
+ *          série, cada ponto com o nome do país da tabela de autoridade (ou as palavras da União) e a sua ressalva
+ *          pelas palavras declaradas logo a seguir ao nome, com as palavras da lista entre eles, e o valor uma vez,
+ *          no fim, o do primeiro ponto do grupo (a passagem de higiene H3, 05.10.2026; antes cada ponto levava o seu
+ *          valor), e nada mais;
  *   F20i · a lista dobrada: um `<details>` fechado, com o resumo «Os {conta} por ordem…» nas palavras declaradas e a
  *          contagem dos países da série; e os 27 países e a média da União, cada um uma vez, do valor mais alto para
  *          o mais baixo (os iguais pela ordem da série), cada um com o nome da tabela, o valor do ponto e a ressalva
@@ -196,6 +197,61 @@ function conferirPontosDitos(el, { serie, geos, lang, paises, onde }) {
   return erros;
 }
 
+/**
+ * A ETIQUETA DE UM GRUPO (H3): para cada ponto do grupo, pela ordem dada, o nome (da tabela, ou as palavras da União) e
+ * a ressalva do ponto logo a seguir ao nome, com as palavras da lista entre eles; e o valor uma vez, no fim, num só
+ * `data-ponto`, o do primeiro ponto do grupo. Devolve o que está mal, ou `[]`.
+ */
+function conferirEtiquetaDoGrupo(el, { serie, geos, lang, paises, onde }) {
+  const erros = [];
+  const palavras = PALAVRAS_DA_FAIXA[lang];
+  const nomeados = el.querySelectorAll('[data-pais]');
+  const paisesDoGrupo = geos.filter((g) => g !== AGREGADO);
+  if (nomeados.map((x) => x.getAttribute('data-pais')).join(',') !== paisesDoGrupo.join(',')) {
+    erros.push(`${onde}: os nomes são de ${nomeados.map((x) => x.getAttribute('data-pais')).join(', ') || 'ninguém'}, e são de ${paisesDoGrupo.join(', ') || 'ninguém'}`);
+  }
+  const valores = el.querySelectorAll('[data-ponto]');
+  const primeiro = serie.pontos.find((p) => p.geo === geos[0]);
+  if (valores.length !== 1 || valores[0].getAttribute('data-ponto') !== `${serie.id}#${geos[0]}`) {
+    erros.push(`${onde}: o valor diz-se ${valores.length} vez(es) (${valores.map((x) => x.getAttribute('data-ponto')).join(', ') || 'nenhuma'}), e diz-se uma vez, o do ponto ${geos[0]}`);
+  } else if (primeiro && norm(valores[0].text) !== norm(String(primeiro.valor))) {
+    erros.push(`${onde}: o valor diz «${norm(valores[0].text)}» e o ponto ${geos[0]} diz «${norm(String(primeiro.valor))}»`);
+  }
+  const uniao = el.querySelectorAll('[data-voz]');
+  if (uniao.length !== (geos.includes(AGREGADO) ? 1 : 0) || (uniao.length && norm(uniao[0].text) !== palavras.uniao)) {
+    erros.push(`${onde}: a média da União ${geos.includes(AGREGADO) ? 'não se diz pelas palavras declaradas' : 'é dita onde não está'} («${palavras.uniao}»)`);
+  }
+  const ditas = el.querySelectorAll('[data-faixa-ressalva]');
+  const partes = [];
+  geos.forEach((geo, i) => {
+    const ponto = serie.pontos.find((p) => p.geo === geo);
+    if (!ponto) return void erros.push(`${onde}: a série não tem o ponto ${geo}`);
+    let nome;
+    if (geo === AGREGADO) nome = palavras.uniao;
+    else {
+      const p = paises.get(geo);
+      nome = p ? (lang === 'en' ? p.en : p.pt) : null;
+      const n = nomeados.find((x) => x.getAttribute('data-pais') === geo);
+      if (n && (!nome || norm(n.text) !== nome)) erros.push(`${onde}: o nome de ${geo} diz «${norm(n.text)}» e a tabela de autoridade diz «${nome}»`);
+    }
+    const marca = ponto.bandeira ? String(ponto.bandeira) : null;
+    const dita = marca ? palavras.ressalvas?.[marca] ?? null : null;
+    const desta = ditas.filter((r) => r.getAttribute('data-faixa-ressalva') === `${serie.id}#${geo}`);
+    if (!marca && desta.length) erros.push(`${onde}: há uma ressalva para ${geo}, cujo ponto não leva marca da fonte`);
+    if (marca) {
+      if (desta.length !== 1 || desta[0].getAttribute('data-bandeira') !== marca) erros.push(`${onde}: o ponto de ${geo} leva a marca «${marca}» e a ressalva dela não está dita`);
+      else if (norm(desta[0].text) !== `(${dita})`) erros.push(`${onde}: a ressalva de ${geo} diz «${norm(desta[0].text)}» e as palavras da marca «${marca}» são «(${dita})»`);
+    }
+    const entre = i === 0 ? '' : i === geos.length - 1 ? palavras.lista.ultimo : palavras.lista.entre;
+    partes.push(`${entre}${nome ?? ''}${dita ? ` (${dita})` : ''}`);
+  });
+  const alheias = ditas.filter((r) => !geos.some((g) => r.getAttribute('data-faixa-ressalva') === `${serie.id}#${g}`));
+  if (alheias.length) erros.push(`${onde}: tem ressalvas de pontos que não são dela: ${alheias.map((r) => r.getAttribute('data-faixa-ressalva')).join(', ')}`);
+  const esperado = norm(`${partes.join('')} ${primeiro ? String(primeiro.valor) : ''}`);
+  if (norm(el.text) !== esperado) erros.push(`${onde}: diz «${norm(el.text)}» e a recomposição dá «${esperado}»`);
+  return erros;
+}
+
 /** Os pontos da série com o valor de um ponto, pela ordem da série (os países e, no fim, a União). */
 export function grupoDoValor(serie, geo) {
   const c = contaDaFaixa(serie);
@@ -212,7 +268,7 @@ export function grupoDoValor(serie, geo) {
  */
 export function conferirSeccaoDosPaises(root, lang, rota, { series, paises }) {
   const erros = [];
-  const contas = { seccoes: 0, faixas: 0, marcas: 0, frases: 0, definicoes: 0, etiquetas: 0, listas: 0, itens: 0, ressalvas_da_uniao: 0, ressalvas_dos_pontos: 0 };
+  const contas = { seccoes: 0, faixas: 0, marcas: 0, empilhadas: 0, frases: 0, definicoes: 0, etiquetas: 0, listas: 0, itens: 0, ressalvas_da_uniao: 0, ressalvas_dos_pontos: 0 };
   const erro = (celula, id, msg) => erros.push(`${celula} · ${rota} · ${id}: ${msg}`);
   const s = t(lang);
 
@@ -243,6 +299,7 @@ export function conferirSeccaoDosPaises(root, lang, rota, { series, paises }) {
     /* F20b a F20f · as peças, pela função da faixa do cartão */
     const r = conferirPecasDaFaixa(faixa, { serie, lang, paises, id: sid, erro, celula: 'F20' });
     contas.marcas += r.marcas;
+    contas.empilhadas += r.empilhadas;
     contas.frases += r.frases;
     contas.ressalvas_dos_pontos += r.ressalvas;
     const c = r.conta;
@@ -304,7 +361,7 @@ export function conferirSeccaoDosPaises(root, lang, rota, { series, paises }) {
       const geo = String(e.getAttribute('data-toque-de')).split('#')[1];
       if (!e.hasAttribute('hidden')) erro('F20h', sid, `a etiqueta de ${geo} não está escondida no documento: aparece sem toque`);
       if (!e.closest('[data-toques]')) erro('F20h', sid, `a etiqueta de ${geo} está fora do desenho`);
-      for (const m of conferirPontosDitos(e, { serie, geos: grupoDoValor(serie, geo), lang, paises, onde: `a etiqueta de ${geo}` })) erro('F20h', sid, m);
+      for (const m of conferirEtiquetaDoGrupo(e, { serie, geos: grupoDoValor(serie, geo), lang, paises, onde: `a etiqueta de ${geo}` })) erro('F20h', sid, m);
     }
 
     /* F20i · a lista dobrada */
@@ -421,15 +478,28 @@ export function plantasDaSeccao(html, lang, rota, ctx) {
     v.set_content(outro.text);
     return true;
   });
-  planta('a etiqueta de um empate só com um dos países', 'F20h', (r) => {
-    const e = r.querySelectorAll('[data-toque-de]').find((x) => x.querySelectorAll('[data-ponto]').length > 1);
+  /* H3: a etiqueta de um grupo diz os nomes e o valor uma vez; a planta tira o último país do grupo (o nome, a
+     ressalva dele e as palavras da lista antes dele) e deixa o valor, e a F20h tem de dizer que falta um nome. */
+  planta('uma etiqueta com um país a menos', 'F20h', (r) => {
+    const e = r.querySelectorAll('[data-toque-de]').find((x) => x.querySelectorAll('[data-pais]').length > 1);
     if (!e) return false;
-    const pontos = e.querySelectorAll('[data-ponto]');
-    const ultimo = pontos[pontos.length - 1].getAttribute('data-ponto');
-    const geo = ultimo.split('#')[1];
-    e.set_content(e.innerHTML.split(/(?=, |\s(?:e|and)\s)/).slice(0, 1).join(''));
-    return !e.querySelector(`[data-ponto="${ultimo}"]`) && Boolean(geo);
-  });
+    const nomes = e.querySelectorAll('[data-pais]');
+    const ultimo = nomes[nomes.length - 1];
+    const antes = e.innerHTML;
+    const sep = lang === 'en' ? ' and ' : ' e ';
+    const corte = antes.lastIndexOf(sep, antes.indexOf(ultimo.outerHTML));
+    const fim = antes.indexOf('<span class="ponto-da-serie');
+    if (corte < 0 || fim < 0) return false;
+    e.set_content(antes.slice(0, corte) + ' ' + antes.slice(fim));
+    return e.querySelectorAll('[data-pais]').length === nomes.length - 1;
+  }, 'os nomes são de');
+  planta('a etiqueta de um grupo com o valor dito duas vezes', 'F20h', (r) => {
+    const e = r.querySelectorAll('[data-toque-de]').find((x) => x.querySelectorAll('[data-pais]').length > 1);
+    const v = e?.querySelector('[data-ponto]');
+    if (!e || !v) return false;
+    e.insertAdjacentHTML('beforeend', ` ${v.outerHTML}`);
+    return true;
+  }, 'o valor diz-se 2 vez(es)');
   planta('uma etiqueta do toque em falta', 'F20h', (r) => {
     const e = r.querySelector('[data-toque-de]');
     if (!e) return false;
@@ -444,6 +514,19 @@ export function plantasDaSeccao(html, lang, rota, ctx) {
     f[1].replaceWith(a);
     return true;
   });
+  planta('dois pontos iguais no mesmo sítio, quando a regra manda afastá-los', 'F20c', (r) => {
+    const porPosicao = new Map();
+    for (const m of r.querySelectorAll('[data-faixa-paises] [data-faixa-marca]')) {
+      const estilo = m.getAttribute('style') ?? '';
+      if (!/top\s*:/.test(estilo)) continue;
+      const chave = `${m.closest('[data-faixa-paises]')?.getAttribute('data-faixa-paises')}|${/left\s*:\s*([\d.]+)%/.exec(estilo)?.[1]}`;
+      porPosicao.set(chave, [...(porPosicao.get(chave) ?? []), m]);
+    }
+    const grupo = [...porPosicao.values()].find((g) => g.length > 1);
+    if (!grupo) return false;
+    grupo[1].setAttribute('style', grupo[0].getAttribute('style'));
+    return true;
+  }, 'px do eixo e a regra dá');
   planta('uma marca fora da posição do valor', 'F20c', (r) => {
     const m = r.querySelector('[data-faixa-paises] [data-faixa-marca].faixa-ue-pais');
     if (!m) return false;
