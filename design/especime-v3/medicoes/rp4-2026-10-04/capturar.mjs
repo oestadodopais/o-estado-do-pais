@@ -50,7 +50,7 @@ try {
         return { largura: innerWidth, pagina: document.documentElement.scrollWidth, altura: document.documentElement.scrollHeight,
           letraMinima, posicaoNoBloco, desenhos: desenhos.map(s => ({ serie: s.dataset.series, ...rect(s), titulo: s.querySelector('title')?.textContent })), marcasFora,
           tabelas: [...document.querySelectorAll('[data-serie-tabela]')].map(t => ({ serie: t.dataset.serieTabela, anos: t.querySelectorAll('tbody tr').length, pontos: t.querySelectorAll('[data-ponto]').length, largura: t.scrollWidth, janela: t.parentElement.clientWidth })),
-          cartoes: [...document.querySelectorAll('[data-cartao-serie]')].map(a => ({ linha: a.closest('[data-cartao-medida]')?.dataset.cartaoMedida, serie: a.dataset.cartaoSerie, porta: a.getAttribute('href') })) };
+          cartoes: [...document.querySelectorAll('[data-cartao-serie]')].map(a => ({ cartao: a.closest('[data-cartao-medida]')?.dataset.cartaoMedida, linha: a.dataset.cartaoSerieLinha, serie: a.dataset.cartaoSerie, porta: a.getAttribute('href') })) };
       });
       if (medida.letraMinima < 11.5) erros.push(`letras dos eixos demasiado pequenas: ${lang}/${rota}/${largura}`);
       if (medida.pagina > largura || medida.marcasFora.length || !medida.desenhos.length) erros.push({ rota, largura, medida });
@@ -118,9 +118,9 @@ try {
   for (const f of (await fs.readdir(DIST, { recursive: true })).filter(f => f.endsWith('/index.html'))) {
     const html = await fs.readFile(path.join(DIST, f), 'utf8');
     if (!html.includes('data-cartao-serie')) continue;
-    for (const c of parse(html).querySelectorAll('[data-cartao-medida]')) {
-      const id = c.getAttribute('data-cartao-medida');
-      if (paginasDosCartoes[id] && c.querySelector('[data-cartao-serie]')) paginasDosCartoes[id].push('/' + f.replace(/index.html$/, ''));
+    for (const c of parse(html).querySelectorAll('[data-cartao-serie-linha]')) {
+      const id = c.getAttribute('data-cartao-serie-linha');
+      if (paginasDosCartoes[id]) paginasDosCartoes[id].push('/' + f.replace(/index.html$/, ''));
     }
   }
   const versaoFinal = JSON.parse(await fs.readFile(path.join(DIST, 'version.json'), 'utf8'));
