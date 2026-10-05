@@ -1,0 +1,309 @@
+{
+  "guiao": "design/especime-v3/medicoes/h3-2026-10-05/acertar-mapa.py",
+  "citacoes_que_andaram": 40,
+  "trocas": [
+    {
+      "linha_do_mapa": 209,
+      "citacao": "A LEITURA DO CARTÃO, pela mesma regra do item da régua",
+      "ficheiro": "scripts/gate-html.mjs",
+      "antes": 3560,
+      "depois": 3577
+    },
+    {
+      "linha_do_mapa": 400,
+      "citacao": "O sufixo do ordinal inglês de um lugar",
+      "ficheiro": "src/lib/faixa-da-uniao.mjs",
+      "antes": 67,
+      "depois": 86
+    },
+    {
+      "linha_do_mapa": 400,
+      "citacao": "OS 27 ORDINAIS INGLESES",
+      "ficheiro": "scripts/series-do-portao.mjs",
+      "antes": 105,
+      "depois": 111
+    },
+    {
+      "linha_do_mapa": 400,
+      "citacao": "F19g · F19h · AS PALAVRAS DA FAIXA",
+      "ficheiro": "tests/cartao/faixa.mjs",
+      "antes": 383,
+      "depois": 420
+    },
+    {
+      "linha_do_mapa": 400,
+      "citacao": "F19g · F19h (UE1b, 29.09.2026)",
+      "ficheiro": "scripts/check-formas.mjs",
+      "antes": 1412,
+      "depois": 1420
+    },
+    {
+      "linha_do_mapa": 402,
+      "citacao": "UE1b (29.09.2026): o que quer dizer cada marca",
+      "ficheiro": "scripts/gate-html.mjs",
+      "antes": 4723,
+      "depois": 4746
+    },
+    {
+      "linha_do_mapa": 403,
+      "citacao": "UE1b (29.09.2026): a porta do recibo da linha portuguesa",
+      "ficheiro": "scripts/gate-html.mjs",
+      "antes": 4809,
+      "depois": 4832
+    },
+    {
+      "linha_do_mapa": 404,
+      "citacao": "F19d · UMA PONTA DA FAIXA, conferida país a país",
+      "ficheiro": "tests/cartao/faixa.mjs",
+      "antes": 94,
+      "depois": 107
+    },
+    {
+      "linha_do_mapa": 404,
+      "citacao": "AS PLANTAS DOS EMPATES",
+      "ficheiro": "tests/cartao/faixa.mjs",
+      "antes": 155,
+      "depois": 168
+    },
+    {
+      "linha_do_mapa": 405,
+      "citacao": "A DEFINIÇÃO DECLARADA DE UMA MEDIDA, COMO TEXTO",
+      "ficheiro": "scripts/gate-html.mjs",
+      "antes": 67,
+      "depois": 75
+    },
+    {
+      "linha_do_mapa": 405,
+      "citacao": "O QUE NOMEIA PORTUGAL NA DEFINIÇÃO DE UM RECIBO DE SÉRIE",
+      "ficheiro": "scripts/gate-html.mjs",
+      "antes": 168,
+      "depois": 176
+    },
+    {
+      "linha_do_mapa": 429,
+      "citacao": "A FAIXA DO CONCELHO, pela mesma regra da leitura do cartão",
+      "ficheiro": "scripts/gate-html.mjs",
+      "antes": 3582,
+      "depois": 3599
+    },
+    {
+      "linha_do_mapa": 444,
+      "citacao": "OS MILHARES DE UMA CONTAGEM DA PROVA, na cópia do portão",
+      "ficheiro": "scripts/gate-html.mjs",
+      "antes": 1034,
+      "depois": 1051
+    },
+    {
+      "linha_do_mapa": 453,
+      "citacao": "AS FAIXAS DA SECÇÃO DOS PAÍSES, E A ORDEM DELAS (bloco UE2, ",
+      "ficheiro": "src/lib/faixa-da-uniao.mjs",
+      "antes": 226,
+      "depois": 284
+    },
+    {
+      "linha_do_mapa": 453,
+      "citacao": "UMA MARCA COM O MESMO",
+      "ficheiro": "src/lib/faixa-da-uniao.mjs",
+      "antes": 207,
+      "depois": 254
+    },
+    {
+      "linha_do_mapa": 455,
+      "citacao": "F20, UE2 (02.10.2026): a secção dos países da página da Uniã",
+      "ficheiro": "scripts/check-formas.mjs",
+      "antes": 574,
+      "depois": 581
+    },
+    {
+      "linha_do_mapa": 455,
+      "citacao": "AS PEÇAS DE UMA FAIXA, RECONTADAS DOS PONTOS",
+      "ficheiro": "tests/cartao/faixa.mjs",
+      "antes": 278,
+      "depois": 309
+    },
+    {
+      "linha_do_mapa": 460,
+      "citacao": "UE2-b: cada faixa das duas edições diz o que a medida conta",
+      "ficheiro": "scripts/check-formas.mjs",
+      "antes": 1403,
+      "depois": 1411
+    },
+    {
+      "linha_do_mapa": 460,
+      "citacao": "A PLANTA MUDA UMA ENTRADA PARA OUTRA POSIÇÃO REAL, E SÓ CONT",
+      "ficheiro": "tests/uniao/paises.mjs",
+      "antes": 515,
+      "depois": 596
+    },
+    {
+      "linha_do_mapa": 476,
+      "citacao": "O TETO NA LINHA DO ESTADO DO CARTÃO DO ÍNDICE DE DÍVIDA (pas",
+      "ficheiro": "scripts/gate-html.mjs",
+      "antes": 3469,
+      "depois": 3486
+    },
+    {
+      "linha_do_mapa": 482,
+      "citacao": "OS LIMITES DO QUE O FORMULÁRIO ACEITA",
+      "ficheiro": "src/data/sugestoes.mjs",
+      "antes": 172,
+      "depois": 159
+    },
+    {
+      "linha_do_mapa": 487,
+      "citacao": "export function plantasDaCaixa",
+      "ficheiro": "scripts/sugestoes-do-portao.mjs",
+      "antes": 487,
+      "depois": 513
+    },
+    {
+      "linha_do_mapa": 487,
+      "citacao": "A HISTÓRIA DAS MIGRAÇÕES, POR ORDEM DE NOME",
+      "ficheiro": "scripts/sugestoes-do-portao.mjs",
+      "antes": 351,
+      "depois": 358
+    },
+    {
+      "linha_do_mapa": 487,
+      "citacao": "AS REGRAS DECLARADAS DA CAIXA (S1-b, 03.10.2026",
+      "ficheiro": "scripts/sugestoes-do-portao.mjs",
+      "antes": 323,
+      "depois": 330
+    },
+    {
+      "linha_do_mapa": 490,
+      "citacao": "S1-c (03.10.2026, decisão do diretor, §1.154): o campo do co",
+      "ficheiro": "tests/pais/portoes.mjs",
+      "antes": 481,
+      "depois": 488
+    },
+    {
+      "linha_do_mapa": 500,
+      "citacao": "O APOIO DE UMA UNIDADE DA CASA (bloco R2, 03.10.2026), lido ",
+      "ficheiro": "scripts/gate-html.mjs",
+      "antes": 95,
+      "depois": 103
+    },
+    {
+      "linha_do_mapa": 502,
+      "citacao": "O ESTADO DIZ CONTRA O QUÊ (bloco R2, 03.10.2026, achado 20 d",
+      "ficheiro": "src/i18n/strings.mjs",
+      "antes": 1240,
+      "depois": 1246
+    },
+    {
+      "linha_do_mapa": 516,
+      "citacao": "OS NÚMEROS DA UNIDADE PRESOS AO APOIO, E A ORIGEM DO APOIO P",
+      "ficheiro": "scripts/gate-html.mjs",
+      "antes": 110,
+      "depois": 118
+    },
+    {
+      "linha_do_mapa": 516,
+      "citacao": "dos 21 aos 65 anos",
+      "ficheiro": "scripts/gate-html.mjs",
+      "antes": 118,
+      "depois": 120
+    },
+    {
+      "linha_do_mapa": 531,
+      "citacao": "AS SÉRIES DE PAÍSES E AS SÉRIES NO TEMPO (bloco RP3, 04.10.2",
+      "ficheiro": "scripts/gate-html.mjs",
+      "antes": 389,
+      "depois": 410
+    },
+    {
+      "linha_do_mapa": 531,
+      "citacao": "RP3: o recibo de uma série no tempo tem cada ponto da série ",
+      "ficheiro": "scripts/gate-html.mjs",
+      "antes": 4736,
+      "depois": 4759
+    },
+    {
+      "linha_do_mapa": 541,
+      "citacao": "O CAMINHO INGLÊS É `/en/index`, E A PRIMEIRA PÁGINA INGLESA ",
+      "ficheiro": "src/lib/routes.mjs",
+      "antes": 352,
+      "depois": 359
+    },
+    {
+      "linha_do_mapa": 546,
+      "citacao": "R3 (04.10.2026): o índice. As sete portas do rodapé",
+      "ficheiro": "tests/pais/portoes.mjs",
+      "antes": 506,
+      "depois": 512
+    },
+    {
+      "linha_do_mapa": 549,
+      "citacao": "R3-b (04.10.2026, as emendas da leitura a frio do Sol)",
+      "ficheiro": "tests/pais/portoes.mjs",
+      "antes": 544,
+      "depois": 550
+    }
+  ],
+  "falhas": [
+    {
+      "linha": 158,
+      "citacao": "não existe dist/. Corra o build primeiro",
+      "porque": "nenhuma referência antes da citação"
+    },
+    {
+      "linha": 162,
+      "citacao": "as sete conferências L1 a L7",
+      "porque": "nenhuma referência antes da citação"
+    },
+    {
+      "linha": 171,
+      "citacao": "Fontes e verificação",
+      "porque": "nenhuma referência antes da citação"
+    },
+    {
+      "linha": 173,
+      "citacao": "Sem esta comparação, a marca seria uma dispensa: seis dos tí",
+      "porque": "nenhuma referência antes da citação"
+    },
+    {
+      "linha": 178,
+      "citacao": "uma cadeia mudada de um lado fica diferente do outro",
+      "porque": "nenhuma referência antes da citação"
+    },
+    {
+      "linha": 530,
+      "citacao": "UMA SÉRIE NO TEMPO (bloco RP3, 04.10.2026): o nome do projet",
+      "porque": "o conferidor acha-a noutro ficheiro ('src/pages/livro-razao/series/[...serie)"
+    }
+  ],
+  "acertadas_a_mao": [
+    {
+      "linha_do_mapa": 158,
+      "antes": "`:384` sai com 1 e escreve «não existe dist/. Corra o build primeiro»",
+      "depois": "`:401` sai com 1 e escreve «não existe dist/. Corra o build primeiro»"
+    },
+    {
+      "linha_do_mapa": 162,
+      "antes": "«as sete conferências L1 a L7» (`:1682`)",
+      "depois": "«as sete conferências L1 a L7» (`:1835`)"
+    },
+    {
+      "linha_do_mapa": 171,
+      "antes": "E «Fontes e verificação» (`:2340`)",
+      "depois": "E «Fontes e verificação» (`:2436`)"
+    },
+    {
+      "linha_do_mapa": 173,
+      "antes": "trazem um ano escrito» (`:2361`)",
+      "depois": "trazem um ano escrito» (`:2520`)"
+    },
+    {
+      "linha_do_mapa": 178,
+      "antes": "«uma cadeia mudada de um lado fica diferente do outro» (`scripts/gate-html.mjs:283`)",
+      "depois": "«uma cadeia mudada de um lado fica diferente do outro» (`scripts/gate-html.mjs:352`)"
+    },
+    {
+      "linha_do_mapa": 530,
+      "antes": "`src/lib/caminho.mjs:268`",
+      "depois": "`src/lib/caminho.mjs:277`"
+    }
+  ],
+  "falhas_depois_da_mao": []
+}
