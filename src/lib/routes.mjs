@@ -100,6 +100,15 @@ export const ROUTES = {
    * do sítio.
    */
   sugestoesNaoChegou: { pt: '/sugestoes/nao-chegou', en: '/en/suggestions/not-received' },
+  /**
+   * A PÁGINA «PRIVACIDADE» (bloco H3, 05.10.2026). O que a lei pede a quem guarda os
+   * dados de quem escreve na caixa das sugestões, em palavras correntes, e mais nada: o
+   * que fica guardado e porquê, onde, por quanto tempo, quem responde e a quem se pode
+   * queixar. O texto é do diretor e vive em `src/data/privacidade.mjs`. A caixa diz numa
+   * linha o que guarda e leva a porta para aqui, e o rodapé de todas as páginas também,
+   * ao lado da porta das sugestões; entra no mapa do sítio e no índice.
+   */
+  privacidade: { pt: '/privacidade', en: '/en/privacy' },
   estudos: { pt: '/estudos', en: '/en/studies' },
   estudo: { pt: '/estudos/:slug', en: '/en/studies/:slug' },
   documento: { pt: '/estudos/:slug/documento', en: '/en/studies/:slug/document' },

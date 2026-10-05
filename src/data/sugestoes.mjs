@@ -17,13 +17,17 @@
  * de uma frase (a das correções, o endereço de correio) sai de dentro da cadeia
  * na vista, por `pedacosDaFrase()`, e nunca a corta aqui.
  *
- * A NOTA DO QUE FICA GUARDADO (`nota`):
- * texto aprovado pelo diretor a 03.10.2026 (§1.154),
- * à letra, nas duas línguas. Diz o que fica guardado e por quanto tempo, quem
- * aloja e trata os dados, porque se guardam, quem responde pelo tratamento e onde
- * se pede o que se enviou, e o direito de reclamar à autoridade de controlo. Com
- * a mesma decisão, o campo do contacto saiu do formulário (passagem S1-c): a
- * caixa não tem resposta.
+ * A NOTA DO QUE FICA GUARDADO (`nota` e `portaDaNota`), desde a passagem de
+ * higiene H3 (05.10.2026): uma linha só, à vista junto do formulário, e a porta
+ * para a página «Privacidade», que diz o resto. É o texto aprovado pelo diretor a
+ * 05.10.2026, à letra, nas duas línguas (o §5, decisão 1, de
+ * `design/observatorio/BRIEF-H3-a-passagem-de-higiene-de-05-10.md`), pela forma
+ * dos sítios oficiais que a pesquisa desse dia leu (uma ou duas frases junto do
+ * campo e a política inteira numa ligação), e o guião das medições do bloco H3
+ * compara-o com o brief. A nota de 03.10.2026 (§1.154), que dizia tudo no
+ * formulário, saiu; o que ela dizia está, com o texto novo do diretor, em
+ * `src/data/privacidade.mjs`. O campo do contacto continua fora do formulário
+ * (passagem S1-c): a caixa não tem resposta, e nenhuma caixa se marca para enviar.
  *
  * Três textos não estão no §5 do brief, e cada um diz de onde vem:
  *   · `voltar` · as palavras do protótipo da função que o lugar de direção
@@ -36,11 +40,11 @@
  *   · `descricao` · as duas primeiras frases do parágrafo, que é o que a página
  *     é.
  *
- * NENHUM NÚMERO SE ESCREVE COM ALGARISMOS NESTES TEXTOS. As regras que a nota e
- * a página do limite dizem (cinco envios por hora, noventa dias, um ano) são as
- * do registo da base (`supabase/migrations/2026-10-02-caixa-das-sugestoes.sql`),
- * e o portão de HTML confere as palavras contra os números desse ficheiro: se a
- * base mudar, a nota que o leitor lê fica errada, e o portão di-lo.
+ * NENHUM NÚMERO SE ESCREVE COM ALGARISMOS NESTES TEXTOS. As regras que a página do
+ * limite diz (cinco envios por hora) e as que a página «Privacidade» diz (uma hora,
+ * noventa dias, um ano) são as do registo da base (`supabase/migrations/`), e o
+ * portão de HTML confere as palavras contra os números desses ficheiros: se a base
+ * mudar, o que o leitor lê fica errado, e o portão di-lo.
  */
 
 /** O título da página, o rótulo da porta do rodapé e o nome da rota no caminho. */
@@ -84,31 +88,16 @@ export const SUGESTOES = {
   botao: { pt: 'Enviar a sugestão', en: 'Send the suggestion' },
 
   /**
-   * A nota do que fica guardado: texto aprovado pelo diretor a 03.10.2026
-   * (§1.154), à letra (ver o cabeçalho deste ficheiro).
+   * A nota do que fica guardado: uma linha, o texto aprovado pelo diretor a
+   * 05.10.2026, à letra (ver o cabeçalho deste ficheiro); a vista põe a porta
+   * para a página «Privacidade» logo a seguir, com as palavras de `portaDaNota`.
    */
   nota: {
-    pt:
-      'O que fica guardado: o que escrever, a língua e a página de onde veio. O endereço IP não se ' +
-      'guarda: fica durante uma hora um resumo dele feito com um sal, só para travar envios em massa, e ' +
-      'apaga-se a seguir. Os dados ficam em servidores na União Europeia, nos dois serviços que alojam ' +
-      'este sítio e a caixa (a Vercel e a Supabase), que os tratam por conta do projeto. Guardam-se ' +
-      'porque os enviou: ao carregar em «Enviar a sugestão», aceita que fiquem guardados para este fim. ' +
-      'Uma sugestão decidida apaga-se ao fim de noventa dias; uma por decidir, ao fim de um ano. Por ' +
-      'este tratamento responde a direção deste projeto, pelo endereço correcoes@oestadodopais.pt. Para ' +
-      'saber o que enviou, corrigi-lo ou pedir que se apague, escreva para esse endereço; pode também ' +
-      'reclamar junto da Comissão Nacional de Proteção de Dados (cnpd.pt).',
-    en:
-      'What is kept: what you write, the language and the page you came from. The IP address is not ' +
-      'kept: a salted hash of it stays for one hour, only to stop mass sending, and is then deleted. The ' +
-      'data is held on servers in the European Union, in the two services that host this site and the ' +
-      "box (Vercel and Supabase), which process it on the project's behalf. It is kept because you sent " +
-      'it: by pressing "Send the suggestion" you accept that it is kept for this purpose. A decided ' +
-      'suggestion is deleted after ninety days; an undecided one after a year. The project\'s direction ' +
-      'is responsible for this processing, at correcoes@oestadodopais.pt. To know what you sent, to ' +
-      'correct it or to ask for it to be deleted, write to that address; you may also complain to the ' +
-      'Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt).',
+    pt: 'Só guardamos o que escrever e a página de onde veio, para decidir a sugestão.',
+    en: 'We only keep what you write and the page you came from, to decide on the suggestion.',
   },
+  /** A porta da nota para a página «Privacidade» (o §5, decisão 1, do brief H3). */
+  portaDaNota: { pt: 'Como tratamos os seus dados', en: 'How we handle your data' },
 
   /** O que o leitor lê depois de enviar: uma frase por resultado. */
   resultados: {
