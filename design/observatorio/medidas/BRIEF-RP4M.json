@@ -1,0 +1,97 @@
+{
+  "brief": "design/observatorio/BRIEF-RP4M-as-series-que-faltam-e-o-corredor-das-series.md",
+  "guiao": "design/observatorio/medidas/BRIEF-RP4M.py",
+  "cabeca_lida": "fb364fe4",
+  "medidas": [
+    {
+      "nome": "series_no_tempo_no_livro",
+      "valor": 16,
+      "comando": "git ls-tree fb364fe4 ledger/series/ · os ficheiros .yml com eixo: \"periodo\"",
+      "conhecido_positivo": {
+        "o_que": "a série do índice harmonizado de Portugal está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_presas_a_uma_serie",
+      "valor": 7,
+      "comando": "git grep -l '^serie: ' fb364fe4 -- ledger/claims/",
+      "conhecido_positivo": {
+        "o_que": "a linha da União está presa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_ipc_com_as_coordenadas_0014666_ou_0014647",
+      "valor": 10,
+      "comando": "git grep -l -E '0014666|0014647' fb364fe4 -- ledger/claims/",
+      "conhecido_positivo": {
+        "o_que": "a linha dos combustíveis é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dessas_as_linhas_principais_sem_o_periodo_anterior",
+      "valor": 5,
+      "comando": "as da medida anterior cujo id não acaba em -periodo-anterior",
+      "conhecido_positivo": {
+        "o_que": "a linha da média de doze meses é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dessas_as_presas_a_uma_serie",
+      "valor": 0,
+      "comando": "a interseção com as linhas presas",
+      "conhecido_positivo": {
+        "o_que": "as duas listas foram lidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "meses_entre_a_linha_do_ihpc_de_portugal_e_o_ultimo_ponto_da_sua_serie",
+      "valor": 1,
+      "comando": "git show fb364fe4:ledger/claims/ihpc-variacao-homologa.yml (reference_date) e ledger/series/serie-ihpc-variacao-homologa.yml (ultimo_periodo), a diferença em meses",
+      "conhecido_positivo": {
+        "o_que": "a linha de Portugal não tem o campo serie",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marca_da_fonte_no_ultimo_ponto_da_serie_do_ihpc_de_portugal",
+      "valor": 1,
+      "comando": "git show fb364fe4:ledger/series/serie-ihpc-variacao-homologa.yml · o campo bandeira do ponto ultimo_periodo, 1 se não for vazio",
+      "conhecido_positivo": {
+        "o_que": "o ponto do último período existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_no_tempo_com_ponto_no_periodo_de_base_de_2015",
+      "valor": 13,
+      "comando": "git show fb364fe4:ledger/series/<série>.yml · as séries no tempo com um ponto no período da sua cadência que contém janeiro de 2015",
+      "conhecido_positivo": {
+        "o_que": "a do salário mínimo (semestral, desde 1999) tem o ponto 2015-S1",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos_da_serie_da_remuneracao_bruta_mensal_media",
+      "valor": 6,
+      "comando": "git show fb364fe4:ledger/series/serie-remuneracao-bruta-mensal-media.yml · as linhas «  - periodo:» da lista pontos:",
+      "conhecido_positivo": {
+        "o_que": "a série começa em 2025-T1, depois do período de base",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_no_tempo_derivadas",
+      "valor": 1,
+      "comando": "git show fb364fe4:ledger/series/<série>.yml · as séries no tempo com o campo derived_from",
+      "conhecido_positivo": {
+        "o_que": "a dos cem euros de 2015 é derivada e a do IPC não",
+        "encontrado": true
+      }
+    }
+  ]
+}
