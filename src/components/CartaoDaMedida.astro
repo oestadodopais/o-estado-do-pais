@@ -88,7 +88,7 @@ import FaixaDaUniao from './FaixaDaUniao.astro';
 import { t } from '../i18n/strings.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { unidadeDoCartao } from '../data/unidades-dos-cartoes.mjs';
-import { provenienciaIncompleta, derivacaoDaLinha } from '../lib/ledger.mjs';
+import { provenienciaIncompleta, derivacaoDaLinha, getClaim } from '../lib/ledger.mjs';
 import { nomeDoCartao, nomeDaLinhaDerivada, eNomeDeMedida } from '../lib/nomes.mjs';
 import { DEFINICOES_DAS_MEDIDAS } from '../data/figuras.mjs';
 import { partesDaLeitura } from '../lib/leitura-da-medida.mjs';
@@ -188,7 +188,11 @@ const leitura = comLeitura ? partesDaLeitura(c.id, lang) : null;
 /* A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, a passagem UE1d, 29.09.2026):
    onde a medida a declara e o cartão mostra a União (a régua com a linha da
    União, ou a faixa da União), a ressalva vai no mesmo cartão. */
-const mostraUniao = reguaDoCartao(c.id).ue !== null || (comLeitura && serieDaLinha(c.id) !== null);
+const regua = reguaDoCartao(c.id);
+const mostraUniao = regua.ue !== null || (comLeitura && serieDaLinha(c.id) !== null);
+/* RP4-b: cada desenho pertence a uma linha que o cartão mostra. A comparação
+   tem a sua legenda e abre o seu próprio recibo, mesmo sem série portuguesa. */
+const linhasComSerie = [c, ...(regua.ue ? [getClaim(regua.ue.id)] : [])].filter(linha => linha.serie);
 const ressalva = mostraUniao ? ressalvaDaUniao(c.id, lang) : null;
 const aritmetica = nome === null ? derivacaoDaLinha(c, lang) : null;
 /* A FRASE DO QUE É A REFERÊNCIA (bloco R2, achado 20): a do dono declarado da medida, lida de `strings.mjs`. A vista
@@ -324,8 +328,13 @@ if (nomeDerivado !== null && !eNomeDeMedida(nomeDerivado)) {
         <Provenance id={c.id} lang={lang} />
       </p>
 
-      {/* RP4: a série inteira é a porta do seu recibo, depois do valor. */}
-      {c.serie && <a class="cartao-medida-serie" data-cartao-serie={c.serie} href={routePath('serie', lang, { slug: c.serie })}><SerieDoPais ids={[c.serie]} lang={lang} largura={240} altura={160} /></a>}
+      {/* RP4-b: as séries inteiras das linhas mostradas, depois do valor. */}
+      {linhasComSerie.map(linha => (
+        <a class="cartao-medida-serie" data-cartao-serie={linha.serie} data-cartao-serie-linha={linha.id} href={routePath('serie', lang, { slug: linha.serie })}>
+          {linha.id !== c.id && <span class="cartao-medida-serie-legenda" data-cartao-serie-legenda data-voz>{s.cartao.uniaoEuropeia}</span>}
+          <SerieDoPais ids={[linha.serie]} lang={lang} largura={240} altura={160} />
+        </a>
+      ))}
 
       {/* (d) A RÉGUA. Rende-se só onde houver linha selada ou valor de referência
           declarado; onde não houver, não se desenha e não se escreve a ausência por

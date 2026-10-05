@@ -1918,7 +1918,7 @@ if (PROVA) {
   }
 }
 
-/* K20: a ausência e a porta, nas duas edições; todas as linhas presas têm de se ver. */
+/* K20: as linhas presas veem-se na série própria ou na comparação do cartão. */
 {
   const vistos = { pt: new Set(), en: new Set() };
   const plantas = [];
@@ -1928,7 +1928,7 @@ if (PROVA) {
     if (PROVA) plantas.push(...plantasDosCartoesComSerie(doc.outerHTML, lang).map((p) => ({ lang, ...p })));
   }
   for (const lang of ['pt', 'en']) for (const c of loadClaims().values()) {
-    if (c.serie && !vistos[lang].has(c.id)) r.erros.push(`K20 · ${lang}/${c.id}: linha presa sem cartão construído`);
+    if (c.serie && !vistos[lang].has(c.id)) r.erros.push(`K20 · ${lang}/${c.id}: linha presa sem desenho num cartão`);
   }
   r.contas.series_k20 = { pt: [...vistos.pt], en: [...vistos.en], plantas };
   for (const p of plantas) if (!p.mordeu) r.erros.push(`K20 NÃO MORDEU ${p.nome}: ${p.queixa}`);

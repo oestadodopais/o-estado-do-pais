@@ -71,7 +71,7 @@ export const LINHA_DO_LIMITE = 'indice-de-divida-limite-legal';
  * @returns {string[]}
  */
 export function medidasComLeitura() {
-  // RP4: a página de preços inclui também a medida da União, que não é um domínio português.
+  // As páginas de assunto também exigem leitura a cada cartão declarado.
   const nosAssuntos = ENTRADAS.flatMap((e) => e.seccoes.flatMap((s) => s.cartoes));
   return [...new Set([...Object.keys(DOMINIO_DAS_MEDIDAS).filter((id) => id !== LINHA_DO_LIMITE), ...nosAssuntos, LEITURA_DAS_CAMARAS])];
 }

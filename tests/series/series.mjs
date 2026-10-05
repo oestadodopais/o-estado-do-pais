@@ -46,6 +46,7 @@
  */
 import { t } from '../../src/i18n/strings.mjs';
 import { ENTRADAS } from '../../src/data/primeira-pagina.mjs';
+import { REGUAS_DECLARADAS } from '../../src/lib/enquadramento.mjs';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
@@ -257,9 +258,9 @@ function celulasDoLivro(series, linhas) {
       erros.S5.push(`${quem}: o valor e o período da linha (${l.reference_date}: ${l.value}) não são o ponto da série «${s.id}» com o mesmo período.`);
       continue;
     }
-    if (Object.prototype.hasOwnProperty.call(DOMINIO_DAS_MEDIDAS, lid) || ENTRADAS.some((e) => e.seccoes.some((s) => s.cartoes.includes(lid)))) {
+    if (Object.prototype.hasOwnProperty.call(DOMINIO_DAS_MEDIDAS, lid) || ENTRADAS.some((e) => e.seccoes.some((s) => s.cartoes.some((id) => id === lid || REGUAS_DECLARADAS[id]?.ue === lid)))) {
       if (ponto !== pontos[pontos.length - 1]) {
-        erros.S5.push(`${quem}: é um cartão nacional e o seu período (${l.reference_date}) não é o último ponto da série «${s.id}» (${pontos[pontos.length - 1]?.periodo}): o cartão está desfasado da série.`);
+        erros.S5.push(`${quem}: é uma linha mostrada num cartão nacional e o seu período (${l.reference_date}) não é o último ponto da série «${s.id}» (${pontos[pontos.length - 1]?.periodo}): o cartão está desfasado da série.`);
       } else {
         contas.cartoesNoUltimo++;
       }
@@ -731,7 +732,7 @@ if (PROVA && noTempo.length) {
     celulasDoLivro(series, copiaDasLinhas('ipc-variacao-homologa', (l) => { l.value = '3,31'; })).erros);
   planta('S5', 'um cartão desfasado: a série tem um ponto mais novo', 'o cartão está desfasado da série', () =>
     celulasDoLivro(copiaDasSeries('serie-ipc-variacao-homologa', (s) => { s.pontos.push({ periodo: '2026-09', valor: '3,40', excerto: 'x', bandeira: null }); }), linhas).erros);
-  planta('S5', 'o novo cartão da União desfasado da sua série', 'o cartão está desfasado da série', () =>
+  planta('S5', 'a comparação da União desfasada da sua série', 'o cartão está desfasado da série', () =>
     celulasDoLivro(copiaDasSeries('serie-ihpc-variacao-homologa-ue', (s) => { s.pontos.push({ periodo: '2026-09', valor: '3,40', excerto: 'x', bandeira: null }); }), linhas).erros);
   if (temDist) {
     const id = 'serie-remuneracao-bruta-mensal-media';
