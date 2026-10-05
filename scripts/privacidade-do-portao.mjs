@@ -245,11 +245,26 @@ export function conferirSemCookiesNemSeguimento({ dist, raiz, paginas }) {
   if (temConfiguracao) for (const a of achadosNaConfiguracao(fs.readFileSync(configuracao, 'utf8'))) achados.push({ rel: 'vercel.json', achado: a });
   const funcoes = ficheirosCom(path.join(raiz, 'api'), '.js');
   for (const f of funcoes) for (const a of achadosNaFuncao(fs.readFileSync(f, 'utf8'))) achados.push({ rel: path.relative(raiz, f), achado: a });
-  const fraseNoTexto = PRIVACIDADE.texto.pt.includes(FRASE_DOS_COOKIES.pt) && PRIVACIDADE.texto.en.includes(FRASE_DOS_COOKIES.en);
-  const erros = fraseNoTexto
+  const fraseEmPt = PRIVACIDADE.texto.pt.includes(FRASE_DOS_COOKIES.pt);
+  const fraseEmEn = PRIVACIDADE.texto.en.includes(FRASE_DOS_COOKIES.en);
+  const erros = errosDaFraseDosCookies({ achados, fraseEmPt, fraseEmEn });
+  return { erros, fraseNoTexto: fraseEmPt && fraseEmEn, contas: { paginas: paginas.lidas, guioes: guioes.length, configuracao: temConfiguracao ? 1 : 0, funcoes: funcoes.length, achados: achados.length } };
+}
+
+/**
+ * A DECISÃO DA FRASE, à parte, para as plantas a poderem morder em memória (a leitura a frio do H3, 05.10.2026, achado 5).
+ * A primeira forma só acusava os achados quando a frase estava nas DUAS edições: tirar a frase de uma edição desligava a
+ * proteção da outra, que continuava a prometer «não usa cookies» em público. Agora a promessa numa edição que seja
+ * protege as duas, e as edições não podem discordar: ou a frase está nas duas, ou em nenhuma, por decisão escrita.
+ * @param {{ achados: { rel: string, achado: string }[], fraseEmPt: boolean, fraseEmEn: boolean }} x
+ * @returns {string[]}
+ */
+export function errosDaFraseDosCookies({ achados, fraseEmPt, fraseEmEn }) {
+  const erros = (fraseEmPt || fraseEmEn)
     ? achados.map((a) => `H3 cookies: a página «Privacidade» diz «${FRASE_DOS_COOKIES.pt}», e ${a.rel} tem ${a.achado}. Ou isto sai, ou a frase sai do texto, por decisão escrita.`)
     : [];
-  return { erros, fraseNoTexto, contas: { paginas: paginas.lidas, guioes: guioes.length, configuracao: temConfiguracao ? 1 : 0, funcoes: funcoes.length, achados: achados.length } };
+  if (fraseEmPt !== fraseEmEn) erros.push(`H3 cookies: a frase «${FRASE_DOS_COOKIES.pt}» está numa edição e não na outra (pt ${fraseEmPt ? 'sim' : 'não'}, en ${fraseEmEn ? 'sim' : 'não'}): ou está nas duas, ou em nenhuma, por decisão escrita.`);
+  return erros;
 }
 
 /**
@@ -287,6 +302,10 @@ export function plantasDaPrivacidade() {
     { nome: 'h3-cookies-guiao-servido-limpo', espera: null, erros: () => achadosNoGuiao("try { localStorage.getItem('tema'); } catch (e) {}") },
     { nome: 'h3-cookies-configuracao', espera: /Set-Cookie/, erros: () => achadosNaConfiguracao('{"routes":[{"src":"/(.*)","headers":{"Set-Cookie":"x=1"}}]}') },
     { nome: 'h3-cookies-funcao', espera: /Set-Cookie/, erros: () => achadosNaFuncao("res.setHeader('Set-Cookie', 'x=1');") },
+    // As três da leitura a frio (achado 5): a promessa numa edição protege as duas, e as edições não podem discordar.
+    { nome: 'h3-cookies-frase-so-em-pt-com-achado', espera: /escreve ou lê cookies/, erros: () => errosDaFraseDosCookies({ achados: [{ rel: 'dist/js/x.js', achado: 'escreve ou lê cookies' }], fraseEmPt: true, fraseEmEn: false }) },
+    { nome: 'h3-cookies-frase-so-em-en', espera: /numa edição e não na outra/, erros: () => errosDaFraseDosCookies({ achados: [], fraseEmPt: false, fraseEmEn: true }) },
+    { nome: 'h3-cookies-frase-nas-duas-sem-achados', espera: null, erros: () => errosDaFraseDosCookies({ achados: [], fraseEmPt: true, fraseEmEn: true }) },
   ];
   return casos.map((c) => {
     const erros = c.erros();
