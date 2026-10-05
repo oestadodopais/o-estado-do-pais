@@ -31,7 +31,9 @@ const rotas=['index.html','en/index.html','temas/index.html','en/themes/index.ht
 const folhas=fs.readdirSync(path.join('dist','_astro')).filter(f=>f.endsWith('.css')).map(f=>`_astro/${f}`);
 /* E os dois ficheiros do mapa do sítio, que a E5 das entradas lê desde o PP1b. */
 const mapasDoSitio=fs.readdirSync('dist').filter(f=>/^sitemap.*\.xml$/.test(f));
-const originais=new Map([...rotas,...folhas,...mapasDoSitio].map(f=>[f,fs.readFileSync(path.join('dist',f),'utf8')]));
+/* C2, 05.10.2026: e o carimbo da construção, que o `check:pais` lê desde o H2 (o prazo de um estudo em curso, em
+   `scripts/estudos-em-curso.mjs`); sem ele a primeira prova, a das páginas sem estrago, rebentava antes de qualquer planta. */
+const originais=new Map([...rotas,...folhas,...mapasDoSitio,'version.json'].map(f=>[f,fs.readFileSync(path.join('dist',f),'utf8')]));
 const resultados=[];
 const repor=()=>{for(const [f,s] of originais){const alvo=path.join(pasta,f);fs.mkdirSync(path.dirname(alvo),{recursive:true});fs.writeFileSync(alvo,s);}};
 const html=(f,fn)=>{const raiz=parse(fs.readFileSync(path.join(pasta,f),'utf8'));fn(raiz);fs.writeFileSync(path.join(pasta,f),raiz.toString());};
@@ -84,6 +86,9 @@ try {
     que o agregado da União continua a derivar a União, e que a tabela não o pode dar a Portugal. */
  prova('linha de Portugal declarada da União','A1: pib-real-per-capita-2024 é declarado de «uniao-europeia» e deriva de «portugal»',()=>{},`import {LUGAR_DECLARADO_DAS_LINHAS} from './src/data/lugar-das-linhas.mjs';LUGAR_DECLARADO_DAS_LINHAS['pib-real-per-capita-2024']='uniao-europeia';`);
  prova('agregado da União declarado de Portugal','A1: despesa-em-id-2024-ue é declarado de «portugal» e deriva de «uniao-europeia»',()=>{},`import {LUGAR_DECLARADO_DAS_LINHAS} from './src/data/lugar-das-linhas.mjs';LUGAR_DECLARADO_DAS_LINHAS['despesa-em-id-2024-ue']='portugal';`);
+ /* E a via só lê um pedido de uma geografia: a linha europeia do índice harmonizado pede PT e EU27_2020, e declarada
+    de Portugal não deriva lugar nenhum. Pela primeira geografia, a planta passava calada. */
+ prova('pedido de várias geografias declarado de Portugal','A1: ihpc-variacao-homologa-ue está em lugar-das-linhas.mjs e não deriva lugar nenhum',()=>{},`import {LUGAR_DECLARADO_DAS_LINHAS} from './src/data/lugar-das-linhas.mjs';LUGAR_DECLARADO_DAS_LINHAS['ihpc-variacao-homologa-ue']='portugal';`);
  prova('porta do registo apontada a outro lugar','A3',()=>html('correcoes/index.html',r=>r.querySelector('[data-mudou-registo] .registo-lugar').setAttribute('href','/municipios/lisboa')));
  /* As duas edições por confirmar são inglesas (os dois estudos da água), e por
     isso a planta do título vive na edição inglesa: é lá que a marca se rende. */
