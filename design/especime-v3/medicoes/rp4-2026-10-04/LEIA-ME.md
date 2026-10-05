@@ -118,11 +118,11 @@ Reprodução das medidas: `node design/especime-v3/medicoes/rp4-2026-10-04/medir
 
 Passagem de 05.10.2026, pelo mandato de direção depois da leitura a frio. O registo acima conserva a primeira entrega. Esta secção substitui a decisão do cartão europeu e identifica as provas refeitas nesta passagem. A I196 continua fechada: o brief corrigido mede a cabeça histórica `905105b7`.
 
-A decisão da antiga I195 do RP4, agora I197, está implementada em `2348c727`. O cartão `ihpc-variacao-homologa` desenha a série da linha europeia que a sua régua mostra, com «União Europeia» e a porta para o recibo europeu na edição da página. A regra abrange a série própria e a série da comparação declarada. Saíram o cartão europeu autónomo, a leitura, a sua auditoria e a unidade que só ele usava. A E2 voltou ao catálogo nacional. As cadeias globais do desenho continuam em uso nos recibos; nenhuma delas era exclusiva do cartão retirado.
+A decisão da antiga I195 do RP4, agora I197, está implementada em `48e4ba5c`. O cartão `ihpc-variacao-homologa` desenha a série da linha europeia que a sua régua mostra, com «União Europeia» e a porta para o recibo europeu na edição da página. A regra abrange a série própria e a série da comparação declarada. Saíram o cartão europeu autónomo, a leitura, a sua auditoria e a unidade que só ele usava. A E2 voltou ao catálogo nacional. As cadeias globais do desenho continuam em uso nos recibos; nenhuma delas era exclusiva do cartão retirado.
 
 As conferências intermédias do cartão, das séries, das entradas, da voz e dos tipos passaram. As plantas da K20 incluem um cartão sem série própria nem comparação com série, a ausência da série própria, a ausência da comparação, a troca da série, da legenda e da porta, a ordem e um cartão com ambas as séries. A S5 continua a recusar uma comparação europeia desfasada. Os registos `rp4-b-cartao.json`, `rp4-b-series.json` e `rp4-b-entradas.json` guardam os controlos e as mordidas; estas conferências não substituem os portões finais.
 
-A leitura e o registo das plantas chegaram durante a espera, antes do rebase. A espera e cada conferência ficam em `rp4-b-espera.json`. Os achados foram lidos por inteiro; as correções reais seguintes estão em `65067f6b`, antes do rebase. Os códigos finais e as cabeças após o rebase serão fechados antes da entrega. O custo parcial é lido da sessão por `custo-rp4-b.py`; a linha final `tokens used` só fica disponível depois de o lançador terminar.
+A leitura e o registo das plantas chegaram durante a espera, antes do rebase. A espera e cada conferência ficam em `rp4-b-espera.json`. Os achados foram lidos por inteiro; as correções reais seguintes estão em `eb62d556`, após o rebase. As secções do H2 e do RP4 ficaram nos registos; a I195 do H2 e a I197 do RP4 têm números distintos. O rebase terminou sobre `fb364fe4`. Os códigos finais serão fechados antes da entrega. O custo parcial é lido da sessão por `custo-rp4-b.py`; a linha final `tokens used` só fica disponível depois de o lançador terminar.
 
 
 | Achado, pela ordem da leitura | Resposta RP4-b | Prova |
@@ -147,3 +147,6 @@ A leitura e o registo das plantas chegaram durante a espera, antes do rebase. A 
 | 18 · códigos, cabeças e higiene | Provas refeitas na cabeça posterior ao rebase. | Ficheiros dos portões e conferência de higiene. |
 | 19 · números do relatório e I196 | I196 conservada fechada. As contagens desta passagem saem das novas provas. | `conferir-relatorio.py` e JSON das medições. |
 | 20 · bases indexadas e SVG como raiz | Conservados, com a exclusão parcial acrescentada. | Provas do módulo, F2 e F21. |
+
+
+Commits RP4-b depois do rebase: `48e4ba5c` (decisão da comparação), `930e4ae3` (primeiros registos), `eb62d556` (achados reais) e `edac06f2` (leitura e respostas). Antes do rebase eram, pela mesma ordem, `2348c727`, `20d57add`, `65067f6b` e `8b4541e7`.
