@@ -269,7 +269,8 @@ export function decadasDoEixo(g, s) {
  * RP4-c-b), com leitura própria. Num desenho que leva a leitura (uma série no modo da unidade, fora da porta de um
  * cartão): o campo parte-se em colunas contadas na menor largura no ecrã, uma conta desta célula; as zonas partem o
  * campo de ponta a ponta sem buracos nem sobreposições, cada uma sobre colunas inteiras; o ponto de cada zona (o do x da
- * sua linha vertical) é o ponto mais próximo do meio de cada coluna dela, lidos os pontos nas coordenadas do traço; duas
+ * sua linha vertical) é o ponto mais próximo do meio de cada coluna dela, lidos os pontos nas coordenadas do traço, e
+ * nas duas colunas das pontas é o ponto da ponta; duas
  * zonas vizinhas não leem o mesmo ponto; cada zona tem pelo menos um píxel na menor largura no ecrã; a linha vertical e o
  * ponto marcado estão no ponto; a etiqueta está no canto de cima do lado de lá. Noutro desenho não há zonas. Devolve as
  * queixas.
@@ -303,7 +304,9 @@ export function zonasDaLeitura(g, leitura = true) {
     else {
       for (let k = Math.max(k0, 0); k <= Math.min(k1, n - 1); k++) {
         const c = esquerda + (k + 0.5) * passo;
-        if (Math.abs(pontos[i][0] - c) > minima(k) + 0.002) { queixas.push(`a coluna ${k + 1} da zona ${z + 1} lê um ponto que não é o mais próximo dela`); break; }
+        /* As colunas das pontas leem os pontos das pontas (que estão dentro delas); as outras, o ponto mais próximo do meio. */
+        const daPonta = k === 0 ? 0 : k === n - 1 ? pontos.length - 1 : null;
+        if (daPonta !== null ? i !== daPonta : Math.abs(pontos[i][0] - c) > minima(k) + 0.002) { queixas.push(`a coluna ${k + 1} da zona ${z + 1} lê um ponto que não é o mais próximo dela`); break; }
       }
       if (i === anterior) queixas.push(`as zonas ${z} e ${z + 1}, vizinhas, leem o mesmo ponto`);
       if (Number(l.marca.cx) !== pontos[i][0] || Number(l.marca.cy) !== pontos[i][1]) queixas.push(`o ponto marcado da zona ${z + 1} não está no ponto`);
@@ -636,6 +639,12 @@ export function provasDoModulo() {
     // As colunas contam-se na menor largura no ecrã: cada zona tem pelo menos um píxel também aí.
     assert.equal(g.colunas, Math.floor(294 * MENOR_LARGURA_NO_ECRA / 360));
     assert(g.leituras.every((l) => Number(l.zona.largura) * MENOR_LARGURA_NO_ECRA / 360 >= 1 - 1e-6));
+    // As pontas: a primeira zona lê o primeiro ponto e a última o último (o valor mais recente).
+    const serieDaInflacao = getSerie('serie-ipc-variacao-homologa');
+    assert.equal(g.leituras[0].periodo, serieDaInflacao.pontos[0].periodo);
+    assert.equal(g.leituras.at(-1).periodo, serieDaInflacao.pontos.at(-1).periodo);
+    const semAPonta = { ...g, leituras: g.leituras.map((l, i, todas) => (i === todas.length - 1 ? { ...l, mira: { ...todas[i - 1].mira }, marca: { ...todas[i - 1].marca } } : l)) };
+    assert(zonasDaLeitura(semAPonta).some((q) => /lê um ponto que não é o mais próximo dela|leem o mesmo ponto/.test(q)));
     // Uma série curta junta as colunas de cada ponto numa zona: uma zona por ponto.
     const pensao = getSerie('serie-pensao-media-anual');
     assert.equal(serieDoPais([pensao.id], 'unidade', 360, 200, getSerie, { leitura: true }).leituras.length, pensao.pontos.length);
