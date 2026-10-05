@@ -190,10 +190,14 @@ function lugarDerivado(id) {
      declarou o lugar delas na tabela explícita, que exige de cada entrada uma
      derivação. Entra como candidato e não como saída antecipada: uma linha que
      derive também outro lugar, pelo estudo ou pelo identificador, diz-se em
-     conflito. Um endereço que não se lê não deriva nada por esta via. */
-  let geo = null;
-  try { geo = c.source_url ? new URL(c.source_url).searchParams.get('geo') : null; } catch { geo = null; }
-  const doPais = geo === 'PT' ? PAIS : undefined;
+     conflito. Só deriva quando PT é a ÚNICA geografia do pedido: um pedido que
+     pede várias (as regiões com o país e a União, ou o país com a União) não diz
+     sozinho de qual delas é a linha, e a primeira corrida desta via, que lia a
+     primeira geografia, deu Portugal às linhas do Alentejo. Um endereço que não
+     se lê não deriva nada por esta via. */
+  let geos = [];
+  try { geos = c.source_url ? new URL(c.source_url).searchParams.getAll('geo') : []; } catch { geos = []; }
+  const doPais = geos.length === 1 && geos[0] === 'PT' ? PAIS : undefined;
   const d = [...new Set([doEstudo, doId, doPais].filter(x => typeof x === 'string'))];
   if (d.length > 1) {
     erros.push(`A1: a linha ${id} deriva dois lugares diferentes (${d.join(', ')}).`);
