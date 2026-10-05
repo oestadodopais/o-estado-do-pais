@@ -124,7 +124,8 @@ const definicao = (declarada.serie ?? declarada)[lang];
     >
       <span data-voz>{f.palavras.uniao}</span>
     </span>
-    {/* AS ETIQUETAS DO TOQUE: uma por marca, na posição dela, escondidas. O guião tira o `hidden` à da marca mais
+    {/* AS ETIQUETAS DO TOQUE: uma por marca, na posição dela (a propriedade `--p`, que a folha `paises.css` lê para a
+        pôr e para a manter dentro do desenho, H3), escondidas. O guião tira o `hidden` à da marca mais
         perto do toque e põe-no às outras; sem guião ficam todas escondidas, e a lista dobrada, abaixo, diz o mesmo.
         Cada etiqueta diz o grupo dos pontos com o valor da sua marca (um país só, quase sempre): os nomes pela ordem
         da tabela, cada um com a ressalva do seu ponto, e o valor uma vez, no fim (H3, o §3, ponto 4, do brief H3).
@@ -135,7 +136,7 @@ const definicao = (declarada.serie ?? declarada)[lang];
           class="paises-toque"
           data-toque-de={`${f.serie}#${x.geo}`}
           data-ancora={x.ancora}
-          style={`left:${x.esquerda}%`}
+          style={`--p:${x.esquerda}`}
           hidden
         >
           {x.grupo.map((p, i, todos) => (
