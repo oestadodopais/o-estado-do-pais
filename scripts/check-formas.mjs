@@ -129,7 +129,7 @@
  */
 
 import fs from 'node:fs';
-import { conferirSerie, plantasDaSerie, provasDoModulo, regraDaPagina, plantasDaRegraDaPagina } from '../tests/formas/serie-do-pais.mjs';
+import { conferirSerie, plantasDaSerie, provasDoModulo, regraDaPagina, plantasDaRegraDaPagina, plantasDaLeitura, plantasDaLegenda } from '../tests/formas/serie-do-pais.mjs';
 import { FIGURAS_INDEXADAS } from '../src/data/series-no-tempo.mjs';
 import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
 import path from 'node:path';
@@ -269,6 +269,9 @@ const MOTIVOS_DO_DOMINIO = new Set([
 
 const provasRP4 = provasDoModulo();
 const plantasRP4 = [];
+/* RP4-c: as plantas da F2 no desenho das séries, e as da leitura e da legenda da unidade na F21, uma vez por edição. */
+const plantasF2 = [];
+const plantasDaLeituraRP4C = [];
 let desenhosRP4 = 0;
 const recibosRP4 = new Set();
 /* RP4-m: os dois controlos das plantas da regra da página, o primeiro de cada um que a corrida vê. */
@@ -385,6 +388,103 @@ const periodoPorExtenso = (periodo, lang) => {
 };
 const temAlgarismo = (s) => /\d/.test(s);
 
+/**
+ * O PERÍODO DE UM PONTO NA FORMA DA CASA, a cópia própria deste portão (bloco RP4-c, 05.10.2026, o ponto 4 do
+ * mandato): o mês «agosto de 2026» / «August 2026» pela tabela dos meses acima, o trimestre «2.º trimestre de 2026» /
+ * «2nd quarter of 2026», o semestre «1.º semestre de 2026» / «1st half of 2026», e o ano como está. Escrita aqui outra
+ * vez, e não importada de `src/lib/datas.mjs`, para a comparação ser uma segunda conta.
+ * @param {string} periodo @param {string} lang
+ */
+const periodoDaCasaDoPortao = (periodo, lang) => {
+  const mes = periodoPorExtenso(periodo, lang);
+  if (mes) return mes;
+  const t = /^(\d{4})-T([1-4])$/.exec(periodo);
+  if (t) return lang === 'en' ? `${t[2]}${['st', 'nd', 'rd', 'th'][Number(t[2]) - 1]} quarter of ${t[1]}` : `${t[2]}.º trimestre de ${t[1]}`;
+  const sm = /^(\d{4})-S([12])$/.exec(periodo);
+  if (sm) return lang === 'en' ? `${sm[2]}${['st', 'nd'][Number(sm[2]) - 1]} half of ${sm[1]}` : `${sm[2]}.º semestre de ${sm[1]}`;
+  return /^\d{4}$/.test(periodo) ? periodo : null;
+};
+
+/**
+ * F2 · NENHUM NÚMERO SOLTO NUM DESENHO, os algarismos de um `<svg>` de uma forma (a regra do cabeçalho; posta numa
+ * função no bloco RP4-c, 05.10.2026, para as plantas a correrem em memória). Cada texto com algarismos tem de estar
+ * num `[data-claim]` ou numa marca de escala (`data-nonledger="escala-de-instrumento"`, F9), ou, desde o RP4-c, ser o
+ * valor ou o período de um ponto de uma série no tempo (`data-ponto`, `data-ponto-periodo`), o que a leitura de cada
+ * ponto escreve no desenho das séries. ESTAS DUAS ADMITEM-SE SÓ COMPARADAS, nunca pela presença da marca: o valor tem
+ * de ser o do ponto que a marca nomeia, lido do ficheiro da série pelo leitor dos portões, e o período tem de ser o
+ * desse ponto, na forma da casa pela cópia deste portão. Devolve as queixas, sem o caminho da página.
+ * @param {import('node-html-parser').HTMLElement} svg @param {string} nome @param {string} lang
+ */
+function algarismosDoDesenho(svg, nome, lang) {
+  const queixas = [];
+  for (const t of svg.querySelectorAll('text, tspan, title, desc')) {
+    if (t.querySelector('text, tspan')) continue;
+    const conteudo = texto(t);
+    if (!temAlgarismo(conteudo)) continue;
+    const doPonto = t.getAttribute('data-ponto') ?? t.getAttribute('data-ponto-periodo');
+    if (doPonto !== undefined && t.closest?.('[data-claim]') === null) {
+      const [sid, chave] = String(doPonto).split('#');
+      const serie = SERIES_DO_PORTAO.get(sid);
+      const ponto = serie?.eixo === 'periodo' ? (serie.pontos ?? []).find((/** @type {{periodo: string}} */ x) => x.periodo === chave) : null;
+      if (!ponto) {
+        queixas.push(`F2 · a forma "${nome}" desenha «${conteudo.slice(0, 60)}» do ponto «${chave}» da série «${sid}», e a série não tem esse ponto no tempo.`);
+      } else if (t.getAttribute('data-ponto') !== undefined) {
+        if (conteudo !== String(ponto.valor).replace(/\s+/g, ' ').trim()) queixas.push(`F2 · a forma "${nome}" desenha o valor «${conteudo}» e o ponto «${chave}» da série «${sid}» vale «${ponto.valor}»: não é o valor do ponto.`);
+      } else if (conteudo !== periodoDaCasaDoPortao(String(chave), lang)) {
+        queixas.push(`F2 · a forma "${nome}" desenha o período «${conteudo}» e o ponto da série «${sid}» é de «${periodoDaCasaDoPortao(String(chave), lang)}»: não é o período do ponto.`);
+      }
+      continue;
+    }
+    /* F9 · O MOTIVO CONTA, E NÃO SÓ A PRESENÇA DO ATRIBUTO (leitura a frio
+       do Codex, Major 6). `data-claim` é sempre uma linha; de
+       `data-nonledger`, só a marca da régua de um instrumento é a escala de
+       uma forma: qualquer outro motivo (uma data, um limiar, um
+       identificador técnico) não descreve o que um algarismo desenhado
+       pode ser aqui, e aceitá-lo era a fresta que deixava passar um número
+       escrito à mão debaixo de um motivo emprestado de outro sítio da
+       página. */
+    const elDeclarado = (el) =>
+      el.getAttribute('data-claim') !== undefined ||
+      el.getAttribute('data-nonledger') === MOTIVO_DE_ESCALA;
+    const declarado =
+      elDeclarado(t) ||
+      t.closest?.('[data-claim]') !== null ||
+      t.closest?.(`[data-nonledger="${MOTIVO_DE_ESCALA}"]`) !== null;
+    if (!declarado) {
+      const motivoAlheio = t.getAttribute('data-nonledger') ?? t.closest?.('[data-nonledger]')?.getAttribute('data-nonledger');
+      queixas.push(
+        `a forma "${nome}" desenha «${conteudo.slice(0, 60)}», que tem algarismos e ` +
+          `não resolve numa linha nem numa marca de escala declarada` +
+          (motivoAlheio ? ` (o motivo "${motivoAlheio}" não é escala de instrumento).\n` : '.\n') +
+          `      Um número desenhado é <Claim as="text"/> ou data-nonledger="${MOTIVO_DE_ESCALA}".`,
+      );
+    }
+  }
+  return queixas;
+}
+
+/**
+ * AS PLANTAS DA F2 NO DESENHO DAS SÉRIES (bloco RP4-c, 05.10.2026, o ponto 4 do mandato), em memória e nunca no
+ * `dist/`: sobre um desenho construído com zonas de leitura, um valor e um período que não são os do ponto, e um
+ * período de um ponto que a série não tem, têm de ser recusados pela F2, com o controlo íntegro a passar primeiro.
+ * @param {import('node-html-parser').HTMLElement} svg @param {string} lang
+ */
+function plantasDaF2(svg, lang) {
+  const controlo = algarismosDoDesenho(svg, 'serie-do-pais', lang);
+  const copia = () => /** @type {import('node-html-parser').HTMLElement} */ (parse(svg.outerHTML).querySelector('svg'));
+  /** @type {[string, RegExp, (s: import('node-html-parser').HTMLElement) => void][]} */
+  const casos = [
+    ['um valor que não é o do ponto', /não é o valor do ponto/, (s) => { const [a, b] = s.querySelectorAll('[data-ponto]'); a.set_content(b.textContent === a.textContent ? `${a.textContent}1` : b.textContent); }],
+    ['um período que não é o do ponto', /não é o período do ponto/, (s) => { const [a, b] = s.querySelectorAll('[data-ponto-periodo]'); a.set_content(b.textContent); }],
+    ['um período de um ponto que a série não tem', /a série não tem esse ponto/, (s) => { const a = s.querySelector('[data-ponto-periodo]'); a.setAttribute('data-ponto-periodo', `${String(a.getAttribute('data-ponto-periodo')).split('#')[0]}#1800-01`); }],
+  ];
+  return casos.map(([nome, mordida, muda]) => {
+    const s = copia(); muda(s);
+    const queixa = algarismosDoDesenho(s, 'serie-do-pais', lang).find((e) => mordida.test(e));
+    return { nome, controlo: controlo.length, mordeu: !controlo.length && Boolean(queixa), queixa: queixa ?? null };
+  });
+}
+
 /* ========================================================================== */
 /* A varredura                                                                */
 /* ========================================================================== */
@@ -497,6 +597,8 @@ const contas = {
   calendarios_dos_mandatos: 0,
   pontos_no_calendario: 0,
   plantas_do_calendario: 0,
+  /* RP4-c: os valores e os períodos dos pontos escritos nos desenhos das séries, que a F2 admite só comparados. */
+  algarismos_de_pontos_nos_desenhos: 0,
 };
 
 /* Os rótulos das duas medidas dos 308 que a F7 conta, lidos da declaração e não
@@ -559,8 +661,19 @@ for (const ficheiro of paginasDe(DIST)) {
         if (!FIGURAS_INDEXADAS[slug] && !controlosDaRegra.comum) controlosDaRegra.comum = { svg: parse(svg.outerHTML).querySelector('svg'), slug };
       }
     }
+    /* As plantas correm sobre o desenho com o seu pai, onde vivem a legenda da unidade e a das linhas excluídas
+       (RP4-c): sem o pai, a F21 dava a legenda da unidade por ausente no controlo. */
+    const comOPai = svg.parentNode?.outerHTML ?? svg.outerHTML;
     if (!plantasRP4.some((p) => p.lang === lang)) {
-      for (const p of plantasDaSerie(svg.outerHTML, lang)) { plantasRP4.push({ lang, ...p }); if (!p.mordeu) err(`${rel}: F21 · planta ${p.nome} não mordeu: ${p.queixa}`); }
+      for (const p of plantasDaSerie(comOPai, lang)) { plantasRP4.push({ lang, ...p }); if (!p.mordeu) err(`${rel}: F21 · planta ${p.nome} não mordeu: ${p.queixa}`); }
+    }
+    /* RP4-c (os pontos 1 e 4): as plantas da leitura de cada ponto, no primeiro desenho com zonas de cada edição, e as
+       da legenda da unidade, no primeiro desenho com ela. */
+    if (svg.querySelector('[data-ponto-periodo]') && !plantasDaLeituraRP4C.some((p) => p.lang === lang && p.de === 'leitura')) {
+      for (const p of plantasDaLeitura(comOPai, lang)) { plantasDaLeituraRP4C.push({ lang, de: 'leitura', ...p }); if (!p.mordeu) err(`${rel}: F21 · planta da leitura «${p.nome}» não mordeu: ${p.queixa}`); }
+    }
+    if (svg.parentNode?.querySelector('[data-serie-unidade-legenda]') && !plantasDaLeituraRP4C.some((p) => p.lang === lang && p.de === 'legenda')) {
+      for (const p of plantasDaLegenda(comOPai, lang)) { plantasDaLeituraRP4C.push({ lang, de: 'legenda', ...p }); if (!p.mordeu) err(`${rel}: F21 · planta da legenda «${p.nome}» não mordeu: ${p.queixa}`); }
     }
   }
 
@@ -825,36 +938,17 @@ for (const ficheiro of paginasDe(DIST)) {
         );
       }
     }
+    const linguaDaForma = rota?.lang === 'en' ? 'en' : 'pt';
     for (const svg of (forma.rawTagName === 'svg' ? [forma] : forma.querySelectorAll('svg'))) {
-      for (const t of svg.querySelectorAll('text, tspan, title, desc')) {
-        if (t.querySelector('text, tspan')) continue;
-        const conteudo = texto(t);
-        if (!temAlgarismo(conteudo)) continue;
-        /* F9 · O MOTIVO CONTA, E NÃO SÓ A PRESENÇA DO ATRIBUTO (leitura a frio
-           do Codex, Major 6). `data-claim` é sempre uma linha; de
-           `data-nonledger`, só a marca da régua de um instrumento é a escala de
-           uma forma: qualquer outro motivo (uma data, um limiar, um
-           identificador técnico) não descreve o que um algarismo desenhado
-           pode ser aqui, e aceitá-lo era a fresta que deixava passar um número
-           escrito à mão debaixo de um motivo emprestado de outro sítio da
-           página. */
-        const elDeclarado = (el) =>
-          el.getAttribute('data-claim') !== undefined ||
-          el.getAttribute('data-nonledger') === MOTIVO_DE_ESCALA;
-        const declarado =
-          elDeclarado(t) ||
-          t.closest?.('[data-claim]') !== null ||
-          t.closest?.(`[data-nonledger="${MOTIVO_DE_ESCALA}"]`) !== null;
-        if (!declarado) {
-          const motivoAlheio = t.getAttribute('data-nonledger') ?? t.closest?.('[data-nonledger]')?.getAttribute('data-nonledger');
-          err(
-            `${rel}: a forma "${nome}" desenha «${conteudo.slice(0, 60)}», que tem algarismos e ` +
-              `não resolve numa linha nem numa marca de escala declarada` +
-              (motivoAlheio ? ` (o motivo "${motivoAlheio}" não é escala de instrumento).\n` : '.\n') +
-              `      Um número desenhado é <Claim as="text"/> ou data-nonledger="${MOTIVO_DE_ESCALA}".`,
-          );
+      for (const e of algarismosDoDesenho(svg, nome, linguaDaForma)) err(`${rel}: ${e}`);
+      /* RP4-c: as plantas da F2 correm uma vez por edição, no primeiro desenho das séries com zonas de leitura. */
+      if (nome === 'serie-do-pais' && svg.querySelector('[data-ponto-periodo]') && !plantasF2.some((x) => x.lang === linguaDaForma)) {
+        for (const pl of plantasDaF2(svg, linguaDaForma)) {
+          plantasF2.push({ lang: linguaDaForma, ...pl });
+          if (!pl.mordeu) err(`${rel}: F2 · planta «${pl.nome}» não mordeu: ${pl.queixa}`);
         }
       }
+      contas.algarismos_de_pontos_nos_desenhos += svg.querySelectorAll('[data-ponto], [data-ponto-periodo]').length;
     }
   }
 
@@ -1475,9 +1569,17 @@ if (Object.keys(FIGURAS_INDEXADAS).length) {
   }
 }
 if (!desenhosRP4 || plantasRP4.length === 0) err('F21 · não viu desenhos ou plantas');
-console.log(`F21 · ${desenhosRP4} desenhos recompostos · ${provasRP4.length} provas do módulo · ${plantasRP4.filter((p) => p.mordeu).length} de ${plantasRP4.length} plantas em memória`);
+/* RP4-c: as plantas da leitura, da legenda e da F2 correram nas duas edições, ou a corrida fecha. */
+for (const lang of LANGS) {
+  if (!plantasDaLeituraRP4C.some((p) => p.lang === lang && p.de === 'leitura')) err(`F21 · as plantas da leitura de cada ponto não correram na edição ${lang}: nenhum desenho com zonas`);
+  if (!plantasDaLeituraRP4C.some((p) => p.lang === lang && p.de === 'legenda')) err(`F21 · as plantas da legenda da unidade não correram na edição ${lang}: nenhum desenho com ela`);
+  if (!plantasF2.some((p) => p.lang === lang)) err(`F2 · as plantas dos pontos no desenho não correram na edição ${lang}`);
+}
+if (!contas.algarismos_de_pontos_nos_desenhos) err('F2 · nenhum valor nem período de um ponto num desenho das séries: o conhecido-positivo da leitura de cada ponto falhou.');
+console.log(`F21 · ${desenhosRP4} desenhos recompostos · ${provasRP4.length} provas do módulo · ${plantasRP4.filter((p) => p.mordeu).length} de ${plantasRP4.length} plantas em memória · RP4-c: ${plantasDaLeituraRP4C.filter((p) => p.mordeu).length} de ${plantasDaLeituraRP4C.length} plantas da leitura e da legenda`);
+console.log(`F2 · RP4-c: ${contas.algarismos_de_pontos_nos_desenhos} valores e períodos de pontos nos desenhos, cada um comparado com o seu ponto · ${plantasF2.filter((p) => p.mordeu).length} de ${plantasF2.length} plantas em memória`);
 const jsonRP4 = process.argv.indexOf('--json-rp4');
-if (jsonRP4 !== -1) fs.writeFileSync(process.argv[jsonRP4 + 1], JSON.stringify({ desenhos: desenhosRP4, recibos: [...recibosRP4], provas: provasRP4, plantas: plantasRP4, erros }, null, 2) + '\n');
+if (jsonRP4 !== -1) fs.writeFileSync(process.argv[jsonRP4 + 1], JSON.stringify({ desenhos: desenhosRP4, recibos: [...recibosRP4], provas: provasRP4, plantas: plantasRP4, plantas_da_leitura: plantasDaLeituraRP4C, plantas_da_f2: plantasF2, algarismos_de_pontos_nos_desenhos: contas.algarismos_de_pontos_nos_desenhos, erros }, null, 2) + '\n');
 
 if (erros.length > 0) {
   console.error(vermelho(`\n  PORTÃO DAS FORMAS · ${erros.length} problema(s):\n`));

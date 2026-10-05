@@ -248,6 +248,9 @@ try {
       ['a linha a entrar no painel da União', (r) => estilo(bloco(r, 'estado').querySelector('.pp-ref'), (s) => `${s};right:-160px`), /G4 · a linha do valor de referência entra no painel da União/],
       ['uma cor numa coluna', (r) => estilo(bloco(r, 'estado').querySelector('[data-barra="divida-publica-2025-ue"] .pp-col-barra'), (s) => `${s};background:var(--cobalt)`), /G5 · rgb\(31, 78, 140\) em span\.pp-col-barra/],
       ['preenchimento preto nas guias da série', (r) => estilo(bloco(r, 'precos').querySelector('.serie-do-pais-guia'), (s) => `${s};fill:rgb(0, 0, 0)`), /G5 · rgb\(0, 0, 0\) em line/],
+      /* RP4-c (05.10.2026): a linha vertical da leitura de cada ponto, escondida até o rato passar, tem as cores da
+         casa como as guias; a G5 lê-a escondida, e o preto por omissão posto nela é recusado como nas guias. */
+      ['preenchimento preto na linha da leitura de um ponto', (r) => estilo(bloco(r, 'precos').querySelectorAll('svg.serie-do-pais > g').find((g) => g.getAttribute('data-eixo') === undefined).querySelector('line'), (s) => `${s};fill:rgb(0, 0, 0)`), /G5 · rgb\(0, 0, 0\) em line/],
       ['o âmbar no rótulo', (r) => bloco(r, 'estado').querySelector('.pp-ref-rotulo').setAttribute('style', `${bloco(r, 'estado').querySelector('.pp-ref-rotulo').getAttribute('style')};color:var(--amber)`), /G5 · âmbar fora da linha de referência, em p\.pp-ref-rotulo/],
     ];
     for (const [nome, estraga, espera] of PLANTAS) {
