@@ -614,17 +614,26 @@ planta('h2b-horizonte-trocado','scripts/gate-html.mjs',[
    desenho e a F21 uma marca sem o símbolo da unidade e a legenda da unidade tirada; o formato dos números recusa o «%»
    colado numa marca e o símbolo do euro numa marca (a paragem do ponto 1: a §1.127, decisão 4). */
 const primeiraEtiqueta = (r) => r.querySelector('svg[data-forma="serie-do-pais"] [data-ponto-periodo]');
+/* RP4-c-b: a primeira zona do desenho da primeira página lê o ponto mais próximo da primeira coluna, que depende dos dados
+   (com as colunas, deixou de ser sempre janeiro de 1992). As plantas leem-na da construção e esperam a queixa com ela. */
+const ESCAPA = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const etiquetaDaConstrucao = (rel) => {
+ const t = primeiraEtiqueta(parse(fs.readFileSync(path.join('dist', rel), 'utf8')));
+ return { periodo: String(t?.getAttribute('data-ponto-periodo') ?? '#').split('#')[1], texto: t?.textContent ?? '' };
+};
+const PRIMEIRA_PT = etiquetaDaConstrucao('index.html');
+const PRIMEIRA_EN = etiquetaDaConstrucao('en/index.html');
 /* RP4-c-b: o período trocado é um período fixo de outro ponto (com as zonas por colunas, a segunda zona já não é a do mês
    seguinte, e a planta não pode depender disso). */
 planta('rp4c-periodo-trocado','scripts/gate-html.mjs',[
  ['index.html',r=>primeiraEtiqueta(r).set_content('dezembro de 1999')]
-],[/RP4-c: o período do ponto «1992-01» da série «serie-ipc-variacao-homologa» foi renderizado como «dezembro de 1999» e a forma da casa é «janeiro de 1992»/]);
+],[new RegExp(`RP4-c: o período do ponto «${ESCAPA(PRIMEIRA_PT.periodo)}» da série «serie-ipc-variacao-homologa» foi renderizado como «dezembro de 1999» e a forma da casa é «${ESCAPA(PRIMEIRA_PT.texto)}»`)]);
 planta('rp4c-periodo-de-outro-ponto','scripts/gate-html.mjs',[
- ['index.html',r=>primeiraEtiqueta(r).setAttribute('data-ponto-periodo','serie-ipc-variacao-homologa#1992-02')]
-],[/RP4-c: o período do ponto «1992-02» da série «serie-ipc-variacao-homologa» foi renderizado como «janeiro de 1992»/,/RP4-c: a etiqueta do período «serie-ipc-variacao-homologa#1992-02» não tem ao lado o valor do mesmo ponto/]);
+ ['index.html',r=>primeiraEtiqueta(r).setAttribute('data-ponto-periodo','serie-ipc-variacao-homologa#1999-12')]
+],[new RegExp(`RP4-c: o período do ponto «1999-12» da série «serie-ipc-variacao-homologa» foi renderizado como «${ESCAPA(PRIMEIRA_PT.texto)}»`),/RP4-c: a etiqueta do período «serie-ipc-variacao-homologa#1999-12» não tem ao lado o valor do mesmo ponto/]);
 planta('rp4c-periodo-ingles-na-edicao-portuguesa','scripts/gate-html.mjs',[
- ['index.html',r=>primeiraEtiqueta(r).set_content('January 1992')]
-],[/RP4-c: o período do ponto «1992-01» da série «serie-ipc-variacao-homologa» foi renderizado como «January 1992»/]);
+ ['index.html',r=>primeiraEtiqueta(r).set_content(PRIMEIRA_EN.texto)]
+],[new RegExp(`RP4-c: o período do ponto «${ESCAPA(PRIMEIRA_PT.periodo)}» da série «serie-ipc-variacao-homologa» foi renderizado como «${ESCAPA(PRIMEIRA_EN.texto)}»`)]);
 planta('rp4c-periodo-fora-do-desenho','scripts/gate-html.mjs',[
  ['index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p><span data-ponto="serie-ipc-variacao-homologa#1992-01">9,41</span> <span data-ponto-periodo="serie-ipc-variacao-homologa#1992-01">janeiro de 1992</span></p>')]
 ],[/RP4-c: o período «serie-ipc-variacao-homologa#1992-01» está fora de um desenho das séries/]);
@@ -632,8 +641,8 @@ planta('rp4c-periodo-sem-marca','scripts/gate-html.mjs',[
  ['index.html',r=>primeiraEtiqueta(r).removeAttribute('data-ponto-periodo')]
 ],[/algarismos fora do livro-razão/]);
 planta('rp4c-valor-trocado-na-etiqueta','scripts/gate-html.mjs',[
- ['en/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"] [data-ponto]').set_content('9,42')]
-],[/UE1: o ponto «1992-01» da série «serie-ipc-variacao-homologa» foi renderizado como «9,42»/]);
+ ['en/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"] [data-ponto]').set_content('99,99')]
+],[new RegExp(`UE1: o ponto «${ESCAPA(PRIMEIRA_EN.periodo)}» da série «serie-ipc-variacao-homologa» foi renderizado como «99,99»`)]);
 planta('rp4c-f2-algarismo-solto','scripts/check-formas.mjs',[
  ['precos/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"]').insertAdjacentHTML('beforeend','<text x="60" y="30">7</text>')]
 ],[/a forma "serie-do-pais" desenha «7», que tem algarismos/]);
