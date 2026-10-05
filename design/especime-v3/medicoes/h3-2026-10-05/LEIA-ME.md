@@ -31,7 +31,7 @@ O formulário das sugestões mostra uma linha só, a do diretor («Só guardamos
 | 2 | a página «Privacidade» | a rota `privacidade` (`/privacidade`, `/en/privacy`), o texto em `src/data/privacidade.mjs` (o do diretor, à letra, e a edição inglesa fiel, frase a frase), a vista na disposição A do Sobre, as duas cascas, a porta no rodapé ao lado de «Sugestões», a migalha do caminho, a entrada no índice pela tabela das rotas (`COMO_ENTRA`, na secção «O projeto»), a régua das frases e a dos alvos; o portão confere a página, a porta e a frase dos cookies (`scripts/privacidade-do-portao.mjs`) | 2 páginas; a porta em 7 860 páginas pelo portão; 19 plantas em memória a morder; a célula do índice do sítio (`check:indice-do-sitio`) a 0 no `verify` |
 | 3 | a porta do menu | medida a 390 px nas duas edições, com o nome inteiro posto no lugar do rótulo curto só no navegador, e capturada: não cabe, e fica «Europa» e «Europe»; a F1.10 continua a ceder só no menu, como a §1.153 escreveu | 401,9 px numa coluna de 354 na portuguesa, 405,2 numa de 354 na inglesa |
 | 4 | os países sobrepostos | a regra das alturas no resolvedor (`alturaNoGrupo()`: de seis píxeis acima a seis abaixo do eixo, pela ordem da tabela, de cima para baixo), aplicada nas duas faixas sem guião; a etiqueta de cada ponto com os países daquele valor e o valor uma vez (o toque na página da União, o `title` na faixa do cartão); a cópia das duas regras do lado dos portões; a F19c, a F19i, a F20c e a F20h; o `title` conferido no portão de HTML; o guião do toque escolhe a marca mais perto também na vertical; e a etiqueta do toque mantida dentro do desenho (`src/styles/paises.css`, a emenda das etiquetas, abaixo) | 58 marcas afastadas por edição, em 27 grupos (o maior com 4 países); 0 discordâncias entre as duas contas; as 10 faixas nas duas edições; as plantas mordem; 0 etiquetas fora da janela e 0 fora do desenho, nas cinco larguras |
-| 5 | os registos | o mapa do repositório (a secção do H3), `ISSUES.md` com a I200, este relatório, o `medidas.json`, as capturas | completos |
+| 5 | os registos | o mapa do repositório (a secção do H3), `ISSUES.md` com a I206, este relatório, o `medidas.json`, as capturas | completos |
 
 ## Onde o brief não se cumpre à letra, medido e dito
 
@@ -77,13 +77,13 @@ Corridos por `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medic
 Antes de mexer, `python3 scripts/leituras/decisoes-em-vigor.py` sobre os ficheiros a tocar deu 25 decisões citadas (`decisoes-em-vigor-antes.txt`). Ficam todas em vigor. As que o bloco toca de perto:
 
 - **§1.153** (o menu de seis, com «Europa»): o menu não muda; a medida de hoje repete a do P4.
-- **§1.154** (a caixa das sugestões; a nota aprovada a 03.10.2026; a quinta recusa do Método): a nota passa à linha aprovada a 05.10.2026 (o §5 do brief H3), e o que ela dizia está na página «Privacidade»; as três regras da caixa ficam (a chave pública no código, o endereço IP nunca guardado, o que se escreve fora do repositório). A quinta recusa do Método remete o prazo para a nota, e fica escrito na I200.
+- **§1.154** (a caixa das sugestões; a nota aprovada a 03.10.2026; a quinta recusa do Método): a nota passa à linha aprovada a 05.10.2026 (o §5 do brief H3), e o que ela dizia está na página «Privacidade»; as três regras da caixa ficam (a chave pública no código, o endereço IP nunca guardado, o que se escreve fora do repositório). A quinta recusa do Método remete o prazo para a nota, e fica escrito na I206.
 - **§1.140** e o UE2 (a faixa da União, a lista dobrada como caminho do teclado): a faixa continua a ser a mesma forma, com as mesmas contas e os mesmos lugares; o desenho continua `aria-hidden`; a etiqueta do toque continua ancorada como os rótulos e, desde a emenda, não passa a caixa do desenho.
 - **§1.98** (o vocabulário): as cadeias novas da mobília são «Privacidade» / «Privacy»; os textos do diretor ficam como ele os escreveu.
 
 ## Achados fora do bloco
 
-- **A quinta recusa do Método** (I200, acima): remete o prazo para a nota da caixa, que já não o diz.
+- **A quinta recusa do Método** (I206, acima): remete o prazo para a nota da caixa, que já não o diz.
 - **O texto do diretor diz «o sítio»** duas vezes para o projeto («os serviços que alojam o sítio e a caixa», «Este sítio não usa cookies»), e o §6 da estrutura nomeia o todo «o projeto», e nunca «o sítio». É o texto aprovado, à letra, e fica; a exceção da voz para «Este sítio não usa cookies» diz porquê.
 - **O mapa do repositório**: as minhas mudanças tinham posto longe da linha 40 citações de outros blocos; ficaram acertadas pela âncora (`acertar-mapa.py`, `mapa-acertado.json`), e o mapa fica com as mesmas 19 citações longe da linha que já tinha no commit do brief (`conferir-mapa-base.txt`, `conferir-mapa-depois-do-acerto.txt`, e `conferir-mapa-depois-da-emenda.txt` depois da linha das etiquetas).
 
@@ -94,7 +94,7 @@ Antes de mexer, `python3 scripts/leituras/decisoes-em-vigor.py` sobre os ficheir
 - `422cfb43` H3: o portão de HTML confere a página «Privacidade», a porta do rodapé, a nota nova da caixa e a frase dos cookies em cada construção (scripts/privacidade-do-portao.mjs), as regras da base passam a ler os prazos no texto da página, e o title das marcas da faixa da União é conferido contra a série, com as plantas em memória
 - `0160d15a` H3: a régua das frases, a voz e os registos das cadeias: a página «Privacidade» no inventário, as linhas da nota nova e as da antiga retiradas com a razão, as exceções da voz da página e da nota, a dispensa de «language» no texto inglês da página, a chave nova em CHAVES-EN.md, e a página na régua dos alvos
 - `a4168aea` H3: as plantas sobre a construção (o prefixo h3-) e as do S1 adaptadas à nota nova, e o verify:deploy confere depois de aterrar as duas páginas «Privacidade» e que nenhuma resposta do sítio no ar põe um cookie
-- `628ef792` H3: a questão I200 (a quinta recusa do Método remete o prazo para a nota da caixa, que desde o H3 já não o diz)
+- `628ef792` H3: a questão I206 (a quinta recusa do Método remete o prazo para a nota da caixa, que desde o H3 já não o diz)
 - `ec4c6f58` H3: o mapa do repositório diz a passagem de higiene (a família da página «Privacidade» na tabela do §1 e a secção do H3 no fim), e as quarenta citações de outros blocos que as mudanças do bloco empurraram para longe da linha ficam acertadas pela âncora
 - `c90957da` H3: as etiquetas do toque da página da União ficam dentro do desenho: medidas uma a uma a 390 px depois da primeira corrida oficial, a dos quatro países do desemprego de longa duração passava a margem da janela e cortava o primeiro nome; a posição da marca chega em --p e, onde há unidades do contentor, a etiqueta encosta-se à borda quando não cabe e dobra para cima quando é mais larga do que o desenho
 - `60f44fc8` H3: o mapa do repositório diz a emenda das etiquetas do toque (a regra na folha paises.css e a medida no relatório do bloco)
@@ -107,7 +107,7 @@ O construtor foi o Claude Opus 5.5 (a definição `construtor`), numa sessão s�
 ## O que ficou por fazer
 
 - A leitura a frio pelo Codex Astra `xhigh`, sobre o pacote com cinco estragos, e a releitura do diff do inventário (o bloco `h3` está «por ler» em `REVISOES-DO-INVENTARIO.md`).
-- A I200: a palavra da quinta recusa do Método, por decisão escrita.
+- A I206: a palavra da quinta recusa do Método, por decisão escrita.
 - Depois de aterrar, o `verify:deploy` com a conferência (h): as duas páginas «Privacidade» a responder com o código `200` e o título, e nenhum `Set-Cookie` no ar. Antes de aterrar cai em 4 problemas, todos das duas páginas, que ainda não existem no ar, e as 3 conferências do `Set-Cookie` passam: a primeira página no ar e as duas respostas de erro não põem cookie nenhum (`verify-deploy-antes-de-aterrar.log`, com a hora em `.hora`).
 - Uma célula de navegador que mantenha as etiquetas do toque dentro do desenho, se o lugar de direção a quiser: hoje é a medida deste relatório (`etiquetas-do-toque.mjs`, com o conhecido-positivo), e nenhum portão a confere.
 - O texto da página «Privacidade» pode entrar na amarra das decisões (a tabela de `scripts/check-ledger.mjs` que prende o Sobre e o Método ao carimbo da entrada que os governa), por decisão de quem regista; hoje é o guião das medidas que o compara com o brief.
