@@ -71,6 +71,13 @@ export const NOMES_DAS_SERIES = {
     },
   },
   'serie-salario-minimo-mensal': { linha: 'retribuicao-minima-mensal-doze-meses-2026' },
+  /* AS CINCO SÉRIES DO IPC DO BLOCO RP4-m (05.10.2026): cada uma é a medida de um cartão que já existe,
+     e leva o nome desse cartão. */
+  'serie-ipc-variacao-media-12-meses': { linha: 'ipc-variacao-media-12-meses' },
+  'serie-ipc-sem-habitacao-variacao-media-12-meses': { linha: 'ipc-sem-habitacao-variacao-media-12-meses' },
+  'serie-ipc-combustiveis-variacao-homologa': { linha: 'ipc-combustiveis-variacao-homologa' },
+  'serie-ipc-rendas-variacao-homologa': { linha: 'ipc-rendas-variacao-homologa' },
+  'serie-ipc-energia-em-casa-variacao-homologa': { linha: 'ipc-energia-em-casa-variacao-homologa' },
   /* O mês de base não entra no nome, que não tem algarismos: diz-se na conta em
      palavras e no primeiro período da série, que têm origem. */
   'serie-cem-euros-de-2015-01': {
