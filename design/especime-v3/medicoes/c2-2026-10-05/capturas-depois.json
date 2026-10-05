@@ -2,14 +2,14 @@
   "_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/captar-c2.mjs. Não se edita à mão.",
   "bloco": "C2",
   "modo": "depois",
-  "commit": "57be3c40fc85276a8affef9d5007b06b2d39eba8",
+  "commit": "82406f855ea08e22cd2eb350adde00448447748e",
   "construcao": {
-    "commit": "57be3c40fc85276a8affef9d5007b06b2d39eba8",
+    "commit": "82406f855ea08e22cd2eb350adde00448447748e",
     "ref": "c2-2026-10-05",
     "env": "local",
     "origem": "git",
     "motivo": null,
-    "construido_em": "2026-10-05T14:04:55.570Z"
+    "construido_em": "2026-10-05T15:58:23.920Z"
   },
   "larguras": [
     390,
@@ -57,7 +57,7 @@
   "resultados": [
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-pt-390.png",
-      "sha256": "74c760c133221c3535f8ec9cca68de210780ce2a087d8301b2c42e6cb99ae1cb",
+      "sha256": "9c6b58192c21eeb1224f84aeb4ee974ceb37bdc98b2da7448ad84fae5c033a27",
       "pagina": "recibo-pib-real-per-capita-2025",
       "lang": "pt",
       "largura": 390,
@@ -65,7 +65,7 @@
       "medidas": {
         "janela": 390,
         "documento": 390,
-        "altura": 3703,
+        "altura": 3764,
         "h1": "20 700 euros por habitante · volumes encadeados (2015) (dado provisório)",
         "transborda": false,
         "valor_no_titulo": "20 700",
@@ -88,7 +88,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-pt-390.png",
-      "sha256": "c43aa69123b6798a590f58d12d8ddf68d1b09cd1ecb7b0880372cef74ee12bee",
+      "sha256": "b5e22599242b940dcc5889b5d2e68a4ad50e84620be3af882dd7f7a0fd51b8e7",
       "pagina": "recibo-custo-unitario-do-trabalho-2024",
       "lang": "pt",
       "largura": 390,
@@ -96,7 +96,7 @@
       "medidas": {
         "janela": 390,
         "documento": 390,
-        "altura": 3063,
+        "altura": 3124,
         "h1": "17,9 variação em três anos, %",
         "transborda": false,
         "valor_no_titulo": "17,9",
@@ -178,7 +178,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-pt-768.png",
-      "sha256": "581f2b0a39a8f33ec2308017b2d6e324191c45b97e6a8f99f2e6c9841d028687",
+      "sha256": "6c01301100588eb510169ee7a1c1064bc5def25194bb3c26bf8d100e8800efd3",
       "pagina": "recibo-pib-real-per-capita-2025",
       "lang": "pt",
       "largura": 768,
@@ -186,7 +186,7 @@
       "medidas": {
         "janela": 768,
         "documento": 768,
-        "altura": 3170,
+        "altura": 3199,
         "h1": "20 700 euros por habitante · volumes encadeados (2015) (dado provisório)",
         "transborda": false,
         "valor_no_titulo": "20 700",
@@ -209,7 +209,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-pt-768.png",
-      "sha256": "bc809ea298f37c9b44d7d74e8f61d18b259273a41461fbf303f963bcf4266148",
+      "sha256": "d58a70185adabdf8510456e3b4687ce09931f6191da3ca9b456800d61d0d3fb9",
       "pagina": "recibo-custo-unitario-do-trabalho-2024",
       "lang": "pt",
       "largura": 768,
@@ -217,7 +217,7 @@
       "medidas": {
         "janela": 768,
         "documento": 768,
-        "altura": 2664,
+        "altura": 2692,
         "h1": "17,9 variação em três anos, %",
         "transborda": false,
         "valor_no_titulo": "17,9",
@@ -299,7 +299,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-pt-1024.png",
-      "sha256": "9af7089cd33ee5235ac6195ab1e2b7ee7e86d5a6c90dce25e37c13ee42a69761",
+      "sha256": "9206882587ad734549962fa8b4ec4960164671d52eff586715d902a7a5199e15",
       "pagina": "recibo-pib-real-per-capita-2025",
       "lang": "pt",
       "largura": 1024,
@@ -307,7 +307,7 @@
       "medidas": {
         "janela": 1024,
         "documento": 1024,
-        "altura": 2377,
+        "altura": 2406,
         "h1": "20 700 euros por habitante · volumes encadeados (2015) (dado provisório)",
         "transborda": false,
         "valor_no_titulo": "20 700",
@@ -330,7 +330,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-pt-1024.png",
-      "sha256": "e83623cfb9fe005ba7201b022fc73c6b42957191d76bdbe4de0e95ba082827f1",
+      "sha256": "b2014fc87a7c13abd5acbc2840fe8f9c8e10345a3177b90000e80e29f4ad70c3",
       "pagina": "recibo-custo-unitario-do-trabalho-2024",
       "lang": "pt",
       "largura": 1024,
@@ -338,7 +338,7 @@
       "medidas": {
         "janela": 1024,
         "documento": 1024,
-        "altura": 1953,
+        "altura": 1982,
         "h1": "17,9 variação em três anos, %",
         "transborda": false,
         "valor_no_titulo": "17,9",
@@ -420,7 +420,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-pt-1280.png",
-      "sha256": "7b1495d9a605a0162ecc5ce7402d14a27412e183c240ab25712fbeb64576c2e6",
+      "sha256": "7b26d66573ce6c4de7c6907330783eb0ca6217a4b0f6e6633eae39fd7e11dc62",
       "pagina": "recibo-pib-real-per-capita-2025",
       "lang": "pt",
       "largura": 1280,
@@ -428,7 +428,7 @@
       "medidas": {
         "janela": 1280,
         "documento": 1280,
-        "altura": 2399,
+        "altura": 2427,
         "h1": "20 700 euros por habitante · volumes encadeados (2015) (dado provisório)",
         "transborda": false,
         "valor_no_titulo": "20 700",
@@ -451,7 +451,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-pt-1280.png",
-      "sha256": "90dbf3bb08a7aa8e4eb0080bf601f9008f00467beb5afd731ce054b3a463defa",
+      "sha256": "9ccd561dbb076798466fd12c57d022a215feb4b6af0422f502e3e69c4f442380",
       "pagina": "recibo-custo-unitario-do-trabalho-2024",
       "lang": "pt",
       "largura": 1280,
@@ -459,7 +459,7 @@
       "medidas": {
         "janela": 1280,
         "documento": 1280,
-        "altura": 1968,
+        "altura": 1997,
         "h1": "17,9 variação em três anos, %",
         "transborda": false,
         "valor_no_titulo": "17,9",
@@ -541,7 +541,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-pt-1600.png",
-      "sha256": "3460560328ba4e8159a5568a4eede745f0b91d96c95d89abab328297f9de0943",
+      "sha256": "be4a60a7016248af21ef25b4f197b4f26b46b733429f58be0eb79fe7a7e52ad0",
       "pagina": "recibo-pib-real-per-capita-2025",
       "lang": "pt",
       "largura": 1600,
@@ -549,7 +549,7 @@
       "medidas": {
         "janela": 1600,
         "documento": 1600,
-        "altura": 2405,
+        "altura": 2434,
         "h1": "20 700 euros por habitante · volumes encadeados (2015) (dado provisório)",
         "transborda": false,
         "valor_no_titulo": "20 700",
@@ -572,7 +572,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-pt-1600.png",
-      "sha256": "c67087fed15cbcc1a113d4538c7c6b8cdf0601b94163687f4b861a28ae0474ea",
+      "sha256": "ff8f7809c88c65ea1876e24abd823fb6717e127e6bbc50758ea08821f26fbf83",
       "pagina": "recibo-custo-unitario-do-trabalho-2024",
       "lang": "pt",
       "largura": 1600,
@@ -580,7 +580,7 @@
       "medidas": {
         "janela": 1600,
         "documento": 1600,
-        "altura": 1974,
+        "altura": 2003,
         "h1": "17,9 variação em três anos, %",
         "transborda": false,
         "valor_no_titulo": "17,9",
@@ -662,7 +662,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-en-390.png",
-      "sha256": "c63357890e16987ea59779a8f5b56ea89635ac3f80fe20a31a5e838822950af5",
+      "sha256": "f4dc0a850583480f31c0fe474452009b71af108353f246ea1201464120e31cb7",
       "pagina": "recibo-pib-real-per-capita-2025",
       "lang": "en",
       "largura": 390,
@@ -670,7 +670,7 @@
       "medidas": {
         "janela": 390,
         "documento": 390,
-        "altura": 3796,
+        "altura": 3858,
         "h1": "20 700 euro per capita · chain linked volumes (2015) (provisional data)",
         "transborda": false,
         "valor_no_titulo": "20 700",
@@ -693,7 +693,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-en-390.png",
-      "sha256": "0d17ab5388dc8e74dd1a6cca40e5de7beca929097e3e918632c956b604b66b92",
+      "sha256": "543cdd2a67ca397a2afbb474e44580f32a8b8ef2c5eb565c4ab1205800f23abe",
       "pagina": "recibo-custo-unitario-do-trabalho-2024",
       "lang": "en",
       "largura": 390,
@@ -701,7 +701,7 @@
       "medidas": {
         "janela": 390,
         "documento": 390,
-        "altura": 3156,
+        "altura": 3218,
         "h1": "17,9 three-year change, %",
         "transborda": false,
         "valor_no_titulo": "17,9",
@@ -783,7 +783,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-en-768.png",
-      "sha256": "64a88e619df192590156a4aea4f405c9cea6dfa08a78d19352f707a1feaa4655",
+      "sha256": "af156a75d1735340ab0617ce4ec5da8fb39c2cb3f1be3809d4cd7fd98f851cf1",
       "pagina": "recibo-pib-real-per-capita-2025",
       "lang": "en",
       "largura": 768,
@@ -791,7 +791,7 @@
       "medidas": {
         "janela": 768,
         "documento": 768,
-        "altura": 3192,
+        "altura": 3220,
         "h1": "20 700 euro per capita · chain linked volumes (2015) (provisional data)",
         "transborda": false,
         "valor_no_titulo": "20 700",
@@ -814,7 +814,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-en-768.png",
-      "sha256": "8d4868185b1f0bd6f48e1351fc94773cd035ce0c9fe9307f85faf8787a79cbe4",
+      "sha256": "cf9a36bf48374e8aa7dcf42cc22d27eee20c744f3a0784729aa894c8b260b25f",
       "pagina": "recibo-custo-unitario-do-trabalho-2024",
       "lang": "en",
       "largura": 768,
@@ -822,7 +822,7 @@
       "medidas": {
         "janela": 768,
         "documento": 768,
-        "altura": 2685,
+        "altura": 2714,
         "h1": "17,9 three-year change, %",
         "transborda": false,
         "valor_no_titulo": "17,9",
@@ -904,7 +904,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-en-1024.png",
-      "sha256": "71492867a2832b59f0d0c7fc0d6caa27359dd195abf609a26079d01779679918",
+      "sha256": "1be4fbd971403f8a4c0a83cacd033b8bdce668a4cc5ef9f279ec2ac3f139fc16",
       "pagina": "recibo-pib-real-per-capita-2025",
       "lang": "en",
       "largura": 1024,
@@ -912,7 +912,7 @@
       "medidas": {
         "janela": 1024,
         "documento": 1024,
-        "altura": 2395,
+        "altura": 2424,
         "h1": "20 700 euro per capita · chain linked volumes (2015) (provisional data)",
         "transborda": false,
         "valor_no_titulo": "20 700",
@@ -935,7 +935,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-en-1024.png",
-      "sha256": "1ab999d69a6cc9d595af6e5a0424aca03bfc9f356aef7e2c8a7a6f6daa4fb921",
+      "sha256": "cc526d30aaddf07d74a8987743701a8478695659ee80564867282a5fde7c8eab",
       "pagina": "recibo-custo-unitario-do-trabalho-2024",
       "lang": "en",
       "largura": 1024,
@@ -943,7 +943,7 @@
       "medidas": {
         "janela": 1024,
         "documento": 1024,
-        "altura": 1993,
+        "altura": 2022,
         "h1": "17,9 three-year change, %",
         "transborda": false,
         "valor_no_titulo": "17,9",
@@ -1025,7 +1025,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-en-1280.png",
-      "sha256": "bfa705c9a07c48b98ebc271dfd267f87f2e7e27751bfa7329e96214486ccc823",
+      "sha256": "ea227f2547c67a5df199e914a04e88dc08e8b5fec8227b9b5129896c5eec3351",
       "pagina": "recibo-pib-real-per-capita-2025",
       "lang": "en",
       "largura": 1280,
@@ -1033,7 +1033,7 @@
       "medidas": {
         "janela": 1280,
         "documento": 1280,
-        "altura": 2452,
+        "altura": 2481,
         "h1": "20 700 euro per capita · chain linked volumes (2015) (provisional data)",
         "transborda": false,
         "valor_no_titulo": "20 700",
@@ -1056,7 +1056,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-en-1280.png",
-      "sha256": "c6f20529498d02aff307e7c2cca421a234b2546e2ca48c81a3ab65a1690cbf93",
+      "sha256": "5ea51c7c5b5e2a8d88f26164087aedd978a793040a973c102855084adb6403f5",
       "pagina": "recibo-custo-unitario-do-trabalho-2024",
       "lang": "en",
       "largura": 1280,
@@ -1064,7 +1064,7 @@
       "medidas": {
         "janela": 1280,
         "documento": 1280,
-        "altura": 2044,
+        "altura": 2073,
         "h1": "17,9 three-year change, %",
         "transborda": false,
         "valor_no_titulo": "17,9",
@@ -1146,7 +1146,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-en-1600.png",
-      "sha256": "2145dc1777d12879d3d8f3f1e8b24e2c422c35e0aba8530b0c1705daf7901606",
+      "sha256": "2d258d925bf1324a92d6f502248979e015d72bade0bb8754cc4c8fcdf940cfa9",
       "pagina": "recibo-pib-real-per-capita-2025",
       "lang": "en",
       "largura": 1600,
@@ -1154,7 +1154,7 @@
       "medidas": {
         "janela": 1600,
         "documento": 1600,
-        "altura": 2459,
+        "altura": 2488,
         "h1": "20 700 euro per capita · chain linked volumes (2015) (provisional data)",
         "transborda": false,
         "valor_no_titulo": "20 700",
@@ -1177,7 +1177,7 @@
     },
     {
       "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-en-1600.png",
-      "sha256": "beec5193cafd108f471c4e10648036b277202ec08837d2933d027b0dbacfc507",
+      "sha256": "2eda6be25cfa98d3b174b55d88fc0c210875b9d76ded885df4ae82176d02bc74",
       "pagina": "recibo-custo-unitario-do-trabalho-2024",
       "lang": "en",
       "largura": 1600,
@@ -1185,7 +1185,7 @@
       "medidas": {
         "janela": 1600,
         "documento": 1600,
-        "altura": 2050,
+        "altura": 2079,
         "h1": "17,9 three-year change, %",
         "transborda": false,
         "valor_no_titulo": "17,9",

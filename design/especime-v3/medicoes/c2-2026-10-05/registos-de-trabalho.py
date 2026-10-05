@@ -41,6 +41,19 @@ iguais = []
 for l in ap.get("linhas", []):
     bytes_do_commit = subprocess.check_output(["git", "show", f"8dbdcac2:ledger/claims/{l['id']}.yml"])
     iguais.append(hashlib.sha256(bytes_do_commit).hexdigest() == l["depois_sha256"])
+pa = j("aplicacao-published-at.json") or {}
+iguais_pa = []
+for l in pa.get("linhas", []):
+    iguais_pa.append(hashlib.sha256(subprocess.check_output(["git", "show", f"82406f85:ledger/claims/{l['id']}.yml"])).hexdigest() == l["depois_sha256"])
+
+
+def so_esta_pasta(estado):
+    """O estado do git a dizer só ficheiros mudados desta pasta (as provas, por commitar), ou nada."""
+    # O estado do git é «XY caminho»; a leitura do ficheiro pode ter tirado o espaço do começo da primeira linha.
+    linhas = [x.strip() for x in (estado or "").splitlines() if x.strip()]
+    return all(x.split(None, 1)[-1].startswith(PASTA + "/") for x in linhas)
+
+
 la, ld = j("leituras-antes.json") or {}, j("leituras-depois.json") or {}
 mot = j("motor/motor-c2.json") or {}
 registos = [
@@ -76,13 +89,22 @@ registos = [
      "prova": "motor/gate-final.cabeca e motor/gate-final.estado, escritos antes de correr o core.gate"},
     {"registo": "portoes/", "cabeca": txt("portoes/cabeca"), "arvore": "limpa no que o git segue" if txt("portoes/estado.fim") == "" else f"estado: {txt('portoes/estado.fim')}",
      "prova": "portoes/cabeca, portoes/cabeca.fim e portoes/estado.fim, escritos por scripts/leituras/portoes.sh"},
-    {"registo": "plantas-pais.json, recibos-c2.json, capturas-depois.json, paginas-c2.json", "cabeca": txt("apos-os-portoes.cabeca"),
-     "arvore": "limpa no que o git segue" if txt("apos-os-portoes.estado") == "" else f"estado: {txt('apos-os-portoes.estado')}",
-     "prova": "apos-os-portoes.cabeca e apos-os-portoes.estado, escritos por apos-os-portoes.sh antes dos passos"},
+    {"registo": "aplicacao-published-at.json e aplicar-published-at.log (a passagem C2-b)", "cabeca": pa.get("cabeca_lida"),
+     "arvore": "as linhas lidas da cabeça (git show HEAD), e escritas na árvore",
+     "prova": f"o resumo de cada linha com o published_at é o dos bytes do commit 82406f85 em {sum(iguais_pa)} de {len(iguais_pa)} linhas",
+     "linhas_iguais_ao_commit": sum(iguais_pa)},
+    {"registo": "ledger-check-3.log e .codigo (a passagem C2-b)", "cabeca": pa.get("cabeca_lida"),
+     "arvore": "as nove linhas com o published_at, ainda por commitar",
+     "prova": "as linhas da árvore eram as do passo (a linha acima), e o commit seguinte, 82406f85, é exatamente essas nove linhas"},
+    {"registo": "build-c2b.log e .codigo, e a segunda corrida das conferências do fim (plantas-pais.json, recibos-c2.json, capturas-depois.json, paginas-c2.json)",
+     "cabeca": txt("build-c2b.cabeca"),
+     "arvore": "limpa no que o git segue, salvo os ficheiros desta pasta por commitar (as provas, que a passagem refaz)" if so_esta_pasta(txt("apos-os-portoes.estado")) else f"estado: {txt('apos-os-portoes.estado')}",
+     "prova": "build-c2b.cabeca, apos-os-portoes.cabeca e apos-os-portoes.estado, escritos antes dos passos; o registo da construção escreve a versão da cabeça"},
 ]
 saida = {"_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/registos-de-trabalho.py. Não se edita à mão.",
          "registos": registos,
          "linhas_compostas_iguais_ao_commit_8dbdcac2": sum(iguais),
+         "linhas_com_o_published_at_iguais_ao_commit_82406f85": sum(iguais_pa),
          "conhecido_positivo": {"o_que": "a mesma comparação, contra os bytes da cabeça presa 3a253f73, dá diferente nas nove",
                                 "encontrado": all(hashlib.sha256(subprocess.check_output(["git", "show", f"3a253f73:ledger/claims/{l['id']}.yml"])).hexdigest() != l["depois_sha256"]
                                                   for l in ap.get("linhas", [])) and bool(ap.get("linhas"))}}

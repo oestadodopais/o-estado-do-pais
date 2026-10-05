@@ -45,6 +45,7 @@ rel = os.path.join(PASTA, "LEIA-ME.md")
 med = {m["nome"]: m["valor"] for m in j("medidas.json")["medidas"]}
 t = open(rel, encoding="utf-8").read()
 pg, rc, cd, ca, pl, reg, cu = j("paginas-c2.json"), j("recibos-c2.json"), j("capturas-depois.json"), j("capturas-antes.json"), j("plantas-pais.json"), j("registos-de-trabalho.json"), j("custo-c2.json")
+cb = j("custo-c2b.json")
 cab = txt("portoes/cabeca")[:8]
 cod = {g: txt(f"portoes/{g}.codigo") for g in ("build", "verify", "typecheck")}
 seg = {g: segundos(txt(f"portoes/{g}.inicio"), txt(f"portoes/{g}.fim")) for g in ("build", "verify", "typecheck")}
@@ -75,7 +76,7 @@ trocas = {
     "@@CAPTURAS_FRASE@@": (f"{ca['capturas']} capturas de antes (a construção da base) e {cd['capturas']} de depois (a da cabeça do código): os 2 recibos, "
                            f"a primeira página e «Estado e economia», nas 5 larguras e nas 2 edições; nas de depois, {len(cd['problemas'])} problemas medidos "
                            f"e {cd['pedidos_recusados_para_fora']} pedidos para fora."),
-    "@@PORTOES_FRASE@@": f"Na cabeça do código `{cab}`, pela tranca: o `build` a {cod['build']}, o `verify` a {cod['verify']} e o `typecheck` a {cod['typecheck']} (abaixo).",
+    "@@PORTOES_FRASE@@": f"Na cabeça do código da primeira entrega, `{cab}`, pela tranca: o `build` a {cod['build']}, o `verify` a {cod['verify']} e o `typecheck` a {cod['typecheck']} (abaixo); a passagem C2-b, que só pôs o `published_at` nas 9 linhas, construiu a sua cabeça a {med['codigo_build_c2b']}, e os três portões inteiros da cabeça rebaseada são do lugar de direção.",
     "@@RECIBOS_MEDIDA@@": f"{rc['recibos_certos']} de {rc['recibos_lidos']} recibos com as 6 coisas que o ponto pede, lidos na construção da cabeça do código; a planta do recibo estragado vista",
     "@@CAPTURAS_MEDIDA@@": f"{ca['capturas'] + cd['capturas']} capturas ({ca['capturas']} antes, {cd['capturas']} depois), {len(cd['problemas'])} problemas nas de depois",
     "@@PLANTAS_PAIS@@": f"{len(pl)}, todas a passar ({len([p for p in pl if p['passou']])} de {len(pl)}), {len([p for p in novas if p['passou']])} delas novas do C2",
@@ -101,7 +102,7 @@ trocas = {
                     f"ficheiros de dados das linhas e o `livro-razao.json`), e {outros_razao.get('outra', 0)} por outra razão, o `livro-razao.csv`, que escreve os identificadores sem aspas"
                     f"; os outros {casa(pg['outros_ficheiros_comuns_iguais'])} ficaram iguais. A primeira página tem a mesma lista das medidas fora do valor de referência "
                     f"antes e depois ({len(ver_a)} forma antes e {len(ver_d)} depois, nas 2 edições e nas 5 larguras)."),
-    "@@PORTOES@@": (f"Na cabeça do código `{cab}`, pela tranca da máquina (`sh scripts/leituras/portoes.sh`), cada um no seu comando, com o código escrito num "
+    "@@PORTOES@@": (f"Na cabeça do código da primeira entrega, `{cab}`, pela tranca da máquina (`sh scripts/leituras/portoes.sh`), cada um no seu comando, com o código escrito num "
                     f"ficheiro acabado de escrever em `portoes/`: `npm run build` a {cod['build']} em {casa(seg['build'])} segundos ({casa(paginas_construidas)} páginas "
                     f"construídas), `npm run verify` a {cod['verify']} em {casa(seg['verify'])} segundos, `npm run typecheck` a {cod['typecheck']} em "
                     f"menos de um segundo; a cabeça no fim da corrida é a do começo, e a árvore tem {len(sujos)} ficheiros seguidos mudados "
@@ -113,6 +114,29 @@ trocas = {
                   "cortou a sessão uma vez a meio, por sobrecarga do lado da Anthropic, e o coordenador retomou-a; o contador conta as duas metades. O total "
                   "que a ferramenta reporta ao lugar de direção no fim é o que conta."),
 }
+trocas.update({
+    "@@LINHAS_IGUAIS_PA@@": str(reg["linhas_com_o_published_at_iguais_ao_commit_82406f85"]),
+    "@@PA_UTC@@": str(med["published_at_dias_iguais_ao_dia_utc"]),
+    "@@PA_1002@@": str(med["published_at_com_o_dia_2026_10_02"]),
+    "@@PA_0929@@": str(med["published_at_com_o_dia_2026_09_29"]),
+    "@@PA_PLANTAS_MORDERAM@@": str(med["published_at_plantas_que_morderam"]),
+    "@@PA_PLANTAS@@": str(med["published_at_plantas"]),
+    "@@HIST_IGUAL@@": str(med["registo_das_historias_igual_ao_de_8dbdcac2"]),
+    "@@LC3@@": str(med["codigo_ledger_check_3"]),
+    "@@LC3_AFIRMACOES@@": casa(med["afirmacoes_validas_no_ledger_check_3"]),
+    "@@RECIBOS_PA@@": str(med["recibos_com_o_dia_da_publicacao"]),
+    "@@RECIBOS_LIDOS@@": str(rc["recibos_lidos"]),
+    "@@PLANTAS_NOVAS@@": str(med["plantas_novas_do_c2_que_morderam"]),
+    "@@JANELA@@": str(med["janela_do_conferidor_do_mapa"]),
+    "@@BUILD_C2B@@": str(med["codigo_build_c2b"]),
+    "@@FORA_FICH@@": str(med["ficheiros_mudados_fora_das_provas_de_57be3c40_a_82406f85"]),
+    "@@FORA_NOVE@@": str(med["desses_os_que_sao_das_nove_linhas"]),
+    "@@FORA_MAIS@@": str(med["linhas_acrescentadas_fora_das_provas_de_57be3c40_a_82406f85"]),
+    "@@FORA_MENOS@@": str(med["linhas_tiradas_fora_das_provas_de_57be3c40_a_82406f85"]),
+    "@@FORA_UMA@@": str(med["desses_os_com_uma_linha_acrescentada_e_nenhuma_tirada"]),
+    "@@CUSTO_C2B@@": (f"{casa(cb['simbolos_gastos'])} símbolos em {casa(cb['segundos_entre_as_leituras'])} segundos, da primeira leitura do contador depois da mensagem "
+                      "do lugar de direção à última antes do commit das provas (`custo-c2b.json`)"),
+})
 for k, v in trocas.items():
     if k not in t:
         sys.exit(f"preencher-relatorio: a marca {k} não está no relatório")

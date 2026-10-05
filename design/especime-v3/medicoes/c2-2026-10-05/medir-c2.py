@@ -272,8 +272,10 @@ medida("medidas_fora_no_veredicto", len(next(iter(vd))) if len(vd) == 1 else NAO
 pl = j("plantas-pais.json") or []
 medida("plantas_do_check_pais", len(pl) if pl else NAO, "node tests/pais/pais.mjs --json plantas-pais.json", "a planta das páginas sem estrago passa a 0", any(p["nome"] == "páginas sem estrago" and p["passou"] for p in pl))
 medida("plantas_do_check_pais_certas", sum(1 for p in pl if p["passou"]) if pl else NAO, "plantas-pais.json · passou", "a planta das páginas sem estrago passa a 0", any(p["nome"] == "páginas sem estrago" and p["passou"] for p in pl))
-medida("plantas_novas_do_c2_que_morderam", sum(1 for p in pl if p["passou"] and p["nome"] in ("linha de Portugal declarada da União", "agregado da União declarado de Portugal")) if pl else NAO,
-       "plantas-pais.json · as duas plantas do C2", "as duas estão no ficheiro", sum(1 for p in pl if p["nome"] in ("linha de Portugal declarada da União", "agregado da União declarado de Portugal")) == 2)
+# C2-b (a leitura a frio do Astra): o filtro contava duas das três plantas novas; são três, pelo nome.
+PLANTAS_DO_C2 = ("linha de Portugal declarada da União", "agregado da União declarado de Portugal", "pedido de várias geografias declarado de Portugal")
+medida("plantas_novas_do_c2_que_morderam", sum(1 for p in pl if p["passou"] and p["nome"] in PLANTAS_DO_C2) if pl else NAO,
+       "plantas-pais.json · as três plantas do C2, pelo nome", "as três estão no ficheiro, uma vez cada", sorted(p["nome"] for p in pl if p["nome"] in PLANTAS_DO_C2) == sorted(PLANTAS_DO_C2))
 mapa, base = txt("conferir-mapa.txt") or "", txt("conferir-mapa-base.txt") or ""
 for nome, t in (("mapa", mapa), ("mapa_na_base", base)):
     m = re.search(r"na linha citada \(±7\): (\d+)", t)
@@ -282,6 +284,9 @@ for nome, t in (("mapa", mapa), ("mapa_na_base", base)):
     medida(f"citacoes_do_{nome}_na_linha", int(m.group(1)) if m else NAO, f"python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md", "o guião escreveu as três contagens", bool(m and longe and fora))
     medida(f"citacoes_do_{nome}_longe", int(longe.group(1)) if longe else NAO, "conferir-mapa.py · longe da linha citada", "o guião escreveu as três contagens", bool(m and longe and fora))
     medida(f"citacoes_do_{nome}_por_achar", int(fora.group(1)) if fora else NAO, "conferir-mapa.py · não encontrada", "o guião escreveu as três contagens", bool(m and longe and fora))
+_janela = re.search(r"na linha citada \(±(\d+)\)", mapa)
+medida("janela_do_conferidor_do_mapa", int(_janela.group(1)) if _janela else NAO, "conferir-mapa.txt · «na linha citada (±N)», a janela de linhas do conferir-mapa.py",
+       "a mesma linha tem a contagem das citações", bool(_janela and re.search(r"\(±\d+\): \d+", mapa)))
 cab = txt("portoes/cabeca")
 for g in ("build", "verify", "typecheck"):
     v, i, f = txt(f"portoes/{g}.codigo"), txt(f"portoes/{g}.inicio"), txt(f"portoes/{g}.fim")
@@ -325,10 +330,57 @@ pa = txt("plantas-pais-antes.log") or ""
 medida("o_executor_da_base_rebenta_por_falta_do_carimbo", int("version.json" in pa and "páginas sem estrago" in pa) if pa else NAO, "plantas-pais-antes.log · a queixa ENOENT do version.json na prova das páginas sem estrago",
        "o registo do executor da base existe", bool(pa))
 
+# C2-b: o published_at das nove, do carimbo do corpo alojado
+pa = j("aplicacao-published-at.json") or {}
+for chave in ("linhas", "aplicadas", "dias_iguais_ao_dia_utc", "com_o_dia_2026_10_02", "com_o_dia_2026_09_29", "plantas", "plantas_que_morderam"):
+    medida(f"published_at_{chave}", (pa.get("contagens") or {}).get(chave, NAO), f"aplicacao-published-at.json · contagens.{chave} (aplicar-releituras.py --published-at --aplicar)",
+           "o passo leu as nove linhas", (pa.get("contagens") or {}).get("linhas") == 9)
+_agora = [yaml.safe_load(open(f"ledger/claims/{i}.yml", encoding="utf-8")) for i in NOVE]
+medida("das_nove_com_published_at", sum(1 for l in _agora if l.get("published_at")), "ledger/claims/<as nove>.yml · published_at", "a despesa em I&D da União tem 2026-09-29",
+       any(l["id"] == "despesa-em-id-2024-ue" and l.get("published_at") == "2026-09-29" for l in _agora))
+_antes_da_passagem = [yaml.safe_load(git("show", f"4aa588ce:ledger/claims/{i}.yml")) for i in NOVE]
+medida("das_nove_com_published_at_antes_da_passagem", sum(1 for l in _antes_da_passagem if l.get("published_at")), "git show 4aa588ce:ledger/claims/<as nove>.yml · published_at (a primeira entrega)",
+       "as nove leem-se nessa cabeça", len(_antes_da_passagem) == 9)
+_hist_igual = open("ledger/historias-valores.json", "rb").read() == subprocess.check_output(["git", "show", "8dbdcac2:ledger/historias-valores.json"])
+medida("registo_das_historias_igual_ao_de_8dbdcac2", int(_hist_igual), "ledger/historias-valores.json contra git show 8dbdcac2:ledger/historias-valores.json, byte a byte (1 é igual)",
+       "o registo tem as histórias das nove", all(i in json.load(open("ledger/historias-valores.json", encoding="utf-8")) for i in NOVE))
+# C2-b: o que mudou entre a cabeça do código da primeira entrega e a da passagem, fora das duas pastas das provas.
+_fora = [":(exclude)" + PASTA, ":(exclude)design/especime-v3/capturas/c2-2026-10-05"]
+_ns = [l.split("\t") for l in git("diff", "--numstat", "57be3c40", "82406f85", "--", ".", *_fora).splitlines() if l.strip()]
+_ns_tudo = [l.split("\t") for l in git("diff", "--numstat", "57be3c40", "82406f85").splitlines() if l.strip()]
+medida("ficheiros_mudados_fora_das_provas_de_57be3c40_a_82406f85", len(_ns),
+       "git diff --numstat 57be3c40 82406f85 -- . ':(exclude)<a pasta das medições>' ':(exclude)<a pasta das capturas>'",
+       "sem as exclusões, o mesmo intervalo tem ficheiros das pastas das provas", any(x[2].startswith(PASTA + "/") for x in _ns_tudo))
+medida("desses_os_que_sao_das_nove_linhas", sum(1 for x in _ns if x[2] in {f"ledger/claims/{i}.yml" for i in NOVE}), "o mesmo diff · os caminhos ledger/claims/<as nove>.yml",
+       "a despesa em I&D da União está no diff", any(x[2] == "ledger/claims/despesa-em-id-2024-ue.yml" for x in _ns))
+medida("linhas_acrescentadas_fora_das_provas_de_57be3c40_a_82406f85", sum(int(x[0]) for x in _ns), "o mesmo diff · a soma da coluna das linhas acrescentadas",
+       "cada ficheiro do diff traz o seu número", all(x[0].isdigit() for x in _ns))
+medida("linhas_tiradas_fora_das_provas_de_57be3c40_a_82406f85", sum(int(x[1]) for x in _ns), "o mesmo diff · a soma da coluna das linhas tiradas",
+       "cada ficheiro do diff traz o seu número", all(x[1].isdigit() for x in _ns))
+medida("desses_os_com_uma_linha_acrescentada_e_nenhuma_tirada", sum(1 for x in _ns if x[0] == "1" and x[1] == "0"), "o mesmo diff · os ficheiros com 1 linha acrescentada e 0 tiradas",
+       "o diff do commit 4aa588ce (as provas da primeira entrega, git diff --numstat 4aa588ce^ 4aa588ce) tem ficheiros com mais de 1 linha mudada",
+       any(x[0].isdigit() and int(x[0]) + int(x[1]) > 1 for x in (l.split("\t") for l in git("diff", "--numstat", "4aa588ce^", "4aa588ce").splitlines() if l.strip())))
+for nome in ("aplicar-published-at", "ledger-check-3", "build-c2b"):
+    v = txt(f"{nome}.codigo")
+    medida("codigo_" + nome.replace("-", "_"), int(v) if v is not None else NAO, f"{nome}.codigo", "o código foi escrito", v is not None)
+_l3 = re.search(r"(\d+) afirmações válidas", txt("ledger-check-3.log") or "")
+medida("afirmacoes_validas_no_ledger_check_3", int(_l3.group(1)) if _l3 else NAO, "ledger-check-3.log · «N afirmações válidas»", "o registo tem a linha", bool(_l3))
+medida("recibos_com_o_dia_da_publicacao", sum(1 for x in rc.get("recibos", []) if (x.get("ok") or {}).get("published_at_no_recibo")) if rc else NAO,
+       "recibos-c2.json · ok.published_at_no_recibo", "num recibo estragado em memória o dia trocado não passa", (rc.get("conhecido_positivo") or {}).get("encontrado"))
+_bc = txt("build-c2b.log") or ""
+_pv = re.search(r"versão · ([0-9a-f]{7})", _bc)
+medida("build_c2b_na_cabeca_do_codigo", int(bool(_pv) and git("rev-parse", "--short=7", "82406f85") == _pv.group(1)), "build-c2b.log · «versão · <commit>», contra 82406f85 (1 é a mesma)",
+       "o registo tem a linha da versão", bool(_pv))
+
 cu = j("custo-c2.json") or {}
 medida("simbolos_do_bloco", cu.get("simbolos_gastos", NAO), "python3 custo-c2.py <registo da sessão do construtor>", "a primeira leitura é o total da sessão e as leituras descem", (cu.get("conhecido_positivo") or {}).get("encontrado"))
 medida("segundos_do_bloco", cu.get("segundos_entre_as_leituras", NAO), "custo-c2.json · segundos_entre_as_leituras", "a primeira leitura é o total da sessão e as leituras descem", (cu.get("conhecido_positivo") or {}).get("encontrado"))
 medida("subagentes_do_bloco", cu.get("subagentes", NAO), "custo-c2.json · subagentes", "o contador das chamadas acha as do Bash", (cu.get("conhecido_positivo_das_chamadas") or {}).get("encontrado"))
+cb = j("custo-c2b.json") or {}
+medida("simbolos_da_passagem_c2b", cb.get("simbolos_gastos", NAO), "python3 custo-c2.py <registo da sessão> --desde <a hora da mensagem do lugar de direção> --saida custo-c2b.json",
+       "as leituras da passagem descem, e a primeira é posterior à hora dada", (cb.get("conhecido_positivo") or {}).get("encontrado"))
+medida("segundos_da_passagem_c2b", cb.get("segundos_entre_as_leituras", NAO), "custo-c2b.json · segundos_entre_as_leituras",
+       "as leituras da passagem descem, e a primeira é posterior à hora dada", (cb.get("conhecido_positivo") or {}).get("encontrado"))
 
 saida = {"_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/medir-c2.py. Não se edita à mão.",
          "cabeca": git("rev-parse", "HEAD"), "medidas": medidas,

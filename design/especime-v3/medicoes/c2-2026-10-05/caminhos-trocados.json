@@ -1,9 +1,19 @@
 {
+  "design/especime-v3/medicoes/c2-2026-10-05/aplicar-published-at.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
   "design/especime-v3/medicoes/c2-2026-10-05/apos-os-portoes.log": {
     "restos_do_utilizador": 0,
     "trocas": {}
   },
   "design/especime-v3/medicoes/c2-2026-10-05/build-a1-pela-primeira-geografia.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {
+      "<worktree do sítio>": 1
+    }
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/build-c2b.log": {
     "restos_do_utilizador": 0,
     "trocas": {
       "<worktree do sítio>": 1
@@ -56,6 +66,10 @@
     "restos_do_utilizador": 0,
     "trocas": {}
   },
+  "design/especime-v3/medicoes/c2-2026-10-05/ledger-check-3.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
   "design/especime-v3/medicoes/c2-2026-10-05/motor/gate-1.log": {
     "restos_do_utilizador": 0,
     "trocas": {
@@ -76,6 +90,10 @@
     "trocas": {}
   },
   "design/especime-v3/medicoes/c2-2026-10-05/paginas-c2.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/passagem-c2b.log": {
     "restos_do_utilizador": 0,
     "trocas": {}
   },

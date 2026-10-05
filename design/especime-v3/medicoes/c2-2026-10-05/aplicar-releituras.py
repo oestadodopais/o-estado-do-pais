@@ -24,8 +24,20 @@ enquadramento.py`). Este guião:
 As razões são as frases do modelo, com as datas, os valores e a geografia desta releitura; nenhuma palavra que a
 régua da voz recuse (a casa, limiar, conferido a, lido na fonte a).
 
+O PASSO DO `published_at` (`--published-at`, a passagem C2-b, depois da leitura a frio do Astra). O ponto 1 do brief
+pedia o `published_at` posto em dia pelo corpo, e a primeira entrega deixou-o ausente. O `ledger/README.md` diz que a
+origem do campo é o carimbo que o próprio conjunto publica (`updated`, no Eurostat) e mais nada, e é o carimbo que a
+releitura já leu. Este passo lê cada linha na cabeça do ramo (sem mudanças por commitar), refaz a leitura sobre o corpo
+alojado (o sha256 conferido), toma o dia como o carimbo o escreve, no fuso do próprio carimbo, que é a regra do motor
+para as linhas do Eurostat (`publisher/dominios_rp1.py`: `published_at=sobre["updated"][:10]`), e escreve ao lado o
+dia UTC do mesmo instante, para o relatório dizer se coincidem. Põe o campo logo a seguir ao `access_date`, onde as
+linhas que o têm o põem, e mais nada muda: a sua conferência recusa outro campo mudado, e as plantas provam-no. O
+campo não é um campo de proveniência com história tipada (o `field` de uma entrada `proveniencia` não o admite) nem
+uma entrada do valor, e por isso não leva entrada em `corrections` nem muda o registo selado das histórias.
+
 uso (da raiz do sítio):
   python3 design/especime-v3/medicoes/c2-2026-10-05/aplicar-releituras.py --motor <worktree do motor> [--aplicar]
+  python3 design/especime-v3/medicoes/c2-2026-10-05/aplicar-releituras.py --motor <worktree do motor> --published-at [--aplicar]
 """
 from __future__ import annotations
 
@@ -36,6 +48,7 @@ import json
 import re
 import subprocess
 import sys
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import yaml
@@ -45,6 +58,7 @@ SITIO = AQUI.parents[3]
 CABECA = "3a253f73"  # a cabeça presa do brief (o livro é o mesmo em 006685ae, que só acrescenta o brief)
 RELEITURA = "indicators/out/c2-2026-10-05/releitura"
 SAIDA = AQUI / "aplicacao.json"
+SAIDA_DO_PUBLISHED_AT = AQUI / "aplicacao-published-at.json"
 
 
 def sha(b: bytes) -> str:
@@ -165,10 +179,113 @@ def conferir_linha(antes: dict, depois: dict, r: dict, entradas: list[dict]) -> 
     assert novas == entradas, "as entradas novas não são as três desta releitura"
 
 
+def dia_publicado(carimbo: str) -> dict:
+    """O dia do `published_at`, do carimbo `updated` do conjunto: o dia como o carimbo o escreve, no fuso do próprio
+    carimbo (a regra do motor, `updated[:10]`), e o dia UTC do mesmo instante, ao lado."""
+    m = re.fullmatch(r"(\d{4}-\d{2}-\d{2})T\d{2}:\d{2}:\d{2}([+-]\d{4}|Z)", carimbo or "")
+    if not m:
+        raise SystemExit(f"PARAGEM: carimbo ilegível {carimbo!r}")
+    instante = datetime.strptime(carimbo.replace("Z", "+0000"), "%Y-%m-%dT%H:%M:%S%z")
+    utc = instante.astimezone(timezone.utc)
+    return {"carimbo": carimbo, "dia": m.group(1), "fuso": m.group(2), "instante_utc": utc.isoformat(timespec="seconds"),
+            "dia_utc": utc.date().isoformat(), "coincidem": m.group(1) == utc.date().isoformat()}
+
+
+def com_published_at(texto: str, dia: str) -> str:
+    """Põe `published_at: "<dia>"` logo a seguir ao `access_date`, na forma das linhas (`json.dumps`)."""
+    linhas = texto.split("\n")
+    if any(l.startswith("published_at: ") for l in linhas):
+        raise SystemExit("PARAGEM: a linha já tem published_at; este passo não o reescreve")
+    onde = [i for i, l in enumerate(linhas) if l.startswith("access_date: ")]
+    if len(onde) != 1:
+        raise SystemExit(f"PARAGEM: a linha tem {len(onde)} campos access_date de topo")
+    linhas.insert(onde[0] + 1, f"published_at: {json.dumps(dia)}")
+    return "\n".join(linhas)
+
+
+def conferir_published_at(antes: dict, depois: dict, dia: str, hoje: str) -> None:
+    """O que a linha tem de ser depois do passo, pela ordem da regra 21 do `ledger/README.md`, e nada mais."""
+    v = str(depois.get("published_at"))
+    assert re.fullmatch(r"\d{4}-\d{2}-\d{2}", v), "o published_at não é AAAA-MM-DD"
+    try:
+        datetime.strptime(v, "%Y-%m-%d")
+    except ValueError:
+        raise AssertionError("o published_at não é um dia que existe")
+    assert v <= hoje, "o published_at é posterior ao dia de hoje (UTC)"
+    assert v == dia, "o published_at não é o dia do carimbo do corpo"
+    mudados = {k for k in set(antes) | set(depois) if antes.get(k) != depois.get(k)}
+    assert mudados == {"published_at"}, f"mudou um campo fora do published_at: {sorted(mudados - {'published_at'})}"
+
+
+def passo_do_published_at(args, reg: dict, reler, pasta: Path) -> int:
+    """O passo `--published-at`: ver o cabeçalho do guião."""
+    pedidos = {p["url"]: p for p in reg["pedidos"]}
+    hoje = datetime.now(timezone.utc).date().isoformat()
+    cabeca = subprocess.check_output(["git", "-C", str(SITIO), "rev-parse", "HEAD"], text=True).strip()
+    resultado, plantas = [], []
+    for r in reg["linhas"]:
+        cid = r["id"]
+        p = pedidos[r["url"]]
+        corpo = (pasta / p["ficheiro"]).read_bytes()
+        assert sha(corpo) == p["sha256"] == r["pedido"]["sha256"], f"{cid}: o corpo não tem o sha256 do registo"
+        na_cabeca = subprocess.check_output(["git", "-C", str(SITIO), "show", f"HEAD:ledger/claims/{cid}.yml"], text=True)
+        antes = yaml.safe_load(na_cabeca)
+        # A LEITURA REFEITA SOBRE O CORPO, e o carimbo dela, que tem de ser o do registo da releitura.
+        leitura = reler.ler_celula(corpo.decode("utf-8"), r["url"], antes)
+        assert leitura["carimbo"] == r["carimbo_novo"], f"{cid}: o corpo refeito dá o carimbo {leitura['carimbo']!r}"
+        d = dia_publicado(leitura["carimbo"])
+        novo = com_published_at(na_cabeca, d["dia"])
+        depois = yaml.safe_load(novo)
+        conferir_published_at(antes, depois, d["dia"], hoje)
+        amanha = (datetime.strptime(hoje, "%Y-%m-%d") + timedelta(days=1)).date().isoformat()
+        for nome, estraga, razao in (
+            ("o dia do acesso no lugar do do carimbo", lambda c: c.update(published_at=c["access_date"]), "não é o dia do carimbo"),
+            ("a forma da casa no lugar de AAAA-MM-DD", lambda c: c.update(published_at=data_pt(d["dia"])), "AAAA-MM-DD"),
+            ("um dia que não existe", lambda c: c.update(published_at="2026-02-31"), "não é um dia que existe"),
+            ("um dia depois de hoje", lambda c: c.update(published_at=amanha), "posterior ao dia de hoje"),
+            ("o campo tirado", lambda c: c.pop("published_at"), "AAAA-MM-DD"),
+            ("outro campo mudado", lambda c: c.update(value="0"), "fora do published_at"),
+        ):
+            copia = json.loads(json.dumps(depois, default=str))
+            estraga(copia)
+            try:
+                conferir_published_at(antes, copia, d["dia"], hoje)
+            except AssertionError as e:
+                plantas.append({"linha": cid, "planta": nome, "mordeu": razao in str(e), "razao": str(e)})
+            else:
+                plantas.append({"linha": cid, "planta": nome, "mordeu": False, "razao": None})
+        aplicada = False
+        if args.aplicar:
+            destino = SITIO / "ledger" / "claims" / f"{cid}.yml"
+            atual = destino.read_text(encoding="utf-8")
+            if atual not in (na_cabeca, novo):
+                raise SystemExit(f"PARAGEM: {cid} tem mudanças por commitar que não são este passo; não se sobrepõe")
+            destino.write_text(novo, encoding="utf-8")
+            aplicada = destino.read_text(encoding="utf-8") == novo
+        resultado.append({"id": cid, **d, "published_at": d["dia"], "antes_sha256": sha(na_cabeca.encode("utf-8")),
+                          "depois_sha256": sha(novo.encode("utf-8")), "aplicada": aplicada})
+    saida = {
+        "_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/aplicar-releituras.py --published-at. Não se edita à mão.",
+        "cabeca_lida": cabeca, "hoje_utc": hoje, "regra_do_dia": "o dia como o carimbo do conjunto o escreve, no fuso do carimbo (updated[:10]), como publisher/dominios_rp1.py",
+        "linhas": resultado, "plantas": plantas,
+        "contagens": {
+            "linhas": len(resultado), "aplicadas": sum(1 for x in resultado if x["aplicada"]),
+            "dias_iguais_ao_dia_utc": sum(1 for x in resultado if x["coincidem"]),
+            "com_o_dia_2026_10_02": sum(1 for x in resultado if x["dia"] == "2026-10-02"),
+            "com_o_dia_2026_09_29": sum(1 for x in resultado if x["dia"] == "2026-09-29"),
+            "plantas": len(plantas), "plantas_que_morderam": sum(1 for x in plantas if x["mordeu"]),
+        },
+    }
+    SAIDA_DO_PUBLISHED_AT.write_text(json.dumps(saida, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(saida["contagens"], ensure_ascii=False))
+    return 0 if saida["contagens"]["plantas_que_morderam"] == len(plantas) else 1
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--motor", type=Path, required=True)
     ap.add_argument("--aplicar", action="store_true")
+    ap.add_argument("--published-at", action="store_true", help="o passo do published_at (a passagem C2-b)")
     args = ap.parse_args()
     motor = args.motor.expanduser().resolve()
     pasta = motor / RELEITURA
@@ -182,6 +299,8 @@ def main() -> int:
     spec = importlib.util.spec_from_file_location("reler_c2", motor / "indicators/out/c2-2026-10-05/reler.py")
     reler = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(reler)
+    if args.published_at:
+        return passo_do_published_at(args, reg, reler, pasta)
 
     pedidos = {p["url"]: p for p in reg["pedidos"]}
     resultado, plantas = [], []

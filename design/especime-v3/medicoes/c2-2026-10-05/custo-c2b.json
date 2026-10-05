@@ -2,25 +2,25 @@
   "_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/custo-c2.py a partir do registo da sessão do construtor. Não se edita à mão.",
   "modelo": "Claude Opus 5.5",
   "subagentes": 0,
-  "chamadas_de_ferramentas": 406,
+  "chamadas_de_ferramentas": 58,
   "conhecido_positivo_das_chamadas": {
     "o_que": "o contador das chamadas acha as do Bash no mesmo intervalo",
     "encontrado": true
   },
-  "leituras_do_contador": 794,
+  "leituras_do_contador": 116,
   "primeira_leitura": {
-    "hora": "2026-10-05T11:10:30.258Z",
-    "restam": 15000000
+    "hora": "2026-10-05T15:33:51.421Z",
+    "restam": 14081022
   },
   "ultima_leitura": {
     "hora": "2026-10-05T16:15:01.967Z",
     "restam": 13954554
   },
-  "simbolos_gastos": 1045446,
-  "segundos_entre_as_leituras": 18272,
-  "desde": null,
+  "simbolos_gastos": 126468,
+  "segundos_entre_as_leituras": 2471,
+  "desde": "2026-10-05T15:32:26.985Z",
   "conhecido_positivo": {
-    "o_que": "a primeira leitura é o total da sessão, 15 000 000, e as leituras descem",
+    "o_que": "as leituras desta passagem descem, e a primeira é posterior à hora dada",
     "encontrado": true
   }
 }
