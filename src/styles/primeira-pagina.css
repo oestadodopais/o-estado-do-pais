@@ -374,3 +374,20 @@
   .pp-plot { --pp-altura: 220px; grid-template-columns: repeat(var(--pp-colunas), 54px); column-gap: 16px; }
   .pp-col-periodos { grid-template-columns: repeat(var(--pp-colunas), 54px); column-gap: 16px; }
 }
+
+/* ── o bloco «Para perceber» (bloco EX1, 05.10.2026, o ponto 4 do mandato) ── */
+
+.pp-para-perceber { margin: clamp(24px, 3vw, 36px) 0 0; padding-top: 12px; border-top: 1.5px solid var(--ink); max-width: 46rem; }
+.pp-para-perceber-titulo { font-family: var(--f-prosa); font-size: clamp(19px, 2.2vw, 24px); font-weight: 600; line-height: 1.25; margin: 0 0 6px; }
+.pp-para-perceber-portas { list-style: none; margin: 0; padding: 0; display: grid; row-gap: 4px; }
+.pp-para-perceber-portas a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--f-prosa);
+  font-size: 16.5px;
+  line-height: 1.45;
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}

@@ -1,0 +1,41 @@
+---
+/**
+ * «PARA PERCEBER» (bloco EX1, 05.10.2026, o ponto 4 do mandato), no fim de «O que se passa».
+ *
+ * Duas portas, pela ordem da declaração (`BLOCO_PARA_PERCEBER`, `src/data/primeira-pagina.mjs`): a explicação mais
+ * recente, pelo seu título, com o ano pelo período de uma linha; e a leitura da semana, pela primeira frase dela,
+ * com as contagens e as datas marcadas, que o portão de HTML reconta (a frase inteira é a porta, e por isso as
+ * contagens não são ligações). Sem explicação nenhuma declarada, a primeira porta não se rende.
+ */
+import FraseDaExplicacao from '../explicacoes/FraseDaExplicacao.astro';
+import FraseDaSemana from '../explicacoes/FraseDaSemana.astro';
+import { BLOCO_PARA_PERCEBER } from '../../data/primeira-pagina.mjs';
+import { explicacaoMaisRecente, explicacaoResolvida } from '../../lib/explicacoes.mjs';
+import { leituraDaSemana } from '../../lib/leitura-da-semana.mjs';
+import { routePath } from '../../lib/routes.mjs';
+import { t } from '../../i18n/strings.mjs';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const recente = explicacaoMaisRecente();
+const explicacao = recente ? explicacaoResolvida(recente.slug, lang) : null;
+const leitura = leituraDaSemana();
+const idDoTitulo = `bloco-${BLOCO_PARA_PERCEBER.id}-t`;
+---
+
+<section class="pp-para-perceber" data-para-perceber aria-labelledby={idDoTitulo}>
+  <h3 class="pp-para-perceber-titulo" id={idDoTitulo}>{s.primeira.paraPerceber}</h3>
+  <ul class="pp-para-perceber-portas">
+    {BLOCO_PARA_PERCEBER.portas.map((porta) => porta === 'explicacao-mais-recente'
+      ? explicacao && (
+        <li data-para-perceber-porta="explicacao">
+          <a href={routePath('explicacao', lang, { slug: explicacao.slug })} data-explicacao-porta={explicacao.slug} data-explicacao-declarado><FraseDaExplicacao partes={explicacao.titulo} lang={lang} selos={false} /></a>
+        </li>
+      )
+      : (
+        <li data-para-perceber-porta="semana" data-semana-frase data-semana-janela={`${leitura.janela.inicio}/${leitura.janela.fim}`} data-semana-declarado>
+          <a href={routePath('leituraDaSemana', lang)} data-semana-porta><FraseDaSemana lang={lang} leitura={leitura} /></a>
+        </li>
+      ))}
+  </ul>
+</section>

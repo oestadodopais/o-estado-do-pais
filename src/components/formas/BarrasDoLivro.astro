@@ -1,0 +1,63 @@
+---
+/**
+ * AS BARRAS DAS LINHAS DO LIVRO (bloco EX1, 05.10.2026, o ponto 3 do mandato).
+ *
+ * Rende o modelo de `modeloDasBarrasDoLivro()` (`src/lib/formas/barras-do-livro.mjs`) e não calcula nada:
+ * uma fila por linha, da maior para a menor, com o rótulo (o nome declarado da função ou do ministério), a
+ * barra e o valor escrito ao lado pela própria linha. As regras da maqueta dos blocos da primeira página
+ * ficam: o nome escrito ao lado de cada barra, para a leitura não depender de uma legenda de cores; os
+ * números a Bitter, com os algarismos do `<Claim>`; o comprimento de cada barra em percentagem da sua faixa,
+ * que a F22 do `check:formas` recompõe a partir das linhas.
+ *
+ * OS RÓTULOS são os nomes declarados das linhas, e levam a marca das palavras declaradas (`data-explicacao-declarado`):
+ * saem do inventário das frases porque são dados, e quem os confere, carácter a carácter, é a F22, que a célula da
+ * explicação corre na mesma corrida do `check:voz`.
+ *
+ * CADA VALOR DESENHADO É UM `<Claim as="tspan">` DENTRO DE UM `<svg>`, E NÃO É UMA LIGAÇÃO: os alvos de
+ * toque apanhariam o vizinho. A porta de cada um vive na lista «Os números desta figura», por baixo da figura,
+ * marcada `data-legenda-selos` e dentro do mesmo instrumento (`data-instrumento`), que é a convenção do §1.34
+ * que o `auditaSelo()` do portão de HTML aplica a um valor desenhado. A lista abre-se sem guião.
+ */
+import Claim from '../Claim.astro';
+import { fracaoEscrita } from '../../lib/formas/barras-do-livro.mjs';
+import { t } from '../../i18n/strings.mjs';
+
+const { modelo, lang = 'pt', explicacao } = Astro.props;
+const s = t(lang);
+/* A FAIXA DE UMA BARRA: a parte da largura que a escala ocupa; o resto fica para o valor escrito na ponta. É
+   a mesma constante dos blocos da primeira página, e a F22 só pede que as barras da figura partilhem a
+   proporção. */
+const FAIXA = 72;
+const pct = (/** @type {number} */ f) => `${Number((f * FAIXA).toFixed(4))}%`;
+const idDoTitulo = `figura-${explicacao}-${modelo.id}`;
+---
+
+<div class="exp-instrumento" data-instrumento={`explicacao-${explicacao}-${modelo.id}`}>
+  <figure class="exp-figura" data-forma="barras-do-livro" data-barras-do-livro={modelo.id} aria-labelledby={idDoTitulo}>
+    <figcaption class="exp-figura-titulo" id={idDoTitulo} data-explicacao-declarado>{modelo.titulo}</figcaption>
+    <ol class="exp-filas">
+      {modelo.barras.map((/** @type {any} */ b) => (
+        <li class="exp-fila" data-barra={b.linha} data-fracao={fracaoEscrita(b.fracao)}>
+          <span class="exp-rotulo" data-barra-rotulo={b.linha} data-explicacao-declarado>{b.rotulo}</span>
+          <span class="exp-traco">
+            <span class="exp-barra" style={`width:${pct(b.fracao)}`} />
+            <svg class="exp-valor" height="20">
+              <text x="6" y="15"><Claim id={b.linha} lang={lang} as="tspan" /></text>
+            </svg>
+          </span>
+        </li>
+      ))}
+    </ol>
+  </figure>
+  <details class="exp-numeros" data-legenda-selos>
+    <summary>{s.explicacoes.numerosDaFigura}</summary>
+    <ul class="exp-numeros-lista">
+      {modelo.barras.map((/** @type {any} */ b) => (
+        <li class="exp-numero" data-figura-numero={b.linha}>
+          <span class="exp-numero-nome" data-barra-rotulo={b.linha} data-explicacao-declarado>{b.rotulo}</span>
+          <span class="exp-numero-valor"><Claim id={b.linha} lang={lang} chip /></span>
+        </li>
+      ))}
+    </ul>
+  </details>
+</div>

@@ -1,0 +1,149 @@
+/**
+ * AS EXPLICAÇÕES E A LEITURA DA SEMANA (bloco EX1, 05.10.2026).
+ *
+ * A folha das três páginas: a lista, uma explicação e a leitura da semana. Uma coluna de leitura à medida da casa
+ * (`--measure`), a prosa a Spectral, os números a Bitter com os algarismos do `<Claim>`, e as barras das figuras
+ * com as regras dos desenhos da primeira página (a tinta na barra, o nome escrito ao lado, o valor na ponta). Sem
+ * cor nova: a cor da casa é dos valores de referência (`IDENTIDADE.md` §2), e estas páginas não os desenham.
+ */
+
+/* ── os títulos ─────────────────────────────────────────────── */
+
+.explicacoes-titulo,
+.explicacao-titulo,
+.semana-titulo {
+  font-family: var(--f-prosa);
+  letter-spacing: -.014em;
+  font-size: clamp(28px, 4.4vw, 42px);
+  font-weight: 400;
+  line-height: 1.12;
+  max-width: 22em;
+  margin: clamp(4px, 1vw, 10px) 0 clamp(18px, 2.6vw, 28px);
+  text-wrap: balance;
+}
+.explicacao-titulo .data-da-linha { font-variant-numeric: lining-nums proportional-nums; }
+
+.explicacoes-secao,
+.explicacao-secao,
+.semana-secao { margin: clamp(26px, 3.4vw, 40px) 0 0; max-width: var(--measure); }
+.explicacoes-secao-titulo,
+.explicacao-secao-titulo,
+.semana-secao-titulo {
+  font-family: var(--f-prosa);
+  font-size: clamp(19px, 2.1vw, 23px);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+}
+
+/* ── a prosa ─────────────────────────────────────────────────── */
+
+.explicacao-p,
+.semana-abertura,
+.semana-p,
+.explicacoes-semana-frase {
+  font-family: var(--f-prosa);
+  font-size: var(--t-leitura);
+  line-height: var(--lh-leitura);
+  color: var(--ink);
+  max-width: var(--measure);
+  margin: 0 0 14px;
+  overflow-wrap: break-word;
+}
+.explicacao-abertura { font-size: calc(var(--t-leitura) + 1px); }
+.explicacao .claim-value,
+.explicacao .claim-sufixo,
+.semana .claim-value,
+.semana-valor {
+  font-family: var(--f-instr);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.explicacao .claim-sufixo { white-space: pre; }
+.explicacao-p .src-chip,
+.semana-mudanca .src-chip,
+.semana-frase .src-chip { margin-inline-start: 4px; }
+.explicacoes-semana-frase a,
+.explicacoes-item a { color: inherit; }
+.explicacoes-semana-frase a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+/* ── a lista das explicações ─────────────────────────────────── */
+
+.explicacoes-lista { list-style: none; margin: 0; padding: 0; display: grid; row-gap: 6px; max-width: var(--measure); }
+.explicacoes-item a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--f-prosa);
+  font-size: calc(var(--t-leitura) + 1px);
+  line-height: 1.35;
+}
+
+/* ── as figuras das explicações (a forma `barras-do-livro`) ──── */
+
+.exp-instrumento { margin: 16px 0 22px; max-width: 46rem; min-width: 0; }
+.exp-figura { margin: 0; min-width: 0; }
+.exp-figura-titulo {
+  font-family: var(--f-prosa);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+/* As filas: o nome por cima da barra no telemóvel, ao lado a partir de 640 px. */
+.exp-filas { list-style: none; margin: 0; padding: 0; display: grid; row-gap: 5px; }
+.exp-fila { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 1px; min-width: 0; margin: 0; }
+.exp-rotulo { font-family: var(--f-instr); font-size: 12.5px; line-height: 1.3; color: var(--ink); min-width: 0; }
+.exp-rotulo::first-letter,
+.exp-numero-nome::first-letter { text-transform: uppercase; }
+.exp-traco { display: flex; align-items: center; min-width: 0; height: 20px; border-left: 1px solid var(--ink); }
+.exp-barra { flex: none; display: block; height: 11px; background: var(--ink); }
+.exp-valor { flex: 1 1 0; min-width: 0; height: 20px; overflow: visible; }
+.exp-valor text {
+  font-family: var(--f-instr);
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+  fill: var(--ink);
+}
+@media (min-width: 640px) {
+  .exp-fila { grid-template-columns: 15rem minmax(0, 1fr); column-gap: 10px; align-items: center; }
+  .exp-rotulo { text-align: right; }
+}
+
+/* A lista dos números de uma figura: a legenda dos selos, dobrada. */
+.exp-numeros { margin: 10px 0 0; font-family: var(--f-instr); font-size: 13.5px; }
+.exp-numeros > summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+  color: var(--ink);
+}
+.exp-numeros-lista { list-style: none; margin: 4px 0 0; padding: 0; display: grid; row-gap: 2px; }
+.exp-numero { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 8px; min-height: 32px; }
+.exp-numero-nome { color: var(--muted); }
+.exp-numero-valor { font-weight: 600; font-variant-numeric: tabular-nums lining-nums; }
+
+/* ── a leitura da semana ─────────────────────────────────────── */
+
+.semana-mudancas { list-style: none; margin: 0; padding: 0; display: grid; row-gap: 12px; max-width: var(--measure); }
+.semana-mudanca {
+  font-family: var(--f-prosa);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+  overflow-wrap: break-word;
+}
+.semana-mudanca .semana-nome { font-weight: 600; }
+.semana-fonte,
+.semana-data,
+.semana-unidade { color: var(--ink); }
+.semana-frases { list-style: none; margin: 0; padding: 0; display: grid; row-gap: 10px; max-width: var(--measure); }
+.semana-frase { font-family: var(--f-prosa); font-size: 16px; line-height: 1.5; }
+.semana-frase-bloco { font-weight: 600; }

@@ -1,0 +1,105 @@
+---
+/**
+ * A LEITURA DA SEMANA, em `/explicacoes/leitura-da-semana` e `/en/explainers/weekly-reading` (bloco EX1,
+ * 05.10.2026, o ponto 2 do mandato).
+ *
+ * Gera-se em cada construção a partir do registo das correções e das releituras do livro-razão
+ * (`leituraDaSemana()`, `src/lib/leitura-da-semana.mjs`), e ninguém a escreve: a primeira frase diz a janela e as
+ * três contagens; depois, uma frase por número que mudou de valor, com o nome do cartão da medida, o período, o
+ * valor de antes e o de agora, a unidade, a palavra do lado («subiu», «desceu», «não mudou») que a conta decide,
+ * e o dia da mudança, com o selo da linha, que diz o publicador e abre o recibo; depois, se alguma frase da primeira página mudou por causa disso, com a frase
+ * que mostra agora, ou que nenhuma mudou.
+ *
+ * AS MARCAS. A janela vai em `data-semana-janela`, e o portão de HTML exige que acabe no dia do carimbo da
+ * construção; as contagens e as datas da janela vão em `data-semana`, que o portão reconta das linhas por conta
+ * própria; o valor de antes, o de agora e o dia de cada mudança vão nas marcas do registo (`data-correcao-*`),
+ * dentro de uma entrada da própria linha com o selo dela (`data-correcao-entrada`), que o portão compara com o
+ * campo `corrections` da linha; a unidade é o campo da linha (`CampoDaLinha`), pela porta estreita que o portão
+ * abre a esta lista e só a ela. As palavras compostas levam `data-semana-declarado`: saem do
+ * inventário das frases porque mudam com os dados, e a célula da semana (`tests/explicacoes/semana.mjs`) confere-as
+ * na mesma corrida do `check:voz`.
+ */
+import Base from '../layouts/Base.astro';
+import FraseDaSemana from '../components/explicacoes/FraseDaSemana.astro';
+import Frase from '../components/Frase.astro';
+import NomeDaMedida from '../components/NomeDaMedida.astro';
+import DataDaLinha from '../components/DataDaLinha.astro';
+import CampoDaLinha from '../components/CampoDaLinha.astro';
+import Provenance from '../components/Provenance.astro';
+import { leituraDaSemana } from '../lib/leitura-da-semana.mjs';
+import { nomeNaLista, blocoResolvido } from '../lib/primeira-pagina.mjs';
+import { BLOCOS_DA_PRIMEIRA_PAGINA } from '../data/primeira-pagina.mjs';
+import { getClaim } from '../lib/ledger.mjs';
+import { dataDaCasa } from '../lib/datas.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
+import { SITE_NAME } from '../../site.config.mjs';
+import '../styles/explicacoes.css';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const path = routePath('leituraDaSemana', lang);
+const leitura = leituraDaSemana();
+const mudaram = leitura.primeira.filter((f) => f.mudou);
+const mudancas = leitura.mudancas.map((m) => {
+  const linha = getClaim(m.linha);
+  const unidade = typeof linha.unit === 'string' && linha.unit ? unidadeDaLinha(linha.unit, lang) : null;
+  return { ...m, linha, nome: nomeNaLista(m.linha, lang), unidade };
+});
+---
+
+<Base lang={lang} path={path} title={`${s.semana.titulo} · ${SITE_NAME}`} description={s.semana.metaDescription}>
+  <article class="semana" data-semana-pagina>
+    <h1 class="semana-titulo">{s.semana.titulo}</h1>
+    <p class="semana-abertura" data-semana-frase data-semana-janela={`${leitura.janela.inicio}/${leitura.janela.fim}`} data-semana-declarado><FraseDaSemana lang={lang} leitura={leitura} /></p>
+
+    {mudancas.length > 0 && (
+      <section class="semana-secao" aria-labelledby="semana-mudancas" data-semana-seccao="mudancas">
+        <h2 class="semana-secao-titulo" id="semana-mudancas" data-semana-declarado>{s.semana.mudancasK}</h2>
+        <ol class="semana-mudancas" data-semana-mudancas>
+          {mudancas.map((m) => (
+            <li class="semana-mudanca" data-correcao-entrada={m.linha.id} data-semana-mudanca={m.linha.id} data-semana-palavra={m.palavra} data-semana-declarado>
+              <NomeDaMedida linha={getClaim(m.nome.linha)} lang={lang} escada="cartao" class="semana-nome" />
+              {m.nome.qualificador === 'ue' && <>{s.semana.virgula}<span class="semana-onde">{s.cartao.uniaoEuropeia}</span></>}
+              {s.semana.virgula}<DataDaLinha id={m.linha.id} campo="reference_date" valor={String(m.linha.reference_date)} lang={lang} />
+              {s.semana.deAntes}<span class="semana-valor" data-correcao-claim={m.linha.id} data-correcao-n={String(m.antes.n)} data-correcao-campo="old_value">{m.antes.valor}</span>
+              {s.semana.para}<span class="semana-valor" data-correcao-claim={m.linha.id} data-correcao-n={String(m.depois.n)} data-correcao-campo="new_value">{m.depois.valor}</span>
+              {m.unidade && <>{' '}<CampoDaLinha id={m.linha.id} campo="unit" valor={m.unidade.texto} lang={lang} lingua={m.unidade.lingua} class="semana-unidade" /></>}
+              {m.palavra === 'subiu' ? s.semana.subiu : m.palavra === 'desceu' ? s.semana.desceu : s.semana.naoMudou}
+              {s.semana.em}<time class="semana-data" datetime={m.depois.data} data-correcao-claim={m.linha.id} data-correcao-n={String(m.depois.n)} data-correcao-campo="date">{dataDaCasa(m.depois.data)}</time>{s.semana.ponto}
+              {' '}<Provenance id={m.linha.id} lang={lang} />
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+
+    {mudancas.length > 0 && (
+      <section class="semana-secao" aria-labelledby="semana-primeira" data-semana-seccao="primeira">
+        <h2 class="semana-secao-titulo" id="semana-primeira" data-semana-declarado>{s.semana.primeiraK}</h2>
+        {mudaram.length === 0 ? (
+          <p class="semana-p" data-semana-primeira="nenhuma" data-semana-declarado>{s.semana.primeiraNenhuma}</p>
+        ) : (
+          <>
+            <p class="semana-p" data-semana-primeira="mudaram" data-semana-declarado>{s.semana.primeiraMudaram}</p>
+            <ul class="semana-frases">
+              {mudaram.map((f) => {
+                const b = blocoResolvido(f.bloco, lang);
+                const titulo = /** @type {any} */ (BLOCOS_DA_PRIMEIRA_PAGINA.find((x) => x.id === f.bloco))?.titulo?.[lang];
+                return (
+                  <li class="semana-frase" data-semana-bloco={f.bloco} data-semana-declarado>
+                    <span class="semana-frase-bloco">{titulo}</span>{s.semana.doisPontos}{f.mostraAgora ? <Frase partes={b.frase} lang={lang} selos /> : s.semana.saiuDaPrimeira}
+                  </li>
+                );
+              })}
+            </ul>
+          </>
+        )}
+      </section>
+    )}
+
+    <p class="regra-portas semana-portas"><a href={routePath('correcoes', lang)}>{ROTULOS_B1[lang].todasAsMudancas} →</a></p>
+  </article>
+</Base>

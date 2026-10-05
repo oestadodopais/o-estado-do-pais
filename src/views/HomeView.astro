@@ -30,6 +30,7 @@ import IndiceDosAssuntos from '../components/IndiceDosAssuntos.astro';
 import { portaDoCartao } from '../lib/assuntos.mjs';
 import Masthead from '../components/Masthead.astro';
 import BlocoDaPrimeiraPagina from '../components/inicio/BlocoDaPrimeiraPagina.astro';
+import ParaPerceber from '../components/inicio/ParaPerceber.astro';
 import EstudoDaLista from '../components/inicio/EstudoDaLista.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
@@ -79,6 +80,9 @@ const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
     <div class="pp-blocos">
       {ids.map((id) => <BlocoDaPrimeiraPagina id={id} lang={lang} nivel="h3" />)}
     </div>
+    {/* «PARA PERCEBER» (bloco EX1, 05.10.2026): fecha «O que se passa», com a porta da explicação mais recente e a da
+        leitura da semana. Fica fora da lista dos cinco blocos, que tem a gramática e a célula deles. */}
+    <ParaPerceber lang={lang} />
   </section>
 
   <section class="pp-entradas" data-entradas aria-labelledby="entradas-k">

@@ -1,0 +1,25 @@
+---
+/**
+ * UMA FRASE DE UMA EXPLICAÇÃO (bloco EX1, 05.10.2026).
+ *
+ * Rende a lista plana de pedaços que `explicacaoResolvida()` devolve (`src/lib/explicacoes.mjs`), e mais
+ * nada: as palavras como texto, cada valor pelo `<Claim>` com o selo ao lado (com `selos`, que é o caso de
+ * todos os parágrafos: onde aparece um valor, aparece o selo, `IDENTIDADE.md` §5.3), cada período pela
+ * `<DataDaLinha>`, que o `check:formas` reconfere contra o campo da linha, e cada nome declarado de uma
+ * função ou de um ministério num `<span data-explicacao-nome>`, que a célula da explicação compara com o nome
+ * do projeto da linha. Nenhum pedaço de texto traz um algarismo: o resolvedor recusa-o antes de chegar aqui.
+ */
+import Claim from '../Claim.astro';
+import DataDaLinha from '../DataDaLinha.astro';
+
+const { partes, lang = 'pt', selos = true } = Astro.props;
+---
+
+{
+  partes.map((/** @type {any} */ p) => {
+    if (typeof p === 'string') return <Fragment set:text={p} />;
+    if (p.claim) return <Claim id={p.claim} lang={lang} chip={selos} sufixo={p.sufixo ?? ''} />;
+    if (p.data) return <DataDaLinha id={p.data.id} campo={p.data.campo} valor={p.data.valor} lang={lang} />;
+    return <span class="explicacao-nome" data-explicacao-nome={p.nome.id} set:text={p.nome.texto} />;
+  })
+}

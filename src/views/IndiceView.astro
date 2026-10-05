@@ -47,7 +47,8 @@ const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const path = routePath('indice', lang);
 const indice = indiceDoSitio(lang);
-const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'numeros', 'projeto']);
+/* AS EXPLICAÇÕES (bloco EX1, 05.10.2026) entram a seguir aos estudos. */
+const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'explicacoes', 'numeros', 'projeto']);
 ---
 
 <Base lang={lang} path={path} title={s.indice.metaTitle} description={s.indice.metaDescription}>

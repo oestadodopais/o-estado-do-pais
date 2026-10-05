@@ -1,0 +1,57 @@
+---
+/**
+ * UMA EXPLICAÇÃO, em `/explicacoes/<slug>` e `/en/explainers/<slug>` (bloco EX1, 05.10.2026, o ponto 3 do mandato).
+ *
+ * A forma do §5, ponto 3, do brief: o título é a pergunta do leitor; a abertura responde com os números maiores;
+ * as secções explicam a dinâmica, cada uma com os seus números e, onde a casa já tem a forma, uma figura; «O que
+ * isto não diz» fecha; a porta para os recibos vai no fim. Rende o que `explicacaoResolvida()` devolve e mais
+ * nada: cada número é um `<Claim>` com o selo ao lado, cada ano é a `<DataDaLinha>` de uma linha, cada nome de
+ * uma função é o nome declarado da linha, e as frases que comparam só aparecem enquanto os números lhes dão
+ * razão.
+ *
+ * AS PALAVRAS DECLARADAS levam `data-explicacao-declarado`: saem do inventário das frases porque mudam com os
+ * ramos e com as condições, e uma atualização dos dados não pode fechar a construção; quem as confere é a célula
+ * da explicação (`tests/explicacoes/explicacao.mjs`), que o `check:voz` corre na mesma corrida, e o detetor da
+ * autorreferência continua a lê-las. A mobília da página (o título de «O que isto não diz», o da lista dos
+ * números de uma figura, a porta) é da casa e está no inventário.
+ */
+import Base from '../layouts/Base.astro';
+import FraseDaExplicacao from '../components/explicacoes/FraseDaExplicacao.astro';
+import BarrasDoLivro from '../components/formas/BarrasDoLivro.astro';
+import { explicacaoResolvida } from '../lib/explicacoes.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import { SITE_NAME } from '../../site.config.mjs';
+import '../styles/explicacoes.css';
+
+const { slug, lang = 'pt' } = Astro.props;
+const s = t(lang);
+const e = explicacaoResolvida(slug, lang);
+const path = routePath('explicacao', lang, { slug });
+---
+
+<Base lang={lang} path={path} title={`${e.tituloTexto} · ${SITE_NAME}`} description={e.tituloTexto}>
+  <article class="explicacao" data-explicacao={slug}>
+    <h1 class="explicacao-titulo" data-explicacao-titulo={slug} data-explicacao-declarado><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></h1>
+    {e.abertura.map((p) => (
+      <p class="explicacao-p explicacao-abertura" data-explicacao-paragrafo={p.caminho} data-explicacao-declarado><FraseDaExplicacao partes={p.pedacos} lang={lang} /></p>
+    ))}
+    {e.seccoes.map((sec) => (
+      <section class="explicacao-secao" data-explicacao-secao={sec.id} aria-labelledby={`explicacao-${sec.id}`}>
+        <h2 class="explicacao-secao-titulo" id={`explicacao-${sec.id}`} data-explicacao-declarado>{sec.titulo}</h2>
+        {sec.blocos.map((b) => b.tipo === 'figura'
+          ? <BarrasDoLivro modelo={b.modelo} lang={lang} explicacao={slug} />
+          : <p class="explicacao-p" data-explicacao-paragrafo={b.caminho} data-explicacao-declarado><FraseDaExplicacao partes={b.pedacos} lang={lang} /></p>)}
+      </section>
+    ))}
+    {e.naoDiz.length > 0 && (
+      <section class="explicacao-secao explicacao-nao-diz" data-explicacao-secao="o-que-nao-diz" aria-labelledby="explicacao-o-que-nao-diz">
+        <h2 class="explicacao-secao-titulo" id="explicacao-o-que-nao-diz" data-explicacao-declarado>{s.explicacoes.oQueIstoNaoDiz}</h2>
+        {e.naoDiz.map((p) => (
+          <p class="explicacao-p" data-explicacao-paragrafo={p.caminho} data-explicacao-declarado><FraseDaExplicacao partes={p.pedacos} lang={lang} /></p>
+        ))}
+      </section>
+    )}
+    <p class="regra-portas explicacao-portas" data-explicacao-portas><a href={routePath('livro', lang)}>{s.nav.livro} →</a></p>
+  </article>
+</Base>
