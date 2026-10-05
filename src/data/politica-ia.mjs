@@ -306,7 +306,8 @@ export const POLITICA = {
   },
 
   /**
-   * O que se publica sem o diretor, o que pára, e o que nunca sai sem ele.
+   * O que se publica sem uma pessoa ler, o que pára, e o que nunca sai sem uma pessoa (05.10.2026: a palavra
+   * «diretor» saiu das páginas públicas, onde o leitor não sabe quem é; nos registos internos fica como a §1.112 a define).
    *
    * A política escreve-o como uma tabela de duas colunas; a página escreve-o na
    * forma que já existe aqui, a linha rotulada do Método («Mecanismo», «Prova»,
@@ -315,7 +316,7 @@ export const POLITICA = {
    * casos, e o que acontece em cada um.
    */
   casos: {
-    titulo: { pt: 'O que sai sem o diretor', en: 'What goes out without the director' },
+    titulo: { pt: 'O que se publica sem uma pessoa ler', en: 'What is published without a person reading it' },
     itens: [
       {
         /* A política diz «fica registado na página “O que mudou”». Essa página
@@ -337,7 +338,7 @@ export const POLITICA = {
            de 1990 tira-lhe o acento, e «Para, e o diretor é avisado» lê-se como
            a preposição. O portão da ortografia apanhou-o. A frase diz a mesma
            coisa sem o homógrafo. */
-        rotulo: { pt: 'Não se publica, e o diretor é avisado', en: 'Not published, and the director is told' },
+        rotulo: { pt: 'Não se publica, e uma pessoa é avisada', en: 'Not published, and a person is told' },
         texto: {
           pt:
             'Uma medida nova; uma definição mudada; um ficheiro que a leitura já não ' +
@@ -349,7 +350,7 @@ export const POLITICA = {
         },
       },
       {
-        rotulo: { pt: 'Nunca sem o diretor', en: 'Never without the director' },
+        rotulo: { pt: 'Nunca sem uma pessoa', en: 'Never without a person' },
         texto: {
           pt:
             'Qualquer peça que nomeie uma pessoa; correio a terceiros em nome deste projeto; ' +
