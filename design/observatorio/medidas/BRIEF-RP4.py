@@ -31,13 +31,18 @@ nomes = (git("ls-tree", "--name-only", CAB, "ledger/series/") or "").split()
 ficheiros = [n for n in nomes if n.endswith(".yml")]
 series = {n: (mostrar(n) or "") for n in ficheiros}
 no_tempo = {n: s for n, s in series.items() if re.search(r'^eixo: "periodo"', s, re.M)}
-pontos = {n: len(re.findall(r"^  - periodo:", s, re.M)) for n, s in no_tempo.items()}
+# Só os pontos: a lista «pontos:» é a última do ficheiro; as lacunas também têm «- periodo:» e não contam (I196).
+pontos = {n: len(re.findall(r"^  - periodo:", s.split("\npontos:\n", 1)[1] if "\npontos:\n" in s else "", re.M)) for n, s in no_tempo.items()}
 medicao("series_no_tempo_no_livro", len(no_tempo) if ficheiros else NAO,
         f"git ls-tree {CAB} ledger/series/ · os ficheiros .yml com eixo: \"periodo\"",
         "a série do IPC está entre elas", "ledger/series/serie-ipc-variacao-homologa.yml" in no_tempo)
 medicao("pontos_das_series_no_tempo", sum(pontos.values()) if no_tempo else NAO,
         f"git show {CAB}:ledger/series/<série>.yml · as linhas «  - periodo:» somadas nas séries no tempo",
         "a série do IPC tem mais de cem pontos", pontos.get("ledger/series/serie-ipc-variacao-homologa.yml", 0) > 100)
+lacunas = {n: len(re.findall(r"^  - periodo:", s.split("\nlacunas:", 1)[1].split("\nbandeiras:", 1)[0] if "\nlacunas:" in s else "", re.M)) for n, s in no_tempo.items()}
+medicao("lacunas_declaradas_nas_series_no_tempo", sum(lacunas.values()) if no_tempo else NAO,
+        f"git show {CAB}:ledger/series/<série>.yml · as linhas «  - periodo:» dentro do bloco lacunas: de cada série no tempo, somadas",
+        "a soma dos pontos com as lacunas dá a contagem antiga do §0 (4 133, a I196)", sum(pontos.values()) + sum(lacunas.values()) == 4133)
 maior = max(pontos.items(), key=lambda kv: kv[1]) if pontos else None
 medicao("pontos_da_maior_serie_no_tempo", maior[1] if maior else NAO,
         f"git show {CAB}:ledger/series/<série>.yml · o máximo das contagens de «  - periodo:»",
