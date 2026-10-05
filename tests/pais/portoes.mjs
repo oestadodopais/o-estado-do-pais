@@ -109,7 +109,7 @@ planta('feixe-estados','scripts/design-bundle.mjs',[
    planta, e cada planta com a mordida que a falha esperada tem de casar. */
 /* O título do recibo sem o espaço entre o valor e a unidade (I143). */
 planta('r1-titulo-do-recibo-colado','scripts/gate-html.mjs',[
- ['livro-razao/mourao-desemprego-registado-2025-12/index.html',r=>{const h=r.querySelector('h1.linha-valor');h.childNodes.filter(n=>n.nodeType===3&&!n.rawText.trim()).forEach(n=>h.removeChild(n));}]
+ ['livro-razao/mourao-desemprego-registado-2025-12/index.html',r=>{const h=r.querySelector('p.linha-valor');h.childNodes.filter(n=>n.nodeType===3&&!n.rawText.trim()).forEach(n=>h.removeChild(n));}]
 ],[/cola o valor à unidade/]);
 /* O rótulo de IA de volta ao rodapé, numa página que não é de estudo (I145). */
 planta('r1-rotulo-no-rodape','scripts/gate-html.mjs',[

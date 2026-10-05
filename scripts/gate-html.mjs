@@ -9061,7 +9061,7 @@ if (FAIXAS_DO_PORTAO.contas.size && (ORIGENS_DOS_CONCELHOS.lugares === 0 || ORIG
 if (linhasConstruidas.size > 0 && titulosDeLinhaConferidos === 0) {
   erros.push({
     rel: routePath('linha', 'pt', { slug: '…' }),
-    msg: 'a célula do espaço no título do recibo não conferiu título nenhum: o seletor deixou de ver o <h1> das páginas de linha.',
+    msg: 'a célula do espaço no valor do recibo não conferiu valor nenhum: o seletor deixou de ver o «p.linha-valor» das páginas de linha (R4: o valor saiu do <h1>).',
   });
 }
 if (cartoesComUnidadeConferidos === 0) erros.push({ rel: '/temas', msg: 'I143/I158: a célula não conferiu cartão nenhum.' });
