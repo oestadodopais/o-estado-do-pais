@@ -293,6 +293,185 @@ for nome, raiz in (("sitio", SITIO), ("motor", MOTOR)):
     medicao(f"{nome}.estado_dos_seguidos", est if est is not None else NAO, "git status --porcelain --untracked-files=no (vazio quer dizer nada seguido por juntar)",
             "o git respondeu", est is not None)
 
+# ---- a passagem RP4-m-b (05.10.2026), depois da leitura a frio do Codex ---------------------------------------
+# Os cenários dos achados 4 e 5, corridos por `medir-rp4mb-motor.py` na cabeça que a leitura leu (antes) e na cabeça
+# final do motor (depois).
+for etiqueta in ("antes", "depois"):
+    r = ler_json(AQUI / f"rp4mb-motor-{etiqueta}.json") or {}
+    a4, a5 = (r.get("achado_4") or {}).get("segunda_corrida") or {}, r.get("achado_5") or {}
+    comando = f"RESEARCHHUB_DIR=<motor> python3 design/especime-v3/medicoes/rp4m-2026-10-05/medir-rp4mb-motor.py {etiqueta}"
+    medicao(f"rp4mb.{etiqueta}.motor_cabeca", r.get("motor_cabeca") or NAO, comando + " · motor_cabeca",
+            "a árvore do motor estava limpa nos seguidos", r.get("motor_estado_dos_seguidos") == "")
+    primeira = ((r.get("achado_4") or {}).get("primeira_corrida") or {})
+    medicao(f"rp4mb.{etiqueta}.achado4.primeira_corrida_revisoes", primeira.get("revisoes", NAO), comando + " · achado_4.primeira_corrida.revisoes",
+            "a primeira corrida reviu a pensão de 2020 e um mês das rendas", (primeira.get("revistos") or {}).get("serie-pensao-media-anual") == ["2020"])
+    medicao(f"rp4mb.{etiqueta}.achado4.excecao", a4.get("excecao") or "nenhuma", comando + " · achado_4.segunda_corrida.excecao",
+            "a segunda corrida correu (com exceção ou com relatório)", bool(a4))
+    if a4.get("excecao"):
+        medicao(f"rp4mb.{etiqueta}.achado4.mensagem_diz_a_revisao_mais_recente", "a revisão mais recente de 2020" in (a4.get("mensagem") or ""),
+                comando + " · achado_4.segunda_corrida.mensagem", "a mensagem foi registada", bool(a4.get("mensagem")))
+    else:
+        medicao(f"rp4mb.{etiqueta}.achado4.revisoes", a4.get("revisoes", NAO), comando + " · achado_4.segunda_corrida.revisoes",
+                "o relatório da segunda corrida tem as duas séries", set((a4.get("revistos") or {})) == {"serie-pensao-media-anual", "serie-ihpc-rendas-variacao-homologa"})
+        medicao(f"rp4mb.{etiqueta}.achado4.recusas", len(a4.get("recusas") or []), comando + " · achado_4.segunda_corrida.recusas",
+                "o relatório foi lido", "recusas" in a4)
+        for s, rotulo in (("serie-pensao-media-anual", "pensao"), ("serie-ihpc-rendas-variacao-homologa", "rendas")):
+            seg = ((a4.get("segunda_revisao") or {}).get(s) or [[None, None, None]])[0]
+            prim = (((r.get("achado_4") or {}).get("primeira_revisao") or {}).get(s) or [[None, None, None]])[0]
+            medicao(f"rp4mb.{etiqueta}.achado4.segunda_revisao_{rotulo}", f"{seg[0]} → {seg[1]} · {seg[2]}", comando + f" · achado_4.segunda_corrida.segunda_revisao.{s}",
+                    "o valor antigo da segunda revisão é o novo da primeira", seg[0] is not None and seg[0] == prim[1])
+    ens, esc = a5.get("ensaio") or {}, a5.get("escrita") or {}
+    medicao(f"rp4mb.{etiqueta}.achado5.linha", ens.get("linha") or NAO, comando + " · achado_5.ensaio.linha (a linha do fim do main() do corredor)",
+            "o main() correu e escreveu a linha", bool(ens.get("linha")))
+    medicao(f"rp4mb.{etiqueta}.achado5.codigo_do_main", ens.get("codigo_do_main", NAO), comando + " · achado_5.ensaio.codigo_do_main",
+            "o main() correu e escreveu a linha", bool(ens.get("linha")))
+    medicao(f"rp4mb.{etiqueta}.achado5.recusas", len(ens.get("recusas") or []), comando + " · achado_5.ensaio.recusas",
+            "o relatório do ensaio foi lido", "recusas" in ens)
+    medicao(f"rp4mb.{etiqueta}.achado5.pasta_da_pensao", ens.get("pasta_da_pensao") or NAO, comando + " · achado_5.ensaio.pasta_da_pensao",
+            "a pensão foi construída", bool(ens.get("pasta_da_pensao")))
+    for k in ("alojou_a_pasta_do_dia", "series_periodo_igual", "escreveu_as_revisoes"):
+        medicao(f"rp4mb.{etiqueta}.achado5.escrita.{k}", esc.get(k, NAO), comando + f" · achado_5.escrita.{k}",
+                "a escrita correu (com exceção ou sem ela)", "excecao" in esc)
+    medicao(f"rp4mb.{etiqueta}.achado5.escrita.excecao", esc.get("excecao") or "nenhuma", comando + " · achado_5.escrita.excecao",
+            "a escrita correu (com exceção ou sem ela)", "excecao" in esc)
+
+# O portão do motor na cabeça final do motor, e as suítes do bloco corridas de novo nessa cabeça.
+pm = ler_json(AQUI / "portao-do-motor-rp4mb.json") or {}
+medicao("rp4mb.portao_do_motor.cabeca", pm.get("cabeca") or NAO, "python3 portao-do-motor.py <pasta> motor <motor> rp4mb · cabeca",
+        "a árvore estava limpa antes do portão", pm.get("estado_antes") == "")
+medicao("rp4mb.portao_do_motor.codigo", pm.get("codigo", NAO), "python3 -m core.gate na cabeça final do motor, com o código lido de ficheiro (portao-do-motor-rp4mb.json)",
+        "a última linha do registo é GATE: PASS", pm.get("ultima_linha") == "GATE: PASS")
+medicao("rp4mb.portao_do_motor.suites_ok", pm.get("suites_ok_quantas", NAO), "as linhas «GATE <suíte> ok» do registo do portão",
+        "a suíte do corredor das séries está entre elas", "dominios_series_corredor_test" in pm.get("suites_ok", []))
+for k in ("dominios_series_test", "dominios_series_corredor_test", "refresh_guiao_solto_test", "reconcile_test"):
+    medicao(f"rp4mb.suite.{k}", (pm.get("contas") or {}).get(k, NAO), f"python3 -m <módulo> na cabeça final do motor · a linha PASS de {k}",
+            "a suíte saiu com o código 0, lido de ficheiro", (pm.get("codigos_das_suites") or {}).get(k) == 0)
+for k in ("dominios_series_test", "dominios_series_corredor_test"):
+    medicao(f"rp4mb.plantas_mordidas.{k}", (pm.get("plantas_mordidas") or {}).get(k, NAO), f"a linha «plantas: N morderam» de {k}",
+            "a suíte passou na mesma corrida", (pm.get("contas") or {}).get(k) is not None)
+i0, i1 = pm.get("inicio"), pm.get("fim")
+medicao("rp4mb.portao_do_motor.segundos", int((datetime.strptime(i1, "%Y-%m-%dT%H:%M:%SZ") - datetime.strptime(i0, "%Y-%m-%dT%H:%M:%SZ")).total_seconds()) if i0 and i1 else NAO,
+        "motor.fim menos motor.inicio da corrida do portão (resolução de um segundo)", "as duas horas estão escritas", bool(i0 and i1))
+pb = ler_json(AQUI / "portao-do-motor.json") or {}
+medicao("rp4mb.portao_do_motor_do_bloco.segundos", int((datetime.strptime(pb["fim"], "%Y-%m-%dT%H:%M:%SZ") - datetime.strptime(pb["inicio"], "%Y-%m-%dT%H:%M:%SZ")).total_seconds()) if pb.get("inicio") and pb.get("fim") else NAO,
+        "portao-do-motor.json (o do bloco RP4-m, na cabeça a64ff623): fim menos inicio", "as duas horas estão escritas", bool(pb.get("inicio") and pb.get("fim")))
+
+# O ficheiro trancado do motor (o ponto 4), contado por um comando só, com o conhecido-positivo do ficheiro de 38457b2.
+if MOTOR:
+    def pinos(texto):
+        return [l.split("==")[0] for l in texto.splitlines() if re.match(r"^[A-Za-z0-9_.-]+==", l)]
+    canon = lambda n: re.sub(r"[-_.]+", "-", n).lower()                                      # noqa: E731
+    lock_txt = (MOTOR / "requirements.lock.txt").read_text(encoding="utf-8")
+    antigo_txt = git(MOTOR, "show", "38457b2:requirements.lock.txt") or ""
+    lock, antigo = pinos(lock_txt), pinos(antigo_txt)
+    decl = [re.split(r"[<>=!~;\[ ]", l.strip())[0] for l in (MOTOR / "requirements.txt").read_text(encoding="utf-8").splitlines()
+            if l.strip() and not l.lstrip().startswith("#")]
+    CMD_LOCK = ("os pinos são as linhas «nome==versão» do requirements.lock.txt; os declarados, as linhas do requirements.txt "
+                "que não são comentário nem vazias; as dependências, a diferença")
+    medicao("rp4mb.lock.pinos", len(lock), CMD_LOCK, "o mesmo contador dá 40 no ficheiro de 38457b2", len(antigo) == 40)
+    medicao("rp4mb.lock.declarados", len(decl), CMD_LOCK, "o xlrd é um dos declarados", "xlrd" in decl)
+    medicao("rp4mb.lock.declarados_fora_do_ficheiro_trancado", len([d for d in decl if canon(d) not in {canon(n) for n in lock}]), CMD_LOCK,
+            "o contador vê os declarados no ficheiro trancado", bool(decl) and canon(decl[0]) in {canon(n) for n in lock})
+    medicao("rp4mb.lock.dependencias", len(lock) - len(decl), CMD_LOCK, "o ficheiro tem pinos", bool(lock))
+    medicao("rp4mb.lock.ordem_do_pip_freeze", lock == sorted(lock, key=str.lower),
+            "os nomes pela ordem de sorted(key=str.lower), a chave da linha 146 de pip/_internal/operations/freeze.py (pip 25.2)",
+            "a ordem do ficheiro de 38457b2, escrito pelo pip freeze, é a mesma", antigo == sorted(antigo, key=str.lower))
+    medicao("rp4mb.lock.ultimo_pino", lock[-1] if lock else NAO, "o último pino do ficheiro", "o ficheiro tem pinos", bool(lock))
+    d_lock = git(MOTOR, "diff", "-U0", "38457b2", "HEAD", "--", "requirements.lock.txt") or ""
+    medicao("rp4mb.lock.linhas_tiradas_contra_38457b2", sum(1 for l in d_lock.splitlines() if l.startswith("-") and not l.startswith("---")),
+            "git diff -U0 38457b2 HEAD -- requirements.lock.txt · as linhas «-»", "o diff tem a linha do xlrd", "+xlrd==2.0.2" in d_lock)
+    medicao("rp4mb.lock.linhas_postas_contra_38457b2", sum(1 for l in d_lock.splitlines() if l.startswith("+") and not l.startswith("+++")),
+            "git diff -U0 38457b2 HEAD -- requirements.lock.txt · as linhas «+»", "o diff tem a linha do xlrd", "+xlrd==2.0.2" in d_lock)
+
+pipj = ler_json(AQUI / "rp4mb-pip.json") or {}
+CMD_PIP = "python3 design/especime-v3/medicoes/rp4m-2026-10-05/medir-rp4mb-pip.py"
+medicao("rp4mb.pip.versao", (pipj.get("pip") or {}).get("versao") or NAO, CMD_PIP + " · pip.versao", "a linha da ordem foi achada uma vez pelo texto", (pipj.get("pip") or {}).get("linhas_achadas") == 1)
+medicao("rp4mb.pip.linha_da_ordem", (pipj.get("pip") or {}).get("linha_da_ordem") or NAO, CMD_PIP + " · pip.linha_da_ordem (pip/_internal/operations/freeze.py)",
+        "o texto da linha ordena por name.lower()", "key=lambda x: x.name.lower()" in ((pipj.get("pip") or {}).get("texto") or ""))
+medicao("rp4mb.xlrd.instalado", pipj.get("xlrd_instalado") or NAO, CMD_PIP + " · xlrd_instalado (importlib.metadata)", "o ficheiro foi escrito", bool(pipj))
+medicao("rp4mb.xlrd.pypi_http", (pipj.get("pypi") or {}).get("http") or NAO, CMD_PIP + " · pypi.http (curl, https://pypi.org/pypi/xlrd/2.0.2/json)",
+        "a resposta tem resumo e hora", bool((pipj.get("pypi") or {}).get("sha256")) and bool((pipj.get("pypi") or {}).get("hora")))
+medicao("rp4mb.xlrd.pypi_versao", (pipj.get("pypi") or {}).get("versao") or NAO, CMD_PIP + " · pypi.versao", "a resposta tem ficheiros publicados", bool((pipj.get("pypi") or {}).get("ficheiros")))
+medicao("rp4mb.xlrd.pypi_ficheiros", len((pipj.get("pypi") or {}).get("ficheiros") or []) if pipj else NAO, CMD_PIP + " · pypi.ficheiros", "o nome da resposta é xlrd", (pipj.get("pypi") or {}).get("nome") == "xlrd")
+
+# A frase da conta (o ponto 5): a segunda metade fora do código e das páginas, e a primeira em cada recibo de uma derivada.
+METADES_TIRADAS = (", e a conta refaz-se em cada construção do sítio", ", and the calculation is redone at every build of the site")
+fontes = [f for f in (SITIO / "src").rglob("*") if f.is_file() and f.suffix in (".mjs", ".astro", ".js", ".ts", ".json")]
+medicao("rp4mb.frase.metade_tirada_no_codigo", sum(f.read_text(encoding="utf-8", errors="replace").count(m) for f in fontes for m in METADES_TIRADAS),
+        "as duas metades tiradas, contadas nos ficheiros de src/", "o mesmo contador dá 4 no strings.mjs da cabeça 1a186832",
+        sum((git(SITIO, "show", "1a186832:src/i18n/strings.mjs") or "").count(m) for m in METADES_TIRADAS) == 4)
+r = subprocess.run(["node", "--input-type=module", "-e",
+                    "import { STRINGS } from './src/i18n/strings.mjs'; const k = ['derivadaFrase','derivadaFraseVarias','origensK','indiceAntes','indiceValia','indiceAcima','indiceAbaixo','indiceIgual','indexadaAntes','indexadaDepois']; console.log(JSON.stringify(Object.fromEntries(k.map((c) => [c, [STRINGS.pt.livro.serieNoTempo[c], STRINGS.en.livro.serieNoTempo[c]]]))));"],
+                   cwd=str(SITIO), capture_output=True, text=True)
+cadeias = json.loads(r.stdout) if r.returncode == 0 else {}
+versao = ler_json(SITIO / "dist/version.json") or {}
+medicao("rp4mb.dist.commit", versao.get("commit") or NAO, "dist/version.json · commit (a construção sobre que se mediu)",
+        "a construção é de uma cabeça que já tem as frases novas", bool(cadeias) and (git(SITIO, "show", f"{versao.get('commit')}:src/i18n/strings.mjs") or "").count(cadeias.get("derivadaFrase", ["\0"])[0]) == 1)
+# A frase nas páginas construídas, contada por `medir-rp4mb-dist.py` antes (a construção da 1a186832, onde a metade
+# tirada ainda está: o conhecido-positivo do detetor) e depois (a construção da cabeça do código da passagem).
+da, dd = ler_json(AQUI / "rp4mb-dist-antes.json") or {}, ler_json(AQUI / "rp4mb-dist-depois.json") or {}
+for etiqueta, dj in (("antes", da), ("depois", dd)):
+    comando = f"python3 design/especime-v3/medicoes/rp4m-2026-10-05/medir-rp4mb-dist.py {etiqueta}"
+    medicao(f"rp4mb.dist.{etiqueta}.commit", dj.get("dist_commit") or NAO, comando + " · dist_commit", "o ficheiro foi escrito", bool(dj))
+    medicao(f"rp4mb.dist.{etiqueta}.paginas_lidas", dj.get("paginas_lidas", NAO), comando + " · paginas_lidas", "há páginas", bool(dj.get("paginas_lidas")))
+    medicao(f"rp4mb.dist.{etiqueta}.paginas_com_a_frase_nova", len(dj.get("paginas_com_a_frase_nova", [])) if dj else NAO, comando + " · paginas_com_a_frase_nova",
+            "o mesmo laço conta a metade tirada nas 4 páginas da construção de antes", len(da.get("paginas_com_a_metade_tirada", [])) == 4)
+    medicao(f"rp4mb.dist.{etiqueta}.paginas_com_a_metade_tirada", len(dj.get("paginas_com_a_metade_tirada", [])) if dj else NAO, comando + " · paginas_com_a_metade_tirada",
+            "o mesmo laço conta a metade tirada nas 4 páginas da construção de antes", len(da.get("paginas_com_a_metade_tirada", [])) == 4)
+medicao("rp4mb.dist.depois_e_a_construcao_das_conferencias", (dd.get("dist_commit") == versao.get("commit")) if dd else NAO,
+        "o commit de rp4mb-dist-depois.json e o do dist/version.json desta medição", "os dois ficheiros foram lidos", bool(dd) and bool(versao))
+medicao("rp4mb.dist.as_paginas_com_a_frase_sao_as_da_metade_de_antes",
+        sorted(dd.get("paginas_com_a_frase_nova", [])) == sorted(da.get("paginas_com_a_metade_tirada", [])) if dd and da else NAO,
+        "as páginas com a frase nova depois são as que tinham a metade tirada antes",
+        "o recibo do salário real em português está entre elas", "livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html" in dd.get("paginas_com_a_frase_nova", []))
+
+# As conferências do sítio que a mudança toca, cada uma com o código lido do seu ficheiro, na construção da cabeça do código.
+CONF = AQUI / "rp4mb-conferencias"
+cab_conf = (CONF / "cabeca").read_text().strip() if (CONF / "cabeca").is_file() else None
+medicao("rp4mb.conferencias.cabeca", cab_conf or NAO, "rp4mb-conferencias/cabeca (git rev-parse HEAD antes da construção)",
+        "a construção das conferências é dessa cabeça", cab_conf is not None and versao.get("commit") == cab_conf)
+est_conf = (CONF / "estado").read_text() if (CONF / "estado").is_file() else None
+medicao("rp4mb.conferencias.codigo_todo_junto", (est_conf.strip() == "") if est_conf is not None else NAO,
+        "rp4mb-conferencias/estado (git status dos ficheiros seguidos fora da pasta das provas, antes da construção)",
+        "o ficheiro foi escrito pela corrida", est_conf is not None)
+for nome in ("astro-build", "stamp-version", "cartoes", "gate-html", "check-voz", "check-lingua", "check-rotulos", "check-series", "capturas"):
+    c = CONF / f"{nome}.codigo"
+    medicao(f"rp4mb.conferencias.{nome}", int(c.read_text().strip()) if c.is_file() else NAO, f"rp4mb-conferencias/{nome}.codigo (escrito depois de o processo acabar)",
+            "o registo da corrida existe e não está vazio", (CONF / f"{nome}.log").is_file() and (CONF / f"{nome}.log").stat().st_size > 0)
+
+# O CHAVES-EN.md: cada célula da secção da passagem é a cadeia do strings.mjs da sua edição.
+chaves_md = (SITIO / "design/especime-v3/CHAVES-EN.md").read_text(encoding="utf-8")
+seccao = chaves_md.split("## RP4-m e RP4-m-b", 1)[1] if "## RP4-m e RP4-m-b" in chaves_md else ""
+linhas_ch = re.findall(r"^\| `livro\.serieNoTempo\.(\w+)` \| «(.*?)» \| «(.*?)» \|", seccao, re.M)
+medicao("rp4mb.chaves_en.linhas", len(linhas_ch), "as linhas da secção «RP4-m e RP4-m-b» do CHAVES-EN.md",
+        "a linha da derivadaFraseVarias está entre elas", any(k == "derivadaFraseVarias" for k, _, _ in linhas_ch))
+medicao("rp4mb.chaves_en.do_rp4m", len([k for k, _, _ in linhas_ch if k != "derivadaFrase"]),
+        "as linhas da secção cuja chave não é a derivadaFrase (a do RP3): as que o RP4-m acrescentou",
+        "a derivadaFraseVarias, do RP4-m, está entre elas", any(k == "derivadaFraseVarias" for k, _, _ in linhas_ch))
+medicao("rp4mb.chaves_en.iguais_as_cadeias", sum(1 for k, pt, en in linhas_ch if cadeias.get(k) == [pt, en]),
+        "cada linha comparada com STRINGS.pt e STRINGS.en (node, src/i18n/strings.mjs)", "o node leu as cadeias", bool(cadeias))
+
+# As capturas do recibo do salário real, refeitas.
+c2 = ler_json(AQUI / "capturas-rp4mb.json") or {}
+medicao("rp4mb.capturas", c2.get("capturas", NAO), "node capturar.mjs --rotas salario-real --prefixo rp4mb- --json capturas-rp4mb.json",
+        "as plantas visuais morderam", bool(c2.get("plantas")) and all(p.get("mordeu") for p in c2.get("plantas", [])))
+medicao("rp4mb.capturas_cabeca", c2.get("cabeca") or NAO, "capturas-rp4mb.json · cabeca (o commit do version.json da construção)",
+        "é a cabeça das conferências", c2.get("cabeca") == cab_conf)
+medicao("rp4mb.capturas_erros", len(c2.get("erros", [])) if c2 else NAO, "o campo erros de capturas-rp4mb.json", "o guião correu", bool(c2))
+medicao("rp4mb.capturas_plantas", len(c2.get("plantas", [])) if c2 else NAO, "o campo plantas de capturas-rp4mb.json", "o guião correu", bool(c2))
+medicao("rp4mb.capturas_plantas_mordidas", sum(1 for p in c2.get("plantas", []) if p.get("mordeu")) if c2 else NAO,
+        "as plantas de capturas-rp4mb.json com mordeu", "a da frase da conta está entre elas", any("frase da conta" in p.get("nome", "") for p in c2.get("plantas", [])))
+medicao("rp4mb.capturas_com_a_frase_da_edicao", sum(1 for c in c2.get("lista", []) if c.get("fraseDaConta") == (cadeias.get("derivadaFraseVarias") or [None, None])[0 if c.get("lang") == "pt" else 1]) if c2 else NAO,
+        "as capturas cuja frase da conta é a cadeia da edição", "as capturas mediram a frase", any(c.get("fraseDaConta") for c in c2.get("lista", [])))
+medicao("rp4mb.capturas_transbordos", sum(1 for c in c2.get("lista", []) if c.get("pagina") and c["pagina"] > c["largura"]) if c2 else NAO,
+        "as capturas com a largura da página maior do que a do ecrã", "as capturas têm a largura medida", any(c.get("pagina") for c in c2.get("lista", [])))
+
+# O custo desta passagem, lido do registo da sessão do construtor da passagem.
+custo_b = ler_json(AQUI / "custo-rp4mb.json") or {}
+for k in ("segundos", "respostas_do_modelo", "simbolos_de_entrada", "simbolos_de_saida_minimo", "respostas_com_a_saida_de_um_momento_do_fluxo"):
+    medicao(f"rp4mb.custo.{k}", custo_b.get(k, NAO), "python3 custo.py <registo da sessão do construtor da passagem> custo-rp4mb.json",
+            "o registo lido é o desta sessão (todas as respostas do Claude Opus 5.5)", set((custo_b.get("modelos") or {}).keys()) == {"claude-opus-5-5"})
+
 saida = {"bloco": "RP4-m", "guiao": "design/especime-v3/medicoes/rp4m-2026-10-05/medir.py", "medidas": medidas}
 (AQUI / "medidas.json").write_text(json.dumps(saida, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(f"{len(medidas)} medidas; {sum(1 for m in medidas if m['valor'] == NAO)} por ler")

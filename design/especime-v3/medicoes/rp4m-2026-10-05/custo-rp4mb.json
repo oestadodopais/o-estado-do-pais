@@ -1,0 +1,24 @@
+{
+  "o_que": "o custo da passagem que escreveu custo-rp4mb.json, lido do registo da sessão do seu construtor (custo.py)",
+  "registo_sha256": "fa57beae5a8f242cb8a3327f5f9efb8b327cee9935bb657ccf1a04d0686ac57c",
+  "respostas_do_modelo": 153,
+  "modelos": {
+    "claude-opus-5-5": 425
+  },
+  "simbolos": {
+    "input_tokens": 306,
+    "cache_creation_input_tokens": 2084015,
+    "cache_read_input_tokens": 61955033,
+    "output_tokens": 79854
+  },
+  "simbolos_de_entrada": 64039354,
+  "simbolos_de_entrada_quer_dizer": "a entrada de cada resposta, somada: a nova, a escrita na cache e a lida da cache",
+  "simbolos_de_saida_minimo": 79854,
+  "respostas_com_a_saida_de_um_momento_do_fluxo": 109,
+  "simbolos_de_saida_quer_dizer": "um mínimo: em tantas respostas quantas a contagem ao lado, o registo guardou a saída de um momento do fluxo e não a final",
+  "primeira_entrada": "2026-10-05T15:37:04.245Z",
+  "ultima_entrada": "2026-10-05T17:12:18.172Z",
+  "lido_em": "2026-10-05T17:12:18Z",
+  "segundos": 5714,
+  "segundos_quer_dizer": "da primeira entrada do registo da sessão até ao momento desta leitura"
+}

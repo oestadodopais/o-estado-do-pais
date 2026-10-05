@@ -9,19 +9,34 @@
  * recibo de uma das cinco séries novas. Escreve `capturas.json` ao lado, com o resumo e as medidas de cada captura.
  *
  * Uso: node design/especime-v3/medicoes/rp4m-2026-10-05/capturar.mjs (na raiz, depois do build)
+ *
+ * A PASSAGEM RP4-m-b (05.10.2026) refaz só o recibo do salário real, com três argumentos opcionais (sem eles, o
+ * guião corre as seis rotas e escreve `capturas.json`, como antes): `--rotas salario-real` (os nomes das rotas,
+ * separados por vírgulas), `--prefixo rp4mb-` (o começo do nome de cada captura, para as do bloco ficarem como
+ * estavam) e `--json capturas-rp4mb.json` (o ficheiro do registo). Desde a passagem, cada captura mede também a
+ * frase da conta de uma série derivada, que no recibo do salário real tem de ser, carácter a carácter, a cadeia de
+ * `src/i18n/strings.mjs` da sua edição, com a planta de um texto acrescentado no navegador; e a hora da construção
+ * lê-se do campo que o `version.json` tem (`construido_em`).
+ *
+ *   node design/especime-v3/medicoes/rp4m-2026-10-05/capturar.mjs --rotas salario-real --prefixo rp4mb- --json capturas-rp4mb.json
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import http from 'node:http';
 import { createHash } from 'node:crypto';
 import { chromium } from 'playwright';
+import { STRINGS } from '../../../../src/i18n/strings.mjs';
 
 const DIST = path.resolve('dist');
 const AQUI = path.dirname(new URL(import.meta.url).pathname);
 const CAP = 'design/especime-v3/capturas/rp4m-2026-10-05';
 const versao = JSON.parse(await fs.readFile(path.join(DIST, 'version.json'), 'utf8'));
 await fs.mkdir(CAP, { recursive: true });
-const ROTAS = [
+const argumento = (nome) => { const i = process.argv.indexOf(nome); return i > 1 ? process.argv[i + 1] : null; };
+const SO = argumento('--rotas')?.split(',') ?? null;
+const PREFIXO = argumento('--prefixo') ?? '';
+const SAIDA = argumento('--json') ?? 'capturas.json';
+const TODAS = [
   ['precos', '/precos/', '/en/prices/'],
   ['habitacao', '/habitacao/', '/en/housing/'],
   ['indice', '/livro-razao/series/serie-ipc-indice/', '/en/ledger/series/serie-ipc-indice/'],
@@ -29,6 +44,11 @@ const ROTAS = [
   ['remuneracao', '/livro-razao/series/serie-remuneracao-bruta-mensal-media/', '/en/ledger/series/serie-remuneracao-bruta-mensal-media/'],
   ['combustiveis', '/livro-razao/series/serie-ipc-combustiveis-variacao-homologa/', '/en/ledger/series/serie-ipc-combustiveis-variacao-homologa/'],
 ];
+const desconhecidas = (SO ?? []).filter((n) => !TODAS.some(([r]) => r === n));
+if (desconhecidas.length) throw Error(`rotas que o guião não conhece: ${desconhecidas.join(', ')}`);
+const ROTAS = TODAS.filter(([n]) => !SO || SO.includes(n));
+/* A FRASE DA CONTA DE UMA SÉRIE DERIVADA, pela cadeia da edição (a passagem RP4-m-b tirou-lhe a segunda metade). */
+const FRASE_DA_CONTA = { pt: STRINGS.pt.livro.serieNoTempo.derivadaFraseVarias, en: STRINGS.en.livro.serieNoTempo.derivadaFraseVarias };
 const LARGURAS = [390, 768, 1024, 1280, 1600];
 const tipos = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json', '.webp': 'image/webp' };
 const servidor = http.createServer(async (req, res) => {
@@ -70,6 +90,7 @@ const medir = () => {
     unidade: document.querySelector('[data-serie-campo="unit"]')?.textContent.trim() ?? null,
     tracos, legenda: [...document.querySelectorAll('[data-serie-indexada-linha]')].map((l) => l.getAttribute('data-serie-indexada-linha')),
     ultimaMarcaDoEixo: eixo ? { texto: eixo.textContent, x: eixo.getAttribute('x'), ancora: eixo.getAttribute('text-anchor') } : null,
+    fraseDaConta: document.querySelector('.serie-conta > p')?.textContent.replace(/\s+/g, ' ').trim() ?? null,
   };
 };
 
@@ -83,14 +104,15 @@ try {
         if (m.desenhos && (m.letraMinima < 11 || m.letraMaxima > 16)) erros.push(`${lang}/${nome}/${largura}: letras dos eixos fora dos limites`);
         if (nome === 'salario-real' && (m.tracos.length !== 2 || m.tracos[1].tracejado === 'none' || m.tracos[0].tracejado !== 'none' || m.legenda.length !== 2)) erros.push(`${lang}/${nome}/${largura}: a figura indexada não tem os dois traços distintos e a legenda`);
         if (nome === 'indice' && (!m.fraseDoIndice || (lang === 'en' && !/^index/.test(m.unidade ?? '')))) erros.push(`${lang}/${nome}/${largura}: falta a frase do índice ou a unidade inglesa`);
-        const ficheiro = `${CAP}/${lang}-${nome}-${largura}.png`;
+        if (nome === 'salario-real' && m.fraseDaConta !== FRASE_DA_CONTA[lang]) erros.push(`${lang}/${nome}/${largura}: a frase da conta não é a cadeia da edição: «${m.fraseDaConta}»`);
+        const ficheiro = `${CAP}/${PREFIXO}${lang}-${nome}-${largura}.png`;
         await pagina.screenshot({ path: ficheiro, fullPage: true });
         const bytes = await fs.readFile(ficheiro);
         capturas.push({ lang, nome, rota, largura, ficheiro: path.basename(ficheiro), bytes: bytes.length, sha256: sha(bytes), ...m });
         if (nome === 'precos') {
           const cartao = pagina.locator('[data-cartao-medida="ihpc-variacao-homologa"]').first();
           if (await cartao.count()) {
-            const fc = `${CAP}/${lang}-cartao-da-comparacao-${largura}.png`;
+            const fc = `${CAP}/${PREFIXO}${lang}-cartao-da-comparacao-${largura}.png`;
             await cartao.screenshot({ path: fc });
             const bc = await fs.readFile(fc);
             capturas.push({ lang, nome: 'cartao-da-comparacao', rota, largura, ficheiro: path.basename(fc), bytes: bc.length, sha256: sha(bc) });
@@ -104,6 +126,14 @@ try {
           const mordeu = t2.length === 2 && t2[1] === 'none';
           plantas.push({ nome: 'o traço da série do recibo sem tracejado', lang, mordeu });
           if (!mordeu) erros.push('a planta do tracejado não mordeu');
+          /* A PLANTA DA FRASE DA CONTA (RP4-m-b): uma metade acrescentada no navegador tem de ser apanhada pelo mesmo critério. */
+          const antes = await pagina.evaluate(() => document.querySelector('.serie-conta > p').textContent);
+          await pagina.evaluate(() => { document.querySelector('.serie-conta > p').textContent += ' e mais uma metade'; });
+          const lida = (await pagina.evaluate(medir)).fraseDaConta;
+          await pagina.evaluate((t) => { document.querySelector('.serie-conta > p').textContent = t; }, antes);
+          const mordeuFrase = lida !== FRASE_DA_CONTA[lang] && (await pagina.evaluate(medir)).fraseDaConta === FRASE_DA_CONTA[lang];
+          plantas.push({ nome: 'a frase da conta com uma metade acrescentada', lang, mordeu: mordeuFrase });
+          if (!mordeuFrase) erros.push('a planta da frase da conta não mordeu');
         }
         if (largura === 1024 && nome === 'precos') {
           const estilo = await pagina.addStyleTag({ content: '.cartao-medida { width: 1400px !important; }' });
@@ -122,8 +152,8 @@ try {
   await navegador.close();
   servidor.close();
 }
-const saida = { o_que: 'RP4-m: as capturas da construção local', cabeca: versao.commit ?? null, construida: versao.builtAt ?? versao.built_at ?? null,
+const saida = { o_que: PREFIXO ? `RP4-m: as capturas da construção local (${PREFIXO.replace(/-$/, '')}: ${ROTAS.map(([n]) => n).join(', ')})` : 'RP4-m: as capturas da construção local', cabeca: versao.commit ?? null, construida: versao.construido_em ?? versao.builtAt ?? versao.built_at ?? null,
   capturas: capturas.length, larguras: LARGURAS, rotas: ROTAS.map(([n]) => n), erros, plantas, lista: capturas };
-await fs.writeFile(path.join(AQUI, 'capturas.json'), JSON.stringify(saida, null, 2) + '\n');
+await fs.writeFile(path.join(AQUI, SAIDA), JSON.stringify(saida, null, 2) + '\n');
 console.log(`${capturas.length} captura(s), ${erros.length} erro(s), ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} planta(s) morderam`);
 process.exit(erros.length || plantas.some((p) => !p.mordeu) ? 1 : 0);
