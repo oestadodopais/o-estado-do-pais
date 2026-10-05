@@ -81,8 +81,6 @@ export function conferirEntradas(dist, {
   const erros = [];
   const contas = { edicoes: 0, cartoes_dos_temas: 0, cartoes_nas_entradas: 0, fora: 0, entradas_na_primeira: 0, entradas_no_indice: 0, mapas_do_sitio: 0, enderecos_no_mapa_do_sitio: 0, entradas_no_mapa_do_sitio: 0, redirecionamentos: 0 };
   const esperados = [...new Set(Object.keys(DOMINIO_DAS_MEDIDAS).filter((id) => id !== 'indice-de-divida-limite-legal').map((id) => id === 'taxa-de-desemprego-2025' ? 'taxa-de-desemprego-mip-2025' : id))];
-  // RP4: a comparação europeia tem cartão em Preços sem ser um domínio português.
-  esperados.push('ihpc-variacao-homologa-ue');
   const paginas = entradas.filter((e) => !e.existente);
   for (const lang of ['pt', 'en']) {
     const prefixo = lang === 'pt' ? 'Os números de Portugal sobre ' : 'Portugal’s figures on ';
@@ -160,7 +158,7 @@ export function plantasDasEntradas(dist) {
   const cartao = le('/salarios-pensoes-e-apoios/').querySelector('[data-cartao-medida="pensao-media-anual-2025"]').outerHTML;
   const plantas = [
     planta('cartão inteiro repetido noutra página de assunto', '/emprego/', (r) => r.querySelector('main .pais-cartoes').insertAdjacentHTML('beforeend', cartao), /^N1C pt: cartão pensao-media-anual-2025/),
-    planta('cartão da União omitido', '/precos/', (r) => r.querySelector('[data-cartao-medida="ihpc-variacao-homologa-ue"]').remove(), /^E1 pt: cartão ihpc-variacao-homologa-ue/),
+    planta('cartão autónomo da União indevido', '/precos/', (r) => r.querySelector('main .pais-cartoes').insertAdjacentHTML('beforeend', '<article class="cartao-medida" data-cartao-medida="ihpc-variacao-homologa-ue"><span data-claim="ihpc-variacao-homologa-ue">0</span></article>'), /^E2 pt: cartão ihpc-variacao-homologa-ue/),
     planta('cartão fora do catálogo permitido', '/precos/', (r) => r.querySelector('main .pais-cartoes').insertAdjacentHTML('beforeend', '<article class="cartao-medida" data-cartao-medida="cartao-fora-do-catalogo"><span data-claim="cartao-fora-do-catalogo">0</span></article>'), /^E2 pt: cartão cartao-fora-do-catalogo/),
     planta('cartão nacional omitido', '/en/housing/', (r) => r.querySelector('[data-cartao-medida="licencas-de-construcao-2025"]').remove(), /^E1 en: cartão licencas-de-construcao-2025/),
     ...['pt', 'en'].map((lang) => planta(`inquilinos depois do total (${lang})`, lang === 'pt' ? '/habitacao/' : '/en/housing/', (r) => { const cs = r.querySelectorAll('[data-cartao-medida]'); const primeiro = cs[0].outerHTML; cs[0].replaceWith(cs[1].outerHTML); cs[1].replaceWith(primeiro); }, new RegExp(`^T10 ${lang} habitacao:`))),

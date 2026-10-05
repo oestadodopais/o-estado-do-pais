@@ -1,4 +1,3 @@
-import { LEITURA_IHPC_UNIAO } from './leitura-ihpc-uniao.mjs';
 import { LEITURAS_RP1 } from './leituras-rp1.mjs';
 /**
  * ===========================================================================
@@ -437,5 +436,4 @@ export const LEITURAS_DAS_MEDIDAS = {
     en: ['It is the share of people who, in a European survey, rate the independence of their country’s courts and judges as very good or fairly good.', ROSE, EU_AVERAGE],
   },
   ...LEITURAS_RP1,
-  'ihpc-variacao-homologa-ue': LEITURA_IHPC_UNIAO,
 };

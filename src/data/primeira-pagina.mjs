@@ -295,8 +295,7 @@ export const ENTRADAS = [
           'ipc-alimentacao-variacao-homologa',
           'ipc-energia-em-casa-variacao-homologa',
           'ipc-combustiveis-variacao-homologa',
-          'ihpc-variacao-homologa',
-          'ihpc-variacao-homologa-ue'
+          'ihpc-variacao-homologa'
         ]
       }
     ]
