@@ -104,6 +104,8 @@ export const PAI_DA_ROTA = {
   sugestoesVazia: 'sugestoes',
   sugestoesLimite: 'sugestoes',
   sugestoesNaoChegou: 'sugestoes',
+  /* A PÁGINA «PRIVACIDADE» (bloco H3, 05.10.2026) é uma página fixa como as sugestões: «Início › Privacidade». */
+  privacidade: 'home',
   marcador: 'home',
   agenda: 'home',
   uniaoEuropeia: 'home',
@@ -200,6 +202,8 @@ function etiquetaDaRota(chave, lang) {
        porta do rodapé (bloco S1). As páginas do resultado não têm nome próprio no
        caminho: acabam na migalha do formulário. */
     sugestoes: SUGESTOES.titulo[lang],
+    /* A página «Privacidade» chama-se como a porta do rodapé que a abre, e como o seu `<h1>` (bloco H3). */
+    privacidade: s.nav.privacidade,
   };
   /* O nome de uma entrada é o da declaração do lugar de direção, que é o `<h1>` da página. */
   const entrada = ENTRADAS.find((e) => e.id === ENTRADA_DA_ROTA[/** @type {keyof typeof ENTRADA_DA_ROTA} */ (chave)]);

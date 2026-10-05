@@ -90,6 +90,7 @@ export const COMO_ENTRA = {
   metodo: { como: 'porta', razao: 'O Método.' },
   agenda: { como: 'porta', razao: 'A agenda.' },
   sugestoes: { como: 'porta', razao: 'O formulário das sugestões.' },
+  privacidade: { como: 'porta', razao: 'A página «Privacidade»: o que fica guardado de quem escreve na caixa das sugestões, e porquê (bloco H3).' },
   linha: { como: 'pela-lista', pela: 'livro', razao: 'As páginas de linha são uma por número; entram pelo índice das linhas, que as lista todas.' },
   livroConcelho: { como: 'pela-lista', pela: 'livroConcelhos', razao: 'As páginas do livro-razão de cada concelho entram pelo índice dos concelhos do livro-razão.' },
   documento: { como: 'pela-lista', pela: 'estudo', razao: 'O documento original de um estudo abre-se da página do estudo, e fica fora do mapa do sítio por escrito (`astro.config.mjs`).' },
@@ -301,7 +302,9 @@ export function indiceDoSitio(lang) {
     },
     projeto: {
       titulo: s.indice.seccoes.projeto,
-      portas: [pagina('sobre', lang, s.nav.sobre), pagina('metodo', lang, s.nav.metodo), pagina('agenda', lang, s.nav.agenda), pagina('sugestoes', lang, SUGESTOES.titulo[lang])],
+      /* A PÁGINA «PRIVACIDADE» (bloco H3, 05.10.2026) entra a seguir às sugestões, de que é a nota inteira, com o nome
+         que a porta do rodapé lhe dá (`nav.privacidade`). */
+      portas: [pagina('sobre', lang, s.nav.sobre), pagina('metodo', lang, s.nav.metodo), pagina('agenda', lang, s.nav.agenda), pagina('sugestoes', lang, SUGESTOES.titulo[lang]), pagina('privacidade', lang, s.nav.privacidade)],
     },
     mudou: { titulo: r.mudou, mudancas: mudancasDoIndice(lang) },
   };

@@ -1,0 +1,42 @@
+---
+/**
+ * Privacidade, em `/privacidade` e `/en/privacy` (a passagem de higiene H3, 05.10.2026).
+ *
+ * O que a lei pede a quem guarda os dados de quem escreve na caixa das sugestões, em
+ * palavras correntes, e mais nada. A caixa diz numa linha o que guarda e para quê, e
+ * leva a porta para aqui; o rodapé de todas as páginas também, ao lado da porta das
+ * sugestões.
+ *
+ * DISPOSIÇÃO A (IDENTIDADE §3), a mais simples das três, como o Sobre: o nome da
+ * página na coluna de rótulo e o texto no corpo, a 68ch. O texto é do diretor, à
+ * letra, num bloco só, como o brief o escreve, e vem de `src/data/privacidade.mjs`;
+ * vai marcado `data-privacidade-texto`, que é a marca que o portão de HTML compara
+ * carácter a carácter com esse ficheiro, e o endereço de correio é a única porta lá
+ * dentro, para quem quer saber o que enviou, corrigi-lo ou pedir que se apague.
+ *
+ * Nenhum guião, nenhum número em algarismos, e nada que a página diga sobre si.
+ */
+import Base from '../layouts/Base.astro';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import { SITE_NAME } from '../../site.config.mjs';
+import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
+import { PRIVACIDADE } from '../data/privacidade.mjs';
+import { pedacosDaFrase } from '../data/sugestoes.mjs';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const path = routePath('privacidade', lang);
+const [antes, endereco, depois] = pedacosDaFrase(PRIVACIDADE.texto[lang], ENDERECO_CORRECOES);
+---
+
+<Base lang={lang} path={path} title={`${s.nav.privacidade} · ${SITE_NAME}`} description={PRIVACIDADE.descricao[lang]}>
+  <div class="metodo-secao sobre-secao" style="border-top:0">
+    <div>
+      <h1>{s.nav.privacidade}</h1>
+    </div>
+    <div class="metodo-corpo">
+      <p class="metodo-p" data-privacidade-texto={lang}>{antes}<a class="ligacao-email" href={`mailto:${endereco}`}>{endereco}</a>{depois}</p>
+    </div>
+  </div>
+</Base>
