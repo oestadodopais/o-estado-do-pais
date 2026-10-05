@@ -1,0 +1,38 @@
+{
+  "modelo": "gpt-6-astra",
+  "inicio": "2026-10-05T00:17:15.627Z",
+  "leitura": "2026-10-05T00:46:09.950Z",
+  "fecho": "2026-10-05T00:46:19.399369+00:00",
+  "segundos_ate_fecho": 1743.772,
+  "tokens_used": null,
+  "estado": "parcial H2-c: linha final [verify]",
+  "total_cumulativo_parcial": {
+    "input_tokens": 8814115,
+    "cached_input_tokens": 8675584,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 40926,
+    "reasoning_output_tokens": 24042,
+    "total_tokens": 8855041
+  },
+  "contador_antes_da_passagem": {
+    "input_tokens": 28086925,
+    "cached_input_tokens": 27469952,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 130515,
+    "reasoning_output_tokens": 52001,
+    "total_tokens": 28217440
+  },
+  "contador_na_leitura": {
+    "input_tokens": 36901040,
+    "cached_input_tokens": 36145536,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 171441,
+    "reasoning_output_tokens": 76043,
+    "total_tokens": 37072481
+  },
+  "comando": "python3 design/especime-v3/medicoes/h2-2026-10-04/custo-h2c.py <registo-do-lançador>",
+  "conhecido_positivo": {
+    "o_que": "modelo confirmado no contexto do turno; mandato H2-c encontrado na mensagem do utilizador; diferença dos contadores não negativa e soma das entradas e saídas igual ao total",
+    "encontrado": true
+  }
+}

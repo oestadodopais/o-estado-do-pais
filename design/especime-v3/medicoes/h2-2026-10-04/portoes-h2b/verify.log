@@ -1537,7 +1537,7 @@ História do valor: 2 controlos e 4 plantas.
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção a2b8213ae49ca789349cb5dbe050fe5dbb44164f; 110 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção 1bf209d7d77e4ead4419203fb11f0ed774bc1367; 110 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes
@@ -2308,11 +2308,8 @@ B1 país: todas as conferências a 0.
     }
   ]
 }
-mordeu · prazo passado · E1: prazo emCurso passado em planta-do-prazo (2026-10-04, construção 2026-10-05); a ficha tem de ser decidida: prolongar a data ou tirar o campo emCurso.
-H2-b: 28 controlos e plantas do prazo e da composição dos estudos, data da construção 2026-10-05, sem escrever em dist/.
-H2-c: 5 corridas da check:pais em cópias temporárias; prazo e razão mordem pela E1; a retirada da chamada é detetada.
-mordeu · E1: prazo emCurso passado em evora-2027-capital-europeia-da-cultura (2027-12-31, construção 2028-01-01); a ficha tem de ser decidida: prolongar a data ou tirar o campo emCurso.
-mordeu · E1: declaração emCurso incompleta em evora-2027-capital-europeia-da-cultura: exige razão e data de fim válida.
+mordeu · prazo passado · E1: prazo emCurso passado em planta-do-prazo (2026-10-03, construção 2026-10-04); a ficha tem de ser decidida: prolongar a data ou tirar o campo emCurso.
+H2-b: 28 controlos e plantas do prazo e da composição dos estudos, data da construção 2026-10-04, sem escrever em dist/.
 
 > o-estado-do-pais@0.1.0 check:voz
 > node scripts/check-voz.mjs
@@ -5452,7 +5449,7 @@ sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .si
 {"recorte_livro":{"ficheiro":"13-pagina-livro-razao.html","entradas_na_pagina":428,"entradas_no_recorte":8,"primeiras_preservadas":true,"nota_e_porta_preservadas":true,"pagina_conservada":true,"pagina_sha256":"3c8a516892721a46eeac44e03414d45694bb7229de65b381c36621e849c1f8d1","bytes_cartao":237857,"bytes_sem_recorte":1135656,"teto_bytes":673249,"margem":0.1,"planta":{"nome":"recorte retirado","mordeu":true,"queixa":"1109.0 KiB acima do tecto de 657.4697265625 KiB"}}}
 
 [1m  O feixe de cartões do sistema de desenho[0m
-[90m  design-system/ · de dist/ no commit a2b8213 · 20 cartões, 11 ficheiros de letra e um README[0m
+[90m  design-system/ · de dist/ no commit 1bf209d · 20 cartões, 11 ficheiros de letra e um README[0m
 
 [90m  ficheiro                          grupo          bytes  ok[0m
   01-cor.html                       Fundamentos   380206  [32m✓[0m

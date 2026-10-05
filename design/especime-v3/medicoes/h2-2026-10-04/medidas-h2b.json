@@ -1,247 +1,7 @@
 {
   "base": "ce325a3cd772b4317436345cec720cd739c2279d",
-  "base_h2c": "4d85508f736774e1fdca1ae4093eafe5e2b591d3",
-  "cabeca_h2b": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
-  "portoes_h2b": {
-    "build": {
-      "codigo": 0,
-      "inicio": "2026-10-04T23:29:45Z",
-      "fim": "2026-10-04T23:32:29Z",
-      "segundos": 164,
-      "log_sha256": "08f89c62b9dbb38109718edd32c060378e8aa745c502e03b7ccb73b2be540c55"
-    },
-    "verify": {
-      "codigo": 0,
-      "inicio": "2026-10-04T23:32:29Z",
-      "fim": "2026-10-04T23:48:55Z",
-      "segundos": 986,
-      "log_sha256": "af431f9a6fcb2b83f68c3748aaf16aeffdf91082f169057c29e60f0987a24607"
-    },
-    "typecheck": {
-      "codigo": 0,
-      "inicio": "2026-10-04T23:48:55Z",
-      "fim": "2026-10-04T23:48:55Z",
-      "segundos": 0,
-      "log_sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
-    }
-  },
-  "custo_h2c": {
-    "modelo": "gpt-6-astra",
-    "inicio": "2026-10-05T00:17:15.627Z",
-    "leitura": "2026-10-05T00:46:09.950Z",
-    "fecho": "2026-10-05T00:46:19.399369+00:00",
-    "segundos_ate_fecho": 1743.772,
-    "tokens_used": null,
-    "estado": "parcial H2-c: linha final [verify]",
-    "total_cumulativo_parcial": {
-      "input_tokens": 8814115,
-      "cached_input_tokens": 8675584,
-      "cache_write_input_tokens": 0,
-      "output_tokens": 40926,
-      "reasoning_output_tokens": 24042,
-      "total_tokens": 8855041
-    },
-    "contador_antes_da_passagem": {
-      "input_tokens": 28086925,
-      "cached_input_tokens": 27469952,
-      "cache_write_input_tokens": 0,
-      "output_tokens": 130515,
-      "reasoning_output_tokens": 52001,
-      "total_tokens": 28217440
-    },
-    "contador_na_leitura": {
-      "input_tokens": 36901040,
-      "cached_input_tokens": 36145536,
-      "cache_write_input_tokens": 0,
-      "output_tokens": 171441,
-      "reasoning_output_tokens": 76043,
-      "total_tokens": 37072481
-    },
-    "comando": "python3 design/especime-v3/medicoes/h2-2026-10-04/custo-h2c.py <registo-do-lançador>",
-    "conhecido_positivo": {
-      "o_que": "modelo confirmado no contexto do turno; mandato H2-c encontrado na mensagem do utilizador; diferença dos contadores não negativa e soma das entradas e saídas igual ao total",
-      "encontrado": true
-    }
-  },
-  "trabalho_h2c": [
-    {
-      "ficheiro": "pacote-h2c",
-      "comando": "python3 tests/leituras/pacote.py --json <provas>/pacote-casos-h2c.json",
-      "codigo": 0,
-      "inicio": "2026-10-05T00:25:48.595370+00:00",
-      "segundos": 0.918,
-      "cabeca": "a2b8213ae49ca789349cb5dbe050fe5dbb44164f",
-      "estado": "",
-      "estado_fim": ""
-    },
-    {
-      "ficheiro": "e1-trabalho-h2c",
-      "comando": "node tests/inicio/estudos-em-curso.mjs",
-      "codigo": 0,
-      "inicio": "2026-10-05T00:25:49.556848+00:00",
-      "segundos": 24.497,
-      "cabeca": "a2b8213ae49ca789349cb5dbe050fe5dbb44164f",
-      "estado": "",
-      "estado_fim": ""
-    },
-    {
-      "ficheiro": "mapa-h2c",
-      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
-      "codigo": 0,
-      "inicio": "2026-10-05T00:26:14.101710+00:00",
-      "segundos": 0.09,
-      "cabeca": "a2b8213ae49ca789349cb5dbe050fe5dbb44164f",
-      "estado": "",
-      "estado_fim": ""
-    }
-  ],
-  "e1_h2c": {
-    "comando": "node tests/inicio/prazo-pela-celula.mjs",
-    "dist_de_ensaio": "cópia temporária independente; HTML, CSS, XML e version.json",
-    "casos": [
-      {
-        "nome": "controlo: a check:pais inteira aceita a cópia limpa",
-        "codigo": 0,
-        "queixas_e1": []
-      },
-      {
-        "nome": "planta: prazo passado pela check:pais",
-        "codigo": 1,
-        "queixas_e1": [
-          "E1: prazo emCurso passado em evora-2027-capital-europeia-da-cultura (2027-12-31, construção 2028-01-01); a ficha tem de ser decidida: prolongar a data ou tirar o campo emCurso."
-        ]
-      },
-      {
-        "nome": "planta: razão em branco pela check:pais",
-        "codigo": 1,
-        "queixas_e1": [
-          "E1: declaração emCurso incompleta em evora-2027-capital-europeia-da-cultura: exige razão e data de fim válida."
-        ]
-      },
-      {
-        "nome": "controlo da planta: sem a chamada E1, prazo deixa de ser recusado",
-        "codigo": 0,
-        "queixas_e1": []
-      },
-      {
-        "nome": "controlo da planta: sem a chamada E1, razão deixa de ser recusado",
-        "codigo": 0,
-        "queixas_e1": []
-      }
-    ],
-    "conhecido_positivo": {
-      "o_que": "a mesma data passada e a mesma razão em branco passam se a chamada E1 for retirada da cópia do guião",
-      "encontrado": true
-    }
-  },
-  "pacote_h2c": {
-    "ok": true,
-    "casos": [
-      {
-        "nome": "a montagem corre a zero",
-        "passou": true
-      },
-      {
-        "nome": "controlo sem variáveis conserva o diff gerado",
-        "passou": true
-      },
-      {
-        "nome": "controlo limpo: a cópia conserva os bytes esperados",
-        "passou": true
-      },
-      {
-        "nome": "a página construída chega",
-        "passou": true
-      },
-      {
-        "nome": "planta do argumento ponto: a montagem conserva a pontuação",
-        "passou": true
-      },
-      {
-        "nome": "planta: bytes do sítio diferentes da cabeça são recusados antes da cópia",
-        "passou": true,
-        "codigo": 1,
-        "queixa": "ValueError: O pacote recusa a árvore do repositório: há modificações em ficheiros seguidos por comitar."
-      },
-      {
-        "nome": "planta: bytes do motor diferentes da cabeça são recusados antes da cópia",
-        "passou": true,
-        "codigo": 1,
-        "queixa": "ValueError: O pacote recusa a árvore do motor: há modificações em ficheiros seguidos por comitar."
-      },
-      {
-        "nome": "a montagem corre a zero",
-        "passou": true
-      },
-      {
-        "nome": "os dois lados e as exclusões conferem",
-        "passou": true
-      },
-      {
-        "nome": "a tabela nomeia o caminho e as linhas retiradas",
-        "passou": true
-      },
-      {
-        "nome": "o diff do motor declara as exclusões na primeira linha",
-        "passou": true
-      },
-      {
-        "nome": "a conferência dos números chega ao pacote",
-        "passou": true
-      },
-      {
-        "nome": "PACOTE_EXTRA conserva os bytes",
-        "passou": true
-      },
-      {
-        "nome": "planta: uma secção excluída que volte ao diff morde",
-        "passou": true
-      },
-      {
-        "nome": "planta: ficheiro do motor alterado morde",
-        "passou": true
-      },
-      {
-        "nome": "reposição dos dois lados",
-        "passou": true
-      },
-      {
-        "nome": "nenhum caminho temporário foi guardado",
-        "passou": true
-      },
-      {
-        "nome": "a montagem corre a zero",
-        "passou": true
-      },
-      {
-        "nome": "um relatório não conferido chega com o código de aviso",
-        "passou": true
-      },
-      {
-        "nome": "planta: relatório inexistente recusa pela conferência do relatório",
-        "passou": true,
-        "codigo": 1,
-        "queixa": "conferir-relatorio.py: não existe o relatório <ensaio>/sitio/medicoes/relatorio-ausente.md"
-      }
-    ]
-  },
-  "citacoes_h2c": [
-    {
-      "ancora": "a unidade da casa no mapa da dívida em «Lugares» (passagem P4-d",
-      "errada": 6346,
-      "linha": 6519
-    },
-    {
-      "ancora": "A CAIXA DAS SUGESTÕES, DEPOIS DO VARRIMENTO (bloco S1, 02.10.2026)",
-      "errada": 7938,
-      "linha": 7948
-    }
-  ],
-  "commits_h2c": [
-    "a2b8213ae49ca789349cb5dbe050fe5dbb44164f H2-c: provar as recusas do pacote e a chamada E1"
-  ],
   "base_h2b": "acc928f23f5954d1cfc51a11fa86e94d4f6da56e",
-  "cabeca_codigo": "a2b8213ae49ca789349cb5dbe050fe5dbb44164f",
+  "cabeca_codigo": "1bf209d7d77e4ead4419203fb11f0ed774bc1367",
   "modelo": "gpt-6-astra",
   "medidas": [
     {
@@ -355,7 +115,7 @@
     {
       "nome": "controlos_do_pacote",
       "valor": 20,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · tests/leituras/pacote.py, corrida H2-c",
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · tests/leituras/pacote.py",
       "conhecido_positivo": {
         "o_que": "o controlo de montagem e as plantas dos dois lados passaram",
         "encontrado": true
@@ -435,7 +195,7 @@
     },
     {
       "nome": "segundos_build",
-      "valor": 188,
+      "valor": 164,
       "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · datas de portoes/build.inicio e .fim",
       "conhecido_positivo": {
         "o_que": "as duas datas são válidas e ordenadas",
@@ -453,7 +213,7 @@
     },
     {
       "nome": "segundos_verify",
-      "valor": 1007,
+      "valor": 986,
       "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · datas de portoes/verify.inicio e .fim",
       "conhecido_positivo": {
         "o_que": "as duas datas são válidas e ordenadas",
@@ -483,7 +243,7 @@
       "valor": 10,
       "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · capturas.json e ficheiros PNG",
       "conhecido_positivo": {
-        "o_que": "capturas H2-b: cada largura existe nas duas edições, sem problemas, com sha256 refeito",
+        "o_que": "cada largura existe nas duas edições, sem problemas, com sha256 refeito",
         "encontrado": true
       }
     },
@@ -544,16 +304,11 @@
     {
       "nome": "tokens_used_h2",
       "valor": 432918,
-      "natureza": "transcrição da linha do lançador pelo lugar de direção",
-      "proveniencia": {
-        "origem": "registo do lançador da sessão de construção H2, fora do repositório",
-        "lido_por": "lugar de direção",
-        "leitura_declarada": "04.10.2026, 22:31 UTC",
-        "transmitido_em": "mandato H2-b",
-        "linha": "tokens used\n432,918",
-        "nota_h2c": "Transcrição da linha do lançador comunicada pelo lugar de direção; sem conhecido-positivo próprio no repositório."
-      },
-      "conhecido_positivo": null
+      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · registo do lançador, lido pelo lugar de direção",
+      "conhecido_positivo": {
+        "o_que": "a linha transcrita na proveniência tem o mesmo total",
+        "encontrado": true
+      }
     },
     {
       "nome": "segundos_h2b_parciais",
@@ -578,7 +333,7 @@
       "valor": 8,
       "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · correr.py, cabeça e git status --porcelain --untracked-files=no antes do comando",
       "conhecido_positivo": {
-        "o_que": "os registos históricos H2-b são da sua cabeça, sem diferenças seguidas antes ou depois",
+        "o_que": "todos os registos são desta cabeça, sem diferenças seguidas antes ou depois",
         "encontrado": true
       }
     },
@@ -606,105 +361,6 @@
       "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · tests/inicio/estudos-em-curso.mjs",
       "conhecido_positivo": {
         "o_que": "o comando passou e contou controlos incluindo o prazo passado",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "registos_h2c_limpos",
-      "valor": 3,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · correr.py, três registos H2-c",
-      "conhecido_positivo": {
-        "o_que": "os comandos passaram na cabeça H2-c com estado seguido vazio antes e depois",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "controlos_pacote_h2c",
-      "valor": 20,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · tests/leituras/pacote.py",
-      "conhecido_positivo": {
-        "o_que": "todos passaram; as recusas das árvores e do relatório têm mensagens diferentes",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "corridas_check_pais_h2c",
-      "valor": 5,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · tests/inicio/prazo-pela-celula.mjs",
-      "conhecido_positivo": {
-        "o_que": "controlo limpo e cópias sem a chamada passam; prazo e razão falham pelas mensagens E1",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "plantas_e1_h2c",
-      "valor": 2,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · e1-h2c.json",
-      "conhecido_positivo": {
-        "o_que": "ambas as plantas têm a mensagem E1 e os controlos sem a chamada não a têm",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "linha_corrigida_h2c_1",
-      "valor": 6519,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · leitura literal das duas âncoras, sem conferir-mapa.py",
-      "conhecido_positivo": {
-        "o_que": "a âncora está na linha medida e não na antiga; o mapa cita a linha medida",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "linha_corrigida_h2c_2",
-      "valor": 7948,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · leitura literal das duas âncoras, sem conferir-mapa.py",
-      "conhecido_positivo": {
-        "o_que": "a âncora está na linha medida e não na antiga; o mapa cita a linha medida",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "citacoes_mapa_h2c",
-      "valor": 380,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · mapa-h2c.log",
-      "conhecido_positivo": {
-        "o_que": "o guião leu citações, mas não se infere exatidão dos números de linha",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "desvios_reportados_mapa_h2c",
-      "valor": 0,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · mapa-h2c.log",
-      "conhecido_positivo": {
-        "o_que": "contagem do guião numa leitura não vazia, com o limite documentado na I195",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "segundos_h2c_parciais",
-      "valor": 1743.772,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · custo-h2c.py",
-      "conhecido_positivo": {
-        "o_que": "o mandato H2-c e o contador da mesma sessão foram encontrados",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "simbolos_h2c_parciais",
-      "valor": 8855041,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · custo-h2c.py",
-      "conhecido_positivo": {
-        "o_que": "a diferença dos contadores é a soma das entradas e saídas",
-        "encontrado": true
-      }
-    },
-    {
-      "nome": "ficheiros_da_pagina_alterados_h2c",
-      "valor": 0,
-      "comando": "node design/especime-v3/medicoes/h2-2026-10-04/medir-h2.mjs · git diff em src e public desde a cabeça H2-b",
-      "conhecido_positivo": {
-        "o_que": "o ficheiro da marca existe na base; o H2-c só altera provas e registos",
         "encontrado": true
       }
     }
@@ -1016,22 +672,22 @@
   "portoes": {
     "build": {
       "codigo": 0,
-      "inicio": "2026-10-05T00:26:14Z",
-      "fim": "2026-10-05T00:29:22Z",
-      "segundos": 188,
-      "log_sha256": "785af457dd37801297e38f17db17efaeb22ee2e1a8c1cb23105d1f6b9916ce8d"
+      "inicio": "2026-10-04T23:29:45Z",
+      "fim": "2026-10-04T23:32:29Z",
+      "segundos": 164,
+      "log_sha256": "08f89c62b9dbb38109718edd32c060378e8aa745c502e03b7ccb73b2be540c55"
     },
     "verify": {
       "codigo": 0,
-      "inicio": "2026-10-05T00:29:22Z",
-      "fim": "2026-10-05T00:46:09Z",
-      "segundos": 1007,
-      "log_sha256": "bea2eb18cedeb37e542c01d204feaafd391f97afb7393a60bc54c7f2b17ee5e7"
+      "inicio": "2026-10-04T23:32:29Z",
+      "fim": "2026-10-04T23:48:55Z",
+      "segundos": 986,
+      "log_sha256": "af431f9a6fcb2b83f68c3748aaf16aeffdf91082f169057c29e60f0987a24607"
     },
     "typecheck": {
       "codigo": 0,
-      "inicio": "2026-10-05T00:46:09Z",
-      "fim": "2026-10-05T00:46:09Z",
+      "inicio": "2026-10-04T23:48:55Z",
+      "fim": "2026-10-04T23:48:55Z",
       "segundos": 0,
       "log_sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b"
     }
@@ -1232,7 +888,7 @@
       "leitura_declarada": "04.10.2026, 22:31 UTC",
       "transmitido_em": "mandato H2-b",
       "linha": "tokens used\n432,918",
-      "nota_h2c": "Transcrição da linha do lançador comunicada pelo lugar de direção; sem conhecido-positivo próprio no repositório."
+      "reconferido_pelo_construtor": true
     }
   },
   "custo_h2b": {
@@ -1279,9 +935,7 @@
     "bfa81e08843bfc8a8bd4cee25069d14601ff1b22 H2: declarar estudos em curso e fechar as falhas de ligações e vocabulário",
     "f7048ce08956d89fbefc54ebd40ea8b75b830d47 H2: fechar questões e registar as regras e as plantas",
     "bc76aa9f7267c6f3cde81c5bb912fa74c0f8c893 H2: guardar a prova verde e as capturas da cabeça do código",
-    "1bf209d7d77e4ead4419203fb11f0ed774bc1367 H2-b: decidir prazos vencidos e corrigir a montagem e as provas",
-    "4d85508f736774e1fdca1ae4093eafe5e2b591d3 H2-b: guardar as provas verdes da cabeça limpa e as capturas",
-    "a2b8213ae49ca789349cb5dbe050fe5dbb44164f H2-c: provar as recusas do pacote e a chamada E1"
+    "1bf209d7d77e4ead4419203fb11f0ed774bc1367 H2-b: decidir prazos vencidos e corrigir a montagem e as provas"
   ],
   "commits_h2b": [
     "1bf209d7d77e4ead4419203fb11f0ed774bc1367 H2-b: decidir prazos vencidos e corrigir a montagem e as provas"

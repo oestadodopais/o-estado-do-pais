@@ -15,6 +15,13 @@ const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim();
 const sha=x=>createHash('sha256').update(x).digest('hex');
 const base='ce325a3cd772b4317436345cec720cd739c2279d';
 const cabeca=txt('portoes/cabeca');
+const historicoB=le('medidas-h2b.json');
+const cabecaB=historicoB.cabeca_codigo;
+if(txt('portoes-h2b/cabeca')!==cabecaB||txt('portoes-h2b/cabeca.fim')!==cabecaB)throw Error('Arquivo dos portões H2-b de outra cabeça.');
+for(const g of ['build','verify','typecheck']){
+ if(Number(txt(`portoes-h2b/${g}.codigo`))!==historicoB.portoes[g].codigo||sha(fs.readFileSync(`${pasta}/portoes-h2b/${g}.log`))!==historicoB.portoes[g].log_sha256)throw Error('O arquivo dos portões H2-b mudou.');
+}
+const baseC='4d85508f736774e1fdca1ae4093eafe5e2b591d3';
 // O commit de entrega acrescenta só provas. Reproduzir a medida depois dele
 // continua a ler a cabeça do código que efetivamente passou nos portões.
 const delta=git('diff','--name-only',cabeca,'HEAD');
@@ -61,8 +68,8 @@ const soFicheiros=paginas.filter(f=>!f.endsWith('/index.html')&&!fs.existsSync(f
 medida('paginas_so_com_ficheiro_html',soFicheiros.length,'ficheiros .html sem pasta gémea','a página padrão 404.html está na lista',soFicheiros.some(f=>f.ficheiro==='404.html'));
 const plantas=le('plantas-portoes-h2.json');
 medida('plantas_sobre_dist',plantas.length,'registos de tests/pais/portoes.mjs','todas saem a um, dão a mordida pedida e repõem cada sha256',plantas.every(p=>p.codigo===1&&p.passou&&p.ficheiros.every(f=>f.antes===f.reposto)));
-const pacote=le('pacote-plantas.json');
-medida('controlos_do_pacote',pacote.casos.length,'tests/leituras/pacote.py','o controlo de montagem e as plantas dos dois lados passaram',pacote.ok&&pacote.casos.every(c=>c.passou));
+const pacote=le('pacote-casos-h2c.json');
+medida('controlos_do_pacote',pacote.casos.length,'tests/leituras/pacote.py, corrida H2-c','o controlo de montagem e as plantas dos dois lados passaram',pacote.ok&&pacote.casos.every(c=>c.passou));
 const repeticoes=le('i194-repeticoes.json');
 medida('corridas_locais_i194',repeticoes.corridas.length,'repetir-i194.mjs','a troca tem bytes e hora iguais, outro inode e a mordida da D em cada corrida',repeticoes.corridas.every(c=>c.ok&&c.troca.mordeu&&c.troca.antes.escrito===c.troca.depois.escrito&&c.troca.antes.resumo===c.troca.depois.resumo&&c.troca.antes.inode!==c.troca.depois.inode));
 medida('plantas_por_corrida_i194',repeticoes.corridas[0].plantas,'repetir-i194.mjs','todas as corridas têm o mesmo conjunto de plantas',repeticoes.corridas.every(c=>c.plantas===repeticoes.corridas[0].plantas));
@@ -87,7 +94,7 @@ for(const g of ['build','verify','typecheck']){
  medida(`segundos_${g}`,segundos,`datas de portoes/${g}.inicio e .fim`,'as duas datas são válidas e ordenadas',Number.isFinite(segundos)&&segundos>=0);
 }
 const capturas=le('capturas.json');
-medida('capturas_pagina_inteira',capturas.resultados.filter(c=>!c.tipo).length,'capturas.json e ficheiros PNG','cada largura existe nas duas edições, sem problemas, com sha256 refeito',capturas.problemas.length===0&&capturas.cabeca===cabeca&&capturas.larguras.every(w=>['pt','en'].every(l=>capturas.resultados.some(c=>c.lang===l&&c.largura===w&&!c.tipo)))&&capturas.resultados.every(c=>sha(fs.readFileSync(c.ficheiro))===c.sha256));
+medida('capturas_pagina_inteira',capturas.resultados.filter(c=>!c.tipo).length,'capturas.json e ficheiros PNG','capturas H2-b: cada largura existe nas duas edições, sem problemas, com sha256 refeito',capturas.problemas.length===0&&capturas.cabeca===cabecaB&&capturas.larguras.every(w=>['pt','en'].every(l=>capturas.resultados.some(c=>c.lang===l&&c.largura===w&&!c.tipo)))&&capturas.resultados.every(c=>sha(fs.readFileSync(c.ficheiro))===c.sha256));
 medida('capturas_recorte',capturas.resultados.filter(c=>c.tipo==='recorte').length,'capturas.json','os recortes existem nas mesmas edições e larguras',capturas.resultados.filter(c=>c.tipo==='recorte').length===capturas.resultados.filter(c=>!c.tipo).length);
 const remoto=le('github-ensaio.json');
 const i194Remota=le('github-i194.json');
@@ -98,17 +105,39 @@ medida('ramos_de_ensaio_remotos_restantes',limpezaRemota.referencias.length,'git
 const custo=le('custo.json');
 medida('segundos_ate_fecho',custo.segundos_ate_fecho,'custo-h2.py, relógios da sessão','o modelo e o contador foram lidos na mesma sessão',custo.conhecido_positivo.encontrado);
 medida('simbolos_parciais',custo.total_cumulativo_parcial.total_tokens,'custo-h2.py, token_count do próprio rollout','o contador contém entradas e saídas e o total é a sua soma',custo.total_cumulativo_parcial.input_tokens+custo.total_cumulativo_parcial.output_tokens===custo.total_cumulativo_parcial.total_tokens);
-medida('tokens_used_h2',custo.tokens_used,'registo do lançador, lido pelo lugar de direção','a linha transcrita na proveniência tem o mesmo total',Number(custo.proveniencia_final.linha.split('\n').at(-1).replaceAll(',',''))===custo.tokens_used);
+// Transcrição externa: confrontar dois campos transcritos não é conhecido-positivo.
+medidas.push({nome:'tokens_used_h2',valor:custo.tokens_used,natureza:'transcrição da linha do lançador pelo lugar de direção',proveniencia:custo.proveniencia_final,conhecido_positivo:null});
 const custoB=le('custo-h2b.json');
 medida('segundos_h2b_parciais',custoB.segundos_ate_fecho,'custo-h2b.py','o evento inicial e os contadores da passagem foram encontrados',custoB.conhecido_positivo.encontrado);
 medida('simbolos_h2b_parciais',custoB.total_cumulativo_parcial.total_tokens,'custo-h2b.py','a diferença dos contadores é a soma das entradas e saídas',custoB.total_cumulativo_parcial.input_tokens+custoB.total_cumulativo_parcial.output_tokens===custoB.total_cumulativo_parcial.total_tokens);
 const registosTrabalho=['pais-trabalho','html-trabalho','lugar-trabalho','mapa','areas-trabalho','voz-trabalho','em-curso-trabalho','pacote-planta'].map(f=>({ficheiro:f,...le(`${f}.json`)}));
-medida('registos_de_trabalho_limpos',registosTrabalho.length,'correr.py, cabeça e git status --porcelain --untracked-files=no antes do comando','todos os registos são desta cabeça, sem diferenças seguidas antes ou depois',registosTrabalho.every(r=>r.cabeca===cabeca&&r.estado===''&&r.estado_fim===''&&r.codigo===0));
-medida('plantas_h2_na_cabeca_limpa',plantas.length,'tests/pais/portoes.mjs --prefixo h2-','cada planta escreve a mesma cabeça e um estado seguido vazio',plantas.length===8&&plantas.every(p=>p.cabeca===cabeca&&p.estado===''));
+medida('registos_de_trabalho_limpos',registosTrabalho.length,'correr.py, cabeça e git status --porcelain --untracked-files=no antes do comando','os registos históricos H2-b são da sua cabeça, sem diferenças seguidas antes ou depois',registosTrabalho.every(r=>r.cabeca===cabecaB&&r.estado===''&&r.estado_fim===''&&r.codigo===0));
+medida('plantas_h2_na_cabeca_limpa',plantas.length,'tests/pais/portoes.mjs --prefixo h2-','cada planta escreve a mesma cabeça e um estado seguido vazio',plantas.length===8&&plantas.every(p=>p.cabeca===cabecaB&&p.estado===''));
 const novas=le('plantas-portoes-h2b.json');
-medida('plantas_h2b_sobre_dist',novas.length,'tests/pais/portoes.mjs --prefixo h2b-','o ano trocado foi recusado e os bytes repostos, na cabeça limpa',novas.length===1&&novas[0].nome==='h2b-horizonte-trocado'&&novas.every(p=>p.codigo===1&&p.passou&&p.cabeca===cabeca&&p.estado===''&&p.ficheiros.every(f=>f.antes===f.reposto)));
+medida('plantas_h2b_sobre_dist',novas.length,'tests/pais/portoes.mjs --prefixo h2b-','o ano trocado foi recusado e os bytes repostos, na cabeça limpa',novas.length===1&&novas[0].nome==='h2b-horizonte-trocado'&&novas.every(p=>p.codigo===1&&p.passou&&p.cabeca===cabecaB&&p.estado===''&&p.ficheiros.every(f=>f.antes===f.reposto)));
 const controlos=Number(txt('em-curso-trabalho.log').match(/H2-b: (\d+) controlos/)?.[1]);
 medida('controlos_prazo_e_composicao',controlos,'tests/inicio/estudos-em-curso.mjs','o comando passou e contou controlos incluindo o prazo passado',controlos>0&&le('em-curso-trabalho.json').codigo===0);
-const saida={base,base_h2b:'acc928f23f5954d1cfc51a11fa86e94d4f6da56e',cabeca_codigo:cabeca,modelo:custo.modelo,medidas,primeiras,paginas_de_area:paginasDasAreas,paginas_so_ficheiro:soFicheiros,plantas,plantas_h2b:novas,registos_trabalho:registosTrabalho,portoes,capturas:{larguras:capturas.larguras,total:capturas.resultados.length},github:remoto,i194_remota:i194Remota,custo,custo_h2b:custoB,commits:git('log','--reverse','--fixed-strings','--grep=Co-Authored-By: Codex gpt-6-astra','--format=%H %s',`${base}..${cabeca}`).split('\n'),commits_h2b:git('log','--reverse','--format=%H %s',`acc928f2..${cabeca}`).split('\n')};
+
+const trabalhoC=['pacote-h2c','e1-trabalho-h2c','mapa-h2c'].map(f=>({ficheiro:f,...le(`${f}.json`)}));
+medida('registos_h2c_limpos',trabalhoC.length,'correr.py, três registos H2-c','os comandos passaram na cabeça H2-c com estado seguido vazio antes e depois',trabalhoC.length===3&&trabalhoC.every(r=>r.cabeca===cabeca&&r.estado===''&&r.estado_fim===''&&r.codigo===0));
+const pacoteC=le('pacote-casos-h2c.json');
+medida('controlos_pacote_h2c',pacoteC.casos.length,'tests/leituras/pacote.py','todos passaram; as recusas das árvores e do relatório têm mensagens diferentes',pacoteC.ok&&pacoteC.casos.every(c=>c.passou)&&pacoteC.casos.filter(c=>c.queixa).length===3&&pacoteC.casos.some(c=>c.queixa?.startsWith('conferir-relatorio.py: não existe o relatório')));
+const e1=le('e1-h2c.json');
+medida('corridas_check_pais_h2c',e1.casos.length,'tests/inicio/prazo-pela-celula.mjs','controlo limpo e cópias sem a chamada passam; prazo e razão falham pelas mensagens E1',e1.casos.length===5&&e1.casos.map(c=>c.codigo).join(',')==='0,1,1,0,0'&&e1.casos[1].queixas_e1.some(q=>q.startsWith('E1: prazo emCurso passado'))&&e1.casos[2].queixas_e1.some(q=>q.startsWith('E1: declaração emCurso incompleta'))&&e1.conhecido_positivo.encontrado);
+medida('plantas_e1_h2c',e1.casos.filter(c=>c.codigo===1).length,'e1-h2c.json','ambas as plantas têm a mensagem E1 e os controlos sem a chamada não a têm',e1.casos.filter(c=>c.codigo===1).every(c=>c.queixas_e1.length===1)&&e1.casos.filter(c=>c.codigo===0).every(c=>c.queixas_e1.length===0));
+const linhas=fs.readFileSync('scripts/gate-html.mjs','utf8').split('\n');
+const mapaTexto=fs.readFileSync('design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md','utf8');
+const citacoes=[{ancora:'a unidade da casa no mapa da dívida em «Lugares» (passagem P4-d',errada:6346},{ancora:'A CAIXA DAS SUGESTÕES, DEPOIS DO VARRIMENTO (bloco S1, 02.10.2026)',errada:7938}].map(c=>({...c,linha:linhas.findIndex(l=>l.includes(c.ancora))+1}));
+for(const [i,c] of citacoes.entries()) medida(`linha_corrigida_h2c_${i+1}`,c.linha,'leitura literal das duas âncoras, sem conferir-mapa.py','a âncora está na linha medida e não na antiga; o mapa cita a linha medida',c.linha>0&&linhas[c.linha-1].includes(c.ancora)&&!linhas[c.errada-1].includes(c.ancora)&&mapaTexto.includes(`scripts/gate-html.mjs:${c.linha}`));
+const mapaC=txt('mapa-h2c.log').split('\n').map(l=>Number(l.match(/: (\d+)$/)?.[1]));
+medida('citacoes_mapa_h2c',mapaC[0],'mapa-h2c.log','o guião leu citações, mas não se infere exatidão dos números de linha',mapaC.length===4&&mapaC.every(Number.isFinite)&&mapaC[0]>0&&txt('mapa-h2c.codigo')==='0');
+medida('desvios_reportados_mapa_h2c',mapaC.slice(1).reduce((a,b)=>a+b,0),'mapa-h2c.log','contagem do guião numa leitura não vazia, com o limite documentado na I195',mapaC[0]>0);
+const custoC=le('custo-h2c.json');
+medida('segundos_h2c_parciais',custoC.segundos_ate_fecho,'custo-h2c.py','o mandato H2-c e o contador da mesma sessão foram encontrados',custoC.conhecido_positivo.encontrado);
+medida('simbolos_h2c_parciais',custoC.total_cumulativo_parcial.total_tokens,'custo-h2c.py','a diferença dos contadores é a soma das entradas e saídas',custoC.total_cumulativo_parcial.input_tokens+custoC.total_cumulativo_parcial.output_tokens===custoC.total_cumulativo_parcial.total_tokens);
+const ui=git('diff','--name-only',baseC,cabeca,'--','src','public');
+medida('ficheiros_da_pagina_alterados_h2c',ui?ui.split('\n').length:0,'git diff em src e public desde a cabeça H2-b','o ficheiro da marca existe na base; o H2-c só altera provas e registos',git('show',`${baseC}:src/components/inicio/EstudoDaLista.astro`).includes('emCurso'));
+
+const saida={base,base_h2c:baseC,cabeca_h2b:cabecaB,portoes_h2b:historicoB.portoes,custo_h2c:custoC,trabalho_h2c:trabalhoC,e1_h2c:e1,pacote_h2c:pacoteC,citacoes_h2c:citacoes,commits_h2c:git('log','--reverse','--format=%H %s',`${baseC}..${cabeca}`).split('\n'),base_h2b:'acc928f23f5954d1cfc51a11fa86e94d4f6da56e',cabeca_codigo:cabeca,modelo:custo.modelo,medidas,primeiras,paginas_de_area:paginasDasAreas,paginas_so_ficheiro:soFicheiros,plantas,plantas_h2b:novas,registos_trabalho:registosTrabalho,portoes,capturas:{larguras:capturas.larguras,total:capturas.resultados.length},github:remoto,i194_remota:i194Remota,custo,custo_h2b:custoB,commits:git('log','--reverse','--fixed-strings','--grep=Co-Authored-By: Codex gpt-6-astra','--format=%H %s',`${base}..${cabeca}`).split('\n'),commits_h2b:git('log','--reverse','--format=%H %s',`acc928f2..${cabecaB}`).split('\n')};
 fs.writeFileSync(`${pasta}/medidas.json`,JSON.stringify(saida,null,2)+'\n');
-console.log(`${medidas.length} medidas com conhecido-positivo.`);
+console.log(`${medidas.filter(m=>m.conhecido_positivo?.encontrado).length} medidas com conhecido-positivo; uma transcrição externa sem conhecido-positivo próprio.`);
