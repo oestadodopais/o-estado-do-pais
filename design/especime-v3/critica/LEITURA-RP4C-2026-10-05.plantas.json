@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-05T20:56:10+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/lib/formas/serie-do-pais.mjs",
+   "descricao": "a menor largura no ecrã das zonas passa de 354 a 254 no módulo, contra as 289 zonas construídas e o relatório",
+   "sha256_antes": "187376537dab6060fd9b18301807caeac8a95393ccdb2092d6901d317dfcae1b",
+   "sha256_depois": "30462e0c51bc150f0439cabf1c128d82f73bea0b8c7dbf8194f3e14321819524",
+   "contexto_antes": " contam-se nesta largura, para cada\n * zona ter pelo menos um píxel também a 390; quem mudar as margens da casa ou a largura dos desenhos mede-a outra vez.\n */\nexport const MENOR_LARGURA_NO_ECRA = 354;\n\n/**\n * O SÍMBOLO DA UNIDADE NAS MARCAS (bloco RP4-c, 05.10.2026, o ponto 1 do mandato). Só «%»: «15 %» lê-se, e «20,4 % do\n * PIB» não cabe numa marca e vai p",
+   "contexto_depois": " contam-se nesta largura, para cada\n * zona ter pelo menos um píxel também a 390; quem mudar as margens da casa ou a largura dos desenhos mede-a outra vez.\n */\nexport const MENOR_LARGURA_NO_ECRA = 254;\n\n/**\n * O SÍMBOLO DA UNIDADE NAS MARCAS (bloco RP4-c, 05.10.2026, o ponto 1 do mandato). Só «%»: «15 %» lê-se, e «20,4 % do\n * PIB» não cabe numa marca e vai p"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/index.html",
+   "descricao": "a leitura da última zona da inflação na primeira página construída diz «julho de 2026» onde o ponto é agosto de 2026",
+   "sha256_antes": "d34814e3d0ae82887316da4952a9b28d4c2ed7b98d23879892227068fbdb9480",
+   "sha256_depois": "21f12d7fa2ffd87155d74da572347c3ba93009ae99d8976d8b3b2b145bb44c95",
+   "contexto_antes": " cy=\"104.43\" r=\"3\"></circle><text x=\"54\" y=\"22\" text-anchor=\"start\"><tspan data-ponto=\"serie-ipc-variacao-homologa#2026-08\">3,30</tspan> %<tspan x=\"54\" dy=\"14\" data-ponto-periodo=\"serie-ipc-variacao-homologa#2026-08\">agosto de 2026</tspan></text></g></svg></a></div><div class=\"pp-notas\"><p class=\"pp-ressalva\" data-bloco-ressalva data-bloco-declarado>Os preços no seu conjunto medem-se num cabaz de",
+   "contexto_depois": " cy=\"104.43\" r=\"3\"></circle><text x=\"54\" y=\"22\" text-anchor=\"start\"><tspan data-ponto=\"serie-ipc-variacao-homologa#2026-08\">3,30</tspan> %<tspan x=\"54\" dy=\"14\" data-ponto-periodo=\"serie-ipc-variacao-homologa#2026-08\">julho de 2026</tspan></text></g></svg></a></div><div class=\"pp-notas\"><p class=\"pp-ressalva\" data-bloco-ressalva data-bloco-declarado>Os preços no seu conjunto medem-se num cabaz de"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/styles/serie-do-pais.css",
+   "descricao": "a regra do rato perde a condição do ponteiro fino: as leituras acendiam-se também no toque, contra o brief e a prova do toque",
+   "sha256_antes": "65f03af690628d9f45a3ef8d8457973c0bd5264d5a3fe9a6b11f280d1016f7d5",
+   "sha256_depois": "d8b186d9a533115b5124dceea5165f83bea2a76e53511c47d248c3060a30e1f5",
+   "contexto_antes": "l: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }\n.serie-do-pais [data-ponto-periodo] { fill: var(--g1); }\n@media (hover: hover) and (pointer: fine) {\n  .serie-do-pais > g:not([data-eixo]):hover > * { visibility: visible; }\n}\n\n/* RP4-c (o ponto 1): a unidade por extenso por baixo de um desenho cujas marcas nã",
+   "contexto_depois": "l: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }\n.serie-do-pais [data-ponto-periodo] { fill: var(--g1); }\n@media (hover: hover) {\n  .serie-do-pais > g:not([data-eixo]):hover > * { visibility: visible; }\n}\n\n/* RP4-c (o ponto 1): a unidade por extenso por baixo de um desenho cujas marcas nã"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 72 593 bytes em gzip na página dos preços depois da passagem do peso, onde a medida diz 27 593",
+   "sha256_antes": "d414b4e24072e7f2788ce2493b9275830d9d08178a6fdca9720fd3b17c94ffe2",
+   "sha256_depois": "6609768e0df3e457fb19f7c7b63202aa04698cdf05757cc22963f0d36da5c978",
+   "contexto_antes": "esenhos | 899 262 | 1 781 594 | 1 254 443 | 8 891 269 | 19 504 714 | 12 758 006 |\n| a primeira página | 15 570 | 30 918 | 26 982 | 92 542 | 255 466 | 206 041 |\n| a página dos preços | 27 402 | 142 799 | 27 593 | 99 249 | 1 494 887 | 100 103 |\n| a página da habitação | 17 761 | 63 832 | 17 949 | 77 419 | 626 234 | 78 225 |\n| o recibo da inflação | 20 646 | 35 258 | 31 0",
+   "contexto_depois": "esenhos | 899 262 | 1 781 594 | 1 254 443 | 8 891 269 | 19 504 714 | 12 758 006 |\n| a primeira página | 15 570 | 30 918 | 26 982 | 92 542 | 255 466 | 206 041 |\n| a página dos preços | 27 402 | 142 799 | 72 593 | 99 249 | 1 494 887 | 100 103 |\n| a página da habitação | 17 761 | 63 832 | 17 949 | 77 419 | 626 234 | 78 225 |\n| o recibo da inflação | 20 646 | 35 258 | 31 0"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/index.html",
+   "descricao": "a marca da década de 2020 no eixo do tempo da primeira página construída diz 2021",
+   "sha256_antes": "21f12d7fa2ffd87155d74da572347c3ba93009ae99d8976d8b3b2b145bb44c95",
+   "sha256_depois": "ac093693c4cdf895b143ed35667a11ee1c0bb05ac41da77832439a1dbc68d4a8",
+   "contexto_antes": "=\"201.022\" y=\"192\" text-anchor=\"middle\">2010</text></g><g data-eixo=\"tempo\"><line class=\"serie-do-pais-guia\" x1=\"286.034\" x2=\"286.034\" y1=\"170\" y2=\"174\"></line><text data-nonledger=\"escala-de-instrumento\" x=\"286.034\" y=\"192\" text-anchor=\"middle\">2020</text></g><g data-eixo=\"tempo\"><line class=\"serie-do-pais-guia\" x1=\"337.041\" x2=\"337.041\" y1=\"170\" y2=\"174\"></line><text data-nonledger=\"escala-de-instrumento\" x=\"337",
+   "contexto_depois": "=\"201.022\" y=\"192\" text-anchor=\"middle\">2010</text></g><g data-eixo=\"tempo\"><line class=\"serie-do-pais-guia\" x1=\"286.034\" x2=\"286.034\" y1=\"170\" y2=\"174\"></line><text data-nonledger=\"escala-de-instrumento\" x=\"286.034\" y=\"192\" text-anchor=\"middle\">2021</text></g><g data-eixo=\"tempo\"><line class=\"serie-do-pais-guia\" x1=\"337.041\" x2=\"337.041\" y1=\"170\" y2=\"174\"></line><text data-nonledger=\"escala-de-instrumento\" x=\"337"
+  }
+ ]
+}
