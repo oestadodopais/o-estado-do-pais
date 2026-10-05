@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { conferirSerieDoBloco } from './serie-do-bloco.mjs';
 /**
  * =============================================================================
  * A PRIMEIRA PÁGINA DE UM LEITOR COMUM · OS BLOCOS, AUDITADOS E RECONTADOS · bloco PP1 (28.09.2026)
@@ -417,6 +418,7 @@ export const FAIXA_DAS_BARRAS = 72;
 export function conferirBlocosDaPagina(root, lang, rota, { ids, primeira = false, linhas = loadClaims(), blocos = /** @type {any[]} */ (BLOCOS_DA_PRIMEIRA_PAGINA) }) {
   /** @type {string[]} */
   const erros = [];
+  if (primeira) erros.push(...conferirSerieDoBloco(root, lang));
   const contas = { blocos_declarados: ids.length, blocos_mostrados: 0, pecas_mostradas: 0, textos: 0, numeros_na_lista: 0, valores_desenhados: 0, barras: 0, pontas: 0, referencias: 0 };
   /** @param {string} id @param {string} m */
   const falha = (id, m) => erros.push(`PP1 · ${rota} · ${id}: ${m}`);
