@@ -77,3 +77,7 @@ verifications:
     result: "diverge"
     by: "painel-semanal"
     found: "0.4"
+  - date: "2026-10-05"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp10?format=JSON&lang=EN&geo=PT&unit=PC_GDP_3Y&partner=WRL_REST"
+    result: "igual"
+    by: "painel-semanal"
