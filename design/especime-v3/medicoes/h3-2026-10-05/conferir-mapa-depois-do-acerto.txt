@@ -1,0 +1,23 @@
+citações conferidas na linha citada (±7): 376
+citação está no ficheiro, mas longe da linha citada: 19
+   mapa l.177 «algarismos fora do livro-razão» citada em ['scripts/gate-html.mjs:7936'] → está em ['scripts/gate-html.mjs:7948']
+   mapa l.180 «dentro de um marco» citada em ['scripts/gate-html.mjs:5265', 'scripts/gate-html.mjs:5387'] → está em ['scripts/gate-html.mjs:5348']
+   mapa l.182 «uma ausência nunca se desenha» citada em ['scripts/gate-html.mjs:7725'] → está em ['scripts/gate-html.mjs:7737']
+   mapa l.192 «se uma faltar, o selo dessa linha aponta para um 404» citada em ['scripts/gate-html.mjs:8224', 'scripts/gate-html.mjs:8893', 'scripts/gate-html.mjs:8552', 'scripts/gate-html.mjs:8325'] → está em ['scripts/gate-html.mjs:8931']
+   mapa l.199 «B2: as quatro contagens partilham uma porta visível, validad» citada em ['scripts/pais-camaras.mjs:1', 'scripts/check-pais.mjs:284', 'scripts/gate-html.mjs:7613', 'scripts/pais-camaras.mjs:61'] → está em ['scripts/gate-html.mjs:7625']
+   mapa l.396 «AS ORIGENS DAS LINHAS DE SÉRIE (bloco UE1» citada em ['scripts/gate-html.mjs:6022', 'scripts/series-do-portao.mjs:2', 'scripts/medir-defeitos.mjs:223'] → está em ['scripts/gate-html.mjs:6000', 'scripts/medir-defeitos.mjs:225']
+   mapa l.429 «AS ORIGENS DA FAIXA DO CONCELHO (bloco L2b» citada em ['scripts/gate-html.mjs:6129', 'scripts/concelhos-do-portao.mjs:2', 'scripts/gate-html.mjs:3599'] → está em ['scripts/gate-html.mjs:732']
+   mapa l.446 «a unidade da casa de um cartão (passagem K2-c» citada em ['src/components/CartaoDaMedida.astro:132', 'scripts/gate-html.mjs:6431', 'tests/cartao/perguntas.mjs:208'] → está em ['scripts/gate-html.mjs:104']
+   mapa l.456 «QUANTOS PAÍSES A TABELA TEM (bloco UE2, 02.10.2026)» citada em ['scripts/gate-html.mjs:6166', 'tests/pais/portoes.mjs:363'] → está em ['scripts/gate-html.mjs:6178']
+   mapa l.476 «A UNIDADE DA CASA DE UMA MEDIDA DE CONCELHO (passagem P4-c» citada em ['src/data/concelhos.mjs:202', 'src/components/lugar/CartaoDoLugar.astro:61', 'scripts/gate-html.mjs:6453', 'src/components/lugar/CartaoDoLugar.astro:94'] → está em ['scripts/gate-html.mjs:6465', 'tests/pais/portoes.mjs:408']
+   mapa l.487 «A PORTA DAS SUGESTÕES, E AS PÁGINAS DA CAIXA (bloco S1, 02.1» citada em ['scripts/sugestoes-do-portao.mjs:3', 'scripts/sugestoes-do-portao.mjs:513', 'scripts/sugestoes-do-portao.mjs:270', 'scripts/gate-html.mjs:5426'] → está em ['scripts/gate-html.mjs:5387']
+   mapa l.487 «A CAIXA DAS SUGESTÕES, DEPOIS DO VARRIMENTO (bloco S1, 02.10» citada em ['scripts/sugestoes-do-portao.mjs:3', 'scripts/sugestoes-do-portao.mjs:513', 'scripts/sugestoes-do-portao.mjs:270', 'scripts/gate-html.mjs:5426'] → está em ['scripts/gate-html.mjs:7958']
+   mapa l.487 «TODAS AS MIGRAÇÕES, POR ORDEM DE NOME (S1-b, 03.10.2026» citada em ['scripts/sugestoes-do-portao.mjs:3', 'scripts/sugestoes-do-portao.mjs:513', 'scripts/sugestoes-do-portao.mjs:270', 'scripts/gate-html.mjs:5426'] → está em ['scripts/gate-html.mjs:7963']
+   mapa l.500 «R2 (03.10.2026): o cartão de uma linha com unidade declarada» citada em ['scripts/gate-html.mjs:103', 'scripts/gate-html.mjs:6438', 'tests/cartao/perguntas.mjs:208', 'tests/pais/portoes.mjs:326'] → está em ['scripts/gate-html.mjs:6450']
+   mapa l.516 «R2-b (04.10.2026, achado 6 da leitura a frio): o autoteste» citada em ['scripts/gate-html.mjs:120', 'scripts/gate-html.mjs:8935', 'tests/cartao/perguntas.mjs:226'] → está em ['scripts/gate-html.mjs:8974', 'tests/cartao/perguntas.mjs:224']
+   mapa l.519 «R2-b (04.10.2026): a faixa dos 27 da página da União diz a u» citada em ['src/components/FaixaDosPaises.astro:65', 'scripts/gate-html.mjs:6496', 'scripts/inventario-rotulos.mjs:494'] → está em ['scripts/gate-html.mjs:6508']
+   mapa l.531 «RP3: cada série no tempo com o seu recibo inteiro nas duas e» citada em ['scripts/gate-html.mjs:22', 'scripts/gate-html.mjs:410', 'scripts/gate-html.mjs:4759', 'scripts/gate-html.mjs:8997'] → está em ['scripts/gate-html.mjs:9036']
+   mapa l.545 «AS SETE PORTAS DO RODAPÉ, COM A DO ÍNDICE (bloco R3, 04.10.2» citada em ['scripts/indice-do-portao.mjs:3', 'scripts/gate-html.mjs:5444', 'scripts/gate-html.mjs:7974'] → está em ['scripts/gate-html.mjs:65']
+   mapa l.545 «AS SETE PORTAS DO RODAPÉ, DEPOIS DO VARRIMENTO (bloco R3, 04» citada em ['scripts/indice-do-portao.mjs:3', 'scripts/gate-html.mjs:5444', 'scripts/gate-html.mjs:7974'] → está em ['scripts/gate-html.mjs:7986']
+citação não encontrada em nenhum dos ficheiros citados na mesma linha: 0
+linha citada para lá do fim do ficheiro: 0

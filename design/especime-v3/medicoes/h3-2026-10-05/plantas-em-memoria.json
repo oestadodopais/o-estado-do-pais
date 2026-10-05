@@ -1,0 +1,167 @@
+{
+  "guiao": "design/especime-v3/medicoes/h3-2026-10-05/medir-h3.mjs",
+  "caixa": [
+    {
+      "nome": "porta-controlo",
+      "mordeu": true
+    },
+    {
+      "nome": "porta-a-dobrar",
+      "mordeu": true
+    },
+    {
+      "nome": "porta-com-outro-de",
+      "mordeu": true
+    },
+    {
+      "nome": "porta-da-outra-edicao",
+      "mordeu": true
+    },
+    {
+      "nome": "porta-no-main",
+      "mordeu": true
+    },
+    {
+      "nome": "porta-escondida",
+      "mordeu": true
+    },
+    {
+      "nome": "regras-controlo",
+      "mordeu": true
+    },
+    {
+      "nome": "regras-limite-mudado",
+      "mordeu": true
+    },
+    {
+      "nome": "regras-limpeza-tirada",
+      "mordeu": true
+    },
+    {
+      "nome": "regras-teto-tirado",
+      "mordeu": true
+    },
+    {
+      "nome": "regras-tranca-tirada",
+      "mordeu": true
+    },
+    {
+      "nome": "regras-chave-tirada",
+      "mordeu": true
+    },
+    {
+      "nome": "regras-funcao-antiga-viva",
+      "mordeu": true
+    },
+    {
+      "nome": "regras-retencao-desagendada",
+      "mordeu": true
+    },
+    {
+      "nome": "regras-retencao-mudada",
+      "mordeu": true
+    },
+    {
+      "nome": "regras-marcas-diarias",
+      "mordeu": true
+    },
+    {
+      "nome": "regras-coluna-mais-curta",
+      "mordeu": true
+    },
+    {
+      "nome": "regras-privacidade-com-outro-prazo",
+      "mordeu": true
+    },
+    {
+      "nome": "regras-privacidade-com-outra-janela",
+      "mordeu": true
+    },
+    {
+      "nome": "formulario-controlo",
+      "mordeu": true
+    },
+    {
+      "nome": "formulario-nota-sem-a-porta",
+      "mordeu": true
+    }
+  ],
+  "privacidade": [
+    {
+      "nome": "h3-porta-controlo",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-porta-em-falta",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-porta-a-dobrar",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-porta-da-outra-edicao",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-porta-com-outro-rotulo",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-porta-escondida",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-pagina-controlo",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-pagina-texto-mudado",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-pagina-sem-o-endereco",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-pagina-com-noindex",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-cookies-pagina-limpa",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-cookies-guiao-de-fora",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-cookies-guiao-que-escreve",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-cookies-imagem-de-fora",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-cookies-letra-de-fora",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-cookies-guiao-servido",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-cookies-guiao-servido-limpo",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-cookies-configuracao",
+      "mordeu": true
+    },
+    {
+      "nome": "h3-cookies-funcao",
+      "mordeu": true
+    }
+  ]
+}

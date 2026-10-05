@@ -1,0 +1,57 @@
+[
+  {
+    "nome": "s1-nota-mudada",
+    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "S1 formulário \\(a nota do que fica guardado\\): o texto rendido não é o declarado"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/sugestoes/index.html",
+        "antes": "2bdf779e8715e17648a0aa8e4be6869284e7c72c9d24d3870aa7aa9add671188",
+        "reposto": "2bdf779e8715e17648a0aa8e4be6869284e7c72c9d24d3870aa7aa9add671188"
+      }
+    ]
+  },
+  {
+    "nome": "s1-voz-nota-mudada-com-language",
+    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "estado": "",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "FRASE RETIRADA QUE VOLTOU A RENDER-SE"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/privacy/index.html",
+        "antes": "0bf93411d1ca8aae2754fd6c38e0da6eb6a2047802f669ed1c143b2b59909833",
+        "reposto": "0bf93411d1ca8aae2754fd6c38e0da6eb6a2047802f669ed1c143b2b59909833"
+      }
+    ]
+  },
+  {
+    "nome": "s1c-voz-nota-com-outra-palavra",
+    "cabeca": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+    "estado": "",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "linha «viva» que não se rende em rota nenhuma",
+      "Só guardamos o que escrever e a página de onde veio, para decidir a sugestão"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/sugestoes/index.html",
+        "antes": "2bdf779e8715e17648a0aa8e4be6869284e7c72c9d24d3870aa7aa9add671188",
+        "reposto": "2bdf779e8715e17648a0aa8e4be6869284e7c72c9d24d3870aa7aa9add671188"
+      }
+    ]
+  }
+]

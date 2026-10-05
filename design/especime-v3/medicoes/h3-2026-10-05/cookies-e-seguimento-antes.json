@@ -1,0 +1,58 @@
+{
+  "guiao": "design/especime-v3/medicoes/h3-2026-10-05/cookies-e-seguimento.mjs",
+  "rotulo": "antes",
+  "construcao": "98a9d1b58cddbfa30532ea9404bb2a4be9d21b6b",
+  "cabeca": "98a9d1b58cddbfa30532ea9404bb2a4be9d21b6b",
+  "arvore_limpa": false,
+  "medido_em": "2026-10-05T14:09:25.052Z",
+  "paginas_lidas": 7883,
+  "guioes_servidos_lidos": 10,
+  "configuracao_lida": 1,
+  "funcoes_lidas": 1,
+  "achados": 0,
+  "lista_dos_achados": [],
+  "todos_os_achados_fora_das_paginas": [],
+  "frase_no_texto": true,
+  "conhecido_positivo": {
+    "o_que": "as plantas em memória da célula dos cookies (h3-cookies-*), cada uma vista, e as limpas a passar",
+    "plantas": [
+      {
+        "nome": "h3-cookies-pagina-limpa",
+        "mordeu": true
+      },
+      {
+        "nome": "h3-cookies-guiao-de-fora",
+        "mordeu": true
+      },
+      {
+        "nome": "h3-cookies-guiao-que-escreve",
+        "mordeu": true
+      },
+      {
+        "nome": "h3-cookies-imagem-de-fora",
+        "mordeu": true
+      },
+      {
+        "nome": "h3-cookies-letra-de-fora",
+        "mordeu": true
+      },
+      {
+        "nome": "h3-cookies-guiao-servido",
+        "mordeu": true
+      },
+      {
+        "nome": "h3-cookies-guiao-servido-limpo",
+        "mordeu": true
+      },
+      {
+        "nome": "h3-cookies-configuracao",
+        "mordeu": true
+      },
+      {
+        "nome": "h3-cookies-funcao",
+        "mordeu": true
+      }
+    ],
+    "encontrado": true
+  }
+}
