@@ -102,3 +102,85 @@ Modelo: Claude Opus 5.5 em todas as respostas do registo da sessão (`custo.json
 - **O corredor das séries no trabalho diário do motor** (`.github/workflows/corredor.yml`): o corredor corre à mão, em ensaio ou com escrita. Não entrou no trabalho diário porque um mês novo numa série presa a um cartão só se escreve depois de a linha andar (a S5 recusa um cartão atrás da sua série), e a forma de uma linha mudar de período é a questão aberta da I202: a ordem das duas escritas no trabalho diário decide-se com ela, e uma mudança num trabalho do GitHub não se prova daqui.
 - **A I200**: o `requirements.lock.txt` do motor sem o `xlrd`, resolvido num ambiente limpo.
 - A leitura a frio do pacote, por outra família.
+
+## RP4-m-b, a passagem de correção depois da leitura
+
+Construída pelo Claude Opus 5.5 (a definição `construtor`) a 05.10.2026, nas mesmas duas worktrees do bloco, pelo mandato do lugar de direção depois da leitura a frio do Codex `gpt-6-astra` (raciocínio `xhigh`). Partiu do sítio em `1a186832` e do motor em `7461321`. Os achados da leitura que eram os estragos plantados nas cópias do pacote (o achado 1, o achado 2, o achado 3, o achado 6 e o achado 12) não pedem nada ao código; o lugar de direção tomou para esta passagem o achado 4 e o achado 5 (o corredor das séries), o achado 14 (o ficheiro trancado do motor) e o achado 9 (a frase da conta). Sem `push`. Cada número desta secção está num ficheiro JSON desta pasta: `medidas.json` (escrito por `medir.py`, alargado com as medidas `rp4mb.*`, cada uma com o comando e o conhecido-positivo) e os registos que ele lê, `rp4mb-motor-antes.json` e `rp4mb-motor-depois.json` (escritos por `medir-rp4mb-motor.py`), `portao-do-motor-rp4mb.json`, `rp4mb-pip.json` (`medir-rp4mb-pip.py`), `rp4mb-dist-antes.json` e `rp4mb-dist-depois.json` (`medir-rp4mb-dist.py`), os códigos em `rp4mb-conferencias/` (escritos por `conferencias-rp4mb.sh`), `capturas-rp4mb.json`, `limpeza-rp4mb.json` e `custo-rp4mb.json`.
+
+### Os pontos do mandato
+
+| Ponto | Resultado | Medida e prova |
+|---|---|---|
+| Ponto 2 · o achado 4, uma segunda revisão do mesmo ponto | **Feito.** O corredor constrói as séries acabadas de pedir sem a história das revisões, que é o que a fonte diz agora; compara-as com as publicadas; apensa a revisão nova de cada ponto mudado, e a de um ponto já revisto é a segunda, com o valor da primeira como antigo e a data do dia; e só então aplica a história inteira aos pontos de agora, nos dois modos, pela regra do construtor (`aplicar_revisoes`). | O mesmo cenário (a pensão média de 2020 no INE e um mês das rendas no Eurostat, revistos numa corrida e mudados outra vez na do dia seguinte), na cabeça que a leitura leu e na final (`rp4mb-motor-antes.json`, `rp4mb-motor-depois.json`): na `7461321` a segunda corrida parava com `Fail`, «a revisão mais recente de 2020 diz «6 058» e o ponto vale «6 059»»; na `2787c99` sai com 2 revisões novas e 0 recusas, a pensão de «6 058» para «6 059» e as rendas de «6,91» para «6,92», com a data de 06.10, e o ensaio não escreve as revisões. |
+| Ponto 3 · o achado 5, um pedido que não se lê | **Feito.** Cada pedido que não se lê (a metainformação do INE, um ano dos dados, a página humana, a série do Eurostat) é uma recusa com o pedido nomeado, o endereço, o estado e o HTTP: «o pedido X não se leu: estado Y; a série fica como estava». A série fica como estava (nenhuma comparação nem revisão se conta por ela, e uma derivada fica com a sua origem); uma série que a corrida pediu e que não se lê da pasta da corrida também é uma recusa, porque o recuo a uma pasta antiga serve só às séries que a corrida não precisou de pedir; a linha do fim diz RECUSA, e o código do ensaio continua 0. Com `--write`, uma recusa recusa a escrita inteira: nada se escreve para a série recusada nem para as outras. | A metainformação da pensão a responder 404: na `7461321`, a linha `CORREDOR_DAS_SERIES: PASS`, 0 recusas, o código 0 e a pensão lida da pasta `rp3`; com `--write`, a corrida alojava a pasta do dia, reescrevia as séries e escrevia as revisões. Na `2787c99`, a linha `CORREDOR_DAS_SERIES: RECUSA`, 1 recusa com o pedido `ine-0014532-meta.json`, o estado e o HTTP 404, o código 0 e a pensão como estava; com `--write`, `Fail`, nada alojado, as séries iguais e nenhuma revisão escrita. |
+| Ponto 4 · o achado 14, o ficheiro trancado do motor | **Feito.** `requirements.lock.txt` com os bytes de `38457b2`, a linha `xlrd==2.0.2` no lugar que o `pip freeze` lhe dá e a contagem do cabeçalho pelo que os ficheiros têm, nas duas frases que a dizem («São 41 pacotes: os dez declarados e as 31 dependências que eles arrastam» e «41 linhas `==`»). Nada mais muda. | Pelo contador de `medir.py` (os pinos são as linhas «nome==versão» do ficheiro trancado; os declarados, as linhas do `requirements.txt` que não são comentário nem vazias; as dependências, a diferença): 41 pinos, 10 declarados, 0 declarados fora do ficheiro trancado e 31 dependências; o mesmo contador dá 40 no ficheiro de `38457b2`. Contra `38457b2`, o diff tira 2 linhas e põe 3. A ordem do ficheiro é a de `sorted(key=str.lower)`, que é a chave da linha 146 de `pip/_internal/operations/freeze.py` no pip `25.2`, e o último pino é o `xlrd`, depois do `uvicorn`. O `xlrd` instalado é o `2.0.2`, e o PyPI responde 200 a essa versão, com 2 ficheiros publicados (`rp4mb-pip.json`, com a hora, o cliente e o sha256 da resposta). |
+| Ponto 5 · o achado 9, a frase da conta | **Feito.** As chaves `derivadaFrase` (do RP3, o recibo dos cem euros de 2015) e `derivadaFraseVarias` (do RP4-m, o recibo do salário real) perdem a segunda metade nas duas edições, e a proveniência fica. | 0 ocorrências das duas metades tiradas nos ficheiros de `src/` (o mesmo contador dá 4 no `strings.mjs` da `1a186832`). Na construção da cabeça do código, 7899 páginas lidas, 4 com a frase nova e 0 com uma das metades tiradas; na construção da `1a186832`, o mesmo laço deu 4 páginas com a metade tirada e 0 com a frase nova, e as 4 páginas de depois são as 4 de antes, os dois recibos nas duas edições (`rp4mb-dist-*.json`). As conferências que a mudança toca, cada uma com o código lido do seu ficheiro, estão abaixo, e as capturas do recibo do salário real foram refeitas. |
+
+### Quem recusa um ponto que não bate com a sua revisão mais recente
+
+A decisão que o mandato deixou ao construtor. A recusa morde em cada um destes sítios, e cada um recusa uma coisa diferente:
+
+- **o construtor das séries sozinho** (`dominios_series.construir()`, que lê `series-revisoes.json`): um ponto revisto que a fonte voltou a mudar não se constrói, porque o construtor não regista revisões e um ponto revisto não se reescreve («o ponto mudou sem uma revisão que o diga, e só o corredor das séries a regista»);
+- **o corredor das séries**, como recusa da corrida e não como exceção: depois de apensar as revisões novas, uma história que ainda não bate com os pontos de agora (uma revisão escrita à mão, um ficheiro das séries que não é o das revisões) recusa a corrida, e a escrita não se faz;
+- **a travessia**, pela VP6 de `publisher/export_series.py`, que não mudou: um ponto que o sítio publica com outro valor exige uma correção do valor do sítio para o de agora, e a correção mais recente do período tem de ser a que diz o de agora.
+
+### As plantas, e o que cada uma morde
+
+| Onde | Estrago | O que morde |
+|---|---|---|
+| motor · corredor das séries | a planta do mandato no achado 4: uma revisão registada (a escrita de um dia, no INE e no Eurostat) e o mesmo ponto mudado outra vez numa cópia do corpo | sai uma segunda revisão por série, apensa, com o valor da primeira como antigo e a data do dia; a série reconstruída leva as duas; a travessia aceita a lista das duas contra um sítio que publica o valor da primeira |
+| motor · corredor das séries | a lista sem a segunda revisão, contra o mesmo sítio, no INE e no Eurostat | a VP6: «sem uma entrada em corrections que o diga» |
+| motor · corredor das séries | o construtor sozinho com uma revisão mais recente que já não diz o ponto (a planta que esperava a exceção, revista: a recusa é do construtor sozinho, e o corredor regista a revisão seguinte) | «a revisão mais recente de 2020» |
+| motor · corredor das séries | uma revisão escrita à mão no ficheiro das revisões, que não bate com o ponto | a recusa do corredor: «não batem com os pontos de agora» |
+| motor · corredor das séries | a planta do mandato no achado 5: a metainformação do INE da pensão a responder 404, numa corrida de ensaio sobre as cópias | a recusa com o pedido nomeado e o estado, a linha RECUSA com o código 0, a série como estava, nada escrito |
+| motor · corredor das séries | a mesma metainformação falhada numa escrita | «o corredor recusa escrever: o pedido ine-0014532-meta.json», e nada alojado nem escrito |
+| motor · corredor das séries | a série das rendas do Eurostat, um ano dos dados dos combustíveis do INE e a metainformação do índice em média anual a não se lerem | uma recusa nomeada por pedido; a derivada do salário real fica como estava com a sua origem |
+| motor · corredor das séries | uma corrida datada antes de uma escrita já alojada: as séries pedidas leem-se da pasta mais recente, que não é a da corrida | «foi pedida nesta corrida e leu-se de corredor-series/2026-10-05» |
+| sítio · capturas | a frase da conta com uma metade acrescentada no navegador, nas duas edições | o critério da captura, que compara a frase com a cadeia da edição |
+
+A suíte do corredor tem agora 54 conferências e 14 plantas a morder (eram 25 e 5); a do construtor das séries continua com 64 e 31. O detetor da frase nas páginas (`medir-rp4mb-dist.py`) tem por conhecido-positivo a construção da `1a186832`, onde a metade tirada ainda estava nas 4 páginas.
+
+### Os portões, as conferências e os commits
+
+**O motor.** O portão do pre-commit (`python3 -m core.gate`) na cabeça final do motor, `2787c99b0e3110f27d660d9d24491229a2ceb836`, com a árvore limpa: código 0 lido do ficheiro, 46 suítes a passar, em 502 segundos (o do bloco, na `a64ff623`, levou 440). As 4 suítes do bloco, corridas outra vez na mesma cabeça, cada uma com o código lido do seu ficheiro: 64 conferências no construtor das séries, 54 no corredor, 9 no painel solto e 29 no `core.reconcile` (`portao-do-motor-rp4mb.json`). Commits do motor, no ramo `rp4m-2026-10-05`, cada um com o portão do pre-commit a passar:
+
+- `a35d107` · o ponto 4: o ficheiro trancado reposto, com o `xlrd` no seu lugar e a contagem
+- `2787c99` · o ponto 2 e o ponto 3: a segunda revisão e os pedidos que não se leem, com a suíte, o `README.md` do publicador e o comentário da suíte no `core.gate`
+
+**O sítio.** Os três portões inteiros não os corri: corre-os o lugar de direção na cabeça final, pela tranca. Corri, com a tranca da máquina e na construção da cabeça do código `f90d3117c84438103fa383a6495edacf3007b0e9`, com o código todo junto, o que a frase da conta toca, cada passo no seu comando e com o código lido do seu ficheiro (`rp4mb-conferencias/`):
+
+| Passo | Código lido |
+|---|---|
+| `astro build` | 0 |
+| `stamp:version` | 0 |
+| `cartoes` | 0 |
+| `gate:html` | 0 |
+| `check:voz` | 0 |
+| `check:lingua` | 0 |
+| `check:rotulos` | 0 |
+| `check:series`, com o motor ao lado | 0 |
+| as capturas | 0 |
+
+Nenhum inventário de uma conferência guarda a frase: a rota das séries não está entre as rotas da régua das frases (`ROTAS_DO_INVENTARIO`, em `scripts/medir-defeitos.mjs`), e o inventário dos rótulos é dos cartões. O `CHAVES-EN.md` não tem guião, e por isso ganhou à mão a secção do RP4-m e da RP4-m-b, com as células lidas do `strings.mjs` por guião: 10 linhas, 10 iguais às cadeias das duas edições (as 9 chaves que o RP4-m acrescentou e não escreveu lá, e a `derivadaFrase` do RP3, que mudou de texto).
+
+Commits do sítio, no ramo `rp4m-2026-10-05`:
+
+- `f90d3117` · o ponto 5: as duas frases da conta só com a proveniência, e a secção do `CHAVES-EN.md`
+- o commit seguinte guarda só esta pasta e as capturas novas; a sua cabeça vai na resposta de entrega
+
+### As capturas
+
+10 capturas novas em `design/especime-v3/capturas/rp4m-2026-10-05/`, com o prefixo `rp4mb-`, do recibo do salário real nas duas edições e nas larguras 390, 768, 1 024, 1 280 e 1 600 px, da construção da cabeça do código (`capturas-rp4mb.json`, escrito pelo guião das capturas do bloco, alargado com o filtro das rotas, o prefixo e o ficheiro do registo): erros do guião 0, páginas a transbordar 0, plantas visuais mordidas 4 de 4 (o traço da série do recibo sem tracejado e a frase da conta com uma metade acrescentada, nas duas edições), e a frase da conta igual à cadeia da edição nas 10. Substituem, para o leitor, as 10 do recibo do salário real do RP4-m, que ficam na pasta como estavam, com o registo delas em `capturas.json`.
+
+### Custo e modelo
+
+Modelo: Claude Opus 5.5 em todas as respostas do registo da sessão desta passagem (`custo-rp4mb.json`, escrito por `custo.py` sobre o registo da sessão do construtor, com o sha256 dos bytes lidos; o `custo.json` do bloco ficou como estava). 5 714 segundos da primeira entrada do registo até à leitura, 153 respostas do modelo, 64 039 354 símbolos de entrada (a nova, a escrita na cache e a lida da cache). A saída registada, 79 854 símbolos, é um mínimo e não a saída: em 109 respostas o registo guardou a saída de um momento do fluxo e não a final. A sessão continuou depois da leitura (este relatório, a conferência dos números e o último commit), e o total cumulativo que a ferramenta reporta ao lugar de direção quando o agente acaba lê-se do lado de quem lançou.
+
+### O que fica
+
+- **Os três portões do sítio** na cabeça final, que o mandato deixa ao lugar de direção.
+- **Uma travessia por escrita do corredor.** A VP6 procura a correção que leva o valor do sítio ao de agora numa entrada só, e por isso um sítio que nunca publicou o valor intermédio recusa a lista das duas revisões (lido no código de `conferir_correcoes_periodo`, e escrito no `README.md` do publicador). Quando o corredor entrar no trabalho diário, a travessia tem de correr depois de cada escrita dele e antes da seguinte; essa ordem entra na decisão da I202.
+- **O custo da suíte do corredor no portão do motor.** As plantas novas fazem mais corridas e uma travessia a mais, e o portão do motor passou de 440 segundos na cabeça do bloco a 502 na final; o sítio de partida da planta da segunda revisão escreve-se pelo mesmo desenhador da travessia em vez de a correr inteira, e a travessia inteira corre uma vez, na aceitação.
+- **O cabeçalho do ficheiro trancado diz «nunca à mão».** A linha do `xlrd` entrou à mão, no lugar do `pip freeze`, pela decisão do lugar de direção (a I200 e o mandato); refazer o ficheiro num ambiente limpo, como o cabeçalho manda, voltaria a resolver os outros pinos pelos mínimos do `requirements.txt`, e fica para um bloco seu.
+- **As chaves do recibo de uma série que o RP3 acrescentou** continuam fora do `CHAVES-EN.md`; esta passagem escreveu só as do RP4-m e a do RP3 que mudou.
+- O `ISSUES.md` não mudou, como o mandato pede.

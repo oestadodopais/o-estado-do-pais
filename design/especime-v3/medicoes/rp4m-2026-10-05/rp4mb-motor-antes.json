@@ -1,0 +1,65 @@
+{
+  "o_que": "RP4-m-b: os cenários dos achados 4 e 5 contra o corredor das séries (medir-rp4mb-motor.py)",
+  "etiqueta": "antes",
+  "motor_cabeca": "7461321dbac4e4953d154ce8d960091658718c8d",
+  "motor_estado_dos_seguidos": "",
+  "achado_4": {
+    "primeira_corrida": {
+      "revisoes": 2,
+      "revistos": {
+        "serie-pensao-media-anual": [
+          "2020"
+        ],
+        "serie-ihpc-rendas-variacao-homologa": [
+          "2024-03"
+        ]
+      }
+    },
+    "primeira_revisao": {
+      "serie-pensao-media-anual": [
+        [
+          "6 057",
+          "6 058",
+          "2026-10-05"
+        ]
+      ],
+      "serie-ihpc-rendas-variacao-homologa": [
+        [
+          "6,9",
+          "6,91",
+          "2026-10-05"
+        ]
+      ]
+    },
+    "segunda_corrida": {
+      "excecao": "Fail",
+      "mensagem": "serie-pensao-media-anual: a revisão mais recente de 2020 diz «6 058» e o ponto vale «6 059»: a fonte voltou a mudar o ponto, e o corredor das séries regista-o"
+    }
+  },
+  "achado_5": {
+    "ensaio": {
+      "codigo_do_main": 0,
+      "linha": "CORREDOR_DAS_SERIES: PASS · ensaio · 0 ponto(s) novo(s) e 0 revisão(ões) em 24 séries",
+      "linhas_recusa": [],
+      "recusas": [],
+      "pontos_novos": 0,
+      "revisoes": 0,
+      "pedidos_da_pensao": [
+        {
+          "serie": "serie-pensao-media-anual",
+          "fonte": "INE",
+          "dados": "não pedidos: a metainformação não se leu",
+          "estado": "recusado"
+        }
+      ],
+      "pasta_da_pensao": "rp3",
+      "escreveu_as_revisoes": false
+    },
+    "escrita": {
+      "excecao": null,
+      "alojou_a_pasta_do_dia": true,
+      "series_periodo_igual": false,
+      "escreveu_as_revisoes": true
+    }
+  }
+}

@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """RP4-m: o custo do bloco em símbolos e em segundos, lido do registo da sessão do construtor.
 
-Uso: python3 design/especime-v3/medicoes/rp4m-2026-10-05/custo.py <registo da sessão do construtor, .jsonl>
+Uso: python3 design/especime-v3/medicoes/rp4m-2026-10-05/custo.py <registo da sessão do construtor, .jsonl> [<ficheiro de saída>]
 
 O registo é o ficheiro que a ferramenta escreve para a sessão do agente (uma linha por acontecimento). Cada
 resposta do modelo traz o seu `usage`; uma resposta com várias partes repete o mesmo `id` em várias linhas, e
 conta-se uma vez: os campos de entrada pela última linha desse `id`, e o de saída pelo maior valor que as linhas
-desse `id` registam. Escreve `custo.json` nesta pasta, sem o caminho do registo (que é da máquina) e com o
+desse `id` registam. Escreve `custo.json` nesta pasta (ou o ficheiro que o segundo argumento nomear, nesta pasta: a
+passagem RP4-m-b escreve `custo-rp4mb.json`, e o do bloco fica como estava), sem o caminho do registo (que é da máquina) e com o
 resumo sha256 dos bytes lidos, para que a leitura se possa repetir sobre o mesmo ficheiro.
 
 A SAÍDA É UM MÍNIMO, E O GUIÃO MEDE PORQUÊ: na maior parte das respostas o registo guarda o `usage` de um momento
@@ -26,6 +27,7 @@ from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
 registo = Path(sys.argv[1])
+SAIDA = Path(sys.argv[2]).name if len(sys.argv) > 2 else "custo.json"
 dados = registo.read_bytes()
 por_id = {}
 modelos = {}
@@ -55,7 +57,8 @@ def instante(s):
 
 agora = datetime.now(timezone.utc)
 saida = {
-    "o_que": "o custo do bloco RP4-m, lido do registo da sessão do construtor (custo.py)",
+    "o_que": "o custo do bloco RP4-m, lido do registo da sessão do construtor (custo.py)" if SAIDA == "custo.json"
+              else f"o custo da passagem que escreveu {SAIDA}, lido do registo da sessão do seu construtor (custo.py)",
     "registo_sha256": hashlib.sha256(dados).hexdigest(),
     "respostas_do_modelo": len(por_id),
     "modelos": modelos,
@@ -71,5 +74,5 @@ saida = {
     "segundos": int((agora - instante(primeira)).total_seconds()) if primeira else None,
     "segundos_quer_dizer": "da primeira entrada do registo da sessão até ao momento desta leitura",
 }
-(AQUI / "custo.json").write_text(json.dumps(saida, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+(AQUI / SAIDA).write_text(json.dumps(saida, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(json.dumps({k: saida[k] for k in ("respostas_do_modelo", "simbolos_de_entrada", "simbolos_de_saida_minimo", "respostas_com_a_saida_de_um_momento_do_fluxo", "segundos")}, ensure_ascii=False))
