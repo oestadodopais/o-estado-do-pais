@@ -1,0 +1,61 @@
+{
+  "brief": "design/observatorio/BRIEF-H3-a-passagem-de-higiene-de-05-10.md",
+  "guiao": "design/observatorio/medidas/BRIEF-H3.py",
+  "cabeca_lida": "40f0cb58",
+  "medidas": [
+    {
+      "nome": "palavras_da_nota_da_caixa_das_sugestoes_em_portugues",
+      "valor": 144,
+      "comando": "git show 40f0cb58:src/data/sugestoes.mjs · as palavras da nota pt (os segmentos entre plicas juntos)",
+      "conhecido_positivo": {
+        "o_que": "a nota fala do endereço IP e da CNPD",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_de_privacidade_no_sitio",
+      "valor": 0,
+      "comando": "git show 40f0cb58:src/lib/routes.mjs · as chaves de rota «privacidade»",
+      "conhecido_positivo": {
+        "o_que": "a rota das sugestões existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_do_menu_com_o_nome_europa",
+      "valor": 1,
+      "comando": "git show 40f0cb58:src/i18n/strings.mjs · a cadeia uniaoEuropeiaNoMenu com o valor «Europa»",
+      "conhecido_positivo": {
+        "o_que": "a página chama-se «Portugal na União Europeia»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_de_paises_no_livro",
+      "valor": 10,
+      "comando": "git ls-tree 40f0cb58 ledger/series/ · os ficheiros *-paises.yml",
+      "conhecido_positivo": {
+        "o_que": "a faixa do índice harmonizado está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_com_paises_no_mesmo_valor",
+      "valor": 9,
+      "comando": "git show 40f0cb58:ledger/series/<faixa>.yml · as faixas em que dois ou mais pontos têm o mesmo valor",
+      "conhecido_positivo": {
+        "o_que": "a do desemprego de longa duração tem valores repetidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "maximo_de_paises_no_mesmo_valor_numa_faixa",
+      "valor": 4,
+      "comando": "git show 40f0cb58:ledger/series/<faixa>.yml · o maior número de pontos com o mesmo valor numa faixa",
+      "conhecido_positivo": {
+        "o_que": "é maior do que um",
+        "encontrado": true
+      }
+    }
+  ]
+}
