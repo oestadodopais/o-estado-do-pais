@@ -1,0 +1,579 @@
+
+> o-estado-do-pais@0.1.0 build
+> npm run mapa:unidades && npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && astro build && npm run stamp:version && npm run cartoes && npm run gate:html && npm run check:datas && npm run check:cadeia && npm run check:dados && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:nomes && npm run check:lingua && npm run check:formato && npm run check:navegacao && npm run sinais
+
+
+> o-estado-do-pais@0.1.0 mapa:unidades
+> node scripts/mapa-unidades.mjs
+
+[32m  ✓ mapa das unidades · [0m29 ficheiros · 308 concelhos · 394 614 B em public/dados/mapa/ · nenhum mudou
+
+> o-estado-do-pais@0.1.0 ledger:check
+> node tests/linha/cadeias-proveniencia.mjs && node scripts/check-ledger.mjs && node tests/linha/historia-da-proveniencia.mjs && node tests/linha/historia-do-valor.mjs
+
+{
+  "controlos": [
+    {
+      "nome": "cadeia de source",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de source_url",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.title",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.edition",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de document.locator",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de access_date",
+      "passou": true
+    },
+    {
+      "nome": "cadeia de excerpt",
+      "passou": true
+    },
+    {
+      "nome": "instantâneo com as cinco condições",
+      "passou": true
+    },
+    {
+      "nome": "Bandeiras: JSON-stat e formatos anteriores, antes e depois das plantas",
+      "passou": true
+    },
+    {
+      "nome": "Ressalvas e geografias intactas depois das plantas, com bandeiras antigas preservadas",
+      "passou": true
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "source: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "source: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "source: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "source_url: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\": o último \"new_value\" é https://fonte.invalid/b, mas a linha declara https://fonte.invalid/c."
+    },
+    {
+      "nome": "source_url: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-03: cadeia contraditória; \"old_value\" é https://fonte.invalid/a, mas antes vigorava https://fonte.invalid/b."
+    },
+    {
+      "nome": "source_url: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.title: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.title: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.title: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.title\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.edition: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.edition: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.edition: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.edition\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "document.locator: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "document.locator: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "document.locator: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"document.locator\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "access_date: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\": o último \"new_value\" é 2026-08-02, mas a linha declara 2026-08-03."
+    },
+    {
+      "nome": "access_date: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\" a 2026-08-03: cadeia contraditória; \"old_value\" é 2026-08-01, mas antes vigorava 2026-08-02."
+    },
+    {
+      "nome": "access_date: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"access_date\" a 2026-07-31: o acesso não pode ser posterior à mudança que o declara."
+    },
+    {
+      "nome": "excerpt: último valor diferente da linha",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\": o último \"new_value\" é Depois, mas a linha declara Atual."
+    },
+    {
+      "nome": "excerpt: continuidade quebrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\" a 2026-08-03: cadeia contraditória; \"old_value\" é Antes, mas antes vigorava Depois."
+    },
+    {
+      "nome": "excerpt: antes do primeiro acesso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"excerpt\" a 2026-07-31: a entrada é anterior ao acesso em vigor (2026-08-01)."
+    },
+    {
+      "nome": "documento sem classe ficheiro",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "documento sem lista de ficheiros",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "endereço novo diferente do vigente",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/outro/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "recurso de outro conjunto",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/outro-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "recurso posterior à entrada",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260819-203527-9f913853/listagem-de-entidades-prr-20260819.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "ficheiro sem a data do recurso",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "razão portuguesa sem endereço",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    },
+    {
+      "nome": "razão inglesa sem endereço",
+      "mordeu": true,
+      "falha": "[ensaio] história de \"source_url\" a 2026-08-18: cadeia contraditória; \"old_value\" é https://dados.gov.pt/s/resources/dataset-estrutura-de-missao-prr-entidades-1/20260817-203527-9f913853/listagem-de-entidades-prr-20260817.xlsx, mas antes vigorava https://dados.gov.pt/datasets/dataset-estrutura-de-missao-prr-entidades-1."
+    }
+  ],
+  "bandeiras": [
+    {
+      "nome": "JSON-stat: bandeira junto de outro valor",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: bandeira no índice de outra célula",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: outro país no corpo",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: outro país no pedido",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: outro período",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: valor ausente",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: duas células",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: bandeira retirada",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: significado da bandeira alterado",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: diferença além da precisão float64",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "JSON-stat: dimensão repetida",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: bandeira retirada",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: bandeira junto de outro valor",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: outro país no excerto",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: outro país no pedido",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    },
+    {
+      "nome": "Antigo: bandeira fora do fim",
+      "mordeu": true,
+      "falha": "[credito-malparado-2024.yml] declara a bandeira \"p\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    }
+  ],
+  "ressalvas": [
+    {
+      "nome": "Ressalva: falta a versão inglesa",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] \"ressalva_en\" tem de ser texto não vazio; as duas línguas da ressalva são obrigatórias."
+    },
+    {
+      "nome": "Ressalva: texto vazio",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] \"ressalva\" tem de ser texto não vazio; as duas línguas da ressalva são obrigatórias."
+    },
+    {
+      "nome": "Ressalva: número inventado",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] \"ressalva\" contém o número \"987654321\" sem esse número completo no excerto ou na derivação."
+    },
+    {
+      "nome": "Conta numa linha transcrita sem ressalva",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-ministerio-saude.yml] uma linha transcrita com \"derivation\" exige a ressalva nas duas línguas; a conta não pode explicar o valor publicado."
+    },
+    {
+      "nome": "Conta da ressalva sem a versão inglesa",
+      "mordeu": true,
+      "falha": "[oe-2026-despesa-efetiva-administracao-central.yml] uma linha transcrita com \"derivation\" exige a ressalva nas duas línguas; a conta não pode explicar o valor publicado."
+    }
+  ],
+  "geografias": [
+    {
+      "nome": "JSON-stat: linha portuguesa com pedido e corpo de Espanha",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    },
+    {
+      "nome": "JSON-stat: etiqueta de Espanha sob o código de Portugal",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    },
+    {
+      "nome": "JSON-stat: edição de outro país",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-pt.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    },
+    {
+      "nome": "JSON-stat: agregado sem bandeira com país trocado",
+      "mordeu": true,
+      "falha": "[despesa-por-funcao-2024-gf01-ue.yml] JSON-stat gov_10a_exp: geografia divergente entre a linha, o pedido, a edição e a etiqueta do corpo."
+    }
+  ],
+  "contagens": {
+    "controlos": 10,
+    "plantas": 29,
+    "bandeiras": 16,
+    "ressalvas": 5,
+    "geografias": 4
+  },
+  "erros_do_livro": [],
+  "avisos_do_livro": [
+    "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-pago-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.",
+    "[evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço."
+  ]
+}
+
+[90m  aritmética · 77 conferência(s): a especificação partilhada com o motor e os estragos plantados num livro-razão de mentira[0m
+  [32m✓[0m os quatro empates a meio, a divisão exata e as duas derivações que o float64 aceitava.
+
+[90m  livro-razão · 3195 afirmações[0m
+
+[33m  10 aviso(s):[0m
+    [33m·[0m [evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-municipio-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-pago-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-pago-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-universidade-contratado.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-18, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+    [33m·[0m [evora-prr-vencido-aprovado-2026.yml] história do endereço: a 2026-08-20, o instantâneo datado conserva o endereço do mesmo conjunto; não é uma mudança de endereço.
+
+  [32m✓[0m 3195 afirmações válidas · 366 derivadas · 370 com aritmética reavaliada no build · 2046 com o rótulo da fonte
+
+[90m  casas decimais do excerto · 1367 linha(s) lida(s): 117 pelo literal do valor no fim do excerto e 1250 pela forma que o INE publica (1 com o sinal da fonte declarado); 1431 por ler (sem nenhum dos dois), 378 derivada(s) fora da regra · 19 planta(s), 19 certa(s)[0m
+[90m  casas decimais do excerto · linhas do INE sem a forma publicada: 0[0m
+[90m  casas decimais do excerto · 11 linha(s) do INE com o excerto sem o registo da resposta, pelo caminho geral: alentejo-central-poder-de-compra-2023, divida-publica-2024-notificacao-ine-2026-09, divida-publica-2025-notificacao-ine-2026-09, evora-concentracao-vab4-2024, evora-empresas-2024, evora-poder-de-compra-2023, evora-populacao-2021, evora-populacao-2025, evora-vab-empresarial-2024, portugal-concentracao-vab4-2024, saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09[0m
+  [32m✓[0m nenhuma linha sem derivação escreve menos casas decimais do que o excerto da sua fonte.
+  [32m✓[0m 0 marcador(es) «[a verificar]» em notas não publicadas, todos datados e dentro do prazo · 5 plantas apanhadas pelo detetor
+
+[33m  Dívida de proveniência: 8 afirmação(ões) com campos "[a verificar]"[0m
+[90m    agua-nao-faturada-portugal-2024 → source_url, excerpt[0m
+[90m    avisos-pt2030-abertos → source, source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    avisos-pt2030-pessoas-singulares → source, source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    ciclo-substituicao-condutas → source, source_url, access_date, reference_date, excerpt, document.title, document.edition[0m
+[90m    evora-prr-aprovado-2026 → excerpt[0m
+[90m    evora-prr-pago-2026 → excerpt[0m
+[90m    evora-prr-vencido-aprovado-2026 → excerpt[0m
+[90m    saldo-natural-portugal-2025 → source_url, access_date, excerpt, document.title, document.edition[0m
+[90m    Isto não impede o build. Impede que se diga que o livro-razão está fechado.[0m
+
+[90m  séries · 26 série(s) de 4411 ponto(s), 24 com marca da fonte · 16 no tempo · 7 linha(s) presa(s) à sua série · 29 planta(s), uma ou mais por regra, vistas a morder[0m
+  [32m✓[0m cada série de países tem os 27 e a União e as gémeas batem como números; cada série no tempo tem a cadência com as lacunas declaradas, cada valor no seu excerto, a derivada refeita, e cada linha presa é o ponto do seu período.
+
+
+[90m  amarra das decisões · 125 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
+  [32m✓[0m cada texto no ar tem uma decisão registada que o governa, e cada frase que a constituição lhe cita está lá.
+
+[90m  bytes de controlo · 3 de 3 ficheiro(s) sem nenhum · 3 planta(s) vista(s)[0m
+  [32m✓[0m os ficheiros desta régua leem-se como texto, do primeiro byte ao último.
+
+{"controlos":11,"plantas":9,"controlos_integros":11,"plantas_mordidas":9}
+História do valor: 2 controlos e 4 plantas.
+
+> o-estado-do-pais@0.1.0 check:registo
+> node scripts/check-registo.mjs
+
+
+[90m  registo · os números dos documentos que governam, contra a fonte[0m
+
+[90m  os factos, medidos:[0m
+[90m     3195  linhas do livro-razão                                ledger/claims/*.yml[0m
+[90m           2.ª medição: loadClaims().size · subconjunto: as que o painel semanal reconfere = 91[0m
+[90m      308  concelhos com página                                 src/data/municipios.mjs · MUNICIPIOS_COM_PAGINA[0m
+[90m           2.ª medição: src/data/concelhos.gerado.json · linha `municipios-portugal-caop-2025`[0m
+[90m       17  estudos (trabalhos) no arquivo                       src/data/studies.mjs · WORKS[0m
+[90m           uma só fonte · linha `estudos-publicados`[0m
+[90m       25  edições do arquivo                                   src/data/studies.mjs · EDITIONS[0m
+[90m           uma só fonte · linha `edicoes-publicadas`[0m
+[90m       25  documentos alojados                                  studies-src/<slug>/<lingua>.html, declarados em studies-src/manifest.yml[0m
+[90m           2.ª medição: studies-src/manifest.yml · edicoes[0m
+[90m        7  correções publicadas                                 ledger/claims/*.yml · corrections[].kind == 'correcao'[0m
+[90m           uma só fonte · linha `correcoes-publicadas`[0m
+[90m       24  passos da construção                                 package.json · scripts.build[0m
+[90m           uma só fonte[0m
+[90m       17  páginas de leitura (edições com registo de conteúdo) registos/manifest.json[0m
+[90m           uma só fonte[0m
+
+[90m  hoje é 05.10.2026; uma afirmação datada de hoje confere-se como corrente.[0m
+
+  [32m✓[0m VISAO.md                                          2 corrente(s) ·  5 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 7 avaliada(s), chão 4
+[90m      VISAO.md:23 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      VISAO.md:23 «2 602 linhas» saltada pela forma (iii-a)[0m
+[90m      VISAO.md:35 «2 975 linhas» saltada pela forma (i) · 22.09.2026[0m
+[90m      VISAO.md:38 «treze estudos» saltada pela forma (i) · 22.09.2026[0m
+[90m      VISAO.md:38 «doze estudos» saltada pela forma (iii-a)[0m
+[90m      VISAO.md:23 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+  [32m✓[0m README.md                                         5 corrente(s) · 10 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 15 avaliada(s), chão 15
+[90m      README.md:30 «quinze passos encadeados» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:42 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:42 «132 linhas» saltada pela forma (iii-a)[0m
+[90m      README.md:246 «oito edições com registo» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:263 «vinte e cinco documentos» saltada pela forma (i) · 01.10.2026[0m
+[90m      README.md:266 «dezoito documentos» saltada pela forma (iii-a)[0m
+[90m      README.md:267 «dezoito edições do arquivo» saltada pela forma (iii-a)[0m
+[90m      README.md:267 «treze trabalhos» saltada pela forma (iii-a)[0m
+[90m      README.md:344 «2 916 linhas» saltada pela forma (i) · 02.09.2026[0m
+[90m      README.md:344 «132 linhas» saltada pela forma (iii-a)[0m
+[90m      README.md:195 «…ebe `lang` e mais nada; as rotas PT e EN são duas linhas cada. Os dados são partilhados; só as palavr…» distributiva (é por unidade, não é um total): não conferida[0m
+[90m      README.md:61 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:89 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:93 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:97 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:157 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:162 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:194 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:248 «oito edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:327 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      README.md:352 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+  [32m✓[0m design/especime-v3/PENDENTES-DO-DIRETOR.md        2 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  1 valor(es) do sítio · 4 avaliada(s), chão 3
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:9 «oito páginas de leitura» saltada pela forma (i) · 24.08.2026[0m
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:21 «uma edição» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+[90m      design/especime-v3/PENDENTES-DO-DIRETOR.md:26 «duas edições» não conferida: «edições» diz o arquivo (25) e as páginas de leitura (17); o facto escreve-se com o composto.[0m
+  [32m✓[0m CLAUDE.md                                         0 corrente(s) ·  0 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 0 avaliada(s), chão 0
+  [32m✓[0m design/observatorio/PLANO-fiabilidade-2026-09-02.md  0 corrente(s) ·  1 datada(s) ·  0 subconjunto(s) ·  0 valor(es) do sítio · 1 avaliada(s), chão 1
+[90m      design/observatorio/PLANO-fiabilidade-2026-09-02.md:11 «32 linhas» saltada pela forma (ii) · 02.09.2026[0m
+
+  [32m✓[0m 8 facto(s) medidos na fonte (3 com segunda medição, 4 reconciliados com a linha que os publica) · 9 afirmação(ões) corrente(s) conferida(s) · 17 datada(s) saltada(s) · 0 subconjunto(s) · 1 valor(es) do sítio com o id ao lado
+[90m        5 documento(s) lidos · 42 unidade(s) no vocabulário do livro-razão · chão total 23 · prosa não se lê: «hoje só `evora`» e «o arquivo vazio» são do check:prosa (F3.1).[0m
+
+
+> o-estado-do-pais@0.1.0 check:cruzamento
+> node scripts/check-cruzamento.mjs
+
+
+[90m  cruzamentos · 3070 linha(s) de origem externa em 5 registo(s) · 2155 com reconferência de programa acrescentada (3077 entrada(s)) · 5 planta(s) vista(s)[0m
+[90m  rótulos da fonte · 2046 de 3195 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)[0m
+[90m  séries · 26 linha(s) de série em 1 registo(s) · 4 planta(s) vista(s)[0m
+[90m  cruzamentos · 5 ficheiro(s) inteiro(s) em 4 registo(s) · 5 item(ns) da agenda reconferidos[0m
+[90m    avaliacao-economica-regional-de-portugal-2026: 8[0m
+[90m    concelhos-2026: 2767[0m
+[90m    dominios-2026: 40[0m
+[90m    evora-contas-da-camara-2010-2025: 33[0m
+[90m    evora-economia-e-dinheiro-publico-de-fora-da-camara: 17[0m
+[90m    evora-quem-governou-a-camara-2009-2025: 19[0m
+[90m    oe-2026: 186[0m
+
+  [32m✓[0m cada linha e cada ficheiro vindos do motor são, byte a byte, o que atravessou.
+
+
+> o-estado-do-pais@0.1.0 check:documentos
+> node scripts/check-documentos.mjs
+
+
+[90m  portão dos documentos · 25 edição(ões) no manifesto · 25 em disco[0m
+[90m    · "evora-quinze-anos-cinco-mandatos/pt" não é artefacto: veio de «researchhub» — content/08 Évora Mandates/Évora — Quinze Anos, Cinco Mandatos (pt-PT).html @ afb8bfbcdb200c6547d3f614c3a3c84d35736019[0m
+[90m    · "evora-economia-investidores-portas-abertas-2026/pt" não é artefacto: veio de «researchhub» — content/06 Évora Economy/Évora — Economia, Investidores, Portas Abertas 2026 (pt-PT).html @ 5faeb63f2c581178ff12d4a042df6d9cf09c96b5[0m
+[90m    · "evora-orcamentado-pago-devido-2025/pt" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Orçamentado, Pago, Devido 2025 (pt-PT).html @ addeb8483e97a126f37be2f21ec29b1a0ac21303[0m
+[90m    · "evora-orcamentado-pago-devido-2025/en" não é artefacto: veio de «researchhub» — content/07 Évora Municipal Accounts/Évora — Budgeted, Paid, Owed 2025.html @ addeb8483e97a126f37be2f21ec29b1a0ac21303[0m
+[90m    · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" não é artefacto: veio de «researchhub» — content/09 Évora Pelouros/Évora — Os Pelouros, Quem Os Teve, O Que Fizeram (pt-PT).html @ 42578647d01979df0b15af1b4de64f31ffe81022[0m
+[90m    · "evora-prometido-pago-auditado-2026/pt" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Prometido, Pago, Auditado 2026 (pt-PT).html @ 530e380f8db07eda5b611cee0dc573b0ed908d84[0m
+[90m    · "evora-prometido-pago-auditado-2026/en" não é artefacto: veio de «researchhub» — content/04 Évora Public Money/Évora — Promised, Paid, Audited 2026.html @ 530e380f8db07eda5b611cee0dc573b0ed908d84[0m
+[90m    · "penalizacoes-por-reforma-antecipada-2026/pt" não é artefacto: veio de «researchhub» — content/11 Seguranca Social/Penalizações por Reforma Antecipada em Portugal (pt-PT).html @ e53a3f2d77b65d72a994b8a8976645c5b9885df2[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/pt" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — O Prometido, o Painel, o Dinheiro (pt-PT).html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/en" não é artefacto: veio de «researchhub» — content/14 Évora 2027/Évora 2027 — Promised, Panel, Money.html @ d768bdea4c99e06c39eaf276af7ae0f3b4901a9b[0m
+[90m    · "evora-contas-da-camara-2010-2025/pt" não é artefacto: veio de «researchhub» — content/16 Évora Contas da Câmara/As contas da Câmara de Évora, 2010 a 2025 (pt-PT).html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4[0m
+[90m    · "evora-contas-da-camara-2010-2025/en" não é artefacto: veio de «researchhub» — content/16 Évora Contas da Câmara/The accounts of the Câmara de Évora, 2010 to 2025.html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4[0m
+[90m    · "evora-quem-governou-a-camara-2009-2025/pt" não é artefacto: veio de «researchhub» — content/17 Évora Quem Governou/Quem governou a Câmara de Évora, 2009 a 2025 (pt-PT).html @ 1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087[0m
+[90m    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/pt" não é artefacto: veio de «researchhub» — content/18 Évora Economia e Dinheiro de Fora/A economia de Évora e o dinheiro público que chega ao concelho por fora da câmara (pt-PT).html @ 1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087[0m
+[90m    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/en" não é artefacto: veio de «researchhub» — content/18 Évora Economia e Dinheiro de Fora/The economy of Évora and the public money that reaches the municipality outside the council.html @ 1f1fe1ba4f0d61b9a279f3c6018fcab4abcd1087[0m
+[90m    · "evora-2027-capital-europeia-da-cultura/pt" não é artefacto: veio de «researchhub» — content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, Capital Europeia da Cultura (pt-PT).html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4[0m
+[90m    · "evora-2027-capital-europeia-da-cultura/en" não é artefacto: veio de «researchhub» — content/19 Évora 2027 Capital Europeia da Cultura/Évora 2027, European Capital of Culture.html @ a8febe004599c0ebcf62d62d6c45487ccf0542d4[0m
+[90m  registos de conteúdo · 17 atravessado(s) · D5 correu em 16 e não corre em 1[0m
+[90m    · "avaliacao-economica-regional-de-portugal-2026/pt" · 53 bloco(s) · 411 referência(s) · o D5 não corre: os bytes alojados são um artefacto do claude.ai e a edição que o motor prova é «Technical Source/artifact_pt.html», que o sítio não aloja (DECISIONS §1.64)[0m
+[90m    · "evora-2027-capital-europeia-da-cultura/en" · 134 bloco(s) · 176 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-2027-capital-europeia-da-cultura/pt" · 134 bloco(s) · 176 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/en" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-2027-prometido-painel-dinheiro/pt" · 130 bloco(s) · 190 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-contas-da-camara-2010-2025/en" · 171 bloco(s) · 486 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-contas-da-camara-2010-2025/pt" · 172 bloco(s) · 486 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/en" · 161 bloco(s) · 530 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-economia-e-dinheiro-publico-de-fora-da-camara/pt" · 161 bloco(s) · 530 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-economia-investidores-portas-abertas-2026/pt" · 49 bloco(s) · 171 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-orcamentado-pago-devido-2025/en" · 87 bloco(s) · 194 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-orcamentado-pago-devido-2025/pt" · 88 bloco(s) · 194 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-os-pelouros-quem-os-teve-o-que-fizeram/pt" · 138 bloco(s) · 296 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-prometido-pago-auditado-2026/en" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-prometido-pago-auditado-2026/pt" · 95 bloco(s) · 324 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-quem-governou-a-camara-2009-2025/pt" · 211 bloco(s) · 484 referência(s) · o D5 correu e bate[0m
+[90m    · "evora-quinze-anos-cinco-mandatos/pt" · 173 bloco(s) · 682 referência(s) · o D5 correu e bate[0m
+
+  [32m✓[0m cada documento alojado e cada registo de conteúdo são, byte a byte, o que o seu manifesto declara.
+
+13:12:44 [vite] Re-optimizing dependencies because vite config has changed
+13:12:44 [types] Generated 83ms
+13:12:44 [build] output: "static"
+13:12:44 [build] mode: "static"
+13:12:44 [build] directory: <worktree do sítio>/dist/
+13:12:44 [build] Collecting build info...
+13:12:44 [build] ✓ Completed in 102ms.
+13:12:44 [build] Building static entrypoints...
+13:12:44 [vite] ✓ built in 267ms
+13:12:44 [vite] ✓ built in 20ms
+13:12:44 [build] Rearranging server assets...
+
+ generating static routes 
+13:12:44   ├─ /404.html (+18ms) 
+13:12:44   ├─ /a-verificar/index.html (+2ms) 
+13:12:45   ├─ /agenda/index.html (+38ms) 
+13:12:45   ├─ /areas/financas/index.html (+9ms) 
+13:12:45   ├─ /areas/economia-e-coesao-territorial/index.html (+24ms) 
+13:12:45   ├─ /areas/infraestruturas-e-habitacao/index.html (+7ms) 
+13:12:45   ├─ /areas/justica/index.html (+6ms) 
+13:12:45   ├─ /areas/administracao-interna/index.html (+8ms) 
+13:12:45   ├─ /areas/educacao-ciencia-e-inovacao/index.html (+7ms) 
+13:12:45   ├─ /areas/saude/index.html (+6ms) 
+13:12:45   ├─ /areas/trabalho-solidariedade-e-seguranca-social/index.html (+12ms) 
+13:12:45   ├─ /areas/ambiente-e-energia/index.html (+6ms) 
+13:12:45   ├─ /areas/index.html (+17ms) 
+13:12:45   ├─ /correcoes/index.html13:12:45 [ERROR] Error: mudancas: a linha "custo-unitario-do-trabalho-2024" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.
+    at file://<worktree do sítio>/dist/.prerender/chunks/mudancas_majDOUPE.mjs:289:21
+    at Array.map (<anonymous>)
+    at correcoesDasLinhas (file://<worktree do sítio>/dist/.prerender/chunks/mudancas_majDOUPE.mjs:285:82)
+    at mudancasDoRegisto (file://<worktree do sítio>/dist/.prerender/chunks/mudancas_majDOUPE.mjs:336:6)
+    at file://<worktree do sítio>/dist/.prerender/chunks/CorrecoesView_DqJxADMm.mjs:25:19
+    at AstroComponentInstance.RegistoCorrecoes [as factory] (file://<worktree do sítio>/dist/.prerender/chunks/Base_DeyPBfK7.mjs:28:10)
+    at AstroComponentInstance.init (file://<worktree do sítio>/dist/.prerender/chunks/server_3p5nZh41.mjs:1707:27)
+    at AstroComponentInstance.render (file://<worktree do sítio>/dist/.prerender/chunks/server_3p5nZh41.mjs:1714:28)
+    at Object.render (file://<worktree do sítio>/dist/.prerender/chunks/server_3p5nZh41.mjs:2369:19)
+    at renderChild (file://<worktree do sítio>/dist/.prerender/chunks/server_3p5nZh41.mjs:1626:44)
+13:12:45 [ERROR] [build] Caught error rendering /correcoes: Error: mudancas: a linha "custo-unitario-do-trabalho-2024" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.
+mudancas: a linha "custo-unitario-do-trabalho-2024" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.
+  Stack trace:
+    at file://<worktree do sítio>/dist/.prerender/chunks/mudancas_majDOUPE.mjs:289:21
+    at correcoesDasLinhas (file://<worktree do sítio>/dist/.prerender/chunks/mudancas_majDOUPE.mjs:285:82)
+    at file://<worktree do sítio>/dist/.prerender/chunks/CorrecoesView_DqJxADMm.mjs:25:19
+    at AstroComponentInstance.init (file://<worktree do sítio>/dist/.prerender/chunks/server_3p5nZh41.mjs:1707:27)
+    at Object.render (file://<worktree do sítio>/dist/.prerender/chunks/server_3p5nZh41.mjs:2369:19)

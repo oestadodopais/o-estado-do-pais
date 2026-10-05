@@ -1,0 +1,103 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/registos-de-trabalho.py. Não se edita à mão.",
+  "registos": [
+    {
+      "registo": "brief-reproduzido.json",
+      "cabeca": "006685ae",
+      "arvore": "limpa no que o git segue",
+      "prova": "o guião lê só a cabeça presa 3a253f73 pelo git (git show), e não a árvore"
+    },
+    {
+      "registo": "capturas-antes.json",
+      "cabeca": "006685ae2355c602b8a133cc51c7b104745bedd9",
+      "arvore": "uma exportação do commit (git archive)",
+      "prova": "o manifesto escreve o commit da exportação"
+    },
+    {
+      "registo": "leituras-antes.json",
+      "cabeca": "006685ae2355c602b8a133cc51c7b104745bedd9",
+      "arvore": "0 linha(s) do livro mudada(s)",
+      "prova": "o próprio ficheiro escreve a cabeça e as linhas do livro mudadas na árvore"
+    },
+    {
+      "registo": "aplicacao.json e aplicar-releituras.log",
+      "cabeca": "006685ae",
+      "arvore": "as linhas lidas pela cabeça presa 3a253f73 (git show), e escritas na árvore",
+      "prova": "o resumo de cada linha composta é o dos bytes do commit 8dbdcac2 em 9 de 9 linhas",
+      "linhas_iguais_ao_commit": 9
+    },
+    {
+      "registo": "selar-historias.log e .codigos, ledger-check-1.log e .codigo, leituras-depois.json",
+      "cabeca": "006685ae2355c602b8a133cc51c7b104745bedd9",
+      "arvore": "as nove linhas compostas e o registo das histórias, ainda por commitar (9 linha(s) do livro mudada(s), dita(s) pelas leituras de depois)",
+      "prova": "as linhas da árvore eram as compostas (a linha acima), e o commit seguinte, 8dbdcac2, é essas linhas e o registo das histórias"
+    },
+    {
+      "registo": "ledger-check-2.log e .codigo",
+      "cabeca": "8dbdcac2",
+      "arvore": "as reconferências que o painel do fim escreveu nas nove linhas, ainda por commitar",
+      "prova": "pela ordem dos commits: o commit seguinte, 9163309e, é exatamente as nove linhas que o painel escreveu"
+    },
+    {
+      "registo": "build-sem-o-lugar-das-linhas.log e .codigo",
+      "cabeca": "8dbdcac2",
+      "arvore": "limpa no que o git segue",
+      "prova": "pela ordem dos commits: a construção falhou antes do carimbo da versão; a queixa (a linha do custo unitário do trabalho de 2024 sem lugar declarado) só existe entre 8dbdcac2 e d08325c2, que a declarou"
+    },
+    {
+      "registo": "build-a1-pela-primeira-geografia.log e .codigo",
+      "cabeca": "69c727f3",
+      "arvore": "limpa no que o git segue",
+      "prova": "o próprio registo escreve «versão · 69c727f», do carimbo da construção",
+      "versao_no_registo": true
+    },
+    {
+      "registo": "motor/motor-c2.json",
+      "cabeca": "af7bb58187dd1a22f6d1a7bf15547fc20f78a4e0",
+      "arvore": "limpa",
+      "prova": "o próprio ficheiro escreve a cabeça do motor e o estado da árvore"
+    },
+    {
+      "registo": "portoes-b72e639d/",
+      "cabeca": "b72e639db588a6a11baa0edea9459f66b9d5df70",
+      "arvore": "limpa no que o git segue",
+      "prova": "portoes-b72e639d/cabeca e estado.fim, escritos por scripts/leituras/portoes.sh (só ficheiros por seguir: esta pasta, a das capturas e a ligação das dependências)"
+    },
+    {
+      "registo": "rotulos-escrever.log e .codigo, check-rotulos-depois-de-escrever.log e .codigo",
+      "cabeca": "b72e639d",
+      "arvore": "a construção dessa cabeça; o segundo correu com o inventário reescrito por commitar",
+      "prova": "o inventário na árvore é, byte a byte, o do commit fdd7ec9a",
+      "inventario_igual_ao_commit": true
+    },
+    {
+      "registo": "check-voz-sem-a-contagem-nova.log, com o código na linha check:voz de resto-da-cadeia-na-69c727f3.codigos (os códigos das 6 conferências do fim da cadeia do build, corridas à mão sobre essa construção)",
+      "cabeca": "69c727f3",
+      "arvore": "a construção dessa cabeça, com as emendas da A1 e do executor das plantas por commitar (o commit 9789d36b), que o check:voz não lê",
+      "prova": "pela ordem dos commits: a construção lida é a do registo build-a1-pela-primeira-geografia.log, que escreve «versão · 69c727f»; a queixa (a contagem de 72 sem linha no inventário) só existe entre 8dbdcac2 e 729562f8"
+    },
+    {
+      "registo": "motor/gate-final.*",
+      "cabeca": "af7bb58187dd1a22f6d1a7bf15547fc20f78a4e0",
+      "arvore": "limpa",
+      "prova": "motor/gate-final.cabeca e motor/gate-final.estado, escritos antes de correr o core.gate"
+    },
+    {
+      "registo": "portoes/",
+      "cabeca": "57be3c40fc85276a8affef9d5007b06b2d39eba8",
+      "arvore": "estado: ?? design/especime-v3/capturas/c2-2026-10-05/\n?? design/especime-v3/medicoes/c2-2026-10-05/\n?? node_modules",
+      "prova": "portoes/cabeca, portoes/cabeca.fim e portoes/estado.fim, escritos por scripts/leituras/portoes.sh"
+    },
+    {
+      "registo": "plantas-pais.json, recibos-c2.json, capturas-depois.json, paginas-c2.json",
+      "cabeca": "57be3c40fc85276a8affef9d5007b06b2d39eba8",
+      "arvore": "limpa no que o git segue",
+      "prova": "apos-os-portoes.cabeca e apos-os-portoes.estado, escritos por apos-os-portoes.sh antes dos passos"
+    }
+  ],
+  "linhas_compostas_iguais_ao_commit_8dbdcac2": 9,
+  "conhecido_positivo": {
+    "o_que": "a mesma comparação, contra os bytes da cabeça presa 3a253f73, dá diferente nas nove",
+    "encontrado": true
+  }
+}

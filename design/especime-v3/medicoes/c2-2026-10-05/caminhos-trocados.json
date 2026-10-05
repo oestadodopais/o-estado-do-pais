@@ -1,0 +1,133 @@
+{
+  "design/especime-v3/medicoes/c2-2026-10-05/apos-os-portoes.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/build-a1-pela-primeira-geografia.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {
+      "<worktree do sítio>": 1
+    }
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/build-exportacao-base.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {
+      "<pasta temporária>": 1,
+      "<utilizador>": 1
+    }
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/build-exportacao-cabeca.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {
+      "<pasta de rascunho>": 1
+    }
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/build-sem-o-lugar-das-linhas.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {
+      "<worktree do sítio>": 15
+    }
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/captar-antes.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/captar-depois.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/check-indice-do-sitio-na-b72e639d.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/check-rotulos-depois-de-escrever.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/check-series-na-b72e639d.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/check-voz-sem-a-contagem-nova.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/conferir-mapa-base.txt": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/motor/gate-1.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {
+      "<casa>": 1,
+      "<worktree do motor>": 1
+    }
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/motor/gate-1b.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/motor/gate-2.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/motor/gate-final.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/paginas-c2.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/plantas-pais-antes.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {
+      "<pasta temporária>": 2,
+      "<worktree do sítio>": 6
+    }
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/plantas-pais.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/portoes-b72e639d/build.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {
+      "<worktree do sítio>": 1
+    }
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/portoes-b72e639d/typecheck.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/portoes-b72e639d/verify.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {
+      "<worktree do sítio>": 2
+    }
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/portoes/build.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {
+      "<worktree do sítio>": 1
+    }
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/portoes/typecheck.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/portoes/verify.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {
+      "<worktree do sítio>": 2
+    }
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/recibos-c2.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  },
+  "design/especime-v3/medicoes/c2-2026-10-05/rotulos-escrever.log": {
+    "restos_do_utilizador": 0,
+    "trocas": {}
+  }
+}

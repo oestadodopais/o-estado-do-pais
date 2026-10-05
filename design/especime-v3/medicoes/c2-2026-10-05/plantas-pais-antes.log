@@ -1,0 +1,30 @@
+file://<worktree do sítio>/tests/pais/pais-da-base-c2.mjs:45
+ if(!passou)throw Error(`${nome}: ${saida}`);
+                  ^
+
+Error: páginas sem estrago: node:fs:440
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open '<pasta temporária>/oedp-pais-bCjxGY/dist/version.json'
+    at Object.readFileSync (node:fs:440:20)
+    at dataDaConstrucao (file://<worktree do sítio>/scripts/estudos-em-curso.mjs:9:33)
+    at file://<worktree do sítio>/scripts/check-pais.mjs:28:44
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async file://<worktree do sítio>/[eval1]:2:1 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '<pasta temporária>/oedp-pais-bCjxGY/dist/version.json'
+}
+
+Node.js v22.23.1
+
+    at prova (file://<worktree do sítio>/tests/pais/pais-da-base-c2.mjs:45:19)
+    at file://<worktree do sítio>/tests/pais/pais-da-base-c2.mjs:48:2
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1
