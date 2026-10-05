@@ -47,6 +47,7 @@ import { getClaim } from './ledger.mjs';
 import { nomeDoCartao } from './nomes.mjs';
 import { todosOsEstudos } from './estudos-b1.mjs';
 import { mudancasDoIndice } from './mudancas.mjs';
+import { slugsDasExplicacoes, explicacaoResolvida } from './explicacoes.mjs';
 
 /**
  * COMO CADA CHAVE DA TABELA DAS ROTAS ENTRA NO ÍNDICE, com a razão.
@@ -91,6 +92,9 @@ export const COMO_ENTRA = {
   agenda: { como: 'porta', razao: 'A agenda.' },
   sugestoes: { como: 'porta', razao: 'O formulário das sugestões.' },
   privacidade: { como: 'porta', razao: 'A página «Privacidade»: o que fica guardado de quem escreve na caixa das sugestões, e porquê (bloco H3).' },
+  explicacoes: { como: 'porta', razao: 'A lista das explicações, com a leitura da semana e as explicações por baixo (bloco EX1).' },
+  leituraDaSemana: { como: 'porta', razao: 'A leitura da semana, gerada em cada construção a partir do registo das correções e das releituras (bloco EX1).' },
+  explicacao: { como: 'lista', razao: 'As explicações, de `slugsDasExplicacoes()`, pela data de escrita, a mais recente primeiro (bloco EX1).' },
   linha: { como: 'pela-lista', pela: 'livro', razao: 'As páginas de linha são uma por número; entram pelo índice das linhas, que as lista todas.' },
   livroConcelho: { como: 'pela-lista', pela: 'livroConcelhos', razao: 'As páginas do livro-razão de cada concelho entram pelo índice dos concelhos do livro-razão.' },
   documento: { como: 'pela-lista', pela: 'estudo', razao: 'O documento original de um estudo abre-se da página do estudo, e fica fora do mapa do sítio por escrito (`astro.config.mjs`).' },
@@ -127,7 +131,8 @@ export const COMO_ENTRA = {
  * @typedef {{ tipo: 'entrada', chave: ChaveDeRota, href: string, rotulo: string, linha: string }} PortaDeTema
  * @typedef {{ tipo: 'estudo', chave: 'estudo', href: string, ficha: ReturnType<typeof todosOsEstudos>[number] }} PortaDeEstudo
  * @typedef {{ tipo: 'serie', chave: 'serie', href: string, eixo: 'pais'|'periodo', id: string, linha: Linha|null, sufixo: string, nome: string }} PortaDeSerie
- * @typedef {PortaSimples|PortaDeTema|PortaDeEstudo|PortaDeSerie} Porta
+ * @typedef {{ tipo: 'explicacao', chave: 'explicacao', href: string, slug: string, titulo: import('./explicacoes.mjs').PedacoDaExplicacao[] }} PortaDeExplicacao
+ * @typedef {PortaSimples|PortaDeTema|PortaDeEstudo|PortaDeSerie|PortaDeExplicacao} Porta
  */
 
 /** A colação da língua da página, para as listas por nome. */
@@ -275,6 +280,12 @@ export function indiceDoSitio(lang) {
     tipo: 'estudo', chave: 'estudo', href: ficha.rota, ficha,
   }));
 
+  /* AS EXPLICAÇÕES (bloco EX1, 05.10.2026): a lista, e por baixo dela a leitura da semana e cada explicação pela data de
+     escrita; o título de uma explicação leva o ano pelo período de uma linha, e a porta rende-o com as mesmas marcas. */
+  const explicacoes = slugsDasExplicacoes().map((slug) => /** @type {PortaDeExplicacao} */ ({
+    tipo: 'explicacao', chave: 'explicacao', href: routePath('explicacao', lang, { slug }), slug, titulo: explicacaoResolvida(slug, lang).titulo,
+  }));
+
   return {
     pais: {
       titulo: s.indice.seccoes.pais,
@@ -288,6 +299,7 @@ export function indiceDoSitio(lang) {
     },
     uniao: { titulo: s.indice.seccoes.uniao, portas: [pagina('uniaoEuropeia', lang, s.nav.uniaoEuropeia)] },
     estudos: { titulo: s.indice.seccoes.estudos, portas: [pagina('estudos', lang, s.nav.estudos, estudos)] },
+    explicacoes: { titulo: s.indice.seccoes.explicacoes, portas: [pagina('explicacoes', lang, s.nav.explicacoes, [pagina('leituraDaSemana', lang, s.semana.titulo), ...explicacoes])] },
     numeros: {
       titulo: s.indice.seccoes.numeros,
       portas: [

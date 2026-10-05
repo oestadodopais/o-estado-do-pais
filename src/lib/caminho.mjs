@@ -64,6 +64,7 @@ import { NOMES_DAS_SERIES } from '../data/series-no-tempo.mjs';
 import { nomeDaMedida } from './nomes.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
 import { SUGESTOES } from '../data/sugestoes.mjs';
+import { explicacaoResolvida } from './explicacoes.mjs';
 
 /** A chave de rota de cada entrada, e o identificador dela nas declarações (bloco PP1). */
 export const ENTRADA_DA_ROTA = {
@@ -106,6 +107,11 @@ export const PAI_DA_ROTA = {
   sugestoesNaoChegou: 'sugestoes',
   /* A PÁGINA «PRIVACIDADE» (bloco H3, 05.10.2026) é uma página fixa como as sugestões: «Início › Privacidade». */
   privacidade: 'home',
+  /* AS EXPLICAÇÕES (bloco EX1, 05.10.2026): a lista é uma página fixa, «Início › Explicações», e a leitura da semana
+     e cada explicação são filhas dela, como um estudo é filho da lista dos estudos. */
+  explicacoes: 'home',
+  leituraDaSemana: 'explicacoes',
+  explicacao: 'explicacoes',
   marcador: 'home',
   agenda: 'home',
   uniaoEuropeia: 'home',
@@ -204,6 +210,9 @@ function etiquetaDaRota(chave, lang) {
     sugestoes: SUGESTOES.titulo[lang],
     /* A página «Privacidade» chama-se como a porta do rodapé que a abre, e como o seu `<h1>` (bloco H3). */
     privacidade: s.nav.privacidade,
+    /* A lista das explicações e a leitura da semana chamam-se pelo seu `<h1>` (bloco EX1). */
+    explicacoes: s.nav.explicacoes,
+    leituraDaSemana: s.semana.titulo,
   };
   /* O nome de uma entrada é o da declaração do lugar de direção, que é o `<h1>` da página. */
   const entrada = ENTRADAS.find((e) => e.id === ENTRADA_DA_ROTA[/** @type {keyof typeof ENTRADA_DA_ROTA} */ (chave)]);
@@ -216,7 +225,8 @@ function etiquetaDaRota(chave, lang) {
  *
  * @typedef {{ tipo: 'chave'|'lugar'|'nome'|'estudo', texto: string, fonte?: string, daSerie?: string }} FolhaDeTexto
  * @typedef {{ tipo: 'medida', linha: Linha }} FolhaDeMedida
- * @typedef {FolhaDeTexto|FolhaDeMedida} Folha
+ * @typedef {{ tipo: 'explicacao', slug: string, titulo: import('./explicacoes.mjs').PedacoDaExplicacao[] }} FolhaDeExplicacao
+ * @typedef {FolhaDeTexto|FolhaDeMedida|FolhaDeExplicacao} Folha
  */
 
 /**
@@ -259,6 +269,12 @@ export function folhaDoCaminho(chave, params, lang) {
     case 'estudo': {
       if (!slug) return null;
       return { tipo: 'estudo', texto: studyTitle(slug, lang).titulo };
+    }
+    case 'explicacao': {
+      /* O TÍTULO DE UMA EXPLICAÇÃO (bloco EX1, 05.10.2026) é a pergunta do leitor, com o ano pelo período de uma
+         linha: a folha leva os pedaços resolvidos, e o caminho rende-os com as mesmas marcas da página. */
+      if (!slug) return null;
+      return { tipo: 'explicacao', slug, titulo: explicacaoResolvida(slug, lang).titulo };
     }
     case 'linha': {
       const c = slug ? getClaim(slug) : null;

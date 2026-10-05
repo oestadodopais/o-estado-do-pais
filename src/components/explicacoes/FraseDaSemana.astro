@@ -1,0 +1,26 @@
+---
+/**
+ * A PRIMEIRA FRASE DA LEITURA DA SEMANA (bloco EX1, 05.10.2026).
+ *
+ * A janela e as três contagens, pelos pedaços de `primeiraFraseDaSemana()` (`src/lib/leitura-da-semana.mjs`):
+ * as palavras são cadeias da casa, e cada número e cada data vai num `<span data-semana>` com a forma das
+ * contagens da prova (a letra monoespaçada de `prova-valor`, os milhares da casa), que o portão de HTML reconta
+ * por conta própria (`scripts/semana-do-portao.mjs`). Quem a rende diz onde está a janela (`data-semana-janela`,
+ * no elemento que a embrulha) e põe a porta: na página da semana a frase não é ligação, e na lista das
+ * explicações e na primeira página é ela a porta para a página da semana.
+ */
+import { leituraDaSemana, primeiraFraseDaSemana } from '../../lib/leitura-da-semana.mjs';
+import { dataDaCasa } from '../../lib/datas.mjs';
+import { milharesDaCasa } from '../../lib/formato.mjs';
+import { t } from '../../i18n/strings.mjs';
+
+const { lang = 'pt', leitura = leituraDaSemana() } = Astro.props;
+const s = t(lang);
+const pedacos = primeiraFraseDaSemana(leitura, s.semana, (iso) => dataDaCasa(iso, lang), (n) => milharesDaCasa(String(n)));
+---
+
+{
+  pedacos.map((/** @type {any} */ p) =>
+    typeof p === 'string' ? <Fragment set:text={p} /> : <span class="prova-valor" data-semana={p.semana} set:text={p.texto} />,
+  )
+}

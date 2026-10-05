@@ -218,6 +218,9 @@ export const STRINGS = {
       /* A PÁGINA «PRIVACIDADE» (bloco H3, 05.10.2026): a porta do rodapé, ao lado da das sugestões, o `<h1>` da
          página e a última migalha do caminho dela, uma cadeia só para as três, como a do índice. */
       privacidade: 'Privacidade',
+      /* AS EXPLICAÇÕES (bloco EX1, 05.10.2026): o `<h1>` da página da lista, a migalha dela e o nome da secção do
+         índice que a abre; uma cadeia só, como a do índice. */
+      explicacoes: 'Explicações',
       saltar: 'Saltar para o conteúdo',
       /* O comando que abre a navegação no telemóvel. É a mesma palavra nas duas
          edições, e está na lista de identidades aceites do `CHAVES-EN.md`. */
@@ -1794,7 +1797,48 @@ export const STRINGS = {
         estudos: 'Os estudos',
         numeros: 'Os números e as fontes',
         projeto: 'O projeto',
+        explicacoes: 'As explicações',
       },
+    },
+    /* AS EXPLICAÇÕES E A LEITURA DA SEMANA (bloco EX1, 05.10.2026). A mobília das três páginas, declarada uma vez e
+       no inventário das frases: o texto de cada explicação é do lugar de direção e vive em `src/data/explicacoes/`, e
+       as frases da leitura da semana compõem-se destas palavras com os campos do livro-razão
+       (`src/lib/leitura-da-semana.mjs`). Sem algarismos, e sem nenhuma palavra de `VOZ-MARCADORES.md`. */
+    explicacoes: {
+      metaDescription: 'O que mudou nos números do país na última semana, e explicações em português corrente de como os números se ligam.',
+      listaK: 'As explicações',
+      oQueIstoNaoDiz: 'O que isto não diz',
+      numerosDaFigura: 'Os números desta figura',
+    },
+    semana: {
+      titulo: 'A leitura da semana',
+      metaDescription: 'O que mudou nos números do país nos últimos sete dias, de quanto para quanto, e lido de onde.',
+      entre: 'Entre ',
+      e: ' e ',
+      virgula: ', ',
+      nenhumRelido: 'nenhum número foi relido na fonte',
+      umRelido: ' número foi relido na fonte',
+      variosRelidos: ' números foram relidos na fonte',
+      nenhumDeValor: 'nenhum mudou de valor',
+      umDeValor: ' mudou de valor',
+      variosDeValor: ' mudaram de valor',
+      nenhumDeProveniencia: 'nenhum mudou de proveniência',
+      umDeProveniencia: ' mudou de proveniência',
+      variosDeProveniencia: ' mudaram de proveniência',
+      nenhumMudou: ', e nenhum mudou de valor nem de proveniência',
+      ponto: '.',
+      mudancasK: 'Os números que mudaram de valor',
+      deAntes: ': de ',
+      para: ' para ',
+      subiu: ', subiu',
+      desceu: ', desceu',
+      naoMudou: ', não mudou',
+      em: ', em ',
+      primeiraK: 'A primeira página',
+      primeiraNenhuma: 'Nenhuma frase da primeira página mudou por causa disto.',
+      primeiraMudaram: 'Estas frases da primeira página mudaram por causa disto:',
+      saiuDaPrimeira: 'saiu da primeira página.',
+      doisPontos: ': ',
     },
     /* A PRIMEIRA PÁGINA DE UM LEITOR COMUM (bloco PP1, 28.09.2026; a decisão do diretor de
        28.09.2026, `DECISIONS.md` §1.133). As palavras dos cinco blocos e das seis entradas são do
@@ -1813,6 +1857,9 @@ export const STRINGS = {
       metaCauda: ' · O Estado do País',
       /* L2a (01.10.2026): o texto alternativo do sinal da porta «Lugares». */
       sinalDosLugares: 'Mapa de Portugal',
+      /* EX1 (05.10.2026, o ponto 4 do mandato): o título do bloco que fecha «O que se passa», com a porta da
+         explicação mais recente e a da leitura da semana. */
+      paraPerceber: 'Para perceber',
     },
     camaras: {
       nome: 'Câmaras com a dívida acima do limite legal',
@@ -3191,6 +3238,8 @@ export const STRINGS = {
       indice: 'Index',
       /* Ver a razão na edição portuguesa (bloco H3). */
       privacidade: 'Privacy',
+      /* Ver a razão na edição portuguesa (bloco EX1). */
+      explicacoes: 'Explainers',
       saltar: 'Skip to content',
       menu: 'Menu',
       rotuloPrincipal: 'Main navigation',
@@ -3757,7 +3806,45 @@ export const STRINGS = {
         estudos: 'Studies',
         numeros: 'Numbers and sources',
         projeto: 'The project',
+        explicacoes: 'Explainers',
       },
+    },
+    /* Ver a razão na edição portuguesa (bloco EX1, 05.10.2026). */
+    explicacoes: {
+      metaDescription: 'What changed in the country’s figures over the last week, and explainers in everyday words on how the figures fit together.',
+      listaK: 'The explainers',
+      oQueIstoNaoDiz: 'What this does not say',
+      numerosDaFigura: 'The figures in this chart',
+    },
+    semana: {
+      titulo: 'This week’s reading',
+      metaDescription: 'What changed in the country’s figures over the last seven days, from how much to how much, and read from where.',
+      entre: 'Between ',
+      e: ' and ',
+      virgula: ', ',
+      nenhumRelido: 'no figure was re-read at the source',
+      umRelido: ' figure was re-read at the source',
+      variosRelidos: ' figures were re-read at the source',
+      nenhumDeValor: 'none changed value',
+      umDeValor: ' changed value',
+      variosDeValor: ' changed value',
+      nenhumDeProveniencia: 'none changed provenance',
+      umDeProveniencia: ' changed provenance',
+      variosDeProveniencia: ' changed provenance',
+      nenhumMudou: ', and none changed value or provenance',
+      ponto: '.',
+      mudancasK: 'The figures that changed value',
+      deAntes: ': from ',
+      para: ' to ',
+      subiu: ', rose',
+      desceu: ', fell',
+      naoMudou: ', did not change',
+      em: ', on ',
+      primeiraK: 'The front page',
+      primeiraNenhuma: 'No sentence on the front page changed because of this.',
+      primeiraMudaram: 'These sentences on the front page changed because of this:',
+      saiuDaPrimeira: 'left the front page.',
+      doisPontos: ': ',
     },
     /* Ver a razão na edição portuguesa (bloco PP1, 28.09.2026). */
     primeira: {
@@ -3773,6 +3860,8 @@ export const STRINGS = {
       metaCauda: ' · O Estado do País',
       /* Ver a razão na edição portuguesa (bloco L2a, 01.10.2026). */
       sinalDosLugares: 'Map of Portugal',
+      /* Ver a razão na edição portuguesa (bloco EX1). */
+      paraPerceber: 'To understand',
     },
     camaras: {
       nome: 'Councils with debt above the legal limit',

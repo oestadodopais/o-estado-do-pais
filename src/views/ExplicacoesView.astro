@@ -1,0 +1,48 @@
+---
+/**
+ * AS EXPLICAÇÕES, em `/explicacoes` e `/en/explainers` (bloco EX1, 05.10.2026, o ponto 1 do mandato).
+ *
+ * Uma página simples, no idioma das páginas de serviço: o título, a leitura da semana à cabeça (o seu título e a
+ * primeira frase dela, que é a porta para a página inteira: a leitura vive num lugar só, e aqui é uma porta) e as
+ * explicações pela ordem da data de escrita, a mais recente primeiro, cada uma pelo seu título, que é a porta.
+ * Nada aqui se escreve à mão: a frase da semana compõe-se das cadeias da casa e das contagens do livro, e os
+ * títulos são os das declarações, com o ano pelo período de uma linha.
+ */
+import Base from '../layouts/Base.astro';
+import FraseDaExplicacao from '../components/explicacoes/FraseDaExplicacao.astro';
+import FraseDaSemana from '../components/explicacoes/FraseDaSemana.astro';
+import { slugsDasExplicacoes, explicacaoResolvida } from '../lib/explicacoes.mjs';
+import { leituraDaSemana } from '../lib/leitura-da-semana.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import { SITE_NAME } from '../../site.config.mjs';
+import '../styles/explicacoes.css';
+
+const { lang = 'pt' } = Astro.props;
+const s = t(lang);
+const path = routePath('explicacoes', lang);
+const leitura = leituraDaSemana();
+const explicacoes = slugsDasExplicacoes().map((slug) => explicacaoResolvida(slug, lang));
+---
+
+<Base lang={lang} path={path} title={`${s.nav.explicacoes} · ${SITE_NAME}`} description={s.explicacoes.metaDescription}>
+  <h1 class="explicacoes-titulo">{s.nav.explicacoes}</h1>
+
+  <section class="explicacoes-secao" aria-labelledby="explicacoes-semana" data-explicacoes-semana>
+    <h2 class="explicacoes-secao-titulo" id="explicacoes-semana">{s.semana.titulo}</h2>
+    <p class="explicacoes-semana-frase" data-semana-frase data-semana-janela={`${leitura.janela.inicio}/${leitura.janela.fim}`} data-semana-declarado>
+      <a href={routePath('leituraDaSemana', lang)} data-semana-porta><FraseDaSemana lang={lang} leitura={leitura} /></a>
+    </p>
+  </section>
+
+  <section class="explicacoes-secao" aria-labelledby="explicacoes-lista" data-explicacoes-lista>
+    <h2 class="explicacoes-secao-titulo" id="explicacoes-lista">{s.explicacoes.listaK}</h2>
+    <ul class="explicacoes-lista">
+      {explicacoes.map((e) => (
+        <li class="explicacoes-item">
+          <a href={routePath('explicacao', lang, { slug: e.slug })} data-explicacao-porta={e.slug} data-explicacao-declarado><FraseDaExplicacao partes={e.titulo} lang={lang} selos={false} /></a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>

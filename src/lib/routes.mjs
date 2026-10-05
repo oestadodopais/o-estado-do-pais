@@ -109,6 +109,18 @@ export const ROUTES = {
    * ao lado da porta das sugestões; entra no mapa do sítio e no índice.
    */
   privacidade: { pt: '/privacidade', en: '/en/privacy' },
+  /**
+   * AS EXPLICAÇÕES (bloco EX1, 05.10.2026, pela conversa do diretor de 05.10, §1.167). A lista, com a leitura da
+   * semana à cabeça e as explicações pela data de escrita; a página da leitura da semana, gerada em cada
+   * construção a partir do registo das correções e das releituras (`src/lib/leitura-da-semana.mjs`); e a página
+   * de cada explicação, com o texto do lugar de direção e cada algarismo numa linha do livro-razão
+   * (`src/data/explicacoes/`). A página da semana é uma rota LITERAL debaixo da mesma raiz, e `matchPath()`
+   * resolve as literais antes das que têm parâmetro; nenhuma explicação pode ter o segmento dela por slug
+   * (`src/data/explicacoes/index.mjs` fecha a construção se tiver).
+   */
+  explicacoes: { pt: '/explicacoes', en: '/en/explainers' },
+  leituraDaSemana: { pt: '/explicacoes/leitura-da-semana', en: '/en/explainers/weekly-reading' },
+  explicacao: { pt: '/explicacoes/:slug', en: '/en/explainers/:slug' },
   estudos: { pt: '/estudos', en: '/en/studies' },
   estudo: { pt: '/estudos/:slug', en: '/en/studies/:slug' },
   documento: { pt: '/estudos/:slug/documento', en: '/en/studies/:slug/document' },

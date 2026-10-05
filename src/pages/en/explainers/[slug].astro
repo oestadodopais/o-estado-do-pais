@@ -1,0 +1,12 @@
+---
+/* Uma explicação na edição inglesa (bloco EX1, 05.10.2026): a casca fina de `/en/explainers/<slug>`. */
+import ExplicacaoView from '../../../views/ExplicacaoView.astro';
+import { slugsDasExplicacoes } from '../../../lib/explicacoes.mjs';
+
+export function getStaticPaths() {
+  return slugsDasExplicacoes().map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<ExplicacaoView lang="en" slug={slug} />

@@ -276,6 +276,16 @@ export const BLOCOS_DA_PRIMEIRA_PAGINA = [
   },
 ];
 
+/**
+ * «PARA PERCEBER» (bloco EX1, 05.10.2026, o ponto 4 do mandato): o bloco que fecha «O que se passa», com duas
+ * portas, a explicação mais recente (pelo seu título) e a leitura da semana (pela primeira frase dela). Não tem
+ * frase, nem desenho, nem números da gramática dos cinco blocos acima, e por isso não está na lista deles: as
+ * condições, a auditoria das palavras e a célula dos blocos são deles. O título é a cadeia da casa
+ * (`primeira.paraPerceber`); o que cada porta diz vem da lista das explicações (`src/data/explicacoes/`) e da
+ * leitura da semana (`src/lib/leitura-da-semana.mjs`), e a célula da semana confere a frase dela aqui também.
+ */
+export const BLOCO_PARA_PERCEBER = { id: 'para-perceber', portas: /** @type {const} */ (['explicacao-mais-recente', 'leitura-da-semana']) };
+
 /** N1: as oito portas por assunto, com as secções e os cartões existentes. */
 export const ENTRADAS = [
   {

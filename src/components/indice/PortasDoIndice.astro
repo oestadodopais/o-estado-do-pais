@@ -17,11 +17,14 @@
  *     dentro de outra não existe em HTML; a seguir, a língua da edição quando não é a da página, a
  *     data em que a edição entrou neste repositório e a pergunta transcrita, onde o estudo a tem;
  *   · uma série, o nome da medida da linha portuguesa (`NomeDaMedida`, pela escada do cartão) e as
- *     palavras com que o recibo da série o completa.
+ *     palavras com que o recibo da série o completa;
+ *   · uma explicação (bloco EX1, 05.10.2026), o título dela, com o ano pela `<DataDaLinha>` de uma linha
+ *     (`FraseDaExplicacao`, sem selos: um título não tem valores).
  */
 import TituloDeTrabalho from '../TituloDeTrabalho.astro';
 import NomeDaMedida from '../NomeDaMedida.astro';
 import NomeDaSerie from '../serie/NomeDaSerie.astro';
+import FraseDaExplicacao from '../explicacoes/FraseDaExplicacao.astro';
 import { dataDaCasa } from '../../lib/datas.mjs';
 import { ROTULOS_B1 } from '../../data/rotulos-b1.mjs';
 import { HREFLANG } from '../../lib/routes.mjs';
@@ -48,6 +51,10 @@ const r = ROTULOS_B1[lang === 'en' ? 'en' : 'pt'];
         <a class="indice-porta indice-porta-tema" href={p.href}>
           <span class="indice-nome">{p.rotulo}</span>{' '}<span class="indice-linha">{p.linha}</span>
         </a>
+      </li>
+    ) : p.tipo === 'explicacao' ? (
+      <li>
+        <a class="indice-porta" href={p.href} data-explicacao-porta={p.slug} data-explicacao-declarado><span><FraseDaExplicacao partes={p.titulo} lang={lang} selos={false} /></span></a>
       </li>
     ) : p.tipo === 'serie' ? (
       <li>
