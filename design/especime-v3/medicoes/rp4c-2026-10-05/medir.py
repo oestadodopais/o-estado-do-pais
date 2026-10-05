@@ -281,6 +281,121 @@ for chave in ("respostas_do_modelo", "simbolos_de_entrada", "simbolos_de_saida_m
             "o registo lido tem respostas do modelo", (custo.get("respostas_do_modelo") or 0) > 0)
 medicao("custo.modelos", custo.get("modelos", NAO), "idem", "o registo lido tem respostas do modelo", (custo.get("respostas_do_modelo") or 0) > 0)
 
+# ---- a entrega do RP4-c, lida no seu commit (o relatório do RP4-c diz quantas medidas tinha então) --------------------
+entrega = subprocess.run(["git", "-C", str(SITIO), "show", "46e675d6:design/especime-v3/medicoes/rp4c-2026-10-05/medidas.json"], capture_output=True, text=True)
+de_entrega = json.loads(entrega.stdout) if entrega.returncode == 0 else None
+medicao("rp4c.medidas_na_entrega", len(de_entrega["medidas"]) if de_entrega else NAO, "git show 46e675d6:design/especime-v3/medicoes/rp4c-2026-10-05/medidas.json · as medidas",
+        "o ficheiro da entrega tem a reprodução do §0", bool(de_entrega) and any(x["nome"] == "paragrafo_0_reproduzido_igual" for x in de_entrega["medidas"]))
+
+# ==== A PASSAGEM RP4-c-b (05.10.2026): o peso, as zonas por colunas e só onde a leitura vive ===========================
+R = AQUI / "rp4cb"
+CMD_B = "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem"
+pb = ler_json(R / "peso.json") or {}
+medicao("rp4cb.peso.paginas_lidas", pb.get("paginas_lidas", NAO), CMD_B + " · medir-peso.mjs", "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        pb.get("conhecido_positivo_primeira_pagina") and pb.get("conhecido_positivo_recibo_da_inflacao"))
+for chave in ("paginas_com_desenhos", "desenhos", "zonas_de_leitura", "bytes", "gzip", "brotli"):
+    medicao(f"rp4cb.peso.{chave}", pb.get(chave, NAO), CMD_B + " · medir-peso.mjs", "idem", pb.get("conhecido_positivo_primeira_pagina"))
+porb = {x["pagina"]: x for x in pb.get("paginas", [])}
+for nome, pagina in (("primeira", "index.html"), ("precos", "precos/index.html"), ("habitacao", "habitacao/index.html"),
+                     ("recibo_da_inflacao", "livro-razao/series/serie-ipc-variacao-homologa/index.html"), ("recibo_do_indice", "livro-razao/series/serie-ipc-indice/index.html")):
+    for chave in ("bytes", "gzip", "brotli", "zonas_de_leitura"):
+        medicao(f"rp4cb.peso.{nome}.{chave}", porb.get(pagina, {}).get(chave, NAO), CMD_B + f" · medir-peso.mjs · {pagina}", "a página está entre as que têm desenhos", pagina in porb)
+mb = ler_json(R / "marcas.json") or {}
+medicao("rp4cb.zonas.desenhos_com_zonas", mb.get("desenhos_com_zonas", NAO), CMD_B + " · medir-marcas.mjs", "a primeira página tem «1992» no eixo do tempo", mb.get("conhecido_positivo_primeira_pagina_tem_1992"))
+medicao("rp4cb.zonas.total", mb.get("zonas_de_leitura", NAO), CMD_B + " · medir-marcas.mjs", "idem", mb.get("conhecido_positivo_primeira_pagina_tem_1992"))
+medicao("rp4cb.zonas.desenhos_indexados_com_zonas", mb.get("desenhos_indexados_com_zonas", NAO), CMD_B + " · medir-marcas.mjs", "há desenhos indexados", (mb.get("desenhos_indexados") or 0) > 0)
+cartoes = [d for pg in mb.get("paginas", []) for d in pg["desenhos"] if not pg["pagina"].startswith(("livro-razao/", "en/ledger/")) and pg["pagina"] not in ("index.html", "en/index.html")]
+medicao("rp4cb.zonas.desenhos_nos_cartoes", len(cartoes), CMD_B + " · medir-marcas.mjs (os desenhos fora da primeira página e dos recibos)", "há desenhos de cartões", len(cartoes) > 0)
+medicao("rp4cb.zonas.zonas_nos_cartoes", sum(d["zonas"] for d in cartoes), CMD_B + " · medir-marcas.mjs", "há desenhos de cartões", len(cartoes) > 0)
+colunas = node("import { serieDoPais, MENOR_LARGURA_NO_ECRA } from './src/lib/formas/serie-do-pais.mjs'; import { getSerie } from './src/lib/series.mjs'; const g = serieDoPais(['serie-ipc-variacao-homologa'], 'unidade', 360, 200, getSerie, { leitura: true }); const c = serieDoPais(['serie-ipc-variacao-homologa'], 'unidade', 240, 160, getSerie, { leitura: true }); const p = serieDoPais(['serie-pensao-media-anual'], 'unidade', 360, 200, getSerie, { leitura: true }); console.log(JSON.stringify({ menor: MENOR_LARGURA_NO_ECRA, colunas: g.colunas, zonas: g.leituras.length, largura_da_zona: Number(g.leituras[0].zona.largura), colunas_num_cartao: c.colunas, zonas_da_pensao: p.leituras.length, pontos_da_pensao: getSerie('serie-pensao-media-anual').pontos.length }));")
+for chave in ("menor", "colunas", "zonas", "largura_da_zona", "colunas_num_cartao", "zonas_da_pensao", "pontos_da_pensao"):
+    medicao(f"rp4cb.modulo.{chave}", (colunas or {}).get(chave, NAO), "node · serieDoPais com { leitura: true }, a 360 e a 240, e MENOR_LARGURA_NO_ECRA",
+            "a pensão, com menos pontos do que colunas, tem uma zona por ponto", bool(colunas) and colunas["zonas_da_pensao"] == colunas["pontos_da_pensao"])
+cb = ler_json(R / "capturas.json") or {}
+CMD_CB = "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-"
+lb = cb.get("lista", [])
+medicao("rp4cb.capturas.inteiras", len(lb), CMD_CB, "há capturas nas duas edições", {c["lang"] for c in lb} == {"pt", "en"})
+medicao("rp4cb.capturas.erros", len(cb.get("erros", [])) if cb else NAO, CMD_CB, "as plantas das capturas morderam", bool(cb.get("plantas")) and cb.get("plantas_mordidas") == len(cb.get("plantas", [])))
+medicao("rp4cb.capturas.plantas", len(cb.get("plantas", [])) if cb else NAO, CMD_CB, "a planta da regra (a) está entre elas", any("mais estreito" in x["nome"] for x in cb.get("plantas", [])))
+medicao("rp4cb.capturas.plantas_mordidas", cb.get("plantas_mordidas", NAO), CMD_CB, "idem", any("mais estreito" in x["nome"] and x["mordeu"] for x in cb.get("plantas", [])))
+pr = cb.get("provas", [])
+medicao("rp4cb.capturas.provas_do_rato", sum(1 for x in pr if x["prova"] == "rato"), CMD_CB, "a planta da etiqueta escondida mordeu", any(x["nome"].startswith("a etiqueta escondida") and x["mordeu"] for x in cb.get("plantas", [])))
+medicao("rp4cb.capturas.provas_do_rato_que_passaram", sum(1 for x in pr if x["prova"] == "rato" and x["passou"]), CMD_CB, "idem", True)
+medicao("rp4cb.capturas.provas_do_toque", sum(1 for x in pr if x["prova"] == "toque"), CMD_CB, "a planta da regra fora da consulta do rato mordeu", any(x["nome"].startswith("a regra de mostrar") and x["mordeu"] for x in cb.get("plantas", [])))
+medicao("rp4cb.capturas.provas_do_toque_que_passaram", sum(1 for x in pr if x["prova"] == "toque" and x["passou"]), CMD_CB, "idem", True)
+medicao("rp4cb.capturas.leituras_acesas_por_prova_do_rato", sorted({x["durante"]["acesas"] for x in pr if x["prova"] == "rato"}), CMD_CB, "as provas do rato correram", any(x["prova"] == "rato" for x in pr))
+medicao("rp4cb.capturas.leituras_acesas_no_toque", sorted({x["durante"]["acesas"] for x in pr if x["prova"] == "toque"}), CMD_CB, "as provas do toque correram", any(x["prova"] == "toque" for x in pr))
+for x in pr:
+    l = (x.get("durante") or {}).get("lida")
+    if x["prova"] == "rato" and l:
+        nome = "primeira" if x["rota"] in ("/", "/en/") else "recibo_da_inflacao"
+        medicao(f"rp4cb.capturas.rato.{nome}.{x['lang']}", f"{l['valor']} · {l['periodo']}", CMD_CB, "a etiqueta acesa é a da zona debaixo do rato", l["zona_contem_o_rato"])
+desb = [dict(d, ficheiro=c["ficheiro"], largura_do_ecra=c["largura"], lang=c["lang"]) for c in lb for d in c["desenhos"]]
+for largura in cb.get("larguras", []):
+    for nome, pref in (("primeira", "rp4cb-primeira-pt-"), ("recibo_da_inflacao", "rp4cb-recibo-da-inflacao-pt-")):
+        d = next((y for y in desb if y["ficheiro"] == f"{pref}{largura}.png" and y["zonas"]), None)
+        if d:
+            medicao(f"rp4cb.capturas.{nome}.{largura}.zonas", d["zonas"], CMD_CB, "o desenho tem zonas", d["zonas"] > 0)
+            medicao(f"rp4cb.capturas.{nome}.{largura}.zonas_alcancaveis", d["zonas_alcancaveis"], CMD_CB, "o rato alcança pelo menos uma zona", d["zonas_alcancaveis"] > 0)
+            medicao(f"rp4cb.capturas.{nome}.{largura}.zona_mais_estreita_px", round(d["zona_mais_estreita_px"], 3), CMD_CB, "o desenho tem zonas", d["zonas"] > 0)
+            medicao(f"rp4cb.capturas.{nome}.{largura}.largura_no_ecra", round(d["largura_no_ecra"], 3), CMD_CB, "o desenho tem largura", d["largura_no_ecra"] > 0)
+            medicao(f"rp4cb.capturas.{nome}.{largura}.escala", round(d["escala"], 5), CMD_CB, "o desenho tem largura", d["largura_no_ecra"] > 0)
+cart = [y for y in desb if y["num_cartao"]]
+medicao("rp4cb.capturas.desenhos_de_cartoes_medidos", len(cart), CMD_CB, "há desenhos de cartões nas capturas", len(cart) > 0)
+medicao("rp4cb.capturas.desenhos_de_cartoes_com_zonas", sum(1 for y in cart if y["zonas"]), CMD_CB, "há desenhos de cartões nas capturas", len(cart) > 0)
+medicao("rp4cb.capturas.escala_do_cartao_a_390", round(next((y["escala"] for y in cart if y["largura_do_ecra"] == 390), 0), 5), CMD_CB, "há desenhos de cartões a 390", any(y["largura_do_ecra"] == 390 for y in cart))
+medicao("rp4cb.capturas.largura_do_cartao_a_390", round(next((y["largura_no_ecra"] for y in cart if y["largura_do_ecra"] == 390), 0), 3), CMD_CB, "idem", any(y["largura_do_ecra"] == 390 for y in cart))
+pl = next((x for x in cb.get("plantas", []) if "mais estreito" in x["nome"]), {})
+medicao("rp4cb.capturas.planta_da_regra_a_zona_px", round(pl.get("zona_mais_estreita_px") or 0, 3), CMD_CB, "a planta mordeu", pl.get("mordeu"))
+fb = ler_json(R / "formas.json") or {}
+CMD_FB = "node scripts/check-formas.mjs --json-rp4 rp4cb/formas.json"
+medicao("rp4cb.f21.desenhos_recompostos", fb.get("desenhos", NAO), CMD_FB, "as provas do módulo correram", bool(fb.get("provas")))
+medicao("rp4cb.f21.provas_do_modulo", len(fb.get("provas", [])) if fb else NAO, CMD_FB, "a prova das zonas por colunas está entre elas", any("colunas" in x["nome"] for x in fb.get("provas", [])))
+medicao("rp4cb.f21.plantas", len(fb.get("plantas", [])) if fb else NAO, CMD_FB, "uma planta tem de morder para contar", bool(fb.get("plantas")))
+medicao("rp4cb.f21.plantas_mordidas", sum(1 for x in fb.get("plantas", []) if x.get("mordeu")), CMD_FB, "idem", bool(fb.get("plantas")))
+medicao("rp4cb.f21.plantas_da_leitura_e_da_legenda", len(fb.get("plantas_da_leitura", [])) if fb else NAO, CMD_FB, "a planta de uma zona a mais está entre elas", any(x["nome"] == "uma zona a mais" for x in fb.get("plantas_da_leitura", [])))
+medicao("rp4cb.f21.plantas_da_leitura_e_da_legenda_mordidas", sum(1 for x in fb.get("plantas_da_leitura", []) if x.get("mordeu")), CMD_FB, "a planta de uma leitura trocada mordeu", any(x["nome"] == "uma leitura trocada" and x.get("mordeu") for x in fb.get("plantas_da_leitura", [])))
+medicao("rp4cb.f2.plantas_mordidas", sum(1 for x in fb.get("plantas_da_f2", []) if x.get("mordeu")), CMD_FB, "a F2 tem plantas", bool(fb.get("plantas_da_f2")))
+medicao("rp4cb.f2.plantas", len(fb.get("plantas_da_f2", [])) if fb else NAO, CMD_FB, "idem", bool(fb.get("plantas_da_f2")))
+medicao("rp4cb.f2.algarismos_de_pontos_nos_desenhos", fb.get("algarismos_de_pontos_nos_desenhos", NAO), CMD_FB, "a F2 viu valores de pontos nos desenhos", (fb.get("algarismos_de_pontos_nos_desenhos") or 0) > 0)
+sb = ler_json(R / "series.json") or {}
+medicao("rp4cb.series.plantas", len(sb.get("plantas", [])) if sb else NAO, "node tests/series/series.mjs --prova --json rp4cb/series.json", "a S6 tem plantas", any(x["celula"] == "S6" for x in sb.get("plantas", [])))
+medicao("rp4cb.series.plantas_mordidas", sum(1 for x in sb.get("plantas", []) if x.get("mordeu")), "idem", "idem", any(x["celula"] == "S6" for x in sb.get("plantas", [])))
+prb = ler_json(R / "primeira-plantas.json") or {}
+medicao("rp4cb.primeira.plantas", len(prb.get("plantas", [])) if prb else NAO, "node tests/inicio/primeira-pagina.mjs --prova --json rp4cb/primeira-plantas.json", "a planta do RP4-c está entre elas", any("RP4-c" in str(x.get("nome")) for x in prb.get("plantas", [])))
+medicao("rp4cb.primeira.plantas_mordidas", sum(1 for x in prb.get("plantas", []) if x.get("mordeu")), "idem", "idem", any("RP4-c" in str(x.get("nome")) for x in prb.get("plantas", [])))
+ppb = ler_json(R / "plantas-portoes-rp4c.json") or []
+CMD_PPB = "OEDP_MEDICOES=design/especime-v3/medicoes/rp4c-2026-10-05/rp4cb node tests/pais/portoes.mjs --prefixo rp4c"
+medicao("rp4cb.portoes.plantas", len(ppb), CMD_PPB, "cada planta repôs os bytes do ficheiro que mexeu", bool(ppb) and all(all(f["antes"] == f["reposto"] for f in x["ficheiros"]) for x in ppb))
+medicao("rp4cb.portoes.plantas_que_morderam", sum(1 for x in ppb if x.get("passou")), CMD_PPB, "as duas da regra do sítio estão entre elas", sum(1 for x in ppb if x["nome"].startswith("rp4cb-") and x.get("passou")) == 2)
+medicao("rp4cb.portoes.plantas_da_regra_do_sitio", sum(1 for x in ppb if x["nome"].startswith("rp4cb-")), CMD_PPB, "idem", True)
+medicao("rp4cb.portoes.cabeca_e_estado", sorted({(x["cabeca"][:8], x["estado"]) for x in ppb}) if ppb else NAO, CMD_PPB, "a árvore seguida estava limpa", bool(ppb) and all(x["estado"] == "" for x in ppb))
+for pasta in ("conferencias", "provas"):
+    cods = {f.stem: int(ler(f).strip()) for f in sorted((R / pasta).glob("*.codigo"))} if (R / pasta).is_dir() else {}
+    medicao(f"rp4cb.{pasta}.passos", len(cods), f"rp4cb/{pasta}/*.codigo", "a cabeça do fim é a do princípio", (ler(R / f"{pasta}/cabeca") or "a") == (ler(R / f"{pasta}/cabeca.fim") or "b"))
+    medicao(f"rp4cb.{pasta}.passos_a_zero", sum(1 for v in cods.values() if v == 0), f"rp4cb/{pasta}/*.codigo", "idem", True)
+    medicao(f"rp4cb.{pasta}.cabeca", (ler(R / f"{pasta}/cabeca") or NAO).strip()[:8], f"rp4cb/{pasta}/cabeca", "idem", True)
+    medicao(f"rp4cb.{pasta}.estado_vazio", vazio(R / f"{pasta}/estado"), f"rp4cb/{pasta}/estado", "o ficheiro do estado foi escrito", (R / f"{pasta}/estado").exists())
+    medicao(f"rp4cb.{pasta}.estado_fim_vazio", vazio(R / f"{pasta}/estado.fim"), f"rp4cb/{pasta}/estado.fim", "o ficheiro do estado foi escrito", (R / f"{pasta}/estado.fim").exists())
+medicao("rp4cb.provas.construcao", (ler_json(R / "provas/version.json") or {}).get("commit", NAO)[:8], "rp4cb/provas/version.json", "o commit da construção é a cabeça das provas",
+        (ler_json(R / "provas/version.json") or {}).get("commit") == (ler(R / "provas/cabeca") or "").strip())
+mp = ler(R / "provas/mapa.log") or ""
+def conta_b(rotulo):
+    m = re.search(rf"{rotulo}: (\d+)", mp)
+    return int(m.group(1)) if m else NAO
+medicao("rp4cb.mapa.citacoes_na_linha", conta_b(r"citações conferidas na linha citada \(±7\)"), "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md (o passo mapa das provas, rp4cb/provas/mapa.log)",
+        "o mapa tem a secção do RP4-c com a leitura por colunas", "por colunas" in (ler(SITIO / "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md") or ""))
+medicao("rp4cb.mapa.citacoes_longe", conta_b("citação está no ficheiro, mas longe da linha citada"), "idem", "idem", True)
+medicao("rp4cb.mapa.citacoes_por_encontrar", conta_b("citação não encontrada em nenhum dos ficheiros citados na mesma linha"), "idem", "idem", True)
+medicao("rp4cb.mapa.codigo", int((ler(R / "provas/mapa.codigo") or "-1").strip()), "rp4cb/provas/mapa.codigo", "o registo do mapa existe", bool(mp))
+for nome_custo in ("custo", "custo-da-sessao"):
+    cu = ler_json(R / f"{nome_custo}.json") or {}
+    for chave in ("respostas_do_modelo", "simbolos_de_entrada", "simbolos_de_saida_minimo", "respostas_com_a_saida_de_um_momento_do_fluxo", "segundos"):
+        medicao(f"rp4cb.{nome_custo}.{chave}", cu.get(chave, NAO), f"python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo> rp4cb/{nome_custo}.json" + (" --desde <instante>" if nome_custo == "custo" else ""),
+                "o registo lido tem respostas do modelo", (cu.get("respostas_do_modelo") or 0) > 0)
+    medicao(f"rp4cb.{nome_custo}.modelos", cu.get("modelos", NAO), "idem", "o registo lido tem respostas do modelo", (cu.get("respostas_do_modelo") or 0) > 0)
+    medicao(f"rp4cb.{nome_custo}.desde", cu.get("desde"), "idem", "o registo lido tem respostas do modelo", (cu.get("respostas_do_modelo") or 0) > 0)
+
 saida = {"bloco": "RP4-c", "o_que": "as medidas do relatório do bloco (medir.py)", "quantas_medidas": len(medidas), "medidas": medidas}
 (AQUI / "medidas.json").write_text(json.dumps(saida, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 nao_lidas = [m["nome"] for m in medidas if m["valor"] == NAO]

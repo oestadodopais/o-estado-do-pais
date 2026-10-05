@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 check:series
+> node tests/series/series.mjs --prova
+
+  check:series · 24 série(s) no tempo de 7839 ponto(s) · 2 derivada(s) com 152 ponto(s) refeitos · 12 linha(s) presa(s), 12 cartão(ões) no último ponto · 48 recibo(s) lidos · metade do motor da S3: sem RESEARCHHUB_DIR: a metade do motor não corre aqui · 24 de 24 planta(s) morderam
+  ✓ as séries no tempo têm a forma, a cadência, cada valor no seu excerto, a derivada refeita, cada linha presa no seu ponto e cada cartão no último, e os recibos com todos os pontos nas duas edições.
