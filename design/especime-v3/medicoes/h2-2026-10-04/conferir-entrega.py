@@ -5,7 +5,7 @@ from pathlib import Path
 pasta=Path(__file__).resolve().parent
 raiz=Path.cwd()
 cabeca=(pasta/'portoes/cabeca').read_text().strip()
-base='acc928f23f5954d1cfc51a11fa86e94d4f6da56e'
+base='4d85508f736774e1fdca1ae4093eafe5e2b591d3'
 def git(*args):return subprocess.check_output(['git',*args],text=True).strip()
 novos=git('diff','--name-only',base,cabeca).splitlines()
 capturas=raiz/'design/especime-v3/capturas/h2-2026-10-04'
