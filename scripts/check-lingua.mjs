@@ -120,7 +120,8 @@ import { fileURLToPath } from 'node:url';
 
 import { parse, NodeType } from 'node-html-parser';
 
-import { loadClaims, POR_VERIFICAR } from '../src/lib/ledger.mjs';
+import { loadClaims, POR_VERIFICAR, LEDGER_DIR } from '../src/lib/ledger.mjs';
+import { lerSeriesDoPortao } from './series-do-portao.mjs';
 import { UNIDADES, UNIDADES_EM_PORTUGUES } from '../src/i18n/unidades.mjs';
 import {
   LINGUA_DOS_TITULOS,
@@ -171,8 +172,24 @@ for (const c of claims) {
   unidadesDoLivro.set(u, (unidadesDoLivro.get(u) ?? 0) + 1);
 }
 
+/* AS UNIDADES DAS SÉRIES CONTAM COMO AS DAS LINHAS (bloco RP4-m, 05.10.2026, o ponto 5 do mandato). O recibo de
+   uma série escreve a unidade dela pelo mesmo dicionário (`unidadeDaLinha`, em `SerieNoTempoView.astro` e em
+   `SerieView.astro`), e há unidades que só as séries usam («índice (base 2025 = 100)», «euros de 2015 por mês»):
+   contadas só as linhas, a regra das entradas mortas chamava morta a uma entrada que se rende em cada recibo
+   inglês, e uma unidade de série sem entrada saía em português na edição inglesa sem ninguém o decidir. As séries
+   leem-se ao lado das linhas que esta corrida lê (a pasta irmã de `ledger/claims`), para que um livro-razão de
+   mentira em `OEDP_LEDGER_DIR` traga as suas; a regra protege o mesmo que protegia, agora nas duas formas. */
+const unidadesDasSeries = new Map();
+for (const s of lerSeriesDoPortao(path.dirname(path.dirname(LEDGER_DIR))).values()) {
+  const u = s.unit === null || s.unit === undefined ? '' : String(s.unit);
+  unidadesDasSeries.set(u, (unidadesDasSeries.get(u) ?? 0) + 1);
+}
+const usosDe = (/** @type {string} */ u) =>
+  [unidadesDoLivro.has(u) ? `${unidadesDoLivro.get(u)} linha(s)` : null, unidadesDasSeries.has(u) ? `${unidadesDasSeries.get(u)} série(s)` : null]
+    .filter(Boolean).join(' e ');
+
 const semEntrada = [];
-for (const [u] of unidadesDoLivro) {
+for (const u of new Set([...unidadesDoLivro.keys(), ...unidadesDasSeries.keys()])) {
   const noDicionario = Object.prototype.hasOwnProperty.call(UNIDADES, u);
   const emPortugues = Object.prototype.hasOwnProperty.call(UNIDADES_EM_PORTUGUES, u);
   if (noDicionario && emPortugues) {
@@ -187,7 +204,7 @@ for (const [u] of unidadesDoLivro) {
 }
 for (const u of semEntrada) {
   erros.push(
-    `a unidade «${u}» (${unidadesDoLivro.get(u)} linha(s)) não tem entrada em ` +
+    `a unidade «${u}» (${usosDe(u)}) não tem entrada em ` +
       `src/i18n/unidades.mjs.\n` +
       `      Ou entra no dicionário, com o facto de dicionário ou o inglês que a casa já ` +
       `escreve para a mesma coisa,\n      ou entra em UNIDADES_EM_PORTUGUES com a razão pela ` +
@@ -195,17 +212,17 @@ for (const u of semEntrada) {
   );
 }
 for (const u of Object.keys(UNIDADES)) {
-  if (!unidadesDoLivro.has(u)) {
+  if (!unidadesDoLivro.has(u) && !unidadesDasSeries.has(u)) {
     erros.push(
-      `o dicionário traduz a unidade «${u}», que nenhuma linha do livro-razão usa. ` +
+      `o dicionário traduz a unidade «${u}», que nenhuma linha nem série do livro-razão usa. ` +
         `Uma entrada que não se rende não é uma sentinela: é uma linha morta, e a tabela engorda.`,
     );
   }
 }
 for (const u of Object.keys(UNIDADES_EM_PORTUGUES)) {
-  if (!unidadesDoLivro.has(u)) {
+  if (!unidadesDoLivro.has(u) && !unidadesDasSeries.has(u)) {
     erros.push(
-      `UNIDADES_EM_PORTUGUES declara «${u}», que nenhuma linha do livro-razão usa. ` +
+      `UNIDADES_EM_PORTUGUES declara «${u}», que nenhuma linha nem série do livro-razão usa. ` +
         `A lista das que ficam é uma lista do que existe, não do que já existiu.`,
     );
   }
@@ -1121,7 +1138,7 @@ if (erros.length) {
 
 console.log(
   verde('  língua ✓ ') +
-    `${unidadesDoLivro.size} unidade(s) do livro-razão: ${Object.keys(UNIDADES).length} traduzida(s), ` +
+    `${new Set([...unidadesDoLivro.keys(), ...unidadesDasSeries.keys()]).size} unidade(s) do livro-razão (${unidadesDoLivro.size} das linhas, ${unidadesDasSeries.size} das séries): ${Object.keys(UNIDADES).length} traduzida(s), ` +
     /* R2 (03.10.2026, item 4 do mandato): a linha diz também QUAIS ficam em português, e não só quantas. */
     `${Object.keys(UNIDADES_EM_PORTUGUES).length} em português com razão escrita (${Object.keys(UNIDADES_EM_PORTUGUES).map((u) => `«${u}»`).join(', ')}) · ` +
     `${comLocalizador} localizador(es), todos dentro de documento português · ` +

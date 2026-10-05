@@ -1,0 +1,20 @@
+{
+  "o_que": "a limpeza dos caminhos da máquina nos registos desta pasta (limpar-registos.py)",
+  "ficheiros_limpos": [
+    {
+      "ficheiro": "rp4mb-conferencias/astro-build.log",
+      "trocas": 1,
+      "sha256_antes": "1ff53ada49f10bc065a492a04f28a54650b323bf2f6dccecae3fd252eb712d72",
+      "sha256_depois": "094ed3cbdc659404c61654683dc45aecef752f502910925db7dbffe908a3cdf9"
+    }
+  ],
+  "ficheiros_limpos_quantos": 1,
+  "trocas": 1,
+  "restos_depois": [
+    "__pycache__/limpar-registos.cpython-314.pyc"
+  ],
+  "segunda_corrida": {
+    "trocas": 0,
+    "restos_depois": []
+  }
+}

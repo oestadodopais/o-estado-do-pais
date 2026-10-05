@@ -1,0 +1,42 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/limiar-da-comissao.py. Não se edita à mão.",
+  "pagina": "https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en",
+  "copia_de_28_09": {
+    "corrida": "indicators/out/releitura-c1c-2026-09-28",
+    "quando": "2026-09-28T13:52:45+00:00",
+    "http": 200,
+    "sha256": "3f018165f5b4c808b86ed8c9f6a9382f8b9016690a74b80f4235c9dfbde34def",
+    "ficheiro": "3f018165f5b4c808b86ed8c9f6a9382f8b9016690a74b80f4235c9dfbde34def.bin"
+  },
+  "copia_de_hoje": {
+    "corrida": "indicators/out/c2-2026-10-05/painel",
+    "quando": "2026-10-05T12:23:40+00:00",
+    "http": 200,
+    "sha256": "1f8b3dfb7f990d7c142cf98967ee30ce91d4be7052a9bad3305e307593852871",
+    "ficheiro": "1f8b3dfb7f990d7c142cf98967ee30ce91d4be7052a9bad3305e307593852871.bin"
+  },
+  "impressao_de_28_09": "80badefb50a6bd3cdb397ce354c9363851b0904ed31514c0a8dc106079ff9564",
+  "linhas_com_algarismos_de_28_09": 29,
+  "impressao_de_hoje": "e9d4a58f786399413ab0d9857d3739b9edc199dbdd32b6519ff4c04c50988c67",
+  "linhas_com_algarismos_de_hoje": 29,
+  "impressao_no_estado_do_motor": "80badefb50a6bd3cdb397ce354c9363851b0904ed31514c0a8dc106079ff9564",
+  "impressao_no_estado_da_corrida_do_fim": "e9d4a58f786399413ab0d9857d3739b9edc199dbdd32b6519ff4c04c50988c67",
+  "linhas_que_sairam": [
+    "13 SEPTEMBER 2018",
+    "4 SEPTEMBER 2015",
+    "14 NOVEMBER 2012",
+    "8 NOVEMBER 2011"
+  ],
+  "linhas_que_entraram": [
+    "13 September 2018",
+    "4 September 2015",
+    "14 November 2012",
+    "8 November 2011"
+  ],
+  "os_numeros_das_linhas_sao_os_mesmos": true,
+  "linhas_iguais_sem_maiusculas_e_sem_ordem": true,
+  "conhecido_positivo": {
+    "o_que": "a impressão refeita da cópia de 28.09 é a do estado do motor, e a de hoje é a do estado da corrida do fim",
+    "encontrado": true
+  }
+}

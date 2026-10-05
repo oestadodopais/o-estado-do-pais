@@ -1,0 +1,104 @@
+# Linha de série do livro-razão. Uma série por ficheiro; o nome do ficheiro é o id.
+# Campos e regras: ver ledger/series/README.md.
+# GERADA por ResearchHub/publisher/dominios_series.py e atravessada por
+# ResearchHub/publisher/export_series.py. Nunca se escreve à mão.
+
+id: "serie-remuneracao-bruta-mensal-media-real"
+eixo: "periodo"
+
+# O nome com que a fonte publica a série, e onde a resposta o escreve. Numa série
+# derivada fica a null: a proveniência é a das origens.
+name: null
+name_source: null
+unit: "euros de 2015 por mês"
+# A cadência dos pontos.
+periodicidade: "anual"
+
+# Proveniência.
+source: null
+document: null
+source_url: null
+access_date: null
+published_at: null
+# Os pedidos do cliente da casa de onde os pontos saíram: o endereço, a hora, o
+# cliente, o nome com que a casa se apresentou, o resumo e o tamanho do corpo, e o
+# primeiro e o último ponto que cada um deu.
+pedidos: []
+
+# O literal da série: o rótulo e as coordenadas como a resposta os escreve.
+excerpt: null
+primeiro_periodo: "2014"
+ultimo_periodo: "2025"
+# Os períodos da cadência que a fonte não publica, com a razão que ela dá (null quando
+# a resposta não dá razão nenhuma).
+lacunas: []
+# As marcas da fonte que os pontos levam, com a etiqueta que a própria resposta lhes dá.
+bandeiras: {}
+
+# Os pontos, pela ordem do tempo.
+pontos:
+  - periodo: "2014"
+    valor: "1 179"
+    excerto: null
+    bandeira: null
+  - periodo: "2015"
+    valor: "1 179"
+    excerto: null
+    bandeira: null
+  - periodo: "2016"
+    valor: "1 189"
+    excerto: null
+    bandeira: null
+  - periodo: "2017"
+    valor: "1 192"
+    excerto: null
+    bandeira: null
+  - periodo: "2018"
+    valor: "1 205"
+    excerto: null
+    bandeira: null
+  - periodo: "2019"
+    valor: "1 236"
+    excerto: null
+    bandeira: null
+  - periodo: "2020"
+    valor: "1 273"
+    excerto: null
+    bandeira: null
+  - periodo: "2021"
+    valor: "1 302"
+    excerto: null
+    bandeira: null
+  - periodo: "2022"
+    valor: "1 251"
+    excerto: null
+    bandeira: null
+  - periodo: "2023"
+    valor: "1 280"
+    excerto: null
+    bandeira: null
+  - periodo: "2024"
+    valor: "1 331"
+    excerto: null
+    bandeira: null
+  - periodo: "2025"
+    valor: "1 375"
+    excerto: null
+    bandeira: null
+
+# Numa série derivada, a conta em palavras nas duas línguas, as séries de origem e a
+# expressão que o sítio refaz ponto a ponto na construção.
+derivation: "Para cada ano t: W(t) × I(2015) ÷ I(t), em que W é a remuneração bruta mensal média por trabalhador que o INE publica por ano (Portugal, total) e I é o índice de preços no consumidor do INE em média anual (base 2025 = 100, Portugal, total); o resultado arredonda-se às casas decimais com que o INE publica a remuneração. É a remuneração de cada ano contada em euros de 2015, isto é, descontada a subida dos preços desde esse ano."
+derivation_en: "For each year t: W(t) × I(2015) ÷ I(t), where W is the average gross monthly pay per worker that INE publishes by year (Portugal, total) and I is the INE consumer price index as an annual average (base 2025 = 100, Portugal, total); the result is rounded to the decimal places INE publishes the pay with. It is each year's pay counted in 2015 euros, that is, net of the rise in prices since that year."
+derived_from:
+  - "serie-remuneracao-bruta-mensal-media-anual"
+  - "serie-ipc-indice-anual"
+check: "round ( serie-remuneracao-bruta-mensal-media-anual[t] * serie-ipc-indice-anual[2015] / serie-ipc-indice-anual[t] , 0 )"
+
+attributed_to: null
+study: "dominios-2026"
+# Nota interna. NÃO é publicada.
+note: "RP4-m. Série derivada da serie-remuneracao-bruta-mensal-media-anual e da serie-ipc-indice-anual, ponto a ponto, pela conta 'round ( serie-remuneracao-bruta-mensal-media-anual[t] * serie-ipc-indice-anual[2015] / serie-ipc-indice-anual[t] , 0 )', refeita pelo avaliador exato da casa (core.derivations), com 0 casa(s) decimal(is), as da metainformação da nominal."
+
+# Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
+corrections: []

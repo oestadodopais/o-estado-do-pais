@@ -83,3 +83,18 @@
 .serie-tabela-tempo th, .serie-tabela-tempo td { padding: 7px 10px; white-space: nowrap; }
 .serie-tabela-tempo tbody th { position: sticky; left: 0; background: var(--paper); border-right: 1px solid var(--g3); }
 .serie-tabela-tempo .serie-marca { margin-left: 3px; font-size: 11px; }
+
+/* A FIGURA INDEXADA (bloco RP4-m, 05.10.2026, o ponto 4 do mandato). A série do recibo é a última da lista
+   declarada e uma série derivada não tem lacunas, por isso o seu traço é o último do desenho: desenha-se a
+   tracejado, e a legenda, fora do desenho, diz qual é qual com o mesmo traço. Sem cor: a tinta é a da forma, e a
+   forma e a recomposição da F21 não mudam por isto; a regra da página da F21 mudou de forma para admitir o modo
+   indexado só no recibo de uma série com figura declarada (`regraDaPagina`, em `tests/formas/serie-do-pais.mjs`). */
+.serie-grafico-indexado polyline.serie-do-pais-linha:last-of-type { stroke-dasharray: 5 4; }
+.serie-indexada-legenda { margin: -12px 0 24px; max-width: 42rem; }
+.serie-indexada-lista { list-style: none; margin: 0 0 8px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font: 14px var(--f-instr); }
+.serie-indexada-lista li { display: flex; align-items: center; gap: 8px; }
+.serie-indexada-traco { display: inline-block; flex: none; width: 24px; height: 0; border-top: 1.5px solid var(--ink); }
+.serie-indexada-traco-tracejado { border-top-style: dashed; }
+.serie-indexada-frase { margin: 0; font: 14px var(--f-prosa); }
+/* O QUE UM ÍNDICE QUER DIZER (bloco RP4-m, o ponto 5): uma frase de leitura por baixo da atribuição. */
+.serie-indice-frase { max-width: 42rem; }
