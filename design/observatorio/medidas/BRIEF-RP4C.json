@@ -1,12 +1,12 @@
 {
   "brief": "design/observatorio/BRIEF-RP4C-as-ajudas-de-leitura-do-grafico.md",
   "guiao": "design/observatorio/medidas/BRIEF-RP4C.py",
-  "cabeca_lida": "3a253f73",
+  "cabeca_lida": "5b004ada",
   "medidas": [
     {
       "nome": "pixeis_minimos_de_uma_marca_intermedia_do_tempo_as_pontas",
       "valor": 64,
-      "comando": "git show 3a253f73:src/lib/formas/serie-do-pais.mjs · a regra «posicao - campo.esquerda >= N && campo.direita - posicao >= N» das marcas intermédias do tempo",
+      "comando": "git show 5b004ada:src/lib/formas/serie-do-pais.mjs · a regra «posicao - campo.esquerda >= N && campo.direita - posicao >= N» das marcas intermédias do tempo",
       "conhecido_positivo": {
         "o_que": "o módulo constrói marcasX a partir dos anos",
         "encontrado": true
@@ -15,7 +15,7 @@
     {
       "nome": "marcas_do_eixo_vertical_com_o_simbolo_da_unidade",
       "valor": 0,
-      "comando": "git show 3a253f73:src/lib/formas/serie-do-pais.mjs · as marcas do eixo vertical escritas com o símbolo «%»",
+      "comando": "git show 5b004ada:src/lib/formas/serie-do-pais.mjs · as marcas do eixo vertical escritas com o símbolo «%»",
       "conhecido_positivo": {
         "o_que": "as marcas do eixo vertical existem (marcasY)",
         "encontrado": true
@@ -24,7 +24,7 @@
     {
       "nome": "linhas_de_referencia_no_modulo_da_forma",
       "valor": 0,
-      "comando": "git show 3a253f73:src/lib/formas/serie-do-pais.mjs · as ocorrências de «referencia»",
+      "comando": "git show 5b004ada:src/lib/formas/serie-do-pais.mjs · as ocorrências de «referencia»",
       "conhecido_positivo": {
         "o_que": "o bloco das barras da primeira página desenha uma referência (a dívida a 60 %)",
         "encontrado": true
@@ -33,7 +33,7 @@
     {
       "nome": "regras_de_passagem_ou_foco_na_folha_do_desenho",
       "valor": 2,
-      "comando": "git show 3a253f73:src/styles/serie-do-pais.css · as regras com :hover ou :focus",
+      "comando": "git show 5b004ada:src/styles/serie-do-pais.css · as regras com :hover ou :focus",
       "conhecido_positivo": {
         "o_que": "a folha existe e estiliza a linha",
         "encontrado": true
@@ -42,7 +42,7 @@
     {
       "nome": "etiquetas_de_valor_por_ponto_no_componente",
       "valor": 0,
-      "comando": "git show 3a253f73:src/components/formas/SerieDoPais.astro · os elementos com data-ponto (o valor de um ponto, como nos recibos)",
+      "comando": "git show 5b004ada:src/components/formas/SerieDoPais.astro · os elementos com data-ponto (o valor de um ponto, como nos recibos)",
       "conhecido_positivo": {
         "o_que": "o componente desenha as polylines",
         "encontrado": true
@@ -51,7 +51,7 @@
     {
       "nome": "linhas_do_livro_com_derivation_nao_nula",
       "valor": 378,
-      "comando": "git ls-tree 3a253f73 ledger/claims/ e git show de cada linha · as linhas cujo campo derivation não é null",
+      "comando": "git ls-tree 5b004ada ledger/claims/ e git show de cada linha · as linhas cujo campo derivation não é null",
       "conhecido_positivo": {
         "o_que": "os cem euros da função 01 do OE1 são uma linha derivada",
         "encontrado": true
@@ -60,7 +60,7 @@
     {
       "nome": "pontos_da_serie_da_inflacao",
       "valor": 416,
-      "comando": "git show 3a253f73:ledger/series/serie-ipc-variacao-homologa.yml · as linhas «  - periodo:» da lista pontos:",
+      "comando": "git show 5b004ada:ledger/series/serie-ipc-variacao-homologa.yml · as linhas «  - periodo:» da lista pontos:",
       "conhecido_positivo": {
         "o_que": "a série começa em 1992-01",
         "encontrado": true
@@ -69,7 +69,7 @@
     {
       "nome": "mencoes_ao_banco_central_europeu_nas_leituras",
       "valor": 2,
-      "comando": "git show 3a253f73:src/data/leituras-rp1.mjs e leituras-das-medidas.mjs · as ocorrências de «Banco Central Europeu»",
+      "comando": "git show 5b004ada:src/data/leituras-rp1.mjs e leituras-das-medidas.mjs · as ocorrências de «Banco Central Europeu»",
       "conhecido_positivo": {
         "o_que": "a leitura da comparação europeia diz que o Banco Central Europeu procura uma inflação",
         "encontrado": true
