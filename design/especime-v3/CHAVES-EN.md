@@ -1433,3 +1433,44 @@ isso o pequeno dos rótulos entra sem uma palavra nova em nenhuma das edições.
 | chave | pt | en | nota |
 |---|---|---|---|
 | `primeira.emCurso` | em curso até {ano} | ongoing until {ano} | Horizonte lido de `emCurso.ate`, ao lado da data nos estudos recentes da primeira página (H2-b). |
+
+
+## RP4 · o gráfico e a tabela por anos
+
+As palavras do título acessível e dos cabeçalhos saem destas cadeias. O nome sai da mesma declaração que `NomeDaSerie`; os períodos são os extremos efetivos da série, com o ano por extenso. O inglês usa “half” para o semestre e, desde a RP4-b, hífen nas dezenas compostas, sem travessões.
+
+| chave | pt | en |
+|---|---|---|
+| `livro.serieNoTempo.grafico` | {nome}, {intervalo} | {nome}, {intervalo} |
+| `livro.serieNoTempo.periodoPorExtenso` | {periodo} de {ano} | {periodo} of {ano} |
+| `livro.serieNoTempo.anoK` | Ano | Year |
+| `livro.serieNoTempo.semValor` | sem valor | no value |
+| `livro.serieNoTempo.meses` | jan. · fev. · mar. · abr. · mai. · jun. · jul. · ago. · set. · out. · nov. · dez. | Jan · Feb · Mar · Apr · May · Jun · Jul · Aug · Sep · Oct · Nov · Dec |
+| `livro.serieNoTempo.trimestres` | Primeiro trimestre · Segundo trimestre · Terceiro trimestre · Quarto trimestre | First quarter · Second quarter · Third quarter · Fourth quarter |
+| `livro.serieNoTempo.semestres` | Primeiro semestre · Segundo semestre | First half · Second half |
+| `livro.serieNoTempo.numeros` | zero · um · dois · três · quatro · cinco · seis · sete · oito · nove · dez · onze · doze · treze · catorze · quinze · dezasseis · dezassete · dezoito · dezanove | zero · one · two · three · four · five · six · seven · eight · nine · ten · eleven · twelve · thirteen · fourteen · fifteen · sixteen · seventeen · eighteen · nineteen |
+| `livro.serieNoTempo.dezenas` | vinte · trinta · quarenta · cinquenta · sessenta · setenta · oitenta · noventa | twenty · thirty · forty · fifty · sixty · seventy · eighty · ninety |
+| `livro.serieNoTempo.centenas` | cento · duzentos · trezentos · quatrocentos · quinhentos · seiscentos · setecentos · oitocentos · novecentos | one hundred · two hundred · three hundred · four hundred · five hundred · six hundred · seven hundred · eight hundred · nine hundred |
+| `livro.serieNoTempo.cem` | cem | one hundred |
+| `livro.serieNoTempo.mil` | mil | thousand |
+| `livro.serieNoTempo.uneNumero` |  e  |  and  |
+
+A passagem RP4-b retira o cartão europeu autónomo e a sua unidade declarada. A legenda do desenho da comparação reutiliza `cartao.uniaoEuropeia`: «União Europeia» e «European Union», já presentes nas cadeias e neste inventário.
+
+### RP4-b · unidade visível, exclusões e anos nos títulos
+
+A primeira página lê a unidade em `unidades-dos-cartoes.mjs` para a linha que nomeia a série. A célula dos blocos confere essa cadeia na mesma corrida da voz, e a planta retira-a ou troca-a. Os recibos já dizem o nome e a unidade no cabeçalho. Os títulos de um desenho com nome visível dizem o intervalo e a unidade, sem repetir o nome.
+
+| cadeia de conteúdo | pt | en |
+|---|---|---|
+| `livro.serieNoTempo.intervalo` | de {primeiro} a {ultimo} | from {primeiro} to {ultimo} |
+| `livro.serieNoTempo.intervaloOrdinal` | do {primeiro} ao {ultimo} | from the {primeiro} to the {ultimo} |
+| `livro.serieNoTempo.graficoSemNome` | {intervalo}, {unidade} | {intervalo}, {unidade} |
+| `livro.serieNoTempo.excluidaSemBase` | {nome}: sem observação no período de base, {periodo}. | {nome}: no observation in the base period, {periodo}. |
+| `livro.serieNoTempo.excluidaBaseNula` | {nome}: a observação no período de base, {periodo}, é zero. | {nome}: the observation in the base period, {periodo}, is zero. |
+| `livro.serieNoTempo.anoZero` | zero | oh |
+| `livro.serieNoTempo.anoCem` | cem | hundred |
+| `livro.serieNoTempo.uneAno` | espaço | espaço |
+| `livro.serieNoTempo.uneDezena` | e, entre espaços | hífen |
+
+Os anos ingleses usam pares, como «nineteen ninety-two» e «twenty twenty-six», e o começo do milénio conserva «two thousand» e os anos seguintes por extenso. O conversor tem provas próprias. As exclusões só aparecem quando uma linha fica sem base utilizável no modo indexado; nenhuma página deste bloco usa esse modo.

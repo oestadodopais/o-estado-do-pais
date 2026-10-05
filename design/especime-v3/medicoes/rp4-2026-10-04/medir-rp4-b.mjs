@@ -1,0 +1,92 @@
+/** RP4-b: mede a cabeça conferida e as provas desta passagem, sem alterar dist/. */
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
+import { parse } from 'node-html-parser';
+import { loadClaims } from '../../../../src/lib/ledger.mjs';
+import { conferirSeriesDosCartoes, plantasDosCartoesComSerie } from '../../../../tests/cartao/series.mjs';
+import { documentoDosAssuntos } from '../../../../tests/inicio/paginas-dos-assuntos.mjs';
+import { conferirSerie, plantasDaSerie, provasDoModulo } from '../../../../tests/formas/serie-do-pais.mjs';
+import { conferirSerieDoBloco, plantasDaSerieDoBloco } from '../../../../tests/inicio/serie-do-bloco.mjs';
+import { conferirEntradas, plantasDasEntradas } from '../../../../tests/inicio/entradas.mjs';
+const O = 'design/especime-v3/medicoes/rp4-2026-10-04';
+const ler = f => fs.readFileSync(path.join(O, f), 'utf8').trim();
+const json = f => JSON.parse(ler(f));
+const git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
+const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+const codigo = s => { assert(/^\d+$/.test(s)); return Number(s); };
+assert.equal(codigo('1'), 1); assert.throws(() => codigo(''));
+const cabeca = ler('portoes/cabeca');
+const main = json('rp4-b-rebase.json').main;
+assert.equal(cabeca, ler('portoes/cabeca.fim'));
+assert.equal(cabeca, JSON.parse(fs.readFileSync('dist/version.json')).commit);
+execFileSync('git', ['merge-base', '--is-ancestor', main, cabeca]);
+const portoes = Object.fromEntries(['build','verify','typecheck'].map(g => {
+ const c = codigo(ler(`portoes/${g}.codigo`)); assert.equal(c, 0);
+ const inicio = ler(`portoes/${g}.inicio`), fim = ler(`portoes/${g}.fim`);
+ assert(Date.parse(fim) >= Date.parse(inicio));
+ return [g, { codigo:c, inicio, fim, segundos:(Date.parse(fim)-Date.parse(inicio))/1000 }];
+}));
+const formas={desenhos:0,erros:[],modulo:provasDoModulo(),plantas:[],primeira:[]};
+for(const f of fs.readdirSync('dist',{recursive:true}).filter(f=>f.endsWith('.html'))){
+ const html=fs.readFileSync(path.join('dist',f),'utf8');if(!html.includes('data-forma="serie-do-pais"'))continue;
+ const root=parse(html), lang=root.querySelector('html')?.getAttribute('lang')==='en'?'en':'pt';
+ for(const svg of root.querySelectorAll('svg[data-forma="serie-do-pais"]')){formas.desenhos++;formas.erros.push(...conferirSerie(svg,lang));}
+ if(f==='index.html'||f==='en/index.html'){
+  formas.erros.push(...conferirSerieDoBloco(root,lang));
+  formas.plantas.push(...plantasDaSerie(html,lang).map(p=>({lang,...p})));
+  formas.primeira.push(...plantasDaSerieDoBloco(html,lang).map(p=>({lang,...p})));
+ }
+}
+assert.deepEqual(formas.erros,[]);assert([...formas.plantas,...formas.primeira].every(p=>p.mordeu));
+fs.writeFileSync(path.join(O,'rp4-b-reais-provas.json'),JSON.stringify(formas,null,2)+'\n');
+const cartoes = {};
+for (const lang of ['pt','en']) {
+ const doc = documentoDosAssuntos('dist', lang);
+ const r = conferirSeriesDosCartoes(doc, lang);
+ assert.deepEqual(r.erros, []);
+ const presos = [...loadClaims().values()].filter(c => c.serie).map(c => c.id).sort();
+ assert.deepEqual([...new Set(r.vistos)].sort(), presos);
+ const plantas = plantasDosCartoesComSerie(doc.outerHTML, lang); assert(plantas.every(p=>p.mordeu));
+ const precos = parse(fs.readFileSync(`dist/${lang==='pt'?'precos':'en/prices'}/index.html`, 'utf8'));
+ assert.equal(precos.querySelectorAll('[data-cartao-medida="ihpc-variacao-homologa-ue"]').length, 0);
+ const cartao = precos.querySelector('[data-cartao-medida="ihpc-variacao-homologa"]');
+ const porta = cartao.querySelector('[data-cartao-serie]');
+ assert.equal(porta.getAttribute('data-cartao-serie-linha'), 'ihpc-variacao-homologa-ue');
+ const ficheiro = path.join('dist', porta.getAttribute('href'), 'index.html'); assert(fs.existsSync(ficheiro));
+ cartoes[lang] = {linhas:[...new Set(r.vistos)].sort(), plantas, comparacao:{cartao:cartao.getAttribute('data-cartao-medida'),linha:porta.getAttribute('data-cartao-serie-linha'),serie:porta.getAttribute('data-cartao-serie'),porta:porta.getAttribute('href'),legenda:porta.querySelector('[data-cartao-serie-legenda]').textContent.trim()}, autonomos:0};
+}
+const entradas = {controlo:conferirEntradas('dist'), plantas:plantasDasEntradas('dist')};
+assert.deepEqual(entradas.controlo.erros, []); assert(entradas.plantas.every(p=>p.mordeu));
+const capturas = json('capturas.json');
+assert.equal(capturas.cabeca, cabeca); assert.deepEqual(capturas.erros, []); assert(capturas.plantas.every(p=>p.mordeu));
+for (const c of capturas.capturas) {const bytes=fs.readFileSync(c.ficheiro);assert.equal(hash(bytes), c.sha256);assert.equal(bytes.length,c.bytes);}
+const protegidos = git('diff','--name-only',main,cabeca,'--','ledger','src/lib/series.mjs'); assert.equal(protegidos,'');
+const series=json('rp4-b-series.json'); assert(Object.values(series.erros).every(e=>e.length===0)); assert(series.plantas.every(p=>p.mordeu));
+const issues = fs.readFileSync('design/especime-v3/ISSUES.md','utf8');
+for (const id of ['I195','I196','I197']) assert.equal(issues.split('\n').filter(l=>l.startsWith(`| ${id} |`)).length,1);
+const leitura = 'design/especime-v3/critica/LEITURA-RP4-2026-10-05.md';
+const plantas = 'design/especime-v3/critica/LEITURA-RP4-2026-10-05.plantas.json';
+const textoLeitura = fs.readFileSync(leitura, 'utf8');
+const achados = [...textoLeitura.matchAll(/^(\d+)\. /gm)].map(m=>Number(m[1]));
+const respostas = [...ler('LEIA-ME.md').split('## RP4-b\n')[1].matchAll(/^\| (\d+) · (.+?) \| (.+?) \| (.+?) \|$/gm)]
+ .map(m=>({achado:Number(m[1]),assunto:m[2],resposta:m[3],prova:m[4]}));
+assert.deepEqual(respostas.map(r=>r.achado), achados);
+assert.deepEqual(achados, Array.from({length:20},(_,i)=>i+1));
+assert.notDeepEqual(respostas.filter(r=>r.achado!==19).map(r=>r.achado), achados);
+fs.writeFileSync(path.join(O,'rp4-b-achados.json'),JSON.stringify({comando:'node '+O+'/medir-rp4-b.mjs',origem:leitura,
+ sha256:hash(textoLeitura),achados_da_leitura:achados,respostas_pela_mesma_ordem:respostas,
+ conhecido_positivo:{resposta_19_retirada_recusada:true}},null,2)+'\n');
+const inventario = JSON.parse(fs.readFileSync('design/especime-v3/rotulos/INVENTARIO.json'));
+assert.equal(inventario.cabeca, cabeca);
+const resultado = {comando:'node '+O+'/medir-rp4-b.mjs',cabeca_do_codigo:cabeca,main,main_no_fecho:git('rev-parse','main'),portoes,
+ formas,cartoes,entradas,series:{contas:series.contas,plantas:series.plantas},
+ capturas:{cabeca:capturas.cabeca,ficheiros:capturas.capturas.length,larguras:capturas.larguras,letra_minima:Math.min(...capturas.capturas.map(c=>c.letraMinima)),letra_maxima:Math.max(...capturas.capturas.map(c=>c.letraMaxima)),erros:capturas.erros,plantas:capturas.plantas,paginasDosCartoes:capturas.paginasDosCartoes},
+ livro:{ficheiros_alterados:protegidos?protegidos.split('\n').length:0},
+ leitura:[leitura,plantas].map(f=>({ficheiro:f,presente:fs.existsSync(f),sha256:fs.existsSync(f)?hash(fs.readFileSync(f)):null})),
+ commits:git('log','--format=%H %s',main+'..'+cabeca).split('\n'),
+ conhecido_positivo:{codigo_um:codigo('1'),codigo_vazio_recusado:true,plantas_k20:cartoes.pt.plantas.length+cartoes.en.plantas.length,plantas_e2:entradas.plantas.length}};
+fs.writeFileSync(path.join(O,'rp4-b.json'),JSON.stringify(resultado,null,2)+'\n');
+console.log(JSON.stringify({cabeca,portoes,plantas_k20:resultado.conhecido_positivo.plantas_k20,capturas:capturas.capturas.length},null,2));

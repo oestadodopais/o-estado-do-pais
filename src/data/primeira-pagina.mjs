@@ -75,6 +75,7 @@ export const ACERTOS_DAS_PALAVRAS = [
 export const BLOCOS_DA_PRIMEIRA_PAGINA = [
   {
     id: 'precos',
+    serie: 'serie-ipc-variacao-homologa',
     entrada: 'precos',
     titulo: { pt: 'Os preços: os combustíveis sobem mais do que o resto', en: 'Prices: fuel is rising faster than the rest' },
     frase: {

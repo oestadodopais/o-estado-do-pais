@@ -1,0 +1,30 @@
+{
+  "main": "fb364fe48c43ca71c2fd04ec8ba640c9399de221",
+  "cabeca_apos_rebase": "edac06f246770341d2793f081731732a84a103c3",
+  "issues_sem_repeticao": true,
+  "I196_inalterada": true,
+  "seccoes_h2_e_rp4_presentes": [
+    "design/especime-v3/CHAVES-EN.md",
+    "design/especime-v3/INVENTARIO-FRASES.md",
+    "design/especime-v3/critica/REVISOES-DO-INVENTARIO.md",
+    "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md"
+  ],
+  "commits": [
+    {
+      "antes": "2348c727",
+      "depois": "48e4ba5c"
+    },
+    {
+      "antes": "20d57add",
+      "depois": "930e4ae3"
+    },
+    {
+      "antes": "65067f6b",
+      "depois": "eb62d556"
+    },
+    {
+      "antes": "8b4541e7",
+      "depois": "edac06f2"
+    }
+  ]
+}

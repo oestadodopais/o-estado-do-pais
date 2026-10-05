@@ -45,6 +45,7 @@ import { notaDaBandeira } from './bandeira-da-fonte.mjs';
  */
 
 import { LEITURAS_DAS_MEDIDAS } from '../data/leituras-das-medidas.mjs';
+import { ENTRADAS } from '../data/primeira-pagina.mjs';
 import { DOMINIO_DAS_MEDIDAS } from '../data/dominios.mjs';
 import { REFERENCIAS_DAS_MEDIDAS } from '../data/referencias-das-medidas.mjs';
 import { comparacaoComOLimiar, ladosDoLimiar } from '../data/figuras.mjs';
@@ -70,7 +71,9 @@ export const LINHA_DO_LIMITE = 'indice-de-divida-limite-legal';
  * @returns {string[]}
  */
 export function medidasComLeitura() {
-  return [...Object.keys(DOMINIO_DAS_MEDIDAS).filter((id) => id !== LINHA_DO_LIMITE), LEITURA_DAS_CAMARAS];
+  // As páginas de assunto também exigem leitura a cada cartão declarado.
+  const nosAssuntos = ENTRADAS.flatMap((e) => e.seccoes.flatMap((s) => s.cartoes));
+  return [...new Set([...Object.keys(DOMINIO_DAS_MEDIDAS).filter((id) => id !== LINHA_DO_LIMITE), ...nosAssuntos, LEITURA_DAS_CAMARAS])];
 }
 
 /** Os pedaços calculados que a gramática conhece, e mais nenhum. */

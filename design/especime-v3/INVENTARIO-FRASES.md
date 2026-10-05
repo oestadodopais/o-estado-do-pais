@@ -1825,10 +1825,10 @@ definição de bloco que a régua usa, e não datilografado.*
 | divulgacao | Escrito, conferido e atualizado por sistemas de IA sob uma política publicada; nenhum humano revê cada peça antes de sair; uma pessoa com nome detém a responsabilidade editorial, define as regras e as recusas, e responde. | rotulo-ia | retirada | a frase da política deixa de dizer «responsabilidade editorial» / «editorial responsibility», que é o decalque de *editorial responsibility* que o diretor apanhou a 15.09.2026, e passa a dizer o que a mesma frase dizia sem ele: uma pessoa com nome define as regras e as recusas, e responde (item 3 do brief do P1). A frase mudou de lugar ao mesmo tempo: fica no Método, e o Sobre passa a dizer o que este projeto é |
 | divulgacao | Everything the house publishes carries the AI-generated label, on every page, at the moment the page is seen. Review is done by gates and by sample, not piece by piece. | p3 | retirada | ver a razão na gémea portuguesa |
 | divulgacao | Measurement measures on a copy, with its own code, without seeing the build. | rotulo-ia | viva | — |
-| divulgacao | Não se publica, e o diretor é avisado · Uma medida nova; uma definição mudada; um ficheiro que a leitura já não reconhece; uma revisão da fonte; um portão vermelho; uma fonte que deixou de responder. | rotulo-ia | viva | — |
-| divulgacao | Never without the director · Any piece that names a person; mail to third parties in the name of the house; a change of identity; money, contracts, accounts. | p3 | retirada | ver a razão na gémea portuguesa |
-| divulgacao | Not published, and the director is told · A new measure; a changed definition; a file the reader no longer recognises; a revision at the source; a red gate; a source that has stopped answering. | rotulo-ia | viva | — |
-| divulgacao | Nunca sem o diretor · Qualquer peça que nomeie uma pessoa; correio a terceiros em nome da casa; uma mudança de identidade; dinheiro, contratos, contas. | p3 | retirada | «a casa» sai do texto do leitor (bloco P3, item 3): «correio a terceiros em nome da casa» passa a «em nome deste projeto» |
+| divulgacao | Não se publica, e uma pessoa é avisada · Uma medida nova; uma definição mudada; um ficheiro que a leitura já não reconhece; uma revisão da fonte; um portão vermelho; uma fonte que deixou de responder. | rotulo-ia | viva | — |
+| divulgacao | Never without a person · Any piece that names a person; mail to third parties in the name of the house; a change of identity; money, contracts, accounts. | p3 | retirada | ver a razão na gémea portuguesa |
+| divulgacao | Not published, and a person is told · A new measure; a changed definition; a file the reader no longer recognises; a revision at the source; a red gate; a source that has stopped answering. | rotulo-ia | viva | — |
+| divulgacao | Nunca sem uma pessoa · Qualquer peça que nomeie uma pessoa; correio a terceiros em nome da casa; uma mudança de identidade; dinheiro, contratos, contas. | p3 | retirada | «a casa» sai do texto do leitor (bloco P3, item 3): «correio a terceiros em nome da casa» passa a «em nome deste projeto» |
 | divulgacao | Publica-se · Um valor novo da mesma medida, no mesmo formato, da mesma fonte, com todos os portões verdes. | rotulo-ia | viva | — |
 | divulgacao | Published · A new value of the same measure, in the same format, from the same source, with every gate green. | rotulo-ia | viva | — |
 | divulgacao | Reading reads with no prior context, with planted errors it has to find. | rotulo-ia | viva | — |
@@ -3983,3 +3983,44 @@ lugar, tema, data e estado, e conserva a varredura dos marcadores da voz.
 | chave | português | inglês | classe |
 |---|---|---|---|
 | `primeira.emCurso` | em curso até {ano} | ongoing until {ano} | conteúdo, estado declarado na ficha |
+
+
+## RP4 · palavras do desenho e da tabela das séries
+
+O título do SVG é conteúdo composto, conferido carácter a carácter pela F21 em `tests/formas/serie-do-pais.mjs`: nome declarado da série, primeiro período e último período por extenso. Não é uma frase fixa: quando o livro ganha um ponto, o extremo muda. A régua lexical não extrai o interior do SVG nem os cabeçalhos destas tabelas de dados; as cadeias usadas ficam aqui registadas, sem as declarar falsamente como frases fixas rendidas. A planta de uma série trocada e a recomposição do título guardam a ligação ao livro. A S6 confere os cabeçalhos da tabela pela cadência e a expressão da lacuna contra a série.
+
+| cadeia de conteúdo | pt | en |
+|---|---|---|
+| `livro.serieNoTempo.grafico` | {nome}, {intervalo} | {nome}, {intervalo} |
+| `livro.serieNoTempo.periodoPorExtenso` | {periodo} de {ano} | {periodo} of {ano} |
+| `livro.serieNoTempo.anoK` | Ano | Year |
+| `livro.serieNoTempo.semValor` | sem valor | no value |
+| `livro.serieNoTempo.meses` | jan. · fev. · mar. · abr. · mai. · jun. · jul. · ago. · set. · out. · nov. · dez. | Jan · Feb · Mar · Apr · May · Jun · Jul · Aug · Sep · Oct · Nov · Dec |
+| `livro.serieNoTempo.trimestres` | Primeiro trimestre · Segundo trimestre · Terceiro trimestre · Quarto trimestre | First quarter · Second quarter · Third quarter · Fourth quarter |
+| `livro.serieNoTempo.semestres` | Primeiro semestre · Segundo semestre | First half · Second half |
+| `livro.serieNoTempo.numeros` | zero · um · dois · três · quatro · cinco · seis · sete · oito · nove · dez · onze · doze · treze · catorze · quinze · dezasseis · dezassete · dezoito · dezanove | zero · one · two · three · four · five · six · seven · eight · nine · ten · eleven · twelve · thirteen · fourteen · fifteen · sixteen · seventeen · eighteen · nineteen |
+| `livro.serieNoTempo.dezenas` | vinte · trinta · quarenta · cinquenta · sessenta · setenta · oitenta · noventa | twenty · thirty · forty · fifty · sixty · seventy · eighty · ninety |
+| `livro.serieNoTempo.centenas` | cento · duzentos · trezentos · quatrocentos · quinhentos · seiscentos · setecentos · oitocentos · novecentos | one hundred · two hundred · three hundred · four hundred · five hundred · six hundred · seven hundred · eight hundred · nine hundred |
+| `livro.serieNoTempo.cem` | cem | one hundred |
+| `livro.serieNoTempo.mil` | mil | thousand |
+| `livro.serieNoTempo.uneNumero` |  e  |  and  |
+
+Na passagem RP4-b sai a leitura do cartão europeu autónomo e a sua auditoria. O desenho europeu entra no cartão da comparação com a legenda `cartao.uniaoEuropeia`, «União Europeia» e «European Union», já inventariada. A K20 confere a legenda contra a cadeia da casa nas duas edições, com plantas da sua ausência e troca.
+
+### RP4-b · unidade visível, exclusões e anos nos títulos
+
+A primeira página lê a unidade em `unidades-dos-cartoes.mjs` para a linha que nomeia a série. A célula dos blocos confere essa cadeia na mesma corrida da voz, e a planta retira-a ou troca-a. Os recibos já dizem o nome e a unidade no cabeçalho. Os títulos de um desenho com nome visível dizem o intervalo e a unidade, sem repetir o nome.
+
+| cadeia de conteúdo | pt | en |
+|---|---|---|
+| `livro.serieNoTempo.intervalo` | de {primeiro} a {ultimo} | from {primeiro} to {ultimo} |
+| `livro.serieNoTempo.intervaloOrdinal` | do {primeiro} ao {ultimo} | from the {primeiro} to the {ultimo} |
+| `livro.serieNoTempo.graficoSemNome` | {intervalo}, {unidade} | {intervalo}, {unidade} |
+| `livro.serieNoTempo.excluidaSemBase` | {nome}: sem observação no período de base, {periodo}. | {nome}: no observation in the base period, {periodo}. |
+| `livro.serieNoTempo.excluidaBaseNula` | {nome}: a observação no período de base, {periodo}, é zero. | {nome}: the observation in the base period, {periodo}, is zero. |
+| `livro.serieNoTempo.anoZero` | zero | oh |
+| `livro.serieNoTempo.anoCem` | cem | hundred |
+| `livro.serieNoTempo.uneAno` | espaço | espaço |
+| `livro.serieNoTempo.uneDezena` | e, entre espaços | hífen |
+
+Os anos ingleses usam pares, como «nineteen ninety-two» e «twenty twenty-six», e o começo do milénio conserva «two thousand» e os anos seguintes por extenso. O conversor tem provas próprias. As exclusões só aparecem quando uma linha fica sem base utilizável no modo indexado; nenhuma página deste bloco usa esse modo.

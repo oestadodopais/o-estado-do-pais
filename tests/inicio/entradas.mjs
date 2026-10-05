@@ -158,6 +158,8 @@ export function plantasDasEntradas(dist) {
   const cartao = le('/salarios-pensoes-e-apoios/').querySelector('[data-cartao-medida="pensao-media-anual-2025"]').outerHTML;
   const plantas = [
     planta('cartão inteiro repetido noutra página de assunto', '/emprego/', (r) => r.querySelector('main .pais-cartoes').insertAdjacentHTML('beforeend', cartao), /^N1C pt: cartão pensao-media-anual-2025/),
+    planta('cartão autónomo da União indevido', '/precos/', (r) => r.querySelector('main .pais-cartoes').insertAdjacentHTML('beforeend', '<article class="cartao-medida" data-cartao-medida="ihpc-variacao-homologa-ue"><span data-claim="ihpc-variacao-homologa-ue">0</span></article>'), /^E2 pt: cartão ihpc-variacao-homologa-ue/),
+    planta('cartão fora do catálogo permitido', '/precos/', (r) => r.querySelector('main .pais-cartoes').insertAdjacentHTML('beforeend', '<article class="cartao-medida" data-cartao-medida="cartao-fora-do-catalogo"><span data-claim="cartao-fora-do-catalogo">0</span></article>'), /^E2 pt: cartão cartao-fora-do-catalogo/),
     planta('cartão nacional omitido', '/en/housing/', (r) => r.querySelector('[data-cartao-medida="licencas-de-construcao-2025"]').remove(), /^E1 en: cartão licencas-de-construcao-2025/),
     ...['pt', 'en'].map((lang) => planta(`inquilinos depois do total (${lang})`, lang === 'pt' ? '/habitacao/' : '/en/housing/', (r) => { const cs = r.querySelectorAll('[data-cartao-medida]'); const primeiro = cs[0].outerHTML; cs[0].replaceWith(cs[1].outerHTML); cs[1].replaceWith(primeiro); }, new RegExp(`^T10 ${lang} habitacao:`))),
     planta('cartão inteiro nos temas', '/temas/', (r) => r.querySelector('main').insertAdjacentHTML('beforeend', cartao), /^N1I pt:/),

@@ -1,0 +1,86 @@
+[
+  {
+    "linha_mapa": 69,
+    "ficheiro": "src/i18n/strings.mjs",
+    "antes": 4388,
+    "depois": 4432,
+    "ancora": "let paridadeConferida = false"
+  },
+  {
+    "linha_mapa": 394,
+    "ficheiro": "src/components/CartaoDaMedida.astro",
+    "antes": 341,
+    "depois": 354,
+    "ancora": "A FAIXA DA UNIÃO (bloco UE1, 29.09.2026)"
+  },
+  {
+    "linha_mapa": 395,
+    "ficheiro": "scripts/check-formas.mjs",
+    "antes": 533,
+    "depois": 554,
+    "ancora": "F19, UE1 (29.09.2026): a faixa da União"
+  },
+  {
+    "linha_mapa": 397,
+    "ficheiro": "scripts/check-formas.mjs",
+    "antes": 1391,
+    "depois": 1412,
+    "ancora": "F19g · F19h (UE1b, 29.09.2026)"
+  },
+  {
+    "linha_mapa": 403,
+    "ficheiro": "src/components/CartaoDaMedida.astro",
+    "antes": 348,
+    "depois": 361,
+    "ancora": "A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, 29.09.2026): a da"
+  },
+  {
+    "linha_mapa": 437,
+    "ficheiro": "src/i18n/strings.mjs",
+    "antes": 4327,
+    "depois": 3118,
+    "ancora": "O que é este número"
+  },
+  {
+    "linha_mapa": 437,
+    "ficheiro": "src/components/CartaoDaMedida.astro",
+    "antes": 356,
+    "depois": 369,
+    "ancora": "A DEFINIÇÃO, DOBRADA (bloco K2, 02.10.2026, item 1 e decisão 1 do brief)"
+  },
+  {
+    "linha_mapa": 452,
+    "ficheiro": "scripts/check-formas.mjs",
+    "antes": 553,
+    "depois": 574,
+    "ancora": "F20, UE2 (02.10.2026): a secção dos países da página da União"
+  },
+  {
+    "linha_mapa": 457,
+    "ficheiro": "scripts/check-formas.mjs",
+    "antes": 1382,
+    "depois": 1403,
+    "ancora": "UE2-b: cada faixa das duas edições diz o que a medida conta"
+  },
+  {
+    "linha_mapa": 531,
+    "ficheiro": "tests/series/series.mjs",
+    "antes": 236,
+    "depois": 243,
+    "ancora": "S5 · o cartão preso à série"
+  },
+  {
+    "linha_mapa": 437,
+    "ficheiro": "src/i18n/strings.mjs",
+    "antes": 3118,
+    "depois": 3115,
+    "ancora": "O que é este número"
+  },
+  {
+    "linha_mapa": 437,
+    "ficheiro": "src/i18n/strings.mjs",
+    "antes": 4287,
+    "depois": 4371,
+    "ancora": "What this number is"
+  }
+]

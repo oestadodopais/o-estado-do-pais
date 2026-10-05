@@ -1,0 +1,63 @@
+{
+  "comando": "python3 design/especime-v3/medicoes/rp4-2026-10-04/limpar-registos-rp4-b.py",
+  "conhecido_positivo": {
+    "caminho_temporario_retirado": true,
+    "texto_sem_caminho_conservado": true
+  },
+  "ficheiros": [
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp4-2026-10-04/portoes/build.log",
+      "antes": "326c3782d4ec4337f55b5ba70e695f0163ed374c416609a074065bdc87faa595",
+      "depois": "b1118651f5538fd39ec65e2aea768ccc446ddf020082ece397e2cb73d902ffe4",
+      "mudou": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp4-2026-10-04/portoes/estado.fim",
+      "antes": "66c8ad0de16ba10c738ede5aa320212982627445a8651aed8eefe39ff2291f19",
+      "depois": "66c8ad0de16ba10c738ede5aa320212982627445a8651aed8eefe39ff2291f19",
+      "mudou": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp4-2026-10-04/portoes/typecheck.log",
+      "antes": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b",
+      "depois": "def8b7c9f74254cfdad4730436583f73e413bc3d3cd7b0c9ecab585398cee8ae",
+      "mudou": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp4-2026-10-04/portoes/verify.log",
+      "antes": "7a28962989bfe81208b1cd54f491668ef48916f2a2bf10f3b590da52d97d528f",
+      "depois": "6c08f2284c9e7817be4fc46d30d9ca0a583ff567c344bc435ddb93693c59315b",
+      "mudou": true
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp4-2026-10-04/rp4-b-capturas.log",
+      "antes": "1e8e861fec0df8a0434789a56d2412e94a2c7d5c600337535536d5f004743bd3",
+      "depois": "1e8e861fec0df8a0434789a56d2412e94a2c7d5c600337535536d5f004743bd3",
+      "mudou": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp4-2026-10-04/rp4-b-inventario.log",
+      "antes": "d051d466c6119889c2a9a8edb3a4aa8dc43f1cff38525408c219d96743551595",
+      "depois": "d051d466c6119889c2a9a8edb3a4aa8dc43f1cff38525408c219d96743551595",
+      "mudou": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp4-2026-10-04/rp4-b-mapa.log",
+      "antes": "9a0d94908d065f4d1c9d65ec7c5ec83b63432245d72501e7d4f85b6607098104",
+      "depois": "9a0d94908d065f4d1c9d65ec7c5ec83b63432245d72501e7d4f85b6607098104",
+      "mudou": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp4-2026-10-04/rp4-b-medidas.log",
+      "antes": "121878bf540cedc42c78763233f55264f77d0571c59315bb4b14bdd89b2a6ea4",
+      "depois": "121878bf540cedc42c78763233f55264f77d0571c59315bb4b14bdd89b2a6ea4",
+      "mudou": false
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/rp4-2026-10-04/rp4-b-series.log",
+      "antes": "5026a10228b9eeca66e513de364460ebf994fe96fb19aef3913a21b29f040ffb",
+      "depois": "5026a10228b9eeca66e513de364460ebf994fe96fb19aef3913a21b29f040ffb",
+      "mudou": false
+    }
+  ]
+}
