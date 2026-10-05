@@ -308,7 +308,7 @@ import {
   canonicalUrl,
 } from '../site.config.mjs';
 import { ENDERECO_CORRECOES, REGRAS as REGRAS_DO_METODO } from '../src/data/metodo.mjs';
-import { SOBRE } from '../src/data/sobre.mjs';
+// 05.10.2026 (§1.163): a importação de SOBRE saiu com a conferência do data-sobre-nomes, que era o seu único uso.
 import {
   ANCORA_DA_POLITICA,
   O_PROJETO,
