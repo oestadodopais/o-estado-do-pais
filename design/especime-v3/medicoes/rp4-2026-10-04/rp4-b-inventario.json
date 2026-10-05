@@ -1,0 +1,6 @@
+{
+  "comando": "node scripts/inventario-rotulos.mjs --escrever",
+  "cabeca": "2523e3a022daec489476b9c77b5707892aca9c84",
+  "anterior": "2348c727673108de02056afc77ef91c859a4e3f4",
+  "conteudo_sem_o_carimbo_inalterado": true
+}

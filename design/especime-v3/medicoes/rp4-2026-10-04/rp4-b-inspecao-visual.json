@@ -1,0 +1,31 @@
+{
+  "cabeca": "2523e3a022daec489476b9c77b5707892aca9c84",
+  "metodo": "Inspeção dos recortes da construção e dos PNG guardados, sem alterar os originais. As medidas de todas as larguras estão em capturas.json.",
+  "observacoes": [
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-inicio-390.png",
+      "sha256": "1e7544c3bb8c1bf126b760ca5f524cea26f5db89449e85cd485da694ecb06dc4",
+      "observacao": "A unidade fica visível sob o nome da inflação; o desenho conserva a coluna das barras."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-precos-1280.png",
+      "sha256": "08988c88c0205442c8099d4a5ea339b8ed9b4163464d9ce013d8ab8d1266826a",
+      "observacao": "A legenda European Union identifica a série dentro do cartão da comparação."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-precos-390.png",
+      "sha256": "692d48ed377266b3f70a08034788e6049290197443ed4cf27f0e74149629b8f9",
+      "observacao": "A legenda União Europeia identifica a série dentro do cartão da comparação."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-livro-razao_series_serie-pensao-media-anual-390.png",
+      "sha256": "d50a0774e010641c6ee2b13da2d9db7bd750aad6b663c070dd62dc40d5e270d6",
+      "observacao": "O desenho anual e a tabela permanecem legíveis no ecrã estreito."
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-areas_trabalho-solidariedade-e-seguranca-social-768.png",
+      "sha256": "d077c9a4b44b392e8c97279de6f9d431b81a2f3cf85490182e928f77247438c3",
+      "observacao": "O desenho tem largura limitada e deixa de crescer com a coluna da área."
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "brief": "design/observatorio/BRIEF-RP4-o-grafico-das-series-no-cartao-e-no-recibo.md",
+  "guiao": "design/observatorio/medidas/BRIEF-RP4.py",
+  "cabeca_lida": "905105b7",
+  "medidas": [
+    {
+      "nome": "series_no_tempo_no_livro",
+      "valor": 16,
+      "comando": "git ls-tree 905105b7 ledger/series/ · os ficheiros .yml com eixo: \"periodo\"",
+      "conhecido_positivo": {
+        "o_que": "a série do IPC está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos_das_series_no_tempo",
+      "valor": 4131,
+      "comando": "git show 905105b7:ledger/series/<série>.yml · as linhas «  - periodo:» somadas nas séries no tempo",
+      "conhecido_positivo": {
+        "o_que": "a série do IPC tem mais de cem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "lacunas_declaradas_nas_series_no_tempo",
+      "valor": 2,
+      "comando": "git show 905105b7:ledger/series/<série>.yml · as linhas «  - periodo:» dentro do bloco lacunas: de cada série no tempo, somadas",
+      "conhecido_positivo": {
+        "o_que": "a soma dos pontos com as lacunas dá a contagem antiga do §0 (4 133, a I196)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos_da_maior_serie_no_tempo",
+      "valor": 944,
+      "comando": "git show 905105b7:ledger/series/<série>.yml · o máximo das contagens de «  - periodo:»",
+      "conhecido_positivo": {
+        "o_que": "a maior é a do nível do índice de preços no consumidor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_presas_a_uma_serie",
+      "valor": 7,
+      "comando": "git grep -l '^serie: ' 905105b7 -- ledger/claims/",
+      "conhecido_positivo": {
+        "o_que": "a linha do IPC é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_as_coordenadas_0014666_ou_0014647",
+      "valor": 10,
+      "comando": "git grep -l -E '0014666|0014647' 905105b7 -- ledger/claims/",
+      "conhecido_positivo": {
+        "o_que": "a linha dos combustíveis é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dessas_as_presas_a_uma_serie",
+      "valor": 0,
+      "comando": "a interseção das duas medidas anteriores",
+      "conhecido_positivo": {
+        "o_que": "as duas listas foram lidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas_na_lista_fechada_da_check_formas",
+      "valor": 8,
+      "comando": "git show 905105b7:scripts/check-formas.mjs · o conhecido-positivo «FORMAS.size !== N»",
+      "conhecido_positivo": {
+        "o_que": "a forma serie-do-pais está declarada na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ocorrencias_de_serie_do_pais_em_src",
+      "valor": 0,
+      "comando": "git grep -c serie-do-pais 905105b7 -- src/",
+      "conhecido_positivo": {
+        "o_que": "a mesma procura em scripts/ acha o nome na check-formas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "desenhos_svg_no_cartao_da_medida",
+      "valor": 0,
+      "comando": "git show 905105b7:src/components/CartaoDaMedida.astro · as ocorrências de <svg",
+      "conhecido_positivo": {
+        "o_que": "o cartão lê serieDaLinha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "desenhos_svg_na_vista_do_recibo_da_serie_no_tempo",
+      "valor": 0,
+      "comando": "git show 905105b7:src/views/SerieNoTempoView.astro · as ocorrências de <svg",
+      "conhecido_positivo": {
+        "o_que": "a vista escreve a tabela com data-serie-tabela e um PontoDaSerie por período",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "blocos_da_primeira_pagina_com_serie_no_tempo",
+      "valor": 0,
+      "comando": "git show 905105b7:src/data/primeira-pagina.mjs · as chaves «serie:» dentro de BLOCOS_DA_PRIMEIRA_PAGINA",
+      "conhecido_positivo": {
+        "o_que": "os blocos declaram a forma com «forma:»",
+        "encontrado": true
+      }
+    }
+  ]
+}

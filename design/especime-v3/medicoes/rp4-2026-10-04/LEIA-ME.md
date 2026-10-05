@@ -122,7 +122,7 @@ A decisão da antiga I195 do RP4, agora I197, está implementada em `48e4ba5c`. 
 
 As conferências intermédias do cartão, das séries, das entradas, da voz e dos tipos passaram. As plantas da K20 incluem um cartão sem série própria nem comparação com série, a ausência da série própria, a ausência da comparação, a troca da série, da legenda e da porta, a ordem e um cartão com ambas as séries. A S5 continua a recusar uma comparação europeia desfasada. Os registos `rp4-b-cartao.json`, `rp4-b-series.json` e `rp4-b-entradas.json` guardam os controlos e as mordidas; estas conferências não substituem os portões finais.
 
-A leitura e o registo das plantas chegaram durante a espera, antes do rebase. A espera e cada conferência ficam em `rp4-b-espera.json`. Os achados foram lidos por inteiro; as correções reais seguintes estão em `eb62d556`, após o rebase. As secções do H2 e do RP4 ficaram nos registos; a I195 do H2 e a I197 do RP4 têm números distintos. O rebase terminou sobre `fb364fe4`. Os códigos finais serão fechados antes da entrega. O custo parcial é lido da sessão por `custo-rp4-b.py`; a linha final `tokens used` só fica disponível depois de o lançador terminar.
+A leitura e o registo das plantas chegaram durante a espera, antes do rebase. A espera e cada conferência ficam em `rp4-b-espera.json`. Os achados foram lidos por inteiro; as correções reais seguintes estão em `eb62d556`, após o rebase. As secções do H2 e do RP4 ficaram nos registos; a I195 do H2 e a I197 do RP4 têm números distintos. O rebase terminou sobre `fb364fe4`. Os três códigos finais, lidos dos ficheiros depois da corrida, são 0; as medidas ficam abaixo. O custo parcial é lido da sessão por `custo-rp4-b.py`; a linha final `tokens used` só fica disponível depois de o lançador terminar.
 
 
 | Achado, pela ordem da leitura | Resposta RP4-b | Prova |
@@ -138,7 +138,7 @@ A leitura e o registo das plantas chegaram durante a espera, antes do rebase. A 
 | 9 · ponto isolado invisível | Um segmento de um ponto rende um círculo. A F21 recompõe o centro, o raio e a identidade. | Série sintética com um ponto entre lacunas; a forma antiga deixa de contar como segmento visível e é recusada pela F21. |
 | 10 · uma base ausente impede todas as séries | A linha sem base ou com base nula fica fora, com nome e razão na legenda. Só se recusa o desenho quando nenhuma linha tem base utilizável. | Provas de exclusão parcial, base nula e ausência de todas as bases; planta da legenda retirada. Nenhuma página usa o modo indexado. |
 | 11 · títulos acessíveis | Artigos nos trimestres e semestres portugueses; conversor próprio para anos ingleses. Na primeira página o título diz período e unidade, sem repetir o nome visível. | Casos conhecidos do conversor e recomposição dos títulos pela F21. |
-| 12 · provas antigas ou ausentes do pacote | O inventário dos rótulos será regenerado sobre a construção final, com o carimbo dessa cabeça. A corrida inteira após o rebase cobre o brief corrigido. O custo parcial declara a sua origem e o limite da linha final. | Inventário, `check:briefs`, portões, capturas das duas edições e `custo-rp4-b.json`. Os outros pontos são limites do pacote recebido. |
+| 12 · provas antigas ou ausentes do pacote | O inventário dos rótulos foi regenerado sobre a construção final, com o carimbo dessa cabeça. Só mudou o carimbo. A corrida inteira após o rebase cobriu o brief corrigido. O custo parcial declara a sua origem e o limite da linha final. | Inventário, `check:briefs`, portões, capturas das duas edições e `custo-rp4-b.json`. Os outros pontos são limites do pacote recebido. |
 | 13 · coordenadas recompostas pelo leitor | Conservada a recomposição de toda a geometria. | F21. |
 | 14 · composição dos desenhos | Recontada na corrida final, depois da mudança de lugar da série europeia. | Saída F21 dos portões. |
 | 15 · pontos, colunas e bandeiras dos recibos | Conservados. | S6 e capturas dos recibos. |
@@ -150,3 +150,36 @@ A leitura e o registo das plantas chegaram durante a espera, antes do rebase. A 
 
 
 Commits RP4-b depois do rebase: `48e4ba5c` (decisão da comparação), `930e4ae3` (primeiros registos), `eb62d556` (achados reais) e `edac06f2` (leitura e respostas). Antes do rebase eram, pela mesma ordem, `2348c727`, `20d57add`, `65067f6b` e `8b4541e7`.
+
+
+A cabeça do código conferida é `2523e3a022daec489476b9c77b5707892aca9c84`. Os ficheiros `portoes/cabeca` e `portoes/cabeca.fim` e o carimbo da construção coincidem. O `main` integrado é `fb364fe48c43ca71c2fd04ec8ba640c9399de221`. A corrida começou depois de a tranca da outra construção ser libertada. O commit `2523e3a0` guarda a integração e as referências atualizadas do mapa; `079c0753` guarda apenas o carimbo do inventário, sem alterar as formas ou contagens. O último commit guarda só provas; a sua cabeça fica na resposta de entrega, fora do próprio commit.
+
+| Portão final RP4-b | Código lido do ficheiro | Segundos medidos |
+|---|---|---|
+| `build` | 0 | 188 |
+| `verify` | 0 | 1020 |
+| `typecheck` | 0 | 0 |
+
+As durações são as diferenças entre os carimbos de início e fim, com resolução de um segundo. O `check:briefs` desta corrida conferiu o RP4 corrigido. A reprodução em `rp4-b-brief.json` coincide com o ficheiro selado e continua presa a `905105b7`.
+
+| Prova refeita | Resultado medido |
+|---|---|
+| F21 | 56 desenhos recompostos; 11 provas do módulo; 16 de 16 plantas mordidas |
+| K20 | 22 de 22 plantas mordidas; as sete linhas presas representadas nas duas edições |
+| Primeira página, série | 12 de 12 plantas mordidas, incluindo a unidade |
+| Entradas | 17 de 17 plantas mordidas; catálogo nacional conservado |
+| Séries | 20 de 20 plantas mordidas; 4131 pontos conferidos |
+| Capturas | 60 ficheiros refeitos, nas cinco larguras e nas duas edições; 8 de 8 plantas mordidas |
+| Letras dos eixos | mínimo 11,799375 px; máximo 12 px; sem transbordo nem marcas fora do SVG |
+
+A largura máxima do desenho é a largura do seu `viewBox`, sem multiplicador. As capturas foram substituídas também nas páginas afetadas pela limitação de largura e na primeira página que recebeu o H2. Os resumos, as dimensões, os títulos, a posição e os hashes estão em `capturas.json`; a inspeção visual de amostras está em `rp4-b-inspecao-visual.json`. A porta europeia resolve o recibo da sua série nas duas edições e não existe cartão europeu autónomo.
+
+A medição reproduzível é `node design/especime-v3/medicoes/rp4-2026-10-04/medir-rp4-b.mjs`. O guião recusa uma cabeça divergente, um código diferente de zero, um carimbo final anterior ao inicial, uma planta que não morda, uma captura com bytes diferentes, um número de issue repetido e uma mudança no livro ou no carregador das séries. O resultado está em `rp4-b.json`, com a F21 também em `rp4-b-reais-provas.json`. Os ficheiros da leitura e das plantas estão no commit `edac06f2` e os seus hashes no resultado. A correspondência ordenada de cada resposta com cada achado é conferida em `rp4-b-achados.json`, incluindo a recusa de uma resposta retirada.
+
+A limpeza dos registos correu depois dos portões, por `limpar-registos-rp4-b.py`, com os hashes de antes e depois em `rp4-b-limpeza.json`. A conferência de higiene da passagem usa a base integrada do H2 e não encontrou caminhos locais nem nomes pessoais nos ficheiros mudados pelo RP4. A conferência histórica mais larga assinalou quatro ficheiros herdados de `main`, todos byte a byte iguais à base: `DECISIONS.md` e os três registos do H2 listados em `rp4-b-higiene-historica.json`. Não foram alterados por esta passagem; o zero da conferência RP4-b não afirma uma limpeza de todo o repositório.
+
+As secções do H2 e do RP4 ficaram no mapa, nas chaves e no inventário das frases. A I195 do H2 continua aberta, a I197 do RP4 está fechada e a I196 ficou inalterada. As referências deslocadas foram conferidas pelas suas âncoras; o resultado do conferidor do mapa não é apresentado como prova da exatidão de todos os números de linha, conforme a I195. A conferência dos números deste relatório usa `python3 scripts/leituras/conferir-relatorio.py design/especime-v3/medicoes/rp4-2026-10-04/LEIA-ME.md design/especime-v3/medicoes/rp4-2026-10-04`; a saída e o código ficam em `conferencia-relatorio.json` e `conferencia-relatorio.codigo`.
+
+Custo parcial, modelo lido da sessão `gpt-6-astra`: 5472 segundos observados até `2026-10-05T08:18:34.491469+00:00`. A telemetria cumulativa disponível regista 18360686 símbolos, incluindo 17871744 de entrada em cache, e 75324 de saída. Esta telemetria não é a linha final `tokens used`: essa medição continua **[verify]** até o lançador terminar. Os eventos e o limite de interpretação estão em `custo-rp4-b.json`; não foi inventado um custo monetário.
+
+Não fica nenhuma correção real da leitura por implementar. Ficam a leitura a frio desta passagem pelo Opus e o custo final depois da saída do lançador. A metade da S3 dependente dos corpos do motor continua fora do âmbito, como na entrega original. Não houve escrita no motor, alteração dos valores ou fontes do livro, publicação, push ou declaração de resultado remoto.
