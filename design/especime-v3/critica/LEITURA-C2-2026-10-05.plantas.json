@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-05T15:18:26+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "Q1",
+   "ficheiro": "ledger/claims/pib-real-per-capita-2024.yml",
+   "descricao": "o valor novo do PIB real por habitante de 2024 trocado (20 520 passa a 20 250), contra o excerto e o corpo alojado",
+   "sha256_antes": "3eb5fadd8e51689877a9247d478e28e07e0cb769dee18807ac654b641b4ee47b",
+   "sha256_depois": "eee8d164b6c90544ce9c2c35fa11aa3e5674a8ea49ff280eb965aa5abd97c16e",
+   "contexto_antes": "olha do indicador: indicators/convergence.md.\n\nid: \"pib-real-per-capita-2024\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"20 520\"\nunit: \"euros por habitante · volumes encadeados (2015)\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Eurostat\"\ndo",
+   "contexto_depois": "olha do indicador: indicators/convergence.md.\n\nid: \"pib-real-per-capita-2024\"\n\n# O valor tal como é publicado, com formatação portuguesa. String, nunca número.\nvalue: \"20 250\"\nunit: \"euros por habitante · volumes encadeados (2015)\"\n\n# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.\nsource: \"Eurostat\"\ndo"
+  },
+  {
+   "id": "Q2",
+   "ficheiro": "built/estado-e-economia/index.html",
+   "descricao": "a página construída do Estado e economia mostra 20 530 onde o livro diz 20 520",
+   "sha256_antes": "d6d08b60300bc4936262578d93dcd0a24e37e7673c79e0d1761d176122a08ea4",
+   "sha256_depois": "e4f9e08cdaf73708b624323a3ce6fe2c219d8b646076c10c3b2c8c4f11f9b9c4",
+   "contexto_antes": "nha\" data-de-linha=\"pib-real-per-capita-2024\" data-de-campo=\"reference_date\">2024</span>:</span><span data-claim=\"pib-real-per-capita-2024\" class=\"claim-value\">20 520</span></span><span class=\"cartao-medida-regua-item\" data-regua=\"ue\" data-selo-em=\"pib-real-per-capita-2025\"><span class=\"cartao-medida-regua-k\"><span data-voz>",
+   "contexto_depois": "nha\" data-de-linha=\"pib-real-per-capita-2024\" data-de-campo=\"reference_date\">2024</span>:</span><span data-claim=\"pib-real-per-capita-2024\" class=\"claim-value\">20 530</span></span><span class=\"cartao-medida-regua-item\" data-regua=\"ue\" data-selo-em=\"pib-real-per-capita-2025\"><span class=\"cartao-medida-regua-k\"><span data-voz>"
+  },
+  {
+   "id": "Q3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 7 pedidos com 200 em vez dos 6 do registo",
+   "sha256_antes": "11bc34f8feb054bf78fb918e8623a833c47751390de08d35f6abfde22cda7d72",
+   "sha256_depois": "2293f0cf9dc7f3232cb268362dde22bef3b989b5777dbc88afbe724749bdd76c",
+   "contexto_antes": "cators/out/c2-2026-10-05/reler.py` pediu o `source_url` selado de cada linha pelo cliente da casa (`core.http.HttpClient.get`, com o nome da casa e sem cache), 6 pedidos para as 9 linhas, 6 com 200, cada tentativa em `pedidos.jsonl` e cada corpo alojado pelo seu sha256; recortou cada cubo pela coordenada selada da própria linha e leu o valor do período, o",
+   "contexto_depois": "cators/out/c2-2026-10-05/reler.py` pediu o `source_url` selado de cada linha pelo cliente da casa (`core.http.HttpClient.get`, com o nome da casa e sem cache), 7 pedidos para as 9 linhas, 7 com 200, cada tentativa em `pedidos.jsonl` e cada corpo alojado pelo seu sha256; recortou cada cubo pela coordenada selada da própria linha e leu o valor do período, o"
+  },
+  {
+   "id": "Q4",
+   "ficheiro": "scripts/check-pais.mjs",
+   "descricao": "a via da coordenada de Portugal volta a ler a primeira geografia do pedido (o defeito que o construtor diz ter apanhado nas linhas do Alentejo)",
+   "sha256_antes": "ef754218f3bf5222b62d1ac0b28d580e2f19fc66a70bdf7b6ded2c9548ddcd37",
+   "sha256_depois": "d3b8344425d42c355dbbc0696cec6be2f8db632eacb4ad4acd73f0c77eb6d335",
+   "contexto_antes": "não deriva nada por esta via. */\n  let geos = [];\n  try { geos = c.source_url ? new URL(c.source_url).searchParams.getAll('geo') : []; } catch { geos = []; }\n  const doPais = geos.length === 1 && geos[0] === 'PT' ? PAIS : undefined;\n  const d = [...new Set([doEstudo, doId, doPais].filter(x => typeof x === 'string'))];\n  if (d.length > 1) {\n    erros.push(`A1: a linha ${id} deriva dois luga",
+   "contexto_depois": "não deriva nada por esta via. */\n  let geos = [];\n  try { geos = c.source_url ? new URL(c.source_url).searchParams.getAll('geo') : []; } catch { geos = []; }\n  const doPais = geos[0] === 'PT' ? PAIS : undefined;\n  const d = [...new Set([doEstudo, doId, doPais].filter(x => typeof x === 'string'))];\n  if (d.length > 1) {\n    erros.push(`A1: a linha ${id} deriva dois luga"
+  },
+  {
+   "id": "Q5",
+   "ficheiro": "ledger/historias-valores.json",
+   "descricao": "a história da posição de investimento internacional de 2024 diz que o valor antigo era o novo (−58,3 em vez de −58,9), contra a correção da linha",
+   "sha256_antes": "480d90f282e97f8c0bce1394ff0d6b416b0494925604c8db9c04a29d44416cef",
+   "sha256_depois": "edd88c20f64c3cd7363d3e003727810f2fbac8716f656eaba523aff14bc523f4",
+   "contexto_antes": ",\n      \"new_value\": \"20 700\"\n    }\n  ],\n  \"posicao-de-investimento-internacional-2024\": [\n    {\n      \"date\": \"2026-10-05\",\n      \"kind\": \"atualizacao\",\n      \"old_value\": \"−58,9\",\n      \"new_value\": \"−58,3\"\n    }\n  ],\n  \"posicao-de-investimento-internacional-2025\": [\n    {\n      \"date\": \"2026-10-05\",\n      \"kind\": \"atualizacao\",\n      \"old_value\": \"−50,2\",\n      \"",
+   "contexto_depois": ",\n      \"new_value\": \"20 700\"\n    }\n  ],\n  \"posicao-de-investimento-internacional-2024\": [\n    {\n      \"date\": \"2026-10-05\",\n      \"kind\": \"atualizacao\",\n      \"old_value\": \"−58,3\",\n      \"new_value\": \"−58,3\"\n    }\n  ],\n  \"posicao-de-investimento-internacional-2025\": [\n    {\n      \"date\": \"2026-10-05\",\n      \"kind\": \"atualizacao\",\n      \"old_value\": \"−50,2\",\n      \""
+  }
+ ]
+}
