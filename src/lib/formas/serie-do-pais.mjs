@@ -210,7 +210,8 @@ export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, 
      a leva, porque é a porta para o recibo, onde a leitura vive.
      O campo parte-se em colunas de píxel contadas na menor largura no ecrã do desenho (`MENOR_LARGURA_NO_ECRA`), e por
      isso cada coluna tem pelo menos um píxel também a 390; cada coluna lê o ponto mais próximo do seu meio (num empate, o
-     primeiro); e as colunas vizinhas que leem o mesmo ponto fazem uma zona só, que é a mesma leitura com menos peso (as
+     primeiro), e as duas das pontas leem os pontos das pontas, que estão dentro delas; e as colunas vizinhas que leem o
+     mesmo ponto fazem uma zona só, que é a mesma leitura com menos peso (as
      colunas de um ponto são sempre vizinhas, porque os sítios mais perto de um ponto do que dos outros são um intervalo).
      Cada zona tem, escondidos até o rato passar por ela, o ponto marcado, a linha vertical do campo no x do ponto e a
      etiqueta, com o valor do ponto e o período; a etiqueta vai para o canto de cima do lado de lá do ponto (à direita para
@@ -230,6 +231,14 @@ export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, 
        uma tolerância de um milionésimo, para o resultado não depender do ruído das contas de vírgula flutuante. */
     while (j < xsDaLeitura.length - 1 && Math.abs(xsDaLeitura[j + 1] - centro) < Math.abs(xsDaLeitura[j] - centro) - 1e-6) j++;
     pontoDaColuna.push(j);
+  }
+  /* AS COLUNAS DAS PONTAS LEEM OS PONTOS DAS PONTAS (a passagem RP4-c-b, achado das provas com o rato). O primeiro e o
+     último ponto estão dentro da primeira e da última coluna, à distância zero delas, e são esses que elas leem: com mais
+     pontos do que colunas, o meio da última coluna fica sempre mais perto do penúltimo ponto, e o valor mais recente da
+     série não se lia em zona nenhuma (no recibo da inflação, a última zona dizia julho e não agosto de 2026). */
+  if (colunas) {
+    pontoDaColuna[0] = 0;
+    pontoDaColuna[colunas - 1] = dadosDaLeitura.length - 1;
   }
   /** @type {{periodo: string, valor: string, colunas: [number, number], zona: {x: string, y: string, largura: string, altura: string}, mira: {x: string, y1: string, y2: string}, marca: {cx: string, cy: string, r: string}, etiqueta: {x: string, y: string, ancora: string, dy: string}}[]} */
   const leituras = [];
