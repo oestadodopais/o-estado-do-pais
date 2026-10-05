@@ -1,7 +1,7 @@
 /** RP4: F21 recompõe o desenho do livro, sobre cadeias em memória. */
 import assert from 'node:assert/strict';
 import { parse } from 'node-html-parser';
-import { serieDoPais, BASE_DO_INDICE, tabelaPorAnos, segmentoVisivel, LARGURA_DE_UM_ANO, PIXEIS_ATE_A_VIZINHA, ANOS_PARA_AS_DECADAS } from '../../src/lib/formas/serie-do-pais.mjs';
+import { serieDoPais, BASE_DO_INDICE, tabelaPorAnos, segmentoVisivel, LARGURA_DE_UM_ANO, PIXEIS_ATE_A_VIZINHA, ANOS_PARA_AS_DECADAS, MENOR_LARGURA_NO_ECRA } from '../../src/lib/formas/serie-do-pais.mjs';
 import { tituloDaSerie, periodoEmPalavras, anoEmPalavras, legendasDasExclusoes } from '../../src/lib/formas/palavras-da-serie.mjs';
 import { getSerie, allSeries } from '../../src/lib/series.mjs';
 import { FIGURAS_INDEXADAS } from '../../src/data/series-no-tempo.mjs';
@@ -50,7 +50,19 @@ function irmaosDepois(/** @type {import('node-html-parser').HTMLElement} */ svg)
 }
 
 /** As marcas incluem texto, posição, âncora e traço, carácter a carácter. */
-export function conferirSerie(svg, lang, lerSerie = getSerie) {
+/**
+ * ONDE A LEITURA VIVE (a passagem RP4-c-b, 05.10.2026, a decisão do lugar de direção sobre o peso, a I208): um desenho
+ * leva as zonas da leitura de cada ponto quando não está dentro da porta de um cartão (`[data-cartao-serie]`): a
+ * primeira página e os recibos sim, os cartões não, porque o cartão é a porta para o recibo. A regra lê-se do sítio do
+ * desenho na página, e não de uma marca dele: o componente pede as zonas com `comLeitura`, e as duas declarações têm de
+ * bater.
+ * @param {import('node-html-parser').HTMLElement} svg
+ */
+export function leituraDoSitio(svg) {
+  return !svg.closest?.('[data-cartao-serie]');
+}
+
+export function conferirSerie(svg, lang, lerSerie = getSerie, leitura = leituraDoSitio(svg)) {
   const erros = [];
   const falha = (m) => erros.push(`F21 · ${m}`);
   if (svg.rawTagName !== 'svg' || svg.getAttribute('role') !== 'img') falha('a forma não é um SVG com papel de imagem');
@@ -61,7 +73,7 @@ export function conferirSerie(svg, lang, lerSerie = getSerie) {
     const modo = svg.getAttribute('data-modo');
     const v = (svg.getAttribute('viewBox') ?? '').split(' ');
     if (v.length !== 4 || v[0] !== '0' || v[1] !== '0') throw Error('viewBox inválido');
-    g = serieDoPais(ids, modo, Number(v[2]), Number(v[3]), lerSerie);
+    g = serieDoPais(ids, modo, Number(v[2]), Number(v[3]), lerSerie, { leitura });
   } catch (e) { falha(`não recompõe: ${e.message}`); return erros; }
   const esperado = g.linhas.flatMap(l => l.segmentos.map(points => points.includes(' ') ? [l.id, 'polyline', points] : [l.id, 'circle', ...points.split(','), '2']));
   /* Os traços da série são os filhos diretos do desenho; os pontos marcados da leitura vivem dentro dos seus grupos
@@ -122,6 +134,9 @@ export function conferirSerie(svg, lang, lerSerie = getSerie) {
      um com a zona, a linha vertical, o ponto marcado e a etiqueta, carácter a carácter, e nada mais; sem classes nem
      outros atributos (a lista dos permitidos, acima), porque a folha os acende pela estrutura do desenho. */
   const grupos = svg.childNodes.filter((n) => n.rawTagName === 'g' && n.getAttribute('data-eixo') === undefined);
+  /* RP4-c-b: as zonas só onde a leitura vive. */
+  if (!leitura && grupos.length) falha('zonas de leitura num desenho que não as leva (o desenho de um cartão é a porta para o recibo)');
+  if (leitura && g.leituras.length && !grupos.length) falha('desenho sem as zonas de leitura fora da porta de um cartão');
   let esperadas = [];
   try { esperadas = leiturasEsperadas(g, lang, lerSerie); } catch (e) { falha(`a leitura não recompõe: ${e.message}`); }
   const lidasDaLeitura = grupos.map((grupo) => {
@@ -250,31 +265,53 @@ export function decadasDoEixo(g, s) {
 }
 
 /**
- * AS ZONAS DA LEITURA, LIDAS PELOS PONTOS (bloco RP4-c, 05.10.2026, o ponto 4 do mandato), com leitura própria: num
- * desenho de uma série no modo da unidade há uma zona por ponto, e as zonas partem o campo de ponta a ponta sem
- * buracos nem sobreposições, cada uma a acabar a meio entre o seu ponto e o seguinte (lidos nas coordenadas do traço) e
- * a conter o seu ponto; a linha vertical e o ponto marcado estão no ponto; a etiqueta está no canto de cima do lado de
- * lá. Noutro desenho não há zonas. Devolve as queixas.
- * @param {ReturnType<typeof serieDoPais>} g
+ * AS ZONAS DA LEITURA, LIDAS PELOS PONTOS (bloco RP4-c, 05.10.2026, o ponto 4 do mandato; por colunas desde a passagem
+ * RP4-c-b), com leitura própria. Num desenho que leva a leitura (uma série no modo da unidade, fora da porta de um
+ * cartão): o campo parte-se em colunas contadas na menor largura no ecrã, uma conta desta célula; as zonas partem o
+ * campo de ponta a ponta sem buracos nem sobreposições, cada uma sobre colunas inteiras; o ponto de cada zona (o do x da
+ * sua linha vertical) é o ponto mais próximo do meio de cada coluna dela, lidos os pontos nas coordenadas do traço; duas
+ * zonas vizinhas não leem o mesmo ponto; cada zona tem pelo menos um píxel na menor largura no ecrã; a linha vertical e o
+ * ponto marcado estão no ponto; a etiqueta está no canto de cima do lado de lá. Noutro desenho não há zonas. Devolve as
+ * queixas.
+ * @param {ReturnType<typeof serieDoPais>} g @param {boolean} [leitura]
  */
-export function zonasDaLeitura(g) {
-  if (g.modo !== 'unidade' || g.linhas.length !== 1) return g.leituras.length ? ['há zonas de leitura num desenho que não as leva'] : [];
+export function zonasDaLeitura(g, leitura = true) {
+  if (!leitura || g.modo !== 'unidade' || g.linhas.length !== 1) return g.leituras.length ? ['há zonas de leitura num desenho que não as leva'] : [];
   const queixas = [];
   const pontos = g.linhas[0].segmentos.join(' ').split(' ').map((par) => par.split(',').map(Number));
-  if (g.leituras.length !== pontos.length) return [`o desenho tem ${g.leituras.length} zonas e ${pontos.length} pontos`];
   const { esquerda, direita, cima, fundo } = g.campo;
+  const escala = Math.min(g.largura, MENOR_LARGURA_NO_ECRA) / g.largura;
+  const n = Math.max(1, Math.floor((direita - esquerda) * escala));
+  const passo = (direita - esquerda) / n;
+  /* A distância mínima do meio de uma coluna a um ponto, por procura inteira. As coordenadas do traço estão escritas a três
+     casas, e por isso um ponto que fique à distância mínima até dois milésimos é um dos mais próximos (um empate). */
+  const minima = (/** @type {number} */ k) => {
+    const c = esquerda + (k + 0.5) * passo;
+    return Math.min(...pontos.map((pt) => Math.abs(pt[0] - c)));
+  };
+  if (!g.leituras.length) return ['o desenho leva a leitura e não tem zonas'];
   let antes = esquerda;
-  g.leituras.forEach((l, i) => {
-    const [px, py] = pontos[i];
+  let anterior = -1;
+  g.leituras.forEach((l, z) => {
     const zx = Number(l.zona.x); const fim = zx + Number(l.zona.largura);
-    const meio = i === pontos.length - 1 ? direita : (px + pontos[i + 1][0]) / 2;
-    if (Math.abs(zx - antes) > 0.002) queixas.push(`a zona ${i + 1} começa em ${zx} e a anterior acaba em ${antes}`);
-    if (Math.abs(fim - meio) > 0.002) queixas.push(`a zona ${i + 1} acaba em ${fim} e o meio até ao ponto seguinte está em ${meio}`);
-    if (px < zx - 0.002 || px > fim + 0.002) queixas.push(`a zona ${i + 1} não contém o seu ponto`);
-    if (Number(l.zona.y) !== cima || Number(l.zona.altura) !== fundo - cima || Number(l.mira.y1) !== cima || Number(l.mira.y2) !== fundo) queixas.push(`a zona ${i + 1} ou a sua linha não vão de cima a baixo do campo`);
-    if (Number(l.mira.x) !== px || Number(l.marca.cx) !== px || Number(l.marca.cy) !== py) queixas.push(`a linha ou o ponto marcado da zona ${i + 1} não estão no ponto`);
-    const doLadoDeLa = px <= (esquerda + direita) / 2;
-    if (l.etiqueta.ancora !== (doLadoDeLa ? 'end' : 'start') || Number(l.etiqueta.x) !== (doLadoDeLa ? direita : esquerda + 6)) queixas.push(`a etiqueta da zona ${i + 1} não está no canto do lado de lá`);
+    const k0 = Math.round((zx - esquerda) / passo); const k1 = Math.round((fim - esquerda) / passo) - 1;
+    if (Math.abs(zx - antes) > 0.002) queixas.push(`a zona ${z + 1} começa em ${zx} e a anterior acaba em ${antes}`);
+    if (Math.abs(zx - (esquerda + k0 * passo)) > 0.002 || Math.abs(fim - (esquerda + (k1 + 1) * passo)) > 0.002 || k1 < k0) queixas.push(`a zona ${z + 1} não está sobre colunas inteiras`);
+    if (Number(l.zona.largura) * escala < 1 - 1e-6) queixas.push(`a zona ${z + 1} tem menos de um píxel na menor largura no ecrã`);
+    const i = pontos.findIndex((pt) => Math.abs(pt[0] - Number(l.mira.x)) <= 0.0015);
+    if (i < 0) queixas.push(`a linha vertical da zona ${z + 1} não está num ponto`);
+    else {
+      for (let k = Math.max(k0, 0); k <= Math.min(k1, n - 1); k++) {
+        const c = esquerda + (k + 0.5) * passo;
+        if (Math.abs(pontos[i][0] - c) > minima(k) + 0.002) { queixas.push(`a coluna ${k + 1} da zona ${z + 1} lê um ponto que não é o mais próximo dela`); break; }
+      }
+      if (i === anterior) queixas.push(`as zonas ${z} e ${z + 1}, vizinhas, leem o mesmo ponto`);
+      if (Number(l.marca.cx) !== pontos[i][0] || Number(l.marca.cy) !== pontos[i][1]) queixas.push(`o ponto marcado da zona ${z + 1} não está no ponto`);
+      const doLadoDeLa = pontos[i][0] <= (esquerda + direita) / 2;
+      if (l.etiqueta.ancora !== (doLadoDeLa ? 'end' : 'start') || Number(l.etiqueta.x) !== (doLadoDeLa ? direita : esquerda + 6)) queixas.push(`a etiqueta da zona ${z + 1} não está no canto do lado de lá`);
+      anterior = i;
+    }
+    if (Number(l.zona.y) !== cima || Number(l.zona.altura) !== fundo - cima || Number(l.mira.y1) !== cima || Number(l.mira.y2) !== fundo) queixas.push(`a zona ${z + 1} ou a sua linha não vão de cima a baixo do campo`);
     antes = fim;
   });
   if (Math.abs(antes - direita) > 0.002) queixas.push(`as zonas acabam em ${antes} e o campo em ${direita}`);
@@ -299,6 +336,17 @@ export function plantasDaLeitura(html, lang) {
     ['o período de outro ponto na etiqueta', /leitura dos pontos difere/, (s) => { const [a, b] = grupos(s).map((x) => x.querySelector('[data-ponto-periodo]')); a.set_content(b.textContent); }],
     ['a etiqueta acesa por um atributo', /atributo/, (s) => grupos(s)[0].querySelector('text').setAttribute('visibility', 'visible')],
     ['uma zona a menos', /leitura dos pontos difere|acrescentado/, (s) => grupos(s).at(-1).remove()],
+    /* RP4-c-b: uma zona a mais (a primeira, repetida a seguir a si própria) e uma leitura trocada (a zona da segunda coluna
+       com o valor e o período do ponto da primeira, com as marcas certas desse ponto). */
+    ['uma zona a mais', /leitura dos pontos difere|acrescentado/, (s) => { const g0 = grupos(s)[0]; g0.insertAdjacentHTML('afterend', g0.outerHTML); }],
+    ['uma leitura trocada', /leitura dos pontos difere/, (s) => {
+      const [a, b] = grupos(s);
+      for (const sel of ['[data-ponto]', '[data-ponto-periodo]']) {
+        const de = a.querySelector(sel); const para = b.querySelector(sel);
+        const marca = sel.slice(1, -1);
+        para.setAttribute(marca, String(de.getAttribute(marca))); para.set_content(de.textContent);
+      }
+    }],
   ];
   if (limpo.querySelector('[data-eixo="valor"] text')?.textContent?.endsWith(' %')) {
     casos.push(['uma marca sem o símbolo numa série em «%»', /marcas do eixo valor/, (s) => {
@@ -513,7 +561,7 @@ export function provasDoModulo() {
     const s = {...getSerie(id), periodicidade:'anual', pontos:[
       {periodo:'2011',valor:'0'},{periodo:'2012',valor:'2'},{periodo:'2014',valor:'5'},{periodo:'2016',valor:'8'},{periodo:'2017',valor:'10'}
     ],lacunas:[{periodo:'2013'},{periodo:'2015'}]};
-    const g = serieDoPais([id],'unidade',360,200,()=>s);
+    const g = serieDoPais([id],'unidade',360,200,()=>s,{leitura:true});
     const segmentos = g.linhas[0].segmentos.map(segmentoVisivel);
     assert.deepEqual(segmentos.map(s=>s.tipo),['linha','ponto','linha']);
     assert.deepEqual(segmentos[1],{tipo:'ponto',cx:'195',cy:'91',r:'2'});
@@ -577,19 +625,31 @@ export function provasDoModulo() {
       for (const [l, h] of [[360, 200], [240, 160]]) assert.deepEqual(decadasDoEixo(serieDoPais([x.id], 'unidade', l, h), x), [], `${x.id} ${l}`);
     }
   });
-  prova('as zonas da leitura partem o campo a meio entre os pontos (RP4-c)', () => {
+  prova('as zonas da leitura por colunas, só onde a leitura vive (RP4-c-b)', () => {
     for (const x of allSeries().filter((y) => y.eixo === 'periodo')) {
-      for (const [l, h] of [[360, 200], [240, 160]]) assert.deepEqual(zonasDaLeitura(serieDoPais([x.id], 'unidade', l, h)), [], `${x.id} ${l}`);
+      assert.deepEqual(zonasDaLeitura(serieDoPais([x.id], 'unidade', 360, 200, getSerie, { leitura: true })), [], x.id);
+      // Um cartão (240), sem a leitura, não tem zonas.
+      assert.equal(serieDoPais([x.id], 'unidade', 240, 160).leituras.length, 0, `${x.id} 240`);
     }
-    assert.equal(serieDoPais(['serie-salario-minimo-mensal', 'serie-ipc-indice'], 'indice').leituras.length, 0);
-    assert.equal(serieDoPais(['serie-ipc-variacao-homologa']).leituras.length, getSerie('serie-ipc-variacao-homologa').pontos.length);
-    // A PLANTA: uma zona mais larga do que o meio até ao ponto seguinte.
-    const g = serieDoPais(['serie-ipc-variacao-homologa']);
-    const torta = { ...g, leituras: g.leituras.map((l, i) => (i === 10 ? { ...l, zona: { ...l.zona, largura: String(Number(l.zona.largura) + 0.5) } } : l)) };
-    assert(zonasDaLeitura(torta).some((q) => /a zona 11 acaba em/.test(q)));
-    // E uma etiqueta do lado do ponto, em vez do lado de lá.
-    const doLado = { ...g, leituras: g.leituras.map((l, i) => (i === 0 ? { ...l, etiqueta: { ...l.etiqueta, x: String(g.campo.esquerda + 6), ancora: 'start' } } : l)) };
-    assert(zonasDaLeitura(doLado).some((q) => /a etiqueta da zona 1 não está no canto do lado de lá/.test(q)));
+    assert.equal(serieDoPais(['serie-salario-minimo-mensal', 'serie-ipc-indice'], 'indice', 360, 200, getSerie, { leitura: true }).leituras.length, 0);
+    const g = serieDoPais(['serie-ipc-variacao-homologa'], 'unidade', 360, 200, getSerie, { leitura: true });
+    // As colunas contam-se na menor largura no ecrã: cada zona tem pelo menos um píxel também aí.
+    assert.equal(g.colunas, Math.floor(294 * MENOR_LARGURA_NO_ECRA / 360));
+    assert(g.leituras.every((l) => Number(l.zona.largura) * MENOR_LARGURA_NO_ECRA / 360 >= 1 - 1e-6));
+    // Uma série curta junta as colunas de cada ponto numa zona: uma zona por ponto.
+    const pensao = getSerie('serie-pensao-media-anual');
+    assert.equal(serieDoPais([pensao.id], 'unidade', 360, 200, getSerie, { leitura: true }).leituras.length, pensao.pontos.length);
+    // AS PLANTAS: uma zona mais larga do que as suas colunas; uma zona com a leitura de outro ponto; uma zona partida em
+    // duas que leem o mesmo ponto; e zonas num desenho que não as leva.
+    const larga = { ...g, leituras: g.leituras.map((l, i) => (i === 10 ? { ...l, zona: { ...l.zona, largura: String(Number(l.zona.largura) + 0.5) } } : l)) };
+    assert(zonasDaLeitura(larga).some((q) => /a zona 11 não está sobre colunas inteiras|a zona 12 começa em/.test(q)));
+    const outra = { ...g, leituras: g.leituras.map((l, i) => (i === 10 ? { ...l, mira: { ...g.leituras[11].mira }, marca: { ...g.leituras[11].marca } } : l)) };
+    assert(zonasDaLeitura(outra).some((q) => /da zona 11 lê um ponto que não é o mais próximo dela/.test(q)));
+    const s = serieDoPais([pensao.id], 'unidade', 360, 200, getSerie, { leitura: true });
+    const z = s.leituras[0]; const meioDaZona = String(Number(z.zona.x) + Math.round(Number(z.zona.largura) / 2 / (294 / s.colunas)) * (294 / s.colunas));
+    const partida = { ...s, leituras: [{ ...z, zona: { ...z.zona, largura: String(Number(meioDaZona) - Number(z.zona.x)) } }, { ...z, zona: { ...z.zona, x: meioDaZona, largura: String(Number(z.zona.x) + Number(z.zona.largura) - Number(meioDaZona)) } }, ...s.leituras.slice(1)] };
+    assert(zonasDaLeitura(partida).some((q) => /as zonas 1 e 2, vizinhas, leem o mesmo ponto/.test(q)));
+    assert(zonasDaLeitura(g, false).some((q) => /não as leva/.test(q)));
   });
   prova('anos ingleses e artigos dos títulos', () => {
     for (const [ano,texto] of [[1900,'nineteen hundred'],[1901,'nineteen oh one'],[1948,'nineteen forty-eight'],[1992,'nineteen ninety-two'],[2000,'two thousand'],[2001,'two thousand and one'],[2009,'two thousand and nine'],[2010,'twenty ten'],[2026,'twenty twenty-six']]) assert.equal(anoEmPalavras(ano,'en'),texto);

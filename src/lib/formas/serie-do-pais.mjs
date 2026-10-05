@@ -16,8 +16,10 @@
  *     outras, as marcas ficam sem símbolo e o desenho diz a unidade por extenso numa legenda (`legenda`);
  *   · as décadas no eixo do tempo de uma série que cobre vinte anos ou mais, as que couberem pela regra dos 64 píxeis,
  *     contada da ponta de fora da etiqueta vizinha (`PIXEIS_ATE_A_VIZINHA`, `LARGURA_DE_UM_ANO`);
- *   · a leitura de cada ponto (`leituras`): uma zona por ponto, a faixa vertical entre os pontos vizinhos, com o ponto
- *     marcado, a linha vertical e a etiqueta do valor e do período, que a folha mostra só ao passar o rato.
+ *   · a leitura de cada ponto (`leituras`), só nos desenhos que a pedem (`opcoes.leitura`: a primeira página e os
+ *     recibos, e nunca os cartões): uma zona por coluna de píxel do campo, contada na menor largura no ecrã, com a
+ *     leitura do ponto mais próximo dessa coluna (o ponto marcado, a linha vertical e a etiqueta do valor e do período),
+ *     que a folha mostra só ao passar o rato (desde a passagem RP4-c-b; no RP4-c era uma zona por ponto).
  */
 import { getSerie, periodoSeguinte } from '../series.mjs';
 import { parsePtNumber } from '../ledger.mjs';
@@ -50,6 +52,16 @@ export const LARGURA_DE_UM_ANO = 30.25;
 
 /** A partir de quantos anos de calendário cobertos o eixo do tempo marca as décadas (o ponto 2 do mandato). */
 export const ANOS_PARA_AS_DECADAS = 20;
+
+/**
+ * A MENOR LARGURA NO ECRÃ DE UM DESENHO (a passagem RP4-c-b, 05.10.2026, a decisão do lugar de direção sobre a I208): 354
+ * píxeis, a largura com que o desenho de 360 da primeira página e dos recibos se rende num ecrã de 390, a menor largura
+ * que o sítio serve (os 390 menos as duas margens de 18 píxeis da casa), medida no Chromium nas capturas do bloco (a
+ * largura no ecrã de cada desenho a 390, em `capturas.json` na pasta das medições do bloco). Um desenho mais estreito do
+ * que isto (os cartões, de 240) rende-se com a sua largura. As colunas da leitura contam-se nesta largura, para cada
+ * zona ter pelo menos um píxel também a 390; quem mudar as margens da casa ou a largura dos desenhos mede-a outra vez.
+ */
+export const MENOR_LARGURA_NO_ECRA = 354;
 
 /**
  * O SÍMBOLO DA UNIDADE NAS MARCAS (bloco RP4-c, 05.10.2026, o ponto 1 do mandato). Só «%»: «15 %» lê-se, e «20,4 % do
@@ -91,8 +103,10 @@ function passoRedondo(alvo) {
  * @param {number} [largura]
  * @param {number} [altura]
  * @param {(id: string) => Serie} [lerSerie]
+ * @param {{ leitura?: boolean }} [opcoes] `leitura`: o desenho leva as zonas da leitura de cada ponto (a primeira página
+ *   e os recibos; um cartão não as leva, porque é a porta para o recibo, onde a leitura vive)
  */
-export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, lerSerie = getSerie) {
+export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, lerSerie = getSerie, opcoes = {}) {
   if (!ids.length || new Set(ids).size !== ids.length) throw new Error('serie-do-pais: a lista de séries está vazia ou repete uma série.');
   if (!['unidade', 'indice'].includes(modo)) throw new Error('serie-do-pais: modo desconhecido.');
   if (![largura, altura].every(Number.isFinite) || largura < 240 || altura < 140) throw new Error('serie-do-pais: dimensões inválidas.');
@@ -189,31 +203,57 @@ export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, 
      primeiro mês do seu ano. Agora está em janeiro do último ano, centrada, como as intermédias; o primeiro ano
      continua no primeiro ponto, porque o janeiro dele pode estar antes do começo da série. */
   const marcasX = anos.map((ano, i) => ({ valor: ano, texto: String(ano), x: x(i === 0 ? xMin : ano * 12), y: coordenada(altura - 8), ancora: i === 0 ? 'start' : 'middle' }));
-  /* A LEITURA DE CADA PONTO (bloco RP4-c, 05.10.2026, o ponto 4 do mandato). Uma zona por ponto: a faixa vertical do
-     campo entre o meio do ponto anterior e o meio do seguinte (as pontas da primeira e da última são as do campo), e,
-     escondidos até o rato passar pela zona, o ponto marcado, a linha vertical do campo no x do ponto e a etiqueta, com
-     o valor do ponto e o período. A etiqueta vai para o canto de cima do lado de lá do ponto (à direita para um ponto
-     na metade esquerda, à esquerda para um da metade direita), para nunca tapar o sítio que se lê nem sair do desenho.
-     Só num desenho de uma série no modo da unidade: no modo indexado o valor publicado do ponto não é o que o eixo diz
-     (o eixo diz o índice, que o desenho calcula e não tem origem), e a figura indexada tem a tabela por baixo. */
+  /* A LEITURA DE CADA PONTO (bloco RP4-c, 05.10.2026, o ponto 4 do mandato; por colunas desde a passagem RP4-c-b, a
+     decisão do lugar de direção sobre o peso, a I208). Só num desenho que a pede (`opcoes.leitura`: a primeira página e
+     os recibos) e de uma série no modo da unidade: no modo indexado o valor publicado do ponto não é o que o eixo diz (o
+     eixo diz o índice, que o desenho calcula e não tem origem), e a figura indexada tem a tabela por baixo; um cartão não
+     a leva, porque é a porta para o recibo, onde a leitura vive.
+     O campo parte-se em colunas de píxel contadas na menor largura no ecrã do desenho (`MENOR_LARGURA_NO_ECRA`), e por
+     isso cada coluna tem pelo menos um píxel também a 390; cada coluna lê o ponto mais próximo do seu meio (num empate, o
+     primeiro); e as colunas vizinhas que leem o mesmo ponto fazem uma zona só, que é a mesma leitura com menos peso (as
+     colunas de um ponto são sempre vizinhas, porque os sítios mais perto de um ponto do que dos outros são um intervalo).
+     Cada zona tem, escondidos até o rato passar por ela, o ponto marcado, a linha vertical do campo no x do ponto e a
+     etiqueta, com o valor do ponto e o período; a etiqueta vai para o canto de cima do lado de lá do ponto (à direita para
+     um ponto na metade esquerda, à esquerda para um da metade direita), para nunca tapar o sítio que se lê nem sair do
+     desenho. */
   const meio = (campo.esquerda + campo.direita) / 2;
-  const dadosDaLeitura = modo === 'unidade' && linhas.length === 1 ? linhas[0].dados : [];
-  const fronteiras = dadosDaLeitura.length
-    ? [String(campo.esquerda), ...dadosDaLeitura.slice(1).map((p, i) => coordenada((xn(dadosDaLeitura[i].x) + xn(p.x)) / 2)), String(campo.direita)]
-    : [];
-  const leituras = dadosDaLeitura.map((p, i) => {
-    const doLadoDeLa = xn(p.x) <= meio;
-    return {
+  const dadosDaLeitura = opcoes.leitura && modo === 'unidade' && linhas.length === 1 ? linhas[0].dados : [];
+  const larguraDoCampo = campo.direita - campo.esquerda;
+  const colunas = dadosDaLeitura.length ? Math.max(1, Math.floor(larguraDoCampo * Math.min(largura, MENOR_LARGURA_NO_ECRA) / largura)) : 0;
+  const passoDaColuna = colunas ? larguraDoCampo / colunas : 0;
+  const xsDaLeitura = dadosDaLeitura.map((p) => xn(p.x));
+  /** @type {number[]} o ponto mais próximo do meio de cada coluna */
+  const pontoDaColuna = [];
+  for (let k = 0, j = 0; k < colunas; k++) {
+    const centro = campo.esquerda + (k + 0.5) * passoDaColuna;
+    /* Um empate (o meio da coluna a meio caminho entre dois pontos igualmente espaçados) desempata-se pelo primeiro, com
+       uma tolerância de um milionésimo, para o resultado não depender do ruído das contas de vírgula flutuante. */
+    while (j < xsDaLeitura.length - 1 && Math.abs(xsDaLeitura[j + 1] - centro) < Math.abs(xsDaLeitura[j] - centro) - 1e-6) j++;
+    pontoDaColuna.push(j);
+  }
+  /** @type {{periodo: string, valor: string, colunas: [number, number], zona: {x: string, y: string, largura: string, altura: string}, mira: {x: string, y1: string, y2: string}, marca: {cx: string, cy: string, r: string}, etiqueta: {x: string, y: string, ancora: string, dy: string}}[]} */
+  const leituras = [];
+  for (let k = 0; k < colunas;) {
+    const i = pontoDaColuna[k];
+    let fim = k;
+    while (fim + 1 < colunas && pontoDaColuna[fim + 1] === i) fim++;
+    const p = dadosDaLeitura[i];
+    const esquerda = campo.esquerda + k * passoDaColuna;
+    const direita = campo.esquerda + (fim + 1) * passoDaColuna;
+    const doLadoDeLa = xsDaLeitura[i] <= meio;
+    leituras.push({
       periodo: p.periodo,
       valor: p.texto,
-      zona: { x: fronteiras[i], y: String(campo.cima), largura: coordenada(Number(fronteiras[i + 1]) - Number(fronteiras[i])), altura: String(campo.fundo - campo.cima) },
+      colunas: [k, fim],
+      zona: { x: coordenada(esquerda), y: String(campo.cima), largura: coordenada(direita - esquerda), altura: String(campo.fundo - campo.cima) },
       mira: { x: x(p.x), y1: String(campo.cima), y2: String(campo.fundo) },
       marca: { cx: x(p.x), cy: y(p.valor), r: '3' },
       etiqueta: { x: coordenada(doLadoDeLa ? campo.direita : campo.esquerda + 6), y: String(campo.cima + 10), ancora: doLadoDeLa ? 'end' : 'start', dy: '14' },
-    };
-  });
+    });
+    k = fim + 1;
+  }
   return {
-    modo, largura, altura, campo, marcasX, marcasY, excluidas, simbolo, leituras,
+    modo, largura, altura, campo, marcasX, marcasY, excluidas, simbolo, leituras, colunas,
     /* A LEGENDA DA UNIDADE (RP4-c, o ponto 1): um desenho no modo da unidade sem símbolo nas marcas diz a unidade por
        extenso por baixo; o indexado tem a legenda da figura. */
     legenda: modo === 'unidade' && simbolo === null,

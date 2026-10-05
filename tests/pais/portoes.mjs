@@ -614,9 +614,11 @@ planta('h2b-horizonte-trocado','scripts/gate-html.mjs',[
    desenho e a F21 uma marca sem o símbolo da unidade e a legenda da unidade tirada; o formato dos números recusa o «%»
    colado numa marca e o símbolo do euro numa marca (a paragem do ponto 1: a §1.127, decisão 4). */
 const primeiraEtiqueta = (r) => r.querySelector('svg[data-forma="serie-do-pais"] [data-ponto-periodo]');
+/* RP4-c-b: o período trocado é um período fixo de outro ponto (com as zonas por colunas, a segunda zona já não é a do mês
+   seguinte, e a planta não pode depender disso). */
 planta('rp4c-periodo-trocado','scripts/gate-html.mjs',[
- ['index.html',r=>{const [a,b]=r.querySelectorAll('svg[data-forma="serie-do-pais"] [data-ponto-periodo]');a.set_content(b.textContent);}]
-],[/RP4-c: o período do ponto «1992-01» da série «serie-ipc-variacao-homologa» foi renderizado como «fevereiro de 1992» e a forma da casa é «janeiro de 1992»/]);
+ ['index.html',r=>primeiraEtiqueta(r).set_content('dezembro de 1999')]
+],[/RP4-c: o período do ponto «1992-01» da série «serie-ipc-variacao-homologa» foi renderizado como «dezembro de 1999» e a forma da casa é «janeiro de 1992»/]);
 planta('rp4c-periodo-de-outro-ponto','scripts/gate-html.mjs',[
  ['index.html',r=>primeiraEtiqueta(r).setAttribute('data-ponto-periodo','serie-ipc-variacao-homologa#1992-02')]
 ],[/RP4-c: o período do ponto «1992-02» da série «serie-ipc-variacao-homologa» foi renderizado como «janeiro de 1992»/,/RP4-c: a etiqueta do período «serie-ipc-variacao-homologa#1992-02» não tem ao lado o valor do mesmo ponto/]);
@@ -647,3 +649,13 @@ planta('rp4c-formato-simbolo-colado-numa-marca','tests/inicio/formato-dos-numero
 planta('rp4c-formato-euro-numa-marca','tests/inicio/formato-dos-numeros.mjs',[
  ['salarios-pensoes-e-apoios/index.html',r=>{const t=r.querySelectorAll('svg[data-forma="serie-do-pais"] [data-eixo="valor"] text').find(x=>/\d\d/.test(x.textContent));t.set_content(`${t.textContent} €`);}]
 ],[/F5 · salarios-pensoes-e-apoios\/index\.html/]);
+
+/* RP4-c-b (05.10.2026, a decisão do lugar de direção sobre o peso, a I208): as zonas só onde a leitura vive. Uma zona
+   posta no desenho de um cartão (a porta para o recibo) e um recibo sem as suas zonas têm de ser recusados pela F21 do
+   `check:formas`, que lê a regra do sítio do desenho na página. Correm com as do RP4-c, por `--prefixo rp4c`. */
+planta('rp4cb-zonas-num-cartao','scripts/check-formas.mjs',[
+ ['precos/index.html',r=>r.querySelector('[data-cartao-serie="serie-ipc-variacao-homologa"] svg[data-forma="serie-do-pais"]').insertAdjacentHTML('beforeend','<g><rect x="48" y="12" width="1" height="118"></rect><line x1="48" x2="48" y1="12" y2="130"></line><circle cx="48" cy="40" r="3"></circle><text x="222" y="22" text-anchor="end"><tspan data-ponto="serie-ipc-variacao-homologa#1992-01">9,41</tspan>\u00a0%<tspan x="222" dy="14" data-ponto-periodo="serie-ipc-variacao-homologa#1992-01">janeiro de 1992</tspan></text></g>')]
+],[/F21 · zonas de leitura num desenho que não as leva/]);
+planta('rp4cb-recibo-sem-zonas','scripts/check-formas.mjs',[
+ ['livro-razao/series/serie-ipc-variacao-homologa/index.html',r=>{for(const g of r.querySelector('svg[data-forma="serie-do-pais"]').childNodes.filter(n=>n.rawTagName==='g'&&n.getAttribute('data-eixo')===undefined))g.remove();}]
+],[/F21 · desenho sem as zonas de leitura fora da porta de um cartão/]);
