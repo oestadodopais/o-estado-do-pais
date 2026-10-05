@@ -1,7 +1,7 @@
 {
   "comando": "node design/especime-v3/medicoes/rp4-2026-10-04/capturar.mjs",
-  "cabeca": "7c3e6672e6cb264f38c21d0bbb1512acc9cdc802",
-  "construido_em": "2026-10-04T23:50:32.225Z",
+  "cabeca": "2523e3a022daec489476b9c77b5707892aca9c84",
+  "construido_em": "2026-10-05T07:51:40.988Z",
   "conhecido_positivo": {
     "transbordo_detetado": true
   },
@@ -21,8 +21,15 @@
     {
       "nome": "letras dos eixos reduzidas",
       "lang": "pt",
-      "controlo": 12.401953124999999,
-      "minimo": 6.200976562499999,
+      "controlo": 12,
+      "minimo": 6,
+      "mordeu": true
+    },
+    {
+      "nome": "gráfico sem largura máxima",
+      "lang": "pt",
+      "controlo": 12,
+      "maximo": 35.32734375,
       "mordeu": true
     },
     {
@@ -40,8 +47,15 @@
     {
       "nome": "letras dos eixos reduzidas",
       "lang": "en",
-      "controlo": 12.401953124999999,
-      "minimo": 6.200976562499999,
+      "controlo": 12,
+      "minimo": 6,
+      "mordeu": true
+    },
+    {
+      "nome": "gráfico sem largura máxima",
+      "lang": "en",
+      "controlo": 12,
+      "maximo": 35.32734375,
       "mordeu": true
     },
     {
@@ -57,12 +71,13 @@
       "lang": "pt",
       "rota": "/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-inicio-390.png",
-      "bytes": 691343,
-      "sha256": "dc226c70614aa2240ce31c4f83c25953216a8e16d0042dafcf1f720b5e4c2904",
+      "bytes": 677587,
+      "sha256": "1e7544c3bb8c1bf126b760ca5f524cea26f5db89449e85cd485da694ecb06dc4",
       "largura": 390,
       "pagina": 390,
-      "altura": 7079,
+      "altura": 7010,
       "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
       "posicaoNoBloco": {
         "barras": {
           "x": 18,
@@ -74,17 +89,17 @@
           "x": 18,
           "y": 689.75,
           "largura": 354,
-          "altura": 221.65625
+          "altura": 244.65625
         }
       },
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 18,
-          "y": 714.75,
+          "y": 737.75,
           "largura": 354,
           "altura": 196.65625,
-          "titulo": "Inflação, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
+          "titulo": "de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis, % de variação em doze meses"
         }
       ],
       "marcasFora": [],
@@ -95,12 +110,13 @@
       "lang": "pt",
       "rota": "/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-inicio-768.png",
-      "bytes": 781647,
-      "sha256": "aca7824695389fad62126e3edb4ce96e76f355ac78374073281c1813ee336f41",
+      "bytes": 752211,
+      "sha256": "fab15894818e3176a1a7263433c66c85058f94e17ce44cbde2f9d0b57c85c8e4",
       "largura": 768,
       "pagina": 768,
-      "altura": 5730,
-      "letraMinima": 23.551875,
+      "altura": 5492,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": {
         "barras": {
           "x": 30.71875,
@@ -112,17 +128,17 @@
           "x": 30.71875,
           "y": 636.203125,
           "largura": 706.5625,
-          "altura": 417.53125
+          "altura": 248
         }
       },
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 30.71875,
-          "y": 661.203125,
-          "largura": 706.5625,
-          "altura": 392.53125,
-          "titulo": "Inflação, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
+          "y": 684.203125,
+          "largura": 360,
+          "altura": 200,
+          "titulo": "de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis, % de variação em doze meses"
         }
       ],
       "marcasFora": [],
@@ -133,12 +149,13 @@
       "lang": "pt",
       "rota": "/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-inicio-1024.png",
-      "bytes": 836372,
-      "sha256": "8d2f9f177beb5c9a9c39fce5331649ea55a6ce301cdda2f012355eee284753c7",
+      "bytes": 814931,
+      "sha256": "0cb02930b49c9422f165f60f63588d57a17737439118dfaa60ffae907919a651",
       "largura": 1024,
       "pagina": 1024,
-      "altura": 5063,
-      "letraMinima": 16.2721875,
+      "altura": 4946,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": {
         "barras": {
           "x": 494.859375,
@@ -150,17 +167,17 @@
           "x": 494.859375,
           "y": 563.234375,
           "largura": 488.1875,
-          "altura": 296.203125
+          "altura": 248
         }
       },
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 494.859375,
-          "y": 588.234375,
-          "largura": 488.1875,
-          "altura": 271.203125,
-          "titulo": "Inflação, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
+          "y": 611.234375,
+          "largura": 360,
+          "altura": 200,
+          "titulo": "de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis, % de variação em doze meses"
         }
       ],
       "marcasFora": [],
@@ -171,12 +188,13 @@
       "lang": "pt",
       "rota": "/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-inicio-1280.png",
-      "bytes": 836950,
-      "sha256": "37fd54801f211ef424fe3d84ab2f75163d94a9489d0ce336e99495a32d6511c8",
+      "bytes": 811731,
+      "sha256": "7d2c1da302cf2f1fb8c00f15ba5d16ab85a9a24be0169ec304035f4b1245d9a6",
       "largura": 1280,
       "pagina": 1280,
-      "altura": 4987,
-      "letraMinima": 18.78375,
+      "altura": 4827,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": {
         "barras": {
           "x": 622.46875,
@@ -188,17 +206,17 @@
           "x": 622.46875,
           "y": 578.140625,
           "largura": 563.53125,
-          "altura": 338.0625
+          "altura": 248
         }
       },
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 622.46875,
-          "y": 603.140625,
-          "largura": 563.53125,
-          "altura": 313.0625,
-          "titulo": "Inflação, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
+          "y": 626.140625,
+          "largura": 360,
+          "altura": 200,
+          "titulo": "de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis, % de variação em doze meses"
         }
       ],
       "marcasFora": [],
@@ -209,12 +227,13 @@
       "lang": "pt",
       "rota": "/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-inicio-1600.png",
-      "bytes": 858989,
-      "sha256": "3ed084e0ba43562f25676048849ce9208304e8bc7ddff7e6360d51bce1ea6b1c",
+      "bytes": 831889,
+      "sha256": "7c1387428cc43f87be9251124ab3ff455667c175ae89ed43673cb729be9a5f08",
       "largura": 1600,
       "pagina": 1600,
-      "altura": 5001,
-      "letraMinima": 18.6178125,
+      "altura": 4845,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": {
         "barras": {
           "x": 787.453125,
@@ -226,17 +245,17 @@
           "x": 787.453125,
           "y": 581.1875,
           "largura": 558.546875,
-          "altura": 335.296875
+          "altura": 248
         }
       },
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 787.453125,
-          "y": 606.1875,
-          "largura": 558.546875,
-          "altura": 310.296875,
-          "titulo": "Inflação, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
+          "y": 629.1875,
+          "largura": 360,
+          "altura": 200,
+          "titulo": "de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis, % de variação em doze meses"
         }
       ],
       "marcasFora": [],
@@ -247,36 +266,37 @@
       "lang": "pt",
       "rota": "/precos/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-precos-390.png",
-      "bytes": 240923,
-      "sha256": "f47c990d41470363281133e02ae9e45dfe7915a806bbbd5f69ae396e0a7a5e61",
+      "bytes": 217278,
+      "sha256": "692d48ed377266b3f70a08034788e6049290197443ed4cf27f0e74149629b8f9",
       "largura": 390,
       "pagina": 390,
-      "altura": 3321,
-      "letraMinima": 17.700000000000003,
+      "altura": 2950,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 18,
           "y": 438.734375,
-          "largura": 354,
-          "altura": 236,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Inflação, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
         },
         {
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "x": 18,
-          "y": 1227.34375,
-          "largura": 354,
-          "altura": 236,
+          "y": 1151.34375,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Preços dos alimentos e das bebidas não alcoólicas, variação num ano, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
         },
         {
           "serie": "serie-ihpc-variacao-homologa-ue",
           "x": 18,
-          "y": 2661.84375,
-          "largura": 354,
-          "altura": 236,
+          "y": 2054.921875,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Inflação na União Europeia, de dezembro de dois mil a agosto de dois mil e vinte e seis"
         }
       ],
@@ -284,16 +304,19 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "ipc-variacao-homologa",
           "linha": "ipc-variacao-homologa",
           "serie": "serie-ipc-variacao-homologa",
           "porta": "/livro-razao/series/serie-ipc-variacao-homologa"
         },
         {
+          "cartao": "ipc-alimentacao-variacao-homologa",
           "linha": "ipc-alimentacao-variacao-homologa",
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "porta": "/livro-razao/series/serie-ipc-alimentacao-variacao-homologa"
         },
         {
+          "cartao": "ihpc-variacao-homologa",
           "linha": "ihpc-variacao-homologa-ue",
           "serie": "serie-ihpc-variacao-homologa-ue",
           "porta": "/livro-razao/series/serie-ihpc-variacao-homologa-ue"
@@ -304,36 +327,37 @@
       "lang": "pt",
       "rota": "/precos/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-precos-768.png",
-      "bytes": 252453,
-      "sha256": "62692c41e34e4e7e3c8805d7fcf1052f0e2899fc390b7a238edda6638ba16e42",
+      "bytes": 229456,
+      "sha256": "721efcbcfb19fd5333d4480bf98ad3dfd37529a299e871398e71b9d2c1e9ec6d",
       "largura": 768,
       "pagina": 768,
-      "altura": 2616,
-      "letraMinima": 17.164453125,
+      "altura": 2263,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 30.71875,
           "y": 452.546875,
-          "largura": 343.296875,
-          "altura": 228.859375,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Inflação, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
         },
         {
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "x": 30.71875,
-          "y": 1031.5625,
-          "largura": 343.296875,
-          "altura": 228.859375,
+          "y": 962.703125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Preços dos alimentos e das bebidas não alcoólicas, variação num ano, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
         },
         {
           "serie": "serie-ihpc-variacao-homologa-ue",
-          "x": 30.71875,
-          "y": 2012.421875,
-          "largura": 343.296875,
-          "altura": 228.859375,
+          "x": 393.96875,
+          "y": 1416.171875,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Inflação na União Europeia, de dezembro de dois mil a agosto de dois mil e vinte e seis"
         }
       ],
@@ -341,16 +365,19 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "ipc-variacao-homologa",
           "linha": "ipc-variacao-homologa",
           "serie": "serie-ipc-variacao-homologa",
           "porta": "/livro-razao/series/serie-ipc-variacao-homologa"
         },
         {
+          "cartao": "ipc-alimentacao-variacao-homologa",
           "linha": "ipc-alimentacao-variacao-homologa",
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "porta": "/livro-razao/series/serie-ipc-alimentacao-variacao-homologa"
         },
         {
+          "cartao": "ihpc-variacao-homologa",
           "linha": "ihpc-variacao-homologa-ue",
           "serie": "serie-ihpc-variacao-homologa-ue",
           "porta": "/livro-razao/series/serie-ihpc-variacao-homologa-ue"
@@ -361,36 +388,37 @@
       "lang": "pt",
       "rota": "/precos/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-precos-1024.png",
-      "bytes": 239306,
-      "sha256": "75d0de17e55ae2b18ca18724ee5884665f95a9a85c6814e515d87d825bd9ddef",
+      "bytes": 222292,
+      "sha256": "38e7f263eff1f1b7dd9462cfefeb5aae542af48d2db00ce4b4145e484a665c38",
       "largura": 1024,
       "pagina": 1024,
-      "altura": 2089,
-      "letraMinima": 14.813671874999999,
+      "altura": 1867,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 40.953125,
           "y": 485.21875,
-          "largura": 296.28125,
-          "altura": 197.515625,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Inflação, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
         },
         {
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "x": 686.75,
           "y": 506.015625,
-          "largura": 296.28125,
-          "altura": 197.515625,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Preços dos alimentos e das bebidas não alcoólicas, variação num ano, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
         },
         {
           "serie": "serie-ihpc-variacao-homologa-ue",
-          "x": 40.953125,
-          "y": 1515.921875,
-          "largura": 296.28125,
-          "altura": 197.515625,
+          "x": 686.75,
+          "y": 999.578125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Inflação na União Europeia, de dezembro de dois mil a agosto de dois mil e vinte e seis"
         }
       ],
@@ -398,16 +426,19 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "ipc-variacao-homologa",
           "linha": "ipc-variacao-homologa",
           "serie": "serie-ipc-variacao-homologa",
           "porta": "/livro-razao/series/serie-ipc-variacao-homologa"
         },
         {
+          "cartao": "ipc-alimentacao-variacao-homologa",
           "linha": "ipc-alimentacao-variacao-homologa",
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "porta": "/livro-razao/series/serie-ipc-alimentacao-variacao-homologa"
         },
         {
+          "cartao": "ihpc-variacao-homologa",
           "linha": "ihpc-variacao-homologa-ue",
           "serie": "serie-ihpc-variacao-homologa-ue",
           "porta": "/livro-razao/series/serie-ihpc-variacao-homologa-ue"
@@ -418,36 +449,37 @@
       "lang": "pt",
       "rota": "/precos/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-precos-1280.png",
-      "bytes": 240696,
-      "sha256": "5434b311d48618493a7e865a9eab97e81e540c089dce547df84f003f80328ffa",
+      "bytes": 235533,
+      "sha256": "4058384d57ad9973289f8f3390021959aac83ee485caf4094b1789ce2f46f36e",
       "largura": 1280,
       "pagina": 1280,
-      "altura": 1732,
-      "letraMinima": 12.401953124999999,
+      "altura": 1950,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 94,
           "y": 495.71875,
-          "largura": 248.046875,
-          "altura": 165.359375,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Inflação, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
         },
         {
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "x": 656.625,
           "y": 516.515625,
-          "largura": 248.046875,
-          "altura": 165.359375,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Preços dos alimentos e das bebidas não alcoólicas, variação num ano, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
         },
         {
           "serie": "serie-ihpc-variacao-homologa-ue",
-          "x": 656.625,
-          "y": 1010.734375,
-          "largura": 248.046875,
-          "altura": 165.359375,
+          "x": 375.3125,
+          "y": 1030.375,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Inflação na União Europeia, de dezembro de dois mil a agosto de dois mil e vinte e seis"
         }
       ],
@@ -455,16 +487,19 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "ipc-variacao-homologa",
           "linha": "ipc-variacao-homologa",
           "serie": "serie-ipc-variacao-homologa",
           "porta": "/livro-razao/series/serie-ipc-variacao-homologa"
         },
         {
+          "cartao": "ipc-alimentacao-variacao-homologa",
           "linha": "ipc-alimentacao-variacao-homologa",
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "porta": "/livro-razao/series/serie-ipc-alimentacao-variacao-homologa"
         },
         {
+          "cartao": "ihpc-variacao-homologa",
           "linha": "ihpc-variacao-homologa-ue",
           "serie": "serie-ihpc-variacao-homologa-ue",
           "porta": "/livro-razao/series/serie-ihpc-variacao-homologa-ue"
@@ -475,36 +510,37 @@
       "lang": "pt",
       "rota": "/precos/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-precos-1600.png",
-      "bytes": 257739,
-      "sha256": "bf8a7caebf3ca53a0b3d4a7e4c218b8d1ef192597662f98c78695b10b0ba6926",
+      "bytes": 235256,
+      "sha256": "282264c641270e8c79a8b3430dee2386c8f24bc5fe7eeaebcd421aad467c3ee0",
       "largura": 1600,
       "pagina": 1600,
-      "altura": 2133,
-      "letraMinima": 17.066015625,
+      "altura": 1851,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 254,
           "y": 495.71875,
-          "largura": 341.328125,
-          "altura": 227.546875,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Inflação, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
         },
         {
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "x": 1004.65625,
           "y": 516.515625,
-          "largura": 341.34375,
-          "altura": 227.5625,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Preços dos alimentos e das bebidas não alcoólicas, variação num ano, de janeiro de mil novecentos e noventa e dois a agosto de dois mil e vinte e seis"
         },
         {
           "serie": "serie-ihpc-variacao-homologa-ue",
-          "x": 254,
-          "y": 1536.15625,
-          "largura": 341.328125,
-          "altura": 227.546875,
+          "x": 1004.65625,
+          "y": 1010.078125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Inflação na União Europeia, de dezembro de dois mil a agosto de dois mil e vinte e seis"
         }
       ],
@@ -512,16 +548,19 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "ipc-variacao-homologa",
           "linha": "ipc-variacao-homologa",
           "serie": "serie-ipc-variacao-homologa",
           "porta": "/livro-razao/series/serie-ipc-variacao-homologa"
         },
         {
+          "cartao": "ipc-alimentacao-variacao-homologa",
           "linha": "ipc-alimentacao-variacao-homologa",
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "porta": "/livro-razao/series/serie-ipc-alimentacao-variacao-homologa"
         },
         {
+          "cartao": "ihpc-variacao-homologa",
           "linha": "ihpc-variacao-homologa-ue",
           "serie": "serie-ihpc-variacao-homologa-ue",
           "porta": "/livro-razao/series/serie-ihpc-variacao-homologa-ue"
@@ -532,44 +571,45 @@
       "lang": "pt",
       "rota": "/salarios-pensoes-e-apoios/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-salarios-pensoes-e-apoios-390.png",
-      "bytes": 244663,
-      "sha256": "87e0a928b6d4d0651126aacd76198260896bcbe8f2858f5cac7837654dbbd667",
+      "bytes": 235449,
+      "sha256": "f25f3c7373c08c91adf0b48479f54e7acd2ebc6070f57657fb125257b8d23b18",
       "largura": 390,
       "pagina": 390,
-      "altura": 3883,
-      "letraMinima": 17.700000000000003,
+      "altura": 3579,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 18,
           "y": 438.734375,
-          "largura": 354,
-          "altura": 236,
-          "titulo": "Remuneração média antes de descontos, de primeiro trimestre de dois mil e vinte e cinco a segundo trimestre de dois mil e vinte e seis"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Remuneração média antes de descontos, do primeiro trimestre de dois mil e vinte e cinco ao segundo trimestre de dois mil e vinte e seis"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 18,
-          "y": 1681.28125,
-          "largura": 354,
-          "altura": 236,
+          "y": 1605.28125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 18,
-          "y": 2202.9375,
-          "largura": 354,
-          "altura": 236,
+          "y": 2050.9375,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pessoas que recebem o rendimento social de inserção, de dois mil e vinte e três a dois mil e vinte e quatro"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 18,
-          "y": 2682.609375,
-          "largura": 354,
-          "altura": 236,
+          "y": 2454.609375,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Linha de risco de pobreza, de mil novecentos e noventa e cinco a dois mil e vinte e cinco"
         }
       ],
@@ -577,21 +617,25 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/livro-razao/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/livro-razao/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/livro-razao/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/livro-razao/series/serie-linha-de-risco-de-pobreza"
@@ -602,44 +646,45 @@
       "lang": "pt",
       "rota": "/salarios-pensoes-e-apoios/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-salarios-pensoes-e-apoios-768.png",
-      "bytes": 260289,
-      "sha256": "0784d0272ac11b3b5186c56efa67a8fa4c6505df4536dfd47b4ac4eed596103e",
+      "bytes": 250746,
+      "sha256": "129bbe61973270a157ee4daf04c77c8ad088b4fb41f2e44278377bd67323d185",
       "largura": 768,
       "pagina": 768,
-      "altura": 2874,
-      "letraMinima": 17.164453125,
+      "altura": 2668,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 30.71875,
           "y": 452.546875,
-          "largura": 343.296875,
-          "altura": 228.859375,
-          "titulo": "Remuneração média antes de descontos, de primeiro trimestre de dois mil e vinte e cinco a segundo trimestre de dois mil e vinte e seis"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Remuneração média antes de descontos, do primeiro trimestre de dois mil e vinte e cinco ao segundo trimestre de dois mil e vinte e seis"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 30.71875,
-          "y": 1301.09375,
-          "largura": 343.296875,
-          "altura": 228.859375,
+          "y": 1232.234375,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 393.96875,
-          "y": 1321.890625,
-          "largura": 343.3125,
-          "altura": 228.875,
+          "y": 1253.03125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pessoas que recebem o rendimento social de inserção, de dois mil e vinte e três a dois mil e vinte e quatro"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 30.71875,
-          "y": 1798.046875,
-          "largura": 343.296875,
-          "altura": 228.859375,
+          "y": 1660.3125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Linha de risco de pobreza, de mil novecentos e noventa e cinco a dois mil e vinte e cinco"
         }
       ],
@@ -647,21 +692,25 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/livro-razao/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/livro-razao/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/livro-razao/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/livro-razao/series/serie-linha-de-risco-de-pobreza"
@@ -672,44 +721,45 @@
       "lang": "pt",
       "rota": "/salarios-pensoes-e-apoios/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-salarios-pensoes-e-apoios-1024.png",
-      "bytes": 257676,
-      "sha256": "edb3cf834dd16d1812e3bf05fb794093bcbc0eca406d279c4e1355bc23b3edaa",
+      "bytes": 250861,
+      "sha256": "54475b72662b983f7e3dd6601ae604725a362dbb0eadd5021101c3338969b5f6",
       "largura": 1024,
       "pagina": 1024,
-      "altura": 2343,
-      "letraMinima": 14.813671874999999,
+      "altura": 2268,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 40.953125,
           "y": 485.21875,
-          "largura": 296.28125,
-          "altura": 197.515625,
-          "titulo": "Remuneração média antes de descontos, de primeiro trimestre de dois mil e vinte e cinco a segundo trimestre de dois mil e vinte e seis"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Remuneração média antes de descontos, do primeiro trimestre de dois mil e vinte e cinco ao segundo trimestre de dois mil e vinte e seis"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 40.953125,
-          "y": 1276.90625,
-          "largura": 296.28125,
-          "altura": 197.515625,
+          "y": 1239.390625,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 363.84375,
-          "y": 1297.703125,
-          "largura": 296.296875,
-          "altura": 197.53125,
+          "y": 1260.1875,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pessoas que recebem o rendimento social de inserção, de dois mil e vinte e três a dois mil e vinte e quatro"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 686.75,
-          "y": 1255.71875,
-          "largura": 296.28125,
-          "altura": 197.515625,
+          "y": 1218.203125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Linha de risco de pobreza, de mil novecentos e noventa e cinco a dois mil e vinte e cinco"
         }
       ],
@@ -717,21 +767,25 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/livro-razao/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/livro-razao/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/livro-razao/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/livro-razao/series/serie-linha-de-risco-de-pobreza"
@@ -742,44 +796,45 @@
       "lang": "pt",
       "rota": "/salarios-pensoes-e-apoios/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-salarios-pensoes-e-apoios-1280.png",
-      "bytes": 259861,
-      "sha256": "759c831d7758bcb4512857383d18cde53648f433c826ccd4f0e35d1851c25845",
+      "bytes": 257928,
+      "sha256": "96f2fe30e3eeb839e8ffbed69a27737c1483d1be7008233aa1c0fdb4d8686117",
       "largura": 1280,
       "pagina": 1280,
-      "altura": 2111,
-      "letraMinima": 12.401953124999999,
+      "altura": 2100,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 94,
           "y": 535.09375,
-          "largura": 248.046875,
-          "altura": 165.359375,
-          "titulo": "Remuneração média antes de descontos, de primeiro trimestre de dois mil e vinte e cinco a segundo trimestre de dois mil e vinte e seis"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Remuneração média antes de descontos, do primeiro trimestre de dois mil e vinte e cinco ao segundo trimestre de dois mil e vinte e seis"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 94,
-          "y": 1068.890625,
-          "largura": 248.046875,
-          "altura": 165.359375,
+          "y": 1063.53125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 375.3125,
-          "y": 1089.6875,
-          "largura": 248.046875,
-          "altura": 165.359375,
+          "y": 1084.328125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pessoas que recebem o rendimento social de inserção, de dois mil e vinte e três a dois mil e vinte e quatro"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 656.625,
-          "y": 1050.3125,
-          "largura": 248.046875,
-          "altura": 165.359375,
+          "y": 1044.953125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Linha de risco de pobreza, de mil novecentos e noventa e cinco a dois mil e vinte e cinco"
         }
       ],
@@ -787,21 +842,25 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/livro-razao/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/livro-razao/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/livro-razao/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/livro-razao/series/serie-linha-de-risco-de-pobreza"
@@ -812,44 +871,45 @@
       "lang": "pt",
       "rota": "/salarios-pensoes-e-apoios/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-salarios-pensoes-e-apoios-1600.png",
-      "bytes": 275001,
-      "sha256": "49fc6d05558e032099749b8d355f160178ac51089ac2d505964d300a996945d6",
+      "bytes": 263463,
+      "sha256": "a65fc52d2eb8cbea955f640ec66e482839df4d3bab1b68f3918a2cc48a95bf75",
       "largura": 1600,
       "pagina": 1600,
-      "altura": 2418,
-      "letraMinima": 17.066015625,
+      "altura": 2283,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 254,
           "y": 495.71875,
-          "largura": 341.328125,
-          "altura": 227.546875,
-          "titulo": "Remuneração média antes de descontos, de primeiro trimestre de dois mil e vinte e cinco a segundo trimestre de dois mil e vinte e seis"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Remuneração média antes de descontos, do primeiro trimestre de dois mil e vinte e cinco ao segundo trimestre de dois mil e vinte e seis"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 254,
-          "y": 1304.09375,
-          "largura": 341.328125,
-          "altura": 227.546875,
+          "y": 1236.546875,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 629.328125,
-          "y": 1324.890625,
-          "largura": 341.328125,
-          "altura": 227.546875,
+          "y": 1257.34375,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pessoas que recebem o rendimento social de inserção, de dois mil e vinte e três a dois mil e vinte e quatro"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 1004.65625,
-          "y": 1282.90625,
-          "largura": 341.34375,
-          "altura": 227.5625,
+          "y": 1215.359375,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Linha de risco de pobreza, de mil novecentos e noventa e cinco a dois mil e vinte e cinco"
         }
       ],
@@ -857,21 +917,25 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/livro-razao/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/livro-razao/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/livro-razao/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/livro-razao/series/serie-linha-de-risco-de-pobreza"
@@ -882,44 +946,45 @@
       "lang": "pt",
       "rota": "/areas/trabalho-solidariedade-e-seguranca-social/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-areas_trabalho-solidariedade-e-seguranca-social-390.png",
-      "bytes": 449752,
-      "sha256": "f093b2f1ce0fd8714b16ef25f492252115a7556f913421104b81ace0d8f19455",
+      "bytes": 439155,
+      "sha256": "328aa5c1434bcdc83cd2633124c30b64e7e62fbaabb86c49194bb0cc61d22f60",
       "largura": 390,
       "pagina": 390,
-      "altura": 6900,
-      "letraMinima": 17.700000000000003,
+      "altura": 6552,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 18,
-          "y": 3083.796875,
-          "largura": 354,
-          "altura": 236,
-          "titulo": "Remuneração média antes de descontos, de primeiro trimestre de dois mil e vinte e cinco a segundo trimestre de dois mil e vinte e seis"
+          "y": 3039.796875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Remuneração média antes de descontos, do primeiro trimestre de dois mil e vinte e cinco ao segundo trimestre de dois mil e vinte e seis"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 18,
-          "y": 4318.453125,
-          "largura": 354,
-          "altura": 236,
+          "y": 4198.453125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 18,
-          "y": 4890.40625,
-          "largura": 354,
-          "altura": 236,
+          "y": 4694.40625,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pessoas que recebem o rendimento social de inserção, de dois mil e vinte e três a dois mil e vinte e quatro"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 18,
-          "y": 5341.78125,
-          "largura": 354,
-          "altura": 236,
+          "y": 5069.78125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Linha de risco de pobreza, de mil novecentos e noventa e cinco a dois mil e vinte e cinco"
         }
       ],
@@ -927,21 +992,25 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/livro-razao/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/livro-razao/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/livro-razao/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/livro-razao/series/serie-linha-de-risco-de-pobreza"
@@ -952,44 +1021,45 @@
       "lang": "pt",
       "rota": "/areas/trabalho-solidariedade-e-seguranca-social/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-areas_trabalho-solidariedade-e-seguranca-social-768.png",
-      "bytes": 514016,
-      "sha256": "04165f8598056e3106adadbb13c50aec16c865aa08d1220311a2fd671250c13b",
+      "bytes": 461294,
+      "sha256": "d077c9a4b44b392e8c97279de6f9d431b81a2f3cf85490182e928f77247438c3",
       "largura": 768,
       "pagina": 768,
-      "altura": 7205,
-      "letraMinima": 35.32734375,
+      "altura": 5960,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 30.71875,
-          "y": 2684.234375,
-          "largura": 706.5625,
-          "altura": 471.03125,
-          "titulo": "Remuneração média antes de descontos, de primeiro trimestre de dois mil e vinte e cinco a segundo trimestre de dois mil e vinte e seis"
+          "y": 2683.234375,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Remuneração média antes de descontos, do primeiro trimestre de dois mil e vinte e cinco ao segundo trimestre de dois mil e vinte e seis"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 30.71875,
-          "y": 4096.03125,
-          "largura": 706.5625,
-          "altura": 471.03125,
+          "y": 3784,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 30.71875,
-          "y": 4844.265625,
-          "largura": 706.5625,
-          "altura": 471.03125,
+          "y": 4221.203125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pessoas que recebem o rendimento social de inserção, de dois mil e vinte e três a dois mil e vinte e quatro"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 30.71875,
-          "y": 5534.28125,
-          "largura": 706.5625,
-          "altura": 471.03125,
+          "y": 4600.1875,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Linha de risco de pobreza, de mil novecentos e noventa e cinco a dois mil e vinte e cinco"
         }
       ],
@@ -997,21 +1067,25 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/livro-razao/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/livro-razao/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/livro-razao/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/livro-razao/series/serie-linha-de-risco-de-pobreza"
@@ -1022,44 +1096,45 @@
       "lang": "pt",
       "rota": "/areas/trabalho-solidariedade-e-seguranca-social/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-areas_trabalho-solidariedade-e-seguranca-social-1024.png",
-      "bytes": 516034,
-      "sha256": "814ace307f731b24692042d7779bcd7bda396ca15d70f92297460ec397084a39",
+      "bytes": 483498,
+      "sha256": "da67a4fa994fa06e36f4771a6f1bd338e3cb04d3f85a6f62192d765018b04a1e",
       "largura": 1024,
       "pagina": 1024,
-      "altura": 6863,
-      "letraMinima": 27.19921875,
+      "altura": 6008,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 40.953125,
-          "y": 2898.171875,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "Remuneração média antes de descontos, de primeiro trimestre de dois mil e vinte e cinco a segundo trimestre de dois mil e vinte e seis"
+          "y": 2854.171875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Remuneração média antes de descontos, do primeiro trimestre de dois mil e vinte e cinco ao segundo trimestre de dois mil e vinte e seis"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 40.953125,
-          "y": 4207.734375,
-          "largura": 544,
-          "altura": 362.65625,
+          "y": 3961.078125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 40.953125,
-          "y": 4853.734375,
-          "largura": 544,
-          "altura": 362.65625,
+          "y": 4404.421875,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pessoas que recebem o rendimento social de inserção, de dois mil e vinte e três a dois mil e vinte e quatro"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 40.953125,
-          "y": 5435.375,
-          "largura": 544,
-          "altura": 362.65625,
+          "y": 4783.40625,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Linha de risco de pobreza, de mil novecentos e noventa e cinco a dois mil e vinte e cinco"
         }
       ],
@@ -1067,21 +1142,25 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/livro-razao/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/livro-razao/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/livro-razao/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/livro-razao/series/serie-linha-de-risco-de-pobreza"
@@ -1092,44 +1171,45 @@
       "lang": "pt",
       "rota": "/areas/trabalho-solidariedade-e-seguranca-social/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-areas_trabalho-solidariedade-e-seguranca-social-1280.png",
-      "bytes": 521094,
-      "sha256": "4b3661c48d7c3c948a45fde80681211e5a37033252035e227cc15fed66278905",
+      "bytes": 486988,
+      "sha256": "84918b3a80cddae8235b3f6b54295995451a9025a0da75b8fe9b015c1814f6df",
       "largura": 1280,
       "pagina": 1280,
-      "altura": 6880,
-      "letraMinima": 27.19921875,
+      "altura": 6026,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 94,
-          "y": 2921.421875,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "Remuneração média antes de descontos, de primeiro trimestre de dois mil e vinte e cinco a segundo trimestre de dois mil e vinte e seis"
+          "y": 2877.421875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Remuneração média antes de descontos, do primeiro trimestre de dois mil e vinte e cinco ao segundo trimestre de dois mil e vinte e seis"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 94,
-          "y": 4232.421875,
-          "largura": 544,
-          "altura": 362.65625,
+          "y": 3985.765625,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 94,
-          "y": 4879.859375,
-          "largura": 544,
-          "altura": 362.65625,
+          "y": 4430.546875,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pessoas que recebem o rendimento social de inserção, de dois mil e vinte e três a dois mil e vinte e quatro"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 94,
-          "y": 5461.5,
-          "largura": 544,
-          "altura": 362.65625,
+          "y": 4809.53125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Linha de risco de pobreza, de mil novecentos e noventa e cinco a dois mil e vinte e cinco"
         }
       ],
@@ -1137,21 +1217,25 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/livro-razao/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/livro-razao/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/livro-razao/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/livro-razao/series/serie-linha-de-risco-de-pobreza"
@@ -1162,44 +1246,45 @@
       "lang": "pt",
       "rota": "/areas/trabalho-solidariedade-e-seguranca-social/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-areas_trabalho-solidariedade-e-seguranca-social-1600.png",
-      "bytes": 536304,
-      "sha256": "d8a5a421ee98d6903530797d0c0e215e608de4cc808a3453c6cfd4273a3a07bc",
+      "bytes": 500706,
+      "sha256": "85f496c827df9ee0a85f26ad5f06b95d30cc7e31d24e44aa6c005d7c9b3f51fa",
       "largura": 1600,
       "pagina": 1600,
-      "altura": 6887,
-      "letraMinima": 27.19921875,
+      "altura": 6032,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 254,
-          "y": 2921.421875,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "Remuneração média antes de descontos, de primeiro trimestre de dois mil e vinte e cinco a segundo trimestre de dois mil e vinte e seis"
+          "y": 2877.421875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Remuneração média antes de descontos, do primeiro trimestre de dois mil e vinte e cinco ao segundo trimestre de dois mil e vinte e seis"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 254,
-          "y": 4232.421875,
-          "largura": 544,
-          "altura": 362.65625,
+          "y": 3985.765625,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 254,
-          "y": 4879.859375,
-          "largura": 544,
-          "altura": 362.65625,
+          "y": 4430.546875,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Pessoas que recebem o rendimento social de inserção, de dois mil e vinte e três a dois mil e vinte e quatro"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 254,
-          "y": 5461.5,
-          "largura": 544,
-          "altura": 362.65625,
+          "y": 4809.53125,
+          "largura": 240,
+          "altura": 160,
           "titulo": "Linha de risco de pobreza, de mil novecentos e noventa e cinco a dois mil e vinte e cinco"
         }
       ],
@@ -1207,21 +1292,25 @@
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/livro-razao/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/livro-razao/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/livro-razao/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/livro-razao/series/serie-linha-de-risco-de-pobreza"
@@ -1238,6 +1327,7 @@
       "pagina": 390,
       "altura": 5102,
       "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
       "posicaoNoBloco": null,
       "desenhos": [
         {
@@ -1265,20 +1355,21 @@
       "lang": "pt",
       "rota": "/livro-razao/series/serie-ipc-indice/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-livro-razao_series_serie-ipc-indice-768.png",
-      "bytes": 628332,
-      "sha256": "dc836fc1563be1883f9d6a4096a254b99465093f44d7d433fc432afa16699b45",
+      "bytes": 620047,
+      "sha256": "c23cfbc9cce397f8c97d642e68542488a6e1a2521ee7c14173f65650cb262f6f",
       "largura": 768,
       "pagina": 768,
-      "altura": 5073,
-      "letraMinima": 22.3996875,
+      "altura": 4899,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-indice",
           "x": 30.71875,
           "y": 781.6875,
-          "largura": 672,
-          "altura": 373.328125,
+          "largura": 360,
+          "altura": 200,
           "titulo": "Índice de preços no consumidor, de janeiro de mil novecentos e quarenta e oito a agosto de dois mil e vinte e seis"
         }
       ],
@@ -1298,20 +1389,21 @@
       "lang": "pt",
       "rota": "/livro-razao/series/serie-ipc-indice/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-livro-razao_series_serie-ipc-indice-1024.png",
-      "bytes": 589574,
-      "sha256": "2e4229b6c69d390c70cb20d808c9316fd1ce621cca72643300334bc52882b869",
+      "bytes": 584721,
+      "sha256": "eb4d807a8195e3c215655593677002e81f493192bc61bcc8b8f0c5b2c01fd4cb",
       "largura": 1024,
       "pagina": 1024,
-      "altura": 4871,
-      "letraMinima": 18.133125,
+      "altura": 4769,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-indice",
           "x": 40.953125,
           "y": 829.6875,
-          "largura": 544,
-          "altura": 302.21875,
+          "largura": 360,
+          "altura": 200,
           "titulo": "Índice de preços no consumidor, de janeiro de mil novecentos e quarenta e oito a agosto de dois mil e vinte e seis"
         }
       ],
@@ -1331,20 +1423,21 @@
       "lang": "pt",
       "rota": "/livro-razao/series/serie-ipc-indice/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-livro-razao_series_serie-ipc-indice-1280.png",
-      "bytes": 596294,
-      "sha256": "920937b1d256f3ff7ac672e79214e7082d6d94a0909b31d02eef7a57925e36fc",
+      "bytes": 591499,
+      "sha256": "8d28ee6c1e04baca4d574c35e98dca8aed65ddfa2bef9c20b4f546f3c2cbc840",
       "largura": 1280,
       "pagina": 1280,
-      "altura": 4871,
-      "letraMinima": 18.133125,
+      "altura": 4769,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-indice",
           "x": 94,
           "y": 841.75,
-          "largura": 544,
-          "altura": 302.21875,
+          "largura": 360,
+          "altura": 200,
           "titulo": "Índice de preços no consumidor, de janeiro de mil novecentos e quarenta e oito a agosto de dois mil e vinte e seis"
         }
       ],
@@ -1364,20 +1457,21 @@
       "lang": "pt",
       "rota": "/livro-razao/series/serie-ipc-indice/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-livro-razao_series_serie-ipc-indice-1600.png",
-      "bytes": 609708,
-      "sha256": "7c7d581827f1e3e764ebdd56cb38c762fa2d5028102706d314c523507297abe2",
+      "bytes": 604817,
+      "sha256": "57f8ab646833ae0ad0a61f36127e1f44bbae9950928c0b5232c2ce0367474504",
       "largura": 1600,
       "pagina": 1600,
-      "altura": 4878,
-      "letraMinima": 18.133125,
+      "altura": 4775,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-indice",
           "x": 254,
           "y": 841.75,
-          "largura": 544,
-          "altura": 302.21875,
+          "largura": 360,
+          "altura": 200,
           "titulo": "Índice de preços no consumidor, de janeiro de mil novecentos e quarenta e oito a agosto de dois mil e vinte e seis"
         }
       ],
@@ -1403,6 +1497,7 @@
       "pagina": 390,
       "altura": 2605,
       "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
       "posicaoNoBloco": null,
       "desenhos": [
         {
@@ -1430,20 +1525,21 @@
       "lang": "pt",
       "rota": "/livro-razao/series/serie-pensao-media-anual/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-livro-razao_series_serie-pensao-media-anual-768.png",
-      "bytes": 210221,
-      "sha256": "c707e57cf278b2e3bdfae2a661426cef1516066d0714c778961475bc58459cfe",
+      "bytes": 203738,
+      "sha256": "b992ab0d4bbc5408aef7e3de35373c82ee6ae7f5b729ac3e42e1358163e6a0f2",
       "largura": 768,
       "pagina": 768,
-      "altura": 2604,
-      "letraMinima": 22.3996875,
+      "altura": 2431,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-pensao-media-anual",
           "x": 30.71875,
           "y": 756.09375,
-          "largura": 672,
-          "altura": 373.328125,
+          "largura": 360,
+          "altura": 200,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         }
       ],
@@ -1463,20 +1559,21 @@
       "lang": "pt",
       "rota": "/livro-razao/series/serie-pensao-media-anual/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-livro-razao_series_serie-pensao-media-anual-1024.png",
-      "bytes": 215828,
-      "sha256": "13bd09bc262172304dc24c80344bb0c947e7de512e88f196f35f94120b51a758",
+      "bytes": 212387,
+      "sha256": "2d838c4c141b554158b37b48705bb21072e87df930625270c33ddbf3d3aadea0",
       "largura": 1024,
       "pagina": 1024,
-      "altura": 2339,
-      "letraMinima": 18.133125,
+      "altura": 2237,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-pensao-media-anual",
           "x": 40.953125,
           "y": 804.09375,
-          "largura": 544,
-          "altura": 302.21875,
+          "largura": 360,
+          "altura": 200,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         }
       ],
@@ -1496,20 +1593,21 @@
       "lang": "pt",
       "rota": "/livro-razao/series/serie-pensao-media-anual/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-livro-razao_series_serie-pensao-media-anual-1280.png",
-      "bytes": 219081,
-      "sha256": "97e5fe1048302077b6a7c27e9743986a3ae00fd3a5b2ba1f9df7e15aceea9aae",
+      "bytes": 214864,
+      "sha256": "af9463ef36061143164b7a3fc6c091688aaf33193edc8bc9328d3e879432e19e",
       "largura": 1280,
       "pagina": 1280,
-      "altura": 2340,
-      "letraMinima": 18.133125,
+      "altura": 2238,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-pensao-media-anual",
           "x": 94,
           "y": 816.15625,
-          "largura": 544,
-          "altura": 302.21875,
+          "largura": 360,
+          "altura": 200,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         }
       ],
@@ -1529,20 +1627,21 @@
       "lang": "pt",
       "rota": "/livro-razao/series/serie-pensao-media-anual/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/pt-livro-razao_series_serie-pensao-media-anual-1600.png",
-      "bytes": 225569,
-      "sha256": "a3d12ef55955d1ecdf5c326b459647657c65b4b6b9cba7d47463dc5844a8f392",
+      "bytes": 221429,
+      "sha256": "622788fe870b59616c5c94dbaa67ae0add809517943be84fc2df8c01bca841bf",
       "largura": 1600,
       "pagina": 1600,
-      "altura": 2346,
-      "letraMinima": 18.133125,
+      "altura": 2244,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-pensao-media-anual",
           "x": 254,
           "y": 816.15625,
-          "largura": 544,
-          "altura": 302.21875,
+          "largura": 360,
+          "altura": 200,
           "titulo": "Pensão média anual, de dois mil e dezassete a dois mil e vinte e cinco"
         }
       ],
@@ -1562,12 +1661,13 @@
       "lang": "en",
       "rota": "/en/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-inicio-390.png",
-      "bytes": 686610,
-      "sha256": "34367dc6a775dd9c99e0b1b9ac16f17de1945e81cbb1cf50e402fc7816336395",
+      "bytes": 669139,
+      "sha256": "e54a34ba00c0ac1cd07ecf9b00e490097c8069d56e9b2e838e3173d9bf7edd82",
       "largura": 390,
       "pagina": 390,
-      "altura": 7054,
+      "altura": 6938,
       "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
       "posicaoNoBloco": {
         "barras": {
           "x": 18,
@@ -1579,17 +1679,17 @@
           "x": 18,
           "y": 664.171875,
           "largura": 354,
-          "altura": 221.65625
+          "altura": 244.65625
         }
       },
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 18,
-          "y": 689.171875,
+          "y": 712.171875,
           "largura": 354,
           "altura": 196.65625,
-          "titulo": "Inflation, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "titulo": "from January nineteen ninety-two to August twenty twenty-six, % change over twelve months"
         }
       ],
       "marcasFora": [],
@@ -1600,12 +1700,13 @@
       "lang": "en",
       "rota": "/en/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-inicio-768.png",
-      "bytes": 775834,
-      "sha256": "4c890f2b6a8e58b166bb457bef2e84bc007dcbc9721de70b2016a0118b5191ae",
+      "bytes": 744019,
+      "sha256": "9bfa81330aedf5c887354fc431d7a517116d5e968d1e6ab1f9bb906775eb5b6d",
       "largura": 768,
       "pagina": 768,
-      "altura": 5799,
-      "letraMinima": 23.551875,
+      "altura": 5560,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": {
         "barras": {
           "x": 30.71875,
@@ -1617,17 +1718,17 @@
           "x": 30.71875,
           "y": 602.8125,
           "largura": 706.5625,
-          "altura": 417.53125
+          "altura": 248
         }
       },
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 30.71875,
-          "y": 627.8125,
-          "largura": 706.5625,
-          "altura": 392.53125,
-          "titulo": "Inflation, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "y": 650.8125,
+          "largura": 360,
+          "altura": 200,
+          "titulo": "from January nineteen ninety-two to August twenty twenty-six, % change over twelve months"
         }
       ],
       "marcasFora": [],
@@ -1638,12 +1739,13 @@
       "lang": "en",
       "rota": "/en/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-inicio-1024.png",
-      "bytes": 823525,
-      "sha256": "58c9d9843dde8c8d029bc5a2b5c69ce744f10fde3dc970bbc266e0e802f1c324",
+      "bytes": 799518,
+      "sha256": "da453e0426d5ea3f702e6cef4c19335cc50122510cb410633bbb2da478735e18",
       "largura": 1024,
       "pagina": 1024,
-      "altura": 5166,
-      "letraMinima": 16.2721875,
+      "altura": 5048,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": {
         "barras": {
           "x": 494.859375,
@@ -1655,17 +1757,17 @@
           "x": 494.859375,
           "y": 560.734375,
           "largura": 488.1875,
-          "altura": 296.203125
+          "altura": 248
         }
       },
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 494.859375,
-          "y": 585.734375,
-          "largura": 488.1875,
-          "altura": 271.203125,
-          "titulo": "Inflation, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "y": 608.734375,
+          "largura": 360,
+          "altura": 200,
+          "titulo": "from January nineteen ninety-two to August twenty twenty-six, % change over twelve months"
         }
       ],
       "marcasFora": [],
@@ -1676,12 +1778,13 @@
       "lang": "en",
       "rota": "/en/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-inicio-1280.png",
-      "bytes": 825643,
-      "sha256": "17aa5107c4ee8404a9dafc05e26a2252126b0a8de7c9692a5b45562cc11e27c6",
+      "bytes": 798122,
+      "sha256": "3801e9abab37e62b97f60928ec116b4e3b6965003dcb130e0915fabbd15d2ced",
       "largura": 1280,
       "pagina": 1280,
-      "altura": 5070,
-      "letraMinima": 18.78375,
+      "altura": 4911,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": {
         "barras": {
           "x": 622.46875,
@@ -1693,17 +1796,17 @@
           "x": 622.46875,
           "y": 575.640625,
           "largura": 563.53125,
-          "altura": 338.0625
+          "altura": 248
         }
       },
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 622.46875,
-          "y": 600.640625,
-          "largura": 563.53125,
-          "altura": 313.0625,
-          "titulo": "Inflation, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "y": 623.640625,
+          "largura": 360,
+          "altura": 200,
+          "titulo": "from January nineteen ninety-two to August twenty twenty-six, % change over twelve months"
         }
       ],
       "marcasFora": [],
@@ -1714,12 +1817,13 @@
       "lang": "en",
       "rota": "/en/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-inicio-1600.png",
-      "bytes": 845692,
-      "sha256": "db2c5c6585ad16e06976fb47caa527aefd45052bc891c3337bdb76244feb3a1f",
+      "bytes": 816997,
+      "sha256": "a0d61ff019dce68f41a2705d6cf18da5aa1d4782b9e1b75c9b0d494317fc8457",
       "largura": 1600,
       "pagina": 1600,
-      "altura": 5084,
-      "letraMinima": 18.6178125,
+      "altura": 4928,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": {
         "barras": {
           "x": 787.453125,
@@ -1731,17 +1835,17 @@
           "x": 787.453125,
           "y": 578.6875,
           "largura": 558.546875,
-          "altura": 335.296875
+          "altura": 248
         }
       },
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 787.453125,
-          "y": 603.6875,
-          "largura": 558.546875,
-          "altura": 310.296875,
-          "titulo": "Inflation, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "y": 626.6875,
+          "largura": 360,
+          "altura": 200,
+          "titulo": "from January nineteen ninety-two to August twenty twenty-six, % change over twelve months"
         }
       ],
       "marcasFora": [],
@@ -1752,53 +1856,57 @@
       "lang": "en",
       "rota": "/en/prices/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-precos-390.png",
-      "bytes": 233964,
-      "sha256": "710cedaccf7868e69d6a3bbf4d3dea3bc23da7c48ae3aa3af01a90b4e18adbe8",
+      "bytes": 210441,
+      "sha256": "05cd0ba2e83f7c17759feb2dd5257228e4158b52dbb352a271d5316572516422",
       "largura": 390,
       "pagina": 390,
-      "altura": 3417,
-      "letraMinima": 17.700000000000003,
+      "altura": 3046,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 18,
           "y": 438.734375,
-          "largura": 354,
-          "altura": 236,
-          "titulo": "Inflation, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Inflation, from January nineteen ninety-two to August twenty twenty-six"
         },
         {
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "x": 18,
-          "y": 1227.34375,
-          "largura": 354,
-          "altura": 236,
-          "titulo": "Prices of food and non-alcoholic beverages, change over a year, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "y": 1151.34375,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Prices of food and non-alcoholic beverages, change over a year, from January nineteen ninety-two to August twenty twenty-six"
         },
         {
           "serie": "serie-ihpc-variacao-homologa-ue",
           "x": 18,
-          "y": 2661.84375,
-          "largura": 354,
-          "altura": 236,
-          "titulo": "Inflation in the European Union, from December two thousand to August two thousand and twenty six"
+          "y": 2054.921875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Inflation in the European Union, from December two thousand to August twenty twenty-six"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "ipc-variacao-homologa",
           "linha": "ipc-variacao-homologa",
           "serie": "serie-ipc-variacao-homologa",
           "porta": "/en/ledger/series/serie-ipc-variacao-homologa"
         },
         {
+          "cartao": "ipc-alimentacao-variacao-homologa",
           "linha": "ipc-alimentacao-variacao-homologa",
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "porta": "/en/ledger/series/serie-ipc-alimentacao-variacao-homologa"
         },
         {
+          "cartao": "ihpc-variacao-homologa",
           "linha": "ihpc-variacao-homologa-ue",
           "serie": "serie-ihpc-variacao-homologa-ue",
           "porta": "/en/ledger/series/serie-ihpc-variacao-homologa-ue"
@@ -1809,53 +1917,57 @@
       "lang": "en",
       "rota": "/en/prices/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-precos-768.png",
-      "bytes": 240679,
-      "sha256": "b216d197b2fe184577e60211c02c6f65afbaa079f96790c9293bf9977d9bb4b5",
+      "bytes": 217333,
+      "sha256": "0daf5b764ffcb1f34f8f9dece9282ebdbfaddc5ee45a3137b5882ef9e759731a",
       "largura": 768,
       "pagina": 768,
-      "altura": 2596,
-      "letraMinima": 17.164453125,
+      "altura": 2242,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 30.71875,
           "y": 452.546875,
-          "largura": 343.296875,
-          "altura": 228.859375,
-          "titulo": "Inflation, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Inflation, from January nineteen ninety-two to August twenty twenty-six"
         },
         {
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "x": 30.71875,
-          "y": 1010.765625,
-          "largura": 343.296875,
-          "altura": 228.859375,
-          "titulo": "Prices of food and non-alcoholic beverages, change over a year, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "y": 941.90625,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Prices of food and non-alcoholic beverages, change over a year, from January nineteen ninety-two to August twenty twenty-six"
         },
         {
           "serie": "serie-ihpc-variacao-homologa-ue",
-          "x": 30.71875,
-          "y": 1991.625,
-          "largura": 343.296875,
-          "altura": 228.859375,
-          "titulo": "Inflation in the European Union, from December two thousand to August two thousand and twenty six"
+          "x": 393.96875,
+          "y": 1395.375,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Inflation in the European Union, from December two thousand to August twenty twenty-six"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "ipc-variacao-homologa",
           "linha": "ipc-variacao-homologa",
           "serie": "serie-ipc-variacao-homologa",
           "porta": "/en/ledger/series/serie-ipc-variacao-homologa"
         },
         {
+          "cartao": "ipc-alimentacao-variacao-homologa",
           "linha": "ipc-alimentacao-variacao-homologa",
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "porta": "/en/ledger/series/serie-ipc-alimentacao-variacao-homologa"
         },
         {
+          "cartao": "ihpc-variacao-homologa",
           "linha": "ihpc-variacao-homologa-ue",
           "serie": "serie-ihpc-variacao-homologa-ue",
           "porta": "/en/ledger/series/serie-ihpc-variacao-homologa-ue"
@@ -1866,53 +1978,57 @@
       "lang": "en",
       "rota": "/en/prices/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-precos-1024.png",
-      "bytes": 229921,
-      "sha256": "41410f3535cedcc68964c3f7b55791d4118385da56852fc2357094a81ef00a93",
+      "bytes": 213181,
+      "sha256": "fdb4d8d74ddc68a2a430265b1ccade309c37c7f9c76c3679df586b02a61b06bd",
       "largura": 1024,
       "pagina": 1024,
-      "altura": 2069,
-      "letraMinima": 14.813671874999999,
+      "altura": 1847,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 40.953125,
           "y": 485.21875,
-          "largura": 296.28125,
-          "altura": 197.515625,
-          "titulo": "Inflation, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Inflation, from January nineteen ninety-two to August twenty twenty-six"
         },
         {
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "x": 686.75,
           "y": 506.015625,
-          "largura": 296.28125,
-          "altura": 197.515625,
-          "titulo": "Prices of food and non-alcoholic beverages, change over a year, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Prices of food and non-alcoholic beverages, change over a year, from January nineteen ninety-two to August twenty twenty-six"
         },
         {
           "serie": "serie-ihpc-variacao-homologa-ue",
-          "x": 40.953125,
-          "y": 1495.625,
-          "largura": 296.28125,
-          "altura": 197.515625,
-          "titulo": "Inflation in the European Union, from December two thousand to August two thousand and twenty six"
+          "x": 686.75,
+          "y": 999.578125,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Inflation in the European Union, from December two thousand to August twenty twenty-six"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "ipc-variacao-homologa",
           "linha": "ipc-variacao-homologa",
           "serie": "serie-ipc-variacao-homologa",
           "porta": "/en/ledger/series/serie-ipc-variacao-homologa"
         },
         {
+          "cartao": "ipc-alimentacao-variacao-homologa",
           "linha": "ipc-alimentacao-variacao-homologa",
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "porta": "/en/ledger/series/serie-ipc-alimentacao-variacao-homologa"
         },
         {
+          "cartao": "ihpc-variacao-homologa",
           "linha": "ihpc-variacao-homologa-ue",
           "serie": "serie-ihpc-variacao-homologa-ue",
           "porta": "/en/ledger/series/serie-ihpc-variacao-homologa-ue"
@@ -1923,53 +2039,57 @@
       "lang": "en",
       "rota": "/en/prices/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-precos-1280.png",
-      "bytes": 235617,
-      "sha256": "27111cdc4486a8a95cb1334fa88284923d703b8b3c07482c48efa444bf7b22d9",
+      "bytes": 229661,
+      "sha256": "08988c88c0205442c8099d4a5ea339b8ed9b4163464d9ce013d8ab8d1266826a",
       "largura": 1280,
       "pagina": 1280,
-      "altura": 1744,
-      "letraMinima": 12.401953124999999,
+      "altura": 1962,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 94,
           "y": 495.71875,
-          "largura": 248.046875,
-          "altura": 165.359375,
-          "titulo": "Inflation, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Inflation, from January nineteen ninety-two to August twenty twenty-six"
         },
         {
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "x": 656.625,
           "y": 516.515625,
-          "largura": 248.046875,
-          "altura": 165.359375,
-          "titulo": "Prices of food and non-alcoholic beverages, change over a year, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Prices of food and non-alcoholic beverages, change over a year, from January nineteen ninety-two to August twenty twenty-six"
         },
         {
           "serie": "serie-ihpc-variacao-homologa-ue",
-          "x": 656.625,
-          "y": 1010.734375,
-          "largura": 248.046875,
-          "altura": 165.359375,
-          "titulo": "Inflation in the European Union, from December two thousand to August two thousand and twenty six"
+          "x": 375.3125,
+          "y": 1051.171875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Inflation in the European Union, from December two thousand to August twenty twenty-six"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "ipc-variacao-homologa",
           "linha": "ipc-variacao-homologa",
           "serie": "serie-ipc-variacao-homologa",
           "porta": "/en/ledger/series/serie-ipc-variacao-homologa"
         },
         {
+          "cartao": "ipc-alimentacao-variacao-homologa",
           "linha": "ipc-alimentacao-variacao-homologa",
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "porta": "/en/ledger/series/serie-ipc-alimentacao-variacao-homologa"
         },
         {
+          "cartao": "ihpc-variacao-homologa",
           "linha": "ihpc-variacao-homologa-ue",
           "serie": "serie-ihpc-variacao-homologa-ue",
           "porta": "/en/ledger/series/serie-ihpc-variacao-homologa-ue"
@@ -1980,53 +2100,57 @@
       "lang": "en",
       "rota": "/en/prices/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-precos-1600.png",
-      "bytes": 244447,
-      "sha256": "ab30ba4b03f37a3065436ddaa67a57d655af93e963523fcb99f338031ab92bf3",
+      "bytes": 223450,
+      "sha256": "b6d9b4b10fe2a3cae87f61c32eb63c2d9796daa9c38db190a5feed592d2d06a6",
       "largura": 1600,
       "pagina": 1600,
-      "altura": 2169,
-      "letraMinima": 17.066015625,
+      "altura": 1887,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-variacao-homologa",
           "x": 254,
           "y": 495.71875,
-          "largura": 341.328125,
-          "altura": 227.546875,
-          "titulo": "Inflation, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Inflation, from January nineteen ninety-two to August twenty twenty-six"
         },
         {
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "x": 1004.65625,
           "y": 495.71875,
-          "largura": 341.34375,
-          "altura": 227.5625,
-          "titulo": "Prices of food and non-alcoholic beverages, change over a year, from January one thousand nine hundred and ninety two to August two thousand and twenty six"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Prices of food and non-alcoholic beverages, change over a year, from January nineteen ninety-two to August twenty twenty-six"
         },
         {
           "serie": "serie-ihpc-variacao-homologa-ue",
-          "x": 254,
-          "y": 1536.15625,
-          "largura": 341.328125,
-          "altura": 227.546875,
-          "titulo": "Inflation in the European Union, from December two thousand to August two thousand and twenty six"
+          "x": 1004.65625,
+          "y": 1010.078125,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Inflation in the European Union, from December two thousand to August twenty twenty-six"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "ipc-variacao-homologa",
           "linha": "ipc-variacao-homologa",
           "serie": "serie-ipc-variacao-homologa",
           "porta": "/en/ledger/series/serie-ipc-variacao-homologa"
         },
         {
+          "cartao": "ipc-alimentacao-variacao-homologa",
           "linha": "ipc-alimentacao-variacao-homologa",
           "serie": "serie-ipc-alimentacao-variacao-homologa",
           "porta": "/en/ledger/series/serie-ipc-alimentacao-variacao-homologa"
         },
         {
+          "cartao": "ihpc-variacao-homologa",
           "linha": "ihpc-variacao-homologa-ue",
           "serie": "serie-ihpc-variacao-homologa-ue",
           "porta": "/en/ledger/series/serie-ihpc-variacao-homologa-ue"
@@ -2037,66 +2161,71 @@
       "lang": "en",
       "rota": "/en/pay-pensions-and-benefits/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-salarios-pensoes-e-apoios-390.png",
-      "bytes": 250678,
-      "sha256": "4642f1098f682d29580b2f1f2a2e3387f4afe43ed71cade8d46d3cfae42f9fc6",
+      "bytes": 241281,
+      "sha256": "9e511cca4138c3aa522b1cbb830d26f4f296530a27896611feb41faea826abba",
       "largura": 390,
       "pagina": 390,
-      "altura": 3985,
-      "letraMinima": 17.700000000000003,
+      "altura": 3681,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 18,
           "y": 438.734375,
-          "largura": 354,
-          "altura": 236,
-          "titulo": "Average pay before deductions, from first quarter of two thousand and twenty five to second quarter of two thousand and twenty six"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average pay before deductions, from the first quarter of twenty twenty-five to the second quarter of twenty twenty-six"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 18,
-          "y": 1660.484375,
-          "largura": 354,
-          "altura": 236,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "y": 1584.484375,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 18,
-          "y": 2161.34375,
-          "largura": 354,
-          "altura": 236,
-          "titulo": "People receiving social insertion income, from two thousand and twenty three to two thousand and twenty four"
+          "y": 2009.34375,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "People receiving social insertion income, from twenty twenty-three to twenty twenty-four"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 18,
-          "y": 2641.015625,
-          "largura": 354,
-          "altura": 236,
-          "titulo": "At-risk-of-poverty line, from one thousand nine hundred and ninety five to two thousand and twenty five"
+          "y": 2413.015625,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "At-risk-of-poverty line, from nineteen ninety-five to twenty twenty-five"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/en/ledger/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/en/ledger/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/en/ledger/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/en/ledger/series/serie-linha-de-risco-de-pobreza"
@@ -2107,66 +2236,71 @@
       "lang": "en",
       "rota": "/en/pay-pensions-and-benefits/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-salarios-pensoes-e-apoios-768.png",
-      "bytes": 258046,
-      "sha256": "2db75e24d2436b4657cfa26e8f3a57bcb56cb4e75c0913135905169e7644a096",
+      "bytes": 249113,
+      "sha256": "ce5b3b6e921f149feed47f98f7a1021d7642ca69221318e950fe2c329ecd127c",
       "largura": 768,
       "pagina": 768,
-      "altura": 2877,
-      "letraMinima": 17.164453125,
+      "altura": 2671,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 30.71875,
           "y": 452.546875,
-          "largura": 343.296875,
-          "altura": 228.859375,
-          "titulo": "Average pay before deductions, from first quarter of two thousand and twenty five to second quarter of two thousand and twenty six"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average pay before deductions, from the first quarter of twenty twenty-five to the second quarter of twenty twenty-six"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 30.71875,
-          "y": 1301.09375,
-          "largura": 343.296875,
-          "altura": 228.859375,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "y": 1232.234375,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 393.96875,
-          "y": 1301.09375,
-          "largura": 343.3125,
-          "altura": 228.875,
-          "titulo": "People receiving social insertion income, from two thousand and twenty three to two thousand and twenty four"
+          "y": 1232.234375,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "People receiving social insertion income, from twenty twenty-three to twenty twenty-four"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 30.71875,
-          "y": 1777.25,
-          "largura": 343.296875,
-          "altura": 228.859375,
-          "titulo": "At-risk-of-poverty line, from one thousand nine hundred and ninety five to two thousand and twenty five"
+          "y": 1639.515625,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "At-risk-of-poverty line, from nineteen ninety-five to twenty twenty-five"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/en/ledger/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/en/ledger/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/en/ledger/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/en/ledger/series/serie-linha-de-risco-de-pobreza"
@@ -2177,66 +2311,71 @@
       "lang": "en",
       "rota": "/en/pay-pensions-and-benefits/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-salarios-pensoes-e-apoios-1024.png",
-      "bytes": 260602,
-      "sha256": "8f7192f576a4545f0f83d4984623b1f3df53c074f35c87e9a98e527a5ce4b6eb",
+      "bytes": 254696,
+      "sha256": "b434992dfc7206ac3cbad7ac280c038aa0b3df3d99f43718f8a4a69ab3acbff3",
       "largura": 1024,
       "pagina": 1024,
-      "altura": 2307,
-      "letraMinima": 14.813671874999999,
+      "altura": 2232,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 40.953125,
           "y": 485.21875,
-          "largura": 296.28125,
-          "altura": 197.515625,
-          "titulo": "Average pay before deductions, from first quarter of two thousand and twenty five to second quarter of two thousand and twenty six"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average pay before deductions, from the first quarter of twenty twenty-five to the second quarter of twenty twenty-six"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 40.953125,
-          "y": 1237.53125,
-          "largura": 296.28125,
-          "altura": 197.515625,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "y": 1200.015625,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 363.84375,
-          "y": 1237.53125,
-          "largura": 296.296875,
-          "altura": 197.53125,
-          "titulo": "People receiving social insertion income, from two thousand and twenty three to two thousand and twenty four"
+          "y": 1200.015625,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "People receiving social insertion income, from twenty twenty-three to twenty twenty-four"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 686.75,
-          "y": 1216.34375,
-          "largura": 296.28125,
-          "altura": 197.515625,
-          "titulo": "At-risk-of-poverty line, from one thousand nine hundred and ninety five to two thousand and twenty five"
+          "y": 1178.828125,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "At-risk-of-poverty line, from nineteen ninety-five to twenty twenty-five"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/en/ledger/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/en/ledger/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/en/ledger/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/en/ledger/series/serie-linha-de-risco-de-pobreza"
@@ -2247,66 +2386,71 @@
       "lang": "en",
       "rota": "/en/pay-pensions-and-benefits/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-salarios-pensoes-e-apoios-1280.png",
-      "bytes": 259973,
-      "sha256": "83a076fc106bad565614cc0400648726049e02d06779134168c25cb9bd5bbc20",
+      "bytes": 258565,
+      "sha256": "a6a7e66894fcb6cd417b9c6d946ee92576ba6e4849b38bba998d28e147054e5f",
       "largura": 1280,
       "pagina": 1280,
-      "altura": 2150,
-      "letraMinima": 12.401953124999999,
+      "altura": 2139,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 94,
           "y": 514.296875,
-          "largura": 248.046875,
-          "altura": 165.359375,
-          "titulo": "Average pay before deductions, from first quarter of two thousand and twenty five to second quarter of two thousand and twenty six"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average pay before deductions, from the first quarter of twenty twenty-five to the second quarter of twenty twenty-six"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 94,
-          "y": 1029.515625,
-          "largura": 248.046875,
-          "altura": 165.359375,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "y": 1024.15625,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 375.3125,
-          "y": 1068.890625,
-          "largura": 248.046875,
-          "altura": 165.359375,
-          "titulo": "People receiving social insertion income, from two thousand and twenty three to two thousand and twenty four"
+          "y": 1063.53125,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "People receiving social insertion income, from twenty twenty-three to twenty twenty-four"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 656.625,
-          "y": 1029.515625,
-          "largura": 248.046875,
-          "altura": 165.359375,
-          "titulo": "At-risk-of-poverty line, from one thousand nine hundred and ninety five to two thousand and twenty five"
+          "y": 1024.15625,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "At-risk-of-poverty line, from nineteen ninety-five to twenty twenty-five"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/en/ledger/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/en/ledger/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/en/ledger/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/en/ledger/series/serie-linha-de-risco-de-pobreza"
@@ -2317,66 +2461,71 @@
       "lang": "en",
       "rota": "/en/pay-pensions-and-benefits/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-salarios-pensoes-e-apoios-1600.png",
-      "bytes": 274771,
-      "sha256": "a918697ba63330bab6eff78160d570048402476788e54df75c7eee941121e9d0",
+      "bytes": 263664,
+      "sha256": "227c3d93e1724008b7894dbad8d53ea16d004697fec3b4e8925d6b62b3e43e84",
       "largura": 1600,
       "pagina": 1600,
-      "altura": 2436,
-      "letraMinima": 17.066015625,
+      "altura": 2301,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 254,
           "y": 495.71875,
-          "largura": 341.328125,
-          "altura": 227.546875,
-          "titulo": "Average pay before deductions, from first quarter of two thousand and twenty five to second quarter of two thousand and twenty six"
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average pay before deductions, from the first quarter of twenty twenty-five to the second quarter of twenty twenty-six"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 254,
-          "y": 1283.296875,
-          "largura": 341.328125,
-          "altura": 227.546875,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "y": 1215.75,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 629.328125,
-          "y": 1283.296875,
-          "largura": 341.328125,
-          "altura": 227.546875,
-          "titulo": "People receiving social insertion income, from two thousand and twenty three to two thousand and twenty four"
+          "y": 1215.75,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "People receiving social insertion income, from twenty twenty-three to twenty twenty-four"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 1004.65625,
-          "y": 1262.109375,
-          "largura": 341.34375,
-          "altura": 227.5625,
-          "titulo": "At-risk-of-poverty line, from one thousand nine hundred and ninety five to two thousand and twenty five"
+          "y": 1194.5625,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "At-risk-of-poverty line, from nineteen ninety-five to twenty twenty-five"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/en/ledger/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/en/ledger/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/en/ledger/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/en/ledger/series/serie-linha-de-risco-de-pobreza"
@@ -2387,66 +2536,71 @@
       "lang": "en",
       "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-areas_trabalho-solidariedade-e-seguranca-social-390.png",
-      "bytes": 444033,
-      "sha256": "30751f591c0655477328522f8b4bf9f8242559efcebc54beaad3fd594a9e8ef8",
+      "bytes": 433201,
+      "sha256": "ae469e1f2d7838b4a0eacadbe64194df2423f5626ffa740b981f277d5a2bff37",
       "largura": 390,
       "pagina": 390,
-      "altura": 6831,
-      "letraMinima": 17.700000000000003,
+      "altura": 6483,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 18,
-          "y": 2981.640625,
-          "largura": 354,
-          "altura": 236,
-          "titulo": "Average pay before deductions, from first quarter of two thousand and twenty five to second quarter of two thousand and twenty six"
+          "y": 2937.640625,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average pay before deductions, from the first quarter of twenty twenty-five to the second quarter of twenty twenty-six"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 18,
-          "y": 4216.296875,
-          "largura": 354,
-          "altura": 236,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "y": 4096.296875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 18,
-          "y": 4767.453125,
-          "largura": 354,
-          "altura": 236,
-          "titulo": "People receiving social insertion income, from two thousand and twenty three to two thousand and twenty four"
+          "y": 4571.453125,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "People receiving social insertion income, from twenty twenty-three to twenty twenty-four"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 18,
-          "y": 5218.828125,
-          "largura": 354,
-          "altura": 236,
-          "titulo": "At-risk-of-poverty line, from one thousand nine hundred and ninety five to two thousand and twenty five"
+          "y": 4946.828125,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "At-risk-of-poverty line, from nineteen ninety-five to twenty twenty-five"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/en/ledger/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/en/ledger/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/en/ledger/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/en/ledger/series/serie-linha-de-risco-de-pobreza"
@@ -2457,66 +2611,71 @@
       "lang": "en",
       "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-areas_trabalho-solidariedade-e-seguranca-social-768.png",
-      "bytes": 503529,
-      "sha256": "7f2543d53c4e9b945f163e9f66ef69850b0037bd298c0c7948e19d1ffbcc1bc0",
+      "bytes": 450717,
+      "sha256": "fd435c61c0ca8085e0f8058c8a29c876efee3cf2108673e71a47b0763802cbe2",
       "largura": 768,
       "pagina": 768,
-      "altura": 7212,
-      "letraMinima": 35.32734375,
+      "altura": 5924,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 30.71875,
-          "y": 2691.765625,
-          "largura": 706.5625,
-          "altura": 471.03125,
-          "titulo": "Average pay before deductions, from first quarter of two thousand and twenty five to second quarter of two thousand and twenty six"
+          "y": 2647.765625,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average pay before deductions, from the first quarter of twenty twenty-five to the second quarter of twenty twenty-six"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 30.71875,
-          "y": 4103.5625,
-          "largura": 706.5625,
-          "altura": 471.03125,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "y": 3748.53125,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 30.71875,
-          "y": 4851.796875,
-          "largura": 706.5625,
-          "altura": 471.03125,
-          "titulo": "People receiving social insertion income, from two thousand and twenty three to two thousand and twenty four"
+          "y": 4185.734375,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "People receiving social insertion income, from twenty twenty-three to twenty twenty-four"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 30.71875,
-          "y": 5541.8125,
-          "largura": 706.5625,
-          "altura": 471.03125,
-          "titulo": "At-risk-of-poverty line, from one thousand nine hundred and ninety five to two thousand and twenty five"
+          "y": 4564.71875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "At-risk-of-poverty line, from nineteen ninety-five to twenty twenty-five"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/en/ledger/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/en/ledger/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/en/ledger/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/en/ledger/series/serie-linha-de-risco-de-pobreza"
@@ -2527,66 +2686,71 @@
       "lang": "en",
       "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-areas_trabalho-solidariedade-e-seguranca-social-1024.png",
-      "bytes": 503716,
-      "sha256": "630c25fc3ad9213552282263181fc797d7e901081cfdeda2d1ff5a1da3a5e93f",
+      "bytes": 471306,
+      "sha256": "056a0c8cb0f799ddbd486b787fec6bd7332ad3481b79cdd9d52652ef66ff4a77",
       "largura": 1024,
       "pagina": 1024,
-      "altura": 6845,
-      "letraMinima": 27.19921875,
+      "altura": 5990,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 40.953125,
-          "y": 2898.171875,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "Average pay before deductions, from first quarter of two thousand and twenty five to second quarter of two thousand and twenty six"
+          "y": 2854.171875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average pay before deductions, from the first quarter of twenty twenty-five to the second quarter of twenty twenty-six"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 40.953125,
-          "y": 4207.734375,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "y": 3961.078125,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 40.953125,
-          "y": 4853.734375,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "People receiving social insertion income, from two thousand and twenty three to two thousand and twenty four"
+          "y": 4404.421875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "People receiving social insertion income, from twenty twenty-three to twenty twenty-four"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 40.953125,
-          "y": 5435.375,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "At-risk-of-poverty line, from one thousand nine hundred and ninety five to two thousand and twenty five"
+          "y": 4783.40625,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "At-risk-of-poverty line, from nineteen ninety-five to twenty twenty-five"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/en/ledger/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/en/ledger/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/en/ledger/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/en/ledger/series/serie-linha-de-risco-de-pobreza"
@@ -2597,66 +2761,71 @@
       "lang": "en",
       "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-areas_trabalho-solidariedade-e-seguranca-social-1280.png",
-      "bytes": 515406,
-      "sha256": "24bd2bf730bfde4f210af6f03f9d2028a7e654f660a0e40a44cd1a1d040cab34",
+      "bytes": 481453,
+      "sha256": "88db13ebdcb7e45b7438c54a6d6232938737c1ff9c519e84b76d402a7f0e2820",
       "largura": 1280,
       "pagina": 1280,
-      "altura": 6898,
-      "letraMinima": 27.19921875,
+      "altura": 6044,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 94,
-          "y": 2921.421875,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "Average pay before deductions, from first quarter of two thousand and twenty five to second quarter of two thousand and twenty six"
+          "y": 2877.421875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average pay before deductions, from the first quarter of twenty twenty-five to the second quarter of twenty twenty-six"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 94,
-          "y": 4232.421875,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "y": 3985.765625,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 94,
-          "y": 4879.859375,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "People receiving social insertion income, from two thousand and twenty three to two thousand and twenty four"
+          "y": 4430.546875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "People receiving social insertion income, from twenty twenty-three to twenty twenty-four"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 94,
-          "y": 5461.5,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "At-risk-of-poverty line, from one thousand nine hundred and ninety five to two thousand and twenty five"
+          "y": 4809.53125,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "At-risk-of-poverty line, from nineteen ninety-five to twenty twenty-five"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/en/ledger/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/en/ledger/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/en/ledger/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/en/ledger/series/serie-linha-de-risco-de-pobreza"
@@ -2667,66 +2836,71 @@
       "lang": "en",
       "rota": "/en/areas/trabalho-solidariedade-e-seguranca-social/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-areas_trabalho-solidariedade-e-seguranca-social-1600.png",
-      "bytes": 530804,
-      "sha256": "7174916fa9e921bd58842eb8efe51670b55627cdea30ee4b01c8f479dd39bceb",
+      "bytes": 495193,
+      "sha256": "aeed900096bfeb07f5e8575d47e603c5b160449f1b4754454d5471e9eaa89781",
       "largura": 1600,
       "pagina": 1600,
-      "altura": 6905,
-      "letraMinima": 27.19921875,
+      "altura": 6050,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-remuneracao-bruta-mensal-media",
           "x": 254,
-          "y": 2921.421875,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "Average pay before deductions, from first quarter of two thousand and twenty five to second quarter of two thousand and twenty six"
+          "y": 2877.421875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average pay before deductions, from the first quarter of twenty twenty-five to the second quarter of twenty twenty-six"
         },
         {
           "serie": "serie-pensao-media-anual",
           "x": 254,
-          "y": 4232.421875,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "y": 3985.765625,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         },
         {
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "x": 254,
-          "y": 4879.859375,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "People receiving social insertion income, from two thousand and twenty three to two thousand and twenty four"
+          "y": 4430.546875,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "People receiving social insertion income, from twenty twenty-three to twenty twenty-four"
         },
         {
           "serie": "serie-linha-de-risco-de-pobreza",
           "x": 254,
-          "y": 5461.5,
-          "largura": 544,
-          "altura": 362.65625,
-          "titulo": "At-risk-of-poverty line, from one thousand nine hundred and ninety five to two thousand and twenty five"
+          "y": 4809.53125,
+          "largura": 240,
+          "altura": 160,
+          "titulo": "At-risk-of-poverty line, from nineteen ninety-five to twenty twenty-five"
         }
       ],
       "marcasFora": [],
       "tabelas": [],
       "cartoes": [
         {
+          "cartao": "remuneracao-bruta-mensal-media",
           "linha": "remuneracao-bruta-mensal-media",
           "serie": "serie-remuneracao-bruta-mensal-media",
           "porta": "/en/ledger/series/serie-remuneracao-bruta-mensal-media"
         },
         {
+          "cartao": "pensao-media-anual-2025",
           "linha": "pensao-media-anual-2025",
           "serie": "serie-pensao-media-anual",
           "porta": "/en/ledger/series/serie-pensao-media-anual"
         },
         {
+          "cartao": "beneficiarios-do-rsi-por-mil-2024",
           "linha": "beneficiarios-do-rsi-por-mil-2024",
           "serie": "serie-beneficiarios-do-rsi-por-mil",
           "porta": "/en/ledger/series/serie-beneficiarios-do-rsi-por-mil"
         },
         {
+          "cartao": "linha-de-risco-de-pobreza-2025",
           "linha": "linha-de-risco-de-pobreza-2025",
           "serie": "serie-linha-de-risco-de-pobreza",
           "porta": "/en/ledger/series/serie-linha-de-risco-de-pobreza"
@@ -2743,6 +2917,7 @@
       "pagina": 390,
       "altura": 5198,
       "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
       "posicaoNoBloco": null,
       "desenhos": [
         {
@@ -2751,7 +2926,7 @@
           "y": 811.421875,
           "largura": 354,
           "altura": 196.65625,
-          "titulo": "Consumer price index, from January one thousand nine hundred and forty eight to August two thousand and twenty six"
+          "titulo": "Consumer price index, from January nineteen forty-eight to August twenty twenty-six"
         }
       ],
       "marcasFora": [],
@@ -2770,21 +2945,22 @@
       "lang": "en",
       "rota": "/en/ledger/series/serie-ipc-indice/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-livro-razao_series_serie-ipc-indice-768.png",
-      "bytes": 626971,
-      "sha256": "73c329196ede4e00b71a9a197d772a0d7b9171775fd9a4d0a0d89b7503af0ae6",
+      "bytes": 618700,
+      "sha256": "b968657e5b5a6da0fed83f8804be4c3f28ec6496cabc9feaf71b4c3d664cbce2",
       "largura": 768,
       "pagina": 768,
-      "altura": 5073,
-      "letraMinima": 22.3996875,
+      "altura": 4899,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-indice",
           "x": 30.71875,
           "y": 781.6875,
-          "largura": 672,
-          "altura": 373.328125,
-          "titulo": "Consumer price index, from January one thousand nine hundred and forty eight to August two thousand and twenty six"
+          "largura": 360,
+          "altura": 200,
+          "titulo": "Consumer price index, from January nineteen forty-eight to August twenty twenty-six"
         }
       ],
       "marcasFora": [],
@@ -2803,21 +2979,22 @@
       "lang": "en",
       "rota": "/en/ledger/series/serie-ipc-indice/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-livro-razao_series_serie-ipc-indice-1024.png",
-      "bytes": 586654,
-      "sha256": "979c20ba7563647f79bdbfb9cb5ddaf252ba81063fbdaa8b83616639a854f769",
+      "bytes": 581693,
+      "sha256": "df89f177519e9a194c8ea7f15e9c0c0099ac0088bd2c4131daa16618f64c907d",
       "largura": 1024,
       "pagina": 1024,
-      "altura": 4871,
-      "letraMinima": 18.133125,
+      "altura": 4769,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-indice",
           "x": 40.953125,
           "y": 829.6875,
-          "largura": 544,
-          "altura": 302.21875,
-          "titulo": "Consumer price index, from January one thousand nine hundred and forty eight to August two thousand and twenty six"
+          "largura": 360,
+          "altura": 200,
+          "titulo": "Consumer price index, from January nineteen forty-eight to August twenty twenty-six"
         }
       ],
       "marcasFora": [],
@@ -2836,21 +3013,22 @@
       "lang": "en",
       "rota": "/en/ledger/series/serie-ipc-indice/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-livro-razao_series_serie-ipc-indice-1280.png",
-      "bytes": 593909,
-      "sha256": "591b928d8047198b313b573ad82cc5f92b84f41209f0f431651b29a2a647ecd5",
+      "bytes": 589394,
+      "sha256": "174e10d0eb88437f38ccbf21e7157efbf8be888df23b7f12fa5b88d2c39c7067",
       "largura": 1280,
       "pagina": 1280,
-      "altura": 4907,
-      "letraMinima": 18.133125,
+      "altura": 4805,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-indice",
           "x": 94,
           "y": 841.75,
-          "largura": 544,
-          "altura": 302.21875,
-          "titulo": "Consumer price index, from January one thousand nine hundred and forty eight to August two thousand and twenty six"
+          "largura": 360,
+          "altura": 200,
+          "titulo": "Consumer price index, from January nineteen forty-eight to August twenty twenty-six"
         }
       ],
       "marcasFora": [],
@@ -2869,21 +3047,22 @@
       "lang": "en",
       "rota": "/en/ledger/series/serie-ipc-indice/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-livro-razao_series_serie-ipc-indice-1600.png",
-      "bytes": 606747,
-      "sha256": "d20e564c6c7c1dbb870905560dea7db2979d783838f588e8e7e906ed237ccb18",
+      "bytes": 601823,
+      "sha256": "06113de3e2aa05c10e307c5d0b0499b2cc1e3bf1b34f72645682e3d8434f36d5",
       "largura": 1600,
       "pagina": 1600,
-      "altura": 4914,
-      "letraMinima": 18.133125,
+      "altura": 4811,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-ipc-indice",
           "x": 254,
           "y": 841.75,
-          "largura": 544,
-          "altura": 302.21875,
-          "titulo": "Consumer price index, from January one thousand nine hundred and forty eight to August two thousand and twenty six"
+          "largura": 360,
+          "altura": 200,
+          "titulo": "Consumer price index, from January nineteen forty-eight to August twenty twenty-six"
         }
       ],
       "marcasFora": [],
@@ -2908,6 +3087,7 @@
       "pagina": 390,
       "altura": 2701,
       "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
       "posicaoNoBloco": null,
       "desenhos": [
         {
@@ -2916,7 +3096,7 @@
           "y": 783.78125,
           "largura": 354,
           "altura": 196.65625,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         }
       ],
       "marcasFora": [],
@@ -2935,21 +3115,22 @@
       "lang": "en",
       "rota": "/en/ledger/series/serie-pensao-media-anual/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-livro-razao_series_serie-pensao-media-anual-768.png",
-      "bytes": 212516,
-      "sha256": "cb92e3f6eb557c72e2a50f4f904a4cf0dc85e4c4aaf45f075de885973b0e3c0c",
+      "bytes": 206089,
+      "sha256": "a7bd9ebd10c819a9ae05ebfcd770432d2799c6a817430f152c67648efc49871d",
       "largura": 768,
       "pagina": 768,
-      "altura": 2604,
-      "letraMinima": 22.3996875,
+      "altura": 2431,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-pensao-media-anual",
           "x": 30.71875,
           "y": 756.09375,
-          "largura": 672,
-          "altura": 373.328125,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "largura": 360,
+          "altura": 200,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         }
       ],
       "marcasFora": [],
@@ -2968,21 +3149,22 @@
       "lang": "en",
       "rota": "/en/ledger/series/serie-pensao-media-anual/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-livro-razao_series_serie-pensao-media-anual-1024.png",
-      "bytes": 219583,
-      "sha256": "48f4a0814d7d4ec8444af9d4ed956926fdfb4d8390c3388faf2c11a8f2bc1c42",
+      "bytes": 215886,
+      "sha256": "f6d85dff05290805d0d7bfef4b28c270dafef0bd7ef10bfb74ac48c82b7e9aba",
       "largura": 1024,
       "pagina": 1024,
-      "altura": 2339,
-      "letraMinima": 18.133125,
+      "altura": 2237,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-pensao-media-anual",
           "x": 40.953125,
           "y": 804.09375,
-          "largura": 544,
-          "altura": 302.21875,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "largura": 360,
+          "altura": 200,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         }
       ],
       "marcasFora": [],
@@ -3001,21 +3183,22 @@
       "lang": "en",
       "rota": "/en/ledger/series/serie-pensao-media-anual/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-livro-razao_series_serie-pensao-media-anual-1280.png",
-      "bytes": 223629,
-      "sha256": "c1fa7b27d47ec3e93481cc068b794fddbae3dc45168491959a876b8f12249ae1",
+      "bytes": 219272,
+      "sha256": "9fb4dfd1b9991a495d0bd6682faebd731a223d0f18f7749b0a2f21ec5bc728a2",
       "largura": 1280,
       "pagina": 1280,
-      "altura": 2376,
-      "letraMinima": 18.133125,
+      "altura": 2274,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-pensao-media-anual",
           "x": 94,
           "y": 816.15625,
-          "largura": 544,
-          "altura": 302.21875,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "largura": 360,
+          "altura": 200,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         }
       ],
       "marcasFora": [],
@@ -3034,21 +3217,22 @@
       "lang": "en",
       "rota": "/en/ledger/series/serie-pensao-media-anual/",
       "ficheiro": "design/especime-v3/capturas/rp4-2026-10-04/en-livro-razao_series_serie-pensao-media-anual-1600.png",
-      "bytes": 229147,
-      "sha256": "b64d8a57a6701d5511766f7d154ee310ef38c45f95e7be4966b7218244091dae",
+      "bytes": 225170,
+      "sha256": "b5447be38a1bbd96c60f82f2e4ba9aa3792f4545141f8dc79d312470f3d3702f",
       "largura": 1600,
       "pagina": 1600,
-      "altura": 2382,
-      "letraMinima": 18.133125,
+      "altura": 2280,
+      "letraMinima": 12,
+      "letraMaxima": 12,
       "posicaoNoBloco": null,
       "desenhos": [
         {
           "serie": "serie-pensao-media-anual",
           "x": 254,
           "y": 816.15625,
-          "largura": 544,
-          "altura": 302.21875,
-          "titulo": "Average annual pension, from two thousand and seventeen to two thousand and twenty five"
+          "largura": 360,
+          "altura": 200,
+          "titulo": "Average annual pension, from twenty seventeen to twenty twenty-five"
         }
       ],
       "marcasFora": [],
