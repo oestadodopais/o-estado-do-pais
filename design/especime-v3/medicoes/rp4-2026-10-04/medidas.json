@@ -1,0 +1,205 @@
+{
+  "cabeca_do_codigo": "7c3e6672e6cb264f38c21d0bbb1512acc9cdc802",
+  "base_do_bloco": "61519cea8c93badd0a049b8993790e4dfec46637",
+  "modelo": "gpt-6-astra",
+  "brief": {
+    "comando": "OEDP_MEDIDAS_JSON=<pasta>/brief-reproduzido.json python3 design/observatorio/medidas/BRIEF-RP4.py; cmp <brief> <reprodução>",
+    "bate": true,
+    "sha256": "e3244410ff98e15877494436656167c661b9238dd4f2d605ab1c708f392a3836",
+    "conhecido_positivo": "um byte acrescentado muda o resumo, conferido pelo guião"
+  },
+  "contador_do_brief": {
+    "comando": "node design/especime-v3/medicoes/rp4-2026-10-04/medir.mjs",
+    "cabeca": "905105b7",
+    "series": 16,
+    "pontos": 4131,
+    "maior": 944,
+    "lacunas": 2,
+    "linhas_periodo": 4133,
+    "erro": "o contador de linhas periodo inclui as lacunas nos pontos",
+    "conhecido_positivo": {
+      "linhas_periodo": 2,
+      "pontos": 1,
+      "lacunas": 1
+    }
+  },
+  "livro": {
+    "comando": "node design/especime-v3/medicoes/rp4-2026-10-04/medir.mjs",
+    "antes": {
+      "series": 16,
+      "pontos": 4131,
+      "maior": 944,
+      "lacunas": 2
+    },
+    "depois": {
+      "series": 16,
+      "pontos": 4131,
+      "maior": 944,
+      "lacunas": 2
+    },
+    "linhas_presas": 7,
+    "ficheiros_do_livro_alterados": 0,
+    "conhecido_positivo": {
+      "series": 2,
+      "pontos": 3,
+      "maior": 2
+    }
+  },
+  "forma": {
+    "comando": "node design/especime-v3/medicoes/rp4-2026-10-04/medir.mjs",
+    "desenhos": 56,
+    "recibos": 32,
+    "paginas": 40,
+    "modos_indexados_rendidos": 0,
+    "provas_do_modulo": 9,
+    "plantas_geometria": 14,
+    "plantas_geometria_mordidas": 14,
+    "conhecido_positivo": "plantas.json: ponto deslocado, marca trocada, série trocada e guião"
+  },
+  "indice": {
+    "comando": "node design/especime-v3/medicoes/rp4-2026-10-04/medir.mjs",
+    "ano_da_base": 2015,
+    "periodos": {
+      "mensal": "2015-01",
+      "trimestral": "2015-T1",
+      "semestral": "2015-S1",
+      "anual": "2015"
+    },
+    "conhecido_positivo": "plantas.json: duas cadências com a base na marca de cem; base ausente e nula recusadas"
+  },
+  "series": {
+    "comando": "node design/especime-v3/medicoes/rp4-2026-10-04/medir.mjs",
+    "plantas": 20,
+    "plantas_mordidas": 20,
+    "conhecido_positivo": "series.json: cada planta regista a queixa esperada e a mordida do detetor"
+  },
+  "cartoes": {
+    "comando": "node design/especime-v3/medicoes/rp4-2026-10-04/medir.mjs",
+    "pt": 7,
+    "en": 7,
+    "plantas": 8,
+    "plantas_mordidas": 8,
+    "conhecido_positivo": "plantas.json: cartão sem série a desenhar; gráfico retirado; porta noutra edição; gráfico fora do lugar"
+  },
+  "primeira": {
+    "comando": "node design/especime-v3/medicoes/rp4-2026-10-04/medir.mjs",
+    "plantas": 8,
+    "plantas_mordidas": 8,
+    "conhecido_positivo": "plantas.json: série inexistente, série de países e gráfico retirado"
+  },
+  "paleta": {
+    "comando": "node tests/inicio/geometria.mjs --prova --json design/especime-v3/medicoes/rp4-2026-10-04/paleta-e-geometria.json",
+    "corridas": 6,
+    "falhas": 0,
+    "plantas": 15,
+    "plantas_mordidas": 15,
+    "conhecido_positivo": {
+      "nome": "preenchimento preto nas guias da série",
+      "mordeu": true,
+      "queixa": "[cor] G5 · rgb(0, 0, 0) em line",
+      "falhas_vistas": 1
+    }
+  },
+  "ipc": {
+    "comando": "node design/especime-v3/medicoes/rp4-2026-10-04/medir.mjs",
+    "id": "serie-ipc-indice",
+    "lang": "pt",
+    "anos": 79,
+    "pontos": 944,
+    "colunas": 12,
+    "lacunas": 0,
+    "conhecido_positivo": "series.json: um ponto tirado da tabela e duas colunas trocadas"
+  },
+  "capturas": {
+    "comando": "node design/especime-v3/medicoes/rp4-2026-10-04/capturar.mjs",
+    "cabeca": "7c3e6672e6cb264f38c21d0bbb1512acc9cdc802",
+    "ficheiros": 60,
+    "larguras": [
+      390,
+      768,
+      1024,
+      1280,
+      1600
+    ],
+    "edicoes": 2,
+    "transbordos": 0,
+    "letra_minima": 11.799375,
+    "conhecido_positivo": {
+      "transbordo_detetado": true
+    },
+    "plantas": [
+      {
+        "nome": "série fora da coluna das barras",
+        "lang": "pt",
+        "mordeu": true
+      },
+      {
+        "nome": "letras dos eixos reduzidas",
+        "lang": "pt",
+        "controlo": 12.401953124999999,
+        "minimo": 6.200976562499999,
+        "mordeu": true
+      },
+      {
+        "nome": "datas acessíveis fora do contentor da tabela",
+        "lang": "pt",
+        "controlo": 390,
+        "larguraEstragada": 891,
+        "mordeu": true
+      },
+      {
+        "nome": "série fora da coluna das barras",
+        "lang": "en",
+        "mordeu": true
+      },
+      {
+        "nome": "letras dos eixos reduzidas",
+        "lang": "en",
+        "controlo": 12.401953124999999,
+        "minimo": 6.200976562499999,
+        "mordeu": true
+      },
+      {
+        "nome": "datas acessíveis fora do contentor da tabela",
+        "lang": "en",
+        "controlo": 390,
+        "larguraEstragada": 891,
+        "mordeu": true
+      }
+    ]
+  },
+  "portoes": {
+    "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/rp4-2026-10-04/portoes",
+    "cabeca": "7c3e6672e6cb264f38c21d0bbb1512acc9cdc802",
+    "cabeca_fim": "7c3e6672e6cb264f38c21d0bbb1512acc9cdc802",
+    "build": {
+      "codigo": 0,
+      "inicio": "2026-10-04T23:50:17Z",
+      "fim": "2026-10-04T23:53:02Z",
+      "segundos": 165
+    },
+    "verify": {
+      "codigo": 0,
+      "inicio": "2026-10-04T23:53:02Z",
+      "fim": "2026-10-05T00:09:34Z",
+      "segundos": 992
+    },
+    "typecheck": {
+      "codigo": 0,
+      "inicio": "2026-10-05T00:09:34Z",
+      "fim": "2026-10-05T00:09:34Z",
+      "segundos": 0
+    },
+    "conhecido_positivo": "o leitor devolve um para o código um e recusa um ficheiro vazio"
+  },
+  "commits": {
+    "comando": "git log --format=%H %s 61519cea8c93badd0a049b8993790e4dfec46637..7c3e6672e6cb264f38c21d0bbb1512acc9cdc802",
+    "lista": [
+      "7c3e6672e6cb264f38c21d0bbb1512acc9cdc802 RP4: declarar as guias sem preenchimento e provar a paleta",
+      "6ff550de4cb33597a53cb3be8c75606abb02ae21 RP4: conservar a legibilidade dos eixos nos cartões estreitos",
+      "7f02e3d9fd1d09f89980dd7685fb098caf4cc931 RP4: declarar a unidade europeia e manter a série sob as barras",
+      "3565635afc26d3dfd6210e92abda7b8fd6b232bc RP4: desenhar as séries inteiras e dobrar os recibos por anos"
+    ],
+    "conhecido_positivo": "a cabeça inicial é antepassada da cabeça dos portões; qualquer diferença posterior fica nas pastas de provas"
+  }
+}

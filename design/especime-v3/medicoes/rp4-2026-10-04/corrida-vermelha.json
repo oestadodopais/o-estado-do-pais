@@ -1,0 +1,12 @@
+{
+  "comando": "sh scripts/leituras/portoes.sh <worktree> <pasta>",
+  "cabeca": "6ff550de4cb33597a53cb3be8c75606abb02ae21",
+  "codigos_lidos": {
+    "build": 0,
+    "verify": 1,
+    "typecheck": 0
+  },
+  "estado": "corrida completa vermelha, substituída após o acerto",
+  "motivo": "G5 recusou o preenchimento preto predefinido nas guias da série. A folha passou a declarar fill: none; a planta que repõe o preto prova a mordida.",
+  "conhecido_positivo": "a ocorrência FALHA e o código verify.codigo foram lidos da corrida"
+}
