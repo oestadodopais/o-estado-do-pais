@@ -39,6 +39,23 @@
  * provisório)»); uma ponta sem empate é o mesmo laço com um país só. A F19d
  * confere todos os países da ponta, e uma planta com a marca só no segundo
  * país empatado tem de morder.
+ *
+ * OS PONTOS IGUAIS NÃO SE ESCONDEM (a passagem de higiene H3, 05.10.2026, o §3,
+ * ponto 4, do brief H3). Dois ou mais países com o mesmo valor caíam no mesmo
+ * ponto. A regra, escrita no resolvedor (`alturaNoGrupo()`) e aplicada aqui sem
+ * guião: os países com o mesmo valor ficam na mesma posição horizontal, e, pela
+ * ordem da tabela, de cima para baixo, os centros distribuem-se por igual de seis
+ * píxeis acima a seis abaixo do eixo (`top`, só nas marcas que têm grupo); um país
+ * sozinho fica no eixo, e a média da União também. E cada marca leva no `title` o
+ * que o rato mostra ao pousar nela: os países daquele valor, pela ordem da tabela,
+ * com a ressalva de cada um, e o valor uma vez. O desenho continua `aria-hidden`
+ * (a frase e as pontas dizem o que ele mostra), e o `title` é um valor num
+ * atributo, que o portão de HTML confere contra a série; a F19c confere a altura e
+ * a F19i o `title`, pela conta deles. O mesmo texto vai em `data-faixa-etiqueta`,
+ * como a etiqueta do selo de uma linha vai em `data-selo-etiqueta`: a régua das
+ * frases lê os `title` como dicas da casa, e uma dica igual a um `data-*` do
+ * próprio elemento é dado composto, não uma frase nova; o portão exige os dois
+ * iguais, e cada um igual à recomposição pelos pontos.
  */
 import PontoDaSerie from './serie/PontoDaSerie.astro';
 import NomeDoPais from './serie/NomeDoPais.astro';
@@ -47,6 +64,8 @@ import { faixaDaMedida } from '../lib/faixa-da-uniao.mjs';
 
 const { id, lang } = Astro.props;
 const f = faixaDaMedida(id, lang);
+/** A etiqueta de cada marca, pelo país: o texto do `title` (H3). */
+const etiquetaDe = new Map((f?.toques ?? []).map((t) => [t.geo, t.etiqueta]));
 ---
 
 {
@@ -64,9 +83,11 @@ const f = faixaDaMedida(id, lang);
         <span class="faixa-ue-eixo">
           {f.marcas.map((m) => (
             <span
-              class:list={['faixa-ue-marca', `faixa-ue-${m.papel}`]}
+              class:list={['faixa-ue-marca', `faixa-ue-${m.papel}`, m.noGrupo > 1 && 'faixa-ue-empilhada']}
               data-faixa-marca={`${f.serie}#${m.geo}`}
-              style={`left:${m.esquerda}%`}
+              style={m.noGrupo > 1 ? `left:${m.esquerda}%;top:${m.altura}px` : `left:${m.esquerda}%`}
+              title={etiquetaDe.get(m.geo)}
+              data-faixa-etiqueta={etiquetaDe.get(m.geo)}
             />
           ))}
         </span>

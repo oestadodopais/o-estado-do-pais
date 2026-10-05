@@ -14,7 +14,12 @@
  * página «Índice» / «Index», que lista tudo o que o sítio tem. Fica no fim da
  * fila, antes da troca de língua; o menu do cabeçalho não muda (as seis portas são
  * o máximo a 390 px, §1.153). As sete portas e a ordem conferem-se no portão de
- * HTML, em todas as páginas que têm rodapé (`scripts/indice-do-portao.mjs`). */
+ * HTML, em todas as páginas que têm rodapé (`scripts/indice-do-portao.mjs`).
+ *
+ * H3 (05.10.2026, o §3, ponto 3, do brief H3): o brief mandou medir outra vez «União Europeia» no menu, a 390 px e nas
+ * duas edições, e pô-lo se as seis portas coubessem numa linha. Medido e capturado no navegador, com o nome inteiro posto
+ * no lugar do rótulo curto só nessa medição: não cabe em nenhuma das duas (o relatório do bloco H3 tem as larguras), e
+ * o rótulo curto fica. A porta «Privacidade» do mesmo bloco vive fora desta lista, ao lado da das sugestões. */
 export const ROTAS_NAV = ['home', 'lugares', 'temas', 'estudos', 'uniaoEuropeia', 'sobre'];
 export const ROTAS_RODAPE = ['home', 'livro', 'metodo', 'correcoes', 'agenda', 'uniaoEuropeia', 'indice'];
 export const ROTAS_SOBRE = ['metodo', 'correcoes', 'agenda', 'livro'];

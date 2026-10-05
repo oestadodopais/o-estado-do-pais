@@ -1,0 +1,1173 @@
+{
+  "bloco": "H3",
+  "guiao": "design/especime-v3/medicoes/h3-2026-10-05/medir-h3.mjs",
+  "cabeca_medida": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+  "arvore_limpa": true,
+  "base_do_ramo": "98a9d1b5",
+  "construcao": "60f44fc8b171fd898f12f95e3f7a27c6ca730b77",
+  "quantas_medidas": 128,
+  "medidas": [
+    {
+      "nome": "base_do_ramo_encontrada",
+      "valor": true,
+      "comando": "git log -1 --format=%h --grep='^H3: o brief da passagem de higiene' HEAD",
+      "conhecido_positivo": {
+        "o_que": "o commit do brief está na história da cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "construcao_da_cabeca_dos_portoes",
+      "valor": true,
+      "comando": "dist/version.json contra portoes/cabeca",
+      "conhecido_positivo": {
+        "o_que": "o version.json tem um commit escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "brief_h3_reproduzido_sem_diferencas",
+      "valor": true,
+      "comando": "OEDP_MEDIDAS_JSON=<pasta>/brief-h3-reproduzido.json python3 design/observatorio/medidas/BRIEF-H3.py; diff com design/observatorio/medidas/BRIEF-H3.json",
+      "conhecido_positivo": {
+        "o_que": "a reprodução tem as seis medidas do §0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "palavras_da_nota_pt_antes",
+      "valor": 144,
+      "comando": "a medida do §0 do brief, reproduzida",
+      "conhecido_positivo": {
+        "o_que": "a reprodução tem a medida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "nota_pt_igual_ao_brief",
+      "valor": true,
+      "comando": "src/data/sugestoes.mjs SUGESTOES.nota.pt contra o §5, decisão 1, de design/observatorio/BRIEF-H3-a-passagem-de-higiene-de-05-10.md",
+      "conhecido_positivo": {
+        "o_que": "o §5 do brief traz a frase «Só guardamos…»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "nota_en_igual_ao_brief",
+      "valor": true,
+      "comando": "SUGESTOES.nota.en contra o §5, decisão 1, do brief",
+      "conhecido_positivo": {
+        "o_que": "o §5 do brief traz a frase «We only keep…»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "porta_da_nota_igual_ao_brief",
+      "valor": true,
+      "comando": "SUGESTOES.portaDaNota contra o §5, decisão 1, do brief",
+      "conhecido_positivo": {
+        "o_que": "o §5 do brief traz «Como tratamos os seus dados» e «How we handle your data»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "privacidade_pt_igual_ao_brief",
+      "valor": true,
+      "comando": "src/data/privacidade.mjs PRIVACIDADE.texto.pt contra o §5, decisão 2, do brief, byte a byte",
+      "conhecido_positivo": {
+        "o_que": "o texto do brief fala da CNPD e dos cookies",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "frase_dos_cookies_no_texto",
+      "valor": true,
+      "comando": "PRIVACIDADE.texto.<pt|en> acaba em FRASE_DOS_COOKIES.<pt|en>",
+      "conhecido_positivo": {
+        "o_que": "a frase portuguesa dos cookies é a última do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "descricao_da_privacidade_e_a_primeira_frase",
+      "valor": true,
+      "comando": "PRIVACIDADE.descricao é o começo de PRIVACIDADE.texto, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "a descrição portuguesa acaba no primeiro ponto final do texto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "palavras_da_nota_pt_depois",
+      "valor": 15,
+      "comando": "as palavras de SUGESTOES.nota.pt, pela regra do guião do §0 (split nos espaços)",
+      "conhecido_positivo": {
+        "o_que": "a mesma regra conta 144 na nota de antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "palavras_da_nota_pt_a_vista_com_a_porta",
+      "valor": 20,
+      "comando": "as palavras da nota e da porta, pela mesma regra",
+      "conhecido_positivo": {
+        "o_que": "a porta tem cinco palavras",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "palavras_do_texto_da_privacidade_pt",
+      "valor": 132,
+      "comando": "as palavras de PRIVACIDADE.texto.pt, pela mesma regra",
+      "conhecido_positivo": {
+        "o_que": "o texto tem a frase dos cookies",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "algarismos_nos_textos_novos",
+      "valor": 0,
+      "comando": "os algarismos dos textos novos (a nota e a página, nas duas edições)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor vê os algarismos de «cinco» escrito «5»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_de_privacidade_no_sitio",
+      "valor": 1,
+      "comando": "src/lib/routes.mjs · as chaves de rota «privacidade» (a regra do guião do §0)",
+      "conhecido_positivo": {
+        "o_que": "a rota das sugestões existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_da_privacidade_construidas",
+      "valor": 2,
+      "comando": "ls dist/privacidade/index.html dist/en/privacy/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página das sugestões está construída",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "privacidade_no_mapa_do_sitio",
+      "valor": 2,
+      "comando": "os <loc> de dist/sitemap-*.xml",
+      "conhecido_positivo": {
+        "o_que": "a página das sugestões está no mapa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "privacidade_no_indice",
+      "valor": 2,
+      "comando": "as ligações do <main> de dist/indice/index.html e dist/en/index/index.html para a página da sua edição",
+      "conhecido_positivo": {
+        "o_que": "o índice português liga às sugestões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_html_construidas",
+      "valor": 7885,
+      "comando": "os ficheiros .html de dist/",
+      "conhecido_positivo": {
+        "o_que": "a página dos temas é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_com_a_porta_das_correcoes",
+      "valor": 7860,
+      "comando": "os ficheiros .html de dist/ com data-porta-correccoes",
+      "conhecido_positivo": {
+        "o_que": "a página dos temas tem-na",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_com_a_porta_da_privacidade_da_sua_edicao",
+      "valor": 7860,
+      "comando": "as páginas com a porta das correções cuja porta da privacidade leva à página da sua edição",
+      "conhecido_positivo": {
+        "o_que": "a página inglesa dos temas leva a /en/privacy",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_com_a_porta_da_privacidade_da_outra_edicao",
+      "valor": 0,
+      "comando": "as páginas com a porta da privacidade para a página da outra edição",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor lê a porta de uma página",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "caixas_de_marcar_no_formulario",
+      "valor": 0,
+      "comando": "os input[type=checkbox] do formulário de dist/sugestoes e dist/en/suggestions",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê uma caixa num formulário escrito para isso",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_da_nota_para_a_privacidade",
+      "valor": 2,
+      "comando": "as ligações de [data-sugestoes-nota] nos dois formulários, uma só e para a página da edição",
+      "conhecido_positivo": {
+        "o_que": "a nota portuguesa tem uma ligação",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "enderecos_de_correio_na_nota",
+      "valor": 0,
+      "comando": "as ligações mailto: dentro da nota dos dois formulários",
+      "conhecido_positivo": {
+        "o_que": "a página da privacidade tem uma ligação mailto:",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu_390_pt_nome_inteiro_largura_natural",
+      "valor": 401.9,
+      "comando": "captar-h3.mjs depois: a largura natural da fila das seis portas com o nome inteiro, no navegador",
+      "conhecido_positivo": {
+        "o_que": "a forma publicada cabe numa linha, pela mesma conta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu_390_pt_coluna",
+      "valor": 354,
+      "comando": "captar-h3.mjs depois: a largura da coluna do menu a 390 px",
+      "conhecido_positivo": {
+        "o_que": "a coluna é maior do que zero",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu_390_pt_nome_inteiro_falta",
+      "valor": 47.9,
+      "comando": "a largura natural menos a coluna, com o nome inteiro",
+      "conhecido_positivo": {
+        "o_que": "com o rótulo curto não falta nada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu_390_pt_nome_inteiro_linhas",
+      "valor": 2,
+      "comando": "as linhas que a fila ocupa com o nome inteiro",
+      "conhecido_positivo": {
+        "o_que": "com o rótulo curto ocupa uma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu_390_pt_publicado_largura_natural",
+      "valor": 343.7,
+      "comando": "captar-h3.mjs depois: a largura natural da fila publicada",
+      "conhecido_positivo": {
+        "o_que": "o rótulo publicado é o curto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu_390_en_nome_inteiro_largura_natural",
+      "valor": 405.2,
+      "comando": "captar-h3.mjs depois: a largura natural da fila das seis portas com o nome inteiro, no navegador",
+      "conhecido_positivo": {
+        "o_que": "a forma publicada cabe numa linha, pela mesma conta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu_390_en_coluna",
+      "valor": 354,
+      "comando": "captar-h3.mjs depois: a largura da coluna do menu a 390 px",
+      "conhecido_positivo": {
+        "o_que": "a coluna é maior do que zero",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu_390_en_nome_inteiro_falta",
+      "valor": 51.2,
+      "comando": "a largura natural menos a coluna, com o nome inteiro",
+      "conhecido_positivo": {
+        "o_que": "com o rótulo curto não falta nada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu_390_en_nome_inteiro_linhas",
+      "valor": 2,
+      "comando": "as linhas que a fila ocupa com o nome inteiro",
+      "conhecido_positivo": {
+        "o_que": "com o rótulo curto ocupa uma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu_390_en_publicado_largura_natural",
+      "valor": 341.2,
+      "comando": "captar-h3.mjs depois: a largura natural da fila publicada",
+      "conhecido_positivo": {
+        "o_que": "o rótulo publicado é o curto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotulo_da_uniao_no_menu",
+      "valor": [
+        "Europa",
+        "Europe"
+      ],
+      "comando": "src/i18n/strings.mjs nav.uniaoEuropeiaNoMenu nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "o nome inteiro da página continua no rodapé",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_da_pagina_da_uniao_antes_390",
+      "valor": 10,
+      "comando": "captar-h3.mjs antes: as faixas da secção dos países, a 390 px, edição portuguesa",
+      "conhecido_positivo": {
+        "o_que": "cada faixa tem 27 marcas de país",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paises_escondidos_por_outro_antes_390",
+      "valor": 62,
+      "comando": "captar-h3.mjs antes: as marcas de país com o centro no mesmo ponto de outra, a 390 px, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor conta posições distintas abaixo de 27 em pelo menos uma faixa antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_da_pagina_da_uniao_antes_1280",
+      "valor": 10,
+      "comando": "captar-h3.mjs antes: as faixas da secção dos países, a 1280 px, edição portuguesa",
+      "conhecido_positivo": {
+        "o_que": "cada faixa tem 27 marcas de país",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paises_escondidos_por_outro_antes_1280",
+      "valor": 62,
+      "comando": "captar-h3.mjs antes: as marcas de país com o centro no mesmo ponto de outra, a 1280 px, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor conta posições distintas abaixo de 27 em pelo menos uma faixa antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "posicoes_distintas_minimas_numa_faixa_antes",
+      "valor": 17,
+      "comando": "captar-h3.mjs antes: o menor número de posições distintas das 27 marcas de país numa faixa, a 1 280 px",
+      "conhecido_positivo": {
+        "o_que": "a faixa do desemprego de longa duração está entre as medidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_da_pagina_da_uniao_depois_390",
+      "valor": 10,
+      "comando": "captar-h3.mjs depois: as faixas da secção dos países, a 390 px, edição portuguesa",
+      "conhecido_positivo": {
+        "o_que": "cada faixa tem 27 marcas de país",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paises_escondidos_por_outro_depois_390",
+      "valor": 0,
+      "comando": "captar-h3.mjs depois: as marcas de país com o centro no mesmo ponto de outra, a 390 px, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor conta posições distintas abaixo de 27 em pelo menos uma faixa antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_da_pagina_da_uniao_depois_1280",
+      "valor": 10,
+      "comando": "captar-h3.mjs depois: as faixas da secção dos países, a 1280 px, edição portuguesa",
+      "conhecido_positivo": {
+        "o_que": "cada faixa tem 27 marcas de país",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paises_escondidos_por_outro_depois_1280",
+      "valor": 0,
+      "comando": "captar-h3.mjs depois: as marcas de país com o centro no mesmo ponto de outra, a 1280 px, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor conta posições distintas abaixo de 27 em pelo menos uma faixa antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "posicoes_distintas_minimas_numa_faixa_depois",
+      "valor": 27,
+      "comando": "captar-h3.mjs depois: o menor número de posições distintas das 27 marcas de país numa faixa, a 1 280 px",
+      "conhecido_positivo": {
+        "o_que": "a faixa do desemprego de longa duração está entre as medidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_dos_cartoes_antes",
+      "valor": 20,
+      "comando": "captar-h3.mjs antes: as faixas da União nos cartões das sete páginas de assunto, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "cada faixa tem 27 marcas de país",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paises_escondidos_nas_faixas_dos_cartoes_antes",
+      "valor": 62,
+      "comando": "captar-h3.mjs antes: as marcas de país com o centro no mesmo ponto de outra, nas faixas dos cartões, a 390 px",
+      "conhecido_positivo": {
+        "o_que": "antes havia marcas escondidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas_com_title_nas_faixas_dos_cartoes_antes",
+      "valor": 0,
+      "comando": "captar-h3.mjs antes: as marcas com title nas faixas dos cartões, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "as faixas dos cartões foram lidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "faixas_dos_cartoes_depois",
+      "valor": 20,
+      "comando": "captar-h3.mjs depois: as faixas da União nos cartões das sete páginas de assunto, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "cada faixa tem 27 marcas de país",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paises_escondidos_nas_faixas_dos_cartoes_depois",
+      "valor": 0,
+      "comando": "captar-h3.mjs depois: as marcas de país com o centro no mesmo ponto de outra, nas faixas dos cartões, a 390 px",
+      "conhecido_positivo": {
+        "o_que": "antes havia marcas escondidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas_com_title_nas_faixas_dos_cartoes_depois",
+      "valor": 560,
+      "comando": "captar-h3.mjs depois: as marcas com title nas faixas dos cartões, nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "as faixas dos cartões foram lidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiqueta_do_grupo_ao_passar_o_rato",
+      "valor": [
+        "Estónia, França (definição diferente), Croácia e Suécia 1,8",
+        "Estonia, France (definition differs), Croatia and Sweden 1,8"
+      ],
+      "comando": "captar-h3.mjs depois: o rato pousado no ponto da França na faixa do desemprego de longa duração, a 1 280 px; a etiqueta à vista",
+      "conhecido_positivo": {
+        "o_que": "a etiqueta à vista diz quatro países e um valor, nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiqueta_do_grupo_a_390_fora_da_janela_px",
+      "valor": 0,
+      "comando": "captar-h3.mjs depois: a etiqueta do grupo do desemprego de longa duração aberta pelo rato a 390 px, os píxeis que passam a margem da janela, nas duas edições somadas",
+      "conhecido_positivo": {
+        "o_que": "a etiqueta à vista diz quatro países e um valor, nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_do_toque_por_edicao",
+      "valor": 280,
+      "comando": "etiquetas-do-toque.mjs depois-da-emenda: as etiquetas do toque da página da União, edição portuguesa",
+      "conhecido_positivo": {
+        "o_que": "o mesmo número na edição inglesa e em todas as larguras",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_fora_da_janela_a_390_antes",
+      "valor": 20,
+      "comando": "etiquetas-do-toque.mjs antes-da-emenda: as etiquetas que passam a margem da janela quando se mostram, a 390 px, nas duas edições somadas",
+      "conhecido_positivo": {
+        "o_que": "o conhecido-positivo (uma etiqueta mais larga do que a janela) foi visto nas cinco larguras e nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_de_grupo_fora_da_janela_a_390_antes",
+      "valor": 16,
+      "comando": "etiquetas-do-toque.mjs antes-da-emenda: as etiquetas de grupo entre elas",
+      "conhecido_positivo": {
+        "o_que": "o mesmo conhecido-positivo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_de_um_pais_fora_da_janela_a_390_antes",
+      "valor": 4,
+      "comando": "etiquetas-do-toque.mjs antes-da-emenda: as de um país só entre as que passavam a margem a 390 px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo conhecido-positivo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "maior_saida_da_janela_a_390_antes_px",
+      "valor": 52.6,
+      "comando": "etiquetas-do-toque.mjs antes-da-emenda: os píxeis da etiqueta que mais passa a margem da janela, a 390 px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo conhecido-positivo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_com_rolagem_a_390_antes",
+      "valor": 6,
+      "comando": "etiquetas-do-toque.mjs antes-da-emenda: as etiquetas que, mostradas, põem a página a rolar para o lado, a 390 px, nas duas edições somadas",
+      "conhecido_positivo": {
+        "o_que": "o mesmo conhecido-positivo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_fora_da_janela_acima_de_390_antes",
+      "valor": 0,
+      "comando": "etiquetas-do-toque.mjs antes-da-emenda: o mesmo, a 768, 1 024, 1 280 e 1 600 px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo conhecido-positivo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_fora_da_janela_depois",
+      "valor": 0,
+      "comando": "etiquetas-do-toque.mjs depois-da-emenda: as etiquetas que passam a margem da janela, nas cinco larguras e nas duas edições somadas",
+      "conhecido_positivo": {
+        "o_que": "o conhecido-positivo foi visto nas cinco larguras e nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_fora_do_desenho_depois",
+      "valor": 0,
+      "comando": "etiquetas-do-toque.mjs depois-da-emenda: as etiquetas que passam a caixa do desenho, nas cinco larguras e nas duas edições somadas",
+      "conhecido_positivo": {
+        "o_que": "antes da emenda o mesmo detetor via etiquetas a passar a caixa do desenho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_com_rolagem_depois",
+      "valor": 0,
+      "comando": "etiquetas-do-toque.mjs depois-da-emenda: as etiquetas que, mostradas, põem a página a rolar para o lado",
+      "conhecido_positivo": {
+        "o_que": "antes da emenda o mesmo detetor via rolagem a 390 px",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_que_nao_cobrem_a_marca_depois",
+      "valor": 0,
+      "comando": "etiquetas-do-toque.mjs depois-da-emenda: as etiquetas cuja caixa não cobre o centro da sua marca na horizontal",
+      "conhecido_positivo": {
+        "o_que": "cada etiqueta achou a sua marca",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_em_mais_de_uma_linha_a_390_depois",
+      "valor": 8,
+      "comando": "etiquetas-do-toque.mjs depois-da-emenda: as etiquetas que dobram, a 390 px, nas duas edições somadas",
+      "conhecido_positivo": {
+        "o_que": "as que dobram são todas de grupo e mais largas do que o desenho numa linha só (a medida de antes)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_em_mais_de_uma_linha_acima_de_390_depois",
+      "valor": 0,
+      "comando": "etiquetas-do-toque.mjs depois-da-emenda: o mesmo, a 768, 1 024, 1 280 e 1 600 px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor conta as que dobram a 390 px",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "largura_do_desenho_a_390_antes_px",
+      "valor": 342,
+      "comando": "etiquetas-do-toque.mjs antes-da-emenda: a largura do desenho mais estreito a 390 px",
+      "conhecido_positivo": {
+        "o_que": "a medida leu desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "largura_do_desenho_a_390_depois_px",
+      "valor": 342,
+      "comando": "etiquetas-do-toque.mjs depois-da-emenda: a mesma largura depois da emenda (a contenção do contentor não mexe na largura do desenho)",
+      "conhecido_positivo": {
+        "o_que": "a medida leu desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "maior_etiqueta_a_390_antes_px",
+      "valor": 350.8,
+      "comando": "etiquetas-do-toque.mjs antes-da-emenda: a etiqueta mais larga, numa linha só, a 390 px",
+      "conhecido_positivo": {
+        "o_que": "o mesmo conhecido-positivo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas_afastadas_na_vertical_por_edicao",
+      "valor": 58,
+      "comando": "faixaDaMedida() das dez séries: as marcas de país com outro país do mesmo valor",
+      "conhecido_positivo": {
+        "o_que": "a cópia dos portões conta o mesmo grupo de quatro na faixa do desemprego de longa duração",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "grupos_de_paises_no_mesmo_valor",
+      "valor": 27,
+      "comando": "faixaDaMedida() das dez séries: as posições com dois ou mais países",
+      "conhecido_positivo": {
+        "o_que": "o maior grupo é o do §0 do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "maior_grupo_de_paises_no_mesmo_valor",
+      "valor": 4,
+      "comando": "faixaDaMedida() das dez séries: o maior grupo",
+      "conhecido_positivo": {
+        "o_que": "o §0 do brief mede o mesmo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alturas_do_resolvedor_contra_as_dos_portoes",
+      "valor": 0,
+      "comando": "faixaDaMedida() contra alturaNaFaixaDoPortao(), marca a marca, nas dez séries",
+      "conhecido_positivo": {
+        "o_que": "as duas contas foram corridas sobre as 280 marcas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "grupos_com_marcas_da_fonte_diferentes",
+      "valor": 5,
+      "comando": "ledger/series/*-paises.yml: os grupos de países com o mesmo valor cujos pontos não levam todos a mesma marca da fonte",
+      "conhecido_positivo": {
+        "o_que": "a faixa do desemprego de longa duração tem a França com marca e a Estónia sem ela, no mesmo valor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_com_os_paises_pela_ordem_da_tabela",
+      "valor": 10,
+      "comando": "a ordem dos países em ledger/series/*-paises.yml contra a de src/data/paises-da-uniao.json pelo campo ordem",
+      "conhecido_positivo": {
+        "o_que": "uma série com a ordem invertida não passa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "elementos_focaveis_nos_desenhos_das_faixas",
+      "valor": 0,
+      "comando": "os elementos que o teclado alcança dentro de [data-faixa-desenho], nas duas páginas da União e na do emprego",
+      "conhecido_positivo": {
+        "o_que": "o mesmo contador vê um span com tabindex=\"0\" num desenho escrito para isso",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "desenhos_das_faixas_aria_hidden_na_pagina_da_uniao",
+      "valor": 20,
+      "comando": "os [data-faixa-desenho] com aria-hidden=\"true\" nas duas páginas da União",
+      "conhecido_positivo": {
+        "o_que": "são as vinte faixas das duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "achados_contra_a_frase_dos_cookies_antes",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/h3-2026-10-05/cookies-e-seguimento.mjs antes: as páginas, os guiões servidos, a configuração da Vercel e as funções",
+      "conhecido_positivo": {
+        "o_que": "as plantas da célula dos cookies, cada uma vista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_lidas_pela_celula_dos_cookies_antes",
+      "valor": 7883,
+      "comando": "node design/especime-v3/medicoes/h3-2026-10-05/cookies-e-seguimento.mjs antes",
+      "conhecido_positivo": {
+        "o_que": "a medida é de uma construção com páginas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "achados_contra_a_frase_dos_cookies_depois",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/h3-2026-10-05/cookies-e-seguimento.mjs depois: as páginas, os guiões servidos, a configuração da Vercel e as funções",
+      "conhecido_positivo": {
+        "o_que": "as plantas da célula dos cookies, cada uma vista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_lidas_pela_celula_dos_cookies_depois",
+      "valor": 7885,
+      "comando": "node design/especime-v3/medicoes/h3-2026-10-05/cookies-e-seguimento.mjs depois",
+      "conhecido_positivo": {
+        "o_que": "a medida é de uma construção com páginas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "guioes_que_guardam_no_aparelho",
+      "valor": [
+        "tema.js"
+      ],
+      "comando": "os guiões de dist/js que usam localStorage, sessionStorage ou indexedDB",
+      "conhecido_positivo": {
+        "o_que": "o guião do tema guarda a escolha na chave «tema»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_abertas_no_navegador_depois",
+      "valor": 40,
+      "comando": "captar-h3.mjs depois: as páginas inteiras abertas no navegador",
+      "conhecido_positivo": {
+        "o_que": "o captor abriu páginas das quatro famílias",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cookies_guardados_nas_paginas_abertas",
+      "valor": 0,
+      "comando": "captar-h3.mjs depois: os cookies do contexto do navegador e document.cookie, página a página",
+      "conhecido_positivo": {
+        "o_que": "um cookie posto pelo servidor e um posto por guião numa página do mesmo servidor foram vistos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_para_fora_nas_paginas_abertas",
+      "valor": 0,
+      "comando": "captar-h3.mjs depois: os pedidos a outra origem, página a página, recusados e contados",
+      "conhecido_positivo": {
+        "o_que": "o pedido para fora da página do conhecido-positivo foi visto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_h3_sobre_a_construcao",
+      "valor": 13,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/h3-2026-10-05 node tests/pais/portoes.mjs --prefixo h3-",
+      "conhecido_positivo": {
+        "o_que": "cada planta deu o código 1, com as mordidas e os bytes repostos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_h3_corridas_na_cabeca_dos_portoes",
+      "valor": true,
+      "comando": "a cabeça e o estado da árvore de cada registo de plantas-portoes-h3.json contra portoes/cabeca",
+      "conhecido_positivo": {
+        "o_que": "os registos trazem a cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_s1_adaptadas_sobre_a_construcao",
+      "valor": 3,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/h3-2026-10-05 node tests/pais/portoes.mjs --lista s1-nota-mudada,s1-voz-nota-mudada-com-language,s1c-voz-nota-com-outra-palavra",
+      "conhecido_positivo": {
+        "o_que": "cada uma deu o código 1, com as mordidas e os bytes repostos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_caixa_corridas_aqui",
+      "valor": 21,
+      "comando": "plantasDaCaixa() de scripts/sugestoes-do-portao.mjs sobre as migrações de supabase/migrations (plantas-em-memoria.json)",
+      "conhecido_positivo": {
+        "o_que": "todas mordem, e a do formulário sem a porta é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_caixa_novas_do_h3",
+      "valor": 4,
+      "comando": "as plantas da caixa com «privacidade» ou «formulario» no nome (as do H3)",
+      "conhecido_positivo": {
+        "o_que": "todas mordem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_privacidade_corridas_aqui",
+      "valor": 19,
+      "comando": "plantasDaPrivacidade() de scripts/privacidade-do-portao.mjs (plantas-em-memoria.json)",
+      "conhecido_positivo": {
+        "o_que": "todas mordem, e a de um guião de seguimento é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_celula_dos_cookies",
+      "valor": 9,
+      "comando": "as plantas h3-cookies-* de plantasDaPrivacidade()",
+      "conhecido_positivo": {
+        "o_que": "todas mordem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_build",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h3-2026-10-05/portoes (o código lido de portoes/build.codigo)",
+      "conhecido_positivo": {
+        "o_que": "a corrida escreveu a cabeça em que correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_verify",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h3-2026-10-05/portoes (o código lido de portoes/verify.codigo)",
+      "conhecido_positivo": {
+        "o_que": "a corrida escreveu a cabeça em que correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_typecheck",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h3-2026-10-05/portoes (o código lido de portoes/typecheck.codigo)",
+      "conhecido_positivo": {
+        "o_que": "a corrida escreveu a cabeça em que correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_ensaio_build",
+      "valor": 0,
+      "comando": "portoes-628ef792/build.codigo (a corrida de ensaio pela mesma tranca)",
+      "conhecido_positivo": {
+        "o_que": "a corrida de ensaio escreveu a cabeça em que correu, e é 628ef792",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_ensaio_verify",
+      "valor": 0,
+      "comando": "portoes-628ef792/verify.codigo (a corrida de ensaio pela mesma tranca)",
+      "conhecido_positivo": {
+        "o_que": "a corrida de ensaio escreveu a cabeça em que correu, e é 628ef792",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_ensaio_typecheck",
+      "valor": 0,
+      "comando": "portoes-628ef792/typecheck.codigo (a corrida de ensaio pela mesma tranca)",
+      "conhecido_positivo": {
+        "o_que": "a corrida de ensaio escreveu a cabeça em que correu, e é 628ef792",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_dos_portoes_que_nomeiam_o_mapa",
+      "valor": [
+        "scripts/leituras/conferir-mapa.py"
+      ],
+      "comando": "git grep -l MAPA-DO-REPOSITORIO HEAD -- scripts tests src api package.json",
+      "conhecido_positivo": {
+        "o_que": "o conferidor do mapa nomeia-o, e o mesmo detetor acha-o",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cadeias_que_chamam_quem_nomeia_o_mapa",
+      "valor": 0,
+      "comando": "as cadeias de scripts do package.json que chamam um desses ficheiros",
+      "conhecido_positivo": {
+        "o_que": "a mesma conta acha a cadeia que chama o check-briefs.py",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cabeca_da_primeira_corrida",
+      "valor": "ec4c6f58",
+      "comando": "portoes-ec4c6f58/cabeca",
+      "conhecido_positivo": {
+        "o_que": "a pasta tem o nome da cabeça que a corrida escreveu, e a cabeça do fim é a mesma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_primeira_build",
+      "valor": 0,
+      "comando": "portoes-ec4c6f58/build.codigo (a primeira corrida oficial, antes da emenda das etiquetas)",
+      "conhecido_positivo": {
+        "o_que": "a corrida escreveu a cabeça em que correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_primeira_verify",
+      "valor": 0,
+      "comando": "portoes-ec4c6f58/verify.codigo (a primeira corrida oficial, antes da emenda das etiquetas)",
+      "conhecido_positivo": {
+        "o_que": "a corrida escreveu a cabeça em que correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_primeira_typecheck",
+      "valor": 0,
+      "comando": "portoes-ec4c6f58/typecheck.codigo (a primeira corrida oficial, antes da emenda das etiquetas)",
+      "conhecido_positivo": {
+        "o_que": "a corrida escreveu a cabeça em que correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_h3_na_primeira_corrida",
+      "valor": 13,
+      "comando": "provas-ec4c6f58/plantas-portoes-h3.json (as plantas do prefixo h3- sobre a construção da primeira corrida oficial)",
+      "conhecido_positivo": {
+        "o_que": "todas com o código 1 e os bytes repostos, na cabeça dessa corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_s1_na_primeira_corrida",
+      "valor": 3,
+      "comando": "provas-ec4c6f58/plantas-portoes-lista.json",
+      "conhecido_positivo": {
+        "o_que": "todas com o código 1 e os bytes repostos, na cabeça dessa corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_antes_na_cabeca_da_primeira_corrida",
+      "valor": true,
+      "comando": "a cabeça de etiquetas-do-toque-antes-da-emenda.json contra a da primeira corrida oficial",
+      "conhecido_positivo": {
+        "o_que": "as duas cabeças existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_depois_na_cabeca_dos_portoes",
+      "valor": true,
+      "comando": "a cabeça de etiquetas-do-toque-depois-da-emenda.json contra portoes/cabeca",
+      "conhecido_positivo": {
+        "o_que": "as duas cabeças existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_h3_no_ensaio",
+      "valor": 13,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/h3-2026-10-05/ensaio-628ef792 node tests/pais/portoes.mjs --prefixo h3- (sobre a construção do ensaio)",
+      "conhecido_positivo": {
+        "o_que": "todas com o código 1 e os bytes repostos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_da_privacidade_conferidas_pelo_portao",
+      "valor": 7860,
+      "comando": "a linha «H3 ·» do gate:html em portoes/build.log",
+      "conhecido_positivo": {
+        "o_que": "a mesma linha diz as páginas da privacidade conferidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_privacidade_em_memoria",
+      "valor": 19,
+      "comando": "a linha «H3 ·» do gate:html",
+      "conhecido_positivo": {
+        "o_que": "a frase dos cookies está no texto e foi conferida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_das_faixas_conferidas_pelo_portao",
+      "valor": 560,
+      "comando": "a linha «H3 ·» do gate:html",
+      "conhecido_positivo": {
+        "o_que": "a linha existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_caixa_em_memoria",
+      "valor": 21,
+      "comando": "a parte «S1:» da linha final do gate:html em portoes/build.log",
+      "conhecido_positivo": {
+        "o_que": "a mesma linha diz as migrações da base lidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas_afastadas_nas_faixas_dos_cartoes_pelo_check_formas",
+      "valor": 116,
+      "comando": "a linha final do check:formas em portoes/build.log (F19)",
+      "conhecido_positivo": {
+        "o_que": "a mesma linha conta as etiquetas no title conferidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "etiquetas_no_title_conferidas_pelo_check_formas",
+      "valor": 560,
+      "comando": "a linha final do check:formas (F19i)",
+      "conhecido_positivo": {
+        "o_que": "a linha final do check:formas existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_das_faixas_dos_cartoes_a_morder",
+      "valor": 28,
+      "comando": "a linha final do check:formas (as plantas da F19)",
+      "conhecido_positivo": {
+        "o_que": "a linha conta as plantas da F20 também",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_seccao_dos_paises_a_morder",
+      "valor": 43,
+      "comando": "a linha final do check:formas (as plantas da F20)",
+      "conhecido_positivo": {
+        "o_que": "a linha conta as marcas afastadas na secção dos países",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas_afastadas_na_seccao_dos_paises_pelo_check_formas",
+      "valor": 116,
+      "comando": "a linha final do check:formas (F20c)",
+      "conhecido_positivo": {
+        "o_que": "a mesma linha conta as faixas da secção",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ocorrencias_da_nota_na_celula_da_funcao",
+      "valor": 0,
+      "comando": "grep -c «nota» em tests/sugestoes/funcao.mjs",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha LIMITES_DAS_SUGESTOES no ficheiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_deploy_antes_de_aterrar_problemas",
+      "valor": 4,
+      "comando": "node scripts/verify-deploy.mjs antes de aterrar (verify-deploy-antes-de-aterrar.log, o código em .codigo e a hora em .hora): o número da linha «NÃO CONFERE»",
+      "conhecido_positivo": {
+        "o_que": "a lista do fim tem esse número de linhas, e todas são das duas páginas «Privacidade»",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "respostas_do_ar_sem_set_cookie",
+      "valor": 3,
+      "comando": "as conferências «sem Set-Cookie» que passaram no mesmo registo (a primeira página e as duas da privacidade)",
+      "conhecido_positivo": {
+        "o_que": "a mesma leitura vê as que falharam no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "decisoes_citadas_nos_ficheiros_tocados",
+      "valor": 25,
+      "comando": "python3 scripts/leituras/decisoes-em-vigor.py <os ficheiros que o bloco toca> (decisoes-em-vigor-antes.txt)",
+      "conhecido_positivo": {
+        "o_que": "o conhecido-positivo do guião, a §1.98 lida em scripts/check-lugar.mjs",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "citacoes_do_mapa_que_andaram",
+      "valor": 40,
+      "comando": "python3 design/especime-v3/medicoes/h3-2026-10-05/acertar-mapa.py (mapa-acertado.json): as citações longe da linha na cabeça do código e não na do brief",
+      "conhecido_positivo": {
+        "o_que": "as trocas pelo guião e as feitas à mão somam todas as que andaram",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "citacoes_do_mapa_longe_na_base",
+      "valor": 19,
+      "comando": "python3 scripts/leituras/conferir-mapa.py sobre uma extração do commit do brief (conferir-mapa-base.txt)",
+      "conhecido_positivo": {
+        "o_que": "depois do acerto e depois da emenda das etiquetas, o mapa tem as mesmas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_pelo_contador",
+      "valor": 1274756,
+      "comando": "custo-inicio.json menos custo-fim.json (o contador «total_tokens left» que a ferramenta mostra)",
+      "conhecido_positivo": {
+        "o_que": "as duas leituras têm hora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_restantes_no_fim",
+      "valor": 13725244,
+      "comando": "custo-fim.json",
+      "conhecido_positivo": {
+        "o_que": "a leitura tem hora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_de_parede",
+      "valor": 12156,
+      "comando": "a hora de custo-fim.json menos a de custo-inicio.json",
+      "conhecido_positivo": {
+        "o_que": "as duas horas são ISO",
+        "encontrado": true
+      }
+    }
+  ]
+}

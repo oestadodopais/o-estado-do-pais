@@ -27,18 +27,21 @@
  *
  * SEM CONTACTO (passagem S1-c, 03.10.2026, decisão do diretor, §1.154): o campo
  * do contacto saiu do formulário, e a caixa não tem resposta.
+ *
+ * A NOTA NUMA LINHA (passagem de higiene H3, 05.10.2026, o §5, decisão 1, do brief
+ * H3): o que fica guardado e para quê, numa frase, e a porta «Como tratamos os
+ * seus dados» para a página «Privacidade», que diz o resto. Nenhuma caixa se marca
+ * para enviar.
  */
 import Base from '../layouts/Base.astro';
 import { routePath } from '../lib/routes.mjs';
 import { SITE_NAME } from '../../site.config.mjs';
-import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 import { SUGESTOES, LIMITES_DAS_SUGESTOES, pedacosDaFrase } from '../data/sugestoes.mjs';
 import '../styles/sugestoes.css';
 
 const { lang = 'pt' } = Astro.props;
 const path = routePath('sugestoes', lang);
 const [antes, porta, depois] = pedacosDaFrase(SUGESTOES.paragrafo[lang], SUGESTOES.portaDoParagrafo[lang]);
-const [notaAntes, endereco, notaDepois] = pedacosDaFrase(SUGESTOES.nota[lang], ENDERECO_CORRECOES);
 const rotulos = SUGESTOES.rotulos;
 /** As três caixas, pela ordem do brief. */
 const caixas = /** @type {const} */ (['procurou', 'estudo', 'outro']);
@@ -69,7 +72,7 @@ const caixas = /** @type {const} */ (['procurou', 'estudo', 'outro']);
         </p>
       ))
     }
-    <p class="sugestoes-nota" data-sugestoes-nota>{notaAntes}<a class="ligacao-email" href={`mailto:${endereco}`}>{endereco}</a>{notaDepois}</p>
+    <p class="sugestoes-nota" data-sugestoes-nota>{SUGESTOES.nota[lang]}{' '}<a href={routePath('privacidade', lang)}>{SUGESTOES.portaDaNota[lang]}</a></p>
     <p class="sugestoes-accoes">
       <button type="submit" class="sugestoes-enviar">{SUGESTOES.botao[lang]}</button>
     </p>

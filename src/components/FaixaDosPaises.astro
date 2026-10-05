@@ -21,8 +21,11 @@
  *     dos 27;
  *   · uma etiqueta por marca, com o nome do país (ou «média da União») e o valor do ponto, ESCONDIDA no documento;
  *     o guião do toque (`public/js/paises.js`) mostra a da marca tocada e mais nenhuma, e não escreve texto nenhum.
- *     Uma marca com o mesmo valor de outras está no mesmo sítio delas, e a sua etiqueta diz o grupo inteiro, pela
- *     ordem da série;
+ *     Uma marca com o mesmo valor de outras diz o grupo inteiro, pela ordem da série, que é a da tabela; desde a
+ *     passagem de higiene H3 (05.10.2026), com o valor uma vez, no fim, e a ressalva de cada ponto logo a seguir ao
+ *     nome do país, e as marcas do grupo afastadas na vertical pela regra do resolvedor (`alturaNoGrupo()`: de seis
+ *     píxeis acima a seis abaixo do eixo, pela ordem da tabela, de cima para baixo), sem guião, para que nenhum país se
+ *     esconda atrás de outro;
  *   · a lista dobrada «Os 27 por ordem», um `<details>` que abre sem guião, com os 27 países e a média da União pela
  *     ordem dos valores (do mais alto para o mais baixo, o sentido do lugar na frase), Portugal marcado, a União na
  *     sua posição, e a ressalva de cada ponto como as pontas a mostram. É o caminho sem guião e o de quem quer os
@@ -107,9 +110,9 @@ const definicao = (declarada.serie ?? declarada)[lang];
     <span class="faixa-ue-eixo">
       {f.marcas.map((m) => (
         <span
-          class:list={['faixa-ue-marca', `faixa-ue-${m.papel}`]}
+          class:list={['faixa-ue-marca', `faixa-ue-${m.papel}`, m.noGrupo > 1 && 'faixa-ue-empilhada']}
           data-faixa-marca={`${f.serie}#${m.geo}`}
-          style={`left:${m.esquerda}%`}
+          style={m.noGrupo > 1 ? `left:${m.esquerda}%;top:${m.altura}px` : `left:${m.esquerda}%`}
         />
       ))}
     </span>
@@ -121,30 +124,32 @@ const definicao = (declarada.serie ?? declarada)[lang];
     >
       <span data-voz>{f.palavras.uniao}</span>
     </span>
-    {/* AS ETIQUETAS DO TOQUE: uma por marca, na posição dela, escondidas. O guião tira o `hidden` à da marca mais
+    {/* AS ETIQUETAS DO TOQUE: uma por marca, na posição dela (a propriedade `--p`, que a folha `paises.css` lê para a
+        pôr e para a manter dentro do desenho, H3), escondidas. O guião tira o `hidden` à da marca mais
         perto do toque e põe-no às outras; sem guião ficam todas escondidas, e a lista dobrada, abaixo, diz o mesmo.
-        Cada etiqueta diz o grupo dos pontos com o valor da sua marca (um país só, quase sempre), porque marcas com o
-        mesmo valor estão no mesmo sítio do desenho e o toque não as separa. */}
+        Cada etiqueta diz o grupo dos pontos com o valor da sua marca (um país só, quase sempre): os nomes pela ordem
+        da tabela, cada um com a ressalva do seu ponto, e o valor uma vez, no fim (H3, o §3, ponto 4, do brief H3).
+        O valor é o do primeiro ponto do grupo, que é o de todos. */}
     <span class="paises-toques">
       {f.toques.map((x) => (
         <span
           class="paises-toque"
           data-toque-de={`${f.serie}#${x.geo}`}
           data-ancora={x.ancora}
-          style={`left:${x.esquerda}%`}
+          style={`--p:${x.esquerda}`}
           hidden
         >
           {x.grupo.map((p, i, todos) => (
             <>
               {i > 0 && (i === todos.length - 1 ? f.palavras.lista.ultimo : f.palavras.lista.entre)}
               {p.geo === AGREGADO_DA_UNIAO ? <span data-voz>{f.palavras.uniao}</span> : <NomeDoPais geo={p.geo} lang={lang} />}
-              {' '}
-              <PontoDaSerie serie={f.serie} geo={p.geo} class="faixa-ue-valor" />
               {p.ressalva && (
                 <span class="faixa-ue-ressalva" data-faixa-ressalva={`${f.serie}#${p.geo}`} data-bandeira={p.bandeira}>{' ('}{p.ressalva}{')'}</span>
               )}
             </>
           ))}
+          {' '}
+          <PontoDaSerie serie={f.serie} geo={x.grupo[0].geo} class="faixa-ue-valor" />
         </span>
       ))}
     </span>

@@ -40,10 +40,29 @@
  *     (`public/js/paises.js`) só mostra o que já lá está.
  * E `faixasDaPaginaDaUniao()` diz que faixas são e por que ordem: a dos dois
  * quadros, com as medidas de fora deles no lugar que a tabela declarada lhes dá.
+ *
+ * A PASSAGEM DE HIGIENE H3 (05.10.2026, o §3, ponto 4, do brief H3): os países com
+ * o mesmo valor caíam no mesmo ponto do desenho e escondiam-se uns aos outros (o
+ * leitor contou «17 ou 25» pontos numa faixa de 27). Duas coisas, as duas feitas
+ * aqui e não na vista:
+ *   · OS PONTOS IGUAIS AFASTAM-SE NA VERTICAL, pela regra de `alturaNoGrupo()`: os
+ *     países com o mesmo valor ficam na mesma posição horizontal, e, pela ordem da
+ *     tabela (a da série, a protocolar), de cima para baixo, os centros distribuem-se
+ *     por igual de seis píxeis acima a seis abaixo do eixo; um país sozinho fica no
+ *     eixo. Os doze píxeis cabem entre o rótulo de Portugal, por cima, e o da média
+ *     da União, por baixo, nas duas faixas (a do cartão e a da página da União), e
+ *     por isso a regra não tira lugar a nenhum dos dois. A média da União não entra
+ *     no grupo: é um traço e não um ponto, e vê-se por cima de qualquer ponto;
+ *   · A ETIQUETA DE UM PONTO DIZ O GRUPO INTEIRO COM O VALOR UMA VEZ: os nomes pela
+ *     ordem da tabela, cada um com a ressalva do seu ponto logo a seguir ao nome, e o
+ *     valor no fim («Estónia, França (definição diferente), Croácia e Suécia 1,8»).
+ *     Na página da União é a etiqueta do toque; na faixa do cartão, que não tem
+ *     toque, é o `title` de cada marca (`etiqueta`), que o portão de HTML confere
+ *     contra a série, porque é um valor num atributo.
  */
 
 import { parsePtNumber } from './ledger.mjs';
-import { serieDaLinha, pontosDaSerie, allSeries, AGREGADO_DA_UNIAO } from './series.mjs';
+import { serieDaLinha, pontosDaSerie, allSeries, nomeDoPais, AGREGADO_DA_UNIAO } from './series.mjs';
 import { routePath } from './routes.mjs';
 import { PALAVRAS_DA_FAIXA, MEDIDAS_FORA_DOS_QUADROS } from '../data/faixa-da-uniao.mjs';
 import { FIGURAS } from '../data/figuras.mjs';
@@ -83,6 +102,23 @@ function sufixoOrdinal(n, sufixos) {
 /** Como se ancora um rótulo: pela ponta mais perto, quando está junto a uma. @param {number} p */
 function ancora(p) {
   return p < 15 ? 'inicio' : p > 85 ? 'fim' : 'meio';
+}
+
+/** Quantos píxeis cabem acima e abaixo do eixo para os pontos iguais, entre o rótulo de Portugal e o da União. */
+export const DESVIO_MAXIMO_DOS_PONTOS_IGUAIS = 6;
+
+/**
+ * OS PONTOS IGUAIS AFASTAM-SE NA VERTICAL (bloco H3): o desvio, em píxeis a partir do
+ * eixo (negativo para cima), do país `i` de um grupo de `n` países com o mesmo valor,
+ * contado pela ordem da tabela. Os centros distribuem-se por igual entre
+ * `-DESVIO_MAXIMO_DOS_PONTOS_IGUAIS` e `+DESVIO_MAXIMO_DOS_PONTOS_IGUAIS`; um país
+ * sozinho fica no eixo. Dois: −6 e 6; três: −6, 0 e 6; quatro: −6, −2, 2 e 6.
+ * @param {number} i @param {number} n
+ */
+export function alturaNoGrupo(i, n) {
+  if (n <= 1) return 0;
+  const d = DESVIO_MAXIMO_DOS_PONTOS_IGUAIS;
+  return Number((-d + (2 * d * i) / (n - 1)).toFixed(2)) || 0;
 }
 
 /**
@@ -170,9 +206,22 @@ export function faixaDaMedida(idDaLinha, lang) {
 
   const esquerdaPt = posicao(pt.n, min, max);
   const esquerdaUe = posicao(nUe, min, max);
+  /* A ALTURA DE CADA MARCA (H3): o desvio do país dentro do grupo dos países com o seu valor, pela ordem da série, que
+     é a da tabela. `noGrupo` diz quantos são, para a vista escrever o desvio só onde há grupo. */
+  /** @param {{ geo: string, n: number }} p */
+  const grupoDoPais = (p) => paises.filter((q) => q.n === p.n);
   const marcas = [
-    ...paises.map((p) => ({ geo: p.geo, esquerda: posicao(p.n, min, max), papel: p.geo === 'PT' ? 'portugal' : 'pais' })),
-    { geo: AGREGADO_DA_UNIAO, esquerda: esquerdaUe, papel: 'uniao' },
+    ...paises.map((p) => {
+      const grupo = grupoDoPais(p);
+      return {
+        geo: p.geo,
+        esquerda: posicao(p.n, min, max),
+        papel: p.geo === 'PT' ? 'portugal' : 'pais',
+        altura: alturaNoGrupo(grupo.findIndex((q) => q.geo === p.geo), grupo.length),
+        noGrupo: grupo.length,
+      };
+    }),
+    { geo: AGREGADO_DA_UNIAO, esquerda: esquerdaUe, papel: 'uniao', altura: 0, noGrupo: 1 },
   ];
 
   /* A ORDEM DOS 27 E DA MÉDIA DA UNIÃO (UE2): do valor mais alto para o mais
@@ -205,17 +254,28 @@ export function faixaDaMedida(idDaLinha, lang) {
     /* AS ETIQUETAS DO TOQUE (UE2): uma por marca, na posição dela e ancorada
        pela ponta mais perto, como os rótulos; o nome e o valor saem na vista
        pelos componentes da série, e a ressalva vem daqui. UMA MARCA COM O MESMO
-       VALOR DE OUTRAS ESTÁ NO MESMO SÍTIO DELAS, e um toque ali não escolhe
-       entre países que o desenho não separa: a etiqueta de cada uma diz o grupo
-       inteiro dos pontos com esse valor, pela ordem da série, com as palavras da
-       lista entre eles («Áustria 18,6, Portugal 18,6 e Suécia 18,6»). */
+       VALOR DE OUTRAS diz o grupo inteiro dos pontos com esse valor, pela ordem
+       da série, com as palavras da lista entre eles; desde o H3, com o valor uma
+       vez, no fim, e a ressalva de cada ponto a seguir ao nome dele («Áustria,
+       Portugal e Suécia 18,6»), e as marcas do grupo afastadas na vertical. */
     toques: marcas.map((m) => {
       const n = m.geo === AGREGADO_DA_UNIAO ? nUe : /** @type {{ n: number }} */ (paises.find((p) => p.geo === m.geo)).n;
       const grupo = naSerie.filter((p) => p.n === n).map((p) => ({
         ...ponta(p.geo),
         papel: p.geo === AGREGADO_DA_UNIAO ? 'uniao' : p.geo === 'PT' ? 'portugal' : 'pais',
       }));
-      return { geo: m.geo, papel: m.papel, esquerda: m.esquerda, ancora: ancora(m.esquerda), grupo };
+      /* O TEXTO DA ETIQUETA, PARA O `title` DA MARCA NA FAIXA DO CARTÃO (H3): os nomes da tabela, cada um com a
+         ressalva do seu ponto, as palavras da lista entre eles, e o valor do primeiro ponto do grupo, uma vez, como
+         `PontoDaSerie` o escreve. O portão de HTML recompõe-no pela sua conta e compara-o carácter a carácter. */
+      const valor = String(pontos.find((p) => p.geo === grupo[0].geo)?.valor ?? '').replace(/(?<=\d)[\u00a0\u2009\u202f](?=\d)/g, ' ');
+      const nomes = grupo
+        .map((p, i) => {
+          const entre = i === 0 ? '' : i === grupo.length - 1 ? palavras.lista.ultimo : palavras.lista.entre;
+          const nome = p.geo === AGREGADO_DA_UNIAO ? palavras.uniao : nomeDoPais(p.geo, lang);
+          return `${entre}${nome}${p.ressalva ? ` (${p.ressalva})` : ''}`;
+        })
+        .join('');
+      return { geo: m.geo, papel: m.papel, esquerda: m.esquerda, ancora: ancora(m.esquerda), grupo, etiqueta: `${nomes} ${valor}` };
     }),
     porta: routePath('serie', lang, { slug: serie.id }),
     palavras: { uniao: palavras.uniao, porta: palavras.porta, lista: palavras.lista },

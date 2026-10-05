@@ -22,6 +22,8 @@ const naPrimeiraPagina = normalizePath(routePath('home', lang)) === aqui;
    veio. O portão de HTML conta-a em todas as páginas, uma por página, como a das
    correções, e confere o destino e o `?de=` contra o caminho da página. */
 const portaDasSugestoes = `${routePath('sugestoes', lang)}?de=${encodeURIComponent(aqui)}`;
+/* A PORTA DA PRIVACIDADE, AO LADO DA DAS SUGESTÕES (bloco H3, 05.10.2026): a página que diz o que fica guardado de quem
+   escreve na caixa. O portão de HTML conta-a em todas as páginas, uma por página, e confere o destino e o nome. */
 ---
 <footer class="rodape rodape-b1">
   <nav class="rodape-nav" aria-label={s.nav.rotuloRodape}>
@@ -29,7 +31,8 @@ const portaDasSugestoes = `${routePath('sugestoes', lang)}?de=${encodeURICompone
     <a href={outra} hreflang={lang === 'pt' ? 'en' : 'pt-PT'} lang={lang === 'pt' ? 'en' : 'pt-PT'}>{s.outraLingua}</a>
   </nav>{' · '}
   <span data-porta-correccoes><a class="ligacao-email" href={`mailto:${ENDERECO_CORRECOES}`}>{ENDERECO_CORRECOES}</a></span>{' · '}
-  <span data-porta-sugestoes><a href={portaDasSugestoes}>{SUGESTOES.titulo[lang]}</a></span>
+  <span data-porta-sugestoes><a href={portaDasSugestoes}>{SUGESTOES.titulo[lang]}</a></span>{' · '}
+  <span data-porta-privacidade><a href={routePath('privacidade', lang)}>{s.nav.privacidade}</a></span>
   {naPrimeiraPagina && (
     <p class="rotulo-ia-ficha" data-ficha-primeira-pagina>
       <Fragment set:text={FICHA_DA_PRIMEIRA_PAGINA[lang].gratuito} />

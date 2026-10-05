@@ -1,0 +1,236 @@
+[
+  {
+    "nome": "h3-formulario-sem-a-porta-da-privacidade",
+    "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "H3 formulário \\(a porta da nota para a página «Privacidade»\\): tem 0 ligação\\(ões\\), e tem de ter uma"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/sugestoes/index.html",
+        "antes": "2bdf779e8715e17648a0aa8e4be6869284e7c72c9d24d3870aa7aa9add671188",
+        "reposto": "2bdf779e8715e17648a0aa8e4be6869284e7c72c9d24d3870aa7aa9add671188"
+      }
+    ]
+  },
+  {
+    "nome": "h3-rodape-sem-a-porta-da-privacidade",
+    "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "H3 porta: esta página tem 0 porta\\(s\\) da privacidade"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "f7170c16830396eb22c37e458e06e0dee2c308ea692810315650d68d0e0b1f01",
+        "reposto": "f7170c16830396eb22c37e458e06e0dee2c308ea692810315650d68d0e0b1f01"
+      }
+    ]
+  },
+  {
+    "nome": "h3-rodape-privacidade-da-outra-edicao",
+    "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "H3 porta: a porta da privacidade leva a \"\\/privacidade\", e a página desta edição é \"\\/en\\/privacy\""
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/themes/index.html",
+        "antes": "e8bd7ced4f2bdc273f2946a8a5173b91583623dd3d215304940e2221d2df7d84",
+        "reposto": "e8bd7ced4f2bdc273f2946a8a5173b91583623dd3d215304940e2221d2df7d84"
+      }
+    ]
+  },
+  {
+    "nome": "h3-privacidade-texto-mudado",
+    "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "H3 privacidade: o texto rendido não é o declarado"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/privacidade/index.html",
+        "antes": "aadb004dcdac1c97307d251d41e3e273f55f54e7e9e11a94f02373cde304cc0b",
+        "reposto": "aadb004dcdac1c97307d251d41e3e273f55f54e7e9e11a94f02373cde304cc0b"
+      }
+    ]
+  },
+  {
+    "nome": "h3-cookies-guiao-de-seguimento",
+    "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "H3 cookies: a página «Privacidade» diz «Este sítio não usa cookies nem segue quem o lê\\.», e dist\\/agenda\\/index\\.html tem um guião de outra origem"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/agenda/index.html",
+        "antes": "c79518aaf107159f42db0ea3f6c7c0a4018a5a1de75f3b06145aa173aa639546",
+        "reposto": "c79518aaf107159f42db0ea3f6c7c0a4018a5a1de75f3b06145aa173aa639546"
+      }
+    ]
+  },
+  {
+    "nome": "h3-cookies-guiao-que-escreve",
+    "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "H3 cookies: .* dist\\/en\\/agenda\\/index\\.html tem um guião em linha que escreve ou lê cookies"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/agenda/index.html",
+        "antes": "05a860b4033ef559b81ca4938917e8ce94b8c518d50c26e35478bccfac5124a9",
+        "reposto": "05a860b4033ef559b81ca4938917e8ce94b8c518d50c26e35478bccfac5124a9"
+      }
+    ]
+  },
+  {
+    "nome": "h3-faixa-title-sem-um-pais",
+    "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "H3: o title da marca «SE» da série «desemprego-de-longa-duracao-2025-paises» diz"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/emprego/index.html",
+        "antes": "4010c60092866c24ff8798db1d5fe3cd1945f9a9d2d3cc56ec416c3fb12b7c47",
+        "reposto": "4010c60092866c24ff8798db1d5fe3cd1945f9a9d2d3cc56ec416c3fb12b7c47"
+      }
+    ]
+  },
+  {
+    "nome": "h3-faixa-title-com-outro-valor",
+    "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "H3: o title da marca «PT» da série «desemprego-de-longa-duracao-2025-paises» diz «Portugal 9,9»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/employment/index.html",
+        "antes": "8556f9de74fa6d49a1877d00147ee4965f3f4ccf914c4bec146871ed42f53737",
+        "reposto": "8556f9de74fa6d49a1877d00147ee4965f3f4ccf914c4bec146871ed42f53737"
+      }
+    ]
+  },
+  {
+    "nome": "h3-faixa-cartao-pontos-iguais-no-mesmo-sitio",
+    "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+    "estado": "",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "F19c · .*desemprego-de-longa-duracao-2025: a marca de SE está a -6 px do eixo e a regra dá 6 px"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/emprego/index.html",
+        "antes": "4010c60092866c24ff8798db1d5fe3cd1945f9a9d2d3cc56ec416c3fb12b7c47",
+        "reposto": "4010c60092866c24ff8798db1d5fe3cd1945f9a9d2d3cc56ec416c3fb12b7c47"
+      }
+    ]
+  },
+  {
+    "nome": "h3-faixa-uniao-pontos-iguais-no-mesmo-sitio",
+    "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+    "estado": "",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "F20c · .*desemprego-de-longa-duracao-2025-paises: a marca de FR está a -6 px do eixo e a regra dá -2 px"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/uniao-europeia/index.html",
+        "antes": "06e296389f2807edbf162f03048c383fd59b8f97246a578b70296ded82f8da80",
+        "reposto": "06e296389f2807edbf162f03048c383fd59b8f97246a578b70296ded82f8da80"
+      }
+    ]
+  },
+  {
+    "nome": "h3-faixa-uniao-etiqueta-sem-um-pais",
+    "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+    "estado": "",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "F20h · .*desemprego-de-longa-duracao-2025-paises: a etiqueta de HR: os nomes são de EE, FR, HR, e são de EE, FR, HR, SE"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/european-union/index.html",
+        "antes": "bc822e312cf60238125856133b5d070ab865fc21e1dff326fd08144ddc22eaff",
+        "reposto": "bc822e312cf60238125856133b5d070ab865fc21e1dff326fd08144ddc22eaff"
+      }
+    ]
+  },
+  {
+    "nome": "h3-indice-sem-a-privacidade",
+    "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+    "estado": "",
+    "comando": "node tests/indice/indice.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "I3 pt: a página \\/privacidade \\(rota «privacidade»\\) foi construída e não tem porta no índice"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/indice/index.html",
+        "antes": "7c72fec1fa6db793bd55fd5ae1815b766fc13f5d2f1129d87d5cd122ae0ea2a6",
+        "reposto": "7c72fec1fa6db793bd55fd5ae1815b766fc13f5d2f1129d87d5cd122ae0ea2a6"
+      }
+    ]
+  },
+  {
+    "nome": "h3-voz-este-sitio-noutra-frase-da-privacidade",
+    "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+    "estado": "",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "marcador\\(es\\): ste sítio"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/privacidade/index.html",
+        "antes": "aadb004dcdac1c97307d251d41e3e273f55f54e7e9e11a94f02373cde304cc0b",
+        "reposto": "aadb004dcdac1c97307d251d41e3e273f55f54e7e9e11a94f02373cde304cc0b"
+      }
+    ]
+  }
+]

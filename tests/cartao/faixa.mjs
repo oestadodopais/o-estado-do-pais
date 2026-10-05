@@ -12,7 +12,11 @@
  *   F19b · o desenho tem uma marca por país da série e uma da União, e mais
  *          nenhuma; a de Portugal e a da União têm a forma delas;
  *   F19c · a posição de cada marca é a que o valor dá, com quatro casas, e os
- *          rótulos de Portugal e da União estão na posição das suas marcas;
+ *          rótulos de Portugal e da União estão na posição das suas marcas; e
+ *          (a passagem de higiene H3, 05.10.2026) a altura de cada marca é a que
+ *          a regra dos portões dá (`alturaNaFaixaDoPortao`): os países com o
+ *          mesmo valor afastados na vertical, de seis píxeis acima a seis abaixo
+ *          do eixo, pela ordem da série, e um país sozinho no eixo;
  *   F19d · as pontas nomeiam o país mais baixo e o mais alto (todos, num
  *          empate), cada um com o seu valor; quando um ponto leva marca da
  *          fonte, a ponta di-la pelas palavras declaradas dessa marca, entre
@@ -25,7 +29,11 @@
  *          com os pontos, os nomes da tabela, a contagem, o lugar e o período, no
  *          ramo que os valores mandam (com ou sem empate); e as marcas dela dizem
  *          os pontos e os países certos, pela ordem;
- *   F19f · a porta abre o recibo da série, na edição da página.
+ *   F19f · a porta abre o recibo da série, na edição da página;
+ *   F19i · (H3, só na faixa do cartão, que não tem toque) cada marca leva no
+ *          `title` a etiqueta do seu valor: os pontos com esse valor, pela ordem
+ *          da série, cada um com o nome da tabela e a ressalva do seu ponto, e o
+ *          valor uma vez, no fim (`etiquetaDaMarcaDoPortao`), carácter a carácter.
  *
  * E, uma vez por corrida e sem página (`conferirPalavrasDaFaixa`, UE1b):
  *
@@ -44,6 +52,8 @@ import { parse } from 'node-html-parser';
 import {
   contaDaFaixa,
   posicaoNaFaixa,
+  alturaNaFaixaDoPortao,
+  etiquetaDaMarcaDoPortao,
   serieDaLinhaDoPortao,
   sufixoOrdinalDoPortao,
   ORDINAIS_INGLESES,
@@ -57,6 +67,11 @@ const norm = (s) => String(s ?? '').replace(/\s+/g, ' ').trim();
 const esquerdaDe = (el) => {
   const m = /(?:^|;)\s*left\s*:\s*(-?[\d.]+)%/.exec(el?.getAttribute('style') ?? '');
   return m ? Number(m[1]) : null;
+};
+/** A altura de uma marca, em píxeis a partir do eixo, como o desenho a escreve (H3); sem `top`, está no eixo. */
+const alturaDe = (el) => {
+  const m = /(?:^|;)\s*top\s*:\s*(-?[\d.]+)px/.exec(el?.getAttribute('style') ?? '');
+  return m ? Number(m[1]) : 0;
 };
 
 /** A frase que a faixa de uma série tem de dizer, recomposta aqui. */
@@ -242,7 +257,7 @@ export function plantasDosEmpates(series, paises, lang) {
  */
 export function conferirFaixas(root, lang, rota, { series, paises }) {
   const erros = [];
-  const contas = { faixas: 0, marcas: 0, frases: 0, empates: 0, ressalvas: 0 };
+  const contas = { faixas: 0, marcas: 0, frases: 0, empates: 0, ressalvas: 0, empilhadas: 0, titulos: 0 };
   const erro = (celula, id, msg) => erros.push(`${celula} · ${rota} · ${id}: ${msg}`);
 
   for (const faixa of root.querySelectorAll('[data-faixa-ue]')) {
@@ -270,6 +285,24 @@ export function conferirFaixas(root, lang, rota, { series, paises }) {
     contas.ressalvas += r.ressalvas;
     contas.frases += r.frases;
     contas.empates += r.empates;
+    contas.empilhadas += r.empilhadas;
+    /* F19i (H3): o `title` de cada marca é a etiqueta do seu valor, pela conta dos portões. A faixa do cartão não tem
+       toque; o `title` é o que o rato mostra ao pousar num ponto, e é um valor num atributo. */
+    for (const m of faixa.querySelectorAll('[data-faixa-marca]')) {
+      const geo = String(m.getAttribute('data-faixa-marca')).split('#')[1];
+      let esperada;
+      try {
+        esperada = etiquetaDaMarcaDoPortao(serie, geo, lang, paises, PALAVRAS_DA_FAIXA[lang]);
+      } catch (e) {
+        erro('F19i', id, `a etiqueta de ${geo} não se recompõe: ${e.message}`);
+        continue;
+      }
+      const dita = m.getAttribute('title');
+      if (dita === undefined || dita === null) erro('F19i', id, `a marca de ${geo} não tem a etiqueta do seu valor no title`);
+      else if (norm(dita) !== norm(esperada)) erro('F19i', id, `o title da marca de ${geo} diz «${dita}» e a recomposição dá «${esperada}»`);
+      else if (norm(m.getAttribute('data-faixa-etiqueta')) !== norm(dita)) erro('F19i', id, `o data-faixa-etiqueta da marca de ${geo} não é o texto do title`);
+      else contas.titulos++;
+    }
   }
   return { erros, contas };
 }
@@ -289,7 +322,7 @@ export function conferirFaixas(root, lang, rota, { series, paises }) {
  * @returns {{ marcas: number, ressalvas: number, frases: number, empates: number, conta: any }}
  */
 export function conferirPecasDaFaixa(faixa, { serie, lang, paises, id, erro: erroDe, celula }) {
-  const contas = { marcas: 0, ressalvas: 0, frases: 0, empates: 0, conta: null };
+  const contas = { marcas: 0, ressalvas: 0, frases: 0, empates: 0, empilhadas: 0, conta: null };
   const erro = (c, i, msg) => erroDe(c.replace(/^F19/, celula), i, msg);
   {
     let c;
@@ -322,6 +355,10 @@ export function conferirPecasDaFaixa(faixa, { serie, lang, paises, id, erro: err
       if (v === undefined) continue;
       const esperado = posicaoNaFaixa(v, c.min, c.max);
       if (esquerdaDe(m) !== esperado) erro('F19c', id, `a marca de ${geo} está em ${esquerdaDe(m)} % e o valor dá ${esperado} %`);
+      /* H3: a altura, pela regra dos portões. Dois países com o mesmo valor no mesmo sítio morde aqui. */
+      const { altura, noGrupo } = alturaNaFaixaDoPortao(serie, geo);
+      if (alturaDe(m) !== altura) erro('F19c', id, `a marca de ${geo} está a ${alturaDe(m)} px do eixo e a regra dá ${altura} px (${noGrupo} país(es) com o mesmo valor)`);
+      if (noGrupo > 1) contas.empilhadas++;
     }
     for (const [papel, v, geo] of [['portugal', c.portugal, 'PT'], ['uniao', c.uniao, null]]) {
       const r = faixa.querySelector(`[data-faixa-rotulo="${papel}"]`);
@@ -536,6 +573,41 @@ export function plantasDaFaixa(html, lang, rota, ctx) {
     const x = r.querySelector('[data-faixa-ressalva]');
     if (!x) return false;
     x.remove();
+    return true;
+  });
+  /* H3: os pontos iguais afastados na vertical, e a etiqueta de cada ponto no title. */
+  planta('dois pontos iguais no mesmo sítio, quando a regra manda afastá-los', 'F19c', (r) => {
+    const porPosicao = new Map();
+    for (const m of r.querySelectorAll('[data-faixa-ue] [data-faixa-marca]')) {
+      if (!/top\s*:/.test(m.getAttribute('style') ?? '')) continue;
+      const chave = `${m.closest('[data-faixa-ue]')?.getAttribute('data-faixa-ue')}|${esquerdaDe(m)}`;
+      porPosicao.set(chave, [...(porPosicao.get(chave) ?? []), m]);
+    }
+    const grupo = [...porPosicao.values()].find((g) => g.length > 1);
+    if (!grupo) return false;
+    grupo[1].setAttribute('style', grupo[0].getAttribute('style'));
+    return true;
+  });
+  planta('um title com um país a menos', 'F19i', (r) => {
+    const sep = lang === 'en' ? ' and ' : ' e ';
+    const m = r.querySelectorAll('[data-faixa-ue] [data-faixa-marca][title]').find((x) => x.getAttribute('title').includes(sep));
+    if (!m) return false;
+    const t = m.getAttribute('title');
+    m.setAttribute('title', t.slice(0, t.lastIndexOf(sep)) + t.slice(t.lastIndexOf(' ')));
+    return true;
+  });
+  planta('um title com o valor de outro ponto', 'F19i', (r) => {
+    const m = r.querySelector('[data-faixa-ue] [data-faixa-marca][title]');
+    if (!m) return false;
+    const t = m.getAttribute('title');
+    const valor = t.slice(t.lastIndexOf(' ') + 1);
+    m.setAttribute('title', t.slice(0, t.lastIndexOf(' ') + 1) + (valor === '1,0' ? '2,0' : '1,0'));
+    return true;
+  });
+  planta('um data-faixa-etiqueta que não é o texto do title', 'F19i', (r) => {
+    const m = r.querySelector('[data-faixa-ue] [data-faixa-marca][data-faixa-etiqueta]');
+    if (!m) return false;
+    m.setAttribute('data-faixa-etiqueta', `${m.getAttribute('data-faixa-etiqueta')} (planta)`);
     return true;
   });
   planta('a porta para outra série', 'F19f', (r) => {

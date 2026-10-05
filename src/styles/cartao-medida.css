@@ -354,6 +354,13 @@
   border-left: 2px solid var(--ink);
   z-index: 1;
 }
+/* OS PONTOS IGUAIS AFASTADOS (a passagem de higiene H3, 05.10.2026): os países com o mesmo valor ficam uns por cima
+   dos outros, pela regra do resolvedor (`alturaNoGrupo()`), e num grupo de quatro os centros ficam a menos de um
+   diâmetro; um fio da cor do papel à volta de cada ponto do grupo separa-os à vista, sem cor nova. A marca tocada da
+   página da União leva o seu anel por cima deste. */
+.faixa-ue-marca.faixa-ue-empilhada {
+  box-shadow: 0 0 0 1px var(--paper);
+}
 .faixa-ue-rotulo {
   position: absolute;
   white-space: nowrap;

@@ -12,7 +12,9 @@
  *             declarado em `src/data/sugestoes.mjs`;
  *   PÁGINAS · `conferirPaginaDasSugestoes()`: a página do formulário sem
  *             `noindex`, com o parágrafo, os rótulos, a nota e o botão iguais aos
- *             declarados, o formulário que vai por POST a `/api/sugestoes` com os
+ *             declarados (desde a passagem de higiene H3, 05.10.2026, a nota é uma
+ *             linha e a porta «Como tratamos os seus dados» para a página
+ *             «Privacidade», e uma só ligação), o formulário que vai por POST a `/api/sugestoes` com os
  *             cinco campos e mais nenhum (sem o do contacto, que saiu na passagem
  *             S1-c por decisão do diretor), o campo armadilhado fora da árvore de
  *             acessibilidade e do teclado, os limites de cada caixa, e nenhum
@@ -30,7 +32,11 @@
  *             o teto do dia, a marca de 64 caracteres, a limpeza das marcas, a
  *             janela de uma hora, cinco por marca, a retenção de noventa dias e de
  *             um ano, e a tarefa que apaga as marcas de hora a hora. Se a base mudar
- *             e a nota não, o leitor lê uma regra falsa, e a construção fecha.
+ *             e o texto não, o leitor lê uma regra falsa, e a construção fecha.
+ *             Desde a passagem de higiene H3 (05.10.2026), a janela da marca e a
+ *             retenção leem-se no texto da página «Privacidade»
+ *             (`src/data/privacidade.mjs`), que é onde a nota passou a dizê-las; o
+ *             limite por marca continua na página do limite.
  *
  * A LISTA DO `noindex` é `ROTAS_SEM_INDICE`: as quatro do resultado, e mais
  * nenhuma desta família. As palavras e os caminhos vêm dos ficheiros declarados
@@ -47,7 +53,7 @@ import path from 'node:path';
 import { parse } from 'node-html-parser';
 import { routePath, normalizePath, LANGS } from '../src/lib/routes.mjs';
 import { SUGESTOES, ROTAS_DO_RESULTADO, LIMITES_DAS_SUGESTOES } from '../src/data/sugestoes.mjs';
-import { ENDERECO_CORRECOES } from '../src/data/metodo.mjs';
+import { PRIVACIDADE } from '../src/data/privacidade.mjs';
 
 /** As páginas desta família que levam `noindex` e ficam fora do mapa do sítio. */
 export const ROTAS_SEM_INDICE = new Set(Object.values(ROTAS_DO_RESULTADO));
@@ -272,10 +278,11 @@ export function conferirPaginaDasSugestoes(root, rota) {
   if (form.querySelector('[name="contacto"]') || form.querySelector('input[type="email"]')) {
     erros.push('S1 formulário: o formulário pede um contacto, e o campo do contacto saiu por decisão do diretor (S1-c, §1.154): a caixa não tem resposta.');
   }
-  const nota = blocoDeclarado(form, '[data-sugestoes-nota]', SUGESTOES.nota[lang], 'S1 formulário (a nota do que fica guardado)', erros);
-  if (nota && !nota.querySelector(`a[href="mailto:${ENDERECO_CORRECOES}"]`)) {
-    erros.push('S1 formulário: a nota não tem a porta para o endereço onde se pede o que foi enviado.');
-  }
+  /* H3 (05.10.2026, o §5, decisão 1, do brief H3): a nota é uma linha e a porta para a página «Privacidade», que diz o
+     resto; uma ligação só, para a página da edição, com as palavras declaradas. Um formulário sem a porta deixava o
+     leitor sem o que a lei lhe deve dizer, e fecha a construção. */
+  const nota = blocoDeclarado(form, '[data-sugestoes-nota]', `${SUGESTOES.nota[lang]} ${SUGESTOES.portaDaNota[lang]}`, 'S1 formulário (a nota do que fica guardado)', erros);
+  if (nota) ligacaoDe(nota, routePath('privacidade', lang), SUGESTOES.portaDaNota[lang], 'H3 formulário (a porta da nota para a página «Privacidade»)', erros);
   const botoes = form.querySelectorAll('button[type="submit"]');
   if (botoes.length !== 1 || textoDe(botoes[0]) !== SUGESTOES.botao[lang]) erros.push('S1 formulário: o botão não é o declarado, ou não é um.');
   if (root.querySelector('main')?.querySelector('script')) erros.push('S1 formulário: há um guião no <main>, e o formulário funciona sem JavaScript.');
@@ -385,13 +392,14 @@ export function estadoDasMigracoes(migracoes) {
  * leitor lê: a chave exigida (e nenhuma função sem ela viva), a tranca, o teto do dia, a marca de 64
  * caracteres, a limpeza das marcas expiradas, a janela de uma hora, o limite por marca, a retenção das
  * sugestões e a tarefa que apaga as marcas de hora a hora; e os limites de cada coluna contra o
- * formulário e a função.
+ * formulário e a função. A janela da marca e a retenção dizem-se, desde o H3, no texto da página «Privacidade».
  * @param {{ nome: string, sql: string }[]} migracoes
  * @param {typeof SUGESTOES} textos
  * @param {typeof LIMITES_DAS_SUGESTOES} limites
+ * @param {{ pt: string, en: string }} privacidade o texto da página «Privacidade» nas duas edições
  * @returns {string[]}
  */
-export function conferirRegrasDaBase(migracoes, textos = SUGESTOES, limites = LIMITES_DAS_SUGESTOES) {
+export function conferirRegrasDaBase(migracoes, textos = SUGESTOES, limites = LIMITES_DAS_SUGESTOES, privacidade = PRIVACIDADE.texto) {
   const erros = [];
   if (!migracoes.length) return ['S1 regras: não há migração nenhuma da caixa das sugestões.'];
   const { funcoes, tarefas, texto } = estadoDasMigracoes(migracoes);
@@ -439,7 +447,7 @@ export function conferirRegrasDaBase(migracoes, textos = SUGESTOES, limites = LI
     if (!/delete\s+from\s+sugestoes_limites\s+where\s+ate\s*<\s*now\(\)/i.test(corpo)) erros.push('S1 regras: a função em vigor não apaga as marcas expiradas antes de contar (a limpeza).');
     const janela = numero(corpo, /values\s*\(\s*p_marca\s*,\s*1\s*,\s*now\(\)\s*\+\s*interval\s+'(\d+)\s+hours?'\s*\)/i, 'a janela da marca');
     igual(janela, REGRAS_DA_CAIXA.janelaDaMarcaHoras, 'a janela da marca, em horas,');
-    diz(janela, textos.nota, { pt: (p) => `durante ${p} hora`, en: (p) => `for ${p} hour` }, 'a janela da marca');
+    diz(janela, privacidade, { pt: (p) => `durante ${p} hora`, en: (p) => `for ${p} hour` }, 'a janela da marca');
     const porMarca = numero(corpo, /if\s+v_n\s*>\s*(\d+)\s+then\s+raise\s+exception\s+'limite'/i, 'o limite por marca e por hora');
     igual(porMarca, REGRAS_DA_CAIXA.porMarcaPorHora, 'o limite por marca e por hora');
     diz(porMarca, textos.resultados.limite, { pt: (p) => `${p} sugestões`, en: (p) => `${p} suggestions` }, 'o limite por marca e por hora');
@@ -451,10 +459,10 @@ export function conferirRegrasDaBase(migracoes, textos = SUGESTOES, limites = LI
   else {
     const dias = numero(retencao.comando, /decidido_em\s*<\s*now\(\)\s*-\s*interval\s+'(\d+)\s+days'/i, 'a retenção de uma sugestão decidida');
     igual(dias, REGRAS_DA_CAIXA.retencaoDecididaDias, 'a retenção de uma sugestão decidida, em dias,');
-    diz(dias, textos.nota, { pt: (p) => `ao fim de ${p} dias`, en: (p) => `after ${p} days` }, 'a retenção de uma sugestão decidida');
+    diz(dias, privacidade, { pt: (p) => `ao fim de ${p} dias`, en: (p) => `after ${p} days` }, 'a retenção de uma sugestão decidida');
     const anos = numero(retencao.comando, /criado_em\s*<\s*now\(\)\s*-\s*interval\s+'(\d+)\s+years?'/i, 'a retenção de uma sugestão por decidir');
     igual(anos, REGRAS_DA_CAIXA.retencaoPorDecidirAnos, 'a retenção de uma sugestão por decidir, em anos,');
-    diz(anos, textos.nota, { pt: (p) => `ao fim de ${p} ano`, en: (p) => `after ${p} year` }, 'a retenção de uma sugestão por decidir');
+    diz(anos, privacidade, { pt: (p) => `ao fim de ${p} ano`, en: (p) => `after ${p} year` }, 'a retenção de uma sugestão por decidir');
   }
   const marcas = tarefas.get('sugestoes-marcas');
   if (!marcas) erros.push('S1 regras: a tarefa que apaga as marcas de hora a hora (sugestoes-marcas) não está agendada no fim das migrações.');
@@ -476,6 +484,26 @@ export function conferirRegrasDaBase(migracoes, textos = SUGESTOES, limites = LI
     if (n !== null && n !== limite) erros.push(`S1 regras: a base guarda até ${n} caracteres em ${coluna}, e o formulário e a função usam ${limite}.`);
   }
   return erros;
+}
+
+/**
+ * UM FORMULÁRIO ESCRITO PARA AS PLANTAS (H3), com os textos declarados, os campos, os limites e a nota; `comPorta` diz
+ * se a nota leva a porta para a página «Privacidade». O de controlo tem de passar inteiro na conferência das páginas.
+ * @param {Lingua} lang @param {boolean} comPorta
+ */
+function formularioDePlanta(lang, comPorta) {
+  const r = SUGESTOES.rotulos;
+  const [antes, porta, depois] = [SUGESTOES.paragrafo[lang].split(SUGESTOES.portaDoParagrafo[lang])[0], SUGESTOES.portaDoParagrafo[lang], SUGESTOES.paragrafo[lang].split(SUGESTOES.portaDoParagrafo[lang])[1]];
+  const caixa = (nome) => `<p><label for="s-${nome}">${r[nome][lang]}</label><textarea id="s-${nome}" name="${nome}" maxlength="${LIMITES_DAS_SUGESTOES.texto}"></textarea></p>`;
+  const nota = comPorta
+    ? `${SUGESTOES.nota[lang]} <a href="${routePath('privacidade', lang)}">${SUGESTOES.portaDaNota[lang]}</a>`
+    : `${SUGESTOES.nota[lang]} ${SUGESTOES.portaDaNota[lang]}`;
+  return parse(
+    `<html><body><main><h1>${SUGESTOES.titulo[lang]}</h1><p data-sugestoes-paragrafo>${antes}<a href="${routePath('correcoes', lang)}">${porta}</a>${depois}</p>` +
+      `<form method="post" action="/api/sugestoes"><input type="hidden" name="lingua" value="${lang}">` +
+      `<div aria-hidden="true"><label for="s-sitio">${r.sitio[lang]}</label><input id="s-sitio" name="sitio" type="text" tabindex="-1" autocomplete="off"></div>` +
+      `${caixa('procurou')}${caixa('estudo')}${caixa('outro')}<p data-sugestoes-nota>${nota}</p><p><button type="submit">${SUGESTOES.botao[lang]}</button></p></form></main></body></html>`,
+  );
 }
 
 /**
@@ -526,6 +554,20 @@ export function plantasDaCaixa(migracoes) {
     { nome: 'regras-retencao-mudada', espera: /sugestão decidida, em dias, é 30/, erros: () => conferirRegrasDaBase(naPrimeira(/decidido_em < now\(\) - interval '\d+ days'/, "decidido_em < now() - interval '30 days'")) },
     { nome: 'regras-marcas-diarias', espera: /tem de correr de hora a hora/, erros: () => conferirRegrasDaBase(naUltima(/'sugestoes-marcas', '[^']+'/, "'sugestoes-marcas', '7 4 * * *'")) },
     { nome: 'regras-coluna-mais-curta', espera: /em procurou/, erros: () => conferirRegrasDaBase(naPrimeira(/char_length\(procurou\) <= \d+/, 'char_length(procurou) <= 1000')) },
+    /* H3 (05.10.2026): a janela e a retenção dizem-se na página «Privacidade», e um prazo mudado só no texto morde. */
+    {
+      nome: 'regras-privacidade-com-outro-prazo',
+      espera: /a retenção de uma sugestão decidida é 90, e o texto pt não o diz/,
+      erros: () => conferirRegrasDaBase(migracoes, SUGESTOES, LIMITES_DAS_SUGESTOES, { ...PRIVACIDADE.texto, pt: PRIVACIDADE.texto.pt.replace('noventa dias', 'trinta dias') }),
+    },
+    {
+      nome: 'regras-privacidade-com-outra-janela',
+      espera: /a janela da marca é 1, e o texto en não o diz/,
+      erros: () => conferirRegrasDaBase(migracoes, SUGESTOES, LIMITES_DAS_SUGESTOES, { ...PRIVACIDADE.texto, en: PRIVACIDADE.texto.en.replace('for one hour', 'for two hours') }),
+    },
+    /* E a nota do formulário sem a porta para a página «Privacidade» (a planta que o brief H3 pede, §3, ponto 1). */
+    { nome: 'formulario-controlo', espera: null, erros: () => conferirPaginaDasSugestoes(formularioDePlanta(lang, true), { key: 'sugestoes', lang }) },
+    { nome: 'formulario-nota-sem-a-porta', espera: /H3 formulário \(a porta da nota para a página «Privacidade»\): tem 0 ligação/, erros: () => conferirPaginaDasSugestoes(formularioDePlanta(lang, false), { key: 'sugestoes', lang }) },
   ];
   return casos.map((c) => {
     const erros = c.erros();

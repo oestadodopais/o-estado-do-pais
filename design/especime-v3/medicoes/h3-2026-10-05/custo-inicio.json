@@ -1,0 +1,14 @@
+{
+  "o_que": "a primeira leitura do contador de símbolos restantes que a ferramenta mostra ao agente (a linha «total_tokens left»), escrita à mão pelo construtor, e a primeira hora do relógio da máquina lida na sessão",
+  "simbolos_restantes_no_inicio": 15000000,
+  "lido_no_inicio": "na primeira mensagem da sessão do construtor do H3, antes de qualquer ferramenta",
+  "simbolos_restantes_na_primeira_hora": 14664546,
+  "lido_na_primeira_hora": "o contador mostrado logo a seguir à chamada que leu o relógio pela primeira vez (depois de ler o mandato, o mapa do repositório, o brief, a medição do §0, as decisões e os ficheiros das faixas e da caixa)",
+  "inicio_utc": "2026-10-05T13:53:10Z",
+  "inicio_origem": "date -u +%Y-%m-%dT%H:%M:%SZ, na chamada que listou as pastas das medições; é a primeira leitura do relógio desta sessão",
+  "semana_da_conta_no_inicio": {
+    "o_que": "a percentagem da semana e das cinco horas da subscrição do Claude, lidas da linha de estado (`usage-latest.json`, os campos rate_limits) às 13:53:43 UTC; o ficheiro não se copia para aqui porque traz caminhos da máquina",
+    "sete_dias_usados_por_cento": 16,
+    "cinco_horas_usadas_por_cento": 35
+  }
+}

@@ -1,0 +1,2925 @@
+{
+  "guiao": "design/especime-v3/medicoes/h3-2026-10-05/captar-h3.mjs",
+  "modo": "depois",
+  "cabeca": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+  "arvore_limpa": true,
+  "construcao": "ec4c6f587925a3b0ee99e5d0a946ec75d23a2168",
+  "inicio": "2026-10-05T16:08:55.200Z",
+  "fim": "2026-10-05T16:09:40.647Z",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "cookies_vistos_nas_paginas": [],
+  "problemas": [],
+  "capturas": [
+    {
+      "tipo": "conhecido-positivo dos cookies",
+      "cookies": [
+        "positivo-do-guiao",
+        "positivo-do-servidor"
+      ],
+      "pedidos_para_fora": 1,
+      "visto": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-sugestoes-pt-390.png",
+      "tipo": "pagina",
+      "familia": "sugestoes",
+      "rota": "/sugestoes/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 1399,
+        "h1": "Sugestões",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "nota": "Só guardamos o que escrever e a página de onde veio, para decidir a sugestão. Como tratamos os seus dados",
+        "ligacoes_da_nota": [
+          {
+            "href": "/privacidade",
+            "texto": "Como tratamos os seus dados"
+          }
+        ],
+        "caixas_de_marcar": 0,
+        "campos": [
+          "lingua",
+          "sitio",
+          "procurou",
+          "estudo",
+          "outro"
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "57ef5d753ca229f399360cca90e2dcec0593c6770695c94c48dfe734abbef5db"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-sugestoes-pt-768.png",
+      "tipo": "pagina",
+      "familia": "sugestoes",
+      "rota": "/sugestoes/",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 1258,
+        "h1": "Sugestões",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "nota": "Só guardamos o que escrever e a página de onde veio, para decidir a sugestão. Como tratamos os seus dados",
+        "ligacoes_da_nota": [
+          {
+            "href": "/privacidade",
+            "texto": "Como tratamos os seus dados"
+          }
+        ],
+        "caixas_de_marcar": 0,
+        "campos": [
+          "lingua",
+          "sitio",
+          "procurou",
+          "estudo",
+          "outro"
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "d9f7d1a3bbb1c4634ea793952724b1d98d8cd2d21691fb341145ce2086a8da86"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-sugestoes-pt-1024.png",
+      "tipo": "pagina",
+      "familia": "sugestoes",
+      "rota": "/sugestoes/",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 1283,
+        "h1": "Sugestões",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "nota": "Só guardamos o que escrever e a página de onde veio, para decidir a sugestão. Como tratamos os seus dados",
+        "ligacoes_da_nota": [
+          {
+            "href": "/privacidade",
+            "texto": "Como tratamos os seus dados"
+          }
+        ],
+        "caixas_de_marcar": 0,
+        "campos": [
+          "lingua",
+          "sitio",
+          "procurou",
+          "estudo",
+          "outro"
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "804623f4a13a93cfac36897f074adc1e80fd559a989baebc741a26c8e4669aaa"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-sugestoes-pt-1280.png",
+      "tipo": "pagina",
+      "familia": "sugestoes",
+      "rota": "/sugestoes/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1318,
+        "h1": "Sugestões",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "nota": "Só guardamos o que escrever e a página de onde veio, para decidir a sugestão. Como tratamos os seus dados",
+        "ligacoes_da_nota": [
+          {
+            "href": "/privacidade",
+            "texto": "Como tratamos os seus dados"
+          }
+        ],
+        "caixas_de_marcar": 0,
+        "campos": [
+          "lingua",
+          "sitio",
+          "procurou",
+          "estudo",
+          "outro"
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "70ba0f1fbd6b3198205008b871ba4aa704b8b9e2b87a4d07036cd15156a3c6d5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-sugestoes-pt-1600.png",
+      "tipo": "pagina",
+      "familia": "sugestoes",
+      "rota": "/sugestoes/",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 1324,
+        "h1": "Sugestões",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "nota": "Só guardamos o que escrever e a página de onde veio, para decidir a sugestão. Como tratamos os seus dados",
+        "ligacoes_da_nota": [
+          {
+            "href": "/privacidade",
+            "texto": "Como tratamos os seus dados"
+          }
+        ],
+        "caixas_de_marcar": 0,
+        "campos": [
+          "lingua",
+          "sitio",
+          "procurou",
+          "estudo",
+          "outro"
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "8aa150323aec7f196cb1c520015a10632a79e635d984efbc0f99eb614801646c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-sugestoes-en-390.png",
+      "tipo": "pagina",
+      "familia": "sugestoes",
+      "rota": "/en/suggestions/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 1498,
+        "h1": "Suggestions",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "nota": "We only keep what you write and the page you came from, to decide on the suggestion. How we handle your data",
+        "ligacoes_da_nota": [
+          {
+            "href": "/en/privacy",
+            "texto": "How we handle your data"
+          }
+        ],
+        "caixas_de_marcar": 0,
+        "campos": [
+          "lingua",
+          "sitio",
+          "procurou",
+          "estudo",
+          "outro"
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "29089299869a2da5128393dc88d281f55072d76c41d381a2f608334217a6fdc4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-sugestoes-en-768.png",
+      "tipo": "pagina",
+      "familia": "sugestoes",
+      "rota": "/en/suggestions/",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 1333,
+        "h1": "Suggestions",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "nota": "We only keep what you write and the page you came from, to decide on the suggestion. How we handle your data",
+        "ligacoes_da_nota": [
+          {
+            "href": "/en/privacy",
+            "texto": "How we handle your data"
+          }
+        ],
+        "caixas_de_marcar": 0,
+        "campos": [
+          "lingua",
+          "sitio",
+          "procurou",
+          "estudo",
+          "outro"
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "2bd0bbaa2cc93ec2e64b89d0e7069822dfbd93f0d135e3e27a2ccda3d1563ced"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-sugestoes-en-1024.png",
+      "tipo": "pagina",
+      "familia": "sugestoes",
+      "rota": "/en/suggestions/",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 1311,
+        "h1": "Suggestions",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "nota": "We only keep what you write and the page you came from, to decide on the suggestion. How we handle your data",
+        "ligacoes_da_nota": [
+          {
+            "href": "/en/privacy",
+            "texto": "How we handle your data"
+          }
+        ],
+        "caixas_de_marcar": 0,
+        "campos": [
+          "lingua",
+          "sitio",
+          "procurou",
+          "estudo",
+          "outro"
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "004e7b37c15f8befbcbe8c00465c6f1647472bf38dd8819ac4fc11a9b1306686"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-sugestoes-en-1280.png",
+      "tipo": "pagina",
+      "familia": "sugestoes",
+      "rota": "/en/suggestions/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1348,
+        "h1": "Suggestions",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "nota": "We only keep what you write and the page you came from, to decide on the suggestion. How we handle your data",
+        "ligacoes_da_nota": [
+          {
+            "href": "/en/privacy",
+            "texto": "How we handle your data"
+          }
+        ],
+        "caixas_de_marcar": 0,
+        "campos": [
+          "lingua",
+          "sitio",
+          "procurou",
+          "estudo",
+          "outro"
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "c6b55ec074e991278cba0774be1153c6010d8796bdb5e22e653b20b3149fb2db"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-sugestoes-en-1600.png",
+      "tipo": "pagina",
+      "familia": "sugestoes",
+      "rota": "/en/suggestions/",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 1354,
+        "h1": "Suggestions",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "nota": "We only keep what you write and the page you came from, to decide on the suggestion. How we handle your data",
+        "ligacoes_da_nota": [
+          {
+            "href": "/en/privacy",
+            "texto": "How we handle your data"
+          }
+        ],
+        "caixas_de_marcar": 0,
+        "campos": [
+          "lingua",
+          "sitio",
+          "procurou",
+          "estudo",
+          "outro"
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "8bade6f6e92ac4eb84cc93bb03ad6897bfc068ca60e7e5f33464c58a299323d7"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-privacidade-pt-390.png",
+      "tipo": "pagina",
+      "familia": "privacidade",
+      "rota": "/privacidade/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 1084,
+        "h1": "Privacidade",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "texto": "O que fica guardado quando envia uma sugestão: o que escrever, a língua e a página de onde veio. O endereço IP não se guarda; dele fica, durante uma hora, uma marca que não o deixa recuperar, só para travar envios em massa. Os dados ficam em servidores na União Europeia, nos serviços que alojam o sítio e a caixa, que os tratam por conta do projeto. Guardam-se porque os enviou. Uma sugestão decidida apaga-se ao fim de noventa dias; uma por decidir, ao fim de um ano. Por estes dados responde O Estado do País, pelo endereço correcoes@oestadodopais.pt: escreva para saber o que enviou, corrigi-lo ou pedir que se apague; pode também queixar-se à Comissão Nacional de Proteção de Dados (cnpd.pt). Este sítio não usa cookies nem segue quem o lê.",
+        "ligacoes_do_texto": [
+          {
+            "href": "mailto:correcoes@oestadodopais.pt",
+            "texto": "correcoes@oestadodopais.pt"
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "193164067b596cb5a0c9a4cf6044fa611901592f89d0e8c66c625b01012ca63f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-privacidade-pt-768.png",
+      "tipo": "pagina",
+      "familia": "privacidade",
+      "rota": "/privacidade/",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 900,
+        "h1": "Privacidade",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "texto": "O que fica guardado quando envia uma sugestão: o que escrever, a língua e a página de onde veio. O endereço IP não se guarda; dele fica, durante uma hora, uma marca que não o deixa recuperar, só para travar envios em massa. Os dados ficam em servidores na União Europeia, nos serviços que alojam o sítio e a caixa, que os tratam por conta do projeto. Guardam-se porque os enviou. Uma sugestão decidida apaga-se ao fim de noventa dias; uma por decidir, ao fim de um ano. Por estes dados responde O Estado do País, pelo endereço correcoes@oestadodopais.pt: escreva para saber o que enviou, corrigi-lo ou pedir que se apague; pode também queixar-se à Comissão Nacional de Proteção de Dados (cnpd.pt). Este sítio não usa cookies nem segue quem o lê.",
+        "ligacoes_do_texto": [
+          {
+            "href": "mailto:correcoes@oestadodopais.pt",
+            "texto": "correcoes@oestadodopais.pt"
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "a958c0090c92c82e3060fdc10479438b98d5afc31d2e1130ad1e28f9801426b9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-privacidade-pt-1024.png",
+      "tipo": "pagina",
+      "familia": "privacidade",
+      "rota": "/privacidade/",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 900,
+        "h1": "Privacidade",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "texto": "O que fica guardado quando envia uma sugestão: o que escrever, a língua e a página de onde veio. O endereço IP não se guarda; dele fica, durante uma hora, uma marca que não o deixa recuperar, só para travar envios em massa. Os dados ficam em servidores na União Europeia, nos serviços que alojam o sítio e a caixa, que os tratam por conta do projeto. Guardam-se porque os enviou. Uma sugestão decidida apaga-se ao fim de noventa dias; uma por decidir, ao fim de um ano. Por estes dados responde O Estado do País, pelo endereço correcoes@oestadodopais.pt: escreva para saber o que enviou, corrigi-lo ou pedir que se apague; pode também queixar-se à Comissão Nacional de Proteção de Dados (cnpd.pt). Este sítio não usa cookies nem segue quem o lê.",
+        "ligacoes_do_texto": [
+          {
+            "href": "mailto:correcoes@oestadodopais.pt",
+            "texto": "correcoes@oestadodopais.pt"
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "db10fecf98fac21fc9d0f2abaf6d9584c0a2c54c9981d04dded1c7b07ad8ceb3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-privacidade-pt-1280.png",
+      "tipo": "pagina",
+      "familia": "privacidade",
+      "rota": "/privacidade/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 900,
+        "h1": "Privacidade",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "texto": "O que fica guardado quando envia uma sugestão: o que escrever, a língua e a página de onde veio. O endereço IP não se guarda; dele fica, durante uma hora, uma marca que não o deixa recuperar, só para travar envios em massa. Os dados ficam em servidores na União Europeia, nos serviços que alojam o sítio e a caixa, que os tratam por conta do projeto. Guardam-se porque os enviou. Uma sugestão decidida apaga-se ao fim de noventa dias; uma por decidir, ao fim de um ano. Por estes dados responde O Estado do País, pelo endereço correcoes@oestadodopais.pt: escreva para saber o que enviou, corrigi-lo ou pedir que se apague; pode também queixar-se à Comissão Nacional de Proteção de Dados (cnpd.pt). Este sítio não usa cookies nem segue quem o lê.",
+        "ligacoes_do_texto": [
+          {
+            "href": "mailto:correcoes@oestadodopais.pt",
+            "texto": "correcoes@oestadodopais.pt"
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "c782afb3ae14ad80cf19d3126a6016038f0e648505d1e1686548207c8974abba"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-privacidade-pt-1600.png",
+      "tipo": "pagina",
+      "familia": "privacidade",
+      "rota": "/privacidade/",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 900,
+        "h1": "Privacidade",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "texto": "O que fica guardado quando envia uma sugestão: o que escrever, a língua e a página de onde veio. O endereço IP não se guarda; dele fica, durante uma hora, uma marca que não o deixa recuperar, só para travar envios em massa. Os dados ficam em servidores na União Europeia, nos serviços que alojam o sítio e a caixa, que os tratam por conta do projeto. Guardam-se porque os enviou. Uma sugestão decidida apaga-se ao fim de noventa dias; uma por decidir, ao fim de um ano. Por estes dados responde O Estado do País, pelo endereço correcoes@oestadodopais.pt: escreva para saber o que enviou, corrigi-lo ou pedir que se apague; pode também queixar-se à Comissão Nacional de Proteção de Dados (cnpd.pt). Este sítio não usa cookies nem segue quem o lê.",
+        "ligacoes_do_texto": [
+          {
+            "href": "mailto:correcoes@oestadodopais.pt",
+            "texto": "correcoes@oestadodopais.pt"
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "3479e8804de55d4b52651ec3de5fa13b3367afc9d12dde257bed9f206e7c8690"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-privacidade-en-390.png",
+      "tipo": "pagina",
+      "familia": "privacidade",
+      "rota": "/en/privacy/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 1187,
+        "h1": "Privacy",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "texto": "What is kept when you send a suggestion: what you write, the language and the page you came from. The IP address is not kept; what remains of it, for one hour, is a mark from which it cannot be recovered, only to stop mass sending. The data is held on servers in the European Union, in the services that host the site and the box, which process it on the project's behalf. It is kept because you sent it. A decided suggestion is deleted after ninety days; an undecided one after a year. O Estado do País is responsible for this data, at correcoes@oestadodopais.pt: write to know what you sent, to correct it or to ask for it to be deleted; you may also complain to the Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt). This site does not use cookies or track who reads it.",
+        "ligacoes_do_texto": [
+          {
+            "href": "mailto:correcoes@oestadodopais.pt",
+            "texto": "correcoes@oestadodopais.pt"
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "a3739c621f273a80c54cd749f919244f6c55e194113052fce0754b145d774d3e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-privacidade-en-768.png",
+      "tipo": "pagina",
+      "familia": "privacidade",
+      "rota": "/en/privacy/",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 931,
+        "h1": "Privacy",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "texto": "What is kept when you send a suggestion: what you write, the language and the page you came from. The IP address is not kept; what remains of it, for one hour, is a mark from which it cannot be recovered, only to stop mass sending. The data is held on servers in the European Union, in the services that host the site and the box, which process it on the project's behalf. It is kept because you sent it. A decided suggestion is deleted after ninety days; an undecided one after a year. O Estado do País is responsible for this data, at correcoes@oestadodopais.pt: write to know what you sent, to correct it or to ask for it to be deleted; you may also complain to the Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt). This site does not use cookies or track who reads it.",
+        "ligacoes_do_texto": [
+          {
+            "href": "mailto:correcoes@oestadodopais.pt",
+            "texto": "correcoes@oestadodopais.pt"
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "a6b28281706b6c725a23de8170cb1b9410bd6e654113b0fda7022b88d4ddbc9c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-privacidade-en-1024.png",
+      "tipo": "pagina",
+      "familia": "privacidade",
+      "rota": "/en/privacy/",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 900,
+        "h1": "Privacy",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "texto": "What is kept when you send a suggestion: what you write, the language and the page you came from. The IP address is not kept; what remains of it, for one hour, is a mark from which it cannot be recovered, only to stop mass sending. The data is held on servers in the European Union, in the services that host the site and the box, which process it on the project's behalf. It is kept because you sent it. A decided suggestion is deleted after ninety days; an undecided one after a year. O Estado do País is responsible for this data, at correcoes@oestadodopais.pt: write to know what you sent, to correct it or to ask for it to be deleted; you may also complain to the Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt). This site does not use cookies or track who reads it.",
+        "ligacoes_do_texto": [
+          {
+            "href": "mailto:correcoes@oestadodopais.pt",
+            "texto": "correcoes@oestadodopais.pt"
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "a0ee658514287cb3ef33c34649d5a6798b9ce3c19d13c24bca02a44824c68ee5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-privacidade-en-1280.png",
+      "tipo": "pagina",
+      "familia": "privacidade",
+      "rota": "/en/privacy/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 900,
+        "h1": "Privacy",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "texto": "What is kept when you send a suggestion: what you write, the language and the page you came from. The IP address is not kept; what remains of it, for one hour, is a mark from which it cannot be recovered, only to stop mass sending. The data is held on servers in the European Union, in the services that host the site and the box, which process it on the project's behalf. It is kept because you sent it. A decided suggestion is deleted after ninety days; an undecided one after a year. O Estado do País is responsible for this data, at correcoes@oestadodopais.pt: write to know what you sent, to correct it or to ask for it to be deleted; you may also complain to the Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt). This site does not use cookies or track who reads it.",
+        "ligacoes_do_texto": [
+          {
+            "href": "mailto:correcoes@oestadodopais.pt",
+            "texto": "correcoes@oestadodopais.pt"
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "086b119263cdcb2708bf9f78b7e9cf122e57aaa17ec0356babaafccb2bde8630"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-privacidade-en-1600.png",
+      "tipo": "pagina",
+      "familia": "privacidade",
+      "rota": "/en/privacy/",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 900,
+        "h1": "Privacy",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "texto": "What is kept when you send a suggestion: what you write, the language and the page you came from. The IP address is not kept; what remains of it, for one hour, is a mark from which it cannot be recovered, only to stop mass sending. The data is held on servers in the European Union, in the services that host the site and the box, which process it on the project's behalf. It is kept because you sent it. A decided suggestion is deleted after ninety days; an undecided one after a year. O Estado do País is responsible for this data, at correcoes@oestadodopais.pt: write to know what you sent, to correct it or to ask for it to be deleted; you may also complain to the Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt). This site does not use cookies or track who reads it.",
+        "ligacoes_do_texto": [
+          {
+            "href": "mailto:correcoes@oestadodopais.pt",
+            "texto": "correcoes@oestadodopais.pt"
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "92e891bf788196d9d91e35d80d22771c7d43851cd0d47378badc5d2a0a6e8aba"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-inicio-pt-390.png",
+      "tipo": "pagina",
+      "familia": "inicio",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 7035,
+        "h1": "",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "3048736519e0351831a6d2e591ca4074df1f74e79b2b3775fe0e08c7b73b16b5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-inicio-pt-768.png",
+      "tipo": "pagina",
+      "familia": "inicio",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 5492,
+        "h1": "",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "efdd74b8cbe0e8162e4aeb097172f31ccd5be8265740737b9f621105607b77d4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-inicio-pt-1024.png",
+      "tipo": "pagina",
+      "familia": "inicio",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 4946,
+        "h1": "",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "5c64c24eeb77d298a7bc3d09f75876037138065a77d34224cc4f28132683adbd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-inicio-pt-1280.png",
+      "tipo": "pagina",
+      "familia": "inicio",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4840,
+        "h1": "",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "099d803c45383b7459e7e9ee494c90dae3ef941f2090e203f283d2f30ca19296"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-inicio-pt-1600.png",
+      "tipo": "pagina",
+      "familia": "inicio",
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 4857,
+        "h1": "",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "ac4ca109ce8fa38807201dc20f46586512d5e65c558eae7c069d100b5e252ee9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-inicio-en-390.png",
+      "tipo": "pagina",
+      "familia": "inicio",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6938,
+        "h1": "",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "0b69e3099f359f347edf0c86e2b9e7d4ac93b6c1cf79df4d8537e2e72d62f874"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-inicio-en-768.png",
+      "tipo": "pagina",
+      "familia": "inicio",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 5585,
+        "h1": "",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "d1833e23e08163aec4d2d9e1a70551bebc4d5d00cab5cde3d65ffa7d191ea36f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-inicio-en-1024.png",
+      "tipo": "pagina",
+      "familia": "inicio",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 5048,
+        "h1": "",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "04bb3d2fdd5728b708497af474ee222008504ad91ad2e33b188ffbd8cf291107"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-inicio-en-1280.png",
+      "tipo": "pagina",
+      "familia": "inicio",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4911,
+        "h1": "",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "8b597702ef982599cfe1435bda43476f104e2aee3b66edba4d923bdf5a214f4a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-inicio-en-1600.png",
+      "tipo": "pagina",
+      "familia": "inicio",
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 4928,
+        "h1": "",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "895a4c200b3ceb1ad785928025e39e4d8bc759dad29118d957c7b4a5a8d4e8f2"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-uniao-pt-390.png",
+      "tipo": "pagina",
+      "familia": "uniao",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 9760,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "faixas": [
+          {
+            "serie": "divida-publica-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 27,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              0.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "precos-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-desemprego-mip-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 22,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-emprego-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "desemprego-de-longa-duracao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 17,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              -1.5,
+              0.5,
+              2.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "racio-s80-s20-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "ihpc-variacao-homologa-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "45bc753a15e2bf43090160a79824c4066bf004c968f5140876898746cc56675d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-uniao-pt-768.png",
+      "tipo": "pagina",
+      "familia": "uniao",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 6949,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "faixas": [
+          {
+            "serie": "divida-publica-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 27,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              0.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "precos-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-desemprego-mip-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 22,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-emprego-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "desemprego-de-longa-duracao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 17,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              -1.5,
+              0.5,
+              2.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "racio-s80-s20-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "ihpc-variacao-homologa-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "7bc60b3daf6cbd70bb886df92819df4fe001b8a6c755ef9be2c2ad36e1b3abbc"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-uniao-pt-1024.png",
+      "tipo": "pagina",
+      "familia": "uniao",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 6807,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "faixas": [
+          {
+            "serie": "divida-publica-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 27,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              0.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "precos-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-desemprego-mip-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 22,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-emprego-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "desemprego-de-longa-duracao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 17,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              -1.5,
+              0.5,
+              2.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "racio-s80-s20-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "ihpc-variacao-homologa-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "ab0b8d943670a710fd044cbc9788be840f89fb18779c26cd2219698654c74d52"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-uniao-pt-1280.png",
+      "tipo": "pagina",
+      "familia": "uniao",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6666,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "faixas": [
+          {
+            "serie": "divida-publica-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 27,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              0.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "precos-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-desemprego-mip-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 22,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-emprego-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "desemprego-de-longa-duracao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 17,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              -1.5,
+              0.5,
+              2.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5,
+              1,
+              7
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "racio-s80-s20-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "ihpc-variacao-homologa-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "ddcfc948557117a82a6b04c548540ad270adf7ea1db8c425a7226a6e22428270"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-uniao-pt-1600.png",
+      "tipo": "pagina",
+      "familia": "uniao",
+      "rota": "/uniao-europeia/",
+      "lang": "pt",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 6682,
+        "h1": "Portugal falha 4 valores de referência do Procedimento dos Desequilíbrios Macroeconómicos e cumpre 9.",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "faixas": [
+          {
+            "serie": "divida-publica-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 27,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              0.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "precos-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-desemprego-mip-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 22,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-emprego-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "desemprego-de-longa-duracao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 17,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              -1.5,
+              0.5,
+              2.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "racio-s80-s20-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5,
+              1,
+              7
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "ihpc-variacao-homologa-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "9df1cbb971d56dd36c74747cce5ebebcc78f600fecdb31ddee9f98fe6ab0ed3c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-uniao-en-390.png",
+      "tipo": "pagina",
+      "familia": "uniao",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 9650,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "faixas": [
+          {
+            "serie": "divida-publica-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 27,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              0.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "precos-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-desemprego-mip-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 22,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-emprego-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "desemprego-de-longa-duracao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 17,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              -1.5,
+              0.5,
+              2.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "racio-s80-s20-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "ihpc-variacao-homologa-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "3ef95e9f90642ee4d4520137a42d546d5a88a280dd47e44327f07ae1401b9817"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-uniao-en-768.png",
+      "tipo": "pagina",
+      "familia": "uniao",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 768,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 6919,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "faixas": [
+          {
+            "serie": "divida-publica-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 27,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              0.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "precos-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-desemprego-mip-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 22,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-emprego-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "desemprego-de-longa-duracao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 17,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              -1.5,
+              0.5,
+              2.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5,
+              1,
+              7
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "racio-s80-s20-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "ihpc-variacao-homologa-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "9ebad5c997fd9141666d7ee11ef0582b05e21774e1aa6a247aaf50d1b30c7a87"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-uniao-en-1024.png",
+      "tipo": "pagina",
+      "familia": "uniao",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1024,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 6719,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "faixas": [
+          {
+            "serie": "divida-publica-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 27,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              0.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "precos-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-desemprego-mip-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 22,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-emprego-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "desemprego-de-longa-duracao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 17,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5,
+              -1,
+              1,
+              3,
+              7
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "racio-s80-s20-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "ihpc-variacao-homologa-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "054628adad1910967eb98f3fb9b2ffcfbf7ce957c4922d44a5cc33dc4be69945"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-uniao-en-1280.png",
+      "tipo": "pagina",
+      "familia": "uniao",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1280,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 6578,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "faixas": [
+          {
+            "serie": "divida-publica-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 27,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              0.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "precos-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-desemprego-mip-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 22,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-emprego-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "desemprego-de-longa-duracao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 17,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              -1.5,
+              0.5,
+              2.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "racio-s80-s20-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "ihpc-variacao-homologa-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "b2ca2b37fcc6fdd7527fa5caa8c186d0942414606c79bb6f028e1bd14e91e78b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-uniao-en-1600.png",
+      "tipo": "pagina",
+      "familia": "uniao",
+      "rota": "/en/european-union/",
+      "lang": "en",
+      "largura": 1600,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 6594,
+        "h1": "Portugal breaches 4 reference values of the Macroeconomic Imbalance Procedure and meets 9.",
+        "cookie_do_documento": "",
+        "porta_da_privacidade_no_rodape": 1,
+        "faixas": [
+          {
+            "serie": "divida-publica-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 27,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              0.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "precos-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-desemprego-mip-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 22,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "taxa-de-emprego-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "desemprego-de-longa-duracao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 17,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              -1.5,
+              0.5,
+              2.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "racio-s80-s20-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 25,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 26,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          },
+          {
+            "serie": "ihpc-variacao-homologa-paises",
+            "marcas": 28,
+            "marcas_de_pais": 27,
+            "posicoes_distintas_dos_paises": 27,
+            "posicoes_horizontais_distintas_dos_paises": 23,
+            "paises_escondidos_por_outro": 0,
+            "desvios_verticais": [
+              -5.5,
+              0.5,
+              6.5
+            ],
+            "etiquetas_do_toque": 28
+          }
+        ],
+        "cookies_do_contexto": [],
+        "pedidos_para_fora": []
+      },
+      "sha256": "cbc5134946f4ccf8e686ca07306834be6158d57a8f3427fd30373b1487eab06a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-menu-publicado-pt-390.png",
+      "tipo": "menu a 390 px",
+      "forma": "publicado",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "coluna": 354,
+        "natural": 343.7,
+        "falta": 0,
+        "linhas": 1,
+        "intervalo": 6,
+        "letra": "13px",
+        "rotulos": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "Europa",
+          "Sobre"
+        ],
+        "rotulo_da_uniao": "Europa"
+      },
+      "sha256": "693d3e41fd2d0908ecbfebb0ad422ca928e23bdd954a3a252250987886ca7494"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-menu-nome-inteiro-pt-390.png",
+      "tipo": "menu a 390 px",
+      "forma": "nome-inteiro",
+      "lang": "pt",
+      "largura": 390,
+      "medidas": {
+        "coluna": 354,
+        "natural": 401.9,
+        "falta": 47.9,
+        "linhas": 2,
+        "intervalo": 6,
+        "letra": "13px",
+        "rotulos": [
+          "Portugal",
+          "Lugares",
+          "Temas",
+          "Estudos",
+          "União Europeia",
+          "Sobre"
+        ],
+        "rotulo_da_uniao": "União Europeia"
+      },
+      "sha256": "d87b8b5f355ee26913c9932c7c6318197bcd49eca2da26d697eca618d0121202"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-menu-publicado-en-390.png",
+      "tipo": "menu a 390 px",
+      "forma": "publicado",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "coluna": 354,
+        "natural": 341.2,
+        "falta": 0,
+        "linhas": 1,
+        "intervalo": 6,
+        "letra": "13px",
+        "rotulos": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "Europe",
+          "About"
+        ],
+        "rotulo_da_uniao": "Europe"
+      },
+      "sha256": "695877bfb14209d9f96223d96adeba861f532be6b0e24d8a702fb2c3b3cb2d32"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-menu-nome-inteiro-en-390.png",
+      "tipo": "menu a 390 px",
+      "forma": "nome-inteiro",
+      "lang": "en",
+      "largura": 390,
+      "medidas": {
+        "coluna": 354,
+        "natural": 405.2,
+        "falta": 51.2,
+        "linhas": 2,
+        "intervalo": 6,
+        "letra": "13px",
+        "rotulos": [
+          "Portugal",
+          "Places",
+          "Themes",
+          "Studies",
+          "European Union",
+          "About"
+        ],
+        "rotulo_da_uniao": "European Union"
+      },
+      "sha256": "c047cd1e5ff78d00446894aae554f618d46b808323c7e2c94c6d1d4d9dd404d3"
+    },
+    {
+      "tipo": "faixas dos cartões",
+      "lang": "pt",
+      "largura": 390,
+      "faixas": [
+        {
+          "rota": "/precos/",
+          "serie": "ihpc-variacao-homologa-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/pobreza-e-desigualdade/",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/pobreza-e-desigualdade/",
+          "serie": "racio-s80-s20-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/emprego/",
+          "serie": "taxa-de-emprego-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/emprego/",
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/emprego/",
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/habitacao/",
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/habitacao/",
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/habitacao/",
+          "serie": "precos-da-habitacao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/estado-e-economia/",
+          "serie": "divida-publica-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        }
+      ],
+      "pedidos_para_fora": 0
+    },
+    {
+      "tipo": "faixas dos cartões",
+      "lang": "pt",
+      "largura": 1280,
+      "faixas": [
+        {
+          "rota": "/precos/",
+          "serie": "ihpc-variacao-homologa-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/pobreza-e-desigualdade/",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/pobreza-e-desigualdade/",
+          "serie": "racio-s80-s20-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/emprego/",
+          "serie": "taxa-de-emprego-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/emprego/",
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/emprego/",
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/habitacao/",
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/habitacao/",
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/habitacao/",
+          "serie": "precos-da-habitacao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/estado-e-economia/",
+          "serie": "divida-publica-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        }
+      ],
+      "pedidos_para_fora": 0
+    },
+    {
+      "tipo": "faixas dos cartões",
+      "lang": "en",
+      "largura": 390,
+      "faixas": [
+        {
+          "rota": "/en/prices/",
+          "serie": "ihpc-variacao-homologa-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/poverty-and-inequality/",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/poverty-and-inequality/",
+          "serie": "racio-s80-s20-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/employment/",
+          "serie": "taxa-de-emprego-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/employment/",
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/employment/",
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/housing/",
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/housing/",
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/housing/",
+          "serie": "precos-da-habitacao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/state-and-economy/",
+          "serie": "divida-publica-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        }
+      ],
+      "pedidos_para_fora": 0
+    },
+    {
+      "tipo": "faixas dos cartões",
+      "lang": "en",
+      "largura": 1280,
+      "faixas": [
+        {
+          "rota": "/en/prices/",
+          "serie": "ihpc-variacao-homologa-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/poverty-and-inequality/",
+          "serie": "risco-de-pobreza-ou-exclusao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/poverty-and-inequality/",
+          "serie": "racio-s80-s20-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/employment/",
+          "serie": "taxa-de-emprego-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/employment/",
+          "serie": "taxa-de-desemprego-mip-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/employment/",
+          "serie": "desemprego-de-longa-duracao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/housing/",
+          "serie": "sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/housing/",
+          "serie": "sobrecarga-do-custo-da-habitacao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/housing/",
+          "serie": "precos-da-habitacao-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        },
+        {
+          "rota": "/en/state-and-economy/",
+          "serie": "divida-publica-2025-paises",
+          "marcas_de_pais": 27,
+          "posicoes_distintas_dos_paises": 27,
+          "paises_escondidos_por_outro": 0,
+          "marcas_com_title": 28
+        }
+      ],
+      "pedidos_para_fora": 0
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-etiqueta-do-grupo-pt-1280.png",
+      "tipo": "etiqueta de um grupo ao passar o rato",
+      "lang": "pt",
+      "largura": 1280,
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "ponto": "FR",
+      "etiquetas_visiveis": [
+        {
+          "de": "desemprego-de-longa-duracao-2025-paises#FR",
+          "texto": "Estónia, França (definição diferente), Croácia e Suécia 1,8",
+          "paises": [
+            "EE",
+            "FR",
+            "HR",
+            "SE"
+          ],
+          "valores": 1
+        }
+      ],
+      "sha256": "e781ff2acfbf0c1594f7b7c686c9d05e27e1a64eda265be312f9dbab5b8c9b38"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h3-2026-10-05/depois-etiqueta-do-grupo-en-1280.png",
+      "tipo": "etiqueta de um grupo ao passar o rato",
+      "lang": "en",
+      "largura": 1280,
+      "serie": "desemprego-de-longa-duracao-2025-paises",
+      "ponto": "FR",
+      "etiquetas_visiveis": [
+        {
+          "de": "desemprego-de-longa-duracao-2025-paises#FR",
+          "texto": "Estonia, France (definition differs), Croatia and Sweden 1,8",
+          "paises": [
+            "EE",
+            "FR",
+            "HR",
+            "SE"
+          ],
+          "valores": 1
+        }
+      ],
+      "sha256": "c4264b0a981887303e367873effcc22d1dff3f1e659e15369e9a22f0e0db6b11"
+    }
+  ]
+}
