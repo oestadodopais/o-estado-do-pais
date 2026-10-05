@@ -1474,3 +1474,18 @@ A primeira página lê a unidade em `unidades-dos-cartoes.mjs` para a linha que 
 | `livro.serieNoTempo.uneDezena` | e, entre espaços | hífen |
 
 Os anos ingleses usam pares, como «nineteen ninety-two» e «twenty twenty-six», e o começo do milénio conserva «two thousand» e os anos seguintes por extenso. O conversor tem provas próprias. As exclusões só aparecem quando uma linha fica sem base utilizável no modo indexado; nenhuma página deste bloco usa esse modo.
+
+## H3 · a caixa das sugestões numa linha e a página «Privacidade», 05.10.2026
+
+Uma chave nova em `src/i18n/strings.mjs`, e três textos de dados ao lado, que não são chaves mas têm as duas edições e a mesma regra: o português é o do diretor, à letra (o §5 do brief H3), e o inglês é fiel.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `nav.privacidade` | Privacidade | Privacy | a porta do rodapé, ao lado da das sugestões, o `<h1>` da página e a última migalha do caminho dela; uma cadeia só para as três, como `nav.indice` |
+
+| texto de dados | pt | en | nota |
+|---|---|---|---|
+| `SUGESTOES.nota` (`src/data/sugestoes.mjs`) | Só guardamos o que escrever e a página de onde veio, para decidir a sugestão. | We only keep what you write and the page you came from, to decide on the suggestion. | as duas edições são as do brief, à letra (§5, decisão 1) |
+| `SUGESTOES.portaDaNota` | Como tratamos os seus dados | How we handle your data | a porta da nota para a página «Privacidade», as duas do brief |
+| `PRIVACIDADE.texto` (`src/data/privacidade.mjs`) | o texto do §5, decisão 2, do brief, à letra | a edição fiel, frase a frase | onde a frase portuguesa diz o mesmo que a nota aprovada a 03.10.2026, o inglês é o que o diretor aprovou com ela («What is kept», «The data is held on servers in the European Union», «A decided suggestion is deleted after ninety days; an undecided one after a year», «you may also complain to the Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt)»); onde mudou, diz o mesmo que a frase nova («what remains of it, for one hour, is a mark from which it cannot be recovered», «the services that host the site and the box», «O Estado do País is responsible for this data», «This site does not use cookies or track who reads it»). O nome do projeto fica em português, como em todas as páginas inglesas |
+| `PRIVACIDADE.descricao` | a primeira frase do texto | a primeira frase da edição inglesa | a descrição do `<head>`: o que a página é |

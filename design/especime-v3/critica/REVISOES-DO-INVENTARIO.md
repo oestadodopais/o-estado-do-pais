@@ -638,3 +638,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | rp4-b | composição dos títulos e das exclusões; unidade visível da primeira página | por ler | Codex gpt-6-astra, pelas decisões da leitura do Opus: cadeias nas duas edições, unidade lida da declaração dos cartões e conferida na célula dos blocos, artigos portugueses e anos ingleses por extenso. Sai a leitura do cartão europeu autónomo. A legenda da comparação reutiliza a cadeia existente. Os títulos e as exclusões são compostos e conferidos pela F21; as cadeias estão registadas no inventário sem as fazer passar por frases fixas. |
+
+## H3 · a caixa das sugestões numa linha e a página «Privacidade», 05.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| h3 | 8 cadeias novas, 2 retiradas | por ler | Claude Opus 5.5, construtor do H3: a linha da nota da caixa das sugestões e a sua porta, o título, o texto e a descrição da página «Privacidade», nas duas línguas, todos do diretor à letra (o §5 do brief H3) menos o inglês do texto da página, que é a edição fiel; e as duas linhas da nota de 03.10.2026, retiradas com a razão. Três exceções da voz mudaram em `VOZ-MARCADORES.md` (duas entram, uma alarga as rotas, uma sai), e a dispensa de «language» passou da nota para o texto inglês da página. A leitura cruzada faz-se antes da fusão. |

@@ -505,6 +505,10 @@ const ROTAS_DO_INVENTARIO = new Set([
   'sugestoesVazia',
   'sugestoesLimite',
   'sugestoesNaoChegou',
+  /* A PÁGINA «PRIVACIDADE» (bloco H3, 05.10.2026) entra no commit em que nasce, que é a regra desta lista. É uma página
+     do leitor, e a Emenda 15 governa-a: o título é o objeto da página, e o texto é divulgação (a informação que o
+     artigo 13.º do Regulamento (UE) 2016/679 manda dar a quem deixa os seus dados), como a nota da caixa era. */
+  'privacidade',
   /* `/agenda` entra na subetapa 4c, `/estudos` e `/estudos/<slug>` na 4e. São as
      páginas de leitura que a Emenda 15 governa e que o brief da etapa 4 manda
      medir a zero: nenhuma delas é a casa do método. */
@@ -1607,39 +1611,45 @@ for (const frases of frasesDaVozPorRota.values()) for (const t of frases) rendid
 const escapaParaRe = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /**
  * UMA RETIRADA DENTRO DE UMA FRASE DECLARADA, E SÓ DESSA (bloco S1, 02.10.2026; o texto da passagem S1-c,
- * 03.10.2026).
+ * 03.10.2026; desde a passagem de higiene H3, 05.10.2026, o texto inglês da página «Privacidade»).
  *
  * «Language» saiu da mobília com a segunda porta da língua (B1, peça 3), e a
  * sentinela procura-a por palavra inteira e sem maiúsculas em todo o texto
- * rendido. A nota do que fica guardado da caixa das sugestões, na edição
- * inglesa, diz «the language» no meio de uma frase, e é o texto aprovado pelo
- * diretor a 03.10.2026 (§1.154), à letra, que o construtor não muda. A dispensa
- * é para ESSA frase inteira, tal como a régua a lê (com o apóstrofo e as aspas
- * escapados pelo Astro), e para mais nenhuma: a palavra sozinha, noutra frase,
- * ou nesta frase com uma palavra mudada, continua a morder, e as plantas
+ * rendido. A nota do que fica guardado da caixa das sugestões dizia, na edição
+ * inglesa, «the language» no meio de uma frase; desde o H3 a nota é uma linha que
+ * não a diz, e é o texto inglês da página «Privacidade» que a diz («what you
+ * write, the language and the page you came from»), a edição fiel do texto que o
+ * diretor aprovou a 05.10.2026 (o §5, decisão 2, do brief H3), que o construtor
+ * não muda. A dispensa é para ESSE texto inteiro, tal como a régua o lê (com o
+ * apóstrofo escapado pelo Astro), e para mais nenhum: a palavra sozinha, noutra
+ * frase, ou neste texto com uma palavra mudada, continua a morder, e as plantas
  * `s1-voz-language-de-volta` e `s1-voz-nota-mudada-com-language`
- * (`tests/pais/portoes.mjs`) provam-no. Se a nota mudar, a dispensa deixa de
- * casar e a sentinela volta a morder, que é o que obriga quem a mudar a passar
+ * (`tests/pais/portoes.mjs`) provam-no. Se o texto mudar, a dispensa deixa de
+ * casar e a sentinela volta a morder, que é o que obriga quem o mudar a passar
  * por aqui.
  */
-const NOTA_INGLESA_DA_CAIXA_ANTES_DO_ENDERECO =
-  'What is kept: what you write, the language and the page you came from. The IP address is not kept: a salted ' +
-  'hash of it stays for one hour, only to stop mass sending, and is then deleted. The data is held on servers in ' +
-  'the European Union, in the two services that host this site and the box (Vercel and Supabase), which process ' +
-  'it on the project&#39;s behalf. It is kept because you sent it: by pressing &quot;Send the suggestion&quot; you ' +
-  'accept that it is kept for this purpose. A decided suggestion is deleted after ninety days; an undecided one ' +
-  'after a year. The project&#39;s direction is responsible for this processing, at';
-const NOTA_INGLESA_DA_CAIXA_DEPOIS_DO_ENDERECO =
-  'To know what you sent, to correct it or to ask for it to be deleted, write to that address; you may also ' +
-  'complain to the Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt).';
-/* As duas leituras da mesma frase: a da medida 8, com o endereço da ligação, e a da medida 9, que lê o texto
-   fora das ligações e por isso o perde. As duas são a mesma nota, e só a nota. */
+const PRIVACIDADE_INGLESA_ANTES_DO_ENDERECO =
+  'What is kept when you send a suggestion: what you write, the language and the page you came from. The IP ' +
+  'address is not kept; what remains of it, for one hour, is a mark from which it cannot be recovered, only to ' +
+  'stop mass sending. The data is held on servers in the European Union, in the services that host the site and ' +
+  'the box, which process it on the project&#39;s behalf. It is kept because you sent it. A decided suggestion is ' +
+  'deleted after ninety days; an undecided one after a year. O Estado do País is responsible for this data, at';
+const PRIVACIDADE_INGLESA_DEPOIS_DO_ENDERECO =
+  ': write to know what you sent, to correct it or to ask for it to be deleted; you may also complain to the ' +
+  'Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt). This site does not ' +
+  'use cookies or track who reads it.';
+/* As duas leituras do mesmo texto: a da medida 8, com o endereço da ligação, e a da medida 9, que lê o texto
+   fora das ligações e por isso o perde. As duas são o mesmo texto, e só ele. E a terceira: a descrição do `<head>` da
+   página, que é a primeira frase do mesmo texto, e que a régua lê como um bloco à parte. */
+const PRIVACIDADE_INGLESA_DESCRICAO =
+  'What is kept when you send a suggestion: what you write, the language and the page you came from.';
 const RETIRADAS_DENTRO_DE_FRASE = new Map([
   [
     'Language',
     new Set([
-      `${NOTA_INGLESA_DA_CAIXA_ANTES_DO_ENDERECO} correcoes@oestadodopais.pt . ${NOTA_INGLESA_DA_CAIXA_DEPOIS_DO_ENDERECO}`,
-      `${NOTA_INGLESA_DA_CAIXA_ANTES_DO_ENDERECO} . ${NOTA_INGLESA_DA_CAIXA_DEPOIS_DO_ENDERECO}`,
+      `${PRIVACIDADE_INGLESA_ANTES_DO_ENDERECO} correcoes@oestadodopais.pt ${PRIVACIDADE_INGLESA_DEPOIS_DO_ENDERECO}`,
+      `${PRIVACIDADE_INGLESA_ANTES_DO_ENDERECO} ${PRIVACIDADE_INGLESA_DEPOIS_DO_ENDERECO}`,
+      PRIVACIDADE_INGLESA_DESCRICAO,
     ]),
   ],
 ]);

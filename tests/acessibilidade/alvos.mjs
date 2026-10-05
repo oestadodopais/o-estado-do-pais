@@ -207,6 +207,9 @@ const FAMILIAS = [
      que partilham a mesma vista; a do obrigado é a que um leitor vê quando tudo correu bem. */
   ['sugestoes', null],
   ['sugestoesObrigado', null],
+  /* A PÁGINA «PRIVACIDADE» (bloco H3, 05.10.2026): uma página de serviço nova, com o texto e uma porta de correio; o axe
+     a zero e os alvos nas larguras desta régua, como as outras. */
+  ['privacidade', null],
   /* O ÍNDICE (bloco R3, 04.10.2026, o brief R3, §3, ponto 4): as portas das listas e o resumo de cada gaveta dos
      concelhos com o alvo de 44 px, e o axe a zero, nas larguras desta régua. */
   ['indice', null],
