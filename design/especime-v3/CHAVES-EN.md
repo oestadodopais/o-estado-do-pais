@@ -1474,3 +1474,20 @@ A primeira página lê a unidade em `unidades-dos-cartoes.mjs` para a linha que 
 | `livro.serieNoTempo.uneDezena` | e, entre espaços | hífen |
 
 Os anos ingleses usam pares, como «nineteen ninety-two» e «twenty twenty-six», e o começo do milénio conserva «two thousand» e os anos seguintes por extenso. O conversor tem provas próprias. As exclusões só aparecem quando uma linha fica sem base utilizável no modo indexado; nenhuma página deste bloco usa esse modo.
+
+## RP4-m e RP4-m-b · as séries derivadas de mais de uma série, o índice e a figura indexada (05.10.2026)
+
+*O bloco RP4-m acrescentou nove chaves a `livro.serieNoTempo` e não as escreveu aqui; a passagem RP4-m-b (a leitura a frio do Codex, o achado 9) mudou o texto de duas, a `derivadaFrase` do RP3 e a `derivadaFraseVarias` do RP4-m. As células foram lidas de `src/i18n/strings.mjs` na construção da passagem, por guião e não à mão; as peças com espaço nas pontas vão entre «» com o espaço.*
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `livro.serieNoTempo.derivadaFrase` | «Esta série é calculada pelo projeto, ponto a ponto, a partir de outra série do livro-razão.» | «This series is calculated by the project, point by point, from another series in the ledger.» | do RP3: a frase da conta no recibo de uma série derivada de uma série só (os cem euros de 2015). **Muda de texto na passagem RP4-m-b**: saiu a segunda metade, que dizia que a conta se refaz em cada construção do sítio, porque era a casa a falar de si própria numa página de conteúdo; a primeira metade, a proveniência, fica |
+| `livro.serieNoTempo.derivadaFraseVarias` | «Esta série é calculada pelo projeto, ponto a ponto, a partir de outras séries do livro-razão.» | «This series is calculated by the project, point by point, from other series in the ledger.» | do RP4-m: a mesma frase para uma derivada de mais de uma série (o salário real). **Muda de texto na passagem RP4-m-b**, pela mesma razão |
+| `livro.serieNoTempo.origensK` | «As séries de origem» | «The source series» | do RP4-m: o título da lista das séries de origem de uma derivada de mais de uma série |
+| `livro.serieNoTempo.indiceAntes` | «Um índice compara cada período com o período de base que a unidade nomeia, onde vale cem; em » | «An index compares each period with the base period its unit names, where it is one hundred; in » | do RP4-m: a frase do que um índice quer dizer em relação à base, em cinco peças; depois desta entra o período do último ponto |
+| `livro.serieNoTempo.indiceValia` | « valia » | « it was » | depois desta entra o valor do último ponto, pelos seus componentes |
+| `livro.serieNoTempo.indiceAcima` | «, acima da base.» | «, above the base.» | a palavra do lado, escolhida pela comparação do último ponto com cem |
+| `livro.serieNoTempo.indiceAbaixo` | «, abaixo da base.» | «, below the base.» | idem |
+| `livro.serieNoTempo.indiceIgual` | «, igual à base.» | «, equal to the base.» | idem |
+| `livro.serieNoTempo.indexadaAntes` | «As duas linhas valem cem em » | «Both lines are one hundred in » | do RP4-m: a legenda da figura indexada do recibo de uma derivada; entre as duas peças entra o período de base, pelo seu componente |
+| `livro.serieNoTempo.indexadaDepois` | «: o que cada uma sobe acima de cem é o que cresceu desde então.» | «: how far each rises above one hundred is how much it has grown since then.» | a segunda peça da legenda |
