@@ -122,4 +122,28 @@ A decisão da antiga I195 do RP4, agora I197, está implementada em `2348c727`. 
 
 As conferências intermédias do cartão, das séries, das entradas, da voz e dos tipos passaram. As plantas da K20 incluem um cartão sem série própria nem comparação com série, a ausência da série própria, a ausência da comparação, a troca da série, da legenda e da porta, a ordem e um cartão com ambas as séries. A S5 continua a recusar uma comparação europeia desfasada. Os registos `rp4-b-cartao.json`, `rp4-b-series.json` e `rp4-b-entradas.json` guardam os controlos e as mordidas; estas conferências não substituem os portões finais.
 
-A leitura a frio ainda não tinha chegado ao terminar a decisão. A espera e cada conferência ficam em `rp4-b-espera.json`. A tabela dos achados, os códigos finais, as cabeças após o rebase e o custo serão fechados antes da entrega. O custo parcial é lido da sessão por `custo-rp4-b.py`; a linha final `tokens used` só fica disponível depois de o lançador terminar.
+A leitura e o registo das plantas chegaram durante a espera, antes do rebase. A espera e cada conferência ficam em `rp4-b-espera.json`. Os achados foram lidos por inteiro; as correções reais seguintes estão em `65067f6b`, antes do rebase. Os códigos finais e as cabeças após o rebase serão fechados antes da entrega. O custo parcial é lido da sessão por `custo-rp4-b.py`; a linha final `tokens used` só fica disponível depois de o lançador terminar.
+
+
+| Achado, pela ordem da leitura | Resposta RP4-b | Prova |
+|---|---|---|
+| 1 · F21 filtrada | Planta P2, ausente do ramo. A chamada conserva todos os erros. | Resumo da fonte recebida contra o original, em `rp4-b-plantas-da-leitura.json`; F21 nos portões finais. |
+| 2 · primeiro ponto deslocado | Planta P5, só na cópia do HTML. O desenho entregue é recomposto. | F21 sobre as duas edições construídas. |
+| 3 · série dos alimentos na primeira página | Planta P3, ausente do ramo. Mantém-se a série da inflação. | Resumo do original e célula da primeira página. |
+| 4 · lacunas interpoladas | Planta P1, ausente do ramo. Mantém-se a quebra. | Resumo do original e prova da lacuna no módulo. |
+| 5 · contagem falsa das plantas | Planta P4, ausente do relatório recebido. | Resumo do relatório original e contagens das plantas medidas nesta passagem. |
+| 6 · cartão europeu repetido | Sai o cartão autónomo. O cartão da comparação desenha a linha europeia, identificada e com o seu recibo. I197 fechada. | K20, E2 e S5, com controlos íntegros e plantas. |
+| 7 · unidade ausente na primeira página | A unidade visível vem da declaração do cartão da linha presa à série. A célula dos blocos confere-a também na corrida da voz. Os recibos conservam nome e unidade visíveis no cabeçalho. | Plantas da unidade retirada e trocada; voz e primeira página. |
+| 8 · gráficos e eixos demasiado grandes | A largura máxima de cada SVG é a largura do seu `viewBox`, sem múltiplo. As capturas passam a medir o mínimo e o máximo das letras e a recusar fora do intervalo decidido. | Planta da largura máxima retirada; medidas de cada captura. |
+| 9 · ponto isolado invisível | Um segmento de um ponto rende um círculo. A F21 recompõe o centro, o raio e a identidade. | Série sintética com um ponto entre lacunas; a forma antiga deixa de contar como segmento visível e é recusada pela F21. |
+| 10 · uma base ausente impede todas as séries | A linha sem base ou com base nula fica fora, com nome e razão na legenda. Só se recusa o desenho quando nenhuma linha tem base utilizável. | Provas de exclusão parcial, base nula e ausência de todas as bases; planta da legenda retirada. Nenhuma página usa o modo indexado. |
+| 11 · títulos acessíveis | Artigos nos trimestres e semestres portugueses; conversor próprio para anos ingleses. Na primeira página o título diz período e unidade, sem repetir o nome visível. | Casos conhecidos do conversor e recomposição dos títulos pela F21. |
+| 12 · provas antigas ou ausentes do pacote | O inventário dos rótulos será regenerado sobre a construção final, com o carimbo dessa cabeça. A corrida inteira após o rebase cobre o brief corrigido. O custo parcial declara a sua origem e o limite da linha final. | Inventário, `check:briefs`, portões, capturas das duas edições e `custo-rp4-b.json`. Os outros pontos são limites do pacote recebido. |
+| 13 · coordenadas recompostas pelo leitor | Conservada a recomposição de toda a geometria. | F21. |
+| 14 · composição dos desenhos | Recontada na corrida final, depois da mudança de lugar da série europeia. | Saída F21 dos portões. |
+| 15 · pontos, colunas e bandeiras dos recibos | Conservados. | S6 e capturas dos recibos. |
+| 16 · séries dos cartões | A regra passa a abranger a linha própria e a comparação declarada. | K20 nas duas edições; S5 para o último ponto. |
+| 17 · só algarismos de escala | Conservado; os títulos e as legendas de exclusão continuam por extenso. | F2 e F21. |
+| 18 · códigos, cabeças e higiene | Provas refeitas na cabeça posterior ao rebase. | Ficheiros dos portões e conferência de higiene. |
+| 19 · números do relatório e I196 | I196 conservada fechada. As contagens desta passagem saem das novas provas. | `conferir-relatorio.py` e JSON das medições. |
+| 20 · bases indexadas e SVG como raiz | Conservados, com a exclusão parcial acrescentada. | Provas do módulo, F2 e F21. |

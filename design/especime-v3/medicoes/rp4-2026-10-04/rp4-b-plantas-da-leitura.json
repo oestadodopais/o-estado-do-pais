@@ -1,0 +1,38 @@
+{
+  "comando": "git show 94907da8:<ficheiro>, sha256 contra o registo das plantas",
+  "plantas": [
+    {
+      "id": "P1",
+      "cabeca": "94907da8",
+      "ficheiro": "src/lib/formas/serie-do-pais.mjs",
+      "sha256": "705627362feb6010d631d3603bba6d6fa4dee7464096d9d8672cf97cf0f24e67",
+      "igual_ao_original": true,
+      "diferente_da_planta": true
+    },
+    {
+      "id": "P2",
+      "cabeca": "94907da8",
+      "ficheiro": "scripts/check-formas.mjs",
+      "sha256": "807768c6924f9413b91d0cab9831ff69db4e55f417a6578b340cde8144489913",
+      "igual_ao_original": true,
+      "diferente_da_planta": true
+    },
+    {
+      "id": "P3",
+      "cabeca": "94907da8",
+      "ficheiro": "src/data/primeira-pagina.mjs",
+      "sha256": "707b2b34ea2e8cce417db976fa7586547c0c78d888516765b57c5f9a26d5ae8d",
+      "igual_ao_original": true,
+      "diferente_da_planta": true
+    },
+    {
+      "id": "P4",
+      "cabeca": "94907da8",
+      "ficheiro": "design/especime-v3/medicoes/rp4-2026-10-04/LEIA-ME.md",
+      "sha256": "c8e03944dade2d94242d73532a0e5b685007d1e32a6656bb757559eaf561555a",
+      "igual_ao_original": true,
+      "diferente_da_planta": true
+    }
+  ],
+  "P5": "A geometria construída é recomposta pela F21; a planta só alterava o HTML da cópia do pacote."
+}

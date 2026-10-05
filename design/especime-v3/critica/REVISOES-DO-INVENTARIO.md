@@ -632,3 +632,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | h2 | composição condicional | por ler | Codex gpt-6-astra: o estado dos estudos recentes e, no H2-b, o horizonte lido da ficha. Leitura H2 pelo Claude Opus registada; a nova formulação continua por ler antes da fusão. |
+
+## RP4-b · palavras dos desenhos, 05.10.2026
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| rp4-b | composição dos títulos e das exclusões; unidade visível da primeira página | por ler | Codex gpt-6-astra, pelas decisões da leitura do Opus: cadeias nas duas edições, unidade lida da declaração dos cartões e conferida na célula dos blocos, artigos portugueses e anos ingleses por extenso. Sai a leitura do cartão europeu autónomo. A legenda da comparação reutiliza a cadeia existente. Os títulos e as exclusões são compostos e conferidos pela F21; as cadeias estão registadas no inventário sem as fazer passar por frases fixas. |

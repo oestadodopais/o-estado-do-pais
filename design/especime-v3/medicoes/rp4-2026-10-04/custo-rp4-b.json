@@ -4,23 +4,23 @@
     "gpt-6-astra"
   ],
   "inicio": "2026-10-05T06:47:22.431Z",
-  "medido_em": "2026-10-05T06:55:57.831644+00:00",
-  "segundos_observados": 515,
+  "medido_em": "2026-10-05T07:21:06.386954+00:00",
+  "segundos_observados": 2023,
   "telemetria_parcial": {
-    "hora": "2026-10-05T06:55:16.085Z",
+    "hora": "2026-10-05T07:20:49.216Z",
     "simbolos": {
-      "input_tokens": 2824584,
-      "cached_input_tokens": 2678272,
+      "input_tokens": 10031153,
+      "cached_input_tokens": 9801472,
       "cache_write_input_tokens": 0,
-      "output_tokens": 12944,
-      "reasoning_output_tokens": 2979,
-      "total_tokens": 2837528
+      "output_tokens": 38470,
+      "reasoning_output_tokens": 12422,
+      "total_tokens": 10069623
     },
     "limites": {
       "limit_id": "codex",
       "limit_name": null,
       "primary": {
-        "used_percent": 92.0,
+        "used_percent": 94.0,
         "window_minutes": 10080,
         "resets_at": 1791580360
       },

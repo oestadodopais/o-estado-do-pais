@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-05T00:24:35+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/lib/formas/serie-do-pais.mjs",
+   "descricao": "a linha deixa de quebrar nas lacunas declaradas (interpola por cima delas), contra a regra 7 do §5",
+   "sha256_antes": "705627362feb6010d631d3603bba6d6fa4dee7464096d9d8672cf97cf0f24e67",
+   "sha256_depois": "f87651858e3ba7947095da5a48c71f878ca1e38e05fe537d06da9bde4c0368f6",
+   "contexto_antes": ", campo, marcasX, marcasY,\n    linhas: linhas.map((l) => {\n      /** @type {string[][]} */\n      const segmentos = [];\n      for (const p of l.dados) {\n        if (!segmentos.length || p.quebra) segmentos.push([]);\n        segmentos[segmentos.length - 1].push(`${x(p.x)},${y(p.valor)}`);\n      }\n      return { id: l.id, base: l.base, primeiro: l.dados[0].periodo, ultimo: l",
+   "contexto_depois": ", campo, marcasX, marcasY,\n    linhas: linhas.map((l) => {\n      /** @type {string[][]} */\n      const segmentos = [];\n      for (const p of l.dados) {\n        if (!segmentos.length) segmentos.push([]);\n        segmentos[segmentos.length - 1].push(`${x(p.x)},${y(p.valor)}`);\n      }\n      return { id: l.id, base: l.base, primeiro: l.dados[0].periodo, ultimo: l"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "scripts/check-formas.mjs",
+   "descricao": "a F21 só reporta os erros das marcas; uma coordenada que não bate passa em silêncio",
+   "sha256_antes": "807768c6924f9413b91d0cab9831ff69db4e55f417a6578b340cde8144489913",
+   "sha256_depois": "fd44cca872129625e991d8c7582db4b582feff2ab6fa241eed73cdc34a580435",
+   "contexto_antes": ". */\n  for (const svg of root.querySelectorAll('svg[data-forma=\"serie-do-pais\"]')) {\n    desenhosRP4++;\n    const lang = rota?.lang === 'en' ? 'en' : 'pt';\n    for (const e of conferirSerie(svg, lang)) err(`${rel}: ${e}`);\n    if (svg.getAttribute('data-modo') !== 'unidade') err(`${rel}: F21 · nenhuma página usa o modo indexado neste bloco`);\n    if (rota?.key === 'serie') {\n    ",
+   "contexto_depois": ". */\n  for (const svg of root.querySelectorAll('svg[data-forma=\"serie-do-pais\"]')) {\n    desenhosRP4++;\n    const lang = rota?.lang === 'en' ? 'en' : 'pt';\n    for (const e of conferirSerie(svg, lang)) if (e.includes('marca')) err(`${rel}: ${e}`);\n    if (svg.getAttribute('data-modo') !== 'unidade') err(`${rel}: F21 · nenhuma página usa o modo indexado neste bloco`);\n    if (rota?.key === 'serie') {\n    "
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/data/primeira-pagina.mjs",
+   "descricao": "o bloco dos preços da primeira página declara a série dos alimentos onde a página construída desenha a inflação",
+   "sha256_antes": "707b2b34ea2e8cce417db976fa7586547c0c78d888516765b57c5f9a26d5ae8d",
+   "sha256_depois": "ff4003c298e0ad6aaf4867a08eba15488d0f26e42dfcd0731cd337f644cb5d25",
+   "contexto_antes": " peso da habitação', literal: 'total housing costs', origem: 'glossario-sobrecarga' },\n];\n\nexport const BLOCOS_DA_PRIMEIRA_PAGINA = [\n  {\n    id: 'precos',\n    serie: 'serie-ipc-variacao-homologa',\n    entrada: 'precos',\n    titulo: { pt: 'Os preços: os combustíveis sobem mais do que o resto', en: 'Prices: fuel is rising faster than the rest' },\n    frase",
+   "contexto_depois": " peso da habitação', literal: 'total housing costs', origem: 'glossario-sobrecarga' },\n];\n\nexport const BLOCOS_DA_PRIMEIRA_PAGINA = [\n  {\n    id: 'precos',\n    serie: 'serie-ipc-alimentacao-variacao-homologa',\n    entrada: 'precos',\n    titulo: { pt: 'Os preços: os combustíveis sobem mais do que o resto', en: 'Prices: fuel is rising faster than the rest' },\n    frase"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 7 de 8 plantas da K20 onde as provas dizem 8 de 8",
+   "sha256_antes": "c8e03944dade2d94242d73532a0e5b685007d1e32a6656bb757559eaf561555a",
+   "sha256_depois": "939434bc110824157df36b23db8611a76f67c78c72af3bc8903efd513ff83a1f",
+   "contexto_antes": "as.json`. |\n| 3 · cartões | Todos os cartões presos mostram a série depois do valor e abrem o recibo na língua da página. | 7 linhas distintas em PT e 7 em EN; 8 de 8 plantas da K20 mordem. |\n| 4 · recibos | Gráfico antes da tabela anual, datas completas acessíveis, bandeiras e lacunas conservadas. A tabela desloca-se dentro da página e responde ",
+   "contexto_depois": "as.json`. |\n| 3 · cartões | Todos os cartões presos mostram a série depois do valor e abrem o recibo na língua da página. | 7 linhas distintas em PT e 7 em EN; 7 de 8 plantas da K20 mordem. |\n| 4 · recibos | Gráfico antes da tabela anual, datas completas acessíveis, bandeiras e lacunas conservadas. A tabela desloca-se dentro da página e responde "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/precos/index.html",
+   "descricao": "o primeiro ponto da linha da inflação na página dos preços construída está deslocado uma unidade no eixo vertical, contra a recomposição do módulo",
+   "sha256_antes": "45157b2c5eca2217821e48d4fc006f2ded6c21ed3b6b60cd5f67d38451ea84a8",
+   "sha256_depois": "47d8aa72d10fef02c25eab65effa208b311a75014e2b67dc759e65682c575362",
+   "contexto_antes": "2\" y1=\"130\" y2=\"134\"></line><text data-nonledger=\"escala-de-instrumento\" x=\"222\" y=\"152\" text-anchor=\"end\">2026</text></g><polyline class=\"serie-do-pais-linha\" data-serie-linha=\"serie-ipc-variacao-homologa\" points=\"48,44.981 48.419,48.403 48.839,45.866 49.258,40.556 49.677,39.671 50.096,41.382 50.516,41.559 50.935,42.916 51.354,44.096 51.773,45.453 52.193,46.456 52.612,47.813 53.031,49.76 53.451,52.415 53.87,55.",
+   "contexto_depois": "2\" y1=\"130\" y2=\"134\"></line><text data-nonledger=\"escala-de-instrumento\" x=\"222\" y=\"152\" text-anchor=\"end\">2026</text></g><polyline class=\"serie-do-pais-linha\" data-serie-linha=\"serie-ipc-variacao-homologa\" points=\"48,45.981 48.419,48.403 48.839,45.866 49.258,40.556 49.677,39.671 50.096,41.382 50.516,41.559 50.935,42.916 51.354,44.096 51.773,45.453 52.193,46.456 52.612,47.813 53.031,49.76 53.451,52.415 53.87,55."
+  }
+ ]
+}
