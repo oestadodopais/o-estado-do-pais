@@ -1,0 +1,537 @@
+{
+  "dist_commit": "dd2e347caf5f2fb913cf60cfb4f6b8e55fa86081",
+  "construido_em": "2026-10-05T20:41:14.988Z",
+  "paginas_lidas": 7899,
+  "paginas_com_desenhos": 58,
+  "conhecido_positivo_primeira_pagina": true,
+  "conhecido_positivo_recibo_da_inflacao": true,
+  "desenhos": 82,
+  "zonas_de_leitura": 9474,
+  "bytes": 12758006,
+  "gzip": 1254443,
+  "brotli": 835750,
+  "paginas": [
+    {
+      "pagina": "areas/trabalho-solidariedade-e-seguranca-social/index.html",
+      "bytes": 69879,
+      "gzip": 9183,
+      "brotli": 7688,
+      "desenhos": 4,
+      "zonas_de_leitura": 0,
+      "sha256": "20b7cc76f5e72ce0e578b343a7b4a4952db66e27d24b5d0129b307d31f6354f6"
+    },
+    {
+      "pagina": "en/areas/trabalho-solidariedade-e-seguranca-social/index.html",
+      "bytes": 69357,
+      "gzip": 9178,
+      "brotli": 7450,
+      "desenhos": 4,
+      "zonas_de_leitura": 0,
+      "sha256": "0d8fa5309e486c18dd030c36b397f931cd78db5224d4a4ef51ae4a6b1e965054"
+    },
+    {
+      "pagina": "en/housing/index.html",
+      "bytes": 77576,
+      "gzip": 17928,
+      "brotli": 13097,
+      "desenhos": 2,
+      "zonas_de_leitura": 0,
+      "sha256": "844c77ca2afed567f235c47acaab8bbde2664aec4e711cf218e8f85ea77b4195"
+    },
+    {
+      "pagina": "en/index.html",
+      "bytes": 204595,
+      "gzip": 27029,
+      "brotli": 19386,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "fc8fcbaa267a0140b8b24fe0307f325af7dcc52077a9817ab5c7a81c41b70b53"
+    },
+    {
+      "pagina": "en/ledger/series/serie-beneficiarios-do-rsi-por-mil/index.html",
+      "bytes": 21815,
+      "gzip": 5532,
+      "brotli": 4645,
+      "desenhos": 1,
+      "zonas_de_leitura": 2,
+      "sha256": "80402c28e81742b131267bfe76d1d6f5f9a0121c101a19d9d8ff9d1f3ef2bc79"
+    },
+    {
+      "pagina": "en/ledger/series/serie-cem-euros-de-2015-01/index.html",
+      "bytes": 116681,
+      "gzip": 14209,
+      "brotli": 9516,
+      "desenhos": 1,
+      "zonas_de_leitura": 140,
+      "sha256": "d6fac4b63195a99212cb6cb516c5a87a7a3b99d07ad498cd435d4446c81f447d"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ihpc-combustiveis-variacao-homologa-ue/index.html",
+      "bytes": 256422,
+      "gzip": 23480,
+      "brotli": 16191,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "ca3510ab082980eacc96afa4a0ceb8a9f21005d6d82a1ed9bea375457ffe028a"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ihpc-combustiveis-variacao-homologa/index.html",
+      "bytes": 269051,
+      "gzip": 24766,
+      "brotli": 16759,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "c96e4cbdc0f0206042d017b712c094cddaa6b2158bed47bda9be8f6330888092"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ihpc-energia-da-casa-variacao-homologa/index.html",
+      "bytes": 272788,
+      "gzip": 24054,
+      "brotli": 15969,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "546f03385786c9caca002486453065edd7c7fb9c2013212e816eaf738541fb82"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ihpc-rendas-variacao-homologa/index.html",
+      "bytes": 260261,
+      "gzip": 22652,
+      "brotli": 14824,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "f71c68520b882d69ff1af4b2f314b25493082aeb9ac39734e0522bef3c31dd61"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ihpc-variacao-homologa-ue/index.html",
+      "bytes": 239632,
+      "gzip": 21897,
+      "brotli": 14521,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "96d904a31931e2690447fc6f3b0f46dc995819dd05ec97b516022429340898cd"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ihpc-variacao-homologa/index.html",
+      "bytes": 251856,
+      "gzip": 23497,
+      "brotli": 15510,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "343a431d97f755bc3008395d2ee8618dbe9636b06231ac2cdf9aef76fe34ef3d"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-alimentacao-variacao-homologa/index.html",
+      "bytes": 353483,
+      "gzip": 31461,
+      "brotli": 20100,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "b7d3db7d725f22cef68fe11eb228605f3e0cc1e7184ccba86134f0b6509355fd"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-combustiveis-variacao-homologa/index.html",
+      "bytes": 622276,
+      "gzip": 46430,
+      "brotli": 28542,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "d906822233511a3c7927d93691960523e07cc43d7f33bd23f6d00afde4fd1e1b"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-energia-em-casa-variacao-homologa/index.html",
+      "bytes": 631978,
+      "gzip": 46892,
+      "brotli": 28359,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "e2a9eb6b144b71b56f25d884c3e132604d836f1b4d445f93c3cc9c61c45b9fc8"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-indice-anual/index.html",
+      "bytes": 80932,
+      "gzip": 11443,
+      "brotli": 8004,
+      "desenhos": 1,
+      "zonas_de_leitura": 78,
+      "sha256": "67bc533745a8e864b6033cd63603e1a03a17ddc93f75f98bf49922d39db5ccd1"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-indice/index.html",
+      "bytes": 551860,
+      "gzip": 48934,
+      "brotli": 28709,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "a3c7c5bfd7fb1df7aa99ed8a30a57e5a426e842bbec0b76c8f19af55bc306b8f"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-rendas-variacao-homologa/index.html",
+      "bytes": 602437,
+      "gzip": 47370,
+      "brotli": 28915,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "a3973b9788337ce2e8de79b7457a607759a3b87fa506e7de1907b8ca151b13c9"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-sem-habitacao-variacao-media-12-meses/index.html",
+      "bytes": 362962,
+      "gzip": 30758,
+      "brotli": 19290,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "d1490ff146e218c5110c43a48a5650509c355912c819f56085084c1223d289b1"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-variacao-homologa/index.html",
+      "bytes": 331651,
+      "gzip": 31046,
+      "brotli": 19677,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "4886755bb850c503905ce87ceb3452deb279e23c3f31146c9775c53ca3269533"
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-variacao-media-12-meses/index.html",
+      "bytes": 338375,
+      "gzip": 30583,
+      "brotli": 19102,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "3959916c519a3b05e634021b11742f309bf21103729dc5d766bf6f882608e399"
+    },
+    {
+      "pagina": "en/ledger/series/serie-linha-de-risco-de-pobreza/index.html",
+      "bytes": 45627,
+      "gzip": 8124,
+      "brotli": 6244,
+      "desenhos": 1,
+      "zonas_de_leitura": 29,
+      "sha256": "7f2e475f1a1628a469c658ca38d42fae23f668ae8bbd5cc173a9c7a4aa13a6e0"
+    },
+    {
+      "pagina": "en/ledger/series/serie-pensao-media-anual/index.html",
+      "bytes": 26779,
+      "gzip": 6097,
+      "brotli": 5058,
+      "desenhos": 1,
+      "zonas_de_leitura": 9,
+      "sha256": "fde03328b996f4453eda6a114d86be947372f889aa8d2ebb4ce57f91a6c8912a"
+    },
+    {
+      "pagina": "en/ledger/series/serie-precos-da-habitacao-variacao-homologa/index.html",
+      "bytes": 77218,
+      "gzip": 10163,
+      "brotli": 7556,
+      "desenhos": 1,
+      "zonas_de_leitura": 70,
+      "sha256": "f206363403f59f778afcda5303d24e1e3b2819cdf31886fa906f2aa7d3b21724"
+    },
+    {
+      "pagina": "en/ledger/series/serie-remuneracao-bruta-mensal-media-anual/index.html",
+      "bytes": 31016,
+      "gzip": 6387,
+      "brotli": 5285,
+      "desenhos": 1,
+      "zonas_de_leitura": 12,
+      "sha256": "1d7f9f7b8f7fa7c99dcbd68c2a1d80c6e5e17df274179906e3a6e826ac88f0e9"
+    },
+    {
+      "pagina": "en/ledger/series/serie-remuneracao-bruta-mensal-media-real/index.html",
+      "bytes": 23372,
+      "gzip": 5387,
+      "brotli": 4412,
+      "desenhos": 1,
+      "zonas_de_leitura": 0,
+      "sha256": "90fef798c2a393394b9bac49de643a6a7878e8cfaceffbfb12fff428a7b04366"
+    },
+    {
+      "pagina": "en/ledger/series/serie-remuneracao-bruta-mensal-media/index.html",
+      "bytes": 27055,
+      "gzip": 6215,
+      "brotli": 5222,
+      "desenhos": 1,
+      "zonas_de_leitura": 6,
+      "sha256": "5c945e7a520f1fe592d9fe91a1659b709f82c127cd24f46d7a8880230f1e83bb"
+    },
+    {
+      "pagina": "en/ledger/series/serie-salario-minimo-mensal/index.html",
+      "bytes": 62300,
+      "gzip": 9078,
+      "brotli": 6685,
+      "desenhos": 1,
+      "zonas_de_leitura": 56,
+      "sha256": "5d3ba480f6006c55ede354b7baf684128de28b1b3011de7c3db5040f71bded19"
+    },
+    {
+      "pagina": "en/pay-pensions-and-benefits/index.html",
+      "bytes": 47565,
+      "gzip": 8530,
+      "brotli": 7046,
+      "desenhos": 4,
+      "zonas_de_leitura": 0,
+      "sha256": "42e0d4d86e73859421ec0013e962361f75086ad898cbd5f2d80f4700df910644"
+    },
+    {
+      "pagina": "en/prices/index.html",
+      "bytes": 99751,
+      "gzip": 27523,
+      "brotli": 18992,
+      "desenhos": 6,
+      "zonas_de_leitura": 0,
+      "sha256": "e47f8df2513cda11a4873b27c40f37549d7f9aa64af34d3490e2c73259053e65"
+    },
+    {
+      "pagina": "habitacao/index.html",
+      "bytes": 78225,
+      "gzip": 17949,
+      "brotli": 13379,
+      "desenhos": 2,
+      "zonas_de_leitura": 0,
+      "sha256": "b3b76692091eb4ccb19669e18a071c07a75b15fa66da5f6a4ed754868aa5db40"
+    },
+    {
+      "pagina": "index.html",
+      "bytes": 206041,
+      "gzip": 26982,
+      "brotli": 19744,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "d34814e3d0ae82887316da4952a9b28d4c2ed7b98d23879892227068fbdb9480"
+    },
+    {
+      "pagina": "livro-razao/series/serie-beneficiarios-do-rsi-por-mil/index.html",
+      "bytes": 21861,
+      "gzip": 5523,
+      "brotli": 4736,
+      "desenhos": 1,
+      "zonas_de_leitura": 2,
+      "sha256": "7293f4f980a15bfbbcb28f6905bf8dbd25dc73e9c97b4fba3ac07465d1b723f3"
+    },
+    {
+      "pagina": "livro-razao/series/serie-cem-euros-de-2015-01/index.html",
+      "bytes": 117634,
+      "gzip": 14306,
+      "brotli": 9667,
+      "desenhos": 1,
+      "zonas_de_leitura": 140,
+      "sha256": "14dee1027dffd87c90b5165c461758e44ce68a1c644fb5705b27f4d852b7f02b"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ihpc-combustiveis-variacao-homologa-ue/index.html",
+      "bytes": 258511,
+      "gzip": 23584,
+      "brotli": 16428,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "207c7691ba13da8a6f92af920477e65a0a239368a9c78b59e30ff638daedc641"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ihpc-combustiveis-variacao-homologa/index.html",
+      "bytes": 271318,
+      "gzip": 24851,
+      "brotli": 17048,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "c5cc19cd68540bdb9e4938c70131780f0264456884034ab63bf6599e24f3e07b"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ihpc-energia-da-casa-variacao-homologa/index.html",
+      "bytes": 275013,
+      "gzip": 24160,
+      "brotli": 16248,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "8f9f26ec4c265de0d24f14bbb6d7c6ac370b1ffab476abf40ac072c9d5bbf616"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ihpc-rendas-variacao-homologa/index.html",
+      "bytes": 262479,
+      "gzip": 22749,
+      "brotli": 15115,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "6788a43a91292e94886cf4024354a37d525d51eefc3ce2831e2a7b391e9e4ce7"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ihpc-variacao-homologa-ue/index.html",
+      "bytes": 241632,
+      "gzip": 21975,
+      "brotli": 14707,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "89e3095eca927ae359d544ffa258ec3d2905ba29e260371e3b59b59b336d8799"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ihpc-variacao-homologa/index.html",
+      "bytes": 254035,
+      "gzip": 23588,
+      "brotli": 15703,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "6701daef56306836a28adc6270c6dd0e7069e8502ad71ee52e513030288b9229"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-alimentacao-variacao-homologa/index.html",
+      "bytes": 355895,
+      "gzip": 31478,
+      "brotli": 20405,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "f805738df92383b5c4b3b743154f696d285c9feadf62445c90602dd6915fa252"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-combustiveis-variacao-homologa/index.html",
+      "bytes": 626436,
+      "gzip": 46501,
+      "brotli": 28702,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "99bdd0c90f7efe8417104905a5baee045edae068116b7e55da928470c9707c67"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-energia-em-casa-variacao-homologa/index.html",
+      "bytes": 636090,
+      "gzip": 46910,
+      "brotli": 28577,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "7e9e716f034915f0da2e2418d0343da404fb65417e204a856481aacbfe5d7f7c"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-indice-anual/index.html",
+      "bytes": 80964,
+      "gzip": 11455,
+      "brotli": 8100,
+      "desenhos": 1,
+      "zonas_de_leitura": 78,
+      "sha256": "4b066c1b351c015960bf12712ce06100aeed2b0b4f8cefcb171fcebab1690e42"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-indice/index.html",
+      "bytes": 556043,
+      "gzip": 48947,
+      "brotli": 28863,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "4e37bcba537db03ccd39d47714fd6ff54a71fc50f53c16166ddfbc8f6f3b066f"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-rendas-variacao-homologa/index.html",
+      "bytes": 606541,
+      "gzip": 47381,
+      "brotli": 29019,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "68d03fa65d119e3287370479f778e95f348af5cf1df930418a273a9ad54491ef"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-sem-habitacao-variacao-media-12-meses/index.html",
+      "bytes": 365298,
+      "gzip": 30774,
+      "brotli": 19466,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "0ecbf95212ba67218e891d7d5480196da79d3643b6a07060630174dcdc9837c0"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "bytes": 333991,
+      "gzip": 31078,
+      "brotli": 19915,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "9ee6ae476c022530a13e0fac0d66d289029a19c3e7386cab13afa17fe5166dee"
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-variacao-media-12-meses/index.html",
+      "bytes": 340655,
+      "gzip": 30608,
+      "brotli": 19336,
+      "desenhos": 1,
+      "zonas_de_leitura": 289,
+      "sha256": "ed485a72f38fdacc8ad473e89ff1f792ccc4227ff6d88a24f3764b4b359da6b8"
+    },
+    {
+      "pagina": "livro-razao/series/serie-linha-de-risco-de-pobreza/index.html",
+      "bytes": 45631,
+      "gzip": 8174,
+      "brotli": 6419,
+      "desenhos": 1,
+      "zonas_de_leitura": 29,
+      "sha256": "4b20f1bad7a26d5387eb6ab961c2de702f7508476caf0fb08fc05286b65c6724"
+    },
+    {
+      "pagina": "livro-razao/series/serie-pensao-media-anual/index.html",
+      "bytes": 26713,
+      "gzip": 6098,
+      "brotli": 5163,
+      "desenhos": 1,
+      "zonas_de_leitura": 9,
+      "sha256": "a065483f63a2a0c5c9ad8b96598612bf811bca2cf3407fe973f9c544e2307ded"
+    },
+    {
+      "pagina": "livro-razao/series/serie-precos-da-habitacao-variacao-homologa/index.html",
+      "bytes": 77743,
+      "gzip": 10210,
+      "brotli": 7628,
+      "desenhos": 1,
+      "zonas_de_leitura": 70,
+      "sha256": "e390bb82256aef3042c5d61298abdc9a88c7bda25597eba2b303dcfb159d851c"
+    },
+    {
+      "pagina": "livro-razao/series/serie-remuneracao-bruta-mensal-media-anual/index.html",
+      "bytes": 31030,
+      "gzip": 6384,
+      "brotli": 5369,
+      "desenhos": 1,
+      "zonas_de_leitura": 12,
+      "sha256": "361a38f9158b02ab50daa2202bd2ba788c806b23f15ade4cefaf60cc48d6325b"
+    },
+    {
+      "pagina": "livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html",
+      "bytes": 23546,
+      "gzip": 5423,
+      "brotli": 4535,
+      "desenhos": 1,
+      "zonas_de_leitura": 0,
+      "sha256": "3258a9648843fef75aee394ebb499743d4224b5a030772033acf0316f2338dc8"
+    },
+    {
+      "pagina": "livro-razao/series/serie-remuneracao-bruta-mensal-media/index.html",
+      "bytes": 27137,
+      "gzip": 6197,
+      "brotli": 5308,
+      "desenhos": 1,
+      "zonas_de_leitura": 6,
+      "sha256": "c0184d71006e93a390fd13c7aacd8e6f00131bda1243dd7f467bb8dce0a18f34"
+    },
+    {
+      "pagina": "livro-razao/series/serie-salario-minimo-mensal/index.html",
+      "bytes": 62943,
+      "gzip": 9142,
+      "brotli": 6813,
+      "desenhos": 1,
+      "zonas_de_leitura": 56,
+      "sha256": "6dec07fac5f30afaddfbc5a92098afca4f251250052c137ba6af58dff0666889"
+    },
+    {
+      "pagina": "precos/index.html",
+      "bytes": 100103,
+      "gzip": 27593,
+      "brotli": 19247,
+      "desenhos": 6,
+      "zonas_de_leitura": 0,
+      "sha256": "77eb0b50850102144ee3714b76c0618732834b343b92c3054cc11d3b16640c6f"
+    },
+    {
+      "pagina": "salarios-pensoes-e-apoios/index.html",
+      "bytes": 47948,
+      "gzip": 8597,
+      "brotli": 7356,
+      "desenhos": 4,
+      "zonas_de_leitura": 0,
+      "sha256": "1830fb5aaa52e16dd6942b2f8fcb8c7e2334ffaaf8038f407a0f90c7a8190a55"
+    }
+  ]
+}

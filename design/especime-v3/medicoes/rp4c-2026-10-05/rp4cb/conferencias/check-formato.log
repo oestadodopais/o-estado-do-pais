@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 check:formato
+> node tests/inicio/formato-dos-numeros.mjs --prova
+
+formato dos números · 7874 páginas, 54484 valores, 57912 algarismos declarados vistos à procura do símbolo ao lado («%» 11704 com espaço e 0 colado(s); «€» 0 depois e 0 antes) · 10 de 10 plantas a morder
+  ✓ todos os valores rendidos estão no formato da casa: os milhares com U+00A0, a vírgula decimal, o sinal menos, o espaço antes de «%» e o dinheiro com a palavra.

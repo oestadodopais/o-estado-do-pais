@@ -26,8 +26,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
-registo = Path(sys.argv[1])
-SAIDA = Path(sys.argv[2]).name if len(sys.argv) > 2 else "custo.json"
+# A PASSAGEM RP4-c-b (05.10.2026): `--desde <instante ISO>` conta só as entradas do registo desde esse instante (a passagem
+# corre na mesma sessão do bloco), e a saída pode ser um caminho dentro desta pasta (`rp4cb/custo.json`).
+args = [a for a in sys.argv[1:]]
+DESDE = None
+if "--desde" in args:
+    i = args.index("--desde"); DESDE = args[i + 1]; del args[i:i + 2]
+registo = Path(args[0])
+SAIDA = args[1] if len(args) > 1 else "custo.json"
 dados = registo.read_bytes()
 por_id = {}
 modelos = {}
@@ -35,6 +41,8 @@ primeira = ultima = None
 for linha in dados.decode("utf-8").splitlines():
     d = json.loads(linha)
     t = d.get("timestamp")
+    if DESDE and (not t or t < DESDE):
+        continue
     if t:
         primeira = primeira or t
         ultima = t
@@ -57,7 +65,7 @@ def instante(s):
 
 agora = datetime.now(timezone.utc)
 saida = {
-    "o_que": "o custo do bloco RP4-c, lido do registo da sessão do construtor (custo.py)" if SAIDA == "custo.json"
+    "o_que": "o custo do bloco RP4-c, lido do registo da sessão do construtor (custo.py)" if SAIDA == "custo.json" and not DESDE
               else f"o custo da passagem que escreveu {SAIDA}, lido do registo da sessão do seu construtor (custo.py)",
     "registo_sha256": hashlib.sha256(dados).hexdigest(),
     "respostas_do_modelo": len(por_id),
@@ -73,6 +81,9 @@ saida = {
     "lido_em": agora.strftime("%Y-%m-%dT%H:%M:%SZ"),
     "segundos": int((agora - instante(primeira)).total_seconds()) if primeira else None,
     "segundos_quer_dizer": "da primeira entrada do registo da sessão até ao momento desta leitura",
+    "desde": DESDE,
+    "desde_quer_dizer": "só as entradas do registo desde este instante (a passagem que escreveu o ficheiro); null quer dizer o registo inteiro",
 }
+(AQUI / SAIDA).parent.mkdir(parents=True, exist_ok=True)
 (AQUI / SAIDA).write_text(json.dumps(saida, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(json.dumps({k: saida[k] for k in ("respostas_do_modelo", "simbolos_de_entrada", "simbolos_de_saida_minimo", "respostas_com_a_saida_de_um_momento_do_fluxo", "segundos")}, ensure_ascii=False))
