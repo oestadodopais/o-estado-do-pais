@@ -1,0 +1,28 @@
+{
+  "o_que": "a limpeza dos caminhos da máquina nos registos desta pasta (limpar-registos.py)",
+  "ficheiros_limpos": [
+    {
+      "ficheiro": "portoes/build.log",
+      "trocas": 1,
+      "sha256_antes": "7c3cd660821a55a1f01b21072063df8df030c2a872b0c24514fe434a9db7d5ed",
+      "sha256_depois": "50c3253c154c45a0bd35cc123ab0e85b42ed5764c313ace175b46d6ac19b3024"
+    },
+    {
+      "ficheiro": "portoes/verify.log",
+      "trocas": 2,
+      "sha256_antes": "49640f284d9a9daf5ba03ee7526e4d38ed4bd14ce0d7812c86516e953aa049e1",
+      "sha256_depois": "0d4a3ad38d8f2ae7548ded7073a108d0763b2e2c58dbdad6a2a92c28d2d499db"
+    }
+  ],
+  "ficheiros_limpos_quantos": 2,
+  "trocas": 3,
+  "segunda_corrida": {
+    "trocas": 0,
+    "restos_depois": []
+  },
+  "primeira_corrida_restos": [
+    "limpar-registos.py"
+  ],
+  "primeira_corrida_restos_quer_dizer": "a primeira corrida apontou o próprio guião, que trazia escritas as pastas temporárias do sistema na sua expressão; o guião passou a compô-las por partes, e a segunda corrida (abaixo) não achou trocas nem restos",
+  "restos_depois": []
+}

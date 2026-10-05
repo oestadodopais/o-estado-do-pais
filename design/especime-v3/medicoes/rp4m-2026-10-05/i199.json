@@ -1,0 +1,37 @@
+{
+  "o_que": "I199: uma corrida delimitada do painel semanal de dentro de indicators/, sem PYTHONPATH (cd indicators && python3 refresh.py --site <cópia temporária do sítio> --linhas taxa-de-emprego-2025 --saida <pasta temporária>)",
+  "codigo": 1,
+  "codigo_quer_dizer": "1 = alarmes (o vigia dos limiares, contra a linha de base do master); 3 e 4 seriam sem rede; um erro de importação daria uma exceção",
+  "sem_no_module_named": true,
+  "linhas_da_saida": [
+    "sítio: <tmp>/sitio",
+    "1 claims in study 'quadro-institucional'",
+    "ok      taxa-de-emprego-2025",
+    "ALARM   (all): threshold — the numeric content of the Commission MIP scoreboard page changed — thresholds may have been revised. Read it before trusting any 'limiar' on the site.",
+    "vintages: 91 linha(s) com história · 0 entrada(s) nova(s) · 155 no total",
+    "corrida delimitada: sem carimbo global do sítio",
+    "reconferências escritas: 0 igual · 0 diverge · 0 inacessível · 1 já escrita(s) hoje",
+    "1 alarm(s) · 0 notice(s) · heartbeat stamped 2026-10-05T12:43:34+00:00"
+  ],
+  "pedidos": [
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsi_emp_a?format=JSON&lang=EN&geo=PT&indic_em=EMP_LFS&sex=T&age=Y20-64&unit=PC_POP",
+      "http": 200,
+      "erro": null,
+      "cliente": "core.http.HttpClient.condicional",
+      "user_agent": "OEstadoDoPais/corredor",
+      "bytes": 4109,
+      "tentativa": 1
+    },
+    {
+      "url": "https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en",
+      "http": 200,
+      "erro": null,
+      "cliente": "core.http.HttpClient.condicional",
+      "user_agent": "OEstadoDoPais/corredor",
+      "bytes": 75638,
+      "tentativa": 1
+    }
+  ],
+  "ficheiros_por_confirmar_do_motor_intactos": true
+}

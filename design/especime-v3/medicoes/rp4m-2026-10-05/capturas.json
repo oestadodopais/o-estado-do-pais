@@ -1,0 +1,1658 @@
+{
+  "o_que": "RP4-m: as capturas da construção local",
+  "cabeca": "711d38027e1caa88b54169a43eb5496e86459308",
+  "construida": null,
+  "capturas": 70,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "rotas": [
+    "precos",
+    "habitacao",
+    "indice",
+    "salario-real",
+    "remuneracao",
+    "combustiveis"
+  ],
+  "erros": [],
+  "plantas": [
+    {
+      "nome": "um cartão mais largo do que o ecrã",
+      "lang": "pt",
+      "larga": 2087,
+      "mordeu": true
+    },
+    {
+      "nome": "um cartão mais largo do que o ecrã",
+      "lang": "en",
+      "larga": 2087,
+      "mordeu": true
+    },
+    {
+      "nome": "o traço da série do recibo sem tracejado",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "o traço da série do recibo sem tracejado",
+      "lang": "en",
+      "mordeu": true
+    }
+  ],
+  "lista": [
+    {
+      "lang": "pt",
+      "nome": "precos",
+      "rota": "/precos/",
+      "largura": 390,
+      "ficheiro": "pt-precos-390.png",
+      "bytes": 246032,
+      "sha256": "ae4af9b004e81d03c8ba47e34c85454cc63c5e8c388dbbe14a4e8a4fcee0426f",
+      "pagina": 390,
+      "desenhos": 6,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-variacao-homologa",
+        "serie-ipc-variacao-media-12-meses",
+        "serie-ipc-alimentacao-variacao-homologa",
+        "serie-ipc-energia-em-casa-variacao-homologa",
+        "serie-ipc-combustiveis-variacao-homologa",
+        "serie-ihpc-variacao-homologa-ue"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "pt",
+      "nome": "cartao-da-comparacao",
+      "rota": "/precos/",
+      "largura": 390,
+      "ficheiro": "pt-cartao-da-comparacao-390.png",
+      "bytes": 58416,
+      "sha256": "70d57877c877275e564c2658871ffbb6ff3b2e89a3b5ddcffbb4c088bf36bd13"
+    },
+    {
+      "lang": "pt",
+      "nome": "precos",
+      "rota": "/precos/",
+      "largura": 768,
+      "ficheiro": "pt-precos-768.png",
+      "bytes": 251872,
+      "sha256": "a0232c5d8d1a076e14f860735d87435a97e5194bfee69eddc5d300da4e6eb995",
+      "pagina": 768,
+      "desenhos": 6,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-variacao-homologa",
+        "serie-ipc-variacao-media-12-meses",
+        "serie-ipc-alimentacao-variacao-homologa",
+        "serie-ipc-energia-em-casa-variacao-homologa",
+        "serie-ipc-combustiveis-variacao-homologa",
+        "serie-ihpc-variacao-homologa-ue"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "pt",
+      "nome": "cartao-da-comparacao",
+      "rota": "/precos/",
+      "largura": 768,
+      "ficheiro": "pt-cartao-da-comparacao-768.png",
+      "bytes": 58698,
+      "sha256": "917d502906865d44e207d449fdd89a22a8848e774fe511d703a60e713c337331"
+    },
+    {
+      "lang": "pt",
+      "nome": "precos",
+      "rota": "/precos/",
+      "largura": 1024,
+      "ficheiro": "pt-precos-1024.png",
+      "bytes": 242758,
+      "sha256": "2614b7e63780d8a0d6d5ef8408a4ac566992c7e67d4d89db6af8f31c94acb1a8",
+      "pagina": 1024,
+      "desenhos": 6,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-variacao-homologa",
+        "serie-ipc-variacao-media-12-meses",
+        "serie-ipc-alimentacao-variacao-homologa",
+        "serie-ipc-energia-em-casa-variacao-homologa",
+        "serie-ipc-combustiveis-variacao-homologa",
+        "serie-ihpc-variacao-homologa-ue"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "pt",
+      "nome": "cartao-da-comparacao",
+      "rota": "/precos/",
+      "largura": 1024,
+      "ficheiro": "pt-cartao-da-comparacao-1024.png",
+      "bytes": 58678,
+      "sha256": "7e1a1f79d69bd199ae0c1b5eb82bec09237c61025953b9e797f0a0033d9b6561"
+    },
+    {
+      "lang": "pt",
+      "nome": "precos",
+      "rota": "/precos/",
+      "largura": 1280,
+      "ficheiro": "pt-precos-1280.png",
+      "bytes": 252718,
+      "sha256": "b03b39d7ce3c585cda0bb3fc966a393a5ae860114742040b11dae4002a5f312c",
+      "pagina": 1280,
+      "desenhos": 6,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-variacao-homologa",
+        "serie-ipc-variacao-media-12-meses",
+        "serie-ipc-alimentacao-variacao-homologa",
+        "serie-ipc-energia-em-casa-variacao-homologa",
+        "serie-ipc-combustiveis-variacao-homologa",
+        "serie-ihpc-variacao-homologa-ue"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "pt",
+      "nome": "cartao-da-comparacao",
+      "rota": "/precos/",
+      "largura": 1280,
+      "ficheiro": "pt-cartao-da-comparacao-1280.png",
+      "bytes": 58347,
+      "sha256": "6ec0308e9836fc8764e488f183e76f8652550a511e0208a04235dc3f2db18cd9"
+    },
+    {
+      "lang": "pt",
+      "nome": "precos",
+      "rota": "/precos/",
+      "largura": 1600,
+      "ficheiro": "pt-precos-1600.png",
+      "bytes": 256633,
+      "sha256": "ec644aea193a15ad612996923c946dc962c3dc1add1c02b5f962da1c1b1f9455",
+      "pagina": 1600,
+      "desenhos": 6,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-variacao-homologa",
+        "serie-ipc-variacao-media-12-meses",
+        "serie-ipc-alimentacao-variacao-homologa",
+        "serie-ipc-energia-em-casa-variacao-homologa",
+        "serie-ipc-combustiveis-variacao-homologa",
+        "serie-ihpc-variacao-homologa-ue"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "pt",
+      "nome": "cartao-da-comparacao",
+      "rota": "/precos/",
+      "largura": 1600,
+      "ficheiro": "pt-cartao-da-comparacao-1600.png",
+      "bytes": 59263,
+      "sha256": "cf3948495709f6327a499582f5fce10630fe9e25132c493ce09c956b1b1e85bc"
+    },
+    {
+      "lang": "en",
+      "nome": "precos",
+      "rota": "/en/prices/",
+      "largura": 390,
+      "ficheiro": "en-precos-390.png",
+      "bytes": 239027,
+      "sha256": "14d01d2a61a76b8320f4db02d4703bc9d6d02df4491566e9edcf2adacad18018",
+      "pagina": 390,
+      "desenhos": 6,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-variacao-homologa",
+        "serie-ipc-variacao-media-12-meses",
+        "serie-ipc-alimentacao-variacao-homologa",
+        "serie-ipc-energia-em-casa-variacao-homologa",
+        "serie-ipc-combustiveis-variacao-homologa",
+        "serie-ihpc-variacao-homologa-ue"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "en",
+      "nome": "cartao-da-comparacao",
+      "rota": "/en/prices/",
+      "largura": 390,
+      "ficheiro": "en-cartao-da-comparacao-390.png",
+      "bytes": 56581,
+      "sha256": "635d4451dbb8d0a7a263276389581f6aa8d90846d151f903c6bb1427e2cebf71"
+    },
+    {
+      "lang": "en",
+      "nome": "precos",
+      "rota": "/en/prices/",
+      "largura": 768,
+      "ficheiro": "en-precos-768.png",
+      "bytes": 236852,
+      "sha256": "e73ec84ac6bc2af29ff7c04dcf6ffb8645fa9bc8e2d8d171616f20802aebb967",
+      "pagina": 768,
+      "desenhos": 6,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-variacao-homologa",
+        "serie-ipc-variacao-media-12-meses",
+        "serie-ipc-alimentacao-variacao-homologa",
+        "serie-ipc-energia-em-casa-variacao-homologa",
+        "serie-ipc-combustiveis-variacao-homologa",
+        "serie-ihpc-variacao-homologa-ue"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "en",
+      "nome": "cartao-da-comparacao",
+      "rota": "/en/prices/",
+      "largura": 768,
+      "ficheiro": "en-cartao-da-comparacao-768.png",
+      "bytes": 57064,
+      "sha256": "ca03d7c15bdcf8f9415580e0ee9732bf17805b7aa9d8e2e0ede56011863299a1"
+    },
+    {
+      "lang": "en",
+      "nome": "precos",
+      "rota": "/en/prices/",
+      "largura": 1024,
+      "ficheiro": "en-precos-1024.png",
+      "bytes": 232678,
+      "sha256": "79e58de2163a25e67548c8606fe0e18938674c790796b22d4dfe0daa04fb0a9a",
+      "pagina": 1024,
+      "desenhos": 6,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-variacao-homologa",
+        "serie-ipc-variacao-media-12-meses",
+        "serie-ipc-alimentacao-variacao-homologa",
+        "serie-ipc-energia-em-casa-variacao-homologa",
+        "serie-ipc-combustiveis-variacao-homologa",
+        "serie-ihpc-variacao-homologa-ue"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "en",
+      "nome": "cartao-da-comparacao",
+      "rota": "/en/prices/",
+      "largura": 1024,
+      "ficheiro": "en-cartao-da-comparacao-1024.png",
+      "bytes": 56553,
+      "sha256": "2b3b9740c317c97a2ccc78ce2ad951f611af68e8b4e431ff902f0a9bef0896c2"
+    },
+    {
+      "lang": "en",
+      "nome": "precos",
+      "rota": "/en/prices/",
+      "largura": 1280,
+      "ficheiro": "en-precos-1280.png",
+      "bytes": 248774,
+      "sha256": "3707f3b66e65a4bdd395528e3612472f8d52e17674e0a0ad90ae27af75eca586",
+      "pagina": 1280,
+      "desenhos": 6,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-variacao-homologa",
+        "serie-ipc-variacao-media-12-meses",
+        "serie-ipc-alimentacao-variacao-homologa",
+        "serie-ipc-energia-em-casa-variacao-homologa",
+        "serie-ipc-combustiveis-variacao-homologa",
+        "serie-ihpc-variacao-homologa-ue"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "en",
+      "nome": "cartao-da-comparacao",
+      "rota": "/en/prices/",
+      "largura": 1280,
+      "ficheiro": "en-cartao-da-comparacao-1280.png",
+      "bytes": 56627,
+      "sha256": "6a771170cdc8057857395ed2288baf5730209b71620206a5ea46e75cfed299b3"
+    },
+    {
+      "lang": "en",
+      "nome": "precos",
+      "rota": "/en/prices/",
+      "largura": 1600,
+      "ficheiro": "en-precos-1600.png",
+      "bytes": 244011,
+      "sha256": "c906bdb656bfd9d92d0348e284164bd8d32167bacd7766af76534a757947822e",
+      "pagina": 1600,
+      "desenhos": 6,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-variacao-homologa",
+        "serie-ipc-variacao-media-12-meses",
+        "serie-ipc-alimentacao-variacao-homologa",
+        "serie-ipc-energia-em-casa-variacao-homologa",
+        "serie-ipc-combustiveis-variacao-homologa",
+        "serie-ihpc-variacao-homologa-ue"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "en",
+      "nome": "cartao-da-comparacao",
+      "rota": "/en/prices/",
+      "largura": 1600,
+      "ficheiro": "en-cartao-da-comparacao-1600.png",
+      "bytes": 57382,
+      "sha256": "2759e268eb31cf6de83abb56dda11be16950484a2d39c795a2d410032d07cbfa"
+    },
+    {
+      "lang": "pt",
+      "nome": "habitacao",
+      "rota": "/habitacao/",
+      "largura": 390,
+      "ficheiro": "pt-habitacao-390.png",
+      "bytes": 272584,
+      "sha256": "1f33fbd8114107f5954e2119e7d5fcdcb16b5e07a550a5737e6e84d86f487193",
+      "pagina": 390,
+      "desenhos": 2,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-rendas-variacao-homologa",
+        "serie-ipc-sem-habitacao-variacao-media-12-meses"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "pt",
+      "nome": "habitacao",
+      "rota": "/habitacao/",
+      "largura": 768,
+      "ficheiro": "pt-habitacao-768.png",
+      "bytes": 284754,
+      "sha256": "374358a2f044ba706e8f505fc774fdd6af9bd9c74ad47f7dd7a71eea6a7427c2",
+      "pagina": 768,
+      "desenhos": 2,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-rendas-variacao-homologa",
+        "serie-ipc-sem-habitacao-variacao-media-12-meses"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "pt",
+      "nome": "habitacao",
+      "rota": "/habitacao/",
+      "largura": 1024,
+      "ficheiro": "pt-habitacao-1024.png",
+      "bytes": 293072,
+      "sha256": "748660583eaa7e8c3d0c7aa42e8b4e8a08366c4665ff3cd2d4d1a92b39b942dc",
+      "pagina": 1024,
+      "desenhos": 2,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-rendas-variacao-homologa",
+        "serie-ipc-sem-habitacao-variacao-media-12-meses"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "pt",
+      "nome": "habitacao",
+      "rota": "/habitacao/",
+      "largura": 1280,
+      "ficheiro": "pt-habitacao-1280.png",
+      "bytes": 312083,
+      "sha256": "9a7a56d3eaba6ae8adad736f4fae0d2303ac412b6ae9df4dd97821d99e02bca0",
+      "pagina": 1280,
+      "desenhos": 2,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-rendas-variacao-homologa",
+        "serie-ipc-sem-habitacao-variacao-media-12-meses"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "pt",
+      "nome": "habitacao",
+      "rota": "/habitacao/",
+      "largura": 1600,
+      "ficheiro": "pt-habitacao-1600.png",
+      "bytes": 304477,
+      "sha256": "ab48bc89b2029de4f1b5b8d0a389af42f2e1f94ff029fc283d6d70e3f7543bd8",
+      "pagina": 1600,
+      "desenhos": 2,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-rendas-variacao-homologa",
+        "serie-ipc-sem-habitacao-variacao-media-12-meses"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "en",
+      "nome": "habitacao",
+      "rota": "/en/housing/",
+      "largura": 390,
+      "ficheiro": "en-habitacao-390.png",
+      "bytes": 260236,
+      "sha256": "ec3221048d6aac35b2fb5adb9cb0a7d2ff3de36bb9252d5a776273ff859029b1",
+      "pagina": 390,
+      "desenhos": 2,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-rendas-variacao-homologa",
+        "serie-ipc-sem-habitacao-variacao-media-12-meses"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "en",
+      "nome": "habitacao",
+      "rota": "/en/housing/",
+      "largura": 768,
+      "ficheiro": "en-habitacao-768.png",
+      "bytes": 262892,
+      "sha256": "843e6d703f7cf59d975963b319a1040f517452dec175f70fa9c66d953e173ed3",
+      "pagina": 768,
+      "desenhos": 2,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-rendas-variacao-homologa",
+        "serie-ipc-sem-habitacao-variacao-media-12-meses"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "en",
+      "nome": "habitacao",
+      "rota": "/en/housing/",
+      "largura": 1024,
+      "ficheiro": "en-habitacao-1024.png",
+      "bytes": 280337,
+      "sha256": "05d05996109f404fcaba5d84a1c9ae674799b1b2e6c20bbe35a85222824c67a1",
+      "pagina": 1024,
+      "desenhos": 2,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-rendas-variacao-homologa",
+        "serie-ipc-sem-habitacao-variacao-media-12-meses"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "en",
+      "nome": "habitacao",
+      "rota": "/en/housing/",
+      "largura": 1280,
+      "ficheiro": "en-habitacao-1280.png",
+      "bytes": 295453,
+      "sha256": "875d240dfe2d40b574ebb68c6df792bb6f2d3bb2d0f7e454c359244931fcf8af",
+      "pagina": 1280,
+      "desenhos": 2,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-rendas-variacao-homologa",
+        "serie-ipc-sem-habitacao-variacao-media-12-meses"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "en",
+      "nome": "habitacao",
+      "rota": "/en/housing/",
+      "largura": 1600,
+      "ficheiro": "en-habitacao-1600.png",
+      "bytes": 288374,
+      "sha256": "6959ea4788fe653f3e175e36cf93142f0d4577ce55a2f451bd05f8c0ffd06bdc",
+      "pagina": 1600,
+      "desenhos": 2,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [
+        "serie-ipc-rendas-variacao-homologa",
+        "serie-ipc-sem-habitacao-variacao-media-12-meses"
+      ],
+      "fraseDoIndice": null,
+      "unidade": null,
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": null
+    },
+    {
+      "lang": "pt",
+      "nome": "indice",
+      "rota": "/livro-razao/series/serie-ipc-indice/",
+      "largura": 390,
+      "ficheiro": "pt-indice-390.png",
+      "bytes": 452788,
+      "sha256": "a8ad05b18bdc7a7a5c643151b8e45878cc9fa02cc19bcefc6c7da07f600891da",
+      "pagina": 390,
+      "desenhos": 1,
+      "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
+      "cartoesComSerie": [],
+      "fraseDoIndice": "Um índice compara cada período com o período de base que a unidade nomeia, onde vale cem; em agosto de 2026 valia 103,276, acima da base.",
+      "unidade": "índice (base 2025 = 100)",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.818",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "indice",
+      "rota": "/livro-razao/series/serie-ipc-indice/",
+      "largura": 768,
+      "ficheiro": "pt-indice-768.png",
+      "bytes": 633066,
+      "sha256": "33bc9f7f38dd0eb10df1c933c8153e876ee23999252efc748c175feea996cefd",
+      "pagina": 768,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": "Um índice compara cada período com o período de base que a unidade nomeia, onde vale cem; em agosto de 2026 valia 103,276, acima da base.",
+      "unidade": "índice (base 2025 = 100)",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.818",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "indice",
+      "rota": "/livro-razao/series/serie-ipc-indice/",
+      "largura": 1024,
+      "ficheiro": "pt-indice-1024.png",
+      "bytes": 597737,
+      "sha256": "1b23b74c7e18ef1cd2c7164674bef90c83f72811eba3b18644cd71971b1fa797",
+      "pagina": 1024,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": "Um índice compara cada período com o período de base que a unidade nomeia, onde vale cem; em agosto de 2026 valia 103,276, acima da base.",
+      "unidade": "índice (base 2025 = 100)",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.818",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "indice",
+      "rota": "/livro-razao/series/serie-ipc-indice/",
+      "largura": 1280,
+      "ficheiro": "pt-indice-1280.png",
+      "bytes": 605171,
+      "sha256": "2b6891079ba733f385c1f881061c29bfea89bce296d3ebc460886709e9b0a8aa",
+      "pagina": 1280,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": "Um índice compara cada período com o período de base que a unidade nomeia, onde vale cem; em agosto de 2026 valia 103,276, acima da base.",
+      "unidade": "índice (base 2025 = 100)",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.818",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "indice",
+      "rota": "/livro-razao/series/serie-ipc-indice/",
+      "largura": 1600,
+      "ficheiro": "pt-indice-1600.png",
+      "bytes": 618731,
+      "sha256": "88cef1cbd192e094bf71bd0c4e1c491e3f108b72d6d7b2eea7a8341a238b510b",
+      "pagina": 1600,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": "Um índice compara cada período com o período de base que a unidade nomeia, onde vale cem; em agosto de 2026 valia 103,276, acima da base.",
+      "unidade": "índice (base 2025 = 100)",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.818",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "indice",
+      "rota": "/en/ledger/series/serie-ipc-indice/",
+      "largura": 390,
+      "ficheiro": "en-indice-390.png",
+      "bytes": 453027,
+      "sha256": "546fd2f0920abb4d18f2cf17bfb775477bb6e3c9cbdfa6418ab9bfba17f83123",
+      "pagina": 390,
+      "desenhos": 1,
+      "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
+      "cartoesComSerie": [],
+      "fraseDoIndice": "An index compares each period with the base period its unit names, where it is one hundred; in August 2026 it was 103,276, above the base.",
+      "unidade": "index (base 2025 = 100)",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.818",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "indice",
+      "rota": "/en/ledger/series/serie-ipc-indice/",
+      "largura": 768,
+      "ficheiro": "en-indice-768.png",
+      "bytes": 631675,
+      "sha256": "6999e9c6b51631bee4940e1a77e040094ebe485805a3a0c25cb9ae3bdd961116",
+      "pagina": 768,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": "An index compares each period with the base period its unit names, where it is one hundred; in August 2026 it was 103,276, above the base.",
+      "unidade": "index (base 2025 = 100)",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.818",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "indice",
+      "rota": "/en/ledger/series/serie-ipc-indice/",
+      "largura": 1024,
+      "ficheiro": "en-indice-1024.png",
+      "bytes": 594982,
+      "sha256": "2bf2a8fa1e9fe79926abef83b35d3c71143ba3ce8a69822e6f831bef377c9c55",
+      "pagina": 1024,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": "An index compares each period with the base period its unit names, where it is one hundred; in August 2026 it was 103,276, above the base.",
+      "unidade": "index (base 2025 = 100)",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.818",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "indice",
+      "rota": "/en/ledger/series/serie-ipc-indice/",
+      "largura": 1280,
+      "ficheiro": "en-indice-1280.png",
+      "bytes": 602335,
+      "sha256": "0db0f4d4557af5a45e1791953e315d5a81889a45eeaff6ac80c826f77a0d47d5",
+      "pagina": 1280,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": "An index compares each period with the base period its unit names, where it is one hundred; in August 2026 it was 103,276, above the base.",
+      "unidade": "index (base 2025 = 100)",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.818",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "indice",
+      "rota": "/en/ledger/series/serie-ipc-indice/",
+      "largura": 1600,
+      "ficheiro": "en-indice-1600.png",
+      "bytes": 614798,
+      "sha256": "f01f3b81494b38dfb36c1605fdfae5e467cc3468c4e2bb79eef4d94c73fbb1ef",
+      "pagina": 1600,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": "An index compares each period with the base period its unit names, where it is one hundred; in August 2026 it was 103,276, above the base.",
+      "unidade": "index (base 2025 = 100)",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.818",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "salario-real",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 390,
+      "ficheiro": "pt-salario-real-390.png",
+      "bytes": 180522,
+      "sha256": "d393f33332c32510a03f60c19a59aee1c14d5cab092058117b67840656435979",
+      "pagina": 390,
+      "desenhos": 1,
+      "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros de 2015 por mês",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "salario-real",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 768,
+      "ficheiro": "pt-salario-real-768.png",
+      "bytes": 197469,
+      "sha256": "53969f535def0d94e7a514f4e1d85a4ca130a503879c3df641ff8ac212f0f1a3",
+      "pagina": 768,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros de 2015 por mês",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "salario-real",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 1024,
+      "ficheiro": "pt-salario-real-1024.png",
+      "bytes": 213072,
+      "sha256": "7dd39d6f35ddf2c38223601e9d76c4df857eaa318aa31828ec450414493c3c37",
+      "pagina": 1024,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros de 2015 por mês",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "salario-real",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 1280,
+      "ficheiro": "pt-salario-real-1280.png",
+      "bytes": 214716,
+      "sha256": "09df655c9a8e26f3a718e5f2af3b756ba1a0d5173aee8b262c69be0f0fd3619b",
+      "pagina": 1280,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros de 2015 por mês",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "salario-real",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 1600,
+      "ficheiro": "pt-salario-real-1600.png",
+      "bytes": 220386,
+      "sha256": "d0639d500148507b2a43ea510cf65d58e61af2d6367d8436592cab6d06cf6c14",
+      "pagina": 1600,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros de 2015 por mês",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "salario-real",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 390,
+      "ficheiro": "en-salario-real-390.png",
+      "bytes": 180761,
+      "sha256": "e9c180e2ddd7047dae3c3fbeff234f3484b7d365e6351bc93df724b76631c0bf",
+      "pagina": 390,
+      "desenhos": 1,
+      "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "2015 euros per month",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "salario-real",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 768,
+      "ficheiro": "en-salario-real-768.png",
+      "bytes": 192174,
+      "sha256": "82c43c83780ff088f11f00d36fd05b5b33f4986681aaae6b7fe3db138015107e",
+      "pagina": 768,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "2015 euros per month",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "salario-real",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 1024,
+      "ficheiro": "en-salario-real-1024.png",
+      "bytes": 208059,
+      "sha256": "69a0b07b8c9d96ec4de45f342d8cf6a8f94f13e168ffb9061591fb2dc8ac39e1",
+      "pagina": 1024,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "2015 euros per month",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "salario-real",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 1280,
+      "ficheiro": "en-salario-real-1280.png",
+      "bytes": 210947,
+      "sha256": "ba48b1f02a42e6041057100cd265a122e8a332da8a69adf94f69a0e63162ea50",
+      "pagina": 1280,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "2015 euros per month",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "salario-real",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 1600,
+      "ficheiro": "en-salario-real-1600.png",
+      "bytes": 215857,
+      "sha256": "9b4e3d2734eb7fcd1262d5b7f68a511b4b6ff1d5980366ec0cd38d7c285d308c",
+      "pagina": 1600,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "2015 euros per month",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "remuneracao",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media/",
+      "largura": 390,
+      "ficheiro": "pt-remuneracao-390.png",
+      "bytes": 241040,
+      "sha256": "ff7b1f93dd38f17a698a52ab2ab4f828ba15b5899d53e08922f4b379540b9b61",
+      "pagina": 390,
+      "desenhos": 1,
+      "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros por mês",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "283.2",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "remuneracao",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media/",
+      "largura": 768,
+      "ficheiro": "pt-remuneracao-768.png",
+      "bytes": 261386,
+      "sha256": "80578386ed1f001f95fe23046461cf6ba4b27a72d9449a098927552254a06474",
+      "pagina": 768,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros por mês",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "283.2",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "remuneracao",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media/",
+      "largura": 1024,
+      "ficheiro": "pt-remuneracao-1024.png",
+      "bytes": 275685,
+      "sha256": "7a78310fea75be38184f1394013ae0cf6f8fbd244c95dd0129b7d00be4e7c75b",
+      "pagina": 1024,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros por mês",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "283.2",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "remuneracao",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media/",
+      "largura": 1280,
+      "ficheiro": "pt-remuneracao-1280.png",
+      "bytes": 278751,
+      "sha256": "5fb61784e63a6a261d72bb171e44f991588b6cf48c12e1c5f0feffb6d20649a1",
+      "pagina": 1280,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros por mês",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "283.2",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "remuneracao",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media/",
+      "largura": 1600,
+      "ficheiro": "pt-remuneracao-1600.png",
+      "bytes": 285768,
+      "sha256": "83ca645530e877e65691a7ada36784cafd6bf372967692f7518ebc081bd642d1",
+      "pagina": 1600,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros por mês",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "283.2",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "remuneracao",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media/",
+      "largura": 390,
+      "ficheiro": "en-remuneracao-390.png",
+      "bytes": 243228,
+      "sha256": "e614a140f051c882c4eab1b87e24f971ddeb9f648fa83ea1178b16fb3abcfa25",
+      "pagina": 390,
+      "desenhos": 1,
+      "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros per month",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "283.2",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "remuneracao",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media/",
+      "largura": 768,
+      "ficheiro": "en-remuneracao-768.png",
+      "bytes": 260242,
+      "sha256": "30917a06f62713a507b0894bd62b9306eb0841b4c579d67d19f880b7deb1a13a",
+      "pagina": 768,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros per month",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "283.2",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "remuneracao",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media/",
+      "largura": 1024,
+      "ficheiro": "en-remuneracao-1024.png",
+      "bytes": 272582,
+      "sha256": "60092f78a3079c9054c87503782085c2b6837325cd5fa075bf2e2de90c63788e",
+      "pagina": 1024,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros per month",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "283.2",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "remuneracao",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media/",
+      "largura": 1280,
+      "ficheiro": "en-remuneracao-1280.png",
+      "bytes": 276606,
+      "sha256": "764cdde0d68c2b6353b5245d8320c687505cc4b11575db13ef59e7ea9eb5b5e9",
+      "pagina": 1280,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros per month",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "283.2",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "remuneracao",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media/",
+      "largura": 1600,
+      "ficheiro": "en-remuneracao-1600.png",
+      "bytes": 282997,
+      "sha256": "43318bbe7b4a0a5312a1cb80aafa6314d0cc9a149d74b06601192f95880921a0",
+      "pagina": 1600,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros per month",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "283.2",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "combustiveis",
+      "rota": "/livro-razao/series/serie-ipc-combustiveis-variacao-homologa/",
+      "largura": 390,
+      "ficheiro": "pt-combustiveis-390.png",
+      "bytes": 439605,
+      "sha256": "1e49ee25938242398645d1c7232ba97ca76dc35883cbe26d410f5abb61dbec3c",
+      "pagina": 390,
+      "desenhos": 1,
+      "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "%",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.789",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "combustiveis",
+      "rota": "/livro-razao/series/serie-ipc-combustiveis-variacao-homologa/",
+      "largura": 768,
+      "ficheiro": "pt-combustiveis-768.png",
+      "bytes": 598352,
+      "sha256": "7c358d25ceb8082c7b9cf99c1d55ef8405c39c489c6bbfa5bcded8f3b5f762c3",
+      "pagina": 768,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "%",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.789",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "combustiveis",
+      "rota": "/livro-razao/series/serie-ipc-combustiveis-variacao-homologa/",
+      "largura": 1024,
+      "ficheiro": "pt-combustiveis-1024.png",
+      "bytes": 561206,
+      "sha256": "8764be74267a14eb6a3d1ebd879fd378d74b099b8acd16d36c969d77e142d847",
+      "pagina": 1024,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "%",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.789",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "combustiveis",
+      "rota": "/livro-razao/series/serie-ipc-combustiveis-variacao-homologa/",
+      "largura": 1280,
+      "ficheiro": "pt-combustiveis-1280.png",
+      "bytes": 569523,
+      "sha256": "140bde1e857a5b77b2a193ae91c10317f14081748be79e57e09c3faba755784c",
+      "pagina": 1280,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "%",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.789",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "pt",
+      "nome": "combustiveis",
+      "rota": "/livro-razao/series/serie-ipc-combustiveis-variacao-homologa/",
+      "largura": 1600,
+      "ficheiro": "pt-combustiveis-1600.png",
+      "bytes": 583133,
+      "sha256": "bc65015769420ef6e9bb57dc03e65fb0683a1ef7c8df5c3ab8570fcf477c054b",
+      "pagina": 1600,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "%",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.789",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "combustiveis",
+      "rota": "/en/ledger/series/serie-ipc-combustiveis-variacao-homologa/",
+      "largura": 390,
+      "ficheiro": "en-combustiveis-390.png",
+      "bytes": 438194,
+      "sha256": "693146fc92200a61e13df033a0efeeea6245c2eb6090188135028be14c307f90",
+      "pagina": 390,
+      "desenhos": 1,
+      "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "%",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.789",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "combustiveis",
+      "rota": "/en/ledger/series/serie-ipc-combustiveis-variacao-homologa/",
+      "largura": 768,
+      "ficheiro": "en-combustiveis-768.png",
+      "bytes": 594165,
+      "sha256": "c128e65b741088ff69084dd178ecad85de3cd2a6972132ec4705ed06f97692e6",
+      "pagina": 768,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "%",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.789",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "combustiveis",
+      "rota": "/en/ledger/series/serie-ipc-combustiveis-variacao-homologa/",
+      "largura": 1024,
+      "ficheiro": "en-combustiveis-1024.png",
+      "bytes": 555207,
+      "sha256": "6e7b8097274badbe00371eb0f82c2bb82f68426060ab71d9572f946ca35c9227",
+      "pagina": 1024,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "%",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.789",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "combustiveis",
+      "rota": "/en/ledger/series/serie-ipc-combustiveis-variacao-homologa/",
+      "largura": 1280,
+      "ficheiro": "en-combustiveis-1280.png",
+      "bytes": 565550,
+      "sha256": "55873530c497e0db0aea0935012b7decbbbfb65f354e4df88647222cea2afb8d",
+      "pagina": 1280,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "%",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.789",
+        "ancora": "middle"
+      }
+    },
+    {
+      "lang": "en",
+      "nome": "combustiveis",
+      "rota": "/en/ledger/series/serie-ipc-combustiveis-variacao-homologa/",
+      "largura": 1600,
+      "ficheiro": "en-combustiveis-1600.png",
+      "bytes": 578239,
+      "sha256": "25d4ffca6918a1340b8806e78e01c4681c50a98f3dd86c4297300b2a5f03a2b1",
+      "pagina": 1600,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "%",
+      "tracos": [],
+      "legenda": [],
+      "ultimaMarcaDoEixo": {
+        "texto": "2026",
+        "x": "339.789",
+        "ancora": "middle"
+      }
+    }
+  ]
+}

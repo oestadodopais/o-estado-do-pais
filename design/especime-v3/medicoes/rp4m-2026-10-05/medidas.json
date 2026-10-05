@@ -1,0 +1,1248 @@
+{
+  "bloco": "RP4-m",
+  "guiao": "design/especime-v3/medicoes/rp4m-2026-10-05/medir.py",
+  "medidas": [
+    {
+      "nome": "paragrafo_0_reproduzido_igual",
+      "valor": true,
+      "comando": "OEDP_MEDIDAS_JSON=<pasta>/brief-reproduzido.json python3 design/observatorio/medidas/BRIEF-RP4M.py, comparado com BRIEF-RP4M.json",
+      "conhecido_positivo": {
+        "o_que": "a reprodução tem as dez medidas do §0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.series_no_tempo_no_livro",
+      "valor": 16,
+      "comando": "git ls-tree fb364fe4 ledger/series/ · os ficheiros .yml com eixo: \"periodo\"",
+      "conhecido_positivo": {
+        "o_que": "a série do índice harmonizado de Portugal está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.linhas_presas_a_uma_serie",
+      "valor": 7,
+      "comando": "git grep -l '^serie: ' fb364fe4 -- ledger/claims/",
+      "conhecido_positivo": {
+        "o_que": "a linha da União está presa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.linhas_do_ipc_com_as_coordenadas_0014666_ou_0014647",
+      "valor": 10,
+      "comando": "git grep -l -E '0014666|0014647' fb364fe4 -- ledger/claims/",
+      "conhecido_positivo": {
+        "o_que": "a linha dos combustíveis é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.dessas_as_linhas_principais_sem_o_periodo_anterior",
+      "valor": 5,
+      "comando": "as da medida anterior cujo id não acaba em -periodo-anterior",
+      "conhecido_positivo": {
+        "o_que": "a linha da média de doze meses é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.dessas_as_presas_a_uma_serie",
+      "valor": 0,
+      "comando": "a interseção com as linhas presas",
+      "conhecido_positivo": {
+        "o_que": "as duas listas foram lidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.meses_entre_a_linha_do_ihpc_de_portugal_e_o_ultimo_ponto_da_sua_serie",
+      "valor": 1,
+      "comando": "git show fb364fe4:ledger/claims/ihpc-variacao-homologa.yml (reference_date) e ledger/series/serie-ihpc-variacao-homologa.yml (ultimo_periodo), a diferença em meses",
+      "conhecido_positivo": {
+        "o_que": "a linha de Portugal não tem o campo serie",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.marca_da_fonte_no_ultimo_ponto_da_serie_do_ihpc_de_portugal",
+      "valor": 1,
+      "comando": "git show fb364fe4:ledger/series/serie-ihpc-variacao-homologa.yml · o campo bandeira do ponto ultimo_periodo, 1 se não for vazio",
+      "conhecido_positivo": {
+        "o_que": "o ponto do último período existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.series_no_tempo_com_ponto_no_periodo_de_base_de_2015",
+      "valor": 13,
+      "comando": "git show fb364fe4:ledger/series/<série>.yml · as séries no tempo com um ponto no período da sua cadência que contém janeiro de 2015",
+      "conhecido_positivo": {
+        "o_que": "a do salário mínimo (semestral, desde 1999) tem o ponto 2015-S1",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.pontos_da_serie_da_remuneracao_bruta_mensal_media",
+      "valor": 6,
+      "comando": "git show fb364fe4:ledger/series/serie-remuneracao-bruta-mensal-media.yml · as linhas «  - periodo:» da lista pontos:",
+      "conhecido_positivo": {
+        "o_que": "a série começa em 2025-T1, depois do período de base",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.series_no_tempo_derivadas",
+      "valor": 1,
+      "comando": "git show fb364fe4:ledger/series/<série>.yml · as séries no tempo com o campo derived_from",
+      "conhecido_positivo": {
+        "o_que": "a dos cem euros de 2015 é derivada e a do IPC não",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_no_tempo_no_livro",
+      "valor": 24,
+      "comando": "ls ledger/series/*.yml · os ficheiros com eixo: \"periodo\"",
+      "conhecido_positivo": {
+        "o_que": "a série dos combustíveis do INE está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_novas_do_bloco",
+      "valor": 8,
+      "comando": "as oito séries do bloco em ledger/series/",
+      "conhecido_positivo": {
+        "o_que": "a derivada do salário real está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos.serie-ipc-variacao-media-12-meses",
+      "valor": 405,
+      "comando": "ledger/series/serie-ipc-variacao-media-12-meses.yml · os pontos da lista pontos:",
+      "conhecido_positivo": {
+        "o_que": "o primeiro e o último ponto existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeiro_periodo.serie-ipc-variacao-media-12-meses",
+      "valor": "1992-12",
+      "comando": "ledger/series/serie-ipc-variacao-media-12-meses.yml · o primeiro ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_periodo.serie-ipc-variacao-media-12-meses",
+      "valor": "2026-08",
+      "comando": "ledger/series/serie-ipc-variacao-media-12-meses.yml · o período do último ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_valor.serie-ipc-variacao-media-12-meses",
+      "valor": "2,67",
+      "comando": "ledger/series/serie-ipc-variacao-media-12-meses.yml · o valor do último ponto, como o YAML o escreve",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos.serie-ipc-sem-habitacao-variacao-media-12-meses",
+      "valor": 405,
+      "comando": "ledger/series/serie-ipc-sem-habitacao-variacao-media-12-meses.yml · os pontos da lista pontos:",
+      "conhecido_positivo": {
+        "o_que": "o primeiro e o último ponto existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeiro_periodo.serie-ipc-sem-habitacao-variacao-media-12-meses",
+      "valor": "1992-12",
+      "comando": "ledger/series/serie-ipc-sem-habitacao-variacao-media-12-meses.yml · o primeiro ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_periodo.serie-ipc-sem-habitacao-variacao-media-12-meses",
+      "valor": "2026-08",
+      "comando": "ledger/series/serie-ipc-sem-habitacao-variacao-media-12-meses.yml · o período do último ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_valor.serie-ipc-sem-habitacao-variacao-media-12-meses",
+      "valor": "2,56",
+      "comando": "ledger/series/serie-ipc-sem-habitacao-variacao-media-12-meses.yml · o valor do último ponto, como o YAML o escreve",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos.serie-ipc-combustiveis-variacao-homologa",
+      "valor": 932,
+      "comando": "ledger/series/serie-ipc-combustiveis-variacao-homologa.yml · os pontos da lista pontos:",
+      "conhecido_positivo": {
+        "o_que": "o primeiro e o último ponto existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeiro_periodo.serie-ipc-combustiveis-variacao-homologa",
+      "valor": "1949-01",
+      "comando": "ledger/series/serie-ipc-combustiveis-variacao-homologa.yml · o primeiro ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_periodo.serie-ipc-combustiveis-variacao-homologa",
+      "valor": "2026-08",
+      "comando": "ledger/series/serie-ipc-combustiveis-variacao-homologa.yml · o período do último ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_valor.serie-ipc-combustiveis-variacao-homologa",
+      "valor": "23,78",
+      "comando": "ledger/series/serie-ipc-combustiveis-variacao-homologa.yml · o valor do último ponto, como o YAML o escreve",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos.serie-ipc-rendas-variacao-homologa",
+      "valor": 932,
+      "comando": "ledger/series/serie-ipc-rendas-variacao-homologa.yml · os pontos da lista pontos:",
+      "conhecido_positivo": {
+        "o_que": "o primeiro e o último ponto existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeiro_periodo.serie-ipc-rendas-variacao-homologa",
+      "valor": "1949-01",
+      "comando": "ledger/series/serie-ipc-rendas-variacao-homologa.yml · o primeiro ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_periodo.serie-ipc-rendas-variacao-homologa",
+      "valor": "2026-08",
+      "comando": "ledger/series/serie-ipc-rendas-variacao-homologa.yml · o período do último ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_valor.serie-ipc-rendas-variacao-homologa",
+      "valor": "5,22",
+      "comando": "ledger/series/serie-ipc-rendas-variacao-homologa.yml · o valor do último ponto, como o YAML o escreve",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos.serie-ipc-energia-em-casa-variacao-homologa",
+      "valor": 932,
+      "comando": "ledger/series/serie-ipc-energia-em-casa-variacao-homologa.yml · os pontos da lista pontos:",
+      "conhecido_positivo": {
+        "o_que": "o primeiro e o último ponto existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeiro_periodo.serie-ipc-energia-em-casa-variacao-homologa",
+      "valor": "1949-01",
+      "comando": "ledger/series/serie-ipc-energia-em-casa-variacao-homologa.yml · o primeiro ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_periodo.serie-ipc-energia-em-casa-variacao-homologa",
+      "valor": "2026-08",
+      "comando": "ledger/series/serie-ipc-energia-em-casa-variacao-homologa.yml · o período do último ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_valor.serie-ipc-energia-em-casa-variacao-homologa",
+      "valor": "1,36",
+      "comando": "ledger/series/serie-ipc-energia-em-casa-variacao-homologa.yml · o valor do último ponto, como o YAML o escreve",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos.serie-remuneracao-bruta-mensal-media-anual",
+      "valor": 12,
+      "comando": "ledger/series/serie-remuneracao-bruta-mensal-media-anual.yml · os pontos da lista pontos:",
+      "conhecido_positivo": {
+        "o_que": "o primeiro e o último ponto existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeiro_periodo.serie-remuneracao-bruta-mensal-media-anual",
+      "valor": "2014",
+      "comando": "ledger/series/serie-remuneracao-bruta-mensal-media-anual.yml · o primeiro ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_periodo.serie-remuneracao-bruta-mensal-media-anual",
+      "valor": "2025",
+      "comando": "ledger/series/serie-remuneracao-bruta-mensal-media-anual.yml · o período do último ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_valor.serie-remuneracao-bruta-mensal-media-anual",
+      "valor": "1 696",
+      "comando": "ledger/series/serie-remuneracao-bruta-mensal-media-anual.yml · o valor do último ponto, como o YAML o escreve",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos.serie-ipc-indice-anual",
+      "valor": 78,
+      "comando": "ledger/series/serie-ipc-indice-anual.yml · os pontos da lista pontos:",
+      "conhecido_positivo": {
+        "o_que": "o primeiro e o último ponto existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeiro_periodo.serie-ipc-indice-anual",
+      "valor": "1948",
+      "comando": "ledger/series/serie-ipc-indice-anual.yml · o primeiro ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_periodo.serie-ipc-indice-anual",
+      "valor": "2025",
+      "comando": "ledger/series/serie-ipc-indice-anual.yml · o período do último ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_valor.serie-ipc-indice-anual",
+      "valor": "100,000",
+      "comando": "ledger/series/serie-ipc-indice-anual.yml · o valor do último ponto, como o YAML o escreve",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pontos.serie-remuneracao-bruta-mensal-media-real",
+      "valor": 12,
+      "comando": "ledger/series/serie-remuneracao-bruta-mensal-media-real.yml · os pontos da lista pontos:",
+      "conhecido_positivo": {
+        "o_que": "o primeiro e o último ponto existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeiro_periodo.serie-remuneracao-bruta-mensal-media-real",
+      "valor": "2014",
+      "comando": "ledger/series/serie-remuneracao-bruta-mensal-media-real.yml · o primeiro ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_periodo.serie-remuneracao-bruta-mensal-media-real",
+      "valor": "2025",
+      "comando": "ledger/series/serie-remuneracao-bruta-mensal-media-real.yml · o período do último ponto",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ultimo_valor.serie-remuneracao-bruta-mensal-media-real",
+      "valor": "1 375",
+      "comando": "ledger/series/serie-remuneracao-bruta-mensal-media-real.yml · o valor do último ponto, como o YAML o escreve",
+      "conhecido_positivo": {
+        "o_que": "a série tem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "salario_real_2015_igual_ao_nominal",
+      "valor": true,
+      "comando": "o ponto de 2015 da derivada e o da nominal",
+      "conhecido_positivo": {
+        "o_que": "os dois pontos de 2015 existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_presas_a_uma_serie",
+      "valor": 12,
+      "comando": "grep -l '^serie: ' ledger/claims/*.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha da média de doze meses do IPC está presa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_ipc_presas_neste_bloco",
+      "valor": 5,
+      "comando": "as cinco linhas do IPC com o campo serie",
+      "conhecido_positivo": {
+        "o_que": "a dos combustíveis é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha_do_ihpc_de_portugal_presa",
+      "valor": false,
+      "comando": "grep '^serie: ' ledger/claims/ihpc-variacao-homologa.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha da União está presa (o controlo)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "item2.controlo.codigo_do_ledger_check",
+      "valor": 0,
+      "comando": "node medir-item2.mjs · a cópia intacta",
+      "conhecido_positivo": {
+        "o_que": "a medição correu e escreveu item2.json",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "item2.codigo_do_ledger_check",
+      "valor": 1,
+      "comando": "node medir-item2.mjs · a linha no último ponto",
+      "conhecido_positivo": {
+        "o_que": "a mesma medição na cópia intacta deu 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "item2.erros_s5_da_faixa",
+      "valor": 1,
+      "comando": "validateSeries sobre a cópia, a S5 da faixa dos 27",
+      "conhecido_positivo": {
+        "o_que": "na cópia intacta a mesma chamada dá zero erros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "item2.travessia_do_motor_codigo",
+      "valor": 1,
+      "comando": "export_series.py --site <cópia>",
+      "conhecido_positivo": {
+        "o_que": "na cópia intacta a travessia dá 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "item2.regua_codigo",
+      "valor": 1,
+      "comando": "conferirReguaDeclarada sobre a cópia",
+      "conhecido_positivo": {
+        "o_que": "na cópia intacta a régua passa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "i199.corrida_de_dentro_de_indicators.codigo",
+      "valor": 1,
+      "comando": "cd indicators && python3 refresh.py --site <cópia> --linhas taxa-de-emprego-2025 --saida <tmp>",
+      "conhecido_positivo": {
+        "o_que": "a corrida fez os seus pedidos pelo cliente da casa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "i199.pedidos_da_corrida",
+      "valor": 2,
+      "comando": "o pedidos.jsonl da corrida delimitada",
+      "conhecido_positivo": {
+        "o_que": "a corrida escreveu o registo dos pedidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "i199.sem_erro_de_importacao",
+      "valor": true,
+      "comando": "a saída da corrida não tem «No module named»",
+      "conhecido_positivo": {
+        "o_que": "a saída tem a linha da afirmação lida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas.desenhos_recompostos",
+      "valor": 82,
+      "comando": "node scripts/check-formas.mjs --json-rp4 formas-rp4.json · desenhos",
+      "conhecido_positivo": {
+        "o_que": "a corrida viu os recibos das séries",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas.recibos_com_grafico",
+      "valor": 48,
+      "comando": "formas-rp4.json · recibos (língua e série)",
+      "conhecido_positivo": {
+        "o_que": "o recibo do salário real em português está entre eles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas.provas_do_modulo",
+      "valor": 12,
+      "comando": "formas-rp4.json · provas",
+      "conhecido_positivo": {
+        "o_que": "a prova da marca do último ano está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas.plantas",
+      "valor": 21,
+      "comando": "formas-rp4.json · plantas",
+      "conhecido_positivo": {
+        "o_que": "há plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas.plantas_mordidas",
+      "valor": 21,
+      "comando": "formas-rp4.json · plantas com mordeu",
+      "conhecido_positivo": {
+        "o_que": "há plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas.plantas_da_regra_da_pagina",
+      "valor": 5,
+      "comando": "formas-rp4.json · plantas com regra página",
+      "conhecido_positivo": {
+        "o_que": "a do recibo com o gráfico de outra série está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas.erros",
+      "valor": 0,
+      "comando": "formas-rp4.json · erros",
+      "conhecido_positivo": {
+        "o_que": "a corrida escreveu o ficheiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_series.series",
+      "valor": 24,
+      "comando": "RESEARCHHUB_DIR=<motor> node tests/series/series.mjs --prova --json series.json · contas.series",
+      "conhecido_positivo": {
+        "o_que": "a corrida leu as séries do livro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_series.pontos",
+      "valor": 7839,
+      "comando": "RESEARCHHUB_DIR=<motor> node tests/series/series.mjs --prova --json series.json · contas.pontos",
+      "conhecido_positivo": {
+        "o_que": "a corrida leu as séries do livro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_series.derivadas",
+      "valor": 2,
+      "comando": "RESEARCHHUB_DIR=<motor> node tests/series/series.mjs --prova --json series.json · contas.derivadas",
+      "conhecido_positivo": {
+        "o_que": "a corrida leu as séries do livro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_series.pontosRefeitos",
+      "valor": 152,
+      "comando": "RESEARCHHUB_DIR=<motor> node tests/series/series.mjs --prova --json series.json · contas.pontosRefeitos",
+      "conhecido_positivo": {
+        "o_que": "a corrida leu as séries do livro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_series.linhasPresas",
+      "valor": 12,
+      "comando": "RESEARCHHUB_DIR=<motor> node tests/series/series.mjs --prova --json series.json · contas.linhasPresas",
+      "conhecido_positivo": {
+        "o_que": "a corrida leu as séries do livro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_series.cartoesNoUltimo",
+      "valor": 12,
+      "comando": "RESEARCHHUB_DIR=<motor> node tests/series/series.mjs --prova --json series.json · contas.cartoesNoUltimo",
+      "conhecido_positivo": {
+        "o_que": "a corrida leu as séries do livro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_series.recibos",
+      "valor": 48,
+      "comando": "RESEARCHHUB_DIR=<motor> node tests/series/series.mjs --prova --json series.json · contas.recibos",
+      "conhecido_positivo": {
+        "o_que": "a corrida leu as séries do livro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_series.metade_do_motor_pontos",
+      "valor": 7687,
+      "comando": "series.json · contas.motor.pontos (cada ponto lido no corpo alojado)",
+      "conhecido_positivo": {
+        "o_que": "a metade do motor correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_series.plantas",
+      "valor": 28,
+      "comando": "series.json · plantas",
+      "conhecido_positivo": {
+        "o_que": "há plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_series.plantas_mordidas",
+      "valor": 28,
+      "comando": "series.json · plantas com mordeu",
+      "conhecido_positivo": {
+        "o_que": "há plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_series.plantas_do_bloco",
+      "valor": 5,
+      "comando": "series.json · plantas com RP4-m no nome",
+      "conhecido_positivo": {
+        "o_que": "a da legenda trocada está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_series.erros",
+      "valor": 0,
+      "comando": "series.json · erros, somados por célula",
+      "conhecido_positivo": {
+        "o_que": "a corrida escreveu o ficheiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "lingua.controlo_integro",
+      "valor": true,
+      "comando": "node plantas-da-lingua.mjs · o controlo na cópia intacta",
+      "conhecido_positivo": {
+        "o_que": "a corrida escreveu as plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "lingua.plantas_mordidas",
+      "valor": 2,
+      "comando": "node plantas-da-lingua.mjs · plantas_mordidas",
+      "conhecido_positivo": {
+        "o_que": "a planta da entrada morta está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas",
+      "valor": 70,
+      "comando": "node design/especime-v3/medicoes/rp4m-2026-10-05/capturar.mjs",
+      "conhecido_positivo": {
+        "o_que": "as plantas visuais morderam",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_erros",
+      "valor": 0,
+      "comando": "o campo erros de capturas.json",
+      "conhecido_positivo": {
+        "o_que": "o guião correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_plantas",
+      "valor": 4,
+      "comando": "o campo plantas de capturas.json",
+      "conhecido_positivo": {
+        "o_que": "o guião correu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_plantas_mordidas",
+      "valor": 4,
+      "comando": "as plantas de capturas.json com mordeu",
+      "conhecido_positivo": {
+        "o_que": "há plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_transbordos",
+      "valor": 0,
+      "comando": "as capturas de página com a largura da página maior do que a do ecrã",
+      "conhecido_positivo": {
+        "o_que": "as capturas de página têm a largura medida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_letra_minima_dos_eixos",
+      "valor": 11.799375,
+      "comando": "o mínimo de letraMinima em capturas.json (px no ecrã)",
+      "conhecido_positivo": {
+        "o_que": "há desenhos medidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_letra_maxima_dos_eixos",
+      "valor": 12,
+      "comando": "o máximo de letraMaxima em capturas.json (px no ecrã)",
+      "conhecido_positivo": {
+        "o_que": "há desenhos medidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corredor.ensaio_21.series",
+      "valor": 21,
+      "comando": "indicators/out/rp4m-2026-10-05/ensaio-do-corredor-das-series/corredor.json no motor",
+      "conhecido_positivo": {
+        "o_que": "o relatório diz o modo ensaio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corredor.ensaio_21.pedidos",
+      "valor": 16,
+      "comando": "indicators/out/rp4m-2026-10-05/ensaio-do-corredor-das-series/pedidos.jsonl no motor",
+      "conhecido_positivo": {
+        "o_que": "o registo existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corredor.ensaio_21.pontos_novos",
+      "valor": 0,
+      "comando": "o campo pontos_novos do relatório",
+      "conhecido_positivo": {
+        "o_que": "o relatório leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corredor.ensaio_21.revisoes",
+      "valor": 0,
+      "comando": "o campo revisoes do relatório",
+      "conhecido_positivo": {
+        "o_que": "o relatório leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corredor.ensaio_24.series",
+      "valor": 24,
+      "comando": "indicators/out/rp4m-2026-10-05/ensaio-do-corredor-das-series-24/corredor.json no motor",
+      "conhecido_positivo": {
+        "o_que": "o relatório diz o modo ensaio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corredor.ensaio_24.pedidos",
+      "valor": 18,
+      "comando": "indicators/out/rp4m-2026-10-05/ensaio-do-corredor-das-series-24/pedidos.jsonl no motor",
+      "conhecido_positivo": {
+        "o_que": "o registo existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corredor.ensaio_24.pontos_novos",
+      "valor": 0,
+      "comando": "o campo pontos_novos do relatório",
+      "conhecido_positivo": {
+        "o_que": "o relatório leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corredor.ensaio_24.revisoes",
+      "valor": 0,
+      "comando": "o campo revisoes do relatório",
+      "conhecido_positivo": {
+        "o_que": "o relatório leu-se",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_do_bloco",
+      "valor": 322,
+      "comando": "indicators/out/rp4m-2026-10-05/pedidos.jsonl no motor",
+      "conhecido_positivo": {
+        "o_que": "há pedidos lidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_do_bloco_lidos",
+      "valor": 319,
+      "comando": "as tentativas com estado lido",
+      "conhecido_positivo": {
+        "o_que": "há pelo menos uma",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_do_bloco_recusados_414",
+      "valor": 3,
+      "comando": "as tentativas recusadas com 414",
+      "conhecido_positivo": {
+        "o_que": "a do pedido inteiro dos combustíveis é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corpos_alojados_em_rp4m",
+      "valor": 319,
+      "comando": "ls content/13 Dominios/source/rp4m/ no motor",
+      "conhecido_positivo": {
+        "o_que": "a metainformação do 0014647 está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "metainformacao.0011131",
+      "valor": "Trimestral · Março de 2014 a Junho de 2026",
+      "comando": "indicators/out/rp4m-2026-10-05/*-ine-0011131-meta.json no motor (Periodic, PrimeiroPeriodo, UltimoPeriodo)",
+      "conhecido_positivo": {
+        "o_que": "o indicador da metainformação é o pedido",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "metainformacao.0011132",
+      "valor": "Trimestral · Março de 2014 a Junho de 2026",
+      "comando": "indicators/out/rp4m-2026-10-05/*-ine-0011132-meta.json no motor (Periodic, PrimeiroPeriodo, UltimoPeriodo)",
+      "conhecido_positivo": {
+        "o_que": "o indicador da metainformação é o pedido",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "metainformacao.0011137",
+      "valor": "Anual · 2014 a 2025",
+      "comando": "indicators/out/rp4m-2026-10-05/*-ine-0011137-meta.json no motor (Periodic, PrimeiroPeriodo, UltimoPeriodo)",
+      "conhecido_positivo": {
+        "o_que": "o indicador da metainformação é o pedido",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "metainformacao.0011138",
+      "valor": "Anual · 2014 a 2025",
+      "comando": "indicators/out/rp4m-2026-10-05/*-ine-0011138-meta.json no motor (Periodic, PrimeiroPeriodo, UltimoPeriodo)",
+      "conhecido_positivo": {
+        "o_que": "o indicador da metainformação é o pedido",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "metainformacao.0014641",
+      "valor": "Anual · 1948 a 2025",
+      "comando": "indicators/out/rp4m-2026-10-05/*-ine-0014641-meta.json no motor (Periodic, PrimeiroPeriodo, UltimoPeriodo)",
+      "conhecido_positivo": {
+        "o_que": "o indicador da metainformação é o pedido",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "i198.frases_trocadas",
+      "valor": 5,
+      "comando": "python3 indicators/out/rp4m-2026-10-05/medir-i198.py <sítio> · i198.json no motor",
+      "conhecido_positivo": {
+        "o_que": "a origem ficou reposta",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "i198.codigo_com_a_mudanca",
+      "valor": 1,
+      "comando": "o exportador da agenda sobre uma cópia do destino",
+      "conhecido_positivo": {
+        "o_que": "sem a mudança o exportador dá 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "i198.itens_recusados_pela_h4",
+      "valor": 4,
+      "comando": "as linhas «(H4)» da recusa",
+      "conhecido_positivo": {
+        "o_que": "a recusa traz a frase da H4",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_por_confirmar_do_motor_mexidos",
+      "valor": 0,
+      "comando": "git status --porcelain sobre os ficheiros por confirmar do motor",
+      "conhecido_positivo": {
+        "o_que": "o git respondeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_do_motor.codigo",
+      "valor": 0,
+      "comando": "python3 -m core.gate na cabeça do motor (portao-do-motor.json)",
+      "conhecido_positivo": {
+        "o_que": "o portão correu as suítes do bloco",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "suite.dominios_series_test",
+      "valor": 64,
+      "comando": "python3 -m publisher/indicators/core.dominios_series_test (a linha PASS)",
+      "conhecido_positivo": {
+        "o_que": "a suíte está no portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "suite.dominios_series_corredor_test",
+      "valor": 25,
+      "comando": "python3 -m publisher/indicators/core.dominios_series_corredor_test (a linha PASS)",
+      "conhecido_positivo": {
+        "o_que": "a suíte está no portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "suite.refresh_guiao_solto_test",
+      "valor": 9,
+      "comando": "python3 -m publisher/indicators/core.refresh_guiao_solto_test (a linha PASS)",
+      "conhecido_positivo": {
+        "o_que": "a suíte está no portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "suite.reconcile_test",
+      "valor": 29,
+      "comando": "python3 -m publisher/indicators/core.reconcile_test (a linha PASS)",
+      "conhecido_positivo": {
+        "o_que": "a suíte está no portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_mordidas.dominios_series_test",
+      "valor": 31,
+      "comando": "python3 -m publisher.dominios_series_test (a linha «plantas: N morderam»)",
+      "conhecido_positivo": {
+        "o_que": "a suíte passou na mesma corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_mordidas.dominios_series_corredor_test",
+      "valor": 5,
+      "comando": "python3 -m publisher.dominios_series_corredor_test (a linha «plantas: N morderam»)",
+      "conhecido_positivo": {
+        "o_que": "a suíte passou na mesma corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao_do_motor.suites_ok",
+      "valor": 46,
+      "comando": "as linhas «GATE <suíte> ok» do registo do portão do motor",
+      "conhecido_positivo": {
+        "o_que": "a suíte do corredor das séries está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao.build",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> <pasta> · build.codigo",
+      "conhecido_positivo": {
+        "o_que": "a cabeça da corrida está escrita",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao.build.segundos",
+      "valor": 196,
+      "comando": "build.fim menos build.inicio (resolução de um segundo)",
+      "conhecido_positivo": {
+        "o_que": "o fim não é anterior ao início",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao.verify",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> <pasta> · verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "a cabeça da corrida está escrita",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao.verify.segundos",
+      "valor": 1029,
+      "comando": "verify.fim menos verify.inicio (resolução de um segundo)",
+      "conhecido_positivo": {
+        "o_que": "o fim não é anterior ao início",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao.typecheck",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> <pasta> · typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "a cabeça da corrida está escrita",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao.typecheck.segundos",
+      "valor": 0,
+      "comando": "typecheck.fim menos typecheck.inicio (resolução de um segundo)",
+      "conhecido_positivo": {
+        "o_que": "o fim não é anterior ao início",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao.cabeca_igual_no_fim",
+      "valor": true,
+      "comando": "portoes/cabeca e portoes/cabeca.fim",
+      "conhecido_positivo": {
+        "o_que": "as duas cabeças estão escritas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao.estado_no_fim_so_com_as_provas_por_juntar",
+      "valor": true,
+      "comando": "portoes/estado.fim (git status --short no fim da corrida): só as pastas das provas e a ligação das dependências, por seguir",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portao.ficheiros_seguidos_mudados_no_fim",
+      "valor": 0,
+      "comando": "as linhas de portoes/estado.fim que não são «??»",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo.segundos",
+      "valor": 17418,
+      "comando": "python3 custo.py <registo da sessão do construtor> · custo.json",
+      "conhecido_positivo": {
+        "o_que": "o registo lido é o desta sessão (todas as respostas do Claude Opus 5.5)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo.respostas_do_modelo",
+      "valor": 515,
+      "comando": "python3 custo.py <registo da sessão do construtor> · custo.json",
+      "conhecido_positivo": {
+        "o_que": "o registo lido é o desta sessão (todas as respostas do Claude Opus 5.5)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo.simbolos_de_entrada",
+      "valor": 247899449,
+      "comando": "python3 custo.py <registo da sessão do construtor> · custo.json",
+      "conhecido_positivo": {
+        "o_que": "o registo lido é o desta sessão (todas as respostas do Claude Opus 5.5)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo.simbolos_de_saida_minimo",
+      "valor": 65673,
+      "comando": "python3 custo.py <registo da sessão do construtor> · custo.json",
+      "conhecido_positivo": {
+        "o_que": "o registo lido é o desta sessão (todas as respostas do Claude Opus 5.5)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo.respostas_com_a_saida_de_um_momento_do_fluxo",
+      "valor": 364,
+      "comando": "python3 custo.py <registo da sessão do construtor> · custo.json",
+      "conhecido_positivo": {
+        "o_que": "o registo lido é o desta sessão (todas as respostas do Claude Opus 5.5)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cruzamento_com_a_origem.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<motor> node scripts/check-cruzamento.mjs --with-origin",
+      "conhecido_positivo": {
+        "o_que": "a corrida conferiu o lado do motor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa.na_linha",
+      "valor": 397,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "conhecido_positivo": {
+        "o_que": "uma citação do bloco com a linha deslocada sessenta linhas para trás, num mapa de prova, sai como longe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa.longe",
+      "valor": 0,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "conhecido_positivo": {
+        "o_que": "uma citação do bloco com a linha deslocada sessenta linhas para trás, num mapa de prova, sai como longe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa.por_encontrar",
+      "valor": 0,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "conhecido_positivo": {
+        "o_que": "uma citação do bloco com a linha deslocada sessenta linhas para trás, num mapa de prova, sai como longe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa.para_la_do_fim",
+      "valor": 0,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "conhecido_positivo": {
+        "o_que": "uma citação do bloco com a linha deslocada sessenta linhas para trás, num mapa de prova, sai como longe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao_com_40f0cb58.linhas_tiradas_do_portao_de_html",
+      "valor": 62,
+      "comando": "git diff -U0 3a253f73 40f0cb58 -- scripts/gate-html.mjs (as linhas tiradas menos as postas, somadas pelos cabeçalhos dos pedaços)",
+      "conhecido_positivo": {
+        "o_que": "o diff tem o pedaço da conferência do Sobre retirada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sitio.cabeca",
+      "valor": "711d38027e1caa88b54169a43eb5496e86459308",
+      "comando": "git rev-parse HEAD",
+      "conhecido_positivo": {
+        "o_que": "a cabeça é um resumo de quarenta caracteres",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sitio.estado_dos_seguidos",
+      "valor": "",
+      "comando": "git status --porcelain --untracked-files=no (vazio quer dizer nada seguido por juntar)",
+      "conhecido_positivo": {
+        "o_que": "o git respondeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor.cabeca",
+      "valor": "a64ff623c40ec023c3cd25506da7e40c35ddb261",
+      "comando": "git rev-parse HEAD",
+      "conhecido_positivo": {
+        "o_que": "a cabeça é um resumo de quarenta caracteres",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor.estado_dos_seguidos",
+      "valor": "",
+      "comando": "git status --porcelain --untracked-files=no (vazio quer dizer nada seguido por juntar)",
+      "conhecido_positivo": {
+        "o_que": "o git respondeu",
+        "encontrado": true
+      }
+    }
+  ]
+}
