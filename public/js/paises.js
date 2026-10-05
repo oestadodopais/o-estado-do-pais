@@ -37,17 +37,24 @@
   };
 
   /* A marca cujo centro está mais perto do ponteiro, na horizontal: as marcas de
-     uma faixa estão todas na mesma linha, e um dedo não acerta num ponto de
-     7 px. A posição de cada uma lê-se da caixa que o navegador desenhou. */
-  var maisPerto = function (desenho, x) {
+     uma faixa estão na mesma linha, e um dedo não acerta num ponto de 7 px. A
+     posição de cada uma lê-se da caixa que o navegador desenhou. Desde a
+     passagem de higiene H3 (05.10.2026) os países com o mesmo valor estão uns
+     por cima dos outros, na mesma posição horizontal: entre as marcas dessa
+     posição ganha a mais perto do ponteiro na vertical, para o anel ficar na que
+     se tocou; a etiqueta diz o grupo inteiro em qualquer delas. */
+  var maisPerto = function (desenho, x, y) {
     var marcas = desenho.querySelectorAll('[data-faixa-marca]');
     var melhor = null;
     var distancia = Infinity;
+    var vertical = Infinity;
     for (var i = 0; i < marcas.length; i++) {
       var r = marcas[i].getBoundingClientRect();
       var d = Math.abs(r.left + r.width / 2 - x);
-      if (d < distancia) {
+      var v = Math.abs(r.top + r.height / 2 - y);
+      if (d < distancia - 0.5 || (Math.abs(d - distancia) <= 0.5 && v < vertical)) {
         distancia = d;
+        vertical = v;
         melhor = marcas[i];
       }
     }
@@ -57,8 +64,8 @@
   /* Mostra a etiqueta da marca mais perto, e só essa. A etiqueta é a que tem o
      mesmo identificador que a marca («<série>#<país>»), e procura-se por
      igualdade e não por um seletor, para não depender do «#» lá dentro. */
-  var mostra = function (desenho, x) {
-    var marca = maisPerto(desenho, x);
+  var mostra = function (desenho, x, y) {
+    var marca = maisPerto(desenho, x, y);
     if (!marca) return;
     var id = marca.getAttribute('data-faixa-marca');
     if (desenho.getAttribute('data-toque-em') === id) return;
@@ -73,13 +80,13 @@
 
   var liga = function (desenho) {
     desenho.addEventListener('pointerdown', function (ev) {
-      mostra(desenho, ev.clientX);
+      mostra(desenho, ev.clientX, ev.clientY);
     });
     /* O rato mostra ao passar e apaga ao sair; o dedo mostra ao tocar e deixa a
        etiqueta à vista até ao toque seguinte, porque um dedo que se levanta
        também «sai» do desenho. */
     desenho.addEventListener('pointermove', function (ev) {
-      if (ev.pointerType === 'mouse') mostra(desenho, ev.clientX);
+      if (ev.pointerType === 'mouse') mostra(desenho, ev.clientX, ev.clientY);
     });
     desenho.addEventListener('pointerleave', function (ev) {
       if (ev.pointerType === 'mouse') apaga(desenho);

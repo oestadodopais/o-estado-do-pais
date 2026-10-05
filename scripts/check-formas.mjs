@@ -455,6 +455,11 @@ const contas = {
   faixas: 0,
   faixas_nos_temas: 0,
   marcas_das_faixas: 0,
+  /* H3 (05.10.2026): as marcas afastadas na vertical por terem o mesmo valor que outras (F19c), e as etiquetas no
+     `title` das marcas das faixas dos cartões (F19i). */
+  marcas_afastadas_nas_faixas: 0,
+  titulos_das_faixas: 0,
+  marcas_afastadas_nos_paises: 0,
   frases_das_faixas: 0,
   empates_nas_faixas: 0,
   plantas_das_faixas: 0,
@@ -563,6 +568,8 @@ for (const ficheiro of paginasDe(DIST)) {
     for (const e of f19.erros) err(`${rel}: ${e}`);
     contas.faixas += f19.contas.faixas;
     contas.marcas_das_faixas += f19.contas.marcas;
+    contas.marcas_afastadas_nas_faixas += f19.contas.empilhadas;
+    contas.titulos_das_faixas += f19.contas.titulos;
     contas.frases_das_faixas += f19.contas.frases;
     contas.empates_nas_faixas += f19.contas.empates;
     contas.ressalvas_nas_pontas += f19.contas.ressalvas;
@@ -584,6 +591,7 @@ for (const ficheiro of paginasDe(DIST)) {
     contas.seccoes_dos_paises += f20.contas.seccoes;
     contas.faixas_dos_paises += f20.contas.faixas;
     contas.marcas_dos_paises += f20.contas.marcas;
+    contas.marcas_afastadas_nos_paises += f20.contas.empilhadas;
     contas.definicoes_dos_paises += f20.contas.definicoes;
     contas.etiquetas_do_toque += f20.contas.etiquetas;
     contas.listas_dos_paises += f20.contas.listas;
@@ -1483,12 +1491,13 @@ console.log(
         ` · frescura nos cartões de concelho: ${contas.frescura_nos_cartoes.pt} pt e ${contas.frescura_nos_cartoes.en} en, de ${contas.frescura_esperada.pt} e ${contas.frescura_esperada.en} cartões numa série atrasada (F17)` +
         ` · ${contas.contagens_por_extenso} frase(s) com contagem por extenso conferida(s)` +
         ` · calendário: ${contas.calendarios_dos_mandatos} páginas, ${contas.pontos_no_calendario} pontos e ${contas.plantas_do_calendario} plantas` +
-        ` · faixa da União (F19): ${contas.faixas} faixa(s), ${contas.faixas_nos_temas} nos assuntos, ${contas.marcas_das_faixas} marcas refeitas do valor, ` +
+        ` · faixa da União (F19): ${contas.faixas} faixa(s), ${contas.faixas_nos_temas} nos assuntos, ${contas.marcas_das_faixas} marcas refeitas do valor ` +
+        `(${contas.marcas_afastadas_nas_faixas} afastadas na vertical por terem o valor de outras, ${contas.titulos_das_faixas} etiquetas no title conferidas), ` +
         `${contas.frases_das_faixas} frases recompostas (${contas.empates_nas_faixas} com empate), ${contas.plantas_das_faixas} plantas a morder, ` +
         `${contas.ressalvas_nas_pontas} ressalva(s) nas pontas (${contas.ressalvas_nos_temas} nos assuntos), ${contas.ordinais_conferidos} ordinais e ` +
         `${contas.marcas_com_palavras} marca(s) por edição com palavras (F19g, F19h), ${contas.plantas_das_palavras} plantas das palavras a morder, ` +
         `${contas.plantas_dos_empates} plantas dos empates a morder` +
-        ` · secção dos países (F20): ${contas.seccoes_dos_paises} secção(ões), ${contas.faixas_dos_paises} faixa(s), ${contas.definicoes_dos_paises} definição(ões) declarada(s), ${contas.marcas_dos_paises} marcas refeitas do valor, ` +
+        ` · secção dos países (F20): ${contas.seccoes_dos_paises} secção(ões), ${contas.faixas_dos_paises} faixa(s), ${contas.definicoes_dos_paises} definição(ões) declarada(s), ${contas.marcas_dos_paises} marcas refeitas do valor (${contas.marcas_afastadas_nos_paises} afastadas na vertical), ` +
         `${contas.etiquetas_do_toque} etiquetas do toque, ${contas.listas_dos_paises} listas com ${contas.itens_das_listas} itens, ` +
         `${contas.ressalvas_da_uniao_nos_paises} ressalva(s) da Comissão, ${contas.plantas_dos_paises} plantas a morder` +
         ` · ${contas.datas_de_serie} data(s) de série`,
