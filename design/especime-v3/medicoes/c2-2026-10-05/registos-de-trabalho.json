@@ -89,13 +89,27 @@
       "prova": "portoes/cabeca, portoes/cabeca.fim e portoes/estado.fim, escritos por scripts/leituras/portoes.sh"
     },
     {
-      "registo": "plantas-pais.json, recibos-c2.json, capturas-depois.json, paginas-c2.json",
-      "cabeca": "57be3c40fc85276a8affef9d5007b06b2d39eba8",
-      "arvore": "limpa no que o git segue",
-      "prova": "apos-os-portoes.cabeca e apos-os-portoes.estado, escritos por apos-os-portoes.sh antes dos passos"
+      "registo": "aplicacao-published-at.json e aplicar-published-at.log (a passagem C2-b)",
+      "cabeca": "4aa588cee322bbe7bdc17d5173c0d40dd2a4eb6a",
+      "arvore": "as linhas lidas da cabeça (git show HEAD), e escritas na árvore",
+      "prova": "o resumo de cada linha com o published_at é o dos bytes do commit 82406f85 em 9 de 9 linhas",
+      "linhas_iguais_ao_commit": 9
+    },
+    {
+      "registo": "ledger-check-3.log e .codigo (a passagem C2-b)",
+      "cabeca": "4aa588cee322bbe7bdc17d5173c0d40dd2a4eb6a",
+      "arvore": "as nove linhas com o published_at, ainda por commitar",
+      "prova": "as linhas da árvore eram as do passo (a linha acima), e o commit seguinte, 82406f85, é exatamente essas nove linhas"
+    },
+    {
+      "registo": "build-c2b.log e .codigo, e a segunda corrida das conferências do fim (plantas-pais.json, recibos-c2.json, capturas-depois.json, paginas-c2.json)",
+      "cabeca": "82406f855ea08e22cd2eb350adde00448447748e",
+      "arvore": "limpa no que o git segue, salvo os ficheiros desta pasta por commitar (as provas, que a passagem refaz)",
+      "prova": "build-c2b.cabeca, apos-os-portoes.cabeca e apos-os-portoes.estado, escritos antes dos passos; o registo da construção escreve a versão da cabeça"
     }
   ],
   "linhas_compostas_iguais_ao_commit_8dbdcac2": 9,
+  "linhas_com_o_published_at_iguais_ao_commit_82406f85": 9,
   "conhecido_positivo": {
     "o_que": "a mesma comparação, contra os bytes da cabeça presa 3a253f73, dá diferente nas nove",
     "encontrado": true

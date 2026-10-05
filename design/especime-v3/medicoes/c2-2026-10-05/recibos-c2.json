@@ -1,17 +1,17 @@
 {
   "_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/recibos-c2.mjs. Não se edita à mão.",
   "construcao": {
-    "commit": "57be3c40fc85276a8affef9d5007b06b2d39eba8",
+    "commit": "82406f855ea08e22cd2eb350adde00448447748e",
     "ref": "c2-2026-10-05",
     "env": "local",
     "origem": "git",
     "motivo": null,
-    "construido_em": "2026-10-05T14:04:55.570Z"
+    "construido_em": "2026-10-05T15:58:23.920Z"
   },
   "recibos_lidos": 18,
   "recibos_certos": 18,
   "conhecido_positivo": {
-    "o_que": "num recibo estragado em memória, sem a porta da atualização, o leitor deixa de achar a porta",
+    "o_que": "num recibo estragado em memória (a porta da atualização tirada, a frase do valor em uso posta, o dia da publicação trocado pelo do acesso), as três medidas dão falso",
     "encontrado": true
   },
   "recibos": [
@@ -34,7 +34,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -57,7 +58,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -80,7 +82,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -103,7 +106,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -126,7 +130,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -149,7 +154,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -172,7 +178,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -195,7 +202,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -218,7 +226,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -241,7 +250,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -264,7 +274,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -287,7 +298,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -310,7 +322,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -333,7 +346,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -356,7 +370,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -379,7 +394,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -402,7 +418,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     },
@@ -425,7 +442,8 @@
         "razao_na_lingua_da_edicao": true,
         "diverge_abre_a_atualizacao": true,
         "igual_de_05_10_a_mais_recente": true,
-        "sem_valor_em_uso": true
+        "sem_valor_em_uso": true,
+        "published_at_no_recibo": true
       },
       "todas": true
     }

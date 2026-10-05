@@ -2,7 +2,7 @@
   "_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/paginas-c2.mjs. Não se edita à mão.",
   "bloco": "C2",
   "construcao_da_base": "006685ae",
-  "construcao_da_cabeca": "57be3c40",
+  "construcao_da_cabeca": "82406f85",
   "como": "astro build de uma exportação de cada commit (git archive), com as mesmas dependências",
   "ficheiros_na_base": 11180,
   "ficheiros_na_cabeca": 11180,

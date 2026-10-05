@@ -6,7 +6,7 @@ Error: páginas sem estrago: node:fs:440
     return binding.readFileUtf8(path, stringToFlags(options.flag));
                    ^
 
-Error: ENOENT: no such file or directory, open '<pasta temporária>/oedp-pais-bCjxGY/dist/version.json'
+Error: ENOENT: no such file or directory, open '<pasta temporária>/oedp-pais-PAts5u/dist/version.json'
     at Object.readFileSync (node:fs:440:20)
     at dataDaConstrucao (file://<worktree do sítio>/scripts/estudos-em-curso.mjs:9:33)
     at file://<worktree do sítio>/scripts/check-pais.mjs:28:44
@@ -16,7 +16,7 @@ Error: ENOENT: no such file or directory, open '<pasta temporária>/oedp-pais-bC
   errno: -2,
   code: 'ENOENT',
   syscall: 'open',
-  path: '<pasta temporária>/oedp-pais-bCjxGY/dist/version.json'
+  path: '<pasta temporária>/oedp-pais-PAts5u/dist/version.json'
 }
 
 Node.js v22.23.1

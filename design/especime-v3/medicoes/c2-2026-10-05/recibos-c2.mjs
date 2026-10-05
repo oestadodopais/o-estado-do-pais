@@ -42,6 +42,10 @@ function conferir(r, linha, lang) {
     diverge_abre_a_atualizacao: porta === `#alteracao-${n}`,
     igual_de_05_10_a_mais_recente: iIgual === linha.verifications.length - 1 && mostradas[0] === iIgual,
     sem_valor_em_uso: r.querySelectorAll('[data-valor-em-uso]').length === 0,
+    /* C2-b: o dia em que a fonte publicou, como a linha o declara, na forma da casa (DD.MM.AAAA), escrita aqui. */
+    published_at_no_recibo: typeof linha.published_at === 'string'
+      && r.querySelectorAll('[data-de-campo="published_at"]').length === 1
+      && limpo(r.querySelector('[data-de-campo="published_at"]')?.textContent) === linha.published_at.split('-').reverse().join('.'),
   };
   return { titulo, entrada: n, porta, mostradas, razao, ok };
 }
@@ -61,12 +65,14 @@ const linhaDoPrimeiro = load(fs.readFileSync(path.join('ledger', 'claims', `${pr
 const estragado = parse(fs.readFileSync(path.join(dist, primeiro.rota), 'utf8'));
 estragado.querySelectorAll('[data-atualizacao-da-releitura]').forEach((e) => e.remove());
 estragado.querySelector('main')?.insertAdjacentHTML('beforeend', '<span data-valor-em-uso>O valor do título é o que esta página usa.</span>');
+/* C2-b: e o dia da publicação trocado pelo dia do acesso. */
+estragado.querySelectorAll('[data-de-campo="published_at"]').forEach((e) => e.set_content(linhaDoPrimeiro.access_date.split('-').reverse().join('.')));
 const noEstragado = conferir(estragado, linhaDoPrimeiro, primeiro.lang).ok;
-const vePortaTirada = primeiro.todas && !noEstragado.diverge_abre_a_atualizacao && !noEstragado.sem_valor_em_uso;
+const vePortaTirada = primeiro.todas && !noEstragado.diverge_abre_a_atualizacao && !noEstragado.sem_valor_em_uso && !noEstragado.published_at_no_recibo;
 const saida = {
   _: 'Escrito por design/especime-v3/medicoes/c2-2026-10-05/recibos-c2.mjs. Não se edita à mão.',
   construcao: versao, recibos_lidos: recibos.length, recibos_certos: recibos.filter((x) => x.todas).length,
-  conhecido_positivo: { o_que: 'num recibo estragado em memória, sem a porta da atualização, o leitor deixa de achar a porta', encontrado: vePortaTirada },
+  conhecido_positivo: { o_que: 'num recibo estragado em memória (a porta da atualização tirada, a frase do valor em uso posta, o dia da publicação trocado pelo do acesso), as três medidas dão falso', encontrado: vePortaTirada },
   recibos,
 };
 fs.writeFileSync(path.join(PASTA, 'recibos-c2.json'), JSON.stringify(saida, null, 2) + '\n');
