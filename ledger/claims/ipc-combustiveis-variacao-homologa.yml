@@ -26,6 +26,9 @@ source_url: "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=001464
 access_date: "2026-09-26"
 published_at: "2026-09-10"
 reference_date: "2026-08"
+# A série no tempo de que esta linha é o ponto do seu período, nomeada e não
+# inferida (bloco RP3). Escrito pelo motor, nunca à mão.
+serie: "serie-ipc-combustiveis-variacao-homologa"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "{ \"geocod\" : \"PT\", \"geodsg\" : \"Portugal\", \"dim_3\" : \"0722\", \"dim_3_t\" : \"Combustível e lubrificantes para equipamento para transporte pessoal\", \"ind_string\" : \"23,78\", \"valor\" : \"23.78\" }"

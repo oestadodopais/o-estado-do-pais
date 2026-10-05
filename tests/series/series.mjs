@@ -469,10 +469,21 @@ function fonteDoMotor(motor) {
 
 const INE_META = (/** @type {string} */ codigo) => `https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=${codigo}&lang=PT`;
 
+/* AS PASTAS DOS CORPOS DAS SÉRIES (bloco RP4-m, 05.10.2026): a do RP3, a do RP4-m (as cinco séries do IPC) e as
+   das corridas do corredor das séries do motor (`corredor-series/<AAAA-MM-DD>/`). O mesmo endereço pode estar
+   alojado em mais de uma corrida, e por isso o corpo de um pedido acha-se pelo endereço E pelo resumo que a série
+   regista nesse pedido; a metainformação do INE, que a série não resume, lê-se da corrida mais recente. A
+   conferência é a mesma de antes: os bytes, o registo e o manifesto têm de dar o resumo do pedido. */
+const PASTAS_DAS_SERIES = /^(?:rp3|rp4m|corredor-series\/\d{4}-\d{2}-\d{2})\//;
+
 /** O corpo alojado de um endereço, conferido pelo resumo dos seus bytes, do registo e do manifesto. */
 function corpoDoEndereco(fonte, url, resumo) {
-  const achado = Object.entries(fonte.fetch).find(([rel, f]) => rel.startsWith('rp3/') && f.url === url && f.estado === 'lido');
-  if (!achado) return { erro: `o pedido ${url.slice(0, 80)} não tem corpo alojado` };
+  const candidatos = Object.entries(fonte.fetch).filter(([rel, f]) => PASTAS_DAS_SERIES.test(rel) && f.url === url && f.estado === 'lido');
+  if (!candidatos.length) return { erro: `o pedido ${url.slice(0, 80)} não tem corpo alojado` };
+  const achado = resumo
+    ? candidatos.find(([, f]) => f.sha256 === resumo)
+    : candidatos.sort((a, b) => String(a[1].fetched_at ?? '').localeCompare(String(b[1].fetched_at ?? ''))).at(-1);
+  if (!achado) return { erro: `o corpo de ${url.slice(0, 80)} não dá o resumo da série, do registo e do manifesto` };
   const bytes = fonte.ler(achado[0]);
   const daqui = createHash('sha256').update(bytes).digest('hex');
   const esperado = resumo ?? achado[1].sha256;
@@ -719,6 +730,14 @@ if (PROVA && noTempo.length) {
     planta('S3', 'a marca «e» da célula omitida no ponto e no excerto (o corpo da S4)', 'tem «e» em status', () =>
       ({ S3: [erroDaCelulaDoEurostat(corpoDe(s4), s4, { ...ultimo4, excerto: ultimo4.excerto.split(' · ').slice(0, 2).join(' · '), bandeira: null })].filter(Boolean) }));
     const meta7 = corpoDoEndereco(fonte, INE_META(String(s7.document.edition).split(', ')[0]), null).raw;
+    /* RP4-m: o corpo de um pedido acha-se pelo resumo que a série regista; um pedido com outro resumo não acha
+       corpo nenhum, mesmo com o endereço alojado. */
+    planta('S3', 'um pedido com um resumo que nenhum corpo alojado dá (RP4-m)', 'não dá o resumo da série', () =>
+      ({ S3: metadeDoMotor(new Map([['serie-ipc-combustiveis-variacao-homologa', (() => {
+        const x = structuredClone(series.get('serie-ipc-combustiveis-variacao-homologa'));
+        x.pedidos[0].sha256 = '0'.repeat(64);
+        return x;
+      })()]]), fonte).erros }));
     const p2024 = s7.pontos.find((x) => x.periodo === '2024');
     const p2025 = s7.pontos.find((x) => x.periodo === '2025');
     planta('S3', 'o objeto de outro período no excerto de um ponto do INE (o corpo da S7)', 'não está no bloco do seu período', () =>
