@@ -230,6 +230,7 @@ import {
 import { auditarVeredicto, veredictoEsperado } from './veredicto.mjs';
 import { auditarPerguntas, lerAuditoriaDasPerguntas } from './perguntas.mjs';
 import { conferirAuditoriaDasLeituras, conferirLeiturasRendidas, plantasDaK17 } from './leituras.mjs';
+import { conferirAuditoriaDasFamilias, conferirRecibosDasLinhas, plantasDasFamilias } from './familias.mjs';
 import { conferirOrdemDaPagina, plantasDaOrdem } from './ordem.mjs';
 import { REFERENCIAS_DAS_MEDIDAS } from '../../src/data/referencias-das-medidas.mjs';
 import { t } from '../../src/i18n/strings.mjs';
@@ -1916,6 +1917,23 @@ if (PROVA) {
     r.contas.leituras_plantas = plantas.length;
     r.contas.leituras_plantas_mordidas = plantas.filter((x) => x.mordeu).length;
   }
+  /* AS FAMÍLIAS (bloco R4, 05.10.2026, o ponto 2 do brief): cada linha do livro-razão com a sua frase «O que é este
+     número», por id ou por família, cada parte com o seu apoio em cada linha da família, nenhum algarismo nas frases
+     das famílias; e cada recibo construído com uma frase, a que esta célula recompõe, e o título com o nome do recibo.
+     As plantas correm com `--prova`, em memória. */
+  const familias = conferirAuditoriaDasFamilias();
+  r.erros.push(...familias.erros);
+  const recibos = conferirRecibosDasLinhas(DIST);
+  r.erros.push(...recibos.erros);
+  r.contas.familias = familias.contas;
+  r.contas.recibos_com_frase = recibos.contas;
+  if (PROVA) {
+    const plantas = plantasDasFamilias(DIST);
+    for (const x of plantas) if (!x.mordeu) r.erros.push(`K17 · famílias NÃO MORDEU ${x.nome}: ${x.queixa ?? 'nenhum vermelho'}`);
+    r.contas.familias_plantas = plantas.length;
+    r.contas.familias_plantas_mordidas = plantas.filter((x) => x.mordeu).length;
+    r.contas.familias_plantas_lista = plantas;
+  }
 }
 
 /* K20: as linhas presas veem-se na série própria ou na comparação do cartão. */
@@ -2028,6 +2046,20 @@ console.log(
       `(${r.contas.leituras_auditadas} declarações auditadas, ${r.contas.leituras_partes} partes, ${r.contas.leituras_apoios} apoios, ` +
       `${r.contas.leituras_origens} origens, ${r.contas.leituras_ramos_recontados} ramos recontados` +
       (PROVA ? `, ${r.contas.leituras_plantas_mordidas} de ${r.contas.leituras_plantas} plantas a morder)` : ')'),
+  ),
+);
+console.log(
+  cinza(
+    `    linhas com frase «O que é este número» (K17, R4)      ${r.contas.familias.linhas} ` +
+      `(${r.contas.familias.por_cartao} pelo cartão, ${r.contas.familias.por_concelho} pela medida dos concelhos, ${r.contas.familias.por_familia} pela família; ` +
+      `${r.contas.familias.entradas} entradas auditadas, ${r.contas.familias.partes} partes, ${r.contas.familias.apoios} apoios; ` +
+      `${r.contas.familias.todas_na_fonte} com todas as partes na fonte, ${r.contas.familias.alguma_da_casa} com alguma parte só da casa)`,
+  ),
+);
+console.log(
+  cinza(
+    `      recibos com a frase conferida                       ${r.contas.recibos_com_frase.com_frase} de ${r.contas.recibos_com_frase.recibos}` +
+      (PROVA ? ` · ${r.contas.familias_plantas_mordidas} de ${r.contas.familias_plantas} plantas a morder` : ''),
   ),
 );
 console.log(cinza(`    medidas com grupo etário fixado na linha (K13)         ${r.contas.medidas_com_grupo_etario}`));

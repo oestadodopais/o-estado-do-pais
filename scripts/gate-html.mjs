@@ -714,6 +714,10 @@ const avisos = [];
 const idsUsados = new Set();
 /** Páginas de linha construídas, por «língua:id» — para conferir que existem todas. */
 const linhasConstruidas = new Set();
+/* R4 (05.10.2026, o ponto 1 do brief): os recibos com a frase «O que é este número» na cabeça, contados um a um. A
+   K17 do `check:cartao` confere as palavras; este portão conta que cada recibo construído tem uma frase, a da sua
+   linha, dentro da cabeça, e o título com o nome do recibo. */
+const R4_RECIBOS = { comFrase: 0 };
 /** UE1: as páginas de série construídas, por «língua:id», e as origens das séries conferidas. */
 const seriesConstruidas = new Set();
 /* UE1b: as portas dos recibos das linhas portuguesas para as suas séries, e as
@@ -4738,6 +4742,18 @@ for (const file of ficheirosHtml(DIST)) {
       );
     } else {
       linhasConstruidas.add(`${rota.lang}:${claimDaPagina.id}`);
+      /* R4: uma frase por recibo, a da linha, na cabeça, com texto; e o título com o nome do recibo, antes dela. */
+      const idDaLinha = claimDaPagina.id;
+      const frases = root.querySelectorAll('[data-o-que-e]');
+      const frase = frases.length === 1 ? frases[0] : null;
+      const textoDaFrase = frase?.querySelector('[data-o-que-e-parte="o-que-e"]')?.textContent.replace(/\s+/g, ' ').trim() ?? '';
+      const nomeNoTitulo = root.querySelector(`.linha-cabeca h1 [data-de-linha="${idDaLinha}"]`)?.textContent.replace(/\s+/g, ' ').trim() ?? '';
+      if (!frase) err(`R4: o recibo de «${idDaLinha}» tem ${frases.length} frase(s) «O que é este número», e um recibo tem uma.`);
+      else if (frase.getAttribute('data-o-que-e') !== idDaLinha) err(`R4: a frase do recibo de «${idDaLinha}» diz ser de «${frase.getAttribute('data-o-que-e')}».`);
+      else if (!frase.closest('.linha-cabeca')) err(`R4: a frase do recibo de «${idDaLinha}» está fora da cabeça do recibo.`);
+      else if (!textoDaFrase) err(`R4: a frase do recibo de «${idDaLinha}» está vazia.`);
+      else if (!nomeNoTitulo) err(`R4: o título do recibo de «${idDaLinha}» não tem o nome do recibo.`);
+      else R4_RECIBOS.comFrase++;
     }
   }
   if (rota?.key === 'serie') {
@@ -9064,6 +9080,13 @@ if (linhasConstruidas.size > 0 && titulosDeLinhaConferidos === 0) {
     msg: 'a célula do espaço no valor do recibo não conferiu valor nenhum: o seletor deixou de ver o «p.linha-valor» das páginas de linha (R4: o valor saiu do <h1>).',
   });
 }
+/* R4: a frase em cada recibo construído, nas duas edições; a contagem é o conhecido-positivo da célula. */
+if (linhasConstruidas.size === 0 || R4_RECIBOS.comFrase !== linhasConstruidas.size) {
+  erros.push({
+    rel: routePath('linha', 'pt', { slug: '…' }),
+    msg: `R4: ${R4_RECIBOS.comFrase} de ${linhasConstruidas.size} recibos construídos têm a frase «O que é este número» da sua linha, na cabeça e com o nome no título; são todos.`,
+  });
+}
 if (cartoesComUnidadeConferidos === 0) erros.push({ rel: '/temas', msg: 'I143/I158: a célula não conferiu cartão nenhum.' });
 if (paginasDoLivro !== LANGS.length) {
   erros.push({
@@ -9078,6 +9101,7 @@ console.log(
     `  portão de HTML · ${ficheiros} páginas · ${idsUsados.size}/${claims.size} afirmações citadas ` +
       `fora do livro-razão · ${linhasConstruidas.size} páginas de linha` +
       ` · ${titulosDeLinhaConferidos} títulos de linha com o valor e a unidade separados` +
+      ` · R4: ${R4_RECIBOS.comFrase} recibo(s) com a frase «O que é este número»` +
       (documentos ? ` · ${documentos} documento(s) de estudo, conferidos contra a origem` : '') +
       (paginasDeTexto
         ? ` · ${paginasDeTexto} página(s) de leitura, conferidas contra o seu registo de conteúdo`

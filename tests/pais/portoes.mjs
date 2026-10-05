@@ -652,3 +652,18 @@ planta('h3-indice-sem-a-privacidade','tests/indice/indice.mjs',[
 planta('h3-voz-este-sitio-noutra-frase-da-privacidade','scripts/check-voz.mjs',[
  ['privacidade/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>Este sítio diz o que guarda.</p>')]
 ],[/marcador\(es\): ste sítio/]);
+/* R4 (05.10.2026): o recibo de cada linha abre com o nome do recibo e a frase «O que é este número». O portão de HTML
+   conta a frase em cada recibo e a régua da voz confere o nome de uma família contra a declaração; as palavras da
+   frase confere-as a K17 do `check:cartao`, com as suas plantas em memória. */
+planta('r4-recibo-sem-frase','scripts/gate-html.mjs',[
+ ['livro-razao/abrantes-populacao-2025/index.html',r=>r.querySelector('[data-o-que-e]').remove()]
+],[/R4: o recibo de «abrantes-populacao-2025» tem 0 frase\(s\) «O que é este número»/,/R4: \d+ de \d+ recibos construídos têm a frase/]);
+planta('r4-frase-de-outra-linha','scripts/gate-html.mjs',[
+ ['en/ledger/posicao-de-investimento-internacional-2025/index.html',r=>r.querySelector('[data-o-que-e]').setAttribute('data-o-que-e','divida-publica-2025')]
+],[/R4: a frase do recibo de «posicao-de-investimento-internacional-2025» diz ser de «divida-publica-2025»/]);
+planta('r4-titulo-sem-nome','scripts/gate-html.mjs',[
+ ['livro-razao/credito-malparado-2024/index.html',r=>r.querySelector('[data-de-linha="credito-malparado-2024"]').set_content('')]
+],[/R4: o título do recibo de «credito-malparado-2024» não tem o nome do recibo/]);
+planta('r4-voz-nome-da-familia-trocado','scripts/check-voz.mjs',[
+ ['livro-razao/credito-malparado-2024/index.html',r=>r.querySelector('[data-de-linha="credito-malparado-2024"]').set_content('Crédito à habitação')]
+],[/«data-nome="familia"» sobre «Crédito à habitação» · o texto marcado não é o nome da família "credito-malparado"/]);
