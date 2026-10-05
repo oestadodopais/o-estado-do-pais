@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-04T23:53:50+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "scripts/estudos-em-curso.mjs",
+   "descricao": "a regra do prazo inverte-se: uma data já passada passa e uma futura fecha a construção",
+   "sha256_antes": "96fc5b2c05e40b37499b371cbdc0d11640663e1f8f8806d7d373581e4c4107ac",
+   "sha256_depois": "835001e4666c48f04fa78d8847d1a612f13a6d0a7aaff4dff87ee16963a762c6",
+   "contexto_antes": "!w.emCurso.razao?.trim() || !dataValida(w.emCurso.ate))\n      return [`E1: declaração emCurso incompleta em ${w.slug}: exige razão e data de fim válida.`];\n    if (w.emCurso.ate < hoje)\n      return [`E1: prazo emCurso passado em ${w.slug} (${w.emCurso.ate}, construção ${hoje}); a ficha tem de ser decidida: prolongar a data ou tirar o campo em",
+   "contexto_depois": "!w.emCurso.razao?.trim() || !dataValida(w.emCurso.ate))\n      return [`E1: declaração emCurso incompleta em ${w.slug}: exige razão e data de fim válida.`];\n    if (w.emCurso.ate > hoje)\n      return [`E1: prazo emCurso passado em ${w.slug} (${w.emCurso.ate}, construção ${hoje}); a ficha tem de ser decidida: prolongar a data ou tirar o campo em"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "scripts/leituras/pacote.py",
+   "descricao": "o repositório volta a ser trocado pelo texto literal do argumento (o achado 8 reaberto)",
+   "sha256_antes": "a3921c2e3e8f404dd65af77a8303fddbda1462bf80966cf8939c5b0da28a1ff4",
+   "sha256_depois": "6f892402ef2b757b10e382bb22780c85e32368e96de41017af4074fc03de1200",
+   "contexto_antes": ", cabeca, destino, brief, relatorio, numeros, *construidos = sys.argv[1:]\n    # Nunca substituir o argumento literal: «.» apagava todos os pontos do texto.\n    repo_dado = str(Path(repo).absolute())\n    repo, destino = Path(repo).resolve(), Path(destino)\n    retira = shlex.split(os.environ.get('PACOTE_RETIRA', ''))\n    motor = shlex.split(os.environ.get('P",
+   "contexto_depois": ", cabeca, destino, brief, relatorio, numeros, *construidos = sys.argv[1:]\n    # Nunca substituir o argumento literal: «.» apagava todos os pontos do texto.\n    repo_dado = str(repo)\n    repo, destino = Path(repo).resolve(), Path(destino)\n    retira = shlex.split(os.environ.get('PACOTE_RETIRA', ''))\n    motor = shlex.split(os.environ.get('P"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "scripts/leituras/pacote.py",
+   "descricao": "a recusa da árvore suja inverte-se: recusa a limpa e aceita a suja",
+   "sha256_antes": "6f892402ef2b757b10e382bb22780c85e32368e96de41017af4074fc03de1200",
+   "sha256_depois": "67fd1e133e6fd8e238c40544021821a83272bc7ff2ca52373e549061a7d8abfd",
+   "contexto_antes": "e cabeça, seguidas dos padrões opcionais.')\n    for arvore, nome in [(repo, 'repositório')] + ([(Path(motor[0]).resolve(), 'motor')] if motor else []):\n        if git(arvore, 'status', '--porcelain', '--untracked-files=no').strip():\n            raise ValueError(f'O pacote recusa a árvore do {nome}: há modificações em ficheiros seguidos por comitar.')\n    # Confere os dois intervalos antes ",
+   "contexto_depois": "e cabeça, seguidas dos padrões opcionais.')\n    for arvore, nome in [(repo, 'repositório')] + ([(Path(motor[0]).resolve(), 'motor')] if motor else []):\n        if not git(arvore, 'status', '--porcelain', '--untracked-files=no').strip():\n            raise ValueError(f'O pacote recusa a árvore do {nome}: há modificações em ficheiros seguidos por comitar.')\n    # Confere os dois intervalos antes "
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "os segundos da passagem no relatório não batem com o custo.json",
+   "sha256_antes": "d9e55566252f59344f012c69f12499cd8c4f68e63ecab8bc9165ad8af6474c5c",
+   "sha256_depois": "b4bf3f1a6ea57956a536b45c5fffce3449f3c0463535cd46539372ea1e6b0385",
+   "contexto_antes": "apturas. O seu resumo consta da resposta H2-b, fora do próprio commit.\n\nModelo desta passagem: `gpt-6-astra`. Até `2026-10-04T23:49:44.123487+00:00` decorreram 3 102,098 segundos desde o mandato H2-b. O parcial medido desta passagem é 13 730 468 símbolos: 13 675 370 de entrada, dos quais 13 439 488 em cache, e 55 098 de saída. ",
+   "contexto_depois": "apturas. O seu resumo consta da resposta H2-b, fora do próprio commit.\n\nModelo desta passagem: `gpt-6-astra`. Até `2026-10-04T23:49:44.123487+00:00` decorreram 3 012,098 segundos desde o mandato H2-b. O parcial medido desta passagem é 13 730 468 símbolos: 13 675 370 de entrada, dos quais 13 439 488 em cache, e 55 098 de saída. "
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/index.html",
+   "descricao": "a primeira página construída diz «até 2026» onde a ficha diz 2027-12-31",
+   "sha256_antes": "634c428a18951eedc9868fb4433a997117a9a650c600ece788e2ad5442c36be6",
+   "sha256_depois": "e6ba283f8db8c3bc3dbfcafe6d7e42ca0e5b22d175a0b8acd209e022f8bbd9d2",
+   "contexto_antes": "/span><span>Cultura</span><span>publicado a <time datetime=\"2026-10-01\" data-nonledger=\"data-do-repositorio\">01.10.2026</time></span><span data-estudo-em-curso>em curso até 2027</span></p><p class=\"estudo-resumo lugar-estudo-leitura\">O dinheiro do Estado é o que chegou; o da câmara é o que falta. Os documentos mostram três totais difer",
+   "contexto_depois": "/span><span>Cultura</span><span>publicado a <time datetime=\"2026-10-01\" data-nonledger=\"data-do-repositorio\">01.10.2026</time></span><span data-estudo-em-curso>em curso até 2026</span></p><p class=\"estudo-resumo lugar-estudo-leitura\">O dinheiro do Estado é o que chegou; o da câmara é o que falta. Os documentos mostram três totais difer"
+  }
+ ]
+}
