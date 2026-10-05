@@ -1,0 +1,33 @@
+{
+  "o_que": "as leituras do ponto 4 da passagem RP4-m-b (medir-rp4mb-pip.py)",
+  "pip": {
+    "versao": "25.2",
+    "ficheiro": "pip/_internal/operations/freeze.py",
+    "linha_da_ordem": 146,
+    "texto": "for installation in sorted(installations.values(), key=lambda x: x.name.lower()):",
+    "linhas_achadas": 1
+  },
+  "xlrd_instalado": "2.0.2",
+  "pypi": {
+    "url": "https://pypi.org/pypi/xlrd/2.0.2/json",
+    "hora": "2026-10-05T16:44:11Z",
+    "cliente": "curl 8.7.1",
+    "http": 200,
+    "bytes": 5725,
+    "sha256": "320fd24af58bea9b9ef35aa0763f79c81a0b464ad8078d1558b96c39ce38bd65",
+    "nome": "xlrd",
+    "versao": "2.0.2",
+    "ficheiros": [
+      {
+        "nome": "xlrd-2.0.2-py2.py3-none-any.whl",
+        "publicado": "2025-06-14T08:46:37.766025Z",
+        "sha256": "ea762c3d29f4cca48d82df517b6d89fbce4db3107f9d78713e48cd321d5c9aa9"
+      },
+      {
+        "nome": "xlrd-2.0.2.tar.gz",
+        "publicado": "2025-06-14T08:46:39.039607Z",
+        "sha256": "08b5e25de58f21ce71dc7db3b3b8106c1fa776f3024c54e45b45b374e89234c9"
+      }
+    ]
+  }
+}

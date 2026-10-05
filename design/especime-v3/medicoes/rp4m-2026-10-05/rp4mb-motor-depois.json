@@ -1,0 +1,105 @@
+{
+  "o_que": "RP4-m-b: os cenários dos achados 4 e 5 contra o corredor das séries (medir-rp4mb-motor.py)",
+  "etiqueta": "depois",
+  "motor_cabeca": "2787c99b0e3110f27d660d9d24491229a2ceb836",
+  "motor_estado_dos_seguidos": "",
+  "achado_4": {
+    "primeira_corrida": {
+      "revisoes": 2,
+      "revistos": {
+        "serie-pensao-media-anual": [
+          "2020"
+        ],
+        "serie-ihpc-rendas-variacao-homologa": [
+          "2024-03"
+        ]
+      }
+    },
+    "primeira_revisao": {
+      "serie-pensao-media-anual": [
+        [
+          "6 057",
+          "6 058",
+          "2026-10-05"
+        ]
+      ],
+      "serie-ihpc-rendas-variacao-homologa": [
+        [
+          "6,9",
+          "6,91",
+          "2026-10-05"
+        ]
+      ]
+    },
+    "segunda_corrida": {
+      "excecao": null,
+      "recusas": [],
+      "revisoes": 2,
+      "revistos": {
+        "serie-pensao-media-anual": [
+          "2020"
+        ],
+        "serie-ihpc-rendas-variacao-homologa": [
+          "2024-03"
+        ]
+      },
+      "segunda_revisao": {
+        "serie-pensao-media-anual": [
+          [
+            "6 058",
+            "6 059",
+            "2026-10-06"
+          ]
+        ],
+        "serie-ihpc-rendas-variacao-homologa": [
+          [
+            "6,91",
+            "6,92",
+            "2026-10-06"
+          ]
+        ]
+      },
+      "revisoes_no_ficheiro_depois_do_ensaio": true
+    }
+  },
+  "achado_5": {
+    "ensaio": {
+      "codigo_do_main": 0,
+      "linha": "CORREDOR_DAS_SERIES: RECUSA · ensaio · 0 ponto(s) novo(s) e 0 revisão(ões) em 24 séries",
+      "linhas_recusa": [
+        "RECUSA  o pedido ine-0014532-meta.json (https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014532&lang=PT) não se leu: estado recusado, HTTP 404; a série serie-pensao-media-anual fica como estava"
+      ],
+      "recusas": [
+        "o pedido ine-0014532-meta.json (https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014532&lang=PT) não se leu: estado recusado, HTTP 404; a série serie-pensao-media-anual fica como estava"
+      ],
+      "pontos_novos": 0,
+      "revisoes": 0,
+      "pedidos_da_pensao": [
+        {
+          "serie": "serie-pensao-media-anual",
+          "fonte": "INE",
+          "dados": "não pedidos: a metainformação não se leu",
+          "estado": "recusado",
+          "falhados": [
+            {
+              "nome": "ine-0014532-meta.json",
+              "url": "https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014532&lang=PT",
+              "estado": "recusado",
+              "http": 404,
+              "erro": "HTTP 404"
+            }
+          ]
+        }
+      ],
+      "pasta_da_pensao": "rp3",
+      "escreveu_as_revisoes": false
+    },
+    "escrita": {
+      "excecao": "Fail",
+      "mensagem": "o corredor recusa escrever: o pedido ine-0014532-meta.json (https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0014532&lang=PT) não se leu: estado recusado, HTTP 404; a série serie-pensao-media-anual fica como estava",
+      "alojou_a_pasta_do_dia": false,
+      "series_periodo_igual": true,
+      "escreveu_as_revisoes": false
+    }
+  }
+}

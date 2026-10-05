@@ -23,9 +23,18 @@
  *
  * NADA DE CARTÃO DE PARTILHA POR SÉRIE: a série entra no estudo de dados dos
  * domínios, como as linhas dos concelhos (a decisão 4 do brief RP3).
+ *
+ * DUAS COISAS DO BLOCO RP4-m (05.10.2026). Uma série cuja unidade é um índice com
+ * base («índice (base AAAA = 100)») diz, em palavras da casa, o que o último ponto
+ * quer dizer em relação à base, com o período e o valor pelos seus componentes e a
+ * palavra do lado escolhida pela comparação com cem (o ponto 5 do mandato, o achado 7
+ * das leituras do RP4). E uma série derivada declarada em `FIGURAS_INDEXADAS` desenha
+ * as séries da lista no mesmo eixo, indexadas a cem no período de base da regra do RP4,
+ * com a legenda fora do desenho (o ponto 4): a forma e a recomposição da F21 não mudam,
+ * e a regra da página da F21 admite o modo indexado só no recibo de uma série declarada.
  */
 import SerieDoPais from '../components/formas/SerieDoPais.astro';
-import { tabelaPorAnos } from '../lib/formas/serie-do-pais.mjs';
+import { tabelaPorAnos, BASE_DO_INDICE } from '../lib/formas/serie-do-pais.mjs';
 import Base from '../layouts/Base.astro';
 import NomeDaSerie from '../components/serie/NomeDaSerie.astro';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
@@ -33,9 +42,9 @@ import PontoDaSerie from '../components/serie/PontoDaSerie.astro';
 import CampoDaSerie from '../components/serie/CampoDaSerie.astro';
 import DataDaSerie from '../components/serie/DataDaSerie.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
-import { allClaims } from '../lib/ledger.mjs';
+import { allClaims, parsePtNumber } from '../lib/ledger.mjs';
 import { getSerie, pontosDaSerie } from '../lib/series.mjs';
-import { NOMES_DAS_SERIES, PALAVRAS_DAS_MARCAS_DO_INE, PALAVRAS_DA_PERIODICIDADE } from '../data/series-no-tempo.mjs';
+import { NOMES_DAS_SERIES, PALAVRAS_DAS_MARCAS_DO_INE, PALAVRAS_DA_PERIODICIDADE, FIGURAS_INDEXADAS } from '../data/series-no-tempo.mjs';
 import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
 import { nomeDoCartao } from '../lib/nomes.mjs';
 import { getClaim } from '../lib/ledger.mjs';
@@ -96,6 +105,20 @@ const titulo = `${nomeEmTexto} · ${st.metaSufixo} · ${s.livro.eyebrow} · ${SI
 /* A DESCRIÇÃO NÃO LEVA ALGARISMOS: o `<head>` não tem onde os provar. */
 const descricao = `${s.livro.serie.eyebrow} · ${nomeEmTexto} · ${derivada ? SITE_NAME : String(serie.source)}`;
 const campoDaConta = lang === 'en' ? 'derivation_en' : 'derivation';
+/* A FIGURA INDEXADA (RP4-m, o ponto 4): a lista declarada, a última é esta série e as outras são origens dela. */
+const indexada = /** @type {string[] | null} */ ((/** @type {Record<string, string[]>} */ (FIGURAS_INDEXADAS))[id] ?? null);
+if (indexada && (!derivada || indexada[indexada.length - 1] !== id || !indexada.slice(0, -1).every((o) => origens.includes(o)))) {
+  throw new Error(`série «${id}»: a figura indexada declarada não acaba nesta série derivada ou cita uma série que não é origem dela.`);
+}
+const baseDaFigura = indexada ? BASE_DO_INDICE[/** @type {'mensal'|'trimestral'|'semestral'|'anual'} */ (String(serie.periodicidade))] : null;
+const iBase = indexada ? pontos.findIndex((p) => String(p.periodo) === baseDaFigura) : -1;
+if (indexada && iBase < 0) throw new Error(`série «${id}»: a figura indexada pede o ponto de base ${baseDaFigura}, que a série não tem.`);
+/* O QUE UM ÍNDICE QUER DIZER (RP4-m, o ponto 5): pela forma da unidade, e não por uma lista. */
+const eIndice = /^índice \(base \d{4} = 100\)$/.test(String(serie.unit));
+const ultimo = pontos[pontos.length - 1];
+const valorDoUltimo = eIndice ? parsePtNumber(String(ultimo.valor)) : null;
+if (eIndice && valorDoUltimo === null) throw new Error(`série «${id}»: o último ponto do índice não é um número.`);
+const ladoDoIndice = valorDoUltimo === null ? null : valorDoUltimo > 100 ? st.indiceAcima : valorDoUltimo < 100 ? st.indiceAbaixo : st.indiceIgual;
 ---
 
 <Base lang={lang} path={path} title={titulo} description={descricao}>
@@ -144,19 +167,30 @@ const campoDaConta = lang === 'en' ? 'derivation_en' : 'derivation';
       }
 
       {
+        eIndice && (
+          <p class="serie-indice-frase" data-serie-indice={id}>
+            {st.indiceAntes}<DataDaSerie serie={id} campo={`pontos.${pontos.length - 1}.periodo`} valor={String(ultimo.periodo)} lang={lang} />{st.indiceValia}<PontoDaSerie serie={id} chave={String(ultimo.periodo)} />{ladoDoIndice}
+          </p>
+        )
+      }
+
+      {
         derivada && (
           <section class="linha-bloco serie-conta" aria-labelledby="conta">
             <h2 class="linha-bloco-titulo" id="conta">{st.derivadaK}</h2>
-            <p>{st.derivadaFrase}</p>
+            <p>{origens.length > 1 ? st.derivadaFraseVarias : st.derivadaFrase}</p>
             <p>
               <CampoDaSerie serie={id} campo={campoDaConta} valor={String(lang === 'en' ? serie.derivation_en : serie.derivation)} />
             </p>
             <p>
-              <span class="linha-campo-k">{st.origemK}</span>{' '}
-              {origens.map((o) => (
-                <a href={routePath('serie', lang, { slug: o })} data-serie-de-origem={o}>
-                  <NomeDaSerie id={o} lang={lang} />
-                </a>
+              <span class="linha-campo-k">{origens.length > 1 ? st.origensK : st.origemK}</span>{' '}
+              {origens.map((o, i) => (
+                <>
+                  {i > 0 && ', '}
+                  <a href={routePath('serie', lang, { slug: o })} data-serie-de-origem={o}>
+                    <NomeDaSerie id={o} lang={lang} />
+                  </a>
+                </>
               ))}
             </p>
             <p>
@@ -169,7 +203,22 @@ const campoDaConta = lang === 'en' ? 'derivation_en' : 'derivation';
 
       <section class="linha-bloco serie-pontos" aria-labelledby="pontos">
         <h2 class="linha-bloco-titulo" id="pontos">{st.pontosK}</h2>
-        <div class="serie-grafico"><SerieDoPais ids={[id]} lang={lang} /></div>
+        <div class:list={['serie-grafico', indexada && 'serie-grafico-indexado']}><SerieDoPais ids={indexada ?? [id]} modo={indexada ? 'indice' : 'unidade'} lang={lang} /></div>
+        {
+          indexada && (
+            <div class="serie-indexada-legenda" data-serie-indexada={id}>
+              <ul class="serie-indexada-lista">
+                {indexada.map((o, i) => (
+                  <li data-serie-indexada-linha={o}>
+                    <span class:list={['serie-indexada-traco', i === indexada.length - 1 && 'serie-indexada-traco-tracejado']} aria-hidden="true" />
+                    <NomeDaSerie id={o} lang={lang} />
+                  </li>
+                ))}
+              </ul>
+              <p class="serie-indexada-frase">{st.indexadaAntes}<DataDaSerie serie={id} campo={`pontos.${iBase}.periodo`} valor={String(baseDaFigura)} lang={lang} />{st.indexadaDepois}</p>
+            </div>
+          )
+        }
         <div class="serie-pontos-corpo">
           <div class="serie-tabela-janela" tabindex="0" role="region" aria-labelledby="pontos">
           <table class="serie-tabela serie-tabela-tempo" data-serie-tabela={id}>

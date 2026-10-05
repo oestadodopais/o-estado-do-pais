@@ -1,0 +1,5 @@
+
+> o-estado-do-pais@0.1.0 check:rotulos
+> node scripts/inventario-rotulos.mjs --prova
+
+R2 · rótulos: 7882 página(s) lidas, 688 com cartões, 5290 cartão(ões) (nacional 318, uniao 42, concelho 4928, camaras 2), 376 chave(s); unidades declaradas 780, da linha 4442, em dívida 2; estados 688; frases da faixa 2464+2464 (2464 cartões com a faixa inteira); contra o declarado: 376 chave(s), 1362 campo(s), 1411 forma(s) com a contagem, 26844 ocorrência(s), 0 diferença(s); dobras 138 perguntas, 4928 notas, 12 referências, 42 na União; OE1: unidades em 186+186 recibos, 186+186 entradas do livro; 32 de 32 plantas a morder; 0 erro(s).

@@ -639,6 +639,11 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 |---|---|---|---|
 | rp4-b | composição dos títulos e das exclusões; unidade visível da primeira página | por ler | Codex gpt-6-astra, pelas decisões da leitura do Opus: cadeias nas duas edições, unidade lida da declaração dos cartões e conferida na célula dos blocos, artigos portugueses e anos ingleses por extenso. Sai a leitura do cartão europeu autónomo. A legenda da comparação reutiliza a cadeia existente. Os títulos e as exclusões são compostos e conferidos pela F21; as cadeias estão registadas no inventário sem as fazer passar por frases fixas. |
 
+## C2 · as nove revisões da Eurostat, relidas, 05.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| c2 | Duas contagens novas e duas retiradas | por ler | Claude Opus 5.5, construtor do C2: as nove releituras acrescentam ao livro dezoito entradas de proveniência (o acesso e o excerto de cada linha), ao lado das nove atualizações. As duas contagens do inventário passam de 54 a 72; as anteriores ficam retiradas com a razão. A classe das frases e as rotas do portão da voz mantêm-se. |
 ## H3 · a caixa das sugestões numa linha e a página «Privacidade», 05.10.2026
 
 | bloco | mudança | estado | nota |
