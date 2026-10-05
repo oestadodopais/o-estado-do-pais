@@ -56,7 +56,8 @@ for (const lang of ['pt', 'en']) {
    só conta o separador entre o fim do valor e o início da unidade. */
 for (const [tipo, abre, fecha] of [
   ['cartao', '<span class="cartao-medida-quantidade">', '</span>'],
-  ['titulo', '<h1 class="linha-valor">', '</h1>'],
+  /* R4 (05.10.2026): o valor do recibo saiu do <h1> e vive em p.linha-valor; o controlo e a planta seguem-no. */
+  ['titulo', '<p class="linha-valor">', '</p>'],
 ]) {
   for (const [valor, unidade] of [['20 600', 'euros por habitante'], ['−50,2', '%']]) {
     for (const [nome, separador] of [['normal', ' '], ['fixo', '\u00a0']]) {

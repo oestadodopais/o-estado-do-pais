@@ -147,7 +147,7 @@ if (!process.argv.includes('--declaracoes')) {
         }
       }
       if (id===salario) {
-        const titulo = recibo.querySelector('h1.linha-valor');
+        const titulo = recibo.querySelector('p.linha-valor');
         const unidade = titulo.querySelector('[data-linha-campo="unit"]');
         const marca = titulo.querySelector('.claim-provisorio');
         assert.ok(titulo.innerHTML.indexOf(unidade.toString()) < titulo.innerHTML.indexOf(marca.toString()));

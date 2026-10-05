@@ -2295,6 +2295,9 @@ export const STRINGS = {
       },
       linha: {
         eyebrow: 'Linha do livro-razão',
+        /* R4 (05.10.2026, o ponto 1 do brief): o rótulo do nome com que a fonte publica a medida, por baixo do título do
+           recibo, entre aspas e na língua da fonte. */
+        nomeNaFonteK: 'O nome na fonte',
         aparelhoK: 'Proveniência',
         /* O RÓTULO DO IDENTIFICADOR (bloco B, item B7; achado C13). O id da
            linha rendia-se solto por baixo do valor, e as duas leituras leram-no
@@ -4078,6 +4081,7 @@ export const STRINGS = {
       },
       linha: {
         eyebrow: 'Ledger row',
+        nomeNaFonteK: 'The name at the source',
         aparelhoK: 'Provenance',
         identificadorK: 'identifier',
         excertoNota: 'Transcribed from the source, word for word.',
