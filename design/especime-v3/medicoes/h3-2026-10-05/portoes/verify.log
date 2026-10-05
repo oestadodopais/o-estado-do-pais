@@ -385,11 +385,11 @@
 [90m    saldo-natural-portugal-2025 → source_url, access_date, excerpt, document.title, document.edition[0m
 [90m    Isto não impede o build. Impede que se diga que o livro-razão está fechado.[0m
 
-[90m  séries · 26 série(s) de 4411 ponto(s), 24 com marca da fonte · 16 no tempo · 7 linha(s) presa(s) à sua série · 29 planta(s), uma ou mais por regra, vistas a morder[0m
+[90m  séries · 34 série(s) de 8119 ponto(s), 24 com marca da fonte · 24 no tempo · 12 linha(s) presa(s) à sua série · 29 planta(s), uma ou mais por regra, vistas a morder[0m
   [32m✓[0m cada série de países tem os 27 e a União e as gémeas batem como números; cada série no tempo tem a cadência com as lacunas declaradas, cada valor no seu excerto, a derivada refeita, e cada linha presa é o ponto do seu período.
 
 
-[90m  amarra das decisões · 126 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
+[90m  amarra das decisões · 131 entrada(s) a partir da §1.38 · 2 texto(s) governado(s) · 2 citação(ões) da constituição conferida(s), de 43 entre «…»[0m
   [32m✓[0m cada texto no ar tem uma decisão registada que o governa, e cada frase que a constituição lhe cita está lá.
 
 [90m  bytes de controlo · 3 de 3 ficheiro(s) sem nenhum · 3 planta(s) vista(s)[0m
@@ -471,7 +471,7 @@ História do valor: 2 controlos e 4 plantas.
 
 [90m  cruzamentos · 3070 linha(s) de origem externa em 5 registo(s) · 2155 com reconferência de programa acrescentada (3077 entrada(s)) · 5 planta(s) vista(s)[0m
 [90m  rótulos da fonte · 2046 de 3195 linha(s) com "name", todas vindas do motor · 3 planta(s) vista(s)[0m
-[90m  séries · 26 linha(s) de série em 1 registo(s) · 4 planta(s) vista(s)[0m
+[90m  séries · 34 linha(s) de série em 1 registo(s) · 4 planta(s) vista(s)[0m
 [90m  cruzamentos · 5 ficheiro(s) inteiro(s) em 4 registo(s) · 5 item(ns) da agenda reconferidos[0m
 [90m    avaliacao-economica-regional-de-portugal-2026: 8[0m
 [90m    concelhos-2026: 2767[0m
@@ -531,9 +531,10 @@ História do valor: 2 controlos e 4 plantas.
 > o-estado-do-pais@0.1.0 check:briefs
 > python3 scripts/check-briefs.py
 
-  portão dos briefs · 64 brief(s) em design/observatorio/ · 28 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação, os 36 presos por sha256 em design/observatorio/medidas/isentos.json
+  portão dos briefs · 66 brief(s) em design/observatorio/ · 30 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação, os 36 presos por sha256 em design/observatorio/medidas/isentos.json
     conferido: BRIEF-B2-o-veredicto-e-as-paginas-dos-temas.md (medidas/BRIEF-B2.json)
     conferido: BRIEF-C1-as-correcoes-de-confianca.md (medidas/BRIEF-C1.json)
+    conferido: BRIEF-C2-as-nove-revisoes-da-eurostat.md (medidas/BRIEF-C2.json)
     conferido: BRIEF-CI1-o-portao-em-metade-do-tempo.md (medidas/BRIEF-CI1.json)
     conferido: BRIEF-E0-as-linhas-da-casa-no-registo-das-mudancas.md (medidas/BRIEF-E0.json)
     conferido: BRIEF-E1-os-estudos-de-evora-um-conjunto-coerente.md (medidas/BRIEF-E1.json)
@@ -557,6 +558,7 @@ História do valor: 2 controlos e 4 plantas.
     conferido: BRIEF-RP2-rendimentos-e-precos-os-documentos-e-as-outras-apis.md (medidas/BRIEF-RP2.json)
     conferido: BRIEF-RP3-as-series-no-motor-e-no-livro.md (medidas/BRIEF-RP3.json)
     conferido: BRIEF-RP4-o-grafico-das-series-no-cartao-e-no-recibo.md (medidas/BRIEF-RP4.json)
+    conferido: BRIEF-RP4M-as-series-que-faltam-e-o-corredor-das-series.md (medidas/BRIEF-RP4M.json)
     conferido: BRIEF-S1-a-caixa-das-sugestoes.md (medidas/BRIEF-S1.json)
     conferido: BRIEF-UE1-onde-portugal-fica-entre-os-27.md (medidas/BRIEF-UE1.json)
     conferido: BRIEF-UE2-a-pagina-dos-paises.md (medidas/BRIEF-UE2.json)
@@ -623,6 +625,13 @@ História do valor: 2 controlos e 4 plantas.
       §0 liga «3» a `linhas_do_pib_por_habitante`
       §0 liga «5» a `colunas_do_csv_dos_concelhos`
       §0 liga «0» a `valores_separados_da_unidade`
+      §0 liga «82» a `linhas_com_uma_verificacao_igual_de_05_10_2026`
+      §0 liga «9» a `linhas_com_uma_verificacao_divergente_de_05_10_2026`
+      §0 liga «0» a `linhas_com_uma_verificacao_inacessivel_de_05_10_2026`
+      §0 liga «9» a `dessas_as_lidas_na_eurostat`
+      §0 liga «3» a `linhas_divergentes_usadas_na_primeira_pagina`
+      §0 liga «1» a `correcoes_do_tipo_atualizacao_no_livro`
+      §0 liga «2» a `mencoes_da_v16_no_readme_do_livro`
       §0 liga «21» a `passos_do_build`
       §0 liga «33» a `passos_do_verify`
       §0 liga «17» a `passos_repetidos`
@@ -893,6 +902,16 @@ História do valor: 2 controlos e 4 plantas.
       §0 liga «0» a `desenhos_svg_no_cartao_da_medida`
       §0 liga «0» a `desenhos_svg_no_cartao_da_medida`
       §0 liga «0» a `desenhos_svg_no_cartao_da_medida`
+      §0 liga «16» a `series_no_tempo_no_livro`
+      §0 liga «1» a `series_no_tempo_derivadas`
+      §0 liga «7» a `linhas_presas_a_uma_serie`
+      §0 liga «10» a `linhas_do_ipc_com_as_coordenadas_0014666_ou_0014647`
+      §0 liga «5» a `dessas_as_linhas_principais_sem_o_periodo_anterior`
+      §0 liga «0» a `dessas_as_presas_a_uma_serie`
+      §0 liga «1» a `meses_entre_a_linha_do_ihpc_de_portugal_e_o_ultimo_ponto_da_sua_serie`
+      §0 liga «1» a `meses_entre_a_linha_do_ihpc_de_portugal_e_o_ultimo_ponto_da_sua_serie`
+      §0 liga «13» a `series_no_tempo_com_ponto_no_periodo_de_base_de_2015`
+      §0 liga «6» a `pontos_da_serie_da_remuneracao_bruta_mensal_media`
       §0 liga «0» a `ficheiros_na_pasta_das_funcoes`
       §0 liga «1» a `portas_do_rodape_para_escrever_ao_projeto`
       §0 liga «5» a `ficheiros_de_codigo_que_leem_a_porta_das_correcoes`
@@ -921,8 +940,8 @@ História do valor: 2 controlos e 4 plantas.
     isento por nomeação: BRIEF-I129-o-grupo-etario-dos-jovens-nem.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.119)
     isento por nomeação: BRIEF-M3b-os-nomes-confirmados-voltam-aos-recibos.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.118)
     chave repetida entre isentos, dita e não fatal: «BRIEF-fatia» · BRIEF-fatia-css-alcance-2026-09-16.md, BRIEF-fatia-dominios-css-2026-09-15.md · fecha o portão no dia em que um deles deixar de ser isento
-    apagado antes de contar no §0: codigo 526, enderecos 0, seccoes 35, datas 41, resumos 0, ordinais 1, identificadores 29, anos 5
-  ✓ 357 número(s) do §0 ligado(s) à sua medição, cada detetor provou que vê, e os briefs isentos estão presos pelo resumo.
+    apagado antes de contar no §0: codigo 550, enderecos 0, seccoes 37, datas 45, resumos 0, ordinais 1, identificadores 32, anos 6
+  ✓ 374 número(s) do §0 ligado(s) à sua medição, cada detetor provou que vê, e os briefs isentos estão presos pelo resumo.
 
 > o-estado-do-pais@0.1.0 gate:html
 > node scripts/gate-html.mjs
@@ -936,13 +955,13 @@ História do valor: 2 controlos e 4 plantas.
   B1 leitura evora-os-pelouros-quem-os-teve-o-que-fizeram/pt: sem leitura, o registo não começa por Em resumo.
   B1 leitura evora-prometido-pago-auditado-2026/pt: sem leitura, o registo não começa por Em resumo.
   B1 leitura evora-quinze-anos-cinco-mandatos/pt: sem leitura, o registo não começa por Em resumo.
-  R3 · as sete portas do rodapé conferidas em 7860 página(s), com 10 planta(s) em memória.
-  H3 · a porta da privacidade em 7860 de 7860 página(s), 2 página(s) da privacidade conferida(s), 19 planta(s) em memória; a frase dos cookies no texto, conferida em 7885 página(s), 10 guião(ões) servido(s), 1 configuração e 1 função(ões): 0 achado(s); 560 etiqueta(s) das marcas da faixa da União conferidas no title.
+  R3 · as sete portas do rodapé conferidas em 7876 página(s), com 10 planta(s) em memória.
+  H3 · a porta da privacidade em 7876 de 7876 página(s), 2 página(s) da privacidade conferida(s), 22 planta(s) em memória; a frase dos cookies no texto, conferida em 7901 página(s), 10 guião(ões) servido(s), 1 configuração e 1 função(ões): 0 achado(s); 560 etiqueta(s) das marcas da faixa da União conferidas no title.
   R2-b, o autoteste da unidade: «dos 21 aos 65 anos» recusada (4 falta(s)), a origem de outra linha recusada, a declaração certa aceite.
 
-[90m  portão de HTML · 7885 páginas · 2659/3195 afirmações citadas fora do livro-razão · 6390 páginas de linha · 6390 títulos de linha com o valor e a unidade separados · 25 documento(s) de estudo, conferidos contra a origem · 17 página(s) de leitura, conferidas contra o seu registo de conteúdo · 0 página(s) com o nome de quem responde · séries: 52 página(s), 10182 ponto(s), 3248 nome(s) de país, 2116 campo(s), 100 recontagem(ns) conferidos · UE1b: 20 porta(s) dos recibos das linhas para as séries, 22 legenda(s) das marcas com 34 marca(s) · UE1d: 20 definição(ões) declarada(s) nos recibos das séries · UE1e: 20 recibo(s) das séries sem Portugal na definição, 2 com a forma do recibo da série (1 declarada(s)) · S1: 7860 porta(s) das sugestões em 7860 página(s), 12 página(s) da caixa conferida(s), 7810 endereço(s) lidos no mapa do sítio, 21 planta(s) em memória, 2 migração(ões) da base lidas por ordem · L2b: 2444 lugar(es), 2464 contagem(ns) e 528 empate(s) recontados das linhas dos concelhos, 2444 valor(es) do concelho e 616 de Portugal nas faixas, pela marca do cartão[0m
-[90m  allowlist · 19 motivo(s) e 3 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 588 · nome-oficial-da-medida 44 · referencia-legal 20 · titulo-de-estudo 455 · escala-de-instrumento 2326 · objetivo-institucional 2 · limiar-do-quadro 186 · data-da-linha 43454 · data-do-repositorio 110 · periodo-da-fonte 1112 · data-de-referencia 5170 · numeracao 124 · proveniencia 17435 · data-da-agenda 170 · data-de-leitura-de-uma-definicao 190 · identificador-tecnico 4 · fonte-da-carta 68 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · sha256 (scope: body) 346
-  rótulo de IA · 7860 no topo (de 7860 páginas fora dos documentos alojados) · 0 no rodapé · 2 ficha(s) da primeira página · 2 frase(s) da política e 2 do projeto, comparadas com o texto decidido[0m
+[90m  portão de HTML · 7901 páginas · 2659/3195 afirmações citadas fora do livro-razão · 6390 páginas de linha · 6390 títulos de linha com o valor e a unidade separados · 25 documento(s) de estudo, conferidos contra a origem · 17 página(s) de leitura, conferidas contra o seu registo de conteúdo · 0 página(s) com o nome de quem responde · séries: 68 página(s), 17602 ponto(s), 3248 nome(s) de país, 5326 campo(s), 100 recontagem(ns) conferidos · UE1b: 20 porta(s) dos recibos das linhas para as séries, 22 legenda(s) das marcas com 34 marca(s) · UE1d: 20 definição(ões) declarada(s) nos recibos das séries · UE1e: 20 recibo(s) das séries sem Portugal na definição, 2 com a forma do recibo da série (1 declarada(s)) · S1: 7876 porta(s) das sugestões em 7876 página(s), 12 página(s) da caixa conferida(s), 7826 endereço(s) lidos no mapa do sítio, 21 planta(s) em memória, 2 migração(ões) da base lidas por ordem · L2b: 2444 lugar(es), 2464 contagem(ns) e 528 empate(s) recontados das linhas dos concelhos, 2444 valor(es) do concelho e 616 de Portugal nas faixas, pela marca do cartão[0m
+[90m  allowlist · 19 motivo(s) e 3 token(s), com os usos que os provam vivos: data-de-atualizacao 2 · data-da-conferencia 588 · nome-oficial-da-medida 44 · referencia-legal 20 · titulo-de-estudo 455 · escala-de-instrumento 3332 · objetivo-institucional 2 · limiar-do-quadro 186 · data-da-linha 52800 · data-do-repositorio 110 · periodo-da-fonte 1112 · data-de-referencia 5170 · numeracao 124 · proveniencia 17459 · data-da-agenda 170 · data-de-leitura-de-uma-definicao 190 · identificador-tecnico 4 · fonte-da-carta 68 · licenca-do-conjunto 2 · UE-27 (scope: any) 21 · EU-27 (scope: any) 21 · sha256 (scope: body) 958
+  rótulo de IA · 7876 no topo (de 7876 páginas fora dos documentos alojados) · 0 no rodapé · 2 ficha(s) da primeira página · 2 frase(s) da política e 2 do projeto, comparadas com o texto decidido[0m
 [90m  ortografia · Acordo de 1990 como se aplica em Portugal · 254 pares, 50 iguais · restante: 0 ocorrência(s) em 0 rota(s), todas de linhas cruzadas · 8 dispensada(s) por estarem entre «…»[0m
 [90m  factos por verificar · 2 campo(s) declarados, com o marcador na página e a porta da edição certa[0m
 [90m  as duas edições · 37 peça(s) de página de leitura com os mesmos ids pela mesma ordem[0m
@@ -1486,7 +1505,7 @@ História do valor: 2 controlos e 4 plantas.
 [90m    · a afirmação "vouzela-limite-divida-dgal-2024" está no livro-razão e tem página própria, mas nenhuma outra página a cita.[0m
 
   [32m✓[0m nenhum algarismo sem proveniência nas páginas construídas.
-[90m    prova · 92 chaves reconferidas pelo portão · 172 números marcados nas páginas · 2 lista(s) de nomes recontada(s) · 273526 ligações internas (0 relativas, 24082 âncoras) · 44 recortes · 6 ficheiros alojados · 10 contas sobre ficheiros não alojados (12 com cópia arquivada) · 894 páginas de série · 1720 cartões de partilha (9732 valores recalculados, 1720 nomeados por páginas) · 2 manifestos (7 ícones medidos na cabeça do PNG) · escrito em /prova.json[0m
+[90m    prova · 92 chaves reconferidas pelo portão · 172 números marcados nas páginas · 2 lista(s) de nomes recontada(s) · 274042 ligações internas (0 relativas, 24132 âncoras) · 44 recortes · 6 ficheiros alojados · 10 contas sobre ficheiros não alojados (12 com cópia arquivada) · 894 páginas de série · 1720 cartões de partilha (9732 valores recalculados, 1720 nomeados por páginas) · 2 manifestos (7 ícones medidos na cabeça do PNG) · escrito em /prova.json[0m
 
 
 > o-estado-do-pais@0.1.0 check:css
@@ -1494,8 +1513,8 @@ História do valor: 2 controlos e 4 plantas.
 
 [90m  folhas · positivo conhecido: C1 viu a classe cuja regra não chega à página; C2 viu os dois defeitos plantados (o nome colado ao estado e a abreviatura colada ao que se lhe segue). Nenhuma acusou a classe com regra na folha ligada, a regra embutida, a regra dentro de um `@media`, a classe sem regra, nem o par com espaço. Das cinco fronteiras entre peças de texto, duas ficaram vermelhas, uma foi isenta pelo expoente e duas foram separadas pela folha que a página liga; as duas marcas dentro de uma palavra não chegam a ser candidatas, porque têm um nó de texto antes.[0m
 
-[32m  folhas ✓ [0m7860 página(s) · 9 folha(s) construída(s) com 904 classe(s) estilizada(s) · 862 classe(s) rendidas no HTML · C1: 0 regras que não chegam · C2: 26683 fronteira(s) sem espaço no HTML, 0 coladas
-[90m        C2, das 26683 fronteiras: 7990 entre duas caixas (duas caixas não fazem uma palavra) · 18693 entre duas peças de texto, das quais 18693 a folha desta página separa com um «gap», uma margem ou um «display»[0m
+[32m  folhas ✓ [0m7876 página(s) · 9 folha(s) construída(s) com 904 classe(s) estilizada(s) · 869 classe(s) rendidas no HTML · C1: 0 regras que não chegam · C2: 33510 fronteira(s) sem espaço no HTML, 0 coladas
+[90m        C2, das 33510 fronteiras: 14774 entre duas caixas (duas caixas não fazem uma palavra) · 18736 entre duas peças de texto, das quais 18736 a folha desta página separa com um «gap», uma margem ou um «display»[0m
 [90m        C1 · 176 regra(s) que não chegam, em quarentena escrita em C1_EM_QUARENTENA: o MESMO defeito noutras rotas (as formas do concelho, o mapa do distrito, o distrito na busca do índice dos números), à espera da decisão do lugar de direção sobre que folha passa a chegar a que página. Não é uma exceção: é dívida contada.[0m
 [90m        25 documento(s) de estudo alojado(s) tal como estão, fora das duas células: nenhuma linha deles é da casa.[0m
 
@@ -1538,18 +1557,18 @@ História do valor: 2 controlos e 4 plantas.
 [90m  a régua dos alvos · 66 rotas × 5 larguras · dist: dist[0m
 
   [32m✓[0m H1  [90m0 nó(s) em violação (0 graves) em 66 rotas × 2 larguras · nenhuma violação[0m
-  [32m✓[0m H2  [90mfichas de concelho: 3220 medidas, 0 sem o alvo (nenhum) · a folha: 56 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 19109 alvos medidos, 11842 deles com 44 px a 390, 30 sem eles na faixa · destes, 0 são caixas e falham (nenhum), 18 são selos dentro de leitura ou sinopse em prosa corrida, cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo (6× a.src-chip «source · Estrutura de Missão Recup» · 61.9×44.7 de toque (caixa 61×18.6); 3× a.src-chip «fonte · INE» · não medido (caixa 52.5×17.4); 2× a.src-chip «source · INE» · 61.9×44.7 de toque (caixa 61×16.1); 1× a.prova-valor «4» · não medido (caixa 11.3×24)) e 0 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (nenhum), 9 estão numa página de leitura, que o brief põe fora deste bloco (3× a «A economia de Évora e o dinheiro p» · 88×22.3 de toque (caixa 437.4×45.5); 3× a «The economy of Évora and the publi» · 88×22.3 de toque (caixa 434.8×68); 2× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18.2 de toque (caixa 248.4×36.6); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18.4 de toque (caixa 248.4×36.6)) e 3 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (2× a «Alert Mechanism Report and Macroec» · 88×23.5 de toque (caixa 528.8×45.5); 1× a «Alert Mechanism Report and Macroec» · 88×23.7 de toque (caixa 528.8×45.5)) · 5685 não medido(s)[0m
-  [32m✓[0m H3  [90m7884 página(s) do dist/: 0 sem título único · nas rotas medidas: 0 de 330 passagens[0m
+  [32m✓[0m H2  [90mfichas de concelho: 3220 medidas, 0 sem o alvo (nenhum) · a folha: 56 bloco(s) @media com tecto, 0 com uma regra de 44 px que acaba antes de 1024 · faixa 641 a 1023: 19331 alvos medidos, 11992 deles com 44 px a 390, 30 sem eles na faixa · destes, 0 são caixas e falham (nenhum), 18 são selos dentro de leitura ou sinopse em prosa corrida, cuja área de 44 px cruzaria a linha vizinha do mesmo parágrafo (6× a.src-chip «source · Estrutura de Missão Recup» · 61.9×44.7 de toque (caixa 61×18.6); 3× a.src-chip «fonte · INE» · não medido (caixa 52.5×17.4); 2× a.src-chip «source · INE» · 61.9×44.7 de toque (caixa 61×16.1); 1× a.prova-valor «4» · não medido (caixa 11.3×24)) e 0 são áreas de desenho, cujo alvo é a rede de nomes por baixo do mapa (nenhum), 9 estão numa página de leitura, que o brief põe fora deste bloco (3× a «A economia de Évora e o dinheiro p» · 88×22.3 de toque (caixa 437.4×45.5); 3× a «The economy of Évora and the publi» · 88×22.3 de toque (caixa 434.8×68); 2× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18.2 de toque (caixa 248.4×36.6); 1× a.texto-ligacao «Kohesio, via the EU Cohesion Open » · 88×18.4 de toque (caixa 248.4×36.6)) e 3 quebram de linha dentro de uma frase, que é a dispensa que a WCAG 2.5.5 escreve para um alvo em linha (2× a «Alert Mechanism Report and Macroec» · 88×23.5 de toque (caixa 528.8×45.5); 1× a «Alert Mechanism Report and Macroec» · 88×23.7 de toque (caixa 528.8×45.5)) · 5685 não medido(s)[0m
+  [32m✓[0m H3  [90m7900 página(s) do dist/: 0 sem título único · nas rotas medidas: 0 de 330 passagens[0m
   [32m✓[0m H14  [90m330 passagens de todas as famílias com o rótulo de IA no topo: 0 sem linha única, corpo de 12 px ou posição antes do título[0m
-  [32m✓[0m H4  [90m7884 página(s) do dist/: 7859 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 25 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>[0m
+  [32m✓[0m H4  [90m7900 página(s) do dist/: 7875 com a porta dentro do <footer>, 0 fora dele (0 dentro de um <main>, que não conta), 25 sem porta (os documentos alojados) · nas rotas medidas: 0 fora do <footer> ou de um <nav> com nome, 0 dentro de um <main>[0m
   [32m✓[0m H5  [90m16 caixa(s) com deslocamento horizontal medidas, 0 sem teclado, nome ou papel[0m
   [32m✓[0m H6  [90mprimeira página, a 1280: 26 alvo(s) da I105 medidos, 0 abaixo de 32 px (nenhum)[0m
   [32m✓[0m H7  [90m20 algarismo(s) de manchete medidos · 0 em manchetes de uma linha citada, 0 sem os 44 px (nenhum) · 20 em manchetes de várias, 0 sem a largura ou sem a caixa de linha (nenhum) · 0 com uma porta de OUTRA linha dentro da sua área (nenhum)[0m
-  [32m✓[0m H8  [90mcartões: 1720 registo(s), 860 da edição inglesa, 856 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 6 ficam em português por decisão da tabela («avisos» em 4: sem inglês do organismo: as duas linhas têm fonte e documento «[a verificar]»; «factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 2425 unidade(s) rendida(s), 0 diferentes do que a tabela manda[0m
-  [32m✓[0m H9  [90m3940 página(s) inglesas lidas: 944 com um nome de diploma, 2996 sem nenhum, 3 documento(s) alojado(s) fora da conta · 949 nome(s): 944 com lang="pt-PT", 5 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca[0m
+  [32m✓[0m H8  [90mcartões: 1720 registo(s), 860 da edição inglesa, 856 com unidade · 0 desenharam uma cadeia diferente da que a tabela manda · 6 ficam em português por decisão da tabela («avisos» em 4: sem inglês do organismo: as duas linhas têm fonte e documento «[a verificar]»; «factor» em 2: é o nome que o relatório citado dá ao número, e não uma unidade de contagem) · páginas inglesas: 2470 unidade(s) rendida(s), 0 diferentes do que a tabela manda[0m
+  [32m✓[0m H9  [90m3948 página(s) inglesas lidas: 944 com um nome de diploma, 3004 sem nenhum, 3 documento(s) alojado(s) fora da conta · 949 nome(s): 944 com lang="pt-PT", 5 dentro de uma transcrição da fonte (marca-se inteira, na língua da fonte: não é deste bloco), 0 sem marca[0m
   [32m✓[0m H13  [90m/lugares nas duas edições e nas 5 larguras: 10 passagem(ns) · portas de concelho por página: 308 (esperado 308, fora das duas tabelas com uma porta por linha) · dentro da lista agrupada: 308[0m
   [32m✓[0m H15  [90mpt@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || pt@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@390: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão || en@1280: vazio 0 · «mour» 2 à vista, Mourão à vista · Enter com vários fica · «xyzq» 0 à vista, frase à vista, Enter fica · «mourao» 1 à vista, Enter abre Mourão[0m
-  [32m✓[0m H16  [90m7884 página(s) do dist/: 7859 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 25 sem ela (e 25 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 330 de 330 passagens com uma porta no seu marco; 66 porta(s) a 390 e 66 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 0 abaixo de 44 px (nenhum) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade[0m
+  [32m✓[0m H16  [90m7900 página(s) do dist/: 7875 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 25 sem ela (e 25 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 330 de 330 passagens com uma porta no seu marco; 66 porta(s) a 390 e 66 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 0 abaixo de 44 px (nenhum) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade[0m
   [32m✓[0m H10  [90maria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · conhecido positivo obrigatório: 1 ocorrência(s), recusado · Método: 10 passagem(ns), 0 sem título[0m
 
 [32m  todas as células verdes.[0m
@@ -1558,7 +1577,7 @@ História do valor: 2 controlos e 4 plantas.
 > o-estado-do-pais@0.1.0 check:cabeca
 > node tests/inicio/hierarquia-b2.mjs
 
-check:cabeca C1; construção 60f44fc8b171fd898f12f95e3f7a27c6ca730b77; 110 cabeças; 4 mordidas; 10 reposições
+check:cabeca C1; construção a0dd410b08184d326a6d98192a11abb7d10d3c54; 110 cabeças; 4 mordidas; 10 reposições
 check:cabeca: PASS
 
 > o-estado-do-pais@0.1.0 check:fontes
@@ -1682,16 +1701,16 @@ FONTES: PASS — 19170 conferências (o estado e a sua ausência em cada página
 > node scripts/check-formas.mjs
 
 F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.
-F21 · 56 desenhos recompostos · 11 provas do módulo · 16 de 16 plantas em memória
-[32m  formas ✓[0m[90m 2 páginas dos lugares · 70 desenhos (serie-do-pais 56 · barras 2 · paineis 4 · pares 2 · colunas 2 · mapa-por-concelho 4) · 43454 datas de linha conferidas · 4 leituras breves · 58 recibo(s) com as três datas e a última verificação à vista (de 29 linha(s) com leitura breve rendida, 0 derivada(s) sem datas próprias) · 2 ausências · ganho médio em 308/308 concelhos (controlo: população em 308) · atraso: 1 série(s), 278 linha(s), 1112 período(s) da fonte conferido(s) · frescura nos cartões de concelho: 278 pt e 278 en, de 278 e 278 cartões numa série atrasada (F17) · 2 frase(s) com contagem por extenso conferida(s) · calendário: 2 páginas, 8 pontos e 18 plantas · faixa da União (F19): 20 faixa(s), 20 nos assuntos, 560 marcas refeitas do valor (116 afastadas na vertical por terem o valor de outras, 560 etiquetas no title conferidas), 20 frases recompostas (2 com empate), 28 plantas a morder, 4 ressalva(s) nas pontas (4 nos assuntos), 27 ordinais e 10 marca(s) por edição com palavras (F19g, F19h), 8 plantas das palavras a morder, 6 plantas dos empates a morder · secção dos países (F20): 2 secção(ões), 20 faixa(s), 20 definição(ões) declarada(s), 560 marcas refeitas do valor (116 afastadas na vertical), 560 etiquetas do toque, 20 listas com 560 itens, 2 ressalva(s) da Comissão, 43 plantas a morder · 9480 data(s) de série[0m
+F21 · 82 desenhos recompostos · 12 provas do módulo · 21 de 21 plantas em memória
+[32m  formas ✓[0m[90m 2 páginas dos lugares · 96 desenhos (serie-do-pais 82 · barras 2 · paineis 4 · pares 2 · colunas 2 · mapa-por-concelho 4) · 52800 datas de linha conferidas · 4 leituras breves · 58 recibo(s) com as três datas e a última verificação à vista (de 29 linha(s) com leitura breve rendida, 0 derivada(s) sem datas próprias) · 2 ausências · ganho médio em 308/308 concelhos (controlo: população em 308) · atraso: 1 série(s), 278 linha(s), 1112 período(s) da fonte conferido(s) · frescura nos cartões de concelho: 278 pt e 278 en, de 278 e 278 cartões numa série atrasada (F17) · 2 frase(s) com contagem por extenso conferida(s) · calendário: 2 páginas, 8 pontos e 18 plantas · faixa da União (F19): 20 faixa(s), 20 nos assuntos, 560 marcas refeitas do valor (116 afastadas na vertical por terem o valor de outras, 560 etiquetas no title conferidas), 20 frases recompostas (2 com empate), 28 plantas a morder, 4 ressalva(s) nas pontas (4 nos assuntos), 27 ordinais e 10 marca(s) por edição com palavras (F19g, F19h), 8 plantas das palavras a morder, 6 plantas dos empates a morder · secção dos países (F20): 2 secção(ões), 20 faixa(s), 20 definição(ões) declarada(s), 560 marcas refeitas do valor (116 afastadas na vertical), 560 etiquetas do toque, 20 listas com 560 itens, 2 ressalva(s) da Comissão, 43 plantas a morder · 18798 data(s) de série[0m
 
 > o-estado-do-pais@0.1.0 check:alcance
 > node tests/dominio/alcance.mjs
 
   0 porta(s) · 1 página(s) nova(s) · 619 linhas citadas · 309 das 348 da §1.90
   1 porta(s) · 978 página(s) nova(s) · 2878 linhas citadas · 348 das 348 da §1.90
-  2 porta(s) · 4899 página(s) nova(s) · 3195 linhas citadas · 348 das 348 da §1.90
-  3 porta(s) · 6876 página(s) nova(s) · 3195 linhas citadas · 348 das 348 da §1.90
+  2 porta(s) · 4907 página(s) nova(s) · 3195 linhas citadas · 348 das 348 da §1.90
+  3 porta(s) · 6892 página(s) nova(s) · 3195 linhas citadas · 348 das 348 da §1.90
 [32m
   as 348 linhas da §1.90 alcançam-se a partir de /lugares/[0m[90m em 3 porta(s)
 [0m
@@ -1719,7 +1738,7 @@ F21 · 56 desenhos recompostos · 11 provas do módulo · 16 de 16 plantas em me
 > node scripts/check-pais.mjs && node tests/inicio/linhas-da-casa.mjs --prova && node tests/inicio/estudos-em-curso.mjs
 
 T9: 30 cartões com valor de referência nos temas e nas entradas, 10 fora e 20 dentro, cada um com a cor do seu estado.
-B1 país: 47 medidas, 9 temas, 7860 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 47 mudanças, 98 títulos de edição.
+B1 país: 47 medidas, 9 temas, 7876 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 56 mudanças, 98 títulos de edição.
 B1 país: todas as conferências a 0.
 {
   "erros": [],
@@ -1804,6 +1823,69 @@ B1 país: todas as conferências a 0.
       }
     ],
     "nomes": [
+      {
+        "lang": "pt",
+        "id": "custo-unitario-do-trabalho-2024",
+        "n": 1,
+        "lido": "Nominal unit labour cost per hour worked",
+        "esperado": "Nominal unit labour cost per hour worked"
+      },
+      {
+        "lang": "pt",
+        "id": "despesa-em-id-2024-ue",
+        "n": 1,
+        "lido": "Gross domestic expenditure on research and development (R&D)",
+        "esperado": "Gross domestic expenditure on research and development (R&D)"
+      },
+      {
+        "lang": "pt",
+        "id": "formacao-bruta-de-capital-fixo-2024",
+        "n": 1,
+        "lido": "Gross fixed capital formation at current prices",
+        "esperado": "Gross fixed capital formation at current prices"
+      },
+      {
+        "lang": "pt",
+        "id": "formacao-bruta-de-capital-fixo-2025",
+        "n": 1,
+        "lido": "Investimento em bens duradouros para produzir (formação bruta de capital fixo)",
+        "esperado": "Investimento em bens duradouros para produzir (formação bruta de capital fixo)"
+      },
+      {
+        "lang": "pt",
+        "id": "pib-real-per-capita-2024",
+        "n": 1,
+        "lido": "Real GDP per capita",
+        "esperado": "Real GDP per capita"
+      },
+      {
+        "lang": "pt",
+        "id": "pib-real-per-capita-2025",
+        "n": 1,
+        "lido": "PIB real por habitante",
+        "esperado": "PIB real por habitante"
+      },
+      {
+        "lang": "pt",
+        "id": "posicao-de-investimento-internacional-2024",
+        "n": 0,
+        "lido": "Net international investment position - annual data",
+        "esperado": "Net international investment position - annual data"
+      },
+      {
+        "lang": "pt",
+        "id": "posicao-de-investimento-internacional-2025",
+        "n": 0,
+        "lido": "O que o país tem no exterior menos o que deve (posição de investimento internacional)",
+        "esperado": "O que o país tem no exterior menos o que deve (posição de investimento internacional)"
+      },
+      {
+        "lang": "pt",
+        "id": "saldo-da-balanca-corrente-2024",
+        "n": 0,
+        "lido": "Current account balance - 3 year average",
+        "esperado": "Current account balance - 3 year average"
+      },
       {
         "lang": "pt",
         "id": "correcoes-publicadas",
@@ -1985,6 +2067,69 @@ B1 país: todas as conferências a 0.
         "n": 0,
         "lido": "Estudos publicados sobre Évora",
         "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "en",
+        "id": "custo-unitario-do-trabalho-2024",
+        "n": 1,
+        "lido": "Nominal unit labour cost per hour worked",
+        "esperado": "Nominal unit labour cost per hour worked"
+      },
+      {
+        "lang": "en",
+        "id": "despesa-em-id-2024-ue",
+        "n": 1,
+        "lido": "Gross domestic expenditure on research and development (R&D)",
+        "esperado": "Gross domestic expenditure on research and development (R&D)"
+      },
+      {
+        "lang": "en",
+        "id": "formacao-bruta-de-capital-fixo-2024",
+        "n": 1,
+        "lido": "Gross fixed capital formation at current prices",
+        "esperado": "Gross fixed capital formation at current prices"
+      },
+      {
+        "lang": "en",
+        "id": "formacao-bruta-de-capital-fixo-2025",
+        "n": 1,
+        "lido": "Investment in durable goods used for production (gross fixed capital formation)",
+        "esperado": "Investment in durable goods used for production (gross fixed capital formation)"
+      },
+      {
+        "lang": "en",
+        "id": "pib-real-per-capita-2024",
+        "n": 1,
+        "lido": "Real GDP per capita",
+        "esperado": "Real GDP per capita"
+      },
+      {
+        "lang": "en",
+        "id": "pib-real-per-capita-2025",
+        "n": 1,
+        "lido": "Real GDP per capita",
+        "esperado": "Real GDP per capita"
+      },
+      {
+        "lang": "en",
+        "id": "posicao-de-investimento-internacional-2024",
+        "n": 0,
+        "lido": "Net international investment position - annual data",
+        "esperado": "Net international investment position - annual data"
+      },
+      {
+        "lang": "en",
+        "id": "posicao-de-investimento-internacional-2025",
+        "n": 0,
+        "lido": "What the country owns abroad minus what it owes (net international investment position)",
+        "esperado": "What the country owns abroad minus what it owes (net international investment position)"
+      },
+      {
+        "lang": "en",
+        "id": "saldo-da-balanca-corrente-2024",
+        "n": 0,
+        "lido": "Current account balance - 3 year average",
+        "esperado": "Current account balance - 3 year average"
       },
       {
         "lang": "en",
@@ -2341,8 +2486,8 @@ mordeu · E1: declaração emCurso incompleta em evora-2027-capital-europeia-da-
 
   B1: 36 páginas pela lista fechada; 7 temas conferidos.
 
-[32m  voz ✓ [0m65 marcadores · 23 exceções (0 de registo) · 3208 frases distintas, 33711 ocorrências em 1410 rotas · autorreferência 0 · nada por classificar · divulgação 1418 ocorrência(s) nas rotas medidas · 1617 linhas do inventário com bloco (838 vivas, todas rendidas; 779 retiradas, nenhuma rendida) · lida contra a Emenda 18 (a mais alta da voz é a 18) · rótulos em span: .eyebrow 7146 · nomes declarados: areas 54, regioes 0, dominios 1880, figuras 260, medidas 52, projeto 2042, oficial 0, cartao 16, concelho 4928, serie 44 · palavras proibidas: 0 em 7885 página(s) da superfície (14 palavras da norma §1.3; 59 página(s) de estudo com a superfície estreitada ao que é prosa deste projeto, e nenhuma página saltada)
-[90m        52 bloco(s) do inventário por ler, e o registo di-lo:[0m
+[32m  voz ✓ [0m65 marcadores · 23 exceções (0 de registo) · 3206 frases distintas, 33709 ocorrências em 1410 rotas · autorreferência 0 · nada por classificar · divulgação 1418 ocorrência(s) nas rotas medidas · 1619 linhas do inventário com bloco (838 vivas, todas rendidas; 781 retiradas, nenhuma rendida) · lida contra a Emenda 18 (a mais alta da voz é a 18) · rótulos em span: .eyebrow 7162 · nomes declarados: areas 54, regioes 0, dominios 1880, figuras 258, medidas 56, projeto 2076, oficial 0, cartao 16, concelho 4928, serie 70 · palavras proibidas: 0 em 7901 página(s) da superfície (14 palavras da norma §1.3; 59 página(s) de estudo com a superfície estreitada ao que é prosa deste projeto, e nenhuma página saltada)
+[90m        53 bloco(s) do inventário por ler, e o registo di-lo:[0m
 [90m        · B1-peca1 · por ler pelo lugar de direção antes de aterrar[0m
 [90m        · b1-peca2 · por ler antes de aterrar, por outra família que não a que construiu[0m
 [90m        · b1-peca3 · por ler pelo lugar de direção antes de aterrar[0m
@@ -2355,6 +2500,7 @@ mordeu · E1: declaração emCurso incompleta em evora-2027-capital-europeia-da-
 [90m        · c1c · por ler pelo lugar de direção antes de aterrar[0m
 [90m        · c1d · por ler pelo lugar de direção antes de aterrar[0m
 [90m        · c1f · por ler pelo lugar de direção antes de aterrar[0m
+[90m        · c2 · por ler[0m
 [90m        · cartao · por ler[0m
 [90m        · e1 · por ler pelo lugar de direção antes de aterrar[0m
 [90m        · e1-evora-2027 · por ler[0m
@@ -2401,15 +2547,15 @@ mordeu · E1: declaração emCurso incompleta em evora-2027-capital-europeia-da-
 > node scripts/check-lingua.mjs
 
 
-[32m  língua ✓ [0m45 unidade(s) do livro-razão: 43 traduzida(s), 2 em português com razão escrita («avisos», «factor») · 2671 localizador(es), todos dentro de documento português · 94 título(s) de documento com língua declarada (54 pt, 40 en) · 120 rótulo(s) da fonte com língua declarada (103 pt, 17 en) · 19 organismo(s) com língua declarada (18 pt, 1 en) · 85 edição(ões) com língua declarada (20 pt, 0 en, 65 sem língua)
-[90m        7860 página(s) lidas · unidades em «en»: 8672 (8664 traduzidas, 8 em português, todas com marca) · títulos com marca de língua: 7017 de 14034 rendidos · rótulos da fonte com marca de língua: 5742 de 11484 rendidos · organismos rendidos: 16980 (8490 de língua contrária: 8050 em «en» e 440 em «pt», 8490 com a marca certa) · edições rendidas: 11304 (3778 de língua contrária: 3778 em «en» e 0 em «pt», 3778 com a marca certa, 3748 sem língua nenhuma e sem marca) · localizadores em «en»: 2671 com marca · leis em «en»: 944 com marca, 5 dentro de transcrição do motor · títulos de estudo portugueses em «en»: 105 à vista e 0 no oculto, todos com marca · rótulo de IA: 0 nome(s) de quem responde (o nome saiu do rótulo a 15.09.2026) e 7860 linha(s) na língua da página · atributos repetidos: nenhum[0m
+[32m  língua ✓ [0m47 unidade(s) do livro-razão (45 das linhas, 14 das séries): 45 traduzida(s), 2 em português com razão escrita («avisos», «factor») · 2671 localizador(es), todos dentro de documento português · 94 título(s) de documento com língua declarada (54 pt, 40 en) · 120 rótulo(s) da fonte com língua declarada (103 pt, 17 en) · 19 organismo(s) com língua declarada (18 pt, 1 en) · 85 edição(ões) com língua declarada (20 pt, 0 en, 65 sem língua)
+[90m        7876 página(s) lidas · unidades em «en»: 8681 (8673 traduzidas, 8 em português, todas com marca) · títulos com marca de língua: 7028 de 14056 rendidos · rótulos da fonte com marca de língua: 5742 de 11484 rendidos · organismos rendidos: 16980 (8490 de língua contrária: 8050 em «en» e 440 em «pt», 8490 com a marca certa) · edições rendidas: 11304 (3778 de língua contrária: 3778 em «en» e 0 em «pt», 3778 com a marca certa, 3748 sem língua nenhuma e sem marca) · localizadores em «en»: 2671 com marca · leis em «en»: 944 com marca, 5 dentro de transcrição do motor · títulos de estudo portugueses em «en»: 105 à vista e 0 no oculto, todos com marca · rótulo de IA: 0 nome(s) de quem responde (o nome saiu do rótulo a 15.09.2026) e 7876 linha(s) na língua da página · atributos repetidos: nenhum[0m
 [90m        5 nome(s) de lei dentro de texto transcrito (uma «derivation_en» do livro-razão, uma nota do registo da agenda): a casa não edita o que transcreve, e um campo transcrito só se marca inteiro, na língua do campo.[0m
 
 
 > o-estado-do-pais@0.1.0 check:formato
 > node tests/inicio/formato-dos-numeros.mjs --prova
 
-formato dos números · 7860 páginas, 37438 valores, 39838 algarismos declarados vistos à procura do símbolo ao lado («%» 3310 com espaço e 0 colado(s); «€» 0 depois e 0 antes) · 10 de 10 plantas a morder
+formato dos números · 7876 páginas, 44858 valores, 48264 algarismos declarados vistos à procura do símbolo ao lado («%» 3310 com espaço e 0 colado(s); «€» 0 depois e 0 antes) · 10 de 10 plantas a morder
   ✓ todos os valores rendidos estão no formato da casa: os milhares com U+00A0, a vírgula decimal, o sinal menos, o espaço antes de «%» e o dinheiro com a palavra.
 
 > o-estado-do-pais@0.1.0 check:lugar
@@ -2421,10 +2567,10 @@ formato dos números · 7860 páginas, 37438 valores, 39838 algarismos declarado
   item 5, o autoteste da L3 nos rótulos das marcas: à vista 1 (esperada 1) · escondido no «.vh» 0 (esperado 0)
   RP3, o autoteste da marca das séries: «threshold» e «indicador» nos campos transcritos 0 (esperado 0) · «limiar» na prosa da casa a conta em palavras 1, o motivo de uma correção 1, o motivo inglês de uma correção 1, um invólucro sem campo 1 (esperado 1 em cada) · o seletor e a lista fechada de acordo
   §7.4 e 8.6, o que os dados dizem: estudo 34 · texto 17 · indice 2 · edicoes 34 · linhas 22
-check:lugar · 7885 páginas em dist/
+check:lugar · 7901 páginas em dist/
   L1 · páginas com dois destinos iguais fora da mobília         2714  (teto 2714) ok
       · /agenda · 8 destinos repetidos (ex.: /agenda ×4)
-      · /correcoes · 12 destinos repetidos (ex.: /livro-razao/correcoes-publicadas ×3)
+      · /correcoes · 22 destinos repetidos (ex.: /livro-razao/correcoes-publicadas ×3)
       · /distritos/aveiro · 19 destinos repetidos (ex.: /municipios/agueda ×2)
       · /distritos/beja · 14 destinos repetidos (ex.: /municipios/aljustrel ×2)
       · /distritos/braga · 14 destinos repetidos (ex.: /municipios/amares ×2)
@@ -2452,7 +2598,7 @@ check:lugar · 7885 páginas em dist/
       · «peça»     5 · a política de IA copia a POLITICA-DA-AUTONOMIA.md e fica como a fonte a escreveu
       · «trabalho»    25 · «trabalho» no sentido de emprego ou de labor, que não é o nome de um estudo
       · «indicador»     1 · «indicador» a nomear o campo que o publicador dá, e não uma medida da casa
-      · «indicador»    12 · «indicador» dentro do endereço da API do INE (`json_indicador`), que é um caminho da fonte e não uma palavra da casa
+      · «indicador»    26 · «indicador» dentro do endereço da API do INE (`json_indicador`), que é um caminho da fonte e não uma palavra da casa
 check:lugar · verde.
 
 > o-estado-do-pais@0.1.0 provar:eyetext
@@ -2518,7 +2664,7 @@ A leitura do olho, provada contra o motor:
 {"plantas_localizadores":{"formatos_anteriores":[{"formato":"IndicadorDsg","id":"abrantes-empresas-2024","aceite":true},{"formato":"label","id":"disparidade-salarial-entre-sexos-2023","aceite":true},{"formato":"p.<n>, linha <n>, campo <n>","id":"abrantes-prazo-medio-de-pagamento-2025-12","aceite":true},{"formato":"<folha>, linha <n>, coluna <n>","id":"abrantes-desemprego-registado-2025-12","aceite":true}],"plantas":[{"nome":"Outra dimensão JSON-stat","id":"despesa-por-funcao-2024-gf01-es","localizador":"dimension.geo.category.label.GF01","mordeu":true,"queixa_I1":"ledger/claims/despesa-por-funcao-2024-gf01-es.yml: traz o rótulo \"General public services\" e o localizador \"dimension.geo.category.label.GF01\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]},{"nome":"Função fora da lista","id":"despesa-por-funcao-2024-gf01-es","localizador":"dimension.cofog99.category.label.GF11","mordeu":true,"queixa_I1":"ledger/claims/despesa-por-funcao-2024-gf01-es.yml: traz o rótulo \"General public services\" e o localizador \"dimension.cofog99.category.label.GF11\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]},{"nome":"Coluna numérica em vez do rótulo XLS","id":"execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central","localizador":"FUNCIONAL!E2","mordeu":true,"queixa_I1":"ledger/claims/execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central.yml: traz o rótulo \"ATIVOS E PASSIVOS DA DESPESA\" e o localizador \"FUNCIONAL!E2\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]},{"nome":"Folha XLS desconhecida","id":"execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central","localizador":"DESCONHECIDA!C2","mordeu":true,"queixa_I1":"ledger/claims/execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central.yml: traz o rótulo \"ATIVOS E PASSIVOS DA DESPESA\" e o localizador \"DESCONHECIDA!C2\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]},{"nome":"Campo numérico em vez do rótulo XML","id":"oe-2026-despesa-programa-001","localizador":"Mapa1/Registos/Registo[1]/TotalEmEuros; Programa=P-001","mordeu":true,"queixa_I1":"ledger/claims/oe-2026-despesa-programa-001.yml: traz o rótulo \"ÓRGÃOS DE SOBERANIA\" e o localizador \"Mapa1/Registos/Registo[1]/TotalEmEuros; Programa=P-001\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]},{"nome":"Registo XML zero","id":"oe-2026-despesa-programa-001","localizador":"Mapa1/Registos/Registo[0]/DesignacaoPrograma; Programa=P-001","mordeu":true,"queixa_I1":"ledger/claims/oe-2026-despesa-programa-001.yml: traz o rótulo \"ÓRGÃOS DE SOBERANIA\" e o localizador \"Mapa1/Registos/Registo[0]/DesignacaoPrograma; Programa=P-001\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]},{"nome":"Código ministerial zero","id":"oe-2026-despesa-ministerio-administracao-interna","localizador":"p. 1, POR MINISTÉRIOS, código 00","mordeu":true,"queixa_I1":"ledger/claims/oe-2026-despesa-ministerio-administracao-interna.yml: traz o rótulo \"ADMINISTRAÇÃO INTERNA\" e o localizador \"p. 1, POR MINISTÉRIOS, código 00\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]},{"nome":"Total sem página","id":"oe-2026-despesa-bruta-administracao-central","localizador":"p. , DESPESA TOTAL, última coluna","mordeu":true,"queixa_I1":"ledger/claims/oe-2026-despesa-bruta-administracao-central.yml: traz o rótulo \"DESPESA TOTAL\" e o localizador \"p. , DESPESA TOTAL, última coluna\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]},{"nome":"Página impressa trocada","id":"execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social","localizador":"p. 49 do ficheiro, página impressa 46, Despesa efetiva, Execução Acumulada 2026","mordeu":true,"queixa_I1":"ledger/claims/execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social.yml: traz o rótulo \"Ativos financeiros líquidos de reembolso\" e o localizador \"p. 49 do ficheiro, página impressa 46, Despesa efetiva, Execução Acumulada 2026\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]},{"nome":"Coluna da síntese desconhecida","id":"execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social","localizador":"p. 49 do ficheiro, página impressa 45, Despesa efetiva, Outra coluna 2026","mordeu":true,"queixa_I1":"ledger/claims/execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social.yml: traz o rótulo \"Ativos financeiros líquidos de reembolso\" e o localizador \"p. 49 do ficheiro, página impressa 45, Despesa efetiva, Outra coluna 2026\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]},{"nome":"Programa da síntese zero","id":"execucao-2026-08-despesa-programa-001","localizador":"p. 72 do ficheiro, página impressa 68, programa 000, Execução Acumulada 2026","mordeu":true,"queixa_I1":"ledger/claims/execucao-2026-08-despesa-programa-001.yml: traz o rótulo \"Órgãos de Soberania\" e o localizador \"p. 72 do ficheiro, página impressa 68, programa 000, Execução Acumulada 2026\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]},{"nome":"Localizador livre","id":"despesa-por-funcao-2024-gf01-es","localizador":"uma cadeia sem localizador","mordeu":true,"queixa_I1":"ledger/claims/despesa-por-funcao-2024-gf01-es.yml: traz o rótulo \"General public services\" e o localizador \"uma cadeia sem localizador\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]},{"nome":"Rótulo de total inventado","id":"oe-2026-despesa-bruta-administracao-central","localizador":"p. 6, RECEITA INVENTADA, última coluna","mordeu":true,"queixa_I1":"ledger/claims/oe-2026-despesa-bruta-administracao-central.yml: traz o rótulo \"DESPESA TOTAL\" e o localizador \"p. 6, RECEITA INVENTADA, última coluna\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]},{"nome":"Coluna do valor orçamental disfarçada de rótulo","id":"oe-2026-despesa-funcao-01","localizador":"FUNCIONAL!D2","mordeu":true,"queixa_I1":"ledger/claims/oe-2026-despesa-funcao-01.yml: traz o rótulo \"SERVIÇOS GERAIS DAS ADMINISTRAÇÕES PÚBLI\" e o localizador \"FUNCIONAL!D2\", que não é nenhuma das 11 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n>). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.","nome_projeto_preservado":true,"queixas_I3":[]}],"planta_nome_projeto":{"nome":"Nome do projeto inventado","id":"despesa-por-funcao-2024-gf01-es","mordeu":true,"queixas_I3":["/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.","/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."]}}}
 {"plantas_periodos":[{"nome":"Período retirado, pt","id":"despesa-por-funcao-2024-gf01-pt","mordeu":true,"queixa":"/livro-razao: despesa-por-funcao-2024-gf01-pt: a entrada tem 0 campos de período e deve ter um."},{"nome":"Período trocado, pt","id":"despesa-por-funcao-2024-gf01-pt","mordeu":true,"queixa":"/livro-razao: despesa-por-funcao-2024-gf01-pt: o período diz «2026» e a linha exige «2024», com a marca da própria linha."},{"nome":"Período retirado, en","id":"despesa-por-funcao-2024-gf01-pt","mordeu":true,"queixa":"/en/ledger: despesa-por-funcao-2024-gf01-pt: a entrada tem 0 campos de período e deve ter um."},{"nome":"Período trocado, en","id":"despesa-por-funcao-2024-gf01-pt","mordeu":true,"queixa":"/en/ledger: despesa-por-funcao-2024-gf01-pt: o período diz «2026» e a linha exige «2024», com a marca da própria linha."}]}
 
-  A RÉGUA DOS NOMES, DAS DATAS E DO ÍNDICE · 7885 página(s) de <worktree>/dist
+  A RÉGUA DOS NOMES, DAS DATAS E DO ÍNDICE · 7901 página(s) de <worktree>/dist
 
   [32m✓[0m I1 · o nome de uma medida não é o identificador
 [90m        20 página(s) · 856 entrada(s) · 804 com nome · 52 sem nome (as derivadas, que não têm fonte nem documento, e as que só têm o marcador por título de documento) · 856 identificador(es) em metadado
@@ -2561,7 +2707,7 @@ A leitura do olho, provada contra o motor:
 
   A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2
 
-[90m    páginas lidas                    7885[0m
+[90m    páginas lidas                    7901[0m
 [90m    cartões                          5246 (2623 pt, 2623 en)[0m
 [90m    com nome                         5246 de 5246[0m
 [90m    com a frase do que medem         5078 de 5246 com frase[0m
@@ -4753,7 +4899,7 @@ RP1: PASS · {"reguas":9,"plantas":[{"nome":"régua de outra medida","mordeu":tr
 {
   "erros": [],
   "contas": {
-    "paginas": 7885,
+    "paginas": 7901,
     "blocos_na_primeira": 10,
     "blocos_fora": 0,
     "titulos_fora": 0,
@@ -4842,7 +4988,7 @@ RP1: PASS · {"reguas":9,"plantas":[{"nome":"régua de outra medida","mordeu":tr
     "entradas_na_primeira": 16,
     "entradas_no_indice": 16,
     "mapas_do_sitio": 1,
-    "enderecos_no_mapa_do_sitio": 7810,
+    "enderecos_no_mapa_do_sitio": 7826,
     "entradas_no_mapa_do_sitio": 16,
     "redirecionamentos": 13
   },
@@ -5468,13 +5614,13 @@ sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .si
 > node scripts/check-nomes-oficiais.mjs --prova
 
 [90m
-  nomes oficiais · 7885 página(s) lidas, 49 analisadas · 44 nome(s) em recibo (44 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela marca por fonte: 7 do INE, 15 da PORDATA · recusados: 19[0m
+  nomes oficiais · 7901 página(s) lidas, 49 analisadas · 44 nome(s) em recibo (44 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela marca por fonte: 7 do INE, 15 da PORDATA · recusados: 19[0m
   [32m✓[0m nenhuma página rende um nome oficial que o motor não confirme como a mesma medida, e as 40 plantas foram recusadas ou aceites como deviam.
 
 > o-estado-do-pais@0.1.0 check:palavras
 > node tests/voz/palavras-proibidas.mjs --prova
 
-[32m  palavras ✓ [0m[90m23 de 23 plantas vistas (14 palavras, 9 buracos da superfície) · 7885 página(s) medidas em repouso, 0 achados · 59 página(s) com a superfície estreitada por rota declarada[0m
+[32m  palavras ✓ [0m[90m23 de 23 plantas vistas (14 palavras, 9 buracos da superfície) · 7901 página(s) medidas em repouso, 0 achados · 59 página(s) com a superfície estreitada por rota declarada[0m
 
 > o-estado-do-pais@0.1.0 design:feixe
 > node scripts/design-bundle.mjs --prova
@@ -5483,39 +5629,39 @@ sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .si
   mordeu · feixe · dependência SVG
   mordeu · feixe · imagem externa
   mordeu · feixe · recorte retirado
-{"recorte_livro":{"ficheiro":"13-pagina-livro-razao.html","entradas_na_pagina":428,"entradas_no_recorte":8,"primeiras_preservadas":true,"nota_e_porta_preservadas":true,"pagina_conservada":true,"pagina_sha256":"fe5003f272d1d6ad27cd745fe5ab3a6c315c0efd357a6788450e797371f57146","bytes_cartao":237960,"bytes_sem_recorte":1135759,"teto_bytes":673249,"margem":0.1,"planta":{"nome":"recorte retirado","mordeu":true,"queixa":"1109.1 KiB acima do tecto de 657.4697265625 KiB"}}}
+{"recorte_livro":{"ficheiro":"13-pagina-livro-razao.html","entradas_na_pagina":428,"entradas_no_recorte":8,"primeiras_preservadas":true,"nota_e_porta_preservadas":true,"pagina_conservada":true,"pagina_sha256":"f8682382e84784c0dc2ba014873be25c7900fc1e39baa56d400308ea7e0a3ac6","bytes_cartao":237960,"bytes_sem_recorte":1135525,"teto_bytes":673249,"margem":0.1,"planta":{"nome":"recorte retirado","mordeu":true,"queixa":"1108.9 KiB acima do tecto de 657.4697265625 KiB"}}}
 
 [1m  O feixe de cartões do sistema de desenho[0m
-[90m  design-system/ · de dist/ no commit 60f44fc · 20 cartões, 11 ficheiros de letra e um README[0m
+[90m  design-system/ · de dist/ no commit a0dd410 · 20 cartões, 11 ficheiros de letra e um README[0m
 
 [90m  ficheiro                          grupo          bytes  ok[0m
   01-cor.html                       Fundamentos   380206  [32m✓[0m
   02-tipo.html                      Fundamentos   376352  [32m✓[0m
-  03-selo-e-marcador.html           Componentes   414100  [32m✓[0m
+  03-selo-e-marcador.html           Componentes   414180  [32m✓[0m
   04-regua.html                     Disposições   383852  [32m✓[0m
   05-mapa.html                      Disposições   444997  [32m✓[0m
   06-estados.html                   Componentes   375911  [32m✓[0m
   07-cartoes.html                   Componentes   288787  [32m✓[0m
-  10-pagina-primeira.html           Páginas       446388  [32m✓[0m
-  11-pagina-primeira-escuro.html    Páginas       447259  [32m✓[0m
+  10-pagina-primeira.html           Páginas       446403  [32m✓[0m
+  11-pagina-primeira-escuro.html    Páginas       447274  [32m✓[0m
   12-pagina-linha-livro-razao.html  Páginas       227396  [32m✓[0m
   13-pagina-livro-razao.html        Páginas       237960  [32m✓[0m
   14-pagina-municipio.html          Páginas       301034  [32m✓[0m
   15-pagina-lugares.html            Páginas       491382  [32m✓[0m
-  16-pagina-metodo.html             Páginas       257323  [32m✓[0m
+  16-pagina-metodo.html             Páginas       257333  [32m✓[0m
   17-pagina-agenda.html             Páginas       293999  [32m✓[0m
   18-pagina-estudos.html            Páginas       214355  [32m✓[0m
   19-pagina-sobre.html              Páginas       199719  [32m✓[0m
-  20-pagina-correcoes.html          Páginas       299297  [32m✓[0m
+  20-pagina-correcoes.html          Páginas       318607  [32m✓[0m
   21-pagina-404.html                Páginas       198648  [32m✓[0m
   30-regras.html                    Fundamentos   240811  [32m✓[0m
 
-[90m  6367.0 KiB de cartões · maior cartão 479.9 KiB · tecto 657.4697265625 KiB[0m
+[90m  6385.9 KiB de cartões · maior cartão 479.9 KiB · tecto 657.4697265625 KiB[0m
 [90m  11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto[0m
 [90m  ligações internas absolutas em https://oestadodopaís.pt · 17 ligações para fontes, intactas · 12 endereços escritos no texto das páginas (transcrições, não pedidos)[0m
 [90m  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida[0m
 
-[90m  7885 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.[0m
+[90m  7901 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.[0m
   [32m✓[0m 20 cartões, 11 ficheiros de letra e um README em design-system/.
 
 
@@ -5523,7 +5669,7 @@ sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .si
 > PYTHONDONTWRITEBYTECODE=1 python3 scripts/check-privacidade.py --prova
 
 {
-  "ficheiros": 14625,
+  "ficheiros": 14641,
   "quantidade": 0,
   "achados": [],
   "plantas": [
@@ -5725,18 +5871,18 @@ sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .si
 > o-estado-do-pais@0.1.0 check:rotulos
 > node scripts/inventario-rotulos.mjs --prova
 
-R2 · rótulos: 7884 página(s) lidas, 688 com cartões, 5290 cartão(ões) (nacional 318, uniao 42, concelho 4928, camaras 2), 376 chave(s); unidades declaradas 780, da linha 4442, em dívida 2; estados 688; frases da faixa 2464+2464 (2464 cartões com a faixa inteira); contra o declarado: 376 chave(s), 1362 campo(s), 1411 forma(s) com a contagem, 26844 ocorrência(s), 0 diferença(s); dobras 138 perguntas, 4928 notas, 12 referências, 42 na União; OE1: unidades em 186+186 recibos, 186+186 entradas do livro; 32 de 32 plantas a morder; 0 erro(s).
+R2 · rótulos: 7900 página(s) lidas, 704 com cartões, 5290 cartão(ões) (nacional 318, uniao 42, concelho 4928, camaras 2), 376 chave(s); unidades declaradas 780, da linha 4442, em dívida 2; estados 688; frases da faixa 2464+2464 (2464 cartões com a faixa inteira); contra o declarado: 376 chave(s), 1362 campo(s), 1411 forma(s) com a contagem, 26844 ocorrência(s), 0 diferença(s); dobras 138 perguntas, 4928 notas, 12 referências, 42 na União; OE1: unidades em 186+186 recibos, 186+186 entradas do livro; 32 de 32 plantas a morder; 0 erro(s).
 
 > o-estado-do-pais@0.1.0 check:series
 > node tests/series/series.mjs --prova
 
-  check:series · 16 série(s) no tempo de 4131 ponto(s) · 1 derivada(s) com 140 ponto(s) refeitos · 7 linha(s) presa(s), 7 cartão(ões) no último ponto · 32 recibo(s) lidos · metade do motor da S3: sem RESEARCHHUB_DIR: a metade do motor não corre aqui · 20 de 20 planta(s) morderam
+  check:series · 24 série(s) no tempo de 7839 ponto(s) · 2 derivada(s) com 152 ponto(s) refeitos · 12 linha(s) presa(s), 12 cartão(ões) no último ponto · 48 recibo(s) lidos · metade do motor da S3: 7687 ponto(s) no seu corpo · 28 de 28 planta(s) morderam
   ✓ as séries no tempo têm a forma, a cadência, cada valor no seu excerto, a derivada refeita, cada linha presa no seu ponto e cada cartão no último, e os recibos com todos os pontos nas duas edições.
 
 > o-estado-do-pais@0.1.0 check:indice-do-sitio
 > node tests/indice/indice.mjs --prova
 
-check:indice-do-sitio pt: 415 portas (415 destinos), 409 endereços do mapa conferidos, 29 rotas de leitor, 308 concelhos em 29 gavetas, 11 estudos, 8 linhas de «O que mudou».
-check:indice-do-sitio en: 415 portas (415 destinos), 409 endereços do mapa conferidos, 29 rotas de leitor, 308 concelhos em 29 gavetas, 11 estudos, 8 linhas de «O que mudou».
+check:indice-do-sitio pt: 423 portas (423 destinos), 417 endereços do mapa conferidos, 29 rotas de leitor, 308 concelhos em 29 gavetas, 11 estudos, 8 linhas de «O que mudou».
+check:indice-do-sitio en: 423 portas (423 destinos), 417 endereços do mapa conferidos, 29 rotas de leitor, 308 concelhos em 29 gavetas, 11 estudos, 8 linhas de «O que mudou».
 check:indice-do-sitio: 17 de 17 plantas morderam.
 check:indice-do-sitio: todas as conferências a 0.
