@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-05T17:22:25+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/data/privacidade.mjs",
+   "descricao": "o texto da página «Privacidade» diz sessenta dias onde o texto fixado pelo diretor no §5 do brief diz noventa",
+   "sha256_antes": "66e5fb0e8d62a4c2f4851423db5beb114e288bce3c4f301aa40b8a3043508d06",
+   "sha256_depois": "15638a2609c78416739020bf35f3e9c1e7c0cc86bbdf28df3e32bddd9ede0616",
+   "contexto_antes": "ropeia, nos serviços que alojam ' +\n      'o sítio e a caixa, que os tratam por conta do projeto. Guardam-se porque os enviou. Uma sugestão ' +\n      'decidida apaga-se ao fim de noventa dias; uma por decidir, ao fim de um ano. Por estes dados responde ' +\n      'O Estado do País, pelo endereço correcoes@oestadodopais.pt: escreva para saber o que en",
+   "contexto_depois": "ropeia, nos serviços que alojam ' +\n      'o sítio e a caixa, que os tratam por conta do projeto. Guardam-se porque os enviou. Uma sugestão ' +\n      'decidida apaga-se ao fim de sessenta dias; uma por decidir, ao fim de um ano. Por estes dados responde ' +\n      'O Estado do País, pelo endereço correcoes@oestadodopais.pt: escreva para saber o que en"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/sugestoes/index.html",
+   "descricao": "a linha da caixa construída diz que se guarda o endereço IP, contra a linha fixada no brief e contra a página «Privacidade»",
+   "sha256_antes": "2bdf779e8715e17648a0aa8e4be6869284e7c72c9d24d3870aa7aa9add671188",
+   "sha256_depois": "06b09c9490c7d009af92778a6d24b249f3329b6d2e89c18dfefcd500f9f831e8",
+   "contexto_antes": "tao-outro\">Outra coisa</label><textarea id=\"sugestao-outro\" name=\"outro\" rows=\"4\" maxlength=\"2000\"></textarea></p><p class=\"sugestoes-nota\" data-sugestoes-nota>Só guardamos o que escrever e a página de onde veio, para decidir a sugestão. <a href=\"/privacidade\">Como tratamos os seus dados</a></p><p class=\"sugestoes-accoes\"><button type=\"submit\" class=\"sugestoes-enviar\">Enviar a sugestão</button>",
+   "contexto_depois": "tao-outro\">Outra coisa</label><textarea id=\"sugestao-outro\" name=\"outro\" rows=\"4\" maxlength=\"2000\"></textarea></p><p class=\"sugestoes-nota\" data-sugestoes-nota>Só guardamos o que escrever, o seu endereço IP e a página de onde veio, para decidir a sugestão. <a href=\"/privacidade\">Como tratamos os seus dados</a></p><p class=\"sugestoes-accoes\"><button type=\"submit\" class=\"sugestoes-enviar\">Enviar a sugestão</button>"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "scripts/privacidade-do-portao.mjs",
+   "descricao": "a conferência do cabeçalho Set-Cookie na configuração da Vercel deixa de acusar nada",
+   "sha256_antes": "60397d1ff7414960101a9ba1797eda7f4c1b17197218c56ceac5ef74066886cb",
+   "sha256_depois": "be896d817bc3286d2eb795629e909cfbc7af113f9b5e8efcf18b7034dea9b916",
+   "contexto_antes": "tem contra a frase dos cookies: um cabeçalho `Set-Cookie`. @param {string} texto @returns {string[]} */\nexport function achadosNaConfiguracao(texto) {\n  return /[\"']set-cookie[\"']\\s*:/i.test(texto) ? ['um cabeçalho Set-Cookie nas respostas'] : [];\n}\n\n/** O que uma função de `api/` tem contra a frase dos cookies: um `Set-Cookie` ou um cookie escrito. @param {string} js @returns {string[]} */\nexport funct",
+   "contexto_depois": "tem contra a frase dos cookies: um cabeçalho `Set-Cookie`. @param {string} texto @returns {string[]} */\nexport function achadosNaConfiguracao(texto) {\n  return /[\"']set-cookie[\"']\\s*:/i.test(texto) ? [] : [];\n}\n\n/** O que uma função de `api/` tem contra a frase dos cookies: um `Set-Cookie` ou um cookie escrito. @param {string} js @returns {string[]} */\nexport funct"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 341,9 px de portas numa coluna de 354 (caberia) e continua a dizer que faltam 47,9 e que não coube",
+   "sha256_antes": "4444e7b8a530e6b9b83f2cb6e2c17bf1eaa319f1f3a78709d3d21bdc9b0d7200",
+   "sha256_depois": "f939c0eef0581dbc04879c7e3498f187e5a7041f49c87256280ca69bd9766504",
+   "contexto_antes": "bertas | `cookies-e-seguimento-*.json`, `capturas-h3-depois.json` |\n| o menu diz «União Europeia» se couber, medido em captura | não coube: com o nome inteiro, 401,9 px de portas numa coluna de 354 (faltam 47,9, em 2 linhas) na edição portuguesa, e 405,2 numa de 354 (faltam 51,2) na inglesa; fica «Europa» e «Europe» | `capturas-h3-depois.json`, as capturas `depois-men",
+   "contexto_depois": "bertas | `cookies-e-seguimento-*.json`, `capturas-h3-depois.json` |\n| o menu diz «União Europeia» se couber, medido em captura | não coube: com o nome inteiro, 341,9 px de portas numa coluna de 354 (faltam 47,9, em 2 linhas) na edição portuguesa, e 405,2 numa de 354 (faltam 51,2) na inglesa; fica «Europa» e «Europe» | `capturas-h3-depois.json`, as capturas `depois-men"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/habitacao/index.html",
+   "descricao": "a etiqueta de um ponto da faixa dos 27 (a primeira das duas ocorrências na página da habitação) perde um dos dois países com o mesmo valor",
+   "sha256_antes": "a9cca6142ddaf39575e6b78a75fd632b1d1b917ff995f8c5b8533368b7f12d4b",
+   "sha256_depois": "aff61460786d0461e4670a9d0e24ea224a210540bb7e513a5d7857f6c7ba6cbd",
+   "contexto_antes": "ta-faixa-etiqueta=\"Bulgária 31,7\"></span><span class=\"faixa-ue-marca faixa-ue-pais faixa-ue-empilhada\" data-faixa-marca=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#CZ\" style=\"left:31.3501%;top:-6px\" title=\"Chéquia e Grécia 26,0\" data-faixa-etiqueta=\"Chéquia e Grécia 26,0\"></span><span class=\"faixa-ue-marca faixa-ue-pais\" data-faixa-marca=\"sobrecarga-do-custo-da-habitacao-inquilinos-mer",
+   "contexto_depois": "ta-faixa-etiqueta=\"Bulgária 31,7\"></span><span class=\"faixa-ue-marca faixa-ue-pais faixa-ue-empilhada\" data-faixa-marca=\"sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-paises#CZ\" style=\"left:31.3501%;top:-6px\" title=\"Chéquia 26,0\" data-faixa-etiqueta=\"Chéquia e Grécia 26,0\"></span><span class=\"faixa-ue-marca faixa-ue-pais\" data-faixa-marca=\"sobrecarga-do-custo-da-habitacao-inquilinos-mer"
+  }
+ ]
+}
