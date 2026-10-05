@@ -183,7 +183,18 @@ function lugarDerivado(id) {
     return 'o-estado-do-pais';
   const doEstudo = typeof c.study === 'string' ? objetoDoEstudo.get(c.study) : undefined;
   const doId = lugarNoIdentificador(id);
-  const d = [...new Set([doEstudo, doId].filter(x => typeof x === 'string'))];
+  /* C2 (05.10.2026): a coordenada selada de Portugal, pela mesma via independente
+     da tabela de lugares que a da União, acima. O período anterior de uma medida do
+     país é o mesmo pedido da medida com a geografia PT, um valor de Portugal, e a
+     primeira atualização destas linhas (as revisões da Eurostat de 02.10.2026)
+     declarou o lugar delas na tabela explícita, que exige de cada entrada uma
+     derivação. Entra como candidato e não como saída antecipada: uma linha que
+     derive também outro lugar, pelo estudo ou pelo identificador, diz-se em
+     conflito. Um endereço que não se lê não deriva nada por esta via. */
+  let geo = null;
+  try { geo = c.source_url ? new URL(c.source_url).searchParams.get('geo') : null; } catch { geo = null; }
+  const doPais = geo === 'PT' ? PAIS : undefined;
+  const d = [...new Set([doEstudo, doId, doPais].filter(x => typeof x === 'string'))];
   if (d.length > 1) {
     erros.push(`A1: a linha ${id} deriva dois lugares diferentes (${d.join(', ')}).`);
     return null;
