@@ -151,6 +151,8 @@ import {
 import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
 import { conferirCalendario, plantasDoCalendario } from '../tests/municipio/calendario.mjs';
 import { FORMAS_DOS_BLOCOS } from '../src/lib/primeira-pagina.mjs';
+import { FORMAS_DAS_FIGURAS } from '../src/lib/explicacoes.mjs';
+import { conferirBarrasDoLivro, plantasDasBarrasDoLivro } from '../tests/formas/barras-do-livro.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa } from './series-do-portao.mjs';
 import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa, plantasDosEmpates } from '../tests/cartao/faixa.mjs';
 import { conferirSeccaoDosPaises, plantasDaSeccao, plantaDaTabela } from '../tests/uniao/paises.mjs';
@@ -203,10 +205,13 @@ const FORMAS_DOS_DOMINIOS = [
    nome que não seja destes oito fecha a construção, e a F2 e a F9 continuam a exigir, dentro do `<svg>`
    de cada uma, que cada algarismo seja uma linha ou a marca da escala de um instrumento. A lista lê-se
    da declaração do resolvedor, e não se escreve aqui outra vez: as duas não podem divergir. */
-const FORMAS = new Set([...FORMAS_DOS_DOMINIOS, ...FORMAS_DOS_BLOCOS]);
-/* O conhecido-positivo da lista fechada: o mesmo teste recusa um nome que não é nenhum dos oito. */
-if (FORMAS.has('barras-empilhadas') || !FORMAS.has('colunas') || !FORMAS.has('serie-do-pais') || FORMAS.size !== 8) {
-  throw new Error('check:formas: a lista das formas não é a das quatro dos domínios e das quatro dos blocos.');
+/* E A FORMA DAS FIGURAS DAS EXPLICAÇÕES (bloco EX1, 05.10.2026, o ponto 3 do mandato): `barras-do-livro`, uma barra por
+   linha do livro, da maior para a menor, lida da declaração do resolvedor das explicações e recomposta das linhas pela
+   F22 (`tests/formas/barras-do-livro.mjs`). A lista continua fechada: nove nomes, e mais nenhum. */
+const FORMAS = new Set([...FORMAS_DOS_DOMINIOS, ...FORMAS_DOS_BLOCOS, ...FORMAS_DAS_FIGURAS]);
+/* O conhecido-positivo da lista fechada: o mesmo teste recusa um nome que não é nenhum dos nove. */
+if (FORMAS.has('barras-empilhadas') || !FORMAS.has('colunas') || !FORMAS.has('serie-do-pais') || !FORMAS.has('barras-do-livro') || FORMAS.size !== 9) {
+  throw new Error('check:formas: a lista das formas não é a das quatro dos domínios, das quatro dos blocos e da das explicações.');
 }
 
 /** O que um desenho estático não pode ter lá dentro. */
@@ -273,6 +278,10 @@ const plantasRP4 = [];
 const plantasF2 = [];
 const plantasDaLeituraRP4C = [];
 let desenhosRP4 = 0;
+/** F22 (bloco EX1, 05.10.2026): as figuras das explicações recompostas, e as plantas delas, uma vez por edição. */
+let figurasEX1 = 0;
+/** @type {{ lang: string, nome: string, mordeu: boolean, queixa: string }[]} */
+const plantasEX1 = [];
 const recibosRP4 = new Set();
 /* RP4-m: os dois controlos das plantas da regra da página, o primeiro de cada um que a corrida vê. */
 const controlosDaRegra = { figura: null, comum: null };
@@ -679,6 +688,23 @@ for (const ficheiro of paginasDe(DIST)) {
     }
     if (svg.parentNode?.querySelector('[data-serie-unidade-legenda]') && !plantasDaLeituraRP4C.some((p) => p.lang === lang && p.de === 'legenda')) {
       for (const p of plantasDaLegenda(comOPai, lang)) { plantasDaLeituraRP4C.push({ lang, de: 'legenda', ...p }); if (!p.mordeu) err(`${rel}: F21 · planta da legenda «${p.nome}» não mordeu: ${p.queixa}`); }
+    }
+  }
+
+  /* F22, EX1 (05.10.2026): cada figura `barras-do-livro` de uma explicação, recomposta da declaração e das linhas no
+     seu instrumento; as plantas em memória correm no primeiro instrumento de cada edição. */
+  if (rota?.key === 'explicacao') {
+    const lang = rota.lang === 'en' ? 'en' : 'pt';
+    const slug = String(rota.params.slug);
+    for (const instrumento of root.querySelectorAll('[data-instrumento]').filter((x) => x.querySelector('figure[data-forma="barras-do-livro"]'))) {
+      figurasEX1++;
+      for (const e of conferirBarrasDoLivro(instrumento, lang, slug)) err(`${rel}: ${e}`);
+      if (!plantasEX1.some((p) => p.lang === lang)) {
+        for (const p of plantasDasBarrasDoLivro(instrumento.outerHTML, lang, slug)) {
+          plantasEX1.push({ lang, ...p });
+          if (!p.mordeu) err(`${rel}: F22 · planta «${p.nome}» não mordeu: ${p.queixa}`);
+        }
+      }
     }
   }
 
@@ -1584,6 +1610,9 @@ for (const lang of LANGS) {
   if (!plantasF2.some((p) => p.lang === lang)) err(`F2 · as plantas dos pontos no desenho não correram na edição ${lang}`);
 }
 if (!contas.algarismos_de_pontos_nos_desenhos) err('F2 · nenhum valor nem período de um ponto num desenho das séries: o conhecido-positivo da leitura de cada ponto falhou.');
+for (const lang of ['pt', 'en']) if (!plantasEX1.some((p) => p.lang === lang)) err(`F22 · as plantas das barras das explicações não correram na edição ${lang}: nenhuma figura vista`);
+if (figurasEX1 === 0) err('F22 · não viu figura `barras-do-livro` nenhuma');
+console.log(`F22 · ${figurasEX1} figuras das explicações recompostas das linhas · ${plantasEX1.filter((p) => p.mordeu).length} de ${plantasEX1.length} plantas em memória`);
 console.log(`F21 · ${desenhosRP4} desenhos recompostos · ${provasRP4.length} provas do módulo · ${plantasRP4.filter((p) => p.mordeu).length} de ${plantasRP4.length} plantas em memória · RP4-c: ${plantasDaLeituraRP4C.filter((p) => p.mordeu).length} de ${plantasDaLeituraRP4C.length} plantas da leitura e da legenda`);
 console.log(`F2 · RP4-c: ${contas.algarismos_de_pontos_nos_desenhos} valores e períodos de pontos nos desenhos, cada um comparado com o seu ponto · ${plantasF2.filter((p) => p.mordeu).length} de ${plantasF2.length} plantas em memória`);
 const jsonRP4 = process.argv.indexOf('--json-rp4');

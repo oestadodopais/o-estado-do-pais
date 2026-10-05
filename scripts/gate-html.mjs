@@ -20,6 +20,7 @@ import {
   plantasDaCaixa,
 } from './sugestoes-do-portao.mjs';
 import { classeDoCampoDaSerie } from './campos-da-serie.mjs';
+import { diasDaJanelaNoPortao, conferirMarcaDaSemana, conferirPaginaDaSemana, tituloDaExplicacaoNoPortao, SLUGS_DAS_EXPLICACOES_NO_PORTAO } from './explicacoes-do-portao.mjs';
 /**
  * OS CAMPOS DE TEXTO DE UMA SÉRIE NO TEMPO QUE O RECIBO PODE RENDER (bloco RP3,
  * 04.10.2026), e o texto que cada um tem de ter: o nome na fonte, a conta em
@@ -405,6 +406,11 @@ if (!fs.existsSync(DIST)) {
 }
 
 const claims = loadClaims();
+/* A JANELA DA LEITURA DA SEMANA (bloco EX1, 05.10.2026): o dia do carimbo da construção, contra o qual a página da
+   semana declara a sua janela (`scripts/explicacoes-do-portao.mjs`). Lido uma vez, antes de ler uma página. */
+const DIAS_DA_SEMANA = diasDaJanelaNoPortao(DIST);
+/** O que o portão viu das explicações e da leitura da semana, para a linha do fim. */
+const SEMANA_NO_PORTAO = { marcas: 0, paginasDeExplicacao: 0, headsDeExplicacao: 0 };
 /* AS LINHAS DE SÉRIE E A TABELA DOS NOMES DOS PAÍSES (bloco UE1, 29.09.2026),
    pelo leitor próprio dos portões (`scripts/series-do-portao.mjs`), e não pelo
    módulo que as páginas usam. */
@@ -5131,6 +5137,26 @@ for (const file of ficheirosHtml(DIST)) {
     }
   }
 
+  /* O <head> DE UMA EXPLICAÇÃO (bloco EX1, 05.10.2026) É COMPOSTO DO TÍTULO DECLARADO, como o de uma página de linha é
+     composto da linha: o portão recompõe o título por conta própria (as palavras da declaração e o ano pelo período da
+     linha nomeada, `scripts/explicacoes-do-portao.mjs`), exige que o `<title>`, a descrição e as duas etiquetas de
+     partilha sejam esse título (o `<title>` com o nome do projeto), e só então o tira da varredura. Um ano trocado no
+     título, ou um título que não seja o da declaração, fecha a construção. */
+  if (rota?.key === 'explicacao' && rota.params.slug) {
+    SEMANA_NO_PORTAO.headsDeExplicacao++;
+    const esperado = tituloDaExplicacaoNoPortao(rota.params.slug, rota.lang, claims, periodoDaCasaGate);
+    const conteudoDe = (/** @type {string} */ prop) => normalizeWhitespace(decodeEntities(root.querySelector(`head meta[property="${prop}"]`)?.getAttribute('content') ?? ''));
+    for (const [onde, lido, deve] of [
+      ['<title>', normalizeWhitespace(decodeEntities(titulo?.text ?? '')), `${esperado} · ${SITE_NAME}`],
+      ['<meta name="description">', normalizeWhitespace(decodeEntities(descricao?.getAttribute('content') ?? '')), esperado],
+      ['<meta property="og:title">', conteudoDe('og:title'), `${esperado} · ${SITE_NAME}`],
+      ['<meta property="og:description">', conteudoDe('og:description'), esperado],
+    ]) {
+      if (lido !== normalizeWhitespace(deve)) err(`EX1 · o ${onde} desta explicação não é o título declarado.\n      esperado:    ${deve}\n      construído:  ${lido}`);
+    }
+    textoHead = textoHead.split(esperado).join(' ');
+  }
+
   // B1: a contagem da Carta na descrição do país tem a mesma origem do mapa.
   // Só sai da varredura este número, na frase declarada e com a conta conferida.
   if (rota?.key === 'home') {
@@ -6702,8 +6728,13 @@ for (const file of ficheirosHtml(DIST)) {
        entrada entra pela mesma porta, só dentro da lista com o âmbito do índice. A comparação literal
        do campo e a auditoria dos selos continuam a correr; a planta `r3-unidade-de-outra-linha`
        (`tests/pais/portoes.mjs`) troca a unidade de uma entrada pela de outra linha. */
+    /* EX1 (05.10.2026): a lista das mudanças da leitura da semana tem a forma das outras, e a unidade de cada entrada
+       entra pela mesma porta, só dentro dessa lista e só na página da semana; a comparação literal do campo e a
+       auditoria dos selos continuam a correr, e a planta `ex1-unidade-de-outra-linha` (`tests/pais/portoes.mjs`) troca
+       a unidade de uma entrada pela de outra linha. */
     const unidadeDeCorrecaoDoPais = (['home', 'correcoes'].includes(rota?.key) ||
-      (rota?.key === 'indice' && el.closest('[data-mudou-ambito="indice"]') !== null)) && campo === 'unit' &&
+      (rota?.key === 'indice' && el.closest('[data-mudou-ambito="indice"]') !== null) ||
+      (rota?.key === 'leituraDaSemana' && el.closest('[data-semana-mudancas]') !== null)) && campo === 'unit' &&
       el.closest('[data-correcao-entrada]')?.getAttribute('data-correcao-entrada') === id;
     /* E0b: o registo nomeia também a medida pelo campo da fonte. Só o nome,
        só nesta entrada da própria linha; a comparação literal abaixo e a
@@ -7286,6 +7317,19 @@ for (const file of ficheirosHtml(DIST)) {
           `      Noutra página: um valor entra por <Claim id="…"/>, e uma citação por data-verbatim.`,
       );
     }
+  }
+
+  /* --- as contagens e as datas da leitura da semana (a décima origem, bloco EX1, 05.10.2026) ---
+     A janela é a que o antepassado declara, presa ao carimbo da construção; cada contagem reconta-se das linhas pela
+     leitura do portão e cada data pela cópia da forma da casa; a porta é a da página da semana
+     (`scripts/explicacoes-do-portao.mjs`). */
+  for (const el of body.querySelectorAll('[data-semana]')) {
+    aRemover.push(el);
+    SEMANA_NO_PORTAO.marcas++;
+    for (const msg of conferirMarcaDaSemana(el, {
+      rota: rota?.key, porta: routePath('leituraDaSemana', linguaPagina ?? 'pt'), claims, aceites: DIAS_DA_SEMANA.aceites,
+      texto: textoTranscrito, dataDaCasa: dataDaCasaGate, milhares: milharesDaCasaGate,
+    })) err(`EX1 · ${msg}`);
   }
 
   /* --- os campos do registo da agenda, na página da agenda (origem 8) --- */
@@ -8039,6 +8083,26 @@ for (const file of ficheirosHtml(DIST)) {
   SUGESTOES_NO_PORTAO.enderecosNoMapa = mapa.enderecos;
   for (const msg of mapa.erros) erros.push({ rel: 'dist/sitemap-0.xml', msg });
   if (SUGESTOES_NO_PORTAO.portas === 0) erros.push({ rel: 'dist', msg: 'S1 porta: a conferência não viu porta das sugestões nenhuma.' });
+}
+
+/* AS EXPLICAÇÕES E A LEITURA DA SEMANA, DEPOIS DO VARRIMENTO (bloco EX1, 05.10.2026): a página da semana existe nas
+   duas edições e tem uma entrada por linha cujo valor mudou na janela, contada pelo portão; cada explicação declarada
+   tem a sua página nas duas edições; e uma corrida que não viu marca da semana nenhuma, ou nenhum <head> de
+   explicação, não conferiu nada e fecha. */
+{
+  for (const ficheiro of ['explicacoes/leitura-da-semana/index.html', 'en/explainers/weekly-reading/index.html']) {
+    for (const msg of conferirPaginaDaSemana(DIST, ficheiro, claims, DIAS_DA_SEMANA.aceites)) erros.push({ rel: `dist/${ficheiro}`, msg: `EX1 · ${msg}` });
+  }
+  for (const slug of SLUGS_DAS_EXPLICACOES_NO_PORTAO) {
+    for (const lang of LANGS) {
+      const ficheiro = path.join(DIST, routePath('explicacao', lang, { slug }).replace(/^\//, ''), 'index.html');
+      if (fs.existsSync(ficheiro)) SEMANA_NO_PORTAO.paginasDeExplicacao++;
+      else erros.push({ rel: 'dist', msg: `EX1 · a explicação «${slug}» não tem página na edição «${lang}».` });
+    }
+  }
+  if (SEMANA_NO_PORTAO.marcas === 0) erros.push({ rel: 'dist', msg: 'EX1 · semana: a conferência não viu marca da leitura da semana nenhuma.' });
+  if (SEMANA_NO_PORTAO.headsDeExplicacao === 0) erros.push({ rel: 'dist', msg: 'EX1 · o <head> de nenhuma explicação foi conferido.' });
+  console.log(`  EX1 · ${SEMANA_NO_PORTAO.marcas} marca(s) da leitura da semana recontadas na janela que acaba a ${DIAS_DA_SEMANA.aceites.join(' ou ')}, ${SEMANA_NO_PORTAO.paginasDeExplicacao} página(s) de explicação e ${SEMANA_NO_PORTAO.headsDeExplicacao} <head> de explicação conferidos.`);
 }
 
 /* AS SETE PORTAS DO RODAPÉ, DEPOIS DO VARRIMENTO (bloco R3, 04.10.2026): as plantas em memória,
