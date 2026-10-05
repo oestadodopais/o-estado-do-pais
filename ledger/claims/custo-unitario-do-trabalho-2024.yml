@@ -6,7 +6,7 @@
 id: "custo-unitario-do-trabalho-2024"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "17,7"
+value: "17,9"
 unit: "variação em três anos, %"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -17,11 +17,11 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tipslm10/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y"
-access_date: "2026-09-15"
+access_date: "2026-10-05"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.7 p"
+excerpt: "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.9"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -43,6 +43,32 @@ corrections:
     o valor não mudou.
   reason_en: The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026;
     the value has not changed.
+- date: '2026-10-05'
+  kind: atualizacao
+  old_value: 17,7
+  new_value: 17,9
+  reason: O Eurostat reviu o valor de Portugal a 02.10.2026 (o carimbo do conjunto passou de 28.09.2026 a 02.10.2026); a reconferência
+    semanal de 05.10.2026 viu a revisão.
+  reason_en: Eurostat revised Portugal's value on 02.10.2026 (the dataset stamp moved from 28.09.2026 to 02.10.2026); the
+    weekly check of 05.10.2026 caught the revision.
+- date: '2026-10-05'
+  kind: proveniencia
+  field: access_date
+  old_value: '2026-09-15'
+  new_value: '2026-10-05'
+  reason: O valor novo foi lido a 05.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026,
+    é a do valor 17,7.
+  reason_en: The new value was read on 05.10.2026, the day of the check that caught the revision; the earlier reading, of
+    15.09.2026, is that of the value 17,7.
+- date: '2026-10-05'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.7 p'
+  new_value: 'Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.9'
+  reason: O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 05.10.2026, e a fonte
+    deixou de a marcar como provisória.
+  reason_en: The excerpt now transcribes the revised value the source prints for the same observation, read on 05.10.2026,
+    and the source no longer marks it as provisional.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 
@@ -62,9 +88,3 @@ verifications:
     result: "diverge"
     by: "painel-semanal"
     found: "17.9"
-
-source_flag: "p"
-
-source_flag_note: "dado provisório"
-
-source_flag_note_en: "provisional data"
