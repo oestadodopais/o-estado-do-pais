@@ -77,6 +77,9 @@ import { parse, NodeType } from 'node-html-parser';
 import { conferirPaginaDaLeitura } from '../tests/cartao/leituras.mjs';
 import { conferirBlocosDaPagina, idsDosBlocos } from '../tests/inicio/blocos.mjs';
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
+import { conferirPalavrasDaExplicacaoNaPagina } from '../tests/explicacoes/explicacao.mjs';
+import { conferirPalavrasDaSemanaNaPagina } from '../tests/explicacoes/semana.mjs';
+import { EXPLICACOES } from '../src/data/explicacoes/index.mjs';
 
 import { leInventario, FICHEIRO_DO_INVENTARIO } from './voz.mjs';
 /* A LISTA DAS PALAVRAS PROIBIDAS VIVE NUM FICHEIRO SÓ (bloco P3, 16.09.2026,
@@ -721,6 +724,32 @@ for (const e of ENTRADAS.filter((x) => !('existente' in x && x.existente))) {
     const r = conferirBlocosDaPagina(parse(fs.readFileSync(caminho, 'utf8')), lingua, rota, { ids: [] });
     for (const x of r.erros) erros.push(`as palavras de um bloco só saem do inventário conferidas, e a célula dos blocos recusou-as em ${rota}: ${x}`);
   }
+}
+
+/* EX1 (05.10.2026): AS PALAVRAS DE UMA EXPLICAÇÃO E AS FRASES DA LEITURA DA SEMANA SÓ SAEM DO INVENTÁRIO CONFERIDAS.
+   A régua das frases tira do inventário o texto marcado `data-explicacao-declarado` e `data-semana-declarado`, nas rotas
+   onde as células correm (a página de cada explicação, a lista, o índice, a primeira página e a página da semana); as
+   células correm aqui, nas duas edições, sobre cada uma dessas páginas, e uma recusa fecha a construção na mesma corrida
+   em que o texto saiu do inventário. Uma página dessas que não exista também fecha: sem ela, a célula não conferiu nada. */
+{
+  const paginasEX1 = [
+    ['pt', 'index.html', 'home', undefined], ['en', 'en/index.html', 'home', undefined],
+    ['pt', 'indice/index.html', 'indice', undefined], ['en', 'en/index/index.html', 'indice', undefined],
+    ['pt', 'explicacoes/index.html', 'explicacoes', undefined], ['en', 'en/explainers/index.html', 'explicacoes', undefined],
+    ['pt', 'explicacoes/leitura-da-semana/index.html', 'leituraDaSemana', undefined], ['en', 'en/explainers/weekly-reading/index.html', 'leituraDaSemana', undefined],
+    ...EXPLICACOES.flatMap((e) => [['pt', `explicacoes/${e.slug}/index.html`, 'explicacao', e.slug], ['en', `en/explainers/${e.slug}/index.html`, 'explicacao', e.slug]]),
+  ];
+  let conferidas = 0;
+  for (const [lingua, ficheiro, rota, slug] of paginasEX1) {
+    const caminho = path.join(DIST, String(ficheiro));
+    if (!fs.existsSync(caminho)) { erros.push(`EX1: a página ${ficheiro} não existe na construção, e a régua das frases tira-lhe as palavras declaradas.`); continue; }
+    const raiz = parse(fs.readFileSync(caminho, 'utf8'));
+    const l = /** @type {'pt'|'en'} */ (lingua);
+    if (raiz.querySelector('[data-explicacao-declarado]')) for (const x of conferirPalavrasDaExplicacaoNaPagina(raiz, l, String(rota), slug)) erros.push(`as palavras de uma explicação só saem do inventário conferidas, e a célula da explicação recusou-as em ${ficheiro}: ${x}`);
+    if (raiz.querySelector('[data-semana-declarado]')) for (const x of conferirPalavrasDaSemanaNaPagina(raiz, l, String(rota), DIST)) erros.push(`as frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em ${ficheiro}: ${x}`);
+    conferidas++;
+  }
+  console.log(`  EX1: ${conferidas} página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.`);
 }
 
 /* ---------------------------------------------------------------------------

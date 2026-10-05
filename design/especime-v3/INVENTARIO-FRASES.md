@@ -4058,3 +4058,34 @@ Os anos ingleses usam pares, como «nineteen ninety-two» e «twenty twenty-six�
 | --- | --- | --- | --- | --- |
 | conteudo | 72 revisões de proveniência | c2 | viva | Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
 | conteudo | 72 provenance revisions | c2 | viva | Contagem do livro depois das dezoito entradas de proveniência das nove releituras (o acesso e o excerto de cada linha), que acompanham as nove atualizações. |
+
+## EX1 · o espaço das explicações e a leitura semanal, 05.10.2026
+
+O bloco EX1 (o brief `design/observatorio/BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md`): a lista das
+explicações (`/explicacoes`, `/en/explainers`), a leitura da semana (`/explicacoes/leitura-da-semana`,
+`/en/explainers/weekly-reading`) e a página de cada explicação (`/explicacoes/<slug>`, `/en/explainers/<slug>`) entram no
+inventário no commit em que nascem, e o bloco «Para perceber» entra na primeira página. O texto de uma explicação é do
+lugar de direção, auditado parte a parte (a secção «explicacoes» de `tests/cartao/leituras-provadas.json`), e as frases da
+leitura da semana compõem-se em cada construção: as duas coisas mudam com os dados e saem do inventário só conferidas, pela
+marca `data-explicacao-declarado` e `data-semana-declarado` e pelas células da explicação e da semana, que o `check:voz`
+corre na mesma corrida. Ficam aqui a mobília das três páginas e do bloco, e as descrições do `<head>`; os títulos das
+páginas são **conteúdo**, como «Índice» e «Privacidade», porque são o objeto da página.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Para perceber | ex1 | viva | O título do bloco que fecha «O que se passa» na primeira página (`primeira.paraPerceber`), com a porta da explicação mais recente e a da leitura da semana. |
+| conteudo | To understand | ex1 | viva | O mesmo título na edição inglesa. |
+| conteudo | Explicações | ex1 | viva | O título da lista das explicações, a migalha dela e a porta dela no índice (`nav.explicacoes`). |
+| conteudo | Explainers | ex1 | viva | O mesmo título na edição inglesa, e o nome da secção do índice que a abre. |
+| conteudo | As explicações | ex1 | viva | O título da lista na página das explicações e o nome da secção do índice (`explicacoes.listaK`, `indice.seccoes.explicacoes`). |
+| conteudo | The explainers | ex1 | viva | O título da lista na edição inglesa. |
+| conteudo | A leitura da semana | ex1 | viva | O título da leitura da semana: à cabeça da lista das explicações, no `<h1>` da página dela e na migalha dela (`semana.titulo`). |
+| conteudo | This week’s reading | ex1 | viva | O mesmo título na edição inglesa. |
+| conteudo | O que mudou nos números do país na última semana, e explicações em português corrente de como os números se ligam. | ex1 | viva | A descrição do `<head>` da lista das explicações: o que a página tem. |
+| conteudo | What changed in the country’s figures over the last week, and explainers in everyday words on how the figures fit together. | ex1 | viva | A mesma descrição na edição inglesa; «everyday words» e não «plain language», porque a frase retirada «Language» morde dentro de uma frase nova. |
+| conteudo | O que mudou nos números do país nos últimos sete dias, de quanto para quanto, e lido de onde. | ex1 | viva | A descrição do `<head>` da leitura da semana. |
+| conteudo | What changed in the country’s figures over the last seven days, from how much to how much, and read from where. | ex1 | viva | A mesma descrição na edição inglesa. |
+| conteudo | Os números desta figura | ex1 | viva | O resumo da lista dobrada dos números de uma figura de uma explicação, com a porta do recibo de cada um (`explicacoes.numerosDaFigura`). |
+| conteudo | The figures in this chart | ex1 | viva | O mesmo resumo na edição inglesa. |
+| conteudo | Para onde vai o dinheiro do Estado em 2026 | ex1 | viva | A descrição do `<head>` da primeira explicação, que é o título dela, com o ano pelo período da linha nomeada; o portão de HTML recompõe-a por conta própria. |
+| conteudo | Where the State’s money goes in 2026 | ex1 | viva | A mesma descrição na edição inglesa. |
