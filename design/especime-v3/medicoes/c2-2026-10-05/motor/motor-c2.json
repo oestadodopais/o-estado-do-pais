@@ -1,0 +1,245 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/motor-c2.py a partir da worktree do motor. Não se edita à mão.",
+  "ramo": "c2-2026-10-05",
+  "cabeca": "af7bb58187dd1a22f6d1a7bf15547fc20f78a4e0",
+  "master": "38457b2723c47ea126984be6c5c1f778967e6847",
+  "commits": [
+    {
+      "commit": "af7bb58",
+      "assunto": "C2: o painel corrido no fim, delimitado às 91 linhas do estudo, com a raiz do motor no caminho"
+    },
+    {
+      "commit": "68b30e3",
+      "assunto": "C2: as nove linhas que o painel de 05.10 viu divergir, relidas pelo cliente da casa"
+    }
+  ],
+  "arvore_limpa": true,
+  "ficheiros_mudados": 80,
+  "ficheiros_protegidos_mudados": [],
+  "conhecido_positivo_dos_protegidos": {
+    "o_que": "a mesma regra reconhece um ficheiro de estado do painel pelo nome",
+    "encontrado": true
+  },
+  "releitura": {
+    "ficheiro": "indicators/out/c2-2026-10-05/releitura/releitura.json",
+    "sha256": "4e91ca0a617fa23d45c9a6ec22091e0c9cf0d7fff3784bf95817214e7eaf48c0",
+    "pedidos_sha256": "3cd479f2844ee993f9d7374bfc6018e8258ed22a91f7220a7e5cc9ec274f263e",
+    "quando": "2026-10-05T11:32:42+00:00",
+    "cabeca_do_sitio_lida": "3a253f7327de7c7dcc37e4dc49d7a08708b920d7",
+    "cabeca_do_motor_lida": "38457b2723c47ea126984be6c5c1f778967e6847",
+    "contagens": {
+      "linhas": 9,
+      "pedidos": 6,
+      "pedidos_com_200": 6,
+      "relidas": 9,
+      "paradas": 0,
+      "com_valor_novo": 9,
+      "com_a_guarda_do_excerto": 9,
+      "com_o_found_do_painel": 9,
+      "com_corpo_anterior": 9
+    },
+    "bytes_dos_pedidos": [
+      5751,
+      5638,
+      5867,
+      5732,
+      7335,
+      6650
+    ],
+    "codigo": 0,
+    "linhas": [
+      {
+        "id": "custo-unitario-do-trabalho-2024",
+        "valor_antigo": "17,7",
+        "valor_novo": "17,9",
+        "literal_antigo": "17.7",
+        "literal_novo": "17.9",
+        "bandeira_antiga": "p",
+        "bandeira_nova": "",
+        "carimbo_anterior": "2026-09-28T11:00:00+0200",
+        "carimbo_novo": "2026-10-02T23:00:00+0200",
+        "acesso_antigo": "2026-09-15",
+        "gerador_da_linha": "enquadramento.py",
+        "corrida_do_corpo_anterior": "indicators/out/enquadramento-2026-09-28",
+        "quando_do_corpo_anterior": "2026-09-28T13:45:50+00:00",
+        "painel_carimbo_registado": "2026-09-21T23:00:00+0200",
+        "found_do_painel": "17.9"
+      },
+      {
+        "id": "despesa-em-id-2024-ue",
+        "valor_antigo": "2,24",
+        "valor_novo": "2,26",
+        "literal_antigo": "2.24",
+        "literal_novo": "2.26",
+        "bandeira_antiga": "e",
+        "bandeira_nova": "e",
+        "carimbo_anterior": "2026-03-18T23:00:00+0100",
+        "carimbo_novo": "2026-09-29T23:00:00+0200",
+        "acesso_antigo": "2026-09-15",
+        "gerador_da_linha": "enquadramento.py",
+        "corrida_do_corpo_anterior": "indicators/out/enquadramento-2026-09-28",
+        "quando_do_corpo_anterior": "2026-09-28T13:46:10+00:00",
+        "painel_carimbo_registado": "2026-03-18T23:00:00+0100",
+        "found_do_painel": "2.26"
+      },
+      {
+        "id": "formacao-bruta-de-capital-fixo-2024",
+        "valor_antigo": "20,4",
+        "valor_novo": "20,5",
+        "literal_antigo": "20.4",
+        "literal_novo": "20.5",
+        "bandeira_antiga": "p",
+        "bandeira_nova": "",
+        "carimbo_anterior": "2026-09-28T11:00:00+0200",
+        "carimbo_novo": "2026-10-02T23:00:00+0200",
+        "acesso_antigo": "2026-09-15",
+        "gerador_da_linha": "enquadramento.py",
+        "corrida_do_corpo_anterior": "indicators/out/enquadramento-2026-09-28",
+        "quando_do_corpo_anterior": "2026-09-28T13:46:15+00:00",
+        "painel_carimbo_registado": "2026-09-21T23:00:00+0200",
+        "found_do_painel": "20.5"
+      },
+      {
+        "id": "formacao-bruta-de-capital-fixo-2025",
+        "valor_antigo": "20,7",
+        "valor_novo": "21,0",
+        "literal_antigo": "20.7",
+        "literal_novo": "21.0",
+        "bandeira_antiga": "p",
+        "bandeira_nova": "p",
+        "carimbo_anterior": "2026-09-28T11:00:00+0200",
+        "carimbo_novo": "2026-10-02T23:00:00+0200",
+        "acesso_antigo": "2026-08-12",
+        "gerador_da_linha": "generate_claims.py",
+        "corrida_do_corpo_anterior": "indicators/out/enquadramento-2026-09-28",
+        "quando_do_corpo_anterior": "2026-09-28T13:46:15+00:00",
+        "painel_carimbo_registado": "2026-09-21T23:00:00+0200",
+        "found_do_painel": "21.0"
+      },
+      {
+        "id": "pib-real-per-capita-2024",
+        "valor_antigo": "20 430",
+        "valor_novo": "20 520",
+        "literal_antigo": "20430",
+        "literal_novo": "20520",
+        "bandeira_antiga": "p",
+        "bandeira_nova": "",
+        "carimbo_anterior": "2026-09-28T11:00:00+0200",
+        "carimbo_novo": "2026-10-02T23:00:00+0200",
+        "acesso_antigo": "2026-09-15",
+        "gerador_da_linha": "enquadramento.py",
+        "corrida_do_corpo_anterior": "indicators/out/releitura-c1c-2026-09-28",
+        "quando_do_corpo_anterior": "2026-09-28T13:52:44+00:00",
+        "painel_carimbo_registado": "2026-09-18T23:00:00+0200",
+        "found_do_painel": "20520"
+      },
+      {
+        "id": "pib-real-per-capita-2025",
+        "valor_antigo": "20 600",
+        "valor_novo": "20 700",
+        "literal_antigo": "20600",
+        "literal_novo": "20700",
+        "bandeira_antiga": "p",
+        "bandeira_nova": "p",
+        "carimbo_anterior": "2026-09-28T11:00:00+0200",
+        "carimbo_novo": "2026-10-02T23:00:00+0200",
+        "acesso_antigo": "2026-08-12",
+        "gerador_da_linha": "generate_claims.py",
+        "corrida_do_corpo_anterior": "indicators/out/releitura-c1c-2026-09-28",
+        "quando_do_corpo_anterior": "2026-09-28T13:52:44+00:00",
+        "painel_carimbo_registado": "2026-09-18T23:00:00+0200",
+        "found_do_painel": "20700"
+      },
+      {
+        "id": "posicao-de-investimento-internacional-2024",
+        "valor_antigo": "−58,9",
+        "valor_novo": "−58,3",
+        "literal_antigo": "-58.9",
+        "literal_novo": "-58.3",
+        "bandeira_antiga": "",
+        "bandeira_nova": "",
+        "carimbo_anterior": "2026-09-11T23:00:00+0200",
+        "carimbo_novo": "2026-10-02T23:00:00+0200",
+        "acesso_antigo": "2026-09-15",
+        "gerador_da_linha": "enquadramento.py",
+        "corrida_do_corpo_anterior": "indicators/out/enquadramento-2026-09-28",
+        "quando_do_corpo_anterior": "2026-09-28T13:45:42+00:00",
+        "painel_carimbo_registado": "2026-09-11T23:00:00+0200",
+        "found_do_painel": "-58.3"
+      },
+      {
+        "id": "posicao-de-investimento-internacional-2025",
+        "valor_antigo": "−50,2",
+        "valor_novo": "−49,6",
+        "literal_antigo": "-50.2",
+        "literal_novo": "-49.6",
+        "bandeira_antiga": "",
+        "bandeira_nova": "",
+        "carimbo_anterior": "2026-09-11T23:00:00+0200",
+        "carimbo_novo": "2026-10-02T23:00:00+0200",
+        "acesso_antigo": "2026-08-12",
+        "gerador_da_linha": "generate_claims.py",
+        "corrida_do_corpo_anterior": "indicators/out/enquadramento-2026-09-28",
+        "quando_do_corpo_anterior": "2026-09-28T13:45:42+00:00",
+        "painel_carimbo_registado": "2026-09-11T23:00:00+0200",
+        "found_do_painel": "-49.6"
+      },
+      {
+        "id": "saldo-da-balanca-corrente-2024",
+        "valor_antigo": "0,3",
+        "valor_novo": "0,4",
+        "literal_antigo": "0.3",
+        "literal_novo": "0.4",
+        "bandeira_antiga": "",
+        "bandeira_nova": "",
+        "carimbo_anterior": "2026-07-08T11:00:00+0200",
+        "carimbo_novo": "2026-10-02T11:00:00+0200",
+        "acesso_antigo": "2026-09-15",
+        "gerador_da_linha": "enquadramento.py",
+        "corrida_do_corpo_anterior": "indicators/out/enquadramento-2026-09-28",
+        "quando_do_corpo_anterior": "2026-09-28T13:45:40+00:00",
+        "painel_carimbo_registado": "2026-07-08T11:00:00+0200",
+        "found_do_painel": "0.4"
+      }
+    ]
+  },
+  "painel_do_fim": {
+    "codigo": 1,
+    "inicio": "2026-10-05T12:22:39Z",
+    "fim": "2026-10-05T12:23:41Z",
+    "linhas_do_estudo": 91,
+    "escritas_igual": 9,
+    "escritas_diverge": 0,
+    "escritas_inacessivel": 0,
+    "ja_escritas_hoje": 82,
+    "alarmes": 4,
+    "avisos": 35,
+    "pedidos": 60,
+    "alarmes_do_relatorio": [
+      {
+        "id": "pib-real-per-capita-2024",
+        "canary": "structure",
+        "mensagem": "dimension sizes changed: {'unit': (1, 2)}"
+      },
+      {
+        "id": "pib-real-per-capita-2025-ue",
+        "canary": "structure",
+        "mensagem": "dimension sizes changed: {'unit': (1, 2)}"
+      },
+      {
+        "id": "pib-real-per-capita-2025",
+        "canary": "structure",
+        "mensagem": "dimension sizes changed: {'unit': (1, 2)}"
+      },
+      {
+        "id": null,
+        "canary": "threshold",
+        "mensagem": "the numeric content of the Commission MIP scoreboard page changed — thresholds may have been revised. Read it before trusting any 'limiar' on the site."
+      }
+    ],
+    "conhecido_positivo": {
+      "o_que": "o registo da corrida tem a linha das reconferências e a dos alarmes",
+      "encontrado": true
+    }
+  }
+}

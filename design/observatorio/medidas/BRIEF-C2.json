@@ -1,0 +1,81 @@
+{
+  "brief": "design/observatorio/BRIEF-C2-as-nove-revisoes-da-eurostat.md",
+  "guiao": "design/observatorio/medidas/BRIEF-C2.py",
+  "cabeca_lida": "3a253f73",
+  "medidas": [
+    {
+      "nome": "linhas_com_uma_verificacao_divergente_de_05_10_2026",
+      "valor": 9,
+      "comando": "git show 3a253f73:ledger/claims/<linha>.yml · as linhas com uma verificação datada de 2026-10-05 e result \"diverge\"",
+      "conhecido_positivo": {
+        "o_que": "o PIB real por habitante de 2024 é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dessas_as_lidas_na_eurostat",
+      "valor": 9,
+      "comando": "das linhas da medida anterior, as que citam um endereço da Eurostat no seu source_url ou pedido",
+      "conhecido_positivo": {
+        "o_que": "a lista das divergentes não está vazia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_uma_verificacao_igual_de_05_10_2026",
+      "valor": 82,
+      "comando": "git show 3a253f73:ledger/claims/<linha>.yml · as verificações de 2026-10-05 com result \"igual\"",
+      "conhecido_positivo": {
+        "o_que": "a soma das iguais, divergentes e inacessíveis é 91, as linhas do painel",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_uma_verificacao_inacessivel_de_05_10_2026",
+      "valor": 0,
+      "comando": "git show 3a253f73:ledger/claims/<linha>.yml · as verificações de 2026-10-05 com result \"inacessivel\"",
+      "conhecido_positivo": {
+        "o_que": "a soma é 91",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "correcoes_do_tipo_atualizacao_no_livro",
+      "valor": 1,
+      "comando": "git show 3a253f73:ledger/claims/<linha>.yml · as entradas de corrections com kind: atualizacao",
+      "conhecido_positivo": {
+        "o_que": "a dívida das famílias da União tem uma atualização de 28.09",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_divergentes_usadas_na_primeira_pagina",
+      "valor": 3,
+      "comando": "git show 3a253f73:src/data/primeira-pagina.mjs · as linhas divergentes citadas pelo id",
+      "conhecido_positivo": {
+        "o_que": "a primeira página cita a posição de investimento internacional",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mencoes_da_v16_no_readme_do_livro",
+      "valor": 2,
+      "comando": "git show 3a253f73:ledger/README.md · as ocorrências de «V16» (o caminho das revisões da fonte)",
+      "conhecido_positivo": {
+        "o_que": "o README fala de corrections",
+        "encontrado": true
+      }
+    }
+  ],
+  "divergentes": [
+    "custo-unitario-do-trabalho-2024",
+    "despesa-em-id-2024-ue",
+    "formacao-bruta-de-capital-fixo-2024",
+    "formacao-bruta-de-capital-fixo-2025",
+    "pib-real-per-capita-2024",
+    "pib-real-per-capita-2025",
+    "posicao-de-investimento-internacional-2024",
+    "posicao-de-investimento-internacional-2025",
+    "saldo-da-balanca-corrente-2024"
+  ]
+}

@@ -1,6 +1,6 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "2523e3a022daec489476b9c77b5707892aca9c84",
+ "cabeca": "b72e639db588a6a11baa0edea9459f66b9d5df70",
  "contas": {
   "paginas": 7882,
   "paginas_com_cartoes": 688,
@@ -876,7 +876,7 @@
     "in #": 2
    },
    "regua": {
-    "#:# (provisional data)European Union:#outside the Commission’s reference value (above # %)": 2
+    "#:#European Union:#outside the Commission’s reference value (above # %)": 2
    },
    "unidade": {
     "% change over three years": 2
@@ -1724,7 +1724,7 @@
     "in #": 2
    },
    "regua": {
-    "#:# (provisional data)European Union:#": 2
+    "#:#European Union:#": 2
    },
    "unidade": {
     "% of GDP": 2
@@ -2197,7 +2197,7 @@
     "in #": 2
    },
    "regua": {
-    "#:# (provisional data)European Union:#": 2
+    "#:#European Union:#": 2
    },
    "unidade": {
     "euros per person, at 2015 prices": 2
@@ -2649,7 +2649,7 @@
     "em #": 2
    },
    "regua": {
-    "#:# (dado provisório)União Europeia:#fora do valor de referência da Comissão (acima de # %)": 2
+    "#:#União Europeia:#fora do valor de referência da Comissão (acima de # %)": 2
    },
    "unidade": {
     "% de variação em três anos": 2
@@ -3497,7 +3497,7 @@
     "em #": 2
    },
    "regua": {
-    "#:# (dado provisório)União Europeia:#": 2
+    "#:#União Europeia:#": 2
    },
    "unidade": {
     "% do PIB": 2
@@ -3970,7 +3970,7 @@
     "em #": 2
    },
    "regua": {
-    "#:# (dado provisório)União Europeia:#": 2
+    "#:#União Europeia:#": 2
    },
    "unidade": {
     "euros por pessoa, a preços de 2015": 2

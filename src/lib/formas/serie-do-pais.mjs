@@ -105,7 +105,12 @@ export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, 
     if (posicao - campo.esquerda >= 64 && campo.direita - posicao >= 64) anos.push(a);
   }
   if (ultimoAno !== primeiroAno) anos.push(ultimoAno);
-  const marcasX = anos.map((ano, i) => ({ valor: ano, texto: String(ano), x: x(i === 0 ? xMin : ano === ultimoAno ? xMax : ano * 12), y: coordenada(altura - 8), ancora: i === 0 ? 'start' : i === anos.length - 1 ? 'end' : 'middle' }));
+  /* O ÚLTIMO ANO ANCORA-SE EM JANEIRO, COMO OS INTERMÉDIOS (bloco RP4-m, 05.10.2026, o ponto 5 do mandato; o
+     achado 5 das leituras do RP4). Até aqui a marca do último ano ficava no último ponto, encostada à direita: no
+     recibo da remuneração, «2026» estava no segundo trimestre e não no primeiro, como as outras marcas estão no
+     primeiro mês do seu ano. Agora está em janeiro do último ano, centrada, como as intermédias; o primeiro ano
+     continua no primeiro ponto, porque o janeiro dele pode estar antes do começo da série. */
+  const marcasX = anos.map((ano, i) => ({ valor: ano, texto: String(ano), x: x(i === 0 ? xMin : ano * 12), y: coordenada(altura - 8), ancora: i === 0 ? 'start' : 'middle' }));
   return {
     modo, largura, altura, campo, marcasX, marcasY, excluidas,
     linhas: linhas.map((l) => {

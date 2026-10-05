@@ -129,7 +129,8 @@
  */
 
 import fs from 'node:fs';
-import { conferirSerie, plantasDaSerie, provasDoModulo } from '../tests/formas/serie-do-pais.mjs';
+import { conferirSerie, plantasDaSerie, provasDoModulo, regraDaPagina, plantasDaRegraDaPagina } from '../tests/formas/serie-do-pais.mjs';
+import { FIGURAS_INDEXADAS } from '../src/data/series-no-tempo.mjs';
 import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -270,6 +271,8 @@ const provasRP4 = provasDoModulo();
 const plantasRP4 = [];
 let desenhosRP4 = 0;
 const recibosRP4 = new Set();
+/* RP4-m: os dois controlos das plantas da regra da página, o primeiro de cada um que a corrida vê. */
+const controlosDaRegra = { figura: null, comum: null };
 const claims = loadClaims();
 /** UE1: as linhas de série, pelo leitor próprio dos portões (F1 e F19). */
 const SERIES_DO_PORTAO = lerSeriesDoPortao();
@@ -548,10 +551,18 @@ for (const ficheiro of paginasDe(DIST)) {
     desenhosRP4++;
     const lang = rota?.lang === 'en' ? 'en' : 'pt';
     for (const e of conferirSerie(svg, lang)) err(`${rel}: ${e}`);
-    if (svg.getAttribute('data-modo') !== 'unidade') err(`${rel}: F21 · nenhuma página usa o modo indexado neste bloco`);
+    /* A REGRA DA PÁGINA, que mudou de forma no RP4-m (05.10.2026, o ponto 4 do mandato): o modo indexado só no
+       recibo de uma série com figura declarada em `FIGURAS_INDEXADAS`, com as séries da declaração, e o gráfico de
+       qualquer outro recibo só a sua série (`regraDaPagina`, em `tests/formas/serie-do-pais.mjs`, com as plantas). */
+    const queixasDaPagina = regraDaPagina(svg, rota);
+    for (const e of queixasDaPagina) err(`${rel}: ${e}`);
     if (rota?.key === 'serie') {
-      if (svg.getAttribute('data-series') !== rota.params.slug) err(`${rel}: F21 · o gráfico do recibo não é da sua série`);
       recibosRP4.add(`${lang}:${rota.params.slug}`);
+      if (!queixasDaPagina.length && lang === 'pt') {
+        const slug = String(rota.params.slug);
+        if (FIGURAS_INDEXADAS[slug] && !controlosDaRegra.figura) controlosDaRegra.figura = { svg: parse(svg.outerHTML).querySelector('svg'), slug };
+        if (!FIGURAS_INDEXADAS[slug] && !controlosDaRegra.comum) controlosDaRegra.comum = { svg: parse(svg.outerHTML).querySelector('svg'), slug };
+      }
     }
     if (!plantasRP4.some((p) => p.lang === lang)) {
       for (const p of plantasDaSerie(svg.outerHTML, lang)) { plantasRP4.push({ lang, ...p }); if (!p.mordeu) err(`${rel}: F21 · planta ${p.nome} não mordeu: ${p.queixa}`); }
@@ -1461,6 +1472,15 @@ if (SERIES_DE_PAISES.size) {
 
 for (const serie of SERIES_DO_PORTAO.values()) if (serie.eixo === 'periodo') for (const lang of LANGS) {
   if (!recibosRP4.has(`${lang}:${serie.id}`)) err(`F21 · falta o gráfico do recibo de ${serie.id} (${lang})`);
+}
+/* As plantas da regra da página (RP4-m), uma vez, sobre os dois controlos íntegros que a corrida viu. Com uma figura
+   declarada e nenhum desenho dela visto, a corrida fecha: as plantas não correriam sobre nada. */
+if (Object.keys(FIGURAS_INDEXADAS).length) {
+  if (!controlosDaRegra.figura || !controlosDaRegra.comum) err('F21 · a regra da página não viu a figura indexada declarada e um recibo comum, e as suas plantas não correram');
+  else for (const p of plantasDaRegraDaPagina(controlosDaRegra.figura.svg, controlosDaRegra.figura.slug, controlosDaRegra.comum.svg, controlosDaRegra.comum.slug)) {
+    plantasRP4.push({ lang: 'pt', regra: 'página', ...p });
+    if (!p.mordeu) err(`F21 · planta da regra da página «${p.nome}» não mordeu: ${p.queixa}`);
+  }
 }
 if (!desenhosRP4 || plantasRP4.length === 0) err('F21 · não viu desenhos ou plantas');
 console.log(`F21 · ${desenhosRP4} desenhos recompostos · ${provasRP4.length} provas do módulo · ${plantasRP4.filter((p) => p.mordeu).length} de ${plantasRP4.length} plantas em memória`);

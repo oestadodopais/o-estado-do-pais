@@ -1,0 +1,1763 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/medir-c2.py. Não se edita à mão.",
+  "cabeca": "82406f855ea08e22cd2eb350adde00448447748e",
+  "medidas": [
+    {
+      "nome": "medidas_do_s0_reproduzidas_iguais",
+      "valor": 7,
+      "comando": "OEDP_MEDIDAS_JSON=<pasta>/brief-reproduzido.json python3 design/observatorio/medidas/BRIEF-C2.py · comparado com BRIEF-C2.json",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro reproduzido tem as medidas do brief, nome a nome",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_da_reproducao_do_s0",
+      "valor": 0,
+      "comando": "brief-reproduzido.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "releitura_pedidos",
+      "valor": 6,
+      "comando": "motor/motor-c2.json · releitura.contagens.pedidos (indicators/out/c2-2026-10-05/releitura/releitura.json no motor)",
+      "conhecido_positivo": {
+        "o_que": "a releitura leu as nove linhas do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "releitura_pedidos_com_200",
+      "valor": 6,
+      "comando": "motor/motor-c2.json · releitura.contagens.pedidos_com_200 (indicators/out/c2-2026-10-05/releitura/releitura.json no motor)",
+      "conhecido_positivo": {
+        "o_que": "a releitura leu as nove linhas do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "releitura_relidas",
+      "valor": 9,
+      "comando": "motor/motor-c2.json · releitura.contagens.relidas (indicators/out/c2-2026-10-05/releitura/releitura.json no motor)",
+      "conhecido_positivo": {
+        "o_que": "a releitura leu as nove linhas do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "releitura_com_valor_novo",
+      "valor": 9,
+      "comando": "motor/motor-c2.json · releitura.contagens.com_valor_novo (indicators/out/c2-2026-10-05/releitura/releitura.json no motor)",
+      "conhecido_positivo": {
+        "o_que": "a releitura leu as nove linhas do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "releitura_com_a_guarda_do_excerto",
+      "valor": 9,
+      "comando": "motor/motor-c2.json · releitura.contagens.com_a_guarda_do_excerto (indicators/out/c2-2026-10-05/releitura/releitura.json no motor)",
+      "conhecido_positivo": {
+        "o_que": "a releitura leu as nove linhas do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "releitura_com_o_found_do_painel",
+      "valor": 9,
+      "comando": "motor/motor-c2.json · releitura.contagens.com_o_found_do_painel (indicators/out/c2-2026-10-05/releitura/releitura.json no motor)",
+      "conhecido_positivo": {
+        "o_que": "a releitura leu as nove linhas do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "releitura_com_corpo_anterior",
+      "valor": 9,
+      "comando": "motor/motor-c2.json · releitura.contagens.com_corpo_anterior (indicators/out/c2-2026-10-05/releitura/releitura.json no motor)",
+      "conhecido_positivo": {
+        "o_que": "a releitura leu as nove linhas do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "releitura_paradas",
+      "valor": 0,
+      "comando": "motor/motor-c2.json · releitura.contagens.paradas (indicators/out/c2-2026-10-05/releitura/releitura.json no motor)",
+      "conhecido_positivo": {
+        "o_que": "a releitura leu as nove linhas do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "releitura_bytes_dos_seis_pedidos",
+      "valor": 36973,
+      "comando": "soma de motor/motor-c2.json · releitura.bytes_dos_pedidos",
+      "conhecido_positivo": {
+        "o_que": "há seis pedidos com bytes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "painel_do_fim_linhas_do_estudo",
+      "valor": 91,
+      "comando": "motor/motor-c2.json · painel_do_fim.linhas_do_estudo (indicators/out/c2-2026-10-05/painel.log e painel/ no motor)",
+      "conhecido_positivo": {
+        "o_que": "o registo do painel tem a linha das reconferências e a dos alarmes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "painel_do_fim_escritas_igual",
+      "valor": 9,
+      "comando": "motor/motor-c2.json · painel_do_fim.escritas_igual (indicators/out/c2-2026-10-05/painel.log e painel/ no motor)",
+      "conhecido_positivo": {
+        "o_que": "o registo do painel tem a linha das reconferências e a dos alarmes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "painel_do_fim_escritas_diverge",
+      "valor": 0,
+      "comando": "motor/motor-c2.json · painel_do_fim.escritas_diverge (indicators/out/c2-2026-10-05/painel.log e painel/ no motor)",
+      "conhecido_positivo": {
+        "o_que": "o registo do painel tem a linha das reconferências e a dos alarmes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "painel_do_fim_escritas_inacessivel",
+      "valor": 0,
+      "comando": "motor/motor-c2.json · painel_do_fim.escritas_inacessivel (indicators/out/c2-2026-10-05/painel.log e painel/ no motor)",
+      "conhecido_positivo": {
+        "o_que": "o registo do painel tem a linha das reconferências e a dos alarmes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "painel_do_fim_ja_escritas_hoje",
+      "valor": 82,
+      "comando": "motor/motor-c2.json · painel_do_fim.ja_escritas_hoje (indicators/out/c2-2026-10-05/painel.log e painel/ no motor)",
+      "conhecido_positivo": {
+        "o_que": "o registo do painel tem a linha das reconferências e a dos alarmes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "painel_do_fim_alarmes",
+      "valor": 4,
+      "comando": "motor/motor-c2.json · painel_do_fim.alarmes (indicators/out/c2-2026-10-05/painel.log e painel/ no motor)",
+      "conhecido_positivo": {
+        "o_que": "o registo do painel tem a linha das reconferências e a dos alarmes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "painel_do_fim_avisos",
+      "valor": 35,
+      "comando": "motor/motor-c2.json · painel_do_fim.avisos (indicators/out/c2-2026-10-05/painel.log e painel/ no motor)",
+      "conhecido_positivo": {
+        "o_que": "o registo do painel tem a linha das reconferências e a dos alarmes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "painel_do_fim_pedidos",
+      "valor": 60,
+      "comando": "motor/motor-c2.json · painel_do_fim.pedidos (indicators/out/c2-2026-10-05/painel.log e painel/ no motor)",
+      "conhecido_positivo": {
+        "o_que": "o registo do painel tem a linha das reconferências e a dos alarmes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "painel_do_fim_codigo",
+      "valor": 1,
+      "comando": "motor/motor-c2.json · painel_do_fim.codigo (indicators/out/c2-2026-10-05/painel.log e painel/ no motor)",
+      "conhecido_positivo": {
+        "o_que": "o registo do painel tem a linha das reconferências e a dos alarmes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "painel_do_fim_segundos",
+      "valor": 62,
+      "comando": "painel.inicio e painel.fim, no motor",
+      "conhecido_positivo": {
+        "o_que": "as duas horas existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_commits_do_ramo",
+      "valor": 2,
+      "comando": "git log master..c2-2026-10-05 no motor (motor/motor-c2.json)",
+      "conhecido_positivo": {
+        "o_que": "o ramo tem a releitura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_ficheiros_protegidos_mudados",
+      "valor": 0,
+      "comando": "git diff --name-only master..c2-2026-10-05 no motor, contra a lista dos que não se tocam",
+      "conhecido_positivo": {
+        "o_que": "a regra reconhece indicators/vintages.json",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "motor_ficheiros_mudados_no_ramo",
+      "valor": 80,
+      "comando": "git diff --name-only master..c2-2026-10-05 no motor",
+      "conhecido_positivo": {
+        "o_que": "o ramo mudou ficheiros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_gate_1",
+      "valor": 1,
+      "comando": "motor/gate-1.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_gate_1b",
+      "valor": 0,
+      "comando": "motor/gate-1b.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_gate_2",
+      "valor": 0,
+      "comando": "motor/gate-2.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_gate_final",
+      "valor": 0,
+      "comando": "motor/gate-final.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_gate_final_do_motor",
+      "valor": 285,
+      "comando": "motor/gate-final.segundos",
+      "conhecido_positivo": {
+        "o_que": "o tempo foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ensaio_sobre_os_corpos_de_28_09_relidas",
+      "valor": 9,
+      "comando": "reler.py --de-corpos indicators/out/enquadramento-2026-09-28 --json releitura-ensaio-28-09.json · contagens.relidas",
+      "conhecido_positivo": {
+        "o_que": "sobre os corpos de 28.09 a releitura acha os valores antigos: nenhum valor novo nas nove",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ensaio_sobre_os_corpos_de_28_09_com_valor_novo",
+      "valor": 0,
+      "comando": "reler.py --de-corpos indicators/out/enquadramento-2026-09-28 --json releitura-ensaio-28-09.json · contagens.com_valor_novo",
+      "conhecido_positivo": {
+        "o_que": "sobre os corpos de 28.09 a releitura acha os valores antigos: nenhum valor novo nas nove",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ensaio_sobre_os_corpos_de_28_09_com_a_guarda_do_excerto",
+      "valor": 9,
+      "comando": "reler.py --de-corpos indicators/out/enquadramento-2026-09-28 --json releitura-ensaio-28-09.json · contagens.com_a_guarda_do_excerto",
+      "conhecido_positivo": {
+        "o_que": "sobre os corpos de 28.09 a releitura acha os valores antigos: nenhum valor novo nas nove",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ensaio_sobre_os_corpos_de_28_09_paradas",
+      "valor": 0,
+      "comando": "reler.py --de-corpos indicators/out/enquadramento-2026-09-28 --json releitura-ensaio-28-09.json · contagens.paradas",
+      "conhecido_positivo": {
+        "o_que": "sobre os corpos de 28.09 a releitura acha os valores antigos: nenhum valor novo nas nove",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aplicacao_linhas",
+      "valor": 9,
+      "comando": "aplicacao.json · contagens.linhas (aplicar-releituras.py --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "a aplicação tem as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aplicacao_aplicadas",
+      "valor": 9,
+      "comando": "aplicacao.json · contagens.aplicadas (aplicar-releituras.py --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "a aplicação tem as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aplicacao_entradas_novas",
+      "valor": 27,
+      "comando": "aplicacao.json · contagens.entradas_novas (aplicar-releituras.py --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "a aplicação tem as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aplicacao_atualizacoes_novas",
+      "valor": 9,
+      "comando": "aplicacao.json · contagens.atualizacoes_novas (aplicar-releituras.py --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "a aplicação tem as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aplicacao_bandeiras_que_sairam",
+      "valor": 3,
+      "comando": "aplicacao.json · contagens.bandeiras_que_sairam (aplicar-releituras.py --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "a aplicação tem as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aplicacao_plantas",
+      "valor": 72,
+      "comando": "aplicacao.json · contagens.plantas (aplicar-releituras.py --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "a aplicação tem as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "aplicacao_plantas_que_morderam",
+      "valor": 72,
+      "comando": "aplicacao.json · contagens.plantas_que_morderam (aplicar-releituras.py --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "a aplicação tem as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "historias_seladas_a_zero",
+      "valor": 9,
+      "comando": "selar-historias.codigos · node scripts/selar-historia-valores.mjs <id>, uma vez por linha",
+      "conhecido_positivo": {
+        "o_que": "há um código por linha das nove",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "historias_no_registo_selado",
+      "valor": 25,
+      "comando": "ledger/historias-valores.json · as chaves",
+      "conhecido_positivo": {
+        "o_que": "a dívida das famílias da União está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "das_nove_com_historia_selada",
+      "valor": 9,
+      "comando": "ledger/historias-valores.json · as nove",
+      "conhecido_positivo": {
+        "o_que": "a lista das nove não está vazia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_ledger_check_1",
+      "valor": 0,
+      "comando": "npm run ledger:check > ledger-check-1.log; echo $? > ledger-check-1.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "afirmacoes_validas_no_ledger_check_1",
+      "valor": 3195,
+      "comando": "ledger-check-1.log · «N afirmações válidas»",
+      "conhecido_positivo": {
+        "o_que": "o registo tem a linha das afirmações",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_ledger_check_2",
+      "valor": 0,
+      "comando": "npm run ledger:check > ledger-check-2.log; echo $? > ledger-check-2.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "afirmacoes_validas_no_ledger_check_2",
+      "valor": 3195,
+      "comando": "ledger-check-2.log · «N afirmações válidas»",
+      "conhecido_positivo": {
+        "o_que": "o registo tem a linha das afirmações",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_de_05_10_nas_nove_linhas",
+      "valor": 27,
+      "comando": "ledger/claims/<as nove>.yml · corrections com date 2026-10-05",
+      "conhecido_positivo": {
+        "o_que": "a primeira das nove tem a atualização",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "das_nove_com_bandeira_da_fonte",
+      "valor": 3,
+      "comando": "ledger/claims/<as nove>.yml · source_flag",
+      "conhecido_positivo": {
+        "o_que": "o PIB de 2025 conserva a bandeira",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_estudo_no_livro",
+      "valor": 91,
+      "comando": "ledger/claims/*.yml · study: quadro-institucional",
+      "conhecido_positivo": {
+        "o_que": "a dívida das famílias da União é do estudo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_cuja_ultima_releitura_de_05_10_e_igual",
+      "valor": 91,
+      "comando": "ledger/claims/*.yml do estudo · a última verificação datada de 2026-10-05",
+      "conhecido_positivo": {
+        "o_que": "a soma das três é o número de linhas do estudo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_cuja_ultima_releitura_de_05_10_e_diverge",
+      "valor": 0,
+      "comando": "ledger/claims/*.yml do estudo · a última verificação datada de 2026-10-05",
+      "conhecido_positivo": {
+        "o_que": "a soma das três é o número de linhas do estudo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_cuja_ultima_releitura_de_05_10_e_inacessivel",
+      "valor": 0,
+      "comando": "ledger/claims/*.yml do estudo · a última verificação datada de 2026-10-05",
+      "conhecido_positivo": {
+        "o_que": "a soma das três é o número de linhas do estudo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_a_diverge_de_05_10_conservada",
+      "valor": 9,
+      "comando": "ledger/claims/*.yml do estudo · uma verificação de 2026-10-05 com result diverge",
+      "conhecido_positivo": {
+        "o_que": "a diverge do PIB de 2024 está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "releituras_antigas_tiradas_pela_regra_das_quatro",
+      "valor": 4,
+      "comando": "git show <commit do painel>~1 e <commit do painel> · as verificações que saíram das nove",
+      "conhecido_positivo": {
+        "o_que": "o commit do painel foi achado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_portugal_como_unica_geografia",
+      "valor": 83,
+      "comando": "ledger/claims/*.yml · source_url com geo=PT e nenhuma outra geografia",
+      "conhecido_positivo": {
+        "o_que": "o PIB real por habitante de 2025 tem-na",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "dessas_com_mudancas_de_valor",
+      "valor": 12,
+      "comando": "as linhas da medida anterior com uma entrada correcao ou atualizacao",
+      "conhecido_positivo": {
+        "o_que": "a taxa de desemprego de 2025 está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "das_nove_entre_as_que_mudaram_com_portugal_como_unica_geografia",
+      "valor": 8,
+      "comando": "as nove entre as linhas da medida anterior",
+      "conhecido_positivo": {
+        "o_que": "o PIB de 2024 está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_cuja_primeira_geografia_e_portugal_entre_varias",
+      "valor": 14,
+      "comando": "ledger/claims/*.yml · source_url com mais de um geo, o primeiro PT (as que a primeira forma da via lia como Portugal)",
+      "conhecido_positivo": {
+        "o_que": "o PIB por habitante do Alentejo de 2024 está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_da_tabela_dos_lugares_na_base",
+      "valor": 5,
+      "comando": "git show 3a253f73:src/data/lugar-das-linhas.mjs · as chaves",
+      "conhecido_positivo": {
+        "o_que": "a dívida das famílias da União já lá estava",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_da_tabela_dos_lugares_agora",
+      "valor": 11,
+      "comando": "src/data/lugar-das-linhas.mjs · as chaves",
+      "conhecido_positivo": {
+        "o_que": "a despesa em I&D da União entrou",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_da_tabela_na_base_com_portugal_como_unica_geografia",
+      "valor": 0,
+      "comando": "as chaves da tabela na base cuja linha, na base, tem geo=PT e só esse",
+      "conhecido_positivo": {
+        "o_que": "a tabela da base tem entradas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_da_tabela_agora_com_portugal_como_unica_geografia",
+      "valor": 5,
+      "comando": "as chaves da tabela cuja linha tem geo=PT e só esse",
+      "conhecido_positivo": {
+        "o_que": "o custo unitário do trabalho de 2024 está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "das_nove_em_registos_da_travessia",
+      "valor": 0,
+      "comando": "ledger/cruzamentos/*.json · as chaves de rows",
+      "conhecido_positivo": {
+        "o_que": "uma linha cruzada conhecida dos domínios (abrantes-ganho-medio-mensal-2024) é achada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "divida_das_familias_ue_em_registos_da_travessia",
+      "valor": 0,
+      "comando": "ledger/cruzamentos/*.json · as chaves de rows",
+      "conhecido_positivo": {
+        "o_que": "uma linha cruzada conhecida dos domínios é achada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "das_nove_do_gerador_enquadramento",
+      "valor": 6,
+      "comando": "motor/motor-c2.json · releitura.linhas[].gerador_da_linha (o cabeçalho de cada linha)",
+      "conhecido_positivo": {
+        "o_que": "a soma dos dois geradores é nove",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "das_nove_do_gerador_generate_claims",
+      "valor": 3,
+      "comando": "motor/motor-c2.json · releitura.linhas[].gerador_da_linha",
+      "conhecido_positivo": {
+        "o_que": "a soma dos dois geradores é nove",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "das_nove_com_cadeia_do_excerto_na_base",
+      "valor": 6,
+      "comando": "git show 3a253f73:ledger/claims/<as nove>.yml · uma entrada proveniencia sobre excerpt",
+      "conhecido_positivo": {
+        "o_que": "o custo unitário do trabalho de 2024 tinha-a",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alarmes_do_painel_da_estrutura",
+      "valor": 3,
+      "comando": "motor/motor-c2.json · painel_do_fim.alarmes_do_relatorio, canary structure",
+      "conhecido_positivo": {
+        "o_que": "o relatório tem alarmes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alarmes_do_painel_do_vigia_da_comissao",
+      "valor": 1,
+      "comando": "motor/motor-c2.json · painel_do_fim.alarmes_do_relatorio, canary threshold",
+      "conhecido_positivo": {
+        "o_que": "o relatório tem alarmes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "alarmes_do_painel_sobre_as_nove",
+      "valor": 0,
+      "comando": "motor/motor-c2.json · os alarmes de uma das nove que não são da estrutura da unidade",
+      "conhecido_positivo": {
+        "o_que": "o relatório tem alarmes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leituras_declaradas_lidas",
+      "valor": 48,
+      "comando": "leituras-antes.json · leituras_lidas",
+      "conhecido_positivo": {
+        "o_que": "o PIB real por habitante está entre os cartões achados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_published_at",
+      "valor": 37,
+      "comando": "ledger/claims/*.yml · published_at",
+      "conhecido_positivo": {
+        "o_que": "há linhas com o campo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_estudo_com_published_at",
+      "valor": 9,
+      "comando": "as da medida anterior do estudo quadro-institucional",
+      "conhecido_positivo": {
+        "o_que": "o campo lê-se nas linhas dos domínios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "revisoes_de_proveniencia_no_livro_na_base",
+      "valor": 54,
+      "comando": "git show 3a253f73:ledger/claims/<linha>.yml · as entradas de corrections com kind proveniencia",
+      "conhecido_positivo": {
+        "o_que": "a dívida das famílias da União tem uma na base",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "revisoes_de_proveniencia_no_livro_agora",
+      "valor": 72,
+      "comando": "ledger/claims/*.yml · as entradas de corrections com kind proveniencia",
+      "conhecido_positivo": {
+        "o_que": "a soma cresce com as do bloco",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "revisoes_de_proveniencia_novas_do_bloco",
+      "valor": 18,
+      "comando": "aplicacao.json · as entradas novas com kind proveniencia",
+      "conhecido_positivo": {
+        "o_que": "a aplicação tem entradas novas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "revisoes_de_proveniencia_na_pagina_das_correcoes",
+      "valor": 72,
+      "comando": "dist/correcoes/index.html · o valor de data-prova=\"revisoes_de_proveniencia\"",
+      "conhecido_positivo": {
+        "o_que": "a página das correções tem a contagem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leituras_cartoes",
+      "valor": 6,
+      "comando": "leituras-comparadas.json · cartoes (leituras-c2.mjs antes, depois e comparar)",
+      "conhecido_positivo": {
+        "o_que": "o comparador vê um ramo trocado numa planta, e os valores mudados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leituras_leituras_comparadas",
+      "valor": 12,
+      "comando": "leituras-comparadas.json · leituras_comparadas (leituras-c2.mjs antes, depois e comparar)",
+      "conhecido_positivo": {
+        "o_que": "o comparador vê um ramo trocado numa planta, e os valores mudados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leituras_leituras_com_texto_mudado",
+      "valor": 0,
+      "comando": "leituras-comparadas.json · leituras_com_texto_mudado (leituras-c2.mjs antes, depois e comparar)",
+      "conhecido_positivo": {
+        "o_que": "o comparador vê um ramo trocado numa planta, e os valores mudados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leituras_leituras_com_valores_da_regua_mudados",
+      "valor": 12,
+      "comando": "leituras-comparadas.json · leituras_com_valores_da_regua_mudados (leituras-c2.mjs antes, depois e comparar)",
+      "conhecido_positivo": {
+        "o_que": "o comparador vê um ramo trocado numa planta, e os valores mudados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leituras_ramos_lidos",
+      "valor": 32,
+      "comando": "leituras-comparadas.json · ramos_lidos (leituras-c2.mjs antes, depois e comparar)",
+      "conhecido_positivo": {
+        "o_que": "o comparador vê um ramo trocado numa planta, e os valores mudados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leituras_ramos_que_mudaram_de_sentido",
+      "valor": 0,
+      "comando": "leituras-comparadas.json · ramos_que_mudaram_de_sentido (leituras-c2.mjs antes, depois e comparar)",
+      "conhecido_positivo": {
+        "o_que": "o comparador vê um ramo trocado numa planta, e os valores mudados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leituras_ramos_vistos_na_planta",
+      "valor": 1,
+      "comando": "leituras-comparadas.json · conhecido_positivo.ramos_vistos_na_planta",
+      "conhecido_positivo": {
+        "o_que": "a planta troca um ramo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "limiar_linhas_que_sairam",
+      "valor": 4,
+      "comando": "limiar-da-comissao.json · linhas_que_sairam",
+      "conhecido_positivo": {
+        "o_que": "as impressões refeitas batem com os dois estados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "limiar_linhas_que_entraram",
+      "valor": 4,
+      "comando": "limiar-da-comissao.json · linhas_que_entraram",
+      "conhecido_positivo": {
+        "o_que": "as impressões refeitas batem com os dois estados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "limiar_linhas_com_algarismos",
+      "valor": 29,
+      "comando": "limiar-da-comissao.json · linhas_com_algarismos_de_hoje",
+      "conhecido_positivo": {
+        "o_que": "a página tem linhas com algarismos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_paginas_html_na_base",
+      "valor": 7883,
+      "comando": "paginas-c2.json · paginas_html_na_base (paginas-c2.mjs sobre as duas exportações)",
+      "conhecido_positivo": {
+        "o_que": "o recibo do PIB de 2025 mudou e cita a sua linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_paginas_html_na_cabeca",
+      "valor": 7883,
+      "comando": "paginas-c2.json · paginas_html_na_cabeca (paginas-c2.mjs sobre as duas exportações)",
+      "conhecido_positivo": {
+        "o_que": "o recibo do PIB de 2025 mudou e cita a sua linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_paginas_comuns",
+      "valor": 7883,
+      "comando": "paginas-c2.json · paginas_comuns (paginas-c2.mjs sobre as duas exportações)",
+      "conhecido_positivo": {
+        "o_que": "o recibo do PIB de 2025 mudou e cita a sua linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_paginas_iguais_byte_a_byte",
+      "valor": 7841,
+      "comando": "paginas-c2.json · paginas_iguais_byte_a_byte (paginas-c2.mjs sobre as duas exportações)",
+      "conhecido_positivo": {
+        "o_que": "o recibo do PIB de 2025 mudou e cita a sua linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_paginas_iguais_sem_a_construcao",
+      "valor": 0,
+      "comando": "paginas-c2.json · paginas_iguais_sem_a_construcao (paginas-c2.mjs sobre as duas exportações)",
+      "conhecido_positivo": {
+        "o_que": "o recibo do PIB de 2025 mudou e cita a sua linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_paginas_que_mudaram",
+      "valor": 42,
+      "comando": "paginas-c2.json · paginas_que_mudaram (paginas-c2.mjs sobre as duas exportações)",
+      "conhecido_positivo": {
+        "o_que": "o recibo do PIB de 2025 mudou e cita a sua linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_recibos_das_nove_que_mudaram",
+      "valor": 18,
+      "comando": "paginas-c2.json · recibos_das_nove_que_mudaram (paginas-c2.mjs sobre as duas exportações)",
+      "conhecido_positivo": {
+        "o_que": "o recibo do PIB de 2025 mudou e cita a sua linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_outros_ficheiros_comuns_iguais",
+      "valor": 3286,
+      "comando": "paginas-c2.json · outros_ficheiros_comuns_iguais (paginas-c2.mjs sobre as duas exportações)",
+      "conhecido_positivo": {
+        "o_que": "o recibo do PIB de 2025 mudou e cita a sua linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_outros_ficheiros_que_mudaram",
+      "valor": 11,
+      "comando": "paginas-c2.json · outros_ficheiros_que_mudaram (paginas-c2.mjs sobre as duas exportações)",
+      "conhecido_positivo": {
+        "o_que": "o recibo do PIB de 2025 mudou e cita a sua linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_paginas_novas",
+      "valor": 0,
+      "comando": "paginas-c2.json · paginas_novas",
+      "conhecido_positivo": {
+        "o_que": "o recibo do PIB de 2025 mudou e cita a sua linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_paginas_que_sairam",
+      "valor": 0,
+      "comando": "paginas-c2.json · paginas_que_sairam",
+      "conhecido_positivo": {
+        "o_que": "o recibo do PIB de 2025 mudou e cita a sua linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_paginas_que_mudaram_por_outra_razao",
+      "valor": 2,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_outra_razao",
+      "conhecido_positivo": {
+        "o_que": "o recibo do PIB de 2025 mudou e cita a sua linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_outros_ficheiros_que_mudaram_por_outra_razao",
+      "valor": 1,
+      "comando": "paginas-c2.json · outros_ficheiros_que_mudaram_por_outra_razao",
+      "conhecido_positivo": {
+        "o_que": "o recibo do PIB de 2025 mudou e cita a sua linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_porque_cita_uma_das_nove_linhas",
+      "valor": 40,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_razao",
+      "conhecido_positivo": {
+        "o_que": "a razão é uma das três",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_porque_outra",
+      "valor": 2,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_razao",
+      "conhecido_positivo": {
+        "o_que": "a razão é uma das três",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_da_familia_Método",
+      "valor": 2,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_familia",
+      "conhecido_positivo": {
+        "o_que": "a família lê-se do caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_da_familia_employment",
+      "valor": 1,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_familia",
+      "conhecido_positivo": {
+        "o_que": "a família lê-se do caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_da_familia_emprego",
+      "valor": 1,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_familia",
+      "conhecido_positivo": {
+        "o_que": "a família lê-se do caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_da_familia_estado_e_economia",
+      "valor": 1,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_familia",
+      "conhecido_positivo": {
+        "o_que": "a família lê-se do caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_da_familia_página_da_União",
+      "valor": 2,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_familia",
+      "conhecido_positivo": {
+        "o_que": "a família lê-se do caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_da_familia_recibo_de_uma_linha",
+      "valor": 24,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_familia",
+      "conhecido_positivo": {
+        "o_que": "a família lê-se do caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_da_familia_registo_das_correções",
+      "valor": 2,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_familia",
+      "conhecido_positivo": {
+        "o_que": "a família lê-se do caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_da_familia_state_and_economy",
+      "valor": 1,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_familia",
+      "conhecido_positivo": {
+        "o_que": "a família lê-se do caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_da_familia_área_de_governo",
+      "valor": 4,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_familia",
+      "conhecido_positivo": {
+        "o_que": "a família lê-se do caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_da_familia_índice_do_livro_razão",
+      "valor": 2,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_familia",
+      "conhecido_positivo": {
+        "o_que": "a família lê-se do caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_que_mudaram_da_familia_índice_do_sítio",
+      "valor": 2,
+      "comando": "paginas-c2.json · paginas_que_mudaram_por_familia",
+      "conhecido_positivo": {
+        "o_que": "a família lê-se do caminho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "releituras_registadas_no_metodo_antes",
+      "valor": 3804,
+      "comando": "paginas-c2.json · a primeira diferença de metodo/index.html, o valor de data-prova=\"releituras_registadas\" na base",
+      "conhecido_positivo": {
+        "o_que": "a diferença do Método foi registada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "releituras_registadas_no_metodo_depois",
+      "valor": 3809,
+      "comando": "paginas-c2.json · o mesmo valor na cabeça do código",
+      "conhecido_positivo": {
+        "o_que": "a diferença do Método foi registada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_de_fora_das_nove_que_mudaram",
+      "valor": 6,
+      "comando": "paginas-c2.json · os recibos que mudaram e não são de uma das nove",
+      "conhecido_positivo": {
+        "o_que": "o recibo do custo unitário do trabalho de 2025 está entre eles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_na_lista_o_que_mudou_do_indice",
+      "valor": 8,
+      "comando": "dist/indice/index.html · os itens data-mudanca=\"correcao\" (a construção da cabeça do código)",
+      "conhecido_positivo": {
+        "o_que": "o custo unitário do trabalho de 2024 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "das_nove_na_lista_o_que_mudou_do_indice",
+      "valor": 8,
+      "comando": "as nove entre os itens da medida anterior",
+      "conhecido_positivo": {
+        "o_que": "o custo unitário do trabalho de 2024 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "das_nove_no_registo_das_correcoes",
+      "valor": 9,
+      "comando": "dist/correcoes/index.html · as nove citadas pelo identificador",
+      "conhecido_positivo": {
+        "o_que": "a dívida das famílias da União está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_lidos",
+      "valor": 18,
+      "comando": "recibos-c2.json (recibos-c2.mjs sobre o dist da cabeça do código)",
+      "conhecido_positivo": {
+        "o_que": "num recibo estragado em memória a porta da atualização deixa de se achar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_certos",
+      "valor": 18,
+      "comando": "recibos-c2.json",
+      "conhecido_positivo": {
+        "o_que": "num recibo estragado em memória a porta da atualização deixa de se achar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_antes",
+      "valor": 40,
+      "comando": "capturas-antes.json (captar-c2.mjs antes)",
+      "conhecido_positivo": {
+        "o_que": "há capturas nas cinco larguras e nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "problemas_nas_capturas_antes",
+      "valor": 0,
+      "comando": "capturas-antes.json · problemas",
+      "conhecido_positivo": {
+        "o_que": "o captor mede transbordo e o título",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_para_fora_nas_capturas_antes",
+      "valor": 0,
+      "comando": "capturas-antes.json · pedidos_recusados_para_fora",
+      "conhecido_positivo": {
+        "o_que": "o captor recusa o que não é local",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "veredicto_da_primeira_pagina_formas_antes",
+      "valor": 1,
+      "comando": "capturas-antes.json · as listas das medidas fora no veredicto, distintas, nas duas edições e nas cinco larguras",
+      "conhecido_positivo": {
+        "o_que": "a posição de investimento internacional está entre as medidas fora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_depois",
+      "valor": 40,
+      "comando": "capturas-depois.json (captar-c2.mjs depois)",
+      "conhecido_positivo": {
+        "o_que": "há capturas nas cinco larguras e nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "problemas_nas_capturas_depois",
+      "valor": 0,
+      "comando": "capturas-depois.json · problemas",
+      "conhecido_positivo": {
+        "o_que": "o captor mede transbordo e o título",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "pedidos_para_fora_nas_capturas_depois",
+      "valor": 0,
+      "comando": "capturas-depois.json · pedidos_recusados_para_fora",
+      "conhecido_positivo": {
+        "o_que": "o captor recusa o que não é local",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "veredicto_da_primeira_pagina_formas_depois",
+      "valor": 1,
+      "comando": "capturas-depois.json · as listas das medidas fora no veredicto, distintas, nas duas edições e nas cinco larguras",
+      "conhecido_positivo": {
+        "o_que": "a posição de investimento internacional está entre as medidas fora",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "medidas_fora_no_veredicto",
+      "valor": 4,
+      "comando": "capturas-depois.json · veredicto_medidas da primeira página",
+      "conhecido_positivo": {
+        "o_que": "as listas de antes e de depois são iguais",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_check_pais",
+      "valor": 41,
+      "comando": "node tests/pais/pais.mjs --json plantas-pais.json",
+      "conhecido_positivo": {
+        "o_que": "a planta das páginas sem estrago passa a 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_check_pais_certas",
+      "valor": 41,
+      "comando": "plantas-pais.json · passou",
+      "conhecido_positivo": {
+        "o_que": "a planta das páginas sem estrago passa a 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_novas_do_c2_que_morderam",
+      "valor": 3,
+      "comando": "plantas-pais.json · as três plantas do C2, pelo nome",
+      "conhecido_positivo": {
+        "o_que": "as três estão no ficheiro, uma vez cada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "citacoes_do_mapa_na_linha",
+      "valor": 388,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "conhecido_positivo": {
+        "o_que": "o guião escreveu as três contagens",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "citacoes_do_mapa_longe",
+      "valor": 0,
+      "comando": "conferir-mapa.py · longe da linha citada",
+      "conhecido_positivo": {
+        "o_que": "o guião escreveu as três contagens",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "citacoes_do_mapa_por_achar",
+      "valor": 0,
+      "comando": "conferir-mapa.py · não encontrada",
+      "conhecido_positivo": {
+        "o_que": "o guião escreveu as três contagens",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "citacoes_do_mapa_na_base_na_linha",
+      "valor": 380,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "conhecido_positivo": {
+        "o_que": "o guião escreveu as três contagens",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "citacoes_do_mapa_na_base_longe",
+      "valor": 0,
+      "comando": "conferir-mapa.py · longe da linha citada",
+      "conhecido_positivo": {
+        "o_que": "o guião escreveu as três contagens",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "citacoes_do_mapa_na_base_por_achar",
+      "valor": 0,
+      "comando": "conferir-mapa.py · não encontrada",
+      "conhecido_positivo": {
+        "o_que": "o guião escreveu as três contagens",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "janela_do_conferidor_do_mapa",
+      "valor": 7,
+      "comando": "conferir-mapa.txt · «na linha citada (±N)», a janela de linhas do conferir-mapa.py",
+      "conhecido_positivo": {
+        "o_que": "a mesma linha tem a contagem das citações",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_build",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/c2-2026-10-05/portoes · portoes/build.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito depois do processo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_build",
+      "valor": 192,
+      "comando": "portoes/build.inicio e portoes/build.fim",
+      "conhecido_positivo": {
+        "o_que": "as duas horas existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_verify",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/c2-2026-10-05/portoes · portoes/verify.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito depois do processo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_verify",
+      "valor": 1043,
+      "comando": "portoes/verify.inicio e portoes/verify.fim",
+      "conhecido_positivo": {
+        "o_que": "as duas horas existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_typecheck",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/c2-2026-10-05/portoes · portoes/typecheck.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito depois do processo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_typecheck",
+      "valor": 0,
+      "comando": "portoes/typecheck.inicio e portoes/typecheck.fim",
+      "conhecido_positivo": {
+        "o_que": "as duas horas existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_celula_da_historia_da_proveniencia",
+      "valor": 9,
+      "comando": "portoes/build.log · a linha de tests/linha/historia-da-proveniencia.mjs no ledger:check",
+      "conhecido_positivo": {
+        "o_que": "a célula escreveu as suas contagens",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_mordidas_da_celula_da_historia_da_proveniencia",
+      "valor": 9,
+      "comando": "portoes/build.log · plantas_mordidas",
+      "conhecido_positivo": {
+        "o_que": "a célula escreveu as suas contagens",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_historia_do_valor",
+      "valor": 4,
+      "comando": "portoes/build.log · «História do valor: N controlos e M plantas»",
+      "conhecido_positivo": {
+        "o_que": "a célula escreveu a linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_das_casas_decimais",
+      "valor": 19,
+      "comando": "portoes/build.log · a linha das casas decimais do excerto",
+      "conhecido_positivo": {
+        "o_que": "a célula escreveu a linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_certas_das_casas_decimais",
+      "valor": 19,
+      "comando": "portoes/build.log · a linha das casas decimais do excerto",
+      "conhecido_positivo": {
+        "o_que": "a célula escreveu a linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paginas_construidas_pelo_build",
+      "valor": 7858,
+      "comando": "portoes/build.log · «N page(s) built»",
+      "conhecido_positivo": {
+        "o_que": "o registo do astro tem a linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "cabeca_dos_portoes_igual_no_fim",
+      "valor": true,
+      "comando": "portoes/cabeca e portoes/cabeca.fim",
+      "conhecido_positivo": {
+        "o_que": "as duas cabeças foram escritas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_sujos_no_fim_dos_portoes",
+      "valor": 0,
+      "comando": "portoes/estado.fim · git status --short, sem os por seguir",
+      "conhecido_positivo": {
+        "o_que": "o estado foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_build_na_primeira_corrida",
+      "valor": 0,
+      "comando": "portoes-b72e639d/build.codigo (scripts/leituras/portoes.sh na cabeça b72e639d)",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_verify_na_primeira_corrida",
+      "valor": 1,
+      "comando": "portoes-b72e639d/verify.codigo (scripts/leituras/portoes.sh na cabeça b72e639d)",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_do_typecheck_na_primeira_corrida",
+      "valor": 0,
+      "comando": "portoes-b72e639d/typecheck.codigo (scripts/leituras/portoes.sh na cabeça b72e639d)",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "diferencas_do_check_rotulos_na_primeira_corrida",
+      "valor": 12,
+      "comando": "portoes-b72e639d/verify.log · «N diferença(s)» na saída do check:rotulos",
+      "conhecido_positivo": {
+        "o_que": "a saída do check:rotulos está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "queixas_do_check_rotulos_na_primeira_corrida",
+      "valor": 12,
+      "comando": "portoes-b72e639d/verify.log · as linhas R2-declarado",
+      "conhecido_positivo": {
+        "o_que": "a saída do check:rotulos está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "diferencas_do_check_rotulos_depois_de_reescrever",
+      "valor": 0,
+      "comando": "npm run check:rotulos > check-rotulos-depois-de-escrever.log",
+      "conhecido_positivo": {
+        "o_que": "a saída tem a contagem das diferenças",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "formas_da_regua_tiradas_do_inventario",
+      "valor": 6,
+      "comando": "git diff fdd7ec9a~1 fdd7ec9a -- design/especime-v3/rotulos/INVENTARIO.json · as linhas tiradas com a marca",
+      "conhecido_positivo": {
+        "o_que": "o diff tira linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_mudadas_no_inventario_dos_rotulos",
+      "valor": 7,
+      "comando": "o mesmo diff · as linhas tiradas (as formas e a cabeça da construção)",
+      "conhecido_positivo": {
+        "o_que": "o diff acrescenta tantas quantas tira",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_check_series_na_b72e639d",
+      "valor": 0,
+      "comando": "check-series-na-b72e639d.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_check_indice_do_sitio_na_b72e639d",
+      "valor": 0,
+      "comando": "check-indice-do-sitio-na-b72e639d.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_rotulos_escrever",
+      "valor": 0,
+      "comando": "rotulos-escrever.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_check_rotulos_depois_de_escrever",
+      "valor": 0,
+      "comando": "check-rotulos-depois-de-escrever.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_plantas_pais_antes",
+      "valor": 1,
+      "comando": "plantas-pais-antes.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "o_executor_da_base_rebenta_por_falta_do_carimbo",
+      "valor": 1,
+      "comando": "plantas-pais-antes.log · a queixa ENOENT do version.json na prova das páginas sem estrago",
+      "conhecido_positivo": {
+        "o_que": "o registo do executor da base existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "published_at_linhas",
+      "valor": 9,
+      "comando": "aplicacao-published-at.json · contagens.linhas (aplicar-releituras.py --published-at --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "o passo leu as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "published_at_aplicadas",
+      "valor": 9,
+      "comando": "aplicacao-published-at.json · contagens.aplicadas (aplicar-releituras.py --published-at --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "o passo leu as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "published_at_dias_iguais_ao_dia_utc",
+      "valor": 9,
+      "comando": "aplicacao-published-at.json · contagens.dias_iguais_ao_dia_utc (aplicar-releituras.py --published-at --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "o passo leu as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "published_at_com_o_dia_2026_10_02",
+      "valor": 8,
+      "comando": "aplicacao-published-at.json · contagens.com_o_dia_2026_10_02 (aplicar-releituras.py --published-at --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "o passo leu as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "published_at_com_o_dia_2026_09_29",
+      "valor": 1,
+      "comando": "aplicacao-published-at.json · contagens.com_o_dia_2026_09_29 (aplicar-releituras.py --published-at --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "o passo leu as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "published_at_plantas",
+      "valor": 54,
+      "comando": "aplicacao-published-at.json · contagens.plantas (aplicar-releituras.py --published-at --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "o passo leu as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "published_at_plantas_que_morderam",
+      "valor": 54,
+      "comando": "aplicacao-published-at.json · contagens.plantas_que_morderam (aplicar-releituras.py --published-at --aplicar)",
+      "conhecido_positivo": {
+        "o_que": "o passo leu as nove linhas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "das_nove_com_published_at",
+      "valor": 9,
+      "comando": "ledger/claims/<as nove>.yml · published_at",
+      "conhecido_positivo": {
+        "o_que": "a despesa em I&D da União tem 2026-09-29",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "das_nove_com_published_at_antes_da_passagem",
+      "valor": 0,
+      "comando": "git show 4aa588ce:ledger/claims/<as nove>.yml · published_at (a primeira entrega)",
+      "conhecido_positivo": {
+        "o_que": "as nove leem-se nessa cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "registo_das_historias_igual_ao_de_8dbdcac2",
+      "valor": 1,
+      "comando": "ledger/historias-valores.json contra git show 8dbdcac2:ledger/historias-valores.json, byte a byte (1 é igual)",
+      "conhecido_positivo": {
+        "o_que": "o registo tem as histórias das nove",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_mudados_fora_das_provas_de_57be3c40_a_82406f85",
+      "valor": 9,
+      "comando": "git diff --numstat 57be3c40 82406f85 -- . ':(exclude)<a pasta das medições>' ':(exclude)<a pasta das capturas>'",
+      "conhecido_positivo": {
+        "o_que": "sem as exclusões, o mesmo intervalo tem ficheiros das pastas das provas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "desses_os_que_sao_das_nove_linhas",
+      "valor": 9,
+      "comando": "o mesmo diff · os caminhos ledger/claims/<as nove>.yml",
+      "conhecido_positivo": {
+        "o_que": "a despesa em I&D da União está no diff",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_acrescentadas_fora_das_provas_de_57be3c40_a_82406f85",
+      "valor": 9,
+      "comando": "o mesmo diff · a soma da coluna das linhas acrescentadas",
+      "conhecido_positivo": {
+        "o_que": "cada ficheiro do diff traz o seu número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_tiradas_fora_das_provas_de_57be3c40_a_82406f85",
+      "valor": 0,
+      "comando": "o mesmo diff · a soma da coluna das linhas tiradas",
+      "conhecido_positivo": {
+        "o_que": "cada ficheiro do diff traz o seu número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "desses_os_com_uma_linha_acrescentada_e_nenhuma_tirada",
+      "valor": 9,
+      "comando": "o mesmo diff · os ficheiros com 1 linha acrescentada e 0 tiradas",
+      "conhecido_positivo": {
+        "o_que": "o diff do commit 4aa588ce (as provas da primeira entrega, git diff --numstat 4aa588ce^ 4aa588ce) tem ficheiros com mais de 1 linha mudada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_aplicar_published_at",
+      "valor": 0,
+      "comando": "aplicar-published-at.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_ledger_check_3",
+      "valor": 0,
+      "comando": "ledger-check-3.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "codigo_build_c2b",
+      "valor": 0,
+      "comando": "build-c2b.codigo",
+      "conhecido_positivo": {
+        "o_que": "o código foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "afirmacoes_validas_no_ledger_check_3",
+      "valor": 3195,
+      "comando": "ledger-check-3.log · «N afirmações válidas»",
+      "conhecido_positivo": {
+        "o_que": "o registo tem a linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_com_o_dia_da_publicacao",
+      "valor": 18,
+      "comando": "recibos-c2.json · ok.published_at_no_recibo",
+      "conhecido_positivo": {
+        "o_que": "num recibo estragado em memória o dia trocado não passa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_c2b_na_cabeca_do_codigo",
+      "valor": 1,
+      "comando": "build-c2b.log · «versão · <commit>», contra 82406f85 (1 é a mesma)",
+      "conhecido_positivo": {
+        "o_que": "o registo tem a linha da versão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_do_bloco",
+      "valor": 1045446,
+      "comando": "python3 custo-c2.py <registo da sessão do construtor>",
+      "conhecido_positivo": {
+        "o_que": "a primeira leitura é o total da sessão e as leituras descem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_bloco",
+      "valor": 18272,
+      "comando": "custo-c2.json · segundos_entre_as_leituras",
+      "conhecido_positivo": {
+        "o_que": "a primeira leitura é o total da sessão e as leituras descem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "subagentes_do_bloco",
+      "valor": 0,
+      "comando": "custo-c2.json · subagentes",
+      "conhecido_positivo": {
+        "o_que": "o contador das chamadas acha as do Bash",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "simbolos_da_passagem_c2b",
+      "valor": 126468,
+      "comando": "python3 custo-c2.py <registo da sessão> --desde <a hora da mensagem do lugar de direção> --saida custo-c2b.json",
+      "conhecido_positivo": {
+        "o_que": "as leituras da passagem descem, e a primeira é posterior à hora dada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_da_passagem_c2b",
+      "valor": 2471,
+      "comando": "custo-c2b.json · segundos_entre_as_leituras",
+      "conhecido_positivo": {
+        "o_que": "as leituras da passagem descem, e a primeira é posterior à hora dada",
+        "encontrado": true
+      }
+    }
+  ],
+  "nao_lidas": [],
+  "sem_conhecido_positivo": []
+}

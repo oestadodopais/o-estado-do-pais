@@ -1,0 +1,1269 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/captar-c2.mjs. Não se edita à mão.",
+  "bloco": "C2",
+  "modo": "depois",
+  "commit": "82406f855ea08e22cd2eb350adde00448447748e",
+  "construcao": {
+    "commit": "82406f855ea08e22cd2eb350adde00448447748e",
+    "ref": "c2-2026-10-05",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-05T15:58:23.920Z"
+  },
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "paginas": [
+    {
+      "nome": "recibo-pib-real-per-capita-2025",
+      "pt": "/livro-razao/pib-real-per-capita-2025/",
+      "en": "/en/ledger/pib-real-per-capita-2025/"
+    },
+    {
+      "nome": "recibo-custo-unitario-do-trabalho-2024",
+      "pt": "/livro-razao/custo-unitario-do-trabalho-2024/",
+      "en": "/en/ledger/custo-unitario-do-trabalho-2024/"
+    },
+    {
+      "nome": "primeira-pagina",
+      "pt": "/",
+      "en": "/en/"
+    },
+    {
+      "nome": "estado-e-economia",
+      "pt": "/estado-e-economia/",
+      "en": "/en/state-and-economy/"
+    }
+  ],
+  "linhas_dos_recibos": {
+    "pib-real-per-capita-2025": {
+      "valor": "20 700",
+      "atualizacoes": 1
+    },
+    "custo-unitario-do-trabalho-2024": {
+      "valor": "17,9",
+      "atualizacoes": 1
+    }
+  },
+  "capturas": 40,
+  "pedidos_recusados_para_fora": 0,
+  "problemas": [],
+  "criterio": "fecha com 1",
+  "resultados": [
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-pt-390.png",
+      "sha256": "9c6b58192c21eeb1224f84aeb4ee974ceb37bdc98b2da7448ad84fae5c033a27",
+      "pagina": "recibo-pib-real-per-capita-2025",
+      "lang": "pt",
+      "largura": 390,
+      "http": 200,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3764,
+        "h1": "20 700 euros por habitante · volumes encadeados (2015) (dado provisório)",
+        "transborda": false,
+        "valor_no_titulo": "20 700",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, igual à fonte · comparação semanal com a fonte",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, a releitura encontrou: 20 700 · comparação semanal com a fonte Ver a atualização deste valor",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-pt-390.png",
+      "sha256": "b5e22599242b940dcc5889b5d2e68a4ad50e84620be3af882dd7f7a0fd51b8e7",
+      "pagina": "recibo-custo-unitario-do-trabalho-2024",
+      "lang": "pt",
+      "largura": 390,
+      "http": 200,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3124,
+        "h1": "17,9 variação em três anos, %",
+        "transborda": false,
+        "valor_no_titulo": "17,9",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, igual à fonte · comparação semanal com a fonte",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, a releitura encontrou: 17,9 · comparação semanal com a fonte Ver a atualização deste valor",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-primeira-pagina-pt-390.png",
+      "sha256": "1e7544c3bb8c1bf126b760ca5f524cea26f5db89449e85cd485da694ecb06dc4",
+      "pagina": "primeira-pagina",
+      "lang": "pt",
+      "largura": 390,
+      "http": 200,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 7010,
+        "h1": "O Estado do País",
+        "transborda": false,
+        "veredicto_fora": "a dívida pública, a posição de investimento internacional, a variação em três anos do custo unitário do trabalho e a variação anual dos preços da habitação",
+        "veredicto_medidas": [
+          "divida-publica-2025",
+          "posicao-de-investimento-internacional-2025",
+          "custo-unitario-do-trabalho-2025",
+          "precos-da-habitacao-2025"
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-estado-e-economia-pt-390.png",
+      "sha256": "5adb65b95c012b9e428853a68fa4adaa16d03abbe5790379c51311911e71372a",
+      "pagina": "estado-e-economia",
+      "lang": "pt",
+      "largura": 390,
+      "http": 200,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 5936,
+        "h1": "Estado e economia",
+        "transborda": false,
+        "cartoes": {
+          "pib-real-per-capita-2025": {
+            "valor": "20 700",
+            "regua": [
+              "pib-real-per-capita-2024=20 520",
+              "pib-real-per-capita-2025-ue=31 890"
+            ]
+          },
+          "formacao-bruta-de-capital-fixo-2025": {
+            "valor": "21,0",
+            "regua": [
+              "formacao-bruta-de-capital-fixo-2024=20,5",
+              "formacao-bruta-de-capital-fixo-2025-ue=21,4"
+            ]
+          },
+          "posicao-de-investimento-internacional-2025": {
+            "valor": "−49,6",
+            "regua": [
+              "posicao-de-investimento-internacional-2024=−58,3"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-pt-768.png",
+      "sha256": "6c01301100588eb510169ee7a1c1064bc5def25194bb3c26bf8d100e8800efd3",
+      "pagina": "recibo-pib-real-per-capita-2025",
+      "lang": "pt",
+      "largura": 768,
+      "http": 200,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 3199,
+        "h1": "20 700 euros por habitante · volumes encadeados (2015) (dado provisório)",
+        "transborda": false,
+        "valor_no_titulo": "20 700",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, igual à fonte · comparação semanal com a fonte",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, a releitura encontrou: 20 700 · comparação semanal com a fonte Ver a atualização deste valor",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-pt-768.png",
+      "sha256": "d58a70185adabdf8510456e3b4687ce09931f6191da3ca9b456800d61d0d3fb9",
+      "pagina": "recibo-custo-unitario-do-trabalho-2024",
+      "lang": "pt",
+      "largura": 768,
+      "http": 200,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2692,
+        "h1": "17,9 variação em três anos, %",
+        "transborda": false,
+        "valor_no_titulo": "17,9",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, igual à fonte · comparação semanal com a fonte",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, a releitura encontrou: 17,9 · comparação semanal com a fonte Ver a atualização deste valor",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-primeira-pagina-pt-768.png",
+      "sha256": "fab15894818e3176a1a7263433c66c85058f94e17ce44cbde2f9d0b57c85c8e4",
+      "pagina": "primeira-pagina",
+      "lang": "pt",
+      "largura": 768,
+      "http": 200,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 5492,
+        "h1": "O Estado do País",
+        "transborda": false,
+        "veredicto_fora": "a dívida pública, a posição de investimento internacional, a variação em três anos do custo unitário do trabalho e a variação anual dos preços da habitação",
+        "veredicto_medidas": [
+          "divida-publica-2025",
+          "posicao-de-investimento-internacional-2025",
+          "custo-unitario-do-trabalho-2025",
+          "precos-da-habitacao-2025"
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-estado-e-economia-pt-768.png",
+      "sha256": "c5ad5ffb366bb508086a535c24c51171f928a6999a2f2d67d237fe2ab6725d14",
+      "pagina": "estado-e-economia",
+      "lang": "pt",
+      "largura": 768,
+      "http": 200,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 4246,
+        "h1": "Estado e economia",
+        "transborda": false,
+        "cartoes": {
+          "pib-real-per-capita-2025": {
+            "valor": "20 700",
+            "regua": [
+              "pib-real-per-capita-2024=20 520",
+              "pib-real-per-capita-2025-ue=31 890"
+            ]
+          },
+          "formacao-bruta-de-capital-fixo-2025": {
+            "valor": "21,0",
+            "regua": [
+              "formacao-bruta-de-capital-fixo-2024=20,5",
+              "formacao-bruta-de-capital-fixo-2025-ue=21,4"
+            ]
+          },
+          "posicao-de-investimento-internacional-2025": {
+            "valor": "−49,6",
+            "regua": [
+              "posicao-de-investimento-internacional-2024=−58,3"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-pt-1024.png",
+      "sha256": "9206882587ad734549962fa8b4ec4960164671d52eff586715d902a7a5199e15",
+      "pagina": "recibo-pib-real-per-capita-2025",
+      "lang": "pt",
+      "largura": 1024,
+      "http": 200,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2406,
+        "h1": "20 700 euros por habitante · volumes encadeados (2015) (dado provisório)",
+        "transborda": false,
+        "valor_no_titulo": "20 700",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, igual à fonte · comparação semanal com a fonte",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, a releitura encontrou: 20 700 · comparação semanal com a fonte Ver a atualização deste valor",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-pt-1024.png",
+      "sha256": "b2014fc87a7c13abd5acbc2840fe8f9c8e10345a3177b90000e80e29f4ad70c3",
+      "pagina": "recibo-custo-unitario-do-trabalho-2024",
+      "lang": "pt",
+      "largura": 1024,
+      "http": 200,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 1982,
+        "h1": "17,9 variação em três anos, %",
+        "transborda": false,
+        "valor_no_titulo": "17,9",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, igual à fonte · comparação semanal com a fonte",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, a releitura encontrou: 17,9 · comparação semanal com a fonte Ver a atualização deste valor",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-primeira-pagina-pt-1024.png",
+      "sha256": "0cb02930b49c9422f165f60f63588d57a17737439118dfaa60ffae907919a651",
+      "pagina": "primeira-pagina",
+      "lang": "pt",
+      "largura": 1024,
+      "http": 200,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 4946,
+        "h1": "O Estado do País",
+        "transborda": false,
+        "veredicto_fora": "a dívida pública, a posição de investimento internacional, a variação em três anos do custo unitário do trabalho e a variação anual dos preços da habitação",
+        "veredicto_medidas": [
+          "divida-publica-2025",
+          "posicao-de-investimento-internacional-2025",
+          "custo-unitario-do-trabalho-2025",
+          "precos-da-habitacao-2025"
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-estado-e-economia-pt-1024.png",
+      "sha256": "9a8ac60bed65841ad718533e516383d435c0e8832308a059dfb847c04d1a0d1b",
+      "pagina": "estado-e-economia",
+      "lang": "pt",
+      "largura": 1024,
+      "http": 200,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 3794,
+        "h1": "Estado e economia",
+        "transborda": false,
+        "cartoes": {
+          "pib-real-per-capita-2025": {
+            "valor": "20 700",
+            "regua": [
+              "pib-real-per-capita-2024=20 520",
+              "pib-real-per-capita-2025-ue=31 890"
+            ]
+          },
+          "formacao-bruta-de-capital-fixo-2025": {
+            "valor": "21,0",
+            "regua": [
+              "formacao-bruta-de-capital-fixo-2024=20,5",
+              "formacao-bruta-de-capital-fixo-2025-ue=21,4"
+            ]
+          },
+          "posicao-de-investimento-internacional-2025": {
+            "valor": "−49,6",
+            "regua": [
+              "posicao-de-investimento-internacional-2024=−58,3"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-pt-1280.png",
+      "sha256": "7b26d66573ce6c4de7c6907330783eb0ca6217a4b0f6e6633eae39fd7e11dc62",
+      "pagina": "recibo-pib-real-per-capita-2025",
+      "lang": "pt",
+      "largura": 1280,
+      "http": 200,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2427,
+        "h1": "20 700 euros por habitante · volumes encadeados (2015) (dado provisório)",
+        "transborda": false,
+        "valor_no_titulo": "20 700",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, igual à fonte · comparação semanal com a fonte",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, a releitura encontrou: 20 700 · comparação semanal com a fonte Ver a atualização deste valor",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-pt-1280.png",
+      "sha256": "9ccd561dbb076798466fd12c57d022a215feb4b6af0422f502e3e69c4f442380",
+      "pagina": "recibo-custo-unitario-do-trabalho-2024",
+      "lang": "pt",
+      "largura": 1280,
+      "http": 200,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 1997,
+        "h1": "17,9 variação em três anos, %",
+        "transborda": false,
+        "valor_no_titulo": "17,9",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, igual à fonte · comparação semanal com a fonte",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, a releitura encontrou: 17,9 · comparação semanal com a fonte Ver a atualização deste valor",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-primeira-pagina-pt-1280.png",
+      "sha256": "7d2c1da302cf2f1fb8c00f15ba5d16ab85a9a24be0169ec304035f4b1245d9a6",
+      "pagina": "primeira-pagina",
+      "lang": "pt",
+      "largura": 1280,
+      "http": 200,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4827,
+        "h1": "O Estado do País",
+        "transborda": false,
+        "veredicto_fora": "a dívida pública, a posição de investimento internacional, a variação em três anos do custo unitário do trabalho e a variação anual dos preços da habitação",
+        "veredicto_medidas": [
+          "divida-publica-2025",
+          "posicao-de-investimento-internacional-2025",
+          "custo-unitario-do-trabalho-2025",
+          "precos-da-habitacao-2025"
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-estado-e-economia-pt-1280.png",
+      "sha256": "f5187b0f76dc050f57341ff9c1df5c48a1e9215566df15f053f33695e63a02cc",
+      "pagina": "estado-e-economia",
+      "lang": "pt",
+      "largura": 1280,
+      "http": 200,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 3647,
+        "h1": "Estado e economia",
+        "transborda": false,
+        "cartoes": {
+          "pib-real-per-capita-2025": {
+            "valor": "20 700",
+            "regua": [
+              "pib-real-per-capita-2024=20 520",
+              "pib-real-per-capita-2025-ue=31 890"
+            ]
+          },
+          "formacao-bruta-de-capital-fixo-2025": {
+            "valor": "21,0",
+            "regua": [
+              "formacao-bruta-de-capital-fixo-2024=20,5",
+              "formacao-bruta-de-capital-fixo-2025-ue=21,4"
+            ]
+          },
+          "posicao-de-investimento-internacional-2025": {
+            "valor": "−49,6",
+            "regua": [
+              "posicao-de-investimento-internacional-2024=−58,3"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-pt-1600.png",
+      "sha256": "be4a60a7016248af21ef25b4f197b4f26b46b733429f58be0eb79fe7a7e52ad0",
+      "pagina": "recibo-pib-real-per-capita-2025",
+      "lang": "pt",
+      "largura": 1600,
+      "http": 200,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2434,
+        "h1": "20 700 euros por habitante · volumes encadeados (2015) (dado provisório)",
+        "transborda": false,
+        "valor_no_titulo": "20 700",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, igual à fonte · comparação semanal com a fonte",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, a releitura encontrou: 20 700 · comparação semanal com a fonte Ver a atualização deste valor",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-pt-1600.png",
+      "sha256": "ff8f7809c88c65ea1876e24abd823fb6717e127e6bbc50758ea08821f26fbf83",
+      "pagina": "recibo-custo-unitario-do-trabalho-2024",
+      "lang": "pt",
+      "largura": 1600,
+      "http": 200,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2003,
+        "h1": "17,9 variação em três anos, %",
+        "transborda": false,
+        "valor_no_titulo": "17,9",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, igual à fonte · comparação semanal com a fonte",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, a releitura encontrou: 17,9 · comparação semanal com a fonte Ver a atualização deste valor",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-primeira-pagina-pt-1600.png",
+      "sha256": "7c1387428cc43f87be9251124ab3ff455667c175ae89ed43673cb729be9a5f08",
+      "pagina": "primeira-pagina",
+      "lang": "pt",
+      "largura": 1600,
+      "http": 200,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 4845,
+        "h1": "O Estado do País",
+        "transborda": false,
+        "veredicto_fora": "a dívida pública, a posição de investimento internacional, a variação em três anos do custo unitário do trabalho e a variação anual dos preços da habitação",
+        "veredicto_medidas": [
+          "divida-publica-2025",
+          "posicao-de-investimento-internacional-2025",
+          "custo-unitario-do-trabalho-2025",
+          "precos-da-habitacao-2025"
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-estado-e-economia-pt-1600.png",
+      "sha256": "2faf777589b8319ba09d9b4fc03211097568898d29d8226cbdc362b0bbb17d5e",
+      "pagina": "estado-e-economia",
+      "lang": "pt",
+      "largura": 1600,
+      "http": 200,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 3655,
+        "h1": "Estado e economia",
+        "transborda": false,
+        "cartoes": {
+          "pib-real-per-capita-2025": {
+            "valor": "20 700",
+            "regua": [
+              "pib-real-per-capita-2024=20 520",
+              "pib-real-per-capita-2025-ue=31 890"
+            ]
+          },
+          "formacao-bruta-de-capital-fixo-2025": {
+            "valor": "21,0",
+            "regua": [
+              "formacao-bruta-de-capital-fixo-2024=20,5",
+              "formacao-bruta-de-capital-fixo-2025-ue=21,4"
+            ]
+          },
+          "posicao-de-investimento-internacional-2025": {
+            "valor": "−49,6",
+            "regua": [
+              "posicao-de-investimento-internacional-2024=−58,3"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-en-390.png",
+      "sha256": "f4dc0a850583480f31c0fe474452009b71af108353f246ea1201464120e31cb7",
+      "pagina": "recibo-pib-real-per-capita-2025",
+      "lang": "en",
+      "largura": 390,
+      "http": 200,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3858,
+        "h1": "20 700 euro per capita · chain linked volumes (2015) (provisional data)",
+        "transborda": false,
+        "valor_no_titulo": "20 700",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, matches the source · weekly comparison with the source",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, the re-read found: 20 700 · weekly comparison with the source See the update to this value",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-en-390.png",
+      "sha256": "543cdd2a67ca397a2afbb474e44580f32a8b8ef2c5eb565c4ab1205800f23abe",
+      "pagina": "recibo-custo-unitario-do-trabalho-2024",
+      "lang": "en",
+      "largura": 390,
+      "http": 200,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 3218,
+        "h1": "17,9 three-year change, %",
+        "transborda": false,
+        "valor_no_titulo": "17,9",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, matches the source · weekly comparison with the source",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, the re-read found: 17,9 · weekly comparison with the source See the update to this value",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-primeira-pagina-en-390.png",
+      "sha256": "e54a34ba00c0ac1cd07ecf9b00e490097c8069d56e9b2e838e3173d9bf7edd82",
+      "pagina": "primeira-pagina",
+      "lang": "en",
+      "largura": 390,
+      "http": 200,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 6938,
+        "h1": "O Estado do País",
+        "transborda": false,
+        "veredicto_fora": "government debt, the international investment position, the three-year change in unit labour cost and the annual change in house prices",
+        "veredicto_medidas": [
+          "divida-publica-2025",
+          "posicao-de-investimento-internacional-2025",
+          "custo-unitario-do-trabalho-2025",
+          "precos-da-habitacao-2025"
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-estado-e-economia-en-390.png",
+      "sha256": "a4676d131416486a2cfbc7edb5c1b70e10781ffdc57b05ee324eef860b4a99fd",
+      "pagina": "estado-e-economia",
+      "lang": "en",
+      "largura": 390,
+      "http": 200,
+      "medidas": {
+        "janela": 390,
+        "documento": 390,
+        "altura": 5764,
+        "h1": "State and economy",
+        "transborda": false,
+        "cartoes": {
+          "pib-real-per-capita-2025": {
+            "valor": "20 700",
+            "regua": [
+              "pib-real-per-capita-2024=20 520",
+              "pib-real-per-capita-2025-ue=31 890"
+            ]
+          },
+          "formacao-bruta-de-capital-fixo-2025": {
+            "valor": "21,0",
+            "regua": [
+              "formacao-bruta-de-capital-fixo-2024=20,5",
+              "formacao-bruta-de-capital-fixo-2025-ue=21,4"
+            ]
+          },
+          "posicao-de-investimento-internacional-2025": {
+            "valor": "−49,6",
+            "regua": [
+              "posicao-de-investimento-internacional-2024=−58,3"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-en-768.png",
+      "sha256": "af156a75d1735340ab0617ce4ec5da8fb39c2cb3f1be3809d4cd7fd98f851cf1",
+      "pagina": "recibo-pib-real-per-capita-2025",
+      "lang": "en",
+      "largura": 768,
+      "http": 200,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 3220,
+        "h1": "20 700 euro per capita · chain linked volumes (2015) (provisional data)",
+        "transborda": false,
+        "valor_no_titulo": "20 700",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, matches the source · weekly comparison with the source",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, the re-read found: 20 700 · weekly comparison with the source See the update to this value",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-en-768.png",
+      "sha256": "cf9a36bf48374e8aa7dcf42cc22d27eee20c744f3a0784729aa894c8b260b25f",
+      "pagina": "recibo-custo-unitario-do-trabalho-2024",
+      "lang": "en",
+      "largura": 768,
+      "http": 200,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 2714,
+        "h1": "17,9 three-year change, %",
+        "transborda": false,
+        "valor_no_titulo": "17,9",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, matches the source · weekly comparison with the source",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, the re-read found: 17,9 · weekly comparison with the source See the update to this value",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-primeira-pagina-en-768.png",
+      "sha256": "9bfa81330aedf5c887354fc431d7a517116d5e968d1e6ab1f9bb906775eb5b6d",
+      "pagina": "primeira-pagina",
+      "lang": "en",
+      "largura": 768,
+      "http": 200,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 5560,
+        "h1": "O Estado do País",
+        "transborda": false,
+        "veredicto_fora": "government debt, the international investment position, the three-year change in unit labour cost and the annual change in house prices",
+        "veredicto_medidas": [
+          "divida-publica-2025",
+          "posicao-de-investimento-internacional-2025",
+          "custo-unitario-do-trabalho-2025",
+          "precos-da-habitacao-2025"
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-estado-e-economia-en-768.png",
+      "sha256": "37e47f0f443cdf935e41f1ad20bb8a27d203a74bbe8505651037be57f40753e9",
+      "pagina": "estado-e-economia",
+      "lang": "en",
+      "largura": 768,
+      "http": 200,
+      "medidas": {
+        "janela": 768,
+        "documento": 768,
+        "altura": 4184,
+        "h1": "State and economy",
+        "transborda": false,
+        "cartoes": {
+          "pib-real-per-capita-2025": {
+            "valor": "20 700",
+            "regua": [
+              "pib-real-per-capita-2024=20 520",
+              "pib-real-per-capita-2025-ue=31 890"
+            ]
+          },
+          "formacao-bruta-de-capital-fixo-2025": {
+            "valor": "21,0",
+            "regua": [
+              "formacao-bruta-de-capital-fixo-2024=20,5",
+              "formacao-bruta-de-capital-fixo-2025-ue=21,4"
+            ]
+          },
+          "posicao-de-investimento-internacional-2025": {
+            "valor": "−49,6",
+            "regua": [
+              "posicao-de-investimento-internacional-2024=−58,3"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-en-1024.png",
+      "sha256": "1be4fbd971403f8a4c0a83cacd033b8bdce668a4cc5ef9f279ec2ac3f139fc16",
+      "pagina": "recibo-pib-real-per-capita-2025",
+      "lang": "en",
+      "largura": 1024,
+      "http": 200,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2424,
+        "h1": "20 700 euro per capita · chain linked volumes (2015) (provisional data)",
+        "transborda": false,
+        "valor_no_titulo": "20 700",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, matches the source · weekly comparison with the source",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, the re-read found: 20 700 · weekly comparison with the source See the update to this value",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-en-1024.png",
+      "sha256": "cc526d30aaddf07d74a8987743701a8478695659ee80564867282a5fde7c8eab",
+      "pagina": "recibo-custo-unitario-do-trabalho-2024",
+      "lang": "en",
+      "largura": 1024,
+      "http": 200,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 2022,
+        "h1": "17,9 three-year change, %",
+        "transborda": false,
+        "valor_no_titulo": "17,9",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, matches the source · weekly comparison with the source",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, the re-read found: 17,9 · weekly comparison with the source See the update to this value",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-primeira-pagina-en-1024.png",
+      "sha256": "da453e0426d5ea3f702e6cef4c19335cc50122510cb410633bbb2da478735e18",
+      "pagina": "primeira-pagina",
+      "lang": "en",
+      "largura": 1024,
+      "http": 200,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 5048,
+        "h1": "O Estado do País",
+        "transborda": false,
+        "veredicto_fora": "government debt, the international investment position, the three-year change in unit labour cost and the annual change in house prices",
+        "veredicto_medidas": [
+          "divida-publica-2025",
+          "posicao-de-investimento-internacional-2025",
+          "custo-unitario-do-trabalho-2025",
+          "precos-da-habitacao-2025"
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-estado-e-economia-en-1024.png",
+      "sha256": "f014f9b968e3d54eeda69bc868f5cd25d461af1735b1b3d85702a271e8d087a3",
+      "pagina": "estado-e-economia",
+      "lang": "en",
+      "largura": 1024,
+      "http": 200,
+      "medidas": {
+        "janela": 1024,
+        "documento": 1024,
+        "altura": 3753,
+        "h1": "State and economy",
+        "transborda": false,
+        "cartoes": {
+          "pib-real-per-capita-2025": {
+            "valor": "20 700",
+            "regua": [
+              "pib-real-per-capita-2024=20 520",
+              "pib-real-per-capita-2025-ue=31 890"
+            ]
+          },
+          "formacao-bruta-de-capital-fixo-2025": {
+            "valor": "21,0",
+            "regua": [
+              "formacao-bruta-de-capital-fixo-2024=20,5",
+              "formacao-bruta-de-capital-fixo-2025-ue=21,4"
+            ]
+          },
+          "posicao-de-investimento-internacional-2025": {
+            "valor": "−49,6",
+            "regua": [
+              "posicao-de-investimento-internacional-2024=−58,3"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-en-1280.png",
+      "sha256": "ea227f2547c67a5df199e914a04e88dc08e8b5fec8227b9b5129896c5eec3351",
+      "pagina": "recibo-pib-real-per-capita-2025",
+      "lang": "en",
+      "largura": 1280,
+      "http": 200,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2481,
+        "h1": "20 700 euro per capita · chain linked volumes (2015) (provisional data)",
+        "transborda": false,
+        "valor_no_titulo": "20 700",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, matches the source · weekly comparison with the source",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, the re-read found: 20 700 · weekly comparison with the source See the update to this value",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-en-1280.png",
+      "sha256": "5ea51c7c5b5e2a8d88f26164087aedd978a793040a973c102855084adb6403f5",
+      "pagina": "recibo-custo-unitario-do-trabalho-2024",
+      "lang": "en",
+      "largura": 1280,
+      "http": 200,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 2073,
+        "h1": "17,9 three-year change, %",
+        "transborda": false,
+        "valor_no_titulo": "17,9",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, matches the source · weekly comparison with the source",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, the re-read found: 17,9 · weekly comparison with the source See the update to this value",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-primeira-pagina-en-1280.png",
+      "sha256": "3801e9abab37e62b97f60928ec116b4e3b6965003dcb130e0915fabbd15d2ced",
+      "pagina": "primeira-pagina",
+      "lang": "en",
+      "largura": 1280,
+      "http": 200,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 4911,
+        "h1": "O Estado do País",
+        "transborda": false,
+        "veredicto_fora": "government debt, the international investment position, the three-year change in unit labour cost and the annual change in house prices",
+        "veredicto_medidas": [
+          "divida-publica-2025",
+          "posicao-de-investimento-internacional-2025",
+          "custo-unitario-do-trabalho-2025",
+          "precos-da-habitacao-2025"
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-estado-e-economia-en-1280.png",
+      "sha256": "2f0e44cf42fc379d61842322d06c7aef13806ff274a0fbc4b8949c4791e4b02b",
+      "pagina": "estado-e-economia",
+      "lang": "en",
+      "largura": 1280,
+      "http": 200,
+      "medidas": {
+        "janela": 1280,
+        "documento": 1280,
+        "altura": 3606,
+        "h1": "State and economy",
+        "transborda": false,
+        "cartoes": {
+          "pib-real-per-capita-2025": {
+            "valor": "20 700",
+            "regua": [
+              "pib-real-per-capita-2024=20 520",
+              "pib-real-per-capita-2025-ue=31 890"
+            ]
+          },
+          "formacao-bruta-de-capital-fixo-2025": {
+            "valor": "21,0",
+            "regua": [
+              "formacao-bruta-de-capital-fixo-2024=20,5",
+              "formacao-bruta-de-capital-fixo-2025-ue=21,4"
+            ]
+          },
+          "posicao-de-investimento-internacional-2025": {
+            "valor": "−49,6",
+            "regua": [
+              "posicao-de-investimento-internacional-2024=−58,3"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-pib-real-per-capita-2025-en-1600.png",
+      "sha256": "2d258d925bf1324a92d6f502248979e015d72bade0bb8754cc4c8fcdf940cfa9",
+      "pagina": "recibo-pib-real-per-capita-2025",
+      "lang": "en",
+      "largura": 1600,
+      "http": 200,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2488,
+        "h1": "20 700 euro per capita · chain linked volumes (2015) (provisional data)",
+        "transborda": false,
+        "valor_no_titulo": "20 700",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, matches the source · weekly comparison with the source",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, the re-read found: 20 700 · weekly comparison with the source See the update to this value",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-recibo-custo-unitario-do-trabalho-2024-en-1600.png",
+      "sha256": "2eda6be25cfa98d3b174b55d88fc0c210875b9d76ded885df4ae82176d02bc74",
+      "pagina": "recibo-custo-unitario-do-trabalho-2024",
+      "lang": "en",
+      "largura": 1600,
+      "http": 200,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 2079,
+        "h1": "17,9 three-year change, %",
+        "transborda": false,
+        "valor_no_titulo": "17,9",
+        "historico": 4,
+        "releituras": [
+          {
+            "n": 3,
+            "texto": "05.10.2026, matches the source · weekly comparison with the source",
+            "porta_da_atualizacao": null
+          },
+          {
+            "n": 2,
+            "texto": "05.10.2026, the re-read found: 17,9 · weekly comparison with the source See the update to this value",
+            "porta_da_atualizacao": "#alteracao-1"
+          }
+        ],
+        "portas_da_atualizacao_com_destino": 1,
+        "valor_em_uso": 0
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-primeira-pagina-en-1600.png",
+      "sha256": "a0d61ff019dce68f41a2705d6cf18da5aa1d4782b9e1b75c9b0d494317fc8457",
+      "pagina": "primeira-pagina",
+      "lang": "en",
+      "largura": 1600,
+      "http": 200,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 4928,
+        "h1": "O Estado do País",
+        "transborda": false,
+        "veredicto_fora": "government debt, the international investment position, the three-year change in unit labour cost and the annual change in house prices",
+        "veredicto_medidas": [
+          "divida-publica-2025",
+          "posicao-de-investimento-internacional-2025",
+          "custo-unitario-do-trabalho-2025",
+          "precos-da-habitacao-2025"
+        ]
+      }
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/c2-2026-10-05/depois-estado-e-economia-en-1600.png",
+      "sha256": "b1eff6be51f20c9813e1aca031bf5aef901cfd2f1525abcee2bb051d224695ec",
+      "pagina": "estado-e-economia",
+      "lang": "en",
+      "largura": 1600,
+      "http": 200,
+      "medidas": {
+        "janela": 1600,
+        "documento": 1600,
+        "altura": 3629,
+        "h1": "State and economy",
+        "transborda": false,
+        "cartoes": {
+          "pib-real-per-capita-2025": {
+            "valor": "20 700",
+            "regua": [
+              "pib-real-per-capita-2024=20 520",
+              "pib-real-per-capita-2025-ue=31 890"
+            ]
+          },
+          "formacao-bruta-de-capital-fixo-2025": {
+            "valor": "21,0",
+            "regua": [
+              "formacao-bruta-de-capital-fixo-2024=20,5",
+              "formacao-bruta-de-capital-fixo-2025-ue=21,4"
+            ]
+          },
+          "posicao-de-investimento-internacional-2025": {
+            "valor": "−49,6",
+            "regua": [
+              "posicao-de-investimento-internacional-2024=−58,3"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

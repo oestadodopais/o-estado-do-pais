@@ -34,6 +34,21 @@ export const LUGAR_DECLARADO_DAS_LINHAS = {
   /* A observação europeia enquadra Portugal, mas não é um valor de Portugal.
      A atualização pertence ao registo e aos temas, fora da lista do país. */
   'divida-das-familias-2025-ue': 'uniao-europeia',
+  /* C2, 05.10.2026: as revisões da Eurostat de 02.10.2026 deram a primeira
+     atualização a mais um agregado da União e a cinco linhas do período
+     anterior de medidas do país. O agregado segue a dívida das famílias da
+     União, pela mesma razão. */
+  'despesa-em-id-2024-ue': 'uniao-europeia',
+  /* As cinco do período anterior são o ponto de 2024 do mesmo pedido da
+     medida do país, com a geografia de Portugal: são valores de Portugal, e
+     nenhuma outra declaração as alcança (não são cartões, e a tabela das
+     medidas do país só tem o período da medida). A A1 do `check:pais` deriva o
+     lugar delas pela coordenada selada de Portugal. */
+  'custo-unitario-do-trabalho-2024': 'portugal',
+  'formacao-bruta-de-capital-fixo-2024': 'portugal',
+  'pib-real-per-capita-2024': 'portugal',
+  'posicao-de-investimento-internacional-2024': 'portugal',
+  'saldo-da-balanca-corrente-2024': 'portugal',
   /* A CONTAGEM DOS ESTUDOS SOBRE ÉVORA é um apuramento da casa: o campo `study`
      desta linha é `o-estado-do-pais`, que é uma origem interna e não um trabalho
      do arquivo, e por isso não declara objeto nenhum. O que a linha conta são os
