@@ -44,7 +44,7 @@
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import fs from 'node:fs';
-import { SITE_HOST, SITE_HOST_UNACCENTED } from '../site.config.mjs';
+import { SITE_HOST, SITE_HOST_UNACCENTED, SITE_NAME } from '../site.config.mjs';
 import { routePath } from '../src/lib/routes.mjs';
 import { t } from '../src/i18n/strings.mjs';
 
@@ -311,6 +311,23 @@ for (const edicao of /** @type {const} */ (['pt', 'en'])) {
   const r = await ler(`https://${host}${caminho}`, { comCorpo: true });
   conferir(`${caminho} estado`, r.estado, 200);
   conferir(`${caminho} título`, r.corpo.match(/<title>([^<]*)<\/title>/)?.[1] ?? null, t(edicao).indice.metaTitle);
+}
+
+/* (h) A PÁGINA «PRIVACIDADE» E A FRASE DOS COOKIES (bloco H3, 05.10.2026): as duas páginas respondem 200, cada uma com o
+   título da sua edição; e nenhuma resposta do sítio no ar põe um cookie. A frase «Este sítio não usa cookies nem segue
+   quem o lê» confere-se na construção pelo portão de HTML (as páginas, os guiões, a configuração da Vercel e as funções);
+   o que só o ar mostra é um cabeçalho que a plataforma acrescente sozinha, e é isso que esta conferência lê, na primeira
+   página e nas duas da privacidade. */
+for (const edicao of /** @type {const} */ (['pt', 'en'])) {
+  const caminho = routePath('privacidade', edicao);
+  const r = await ler(`https://${host}${caminho}`, { comCorpo: true });
+  conferir(`${caminho} estado`, r.estado, 200);
+  conferir(`${caminho} título`, r.corpo.match(/<title>([^<]*)<\/title>/)?.[1] ?? null, `${t(edicao).nav.privacidade} · ${SITE_NAME}`);
+  conferir(`${caminho} sem Set-Cookie`, r.cabecalho('set-cookie'), null);
+}
+{
+  const r = await ler(`https://${host}/`, { comCorpo: true });
+  conferir('/ sem Set-Cookie', r.cabecalho('set-cookie'), null);
 }
 
 console.log();

@@ -21,7 +21,15 @@
  *   · o sufixo do ordinal inglês de um lugar (a passagem UE1b, o acerto F4) é o
  *     de `ORDINAIS_INGLESES`, escritos um a um e não calculados: a regra dos
  *     portões (`sufixoOrdinalDoPortao`) escolhe entre as palavras declaradas, e
- *     a F19 e a K18 conferem a escolha contra esta tabela para os 27 lugares.
+ *     a F19 e a K18 conferem a escolha contra esta tabela para os 27 lugares;
+ *   · (a passagem de higiene H3, 05.10.2026) os países com o mesmo valor
+ *     afastam-se na vertical: pela ordem da série, de cima para baixo, os
+ *     centros distribuem-se por igual de seis píxeis acima a seis abaixo do
+ *     eixo, e um país sozinho fica no eixo (`alturaNaFaixaDoPortao`); e a
+ *     etiqueta de uma marca diz os pontos com o valor dela, pela ordem da série,
+ *     cada um com a ressalva do seu ponto, e o valor uma vez, no fim
+ *     (`etiquetaDaMarcaDoPortao`). As duas escritas aqui de novo, e não
+ *     importadas do resolvedor.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -130,6 +138,56 @@ export function sufixoOrdinalDoPortao(n, sufixos) {
   if (n % 10 === 2) return sufixos.nd;
   if (n % 10 === 3) return sufixos.rd;
   return sufixos.th;
+}
+
+/** O desvio máximo, em píxeis, acima e abaixo do eixo, dos países com o mesmo valor (H3), escrito aqui de novo. */
+export const DESVIO_MAXIMO_DO_PORTAO = 6;
+
+/**
+ * A ALTURA DE UMA MARCA DE PAÍS NA FAIXA, pela regra dos portões (H3): o desvio, em píxeis a partir do eixo
+ * (negativo para cima), do país dentro do grupo dos países da série com o mesmo valor, contados pela ordem da série.
+ * A média da União fica no eixo. Devolve também quantos países tem o grupo.
+ * @returns {{ altura: number, noGrupo: number }}
+ */
+export function alturaNaFaixaDoPortao(serie, geo) {
+  if (geo === AGREGADO) return { altura: 0, noGrupo: 1 };
+  const { paises } = contaDaFaixa(serie);
+  const eu = paises.find((p) => p.geo === geo);
+  if (!eu) throw new Error(`série ${serie?.id}: não há o país ${geo}`);
+  const grupo = paises.filter((p) => p.n === eu.n);
+  const n = grupo.length;
+  const i = grupo.findIndex((p) => p.geo === geo);
+  if (n <= 1) return { altura: 0, noGrupo: 1 };
+  const d = DESVIO_MAXIMO_DO_PORTAO;
+  return { altura: Number((-d + (2 * d * i) / (n - 1)).toFixed(2)) || 0, noGrupo: n };
+}
+
+/**
+ * A ETIQUETA DE UMA MARCA, pela conta dos portões (H3): os pontos da série com o valor da marca, pela ordem da série
+ * (os países e, no fim, a União), cada um com o nome da tabela na língua da página (ou as palavras da União) e a
+ * ressalva do seu ponto pelas palavras declaradas, com as palavras da lista entre eles, e o valor do primeiro ponto,
+ * uma vez, no fim, com os espaços finos dos milhares trocados por um espaço, como o desenho o escreve.
+ * @param {any} serie @param {string} geo @param {'pt'|'en'} lang @param {Map<string, any>} paises
+ * @param {{ lista: { entre: string, ultimo: string }, uniao: string, ressalvas: Record<string, string> }} palavras
+ */
+export function etiquetaDaMarcaDoPortao(serie, geo, lang, paises, palavras) {
+  const pontos = Array.isArray(serie?.pontos) ? serie.pontos : [];
+  const alvo = pontos.find((p) => p.geo === geo);
+  if (!alvo) throw new Error(`série ${serie?.id}: não há o ponto ${geo}`);
+  const n = numeroDoPortao(alvo.valor);
+  const daSerie = [...pontos.filter((p) => p.geo !== AGREGADO), ...pontos.filter((p) => p.geo === AGREGADO)];
+  const grupo = daSerie.filter((p) => numeroDoPortao(p.valor) === n);
+  const nomes = grupo
+    .map((p, i) => {
+      const entre = i === 0 ? '' : i === grupo.length - 1 ? palavras.lista.ultimo : palavras.lista.entre;
+      const pais = paises.get(p.geo);
+      const nome = p.geo === AGREGADO ? palavras.uniao : pais ? (lang === 'en' ? pais.en : pais.pt) : `(${p.geo} sem nome)`;
+      const ressalva = p.bandeira ? palavras.ressalvas?.[String(p.bandeira)] : null;
+      return `${entre}${nome}${ressalva ? ` (${ressalva})` : ''}`;
+    })
+    .join('');
+  const valor = String(grupo[0].valor).replace(/(?<=\d)[\u00a0\u2009\u202f](?=\d)/g, ' ');
+  return `${nomes} ${valor}`;
 }
 
 /** A série de países de uma linha portuguesa, pelo campo da série. */

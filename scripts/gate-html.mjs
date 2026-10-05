@@ -7,7 +7,7 @@ import { MUDANCAS_DO_PROJETO } from '../src/data/mudancas-do-projeto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { SUBJECTS } from '../src/data/studies.mjs';
 import { metaDoEstudoConferida } from './meta-do-estudo.mjs';
-import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa, serieDaLinhaDoPortao } from './series-do-portao.mjs';
+import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa, serieDaLinhaDoPortao, etiquetaDaMarcaDoPortao } from './series-do-portao.mjs';
 import { PALAVRAS_DAS_MARCAS_DO_INE } from '../src/data/series-no-tempo.mjs';
 import { faixasDoPortao, linhaDePortugalDoPortao, MEDIDAS_SEM_FAIXA, conferirTabelaDaVista } from './concelhos-do-portao.mjs';
 import { PALAVRAS_DA_FAIXA } from '../src/data/faixa-da-uniao.mjs';
@@ -66,6 +66,13 @@ function campoDaSerieNoTempo(serie, campo, lang) {
 
 /* R3 (04.10.2026): as sete portas do rodapé, com a do índice, lidas por um módulo próprio do portão. */
 import { conferirPortasDoRodape, plantasDasPortasDoRodape } from './indice-do-portao.mjs';
+import {
+  conferirPortaDaPrivacidade,
+  conferirPaginaDaPrivacidade,
+  achadosNaPagina,
+  conferirSemCookiesNemSeguimento,
+  plantasDaPrivacidade,
+} from './privacidade-do-portao.mjs';
 /**
  * A DEFINIÇÃO DECLARADA DE UMA MEDIDA, COMO TEXTO (a passagem UE1d, 29.09.2026,
  * pelo lugar de direção). As palavras e os algarismos declarados (`nl`) da
@@ -301,12 +308,16 @@ import { leBlocos, Texto } from '../src/lib/eyetext.mjs';
 import { renderizacoesAceites } from '../src/data/correcoes.mjs';
 import {
   SITE_HOST,
+  SITE_HOST_UNACCENTED,
   SITE_NAME,
   SITE_SHORT_NAME,
   PAPEL_CLARO,
   PAPEL_ESCURO,
   canonicalUrl,
 } from '../site.config.mjs';
+/* OS ANFITRIÕES DO PRÓPRIO SÍTIO (bloco H3): um endereço absoluto para um destes não é «outra origem» na célula dos
+   cookies; a canónica e as alternativas de língua de cada página escrevem-se assim. */
+const ANFITRIOES_PROPRIOS = new Set([SITE_HOST, SITE_HOST_UNACCENTED]);
 import { ENDERECO_CORRECOES, REGRAS as REGRAS_DO_METODO } from '../src/data/metodo.mjs';
 // 05.10.2026 (§1.163): a importação de SOBRE saiu com a conferência do data-sobre-nomes, que era o seu único uso.
 import {
@@ -371,6 +382,11 @@ const veONome = (texto) => typeof texto === 'string' && FORMAS_DO_NOME.some((for
 let paginasComONome = 0;
 /** S1 (02.10.2026): as contas da caixa das sugestões, para a saída do portão. */
 const SUGESTOES_NO_PORTAO = { paginas: 0, portas: 0, paginasDaCaixa: 0, enderecosNoMapa: 0, plantas: 0, migracoes: 0 };
+/* A PÁGINA «PRIVACIDADE» E A FRASE DOS COOKIES (bloco H3, 05.10.2026): as portas do rodapé contadas, as páginas da
+   privacidade conferidas, as plantas em memória, e o que cada página tem contra a frase dos cookies. */
+const PRIVACIDADE_NO_PORTAO = { paginas: 0, portas: 0, paginasDaPrivacidade: 0, plantas: 0, achados: /** @type {{ rel: string, achado: string }[]} */ ([]) };
+/* As etiquetas das marcas da faixa da União num cartão, no `title` (bloco H3): quantas o portão conferiu. */
+const ETIQUETAS_DAS_FAIXAS = { conferidas: 0 };
 /** R3 (04.10.2026): as contas das sete portas do rodapé, para a saída do portão. */
 const RODAPE_NO_PORTAO = { paginas: 0, plantas: 0 };
 
@@ -4616,6 +4632,12 @@ for (const file of ficheirosHtml(DIST)) {
     );
   }
 
+  /* A FRASE DOS COOKIES, PÁGINA A PÁGINA (bloco H3, 05.10.2026): o que esta página tem contra «Este sítio não usa
+     cookies nem segue quem o lê» (um guião ou um recurso de outra origem, um guião que escreve cookies, a assinatura
+     de um serviço de seguimento), lido do HTML cru e antes de qualquer saída antecipada, para que os documentos
+     alojados também entrem. Junta-se aqui e decide-se depois do varrimento (`conferirSemCookiesNemSeguimento`). */
+  for (const achado of achadosNaPagina(html, ANFITRIOES_PROPRIOS)) PRIVACIDADE_NO_PORTAO.achados.push({ rel: `dist/${rel}`, achado });
+
   /* A língua desta edição, lida da própria página. É ela que decide qual das
      duas versões do motivo de uma correção tem de estar renderizada. */
   const linguaPagina = LINGUA_POR_HREFLANG[root.querySelector('html')?.getAttribute('lang') ?? ''] ?? null;
@@ -5418,6 +5440,24 @@ for (const file of ficheirosHtml(DIST)) {
 
   /**
    * ---------------------------------------------------------------------
+   * A PORTA DA PRIVACIDADE, E A PÁGINA (bloco H3, 05.10.2026)
+   * ---------------------------------------------------------------------
+   * Nas mesmas páginas que levam a porta das correções e a das sugestões:
+   * exatamente uma porta da privacidade, no rodapé, ao lado da das sugestões,
+   * para a página da edição da página e com o nome dela nessa edição. E na
+   * página «Privacidade», o título, o texto declarado carácter a carácter e a
+   * porta do endereço onde se pede o que se enviou. As conferências vivem em
+   * `scripts/privacidade-do-portao.mjs`, e as plantas delas correm uma vez por
+   * corrida, depois do varrimento.
+   */
+  PRIVACIDADE_NO_PORTAO.paginas++;
+  for (const e of conferirPortaDaPrivacidade(root, { lang: rota?.lang ?? linguaPagina ?? 'pt' })) err(e);
+  if (root.querySelector('[data-porta-privacidade]')) PRIVACIDADE_NO_PORTAO.portas++;
+  if (rota?.key === 'privacidade') PRIVACIDADE_NO_PORTAO.paginasDaPrivacidade++;
+  for (const e of conferirPaginaDaPrivacidade(root, rota)) err(e);
+
+  /**
+   * ---------------------------------------------------------------------
    * AS SETE PORTAS DO RODAPÉ, COM A DO ÍNDICE (bloco R3, 04.10.2026)
    * ---------------------------------------------------------------------
    * Nas mesmas páginas que levam a porta das correções e a das sugestões: a
@@ -6120,6 +6160,40 @@ for (const file of ficheirosHtml(DIST)) {
       aRemover.push(el);
     }
   }
+  /**
+   * ---------------------------------------------------------------------------
+   * A ETIQUETA DE UMA MARCA DA FAIXA DA UNIÃO, NO `title` (a passagem de higiene H3, 05.10.2026)
+   * ---------------------------------------------------------------------------
+   * A faixa da União num cartão não tem toque, e cada marca leva no `title` o que o rato mostra ao pousar nela: os
+   * países com aquele valor, pela ordem da série, cada um com a ressalva do seu ponto, e o valor uma vez, no fim. É um
+   * valor num ATRIBUTO, que o varrimento final não vê (os limites deste portão, no fim do ficheiro, ponto 2), e por
+   * isso confere-se aqui, carácter a carácter, contra a recomposição pelo leitor próprio dos portões
+   * (`etiquetaDaMarcaDoPortao`, em `scripts/series-do-portao.mjs`): a terceira exceção do ponto 2, com a mesma
+   * disciplina das outras duas, onde o atributo é a afirmação. Um `title` numa marca que não se recompõe, ou que diz
+   * outra coisa, fecha a construção.
+   */
+  for (const el of body.querySelectorAll('[data-faixa-marca][title]')) {
+    const [sid, geo] = String(el.getAttribute('data-faixa-marca') ?? '').split('#');
+    const serie = SERIES_DO_PORTAO.get(sid);
+    let esperada = null;
+    try {
+      esperada = serie ? etiquetaDaMarcaDoPortao(serie, geo, linguaDaSerie, PAISES_DO_PORTAO, PALAVRAS_DA_FAIXA[linguaDaSerie]) : null;
+    } catch (e) {
+      err(`H3: a etiqueta da marca «${geo}» da série «${sid}» não se recompõe: ${e.message}`);
+      continue;
+    }
+    const dita = normalizeWhitespace(decodeEntities(String(el.getAttribute('title') ?? '')));
+    /* O MESMO TEXTO EM `data-faixa-etiqueta`, como o selo de uma linha o leva em `data-selo-etiqueta`: a régua das frases
+       salta uma dica igual a um `data-*` do próprio elemento, e por isso os dois têm de ser iguais, ou a dica saltada não
+       seria a que o leitor vê. */
+    const escrita = normalizeWhitespace(decodeEntities(String(el.getAttribute('data-faixa-etiqueta') ?? '')));
+    if (escrita !== dita) err(`H3: o data-faixa-etiqueta da marca «${geo}» da série «${sid}» diz «${escrita}», e o title diz «${dita}»; são o mesmo texto.`);
+    if (esperada === null) err(`H3: uma marca da faixa leva um title e diz ser da série «${sid}», que não existe.`);
+    else if (dita !== normalizeWhitespace(esperada)) {
+      err(`H3: o title da marca «${geo}» da série «${sid}» diz «${dita}» e a recomposição pelos pontos dá «${esperada}». Um valor num atributo é um valor.`);
+    } else ETIQUETAS_DAS_FAIXAS.conferidas++;
+  }
+
   /**
    * ---------------------------------------------------------------------------
    * AS ORIGENS DA FAIXA DO CONCELHO (bloco L2b, 01.10.2026)
@@ -7978,6 +8052,33 @@ for (const file of ficheirosHtml(DIST)) {
   }
   if (RODAPE_NO_PORTAO.paginas === 0) erros.push({ rel: 'dist', msg: 'R3 rodapé: a conferência das sete portas do rodapé não viu página nenhuma.' });
   console.log(`  R3 · as sete portas do rodapé conferidas em ${RODAPE_NO_PORTAO.paginas} página(s), com ${RODAPE_NO_PORTAO.plantas} planta(s) em memória.`);
+}
+
+/* A PÁGINA «PRIVACIDADE» E A FRASE DOS COOKIES, DEPOIS DO VARRIMENTO (bloco H3, 05.10.2026): as plantas em memória
+   primeiro (cada uma recusada pela sua conferência com a queixa esperada, e as intactas aceites; uma planta que não
+   morda fecha a construção), e depois a frase dos cookies contra o que as páginas tinham, os guiões servidos, a
+   configuração da Vercel e as funções de `api/`. Uma corrida que não viu porta da privacidade nenhuma, ou que não
+   conferiu as duas páginas da privacidade, também fecha. E as etiquetas das marcas da faixa da União conferidas. */
+{
+  for (const planta of plantasDaPrivacidade()) {
+    PRIVACIDADE_NO_PORTAO.plantas++;
+    if (!planta.mordeu) erros.push({ rel: 'scripts/privacidade-do-portao.mjs', msg: `H3: a planta em memória «${planta.nome}» não mordeu; a conferência dela não vê o que existe para ver.` });
+  }
+  if (PRIVACIDADE_NO_PORTAO.portas === 0) erros.push({ rel: 'dist', msg: 'H3 porta: a conferência não viu porta da privacidade nenhuma.' });
+  if (PRIVACIDADE_NO_PORTAO.paginasDaPrivacidade !== 2) erros.push({ rel: 'dist', msg: `H3 privacidade: a conferência viu ${PRIVACIDADE_NO_PORTAO.paginasDaPrivacidade} página(s) da privacidade, e são duas, uma por edição.` });
+  const cookies = conferirSemCookiesNemSeguimento({
+    dist: DIST,
+    raiz: ROOT,
+    paginas: { lidas: ficheiros, achados: PRIVACIDADE_NO_PORTAO.achados },
+  });
+  for (const msg of cookies.erros) erros.push({ rel: 'src/data/privacidade.mjs', msg });
+  console.log(
+    `  H3 · a porta da privacidade em ${PRIVACIDADE_NO_PORTAO.portas} de ${PRIVACIDADE_NO_PORTAO.paginas} página(s), ` +
+      `${PRIVACIDADE_NO_PORTAO.paginasDaPrivacidade} página(s) da privacidade conferida(s), ${PRIVACIDADE_NO_PORTAO.plantas} planta(s) em memória; ` +
+      `a frase dos cookies ${cookies.fraseNoTexto ? 'no texto, conferida' : 'fora do texto'} em ${cookies.contas.paginas} página(s), ` +
+      `${cookies.contas.guioes} guião(ões) servido(s), ${cookies.contas.configuracao} configuração e ${cookies.contas.funcoes} função(ões): ` +
+      `${cookies.contas.achados} achado(s); ${ETIQUETAS_DAS_FAIXAS.conferidas} etiqueta(s) das marcas da faixa da União conferidas no title.`,
+  );
 }
 
 /**

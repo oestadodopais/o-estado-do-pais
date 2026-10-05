@@ -76,10 +76,12 @@
 }
 
 /* A ETIQUETA DE UMA MARCA, escondida até ao toque. O `hidden` do documento esconde-a sem guião; com guião, o
-   `public/js/paises.js` tira-o à da marca tocada. Ancora-se como os rótulos: pelo meio, ou pela ponta mais perto. */
+   `public/js/paises.js` tira-o à da marca tocada. Ancora-se como os rótulos: pelo meio, ou pela ponta mais perto. A
+   posição da marca chega na propriedade `--p` (de 0 a 100), que o componente escreve em cada etiqueta. */
 .paises-toque {
   position: absolute;
   top: 54px;
+  left: calc(var(--p) * 1%);
   white-space: nowrap;
   font-family: var(--f-prosa);
   font-size: 13px;
@@ -95,6 +97,37 @@
 }
 .paises-toque[data-ancora='fim'] {
   transform: translateX(calc(-100% + 4px));
+}
+/* A ETIQUETA NÃO PASSA A CAIXA DO DESENHO (bloco H3, 05.10.2026). Desde o H3 cada etiqueta diz todos os países com o
+   valor da sua marca, e uma etiqueta de grupo é comprida: a 390 px, ancorada só pela posição da marca, a dos quatro países
+   do desemprego de longa duração passava a margem da janela e cortava o primeiro nome, e outras punham a página a rolar
+   para o lado (o relatório do H3 tem a medida, antes e depois). Onde o navegador conhece a largura do desenho (as
+   unidades do contentor), a etiqueta fica onde a âncora a põe enquanto couber, encosta-se à borda do desenho quando não
+   cabe, e dobra, a crescer para cima, se for mais larga do que o desenho; em todos os casos continua a cobrir a posição
+   da sua marca na horizontal. Sem essas unidades vale a regra de cima. */
+@supports (width: 1cqw) {
+  .paises-desenho {
+    container-type: inline-size;
+  }
+  .paises-toque {
+    top: auto;
+    bottom: 2px;
+    left: 0;
+    max-width: 100cqw;
+    white-space: normal;
+    /* uma etiqueta dobrada sobe até aos 38 px e taparia só metade do rótulo da média da União (de 33 a 47 px): a
+       sombra da cor do papel, quatro píxeis acima, tapa-o inteiro; e a etiqueta fica abaixo da marca tocada (2 contra
+       3), para o anel dela se ver inteiro quando é a mais baixa de um grupo */
+    box-shadow: 0 -4px 0 var(--paper);
+    z-index: 2;
+    transform: translateX(clamp(0px, calc(var(--p) * 1cqw - 50%), calc(100cqw - 100%)));
+  }
+  .paises-toque[data-ancora='inicio'] {
+    transform: translateX(clamp(0px, calc(var(--p) * 1cqw - 4px), calc(100cqw - 100%)));
+  }
+  .paises-toque[data-ancora='fim'] {
+    transform: translateX(clamp(0px, calc(var(--p) * 1cqw - 100% + 4px), calc(100cqw - 100%)));
+  }
 }
 .paises-toque[hidden] {
   display: none;

@@ -1,0 +1,87 @@
+§1.1 · O mapa passou de `<canvas>` para SVG construído no servidor
+    src/i18n/strings.mjs:3099
+§1.3 · Numa linha derivada, os campos de proveniência podem ser `null`
+    src/i18n/strings.mjs:564
+§1.4 · `excerpt` ficou `[a verificar]` em quase todas as linhas semeadas
+    src/i18n/strings.mjs:1096
+    src/i18n/strings.mjs:1558
+§1.5 · A linha de método e a linha de autoria não são traduzidas
+    scripts/medir-defeitos.mjs:699
+    src/i18n/strings.mjs:2403
+§1.29 · As quatro linhas que ficaram sem função, e o que custa retirá-las
+    src/lib/routes.mjs:61
+§1.35 · As páginas de leitura, e o escudo que passou a ser lido trabalho a trabalho
+    src/i18n/strings.mjs:2957
+§1.36 · Os dez defeitos que a medição da confiança encontrou, e o que se fez a cada um
+    src/i18n/strings.mjs:362
+    src/i18n/strings.mjs:419
+    src/lib/routes.mjs:125
+    src/lib/routes.mjs:166
+§1.39 · O sítio passa a dizer o que é, e o Método a provar o que faz
+    src/i18n/strings.mjs:1768
+    src/i18n/strings.mjs:406
+    src/lib/routes.mjs:52
+§1.40 · A agenda: o que se mede agora, e nada sai dela em silêncio
+    src/i18n/strings.mjs:2310
+    src/i18n/strings.mjs:2315
+    src/lib/routes.mjs:258
+§1.44 · A revisão cruzada da identidade v2
+    scripts/medir-defeitos.mjs:1018
+§1.47 · O bloco T: a página da linha passa a ser o recibo, com dados a sério
+    src/i18n/strings.mjs:2490
+§1.52 · A direção lê a pré-visualização n.º 1: cinco emendas, quatro decisões de forma, e o tema deixa de ser uma pergunta
+    src/i18n/strings.mjs:277
+§1.64 · A parte 3: as páginas de leitura constroem-se dos registos de conteúdo do motor
+    src/lib/routes.mjs:118
+§1.98 · A delegação de 04.09: o lugar de direção decide pelas recomendações escritas, e o diretor corrige ao usar o sítio
+    src/i18n/strings.mjs:112
+    src/i18n/strings.mjs:141
+    src/i18n/strings.mjs:1676
+    src/i18n/strings.mjs:1716
+    src/i18n/strings.mjs:207
+    src/i18n/strings.mjs:2467
+    src/i18n/strings.mjs:31
+    src/i18n/strings.mjs:80
+§1.101 · A sessão de 07.09: o painel sem rede, a semana de ensaio recomeçada e o leitor dos concelhos, os cinco ramos parados retomados e fundidos, as leituras a frio do F1.4b e do F1.1c, e o limite do Codex
+    src/i18n/strings.mjs:1191
+§1.108 · A manhã de 15.09: o diretor na primeira página no ar, a regra das capturas antes de aterrar, e a primeira página à frente do descarregamento
+    src/data/politica-ia.mjs:72
+    src/i18n/strings.mjs:1223
+    src/i18n/strings.mjs:1324
+§1.109 · A regra 9 do Método deixa de nomear o diretor
+    src/data/politica-ia.mjs:72
+§1.112 · O lugar de direção dirige o sítio; o diretor é o leitor
+    src/data/politica-ia.mjs:310
+§1.130 · O brief do L1, a leitura de cada medida: a regra do sentido vira uma gramática com ramos, as 36 leituras do lugar de direção ensaiadas a seco, e um bloco que não aterra sem outra família
+    src/components/FaixaDosPaises.astro:34
+    src/i18n/strings.mjs:2573
+§1.133 · O leitor comum primeiro: a decisão do diretor de 28.09.2026 sobre o público, o que se lê à primeira, e quem procura as relações nos dados
+    src/i18n/strings.mjs:1797
+§1.140 · Onde Portugal fica entre os 27: as séries por país no livro-razão, a faixa da União nos dez cartões, a média da União de volta ao cartão da sobrecarga com a ressalva da Comissão, e a aterragem
+    src/components/FaixaDosPaises.astro:188
+    src/components/FaixaDosPaises.astro:30
+    tests/uniao/paises.mjs:100
+    tests/uniao/paises.mjs:32
+§1.145 · Os estudos de Évora passam de seis a quatro (o E1): as contas da câmara, quem governou, a economia e o dinheiro de fora, e o Évora 2027, com o que se repete dito uma vez e o que se contradiz reconciliado; e a aterragem do N1
+    src/lib/indice.mjs:83
+§1.150 · O L2a construído pelo Opus e lido a frio pelo Sol: o mapa primeiro em «Lugares», as listas dobradas, a primeira página com a porta; as decisões do lugar de direção nos pontos deixados; e a aterragem da §1.149
+    src/i18n/strings.mjs:691
+§1.153 · O P4 construído pelo Opus e lido a frio pelo Sol: o sítio claro por omissão com o comando «claro · escuro» de volta, a página da União como sexta porta do menu («Europa»), as cinco réguas à mão a ler as páginas de hoje, a regra das casas decimais a ler a forma do INE, e a caixa das sugestões preparada (a base, a função, o brief S1)
+    src/lib/navegacao.mjs:16
+§1.154 · A caixa das sugestões no ar (o S1, construído pelo Opus, lido a frio pelo Sol, endurecido com a chave que só a Vercel tem, com as três decisões do diretor de 03.10.2026), a quinta recusa do Método reescrita, a leitura de fora do Opus de 03.10 avaliada e o que ela muda no plano
+    scripts/medir-defeitos.mjs:1616
+    scripts/sugestoes-do-portao.mjs:270
+    scripts/sugestoes-do-portao.mjs:273
+    scripts/sugestoes-do-portao.mjs:56
+    src/data/politica-ia.mjs:460
+    src/data/sugestoes.mjs:176
+    src/data/sugestoes.mjs:21
+    src/data/sugestoes.mjs:88
+    src/lib/indice.mjs:96
+    src/lib/indice.mjs:97
+    src/lib/indice.mjs:98
+    src/lib/indice.mjs:99
+    src/views/SugestoesView.astro:28
+25 decisão(ões) citada(s) em 18 ficheiro(s) de texto
+0 ficheiro(s) binário(s) saltado(s)
+conhecido-positivo: a §1.98 lida em scripts/check-lugar.mjs, e o nome que não existe (scripts/leituras/este-ficheiro-nao-existe-p4c.mjs) recusado como ilegível

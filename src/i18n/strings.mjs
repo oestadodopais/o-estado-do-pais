@@ -215,6 +215,9 @@ export const STRINGS = {
       /* O ÍNDICE (bloco R3, 04.10.2026): a sétima porta do rodapé, o `<h1>` da página e a
          última migalha do caminho dela, uma cadeia só para as três. */
       indice: 'Índice',
+      /* A PÁGINA «PRIVACIDADE» (bloco H3, 05.10.2026): a porta do rodapé, ao lado da das sugestões, o `<h1>` da
+         página e a última migalha do caminho dela, uma cadeia só para as três, como a do índice. */
+      privacidade: 'Privacidade',
       saltar: 'Saltar para o conteúdo',
       /* O comando que abre a navegação no telemóvel. É a mesma palavra nas duas
          edições, e está na lista de identidades aceites do `CHAVES-EN.md`. */
@@ -3186,6 +3189,8 @@ export const STRINGS = {
       sobre: 'About',
       /* Ver a razão na edição portuguesa (bloco R3). */
       indice: 'Index',
+      /* Ver a razão na edição portuguesa (bloco H3). */
+      privacidade: 'Privacy',
       saltar: 'Skip to content',
       menu: 'Menu',
       rotuloPrincipal: 'Main navigation',

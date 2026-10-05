@@ -1,0 +1,14 @@
+{
+  "comando": "python3 design/especime-v3/medicoes/h3-2026-10-05/limpar-registos.py",
+  "registos": [
+    "construcao-1.log",
+    "construcao-2.log",
+    "construcao-antes.log",
+    "portoes/build.log",
+    "portoes/verify.log",
+    "portoes-628ef792/build.log",
+    "portoes-628ef792/verify.log",
+    "portoes-ec4c6f58/build.log",
+    "portoes-ec4c6f58/verify.log"
+  ]
+}

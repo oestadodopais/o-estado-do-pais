@@ -1,0 +1,4 @@
+check:indice-do-sitio pt: 414 portas (414 destinos), 409 endereços do mapa conferidos, 29 rotas de leitor, 308 concelhos em 29 gavetas, 11 estudos, 8 linhas de «O que mudou».
+check:indice-do-sitio en: 415 portas (415 destinos), 409 endereços do mapa conferidos, 29 rotas de leitor, 308 concelhos em 29 gavetas, 11 estudos, 8 linhas de «O que mudou».
+  ✗ I2 pt: /privacidade está no mapa do sítio e não tem porta no índice.
+  ✗ I3 pt: a página /privacidade (rota «privacidade») foi construída e não tem porta no índice.

@@ -462,10 +462,10 @@ export const POLITICA = {
       {
         pt:
           'Este projeto só guarda dados pessoais de quem usa a caixa das sugestões, pelo tempo e para o fim ' +
-          'que a nota da caixa diz, e nunca os põe no repositório.',
+          'que a página «Privacidade» diz, e nunca os põe no repositório.',
         en:
           'This project keeps personal data only of those who use the suggestions box, for the time and the ' +
-          "purpose that the box's note states, and never puts it in the repository.",
+          "purpose that the Privacy page states, and never puts it in the repository.",
       },
     ],
   },
