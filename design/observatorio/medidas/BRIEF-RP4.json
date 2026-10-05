@@ -14,10 +14,19 @@
     },
     {
       "nome": "pontos_das_series_no_tempo",
-      "valor": 4133,
+      "valor": 4131,
       "comando": "git show 905105b7:ledger/series/<série>.yml · as linhas «  - periodo:» somadas nas séries no tempo",
       "conhecido_positivo": {
         "o_que": "a série do IPC tem mais de cem pontos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "lacunas_declaradas_nas_series_no_tempo",
+      "valor": 2,
+      "comando": "git show 905105b7:ledger/series/<série>.yml · as linhas «  - periodo:» dentro do bloco lacunas: de cada série no tempo, somadas",
+      "conhecido_positivo": {
+        "o_que": "a soma dos pontos com as lacunas dá a contagem antiga do §0 (4 133, a I196)",
         "encontrado": true
       }
     },
