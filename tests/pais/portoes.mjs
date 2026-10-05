@@ -605,3 +605,45 @@ planta('h2-voz-estado-trocado','scripts/check-voz.mjs',[
 planta('h2b-horizonte-trocado','scripts/gate-html.mjs',[
  ['index.html',r=>r.querySelector('[data-estudo-em-curso]').set_content('em curso até 1999')]
 ],[/H2-b: o horizonte do estudo em curso difere da ficha/]);
+
+/* RP4-c (05.10.2026): as ajudas de leitura do gráfico das séries. Estragos sobre páginas realmente construídas, repostos
+   no finally de cada planta e conferidos por sha256; correm fora do `verify`, com `--prefixo rp4c-` e `OEDP_MEDICOES` a
+   apontar para a pasta das medições do bloco. A origem nova do portão de HTML (`data-ponto-periodo`) é uma comparação:
+   um período trocado, um período de outro ponto ao lado do valor, um período fora de um desenho e um período sem a sua
+   marca têm de ser recusados; o valor de um ponto trocado na etiqueta também. A F2 recusa um algarismo solto num
+   desenho e a F21 uma marca sem o símbolo da unidade e a legenda da unidade tirada; o formato dos números recusa o «%»
+   colado numa marca e o símbolo do euro numa marca (a paragem do ponto 1: a §1.127, decisão 4). */
+const primeiraEtiqueta = (r) => r.querySelector('svg[data-forma="serie-do-pais"] [data-ponto-periodo]');
+planta('rp4c-periodo-trocado','scripts/gate-html.mjs',[
+ ['index.html',r=>{const [a,b]=r.querySelectorAll('svg[data-forma="serie-do-pais"] [data-ponto-periodo]');a.set_content(b.textContent);}]
+],[/RP4-c: o período do ponto «1992-01» da série «serie-ipc-variacao-homologa» foi renderizado como «fevereiro de 1992» e a forma da casa é «janeiro de 1992»/]);
+planta('rp4c-periodo-de-outro-ponto','scripts/gate-html.mjs',[
+ ['index.html',r=>primeiraEtiqueta(r).setAttribute('data-ponto-periodo','serie-ipc-variacao-homologa#1992-02')]
+],[/RP4-c: o período do ponto «1992-02» da série «serie-ipc-variacao-homologa» foi renderizado como «janeiro de 1992»/,/RP4-c: a etiqueta do período «serie-ipc-variacao-homologa#1992-02» não tem ao lado o valor do mesmo ponto/]);
+planta('rp4c-periodo-ingles-na-edicao-portuguesa','scripts/gate-html.mjs',[
+ ['index.html',r=>primeiraEtiqueta(r).set_content('January 1992')]
+],[/RP4-c: o período do ponto «1992-01» da série «serie-ipc-variacao-homologa» foi renderizado como «January 1992»/]);
+planta('rp4c-periodo-fora-do-desenho','scripts/gate-html.mjs',[
+ ['index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p><span data-ponto="serie-ipc-variacao-homologa#1992-01">9,41</span> <span data-ponto-periodo="serie-ipc-variacao-homologa#1992-01">janeiro de 1992</span></p>')]
+],[/RP4-c: o período «serie-ipc-variacao-homologa#1992-01» está fora de um desenho das séries/]);
+planta('rp4c-periodo-sem-marca','scripts/gate-html.mjs',[
+ ['index.html',r=>primeiraEtiqueta(r).removeAttribute('data-ponto-periodo')]
+],[/algarismos fora do livro-razão/]);
+planta('rp4c-valor-trocado-na-etiqueta','scripts/gate-html.mjs',[
+ ['en/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"] [data-ponto]').set_content('9,42')]
+],[/UE1: o ponto «1992-01» da série «serie-ipc-variacao-homologa» foi renderizado como «9,42»/]);
+planta('rp4c-f2-algarismo-solto','scripts/check-formas.mjs',[
+ ['precos/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"]').insertAdjacentHTML('beforeend','<text x="60" y="30">7</text>')]
+],[/a forma "serie-do-pais" desenha «7», que tem algarismos/]);
+planta('rp4c-f21-marca-sem-simbolo','scripts/check-formas.mjs',[
+ ['index.html',r=>{const t=r.querySelectorAll('svg[data-forma="serie-do-pais"] [data-eixo="valor"] text').find(x=>x.textContent.endsWith(' %'));t.set_content(t.textContent.replace(' %',''));}]
+],[/F21 · marcas do eixo valor diferem da recomposição/]);
+planta('rp4c-f21-legenda-da-unidade-tirada','scripts/check-formas.mjs',[
+ ['salarios-pensoes-e-apoios/index.html',r=>r.querySelector('[data-serie-unidade-legenda]').remove()]
+],[/F21 · legenda da unidade por extenso ausente/]);
+planta('rp4c-formato-simbolo-colado-numa-marca','tests/inicio/formato-dos-numeros.mjs',[
+ ['index.html',r=>{const t=r.querySelectorAll('svg[data-forma="serie-do-pais"] [data-eixo="valor"] text').find(x=>x.textContent.endsWith(' %'));t.set_content(t.textContent.replace(' %','%'));}]
+],[/F4 · index\.html: «−5%»/]);
+planta('rp4c-formato-euro-numa-marca','tests/inicio/formato-dos-numeros.mjs',[
+ ['salarios-pensoes-e-apoios/index.html',r=>{const t=r.querySelectorAll('svg[data-forma="serie-do-pais"] [data-eixo="valor"] text').find(x=>/\d\d/.test(x.textContent));t.set_content(`${t.textContent} €`);}]
+],[/F5 · salarios-pensoes-e-apoios\/index\.html/]);

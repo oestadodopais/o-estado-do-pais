@@ -13,3 +13,21 @@
 circle.serie-do-pais-linha { fill: var(--ink); }
 .pp-serie-unidade { display: block; font: 13px var(--f-instr); margin-bottom: 8px; }
 .serie-exclusoes { font: 14px var(--f-prosa); color: var(--ink); }
+
+/* RP4-c (05.10.2026, o ponto 4 do mandato): a leitura de cada ponto, só ao passar o rato e sem guião. Cada ponto tem um
+   grupo sem `data-eixo` dentro do desenho: a zona (a faixa vertical entre os pontos vizinhos, invisível e sempre a
+   receber o rato), a linha vertical, o ponto marcado e a etiqueta, escondidos até o rato passar pela zona. A regra que
+   os mostra vive dentro de `(hover: hover) and (pointer: fine)`: num aparelho sem rato (o toque) não há passagem que os
+   acenda, e um toque no desenho continua a abrir o recibo. As cores são as fichas da casa (a G5). */
+.serie-do-pais > g:not([data-eixo]) > rect { fill: transparent; stroke: none; pointer-events: all; }
+.serie-do-pais > g:not([data-eixo]) > :not(rect) { visibility: hidden; pointer-events: none; }
+.serie-do-pais > g:not([data-eixo]) > line { fill: none; stroke: var(--g3); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.serie-do-pais > g:not([data-eixo]) > circle { fill: var(--ink); stroke: var(--paper); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.serie-do-pais > g:not([data-eixo]) > text { fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
+.serie-do-pais [data-ponto-periodo] { fill: var(--g1); }
+@media (hover: hover) and (pointer: fine) {
+  .serie-do-pais > g:not([data-eixo]):hover > * { visibility: visible; }
+}
+
+/* RP4-c (o ponto 1): a unidade por extenso por baixo de um desenho cujas marcas não levam o símbolo. */
+.serie-do-pais-unidade { display: block; font: 13px var(--f-instr); color: var(--g1); margin-top: 6px; }

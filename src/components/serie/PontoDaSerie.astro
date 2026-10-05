@@ -15,10 +15,16 @@
  * A CHAVE DO PONTO (bloco RP3, 04.10.2026): a geografia numa série de países
  * (`geo`), o período numa série no tempo (`chave`, «2026-08»); a marca é a mesma,
  * `data-ponto="<id>#<chave>"`, e o portão de HTML acha o ponto pela forma da série.
+ *
+ * DENTRO DE UM DESENHO (bloco RP4-c, 05.10.2026, o ponto 4 do mandato): `as="tspan"`
+ * escreve o mesmo valor com a mesma marca num `<tspan>`, para a etiqueta da leitura
+ * de um ponto no desenho das séries; sem classe, porque o desenho leva uma etiqueta
+ * por ponto e a folha chega-lhe pela estrutura do desenho.
  */
 import { getSerie, pontoDaSerie } from '../../lib/series.mjs';
 
-const { serie: id, class: klass = '' } = Astro.props;
+const { serie: id, class: klass = '', as = 'span' } = Astro.props;
+if (as !== 'span' && as !== 'tspan') throw new Error(`série «${id}»: um ponto escreve-se num <span> ou num <tspan>, e não num <${as}>.`);
 const chave = Astro.props.chave ?? Astro.props.geo;
 const ponto = pontoDaSerie(getSerie(id), chave);
 if (!ponto || typeof ponto.valor !== 'string') {
@@ -26,4 +32,6 @@ if (!ponto || typeof ponto.valor !== 'string') {
 }
 const valor = ponto.valor.replace(/(?<=\d)[   ](?=\d)/g, ' ');
 ---
-<span class:list={['ponto-da-serie', klass]} data-ponto={`${id}#${chave}`}>{valor}</span>
+{as === 'tspan'
+  ? <tspan data-ponto={`${id}#${chave}`}>{valor}</tspan>
+  : <span class:list={['ponto-da-serie', klass]} data-ponto={`${id}#${chave}`}>{valor}</span>}

@@ -891,8 +891,17 @@ if (PROVA && noTempo.length) {
     const s = series.get(id);
     const pt = reciboEmDisco(id, 'pt');
     const en = reciboEmDisco(id, 'en');
-    const estraga = (html, de, para) => html.replace(de, para);
-    planta('S6', 'um valor trocado na tabela', 'a linha 1 da tabela diz', () => ({ S6: celulaDosRecibos(s, { pt: estraga(pt, '>1 534<', '>1 535<'), en }) }));
+    /* O VALOR TROCA-SE DENTRO DA TABELA (bloco RP4-c, 05.10.2026): desde a leitura de cada ponto, o desenho que vem
+       antes da tabela escreve o valor de cada ponto na sua etiqueta, e trocar a primeira ocorrência da cadeia no HTML
+       trocava a etiqueta e deixava a tabela intacta. A planta morde a mesma coisa: o primeiro valor da tabela. */
+    const estraga = (html, de, para) => {
+      const root = parse(html);
+      const el = root.querySelector(`[data-serie-tabela="${id}"] [data-ponto]`);
+      if (!el || semEspacos(texto(el)) !== semEspacos(de)) return html;
+      el.set_content(para);
+      return root.toString();
+    };
+    planta('S6', 'um valor trocado na tabela', 'a linha 1 da tabela diz', () => ({ S6: celulaDosRecibos(s, { pt: estraga(pt, '1 534', '1 535'), en }) }));
     planta('S6', 'um ponto tirado da tabela', 'ponto em falta', () => {
       const root = parse(pt);
       root.querySelector(`[data-serie-tabela="${id}"] [data-ponto]`)?.remove();
@@ -912,7 +921,7 @@ if (PROVA && noTempo.length) {
     planta('S6', 'um algarismo solto na tabela', 'algarismos fora das origens admitidas', () => ({
       S6: celulaDosRecibos(s, { pt: pt.replace(/(<td[^>]*data-serie-celula[^>]*>)/, '$1 7 '), en }),
     }));
-    planta('S6', 'as duas edições com valores diferentes', 'a linha 1 da tabela diz', () => ({ S6: celulaDosRecibos(s, { pt, en: estraga(en, '>1 534<', '>1 533<') }) }));
+    planta('S6', 'as duas edições com valores diferentes', 'a linha 1 da tabela diz', () => ({ S6: celulaDosRecibos(s, { pt, en: estraga(en, '1 534', '1 533') }) }));
     planta('S6', 'o período escrito fora da regra da casa', 'a linha 1 da tabela diz', () => {
       /* NA PRIMEIRA LINHA DA TABELA, e não no cabeçalho, que diz o mesmo período antes dela. */
       const root = parse(pt);

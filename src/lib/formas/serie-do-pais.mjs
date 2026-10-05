@@ -9,6 +9,15 @@
  * Só se recusa o desenho quando nenhuma linha tem base utilizável.
  * A escala inclui zero e usa passos 1, 2 ou 5 vezes uma potência de dez.
  * As coordenadas arredondam uma vez, a três casas, só ao sair para o SVG.
+ *
+ * AS AJUDAS DE LEITURA (bloco RP4-c, 05.10.2026, os pontos 1, 2 e 4 do mandato). Três coisas, e nenhum número que não
+ * seja marca de escala ou valor de um ponto com a sua origem:
+ *   · o símbolo da unidade nas marcas do eixo dos valores, quando a unidade da série o tem (`simboloDasMarcas`); nas
+ *     outras, as marcas ficam sem símbolo e o desenho diz a unidade por extenso numa legenda (`legenda`);
+ *   · as décadas no eixo do tempo de uma série que cobre vinte anos ou mais, as que couberem pela regra dos 64 píxeis,
+ *     contada da ponta de fora da etiqueta vizinha (`PIXEIS_ATE_A_VIZINHA`, `LARGURA_DE_UM_ANO`);
+ *   · a leitura de cada ponto (`leituras`): uma zona por ponto, a faixa vertical entre os pontos vizinhos, com o ponto
+ *     marcado, a linha vertical e a etiqueta do valor e do período, que a folha mostra só ao passar o rato.
  */
 import { getSerie, periodoSeguinte } from '../series.mjs';
 import { parsePtNumber } from '../ledger.mjs';
@@ -17,6 +26,50 @@ export const BASE_DO_INDICE = Object.freeze({ mensal: '2015-01', trimestral: '20
 const CADENCIAS = Object.freeze({ mensal: 12, trimestral: 4, semestral: 2, anual: 1 });
 /** @param {number} n */
 export const coordenada = (n) => String(Number(n.toFixed(3)));
+
+/**
+ * A REGRA DOS 64 PÍXEIS DO EIXO DO TEMPO (RP4; contada da ponta de fora da etiqueta vizinha desde o bloco RP4-c,
+ * 05.10.2026, o ponto 2 do mandato). Uma marca intermédia só entra a 64 píxeis ou mais da ponta mais afastada da
+ * etiqueta de cada marca vizinha. No RP4 as duas marcas das pontas estavam encostadas às pontas do campo (a primeira a
+ * começar no primeiro ponto, a última a acabar no último), e por isso a regra media-se das pontas do campo: era a mesma
+ * coisa. O RP4-m pôs a última marca em janeiro do último ano, centrada, e a ponta de fora da sua etiqueta deixou de ser
+ * a ponta do campo; a regra das séries curtas continua a medir-se das pontas do campo, como o brief manda («nas séries
+ * curtas fica a regra de hoje»), e a das décadas mede-se da etiqueta, que é o que a regra sempre guardou: entre duas
+ * etiquetas vizinhas ficam pelo menos 64 − 1,5 × `LARGURA_DE_UM_ANO` píxeis.
+ */
+export const PIXEIS_ATE_A_VIZINHA = 64;
+
+/**
+ * A LARGURA DE UM ANO ESCRITO NA LETRA DOS EIXOS, em unidades do desenho (bloco RP4-c, o ponto 2): quatro algarismos de
+ * largura fixa (`tabular-nums`) da Bitter a 12 píxeis, medidos no Chromium com `getComputedTextLength()` nas 50
+ * etiquetas de ano dos 16 desenhos da primeira página, da página dos preços e do recibo da inflação, nas duas edições,
+ * sobre a construção da cabeça `983b4585` (todas 30,25; o registo é `letra-dos-eixos-antes.json`, na pasta das
+ * medições do bloco). Um ano de quatro algarismos mede o mesmo em qualquer ano, pela largura fixa dos algarismos.
+ */
+export const LARGURA_DE_UM_ANO = 30.25;
+
+/** A partir de quantos anos de calendário cobertos o eixo do tempo marca as décadas (o ponto 2 do mandato). */
+export const ANOS_PARA_AS_DECADAS = 20;
+
+/**
+ * O SÍMBOLO DA UNIDADE NAS MARCAS (bloco RP4-c, 05.10.2026, o ponto 1 do mandato). Só «%»: «15 %» lê-se, e «20,4 % do
+ * PIB» não cabe numa marca e vai para a legenda (a decisão 2 do brief). A marca do zero fica sem símbolo («0»).
+ *
+ * O EURO FICA SEM SÍMBOLO, E É UMA PARAGEM E NÃO UM ESQUECIMENTO. O brief pede «1 835 €» nas marcas; a decisão 4 da
+ * §1.127 diz que o dinheiro se escreve com a palavra da unidade, nunca com o símbolo, e a F5 do `check:formato` recusa
+ * o símbolo do euro também ao lado das marcas de escala (`MOTIVOS_SO_DO_SIMBOLO`, em
+ * `tests/inicio/formato-dos-numeros.mjs`). As duas decisões do lugar de direção discordam, e escolher entre elas é dele;
+ * o relatório do bloco tem a medida. Até lá uma série em euros tem as marcas sem símbolo e a legenda com a unidade por
+ * extenso, como as outras unidades sem símbolo.
+ *
+ * No modo indexado as marcas são do índice, e não levam símbolo nenhum.
+ * @param {string[]} unidades as unidades das séries do desenho
+ * @param {'unidade'|'indice'} modo
+ * @returns {'%'|null}
+ */
+export function simboloDasMarcas(unidades, modo) {
+  return modo === 'unidade' && unidades.length > 0 && unidades.every((u) => u === '%') ? '%' : null;
+}
 
 /** @param {string} periodo */
 export function mesDoPeriodo(periodo) {
@@ -73,7 +126,7 @@ export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, 
           quebra = true;
         }
       }
-      return { periodo: p.periodo, x, valor: modo === 'indice' ? (valor / valorBase) * 100 : valor, quebra };
+      return { periodo: p.periodo, texto: p.valor, x, valor: modo === 'indice' ? (valor / valorBase) * 100 : valor, quebra };
     });
     return [{ id: s.id, base: modo === 'indice' ? base : null, dados }];
   });
@@ -87,22 +140,47 @@ export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, 
   const yMin = Math.floor(minimo / passo) * passo;
   const yMax = Math.ceil(maximo / passo) * passo || passo;
   const campo = { esquerda: 48, direita: largura - 18, cima: 12, fundo: altura - 30 };
-  const x = (/** @type {number} */ n) => coordenada(xMax === xMin ? (campo.esquerda + campo.direita) / 2 : campo.esquerda + (n - xMin) / (xMax - xMin) * (campo.direita - campo.esquerda));
+  /* As posições em números, antes de arredondar: as zonas da leitura partem-se a meio entre dois pontos, e o meio
+     conta-se sobre as posições por arredondar (RP4-c). */
+  const xn = (/** @type {number} */ n) => xMax === xMin ? (campo.esquerda + campo.direita) / 2 : campo.esquerda + (n - xMin) / (xMax - xMin) * (campo.direita - campo.esquerda);
+  const x = (/** @type {number} */ n) => coordenada(xn(n));
   const y = (/** @type {number} */ n) => coordenada(campo.fundo - (n - yMin) / (yMax - yMin) * (campo.fundo - campo.cima));
+  const simbolo = simboloDasMarcas(series.map((s) => String(s.unit)), modo);
   const marcasY = Array.from({ length: Math.round((yMax - yMin) / passo) + 1 }, (_, i) => {
     const valor = Number((yMin + i * passo).toPrecision(12));
     const [inteiro, fracao] = String(valor).replace('-', '−').split('.');
-    const texto = inteiro.replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0') + (fracao ? `,${fracao}` : '');
+    /* O SÍMBOLO DA UNIDADE (RP4-c, o ponto 1): no texto da marca, depois do espaço inquebrável, e nunca no zero. */
+    const texto = inteiro.replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0') + (fracao ? `,${fracao}` : '') + (simbolo && valor !== 0 ? `\u00a0${simbolo}` : '');
     return { valor, x: coordenada(campo.esquerda - 8), y: y(valor), texto };
   });
   const primeiroAno = Math.floor(xMin / 12);
   const ultimoAno = Math.floor(xMax / 12);
-  const passoAno = Math.max(1, passoRedondo((ultimoAno - primeiroAno || 1) / 4));
   const anos = [primeiroAno];
-  for (let a = Math.ceil((primeiroAno + 1) / passoAno) * passoAno; a < ultimoAno; a += passoAno) {
-    // As pontas têm âncoras diferentes; reservar espaço para os anos por inteiro.
-    const posicao = Number(x(a * 12));
-    if (posicao - campo.esquerda >= 64 && campo.direita - posicao >= 64) anos.push(a);
+  if (ultimoAno - primeiroAno + 1 >= ANOS_PARA_AS_DECADAS) {
+    /* AS DÉCADAS (bloco RP4-c, 05.10.2026, o ponto 2 do mandato): numa série que cobre vinte anos ou mais, o eixo marca
+       os anos múltiplos de dez que couberem, da esquerda para a direita, cada um a 64 píxeis ou mais da ponta de fora
+       da etiqueta vizinha (`PIXEIS_ATE_A_VIZINHA`): a primeira marca começa no primeiro ponto, e a ponta de fora dela é
+       esse ponto; uma década e a última marca estão centradas, e a ponta de fora delas é a metade de um ano escrito
+       (`LARGURA_DE_UM_ANO`) para o lado de lá. A última marca fica sempre; a década que ficasse perto dela sai. */
+    const metade = LARGURA_DE_UM_ANO / 2;
+    const foraDaUltima = xn(ultimoAno * 12) + metade;
+    let foraDaVizinha = xn(xMin);
+    for (let a = (Math.floor(primeiroAno / 10) + 1) * 10; a < ultimoAno; a += 10) {
+      const posicao = xn(a * 12);
+      if (posicao - foraDaVizinha >= PIXEIS_ATE_A_VIZINHA && foraDaUltima - posicao >= PIXEIS_ATE_A_VIZINHA) {
+        anos.push(a);
+        foraDaVizinha = posicao - metade;
+      }
+    }
+  } else {
+    /* As séries curtas ficam com a regra de hoje (o RP4 e o RP4-m): os passos redondos, a 64 píxeis das pontas do
+       campo. */
+    const passoAno = Math.max(1, passoRedondo((ultimoAno - primeiroAno || 1) / 4));
+    for (let a = Math.ceil((primeiroAno + 1) / passoAno) * passoAno; a < ultimoAno; a += passoAno) {
+      // As pontas têm âncoras diferentes; reservar espaço para os anos por inteiro.
+      const posicao = Number(x(a * 12));
+      if (posicao - campo.esquerda >= PIXEIS_ATE_A_VIZINHA && campo.direita - posicao >= PIXEIS_ATE_A_VIZINHA) anos.push(a);
+    }
   }
   if (ultimoAno !== primeiroAno) anos.push(ultimoAno);
   /* O ÚLTIMO ANO ANCORA-SE EM JANEIRO, COMO OS INTERMÉDIOS (bloco RP4-m, 05.10.2026, o ponto 5 do mandato; o
@@ -111,8 +189,34 @@ export function serieDoPais(ids, modo = 'unidade', largura = 360, altura = 200, 
      primeiro mês do seu ano. Agora está em janeiro do último ano, centrada, como as intermédias; o primeiro ano
      continua no primeiro ponto, porque o janeiro dele pode estar antes do começo da série. */
   const marcasX = anos.map((ano, i) => ({ valor: ano, texto: String(ano), x: x(i === 0 ? xMin : ano * 12), y: coordenada(altura - 8), ancora: i === 0 ? 'start' : 'middle' }));
+  /* A LEITURA DE CADA PONTO (bloco RP4-c, 05.10.2026, o ponto 4 do mandato). Uma zona por ponto: a faixa vertical do
+     campo entre o meio do ponto anterior e o meio do seguinte (as pontas da primeira e da última são as do campo), e,
+     escondidos até o rato passar pela zona, o ponto marcado, a linha vertical do campo no x do ponto e a etiqueta, com
+     o valor do ponto e o período. A etiqueta vai para o canto de cima do lado de lá do ponto (à direita para um ponto
+     na metade esquerda, à esquerda para um da metade direita), para nunca tapar o sítio que se lê nem sair do desenho.
+     Só num desenho de uma série no modo da unidade: no modo indexado o valor publicado do ponto não é o que o eixo diz
+     (o eixo diz o índice, que o desenho calcula e não tem origem), e a figura indexada tem a tabela por baixo. */
+  const meio = (campo.esquerda + campo.direita) / 2;
+  const dadosDaLeitura = modo === 'unidade' && linhas.length === 1 ? linhas[0].dados : [];
+  const fronteiras = dadosDaLeitura.length
+    ? [String(campo.esquerda), ...dadosDaLeitura.slice(1).map((p, i) => coordenada((xn(dadosDaLeitura[i].x) + xn(p.x)) / 2)), String(campo.direita)]
+    : [];
+  const leituras = dadosDaLeitura.map((p, i) => {
+    const doLadoDeLa = xn(p.x) <= meio;
+    return {
+      periodo: p.periodo,
+      valor: p.texto,
+      zona: { x: fronteiras[i], y: String(campo.cima), largura: coordenada(Number(fronteiras[i + 1]) - Number(fronteiras[i])), altura: String(campo.fundo - campo.cima) },
+      mira: { x: x(p.x), y1: String(campo.cima), y2: String(campo.fundo) },
+      marca: { cx: x(p.x), cy: y(p.valor), r: '3' },
+      etiqueta: { x: coordenada(doLadoDeLa ? campo.direita : campo.esquerda + 6), y: String(campo.cima + 10), ancora: doLadoDeLa ? 'end' : 'start', dy: '14' },
+    };
+  });
   return {
-    modo, largura, altura, campo, marcasX, marcasY, excluidas,
+    modo, largura, altura, campo, marcasX, marcasY, excluidas, simbolo, leituras,
+    /* A LEGENDA DA UNIDADE (RP4-c, o ponto 1): um desenho no modo da unidade sem símbolo nas marcas diz a unidade por
+       extenso por baixo; o indexado tem a legenda da figura. */
+    legenda: modo === 'unidade' && simbolo === null,
     linhas: linhas.map((l) => {
       /** @type {string[][]} */
       const segmentos = [];
