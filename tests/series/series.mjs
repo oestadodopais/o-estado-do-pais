@@ -56,6 +56,7 @@ import { parse } from 'node-html-parser';
 
 import { lerSeriesDoPortao } from '../../scripts/series-do-portao.mjs';
 import { DOMINIO_DAS_MEDIDAS } from '../../src/data/dominios.mjs';
+import { FIGURAS_INDEXADAS } from '../../src/data/series-no-tempo.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
@@ -124,6 +125,18 @@ function cemVezesBaseSobreAtual(base, atual, casas) {
   /* 100 × (bn/10^bc) ÷ (an/10^ac) = 100 × bn × 10^ac ÷ (an × 10^bc); arredondado a `casas`. */
   const num = 100n * base.n * 10n ** BigInt(atual.casas) * 10n ** BigInt(casas);
   const den = atual.n * 10n ** BigInt(base.casas);
+  const q = num / den;
+  const r = num % den;
+  const meio = 2n * (r < 0n ? -r : r) >= (den < 0n ? -den : den);
+  const arredondado = meio ? q + (num < 0n !== den < 0n ? -1n : 1n) : q;
+  return { n: arredondado, casas };
+}
+
+/** round(nominal × base ÷ atual, casas), meio para longe do zero, sem vírgula flutuante (bloco RP4-m, o salário real). */
+function nominalVezesBaseSobreAtual(nominal, base, atual, casas) {
+  /* (wn/10^wc) × (bn/10^bc) ÷ (an/10^ac) = wn × bn × 10^ac ÷ (an × 10^(wc+bc)); arredondado a `casas`. */
+  const num = nominal.n * base.n * 10n ** BigInt(atual.casas) * 10n ** BigInt(casas);
+  const den = atual.n * 10n ** BigInt(nominal.casas + base.casas);
   const q = num / den;
   const r = num % den;
   const meio = 2n * (r < 0n ? -r : r) >= (den < 0n ? -den : den);
@@ -217,6 +230,40 @@ function celulasDoLivro(series, linhas) {
     } else {
       // S4 · a série derivada, refeita por esta célula
       contas.derivadas++;
+      /* A SEGUNDA FORMA (bloco RP4-m, 05.10.2026, o salário real): a nominal de cada período vezes o índice do
+         período de base, a dividir pelo índice do período, com as duas origens na lista e na mesma cadência. */
+      const d = /^round \( ([a-z0-9-]+)\[t\] \* ([a-z0-9-]+)\[(\d{4}(?:-\d{2}|-T[1-4]|-S[12])?)\] \/ ([a-z0-9-]+)\[t\] , (\d+) \)$/.exec(String(s.check ?? ''));
+      if (d) {
+        const [, idNominal, idIndice, basePeriodo, idIndice2, casasD] = d;
+        const origens = s.derived_from ?? [];
+        const nominal = series.get(idNominal);
+        const indice = series.get(idIndice);
+        if (idIndice !== idIndice2 || !origens.includes(idNominal) || !origens.includes(idIndice) || !nominal || !indice
+          || nominal.periodicidade !== indice.periodicidade || nominal.periodicidade !== s.periodicidade) {
+          erros.S4.push(`${quem}: a expressão «${s.check}» não é uma deflação de duas origens da mesma cadência que esta célula saiba refazer.`);
+          continue;
+        }
+        const daNominal = new Map((nominal.pontos ?? []).map((q) => [String(q.periodo), decimal(q.valor)]));
+        const doIndice = new Map((indice.pontos ?? []).map((q) => [String(q.periodo), decimal(q.valor)]));
+        const baseD = doIndice.get(basePeriodo);
+        if (!baseD) {
+          erros.S4.push(`${quem}: a origem ${idIndice} não tem o ponto de base ${basePeriodo}.`);
+          continue;
+        }
+        for (const q of pontos) {
+          const w = daNominal.get(String(q?.periodo));
+          const i = doIndice.get(String(q?.periodo));
+          const publicado = decimal(q?.valor);
+          const escritas = String(q?.valor ?? '').split(',')[1]?.length ?? 0;
+          if (!w || !i || !mesmoDecimal(nominalVezesBaseSobreAtual(w, baseD, i, Number(casasD)), publicado) || escritas !== Number(casasD)) {
+            erros.S4.push(`${quem}: o ponto ${q?.periodo} («${q?.valor}») não é a conta refeita.`);
+          } else {
+            contas.pontosRefeitos++;
+          }
+        }
+        if ((nominal.pontos ?? []).length !== pontos.length) erros.S4.push(`${quem}: a série tem ${pontos.length} ponto(s) e a nominal ${(nominal.pontos ?? []).length}.`);
+        continue;
+      }
       const m = /^round \( 100 \* ([a-z0-9-]+)\[(\d{4}-\d{2})\] \/ ([a-z0-9-]+)\[t\] , (\d+) \)$/.exec(String(s.check ?? ''));
       if (!m || m[1] !== m[3] || !(s.derived_from ?? []).includes(m[1])) {
         erros.S4.push(`${quem}: a expressão «${s.check}» não é uma conta que esta célula saiba refazer.`);
@@ -631,10 +678,59 @@ function celulaDosRecibos(s, htmlPorLingua) {
       }
     }
     pontosPorLingua[lang] = vistos.map(([k, v, , m]) => `${k}=${v}${m ? ` ${m}` : ''}`).join('|');
+    erros.push(...celulaDoIndiceEDaFigura(s, root, lang, quem));
   }
   if (pontosPorLingua.pt !== undefined && pontosPorLingua.en !== undefined && pontosPorLingua.pt !== pontosPorLingua.en) {
     erros.push(`check:series · ${s.id}: as duas edições do recibo não têm os mesmos pontos com os mesmos valores.`);
   }
+  return erros;
+}
+
+/* AS DUAS COISAS DO BLOCO RP4-m NO RECIBO (05.10.2026), lidas com leitura própria.
+   · O QUE UM ÍNDICE QUER DIZER (o ponto 5): uma série cuja unidade é «índice (base AAAA = 100)» tem uma frase só,
+     com o valor e o período do último ponto pelas suas marcas e a palavra do lado que esta célula escolhe pela
+     comparação com cem; uma série com outra unidade não tem a frase.
+   · A FIGURA INDEXADA (o ponto 4): uma série declarada em `FIGURAS_INDEXADAS` desenha as séries da lista, pela
+     ordem dela, no modo indexado, com o traço da série do recibo por último (é ele que a folha desenha a
+     tracejado); a legenda tem uma entrada por série, pela mesma ordem, só a última tracejada, e diz o período de
+     base da regra do RP4 pela marca da data; uma série não declarada não tem figura indexada. */
+const BASE_DA_FIGURA = { mensal: '2015-01', trimestral: '2015-T1', semestral: '2015-S1', anual: '2015' };
+function celulaDoIndiceEDaFigura(s, root, lang, quem) {
+  const erros = [];
+  const st = t(lang).livro.serieNoTempo;
+  const frases = root.querySelectorAll('[data-serie-indice]');
+  if (/^índice \(base \d{4} = 100\)$/.test(String(s.unit))) {
+    const ultimo = s.pontos[s.pontos.length - 1];
+    const v = decimal(ultimo.valor);
+    const cem = { n: 100n, casas: 0 };
+    const k = v ? Math.max(v.casas, 0) : 0;
+    const comparado = v ? (v.n > cem.n * 10n ** BigInt(k) ? 1 : v.n < cem.n * 10n ** BigInt(k) ? -1 : 0) : null;
+    const lado = comparado === 1 ? st.indiceAcima : comparado === -1 ? st.indiceAbaixo : st.indiceIgual;
+    const f = frases[0];
+    const ponto = f?.querySelector('[data-ponto]');
+    const data = f?.querySelector('[data-nonledger="data-da-linha"]');
+    if (frases.length !== 1 || f.getAttribute('data-serie-indice') !== s.id) erros.push(`${quem}: o recibo de um índice não tem uma frase do que o valor quer dizer, e tem de ter uma.`);
+    else if (ponto?.getAttribute('data-ponto') !== `${s.id}#${ultimo.periodo}` || semEspacos(texto(ponto)) !== semEspacos(ultimo.valor)) erros.push(`${quem}: a frase do índice não diz o valor do último ponto.`);
+    else if (texto(data) !== periodoNaPagina(ultimo.periodo, lang)) erros.push(`${quem}: a frase do índice não diz o período do último ponto.`);
+    else if (!texto(f).endsWith(lado.trim())) erros.push(`${quem}: a frase do índice diz o lado errado da base (esperava «${lado.trim()}»).`);
+  } else if (frases.length) erros.push(`${quem}: uma série que não é um índice tem a frase do índice.`);
+  const lista = /** @type {Record<string, string[]>} */ (FIGURAS_INDEXADAS)[s.id] ?? null;
+  const figuras = root.querySelectorAll('.serie-grafico-indexado');
+  if (!lista) {
+    if (figuras.length || root.querySelector('[data-serie-indexada]')) erros.push(`${quem}: uma série sem figura indexada declarada tem uma.`);
+    return erros;
+  }
+  const svg = figuras.length === 1 ? figuras[0].querySelector('svg[data-forma="serie-do-pais"]') : null;
+  const linhasDoDesenho = svg ? svg.querySelectorAll('polyline, circle').map((e) => e.getAttribute('data-serie-linha')) : [];
+  if (!svg || svg.getAttribute('data-series') !== lista.join(',') || svg.getAttribute('data-modo') !== 'indice') erros.push(`${quem}: a figura indexada não desenha as séries declaradas, pela ordem, no modo indexado.`);
+  else if (linhasDoDesenho[linhasDoDesenho.length - 1] !== s.id || svg.querySelectorAll('polyline').at(-1)?.getAttribute('data-serie-linha') !== s.id) erros.push(`${quem}: o último traço da figura indexada não é o da série do recibo.`);
+  const legenda = root.querySelector(`[data-serie-indexada="${s.id}"]`);
+  const entradas = legenda ? legenda.querySelectorAll('[data-serie-indexada-linha]') : [];
+  if (entradas.map((e) => e.getAttribute('data-serie-indexada-linha')).join(',') !== lista.join(',')) erros.push(`${quem}: a legenda da figura indexada não tem as séries declaradas, pela ordem.`);
+  else if (entradas.some((e, i) => e.querySelector('.serie-indexada-traco')?.classList.contains('serie-indexada-traco-tracejado') !== (i === lista.length - 1))) erros.push(`${quem}: a legenda tracejada não é só a da série do recibo.`);
+  const base = BASE_DA_FIGURA[s.periodicidade];
+  const dataDaBase = legenda?.querySelector('.serie-indexada-frase [data-nonledger="data-da-linha"]');
+  if (texto(dataDaBase) !== periodoNaPagina(base, lang)) erros.push(`${quem}: a legenda da figura indexada não diz o período de base ${base}.`);
   return erros;
 }
 
@@ -745,6 +841,21 @@ if (PROVA && noTempo.length) {
   }
   planta('S4', 'um ponto trocado na série derivada', 'não é a conta refeita', () =>
     celulasDoLivro(copiaDasSeries('serie-cem-euros-de-2015-01', (s) => { s.pontos[s.pontos.length - 1].valor = '77,168'; }), linhas).erros);
+  /* RP4-m: a segunda forma da S4, o salário real, com as suas plantas: um ponto trocado, e o índice mexido por baixo. */
+  if (series.has('serie-remuneracao-bruta-mensal-media-real')) {
+    planta('S4', 'um ponto trocado no salário real (RP4-m)', 'não é a conta refeita', () =>
+      celulasDoLivro(copiaDasSeries('serie-remuneracao-bruta-mensal-media-real', (x) => {
+        const ultimo = x.pontos[x.pontos.length - 1];
+        ultimo.valor = String(ultimo.valor).replace(/\d$/, (c) => String((Number(c) + 1) % 10));
+      }), linhas).erros);
+    planta('S4', 'o índice anual mexido por baixo do salário real (RP4-m)', 'não é a conta refeita', () =>
+      celulasDoLivro(copiaDasSeries('serie-ipc-indice-anual', (x) => {
+        const p2020 = x.pontos.find((q) => q.periodo === '2020');
+        /* O primeiro algarismo, e não o último: o salário arredonda-se ao euro, e a última casa do índice não o
+           muda. Uma planta que não muda o número não prova nada. */
+        p2020.valor = String(p2020.valor).replace(/^\d/, (c) => String((Number(c) + 1) % 10));
+      }), linhas).erros);
+  }
   planta('S4', 'a origem mexida por baixo da derivada', 'não é a conta refeita', () =>
     celulasDoLivro(copiaDasSeries('serie-ipc-indice', (s) => { s.pontos[s.pontos.length - 1].valor = '103,277'; }), linhas).erros);
   planta('S5', 'um cartão com outro valor do que o ponto', 'não são o ponto da série', () =>
@@ -753,6 +864,28 @@ if (PROVA && noTempo.length) {
     celulasDoLivro(copiaDasSeries('serie-ipc-variacao-homologa', (s) => { s.pontos.push({ periodo: '2026-09', valor: '3,40', excerto: 'x', bandeira: null }); }), linhas).erros);
   planta('S5', 'a comparação da União desfasada da sua série', 'o cartão está desfasado da série', () =>
     celulasDoLivro(copiaDasSeries('serie-ihpc-variacao-homologa-ue', (s) => { s.pontos.push({ periodo: '2026-09', valor: '3,40', excerto: 'x', bandeira: null }); }), linhas).erros);
+  /* RP4-m: as plantas da frase do índice e da figura indexada, sobre os recibos construídos. */
+  if (temDist && series.has('serie-ipc-indice') && series.has('serie-remuneracao-bruta-mensal-media-real')) {
+    const si = series.get('serie-ipc-indice');
+    const ipt = reciboEmDisco(si.id, 'pt');
+    const ien = reciboEmDisco(si.id, 'en');
+    const stp = t('pt').livro.serieNoTempo;
+    if (ipt && ien) {
+      planta('S6', 'a frase do índice com o lado da base trocado (RP4-m)', 'o lado errado da base', () => ({
+        S6: celulaDosRecibos(si, { pt: ipt.includes(stp.indiceAcima) ? ipt.replace(stp.indiceAcima, stp.indiceAbaixo) : ipt.replace(stp.indiceAbaixo, stp.indiceAcima), en: ien }) }));
+    }
+    const sr = series.get('serie-remuneracao-bruta-mensal-media-real');
+    const rpt = reciboEmDisco(sr.id, 'pt');
+    const ren = reciboEmDisco(sr.id, 'en');
+    if (rpt && ren) {
+      planta('S6', 'a legenda da figura indexada com as séries trocadas (RP4-m)', 'a legenda da figura indexada', () => {
+        const root = parse(rpt);
+        const itens = root.querySelectorAll('[data-serie-indexada-linha]');
+        if (itens.length === 2) { const a = itens[0].outerHTML; const b = itens[1].outerHTML; itens[0].replaceWith(b); itens[1].replaceWith(a); }
+        return { S6: celulaDosRecibos(sr, { pt: root.toString(), en: ren }) };
+      });
+    }
+  }
   if (temDist) {
     const id = 'serie-remuneracao-bruta-mensal-media';
     const s = series.get(id);

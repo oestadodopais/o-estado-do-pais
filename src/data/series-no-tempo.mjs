@@ -78,6 +78,19 @@ export const NOMES_DAS_SERIES = {
   'serie-ipc-combustiveis-variacao-homologa': { linha: 'ipc-combustiveis-variacao-homologa' },
   'serie-ipc-rendas-variacao-homologa': { linha: 'ipc-rendas-variacao-homologa' },
   'serie-ipc-energia-em-casa-variacao-homologa': { linha: 'ipc-energia-em-casa-variacao-homologa' },
+  /* AS TRÊS SÉRIES DO SALÁRIO REAL DO BLOCO RP4-m (o ponto 4 do mandato), sem cartão: a remuneração anual que a
+     fonte publica desde antes da base, o índice de preços em média do ano, e a derivada das duas. Os nomes falam como
+     o cartão da remuneração («Remuneração média antes de descontos»), e o ano de base diz-se na conta em palavras da
+     derivada, que tem origem. */
+  'serie-remuneracao-bruta-mensal-media-anual': {
+    nome: { pt: 'Remuneração média antes de descontos, por ano', en: 'Average pay before deductions, by year' },
+  },
+  'serie-ipc-indice-anual': {
+    nome: { pt: 'Índice de preços no consumidor, média do ano', en: 'Consumer price index, annual average' },
+  },
+  'serie-remuneracao-bruta-mensal-media-real': {
+    nome: { pt: 'Remuneração média antes de descontos, em termos reais', en: 'Average pay before deductions, in real terms' },
+  },
   /* O mês de base não entra no nome, que não tem algarismos: diz-se na conta em
      palavras e no primeiro período da série, que têm origem. */
   'serie-cem-euros-de-2015-01': {
@@ -86,6 +99,24 @@ export const NOMES_DAS_SERIES = {
       en: 'What one hundred euros buy, at the prices of the series’ first month',
     },
   },
+};
+
+/**
+ * AS FIGURAS INDEXADAS DOS RECIBOS DAS SÉRIES DERIVADAS (bloco RP4-m, 05.10.2026, o ponto 4 do mandato).
+ *
+ * O recibo de uma série derivada declarada aqui desenha, em vez dela sozinha, as séries da lista no mesmo eixo,
+ * indexadas a cem no período que contém o janeiro de base da regra do RP4 (a forma `serie-do-pais` no modo
+ * `indice`), pela ordem da lista, com uma legenda fora do desenho que diz qual é qual e o período de base. A última
+ * da lista é a série do recibo, e as outras são origens dela: como uma derivada não tem lacunas, o traço dela é o
+ * último do desenho, e a folha do recibo desenha-o a tracejado (`src/styles/serie-no-tempo.css`). A forma e a
+ * recomposição da F21 não mudam: o desenho continua a ter só os traços, as marcas e o título que a F21 recompõe. A
+ * regra da página da F21 mudou de forma para admitir o modo indexado só no recibo de uma série declarada aqui, com
+ * as séries da declaração (`regraDaPagina`, em `tests/formas/serie-do-pais.mjs`, com cinco plantas).
+ *
+ * @type {Record<string, string[]>}
+ */
+export const FIGURAS_INDEXADAS = {
+  'serie-remuneracao-bruta-mensal-media-real': ['serie-remuneracao-bruta-mensal-media-anual', 'serie-remuneracao-bruta-mensal-media-real'],
 };
 
 /**

@@ -68,6 +68,13 @@ export const UNIDADES = {
   '€ por ano': 'euros per year',
   '€ por pensionista por ano': 'euros per pensioner per year',
   'por mil pessoas em idade ativa': 'per thousand people of working age',
+  /* RP4-m (05.10.2026, o ponto 5 do mandato): as unidades das séries no tempo que os recibos das séries escrevem e
+     que ainda iam em português na edição inglesa. Dicionário: «índice» é «index», como na entrada «índice (Portugal =
+     100)» abaixo, e o parêntesis fica como está; a conta da série derivada dos cem euros já escreve em inglês «base
+     2025 = 100». E a unidade da série derivada do salário real (o ponto 4): «euros de 2015 por mês» é «2015 euros per
+     month», que é o inglês da própria conta em palavras da série («each year's pay counted in 2015 euros»). */
+  'índice (base 2025 = 100)': 'index (base 2025 = 100)',
+  'euros de 2015 por mês': '2015 euros per month',
   /* 645 linhas. A casa: `concelhos.mjs`, medida «divida», Euros → Euros. */
   euros: 'euros',
   /* 620 linhas. A casa: `concelhos.mjs`, medidas «populacao» e
