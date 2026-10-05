@@ -79,6 +79,11 @@ try {
     própria e compara-o com a declaração, e a A3 confere o lugar escrito e a
     porta de cada linha do registo. */
  prova('declaração do lugar contra a derivação','A1',()=>{},`import {LUGAR_DECLARADO_DAS_LINHAS} from './src/data/lugar-das-linhas.mjs';LUGAR_DECLARADO_DAS_LINHAS['estudos-evora-publicados']='portugal';`);
+ /* C2, 05.10.2026: a coordenada selada de Portugal passou a ser uma via da derivação. A primeira planta só morde
+    com esta frase pela via nova (sem ela, a linha não derivava lugar nenhum e a queixa era outra); a segunda prova
+    que o agregado da União continua a derivar a União, e que a tabela não o pode dar a Portugal. */
+ prova('linha de Portugal declarada da União','A1: pib-real-per-capita-2024 é declarado de «uniao-europeia» e deriva de «portugal»',()=>{},`import {LUGAR_DECLARADO_DAS_LINHAS} from './src/data/lugar-das-linhas.mjs';LUGAR_DECLARADO_DAS_LINHAS['pib-real-per-capita-2024']='uniao-europeia';`);
+ prova('agregado da União declarado de Portugal','A1: despesa-em-id-2024-ue é declarado de «portugal» e deriva de «uniao-europeia»',()=>{},`import {LUGAR_DECLARADO_DAS_LINHAS} from './src/data/lugar-das-linhas.mjs';LUGAR_DECLARADO_DAS_LINHAS['despesa-em-id-2024-ue']='portugal';`);
  prova('porta do registo apontada a outro lugar','A3',()=>html('correcoes/index.html',r=>r.querySelector('[data-mudou-registo] .registo-lugar').setAttribute('href','/municipios/lisboa')));
  /* As duas edições por confirmar são inglesas (os dois estudos da água), e por
     isso a planta do título vive na edição inglesa: é lá que a marca se rende. */
