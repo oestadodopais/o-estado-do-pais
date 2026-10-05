@@ -2260,7 +2260,7 @@ export const STRINGS = {
         lacunasFrase: 'A fonte não publica valor para estes períodos, e a série não os preenche.',
         lacunaSemRazao: 'a resposta da fonte não traz valor nem razão para este período',
         derivadaK: 'A conta',
-        derivadaFrase: 'Esta série é calculada pelo projeto, ponto a ponto, a partir de outra série do livro-razão, e a conta refaz-se em cada construção do sítio.',
+        derivadaFrase: 'Esta série é calculada pelo projeto, ponto a ponto, a partir de outra série do livro-razão.',
         origemK: 'A série de origem',
         expressaoK: 'A expressão',
         pedidosK: 'Os pedidos',
@@ -2276,6 +2276,19 @@ export const STRINGS = {
         correcoesK: 'Correções',
         semCorrecoes: 'Nenhum ponto desta série foi corrigido.',
         linhasK: 'As linhas que são pontos desta série',
+        /* RP4-m (05.10.2026): uma série derivada de mais de uma série (o salário real, ponto 4); a frase do que um
+           índice quer dizer em relação à base (ponto 5, achado 7 das leituras do RP4), com o período e o valor do
+           último ponto pelos seus componentes e a palavra do lado escolhida pela comparação com cem; e a legenda da
+           figura indexada, com o período de base pelo seu componente. Sem algarismos. */
+        derivadaFraseVarias: 'Esta série é calculada pelo projeto, ponto a ponto, a partir de outras séries do livro-razão.',
+        origensK: 'As séries de origem',
+        indiceAntes: 'Um índice compara cada período com o período de base que a unidade nomeia, onde vale cem; em ',
+        indiceValia: ' valia ',
+        indiceAcima: ', acima da base.',
+        indiceAbaixo: ', abaixo da base.',
+        indiceIgual: ', igual à base.',
+        indexadaAntes: 'As duas linhas valem cem em ',
+        indexadaDepois: ': o que cada uma sobe acima de cem é o que cresceu desde então.',
       },
       linha: {
         eyebrow: 'Linha do livro-razão',
@@ -4032,7 +4045,7 @@ export const STRINGS = {
         lacunasFrase: 'The source publishes no value for these periods, and the series does not fill them in.',
         lacunaSemRazao: 'the source’s response carries no value and no reason for this period',
         derivadaK: 'The calculation',
-        derivadaFrase: 'This series is calculated by the project, point by point, from another series in the ledger, and the calculation is redone at every build of the site.',
+        derivadaFrase: 'This series is calculated by the project, point by point, from another series in the ledger.',
         origemK: 'The source series',
         expressaoK: 'The expression',
         pedidosK: 'The requests',
@@ -4048,6 +4061,15 @@ export const STRINGS = {
         correcoesK: 'Corrections',
         semCorrecoes: 'No point in this series has been corrected.',
         linhasK: 'The rows that are points of this series',
+        derivadaFraseVarias: 'This series is calculated by the project, point by point, from other series in the ledger.',
+        origensK: 'The source series',
+        indiceAntes: 'An index compares each period with the base period its unit names, where it is one hundred; in ',
+        indiceValia: ' it was ',
+        indiceAcima: ', above the base.',
+        indiceAbaixo: ', below the base.',
+        indiceIgual: ', equal to the base.',
+        indexadaAntes: 'Both lines are one hundred in ',
+        indexadaDepois: ': how far each rises above one hundred is how much it has grown since then.',
       },
       linha: {
         eyebrow: 'Ledger row',

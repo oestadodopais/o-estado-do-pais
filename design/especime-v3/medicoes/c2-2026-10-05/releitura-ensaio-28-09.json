@@ -1,0 +1,1475 @@
+{
+  "_": "Escrito por indicators/out/c2-2026-10-05/reler.py. Não se edita à mão.",
+  "quando": "2026-10-05T11:32:25+00:00",
+  "modo": "de-corpos",
+  "cabeca_do_sitio": "3a253f7327de7c7dcc37e4dc49d7a08708b920d7",
+  "cabeca_do_motor": "38457b2723c47ea126984be6c5c1f778967e6847",
+  "cliente": "core.http.HttpClient.get",
+  "user_agent": "OEstadoDoPais/corredor",
+  "pedidos": [
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp10?format=JSON&lang=EN&geo=PT&unit=PC_GDP_3Y&partner=WRL_REST",
+      "quando": "2026-09-28T13:45:40+00:00",
+      "http": "200",
+      "bytes": 6650,
+      "segundos": 0.2,
+      "sha256": "7fe24c68ccf141c632aeae09633c0effdf2bfbfad814eecf93495c82897006ca",
+      "ficheiro": "corpos/7fe24c68ccf141c632aeae09633c0effdf2bfbfad814eecf93495c82897006ca.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP_3Y&partner=WRL_REST",
+      "quando": "2026-09-28T13:45:40+00:00",
+      "http": "200",
+      "bytes": 6514,
+      "segundos": 0.9,
+      "sha256": "66d5f7cf9b7607e488f16837b46a19f3da204e5aff24837b4c137a7a089bc98c",
+      "ficheiro": "corpos/66d5f7cf9b7607e488f16837b46a19f3da204e5aff24837b4c137a7a089bc98c.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp10?format=JSON&lang=EN&geo=EA20&unit=PC_GDP_3Y&partner=WRL_REST",
+      "quando": "2026-09-28T13:45:41+00:00",
+      "http": "200",
+      "bytes": 6501,
+      "segundos": 1.0,
+      "sha256": "f2b3e624a80b4e0f3ccd5f4572338cb10d1e351cab9cad8d3803248022f96cb0",
+      "ficheiro": "corpos/f2b3e624a80b4e0f3ccd5f4572338cb10d1e351cab9cad8d3803248022f96cb0.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsii10?format=JSON&lang=EN&geo=PT&unit=PC_GDP&partner=WRL_REST",
+      "quando": "2026-09-28T13:45:42+00:00",
+      "http": "200",
+      "bytes": 7335,
+      "segundos": 1.0,
+      "sha256": "9981c669e7be7fe4fbdfcc3f91f74ed7d9752162e2260974f717428f6d4496b0",
+      "ficheiro": "corpos/9981c669e7be7fe4fbdfcc3f91f74ed7d9752162e2260974f717428f6d4496b0.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsii10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP&partner=WRL_REST",
+      "quando": "2026-09-28T13:45:43+00:00",
+      "http": "200",
+      "bytes": 7141,
+      "segundos": 1.0,
+      "sha256": "05db115f7b6e1bff9586bfa7a6a810f8d83284ddfcdfc29c883a83ab50b3615d",
+      "ficheiro": "corpos/05db115f7b6e1bff9586bfa7a6a810f8d83284ddfcdfc29c883a83ab50b3615d.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsii10?format=JSON&lang=EN&geo=EA20&unit=PC_GDP&partner=WRL_REST",
+      "quando": "2026-09-28T13:45:44+00:00",
+      "http": "200",
+      "bytes": 7128,
+      "segundos": 1.0,
+      "sha256": "9885b4405a6486abd99166ad517016873a281f83b8bc9f948e464c8fd40d0176",
+      "ficheiro": "corpos/9885b4405a6486abd99166ad517016873a281f83b8bc9f948e464c8fd40d0176.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipser10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y",
+      "quando": "2026-09-28T13:45:45+00:00",
+      "http": "200",
+      "bytes": 4707,
+      "segundos": 1.0,
+      "sha256": "53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691",
+      "ficheiro": "corpos/53e4d18a5f2d8c7702ed9e2ece42860570e9d5250e3aea088cafa24f69c86691.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipser10?format=JSON&lang=EN&geo=EU27_2020&unit=PCH_3Y",
+      "quando": "2026-09-28T13:45:46+00:00",
+      "http": "200",
+      "bytes": 4759,
+      "segundos": 1.0,
+      "sha256": "48cfa2ac7265a92a96a05e9e320431295e3dedaa044cf009711a8e45909d2465",
+      "ficheiro": "corpos/48cfa2ac7265a92a96a05e9e320431295e3dedaa044cf009711a8e45909d2465.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp60?format=JSON&lang=EN&geo=PT&unit=PCH_OECD_EU_3Y&partner=WRL_REST",
+      "quando": "2026-09-28T13:45:47+00:00",
+      "http": "200",
+      "bytes": 6061,
+      "segundos": 1.0,
+      "sha256": "67e385755812e07e6e4a72d4c68be13b3fccfd7237a7afac79115aec79d44ba9",
+      "ficheiro": "corpos/67e385755812e07e6e4a72d4c68be13b3fccfd7237a7afac79115aec79d44ba9.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp60?format=JSON&lang=EN&geo=EU27_2020&unit=PCH_OECD_EU_3Y&partner=WRL_REST",
+      "quando": "2026-09-28T13:45:48+00:00",
+      "http": "200",
+      "bytes": 5992,
+      "segundos": 1.0,
+      "sha256": "812cc871920694b8331c56c87b14ac3b943e7cafec8fcdbe689e6599ec777850",
+      "ficheiro": "corpos/812cc871920694b8331c56c87b14ac3b943e7cafec8fcdbe689e6599ec777850.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp60?format=JSON&lang=EN&geo=EA20&unit=PCH_OECD_EU_3Y&partner=WRL_REST",
+      "quando": "2026-09-28T13:45:49+00:00",
+      "http": "200",
+      "bytes": 5979,
+      "segundos": 1.0,
+      "sha256": "32c88e43f8738849b753cd07fb3c4dd296eb71f889d6adabd19c9d37f7caa15a",
+      "ficheiro": "corpos/32c88e43f8738849b753cd07fb3c4dd296eb71f889d6adabd19c9d37f7caa15a.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y",
+      "quando": "2026-09-28T13:45:50+00:00",
+      "http": "200",
+      "bytes": 5760,
+      "segundos": 1.5,
+      "sha256": "513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3",
+      "ficheiro": "corpos/513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=EU27_2020&unit=PCH_3Y",
+      "quando": "2026-09-28T13:45:51+00:00",
+      "http": "200",
+      "bytes": 5726,
+      "segundos": 0.8,
+      "sha256": "07aa6f112f5f04c776f7cce1c04e7123b74d8c6621c8c3b157f4a4c5f9c29846",
+      "ficheiro": "corpos/07aa6f112f5f04c776f7cce1c04e7123b74d8c6621c8c3b157f4a4c5f9c29846.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "quando": "2026-09-28T13:45:52+00:00",
+      "http": "200",
+      "bytes": 6647,
+      "segundos": 0.7,
+      "sha256": "f855d74fb9fd741165b52dae03a853f0acb1442c319cf63ada7d7347f76ae82f",
+      "ficheiro": "corpos/f855d74fb9fd741165b52dae03a853f0acb1442c319cf63ada7d7347f76ae82f.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsgo10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "quando": "2026-09-28T13:45:53+00:00",
+      "http": "200",
+      "bytes": 6646,
+      "segundos": 1.0,
+      "sha256": "f1163e2ce6c6f1f97b771a1f969e1463d86cc366c7c18f06bb8e968616b6e69e",
+      "ficheiro": "corpos/f1163e2ce6c6f1f97b771a1f969e1463d86cc366c7c18f06bb8e968616b6e69e.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "quando": "2026-09-28T13:45:54+00:00",
+      "http": "200",
+      "bytes": 6546,
+      "segundos": 0.9,
+      "sha256": "d5245a8e9fa34652124a424a5079d277f70e15ad3736896dd1265edabea65e04",
+      "ficheiro": "corpos/d5245a8e9fa34652124a424a5079d277f70e15ad3736896dd1265edabea65e04.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd22?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "quando": "2026-09-28T13:45:55+00:00",
+      "http": "200",
+      "bytes": 6632,
+      "segundos": 1.0,
+      "sha256": "bcf461f165903ae0aabd2bc420574710eb2606fc1152553020b85702c2d930f1",
+      "ficheiro": "corpos/bcf461f165903ae0aabd2bc420574710eb2606fc1152553020b85702c2d930f1.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "quando": "2026-09-28T13:45:56+00:00",
+      "http": "200",
+      "bytes": 6440,
+      "segundos": 1.0,
+      "sha256": "ebb2f5a996ea98f421f47bf3dc27cea2aa19a5bd10e7062bc835d1138b6949fc",
+      "ficheiro": "corpos/ebb2f5a996ea98f421f47bf3dc27cea2aa19a5bd10e7062bc835d1138b6949fc.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspd30?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "quando": "2026-09-28T13:45:57+00:00",
+      "http": "200",
+      "bytes": 6542,
+      "segundos": 1.0,
+      "sha256": "892e93eece1feb99aeafa8b10d273a107eb2339f3aa709b3cdc1af252cedd30a",
+      "ficheiro": "corpos/892e93eece1feb99aeafa8b10d273a107eb2339f3aa709b3cdc1af252cedd30a.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc40?format=JSON&lang=EN&geo=PT&unit=PC_LE",
+      "quando": "2026-09-28T13:45:58+00:00",
+      "http": "200",
+      "bytes": 6538,
+      "segundos": 1.0,
+      "sha256": "ec75305526e384a5e1d199bc9d93cf1ea88c2505b6fe3921b16d6264f172c06a",
+      "ficheiro": "corpos/ec75305526e384a5e1d199bc9d93cf1ea88c2505b6fe3921b16d6264f172c06a.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc40?format=JSON&lang=EN&geo=EU27_2020&unit=PC_LE",
+      "quando": "2026-09-28T13:45:59+00:00",
+      "http": "200",
+      "bytes": 6720,
+      "segundos": 1.0,
+      "sha256": "cb331f4d9525b526dba0d96a39e2074b6a38f2ea3eb6dd3d9f632f70d9aa3795",
+      "ficheiro": "corpos/cb331f4d9525b526dba0d96a39e2074b6a38f2ea3eb6dd3d9f632f70d9aa3795.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc30?format=JSON&lang=EN&geo=PT&unit=PC_LE",
+      "quando": "2026-09-28T13:46:00+00:00",
+      "http": "200",
+      "bytes": 6458,
+      "segundos": 1.0,
+      "sha256": "76cbe32ae4e2f246489afa0ff62d5d0bbef21077bf691bbda4ed6450013843c5",
+      "ficheiro": "corpos/76cbe32ae4e2f246489afa0ff62d5d0bbef21077bf691bbda4ed6450013843c5.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc30?format=JSON&lang=EN&geo=EU27_2020&unit=PC_LE",
+      "quando": "2026-09-28T13:46:01+00:00",
+      "http": "200",
+      "bytes": 6495,
+      "segundos": 1.4,
+      "sha256": "43ed5fc06918e7f98697a3cea082a4c534daabd32d95fa485557539ded3c4dc5",
+      "ficheiro": "corpos/43ed5fc06918e7f98697a3cea082a4c534daabd32d95fa485557539ded3c4dc5.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipspc30?format=JSON&lang=EN&geo=EA20&unit=PC_LE",
+      "quando": "2026-09-28T13:46:02+00:00",
+      "http": "200",
+      "bytes": 6483,
+      "segundos": 0.9,
+      "sha256": "ec45ef99ebb406d507b77f49e48d7de9cc6cab2ceca2f6db383e5509bc5f705b",
+      "ficheiro": "corpos/ec45ef99ebb406d507b77f49e48d7de9cc6cab2ceca2f6db383e5509bc5f705b.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho20?format=JSON&lang=EN&geo=PT&unit=RCH_A_AVG",
+      "quando": "2026-09-28T13:46:03+00:00",
+      "http": "200",
+      "bytes": 3854,
+      "segundos": 0.8,
+      "sha256": "2f0fe0af7ba5b7144d5fb2018389d942ceae377a583502805a0f9368eea2acbe",
+      "ficheiro": "corpos/2f0fe0af7ba5b7144d5fb2018389d942ceae377a583502805a0f9368eea2acbe.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho20?format=JSON&lang=EN&geo=EU27_2020&unit=RCH_A_AVG",
+      "quando": "2026-09-28T13:46:04+00:00",
+      "http": "200",
+      "bytes": 3755,
+      "segundos": 1.0,
+      "sha256": "4018132bf99e91314a42c17b9331eb513d292d797db66c2c963468a09ebcbe51",
+      "ficheiro": "corpos/4018132bf99e91314a42c17b9331eb513d292d797db66c2c963468a09ebcbe51.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsun20?format=JSON&lang=EN&geo=PT&age=Y15-74",
+      "quando": "2026-09-28T13:46:05+00:00",
+      "http": "200",
+      "bytes": 5470,
+      "segundos": 1.0,
+      "sha256": "6f2112b6ef0177bec5ec3922267b64680571f9646a235e9726f3869f9e4bc28f",
+      "ficheiro": "corpos/6f2112b6ef0177bec5ec3922267b64680571f9646a235e9726f3869f9e4bc28f.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsun20?format=JSON&lang=EN&geo=EU27_2020&age=Y15-74",
+      "quando": "2026-09-28T13:46:06+00:00",
+      "http": "200",
+      "bytes": 5515,
+      "segundos": 1.0,
+      "sha256": "6be289537602817a6b6dfd21e7e54c32c4f015e4a040465431daa0e0cb74760e",
+      "ficheiro": "corpos/6be289537602817a6b6dfd21e7e54c32c4f015e4a040465431daa0e0cb74760e.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm60?format=JSON&lang=EN&geo=PT&unit=PPCH_3Y",
+      "quando": "2026-09-28T13:46:07+00:00",
+      "http": "200",
+      "bytes": 5771,
+      "segundos": 1.0,
+      "sha256": "3cadaa8dcec031d42b6c88a61b411458cc61efc27cfca8216c8ab598c30a64d6",
+      "ficheiro": "corpos/3cadaa8dcec031d42b6c88a61b411458cc61efc27cfca8216c8ab598c30a64d6.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm60?format=JSON&lang=EN&geo=EU27_2020&unit=PPCH_3Y",
+      "quando": "2026-09-28T13:46:08+00:00",
+      "http": "200",
+      "bytes": 5816,
+      "segundos": 1.0,
+      "sha256": "395675752504ad9a2f7160dcf2845889b63668341825b8601406e78b125cd264",
+      "ficheiro": "corpos/395675752504ad9a2f7160dcf2845889b63668341825b8601406e78b125cd264.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsst10?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "quando": "2026-09-28T13:46:09+00:00",
+      "http": "200",
+      "bytes": 5431,
+      "segundos": 1.0,
+      "sha256": "2ae955047f653678e0f3a64f75da5cb55643137165277b141d991a40ea21d55e",
+      "ficheiro": "corpos/2ae955047f653678e0f3a64f75da5cb55643137165277b141d991a40ea21d55e.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsst10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "quando": "2026-09-28T13:46:10+00:00",
+      "http": "200",
+      "bytes": 5638,
+      "segundos": 1.0,
+      "sha256": "c7f324890141a58ba8ba4adcb979f8ef01b4ae12311a96ade4e4d8c09f1ae046",
+      "ficheiro": "corpos/c7f324890141a58ba8ba4adcb979f8ef01b4ae12311a96ade4e4d8c09f1ae046.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=PT&unit=PC",
+      "quando": "2026-09-28T13:46:11+00:00",
+      "http": "200",
+      "bytes": 5784,
+      "segundos": 1.0,
+      "sha256": "72d44cd6f15295f80f3495efe152fc42b574530789f8511292fc8524edc34dbc",
+      "ficheiro": "corpos/72d44cd6f15295f80f3495efe152fc42b574530789f8511292fc8524edc34dbc.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslc10?format=JSON&lang=EN&geo=EU27_2020&unit=PC",
+      "quando": "2026-09-28T13:46:12+00:00",
+      "http": "200",
+      "bytes": 5831,
+      "segundos": 1.0,
+      "sha256": "891b61075ccc80161d6d8c72b4365ff550bf1dc59bbef54ff291d04739bf9f36",
+      "ficheiro": "corpos/891b61075ccc80161d6d8c72b4365ff550bf1dc59bbef54ff291d04739bf9f36.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=PT&unit=PC_POP",
+      "quando": "2026-09-28T13:46:13+00:00",
+      "http": "200",
+      "bytes": 5642,
+      "segundos": 1.0,
+      "sha256": "de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef",
+      "ficheiro": "corpos/de9b533f6c268337ccae416ce7037ecf2ac92b6b383e4caef3b3e7d3d352c6ef.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm90?format=JSON&lang=EN&geo=EU27_2020&unit=PC_POP",
+      "quando": "2026-09-28T13:46:14+00:00",
+      "http": "200",
+      "bytes": 5696,
+      "segundos": 1.0,
+      "sha256": "c298c89280f0731290ea56ed7113c4225505050d689b71c112789b294b690434",
+      "ficheiro": "corpos/c298c89280f0731290ea56ed7113c4225505050d689b71c112789b294b690434.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "quando": "2026-09-28T13:46:15+00:00",
+      "http": "200",
+      "bytes": 5876,
+      "segundos": 1.3,
+      "sha256": "441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff",
+      "ficheiro": "corpos/441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "quando": "2026-09-28T13:46:16+00:00",
+      "http": "200",
+      "bytes": 5855,
+      "segundos": 1.0,
+      "sha256": "2c13c47f6d8912947be17cf554d38452d66952c0be4ebe35078a2a5c60f809e1",
+      "ficheiro": "corpos/2c13c47f6d8912947be17cf554d38452d66952c0be4ebe35078a2a5c60f809e1.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+      "quando": "2026-09-28T13:46:17+00:00",
+      "http": "200",
+      "bytes": 5750,
+      "segundos": 0.7,
+      "sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+      "ficheiro": "corpos/922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=EU27_2020",
+      "quando": "2026-09-28T13:46:18+00:00",
+      "http": "200",
+      "bytes": 5788,
+      "segundos": 1.0,
+      "sha256": "f6cc333099caf5cb5cdbaee56a5d5153f3470e7fc1334d07de745292b1b52178",
+      "ficheiro": "corpos/f6cc333099caf5cb5cdbaee56a5d5153f3470e7fc1334d07de745292b1b52178.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbd10?format=JSON&lang=EN&geo=PT",
+      "quando": "2026-09-28T13:46:19+00:00",
+      "http": "200",
+      "bytes": 4006,
+      "segundos": 1.0,
+      "sha256": "c5c23ff481d491d5a533d2927512b81df6687d3fc7dace72ec0d4e77b9a29573",
+      "ficheiro": "corpos/c5c23ff481d491d5a533d2927512b81df6687d3fc7dace72ec0d4e77b9a29573.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbd10?format=JSON&lang=EN&geo=EU27_2020",
+      "quando": "2026-09-28T13:46:20+00:00",
+      "http": "200",
+      "bytes": 3747,
+      "segundos": 1.0,
+      "sha256": "6d807f89d986cba3e7cf84538a1b68fc8ceb3f7a54bd3a81f43e5aa9b37c4b1c",
+      "ficheiro": "corpos/6d807f89d986cba3e7cf84538a1b68fc8ceb3f7a54bd3a81f43e5aa9b37c4b1c.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbd10?format=JSON&lang=EN&geo=EA20",
+      "quando": "2026-09-28T13:46:21+00:00",
+      "http": "200",
+      "bytes": 3747,
+      "segundos": 1.0,
+      "sha256": "6d807f89d986cba3e7cf84538a1b68fc8ceb3f7a54bd3a81f43e5aa9b37c4b1c",
+      "ficheiro": "corpos/6d807f89d986cba3e7cf84538a1b68fc8ceb3f7a54bd3a81f43e5aa9b37c4b1c.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho50?format=JSON&lang=EN&geo=PT",
+      "quando": "2026-09-28T13:46:22+00:00",
+      "http": "200",
+      "bytes": 5891,
+      "segundos": 1.5,
+      "sha256": "9c65a2ccefd0ab96edbff058a23d1ce8f57c36f5f1d853b7228a44063e143a42",
+      "ficheiro": "corpos/9c65a2ccefd0ab96edbff058a23d1ce8f57c36f5f1d853b7228a44063e143a42.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsho50?format=JSON&lang=EN&geo=EU27_2020",
+      "quando": "2026-09-28T13:46:23+00:00",
+      "http": "200",
+      "bytes": 5917,
+      "segundos": 0.8,
+      "sha256": "ea5b943c0f8d25bc158c2df4e8fbf0dd3c8070eb723b9f484b3d5d3bceaef8d9",
+      "ficheiro": "corpos/ea5b943c0f8d25bc158c2df4e8fbf0dd3c8070eb723b9f484b3d5d3bceaef8d9.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/edat_lfse_14?format=JSON&lang=EN&geo=PT&sex=T&wstatus=POP",
+      "quando": "2026-09-28T13:46:24+00:00",
+      "http": "200",
+      "bytes": 3993,
+      "segundos": 0.8,
+      "sha256": "eee6ea0243db15a29fb43cb53301413877f2ba781d35303052b586d0eefa7295",
+      "ficheiro": "corpos/eee6ea0243db15a29fb43cb53301413877f2ba781d35303052b586d0eefa7295.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/edat_lfse_14?format=JSON&lang=EN&geo=EU27_2020&sex=T&wstatus=POP",
+      "quando": "2026-09-28T13:46:25+00:00",
+      "http": "200",
+      "bytes": 3953,
+      "segundos": 1.0,
+      "sha256": "ffd6a1e179dfb3c7f2428d4f4ba0a49d3048a1abd9bd5b8412c88a7687f377f6",
+      "ficheiro": "corpos/ffd6a1e179dfb3c7f2428d4f4ba0a49d3048a1abd9bd5b8412c88a7687f377f6.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsi_emp_a?format=JSON&lang=EN&geo=PT&indic_em=EMP_LFS&sex=T&age=Y20-64&unit=PC_POP",
+      "quando": "2026-09-28T13:46:26+00:00",
+      "http": "200",
+      "bytes": 4109,
+      "segundos": 1.0,
+      "sha256": "f86eb85fdc6f6f972afd7c05ac78b5fab1f69d0d3860d2b823d0977f34d38ab6",
+      "ficheiro": "corpos/f86eb85fdc6f6f972afd7c05ac78b5fab1f69d0d3860d2b823d0977f34d38ab6.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfsi_emp_a?format=JSON&lang=EN&geo=EU27_2020&indic_em=EMP_LFS&sex=T&age=Y20-64&unit=PC_POP",
+      "quando": "2026-09-28T13:46:27+00:00",
+      "http": "200",
+      "bytes": 4156,
+      "segundos": 1.0,
+      "sha256": "2f136724e11943ee664c34674174e6a2aaa294c55765d259239095cbf2a16ece",
+      "ficheiro": "corpos/2f136724e11943ee664c34674174e6a2aaa294c55765d259239095cbf2a16ece.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/une_rt_a?format=JSON&lang=EN&geo=PT&age=Y15-74&sex=T&unit=PC_ACT",
+      "quando": "2026-09-28T13:46:28+00:00",
+      "http": "200",
+      "bytes": 3910,
+      "segundos": 1.1,
+      "sha256": "06c3706066bb48e0003a784c5e3c97e82c3aefbbee1b17942d458cd3e255cb23",
+      "ficheiro": "corpos/06c3706066bb48e0003a784c5e3c97e82c3aefbbee1b17942d458cd3e255cb23.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/une_rt_a?format=JSON&lang=EN&geo=EU27_2020&age=Y15-74&sex=T&unit=PC_ACT",
+      "quando": "2026-09-28T13:46:29+00:00",
+      "http": "200",
+      "bytes": 3955,
+      "segundos": 0.8,
+      "sha256": "b952f5f274b840607b27b7e918a80f3f1276487795ae83942247994be71adc33",
+      "ficheiro": "corpos/b952f5f274b840607b27b7e918a80f3f1276487795ae83942247994be71adc33.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=PT&sex=T",
+      "quando": "2026-09-28T13:46:30+00:00",
+      "http": "200",
+      "bytes": 5837,
+      "segundos": 1.0,
+      "sha256": "9725aedecbf8e88ebb529e092ca78be2369f3d138eec2c0f2fa251a109ac221b",
+      "ficheiro": "corpos/9725aedecbf8e88ebb529e092ca78be2369f3d138eec2c0f2fa251a109ac221b.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem130?format=JSON&lang=EN&geo=EU27_2020&sex=T",
+      "quando": "2026-09-28T13:46:31+00:00",
+      "http": "200",
+      "bytes": 5884,
+      "segundos": 1.0,
+      "sha256": "e4417ea28ef535c38e29a2c0d8a2fbdbdf3dc6b9db80b59ff0d56f204733ca97",
+      "ficheiro": "corpos/e4417ea28ef535c38e29a2c0d8a2fbdbdf3dc6b9db80b59ff0d56f204733ca97.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem060?format=JSON&lang=EN&geo=PT",
+      "quando": "2026-09-28T13:46:32+00:00",
+      "http": "200",
+      "bytes": 5075,
+      "segundos": 1.0,
+      "sha256": "8a70357f6d32b524d09ad24041a9f38f13de052d2328114e5b6a5620c8c39df2",
+      "ficheiro": "corpos/8a70357f6d32b524d09ad24041a9f38f13de052d2328114e5b6a5620c8c39df2.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tesem060?format=JSON&lang=EN&geo=EU27_2020",
+      "quando": "2026-09-28T13:46:33+00:00",
+      "http": "200",
+      "bytes": 5137,
+      "segundos": 1.0,
+      "sha256": "1ee01e285540d5ea5fb425ce35776cef24fdd64d17e0f3e55ac477ac13cbd245",
+      "ficheiro": "corpos/1ee01e285540d5ea5fb425ce35776cef24fdd64d17e0f3e55ac477ac13cbd245.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=PT&sex=T",
+      "quando": "2026-09-28T13:46:34+00:00",
+      "http": "200",
+      "bytes": 5039,
+      "segundos": 1.0,
+      "sha256": "e9900d35e5cdaf0155957611244681d686f78d7a07f71eb25379179fd78d0a3f",
+      "ficheiro": "corpos/e9900d35e5cdaf0155957611244681d686f78d7a07f71eb25379179fd78d0a3f.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tessi180?format=JSON&lang=EN&geo=EU27_2020&sex=T",
+      "quando": "2026-09-28T13:46:35+00:00",
+      "http": "200",
+      "bytes": 5142,
+      "segundos": 1.1,
+      "sha256": "d5e25837bfff20a0a9915ce285dadf5fdaa430476e11fb4f879dac3e6666bfce",
+      "ficheiro": "corpos/d5e25837bfff20a0a9915ce285dadf5fdaa430476e11fb4f879dac3e6666bfce.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=PT&sex=T",
+      "quando": "2026-09-28T13:46:36+00:00",
+      "http": "200",
+      "bytes": 4770,
+      "segundos": 0.9,
+      "sha256": "5a4e74edd1ca10b4a5557c97ac44af06abe1e7e604f842ccee6c5b553c496c42",
+      "ficheiro": "corpos/5a4e74edd1ca10b4a5557c97ac44af06abe1e7e604f842ccee6c5b553c496c42.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm140?format=JSON&lang=EN&geo=EU27_2020&sex=T",
+      "quando": "2026-09-28T13:46:37+00:00",
+      "http": "200",
+      "bytes": 4909,
+      "segundos": 1.0,
+      "sha256": "ec7f7572980b8eff5ff6b5890e172df3be0a2460595ff0eb7be27604c33d8e6a",
+      "ficheiro": "corpos/ec7f7572980b8eff5ff6b5890e172df3be0a2460595ff0eb7be27604c33d8e6a.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tepsr_sp210?format=JSON&lang=EN&geo=PT",
+      "quando": "2026-09-28T13:46:38+00:00",
+      "http": "200",
+      "bytes": 4999,
+      "segundos": 1.2,
+      "sha256": "01799dc5028090371687257eaa6ade304ab439bd13aec9831ca1b7b882641fe9",
+      "ficheiro": "corpos/01799dc5028090371687257eaa6ade304ab439bd13aec9831ca1b7b882641fe9.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tepsr_sp210?format=JSON&lang=EN&geo=EU27_2020",
+      "quando": "2026-09-28T13:46:39+00:00",
+      "http": "200",
+      "bytes": 5102,
+      "segundos": 0.8,
+      "sha256": "07ddd2788ebf14a6deb0792efbd264af0c9509878f66f29bdce66171a46be799",
+      "ficheiro": "corpos/07ddd2788ebf14a6deb0792efbd264af0c9509878f66f29bdce66171a46be799.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tepsr_sp410?format=JSON&lang=EN&geo=PT&ind_type=IND_TOTAL",
+      "quando": "2026-09-28T13:46:40+00:00",
+      "http": "200",
+      "bytes": 5448,
+      "segundos": 1.0,
+      "sha256": "28a148a41e1f6a0a26bf4e59ee259c0b057e9e54d2c60c2a468f74536ce406af",
+      "ficheiro": "corpos/28a148a41e1f6a0a26bf4e59ee259c0b057e9e54d2c60c2a468f74536ce406af.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tepsr_sp410?format=JSON&lang=EN&geo=EU27_2020&ind_type=IND_TOTAL",
+      "quando": "2026-09-28T13:46:41+00:00",
+      "http": "200",
+      "bytes": 5495,
+      "segundos": 1.0,
+      "sha256": "d65ce548150b2bf1aaf8179e5bafe868705a304c27337c6759286646dc29ef75",
+      "ficheiro": "corpos/d65ce548150b2bf1aaf8179e5bafe868705a304c27337c6759286646dc29ef75.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm110?format=JSON&lang=EN&geo=PT&sex=T",
+      "quando": "2026-09-28T13:46:42+00:00",
+      "http": "200",
+      "bytes": 5861,
+      "segundos": 1.0,
+      "sha256": "6d4537e42271fab20126215b95395f9083c8166b25fc8a02c2ca2193cb193d51",
+      "ficheiro": "corpos/6d4537e42271fab20126215b95395f9083c8166b25fc8a02c2ca2193cb193d51.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tespm110?format=JSON&lang=EN&geo=EU27_2020&sex=T",
+      "quando": "2026-09-28T13:46:43+00:00",
+      "http": "200",
+      "bytes": 5895,
+      "segundos": 0.9,
+      "sha256": "a8c7259b37dd8ecbc115948eaf3fd1077419a4afabb02ec2ec70d13a64380270",
+      "ficheiro": "corpos/a8c7259b37dd8ecbc115948eaf3fd1077419a4afabb02ec2ec70d13a64380270.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sdg_16_40?format=JSON&lang=EN&geo=PT&lev_perc=VG_FG",
+      "quando": "2026-09-28T13:46:44+00:00",
+      "http": "200",
+      "bytes": 5195,
+      "segundos": 1.0,
+      "sha256": "3dafd91342d2d2a39d10a6a3e02e6d2a658413dccea054f9ba3bdb204dfe3dfd",
+      "ficheiro": "corpos/3dafd91342d2d2a39d10a6a3e02e6d2a658413dccea054f9ba3bdb204dfe3dfd.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sdg_16_40?format=JSON&lang=EN&geo=EU27_2020&lev_perc=VG_FG",
+      "quando": "2026-09-28T13:46:45+00:00",
+      "http": "200",
+      "bytes": 5365,
+      "segundos": 0.9,
+      "sha256": "16f446e45bcd4b8b2be7e14ff2226e2b379b6b983cb14c5364498961754b9470",
+      "ficheiro": "corpos/16f446e45bcd4b8b2be7e14ff2226e2b379b6b983cb14c5364498961754b9470.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sdg_16_50?format=JSON&lang=EN&geo=PT",
+      "quando": "2026-09-28T13:46:46+00:00",
+      "http": "200",
+      "bytes": 3630,
+      "segundos": 1.0,
+      "sha256": "3e2a4afab60a0359b052c4f47cb46b2267b1b584d11b4ae5cb1162dfce4da9ed",
+      "ficheiro": "corpos/3e2a4afab60a0359b052c4f47cb46b2267b1b584d11b4ae5cb1162dfce4da9ed.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sdg_16_50?format=JSON&lang=EN&geo=EU27_2020",
+      "quando": "2026-09-28T13:46:47+00:00",
+      "http": "200",
+      "bytes": 3677,
+      "segundos": 1.0,
+      "sha256": "9c5f0b3d921753e399c788896bc68d166163712ea275b122392aa87612316849",
+      "ficheiro": "corpos/9c5f0b3d921753e399c788896bc68d166163712ea275b122392aa87612316849.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    },
+    {
+      "url": "https://economy-finance.ec.europa.eu/economic-governance-framework/macroeconomic-imbalance-procedure/scoreboard_en",
+      "quando": "2026-09-28T13:46:48+00:00",
+      "http": "200",
+      "bytes": 74459,
+      "segundos": 0.2,
+      "sha256": "3f018165f5b4c808b86ed8c9f6a9382f8b9016690a74b80f4235c9dfbde34def",
+      "ficheiro": "corpos/3f018165f5b4c808b86ed8c9f6a9382f8b9016690a74b80f4235c9dfbde34def.txt",
+      "cliente": "core.http.HttpClient.get",
+      "user_agent": "OEstadoDoPais/corredor"
+    }
+  ],
+  "linhas": [
+    {
+      "id": "custo-unitario-do-trabalho-2024",
+      "gerador_da_linha": "enquadramento.py",
+      "linha_sha256_na_cabeca": "c812995267940b40b9a9ed2eb22a9faa3679bf8a1e93152ecddcac79f4ea68ba",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y",
+      "pedido": {
+        "quando": "2026-09-28T13:45:50+00:00",
+        "http": "200",
+        "bytes": 5760,
+        "segundos": 1.5,
+        "sha256": "513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3",
+        "ficheiro": "corpos/513de7dd27c8cc055287a3eba9d8af81b5d3561c5da9e526e914efbff6a059b3.txt",
+        "cliente": "core.http.HttpClient.get",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "periodo": "2024",
+      "coordenadas": {
+        "freq": "A",
+        "na_item": "NULC_HW",
+        "unit": "PCH_3Y",
+        "geo": "PT"
+      },
+      "posicao_da_celula": 29,
+      "rotulo_do_conjunto": "Nominal unit labour cost per hour worked",
+      "valor_antigo": "17,7",
+      "literal_antigo": "17.7",
+      "valor_novo": "17,7",
+      "literal_novo": "17.7",
+      "pt_number_do_valor_novo": "17,7",
+      "valor_mudou": false,
+      "bandeira_antiga": "p",
+      "bandeira_nova": "p",
+      "excerto_antigo": "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.7 p",
+      "excerto_recomposto_com_o_literal_antigo": "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.7 p",
+      "dimensoes_que_o_excerto_escreve": [],
+      "dimensoes_fixadas_do_corpo_fora_do_excerto": [
+        "National accounts indicator (ESA 2010): Nominal unit labour cost based on hours worked"
+      ],
+      "guarda_do_excerto": true,
+      "excerto_novo": "Nominal unit labour cost per hour worked — Percentage change (t/t-3) — Portugal — 2024: 17.7 p",
+      "acesso_antigo": "2026-09-15",
+      "carimbo_novo": "2026-09-28T11:00:00+0200",
+      "carimbo_anterior": null,
+      "corpo_anterior": null,
+      "corpos_alojados_lidos": [],
+      "corpos_posteriores_ao_anterior_com_outro_valor": [],
+      "painel_na_cabeca_do_motor": {
+        "vintages_ultima_entrada": {
+          "date": "2026-09-28",
+          "updated": "2026-09-21T23:00:00+0200",
+          "value": 17.7,
+          "observado_por": "Mac"
+        },
+        "baseline": {
+          "period": "2024",
+          "value": 17.7,
+          "updated": "2026-09-21T23:00:00+0200"
+        }
+      },
+      "verificacao_divergente_no_sitio": {
+        "date": "2026-10-05",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipslm10?format=JSON&lang=EN&geo=PT&unit=PCH_3Y",
+        "result": "diverge",
+        "by": "painel-semanal",
+        "found": "17.9"
+      },
+      "found_igual_ao_literal_novo": false
+    },
+    {
+      "id": "despesa-em-id-2024-ue",
+      "gerador_da_linha": "enquadramento.py",
+      "linha_sha256_na_cabeca": "72fb6b330af492cbd571b1d7e2730479d320d32b34c8b9351ae926c18666009b",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsst10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+      "pedido": {
+        "quando": "2026-09-28T13:46:10+00:00",
+        "http": "200",
+        "bytes": 5638,
+        "segundos": 1.0,
+        "sha256": "c7f324890141a58ba8ba4adcb979f8ef01b4ae12311a96ade4e4d8c09f1ae046",
+        "ficheiro": "corpos/c7f324890141a58ba8ba4adcb979f8ef01b4ae12311a96ade4e4d8c09f1ae046.txt",
+        "cliente": "core.http.HttpClient.get",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "periodo": "2024",
+      "coordenadas": {
+        "freq": "A",
+        "sectperf": "TOTAL",
+        "unit": "PC_GDP",
+        "geo": "EU27_2020"
+      },
+      "posicao_da_celula": 29,
+      "rotulo_do_conjunto": "Gross domestic expenditure on research and development (R&D)",
+      "valor_antigo": "2,24",
+      "literal_antigo": "2.24",
+      "valor_novo": "2,24",
+      "literal_novo": "2.24",
+      "pt_number_do_valor_novo": "2,24",
+      "valor_mudou": false,
+      "bandeira_antiga": "e",
+      "bandeira_nova": "e",
+      "excerto_antigo": "Gross domestic expenditure on research and development (R&D) — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2024: 2.24 e",
+      "excerto_recomposto_com_o_literal_antigo": "Gross domestic expenditure on research and development (R&D) — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2024: 2.24 e",
+      "dimensoes_que_o_excerto_escreve": [],
+      "dimensoes_fixadas_do_corpo_fora_do_excerto": [],
+      "guarda_do_excerto": true,
+      "excerto_novo": "Gross domestic expenditure on research and development (R&D) — Percentage of gross domestic product (GDP) — European Union - 27 countries (from 2020) — 2024: 2.24 e",
+      "acesso_antigo": "2026-09-15",
+      "carimbo_novo": "2026-03-18T23:00:00+0100",
+      "carimbo_anterior": null,
+      "corpo_anterior": null,
+      "corpos_alojados_lidos": [],
+      "corpos_posteriores_ao_anterior_com_outro_valor": [],
+      "painel_na_cabeca_do_motor": {
+        "vintages_ultima_entrada": {
+          "date": "2026-09-21",
+          "updated": "2026-03-18T23:00:00+0100",
+          "value": 2.24,
+          "observado_por": "Mac"
+        },
+        "baseline": {
+          "period": "2024",
+          "value": 2.24,
+          "updated": "2026-03-18T23:00:00+0100"
+        }
+      },
+      "verificacao_divergente_no_sitio": {
+        "date": "2026-10-05",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsst10?format=JSON&lang=EN&geo=EU27_2020&unit=PC_GDP",
+        "result": "diverge",
+        "by": "painel-semanal",
+        "found": "2.26"
+      },
+      "found_igual_ao_literal_novo": false
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2024",
+      "gerador_da_linha": "enquadramento.py",
+      "linha_sha256_na_cabeca": "a66bb97463eae5adda06c7a6af5fac6a2fc47dc1a3f82329a630baf7180ddcb7",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "pedido": {
+        "quando": "2026-09-28T13:46:15+00:00",
+        "http": "200",
+        "bytes": 5876,
+        "segundos": 1.3,
+        "sha256": "441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff",
+        "ficheiro": "corpos/441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff.txt",
+        "cliente": "core.http.HttpClient.get",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "periodo": "2024",
+      "coordenadas": {
+        "freq": "A",
+        "na_item": "P51G",
+        "unit": "PC_GDP",
+        "geo": "PT"
+      },
+      "posicao_da_celula": 29,
+      "rotulo_do_conjunto": "Gross fixed capital formation at current prices",
+      "valor_antigo": "20,4",
+      "literal_antigo": "20.4",
+      "valor_novo": "20,4",
+      "literal_novo": "20.4",
+      "pt_number_do_valor_novo": "20,4",
+      "valor_mudou": false,
+      "bandeira_antiga": "p",
+      "bandeira_nova": "p",
+      "excerto_antigo": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — Portugal — 2024: 20.4 p",
+      "excerto_recomposto_com_o_literal_antigo": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — Portugal — 2024: 20.4 p",
+      "dimensoes_que_o_excerto_escreve": [],
+      "dimensoes_fixadas_do_corpo_fora_do_excerto": [
+        "National accounts indicator (ESA 2010): Gross fixed capital formation"
+      ],
+      "guarda_do_excerto": true,
+      "excerto_novo": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — Portugal — 2024: 20.4 p",
+      "acesso_antigo": "2026-09-15",
+      "carimbo_novo": "2026-09-28T11:00:00+0200",
+      "carimbo_anterior": null,
+      "corpo_anterior": null,
+      "corpos_alojados_lidos": [],
+      "corpos_posteriores_ao_anterior_com_outro_valor": [],
+      "painel_na_cabeca_do_motor": {
+        "vintages_ultima_entrada": {
+          "date": "2026-09-28",
+          "updated": "2026-09-21T23:00:00+0200",
+          "value": 20.4,
+          "observado_por": "Mac"
+        },
+        "baseline": {
+          "period": "2024",
+          "value": 20.4,
+          "updated": "2026-09-21T23:00:00+0200"
+        }
+      },
+      "verificacao_divergente_no_sitio": {
+        "date": "2026-10-05",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+        "result": "diverge",
+        "by": "painel-semanal",
+        "found": "20.5"
+      },
+      "found_igual_ao_literal_novo": false
+    },
+    {
+      "id": "formacao-bruta-de-capital-fixo-2025",
+      "gerador_da_linha": "generate_claims.py",
+      "linha_sha256_na_cabeca": "64854f825889e1f37f00403e145401151edb70467da9a176a01083adccd406b7",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+      "pedido": {
+        "quando": "2026-09-28T13:46:15+00:00",
+        "http": "200",
+        "bytes": 5876,
+        "segundos": 1.3,
+        "sha256": "441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff",
+        "ficheiro": "corpos/441f3bb6d81d471e7aea173bc98bfc1bf3f79d9ce4c404b85bc9dac43f6945ff.txt",
+        "cliente": "core.http.HttpClient.get",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "periodo": "2025",
+      "coordenadas": {
+        "freq": "A",
+        "na_item": "P51G",
+        "unit": "PC_GDP",
+        "geo": "PT"
+      },
+      "posicao_da_celula": 30,
+      "rotulo_do_conjunto": "Gross fixed capital formation at current prices",
+      "valor_antigo": "20,7",
+      "literal_antigo": "20.7",
+      "valor_novo": "20,7",
+      "literal_novo": "20.7",
+      "pt_number_do_valor_novo": "20,7",
+      "valor_mudou": false,
+      "bandeira_antiga": "p",
+      "bandeira_nova": "p",
+      "excerto_antigo": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — Portugal — 2025: 20.7 p",
+      "excerto_recomposto_com_o_literal_antigo": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — Portugal — 2025: 20.7 p",
+      "dimensoes_que_o_excerto_escreve": [],
+      "dimensoes_fixadas_do_corpo_fora_do_excerto": [
+        "National accounts indicator (ESA 2010): Gross fixed capital formation"
+      ],
+      "guarda_do_excerto": true,
+      "excerto_novo": "Gross fixed capital formation at current prices — Percentage of gross domestic product (GDP) — Portugal — 2025: 20.7 p",
+      "acesso_antigo": "2026-08-12",
+      "carimbo_novo": "2026-09-28T11:00:00+0200",
+      "carimbo_anterior": null,
+      "corpo_anterior": null,
+      "corpos_alojados_lidos": [],
+      "corpos_posteriores_ao_anterior_com_outro_valor": [],
+      "painel_na_cabeca_do_motor": {
+        "vintages_ultima_entrada": {
+          "date": "2026-09-28",
+          "updated": "2026-09-21T23:00:00+0200",
+          "value": 20.7,
+          "observado_por": "Mac"
+        },
+        "baseline": {
+          "period": "2025",
+          "value": 20.7,
+          "updated": "2026-09-21T23:00:00+0200"
+        }
+      },
+      "verificacao_divergente_no_sitio": {
+        "date": "2026-10-05",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna20?format=JSON&lang=EN&geo=PT&unit=PC_GDP",
+        "result": "diverge",
+        "by": "painel-semanal",
+        "found": "21.0"
+      },
+      "found_igual_ao_literal_novo": false
+    },
+    {
+      "id": "pib-real-per-capita-2024",
+      "gerador_da_linha": "enquadramento.py",
+      "linha_sha256_na_cabeca": "faa1205a8f2399720fab0402a249b82d523192bce46dec6580bb20cfdd6109f5",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+      "pedido": {
+        "quando": "2026-09-28T13:46:17+00:00",
+        "http": "200",
+        "bytes": 5750,
+        "segundos": 0.7,
+        "sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+        "ficheiro": "corpos/922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801.txt",
+        "cliente": "core.http.HttpClient.get",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "periodo": "2024",
+      "coordenadas": {
+        "freq": "A",
+        "unit": "CLV15_EUR_HAB",
+        "na_item": "B1GQ",
+        "geo": "PT"
+      },
+      "posicao_da_celula": 60,
+      "rotulo_do_conjunto": "Real GDP per capita",
+      "valor_antigo": "20 430",
+      "literal_antigo": "20430",
+      "valor_novo": "20 430",
+      "literal_novo": "20430",
+      "pt_number_do_valor_novo": "20 430",
+      "valor_mudou": false,
+      "bandeira_antiga": "p",
+      "bandeira_nova": "p",
+      "excerto_antigo": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430 p",
+      "excerto_recomposto_com_o_literal_antigo": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430 p",
+      "dimensoes_que_o_excerto_escreve": [],
+      "dimensoes_fixadas_do_corpo_fora_do_excerto": [
+        "National accounts indicator (ESA 2010): Gross domestic product at market prices"
+      ],
+      "guarda_do_excerto": true,
+      "excerto_novo": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430 p",
+      "acesso_antigo": "2026-09-15",
+      "carimbo_novo": "2026-09-28T11:00:00+0200",
+      "carimbo_anterior": "2026-09-28T11:00:00+0200",
+      "corpo_anterior": {
+        "corrida": "indicators/out/releitura-c1c-2026-09-28",
+        "registo_linha": 1,
+        "quando": "2026-09-28T13:52:44+00:00",
+        "sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+        "ficheiro": "indicators/out/releitura-c1c-2026-09-28/922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801.bin",
+        "literal": "20430",
+        "bandeira": "p",
+        "carimbo": "2026-09-28T11:00:00+0200",
+        "traz_o_valor_antigo": true
+      },
+      "corpos_alojados_lidos": [
+        {
+          "corrida": "indicators/out/releitura-c1c-2026-09-28",
+          "registo_linha": 1,
+          "quando": "2026-09-28T13:52:44+00:00",
+          "sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+          "ficheiro": "indicators/out/releitura-c1c-2026-09-28/922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801.bin",
+          "literal": "20430",
+          "bandeira": "p",
+          "carimbo": "2026-09-28T11:00:00+0200",
+          "traz_o_valor_antigo": true
+        }
+      ],
+      "corpos_posteriores_ao_anterior_com_outro_valor": [],
+      "painel_na_cabeca_do_motor": {
+        "vintages_ultima_entrada": {
+          "date": "2026-09-21",
+          "updated": "2026-09-18T23:00:00+0200",
+          "value": 20430,
+          "observado_por": "Mac"
+        },
+        "baseline": {
+          "period": "2024",
+          "value": 20430,
+          "updated": "2026-09-18T23:00:00+0200"
+        }
+      },
+      "verificacao_divergente_no_sitio": {
+        "date": "2026-10-05",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "diverge",
+        "by": "painel-semanal",
+        "found": "20520"
+      },
+      "found_igual_ao_literal_novo": false
+    },
+    {
+      "id": "pib-real-per-capita-2025",
+      "gerador_da_linha": "generate_claims.py",
+      "linha_sha256_na_cabeca": "f65e8c5e1d1d8fd2fe1883e16acba114a63aba076cc316449fe99ba080eb4586",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+      "pedido": {
+        "quando": "2026-09-28T13:46:17+00:00",
+        "http": "200",
+        "bytes": 5750,
+        "segundos": 0.7,
+        "sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+        "ficheiro": "corpos/922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801.txt",
+        "cliente": "core.http.HttpClient.get",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "periodo": "2025",
+      "coordenadas": {
+        "freq": "A",
+        "unit": "CLV15_EUR_HAB",
+        "na_item": "B1GQ",
+        "geo": "PT"
+      },
+      "posicao_da_celula": 61,
+      "rotulo_do_conjunto": "Real GDP per capita",
+      "valor_antigo": "20 600",
+      "literal_antigo": "20600",
+      "valor_novo": "20 600",
+      "literal_novo": "20600",
+      "pt_number_do_valor_novo": "20 600",
+      "valor_mudou": false,
+      "bandeira_antiga": "p",
+      "bandeira_nova": "p",
+      "excerto_antigo": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600 p",
+      "excerto_recomposto_com_o_literal_antigo": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600 p",
+      "dimensoes_que_o_excerto_escreve": [],
+      "dimensoes_fixadas_do_corpo_fora_do_excerto": [
+        "National accounts indicator (ESA 2010): Gross domestic product at market prices"
+      ],
+      "guarda_do_excerto": true,
+      "excerto_novo": "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2025: 20600 p",
+      "acesso_antigo": "2026-08-12",
+      "carimbo_novo": "2026-09-28T11:00:00+0200",
+      "carimbo_anterior": "2026-09-28T11:00:00+0200",
+      "corpo_anterior": {
+        "corrida": "indicators/out/releitura-c1c-2026-09-28",
+        "registo_linha": 1,
+        "quando": "2026-09-28T13:52:44+00:00",
+        "sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+        "ficheiro": "indicators/out/releitura-c1c-2026-09-28/922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801.bin",
+        "literal": "20600",
+        "bandeira": "p",
+        "carimbo": "2026-09-28T11:00:00+0200",
+        "traz_o_valor_antigo": true
+      },
+      "corpos_alojados_lidos": [
+        {
+          "corrida": "indicators/out/releitura-c1c-2026-09-28",
+          "registo_linha": 1,
+          "quando": "2026-09-28T13:52:44+00:00",
+          "sha256": "922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801",
+          "ficheiro": "indicators/out/releitura-c1c-2026-09-28/922410165ab1127c773f37bf7607a29975027b8de163edce38a8576d2e2a1801.bin",
+          "literal": "20600",
+          "bandeira": "p",
+          "carimbo": "2026-09-28T11:00:00+0200",
+          "traz_o_valor_antigo": true
+        }
+      ],
+      "corpos_posteriores_ao_anterior_com_outro_valor": [],
+      "painel_na_cabeca_do_motor": {
+        "vintages_ultima_entrada": {
+          "date": "2026-09-21",
+          "updated": "2026-09-18T23:00:00+0200",
+          "value": 20600,
+          "observado_por": "Mac"
+        },
+        "baseline": {
+          "period": "2025",
+          "value": 20600,
+          "updated": "2026-09-18T23:00:00+0200"
+        }
+      },
+      "verificacao_divergente_no_sitio": {
+        "date": "2026-10-05",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT",
+        "result": "diverge",
+        "by": "painel-semanal",
+        "found": "20700"
+      },
+      "found_igual_ao_literal_novo": false
+    },
+    {
+      "id": "posicao-de-investimento-internacional-2024",
+      "gerador_da_linha": "enquadramento.py",
+      "linha_sha256_na_cabeca": "392537ded308eb1db376db6ceb51222769c4a4f85774992de04d394aa7f4f0b1",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsii10?format=JSON&lang=EN&geo=PT&unit=PC_GDP&partner=WRL_REST",
+      "pedido": {
+        "quando": "2026-09-28T13:45:42+00:00",
+        "http": "200",
+        "bytes": 7335,
+        "segundos": 1.0,
+        "sha256": "9981c669e7be7fe4fbdfcc3f91f74ed7d9752162e2260974f717428f6d4496b0",
+        "ficheiro": "corpos/9981c669e7be7fe4fbdfcc3f91f74ed7d9752162e2260974f717428f6d4496b0.txt",
+        "cliente": "core.http.HttpClient.get",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "periodo": "2024",
+      "coordenadas": {
+        "freq": "A",
+        "s_adj": "NSA",
+        "bop_item": "FA",
+        "sector10": "S1",
+        "sectpart": "S1",
+        "stk_flow": "N_LE",
+        "partner": "WRL_REST",
+        "unit": "PC_GDP",
+        "geo": "PT"
+      },
+      "posicao_da_celula": 29,
+      "rotulo_do_conjunto": "Net international investment position - annual data",
+      "valor_antigo": "−58,9",
+      "literal_antigo": "-58.9",
+      "valor_novo": "−58,9",
+      "literal_novo": "-58.9",
+      "pt_number_do_valor_novo": "−58,9",
+      "valor_mudou": false,
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "excerto_antigo": "Net international investment position - annual data — Percentage of gross domestic product (GDP) — Portugal — 2024: -58.9",
+      "excerto_recomposto_com_o_literal_antigo": "Net international investment position - annual data — Percentage of gross domestic product (GDP) — Portugal — 2024: -58.9",
+      "dimensoes_que_o_excerto_escreve": [],
+      "dimensoes_fixadas_do_corpo_fora_do_excerto": [
+        "Seasonal adjustment: Unadjusted data (i.e. neither seasonally adjusted nor calendar adjusted data)",
+        "Balance of payments item: Financial account",
+        "Sector (ESA 2010): Total economy",
+        "Counterpart sector (ESA 2010): Total economy",
+        "Stock or flow: Net positions at the end of period",
+        "Geopolitical entity (partner): Rest of the world"
+      ],
+      "guarda_do_excerto": true,
+      "excerto_novo": "Net international investment position - annual data — Percentage of gross domestic product (GDP) — Portugal — 2024: -58.9",
+      "acesso_antigo": "2026-09-15",
+      "carimbo_novo": "2026-09-11T23:00:00+0200",
+      "carimbo_anterior": null,
+      "corpo_anterior": null,
+      "corpos_alojados_lidos": [],
+      "corpos_posteriores_ao_anterior_com_outro_valor": [],
+      "painel_na_cabeca_do_motor": {
+        "vintages_ultima_entrada": {
+          "date": "2026-09-21",
+          "updated": "2026-09-11T23:00:00+0200",
+          "value": -58.9,
+          "observado_por": "Mac"
+        },
+        "baseline": {
+          "period": "2024",
+          "value": -58.9,
+          "updated": "2026-09-11T23:00:00+0200"
+        }
+      },
+      "verificacao_divergente_no_sitio": {
+        "date": "2026-10-05",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsii10?format=JSON&lang=EN&geo=PT&unit=PC_GDP&partner=WRL_REST",
+        "result": "diverge",
+        "by": "painel-semanal",
+        "found": "-58.3"
+      },
+      "found_igual_ao_literal_novo": false
+    },
+    {
+      "id": "posicao-de-investimento-internacional-2025",
+      "gerador_da_linha": "generate_claims.py",
+      "linha_sha256_na_cabeca": "95f945b73bfa2ea7eeecb798549952890a89081c96b51d1ab12b3eb5d370e4d3",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsii10?format=JSON&lang=EN&geo=PT&unit=PC_GDP&partner=WRL_REST",
+      "pedido": {
+        "quando": "2026-09-28T13:45:42+00:00",
+        "http": "200",
+        "bytes": 7335,
+        "segundos": 1.0,
+        "sha256": "9981c669e7be7fe4fbdfcc3f91f74ed7d9752162e2260974f717428f6d4496b0",
+        "ficheiro": "corpos/9981c669e7be7fe4fbdfcc3f91f74ed7d9752162e2260974f717428f6d4496b0.txt",
+        "cliente": "core.http.HttpClient.get",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "periodo": "2025",
+      "coordenadas": {
+        "freq": "A",
+        "s_adj": "NSA",
+        "bop_item": "FA",
+        "sector10": "S1",
+        "sectpart": "S1",
+        "stk_flow": "N_LE",
+        "partner": "WRL_REST",
+        "unit": "PC_GDP",
+        "geo": "PT"
+      },
+      "posicao_da_celula": 30,
+      "rotulo_do_conjunto": "Net international investment position - annual data",
+      "valor_antigo": "−50,2",
+      "literal_antigo": "-50.2",
+      "valor_novo": "−50,2",
+      "literal_novo": "-50.2",
+      "pt_number_do_valor_novo": "−50,2",
+      "valor_mudou": false,
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "excerto_antigo": "Net international investment position - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: -50.2",
+      "excerto_recomposto_com_o_literal_antigo": "Net international investment position - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: -50.2",
+      "dimensoes_que_o_excerto_escreve": [],
+      "dimensoes_fixadas_do_corpo_fora_do_excerto": [
+        "Seasonal adjustment: Unadjusted data (i.e. neither seasonally adjusted nor calendar adjusted data)",
+        "Balance of payments item: Financial account",
+        "Sector (ESA 2010): Total economy",
+        "Counterpart sector (ESA 2010): Total economy",
+        "Stock or flow: Net positions at the end of period",
+        "Geopolitical entity (partner): Rest of the world"
+      ],
+      "guarda_do_excerto": true,
+      "excerto_novo": "Net international investment position - annual data — Percentage of gross domestic product (GDP) — Portugal — 2025: -50.2",
+      "acesso_antigo": "2026-08-12",
+      "carimbo_novo": "2026-09-11T23:00:00+0200",
+      "carimbo_anterior": null,
+      "corpo_anterior": null,
+      "corpos_alojados_lidos": [],
+      "corpos_posteriores_ao_anterior_com_outro_valor": [],
+      "painel_na_cabeca_do_motor": {
+        "vintages_ultima_entrada": {
+          "date": "2026-09-14",
+          "updated": "2026-09-11T23:00:00+0200",
+          "value": -50.2,
+          "observado_por": "Mac"
+        },
+        "baseline": {
+          "period": "2025",
+          "value": -50.2,
+          "updated": "2026-09-11T23:00:00+0200"
+        }
+      },
+      "verificacao_divergente_no_sitio": {
+        "date": "2026-10-05",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsii10?format=JSON&lang=EN&geo=PT&unit=PC_GDP&partner=WRL_REST",
+        "result": "diverge",
+        "by": "painel-semanal",
+        "found": "-49.6"
+      },
+      "found_igual_ao_literal_novo": false
+    },
+    {
+      "id": "saldo-da-balanca-corrente-2024",
+      "gerador_da_linha": "enquadramento.py",
+      "linha_sha256_na_cabeca": "9772ff21fb06252cd33603775acdaad58ca5004fe6d7acd0ec3ccdfc9e74db54",
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp10?format=JSON&lang=EN&geo=PT&unit=PC_GDP_3Y&partner=WRL_REST",
+      "pedido": {
+        "quando": "2026-09-28T13:45:40+00:00",
+        "http": "200",
+        "bytes": 6650,
+        "segundos": 0.2,
+        "sha256": "7fe24c68ccf141c632aeae09633c0effdf2bfbfad814eecf93495c82897006ca",
+        "ficheiro": "corpos/7fe24c68ccf141c632aeae09633c0effdf2bfbfad814eecf93495c82897006ca.txt",
+        "cliente": "core.http.HttpClient.get",
+        "user_agent": "OEstadoDoPais/corredor"
+      },
+      "periodo": "2024",
+      "coordenadas": {
+        "freq": "A",
+        "unit": "PC_GDP_3Y",
+        "s_adj": "NSA",
+        "bop_item": "CA",
+        "stk_flow": "BAL",
+        "partner": "WRL_REST",
+        "geo": "PT"
+      },
+      "posicao_da_celula": 29,
+      "rotulo_do_conjunto": "Current account balance - 3 year average",
+      "valor_antigo": "0,3",
+      "literal_antigo": "0.3",
+      "valor_novo": "0,3",
+      "literal_novo": "0.3",
+      "pt_number_do_valor_novo": "0,3",
+      "valor_mudou": false,
+      "bandeira_antiga": "",
+      "bandeira_nova": "",
+      "excerto_antigo": "Current account balance - 3 year average — Percentage of GDP - three-year average — Portugal — 2024: 0.3",
+      "excerto_recomposto_com_o_literal_antigo": "Current account balance - 3 year average — Percentage of GDP - three-year average — Portugal — 2024: 0.3",
+      "dimensoes_que_o_excerto_escreve": [],
+      "dimensoes_fixadas_do_corpo_fora_do_excerto": [
+        "Seasonal adjustment: Unadjusted data (i.e. neither seasonally adjusted nor calendar adjusted data)",
+        "Balance of payments item: Current account",
+        "Stock or flow: Balance",
+        "Geopolitical entity (partner): Rest of the world"
+      ],
+      "guarda_do_excerto": true,
+      "excerto_novo": "Current account balance - 3 year average — Percentage of GDP - three-year average — Portugal — 2024: 0.3",
+      "acesso_antigo": "2026-09-15",
+      "carimbo_novo": "2026-07-08T11:00:00+0200",
+      "carimbo_anterior": null,
+      "corpo_anterior": null,
+      "corpos_alojados_lidos": [],
+      "corpos_posteriores_ao_anterior_com_outro_valor": [],
+      "painel_na_cabeca_do_motor": {
+        "vintages_ultima_entrada": {
+          "date": "2026-09-21",
+          "updated": "2026-07-08T11:00:00+0200",
+          "value": 0.3,
+          "observado_por": "Mac"
+        },
+        "baseline": {
+          "period": "2024",
+          "value": 0.3,
+          "updated": "2026-07-08T11:00:00+0200"
+        }
+      },
+      "verificacao_divergente_no_sitio": {
+        "date": "2026-10-05",
+        "path": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsbp10?format=JSON&lang=EN&geo=PT&unit=PC_GDP_3Y&partner=WRL_REST",
+        "result": "diverge",
+        "by": "painel-semanal",
+        "found": "0.4"
+      },
+      "found_igual_ao_literal_novo": false
+    }
+  ],
+  "paragens": [],
+  "contagens": {
+    "linhas": 9,
+    "pedidos": 70,
+    "pedidos_com_200": 70,
+    "relidas": 9,
+    "paradas": 0,
+    "com_valor_novo": 0,
+    "com_a_guarda_do_excerto": 9,
+    "com_o_found_do_painel": 0,
+    "com_corpo_anterior": 2
+  }
+}

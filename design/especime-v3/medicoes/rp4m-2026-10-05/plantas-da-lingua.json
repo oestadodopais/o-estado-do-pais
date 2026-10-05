@@ -1,0 +1,31 @@
+{
+  "o_que": "RP4-m: as plantas da L1 do check:lingua, numa cópia do livro-razão",
+  "controlo": {
+    "codigo": 0,
+    "queixas_de_unidade": []
+  },
+  "controlo_integro": true,
+  "plantas": [
+    {
+      "nome": "a entrada «índice (base 2025 = 100)» sem nenhuma série que a use",
+      "espera": "que nenhuma linha nem série do livro-razão usa",
+      "mordeu": true,
+      "codigo": 1,
+      "queixas_de_unidade": [
+        "· o dicionário traduz a unidade «índice (base 2025 = 100)», que nenhuma linha nem série do livro-razão usa. Uma entrada que não se rende não é uma sentinela: é uma linha morta, e a tabela engorda."
+      ]
+    },
+    {
+      "nome": "a série do salário real com uma unidade sem entrada",
+      "espera": "não tem entrada",
+      "mordeu": true,
+      "codigo": 1,
+      "queixas_de_unidade": [
+        "· a unidade «unidade inventada da planta» (1 série(s)) não tem entrada em src/i18n/unidades.mjs.",
+        "· o dicionário traduz a unidade «euros de 2015 por mês», que nenhuma linha nem série do livro-razão usa. Uma entrada que não se rende não é uma sentinela: é uma linha morta, e a tabela engorda."
+      ]
+    }
+  ],
+  "plantas_quantas": 2,
+  "plantas_mordidas": 2
+}

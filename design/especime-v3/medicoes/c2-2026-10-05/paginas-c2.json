@@ -1,0 +1,571 @@
+{
+  "_": "Escrito por design/especime-v3/medicoes/c2-2026-10-05/paginas-c2.mjs. Não se edita à mão.",
+  "bloco": "C2",
+  "construcao_da_base": "006685ae",
+  "construcao_da_cabeca": "82406f85",
+  "como": "astro build de uma exportação de cada commit (git archive), com as mesmas dependências",
+  "ficheiros_na_base": 11180,
+  "ficheiros_na_cabeca": 11180,
+  "paginas_html_na_base": 7883,
+  "paginas_html_na_cabeca": 7883,
+  "paginas_novas": [],
+  "outros_ficheiros_novos": [],
+  "paginas_que_sairam": [],
+  "outros_ficheiros_que_sairam": [],
+  "paginas_comuns": 7883,
+  "paginas_iguais_byte_a_byte": 7841,
+  "paginas_iguais_sem_a_construcao": 0,
+  "paginas_que_mudaram": 42,
+  "paginas_que_mudaram_por_razao": {
+    "cita uma das nove linhas": 40,
+    "outra": 2
+  },
+  "paginas_que_mudaram_por_familia": {
+    "Método": 2,
+    "employment": 1,
+    "emprego": 1,
+    "estado-e-economia": 1,
+    "página da União": 2,
+    "recibo de uma linha": 24,
+    "registo das correções": 2,
+    "state-and-economy": 1,
+    "área de governo": 4,
+    "índice do livro-razão": 2,
+    "índice do sítio": 2
+  },
+  "paginas_que_mudaram_por_outra_razao": [
+    {
+      "ficheiro": "en/method/index.html",
+      "familia": "Método",
+      "razao": "outra",
+      "linhas_citadas": [],
+      "posicao": 9671,
+      "base": ">RE-READING</text><text x=\"423\" y=\"60\" class=\"mecanismo-num\" data-prova=\"releituras_registadas\">3 804</text><text x=\"423\" y=\"74\" class=\"mecanismo-cap\">on record</text><text x=\"423\" y=\"96\" class=\"mecanismo-num\" data-prova=\"painel_reconferido",
+      "cabeca": ">RE-READING</text><text x=\"423\" y=\"60\" class=\"mecanismo-num\" data-prova=\"releituras_registadas\">3 809</text><text x=\"423\" y=\"74\" class=\"mecanismo-cap\">on record</text><text x=\"423\" y=\"96\" class=\"mecanismo-num\" data-prova=\"painel_reconferido"
+    },
+    {
+      "ficheiro": "metodo/index.html",
+      "familia": "Método",
+      "razao": "outra",
+      "linhas_citadas": [],
+      "posicao": 9667,
+      "base": "\">RELEITURA</text><text x=\"423\" y=\"60\" class=\"mecanismo-num\" data-prova=\"releituras_registadas\">3 804</text><text x=\"423\" y=\"74\" class=\"mecanismo-cap\">registadas</text><text x=\"423\" y=\"96\" class=\"mecanismo-num\" data-prova=\"painel_reconferid",
+      "cabeca": "\">RELEITURA</text><text x=\"423\" y=\"60\" class=\"mecanismo-num\" data-prova=\"releituras_registadas\">3 809</text><text x=\"423\" y=\"74\" class=\"mecanismo-cap\">registadas</text><text x=\"423\" y=\"96\" class=\"mecanismo-num\" data-prova=\"painel_reconferid"
+    }
+  ],
+  "recibos_das_nove_que_mudaram": 18,
+  "outros_ficheiros_comuns_iguais": 3286,
+  "outros_ficheiros_que_mudaram": 11,
+  "outros_ficheiros_que_mudaram_por_razao": {
+    "cita uma das nove linhas": 10,
+    "outra": 1
+  },
+  "outros_ficheiros_que_mudaram_por_outra_razao": [
+    {
+      "ficheiro": "livro-razao.csv",
+      "familia": "livro-razao.csv",
+      "razao": "outra",
+      "linhas_citadas": [],
+      "posicao": 823792,
+      "base": "-30143311\"\",\"\"result\"\":\"\"igual\"\",\"\"by\"\":\"\"corredor-diario\"\"}]\"\r\ncusto-unitario-do-trabalho-2024,\"17,7\",\"variação em três anos, %\",,,Eurostat,Nominal unit labour cost per hour worked,tipslm10,,,serie,https://ec.europa.eu/eurostat/databrowser",
+      "cabeca": "-30143311\"\",\"\"result\"\":\"\"igual\"\",\"\"by\"\":\"\"corredor-diario\"\"}]\"\r\ncusto-unitario-do-trabalho-2024,\"17,9\",\"variação em três anos, %\",,,Eurostat,Nominal unit labour cost per hour worked,tipslm10,,,serie,https://ec.europa.eu/eurostat/databrowser"
+    }
+  ],
+  "conhecido_positivo": {
+    "o_que": "o recibo do PIB real por habitante de 2025 mudou e cita a sua linha",
+    "encontrado": true
+  },
+  "paginas_que_mudaram_lista": [
+    {
+      "ficheiro": "areas/economia-e-coesao-territorial/index.html",
+      "familia": "área de governo",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024",
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025",
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025"
+      ]
+    },
+    {
+      "ficheiro": "areas/educacao-ciencia-e-inovacao/index.html",
+      "familia": "área de governo",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "despesa-em-id-2024-ue"
+      ]
+    },
+    {
+      "ficheiro": "correcoes/index.html",
+      "familia": "registo das correções",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024",
+        "despesa-em-id-2024-ue",
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025",
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025",
+        "posicao-de-investimento-internacional-2024",
+        "posicao-de-investimento-internacional-2025",
+        "saldo-da-balanca-corrente-2024"
+      ]
+    },
+    {
+      "ficheiro": "emprego/index.html",
+      "familia": "emprego",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024"
+      ]
+    },
+    {
+      "ficheiro": "en/areas/economia-e-coesao-territorial/index.html",
+      "familia": "área de governo",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024",
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025",
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025"
+      ]
+    },
+    {
+      "ficheiro": "en/areas/educacao-ciencia-e-inovacao/index.html",
+      "familia": "área de governo",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "despesa-em-id-2024-ue"
+      ]
+    },
+    {
+      "ficheiro": "en/corrections/index.html",
+      "familia": "registo das correções",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024",
+        "despesa-em-id-2024-ue",
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025",
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025",
+        "posicao-de-investimento-internacional-2024",
+        "posicao-de-investimento-internacional-2025",
+        "saldo-da-balanca-corrente-2024"
+      ]
+    },
+    {
+      "ficheiro": "en/employment/index.html",
+      "familia": "employment",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024"
+      ]
+    },
+    {
+      "ficheiro": "en/european-union/index.html",
+      "familia": "página da União",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "posicao-de-investimento-internacional-2025"
+      ]
+    },
+    {
+      "ficheiro": "en/index/index.html",
+      "familia": "índice do sítio",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024",
+        "despesa-em-id-2024-ue",
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025",
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025",
+        "posicao-de-investimento-internacional-2024",
+        "posicao-de-investimento-internacional-2025"
+      ]
+    },
+    {
+      "ficheiro": "en/ledger/custo-unitario-do-trabalho-2024/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024"
+      ]
+    },
+    {
+      "ficheiro": "en/ledger/custo-unitario-do-trabalho-2025/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024"
+      ]
+    },
+    {
+      "ficheiro": "en/ledger/despesa-em-id-2024-ue/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "despesa-em-id-2024-ue"
+      ]
+    },
+    {
+      "ficheiro": "en/ledger/despesa-em-id-2024/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "despesa-em-id-2024-ue"
+      ]
+    },
+    {
+      "ficheiro": "en/ledger/formacao-bruta-de-capital-fixo-2024/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "formacao-bruta-de-capital-fixo-2024"
+      ]
+    },
+    {
+      "ficheiro": "en/ledger/formacao-bruta-de-capital-fixo-2025/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025"
+      ]
+    },
+    {
+      "ficheiro": "en/ledger/index.html",
+      "familia": "índice do livro-razão",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024",
+        "despesa-em-id-2024-ue",
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025",
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025",
+        "posicao-de-investimento-internacional-2024",
+        "posicao-de-investimento-internacional-2025",
+        "saldo-da-balanca-corrente-2024"
+      ]
+    },
+    {
+      "ficheiro": "en/ledger/pib-real-per-capita-2024/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "pib-real-per-capita-2024"
+      ]
+    },
+    {
+      "ficheiro": "en/ledger/pib-real-per-capita-2025/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025"
+      ]
+    },
+    {
+      "ficheiro": "en/ledger/posicao-de-investimento-internacional-2024/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "posicao-de-investimento-internacional-2024"
+      ]
+    },
+    {
+      "ficheiro": "en/ledger/posicao-de-investimento-internacional-2025/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "posicao-de-investimento-internacional-2024",
+        "posicao-de-investimento-internacional-2025"
+      ]
+    },
+    {
+      "ficheiro": "en/ledger/saldo-da-balanca-corrente-2024/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "saldo-da-balanca-corrente-2024"
+      ]
+    },
+    {
+      "ficheiro": "en/ledger/saldo-da-balanca-corrente-2025/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "saldo-da-balanca-corrente-2024"
+      ]
+    },
+    {
+      "ficheiro": "en/method/index.html",
+      "familia": "Método",
+      "razao": "outra",
+      "linhas_citadas": []
+    },
+    {
+      "ficheiro": "en/state-and-economy/index.html",
+      "familia": "state-and-economy",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "despesa-em-id-2024-ue",
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025",
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025",
+        "posicao-de-investimento-internacional-2024",
+        "posicao-de-investimento-internacional-2025",
+        "saldo-da-balanca-corrente-2024"
+      ]
+    },
+    {
+      "ficheiro": "estado-e-economia/index.html",
+      "familia": "estado-e-economia",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "despesa-em-id-2024-ue",
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025",
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025",
+        "posicao-de-investimento-internacional-2024",
+        "posicao-de-investimento-internacional-2025",
+        "saldo-da-balanca-corrente-2024"
+      ]
+    },
+    {
+      "ficheiro": "indice/index.html",
+      "familia": "índice do sítio",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024",
+        "despesa-em-id-2024-ue",
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025",
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025",
+        "posicao-de-investimento-internacional-2024",
+        "posicao-de-investimento-internacional-2025"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/custo-unitario-do-trabalho-2024/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/custo-unitario-do-trabalho-2025/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/despesa-em-id-2024-ue/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "despesa-em-id-2024-ue"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/despesa-em-id-2024/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "despesa-em-id-2024-ue"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/formacao-bruta-de-capital-fixo-2024/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "formacao-bruta-de-capital-fixo-2024"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/formacao-bruta-de-capital-fixo-2025/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/index.html",
+      "familia": "índice do livro-razão",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024",
+        "despesa-em-id-2024-ue",
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025",
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025",
+        "posicao-de-investimento-internacional-2024",
+        "posicao-de-investimento-internacional-2025",
+        "saldo-da-balanca-corrente-2024"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/pib-real-per-capita-2024/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "pib-real-per-capita-2024"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/pib-real-per-capita-2025/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/posicao-de-investimento-internacional-2024/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "posicao-de-investimento-internacional-2024"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/posicao-de-investimento-internacional-2025/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "posicao-de-investimento-internacional-2024",
+        "posicao-de-investimento-internacional-2025"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/saldo-da-balanca-corrente-2024/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "saldo-da-balanca-corrente-2024"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/saldo-da-balanca-corrente-2025/index.html",
+      "familia": "recibo de uma linha",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "saldo-da-balanca-corrente-2024"
+      ]
+    },
+    {
+      "ficheiro": "metodo/index.html",
+      "familia": "Método",
+      "razao": "outra",
+      "linhas_citadas": []
+    },
+    {
+      "ficheiro": "uniao-europeia/index.html",
+      "familia": "página da União",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "posicao-de-investimento-internacional-2025"
+      ]
+    }
+  ],
+  "outros_ficheiros_que_mudaram_lista": [
+    {
+      "ficheiro": "livro-razao.csv",
+      "razao": "outra",
+      "linhas_citadas": []
+    },
+    {
+      "ficheiro": "livro-razao.json",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024",
+        "despesa-em-id-2024-ue",
+        "formacao-bruta-de-capital-fixo-2024",
+        "formacao-bruta-de-capital-fixo-2025",
+        "pib-real-per-capita-2024",
+        "pib-real-per-capita-2025",
+        "posicao-de-investimento-internacional-2024",
+        "posicao-de-investimento-internacional-2025",
+        "saldo-da-balanca-corrente-2024"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/custo-unitario-do-trabalho-2024.json",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "custo-unitario-do-trabalho-2024"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/despesa-em-id-2024-ue.json",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "despesa-em-id-2024-ue"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/formacao-bruta-de-capital-fixo-2024.json",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "formacao-bruta-de-capital-fixo-2024"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/formacao-bruta-de-capital-fixo-2025.json",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "formacao-bruta-de-capital-fixo-2025"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/pib-real-per-capita-2024.json",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "pib-real-per-capita-2024"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/pib-real-per-capita-2025.json",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "pib-real-per-capita-2025"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/posicao-de-investimento-internacional-2024.json",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "posicao-de-investimento-internacional-2024"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/posicao-de-investimento-internacional-2025.json",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "posicao-de-investimento-internacional-2025"
+      ]
+    },
+    {
+      "ficheiro": "livro-razao/saldo-da-balanca-corrente-2024.json",
+      "razao": "cita uma das nove linhas",
+      "linhas_citadas": [
+        "saldo-da-balanca-corrente-2024"
+      ]
+    }
+  ]
+}

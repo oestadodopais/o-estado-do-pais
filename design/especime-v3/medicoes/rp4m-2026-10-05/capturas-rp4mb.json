@@ -1,0 +1,401 @@
+{
+  "o_que": "RP4-m: as capturas da construção local (rp4mb: salario-real)",
+  "cabeca": "f90d3117c84438103fa383a6495edacf3007b0e9",
+  "construida": "2026-10-05T17:06:22.918Z",
+  "capturas": 10,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "rotas": [
+    "salario-real"
+  ],
+  "erros": [],
+  "plantas": [
+    {
+      "nome": "o traço da série do recibo sem tracejado",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "a frase da conta com uma metade acrescentada",
+      "lang": "pt",
+      "mordeu": true
+    },
+    {
+      "nome": "o traço da série do recibo sem tracejado",
+      "lang": "en",
+      "mordeu": true
+    },
+    {
+      "nome": "a frase da conta com uma metade acrescentada",
+      "lang": "en",
+      "mordeu": true
+    }
+  ],
+  "lista": [
+    {
+      "lang": "pt",
+      "nome": "salario-real",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 390,
+      "ficheiro": "rp4mb-pt-salario-real-390.png",
+      "bytes": 177258,
+      "sha256": "194e13da68fe81691c88965a61b2822c08cdf7b3c9208e2826dabf08173a3b34",
+      "pagina": 390,
+      "desenhos": 1,
+      "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros de 2015 por mês",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      },
+      "fraseDaConta": "Esta série é calculada pelo projeto, ponto a ponto, a partir de outras séries do livro-razão."
+    },
+    {
+      "lang": "pt",
+      "nome": "salario-real",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 768,
+      "ficheiro": "rp4mb-pt-salario-real-768.png",
+      "bytes": 193115,
+      "sha256": "6acc7b7b531e52c46ce1188b899ce01e816e6e2663a8d543f5c1ae710e5bda0e",
+      "pagina": 768,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros de 2015 por mês",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      },
+      "fraseDaConta": "Esta série é calculada pelo projeto, ponto a ponto, a partir de outras séries do livro-razão."
+    },
+    {
+      "lang": "pt",
+      "nome": "salario-real",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 1024,
+      "ficheiro": "rp4mb-pt-salario-real-1024.png",
+      "bytes": 209782,
+      "sha256": "db99a9c2d41edd2f8da2f5c24fe9266dc1716d5a37be13d495ff608abd44cb7f",
+      "pagina": 1024,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros de 2015 por mês",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      },
+      "fraseDaConta": "Esta série é calculada pelo projeto, ponto a ponto, a partir de outras séries do livro-razão."
+    },
+    {
+      "lang": "pt",
+      "nome": "salario-real",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 1280,
+      "ficheiro": "rp4mb-pt-salario-real-1280.png",
+      "bytes": 211170,
+      "sha256": "981c4299018cb3b897c12ec4267b7a1003abab4a655f680144755ccd11f65645",
+      "pagina": 1280,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros de 2015 por mês",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      },
+      "fraseDaConta": "Esta série é calculada pelo projeto, ponto a ponto, a partir de outras séries do livro-razão."
+    },
+    {
+      "lang": "pt",
+      "nome": "salario-real",
+      "rota": "/livro-razao/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 1600,
+      "ficheiro": "rp4mb-pt-salario-real-1600.png",
+      "bytes": 216652,
+      "sha256": "ecd46c23f7b0039def09d4284650cb15e358a2133196152a4653f36433a5a064",
+      "pagina": 1600,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "euros de 2015 por mês",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      },
+      "fraseDaConta": "Esta série é calculada pelo projeto, ponto a ponto, a partir de outras séries do livro-razão."
+    },
+    {
+      "lang": "en",
+      "nome": "salario-real",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 390,
+      "ficheiro": "rp4mb-en-salario-real-390.png",
+      "bytes": 177555,
+      "sha256": "b2de086aa33043783984526d0cc5d89874be4d16b4be471010d22c842fa8653e",
+      "pagina": 390,
+      "desenhos": 1,
+      "letraMinima": 11.799375,
+      "letraMaxima": 11.799375,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "2015 euros per month",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      },
+      "fraseDaConta": "This series is calculated by the project, point by point, from other series in the ledger."
+    },
+    {
+      "lang": "en",
+      "nome": "salario-real",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 768,
+      "ficheiro": "rp4mb-en-salario-real-768.png",
+      "bytes": 187546,
+      "sha256": "461465ececdbecd6a0c068e4f51a364f55c239092649fa092250994ead1e2282",
+      "pagina": 768,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "2015 euros per month",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      },
+      "fraseDaConta": "This series is calculated by the project, point by point, from other series in the ledger."
+    },
+    {
+      "lang": "en",
+      "nome": "salario-real",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 1024,
+      "ficheiro": "rp4mb-en-salario-real-1024.png",
+      "bytes": 204522,
+      "sha256": "c6cfd59910da200b720f5f597d5f6c3e542e05fc3e4878402b12b4476b561785",
+      "pagina": 1024,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "2015 euros per month",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      },
+      "fraseDaConta": "This series is calculated by the project, point by point, from other series in the ledger."
+    },
+    {
+      "lang": "en",
+      "nome": "salario-real",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 1280,
+      "ficheiro": "rp4mb-en-salario-real-1280.png",
+      "bytes": 207146,
+      "sha256": "9421e3ab6cd2c9d478352669bc3c90418664206b1c8927cc8c630bd8a7daa12e",
+      "pagina": 1280,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "2015 euros per month",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      },
+      "fraseDaConta": "This series is calculated by the project, point by point, from other series in the ledger."
+    },
+    {
+      "lang": "en",
+      "nome": "salario-real",
+      "rota": "/en/ledger/series/serie-remuneracao-bruta-mensal-media-real/",
+      "largura": 1600,
+      "ficheiro": "rp4mb-en-salario-real-1600.png",
+      "bytes": 212118,
+      "sha256": "75913afcb4f3de6291ce9bd9739550d46cb1a15f33f89d6d7b716c4a064f82bf",
+      "pagina": 1600,
+      "desenhos": 1,
+      "letraMinima": 12,
+      "letraMaxima": 12,
+      "cartoesComSerie": [],
+      "fraseDoIndice": null,
+      "unidade": "2015 euros per month",
+      "tracos": [
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-anual",
+          "tracejado": "none"
+        },
+        {
+          "serie": "serie-remuneracao-bruta-mensal-media-real",
+          "tracejado": "5px, 4px"
+        }
+      ],
+      "legenda": [
+        "serie-remuneracao-bruta-mensal-media-anual",
+        "serie-remuneracao-bruta-mensal-media-real"
+      ],
+      "ultimaMarcaDoEixo": {
+        "texto": "2025",
+        "x": "342",
+        "ancora": "middle"
+      },
+      "fraseDaConta": "This series is calculated by the project, point by point, from other series in the ledger."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "o_que": "RP4-m, ponto 2: a linha ihpc-variacao-homologa posta no último ponto da sua série, numa cópia do livro",
+  "ultimo_ponto_da_serie": {
+    "periodo": "2026-09",
+    "valor": "3,6",
+    "bandeira": "e"
+  },
+  "ponto_anterior_da_serie": {
+    "periodo": "2026-08",
+    "valor": "3,6",
+    "bandeira": null
+  },
+  "controlo": {
+    "codigo": 0,
+    "ultima_linha": "  ✓ os ficheiros desta régua leem-se como texto, do primeiro byte ao último."
+  },
+  "linha_escrita_na_copia": [
+    "value: \"3,6\"",
+    "reference_date: \"2026-09\"",
+    "serie: \"serie-ihpc-variacao-homologa\"",
+    "excerpt: \"Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Portugal — 2026-09: 3.6 e\"",
+    "source_flag: \"e\"",
+    "source_flag_note: \"valor estimado\"",
+    "source_flag_note_en: \"estimated value\""
+  ],
+  "linha_do_periodo_anterior_na_copia": [
+    "value: \"3,6\"",
+    "reference_date: \"2026-08\"",
+    "excerpt: \"Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data — Monthly — Annual rate of change — Classification of individual consumption by purpose (COICOP) - 2018: Total — Portugal — 2026-08: 3.6\""
+  ],
+  "item2": {
+    "codigo": 1,
+    "erros_da_faixa": [],
+    "erros_s5": [],
+    "erros_s6": [],
+    "outras_linhas_de_erro": [
+      "O LIVRO-RAZÃO NÃO PASSA — 1 erro(s):",
+      "✗ [ihpc-variacao-homologa.yml] declara a bandeira \"e\" mas o \"excerpt\" não conserva a bandeira junto do valor. Conserve a associação ao valor, ao período e ao país no formato publicado pela fonte."
+    ]
+  },
+  "series_item2": {
+    "codigo": 1,
+    "erros": [
+      "[series/ihpc-variacao-homologa-paises.yml] S5: o período da série (2026-08) não é o da linha portuguesa «ihpc-variacao-homologa» (2026-09)."
+    ]
+  },
+  "series_controlo": {
+    "codigo": 0,
+    "erros": []
+  },
+  "travessia_do_motor_item2": {
+    "codigo": 1,
+    "saida": "EXPORT_SERIES: FAIL · VS3: ihpc-variacao-homologa-paises: o período da série (2026-08) não é o da linha «ihpc-variacao-homologa»"
+  },
+  "travessia_do_motor_controlo": {
+    "codigo": 0,
+    "saida": "EXPORT_SERIES: PASS · 26 séries (10 de países, 16 no tempo), 280 pontos de países e 4131 pontos no tempo"
+  },
+  "regua": {
+    "codigo": 1,
+    "saida": "régua: Régua declarada de ihpc-variacao-homologa: União de outro período"
+  },
+  "regua_controlo": {
+    "codigo": 0,
+    "saida": "régua: passa"
+  }
+}

@@ -85,7 +85,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "53f2aad5beb509add33b67f58fbe3cfa26ab05d471a9463dfc0752047b7acce4",
       "rh_id": "serie-beneficiarios-do-rsi-por-mil",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-cem-euros-de-2015-01": {
@@ -95,7 +95,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "e9cb1ed3235a1072ec6db901a988622b92017c7ecf5acacdb545c60974001bf3",
       "rh_id": "serie-cem-euros-de-2015-01",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-ihpc-combustiveis-variacao-homologa": {
@@ -105,7 +105,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "230f3a004a720c2016e0350373ad547d06a778dc749edc318097cfa9f9eb6080",
       "rh_id": "serie-ihpc-combustiveis-variacao-homologa",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-ihpc-combustiveis-variacao-homologa-ue": {
@@ -115,7 +115,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "5b5d8ec9f3631bca55d6d0511ee505892c6e860be9692896f6be8f227750de99",
       "rh_id": "serie-ihpc-combustiveis-variacao-homologa-ue",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-ihpc-energia-da-casa-variacao-homologa": {
@@ -125,7 +125,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "5e43cfcd1d2efbea54e3c7d46012adff0181e0df68d5e9531a5f0ed5d9e2964d",
       "rh_id": "serie-ihpc-energia-da-casa-variacao-homologa",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-ihpc-rendas-variacao-homologa": {
@@ -135,7 +135,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "a7687bcc18f97422ce737560b8ad5145cf11af349fc5f3ad698fea734a1d15ea",
       "rh_id": "serie-ihpc-rendas-variacao-homologa",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-ihpc-variacao-homologa": {
@@ -145,7 +145,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "177a42a528d4b20a09be225778e2097a3360d81678954c61b232b3479f8eb594",
       "rh_id": "serie-ihpc-variacao-homologa",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-ihpc-variacao-homologa-ue": {
@@ -155,7 +155,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "419140400c0832b494f5e4b8da3311fef91c45c50c35d5bd652f2c952cfa2557",
       "rh_id": "serie-ihpc-variacao-homologa-ue",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-ipc-alimentacao-variacao-homologa": {
@@ -165,7 +165,27 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "9fe8a8b6b20f3425dcf2ef870a23abee9f0ce7089cc6e8ae5002ca2dfa59cef1",
       "rh_id": "serie-ipc-alimentacao-variacao-homologa",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
+      "rh_study": "13 Dominios"
+    },
+    "serie-ipc-combustiveis-variacao-homologa": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-05",
+      "exported_row_sha256": "4116ac13ab2c5f7eb847c3c1b7000b956e69bbbb4451210064d010f3f04af5cc",
+      "exporter": "ResearchHub/publisher/export_series.py",
+      "origin_row_sha256": "49f6e8ed6147f6643f2a332043cde3a15aadebc5a9465e6812880f25a1582010",
+      "rh_id": "serie-ipc-combustiveis-variacao-homologa",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
+      "rh_study": "13 Dominios"
+    },
+    "serie-ipc-energia-em-casa-variacao-homologa": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-05",
+      "exported_row_sha256": "99756aa1ead21e244bbc04680a2bcdb3c99ce5058eb581ab67ce8d1991c753eb",
+      "exporter": "ResearchHub/publisher/export_series.py",
+      "origin_row_sha256": "501876eab1c0076194bdebab58ccb5e5052acc268e944f2950cf51bc672326e1",
+      "rh_id": "serie-ipc-energia-em-casa-variacao-homologa",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-ipc-indice": {
@@ -175,7 +195,37 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "f3c3868d10fb9a26526455b4c2a6c1a49f5698e958d7da279f521622853927cd",
       "rh_id": "serie-ipc-indice",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
+      "rh_study": "13 Dominios"
+    },
+    "serie-ipc-indice-anual": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-05",
+      "exported_row_sha256": "9c2dd6cea1282818edae6d11d173af13c6b54277e0a3ace0e5d8fcfbea5a67c1",
+      "exporter": "ResearchHub/publisher/export_series.py",
+      "origin_row_sha256": "936ffbe275d1a2a4343532865b2db4dd5dfac94ce0fe28ed4e4a72e7d73aea46",
+      "rh_id": "serie-ipc-indice-anual",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
+      "rh_study": "13 Dominios"
+    },
+    "serie-ipc-rendas-variacao-homologa": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-05",
+      "exported_row_sha256": "47f8e9c113fadaa56fb653bd3cee716b534765a853eee6c5dbf270b0180a10e0",
+      "exporter": "ResearchHub/publisher/export_series.py",
+      "origin_row_sha256": "a54b64a06bee77bba328af24b44c1b68efd17c83e111cedee1e538bb2f8844b1",
+      "rh_id": "serie-ipc-rendas-variacao-homologa",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
+      "rh_study": "13 Dominios"
+    },
+    "serie-ipc-sem-habitacao-variacao-media-12-meses": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-05",
+      "exported_row_sha256": "593376869825bf57a2b50dbc04cbd54de9ffd96632944f17f5081790740c1976",
+      "exporter": "ResearchHub/publisher/export_series.py",
+      "origin_row_sha256": "6244d35aff6be8ea1fa1d4bf02455b063db4cf901104125f2d767b0d5d755a3b",
+      "rh_id": "serie-ipc-sem-habitacao-variacao-media-12-meses",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-ipc-variacao-homologa": {
@@ -185,7 +235,17 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "eb4fab61f355089c666e323890f5f1879f48e90f8920d324d8876b3cf91c21d3",
       "rh_id": "serie-ipc-variacao-homologa",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
+      "rh_study": "13 Dominios"
+    },
+    "serie-ipc-variacao-media-12-meses": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-05",
+      "exported_row_sha256": "9e94c93b44525939af74e341d1fcbe15612d975a65093a2624a59825bf9e752c",
+      "exporter": "ResearchHub/publisher/export_series.py",
+      "origin_row_sha256": "c663493fbde0c1d1575edc0dbe62b3c686c870d62e97b891f74c1750bd71168e",
+      "rh_id": "serie-ipc-variacao-media-12-meses",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-linha-de-risco-de-pobreza": {
@@ -195,7 +255,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "b735ef7b4a72539ddcf07d2f08621264de5febeab1e736903921876a5c13ea20",
       "rh_id": "serie-linha-de-risco-de-pobreza",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-pensao-media-anual": {
@@ -205,7 +265,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "fade74ab0b74a96933be4f3557f1cdfd8b78857aa14fd11a6e12c2cd0bb3efca",
       "rh_id": "serie-pensao-media-anual",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-precos-da-habitacao-variacao-homologa": {
@@ -215,7 +275,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "677ab4f2b5d61f77e0192875a0296cac2a6b71e6048184fb5cbcc07d53d80c0f",
       "rh_id": "serie-precos-da-habitacao-variacao-homologa",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-remuneracao-bruta-mensal-media": {
@@ -225,7 +285,27 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "d35e20b8b676d07f8df1944d9ecdfb863bd81c6a8a4385b51b2e052f4a4c6fe1",
       "rh_id": "serie-remuneracao-bruta-mensal-media",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
+      "rh_study": "13 Dominios"
+    },
+    "serie-remuneracao-bruta-mensal-media-anual": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-05",
+      "exported_row_sha256": "d0922473553855b70aab709417099dadb0abb9890e99f6814c8db3fb5bdeb365",
+      "exporter": "ResearchHub/publisher/export_series.py",
+      "origin_row_sha256": "91f64ea232eb8eb8f845e8dbf367805128b03415c9df59648c9b2407fe19a778",
+      "rh_id": "serie-remuneracao-bruta-mensal-media-anual",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
+      "rh_study": "13 Dominios"
+    },
+    "serie-remuneracao-bruta-mensal-media-real": {
+      "corrections_at_export": 0,
+      "exported_at": "2026-10-05",
+      "exported_row_sha256": "7d3d9a3633cc5c4e0f7fbca4c1ebfa3832360a59517d58ca867241d8960366f4",
+      "exporter": "ResearchHub/publisher/export_series.py",
+      "origin_row_sha256": "788854e85a040e747bfd322e90d5c9b348124f5564b94c1c2025f38c8587cbc8",
+      "rh_id": "serie-remuneracao-bruta-mensal-media-real",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "serie-salario-minimo-mensal": {
@@ -235,7 +315,7 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_row_sha256": "80ba0278052e00f9b297f439be50cb088229cde45ce6134b577e3814e30794f4",
       "rh_id": "serie-salario-minimo-mensal",
-      "rh_ledger_sha256": "e9eb2d2d1ba5a84f8ca5ae442fcd8bfb65f30158278f8a094d0119034eec7fca",
+      "rh_ledger_sha256": "67ba3d0feca0198e417664576730c58175589ec2134c8142d2cc58ce84523bf9",
       "rh_study": "13 Dominios"
     },
     "sobrecarga-do-custo-da-habitacao-2025-paises": {

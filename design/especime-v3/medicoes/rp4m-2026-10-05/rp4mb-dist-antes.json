@@ -1,0 +1,24 @@
+{
+  "o_que": "a frase da conta nas páginas de dist/ (medir-rp4mb-dist.py)",
+  "etiqueta": "antes",
+  "dist_commit": "1a186832499a6e90ce54d0fee3aa1a221ce53084",
+  "dist_construido_em": "2026-10-05T15:23:37.051Z",
+  "frases_novas": [
+    "Esta série é calculada pelo projeto, ponto a ponto, a partir de outra série do livro-razão.",
+    "Esta série é calculada pelo projeto, ponto a ponto, a partir de outras séries do livro-razão.",
+    "This series is calculated by the project, point by point, from another series in the ledger.",
+    "This series is calculated by the project, point by point, from other series in the ledger."
+  ],
+  "metades_tiradas": [
+    ", e a conta refaz-se em cada construção do sítio",
+    ", and the calculation is redone at every build of the site"
+  ],
+  "paginas_lidas": 7899,
+  "paginas_com_a_frase_nova": [],
+  "paginas_com_a_metade_tirada": [
+    "en/ledger/series/serie-cem-euros-de-2015-01/index.html",
+    "en/ledger/series/serie-remuneracao-bruta-mensal-media-real/index.html",
+    "livro-razao/series/serie-cem-euros-de-2015-01/index.html",
+    "livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html"
+  ]
+}

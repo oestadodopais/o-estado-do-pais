@@ -6,7 +6,7 @@
 id: "pib-real-per-capita-2024"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
-value: "20 430"
+value: "20 520"
 unit: "euros por habitante · volumes encadeados (2015)"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
@@ -17,11 +17,12 @@ document:
   kind: "serie"
   url: "https://ec.europa.eu/eurostat/databrowser/view/tipsna40/default/table?lang=en"
 source_url: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT"
-access_date: "2026-09-15"
+access_date: "2026-10-05"
+published_at: "2026-10-02"
 reference_date: "2024"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430 p"
+excerpt: "Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20520"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -43,16 +44,38 @@ corrections:
     o valor não mudou.
   reason_en: The excerpt now carries the status mark the source prints for the same observation, read on 28.09.2026;
     the value has not changed.
+- date: '2026-10-05'
+  kind: atualizacao
+  old_value: 20 430
+  new_value: 20 520
+  reason: O Eurostat reviu o valor de Portugal a 02.10.2026 (o carimbo do conjunto passou de 28.09.2026 a 02.10.2026); a reconferência
+    semanal de 05.10.2026 viu a revisão.
+  reason_en: Eurostat revised Portugal's value on 02.10.2026 (the dataset stamp moved from 28.09.2026 to 02.10.2026); the
+    weekly check of 05.10.2026 caught the revision.
+- date: '2026-10-05'
+  kind: proveniencia
+  field: access_date
+  old_value: '2026-09-15'
+  new_value: '2026-10-05'
+  reason: O valor novo foi lido a 05.10.2026, no dia da reconferência que viu a revisão; a leitura anterior, de 15.09.2026,
+    é a do valor 20 430.
+  reason_en: The new value was read on 05.10.2026, the day of the check that caught the revision; the earlier reading, of
+    15.09.2026, is that of the value 20 430.
+- date: '2026-10-05'
+  kind: proveniencia
+  field: excerpt
+  old_value: 'Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20430 p'
+  new_value: 'Real GDP per capita — Chain linked volumes (2015), euro per capita — Portugal — 2024: 20520'
+  reason: O excerto passa a transcrever o valor revisto que a fonte imprime na mesma observação, lida a 05.10.2026, e a fonte
+    deixou de a marcar como provisória.
+  reason_en: The excerpt now transcribes the revised value the source prints for the same observation, read on 05.10.2026,
+    and the source no longer marks it as provisional.
 
 # Reconferências. Escritas por indicators/refresh.py, nunca à mão.
 
 # Reconferências. Escritas pelo motor (indicators/refresh.py e
 # indicators/corredor.py), nunca à mão.
 verifications:
-  - date: "2026-09-21"
-    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT"
-    result: "igual"
-    by: "painel-semanal"
   - date: "2026-09-28"
     path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT"
     result: "inacessivel"
@@ -66,8 +89,7 @@ verifications:
     result: "diverge"
     by: "painel-semanal"
     found: "20520"
-source_flag: "p"
-
-source_flag_note: "dado provisório"
-
-source_flag_note_en: "provisional data"
+  - date: "2026-10-05"
+    path: "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tipsna40?format=JSON&lang=EN&geo=PT"
+    result: "igual"
+    by: "painel-semanal"

@@ -1,0 +1,258 @@
+{
+  "desenhos": 82,
+  "recibos": [
+    "en:serie-beneficiarios-do-rsi-por-mil",
+    "en:serie-cem-euros-de-2015-01",
+    "en:serie-ihpc-combustiveis-variacao-homologa-ue",
+    "en:serie-ihpc-combustiveis-variacao-homologa",
+    "en:serie-ihpc-energia-da-casa-variacao-homologa",
+    "en:serie-ihpc-rendas-variacao-homologa",
+    "en:serie-ihpc-variacao-homologa-ue",
+    "en:serie-ihpc-variacao-homologa",
+    "en:serie-ipc-alimentacao-variacao-homologa",
+    "en:serie-ipc-combustiveis-variacao-homologa",
+    "en:serie-ipc-energia-em-casa-variacao-homologa",
+    "en:serie-ipc-indice-anual",
+    "en:serie-ipc-indice",
+    "en:serie-ipc-rendas-variacao-homologa",
+    "en:serie-ipc-sem-habitacao-variacao-media-12-meses",
+    "en:serie-ipc-variacao-homologa",
+    "en:serie-ipc-variacao-media-12-meses",
+    "en:serie-linha-de-risco-de-pobreza",
+    "en:serie-pensao-media-anual",
+    "en:serie-precos-da-habitacao-variacao-homologa",
+    "en:serie-remuneracao-bruta-mensal-media-anual",
+    "en:serie-remuneracao-bruta-mensal-media-real",
+    "en:serie-remuneracao-bruta-mensal-media",
+    "en:serie-salario-minimo-mensal",
+    "pt:serie-beneficiarios-do-rsi-por-mil",
+    "pt:serie-cem-euros-de-2015-01",
+    "pt:serie-ihpc-combustiveis-variacao-homologa-ue",
+    "pt:serie-ihpc-combustiveis-variacao-homologa",
+    "pt:serie-ihpc-energia-da-casa-variacao-homologa",
+    "pt:serie-ihpc-rendas-variacao-homologa",
+    "pt:serie-ihpc-variacao-homologa-ue",
+    "pt:serie-ihpc-variacao-homologa",
+    "pt:serie-ipc-alimentacao-variacao-homologa",
+    "pt:serie-ipc-combustiveis-variacao-homologa",
+    "pt:serie-ipc-energia-em-casa-variacao-homologa",
+    "pt:serie-ipc-indice-anual",
+    "pt:serie-ipc-indice",
+    "pt:serie-ipc-rendas-variacao-homologa",
+    "pt:serie-ipc-sem-habitacao-variacao-media-12-meses",
+    "pt:serie-ipc-variacao-homologa",
+    "pt:serie-ipc-variacao-media-12-meses",
+    "pt:serie-linha-de-risco-de-pobreza",
+    "pt:serie-pensao-media-anual",
+    "pt:serie-precos-da-habitacao-variacao-homologa",
+    "pt:serie-remuneracao-bruta-mensal-media-anual",
+    "pt:serie-remuneracao-bruta-mensal-media-real",
+    "pt:serie-remuneracao-bruta-mensal-media",
+    "pt:serie-salario-minimo-mensal"
+  ],
+  "provas": [
+    {
+      "nome": "determinismo, todos os pontos e todas as séries da casa",
+      "passou": true
+    },
+    {
+      "nome": "escala conhecida: zero e dez nas pontas do campo",
+      "passou": true
+    },
+    {
+      "nome": "um ponto a menos muda as coordenadas",
+      "passou": true
+    },
+    {
+      "nome": "uma lacuna declarada quebra a linha sem interpolar",
+      "passou": true
+    },
+    {
+      "nome": "unidades diferentes recusadas no modo unidade",
+      "passou": true
+    },
+    {
+      "nome": "duas cadências e unidades indexadas a cem em janeiro de dois mil e quinze",
+      "passou": true
+    },
+    {
+      "nome": "linha sem o período de base excluída com razão, sem perder as outras",
+      "passou": true
+    },
+    {
+      "nome": "base nula recusada",
+      "passou": true
+    },
+    {
+      "nome": "períodos por extenso nas duas edições",
+      "passou": true
+    },
+    {
+      "nome": "um ponto isolado entre lacunas é um círculo visível",
+      "passou": true
+    },
+    {
+      "nome": "a marca do último ano ancora-se no primeiro período desse ano, como as intermédias (RP4-m)",
+      "passou": true
+    },
+    {
+      "nome": "anos ingleses e artigos dos títulos",
+      "passou": true
+    }
+  ],
+  "plantas": [
+    {
+      "lang": "pt",
+      "nome": "ponto deslocado",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · coordenadas ou identidade dos segmentos diferem do livro"
+    },
+    {
+      "lang": "pt",
+      "nome": "largura máxima retirada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · largura máxima diferente da largura do viewBox"
+    },
+    {
+      "lang": "pt",
+      "nome": "marca trocada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · marcas do eixo valor diferem da recomposição"
+    },
+    {
+      "lang": "pt",
+      "nome": "série trocada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · coordenadas ou identidade dos segmentos diferem do livro"
+    },
+    {
+      "lang": "pt",
+      "nome": "guião no desenho",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · guião ou animação no desenho estático"
+    },
+    {
+      "lang": "pt",
+      "nome": "traço transformado",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · elemento ou atributo que altera a forma estática"
+    },
+    {
+      "lang": "pt",
+      "nome": "traço escondido por classe",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · classe do traço alterada"
+    },
+    {
+      "lang": "pt",
+      "nome": "algarismo fora da escala",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · geometria ou texto acrescentado fora da escala"
+    },
+    {
+      "lang": "en",
+      "nome": "ponto deslocado",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · coordenadas ou identidade dos segmentos diferem do livro"
+    },
+    {
+      "lang": "en",
+      "nome": "largura máxima retirada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · largura máxima diferente da largura do viewBox"
+    },
+    {
+      "lang": "en",
+      "nome": "marca trocada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · marcas do eixo valor diferem da recomposição"
+    },
+    {
+      "lang": "en",
+      "nome": "série trocada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · coordenadas ou identidade dos segmentos diferem do livro"
+    },
+    {
+      "lang": "en",
+      "nome": "guião no desenho",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · guião ou animação no desenho estático"
+    },
+    {
+      "lang": "en",
+      "nome": "traço transformado",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · elemento ou atributo que altera a forma estática"
+    },
+    {
+      "lang": "en",
+      "nome": "traço escondido por classe",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · classe do traço alterada"
+    },
+    {
+      "lang": "en",
+      "nome": "algarismo fora da escala",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · geometria ou texto acrescentado fora da escala"
+    },
+    {
+      "lang": "pt",
+      "regra": "página",
+      "nome": "o desenho indexado no recibo de uma série sem figura declarada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · o modo indexado só no recibo de uma série com figura indexada declarada"
+    },
+    {
+      "lang": "pt",
+      "regra": "página",
+      "nome": "o desenho indexado numa página que não é um recibo",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · o modo indexado só no recibo de uma série com figura indexada declarada"
+    },
+    {
+      "lang": "pt",
+      "regra": "página",
+      "nome": "a figura declarada com as séries por outra ordem",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · a figura indexada do recibo não é a declarada"
+    },
+    {
+      "lang": "pt",
+      "regra": "página",
+      "nome": "o recibo declarado só com a sua série, no modo da unidade",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · o recibo com figura indexada declarada desenha-a no modo indexado"
+    },
+    {
+      "lang": "pt",
+      "regra": "página",
+      "nome": "o recibo com o gráfico de outra série",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "F21 · o gráfico do recibo não é da sua série"
+    }
+  ],
+  "erros": []
+}
