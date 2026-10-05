@@ -5258,72 +5258,10 @@ for (const file of ficheirosHtml(DIST)) {
    * A página tem de trazer a marca. Sem esta segunda metade, apagar o
    * atributo apagava a conferência.
    */
-  if (rota?.key === 'sobre') {
-    /* A REGRA DOS NOMES, com a mesma disciplina do parágrafo decidido (bloco P3,
-       16.09.2026, item 8). É a primeira das três proteções da emenda de
-       15.09.2026 da política da autonomia, e é uma norma declarada: se a página
-       a pudesse reescrever, não era uma norma, era uma legenda. */
-    const nomes = body0.querySelectorAll('[data-sobre-nomes]');
-    if (nomes.length !== 1) {
-      err(
-        `a página do Sobre tem ${nomes.length} blocos marcados data-sobre-nomes; tem de ter ` +
-          `exactamente um, com a regra dos nomes.`,
-      );
-    }
-    for (const bloco of nomes) {
-      const lingua = bloco.getAttribute('data-sobre-nomes');
-      const registado = SOBRE[lingua]?.nomes;
-      if (!registado) {
-        err(`data-sobre-nomes="${lingua}" não é uma edição de src/data/sobre.mjs.`);
-        continue;
-      }
-      if (lingua !== rota.lang) {
-        err(`a página do Sobre da edição "${rota.lang}" rende a regra dos nomes de "${lingua}".`);
-        continue;
-      }
-      const renderizado = textoTranscrito(bloco);
-      const esperado = normalizeWhitespace(registado);
-      if (renderizado !== esperado) {
-        err(
-          `a regra dos nomes não é a que está decidida em src/data/sobre.mjs.\n` +
-            `      decidida:    ${esperado.slice(0, 150)}\n` +
-            `      renderizada: ${renderizado.slice(0, 150)}\n` +
-            `      Este texto é da direção. Muda por decisão, e no ficheiro.`,
-        );
-      }
-    }
-    const blocos = body0.querySelectorAll('[data-sobre]');
-    if (blocos.length !== 1) {
-      err(
-        `a página do Sobre tem ${blocos.length} blocos marcados data-sobre; tem de ter ` +
-          `exactamente um, com o texto decidido.`,
-      );
-    }
-    for (const bloco of blocos) {
-      const lingua = bloco.getAttribute('data-sobre');
-      const registado = SOBRE[lingua]?.texto;
-      if (!registado) {
-        err(`data-sobre="${lingua}" não é uma edição de src/data/sobre.mjs.`);
-        continue;
-      }
-      if (lingua !== rota.lang) {
-        err(
-          `a página do Sobre da edição "${rota.lang}" rende o texto de "${lingua}".`,
-        );
-        continue;
-      }
-      const renderizado = textoTranscrito(bloco);
-      const esperado = normalizeWhitespace(registado);
-      if (renderizado !== esperado) {
-        err(
-          `o texto do Sobre não é o que está decidido em src/data/sobre.mjs.\n` +
-            `      decidido:    ${esperado.slice(0, 150)}\n` +
-            `      renderizado: ${renderizado.slice(0, 150)}\n` +
-            `      Este texto é da direção. Muda por decisão, e no ficheiro.`,
-        );
-      }
-    }
-  }
+  /* A REGRA DOS NOMES deixou de estar na página do Sobre a 05.10.2026 (§1.163), por
+     decisão do diretor: a norma fica na política da autonomia e na regra do Método, que
+     este portão confere como texto governado. A conferência carácter a carácter do
+     data-sobre-nomes saiu com a frase (bloco P3, 16.09.2026, item 8). */
 
   /**
    * A PORTA DAS CORRECÇÕES — exactamente uma por página construída.
