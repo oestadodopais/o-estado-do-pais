@@ -203,7 +203,7 @@ const ladoDoIndice = valorDoUltimo === null ? null : valorDoUltimo > 100 ? st.in
 
       <section class="linha-bloco serie-pontos" aria-labelledby="pontos">
         <h2 class="linha-bloco-titulo" id="pontos">{st.pontosK}</h2>
-        <div class:list={['serie-grafico', indexada && 'serie-grafico-indexado']}><SerieDoPais ids={indexada ?? [id]} modo={indexada ? 'indice' : 'unidade'} lang={lang} /></div>
+        <div class:list={['serie-grafico', indexada && 'serie-grafico-indexado']}><SerieDoPais ids={indexada ?? [id]} modo={indexada ? 'indice' : 'unidade'} lang={lang} comLeitura /></div>
         {
           indexada && (
             <div class="serie-indexada-legenda" data-serie-indexada={id}>

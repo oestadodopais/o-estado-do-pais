@@ -63,7 +63,7 @@ const destino = ENTRADAS.find((e) => e.id === porta.entrada);
     <p class="pp-frase" data-bloco-frase data-bloco-declarado><Frase partes={b.frase} lang={lang} selos /></p>
     {b.serie ? <div class="pp-ilustracao">
       {b.desenho && <DesenhoDoBloco modelo={b.desenho} lang={lang} bloco={b.id} />}
-      <a class="pp-serie" data-bloco-serie={b.serie} href={routePath('serie', lang, { slug: b.serie })}><NomeDaSerie id={b.serie} lang={lang} class="pp-serie-nome" /><span class="pp-serie-unidade" data-bloco-serie-unidade={b.serie} data-bloco-declarado><Frase partes={unidadeDaSerie} lang={lang} /></span><SerieDoPais ids={[b.serie]} lang={lang} nomeVisivel /></a>
+      <a class="pp-serie" data-bloco-serie={b.serie} href={routePath('serie', lang, { slug: b.serie })}><NomeDaSerie id={b.serie} lang={lang} class="pp-serie-nome" /><span class="pp-serie-unidade" data-bloco-serie-unidade={b.serie} data-bloco-declarado><Frase partes={unidadeDaSerie} lang={lang} /></span><SerieDoPais ids={[b.serie]} lang={lang} nomeVisivel comLeitura /></a>
     </div> : b.desenho && <DesenhoDoBloco modelo={b.desenho} lang={lang} bloco={b.id} />}
     <div class="pp-notas">
     <p class="pp-ressalva" data-bloco-ressalva data-bloco-declarado><Frase partes={b.ressalva} lang={lang} /></p>

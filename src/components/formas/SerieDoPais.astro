@@ -6,7 +6,11 @@
  * série que o portão de HTML compara); e cada ponto tem a sua zona de leitura, um grupo com a zona, a linha vertical,
  * o ponto marcado e a etiqueta, que a folha mostra só ao passar o rato. A etiqueta escreve o valor por `PontoDaSerie`
  * (`data-ponto`) e o período por `data-ponto-periodo`, na forma da casa (`dataDaCasa`); o portão de HTML compara os
- * dois com o ponto da série, e a F2 e a F21 também. Nenhum guião. */
+ * dois com o ponto da série, e a F2 e a F21 também. Nenhum guião.
+ *
+ * A PASSAGEM RP4-c-b (05.10.2026, a decisão do lugar de direção sobre o peso, a I208): as zonas só onde a leitura vive,
+ * a primeira página e os recibos, que as pedem com `comLeitura`; um cartão não as pede, porque é a porta para o recibo.
+ * E uma zona por coluna de píxel do campo, com a leitura do ponto mais próximo (o módulo do desenho diz a regra). */
 import { serieDoPais, segmentoVisivel } from '../../lib/formas/serie-do-pais.mjs';
 import { tituloDaSerie, legendasDasExclusoes } from '../../lib/formas/palavras-da-serie.mjs';
 import { getSerie } from '../../lib/series.mjs';
@@ -16,8 +20,8 @@ import PontoDaSerie from '../serie/PontoDaSerie.astro';
 import CampoDaSerie from '../serie/CampoDaSerie.astro';
 import '../../styles/serie-do-pais.css';
 
-const { ids, lang, modo = 'unidade', largura = 360, altura = 200, nomeVisivel = false } = Astro.props;
-const desenho = serieDoPais(ids, modo, largura, altura);
+const { ids, lang, modo = 'unidade', largura = 360, altura = 200, nomeVisivel = false, comLeitura = false } = Astro.props;
+const desenho = serieDoPais(ids, modo, largura, altura, undefined, { leitura: comLeitura });
 const titulo = tituloDaSerie(desenho.linhas, lang, nomeVisivel);
 if (/\d/.test(titulo)) throw new Error('RP4: o título do desenho tem algarismos fora da escala.');
 const g = desenho.campo;
