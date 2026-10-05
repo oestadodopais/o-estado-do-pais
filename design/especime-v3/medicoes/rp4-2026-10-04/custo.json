@@ -1,0 +1,26 @@
+{
+  "comando": "python3 design/especime-v3/medicoes/rp4-2026-10-04/custo-e-higiene.py <registo> <sessão>",
+  "modelo": "gpt-6-astra",
+  "inicio": "2026-10-04T22:16:04.833Z",
+  "medido_em": "2026-10-05T00:13:45.676484+00:00",
+  "segundos_observados": 7060,
+  "tokens_used": null,
+  "linha_tokens_used": null,
+  "estado": "a linha final ainda não existe no processo em curso",
+  "ultimo_evento": {
+    "hora": "2026-10-05T00:13:11.879Z",
+    "uso": {
+      "input_tokens": 31641412,
+      "cached_input_tokens": 30779520,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 137276,
+      "reasoning_output_tokens": 60955,
+      "total_tokens": 31778688
+    }
+  },
+  "conhecido_positivo": {
+    "linha_sintetica": "tokens used\n12,345",
+    "lida": 12345,
+    "ausencia_recusada": true
+  }
+}

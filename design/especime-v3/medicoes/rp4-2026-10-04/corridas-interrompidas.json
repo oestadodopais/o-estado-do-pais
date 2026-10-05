@@ -1,0 +1,26 @@
+{
+  "comando": "leitura Python dos ficheiros cabeca e *.codigo das corridas interrompidas",
+  "corridas": [
+    {
+      "cabeca": "3565635afc26d3dfd6210e92abda7b8fd6b232bc",
+      "codigos_lidos": {
+        "build": 0,
+        "verify": null,
+        "typecheck": null
+      },
+      "estado": "interrompida, não é prova final",
+      "motivo": "A unidade e o inventário do novo cartão precisavam de declaração; a série da primeira página saía da coluna das barras."
+    },
+    {
+      "cabeca": "7f02e3d9fd1d09f89980dd7685fb098caf4cc931",
+      "codigos_lidos": {
+        "build": 0,
+        "verify": null,
+        "typecheck": null
+      },
+      "estado": "interrompida, não é prova final",
+      "motivo": "As letras dos eixos encolhiam nos cartões estreitos; as dimensões próprias do cartão foram corrigidas."
+    }
+  ],
+  "conhecido_positivo": "um código sem ficheiro fica nulo, nunca zero"
+}

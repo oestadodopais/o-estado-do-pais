@@ -1,0 +1,199 @@
+{
+  "corridas": [
+    {
+      "rota": "/",
+      "largura": 390,
+      "tema": "light",
+      "blocos": 5,
+      "falhas": [],
+      "geometria": [
+        "precos:unica: 5 barras, 10.688 px por unidade, faixa de 354.0 px",
+        "casa:unica: 4 barras, 6.337 px por unidade, faixa de 240.4 px",
+        "trabalho:painel-0: 2 barras, 1.724 px por unidade, faixa de 240.4 px",
+        "trabalho:desemprego: 4 barras, 17.237 px por unidade, faixa de 240.4 px",
+        "estado:unica: 3 barras, 1.807 px por unidade, faixa de 170.0 px",
+        "estado · referência: a linha a 108.4 px da base, os 60 a 108.4 px",
+        "pobreza:painel-0: 2 barras, 6.894 px por unidade, faixa de 240.4 px",
+        "pobreza:painel-1: 2 barras, 34.471 px por unidade, faixa de 240.4 px"
+      ]
+    },
+    {
+      "rota": "/",
+      "largura": 1280,
+      "tema": "light",
+      "blocos": 5,
+      "falhas": [],
+      "geometria": [
+        "precos:unica: 5 barras, 10.129 px por unidade, faixa de 335.5 px",
+        "casa:unica: 4 barras, 3.540 px por unidade, faixa de 134.8 px",
+        "trabalho:painel-0: 2 barras, 3.114 px por unidade, faixa de 433.5 px",
+        "trabalho:desemprego: 4 barras, 31.141 px por unidade, faixa de 433.5 px",
+        "estado:unica: 3 barras, 2.342 px por unidade, faixa de 220.0 px",
+        "estado · referência: a linha a 140.5 px da base, os 60 a 140.5 px",
+        "pobreza:painel-0: 2 barras, 3.852 px por unidade, faixa de 134.8 px",
+        "pobreza:painel-1: 2 barras, 19.261 px por unidade, faixa de 134.8 px"
+      ]
+    },
+    {
+      "rota": "/",
+      "largura": 390,
+      "tema": "dark",
+      "blocos": 5,
+      "falhas": [],
+      "geometria": [
+        "precos:unica: 5 barras, 10.688 px por unidade, faixa de 354.0 px",
+        "casa:unica: 4 barras, 6.337 px por unidade, faixa de 240.4 px",
+        "trabalho:painel-0: 2 barras, 1.724 px por unidade, faixa de 240.4 px",
+        "trabalho:desemprego: 4 barras, 17.237 px por unidade, faixa de 240.4 px",
+        "estado:unica: 3 barras, 1.807 px por unidade, faixa de 170.0 px",
+        "estado · referência: a linha a 108.4 px da base, os 60 a 108.4 px",
+        "pobreza:painel-0: 2 barras, 6.894 px por unidade, faixa de 240.4 px",
+        "pobreza:painel-1: 2 barras, 34.471 px por unidade, faixa de 240.4 px"
+      ]
+    },
+    {
+      "rota": "/",
+      "largura": 1280,
+      "tema": "dark",
+      "blocos": 5,
+      "falhas": [],
+      "geometria": [
+        "precos:unica: 5 barras, 10.129 px por unidade, faixa de 335.5 px",
+        "casa:unica: 4 barras, 3.540 px por unidade, faixa de 134.8 px",
+        "trabalho:painel-0: 2 barras, 3.114 px por unidade, faixa de 433.5 px",
+        "trabalho:desemprego: 4 barras, 31.141 px por unidade, faixa de 433.5 px",
+        "estado:unica: 3 barras, 2.342 px por unidade, faixa de 220.0 px",
+        "estado · referência: a linha a 140.5 px da base, os 60 a 140.5 px",
+        "pobreza:painel-0: 2 barras, 3.852 px por unidade, faixa de 134.8 px",
+        "pobreza:painel-1: 2 barras, 19.261 px por unidade, faixa de 134.8 px"
+      ]
+    },
+    {
+      "rota": "/en/",
+      "largura": 390,
+      "tema": "light",
+      "blocos": 5,
+      "falhas": [],
+      "geometria": [
+        "precos:unica: 5 barras, 10.688 px por unidade, faixa de 354.0 px",
+        "casa:unica: 4 barras, 6.337 px por unidade, faixa de 240.4 px",
+        "trabalho:painel-0: 2 barras, 1.724 px por unidade, faixa de 240.4 px",
+        "trabalho:desemprego: 4 barras, 17.237 px por unidade, faixa de 240.4 px",
+        "estado:unica: 3 barras, 1.807 px por unidade, faixa de 170.0 px",
+        "estado · referência: a linha a 108.4 px da base, os 60 a 108.4 px",
+        "pobreza:painel-0: 2 barras, 6.894 px por unidade, faixa de 240.4 px",
+        "pobreza:painel-1: 2 barras, 34.471 px por unidade, faixa de 240.4 px"
+      ]
+    },
+    {
+      "rota": "/en/",
+      "largura": 1280,
+      "tema": "light",
+      "blocos": 5,
+      "falhas": [],
+      "geometria": [
+        "precos:unica: 5 barras, 10.129 px por unidade, faixa de 335.5 px",
+        "casa:unica: 4 barras, 3.540 px por unidade, faixa de 134.8 px",
+        "trabalho:painel-0: 2 barras, 3.114 px por unidade, faixa de 433.5 px",
+        "trabalho:desemprego: 4 barras, 31.141 px por unidade, faixa de 433.5 px",
+        "estado:unica: 3 barras, 2.342 px por unidade, faixa de 220.0 px",
+        "estado · referência: a linha a 140.5 px da base, os 60 a 140.5 px",
+        "pobreza:painel-0: 2 barras, 3.852 px por unidade, faixa de 134.8 px",
+        "pobreza:painel-1: 2 barras, 19.261 px por unidade, faixa de 134.8 px"
+      ]
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "um número solto",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · precos: o bloco escreve um algarismo sem marca de origem: «Os preços no seu conjunto medem-se num cabaz de bens e se…»",
+      "falhas_vistas": 3
+    },
+    {
+      "nome": "um valor trocado",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · precos: o valor desenhado de ipc-combustiveis-variacao-homologa é «23,87» e a linha diz «23,78»",
+      "falhas_vistas": 1
+    },
+    {
+      "nome": "o identificador de outra linha",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · precos: o valor desenhado de ipc-alimentacao-variacao-homologa é «5,22» e a linha diz «2,14»",
+      "falhas_vistas": 3
+    },
+    {
+      "nome": "uma linha retirada",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · pobreza: o desenho não tem a linha racio-s80-s20-2025-ue",
+      "falhas_vistas": 2
+    },
+    {
+      "nome": "um número das palavras fixas mudado",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · casa: o texto rendido da frase difere do que o resolvedor dá: «Em Portugal, a parte das pessoas que gastam mais de 45 % …» contra «Em Portugal, a parte das pessoas que gastam mais de 40 % …»",
+      "falhas_vistas": 2
+    },
+    {
+      "nome": "a unidade dentro do elemento do valor",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · precos: o valor desenhado de ipc-combustiveis-variacao-homologa é «23,78 %» e a linha diz «23,78»",
+      "falhas_vistas": 1
+    },
+    {
+      "nome": "um travessão",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · estado: da frase tem um travessão: «A dívida pública desceu de 2024 para 2025 — e está acima …»",
+      "falhas_vistas": 3
+    },
+    {
+      "nome": "um painel da habitação com outra escala escrita",
+      "mordeu": true,
+      "queixa": "[desenho] G1 · na escala «casa:unica», sobrecarga-do-custo-da-habitacao-2025 mede 39.92 px; na escala dos outros mediria 27.73 px",
+      "falhas_vistas": 4
+    },
+    {
+      "nome": "um painel da habitação mais estreito",
+      "mordeu": true,
+      "queixa": "[desenho] G1 · na escala «casa:unica», sobrecarga-do-custo-da-habitacao-2025 mede 39.92 px; na escala dos outros mediria 14.24 px",
+      "falhas_vistas": 3
+    },
+    {
+      "nome": "uma barra fora da origem",
+      "mordeu": true,
+      "queixa": "[desenho] G3 · as barras de ipc-combustiveis-variacao-homologa, ipc-rendas-variacao-homologa, ipc-alimentacao-variacao-homologa, ipc-energia-em-casa-variacao-homologa, ipc-variacao-homologa não partem da mesma origem",
+      "falhas_vistas": 1
+    },
+    {
+      "nome": "a linha do limiar nos 50",
+      "mordeu": true,
+      "queixa": "[desenho] G4 · a linha de referência está a 90.4 px da base; os 60 da escala estão a 108.4 px",
+      "falhas_vistas": 2
+    },
+    {
+      "nome": "a linha a entrar no painel da União",
+      "mordeu": true,
+      "queixa": "[desenho] G4 · a linha do valor de referência entra no painel da União, onde a Comissão não aplica o limiar",
+      "falhas_vistas": 1
+    },
+    {
+      "nome": "uma cor numa coluna",
+      "mordeu": true,
+      "queixa": "[cor] G5 · rgb(31, 78, 140) em span.pp-col-barra",
+      "falhas_vistas": 1
+    },
+    {
+      "nome": "preenchimento preto nas guias da série",
+      "mordeu": true,
+      "queixa": "[cor] G5 · rgb(0, 0, 0) em line",
+      "falhas_vistas": 1
+    },
+    {
+      "nome": "o âmbar no rótulo",
+      "mordeu": true,
+      "queixa": "[cor] G5 · âmbar fora da linha de referência, em p.pp-ref-rotulo",
+      "falhas_vistas": 2
+    }
+  ],
+  "falhas": []
+}
