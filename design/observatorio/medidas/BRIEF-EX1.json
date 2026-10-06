@@ -140,10 +140,10 @@
     },
     {
       "nome": "portas_do_menu",
-      "valor": 5,
-      "comando": "git show 3664b90d:src/lib/navegacao.mjs · as chaves de ETIQUETA_NAV",
+      "valor": 6,
+      "comando": "git show 3664b90d:src/lib/navegacao.mjs · as entradas de ROTAS_NAV, que o menu rende (git show 3664b90d:src/components/Masthead.astro · ROTAS_NAV.map dentro de #nav-principal)",
       "conhecido_positivo": {
-        "o_que": "a porta da União está entre elas",
+        "o_que": "o cabeçalho percorre ROTAS_NAV dentro de #nav-principal, e a porta da União é uma das entradas",
         "encontrado": true
       }
     }

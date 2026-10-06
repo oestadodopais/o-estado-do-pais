@@ -58,7 +58,14 @@ pp = git("show", f"{CAB}:src/data/primeira-pagina.mjs") or ""
 medicao("blocos_da_primeira_pagina", len(re.findall(r"^\s{4}id: '", pp, re.M)) if pp else NAO, f"git show {CAB}:src/data/primeira-pagina.mjs · as chaves «id» ao nível dos blocos", "o bloco dos preços existe", "id: 'precos'" in pp)
 medicao("frases_com_ramo_decidido_pelos_numeros_na_primeira_pagina", len(re.findall(r"\{ compara:", pp)) if pp else NAO, f"git show {CAB}:src/data/primeira-pagina.mjs · os tokens «compara»", "há um token compara da dívida", "compara: ['divida-publica-2025'" in pp)
 nav = git("show", f"{CAB}:src/lib/navegacao.mjs") or ""
-medicao("portas_do_menu", len(re.findall(r"^\s+[a-zA-Z]+:\s*'", nav.split("ETIQUETA_NAV")[1] if "ETIQUETA_NAV" in nav else "", re.M)) if nav else NAO, f"git show {CAB}:src/lib/navegacao.mjs · as chaves de ETIQUETA_NAV", "a porta da União está entre elas", "uniaoEuropeia" in nav)
+mastro = git("show", f"{CAB}:src/components/Masthead.astro") or ""
+# EX1-b (06.10.2026, a I210): a primeira forma desta medida contava as linhas do objeto ETIQUETA_NAV que começam por uma
+# chave (5), e não as portas que o menu rende. O menu do cabeçalho (`Masthead.astro`, dentro de `#nav-principal`) rende
+# uma porta por entrada de ROTAS_NAV: a medida conta essas entradas, e o conhecido-positivo exige que o cabeçalho as
+# percorra e que a porta da União esteja entre elas.
+rotas_nav = re.search(r"export const ROTAS_NAV = \[([^\]]*)\]", nav)
+portas_nav = re.findall(r"'([A-Za-z]+)'", rotas_nav.group(1)) if rotas_nav else []
+medicao("portas_do_menu", len(portas_nav) if rotas_nav else NAO, f"git show {CAB}:src/lib/navegacao.mjs · as entradas de ROTAS_NAV, que o menu rende (git show {CAB}:src/components/Masthead.astro · ROTAS_NAV.map dentro de #nav-principal)", "o cabeçalho percorre ROTAS_NAV dentro de #nav-principal, e a porta da União é uma das entradas", "ROTAS_NAV.map" in mastro and 'id="nav-principal"' in mastro and "uniaoEuropeia" in portas_nav)
 
 saida = pathlib.Path(os.environ.get("OEDP_MEDIDAS_JSON") or (SITIO / "design/observatorio/medidas/BRIEF-EX1.json"))
 saida.parent.mkdir(parents=True, exist_ok=True)
