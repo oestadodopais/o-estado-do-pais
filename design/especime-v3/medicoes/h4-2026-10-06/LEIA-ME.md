@@ -507,7 +507,7 @@ Os achados do EX1 ficam com o lugar de direção, por decisão expressa. A leitu
 
 A redação dos três papéis é do lugar de direção, reescrita depois da leitura curta do diff da H4-d (`design/especime-v3/critica/LEITURA-H4-d-2026-10-06.md`, o achado 3 e o 7): sem «peça» nem «lugares», a regra das famílias dita uma vez só, e o que a construção faz com cada número (a fonte e a data) distinguido do que a leitura faz com o que foi construído. A exceção H4-6 da L3 e as suas quatro plantas saíram com a palavra. Como a redação é de um modelo Claude, a leitura dela é do Codex, a outra família: a primeira leitura (`design/especime-v3/critica/LEITURA-H4-e-codex-2026-10-06.md`) mordeu as cinco plantas e achou que a regra 9 do Método («A intervenção humana») ainda dizia que a direção é de uma pessoa que escolhe o que se publica, contra a secção dos papéis e contra a §1.112; a regra passou a dizer que a direção é de um modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define, e que é essa pessoa que responde; os guiões das provas passaram a registar os seus próprios nomes. As provas abaixo são as da cabeça com essas duas mudanças.
 
-Cabeça do código: `52dd41d1aa7dcc140652468ab8bf06bc2706b01d`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4e.py` a partir dos resultados guardados. Os portões inteiros desta cabeça correm na corrida portão do GitHub, e não na máquina; aqui correram as conferências que a mudança toca, cada uma no seu comando com o código lido de um ficheiro.
+Cabeça do código: `24bb1bb53b385e7eabcd2dd76a61d68377b50d91`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4e.py` a partir dos resultados guardados. Os portões inteiros desta cabeça correm na corrida portão do GitHub, e não na máquina; aqui correram as conferências que a mudança toca, cada uma no seu comando com o código lido de um ficheiro.
 
 ### As conferências que a mudança toca
 
@@ -567,7 +567,7 @@ Foram refeitas 10 capturas de página inteira, cada uma com o recorte dos papéi
 
 ### Os commits da passagem
 
-Os commits do código da H4-e, no ramo `h4-2026-10-06`, de `81e3de31` a `d81471b7`; as provas desta secção correram na cabeça `52dd41d1` do ramo de integração, que funde o H4 com o M-A e o EX2.
+Os commits do código da H4-e, no ramo `h4-2026-10-06`, de `81e3de31` a `d81471b7`; as provas desta secção correram na cabeça `24bb1bb5` do ramo de integração, que funde o H4 com o M-A e o EX2.
 
 | Commit | Mudança |
 | --- | --- |
