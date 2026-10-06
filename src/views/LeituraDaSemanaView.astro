@@ -4,11 +4,9 @@
  * 05.10.2026, o ponto 2 do mandato).
  *
  * Gera-se em cada construção a partir do registo das correções e das releituras do livro-razão
- * (`leituraDaSemana()`, `src/lib/leitura-da-semana.mjs`), e ninguém a escreve: a primeira frase diz a janela e as
- * três contagens; depois, uma frase por número que mudou de valor, com o nome do cartão da medida, o período, o
- * valor de antes e o de agora, a unidade, a palavra do lado («subiu», «desceu», «não mudou») que a conta decide,
- * e o dia da mudança, com o selo da linha, que diz o publicador e abre o recibo; depois, se alguma frase da primeira página mudou por causa disso, com a frase
- * que mostra agora, ou que nenhuma mudou.
+ * (`leituraDaSemana()`, `src/lib/leitura-da-semana.mjs`). Abre com as mudanças de valor e fecha com a janela e as
+ * contagens. Cada mudança diz a revisão da fonte, com o nome da medida, o período, a unidade, os valores e o dia.
+ * As linhas consecutivas da mesma medida partilham a definição e os sinais dos seus recibos no fim do grupo.
  *
  * AS MARCAS. A janela vai em `data-semana-janela`, e o portão de HTML exige que acabe no dia do carimbo da
  * construção; as contagens e as datas da janela vão em `data-semana`, que o portão reconta das linhas por conta
@@ -24,18 +22,18 @@
  */
 import Base from '../layouts/Base.astro';
 import FraseDaSemana from '../components/explicacoes/FraseDaSemana.astro';
+import ResumoDaMudanca from '../components/explicacoes/ResumoDaMudanca.astro';
 import OQueENaMudanca from '../components/explicacoes/OQueENaMudanca.astro';
 import Frase from '../components/Frase.astro';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import Provenance from '../components/Provenance.astro';
-import { leituraDaSemana } from '../lib/leitura-da-semana.mjs';
+import { leituraDaSemana, grupoQueFecha } from '../lib/leitura-da-semana.mjs';
 import { nomeNaLista, blocoResolvido } from '../lib/primeira-pagina.mjs';
 import { BLOCOS_DA_PRIMEIRA_PAGINA } from '../data/primeira-pagina.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
-import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 import { ROTULOS_B1 } from '../data/rotulos-b1.mjs';
@@ -47,11 +45,8 @@ const s = t(lang);
 const path = routePath('leituraDaSemana', lang);
 const leitura = leituraDaSemana();
 const mudaram = leitura.primeira.filter((f) => f.mudou);
-const mudancas = leitura.mudancas.map((m) => {
-  const linha = getClaim(m.linha);
-  const unidade = typeof linha.unit === 'string' && linha.unit ? unidadeDaLinha(linha.unit, lang) : null;
-  return { ...m, linha, nome: nomeNaLista(m.linha, lang), unidade };
-});
+const mudancas = leitura.mudancas;
+const ids = mudancas.map(m => m.linha);
 /* AS QUE MUDARAM SÓ NA FORMA DE ESCREVER (EX1-c, 06.10.2026, o achado 5 da leitura a frio): o mesmo número com outro
    literal, numa secção própria, cada uma dita pelo que é («a fonte passou a escrever 3,0, onde escrevia 3»). */
 const formas = leitura.formas.map((f) => ({ ...f, linha: getClaim(f.linha), nome: nomeNaLista(f.linha, lang) }));
@@ -60,26 +55,16 @@ const formas = leitura.formas.map((f) => ({ ...f, linha: getClaim(f.linha), nome
 <Base lang={lang} path={path} title={`${s.semana.titulo} · ${SITE_NAME}`} description={s.semana.metaDescription}>
   <article class="semana" data-semana-pagina>
     <h1 class="semana-titulo">{s.semana.titulo}</h1>
-    <p class="semana-abertura" data-semana-frase data-semana-janela={`${leitura.janela.inicio}/${leitura.janela.fim}`} data-semana-declarado><FraseDaSemana lang={lang} leitura={leitura} /></p>
+
 
     {mudancas.length > 0 && (
       <section class="semana-secao" aria-labelledby="semana-mudancas" data-semana-seccao="mudancas">
         <h2 class="semana-secao-titulo" id="semana-mudancas" data-semana-declarado>{s.semana.mudancasK}</h2>
         <ol class="semana-mudancas" data-semana-mudancas>
-          {mudancas.map((m) => (
-            <li class="semana-mudanca" data-correcao-entrada={m.linha.id} data-semana-mudanca={m.linha.id} data-semana-palavra={m.palavra}>
-              <p class="semana-resumo" data-semana-resumo data-semana-declarado>
-                <NomeDaMedida linha={getClaim(m.nome.linha)} lang={lang} escada="cartao" class="semana-nome" />
-                {m.nome.qualificador === 'ue' && <>{s.semana.virgula}<span class="semana-onde">{s.cartao.uniaoEuropeia}</span></>}
-                {s.semana.virgula}<DataDaLinha id={m.linha.id} campo="reference_date" valor={String(m.linha.reference_date)} lang={lang} />
-                {m.unidade && <>{s.semana.virgula}<CampoDaLinha id={m.linha.id} campo="unit" valor={m.unidade.texto} lang={lang} lingua={m.unidade.lingua} class="semana-unidade" /></>}
-                {s.semana.deAntes}<span class="semana-valor" data-correcao-claim={m.linha.id} data-correcao-n={String(m.antes.n)} data-correcao-campo="old_value">{m.antes.valor}</span>
-                {s.semana.para}<span class="semana-valor" data-correcao-claim={m.linha.id} data-correcao-n={String(m.depois.n)} data-correcao-campo="new_value">{m.depois.valor}</span>
-                {m.palavra === 'subiu' ? s.semana.subiu : m.palavra === 'desceu' ? s.semana.desceu : s.semana.naoMudou}
-                {s.semana.em}<time class="semana-data" datetime={m.depois.data} data-correcao-claim={m.linha.id} data-correcao-n={String(m.depois.n)} data-correcao-campo="date">{dataDaCasa(m.depois.data)}</time>{s.semana.ponto}
-                {' '}<Provenance id={m.linha.id} lang={lang} />
-              </p>
-              <OQueENaMudanca id={m.linha.id} lang={lang} />
+          {mudancas.map((m, i) => (
+            <li class="semana-mudanca" data-correcao-entrada={m.linha} data-semana-mudanca={m.linha} data-semana-palavra={m.palavra}>
+              <ResumoDaMudanca mudanca={m} lang={lang} />
+              <OQueENaMudanca ids={grupoQueFecha(ids, i, lang)} lang={lang} />
             </li>
           ))}
         </ol>
@@ -130,5 +115,6 @@ const formas = leitura.formas.map((f) => ({ ...f, linha: getClaim(f.linha), nome
     )}
 
     <p class="regra-portas semana-portas"><a href={routePath('correcoes', lang)}>{ROTULOS_B1[lang].todasAsMudancas} →</a></p>
+    <p class="semana-fecho" data-semana-frase data-semana-janela={`${leitura.janela.inicio}/${leitura.janela.fim}`} data-semana-declarado><FraseDaSemana lang={lang} leitura={leitura} /></p>
   </article>
 </Base>
