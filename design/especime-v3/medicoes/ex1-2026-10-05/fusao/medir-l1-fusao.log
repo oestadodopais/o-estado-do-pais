@@ -1,0 +1,27 @@
+{
+  "cabeca": "e0ad595d7530c3a0b37a91f6f63b0f7627693a06",
+  "main": "42c7ed7e99ba6428573e3b9115c4e4a229b1423a",
+  "contagens": {
+    "estudos": 2716,
+    "l1_paginas": 2716,
+    "main": 2714,
+    "novas": 2,
+    "sairam": 0,
+    "agravadas": 0,
+    "aliviadas": 0,
+    "iguais": 2714
+  },
+  "novas": {
+    "/en/explainers/dinheiro-do-estado-2026": 14,
+    "/explicacoes/dinheiro-do-estado-2026": 14
+  },
+  "conhecidos_positivos": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ]
+}
