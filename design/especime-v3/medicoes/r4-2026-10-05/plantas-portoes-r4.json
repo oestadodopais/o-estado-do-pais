@@ -1,0 +1,112 @@
+[
+  {
+    "nome": "r4-recibo-sem-frase",
+    "cabeca": "57d81ea6331b6bf70f228b23afea1cce8d299130",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "R4: o recibo de «abrantes-populacao-2025» tem 0 frase\\(s\\) «O que é este número»",
+      "R4: \\d+ de \\d+ recibos construídos têm a frase"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/abrantes-populacao-2025/index.html",
+        "antes": "09e218a02c23f4ccb3507a81297011845c02228018c65e58ca3394a73d1a5c26",
+        "reposto": "09e218a02c23f4ccb3507a81297011845c02228018c65e58ca3394a73d1a5c26"
+      }
+    ]
+  },
+  {
+    "nome": "r4-frase-de-outra-linha",
+    "cabeca": "57d81ea6331b6bf70f228b23afea1cce8d299130",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "R4: a frase do recibo de «posicao-de-investimento-internacional-2025» diz ser de «divida-publica-2025»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/ledger/posicao-de-investimento-internacional-2025/index.html",
+        "antes": "f17db01632b2ae55ca38be1e4d40314f2a482a5c25cee77ee5c73b10596d7a1b",
+        "reposto": "f17db01632b2ae55ca38be1e4d40314f2a482a5c25cee77ee5c73b10596d7a1b"
+      }
+    ]
+  },
+  {
+    "nome": "r4-titulo-sem-nome",
+    "cabeca": "57d81ea6331b6bf70f228b23afea1cce8d299130",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "R4: o título do recibo de «credito-malparado-2024» não tem o nome do recibo"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/credito-malparado-2024/index.html",
+        "antes": "445d8f4fb519043e981ab355e6eff11b197600314beb49a535854d55c863434e",
+        "reposto": "445d8f4fb519043e981ab355e6eff11b197600314beb49a535854d55c863434e"
+      }
+    ]
+  },
+  {
+    "nome": "r4-voz-nome-da-familia-trocado",
+    "cabeca": "57d81ea6331b6bf70f228b23afea1cce8d299130",
+    "estado": "",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "«data-nome=\"familia\"» sobre «Crédito à habitação» · o texto marcado não é o nome da família \"credito-malparado\""
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/credito-malparado-2024/index.html",
+        "antes": "445d8f4fb519043e981ab355e6eff11b197600314beb49a535854d55c863434e",
+        "reposto": "445d8f4fb519043e981ab355e6eff11b197600314beb49a535854d55c863434e"
+      }
+    ]
+  },
+  {
+    "nome": "r4-pais-lado-trocado",
+    "cabeca": "57d81ea6331b6bf70f228b23afea1cce8d299130",
+    "estado": "",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "V1-R4 pt: «divida-publica-2025»: a explicação diz o lado «abaixo», e a conta desta célula dá «acima»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "a922dec4ea9edc8659debb511c870f6e92f3e299b6364f841589a701cacb2bd3",
+        "reposto": "a922dec4ea9edc8659debb511c870f6e92f3e299b6364f841589a701cacb2bd3"
+      }
+    ]
+  },
+  {
+    "nome": "r4-voz-fragmento-retirado-solto",
+    "cabeca": "57d81ea6331b6bf70f228b23afea1cce8d299130",
+    "estado": "",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "FRASE RETIRADA QUE VOLTOU A RENDER-SE",
+      "«abaixo do valor de referência»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "a922dec4ea9edc8659debb511c870f6e92f3e299b6364f841589a701cacb2bd3",
+        "reposto": "a922dec4ea9edc8659debb511c870f6e92f3e299b6364f841589a701cacb2bd3"
+      }
+    ]
+  }
+]

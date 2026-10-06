@@ -1,0 +1,1902 @@
+{
+  "bloco": "R4",
+  "guiao": "design/especime-v3/medicoes/r4-2026-10-05/medir-r4.mjs",
+  "cabeca": "57d81ea6331b6bf70f228b23afea1cce8d299130",
+  "estado_seguido": "",
+  "construcao": "57d81ea6331b6bf70f228b23afea1cce8d299130",
+  "medidas": [
+    {
+      "nome": "linhas_do_livro_razao",
+      "valor": 3195,
+      "comando": "ls ledger/claims/*.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha posicao-de-investimento-internacional-2025 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_cartao_codigo",
+      "valor": 0,
+      "comando": "node tests/cartao/cartao.mjs --prova --json",
+      "conhecido_positivo": {
+        "o_que": "a saída traz as contas das famílias",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_frase",
+      "valor": 3195,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.familias.linhas",
+      "conhecido_positivo": {
+        "o_que": "a conta das linhas é a do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_frase_pelo_cartao",
+      "valor": 48,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.familias.por_cartao",
+      "conhecido_positivo": {
+        "o_que": "a conta das linhas é a do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_frase_pela_medida_dos_concelhos",
+      "valor": 2772,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.familias.por_concelho",
+      "conhecido_positivo": {
+        "o_que": "a conta das linhas é a do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_frase_pela_familia",
+      "valor": 375,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.familias.por_familia",
+      "conhecido_positivo": {
+        "o_que": "a conta das linhas é a do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "familias_de_linhas",
+      "valor": 364,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.familias.familias",
+      "conhecido_positivo": {
+        "o_que": "a conta das linhas é a do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_auditadas_das_familias",
+      "valor": 181,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.familias.entradas",
+      "conhecido_positivo": {
+        "o_que": "a conta das linhas é a do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "partes_auditadas_das_familias",
+      "valor": 293,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.familias.partes",
+      "conhecido_positivo": {
+        "o_que": "a conta das linhas é a do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "partes_que_dizem_das_familias",
+      "valor": 284,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.familias.diz",
+      "conhecido_positivo": {
+        "o_que": "a conta das linhas é a do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_das_familias",
+      "valor": 455,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.familias.apoios",
+      "conhecido_positivo": {
+        "o_que": "a conta das linhas é a do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_com_todas_as_partes_na_fonte",
+      "valor": 128,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.familias.todas_na_fonte",
+      "conhecido_positivo": {
+        "o_que": "a conta das linhas é a do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_com_alguma_parte_so_da_casa",
+      "valor": 53,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.familias.alguma_da_casa",
+      "conhecido_positivo": {
+        "o_que": "a conta das linhas é a do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_de_linha_lidos_pela_k17",
+      "valor": 6390,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.recibos_com_frase.recibos",
+      "conhecido_positivo": {
+        "o_que": "são as linhas vezes as duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_de_linha_com_a_frase_conferida",
+      "valor": 6390,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.recibos_com_frase.com_frase",
+      "conhecido_positivo": {
+        "o_que": "a planta «um recibo sem a frase» morde",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_de_linha_com_frase_pelo_cartao",
+      "valor": 96,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.recibos_com_frase.cartao",
+      "conhecido_positivo": {
+        "o_que": "as três somam os recibos conferidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_de_linha_com_frase_pela_medida_dos_concelhos",
+      "valor": 5544,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.recibos_com_frase.concelho",
+      "conhecido_positivo": {
+        "o_que": "as três somam os recibos conferidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_de_linha_com_frase_pela_familia",
+      "valor": 750,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.recibos_com_frase.familia",
+      "conhecido_positivo": {
+        "o_que": "as três somam os recibos conferidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_no_tempo",
+      "valor": 24,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.series_o_que_e.series",
+      "conhecido_positivo": {
+        "o_que": "as séries no tempo são as do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_com_a_frase_da_linha",
+      "valor": 14,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.series_o_que_e.pela_linha",
+      "conhecido_positivo": {
+        "o_que": "as séries no tempo são as do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_com_frase_propria_auditada",
+      "valor": 10,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.series_o_que_e.propria",
+      "conhecido_positivo": {
+        "o_que": "as séries no tempo são as do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_com_frase_propria_toda_na_fonte",
+      "valor": 3,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.series_o_que_e.todas_na_fonte",
+      "conhecido_positivo": {
+        "o_que": "as séries no tempo são as do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_com_frase_propria_com_parte_so_da_casa",
+      "valor": 7,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.series_o_que_e.alguma_da_casa",
+      "conhecido_positivo": {
+        "o_que": "as séries no tempo são as do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "partes_das_frases_das_series",
+      "valor": 61,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.series_o_que_e.partes",
+      "conhecido_positivo": {
+        "o_que": "as séries no tempo são as do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_das_frases_das_series",
+      "valor": 69,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.series_o_que_e.apoios",
+      "conhecido_positivo": {
+        "o_que": "as séries no tempo são as do livro-razão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_de_serie_com_a_frase_o_que_e",
+      "valor": 48,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.recibos_das_series_com_frase.com_frase",
+      "conhecido_positivo": {
+        "o_que": "a planta «um recibo de série sem a frase» morde",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_de_serie_lidos",
+      "valor": 48,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.recibos_das_series_com_frase.recibos",
+      "conhecido_positivo": {
+        "o_que": "são as séries no tempo vezes as duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_k17_das_familias",
+      "valor": 17,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.familias_plantas_lista",
+      "conhecido_positivo": {
+        "o_que": "todas mordem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_k17_das_familias_mordidas",
+      "valor": 17,
+      "comando": "idem, as que morderam",
+      "conhecido_positivo": {
+        "o_que": "a primeira é a de uma linha sem frase",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_series_codigo",
+      "valor": 0,
+      "comando": "node tests/series/series.mjs --prova --json series-s6.json",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro tem as plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_da_s6",
+      "valor": 28,
+      "comando": "node tests/series/series.mjs --prova --json · plantas",
+      "conhecido_positivo": {
+        "o_que": "todas mordem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_r4_da_s6",
+      "valor": 4,
+      "comando": "idem, as plantas cujo nome acaba em «(R4)»",
+      "conhecido_positivo": {
+        "o_que": "a do lado trocado está lá e morde",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "recibos_de_serie_com_a_frase_do_ultimo_ponto",
+      "valor": 48,
+      "comando": "os recibos das séries em dist/ com [data-serie-ultimo], nas duas edições",
+      "conhecido_positivo": {
+        "o_que": "a planta S6 «um recibo de série sem a frase do último ponto» morde",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_cuja_frase_compara_ha_um_ano",
+      "valor": 24,
+      "comando": "os recibos portugueses das séries, pelo atributo data-serie-ultimo-com",
+      "conhecido_positivo": {
+        "o_que": "as séries do recibo das rendas comparam com há um ano",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_cuja_frase_compara_anterior",
+      "valor": 0,
+      "comando": "os recibos portugueses das séries, pelo atributo data-serie-ultimo-com",
+      "conhecido_positivo": {
+        "o_que": "as séries do recibo das rendas comparam com há um ano",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_cuja_frase_compara_maior",
+      "valor": 20,
+      "comando": "os recibos portugueses das séries, pelo atributo data-serie-ultimo-lado",
+      "conhecido_positivo": {
+        "o_que": "as séries do recibo das rendas comparam com há um ano",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_cuja_frase_compara_menor",
+      "valor": 4,
+      "comando": "os recibos portugueses das séries, pelo atributo data-serie-ultimo-lado",
+      "conhecido_positivo": {
+        "o_que": "as séries do recibo das rendas comparam com há um ano",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_cuja_frase_compara_igual",
+      "valor": 0,
+      "comando": "os recibos portugueses das séries, pelo atributo data-serie-ultimo-lado",
+      "conhecido_positivo": {
+        "o_que": "as séries do recibo das rendas comparam com há um ano",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "check_primeira_codigo",
+      "valor": 0,
+      "comando": "node tests/inicio/primeira-pagina.mjs --prova --json primeira-v1r4.json",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro tem as plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_v1r4",
+      "valor": 6,
+      "comando": "idem, as plantas da explicação dos valores de referência",
+      "conhecido_positivo": {
+        "o_que": "a do lado trocado morde nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_v1r4_mordidas",
+      "valor": 6,
+      "comando": "idem, as que morderam",
+      "conhecido_positivo": {
+        "o_que": "são todas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira_pagina_pt_explicacoes_de_fora",
+      "valor": 4,
+      "comando": "index.html · [data-veredicto-fora] [data-veredicto-explica]",
+      "conhecido_positivo": {
+        "o_que": "a da dívida pública está lá, acima",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira_pagina_pt_explicacoes_de_dentro",
+      "valor": 9,
+      "comando": "index.html · details[data-veredicto-dentro] [data-veredicto-explica]",
+      "conhecido_positivo": {
+        "o_que": "a do saldo da balança corrente está lá, entre",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira_pagina_en_explicacoes_de_fora",
+      "valor": 4,
+      "comando": "en/index.html · [data-veredicto-fora] [data-veredicto-explica]",
+      "conhecido_positivo": {
+        "o_que": "a da dívida pública está lá, acima",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira_pagina_en_explicacoes_de_dentro",
+      "valor": 9,
+      "comando": "en/index.html · details[data-veredicto-dentro] [data-veredicto-explica]",
+      "conhecido_positivo": {
+        "o_que": "a do saldo da balança corrente está lá, entre",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "gate_html_codigo",
+      "valor": 0,
+      "comando": "node scripts/gate-html.mjs",
+      "conhecido_positivo": {
+        "o_que": "a linha do resumo traz a conta R4",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "gate_html_recibos_com_a_frase",
+      "valor": 6390,
+      "comando": "node scripts/gate-html.mjs · «R4: N recibo(s) com a frase»",
+      "conhecido_positivo": {
+        "o_que": "a planta r4-recibo-sem-frase morde (plantas-portoes-r4.json)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_r4_sobre_a_construcao",
+      "valor": 6,
+      "comando": "OEDP_MEDICOES=<esta pasta> node tests/pais/portoes.mjs --prefixo r4- · plantas-portoes-r4.json",
+      "conhecido_positivo": {
+        "o_que": "todas passaram com os ficheiros repostos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_paginas_na_construcao_de_partida",
+      "valor": 2714,
+      "comando": "l1-r4.json · contagens.antes (medir-l1-r4.mjs)",
+      "conhecido_positivo": {
+        "o_que": "as páginas novas são recibos de séries",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_paginas_nesta_construcao",
+      "valor": 2736,
+      "comando": "l1-r4.json · contagens.depois (medir-l1-r4.mjs)",
+      "conhecido_positivo": {
+        "o_que": "as páginas novas são recibos de séries",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_paginas_novas",
+      "valor": 22,
+      "comando": "l1-r4.json · contagens.novas (medir-l1-r4.mjs)",
+      "conhecido_positivo": {
+        "o_que": "as páginas novas são recibos de séries",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_paginas_antigas_agravadas",
+      "valor": 0,
+      "comando": "l1-r4.json · contagens.agravadas (medir-l1-r4.mjs)",
+      "conhecido_positivo": {
+        "o_que": "as páginas novas são recibos de séries",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1_paginas_que_sairam",
+      "valor": 0,
+      "comando": "l1-r4.json · contagens.sairam (medir-l1-r4.mjs)",
+      "conhecido_positivo": {
+        "o_que": "as páginas novas são recibos de séries",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas",
+      "valor": 52,
+      "comando": "capturas-r4.json · capturas",
+      "conhecido_positivo": {
+        "o_que": "cada uma tem o ficheiro na pasta das capturas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas_sem_rolar_para_o_lado",
+      "valor": 52,
+      "comando": "capturas-r4.json · largura do documento ≤ largura da janela",
+      "conhecido_positivo": {
+        "o_que": "a conta inclui as cinco larguras",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_por_confirmar_na_fonte",
+      "valor": 60,
+      "comando": "tests/cartao/leituras-provadas.json · as entradas de familias e series com alguma parte que diz sem apoio da fonte",
+      "conhecido_positivo": {
+        "o_que": "a família do limite da dívida não está na lista (as suas partes apoiam-se na fonte)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_por_confirmar_na_fonte_das_familias",
+      "valor": 53,
+      "comando": "idem, só as das famílias",
+      "conhecido_positivo": {
+        "o_que": "a conta bate com a da K17 (alguma parte só da casa)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_por_confirmar_na_fonte_das_series",
+      "valor": 7,
+      "comando": "idem, só as das séries",
+      "conhecido_positivo": {
+        "o_que": "a conta bate com a da K17 (séries com alguma parte só da casa)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "partes_por_confirmar_apoiadas_em_campo_da_casa_derivation",
+      "valor": 27,
+      "comando": "idem, as partes cujo apoio é «campo da casa (derivation)»",
+      "conhecido_positivo": {
+        "o_que": "a espécie aparece na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "partes_por_confirmar_apoiadas_em_nome_do_projeto",
+      "valor": 24,
+      "comando": "idem, as partes cujo apoio é «nome do projeto»",
+      "conhecido_positivo": {
+        "o_que": "a espécie aparece na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "partes_por_confirmar_apoiadas_em_campo_da_casa_ressalva",
+      "valor": 27,
+      "comando": "idem, as partes cujo apoio é «campo da casa (ressalva)»",
+      "conhecido_positivo": {
+        "o_que": "a espécie aparece na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "partes_por_confirmar_apoiadas_em_explicacao_de_um_termo_TERMOS_DOS_CARTOES",
+      "valor": 4,
+      "comando": "idem, as partes cujo apoio é «explicação de um termo (TERMOS_DOS_CARTOES)»",
+      "conhecido_positivo": {
+        "o_que": "a espécie aparece na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "partes_por_confirmar_apoiadas_em_alternativa_so_da_casa_em_alguma_linha",
+      "valor": 1,
+      "comando": "idem, as partes cujo apoio é «alternativa só da casa em alguma linha»",
+      "conhecido_positivo": {
+        "o_que": "a espécie aparece na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "partes_por_confirmar_apoiadas_em_campo_da_casa_derivation_en",
+      "valor": 5,
+      "comando": "idem, as partes cujo apoio é «campo da casa (derivation_en)»",
+      "conhecido_positivo": {
+        "o_que": "a espécie aparece na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_campo_da_fonte_document_title",
+      "valor": 59,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «campo da fonte (document.title)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_campo_da_fonte_reference_date",
+      "valor": 12,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «campo da fonte (reference_date)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_origem_declarada",
+      "valor": 73,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «origem declarada»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_campo_da_fonte_unit",
+      "valor": 34,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «campo da fonte (unit)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_campo_da_fonte_excerpt",
+      "valor": 30,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «campo da fonte (excerpt)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_campo_da_casa_ressalva",
+      "valor": 32,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «campo da casa (ressalva)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_campo_da_casa_derivation",
+      "valor": 29,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «campo da casa (derivation)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_nome_do_projeto",
+      "valor": 86,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «nome do projeto»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_campo_da_fonte_name",
+      "valor": 28,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «campo da fonte (name)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_campo_da_fonte_document_locator",
+      "valor": 21,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «campo da fonte (document.locator)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_alternativas_com_uma_da_fonte",
+      "valor": 17,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «alternativas (com uma da fonte)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_alternativas_so_da_casa",
+      "valor": 5,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «alternativas (só da casa)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_explicacao_de_um_termo_TERMOS_DOS_CARTOES",
+      "valor": 10,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «explicação de um termo (TERMOS_DOS_CARTOES)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_campo_da_fonte_source",
+      "valor": 18,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «campo da fonte (source)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_familias_campo_da_fonte_document_edition",
+      "valor": 1,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de familias, pela espécie «campo da fonte (document.edition)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_series_campo_da_casa_derivation",
+      "valor": 7,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de series, pela espécie «campo da casa (derivation)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_series_campo_da_casa_derivation_en",
+      "valor": 7,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de series, pela espécie «campo da casa (derivation_en)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_series_origem_declarada",
+      "valor": 21,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de series, pela espécie «origem declarada»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_series_nome_do_projeto",
+      "valor": 12,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de series, pela espécie «nome do projeto»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_series_campo_da_fonte_name",
+      "valor": 14,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de series, pela espécie «campo da fonte (name)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_series_campo_da_fonte_document_edition",
+      "valor": 6,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de series, pela espécie «campo da fonte (document.edition)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "apoios_series_campo_da_fonte_unit",
+      "valor": 2,
+      "comando": "tests/cartao/leituras-provadas.json · os apoios das partes de series, pela espécie «campo da fonte (unit)»",
+      "conhecido_positivo": {
+        "o_que": "a soma das espécies é a conta dos apoios",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "brief_medidas_reproduzidas_iguais",
+      "valor": 11,
+      "comando": "OEDP_MEDIDAS_JSON=brief-r4-reproduzido.json python3 design/observatorio/medidas/BRIEF-R4.py · comparado com design/observatorio/medidas/BRIEF-R4.json",
+      "conhecido_positivo": {
+        "o_que": "são todas as do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_dos_concelhos_pela_regra_do_brief",
+      "valor": 2817,
+      "comando": "a regra do §0 do brief (o sufixo comum a vinte ou mais ids), sobre o livro-razão desta cabeça",
+      "conhecido_positivo": {
+        "o_que": "a conta é a do brief (2 817)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_dos_concelhos_pela_regra_do_bloco",
+      "valor": 2772,
+      "comando": "as linhas que os concelhos declaram no relance e na distância (MUNICIPIOS_COM_PAGINA)",
+      "conhecido_positivo": {
+        "o_que": "a de Abrantes está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_que_so_a_regra_do_brief_junta_aos_concelhos",
+      "valor": 45,
+      "comando": "a diferença entre as duas listas",
+      "conhecido_positivo": {
+        "o_que": "as do Orçamento que acabam em «administracao-central» estão nela",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_que_so_a_regra_do_bloco_junta_aos_concelhos",
+      "valor": 0,
+      "comando": "a diferença no outro sentido",
+      "conhecido_positivo": {
+        "o_que": "a conta é um número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "segundos_do_commit_do_brief_a_cabeca_medida",
+      "valor": 27526,
+      "comando": "git show -s --format=%ct 9424e9e7 e HEAD",
+      "conhecido_positivo": {
+        "o_que": "a cabeça medida é posterior ao brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_cabeca_e_a_cabeca_do_codigo",
+      "valor": 1,
+      "comando": "portoes/cabeca e portoes/cabeca.fim",
+      "conhecido_positivo": {
+        "o_que": "a cabeça do início é a do fim",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_build_codigo",
+      "valor": 0,
+      "comando": "portoes/build.codigo (sh scripts/leituras/portoes.sh <worktree> <esta pasta>/portoes)",
+      "conhecido_positivo": {
+        "o_que": "o registo de build existe e acaba",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_build_segundos",
+      "valor": 215,
+      "comando": "portoes/build.inicio e portoes/build.fim",
+      "conhecido_positivo": {
+        "o_que": "o fim não é antes do início",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_verify_codigo",
+      "valor": 0,
+      "comando": "portoes/verify.codigo (sh scripts/leituras/portoes.sh <worktree> <esta pasta>/portoes)",
+      "conhecido_positivo": {
+        "o_que": "o registo de verify existe e acaba",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_verify_segundos",
+      "valor": 1091,
+      "comando": "portoes/verify.inicio e portoes/verify.fim",
+      "conhecido_positivo": {
+        "o_que": "o fim não é antes do início",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_typecheck_codigo",
+      "valor": 0,
+      "comando": "portoes/typecheck.codigo (sh scripts/leituras/portoes.sh <worktree> <esta pasta>/portoes)",
+      "conhecido_positivo": {
+        "o_que": "o registo de typecheck existe e acaba",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes_typecheck_segundos",
+      "valor": 0,
+      "comando": "portoes/typecheck.inicio e portoes/typecheck.fim",
+      "conhecido_positivo": {
+        "o_que": "o fim não é antes do início",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferir_mapa_codigo",
+      "valor": 0,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "conhecido_positivo": {
+        "o_que": "a saída traz a conta das citações conferidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferir_mapa_citacoes_na_linha",
+      "valor": 420,
+      "comando": "idem · «citações conferidas na linha citada (±7)»",
+      "conhecido_positivo": {
+        "o_que": "a secção do R4 cita o resolvedor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferir_mapa_citacoes_longe",
+      "valor": 24,
+      "comando": "idem · «citação está no ficheiro, mas longe da linha citada»",
+      "conhecido_positivo": {
+        "o_que": "a conta é um número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferir_mapa_citacoes_nao_encontradas",
+      "valor": 0,
+      "comando": "idem · «citação não encontrada…»",
+      "conhecido_positivo": {
+        "o_que": "a conta é um número",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leituras_do_eurostat_fora_do_cliente_da_casa",
+      "valor": 3,
+      "comando": "OEDP_LEITURAS_EUROSTAT=<pasta fora do repositório> · as três respostas, com o resumo e os rótulos",
+      "conhecido_positivo": {
+        "o_que": "a resposta das três classes traz o rótulo de CP041",
+        "encontrado": true
+      }
+    }
+  ],
+  "leituras_do_eurostat": [
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&freq=M&unit=RCH_A&coicop18=CP0722&coicop18=CP045&coicop18=CP041&geo=PT&lastTimePeriod=1",
+      "hora": "2026-10-05T20:26:19Z",
+      "cliente": "curl (pedido simples, fora do cliente da casa)",
+      "sha256": "f0092eece0d3dd9a3b845ec573fffaa964b2bb17fb07c9390e62e9066c1f3bfa",
+      "bytes": 4613,
+      "rotulos": {
+        "unit": {
+          "RCH_A": "Annual rate of change"
+        },
+        "coicop18": {
+          "CP041": "Actual rental payments made for housing",
+          "CP045": "Electricity, gas and other fuels",
+          "CP0722": "Fuels and lubricants for personal transport equipment (ND)"
+        }
+      }
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&freq=M&unit=RCH_A&coicop18=CP04&geo=PT&lastTimePeriod=1",
+      "hora": "2026-10-05T20:28:54Z",
+      "cliente": "curl (pedido simples, fora do cliente da casa)",
+      "sha256": "fc1541a0dbad3e3c81f6db98883879300beb839946c96f81ed46c9aaa4106bcb",
+      "bytes": 4482,
+      "rotulos": {
+        "unit": {
+          "RCH_A": "Annual rate of change"
+        },
+        "coicop18": {
+          "CP04": "Housing, water, electricity, gas and other fuels"
+        }
+      }
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hpi_q?format=JSON&lang=EN&freq=Q&unit=RCH_A&purchase=TOTAL&geo=PT&lastTimePeriod=1",
+      "hora": "2026-10-05T20:28:55Z",
+      "cliente": "curl (pedido simples, fora do cliente da casa)",
+      "sha256": "30a771be784dd0f389f3111dd33945ac79a260984c7bc2de07fe38b8faba10f9",
+      "bytes": 2884,
+      "rotulos": {
+        "purchase": {
+          "TOTAL": "Total"
+        },
+        "unit": {
+          "RCH_A": "Annual rate of change"
+        }
+      }
+    }
+  ],
+  "por_confirmar_na_fonte": [
+    {
+      "onde": "familias",
+      "quem": "oe-2026-cem-euros-funcao-01, oe-2026-cem-euros-funcao-02, oe-2026-cem-euros-funcao-03, oe-2026-cem-euros-funcao-04, oe-2026-cem-euros-funcao-05, oe-2026-cem-euros-funcao-06, oe-2026-cem-euros-funcao-07, oe-2026-cem-euros-funcao-08, oe-2026-cem-euros-funcao-09, oe-2026-cem-euros-funcao-10",
+      "partes": [
+        {
+          "pt": "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        },
+        {
+          "pt": " que o Orçamento prevê",
+          "apoios": [
+            "nome do projeto"
+          ]
+        },
+        {
+          "pt": ": a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "execucao-2026-07-cem-euros-funcao-01, execucao-2026-07-cem-euros-funcao-02, execucao-2026-07-cem-euros-funcao-03, execucao-2026-07-cem-euros-funcao-04, execucao-2026-07-cem-euros-funcao-05, execucao-2026-07-cem-euros-funcao-06, execucao-2026-07-cem-euros-funcao-07, execucao-2026-07-cem-euros-funcao-08, execucao-2026-07-cem-euros-funcao-09, execucao-2026-07-cem-euros-funcao-10",
+      "partes": [
+        {
+          "pt": "É quanto foi para esta função em cada cem euros da despesa efetiva consolidada que a administração central gastou",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        },
+        {
+          "pt": ": a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-cem-euros-ministerio-administracao-interna, oe-2026-cem-euros-ministerio-agricultura-e-mar, oe-2026-cem-euros-ministerio-ambiente-e-energia, oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto, oe-2026-cem-euros-ministerio-defesa-nacional, oe-2026-cem-euros-ministerio-economia-e-coesao-territorial, oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao, oe-2026-cem-euros-ministerio-financas, oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao, oe-2026-cem-euros-ministerio-justica, oe-2026-cem-euros-ministerio-negocios-estrangeiros, oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros, oe-2026-cem-euros-ministerio-reforma-do-estado, oe-2026-cem-euros-ministerio-saude, oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social",
+      "partes": [
+        {
+          "pt": "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        },
+        {
+          "pt": " que o Orçamento prevê",
+          "apoios": [
+            "nome do projeto"
+          ]
+        },
+        {
+          "pt": "; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado",
+      "partes": [
+        {
+          "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da despesa bruta da administração central",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        },
+        {
+          "pt": " que o Orçamento prevê",
+          "apoios": [
+            "nome do projeto"
+          ]
+        },
+        {
+          "pt": "; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        },
+        {
+          "pt": "; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10",
+      "partes": [
+        {
+          "pt": ", em despesa efetiva consolidada",
+          "apoios": [
+            "nome do projeto"
+          ]
+        },
+        {
+          "pt": ": a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "execucao-2026-07-despesa-funcao-01, execucao-2026-07-despesa-funcao-02, execucao-2026-07-despesa-funcao-03, execucao-2026-07-despesa-funcao-04, execucao-2026-07-despesa-funcao-05, execucao-2026-07-despesa-funcao-06, execucao-2026-07-despesa-funcao-07, execucao-2026-07-despesa-funcao-08, execucao-2026-07-despesa-funcao-09, execucao-2026-07-despesa-funcao-10",
+      "partes": [
+        {
+          "pt": ", em despesa efetiva consolidada",
+          "apoios": [
+            "nome do projeto"
+          ]
+        },
+        {
+          "pt": ": a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-diferencas-consolidacao-funcional, execucao-2026-07-diferencas-consolidacao-funcional",
+      "partes": [
+        {
+          "pt": ": o acerto que se soma às funções para chegar ao total da despesa efetiva consolidada, e não uma função.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-despesa-ministerio-administracao-interna, oe-2026-despesa-ministerio-agricultura-e-mar, oe-2026-despesa-ministerio-ambiente-e-energia, oe-2026-despesa-ministerio-cultura-juventude-e-desporto, oe-2026-despesa-ministerio-defesa-nacional, oe-2026-despesa-ministerio-economia-e-coesao-territorial, oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao, oe-2026-despesa-ministerio-financas, oe-2026-despesa-ministerio-infraestruturas-e-habitacao, oe-2026-despesa-ministerio-justica, oe-2026-despesa-ministerio-negocios-estrangeiros, oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros, oe-2026-despesa-ministerio-reforma-do-estado, oe-2026-despesa-ministerio-saude, oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social",
+      "partes": [
+        {
+          "pt": ", em despesa bruta",
+          "apoios": [
+            "nome do projeto"
+          ]
+        },
+        {
+          "pt": "; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-despesa-ministerio-encargos-gerais-do-estado",
+      "partes": [
+        {
+          "pt": ", em despesa bruta",
+          "apoios": [
+            "nome do projeto"
+          ]
+        },
+        {
+          "pt": "; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-despesa-programa-001, oe-2026-despesa-programa-002, oe-2026-despesa-programa-003, oe-2026-despesa-programa-004, oe-2026-despesa-programa-005, oe-2026-despesa-programa-006, oe-2026-despesa-programa-007, oe-2026-despesa-programa-008, oe-2026-despesa-programa-009, oe-2026-despesa-programa-010, oe-2026-despesa-programa-011, oe-2026-despesa-programa-012, oe-2026-despesa-programa-013, oe-2026-despesa-programa-014, oe-2026-despesa-programa-015, oe-2026-despesa-programa-016, oe-2026-despesa-programa-017, oe-2026-despesa-programa-018, oe-2026-despesa-programa-019, oe-2026-despesa-programa-020",
+      "partes": [
+        {
+          "pt": ", em despesa bruta",
+          "apoios": [
+            "nome do projeto"
+          ]
+        },
+        {
+          "pt": "; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "execucao-2026-08-despesa-programa-001, execucao-2026-08-despesa-programa-002, execucao-2026-08-despesa-programa-003, execucao-2026-08-despesa-programa-004, execucao-2026-08-despesa-programa-005, execucao-2026-08-despesa-programa-006, execucao-2026-08-despesa-programa-007, execucao-2026-08-despesa-programa-008, execucao-2026-08-despesa-programa-009, execucao-2026-08-despesa-programa-010, execucao-2026-08-despesa-programa-011, execucao-2026-08-despesa-programa-012, execucao-2026-08-despesa-programa-013, execucao-2026-08-despesa-programa-014, execucao-2026-08-despesa-programa-015, execucao-2026-08-despesa-programa-016, execucao-2026-08-despesa-programa-017, execucao-2026-08-despesa-programa-018, execucao-2026-08-despesa-programa-019, execucao-2026-08-despesa-programa-020",
+      "partes": [
+        {
+          "pt": ", em despesa efetiva consolidada dentro do programa",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        },
+        {
+          "pt": ": sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "execucao-2026-08-subtotal-programas",
+      "partes": [
+        {
+          "pt": ": cada programa sem as suas transferências internas, mas com as transferências entre programas ainda por tirar.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-despesa-efetiva-administracao-central, execucao-2026-07-despesa-efetiva-administracao-central, execucao-2026-08-despesa-efetiva-administracao-central",
+      "partes": [
+        {
+          "pt": ": o que ela gasta sem contar as operações com ativos e passivos financeiros.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-despesa-efetiva-administracao-central-seguranca-social, execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+      "partes": [
+        {
+          "pt": ": o que gastam sem contar as operações com ativos e passivos financeiros.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-receita-efetiva-administracao-central, execucao-2026-07-receita-efetiva-administracao-central, execucao-2026-08-receita-efetiva-administracao-central",
+      "partes": [
+        {
+          "pt": ": o que ela recebe sem contar os recebimentos de ativos e passivos financeiros.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-receita-efetiva-administracao-central-seguranca-social, execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
+      "partes": [
+        {
+          "pt": ": o que recebem sem contar os recebimentos de ativos e passivos financeiros.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-despesa-orcamental-administracao-central, execucao-2026-07-despesa-orcamental-administracao-central",
+      "partes": [
+        {
+          "pt": ", incluindo as operações com ativos e passivos financeiros, que a despesa efetiva não conta.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-receita-orcamental-administracao-central, execucao-2026-07-receita-orcamental-administracao-central",
+      "partes": [
+        {
+          "pt": ", incluindo os recebimentos de ativos e passivos financeiros, que a receita efetiva não conta.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-despesa-primaria-administracao-central, execucao-2026-07-despesa-primaria-administracao-central",
+      "partes": [
+        {
+          "pt": "É a despesa da administração central sem os juros da dívida",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-saldo-global-administracao-central-seguranca-social, execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+      "partes": [
+        {
+          "pt": "; não é a dívida que se emitiu.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-saldo-primario-administracao-central, execucao-2026-07-saldo-primario-administracao-central",
+      "partes": [
+        {
+          "pt": "É o saldo da administração central sem os juros da dívida",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-ativos-e-passivos-da-despesa-administracao-central, execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
+      "partes": [
+        {
+          "pt": ", que a despesa efetiva não conta.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-ativos-e-passivos-da-receita-administracao-central, execucao-2026-07-ativos-e-passivos-da-receita-administracao-central",
+      "partes": [
+        {
+          "pt": ", que a receita efetiva não conta.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social, execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social",
+      "partes": [
+        {
+          "pt": "; não é a parte da despesa paga com dívida.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-despesa-bruta-administracao-central",
+      "partes": [
+        {
+          "pt": ", em bruto",
+          "apoios": [
+            "nome do projeto"
+          ]
+        },
+        {
+          "pt": "; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-receita-bruta-administracao-central",
+      "partes": [
+        {
+          "pt": ", em bruto; a receita bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-despesa-consolidada-administracao-central, oe-2026-despesa-consolidada-seguranca-social, oe-2026-despesa-total",
+      "partes": [
+        {
+          "pt": ": sem as transferências entre os serviços de que é feita, mas com as operações financeiras.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "oe-2026-receita-consolidada-administracao-central, oe-2026-receita-consolidada-seguranca-social",
+      "partes": [
+        {
+          "pt": ": sem as transferências entre os serviços de que é feita, mas com as operações financeiras.",
+          "apoios": [
+            "campo da casa (ressalva)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "distancia-acores-ue27, distancia-alentejo-ue27, distancia-algarve-ue27, distancia-centro-ue27, distancia-grande-lisboa-ue27, distancia-madeira-ue27, distancia-norte-ue27, distancia-oeste-e-vale-do-tejo-ue27, distancia-peninsula-de-setubal-ue27",
+      "partes": [
+        {
+          "pt": ": a diferença entre os dois índices.",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "distancia-portugal-ue27",
+      "partes": [
+        {
+          "pt": ": a diferença entre os dois índices.",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "distancia-setubal-grande-lisboa",
+      "partes": [
+        {
+          "pt": ", no índice do valor de tudo o que cada uma produz por habitante, em que a média da União Europeia vale cem.",
+          "apoios": [
+            "nome do projeto",
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "evora-concentracao-vab4, portugal-concentracao-vab4",
+      "partes": [
+        {
+          "pt": "; o valor acrescentado bruto é o valor do que se produz menos o valor dos bens e serviços consumidos para o produzir.",
+          "apoios": [
+            "explicação de um termo (TERMOS_DOS_CARTOES)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "evora-vab-empresarial",
+      "partes": [
+        {
+          "pt": ": o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.",
+          "apoios": [
+            "explicação de um termo (TERMOS_DOS_CARTOES)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "evora-divergencia-municipio-dgal",
+      "partes": [
+        {
+          "pt": "É a diferença entre a dívida da câmara que o regulador publica e a que a própria câmara publica para o mesmo ano, arredondada ao euro.",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "evora-divida-inicio-mandato-reexpressa",
+      "partes": [
+        {
+          "pt": ": reexpressa quer dizer apresentada de novo mais tarde.",
+          "apoios": [
+            "explicação de um termo (TERMOS_DOS_CARTOES)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "evora-pelouros-2021-presidente, evora-pelouros-2021-vice-presidente, evora-pelouros-2025-presidente, evora-pelouros-2025-vice-presidente, evora-pelouros-2025-vereadora",
+      "partes": [
+        {
+          "pt": ": cada pelouro é uma área da câmara a seu cargo.",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "evora-pelouros-2021-total, evora-pelouros-2025-total",
+      "partes": [
+        {
+          "pt": "É a soma dos pelouros atribuídos aos membros do executivo da câmara no mandato.",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "evora-prr-aprovado",
+      "partes": [
+        {
+          "pt": "São as verbas do Plano de Recuperação e Resiliência aprovadas para projetos no concelho",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "evora-prr-pago",
+      "partes": [
+        {
+          "pt": "São as verbas do Plano de Recuperação e Resiliência já pagas a projetos no concelho",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "evora-prr-vencido-aprovado",
+      "partes": [
+        {
+          "pt": "São as verbas aprovadas em projetos no concelho cujo prazo de conclusão já passou",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "evora-prr-execucao",
+      "partes": [
+        {
+          "pt": "É a parte das verbas do Plano de Recuperação e Resiliência aprovadas para o concelho que já foi paga.",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "evora-prr-vencido-quota",
+      "partes": [
+        {
+          "pt": "É a parte das verbas aprovadas para o concelho que está em projetos cuja data prevista de conclusão já passou sem conclusão registada.",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "correcoes-publicadas",
+      "partes": [
+        {
+          "pt": "É o número de entradas do registo de correções que são correções, em todas as linhas do livro-razão",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        },
+        {
+          "pt": "; as atualizações não contam, porque uma atualização não é um erro admitido.",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "estudos-publicados",
+      "partes": [
+        {
+          "pt": "É o número de estudos distintos publicados",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        },
+        {
+          "pt": "; as traduções não contam como estudos novos.",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "edicoes-publicadas",
+      "partes": [
+        {
+          "pt": "É o número de edições dos estudos publicados",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        },
+        {
+          "pt": "; a edição portuguesa e a inglesa do mesmo estudo contam em separado.",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "estudos-evora-publicados",
+      "partes": [
+        {
+          "pt": "É o número de estudos publicados cujo objeto é o concelho de Évora e a que nenhum outro estudo sucedeu.",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "municipios-portugal-caop",
+      "partes": [
+        {
+          "pt": ": a soma dos três ficheiros que a Direção-Geral do Território publica, um por região.",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "municipios-com-estudo-aprofundado",
+      "partes": [
+        {
+          "pt": "É o número de concelhos com pelo menos um estudo aprofundado publicado.",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "municipios-sem-estudo-aprofundado",
+      "partes": [
+        {
+          "pt": "É o número de concelhos que ainda não têm estudo aprofundado publicado: o total dos concelhos menos os que já o têm.",
+          "apoios": [
+            "campo da casa (derivation)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "agua-nao-faturada-portugal",
+      "partes": [
+        {
+          "pt": "É a parte da água que não é faturada",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "penalizacao-antecipacao-um-ano-neutra",
+      "partes": [
+        {
+          "pt": "É o corte na pensão por um ano de antecipação da reforma que deixaria o sistema de pensões sem ganhar nem perder",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "factor-sustentabilidade",
+      "partes": [
+        {
+          "pt": ": abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta.",
+          "apoios": [
+            "explicação de um termo (TERMOS_DOS_CARTOES)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "familias",
+      "quem": "concelho:desempregoRegistado",
+      "partes": [
+        {
+          "pt": "(uma parte cujas alternativas só são da fonte nalgumas linhas da família)",
+          "apoios": [
+            "alternativa só da casa em alguma linha"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "series",
+      "quem": "serie-cem-euros-de-2015-01",
+      "partes": [
+        {
+          "pt": "É o que cem euros compram em cada mês, contados em euros do primeiro mês da série,",
+          "apoios": [
+            "campo da casa (derivation)",
+            "campo da casa (derivation_en)"
+          ]
+        },
+        {
+          "pt": " depois de descontada a subida dos preços no consumidor",
+          "apoios": [
+            "campo da casa (derivation)",
+            "campo da casa (derivation_en)"
+          ]
+        },
+        {
+          "pt": " (índice de preços no consumidor do INE)",
+          "apoios": [
+            "campo da casa (derivation)",
+            "campo da casa (derivation_en)"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "series",
+      "quem": "serie-ihpc-combustiveis-variacao-homologa-ue",
+      "partes": [
+        {
+          "pt": " os preços dos combustíveis",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "series",
+      "quem": "serie-ihpc-combustiveis-variacao-homologa",
+      "partes": [
+        {
+          "pt": " os preços dos combustíveis",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "series",
+      "quem": "serie-ihpc-energia-da-casa-variacao-homologa",
+      "partes": [
+        {
+          "pt": " os preços da energia usada em casa",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "series",
+      "quem": "serie-ihpc-rendas-variacao-homologa",
+      "partes": [
+        {
+          "pt": " os preços das rendas",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "series",
+      "quem": "serie-precos-da-habitacao-variacao-homologa",
+      "partes": [
+        {
+          "pt": "É quanto mudaram num ano",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    },
+    {
+      "onde": "series",
+      "quem": "serie-remuneracao-bruta-mensal-media-real",
+      "partes": [
+        {
+          "pt": "É a remuneração média antes de descontos de cada ano",
+          "apoios": [
+            "campo da casa (derivation)",
+            "campo da casa (derivation_en)"
+          ]
+        },
+        {
+          "pt": " isto é, descontada a subida dos preços desde esse ano",
+          "apoios": [
+            "campo da casa (derivation)",
+            "campo da casa (derivation_en)"
+          ]
+        },
+        {
+          "pt": " (remuneração em termos reais)",
+          "apoios": [
+            "nome do projeto"
+          ]
+        }
+      ]
+    }
+  ],
+  "apoios_por_especie": {
+    "familias": {
+      "campo da fonte (document.title)": 59,
+      "campo da fonte (reference_date)": 12,
+      "origem declarada": 73,
+      "campo da fonte (unit)": 34,
+      "campo da fonte (excerpt)": 30,
+      "campo da casa (ressalva)": 32,
+      "campo da casa (derivation)": 29,
+      "nome do projeto": 86,
+      "campo da fonte (name)": 28,
+      "campo da fonte (document.locator)": 21,
+      "alternativas (com uma da fonte)": 17,
+      "alternativas (só da casa)": 5,
+      "explicação de um termo (TERMOS_DOS_CARTOES)": 10,
+      "campo da fonte (source)": 18,
+      "campo da fonte (document.edition)": 1
+    },
+    "series": {
+      "campo da casa (derivation)": 7,
+      "campo da casa (derivation_en)": 7,
+      "origem declarada": 21,
+      "nome do projeto": 12,
+      "campo da fonte (name)": 14,
+      "campo da fonte (document.edition)": 6,
+      "campo da fonte (unit)": 2
+    }
+  },
+  "diferenca_das_regras_dos_concelhos": {
+    "so_no_brief_por_sufixo": {
+      "poder-de-compra": 1,
+      "empresas": 3,
+      "desemprego-registado": 2,
+      "dgal": 1,
+      "divida-dgal": 3,
+      "indice-de-divida": 3,
+      "divida": 1,
+      "limite-divida-dgal": 3,
+      "populacao": 1,
+      "prazo-medio-de-pagamento": 2,
+      "administracao-central": 25
+    },
+    "so_no_bloco": []
+  },
+  "portoes": {
+    "cabeca": "57d81ea6331b6bf70f228b23afea1cce8d299130",
+    "cabeca_fim": "57d81ea6331b6bf70f228b23afea1cce8d299130"
+  }
+}
