@@ -1,0 +1,211 @@
+[
+  {
+    "nome": "Fontes, anexos, contas e travessia regenerados",
+    "passou": true,
+    "planta": false
+  },
+  {
+    "nome": "Unidade do INE trocada",
+    "mensagem": "JD1 INE: unidade diferente",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Anos da execução trocados",
+    "mensagem": "JD1 EO: cabeçalho ausente ou ambíguo",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Corpo recebido alterado",
+    "mensagem": "comprimento divergente",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "União substituída por Portugal",
+    "mensagem": "JD1 Eurostat: coordenada diferente geo",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "PIB de outro ano na derivação",
+    "mensagem": "JD1 derivação: unidades ou períodos diferentes",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Série desconhecida na seleção",
+    "mensagem": "seleção de séries vazia ou desconhecida",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Seleção pede a série escolhida e declara as restantes saltadas",
+    "passou": true,
+    "planta": false
+  },
+  {
+    "nome": "Unidade da taxa trocada",
+    "mensagem": "a unidade não é confirmada pela ficha de metadados",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Referência europeia em percentagem junto dos juros em milhões",
+    "mensagem": "Enquadramento da União: unidades diferentes em juros-das-administracoes-publicas-2025 e juros-das-administracoes-publicas-2025-ue",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Referência europeia de outro período",
+    "mensagem": "Enquadramento da União: períodos diferentes em precos-da-habitacao-2025 e precos-da-habitacao-2025-ue",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Rótulo e endereço comprimidos na mesma fila",
+    "mensagem": "O rótulo da página não fica acima do endereço.",
+    "queixas": [
+      "O rótulo da página não fica acima do endereço."
+    ],
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Uma porta a mais numa página anterior",
+    "mensagem": "JD1 L1: uma página anterior mudou de destinos ou de multiplicidade.",
+    "queixa": "JD1 L1: uma página anterior mudou de destinos ou de multiplicidade.",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Um recibo novo com mais uma porta do Método",
+    "mensagem": "JD1 L1: o recibo novo não conserva apenas as duas portas do Método.",
+    "queixa": "JD1 L1: o recibo novo não conserva apenas as duas portas do Método.",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Uma página nova fora dos recibos declarados",
+    "mensagem": "JD1 L1: as páginas novas não são exatamente os recibos declarados.",
+    "queixa": "JD1 L1: as páginas novas não são exatamente os recibos declarados.",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "Um recibo declarado em falta",
+    "mensagem": "JD1 L1: as páginas novas não são exatamente os recibos declarados.",
+    "queixa": "JD1 L1: as páginas novas não são exatamente os recibos declarados.",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "O teto diverge da contagem guardada",
+    "mensagem": "B1 L1: o teto tem de ser o número inteiro medido no registo.",
+    "planta": true,
+    "passou": true,
+    "codigo": 1
+  },
+  {
+    "nome": "Duas portas novas na página da série",
+    "mensagem": "L1 · páginas com dois destinos iguais fora da mobília: 2745, acima do teto 2744.",
+    "planta": true,
+    "passou": true,
+    "codigo": 1
+  },
+  {
+    "nome": "JD1: página dos juros trocada",
+    "mensagem": "ledger/claims/juros-das-administracoes-publicas-2024.yml: traz o rótulo \"Juros\" e o localizador \"Quadro 9, Juros (D.41), coluna 2024, p. 13\", que não é nenhuma das 18 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n> · JD1, juros no quadro 9 do INE · JD1, PIB no quadro 1 do INE · JD1, juros no quadro 1 da execução · JD1, custo da dívida no gráfico do IGCP · JD1, saldo da dívida direta do IGCP · JD1, quadro anual do financiamento do IGCP · JD1, coordenada dos juros da União). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+    "planta": true,
+    "passou": true,
+    "queixas": [
+      "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+      "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+    ]
+  },
+  {
+    "nome": "JD1: ano do PIB trocado",
+    "mensagem": "ledger/claims/pib-nominal-notificacao-setembro-2024.yml: traz o rótulo \"Produto Interno Bruto, a preços de merca\" e o localizador \"Quadro 1, Produto Interno Bruto, a preços de mercado, coluna 2025, p. 2\", que não é nenhuma das 18 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n> · JD1, juros no quadro 9 do INE · JD1, PIB no quadro 1 do INE · JD1, juros no quadro 1 da execução · JD1, custo da dívida no gráfico do IGCP · JD1, saldo da dívida direta do IGCP · JD1, quadro anual do financiamento do IGCP · JD1, coordenada dos juros da União). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+    "planta": true,
+    "passou": true,
+    "queixas": [
+      "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+      "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+    ]
+  },
+  {
+    "nome": "JD1: ano da execução trocado",
+    "mensagem": "ledger/claims/juros-e-outros-encargos-execucao-2025-08.yml: traz o rótulo \"Juros e outros encargos\" e o localizador \"Quadro 1, Conta consolidada das Administrações Públicas, execução acumulada 2026, janeiro a agosto, folha 7 do PDF (numeração impressa: 3)\", que não é nenhuma das 18 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n> · JD1, juros no quadro 9 do INE · JD1, PIB no quadro 1 do INE · JD1, juros no quadro 1 da execução · JD1, custo da dívida no gráfico do IGCP · JD1, saldo da dívida direta do IGCP · JD1, quadro anual do financiamento do IGCP · JD1, coordenada dos juros da União). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+    "planta": true,
+    "passou": true,
+    "queixas": [
+      "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+      "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+    ]
+  },
+  {
+    "nome": "JD1: ano do custo do stock trocado",
+    "mensagem": "ledger/claims/custo-do-stock-da-divida-direta-2025.yml: traz o rótulo \"Custo do stock da dívida\" e o localizador \"Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2026, p. 3; definição na nota 6 da folha 5\", que não é nenhuma das 18 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n> · JD1, juros no quadro 9 do INE · JD1, PIB no quadro 1 do INE · JD1, juros no quadro 1 da execução · JD1, custo da dívida no gráfico do IGCP · JD1, saldo da dívida direta do IGCP · JD1, quadro anual do financiamento do IGCP · JD1, coordenada dos juros da União). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+    "planta": true,
+    "passou": true,
+    "queixas": [
+      "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+      "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+    ]
+  },
+  {
+    "nome": "JD1: dia do saldo trocado",
+    "mensagem": "ledger/claims/divida-direta-do-estado-2026-08.yml: traz o rótulo \"Dívida total / Total debt\" e o localizador \"Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 30/ago/26, p. 2\", que não é nenhuma das 18 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n> · JD1, juros no quadro 9 do INE · JD1, PIB no quadro 1 do INE · JD1, juros no quadro 1 da execução · JD1, custo da dívida no gráfico do IGCP · JD1, saldo da dívida direta do IGCP · JD1, quadro anual do financiamento do IGCP · JD1, coordenada dos juros da União). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+    "planta": true,
+    "passou": true,
+    "queixas": [
+      "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+      "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+    ]
+  },
+  {
+    "nome": "JD1: emissões no lugar das necessidades",
+    "mensagem": "ledger/claims/necessidades-brutas-de-financiamento-2025.yml: traz o rótulo \"3. NECESSIDADES BRUTAS DE FINANCIAMENTO \" e o localizador \"Quadro 9, p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada), coluna 2025, p. 45\", que não é nenhuma das 18 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n> · JD1, juros no quadro 9 do INE · JD1, PIB no quadro 1 do INE · JD1, juros no quadro 1 da execução · JD1, custo da dívida no gráfico do IGCP · JD1, saldo da dívida direta do IGCP · JD1, quadro anual do financiamento do IGCP · JD1, coordenada dos juros da União). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+    "planta": true,
+    "passou": true,
+    "queixas": [
+      "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+      "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+    ]
+  },
+  {
+    "nome": "JD1: geografia da União trocada",
+    "mensagem": "ledger/claims/juros-das-administracoes-publicas-2025-ue.yml: traz o rótulo \"Interest, expenditure\" e o localizador \"freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=PT; time=2025; value[0]\", que não é nenhuma das 18 formas que esta régua conhece (dimension.cofog99.category.label.GFnn · folha OE1 e célula do rótulo · Mapa1/Registos/Registo[n]/DesignacaoPrograma; Programa=P-nnn · página e código ministerial do Mapa 4 · página, rótulo e última coluna de um total dos mapas · páginas 49 e 50, rótulo e coluna da síntese de agosto · página 72, programa ou total da síntese de agosto · IndicadorDsg · label · p.<n>, linha <n>, campo <n> · <folha>, linha <n>, coluna <n> · JD1, juros no quadro 9 do INE · JD1, PIB no quadro 1 do INE · JD1, juros no quadro 1 da execução · JD1, custo da dívida no gráfico do IGCP · JD1, saldo da dívida direta do IGCP · JD1, quadro anual do financiamento do IGCP · JD1, coordenada dos juros da União). Um rótulo é o que a fonte imprime no sítio que o localizador nomeia, e um localizador que ninguém reconhece é uma cadeia a que ninguém pode voltar.",
+    "planta": true,
+    "passou": true,
+    "queixas": [
+      "/dados/livro-indice.en.json: 1 entrada(s) com um nome que não é o da sua linha.",
+      "/dados/livro-indice.pt.json: 1 entrada(s) com um nome que não é o da sua linha."
+    ]
+  },
+  {
+    "nome": "jd1-unidade-trocada-pt",
+    "mensagem": "JD1-unidade · /livro-razao/juros-das-administracoes-publicas-2025 · juros-das-administracoes-publicas-2025: a unidade diz «%» e o campo unit da linha nesta edição diz «milhões de euros», com as marcas da própria linha",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "jd1-entrada-retirada-do-indice-pt",
+    "mensagem": "JD1-unidade · /livro-razao: o índice tem 13 entradas JD1 e deve ter 14",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "jd1-unidade-trocada-en",
+    "mensagem": "JD1-unidade · /en/ledger/juros-das-administracoes-publicas-2025 · juros-das-administracoes-publicas-2025: a unidade diz «%» e o campo unit da linha nesta edição diz «million euros», com as marcas da própria linha",
+    "planta": true,
+    "passou": true
+  },
+  {
+    "nome": "jd1-entrada-retirada-do-indice-en",
+    "mensagem": "JD1-unidade · /en/ledger: o índice tem 13 entradas JD1 e deve ter 14",
+    "planta": true,
+    "passou": true
+  }
+]

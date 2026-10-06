@@ -1,0 +1,7 @@
+{
+  "comando": "node scripts/inventario-rotulos.mjs --prova --json design/especime-v3/medicoes/jd1-2026-10-06/rotulos.json",
+  "inicio": "2026-10-06T16:46:50.120482+00:00",
+  "fim": "2026-10-06T16:46:54.081095+00:00",
+  "codigo": 0,
+  "cabeca": "5a87309a9acb81fb8f1c40009516e9cb050fd1a4"
+}

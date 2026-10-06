@@ -22,6 +22,14 @@ const ids = {
   serie: 'series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade',
 };
 const larguras = [390, 768, 1024, 1280, 1600];
+function conferirPortas(portas, largura) {
+  const erros = [];
+  if (largura < 1024) {
+    if (portas.some(p => !p.rotulo_acima)) erros.push('O rótulo da página não fica acima do endereço.');
+    if (portas.some(p => p.alvo < 44)) erros.push('A ligação ao documento não conserva a área de toque mínima.');
+  }
+  return erros;
+}
 const tipos = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.json': 'application/json' };
 const servidor = http.createServer(async (pedido, resposta) => {
   try {
@@ -59,7 +67,7 @@ try {
     });
     if (medidas.documento > largura) problemas.push(`${url}: largura ${medidas.documento} excede ${largura}`);
     if (!medidas.frase || medidas.por_confirmar) problemas.push(`${url}: frase ausente ou por confirmar`);
-    if (largura < 1024 && medidas.portas.some(p => !p.rotulo_acima || p.alvo < 44)) problemas.push(`${url}: rótulo da página sem a sua linha ou alvo inferior ao mínimo`);
+    problemas.push(...conferirPortas(medidas.portas, largura).map(e => `${url}: ${e}`));
     const ficheiro = `${saida}/${nome}-${lingua}-${largura}.png`;
     const bytes = await p.screenshot({ path: ficheiro, fullPage: true });
     capturas.push({ ficheiro, url, lingua, largura, medidas, sha256: createHash('sha256').update(bytes).digest('hex') });
@@ -68,9 +76,11 @@ try {
       const etiqueta = p.locator('.linha-endereco-abrir').first();
       const estilo = await etiqueta.evaluate(e => e.parentElement.getAttribute('style'));
       await etiqueta.evaluate(e => { e.parentElement.style.flexDirection = 'row'; });
-      const mordeu = await etiqueta.evaluate(e => e.parentElement.querySelector('.linha-endereco-bruto').getBoundingClientRect().top < e.getBoundingClientRect().bottom - 1);
+      const medidaPlantada = await etiqueta.evaluate(e => ({ rotulo_acima: e.parentElement.querySelector('.linha-endereco-bruto').getBoundingClientRect().top >= e.getBoundingClientRect().bottom - 1, alvo: e.parentElement.getBoundingClientRect().height }));
+      const queixas = conferirPortas([medidaPlantada], largura);
+      const mordeu = queixas.length === 1 && queixas[0] === mensagem;
       if (!mordeu) problemas.push(`A planta da porta não recusou: ${mensagem}`);
-      plantas.push({ nome: 'Rótulo e endereço comprimidos na mesma fila', mensagem, planta: true, passou: mordeu });
+      plantas.push({ nome: 'Rótulo e endereço comprimidos na mesma fila', mensagem, queixas, planta: true, passou: mordeu });
       await etiqueta.evaluate((e, anterior) => { if (anterior === null) e.parentElement.removeAttribute('style'); else e.parentElement.setAttribute('style', anterior); }, estilo);
     }
     if (nome === 'serie') {
