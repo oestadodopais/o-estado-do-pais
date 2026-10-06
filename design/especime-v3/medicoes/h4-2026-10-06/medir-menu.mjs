@@ -1,6 +1,6 @@
 /** H4: mede a forma servida e a proposta só no navegador, antes de mudar a folha.
  * Adaptado dos captores do EX1. Não pede recursos externos nem muda o dist.
- * node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs antes|depois
+ * node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs antes|depois [--passagem-c]
  */
 import fs from 'node:fs/promises';
 import http from 'node:http';
@@ -13,6 +13,8 @@ import { ANCORA_DA_POLITICA } from '../../../../src/data/politica-ia.mjs';
 
 const fase = process.argv[2];
 if (!['antes', 'depois'].includes(fase)) throw Error('Diga antes ou depois.');
+const passagemC = process.argv.includes('--passagem-c');
+if (passagemC && fase !== 'depois') throw Error('A passagem H4-c mede a fase depois.');
 const AQUI = 'design/especime-v3/medicoes/h4-2026-10-06';
 const CAP = 'design/especime-v3/capturas/h4-2026-10-06';
 const DIST = path.resolve('dist');
@@ -36,7 +38,7 @@ const origem = `http://127.0.0.1:${servidor.address().port}`;
 const navegador = await chromium.launch();
 const medidas = [];
 try {
-  for (const lang of ['pt', 'en']) for (const largura of [360, 390, 768]) {
+  for (const lang of ['pt', 'en']) for (const largura of passagemC ? [320, 360, 390, 430, 768] : [360, 390, 768]) {
     for (const forma of fase === 'antes' ? ['servida', 'proposta', 'proposta-espaco-768'] : ['servida']) {
       const ctx = await navegador.newContext({ viewport: { width: largura, height: 900 }, deviceScaleFactor: 1, colorScheme: 'light', reducedMotion: 'reduce' });
       await ctx.route('**/*', (r) => new URL(r.request().url()).origin === origem ? r.continue() : r.abort());
@@ -75,7 +77,7 @@ try {
           sem_transbordo: n.scrollWidth <= n.clientWidth && caixas.every((b) => b.x >= 0 && b.direita <= innerWidth),
           cabe_em_duas: linhas.length <= 2 && n.scrollWidth <= n.clientWidth && caixas.every((b) => b.x >= 0 && b.direita <= innerWidth) };
       });
-      const ficheiro = `${CAP}/menu-${fase}-${forma}-${lang}-${largura}.png`;
+      const ficheiro = `${CAP}/menu-${fase}-${forma}-${lang}-${largura}${passagemC ? '-c' : ''}.png`;
       const cabecalho = await p.locator('header').first().boundingBox();
       const imagem = await p.screenshot({ path: ficheiro, clip: { x: 0, y: 0, width: largura, height: Math.ceil(cabecalho.y + cabecalho.height) } });
       medidas.push({ lang, largura, forma, ...m, captura: ficheiro, sha256: sha(imagem) });
@@ -85,12 +87,13 @@ try {
 } finally { await navegador.close(); servidor.close(); }
 const candidatos = medidas.filter((m) => m.largura === 390 && m.forma === (fase === 'antes' ? 'proposta' : 'servida'));
 const politica = Object.fromEntries(['pt', 'en'].map((lang) => [lang, `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`]));
-const r = { comando: `node ${AQUI}/medir-menu.mjs ${fase}`, construcao: versao, cabeca, fase, medidas,
+const r = { comando: `node ${AQUI}/medir-menu.mjs ${fase}${passagemC ? ' --passagem-c' : ''}`, construcao: versao, cabeca, fase, medidas,
   nome_inteiro_cabe: candidatos.length === 2 && candidatos.every((m) => m.portas === 7 && m.cabe_em_duas),
   politica: { rotas: politica, rota_do_brief_existe: Object.values(ROUTES).some((r) => r.pt === '/sobre/politica-ia') } };
 await fs.writeFile(`${AQUI}/${fase === 'antes' ? 'menu-a-390' : 'menu-depois'}.json`, JSON.stringify(r, null, 2) + '\n');
 if (fase === 'depois') {
   const antes = JSON.parse(await fs.readFile(`${AQUI}/menu-a-390.json`, 'utf8'));
+  if (passagemC) antes.depois_h4b ??= antes.depois;
   antes.depois = r;
   await fs.writeFile(`${AQUI}/menu-a-390.json`, JSON.stringify(antes, null, 2) + '\n');
 }
