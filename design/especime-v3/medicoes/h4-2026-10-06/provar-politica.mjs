@@ -3,9 +3,16 @@
  * node design/especime-v3/medicoes/h4-2026-10-06/provar-politica.mjs
  */
 import fs from 'node:fs';
+import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { parse } from 'node-html-parser';
 import { conferirLugaresIA } from '../../../../scripts/lugares-ia-do-portao.mjs';
+const passagemD = process.argv.includes('--passagem-d');
+const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+const estado = execFileSync('git', ['status', '--porcelain'], { encoding: 'utf8' });
+const construcao = JSON.parse(fs.readFileSync('dist/version.json', 'utf8'));
+if (passagemD && (estado || construcao.commit !== cabeca)) throw Error('A política H4-d exige uma construção desta cabeça e a árvore limpa.');
 const resultados = [];
 const intactas = [];
 for (const [lang, ficheiro] of [['pt', 'dist/metodo/index.html'], ['en', 'dist/en/method/index.html']]) {
@@ -35,11 +42,17 @@ for (const [lang, ficheiro] of [['pt', 'dist/metodo/index.html'], ['en', 'dist/e
   for (const [nome, muda, mensagem] of plantas) {
     const r = parse(bytes.toString()); muda(r);
     const falhas = conferirLugaresIA(r, lang);
+    if (r.toString() === parse(bytes.toString()).toString()) throw Error(`A planta não mudou a cópia: ${nome}`);
     resultados.push({ nome, lang, mensagem, falhas, passou: !limpas.length && falhas.includes(mensagem) });
   }
   if (sha !== createHash('sha256').update(fs.readFileSync(ficheiro)).digest('hex')) throw Error('A prova alterou o HTML em disco.');
 }
 const passou = intactas.every((r) => !r.falhas.length) && resultados.every((r) => r.passou);
-fs.writeFileSync('design/especime-v3/medicoes/h4-2026-10-06/plantas-politica.json', JSON.stringify({ comando: 'node design/especime-v3/medicoes/h4-2026-10-06/provar-politica.mjs', intactas, plantas: resultados, passou }, null, 2) + '\n');
+const estadoFim = execFileSync('git', ['status', '--porcelain'], { encoding: 'utf8' });
+if (passagemD && (estadoFim || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim() !== cabeca)) throw Error('A árvore ou a cabeça mudou durante as plantas da política.');
+const ficheiro = `design/especime-v3/medicoes/h4-2026-10-06/plantas-politica${passagemD ? '-d' : ''}.json`;
+const destino = passagemD ? path.join(process.env.OEDP_H4_PROVAS ?? '.', ficheiro) : ficheiro;
+fs.mkdirSync(path.dirname(destino), { recursive: true });
+fs.writeFileSync(destino, JSON.stringify({ comando: 'node design/especime-v3/medicoes/h4-2026-10-06/provar-politica.mjs' + (passagemD ? ' --passagem-d' : ''), cabeca, estado, estado_fim: estadoFim, construcao, intactas, plantas: resultados, passou }, null, 2) + '\n');
 console.log(`${resultados.length} plantas dos lugares: ${resultados.filter((r) => r.passou).length} morderam a mensagem esperada.`);
 process.exitCode = passou ? 0 : 1;
