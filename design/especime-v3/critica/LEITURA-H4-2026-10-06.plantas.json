@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T12:15:54+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "p1",
+   "ficheiro": "src/i18n/strings.mjs",
+   "descricao": "a cadeia do rótulo da União no menu diz «Europa» no ficheiro copiado, e o diff e as páginas dizem o nome inteiro",
+   "sha256_antes": "741afe38e0fb87c78663aaa2c1075c77113bab86f079e41929b71f94e4f2e9f2",
+   "sha256_depois": "51a4cc4c95e9224450e8728cd1995584868ff2dfedbb8cedc7d3740e5bba8a92",
+   "contexto_antes": "eiro da União cabe com as sete portas em duas linhas a 390 px,\n         nas duas edições, com a regra base. A medição está em `src/lib/navegacao.mjs`. */\n      uniaoEuropeiaNoMenu: 'União Europeia',\n      estudos: 'Estudos',\n      /* «NÚMEROS E FONTES» E NÃO «LIVRO-RAZÃO» (bloco F1.10, item 8.8,\n         08.09.2026). É o tropeço R2 da ronda de leitores de",
+   "contexto_depois": "eiro da União cabe com as sete portas em duas linhas a 390 px,\n         nas duas edições, com a regra base. A medição está em `src/lib/navegacao.mjs`. */\n      uniaoEuropeiaNoMenu: 'Europa',\n      estudos: 'Estudos',\n      /* «NÚMEROS E FONTES» E NÃO «LIVRO-RAZÃO» (bloco F1.10, item 8.8,\n         08.09.2026). É o tropeço R2 da ronda de leitores de"
+  },
+  {
+   "id": "p2",
+   "ficheiro": "tests/inicio/tema-e-menu.mjs",
+   "descricao": "a TM4 passa a aceitar oito ou mais portas (a comparação !== 7 vira < 7)",
+   "sha256_antes": "36a66a4d011c220651371280912723aa91ce922ad70a44dddbf7c1e5deb2ffbb",
+   "sha256_depois": "286da35ba040b116e6af683872dc7b6d6ef851f3356d8b77f63e87bdcde8119a",
+   "contexto_antes": " const { ctx, p } = await abre(rota, largura);\n  try {\n    const e = await estadoDaPagina(p);\n    const onde = `${rota} a ${largura} px`;\n    const f = [];\n    if (e.menu.portas !== 7) f.push(`TM4 · ${onde}: o menu tem ${e.menu.portas} portas, e são sete.`);\n    if (e.menu.transborda || e.menu.direita > e.janela + 0.5 || !e.menu.dentro) f.push(`TM4 ·",
+   "contexto_depois": " const { ctx, p } = await abre(rota, largura);\n  try {\n    const e = await estadoDaPagina(p);\n    const onde = `${rota} a ${largura} px`;\n    const f = [];\n    if (e.menu.portas < 7) f.push(`TM4 · ${onde}: o menu tem ${e.menu.portas} portas, e são sete.`);\n    if (e.menu.transborda || e.menu.direita > e.janela + 0.5 || !e.menu.dentro) f.push(`TM4 ·"
+  },
+  {
+   "id": "p3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a largura natural das sete portas em português a 390 px diz 646,3125 no relatório, e a medição diz 666,3125",
+   "sha256_antes": "84a1525671b879845f8c1a31f741e0e473ad94da88948c9284fbe3c583fe000e",
+   "sha256_depois": "9b8e9a6aa7edfe09b9419e01c70fecfb369937b837b7ee75321a67cd34fc8c87",
+   "contexto_antes": "5px | sim |\n| pt | 360 | proposta-espaco-768 | 7 | 324 | 699,3365 | 3 | 21,504 | 15px | sim |\n| pt | 390 | servida | 6 | 354 | 343,65625 | 1 | 6 | 13px | sim |\n| pt | 390 | proposta | 7 | 354 | 666,3125 | 2 | 16 | 15px | sim |\n| pt | 390 | proposta-espaco-768 | 7 | 354 | 699,3365 | 2 | 21,504 | 15px | sim |\n| pt | 768 | servida | 6 | 707 | 497,910625 | 1 | 21,504 | ",
+   "contexto_depois": "5px | sim |\n| pt | 360 | proposta-espaco-768 | 7 | 324 | 699,3365 | 3 | 21,504 | 15px | sim |\n| pt | 390 | servida | 6 | 354 | 343,65625 | 1 | 6 | 13px | sim |\n| pt | 390 | proposta | 7 | 354 | 646,3125 | 2 | 16 | 15px | sim |\n| pt | 390 | proposta-espaco-768 | 7 | 354 | 699,3365 | 2 | 21,504 | 15px | sim |\n| pt | 768 | servida | 6 | 707 | 497,910625 | 1 | 21,504 | "
+  },
+  {
+   "id": "p4",
+   "ficheiro": "built/index.html",
+   "descricao": "a página portuguesa construída mostra «Europa» na porta da União do menu, enquanto o código, a medição e a edição inglesa dizem o nome inteiro",
+   "sha256_antes": "f79fd309e56180b1be9ea0fba8b0ff053f04bd6a9116322f97040cd7457c4d0d",
+   "sha256_depois": "cdbea5ade90b894e52822e3551a08c4f6eee861b57be9cb503a7efcdbfdd908e",
+   "contexto_antes": "ria-current=\"page\">Portugal</a><a href=\"/lugares/\">Lugares</a><a href=\"/temas/\">Temas</a><a href=\"/estudos\">Estudos</a><a href=\"/explicacoes\">Explicações</a><a href=\"/uniao-europeia\">União Europeia</a><a href=\"/sobre\">Sobre</a></nav><div class=\"masthead masthead-pais\"><div class=\"masthead-marca\"><h1 class=\"wordmark\">O Estado do País</h1><div class=\"tema\" r",
+   "contexto_depois": "ria-current=\"page\">Portugal</a><a href=\"/lugares/\">Lugares</a><a href=\"/temas/\">Temas</a><a href=\"/estudos\">Estudos</a><a href=\"/explicacoes\">Explicações</a><a href=\"/uniao-europeia\">Europa</a><a href=\"/sobre\">Sobre</a></nav><div class=\"masthead masthead-pais\"><div class=\"masthead-marca\"><h1 class=\"wordmark\">O Estado do País</h1><div class=\"tema\" r"
+  },
+  {
+   "id": "p5",
+   "ficheiro": "src/data/politica-ia.mjs",
+   "descricao": "o fecho português da política de IA diz que o Codex está na leitura, contradizendo a secção dos lugares e a edição inglesa",
+   "sha256_antes": "ed2f23962531e9e106b3228cc653f41a9d654e6b8806952ce6d5b4f938eca819",
+   "sha256_depois": "89ab003b4dc0688f7e8507d317beef855755bbb232ad2756ba3ad0c557d3ad2b",
+   "contexto_antes": "d.',\n        },\n      },\n    ],\n    fecho: {\n      pt: [\n        'São os modelos Claude da Anthropic na direção e na leitura, e o Codex da OpenAI ' +\n          'na construção. Um modelo novo só ocupa um lugar ' +\n          'depois de passar os mesmos testes que o titular passou, e a troca fica escrita ' +\n          'com a data.',\n      ],\n      en: [\n        'They are t",
+   "contexto_depois": "d.',\n        },\n      },\n    ],\n    fecho: {\n      pt: [\n        'São os modelos Claude da Anthropic na direção e na leitura, e o Codex da OpenAI ' +\n          'na leitura. Um modelo novo só ocupa um lugar ' +\n          'depois de passar os mesmos testes que o titular passou, e a troca fica escrita ' +\n          'com a data.',\n      ],\n      en: [\n        'They are t"
+  }
+ ]
+}
