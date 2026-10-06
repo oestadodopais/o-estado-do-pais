@@ -338,12 +338,15 @@ try {
   servidor.close();
 }
 
-const relatorio = { comando: 'node tests/inicio/tema-e-menu.mjs' + process.argv.slice(2).map(a => ' ' + a).join(''),
+const relatorio = { comando: (process.env.OEDP_TEMA_MENU_JSON ? `OEDP_TEMA_MENU_JSON=${process.env.OEDP_TEMA_MENU_JSON} ` : '') +
+  'node tests/inicio/tema-e-menu.mjs' + process.argv.slice(2).map(a => ' ' + a).join(''),
   cabeca: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
   construcao: JSON.parse(await fs.readFile(path.join(DIST, 'version.json'), 'utf8')), medidas_menu: medidasDoMenu, papeis: { claro: PAPEL_CLARO, escuro: PAPEL_ESCURO }, contas, falhas, plantas,
   documentos_mais_largos_do_que_a_janela: larguraDoDocumento.filter((d) => d.documento > d.janela) };
 const j = process.argv.indexOf('--json');
-if (j >= 0) await fs.writeFile(process.argv[j + 1], JSON.stringify(relatorio, null, 2) + '\n');
+// A corrida inteira pode guardar a mesma prova, sem repetir o navegador depois dos portões.
+const destinoJson = j >= 0 ? process.argv[j + 1] : process.env.OEDP_TEMA_MENU_JSON;
+if (destinoJson) await fs.writeFile(destinoJson, JSON.stringify(relatorio, null, 2) + '\n');
 console.log(`tema e menu · TM1 ${contas.tm1} corrida(s), TM2 ${contas.tm2}, TM3 ${contas.tm3}, TM4 ${contas.tm4}` +
   (prova ? ` · ${plantas.length} planta(s), ${plantas.filter((p) => p.mordeu).length} a morder` : ''));
 for (const p of plantas) console.log(`  ${p.mordeu ? 'mordeu' : 'NÃO MORDEU'} · ${p.nome}`);
