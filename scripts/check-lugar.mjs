@@ -1133,14 +1133,6 @@ for (const ficheiro of paginas) {
        noutro sítio da página continua a contar. */
     if (a.closest('[data-rotulo-ia="topo"]') &&
         href === `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`) continue;
-    /* E O MARCADOR DE UM TÍTULO POR CONFIRMAR, pela mesma regra e com o mesmo
-       mecanismo (B1c, 22.09.2026). O arquivo declara `titleUnverified` em duas
-       edições, e a decisão desse dia é que a marca vai a todas as páginas onde
-       o título se rende. `TituloDeTrabalho` dá-lhe a classe `marcador-de-titulo`
-       e o destino exato do marcador; é obrigatória onde o arquivo a declara, e
-       a A4 do `check:pais` confere que está onde ele a declara e em mais lado
-       nenhum. Contá-la como segunda porta era contar a obrigação como escolha. */
-    if (a.matches('a.marcador.marcador-de-titulo') && href === routePath('marcador', lang)) continue;
     /* E O MARCADOR DE UMA FRASE POR CONFIRMAR NA FONTE, pela mesma regra e com o mesmo mecanismo (passagem R4-b,
        06.10.2026). A frase «o que é» de um recibo com uma parte que nem a fonte nem a conta declarada dizem leva o
        marcador da casa, com a classe `marcador-da-frase`, dentro de `[data-por-confirmar-na-fonte]`; é obrigatório onde

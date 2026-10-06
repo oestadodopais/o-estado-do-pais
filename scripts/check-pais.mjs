@@ -546,22 +546,18 @@ function anda(dir) {
     if (doc.querySelectorAll('[data-rotulo-ia="topo"] .rotulo-ia-final').length !== 1) erros.push(`N2: ponto final sem ligação inseparável em ${path.relative(dist,abs)}.`);
 
     /* ---------------------------------------------------------------- A4 */
-    /* UM TÍTULO POR CONFIRMAR DIZ-SE, EM TODAS AS PÁGINAS ONDE SE RENDE (a
-       decisão de 22.09.2026). O arquivo declara `titleUnverified` em duas
-       edições inglesas, e elas rendiam-se como títulos comuns. A célula corre
-       sobre cada elemento que DECLARA a edição que está a render — os artigos
-       das três listas de estudos (`[data-estudo][data-estudo-edicao]`) e as
-       linhas de publicação do registo — e confere o título tal como
-       `TituloDeTrabalho` o rende: o texto do arquivo, a marca da língua do
-       texto, e o marcador da classe `marcador-de-titulo` presente se e só se o
-       arquivo o declarar por confirmar. A classe é o que distingue esta marca
-       das outras que a mesma sinopse possa trazer. */
+    /* EX2-b: o título é o nome publicado; a falta de tradução não leva marcador. */
     const onde = path.relative(dist, abs);
     /* A ROTA DA PÁGINA, lida do caminho do ficheiro pela tabela das rotas (a passagem R3-b, o achado 9 da leitura a
        frio do Sol): o âmbito do índice na A1 só vale na página do índice. */
     const rotaDaPagina = f.name === 'index.html'
       ? matchPath(normalizePath('/' + path.relative(dist, path.dirname(abs)).split(path.sep).join('/')))
       : null;
+    for(const titulo of doc.querySelectorAll('[data-nonledger="titulo-de-estudo"]')) {
+      const seguinte=titulo.parentNode?.childNodes.slice(titulo.parentNode.childNodes.indexOf(titulo)+1).find(n=>normal(n.textContent));
+      if(/\[a verificar\]/i.test(titulo.textContent) || /\[a verificar\]/i.test(seguinte?.textContent ?? '') || titulo.querySelector('.marcador, a[href="/en/to-verify"], a[href="/a-verificar"]')) erros.push(`A4: ${onde}: um título de estudo leva a marca de incerteza.`);
+    }
+    if(doc.querySelector('.marcador-de-titulo')) erros.push(`A4: ${onde}: um título de estudo leva a marca de incerteza.`);
     const daEdicao = [
       ...doc.querySelectorAll('[data-estudo][data-estudo-edicao]').map(el => [el, el.getAttribute('data-estudo-edicao')]),
       ...doc.querySelectorAll('li[data-mudanca="publicacao"]').map(el => [el, el.querySelector('[data-publicacao-estudo]')?.getAttribute('data-publicacao-estudo') ?? '']),
@@ -572,14 +568,11 @@ function anda(dir) {
       const w = WORKS.find(x => x.slug === slug);
       const ed = w?.editions.find(x => x.lang === edLang);
       const titulo = el.querySelector('[data-nonledger="titulo-de-estudo"]');
-      const marcas = el.querySelectorAll('.marcador-de-titulo').length;
       if (!ed || !titulo) { erros.push(`A4: ${onde}: a edição «${par}» não rende o título do arquivo.`); continue; }
       if (normal(titulo.textContent) !== normal(ed.title) ||
-          (titulo.getAttribute('lang') ?? null) !== (linguaDoTitulo(ed.title, lang) ?? null))
+          (titulo.getAttribute('lang') === 'pt' ? 'pt-PT' : titulo.getAttribute('lang') ?? null) !== (linguaDoTitulo(ed.title, lang) ?? null))
         erros.push(`A4: ${onde}: o título de ${par} difere do arquivo ou da língua que o texto tem.`);
-      if ((marcas > 0) !== (ed.titleUnverified === true))
-        erros.push(`A4: ${onde}: ${par} tem ${marcas} marcador(es) de título e o arquivo declara titleUnverified=${ed.titleUnverified === true}.`);
-      if (marcas > 1) erros.push(`A4: ${onde}: ${par} repete o marcador do título.`);
+
     }
 
     /* ------------------------------------------------------- A1, A2 e A3 */
