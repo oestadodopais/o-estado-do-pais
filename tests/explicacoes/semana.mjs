@@ -322,12 +322,12 @@ export function conferirPaginaDaSemana(root, lang, aceites, linhas = loadClaims(
   const c = t(lang).semana;
   const frase = root.querySelector('main [data-semana-frase]');
   const m = /^(\d{4}-\d{2}-\d{2})\/(\d{4}-\d{2}-\d{2})$/.exec(frase?.getAttribute('data-semana-janela') ?? '');
-  if (!frase || !m) return ['W2 · a página da semana não tem a primeira frase com a janela'];
+  if (!frase || !m) return ['W2 · a página da semana não tem a frase das contagens com a janela'];
   if (!aceites.includes(m[2])) erros.push(`W2 · a janela acaba a ${m[2]}, e o carimbo da construção é de ${aceites.join(' ou ')}`);
   const s = semanaPelaCelula(linhas, m[2]);
   if (s.janela.inicio !== m[1]) erros.push(`W2 · a janela começa a ${m[1]} e sete dias até ${m[2]} começam a ${s.janela.inicio}`);
   const esperada = primeiraFrasePelaCelula(s, lang);
-  if (normal(frase.textContent) !== esperada) erros.push(`W2 · a primeira frase difere da conta desta célula.\n      esperada: ${esperada}\n      rendida:  ${normal(frase.textContent)}`);
+  if (normal(frase.textContent) !== esperada) erros.push(`W2 · a frase das contagens difere da conta desta célula.\n      esperada: ${esperada}\n      rendida:  ${normal(frase.textContent)}`);
   if(frase.parentNode?.lastChild!==frase && frase.parentNode?.children?.at(-1)!==frase) erros.push('W2 · a frase das contagens não fecha a página');
   const entradas = root.querySelectorAll('main [data-semana-mudancas] > [data-semana-mudanca]');
   if (JSON.stringify(entradas.map((e) => e.getAttribute('data-semana-mudanca'))) !== JSON.stringify(s.mudancas.map((x) => x.linha))) {
@@ -514,7 +514,7 @@ export function plantasDaPaginaDaSemana(dist) {
     comFormas
       ? planta('o literal de agora de uma mudança só da forma trocado', (r) => { const v = r.querySelector('[data-semana-forma] [data-correcao-campo="new_value"]'); v.set_content(`${v.textContent}9`); }, /W2 · .*o literal de agora/)
       : { nome: 'o literal de agora de uma mudança só da forma trocado', mordeu: false, aplica: false, queixa: 'a semana não tem mudanças só da forma de escrever: a planta não se aplica' },
-    planta('uma contagem trocada', (r) => { const n = r.querySelector('[data-semana="relidas"]') ?? r.querySelector('[data-semana="fim"]'); n.set_content(n.getAttribute('data-semana') === 'relidas' ? String(Number(n.textContent.replace(/\D/g, '')) + 1) : '01.01.2000'); }, /W2 · a primeira frase/),
+    planta('uma contagem trocada', (r) => { const n = r.querySelector('[data-semana="relidas"]') ?? r.querySelector('[data-semana="fim"]'); n.set_content(n.getAttribute('data-semana') === 'relidas' ? String(Number(n.textContent.replace(/\D/g, '')) + 1) : '01.01.2000'); }, /W2 · a frase das contagens/),
     /* O dia de fora é o anterior ao mais antigo dos aceites: uma construção carimbada na primeira meia hora do dia aceita
        também o dia anterior, e a planta tem de cair fora dos dois. */
     planta('a janela de outro dia', (r) => { const f = r.querySelector('[data-semana-frase]'); const fora = menosDias(aceites[aceites.length - 1], 1); f.setAttribute('data-semana-janela', `${menosDias(fora, 6)}/${fora}`); }, /W2 · a janela acaba/),
@@ -540,18 +540,19 @@ export function plantasDaPassagemB(dist) {
     const html=fs.readFileSync(path.join(dist,f),'utf8');
     const conferir=r=>conferirPalavrasDaSemanaNaPagina(r,lang,rota,dist);
     const raiz=parse(html), controlo=conferir(raiz);
+    const daUniao=raiz.querySelectorAll('[data-semana-mudanca]').map(e=>e.getAttribute('data-semana-mudanca')).find(id=>nomeNaLista(id,lang).qualificador==='ue');
     const casos=[
       ['a unidade colada ao número',r=>{const e=r.querySelector('[data-semana-mudanca]'),u=e.querySelector('[data-linha-campo="unit"]'),v=e.querySelector('[data-correcao-campo="new_value"]');u.remove();v.insertAdjacentHTML('afterend',u.outerHTML);},'a frase da mudança ou a unidade antes dos valores'],
-      ['o qualificador da União Europeia retirado',r=>r.querySelector('[data-semana-mudanca="despesa-em-id-2024-ue"] .semana-onde').remove(),'a frase da mudança ou a unidade antes dos valores'],
+      ['o qualificador da União Europeia retirado',r=>r.querySelector(`[data-semana-mudanca="${daUniao}"] .semana-onde`).remove(),'a frase da mudança ou a unidade antes dos valores'],
       ['o nome da fonte em vez do nome da medida',r=>r.querySelector('[data-semana-mudanca] .semana-nome').set_content('Nominal unit labour cost per hour worked'),'a frase da mudança ou a unidade antes dos valores'],
-      ['a palavra da revisão trocada por movimento da economia',r=>{const p=r.querySelector('[data-semana-resumo]');p.set_content(p.innerHTML.replace(t(lang).semana.subiu,lang==='pt'?', subiu':', rose'));},'a frase da mudança ou a unidade antes dos valores'],
+      ['a palavra da revisão trocada por movimento da economia',r=>{const e=r.querySelector('[data-semana-mudanca]'),p=e.querySelector('[data-semana-resumo]');p.set_content(p.innerHTML.replace(t(lang).semana[e.getAttribute('data-semana-palavra')],lang==='pt'?', subiu':', rose'));},'a frase da mudança ou a unidade antes dos valores'],
       ['um resumo declarado fora da lista',r=>{const e=r.querySelector('[data-semana-mudanca]');r.querySelector('main').insertAdjacentHTML('beforeend',`<li data-semana-mudanca="${e.getAttribute('data-semana-mudanca')}">${e.querySelector('[data-semana-resumo]').outerHTML}</li>`);},'W · a marca das frases compostas da semana está num sítio que esta célula não confere'],
     ];
     if(rota==='leituraDaSemana') casos.push(
       ['as contagens à cabeça da página',r=>{const p=r.querySelector('main [data-semana-frase]');p.remove();r.querySelector('[data-semana-pagina] h1').insertAdjacentHTML('afterend',p.outerHTML);},'a frase das contagens não fecha a página'],
       ['a frase de nenhuma mudança da primeira página retirada',r=>r.querySelector('[data-semana-primeira="nenhuma"]')?.remove(),'nenhuma frase da primeira página mudou, e a página não o diz assim']);
     for(const [nome,estraga,mensagem] of casos) {
-      const aplicavel=nome.startsWith('as contagens') || (nome.startsWith('a frase de nenhuma') ? raiz.querySelector('[data-semana-primeira="nenhuma"]') : nome.startsWith('o qualificador') ? raiz.querySelector('[data-semana-mudanca="despesa-em-id-2024-ue"] .semana-onde') : raiz.querySelector('[data-semana-mudanca]'));
+      const aplicavel=nome.startsWith('as contagens') || (nome.startsWith('a frase de nenhuma') ? raiz.querySelector('[data-semana-primeira="nenhuma"]') : nome.startsWith('o qualificador') ? daUniao && raiz.querySelector(`[data-semana-mudanca="${daUniao}"] .semana-onde`) : raiz.querySelector('[data-semana-mudanca]'));
       if(!aplicavel) {plantas.push({nome:`${nome}, ${rota}, ${lang}`,aplica:false,mordeu:false,mensagem,queixa:'a página construída não tem a entrada necessária; a planta não se aplica'});continue;}
       const r=parse(html);estraga(r);const q=conferir(r);
       plantas.push({nome:`${nome}, ${rota}, ${lang}`,mensagem,mordeu:!controlo.length&&q.some(x=>x.includes(mensagem)),queixa:q.join(' | ')});

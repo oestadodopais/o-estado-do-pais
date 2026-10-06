@@ -37,6 +37,9 @@ try{
   await ctx.close();
  }
 }finally{await browser.close();servidor.close();}
+const anterior=JSON.parse(await fs.readFile(path.join(AQUI,'capturas.json'),'utf8'));
+const arquivo={...anterior,comando:'node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex2.mjs',origem:'capturas.json',capturas:anterior.capturas.map(c=>({...c,ficheiro:c.ficheiro.replace(/\.png$/, '-antes.png')}))};
+try { await fs.writeFile(path.join(AQUI,'capturas-antes.json'),JSON.stringify(arquivo,null,2)+'\n',{flag:'wx'}); } catch(e) { if(e.code!=='EEXIST') throw e; }
 const manifesto={comando:'node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex2.mjs',cabeca,versao,capturas,erros};
 await fs.writeFile(path.join(AQUI,'capturas-b.json'),JSON.stringify(manifesto,null,2)+'\n');
 console.log(JSON.stringify({capturas:capturas.length,erros}));

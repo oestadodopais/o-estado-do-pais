@@ -6,7 +6,7 @@ const le=f=>JSON.parse(fs.readFileSync(path.join(pasta,f),'utf8'));
 const e=le('entrega-b.json'), b=le('base.json'), u=le('unidades.json'), w=le('semana-b.json'), fc=le('frases-compostas-b.json'), passagem=le('passagem-b.json'), pais=le('titulos-plantas-b.json');
 const semana=e.paginas.find(p=>p.lang==='pt'&&p.rota==='leituraDaSemana');
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('|','&#124;').replaceAll('\n',' ');
-const plantas=[...w.plantas,...fc.plantas,...pais.filter(p=>p.celula.startsWith('A4')).map(p=>({nome:p.nome,mordeu:p.passou,queixa:p.saida}))];
+const plantas=[...w.plantas,...fc.plantas,...pais.filter(p=>p.celula.startsWith('A4')).map(p=>({nome:p.nome,mordeu:p.passou,queixa:p.saida.split('\n').filter(l=>l.includes('A4')).join('\n')}))];
 const frases=e.paginas.map(p=>`### ${p.rota}, ${p.lang.toUpperCase()}\n\n`+p.mudancas.map(m=>`- **${m.linha}**. ${m.resumo}${m.frase||m.ausencia?`\n\n  ${m.frase||m.ausencia}`:''}${m.sinais.map(s=>`\n\n  ${s.texto} (Recibo: \`${s.linha}\`.)`).join('')}`).join('\n\n')).join('\n\n');
 const tabelaPlantas=ps=>`| Planta | Mordeu | Mensagem observada |\n|---|---|---|\n`+ps.map(p=>`| ${esc(p.nome)} | ${p.aplica===false?'não se aplica':p.mordeu?'sim':'não'} | ${esc(p.queixa??p.queixas?.join(' / '))} |`).join('\n');
 const texto=`# EX2 · a leitura da semana diz o que cada número é
@@ -23,7 +23,7 @@ O comando \`node design/especime-v3/medicoes/ex2-2026-10-06/medir-base.mjs\` pro
 
 O ensaio mede apenas unidade e valores. Não inclui o período. A adjacência do período com o ano de base dos volumes encadeados fica como limite para o bloco dos recibos, juntamente com as referências para dizer se um valor é alto ou baixo. As capturas conferem a frase inteira construída.
 
-A régua das frases compostas leu ${e.fc.paginas} páginas em ${e.fc.passagens} passagens e encontrou ${e.fc.erros.length} falhas. As capturas finais têm ${e.capturas.quantidade} ficheiros, página inteira e recorte, com ${e.capturas.erros.length} transbordos. As anteriores conservam o sufixo \`-antes\`. Comandos: \`node tests/explicacoes/frases-compostas.mjs --json design/especime-v3/medicoes/ex2-2026-10-06/frases-compostas-b.json\` e \`node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex2.mjs\`. Fontes: [régua](frases-compostas-b.json), [capturas](capturas-b.json).
+A régua das frases compostas leu ${e.fc.paginas} páginas em ${e.fc.passagens} passagens e encontrou ${e.fc.erros.length} falhas. As capturas finais têm ${e.capturas.quantidade} ficheiros, página inteira e recorte, com ${e.capturas.erros.length} transbordos. As anteriores conservam o sufixo \`-antes\` e o [manifesto próprio](capturas-antes.json). Comandos: \`node tests/explicacoes/frases-compostas.mjs --json design/especime-v3/medicoes/ex2-2026-10-06/frases-compostas-b.json\` e \`node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex2.mjs\`. Fontes: [régua](frases-compostas-b.json), [capturas](capturas-b.json).
 
 O guião da entrega encontrou ${e.ficheiros_protegidos_alterados.length} alterações no livro, nas declarações de dados e no recibo. O teto da L1 não mudou. Saiu apenas a dispensa das antigas portas dos marcadores de título, que já não são obrigatórias.
 
@@ -53,7 +53,7 @@ Comando: \`sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes
 |---|---:|---|
 ${Object.entries(e.portoes).map(([g,c])=>`| ${g} | ${c} | [${g}.codigo](portoes-b/${g}.codigo) |`).join('\n')}
 
-A entrega foi medida por \`node design/especime-v3/medicoes/ex2-2026-10-06/medir-entrega.mjs\`. Este relatório inteiro foi gerado por \`node design/especime-v3/medicoes/ex2-2026-10-06/escrever-relatorio.mjs\`; não contém secções acrescentadas à mão. A inspeção visual do construtor é descrita como inspeção humana em [inspecao-visual-b.json](inspecao-visual-b.json), distinta da leitura a frio.
+A entrega foi medida por \`node design/especime-v3/medicoes/ex2-2026-10-06/medir-entrega.mjs\`. Este relatório inteiro foi gerado por \`node design/especime-v3/medicoes/ex2-2026-10-06/escrever-relatorio.mjs\`; não contém secções acrescentadas à mão. A regeneração e os bytes das capturas conferem-se com \`node design/especime-v3/medicoes/ex2-2026-10-06/conferir-artefactos-b.mjs\`, em [artefactos-b.json](artefactos-b.json). A observação visual, escrita pelo construtor, fica em [inspecao-visual-b.json](inspecao-visual-b.json), distinta da leitura a frio.
 
 ## Questões e limites
 
