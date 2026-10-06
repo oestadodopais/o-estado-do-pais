@@ -505,9 +505,9 @@ Os achados do EX1 ficam com o lugar de direção, por decisão expressa. A leitu
 
 ## A passagem H4-e
 
-A redação dos três papéis é do lugar de direção, reescrita depois da leitura curta do diff da H4-d (`design/especime-v3/critica/LEITURA-H4-d-2026-10-06.md`, o achado 3 e o 7): sem «peça» nem «lugares», a regra das famílias dita uma vez só, e o que a construção faz com cada número (a fonte e a data) distinguido do que a leitura faz com o que foi construído. A exceção H4-6 da L3 e as suas quatro plantas saíram com a palavra. Como a redação é de um modelo Claude, a leitura dela é do Codex, a outra família: a primeira leitura (`design/especime-v3/critica/LEITURA-H4-e-codex-2026-10-06.md`) mordeu as cinco plantas e achou que a regra 9 do Método («A intervenção humana») ainda dizia que a direção é de uma pessoa que escolhe o que se publica, contra a secção dos papéis e contra a §1.112; a regra passou a dizer que a direção é de um modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define, e que é essa pessoa que responde; os guiões das provas passaram a registar os seus próprios nomes. As provas abaixo são as da cabeça com essas duas mudanças.
+A redação dos três papéis é do lugar de direção, reescrita depois da leitura curta do diff da H4-d (`design/especime-v3/critica/LEITURA-H4-d-2026-10-06.md`, o achado 3 e o 7): sem «peça» nem «lugares», a regra das famílias dita uma vez só, e o que a construção faz com cada número (a fonte e a data) distinguido do que a leitura faz com o que foi construído. A exceção H4-6 da L3 e as suas quatro plantas saíram com a palavra. Como a redação é de um modelo Claude, lê-a a outra família: a primeira leitura, do Codex (`design/especime-v3/critica/LEITURA-H4-e-codex-2026-10-06.md`), mordeu as cinco plantas e achou que a regra 9 do Método («A intervenção humana») ainda dizia que a direção é de uma pessoa que escolhe o que se publica; a regra passou a dizer que a direção é de um modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define, e que é essa pessoa que responde. O Codex chegou então ao teto da semana, e as leituras seguintes foram do Opus, da família do lugar de direção, com o registo a dizê-lo: a segunda (`LEITURA-H4-e-b-2026-10-06.md`) achou a regra 8 em inglês ainda com «the director decides», o papel da direção contra a revisão por amostra e uma frase inglesa sem o sentido; a terceira (`LEITURA-H4-e-c-2026-10-06.md`) achou que a página prometia uma regra das famílias que o próprio texto não tinha cumprido, e quatro coisas de editor (a palavra «portões» sem definição, duas tautologias, «the change» por «a troca», a regra 8 a pôr a inteligência artificial a propor e a direção a decidir como se a direção não fosse um modelo, e «cada número traz a fonte e a data» absoluto numa página que conta linhas com um campo por confirmar). A quarta volta diz o que a direção escreve e quem o lê, troca os portões pelas verificações automáticas, diz que a construção faz e a leitura confere, e que cada número traz a fonte e a data ou diz o que está por confirmar; a regra 8 diz que a construção propõe e a direção decide; o título dos papéis passou a ser conferido pela célula. O bloco só aterra depois de o Codex ler o diff inteiro da H4-e, na segunda-feira, para que a página cumpra o que promete no dia em que sai. As provas abaixo são as da cabeça da quarta volta.
 
-Cabeça do código: `24bb1bb53b385e7eabcd2dd76a61d68377b50d91`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4e.py` a partir dos resultados guardados. Os portões inteiros desta cabeça correm na corrida portão do GitHub, e não na máquina; aqui correram as conferências que a mudança toca, cada uma no seu comando com o código lido de um ficheiro.
+Cabeça do código: `89c54f3480d9503d0fd85281ad5247d9137971c8`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4e.py` a partir dos resultados guardados. Os portões inteiros desta cabeça correm na corrida portão do GitHub, e não na máquina; aqui correram as conferências que a mudança toca, cada uma no seu comando com o código lido de um ficheiro.
 
 ### As conferências que a mudança toca
 
@@ -515,15 +515,17 @@ Cabeça do código: `24bb1bb53b385e7eabcd2dd76a61d68377b50d91`. Secção gerada 
 | --- | --- |
 | check-lingua | 0 |
 | check-lugar | 0 |
+| check-voz | 0 |
 | gate-html | 0 |
 
 ### As plantas da política e da N1 na cabeça do código
 
-A política fez 18 plantas; a N1 fez 3. Todas falharam pela mensagem esperada; a política trabalha em cópias na memória, e a N1 repõe os ficheiros construídos byte a byte. Comandos: `node design/especime-v3/medicoes/h4-2026-10-06/provar-politica-e.mjs --passagem-e` e `node tests/pais/portoes.mjs --prefixo h4b-`.
+A política fez 20 plantas; a N1 fez 3. Todas falharam pela mensagem esperada; a política trabalha em cópias na memória, e a N1 repõe os ficheiros construídos byte a byte. Comandos: `node design/especime-v3/medicoes/h4-2026-10-06/provar-politica-e.mjs --passagem-e` e `node tests/pais/portoes.mjs --prefixo h4b-`.
 
 | Edição | Planta da política | Mensagem observada e exigida |
 | --- | --- | --- |
 | pt | um lugar a mais | H4 IA: a política tem de dizer três lugares. |
+| pt | o título antigo | H4 IA: o título dos papéis difere da redação decidida. |
 | pt | a construção em falta | H4 IA: a política tem de dizer três lugares. |
 | pt | a medição no lugar da leitura | H4 IA: os lugares não são os da redação decidida. |
 | pt | a introdução antiga | H4 IA: a introdução dos lugares difere da redação decidida. |
@@ -533,6 +535,7 @@ A política fez 18 plantas; a N1 fez 3. Todas falharam pela mensagem esperada; a
 | pt | a direção com palavras de oficina | H4 IA: os lugares não são os da redação decidida. |
 | pt | a construção com palavras de oficina | H4 IA: os lugares não são os da redação decidida. |
 | en | um lugar a mais | H4 IA: a política tem de dizer três lugares. |
+| en | o título antigo | H4 IA: o título dos papéis difere da redação decidida. |
 | en | a construção em falta | H4 IA: a política tem de dizer três lugares. |
 | en | a medição no lugar da leitura | H4 IA: os lugares não são os da redação decidida. |
 | en | a introdução antiga | H4 IA: a introdução dos lugares difere da redação decidida. |
@@ -567,12 +570,13 @@ Foram refeitas 10 capturas de página inteira, cada uma com o recorte dos papéi
 
 ### Os commits da passagem
 
-Os commits do código da H4-e, no ramo `h4-2026-10-06`, de `81e3de31` a `d81471b7`; as provas desta secção correram na cabeça `24bb1bb5` do ramo de integração, que funde o H4 com o M-A e o EX2.
+Os commits do código da H4-e (as quatro voltas da redação); as provas desta secção correram na cabeça `89c54f34` do ramo de integração, que funde o H4 com o M-A e o EX2.
 
 | Commit | Mudança |
 | --- | --- |
-| `d81471b7ac6a8ee22d6acf4b68970d1f2b1af339` | H4-e: a leitura do Codex gpt-6-astra sobre a redação do lugar de direção (cinco plantas mordidas; o achado 4: a regra 9 do Método ainda dizia que a direção é de uma pessoa que escolhe o que se publica, contra a secção dos papéis e a §1.112) com o registo das plantas; a regra 9 reescrita nas duas edições (a direção é de um modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define, e é essa pessoa que responde; nem ela nem o modelo escrevem números); os guiões das provas registam os seus próprios nomes (achado 8); o gerador da secção diz a leitura e a regra |
-| `8f07e6c01d0b9145c8a86850c26dcb7b818f7dc4` | H4-e: a leitura curta do Claude Opus 5.5 sobre a H4-d (cinco plantas mordidas; o achado 3 e o 7 levaram à redação nova, o 9 e o 11 corrigidos, o 8 sem objeto, o 10 anotado como H4-7) com o registo das plantas; as provas da passagem na cabeça do código (as conferências que a mudança toca, as plantas da política e da N1, as capturas do Método nas cinco larguras) e a secção H4-e do relatório, gerada por guião |
 | `25499b79fc803f1723e6ed92e9927e1a36dbb8b1` | H4-e: a redação dos três papéis reescrita pelo lugar de direção depois da leitura curta do diff da H4-d (o achado 3: dizia que quem constrói nunca verifica e a seguir que a construção confere o que publica, e usava «peça» em dois sentidos; o 7: a regra das famílias dita três vezes, o decalque, «em série» contra «in batches», «Os lugares» numa página cujo menu leva aos concelhos): sem «peça» nem «lugares», a regra das famílias uma vez só, a fonte e a data de cada número distinguidas da leitura; a exceção H4-6 da L3 e as suas quatro plantas saem com a palavra; o comentário do nome da União no menu diz o que foi medido (achado 9); o inventário com as dez frases novas vivas e as da H4-d retiradas; o mapa e as notas históricas do relatório (achado 11); os guiões das provas da passagem |
+| `d81471b7ac6a8ee22d6acf4b68970d1f2b1af339` | H4-e: a leitura do Codex gpt-6-astra sobre a redação do lugar de direção (cinco plantas mordidas; o achado 4: a regra 9 do Método ainda dizia que a direção é de uma pessoa que escolhe o que se publica, contra a secção dos papéis e a §1.112) com o registo das plantas; a regra 9 reescrita nas duas edições (a direção é de um modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define, e é essa pessoa que responde; nem ela nem o modelo escrevem números); os guiões das provas registam os seus próprios nomes (achado 8); o gerador da secção diz a leitura e a regra |
+| `c92532eade0fc403a9e9ca64bbfad2eaa8e33a58` | H4-e, segunda volta, depois da segunda leitura (o Opus, porque o Codex chegou ao teto da semana): a regra 8 do Método em inglês diz «direction» e não «director», como a portuguesa (achado 4); o papel da direção diz o que ela revê e o que os portões publicam sozinhos, para não contradizer a revisão por amostra do parágrafo de cima (achado 5); os erros plantados dizem para que servem, e o modelo que construiu uma mudança nunca a lê, nas duas línguas (achado 14); o inventário com as frases novas vivas e as anteriores retiradas; a linha 3 do relatório (achado 11) |
+| `89c54f3480d9503d0fd85281ad5247d9137971c8` | H4-e, quarta volta, depois da terceira leitura (o Opus): o papel da direção diz o que ela escreve e que a outra família o lê antes de se publicar; as verificações automáticas no lugar dos portões; a construção faz e a leitura confere; cada número traz a sua fonte e a data ou diz o que está por confirmar; «the replacement»; a regra 8 do Método diz que a construção propõe e a direção decide; a célula dos papéis confere o título, com a sua planta; a conferência do inventário exige que só as dez frases atuais estejam vivas; o gerador da secção conta a história inteira e os commits do código; a §1.180 diz quem leu o quê e leva o carimbo novo do Método; a terceira leitura arquivada com as plantas |
 
 O commit seguinte guarda apenas esta secção, as capturas e os registos das provas; a cabeça do código é a conferida acima.
