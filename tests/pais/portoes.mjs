@@ -51,22 +51,6 @@ function planta(nome,script,alteracoes,mordidas) {
  if(!passou)throw Error(`${nome}: a planta não teve todas as mordidas previstas. Ver o registo.`);
 }
 /* H4-b: a lista independente do menu continua a fechar por contagem, ordem, rótulo e destino. */
-/* H4-d, H4-6: a palavra «peça» só fica fora da L3 na redação inteira dos lugares,
-   dentro da política no Método. Cada fronteira tem a sua planta no HTML construído. */
-const introDosLugares = () => parse(fs.readFileSync('dist/metodo/index.html', 'utf8')).querySelector('.politica-lugares').parentNode.querySelector('p').outerHTML;
-planta('h4d-l3-frase-aprovada-fora-do-metodo', 'scripts/check-lugar.mjs', [
- ['index.html', r => r.querySelector('main').insertAdjacentHTML('beforeend', introDosLugares())],
-], [/L3 · palavras fora do vocabulário fechado\s+1\s+\(teto 0\) ACIMA DO TETO/]);
-planta('h4d-l3-frase-aprovada-fora-da-politica', 'scripts/check-lugar.mjs', [
- ['metodo/index.html', r => r.querySelector('main').insertAdjacentHTML('beforeend', introDosLugares())],
-], [/L3 · palavras fora do vocabulário fechado\s+1\s+\(teto 0\) ACIMA DO TETO/]);
-planta('h4d-l3-frase-parecida-na-politica', 'scripts/check-lugar.mjs', [
- ['metodo/index.html', r => { const p = r.querySelector('.politica-lugares').parentNode.querySelector('p'); p.set_content(p.textContent.replace('uma peça', 'uma peça nova')); }],
-], [/L3 · palavras fora do vocabulário fechado\s+1\s+\(teto 0\) ACIMA DO TETO/]);
-planta('h4d-l3-outra-palavra-na-politica', 'scripts/check-lugar.mjs', [
- ['metodo/index.html', r => r.querySelector('.politica-lugares').parentNode.insertAdjacentHTML('beforeend', '<p>Um indicador novo.</p>')],
-], [/L3 · palavras fora do vocabulário fechado\s+1\s+\(teto 0\) ACIMA DO TETO/]);
-
 planta('h4b-menu-sem-explicacoes','scripts/check-pais.mjs',[
  ['index.html', r=>r.querySelector('#nav-principal a[href="/explicacoes"]').remove()],
  ['en/index.html', r=>r.querySelector('#nav-principal a[href="/en/explainers"]').remove()]

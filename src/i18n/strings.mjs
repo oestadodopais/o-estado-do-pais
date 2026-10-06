@@ -184,13 +184,15 @@ export const STRINGS = {
          O nome do item do menu é O NOME DA PÁGINA, por extenso, e não uma
          abreviatura: a regra §0 do brief é «um nome por coisa em todo o sítio»,
          e «União Europeia» ao lado de uma página que se chama «Portugal na União
-         Europeia» seriam dois nomes para a mesma coisa. A exceção é o menu:
-         a porta diz «União Europeia», o assunto da página, porque o nome inteiro
-         «Portugal na União Europeia» não cabe em duas linhas a 390 px, medido
-         no H4. O rodapé e o título dizem o nome inteiro. */
+         Europeia» seriam dois nomes para a mesma coisa. A exceção é o menu, por
+         decisão do lugar de direção no H4 (06.10.2026): a porta diz «União
+         Europeia», o assunto da página; o rodapé e o título dizem o nome inteiro.
+         O que o H4 mediu foi a porta «União Europeia» com as sete portas, em duas
+         linhas a 390 px, nas duas edições; o nome inteiro da página não foi medido
+         no menu. */
       uniaoEuropeia: 'Portugal na União Europeia',
-      /* H4 (06.10.2026): o nome inteiro da União cabe com as sete portas em duas linhas a 390 px,
-         nas duas edições, com a regra base. A medição está em `src/lib/navegacao.mjs`. */
+      /* H4 (06.10.2026): «União Europeia», por extenso e não «Europa», cabe com as sete portas em duas
+         linhas a 390 px, nas duas edições, com a regra base. A medição está em `src/lib/navegacao.mjs`. */
       uniaoEuropeiaNoMenu: 'União Europeia',
       estudos: 'Estudos',
       /* «NÚMEROS E FONTES» E NÃO «LIVRO-RAZÃO» (bloco F1.10, item 8.8,
