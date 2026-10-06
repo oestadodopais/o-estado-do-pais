@@ -1,0 +1,14 @@
+{
+  "comando": "node design/especime-v3/medicoes/er1-2026-10-06/medir-parser.mjs",
+  "cabeca": "8252915ed97cc4a96eacc20881722201e470c17d",
+  "shaDoComparador": "4e8578244f209e9cb7a4d7b5b4a6eab66aadc1b4291c915c9a199518340d7636",
+  "planta": "Comentário literal dentro do campo de cópia.",
+  "aceiteIndevidamente": true,
+  "queixasAntes": [],
+  "queixasComLeituraLiteral": [
+    "ER1 código: o pedaço difere da linha, carácter a carácter."
+  ],
+  "comentarioNaLeituraNormal": false,
+  "comentarioNaLeituraLiteral": true,
+  "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter."
+}

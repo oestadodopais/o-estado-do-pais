@@ -1,0 +1,1203 @@
+#!/usr/bin/env node
+import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
+/**
+ * ---------------------------------------------------------------------------
+ * O PORTÃO DA LÍNGUA · o que é português numa página inglesa diz que o é
+ * ---------------------------------------------------------------------------
+ *
+ * Três linhas de `design/especime-v3/ISSUES.md` fecham aqui, e são a mesma
+ * pergunta feita sobre espécies diferentes de cadeia:
+ *
+ *   · **I91, segunda metade** — o título de um documento é um NOME. Não se
+ *     traduz; diz em que língua está. A tabela é
+ *     `src/i18n/lingua-dos-titulos.mjs`, e o mesmo vale para o nome de uma lei
+ *     portuguesa citada numa frase inglesa e para o título de um estudo
+ *     português.
+ *   · **I92** — a unidade de uma linha é um RÓTULO. Traduz-se onde há um facto
+ *     de dicionário (`src/i18n/unidades.mjs`), e onde não há rende-se em
+ *     português com a marca da língua.
+ *   · **I97** · o nome do ORGANISMO que publica (`source`) e a EDIÇÃO do
+ *     documento (`document.edition`) são nomes, e valem-lhes as regras do
+ *     título. A edição trouxe uma resposta que as outras cadeias não precisavam
+ *     de dar: um ano, uma data e um código de série não estão em língua
+ *     nenhuma, declaram-se `null`, e `null` escrito não é o mesmo que a chave em
+ *     falta.
+ *
+ * ---------------------------------------------------------------------------
+ * ONZE CONFERÊNCIAS, E AS QUATRO PRIMEIRAS SÃO AS QUE IMPEDEM O SILÊNCIO
+ * ---------------------------------------------------------------------------
+ *   L1 · toda a unidade do livro-razão tem entrada no dicionário OU na lista
+ *        das que ficam em português, e nenhuma tem as duas. Uma unidade nova
+ *        fecha a construção em vez de se render em português por omissão;
+ *   L2 · todo o `document.title` do livro-razão tem língua declarada. Um título
+ *        novo fecha a construção em vez de ficar sem marca em silêncio;
+ *   L2b · todo o `name` (o rótulo com que a fonte imprime a figura) tem língua
+ *        declarada;
+ *   L2c · todo o `source` (o nome do organismo que publica) tem língua
+ *        declarada, e declarada «pt» ou «en» e mais nada. São dezassete valores
+ *        e um deles é o marcador, que não entra: 930 linhas só na DGAL, e um
+ *        nome de organismo sem marca é lido com a fonética errada em toda a
+ *        edição inglesa;
+ *   L2d · toda a `document.edition` tem língua declarada, e aqui a declaração
+ *        tem três respostas e só três: «pt», «en» e `null` para a que não está
+ *        em língua nenhuma. Uma edição em falta fecha a construção; uma
+ *        declarada `null` está decidida e não leva marca; uma declarada com
+ *        outra coisa qualquer fecha a construção também, porque a casa só sabe
+ *        render aquelas três;
+ *   L3 · em `dist/en`, nenhuma unidade em português sem `lang="pt-PT"`;
+ *   L4 · nas duas edições, nenhum título de documento na língua errada e sem a
+ *        marca da sua;
+ *   L4d · nas duas edições, a língua efectiva de cada nome de organismo é a que
+ *        a tabela declara. **Nos dois sentidos**: a marca que falta e a marca a
+ *        mais são o mesmo defeito visto de dois lados, e as duas mandam ler a
+ *        cadeia na língua errada;
+ *   L4e · o mesmo para cada edição de documento, com o caso que só ela tem: uma
+ *        edição sem língua não leva marca nenhuma, e uma marca posta num código
+ *        de série é uma afirmação falsa sobre a cadeia;
+ *   L5 · em `dist/en`, nenhum nome de lei portuguesa em prosa da casa sem a
+ *        marca. Os nomes que aparecem DENTRO de um texto transcrito — um campo
+ *        do livro-razão (`data-linha-campo`), uma nota do registo da agenda
+ *        (`data-agenda`), um bloco de um documento (`data-registo`) — contam-se
+ *        à parte e imprimem-se, porque a casa não edita o que transcreve.
+ *        **Um campo transcrito marca-se INTEIRO, na língua do campo**: é o que o
+ *        localizador faz, porque é português de uma ponta à outra. Uma
+ *        `derivation_en` é prosa inglesa com o nome de uma lei portuguesa lá
+ *        dentro, e marcar esse pedaço obrigava a casa a partir uma cadeia que
+ *        ela transcreve carácter a carácter. O número fica impresso: escondê-lo
+ *        seria pior do que não o poder baixar;
+ *   L6 · em `dist/en`, nenhum título de estudo português sem a marca — **à
+ *        vista e no oculto**. O texto oculto de um selo de proveniência (`.vh`)
+ *        é o que um leitor de ecrã ouve, e repetia o título português do estudo
+ *        sem dizer em que língua ele está: uma superfície não deixa de ser
+ *        superfície por não se ver;
+ *   L8 · nenhum elemento com o MESMO atributo escrito duas vezes. Nasceu de uma
+ *        leitura do lugar de direção que viu «lang="pt-PT" lang="pt-PT"» numa
+ *        página de área; era um falso positivo — a cadeia procurada é também o
+ *        fim de «hreflang="pt-PT" lang="pt-PT"», que é o par certo de um
+ *        comutador de língua (a língua da página ligada e a língua do texto da
+ *        ligação). A régua fica na mesma, e a razão é a regra da casa: um
+ *        atributo repetido é silencioso, o navegador fica com o primeiro e
+ *        deita o segundo fora, e uma marca de língua duplicada por um gabarito
+ *        que a acrescenta duas vezes passava despercebida. Vale para qualquer
+ *        nome de atributo, e não só para `lang`: é mais barato e apanha mais;
+ *   L7 · nenhum localizador de documento numa linha cujo documento seja inglês.
+ *        O localizador está na língua do documento que localiza, e é dele que
+ *        recebe a marca: no dia em que houver um localizador dentro de um
+ *        documento inglês, a regra deixa de valer e a construção fecha, em vez
+ *        de marcar inglês como português.
+ *
+ * As tabelas não podem engordar sozinhas: uma entrada do dicionário ou da
+ * declaração que nenhuma linha do livro-razão usa fecha a construção também. É
+ * a mesma regra do inventário das frases — uma declaração que não se rende não
+ * é uma sentinela, é uma linha morta.
+ *
+ * ---------------------------------------------------------------------------
+ * O POSITIVO CONHECIDO (regra 14 da casa)
+ * ---------------------------------------------------------------------------
+ * Um zero só conta depois de a régua ter visto um vermelho. As duas portas do
+ * estrago plantado são variáveis de ambiente, como o `OEDP_DIRECAO` do portão
+ * da voz e pela mesma razão — planta-se numa CÓPIA, e nunca no que a construção
+ * publica:
+ *
+ *   · `OEDP_LEDGER_DIR` — um livro-razão de mentira, com uma unidade inventada
+ *     ou um título novo, para ver L1 e L2 vermelhas;
+ *   · `OEDP_DIST` — uma cópia de `dist/` com uma marca tirada, para ver L3 a L6.
+ *
+ * As conferências dos dois sentidos veem-se na mesma cópia, e são cinco casos:
+ * a marca posta onde não devia (no Eurostat numa página inglesa, num organismo
+ * português numa página portuguesa, num código de série que não tem língua) e a
+ * varredura esvaziada (todo o `source` ou toda a edição tirados da cópia, para
+ * ver os mínimos positivos de L4d e L4e). O valor de tabela fora de «pt», «en» e
+ * «null» prova-se na própria tabela, porque ela é importada e não tem porta de
+ * ambiente: planta-se, corre-se, repõe-se, e a reposição confere-se pelo sha256
+ * e pelo diff antes de qualquer construção.
+ *
+ * Uso:  node scripts/check-lingua.mjs
+ */
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import { NodeType } from 'node-html-parser';
+
+import { loadClaims, POR_VERIFICAR, LEDGER_DIR } from '../src/lib/ledger.mjs';
+import { lerSeriesDoPortao } from './series-do-portao.mjs';
+import { UNIDADES, UNIDADES_EM_PORTUGUES } from '../src/i18n/unidades.mjs';
+import {
+  LINGUA_DOS_TITULOS,
+  linguaDoTituloDoDocumento,
+  LINGUA_DOS_ROTULOS,
+  linguaDoRotuloDaFonte,
+  LINGUA_DAS_FONTES,
+  LINGUA_DAS_EDICOES,
+} from '../src/i18n/lingua-dos-titulos.mjs';
+import { WORKS, linguaDoTitulo } from '../src/data/studies.mjs';
+import { LINGUA_DO_RESPONSAVEL } from '../src/data/politica-ia.mjs';
+import { matchPath } from '../src/lib/routes.mjs';
+import { conferirLinguaDasOrigens } from './lingua-das-origens.mjs';
+import { feitioDeLei } from '../src/i18n/nomes-de-lei.mjs';
+
+const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const DIST = process.env.OEDP_DIST ?? path.join(RAIZ, 'dist');
+
+/**
+ * O nome de quem responde, lido do oráculo do portão e não de `src/` (M5,
+ * 22.09.2026). A constante `RESPONSAVEL_EDITORIAL` saiu de
+ * `src/data/politica-ia.mjs` porque nenhuma página rende o nome desde
+ * 15.09.2026 e um nome de pessoa não fica no código de um repositório público
+ * sem uma página que o peça. A L9 não perde nada: o que ela compara é o texto
+ * de um `[data-rotulo-nome]` rendido contra o nome decidido, e o nome decidido
+ * está no oráculo, que é onde o `gate:html` sempre o foi buscar.
+ */
+const RESPONSAVEL_EDITORIAL = JSON.parse(
+  fs.readFileSync(path.join(RAIZ, 'scripts', 'textos-aprovados.json'), 'utf8'),
+).responsavel;
+
+const vermelho = (s) => `\x1b[31m${s}\x1b[0m`;
+const verde = (s) => `\x1b[32m${s}\x1b[0m`;
+const cinza = (s) => `\x1b[90m${s}\x1b[0m`;
+
+const erros = [];
+
+/* ===================================================================== L1 · */
+/* as unidades do livro-razão, contra as duas tabelas                         */
+
+const claims = [...loadClaims().values()];
+
+const unidadesDoLivro = new Map();
+for (const c of claims) {
+  const u = c.unit === null || c.unit === undefined ? '' : String(c.unit);
+  /* O marcador não é uma unidade: é a ausência de uma, e tem forma própria. */
+  if (u === POR_VERIFICAR) continue;
+  unidadesDoLivro.set(u, (unidadesDoLivro.get(u) ?? 0) + 1);
+}
+
+/* AS UNIDADES DAS SÉRIES CONTAM COMO AS DAS LINHAS (bloco RP4-m, 05.10.2026, o ponto 5 do mandato). O recibo de
+   uma série escreve a unidade dela pelo mesmo dicionário (`unidadeDaLinha`, em `SerieNoTempoView.astro` e em
+   `SerieView.astro`), e há unidades que só as séries usam («índice (base 2025 = 100)», «euros de 2015 por mês»):
+   contadas só as linhas, a regra das entradas mortas chamava morta a uma entrada que se rende em cada recibo
+   inglês, e uma unidade de série sem entrada saía em português na edição inglesa sem ninguém o decidir. As séries
+   leem-se ao lado das linhas que esta corrida lê (a pasta irmã de `ledger/claims`), para que um livro-razão de
+   mentira em `OEDP_LEDGER_DIR` traga as suas; a regra protege o mesmo que protegia, agora nas duas formas. */
+const unidadesDasSeries = new Map();
+for (const s of lerSeriesDoPortao(path.dirname(path.dirname(LEDGER_DIR))).values()) {
+  const u = s.unit === null || s.unit === undefined ? '' : String(s.unit);
+  unidadesDasSeries.set(u, (unidadesDasSeries.get(u) ?? 0) + 1);
+}
+const usosDe = (/** @type {string} */ u) =>
+  [unidadesDoLivro.has(u) ? `${unidadesDoLivro.get(u)} linha(s)` : null, unidadesDasSeries.has(u) ? `${unidadesDasSeries.get(u)} série(s)` : null]
+    .filter(Boolean).join(' e ');
+
+const semEntrada = [];
+for (const u of new Set([...unidadesDoLivro.keys(), ...unidadesDasSeries.keys()])) {
+  const noDicionario = Object.prototype.hasOwnProperty.call(UNIDADES, u);
+  const emPortugues = Object.prototype.hasOwnProperty.call(UNIDADES_EM_PORTUGUES, u);
+  if (noDicionario && emPortugues) {
+    erros.push(
+      `a unidade «${u}» está no dicionário E na lista das que ficam em português. ` +
+        `Uma unidade traduz-se ou não se traduz; as duas coisas ao mesmo tempo dizem ` +
+        `que ninguém decidiu.`,
+    );
+    continue;
+  }
+  if (!noDicionario && !emPortugues) semEntrada.push(u);
+}
+for (const u of semEntrada) {
+  erros.push(
+    `a unidade «${u}» (${usosDe(u)}) não tem entrada em ` +
+      `src/i18n/unidades.mjs.\n` +
+      `      Ou entra no dicionário, com o facto de dicionário ou o inglês que a casa já ` +
+      `escreve para a mesma coisa,\n      ou entra em UNIDADES_EM_PORTUGUES com a razão pela ` +
+      `qual fica em português. Uma unidade nova não se traduz sozinha.`,
+  );
+}
+for (const u of Object.keys(UNIDADES)) {
+  if (!unidadesDoLivro.has(u) && !unidadesDasSeries.has(u)) {
+    erros.push(
+      `o dicionário traduz a unidade «${u}», que nenhuma linha nem série do livro-razão usa. ` +
+        `Uma entrada que não se rende não é uma sentinela: é uma linha morta, e a tabela engorda.`,
+    );
+  }
+}
+for (const u of Object.keys(UNIDADES_EM_PORTUGUES)) {
+  if (!unidadesDoLivro.has(u) && !unidadesDasSeries.has(u)) {
+    erros.push(
+      `UNIDADES_EM_PORTUGUES declara «${u}», que nenhuma linha nem série do livro-razão usa. ` +
+        `A lista das que ficam é uma lista do que existe, não do que já existiu.`,
+    );
+  }
+}
+
+/* ===================================================================== L2 · */
+/* os títulos de documento do livro-razão, contra a declaração de língua       */
+
+const titulosDoLivro = new Map();
+for (const c of claims) {
+  const t = c.document?.title;
+  if (t === null || t === undefined) continue;
+  const s = String(t);
+  /* O marcador não é um título: declarar a língua de um buraco não diz nada. */
+  if (s === POR_VERIFICAR) continue;
+  titulosDoLivro.set(s, (titulosDoLivro.get(s) ?? 0) + 1);
+}
+for (const [t] of titulosDoLivro) {
+  if (!Object.prototype.hasOwnProperty.call(LINGUA_DOS_TITULOS, t)) {
+    erros.push(
+      `o título «${t.slice(0, 90)}» (${titulosDoLivro.get(t)} linha(s)) não tem língua ` +
+        `declarada em src/i18n/lingua-dos-titulos.mjs.\n` +
+        `      A língua de um nome não se adivinha por acentos nem por palavras: escreve-se, ` +
+        `uma vez, por quem olhou para ele.`,
+    );
+  }
+}
+for (const t of Object.keys(LINGUA_DOS_TITULOS)) {
+  if (!titulosDoLivro.has(t)) {
+    erros.push(
+      `a declaração de língua nomeia o título «${t.slice(0, 90)}», que nenhuma linha do ` +
+        `livro-razão traz. A tabela declara o que existe.`,
+    );
+  }
+}
+
+/* ==================================================================== L2b · */
+/* os rótulos da fonte do livro-razão, contra a declaração de língua          */
+
+const rotulosDoLivro = new Map();
+for (const c of claims) {
+  const n = c.name;
+  if (n === null || n === undefined || String(n) === '') continue;
+  const r = String(n);
+  rotulosDoLivro.set(r, (rotulosDoLivro.get(r) ?? 0) + 1);
+}
+for (const [r] of rotulosDoLivro) {
+  if (!Object.prototype.hasOwnProperty.call(LINGUA_DOS_ROTULOS, r)) {
+    erros.push(
+      `o rótulo da fonte «${r.slice(0, 90)}» (${rotulosDoLivro.get(r)} linha(s)) não tem língua ` +
+        `declarada em src/i18n/lingua-dos-titulos.mjs.\n` +
+        `      Um rótulo é um nome: não se traduz, e diz em que língua está. «Total» é a palavra ` +
+        `que o IEFP imprime na folha portuguesa dele, e adivinhá-la pelo aspecto dava inglês.`,
+    );
+  }
+}
+for (const r of Object.keys(LINGUA_DOS_ROTULOS)) {
+  if (!rotulosDoLivro.has(r)) {
+    erros.push(
+      `a declaração de língua nomeia o rótulo «${r.slice(0, 90)}», que nenhuma linha do ` +
+        `livro-razão traz. A tabela declara o que existe.`,
+    );
+  }
+}
+
+/* ==================================================================== L2c · */
+/* os nomes de organismo do livro-razão, contra a declaração de língua        */
+
+const fontesDoLivro = new Map();
+for (const c of claims) {
+  const f = c.source;
+  if (f === null || f === undefined || String(f) === '') continue;
+  const s = String(f);
+  /* O marcador não é um organismo: declarar a língua de um buraco não diz nada. */
+  if (s === POR_VERIFICAR) continue;
+  fontesDoLivro.set(s, (fontesDoLivro.get(s) ?? 0) + 1);
+}
+for (const [f] of fontesDoLivro) {
+  if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_FONTES, f)) {
+    erros.push(
+      `o organismo «${f.slice(0, 90)}» (${fontesDoLivro.get(f)} linha(s)) não tem língua ` +
+        `declarada em src/i18n/lingua-dos-titulos.mjs.\n` +
+        `      O nome de quem publica é um nome: não se traduz, e diz em que língua está. ` +
+        `Nem para os que têm nome inglês oficial: a linha guarda um nome, e é esse que se rende.`,
+    );
+  }
+}
+for (const f of Object.keys(LINGUA_DAS_FONTES)) {
+  if (!fontesDoLivro.has(f)) {
+    erros.push(
+      `a declaração de língua nomeia o organismo «${f.slice(0, 90)}», que nenhuma linha do ` +
+        `livro-razão traz. A tabela declara o que existe.`,
+    );
+  }
+  /* E O VALOR TEM DE SER UM DOS DOIS. Uma língua que a casa não sabe render sai
+     de `linguaDaFonte()` (em `src/i18n/lingua-dos-titulos.mjs`, que esta régua
+     já não importa desde 03.09.2026) como uma marca inventada, ou não sai de
+     todo: nos dois casos a página fica errada e a régua ficava calada. */
+  const v = LINGUA_DAS_FONTES[f];
+  if (v !== 'pt' && v !== 'en') {
+    erros.push(
+      `o organismo «${f.slice(0, 90)}» está declarado «${String(v)}», e um organismo só pode ` +
+        `estar declarado «pt» ou «en». Um nome de organismo está sempre numa língua: não há aqui ` +
+        `o «sem língua» que as edições têm.`,
+    );
+  }
+}
+
+/* ==================================================================== L2d · */
+/* as edições de documento, contra a declaração de língua                     */
+
+const edicoesDoLivro = new Map();
+for (const c of claims) {
+  const e = c.document?.edition;
+  if (e === null || e === undefined || String(e) === '') continue;
+  const s = String(e);
+  if (s === POR_VERIFICAR) continue;
+  edicoesDoLivro.set(s, (edicoesDoLivro.get(s) ?? 0) + 1);
+}
+for (const [e] of edicoesDoLivro) {
+  if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_EDICOES, e)) {
+    erros.push(
+      `a edição «${e.slice(0, 90)}» (${edicoesDoLivro.get(e)} linha(s)) não tem língua declarada ` +
+        `em src/i18n/lingua-dos-titulos.mjs.\n` +
+        `      Uma edição declara-se «pt», «en», ou «null» quando não está em língua nenhuma: um ` +
+        `ano, uma data, um código de série. «null» ESCRITO é uma decisão; a chave em falta é ` +
+        `ninguém ter olhado.`,
+    );
+  }
+}
+for (const e of Object.keys(LINGUA_DAS_EDICOES)) {
+  if (!edicoesDoLivro.has(e)) {
+    erros.push(
+      `a declaração de língua nomeia a edição «${e.slice(0, 90)}», que nenhuma linha do ` +
+        `livro-razão traz. A tabela declara o que existe.`,
+    );
+  }
+  const v = LINGUA_DAS_EDICOES[e];
+  if (v !== 'pt' && v !== 'en' && v !== null) {
+    erros.push(
+      `a edição «${e.slice(0, 90)}» está declarada «${String(v)}», e uma edição só pode estar ` +
+        `declarada «pt», «en» ou «null». São as três respostas que a casa sabe render; uma quarta ` +
+        `sai desta tabela como uma marca que ninguém escreveu.`,
+    );
+  }
+}
+
+/* ===================================================================== L7 · */
+/* o localizador está na língua do documento que localiza                     */
+
+let comLocalizador = 0;
+for (const c of claims) {
+  const loc = c.document?.locator;
+  if (loc === null || loc === undefined) continue;
+  comLocalizador++;
+  const titulo = c.document?.title ?? null;
+  const declarada =
+    titulo === null || String(titulo) === POR_VERIFICAR
+      ? null
+      : (LINGUA_DOS_TITULOS[String(titulo)] ?? null);
+  if (declarada !== 'pt') {
+    erros.push(
+      `a linha "${c.id}" tem "document.locator" e o seu documento não está declarado português ` +
+        `(${declarada === null ? 'sem declaração' : `«${declarada}»`}).\n` +
+        `      O localizador recebe a marca de língua do título do documento, porque é na língua ` +
+        `dele que está escrito. Um localizador dentro de um documento inglês quebra essa regra: ` +
+        `ou ele leva a sua própria declaração, ou o documento é português e a tabela di-lo.`,
+    );
+  }
+}
+
+/* ================================================================ dist/ · */
+
+if (!fs.existsSync(DIST)) {
+  console.error(vermelho('\n  PORTÃO DA LÍNGUA · não existe dist/. Corra o build primeiro.\n'));
+  process.exit(1);
+}
+
+/** Os títulos de estudo cuja cadeia é portuguesa: os que têm edição em `pt`. */
+const TITULOS_DE_ESTUDO_PT = new Set();
+for (const w of WORKS) {
+  for (const e of w.editions) if (e.lang === 'pt') TITULOS_DE_ESTUDO_PT.add(e.title);
+}
+
+/** O inglês que o dicionário produz, para reconhecer uma unidade já traduzida. */
+const INGLES_DAS_UNIDADES = new Set(Object.values(UNIDADES));
+
+/**
+ * O NOME DE UMA LEI PORTUGUESA, tal como a casa e as fontes o escrevem: «Lei
+ * n.º 73/2013», «Decreto-Lei n.º 87-A/2025». A expressão é local a esta régua
+ * de propósito — se ela lesse a cadeia de `src/data/areas.mjs`, confirmava a
+ * cadeia e não a página.
+ */
+/* O FEITIO DE UM NOME DE DIPLOMA VEM DE `src/i18n/nomes-de-lei.mjs` (bloco F1.7,
+   segunda passagem, 04.09.2026). Era uma cópia local que conhecia duas espécies
+   e cortava o sufixo do ano; o gabarito que MARCA e a régua que CONTA passam a
+   ler o mesmo feitio, porque dois feitios são dois feitios no dia em que um
+   deles mudar. Medido no dia da mudança: nas 3 615 páginas inglesas construídas
+   só existem «Lei» e «Decreto-Lei», de modo que alargar o reconhecedor não muda
+   uma contagem de hoje; muda o que ele vê amanhã. */
+const NOME_DE_LEI = feitioDeLei();
+
+/**
+ * As marcas que declaram um texto TRANSCRITO, e não escrito pela casa: um campo
+ * do livro-razão, uma nota do registo da agenda, um bloco de um documento, uma
+ * citação. A casa não edita o que transcreve.
+ */
+const TRANSCRICAO =
+  '[data-linha-campo],[data-agenda],[data-verbatim],' +
+  /* As quatro marcas do registo de conteúdo, na mesma lista que
+     `scripts/medir-defeitos.mjs` usa, mais a do bloco: o corpo de uma página de
+     leitura é um documento transcrito, e a casa não lhe mete markup por dentro. */
+  '[data-registo],[data-registo-unidade],[data-registo-bloco],[data-registo-linha],' +
+  '[data-registo-conta]';
+
+function decodeEntities(s) {
+  return String(s)
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&');
+}
+
+const norm = (s) => decodeEntities(String(s)).replace(/\s+/g, ' ').trim();
+
+/**
+ * ---------------------------------------------------------------------------
+ * A REGRA DA MARCA É NOS DOIS SENTIDOS (leitura cruzada do Codex, 29.08.2026)
+ * ---------------------------------------------------------------------------
+ * A primeira versão de L4d e L4e só sabia exigir a marca que falta: quando a
+ * tabela dizia que a cadeia estava na língua da página, ou que não estava em
+ * língua nenhuma, a conferência passava adiante. Assim, `lang="pt-PT"` posto no
+ * Eurostat numa página inglesa, `lang="en"` posto num organismo português numa
+ * página portuguesa, e qualquer marca posta num código como `edat_lfse_14`
+ * passavam todos.
+ *
+ * **A marca que falta e a marca a mais são o mesmo defeito visto dos dois
+ * lados**, e os dois mandam um leitor de ecrã ler a cadeia na língua errada. O
+ * que a régua compara passa a ser a LÍNGUA EFECTIVA do elemento contra a que a
+ * tabela manda, e não a presença de um atributo.
+ *
+ * A língua efectiva que se espera é uma só, e sai da declaração:
+ *
+ *   · declarada `pt`   → `pt-PT`, venha ela do elemento ou da página;
+ *   · declarada `en`   → `en`, o mesmo;
+ *   · declarada `null` → a língua da PÁGINA, e sem atributo próprio nenhum: uma
+ *     cadeia que não está em língua nenhuma não ganha uma.
+ */
+function efetivaEsperada(declarada, linguaDaPagina) {
+  if (declarada === 'pt') return 'pt-PT';
+  if (declarada === 'en') return 'en';
+  return linguaDaPagina;
+}
+
+/**
+ * O motivo de uma marca errada, dito pelo que ele é e não por «sem marca».
+ *
+ * São três casos e a mensagem separa-os, porque a correcção de cada um é
+ * diferente: falta a marca, está lá a marca de outra língua, ou está lá uma
+ * marca onde a cadeia já estava na língua da página.
+ */
+function motivo(efetiva, esperada, declarada, langDaPagina) {
+  if (declarada !== langDaPagina && efetiva !== esperada && (efetiva === 'pt-PT' || efetiva === 'en')) {
+    /* Herdou a página, ou levou a marca errada. Distinguem-se pelo que se leu. */
+    return `esperava lang="${esperada}" e a língua efectiva é "${efetiva}"`;
+  }
+  if (declarada === langDaPagina) {
+    return `marca a mais: está na língua da página e a língua efectiva é "${efetiva}"`;
+  }
+  return `esperava lang="${esperada}" e a língua efectiva é "${efetiva}"`;
+}
+
+/** A língua efectiva de um nó: o `lang` do ancestral mais próximo que o tenha. */
+function langDe(no) {
+  let n = no;
+  while (n) {
+    const l = n.getAttribute?.('lang');
+    if (l) return l;
+    n = n.parentNode;
+  }
+  return null;
+}
+
+/**
+ * OS NOMES DE ATRIBUTO DE UMA ETIQUETA DE ABERTURA, PELA ORDEM EM QUE ESTÃO.
+ *
+ * Tokenizador próprio, e é de propósito: `parse()` normaliza os atributos num
+ * mapa e **apaga a repetição em silêncio**, que é exactamente o defeito que L8
+ * procura. Uma régua que lesse o mapa dizia sempre zero.
+ */
+function atributosDaEtiqueta(tag) {
+  const nomes = [];
+  let i = 0;
+  /* saltar «<nome» */
+  while (i < tag.length && !/\s/.test(tag[i]) && tag[i] !== '>' && tag[i] !== '/') i++;
+  while (i < tag.length) {
+    while (i < tag.length && /\s/.test(tag[i])) i++;
+    if (i >= tag.length || tag[i] === '>' || tag[i] === '/') break;
+    const inicio = i;
+    while (i < tag.length && !/[\s=>/]/.test(tag[i])) i++;
+    const nome = tag.slice(inicio, i);
+    if (nome) nomes.push(nome.toLowerCase());
+    while (i < tag.length && /\s/.test(tag[i])) i++;
+    if (tag[i] === '=') {
+      i++;
+      while (i < tag.length && /\s/.test(tag[i])) i++;
+      const aspa = tag[i];
+      if (aspa === '"' || aspa === "'") {
+        i++;
+        while (i < tag.length && tag[i] !== aspa) i++;
+        i++;
+      } else {
+        while (i < tag.length && !/[\s>]/.test(tag[i])) i++;
+      }
+    }
+  }
+  return nomes;
+}
+
+/**
+ * Os elementos de um documento com um atributo repetido.
+ *
+ * O CONTEÚDO DE `<script>` E `<style>` SAI PRIMEIRO, e não é um detalhe: sem
+ * isso, `for(var i=0;i<b.length-1;i++)` dentro de um script parece a etiqueta
+ * `<b.length-1;i++)…` com «var» escrito duas vezes, e a régua acusa dez
+ * elementos que não existem em nenhuma página. Foi medido.
+ */
+function atributosRepetidos(html) {
+  const semCodigo = html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, (m) =>
+    m.slice(0, m.indexOf('>') + 1),
+  );
+  const out = [];
+  const re = /<([A-Za-z][-\w:]*)((?:[^>"']|"[^"]*"|'[^']*')*)>/g;
+  let m;
+  while ((m = re.exec(semCodigo)) !== null) {
+    const vistos = new Set();
+    const dup = new Set();
+    for (const n of atributosDaEtiqueta(m[0])) {
+      if (vistos.has(n)) dup.add(n);
+      vistos.add(n);
+    }
+    if (dup.size) out.push({ tag: m[0].slice(0, 120), dup: [...dup] });
+  }
+  return out;
+}
+
+function paginasDe(dir) {
+  const out = [];
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) out.push(...paginasDe(p));
+    else if (e.name.endsWith('.html')) out.push(p);
+  }
+  return out;
+}
+
+const contas = {
+  paginas: 0,
+  unidades_en: 0,
+  unidades_en_traduzidas: 0,
+  unidades_en_em_portugues: 0,
+  unidades_en_sem_marca: 0,
+  titulos: 0,
+  titulos_com_marca: 0,
+  titulos_sem_marca: 0,
+  rotulos: 0,
+  rotulos_com_marca: 0,
+  rotulos_sem_marca: 0,
+  fontes: 0,
+  fontes_a_marcar: 0,
+  fontes_a_marcar_em_pt: 0,
+  fontes_a_marcar_em_en: 0,
+  fontes_com_marca: 0,
+  fontes_erradas: 0,
+  edicoes: 0,
+  edicoes_a_marcar: 0,
+  edicoes_a_marcar_em_pt: 0,
+  edicoes_a_marcar_em_en: 0,
+  edicoes_com_marca: 0,
+  edicoes_sem_lingua: 0,
+  edicoes_erradas: 0,
+  localizadores: 0,
+  localizadores_en_com_marca: 0,
+  localizadores_en_sem_marca: 0,
+  leis_en: 0,
+  leis_en_com_marca: 0,
+  leis_en_sem_marca: 0,
+  leis_en_em_transcricao: 0,
+  estudos_pt_en: 0,
+  estudos_pt_en_sem_marca: 0,
+  estudos_pt_ocultos: 0,
+  estudos_pt_ocultos_sem_marca: 0,
+  elementos_com_atributo_repetido: 0,
+  repetidos_em_documento_alojado: 0,
+  /* L9 · o rótulo de IA: o nome de quem responde, e a linha que o embrulha. */
+  nomes_do_rotulo: 0,
+  nomes_do_rotulo_em_pt: 0,
+  nomes_do_rotulo_em_en: 0,
+  nomes_do_rotulo_certos: 0,
+  nomes_do_rotulo_errados: 0,
+  linhas_do_rotulo: 0,
+  linhas_do_rotulo_erradas: 0,
+};
+const achados = {
+  repetidos: new Map(),
+  ocultos: new Map(),
+  unidades: new Map(),
+  titulos: new Map(),
+  rotulos: new Map(),
+  fontes: new Map(),
+  edicoes: new Map(),
+  localizadores: new Map(),
+  leis: new Map(),
+  estudos: new Map(),
+  rotulo: new Map(),
+};
+const anota = (mapa, chave, caminho) => {
+  const x = mapa.get(chave) ?? { n: 0, onde: caminho };
+  x.n++;
+  mapa.set(chave, x);
+};
+
+for (const ficheiro of paginasDe(DIST)) {
+  /**
+   * O DOCUMENTO ORIGINAL DE UM ESTUDO NÃO É UMA PÁGINA DESTE SÍTIO.
+   *
+   * `/en/studies/<slug>/document` serve o ficheiro do estudo tal como ele foi
+   * publicado (`src/lib/routes.mjs`: «não é uma página deste sítio: é o estudo
+   * original, alojado tal como está»). A casa não escreve uma linha dele, e
+   * marcar por dentro dele um nome de lei seria editar o documento que ela
+   * aloja para que uma régua sua ficasse verde. Fica de fora da varredura, com
+   * a razão escrita, e não por uma omissão silenciosa.
+   */
+  const caminho = '/' + path.relative(DIST, ficheiro).split(path.sep).join('/');
+  const rota = matchPath(caminho.replace(/index\.html$/, ''));
+  const cru = fs.readFileSync(ficheiro, 'utf8');
+  const rel0 = path.relative(RAIZ, ficheiro);
+
+  /* --- L8 · um atributo escrito duas vezes no mesmo elemento --- */
+  for (const r of atributosRepetidos(cru)) {
+    contas.elementos_com_atributo_repetido++;
+    if (rota?.key === 'documento') {
+      /* Num documento alojado tal como está, um atributo repetido é do
+         documento e não da casa: conta-se e imprime-se, e não fecha nada. */
+      contas.repetidos_em_documento_alojado++;
+      continue;
+    }
+    const chave = `${r.dup.join(', ')} · ${r.tag}`;
+    const x = achados.repetidos.get(chave) ?? { n: 0, onde: rel0 };
+    x.n++;
+    achados.repetidos.set(chave, x);
+  }
+
+  if (rota?.key === 'documento') continue;
+
+  const root = lerPaginaComCodigo(cru);
+  tirarCodigoConferido(root, rota);
+  erros.push(...conferirLinguaDasOrigens(root, rota?.lang ?? 'pt').map(e => rel0 + ': ' + e));
+  const html = root.querySelector('html');
+  const lingua = html?.getAttribute('lang') ?? '';
+  /* A edição, lida do documento e não do caminho: é o `lang` do `<html>` que o
+     leitor de ecrã usa, e é contra ele que tudo aqui se mede. */
+  const lang = lingua.startsWith('pt') ? 'pt' : lingua.startsWith('en') ? 'en' : null;
+  if (!lang) continue;
+  contas.paginas++;
+  const rel = path.relative(RAIZ, ficheiro);
+
+  /* --- L3 · as unidades, na edição inglesa --- */
+  if (lang === 'en') {
+    for (const el of root.querySelectorAll('[data-linha-campo="unit"]')) {
+      const texto = norm(el.text);
+      contas.unidades_en++;
+      if (INGLES_DAS_UNIDADES.has(texto)) {
+        contas.unidades_en_traduzidas++;
+        continue;
+      }
+      contas.unidades_en_em_portugues++;
+      if (langDe(el) !== 'pt-PT') {
+        contas.unidades_en_sem_marca++;
+        anota(achados.unidades, texto, rel);
+      }
+    }
+  }
+
+  /* --- L4 · os títulos de documento, nas duas edições --- */
+  for (const el of root.querySelectorAll('[data-linha-campo="document.title"]')) {
+    const texto = norm(el.text);
+    if (texto === POR_VERIFICAR) continue;
+    contas.titulos++;
+    const esperada = linguaDoTituloDoDocumento(texto, lang);
+    if (esperada === null) continue;
+    if (langDe(el) === esperada) contas.titulos_com_marca++;
+    else {
+      contas.titulos_sem_marca++;
+      anota(achados.titulos, `${esperada} · ${texto}`, rel);
+    }
+  }
+
+  /* --- L4c · o rótulo da fonte, nas duas edições --- */
+  for (const el of root.querySelectorAll('[data-linha-campo="name"]')) {
+    const texto = norm(el.text);
+    contas.rotulos++;
+    const esperada = linguaDoRotuloDaFonte(texto, lang);
+    if (esperada === null) continue;
+    if (langDe(el) === esperada) contas.rotulos_com_marca++;
+    else {
+      contas.rotulos_sem_marca++;
+      anota(achados.rotulos, `${esperada} · ${texto}`, rel);
+    }
+  }
+
+  /* --- L4d · o nome do organismo, nas duas edições (I97) --- */
+  for (const el of root.querySelectorAll('[data-linha-campo="source"]')) {
+    const texto = norm(el.text);
+    if (texto === POR_VERIFICAR) continue;
+    contas.fontes++;
+    if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_FONTES, texto)) continue;
+    const declarada = LINGUA_DAS_FONTES[texto];
+    const efetiva = efetivaEsperada(declarada, lingua);
+    if (declarada !== lang) {
+      contas.fontes_a_marcar++;
+      contas[lang === 'pt' ? 'fontes_a_marcar_em_pt' : 'fontes_a_marcar_em_en']++;
+    }
+    if (langDe(el) === efetiva) {
+      if (declarada !== lang) contas.fontes_com_marca++;
+      continue;
+    }
+    contas.fontes_erradas++;
+    anota(
+      achados.fontes,
+      `${motivo(langDe(el), efetiva, declarada, lang)} · «${texto}» (declarado ${declarada})`,
+      rel,
+    );
+  }
+
+  /* --- L4e · a edição do documento, nas duas edições (I97) --- */
+  for (const el of root.querySelectorAll('[data-linha-campo="document.edition"]')) {
+    const texto = norm(el.text);
+    if (texto === POR_VERIFICAR) continue;
+    contas.edicoes++;
+    if (!Object.prototype.hasOwnProperty.call(LINGUA_DAS_EDICOES, texto)) continue;
+    const declarada = LINGUA_DAS_EDICOES[texto];
+
+    /* UMA EDIÇÃO SEM LÍNGUA NÃO LEVA MARCA NENHUMA, e é aqui que a conferência
+       recusa a marca a mais: um ano, uma data ou um código de série herdam a
+       língua da página e nada mais. Uma marca própria neles é uma afirmação
+       falsa sobre a cadeia, e um ancestral que lhes imponha outra língua é a
+       mesma falsidade escrita mais acima. */
+    if (declarada === null) {
+      contas.edicoes_sem_lingua++;
+      const propria = el.getAttribute('lang') ?? null;
+      if (propria !== null) {
+        contas.edicoes_erradas++;
+        anota(achados.edicoes, `marca a mais (lang="${propria}") · «${texto}» (sem língua)`, rel);
+      } else if (langDe(el) !== lingua) {
+        contas.edicoes_erradas++;
+        anota(
+          achados.edicoes,
+          `um ancestral impõe lang="${langDe(el)}" · «${texto}» (sem língua)`,
+          rel,
+        );
+      }
+      continue;
+    }
+
+    const efetiva = efetivaEsperada(declarada, lingua);
+    if (declarada !== lang) {
+      contas.edicoes_a_marcar++;
+      contas[lang === 'pt' ? 'edicoes_a_marcar_em_pt' : 'edicoes_a_marcar_em_en']++;
+    }
+    if (langDe(el) === efetiva) {
+      if (declarada !== lang) contas.edicoes_com_marca++;
+      continue;
+    }
+    contas.edicoes_erradas++;
+    anota(
+      achados.edicoes,
+      `${motivo(langDe(el), efetiva, declarada, lang)} · «${texto}» (declarado ${declarada})`,
+      rel,
+    );
+  }
+
+  /* --- L4b · o localizador, que fala a língua do seu documento --- */
+  for (const el of root.querySelectorAll('[data-linha-campo="document.locator"]')) {
+    const texto = norm(el.text);
+    if (texto === POR_VERIFICAR) continue;
+    contas.localizadores++;
+    if (lang !== 'en') continue;
+    if (langDe(el) === 'pt-PT') contas.localizadores_en_com_marca++;
+    else {
+      contas.localizadores_en_sem_marca++;
+      anota(achados.localizadores, texto.slice(0, 70), rel);
+    }
+  }
+
+  /**
+   * --- L9 · o rótulo de IA: o nome é um nome, a frase é da página -----------
+   *
+   * O rótulo de todas as páginas acaba no nome de quem detém a
+   * responsabilidade editorial, e esse nome é português nas duas edições. Vale
+   * aqui a regra da §1.82, aplicada a um nome de pessoa em vez de a um título
+   * de documento: **um nome não se traduz, e diz em que língua está**. Sem
+   * marca, uma página inglesa manda um leitor de ecrã ler com fonética inglesa
+   * o nome de quem responde pela publicação.
+   *
+   * NOS DOIS SENTIDOS, como L4d e L4e: a marca que falta e a marca a mais são o
+   * mesmo defeito visto de dois lados. Numa página portuguesa o nome está na
+   * língua da página e não leva marca própria nenhuma; numa página inglesa leva
+   * a sua. É `efetivaEsperada()` que o diz, e é a mesma função das outras.
+   *
+   * E A LINHA LEVA A LÍNGUA DA PÁGINA. O nome é a única coisa deste bloco que
+   * está noutra língua: se um ancestral impuser uma língua à linha inteira, a
+   * frase aprovada passa a ser lida na língua errada de uma ponta à outra.
+   */
+  for (const el of root.querySelectorAll('[data-rotulo-nome]')) {
+    const texto = norm(el.text);
+    contas.nomes_do_rotulo++;
+    contas[lang === 'pt' ? 'nomes_do_rotulo_em_pt' : 'nomes_do_rotulo_em_en']++;
+    if (texto !== RESPONSAVEL_EDITORIAL) {
+      contas.nomes_do_rotulo_errados++;
+      anota(achados.rotulo, `o nome marcado é «${texto.slice(0, 60)}»`, rel);
+      continue;
+    }
+    const declarada = LINGUA_DO_RESPONSAVEL === 'pt-PT' ? 'pt' : 'en';
+    const efetiva = efetivaEsperada(declarada, lingua);
+    if (langDe(el) === efetiva) {
+      contas.nomes_do_rotulo_certos++;
+      continue;
+    }
+    contas.nomes_do_rotulo_errados++;
+    anota(
+      achados.rotulo,
+      `${motivo(langDe(el), efetiva, declarada, lang)} · «${texto}» (o nome de quem responde)`,
+      rel,
+    );
+  }
+  for (const el of root.querySelectorAll('.rotulo-ia-linha')) {
+    contas.linhas_do_rotulo++;
+    if (langDe(el) === lingua) continue;
+    contas.linhas_do_rotulo_erradas++;
+    anota(
+      achados.rotulo,
+      `a linha do rótulo lê-se em «${langDe(el)}» e a página é «${lingua}»`,
+      rel,
+    );
+  }
+
+  /* --- L6b · o mesmo título, no texto que só um leitor de ecrã ouve --- */
+  if (lang === 'en') {
+    for (const el of root.querySelectorAll('.vh')) {
+      const anda = (n) => {
+        if (!n) return;
+        if (n.nodeType === NodeType.TEXT_NODE) {
+          const t = norm(n.rawText);
+          if (!t) return;
+          for (const titulo of TITULOS_DE_ESTUDO_PT) {
+            if (!t.includes(titulo)) continue;
+            contas.estudos_pt_ocultos++;
+            if (langDe(n.parentNode) !== 'pt-PT') {
+              contas.estudos_pt_ocultos_sem_marca++;
+              anota(achados.ocultos, titulo, rel);
+            }
+          }
+          return;
+        }
+        for (const f of n.childNodes ?? []) anda(f);
+      };
+      anda(el);
+    }
+  }
+
+  /* --- L6 · os títulos de estudo portugueses, na edição inglesa --- */
+  if (lang === 'en') {
+    for (const el of root.querySelectorAll('[data-nonledger="titulo-de-estudo"]')) {
+      const texto = norm(el.text);
+      if (!TITULOS_DE_ESTUDO_PT.has(texto)) continue;
+      contas.estudos_pt_en++;
+      if (langDe(el) !== 'pt-PT') {
+        contas.estudos_pt_en_sem_marca++;
+        anota(achados.estudos, texto, rel);
+      }
+      /* E a função que decide tem de dizer o mesmo que a página mostra. */
+      if (linguaDoTitulo(texto, 'en') !== 'pt-PT') {
+        erros.push(
+          `linguaDoTitulo() não marca «${texto}» como português numa página inglesa ` +
+            `(${rel}), e a cadeia é o título de uma edição portuguesa.`,
+        );
+      }
+    }
+  }
+
+  /* --- L5 · os nomes de lei, na edição inglesa --- */
+  if (lang === 'en') {
+    const emTranscricao = new Set();
+    for (const el of root.querySelectorAll(TRANSCRICAO)) {
+      emTranscricao.add(el);
+      for (const d of el.querySelectorAll('*')) emTranscricao.add(d);
+    }
+    const anda = (n, dentroDeTranscricao) => {
+      if (!n) return;
+      if (n.nodeType === NodeType.TEXT_NODE) {
+        const t = decodeEntities(n.rawText);
+        const ms = [...t.matchAll(NOME_DE_LEI)];
+        if (!ms.length) return;
+        const marcado = langDe(n.parentNode) === 'pt-PT';
+        for (const m of ms) {
+          contas.leis_en++;
+          /* A ORDEM IMPORTA: um campo transcrito PODE estar marcado inteiro, e
+             quando está é uma lei com marca, e não uma lei fora do alcance. */
+          if (marcado) contas.leis_en_com_marca++;
+          else if (dentroDeTranscricao) contas.leis_en_em_transcricao++;
+          else {
+            contas.leis_en_sem_marca++;
+            anota(achados.leis, m[0], rel);
+          }
+        }
+        return;
+      }
+      const tag = String(n.rawTagName ?? '').toLowerCase();
+      if (tag === 'script' || tag === 'style') return;
+      const dentro = dentroDeTranscricao || emTranscricao.has(n);
+      for (const f of n.childNodes ?? []) anda(f, dentro);
+    };
+    anda(root.querySelector('body') ?? root, false);
+  }
+}
+
+if (contas.paginas === 0) {
+  erros.push(
+    `nenhuma página lida em ${DIST}: sem páginas, todos os zeros abaixo são zeros de ` +
+      `uma varredura que não aconteceu.`,
+  );
+}
+
+for (const [texto, x] of achados.unidades) {
+  erros.push(
+    `unidade em português sem lang="pt-PT" na edição inglesa: «${texto}» ` +
+      `(${x.n} ocorrência(s), ex.: ${x.onde}).`,
+  );
+}
+for (const [chave, x] of achados.titulos) {
+  erros.push(`título sem a marca da sua língua: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`);
+}
+for (const [chave, x] of achados.rotulos) {
+  erros.push(
+    `rótulo da fonte sem a marca da sua língua: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`,
+  );
+}
+for (const [chave, x] of achados.fontes) {
+  erros.push(
+    `nome de organismo com a língua errada: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`,
+  );
+}
+for (const [chave, x] of achados.edicoes) {
+  erros.push(
+    `edição de documento com a língua errada: ${chave} (${x.n} ocorrência(s), ex.: ${x.onde}).`,
+  );
+}
+for (const [chave, x] of achados.repetidos) {
+  erros.push(
+    `elemento com o mesmo atributo escrito duas vezes: ${chave}\n` +
+      `      (${x.n} ocorrência(s), ex.: ${x.onde}). O navegador fica com o primeiro e deita o ` +
+      `segundo fora, em silêncio: ou o gabarito acrescenta a marca a um elemento que já a tinha, ` +
+      `ou o elemento recebe o atributo estático e o calculado.`,
+  );
+}
+for (const [texto, x] of achados.localizadores) {
+  erros.push(
+    `localizador em português sem lang="pt-PT" na edição inglesa: «${texto}…» ` +
+      `(${x.n} ocorrência(s), ex.: ${x.onde}).`,
+  );
+}
+for (const [texto, x] of achados.leis) {
+  erros.push(
+    `nome de lei portuguesa sem lang="pt-PT" na edição inglesa: «${texto}» ` +
+      `(${x.n} ocorrência(s), ex.: ${x.onde}).`,
+  );
+}
+for (const [texto, x] of achados.ocultos) {
+  erros.push(
+    `título de estudo português sem lang="pt-PT" no TEXTO OCULTO de um selo, na edição ` +
+      `inglesa: «${texto}» (${x.n} ocorrência(s), ex.: ${x.onde}).\n` +
+      `      É o que um leitor de ecrã ouve, e uma superfície não deixa de ser superfície por ` +
+      `não se ver.`,
+  );
+}
+for (const [texto, x] of achados.estudos) {
+  erros.push(
+    `título de estudo português sem lang="pt-PT" na edição inglesa: «${texto}» ` +
+      `(${x.n} ocorrência(s), ex.: ${x.onde}).`,
+  );
+}
+
+/* ---------------------------------------------------------------------------
+ * OS POSITIVOS CONHECIDOS DE L4d E L4e (leitura cruzada do Codex, 29.08.2026)
+ * ---------------------------------------------------------------------------
+ * As duas conferências passavam em VAZIO. A única guarda era a global das
+ * páginas lidas, e por isso tirar todo o `source` rendido, ou toda a edição,
+ * deixava-as verdes a zero: um zero de uma varredura que não encontrou o que
+ * procura não é a mesma coisa que um zero de uma varredura que encontrou tudo
+ * certo, e as duas imprimiam-se igual.
+ *
+ * Cada uma passa a exigir um MÍNIMO POSITIVO, e o mínimo não é um número
+ * escrito: sai da própria tabela. Se a tabela declara um organismo português,
+ * então a edição inglesa tem de render pelo menos um organismo de língua
+ * contrária, porque as páginas do livro-razão constroem-se nas duas edições; e
+ * ao contrário. O mesmo para as edições de documento, mais o caso que só elas
+ * têm: se a tabela declara uma edição sem língua, a varredura tem de ter visto
+ * pelo menos uma.
+ * ------------------------------------------------------------------------- */
+const valoresDasFontes = Object.values(LINGUA_DAS_FONTES);
+const valoresDasEdicoes = Object.values(LINGUA_DAS_EDICOES);
+
+const positivos = [
+  {
+    quando: valoresDasFontes.includes('pt'),
+    conta: contas.fontes_a_marcar_em_en,
+    o: 'organismo de língua contrária em `dist/en`',
+    porque:
+      'a tabela declara pelo menos um organismo português, e as páginas do livro-razão ' +
+      'constroem-se nas duas edições: um deles tem de se render numa página inglesa. Zero aqui ' +
+      'quer dizer que L4d não olhou para nada, e o verde dela não prova coisa nenhuma.',
+  },
+  {
+    quando: valoresDasFontes.includes('en'),
+    conta: contas.fontes_a_marcar_em_pt,
+    o: 'organismo de língua contrária em `dist/pt`',
+    porque:
+      'a tabela declara pelo menos um organismo inglês, e ele tem de se render numa página ' +
+      'portuguesa. Zero aqui quer dizer que L4d não olhou para nada desse lado.',
+  },
+  {
+    quando: valoresDasEdicoes.includes('pt'),
+    conta: contas.edicoes_a_marcar_em_en,
+    o: 'caso de edição de língua contrária em `dist/en`',
+    porque:
+      'a tabela declara pelo menos uma edição portuguesa, e ela tem de se render numa página ' +
+      'inglesa. Zero aqui quer dizer que L4e não olhou para nada.',
+  },
+  {
+    quando: valoresDasEdicoes.includes('en'),
+    conta: contas.edicoes_a_marcar_em_pt,
+    o: 'caso de edição de língua contrária em `dist/pt`',
+    porque:
+      'a tabela declara pelo menos uma edição inglesa, e ela tem de se render numa página ' +
+      'portuguesa.',
+  },
+  {
+    quando: valoresDasEdicoes.includes(null),
+    conta: contas.edicoes_sem_lingua,
+    o: 'caso de edição sem língua nenhuma, em qualquer das duas edições',
+    porque:
+      'a tabela declara pelo menos uma edição sem língua, e é sobre essas que L4e recusa a marca ' +
+      'a mais. Sem nenhuma vista, essa metade da conferência não correu.',
+  },
+];
+for (const pos of positivos) {
+  if (!pos.quando) continue;
+  if (pos.conta > 0) continue;
+  erros.push(`a varredura não viu um único ${pos.o}.\n      ${pos.porque}`);
+}
+
+/* --- L9 · o que a varredura do rótulo achou, e o seu mínimo positivo -------
+ *
+ * O rótulo é de TODAS as páginas construídas fora dos documentos alojados, e
+ * por isso o mínimo positivo é o mais forte que esta régua tem: se a varredura
+ * não viu nomes nas duas edições, não está a olhar para o sítio, e o zero de
+ * defeitos não prova nada. */
+for (const [chave, x] of achados.rotulo) {
+  erros.push(`o rótulo de IA: ${chave}\n      primeira ocorrência em ${x.onde} (${x.n} no total).`);
+}
+/* O NOME SAIU DO RÓTULO A 15.09.2026 (P1, itens 1 e 2), e com ele saiu o
+   mínimo positivo que esta régua exigia dele. O que ficou é a metade que
+   continua a ter matéria: um `data-rotulo-nome` que VOLTE a aparecer tem de ter
+   o nome certo e a marca certa (o laço acima continua a medi-lo), e a linha do
+   rótulo continua a ter de estar na língua da página. O positivo conhecido
+   desta régua passa a ser a linha, que se rende em todas as páginas, e é a
+   conferência de baixo. */
+if (contas.nomes_do_rotulo !== 0) {
+  erros.push(
+    `a varredura viu ${contas.nomes_do_rotulo} «data-rotulo-nome» e devia ver zero: o nome de ` +
+      `quem responde saiu do rótulo e da ficha da primeira página a 15.09.2026, por decisão do ` +
+      `diretor. Se voltou, voltou sem decisão.`,
+  );
+}
+if (contas.linhas_do_rotulo === 0) {
+  erros.push(
+    `a varredura não viu uma única linha de rótulo («.rotulo-ia-linha»). Ou a classe mudou de ` +
+      `nome e L9 ficou cega, ou o rótulo deixou de se render: nos dois casos a conferência da ` +
+      `língua da frase deixou de existir.`,
+  );
+}
+
+/* O positivo conhecido da varredura: se nenhuma unidade traduzida se rendeu, a
+   régua está a olhar para um sítio onde a tradução não chegou, e o zero de L3
+   não vale nada. */
+if (contas.unidades_en > 0 && contas.unidades_en_traduzidas === 0) {
+  erros.push(
+    `a edição inglesa rende ${contas.unidades_en} unidade(s) e nenhuma traduzida. ` +
+      `O dicionário não está a ser aplicado, e o zero das que ficaram sem marca não prova nada.`,
+  );
+}
+
+console.log('');
+if (erros.length) {
+  console.error(vermelho(`  PORTÃO DA LÍNGUA · ${erros.length} problema(s)\n`));
+  for (const e of erros.slice(0, 40)) console.error(vermelho('    · ') + e);
+  if (erros.length > 40) console.error(cinza(`    … e mais ${erros.length - 40}`));
+  console.error('');
+  process.exit(1);
+}
+
+console.log(
+  verde('  língua ✓ ') +
+    `${new Set([...unidadesDoLivro.keys(), ...unidadesDasSeries.keys()]).size} unidade(s) do livro-razão (${unidadesDoLivro.size} das linhas, ${unidadesDasSeries.size} das séries): ${Object.keys(UNIDADES).length} traduzida(s), ` +
+    /* R2 (03.10.2026, item 4 do mandato): a linha diz também QUAIS ficam em português, e não só quantas. */
+    `${Object.keys(UNIDADES_EM_PORTUGUES).length} em português com razão escrita (${Object.keys(UNIDADES_EM_PORTUGUES).map((u) => `«${u}»`).join(', ')}) · ` +
+    `${comLocalizador} localizador(es), todos dentro de documento português · ` +
+    `${titulosDoLivro.size} título(s) de documento com língua declarada ` +
+    `(${Object.values(LINGUA_DOS_TITULOS).filter((l) => l === 'pt').length} pt, ` +
+    `${Object.values(LINGUA_DOS_TITULOS).filter((l) => l === 'en').length} en) · ` +
+    `${rotulosDoLivro.size} rótulo(s) da fonte com língua declarada ` +
+    `(${Object.values(LINGUA_DOS_ROTULOS).filter((l) => l === 'pt').length} pt, ` +
+    `${Object.values(LINGUA_DOS_ROTULOS).filter((l) => l === 'en').length} en) · ` +
+    `${fontesDoLivro.size} organismo(s) com língua declarada ` +
+    `(${Object.values(LINGUA_DAS_FONTES).filter((l) => l === 'pt').length} pt, ` +
+    `${Object.values(LINGUA_DAS_FONTES).filter((l) => l === 'en').length} en) · ` +
+    `${edicoesDoLivro.size} edição(ões) com língua declarada ` +
+    `(${Object.values(LINGUA_DAS_EDICOES).filter((l) => l === 'pt').length} pt, ` +
+    `${Object.values(LINGUA_DAS_EDICOES).filter((l) => l === 'en').length} en, ` +
+    `${Object.values(LINGUA_DAS_EDICOES).filter((l) => l === null).length} sem língua)`,
+);
+console.log(
+  cinza(
+    `        ${contas.paginas} página(s) lidas · unidades em «en»: ${contas.unidades_en} ` +
+      `(${contas.unidades_en_traduzidas} traduzidas, ${contas.unidades_en_em_portugues} em português, ` +
+      `todas com marca) · títulos com marca de língua: ${contas.titulos_com_marca} de ` +
+      `${contas.titulos} rendidos · rótulos da fonte com marca de língua: ` +
+      `${contas.rotulos_com_marca} de ${contas.rotulos} rendidos · organismos rendidos: ` +
+      `${contas.fontes} (${contas.fontes_a_marcar} de língua contrária: ` +
+      `${contas.fontes_a_marcar_em_en} em «en» e ${contas.fontes_a_marcar_em_pt} em «pt», ` +
+      `${contas.fontes_com_marca} com a marca certa) · ` +
+      `edições rendidas: ${contas.edicoes} (${contas.edicoes_a_marcar} de língua contrária: ` +
+      `${contas.edicoes_a_marcar_em_en} em «en» e ${contas.edicoes_a_marcar_em_pt} em «pt», ` +
+      `${contas.edicoes_com_marca} com a marca certa, ${contas.edicoes_sem_lingua} sem língua ` +
+      `nenhuma e sem marca) · ` +
+      `localizadores em «en»: ` +
+      `${contas.localizadores_en_com_marca} com marca · ` +
+      `leis em «en»: ${contas.leis_en_com_marca} com marca, ` +
+      `${contas.leis_en_em_transcricao} dentro de transcrição do motor · ` +
+      `títulos de estudo portugueses em «en»: ${contas.estudos_pt_en} à vista e ` +
+      `${contas.estudos_pt_ocultos} no oculto, todos com marca · ` +
+      `rótulo de IA: ${contas.nomes_do_rotulo} nome(s) de quem responde (o nome saiu do ` +
+      `rótulo a 15.09.2026) e ${contas.linhas_do_rotulo} linha(s) na língua da página · ` +
+      `atributos repetidos: nenhum`,
+  ),
+);
+if (contas.repetidos_em_documento_alojado > 0) {
+  console.log(
+    cinza(
+      `        ${contas.repetidos_em_documento_alojado} elemento(s) com atributo repetido dentro ` +
+        `de um documento de estudo alojado tal como está: é do documento, e não da casa.`,
+    ),
+  );
+}
+if (contas.leis_en_em_transcricao > 0) {
+  console.log(
+    cinza(
+      `        ${contas.leis_en_em_transcricao} nome(s) de lei dentro de texto transcrito ` +
+        `(uma «derivation_en» do livro-razão, uma nota do registo da agenda): a casa não edita ` +
+        `o que transcreve, e um campo transcrito só se marca inteiro, na língua do campo.`,
+    ),
+  );
+}
+console.log('');

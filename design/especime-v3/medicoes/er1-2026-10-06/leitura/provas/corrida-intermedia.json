@@ -1,0 +1,18 @@
+{
+  "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes",
+  "cabeca": "8252915ed97cc4a96eacc20881722201e470c17d",
+  "portoes": [
+    {
+      "nome": "build",
+      "codigo": 0
+    },
+    {
+      "nome": "verify",
+      "codigo": 0
+    },
+    {
+      "nome": "typecheck",
+      "codigo": 0
+    }
+  ]
+}

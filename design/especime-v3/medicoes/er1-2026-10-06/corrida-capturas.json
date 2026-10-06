@@ -1,0 +1,7 @@
+{
+  "comando": "node tests/incorporar/navegador.mjs --capturas --json design/especime-v3/medicoes/er1-2026-10-06/capturas-prova.json",
+  "inicio": "2026-10-06T13:03:54.957Z",
+  "fim": "2026-10-06T13:04:07.777Z",
+  "codigo": 0,
+  "sinal": null
+}

@@ -1,0 +1,7 @@
+{
+  "comando": "node design/especime-v3/medicoes/er1-2026-10-06/fechar.mjs",
+  "linhasRecusadasPelaFormaDoCliente": [],
+  "semFonteNemDerivacao": [],
+  "ressalvasSemIngles": [],
+  "avisosSemIngles": []
+}

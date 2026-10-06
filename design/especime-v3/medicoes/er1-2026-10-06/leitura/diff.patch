@@ -1,0 +1,1144 @@
+diff --git a/design/especime-v3/INVENTARIO-FRASES.md b/design/especime-v3/INVENTARIO-FRASES.md
+index 9f6e3cfa..676f35ba 100644
+--- a/design/especime-v3/INVENTARIO-FRASES.md
++++ b/design/especime-v3/INVENTARIO-FRASES.md
+@@ -4154,3 +4154,15 @@ páginas são **conteúdo**, como «Índice» e «Privacidade», porque são o o
+ | conteudo | The figures in this chart | ex1 | viva | O mesmo resumo na edição inglesa. |
+ | conteudo | Para onde vai o dinheiro do Estado em 2026 | ex1 | viva | A descrição do `<head>` da primeira explicação, que é o título dela, com o ano pelo período da linha nomeada; o portão de HTML recompõe-a por conta própria. |
+ | conteudo | Where the State’s money goes in 2026 | ex1 | viva | A mesma descrição na edição inglesa. |
++
++## O código incorporável (ER1)
++
++O código é recomposto antes de sair da leitura da prosa. Os estados da cópia
++são conferidos nos atributos pelo portão e exercidos no navegador.
++
++| classe | texto | bloco | estado | razão |
++| --- | --- | --- | --- | --- |
++| navegacao | Incorporar este número | er1 | viva | O rótulo do campo do código. |
++| navegacao | Embed this number | er1 | viva | O rótulo na edição inglesa. |
++| navegacao | Copiar | er1 | viva | O comando de cópia do código. |
++| navegacao | Copy | er1 | viva | O comando na edição inglesa. |
+diff --git a/design/especime-v3/critica/REVISOES-DO-INVENTARIO.md b/design/especime-v3/critica/REVISOES-DO-INVENTARIO.md
+index f368959c..b9673f24 100644
+--- a/design/especime-v3/critica/REVISOES-DO-INVENTARIO.md
++++ b/design/especime-v3/critica/REVISOES-DO-INVENTARIO.md
+@@ -25,6 +25,7 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
+ 
+ | bloco | linhas | leitura | quem, quando |
+ | --- | --- | --- | --- |
++| er1 | rótulo e comando nas duas edições | por ler | Codex gpt-6-astra: código recomposto dos dados antes de sair da prosa; leitura a frio do Opus pendente. |
+ | oe1-d | 2 novas | por ler | Codex gpt-6-astra, 04.10.2026: os rótulos de navegação «Ressalva» e «Caveat» identificam o aviso publicado de cada linha nos recibos e no índice. A leitura cruzada deste diff fica pendente antes da fusão. |
+ | b1c | 4 novas; 4 retiradas; 2 saem do ficheiro | por ler | Claude Opus 5, 22.09.2026: o registo de `/correcoes` passou a ser uma lista só, por data, com as três classes de mudança e o lugar de cada linha. Entram o título e a nota da lista, nas duas edições; saem os dois títulos de grupo («Atualizações», «Updates») e as duas notas de grupo, nas duas edições, com a razão escrita. Os quatro cabeçalhos de coluna e os dois prefixos de leitor de ecrã saíram do `strings.mjs` com a tabela que os pedia e não tinham linha no inventário. |
+ | b1-peca3-correcao | 4 novas; 2 retiradas | por ler | Codex gpt-6-astra, 22.09.2026: os dois rótulos ditados, nas duas línguas; o olho dos lugares continua vivo nas páginas de lugar. |
+diff --git a/ledger/README.md b/ledger/README.md
+index 0e5c1731..7d8e76f7 100644
+--- a/ledger/README.md
++++ b/ledger/README.md
+@@ -699,6 +699,22 @@ fazer, que é não convidar ninguém a reutilizá-lo e não declarar termos que
+ ninguém decidiu. Construí-los sempre é o que impede que o dia da decisão seja o
+ dia de estreia de um caminho que nunca foi construído nem conferido.
+ 
++**O recibo incorporável (ER1).** O JSON de uma linha acrescenta `incorporacao`,
++com a apresentação em português e inglês recomposta da própria linha e das
++declarações do recibo. `linha` conserva os campos publicados; os ficheiros do
++conjunto inteiro conservam a forma anterior. A apresentação transporta também
++as ressalvas, a unidade traduzida, o lugar e o período, para não deixar campos
++antigos junto de um valor revisto. O portão compara o código colável e a célula
++`check:incorporar` confere os campos publicados nas duas apresentações.
++
++Sem guião, o parágrafo conserva a leitura que foi copiada. Com o guião, cada
++carregamento pede apenas o JSON da linha, sem credenciais nem referência à
++página que o acolhe, e recusa redirecionamentos. Uma resposta falhada ou
++inválida conserva o parágrafo. A data de leitura só avança com uma confirmação
++do valor; uma tentativa inacessível ou divergente não a substitui. O aviso de
++valor diferente usa a última correção de valor que termina no valor atual;
++sem essa entrada, anuncia a mudança sem inventar a data.
++
+ ## `[a verificar]`
+ 
+ Um campo que não se conhece escreve-se `"[a verificar]"`. **Nunca um valor
+diff --git a/package.json b/package.json
+index a1bacc7e..13a2fc03 100644
+--- a/package.json
++++ b/package.json
+@@ -42,7 +42,7 @@
+     "provar:eyetext": "node scripts/provar-eyetext.mjs",
+     "provar:guardas": "node scripts/provar-guardas.mjs",
+     "typecheck": "tsc -p tsconfig.check.json",
+-    "verify": "npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run check:briefs && npm run gate:html && npm run check:css && npm run check:datas && npm run check:moldura && npm run check:alvos && npm run check:cabeca && npm run check:fontes && npm run check:cadeia && npm run check:dados && npm run mapa:unidades -- --verifica && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:alcance && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:lingua && npm run check:formato && npm run check:lugar && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run check:indice && npm run check:cartao && npm run check:navegacao && npm run check:primeira && npm run sinais && npm run check:nomes && npm run check:palavras && npm run design:feixe && npm run check:privacidade && npm run check:sugestoes && npm run check:rotulos && npm run check:series && npm run check:indice-do-sitio && npm run check:explicacoes && npm run check:frases-compostas",
++    "verify": "npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run check:briefs && npm run gate:html && npm run check:css && npm run check:datas && npm run check:moldura && npm run check:alvos && npm run check:cabeca && npm run check:fontes && npm run check:cadeia && npm run check:dados && npm run mapa:unidades -- --verifica && npm run check:mapa && npm run check:regioes && npm run check:areas && npm run check:formas && npm run check:alcance && npm run check:lugares && npm run check:pais && npm run check:voz && npm run check:lingua && npm run check:formato && npm run check:lugar && npm run provar:eyetext && npm run provar:guardas && npm run check:mortos && npm run check:indice && npm run check:cartao && npm run check:navegacao && npm run check:primeira && npm run sinais && npm run check:nomes && npm run check:palavras && npm run design:feixe && npm run check:privacidade && npm run check:sugestoes && npm run check:rotulos && npm run check:series && npm run check:indice-do-sitio && npm run check:explicacoes && npm run check:frases-compostas && npm run check:incorporar",
+     "verify:depois-do-build": "node scripts/verify-depois-do-build.mjs",
+     "check:mortos": "node scripts/check-mortos.mjs --prova",
+     "check:css": "node scripts/check-css.mjs --prova",
+@@ -63,7 +63,8 @@
+     "check:frases-compostas": "node tests/explicacoes/frases-compostas.mjs",
+     "check:formato": "node tests/inicio/formato-dos-numeros.mjs --prova",
+     "check:sugestoes": "node tests/sugestoes/funcao.mjs --prova",
+-    "check:rotulos": "node scripts/inventario-rotulos.mjs --prova"
++    "check:rotulos": "node scripts/inventario-rotulos.mjs --prova",
++    "check:incorporar": "node tests/incorporar/conferir.mjs && node tests/incorporar/navegador.mjs"
+   },
+   "dependencies": {
+     "@astrojs/sitemap": "3.7.4",
+diff --git a/public/incorporar.js b/public/incorporar.js
+new file mode 100644
+index 00000000..2b3f40c3
+--- /dev/null
++++ b/public/incorporar.js
+@@ -0,0 +1,69 @@
++/* Gerado por scripts/gerar-incorporar.mjs. */
++(function incorporar(origem) {
++  'use strict';
++  function atualizar(p) {
++    if (p.oedpPedido) return;
++    p.oedpPedido = true;
++    var id = p.getAttribute('data-oedp');
++    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id || '')) return;
++    var lang = p.getAttribute('lang') === 'en' ? 'en' : 'pt';
++    var citado = p.getAttribute('data-oedp-valor');
++    var destino = origem + (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + id;
++    if (typeof fetch !== 'function') return;
++    fetch(origem + '/livro-razao/' + id + '.json', {
++      credentials: 'omit', mode: 'cors', redirect: 'error', referrerPolicy: 'no-referrer', cache: 'no-cache'
++    }).then(function (r) {
++      if (!r.ok) throw Error('resposta');
++      return r.json();
++    }).then(function (j) {
++      var c = j.linha;
++      var d = j.incorporacao && j.incorporacao[lang];
++      var campos = ['nome', 'periodo', 'valor', 'unidade', 'unidadeLang', 'fonte', 'fonteLang', 'data', 'leitura', 'atribuicao', 'notas', 'atualizacao'];
++      if (!c || c.id !== id || !d || d.valor !== c.value || !j.licenca ||
++          !campos.every(function (k) { return typeof d[k] === 'string'; }) ||
++          !/^(pt-PT|pt|en)$/.test(d.fonteLang) || !/^(pt-PT|pt|en)$/.test(d.unidadeLang)) return;
++      /* Compõe fora do documento e só troca depois de validar tudo. Nenhum
++         texto recebido é interpretado como HTML, código ou endereço. */
++      var novo = document.createElement('p');
++      var a = document.createElement('a');
++      a.href = destino;
++      a.textContent = d.nome + ', ' + d.periodo + ': ' + d.valor + ' ';
++      var unidade = document.createElement('span');
++      unidade.lang = d.unidadeLang;
++      unidade.textContent = d.unidade;
++      a.appendChild(unidade);
++      novo.appendChild(a);
++      novo.appendChild(document.createTextNode(' '));
++      var fonte = document.createElement('span');
++      fonte.lang = d.fonteLang;
++      fonte.textContent = d.fonte;
++      novo.appendChild(fonte);
++      novo.appendChild(document.createTextNode(', ' + d.leitura + ' · ' + d.atribuicao));
++      if (d.notas) {
++        var notas = document.createElement('span');
++        notas.textContent = d.notas;
++        novo.appendChild(document.createTextNode(' '));
++        novo.appendChild(notas);
++      }
++      if (c.value !== citado) {
++        var aviso = document.createElement('a');
++        aviso.href = destino;
++        aviso.textContent = d.atualizacao;
++        aviso.setAttribute('data-oedp-atualizado', '');
++        novo.appendChild(document.createTextNode(' · '));
++        novo.appendChild(aviso);
++      }
++      while (p.firstChild) p.removeChild(p.firstChild);
++      while (novo.firstChild) p.appendChild(novo.firstChild);
++      p.setAttribute('data-oedp-valor', c.value);
++      p.setAttribute('data-oedp-lido', d.data);
++    }).catch(function () { /* O código colado continua inteiro. */ });
++  }
++  function iniciar() {
++    Array.prototype.forEach.call(document.querySelectorAll('p.oedp-numero[data-oedp]'), atualizar);
++  }
++  /* Um async pode chegar antes de outro parágrafo. As duas passagens só pedem
++     os elementos ainda não vistos, mesmo com mais de uma cópia do guião. */
++  iniciar();
++  document.addEventListener('DOMContentLoaded', iniciar, { once: true });
++})("https://xn--oestadodopas-2fb.pt");
+diff --git a/public/js/copiar-incorporacao.js b/public/js/copiar-incorporacao.js
+new file mode 100644
+index 00000000..859f53c5
+--- /dev/null
++++ b/public/js/copiar-incorporacao.js
+@@ -0,0 +1,21 @@
++/* O código continua selecionável sem guião nem acesso à área de transferência. */
++(function () {
++  'use strict';
++  document.querySelectorAll('[data-incorporar-bloco]').forEach(function (bloco) {
++    var campo = bloco.querySelector('textarea');
++    var botao = bloco.querySelector('button');
++    if (!campo || !botao) return;
++    botao.hidden = false;
++    botao.addEventListener('click', function () {
++      function selecionar() {
++        campo.focus();
++        campo.select();
++        botao.textContent = botao.getAttribute('data-selecionado');
++      }
++      if (!navigator.clipboard || !navigator.clipboard.writeText) { selecionar(); return; }
++      navigator.clipboard.writeText(campo.value).then(function () {
++        botao.textContent = botao.getAttribute('data-copiado');
++      }, selecionar);
++    });
++  });
++}());
+diff --git a/scripts/check-lingua.mjs b/scripts/check-lingua.mjs
+index 29961835..755cbac0 100644
+--- a/scripts/check-lingua.mjs
++++ b/scripts/check-lingua.mjs
+@@ -1,4 +1,5 @@
+ #!/usr/bin/env node
++import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
+ /**
+  * ---------------------------------------------------------------------------
+  * O PORTÃO DA LÍNGUA · o que é português numa página inglesa diz que o é
+@@ -118,7 +119,7 @@ import fs from 'node:fs';
+ import path from 'node:path';
+ import { fileURLToPath } from 'node:url';
+ 
+-import { parse, NodeType } from 'node-html-parser';
++import { NodeType } from 'node-html-parser';
+ 
+ import { loadClaims, POR_VERIFICAR, LEDGER_DIR } from '../src/lib/ledger.mjs';
+ import { lerSeriesDoPortao } from './series-do-portao.mjs';
+@@ -680,7 +681,8 @@ for (const ficheiro of paginasDe(DIST)) {
+ 
+   if (rota?.key === 'documento') continue;
+ 
+-  const root = parse(cru);
++  const root = lerPaginaComCodigo(cru);
++  tirarCodigoConferido(root, rota);
+   erros.push(...conferirLinguaDasOrigens(root, rota?.lang ?? 'pt').map(e => rel0 + ': ' + e));
+   const html = root.querySelector('html');
+   const lingua = html?.getAttribute('lang') ?? '';
+diff --git a/scripts/check-lugar.mjs b/scripts/check-lugar.mjs
+index ef6a0fad..ef1035fd 100644
+--- a/scripts/check-lugar.mjs
++++ b/scripts/check-lugar.mjs
+@@ -1,4 +1,5 @@
+ #!/usr/bin/env node
++import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
+ /**
+  * A RÉGUA DO BLOCO F1.10 · «uma coisa, um lugar».
+  *
+@@ -1086,7 +1087,8 @@ for (const ficheiro of paginas) {
+   const transcricao = chaveDaRota !== null && ROTAS_DE_TRANSCRICAO.has(chaveDaRota);
+ 
+   const cru = fs.readFileSync(ficheiro, 'utf8');
+-  const raiz = parse(cru);
++  const raiz = lerPaginaComCodigo(cru);
++  tirarCodigoConferido(raiz, rota);
+   const corpo = raiz.querySelector('body');
+   if (!corpo) continue;
+ 
+diff --git a/scripts/check-privacidade.py b/scripts/check-privacidade.py
+index b5e875e4..f8fd3a2c 100644
+--- a/scripts/check-privacidade.py
++++ b/scripts/check-privacidade.py
+@@ -51,6 +51,60 @@ def segredos_em(corpo):
+     return [nome for nome, marca in SEGREDOS if marca.search(corpo)]
+ 
+ 
++def conferir_incorporador(corpo):
++    """ER1: leitura estática da superfície permitida, além do ensaio no navegador.
++    Não é uma prova geral de segurança de JavaScript arbitrário. Restringe o
++    guião pequeno à forma auditada, sem origens, APIs ou seletores adicionais.
++    """
++    erros = []
++    proibidas = r'\b(?:cookie|localStorage|sessionStorage|indexedDB|navigator|location|XMLHttpRequest|WebSocket|Worker|Image|sendBeacon|eval|Function|import)\b'
++    if re.search(proibidas, corpo) or re.search(r'document\s*(?:\.referrer|\[)', corpo): erros.append('ER1 privacidade: API fora dos elementos próprios.')
++    # A única origem literal vem da configuração canónica, lida sem rede.
++    config = (RAIZ / 'site.config.mjs').read_text()
++    host = re.search(r"SITE_HOST_DISPLAY = '([^']+)'", config).group(1).encode('idna').decode()
++    origens = re.findall(r'https?://[^\s\'"<>]+', corpo)
++    if origens != ['https://' + host]: erros.append('ER1 privacidade: endereço fora da origem fixa do projeto.')
++    if len(re.findall(r'\bfetch\s*\(', corpo)) != 1 or "fetch(origem + '/livro-razao/' + id + '.json', {" not in corpo:
++        erros.append('ER1 privacidade: o pedido não é exclusivamente o JSON da linha.')
++    for opcao in ("credentials: 'omit'", "redirect: 'error'", "referrerPolicy: 'no-referrer'"):
++        if opcao not in corpo: erros.append('ER1 privacidade: o pedido perdeu a opção ' + opcao + '.')
++    seletores = re.findall(r'document\.querySelector(?:All)?\(([^\n]+)\)', corpo)
++    if len(seletores) != 1 or "document.querySelectorAll('p.oedp-numero[data-oedp]')" not in corpo:
++        erros.append('ER1 privacidade: leitura fora dos parágrafos próprios.')
++    if re.search(r'\b(?:innerHTML|outerHTML|insertAdjacentHTML|src|href)\s*=\s*(?:d|j|c)\.', corpo):
++        erros.append('ER1 privacidade: a resposta pode executar código ou escolher um endereço.')
++    return erros
++
++
++def medir_incorporador(dist, prova):
++    caminhos = [RAIZ / 'public/incorporar.js', dist / 'incorporar.js']
++    erros = []
++    plantas = []
++    for caminho in caminhos:
++        if not caminho.is_file():
++            erros.append('ER1 privacidade: falta o guião de incorporação.')
++            continue
++        erros += conferir_incorporador(caminho.read_text())
++    if all(p.is_file() for p in caminhos) and caminhos[0].read_bytes() != caminhos[1].read_bytes():
++        erros.append('ER1 privacidade: o guião construído difere do publicado.')
++    if prova and caminhos[0].is_file():
++        corpo = caminhos[0].read_text()
++        for nome, acrescento, mensagem in [
++            ('pedido-de-fora', "\nfetch('https://fora.invalid/receber');", 'ER1 privacidade: endereço fora da origem fixa do projeto.'),
++            ('cookie', '\ndocument.cookie;', 'ER1 privacidade: API fora dos elementos próprios.'),
++            ('armazenamento', '\nlocalStorage.setItem("x", "y");', 'ER1 privacidade: API fora dos elementos próprios.'),
++            ('pagina-anfitria', '\ndocument.querySelectorAll("body");', 'ER1 privacidade: leitura fora dos parágrafos próprios.'),
++        ]:
++            achados = conferir_incorporador(corpo + acrescento)
++            plantas.append({'nome': nome, 'mensagem': mensagem, 'mordeu': mensagem in achados})
++        for nome, antigo, novo, mensagem in [
++            ('credenciais', "credentials: 'omit'", "credentials: 'include'", "ER1 privacidade: o pedido perdeu a opção credentials: 'omit'."),
++            ('redirecionamento', "redirect: 'error'", "redirect: 'follow'", "ER1 privacidade: o pedido perdeu a opção redirect: 'error'."),
++        ]:
++            plantas.append({'nome': nome, 'mensagem': mensagem, 'mordeu': mensagem in conferir_incorporador(corpo.replace(antigo, novo))})
++    return {'erros': erros, 'plantas': plantas, 'passou': not erros and all(p['mordeu'] for p in plantas)}
++
++
+ def medir_api(raiz, prova):
+     """S1: os caminhos e os nomes em `api/`, e a célula dos segredos, com as plantas."""
+     ficheiros = ficheiros_da_api(raiz)
+@@ -135,7 +189,8 @@ def medir(dist, prova):
+         for i, caminho in enumerate(detetor.proibidos()):
+             r['plantas'].append({'id':f'caminho-{i+1}', 'mordeu':conferir([('pagina-construida.html',corpo+b'<p>'+caminho+b'</p>')])['quantidade']==1})
+     r['api'] = medir_api(RAIZ, prova)
+-    r['passou'] = bool(ficheiros) and r['quantidade']==0 and all(p['mordeu'] for p in r['plantas']) and r['api']['passou']
++    r['incorporador'] = medir_incorporador(dist, prova)
++    r['passou'] = bool(ficheiros) and r['quantidade']==0 and all(p['mordeu'] for p in r['plantas']) and r['api']['passou'] and r['incorporador']['passou']
+     return r
+ 
+ if __name__ == '__main__':
+diff --git a/scripts/gate-html.mjs b/scripts/gate-html.mjs
+index 742479f6..270ea27f 100644
+--- a/scripts/gate-html.mjs
++++ b/scripts/gate-html.mjs
+@@ -1,4 +1,5 @@
+ #!/usr/bin/env node
++import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
+ import { conferirValorUnidade } from './valor-unidade.mjs';
+ import { nomeNoRegistoAdmitido } from './nome-no-registo.mjs';
+ import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
+@@ -4616,7 +4617,7 @@ for (const file of ficheirosHtml(DIST)) {
+   ficheiros++;
+   const rel = path.relative(DIST, file);
+   const html = fs.readFileSync(file, 'utf8');
+-  const root = parse(html, {
++  const root = lerPaginaComCodigo(html, {
+     comment: false,
+     blockTextElements: { script: true, style: true, noscript: false },
+   });
+@@ -4654,6 +4655,7 @@ for (const file of ficheirosHtml(DIST)) {
+ 
+   const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
+   const rota = matchPath(caminho);
++  try { tirarCodigoConferido(root, rota); } catch (e) { err(e.message); }
+ 
+   /* Os `id` desta página, guardados antes de tudo o resto: é contra eles que
+      uma âncora de outra página é conferida no fim do varrimento. Guardados
+diff --git a/scripts/gerar-incorporar.mjs b/scripts/gerar-incorporar.mjs
+new file mode 100644
+index 00000000..bbb51561
+--- /dev/null
++++ b/scripts/gerar-incorporar.mjs
+@@ -0,0 +1,7 @@
++import fs from 'node:fs';
++import { incorporar } from './incorporar-cliente.mjs';
++import { SITE_URL } from '../site.config.mjs';
++const codigo = `/* Gerado por scripts/gerar-incorporar.mjs. */\n(${incorporar.toString()})(${JSON.stringify(new URL(SITE_URL).origin)});\n`;
++if (process.argv.includes('--conferir')) {
++  if (fs.readFileSync('public/incorporar.js', 'utf8') !== codigo) throw Error('ER1 guião: os bytes servidos diferem do gerador.');
++} else fs.writeFileSync('public/incorporar.js', codigo);
+diff --git a/scripts/incorporar-cliente.mjs b/scripts/incorporar-cliente.mjs
+new file mode 100644
+index 00000000..eaf6f913
+--- /dev/null
++++ b/scripts/incorporar-cliente.mjs
+@@ -0,0 +1,70 @@
++/* Função sem dependências, emitida como ES2015 pelo gerador. Só lê os seus
++   parágrafos. O destino do pedido é fixado na construção, nunca pelo blogue. */
++export function incorporar(origem) {
++  'use strict';
++  function atualizar(p) {
++    if (p.oedpPedido) return;
++    p.oedpPedido = true;
++    var id = p.getAttribute('data-oedp');
++    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id || '')) return;
++    var lang = p.getAttribute('lang') === 'en' ? 'en' : 'pt';
++    var citado = p.getAttribute('data-oedp-valor');
++    var destino = origem + (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + id;
++    if (typeof fetch !== 'function') return;
++    fetch(origem + '/livro-razao/' + id + '.json', {
++      credentials: 'omit', mode: 'cors', redirect: 'error', referrerPolicy: 'no-referrer', cache: 'no-cache'
++    }).then(function (r) {
++      if (!r.ok) throw Error('resposta');
++      return r.json();
++    }).then(function (j) {
++      var c = j.linha;
++      var d = j.incorporacao && j.incorporacao[lang];
++      var campos = ['nome', 'periodo', 'valor', 'unidade', 'unidadeLang', 'fonte', 'fonteLang', 'data', 'leitura', 'atribuicao', 'notas', 'atualizacao'];
++      if (!c || c.id !== id || !d || d.valor !== c.value || !j.licenca ||
++          !campos.every(function (k) { return typeof d[k] === 'string'; }) ||
++          !/^(pt-PT|pt|en)$/.test(d.fonteLang) || !/^(pt-PT|pt|en)$/.test(d.unidadeLang)) return;
++      /* Compõe fora do documento e só troca depois de validar tudo. Nenhum
++         texto recebido é interpretado como HTML, código ou endereço. */
++      var novo = document.createElement('p');
++      var a = document.createElement('a');
++      a.href = destino;
++      a.textContent = d.nome + ', ' + d.periodo + ': ' + d.valor + ' ';
++      var unidade = document.createElement('span');
++      unidade.lang = d.unidadeLang;
++      unidade.textContent = d.unidade;
++      a.appendChild(unidade);
++      novo.appendChild(a);
++      novo.appendChild(document.createTextNode(' '));
++      var fonte = document.createElement('span');
++      fonte.lang = d.fonteLang;
++      fonte.textContent = d.fonte;
++      novo.appendChild(fonte);
++      novo.appendChild(document.createTextNode(', ' + d.leitura + ' · ' + d.atribuicao));
++      if (d.notas) {
++        var notas = document.createElement('span');
++        notas.textContent = d.notas;
++        novo.appendChild(document.createTextNode(' '));
++        novo.appendChild(notas);
++      }
++      if (c.value !== citado) {
++        var aviso = document.createElement('a');
++        aviso.href = destino;
++        aviso.textContent = d.atualizacao;
++        aviso.setAttribute('data-oedp-atualizado', '');
++        novo.appendChild(document.createTextNode(' · '));
++        novo.appendChild(aviso);
++      }
++      while (p.firstChild) p.removeChild(p.firstChild);
++      while (novo.firstChild) p.appendChild(novo.firstChild);
++      p.setAttribute('data-oedp-valor', c.value);
++      p.setAttribute('data-oedp-lido', d.data);
++    }).catch(function () { /* O código colado continua inteiro. */ });
++  }
++  function iniciar() {
++    Array.prototype.forEach.call(document.querySelectorAll('p.oedp-numero[data-oedp]'), atualizar);
++  }
++  /* Um async pode chegar antes de outro parágrafo. As duas passagens só pedem
++     os elementos ainda não vistos, mesmo com mais de uma cópia do guião. */
++  iniciar();
++  document.addEventListener('DOMContentLoaded', iniciar, { once: true });
++}
+diff --git a/scripts/incorporar-do-portao.mjs b/scripts/incorporar-do-portao.mjs
+new file mode 100644
+index 00000000..97b8487b
+--- /dev/null
++++ b/scripts/incorporar-do-portao.mjs
+@@ -0,0 +1,118 @@
++/* Leitura do ER1 pelos portões. Não importa o compositor do código nem o do
++   JSON. Os nomes e as traduções são declarações comuns; os campos, as datas,
++   os bytes e a escolha da releitura são recontados aqui. */
++import { allClaims } from '../src/lib/ledger.mjs';
++import { nomeNoRecibo, lugarNoRecibo } from '../src/lib/o-que-e-o-numero.mjs';
++import { unidadeDaLinha } from '../src/i18n/unidades.mjs';
++import { linguaDaFonte } from '../src/i18n/lingua-dos-titulos.mjs';
++import { dataDaCasa } from '../src/lib/datas.mjs';
++import { t } from '../src/i18n/strings.mjs';
++import { LICENCA } from '../src/data/licenca.mjs';
++import { SITE_HOST_DISPLAY } from '../site.config.mjs';
++import { parse } from 'node-html-parser';
++const leiturasLiterais = new WeakSet();
++
++/* O textarea é texto literal, como no navegador. O analisador genérico elimina
++   comentários, o que faria comparar menos caracteres do que o botão copia. */
++export function lerPaginaComCodigo(html, opcoes = {}) {
++  const blocos = opcoes.blockTextElements ?? { script: true, noscript: true, style: true, pre: true };
++  const root = parse(html, { ...opcoes, blockTextElements: { ...blocos, textarea: true } });
++  leiturasLiterais.add(root);
++  return root;
++}
++const linhas = new Map(allClaims().map(c => [c.id, c]));
++const escape = x => String(x ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
++
++export function dadosEsperados(c, lang) {
++  const palavras = t(lang).incorporar;
++  const un = unidadeDaLinha(c.unit, lang);
++  const lugar = lugarNoRecibo(c.id, lang);
++  let mudanca = '';
++  for (const entrada of c.corrections ?? []) {
++    if (entrada.kind !== 'proveniencia' && entrada.new_value === c.value && entrada.date > mudanca) mudanca = entrada.date;
++  }
++  let dia = /^\d{4}-\d{2}-\d{2}$/.test(c.access_date ?? '') ? c.access_date : '';
++  for (const entrada of c.verifications ?? []) {
++    if (entrada.result === 'igual' && entrada.date >= mudanca && entrada.date > dia) dia = entrada.date;
++  }
++  return {
++    nome: nomeNoRecibo(c.id, lang).texto + (lugar ? ` · ${lugar.nome}` : ''),
++    periodo: c.reference_date ? dataDaCasa(c.reference_date, lang) : palavras.periodoEmFalta,
++    valor: String(c.value), unidade: un.texto, unidadeLang: un.lingua || t(lang).lang,
++    fonte: c.source || palavras.calculado, fonteLang: (c.source && linguaDaFonte(c.source, lang)) || t(lang).lang,
++    data: dia, leitura: dia ? palavras.lido + ' ' + dataDaCasa(dia, lang) : palavras.leituraEmFalta,
++    atribuicao: LICENCA ? LICENCA.atribuicao + ', ' + LICENCA.nome : '',
++    notas: [c[lang === 'en' ? 'source_flag_note_en' : 'source_flag_note'], c[lang === 'en' ? 'ressalva_en' : 'ressalva']].filter(Boolean).join(' '),
++    atualizacao: mudanca ? palavras.atualizado + ' ' + dataDaCasa(mudanca, lang) : palavras.atualizadoSemData,
++  };
++}
++
++export function codigoEsperado(c, lang) {
++  const d = dadosEsperados(c, lang);
++  const p = t(lang).incorporar;
++  const origem = 'https://' + SITE_HOST_DISPLAY;
++  const href = origem + (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + c.id;
++  const lido = c.access_date ? p.lido + ' ' + dataDaCasa(c.access_date, lang) : p.leituraEmFalta;
++  return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${escape(c.id)}" data-oedp-valor="${escape(c.value)}" data-oedp-lido="${escape(c.access_date)}"><a href="${href}">${escape(d.nome)}, ${escape(d.periodo)}: ${escape(c.value)} <span lang="${d.unidadeLang}">${escape(d.unidade)}</span></a> <span lang="${d.fonteLang}">${escape(d.fonte)}</span>, ${escape(lido)} · ${escape(d.atribuicao)}${d.notas ? ` <span>${escape(d.notas)}</span>` : ''}</p><script async src="${origem}/incorporar.js" referrerpolicy="no-referrer" crossorigin="anonymous"></script>`;
++}
++
++export function conferirCodigo(root, rota) {
++  const erros = [];
++  const campos = root.querySelectorAll('[data-incorporar-codigo]');
++  if (campos.length && !leiturasLiterais.has(root)) erros.push('ER1 código: falta a leitura literal do campo.');
++  const linha = rota?.key === 'linha' ? linhas.get(rota.params.slug) : null;
++  if (linha && LICENCA && campos.length !== 1) erros.push('ER1 código: falta o único código do recibo.');
++  if (linha && LICENCA) {
++    const blocos = root.querySelectorAll('[data-incorporar-bloco]');
++    const bloco = blocos[0];
++    if (bloco?.querySelector('textarea') !== campos[0])
++      erros.push('ER1 código: o campo conferido não é o que o botão copia.');
++    const label = bloco?.querySelector('label');
++    const botao = bloco?.querySelector('button');
++    const s = t(rota.lang).incorporar;
++    if (blocos.length !== 1 || bloco.querySelectorAll('textarea').length !== 1 ||
++        label?.textContent !== s.titulo || label?.getAttribute('for') !== 'codigo-incorporar' ||
++        bloco.querySelector('textarea')?.getAttribute('id') !== 'codigo-incorporar' ||
++        botao?.textContent !== s.copiar || botao?.getAttribute('data-copiado') !== s.copiado ||
++        botao?.getAttribute('data-selecionado') !== s.selecionado)
++      erros.push('ER1 comando: o rótulo ou a cópia não corresponde à edição.');
++  }
++  for (const campo of campos) {
++    if (!linha || !LICENCA || campo.getAttribute('data-incorporar-codigo') !== linha.id ||
++        campo.rawTagName !== 'textarea' || !campo.hasAttribute('readonly') || campo.childNodes.some(n => n.nodeType === 1)) {
++      erros.push('ER1 código: marca fora do campo do recibo da própria linha.');
++    } else if (campo.textContent !== codigoEsperado(linha, rota.lang)) {
++      erros.push('ER1 código: o pedaço difere da linha, carácter a carácter.');
++    }
++  }
++  return erros;
++}
++
++export function conferirJson(doc, c, lang) {
++  const d = doc?.incorporacao?.[lang];
++  const esperado = dadosEsperados(c, lang);
++  return doc?.linha?.id === c.id && doc?.linha?.value === c.value && d &&
++    Object.keys(d).length === Object.keys(esperado).length &&
++    Object.entries(esperado).every(([k,v])=>d[k]===v)
++    ? [] : ['ER1 JSON: a apresentação difere da linha.'];
++}
++
++/* A retirada do código da prosa só acontece depois da comparação integral,
++   na mesma corrida de cada portão que a usa. Uma marca falsa não é dispensa. */
++export function tirarCodigoConferido(root, rota) {
++  const erros = conferirCodigo(root, rota);
++  if (erros.length) throw Error(erros.join('\n'));
++  for (const campo of root.querySelectorAll('[data-incorporar-codigo]')) campo.remove();
++}
++
++export function conferirCors(respostas) {
++  const erros = [];
++  for (const r of respostas) {
++    const permitido = /^\/livro-razao\/[^/]+\.json$/.test(r.caminho) ||
++      ['/livro-razao.json','/livro-razao.csv','/incorporar.js'].includes(r.caminho);
++    if (r.estado !== 200 || r.cors !== (permitido ? '*' : null))
++      erros.push(`ER1 CORS: ${r.caminho} tem estado ou cabeçalho incorreto.`);
++    if (r.frame !== 'SAMEORIGIN') erros.push(`ER1 moldura: ${r.caminho} perdeu SAMEORIGIN.`);
++  }
++  return erros;
++}
+diff --git a/scripts/medir-defeitos.mjs b/scripts/medir-defeitos.mjs
+index e858c111..0a7c16f0 100644
+--- a/scripts/medir-defeitos.mjs
++++ b/scripts/medir-defeitos.mjs
+@@ -1,4 +1,5 @@
+ #!/usr/bin/env node
++import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
+ /**
+  * A régua deste bloco — mede o que o BRIEF-confianca.md mediu, para se poder
+  * dizer «antes» e «depois» com o mesmo instrumento.
+@@ -38,7 +39,7 @@
+ import fs from 'node:fs';
+ import path from 'node:path';
+ import { fileURLToPath } from 'node:url';
+-import { parse, NodeType } from 'node-html-parser';
++import { NodeType } from 'node-html-parser';
+ 
+ import { loadClaims } from '../src/lib/ledger.mjs';
+ import { matchPath, routePath } from '../src/lib/routes.mjs';
+@@ -1301,7 +1302,8 @@ for (const file of ficheiros) {
+   paginas++;
+ 
+   const html = fs.readFileSync(file, 'utf8');
+-  const root = parse(html, { comment: false, blockTextElements: { script: true, style: true } });
++  const root = lerPaginaComCodigo(html, { comment: false, blockTextElements: { script: true, style: true } });
++  tirarCodigoConferido(root, rota);
+ 
+   /* 1 — a porta de correcções */
+   const portas = root.querySelectorAll('[data-porta-correccoes]');
+diff --git a/scripts/verify-deploy.mjs b/scripts/verify-deploy.mjs
+index 72d5aa18..4af9004a 100644
+--- a/scripts/verify-deploy.mjs
++++ b/scripts/verify-deploy.mjs
+@@ -1,3 +1,5 @@
++import { conferirCors } from './incorporar-do-portao.mjs';
++import { allClaims } from '../src/lib/ledger.mjs';
+ /**
+  * Confere o que está NO AR contra o que está no repositório.
+  *
+@@ -330,6 +332,18 @@ for (const edicao of /** @type {const} */ (['pt', 'en'])) {
+   conferir('/ sem Set-Cookie', r.cabecalho('set-cookie'), null);
+ }
+ 
++/* ER1: a configuração local não prova os cabeçalhos que a CDN entrega. */
++{
++  const id = allClaims()[0].id;
++  const respostas = [];
++  for (const caminho of [`/livro-razao/${id}.json`, '/livro-razao.json', '/livro-razao.csv', '/incorporar.js', `/livro-razao/${id}`, '/']) {
++    const r = await ler(`https://${host}${caminho}`);
++    respostas.push({ caminho, estado: r.estado, cors: r.cabecalho('access-control-allow-origin'), frame: r.cabecalho('x-frame-options') });
++  }
++  for (const msg of conferirCors(respostas)) erros.push(msg);
++  console.log(cinza('  ER1: cabeçalhos do conjunto, do guião e das páginas conferidos.'));
++}
++
+ console.log();
+ 
+ if (erros.length) {
+diff --git a/src/i18n/strings.mjs b/src/i18n/strings.mjs
+index 6a594fc0..84083989 100644
+--- a/src/i18n/strings.mjs
++++ b/src/i18n/strings.mjs
+@@ -14,6 +14,13 @@ export const STRINGS = {
+   pt: {
+     lang: 'pt-PT',
+     langNome: 'Português',
++    incorporar: {
++      titulo: 'Incorporar este número', copiar: 'Copiar', copiado: 'Copiado',
++      selecionado: 'Código selecionado', lido: 'lido a', calculado: 'Calculado',
++      periodoEmFalta: 'período não indicado', leituraEmFalta: 'data de leitura não indicada',
++      atualizado: 'Este número foi atualizado a',
++      atualizadoSemData: 'Este número foi atualizado; consulte a fonte e a verificação.',
++    },
+     outraLingua: 'English',
+     outraLinguaCodigo: 'EN',
+ 
+@@ -3226,6 +3233,13 @@ export const STRINGS = {
+   en: {
+     lang: 'en',
+     langNome: 'English',
++    incorporar: {
++      titulo: 'Embed this number', copiar: 'Copy', copiado: 'Copied',
++      selecionado: 'Code selected', lido: 'read on', calculado: 'Calculated',
++      periodoEmFalta: 'period not stated', leituraEmFalta: 'reading date not stated',
++      atualizado: 'This number was updated on',
++      atualizadoSemData: 'This number was updated; see the source and verification.',
++    },
+     outraLingua: 'Português',
+     outraLinguaCodigo: 'PT',
+ 
+diff --git a/src/lib/conjunto.mjs b/src/lib/conjunto.mjs
+index d4625cd8..b40a5b71 100644
+--- a/src/lib/conjunto.mjs
++++ b/src/lib/conjunto.mjs
+@@ -73,6 +73,8 @@ import {
+ import { LICENCA, CONJUNTO } from '../data/licenca.mjs';
+ import { SITE_NAME, SITE_HOST_DISPLAY } from '../../site.config.mjs';
+ 
++import { dadosDaIncorporacao } from './incorporar.mjs';
++
+ export { CONJUNTO };
+ 
+ /**
+@@ -175,7 +177,8 @@ export function jsonDoConjunto() {
+  */
+ export function jsonDaLinha(id) {
+   return (
+-    JSON.stringify({ _: nota('uma'), licenca: licenca(), linha: linhaDoConjunto(getClaim(id)) }, null, 2) +
++    JSON.stringify({ _: nota('uma'), licenca: licenca(), linha: linhaDoConjunto(getClaim(id)),
++      incorporacao: { pt: dadosDaIncorporacao(getClaim(id), 'pt'), en: dadosDaIncorporacao(getClaim(id), 'en') } }, null, 2) +
+     '\n'
+   );
+ }
+diff --git a/src/lib/incorporar.mjs b/src/lib/incorporar.mjs
+new file mode 100644
+index 00000000..9fce662a
+--- /dev/null
++++ b/src/lib/incorporar.mjs
+@@ -0,0 +1,60 @@
++/* O recibo incorporável. A apresentação acompanha o JSON para nenhuma edição
++   ficar com unidade, período ou ressalva de uma publicação anterior. */
++import { nomeNoRecibo, lugarNoRecibo } from './o-que-e-o-numero.mjs';
++import { dataDaCasa } from './datas.mjs';
++import { unidadeDaLinha } from '../i18n/unidades.mjs';
++import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
++import { t } from '../i18n/strings.mjs';
++import { LICENCA } from '../data/licenca.mjs';
++import { SITE_HOST_DISPLAY } from '../../site.config.mjs';
++import { caminhoDaLinha } from './livro.mjs';
++
++/** @param {unknown} valor */
++export function escaparIncorporacao(valor) {
++  return String(valor ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;')
++    .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
++}
++
++/** @param {any} c @param {'pt'|'en'} lang */
++export function dadosDaIncorporacao(c, lang) {
++  const s = t(lang).incorporar;
++  const nome = nomeNoRecibo(c.id, lang).texto;
++  const lugar = lugarNoRecibo(c.id, lang);
++  const unidade = unidadeDaLinha(c.unit, lang);
++  const correcoes = (c.corrections ?? []).filter((/** @type {any} */ x) =>
++    x.kind !== 'proveniencia' && x.new_value === c.value).sort((/** @type {any} */ a, /** @type {any} */ b) => b.date.localeCompare(a.date));
++  const atualizada = correcoes[0]?.date ?? '';
++  /* Uma tentativa sem resposta não confirma o número. Uma confirmação anterior
++     à última mudança de valor também não confirma o número de agora. */
++  const datas = [c.access_date, ...(c.verifications ?? []).filter((/** @type {any} */ v) =>
++    v.result === 'igual' && (!atualizada || v.date >= atualizada)).map((/** @type {any} */ v) => v.date)]
++    .filter((/** @type {any} */ d) => typeof d === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(d)).sort();
++  const data = datas.at(-1) ?? '';
++  const fonte = c.source || s.calculado;
++  const notas = [lang === 'en' ? c.source_flag_note_en : c.source_flag_note,
++    lang === 'en' ? c.ressalva_en : c.ressalva].filter(Boolean).join(' ');
++  return {
++    nome: nome + (lugar ? ` · ${lugar.nome}` : ''),
++    periodo: c.reference_date ? dataDaCasa(c.reference_date, lang) : s.periodoEmFalta,
++    valor: String(c.value), unidade: unidade.texto, unidadeLang: unidade.lingua ?? t(lang).lang,
++    fonte, fonteLang: (c.source ? linguaDaFonte(c.source, lang) : null) ?? t(lang).lang,
++    data, leitura: data ? `${s.lido} ${dataDaCasa(data, lang)}` : s.leituraEmFalta,
++    atribuicao: LICENCA ? `${LICENCA.atribuicao}, ${LICENCA.nome}` : '', notas,
++    atualizacao: atualizada ? `${s.atualizado} ${dataDaCasa(atualizada, lang)}` : s.atualizadoSemData,
++  };
++}
++
++/** @param {any} c @param {'pt'|'en'} lang */
++export function codigoDaIncorporacao(c, lang) {
++  const d = dadosDaIncorporacao(c, lang);
++  const e = escaparIncorporacao;
++  /* O fallback diz a data guardada na linha. A releitura mais recente só entra
++     quando o JSON é recebido com sucesso pelo guião. */
++  const leitura = c.access_date ? `${t(lang).incorporar.lido} ${dataDaCasa(c.access_date, lang)}` : t(lang).incorporar.leituraEmFalta;
++  const origem = `https://${SITE_HOST_DISPLAY}`;
++  return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${e(c.id)}" data-oedp-valor="${e(c.value)}" data-oedp-lido="${e(c.access_date)}">` +
++    `<a href="${origem}${caminhoDaLinha(c.id, lang)}">${e(d.nome)}, ${e(d.periodo)}: ${e(d.valor)} <span lang="${e(d.unidadeLang)}">${e(d.unidade)}</span></a> ` +
++    `<span lang="${e(d.fonteLang)}">${e(d.fonte)}</span>, ${e(leitura)} · ${e(d.atribuicao)}` +
++    (d.notas ? ` <span>${e(d.notas)}</span>` : '') +
++    `</p><script async src="${origem}/incorporar.js" referrerpolicy="no-referrer" crossorigin="anonymous"></script>`;
++}
+diff --git a/src/styles/linha.css b/src/styles/linha.css
+index 70a29176..bcdfd6d0 100644
+--- a/src/styles/linha.css
++++ b/src/styles/linha.css
+@@ -533,3 +533,17 @@
+   line-height: 1.55;
+   color: var(--ink);
+ }
++
++/* O código incorporável cabe na coluna e seleciona-se também sem guião. */
++.incorporar-bloco { min-width: 0; }
++.incorporar-bloco textarea {
++  display: block; width: 100%; max-width: 100%; box-sizing: border-box;
++  margin-block: 10px; padding: 10px; resize: vertical;
++  font: 12px/1.5 ui-monospace, monospace; color: var(--ink); background: var(--paper);
++  border: 1px solid var(--rule); overflow-wrap: anywhere;
++}
++.incorporar-bloco button {
++  min-height: 44px; padding: 8px 14px; font: 14px/1.5 var(--f-instr);
++  color: var(--ink); background: transparent; border: 1px solid var(--rule); cursor: pointer;
++}
++.incorporar-bloco button:hover { border-color: var(--ink); }
+diff --git a/src/views/LinhaView.astro b/src/views/LinhaView.astro
+index 07318d1d..1d1524e2 100644
+--- a/src/views/LinhaView.astro
++++ b/src/views/LinhaView.astro
+@@ -97,6 +97,7 @@ import { familiaDaLinha, oQueEDaLinha, nomeNoRecibo, lugarNoRecibo, nomeDaFonteN
+ import Marcador from '../components/Marcador.astro';
+ import { partesDaLeitura } from '../lib/leitura-da-medida.mjs';
+ import '../styles/linha.css';
++import { codigoDaIncorporacao } from '../lib/incorporar.mjs';
+ 
+ const { lang = 'pt', id } = Astro.props;
+ const s = t(lang);
+@@ -1856,6 +1857,15 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
+         )
+       }
+ 
++      {LICENCA && (
++        <div class="aparelho-bloco incorporar-bloco" data-incorporar-bloco>
++          <label class="linha-campo-k" data-voz for="codigo-incorporar">{s.incorporar.titulo}</label>
++          <textarea id="codigo-incorporar" data-incorporar-codigo={id} readonly spellcheck="false" rows="6">{codigoDaIncorporacao(claim, lang)}</textarea>
++          <button type="button" data-voz hidden data-copiado={s.incorporar.copiado} data-selecionado={s.incorporar.selecionado} aria-live="polite">{s.incorporar.copiar}</button>
++        </div>
++      )}
++      <script is:inline src="/js/copiar-incorporacao.js" defer></script>
++
+       {
+         /* ESTA LINHA NOUTRO SÍTIO (IDENTIDADE.md §11). A mesma linha na outra
+            edição, que é o «noutro sítio» que a casa pode provar para todas as
+diff --git a/tests/incorporar/blogue.html b/tests/incorporar/blogue.html
+new file mode 100644
+index 00000000..82e77a39
+--- /dev/null
++++ b/tests/incorporar/blogue.html
+@@ -0,0 +1,16 @@
++<!doctype html>
++<html lang="{{lang}}">
++<meta charset="utf-8">
++<meta name="viewport" content="width=device-width">
++<title>{{titulo}}</title>
++<style>
++body{font:18px/1.6 Georgia,serif;max-width:42em;margin:32px auto;padding:0 18px;color:#202124}
++h1{font-size:32px}h2{font-size:20px}section{border-top:1px solid #aaa;margin-top:32px}
++a{color:inherit;text-decoration:underline}p{overflow-wrap:anywhere}
++</style>
++<h1>{{titulo}}</h1>
++<p id="anfitria">{{anfitria}}</p>
++<section id="caso-atual"><h2>{{rotulo_atual}}</h2>{{codigo_atual}}</section>
++<section id="caso-antigo"><h2>{{rotulo_antigo}}</h2>{{codigo_antigo}}</section>
++<section id="caso-ausente"><h2>{{rotulo_ausente}}</h2>{{codigo_ausente}}</section>
++</html>
+diff --git a/tests/incorporar/conferir.mjs b/tests/incorporar/conferir.mjs
+new file mode 100644
+index 00000000..298b281f
+--- /dev/null
++++ b/tests/incorporar/conferir.mjs
+@@ -0,0 +1,96 @@
++/* ER1: cada recibo e cada JSON, com estragos em memória e mensagens exatas. */
++import fs from 'node:fs';
++import assert from 'node:assert/strict';
++import { execFileSync } from 'node:child_process';
++import { parse } from 'node-html-parser';
++import { dadosDaIncorporacao } from '../../src/lib/incorporar.mjs';
++import { allClaims } from '../../src/lib/ledger.mjs';
++import { routePath, matchPath } from '../../src/lib/routes.mjs';
++import { conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson } from '../../scripts/incorporar-do-portao.mjs';
++const dist = process.env.OEDP_DIST || 'dist';
++const linhas = allClaims();
++const resultados = { comando: 'node tests/incorporar/conferir.mjs', recibos: 0, json: 0, plantas: [] };
++for (const c of linhas) {
++  const doc = JSON.parse(fs.readFileSync(`${dist}/livro-razao/${c.id}.json`, 'utf8'));
++  for (const lang of ['pt','en']) {
++    assert.deepEqual(conferirJson(doc, c, lang), [], `ER1 JSON: a apresentação de ${c.id} difere da linha (${lang}).`);
++    const rota = routePath('linha', lang, {slug:c.id});
++    const root = lerPaginaComCodigo(fs.readFileSync(`${dist}${rota}/index.html`, 'utf8'));
++    assert.deepEqual(conferirCodigo(root, matchPath(rota)), []);
++    resultados.recibos++;
++  }
++  resultados.json++;
++}
++const c = linhas.find(c => c.source_url && c.corrections?.some(x => x.kind === 'atualizacao' && x.new_value === c.value));
++const rota = matchPath(routePath('linha','pt',{slug:c.id}));
++const inteiro = fs.readFileSync(`${dist}${routePath('linha','pt',{slug:c.id})}/index.html`, 'utf8');
++function planta(nome, muda, mensagem, html = inteiro) {
++  const root = lerPaginaComCodigo(html);
++  muda(root);
++  assert(conferirCodigo(root, rota).includes(mensagem), `${nome}: falta a mensagem ${mensagem}`);
++  assert.throws(() => tirarCodigoConferido(root, rota), {message: new RegExp(mensagem.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))});
++  resultados.plantas.push({nome,mensagem,mordeu:true});
++}
++planta('valor-trocado', root => {
++  const campo = root.querySelector('textarea');
++  campo.set_content(campo.innerHTML.replaceAll(c.value, c.corrections.find(x=>x.new_value===c.value).old_value));
++}, 'ER1 código: o pedaço difere da linha, carácter a carácter.');
++planta('codigo-em-falta', root=>root.querySelector('textarea').remove(), 'ER1 código: falta o único código do recibo.');
++planta('marca-no-paragrafo', root=>root.querySelector('p').setAttribute('data-incorporar-codigo',c.id), 'ER1 código: marca fora do campo do recibo da própria linha.');
++planta('codigo-editavel', root=>root.querySelector('textarea').removeAttribute('readonly'), 'ER1 código: marca fora do campo do recibo da própria linha.');
++planta('campo-conferido-fora-do-bloco', root => {
++  const campo = root.querySelector('[data-incorporar-codigo]');
++  const fora = lerPaginaComCodigo(campo.outerHTML).querySelector('textarea');
++  fora.setAttribute('id', 'codigo-fora');
++  campo.removeAttribute('data-incorporar-codigo');
++  campo.set_content('Texto diferente');
++  root.querySelector('body').appendChild(fora);
++}, 'ER1 código: o campo conferido não é o que o botão copia.');
++planta('comentario-no-codigo', ()=>{}, 'ER1 código: o pedaço difere da linha, carácter a carácter.',
++  inteiro.replace(/(<textarea\b[^>]*>)/, '$1<!--planta-->'));
++const mensagemLeitura = 'ER1 código: falta a leitura literal do campo.';
++assert(conferirCodigo(parse(inteiro), rota).includes(mensagemLeitura));
++resultados.plantas.push({nome:'leitura-nao-literal',mensagem:mensagemLeitura,mordeu:true});
++const caminhos = [`/livro-razao/${c.id}.json`, '/livro-razao.json', '/livro-razao.csv', '/incorporar.js', '/', `/livro-razao/${c.id}`];
++const vercel = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
++const respostas = caminhos.map(caminho=> {
++  const headers = {};
++  for (const r of vercel.routes) if (r.src && !r.has && new RegExp('^'+r.src+'$').test(caminho)) Object.assign(headers,r.headers);
++  return {caminho,estado:200,cors:headers['Access-Control-Allow-Origin']??null,frame:headers['X-Frame-Options']??null};
++});
++assert.deepEqual(conferirCors(respostas),[]);
++for (const [nome, n, campo, valor, mensagem] of [
++  ['cors-em-falta',0,'cors',null,`ER1 CORS: ${caminhos[0]} tem estado ou cabeçalho incorreto.`],
++  ['cors-em-html',4,'cors','*',`ER1 CORS: ${caminhos[4]} tem estado ou cabeçalho incorreto.`],
++  ['moldura-aberta',4,'frame',null,`ER1 moldura: ${caminhos[4]} perdeu SAMEORIGIN.`],
++]) {
++  const copia = structuredClone(respostas); copia[n][campo]=valor;
++  assert(conferirCors(copia).includes(mensagem));
++  resultados.plantas.push({nome,mensagem,mordeu:true});
++}
++// A data da tentativa não confirma o valor. As datas das plantas são geradas.
++const base=structuredClone(c);
++const dia=new Date(base.access_date);dia.setUTCDate(dia.getUTCDate()+1);
++const depois=dia.toISOString().slice(0,10);
++for (const lang of ['pt','en']) {
++  base.verifications=[{date:depois,result:'igual'}];
++  assert.equal(dadosDaIncorporacao(base,lang).data,depois);
++  for (const result of ['inacessivel','diverge']) {
++    base.verifications=[{date:depois,result}];
++    assert.equal(dadosDaIncorporacao(base,lang).data,base.access_date);
++    resultados.plantas.push({nome:'data-'+result+'-'+lang,mensagem:'Uma tentativa sem confirmação não avança a data de leitura.',mordeu:true});
++  }
++  base.verifications=[{date:depois,result:'igual'},{date:base.access_date,result:'igual'}];
++  assert.equal(dadosDaIncorporacao(base,lang).data,depois);
++}
++const doc=JSON.parse(fs.readFileSync(`${dist}/livro-razao/${c.id}.json`,'utf8'));
++for(const campo of Object.keys(doc.incorporacao.pt)){
++  const copia=structuredClone(doc);copia.incorporacao.pt[campo]+=' alterado';
++  const mensagem='ER1 JSON: a apresentação difere da linha.';
++  assert(conferirJson(copia,c,'pt').includes(mensagem));
++  resultados.plantas.push({nome:'json-'+campo,mensagem,mordeu:true});
++}
++execFileSync(process.execPath,['scripts/gerar-incorporar.mjs','--conferir']);
++const i = process.argv.indexOf('--json');
++if (i>0) fs.writeFileSync(process.argv[i+1],JSON.stringify(resultados,null,2)+'\n');
++console.log(JSON.stringify(resultados,null,2));
+diff --git a/tests/incorporar/navegador.mjs b/tests/incorporar/navegador.mjs
+new file mode 100644
+index 00000000..c79b6e76
+--- /dev/null
++++ b/tests/incorporar/navegador.mjs
+@@ -0,0 +1,163 @@
++/* O blogue usa outra origem. Só o argumento da origem do guião passa a ser
++   o servidor local. A planta sem CORS exerce pedidos reais entre as portas. */
++import fs from 'node:fs';
++import path from 'node:path';
++import http from 'node:http';
++import assert from 'node:assert/strict';
++import { createHash } from 'node:crypto';
++import { chromium } from 'playwright';
++import { parse } from 'node-html-parser';
++import { allClaims } from '../../src/lib/ledger.mjs';
++import { SITE_URL, SITE_HOST_DISPLAY } from '../../site.config.mjs';
++import { routePath } from '../../src/lib/routes.mjs';
++import { t } from '../../src/i18n/strings.mjs';
++import { dadosDaIncorporacao } from '../../src/lib/incorporar.mjs';
++import { lerPaginaComCodigo } from '../../scripts/incorporar-do-portao.mjs';
++const dist = path.resolve(process.env.OEDP_DIST || 'dist');
++const i = process.argv.indexOf('--json');
++const saida = i>0 ? process.argv[i+1] : null;
++const capturar = process.argv.includes('--capturas');
++const pasta = 'design/especime-v3/capturas/er1-2026-10-06';
++const origemPublica = new URL(SITE_URL).origin;
++const regras = JSON.parse(fs.readFileSync('vercel.json','utf8')).routes;
++const linhas = allClaims();
++const c = linhas.find(c=>c.source_url && c.corrections?.some(x=>x.kind==='atualizacao' && x.new_value===c.value));
++const antigo = c.corrections.find(x=>x.kind==='atualizacao' && x.new_value===c.value).old_value;
++const tipos = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css','.json':'application/json','.woff2':'font/woff2','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp'};
++const codigos = Object.fromEntries(['pt','en'].map(lang=>[lang,parse(fs.readFileSync(`${dist}${routePath('linha',lang,{slug:c.id})}/index.html`,'utf8')).querySelector('[data-incorporar-codigo]').textContent]));
++const escapar = x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
++const modeloBlogue = fs.readFileSync(new URL('./blogue.html',import.meta.url),'utf8');
++function blogue(lang) {
++  const velho = codigos[lang].replaceAll(escapar(c.value),escapar(antigo));
++  const ausente = codigos[lang].replaceAll(c.id,c.id+'-nao-existe');
++  const rotulos = lang==='pt' ? ['Valor atual','Valor antigo','Pedido sem resposta'] : ['Current value','Old value','Failed request'];
++  const campos={lang:t(lang).lang,titulo:lang==='pt'?'Blogue de ensaio':'Test blog',anfitria:lang==='pt'?'Conteúdo da página que acolhe os números.':'Content of the page hosting the numbers.',rotulo_atual:rotulos[0],rotulo_antigo:rotulos[1],rotulo_ausente:rotulos[2],codigo_atual:codigos[lang],codigo_antigo:velho,codigo_ausente:ausente};
++  return modeloBlogue.replace(/\{\{([a-z_]+)\}\}/g,(_,chave)=>campos[chave]);
++}
++let modoAtual = 'normal';
++const servidor = http.createServer((req,res)=>{
++  try {
++    const caminho = new URL(req.url,'http://local.invalid').pathname;
++    for (const r of regras) if (r.src && !r.has && new RegExp('^'+r.src+'$').test(caminho)) for (const [k,v] of Object.entries(r.headers??{})) res.setHeader(k,v);
++    let f = path.resolve(dist,'.'+decodeURIComponent(caminho));
++    if (!f.startsWith(dist+path.sep) && f!==dist) throw Error('fora');
++    if (fs.statSync(f).isDirectory()) f=path.join(f,'index.html');
++    res.setHeader('Content-Type',tipos[path.extname(f)]??'application/octet-stream');
++    if (modoAtual==='sem-cors' && caminho.endsWith('.json')) res.removeHeader('Access-Control-Allow-Origin');
++    if (caminho.endsWith('.json')) {
++      if (modoAtual==='falha') {res.writeHead(503).end();return;}
++      if (modoAtual==='redirecionamento') {res.writeHead(302,{location:'https://fora.invalid/receber'}).end();return;}
++      if (modoAtual==='json-malformado') {res.end('{');return;}
++      if (modoAtual==='outra-linha') {res.end(JSON.stringify({...json,linha:{...json.linha,id:c.id+'-outra'}}));return;}
++      if (modoAtual==='releitura') {res.end(JSON.stringify(jsonRelido));return;}
++    }
++    const bytes=fs.readFileSync(f);
++    // Só o argumento da origem muda, em memória. O corpo da função é idêntico.
++    if(caminho==='/incorporar.js')res.end(bytes.toString().replace(JSON.stringify(origemPublica),JSON.stringify(sitio)));
++    else res.end(bytes);
++  } catch {res.writeHead(404).end();}
++});
++const blog = http.createServer((req,res)=>res.setHeader('Content-Type','text/html; charset=utf-8').end(blogue(req.url.includes('en')?'en':'pt').replaceAll('src="https://'+new URL(SITE_URL).hostname,'src="'+sitio).replaceAll('src="https://'+SITE_HOST_DISPLAY,'src="'+sitio)));
++async function abrir(s) {await new Promise(ok=>s.listen(0,'127.0.0.1',ok));return `http://127.0.0.1:${s.address().port}`;}
++const sitio = await abrir(servidor), anfitria = await abrir(blog);
++const navegador = await chromium.launch({headless:true});
++const r = {transporte:'Apenas o argumento da origem e o src do guião são mapeados ao servidor local; os pedidos entre portas distintas são reais, sem fulfill.',comando:'node tests/incorporar/navegador.mjs',linha:c.id,antigo,atual:c.value,casos:[],capturas:[],plantas:[]};
++const json = JSON.parse(fs.readFileSync(`${dist}/livro-razao/${c.id}.json`,'utf8'));
++const diaSeguinte = new Date(Math.max(...[c.access_date,...(c.verifications??[]).map(v=>v.date)].filter(Boolean).map(d=>Date.parse(d))) + 24*60*60*1000).toISOString().slice(0,10);
++const linhaRelida = {...c,verifications:[...(c.verifications??[]),{date:diaSeguinte,result:'igual'}]};
++const jsonRelido = {...json,linha:linhaRelida,incorporacao:Object.fromEntries(['pt','en'].map(lang=>[lang,dadosDaIncorporacao(linhaRelida,lang)]))};
++try {
++  for (const lang of ['pt','en']) for (const modo of ['normal','releitura','sem-js','sem-cors','falha','json-malformado','outra-linha','redirecionamento']) {
++    const ctx = await navegador.newContext({javaScriptEnabled:modo!=='sem-js', viewport:{width:390,height:900},deviceScaleFactor:1,colorScheme:'light',reducedMotion:'reduce'});
++    const pedidos = [];
++    modoAtual=modo;
++    await ctx.route('**/*',route=>{
++      const url=new URL(route.request().url());
++      if(url.origin!==anfitria)pedidos.push({caminho:url.pathname,origem:url.origin===sitio?'<servidor do projeto>':url.origin,referer:route.request().headers().referer??null,metodo:route.request().method(),corpo:route.request().postData()});
++      return [anfitria,sitio].includes(url.origin)?route.continue():route.abort();
++    });
++    await ctx.addInitScript(()=>{
++      window.acessosIndevidos=[];window.registar=true;
++      ['cookie','referrer','title','URL','forms'].forEach(k=>Object.defineProperty(document,k,{get(){window.acessosIndevidos.push(k);throw Error(k);},set(){window.acessosIndevidos.push(k);throw Error(k);}}));
++      ['localStorage','sessionStorage'].forEach(k=>Object.defineProperty(window,k,{get(){window.acessosIndevidos.push(k);throw Error(k);}}));
++      const ler=document.querySelectorAll.bind(document);
++      document.querySelectorAll=function(s){if(window.registar && s!=='p.oedp-numero[data-oedp]')window.acessosIndevidos.push(s);return ler(s);};
++    });
++    const pagina = await ctx.newPage();
++    await pagina.goto(anfitria+'/'+lang,{waitUntil:'networkidle'});
++    const acessos = modo==='sem-js' ? [] : await pagina.evaluate(()=>{window.registar=false;return window.acessosIndevidos;});
++    const textos = await pagina.locator('.oedp-numero').allTextContents();
++    const valores = await pagina.locator('.oedp-numero').evaluateAll(ns=>ns.map(n=>({valor:n.getAttribute('data-oedp-valor'),lido:n.getAttribute('data-oedp-lido'),aviso:n.querySelector('[data-oedp-atualizado]')?.textContent??null,html:n.outerHTML})));
++    assert.equal(valores.length,3);
++    assert.equal(valores[2].valor,c.value);
++    assert.equal(valores[2].aviso,null);
++    if (['normal','releitura'].includes(modo)) {
++      const esperado = modo==='releitura' ? jsonRelido : json;
++      assert.equal(pedidos.filter(p=>p.caminho.endsWith('.json')).length,valores.length);
++      assert.equal(valores[0].valor,c.value);assert.equal(valores[0].lido,esperado.incorporacao[lang].data);assert.equal(valores[0].aviso,null);
++      assert.equal(valores[1].valor,c.value);assert.equal(valores[1].aviso,esperado.incorporacao[lang].atualizacao);
++      assert.equal(textos[0],textos[1].slice(0,-(' · '+esperado.incorporacao[lang].atualizacao).length));
++      if(modo==='releitura')assert.equal(valores[0].lido,diaSeguinte);
++    } else {
++      assert.equal(valores[1].valor,antigo,`${modo}: o fallback mudou`);assert.equal(valores[1].aviso,null);
++      const original = parse(blogue(lang)).querySelectorAll('.oedp-numero').map(n=>n.textContent);
++      assert.deepEqual(textos,original,`${modo}: o texto colado não ficou inteiro`);
++      if (modo!=='sem-js') r.plantas.push({nome:modo+'-'+lang,mensagem:'O pedido recusado conserva o código colado inteiro.',mordeu:true});
++    }
++    assert(pedidos.every(p=>p.origem==='<servidor do projeto>' && (p.caminho==='/incorporar.js'||p.caminho===`/livro-razao/${c.id}.json`||p.caminho===`/livro-razao/${c.id}-nao-existe.json`)));
++    assert(pedidos.every(p=>p.referer===null && p.metodo==='GET' && p.corpo===null));
++    assert.equal(await pagina.locator('#anfitria').textContent(),parse(blogue(lang)).querySelector('#anfitria').textContent);
++    if(modo!=='sem-js') assert.deepEqual(acessos,[]);
++    assert.equal((await ctx.cookies()).length,0);
++    r.casos.push({lang,modo,valores:valores.map(({html,...v})=>v),textos,pedidos,cookies:(await ctx.cookies()).length});
++    if(capturar && ['normal','sem-js'].includes(modo)) for(const largura of [390,768,1024,1280,1600]){
++      await pagina.setViewportSize({width:largura,height:900});
++      const ficheiro=`${pasta}/blogue-${modo}-${lang}-${largura}.png`;
++      await pagina.screenshot({path:ficheiro,fullPage:true});
++      assert(await pagina.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
++      r.capturas.push({ficheiro,largura,sha256:createHash('sha256').update(fs.readFileSync(ficheiro)).digest('hex')});
++    }
++    await ctx.close();
++  }
++  modoAtual='normal';
++  // A comparação usa os caracteres que o navegador entrega ao botão de cópia.
++  {
++    const contexto=await navegador.newContext();
++    const pagina=await contexto.newPage();
++    const literal='<textarea>&lt;p&gt;<!--planta-->&lt;/p&gt;</textarea>';
++    await pagina.setContent(literal);
++    const copiado=await pagina.locator('textarea').inputValue();
++    assert.equal(copiado,'<p><!--planta--></p>');
++    assert.equal(lerPaginaComCodigo(literal).querySelector('textarea').textContent,copiado);
++    r.casos.push({lang:'pt',modo:'codigo-literal',comentarioConservado:true,textoCopiado:copiado});
++    await contexto.close();
++  }
++  // O botão é exercido pelos dois caminhos, com sucesso e com recusa do clipboard.
++  for(const lang of ['pt','en']){
++    const ctx=await navegador.newContext({viewport:{width:390,height:900},reducedMotion:'reduce',colorScheme:'light'});
++    await ctx.route('**/*',q=>q.request().url().startsWith(sitio)?q.continue():q.abort());
++    const page=await ctx.newPage();
++    await page.goto(sitio+routePath('linha',lang,{slug:c.id}),{waitUntil:'networkidle'});
++    const campo=page.locator('[data-incorporar-codigo]');const botao=page.locator('[data-incorporar-bloco] button');
++    await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async texto=>{window.copiado=texto;}}}));
++    await botao.click();assert.equal(await page.evaluate(()=>window.copiado),codigos[lang]);assert.equal(await botao.textContent(),t(lang).incorporar.copiado);
++    await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:()=>Promise.reject(Error('recusado'))}}));
++    await botao.click();assert(await campo.evaluate(c=>document.activeElement===c && c.selectionStart===0 && c.selectionEnd===c.value.length));
++    await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:undefined}));
++    await botao.click();assert(await campo.evaluate(c=>c.selectionEnd===c.value.length));
++    r.casos.push({lang,modo:'copia',clipboard:true,recusadoSeleciona:true,ausenteSeleciona:true});
++    await campo.evaluate(c=>{c.setSelectionRange(0,0);c.blur();});
++    await botao.evaluate((b,texto)=>{b.textContent=texto;},t(lang).incorporar.copiar);
++    if(capturar) for(const largura of [390,768,1024,1280,1600]){
++      await page.setViewportSize({width:largura,height:900});
++      const bloco=page.locator('[data-incorporar-bloco]');await bloco.scrollIntoViewIfNeeded();
++      assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
++      const ficheiro=`${pasta}/recibo-${lang}-${largura}.png`;
++      await page.screenshot({path:ficheiro});
++      r.capturas.push({ficheiro,largura,sha256:createHash('sha256').update(fs.readFileSync(ficheiro)).digest('hex')});
++    }
++    await ctx.close();
++  }
++} finally {await navegador.close();servidor.close();blog.close();}
++if(saida)fs.writeFileSync(saida,JSON.stringify(r,null,2)+'\n');
++console.log(JSON.stringify(r,null,2));
+diff --git a/tests/livro/indice.mjs b/tests/livro/indice.mjs
+index 2d774af5..d2a7fee4 100644
+--- a/tests/livro/indice.mjs
++++ b/tests/livro/indice.mjs
+@@ -87,6 +87,8 @@ import path from 'node:path';
+ import { execFileSync } from 'node:child_process';
+ import { fileURLToPath } from 'node:url';
+ import { parse } from 'node-html-parser';
++import { tirarCodigoConferido, lerPaginaComCodigo } from '../../scripts/incorporar-do-portao.mjs';
++import { matchPath } from '../../src/lib/routes.mjs';
+ 
+ /**
+  * ---------------------------------------------------------------------------
+@@ -422,7 +424,8 @@ const paginas = [];
+ const arvore = new Map();
+ const dom = (pag) => {
+   if (!arvore.has(pag.caminho)) {
+-    const doc = parse(pag.html);
++    const doc = lerPaginaComCodigo(pag.html);
++    tirarCodigoConferido(doc, matchPath(pag.rota));
+     for (const el of doc.querySelectorAll('script, style, template')) el.remove();
+     arvore.set(pag.caminho, doc.querySelector('body') ?? doc);
+   }
+@@ -1880,6 +1883,32 @@ const fim = async () => {
+   if (argv.includes('--prova')) {
+     provaLocalizadores();
+     provaPeriodos();
++    celula('ER1', 'o código só sai da prosa depois de conferido', (falhas) => {
++      const pag = paginas.find(p => p.html.includes('data-incorporar-codigo'));
++      const plantas = [];
++      if (!pag) { falhas.push('ER1 índice: falta um recibo para plantar.'); return ''; }
++      for (const nome of ['codigo-alterado', 'marca-fora-do-campo', 'comentario-no-codigo']) {
++        const literal = nome === 'comentario-no-codigo'
++          ? pag.html.replace(/(<textarea\b[^>]*>)/, '$1<!--planta-->') : pag.html;
++        const copia = lerPaginaComCodigo(literal);
++        if (nome === 'codigo-alterado') {
++          const campo = copia.querySelector('[data-incorporar-codigo]');
++          campo.set_content(campo.innerHTML + ' alterado');
++        } else if (nome === 'marca-fora-do-campo') copia.querySelector('p').setAttribute('data-incorporar-codigo', 'falso');
++        const mensagem = nome === 'marca-fora-do-campo'
++          ? 'ER1 código: marca fora do campo do recibo da própria linha.'
++          : 'ER1 código: o pedaço difere da linha, carácter a carácter.';
++        let queixa = '';
++        try { dom({ ...pag, caminho: pag.caminho + '#' + nome, html: copia.toString() }); }
++        catch (e) { queixa = e.message; }
++        const mordeu = queixa.split('\n').includes(mensagem);
++        plantas.push({ nome, mensagem, mordeu });
++        if (!mordeu) falhas.push(`ER1 índice: a planta ${nome} não deu a mensagem esperada.`);
++      }
++      medida.plantas_incorporacao = plantas;
++      console.log(JSON.stringify({ plantas_incorporacao: plantas }));
++      return 'A mesma leitura do índice recusa o campo alterado, o comentário e a marca fora dele.';
++    });
+   }
+   if (NAVEGADOR) await comNavegador();
+ 
+diff --git a/vercel.json b/vercel.json
+index 6186f91b..7da6a9aa 100644
+--- a/vercel.json
++++ b/vercel.json
+@@ -19,6 +19,13 @@
+       },
+       "continue": true
+     },
++    {
++      "src": "^/(?:livro-razao/(.*)\\.json|livro-razao\\.json|livro-razao\\.csv|incorporar\\.js)$",
++      "headers": {
++        "Access-Control-Allow-Origin": "*"
++      },
++      "continue": true
++    },
+     {
+       "src": "/(.*)",
+       "has": [

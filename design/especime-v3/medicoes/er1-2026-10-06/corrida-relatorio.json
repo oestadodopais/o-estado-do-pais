@@ -1,0 +1,7 @@
+{
+  "comando": "python3 scripts/leituras/conferir-relatorio.py design/especime-v3/medicoes/er1-2026-10-06/LEIA-ME.md design/especime-v3/medicoes/er1-2026-10-06 --json design/especime-v3/medicoes/er1-2026-10-06/relatorio-prova.json",
+  "inicio": "2026-10-06T14:45:43.325Z",
+  "fim": "2026-10-06T14:45:43.448Z",
+  "codigo": 0,
+  "sinal": null
+}

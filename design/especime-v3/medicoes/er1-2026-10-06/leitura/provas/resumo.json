@@ -1,0 +1,55 @@
+{
+  "comando": "node design/especime-v3/medicoes/er1-2026-10-06/fechar.mjs",
+  "base": "f5fb384e5c7a6664a137ada57667700ed5eace96",
+  "cabecaCodigo": "645ecde7ea61c044d7c0648b020c6392a48674ce",
+  "portoes": [
+    {
+      "nome": "build",
+      "codigo": 0,
+      "inicio": "2026-10-06T14:18:42Z",
+      "fim": "2026-10-06T14:22:36Z"
+    },
+    {
+      "nome": "verify",
+      "codigo": 0,
+      "inicio": "2026-10-06T14:22:36Z",
+      "fim": "2026-10-06T14:42:50Z"
+    },
+    {
+      "nome": "typecheck",
+      "codigo": 0,
+      "inicio": "2026-10-06T14:42:50Z",
+      "fim": "2026-10-06T14:42:50Z"
+    }
+  ],
+  "recibos": 6390,
+  "json": 3195,
+  "campos": 12,
+  "capturas": 30,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "semConfirmacao": 15,
+  "ausencias": {
+    "access_date": 365,
+    "reference_date": 22,
+    "source": 365,
+    "unit": 0
+  },
+  "bytesIncorporador": 3322,
+  "plantasLeitura": 5,
+  "casosNavegador": 19,
+  "cookies": 0,
+  "commits": [
+    "16ddc66c22876784284c7240ca1d9a5699ea4a08 ER1: incorporar cada número com fonte e atualização pelo JSON",
+    "0c63b7a496dab5a93b238625821897db3455cfbf ER1: guardar o blogue de ensaio e exercer a releitura no navegador",
+    "8252915ed97cc4a96eacc20881722201e470c17d ER1: conferir o código antes de ler a prosa no portão do índice",
+    "eeb282d97baa9dad851a8ba7e0df700a570bbc34 ER1: comparar o texto literal que o navegador copia",
+    "645ecde7ea61c044d7c0648b020c6392a48674ce ER1: conferir o campo usado pelo botão de cópia"
+  ],
+  "custo": "A linha tokens used não foi exposta nesta sessão."
+}
