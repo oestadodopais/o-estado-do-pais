@@ -58,6 +58,17 @@ const ipc = (pt, en, literal) => [
 
 export const SERIES_R4 = [
   {
+    serie: 'serie-obrigacoes-do-tesouro-10-anos-rendibilidade',
+    partes: [
+      diz('É a taxa de rendibilidade das obrigações do Estado', 'It is the yield on central government bonds', O('jd1-eurostat-obrigacoes', 'central government bond yields')),
+      diz(' português', ' in Portugal', S('document.edition', 'geo=PT')),
+      diz(' negociadas no mercado secundário, antes de impostos', ' traded on the secondary market, before tax', O('jd1-eurostat-obrigacoes', 'on the secondary market, gross of tax')),
+      diz(', com prazo restante próximo de dez anos', ', with a remaining maturity of around ten years', O('jd1-eurostat-obrigacoes', 'with a residual maturity of around 10 years')),
+      diz(', apresentada mês a mês', ', reported monthly', S('name', 'monthly data')),
+      liga('.', '.'),
+    ],
+  },
+  {
     serie: 'serie-cem-euros-de-2015-01',
     partes: [
       diz(

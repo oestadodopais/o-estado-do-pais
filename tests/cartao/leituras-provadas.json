@@ -33,9 +33,9 @@
       "o_que": "o bloco R4: as frases «o que é» das famílias das linhas sem cartão nacional (as do ano anterior e da União das medidas com cartão leem a frase do cartão contra a própria linha; as outras têm frase própria), e as partes das oito notas das medidas dos concelhos e da frase nova do limite da dívida, cada parte com o literal que a apoia nas linhas da família, numa origem declarada, num termo explicado em TERMOS_DOS_CARTOES ou, onde a fonte não diz o que a medida é, no nome do projeto"
     },
     {
-      "quem": "Claude Opus 5.5",
-      "quando": "2026-10-05",
-      "o_que": "o bloco R4, as séries: as frases «o que é» das dez séries no tempo sem linha do livro-razão, cada parte com o literal que a apoia num campo da própria série, numa origem declarada (com os rótulos das classes do IHPC e da unidade do índice de preços da habitação trimestral, lidos na API do Eurostat a 05.10.2026) ou, onde nenhum dos dois o diz, no nome que o projeto dá à série"
+      "quem": "Codex gpt-6-astra",
+      "quando": "2026-10-06",
+      "o_que": "Construção JD1: frases das famílias e da série, relidas contra as fontes seladas desta corrida. A leitura a frio pertence à entrega seguinte."
     }
   ],
   "comuns": [
@@ -12778,6 +12778,550 @@
       ]
     },
     {
+      "chaves": [
+        "juros-das-administracoes-publicas"
+      ],
+      "nome": {
+        "pt": "Juros das administrações públicas",
+        "en": "General government interest expenditure"
+      },
+      "origens": [
+        "jd1-ine-ambito"
+      ],
+      "folhas": [
+        {
+          "pt": "É a despesa em juros das administrações públicas, nas contas nacionais.",
+          "en": "It is interest expenditure by general government, in national accounts.",
+          "partes": [
+            {
+              "pt": "É a despesa em juros",
+              "en": "It is interest expenditure",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Juros"
+                }
+              ]
+            },
+            {
+              "pt": " das administrações públicas",
+              "en": " by general government",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-ine-ambito",
+                  "campo": "excerto",
+                  "literal": "Administrações Públicas"
+                }
+              ]
+            },
+            {
+              "pt": ", nas contas nacionais",
+              "en": ", in national accounts",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-ine-ambito",
+                  "campo": "excerto",
+                  "literal": "Sistema Europeu de Contas Nacionais e Regionais 2010"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "pib-nominal-notificacao-setembro"
+      ],
+      "nome": {
+        "pt": "PIB a preços de mercado, notificação de setembro",
+        "en": "GDP at market prices, September notification"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o produto interno bruto a preços de mercado.",
+          "en": "It is gross domestic product at market prices.",
+          "partes": [
+            {
+              "pt": "É o produto interno bruto a preços de mercado",
+              "en": "It is gross domestic product at market prices",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Produto Interno Bruto, a preços de mercado"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "juros-das-administracoes-publicas-pib"
+      ],
+      "nome": {
+        "pt": "Juros das administrações públicas em percentagem do PIB",
+        "en": "General government interest expenditure as a share of GDP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano, calculados pela casa a partir dos dois montantes da mesma notificação do INE.",
+          "en": "It is general government interest expenditure as a percentage of gross domestic product for the same year, calculated here from both amounts in the same INE notification.",
+          "partes": [
+            {
+              "pt": "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano",
+              "en": "It is general government interest expenditure as a percentage of gross domestic product for the same year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "Dividir os juros das administrações públicas pelo produto interno bruto a preços de mercado do mesmo ano"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "multiplicar por cem"
+                }
+              ]
+            },
+            {
+              "pt": ", calculados pela casa a partir dos dois montantes da mesma notificação do INE",
+              "en": ", calculated here from both amounts in the same INE notification",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "derivation",
+                  "literal": "na mesma notificação do INE"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "juros-das-administracoes-publicas-ue"
+      ],
+      "nome": {
+        "pt": "Juros das administrações públicas na União Europeia, em percentagem do PIB",
+        "en": "General government interest expenditure in the European Union, as a share of GDP"
+      },
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a despesa das administrações públicas em juros no conjunto da União Europeia, em percentagem do PIB.",
+          "en": "It is general government interest expenditure across the European Union, as a percentage of GDP.",
+          "partes": [
+            {
+              "pt": "É a despesa das administrações públicas em juros",
+              "en": "It is general government interest expenditure",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Interest, expenditure"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "General government"
+                }
+              ]
+            },
+            {
+              "pt": " no conjunto da União Europeia",
+              "en": " across the European Union",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "European Union - 27 countries (from 2020)"
+                }
+              ]
+            },
+            {
+              "pt": ", em percentagem do PIB",
+              "en": ", as a percentage of GDP",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "Percentage of gross domestic product (GDP)"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "juros-e-outros-encargos-execucao"
+      ],
+      "nome": {
+        "pt": "Juros e outros encargos pagos pelas administrações públicas, janeiro a agosto",
+        "en": "Interest and other charges paid by general government, January to August"
+      },
+      "origens": [
+        "jd1-eo-conta",
+        "jd1-eo-caixa"
+      ],
+      "folhas": [
+        {
+          "pt": "É a despesa consolidada das administrações públicas com juros e outros encargos, acumulada de janeiro a agosto, na ótica dos pagamentos.",
+          "en": "It is consolidated general government expenditure on interest and other charges, accumulated from January to August, on a payments basis.",
+          "partes": [
+            {
+              "pt": "É a despesa consolidada das administrações públicas com juros e outros encargos",
+              "en": "It is consolidated general government expenditure on interest and other charges",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Juros e outros encargos"
+                },
+                {
+                  "origem": "jd1-eo-conta",
+                  "campo": "excerto",
+                  "literal": "Conta consolidada das Administrações Públicas"
+                }
+              ]
+            },
+            {
+              "pt": ", acumulada de janeiro a agosto",
+              "en": ", accumulated from January to August",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-eo-conta",
+                  "campo": "excerto",
+                  "literal": "Período: janeiro a agosto"
+                }
+              ]
+            },
+            {
+              "pt": ", na ótica dos pagamentos",
+              "en": ", on a payments basis",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-eo-caixa",
+                  "campo": "excerto",
+                  "literal": "pagamentos e recebimentos ocorridos em determinado período"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "custo-do-stock-da-divida-direta"
+      ],
+      "nome": {
+        "pt": "Custo da dívida direta do Estado em circulação",
+        "en": "Cost of outstanding State direct debt"
+      },
+      "origens": [
+        "jd1-igcp-custo"
+      ],
+      "folhas": [
+        {
+          "pt": "É a relação entre os juros do subsetor Estado nas contas nacionais e o saldo médio da dívida direta do Estado no final de dois anos consecutivos.",
+          "en": "It is the ratio of State subsector interest costs in national accounts to average State direct debt outstanding at the end of two consecutive years.",
+          "partes": [
+            {
+              "pt": "É a relação entre os juros do subsetor Estado nas contas nacionais",
+              "en": "It is the ratio of State subsector interest costs in national accounts",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-igcp-custo",
+                  "campo": "excerto",
+                  "literal": "rácio entre juros do subsetor Estado na ótica de Contas Nacionais"
+                }
+              ]
+            },
+            {
+              "pt": " e o saldo médio da dívida direta do Estado no final de dois anos consecutivos",
+              "en": " to average State direct debt outstanding at the end of two consecutive years",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-igcp-custo",
+                  "campo": "excerto",
+                  "literal": "saldo médio da dívida direta do Estado no final dos anos t e t-1"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "custo-da-divida-emitida"
+      ],
+      "nome": {
+        "pt": "Custo da dívida emitida pelo Estado, até agosto",
+        "en": "Cost of State debt issued, through August"
+      },
+      "origens": [
+        "jd1-igcp-custo"
+      ],
+      "folhas": [
+        {
+          "pt": "É o custo médio da dívida emitida no ano, nos instrumentos BT, OT, OTRV e MTN, ponderado pelo montante e pelo prazo.",
+          "en": "It is the average cost of debt issued during the year through BT, OT, OTRV and MTN instruments, weighted by amount and maturity.",
+          "partes": [
+            {
+              "pt": "É o custo médio da dívida emitida no ano, nos instrumentos BT, OT, OTRV e MTN",
+              "en": "It is the average cost of debt issued during the year through BT, OT, OTRV and MTN instruments",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-igcp-custo",
+                  "campo": "excerto",
+                  "literal": "custo médio dos BT, OT, OTRV e MTN emitidos no ano correspondente"
+                }
+              ]
+            },
+            {
+              "pt": ", ponderado pelo montante e pelo prazo",
+              "en": ", weighted by amount and maturity",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-igcp-custo",
+                  "campo": "excerto",
+                  "literal": "ponderado pelo montante e maturidade"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "divida-direta-do-estado"
+      ],
+      "nome": {
+        "pt": "Dívida direta do Estado no fim de agosto",
+        "en": "State direct debt at the end of August"
+      },
+      "origens": [
+        "jd1-igcp-divida"
+      ],
+      "folhas": [
+        {
+          "pt": "É o total da dívida direta do Estado no fim de agosto.",
+          "en": "It is total State direct debt at the end of August.",
+          "partes": [
+            {
+              "pt": "É o total da dívida direta do Estado",
+              "en": "It is total State direct debt",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Dívida total"
+                },
+                {
+                  "origem": "jd1-igcp-divida",
+                  "campo": "excerto",
+                  "literal": "Dívida Direta do Estado"
+                }
+              ]
+            },
+            {
+              "pt": " no fim de agosto",
+              "en": " at the end of August",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "document.locator",
+                  "literal": "saldo em 31/ago/26"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "necessidades-brutas-de-financiamento"
+      ],
+      "nome": {
+        "pt": "Necessidades brutas de financiamento do Estado",
+        "en": "Gross State financing needs"
+      },
+      "origens": [
+        "jd1-igcp-financiamento"
+      ],
+      "folhas": [
+        {
+          "pt": "É o financiamento de que o Estado precisou, somando as necessidades líquidas às amortizações e anulações de dívida fundada, em contabilidade orçamental pública.",
+          "en": "It is the financing the State needed, adding net financing needs to redemptions and cancellations of funded debt, on a public budget accounting basis.",
+          "partes": [
+            {
+              "pt": "É o financiamento de que o Estado precisou, somando as necessidades líquidas às amortizações e anulações de dívida fundada",
+              "en": "It is the financing the State needed, adding net financing needs to redemptions and cancellations of funded debt",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "NECESSIDADES BRUTAS DE FINANCIAMENTO (1. + 2.)"
+                },
+                {
+                  "origem": "jd1-igcp-financiamento",
+                  "campo": "excerto",
+                  "literal": "1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO"
+                },
+                {
+                  "origem": "jd1-igcp-financiamento",
+                  "campo": "excerto",
+                  "literal": "2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada)"
+                }
+              ]
+            },
+            {
+              "pt": ", em contabilidade orçamental pública",
+              "en": ", on a public budget accounting basis",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-igcp-financiamento",
+                  "campo": "excerto",
+                  "literal": "contabilidade orçamental pública"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "emissoes-de-divida-fundada"
+      ],
+      "nome": {
+        "pt": "Emissões de dívida fundada do Estado no ano civil",
+        "en": "State funded debt issued during the calendar year"
+      },
+      "origens": [
+        "jd1-igcp-financiamento"
+      ],
+      "folhas": [
+        {
+          "pt": "É o montante de dívida fundada que o Estado emitiu no ano civil, em contabilidade orçamental pública.",
+          "en": "It is the amount of funded debt the State issued during the calendar year, on a public budget accounting basis.",
+          "partes": [
+            {
+              "pt": "É o montante de dívida fundada que o Estado emitiu no ano civil",
+              "en": "It is the amount of funded debt the State issued during the calendar year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada)"
+                },
+                {
+                  "origem": "jd1-igcp-financiamento",
+                  "campo": "excerto",
+                  "literal": "financiamento do Estado"
+                }
+              ]
+            },
+            {
+              "pt": ", em contabilidade orçamental pública",
+              "en": ", on a public budget accounting basis",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-igcp-financiamento",
+                  "campo": "excerto",
+                  "literal": "contabilidade orçamental pública"
+                }
+              ]
+            },
+            {
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "concelho": "populacao",
       "origens": [],
       "folhas": [
@@ -13414,6 +13958,85 @@
     }
   ],
   "series": [
+    {
+      "serie": "serie-obrigacoes-do-tesouro-10-anos-rendibilidade",
+      "origens": [
+        "jd1-eurostat-obrigacoes"
+      ],
+      "folhas": [
+        {
+          "pt": "É a taxa de rendibilidade das obrigações do Estado português negociadas no mercado secundário, antes de impostos, com prazo restante próximo de dez anos, apresentada mês a mês.",
+          "en": "It is the yield on central government bonds in Portugal traded on the secondary market, before tax, with a remaining maturity of around ten years, reported monthly.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É a taxa de rendibilidade das obrigações do Estado",
+              "en": "It is the yield on central government bonds",
+              "apoios": [
+                {
+                  "origem": "jd1-eurostat-obrigacoes",
+                  "campo": "excerto",
+                  "literal": "central government bond yields"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " português",
+              "en": " in Portugal",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "document.edition",
+                  "literal": "geo=PT"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " negociadas no mercado secundário, antes de impostos",
+              "en": " traded on the secondary market, before tax",
+              "apoios": [
+                {
+                  "origem": "jd1-eurostat-obrigacoes",
+                  "campo": "excerto",
+                  "literal": "on the secondary market, gross of tax"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": ", com prazo restante próximo de dez anos",
+              "en": ", with a remaining maturity of around ten years",
+              "apoios": [
+                {
+                  "origem": "jd1-eurostat-obrigacoes",
+                  "campo": "excerto",
+                  "literal": "with a residual maturity of around 10 years"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": ", apresentada mês a mês",
+              "en": ", reported monthly",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "monthly data"
+                }
+              ]
+            },
+            {
+              "classe": "liga",
+              "pt": ".",
+              "en": "."
+            }
+          ]
+        }
+      ]
+    },
     {
       "serie": "serie-cem-euros-de-2015-01",
       "origens": [],
