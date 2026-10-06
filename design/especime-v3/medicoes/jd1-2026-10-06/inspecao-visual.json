@@ -1,0 +1,131 @@
+{
+  "construcao": "e7a433e983ebdc69130d7d0c3b81c0b2539a3b83",
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/ine-pt-390.png",
+      "sha256": "8eeefef5a11c4a330372bc7c8d969ccc5c67f9b4ca4835318cac04e1067ea160",
+      "lingua": "pt",
+      "largura": 390
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/ine-pt-1280.png",
+      "sha256": "1619228b6cc992933e004e44d902055719ff387a3e0daa2478833ff3c6337760",
+      "lingua": "pt",
+      "largura": 1280
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/ine-en-390.png",
+      "sha256": "e6dd9f080c864ffadf1eb64d36d46da8887863a69c2f8fc59e93c9f5a2cddfba",
+      "lingua": "en",
+      "largura": 390
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/ine-en-1280.png",
+      "sha256": "bc76db43be09b4839cf8b505bca8699cb271a2da0631ac241cd7f4d71972c79a",
+      "lingua": "en",
+      "largura": 1280
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/eurostat-pt-390.png",
+      "sha256": "952cd67e1add7b63c6718568113950b207880118eb317d2fdf5fc7687af89d3d",
+      "lingua": "pt",
+      "largura": 390
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/eurostat-pt-1280.png",
+      "sha256": "9473006ac2b401c5db2a22c683a188a0af361f5fbebc687b090a4293072dc2a7",
+      "lingua": "pt",
+      "largura": 1280
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/eurostat-en-390.png",
+      "sha256": "8dc97de21282e6fcfe5da2ccac3c6b8d4cad9eb2efaba04fc1fbe26570677ad5",
+      "lingua": "en",
+      "largura": 390
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/eurostat-en-1280.png",
+      "sha256": "673ae06e561ec5eb1b84a3c3750210f7ca1683626eca4ab1b9f1b30613fc41c4",
+      "lingua": "en",
+      "largura": 1280
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/execucao-pt-390.png",
+      "sha256": "7e5cdebd871bdbbb8de0e13831166ddf5a29416fdab2c524d0e2c5dce8d2e18f",
+      "lingua": "pt",
+      "largura": 390
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/execucao-pt-1280.png",
+      "sha256": "2c390014355f39c5d9112d6b6399fecd275b8c0563d907ae4b4ae9a6224c0d04",
+      "lingua": "pt",
+      "largura": 1280
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/execucao-en-390.png",
+      "sha256": "4040b57bb21977c910ad058d069152a294c5368477ad6715bbe2e9c3d3facb24",
+      "lingua": "en",
+      "largura": 390
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/execucao-en-1280.png",
+      "sha256": "e1453b99a77fe2f69a979ea9bd4a99b0bd3b21ccf59aa9b36ffa0111688992d3",
+      "lingua": "en",
+      "largura": 1280
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/igcp-pt-390.png",
+      "sha256": "f36236603b88700909a987454d51945bc57087e7dca209b1530f4a46aa9606d6",
+      "lingua": "pt",
+      "largura": 390
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/igcp-pt-1280.png",
+      "sha256": "27a4badb09e52e7b22a5c6934a391684eba5fdaac52a9d44fc7fd0e25ebb0843",
+      "lingua": "pt",
+      "largura": 1280
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/igcp-en-390.png",
+      "sha256": "77cf867268e8230341bd9edd7814d97007ab055c2c85b43706c7ade781d9ed32",
+      "lingua": "en",
+      "largura": 390
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/igcp-en-1280.png",
+      "sha256": "f7c5431001caa97235d1bdd6b09e30cab6fa50c966098dcdc05bc5572c6d2dc3",
+      "lingua": "en",
+      "largura": 1280
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/serie-pt-390.png",
+      "sha256": "e87ab9afa8ad1b7538aa4e4e74d4f8be0b3fd84b7d92b0bdfb93f0052444f2b1",
+      "lingua": "pt",
+      "largura": 390
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/serie-pt-1280.png",
+      "sha256": "0a84e4a5435cc7e3e0b728dc526da39b1b4c73850d993b707ba5f006f1c8adf5",
+      "lingua": "pt",
+      "largura": 1280
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/serie-en-390.png",
+      "sha256": "9b1666fd13455fded161a30bda0b6842c3ee19a1ba2dd55d50bcf5cf62b9fb03",
+      "lingua": "en",
+      "largura": 390
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/jd1-2026-10-06/serie-en-1280.png",
+      "sha256": "bc7a176a6fc54f2d707436224d168e02a74128dbcb9310fcb6b70f6f264447a1",
+      "lingua": "en",
+      "largura": 1280
+    }
+  ],
+  "resultado": "Sem problemas novos observados na disposição das páginas inspecionadas.",
+  "observacoes": [
+    "Os recibos mantêm o valor, a unidade, a frase e a proveniência legíveis nas duas línguas.",
+    "Nos recibos PDF, o rótulo da abertura fica acima do endereço no telemóvel.",
+    "A tabela mensal da série conserva o deslocamento horizontal dentro da sua caixa; o guião conferiu a abertura dos pedidos e o deslocamento pelo teclado."
+  ]
+}

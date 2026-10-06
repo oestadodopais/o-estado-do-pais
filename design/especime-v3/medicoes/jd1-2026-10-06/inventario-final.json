@@ -1,0 +1,16 @@
+{
+  "leituras": [
+    {
+      "html": "dist/livro-razao/index.html",
+      "sha256": "88344e331b537beb14469bf1f3d3659f3cd425f7c0f2d33bcbaed2fca215d9a7",
+      "antes": "| conteudo | 3 209 afirmações · 368 de 3 209 calculadas · 2 767 de 3 209 linhas de concelhos | k2 | viva | JD1: contagem relida no HTML do livro. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |",
+      "depois": "| conteudo | 3 209 afirmações · 368 de 3 209 calculadas · 2 767 de 3 209 linhas de concelhos | k2 | viva | JD1: contagem relida no HTML do livro. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |"
+    },
+    {
+      "html": "dist/en/ledger/index.html",
+      "sha256": "76f0733fbfcd2698b573f73900cb48bea107562384ae8bdb6363f234e86a75db",
+      "antes": "| conteudo | 3 209 claims · 368 of 3 209 calculated · 2 767 of 3 209 municipality rows | k2 | viva | JD1: contagem relida no HTML do livro. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |",
+      "depois": "| conteudo | 3 209 claims · 368 of 3 209 calculated · 2 767 of 3 209 municipality rows | k2 | viva | JD1: contagem relida no HTML do livro. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |"
+    }
+  ]
+}
