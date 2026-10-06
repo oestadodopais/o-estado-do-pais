@@ -1,0 +1,17 @@
+{
+  "o_que_e": "A construção da cabeça de partida (557844fe), feita numa worktree à parte e já removida, de onde saem as vezes de cada destino repetido por página (l1-destinos-557844fe.json, pelo contar-destinos-l1.mjs).",
+  "cabeca": "557844fead8f8890ef1b892c8601207d280e794a",
+  "estado_seguido": "",
+  "construcao": {
+    "astro": 0,
+    "stamp_version": 0,
+    "cartoes": 0
+  },
+  "regua": {
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 0,
+    "l1_paginas": 2714
+  },
+  "inicio": "2026-10-06T03:42:11Z",
+  "fim": "2026-10-06T03:43:19Z"
+}
