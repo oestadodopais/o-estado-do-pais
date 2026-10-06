@@ -4075,7 +4075,7 @@ páginas são **conteúdo**, como «Índice» e «Privacidade», porque são o o
 | --- | --- | --- | --- | --- |
 | conteudo | Para perceber | ex1 | viva | O título do bloco que fecha «O que se passa» na primeira página (`primeira.paraPerceber`), com a porta da explicação mais recente e a da leitura da semana. |
 | conteudo | To understand | ex1 | viva | O mesmo título na edição inglesa. |
-| conteudo | Explicações | ex1 | viva | O título da lista das explicações, a migalha dela e a porta dela no índice (`nav.explicacoes`). |
+| conteudo | Explicações | ex1 | viva | O título da lista das explicações, a migalha dela, a porta dela no índice e, desde o EX1-b (06.10.2026, a I211), a porta do rodapé (`nav.explicacoes`). |
 | conteudo | Explainers | ex1 | viva | O mesmo título na edição inglesa, e o nome da secção do índice que a abre. |
 | conteudo | As explicações | ex1 | viva | O título da lista na página das explicações e o nome da secção do índice (`explicacoes.listaK`, `indice.seccoes.explicacoes`). |
 | conteudo | The explainers | ex1 | viva | O título da lista na edição inglesa. |

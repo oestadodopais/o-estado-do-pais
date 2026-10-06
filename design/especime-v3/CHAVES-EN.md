@@ -1512,7 +1512,7 @@ As chaves novas em `src/i18n/strings.mjs`, lidas do ficheiro por guião na const
 
 | chave | pt | en | nota |
 |---|---|---|---|
-| `nav.explicacoes` | «Explicações» | «Explainers» | o `<h1>` da lista das explicações, a migalha dela e a porta dela no índice |
+| `nav.explicacoes` | «Explicações» | «Explainers» | o `<h1>` da lista das explicações, a migalha dela, a porta dela no índice e, desde o EX1-b (06.10.2026), a porta do rodapé, a seguir à da agenda |
 | `primeira.paraPerceber` | «Para perceber» | «To understand» | o título do bloco que fecha «O que se passa» na primeira página |
 | `indice.seccoes.explicacoes` | «As explicações» | «Explainers» | o nome da secção do índice que abre a lista |
 | `explicacoes.metaDescription` | «O que mudou nos números do país na última semana, e explicações em português corrente de como os números se ligam.» | «What changed in the country’s figures over the last week, and explainers in everyday words on how the figures fit together.» | a descrição do `<head>` da lista; o inglês diz «everyday words» e não «plain language», porque a frase retirada «Language» morde dentro de uma frase nova |
