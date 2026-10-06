@@ -406,6 +406,10 @@ export function conferirAuditoriaDasLeituras({
   for (const d of Object.values(perguntas)) for (const o of d?.origens ?? []) usadas.add(o);
   for (const d of Object.values(paineis)) for (const o of d?.origens ?? []) usadas.add(o);
   for (const o of origensCitadas(blocos)) usadas.add(o);
+  /* R4 (05.10.2026): as frases das famílias e das séries, na mesma auditoria, também usam origens; uma origem que só
+     apoia uma delas está usada (a célula das famílias, `familias.mjs`, confere-lhe o literal). */
+  for (const o of origensCitadas(auditoria.familias ?? [])) usadas.add(o);
+  for (const o of origensCitadas(auditoria.series ?? [])) usadas.add(o);
   for (const chave of Object.keys(origens)) {
     if (!usadas.has(chave)) erros.push(`K17 · origem «${chave}»: está declarada e não apoia pergunta, painel, leitura ou bloco da primeira página nenhum`);
   }
@@ -480,12 +484,14 @@ export function corteIndependente(partes) {
  * @param {string} id @param {'pt'|'en'} lang @param {{ anterior: string|null, ue: string|null }} regua
  * @param {Map<string, any>} [linhas]
  * @param {[number, number] | null} [fatia]  só os pedaços de topo entre dois índices (o corte, acima)
+ * @param {string} [linhaId]  a linha cujo valor, período e sinal a leitura diz (bloco R4: a metade «o que é» do cartão
+ *   no recibo de outra linha da mesma medida); por omissão, a do cartão
  */
-export function leituraIndependente(id, lang, regua, linhas = loadClaims(), fatia = null) {
+export function leituraIndependente(id, lang, regua, linhas = loadClaims(), fatia = null, linhaId = id) {
   const d = /** @type {Record<string, any>} */ (LEITURAS_DAS_MEDIDAS)[id];
   if (!d?.[lang]) throw new Error(`não há leitura declarada para ${id} (${lang})`);
   const camaras = id === LEITURA_DAS_CAMARAS;
-  const linha = camaras ? null : linhas.get(id);
+  const linha = camaras ? null : linhas.get(linhaId);
   const v = linha ? numero(linha.value) : null;
   const ref = camaras ? null : REFERENCIAS_DAS_MEDIDAS.get(id)?.limiar ?? null;
   const recontagem = camaras ? recontagemDasCamaras() : null;
@@ -508,7 +514,7 @@ export function leituraIndependente(id, lang, regua, linhas = loadClaims(), fati
     if (Array.isArray(p)) return p.map((x) => texto(x, regista)).join('');
     if (typeof p === 'string') return p;
     if ('claim' in p) {
-      const alvo = p.claim === 'proprio' ? id : p.claim === 'anterior' ? regua.anterior : regua.ue;
+      const alvo = p.claim === 'proprio' ? linhaId : p.claim === 'anterior' ? regua.anterior : regua.ue;
       const l = alvo ? linhas.get(alvo) : null;
       if (!l) throw new Error(`a leitura de ${id} cita a linha «${p.claim}», que a régua do cartão não rende`);
       return `${l.value}${p.sufixo ?? ''}${l.source_flag === 'e' ? ' (' + (lang === 'en' ? l.source_flag_note_en : l.source_flag_note) + ')' : (l.source_flag === 'p' || (l.source_flag === '&' && l.source_flag_note === 'Dado provisório')) ? provisorio : ''}`;

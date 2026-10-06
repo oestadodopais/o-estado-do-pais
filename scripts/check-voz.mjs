@@ -76,6 +76,8 @@ import { fileURLToPath } from 'node:url';
 import { parse, NodeType } from 'node-html-parser';
 import { conferirPaginaDaLeitura } from '../tests/cartao/leituras.mjs';
 import { conferirBlocosDaPagina, idsDosBlocos } from '../tests/inicio/blocos.mjs';
+import { verificaExplicacoesDoVeredicto } from './pais-veredicto.mjs';
+import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
 import { conferirPalavrasDaExplicacaoNaPagina } from '../tests/explicacoes/explicacao.mjs';
 import { conferirPalavrasDaSemanaNaPagina } from '../tests/explicacoes/semana.mjs';
@@ -560,12 +562,22 @@ function textoSemOrigens(html) {
  * @param {boolean} [cartoesConferidos] falso quando a K17 recusou a página
  * @param {boolean} [blocosConferidos] verdadeiro só quando a célula da primeira página aceitou a página
  */
-function semLeiturasConferidas(raiz, cartoesConferidos = true, blocosConferidos = false) {
+/*
+ * E AS EXPLICAÇÕES DOS VALORES DE REFERÊNCIA SAEM DO ARAME, e só conferidas (bloco R4, 05.10.2026, o ponto 4 do brief).
+ * Cada explicação por baixo do veredicto é a metade «o que é» da leitura auditada do cartão da medida (a K17 confere-a
+ * no cartão, e a V1-R4 confere que é a mesma, carácter a carácter) e uma frase do lado cuja palavra a conta escolhe e a
+ * V1-R4 reconta. «Subiu» na definição do custo unitário do trabalho é o que a medida é, e não uma tendência por provar.
+ * Uma explicação que a V1-R4 não aceite fica dentro do arame, e o autoteste abaixo prova as duas metades.
+ *
+ * @param {boolean} [explicacoesConferidas] verdadeiro só quando a V1-R4 aceitou a página
+ */
+function semLeiturasConferidas(raiz, cartoesConferidos = true, blocosConferidos = false, explicacoesConferidas = false) {
   /* A LEITURA DO PAÍS JÁ NÃO SAI DAQUI (bloco PP1, 28.09.2026). Saía sem conferência nenhuma nesta
      função, porque a lista fechada do país a comparava inteira; a leitura saiu da primeira página e essa
      comparação saiu com ela. Uma leitura que volte fica dentro do arame, e o `check:pais` fecha a
      construção (L1). */
   if (blocosConferidos) for (const b of raiz.querySelectorAll('main [data-bloco]')) b.remove();
+  if (explicacoesConferidas) for (const e of raiz.querySelectorAll('main [data-veredicto-explica]')) e.remove();
   if (!cartoesConferidos) return raiz;
   for (const l of raiz.querySelectorAll('main article.cartao-medida [data-cartao-leitura]')) l.remove();
   return raiz;
@@ -630,6 +642,12 @@ function mordidas(texto, lingua) {
     const noBloco = `<html><body><main><section data-bloco="x"><p>${termos.map((t) => `o valor ${t} nesta frase.`).join(' ')}</p></section></main></body></html>`;
     const viuNoBlocoConferido = mordidas(textoSemOrigens(semLeiturasConferidas(parse(noBloco), true, true).toString()), lingua).length;
     const viuNoBlocoPorConferir = mordidas(textoSemOrigens(semLeiturasConferidas(parse(noBloco), true, false).toString()), lingua).length;
+    /* R4: uma explicação conferida pela V1-R4 sai do arame; a mesma sem a conferência não sai. */
+    const naExplicacao = `<html><body><main><ul><li data-veredicto-explica="x"><p>${termos.map((t) => `o valor ${t} nesta frase.`).join(' ')}</p></li></ul></main></body></html>`;
+    const viuNaExplicacaoConferida = mordidas(textoSemOrigens(semLeiturasConferidas(parse(naExplicacao), true, false, true).toString()), lingua).length;
+    const viuNaExplicacaoPorConferir = mordidas(textoSemOrigens(semLeiturasConferidas(parse(naExplicacao), true, false, false).toString()), lingua).length;
+    if (viuNaExplicacaoConferida) erros.push(`o autoteste do arame da classe falhou em «${lingua}»: ${viuNaExplicacaoConferida} termo(s) morderam dentro de uma explicação conferida.`);
+    if (viuNaExplicacaoPorConferir !== termos.length) erros.push(`o autoteste do arame da classe falhou em «${lingua}»: uma explicação que a V1-R4 não conferiu isentou ${termos.length - viuNaExplicacaoPorConferir} termo(s).`);
     if (viuNoBlocoConferido) erros.push(`o autoteste do arame da classe falhou em «${lingua}»: ${viuNoBlocoConferido} termo(s) morderam dentro de um bloco conferido.`);
     if (viuNoBlocoPorConferir !== termos.length) erros.push(`o autoteste do arame da classe falhou em «${lingua}»: um bloco que a célula não conferiu isentou ${termos.length - viuNoBlocoPorConferir} termo(s).`);
     if (viuForaDoCartao !== termos.length) {
@@ -687,7 +705,12 @@ for (const r of ROTAS_DA_CLASSE) {
     erros.push(`um bloco de «O que se passa» só sai do arame da classe conferido, e a célula da primeira página recusou-o em ${r.rota}: ${e}`);
   }
   if (!parse(cru).querySelectorAll('main [data-bloco]').length) erros.push(`${r.rota} não tem bloco nenhum de «O que se passa»: o arame não mediu os blocos.`);
-  const foraDaLeitura = semLeiturasConferidas(parse(cru), k17.erros.length === 0, blocos.erros.length === 0);
+  /* R4: as explicações dos valores de referência, conferidas pela V1-R4 na mesma corrida. */
+  const explicacoes = verificaExplicacoesDoVeredicto(parse(cru), documentoDosAssuntos(path.join(RAIZ, 'dist'), /** @type {'pt'|'en'} */ (r.lingua)), /** @type {'pt'|'en'} */ (r.lingua));
+  for (const e of explicacoes) {
+    erros.push(`uma explicação dos valores de referência só sai do arame da classe conferida, e a V1-R4 recusou-a em ${r.rota}: ${e}`);
+  }
+  const foraDaLeitura = semLeiturasConferidas(parse(cru), k17.erros.length === 0, blocos.erros.length === 0, explicacoes.length === 0);
   for (const p of mordidas(textoSemOrigens(foraDaLeitura.toString()), r.lingua)) {
     const cadeia = r.lingua === 'pt' ? p.pt : p.en;
     erros.push(

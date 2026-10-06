@@ -45,7 +45,6 @@
 import Base from '../layouts/Base.astro';
 import Claim from '../components/Claim.astro';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
-import NomeDaMedida from '../components/NomeDaMedida.astro';
 import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
 import HistoricoDaLinha from '../components/HistoricoDaLinha.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
@@ -94,11 +93,25 @@ import { t } from '../i18n/strings.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { CONJUNTO } from '../lib/conjunto.mjs';
 import { LANGS } from '../lib/routes.mjs';
+import { familiaDaLinha, oQueEDaLinha, nomeNoRecibo, lugarNoRecibo, nomeDaFonteNoRecibo } from '../lib/o-que-e-o-numero.mjs';
+import Marcador from '../components/Marcador.astro';
+import { partesDaLeitura } from '../lib/leitura-da-medida.mjs';
 import '../styles/linha.css';
 
 const { lang = 'pt', id } = Astro.props;
 const s = t(lang);
 const claim = getClaim(id);
+/* O QUE É ESTE NÚMERO (bloco R4, 05.10.2026, os pontos 1 e 2 do brief): o nome do título, o lugar quando o nome é o de
+   uma medida dos 308, o nome com que a fonte publica a medida, e a frase, todos pelo resolvedor
+   (`src/lib/o-que-e-o-numero.mjs`), que fecha a construção se uma linha ficar sem frase ou sem nome. Uma linha com
+   cartão nacional mostra também a metade da leitura que compara, como o cartão a mostra à vista: é ela que diz o que
+   o sinal quer dizer onde ele decide, e o lado do valor de referência. */
+const familiaRecibo = familiaDaLinha(id);
+const nomeRecibo = nomeNoRecibo(id, lang);
+const lugarRecibo = lugarNoRecibo(id, lang);
+const nomeDaFonte = nomeDaFonteNoRecibo(id);
+const oQueE = oQueEDaLinha(id, lang);
+const comparacaoDoCartao = familiaRecibo.tipo === 'cartao' ? partesDaLeitura(id, lang).comparacao : null;
 /* As perguntas das medidas fora dos painéis europeus têm as origens no
    recibo que o cartão abre. A célula 8.4 confere a pergunta e cada campo das
    origens; as medidas dos painéis conservam o seu lugar anterior. */
@@ -604,7 +617,12 @@ const atribuicaoPecas = [
         lingua: linguaDaFonte(claim.source, lang),
       }
     : null,
-  presente(claim.document?.title)
+  /* R4-b (06.10.2026, o achado 10 da leitura a frio): O TÍTULO DO DOCUMENTO DIZ-SE UMA VEZ NO CORPO DO RECIBO. Desde o
+     R4 a cabeça diz «O nome na fonte «…»», com a porta para o documento; repeti-lo aqui era pôr mais uma porta para o
+     mesmo sítio no mesmo ecrã (o recibo do PIB passou de três a quatro), que é o que a L1 do `check:lugar` conta. Onde
+     a cabeça diz o título, a frase diz quem publicou e a edição; onde a cabeça diz o rótulo da fonte (uma linha sem
+     título de documento), não há título para tirar. */
+  presente(claim.document?.title) && nomeDaFonte?.campo !== 'document.title'
     ? {
         k: s.livro.linha.publicadoEm,
         campo: 'document.title',
@@ -694,7 +712,67 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
 >
   <div class="linha-cabeca">
     <span class="eyebrow">{s.livro.linha.eyebrow}</span>
-    <h1 class="linha-valor">
+    {/* O NOME, O NOME DA FONTE E O QUE O NÚMERO É, ANTES DO NÚMERO (bloco R4, 05.10.2026, o ponto 1 e a decisão 3 do
+        brief). O título do recibo é o nome que o projeto dá à medida, e para as linhas sem nome do projeto o nome da
+        família (`nomeNoRecibo()`), com o concelho a seguir quando o nome é o de uma medida dos 308; por baixo, entre
+        aspas e na língua da fonte, o nome com que a fonte a publica; logo a seguir, «O que é este número», a mesma
+        frase que o cartão da medida mostra (`oQueEDaLinha()`): a ordem muda, nada se perde. A marca do nome é a da
+        escada da casa, e a régua da voz confere-a contra o ficheiro que a sustenta; a frase leva `data-o-que-e`, que o
+        portão de HTML conta em cada recibo e a K17 do `check:cartao` confere contra a auditoria. */}
+    <h1 class="linha-titulo">
+      <span
+        class="linha-titulo-nome"
+        data-nome={nomeRecibo.fonte === 'familia' ? (familiaRecibo.tipo === 'concelho' && familiaRecibo.chave !== 'limite' ? 'concelho' : 'familia') : nomeRecibo.fonte}
+        data-de-linha={id}
+        data-de-familia={nomeRecibo.familia ?? undefined}
+      >{nomeRecibo.texto}</span>{lugarRecibo && (
+        <>
+          <span class="linha-titulo-separador" aria-hidden="true">{' · '}</span>
+          <span class="linha-titulo-lugar" data-lugar-da-linha={lugarRecibo.slug}>{lugarRecibo.nome}</span>
+        </>
+      )}
+    </h1>
+    {nomeDaFonte && (
+      <p class="linha-nome-da-fonte">
+        <span class="linha-campo-k">{s.livro.linha.nomeNaFonteK}</span>{' «'}
+        {/* O TÍTULO ABRE O DOCUMENTO QUANDO A LINHA DIZ ONDE ELE ESTÁ (a regra do F1.4, Major 9): o mesmo nome não fica
+            na mesma página uma vez clicável e outra morto, e o portão de HTML confere o destino contra `document.url`. */}
+        {nomeDaFonte.campo === 'document.title' && typeof claim.document?.url === 'string' ? (
+          <a class="ligacao-externa" href={claim.document.url} rel="noopener noreferrer external"><CampoDaLinha
+            id={id}
+            campo="document.title"
+            valor={nomeDaFonte.valor}
+            lang={lang}
+            lingua={linguaDoTituloDoDocumento(nomeDaFonte.valor, lang)}
+          /></a>
+        ) : (
+          <CampoDaLinha
+            id={id}
+            campo={nomeDaFonte.campo}
+            valor={nomeDaFonte.valor}
+            lang={lang}
+            lingua={nomeDaFonte.campo === 'name' ? linguaDoRotuloDaFonte(nomeDaFonte.valor, lang) : linguaDoTituloDoDocumento(nomeDaFonte.valor, lang)}
+          />
+        )}{'»'}
+      </p>
+    )}
+    <div class="linha-o-que-e" data-o-que-e={id} data-o-que-e-tipo={oQueE.tipo} data-o-que-e-familia={oQueE.chave}>
+      <p class="linha-o-que-e-k" data-voz>{s.cartao.oQueE}</p>
+      <p class="linha-o-que-e-frase" data-o-que-e-parte="o-que-e"><Frase partes={oQueE.pedacos} lang={lang} selos={false} />{oQueE.porConfirmar && (
+        <span class="linha-por-confirmar" data-por-confirmar-na-fonte={id}>{' '}<Marcador lang={lang} class="marcador-da-frase" /></span>
+      )}</p>
+      {/* R4-b (06.10.2026): A PARTE DO SINAL, quando a frase lê a metade «o que é» de um cartão contra esta linha e o
+          sinal vive na metade que compara (a posição de investimento internacional do ano anterior). E O MARCADOR,
+          acima, quando uma parte da frase está por confirmar na fonte: o marcador da casa, com a classe que diz à L1
+          que é um marcador obrigatório (`marcador-da-frase`), e que a K17 confere onde a auditoria o declara. */}
+      {oQueE.sinal && (
+        <p class="linha-o-que-e-frase" data-o-que-e-parte="sinal">{oQueE.sinal.join('')}</p>
+      )}
+      {comparacaoDoCartao && (
+        <p class="linha-o-que-e-frase" data-o-que-e-parte="comparacao"><Frase partes={comparacaoDoCartao.pedacos} lang={lang} selos={false} /></p>
+      )}
+    </div>
+    <p class="linha-valor">
       <Claim id={id} lang={lang} as="span" class="linha-valor-num" plano>
       {/* O ESPAÇO ENTRE O VALOR E A UNIDADE É TEXTO DA PÁGINA (bloco R1,
           23.09.2026, I143). A folha separava-os com o `gap` de um `flex`, e o
@@ -712,10 +790,9 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
       />
       </Fragment>
       </Claim>
-    </h1>
-    {claim.study === 'oe-2026' && (
-      <p class="linha-nota"><NomeDaMedida linha={claim} lang={lang} class="" /></p>
-    )}
+    </p>
+    {/* O NOME DO ORÇAMENTO POR BAIXO DO VALOR SAIU (bloco R4, 05.10.2026): era o nome do projeto da linha, e passou a
+        ser o título do recibo, por cima de tudo. */}
     {ressalvaPublicada && (
       <p class="linha-nota" id="ressalva">
         <CampoDaLinha id={id} campo="ressalva" valor={ressalvaPublicada} lang={lang} />

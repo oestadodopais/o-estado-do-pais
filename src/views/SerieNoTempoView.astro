@@ -42,6 +42,10 @@ import PontoDaSerie from '../components/serie/PontoDaSerie.astro';
 import CampoDaSerie from '../components/serie/CampoDaSerie.astro';
 import DataDaSerie from '../components/serie/DataDaSerie.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
+import Frase from '../components/Frase.astro';
+import Marcador from '../components/Marcador.astro';
+import { oQueEDaSerie } from '../lib/o-que-e-o-numero.mjs';
+import { comparacaoDoUltimoPonto } from '../lib/formas/ultimo-ponto-da-serie.mjs';
 import { allClaims, parsePtNumber } from '../lib/ledger.mjs';
 import { getSerie, pontosDaSerie } from '../lib/series.mjs';
 import { NOMES_DAS_SERIES, PALAVRAS_DAS_MARCAS_DO_INE, PALAVRAS_DA_PERIODICIDADE, FIGURAS_INDEXADAS } from '../data/series-no-tempo.mjs';
@@ -119,6 +123,14 @@ const ultimo = pontos[pontos.length - 1];
 const valorDoUltimo = eIndice ? parsePtNumber(String(ultimo.valor)) : null;
 if (eIndice && valorDoUltimo === null) throw new Error(`série «${id}»: o último ponto do índice não é um número.`);
 const ladoDoIndice = valorDoUltimo === null ? null : valorDoUltimo > 100 ? st.indiceAcima : valorDoUltimo < 100 ? st.indiceAbaixo : st.indiceIgual;
+/* R4 (05.10.2026, o ponto 3 do brief): o que é a série (a frase da sua linha, ou a escrita e provada para ela) e o que
+   o último ponto quer dizer em relação ao mesmo período de há um ano, ou ao ponto anterior quando a série não o tem.
+   Os períodos e os valores vão pelas suas marcas, a palavra do lado é a que `comparacaoDoUltimoPonto()` escolhe, e a
+   unidade vai pela marca do campo, menos num índice, cuja frase do RP4-m já diz o que a base quer dizer. */
+const oQueEDaSerieAqui = oQueEDaSerie(id, lang);
+const ultimoComparado = comparacaoDoUltimoPonto(serie);
+const cadencia = /** @type {'mensal'|'trimestral'|'semestral'|'anual'} */ (String(serie.periodicidade));
+const unidadeNaFrase = !eIndice;
 ---
 
 <Base lang={lang} path={path} title={titulo} description={descricao}>
@@ -135,6 +147,12 @@ const ladoDoIndice = valorDoUltimo === null ? null : valorDoUltimo > 100 ? st.in
         </p>
       )
     }
+    <div class="linha-o-que-e" data-o-que-e-da-serie={id} data-o-que-e-origem={oQueEDaSerieAqui.origem} data-o-que-e-linha={oQueEDaSerieAqui.linha ?? undefined}>
+      <p class="linha-o-que-e-k" data-voz>{st.oQueEK}</p>
+      <p class="linha-o-que-e-frase"><Frase partes={oQueEDaSerieAqui.pedacos} lang={lang} selos={true} />{oQueEDaSerieAqui.porConfirmar && (
+        <span class="linha-por-confirmar" data-por-confirmar-na-fonte={id}>{' '}<Marcador lang={lang} class="marcador-da-frase" /></span>
+      )}</p>
+    </div>
     <p class="serie-periodo">
       <span class="linha-campo-k">{st.periodosK}</span>{' '}
       <DataDaSerie serie={id} campo="primeiro_periodo" valor={String(serie.primeiro_periodo)} lang={lang} />
@@ -162,6 +180,14 @@ const ladoDoIndice = valorDoUltimo === null ? null : valorDoUltimo > 100 ? st.in
             {', '}<span>{s.livro.linha.publicadoEm}</span>{' «'}
             <CampoDaSerie serie={id} campo="document.title" valor={documento.title} lingua={marcaDaLingua} />
             {'» ('}<CampoDaSerie serie={id} campo="document.edition" valor={documento.edition} />{').'}
+          </p>
+        )
+      }
+
+      {
+        ultimoComparado && (
+          <p class="serie-indice-frase serie-ultimo-frase" data-serie-ultimo={id} data-serie-ultimo-com={ultimoComparado.com} data-serie-ultimo-lado={ultimoComparado.lado}>
+            {st.ultimoEm[cadencia]}<DataDaSerie serie={id} campo={`pontos.${ultimoComparado.ultimo.indice}.periodo`} valor={ultimoComparado.ultimo.periodo} lang={lang} />{st.ultimoFoi}<PontoDaSerie serie={id} chave={ultimoComparado.ultimo.periodo} />{unidadeNaFrase && <>{' '}<CampoDaSerie serie={id} campo="unit" valor={unidade.texto} lingua={unidade.lingua} /></>}{ultimoComparado.ultimo.bandeira && <>{' ('}<span data-serie-ultimo-marca={`${id}#${ultimoComparado.ultimo.periodo}`}>{palavrasDasMarcas[ultimoComparado.ultimo.bandeira]}</span>{')'}</>}{st.ultimoLado[ultimoComparado.lado]}{st.ultimoReferencia[ultimoComparado.com === 'ha-um-ano' ? cadencia : 'anterior']}{st.ultimoArtigo[cadencia]}<DataDaSerie serie={id} campo={`pontos.${ultimoComparado.outro.indice}.periodo`} valor={ultimoComparado.outro.periodo} lang={lang} />{st.ultimoQuando}<PontoDaSerie serie={id} chave={ultimoComparado.outro.periodo} />{unidadeNaFrase && <>{' '}<CampoDaSerie serie={id} campo="unit" valor={unidade.texto} lingua={unidade.lingua} /></>}{ultimoComparado.outro.bandeira && <>{' ('}<span data-serie-ultimo-marca={`${id}#${ultimoComparado.outro.periodo}`}>{palavrasDasMarcas[ultimoComparado.outro.bandeira]}</span>{')'}</>}{st.ultimoFim}
           </p>
         )
       }

@@ -56,7 +56,8 @@ import { parse } from 'node-html-parser';
 
 import { lerSeriesDoPortao } from '../../scripts/series-do-portao.mjs';
 import { DOMINIO_DAS_MEDIDAS } from '../../src/data/dominios.mjs';
-import { FIGURAS_INDEXADAS } from '../../src/data/series-no-tempo.mjs';
+import { FIGURAS_INDEXADAS, PALAVRAS_DAS_MARCAS_DO_INE } from '../../src/data/series-no-tempo.mjs';
+import { PALAVRAS_DA_FAIXA } from '../../src/data/faixa-da-uniao.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
@@ -679,6 +680,7 @@ function celulaDosRecibos(s, htmlPorLingua) {
     }
     pontosPorLingua[lang] = vistos.map(([k, v, , m]) => `${k}=${v}${m ? ` ${m}` : ''}`).join('|');
     erros.push(...celulaDoIndiceEDaFigura(s, root, lang, quem));
+    erros.push(...celulaDoUltimoPonto(s, root, lang, quem));
   }
   if (pontosPorLingua.pt !== undefined && pontosPorLingua.en !== undefined && pontosPorLingua.pt !== pontosPorLingua.en) {
     erros.push(`check:series · ${s.id}: as duas edições do recibo não têm os mesmos pontos com os mesmos valores.`);
@@ -731,6 +733,65 @@ function celulaDoIndiceEDaFigura(s, root, lang, quem) {
   const base = BASE_DA_FIGURA[s.periodicidade];
   const dataDaBase = legenda?.querySelector('.serie-indexada-frase [data-nonledger="data-da-linha"]');
   if (texto(dataDaBase) !== periodoNaPagina(base, lang)) erros.push(`${quem}: a legenda da figura indexada não diz o período de base ${base}.`);
+  return erros;
+}
+
+/* O QUE O ÚLTIMO PONTO QUER DIZER (bloco R4, 05.10.2026, o ponto 3 do brief), lido com conta própria: o mesmo período
+   de há um ano pela regra desta célula (o ano menos um, com o mês, o trimestre ou o semestre), e o ponto anterior
+   quando a série não tem esse; o lado pela comparação em decimais exatos; as marcas dos dois pontos e das duas datas;
+   e o texto inteiro, recomposto das cadeias da casa, dos períodos pela regra da casa (a cópia desta célula), dos
+   valores da série, da unidade que a cabeça do recibo rende (o portão de HTML confere-a contra a série) e das palavras
+   declaradas da marca de cada ponto. Nenhum algarismo fora das marcas. */
+function haUmAnoAqui(p) {
+  const m = /^(\d{4})(-(?:\d{2}|T[1-4]|S[12]))?$/.exec(String(p));
+  return m ? `${Number(m[1]) - 1}${m[2] ?? ''}` : null;
+}
+function ladoAqui(a, b) {
+  const k = Math.max(a.casas, b.casas);
+  const x = a.n * 10n ** BigInt(k - a.casas);
+  const y = b.n * 10n ** BigInt(k - b.casas);
+  return x > y ? 'maior' : x < y ? 'menor' : 'igual';
+}
+function celulaDoUltimoPonto(s, root, lang, quem) {
+  const erros = [];
+  const st = t(lang).livro.serieNoTempo;
+  const frases = root.querySelectorAll('[data-serie-ultimo]');
+  const pontos = s.pontos ?? [];
+  if (pontos.length < 2) {
+    if (frases.length) erros.push(`${quem}: uma série com menos de dois pontos tem a frase do último ponto.`);
+    return erros;
+  }
+  const iU = pontos.length - 1;
+  const alvo = haUmAnoAqui(pontos[iU].periodo);
+  const iA = pontos.findIndex((p) => String(p.periodo) === alvo);
+  const com = iA >= 0 ? 'ha-um-ano' : 'anterior';
+  const iO = iA >= 0 ? iA : iU - 1;
+  const u = pontos[iU];
+  const o = pontos[iO];
+  const du = decimal(u.valor);
+  const dO = decimal(o.valor);
+  if (!du || !dO) return [`${quem}: o último ponto ou o ponto com que se compara não se lê como número.`];
+  const lado = ladoAqui(du, dO);
+  const f = frases[0];
+  if (frases.length !== 1 || f.getAttribute('data-serie-ultimo') !== s.id) return [`${quem}: o recibo tem ${frases.length} frase(s) do que o último ponto quer dizer, e tem uma.`];
+  if (f.getAttribute('data-serie-ultimo-com') !== com) erros.push(`${quem}: a frase do último ponto diz comparar com «${f.getAttribute('data-serie-ultimo-com')}», e esta conta compara com «${com}».`);
+  if (f.getAttribute('data-serie-ultimo-lado') !== lado) erros.push(`${quem}: a frase do último ponto diz o lado «${f.getAttribute('data-serie-ultimo-lado')}», e esta conta dá «${lado}».`);
+  const citados = f.querySelectorAll('[data-ponto]').map((e) => e.getAttribute('data-ponto'));
+  if (citados.join(',') !== `${s.id}#${u.periodo},${s.id}#${o.periodo}`) erros.push(`${quem}: a frase do último ponto compara com outro período: cita ${citados.join(', ') || 'nenhum ponto'}, e esta conta compara ${u.periodo} com ${o.periodo}.`);
+  const campos = f.querySelectorAll('[data-nonledger="data-da-linha"]').map((e) => e.getAttribute('data-de-campo'));
+  if (campos.join(',') !== `pontos.${iU}.periodo,pontos.${iO}.periodo`) erros.push(`${quem}: as datas da frase do último ponto não são as dos dois pontos comparados.`);
+  const eIndice = /^índice \(base \d{4} = 100\)$/.test(String(s.unit));
+  const unidade = eIndice ? '' : ` ${texto(root.querySelector('.serie-periodo [data-serie-campo="unit"]'))}`;
+  const marcas = s.source === 'INE' ? PALAVRAS_DAS_MARCAS_DO_INE[lang] : PALAVRAS_DA_FAIXA[lang].ressalvas;
+  const marca = (p) => (p.bandeira ? ` (${marcas[p.bandeira]})` : '');
+  const per = s.periodicidade;
+  const esperado = `${st.ultimoEm[per]}${periodoNaPagina(u.periodo, lang)}${st.ultimoFoi}${u.valor}${unidade}${marca(u)}` +
+    `${st.ultimoLado[lado]}${st.ultimoReferencia[com === 'ha-um-ano' ? per : 'anterior']}${st.ultimoArtigo[per]}` +
+    `${periodoNaPagina(o.periodo, lang)}${st.ultimoQuando}${o.valor}${unidade}${marca(o)}${st.ultimoFim}`;
+  if (semEspacos(texto(f)) !== semEspacos(esperado)) erros.push(`${quem}: a frase do último ponto não é a que esta conta escreve: «${texto(f)}» contra «${esperado.replace(/\s+/g, ' ')}».`);
+  const copia = parse(f.outerHTML);
+  for (const el of copia.querySelectorAll('[data-ponto], [data-nonledger="data-da-linha"], [data-serie-campo]')) el.remove();
+  if (/\d/.test(texto(copia))) erros.push(`${quem}: a frase do último ponto tem algarismos fora das marcas.`);
   return erros;
 }
 
@@ -882,6 +943,47 @@ if (PROVA && noTempo.length) {
         const root = parse(rpt);
         const itens = root.querySelectorAll('[data-serie-indexada-linha]');
         if (itens.length === 2) { const a = itens[0].outerHTML; const b = itens[1].outerHTML; itens[0].replaceWith(b); itens[1].replaceWith(a); }
+        return { S6: celulaDosRecibos(sr, { pt: root.toString(), en: ren }) };
+      });
+    }
+  }
+  /* R4: as plantas da frase do último ponto, sobre os recibos construídos e sobre uma cópia da série. */
+  if (temDist && series.has('serie-ipc-rendas-variacao-homologa')) {
+    const sid = 'serie-ipc-rendas-variacao-homologa';
+    const sr = series.get(sid);
+    const rpt = reciboEmDisco(sid, 'pt');
+    const ren = reciboEmDisco(sid, 'en');
+    const stp = t('pt').livro.serieNoTempo;
+    if (rpt && ren) {
+      planta('S6', 'a frase do último ponto com o lado trocado (R4)', 'não é a que esta conta escreve', () => {
+        const root = parse(rpt);
+        const f = root.querySelector('[data-serie-ultimo]');
+        f?.set_content(f.innerHTML.replace(stp.ultimoLado.maior, stp.ultimoLado.menor));
+        return { S6: celulaDosRecibos(sr, { pt: root.toString(), en: ren }) };
+      });
+      planta('S6', 'a frase do último ponto com o período errado (R4)', 'compara com outro período', () => {
+        /* O ponto de comparação passa a ser o mês anterior, com o valor e a data dele: a frase continua coerente
+           por fora, e só a conta do mesmo mês de há um ano a recusa. */
+        const root = parse(ren);
+        const f = root.querySelector('[data-serie-ultimo]');
+        const anterior = sr.pontos[sr.pontos.length - 2];
+        const pontos = f.querySelectorAll('[data-ponto]');
+        const datas = f.querySelectorAll('[data-nonledger="data-da-linha"]');
+        pontos[1].setAttribute('data-ponto', `${sid}#${anterior.periodo}`);
+        pontos[1].set_content(anterior.valor);
+        datas[1].setAttribute('data-de-campo', `pontos.${sr.pontos.length - 2}.periodo`);
+        datas[1].set_content(periodoNaPagina(anterior.periodo, 'en'));
+        return { S6: celulaDosRecibos(sr, { pt: rpt, en: root.toString() }) };
+      });
+      planta('S6', 'a série sem o ponto de há um ano, e a frase ainda a comparar com ele (R4)', 'esta conta compara com «anterior»', () => {
+        const copia = structuredClone(sr);
+        const alvo = haUmAnoAqui(copia.pontos[copia.pontos.length - 1].periodo);
+        copia.pontos = copia.pontos.filter((p) => p.periodo !== alvo);
+        return { S6: celulaDosRecibos(copia, { pt: rpt, en: ren }) };
+      });
+      planta('S6', 'um recibo de série sem a frase do último ponto (R4)', 'frase(s) do que o último ponto quer dizer', () => {
+        const root = parse(rpt);
+        root.querySelector('[data-serie-ultimo]')?.remove();
         return { S6: celulaDosRecibos(sr, { pt: root.toString(), en: ren }) };
       });
     }

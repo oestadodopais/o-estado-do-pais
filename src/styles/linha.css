@@ -485,3 +485,51 @@
     font-size: 12px;
   }
 }
+
+/* -----------------------------------------------------------------------------
+ * O NOME, O NOME DA FONTE E O QUE O NÚMERO É, ANTES DO NÚMERO (bloco R4, 05.10.2026)
+ * -----------------------------------------------------------------------------
+ * O título do recibo passou a ser o nome da medida, na letra e no tamanho do título de uma série (`serie.css`), e o
+ * valor desce para logo a seguir à frase, com o tamanho que tinha. O nome da fonte é aparelho: letra de instrumento,
+ * pequena, na cor de apoio. A frase é leitura: a letra da prosa, a 62ch, e o rótulo por cima com a forma dos rótulos
+ * do aparelho, como «O que é este número» no resumo da dobra de um cartão. */
+.linha-titulo {
+  font-family: var(--f-prosa);
+  font-weight: 500;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 2px 0 0;
+  overflow-wrap: break-word;
+}
+.linha-titulo-separador,
+.linha-titulo-lugar {
+  color: var(--muted);
+}
+.linha-nome-da-fonte {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 68ch;
+  overflow-wrap: anywhere;
+}
+.linha-o-que-e {
+  display: grid;
+  gap: 4px;
+  max-width: 62ch;
+  margin-top: 4px;
+}
+.linha-o-que-e-k {
+  font-family: var(--f-instr);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.linha-o-que-e-frase {
+  font-family: var(--f-prosa);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink);
+}

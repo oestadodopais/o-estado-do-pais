@@ -1,0 +1,41 @@
+[90m  prova: 16 estragos plantados, 16 vistos; o cartão são a 0; a régua com as duas comparações de uma medida, a série bienal, a ausência da linha da União e uma chave que não se inventa; as duas testemunhas do valor de referência com um par bom e dois maus; a mesma série com um par que bate e um que não bate; K9 nacional com valor, direção e testemunha plantados; K15 palavras e cor, nas duas línguas, nas quatro formas e na igualdade; K6 com as glosas declaradas e com cada uma das duas trocada; K1 com o nome do limite legal declarado, antigo e reposto nas duas línguas; K13 sobre 4 medidas e 12 linhas com grupo etário, com a declaração em vigor a passar e cinco plantas a morder (o limite trocado, dois algarismos soltos fora do intervalo, uma medida sem definição, a etiqueta a contradizer o filtro e duas linhas da mesma medida com grupos diferentes), mais a catraca vazia nas duas metades; K16 com a declaração em vigor a passar e 17 plantas a morder, a primeira o defeito da leitura a frio[0m
+
+  A RÉGUA DO CARTÃO DE UMA MEDIDA · bloco P2
+
+[90m    páginas lidas                    7901[0m
+[90m    cartões                          5246 (2623 pt, 2623 en)[0m
+[90m    com nome                         5246 de 5246[0m
+[90m    com a frase do que medem         5078 de 5246 com frase[0m
+[90m    com régua                        780 de 5246 com régua[0m
+[90m    linhas sem nome, como linha do livro-razão             48 (42 com a aritmética escrita)[0m
+[90m    itens «período anterior», pares conferidos             166[0m
+[90m    «Governo Constitucional»         1 pt · 1 en[0m
+[90m    legenda da marca                 2 página(s)[0m
+[90m    nome na língua da fonte          0 (com a marca «lang»)[0m
+[90m    unidade na outra língua          0 (a exceção da I92)[0m
+[90m    o marcador em português          4 (a exceção da IDENTIDADE §6)[0m
+[90m    valores de régua sem marca própria                    884 (a porta é a do cartão)[0m
+[90m    tetos na linha do estado (P4-c)                       614 (a porta é a aritmética do recibo)[0m
+[90m    valores de referência, as duas testemunhas comparadas  15[0m
+[90m      com a testemunha discordante declarada e inteira     2 (5 de 5 plantas a morder)[0m
+[90m    cartões com veredicto conferido (K15)                 74[0m
+[90m    a União com a ressalva (K14): cartões e recibos        4 · 4[0m
+[90m    cartões com a faixa da União (K1, K18)                 20[0m
+[90m    cartões de concelho com a faixa do concelho (K1)       2464[0m
+[90m    faixas refeitas dos pontos (K18)                       20 · 28 planta(s) a morder[0m
+[90m    ressalvas nas pontas e ordinais (K18, UE1b)            4 · 27 · 8 planta(s) das palavras a morder[0m
+[90m    empates num extremo, em memória (K18, UE1c)            6 planta(s) a morder[0m
+[90m    a ordem do cartão (K19): cartões, com dobra, da faixa  5248 · 5092 · 42 · 7 de 7 plantas a morder[0m
+[90m    medidas com nome oficial no recibo                    11[0m
+[90m    perguntas com cada pedaço apoiado (K16)               42 (151 pedaços, 226 apoios, 72 origens seladas no motor)[0m
+[90m    leituras dos cartões nacionais (K17)                 96 em 96 cartões (49 declarações auditadas, 1159 partes, 461 apoios, 104 origens, 208 ramos recontados, 18 de 18 plantas a morder)[0m
+[90m    linhas com frase «O que é este número» (K17, R4)      3195 (48 pelo cartão, 2772 pela medida dos concelhos, 375 pela família; 181 entradas auditadas, 293 partes, 455 apoios; 128 com todas as partes na fonte, 53 com alguma parte só da casa)[0m
+[90m      recibos com a frase conferida                       6390 de 6390 (348 com o marcador «por confirmar na fonte», 2 com a parte do sinal; 39 entradas e 174 linhas por confirmar) · 25 de 25 plantas a morder[0m
+[90m      séries no tempo com frase «o que é»                 24 (14 pela linha, 10 com frase auditada, 3 com todas as partes na fonte); recibos de série conferidos 48 de 48[0m
+[90m    medidas com grupo etário fixado na linha (K13)         4[0m
+[90m      linhas dessas medidas, todas conferidas               12[0m
+[90m      delas, na catraca declarada (I132, vazia)           0[0m
+[90m    ficheiros do motor               referencias.json sim · nomes.json sim[0m
+
+[32m  ✓ 5246 cartões, todos com nome; nenhum com um bloco a mais, um rótulo de recibo ou a chave à vista; 5078 de 5246 com frase e 780 de 5246 com régua, e os 166 períodos anteriores da mesma série e da mesma unidade[0m
+

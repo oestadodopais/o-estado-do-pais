@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T03:28:29+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/data/o-que-e-das-familias.mjs",
+   "descricao": "a frase da família da água não faturada ganha um algarismo («, em 2024»), contra a regra das frases sem algarismos e contra a auditoria",
+   "sha256_antes": "4a4b8bcdf8eba6aeacbe412ee883156140b7376f75950667d59f5c3475c710cf",
+   "sha256_depois": "5b6e2d2ea5a0df7891ff39e45776df2cde78c20935afd641718dcb538ed23ed2",
+   "contexto_antes": "na União Europeia\",\n      \"en\": \"Early school leaving in the European Union\"\n    }\n  },\n  \"agua-nao-faturada-portugal\": {\n    \"frase\": {\n      \"pt\": [\n        \"É a parte da água que não é faturada, pelo relatório anual dos serviços de águas e resíduos.\"\n      ],\n      \"en\": [\n        \"It is the share of water that is not billed, from the annual report on water and waste services.\"\n      ]\n    }\n  },\n  \"alente",
+   "contexto_depois": "na União Europeia\",\n      \"en\": \"Early school leaving in the European Union\"\n    }\n  },\n  \"agua-nao-faturada-portugal\": {\n    \"frase\": {\n      \"pt\": [\n        \"É a parte da água que não é faturada, pelo relatório anual dos serviços de águas e resíduos, em 2024.\"\n      ],\n      \"en\": [\n        \"It is the share of water that is not billed, from the annual report on water and waste services.\"\n      ]\n    }\n  },\n  \"alente"
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/livro-razao/abrantes-populacao-2025/index.html",
+   "descricao": "o recibo da população de Abrantes construído mostra a frase de outra família (a dívida), contra a linha",
+   "sha256_antes": "09e218a02c23f4ccb3507a81297011845c02228018c65e58ca3394a73d1a5c26",
+   "sha256_depois": "05747a6b9088850b54b3a2d9be1c45c2cb9557c80075895e672e739ea7b31c32",
+   "contexto_antes": "data-o-que-e=\"abrantes-populacao-2025\" data-o-que-e-tipo=\"concelho\" data-o-que-e-familia=\"populacao\"><p class=\"linha-o-que-e-k\" data-voz>O que é este número</p><p class=\"linha-o-que-e-frase\" data-o-que-e-parte=\"o-que-e\">Estima quantas pessoas vivem no concelho (população residente), pela estimativa anual do INE.</p></div><p class=\"linha-valor\"><span data-claim=\"abrantes-populacao-2025\" class=\"claim-value linha-valor-num\">36 106</span> <span class=\"campo-valor linha-valor-u",
+   "contexto_depois": "data-o-que-e=\"abrantes-populacao-2025\" data-o-que-e-tipo=\"concelho\" data-o-que-e-familia=\"populacao\"><p class=\"linha-o-que-e-k\" data-voz>O que é este número</p><p class=\"linha-o-que-e-frase\" data-o-que-e-parte=\"o-que-e\">É o que o município deve no fim do ano, pela conta da Direção-Geral das Autarquias Locais.</p></div><p class=\"linha-valor\"><span data-claim=\"abrantes-populacao-2025\" class=\"claim-value linha-valor-num\">36 106</span> <span class=\"campo-valor linha-valor-u"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/lib/formas/ultimo-ponto-da-serie.mjs",
+   "descricao": "o lado da comparação do último ponto fica trocado no módulo (maior e menor invertidos), contra os recibos construídos",
+   "sha256_antes": "ba1b08bc56d9b8fd77222abf89d2bf66a2b2d8602cc6982d99456174afb11105",
+   "sha256_depois": "c8767e42871ec3884428484218e25c63f00fa39d264e24f74544383ccb4ef12b",
+   "contexto_antes": "new Error(`série «${serie?.id}»: o último ponto ou o ponto com que se compara não é um número.`);\n  return { ultimo: ponto(iUltimo), outro: ponto(iOutro), com, lado: a > b ? 'maior' : a < b ? 'menor' : 'igual' };\n}\n",
+   "contexto_depois": "new Error(`série «${serie?.id}»: o último ponto ou o ponto com que se compara não é um número.`);\n  return { ultimo: ponto(iUltimo), outro: ponto(iOutro), com, lado: a > b ? 'menor' : a < b ? 'maior' : 'igual' };\n}\n"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 357 linhas pela família onde a soma das três contagens só dá 3 195 com 375",
+   "sha256_antes": "7b3d44fec3cb5988ade36b2358003c812cdf455e0a98893555e16debd655547b",
+   "sha256_depois": "3704df87d805f06b8b85a714724bb5849f807d44c09d391ca8327db127df6c34",
+   "contexto_antes": "ntas `r4-recibo-sem-frase`, `r4-frase-de-outra-linha` e `r4-titulo-sem-nome` mordem |\n| 2 · as famílias sem frase ganham uma, provada | 3 195 linhas com frase: 48 pelo cartão, 2 772 pela medida dos concelhos, 375 pela família; 181 entradas na auditoria, 293 partes, 455 apoios | 0 linhas sem frase; a K17 morde 17 de 17 plantas, entre elas «uma linha sem frase» e «uma frase com um alg",
+   "contexto_depois": "ntas `r4-recibo-sem-frase`, `r4-frase-de-outra-linha` e `r4-titulo-sem-nome` mordem |\n| 2 · as famílias sem frase ganham uma, provada | 3 195 linhas com frase: 48 pelo cartão, 2 772 pela medida dos concelhos, 357 pela família; 181 entradas na auditoria, 293 partes, 455 apoios | 0 linhas sem frase; a K17 morde 17 de 17 plantas, entre elas «uma linha sem frase» e «uma frase com um alg"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/index.html",
+   "descricao": "a primeira página construída diz que a dívida pública está abaixo do valor de referência, contra o número e a referência",
+   "sha256_antes": "a922dec4ea9edc8659debb511c870f6e92f3e299b6364f841589a701cacb2bd3",
+   "sha256_depois": "234859a3aa5fcb98f33c77948e148e745fcb52c6c61a9ab5d3cf7069876806f1",
+   "contexto_antes": "icas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.</p><p class=\"pp-veredicto-lado\" data-veredicto-lado-frase=\"divida-publica-2025\">Portugal está acima do valor de referência da Comissão Europeia, que é <span data-nonledger=\"limiar-do-quadro\" data-referencia=\"divida-publica-2025\">60</span> %.</p></li><li class=\"pp-veredicto-item\" data-veredicto-explica=\"posicao-de-investimento-internacional-2025\" data-veredicto-lado=\"abaixo\"><p class=\"pp",
+   "contexto_depois": "icas devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.</p><p class=\"pp-veredicto-lado\" data-veredicto-lado-frase=\"divida-publica-2025\">Portugal está abaixo do valor de referência da Comissão Europeia, que é <span data-nonledger=\"limiar-do-quadro\" data-referencia=\"divida-publica-2025\">60</span> %.</p></li><li class=\"pp-veredicto-item\" data-veredicto-explica=\"posicao-de-investimento-internacional-2025\" data-veredicto-lado=\"abaixo\"><p class=\"pp"
+  }
+ ]
+}

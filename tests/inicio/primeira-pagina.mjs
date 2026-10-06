@@ -21,6 +21,9 @@ import { fileURLToPath } from 'node:url';
 import { conferirAuditoriaDosBlocos, conferirBlocosDaPagina, plantasDosBlocos, idsDosBlocos, ENTRADAS, parse } from './blocos.mjs';
 import { conferirEntradas, plantasDasEntradas } from './entradas.mjs';
 import { plantasDaReguaDasFrases } from './regua-das-frases.mjs';
+import { verificaExplicacoesDoVeredicto } from '../../scripts/pais-veredicto.mjs';
+import { portasObrigatoriasB2 } from '../../scripts/portas-b2.mjs';
+import { documentoDosAssuntos } from './paginas-dos-assuntos.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.resolve(process.env.OEDP_DIST ?? path.join(RAIZ, 'dist'));
@@ -59,6 +62,71 @@ for (const p of paginas) {
 const e = conferirEntradas(DIST);
 erros.push(...e.erros);
 relatorio.entradas = e.contas;
+
+/* V1-R4 (bloco R4, 05.10.2026): as plantas da explicação dos valores de referência, sobre cópias em memória da
+   primeira página: o lado trocado (a marca e as palavras, de maneira que só a conta da célula o recusa), uma medida de
+   dentro tirada da porta dobrada, e uma frase «o que é» que não é a do cartão. A célula corre limpa antes. */
+const plantasDoVeredicto = [];
+if (process.argv.includes('--prova')) {
+  for (const lang of /** @type {const} */ (['pt', 'en'])) {
+    const html = fs.readFileSync(path.join(DIST, lang === 'pt' ? '' : 'en', 'index.html'), 'utf8');
+    const indice = documentoDosAssuntos(DIST, lang);
+    const limpa = verificaExplicacoesDoVeredicto(parse(html), indice, lang);
+    if (limpa.length) erros.push(`V1-R4 · a primeira página limpa (${lang}) já tem erros: ${limpa[0]}`);
+    const corre = (/** @type {string} */ nome, /** @type {(r: any) => void} */ estraga, /** @type {RegExp} */ mordida) => {
+      const r = parse(html);
+      estraga(r);
+      const e = verificaExplicacoesDoVeredicto(r, indice, lang);
+      plantasDoVeredicto.push({ nome: `${nome} (${lang})`, mordeu: e.some((x) => mordida.test(x)), queixa: e[0] ?? null });
+    };
+    corre('o lado trocado na explicação de um valor de referência', (r) => {
+      const item = r.querySelector('[data-veredicto-fora] [data-veredicto-lado="acima"]');
+      const frase = item.querySelector('[data-veredicto-lado-frase]');
+      item.setAttribute('data-veredicto-lado', 'abaixo');
+      frase.set_content(frase.innerHTML.replace(lang === 'pt' ? 'acima do valor' : 'above the', lang === 'pt' ? 'abaixo do valor' : 'below the'));
+    }, /a explicação diz o lado «abaixo», e a conta desta célula dá «acima»/);
+    corre('uma medida de dentro fora da porta dobrada', (r) => {
+      const porta = r.querySelector('details[data-veredicto-dentro]');
+      const item = porta.querySelector('[data-veredicto-explica]');
+      const copia = item.outerHTML;
+      item.remove();
+      r.querySelector('[data-veredicto-fora]').insertAdjacentHTML('beforeend', copia);
+    }, /está dentro e a explicação está fora da porta dobrada/);
+    corre('a frase «o que é» de outra medida', (r) => {
+      const a = r.querySelector('[data-veredicto-fora] [data-veredicto-o-que-e]');
+      const b = r.querySelector('details[data-veredicto-dentro] [data-veredicto-o-que-e]');
+      a.set_content(b.innerHTML);
+    }, /a frase «o que é» não é a do cartão/);
+    /* R4-b (o achado 6): a parte do sinal da posição de investimento internacional, tirada e trocada pela do outro ramo. */
+    corre('a parte do sinal tirada da explicação', (r) => {
+      r.querySelector('[data-veredicto-sinal="posicao-de-investimento-internacional-2025"]').remove();
+    }, /não diz o que o sinal quer dizer/);
+    corre('a parte do sinal do outro ramo', (r) => {
+      r.querySelector('[data-veredicto-sinal="posicao-de-investimento-internacional-2025"]').set_content(lang === 'pt' ? 'Positiva quer dizer que o país tem no exterior mais do que lhe deve.' : 'Positive means the country owns abroad more than it owes.');
+    }, /não diz o que o sinal quer dizer/);
+    /* R4-b (o achado 10): uma porta a mais dentro de uma explicação é recusada pela V1-R4, e então nenhum selo das
+       explicações sai da contagem da L1; com a página limpa, o selo do valor dos preços da habitação sai, e só ele. */
+    corre('uma porta a mais numa explicação', (r) => {
+      r.querySelector('[data-veredicto-explica="precos-da-habitacao-2025"] [data-veredicto-o-que-e]').insertAdjacentHTML('beforeend', ` <a href="${lang === 'pt' ? '/livro-razao/precos-da-habitacao-2025' : '/en/ledger/precos-da-habitacao-2025'}">porta</a>`);
+    }, /uma porta que não é o selo do valor da própria linha/);
+    {
+      const limpaDoc = parse(html);
+      const selo = limpaDoc.querySelector('[data-veredicto-explica="precos-da-habitacao-2025"] [data-veredicto-o-que-e] a.src-chip');
+      const sai = Boolean(selo) && portasObrigatoriasB2(limpaDoc, 'home', lang, indice).portas.has(selo);
+      const estragada = parse(html);
+      const alvo = estragada.querySelector('[data-veredicto-explica="precos-da-habitacao-2025"] [data-veredicto-o-que-e]');
+      alvo.insertAdjacentHTML('beforeend', ` <a href="${lang === 'pt' ? '/livro-razao/precos-da-habitacao-2025' : '/en/ledger/precos-da-habitacao-2025'}">porta</a>`);
+      const seloEstragado = alvo.querySelector('a.src-chip');
+      const extra = alvo.querySelectorAll('a').at(-1);
+      const b2 = portasObrigatoriasB2(estragada, 'home', lang, indice).portas;
+      plantasDoVeredicto.push({ nome: `o selo de uma explicação sai da L1 só com a explicação conferida (${lang})`, mordeu: sai && !b2.has(seloEstragado) && !b2.has(extra), queixa: sai ? null : 'o selo da página limpa não saiu da contagem' });
+    }
+  }
+  for (const x of plantasDoVeredicto) {
+    relatorio.plantas.push(x);
+    if (!x.mordeu) erros.push(`V1-R4 · a planta «${x.nome}» não mordeu com a queixa esperada (disse: ${x.queixa ?? 'nada'})`);
+  }
+}
 
 if (process.argv.includes('--prova')) {
   for (const x of [...plantasDosBlocos(DIST), ...plantasDasEntradas(DIST), ...plantasDaReguaDasFrases(DIST)]) {

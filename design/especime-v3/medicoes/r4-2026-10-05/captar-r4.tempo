@@ -1,0 +1,1 @@
+node $M/captar-r4.mjs > $M/captar-r4.log 2>&1  10.52s user 2.48s system 37% cpu 34.623 total

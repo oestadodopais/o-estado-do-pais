@@ -1506,6 +1506,43 @@ Uma chave nova em `src/i18n/strings.mjs`, e três textos de dados ao lado, que n
 | `PRIVACIDADE.texto` (`src/data/privacidade.mjs`) | o texto do §5, decisão 2, do brief, à letra | a edição fiel, frase a frase | onde a frase portuguesa diz o mesmo que a nota aprovada a 03.10.2026, o inglês é o que o diretor aprovou com ela («What is kept», «The data is held on servers in the European Union», «A decided suggestion is deleted after ninety days; an undecided one after a year», «you may also complain to the Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt)»); onde mudou, diz o mesmo que a frase nova («what remains of it, for one hour, is a mark from which it cannot be recovered», «the services that host the site and the box», «O Estado do País is responsible for this data», «This site does not use cookies or track who reads it»). O nome do projeto fica em português, como em todas as páginas inglesas |
 | `PRIVACIDADE.descricao` | a primeira frase do texto | a primeira frase da edição inglesa | a descrição do `<head>`: o que a página é |
 
+## R4 · as palavras correntes em cada número, 05.10.2026
+
+Trinta e uma chaves novas em `src/i18n/strings.mjs`, todas com as duas edições, lidas do ficheiro na construção do bloco. Os espaços das pontas de cada cadeia contam: as peças juntam-se aos componentes (o período, o valor, a unidade, o valor de referência) sem espaço a mais. Quatro têm o mesmo valor nas duas edições e entram nas identidades aceites pela razão das outras pontuações: `livro.serieNoTempo.ultimoFim` e `home.veredicto.fimLado`, que são o ponto final, e `livro.serieNoTempo.ultimoArtigo.mensal` e `livro.serieNoTempo.ultimoArtigo.anual`, que são vazias nas duas, porque nenhuma das línguas põe artigo antes de um mês ou de um ano.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `livro.linha.nomeNaFonteK` | «O nome na fonte» | «The name at the source» | o rótulo do nome com que a fonte publica a medida, por baixo do título do recibo de uma linha (o ponto 1) |
+| `livro.serieNoTempo.oQueEK` | «O que é esta série» | «What this series is» | o rótulo da frase «o que é» no recibo de uma série (o ponto 3) |
+| `livro.serieNoTempo.ultimoEm.mensal` | «Em » | «In » | a abertura da frase do último ponto; depois entra o período, pelo seu componente; o trimestre e o semestre levam artigo nas duas línguas |
+| `livro.serieNoTempo.ultimoEm.trimestral` | «No » | «In the » | idem |
+| `livro.serieNoTempo.ultimoEm.semestral` | «No » | «In the » | idem |
+| `livro.serieNoTempo.ultimoEm.anual` | «Em » | «In » | idem |
+| `livro.serieNoTempo.ultimoFoi` | «, o valor foi » | «, the value was » | depois entra o valor do último ponto, pelo seu componente, com a unidade pela marca do campo (menos num índice) |
+| `livro.serieNoTempo.ultimoLado.maior` | «: mais do que » | «: more than » | a palavra do lado, escolhida pela comparação do último ponto com o ponto de comparação; a forma é a do cartão da remuneração («Mais do que no mesmo trimestre de há um ano») |
+| `livro.serieNoTempo.ultimoLado.menor` | «: menos do que » | «: less than » | idem |
+| `livro.serieNoTempo.ultimoLado.igual` | «: o mesmo que » | «: the same as » | idem |
+| `livro.serieNoTempo.ultimoReferencia.mensal` | «no mesmo mês de há um ano, » | «in the same month a year earlier, » | com que ponto se compara: o mesmo período de há um ano, ou, quando a série não o tem, o ponto anterior (a decisão 4) |
+| `livro.serieNoTempo.ultimoReferencia.trimestral` | «no mesmo trimestre de há um ano, » | «in the same quarter a year earlier, » | idem |
+| `livro.serieNoTempo.ultimoReferencia.semestral` | «no mesmo semestre de há um ano, » | «in the same half-year a year earlier, » | idem |
+| `livro.serieNoTempo.ultimoReferencia.anual` | «no ano anterior, » | «in the previous year, » | idem |
+| `livro.serieNoTempo.ultimoReferencia.anterior` | «no ponto anterior da série, » | «at the previous point of the series, » | idem |
+| `livro.serieNoTempo.ultimoArtigo.mensal` | (vazia) | (vazia) | o artigo antes do período de comparação: os meses e os anos não o levam nas duas línguas, e por isso a cadeia é vazia nas duas |
+| `livro.serieNoTempo.ultimoArtigo.trimestral` | «o » | «the » | idem |
+| `livro.serieNoTempo.ultimoArtigo.semestral` | «o » | «the » | idem |
+| `livro.serieNoTempo.ultimoArtigo.anual` | (vazia) | (vazia) | idem |
+| `livro.serieNoTempo.ultimoQuando` | «, quando foi » | «, when it was » | depois entra o valor do ponto de comparação, com a mesma unidade e a palavra da marca da fonte, quando a há |
+| `livro.serieNoTempo.ultimoFim` | «.» | «.» | o ponto final; igual nas duas edições |
+| `home.veredicto.ladoAntes` | «Portugal está » | «Portugal is » | a frase do lado de cada valor de referência, por baixo do veredicto da primeira página (o ponto 4) |
+| `home.veredicto.lados.acima` | «acima do valor de referência da Comissão Europeia, que é » | «above the European Commission’s reference value, which is » | a palavra do lado, escolhida pela conta com o sinal; depois entra o valor de referência, pela sua marca, e o símbolo da unidade |
+| `home.veredicto.lados.abaixo` | «abaixo do valor de referência da Comissão Europeia, que é » | «below the European Commission’s reference value, which is » | idem |
+| `home.veredicto.lados.igual` | «no valor de referência da Comissão Europeia, que é » | «at the European Commission’s reference value, which is » | idem |
+| `home.veredicto.lados.entre` | «entre os valores de referência da Comissão Europeia, que são » | «between the European Commission’s reference values, which are » | uma banda (o saldo da balança corrente, a taxa de câmbio efetiva real); depois entram as duas pontas |
+| `home.veredicto.lados.acimaDaBanda` | «acima dos valores de referência da Comissão Europeia, que são » | «above the European Commission’s reference values, which are » | idem |
+| `home.veredicto.lados.abaixoDaBanda` | «abaixo dos valores de referência da Comissão Europeia, que são » | «below the European Commission’s reference values, which are » | idem |
+| `home.veredicto.eBanda` | « e » | « and » | entre as duas pontas de uma banda |
+| `home.veredicto.fimLado` | «.» | «.» | o ponto final; igual nas duas edições |
+| `home.veredicto.dentroK` | «Os valores de referência de que Portugal ficou dentro» | «The reference values Portugal was within» | o rótulo da porta dobrada com os valores de referência de que Portugal ficou dentro |
 ## EX1 · as explicações e a leitura da semana, 05.10.2026
 
 As chaves novas em `src/i18n/strings.mjs`, lidas do ficheiro por guião na construção do bloco; as peças com espaço nas pontas vão entre «» com o espaço. As peças da primeira frase da leitura da semana compõem-se pela conta das três contagens (nenhum, um, vários), e as do inglês dizem a mesma frase na ordem do inglês. O texto da explicação não está aqui: é do lugar de direção, em `src/data/explicacoes/`, com a edição inglesa fiel ao lado da portuguesa e as duas na auditoria das leituras.
