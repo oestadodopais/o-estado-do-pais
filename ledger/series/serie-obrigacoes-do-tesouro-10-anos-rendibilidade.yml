@@ -2013,7 +2013,7 @@ attributed_to:
   - "Eurostat"
 study: "dominios-2026"
 # Nota interna. NÃO é publicada.
-note: "RP3. Coordenadas: irt_lt_mcby_m, freq=M, int_rt=MCBY, geo=PT. Pedido com sinceTimePeriod=1980-01, o «data start» do conjunto no índice de conteúdos alojado (eurostat/toc.txt); a resposta traz 560 período(s), e o primeiro com valor para a coordenada é 1986-01. Corpo alojado: corredor-series/2026-10-06/019-eurostat-obrigacoes-10-anos.json (sha256 e6ba45206d0ab0ad…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Corpo lido de corredor-series/2026-10-06/. Licença: Eurostat, CC BY 4.0."
+note: "RP3. Coordenadas: irt_lt_mcby_m, freq=M, int_rt=MCBY, geo=PT. Pedido com sinceTimePeriod=1980-01, o «data start» do conjunto no índice de conteúdos alojado (corredor-series/2026-10-06/010-eurostat-toc.txt); a resposta traz 560 período(s), e o primeiro com valor para a coordenada é 1986-01. Corpo alojado: corredor-series/2026-10-06/019-eurostat-obrigacoes-10-anos.json (sha256 e6ba45206d0ab0ad…). A data published_at é a da última atualização do conjunto, que a API publica por conjunto e não por ponto. Corpo lido de corredor-series/2026-10-06/. Licença: Eurostat, CC BY 4.0."
 
 # Correcções datadas, por ponto. Nunca apagar um valor: acrescentar aqui.
 corrections: []
