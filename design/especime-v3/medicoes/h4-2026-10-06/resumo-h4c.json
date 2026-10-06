@@ -1,15 +1,39 @@
 {
-  "comando": "node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois --passagem-c",
-  "construcao": {
-    "commit": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
-    "ref": "h4-2026-10-06",
-    "env": "local",
-    "origem": "git",
-    "motivo": null,
-    "construido_em": "2026-10-06T11:45:30.652Z"
+  "comando": "python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4c.py",
+  "cabeca_codigo": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+  "partida": "c86015929c91280c07be98a07fae1ad66fc1dde6",
+  "commits": [
+    {
+      "cabeca": "79f66ed4ce43a4d8fb35f32e636c88359edc01e9",
+      "assunto": "H4-c: regista no brief os limites decididos pela H4-5."
+    },
+    {
+      "cabeca": "b0eea25d6309e1b74668e3cf1ba9585eeb59b241",
+      "assunto": "H4-c: protege os limites por largura e prova a quarta linha."
+    },
+    {
+      "cabeca": "54a71206d35e2d3f84df76a4a030d2acd05e797e",
+      "assunto": "H4-c: prepara as medidas por largura e o fecho das provas."
+    },
+    {
+      "cabeca": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+      "assunto": "H4-c: distingue a janela da coluna nos registos da TM4."
+    }
+  ],
+  "codigos": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0
   },
-  "cabeca": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
-  "fase": "depois",
+  "comando_dos_commits": "git log --reverse --format='%H %s' c86015929c91280c07be98a07fae1ad66fc1dde6..45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+  "comando_das_fontes": "git diff --name-only c86015929c91280c07be98a07fae1ad66fc1dde6 45c5a6cd000b9dbdaebe3aee310b6122c25aa512 -- src",
+  "fontes_alteradas": [],
+  "limites_linhas_telefone": {
+    "320": 3,
+    "360": 3,
+    "390": 2,
+    "430": 2
+  },
   "medidas": [
     {
       "lang": "pt",
@@ -430,112 +454,6 @@
       "sha256": "43e39e3727f4885db0e3b27c726a7a1c36736731fdd71dff6a77022ad6fc3c01"
     },
     {
-      "lang": "pt",
-      "largura": 768,
-      "forma": "servida",
-      "coluna": 707,
-      "natural": 699.3365,
-      "linhas": 1,
-      "portas": 7,
-      "caixas": [
-        {
-          "texto": "Portugal",
-          "href": "/",
-          "x": 30.71875,
-          "y": 0,
-          "largura": 83.890625,
-          "altura": 44,
-          "direita": 114.609375,
-          "fundo": 44
-        },
-        {
-          "texto": "Lugares",
-          "href": "/lugares/",
-          "x": 136.109375,
-          "y": 0,
-          "largura": 70.515625,
-          "altura": 44,
-          "direita": 206.625,
-          "fundo": 44
-        },
-        {
-          "texto": "Temas",
-          "href": "/temas/",
-          "x": 228.125,
-          "y": 0,
-          "largura": 52.890625,
-          "altura": 44,
-          "direita": 281.015625,
-          "fundo": 44
-        },
-        {
-          "texto": "Estudos",
-          "href": "/estudos",
-          "x": 302.515625,
-          "y": 0,
-          "largura": 71.46875,
-          "altura": 44,
-          "direita": 373.984375,
-          "fundo": 44
-        },
-        {
-          "texto": "Explicações",
-          "href": "/explicacoes",
-          "x": 395.484375,
-          "y": 0,
-          "largura": 106.75,
-          "altura": 44,
-          "direita": 502.234375,
-          "fundo": 44
-        },
-        {
-          "texto": "União Europeia",
-          "href": "/uniao-europeia",
-          "x": 523.734375,
-          "y": 0,
-          "largura": 135.359375,
-          "altura": 44,
-          "direita": 659.09375,
-          "fundo": 44
-        },
-        {
-          "texto": "Sobre",
-          "href": "/sobre",
-          "x": 680.59375,
-          "y": 0,
-          "largura": 49.4375,
-          "altura": 44,
-          "direita": 730.03125,
-          "fundo": 44
-        }
-      ],
-      "ultima": {
-        "texto": "Sobre",
-        "href": "/sobre",
-        "x": 680.59375,
-        "y": 0,
-        "largura": 49.4375,
-        "altura": 44,
-        "direita": 730.03125,
-        "fundo": 44
-      },
-      "gap": 21.504,
-      "folgas": [
-        21.5,
-        21.5,
-        21.5,
-        21.5,
-        21.5,
-        21.5
-      ],
-      "letra": "15px",
-      "espaco_das_letras": "0.75px",
-      "sem_transbordo": true,
-      "cabe_em_duas": true,
-      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-768-c.png",
-      "sha256": "5abd2d630c1acb83ac7e6ad4750073a5c7d483a1819a9a79e33c07eff73f00ae"
-    },
-    {
       "lang": "en",
       "largura": 320,
       "forma": "servida",
@@ -952,120 +870,86 @@
       "cabe_em_duas": true,
       "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-430-c.png",
       "sha256": "6956ebddca87db630f3edb9e796695718c53d7ba6bff829348cc5fa4d56978a7"
-    },
-    {
-      "lang": "en",
-      "largura": 768,
-      "forma": "servida",
-      "coluna": 707,
-      "natural": 692.774,
-      "linhas": 1,
-      "portas": 7,
-      "caixas": [
-        {
-          "texto": "Portugal",
-          "href": "/en",
-          "x": 30.71875,
-          "y": 0,
-          "largura": 83.890625,
-          "altura": 44,
-          "direita": 114.609375,
-          "fundo": 44
-        },
-        {
-          "texto": "Places",
-          "href": "/en/places/",
-          "x": 136.109375,
-          "y": 0,
-          "largura": 57.6875,
-          "altura": 44,
-          "direita": 193.796875,
-          "fundo": 44
-        },
-        {
-          "texto": "Themes",
-          "href": "/en/themes/",
-          "x": 215.296875,
-          "y": 0,
-          "largura": 63.734375,
-          "altura": 44,
-          "direita": 279.03125,
-          "fundo": 44
-        },
-        {
-          "texto": "Studies",
-          "href": "/en/studies",
-          "x": 300.53125,
-          "y": 0,
-          "largura": 65.890625,
-          "altura": 44,
-          "direita": 366.421875,
-          "fundo": 44
-        },
-        {
-          "texto": "Explainers",
-          "href": "/en/explainers",
-          "x": 387.921875,
-          "y": 0,
-          "largura": 96.34375,
-          "altura": 44,
-          "direita": 484.265625,
-          "fundo": 44
-        },
-        {
-          "texto": "European Union",
-          "href": "/en/european-union",
-          "x": 505.765625,
-          "y": 0,
-          "largura": 142,
-          "altura": 44,
-          "direita": 647.765625,
-          "fundo": 44
-        },
-        {
-          "texto": "About",
-          "href": "/en/about",
-          "x": 669.265625,
-          "y": 0,
-          "largura": 54.203125,
-          "altura": 44,
-          "direita": 723.46875,
-          "fundo": 44
-        }
-      ],
-      "ultima": {
-        "texto": "About",
-        "href": "/en/about",
-        "x": 669.265625,
-        "y": 0,
-        "largura": 54.203125,
-        "altura": 44,
-        "direita": 723.46875,
-        "fundo": 44
-      },
-      "gap": 21.504,
-      "folgas": [
-        21.5,
-        21.5,
-        21.5,
-        21.5,
-        21.5,
-        21.5
-      ],
-      "letra": "15px",
-      "espaco_das_letras": "0.75px",
-      "sem_transbordo": true,
-      "cabe_em_duas": true,
-      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-768-c.png",
-      "sha256": "ddfc5197bdd9e75918be18066d875b3386cc5e2c3f575ab9ab63da3be662f22f"
     }
   ],
-  "nome_inteiro_cabe": true,
-  "politica": {
-    "rotas": {
-      "pt": "/metodo#politica-de-ia",
-      "en": "/en/method#politica-de-ia"
+  "plantas_tm4": [
+    {
+      "nome": "uma oitava porta no menu",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*o menu tem 8 portas, e são sete\\.",
+      "queixa": "TM4 · / a 1280 px: o menu tem 8 portas, e são sete."
     },
-    "rota_do_brief_existe": false
+    {
+      "nome": "o menu apertado a 6 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*o espaço entre portas na mesma linha não é o da regra base",
+      "queixa": "TM4 · / a 390 px: o espaço entre portas na mesma linha não é o da regra base (16 px; lido 6 px; folgas 6, 6, 6, 6, 6)."
+    },
+    {
+      "nome": "o menu sem dobrar a 320 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*as sete portas não cabem numa linha e o menu não dobrou\\.",
+      "queixa": "TM4 · / a 320 px: as sete portas não cabem numa linha e o menu não dobrou."
+    },
+    {
+      "nome": "quatro linhas a 320 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .* a 320 px: o menu tem 4 linhas, e o máximo é três\\.",
+      "queixa": "TM4 · / a 320 px: o menu tem 4 linhas, e o máximo é três."
+    },
+    {
+      "nome": "uma porta sem 44 px de toque",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px\\.",
+      "queixa": "TM4 · / a 390 px: a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px."
+    },
+    {
+      "nome": "uma oitava porta no menu",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*o menu tem 8 portas, e são sete\\.",
+      "queixa": "TM4 · /en/ a 1280 px: o menu tem 8 portas, e são sete."
+    },
+    {
+      "nome": "o menu apertado a 6 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*o espaço entre portas na mesma linha não é o da regra base",
+      "queixa": "TM4 · /en/ a 390 px: o espaço entre portas na mesma linha não é o da regra base (16 px; lido 6 px; folgas 6, 6, 6, 6, 6)."
+    },
+    {
+      "nome": "o menu sem dobrar a 320 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*as sete portas não cabem numa linha e o menu não dobrou\\.",
+      "queixa": "TM4 · /en/ a 320 px: as sete portas não cabem numa linha e o menu não dobrou."
+    },
+    {
+      "nome": "quatro linhas a 320 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .* a 320 px: o menu tem 4 linhas, e o máximo é três\\.",
+      "queixa": "TM4 · /en/ a 320 px: o menu tem 4 linhas, e o máximo é três."
+    },
+    {
+      "nome": "uma porta sem 44 px de toque",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px\\.",
+      "queixa": "TM4 · /en/ a 390 px: a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px."
+    }
+  ],
+  "falhas_tm": [],
+  "capturas_novas": 4,
+  "transbordos_documento": [
+    {
+      "edicao": "pt",
+      "janela": 320,
+      "documento": 322
+    },
+    {
+      "edicao": "en",
+      "janela": 320,
+      "documento": 335
+    }
+  ],
+  "comando_dos_portoes": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h4-2026-10-06/portoes-c",
+  "ambiente_dos_portoes": {
+    "OEDP_TEMA_MENU_JSON": "design/especime-v3/medicoes/h4-2026-10-06/tema-menu-c.json"
   }
 }
