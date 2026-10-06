@@ -1,0 +1,79 @@
+{
+  "comando": "node design/especime-v3/medicoes/ex2-2026-10-06/preparar-pacote.mjs node_modules/.cache/ex2-leitura; python3 design/especime-v3/medicoes/ex2-2026-10-06/fechar-pacote.py",
+  "cabeca_pacote": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
+  "cabeca_codigo": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
+  "paginas": [
+    {
+      "ficheiro": "built/explicacoes/leitura-da-semana/index.html",
+      "sha256_original": "6065e74454ca99dd296f5aabe3dfabcce3c236351f60d4bd903532ee08d0394c",
+      "sha256_copia": "3219755ead36bb1da54e0d18f8635b9c0de294d0714449472720e290c416c4c1"
+    },
+    {
+      "ficheiro": "built/en/explainers/weekly-reading/index.html",
+      "sha256_original": "0243b9f0f5a0a4711ef82965d8e04955f384f9f70406d34d44ddc4cb71b51857",
+      "sha256_copia": "5265bbf62caf1118e487b213baa25a1ef5449aaf825668b253734039c10db047"
+    },
+    {
+      "ficheiro": "built/indice/index.html",
+      "sha256_original": "79821a5cbc1cb36798b84e25474a98ffbf6f9c15d43375319bd0c9c6d5d603ec",
+      "sha256_copia": "1b27fc5537aa77168068a23886b85db44f550cb1eec86bd328a88b7bc4b4079a"
+    },
+    {
+      "ficheiro": "built/en/index/index.html",
+      "sha256_original": "44539bc5aa7f4b390475ee0bd6f482e3d0006accf868e29ee6faaab7f82f96ee",
+      "sha256_copia": "fb56e490cc369115ab955ce5ebae601735d0b0d3b00852444ea76eef3c27be43"
+    },
+    {
+      "ficheiro": "built/livro-razao/custo-unitario-do-trabalho-2024/index.html",
+      "sha256_original": "4111a16102d36029e507da40781875b126f66206a50c2303fcb8d3edadfff2b0",
+      "sha256_copia": "88d0de3ba080a57169943cdec37ca2d9e5b70e8076b7992e2f766fed0f1cb569"
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "palavra estranha acrescentada à definição",
+      "ficheiro": "built/explicacoes/leitura-da-semana/index.html",
+      "sha256_antes": "6065e74454ca99dd296f5aabe3dfabcce3c236351f60d4bd903532ee08d0394c",
+      "sha256_depois": "3219755ead36bb1da54e0d18f8635b9c0de294d0714449472720e290c416c4c1"
+    },
+    {
+      "nome": "unidade deslocada para depois do valor",
+      "ficheiro": "built/en/explainers/weekly-reading/index.html",
+      "sha256_antes": "0243b9f0f5a0a4711ef82965d8e04955f384f9f70406d34d44ddc4cb71b51857",
+      "sha256_depois": "5265bbf62caf1118e487b213baa25a1ef5449aaf825668b253734039c10db047"
+    },
+    {
+      "nome": "definição de uma mudança retirada",
+      "ficheiro": "built/indice/index.html",
+      "sha256_antes": "79821a5cbc1cb36798b84e25474a98ffbf6f9c15d43375319bd0c9c6d5d603ec",
+      "sha256_depois": "1b27fc5537aa77168068a23886b85db44f550cb1eec86bd328a88b7bc4b4079a"
+    },
+    {
+      "nome": "definição por confirmar de outra linha publicada como confirmada",
+      "ficheiro": "built/en/index/index.html",
+      "sha256_antes": "44539bc5aa7f4b390475ee0bd6f482e3d0006accf868e29ee6faaab7f82f96ee",
+      "sha256_depois": "fb56e490cc369115ab955ce5ebae601735d0b0d3b00852444ea76eef3c27be43"
+    },
+    {
+      "nome": "definição do recibo retirada",
+      "ficheiro": "built/livro-razao/custo-unitario-do-trabalho-2024/index.html",
+      "sha256_antes": "4111a16102d36029e507da40781875b126f66206a50c2303fcb8d3edadfff2b0",
+      "sha256_depois": "88d0de3ba080a57169943cdec37ca2d9e5b70e8076b7992e2f766fed0f1cb569"
+    }
+  ],
+  "leitura": "pendente",
+  "destino": "<worktree>/node_modules/.cache/ex2-leitura",
+  "reservados_a_direcao": [
+    "design/especime-v3/medicoes/ex2-2026-10-06/preparar-pacote.mjs",
+    "design/especime-v3/medicoes/ex2-2026-10-06/fechar-pacote.py",
+    "design/especime-v3/medicoes/ex2-2026-10-06/pacote.json"
+  ],
+  "conferencia": {
+    "paginas": 5,
+    "estragos": 5,
+    "capturas": 40,
+    "originais_intactos": true,
+    "resumos_conferem": true,
+    "versao_copiada": true
+  }
+}
