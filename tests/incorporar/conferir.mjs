@@ -38,6 +38,14 @@ planta('valor-trocado', root => {
 planta('codigo-em-falta', root=>root.querySelector('textarea').remove(), 'ER1 código: falta o único código do recibo.');
 planta('marca-no-paragrafo', root=>root.querySelector('p').setAttribute('data-incorporar-codigo',c.id), 'ER1 código: marca fora do campo do recibo da própria linha.');
 planta('codigo-editavel', root=>root.querySelector('textarea').removeAttribute('readonly'), 'ER1 código: marca fora do campo do recibo da própria linha.');
+planta('campo-conferido-fora-do-bloco', root => {
+  const campo = root.querySelector('[data-incorporar-codigo]');
+  const fora = lerPaginaComCodigo(campo.outerHTML).querySelector('textarea');
+  fora.setAttribute('id', 'codigo-fora');
+  campo.removeAttribute('data-incorporar-codigo');
+  campo.set_content('Texto diferente');
+  root.querySelector('body').appendChild(fora);
+}, 'ER1 código: o campo conferido não é o que o botão copia.');
 planta('comentario-no-codigo', ()=>{}, 'ER1 código: o pedaço difere da linha, carácter a carácter.',
   inteiro.replace(/(<textarea\b[^>]*>)/, '$1<!--planta-->'));
 const mensagemLeitura = 'ER1 código: falta a leitura literal do campo.';
