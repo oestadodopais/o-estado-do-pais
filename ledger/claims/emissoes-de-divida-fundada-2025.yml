@@ -1,0 +1,44 @@
+# Linha do livro-razão. Um ficheiro por afirmação; o nome do ficheiro é o id.
+# Campos obrigatórios e regras: ver ledger/README.md.
+# GERADO por ResearchHub/publisher/export_site_rows.py a partir do livro-razão do motor.
+# Não editar à mão: uma alteração aqui parte scripts/check-cruzamento.mjs.
+
+id: "emissoes-de-divida-fundada-2025"
+
+# O valor tal como é publicado, com formatação portuguesa. String, nunca número.
+value: "65 214"
+unit: "milhões de euros"
+
+# O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
+# e onde nele foi lido. Escrito pelo motor, nunca à mão.
+name: "p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada)"
+name_source: "Quadro 9, p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada), coluna 2025, p. 45"
+
+# Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
+source: "IGCP"
+document:
+  title: "Gestão da Tesouraria do Estado e da Dívida Pública · Relatório Anual 2025"
+  edition: "2025"
+  locator: "Quadro 9, p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada), coluna 2025, p. 45"
+  page: 45
+  kind: "pdf"
+source_url: "https://www.igcp.pt/sites/default/files/2026-08/RA2025_signed.pdf#page=45"
+access_date: "2026-10-06"
+reference_date: "2025"
+
+# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
+excerpt: "          p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada)                      56 285       65 214"
+
+# null quando o valor é publicado; a aritmética explicada quando é calculado.
+derivation: null
+derivation_en: null
+derived_from: []
+# Expressão verificada no build: tem de dar exactamente o valor acima.
+check: null
+
+study: "oe-2026"
+# Nota interna. NÃO é publicada: ver DECISIONS §1.24.
+note: "[note do motor] Localizador: Quadro 9, p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada), coluna 2025, p. 45. Estado, numa ótica de contabilidade orçamental pública. Montante realizado no ano civil. Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · emissoes-de-divida-fundada-2025."
+
+# Correcções datadas. Nunca apagar um valor: acrescentar aqui.
+corrections: []
