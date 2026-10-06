@@ -45,7 +45,9 @@ fechar() {
   trap '' INT TERM
   trap - EXIT
   node "$W/scripts/leituras/tempos.mjs" arrumar "$O" || resultado=9
-  python3 "$W/scripts/leituras/limpar-caminhos.py" "$O" --worktree "$W" > "$O/limpeza.json" || resultado=9
+  python3 "$W/scripts/leituras/limpar-caminhos.py" "$O" --worktree "$W" \
+    --motor "${RESEARCHHUB_DIR:-}" --scratchpad "${OEDP_SCRATCHPAD:-}" \
+    --temporario "${TMPDIR:-/tmp}" > "$O/limpeza.json" || resultado=9
   # Uma corrida que exceda a validade não pode soltar a tranca de outra.
   if [ -f "$tranca" ] && [ "$(cat "$tranca")" = "$dono" ]; then
     rm -f "$tranca"

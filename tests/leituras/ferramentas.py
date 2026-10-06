@@ -13,6 +13,7 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+from unittest.mock import patch
 
 RAIZ = Path(__file__).resolve().parents[2]
 def modulo(nome, ficheiro):
@@ -39,16 +40,30 @@ for nome, dados in [('contador recuado',jsonl(eventos+eventos[:1])),('formato se
 with tempfile.TemporaryDirectory(prefix='oedp-ma-comuns-') as tmp:
     p = Path(tmp); worktree=p/'arvore'; worktree.mkdir(); pasta=worktree/'registos'; pasta.mkdir()
     casa=p/'casa com espaço'; motor=casa/'motor'; scratch=p/'scratch'; usuario='nome-sintetico'
-    texto=f'{worktree}/a {motor}/b {scratch}/c {casa}/d {usuario}\n'
+    texto=f'{worktree}/a {motor}/b {scratch}/c {casa}/d {usuario} /pasta/{usuario}/ficheiro\n'
     (pasta/'registo.log').write_text(texto); (pasta/'dados.json.gz').write_bytes(gzip.compress(texto.encode()))
     (pasta/'imagem.png').write_bytes(b'\x89PNG\0\xff')
     fora=p/'fora'; fora.write_text(texto); (pasta/'ligacao').symlink_to(fora)
     args=dict(pasta=pasta,worktree=worktree,motor=motor,scratchpad=scratch,casa=casa,utilizador=usuario)
-    r=limpar.limpar(**args); esperado='<worktree>/a <motor>/b <scratchpad>/c <casa>/d <utilizador>\n'
+    r=limpar.limpar(**args); esperado='<worktree>/a <motor>/b <scratchpad>/c <casa>/d nome-sintetico /pasta/<utilizador>/ficheiro\n'
     assert (pasta/'registo.log').read_text()==esperado and gzip.decompress((pasta/'dados.json.gz').read_bytes()).decode()==esperado
     assert (pasta/'imagem.png').read_bytes()==b'\x89PNG\0\xff' and fora.read_text()==texto
     assert limpar.limpar(**args)['mudados']==[]
     registar('limpeza de texto, gzip, binários e ligações','Caminhos retirados; segunda passagem sem mudanças; binário e alvo da ligação intactos.')
+    (pasta/'temporarios.log').write_text('/private/var/folders/ab/cd/T/ensaio/ficheiro /tmp/ensaio/ficheiro ' + str(p/'tmp-especial'/'ficheiro'))
+    limpar.limpar(**args, temporario=p/'tmp-especial')
+    assert (pasta/'temporarios.log').read_text() == '<temporario> <temporario> <temporario>/ficheiro'
+    registar('caminhos temporários', 'Pastas temporárias do sistema e TMPDIR retirados.')
+    (pasta/'palavra.log').write_text('transportoes portoes /pasta/portoes/ficheiro')
+    limpar.limpar(**{**args, 'utilizador': 'portoes'})
+    assert (pasta/'palavra.log').read_text() == 'transportoes portoes /pasta/<utilizador>/ficheiro'
+    registar('utilizador dentro de palavra comum', 'transportoes e portoes intactos; só o componente do caminho mudou.')
+    temporario = p / 'temporario-do-ambiente'
+    (pasta/'ambiente.log').write_text(f'{scratch}/nota {temporario}/saida')
+    with patch.dict(limpar.os.environ, {'OEDP_SCRATCHPAD': str(scratch), 'TMPDIR': str(temporario)}):
+        limpar.limpar(**{**args, 'scratchpad': None})
+    assert (pasta/'ambiente.log').read_text() == '<scratchpad>/nota <temporario>/saida'
+    registar('scratchpad e TMPDIR pelo ambiente', 'OEDP_SCRATCHPAD e TMPDIR chegaram ao limpador.')
     if '--sem-capturas' not in sys.argv:
         dist=p/'dist'; (dist/'en').mkdir(parents=True)
         head='a'*40; (dist/'version.json').write_text(json.dumps({'commit':head}))
