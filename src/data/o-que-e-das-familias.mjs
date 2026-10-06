@@ -130,6 +130,34 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": "Children under three in formal childcare in the European Union"
     }
   },
+  "custo-da-divida-emitida": {
+    "nome": {
+      "pt": "Custo da dívida emitida pelo Estado, até agosto",
+      "en": "Cost of State debt issued, through August"
+    },
+    "frase": {
+      "pt": [
+        "É o custo médio da dívida emitida no ano, nos instrumentos BT, OT, OTRV e MTN, ponderado pelo montante e pelo prazo."
+      ],
+      "en": [
+        "It is the average cost of debt issued during the year through BT, OT, OTRV and MTN instruments, weighted by amount and maturity."
+      ]
+    }
+  },
+  "custo-do-stock-da-divida-direta": {
+    "nome": {
+      "pt": "Custo da dívida direta do Estado em circulação",
+      "en": "Cost of outstanding State direct debt"
+    },
+    "frase": {
+      "pt": [
+        "É a relação entre os juros do subsetor Estado nas contas nacionais e o saldo médio da dívida direta do Estado no final de dois anos consecutivos."
+      ],
+      "en": [
+        "It is the ratio of State subsector interest costs in national accounts to average State direct debt outstanding at the end of two consecutive years."
+      ]
+    }
+  },
   "custo-unitario-do-trabalho": {
     "cartao": "custo-unitario-do-trabalho-2025"
   },
@@ -623,6 +651,20 @@ export const FAMILIAS_DAS_LINHAS = {
       ]
     }
   },
+  "divida-direta-do-estado": {
+    "nome": {
+      "pt": "Dívida direta do Estado no fim de agosto",
+      "en": "State direct debt at the end of August"
+    },
+    "frase": {
+      "pt": [
+        "É o total da dívida direta do Estado no fim de agosto."
+      ],
+      "en": [
+        "It is total State direct debt at the end of August."
+      ]
+    }
+  },
   "divida-publica": {
     "cartao": "divida-publica-2025"
   },
@@ -675,6 +717,20 @@ export const FAMILIAS_DAS_LINHAS = {
       ],
       "en": [
         "It is the number of editions of the studies published; the Portuguese and English editions of the same study count separately."
+      ]
+    }
+  },
+  "emissoes-de-divida-fundada": {
+    "nome": {
+      "pt": "Emissões de dívida fundada do Estado no ano civil",
+      "en": "State funded debt issued during the calendar year"
+    },
+    "frase": {
+      "pt": [
+        "É o montante de dívida fundada que o Estado emitiu no ano civil, em contabilidade orçamental pública."
+      ],
+      "en": [
+        "It is the amount of funded debt the State issued during the calendar year, on a public budget accounting basis."
       ]
     }
   },
@@ -1904,6 +1960,62 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": "Young people not in employment, education or training in the European Union"
     }
   },
+  "juros-das-administracoes-publicas": {
+    "nome": {
+      "pt": "Juros das administrações públicas",
+      "en": "General government interest expenditure"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa em juros das administrações públicas, nas contas nacionais."
+      ],
+      "en": [
+        "It is interest expenditure by general government, in national accounts."
+      ]
+    }
+  },
+  "juros-das-administracoes-publicas-pib": {
+    "nome": {
+      "pt": "Juros das administrações públicas em percentagem do PIB",
+      "en": "General government interest expenditure as a share of GDP"
+    },
+    "frase": {
+      "pt": [
+        "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano, calculados pela casa a partir dos dois montantes da mesma notificação do INE."
+      ],
+      "en": [
+        "It is general government interest expenditure as a percentage of gross domestic product for the same year, calculated here from both amounts in the same INE notification."
+      ]
+    }
+  },
+  "juros-das-administracoes-publicas-ue": {
+    "nome": {
+      "pt": "Juros das administrações públicas na União Europeia, em percentagem do PIB",
+      "en": "General government interest expenditure in the European Union, as a share of GDP"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa das administrações públicas em juros no conjunto da União Europeia, em percentagem do PIB."
+      ],
+      "en": [
+        "It is general government interest expenditure across the European Union, as a percentage of GDP."
+      ]
+    }
+  },
+  "juros-e-outros-encargos-execucao": {
+    "nome": {
+      "pt": "Juros e outros encargos pagos pelas administrações públicas, janeiro a agosto",
+      "en": "Interest and other charges paid by general government, January to August"
+    },
+    "frase": {
+      "pt": [
+        "É a despesa consolidada das administrações públicas com juros e outros encargos, acumulada de janeiro a agosto, na ótica dos pagamentos."
+      ],
+      "en": [
+        "It is consolidated general government expenditure on interest and other charges, accumulated from January to August, on a payments basis."
+      ]
+    }
+  },
   "licencas-de-construcao": {
     "cartao": "licencas-de-construcao-2025"
   },
@@ -1982,6 +2094,20 @@ export const FAMILIAS_DAS_LINHAS = {
       ],
       "en": [
         "It is the number of municipalities that do not yet have an in-depth study published: all municipalities minus those that already have one."
+      ]
+    }
+  },
+  "necessidades-brutas-de-financiamento": {
+    "nome": {
+      "pt": "Necessidades brutas de financiamento do Estado",
+      "en": "Gross State financing needs"
+    },
+    "frase": {
+      "pt": [
+        "É o financiamento de que o Estado precisou, somando as necessidades líquidas às amortizações e anulações de dívida fundada, em contabilidade orçamental pública."
+      ],
+      "en": [
+        "It is the financing the State needed, adding net financing needs to redemptions and cancellations of funded debt, on a public budget accounting basis."
       ]
     }
   },
@@ -2967,6 +3093,20 @@ export const FAMILIAS_DAS_LINHAS = {
   },
   "pensao-media-anual": {
     "cartao": "pensao-media-anual-2025"
+  },
+  "pib-nominal-notificacao-setembro": {
+    "nome": {
+      "pt": "PIB a preços de mercado, notificação de setembro",
+      "en": "GDP at market prices, September notification"
+    },
+    "frase": {
+      "pt": [
+        "É o produto interno bruto a preços de mercado."
+      ],
+      "en": [
+        "It is gross domestic product at market prices."
+      ]
+    }
   },
   "pib-pc-acores": {
     "frase": {
