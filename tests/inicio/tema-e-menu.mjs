@@ -27,8 +27,8 @@
  *         «claro» tira o atributo, guarda «light» e devolve a cor da mobília; e uma recarga fica clara;
  *   TM4 · H4: sete portas, uma linha quando cabem, com a dobra, o espaço da regra base e o alvo de toque
  *         protegidos. H4-5: no máximo duas linhas a 390 e 430 px, três a 320 e 360 px; nenhuma porta fora do menu ou da janela,
- *         e cada porta com pelo menos 44 px de altura. O espaço e a letra de referência calculam-se no navegador
- *         a partir das regras base da folha fonte, sem a regra de telefone que uma planta possa servir.
+ *         e cada porta com pelo menos 44 px de altura. A célula guarda a referência aprovada, independente da folha:
+ *         clamp(16px, 2.8vw, 34px), calculado à largura da janela, letra de 15 px e espaço das letras de .05em.
  *         A largura do documento fica no relatório: a 320 px a primeira página já passava da janela por um valor
  *         com selo que não quebra, anterior a este bloco e fora do menu.
  *
@@ -40,6 +40,8 @@
  * (TM1), a guarda tirada do `<head>`, a guarda no fim do `<body>` e, desde a P4-c, um manipulador que aplica o claro
  * a todos os cliques (TM3), o comando tirado do cabeçalho e um botão com 30 px (TM2), uma oitava porta, o menu
  * apertado a 6 px, o menu sem dobrar a 320 px, quatro linhas a 320 px e uma porta sem 44 px de toque (TM4, nas duas edições).
+ * H4-d acrescenta seis portas, a última fora da janela, três linhas a 390 e a 430 px, letra de 13 px e a própria
+ * regra base apertada. Cada planta exige a mensagem da proteção que prova, nas duas edições.
  *
  *   node tests/inicio/tema-e-menu.mjs [--prova] [--json <ficheiro>]      (OEDP_DIST mede outra construção)
  */
@@ -73,12 +75,9 @@ if (!PAPEL_CLARO || !PAPEL_ESCURO) {
 }
 const rgb = (hex) => `rgb(${parseInt(hex.slice(1, 3), 16)}, ${parseInt(hex.slice(3, 5), 16)}, ${parseInt(hex.slice(5, 7), 16)})`;
 
-/* A referência vem da regra base, não da regra computada do menu que a planta estraga.
-   O navegador resolve o clamp à largura em teste; não se fixa aqui um espaço em píxeis. */
-const folhaFonte = await fs.readFile(path.join(RAIZ, 'src', 'styles', 'site.css'), 'utf8');
-const baseMenu = /(?:^|\n)\.menu-cinco\s*\{([^{}]+)\}/.exec(folhaFonte)?.[1];
-const basePorta = /(?:^|\n)\.menu-cinco a\s*\{([^{}]+)\}/.exec(folhaFonte)?.[1];
-if (!baseMenu || !basePorta) throw new Error('TM4: não li as regras base do menu.');
+/* H4-d, achado 6: ler a referência da folha fonte deixava passar um aperto nessa mesma folha.
+   Estes valores pertencem à célula; a página não os importa. */
+const REFERENCIA_MENU = { espaco: { minimo: 16, vw: 2.8, maximo: 34 }, letra: 15, espacoLetrasEm: 0.05 };
 
 /* --------------------------------------------------------------- o servidor, com o estrago da planta ativa */
 const tipos = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
@@ -136,7 +135,7 @@ async function abre(rota, largura, { esquema = 'light', guiao = true, guardado =
   return { ctx, p, externos };
 }
 
-const estadoDaPagina = (p) => p.evaluate(({ baseMenu, basePorta }) => {
+const estadoDaPagina = (p) => p.evaluate((referencia) => {
   const g = document.querySelector('header [data-tema-controlo]');
   const caixa = (el) => { if (!el) return null; const b = el.getBoundingClientRect(); return { x: b.left, y: b.top, w: b.width, h: b.height, d: b.right }; };
   return {
@@ -154,18 +153,9 @@ const estadoDaPagina = (p) => p.evaluate(({ baseMenu, basePorta }) => {
       const portas = n ? [...n.querySelectorAll('a')] : [];
       const as = portas.map((a) => a.getBoundingClientRect());
       const c = n?.getBoundingClientRect();
-      const referencia = document.createElement('div');
-      referencia.style.cssText = baseMenu;
-      referencia.style.position = 'fixed';
-      referencia.style.visibility = 'hidden';
-      const porta = document.createElement('span');
-      porta.style.cssText = basePorta;
-      referencia.append(porta);
-      document.body.append(referencia);
-      const gapBase = parseFloat(getComputedStyle(referencia).columnGap);
-      const letraBase = getComputedStyle(porta).fontSize;
-      const espacoLetrasBase = getComputedStyle(porta).letterSpacing;
-      referencia.remove();
+      const gapBase = Math.min(referencia.espaco.maximo, Math.max(referencia.espaco.minimo, innerWidth * referencia.espaco.vw / 100));
+      const letraBase = `${referencia.letra}px`;
+      const espacoLetrasBase = `${referencia.letra * referencia.espacoLetrasEm}px`;
       const topos = [...new Set(as.map((a) => Math.round(a.top)))];
       const folgas = topos.flatMap((y) => {
         const fila = as.filter((a) => Math.round(a.top) === y);
@@ -181,7 +171,7 @@ const estadoDaPagina = (p) => p.evaluate(({ baseMenu, basePorta }) => {
         direita: as.length ? Math.max(...as.map((a) => a.right)) : 0, transborda: n ? n.scrollWidth > n.clientWidth : false };
     })(),
   };
-}, { baseMenu, basePorta });
+}, REFERENCIA_MENU);
 
 /* ------------------------------------------------------------------------------------------------- as células */
 async function tm1(rota, largura) {
@@ -322,10 +312,17 @@ try {
       ['um botão do tema com 30 px', { html: (s) => s.replace('</head>', '<style>.tema-b{min-height:30px!important;min-width:30px!important;height:30px!important}</style></head>') }, () => tm2('/en/places/', 390), /TM2 · .*mede .* px, e o alvo é de 44 por 44/],
       ...['/', '/en/'].flatMap((rota) => [
         ['uma oitava porta no menu', { html: (s) => s.replace(/(<nav class="menu-cinco"[^>]*>[\s\S]*?)(<\/nav>)/, '$1<a href="/agenda">Agenda</a>$2') }, () => tm4(rota, 1280), /TM4 · .*o menu tem 8 portas, e são sete\./],
+        ['uma porta a menos no menu', { html: (s) => s.replace(/(<nav class="menu-cinco"[^>]*>)\s*<a\b[^>]*>[\s\S]*?<\/a>/, '$1') }, () => tm4(rota, 1280), /TM4 · .*o menu tem 6 portas, e são sete\./],
+        ['a última porta fora da janela', { html: (s) => s.replace('</head>', '<style>.menu-cinco a:last-child{transform:translateX(100vw)}</style></head>') }, () => tm4(rota, 390), /TM4 · .*o menu empurra a página/],
         ['o menu apertado a 6 px', { html: (s) => s.replace('</head>', '<style>@media (width<=430px){.menu-cinco{gap:0 6px!important}.menu-cinco a{font-size:13px!important;letter-spacing:0!important}}</style></head>') }, () => tm4(rota, 390), /TM4 · .*o espaço entre portas na mesma linha não é o da regra base/],
+        ['a letra do menu a 13 px', { html: (s) => s.replace('</head>', '<style>.menu-cinco a{font-size:13px!important}</style></head>') }, () => tm4(rota, 390), /TM4 · .*a letra ou o espaço das letras difere da regra base/],
+        ['a regra base apertada', { css: (s) => s
+          .replace(/(\.menu-cinco\s*\{[^{}]*?\bgap\s*:)\s*[^;}]+/, '$1 0 6px')
+          .replace(/(\.menu-cinco a\s*\{[^{}]*?\bfont-size\s*:)\s*[^;}]+/, '$1 13px') }, () => tm4(rota, 1280), [/TM4 · .*o espaço entre portas na mesma linha não é o da regra base/, /TM4 · .*a letra ou o espaço das letras difere da regra base/]],
         ['o menu sem dobrar a 320 px', { html: (s) => s.replace('</head>', '<style>.menu-cinco{flex-wrap:nowrap!important}</style></head>') }, () => tm4(rota, 320), /TM4 · .*as sete portas não cabem numa linha e o menu não dobrou\./],
         // Só a resposta ao navegador recebe a regra base com espaço maior. A folha fonte fica intacta.
-        ['quatro linhas a 320 px', { html: (s) => s.replace('</head>', `<style>.menu-cinco{${baseMenu}column-gap:80px!important}</style></head>`) }, () => tm4(rota, 320), /TM4 · .* a 320 px: o menu tem 4 linhas, e o máximo é três\./],
+        ['quatro linhas a 320 px', { html: (s) => s.replace('</head>', '<style>.menu-cinco{column-gap:80px!important}</style></head>') }, () => tm4(rota, 320), /TM4 · .* a 320 px: o menu tem 4 linhas, e o máximo é três\./],
+        ...[390, 430].map((largura) => [`três linhas a ${largura} px`, { html: (s) => s.replace('</head>', '<style>.menu-cinco{column-gap:50px!important}</style></head>') }, () => tm4(rota, largura), new RegExp(`TM4 · .* a ${largura} px: o menu tem 3 linhas, e o máximo é duas\\.`)]),
         ['uma porta sem 44 px de toque', { html: (s) => s.replace('</head>', '<style>.menu-cinco a:first-child{min-height:30px!important;height:30px!important}</style></head>') }, () => tm4(rota, 390), /TM4 · .*a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px\./],
       ]),
     ];
@@ -333,8 +330,10 @@ try {
       estrago = e;
       let queixas;
       try { queixas = await cel(); } finally { estrago = null; }
-      const mordeu = queixas.some((q) => mordida.test(q));
-      plantas.push({ nome, mordeu, mensagem_exigida: mordida.source, queixa: queixas.find((q) => mordida.test(q)) ?? queixas[0] ?? null });
+      const mordidas = Array.isArray(mordida) ? mordida : [mordida];
+      const mensagens = mordidas.map((m) => ({ exigida: m.source, observada: queixas.find((q) => m.test(q)) ?? null }));
+      const mordeu = mensagens.every((m) => m.observada !== null);
+      plantas.push({ nome, mordeu, mensagem_exigida: mordidas[0].source, queixa: mensagens[0].observada ?? queixas[0] ?? null, mensagens });
       if (!mordeu) falhas.push(`A planta não mordeu: ${nome}${queixas.length ? ` (queixou-se de outra coisa: ${queixas[0]})` : ''}`);
     }
   }
@@ -346,7 +345,7 @@ try {
 const relatorio = { comando: (process.env.OEDP_TEMA_MENU_JSON ? `OEDP_TEMA_MENU_JSON=${process.env.OEDP_TEMA_MENU_JSON} ` : '') +
   'node tests/inicio/tema-e-menu.mjs' + process.argv.slice(2).map(a => ' ' + a).join(''),
   cabeca: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
-  construcao: JSON.parse(await fs.readFile(path.join(DIST, 'version.json'), 'utf8')), limites_linhas_telefone: MAX_LINHAS_TELEFONE, medidas_menu: medidasDoMenu, papeis: { claro: PAPEL_CLARO, escuro: PAPEL_ESCURO }, contas, falhas, plantas,
+  construcao: JSON.parse(await fs.readFile(path.join(DIST, 'version.json'), 'utf8')), referencia_menu: REFERENCIA_MENU, limites_linhas_telefone: MAX_LINHAS_TELEFONE, medidas_menu: medidasDoMenu, papeis: { claro: PAPEL_CLARO, escuro: PAPEL_ESCURO }, contas, falhas, plantas,
   documentos_mais_largos_do_que_a_janela: larguraDoDocumento.filter((d) => d.documento > d.janela) };
 const j = process.argv.indexOf('--json');
 // A corrida inteira pode guardar a mesma prova, sem repetir o navegador depois dos portões.
