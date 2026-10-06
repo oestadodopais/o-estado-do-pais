@@ -86,8 +86,32 @@ def linhas_dos_portoes(repo, cabeca, relatorio, texto, arvore):
     return registos, filtrados, indice
 
 
-def conferir_citacoes(destino, filtrados):
-    for f, corpo in filtrados.items():
+def conferir_citacoes(destino, repo, cabeca, relatorio):
+    """Relê a entrega e extrai as citações por uma leitura independente.
+
+    Não recebe os bytes preparados pelo escritor: uma falha nessa preparação
+    ou na escrita tem de ser apanhada pelo caminho normal da montagem.
+    """
+    esperadas = {}
+    for linha in (destino / 'relatorio-construtor.md').read_text().splitlines():
+        if '<!--' not in linha or 'portao:' not in linha:
+            continue
+        declaracao = linha.split('portao:', 1)[1].split('-->', 1)[0]
+        nome, separador, prefixo = declaracao.partition('|')
+        if not separador or not prefixo.strip():
+            raise ValueError('O pacote recusa a entrega: citação de portão incompleta.')
+        f = relativo(os.path.normpath(str(Path(relatorio).parent / nome.strip())))
+        origem = git(repo, 'show', f'{cabeca}:{f}').decode().splitlines()
+        encontradas = {}
+        for numero, conteudo in enumerate(origem):
+            sem_cor = re.sub(r'\x1b\[[0-9;]*m', '', conteudo)
+            if sem_cor.strip().lstrip('✓✗▶').lstrip().startswith(prefixo.strip()):
+                encontradas[numero] = conteudo
+        if not encontradas:
+            raise ValueError(f'O pacote recusa a entrega: citação sem origem em {f}.')
+        esperadas.setdefault(f, {}).update(encontradas)
+    for f, linhas in esperadas.items():
+        corpo = ('\n'.join(linhas[n] for n in sorted(linhas)) + '\n').encode()
         alvo = destino / f
         if not alvo.is_file() or alvo.read_bytes() != corpo:
             raise ValueError(f'O pacote recusa a entrega: faltam as linhas citadas de {f}.')
@@ -176,7 +200,7 @@ def principal():
         alvo = destino / 'built' / relativo(f)
         alvo.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(repo / 'dist' / f, alvo)
-    conferir_citacoes(destino, filtrados)
+    conferir_citacoes(destino, repo, cabeca, rel_relatorio)
     print(f'Pacote: {copiados} ficheiros mudados, {n_extra} extra, {len(retirados)} secções retiradas, {n_motor} ficheiros do motor, {len(construidos)} páginas construídas.')
 
 
