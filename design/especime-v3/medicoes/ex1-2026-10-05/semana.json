@@ -1,0 +1,71 @@
+{
+  "aceites": [
+    "2026-10-06"
+  ],
+  "janela": {
+    "inicio": "2026-09-30",
+    "fim": "2026-10-06"
+  },
+  "contagens": {
+    "relidas": 90,
+    "valor": 12,
+    "proveniencia": 9
+  },
+  "mudancas": 12,
+  "blocos_que_mudaram": [],
+  "w1": [
+    {
+      "nome": "um valor mudado dentro da janela (abrantes-desemprego-registado-2025-12, 1 158 para 1 159)",
+      "pediu": "mais uma linha mudada, «subiu»",
+      "viu": "resolvedor 13 (subiu), célula 13",
+      "mordeu": true
+    },
+    {
+      "nome": "uma releitura igual dentro da janela (abrantes-divida-dgal-2024)",
+      "pediu": "mais uma relida e nenhuma mudança",
+      "viu": "resolvedor 91 relidas e 12 mudadas, célula 91 e 12",
+      "mordeu": true
+    },
+    {
+      "nome": "uma entrada fora da janela (abrantes-empresas-2024, 2026-09-29)",
+      "pediu": "nada muda",
+      "viu": "resolvedor {\"relidas\":90,\"valor\":12,\"proveniencia\":9}, célula {\"relidas\":90,\"valor\":12,\"proveniencia\":9}",
+      "mordeu": true
+    },
+    {
+      "nome": "uma semana sem entrada nenhuma dentro da janela (2026-09-30 a 2026-10-06)",
+      "pediu": "zero nas três contagens, nenhuma mudança, e a mesma primeira frase com nada relido e nada mudado",
+      "viu": "resolvedor {\"relidas\":0,\"valor\":0,\"proveniencia\":0}, célula {\"relidas\":0,\"valor\":0,\"proveniencia\":0}; pt: «Entre 30.09.2026 e 06.10.2026, nenhum número foi relido na fonte, e nenhum mudou de valor nem de proveniência.» · en: «Between 30.09.2026 and 06.10.2026, no figure was re-read at the source, and none changed value or provenance.»",
+      "mordeu": true
+    }
+  ],
+  "portas": 4,
+  "plantas": [
+    {
+      "nome": "uma contagem trocada",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "a janela de outro dia",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "uma mudança a menos",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "a palavra do lado trocada",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "o valor de antes de outra entrada",
+      "mordeu": true,
+      "aplica": true
+    }
+  ],
+  "erros": []
+}

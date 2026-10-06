@@ -1,0 +1,7 @@
+cabeça: 1d64052a5bbe45e92608a997bebe17742bbcb0aa
+estado dos ficheiros seguidos: 0 linha(s)
+---
+{"referencias_comparadas": 499, "corrigidas_a_mao": 3}
+l.391 scripts/medir-defeitos.mjs: 683 -> conta 696 -> agora 716
+l.405 scripts/check-formas.mjs: 684 -> conta 693 -> agora 711
+l.552 scripts/gate-html.mjs: 8042 -> conta 8086 -> agora 8108

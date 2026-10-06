@@ -1,0 +1,30 @@
+{
+  "o_que": "as referências do mapa corrigidas à mão depois da conta do diff (mapa-a-mao.py)",
+  "cabeca_de_partida": "3664b90d",
+  "cabeca_do_codigo": "c885cb4c",
+  "referencias_comparadas": 499,
+  "corrigidas_a_mao": 3,
+  "lista": [
+    {
+      "mapa_linha_agora": 391,
+      "ficheiro": "scripts/medir-defeitos.mjs",
+      "na_partida": 683,
+      "pela_conta": 696,
+      "agora": 716
+    },
+    {
+      "mapa_linha_agora": 405,
+      "ficheiro": "scripts/check-formas.mjs",
+      "na_partida": 684,
+      "pela_conta": 693,
+      "agora": 711
+    },
+    {
+      "mapa_linha_agora": 552,
+      "ficheiro": "scripts/gate-html.mjs",
+      "na_partida": 8042,
+      "pela_conta": 8086,
+      "agora": 8108
+    }
+  ]
+}

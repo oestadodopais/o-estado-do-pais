@@ -1,0 +1,879 @@
+{
+  "o_que_e": "EX1: as capturas da lista, da explicação, da leitura da semana e da primeira página, nas cinco larguras e nas duas edições, com as medidas no ecrã e as plantas no navegador.",
+  "construcao": "1d64052a5bbe45e92608a997bebe17742bbcb0aa",
+  "construido_em": "2026-10-06T01:21:36.709Z",
+  "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/captar-ex1.mjs --json capturas.json",
+  "capturas": [
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/lista-pt-390.png",
+      "sha256": "f0e4af18a8b25b47003345db26a8deeb6f3552dc6b0ca4bd7a0b05ef1794dfe1",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 900
+    },
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/lista-pt-768.png",
+      "sha256": "f18e0294f4e5bef17d703bf9efabc5fc11b301897891e79a70707d39d44c4add",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 900
+    },
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/lista-pt-1024.png",
+      "sha256": "351fd762d46e465317d5d05d658da5f94563b8e6b8a1bd768c80f9c5ca475291",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 900
+    },
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/lista-pt-1280.png",
+      "sha256": "4b83fbd3a696f6d50344dabbffc6060420e4d1d30eb9d4fe41590e11f4f1460c",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 900
+    },
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/lista-pt-1600.png",
+      "sha256": "e4cbea380f15e3eedc084fce44ef3168b65ee62324993b7db70d9fbcd08a10c9",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 900
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/lista-en-390.png",
+      "sha256": "33559cd5ba1f87455e3449d86afdc4fd43aa15dd7bd184dea34a6813a92eb570",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 906
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/lista-en-768.png",
+      "sha256": "5513971895533eac801ea53968b4c92a4ea2fbcf261238b604c9c42c9a78221b",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 900
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/lista-en-1024.png",
+      "sha256": "43675341d4f50a989e2d276068a57c5f9034a38cab4c064e54ca1d834a1c235a",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 900
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/lista-en-1280.png",
+      "sha256": "a77db50012bc348fd4560b272502bc8dc93ff753a99e86853badf63eb3d32551",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 900
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/lista-en-1600.png",
+      "sha256": "59768aa41e2bf37ca7b53d8a6bd6a2630be05fcd4cf4939d3bb818e14b235453",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 900
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lang": "pt",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/explicacao-pt-390.png",
+      "sha256": "8b95eceb6c904e3616d6b40f0f7f6879b0c40749466020414cecdb6431eaba56",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 3555,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 8,
+          "barra_mais_longa_px": 254.2,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 254.2,
+          "valores_fora_da_figura": 0
+        }
+      ]
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lang": "pt",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/explicacao-pt-768.png",
+      "sha256": "98c0ae1e8304348803a6bc1c9bc46ae840cd1c8a56052f5f99199d4f33ed7ee4",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 2708,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ]
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lang": "pt",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/explicacao-pt-1024.png",
+      "sha256": "095b8ff009571a5a393d36b96b9b9321728415bf290834a4d41c89af4de58dfd",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 2806,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ]
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lang": "pt",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/explicacao-pt-1280.png",
+      "sha256": "b1e5c3c92e581adb012b86929a34983e94d89ec1174a0c9766313acfa897c5db",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 2902,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ]
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lang": "pt",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/explicacao-pt-1600.png",
+      "sha256": "ef39a757a556a266e341ca102421a7880f7e3c1d219d439f527d6b83205014f9",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 2923,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ]
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lang": "en",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/explicacao-en-390.png",
+      "sha256": "cfab45c4ebf5811adaca56928ce4abd630ae76fb2e5b57cc3650accc501ebb47",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 3585,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 8,
+          "barra_mais_longa_px": 254.2,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 254.2,
+          "valores_fora_da_figura": 0
+        }
+      ]
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lang": "en",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/explicacao-en-768.png",
+      "sha256": "fd079c300e058a6603529a244c1edea02a7ca63611a1ba29262ec3f3648a6cfb",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 2690,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ]
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lang": "en",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/explicacao-en-1024.png",
+      "sha256": "b985845e2f746107b40e5b67f94fd8ca070e7e8337b40b48dda6ec66f303598f",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 2739,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ]
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lang": "en",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/explicacao-en-1280.png",
+      "sha256": "cd2bdefe97873e25d227b293948e22cc7728756f17c0738a9ef78de01c39c098",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 2835,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ]
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lang": "en",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/explicacao-en-1600.png",
+      "sha256": "92ebbb1b98f7106498d87e9b66cb7bb2258edd8f5314ce02b02638e94c821e17",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 2857,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ]
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "lang": "pt",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/semana-pt-390.png",
+      "sha256": "c0a717592434f1f3fad88a9a05de6730d8a3a157ebe5b11e8cfb337c5c38d932",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 2169,
+      "mudancas_rendidas": 12
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "lang": "pt",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/semana-pt-768.png",
+      "sha256": "b3d86270dee79e0dd9c141fb6a23fc21496cbaf0e3db78049d400e20a078e7a3",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 1768,
+      "mudancas_rendidas": 12
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "lang": "pt",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/semana-pt-1024.png",
+      "sha256": "cc58630ae1538290912026066b4acce2ff73b69354bace5c6f20c036fa2d0a6b",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 1822,
+      "mudancas_rendidas": 12
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "lang": "pt",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/semana-pt-1280.png",
+      "sha256": "b2d08b39f83a707a3b02f9df93af0ad6b37f1693e5c5546b49118e35f06d2c9e",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 1872,
+      "mudancas_rendidas": 12
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "lang": "pt",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/semana-pt-1600.png",
+      "sha256": "929044d45f74fd3523b160deb4ce05c07e39f188b06dab6f28f1ecd255994226",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 1884,
+      "mudancas_rendidas": 12
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "lang": "en",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/semana-en-390.png",
+      "sha256": "7d6753073b43cab8afa18aa0cf4deba0e48da6dc56e2ece8f6f3b6d3064920f4",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 2169,
+      "mudancas_rendidas": 12
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "lang": "en",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/semana-en-768.png",
+      "sha256": "e217ed34ec77e51d601e7963ec54a5d417bc9044b95481855d07a2e09a70e375",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 1816,
+      "mudancas_rendidas": 12
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "lang": "en",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/semana-en-1024.png",
+      "sha256": "407a186c141f625a3ab2ac56eaba22fb2d965af272674304a75c111e364659c3",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 1822,
+      "mudancas_rendidas": 12
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "lang": "en",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/semana-en-1280.png",
+      "sha256": "a916b6f4f0afb098f076e22df3e16cdb6ba5a7a0c657e8ef6214f77e769bc0d3",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 1872,
+      "mudancas_rendidas": 12
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "lang": "en",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/semana-en-1600.png",
+      "sha256": "665c5dae19459f55fd3f0f8c205faf27492a337a9fb5c7c589e01ebb727b5468",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 1884,
+      "mudancas_rendidas": 12
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/primeira-pt-390.png",
+      "sha256": "04e711bf81a96a60bf83bb7125625a1b24f1ba3042443c31ca650acc7afd9bb9",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 7243,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 184.5,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 354,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 93.8,
+            "largura_px": 354,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      }
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/para-perceber-pt-390.png",
+      "sha256": "59736284df8812d38b594c488cc2cf9e03d3f23fbc20a0ddf3d10f8f7c3024ac",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/primeira-pt-768.png",
+      "sha256": "e0f35a76f1223c4907671a0264c4774f473064798f9a73e488129fc20381f8a1",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 5675,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 159.6,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 706.6,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 68.8,
+            "largura_px": 706.6,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      }
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/para-perceber-pt-768.png",
+      "sha256": "63aa7336d7d9c2f4a3404252e1b9cd5b5c9f982ae714e5668a6ec426b665d58f",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/primeira-pt-1024.png",
+      "sha256": "3e9a2906e36acd1ef6cdbf01beb975dad6f03b5c63a27b303a43bc3bee4dbb26",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 5140,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 164,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 736,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 68.8,
+            "largura_px": 736,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      }
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/para-perceber-pt-1024.png",
+      "sha256": "bff06f774c65610b08c8716a0b341b8f7a1ba7cbc40a1bdc85cd7232f0c29287",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/primeira-pt-1280.png",
+      "sha256": "548dd348b36b70caf431821a397b827f3ca1e42dece373a7f86ad6e41d41fbed",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 5042,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 165.8,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 736,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 68.8,
+            "largura_px": 736,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      }
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/para-perceber-pt-1280.png",
+      "sha256": "3d76acad9da3f2503c36b755d38ff3ff26525db5fca7acc1a3498e0487532f2c",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/primeira-pt-1600.png",
+      "sha256": "4736871d735d5168b02ddf3de2f0a349233aa8b077992032fcd91aba1eb2b8b8",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 5059,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 165.8,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 736,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 68.8,
+            "largura_px": 736,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      }
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/para-perceber-pt-1600.png",
+      "sha256": "e2b41ac20db7152ac794ef734eb30177a4206a9206678998af590cb31adb045e",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/primeira-en-390.png",
+      "sha256": "df8e99aaf84a587fc141024d887c5ad2b0ba47dcce905cc2ada997011cfb8bf9",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 7147,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 185.5,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 354,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 94.8,
+            "largura_px": 354,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      }
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/para-perceber-en-390.png",
+      "sha256": "eda94341833435215f5d8f431dee7b982db44a18ac813a27481efa5283e0d88e",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/primeira-en-768.png",
+      "sha256": "d4c56a58451da946047b878d270b6cfc3e48ac8d55870f29f0fd52d7c85749ab",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 5769,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 160.6,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 706.6,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 69.8,
+            "largura_px": 706.6,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      }
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/para-perceber-en-768.png",
+      "sha256": "1ee4fbef313d61042ed67c13d8a8f2f06add61e6db1e4bc39126d14167cf856a",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/primeira-en-1024.png",
+      "sha256": "d8961899c3a01a5ad68781dbab345e59047e84e6e52d471893c31aff98cb88b4",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 5244,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 165,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 736,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 69.8,
+            "largura_px": 736,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      }
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/para-perceber-en-1024.png",
+      "sha256": "bf1bccc6d673b5c5e90c73f41871025f464111f8cb75fc7ba875ff972f63d4f8",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/primeira-en-1280.png",
+      "sha256": "9867932128032ebaa749a09a378b331cf2b8039c3ef2e70ae5955cf26a1906f7",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 5114,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 166.8,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 736,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 69.8,
+            "largura_px": 736,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      }
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/para-perceber-en-1280.png",
+      "sha256": "9793847d44fd9f3eef4161de62845176250870cca62cfde290fab487a50d026c",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/primeira-en-1600.png",
+      "sha256": "133454ab707c936c14c8a7d84f4f2ce592307598067f6a091922cbacd3949c09",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 5131,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 166.8,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 736,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 69.8,
+            "largura_px": 736,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      }
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/para-perceber-en-1600.png",
+      "sha256": "8f90036f4904d282d1815464c22cd63db0fefa8dce1bd0aea07a2db043f66557",
+      "recorte": "o bloco «Para perceber»"
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "uma página mais larga do que o ecrã",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "largura": 390,
+      "mordeu": true
+    },
+    {
+      "nome": "uma porta do bloco com 20 px de altura",
+      "rota": "/",
+      "largura": 390,
+      "mordeu": true
+    },
+    {
+      "nome": "o valor de uma barra empurrado para fora da figura",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "largura": 390,
+      "mordeu": true
+    }
+  ],
+  "erros": []
+}

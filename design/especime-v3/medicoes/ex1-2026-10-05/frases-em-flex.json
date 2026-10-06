@@ -1,0 +1,194 @@
+{
+  "o_que_e": "EX1: as frases compostas das explicações e da semana dentro de um contentor flexível ou de grelha, e os transbordos, nas páginas onde se rendem.",
+  "construcao": "1d64052a5bbe45e92608a997bebe17742bbcb0aa",
+  "construido_em": "2026-10-06T01:21:36.709Z",
+  "resultados": [
+    {
+      "rota": "/",
+      "largura": 390,
+      "pedacos": 6,
+      "pais": 2,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 390
+    },
+    {
+      "rota": "/en/",
+      "largura": 390,
+      "pedacos": 6,
+      "pais": 2,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 390
+    },
+    {
+      "rota": "/indice/",
+      "largura": 390,
+      "pedacos": 1,
+      "pais": 1,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 390
+    },
+    {
+      "rota": "/en/index/",
+      "largura": 390,
+      "pedacos": 1,
+      "pais": 1,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 390
+    },
+    {
+      "rota": "/explicacoes/",
+      "largura": 390,
+      "pedacos": 6,
+      "pais": 2,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 390
+    },
+    {
+      "rota": "/en/explainers/",
+      "largura": 390,
+      "pedacos": 6,
+      "pais": 2,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 390
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 390,
+      "pedacos": 29,
+      "pais": 13,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 390
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 390,
+      "pedacos": 29,
+      "pais": 13,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 390
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "largura": 390,
+      "pedacos": 4,
+      "pais": 4,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 390
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "largura": 390,
+      "pedacos": 4,
+      "pais": 4,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 390
+    },
+    {
+      "rota": "/",
+      "largura": 1280,
+      "pedacos": 6,
+      "pais": 2,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 1280
+    },
+    {
+      "rota": "/en/",
+      "largura": 1280,
+      "pedacos": 6,
+      "pais": 2,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 1280
+    },
+    {
+      "rota": "/indice/",
+      "largura": 1280,
+      "pedacos": 1,
+      "pais": 1,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 1280
+    },
+    {
+      "rota": "/en/index/",
+      "largura": 1280,
+      "pedacos": 1,
+      "pais": 1,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 1280
+    },
+    {
+      "rota": "/explicacoes/",
+      "largura": 1280,
+      "pedacos": 6,
+      "pais": 2,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 1280
+    },
+    {
+      "rota": "/en/explainers/",
+      "largura": 1280,
+      "pedacos": 6,
+      "pais": 2,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 1280
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 1280,
+      "pedacos": 29,
+      "pais": 13,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 1280
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 1280,
+      "pedacos": 29,
+      "pais": 13,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 1280
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "largura": 1280,
+      "pedacos": 4,
+      "pais": 4,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 1280
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "largura": 1280,
+      "pedacos": 4,
+      "pais": 4,
+      "flex": [],
+      "transborda": false,
+      "largura_do_documento": 1280
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "a porta da lista das explicações posta num contentor flexível",
+      "mordeu": true
+    }
+  ],
+  "erros": []
+}
