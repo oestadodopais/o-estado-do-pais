@@ -1,0 +1,10 @@
+{
+  "comando": "node design/especime-v3/medicoes/er1-2026-10-06/medir-campo-copia.mjs",
+  "cabeca": "eeb282d97baa9dad851a8ba7e0df700a570bbc34",
+  "shaDoComparador": "f1e47d7fa383567c9e7dba375e2b3ca95faa12b897d0a4b17a81b8e90bc48176",
+  "planta": "Campo correto marcado fora do bloco; campo incorreto dentro do bloco.",
+  "aceiteIndevidamente": true,
+  "queixas": [],
+  "textoQueOBotaoCopiaria": "Texto diferente",
+  "campoConferidoEOCopiado": false
+}

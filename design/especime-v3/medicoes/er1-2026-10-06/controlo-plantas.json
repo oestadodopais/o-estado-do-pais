@@ -1,0 +1,45 @@
+{
+  "comando": "node design/especime-v3/medicoes/er1-2026-10-06/fechar.mjs",
+  "plantas": [
+    {
+      "nome": "pedido-de-fora",
+      "mensagem": "ER1 privacidade: endereço fora da origem fixa do projeto.",
+      "mordeu": true,
+      "ficheiro": "ensaio-cego/incorporar.js",
+      "original": "95d518e41d1e8a87afb689ed0894a4dcd0b8706441cdf8c000103ceaf730149c",
+      "plantado": "c0c4d9c2b69f2f36fc4dad9f30be5d8824c5c8421d9e57f8bed064cb965d82c4"
+    },
+    {
+      "nome": "cookie",
+      "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+      "mordeu": true,
+      "ficheiro": "ensaio-cego/incorporar.js",
+      "original": "95d518e41d1e8a87afb689ed0894a4dcd0b8706441cdf8c000103ceaf730149c",
+      "plantado": "c0c4d9c2b69f2f36fc4dad9f30be5d8824c5c8421d9e57f8bed064cb965d82c4"
+    },
+    {
+      "nome": "cors-em-falta",
+      "mensagem": "ER1 CORS: /livro-razao/custo-unitario-do-trabalho-2024.json tem estado ou cabeçalho incorreto.",
+      "mordeu": true,
+      "ficheiro": "ensaio-cego/vercel.json",
+      "original": "56af5ca5fdcf1f582781f5b089959e6f13e142b2f543b0edc485173229d7d10e",
+      "plantado": "9adfc5e184e6623bc56dea79688a66f94607093e2957bdd281076a91b52505e1"
+    },
+    {
+      "nome": "valor-trocado",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true,
+      "ficheiro": "ensaio-cego/recibo-pt.html",
+      "original": "6ffa445aca152ac54a8b5d42f36acd0fcbc5690c837af4616c73c7a36aeeb9f2",
+      "plantado": "3ea5b283e2d020ba056d9801366ae13e66a030f7b32c37964bf148854a949451"
+    },
+    {
+      "nome": "porta-na-edicao-errada",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true,
+      "ficheiro": "ensaio-cego/recibo-en.html",
+      "original": "0693fff7fb0044a7ce845faad08f61e34a1559d1c8f1f493835429f9ef568d7f",
+      "plantado": "e09e7247fa1c6dc14492f949164c7b6d4ae721b0b2414f1e149f9000d7537ae6"
+    }
+  ]
+}

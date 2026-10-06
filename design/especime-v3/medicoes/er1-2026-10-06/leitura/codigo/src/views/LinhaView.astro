@@ -1,0 +1,1892 @@
+---
+/**
+ * A página de uma linha do livro-razão.
+ *
+ * É o destino do selo de proveniência. O Método promete, nas duas línguas, que
+ * o selo é a porta para a linha; esta é a divisão do outro lado da porta.
+ *
+ * Disposição B do IDENTIDADE.md §3: corpo a 68ch, coluna de aparelho a 300px.
+ *
+ * A ORDEM DO RECIBO (v2, IDENTIDADE.md §11; `design/DECISAO.md`). O corpo deixa
+ * de ser uma ficha sobre a prova e passa a ser a prova, pela ordem em que um
+ * leitor a confirma:
+ *
+ *   i    o valor, grande, COM O SEU PRÓPRIO SELO, a unidade e o id. O selo abre
+ *        o bloco da prova nesta mesma página: estar já na página certa não
+ *        dispensa a porta, dispensa a viagem (§5.3);
+ *   ii   uma frase de atribuição, em palavras e não em rótulos, composta só dos
+ *        campos que existem, e o marcador não é um campo que exista: sem
+ *        organismo não há frase, e a dívida diz-se uma vez, no aparelho;
+ *   iii  a prova: o recorte da linha impressa quando a linha o tem, com a sua
+ *        legenda e a porta para a página exata do documento; a porta sozinha
+ *        quando o endereço fixa a página e não há recorte; e a transcrição: o
+ *        excerto, ou o campo devolvido quando a fonte é uma série;
+ *   iv   o pedido exato ou o endereço, quando não foi já a porta de (iii);
+ *   v    as verificações: «Lido a», que a linha guarda desde sempre, e
+ *        «Reconferido a», uma linha por cada uma das duas entradas mais
+ *        recentes de `verifications[]`, da mais nova para a mais velha. Sem
+ *        nenhuma entrada, o marcador com a porta para a regra da releitura;
+ *   vi   as correções e atualizações desta linha.
+ *
+ * O RECORTE, ONDE ELE EXISTE. Desde 18.08.2026 (T2) uma linha pode trazer
+ * `document.crop`: a imagem da linha impressa, recortada no motor do PDF fixado
+ * por `core/pdfproof.py`. Onde ela não existe não se desenha nada no seu lugar,
+ * nem caixa nem espécime (IDENTIDADE.md §6): o excerto transcrito faz o que
+ * sempre fez, e é ele a prova.
+ *
+ *   aparelho  a ficha. Fonte, documento, edição, data de acesso, data dos
+ *             dados, estudo, e o estado da proveniência, que é o que esta
+ *             página não sabe.
+ *
+ * TODOS os campos vão marcados com data-linha-*: o portão confere cada um
+ * contra o livro-razão, carácter a carácter. Nesta página quase tudo são
+ * algarismos, e nenhum entra por dispensa.
+ */
+import Base from '../layouts/Base.astro';
+import Claim from '../components/Claim.astro';
+import CampoDaLinha from '../components/CampoDaLinha.astro';
+import TituloDeTrabalho from '../components/TituloDeTrabalho.astro';
+import HistoricoDaLinha from '../components/HistoricoDaLinha.astro';
+import DataDaLinha from '../components/DataDaLinha.astro';
+import {
+  getClaim,
+  parsePtNumber,
+  camposPorVerificar,
+  provenienciaIncompleta,
+  eDaCasa,
+  eDerivada,
+  eContaDaRessalva,
+  derivacaoDaLinha,
+  excertoComposto,
+  notaDeBandeira,
+  ressalvaDaLinha as ressalvaPublicadaDaLinha,
+  atribuicaoDaLinha,
+  verificacoesDaLinha,
+  VERIFICACOES_MOSTRADAS,
+  POR_VERIFICAR,
+} from '../lib/ledger.mjs';
+import { caminhoDaLinha, caminhoDoLivro, tituloDaLinha, descricaoDaLinha } from '../lib/livro.mjs';
+import { estadoDaFonte } from '../lib/prova.mjs';
+import { ANFITRIOES_SEM_RESPOSTA } from '../data/fontes.mjs';
+import { atrasoDaLinha } from '../lib/frescura.mjs';
+import { dataDaCasa } from '../lib/datas.mjs';
+import { proximaConferenciaDaLinha, ancoraDoEvento } from '../lib/agenda.mjs';
+import { nomeOficial, reguaDaMedida, temRegua } from '../lib/enquadramento.mjs';
+import { serieDaLinha } from '../lib/series.mjs';
+import { ressalvaDaUniao } from '../data/ressalvas-da-uniao.mjs';
+import { PALAVRAS_DA_FAIXA } from '../data/faixa-da-uniao.mjs';
+import { linhaDePortugalDaLinha } from '../lib/faixa-do-concelho.mjs';
+import { studyTitle } from '../data/studies.mjs';
+import { unidadeDaLinha } from '../i18n/unidades.mjs';
+import Frase from '../components/Frase.astro';
+import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
+import { DEFINICOES_DAS_MEDIDAS, FIGURAS, origensDaDefinicao } from '../data/figuras.mjs';
+import { ressalvaDaLinha } from '../data/dominios.mjs';
+import {
+  linguaDoTituloDoDocumento,
+  linguaDoRotuloDaFonte,
+  linguaDaFonte,
+  linguaDaEdicao,
+} from '../i18n/lingua-dos-titulos.mjs';
+import { routePath } from '../lib/routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import { LICENCA } from '../data/licenca.mjs';
+import { CONJUNTO } from '../lib/conjunto.mjs';
+import { LANGS } from '../lib/routes.mjs';
+import { familiaDaLinha, oQueEDaLinha, nomeNoRecibo, lugarNoRecibo, nomeDaFonteNoRecibo } from '../lib/o-que-e-o-numero.mjs';
+import Marcador from '../components/Marcador.astro';
+import { partesDaLeitura } from '../lib/leitura-da-medida.mjs';
+import '../styles/linha.css';
+import { codigoDaIncorporacao } from '../lib/incorporar.mjs';
+
+const { lang = 'pt', id } = Astro.props;
+const s = t(lang);
+const claim = getClaim(id);
+/* O QUE É ESTE NÚMERO (bloco R4, 05.10.2026, os pontos 1 e 2 do brief): o nome do título, o lugar quando o nome é o de
+   uma medida dos 308, o nome com que a fonte publica a medida, e a frase, todos pelo resolvedor
+   (`src/lib/o-que-e-o-numero.mjs`), que fecha a construção se uma linha ficar sem frase ou sem nome. Uma linha com
+   cartão nacional mostra também a metade da leitura que compara, como o cartão a mostra à vista: é ela que diz o que
+   o sinal quer dizer onde ele decide, e o lado do valor de referência. */
+const familiaRecibo = familiaDaLinha(id);
+const nomeRecibo = nomeNoRecibo(id, lang);
+const lugarRecibo = lugarNoRecibo(id, lang);
+const nomeDaFonte = nomeDaFonteNoRecibo(id);
+const oQueE = oQueEDaLinha(id, lang);
+const comparacaoDoCartao = familiaRecibo.tipo === 'cartao' ? partesDaLeitura(id, lang).comparacao : null;
+/* As perguntas das medidas fora dos painéis europeus têm as origens no
+   recibo que o cartão abre. A célula 8.4 confere a pergunta e cada campo das
+   origens; as medidas dos painéis conservam o seu lugar anterior. */
+const definicaoNova = !FIGURAS.some(f => f.claim === id)
+  ? DEFINICOES_DAS_MEDIDAS[id] ?? null
+  : null;
+
+const path = caminhoDaLinha(id, lang);
+const derivada = eDerivada(claim);
+const incompleta = provenienciaIncompleta(claim);
+/* Uma linha da casa não tem linhas de origem: a prosa da derivada seria falsa. */
+const daCasa = eDaCasa(claim);
+const emFalta = camposPorVerificar(claim);
+const derivacao = derivacaoDaLinha(claim, lang);
+/* O que a fonte diz sobre o estado do seu próprio valor. Fica na camada Fundo
+   (IDENTIDADE.md §4), ao pé da proveniência, e não junto ao número: o selo já é
+   a porta para aqui (§5.1). Sem cor nova (§2), sem segundo marcador (§6). */
+const bandeira = notaDeBandeira(claim, lang);
+const ressalvaPublicada = ressalvaPublicadaDaLinha(claim, lang);
+/* A SEGUNDA DATA DA NORMA (§2.5, bloco P2 item 2): quando a fonte volta a
+   publicar esta linha. Sai do calendário das fontes e é `null` onde a fonte não
+   anunciou dia nenhum, que é o caso da maior parte. */
+const proximaConferencia = proximaConferenciaDaLinha(id);
+/* OS NOMES OFICIAIS DA MEDIDA (a norma §1.5, bloco P2 item 2): o do INE e o da
+   PORDATA, lidos pelo motor com o endereço e a hora, e SÓ onde ele marca que é a
+   mesma medida. `null` em tudo o resto, que hoje são 115 das 132 linhas com
+   entrada no ficheiro e todas as outras. */
+const nomes = nomeOficial(id);
+/* AS LINHAS COM QUE ESTA MEDIDA SE COMPARA (bloco P2, 15.09.2026, a decisão do
+   lugar de direção sobre as capturas). O cartão passou a ter UMA marca da fonte
+   e não três: os valores da régua deixaram de levar marca própria, e a marca do
+   cartão abre este recibo. É aqui que as linhas da régua ficam, cada uma com a
+   sua porta, para que a proveniência continue a um toque. */
+const enquadramento = reguaDaMedida(id);
+const temEnquadramento = temRegua(enquadramento);
+/* A SÉRIE DE PAÍSES DESTA LINHA, quando ela é a linha portuguesa de uma (a
+   passagem UE1b, 29.09.2026): o enquadramento abre o recibo dela, com as
+   palavras da porta da faixa do cartão. */
+const serieDosPaises = serieDaLinha(id);
+/* A RESSALVA DA COMPARAÇÃO COM A UNIÃO (a §1.140, a passagem UE1d, 29.09.2026):
+   onde a medida a declara e o enquadramento mostra a União, vai no mesmo bloco. */
+const ressalvaDaComparacao = enquadramento?.ue ? ressalvaDaUniao(id, lang) : null;
+/* A LINHA DE PORTUGAL DE UMA LINHA DE CONCELHO (bloco L2b, 01.10.2026): a linha nacional da mesma
+   medida, na mesma unidade e no mesmo período, que a faixa do cartão do concelho mostra sem marca própria.
+   A marca única do cartão abre este recibo, e é aqui que ela paga esse valor, como paga os da régua de um
+   cartão nacional (a K10 do `check:cartao`). Hoje são as 308 linhas do ganho médio. */
+const portugalDoConcelho = linhaDePortugalDaLinha(id);
+/* A quem o valor é creditado, escrito numa linha só. Fica no aparelho, ao pé
+   da proveniência, porque é isso que é: parte do registo do facto, não um
+   juízo. A nota ao lado di-lo por palavras.
+
+   Até 18.08.2026 a nota dizia também «o rótulo partidário é facto de registo»
+   e abria a regra do Método sobre não ordenar partidos. Nenhuma das 61 linhas
+   com `attributed_to` credita um partido: são oito listas distintas, todas de
+   organismos, e o formato não tem campo que marque um. Ver DECISIONS §1.31,
+   «Nenhum rótulo partidário atravessou». A frase falava de uma coisa que não
+   estava na página. Volta com o campo, não com uma adivinha. */
+const atribuicao = atribuicaoDaLinha(claim);
+/* A RESSALVA DE ALCANCE DESTA LINHA, se ela tiver uma (F1.10, §9.2,
+   08.09.2026). Declarada na medida do domínio a que a linha pertence, e lida
+   aqui pelo identificador: a razão do lugar está ao pé de onde ela se rende. */
+const ressalvaDeAlcance = ressalvaDaLinha(id);
+
+/* O endereço só é ligação quando é mesmo um endereço. "[a verificar]" não é. */
+const url = typeof claim.source_url === 'string' && /^https?:\/\//.test(claim.source_url)
+  ? claim.source_url
+  : null;
+
+/**
+ * O que a fonte é, lido do campo `document.kind` e de mais lado nenhum.
+ *
+ * Rótulos. Um pedido a `json_indicador` do INE ou a `api/dissemination` do
+ * Eurostat devolve uma resposta, não abre uma página: chamar-lhe «Documento» e
+ * ao que ela traz «Excerto» diz ao leitor que existe uma frase impressa algures
+ * — e não existe. São **57 das 132 linhas**.
+ *
+ * Até 15.08.2026 isto era adivinhado pela forma do endereço, e a adivinha
+ * errava: `dados.gov.pt/api/1/datasets/r/…` traz `/api/` no caminho e serve uma
+ * folha de cálculo — as cinco linhas do PRR ficavam rotuladas como série. O
+ * campo é agora lido, e uma linha sem ele fica com os rótulos genéricos, que é
+ * um estado honesto e não uma omissão a esconder.
+ *
+ * Muda os rótulos e mais nada: nenhum campo, nenhum bloco, nenhuma ordem.
+ */
+const tipoDoDocumento = claim.document?.kind ?? null;
+const ehSerieDeDados = tipoDoDocumento === 'serie';
+
+/**
+ * A PÁGINA HUMANA de uma série, e a razão de ela vir primeiro (bloco T3).
+ *
+ * O `source_url` de uma linha de série é o pedido exato que foi feito a uma API:
+ * é o que prova o número, e é ilegível para quem não é uma máquina. A página do
+ * indicador no sítio de quem o publica é a porta principal para uma pessoa, e a
+ * ordem da prova passa a ser: a página, o pedido, o campo devolvido.
+ *
+ * O campo só existe depois de o motor o provar. Onde não existe não se desenha
+ * nada (IDENTIDADE.md §6): fica o pedido, como sempre esteve, e um campo
+ * opcional ausente não é dívida nem marcador.
+ */
+const paginaDaSerie = claim.document?.url ?? null;
+
+/**
+ * A página do documento, quando a linha a declara.
+ *
+ * Desde 18.08.2026 é o campo `document.page` — a página onde está a frase que
+ * o `excerpt` transcreve — e é a única origem da página: o fragmento `#page=N`
+ * do endereço deriva dela, e o validador obriga os dois a bater. A porta da
+ * prova escreve-a com `data-linha-campo="document.page"`, e o portão compara-a
+ * com o campo da linha.
+ */
+const paginaDoDocumento = claim.document?.page ?? null;
+
+/**
+ * A mesma página, lida do próprio endereço — `…pdf#page=119`.
+ *
+ * Continua a ser renderizada, na frase de atribuição, e continua a ser
+ * conferida contra o endereço com a cópia local da regra que o portão tem
+ * (`data-linha-campo="source_url.page"`). As duas leituras batem por
+ * construção porque o validador as obriga a bater; renderizar as duas é o que
+ * torna essa obrigação visível na página, em vez de ficar só no validador.
+ */
+const paginaDoPdf = (claim.source_url ?? '').match(/#page=(\d+)$/)?.[1] ?? null;
+
+/* Um campo existe quando tem valor E esse valor não é o marcador: «[a verificar]»
+   é a linha a dizer que o campo falta, e um campo que falta não entra numa frase
+   composta. Usado pela frase de atribuição e pelo texto alternativo do recorte. */
+const presente = (v) => Boolean(v) && v !== POR_VERIFICAR;
+
+/**
+ * O recorte da linha impressa, quando a linha o tem.
+ *
+ * A prova documental desta página era, até aqui, uma transcrição: o `excerpt`,
+ * que é a linha impressa copiada palavra por palavra. Com o `document.crop` a
+ * mesma linha vê-se, tal como está no PDF fixado: o recorte foi produzido no
+ * motor por `core/pdfproof.py`, que só o faz quando localiza a frase do excerto
+ * por correspondência exacta, única naquela página. O ficheiro atravessou com o
+ * resumo dos seus bytes, e o validador confere-o a cada construção.
+ *
+ * Onde não há recorte não se desenha nada: nem caixa, nem espécime, nem
+ * marcador a mais (IDENTIDADE.md §6). O excerto faz o que sempre fez.
+ */
+const recorte = claim.document?.crop ?? null;
+
+/**
+ * O ficheiro de dados que este sítio aloja, e de que esta linha é contada.
+ *
+ * A prova de uma contagem não é uma frase: é o conjunto contado. Onde ele
+ * existe, a página dá-o inteiro: a ligação para o ficheiro, o seu tamanho, o
+ * resumo dos seus bytes, a licença com a atribuição que a fonte pede, e o
+ * ficheiro da fonte de onde o extrato saiu, com o resumo desse. Quem quiser
+ * refazer a conta descarrega as duas coisas e confere as duas.
+ *
+ * O resumo escreve-se curto e vai inteiro no `title`: 64 hexadecimais numa
+ * linha de leitura são uma parede. O portão tem a sua própria cópia da regra do
+ * encurtamento, como tem a do `#page=`.
+ */
+const alojado = claim.document?.hosted ?? null;
+const RESUMO_CURTO = 12;
+const encurta = (h) => String(h).slice(0, RESUMO_CURTO);
+
+/**
+ * O corte que diz que o resumo está cortado.
+ *
+ * «sha256 0d5335642a26» são doze hexadecimais debaixo de um rótulo que promete
+ * sessenta e quatro, e quem lê toma o prefixo pelo resumo (leitura cruzada de
+ * 18.08.2026, achado 10). O prefixo fica, por duas razões: é a leitura de
+ * relance de uma impressão digital, e o resumo inteiro (572,3px medidos na letra
+ * de leitura) não cabe numa coluna de 354px a 390, onde se partiria a meio em
+ * duas linhas de hexadecimais. O que entra são as reticências, que são a única
+ * coisa que faltava: dizem que aquilo continua.
+ *
+ * Ficam FORA do elemento comparado. O portão confere o texto rendido do campo
+ * carácter a carácter contra a sua própria cópia da regra do encurtamento
+ * (`document.hosted.sha256.curto`); um carácter a mais lá dentro seria a
+ * transcrição a deixar de bater. O resumo inteiro vai no `title` do grupo, que
+ * cobre o prefixo e o corte, e no JSON da linha, que a construção escreve.
+ */
+const CORTE = '…';
+
+/**
+ * Os ficheiros sobre que a conta foi feita, e que este sítio NÃO aloja.
+ *
+ * O gémeo honesto do bloco acima. Onde a licença da fonte não permite alojar,
+ * ou não está verificada, a linha diz pelo menos sobre que ficheiros foi
+ * calculada: o nome do publicador, a data do instantâneo, o resumo de cada um,
+ * a coluna somada e o filtro aplicado. É registo, não prova: o excerto continua
+ * por confirmar, a dívida continua contada, e a página di-lo por palavras.
+ *
+ * Um estado desenhado, e não o marcador (IDENTIDADE.md §6 e §7): o marcador é
+ * para um campo que falta, e nenhum campo falta aqui.
+ */
+const calculado = claim.document?.computed_over ?? null;
+
+/**
+ * O texto alternativo do recorte, composto SÓ dos campos que existem.
+ *
+ * A mesma disciplina da frase de atribuição: um título que é o marcador não é
+ * um título, e «Recorte da linha impressa, página 119 de [a verificar]» seria
+ * uma frase com um buraco lida em voz alta a quem não vê a imagem.
+ */
+const recorteAlt = recorte
+  ? `${s.prov.recorteAlt} ${recorte.page}` +
+    (presente(claim.document?.title) ? ` ${s.prov.recorteAltDe} ${claim.document.title}` : '')
+  : null;
+
+/**
+ * As reconferências independentes que a página mostra: as duas mais recentes,
+ * da mais nova para a mais velha.
+ *
+ * Duas, e não todas: o recibo diz quando a linha foi relida pela última vez e
+ * o que a vez anterior deu, que é o que responde à pergunta «isto ainda é
+ * verdade». A lista inteira vive no livro-razão, e é de lá que a contagem do
+ * sítio sobre si próprio sai. Cada entrada leva o índice que tem na lista da
+ * linha: é por ele que o portão a vai buscar, e não pela ordem em que aparece.
+ */
+const verificacoes = verificacoesDaLinha(claim).slice(0, VERIFICACOES_MOSTRADAS);
+const mudancaPosterior = (v) => v.result === 'igual' ? (claim.corrections ?? []).map((c, n) => ({ ...c, n })).filter(c => ['atualizacao', 'correcao'].includes(c.kind) && c.date > v.date).sort((a,b) => a.date.localeCompare(b.date) || a.n-b.n)[0] : null;
+/* C1: a divergência leva à atualização que regista o mesmo valor encontrado. */
+const numeroDaReleitura = (v) => Number(String(v).replace(/[\s\u202f]/g, '').replace('−', '-').replace(',', '.'));
+const atualizacaoDaReleitura = (v) => v.result === 'diverge'
+  ? (claim.corrections ?? []).findIndex(e => e.kind === 'atualizacao' && e.date >= v.date
+      && numeroDaReleitura(e.new_value) === numeroDaReleitura(v.found))
+  : -1;
+
+
+/**
+ * O estado da fonte desta linha: desde quando é que o endereço não responde.
+ *
+ * `null` na esmagadora maioria, e `null` não se desenha. Uma fonte que responde
+ * não tem estado a mostrar, e um lugar vazio com um rótulo diria que há alguma
+ * coisa a dizer. É o corredor diário que o mede, e o que ele escreve é a data
+ * da primeira ausência DEPOIS da última resposta boa: ver `estadoDaFonte()` em
+ * `src/lib/prova.mjs` e `escrever_estado_das_fontes()` no motor.
+ */
+
+/**
+ * O ANFITRIÃO CALADO, quando o endereço desta linha não tem estado próprio.
+ *
+ * PORQUE É QUE O ENDEREÇO NÃO CHEGA (03.09.2026, bloco F0.11). O corredor mede
+ * duas coisas e o sítio só sabia ler uma. `FONTES_SEM_RESPOSTA` é por ENDEREÇO,
+ * e uma linha cujo endereço não foi pedido na última corrida não tem lá entrada
+ * nenhuma; `ANFITRIOES_SEM_RESPOSTA` é por ANFITRIÃO, e só existe quando TODOS
+ * os endereços que o arquivo conhece daquele publicador estão calados — que é
+ * exactamente o que o disjuntor por anfitrião do corredor mede quando uma casa
+ * inteira deixa de atender. Sem esta segunda leitura, a página desenhava
+ * silêncio sobre o silêncio: nada, que é o que ela desenha quando a fonte
+ * responde.
+ *
+ * A ORDEM É A DO MAIS PRECISO PRIMEIRO. O estado do próprio endereço é uma
+ * observação sobre AQUELE ficheiro; o do anfitrião é uma observação sobre a
+ * casa que o serve. Onde os dois existem, o do endereço é o que se diz.
+ *
+ * O `#page=N` tira-se antes de procurar, pela mesma razão que `estadoDaFonte()`
+ * o tira: o fragmento não vai no pedido, e o anfitrião de um endereço é o mesmo
+ * com ou sem ele.
+ */
+function anfitriaoDe(sourceUrl) {
+  if (typeof sourceUrl !== 'string' || !sourceUrl.startsWith('http')) return null;
+  try {
+    return new URL(sourceUrl.split('#')[0]).host;
+  } catch {
+    /* Um endereço que não se lê não tem anfitrião, e não se adivinha um. */
+    return null;
+  }
+}
+
+function estadoDoAnfitriaoDaLinha(sourceUrl) {
+  if (typeof sourceUrl !== 'string' || !sourceUrl.startsWith('http')) return null;
+  const anfitriao = anfitriaoDe(sourceUrl);
+  if (anfitriao === null) return null;
+  const estado = ANFITRIOES_SEM_RESPOSTA?.[anfitriao] ?? null;
+  return estado === null ? null : { ...estado, anfitriao };
+}
+
+const fonteSemResposta = estadoDaFonte(claim.source_url) ?? estadoDoAnfitriaoDaLinha(claim.source_url);
+
+/**
+ * ---------------------------------------------------------------------------
+ * O ATRASO DA SÉRIE (bloco F1.6, 04.09.2026; DECISIONS §1.98, decisão (2))
+ * ---------------------------------------------------------------------------
+ * A FRASE NÃO FALA DA CASA (segunda passagem, Major 8): «Último período
+ * publicado pela fonte: 2026-07; nesta linha: 2025-12, lido a 26.08.2026». A
+ * segunda metade aponta para a linha em que está, e não para quem a publica.
+ * ---------------------------------------------------------------------------
+ * «O IEFP rende o atraso em vez de publicar 2026-07 por conferir.» O desemprego
+ * registado por concelho que esta casa publica é o de dezembro de 2025 e o
+ * ficheiro que o IEFP serve hoje é o de julho de 2026: são oito períodos, e
+ * antes deste bloco a página dizia «reconferido» ao lado do valor sem dizer
+ * contra o quê. Um selo conferido ao lado de um número velho é uma frescura que
+ * a página promete e não tem.
+ *
+ * ONDE FICA, E PORQUÊ. Na cabeça, ao pé do selo, e não no bloco das
+ * verificações a meia página de distância: é a mesma razão pela qual o estado da
+ * fonte calada subiu para aqui no F0.11, e o parágrafo dele está mesmo acima. O
+ * leitor tem de ver o atraso ANTES de acreditar no número, não depois.
+ *
+ * NENHUM DOS TRÊS VALORES É ESCRITO NO GABARITO. O período da fonte vem de
+ * `src/data/frescura.mjs`, com a origem declarada e reconferida pelo
+ * `check:formas`; o período da casa é o `reference_date` desta linha e a data
+ * do «desde» é o `access_date` dela, os dois pelo `DataDaLinha`, que o mesmo
+ * portão vai buscar ao livro-razão e compara carácter a carácter.
+ *
+ * SEM COR NOVA (`IDENTIDADE.md` §2) e sem segundo marcador (§6): o que o torna
+ * visível é a posição e o rótulo, como no estado da fonte.
+ */
+const atraso = atrasoDaLinha(claim);
+
+/**
+ * O RÓTULO DO ESTADO, e é um de dois (03.09.2026, segunda passagem, Major 4).
+ *
+ * «Sem resposta desde» é a fonte que não atendeu; «Respondeu com erro desde» é
+ * a fonte que atendeu e cuja resposta não é 2xx nem 304. Chamar «sem resposta»
+ * a um 404 diria ao leitor que a fonte se calou, quando o que ela fez foi mudar
+ * o endereço. O ficheiro gerado traz o estado por palavra (`estado`); as
+ * entradas escritas antes desta data não o trazem, e a falta lê-se pelo que ela
+ * é: o que a casa sabia então era só «não se leu», e a palavra mais fraca das
+ * duas é a que não afirma a mais forte.
+ */
+const rotuloDoEstado =
+  fonteSemResposta?.estado === 'respondeu-com-erro'
+    ? s.livro.linha.respondeuComErroK
+    : s.livro.linha.semRespostaK;
+
+/**
+ * QUEM OBSERVOU A FALHA (Major 5). «A DGAL não responde» e «a DGAL não
+ * respondeu a esta máquina» são duas frases diferentes, e só a segunda é
+ * verdade: o mesmo endereço responde ao portátil do diretor e não responde ao
+ * IP do runner do GitHub, medido a 01.09.2026. Quando o índice do arquivo sabe
+ * a máquina, a página nomeia-a; quando não sabe (as linhas escritas antes de o
+ * campo existir), diz o que sabe, que é que quem perguntou foi o corredor.
+ */
+const quemObservou = fonteSemResposta?.maquina
+  ? `${s.livro.linha.aEstaMaquinaK}: ${fonteSemResposta.maquina}`
+  : s.livro.linha.aoCorredorK;
+
+/**
+ * A ÚLTIMA CONFERÊNCIA QUE CORREU BEM, para o selo não parecer fresco ao lado
+ * de uma fonte que deixou de responder (Major 5).
+ *
+ * O selo é a porta para a prova, e sozinho ao lado de um número lê-se como
+ * «isto está conferido». A cabeça passa a mostrar as duas datas no MESMO bloco:
+ * quando é que esta linha foi relida com êxito pela última vez, e desde quando
+ * é que a fonte dela falha. Um leitor não pode ver uma sem a outra.
+ *
+ * `null` quando nunca houve uma conferência boa, e aí não há data que mostrar:
+ * o que fica é a falha, sozinha, que é ainda mais claro.
+ */
+const ultimaConferenciaBoa =
+  verificacoesDaLinha(claim).find((v) => v.result === 'igual')?.date ?? null;
+
+/**
+ * A DATA DE UMA CÓPIA ARQUIVADA, tirada do próprio endereço (Major 9).
+ *
+ * Uma conferência do corredor contra `web.archive.org` prova uma coisa
+ * precisa: que os bytes da CÓPIA continuam a dar o resumo que a linha declara.
+ * Não prova que a fonte viva ainda serve o mesmo ficheiro, e no caso das cinco
+ * linhas do PRR ela não serve mesmo (§1.49). O recibo tem de dizer contra o
+ * quê a leitura foi feita, e a data do instantâneo está no endereço do arquivo,
+ * nos catorze algarismos do carimbo.
+ */
+function copiaArquivadaDe(caminho) {
+  const m = /^https?:\/\/(?:web\.archive\.org|archive\.org)\/web\/(\d{4})(\d{2})(\d{2})\d*/.exec(
+    String(caminho ?? ''),
+  );
+  return m === null ? null : `${m[3]}.${m[2]}.${m[1]}`;
+}
+
+/** As linhas da ficha que existem nesta afirmação. Uma linha a null não se mostra. */
+const ficha = [
+  /* O NOME DO ORGANISMO É UM NOME, E DIZ EM QUE LÍNGUA ESTÁ (I97, 29.08.2026):
+     a tabela é `src/i18n/lingua-dos-titulos.mjs`, e a regra é a dos títulos. */
+  { k: s.prov.fonte, campo: 'source', valor: claim.source, lingua: linguaDaFonte(claim.source, lang) },
+  {
+    k: ehSerieDeDados ? s.prov.serie : s.prov.documento,
+    campo: 'document.title',
+    valor: claim.document?.title ?? null,
+    /* O TÍTULO DE UM DOCUMENTO É UM NOME (I91, segunda metade, 29.08.2026): não
+       se traduz, e diz em que língua está. A tabela é
+       `src/i18n/lingua-dos-titulos.mjs`. */
+    lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
+    /**
+     * O TÍTULO ABRE O DOCUMENTO, QUANDO A LINHA DIZ ONDE ELE ESTÁ (bloco F1.4,
+     * item 7).
+     *
+     * A auditoria de 02.09.2026 mediu o título de um documento impresso como
+     * texto morto ao lado de um endereço cru que abre. São 358 das 2 916 linhas
+     * que declaram `document.url`, e nas 358 o título é o nome daquilo que
+     * aquele endereço abre: pô-lo a abrir é a porta que o leitor procura no
+     * primeiro sítio onde olha.
+     *
+     * A PORTA É CONFERIDA COMO AS OUTRAS. `scripts/gate-html.mjs` passou a
+     * exigir que a âncora que embrulha `data-linha-campo="document.title"`
+     * aponte para o `document.url` daquela linha, carácter a carácter, como já
+     * exigia da âncora do `source_url`. Uma porta que se abre sem ser conferida
+     * é a mentira que nenhum outro varrimento apanha.
+     *
+     * NÃO É A MESMA PORTA DO BLOCO «a página do indicador», e as duas ficam: o
+     * bloco do corpo mostra o ENDEREÇO, que é o que serve quem confere; esta
+     * mostra o NOME, que é o que serve quem lê. É a divisão que a própria página
+     * já tinha escrita entre a porta humana e o pedido exato.
+     */
+    porta: typeof claim.document?.url === 'string' ? claim.document.url : null,
+  },
+  /* A EDIÇÃO TAMBÉM (I97), e é o campo onde a tabela precisa de uma terceira
+     resposta: um ano, uma data e um código de série não estão em língua nenhuma
+     e não levam marca, mas estão declarados. */
+  {
+    k: s.prov.edicao,
+    campo: 'document.edition',
+    valor: claim.document?.edition ?? null,
+    lingua: linguaDaEdicao(claim.document?.edition ?? null, lang),
+  },
+  /* Onde no documento está o excerto. Opcional: a maior parte das fontes é uma
+     página só e não há para onde apontar; quando há, é o que separa «está neste
+     relatório» de «está nesta página deste relatório». */
+  {
+    k: s.prov.localizacao,
+    campo: 'document.locator',
+    valor: claim.document?.locator ?? null,
+    /**
+     * O LOCALIZADOR ESTÁ NA LÍNGUA DO DOCUMENTO QUE ELE LOCALIZA (I91,
+     * 29.08.2026), e por isso leva a marca do título.
+     *
+     * «linha de ÁGUEDA, coluna (5) do quadro — Dívida total (Exclui dívidas não
+     * orçamentais, exceções previstas na Lei n.º 73/2013, no OE/2024 e FAM)» é
+     * português, e é onde vivem 928 das ocorrências do nome daquela lei na
+     * edição inglesa. Não é uma suposição: os 2 216 localizadores do
+     * livro-razão pertencem, TODOS, a linhas cujo documento está declarado
+     * português, e `scripts/check-lingua.mjs` fecha a construção no dia em que
+     * um localizador aparecer numa linha de documento inglês — que é o dia em
+     * que esta regra deixa de valer e alguém tem de decidir.
+     */
+    lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
+  },
+  /* O RÓTULO COM QUE A FONTE PUBLICA ESTA FIGURA, e onde no ficheiro alojado
+     ele foi lido (29.08.2026). Vem a seguir ao localizador porque é o par dele
+     visto do outro lado: o localizador diz onde está o VALOR, e estes dois
+     dizem o que a fonte escreve por cima dele e onde. O rótulo está na língua
+     da fonte e leva a marca dela, como o título; o localizador do rótulo tem a
+     forma dos outros localizadores e leva a marca do documento. */
+  {
+    k: s.prov.rotuloDaFonte,
+    campo: 'name',
+    valor: claim.name ?? null,
+    lingua: linguaDoRotuloDaFonte(claim.name ?? null, lang),
+  },
+  {
+    k: s.prov.rotuloOnde,
+    campo: 'name_source',
+    valor: claim.name_source ?? null,
+    lingua: linguaDoTituloDoDocumento(claim.document?.title ?? null, lang),
+  },
+  /* A DATA DE LEITURA NÃO ENTRA NA FICHA (09.09.2026, decisão 17): vive uma vez
+     só, no bloco das verificações. O período de referência fica, porque é uma
+     propriedade do número e não uma data da casa. */
+  { k: s.prov.referencia, campo: 'reference_date', valor: claim.reference_date },
+].filter((l) => l.valor !== null && l.valor !== undefined);
+
+/**
+ * O estudo mostra-se pelo título, e o título não é um campo desta linha: a
+ * linha guarda o id, e o título vem do registo dos estudos. Vai marcado como o
+ * que é — uma citação de um título — e não como um campo transcrito, que seria
+ * o portão a conferir uma função contra ela própria.
+ */
+const estudo = studyTitle(claim.study, lang).titulo;
+
+/**
+ * A UNIDADE, NA LÍNGUA DA PÁGINA (I92, 29.08.2026).
+ *
+ * A unidade de uma linha é um rótulo e não uma citação: o dicionário de
+ * `src/i18n/unidades.mjs` dá o inglês onde há um facto de dicionário, e devolve
+ * a unidade em português com `lang="pt-PT"` onde não há. O portão de HTML
+ * confere o texto renderizado contra a mesma função, como já fazia com a
+ * `derivation` e com a nota de bandeira.
+ */
+const unidade = unidadeDaLinha(claim.unit, lang);
+
+/**
+ * A FRASE DE ATRIBUIÇÃO (v2, §11 iii da ordem do recibo).
+ *
+ * «Publicado por *organismo*, em *documento* (*edição*), p. *N* · lido a
+ * *data*». É a mesma informação que a ficha do aparelho dá em campos, dita uma
+ * vez em palavras: a ficha é para quem cita, a frase é para quem lê.
+ *
+ * COMPÕE-SE SÓ DO QUE EXISTE, E O MARCADOR NÃO É UM CAMPO QUE EXISTA. Uma
+ * linha calculada não tem organismo nem documento nem data de leitura, e não
+ * ganha frase nenhuma; uma linha sem edição não ganha parêntesis vazios; e um
+ * campo cujo valor É o marcador conta como ausente aqui, porque «Publicado por
+ * [a verificar], em [a verificar] ([a verificar]) · lido a [a verificar]» é uma
+ * frase com quatro buracos e não uma frase. **Quando o organismo falta, ou é o
+ * marcador, não se rende frase nenhuma**: a dívida declara-se uma vez, no bloco
+ * «O que falta nesta linha» do aparelho, com o motivo tipado e a porta da página
+ * do marcador. Dizê-la duas vezes não a torna mais honesta, torna a página menos
+ * legível. Cada peça que sobra é um `CampoDaLinha`, e por isso é conferida
+ * contra o livro-razão carácter a carácter.
+ */
+const atribuicaoPecas = [
+  presente(claim.source)
+    ? {
+        k: s.livro.linha.publicadoPor,
+        campo: 'source',
+        valor: claim.source,
+        lingua: linguaDaFonte(claim.source, lang),
+      }
+    : null,
+  /* R4-b (06.10.2026, o achado 10 da leitura a frio): O TÍTULO DO DOCUMENTO DIZ-SE UMA VEZ NO CORPO DO RECIBO. Desde o
+     R4 a cabeça diz «O nome na fonte «…»», com a porta para o documento; repeti-lo aqui era pôr mais uma porta para o
+     mesmo sítio no mesmo ecrã (o recibo do PIB passou de três a quatro), que é o que a L1 do `check:lugar` conta. Onde
+     a cabeça diz o título, a frase diz quem publicou e a edição; onde a cabeça diz o rótulo da fonte (uma linha sem
+     título de documento), não há título para tirar. */
+  presente(claim.document?.title) && nomeDaFonte?.campo !== 'document.title'
+    ? {
+        k: s.livro.linha.publicadoEm,
+        campo: 'document.title',
+        valor: claim.document.title,
+        lingua: linguaDoTituloDoDocumento(claim.document.title, lang),
+        /* O TÍTULO ABRE O DOCUMENTO AQUI TAMBÉM (leitura a frio, Major 9).
+           A primeira passagem pôs a porta no título da ficha e deixou o título
+           desta frase em texto morto: o mesmo nome, na mesma página, uma vez
+           clicável e outra não. O portão passou a EXIGIR a âncora onde a linha
+           declara `document.url`, e por isso as duas ocorrências a têm. */
+        porta: typeof claim.document?.url === 'string' ? claim.document.url : null,
+      }
+    : null,
+  presente(claim.document?.edition)
+    ? {
+        k: null,
+        campo: 'document.edition',
+        valor: claim.document.edition,
+        entreParenteses: true,
+        lingua: linguaDaEdicao(claim.document.edition, lang),
+      }
+    : null,
+  paginaDoPdf
+    ? { k: s.livro.linha.publicadoPagina, campo: 'source_url.page', valor: paginaDoPdf }
+    : null,
+  /* A DATA DE LEITURA SAIU DESTA FRASE a 09.09.2026 (releitura do leitor de
+     primeira vez, decisão 17): a página dizia a mesma data três vezes, «lido a»
+     aqui, «Lido na fonte a» no bloco das verificações e outra vez na ficha do
+     aparelho. Fica UMA, e fica onde as datas contam a história: no bloco das
+     verificações, entre o que a fonte publicou e o que a casa releu. A frase de
+     atribuição diz quem publicou, onde e em que edição, que é o que ela é. */
+].filter(Boolean);
+/* Sem organismo não há atribuição: a frase começaria por «Publicado em», que
+   atribui a um documento sem dizer de quem ele é. */
+const temFraseDeAtribuicao = presente(claim.source) && atribuicaoPecas.length > 0;
+
+/* A porta do documento gasta-se uma vez. Quando o endereço fixa a página, ela é
+   o primeiro passo da prova; quando não fixa, é o pedido, e vai no seu bloco.
+   Duas âncoras para o mesmo endereço seriam o mesmo endereço escrito duas
+   vezes, e é o `href` desta que o portão confere contra `source_url`. */
+const portaNaProva = Boolean(url && paginaDoPdf && paginaDoDocumento);
+const temBlocoDoPedido = claim.source_url !== null && claim.source_url !== undefined && !portaNaProva;
+
+/**
+ * ---------------------------------------------------------------------------
+ * A MARCA DE ÁGUA DE UM CAMPO EM FALTA (constituição §4, «O recibo é o boletim»)
+ * ---------------------------------------------------------------------------
+ * O boletim de voto declara o estado do documento por uma marca de água. Aqui a
+ * marca é a do CAMPO que falta, e as suas palavras são as do marcador: a cadeia
+ * `POR_VERIFICAR` de `src/lib/ledger.mjs`, e não uma segunda formulação. «POR
+ * CONFIRMAR» não entra: o sítio tem uma só linguagem de incerteza
+ * (`IDENTIDADE.md` §6; desvio 4 do plano).
+ *
+ * A MARCA É FORMA, O MARCADOR É A PALAVRA. Cada campo em falta continua a render
+ * `[a verificar]` em texto, com a sua marca `data-linha-*`, no sítio onde já
+ * estava, e é essa que o portão confere carácter a carácter. A marca de água vai
+ * `aria-hidden` e não acrescenta uma palavra a quem ouve a página: acrescenta uma
+ * ao que se vê, e é a mesma.
+ *
+ * ONDE ELA ENTRA: no bloco que contém o campo em falta, e em mais lado nenhum.
+ * Um recibo com a marca de água por cima de tudo diria que o documento inteiro
+ * está por confirmar, e não está: o que falta são campos, um a um, e são oito
+ * linhas em 132 que têm algum.
+ */
+const faltaNoExcerto = claim.excerpt === POR_VERIFICAR;
+const faltaNoEndereco = claim.source_url === POR_VERIFICAR;
+const faltaNaFicha = ficha.some((l) => l.valor === POR_VERIFICAR);
+
+/**
+ * A MESMA LINHA NA OUTRA EDIÇÃO (`IDENTIDADE.md` §11, «esta linha noutro sítio»).
+ *
+ * A §11 pede ao aparelho, a seguir ao acesso aos dados, «esta linha noutro
+ * sítio». As superfícies onde um valor rende não estão indexadas em lado nenhum
+ * deste repositório, e escrever essa lista à mão seria inventá-la; o que existe,
+ * para todas as 132 linhas e sem excepção, é a mesma linha na outra edição.
+ * A língua é a que a rota não é.
+ */
+const outraLingua = LANGS.find((l) => l !== lang) ?? null;
+---
+
+<Base
+  lang={lang}
+  path={path}
+  title={tituloDaLinha(claim, lang)}
+  description={descricaoDaLinha(claim, lang)}
+  noindex={incompleta}
+>
+  <div class="linha-cabeca">
+    <span class="eyebrow">{s.livro.linha.eyebrow}</span>
+    {/* O NOME, O NOME DA FONTE E O QUE O NÚMERO É, ANTES DO NÚMERO (bloco R4, 05.10.2026, o ponto 1 e a decisão 3 do
+        brief). O título do recibo é o nome que o projeto dá à medida, e para as linhas sem nome do projeto o nome da
+        família (`nomeNoRecibo()`), com o concelho a seguir quando o nome é o de uma medida dos 308; por baixo, entre
+        aspas e na língua da fonte, o nome com que a fonte a publica; logo a seguir, «O que é este número», a mesma
+        frase que o cartão da medida mostra (`oQueEDaLinha()`): a ordem muda, nada se perde. A marca do nome é a da
+        escada da casa, e a régua da voz confere-a contra o ficheiro que a sustenta; a frase leva `data-o-que-e`, que o
+        portão de HTML conta em cada recibo e a K17 do `check:cartao` confere contra a auditoria. */}
+    <h1 class="linha-titulo">
+      <span
+        class="linha-titulo-nome"
+        data-nome={nomeRecibo.fonte === 'familia' ? (familiaRecibo.tipo === 'concelho' && familiaRecibo.chave !== 'limite' ? 'concelho' : 'familia') : nomeRecibo.fonte}
+        data-de-linha={id}
+        data-de-familia={nomeRecibo.familia ?? undefined}
+      >{nomeRecibo.texto}</span>{lugarRecibo && (
+        <>
+          <span class="linha-titulo-separador" aria-hidden="true">{' · '}</span>
+          <span class="linha-titulo-lugar" data-lugar-da-linha={lugarRecibo.slug}>{lugarRecibo.nome}</span>
+        </>
+      )}
+    </h1>
+    {nomeDaFonte && (
+      <p class="linha-nome-da-fonte">
+        <span class="linha-campo-k">{s.livro.linha.nomeNaFonteK}</span>{' «'}
+        {/* O TÍTULO ABRE O DOCUMENTO QUANDO A LINHA DIZ ONDE ELE ESTÁ (a regra do F1.4, Major 9): o mesmo nome não fica
+            na mesma página uma vez clicável e outra morto, e o portão de HTML confere o destino contra `document.url`. */}
+        {nomeDaFonte.campo === 'document.title' && typeof claim.document?.url === 'string' ? (
+          <a class="ligacao-externa" href={claim.document.url} rel="noopener noreferrer external"><CampoDaLinha
+            id={id}
+            campo="document.title"
+            valor={nomeDaFonte.valor}
+            lang={lang}
+            lingua={linguaDoTituloDoDocumento(nomeDaFonte.valor, lang)}
+          /></a>
+        ) : (
+          <CampoDaLinha
+            id={id}
+            campo={nomeDaFonte.campo}
+            valor={nomeDaFonte.valor}
+            lang={lang}
+            lingua={nomeDaFonte.campo === 'name' ? linguaDoRotuloDaFonte(nomeDaFonte.valor, lang) : linguaDoTituloDoDocumento(nomeDaFonte.valor, lang)}
+          />
+        )}{'»'}
+      </p>
+    )}
+    <div class="linha-o-que-e" data-o-que-e={id} data-o-que-e-tipo={oQueE.tipo} data-o-que-e-familia={oQueE.chave}>
+      <p class="linha-o-que-e-k" data-voz>{s.cartao.oQueE}</p>
+      <p class="linha-o-que-e-frase" data-o-que-e-parte="o-que-e"><Frase partes={oQueE.pedacos} lang={lang} selos={false} />{oQueE.porConfirmar && (
+        <span class="linha-por-confirmar" data-por-confirmar-na-fonte={id}>{' '}<Marcador lang={lang} class="marcador-da-frase" /></span>
+      )}</p>
+      {/* R4-b (06.10.2026): A PARTE DO SINAL, quando a frase lê a metade «o que é» de um cartão contra esta linha e o
+          sinal vive na metade que compara (a posição de investimento internacional do ano anterior). E O MARCADOR,
+          acima, quando uma parte da frase está por confirmar na fonte: o marcador da casa, com a classe que diz à L1
+          que é um marcador obrigatório (`marcador-da-frase`), e que a K17 confere onde a auditoria o declara. */}
+      {oQueE.sinal && (
+        <p class="linha-o-que-e-frase" data-o-que-e-parte="sinal">{oQueE.sinal.join('')}</p>
+      )}
+      {comparacaoDoCartao && (
+        <p class="linha-o-que-e-frase" data-o-que-e-parte="comparacao"><Frase partes={comparacaoDoCartao.pedacos} lang={lang} selos={false} /></p>
+      )}
+    </div>
+    <p class="linha-valor">
+      <Claim id={id} lang={lang} as="span" class="linha-valor-num" plano>
+      {/* O ESPAÇO ENTRE O VALOR E A UNIDADE É TEXTO DA PÁGINA (bloco R1,
+          23.09.2026, I143). A folha separava-os com o `gap` de um `flex`, e o
+          texto do título era «175pessoas»: um leitor de ecrã e quem copia o
+          título liam uma palavra só. O espaço escreve-se aqui, e a célula do
+          `gate:html` exige-o em todas as páginas de linha. */}
+      <Fragment slot="sufixo">{' '}
+      <CampoDaLinha
+        id={id}
+        campo="unit"
+        valor={unidade.texto}
+        lang={lang}
+        class="linha-valor-unidade"
+        lingua={unidade.lingua}
+      />
+      </Fragment>
+      </Claim>
+    </p>
+    {/* O NOME DO ORÇAMENTO POR BAIXO DO VALOR SAIU (bloco R4, 05.10.2026): era o nome do projeto da linha, e passou a
+        ser o título do recibo, por cima de tudo. */}
+    {ressalvaPublicada && (
+      <p class="linha-nota" id="ressalva">
+        <CampoDaLinha id={id} campo="ressalva" valor={ressalvaPublicada} lang={lang} />
+      </p>
+    )}
+    {/* ------------------------------------------------------------------
+        O SELO DEBAIXO DO NÚMERO SAIU (F1.10, §7.2, 09.09.2026)
+        ------------------------------------------------------------------
+        Viveu aqui desde a v2, com a porta a apontar para `#prova` na própria
+        página: «estar já na página certa não dispensa a porta, dispensa a
+        viagem». O leitor de 04.09 mediu o preço dessa fidelidade: a página de
+        uma linha tinha DUAS coisas chamadas «fonte» — este selo, debaixo do
+        valor, e o campo `source` no recibo — e nenhuma delas dizia a mesma
+        coisa que a outra. O §7.2 decide: «o selo "FONTE" é só a porta para a
+        linha; a linha do publicador chama-se "publicado por"; na página da
+        linha, o selo debaixo do número, que liga a `#prova` na mesma página,
+        sai».
+
+        NADA SE PERDE, e é por isso que o selo podia sair daqui e não de outro
+        sítio qualquer: uma porta para a divisão onde já se está é a única que
+        não leva a lado nenhum. O estado da proveniência desta linha continua a
+        dizer-se, no recibo, com o marcador no campo que falta; o publicador
+        continua a ler-se, com o rótulo novo; e o portão já isentava as páginas
+        do livro-razão da exigência de um selo ao pé de cada valor, pela mesma
+        razão («a página de uma linha É a linha»).
+        ------------------------------------------------------------------ */}
+    {/* O ESTADO DA FONTE AO PÉ DO SELO, quando ela não responde (bloco F0.11).
+
+        O selo diz de onde veio o número e leva à prova; sozinho, ao lado de um
+        valor, ele lê-se como «isto está conferido». Numa linha cuja fonte deixou
+        de atender essa leitura é falsa, e a página tinha o estado escrito
+        DEPOIS, no bloco das verificações, a meia página de distância do valor.
+
+        SEM COR NOVA. A `IDENTIDADE.md` §2 reserva a cor para os limiares de uma
+        medida, e um estado de fonte não é um limiar. O que o torna visível é a
+        posição (na cabeça, ao lado do selo) e o rótulo, que é o MESMO que o
+        bloco das verificações usa — nenhuma frase nova, nenhum segundo marcador
+        (§6): a mesma chave, a mesma data, dita onde o leitor a encontra antes de
+        acreditar no número.
+
+        O «dd.mm.aaaa» é a regra da casa, e o `data-nonledger` é o de sempre para
+        uma data de conferência: ela não é um algarismo do livro-razão. */}
+    {fonteSemResposta && (
+      <p class="linha-selo-estado">
+        {ultimaConferenciaBoa && (
+          <>
+            <span class="linha-campo-k">{s.livro.linha.reconferidoK}</span>{' '}
+            <CampoDaLinha
+              id={id}
+              campo={`verifications.${verificacoesDaLinha(claim).find((v) => v.result === 'igual').__n}.date`}
+              valor={ultimaConferenciaBoa}
+              lang={lang}
+            />
+            {' · '}
+          </>
+        )}
+        <span class="linha-campo-k">{rotuloDoEstado}</span>{' '}
+        <span data-nonledger="data-da-conferencia">{dataDaCasa(fonteSemResposta.desde)}</span>
+        {' · '}
+        <span data-nonledger="data-da-conferencia">{quemObservou}</span>
+      </p>
+    )}
+    {/* O ATRASO DA SÉRIE, ao pé do selo. Ver o bloco com o mesmo nome no topo
+        deste ficheiro para a razão e para a origem de cada um dos três valores. */}
+    {atraso && (
+      /* A CLASSE É PRÓPRIA E NÃO A DO ESTADO DA FONTE, e não é estética: o
+         `tests/linha/sem-resposta.mjs` reconhece o bloco do estado da fonte pela
+         cadeia `class="linha-selo-estado"`, e uma segunda coisa com a mesma
+         classe fazia aquela régua dizer que 278 linhas desenham um silêncio que
+         a fonte não tem. A folha dá às duas o mesmo desenho, que é o certo: são
+         a mesma camada de aparelho, na mesma posição, com dois factos
+         diferentes. */
+      <p class="linha-selo-atraso">
+        <span class="linha-campo-k" data-voz>{s.livro.linha.periodoDaFonteK}</span>{' '}
+        <span data-nonledger="periodo-da-fonte" data-de-serie={atraso.id}>
+          {atraso.periodoDaFonte}
+        </span>
+        {'; '}
+        <span class="linha-campo-k" data-voz>{s.livro.linha.periodoDestaLinhaK}</span>{' '}
+        <DataDaLinha id={id} campo="reference_date" valor={claim.reference_date} />
+        {', '}
+        <span class="linha-campo-k" data-voz>{s.livro.linha.periodoLidoK}</span>{' '}
+        <DataDaLinha id={id} campo="access_date" valor={claim.access_date} />
+      </p>
+    )}
+    {/* O IDENTIFICADOR, COM O SEU RÓTULO (bloco B, item B7; achado C13).
+        As duas leituras encontraram-no como texto solto por baixo do valor: um
+        `divida-publica-2025` sem nada que dissesse o que era. Ganha o rótulo do
+        campo, na mesma forma dos rótulos do aparelho.
+
+        NÃO SAI DA CABEÇA, e a razão é a constituição: a `IDENTIDADE.md` §11 fixa
+        a ordem do recibo e o primeiro campo dessa ordem é «o valor com o seu
+        próprio selo, a unidade e o id». Movê-lo para a coluna do aparelho era
+        mudar a ordem que a §11 fixa, e a §11 nomeia o que o aparelho leva sem o
+        incluir. O que a auditoria pediu — «os identificadores como
+        identificadores» — fecha aqui, no lugar que a ordem lhe dá. */}
+    <p class="linha-id">
+      <span class="linha-id-k">{s.livro.linha.identificadorK}</span>{' '}
+      <code data-linha-claim={id} data-linha-campo="id">{claim.id}</code>
+    </p>
+  </div>
+
+  <div class="linha">
+    <!-- ================================================= corpo: a prova -->
+    <div class="linha-corpo">
+      {/* ---------------------------------------------------- ii · a frase */}
+      {
+        temFraseDeAtribuicao && (
+          <p class="linha-atribuicao">
+            {atribuicaoPecas.map((peca, i) => (
+              <>
+                {i > 0 && (peca.apos ? ' · ' : peca.entreParenteses ? ' ' : ', ')}
+                {peca.k && `${peca.k} `}
+                {peca.entreParenteses && '('}
+                {peca.porta ? (
+                  <a class="ligacao-externa" href={peca.porta} rel="noopener noreferrer external">
+                    <CampoDaLinha
+                      id={id}
+                      campo={peca.campo}
+                      valor={peca.valor}
+                      lang={lang}
+                      lingua={peca.lingua ?? null}
+                    />
+                  </a>
+                ) : (
+                  <CampoDaLinha
+                    id={id}
+                    campo={peca.campo}
+                    valor={peca.valor}
+                    lang={lang}
+                    lingua={peca.lingua ?? null}
+                  />
+                )}
+                {peca.entreParenteses && ')'}
+              </>
+            ))}
+          </p>
+        )
+      }
+
+      {/* ------------------------------------- ii(b) · o alcance desta linha
+
+          A RESSALVA DE ALCANCE CHEGOU AQUI DA PÁGINA DO DOMÍNIO (bloco F1.10,
+          §9.2, 08.09.2026). O §9.2 manda a prosa de diligência da página do
+          domínio («a ressalva do decreto "não lido"», e a irmã dela, a meta que
+          é da União e não de Portugal) sair de lá e ir «para a página da linha
+          ou para o Método». Estas duas são de UMA LINHA cada, e por isso o
+          destino é esta página: o recibo daquela linha é o sítio onde o alcance
+          dela se lê, ao pé do valor e das datas, e não a página que lista as
+          medidas de um domínio.
+
+          AS PALAVRAS NÃO MUDAM, e é a instrução à letra: as duas levam o
+          marcador `[a verificar]`, que é dívida de proveniência e palavra
+          pendente do diretor. O que muda é o lugar.
+
+          FICA ANTES DA PROVA E DEPOIS DO VALOR, porque é isso que ela é: o
+          perímetro do que o número cobre. Quem chega aqui pelo selo de um cartão
+          lê o valor, o que ele mede e onde ele não chega, por esta ordem. */}
+      {
+        ressalvaDeAlcance && (
+          <p class="linha-nota linha-alcance">
+            <Frase partes={ressalvaDeAlcance[lang] ?? ressalvaDeAlcance.pt} lang={lang} />
+          </p>
+        )
+      }
+
+      {definicaoNova && (
+        <div class="linha-bloco" data-definicao={id}>
+          <p class="dobra-definicao">
+            <Frase partes={definicaoNova[lang]} lang={lang} selos={true} />
+          </p>
+          <OrigemDaDefinicao origens={origensDaDefinicao(definicaoNova, lang)} s={s} lang={lang} />
+        </div>
+      )}
+
+      {/* ------------------------------------------- iii(a) · a porta humana
+
+          A página do indicador vem antes do pedido exato: uma é para quem lê,
+          a outra é para quem confere. */}
+      {
+        paginaDaSerie && (
+          <section class="linha-bloco" aria-labelledby="serie">
+            <h2 class="linha-bloco-titulo" id="serie">{s.prov.paginaDaSerie}</h2>
+            <p class="linha-pagina-serie">
+              <a class="ligacao-externa" href={paginaDaSerie} rel="noopener noreferrer external">
+                <CampoDaLinha
+                  id={id}
+                  campo="document.url"
+                  valor={paginaDaSerie}
+                  lang={lang}
+                  quebras={true}
+                />
+              </a>
+            </p>
+          </section>
+        )
+      }
+
+      {/* --------------------------------------------------- iii · a prova */}
+      <section class="linha-bloco" aria-labelledby="prova-k" id="prova">
+        {faltaNoExcerto && (
+        <span class="marca-agua" aria-hidden="true" data-marca={POR_VERIFICAR} />
+        )}
+        <h2 class="linha-bloco-titulo" id="prova-k">{s.livro.linha.provaK}</h2>
+
+        {
+          /* O recorte da linha impressa, e a sua legenda.
+
+             A imagem é a prova; a legenda diz de que página é e leva a porta
+             para lá. A porta é a MESMA âncora que a linha sem recorte mostra
+             logo abaixo, mudada de sítio e não duplicada: duas âncoras para o
+             mesmo endereço seriam o mesmo endereço escrito duas vezes, e é o
+             `href` desta que o portão confere contra `source_url`.
+
+             SEM `width` nem `height`: os recortes não têm todos as mesmas
+             dimensões (o pdfproof reduz até 1000px de largura e a altura é a da
+             linha recortada), o formato guarda três campos e nenhum deles é o
+             tamanho, e um número escrito aqui de cabeça seria um número
+             inventado num atributo. */
+          recorte && (
+            <figure class="linha-recorte">
+              <img
+                src={`/${recorte.asset}`}
+                alt={recorteAlt}
+                decoding="async"
+              />
+              <figcaption class="linha-recorte-legenda">
+                <span class="linha-recorte-pagina">
+                  {s.prov.recortePagina}{' '}
+                  <CampoDaLinha
+                    id={id}
+                    campo="document.crop.page"
+                    valor={String(recorte.page)}
+                    lang={lang}
+                  />
+                </span>
+                {portaNaProva && (
+                  <a class="ligacao-externa" href={url} rel="noopener noreferrer external">
+                    <span class="linha-endereco-abrir">
+                      {s.prov.abrirNaPagina}{' '}
+                      <CampoDaLinha
+                        id={id}
+                        campo="document.page"
+                        valor={String(paginaDoDocumento)}
+                        lang={lang}
+                      />
+                    </span>
+                    <CampoDaLinha
+                      id={id}
+                      campo="source_url"
+                      valor={claim.source_url}
+                      lang={lang}
+                      class="linha-endereco-bruto"
+                      quebras={true}
+                    />
+                  </a>
+                )}
+              </figcaption>
+            </figure>
+          )
+        }
+
+        {
+          /* A porta para a página exata do documento. O rótulo e o endereço vão
+             DENTRO da mesma âncora, de propósito: o portão confere o `href`
+             desta âncora contra o campo `source_url`, e um endereço fora dela
+             deixaria de ser conferido (DECISIONS §2.3, limite 11).
+
+             Com recorte, esta porta é a da legenda, acima: uma só. */
+          portaNaProva && !recorte && (
+            <p class="linha-porta-documento">
+              <a class="ligacao-externa" href={url} rel="noopener noreferrer external">
+                <span class="linha-endereco-abrir">
+                  {s.prov.abrirNaPagina}{' '}
+                  <CampoDaLinha
+                    id={id}
+                    campo="document.page"
+                    valor={String(paginaDoDocumento)}
+                    lang={lang}
+                  />
+                </span>
+                <CampoDaLinha
+                  id={id}
+                  campo="source_url"
+                  valor={claim.source_url}
+                  lang={lang}
+                  class="linha-endereco-bruto"
+                  quebras={true}
+                />
+              </a>
+            </p>
+          )
+        }
+
+        {
+          /* O ficheiro alojado, quando a linha é contada sobre um.
+             Nada de caixa onde ele não existe (IDENTIDADE.md §6): a maior parte
+             das linhas cita um documento, e um documento não se aloja aqui. */
+          alojado && (
+            <div class="linha-alojado">
+              <h3 class="linha-campo-k">{s.prov.alojado}</h3>
+              <p class="linha-alojado-ficheiro">
+                <a class="linha-alojado-porta" href={`/${alojado.asset}`}>
+                  <CampoDaLinha
+                    id={id}
+                    campo="document.hosted.asset"
+                    valor={alojado.asset}
+                    lang={lang}
+                  />
+                </a>
+                {' · '}
+                <CampoDaLinha
+                  id={id}
+                  campo="document.hosted.bytes"
+                  valor={String(alojado.bytes)}
+                  lang={lang}
+                />{' '}
+                {s.prov.alojadoBytes}
+                {' · '}
+                {s.prov.alojadoResumo}{' '}
+                <span title={alojado.sha256}>
+                  <CampoDaLinha
+                    id={id}
+                    campo="document.hosted.sha256.curto"
+                    valor={encurta(alojado.sha256)}
+                    lang={lang}
+                    class="linha-alojado-resumo"
+                  />
+                  <span class="linha-resumo-corte">{CORTE}</span>
+                </span>
+              </p>
+              {/* A licença, e a atribuição na forma que a fonte pede. É a
+                  obrigação que a licença impõe a quem redistribui, e por isso
+                  vai à vista e não numa nota de rodapé. */}
+              <p class="linha-nota linha-alojado-licenca">
+                <a class="ligacao-externa" href={alojado.licence_url} rel="noopener noreferrer external license">
+                  <CampoDaLinha
+                    id={id}
+                    campo="document.hosted.licence"
+                    valor={alojado.licence}
+                    lang={lang}
+                  />
+                </a>
+                {' · '}
+                <CampoDaLinha
+                  id={id}
+                  campo="document.hosted.attribution"
+                  valor={alojado.attribution}
+                  lang={lang}
+                />
+              </p>
+              {alojado.extracted_from.map((origem, n) => (
+                <p class="linha-nota linha-alojado-origem">
+                  {s.prov.alojadoExtraido}{' '}
+                  <a class="ligacao-externa" href={origem.url} rel="noopener noreferrer external">
+                    <CampoDaLinha
+                      id={id}
+                      campo={`document.hosted.extracted_from.${n}.file`}
+                      valor={origem.file}
+                      lang={lang}
+                    />
+                  </a>
+                  {' · '}
+                  {s.prov.alojadoResumo}{' '}
+                  <span title={origem.sha256}>
+                    <CampoDaLinha
+                      id={id}
+                      campo={`document.hosted.extracted_from.${n}.sha256.curto`}
+                      valor={encurta(origem.sha256)}
+                      lang={lang}
+                      class="linha-alojado-resumo"
+                    />
+                    <span class="linha-resumo-corte">{CORTE}</span>
+                  </span>
+                </p>
+              ))}
+            </div>
+          )
+        }
+
+        {
+          /* Os ficheiros de que a conta foi feita, quando não são alojados. */
+          calculado && (
+            <div class="linha-calculado">
+              <h3 class="linha-campo-k">{s.prov.calculadoSobre}</h3>
+              <ul class="linha-calculado-lista">
+                {calculado.files.map((f, n) => (
+                  <li>
+                    <CampoDaLinha
+                      id={id}
+                      campo={`document.computed_over.files.${n}.file`}
+                      valor={f.file}
+                      lang={lang}
+                    />
+                    {' · '}
+                    {s.prov.calculadoSobreInstantaneo}{' '}
+                    <CampoDaLinha
+                      id={id}
+                      campo={`document.computed_over.files.${n}.snapshot_date`}
+                      valor={f.snapshot_date}
+                      lang={lang}
+                    />
+                    {' · '}
+                    {s.prov.alojadoResumo}{' '}
+                    <span title={f.sha256}>
+                      <CampoDaLinha
+                        id={id}
+                        campo={`document.computed_over.files.${n}.sha256.curto`}
+                        valor={encurta(f.sha256)}
+                        lang={lang}
+                        class="linha-alojado-resumo"
+                      />
+                      <span class="linha-resumo-corte">{CORTE}</span>
+                    </span>
+                    {
+                      /* A porta para a cópia arquivada, e só quando o resumo da
+                         captura é o dos bytes contados. `digest_match` falso
+                         deixa o campo como registo e não abre porta nenhuma:
+                         uma captura que não bate certo leva a outro ficheiro. */
+                      f.archived?.digest_match === true && (
+                        <>
+                          {' · '}
+                          <a href={f.archived.url} rel="nofollow noopener">
+                            {s.prov.calculadoSobreArquivada}
+                          </a>
+                        </>
+                      )
+                    }
+                  </li>
+                ))}
+              </ul>
+              <p class="linha-calculado-conta">
+                {s.prov.calculadoSobreColuna}{' '}
+                <CampoDaLinha
+                  id={id}
+                  campo="document.computed_over.column"
+                  valor={calculado.column}
+                  lang={lang}
+                />
+                {' · '}
+                {s.prov.calculadoSobreFiltro}{' '}
+                <CampoDaLinha
+                  id={id}
+                  campo="document.computed_over.filter"
+                  valor={calculado.filter}
+                  lang={lang}
+                />
+              </p>
+              <p class="linha-nota">{s.prov.calculadoSobreNota}</p>
+            </div>
+          )
+        }
+
+        <h3 class="linha-campo-k" id="excerto">
+          {ehSerieDeDados ? s.prov.campoDevolvido : s.prov.excerto}
+        </h3>
+        {
+          claim.excerpt === null ? (
+            <p class="linha-nota">
+              {alojado
+                ? s.livro.linha.excertoAlojado
+                : daCasa
+                  ? s.livro.linha.excertoDaCasa
+                  : s.livro.linha.excertoDerivada}
+            </p>
+          ) : claim.excerpt === POR_VERIFICAR ? (
+            /* Uma ausência nunca se desenha (IDENTIDADE §6). O excerto que
+               falta não leva caixa nenhuma: leva o marcador, e a seguir o
+               motivo por palavras, na mesma linha em que se lê. É o que a
+               linha do endereço já fazia dois blocos abaixo, e o caminho para
+               a correção fica onde já estava, no bloco «O que falta nesta
+               linha». A marca do campo continua no marcador, e por isso a
+               conferência de transcrição do portão lê exactamente o mesmo. */
+            <p class="linha-nota">
+              <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} />{' '}
+              {s.livro.linha.excertoPorConfirmar}
+            </p>
+          ) : (
+            <>
+              <blockquote class="linha-excerto">
+                <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} />
+              </blockquote>
+              {/* O RECIBO DIZ O QUE O EXCERTO É (achado 5 da leitura a frio de
+                  15.09.2026). Noventa e uma linhas declaram na nota que o excerto
+                  foi composto a partir das etiquetas da resposta da fonte, e não
+                  transcrito de um documento: para essas o recibo diz «Excerto
+                  composto a partir da resposta da fonte», e não promete uma
+                  transcrição que ninguém pode conferir contra uma página. A
+                  escolha sai da própria linha, por `excertoComposto()`; a nota
+                  continua a não se publicar. */}
+              <p class="linha-nota">
+                {excertoComposto(claim) ? s.livro.linha.excertoNotaComposto : s.livro.linha.excertoNota}
+              </p>
+            </>
+          )
+        }
+      </section>
+
+      {
+        derivacao && (
+          <section class="linha-bloco" aria-labelledby="aritmetica">
+            <h2 class="linha-bloco-titulo" id="aritmetica">{eContaDaRessalva(claim) ? s.prov.contaRessalva : s.prov.derivacao}</h2>
+            <p class="linha-derivacao">
+              {/* `leis`: a aritmética é prosa da casa, e na edição inglesa cita
+                  diplomas pelo nome português. A I95 contou 313 nomes assim sem
+                  marca de língua; o componente marca-os sem mudar um carácter
+                  do campo (a razão por extenso em `src/i18n/nomes-de-lei.mjs`). */}
+              <CampoDaLinha id={id} campo="derivation" valor={derivacao} lang={lang} leis />
+            </p>
+
+            {claim.check && (
+              <div class="linha-expressao">
+                <span class="linha-campo-k">{s.livro.linha.expressaoK}</span>
+                <code class="linha-check" data-linha-claim={id} data-linha-campo="check">
+                  {claim.check}
+                </code>
+                <p class="linha-nota">{s.livro.linha.expressaoNota}</p>
+              </div>
+            )}
+
+            {derivada && (
+              <div class="linha-deriva">
+                <span class="linha-campo-k">{s.livro.linha.derivaDeK}</span>
+                {/* A lista inteira é conferida contra `derived_from`, pela
+                    ordem em que está no livro-razão: os ids trazem algarismos e
+                    são a prova de que a conta é sobre estas linhas e não outras. */}
+                <ul class="linha-deriva-lista" data-linha-claim={id} data-linha-campo="derived_from">
+                  {claim.derived_from.map((dep) => (
+                    <li>
+                      <a class="linha-deriva-ligacao" href={caminhoDaLinha(dep, lang)}>
+                        <code>{dep}</code>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </section>
+        )
+      }
+
+      {/* -------------------------------------- iv · o pedido ou o endereço */}
+      {
+        temBlocoDoPedido && (
+          <section class="linha-bloco" aria-labelledby="pedido">
+            {faltaNoEndereco && (
+        <span class="marca-agua" aria-hidden="true" data-marca={POR_VERIFICAR} />
+            )}
+            <h2 class="linha-bloco-titulo" id="pedido">
+              {ehSerieDeDados ? s.prov.pedido : s.prov.endereco}
+            </h2>
+            <p class="linha-pedido">
+              {url ? (
+                /* Uma âncora só, como na prova: é o `href` dela que o portão
+                   confere contra `source_url`. */
+                <a class="ligacao-externa" href={url} rel="noopener noreferrer external">
+                  <CampoDaLinha
+                    id={id}
+                    campo="source_url"
+                    valor={claim.source_url}
+                    lang={lang}
+                    quebras={true}
+                  />
+                </a>
+              ) : (
+                <CampoDaLinha
+                  id={id}
+                  campo="source_url"
+                  valor={claim.source_url}
+                  lang={lang}
+                  quebras={true}
+                />
+              )}
+            </p>
+          </section>
+        )
+      }
+
+      {/* --------------------------------------------- o enquadramento (P2)
+
+          As linhas com que esta medida se compara, cada uma com o valor, o
+          período e a porta para o recibo dela. A marca da fonte do cartão abre
+          esta página, e é esta secção que a paga: sem ela, os valores da régua
+          ficavam sem porta nenhuma, e um número sem porta para a sua linha é o
+          que este sítio existe para não ter.
+
+          O VALOR VAI POR `<Claim>` COM A SUA MARCA, e não por texto: é uma linha
+          do livro-razão como qualquer outra, e a página que a cita cita-a como
+          cita as outras. O período é o campo `reference_date` da própria linha.
+          ------------------------------------------------------------------- */}
+      {
+        (temEnquadramento || portugalDoConcelho) && (
+          <section class="linha-bloco" id="enquadramento" aria-labelledby="enquadramento-k">
+            <h2 class="linha-bloco-titulo" id="enquadramento-k">
+              {s.livro.linha.enquadramentoK}
+            </h2>
+            <dl class="linha-verificacoes">
+              {enquadramento?.anterior && (
+                <>
+                  <dt>{s.livro.linha.enquadramentoAnterior}</dt>
+                  <dd>
+                    <Claim id={enquadramento.anterior.id} lang={lang} as="span" chip={true} />
+                    {enquadramento.anterior.periodo && (
+                      <>
+                        {' · '}
+                        <CampoDaLinha
+                          id={enquadramento.anterior.id}
+                          campo="reference_date"
+                          valor={enquadramento.anterior.periodo}
+                          lang={lang}
+                        />
+                      </>
+                    )}
+                  </dd>
+                </>
+              )}
+              {enquadramento?.ue && (
+                <>
+                  <dt>{s.livro.linha.enquadramentoUe}</dt>
+                  <dd>
+                    <Claim id={enquadramento.ue.id} lang={lang} as="span" chip={true} />
+                  </dd>
+                </>
+              )}
+              {/* UE1b: a porta para a série dos países da União, na linha
+                  portuguesa de uma medida que a tem. A mesma porta da faixa do
+                  cartão, com as mesmas palavras; o portão de HTML confere que
+                  está nos recibos das dez linhas, nas duas edições, e em mais
+                  nenhum. */}
+              {/* L2b: a linha de Portugal de uma linha de concelho, com o valor, a marca e o período. */}
+              {portugalDoConcelho && (
+                <>
+                  <dt>{s.livro.linha.enquadramentoPortugal}</dt>
+                  <dd data-enquadramento-portugal={portugalDoConcelho.id}>
+                    <Claim id={portugalDoConcelho.id} lang={lang} as="span" chip={true} />
+                    {' · '}
+                    <CampoDaLinha id={portugalDoConcelho.id} campo="reference_date" valor={portugalDoConcelho.periodo} lang={lang} />
+                  </dd>
+                </>
+              )}
+              {serieDosPaises && (
+                <>
+                  <dt>{s.livro.linha.enquadramentoPaises}</dt>
+                  <dd>
+                    <a href={routePath('serie', lang, { slug: String(serieDosPaises.id) })} data-porta-da-serie={String(serieDosPaises.id)}>{PALAVRAS_DA_FAIXA[lang].porta}</a>
+                  </dd>
+                </>
+              )}
+            </dl>
+            {/* UE1d: a ressalva da Comissão, onde a comparação com a União a pede. */}
+            {ressalvaDaComparacao && (
+              <p class="linha-nota" data-ressalva-da-uniao={id}>{ressalvaDaComparacao}</p>
+            )}
+          </section>
+        )
+      }
+
+      {/* ----------------------------------------------- v · as verificações
+
+          «Lido a», que a linha guarda desde sempre, e «Reconferido a», que ela
+          passou a poder guardar com o bloco T: as duas entradas mais recentes
+          de `verifications[]`, da mais nova para a mais velha, cada uma com o
+          dia, quem releu, o que encontrou e a porta para repetir a leitura.
+
+          Onde não há nenhuma entrada fica o que já havia: o marcador único, com
+          a porta para a regra da releitura no Método. Sem caixa de exemplo e
+          sem espécime (IDENTIDADE §6): uma reconferência que não aconteceu não
+          se desenha.
+      */}
+      <section class="linha-bloco" aria-labelledby="verificacoes">
+        <h2 class="linha-bloco-titulo" id="verificacoes">{s.livro.linha.verificacoesK}</h2>
+        <dl class="linha-verificacoes">
+          {/* Uma linha sem data de leitura não é lida de lado nenhum: é
+              calculada, e a sua prova é a aritmética acima. A linha da tabela
+              não se rende vazia nem com a frase de outro campo. */}
+          {/* ------------------------------------------------- as três datas
+
+              O período de referência está no bloco de cima, ao pé do valor, que
+              é onde ele pertence: é uma propriedade do número. As outras duas
+              são deste bloco e estão por ordem do que aconteceu: a fonte
+              publicou, a casa leu, a casa releu.
+
+              «Publicado pela fonte a» só se desenha quando a linha o tem, e a
+              maior parte não tem: a maior parte dos publicadores não carimba
+              nada que se possa ler. Uma data que a casa não sabe não se
+              inventa e não se desenha — nem sequer com `[a verificar]`, porque
+              isso diria «existe e falta-nos», e o que se sabe é que o
+              publicador não a serve. Ver `published_at` em `src/lib/ledger.mjs`
+              para as duas origens de que ela pode vir.
+              ------------------------------------------------------------ */}
+          {claim.published_at && (
+            <>
+              <dt>{s.livro.linha.publicadoEmK}</dt>
+              <dd>
+                <CampoDaLinha
+                  id={id}
+                  campo="published_at"
+                  valor={claim.published_at}
+                  lang={lang}
+                />
+              </dd>
+            </>
+          )}
+          {claim.access_date && (
+            <>
+              <dt>{s.prov.lido}</dt>
+              <dd>
+                <CampoDaLinha id={id} campo="access_date" valor={claim.access_date} lang={lang} />
+              </dd>
+            </>
+          )}
+          {/* ------------------------------------------- a segunda data (P2, item 2)
+
+              «Duas datas, não uma» (a norma, §2.5): quando a casa leu, e quando
+              a fonte volta a publicar. A segunda sai do calendário das fontes,
+              que já diz que linhas cada acontecimento afeta, e rende-se SÓ
+              quando a fonte anunciou um dia: uma janela não é uma data e o
+              marcador não é um dia. Cinco linhas do livro-razão a têm hoje.
+
+              A DATA LEVA O MOTIVO `data-da-agenda`, que é o mesmo com que ela se
+              rende na página da agenda, porque é o mesmo campo do mesmo
+              ficheiro: não é uma medição do país, é o que a fonte anunciou.
+
+              A PORTA É O ACONTECIMENTO na agenda, onde ele traz o título, a
+              fonte e a evidência de onde a data veio. Sem porta, a data era um
+              dia escrito sem dizer quem o anunciou. */}
+          {proximaConferencia && (
+            <>
+              <dt>{s.livro.linha.proximaConferenciaK}</dt>
+              <dd>
+                <a href={`${routePath('agenda', lang)}#${ancoraDoEvento(proximaConferencia.evento)}`}>
+                  <span data-nonledger="data-da-agenda">
+                    {dataDaCasa(proximaConferencia.data)}
+                  </span>
+                </a>
+              </dd>
+            </>
+          )}
+          {/* -------------------------------------- o estado da fonte, quando há
+
+              «Sem resposta desde dd.mm.aaaa». É uma DATA e não um adjectivo, e
+              é o que impede a página de dizer «hoje» sobre uma linha cuja fonte
+              deixou de atender (§1 do desenho: «uma fonte que não responde é um
+              estado, com a data em que deixou de responder»). Não se desenha
+              quando a fonte responde.
+              ------------------------------------------------------------ */}
+          {fonteSemResposta && (
+            <>
+              <dt>{rotuloDoEstado}</dt>
+              <dd class="linha-sem-resposta">
+                {/* dd.mm.aaaa, pela regra da casa (`src/lib/datas.mjs`): «as
+                    datas escrevem-se dd.mm.aaaa em todo o lado, uma regra só».
+                    Estava a sair a cadeia ISO do ficheiro gerado, que é a forma
+                    de dado e não a forma de superfície. */}
+                <span data-nonledger="data-da-conferencia">
+                  {dataDaCasa(fonteSemResposta.desde)}
+                </span>
+                {' · '}
+                <span data-nonledger="data-da-conferencia">{quemObservou}</span>
+              </dd>
+            </>
+          )}
+          {
+            verificacoes.length === 0 ? (
+              <>
+                <dt>{s.livro.linha.segundaLeituraVaziaK}</dt>
+                <dd>
+                  <span data-sem-segunda-leitura>{derivada && typeof claim.check === 'string' && claim.check.trim() ? s.livro.linha.segundaLeituraCalculada : s.livro.linha.semSegundaLeitura}</span>{' '}
+                  <a href={`${routePath('metodo', lang)}#releitura`}>
+                    {s.livro.linha.releituraPorta} →
+                  </a>
+                </dd>
+              </>
+            ) : (
+              verificacoes.map((v) => (
+                <>
+                  <dt>{v.result === 'inacessivel' ? s.livro.linha.tentativaDeLeituraK : v.by === 'corredor-diario' ? s.livro.linha.ficheiroRelidoK : s.livro.linha.segundaLeituraK}</dt>
+                  {/* Os atributos crus vão a par dos rótulos: o portão compara
+                      os primeiros com o livro-razão e os segundos com a sua
+                      própria cópia da tabela de rótulos. */}
+                  <dd
+                    class="linha-verificacao"
+                    data-linha-verificacao={String(v.__n)}
+                    data-por={v.by}
+                    data-resultado={v.result}
+                  >
+                    <CampoDaLinha
+                      id={id}
+                      campo={`verifications.${v.__n}.date`}
+                      valor={v.date}
+                      lang={lang}
+                    />
+                    {', '}
+                    <span data-linha-verificacao-resultado>
+                      {mudancaPosterior(v) ? <>{s.livro.linha.confirmouAnterior}{' '}<span data-valor-anterior-confirmado data-correcao-claim={id} data-correcao-n={String(mudancaPosterior(v).n)} data-correcao-campo="old_value">{mudancaPosterior(v).old_value}</span></> : s.livro.linha.verificacaoResultado[v.result]}
+                      {v.result === 'diverge' && (
+                        <>
+                          {' '}
+                          <CampoDaLinha
+                            id={id}
+                            campo={`verifications.${v.__n}.found`}
+                            valor={v.found}
+                            lang={lang}
+                          />
+                        </>
+                      )}
+                    </span>{' · '}
+                    <span data-linha-verificacao-por>{s.livro.linha.verificacaoPor[v.by]}</span>{' '}
+                    {v.result === 'diverge' && parsePtNumber(v.found) !== parsePtNumber(claim.value) && (
+                      <span data-valor-em-uso>{s.livro.linha.valorEmUso}</span>
+                    )}{' '}
+                    {atualizacaoDaReleitura(v) >= 0 && (
+                      <a data-atualizacao-da-releitura href={`#alteracao-${atualizacaoDaReleitura(v)}`}>
+                        {s.livro.linha.verAtualizacao}
+                      </a>
+                    )}
+                    {/* O QUE FOI LIDO, quando não foi a fonte viva (Major 9).
+                        Uma conferência contra `web.archive.org` prova que os
+                        bytes da CÓPIA continuam a dar o resumo que a linha
+                        declara; não prova que o publicador ainda serve o mesmo
+                        ficheiro. O recibo diz contra o quê a leitura foi feita,
+                        com a data do instantâneo, que está no próprio endereço. */}
+                    {copiaArquivadaDe(v.path) && (
+                      <>
+                        <span data-nonledger="data-da-conferencia">
+                          {s.livro.linha.contraCopiaArquivadaK}{' '}
+                          {copiaArquivadaDe(v.path)}
+                        </span>{' '}
+                      </>
+                    )}
+                    {/* A PORTA DA CONFERÊNCIA, SÓ QUANDO ELA LEVA A OUTRO SÍTIO
+                        (Blocking 3 da leitura a frio, 09.09.2026).
+
+                        Cada conferência trazia a sua porta para `v.path`, e em
+                        3 606 das 3 625 conferências do livro-razão `v.path` É o
+                        `source_url` da linha, que a página já dá como porta no
+                        bloco do endereço, por cima desta lista. Eram duas, três
+                        e quatro portas para o mesmo destino na mesma página, em
+                        5 022 pares, e a L1 do brief («nenhum ecrã com dois
+                        destinos iguais fora da mobília») contava-as todas: é o
+                        padrão maior das 6 580 páginas, e é este.
+
+                        A INFORMAÇÃO NÃO SE PERDE: o que a conferência diz é a
+                        data, quem a fez e o que deu, e isso fica; o endereço
+                        contra o qual ela foi feita é o da linha, e está uma vez
+                        na página, no seu lugar. Quando a conferência foi feita
+                        contra OUTRA coisa — uma cópia arquivada, outro caminho
+                        —, a porta fica, porque aí ela leva a um sítio que a
+                        página não tem em mais lado nenhum; e a linha ao lado já
+                        diz que cópia foi (`contraCopiaArquivadaK`). */}
+                    {v.path !== claim.source_url && (
+                      <a class="ligacao-externa" href={v.path} rel="noopener noreferrer external">
+                        {s.livro.linha.verificacaoPorta} →
+                      </a>
+                    )}
+                  </dd>
+                </>
+              ))
+            )
+          }
+        </dl>
+      </section>
+
+      <section class="linha-bloco" aria-labelledby="historico">
+        <h2 class="linha-bloco-titulo" id="historico">{s.livro.linha.historicoK}</h2>
+        <HistoricoDaLinha claim={claim} lang={lang} />
+      </section>
+    </div>
+
+    <!-- ============================================= aparelho: a ficha -->
+    <aside class="aparelho" aria-labelledby="aparelho">
+      <h2 class="aparelho-titulo" id="aparelho">{s.livro.linha.aparelhoK}</h2>
+
+      {derivada && <p class="aparelho-nota">{s.prov.naoPublicado}</p>}
+
+      <dl class="aparelho-ficha">
+        {faltaNaFicha && (
+        <span class="marca-agua" aria-hidden="true" data-marca={POR_VERIFICAR} />
+        )}
+        {
+          ficha.map((l) => (
+            <>
+              <dt>{l.k}</dt>
+              <dd>
+                {l.porta ? (
+                  <a class="ligacao-externa" href={l.porta} rel="noopener noreferrer external">
+                    <CampoDaLinha
+                      id={id}
+                      campo={l.campo}
+                      valor={l.valor}
+                      lang={lang}
+                      lingua={l.lingua ?? null}
+                    />
+                  </a>
+                ) : (
+                  <CampoDaLinha
+                    id={id}
+                    campo={l.campo}
+                    valor={l.valor}
+                    lang={lang}
+                    lingua={l.lingua ?? null}
+                  />
+                )}
+              </dd>
+            </>
+          ))
+        }
+
+        {/* ------------------------------------- os nomes oficiais (P2, item 2)
+
+            A norma, §1.5: o nome de uma medida é um campo com dono, e três nomes
+            por medida, cada um no seu lugar. O do projeto está no cartão; o da
+            fonte está acima nesta mesma ficha («Nome na fonte»); estes dois são
+            os dos compiladores nacionais, e o lugar deles é o recibo.
+
+            O ROTULO NOMEIA QUEM PUBLICA O NOME, e a porta é o endereço onde ele
+            foi lido, com a data ao lado. A marca `data-nonledger` é a do motivo
+            `nome-oficial-da-medida` do registo: os nomes trazem algarismos que
+            são parte do nome («Série 2021», «dos 15 aos 74 anos», «NUTS - 2024»)
+            e não medições do país.
+
+            SÓ O QUE O MOTOR MARCA COMO A MESMA MEDIDA. Onde ele marca a medida
+            vizinha, ou onde o campo ficou por confirmar, não se rende nada: um
+            nome quase certo, posto onde o leitor espera o nome da coisa, é pior
+            do que nenhum. A razão por extenso está em `src/lib/enquadramento.mjs`.
+            ---------------------------------------------------------------- */}
+        {
+          nomes?.ine && (
+            <>
+              <dt>{s.livro.linha.nomeNoIneK}</dt>
+              <dd>
+                <span data-nonledger="nome-oficial-da-medida">
+                  <a
+                    class="ligacao-externa"
+                    href={nomes.ine.endereco}
+                    rel="noopener noreferrer external"
+                    lang="pt-PT"
+                  >
+                    {nomes.ine.nome}
+                  </a>
+                  {' · '}
+                  {s.prov.lido}{' '}
+                  {dataDaCasa(nomes.ine.lido)}
+                </span>
+              </dd>
+            </>
+          )
+        }
+        {
+          nomes?.pordata && (
+            <>
+              <dt>{s.livro.linha.nomeNaPordataK}</dt>
+              <dd>
+                <span data-nonledger="nome-oficial-da-medida">
+                  <a
+                    class="ligacao-externa"
+                    href={nomes.pordata.endereco}
+                    rel="noopener noreferrer external"
+                    lang="pt-PT"
+                  >
+                    {nomes.pordata.nome}
+                  </a>
+                  {' · '}
+                  {s.prov.lido}{' '}
+                  {dataDaCasa(nomes.pordata.lido)}
+                </span>
+              </dd>
+            </>
+          )
+        }
+
+        <dt>{s.prov.estudo}</dt>
+        <TituloDeTrabalho as="dd" titulo={estudo} lang={lang} />
+
+        {/* O endereço saiu daqui e vive no corpo: é prova, e não ficha. Vai
+            no bloco da prova quando fixa a página do documento, e no bloco do
+            pedido quando não fixa. Uma âncora só, e é o `href` dela que o
+            portão confere contra `source_url` (DECISIONS §2.3, limite 11). */}
+        {
+          atribuicao && (
+            <>
+              <dt>{s.prov.atribuicao}</dt>
+              <dd>
+                {/* A lista vai numa cadeia só, com o separador da casa. É o
+                    portão que a confere carácter a carácter, com a sua própria
+                    cópia do separador — ver DECISIONS §1.31. */}
+                <CampoDaLinha id={id} campo="attributed_to" valor={atribuicao} lang={lang} />
+              </dd>
+            </>
+          )
+        }
+      </dl>
+
+      {atribuicao && <p class="aparelho-nota">{s.livro.linha.atribuicaoNota}</p>}
+
+      {
+        bandeira && (
+          <div class="aparelho-estado">
+            <span class="linha-campo-k">{s.livro.linha.bandeiraK}</span>
+            <p class="aparelho-nota">
+              <CampoDaLinha id={id} campo="source_flag_note" valor={bandeira} lang={lang} />
+            </p>
+          </div>
+        )
+      }
+
+      {
+        /* O estado diz-se sempre — a página de uma linha é a única superfície
+           do sítio sem selo para si própria, por isso não há nada mais que o
+           diga. O que saiu foi o parágrafo que explicava o que «completa»
+           queria dizer; fica o estado, numa palavra. */
+        !incompleta && (
+          <div class="aparelho-estado">
+            <span class="linha-campo-k">{s.livro.linha.completaK}</span>
+            <p class="aparelho-nota">{s.livro.linha.completaV}</p>
+          </div>
+        )
+      }
+      {
+        incompleta && (
+          <div class="aparelho-estado aparelho-estado-incompleto">
+            <span class="linha-campo-k">{s.livro.linha.incompletaK}</span>
+            <ul class="aparelho-faltas">
+              {emFalta.map((campo) => (
+                <li><code>{campo}</code></li>
+              ))}
+            </ul>
+            <p class="aparelho-nota">{s.livro.linha.incompletaV}</p>
+            <p><a href={routePath('marcador', lang)}>{s.livro.linha.marcadorLink} →</a></p>
+          </div>
+        )
+      }
+
+      {
+        /**
+         * O acesso aos dados desta linha (IDENTIDADE.md §11).
+         *
+         * Só existe com a licença decidida. Sem ela não há bloco nenhum: o
+         * ficheiro é construído, mas nenhuma página o oferece, e desenhar aqui
+         * um estado à espera de uma decisão era pôr em 264 páginas uma frase
+         * que só se decide num sítio. O estado diz-se uma vez, na página do
+         * livro-razão. Ver src/data/licenca.mjs.
+         */
+        LICENCA && (
+          <div class="aparelho-bloco">
+            <span class="linha-campo-k">{s.livro.linha.dadosK}</span>
+            <p class="aparelho-nota">
+              <a href={CONJUNTO.linha(id)} download>{s.livro.linha.linhaEmJson} →</a>
+            </p>
+            {/* O conjunto inteiro, ao pé da linha. Os mesmos dois ficheiros que o
+                índice do livro-razão oferece, sob a mesma licença: quem confere
+                uma linha muitas vezes quer o conjunto, e a §11 põe «o acesso aos
+                dados» no aparelho e não noutra página. */}
+            <p class="aparelho-nota">
+              {s.livro.linha.conjuntoK}:{' '}
+              <a href={CONJUNTO.csv} download>CSV</a>
+              {' · '}
+              <a href={CONJUNTO.json} download>JSON</a>
+            </p>
+          </div>
+        )
+      }
+
+      {LICENCA && (
+        <div class="aparelho-bloco incorporar-bloco" data-incorporar-bloco>
+          <label class="linha-campo-k" data-voz for="codigo-incorporar">{s.incorporar.titulo}</label>
+          <textarea id="codigo-incorporar" data-incorporar-codigo={id} readonly spellcheck="false" rows="6">{codigoDaIncorporacao(claim, lang)}</textarea>
+          <button type="button" data-voz hidden data-copiado={s.incorporar.copiado} data-selecionado={s.incorporar.selecionado} aria-live="polite">{s.incorporar.copiar}</button>
+        </div>
+      )}
+      <script is:inline src="/js/copiar-incorporacao.js" defer></script>
+
+      {
+        /* ESTA LINHA NOUTRO SÍTIO (IDENTIDADE.md §11). A mesma linha na outra
+           edição, que é o «noutro sítio» que a casa pode provar para todas as
+           linhas. Fica no aparelho porque é a §11 que o pede ali; o cabeçalho
+           faz a mesma viagem para a página inteira, e é mobília. */
+        outraLingua && (
+          <div class="aparelho-bloco">
+            <span class="linha-campo-k">{s.livro.linha.noutroSitioK}</span>
+            <p class="aparelho-nota">
+              <a href={caminhoDaLinha(id, outraLingua)} hreflang={outraLingua}>
+                {s.livro.linha.noutraEdicao} →
+              </a>
+            </p>
+          </div>
+        )
+      }
+
+      <p class="rodape-nav aparelho-saidas">
+        <a href={caminhoDoLivro(lang)}>{s.livro.linha.voltar}</a>
+        <a href={`${routePath('metodo', lang)}#livro-razao`}>{s.livro.metodoLink}</a>
+      </p>
+    </aside>
+  </div>
+</Base>
