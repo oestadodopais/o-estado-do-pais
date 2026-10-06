@@ -12786,6 +12786,7 @@
         "en": "General government interest expenditure"
       },
       "origens": [
+        "jd1-ine-despesa",
         "jd1-ine-ambito"
       ],
       "folhas": [
@@ -12802,6 +12803,11 @@
                   "linha": "propria",
                   "campo": "name",
                   "literal": "Juros"
+                },
+                {
+                  "origem": "jd1-ine-despesa",
+                  "campo": "excerto",
+                  "literal": "O quadro 9 apresenta a despesa"
                 }
               ]
             },
@@ -13020,6 +13026,11 @@
                   "origem": "jd1-eo-conta",
                   "campo": "excerto",
                   "literal": "Conta consolidada das Administrações Públicas"
+                },
+                {
+                  "origem": "jd1-eo-conta",
+                  "campo": "excerto",
+                  "literal": "Despesa corrente"
                 }
               ]
             },
