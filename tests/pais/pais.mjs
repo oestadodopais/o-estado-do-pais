@@ -94,6 +94,9 @@ try {
  for(const f of ['indice/index.html','en/index/index.html','correcoes/index.html','en/corrections/index.html']) {
    prova(`marca de incerteza num título, ${f}`,'A4: ',()=>html(f,r=>r.querySelector('[data-nonledger="titulo-de-estudo"]').insertAdjacentHTML('afterend','<a class="marcador marcador-de-titulo" href="/en/to-verify">[a verificar]</a>')));
  }
+ for(const f of ['indice/index.html','en/index/index.html']) {
+   prova(`valor anterior errado no índice, ${f}`,'M3: ',()=>html(f,r=>r.querySelector('[data-mudou-ambito="indice"] [data-correcao-campo="old_value"]').set_content('999')));
+ }
  prova('título publicado com palavras trocadas','A4',()=>html('en/index/index.html',r=>r.querySelector('[data-nonledger="titulo-de-estudo"]').set_content('Título inventado')));
  prova('título português sem língua','A4',()=>html('en/index/index.html',r=>r.querySelector('[data-estudo="onde-esta-a-agua"] [data-nonledger="titulo-de-estudo"]').removeAttribute('lang')));
  /* PP1: a mudança declarada rende-se no registo, e é a A3 que confere o texto dela. */
