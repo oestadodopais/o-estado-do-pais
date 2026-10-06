@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { tirarCodigoConferido } from './incorporar-do-portao.mjs';
+import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 /**
  * ---------------------------------------------------------------------------
  * O PORTÃO DA LÍNGUA · o que é português numa página inglesa diz que o é
@@ -119,7 +119,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { parse, NodeType } from 'node-html-parser';
+import { NodeType } from 'node-html-parser';
 
 import { loadClaims, POR_VERIFICAR, LEDGER_DIR } from '../src/lib/ledger.mjs';
 import { lerSeriesDoPortao } from './series-do-portao.mjs';
@@ -681,7 +681,7 @@ for (const ficheiro of paginasDe(DIST)) {
 
   if (rota?.key === 'documento') continue;
 
-  const root = parse(cru);
+  const root = lerPaginaComCodigo(cru);
   tirarCodigoConferido(root, rota);
   erros.push(...conferirLinguaDasOrigens(root, rota?.lang ?? 'pt').map(e => rel0 + ': ' + e));
   const html = root.querySelector('html');

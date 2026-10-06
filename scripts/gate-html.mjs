@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { tirarCodigoConferido } from './incorporar-do-portao.mjs';
+import { tirarCodigoConferido, lerPaginaComCodigo } from './incorporar-do-portao.mjs';
 import { conferirValorUnidade } from './valor-unidade.mjs';
 import { nomeNoRegistoAdmitido } from './nome-no-registo.mjs';
 import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
@@ -4617,7 +4617,7 @@ for (const file of ficheirosHtml(DIST)) {
   ficheiros++;
   const rel = path.relative(DIST, file);
   const html = fs.readFileSync(file, 'utf8');
-  const root = parse(html, {
+  const root = lerPaginaComCodigo(html, {
     comment: false,
     blockTextElements: { script: true, style: true, noscript: false },
   });
