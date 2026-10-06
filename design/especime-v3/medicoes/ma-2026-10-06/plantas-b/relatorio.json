@@ -1,0 +1,24 @@
+{
+  "relatorio": "design/especime-v3/medicoes/ma-2026-10-06/LEIA-ME.md",
+  "pasta": "design/especime-v3/medicoes/ma-2026-10-06",
+  "ficheiros_json_lidos": 25,
+  "ilegiveis": [],
+  "conhecido_positivo": {
+    "numero": 987654321,
+    "encontrado": true
+  },
+  "numeros_conferidos": 236,
+  "numeros_com_ficheiro": 236,
+  "numeros_sem_ficheiro": 0,
+  "sem_ficheiro": [],
+  "apagado_antes_de_contar": {
+    "codigo": 197,
+    "enderecos": 0,
+    "seccoes": 4,
+    "datas": 7,
+    "resumos": 1,
+    "ordinais": 1,
+    "identificadores": 29,
+    "anos": 0
+  }
+}

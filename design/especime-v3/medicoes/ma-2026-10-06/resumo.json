@@ -1,6 +1,6 @@
 {
   "base": "207d71346ea034943058fffcbbb926ddafa79e90",
-  "cabeca_do_codigo": "225f482574447483b200da460bc3183439306b86",
+  "cabeca_do_codigo": "822fd960ecbe2884b22036742cb3e80dd9324231",
   "codigos": {
     "antes": {
       "build": 0,
@@ -16,127 +16,126 @@
       "build": 0,
       "verify": 0,
       "typecheck": 0
+    },
+    "portoes-b": {
+      "build": 0,
+      "verify": 0,
+      "typecheck": 0
     }
   },
   "medidas": {
     "antes": {
-      "inteira": 1408.54,
-      "build": 223.67192841600627,
-      "verify": 1183.9144851248711,
-      "briefs": 172.98416204098612,
-      "alvos": 332.59397816704586,
-      "auto_teste_pais": 56.984373792,
-      "typecheck": 0.7383802498225123,
-      "auto_teste_pais_invocacoes": [
-        {
-          "cadeia": "build",
-          "segundos": 28.366302542
-        },
-        {
-          "cadeia": "verify",
-          "segundos": 28.61807125
-        }
-      ]
+      "corrida inteira": 1482.695,
+      "build": 233.20393162500113,
+      "verify": 1249.0147309999447,
+      "check:briefs": 186.42606054083444,
+      "check:leituras": null,
+      "check:alvos": 332.70280087483115,
+      "auto-teste do país": null,
+      "typecheck": 0.24930941709317267
     },
     "portoes": {
-      "inteira": 426.382,
+      "corrida inteira": 426.382,
       "build": 205.3909233340528,
       "verify": 219.71448245800002,
-      "briefs": 0.33503279199999814,
-      "alvos": 190.76996383399998,
-      "auto_teste_pais": 1.680547875,
-      "typecheck": 0.24227491579949856,
-      "auto_teste_pais_invocacoes": [
-        {
-          "cadeia": "verify",
-          "segundos": 1.680547875
-        }
-      ]
+      "check:briefs": 0.33503279199999814,
+      "check:leituras": null,
+      "check:alvos": 190.76996383399998,
+      "auto-teste do país": 1.680547875,
+      "typecheck": 0.24227491579949856
     },
     "portoes-antigo": {
-      "inteira": 1104.242,
+      "corrida inteira": 1104.242,
       "build": 220.56019000010565,
       "verify": 883.2290276659187,
-      "briefs": 0.22099508391693234,
-      "alvos": 181.78155320789665,
-      "auto_teste_pais": 1.006815542,
-      "typecheck": 0.22674499987624586,
-      "auto_teste_pais_invocacoes": [
-        {
-          "cadeia": "verify",
-          "segundos": 1.006815542
-        }
-      ]
-    }
-  },
-  "menos_de_12_minutos": true,
-  "conferencias_distintas": 50,
-  "listas_iguais": true,
-  "uniao": {
-    "ok": true,
-    "falhas": [],
-    "passos_do_verify": 45,
-    "cobertos_pelo_build": 20,
-    "corridos_aqui": 25
-  },
-  "alvos_iguais": {
-    "portoes": {
-      "paginas": true,
-      "rotas": true,
-      "larguras": true,
-      "celulas": true,
-      "axe": true,
-      "graves": true,
-      "alvos_maus": true
+      "check:briefs": 0.22099508391693234,
+      "check:leituras": null,
+      "check:alvos": 181.78155320789665,
+      "auto-teste do país": 1.006815542,
+      "typecheck": 0.22674499987624586
     },
-    "portoes-antigo": {
-      "paginas": true,
-      "rotas": true,
-      "larguras": true,
-      "celulas": true,
-      "axe": true,
-      "graves": true,
-      "alvos_maus": true
+    "portoes-b": {
+      "corrida inteira": 414.72,
+      "build": 193.12086979206651,
+      "verify": 220.23942125,
+      "check:briefs": 0.25585558400000447,
+      "check:leituras": 12.565928209000004,
+      "check:alvos": 180.856884709,
+      "auto-teste do país": 1.2370880830000002,
+      "typecheck": 0.2140989580657333
     }
   },
-  "passagens_alvos": 360,
   "segundos_apresentados": {
     "antes": {
-      "inteira": 1408.54,
-      "build": 223.672,
-      "verify": 1183.914,
-      "briefs": 172.984,
-      "alvos": 332.594,
-      "auto_teste_pais": 56.984,
-      "typecheck": 0.738
+      "corrida inteira": 1482.695,
+      "build": 233.204,
+      "verify": 1249.015,
+      "check:briefs": 186.426,
+      "check:leituras": null,
+      "check:alvos": 332.703,
+      "auto-teste do país": null,
+      "typecheck": 0.249
     },
     "portoes": {
-      "inteira": 426.382,
+      "corrida inteira": 426.382,
       "build": 205.391,
       "verify": 219.714,
-      "briefs": 0.335,
-      "alvos": 190.77,
-      "auto_teste_pais": 1.681,
+      "check:briefs": 0.335,
+      "check:leituras": null,
+      "check:alvos": 190.77,
+      "auto-teste do país": 1.681,
       "typecheck": 0.242
     },
     "portoes-antigo": {
-      "inteira": 1104.242,
+      "corrida inteira": 1104.242,
       "build": 220.56,
       "verify": 883.229,
-      "briefs": 0.221,
-      "alvos": 181.782,
-      "auto_teste_pais": 1.007,
+      "check:briefs": 0.221,
+      "check:leituras": null,
+      "check:alvos": 181.782,
+      "auto-teste do país": 1.007,
       "typecheck": 0.227
+    },
+    "portoes-b": {
+      "corrida inteira": 414.72,
+      "build": 193.121,
+      "verify": 220.239,
+      "check:briefs": 0.256,
+      "check:leituras": 12.566,
+      "check:alvos": 180.857,
+      "auto-teste do país": 1.237,
+      "typecheck": 0.214
     }
   },
-  "pontos_do_brief": [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8
-  ]
+  "conferencias_perdidas": [],
+  "conferencias_acrescentadas": [
+    "npm run check:leituras"
+  ],
+  "conferencias_antes": 49,
+  "conferencias_depois": 50,
+  "guioes_de_leituras": 8,
+  "plantas_e_controlos": 86,
+  "alvos_comparaveis_iguais": {
+    "rotas": true,
+    "larguras": true,
+    "celulas": true,
+    "axe": true,
+    "graves": true,
+    "alvos_maus": true
+  },
+  "paginas_dos_alvos_iguais": true,
+  "passagens_alvos": 360,
+  "mapa": {
+    "longe": 0,
+    "por_encontrar": 0,
+    "fora": 0
+  },
+  "uniao": {
+    "ok": true,
+    "falhas": [],
+    "passos_do_verify": 46,
+    "cobertos_pelo_build": 20,
+    "corridos_aqui": 26
+  },
+  "menos_de_12_minutos": true
 }
