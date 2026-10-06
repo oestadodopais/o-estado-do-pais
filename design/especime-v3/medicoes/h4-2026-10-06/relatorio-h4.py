@@ -33,16 +33,24 @@ texto = ['# H4 · a medição do menu e os lugares da inteligência artificial',
          '| --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |']
 for m in base['medidas']:
     texto.append(f"| {m['lang']} | {m['largura']} | {m['forma']} | {m['portas']} | {n(m['coluna'])} | {n(m['natural'])} | {m['linhas']} | {n(m['gap'])} | {m['letra']} | {'sim' if m['sem_transbordo'] else 'não'} |")
-texto += ['', 'A proposta usa o `clamp` do brief. A forma `proposta-espaco-768` ensaia o mesmo espaço numérico da largura de referência. O nome inteiro cabe nas duas interpretações na largura de aceitação, nas duas edições. Na janela mais estreita a fila dobra mais uma vez, sem cortar nenhuma porta.', '',
-          '## Capturas e páginas construídas', '']
+texto += ['', 'A proposta usa o `clamp` do brief. A forma `proposta-espaco-768` ensaia o mesmo espaço numérico da largura de referência. O nome inteiro cabe nas duas interpretações na largura de aceitação, nas duas edições. Na janela mais estreita a fila dobra mais uma vez, sem cortar nenhuma porta.', '']
+if final:
+    texto += ['## O menu que ficou servido', '',
+              f"Cabeça da construção: `{final['construcao']['commit']}`. Comando: `{final['comando']}`. [Medidas e resumos das capturas finais](menu-depois.json). O rótulo curto continua no código, porque a questão do espaço ainda está aberta.", '',
+              '| Edição | Janela, px | Portas | Coluna, px | Largura natural, px | Linhas | Espaço, px | Sem transbordo |',
+              '| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |']
+    for m in final['medidas']:
+        texto.append(f"| {m['lang']} | {m['largura']} | {m['portas']} | {n(m['coluna'])} | {n(m['natural'])} | {m['linhas']} | {n(m['gap'])} | {'sim' if m['sem_transbordo'] else 'não'} |")
+texto += ['', '## Capturas e páginas construídas', '']
 if capturas:
     texto += [f"Comando: `{capturas['comando']}`. Cabeça da construção: `{capturas['cabeca']}`. [Manifesto com os resumos SHA-256](capturas.json).", '',
               '| Página | Edição | Janela, px | Captura | Recorte |', '| --- | --- | ---: | --- | --- |']
     for c in capturas['capturas']:
         # A pasta das capturas é irmã da pasta das medições.
-        caminho = '../../../capturas/h4-2026-10-06/'
+        caminho = '../../capturas/h4-2026-10-06/'
         texto.append(f"| {c['familia']} | {c['lang']} | {c['largura']} | [página]({caminho}{Path(c['ficheiro']).name}) | [pormenor]({caminho}{Path(c['recorte']).name}) |")
-    texto += ['', 'As cópias do HTML para a leitura estão em `paginas/`; o manifesto identifica as páginas e as folhas da mesma construção. Os ficheiros de antes mostram ensaios, os ficheiros sem esse prefixo mostram o código entregue.']
+    texto += ['', 'As cópias do HTML para a leitura estão em `paginas/`; o manifesto identifica as páginas e as folhas da mesma construção. Os ficheiros `menu-antes-proposta-*` são ensaios no navegador. Os ficheiros das páginas e `menu-depois-servida-*` mostram o código entregue.', '',
+              'A conferência final do pacote corre por `python3 design/especime-v3/medicoes/h4-2026-10-06/conferir-pacote.py`: compara os resumos das capturas, das páginas copiadas e das folhas, resolve as ligações deste relatório e procura caminhos locais depois de limpar os registos. O resultado fica em `conferencia-pacote.json`.']
 else:
     texto += ['Capturas finais por recolher; as do ensaio do menu estão identificadas em `menu-a-390.json`.']
 texto += ['', '## As plantas e a mensagem que cada uma exige', '',
@@ -63,7 +71,7 @@ for g in ['build', 'verify', 'typecheck']:
 texto += ['', 'O `check:series` corre só sobre a parte do sítio, sem motor, conforme o mandato. Os registos são limpos dos caminhos locais antes de entrar no repositório.', '',
           '## Questões abertas', '',
           '- **H4-1.** O §2 pede o mesmo espaço medido na largura de referência; o §3 pede o mesmo `clamp`. A tabela mostra que são resultados diferentes. O menu, a sétima porta, o nome inteiro e a TM4 ficam parados até a direção escolher qual exigência vale. Nenhuma das propostas muda a letra das larguras maiores.',
-          '- **H4-2.** `/sobre/politica-ia` não existe na tabela das rotas. A política vive em `' + base['politica']['rotas']['pt'] + '` e `' + base['politica']['rotas']['en'] + '`. Não se criou uma rota nova. As capturas do Método, quando presentes, identificam o endereço efetivo e a secção.',
+          '- **H4-2.** `/sobre/politica-ia` não existe na tabela das rotas. A política vive em `' + base['politica']['rotas']['pt'] + '` e `' + base['politica']['rotas']['en'] + '`. Seguiu-se a tabela, como o brief também manda: não se criou uma rota nova. As capturas do Método identificam o endereço efetivo e a secção. Fica a correção do endereço no brief para o lugar de direção.',
           '- **H4-3.** O texto dos lugares é o provisório do brief, §3, ponto 4. Falta a confirmação da redação pela direção antes de aterrar. A mudança fica no último commit de código, isolada do menu.',
           '- **H4-4.** Falta a leitura a frio pelo Claude Opus, com os estragos nas cópias do pacote, e a conferência da entrega pelo lugar de direção. As plantas do construtor não substituem essa leitura.', '',
           '## Commits e custo', '',
