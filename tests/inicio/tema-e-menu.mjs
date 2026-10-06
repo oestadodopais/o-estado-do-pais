@@ -274,7 +274,7 @@ async function tm4(rota, largura) {
     if (e.menu.transborda || e.menu.direita > e.janela + 0.5 || !e.menu.dentro) f.push(`TM4 · ${onde}: o menu empurra a página para o lado ou tem uma porta fora da sua caixa (a última porta acaba a ${Math.round(e.menu.direita)} px numa janela de ${e.janela}).`);
     if (!estrago) {
       larguraDoDocumento.push({ rota, largura, documento: e.documento, janela: e.janela });
-      medidasDoMenu.push({ rota, largura, ...e.menu });
+      medidasDoMenu.push({ rota, janela: largura, ...e.menu });
     }
     if (e.menu.natural <= e.menu.largura + 0.5) {
       if (e.menu.topos !== 1) f.push(`TM4 · ${onde}: as portas não estão numa linha dentro do menu (${e.menu.topos} linha(s)).`);
