@@ -1,0 +1,189 @@
+{
+  "comando_capturas": "node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex2.mjs",
+  "metodo": "Observação das imagens com view_image pelo construtor Codex, durante a passagem EX2-b. Não é uma leitura a frio nem uma inspeção humana.",
+  "cabeca_codigo": "8c3a08b9dcfb48595be70d6d47385b0427cc3b62",
+  "capturas_vistas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-390-inteira.png",
+      "sha256": "3e476f36baf1dc45ac76edb7ebe1334d42c56aa47d3e7c0a6f65cfd9e9d9527a",
+      "largura": 390,
+      "lang": "pt"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-390-mudancas.png",
+      "sha256": "79726745a337f49493ab699e0afa9cdc1a68b24f03de8d6fbc06a38bd581a82c",
+      "largura": 390,
+      "lang": "pt"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-768-mudancas.png",
+      "sha256": "cac0d7ad148020c545cdf121b29d99f3eaab575ff63ed91b1415e476894b588e",
+      "largura": 768,
+      "lang": "pt"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1024-mudancas.png",
+      "sha256": "0aef2ed4b940f345aa2948df9263513ca91e55eb9df8d1d3400b13e5b75bd799",
+      "largura": 1024,
+      "lang": "pt"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1280-mudancas.png",
+      "sha256": "2484d20efead84ea212d5ff42e568fcbb14501d70f44558212afb14f12bf2618",
+      "largura": 1280,
+      "lang": "pt"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1600-mudancas.png",
+      "sha256": "ef99719875de5f142acf11b29e25fce1ee4345eecb112efa77034f70ff67f9ad",
+      "largura": 1600,
+      "lang": "pt"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-390-mudancas.png",
+      "sha256": "8857afc54e36389fc45107a9fb646197967d7a78b1bb2efeffb720b0b6e7095e",
+      "largura": 390,
+      "lang": "en"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-768-mudancas.png",
+      "sha256": "0bd36b3baf173a5111ce02e41065d075701039f5b3dd398f7c60e44e816d4265",
+      "largura": 768,
+      "lang": "en"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1024-mudancas.png",
+      "sha256": "497ca5bd750a18f333a273da9fbbb4e3622f09535990bd964d70a9c830ecd93a",
+      "largura": 1024,
+      "lang": "en"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1280-inteira.png",
+      "sha256": "9678c5b44206968b6391e05e9160433123592abbf62644f0735fce9773b752ef",
+      "largura": 1280,
+      "lang": "en"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1280-mudancas.png",
+      "sha256": "ee40dfefc0b1231e665977413f90bf9d6fe53ff56d430d06392c1ad84beeebf2",
+      "largura": 1280,
+      "lang": "en"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1600-mudancas.png",
+      "sha256": "ba0a4a853d2b5935b239d12aa68d08a41cf2e9bd5d1cc59b8832b3006b514ce0",
+      "largura": 1600,
+      "lang": "en"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-390-inteira.png",
+      "sha256": "a46d66e7dbcb1ba3bf583b65053ecb95f556a089c638eed619b0f080856a2edf",
+      "largura": 390,
+      "lang": "pt"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-390-mudancas.png",
+      "sha256": "d9de79bfc29906336701be853b85b6f94b57b9c6b4fe4a9a4b6ae405cc5ff84b",
+      "largura": 390,
+      "lang": "pt"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-768-mudancas.png",
+      "sha256": "45f67e58ff4e9f2272f46ffcceff13a7939cc0f69e78e48618a726b164169fce",
+      "largura": 768,
+      "lang": "pt"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1024-mudancas.png",
+      "sha256": "8d330fba7a23fc933e48963de0b2368a6681fe1e46c7585d63ee021cb7681749",
+      "largura": 1024,
+      "lang": "pt"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1280-mudancas.png",
+      "sha256": "422c032611c6a43b8919a49242135ee65ae741d8a02f0c0703fa213b586f2213",
+      "largura": 1280,
+      "lang": "pt"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1600-mudancas.png",
+      "sha256": "422c032611c6a43b8919a49242135ee65ae741d8a02f0c0703fa213b586f2213",
+      "largura": 1600,
+      "lang": "pt"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-390-mudancas.png",
+      "sha256": "5994abae7e92a25ace4a8cd3f6406e08e98e555149e64ae7a52c566f4d322f49",
+      "largura": 390,
+      "lang": "en"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-768-mudancas.png",
+      "sha256": "28ffcb27647817d704d06a3aae64921b2d65d298f85457971224e8b57fa16a30",
+      "largura": 768,
+      "lang": "en"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1024-mudancas.png",
+      "sha256": "c6bc68ff7eb0b854e326584244b4c1220854f15b7963e5aaab6e2fa5dc7a2fbf",
+      "largura": 1024,
+      "lang": "en"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1280-inteira.png",
+      "sha256": "42392e7c0f5da28fd728932bcfc13430756cb56a31ecb52a0745a864a55302cd",
+      "largura": 1280,
+      "lang": "en"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1280-mudancas.png",
+      "sha256": "44837d405378162cf58d3e3bdb7ca890b99cf5f2ae2fd873c87f4fb521b00542",
+      "largura": 1280,
+      "lang": "en"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1600-mudancas.png",
+      "sha256": "44837d405378162cf58d3e3bdb7ca890b99cf5f2ae2fd873c87f4fb521b00542",
+      "largura": 1600,
+      "lang": "en"
+    }
+  ],
+  "observacoes": [
+    "Os recortes mostram a unidade antes dos dois pontos, os dois valores e a revisão da fonte; os nomes mantêm-se entre os anos da mesma medida.",
+    "A definição aparece sob a última mudança de cada grupo. Os sinais vêm a seguir e estão legíveis.",
+    "Não observei sobreposição nem corte das frases nos recortes inspecionados. A ausência de transbordos é também medida pelo guião das capturas.",
+    "Nas páginas inteiras da semana, os valores abrem a leitura, as mudanças de forma seguem-se, a ausência de mudança na primeira página está escrita e as contagens fecham a página.",
+    "As páginas inteiras do índice conservam as secções e os títulos dos estudos. Os textos das mudanças foram lidos nos recortes, que têm escala maior."
+  ],
+  "limites": [
+    "A adjacência do período com o ano de base dos volumes encadeados permanece para o bloco dos recibos.",
+    "Esta inspeção não substitui a leitura curta do diff e a conferência da direção antes de aterrar."
+  ],
+  "html_conferido_depois_dos_portoes": {
+    "origem": "ensaios-b/html-antes-capturas.json",
+    "conferencia": "entrega-b.json",
+    "comparacao": [
+      {
+        "ficheiro": "dist/explicacoes/leitura-da-semana/index.html",
+        "antes": "c1e46967040e5ac69d0cb4f78ad6a82086f97c51763565035732d9c71fdc61fd",
+        "depois": "c1e46967040e5ac69d0cb4f78ad6a82086f97c51763565035732d9c71fdc61fd"
+      },
+      {
+        "ficheiro": "dist/en/explainers/weekly-reading/index.html",
+        "antes": "9a6d86ce055e9bf97697e0d9b59a05e92d7b4609cb0e33cfe3c81e5339f14f10",
+        "depois": "9a6d86ce055e9bf97697e0d9b59a05e92d7b4609cb0e33cfe3c81e5339f14f10"
+      },
+      {
+        "ficheiro": "dist/indice/index.html",
+        "antes": "363aaef8e88487dfcfd84b3558a30daf70bbce73e0568255f543ccee9e88cb52",
+        "depois": "363aaef8e88487dfcfd84b3558a30daf70bbce73e0568255f543ccee9e88cb52"
+      },
+      {
+        "ficheiro": "dist/en/index/index.html",
+        "antes": "687a3165803b01d4bd59ea08f986a4cfdd72cbe26da1a2e0c53d87f1cc9a802e",
+        "depois": "687a3165803b01d4bd59ea08f986a4cfdd72cbe26da1a2e0c53d87f1cc9a802e"
+      }
+    ],
+    "identico": true
+  }
+}

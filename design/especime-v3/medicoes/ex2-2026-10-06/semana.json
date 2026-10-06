@@ -1,0 +1,456 @@
+{
+  "construcao": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
+  "aceites": [
+    "2026-10-06"
+  ],
+  "janela": {
+    "inicio": "2026-09-30",
+    "fim": "2026-10-06"
+  },
+  "contagens": {
+    "relidas": 90,
+    "valor": 9,
+    "forma": 3,
+    "proveniencia": 9
+  },
+  "mudancas": 9,
+  "formas": [
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "antes": "3",
+      "depois": "3,0"
+    },
+    {
+      "linha": "jovens-nem-2025",
+      "antes": "8",
+      "depois": "8,0"
+    },
+    {
+      "linha": "taxa-de-desemprego-mip-2025",
+      "antes": "6",
+      "depois": "6,0"
+    }
+  ],
+  "blocos_que_mudaram": [],
+  "w1": [
+    {
+      "nome": "um valor mudado dentro da janela (abrantes-desemprego-registado-2025-12, 1 158 para 1 159)",
+      "pediu": "mais uma linha mudada, «subiu»",
+      "viu": "resolvedor 10 (subiu), célula 10",
+      "mordeu": true
+    },
+    {
+      "nome": "uma releitura igual dentro da janela (abrantes-divida-dgal-2024)",
+      "pediu": "mais uma relida e nenhuma mudança",
+      "viu": "resolvedor 91 relidas e 9 mudadas, célula 91 e 9",
+      "mordeu": true
+    },
+    {
+      "nome": "uma entrada fora da janela (abrantes-empresas-2024, 2026-09-29)",
+      "pediu": "nada muda",
+      "viu": "resolvedor {\"relidas\":90,\"valor\":9,\"forma\":3,\"proveniencia\":9}, célula {\"relidas\":90,\"valor\":9,\"forma\":3,\"proveniencia\":9}",
+      "mordeu": true
+    },
+    {
+      "nome": "uma entrada só de literal dentro da janela (abrantes-ganho-medio-mensal-2024, 1 422,4 para 1 422,40)",
+      "pediu": "o mesmo número de mudanças de valor e mais uma só da forma de escrever",
+      "viu": "resolvedor 9 de valor e 4 de forma, célula 9 e 4",
+      "mordeu": true
+    },
+    {
+      "nome": "uma semana sem entrada nenhuma dentro da janela (2026-09-30 a 2026-10-06)",
+      "pediu": "zero nas três contagens, nenhuma mudança, e a mesma primeira frase com nada relido e nada mudado",
+      "viu": "resolvedor {\"relidas\":0,\"valor\":0,\"forma\":0,\"proveniencia\":0}, célula {\"relidas\":0,\"valor\":0,\"forma\":0,\"proveniencia\":0}; pt: «Entre 30.09.2026 e 06.10.2026, nenhum número foi relido na fonte, e nenhum mudou de valor nem de proveniência.» · en: «Between 30.09.2026 and 06.10.2026, no figure was re-read at the source, and none changed value or provenance.»",
+      "mordeu": true
+    }
+  ],
+  "portas": 4,
+  "plantas": [
+    {
+      "nome": "a frase de um bloco citado com uma palavra trocada",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": null,
+      "queixa": "W2 · a frase do bloco «precos» na página da semana não é a que a primeira página rende.\n      esperada: Os preços: os combustíveis sobem mais do que o resto: Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes. Os preços no seu conjunto subiram 3,30 %.\n      rendida:  Os preços: os combustíveis sobem mais do que o resto: Ontem, Em agosto de 2026, os combustíveis estavam 23,78 % mais caros do que um ano antes. Os preços no seu conjunto subiram 3,30 %."
+    },
+    {
+      "nome": "uma marca das frases compostas num parágrafo que esta célula não compara",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": null,
+      "queixa": "W · a marca das frases compostas da semana está num sítio que esta célula não confere (leituraDaSemana): <p> «Uma frase que ninguém compara.»"
+    },
+    {
+      "nome": "o literal de agora de uma mudança só da forma trocado",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "W2 · .*o literal de agora",
+      "queixa": "W2 · fluxo-de-credito-as-empresas-2025: o literal de agora não é o da última entrada da janela (3,0, entrada 0)"
+    },
+    {
+      "nome": "uma contagem trocada",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "W2 · a primeira frase",
+      "queixa": "W2 · a primeira frase difere da conta desta célula.\n      esperada: Entre 30.09.2026 e 06.10.2026, 90 números foram relidos na fonte, 9 mudaram de valor, 3 mudaram só na forma de escrever e 9 mudaram de proveniência.\n      rendida:  Entre 30.09.2026 e 06.10.2026, 91 números foram relidos na fonte, 9 mudaram de valor, 3 mudaram só na forma de escrever e 9 mudaram de proveniência."
+    },
+    {
+      "nome": "a janela de outro dia",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "W2 · a janela acaba",
+      "queixa": "W2 · a janela acaba a 2026-10-05, e o carimbo da construção é de 2026-10-06 | W2 · a primeira frase difere da conta desta célula.\n      esperada: Entre 29.09.2026 e 05.10.2026, 90 números foram relidos na fonte, 9 mudaram de valor, 3 mudaram só na forma de escrever e 9 mudaram de proveniência.\n      rendida:  Entre 30.09.2026 e 06.10.2026, 90 números foram relidos na fonte, 9 mudaram de valor, 3 mudaram só na forma de escrever e 9 mudaram de proveniência."
+    },
+    {
+      "nome": "uma mudança a menos",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "W2 · as mudanças da página",
+      "queixa": "W2 · as mudanças da página (8) não são, pela ordem, as que esta célula conta (9): da mudança mais recente para a mais antiga"
+    },
+    {
+      "nome": "a unidade colada ao número",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "W2 · .*a frase da mudança ou a unidade antes dos valores",
+      "queixa": "W2 · custo-unitario-do-trabalho-2024: a frase da mudança ou a unidade antes dos valores difere da composição declarada"
+    },
+    {
+      "nome": "a palavra do lado trocada",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "W2 · .*a palavra do lado",
+      "queixa": "W2 · custo-unitario-do-trabalho-2024: a palavra do lado não é a da conta («subiu»)"
+    },
+    {
+      "nome": "o valor de antes de outra entrada",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "W2 · .*o valor de antes",
+      "queixa": "W2 · custo-unitario-do-trabalho-2024: o valor de antes não é o da primeira mudança da janela (17,7, entrada 1)"
+    },
+    {
+      "nome": "uma palavra trocada na frase, leituraDaSemana, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase mostrada não é a do recibo",
+      "queixa": "W4 · custo-unitario-do-trabalho-2024: a frase mostrada não é a do recibo da mesma linha e edição"
+    },
+    {
+      "nome": "uma frase retirada, leituraDaSemana, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "exige uma",
+      "queixa": "EX2 · custo-unitario-do-trabalho-2024: a mudança tem 0 frases ou ausências; exige uma | W4 · custo-unitario-do-trabalho-2024: a frase confirmada tem de aparecer, sem ausência"
+    },
+    {
+      "nome": "a frase de outra linha, leituraDaSemana, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "não é um parágrafo da própria linha",
+      "queixa": "EX2 · custo-unitario-do-trabalho-2024: a frase ou ausência não é um parágrafo da própria linha"
+    },
+    {
+      "nome": "uma ausência numa frase confirmada, leituraDaSemana, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase confirmada tem de aparecer",
+      "queixa": "W4 · custo-unitario-do-trabalho-2024: a frase confirmada tem de aparecer, sem ausência"
+    },
+    {
+      "nome": "uma frase por confirmar publicada, leituraDaSemana, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase está por confirmar na fonte; exige a ausência e recusa a frase",
+      "queixa": "W4 · oe-2026-cem-euros-funcao-01: a frase está por confirmar na fonte; exige a ausência e recusa a frase"
+    },
+    {
+      "nome": "a ausência por confirmar retirada, leituraDaSemana, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "exige uma",
+      "queixa": "EX2 · oe-2026-cem-euros-funcao-01: a mudança tem 0 frases ou ausências; exige uma | W4 · oe-2026-cem-euros-funcao-01: a frase está por confirmar na fonte; exige a ausência e recusa a frase"
+    },
+    {
+      "nome": "a ausência por confirmar com palavras trocadas, leituraDaSemana, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase está por confirmar na fonte; exige a ausência e recusa a frase",
+      "queixa": "W4 · oe-2026-cem-euros-funcao-01: a frase está por confirmar na fonte; exige a ausência e recusa a frase"
+    },
+    {
+      "nome": "uma frase fora da lista, leituraDaSemana, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "uma frase ou ausência está fora de uma mudança de valor",
+      "queixa": "EX2 · uma frase ou ausência está fora de uma mudança de valor"
+    },
+    {
+      "nome": "uma palavra trocada na frase, leituraDaSemana, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase mostrada não é a do recibo",
+      "queixa": "W4 · custo-unitario-do-trabalho-2024: a frase mostrada não é a do recibo da mesma linha e edição"
+    },
+    {
+      "nome": "uma frase retirada, leituraDaSemana, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "exige uma",
+      "queixa": "EX2 · custo-unitario-do-trabalho-2024: a mudança tem 0 frases ou ausências; exige uma | W4 · custo-unitario-do-trabalho-2024: a frase confirmada tem de aparecer, sem ausência"
+    },
+    {
+      "nome": "a frase de outra linha, leituraDaSemana, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "não é um parágrafo da própria linha",
+      "queixa": "EX2 · custo-unitario-do-trabalho-2024: a frase ou ausência não é um parágrafo da própria linha"
+    },
+    {
+      "nome": "uma ausência numa frase confirmada, leituraDaSemana, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase confirmada tem de aparecer",
+      "queixa": "W4 · custo-unitario-do-trabalho-2024: a frase confirmada tem de aparecer, sem ausência"
+    },
+    {
+      "nome": "uma frase por confirmar publicada, leituraDaSemana, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase está por confirmar na fonte; exige a ausência e recusa a frase",
+      "queixa": "W4 · oe-2026-cem-euros-funcao-01: a frase está por confirmar na fonte; exige a ausência e recusa a frase"
+    },
+    {
+      "nome": "a ausência por confirmar retirada, leituraDaSemana, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "exige uma",
+      "queixa": "EX2 · oe-2026-cem-euros-funcao-01: a mudança tem 0 frases ou ausências; exige uma | W4 · oe-2026-cem-euros-funcao-01: a frase está por confirmar na fonte; exige a ausência e recusa a frase"
+    },
+    {
+      "nome": "a ausência por confirmar com palavras trocadas, leituraDaSemana, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase está por confirmar na fonte; exige a ausência e recusa a frase",
+      "queixa": "W4 · oe-2026-cem-euros-funcao-01: a frase está por confirmar na fonte; exige a ausência e recusa a frase"
+    },
+    {
+      "nome": "uma frase fora da lista, leituraDaSemana, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "uma frase ou ausência está fora de uma mudança de valor",
+      "queixa": "EX2 · uma frase ou ausência está fora de uma mudança de valor"
+    },
+    {
+      "nome": "uma palavra trocada na frase, indice, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase mostrada não é a do recibo",
+      "queixa": "W4 · custo-unitario-do-trabalho-2024: a frase mostrada não é a do recibo da mesma linha e edição"
+    },
+    {
+      "nome": "uma frase retirada, indice, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "exige uma",
+      "queixa": "EX2 · custo-unitario-do-trabalho-2024: a mudança tem 0 frases ou ausências; exige uma | W4 · custo-unitario-do-trabalho-2024: a frase confirmada tem de aparecer, sem ausência"
+    },
+    {
+      "nome": "a frase de outra linha, indice, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "não é um parágrafo da própria linha",
+      "queixa": "EX2 · custo-unitario-do-trabalho-2024: a frase ou ausência não é um parágrafo da própria linha"
+    },
+    {
+      "nome": "uma ausência numa frase confirmada, indice, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase confirmada tem de aparecer",
+      "queixa": "W4 · custo-unitario-do-trabalho-2024: a frase confirmada tem de aparecer, sem ausência"
+    },
+    {
+      "nome": "uma frase por confirmar publicada, indice, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase está por confirmar na fonte; exige a ausência e recusa a frase",
+      "queixa": "W4 · oe-2026-cem-euros-funcao-01: a frase está por confirmar na fonte; exige a ausência e recusa a frase"
+    },
+    {
+      "nome": "a ausência por confirmar retirada, indice, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "exige uma",
+      "queixa": "EX2 · oe-2026-cem-euros-funcao-01: a mudança tem 0 frases ou ausências; exige uma | W4 · oe-2026-cem-euros-funcao-01: a frase está por confirmar na fonte; exige a ausência e recusa a frase"
+    },
+    {
+      "nome": "a ausência por confirmar com palavras trocadas, indice, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase está por confirmar na fonte; exige a ausência e recusa a frase",
+      "queixa": "W4 · oe-2026-cem-euros-funcao-01: a frase está por confirmar na fonte; exige a ausência e recusa a frase"
+    },
+    {
+      "nome": "uma frase fora da lista, indice, pt",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "uma frase ou ausência está fora de uma mudança de valor",
+      "queixa": "EX2 · uma frase ou ausência está fora de uma mudança de valor"
+    },
+    {
+      "nome": "uma palavra trocada na frase, indice, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase mostrada não é a do recibo",
+      "queixa": "W4 · custo-unitario-do-trabalho-2024: a frase mostrada não é a do recibo da mesma linha e edição"
+    },
+    {
+      "nome": "uma frase retirada, indice, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "exige uma",
+      "queixa": "EX2 · custo-unitario-do-trabalho-2024: a mudança tem 0 frases ou ausências; exige uma | W4 · custo-unitario-do-trabalho-2024: a frase confirmada tem de aparecer, sem ausência"
+    },
+    {
+      "nome": "a frase de outra linha, indice, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "não é um parágrafo da própria linha",
+      "queixa": "EX2 · custo-unitario-do-trabalho-2024: a frase ou ausência não é um parágrafo da própria linha"
+    },
+    {
+      "nome": "uma ausência numa frase confirmada, indice, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase confirmada tem de aparecer",
+      "queixa": "W4 · custo-unitario-do-trabalho-2024: a frase confirmada tem de aparecer, sem ausência"
+    },
+    {
+      "nome": "uma frase por confirmar publicada, indice, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase está por confirmar na fonte; exige a ausência e recusa a frase",
+      "queixa": "W4 · oe-2026-cem-euros-funcao-01: a frase está por confirmar na fonte; exige a ausência e recusa a frase"
+    },
+    {
+      "nome": "a ausência por confirmar retirada, indice, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "exige uma",
+      "queixa": "EX2 · oe-2026-cem-euros-funcao-01: a mudança tem 0 frases ou ausências; exige uma | W4 · oe-2026-cem-euros-funcao-01: a frase está por confirmar na fonte; exige a ausência e recusa a frase"
+    },
+    {
+      "nome": "a ausência por confirmar com palavras trocadas, indice, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "a frase está por confirmar na fonte; exige a ausência e recusa a frase",
+      "queixa": "W4 · oe-2026-cem-euros-funcao-01: a frase está por confirmar na fonte; exige a ausência e recusa a frase"
+    },
+    {
+      "nome": "uma frase fora da lista, indice, en",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "uma frase ou ausência está fora de uma mudança de valor",
+      "queixa": "EX2 · uma frase ou ausência está fora de uma mudança de valor"
+    },
+    {
+      "nome": "selo retirado, leituraDaSemana",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    },
+    {
+      "nome": "selo de outra linha, leituraDaSemana",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    },
+    {
+      "nome": "selo de outra edição, leituraDaSemana",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    },
+    {
+      "nome": "definição de outra linha, leituraDaSemana",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    },
+    {
+      "nome": "entrada de outra linha, leituraDaSemana",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    },
+    {
+      "nome": "selo fora do resumo, leituraDaSemana",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    },
+    {
+      "nome": "frase fora da lista, leituraDaSemana",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    },
+    {
+      "nome": "selo retirado, indice",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    },
+    {
+      "nome": "selo de outra linha, indice",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    },
+    {
+      "nome": "selo de outra edição, indice",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    },
+    {
+      "nome": "definição de outra linha, indice",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    },
+    {
+      "nome": "entrada de outra linha, indice",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    },
+    {
+      "nome": "selo fora do resumo, indice",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    },
+    {
+      "nome": "frase fora da lista, indice",
+      "mordeu": true,
+      "aplica": true,
+      "mensagem": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha",
+      "queixa": "o valor da afirmação \"linha-da-planta\" aparece sem selo para a sua própria linha na definição da mudança."
+    }
+  ],
+  "erros": []
+}

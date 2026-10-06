@@ -1,0 +1,16 @@
+{
+  "acao": "Os ficheiros de apoio inicialmente escritos na área temporária da sessão foram recolhidos para a worktree; os originais foram retirados dessa área. Não houve alterações noutra árvore de trabalho nem no motor.",
+  "destino": "<worktree>/node_modules/.cache/ex2-temporarios",
+  "ficheiros": [
+    "ex2-npm-cache",
+    "ex2-astro-base.log",
+    "ex2-astro-base.codigo",
+    "ex2-typecheck.log",
+    "ex2-typecheck.codigo",
+    "ex2-conferencias.log",
+    "ex2-conferencias.codigo",
+    "ex2-semana-ensaio.png",
+    "ex2-indice-ensaio.png"
+  ],
+  "originais_que_restam": []
+}
