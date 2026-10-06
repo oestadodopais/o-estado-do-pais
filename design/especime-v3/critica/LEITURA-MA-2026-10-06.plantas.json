@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T11:16:53+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "p1",
+   "ficheiro": "scripts/verify-depois-do-build.mjs",
+   "descricao": "a célula U deixa de falhar quando uma conferência do verify não correu (o push da falha fica atrás de um if false)",
+   "sha256_antes": "ee21b0f5e9d149dbf7bfa8fa30831804120e9beb487459d7af08f00b8e455d31",
+   "sha256_depois": "a0885e5bef079b00eb4b46622d5facebb42b4867c8596ebab3bb117eb7edd9ca",
+   "contexto_antes": "y) {\n    if (build.has(p)) doBuild++;\n    else if (verdes.has(p)) daqui++;\n    else if (vermelhos.has(p)) falhas.push(`U: «${p}» correu e não saiu com 0`);\n    else falhas.push(`U: «${p}» está no verify, não é um passo do build e não correu aqui`);\n  }\n  return { ok: falhas.length === 0, falhas, passos_do_verify: verify.length, cobertos_pelo_build: doBuild, corridos_aqui: daqui };\n}\n\n/**\n * O estado de um",
+   "contexto_depois": "y) {\n    if (build.has(p)) doBuild++;\n    else if (verdes.has(p)) daqui++;\n    else if (vermelhos.has(p)) falhas.push(`U: «${p}» correu e não saiu com 0`);\n    else if (false) falhas.push(`U: «${p}» está no verify, não é um passo do build e não correu aqui`);\n  }\n  return { ok: falhas.length === 0, falhas, passos_do_verify: verify.length, cobertos_pelo_build: doBuild, corridos_aqui: daqui };\n}\n\n/**\n * O estado de um"
+  },
+  {
+   "id": "p2",
+   "ficheiro": "scripts/check-briefs.py",
+   "descricao": "o selo de um brief preso deixa de incluir o sha256 do guião: um guião alterado já não refaz a medição",
+   "sha256_antes": "b1d1f6b59582259bd0de4676a2d6df70de0a12fc8850d9228a9759bc4d90964a",
+   "sha256_depois": "0c95a2aaf22ff4a359a48ab624b123bc9dfdba58789fc9bf9a157c7d03beeb0d",
+   "contexto_antes": "), ensure_ascii=False)} e quem correu foi '\n            f'`{rel(guioes[0])}`.')\n\n    selo = {'brief_sha256': sha(caminho), 'guiao': rel(guioes[0]),\n            'guiao_sha256': sha(guioes[0]), 'medidas_sha256': sha(ficheiro)}\n    preso = (presos or {}).get(rel(caminho)) == selo\n    if estado is not None:\n        estado['presos' if preso else 'reexecut",
+   "contexto_depois": "), ensure_ascii=False)} e quem correu foi '\n            f'`{rel(guioes[0])}`.')\n\n    selo = {'brief_sha256': sha(caminho), 'guiao': rel(guioes[0]),\n            'medidas_sha256': sha(ficheiro)}\n    preso = (presos or {}).get(rel(caminho)) == selo\n    if estado is not None:\n        estado['presos' if preso else 'reexecut"
+  },
+  {
+   "id": "p3",
+   "ficheiro": "scripts/aterrar.sh",
+   "descricao": "a aterragem deixa de parar quando o check-run portao da cabeça não está verde (o para 18 vira um aviso)",
+   "sha256_antes": "87b4cc558fafc9e10f30740015273148c9c2edd666f6240595d9928fa04be23e",
+   "sha256_depois": "245f9d8381837df99984b9dabc65ceab62f853460bcf441389e4f4d8610e589a",
+   "contexto_antes": "s\",[]) if x.get(\"name\")==\"portao\"]\nr.sort(key=lambda x: x.get(\"completed_at\") or \"\")\nprint((r[-1].get(\"conclusion\") or \"\") if r else \"\")' \"$LOGS/portao.json\")\"\n[ \"$PORTAO\" = \"success\" ] || para 18 \"a verificação portao da cabeça ${CHEIA:0:8} não está verde (diz «${PORTAO:-nada}»)\"\nif [ \"$RAMO_MOTOR\" != \"-\" ]; then\n  [ -d \"$MOTOR\" ] || para 20 \"não encontrei o motor (OEDP_MOTOR ou a pasta de sempre)\"\n  [ \"$(git -C",
+   "contexto_depois": "s\",[]) if x.get(\"name\")==\"portao\"]\nr.sort(key=lambda x: x.get(\"completed_at\") or \"\")\nprint((r[-1].get(\"conclusion\") or \"\") if r else \"\")' \"$LOGS/portao.json\")\"\n[ \"$PORTAO\" = \"success\" ] || echo \"aviso: a verificação portao da cabeça ${CHEIA:0:8} não está verde (diz «${PORTAO:-nada}»)\"\nif [ \"$RAMO_MOTOR\" != \"-\" ]; then\n  [ -d \"$MOTOR\" ] || para 20 \"não encontrei o motor (OEDP_MOTOR ou a pasta de sempre)\"\n  [ \"$(git -C"
+  },
+  {
+   "id": "p4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz 326,382 s para a corrida inteira nova na tabela, e o tempos.json diz 426,382",
+   "sha256_antes": "ebb627e4cb180df8b40b84cf823fff79cf02fa5d8f709bad34313e226b3110b8",
+   "sha256_depois": "f765bfb349d6bf9d150a7f093686cd32b15425c1e9aa2d985ee6c5cc67e2610f",
+   "contexto_antes": "latorio.py`; nenhum tempo é transcrito à mão.\n\n| Medida, em segundos | Cabeça do brief | Código, guião novo | Mesmo código, guião antigo |\n|---|---:|---:|---:|\n| Corrida inteira | 1408,540 | 426,382 | 1104,242 |\n| build | 223,672 | 205,391 | 220,560 |\n| verify | 1183,914 | 219,714 | 883,229 |\n| check:briefs | 172,984 | 0,335 | 0,221 |\n| check:alvos | 332,594",
+   "contexto_depois": "latorio.py`; nenhum tempo é transcrito à mão.\n\n| Medida, em segundos | Cabeça do brief | Código, guião novo | Mesmo código, guião antigo |\n|---|---:|---:|---:|\n| Corrida inteira | 1408,540 | 326,382 | 1104,242 |\n| build | 223,672 | 205,391 | 220,560 |\n| verify | 1183,914 | 219,714 | 883,229 |\n| check:briefs | 172,984 | 0,335 | 0,221 |\n| check:alvos | 332,594"
+  },
+  {
+   "id": "p5",
+   "ficheiro": "scripts/leituras/portoes.sh",
+   "descricao": "o portoes.sh passa a ignorar INT e TERM (trap vazio): uma interrupção já não pára a corrida nem solta a tranca pelo EXIT",
+   "sha256_antes": "9be0a6be26681e7d37fdce019ba40ef16c7af96734deb9933a852d9e7bb44fd1",
+   "sha256_depois": "fb5fe3bcd7ea0f7a984f8c9b80f32f3b064870b5a316cf306021102a136df5d2",
+   "contexto_antes": "thon3 \"$W/scripts/leituras/limpar-caminhos.py\" \"$O\" --worktree \"$W\" > \"$O/limpeza.json\" || resultado=9\n  rm -f \"$tranca\"\n  exit \"$resultado\"\n}\ntrap fechar EXIT\ntrap 'exit 130' INT TERM\nexport OEDP_TEMPOS_DIR=\"$O\"\nexport npm_config_script_shell=\"$W/scripts/leituras/tempos-shell.py\"\ngit rev-parse HEAD > \"$O/cabeca\"\nfor g in build verify typeche",
+   "contexto_depois": "thon3 \"$W/scripts/leituras/limpar-caminhos.py\" \"$O\" --worktree \"$W\" > \"$O/limpeza.json\" || resultado=9\n  rm -f \"$tranca\"\n  exit \"$resultado\"\n}\ntrap fechar EXIT\ntrap '' INT TERM\nexport OEDP_TEMPOS_DIR=\"$O\"\nexport npm_config_script_shell=\"$W/scripts/leituras/tempos-shell.py\"\ngit rev-parse HEAD > \"$O/cabeca\"\nfor g in build verify typeche"
+  }
+ ]
+}
