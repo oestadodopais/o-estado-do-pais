@@ -387,42 +387,42 @@ export const POLITICA = {
   lugares: {
     titulo: { pt: 'Os lugares', en: 'The places' },
     intro: {
-      pt: ['São três lugares, e a verificação é sempre de outra família de modelos:'],
-      en: ['There are three places, and checking is always done by a different family of models:'],
+      pt: ['São três lugares, e quem constrói uma peça nunca é quem a verifica: a construção e a leitura são sempre de famílias de modelos diferentes.'],
+      en: ['There are three places, and whoever builds a piece never checks it: building and reading are always done by different families of models.'],
     },
     itens: [
       {
         rotulo: { pt: 'A direção', en: 'Direction' },
         texto: {
-          pt: 'dirige o trabalho: escreve os briefs, revê e funde.',
-          en: 'directs the work: it writes the briefs, reviews and merges.',
+          pt: 'dirige o trabalho: decide o que se faz, encomenda cada peça, revê e aprova o que entra no sítio.',
+          en: 'directs the work: it decides what is done, commissions each piece, reviews and approves what goes on the site.',
         },
       },
       {
         rotulo: { pt: 'A construção', en: 'Building' },
         texto: {
-          pt: 'constrói o sítio e o motor, e verifica lotes na fonte.',
-          en: 'builds the site and the engine, and checks batches at the source.',
+          pt: 'constrói o sítio e o motor que lê as fontes, e confere na fonte, em série, o que publica.',
+          en: 'builds the site and the engine that reads the sources, and checks at the source, in batches, what it publishes.',
         },
       },
       {
         rotulo: { pt: 'A leitura', en: 'Reading' },
         texto: {
-          pt: 'lê sem contexto prévio, com erros plantados que tem de encontrar.',
-          en: 'reads with no prior context, with planted errors it has to find.',
+          pt: 'lê cada peça sem contexto prévio, com erros plantados que tem de encontrar, e é sempre de outra família de modelos que a construção.',
+          en: 'reads each piece with no prior context, with planted errors it has to find, and is always by a different family of models from the one that built it.',
         },
       },
     ],
     fecho: {
       pt: [
-        'São os modelos Claude da Anthropic na direção e na leitura, e o Codex da OpenAI ' +
-          'na construção. Um modelo novo só ocupa um lugar ' +
+        'Os modelos Claude da Anthropic estão na direção; na construção e na leitura estão os modelos Claude ' +
+          'e o Codex da OpenAI, nunca a mesma família nos dois lugares da mesma peça. Um modelo novo só ocupa um lugar ' +
           'depois de passar os mesmos testes que o titular passou, e a troca fica escrita ' +
           'com a data.',
       ],
       en: [
-        'They are the Claude models from Anthropic in the direction and the reading, ' +
-          'and Codex from OpenAI in the building. A new model takes ' +
+        'The Claude models from Anthropic hold the direction; building and reading are held by the Claude models ' +
+          'and by Codex from OpenAI, never the same family in both places for the same piece. A new model takes ' +
           'a place only after passing the same tests the incumbent passed, and the change ' +
           'is written down with its date.',
       ],

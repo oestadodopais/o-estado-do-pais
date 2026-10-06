@@ -19,6 +19,18 @@ for (const [lang, ficheiro] of [['pt', 'dist/metodo/index.html'], ['en', 'dist/e
     ['a medição no lugar da leitura', (r) => r.querySelectorAll('.politica-lugares li')[2].set_content('Medição inventada'), 'H4 IA: os lugares não são os da redação decidida.'],
     ['a introdução antiga', (r) => r.querySelector('.politica-lugares').parentNode.querySelectorAll('p')[0].set_content(lang === 'pt' ? 'São quatro lugares.' : 'There are four places.'), 'H4 IA: a introdução dos lugares difere da redação decidida.'],
     ['a família da construção trocada', (r) => { const p = r.querySelector('.politica-lugares').parentNode.querySelectorAll('p').at(-1); p.set_content(p.textContent.replace('Codex', 'Claude')); }, 'H4 IA: as famílias e os lugares do fecho diferem da redação decidida.'],
+    ['a divisão fixa antiga', (r) => r.querySelector('.politica-lugares').parentNode.querySelectorAll('p').at(-1).set_content(lang === 'pt'
+      ? 'São os modelos Claude da Anthropic na direção e na leitura, e o Codex da OpenAI na construção.'
+      : 'They are the Claude models from Anthropic in the direction and the reading, and Codex from OpenAI in the building.'), 'H4 IA: as famílias e os lugares do fecho diferem da redação decidida.'],
+    ['a construção e a leitura da mesma família', (r) => r.querySelectorAll('.politica-lugares li')[2].set_content(lang === 'pt'
+      ? 'A leitura lê cada peça e é da mesma família de modelos que a construção.'
+      : 'Reading reads each piece and is by the same family of models that built it.'), 'H4 IA: os lugares não são os da redação decidida.'],
+    ['a direção com palavras de oficina', (r) => r.querySelectorAll('.politica-lugares li')[0].set_content(lang === 'pt'
+      ? 'A direção dirige o trabalho: escreve os briefs, revê e funde.'
+      : 'Direction directs the work: it writes the briefs, reviews and merges.'), 'H4 IA: os lugares não são os da redação decidida.'],
+    ['a construção com palavras de oficina', (r) => r.querySelectorAll('.politica-lugares li')[1].set_content(lang === 'pt'
+      ? 'A construção constrói o sítio e o motor, e verifica lotes na fonte.'
+      : 'Building builds the site and the engine, and checks batches at the source.'), 'H4 IA: os lugares não são os da redação decidida.'],
   ];
   for (const [nome, muda, mensagem] of plantas) {
     const r = parse(bytes.toString()); muda(r);
