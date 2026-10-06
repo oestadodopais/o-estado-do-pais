@@ -11,15 +11,15 @@
  * Esta célula lê o desenho, no Chromium sem cabeça, sobre a construção.
  *
  * O QUE CONFERE, nas páginas onde as frases compostas da casa se rendem (a primeira página, o índice, a lista das
- * explicações, a leitura da semana e a página de cada explicação, nas duas edições), a 390 e a 1280 px:
+ * explicações, a leitura da semana, a página de cada explicação e os cartões dos preços com as definições abertas, nas duas edições), a 390 e a 1280 px:
  *   · FC1 · nenhum pedaço marcado (`data-semana`, `data-de-linha`, `data-explicacao-nome`, a caixa de um valor) de uma
  *     frase composta (dentro de uma marca
  *     `data-explicacao-declarado`, `data-semana-declarado`, de uma porta de explicação ou de uma frase da semana) tem por
  *     pai um contentor flexível ou de grelha: numa frase, as peças são texto corrido;
- *   · FC2 · a 390 px, nenhuma destas páginas tem um documento mais largo do que a janela.
+ *   · FC2 · nas duas larguras, nenhuma destas páginas tem um documento mais largo do que a janela.
  *
- * AS PLANTAS, no navegador e nunca no ficheiro: a porta da lista das explicações posta num contentor flexível (FC1 tem de
- * a ver) e um elemento mais largo do que a janela (FC2 tem de o ver). Uma planta que não morda fecha a célula. Não escreve
+ * AS PLANTAS, no navegador e nunca no ficheiro: a porta das explicações, a frase de um bloco e as duas leituras dos
+ * cartões, cada uma num contentor flexível (FC1) ou mais largo do que a janela (FC2). Uma planta que não morda fecha a célula. Não escreve
  * no `dist/`: serve-o por um servidor local efémero e recusa tudo o que não venha da origem.
  *
  * Uso (na raiz, depois do build): node tests/explicacoes/frases-compostas.mjs [--json <ficheiro>]
@@ -32,14 +32,15 @@ import { chromium } from 'playwright';
 import { EXPLICACOES } from '../../src/data/explicacoes/index.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
 
+/* EX2 (06.10.2026): a página dos preços acrescenta as duas metades das leituras dos cartões; os blocos da primeira página entram na seleção de frases. */
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..', '..');
 const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
 const i = process.argv.indexOf('--json');
-const SAIDA = i > 1 ? process.argv[i + 1] : null;
+const SAIDA = i > 1 ? process.argv[i + 1] : process.env.OEDP_FRASES_JSON ?? null;
 const barra = (/** @type {string} */ p) => (p.endsWith('/') ? p : `${p}/`);
 const ROTAS = /** @type {const} */ (['pt', 'en']).flatMap((lang) => [
-  routePath('home', lang), routePath('indice', lang), routePath('explicacoes', lang), routePath('leituraDaSemana', lang),
+  routePath('home', lang), routePath('entradaDinheiro', lang), routePath('indice', lang), routePath('explicacoes', lang), routePath('leituraDaSemana', lang),
   ...EXPLICACOES.map((e) => routePath('explicacao', lang, { slug: e.slug })),
 ].map(barra));
 const LARGURAS = [390, 1280];
@@ -65,62 +66,81 @@ async function abre(rota, largura) {
   const pagina = await ctx.newPage();
   const resposta = await pagina.goto(origem + rota, { waitUntil: 'networkidle' });
   if (!resposta || resposta.status() !== 200) throw Error(`FC · a página ${rota} não foi construída (${resposta?.status()})`);
-  await pagina.evaluate(() => document.fonts.ready);
+  await pagina.evaluate(() => {
+    document.querySelectorAll('details[data-cartao-dobra]').forEach(el => { el.open=true; });
+    return document.fonts.ready;
+  });
   return { ctx, pagina };
 }
 
 /* A medida, no navegador. Com o movimento reduzido, a folha da casa põe a duração das transições em 0,01 ms em todos os
    elementos, e uma planta mede-se depois de dois fotogramas. */
 const medir = () => {
-  /* Os pedaços marcados de uma frase: as contagens e as datas da semana, os períodos, os nomes declarados e os valores
+  /* O selo dentro de um Claim não é outro pedaço da frase: todos os seus descendentes sobem à mesma caixa que o valor.
+     Os pedaços marcados de uma frase: as contagens e as datas da semana, os períodos, os nomes declarados e os valores
      (de um valor conta a caixa do `<Claim>`, que leva o selo: o que tem de ser texto corrido é o pai dessa caixa). */
-  const marcados = [...new Set([...document.querySelectorAll('main [data-semana], main [data-de-linha], main [data-explicacao-nome], main [data-claim]')]
-    .map((x) => (x.hasAttribute('data-claim') ? (x.closest('.claim') ?? x) : x)))]
-    .filter((x) => x.closest('[data-explicacao-declarado], [data-semana-declarado], [data-explicacao-porta], [data-semana-frase]'));
+  const marcados = [...new Set([...document.querySelectorAll('main [data-semana], main [data-de-linha], main [data-explicacao-nome], main [data-claim], main [data-nonledger], main [data-correcao-campo], main [data-linha-campo]')]
+    .map((x) => x.closest('.claim') ?? x))]
+    .filter((x) => x.closest('[data-explicacao-declarado], [data-semana-declarado], [data-explicacao-porta], [data-semana-frase], [data-bloco-frase], [data-bloco-ressalva], [data-bloco-titulo], [data-bloco] p[data-bloco-declarado], [data-bloco-serie-unidade], [data-cartao-leitura], [data-o-que-e]'));
   const pais = new Set(marcados.map((x) => /** @type {HTMLElement} */ (x.parentElement)));
   const flex = [...pais].filter((el) => /flex|grid/.test(getComputedStyle(el).display))
     .map((el) => ({ tag: el.tagName.toLowerCase(), classe: String(el.className), display: getComputedStyle(el).display, texto: (el.textContent ?? '').trim().slice(0, 70) }));
-  return { pedacos: marcados.length, flex, largura_do_documento: document.documentElement.scrollWidth, janela: window.innerWidth };
+  return { pedacos: marcados.length, blocos: marcados.filter(x => x.closest('[data-bloco]')).length, cartoes: marcados.filter(x => x.closest('[data-cartao-leitura]')).length, flex, largura_do_documento: document.documentElement.scrollWidth, janela: window.innerWidth };
 };
+/* EX2: as plantas afirmam a mensagem da mesma função que julga a página intacta. */
+const defeitos = (m, rota, largura) => [
+  ...m.flex.map(f => `FC1 · ${rota} a ${largura} px: uma frase composta dentro de um contentor ${f.display} (${f.tag}${f.classe ? `.${f.classe.split(/\s+/).join('.')}` : ''}): «${f.texto}»`),
+  ...(m.largura_do_documento > m.janela + 1 ? [`FC2 · ${rota} a ${largura} px: o documento tem ${m.largura_do_documento} px numa janela de ${m.janela}`] : []),
+];
 const doisFotogramas = () => new Promise((ok) => requestAnimationFrame(() => requestAnimationFrame(() => ok(null))));
 
 /** @type {{ rota: string, largura: number, pedacos: number, flex: any[], largura_do_documento: number, janela: number }[]} */
 const resultados = [];
 /** @type {string[]} */
 const erros = [];
-/** @type {{ nome: string, mordeu: boolean }[]} */
+/** @type {{ nome: string, mordeu: boolean, mensagem: string, queixas: string[] }[]} */
 const plantas = [];
 try {
   for (const largura of LARGURAS) for (const rota of ROTAS) {
     const { ctx, pagina } = await abre(rota, largura);
     const m = await pagina.evaluate(medir);
     resultados.push({ rota, largura, ...m });
-    for (const f of m.flex) erros.push(`FC1 · ${rota} a ${largura} px: uma frase composta dentro de um contentor ${f.display} (${f.tag}${f.classe ? `.${f.classe.split(/\s+/).join('.')}` : ''}): «${f.texto}»`);
-    if (largura === 390 && m.largura_do_documento > m.janela + 1) erros.push(`FC2 · ${rota} a 390 px: o documento tem ${m.largura_do_documento} px numa janela de ${m.janela}`);
+    erros.push(...defeitos(m, rota, largura));
+    if ([barra(routePath('home','pt')), barra(routePath('home','en'))].includes(rota) && !m.blocos) erros.push(`FC · ${rota}: os blocos da primeira página não foram medidos`);
+    if ([barra(routePath('entradaDinheiro','pt')), barra(routePath('entradaDinheiro','en'))].includes(rota) && !m.cartoes) erros.push(`FC · ${rota}: as leituras dos cartões não foram medidas`);
     await ctx.close();
   }
-  /* AS PLANTAS. */
-  {
-    const { ctx, pagina } = await abre(barra(routePath('explicacoes', 'pt')), 390);
-    await pagina.evaluate(() => { const a = /** @type {HTMLElement} */ (document.querySelector('.explicacoes-item a')); a.style.display = 'inline-flex'; });
-    await pagina.evaluate(doisFotogramas);
-    const m = await pagina.evaluate(medir);
-    plantas.push({ nome: 'a porta da lista das explicações posta num contentor flexível', mordeu: m.flex.length > 0 });
-    await ctx.close();
-  }
-  {
-    const { ctx, pagina } = await abre(barra(routePath('explicacao', 'en', { slug: EXPLICACOES[0].slug })), 390);
-    await pagina.evaluate(() => { const d = document.createElement('div'); d.style.width = '2000px'; d.style.height = '1px'; document.querySelector('main')?.append(d); });
-    await pagina.evaluate(doisFotogramas);
-    const m = await pagina.evaluate(medir);
-    plantas.push({ nome: 'um elemento mais largo do que a janela a 390 px', mordeu: m.largura_do_documento > m.janela + 1 });
-    await ctx.close();
+  /* EX2: as duas falhas em cada superfície nova, nas duas edições e larguras, sem tocar nos ficheiros. */
+  for (const lang of ['pt','en']) for (const largura of LARGURAS) {
+    for (const [superficie, key, selector] of [
+      ['explicações','explicacoes','.explicacoes-item a'],
+      ['primeira página','home','[data-bloco-frase]'],
+      ['comparação dos cartões','entradaDinheiro','[data-cartao-leitura][data-leitura-parte="comparacao"]'],
+      ['definição dos cartões aberta','entradaDinheiro','[data-cartao-leitura][data-leitura-parte="o-que-e"]'],
+    ]) for (const tipo of ['flex','largura']) {
+      const rota=barra(routePath(key,lang));
+      const {ctx,pagina}=await abre(rota,largura);
+      const controlo=defeitos(await pagina.evaluate(medir),rota,largura);
+      await pagina.evaluate(({selector,tipo}) => {
+        const el=[...document.querySelectorAll(selector)].find(e=>e.querySelector('[data-claim], [data-nonledger], [data-de-linha], [data-semana]'));
+        if(!el) throw Error('a planta não encontrou uma frase com pedaços marcados');
+        if(tipo==='flex') el.style.display='flex';
+        else el.style.width='2000px';
+        if(tipo==='largura') el.style.maxWidth='none';
+      }, {selector,tipo});
+      await pagina.evaluate(doisFotogramas);
+      const queixas=defeitos(await pagina.evaluate(medir),rota,largura);
+      const mensagem=tipo==='flex'?'FC1 ·':'FC2 ·';
+      plantas.push({nome:`${superficie}, ${tipo}, ${lang}, ${largura}`, mensagem, queixas,
+        mordeu:controlo.length===0&&queixas.some(q=>q.startsWith(mensagem))});
+      await ctx.close();
+    }
   }
   for (const p of plantas) if (!p.mordeu) erros.push(`FC · a planta «${p.nome}» não mordeu`);
   if (!resultados.some((r) => r.pedacos > 0)) erros.push('FC · nenhuma página teve um pedaço marcado: a célula não mediu nada');
-  const resumo = { o_que_e: 'FC · as frases compostas da casa dentro de contentores flexíveis e os documentos mais largos do que a janela a 390 px, nas páginas onde as frases compostas se rendem.', construcao: versao.commit, construido_em: versao.construido_em, resultados, plantas, erros };
+  const resumo = { o_que_e: 'FC · as frases compostas da casa dentro de contentores flexíveis e os documentos mais largos do que a janela nas duas larguras, nas páginas onde as frases compostas se rendem.', construcao: versao.commit, construido_em: versao.construido_em, resultados, plantas, erros };
   if (SAIDA) await fs.writeFile(SAIDA, JSON.stringify(resumo, null, 2) + '\n');
-  console.log(`FC · ${resultados.length} passagem(ns) em ${ROTAS.length} páginas, ${resultados.reduce((s, x) => s + x.pedacos, 0)} pedaços marcados vistos, ${resultados.reduce((s, x) => s + x.flex.length, 0)} dentro de um contentor flexível, ${resultados.filter((r) => r.largura === 390 && r.largura_do_documento > r.janela + 1).length} documento(s) mais largos do que a janela a 390 px; ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas no navegador.`);
+  console.log(`FC · ${resultados.length} passagem(ns) em ${ROTAS.length} páginas, ${resultados.reduce((s, x) => s + x.pedacos, 0)} pedaços marcados vistos, ${resultados.reduce((s, x) => s + x.flex.length, 0)} dentro de um contentor flexível, ${resultados.filter((r) => r.largura_do_documento > r.janela + 1).length} documento(s) mais largos do que a janela; ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas no navegador.`);
 } finally {
   await navegador.close();
   servidor.close();
