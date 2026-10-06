@@ -1,5 +1,6 @@
 /** EX2: capturas das duas páginas nas cinco larguras, com recortes, texto lido e resumos dos bytes. */
 import fs from 'node:fs/promises';
+import {constants} from 'node:fs';
 import path from 'node:path';
 import http from 'node:http';
 import {createHash} from 'node:crypto';
@@ -28,6 +29,8 @@ try{
   if(medidas.largura>largura+1)erros.push(`${rota}: transbordo a ${largura}`);
   for(const [sufixo,alvo] of [['inteira',null],['mudancas',nome==='semana'?'[data-semana-seccao="mudancas"]':'[data-indice-seccao="mudou"]']]){
    const ficheiro=`${CAP}/${nome}-${lang}-${largura}-${sufixo}.png`;
+   const anterior=ficheiro.replace(/\.png$/, '-antes.png');
+   try { await fs.copyFile(ficheiro,anterior,constants.COPYFILE_EXCL); } catch(e) { if(!['EEXIST','ENOENT'].includes(e.code)) throw e; }
    const bytes=alvo?await p.locator(alvo).screenshot({path:ficheiro}):await p.screenshot({path:ficheiro,fullPage:true});
    capturas.push({nome,lang,rota,largura,sufixo,ficheiro,sha256:sha(bytes),medidas});
   }
@@ -35,6 +38,6 @@ try{
  }
 }finally{await browser.close();servidor.close();}
 const manifesto={comando:'node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex2.mjs',cabeca,versao,capturas,erros};
-await fs.writeFile(path.join(AQUI,'capturas.json'),JSON.stringify(manifesto,null,2)+'\n');
+await fs.writeFile(path.join(AQUI,'capturas-b.json'),JSON.stringify(manifesto,null,2)+'\n');
 console.log(JSON.stringify({capturas:capturas.length,erros}));
 if(erros.length)process.exitCode=1;

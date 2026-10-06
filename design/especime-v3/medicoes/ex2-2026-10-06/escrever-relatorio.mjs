@@ -1,61 +1,71 @@
-/** O relatório é composto apenas depois de ler as medidas da entrega. */
+/** O relatório inteiro é saída deste guião; medidas e decisões têm ficheiro de origem. */
 import fs from 'node:fs';
 import path from 'node:path';
 const pasta=path.dirname(new URL(import.meta.url).pathname);
 const le=f=>JSON.parse(fs.readFileSync(path.join(pasta,f),'utf8'));
-const e=le('entrega.json'),b=le('base.json'),u=le('unidades.json'),w=le('semana.json'),fc=le('frases-compostas.json');
+const e=le('entrega-b.json'), b=le('base.json'), u=le('unidades.json'), w=le('semana-b.json'), fc=le('frases-compostas-b.json'), passagem=le('passagem-b.json'), pais=le('titulos-plantas-b.json');
 const semana=e.paginas.find(p=>p.lang==='pt'&&p.rota==='leituraDaSemana');
-const esc=s=>String(s??'').replaceAll('|','&#124;').replaceAll('\n',' ');
-const plantas=[...w.plantas,...fc.plantas];
-const frases=e.paginas.filter(p=>p.rota==='leituraDaSemana').map(p=>`### ${p.lang.toUpperCase()}\n\n`+p.mudancas.map(m=>`- **${m.linha}**. ${m.resumo}\n\n  ${m.frase||m.ausencia}`).join('\n\n')).join('\n\n');
+const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('|','&#124;').replaceAll('\n',' ');
+const plantas=[...w.plantas,...fc.plantas,...pais.filter(p=>p.celula.startsWith('A4')).map(p=>({nome:p.nome,mordeu:p.passou,queixa:p.saida}))];
+const frases=e.paginas.map(p=>`### ${p.rota}, ${p.lang.toUpperCase()}\n\n`+p.mudancas.map(m=>`- **${m.linha}**. ${m.resumo}${m.frase||m.ausencia?`\n\n  ${m.frase||m.ausencia}`:''}${m.sinais.map(s=>`\n\n  ${s.texto} (Recibo: \`${s.linha}\`.)`).join('')}`).join('\n\n')).join('\n\n');
+const tabelaPlantas=ps=>`| Planta | Mordeu | Mensagem observada |\n|---|---|---|\n`+ps.map(p=>`| ${esc(p.nome)} | ${p.aplica===false?'não se aplica':p.mordeu?'sim':'não'} | ${esc(p.queixa??p.queixas?.join(' / '))} |`).join('\n');
 const texto=`# EX2 · a leitura da semana diz o que cada número é
 
-A definição provada do recibo aparece num parágrafo próprio sob cada mudança de valor, na leitura da semana e em «O que mudou» do índice. As palavras vêm de \`oQueEDaLinha\`; a conferência compara-as com o recibo construído da mesma linha e edição e confirma o estado na auditoria das famílias. Quando a auditoria diz «por confirmar», aparece a ausência da cadeia da casa.
+A leitura da semana abre com os números que mudaram de valor. O índice usa a mesma gramática: nome da medida, período, unidade antes dos dois pontos, os dois valores, a revisão da fonte e a data. A definição aparece uma vez no fim de cada grupo de linhas consecutivas da mesma medida, seguida pelos sinais que os seus recibos tenham. Nenhuma definição nem sinal foi escrito nesta passagem: vêm de \`oQueEDaLinha\`, e a W4 compara-os com os recibos construídos da mesma edição. A ausência por confirmar continua explícita.
 
-A cabeça do código é \`${e.cabeca_codigo}\`. A base é \`${e.base}\`. Construção por Codex, com a identificação e os trailers pedidos no mandato. Não foi observada uma linha «tokens used» nesta sessão; o custo fica por apurar no registo do lançador. A leitura a frio do Claude Opus e a conferência pelo lugar de direção ficam pendentes, sem aterragem nem publicação nesta sessão.
+A cabeça do código é \`${e.cabeca_codigo}\`. A base da primeira construção é \`${e.base}\`. Construtor: Codex, identificação pedida no mandato e nos trailers. Não foi observada uma linha «tokens used» nesta sessão; o custo fica por apurar no registo do lançador. A leitura a frio recebida está em [LEITURA-EX2](../../critica/LEITURA-EX2-2026-10-06.md). Falta a leitura curta do diff e a conferência da direção antes de aterrar. Não houve publicação.
 
-## O que se mediu e se escolheu
+## Medidas e decisão da unidade
 
-O comando \`node design/especime-v3/medicoes/ex2-2026-10-06/medir-base.mjs\` produziu [base.json](base.json). O livro tem ${b.linhas} linhas, ${b.ambito} no âmbito, ${b.unidades_distintas} unidades, ${b.unidades_por_palavra} começadas por palavra. A semana construída vai de ${e.janela.inicio} a ${e.janela.fim}: ${semana.mudancas.length} mudanças, ${e.por_confirmar_na_semana} sem frase por confirmar. As mudanças e as frases lidas do HTML estão abaixo e em [entrega.json](entrega.json).
+O comando \`node design/especime-v3/medicoes/ex2-2026-10-06/medir-base.mjs\` produziu [base.json](base.json): ${b.linhas} linhas no livro, ${b.ambito} no âmbito, ${b.unidades_distintas} unidades, ${b.unidades_por_palavra} começadas por palavra. A construção final tem a janela ${e.janela.inicio} a ${e.janela.fim}, ${semana.mudancas.length} mudanças e ${e.por_confirmar_na_semana} ausências por confirmar. Há ${semana.frases} definições na semana portuguesa, uma por grupo; as contagens de cada página estão em [entrega-b.json](entrega-b.json).
 
-**Na leitura da semana, a unidade vem antes dos dois pontos, imediatamente antes dos valores.** O comando \`node design/especime-v3/medicoes/ex2-2026-10-06/medir-unidades.mjs\` produziu [unidades.json](unidades.json), com todas as unidades nas duas formas candidatas, nas duas edições e a ${u.larguras.join(' e ')} px. Cada forma teve ${u.resumo.antes.amostras} medições. A forma anterior aos valores teve ${u.resumo.antes.transbordos} transbordos e ${u.resumo.antes.linhas_total} linhas de texto; a forma entre parênteses teve ${u.resumo.parenteses.transbordos} transbordos e ${u.resumo.parenteses.linhas_total} linhas. Decidiu o desempate a ausência de parênteses aninhados: ${u.resumo.antes.parenteses_aninhados} na escolhida contra ${u.resumo.parenteses.parenteses_aninhados} na alternativa. O ensaio mede o trecho unidade e valores, com valores reais do livro e a fonte da página. Quando não existe correção, repete o valor atual, explicitamente como ensaio. As capturas conferem a frase inteira da semana construída.
+**A unidade antes dos dois pontos é a decisão da direção, confirmada pelo mandato desta passagem.** O ensaio \`node design/especime-v3/medicoes/ex2-2026-10-06/medir-unidades.mjs\`, em [unidades.json](unidades.json), não decidiu pela geometria: empatou. Cada forma teve ${u.resumo.antes.amostras} amostras, a ${u.larguras.join(' e ')} px, nas duas edições. A forma antes dos valores teve ${u.resumo.antes.transbordos} transbordos e ${u.resumo.antes.linhas_total} linhas; a forma entre parênteses teve ${u.resumo.parenteses.transbordos} transbordos e ${u.resumo.parenteses.linhas_total} linhas. O desempate usou a contagem de unidades por edição com parênteses aninhados: ${u.resumo.antes.parenteses_aninhados} contra ${u.resumo.parenteses.parenteses_aninhados}. Contadas as amostras em ambas as larguras, são ${passagem.unidades.parenteses_por_amostra.antes} contra ${passagem.unidades.parenteses_por_amostra.parenteses}. Essa distinção está em [passagem-b.json](passagem-b.json), produzida por \`node design/especime-v3/medicoes/ex2-2026-10-06/medir-passagem-b.mjs\`.
 
-A régua visual lê ${e.fc.paginas} páginas em ${e.fc.passagens} passagens, incluindo os blocos da primeira página, a comparação dos cartões e as suas definições abertas. Encontrou ${e.fc.erros.length} falhas na entrega. As capturas têm ${e.capturas.quantidade} ficheiros, página inteira e recorte das mudanças, com ${e.capturas.erros.length} transbordos: [manifesto das capturas](capturas.json), pasta \`design/especime-v3/capturas/ex2-2026-10-06/\`. Comandos: \`node tests/explicacoes/frases-compostas.mjs --json design/especime-v3/medicoes/ex2-2026-10-06/frases-compostas.json\` e \`node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex2.mjs\`.
+O ensaio mede apenas unidade e valores. Não inclui o período. A adjacência do período com o ano de base dos volumes encadeados fica como limite para o bloco dos recibos, juntamente com as referências para dizer se um valor é alto ou baixo. As capturas conferem a frase inteira construída.
 
-O selo da mudança continua a abrir o mesmo recibo. Uma definição que contém um valor só pode reutilizar esse selo para a própria linha, no resumo da mesma entrada e na mesma edição. As palavras, os valores, as datas e as línguas dos pedaços continuam marcados e conferidos. O inventário dispensa apenas parágrafos cujo texto completo a célula da semana confere. A primeira ampliação da régua visual selecionou também os selos dentro da caixa do valor e uma comparação sem pedaços marcados. A seleção foi corrigida para conservar a caixa do valor como peça, como a célula já fazia, e a planta passou a escolher uma frase realmente composta. A corrida inicial está em [ensaios/frases-compostas-primeira.json](ensaios/frases-compostas-primeira.json). Não foi preciso mudar contentores das páginas existentes.
+A régua das frases compostas leu ${e.fc.paginas} páginas em ${e.fc.passagens} passagens e encontrou ${e.fc.erros.length} falhas. As capturas finais têm ${e.capturas.quantidade} ficheiros, página inteira e recorte, com ${e.capturas.erros.length} transbordos. As anteriores conservam o sufixo \`-antes\`. Comandos: \`node tests/explicacoes/frases-compostas.mjs --json design/especime-v3/medicoes/ex2-2026-10-06/frases-compostas-b.json\` e \`node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex2.mjs\`. Fontes: [régua](frases-compostas-b.json), [capturas](capturas-b.json).
 
-O teto da L1, o recibo e as fontes das definições não foram alterados; o guião da entrega encontrou ${e.ficheiros_protegidos_alterados.length} alterações nos caminhos protegidos que lista.
+O guião da entrega encontrou ${e.ficheiros_protegidos_alterados.length} alterações no livro, nas declarações de dados e no recibo. O teto da L1 não mudou. Saiu apenas a dispensa das antigas portas dos marcadores de título, que já não são obrigatórias.
 
-## Portões e conferências
+## A passagem EX2-b
 
-Comando final: \`sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/ex2-2026-10-06/portoes\`, com \`<worktree>\` substituído pelo caminho absoluto na execução. A tranca foi respeitada. As variáveis \`OEDP_SEMANA_JSON\` e \`OEDP_FRASES_JSON\` guardaram os resultados estruturados das células na corrida final. Os códigos seguintes foram lidos dos ficheiros; as cabeças de início e fim são \`${e.cabeca_portoes}\` e \`${e.cabeca_fim}\`.
+As decisões e a ligação entre cada achado e as plantas estão em [passagem-b.json](passagem-b.json).
 
-| Portão | Código | Ficheiro |
-|---|---:|---|
-${Object.entries(e.portoes).map(([g,c])=>`| ${g} | ${c} | [${g}.codigo](portoes/${g}.codigo) |`).join('\n')}
+${passagem.decisoes.map(d=>`- **Achados ${d.achados.join(', ')}.** ${d.feito}${d.plantas.length?` Plantas: ${d.plantas.map(p=>`«${p}»`).join('; ')}.`:''}`).join('\n')}
 
-As conferências entre commits estão em [conferencias/](conferencias/), produzidas por \`node design/especime-v3/medicoes/ex2-2026-10-06/conferir-ex2.mjs\`. A entrega foi medida com \`node design/especime-v3/medicoes/ex2-2026-10-06/medir-entrega.mjs\`; este relatório foi escrito com \`node design/especime-v3/medicoes/ex2-2026-10-06/escrever-relatorio.mjs\`. O motor não foi usado.
+A medição antes da mudança, \`node design/especime-v3/medicoes/ex2-2026-10-06/medir-titulos-b.mjs\`, está em [titulos-antes-b.json](titulos-antes-b.json). O componente lia \`titleUnverified\` nas edições inglesas dos estudos da água e acrescentava o marcador. As edições portuguesas não tinham essa declaração. A língua do texto já era reconhecida como portuguesa. A falta de tradução não é incerteza sobre o nome publicado.
+
+A cadeia de nenhuma mudança na primeira página já existia desde o EX1: ${passagem.primeira_nenhuma_desde_ex1.map(x=>`\`${x}\``).join('; ')}. O texto efetivamente mostrado nas duas edições consta de [passagem-b.json](passagem-b.json).
+
+As células do selo da definição e dos pedaços marcados são vazias nesta construção: ${passagem.paginas.reduce((n,p)=>n+p.definicoes_com_algarismos,0)} definições com algarismos e ${passagem.paginas.reduce((n,p)=>n+p.pedacos_marcados,0)} pedaços marcados, entre ${passagem.paginas.reduce((n,p)=>n+p.definicoes,0)} definições. As plantas sintéticas dos auxiliares não provam \`auditaSelo\` numa definição real com valor. Este limite fica declarado, sem aumentar a prova que existe.
 
 ## Plantas e mensagens
 
-As plantas alteram cópias em memória ou o navegador. Cada uma exige o controlo intacto e a mensagem esperada da mesma conferência que julga a página. Os detalhes estão em [semana.json](semana.json) e [frases-compostas.json](frases-compostas.json). A conta da janela também conserva as plantas da cópia do livro, em \`semana.json → w1\`.
+As plantas estragam cópias em memória ou o navegador. Exigem o controlo intacto e a mensagem da célula que julga a página. Os ficheiros completos são [semana-b.json](semana-b.json), [frases-compostas-b.json](frases-compostas-b.json) e [titulos-plantas-b.json](titulos-plantas-b.json). Comandos: \`node tests/explicacoes/semana.mjs --prova --json design/especime-v3/medicoes/ex2-2026-10-06/semana-b.json\`, a régua visual indicada acima e \`node tests/pais/pais.mjs --json design/especime-v3/medicoes/ex2-2026-10-06/titulos-plantas-b.json\`. As plantas da cópia do livro continuam em \`semana-b.json → w1\`.
 
-| Planta | Mordeu | Mensagem observada |
-|---|---|---|
-${plantas.map(p=>`| ${esc(p.nome)} | ${p.aplica===false?'não se aplica':p.mordeu?'sim':'não'} | ${esc(p.queixa??p.queixas?.join(' / '))} |`).join('\n')}
+${tabelaPlantas(plantas)}
 
-## Questões abertas e ponto onde se parou
+## Portões na cabeça do código
 
-- **EX2-1. A contagem inicial de páginas da célula no brief está errada.** A medição do código inicial encontrou ${b.fc.paginas_reais} páginas, enquanto o guião do brief conta ${b.fc.paginas_fixadas_no_brief}: omite as rotas acrescentadas por \`EXPLICACOES.map\`. Parou-se na correção desse ponto do brief, que pertence ao lugar de direção. A extensão independente da célula foi construída, sem alterar o brief nem disfarçar a discrepância.
-- **EX2-2. Leitura a frio e aterragem pendentes.** O Claude Opus deve ler as páginas construídas, um recibo e as capturas, com os estragos apenas nas cópias do pacote. Deve responder ao teste dos dois minutos e dizer se um editor de um diário português imprimiria as páginas. O lugar de direção confere a entrega antes de aterrar.
+Comando: \`sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/ex2-2026-10-06/portoes-b\`, com o caminho absoluto da worktree na execução. A tranca foi respeitada. As variáveis \`OEDP_SEMANA_JSON\` e \`OEDP_FRASES_JSON\` guardaram as saídas estruturadas da corrida. Cabeça de início: \`${e.cabeca_portoes}\`; cabeça de fim: \`${e.cabeca_fim}\`.
 
-## Commits da construção
+| Portão | Código lido de ficheiro | Ficheiro |
+|---|---:|---|
+${Object.entries(e.portoes).map(([g,c])=>`| ${g} | ${c} | [${g}.codigo](portoes-b/${g}.codigo) |`).join('\n')}
+
+A entrega foi medida por \`node design/especime-v3/medicoes/ex2-2026-10-06/medir-entrega.mjs\`. Este relatório inteiro foi gerado por \`node design/especime-v3/medicoes/ex2-2026-10-06/escrever-relatorio.mjs\`; não contém secções acrescentadas à mão. A inspeção visual do construtor é descrita como inspeção humana em [inspecao-visual-b.json](inspecao-visual-b.json), distinta da leitura a frio.
+
+## Questões e limites
+
+${passagem.questoes.map(q=>`- **${q.id}.** ${q.estado}`).join('\n')}
+
+## Commits desta passagem anteriores às provas finais
 
 ${e.commits.map(c=>`- \`${c}\``).join('\n')}
 
-## A semana construída, lida do HTML
+## Páginas construídas, lidas do HTML
 
 ${frases}
 `;
 fs.writeFileSync(path.join(pasta,'LEIA-ME.md'),texto);
-console.log('LEIA-ME.md escrito a partir das medições.');
+console.log('LEIA-ME.md escrito a partir das medições da passagem EX2-b.');

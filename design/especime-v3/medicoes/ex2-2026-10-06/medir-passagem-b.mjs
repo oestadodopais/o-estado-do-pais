@@ -1,0 +1,26 @@
+/** Medidas da passagem de correção, lidas dos artefactos; decisões transcritas do mandato. */
+import fs from 'node:fs';
+import {parse} from 'node-html-parser';
+import {execFileSync} from 'node:child_process';
+const pasta=new URL('./',import.meta.url), le=f=>JSON.parse(fs.readFileSync(new URL(f,pasta),'utf8'));
+const titulos=le('titulos-antes-b.json'), u=le('unidades.json');
+const decisoes=[
+ {achados:[1,2,7,8,9],feito:'Eram estragos nas cópias da direção; não se corrigiu o ramo por eles.',plantas:[]},
+ {achados:[3],feito:'O índice escreve a unidade antes dos dois pontos e a revisão pelos mesmos componente e cadeias da semana. A W confere o resumo contra o livro.',plantas:['a unidade colada ao número']},
+ {achados:[4,5],feito:'A palavra do lado diz «a fonte reviu para cima» ou «a fonte reviu para baixo», com as gémeas inglesas. O nome vem de nomeNaSemana nas duas páginas e é o mesmo nos anos da mesma medida. Uma definição por grupo, sob a última linha, é comparada com todos os recibos desse grupo. Os sinais dos recibos acompanham a definição, sem repetição. A semana abre com os valores e fecha com as contagens; conserva a secção da forma e a frase de nenhuma mudança de ramo na primeira página.',plantas:['a palavra da revisão trocada','o nome da fonte em vez','a definição repetida no grupo','a definição em falta no grupo','uma palavra trocada no sinal','o sinal em falta no grupo','as contagens à cabeça','a frase de nenhuma mudança']},
+ {achados:[6],feito:'O título conserva o nome publicado do documento; a falta de tradução deixa de produzir a marca. O título português leva lang="pt" na edição inglesa. A A4 recusa a marca, confere o nome e a língua; a L1 deixa de dispensar a antiga porta.',plantas:['marca de incerteza num título','título publicado com palavras trocadas','título português sem língua']},
+ {achados:[10],feito:'A W2 compõe o nome de nomeNaSemana e o qualificador dos dados da linha, sem ler nenhum deles da página.',plantas:['o qualificador da União Europeia retirado','o nome da fonte em vez']},
+ {achados:[11],feito:'A entrada do resumo declarado tem de estar diretamente dentro da lista de mudanças que a W confere.',plantas:['um resumo declarado fora da lista']},
+ {achados:[12],feito:'A geometria empatou. A contagem dos parênteses aninhados apoiou o desempate, mas a unidade antes dos dois pontos é uma decisão da direção confirmada neste mandato. O ensaio curto não inclui o período; a adjacência do ano com o ano de base fica como limite para os recibos.',plantas:[]},
+ {achados:[13],feito:'As alterações ao brief pertencem à direção, posteriores à primeira entrega. Nenhuma alteração nesta passagem.',plantas:[]},
+ {achados:[14],feito:'O relatório inteiro, incluindo as questões abertas e esta secção, é saída do escrever-relatorio.mjs. A conferência regenera-o e compara os bytes.',plantas:[]},
+ {achados:[15],feito:'As células do selo da definição e dos seus pedaços marcados são vazias nesta construção: as definições não têm algarismos nem esses pedaços. As plantas sintéticas continuam a testar os auxiliares; não são prova de auditaSelo sobre uma definição real com valor.',plantas:[]},
+ {achados:[16],feito:'O manifesto das plantas do construtor foi retirado do repositório. As plantas de leitura a frio pertencem à direção, nas cópias do pacote; esta passagem não constrói nem commita esse manifesto.',plantas:[]},
+];
+const paginas=[['pt','indice/index.html'],['en','en/index/index.html'],['pt','explicacoes/leitura-da-semana/index.html'],['en','en/explainers/weekly-reading/index.html']].map(([lang,f])=>{
+ const r=parse(fs.readFileSync('dist/'+f,'utf8')),definicoes=r.querySelectorAll('main p[data-o-que-e]');
+ return {lang,ficheiro:'dist/'+f,definicoes:definicoes.length,definicoes_com_algarismos:definicoes.filter(e=>/\d/.test(e.textContent)).length,pedacos_marcados:definicoes.reduce((n,e)=>n+e.querySelectorAll('[data-claim], [data-nonledger], [data-linha-campo], [lang]').length,0),sinais:r.querySelectorAll('[data-o-que-e-sinal]').length,primeira_nenhuma:r.querySelector('[data-semana-primeira="nenhuma"]')?.textContent??null,titulos_com_marca:r.querySelectorAll('.marcador-de-titulo').length};
+});
+const out={comando:'node design/especime-v3/medicoes/ex2-2026-10-06/medir-passagem-b.mjs',decisoes,titulos_antes:titulos.casos,paginas,unidades:{...u.resumo,parenteses_por_amostra:Object.fromEntries(['antes','parenteses'].map(f=>[f,u.medidas.filter(m=>m.forma===f&&m.parenteses_dentro_de_parenteses).length]))},primeira_nenhuma_desde_ex1:execFileSync('git',['log','--reverse','--format=%H %s','-S','primeiraNenhuma','--','src/i18n/strings.mjs'],{encoding:'utf8'}).trim().split('\n'),questoes:[{id:'EX2-1',estado:'Resolvida pela direção na correção do brief, antes desta passagem.'},{id:'EX2-2',estado:'A leitura a frio recebida foi tratada por esta passagem. Falta a leitura curta do diff e a conferência da direção antes de aterrar, pela regra do projeto. Não houve publicação.'},{id:'EX2-3',estado:'As referências para dizer se um valor é alto ou baixo e o ano de base dos volumes encadeados ficam para o bloco dos recibos. A adjacência do período com o ano de base não foi medida no ensaio curto das unidades.'}]};
+fs.writeFileSync(new URL('passagem-b.json',pasta),JSON.stringify(out,null,2)+'\n');
+console.log(JSON.stringify({paginas,unidades:out.unidades}));
