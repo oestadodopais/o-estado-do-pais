@@ -18,6 +18,9 @@
  * abre a esta lista e só a ela. As palavras compostas levam `data-semana-declarado`: saem do
  * inventário das frases porque mudam com os dados, e a célula da semana (`tests/explicacoes/semana.mjs`) confere-as
  * na mesma corrida do `check:voz`.
+ *
+ * EX1-c (06.10.2026, o achado 5 da leitura a frio): as linhas em que só o literal mudou (o mesmo número, escrito de
+ * outra maneira) saem da lista das mudanças de valor e têm a secção delas, a seguir.
  */
 import Base from '../layouts/Base.astro';
 import FraseDaSemana from '../components/explicacoes/FraseDaSemana.astro';
@@ -48,6 +51,9 @@ const mudancas = leitura.mudancas.map((m) => {
   const unidade = typeof linha.unit === 'string' && linha.unit ? unidadeDaLinha(linha.unit, lang) : null;
   return { ...m, linha, nome: nomeNaLista(m.linha, lang), unidade };
 });
+/* AS QUE MUDARAM SÓ NA FORMA DE ESCREVER (EX1-c, 06.10.2026, o achado 5 da leitura a frio): o mesmo número com outro
+   literal, numa secção própria, cada uma dita pelo que é («a fonte passou a escrever 3,0, onde escrevia 3»). */
+const formas = leitura.formas.map((f) => ({ ...f, linha: getClaim(f.linha), nome: nomeNaLista(f.linha, lang) }));
 ---
 
 <Base lang={lang} path={path} title={`${s.semana.titulo} · ${SITE_NAME}`} description={s.semana.metaDescription}>
@@ -70,6 +76,25 @@ const mudancas = leitura.mudancas.map((m) => {
               {m.palavra === 'subiu' ? s.semana.subiu : m.palavra === 'desceu' ? s.semana.desceu : s.semana.naoMudou}
               {s.semana.em}<time class="semana-data" datetime={m.depois.data} data-correcao-claim={m.linha.id} data-correcao-n={String(m.depois.n)} data-correcao-campo="date">{dataDaCasa(m.depois.data)}</time>{s.semana.ponto}
               {' '}<Provenance id={m.linha.id} lang={lang} />
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
+
+    {formas.length > 0 && (
+      <section class="semana-secao" aria-labelledby="semana-formas" data-semana-seccao="formas">
+        <h2 class="semana-secao-titulo" id="semana-formas" data-semana-declarado>{s.semana.formasK}</h2>
+        <ol class="semana-mudancas" data-semana-formas>
+          {formas.map((f) => (
+            <li class="semana-mudanca" data-correcao-entrada={f.linha.id} data-semana-forma={f.linha.id} data-semana-declarado>
+              <NomeDaMedida linha={getClaim(f.nome.linha)} lang={lang} escada="cartao" class="semana-nome" />
+              {f.nome.qualificador === 'ue' && <>{s.semana.virgula}<span class="semana-onde">{s.cartao.uniaoEuropeia}</span></>}
+              {s.semana.virgula}<DataDaLinha id={f.linha.id} campo="reference_date" valor={String(f.linha.reference_date)} lang={lang} />
+              {s.semana.passouAEscrever}<span class="semana-valor" data-correcao-claim={f.linha.id} data-correcao-n={String(f.depois.n)} data-correcao-campo="new_value">{f.depois.valor}</span>
+              {s.semana.ondeEscrevia}<span class="semana-valor" data-correcao-claim={f.linha.id} data-correcao-n={String(f.antes.n)} data-correcao-campo="old_value">{f.antes.valor}</span>
+              {s.semana.em}<time class="semana-data" datetime={f.depois.data} data-correcao-claim={f.linha.id} data-correcao-n={String(f.depois.n)} data-correcao-campo="date">{dataDaCasa(f.depois.data)}</time>{s.semana.ponto}
+              {' '}<Provenance id={f.linha.id} lang={lang} />
             </li>
           ))}
         </ol>

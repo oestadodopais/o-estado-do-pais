@@ -19,7 +19,10 @@
  *      casa; o texto rendido compara-se carácter a carácter. A porta é a da página da semana: a marca vive dentro
  *      de uma ligação para ela, ou na própria página da semana, onde uma porta para si mesma não é porta.
  *   2. A PÁGINA DA SEMANA, CONTADA: existe nas duas edições, tem a primeira frase uma vez, e tem uma entrada por
- *      linha do âmbito cujo valor mudou na janela, nem mais nem menos, cada uma com a natureza do registo.
+ *      linha do âmbito cujo valor mudou na janela, nem mais nem menos, cada uma com a natureza do registo. Desde o
+ *      EX1-c (06.10.2026, o achado 5 da leitura a frio), o valor mudou quando mudou o NÚMERO, do valor antes da
+ *      primeira entrada da janela ao valor depois da última, pela leitura própria do portão; as linhas em que só o
+ *      literal mudou contam-se à parte (a chave `forma`) e têm a sua lista, também contada.
  *   3. O `<head>` DE UMA EXPLICAÇÃO: o título e a descrição compõem-se do título declarado, com o ano pelo período
  *      da linha nomeada, e o portão recompõe-nos por conta própria e exige-os iguais aos construídos, como faz ao
  *      `<head>` de uma página de linha.
@@ -36,7 +39,12 @@ const NATUREZAS_DE_VALOR = new Set(['correcao', 'atualizacao']);
 const DIAS = 7;
 const DIA = /^\d{4}-\d{2}-\d{2}$/;
 /** As chaves da marca, e mais nenhuma. */
-export const CHAVES_DA_SEMANA = ['inicio', 'fim', 'relidas', 'valor', 'proveniencia'];
+export const CHAVES_DA_SEMANA = ['inicio', 'fim', 'relidas', 'valor', 'forma', 'proveniencia'];
+/** Um valor publicado como número, pela leitura do portão (os espaços dos milhares, a vírgula e o sinal da casa). @param {unknown} v */
+const numeroDoPortao = (v) => {
+  const t = String(v ?? '').replace(/[\s\u00a0\u202f]/g, '').replace(/−/g, '-').replace(',', '.');
+  return /^-?\d+(\.\d+)?$/.test(t) ? Number(t) : null;
+};
 
 /**
  * O dia do carimbo da construção, e os dias em que a janela pode acabar.
@@ -75,17 +83,28 @@ export function contasDaSemanaNoPortao(claims, inicio, fim) {
   /** @type {Set<string>} */
   const valor = new Set();
   /** @type {Set<string>} */
+  const forma = new Set();
+  /** @type {Set<string>} */
   const proveniencia = new Set();
   for (const [id, l] of claims) {
     if (!l || l.study === ESTUDO_DO_PROJETO || Object.hasOwn(MEDIDA_REUNIDA, id)) continue;
     if ((l.verifications ?? []).some((/** @type {any} */ v) => dentro(v?.date))) relidas += 1;
-    for (const c of l.corrections ?? []) {
-      if (!dentro(c?.date)) continue;
+    /** @type {{ c: any, n: number }[]} */
+    const deValor = [];
+    (l.corrections ?? []).forEach((/** @type {any} */ c, /** @type {number} */ n) => {
+      if (!dentro(c?.date)) return;
       if (c.kind === 'proveniencia') proveniencia.add(id);
-      if (NATUREZAS_DE_VALOR.has(c.kind)) valor.add(id);
-    }
+      if (NATUREZAS_DE_VALOR.has(c.kind)) deValor.push({ c, n });
+    });
+    if (!deValor.length) continue;
+    deValor.sort((a, b) => String(a.c.date).localeCompare(String(b.c.date)) || a.n - b.n);
+    const antes = deValor[0].c.old_value, depois = deValor[deValor.length - 1].c.new_value;
+    const a = numeroDoPortao(antes), b = numeroDoPortao(depois);
+    /* O número mudou: uma mudança de valor; o mesmo número com outro literal: uma mudança só da forma (EX1-c). */
+    if (a === null || b === null || a !== b) valor.add(id);
+    else if (String(antes) !== String(depois)) forma.add(id);
   }
-  return { relidas, valor: valor.size, proveniencia: proveniencia.size, linhasDeValor: valor };
+  return { relidas, valor: valor.size, forma: forma.size, proveniencia: proveniencia.size, linhasDeValor: valor, linhasDeForma: forma };
 }
 
 /** A janela declarada no antepassado mais próximo de um elemento, ou `null`. @param {any} el */
@@ -164,6 +183,21 @@ export function conferirPaginaDaSemana(dist, ficheiro, claims, aceites) {
   for (const e of entradas) {
     if (e.getAttribute('data-correcao-entrada') !== e.getAttribute('data-semana-mudanca')) erros.push(`${ficheiro}: a entrada de «${e.getAttribute('data-semana-mudanca')}» não é uma entrada do registo dessa linha.`);
   }
+  /* As que mudaram só na forma de escrever (EX1-c): uma entrada por linha, nem mais nem menos. */
+  const formas = root.querySelectorAll('main [data-semana-formas] [data-semana-forma]');
+  const idsF = formas.map((e) => e.getAttribute('data-semana-forma') ?? '');
+  const esperadosF = [...contas.linhasDeForma].sort();
+  if (new Set(idsF).size !== idsF.length) erros.push(`${ficheiro}: uma linha aparece duas vezes entre as que mudaram só na forma de escrever.`);
+  if (JSON.stringify([...idsF].sort()) !== JSON.stringify(esperadosF)) {
+    const faltam = esperadosF.filter((id) => !idsF.includes(id));
+    const aMais = idsF.filter((id) => !esperadosF.includes(id));
+    erros.push(`${ficheiro}: a página tem ${idsF.length} mudança(s) só da forma de escrever e o portão conta ${esperadosF.length} na janela ${janela}` +
+      `${faltam.length ? `; faltam ${faltam.join(', ')}` : ''}${aMais.length ? `; a mais ${aMais.join(', ')}` : ''}.`);
+  }
+  for (const e of formas) {
+    if (e.getAttribute('data-correcao-entrada') !== e.getAttribute('data-semana-forma')) erros.push(`${ficheiro}: a entrada de «${e.getAttribute('data-semana-forma')}» não é uma entrada do registo dessa linha.`);
+  }
+  if (root.querySelectorAll('main [data-semana-forma]').length !== formas.length) erros.push(`${ficheiro}: uma entrada de forma está fora da lista delas.`);
   return erros;
 }
 

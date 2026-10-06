@@ -22,8 +22,15 @@
  * mesmo número diriam duas vezes a mesma coisa.
  *
  *   · RELIDAS: as linhas do âmbito com pelo menos uma entrada em `verifications` dentro da janela;
- *   · MUDARAM DE VALOR: as linhas do âmbito com pelo menos uma entrada `correcao` ou `atualizacao`;
+ *   · MUDARAM DE VALOR: as linhas do âmbito com entradas `correcao` ou `atualizacao` em que o NÚMERO mudou, do
+ *     valor antes da primeira ao valor depois da última (EX1-c, 06.10.2026, o achado 5 da leitura a frio: uma
+ *     mudança de valor é uma mudança do número);
+ *   · MUDARAM SÓ NA FORMA DE ESCREVER (EX1-c): as linhas do âmbito com entradas dessas em que o número ficou o mesmo
+ *     e o literal mudou (a fonte passou a escrever «3,0» onde escrevia «3»); contam-se à parte e dizem-se pelo que
+ *     são, numa secção própria da página, e a primeira frase só as nomeia quando há alguma;
  *   · MUDARAM DE PROVENIÊNCIA: as linhas do âmbito com pelo menos uma entrada `proveniencia`.
+ *
+ * Uma linha cujas entradas da semana voltam ao número e ao literal de antes não mudou nada, e não se conta.
  *
  * UMA LINHA, UMA FRASE. Uma linha cujo valor mudou duas vezes na semana diz-se numa frase só, do valor
  * antes da primeira mudança ao valor depois da última, cada um com a marca da sua entrada; duas frases
@@ -77,6 +84,7 @@ export function linhaDoAmbito(l) {
 /**
  * @typedef {{ n: number, valor: string, data: string }} PontaDaMudanca
  * @typedef {{ linha: string, antes: PontaDaMudanca, depois: PontaDaMudanca, palavra: 'subiu'|'desceu'|'naoMudou', entradas: number[] }} MudancaDaSemana
+ * @typedef {{ linha: string, antes: PontaDaMudanca, depois: PontaDaMudanca, entradas: number[] }} FormaDaSemana
  * @typedef {{ bloco: string, mostraAntes: boolean, mostraAgora: boolean, mudou: boolean }} FraseDaPrimeira
  */
 
@@ -94,6 +102,8 @@ export function leituraDaSemana({ fim = diaDaConstrucao(), linhas = allClaims() 
   const deProveniencia = new Set();
   /** @type {MudancaDaSemana[]} */
   const mudancas = [];
+  /** @type {FormaDaSemana[]} */
+  const formas = [];
   /** @type {Map<string, number>} */
   const valoresAntes = new Map();
   for (const l of linhas) {
@@ -104,12 +114,24 @@ export function leituraDaSemana({ fim = diaDaConstrucao(), linhas = allClaims() 
     const deValorAqui = entradas.filter((/** @type {any} */ c) => NATUREZAS_DE_VALOR.includes(c.kind))
       .sort((/** @type {any} */ a, /** @type {any} */ b) => a.date.localeCompare(b.date) || a.n - b.n);
     if (!deValorAqui.length) continue;
-    deValor.add(String(l.id));
     const primeira = deValorAqui[0];
     const ultima = deValorAqui[deValorAqui.length - 1];
     const a = parsePtNumber(primeira.old_value);
     const b = parsePtNumber(ultima.new_value);
     if (a === null || b === null) throw new Error(`leitura da semana: a linha «${l.id}» mudou e um dos valores (${primeira.old_value}, ${ultima.new_value}) não se lê como número.`);
+    /* O mesmo número: uma mudança só do literal, que se conta à parte, ou nenhuma mudança (EX1-c). */
+    if (a === b) {
+      if (String(primeira.old_value) !== String(ultima.new_value)) {
+        formas.push({
+          linha: String(l.id),
+          antes: { n: primeira.n, valor: String(primeira.old_value), data: primeira.date },
+          depois: { n: ultima.n, valor: String(ultima.new_value), data: ultima.date },
+          entradas: deValorAqui.map((/** @type {any} */ c) => c.n),
+        });
+      }
+      continue;
+    }
+    deValor.add(String(l.id));
     valoresAntes.set(String(l.id), a);
     mudancas.push({
       linha: String(l.id),
@@ -120,10 +142,12 @@ export function leituraDaSemana({ fim = diaDaConstrucao(), linhas = allClaims() 
     });
   }
   mudancas.sort((x, y) => y.depois.data.localeCompare(x.depois.data) || x.linha.localeCompare(y.linha));
+  formas.sort((x, y) => y.depois.data.localeCompare(x.depois.data) || x.linha.localeCompare(y.linha));
   return {
     janela,
-    contagens: { relidas, valor: deValor.size, proveniencia: deProveniencia.size },
+    contagens: { relidas, valor: deValor.size, forma: formas.length, proveniencia: deProveniencia.size },
     mudancas,
+    formas,
     primeira: frasesDaPrimeiraQueMudaram(valoresAntes),
   };
 }
@@ -222,7 +246,7 @@ export function nomeNaSemana(id, lang) {
 }
 
 /**
- * @typedef {string | { semana: 'inicio'|'fim'|'relidas'|'valor'|'proveniencia', texto: string }} PedacoDaSemana
+ * @typedef {string | { semana: 'inicio'|'fim'|'relidas'|'valor'|'forma'|'proveniencia', texto: string }} PedacoDaSemana
  */
 
 /**
@@ -237,15 +261,18 @@ export function nomeNaSemana(id, lang) {
  */
 export function primeiraFraseDaSemana(leitura, s, data, contagem) {
   const { relidas, valor, proveniencia } = leitura.contagens;
+  const forma = leitura.contagens.forma ?? 0;
   /** @type {PedacoDaSemana[]} */
   const p = [s.entre, { semana: 'inicio', texto: data(leitura.janela.inicio) }, s.e, { semana: 'fim', texto: data(leitura.janela.fim) }, s.virgula];
   if (relidas === 0) p.push(s.nenhumRelido);
   else p.push({ semana: 'relidas', texto: contagem(relidas) }, relidas === 1 ? s.umRelido : s.variosRelidos);
-  if (valor === 0 && proveniencia === 0) p.push(s.nenhumMudou);
+  if (valor === 0 && proveniencia === 0 && forma === 0) p.push(s.nenhumMudou);
   else {
     p.push(s.virgula);
     if (valor === 0) p.push(s.nenhumDeValor);
     else p.push({ semana: 'valor', texto: contagem(valor) }, valor === 1 ? s.umDeValor : s.variosDeValor);
+    /* As que mudaram só na forma de escrever (EX1-c) só se nomeiam quando há alguma. */
+    if (forma > 0) p.push(s.virgula, { semana: 'forma', texto: contagem(forma) }, forma === 1 ? s.umDeForma : s.variosDeForma);
     p.push(s.e);
     if (proveniencia === 0) p.push(s.nenhumDeProveniencia);
     else p.push({ semana: 'proveniencia', texto: contagem(proveniencia) }, proveniencia === 1 ? s.umDeProveniencia : s.variosDeProveniencia);
