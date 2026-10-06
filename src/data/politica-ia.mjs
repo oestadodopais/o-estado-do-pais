@@ -364,7 +364,7 @@ export const POLITICA = {
   },
 
   /**
-   * OS QUATRO LUGARES, SEM UM ÚNICO ALGARISMO (segunda passagem, 01.09.2026).
+   * OS LUGARES, SEM UM ÚNICO ALGARISMO (segunda passagem, 01.09.2026).
    *
    * A primeira passagem escreveu os nomes dos modelos com a versão («Claude
    * Opus 5», «gpt-5.6-sol») e marcou os algarismos `identificador-tecnico`. A
@@ -381,11 +381,14 @@ export const POLITICA = {
    * leitor diz o que a coisa é: mede sem ver a construção, lê sem contexto
    * prévio.
    */
+  /* H4, 06.10.2026, §1.172: texto provisório do brief H4, §3, ponto 4.
+     A direção confirma a redação antes de aterrar. A medição cega não foi exercida
+     e deixa de ser apresentada como um lugar; a construção passa ao Codex. */
   lugares: {
     titulo: { pt: 'Os lugares', en: 'The places' },
     intro: {
-      pt: ['São quatro lugares, e a verificação é sempre de outra família de modelos:'],
-      en: ['There are four places, and checking is always done by a different family of models:'],
+      pt: ['São três lugares, e a verificação é sempre de outra família de modelos:'],
+      en: ['There are three places, and checking is always done by a different family of models:'],
     },
     itens: [
       {
@@ -398,15 +401,8 @@ export const POLITICA = {
       {
         rotulo: { pt: 'A construção', en: 'Building' },
         texto: {
-          pt: 'constrói o sítio, e verifica lotes na fonte.',
-          en: 'builds the site, and checks batches at the source.',
-        },
-      },
-      {
-        rotulo: { pt: 'A medição', en: 'Measurement' },
-        texto: {
-          pt: 'mede numa cópia, com código próprio, sem ver a construção.',
-          en: 'measures on a copy, with its own code, without seeing the build.',
+          pt: 'constrói o sítio e o motor, e verifica lotes na fonte.',
+          en: 'builds the site and the engine, and checks batches at the source.',
         },
       },
       {
@@ -419,14 +415,14 @@ export const POLITICA = {
     ],
     fecho: {
       pt: [
-        'São os modelos Claude da Anthropic, em três lugares (a direção, a construção, ' +
-          'a medição), e o Codex da OpenAI na leitura. Um modelo novo só ocupa um lugar ' +
+        'São os modelos Claude da Anthropic na direção e na leitura, e o Codex da OpenAI ' +
+          'na construção. Um modelo novo só ocupa um lugar ' +
           'depois de passar os mesmos testes que o titular passou, e a troca fica escrita ' +
           'com a data.',
       ],
       en: [
-        'They are the Claude models from Anthropic in three of the places (direction, ' +
-          'building, measurement), and Codex from OpenAI in the reading. A new model takes ' +
+        'They are the Claude models from Anthropic in the direction and the reading, ' +
+          'and Codex from OpenAI in the building. A new model takes ' +
           'a place only after passing the same tests the incumbent passed, and the change ' +
           'is written down with its date.',
       ],
