@@ -24,6 +24,12 @@
  *
  * O ÂMBITO é o do resolvedor, escrito aqui outra vez: fora as contagens do próprio projeto (o estudo `o-estado-do-pais`)
  * e a linha que a casa declara a mesma medida de outra (`MEDIDA_REUNIDA`).
+ *
+ * EX1-c (06.10.2026, os achados 5 e 14 da leitura a frio): UMA MUDANÇA DE VALOR É UMA MUDANÇA DO NÚMERO. Uma linha em
+ * que só o literal mudou (o mesmo número, escrito de outra maneira) conta-se à parte, tem a sua lista e a sua planta na
+ * cópia do livro; e uma marca das frases compostas só sai do inventário sobre um elemento que esta célula compara
+ * (a primeira frase, uma entrada, um título de secção, a frase de «nenhuma» ou de «mudaram», e cada frase da primeira
+ * página que a página cita, comparada com a frase que a primeira página rende).
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -64,6 +70,8 @@ export function semanaPelaCelula(linhas, fim) {
   let proveniencia = 0;
   /** @type {{ linha: string, antes: { n: number, valor: string }, depois: { n: number, valor: string, data: string }, palavra: string }[]} */
   const mudancas = [];
+  /** @type {{ linha: string, antes: { n: number, valor: string }, depois: { n: number, valor: string, data: string } }[]} */
+  const formas = [];
   for (const [id, l] of linhas) {
     if (!l || l.study === ESTUDO_DO_PROJETO || Object.hasOwn(MEDIDA_REUNIDA, id)) continue;
     if ((l.verifications ?? []).some((/** @type {any} */ v) => dentro(v?.date))) relidas += 1;
@@ -73,25 +81,34 @@ export function semanaPelaCelula(linhas, fim) {
     if (!deValor.length) continue;
     const p = deValor[0], u = deValor[deValor.length - 1];
     const a = numero(p.c.old_value), b = numero(u.c.new_value);
-    mudancas.push({ linha: id, antes: { n: p.n, valor: String(p.c.old_value) }, depois: { n: u.n, valor: String(u.c.new_value), data: u.c.date }, palavra: a === null || b === null ? 'sem-numero' : b > a ? 'subiu' : b < a ? 'desceu' : 'naoMudou' });
+    const pontas = { linha: id, antes: { n: p.n, valor: String(p.c.old_value) }, depois: { n: u.n, valor: String(u.c.new_value), data: u.c.date } };
+    /* O mesmo número: uma mudança só do literal, ou nenhuma (EX1-c). */
+    if (a !== null && b !== null && a === b) {
+      if (String(p.c.old_value) !== String(u.c.new_value)) formas.push(pontas);
+      continue;
+    }
+    mudancas.push({ ...pontas, palavra: a === null || b === null ? 'sem-numero' : b > a ? 'subiu' : 'desceu' });
   }
   mudancas.sort((x, y) => y.depois.data.localeCompare(x.depois.data) || x.linha.localeCompare(y.linha));
-  return { janela: { inicio, fim }, contagens: { relidas, valor: mudancas.length, proveniencia }, mudancas };
+  formas.sort((x, y) => y.depois.data.localeCompare(x.depois.data) || x.linha.localeCompare(y.linha));
+  return { janela: { inicio, fim }, contagens: { relidas, valor: mudancas.length, forma: formas.length, proveniencia }, mudancas, formas };
 }
 
 /**
  * A PRIMEIRA FRASE, pela composição desta célula, com as cadeias da casa.
- * @param {{ janela: { inicio: string, fim: string }, contagens: { relidas: number, valor: number, proveniencia: number } }} s
+ * @param {{ janela: { inicio: string, fim: string }, contagens: { relidas: number, valor: number, forma?: number, proveniencia: number } }} s
  * @param {'pt'|'en'} lang
  */
 export function primeiraFrasePelaCelula(s, lang) {
   const c = t(lang).semana;
   const { relidas, valor, proveniencia } = s.contagens;
+  const forma = /** @type {any} */ (s.contagens).forma ?? 0;
   let f = `${c.entre}${dataAqui(s.janela.inicio)}${c.e}${dataAqui(s.janela.fim)}${c.virgula}`;
   f += relidas === 0 ? c.nenhumRelido : `${milharesAqui(relidas)}${relidas === 1 ? c.umRelido : c.variosRelidos}`;
-  if (valor === 0 && proveniencia === 0) f += c.nenhumMudou;
+  if (valor === 0 && proveniencia === 0 && forma === 0) f += c.nenhumMudou;
   else {
     f += c.virgula + (valor === 0 ? c.nenhumDeValor : `${milharesAqui(valor)}${valor === 1 ? c.umDeValor : c.variosDeValor}`);
+    if (forma > 0) f += `${c.virgula}${milharesAqui(forma)}${forma === 1 ? c.umDeForma : c.variosDeForma}`;
     f += c.e + (proveniencia === 0 ? c.nenhumDeProveniencia : `${milharesAqui(proveniencia)}${proveniencia === 1 ? c.umDeProveniencia : c.variosDeProveniencia}`);
   }
   return normal(f + c.ponto);
@@ -168,12 +185,13 @@ export function provaNaCopiaPlantada(fim) {
   const r0 = doResolvedor(base), c0 = semanaPelaCelula(base, fim);
   if (JSON.stringify(r0.contagens) !== JSON.stringify(c0.contagens)) erros.push(`W1 · no livro sem plantas, o resolvedor conta ${JSON.stringify(r0.contagens)} e esta célula ${JSON.stringify(c0.contagens)}`);
   if (JSON.stringify(r0.mudancas.map((m) => [m.linha, m.palavra])) !== JSON.stringify(c0.mudancas.map((m) => [m.linha, m.palavra]))) erros.push('W1 · no livro sem plantas, o resolvedor e esta célula discordam nas mudanças');
+  if (JSON.stringify(r0.formas.map((m) => [m.linha, m.antes.valor, m.depois.valor])) !== JSON.stringify(c0.formas.map((m) => [m.linha, m.antes.valor, m.depois.valor]))) erros.push('W1 · no livro sem plantas, o resolvedor e esta célula discordam nas mudanças só da forma de escrever');
   const inicio = menosDias(fim, 6);
   /* As linhas das plantas: do âmbito, com valor numérico, sem entrada nenhuma na janela. */
   const livres = [...base].filter(([id, l]) => l && l.study !== ESTUDO_DO_PROJETO && !Object.hasOwn(MEDIDA_REUNIDA, id) && numero(l.value) !== null &&
     !(l.corrections ?? []).some((/** @type {any} */ c) => c?.date >= inicio && c?.date <= fim) && !(l.verifications ?? []).some((/** @type {any} */ v) => v?.date >= inicio && v?.date <= fim)).map(([id]) => id).sort();
-  if (livres.length < 3) return { erros: [...erros, 'W1 · não há três linhas livres para as plantas'], plantas: [] };
-  const [la, lb, lc] = livres;
+  if (livres.length < 4) return { erros: [...erros, 'W1 · não há quatro linhas livres para as plantas'], plantas: [] };
+  const [la, lb, lc, ld] = livres;
   /** @type {{ nome: string, pediu: string, viu: string, mordeu: boolean }[]} */
   const plantas = [];
   {
@@ -203,6 +221,18 @@ export function provaNaCopiaPlantada(fim) {
     plantas.push({ nome: `uma entrada fora da janela (${lc}, ${fora})`, pediu: 'nada muda', viu: `resolvedor ${JSON.stringify(r.contagens)}, célula ${JSON.stringify(c.contagens)}`, mordeu: ok });
   }
   {
+    /* UMA ENTRADA SÓ DE LITERAL (EX1-c, o achado 5): o mesmo número escrito de outra maneira não muda o valor; conta-se
+       à parte, como uma mudança só da forma de escrever, e não entra nas mudanças de valor. */
+    const m = copia(); const l = m.get(ld);
+    const outro = String(l.value).includes(',') ? `${l.value}0` : `${l.value},0`;
+    l.corrections = [...(l.corrections ?? []), { date: fim, kind: 'atualizacao', old_value: l.value, new_value: outro, reason: 'planta', reason_en: 'plant' }];
+    const r = doResolvedor(m), c = semanaPelaCelula(m, fim);
+    const ok = r.contagens.valor === r0.contagens.valor && c.contagens.valor === c0.contagens.valor &&
+      r.contagens.forma === r0.contagens.forma + 1 && c.contagens.forma === c0.contagens.forma + 1 &&
+      r.formas.some((x) => x.linha === ld) && c.formas.some((x) => x.linha === ld) && !r.mudancas.some((x) => x.linha === ld) && !c.mudancas.some((x) => x.linha === ld);
+    plantas.push({ nome: `uma entrada só de literal dentro da janela (${ld}, ${l.value} para ${outro})`, pediu: 'o mesmo número de mudanças de valor e mais uma só da forma de escrever', viu: `resolvedor ${r.contagens.valor} de valor e ${r.contagens.forma} de forma, célula ${c.contagens.valor} e ${c.contagens.forma}`, mordeu: ok });
+  }
+  {
     /* Uma semana sem entradas: a cópia tira de todas as linhas as correções e as releituras datadas dentro da janela. */
     const m = copia();
     for (const l of m.values()) {
@@ -211,7 +241,7 @@ export function provaNaCopiaPlantada(fim) {
       if (Array.isArray(l.verifications)) l.verifications = l.verifications.filter((/** @type {any} */ v) => !(v?.date >= inicio && v?.date <= fim));
     }
     const r = doResolvedor(m), c = semanaPelaCelula(m, fim);
-    const zero = JSON.stringify({ relidas: 0, valor: 0, proveniencia: 0 });
+    const zero = JSON.stringify({ relidas: 0, valor: 0, forma: 0, proveniencia: 0 });
     /** @type {string[]} */
     const frases = [];
     let iguais = true;
@@ -239,11 +269,36 @@ export function diasAceites(dist) {
   return d.getUTCHours() === 0 && d.getUTCMinutes() < 30 ? [dia, menosDias(dia, 1)] : [dia];
 }
 
+/** O texto de um elemento sem os selos nem as marcas escondidas, para comparar frases. @param {any} el */
+function textoSemSelosAqui(el) {
+  const copia = parse(el.outerHTML);
+  copia.querySelectorAll('.src-chip, .claim-provisorio-chip').forEach((/** @type {any} */ n) => n.remove());
+  return normal(copia.textContent);
+}
+
 /**
- * W2 · a página da semana numa edição.
- * @param {any} root @param {'pt'|'en'} lang @param {string[]} aceites @param {Map<string, any>} [linhas]
+ * UMA FRASE DA PRIMEIRA PÁGINA CITADA NA PÁGINA DA SEMANA (EX1-c, o achado 14): o título do bloco, os dois pontos e a
+ * frase que a primeira página da mesma edição rende para esse bloco (ou a palavra de que saiu, quando o bloco já não se
+ * rende lá), comparados carácter a carácter, sem os selos.
+ * @param {any} li o elemento com `data-semana-bloco` @param {'pt'|'en'} lang @param {any} primeira a raiz da primeira página da edição
  */
-export function conferirPaginaDaSemana(root, lang, aceites, linhas = loadClaims()) {
+export function conferirFraseDoBloco(li, lang, primeira) {
+  const c = t(lang).semana;
+  const id = li.getAttribute('data-semana-bloco');
+  const b = /** @type {any} */ (BLOCOS_DA_PRIMEIRA_PAGINA.find((x) => x.id === id));
+  if (!b) return [`W2 · a página cita a frase do bloco «${id}», que a primeira página não declara`];
+  const naPrimeira = primeira?.querySelector(`[data-bloco="${id}"] [data-bloco-frase]`);
+  const esperada = normal(`${b.titulo?.[lang] ?? ''}${c.doisPontos}${naPrimeira ? textoSemSelosAqui(naPrimeira) : c.saiuDaPrimeira}`);
+  const rendida = textoSemSelosAqui(li);
+  return rendida === esperada ? [] : [`W2 · a frase do bloco «${id}» na página da semana não é a que a primeira página rende.\n      esperada: ${esperada}\n      rendida:  ${rendida}`];
+}
+
+/**
+ * W2 · a página da semana numa edição. Com `primeira` (a raiz da primeira página da mesma edição), cada frase da primeira
+ * página que a página cita compara-se com a que a primeira página rende (EX1-c).
+ * @param {any} root @param {'pt'|'en'} lang @param {string[]} aceites @param {Map<string, any>} [linhas] @param {any} [primeira]
+ */
+export function conferirPaginaDaSemana(root, lang, aceites, linhas = loadClaims(), primeira = null) {
   /** @type {string[]} */
   const erros = [];
   const c = t(lang).semana;
@@ -271,9 +326,27 @@ export function conferirPaginaDaSemana(root, lang, aceites, linhas = loadClaims(
     if (e.getAttribute('data-semana-palavra') !== x.palavra || !palavra || !normal(e.textContent).includes(normal(palavra))) erros.push(`W2 · ${x.linha}: a palavra do lado não é a da conta («${x.palavra}»)`);
     for (const [k, w] of Object.entries(PALAVRA)) if (k !== x.palavra && normal(e.textContent).includes(normal(w).replace(/^,\s*/, ', '))) erros.push(`W2 · ${x.linha}: a entrada traz a palavra de um ramo que a conta não escolheu («${w}»)`);
   }
-  /* Os títulos das duas secções só se rendem quando algum valor mudou, e são as cadeias da casa. */
+  /* AS QUE MUDARAM SÓ NA FORMA DE ESCREVER (EX1-c): pela ordem desta célula, cada uma com o literal de agora, o de antes
+     e o dia, e as palavras que a dizem pelo que é. */
+  const formas = root.querySelectorAll('main [data-semana-formas] [data-semana-forma]');
+  if (JSON.stringify(formas.map((e) => e.getAttribute('data-semana-forma'))) !== JSON.stringify(s.formas.map((x) => x.linha))) {
+    erros.push(`W2 · as mudanças só da forma de escrever da página (${formas.length}) não são, pela ordem, as que esta célula conta (${s.formas.length})`);
+  }
+  for (const x of s.formas) {
+    const e = formas.find((y) => y.getAttribute('data-semana-forma') === x.linha);
+    if (!e) continue;
+    const marca = (/** @type {string} */ campo) => e.querySelector(`[data-correcao-campo="${campo}"]`);
+    if (marca('new_value')?.getAttribute('data-correcao-n') !== String(x.depois.n) || normal(marca('new_value')?.textContent) !== normal(x.depois.valor)) erros.push(`W2 · ${x.linha}: o literal de agora não é o da última entrada da janela (${x.depois.valor}, entrada ${x.depois.n})`);
+    if (marca('old_value')?.getAttribute('data-correcao-n') !== String(x.antes.n) || normal(marca('old_value')?.textContent) !== normal(x.antes.valor)) erros.push(`W2 · ${x.linha}: o literal de antes não é o da primeira entrada da janela (${x.antes.valor}, entrada ${x.antes.n})`);
+    if (normal(marca('date')?.textContent) !== dataAqui(x.depois.data)) erros.push(`W2 · ${x.linha}: o dia não é o da última entrada (${dataAqui(x.depois.data)})`);
+    const texto = normal(e.textContent);
+    if (!texto.includes(normal(c.passouAEscrever).replace(/^:\s*/, ': ')) || !texto.includes(normal(c.ondeEscrevia).replace(/^,\s*/, ', '))) erros.push(`W2 · ${x.linha}: a entrada não diz a mudança pelo que é («${normal(c.passouAEscrever)}» e «${normal(c.ondeEscrevia)}»)`);
+  }
+  if (root.querySelectorAll('main [data-semana-mudanca] [data-semana-forma], main [data-semana-forma] [data-semana-mudanca]').length) erros.push('W2 · uma entrada de forma e uma de valor encaixadas uma na outra');
+  /* Os títulos das secções: o das mudanças de valor e o da primeira página quando algum valor mudou, e o das formas
+     quando alguma mudou; são as cadeias da casa. */
   const titulos = root.querySelectorAll('main [data-semana-seccao] > h2').map((h) => normal(h.textContent));
-  const deveTitulos = s.mudancas.length ? [normal(c.mudancasK), normal(c.primeiraK)] : [];
+  const deveTitulos = [...(s.mudancas.length ? [normal(c.mudancasK)] : []), ...(s.formas.length ? [normal(c.formasK)] : []), ...(s.mudancas.length ? [normal(c.primeiraK)] : [])];
   if (JSON.stringify(titulos) !== JSON.stringify(deveTitulos)) erros.push(`W2 · os títulos das secções (${titulos.join(' | ') || 'nenhum'}) não são os que a conta pede (${deveTitulos.join(' | ') || 'nenhum'})`);
   const mudaramP = root.querySelector('main [data-semana-primeira="mudaram"]');
   if (mudaramP && normal(mudaramP.textContent) !== normal(c.primeiraMudaram)) erros.push('W2 · a frase das frases da primeira página que mudaram não é a cadeia da casa');
@@ -284,6 +357,11 @@ export function conferirPaginaDaSemana(root, lang, aceites, linhas = loadClaims(
     if (mudaram.length === 0 && (!nenhuma || normal(nenhuma.textContent) !== normal(c.primeiraNenhuma) || listados.length)) erros.push('W2 · nenhuma frase da primeira página mudou, e a página não o diz assim');
     if (mudaram.length > 0 && (nenhuma || JSON.stringify(listados) !== JSON.stringify(mudaram))) erros.push(`W2 · as frases da primeira página que mudaram são ${mudaram.join(', ')}, e a página diz ${listados.join(', ') || 'nenhuma'}`);
   } else if (nenhuma || listados.length) erros.push('W2 · nenhum valor mudou, e a página fala das frases da primeira página');
+  /* Cada frase citada compara-se com a que a primeira página rende (EX1-c, o achado 14). */
+  for (const li of root.querySelectorAll('main [data-semana-bloco]')) {
+    if (!primeira) { erros.push('W2 · a página cita frases da primeira página, e esta célula não tem a primeira página da edição para as comparar'); break; }
+    erros.push(...conferirFraseDoBloco(li, lang, primeira));
+  }
   return erros;
 }
 
@@ -305,6 +383,29 @@ export function conferirPortaDaSemana(el, lang, aceites, linhas = loadClaims()) 
   return erros;
 }
 
+/** A raiz da primeira página de uma edição, construída. @param {string} dist @param {'pt'|'en'} lang */
+function primeiraDaEdicao(dist, lang) {
+  const f = path.join(dist, lang === 'en' ? 'en/index.html' : 'index.html');
+  return fs.existsSync(f) ? parse(fs.readFileSync(f, 'utf8')) : null;
+}
+
+/**
+ * UMA MARCA DAS FRASES COMPOSTAS SÓ SAI DO INVENTÁRIO SOBRE UM ELEMENTO QUE ESTA CÉLULA COMPARA (EX1-c, o achado 14):
+ * na página da semana, a primeira frase, uma entrada de valor ou de forma, o título de uma secção, a frase de «nenhuma»
+ * ou de «mudaram» e cada frase citada da primeira página; fora dela, só a frase que é a porta.
+ * @param {any} el @param {string|undefined} rota
+ */
+export function marcaComparada(el, rota) {
+  if (rota !== 'leituraDaSemana') return el.hasAttribute('data-semana-frase');
+  if (!el.closest('main')) return false;
+  if (el.hasAttribute('data-semana-frase')) return true;
+  if (el.hasAttribute('data-semana-mudanca')) return el.parentNode?.hasAttribute?.('data-semana-mudancas') === true;
+  if (el.hasAttribute('data-semana-forma')) return el.parentNode?.hasAttribute?.('data-semana-formas') === true;
+  if (String(el.rawTagName).toLowerCase() === 'h2') return el.parentNode?.hasAttribute?.('data-semana-seccao') === true;
+  if (el.hasAttribute('data-semana-primeira')) return ['nenhuma', 'mudaram'].includes(String(el.getAttribute('data-semana-primeira')));
+  return el.hasAttribute('data-semana-bloco');
+}
+
 /**
  * AS PALAVRAS COMPOSTAS DA SEMANA NUMA PÁGINA, conferidas antes de saírem do inventário das frases: o `check:voz` chama
  * esta função em cada página onde a marca `data-semana-declarado` se rende.
@@ -315,11 +416,10 @@ export function conferirPalavrasDaSemanaNaPagina(root, lang, rota, dist) {
   const aceites = diasAceites(dist);
   /** @type {string[]} */
   const erros = [];
-  if (rota === 'leituraDaSemana') erros.push(...conferirPaginaDaSemana(root, lang, aceites, linhas));
+  if (rota === 'leituraDaSemana') erros.push(...conferirPaginaDaSemana(root, lang, aceites, linhas, primeiraDaEdicao(dist, lang)));
   else for (const el of root.querySelectorAll('[data-semana-frase]')) erros.push(...conferirPortaDaSemana(el, lang, aceites, linhas));
   for (const el of root.querySelectorAll('[data-semana-declarado]')) {
-    const conferido = rota === 'leituraDaSemana' ? Boolean(el.closest('main')) : el.hasAttribute('data-semana-frase');
-    if (!conferido) erros.push(`W · a marca das frases compostas da semana está num sítio que esta célula não confere (${rota})`);
+    if (!marcaComparada(el, rota)) erros.push(`W · a marca das frases compostas da semana está num sítio que esta célula não confere (${rota}): <${String(el.rawTagName).toLowerCase()}> «${normal(el.textContent).slice(0, 60)}»`);
   }
   return erros;
 }
@@ -329,14 +429,31 @@ export function plantasDaPaginaDaSemana(dist) {
   const linhas = loadClaims();
   const aceites = diasAceites(dist);
   const html = fs.readFileSync(path.join(dist, PAGINAS_DA_SEMANA[0][1]), 'utf8');
-  const controlo = conferirPaginaDaSemana(parse(html), 'pt', aceites, linhas);
+  const primeira = primeiraDaEdicao(dist, 'pt');
+  const controlo = conferirPaginaDaSemana(parse(html), 'pt', aceites, linhas, primeira);
   /** @param {string} nome @param {(r: any) => void} estraga @param {RegExp} mordida */
   const planta = (nome, estraga, mordida) => {
     const r = parse(html);
     estraga(r);
-    const q = conferirPaginaDaSemana(r, 'pt', aceites, linhas);
+    const q = conferirPaginaDaSemana(r, 'pt', aceites, linhas, primeira);
     return { nome, mordeu: controlo.length === 0 && q.some((x) => mordida.test(x)), queixa: q.join(' | ') || 'nenhuma' };
   };
+  const comFormas = parse(html).querySelector('main [data-semana-forma]') !== null;
+  /* EX1-c (o achado 14): a frase de um bloco citado compara-se com a da primeira página. A planta escreve a entrada de um
+     bloco com a frase que a primeira página rende (o controlo, que tem de passar) e com uma palavra trocada (que tem de
+     ser recusada). */
+  const blocoNaPrimeira = primeira?.querySelector('[data-bloco] [data-bloco-frase]');
+  const idDoBloco = blocoNaPrimeira?.closest('[data-bloco]')?.getAttribute('data-bloco') ?? null;
+  const tituloDoBloco = /** @type {any} */ (BLOCOS_DA_PRIMEIRA_PAGINA.find((x) => x.id === idDoBloco))?.titulo?.pt ?? '';
+  const liDoBloco = (/** @type {string} */ frase) => parse(`<ul><li data-semana-bloco="${idDoBloco}" data-semana-declarado><span>${tituloDoBloco}</span>${t('pt').semana.doisPontos}${frase}</li></ul>`).querySelector('li');
+  const fraseCerta = blocoNaPrimeira ? blocoNaPrimeira.innerHTML : '';
+  const controloDoBloco = idDoBloco ? conferirFraseDoBloco(liDoBloco(fraseCerta), 'pt', primeira) : ['sem bloco'];
+  const trocada = fraseCerta.replace(/([A-Za-zÀ-ÿ]{5,})/, '$1x');
+  const qBloco = idDoBloco ? conferirFraseDoBloco(liDoBloco(trocada), 'pt', primeira) : [];
+  /* E (o mesmo achado) uma marca das frases compostas num parágrafo que esta célula não compara. */
+  const comMarcaSolta = parse(html);
+  comMarcaSolta.querySelector('main').insertAdjacentHTML('beforeend', '<p data-semana-declarado>Uma frase que ninguém compara.</p>');
+  const qMarca = conferirPalavrasDaSemanaNaPagina(comMarcaSolta, 'pt', 'leituraDaSemana', dist);
   /* A janela depende do dia da construção, e uma semana pode não ter mudança de valor nenhuma: então a planta da mudança a
      menos passa a uma mudança a mais, e as duas que estragam uma entrada não se aplicam (dizem-no, e a corrida não as
      conta como falhas); as três plantas da cópia do livro (W1) provam a leitura em qualquer semana. */
@@ -344,6 +461,11 @@ export function plantasDaPaginaDaSemana(dist) {
   /** @param {string} nome */
   const naoSeAplica = (nome) => ({ nome, mordeu: false, aplica: false, queixa: 'a semana não tem mudanças de valor: a planta não se aplica' });
   return [
+    { nome: 'a frase de um bloco citado com uma palavra trocada', mordeu: controloDoBloco.length === 0 && qBloco.some((x) => /W2 · a frase do bloco/.test(x)), queixa: [...controloDoBloco, ...qBloco].join(' | ') || 'nenhuma' },
+    { nome: 'uma marca das frases compostas num parágrafo que esta célula não compara', mordeu: qMarca.some((x) => /W · a marca das frases compostas da semana está num sítio que esta célula não confere/.test(x)), queixa: qMarca.join(' | ') || 'nenhuma' },
+    comFormas
+      ? planta('o literal de agora de uma mudança só da forma trocado', (r) => { const v = r.querySelector('[data-semana-forma] [data-correcao-campo="new_value"]'); v.set_content(`${v.textContent}9`); }, /W2 · .*o literal de agora/)
+      : { nome: 'o literal de agora de uma mudança só da forma trocado', mordeu: false, aplica: false, queixa: 'a semana não tem mudanças só da forma de escrever: a planta não se aplica' },
     planta('uma contagem trocada', (r) => { const n = r.querySelector('[data-semana="relidas"]') ?? r.querySelector('[data-semana="fim"]'); n.set_content(n.getAttribute('data-semana') === 'relidas' ? String(Number(n.textContent.replace(/\D/g, '')) + 1) : '01.01.2000'); }, /W2 · a primeira frase/),
     /* O dia de fora é o anterior ao mais antigo dos aceites: uma construção carimbada na primeira meia hora do dia aceita
        também o dia anterior, e a planta tem de cair fora dos dois. */
@@ -374,7 +496,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   for (const [lang, f] of PAGINAS_DA_SEMANA) {
     const abs = path.join(DIST, f);
     if (!fs.existsSync(abs)) { erros.push(`W2 · a página ${f} não foi construída`); continue; }
-    erros.push(...conferirPaginaDaSemana(parse(fs.readFileSync(abs, 'utf8')), lang, aceites, linhas).map((x) => `${f}: ${x}`));
+    erros.push(...conferirPaginaDaSemana(parse(fs.readFileSync(abs, 'utf8')), lang, aceites, linhas, primeiraDaEdicao(DIST, lang)).map((x) => `${f}: ${x}`));
   }
   let portas = 0;
   for (const [lang, f] of /** @type {const} */ ([['pt', 'explicacoes/index.html'], ['en', 'en/explainers/index.html'], ['pt', 'index.html'], ['en', 'en/index.html']])) {
@@ -386,9 +508,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const plantas = prova ? plantasDaPaginaDaSemana(DIST) : [];
   for (const p of plantas) if (!p.mordeu && /** @type {any} */ (p).aplica !== false) erros.push(`W · a planta «${p.nome}» não mordeu: ${p.queixa}`);
   const s = semanaPelaCelula(linhas, aceites[0]);
-  const resumo = { aceites, janela: s.janela, contagens: s.contagens, mudancas: s.mudancas.length, blocos_que_mudaram: blocosQueMudaramPelaCelula(s, linhas), w1: w1.plantas, portas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu, aplica: /** @type {any} */ (p).aplica !== false })), erros };
+  const resumo = { aceites, janela: s.janela, contagens: s.contagens, mudancas: s.mudancas.length, formas: s.formas.map((x) => ({ linha: x.linha, antes: x.antes.valor, depois: x.depois.valor })), blocos_que_mudaram: blocosQueMudaramPelaCelula(s, linhas), w1: w1.plantas, portas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu, aplica: /** @type {any} */ (p).aplica !== false })), erros };
   if (json) fs.writeFileSync(json, JSON.stringify(resumo, null, 2) + '\n');
-  console.log(`W · a leitura da semana: janela ${s.janela.inicio} a ${s.janela.fim}, ${s.contagens.relidas} relidas, ${s.contagens.valor} mudadas de valor, ${s.contagens.proveniencia} de proveniência; W1 ${w1.plantas.filter((p) => p.mordeu).length} de ${w1.plantas.length} plantas na cópia do livro; ${portas} porta(s) da semana conferidas${prova ? `; ${plantas.filter((p) => p.mordeu).length} de ${plantas.filter((p) => /** @type {any} */ (p).aplica !== false).length} plantas na página${plantas.some((p) => /** @type {any} */ (p).aplica === false) ? ` (${plantas.filter((p) => /** @type {any} */ (p).aplica === false).length} não se aplicam: a semana não tem mudanças de valor)` : ''}` : ''}.`);
+  console.log(`W · a leitura da semana: janela ${s.janela.inicio} a ${s.janela.fim}, ${s.contagens.relidas} relidas, ${s.contagens.valor} mudadas de valor, ${s.contagens.forma} só na forma de escrever, ${s.contagens.proveniencia} de proveniência; W1 ${w1.plantas.filter((p) => p.mordeu).length} de ${w1.plantas.length} plantas na cópia do livro; ${portas} porta(s) da semana conferidas${prova ? `; ${plantas.filter((p) => p.mordeu).length} de ${plantas.filter((p) => /** @type {any} */ (p).aplica !== false).length} plantas na página${plantas.some((p) => /** @type {any} */ (p).aplica === false) ? ` (${plantas.filter((p) => /** @type {any} */ (p).aplica === false).length} não se aplicam: a semana não tem mudanças de valor)` : ''}` : ''}.`);
   if (erros.length) {
     console.error(`\n  CÉLULA DA SEMANA · ${erros.length} problema(s):\n${erros.map((x) => `  · ${x}`).join('\n')}`);
     process.exit(1);
