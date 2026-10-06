@@ -397,8 +397,8 @@ export const POLITICA = {
       {
         rotulo: { pt: 'A direção', en: 'Direction' },
         texto: {
-          pt: 'decide o que se faz, encomenda cada mudança, revê e aprova o que se publica.',
-          en: 'decides what is done, commissions each change, reviews and approves what is published.',
+          pt: 'decide o que se faz, encomenda cada mudança e revê-a antes de se publicar; os números novos que as fontes publicam entram pelos portões, sem a direção os ler um a um.',
+          en: 'decides what is done, commissions each change and reviews it before it is published; new figures from the sources enter through the gates, without direction reading them one by one.',
         },
       },
       {
@@ -411,21 +411,21 @@ export const POLITICA = {
       {
         rotulo: { pt: 'A leitura', en: 'Reading' },
         texto: {
-          pt: 'lê o que a construção entregou, sem contexto prévio e com erros plantados que tem de encontrar, antes de se publicar.',
-          en: 'reads what building delivered, with no prior context and with planted errors it has to find, before it is published.',
+          pt: 'lê o que a construção entregou, sem contexto prévio e com erros plantados de propósito, para provar que os encontra, antes de se publicar.',
+          en: 'reads what building delivered, with no prior context and with errors planted on purpose, to prove it finds them, before it is published.',
         },
       },
     ],
     fecho: {
       pt: [
-        'A construção e a leitura são sempre de famílias de modelos diferentes: o modelo que construiu nunca é o que lê. ' +
+        'A construção e a leitura são sempre de famílias de modelos diferentes: o modelo que construiu uma mudança nunca é o que a lê. ' +
           'Os modelos Claude da Anthropic estão na direção; na construção e na leitura estão os modelos Claude ' +
           'e o Codex da OpenAI. Um modelo novo só ocupa um papel ' +
           'depois de passar os mesmos testes que o titular passou, e a troca fica escrita ' +
           'com a data.',
       ],
       en: [
-        'Building and reading are always done by different families of models: the model that built never reads. ' +
+        'Building and reading are always done by different families of models: the model that built a change never reads it. ' +
           'The Claude models from Anthropic hold the direction; building and reading are held by the Claude models ' +
           'and by Codex from OpenAI. A new model takes ' +
           'a role only after passing the same tests the incumbent passed, and the change ' +

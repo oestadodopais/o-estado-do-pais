@@ -7,20 +7,20 @@ export const LUGARES_IA_DO_PORTAO = {
   pt: {
     intro: 'São três papéis, todos de modelos: a direção, a construção e a leitura.',
     itens: [
-      'A direção decide o que se faz, encomenda cada mudança, revê e aprova o que se publica.',
+      'A direção decide o que se faz, encomenda cada mudança e revê-a antes de se publicar; os números novos que as fontes publicam entram pelos portões, sem a direção os ler um a um.',
       'A construção constrói as páginas e o motor que lê as fontes; cada número que publica traz a fonte e a data em que foi lido.',
-      'A leitura lê o que a construção entregou, sem contexto prévio e com erros plantados que tem de encontrar, antes de se publicar.',
+      'A leitura lê o que a construção entregou, sem contexto prévio e com erros plantados de propósito, para provar que os encontra, antes de se publicar.',
     ],
-    fecho: 'A construção e a leitura são sempre de famílias de modelos diferentes: o modelo que construiu nunca é o que lê. Os modelos Claude da Anthropic estão na direção; na construção e na leitura estão os modelos Claude e o Codex da OpenAI. Um modelo novo só ocupa um papel depois de passar os mesmos testes que o titular passou, e a troca fica escrita com a data.',
+    fecho: 'A construção e a leitura são sempre de famílias de modelos diferentes: o modelo que construiu uma mudança nunca é o que a lê. Os modelos Claude da Anthropic estão na direção; na construção e na leitura estão os modelos Claude e o Codex da OpenAI. Um modelo novo só ocupa um papel depois de passar os mesmos testes que o titular passou, e a troca fica escrita com a data.',
   },
   en: {
     intro: 'There are three roles, all held by models: direction, building and reading.',
     itens: [
-      'Direction decides what is done, commissions each change, reviews and approves what is published.',
+      'Direction decides what is done, commissions each change and reviews it before it is published; new figures from the sources enter through the gates, without direction reading them one by one.',
       'Building builds the pages and the engine that reads the sources; every number it publishes carries its source and the date it was read.',
-      'Reading reads what building delivered, with no prior context and with planted errors it has to find, before it is published.',
+      'Reading reads what building delivered, with no prior context and with errors planted on purpose, to prove it finds them, before it is published.',
     ],
-    fecho: 'Building and reading are always done by different families of models: the model that built never reads. The Claude models from Anthropic hold the direction; building and reading are held by the Claude models and by Codex from OpenAI. A new model takes a role only after passing the same tests the incumbent passed, and the change is written down with its date.',
+    fecho: 'Building and reading are always done by different families of models: the model that built a change never reads it. The Claude models from Anthropic hold the direction; building and reading are held by the Claude models and by Codex from OpenAI. A new model takes a role only after passing the same tests the incumbent passed, and the change is written down with its date.',
   },
 };
 const texto = (n) => (n?.textContent ?? '').replace(/\s+/g, ' ').trim();
