@@ -1547,3 +1547,8 @@ As chaves novas em `src/i18n/strings.mjs`, lidas do ficheiro por guião na const
 | `semana.primeiraMudaram` | «Estas frases da primeira página mudaram por causa disto:» | «These sentences on the front page changed because of this:» | quando alguma mudou, antes da lista delas |
 | `semana.saiuDaPrimeira` | «saiu da primeira página.» | «left the front page.» | quando o bloco de uma frase saiu da primeira página |
 | `semana.doisPontos` | «: » | «: » | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.umDeForma` | « mudou só na forma de escrever» | « changed only in how it is written» | desde o EX1-c (06.10.2026, o achado 5 da leitura a frio): na primeira frase da leitura, uma linha em que só o literal mudou; a primeira frase só a nomeia quando há alguma |
+| `semana.variosDeForma` | « mudaram só na forma de escrever» | « changed only in how they are written» | o mesmo, no plural |
+| `semana.formasK` | «Os números que mudaram só na forma de escrever» | «The figures that changed only in how they are written» | o título da secção dessas linhas na página da semana |
+| `semana.passouAEscrever` | «: a fonte passou a escrever » | «: the source now writes » | a peça de cada uma dessas linhas, antes do literal de agora |
+| `semana.ondeEscrevia` | «, onde escrevia » | «, where it wrote » | a peça antes do literal de antes |
