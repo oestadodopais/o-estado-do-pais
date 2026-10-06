@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { tirarCodigoConferido } from './incorporar-do-portao.mjs';
 import { conferirValorUnidade } from './valor-unidade.mjs';
 import { nomeNoRegistoAdmitido } from './nome-no-registo.mjs';
 import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
@@ -4654,6 +4655,7 @@ for (const file of ficheirosHtml(DIST)) {
 
   const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
   const rota = matchPath(caminho);
+  try { tirarCodigoConferido(root, rota); } catch (e) { err(e.message); }
 
   /* Os `id` desta página, guardados antes de tudo o resto: é contra eles que
      uma âncora de outra página é conferida no fim do varrimento. Guardados

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { tirarCodigoConferido } from './incorporar-do-portao.mjs';
 /**
  * ---------------------------------------------------------------------------
  * O PORTÃO DA LÍNGUA · o que é português numa página inglesa diz que o é
@@ -681,6 +682,7 @@ for (const ficheiro of paginasDe(DIST)) {
   if (rota?.key === 'documento') continue;
 
   const root = parse(cru);
+  tirarCodigoConferido(root, rota);
   erros.push(...conferirLinguaDasOrigens(root, rota?.lang ?? 'pt').map(e => rel0 + ': ' + e));
   const html = root.querySelector('html');
   const lingua = html?.getAttribute('lang') ?? '';

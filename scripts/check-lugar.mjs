@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { tirarCodigoConferido } from './incorporar-do-portao.mjs';
 /**
  * A RÉGUA DO BLOCO F1.10 · «uma coisa, um lugar».
  *
@@ -1087,6 +1088,7 @@ for (const ficheiro of paginas) {
 
   const cru = fs.readFileSync(ficheiro, 'utf8');
   const raiz = parse(cru);
+  tirarCodigoConferido(raiz, rota);
   const corpo = raiz.querySelector('body');
   if (!corpo) continue;
 

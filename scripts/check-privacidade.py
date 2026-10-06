@@ -51,6 +51,60 @@ def segredos_em(corpo):
     return [nome for nome, marca in SEGREDOS if marca.search(corpo)]
 
 
+def conferir_incorporador(corpo):
+    """ER1: leitura estática da superfície permitida, além do ensaio no navegador.
+    Não é uma prova geral de segurança de JavaScript arbitrário. Restringe o
+    guião pequeno à forma auditada, sem origens, APIs ou seletores adicionais.
+    """
+    erros = []
+    proibidas = r'\b(?:cookie|localStorage|sessionStorage|indexedDB|navigator|location|XMLHttpRequest|WebSocket|Worker|Image|sendBeacon|eval|Function|import)\b'
+    if re.search(proibidas, corpo) or re.search(r'document\s*(?:\.referrer|\[)', corpo): erros.append('ER1 privacidade: API fora dos elementos próprios.')
+    # A única origem literal vem da configuração canónica, lida sem rede.
+    config = (RAIZ / 'site.config.mjs').read_text()
+    host = re.search(r"SITE_HOST_DISPLAY = '([^']+)'", config).group(1).encode('idna').decode()
+    origens = re.findall(r'https?://[^\s\'"<>]+', corpo)
+    if origens != ['https://' + host]: erros.append('ER1 privacidade: endereço fora da origem fixa do projeto.')
+    if len(re.findall(r'\bfetch\s*\(', corpo)) != 1 or "fetch(origem + '/livro-razao/' + id + '.json', {" not in corpo:
+        erros.append('ER1 privacidade: o pedido não é exclusivamente o JSON da linha.')
+    for opcao in ("credentials: 'omit'", "redirect: 'error'", "referrerPolicy: 'no-referrer'"):
+        if opcao not in corpo: erros.append('ER1 privacidade: o pedido perdeu a opção ' + opcao + '.')
+    seletores = re.findall(r'document\.querySelector(?:All)?\(([^\n]+)\)', corpo)
+    if len(seletores) != 1 or "document.querySelectorAll('p.oedp-numero[data-oedp]')" not in corpo:
+        erros.append('ER1 privacidade: leitura fora dos parágrafos próprios.')
+    if re.search(r'\b(?:innerHTML|outerHTML|insertAdjacentHTML|src|href)\s*=\s*(?:d|j|c)\.', corpo):
+        erros.append('ER1 privacidade: a resposta pode executar código ou escolher um endereço.')
+    return erros
+
+
+def medir_incorporador(dist, prova):
+    caminhos = [RAIZ / 'public/incorporar.js', dist / 'incorporar.js']
+    erros = []
+    plantas = []
+    for caminho in caminhos:
+        if not caminho.is_file():
+            erros.append('ER1 privacidade: falta o guião de incorporação.')
+            continue
+        erros += conferir_incorporador(caminho.read_text())
+    if all(p.is_file() for p in caminhos) and caminhos[0].read_bytes() != caminhos[1].read_bytes():
+        erros.append('ER1 privacidade: o guião construído difere do publicado.')
+    if prova and caminhos[0].is_file():
+        corpo = caminhos[0].read_text()
+        for nome, acrescento, mensagem in [
+            ('pedido-de-fora', "\nfetch('https://fora.invalid/receber');", 'ER1 privacidade: endereço fora da origem fixa do projeto.'),
+            ('cookie', '\ndocument.cookie;', 'ER1 privacidade: API fora dos elementos próprios.'),
+            ('armazenamento', '\nlocalStorage.setItem("x", "y");', 'ER1 privacidade: API fora dos elementos próprios.'),
+            ('pagina-anfitria', '\ndocument.querySelectorAll("body");', 'ER1 privacidade: leitura fora dos parágrafos próprios.'),
+        ]:
+            achados = conferir_incorporador(corpo + acrescento)
+            plantas.append({'nome': nome, 'mensagem': mensagem, 'mordeu': mensagem in achados})
+        for nome, antigo, novo, mensagem in [
+            ('credenciais', "credentials: 'omit'", "credentials: 'include'", "ER1 privacidade: o pedido perdeu a opção credentials: 'omit'."),
+            ('redirecionamento', "redirect: 'error'", "redirect: 'follow'", "ER1 privacidade: o pedido perdeu a opção redirect: 'error'."),
+        ]:
+            plantas.append({'nome': nome, 'mensagem': mensagem, 'mordeu': mensagem in conferir_incorporador(corpo.replace(antigo, novo))})
+    return {'erros': erros, 'plantas': plantas, 'passou': not erros and all(p['mordeu'] for p in plantas)}
+
+
 def medir_api(raiz, prova):
     """S1: os caminhos e os nomes em `api/`, e a célula dos segredos, com as plantas."""
     ficheiros = ficheiros_da_api(raiz)
@@ -135,7 +189,8 @@ def medir(dist, prova):
         for i, caminho in enumerate(detetor.proibidos()):
             r['plantas'].append({'id':f'caminho-{i+1}', 'mordeu':conferir([('pagina-construida.html',corpo+b'<p>'+caminho+b'</p>')])['quantidade']==1})
     r['api'] = medir_api(RAIZ, prova)
-    r['passou'] = bool(ficheiros) and r['quantidade']==0 and all(p['mordeu'] for p in r['plantas']) and r['api']['passou']
+    r['incorporador'] = medir_incorporador(dist, prova)
+    r['passou'] = bool(ficheiros) and r['quantidade']==0 and all(p['mordeu'] for p in r['plantas']) and r['api']['passou'] and r['incorporador']['passou']
     return r
 
 if __name__ == '__main__':
