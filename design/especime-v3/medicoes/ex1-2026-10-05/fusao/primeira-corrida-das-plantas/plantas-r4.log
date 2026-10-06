@@ -1,0 +1,16 @@
+cabeça: 4893eb5d1a2ed07f36af774b28227a0a1bf436ae
+estado dos ficheiros seguidos: 1 linha(s)
+ M design/especime-v3/medicoes/ex1-2026-10-05/medir.py
+---
+file://<worktree do sítio>/tests/pais/portoes.mjs:35
+ if(process.env.OEDP_EXIGIR_ARVORE_LIMPA==='1' && estado)throw Error(`${nome}: a prova exige uma árvore seguida limpa.`);
+                                                               ^
+
+Error: r4-recibo-sem-frase: a prova exige uma árvore seguida limpa.
+    at planta (file://<worktree do sítio>/tests/pais/portoes.mjs:35:64)
+    at file://<worktree do sítio>/tests/pais/portoes.mjs:720:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

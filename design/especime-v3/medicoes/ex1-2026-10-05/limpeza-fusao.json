@@ -1,0 +1,56 @@
+{
+  "o_que": "a limpeza dos caminhos da máquina nos registos desta pasta (limpar-registos.py)",
+  "ficheiros_limpos": [
+    {
+      "ficheiro": "fusao/construcao-fusao.log",
+      "trocas": 1,
+      "sha256_antes": "c51ccfee12095883b39eff8e6d9ca4f4f5e7207dd6205d9576f478a666fee602",
+      "sha256_depois": "a07acc675f7d9c6104f816b98609def4747bc40fbe67fc0406774c91929b852f"
+    },
+    {
+      "ficheiro": "fusao/construcao-main.log",
+      "trocas": 1,
+      "sha256_antes": "d4dd2744a0978b651549fcb2395179bdcf9ca0ce59d5d88d30ee51f6bd7d7aa5",
+      "sha256_depois": "e65d38af5710b353274e8a4f28e8d6fb27bc400727aba87a9473e54bf698d713"
+    },
+    {
+      "ficheiro": "fusao/construcao-provas.log",
+      "trocas": 1,
+      "sha256_antes": "73a48fecefe6e406519aae8c7e2eddd9b308b5c64afe9035164e76756ddbbd55",
+      "sha256_depois": "8dc39b68eb86ff80b0b1eadc1420601c37dd8dec00ee9cedb61082925bac1f2a"
+    },
+    {
+      "ficheiro": "fusao/primeira-corrida-das-plantas/plantas-ex1.log",
+      "trocas": 3,
+      "sha256_antes": "758c7163e8689b5c9dfb141a4896289a568ad5e0feae20a605759a2151d0aadd",
+      "sha256_depois": "a0f077edba7eb638d7f948857b9b6516a8970956e131ba268d1c79f0c003a591"
+    },
+    {
+      "ficheiro": "fusao/primeira-corrida-das-plantas/plantas-r4.log",
+      "trocas": 3,
+      "sha256_antes": "2f5348c276c5b48b4bc257477ef7af38459333ad446784ba138296bd8b0a837d",
+      "sha256_depois": "75d40073a4354dd7d23ee99573c62abc63fd060bffca21246486edb050ff0d66"
+    },
+    {
+      "ficheiro": "medir-l1-fusao.mjs",
+      "trocas": 1,
+      "sha256_antes": "63749d9bcc614f957d83f30a6f2e3c3a94e85c1da4df185efd0de44899ee3e7f",
+      "sha256_depois": "352c6ff5b663cade5e12cba4c5675d6f4c793b86353d91c53612c55e2b923565"
+    },
+    {
+      "ficheiro": "portoes/build.log",
+      "trocas": 1,
+      "sha256_antes": "ebf27be51fd7a3913673e360346a88eec951d59ff361867fcdc6a8ba38824157",
+      "sha256_depois": "afaf33dab9f90df8d607483defe136f23ff7a5e66864307e3eff1e6003bc838d"
+    },
+    {
+      "ficheiro": "portoes/verify.log",
+      "trocas": 2,
+      "sha256_antes": "3680ad1a6876e0473aa4224a8475cf52a4ffcec6e32557c9565c5d3f12127dc0",
+      "sha256_depois": "78f55ea9a485fcc5acf57c2a49028ee67d0b4706bd9182193aaea71dbc7e1a04"
+    }
+  ],
+  "ficheiros_limpos_quantos": 8,
+  "trocas": 13,
+  "restos_depois": []
+}

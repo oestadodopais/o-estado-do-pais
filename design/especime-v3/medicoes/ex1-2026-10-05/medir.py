@@ -427,6 +427,119 @@ medida("ex1c.chaves_en.novas", len(novas_c), "as linhas das chaves novas da sema
 cuc = js(f"{C}/custo.json") or {}
 medida("ex1c.custo", {k: cuc.get(k) for k in ("respostas_do_modelo", "modelos", "simbolos_de_entrada", "simbolos_de_saida_minimo", "respostas_com_a_saida_de_um_momento_do_fluxo", "segundos", "primeira_entrada", "desde", "lido_em")}, "python3 design/especime-v3/medicoes/ex1-2026-10-05/custo.py <registo da sessão do construtor> ex1c/custo.json --desde <a primeira entrada da passagem>", "o registo foi lido (o sha256 está escrito)", bool(cuc.get("registo_sha256")))
 
+
+# ------------------------------------------------------------------ a fusão com o main de 06.10.2026 (o R4)
+import hashlib
+X = "fusao"
+CMD_PORTOES_X = "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes"
+cx = ler("portoes/cabeca").strip()
+medida("fusao.portoes.cabeca", cx, CMD_PORTOES_X, "a cabeça dos portões é a de antes e a de depois da corrida", cx and cx == ler("portoes/cabeca-antes-da-corrida").strip() == ler("portoes/cabeca.fim").strip() == ler("portoes/cabeca-depois-da-corrida").strip())
+for g in ("build", "verify", "typecheck"):
+    c = ler(f"portoes/{g}.codigo").strip()
+    medida(f"fusao.portoes.{g}.codigo", int(c) if c.isdigit() else None, CMD_PORTOES_X + f" (portoes/{g}.codigo)", f"o código está escrito e o registo portoes/{g}.log traz a linha do npm do portão", c.isdigit() and f"> o-estado-do-pais@0.1.0 {g}" in ler(f"portoes/{g}.log"))
+    sx = segundos("portoes", g)
+    medida(f"fusao.portoes.{g}.segundos", sx, CMD_PORTOES_X + f" (portoes/{g}.inicio e .fim)", "as duas horas estão escritas", sx is not None)
+for q in ("antes", "depois"):
+    tx = ler(f"portoes/estado-seguido-{q}")
+    medida(f"fusao.portoes.estado_seguido_{q}.linhas", len([l for l in tx.splitlines() if l.strip()]), f"git status --porcelain --untracked-files=no > portoes/estado-seguido-{q}", "o ficheiro foi escrito", (AQUI / f"portoes/estado-seguido-{q}").exists())
+vx = ler("portoes/verify.log")
+m = re.search(r"L1 · páginas com dois destinos iguais fora da mobília\s+(\d+)\s+\(teto (\d+)\)", vx)
+medida("fusao.verify.l1", [int(m.group(1)), int(m.group(2))] if m else None, "npm run verify (portoes/verify.log, a linha «L1 · …»)", "a linha da L1 está no registo", m)
+m = re.search(r"FC · (\d+) passagem\(ns\) em (\d+) páginas, (\d+) pedaços marcados vistos, (\d+) dentro de um contentor flexível, (\d+) documento\(s\) mais largos do que a janela a 390 px; (\d+) de (\d+) plantas", vx)
+medida("fusao.verify.frases_compostas", [int(m.group(i)) for i in range(1, 8)] if m else None, "npm run verify (portoes/verify.log, a linha «FC · …»)", "a linha da célula está no registo", m)
+
+# O teto da L1, antes (o do main) e depois (o da cabeça dos portões).
+ta = json.loads(git_show("42c7ed7e", "scripts/lugar-tetos-b1.json"))
+td = json.loads(git_show(cx or "HEAD", "scripts/lugar-tetos-b1.json"))
+medida("fusao.teto.antes", ta.get("l1_paginas"), "git show 42c7ed7e:scripts/lugar-tetos-b1.json", "o registo do main aponta a medição da R4-b", ta.get("medicao", "").endswith("r4-2026-10-05/l1-r4b.json"))
+medida("fusao.teto.depois", td.get("l1_paginas"), "git show <cabeça dos portões>:scripts/lugar-tetos-b1.json", "o registo aponta a medição da fusão", td.get("medicao") == "design/especime-v3/medicoes/ex1-2026-10-05/fusao/l1-fusao.json")
+lx = js(f"{X}/l1-fusao.json") or {}
+cl = lx.get("contagens", {})
+medida("fusao.l1", {k: cl.get(k) for k in ("main", "estudos", "novas", "sairam", "agravadas", "aliviadas", "iguais")}, "node design/especime-v3/medicoes/ex1-2026-10-05/medir-l1-fusao.mjs <worktree do main, construída> (fusao/l1-fusao.json)", "a contagem é a que o teto lê, e a régua do main correu com 0", cl.get("estudos") == td.get("l1_paginas") and lx.get("main", {}).get("codigo_da_regua") == 0)
+medida("fusao.l1.cabecas", {"fusao": (lx.get("cabeca") or "")[:8], "main": (lx.get("main", {}).get("cabeca") or "")[:8]}, "idem (as cabeças medidas)", "cada construção é a da sua cabeça", lx.get("cabeca") == lx.get("construcao") and lx.get("main", {}).get("cabeca") == lx.get("main", {}).get("construcao"))
+nv = lx.get("novas", {})
+medida("fusao.l1.paginas_novas", {u: v.get("destinos") for u, v in nv.items()}, "idem (as páginas novas e os seus destinos repetidos)", "cada destino de cada página nova é um recibo de uma linha", bool(nv) and all(all("/livro-razao/" in r or "/en/ledger/" in r for r in v.get("recibos", [])) for v in nv.values()))
+medida("fusao.l1.composicao", {u: {"funcoes": sum(1 for r in v.get("recibos", []) if "-cem-euros-funcao-" in r), "ministerios": sum(1 for r in v.get("recibos", []) if "-cem-euros-ministerio-" in r)} for u, v in nv.items()}, "idem (os recibos de cada página nova, pela família da linha)", "as duas famílias somam os destinos de cada página", bool(nv) and all(sum(1 for r in v.get("recibos", []) if "-cem-euros-funcao-" in r or "-cem-euros-ministerio-" in r) == v.get("destinos") for v in nv.values()))
+kp = lx.get("conhecidos_positivos", [])
+medida("fusao.l1.plantas", [sum(1 for x in kp if x.get("mordeu")), len(kp)], "idem (os conhecidos-positivos em memória)", "a lista não está vazia", bool(kp))
+pt_ = js(f"{X}/planta-teto-l1-fusao.json") or {}
+medida("fusao.planta_teto", {"codigo_sem_planta": pt_.get("codigo_sem_planta"), "codigo": pt_.get("codigo"), "mordeu": pt_.get("mordeu")}, "node design/especime-v3/medicoes/ex1-2026-10-05/planta-teto-l1-fusao.mjs (fusao/planta-teto-l1-fusao.json, corrida nas provas)", "a planta correu na cabeça das provas, com a árvore seguida limpa", pt_.get("cabeca") == ler(f"{X}/provas/cabeca").strip() and pt_.get("estado") == "")
+
+# As conferências que a fusão toca, nas provas.
+CMD_PROVAS_X = "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída>"
+px = ler(f"{X}/provas/cabeca").strip()
+medida("fusao.provas.cabeca", px, CMD_PROVAS_X, "a cabeça das provas é a do fim delas e a dos portões", px and px == ler(f"{X}/provas/cabeca.fim").strip() == cx)
+medida("fusao.provas.estado.linhas", len([l for l in ler(f"{X}/provas/estado").splitlines() if l.strip()]), CMD_PROVAS_X + f" ({X}/provas/estado)", "o ficheiro foi escrito", (AQUI / f"{X}/provas/estado").exists())
+vxp = js(f"{X}/provas/version.json") or {}
+medida("fusao.provas.construcao", vxp.get("commit"), f"cp dist/version.json {X}/provas/version.json", "a construção medida é a da cabeça das provas", vxp.get("commit") == px)
+for passo in ("leituras-provadas", "cartao", "lugar", "planta-teto", "voz", "lingua", "explicacoes", "frases-compostas", "pais", "r4-nas-celulas", "ledger", "mapa", "plantas-ex1", "plantas-r4"):
+    c = ler(f"{X}/provas/{passo}.codigo").strip()
+    medida(f"fusao.provas.{passo}.codigo", int(c) if c.isdigit() else None, CMD_PROVAS_X + f" ({X}/provas/{passo}.codigo)", f"o código está escrito e o registo {X}/provas/{passo}.log começa pela cabeça", c.isdigit() and ler(f"{X}/provas/{passo}.log").startswith("cabeça: "))
+lc = ler(f"{X}/provas/cartao.log")
+m = re.search(r"K17", lc)
+medida("fusao.k17_no_registo", bool(m), "npm run check:cartao (fusao/provas/cartao.log)", "o registo traz a K17", m)
+lp = js(f"{X}/leituras-provadas.json") or {}
+medida("fusao.leituras_provadas", {"chaves": lp.get("chaves"), "iguais_ao_main": len(lp.get("iguais_ao_main", [])), "chaves_do_main": len(lp.get("chaves_do_main", {})), "explicacoes_iguais_as_do_ramo": lp.get("explicacoes_iguais_as_do_ramo"), "erros": len(lp.get("erros", []))}, "python3 design/especime-v3/medicoes/ex1-2026-10-05/conferir-leituras-provadas.py fusao/leituras-provadas.json", "os dois conhecidos-positivos morderam", lp and all(x.get("mordeu") for x in lp.get("conhecidos_positivos", [])))
+rx = js(f"{X}/r4-nas-celulas.json") or {}
+pag = {p_["url"]: p_ for p_ in rx.get("paginas", [])}
+def pecas_da(url, nome):
+    return pag.get(url, {}).get("pecas", {}).get(nome, {}).get("total")
+medida("fusao.r4_nas_celulas", {"paginas_lidas": rx.get("paginas_lidas"), "paginas_com_pecas_do_r4": rx.get("paginas_com_pecas_do_r4"), "pecas_dentro_de_uma_marca_do_ex1": rx.get("pecas_dentro_de_uma_marca_do_ex1"), "explicacoes_pt": pecas_da("/", "explicacao_de_um_valor_de_referencia"), "explicacoes_en": pecas_da("/en", "explicacao_de_um_valor_de_referencia"), "sinal_pt": pecas_da("/", "parte_do_sinal"), "sinal_en": pecas_da("/en", "parte_do_sinal")}, "node design/especime-v3/medicoes/ex1-2026-10-05/r4-nas-celulas.mjs <worktree do main, construída> fusao/r4-nas-celulas.json", "os dois conhecidos-positivos morderam, na construção das provas", rx and all(x.get("mordeu") for x in rx.get("conhecidos_positivos", [])) and rx.get("construcao") == px)
+fcx = js(f"{X}/frases-compostas.json") or {}
+res = fcx.get("resultados", [])
+medida("fusao.frases_compostas", {"passagens": len(res), "paginas": len({r["rota"] for r in res}), "pedacos": sum(r.get("pedacos", 0) for r in res), "flex": sum(len(r.get("flex", [])) for r in res), "transbordos": sum(1 for r in res if r.get("largura") == 390 and r.get("largura_do_documento", 0) > r.get("janela", 0)), "plantas": [sum(1 for x in fcx.get("plantas", []) if x.get("mordeu")), len(fcx.get("plantas", []))], "erros": len(fcx.get("erros", []))}, "node tests/explicacoes/frases-compostas.mjs --json fusao/frases-compostas.json", "a construção lida é a das provas", fcx.get("construcao") == px)
+medida("fusao.frases_compostas.primeira_pagina", {f"{r['rota']} a {r['largura']}": [r.get("pedacos"), r.get("largura_do_documento"), r.get("janela")] for r in res if r["rota"] in ("/", "/en/")}, "idem (a primeira página: pedaços, largura do documento e janela)", "a primeira página está nos resultados", any(r["rota"] in ("/", "/en/") for r in res))
+for pref in ("ex1", "r4"):
+    plx = js(f"{X}/plantas-portoes-{pref}.json") or []
+    medida(f"fusao.plantas_{pref}", {"quantas": len(plx), "passaram": sum(1 for q in plx if q.get("passou"))}, f"OEDP_MEDICOES=<pasta>/fusao OEDP_EXIGIR_ARVORE_LIMPA=1 node tests/pais/portoes.mjs --prefixo {pref}", "cada planta repôs os bytes do dist/, saiu com 1 e correu na cabeça das provas", plx and all(all(f["antes"] == f["reposto"] for f in q["ficheiros"]) and q.get("codigo") == 1 and q.get("cabeca") == px for q in plx))
+
+# A primeira corrida das plantas, parada pela árvore suja (o construtor escreveu no guião das medidas enquanto corriam).
+pc1 = {}
+for pref in ("ex1", "r4"):
+    l1_ = ler(f"{X}/primeira-corrida-das-plantas/plantas-{pref}.log")
+    pc1[pref] = {"ok": len(re.findall(r"^OK ", l1_, re.M)), "codigo": int(ler(f"{X}/primeira-corrida-das-plantas/plantas-{pref}.codigo").strip() or -1), "queixa_da_arvore_suja": "a prova exige uma árvore seguida limpa" in l1_}
+medida("fusao.primeira_corrida_das_plantas", pc1, "os registos da primeira corrida de provas-fusao.sh, guardados em fusao/primeira-corrida-das-plantas/", "os dois registos trazem a queixa da árvore suja", all(v["queixa_da_arvore_suja"] for v in pc1.values()))
+
+# O mapa.
+for nome, f in (("pela_conta_main", "linhas-do-mapa-main.log"), ("pela_conta_ex1", "linhas-do-mapa-ex1.log"), ("pela_conta_depois_do_teto", "linhas-do-mapa-depois-do-teto.log")):
+    lm = ler(f"{X}/{f}")
+    m = re.search(r"(\d+) referência\(s\) postas em dia", lm)
+    medida(f"fusao.mapa.{nome}", int(m.group(1)) if m else None, f"python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py <base> --escrever [--mapa <pedaço>] (fusao/{f})", "o número é o das linhas da lista", m and int(m.group(1)) == len(re.findall(r"^mapa l\.\d+ ", lm, re.M)))
+for nome, f in (("antes_dos_acertos", "mapa-antes-dos-acertos.log"), ("depois_dos_acertos", "mapa-depois-dos-acertos.log"), ("no_fim", "provas/mapa.log")):
+    lm = ler(f"{X}/{f}")
+    a_ = re.search(r"conferidas na linha citada \(±7\): (\d+)", lm); b_ = re.search(r"longe da linha citada: (\d+)", lm); c_ = re.search(r"mesma linha: (\d+)", lm); d_ = re.search(r"fim do ficheiro: (\d+)", lm)
+    medida(f"fusao.mapa.{nome}", {"conferidas": int(a_.group(1)), "longe": int(b_.group(1)), "nao_encontradas": int(c_.group(1)), "fora": int(d_.group(1))} if a_ and b_ and c_ and d_ else None, f"python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md (fusao/{f})", "as quatro linhas do guião estão no registo", a_ and b_ and c_ and d_)
+
+# O registo das decisões: a §1.170 do lugar de direção, inteira, depois da §1.171, e o ficheiro dela apagado.
+dx = git_show(cx or "HEAD", "DECISIONS.md")
+cab_ = [(i, l) for i, l in enumerate(dx.split("\n")) if re.match(r"^### 1\.\d+ ", l)]
+ult, pen = cab_[-1], cab_[-2]
+brancas = 0
+for l in reversed(dx.split("\n")[:ult[0]]):
+    if l.strip():
+        break
+    brancas += 1
+medida("fusao.decisoes", {"ultima": ult[1].split()[1], "penultima": pen[1].split()[1], "linhas_em_branco_entre": brancas}, "git show <cabeça dos portões>:DECISIONS.md (os dois últimos títulos e as linhas em branco antes do último)", "o último título é o da §1.170", ult[1].startswith("### 1.170 "))
+ns = subprocess.run(["git", "-C", str(SITIO), "diff", "--numstat", "42c7ed7e", cx or "HEAD", "--", "DECISIONS.md"], capture_output=True, text=True, check=True).stdout.split()
+medida("fusao.decisoes.acrescento", {"linhas_acrescentadas": int(ns[0]) if ns else None, "linhas_tiradas": int(ns[1]) if ns else None}, "git diff --numstat 42c7ed7e <cabeça dos portões> -- DECISIONS.md", "o diff nomeia o ficheiro", bool(ns) and ns[2] == "DECISIONS.md")
+arv = subprocess.run(["git", "-C", str(SITIO), "ls-tree", "-r", "--name-only", cx or "HEAD", "design/observatorio/"], capture_output=True, text=True, check=True).stdout.split("\n")
+medida("fusao.decisoes.ficheiro_da_entrada_apagado", "design/observatorio/REGISTO-1.170-por-acrescentar.md" not in arv, "git ls-tree -r --name-only <cabeça dos portões> design/observatorio/", "a lista da pasta tem o mapa (a árvore foi lida)", "design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md" in arv)
+lg = ler(f"{X}/provas/ledger.log")
+m = re.search(r"amarra das decisões · (\d+) entrada\(s\) a partir da §1\.38", lg)
+medida("fusao.decisoes.entradas", int(m.group(1)) if m else None, "npm run ledger:check (fusao/provas/ledger.log)", "a linha da amarra das decisões está no registo", m)
+crit = {}
+for f in ("design/especime-v3/critica/LEITURA-EX1-2026-10-06.md", "design/especime-v3/critica/LEITURA-EX1-2026-10-06.plantas.json"):
+    b = subprocess.run(["git", "-C", str(SITIO), "show", f"{cx or 'HEAD'}:{f}"], capture_output=True, check=True).stdout
+    crit[f.rsplit("/", 1)[1]] = hashlib.sha256(b).hexdigest()
+medida("fusao.critica.sha256", crit, "git show <cabeça dos portões>:<ficheiro> | sha256 (os dois ficheiros da leitura a frio, como o lugar de direção os deixou)", "os bytes são os do ficheiro na árvore", all(hashlib.sha256((SITIO / "design/especime-v3/critica" / n).read_bytes()).hexdigest() == h for n, h in crit.items()))
+for nome, f in (("fusao.limpeza", "limpeza-fusao.json"), ("fusao.limpeza.segunda", "limpeza-fusao-segunda.json")):
+    lz = js(f) or {}
+    medida(nome, {k: lz.get(k) for k in ("ficheiros_limpos_quantos", "trocas", "restos_depois")}, f"RESEARCHHUB_DIR=<worktree do motor> python3 design/especime-v3/medicoes/ex1-2026-10-05/limpar-registos.py {f}", "a limpeza correu e escreveu a lista dos ficheiros", bool(lz) and isinstance(lz.get("ficheiros_limpos"), list))
+lz1 = js("limpeza-fusao.json") or {}
+medida("fusao.limpeza.guiao_partido", any((x.get("ficheiro") if isinstance(x, dict) else x) == "medir-l1-fusao.mjs" for x in lz1.get("ficheiros_limpos", [])), "a lista dos ficheiros da primeira limpeza (limpeza-fusao.json)", "a lista foi lida", bool(lz1))
+cux = js(f"{X}/custo.json") or {}
+medida("fusao.custo", {k: cux.get(k) for k in ("respostas_do_modelo", "modelos", "simbolos_de_entrada", "simbolos_de_saida_minimo", "respostas_com_a_saida_de_um_momento_do_fluxo", "segundos", "primeira_entrada", "desde", "lido_em")}, "python3 design/especime-v3/medicoes/ex1-2026-10-05/custo.py <registo da sessão do construtor> fusao/custo.json --desde <a mensagem da fusão>", "o registo foi lido (o sha256 está escrito)", bool(cux.get("registo_sha256")))
+
 (AQUI / "medidas.json").write_text(json.dumps({"bloco": "EX1", "guiao": REL(__file__), "medidas": medidas, "falhas": falhas}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(f"{len(medidas)} medidas, {len(falhas)} com o conhecido-positivo por encontrar" + (f": {', '.join(falhas)}" if falhas else ""))
 sys.exit(1 if falhas else 0)

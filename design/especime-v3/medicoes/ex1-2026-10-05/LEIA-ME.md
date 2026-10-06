@@ -2,19 +2,19 @@
 
 *O construtor é o Claude Opus 5.5 (a definição `construtor`), na worktree do ramo `ex1-2026-10-05`, a partir de `3664b90d`, com o brief em `28022431`; escrito a 06.10.2026. Cada número deste relatório está num ficheiro desta pasta: `medidas.json`, escrito por `medir.py` com o comando e o conhecido-positivo de cada medida, e os JSON que as provas escreveram ao lado. Sem travessões.*
 
-O relatório tem três passagens: a do bloco EX1 (05 e 06.10.2026), nas secções que se seguem; a passagem de correção EX1-b (06.10.2026), com as decisões do lugar de direção sobre as questões I210 a I216 e a régua das frases compostas, na secção «EX1-b, as decisões do lugar de direção»; e a passagem EX1-c (06.10.2026), com as correções da leitura a frio do Codex Astra, na secção «EX1-c, a passagem depois da leitura». As medidas da segunda vivem em `ex1b/` e as da terceira em `ex1c/`, e as capturas delas têm os prefixos `ex1b-` e `ex1c-`.
+O relatório tem quatro passagens: a do bloco EX1 (05 e 06.10.2026), nas secções que se seguem; a passagem de correção EX1-b (06.10.2026), com as decisões do lugar de direção sobre as questões I210 a I216 e a régua das frases compostas, na secção «EX1-b, as decisões do lugar de direção»; a passagem EX1-c (06.10.2026), com as correções da leitura a frio do Codex Astra, na secção «EX1-c, a passagem depois da leitura»; e a fusão com o main de 06.10.2026, que trouxe o R4, na secção «A fusão com o main de 06.10 (o R4)». As medidas da segunda vivem em `ex1b/`, as da terceira em `ex1c/` e as da quarta em `fusao/`, com os três portões dela em `portoes/`; as capturas da segunda e da terceira têm os prefixos `ex1b-` e `ex1c-`.
 
 ## As cabeças e os três portões (a passagem EX1)
 
-A cabeça do código é `1d64052a5bbe45e92608a997bebe17742bbcb0aa` (o commit `1d64052a`, a correção que as capturas acharam). Os três portões correram nela pela tranca da máquina, com o motor ao lado (`RESEARCHHUB_DIR`), cada um no seu comando e com o código escrito num ficheiro depois de o processo acabar (`portoes/`):
+A cabeça do código é `1d64052a5bbe45e92608a997bebe17742bbcb0aa` (o commit `1d64052a`, a correção que as capturas acharam). Os três portões correram nela pela tranca da máquina, com o motor ao lado (`RESEARCHHUB_DIR`), cada um no seu comando e com o código escrito num ficheiro depois de o processo acabar (em `portoes/`, e guardados em `entrega/portoes/` desde a fusão, para que a corrida dela escrevesse em `portoes/`):
 
-| portão | código (lido de `portoes/<portão>.codigo`) | segundos |
+| portão | código (lido de `entrega/portoes/<portão>.codigo`) | segundos |
 |---|---|---|
 | `npm run build` | 0 | 209 |
 | `npm run verify` | 0 | 1 131 |
 | `npm run typecheck` | 0 | 0 (as horas escrevem-se ao segundo, e o portão acabou no segundo em que começou) |
 
-A cabeça antes e depois da corrida é a mesma (`portoes/cabeca-antes-da-corrida`, `portoes/cabeca.fim`, `portoes/cabeca-depois-da-corrida`), e o estado dos ficheiros seguidos tem 0 linhas antes e 0 depois. A cabeça final é a do commit das provas, que vem a seguir à do código e só traz esta pasta e a das capturas.
+A cabeça antes e depois da corrida é a mesma (`entrega/portoes/cabeca-antes-da-corrida`, `entrega/portoes/cabeca.fim`, `entrega/portoes/cabeca-depois-da-corrida`), e o estado dos ficheiros seguidos tem 0 linhas antes e 0 depois. A cabeça final é a do commit das provas, que vem a seguir à do código e só traz esta pasta e a das capturas.
 
 ## A primeira corrida, e o que as capturas acharam
 
@@ -94,7 +94,7 @@ As plantas em memória, que correm dentro das réguas a cada corrida: 11 de 11 d
 
 ## O custo e o modelo
 
-O custo do bloco inteiro, com as passagens EX1-b e EX1-c, lido do registo da sessão do construtor até ao fecho da passagem EX1-c: o modelo é o Claude Opus 5.5 em todas as 696 respostas que o registo guarda (`custo.json`, lido por `custo.py` do registo da sessão do construtor, com o sha256 dos bytes lidos). Somam 367 309 738 símbolos de entrada (a nova, a escrita na cache e a lida da cache) e pelo menos 128 196 de saída (um mínimo: em 433 respostas o registo guardou a saída de um momento do fluxo e não a final), em 29 173 segundos, da primeira entrada do registo até à leitura. O total cumulativo que a ferramenta reporta lê-se do lado do lugar de direção, quando o agente acaba; a leitura daqui fica antes do último commit e da resposta final.
+O custo do bloco inteiro, com as passagens EX1-b e EX1-c e a fusão com o main, lido do registo da sessão do construtor até ao fecho da fusão: o modelo é o Claude Opus 5.5 em todas as 884 respostas que o registo guarda (`custo.json`, lido por `custo.py` do registo da sessão do construtor, com o sha256 dos bytes lidos). Somam 433 366 486 símbolos de entrada (a nova, a escrita na cache e a lida da cache) e pelo menos 132 987 de saída (um mínimo: em 582 respostas o registo guardou a saída de um momento do fluxo e não a final), em 35 269 segundos, da primeira entrada do registo até à leitura. O total cumulativo que a ferramenta reporta lê-se do lado do lugar de direção, quando o agente acaba; a leitura daqui fica antes do último commit e da resposta final.
 
 ## EX1-b, as decisões do lugar de direção
 
@@ -195,10 +195,67 @@ Os commits da passagem:
 
 O custo da passagem, lido do registo da sessão desde a primeira entrada dela (`ex1c/custo.json`): 84 respostas do Claude Opus 5.5, 67 855 298 símbolos de entrada e pelo menos 1 180 de saída, em 5 469 segundos.
 
+## A fusão com o main de 06.10 (o R4)
+
+O lugar de direção mandou fundir no ramo, antes da aterragem, o `main` de 06.10.2026, que trouxe o R4 (`42c7ed7e`). A fusão é o commit `1cffc9b5`, com os conflitos resolvidos pelas regras do mandato: as leituras provadas com as chaves do main e a das explicações; o registo dos tetos e a régua da L1 com o número medido depois da fusão; o inventário das frases, as chaves inglesas, as revisões do inventário, a voz do país e as plantas com as do main primeiro e as do EX1 depois; as questões do R4 e as do EX1 por ordem de número; e o mapa do main inteiro com a nota e a secção do EX1. Os três portões correram na cabeça do código, `4893eb5d1a2ed07f36af774b28227a0a1bf436ae`, pela tranca da máquina e com o motor ao lado, cada um no seu comando e com o código escrito num ficheiro depois de o processo acabar (`portoes/`):
+
+| portão | código (lido de `portoes/<portão>.codigo`) | segundos |
+|---|---|---|
+| `npm run build` | 0 | 223 |
+| `npm run verify` | 0 | 1 176 |
+| `npm run typecheck` | 0 | 0 (acabou no segundo em que começou) |
+
+A cabeça antes e depois da corrida é a mesma (`portoes/cabeca-antes-da-corrida`, `portoes/cabeca.fim`, `portoes/cabeca-depois-da-corrida`), e o estado dos ficheiros seguidos tem 0 linhas antes e 0 depois. Os registos dos portões da entrega do EX1 passaram para `entrega/portoes/`, para que esta corrida escrevesse em `portoes/` com a árvore limpa; as medidas que os leem ficaram iguais, valor a valor.
+
+**O teto da L1, antes e depois.** O main trouxe o teto a 2 714, o da medição da R4-b, que conta as vezes de cada destino repetido. Depois da fusão a régua conta 2 716 páginas, e o teto passa a 2 716, pelo número exato das páginas novas que não têm como não repetir. A medição (`medir-l1-fusao.mjs`, com a contagem em `fusao/l1-fusao.json`) corre a régua de cada árvore sobre a sua construção, com a amostra aberta, e conta as vezes de cada destino repetido pela cópia da regra da R4-b (`r4-2026-10-05/contar-destinos-l1.mjs`, que recusa escrever sem bater com a régua da sua árvore), na construção do main (`42c7ed7e`, numa worktree à parte, com 2 714 páginas) e na da fusão (`e0ad595d`): entraram 2 páginas e saíram 0; 0 páginas do main ficaram agravadas, destino a destino e vez a vez, 0 ficaram aliviadas e 2 714 ficaram iguais. As páginas novas são as da primeira explicação, nas duas edições, com 14 destinos repetidos na portuguesa e 14 na inglesa: os recibos das funções (10) e dos ministérios (4) que o texto cita e que as figuras desenham. Cada recibo abre-se duas vezes e só duas, pelo selo do valor no texto e pelo selo do mesmo valor na legenda do instrumento que o desenha, e as duas portas são obrigatórias pela regra do portão de HTML («onde aparece um valor, aparece o selo»: fora de um desenho, o selo vai ao pé do valor; dentro de um `<svg>`, vai na legenda do próprio instrumento). Tirar uma delas era tirar o valor do texto do lugar de direção ou o selo de um valor desenhado; por isso as páginas não se corrigiram, e o teto subiu por elas. A medição tem 7 de 7 conhecidos-positivos a morder (a omissão das vezes, uma página a mais, uma página das explicações em falta, uma página do main agravada, um destino que não é um recibo desenhado e citado, um recibo com três portas e uma entrada tirada à lista da régua), e a planta do teto, que troca em memória a contagem do registo, saiu com 1 e a queixa da régua, contra 0 sem a planta (`fusao/planta-teto-l1-fusao.json`). Na corrida do `verify`, a L1 conta 2 716 com o teto 2 716.
+
+Há outra maneira, que fica para o lugar de direção: a R4-b descontou da L1, como porta obrigatória, o selo de um valor na explicação de um valor de referência, depois de a V1-R4 conferir a explicação inteira (`scripts/portas-b2.mjs`). O selo de um valor desenhado, na legenda de uma figura de uma explicação, é o mesmo caso, e um desconto igual, depois de a X e a F22 conferirem a página, devolveria o teto ao número do main. É uma mudança de forma de uma régua, com as suas plantas, e o mandato desta fusão não a pedia.
+
+**As páginas do R4 que as células do EX1 leem.** As células do EX1 que leem páginas construídas (a FC, a X, a W e as marcas do EX1 no inventário do `check:voz`) leem 10 páginas. As que têm peças do R4 são as primeiras páginas das duas edições (`fusao/r4-nas-celulas.json`): 13 explicações de valores de referência por baixo do veredicto e 1 parte do sinal na portuguesa, 13 e 1 na inglesa; 0 peças do R4 caem dentro de uma marca das frases compostas do EX1. A célula das frases compostas leu essas páginas e não recusou nenhuma: 20 passagens em 10 páginas, 356 pedaços marcados vistos, 0 dentro de um contentor flexível e 0 documentos mais largos do que a janela a 390 px, com 2 de 2 plantas a morder (`fusao/frases-compostas.json`). A W lê a primeira página de cada edição para as frases citadas e para a porta, e passou. Nenhuma página do R4 mudou nesta fusão.
+
+**As conferências que a fusão toca**, na construção da cabeça do código (`fusao/provas/`), cada uma no seu comando e com o código num ficheiro, com o estado dos ficheiros seguidos com 0 linhas:
+
+| conferência | código (lido de `fusao/provas/<passo>.codigo`) |
+|---|---|
+| as leituras provadas, um JSON com todas as chaves: as do main com os mesmos valores (7 de 7) e a das explicações do ramo antes da fusão (`conferir-leituras-provadas.py`) | 0 |
+| a K17 (`npm run check:cartao`) | 0 |
+| a L1 (`npm run check:lugar`) e a planta do teto | 0 e 0 |
+| `npm run check:voz` | 0 |
+| `npm run check:lingua` | 0 |
+| `npm run check:explicacoes` | 0 |
+| `check:frases-compostas` | 0 |
+| `npm run check:pais`, pela primeira página que os dois blocos mudam | 0 |
+| as peças do R4 nas páginas das células do EX1 (`r4-nas-celulas.mjs`) | 0 |
+| `npm run ledger:check`, com a §1.170 | 0 |
+| o mapa (`conferir-mapa.py`) | 0 |
+| as plantas do EX1, do EX1-b e do EX1-c sobre a construção (`tests/pais/portoes.mjs --prefixo ex1`) | 0, com 33 de 33 |
+| as plantas do R4 e da R4-b (`--prefixo r4`) | 0, com 8 de 8 |
+
+As plantas correram duas vezes. Na primeira corrida das provas, as do EX1 pararam com 21 a passar, e as do R4 com 0, com a queixa «a prova exige uma árvore seguida limpa»: o construtor escreveu no guião das medidas, um ficheiro seguido, enquanto elas corriam, e o executor das plantas recusou seguir, como deve. Os dois passos correram outra vez com a árvore limpa (`provas-fusao-plantas.sh`), e os registos da primeira corrida ficam em `fusao/primeira-corrida-das-plantas/`.
+
+**O registo das decisões e o mapa.** A §1.170 do lugar de direção entrou inteira no fim do `DECISIONS.md`, depois da §1.171 do R4, com 1 linha em branco entre as duas (o ficheiro difere do do main por 11 linhas acrescentadas e 0 tiradas), e o ficheiro dela saiu do repositório; o `ledger:check` confere 134 entradas desde a §1.38. Duas notas sobre a §1.170, que entrou como veio: diz que a leitura da semana está em `/explicacoes/o-que-mudou-esta-semana`, e a rota é `/explicacoes/leitura-da-semana` (`/en/explainers/weekly-reading`); e diz que a explicação aponta para o tema «Estado e economia», a porta que a passagem EX1-c tirou, como a mesma entrada diz mais abaixo. Os dois ficheiros da leitura a frio entraram como o lugar de direção os deixou (o sha256 de cada um em `fusao.critica.sha256`, no `medidas.json`). O mapa é o do main inteiro com a nota e a secção do EX1: 202 citações das secções do main postas em dia pela conta do diff contra a cabeça do main, e 11 da secção do EX1 contra a do ramo antes da fusão; ficaram 3 longe, cuja linha citada no main ficava antes da frase, com as inserções do EX1 entre as duas, e foram acertadas à linha da frase, como na passagem EX1 (0 longe depois); o comentário novo da L1 deslocou 37 citações do `check:lugar`, postas em dia pela mesma conta. No fim: 549 conferidas, 0 longe e 0 por encontrar.
+
+Os commits da fusão:
+
+| commit | o que traz |
+|---|---|
+| `1cffc9b5` | a fusão do main, com os conflitos resolvidos |
+| `e0ad595d` | os registos: o mapa, a §1.170, a leitura a frio e as suas plantas |
+| `819be89f` | a L1: o teto medido depois da fusão, com a medição e a planta do teto |
+| `9a60ee6d` | os registos dos portões da entrega do EX1 em `entrega/portoes/` |
+| `4893eb5d` | o mapa depois do teto (a cabeça do código) |
+| o seguinte | as provas da fusão: `fusao/`, `portoes/` e esta secção |
+
+Os registos levavam caminhos da máquina, e o guião da limpeza tirou-os: 13 trocas em 8 ficheiros (`limpeza-fusao.json`). Uma delas foi numa expressão do guião `medir-l1-fusao.mjs`, que trazia escrita a pasta temporária e se partiu com a troca; o guião voltou ao do commit, a expressão compõe-se agora por partes, e uma segunda limpeza trocou 0 (`limpeza-fusao-segunda.json`).
+
+O custo da fusão, lido do registo da sessão desde a mensagem do lugar de direção (`fusao/custo.json`): 170 respostas do Claude Opus 5.5, 49 736 480 símbolos de entrada e pelo menos 2 679 de saída, em 5 818 segundos.
+
 ## O que ficou por fazer
 
-- Os três portões inteiros, a publicação e a aterragem: são do lugar de direção.
+- A publicação e a aterragem: são do lugar de direção. Os três portões da cabeça do código da fusão estão na secção dela.
 - A célula das frases compostas lê as frases das explicações e da leitura da semana; as outras frases compostas da casa (os blocos da primeira página, as leituras dos cartões) não estão nela, e alargá-la é uma decisão do lugar de direção.
 - As barras mais curtas da figura dos ministérios continuam sem se ver a 390 px; o valor escrito ao lado é a leitura delas.
 - Nas capturas da explicação a 390 px, o parêntese que abre antes de um valor com selo fica às vezes no fim da linha, e o valor desce para a seguinte («Segurança Social (» e, na linha de baixo, o valor); é da quebra de linha do navegador antes da caixa do valor, e não muda nenhum número nem nenhuma palavra.
 - A leitura da semana muda com o dia da construção: as contagens deste relatório são as das construções das provas, e a página no ar dirá as do dia em que aterrar.
+- O teto da L1 sobe pelas duas páginas da explicação; o desconto do selo de um valor desenhado, como a R4-b fez para a explicação de um valor de referência, é uma decisão do lugar de direção (a secção da fusão diz como).
+- As duas notas sobre a §1.170 (a rota da leitura da semana e a porta do tema) são do lugar de direção, que escreveu a entrada.

@@ -1,25 +1,25 @@
 {
   "o_que": "o custo do bloco EX1, lido do registo da sessão do construtor (custo.py)",
-  "registo_sha256": "61cef047cdef2f3f478a62695204431fb183e39d3dd757694dc64fd6a59602bd",
-  "respostas_do_modelo": 696,
+  "registo_sha256": "5b3b03f67cca374dafbf09b2d2ae91284b2fd4a0ea93bdfdd9b3e8f8f22b154a",
+  "respostas_do_modelo": 884,
   "modelos": {
-    "claude-opus-5-5": 1320
+    "claude-opus-5-5": 1667
   },
   "simbolos": {
-    "input_tokens": 1392,
-    "cache_creation_input_tokens": 18886980,
-    "cache_read_input_tokens": 348421366,
-    "output_tokens": 128196
+    "input_tokens": 1768,
+    "cache_creation_input_tokens": 21424091,
+    "cache_read_input_tokens": 411940627,
+    "output_tokens": 132987
   },
-  "simbolos_de_entrada": 367309738,
+  "simbolos_de_entrada": 433366486,
   "simbolos_de_entrada_quer_dizer": "a entrada de cada resposta, somada: a nova, a escrita na cache e a lida da cache",
-  "simbolos_de_saida_minimo": 128196,
-  "respostas_com_a_saida_de_um_momento_do_fluxo": 433,
+  "simbolos_de_saida_minimo": 132987,
+  "respostas_com_a_saida_de_um_momento_do_fluxo": 582,
   "simbolos_de_saida_quer_dizer": "um mínimo: em tantas respostas quantas a contagem ao lado, o registo guardou a saída de um momento do fluxo e não a final",
   "primeira_entrada": "2026-10-05T21:56:57.367Z",
-  "ultima_entrada": "2026-10-06T06:03:09.400Z",
-  "lido_em": "2026-10-06T06:03:10Z",
-  "segundos": 29173,
+  "ultima_entrada": "2026-10-06T07:44:46.737Z",
+  "lido_em": "2026-10-06T07:44:47Z",
+  "segundos": 35269,
   "segundos_quer_dizer": "da primeira entrada do registo da sessão até ao momento desta leitura",
   "desde": null,
   "desde_quer_dizer": "só as entradas do registo desde este instante (a passagem que escreveu o ficheiro); null quer dizer o registo inteiro"

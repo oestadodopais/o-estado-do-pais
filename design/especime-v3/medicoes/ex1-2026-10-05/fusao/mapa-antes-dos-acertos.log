@@ -1,0 +1,7 @@
+citações conferidas na linha citada (±7): 546
+citação está no ficheiro, mas longe da linha citada: 3
+   mapa l.393 «A FRASE DO VEREDICTO SAI DO INVENTÁRIO NA PRIMEIRA PÁGINA» citada em ['scripts/gate-html.mjs:5997', 'scripts/medir-defeitos.mjs:649', 'scripts/medir-defeitos.mjs:664', 'scripts/medir-defeitos.mjs:697'] → está em ['scripts/medir-defeitos.mjs:715']
+   mapa l.407 «F19, UE1 (29.09.2026): a faixa da União» citada em ['tests/cartao/faixa.mjs:2', 'scripts/check-formas.mjs:693', 'tests/cartao/cartao.mjs:23'] → está em ['scripts/check-formas.mjs:718']
+   mapa l.554 «AS SETE PORTAS DO RODAPÉ, DEPOIS DO VARRIMENTO (bloco R3, 04» citada em ['scripts/indice-do-portao.mjs:3', 'scripts/gate-html.mjs:5503', 'scripts/gate-html.mjs:8103'] → está em ['scripts/gate-html.mjs:8123']
+citação não encontrada em nenhum dos ficheiros citados na mesma linha: 0
+linha citada para lá do fim do ficheiro: 0

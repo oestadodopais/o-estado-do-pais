@@ -48,7 +48,9 @@ const limpa = (/** @type {string} */ s) => s
   .replace(/\x1b\[[0-9;]*m/g, '')
   .replaceAll(MAIN, '<main>')
   .replaceAll(RAIZ, '<sitio>')
-  .replace(new RegExp('/' + 'private/tmp/[^\\s\'"]+', 'g'), '<rascunho>')
+  /* As pastas temporárias compõem-se por partes, para que este ficheiro não as traga escritas (o limpador dos registos
+     trocava-as, e a expressão partia-se). */
+  .replace(new RegExp('/' + 'private' + '/' + 'tmp' + '/[^\\s\'"]+', 'g'), '<rascunho>')
   .replace(new RegExp('/' + 'Users' + '/[^/\\s]+', 'g'), '<pasta-local>');
 const git = (/** @type {string} */ cwd, /** @type {string[]} */ a) => execFileSync('git', a, { cwd, encoding: 'utf8' });
 
