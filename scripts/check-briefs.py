@@ -3,6 +3,7 @@
 
 uso: python3 scripts/check-briefs.py                (na raiz do repositório)
      python3 scripts/check-briefs.py --contagens    (só as contagens, sem o detalhe)
+     python3 scripts/check-briefs.py --escrever-presos    (guarda os selos depois de uma corrida verde)
      python3 scripts/check-briefs.py --escrever-isentos   (refaz `medidas/isentos.json`)
 
 PORQUE EXISTE (M18 e §1.120, 22.09.2026). A 22.09.2026 dois §0 de briefs
@@ -113,6 +114,17 @@ diff que se vê, tal como a lista dos três nomeados. Sem isto, a isenção por 
 era uma porta: bastava emendar um brief antigo para lhe pôr lá dentro o que se
 quisesse, sem nada a dizer.
 
+M-A (06.10.2026): OS BRIEFS CONFERIDOS FICAM PRESOS. O ficheiro presos.json
+liga os bytes do brief, do guião e do JSON da medição aos da última conferência
+verde. O §0, a forma e os conhecidos-positivos do JSON continuam a conferir-se
+em cada chamada. Se qualquer resumo mudar, o guião volta a correr. Uma mudança
+neste conferidor também invalida os selos. Não há uma dispensa por nome.
+
+A atualização usa --escrever-presos e só escreve depois de TODAS as células
+passarem, num diff visível. A chamada normal é só de leitura: não muda ficheiros
+que as conferências paralelas estão a ler (a célula D do executor). Um brief
+alterado continua a ser medido em cada chamada até se guardar o novo selo.
+
 LIMITES, DITOS. O portão confere que cada número do §0 liga à medição nomeada na
 sua frase; não confere que a frase à volta diga o que o número mede. Um número
 por extenso não se vê, e por isso a regra de escrita acima. O que conta como
@@ -135,6 +147,7 @@ import numeros  # noqa: E402
 CORTE = (2026, 9, 22)
 MEDIDAS = os.path.join(RAIZ, 'design/observatorio/medidas')
 ISENTOS = os.path.join(MEDIDAS, 'isentos.json')
+PRESOS = os.path.join(MEDIDAS, 'presos.json')
 
 # A lista fechada da isenção por nomeação. Cresce só com uma decisão escrita, e o
 # portão fecha se crescer sem ela: a asserção do `main()` é a catraca.
@@ -272,8 +285,9 @@ def corre_guiao(guiao, erros):
             return None
 
 
-def confere(caminho, erros, ligacoes, contagens):
+def confere(caminho, erros, ligacoes, contagens, presos=None, novos=None, estado=None):
     """Confere um brief. Devolve o ficheiro das medições lido do repositório, ou None."""
+    erros_antes = len(erros)
     nome = os.path.basename(caminho)
     chave = chave_do_brief(caminho)
     guioes = [g for g in (os.path.join(MEDIDAS, chave + '.py'),
@@ -304,7 +318,12 @@ def confere(caminho, erros, ligacoes, contagens):
             f'{json.dumps(escrito.get("guiao"), ensure_ascii=False)} e quem correu foi '
             f'`{rel(guioes[0])}`.')
 
-    medido = corre_guiao(guioes[0], erros)
+    selo = {'brief_sha256': sha(caminho), 'guiao': rel(guioes[0]),
+            'guiao_sha256': sha(guioes[0]), 'medidas_sha256': sha(ficheiro)}
+    preso = (presos or {}).get(rel(caminho)) == selo
+    if estado is not None:
+        estado['presos' if preso else 'reexecutados'] += 1
+    medido = escrito if preso else corre_guiao(guioes[0], erros)
     if medido is None:
         return None
 
@@ -343,6 +362,8 @@ def confere(caminho, erros, ligacoes, contagens):
     if c:
         for k, v in c.items():
             contagens[k] = contagens.get(k, 0) + v
+    if novos is not None and len(erros) == erros_antes:
+        novos[rel(caminho)] = selo
     return escrito
 
 
@@ -376,7 +397,7 @@ def main(argv):
     so_contagens = '--contagens' in argv
     escrever = '--escrever-isentos' in argv
     for o in argv:
-        if o.startswith('--') and o not in ('--contagens', '--escrever-isentos'):
+        if o.startswith('--') and o not in ('--contagens', '--escrever-isentos', '--escrever-presos'):
             print(f'check-briefs.py: opção desconhecida: {o}', file=sys.stderr)
             return 2
 
@@ -454,9 +475,20 @@ def main(argv):
                     f'{caminho}: a lista diz que é isento por '
                     f'{escritos[caminho].get("isento_por")} e hoje é por {agora[caminho]}.')
 
+    presos = {}
+    if os.path.isfile(PRESOS):
+        try:
+            selos = json.load(open(PRESOS, encoding='utf-8'))
+            if selos.get('conferidor_sha256') == sha(__file__):
+                presos = selos['briefs']
+                if not isinstance(presos, dict):
+                    raise ValueError('briefs não é um objeto')
+        except (ValueError, KeyError, TypeError) as erro:
+            erros.append(f'presos.json ilegível: {erro}')
+    novos, estado = {}, {'presos': 0, 'reexecutados': 0}
     medidas_do_m5 = None
     for b in conferidos:
-        lido = confere(b, erros, ligacoes, contagens)
+        lido = confere(b, erros, ligacoes, contagens, presos, novos, estado)
         if os.path.basename(b).startswith('BRIEF-M5-'):
             medidas_do_m5 = lido
 
@@ -485,6 +517,8 @@ def main(argv):
           f'{len(conferidos)} conferido(s) · {len(por_data)} isento(s) por data (anteriores a '
           f'{CORTE[2]:02d}.{CORTE[1]:02d}.{CORTE[0]}) · {len(por_nomeacao)} isento(s) por nomeação, '
           f'os {len(isentos)} presos por sha256 em {rel(ISENTOS)}')
+    print(f'check:briefs · {estado["presos"]} brief(s) presos conferidos pelos bytes e pelo JSON; '
+          f'{estado["reexecutados"]} guião(ões) reexecutado(s).')
     if not so_contagens:
         for b in conferidos:
             print(f'    conferido: {os.path.basename(b)} (medidas/{chave_do_brief(b)}.json)')
@@ -506,6 +540,13 @@ def main(argv):
         for e in erros:
             print(f'    · {e}')
         return 1
+    if '--escrever-presos' in argv:
+        conteudo = json.dumps({'conferidor_sha256': sha(__file__), 'briefs': novos},
+                              ensure_ascii=False, indent=2) + '\n'
+        if not os.path.isfile(PRESOS) or open(PRESOS, encoding='utf-8').read() != conteudo:
+            with open(PRESOS, 'w', encoding='utf-8') as f:
+                f.write(conteudo)
+        print(f'check:briefs · selos da corrida verde guardados em {rel(PRESOS)}')
     print(f'  ✓ {len(ligacoes)} número(s) do §0 ligado(s) à sua medição, cada detetor provou que vê, '
           f'e os briefs isentos estão presos pelo resumo.')
     return 0
