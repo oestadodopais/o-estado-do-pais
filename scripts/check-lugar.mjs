@@ -274,16 +274,20 @@ const TETOS = {
      destino repetido, página a página, com a cópia da regra que recusa escrever sem bater com esta régua, e acha as 2 714
      páginas da cabeça de partida com os mesmos destinos e as mesmas vezes; o conhecido-positivo da omissão das vezes
      prova que a medida antiga passaria calada. */
-  /* EX1 (05.10.2026): SOBE DE 2 714 PARA 2 716, e a razão é medida e inteira. A composição em
-     `design/especime-v3/medicoes/ex1-2026-10-05/l1-ex1.json` compara a lista inteira desta cabeça com a da construção
-     da cabeça de partida (3664b90d), as duas com a amostra aberta: entraram duas páginas e não saiu nenhuma, e as duas
-     são as da primeira explicação, nas duas edições, que nasceram com o bloco. Cada figura de uma explicação tem a lista
-     «Os números desta figura», com a porta do recibo de cada barra, que é a legenda dos selos do desenho; um número que
-     o texto já cita com o selo abre o mesmo recibo duas vezes (catorze por página: as dez funções e os quatro
-     ministérios que a frase nomeia), a mesma mobília que a primeira página e as entradas trazem desde o PP1. Nenhuma
-     página antiga mudou: os destinos repetidos, o exemplo e as vezes de cada uma são os da cabeça de partida. As
-     plantas de uma página a mais, de uma página antiga agravada, de uma entrada em falta e de um destino que não é um
-     recibo desenhado e citado continuam a fechar. */
+  /* EX1 (05.10.2026), DEPOIS DA FUSÃO COM O MAIN DE 06.10.2026 (o R4, em 42c7ed7e): SOBE DE 2 714 PARA 2 716, e a
+     razão é medida e inteira, destino a destino e vez a vez como a R4-b mede. A medição
+     (`design/especime-v3/medicoes/ex1-2026-10-05/medir-l1-fusao.mjs`, com a contagem em `fusao/l1-fusao.json`) corre a
+     régua de cada árvore sobre a sua construção, com a amostra aberta, e conta as vezes de cada destino repetido pela
+     cópia da regra da R4-b (`contar-destinos-l1.mjs`), na construção do main, numa worktree à parte, e na da fusão:
+     entraram duas páginas e não saiu nenhuma, e as duas são as da primeira explicação, nas duas edições; as 2 714 páginas
+     do main ficam com os mesmos destinos e as mesmas vezes. Cada página nova repete catorze destinos (as dez funções e
+     os quatro ministérios que o texto cita e que as figuras desenham), e cada um abre-se duas vezes e só duas: o selo
+     do valor no texto e o selo do mesmo valor na legenda do instrumento que o desenha. As duas portas são obrigatórias
+     pela regra do portão de HTML («onde aparece um valor, aparece o selo»): fora de um desenho, o selo vai ao pé do
+     valor; dentro de um `<svg>`, vai na legenda do próprio instrumento. Tirar uma delas era tirar o valor do texto do
+     lugar de direção ou o selo de um valor desenhado. As plantas da omissão das vezes, de uma página a mais, de uma
+     página das explicações em falta, de uma página do main agravada, de um destino que não é um recibo desenhado e
+     citado e de um recibo com três portas continuam a fechar. */
   l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.

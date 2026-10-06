@@ -1,0 +1,102 @@
+{
+  "o_que_e": "A L1 depois da fusão com o main de 06.10.2026 (o R4, em 42c7ed7e), contada destino a destino e vez a vez como a passagem R4-b a mede: a construção da cabeça da fusão contra a da cabeça do main, pela mesma cópia da regra da régua. As páginas novas são as duas da primeira explicação, nas duas edições; nenhuma página do main ficou agravada; cada destino repetido de uma página nova é o recibo de uma linha que uma figura desenha e que o texto cita, aberto pelo selo do valor no texto e pelo selo do mesmo valor na legenda do instrumento, as duas portas obrigatórias pela regra do portão de HTML. A régua não muda; muda a medição que o teto aponta.",
+  "data": "2026-10-06T06:33:01.522Z",
+  "cabeca": "e0ad595d7530c3a0b37a91f6f63b0f7627693a06",
+  "estado_seguido": "",
+  "construcao": "e0ad595d7530c3a0b37a91f6f63b0f7627693a06",
+  "main": {
+    "cabeca": "42c7ed7e99ba6428573e3b9115c4e4a229b1423a",
+    "construcao": "42c7ed7e99ba6428573e3b9115c4e4a229b1423a",
+    "estado_seguido": "",
+    "contagem": "design/especime-v3/medicoes/ex1-2026-10-05/fusao/l1-destinos-42c7ed7e.json",
+    "registo_da_regua": "design/especime-v3/medicoes/ex1-2026-10-05/fusao/l1-main-42c7ed7e-check-lugar.log",
+    "codigo_da_regua": 0
+  },
+  "contagem": "design/especime-v3/medicoes/ex1-2026-10-05/fusao/l1-destinos-e0ad595d.json",
+  "origem": "design/especime-v3/medicoes/ex1-2026-10-05/fusao/l1-fusao-check-lugar.log",
+  "comando": "AMOSTRA=100000 node scripts/check-lugar.mjs, em cada árvore, e design/especime-v3/medicoes/r4-2026-10-05/contar-destinos-l1.mjs sobre cada construção",
+  "codigo_da_regua": 1,
+  "teto_lido": 2714,
+  "contagens": {
+    "estudos": 2716,
+    "l1_paginas": 2716,
+    "main": 2714,
+    "novas": 2,
+    "sairam": 0,
+    "agravadas": 0,
+    "aliviadas": 0,
+    "iguais": 2714
+  },
+  "novas": {
+    "/en/explainers/dinheiro-do-estado-2026": {
+      "destinos": 14,
+      "recibos": [
+        "/en/ledger/oe-2026-cem-euros-funcao-01",
+        "/en/ledger/oe-2026-cem-euros-funcao-02",
+        "/en/ledger/oe-2026-cem-euros-funcao-03",
+        "/en/ledger/oe-2026-cem-euros-funcao-04",
+        "/en/ledger/oe-2026-cem-euros-funcao-05",
+        "/en/ledger/oe-2026-cem-euros-funcao-06",
+        "/en/ledger/oe-2026-cem-euros-funcao-07",
+        "/en/ledger/oe-2026-cem-euros-funcao-08",
+        "/en/ledger/oe-2026-cem-euros-funcao-09",
+        "/en/ledger/oe-2026-cem-euros-funcao-10",
+        "/en/ledger/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+        "/en/ledger/oe-2026-cem-euros-ministerio-financas",
+        "/en/ledger/oe-2026-cem-euros-ministerio-saude",
+        "/en/ledger/oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social"
+      ]
+    },
+    "/explicacoes/dinheiro-do-estado-2026": {
+      "destinos": 14,
+      "recibos": [
+        "/livro-razao/oe-2026-cem-euros-funcao-01",
+        "/livro-razao/oe-2026-cem-euros-funcao-02",
+        "/livro-razao/oe-2026-cem-euros-funcao-03",
+        "/livro-razao/oe-2026-cem-euros-funcao-04",
+        "/livro-razao/oe-2026-cem-euros-funcao-05",
+        "/livro-razao/oe-2026-cem-euros-funcao-06",
+        "/livro-razao/oe-2026-cem-euros-funcao-07",
+        "/livro-razao/oe-2026-cem-euros-funcao-08",
+        "/livro-razao/oe-2026-cem-euros-funcao-09",
+        "/livro-razao/oe-2026-cem-euros-funcao-10",
+        "/livro-razao/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+        "/livro-razao/oe-2026-cem-euros-ministerio-financas",
+        "/livro-razao/oe-2026-cem-euros-ministerio-saude",
+        "/livro-razao/oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social"
+      ]
+    }
+  },
+  "sairam": [],
+  "aliviadas": [],
+  "conhecidos_positivos": [
+    {
+      "nome": "A omissão das vezes: um destino de /distritos/ilha-da-graciosa a repetir-se mais uma vez é agravado com as vezes e passa calado na comparação sem elas",
+      "mordeu": true
+    },
+    {
+      "nome": "Uma página a mais fora das explicações é recusada",
+      "mordeu": true
+    },
+    {
+      "nome": "Uma página das explicações em falta é recusada",
+      "mordeu": true
+    },
+    {
+      "nome": "Uma página do main com um destino novo repetido é recusada",
+      "mordeu": true
+    },
+    {
+      "nome": "Um destino repetido numa página nova que não é um recibo desenhado e citado é recusado",
+      "mordeu": true
+    },
+    {
+      "nome": "Um recibo desenhado e citado com três portas é recusado",
+      "mordeu": true
+    },
+    {
+      "nome": "Uma entrada tirada à lista da régua deixa de reconciliar com a contagem dela",
+      "mordeu": true
+    }
+  ]
+}
