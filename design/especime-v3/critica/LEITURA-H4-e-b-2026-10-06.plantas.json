@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T16:27:00+00:00 (reconstruído às 16:59 UTC, a partir de 12b60426 e do guião plantar-opus.py)",
+ "copia": "<scratchpad>/h4/pacote-leitura-e",
+ "plantas": [
+  {
+   "id": "q1",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "a página construída do Método em português volta a dizer na regra 9 que a direção é de uma pessoa, contra a fonte e contra a secção dos papéis",
+   "sha256_antes": "[não recuperável: a página construída do pacote não foi conservada]",
+   "sha256_depois": "[não recuperável]",
+   "contexto_antes": "A direção é de um modelo, que decide o que se publica",
+   "contexto_depois": "A direção é de uma pessoa, que decide o que se publica"
+  },
+  {
+   "id": "q2",
+   "ficheiro": "src/data/metodo.mjs",
+   "descricao": "a fonte inglesa da regra 9 diz que é o modelo que responde pelo que se publica, contra a portuguesa e contra a página construída",
+   "sha256_antes": "6a96def88b5ab8f50d75c54cfd7564d1f5d77c7896e2a335038d2e170a54772b",
+   "sha256_depois": "628a954cb1096988162f6dc1c50122d1774e67f3b1ea18af22dbf64971b726c0",
+   "contexto_antes": "mesma.',\n      ],\n      en: [\n        'It is directed by a model, which decides what gets published within the rules and the refusals that a named person sets; that person answers for what is published. Neither the person nor the model writes figures. Authorship by artificial intelligence is stated on the About page, and every page built carries the door to it. In the study documents, a sentence marked “(inf",
+   "contexto_depois": "mesma.',\n      ],\n      en: [\n        'It is directed by a model, which decides what gets published within the rules and the refusals that a named person sets; the model answers for what is published. Neither the person nor the model writes figures. Authorship by artificial intelligence is stated on the About page, and every page built carries the door to it. In the study documents, a sentence marked “(inf"
+  },
+  {
+   "id": "q3",
+   "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+   "descricao": "a frase viva do papel da leitura fica marcada como retirada no inventário, sem linha viva",
+   "sha256_antes": "a1392fad9fd734871daf0e707e33bcbd7fc7a34439b6d805d22687a5210d3c8b",
+   "sha256_depois": "9f4c140021fe0f81d70b34c9e2c6afd8554f0ec66a1fd98c6dc861e10a6fc58e",
+   "contexto_antes": "raz a fonte e a data em que foi lido. | h4 | viva | H4-e: redação decidida pelo lugar de direção (§1.173), reescrita depois da leitura curta do diff da H4-d. |\n| divulgacao | A leitura lê o que a construção entregou, sem contexto prévio e com erros plantados que tem de encontrar, antes de se publicar. | h4 | viva | H4-e: redação decidida pelo lugar de direção (§1.173), reescrita depois da leitura curta do diff da H4-d. |\n| divulgacao | A construção e a leitura são sempre ",
+   "contexto_depois": "raz a fonte e a data em que foi lido. | h4 | viva | H4-e: redação decidida pelo lugar de direção (§1.173), reescrita depois da leitura curta do diff da H4-d. |\n| divulgacao | A leitura lê o que a construção entregou, sem contexto prévio e com erros plantados que tem de encontrar, antes de se publicar. | h4 | retirada | H4-e: redação decidida pelo lugar de direção (§1.173), reescrita depois da leitura curta do diff da H4-d. |\n| divulgacao | A construção e a leitura são sempre "
+  },
+  {
+   "id": "q4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a secção H4-e do relatório diz que a N1 fez cinco plantas, e os ficheiros dizem três",
+   "sha256_antes": "447fc0f7a9927c86db080c222e73e6c0c13fd7d3eae6b4b2297b7871db37ff31",
+   "sha256_depois": "eefd6a32514f64aebded5d4b1eff3da3bd1e340a3d1948632580de474ddafa14",
+   "contexto_antes": "| Conferência | Código lido |\n| --- | --- |\n| check-lingua | 0 |\n| check-lugar | 0 |\n| gate-html | 0 |\n\n### As plantas da política e da N1 na cabeça do código\n\nA política fez 18 plantas; a N1 fez 3. Todas falharam pela mensagem esperada; a política trabalha em cópias na memória, e a N1 repõe os ficheiros construídos byte a byte. Comandos: `node design/especime-v3/medicoes/h4-2026-10-06/provar-politica-e.mjs --passagem-e` e `node tests/pais/portoes.mjs --prefixo h4b-`.\n\n| Edição | Planta da política | Mensagem observada e exigida |\n| --- | --- | --- |\n| pt | um lug",
+   "contexto_depois": "| Conferência | Código lido |\n| --- | --- |\n| check-lingua | 0 |\n| check-lugar | 0 |\n| gate-html | 0 |\n\n### As plantas da política e da N1 na cabeça do código\n\nA política fez 18 plantas; a N1 fez 5. Todas falharam pela mensagem esperada; a política trabalha em cópias na memória, e a N1 repõe os ficheiros construídos byte a byte. Comandos: `node design/especime-v3/medicoes/h4-2026-10-06/provar-politica-e.mjs --passagem-e` e `node tests/pais/portoes.mjs --prefixo h4b-`.\n\n| Edição | Planta da política | Mensagem observada e exigida |\n| --- | --- | --- |\n| pt | um lug"
+  },
+  {
+   "id": "q5",
+   "ficheiro": "scripts/lugares-ia-do-portao.mjs",
+   "descricao": "a cópia do portão perde, no papel da construção, a data em que cada número foi lido, divergindo da vista e da página construída",
+   "sha256_antes": "3c07a7f86353abb42aff8c99304c9bc4fd0b7336ca7cdb2a77462f805a20856c",
+   "sha256_depois": "f8c893579fd80997d669d4fd4f48e15ed3f880f0850f754585dd2f3121ff9d0c",
+   "contexto_antes": "elos: a direção, a construção e a leitura.',\n    itens: [\n      'A direção decide o que se faz, encomenda cada mudança, revê e aprova o que se publica.',\n      'A construção constrói as páginas e o motor que lê as fontes; cada número que publica traz a fonte e a data em que foi lido.',\n      'A leitura lê o que a construção entregou, sem contexto prévio e com erros plantados que tem de encontrar, antes de se publicar.',\n    ],\n    fecho: 'A c",
+   "contexto_depois": "elos: a direção, a construção e a leitura.',\n    itens: [\n      'A direção decide o que se faz, encomenda cada mudança, revê e aprova o que se publica.',\n      'A construção constrói as páginas e o motor que lê as fontes; cada número que publica traz a fonte.',\n      'A leitura lê o que a construção entregou, sem contexto prévio e com erros plantados que tem de encontrar, antes de se publicar.',\n    ],\n    fecho: 'A c"
+  }
+ ]
+}
