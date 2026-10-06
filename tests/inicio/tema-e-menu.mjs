@@ -11,7 +11,7 @@
  * aplicado antes da primeira pintura; e pôs a página da União no menu, como sexta porta.
  *
  * A N3 e a N1 do `check:pais` conferem o HTML servido de todas as páginas (a raiz sem `data-theme`, a guarda, o
- * guião, o comando, as seis portas). Esta régua confere o que só o navegador sabe, nas três páginas que o diretor
+ * guião, o comando, as sete portas). Esta régua confere o que só o navegador sabe, nas três páginas que o diretor
  * leu (a primeira página, «Lugares» e a página da União), nas duas edições:
  *
  *   TM1 · sem escolha, o sítio é claro em qualquer aparelho: com o aparelho em escuro e nada guardado, a raiz não
@@ -25,12 +25,12 @@
  *         diz-se escolhido; uma recarga continua escura, com o atributo da raiz a mudar ANTES de o `<body>` entrar no
  *         documento (um observador posto antes de a página correr regista a ordem das duas mudanças); um toque em
  *         «claro» tira o atributo, guarda «light» e devolve a cor da mobília; e uma recarga fica clara;
- *   TM4 · o menu com seis portas numa linha, sem empurrar a página: nas cinco larguras, seis ligações em
- *         `#nav-principal`, todas no mesmo topo e dentro da caixa do menu, e o menu sem conteúdo para além da sua
- *         caixa nem da janela; a 320 e a 360 px, onde as portas não cabem numa linha, o menu dobra, sem passar da
- *         janela. A célula mede o menu e não a página inteira: a largura do documento fica no relatório, e a 320 px a
- *         primeira página passa da janela por um valor com selo que não quebra, que é anterior a este bloco e não é
- *         do menu (o relatório do P4 di-lo).
+ *   TM4 · H4: sete portas, uma linha quando cabem, com a dobra, o espaço da regra base e o alvo de toque
+ *         protegidos. Até aos 430 px, no máximo duas linhas; nenhuma porta fora do menu ou da janela,
+ *         e cada porta com pelo menos 44 px de altura. O espaço e a letra de referência calculam-se no navegador
+ *         a partir das regras base da folha fonte, sem a regra de telefone que uma planta possa servir.
+ *         A largura do documento fica no relatório: a 320 px a primeira página já passava da janela por um valor
+ *         com selo que não quebra, anterior a este bloco e fora do menu.
  *
  * As cores esperadas leem-se de `src/styles/tokens.css` (o `--paper` do `:root` e o do `:root[data-theme='dark']`),
  * por esta régua e não pela folha construída que ela mede.
@@ -38,8 +38,8 @@
  * AS PLANTAS (`--prova`) servem a mesma construção com um estrago, pelo servidor desta régua e sem tocar no `dist/`,
  * e cada uma tem de fazer a sua célula falhar com a queixa esperada: a paleta escura pela preferência do sistema
  * (TM1), a guarda tirada do `<head>`, a guarda no fim do `<body>` e, desde a P4-c, um manipulador que aplica o claro
- * a todos os cliques (TM3), o comando tirado do cabeçalho e um botão com 30 px (TM2), uma sétima porta e a letra do
- * menu de antes do P4 (TM4), e o menu sem dobrar a 320 px (TM4).
+ * a todos os cliques (TM3), o comando tirado do cabeçalho e um botão com 30 px (TM2), uma oitava porta, o menu
+ * apertado a 6 px, o menu sem dobrar a 320 px e uma porta sem 44 px de toque (TM4, nas duas edições).
  *
  *   node tests/inicio/tema-e-menu.mjs [--prova] [--json <ficheiro>]      (OEDP_DIST mede outra construção)
  */
@@ -47,12 +47,13 @@ import fs from 'node:fs/promises';
 import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.resolve(process.env.OEDP_DIST ?? path.join(RAIZ, 'dist'));
 const LARGURAS = [390, 768, 1024, 1280, 1600];
-const ESTREITAS = [320, 360];
+const ESTREITAS = [320, 360, 430];
 const PAGINAS = [
   ['/', 'pt'], ['/en/', 'en'],
   ['/lugares/', 'pt'], ['/en/places/', 'en'],
@@ -69,6 +70,13 @@ if (!PAPEL_CLARO || !PAPEL_ESCURO) {
   process.exit(2);
 }
 const rgb = (hex) => `rgb(${parseInt(hex.slice(1, 3), 16)}, ${parseInt(hex.slice(3, 5), 16)}, ${parseInt(hex.slice(5, 7), 16)})`;
+
+/* A referência vem da regra base, não da regra computada do menu que a planta estraga.
+   O navegador resolve o clamp à largura em teste; não se fixa aqui um espaço em píxeis. */
+const folhaFonte = await fs.readFile(path.join(RAIZ, 'src', 'styles', 'site.css'), 'utf8');
+const baseMenu = /(?:^|\n)\.menu-cinco\s*\{([^{}]+)\}/.exec(folhaFonte)?.[1];
+const basePorta = /(?:^|\n)\.menu-cinco a\s*\{([^{}]+)\}/.exec(folhaFonte)?.[1];
+if (!baseMenu || !basePorta) throw new Error('TM4: não li as regras base do menu.');
 
 /* --------------------------------------------------------------- o servidor, com o estrago da planta ativa */
 const tipos = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
@@ -126,7 +134,7 @@ async function abre(rota, largura, { esquema = 'light', guiao = true, guardado =
   return { ctx, p, externos };
 }
 
-const estadoDaPagina = (p) => p.evaluate(() => {
+const estadoDaPagina = (p) => p.evaluate(({ baseMenu, basePorta }) => {
   const g = document.querySelector('header [data-tema-controlo]');
   const caixa = (el) => { if (!el) return null; const b = el.getBoundingClientRect(); return { x: b.left, y: b.top, w: b.width, h: b.height, d: b.right }; };
   return {
@@ -141,14 +149,37 @@ const estadoDaPagina = (p) => p.evaluate(() => {
     ordem: window.__ordemDoTema ? [...window.__ordemDoTema] : null,
     menu: (() => {
       const n = document.querySelector('#nav-principal');
-      const as = n ? [...n.querySelectorAll('a')].map((a) => a.getBoundingClientRect()) : [];
+      const portas = n ? [...n.querySelectorAll('a')] : [];
+      const as = portas.map((a) => a.getBoundingClientRect());
       const c = n?.getBoundingClientRect();
-      return { portas: as.length, topos: [...new Set(as.map((a) => Math.round(a.top)))].length,
-        dentro: !!c && as.every((a) => a.left >= c.left - 0.5 && a.right <= c.right + 0.5),
+      const referencia = document.createElement('div');
+      referencia.style.cssText = baseMenu;
+      referencia.style.position = 'fixed';
+      referencia.style.visibility = 'hidden';
+      const porta = document.createElement('span');
+      porta.style.cssText = basePorta;
+      referencia.append(porta);
+      document.body.append(referencia);
+      const gapBase = parseFloat(getComputedStyle(referencia).columnGap);
+      const letraBase = getComputedStyle(porta).fontSize;
+      const espacoLetrasBase = getComputedStyle(porta).letterSpacing;
+      referencia.remove();
+      const topos = [...new Set(as.map((a) => Math.round(a.top)))];
+      const folgas = topos.flatMap((y) => {
+        const fila = as.filter((a) => Math.round(a.top) === y);
+        return fila.slice(1).map((a, i) => a.left - fila[i].right);
+      });
+      return { portas: as.length, topos: topos.length, gapBase,
+        gap: n ? parseFloat(getComputedStyle(n).columnGap) : null, folgas,
+        largura: c?.width ?? 0, natural: as.reduce((s, a) => s + a.width, 0) + gapBase * (as.length - 1),
+        alvos: portas.map((a, i) => ({ texto: a.textContent.trim(), altura: as[i].height })),
+        letras: portas.map((a) => ({ letra: getComputedStyle(a).fontSize, espaco: getComputedStyle(a).letterSpacing })),
+        letraBase, espacoLetrasBase,
+        dentro: !!c && as.every((a) => a.left >= c.left - 0.5 && a.right <= c.right + 0.5 && a.left >= 0 && a.right <= innerWidth + 0.5),
         direita: as.length ? Math.max(...as.map((a) => a.right)) : 0, transborda: n ? n.scrollWidth > n.clientWidth : false };
     })(),
   };
-});
+}, { baseMenu, basePorta });
 
 /* ------------------------------------------------------------------------------------------------- as células */
 async function tm1(rota, largura) {
@@ -237,12 +268,21 @@ async function tm4(rota, largura) {
     const e = await estadoDaPagina(p);
     const onde = `${rota} a ${largura} px`;
     const f = [];
-    if (e.menu.portas !== 6) f.push(`TM4 · ${onde}: o menu tem ${e.menu.portas} portas, e são seis.`);
-    if (e.menu.transborda || e.menu.direita > e.janela + 0.5) f.push(`TM4 · ${onde}: o menu empurra a página para o lado (a última porta acaba a ${Math.round(e.menu.direita)} px numa janela de ${e.janela}).`);
-    if (!estrago) larguraDoDocumento.push({ rota, largura, documento: e.documento, janela: e.janela });
-    if (LARGURAS.includes(largura)) {
-      if (e.menu.topos !== 1 || !e.menu.dentro) f.push(`TM4 · ${onde}: as portas não estão numa linha dentro do menu (${e.menu.topos} linha(s)).`);
-    } else if (e.menu.topos < 2) f.push(`TM4 · ${onde}: a ${largura} px as seis portas não cabem numa linha e o menu não dobrou.`);
+    if (e.menu.portas !== 7) f.push(`TM4 · ${onde}: o menu tem ${e.menu.portas} portas, e são sete.`);
+    if (e.menu.transborda || e.menu.direita > e.janela + 0.5 || !e.menu.dentro) f.push(`TM4 · ${onde}: o menu empurra a página para o lado ou tem uma porta fora da sua caixa (a última porta acaba a ${Math.round(e.menu.direita)} px numa janela de ${e.janela}).`);
+    if (!estrago) {
+      larguraDoDocumento.push({ rota, largura, documento: e.documento, janela: e.janela });
+      medidasDoMenu.push({ rota, largura, ...e.menu });
+    }
+    if (e.menu.natural <= e.menu.largura + 0.5) {
+      if (e.menu.topos !== 1) f.push(`TM4 · ${onde}: as portas não estão numa linha dentro do menu (${e.menu.topos} linha(s)).`);
+    } else if (e.menu.topos < 2) f.push(`TM4 · ${onde}: as sete portas não cabem numa linha e o menu não dobrou.`);
+    if (largura <= 430 && e.menu.topos > 2) f.push(`TM4 · ${onde}: o menu tem ${e.menu.topos} linhas, e o máximo é duas.`);
+    if (!Number.isFinite(e.menu.gapBase) || Math.abs(e.menu.gap - e.menu.gapBase) > 0.1 || e.menu.folgas.some((g) => Math.abs(g - e.menu.gapBase) > 0.1)) {
+      f.push(`TM4 · ${onde}: o espaço entre portas na mesma linha não é o da regra base (${e.menu.gapBase} px; lido ${e.menu.gap} px; folgas ${e.menu.folgas.join(', ')}).`);
+    }
+    if (e.menu.letras.some((l) => l.letra !== e.menu.letraBase || l.espaco !== e.menu.espacoLetrasBase)) f.push(`TM4 · ${onde}: a letra ou o espaço das letras difere da regra base (${e.menu.letraBase}, ${e.menu.espacoLetrasBase}).`);
+    for (const a of e.menu.alvos) if (a.altura < 44 - 0.01) f.push(`TM4 · ${onde}: a porta «${a.texto}» mede ${a.altura} px de altura, e o alvo de toque é de 44 px.`);
     return f;
   } finally { await ctx.close(); }
 }
@@ -252,6 +292,7 @@ const prova = process.argv.includes('--prova');
 const falhas = [];
 /** A largura do documento em cada medida do menu, para o relatório; não é célula. */
 const larguraDoDocumento = [];
+const medidasDoMenu = [];
 const contas = { tm1: 0, tm2: 0, tm3: 0, tm4: 0 };
 const plantas = [];
 try {
@@ -276,16 +317,19 @@ try {
       ['a guarda no fim do <body>', { html: (s) => { const m = guarda.exec(s); return m ? s.replace(m[0], '').replace('</body>', `${m[0]}</body>`) : s; } }, () => tm3('/en/', 390), /TM3 · .*não se aplicou antes da primeira pintura/],
       ['o comando tirado do cabeçalho', { html: (s) => s.replace(/<div class="tema"[^>]*data-tema-controlo[^>]*>[\s\S]*?<\/div>/, '') }, () => tm2('/uniao-europeia/', 1024), /TM2 · .*não há comando do tema/],
       ['um botão do tema com 30 px', { html: (s) => s.replace('</head>', '<style>.tema-b{min-height:30px!important;min-width:30px!important;height:30px!important}</style></head>') }, () => tm2('/en/places/', 390), /TM2 · .*mede .* px, e o alvo é de 44 por 44/],
-      ['uma sétima porta no menu', { html: (s) => s.replace(/(<nav class="menu-cinco"[^>]*>[\s\S]*?)(<\/nav>)/, '$1<a href="/agenda">Agenda</a>$2') }, () => tm4('/', 1280), /TM4 · .*o menu tem 7 portas/],
-      ['a letra do menu de antes do P4', { html: (s) => s.replace('</head>', '<style>@media (width<=430px){.menu-cinco{gap:0 12px!important}.menu-cinco a{font-size:13.5px!important;letter-spacing:.03em!important}}</style></head>') }, () => tm4('/', 390), /TM4 · .*não estão numa linha/],
-      ['o menu sem dobrar a 320 px', { html: (s) => s.replace('</head>', '<style>.menu-cinco{flex-wrap:nowrap!important}</style></head>') }, () => tm4('/en/', 320), /TM4 · .*(empurra a página para o lado|não dobrou)/],
+      ...['/', '/en/'].flatMap((rota) => [
+        ['uma oitava porta no menu', { html: (s) => s.replace(/(<nav class="menu-cinco"[^>]*>[\s\S]*?)(<\/nav>)/, '$1<a href="/agenda">Agenda</a>$2') }, () => tm4(rota, 1280), /TM4 · .*o menu tem 8 portas, e são sete\./],
+        ['o menu apertado a 6 px', { html: (s) => s.replace('</head>', '<style>@media (width<=430px){.menu-cinco{gap:0 6px!important}.menu-cinco a{font-size:13px!important;letter-spacing:0!important}}</style></head>') }, () => tm4(rota, 390), /TM4 · .*o espaço entre portas na mesma linha não é o da regra base/],
+        ['o menu sem dobrar a 320 px', { html: (s) => s.replace('</head>', '<style>.menu-cinco{flex-wrap:nowrap!important}</style></head>') }, () => tm4(rota, 320), /TM4 · .*as sete portas não cabem numa linha e o menu não dobrou\./],
+        ['uma porta sem 44 px de toque', { html: (s) => s.replace('</head>', '<style>.menu-cinco a:first-child{min-height:30px!important;height:30px!important}</style></head>') }, () => tm4(rota, 390), /TM4 · .*a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px\./],
+      ]),
     ];
     for (const [nome, e, cel, mordida] of PLANTAS) {
       estrago = e;
       let queixas;
       try { queixas = await cel(); } finally { estrago = null; }
       const mordeu = queixas.some((q) => mordida.test(q));
-      plantas.push({ nome, mordeu, queixa: queixas.find((q) => mordida.test(q)) ?? queixas[0] ?? null });
+      plantas.push({ nome, mordeu, mensagem_exigida: mordida.source, queixa: queixas.find((q) => mordida.test(q)) ?? queixas[0] ?? null });
       if (!mordeu) falhas.push(`A planta não mordeu: ${nome}${queixas.length ? ` (queixou-se de outra coisa: ${queixas[0]})` : ''}`);
     }
   }
@@ -294,7 +338,9 @@ try {
   servidor.close();
 }
 
-const relatorio = { papeis: { claro: PAPEL_CLARO, escuro: PAPEL_ESCURO }, contas, falhas, plantas,
+const relatorio = { comando: 'node tests/inicio/tema-e-menu.mjs' + process.argv.slice(2).map(a => ' ' + a).join(''),
+  cabeca: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
+  construcao: JSON.parse(await fs.readFile(path.join(DIST, 'version.json'), 'utf8')), medidas_menu: medidasDoMenu, papeis: { claro: PAPEL_CLARO, escuro: PAPEL_ESCURO }, contas, falhas, plantas,
   documentos_mais_largos_do_que_a_janela: larguraDoDocumento.filter((d) => d.documento > d.janela) };
 const j = process.argv.indexOf('--json');
 if (j >= 0) await fs.writeFile(process.argv[j + 1], JSON.stringify(relatorio, null, 2) + '\n');
