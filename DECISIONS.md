@@ -13740,3 +13740,13 @@ Tudo aterrou dormente, sem nenhum interruptor.
 
 **O que o lugar de direção decide.** O contributo adota-se, porque os limites da subscrição são do diretor e a razão é boa: um bloco construído e lido cedo chega ao leitor cedo, e o ritmo de uma semana inteira adiava-o sem o proteger. A regra: lança-se tudo o que tem brief, em paralelo, enquanto cada subscrição estiver abaixo dos oitenta por cento da semana; a partir daí não se lança construção nova, e os últimos vinte por cento ficam para as leituras a frio (do Claude, as dos blocos do Codex), as passagens de correção e as aterragens; o teto dos noventa e sete por cento da §1.160 não muda, e fecha-se num ponto seguro antes dele. O que não couber na semana espera pela reposição, construído e por ler, ou por construir. A vigia do uso avisa aos oitenta por cento nas duas subscrições. A ordem da fila a 06.10: o JD1 (lançado às 10:40 UTC), o recibo incorporável (brief por escrever), o M-B depois de o M-A e os blocos de conteúdo aterrarem (porque reescreve o mapa e os inventários que todos tocam), o RP4-n-b depois do RP4-n, a segunda explicação depois do JD1.
 
+### 1.175 O teto do uso baixa de noventa e sete para noventa por cento, para o diretor ter uso diário; a linha de não lançar fica nos oitenta
+
+**Afecta:** nenhum
+
+**Data:** 06.10.2026, cerca das 10:50 UTC (na conversa, a seguir à §1.174).
+
+**O que o diretor disse, por palavras dele.** «Can we adjust and try to have the hard stop at 90 % instead of 97, or 95, so we can keep some usage for daily use.»
+
+**O que o lugar de direção decide.** Adota-se aos noventa, porque os limites da subscrição são do diretor e a margem é para o uso dele: a partir dos noventa por cento da semana de qualquer das duas subscrições não se lança nada (nem construção, nem leitura, nem aterragem nova) e fecha-se num ponto seguro, como a §1.160 mandava aos noventa e sete; a linha de não lançar construção nova fica nos oitenta (§1.174), e entre os oitenta e os noventa só correm as leituras a frio, as passagens de correção e as aterragens do que já está construído. O `CLAUDE.md` (o passo 2 e a regra 10) diz os dois números; a vigia do uso avisa aos oitenta e aos noventa.
+
