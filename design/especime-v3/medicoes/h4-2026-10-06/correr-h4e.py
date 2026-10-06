@@ -69,7 +69,7 @@ def correr(nome, comando, exigir_limpa=True):
         raise RuntimeError(f'{nome}: código {codigo}; consultar o registo.')
 
 
-correr('inventario-e', ['node', str(AQUI / 'inventario-politica-h4e.mjs'), '--confere'])
+correr('inventario-e', ['node', str(AQUI / 'inventario-politica-h4e4.mjs'), '--confere'])
 correr('politica-e', ['node', str(AQUI / 'provar-politica-e.mjs'), '--passagem-e'])
 ambiente['OEDP_MEDICOES'] = str(PALCO / AQUI / 'n1-e')
 (PALCO / AQUI / 'n1-e').mkdir()

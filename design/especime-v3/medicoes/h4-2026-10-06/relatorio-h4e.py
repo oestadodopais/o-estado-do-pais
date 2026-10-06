@@ -48,20 +48,28 @@ for f in sorted((AQUI / 'conferencias-e').glob('*.codigo')):
     conferencias[f.stem] = int(f.read_text().strip())
     assert (AQUI / 'conferencias-e' / f'{f.stem}.cabeca').read_text().strip() == cabeca, f.stem
 assert conferencias and not any(conferencias.values()), conferencias
-FIM_DO_CODIGO = 'd81471b7'  # o último commit do código da H4-e no ramo h4-2026-10-06; as provas correm na cabeça do ramo de integração
-commits = subprocess.check_output(['git', 'log', '--format=%H\t%s', f'{PARTIDA}..{FIM_DO_CODIGO}'], text=True).strip().split('\n')
+COMMITS_DO_CODIGO = ['25499b79', 'd81471b7', 'c92532ea']  # os commits do código da H4-e, por ordem; o da quarta volta lê-se do ramo
+COMMITS_DO_CODIGO.append(subprocess.check_output(['git', 'log', '-1', '--format=%H', '--', 'src/data/politica-ia.mjs'], text=True).strip())
+commits = [subprocess.check_output(['git', 'log', '-1', '--format=%H\t%s', c], text=True).strip() for c in COMMITS_DO_CODIGO]
 
 linhas = ['## A passagem H4-e', '',
           'A redação dos três papéis é do lugar de direção, reescrita depois da leitura curta do diff da H4-d '
           '(`design/especime-v3/critica/LEITURA-H4-d-2026-10-06.md`, o achado 3 e o 7): sem «peça» nem «lugares», '
           'a regra das famílias dita uma vez só, e o que a construção faz com cada número (a fonte e a data) distinguido '
           'do que a leitura faz com o que foi construído. A exceção H4-6 da L3 e as suas quatro plantas saíram com a palavra. '
-          'Como a redação é de um modelo Claude, a leitura dela é do Codex, a outra família: a primeira leitura '
-          '(`design/especime-v3/critica/LEITURA-H4-e-codex-2026-10-06.md`) mordeu as cinco plantas e achou que a regra 9 do Método '
-          '(«A intervenção humana») ainda dizia que a direção é de uma pessoa que escolhe o que se publica, contra a secção dos papéis '
-          'e contra a §1.112; a regra passou a dizer que a direção é de um modelo, que decide o que se publica dentro das regras e das '
-          'recusas que uma pessoa com nome define, e que é essa pessoa que responde; os guiões das provas passaram a registar os seus '
-          'próprios nomes. As provas abaixo são as da cabeça com essas duas mudanças.', '',
+          'Como a redação é de um modelo Claude, lê-a a outra família: a primeira leitura, do Codex '
+          '(`design/especime-v3/critica/LEITURA-H4-e-codex-2026-10-06.md`), mordeu as cinco plantas e achou que a regra 9 do Método '
+          '(«A intervenção humana») ainda dizia que a direção é de uma pessoa que escolhe o que se publica; a regra passou a dizer que a direção é de um '
+          'modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define, e que é essa pessoa que responde. '
+          'O Codex chegou então ao teto da semana, e as leituras seguintes foram do Opus, da família do lugar de direção, com o registo a dizê-lo: '
+          'a segunda (`LEITURA-H4-e-b-2026-10-06.md`) achou a regra 8 em inglês ainda com «the director decides», o papel da direção contra a revisão '
+          'por amostra e uma frase inglesa sem o sentido; a terceira (`LEITURA-H4-e-c-2026-10-06.md`) achou que a página prometia uma regra das famílias '
+          'que o próprio texto não tinha cumprido, e quatro coisas de editor (a palavra «portões» sem definição, duas tautologias, «the change» por «a troca», '
+          'a regra 8 a pôr a inteligência artificial a propor e a direção a decidir como se a direção não fosse um modelo, e «cada número traz a fonte e a data» '
+          'absoluto numa página que conta linhas com um campo por confirmar). A quarta volta diz o que a direção escreve e quem o lê, troca os portões pelas '
+          'verificações automáticas, diz que a construção faz e a leitura confere, e que cada número traz a fonte e a data ou diz o que está por confirmar; '
+          'a regra 8 diz que a construção propõe e a direção decide; o título dos papéis passou a ser conferido pela célula. O bloco só aterra depois de o '
+          'Codex ler o diff inteiro da H4-e, na segunda-feira, para que a página cumpra o que promete no dia em que sai. As provas abaixo são as da cabeça da quarta volta.', '',
           f'Cabeça do código: `{cabeca}`. Secção gerada por `{COMANDO}` a partir dos resultados guardados. '
           'Os portões inteiros desta cabeça correm na corrida portão do GitHub, e não na máquina; aqui correram as '
           'conferências que a mudança toca, cada uma no seu comando com o código lido de um ficheiro.', '',
@@ -80,7 +88,7 @@ linhas += ['', '### As capturas do Método', '',
 def liga(f):
     return f"[captura](../../{Path(f).relative_to('design/especime-v3')})"
 linhas += tabela(['Edição', 'Janela, px', 'Página', 'Papéis', 'Cabeçalho'], [(c['lang'], c['largura'], liga(c['ficheiro']), liga(c['recorte']), liga(c['cabecalho'])) for c in cap['capturas']])
-linhas += ['', '### Os commits da passagem', '', f'Os commits do código da H4-e, no ramo `h4-2026-10-06`, de `{PARTIDA[:8]}` a `{FIM_DO_CODIGO}`; as provas desta secção correram na cabeça `{cabeca[:8]}` do ramo de integração, que funde o H4 com o M-A e o EX2.', '']
+linhas += ['', '### Os commits da passagem', '', f'Os commits do código da H4-e (as quatro voltas da redação); as provas desta secção correram na cabeça `{cabeca[:8]}` do ramo de integração, que funde o H4 com o M-A e o EX2.', '']
 linhas += tabela(['Commit', 'Mudança'], [(f'`{h}`', s) for h, s in (c.split('\t', 1) for c in commits)])
 linhas += ['', 'O commit seguinte guarda apenas esta secção, as capturas e os registos das provas; a cabeça do código é a conferida acima.', '']
 secao = '\n'.join(linhas)

@@ -548,10 +548,10 @@ export const REGRAS = [
     titulo: { pt: 'O que se mede a seguir', en: 'What gets measured next' },
     regra: {
       pt: [
-        'A inteligência artificial propõe o que medir, a partir de critérios declarados: o que os quadros com que as instituições avaliam Portugal apontam como problema, o que as fontes oficiais vão publicar, o que os leitores perguntam ou corrigem. A direção decide. A lista do que está em curso, do que se segue e do porquê é pública, e nada sai dela em silêncio.',
+        'A construção propõe o que medir, a partir de critérios declarados: o que os quadros com que as instituições avaliam Portugal apontam como problema, o que as fontes oficiais vão publicar, o que os leitores perguntam ou corrigem. A direção decide. A lista do que está em curso, do que se segue e do porquê é pública, e nada sai dela em silêncio.',
       ],
       en: [
-        'Artificial intelligence proposes what to measure, from declared criteria: what the frameworks the institutions use to assess Portugal flag as a problem, what the official sources will publish, what readers ask about or correct. Direction decides. The list of what is under way, what comes next and why is public, and nothing leaves it in silence.',
+        'Building proposes what to measure, from declared criteria: what the frameworks the institutions use to assess Portugal flag as a problem, what the official sources will publish, what readers ask about or correct. Direction decides. The list of what is under way, what comes next and why is public, and nothing leaves it in silence.',
       ],
     },
     /* O mecanismo lido contra a página construída, a 16.08.2026: a página existe
