@@ -26,7 +26,7 @@
  *         documento (um observador posto antes de a página correr regista a ordem das duas mudanças); um toque em
  *         «claro» tira o atributo, guarda «light» e devolve a cor da mobília; e uma recarga fica clara;
  *   TM4 · H4: sete portas, uma linha quando cabem, com a dobra, o espaço da regra base e o alvo de toque
- *         protegidos. Até aos 430 px, no máximo duas linhas; nenhuma porta fora do menu ou da janela,
+ *         protegidos. H4-5: no máximo duas linhas a 390 e 430 px, três a 320 e 360 px; nenhuma porta fora do menu ou da janela,
  *         e cada porta com pelo menos 44 px de altura. O espaço e a letra de referência calculam-se no navegador
  *         a partir das regras base da folha fonte, sem a regra de telefone que uma planta possa servir.
  *         A largura do documento fica no relatório: a 320 px a primeira página já passava da janela por um valor
@@ -39,7 +39,7 @@
  * e cada uma tem de fazer a sua célula falhar com a queixa esperada: a paleta escura pela preferência do sistema
  * (TM1), a guarda tirada do `<head>`, a guarda no fim do `<body>` e, desde a P4-c, um manipulador que aplica o claro
  * a todos os cliques (TM3), o comando tirado do cabeçalho e um botão com 30 px (TM2), uma oitava porta, o menu
- * apertado a 6 px, o menu sem dobrar a 320 px e uma porta sem 44 px de toque (TM4, nas duas edições).
+ * apertado a 6 px, o menu sem dobrar a 320 px, quatro linhas a 320 px e uma porta sem 44 px de toque (TM4, nas duas edições).
  *
  *   node tests/inicio/tema-e-menu.mjs [--prova] [--json <ficheiro>]      (OEDP_DIST mede outra construção)
  */
@@ -54,6 +54,8 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '.
 const DIST = path.resolve(process.env.OEDP_DIST ?? path.join(RAIZ, 'dist'));
 const LARGURAS = [390, 768, 1024, 1280, 1600];
 const ESTREITAS = [320, 360, 430];
+// H4-5: os limites da dobra natural nas larguras do telefone, decididos no brief.
+const MAX_LINHAS_TELEFONE = { 320: 3, 360: 3, 390: 2, 430: 2 };
 const PAGINAS = [
   ['/', 'pt'], ['/en/', 'en'],
   ['/lugares/', 'pt'], ['/en/places/', 'en'],
@@ -277,7 +279,8 @@ async function tm4(rota, largura) {
     if (e.menu.natural <= e.menu.largura + 0.5) {
       if (e.menu.topos !== 1) f.push(`TM4 · ${onde}: as portas não estão numa linha dentro do menu (${e.menu.topos} linha(s)).`);
     } else if (e.menu.topos < 2) f.push(`TM4 · ${onde}: as sete portas não cabem numa linha e o menu não dobrou.`);
-    if (largura <= 430 && e.menu.topos > 2) f.push(`TM4 · ${onde}: o menu tem ${e.menu.topos} linhas, e o máximo é duas.`);
+    const maxLinhas = MAX_LINHAS_TELEFONE[largura];
+    if (maxLinhas && e.menu.topos > maxLinhas) f.push(`TM4 · ${onde}: o menu tem ${e.menu.topos} linhas, e o máximo é ${maxLinhas === 2 ? 'duas' : 'três'}.`);
     if (!Number.isFinite(e.menu.gapBase) || Math.abs(e.menu.gap - e.menu.gapBase) > 0.1 || e.menu.folgas.some((g) => Math.abs(g - e.menu.gapBase) > 0.1)) {
       f.push(`TM4 · ${onde}: o espaço entre portas na mesma linha não é o da regra base (${e.menu.gapBase} px; lido ${e.menu.gap} px; folgas ${e.menu.folgas.join(', ')}).`);
     }
@@ -321,6 +324,8 @@ try {
         ['uma oitava porta no menu', { html: (s) => s.replace(/(<nav class="menu-cinco"[^>]*>[\s\S]*?)(<\/nav>)/, '$1<a href="/agenda">Agenda</a>$2') }, () => tm4(rota, 1280), /TM4 · .*o menu tem 8 portas, e são sete\./],
         ['o menu apertado a 6 px', { html: (s) => s.replace('</head>', '<style>@media (width<=430px){.menu-cinco{gap:0 6px!important}.menu-cinco a{font-size:13px!important;letter-spacing:0!important}}</style></head>') }, () => tm4(rota, 390), /TM4 · .*o espaço entre portas na mesma linha não é o da regra base/],
         ['o menu sem dobrar a 320 px', { html: (s) => s.replace('</head>', '<style>.menu-cinco{flex-wrap:nowrap!important}</style></head>') }, () => tm4(rota, 320), /TM4 · .*as sete portas não cabem numa linha e o menu não dobrou\./],
+        // Só a resposta ao navegador recebe a regra base com espaço maior. A folha fonte fica intacta.
+        ['quatro linhas a 320 px', { html: (s) => s.replace('</head>', `<style>.menu-cinco{${baseMenu}column-gap:80px!important}</style></head>`) }, () => tm4(rota, 320), /TM4 · .* a 320 px: o menu tem 4 linhas, e o máximo é três\./],
         ['uma porta sem 44 px de toque', { html: (s) => s.replace('</head>', '<style>.menu-cinco a:first-child{min-height:30px!important;height:30px!important}</style></head>') }, () => tm4(rota, 390), /TM4 · .*a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px\./],
       ]),
     ];
@@ -341,7 +346,7 @@ try {
 const relatorio = { comando: (process.env.OEDP_TEMA_MENU_JSON ? `OEDP_TEMA_MENU_JSON=${process.env.OEDP_TEMA_MENU_JSON} ` : '') +
   'node tests/inicio/tema-e-menu.mjs' + process.argv.slice(2).map(a => ' ' + a).join(''),
   cabeca: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
-  construcao: JSON.parse(await fs.readFile(path.join(DIST, 'version.json'), 'utf8')), medidas_menu: medidasDoMenu, papeis: { claro: PAPEL_CLARO, escuro: PAPEL_ESCURO }, contas, falhas, plantas,
+  construcao: JSON.parse(await fs.readFile(path.join(DIST, 'version.json'), 'utf8')), limites_linhas_telefone: MAX_LINHAS_TELEFONE, medidas_menu: medidasDoMenu, papeis: { claro: PAPEL_CLARO, escuro: PAPEL_ESCURO }, contas, falhas, plantas,
   documentos_mais_largos_do_que_a_janela: larguraDoDocumento.filter((d) => d.documento > d.janela) };
 const j = process.argv.indexOf('--json');
 // A corrida inteira pode guardar a mesma prova, sem repetir o navegador depois dos portões.
