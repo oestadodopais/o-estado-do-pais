@@ -28,6 +28,7 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
                               env={**env, **mudancas}, capture_output=True, text=True)
     r = correr('vermelho')
     assert r.returncode == 1
+    assert 'o build não ficou verde e não pode pagar passos da união' in (p / 'vermelho/verify.log').read_text()
     codigos = {g: int((p / 'vermelho' / (g + '.codigo')).read_text()) for g in ('build', 'verify', 'typecheck')}
     assert codigos == {'build': 7, 'verify': 125, 'typecheck': 0}
     assert 'verify-depois-do-build' not in (p / 'chamadas').read_text()
