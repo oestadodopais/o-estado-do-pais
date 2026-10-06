@@ -1,0 +1,440 @@
+cabeça: 723a451fca7df75e14b3bd953a7f4f7b1da64b44
+estado dos ficheiros seguidos: 0 linha(s)
+---
+  portão dos briefs · 68 brief(s) em design/observatorio/ · 32 conferido(s) · 33 isento(s) por data (anteriores a 22.09.2026) · 3 isento(s) por nomeação, os 36 presos por sha256 em design/observatorio/medidas/isentos.json
+    conferido: BRIEF-B2-o-veredicto-e-as-paginas-dos-temas.md (medidas/BRIEF-B2.json)
+    conferido: BRIEF-C1-as-correcoes-de-confianca.md (medidas/BRIEF-C1.json)
+    conferido: BRIEF-C2-as-nove-revisoes-da-eurostat.md (medidas/BRIEF-C2.json)
+    conferido: BRIEF-CI1-o-portao-em-metade-do-tempo.md (medidas/BRIEF-CI1.json)
+    conferido: BRIEF-E0-as-linhas-da-casa-no-registo-das-mudancas.md (medidas/BRIEF-E0.json)
+    conferido: BRIEF-E1-os-estudos-de-evora-um-conjunto-coerente.md (medidas/BRIEF-E1.json)
+    conferido: BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md (medidas/BRIEF-EX1.json)
+    conferido: BRIEF-F22b-as-corridas-prontas-a-armar.md (medidas/BRIEF-F22b.json)
+    conferido: BRIEF-H2-a-passagem-de-higiene-de-04-10.md (medidas/BRIEF-H2.json)
+    conferido: BRIEF-H3-a-passagem-de-higiene-de-05-10.md (medidas/BRIEF-H3.json)
+    conferido: BRIEF-K2-o-cartao-para-o-telemovel.md (medidas/BRIEF-K2.json)
+    conferido: BRIEF-L1-a-leitura-de-cada-medida.md (medidas/BRIEF-L1.json)
+    conferido: BRIEF-L2a-o-mapa-primeiro.md (medidas/BRIEF-L2a.json)
+    conferido: BRIEF-L2b-o-concelho-entre-os-308.md (medidas/BRIEF-L2b.json)
+    conferido: BRIEF-M4b-o-livro-razao-do-11-reparado-e-declarado.md (medidas/BRIEF-M4b.json)
+    conferido: BRIEF-M5-as-medicoes-provam-que-veem.md (medidas/BRIEF-M5.json)
+    conferido: BRIEF-N1-uma-porta-por-assunto.md (medidas/BRIEF-N1.json)
+    conferido: BRIEF-OE1-o-dinheiro-do-estado-por-ministerio.md (medidas/BRIEF-OE1.json)
+    conferido: BRIEF-P4-os-pequenos-do-sitio.md (medidas/BRIEF-P4.json)
+    conferido: BRIEF-PP1-a-primeira-pagina-de-um-leitor-comum.md (medidas/BRIEF-PP1.json)
+    conferido: BRIEF-R1-o-lado-do-leitor-depois-da-leitura-de-fora.md (medidas/BRIEF-R1.json)
+    conferido: BRIEF-R2-os-rotulos-do-sitio.md (medidas/BRIEF-R2.json)
+    conferido: BRIEF-R3-o-indice-do-sitio.md (medidas/BRIEF-R3.json)
+    conferido: BRIEF-RP1-rendimentos-e-precos-os-cartoes.md (medidas/BRIEF-RP1.json)
+    conferido: BRIEF-RP2-rendimentos-e-precos-os-documentos-e-as-outras-apis.md (medidas/BRIEF-RP2.json)
+    conferido: BRIEF-RP3-as-series-no-motor-e-no-livro.md (medidas/BRIEF-RP3.json)
+    conferido: BRIEF-RP4-o-grafico-das-series-no-cartao-e-no-recibo.md (medidas/BRIEF-RP4.json)
+    conferido: BRIEF-RP4C-as-ajudas-de-leitura-do-grafico.md (medidas/BRIEF-RP4C.json)
+    conferido: BRIEF-RP4M-as-series-que-faltam-e-o-corredor-das-series.md (medidas/BRIEF-RP4M.json)
+    conferido: BRIEF-S1-a-caixa-das-sugestoes.md (medidas/BRIEF-S1.json)
+    conferido: BRIEF-UE1-onde-portugal-fica-entre-os-27.md (medidas/BRIEF-UE1.json)
+    conferido: BRIEF-UE2-a-pagina-dos-paises.md (medidas/BRIEF-UE2.json)
+      §0 liga «35» a `cartoes_nacionais_nos_temas`
+      §0 liga «9» a `temas_com_medidas`
+      §0 liga «18» a `temas_da_carta`
+      §0 liga «13» a `cartoes_com_valor_de_referencia`
+      §0 liga «13» a `cartoes_com_valor_de_referencia`
+      §0 liga «13» a `cartoes_com_valor_de_referencia`
+      §0 liga «19» a `cartoes_na_primeira_pagina`
+      §0 liga «0» a `cartoes_com_referencia_na_primeira_pagina`
+      §0 liga «24» a `cartoes_com_media_da_uniao`
+      §0 liga «29» a `cartoes_com_periodo_anterior`
+      §0 liga «6» a `cartoes_sem_regua`
+      §0 liga «20» a `cartoes_com_definicao`
+      §0 liga «34» a `cartoes_com_a_marca_entre_o_valor_e_a_unidade`
+      §0 liga «5» a `cartoes_com_precisao_mista`
+      §0 liga «2» a `formas_do_euro_nos_temas`
+      §0 liga «3» a `precisoes_do_euro_nos_temas`
+      §0 liga «1» a `cartao_do_limite_legal_nos_temas`
+      §0 liga «150» a `limite_legal`
+      §0 liga «308» a `concelhos_no_ficheiro`
+      §0 liga «10» a `camaras_acima_do_limite`
+      §0 liga «297» a `camaras_dentro_do_limite`
+      §0 liga «1» a `camaras_sem_valor`
+      §0 liga «21» a `medidas_na_faixa_europeia`
+      §0 liga «4» a `fora_do_valor_de_referencia`
+      §0 liga «9» a `dentro_do_valor_de_referencia`
+      §0 liga «8» a `sem_valor_de_referencia`
+      §0 liga «1» a `posicao_na_faixa_europeia`
+      §0 liga «21» a `medidas_na_faixa_europeia`
+      §0 liga «1» a `posicao_na_faixa_europeia`
+      §0 liga «8» a `mourao_cartoes`
+      §0 liga «1» a `mourao_cartoes_com_regua`
+      §0 liga «34» a `nome_do_projeto_a_390`
+      §0 liga «68» a `nome_do_projeto_a_1280`
+      §0 liga «30» a `titulo_a_390`
+      §0 liga «46» a `titulo_a_1280`
+      §0 liga «10» a `ligacoes_no_rodape`
+      §0 liga «1» a `dominios_com_pagina`
+      §0 liga «9» a `areas_de_governo_com_pagina`
+      §0 liga «17» a `ficheiros_que_dependem_das_rotas`
+      §0 liga «6,3» a `sobrecarga_pt_2025`
+      §0 liga «6,9» a `sobrecarga_pt_2024`
+      §0 liga «7,7» a `sobrecarga_ue_2025`
+      §0 liga «1» a `sobrecarga_sem_media_europeia_declarada`
+      §0 liga «27,2» a `inquilinos_a_preco_de_mercado_pt`
+      §0 liga «18,6» a `inquilinos_a_preco_de_mercado_ue`
+      §0 liga «3,0» a `proprietarios_com_credito_pt`
+      §0 liga «5,0» a `proprietarios_com_credito_ue`
+      §0 liga «1,3» a `proprietarios_sem_credito_pt`
+      §0 liga «3,8» a `proprietarios_sem_credito_ue`
+      §0 liga «2,8» a `inquilinos_a_renda_reduzida_ou_gratuita_pt`
+      §0 liga «9,2» a `inquilinos_a_renda_reduzida_ou_gratuita_ue`
+      §0 liga «47» a `cartoes_na_pagina_dos_temas`
+      §0 liga «47» a `cartoes_na_pagina_dos_temas`
+      §0 liga «0» a `valores_separados_da_unidade`
+      §0 liga «2» a `frases_fixas_da_subida`
+      §0 liga «6» a `ramos_da_uniao_com_subida`
+      §0 liga «1» a `rendas_com_dos_de_ha_um_ano`
+      §0 liga «49,3» a `valor_selado_da_divida_das_familias_ue`
+      §0 liga «49,2» a `valor_revisto_segundo_o_painel`
+      §0 liga «3» a `linhas_do_pib_por_habitante`
+      §0 liga «3» a `linhas_do_pib_por_habitante`
+      §0 liga «5» a `colunas_do_csv_dos_concelhos`
+      §0 liga «0» a `valores_separados_da_unidade`
+      §0 liga «82» a `linhas_com_uma_verificacao_igual_de_05_10_2026`
+      §0 liga «9» a `linhas_com_uma_verificacao_divergente_de_05_10_2026`
+      §0 liga «0» a `linhas_com_uma_verificacao_inacessivel_de_05_10_2026`
+      §0 liga «9» a `dessas_as_lidas_na_eurostat`
+      §0 liga «3» a `linhas_divergentes_usadas_na_primeira_pagina`
+      §0 liga «1» a `correcoes_do_tipo_atualizacao_no_livro`
+      §0 liga «2» a `mencoes_da_v16_no_readme_do_livro`
+      §0 liga «21» a `passos_do_build`
+      §0 liga «33» a `passos_do_verify`
+      §0 liga «17» a `passos_repetidos`
+      §0 liga «1» a `trabalhos_da_corrida`
+      §0 liga «2» a `linhas_do_desemprego_com_o_inteiro_onde_a_fonte_escreve_o_decimal`
+      §0 liga «3» a `correcoes_publicadas_contadas_no_livro`
+      §0 liga «3» a `correcoes_publicadas_contadas_no_livro`
+      §0 liga «9» a `linhas_com_historia_selada`
+      §0 liga «0» a `entradas_seladas_do_contador_das_correcoes`
+      §0 liga «2» a `linhas_com_lugar_declarado_a_mao`
+      §0 liga «1» a `lugares_fora_do_pais_que_o_registo_aceita`
+      §0 liga «6» a `estudos_de_evora_alojados`
+      §0 liga «43 866» a `palavras_dos_seis_estudos`
+      §0 liga «4» a `estudos_com_mais_de_cinco_mil_palavras`
+      §0 liga «61» a `seccoes_dos_seis_estudos`
+      §0 liga «5» a `estudos_de_evora_com_linhas_no_livro`
+      §0 liga «69» a `linhas_do_livro_dos_estudos_de_evora`
+      §0 liga «1» a `estudos_de_evora_sem_linhas_proprias`
+      §0 liga «6» a `contador_dos_estudos_de_evora_publicados`
+      §0 liga «94» a `linhas_do_orcamento_do_estado_de_2026`
+      §0 liga «10» a `linhas_dos_cem_euros_por_funcao`
+      §0 liga «16» a `linhas_dos_cem_euros_por_ministerio`
+      §0 liga «16» a `linhas_dos_cem_euros_por_ministerio`
+      §0 liga «30» a `linhas_da_despesa_por_funcao_de_2024`
+      §0 liga «31» a `linhas_da_execucao_orcamental_de_agosto_de_2026`
+      §0 liga «5» a `linhas_da_divida_publica`
+      §0 liga «3» a `linhas_do_saldo_das_administracoes_publicas`
+      §0 liga «0» a `linhas_sobre_os_juros_da_divida`
+      §0 liga «3 870» a `entradas_datadas_nas_linhas`
+      §0 liga «203» a `entradas_datadas_desde_28_09_2026`
+      §0 liga «18» a `estudos_publicados`
+      §0 liga «0» a `rotas_de_explicacoes_no_sitio`
+      §0 liga «13» a `blocos_da_primeira_pagina`
+      §0 liga «4» a `frases_com_ramo_decidido_pelos_numeros_na_primeira_pagina`
+      §0 liga «6» a `portas_do_menu`
+      §0 liga «3009» a `linhas_do_livro`
+      §0 liga «91» a `linhas_com_carimbo_do_painel`
+      §0 liga «2545» a `linhas_com_carimbo_do_corredor`
+      §0 liga «6» a `commits_do_painel_semanal`
+      §0 liga «93» a `ficheiros_do_painel_de_28_09`
+      §0 liga «91» a `linhas_mudadas_pelo_painel_de_28_09`
+      §0 liga «3» a `estudos_recentes_na_primeira_pagina`
+      §0 liga «11» a `estudos_sem_sucessor`
+      §0 liga «4» a `estudos_sem_sucessor_datados_a_01_10_2026`
+      §0 liga «1» a `chamadas_a_routePath_texto_na_pagina_da_area`
+      §0 liga «1» a `portas_que_embrulham_o_titulo_na_lista_dos_estudos`
+      §0 liga «1» a `existeConstruido_aceita_o_ficheiro_html_irmao`
+      §0 liga «1» a `isencoes_json_indicador_na_check_lugar`
+      §0 liga «1» a `plantas_da_copia_com_a_mesma_hora_no_verify_depois_do_build`
+      §0 liga «0» a `variaveis_PACOTE_RETIRA_e_PACOTE_MOTOR_no_pacote_sh`
+      §0 liga «5» a `questoes_I190_a_I194_abertas`
+      §0 liga «144» a `palavras_da_nota_da_caixa_das_sugestoes_em_portugues`
+      §0 liga «0» a `rotas_de_privacidade_no_sitio`
+      §0 liga «1» a `portas_do_menu_com_o_nome_europa`
+      §0 liga «10» a `faixas_de_paises_no_livro`
+      §0 liga «9» a `faixas_com_paises_no_mesmo_valor`
+      §0 liga «4» a `maximo_de_paises_no_mesmo_valor_numa_faixa`
+      §0 liga «21» a `cartoes_declarados_nos_quadros`
+      §0 liga «4» a `cartoes_com_variacao_sob_nome_de_nivel`
+      §0 liga «2» a `linhas_com_menos_decimais_do_que_a_fonte`
+      §0 liga «11» a `frases_das_leituras_com_termos_por_explicar`
+      §0 liga «0» a `ficheiros_que_a_construcao_le_mudados_entre_as_copias_e_a_cabeca`
+      §0 liga «36» a `cartoes_nacionais_nos_temas`
+      §0 liga «35» a `cartoes_de_linha_nos_temas`
+      §0 liga «1» a `cartoes_das_camaras_nos_temas`
+      §0 liga «36» a `cartoes_nacionais_na_edicao_inglesa`
+      §0 liga «20» a `cartoes_na_primeira_pagina`
+      §0 liga «21» a `cartoes_com_pergunta`
+      §0 liga «15» a `cartoes_sem_pergunta`
+      §0 liga «8» a `perguntas_com_algarismos`
+      §0 liga «15» a `cartoes_com_valor_de_referencia`
+      §0 liga «5» a `cartoes_fora_do_valor_de_referencia`
+      §0 liga «10» a `cartoes_dentro_do_valor_de_referencia`
+      §0 liga «15» a `referencias_declaradas`
+      §0 liga «13» a `referencias_da_comissao`
+      §0 liga «1» a `referencias_do_pacto`
+      §0 liga «1» a `referencias_do_pacto`
+      §0 liga «4» a `formas_do_veredicto`
+      §0 liga «33» a `cartoes_com_periodo_anterior`
+      §0 liga «25» a `cartoes_com_media_da_uniao`
+      §0 liga «2» a `cartoes_de_linha_sem_regua`
+      §0 liga «0» a `cartoes_so_com_referencia_e_sem_comparacao`
+      §0 liga «59» a `valores_de_linha_nas_reguas_dos_temas`
+      §0 liga «0» a `cartoes_com_leitura`
+      §0 liga «1» a `marcas_da_fonte_por_cartao_maximo`
+      §0 liga «1» a `marcas_da_fonte_por_cartao_maximo`
+      §0 liga «36» a `cartoes_nacionais_nos_temas`
+      §0 liga «1» a `medidas_com_valor_negativo`
+      §0 liga «5» a `inventario_das_medidas`
+      §0 liga «16» a `unidades_distintas`
+      §0 liga «0,7» a `saldo_valor`
+      §0 liga «0,6» a `saldo_anterior_valor`
+      §0 liga «7» a `disparidade_valor`
+      §0 liga «8,6» a `disparidade_anterior_valor`
+      §0 liga «22» a `definicoes_declaradas`
+      §0 liga «31» a `origens_das_definicoes_declaradas`
+      §0 liga «22» a `definicoes_declaradas`
+      §0 liga «72» a `pedacos_auditados`
+      §0 liga «85» a `apoios_auditados`
+      §0 liga «32» a `indicadores_no_ficheiro_do_motor`
+      §0 liga «13» a `indicadores_com_limiar_no_motor`
+      §0 liga «19» a `indicadores_sem_limiar_no_motor`
+      §0 liga «28» a `tamanho_do_numero_px`
+      §0 liga «16» a `tamanho_do_nome_px`
+      §0 liga «14» a `tamanho_da_regua_px`
+      §0 liga «12» a `tamanho_da_pergunta_px`
+      §0 liga «3» a `pecas_de_lugares_antes_do_mapa`
+      §0 liga «9» a `regioes_na_lista`
+      §0 liga «29» a `distritos_e_ilhas_na_lista`
+      §0 liga «2» a `seccoes_da_primeira_pagina_antes_dos_lugares`
+      §0 liga «1» a `pesquisas_na_primeira_pagina`
+      §0 liga «1» a `pesquisas_na_primeira_pagina`
+      §0 liga «5321» a `altura_da_captura_de_lugares_a_390`
+      §0 liga «7194» a `altura_da_captura_da_primeira_pagina_a_390`
+      §0 liga «308» a `concelhos_com_linha_de_populacao`
+      §0 liga «9» a `medidas_com_linhas_por_concelho`
+      §0 liga «308» a `linhas_do_ganho_medio_por_concelho`
+      §0 liga «0» a `faixas_na_pagina_do_concelho`
+      §0 liga «0» a `faixas_na_pagina_do_concelho`
+      §0 liga «2» a `reguas_a_mao_que_procuram_o_mapa_na_primeira_pagina`
+      §0 liga «55» a `linhas`
+      §0 liga «28» a `linhas_recusadas`
+      §0 liga «9» a `valor_de_texto`
+      §0 liga «7» a `sem_valor_no_excerto`
+      §0 liga «20» a `source_type_invalido`
+      §0 liga «10» a `derived`
+      §0 liga «149» a `numeros_html`
+      §0 liga «41» a `casados_html`
+      §0 liga «89» a `orfaos_html`
+      §0 liga «9» a `erradas_html`
+      §0 liga «654» a `numeros_relatorio`
+      §0 liga «154» a `casados_relatorio`
+      §0 liga «328» a `orfaos_relatorio`
+      §0 liga «95» a `erradas_relatorio`
+      §0 liga «40» a `desvios_do_par`
+      §0 liga «38» a `briefs_ate_22_09_2026`
+      §0 liga «35» a `briefs_com_seccao_de_medicoes`
+      §0 liga «2» a `briefs_com_guiao_de_medicoes`
+      §0 liga «2» a `briefs_conferidos_pelo_portao`
+      §0 liga «33» a `briefs_isentos_por_data`
+      §0 liga «3» a `briefs_isentos_por_nomeacao`
+      §0 liga «0» a `ocorrencias_do_nome_de_quem_responde_em_src_e_public`
+      §0 liga «0» a `exportacoes_de_politica_ia_com_o_nome_de_quem_responde`
+      §0 liga «47» a `cartoes_nas_entradas`
+      §0 liga «47» a `cartoes_nos_temas`
+      §0 liga «47» a `cartoes_nos_temas`
+      §0 liga «0» a `cartoes_so_numa_das_duas`
+      §0 liga «5» a `blocos_da_primeira_pagina`
+      §0 liga «5» a `blocos_da_primeira_pagina`
+      §0 liga «4» a `entradas_que_copiam_blocos`
+      §0 liga «5» a `blocos_da_primeira_pagina`
+      §0 liga «9» a `temas`
+      §0 liga «18» a `dominios`
+      §0 liga «1» a `dominios_no_ar`
+      §0 liga «16» a `dominios_sem_pagina`
+      §0 liga «9» a `temas`
+      §0 liga «3009» a `linhas_do_livro`
+      §0 liga «0» a `linhas_da_entidade_orcamental`
+      §0 liga «0» a `linhas_da_despesa_por_funcao_do_eurostat`
+      §0 liga «3» a `linhas_do_saldo_das_administracoes_publicas`
+      §0 liga «5» a `linhas_da_divida_publica`
+      §0 liga «5» a `linhas_com_fonte_no_dados_gov`
+      §0 liga «9» a `areas_do_governo_declaradas`
+      §0 liga «1» a `linhas_do_orcamento_de_evora`
+      §0 liga «3» a `folhas_que_seguem_a_preferencia_do_aparelho`
+      §0 liga «0» a `lugares_onde_o_comando_do_tema_e_rendido`
+      §0 liga «5» a `entradas_do_menu`
+      §0 liga «5» a `reguas_a_mao_que_leem_a_primeira_pagina_antiga`
+      §0 liga «117» a `linhas_que_a_regra_das_casas_decimais_le`
+      §0 liga «2535» a `linhas_que_a_regra_das_casas_decimais_deixa_por_ler`
+      §0 liga «6» a `ocorrencias_dos_dois_termos_nas_definicoes`
+      §0 liga «0» a `palavras_da_nota_do_sucessor_que_dizem_a_reconciliacao`
+      §0 liga «1» a `codigo_do_decisoes_em_vigor_num_intervalo_com_png`
+      §0 liga «8» a `linhas_de_chaves_en_com_a_descricao_de_setembro`
+      §0 liga «23» a `cartoes_na_primeira_pagina`
+      §0 liga «9» a `temas_na_primeira_pagina`
+      §0 liga «1» a `mapas_na_primeira_pagina`
+      §0 liga «0» a `numeros_no_mapa`
+      §0 liga «4» a `mudancas_na_primeira_pagina`
+      §0 liga «126» a `palavras_antes_do_primeiro_titulo`
+      §0 liga «8» a `numeros_antes_do_primeiro_titulo`
+      §0 liga «9» a `valores_fixos_da_leitura_do_pais`
+      §0 liga «5» a `blocos_declarados`
+      §0 liga «30» a `linhas_dos_blocos`
+      §0 liga «30» a `linhas_dos_blocos`
+      §0 liga «18» a `condicoes_dos_blocos`
+      §0 liga «18» a `condicoes_dos_blocos`
+      §0 liga «8» a `condicoes_do_mesmo_periodo`
+      §0 liga «8» a `condicoes_do_mesmo_periodo`
+      §0 liga «6» a `entradas_declaradas`
+      §0 liga «47» a `cartoes_nas_entradas`
+      §0 liga «0» a `cartoes_repetidos_nas_entradas`
+      §0 liga «48» a `artigos_da_pagina_dos_temas`
+      §0 liga «1» a `cartoes_fora_das_entradas`
+      §0 liga «0» a `cartoes_das_entradas_fora_dos_temas`
+      §0 liga «1» a `pesquisa_lista_nasce_escondida`
+      §0 liga «0» a `pesquisa_lista_nunca_se_mostra`
+      §0 liga «0» a `pesquisa_enter_recarrega`
+      §0 liga «0» a `cor_de_estado_na_primeira_pagina`
+      §0 liga «0» a `cor_de_estado_na_primeira_pagina`
+      §0 liga «39» a `cor_de_estado_na_pagina_europeia`
+      §0 liga «1» a `metodo_frase_da_cor`
+      §0 liga «0» a `ficheiros_com_a_ressalva_fora_da_agenda`
+      §0 liga «1» a `agenda_diz_que_a_primeira_pagina_ja_diz`
+      §0 liga «1» a `agenda_diz_que_a_primeira_pagina_ja_diz`
+      §0 liga «1» a `cartao_da_habitacao_com_media_europeia`
+      §0 liga «2» a `mudancas_declaradas`
+      §0 liga «1» a `mudancas_com_palavras_internas`
+      §0 liga «1» a `estudos_seccao_por_lugar`
+      §0 liga «2» a `definicoes_com_sigla_por_verificar`
+      §0 liga «1» a `vistas_com_o_rotulo_no_topo`
+      §0 liga «1» a `recibo_valor_e_unidade_colados`
+      §0 liga «8» a `cartoes_do_concelho`
+      §0 liga «1» a `cartoes_do_concelho_com_regua`
+      §0 liga «1» a `metodo_frase_do_base`
+      §0 liga «89,2» a `ine_divida_2025`
+      §0 liga «93,0» a `ine_divida_2024`
+      §0 liga «0,7» a `ine_saldo_2025`
+      §0 liga «3009» a `linhas_do_livro`
+      §0 liga «41» a `unidades_distintas_nas_linhas`
+      §0 liga «28» a `nomes_de_medida_distintos_nas_linhas`
+      §0 liga «3» a `unidades_com_o_simbolo_do_euro_em_vez_da_palavra`
+      §0 liga «1» a `unidades_que_dizem_um_limite_na_propria_unidade`
+      §0 liga «2» a `unidades_de_indice_com_base_cem`
+      §0 liga «25» a `entradas_do_dicionario_das_unidades_inglesas`
+      §0 liga «16» a `unidades_das_linhas_sem_entrada_inglesa`
+      §0 liga «7466» a `paginas_construidas_lidas_pelo_inventario`
+      §0 liga «5248» a `cartoes_de_medida_nas_paginas`
+      §0 liga «34» a `formas_distintas_da_unidade_nos_cartoes_portugueses`
+      §0 liga «25» a `formas_distintas_do_estado_nos_cartoes_portugueses`
+      §0 liga «8» a `formas_distintas_da_dobra_nos_cartoes_portugueses`
+      §0 liga «40» a `rotas_declaradas`
+      §0 liga «0» a `rotas_de_indice_declaradas`
+      §0 liga «6» a `portas_do_menu`
+      §0 liga «6» a `portas_do_menu`
+      §0 liga «0» a `portas_do_rodape_para_um_indice`
+      §0 liga «32» a `ficheiros_de_pagina_portugueses`
+      §0 liga «32» a `ficheiros_de_pagina_portugueses`
+      §0 liga «17» a `estudos_declarados`
+      §0 liga «6» a `estudos_com_sucessor`
+      §0 liga «0» a `ficheiros_que_a_construcao_le_mudados_entre_as_copias_e_a_cabeca`
+      §0 liga «36» a `cartoes_nacionais_nos_temas`
+      §0 liga «9» a `temas_com_medidas`
+      §0 liga «18» a `temas_da_carta`
+      §0 liga «13» a `cartoes_por_tema`
+      §0 liga «10» a `cartoes_por_tema`
+      §0 liga «2» a `cartoes_por_tema`
+      §0 liga «3» a `cartoes_por_tema`
+      §0 liga «1» a `cartoes_por_tema`
+      §0 liga «4» a `cartoes_por_tema`
+      §0 liga «1» a `cartoes_por_tema`
+      §0 liga «1» a `cartoes_por_tema`
+      §0 liga «1» a `cartoes_por_tema`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_de_precos_no_consumidor`
+      §0 liga «0» a `cartoes_nacionais_com_periodo_mensal`
+      §0 liga «2» a `cartoes_de_linha_sem_regua`
+      §0 liga «920,00» a `valor_do_salario_minimo_no_sitio`
+      §0 liga «2 984» a `linhas_do_livro`
+      §0 liga «288» a `linhas_de_documento_alojado`
+      §0 liga «1 358» a `linhas_de_serie_de_api`
+      §0 liga «9» a `linhas_da_tabela_do_memorando`
+      §0 liga «8» a `linhas_do_memorando_verificadas`
+      §0 liga «15» a `marcas_por_verificar_no_memorando`
+      §0 liga «2 984» a `linhas_do_livro`
+      §0 liga «303,7» a `segundos_do_build`
+      §0 liga «7 354» a `paginas_construidas`
+      §0 liga «486,9» a `segundos_do_verify`
+      §0 liga «45» a `grupos_com_varios_periodos`
+      §0 liga «28» a `grupos_que_misturam_uniao`
+      §0 liga «2 655» a `linhas_lidas_para_os_grupos`
+      §0 liga «16» a `series_no_tempo_no_livro`
+      §0 liga «4 131» a `pontos_das_series_no_tempo`
+      §0 liga «2» a `lacunas_declaradas_nas_series_no_tempo`
+      §0 liga «944» a `pontos_da_maior_serie_no_tempo`
+      §0 liga «7» a `linhas_presas_a_uma_serie`
+      §0 liga «10» a `linhas_com_as_coordenadas_0014666_ou_0014647`
+      §0 liga «0» a `dessas_as_presas_a_uma_serie`
+      §0 liga «8» a `formas_na_lista_fechada_da_check_formas`
+      §0 liga «0» a `ocorrencias_de_serie_do_pais_em_src`
+      §0 liga «0» a `desenhos_svg_no_cartao_da_medida`
+      §0 liga «0» a `desenhos_svg_no_cartao_da_medida`
+      §0 liga «0» a `desenhos_svg_no_cartao_da_medida`
+      §0 liga «64» a `pixeis_minimos_de_uma_marca_intermedia_do_tempo_as_pontas`
+      §0 liga «0» a `marcas_do_eixo_vertical_com_o_simbolo_da_unidade`
+      §0 liga «0» a `linhas_de_referencia_no_modulo_da_forma`
+      §0 liga «2» a `regras_de_passagem_ou_foco_na_folha_do_desenho`
+      §0 liga «0» a `etiquetas_de_valor_por_ponto_no_componente`
+      §0 liga «378» a `linhas_do_livro_com_derivation_nao_nula`
+      §0 liga «416» a `pontos_da_serie_da_inflacao`
+      §0 liga «2» a `mencoes_ao_banco_central_europeu_nas_leituras`
+      §0 liga «16» a `series_no_tempo_no_livro`
+      §0 liga «1» a `series_no_tempo_derivadas`
+      §0 liga «7» a `linhas_presas_a_uma_serie`
+      §0 liga «10» a `linhas_do_ipc_com_as_coordenadas_0014666_ou_0014647`
+      §0 liga «5» a `dessas_as_linhas_principais_sem_o_periodo_anterior`
+      §0 liga «0» a `dessas_as_presas_a_uma_serie`
+      §0 liga «1» a `meses_entre_a_linha_do_ihpc_de_portugal_e_o_ultimo_ponto_da_sua_serie`
+      §0 liga «1» a `meses_entre_a_linha_do_ihpc_de_portugal_e_o_ultimo_ponto_da_sua_serie`
+      §0 liga «13» a `series_no_tempo_com_ponto_no_periodo_de_base_de_2015`
+      §0 liga «6» a `pontos_da_serie_da_remuneracao_bruta_mensal_media`
+      §0 liga «0» a `ficheiros_na_pasta_das_funcoes`
+      §0 liga «1» a `portas_do_rodape_para_escrever_ao_projeto`
+      §0 liga «5» a `ficheiros_de_codigo_que_leem_a_porta_das_correcoes`
+      §0 liga «2» a `vistas_com_formulario`
+      §0 liga «0» a `ficheiros_fonte_que_falam_de_sugestoes`
+      §0 liga «35» a `rotas_declaradas`
+      §0 liga «0» a `rotas_de_sugestoes_declaradas`
+      §0 liga «2» a `tabelas_no_registo_da_base`
+      §0 liga «1» a `funcoes_no_registo_da_base`
+      §0 liga «5» a `envios_por_marca_e_por_hora`
+      §0 liga «200» a `envios_por_dia_na_caixa_inteira`
+      §0 liga «90» a `dias_de_retencao_depois_da_decisao`
+      §0 liga «1» a `papeis_que_podem_chamar_a_funcao`
+      §0 liga «10» a `linhas_da_uniao_nos_blocos`
+      §0 liga «10» a `linhas_da_uniao_nos_blocos`
+      §0 liga «10» a `gemeas_portuguesas`
+      §0 liga «10» a `gemeas_portuguesas`
+      §0 liga «3 009» a `linhas_do_livro`
+      §0 liga «0» a `linhas_de_serie_no_livro`
+      §0 liga «10» a `series_de_paises_no_livro`
+      §0 liga «21» a `cartoes_dos_dois_quadros`
+      §0 liga «2» a `paises_nomeados_em_cada_faixa_hoje`
+      §0 liga «44» a `termos_tecnicos_nas_definicoes_dos_quadros`
+      §0 liga «1205» a `altura_da_pagina_da_uniao_a_390_depois_do_k2`
+    isento por nomeação: BRIEF-B1c-o-que-mudou-no-seu-lugar.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.120)
+    isento por nomeação: BRIEF-I129-o-grupo-etario-dos-jovens-nem.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.119)
+    isento por nomeação: BRIEF-M3b-os-nomes-confirmados-voltam-aos-recibos.md · escrito a 22.09.2026 de manhã, antes de esta regra existir (§1.118)
+    chave repetida entre isentos, dita e não fatal: «BRIEF-fatia» · BRIEF-fatia-css-alcance-2026-09-16.md, BRIEF-fatia-dominios-css-2026-09-15.md · fecha o portão no dia em que um deles deixar de ser isento
+    apagado antes de contar no §0: codigo 580, enderecos 0, seccoes 39, datas 47, resumos 0, ordinais 1, identificadores 34, anos 6
+  ✓ 398 número(s) do §0 ligado(s) à sua medição, cada detetor provou que vê, e os briefs isentos estão presos pelo resumo.

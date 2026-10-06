@@ -1,0 +1,151 @@
+{
+  "brief": "design/observatorio/BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md",
+  "guiao": "design/observatorio/medidas/BRIEF-EX1.py",
+  "cabeca_lida": "3664b90d",
+  "medidas": [
+    {
+      "nome": "linhas_do_orcamento_do_estado_de_2026",
+      "valor": 94,
+      "comando": "git ls-tree 3664b90d:ledger/claims · os ids que casam com /^oe-2026-/",
+      "conhecido_positivo": {
+        "o_que": "a linha dos cem euros da saúde está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_dos_cem_euros_por_funcao",
+      "valor": 10,
+      "comando": "git ls-tree 3664b90d:ledger/claims · os ids que casam com /^oe-2026-cem-euros-funcao-/",
+      "conhecido_positivo": {
+        "o_que": "a função 07 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_dos_cem_euros_por_ministerio",
+      "valor": 16,
+      "comando": "git ls-tree 3664b90d:ledger/claims · os ids que casam com /^oe-2026-cem-euros-ministerio-/",
+      "conhecido_positivo": {
+        "o_que": "o ministério das finanças está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_da_despesa_por_ministerio",
+      "valor": 16,
+      "comando": "git ls-tree 3664b90d:ledger/claims · os ids que casam com /^oe-2026-despesa-ministerio-/",
+      "conhecido_positivo": {
+        "o_que": "a despesa da saúde está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_da_despesa_por_funcao_de_2024",
+      "valor": 30,
+      "comando": "git ls-tree 3664b90d:ledger/claims · os ids que casam com /^despesa-por-funcao-2024-/",
+      "conhecido_positivo": {
+        "o_que": "a função 01 de Portugal está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_da_execucao_orcamental_de_agosto_de_2026",
+      "valor": 31,
+      "comando": "git ls-tree 3664b90d:ledger/claims · os ids que casam com /^execucao-2026-08-/",
+      "conhecido_positivo": {
+        "o_que": "a despesa efetiva da administração central está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_da_divida_publica",
+      "valor": 5,
+      "comando": "git ls-tree 3664b90d:ledger/claims · os ids que casam com /^divida-publica-/",
+      "conhecido_positivo": {
+        "o_que": "a dívida de 2025 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_saldo_das_administracoes_publicas",
+      "valor": 3,
+      "comando": "git ls-tree 3664b90d:ledger/claims · os ids que casam com /^saldo-das-administracoes-publicas-/",
+      "conhecido_positivo": {
+        "o_que": "o saldo de 2025 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_sobre_os_juros_da_divida",
+      "valor": 0,
+      "comando": "git ls-tree 3664b90d:ledger/claims · os ids com «juros», «servico-da-divida» ou «encargos-da-divida»",
+      "conhecido_positivo": {
+        "o_que": "o detetor vê um id com a palavra (a lista inteira tem mais de três mil ids)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_datadas_nas_linhas",
+      "valor": 3870,
+      "comando": "git show 3664b90d:ledger/claims/*.yml · as linhas «- date:» de corrections e verifications",
+      "conhecido_positivo": {
+        "o_que": "há entradas de 05.10.2026",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "entradas_datadas_desde_28_09_2026",
+      "valor": 203,
+      "comando": "as mesmas, com data igual ou posterior a 2026-09-28",
+      "conhecido_positivo": {
+        "o_que": "há entradas de 28.09.2026",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "estudos_publicados",
+      "valor": 18,
+      "comando": "git show 3664b90d:src/data/studies.mjs · as linhas «slug:»",
+      "conhecido_positivo": {
+        "o_que": "o estudo quadro-institucional está no ficheiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rotas_de_explicacoes_no_sitio",
+      "valor": 0,
+      "comando": "git show 3664b90d:src/lib/routes.mjs · as chaves de rota «explicacoes»",
+      "conhecido_positivo": {
+        "o_que": "a rota dos estudos existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "blocos_da_primeira_pagina",
+      "valor": 13,
+      "comando": "git show 3664b90d:src/data/primeira-pagina.mjs · as chaves «id» ao nível dos blocos",
+      "conhecido_positivo": {
+        "o_que": "o bloco dos preços existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "frases_com_ramo_decidido_pelos_numeros_na_primeira_pagina",
+      "valor": 4,
+      "comando": "git show 3664b90d:src/data/primeira-pagina.mjs · os tokens «compara»",
+      "conhecido_positivo": {
+        "o_que": "há um token compara da dívida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_do_menu",
+      "valor": 6,
+      "comando": "git show 3664b90d:src/lib/navegacao.mjs · as entradas de ROTAS_NAV, que o menu rende (git show 3664b90d:src/components/Masthead.astro · ROTAS_NAV.map dentro de #nav-principal)",
+      "conhecido_positivo": {
+        "o_que": "o cabeçalho percorre ROTAS_NAV dentro de #nav-principal, e a porta da União é uma das entradas",
+        "encontrado": true
+      }
+    }
+  ]
+}

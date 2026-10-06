@@ -1,0 +1,178 @@
+{
+  "o_que_e": "FC · as frases compostas da casa dentro de contentores flexíveis e os documentos mais largos do que a janela a 390 px, nas páginas onde as frases compostas se rendem.",
+  "construcao": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+  "construido_em": "2026-10-06T03:19:08.830Z",
+  "resultados": [
+    {
+      "rota": "/",
+      "largura": 390,
+      "pedacos": 6,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/indice/",
+      "largura": 390,
+      "pedacos": 1,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/explicacoes/",
+      "largura": 390,
+      "pedacos": 6,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 390,
+      "pedacos": 29,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "largura": 390,
+      "pedacos": 40,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/en/",
+      "largura": 390,
+      "pedacos": 6,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/en/index/",
+      "largura": 390,
+      "pedacos": 1,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/en/explainers/",
+      "largura": 390,
+      "pedacos": 6,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 390,
+      "pedacos": 29,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "largura": 390,
+      "pedacos": 40,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/",
+      "largura": 1280,
+      "pedacos": 6,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/indice/",
+      "largura": 1280,
+      "pedacos": 1,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/explicacoes/",
+      "largura": 1280,
+      "pedacos": 6,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 1280,
+      "pedacos": 29,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "largura": 1280,
+      "pedacos": 40,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/en/",
+      "largura": 1280,
+      "pedacos": 6,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/en/index/",
+      "largura": 1280,
+      "pedacos": 1,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/en/explainers/",
+      "largura": 1280,
+      "pedacos": 6,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 1280,
+      "pedacos": 29,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "largura": 1280,
+      "pedacos": 40,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "a porta da lista das explicações posta num contentor flexível",
+      "mordeu": true
+    },
+    {
+      "nome": "um elemento mais largo do que a janela a 390 px",
+      "mordeu": true
+    }
+  ],
+  "erros": []
+}

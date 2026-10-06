@@ -1,0 +1,327 @@
+[
+  {
+    "nome": "ex1-semana-data-trocada",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "EX1 · data-semana=\"fim\" rende «01\\.01\\.2000», e o portão conta «06\\.10\\.2026» na janela 2026-09-30\\/2026-10-06"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "423b521d22fae95fd708b117ac65f8a13f67ddaf5e84f041a94cac2941af5a22",
+        "reposto": "423b521d22fae95fd708b117ac65f8a13f67ddaf5e84f041a94cac2941af5a22"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-semana-contagem-trocada",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "EX1 · data-semana=\"relidas\" rende «9999», e o portão conta «90» na janela 2026-09-30\\/2026-10-06"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "af24d63dc48f9ffa47a2ccaba5530ebee16f144ab07c5ee51f5a048f91d68f4a",
+        "reposto": "af24d63dc48f9ffa47a2ccaba5530ebee16f144ab07c5ee51f5a048f91d68f4a"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-semana-janela-de-outro-dia",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "EX1 · a janela da leitura da semana acaba a 2026-10-05, e a construção é de 2026-10-06",
+      "EX1 · explicacoes\\/leitura-da-semana\\/index\\.html: a janela acaba a 2026-10-05, e a construção é de"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/explicacoes/leitura-da-semana/index.html",
+        "antes": "aab9b4eb882a72d7574f55eb194dd1252a5f24fe591071f4bebdc5a46931e52b",
+        "reposto": "aab9b4eb882a72d7574f55eb194dd1252a5f24fe591071f4bebdc5a46931e52b"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-semana-janela-de-oito-dias",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "EX1 · a janela da leitura da semana \\(2026-09-29\\/2026-10-06\\) não tem 7 dias"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/explainers/weekly-reading/index.html",
+        "antes": "714e13c4315f66780a1971349f66bb4637fb35251b5242f2b5d4c9764251ed53",
+        "reposto": "714e13c4315f66780a1971349f66bb4637fb35251b5242f2b5d4c9764251ed53"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-semana-fora-da-porta",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "EX1 · a marca data-semana=\"inicio\" está fora da porta da leitura da semana: fora da página dela, vai dentro de <a href=\"\\/explicacoes\\/leitura-da-semana\">"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "423b521d22fae95fd708b117ac65f8a13f67ddaf5e84f041a94cac2941af5a22",
+        "reposto": "423b521d22fae95fd708b117ac65f8a13f67ddaf5e84f041a94cac2941af5a22"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-semana-mudanca-a-mais",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "EX1 · explicacoes\\/leitura-da-semana\\/index\\.html: a página tem \\d+ mudanças de valor e o portão conta \\d+ na janela [^;]*; a mais planta-ex1-linha-que-nao-mudou"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/explicacoes/leitura-da-semana/index.html",
+        "antes": "aab9b4eb882a72d7574f55eb194dd1252a5f24fe591071f4bebdc5a46931e52b",
+        "reposto": "aab9b4eb882a72d7574f55eb194dd1252a5f24fe591071f4bebdc5a46931e52b"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-semana-mudanca-em-falta",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "EX1 · en\\/explainers\\/weekly-reading\\/index\\.html: a página tem \\d+ mudanças de valor e o portão conta \\d+ na janela [^;]*; faltam "
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/explainers/weekly-reading/index.html",
+        "antes": "714e13c4315f66780a1971349f66bb4637fb35251b5242f2b5d4c9764251ed53",
+        "reposto": "714e13c4315f66780a1971349f66bb4637fb35251b5242f2b5d4c9764251ed53"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-unidade-de-outra-linha",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "unidade de outra linha"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/explicacoes/leitura-da-semana/index.html",
+        "antes": "aab9b4eb882a72d7574f55eb194dd1252a5f24fe591071f4bebdc5a46931e52b",
+        "reposto": "aab9b4eb882a72d7574f55eb194dd1252a5f24fe591071f4bebdc5a46931e52b"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-unidade-com-a-marca-de-outra-linha",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "data-linha-claim=\"taxa-de-emprego-2025\" numa página que não é do livro-razão"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/explicacoes/leitura-da-semana/index.html",
+        "antes": "aab9b4eb882a72d7574f55eb194dd1252a5f24fe591071f4bebdc5a46931e52b",
+        "reposto": "aab9b4eb882a72d7574f55eb194dd1252a5f24fe591071f4bebdc5a46931e52b"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-explicacao-titulo-com-outro-ano",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "EX1 · o <title> desta explicação não é o título declarado"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/explicacoes/dinheiro-do-estado-2026/index.html",
+        "antes": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2",
+        "reposto": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-explicacao-descricao-mudada",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "EX1 · o <meta name=\"description\"> desta explicação não é o título declarado"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/explainers/dinheiro-do-estado-2026/index.html",
+        "antes": "20a5a247618715cf11361628f91e0cadadd814255102ed3fecfe03e44880067b",
+        "reposto": "20a5a247618715cf11361628f91e0cadadd814255102ed3fecfe03e44880067b"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-explicacao-numero-trocado",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a afirmação \"oe-2026-cem-euros-funcao-07\" foi renderizada como \"99,99\""
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/explicacoes/dinheiro-do-estado-2026/index.html",
+        "antes": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2",
+        "reposto": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-f22-barra-fora-de-escala",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "F22 · funcoes: a barra de «oe-2026-cem-euros-funcao-\\d\\d» tem 50% e a escala dá [\\d.]+% \\(fora de escala\\)"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/explicacoes/dinheiro-do-estado-2026/index.html",
+        "antes": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2",
+        "reposto": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-f22-valor-trocado",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "F22 · ministerios: o valor desenhado na barra de «[^»]+» não é o valor dela"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/explainers/dinheiro-do-estado-2026/index.html",
+        "antes": "20a5a247618715cf11361628f91e0cadadd814255102ed3fecfe03e44880067b",
+        "reposto": "20a5a247618715cf11361628f91e0cadadd814255102ed3fecfe03e44880067b"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-indice-sem-as-explicacoes",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node tests/indice/indice.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "I3 pt: a página \\/explicacoes \\(rota «explicacoes»\\) foi construída e não tem porta no índice"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/indice/index.html",
+        "antes": "729f4a216a2b2a94ff137864c1bffbef3c6a68d3210d3be967eac37c8886dada",
+        "reposto": "729f4a216a2b2a94ff137864c1bffbef3c6a68d3210d3be967eac37c8886dada"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-voz-frase-por-classificar",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "bloco por classificar em \\/explicacoes\\/dinheiro-do-estado-2026: «Uma frase nova que ninguém declarou\\.»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/explicacoes/dinheiro-do-estado-2026/index.html",
+        "antes": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2",
+        "reposto": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-voz-ramo-do-sinal-trocado",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a célula da explicação recusou-as em explicacoes\\/dinheiro-do-estado-2026\\/index\\.html: X6 ·"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/explicacoes/dinheiro-do-estado-2026/index.html",
+        "antes": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2",
+        "reposto": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2"
+      }
+    ]
+  },
+  {
+    "nome": "ex1-voz-porta-da-semana-com-outra-frase",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a célula da semana recusou-as em en\\/index\\.html: W3 · a frase da porta difere da conta desta célula"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "af24d63dc48f9ffa47a2ccaba5530ebee16f144ab07c5ee51f5a048f91d68f4a",
+        "reposto": "af24d63dc48f9ffa47a2ccaba5530ebee16f144ab07c5ee51f5a048f91d68f4a"
+      }
+    ]
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "o_que": "a limpeza dos caminhos da máquina nos registos desta pasta (limpar-registos.py)",
+  "ficheiros_limpos": [
+    {
+      "ficheiro": "ex1b/portoes/build.log",
+      "trocas": 1,
+      "sha256_antes": "50dd077e7d3eb081c2a1eb3714bc07ad3eb12b4e6e88136ed4055c71b00e46ed",
+      "sha256_depois": "1fb06798b9c937616cb5d13854ec2d5be775104133f1f0929faebb129ef40d66"
+    },
+    {
+      "ficheiro": "ex1b/portoes/verify.log",
+      "trocas": 2,
+      "sha256_antes": "8777c5714c27a2166fc26b741e4fe76d3827f325f96f333370b966edb0aab88a",
+      "sha256_depois": "b8bb93426f87faeff8c4e39533d46adb1e4920bf67eeebf11b2268312e93ac3e"
+    }
+  ],
+  "ficheiros_limpos_quantos": 2,
+  "trocas": 3,
+  "restos_depois": [],
+  "segunda_corrida": {
+    "trocas": 0,
+    "restos_depois": []
+  }
+}

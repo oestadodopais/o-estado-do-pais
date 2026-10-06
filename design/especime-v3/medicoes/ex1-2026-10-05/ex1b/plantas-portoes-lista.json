@@ -1,0 +1,38 @@
+[
+  {
+    "nome": "r3-rodape-sem-a-porta-do-indice",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "R3 rodapé: o rodapé tem 7 porta\\(s\\) e são 8"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "b97b3c138fe89b7591f652801b1831ea5cb182fb49bf6d2ef5f08866e18613fa",
+        "reposto": "b97b3c138fe89b7591f652801b1831ea5cb182fb49bf6d2ef5f08866e18613fa"
+      }
+    ]
+  },
+  {
+    "nome": "r3-rodape-indice-da-outra-edicao",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "R3 rodapé: a porta 8 do rodapé é «Index» para \\/indice; nesta edição é «Index» para \\/en\\/index"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/themes/index.html",
+        "antes": "ba0671063c3d6a2e2c5587b8abaf0f14559e4c43e78335c537ed13a49277cfda",
+        "reposto": "ba0671063c3d6a2e2c5587b8abaf0f14559e4c43e78335c537ed13a49277cfda"
+      }
+    ]
+  }
+]
