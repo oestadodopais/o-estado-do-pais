@@ -47,7 +47,7 @@ As plantas estragam cópias em memória ou o navegador. Exigem o controlo intact
 
 ${tabelaPlantas(plantas)}
 
-Os ensaios iniciais estão em [ensaios-b/](ensaios-b/). A prova dos títulos encontrou a exigência antiga de riscar o valor anterior na M3. A conferência HTML foi chamada antes de gerar os cartões de partilha, um erro da preparação parcial do construtor. Corrigiu-se a M3 com uma planta de valor errado e geraram-se os cartões antes da corrida completa.
+Os ensaios iniciais estão em [ensaios-b/](ensaios-b/). A prova dos títulos encontrou a exigência antiga de riscar o valor anterior na M3. A conferência HTML foi chamada antes de gerar os cartões de partilha, um erro da preparação parcial do construtor. Corrigiu-se a M3 com uma planta de valor errado e geraram-se os cartões antes da corrida completa. A primeira corrida completa encontrou uma importação sem uso na página da semana, deixada pela extração do componente comum. Essa importação foi retirada e os três portões repetidos na nova cabeça; a tentativa anterior conserva os seus códigos e registos em ensaios-b.
 
 ## Portões na cabeça do código
 
