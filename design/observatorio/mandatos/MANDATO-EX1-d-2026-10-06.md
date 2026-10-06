@@ -1,0 +1,29 @@
+# O mandato da passagem EX1-d (escrito a 06.10.2026, por lançar; lança-se com `construir-codex.sh` numa worktree do ramo do EX2 depois de o EX2 aterrar, ou num ramo novo de `main`)
+
+És o construtor da passagem EX1-d do projeto O Estado do País: três correções ao texto da explicação «Para onde vai o dinheiro do Estado em 2026», no ar desde 06.10.2026 de manhã, decididas pelo lugar de direção (Claude Fable 5.1) a partir dos achados 7 e 8 da leitura a frio do H4 (`design/especime-v3/critica/LEITURA-H4-2026-10-06.md`, que está no ramo `h4-2026-10-06`; o texto dos dois achados vai abaixo). És o Codex `gpt-6-astra` (raciocínio xhigh).
+
+## Onde trabalhas
+
+A worktree em que foste lançado (o `-C`), no ramo `ex2-2026-10-06`, na cabeça em que a passagem EX2-b acabou (lê `git log -1`). Nunca `git checkout` fora dela; nunca `git push`; nunca `git add -A` nem `git add .`, só caminhos explícitos; commits pequenos, cada um com os dois trailers: `Co-Authored-By: Codex gpt-6-astra <noreply@openai.com>` e `Claude-Session: https://claude.ai/code/session_019Dr4reeqSo5uscMFC16k9g`. Lês primeiro `src/data/explicacoes/dinheiro-do-estado-2026.mjs` inteiro (a gramática dos tokens está no cabeçalho e em `src/lib/explicacoes.mjs`), a auditoria das palavras da explicação em `tests/cartao/leituras-provadas.json` (a chave `explicacoes`) e as células X de `tests/explicacoes/explicacao.mjs`.
+
+## Os dois achados, por palavras do leitor
+
+7. «Two-minute test, explainer page, both editions: the page never says what «80 464,5 milhões» spent against «79 618,7 milhões» received means. It does not say that spending ran above revenue by August, or whether that is on budget. A lay reader cannot tell whether it is good or bad.»
+
+8. «It says the largest slice, 33,18, counts the interest on the debt, then says the interest is missing. «…onde a classificação das funções conta os juros da dívida» and «Falta aqui o custo dos juros da dívida» cannot both stand for a reader. An editor would also rewrite «211 891 565 579 euros» as «211,9 mil milhões», and «a de agosto está acima», which reads as «is higher» rather than «is shown above».»
+
+## As decisões do lugar de direção
+
+1. **A frase dos juros (o achado 8).** A frase condicional «Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram.» passa a «Estes números não isolam o custo dos juros da dívida, que o Orçamento também prevê e que entra na função das operações da dívida; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.» (em inglês com o mesmo sentido), e a frase da abertura que diz «onde a classificação das funções conta os juros da dívida e as transferências entre administrações» fica, porque é verdade e as duas deixam de se contradizer. Confirma na origem selada da explicação (a nota metodológica do Orçamento, na auditoria) que a função das operações da dívida é a que conta os juros; se a origem não o disser, a frase nova não nomeia a função e diz só «que entra noutra classificação».
+2. **«A de agosto está acima» (o achado 8).** Passa a «e a execução até agosto é a que esta explicação mostra acima» (em inglês «and the execution to August is the one this explainer shows above»).
+3. **O que o saldo da execução quer dizer (o achado 7).** A secção da execução ganha, a seguir aos valores da despesa e da receita até agosto, uma frase com a linha do saldo global até agosto que o livro já tem (`execucao-2026-08-saldo-global-administracao-central-seguranca-social`, ou a linha do saldo da administração central até agosto se for essa a que corresponde aos dois valores mostrados: mede qual é o perímetro dos dois valores e usa a linha do mesmo perímetro), com o token `sinal` a decidir a palavra: «Até agosto, as contas [do mesmo perímetro] fecharam com um saldo de [valor] [unidade], [um excedente (recebeu mais do que gastou) | um défice (gastou mais do que recebeu) | um saldo nulo]», e, se o livro tiver a linha do saldo previsto para o ano inteiro pelo mesmo perímetro, a comparação «dentro do que o Orçamento previa» / «acima do que o Orçamento previa» pelo token `compara`; se não tiver, a frase fica sem a comparação e o relatório di-lo. Nenhum número se escreve à mão: tudo vem de linhas do livro por tokens.
+4. **O número grande por extenso («211 891 565 579 euros»)** fica como está, porque a casa escreve os valores como a fonte os publica e um arredondamento é uma linha derivada que o motor ainda não tem; anota-se no relatório como EX1-5 para o bloco dos juros e da dívida (o JD1).
+5. A auditoria das palavras da explicação (as partes novas com os seus apoios: as origens seladas ou os campos das linhas), as células X e as plantas mudam com o texto; as capturas da explicação a 390 e a 1 280 px nas duas edições; o relatório `design/especime-v3/medicoes/ex2-2026-10-06/LEIA-ME.md` ganha a secção «A passagem EX1-d»; no fim, os três portões inteiros pela tranca (`sh scripts/leituras/portoes.sh <a tua worktree, caminho absoluto> design/especime-v3/medicoes/ex2-2026-10-06/portoes-d`), os três a 0 na cabeça do código, lidos de ficheiro; o último commit só com o relatório, as capturas e os códigos.
+
+## As regras de sempre
+
+Nenhum número à mão; nenhuma frase cujas palavras não tenham apoio selado ou campo da linha; nenhum caminho da máquina nem o nome do utilizador em ficheiro nenhum; prosa em português sem travessões, as cadeias nas duas línguas; só um portão que protege um número, uma fonte ou uma pessoa te faz parar. As questões novas numeram-se `EX1-5`, `EX1-6`, e assim por diante.
+
+## O que respondes no fim
+
+A cabeça final e a cabeça do código; os commits; os três códigos lidos dos ficheiros; as três frases novas nas duas línguas tal como ficaram na página; a linha do saldo usada e o seu perímetro; o que ficou por fazer e porquê.
