@@ -12,6 +12,10 @@ mudaria. Não toca em nenhuma citação («…»): só nos números de linha.
 import re, subprocess, sys, os
 RAIZ = os.getcwd()
 MAPA = 'design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md'
+# A FUSÃO (06.10.2026): `--mapa <ficheiro>` põe em dia um pedaço do mapa guardado à parte, quando as secções vêm de
+# cabeças diferentes (as do main, contra a cabeça do main; as do EX1, contra a cabeça do ramo antes da fusão).
+if '--mapa' in sys.argv:
+    MAPA = sys.argv[sys.argv.index('--mapa') + 1]
 BASE = sys.argv[1]
 ESCREVER = '--escrever' in sys.argv
 RE_FICH = re.compile(r'`((?:scripts|tests|src|design|ledger|public|registos|studies-src|api|supabase)/[^`\s:]+?\.(?:mjs|astro|json|md|py|yml|js|css|sql)|package\.json|vercel\.json|CLAUDE\.md|DECISIONS\.md)(?::(\d+))?`')
