@@ -20,6 +20,26 @@ export const ORIGENS_JD1 = {
       }
     }
   },
+  "jd1-ine-despesa": {
+    "publicador": "Instituto Nacional de Estatística",
+    "documento": "Procedimento dos Défices Excessivos, setembro de 2026, quadro 9, folha 12",
+    "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=816377733&att_display=n&att_download=y",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "INFORM O COM N IC O SOCI O quadro 9 apresenta a despesa das dministrações Públicas por categoria, para 2024 e 2025. Quadro 9 DESPES S D S DMINISTR ÕES PÚB IC S Taxa de Códigos 2024 2025 variação SEC 2010 106 EUR % Despesa total OTE 122 726,7 130 648,4 6,5 Despesa corrente 112 518,0 118 843,1 5,6 da qual Remunerações dos empregados D.1 30 352,5 32 631,5 7,5 Prestações sociais, exceto transferências sociais em espécie D.62 46 437,1 49 064,2 5,7 Juros D.41 5 983,4 6 028,2 0,7 Despesa de capital D.9+P.5+NP 10 208,7 11 805,3 15,6 despesa total das P registou um aumento de 6,5% entre 2024 e 2025, em resultado do crescimento de 5,6% na despesa corrente e de 15,6% na despesa de capital6. Para o aumento da despesa corrente contribuíram de forma significativa as remunerações dos empregados (crescimento de 7,5%, mais 2 279 milhões de euros), refletindo a atualização generalizada das remunerações dos trabalhadores com vínculo de emprego público, nomeadamente as valorizações nos setores da saúde, do pessoal docente e das forças de segurança. No caso das prestações sociais, exceto transferências sociais em espécie, o aumento foi de 2 627 milhões de euros, correspondendo a uma taxa de crescimento de 5,7%, refletindo as atualizações das pensões enquadradas no regime geral da Segurança Social e da Caixa Geral de posentações, bem como o aumento no número de pensionistas e a atribuição do complemento extraordinário para pensionistas ocorrido em setembro de 2025. Relevam ainda os acréscimos nas outras prestações sociais suportadas pela Segurança Social, em particular as prestações de parentalidade e o complemento solidário para idosos. despesa de capital aumentou 15,6% face a 2024, sendo de destacar o aumento do investimento em 11,7%, em 934 milhões de euros, impulsionado pela aplicação dos fundos europeus do PRR. Na página seguinte é apresentada uma análise da despesa pública por função para 2023 e 2024. 6 Refira-se que a evolução da despesa reflete também o impacto da alteração da classificação setorial da CP – Comboios de Portugal, E.P.E., que passou a ter uma natureza mercantil, sendo classificada no setor das Sociedades Não Financeiras Públicas. ma unidade institucional é considerada mercantil quando cumpre o critério de mercantilidade, isto é, quando as suas vendas, efetuadas a preços economicamente significativos, representam pelo menos 50% dos custos de produção, para um conjunto de anos. análise detalhada das demonstrações financeiras desta entidade determinou a alteração da sua classificação setorial a partir de 2025, saindo do universo das entidades que integram o setor das P para o setor das Sociedades Não Financeiras Públicas. PROCEDIMENTO DOS DÉFICES EXCESSIVOS Setembro de 2026 ine.pt | Difusão e Comunicação - tel: + 351 21 842 61 10 (Chamada para rede fixa nacional) | imprensa@ine.pt 12/14",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/002-ine-pde-setembro-2026.pdf",
+      "hora": "2026-10-06T10:45:57Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d",
+      "campo": "pdftotext -layout, folha 12",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1-2026-10-06/002-ine-pde-setembro-2026.txt",
+        "sha256": "3e8580f92458bba2da44f71d66171bec6cca62c03f5c61dfd3ab069d488f89d4",
+        "ferramenta": "pdftotext version 26.09.0"
+      }
+    }
+  },
   "jd1-eo-conta": {
     "publicador": "Entidade Orçamental",
     "documento": "Síntese da Execução Orçamental, agosto de 2026, folha 7, página impressa 3",

@@ -10,7 +10,7 @@ export const FAMILIAS_JD1 = [
     chaves: ['juros-das-administracoes-publicas'],
     nome: { pt: 'Juros das administrações públicas', en: 'General government interest expenditure' },
     partes: [
-      diz('É a despesa em juros', 'It is interest expenditure', L('name', 'Juros')),
+      diz('É a despesa em juros', 'It is interest expenditure', L('name', 'Juros'), O('jd1-ine-despesa', 'O quadro 9 apresenta a despesa')),
       diz(' das administrações públicas', ' by general government', O('jd1-ine-ambito', 'Administrações Públicas')),
       diz(', nas contas nacionais', ', in national accounts', O('jd1-ine-ambito', 'Sistema Europeu de Contas Nacionais e Regionais 2010')),
       ponto,
@@ -46,7 +46,7 @@ export const FAMILIAS_JD1 = [
     nome: { pt: 'Juros e outros encargos pagos pelas administrações públicas, janeiro a agosto', en: 'Interest and other charges paid by general government, January to August' },
     partes: [
       diz('É a despesa consolidada das administrações públicas com juros e outros encargos', 'It is consolidated general government expenditure on interest and other charges',
-        L('name', 'Juros e outros encargos'), O('jd1-eo-conta', 'Conta consolidada das Administrações Públicas')),
+        L('name', 'Juros e outros encargos'), O('jd1-eo-conta', 'Conta consolidada das Administrações Públicas'), O('jd1-eo-conta', 'Despesa corrente')),
       diz(', acumulada de janeiro a agosto', ', accumulated from January to August', O('jd1-eo-conta', 'Período: janeiro a agosto')),
       diz(', na ótica dos pagamentos', ', on a payments basis', O('jd1-eo-caixa', 'pagamentos e recebimentos ocorridos em determinado período')),
       ponto,

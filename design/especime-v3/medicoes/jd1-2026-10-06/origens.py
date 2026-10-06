@@ -77,6 +77,7 @@ def origem(nome, publicador, documento, *, page=None, anchors=None, clip=False):
 
 origens = {
     "jd1-ine-ambito": origem("ine-pde-setembro-2026.pdf", "Instituto Nacional de Estatística", "Procedimento dos Défices Excessivos, setembro de 2026, folha 2", page=2),
+    "jd1-ine-despesa": origem("ine-pde-setembro-2026.pdf", "Instituto Nacional de Estatística", "Procedimento dos Défices Excessivos, setembro de 2026, quadro 9, folha 12", page=12),
     "jd1-eo-conta": origem("eo-execucao-agosto-2026.pdf", "Entidade Orçamental", "Síntese da Execução Orçamental, agosto de 2026, folha 7, página impressa 3", page=7),
     "jd1-eo-caixa": origem("eo-execucao-agosto-2026.pdf", "Entidade Orçamental", "Síntese da Execução Orçamental, agosto de 2026, folha 44, página impressa 40", page=44,
                            anchors=("A informação apresentada na Síntese", "correspondente pagamento ou recebimento.")),

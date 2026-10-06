@@ -7,6 +7,13 @@
     "alojamento": true
   },
   {
+    "origem": "jd1-ine-despesa",
+    "sha256": "58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
     "origem": "jd1-eo-conta",
     "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
     "literal": true,
