@@ -72,10 +72,13 @@
 /* ── a lista das explicações ─────────────────────────────────── */
 
 .explicacoes-lista { list-style: none; margin: 0; padding: 0; display: grid; row-gap: 6px; max-width: var(--measure); }
+/* Um bloco de texto, e não um contentor flexível: o título leva o ano num pedaço marcado, e num contentor flexível o
+   espaço antes dele apagava-se («em2026»; a mesma razão da porta do bloco «Para perceber» da primeira página). */
 .explicacoes-item a {
-  display: inline-flex;
-  align-items: center;
+  display: block;
   min-height: 44px;
+  padding-block: 10px;
+  box-sizing: border-box;
   font-family: var(--f-prosa);
   font-size: calc(var(--t-leitura) + 1px);
   line-height: 1.35;

@@ -121,6 +121,10 @@ for (const [nome, pt, en] of ROTAS) {
 async function planta(nomeDaPlanta, rota, largura, estraga, mordeu) {
   const { ctx, pagina } = await abre(rota, largura);
   await pagina.evaluate(estraga);
+  /* Com o movimento reduzido, a folha da casa põe a duração das transições em 0,01 ms em todos os elementos, e cada
+     propriedade mudada passa a ser uma transição: medida logo a seguir, a caixa ainda tem o valor antigo. Espera-se por
+     dois fotogramas antes de medir. */
+  await pagina.evaluate(() => new Promise((ok) => requestAnimationFrame(() => requestAnimationFrame(ok))));
   const m = await pagina.evaluate(medir);
   const ok = mordeu(m);
   plantas.push({ nome: nomeDaPlanta, rota, largura, mordeu: ok });
