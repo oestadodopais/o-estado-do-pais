@@ -516,7 +516,13 @@ export function plantasDaExplicacao(dist) {
     out.push({ nome, mordeu: controlo.length === 0 && q.some((x) => mordida.test(x)), queixa: q.join(' | ') || 'nenhuma' });
   };
   const paragrafo = (/** @type {any} */ r, /** @type {string} */ inclui) => r.querySelectorAll('[data-explicacao-paragrafo]').find((/** @type {any} */ p) => normal(p.textContent).includes(inclui));
-  naPagina('o ramo do sinal trocado (excedente por défice)', (r) => { const p = paragrafo(r, 'excedente'); p.set_content(p.innerHTML.replace('excedente', 'défice')); }, /X6 ·/);
+  /* O ramo do sinal que a página mostra depende do valor da linha do saldo: a planta troca o ramo que lá estiver pelo
+     outro, para continuar a morder quando o motor publicar um saldo de outro sinal. */
+  naPagina('o ramo do sinal trocado (excedente por défice, ou o contrário)', (r) => {
+    const [de, para] = paragrafo(r, 'excedente') ? ['excedente', 'défice'] : ['défice', 'excedente'];
+    const p = paragrafo(r, de);
+    p.set_content(p.innerHTML.replace(de, para));
+  }, /X6 ·/);
   naPagina('as palavras de uma condição falsa rendidas (os três programas)', (r) => { const p = paragrafo(r, 'tinham gasto'); p.set_content(p.innerHTML.replace(/\.\s*$/, '; os programas que mais gastaram foram o do Trabalho, Solidariedade e Segurança Social.')); }, /X6 ·/);
   naPagina('o nome de outra função', (r) => { const n = r.querySelector('[data-explicacao-nome="oe-2026-cem-euros-funcao-07"]'); n.set_content('educação'); }, /X6 ·/);
   naPagina('um parágrafo a menos', (r) => { paragrafo(r, 'tinham gasto').remove(); }, /X6 · os parágrafos rendidos/);

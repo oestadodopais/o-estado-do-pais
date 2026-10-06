@@ -714,3 +714,85 @@ planta('rp4cb-zonas-num-cartao','scripts/check-formas.mjs',[
 planta('rp4cb-recibo-sem-zonas','scripts/check-formas.mjs',[
  ['livro-razao/series/serie-ipc-variacao-homologa/index.html',r=>{for(const g of r.querySelector('svg[data-forma="serie-do-pais"]').childNodes.filter(n=>n.rawTagName==='g'&&n.getAttribute('data-eixo')===undefined))g.remove();}]
 ],[/F21 · desenho sem as zonas de leitura fora da porta de um cartão/]);
+
+/* EX1 (05.10.2026): as explicações e a leitura da semana. Estragos sobre páginas realmente construídas, repostos no
+   finally de cada planta e conferidos por sha256; correm fora do `verify`, com `--prefixo ex1-` e `OEDP_MEDICOES` a
+   apontar para a pasta das medições do bloco. A janela e as contagens da semana dependem do dia da construção: as plantas
+   leem-nas da construção e esperam a queixa com elas; o dia de fora é o anterior ao mais antigo dos que o portão aceita
+   (uma construção carimbada na primeira meia hora do dia aceita também o dia anterior); e numa semana sem mudança de
+   valor nenhuma as plantas que estragam uma entrada não se aplicam e dizem-no. */
+const SEMANA_EX1 = (() => {
+ const f = path.join('dist', 'explicacoes/leitura-da-semana/index.html');
+ if (!fs.existsSync(f) || !fs.existsSync(path.join('dist', 'version.json'))) return null;
+ const r = parse(fs.readFileSync(f, 'utf8'));
+ const [inicio, fim] = String(r.querySelector('[data-semana-frase]')?.getAttribute('data-semana-janela') ?? '/').split('/');
+ const d = new Date(JSON.parse(fs.readFileSync(path.join('dist', 'version.json'), 'utf8')).construido_em);
+ const menos = (iso, n) => { const x = new Date(`${iso}T00:00:00Z`); x.setUTCDate(x.getUTCDate() - n); return x.toISOString().slice(0, 10); };
+ const dia = d.toISOString().slice(0, 10);
+ const aceites = d.getUTCHours() === 0 && d.getUTCMinutes() < 30 ? [dia, menos(dia, 1)] : [dia];
+ const relidas = parse(fs.readFileSync(path.join('dist', 'index.html'), 'utf8')).querySelector('[data-para-perceber] [data-semana="relidas"]')?.textContent ?? null;
+ return { inicio, fim, aceites, menos, relidas, entradas: r.querySelectorAll('main [data-semana-mudancas] [data-semana-mudanca]').length };
+})();
+if (SEMANA_EX1 && (!prefixo || 'ex1-'.startsWith(prefixo) || prefixo.startsWith('ex1'))) {
+ const { inicio, fim, aceites, menos, relidas, entradas } = SEMANA_EX1;
+ const fora = menos(aceites[aceites.length - 1], 1);
+ const ESC = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+ planta('ex1-semana-data-trocada','scripts/gate-html.mjs',[
+  ['index.html',r=>r.querySelector('[data-para-perceber] [data-semana="fim"]').set_content('01.01.2000')]
+ ],[new RegExp(`EX1 · data-semana="fim" rende «01\\.01\\.2000», e o portão conta «${ESC(fim.split('-').reverse().join('.'))}» na janela ${ESC(`${inicio}/${fim}`)}`)]);
+ if (relidas !== null) {
+  planta('ex1-semana-contagem-trocada','scripts/gate-html.mjs',[
+   ['en/index.html',r=>r.querySelector('[data-para-perceber] [data-semana="relidas"]').set_content('9999')]
+  ],[new RegExp(`EX1 · data-semana="relidas" rende «9999», e o portão conta «${ESC(relidas)}» na janela ${ESC(`${inicio}/${fim}`)}`)]);
+ } else console.log('ex1: nenhum número foi relido na janela; a planta da contagem das relidas não se aplica.');
+ planta('ex1-semana-janela-de-outro-dia','scripts/gate-html.mjs',[
+  ['explicacoes/leitura-da-semana/index.html',r=>r.querySelector('[data-semana-frase]').setAttribute('data-semana-janela',`${menos(fora,6)}/${fora}`)]
+ ],[new RegExp(`EX1 · a janela da leitura da semana acaba a ${fora}, e a construção é de ${ESC(aceites.join(' ou '))}`),new RegExp(`EX1 · explicacoes/leitura-da-semana/index\\.html: a janela acaba a ${fora}, e a construção é de`)]);
+ planta('ex1-semana-janela-de-oito-dias','scripts/gate-html.mjs',[
+  ['en/explainers/weekly-reading/index.html',r=>r.querySelector('[data-semana-frase]').setAttribute('data-semana-janela',`${menos(inicio,1)}/${fim}`)]
+ ],[new RegExp(`EX1 · a janela da leitura da semana \\(${menos(inicio,1)}/${fim}\\) não tem 7 dias`)]);
+ planta('ex1-semana-fora-da-porta','scripts/gate-html.mjs',[
+  ['index.html',r=>r.querySelector('[data-para-perceber] [data-semana-porta]').setAttribute('href','/correcoes')]
+ ],[/EX1 · a marca data-semana="inicio" está fora da porta da leitura da semana: fora da página dela, vai dentro de <a href="\/explicacoes\/leitura-da-semana">/]);
+ planta('ex1-semana-mudanca-a-mais','scripts/gate-html.mjs',[
+  ['explicacoes/leitura-da-semana/index.html',r=>{const ol=r.querySelector('main [data-semana-mudancas]');const li='<li data-semana-mudanca="planta-ex1-linha-que-nao-mudou" data-correcao-entrada="planta-ex1-linha-que-nao-mudou"></li>';if(ol)ol.insertAdjacentHTML('beforeend',li);else r.querySelector('main [data-semana-frase]').insertAdjacentHTML('afterend',`<ol data-semana-mudancas>${li}</ol>`);}]
+ ],[/EX1 · explicacoes\/leitura-da-semana\/index\.html: a página tem \d+ mudanças de valor e o portão conta \d+ na janela [^;]*; a mais planta-ex1-linha-que-nao-mudou/]);
+ if (entradas > 0) {
+  planta('ex1-semana-mudanca-em-falta','scripts/gate-html.mjs',[
+   ['en/explainers/weekly-reading/index.html',r=>r.querySelector('main [data-semana-mudancas] [data-semana-mudanca]').remove()]
+  ],[/EX1 · en\/explainers\/weekly-reading\/index\.html: a página tem \d+ mudanças de valor e o portão conta \d+ na janela [^;]*; faltam /]);
+  planta('ex1-unidade-de-outra-linha','scripts/gate-html.mjs',[
+   ['explicacoes/leitura-da-semana/index.html',r=>r.querySelector('[data-semana-mudancas] [data-correcao-entrada] [data-linha-campo="unit"]').set_content('unidade de outra linha')]
+  ],[/unidade de outra linha/]);
+  planta('ex1-unidade-com-a-marca-de-outra-linha','scripts/gate-html.mjs',[
+   ['explicacoes/leitura-da-semana/index.html',r=>r.querySelector('[data-semana-mudancas] [data-correcao-entrada] [data-linha-campo="unit"]').setAttribute('data-linha-claim','taxa-de-emprego-2025')]
+  ],[/data-linha-claim="taxa-de-emprego-2025" numa página que não é do livro-razão/]);
+ } else console.log('ex1: a semana não tem mudanças de valor; as plantas da entrada em falta e da unidade não se aplicam.');
+ planta('ex1-explicacao-titulo-com-outro-ano','scripts/gate-html.mjs',[
+  ['explicacoes/dinheiro-do-estado-2026/index.html',r=>{const t=r.querySelector('title');t.set_content(t.text.replace(/\d{4}/,'1999'));}]
+ ],[/EX1 · o <title> desta explicação não é o título declarado/]);
+ planta('ex1-explicacao-descricao-mudada','scripts/gate-html.mjs',[
+  ['en/explainers/dinheiro-do-estado-2026/index.html',r=>r.querySelector('meta[name="description"]').setAttribute('content','Where the money goes')]
+ ],[/EX1 · o <meta name="description"> desta explicação não é o título declarado/]);
+ planta('ex1-explicacao-numero-trocado','scripts/gate-html.mjs',[
+  ['explicacoes/dinheiro-do-estado-2026/index.html',r=>r.querySelector('[data-explicacao-paragrafo] [data-claim="oe-2026-cem-euros-funcao-07"]').set_content('99,99')]
+ ],[/a afirmação "oe-2026-cem-euros-funcao-07" foi renderizada como "99,99"/]);
+ planta('ex1-f22-barra-fora-de-escala','scripts/check-formas.mjs',[
+  ['explicacoes/dinheiro-do-estado-2026/index.html',r=>r.querySelectorAll('figure[data-barras-do-livro="funcoes"] .exp-barra')[1].setAttribute('style','width:50%')]
+ ],[/F22 · funcoes: a barra de «oe-2026-cem-euros-funcao-\d\d» tem 50% e a escala dá [\d.]+% \(fora de escala\)/]);
+ planta('ex1-f22-valor-trocado','scripts/check-formas.mjs',[
+  ['en/explainers/dinheiro-do-estado-2026/index.html',r=>{const t=r.querySelectorAll('figure[data-barras-do-livro="ministerios"] tspan[data-claim]');const a=t[0].text,b=t[1].text;t[0].set_content(b);t[1].set_content(a);}]
+ ],[/F22 · ministerios: o valor desenhado na barra de «[^»]+» não é o valor dela/]);
+ planta('ex1-indice-sem-as-explicacoes','tests/indice/indice.mjs',[
+  ['indice/index.html',r=>r.querySelector('main a[href="/explicacoes"]').remove()]
+ ],[/I3 pt: a página \/explicacoes \(rota «explicacoes»\) foi construída e não tem porta no índice/]);
+ planta('ex1-voz-frase-por-classificar','scripts/check-voz.mjs',[
+  ['explicacoes/dinheiro-do-estado-2026/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>Uma frase nova que ninguém declarou.</p>')]
+ ],[/bloco por classificar em \/explicacoes\/dinheiro-do-estado-2026: «Uma frase nova que ninguém declarou\.»/]);
+ planta('ex1-voz-ramo-do-sinal-trocado','scripts/check-voz.mjs',[
+  ['explicacoes/dinheiro-do-estado-2026/index.html',r=>{const p=r.querySelectorAll('[data-explicacao-paragrafo]').find(x=>/excedente|défice/.test(x.text));const [de,para]=/excedente/.test(p.text)?['excedente','défice']:['défice','excedente'];p.set_content(p.innerHTML.replace(de,para));}]
+ ],[/a célula da explicação recusou-as em explicacoes\/dinheiro-do-estado-2026\/index\.html: X6 ·/]);
+ planta('ex1-voz-porta-da-semana-com-outra-frase','scripts/check-voz.mjs',[
+  ['en/index.html',r=>{const a=r.querySelector('[data-para-perceber] [data-semana-porta]');a.set_content(a.innerHTML.replace(/\.$/,', all of it.'));}]
+ ],[/a célula da semana recusou-as em en\/index\.html: W3 · a frase da porta difere da conta desta célula/]);
+}

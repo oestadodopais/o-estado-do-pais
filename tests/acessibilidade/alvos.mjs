@@ -213,6 +213,12 @@ const FAMILIAS = [
   /* O ÍNDICE (bloco R3, 04.10.2026, o brief R3, §3, ponto 4): as portas das listas e o resumo de cada gaveta dos
      concelhos com o alvo de 44 px, e o axe a zero, nas larguras desta régua. */
   ['indice', null],
+  /* AS EXPLICAÇÕES E A LEITURA DA SEMANA (bloco EX1, 05.10.2026): a lista, a página da semana (as portas das mudanças, o
+     selo de cada uma) e a primeira explicação (os selos do texto, as figuras das barras e a lista dobrada dos números de
+     cada figura), com o axe a zero e os alvos nas larguras desta régua, como as outras páginas do leitor. */
+  ['explicacoes', null],
+  ['leituraDaSemana', null],
+  ['explicacao', { slug: 'dinheiro-do-estado-2026' }],
 ];
 
 /**
@@ -418,6 +424,14 @@ const ESTRAGOS = [
     celulas: ['H2'],
     amostra: '/',
     faz: (html) => html.replaceAll('class="pp-frase"', 'class="pp-x"').replaceAll('class="pp-peca"', 'class="pp-y"').replaceAll('class="pp-caixa-texto"', 'class="pp-z"'),
+  },
+  {
+    /* EX1, 05.10.2026: os selos dos parágrafos de uma explicação fora da prosa corrida. Sem a classe, os selos voltam a
+       contar como caixas, e a H2 cai: é a classe que os dispensa, e só ela. */
+    nome: 'explicacao-sem-classe · os selos dos parágrafos de uma explicação fora da prosa corrida',
+    celulas: ['H2'],
+    amostra: '/explicacoes/dinheiro-do-estado-2026/',
+    faz: (html) => html.replaceAll('class="explicacao-p', 'class="explicacao-x'),
   },
   {
     /* A LISTA ESCONDIDA (H15, bloco R1). O estrago é o defeito que a leitura de
@@ -1024,7 +1038,11 @@ function medeNaPagina(cfg) {
            selo de Portugal, na linha de baixo, cobre); a entrelinha não se estica para 44 px (I127), e cada
            selo continua a ser a porta da sua linha, com a área inteira a 390 px. O estrago
            «leitura-do-lugar-sem-classe» prova que é a classe que os dispensa, e só ela. */
-        naProsaCorrida: !!el.closest?.('.lugar-estudo-leitura, .pais-leitura, .lugar-leitura, .estudos-lista .estudo-resumo, .pp-frase, .pp-peca, .pp-caixa-texto'),
+        /* EX1, 05.10.2026: os parágrafos de uma explicação (`.explicacao-p`) são prosa corrida pela mesma razão: cada valor
+           leva o selo ao lado, e a área de 44 px de um selo cruza a linha vizinha do mesmo parágrafo na faixa dos 641 aos
+           1023 px; a entrelinha não se estica (I127), e cada selo continua a ser a porta da sua linha, com a área inteira a
+           390 px. O estrago «explicacao-sem-classe» prova que é a classe que os dispensa, e só ela. */
+        naProsaCorrida: !!el.closest?.('.lugar-estudo-leitura, .pais-leitura, .lugar-leitura, .estudos-lista .estudo-resumo, .pp-frase, .pp-peca, .pp-caixa-texto, .explicacao-p'),
         /* H16 (bloco S1, 02.10.2026): a porta das sugestões do rodapé e o botão do formulário. */
         portaSugestoes: !!el.closest?.('[data-porta-sugestoes]'),
         botaoSugestoes: !!el.matches?.('[data-sugestoes-formulario] button[type="submit"]'),

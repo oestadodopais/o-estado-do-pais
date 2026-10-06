@@ -124,7 +124,9 @@
   color: var(--ink);
 }
 .exp-numeros-lista { list-style: none; margin: 4px 0 0; padding: 0; display: grid; row-gap: 2px; }
-.exp-numero { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 8px; min-height: 32px; }
+/* A linha da lista tem a altura de um alvo de toque (44 px): a área de 44 px do selo de uma linha não entra na da linha
+   seguinte, que é o que a H2 do `check:alvos` mede na faixa dos 641 aos 1023 px. */
+.exp-numero { display: flex; flex-wrap: wrap; align-items: center; column-gap: 8px; min-height: 44px; }
 .exp-numero-nome { color: var(--muted); }
 .exp-numero-valor { font-weight: 600; font-variant-numeric: tabular-nums lining-nums; }
 

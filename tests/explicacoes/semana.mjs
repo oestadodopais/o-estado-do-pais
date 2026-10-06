@@ -11,7 +11,9 @@
  *     igual dentro da janela e uma entrada fora da janela. O resolvedor e a conta desta célula têm de dar, os dois, o
  *     que cada planta pede (o valor mudado conta uma linha a mais, com a palavra do lado certa; a releitura igual conta
  *     uma relida a mais e nenhuma mudança; a entrada fora da janela não muda nada) e de concordar entre si no livro sem
- *     plantas;
+ *     plantas; e, numa quarta cópia sem entrada nenhuma dentro da janela, as duas contas dão zero nas três contagens e
+ *     a primeira frase do resolvedor é, nas duas edições, a desta célula, com as palavras de nada relido e nada mudado
+ *     (o §5, decisão 2, do brief: uma semana sem releituras diz-se, com a contagem a zero);
  *   · W2 · NA PÁGINA DA SEMANA, nas duas edições: a janela acaba no dia do carimbo da construção; a primeira frase é a
  *     que esta célula compõe das cadeias da casa e das suas contagens; há uma entrada por linha cujo valor mudou, da
  *     mudança mais recente para a mais antiga, cada uma com o valor de antes da primeira mudança e o de depois da
@@ -31,7 +33,9 @@ import { loadClaims } from '../../src/lib/ledger.mjs';
 import { MEDIDA_REUNIDA } from '../../src/lib/pais.mjs';
 import { BLOCOS_DA_PRIMEIRA_PAGINA } from '../../src/data/primeira-pagina.mjs';
 import { limiarDaLinha } from '../../src/lib/primeira-pagina.mjs';
-import { leituraDaSemana } from '../../src/lib/leitura-da-semana.mjs';
+import { leituraDaSemana, primeiraFraseDaSemana } from '../../src/lib/leitura-da-semana.mjs';
+import { dataDaCasa } from '../../src/lib/datas.mjs';
+import { milharesDaCasa } from '../../src/lib/formato.mjs';
 import { t } from '../../src/i18n/strings.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
@@ -198,6 +202,29 @@ export function provaNaCopiaPlantada(fim) {
     const ok = JSON.stringify(r.contagens) === JSON.stringify(r0.contagens) && JSON.stringify(c.contagens) === JSON.stringify(c0.contagens);
     plantas.push({ nome: `uma entrada fora da janela (${lc}, ${fora})`, pediu: 'nada muda', viu: `resolvedor ${JSON.stringify(r.contagens)}, célula ${JSON.stringify(c.contagens)}`, mordeu: ok });
   }
+  {
+    /* Uma semana sem entradas: a cópia tira de todas as linhas as correções e as releituras datadas dentro da janela. */
+    const m = copia();
+    for (const l of m.values()) {
+      if (!l) continue;
+      if (Array.isArray(l.corrections)) l.corrections = l.corrections.filter((/** @type {any} */ c) => !(c?.date >= inicio && c?.date <= fim));
+      if (Array.isArray(l.verifications)) l.verifications = l.verifications.filter((/** @type {any} */ v) => !(v?.date >= inicio && v?.date <= fim));
+    }
+    const r = doResolvedor(m), c = semanaPelaCelula(m, fim);
+    const zero = JSON.stringify({ relidas: 0, valor: 0, proveniencia: 0 });
+    /** @type {string[]} */
+    const frases = [];
+    let iguais = true;
+    for (const lang of /** @type {const} */ (['pt', 'en'])) {
+      const cs = t(lang).semana;
+      const doResolvedorTexto = normal(primeiraFraseDaSemana(r, cs, (iso) => dataDaCasa(iso, lang), (n) => milharesDaCasa(String(n))).map((/** @type {any} */ x) => (typeof x === 'string' ? x : x.texto)).join(''));
+      const daCelula = primeiraFrasePelaCelula(c, lang);
+      frases.push(`${lang}: «${doResolvedorTexto}»`);
+      if (doResolvedorTexto !== daCelula || !daCelula.includes(normal(cs.nenhumRelido)) || !daCelula.includes(normal(cs.nenhumMudou).replace(/\.$/, ''))) iguais = false;
+    }
+    const ok = JSON.stringify(r.contagens) === zero && JSON.stringify(c.contagens) === zero && r.mudancas.length === 0 && c.mudancas.length === 0 && iguais;
+    plantas.push({ nome: `uma semana sem entrada nenhuma dentro da janela (${inicio} a ${fim})`, pediu: 'zero nas três contagens, nenhuma mudança, e a mesma primeira frase com nada relido e nada mudado', viu: `resolvedor ${JSON.stringify(r.contagens)}, célula ${JSON.stringify(c.contagens)}; ${frases.join(' · ')}`, mordeu: ok });
+  }
   for (const p of plantas) if (!p.mordeu) erros.push(`W1 · a planta «${p.nome}» pediu ${p.pediu} e viu ${p.viu}`);
   return { erros, plantas };
 }
@@ -310,12 +337,26 @@ export function plantasDaPaginaDaSemana(dist) {
     const q = conferirPaginaDaSemana(r, 'pt', aceites, linhas);
     return { nome, mordeu: controlo.length === 0 && q.some((x) => mordida.test(x)), queixa: q.join(' | ') || 'nenhuma' };
   };
+  /* A janela depende do dia da construção, e uma semana pode não ter mudança de valor nenhuma: então a planta da mudança a
+     menos passa a uma mudança a mais, e as duas que estragam uma entrada não se aplicam (dizem-no, e a corrida não as
+     conta como falhas); as três plantas da cópia do livro (W1) provam a leitura em qualquer semana. */
+  const comEntradas = parse(html).querySelector('main [data-semana-mudanca]') !== null;
+  /** @param {string} nome */
+  const naoSeAplica = (nome) => ({ nome, mordeu: false, aplica: false, queixa: 'a semana não tem mudanças de valor: a planta não se aplica' });
   return [
-    planta('uma contagem trocada', (r) => { const n = r.querySelector('[data-semana="relidas"]'); n.set_content(String(Number(n.textContent.replace(/\D/g, '')) + 1)); }, /W2 · a primeira frase/),
-    planta('a janela de outro dia', (r) => { const f = r.querySelector('[data-semana-frase]'); f.setAttribute('data-semana-janela', `${menosDias(aceites[0], 7)}/${menosDias(aceites[0], 1)}`); }, /W2 · a janela acaba/),
-    planta('uma mudança a menos', (r) => { r.querySelector('[data-semana-mudanca]').remove(); }, /W2 · as mudanças da página/),
-    planta('a palavra do lado trocada', (r) => { const e = r.querySelector('[data-semana-mudanca]'); const p = e.getAttribute('data-semana-palavra'); e.setAttribute('data-semana-palavra', p === 'subiu' ? 'desceu' : 'subiu'); }, /W2 · .*a palavra do lado/),
-    planta('o valor de antes de outra entrada', (r) => { const v = r.querySelector('[data-semana-mudanca] [data-correcao-campo="old_value"]'); v.setAttribute('data-correcao-n', '99'); }, /W2 · .*o valor de antes/),
+    planta('uma contagem trocada', (r) => { const n = r.querySelector('[data-semana="relidas"]') ?? r.querySelector('[data-semana="fim"]'); n.set_content(n.getAttribute('data-semana') === 'relidas' ? String(Number(n.textContent.replace(/\D/g, '')) + 1) : '01.01.2000'); }, /W2 · a primeira frase/),
+    /* O dia de fora é o anterior ao mais antigo dos aceites: uma construção carimbada na primeira meia hora do dia aceita
+       também o dia anterior, e a planta tem de cair fora dos dois. */
+    planta('a janela de outro dia', (r) => { const f = r.querySelector('[data-semana-frase]'); const fora = menosDias(aceites[aceites.length - 1], 1); f.setAttribute('data-semana-janela', `${menosDias(fora, 6)}/${fora}`); }, /W2 · a janela acaba/),
+    comEntradas
+      ? planta('uma mudança a menos', (r) => { r.querySelector('[data-semana-mudanca]').remove(); }, /W2 · as mudanças da página/)
+      : planta('uma mudança a mais', (r) => { r.querySelector('main [data-semana-frase]').insertAdjacentHTML('afterend', '<ol data-semana-mudancas><li data-semana-mudanca="planta-w2" data-correcao-entrada="planta-w2"></li></ol>'); }, /W2 · as mudanças da página/),
+    comEntradas
+      ? planta('a palavra do lado trocada', (r) => { const e = r.querySelector('[data-semana-mudanca]'); const p = e.getAttribute('data-semana-palavra'); e.setAttribute('data-semana-palavra', p === 'subiu' ? 'desceu' : 'subiu'); }, /W2 · .*a palavra do lado/)
+      : naoSeAplica('a palavra do lado trocada'),
+    comEntradas
+      ? planta('o valor de antes de outra entrada', (r) => { const v = r.querySelector('[data-semana-mudanca] [data-correcao-campo="old_value"]'); v.setAttribute('data-correcao-n', '99'); }, /W2 · .*o valor de antes/)
+      : naoSeAplica('o valor de antes de outra entrada'),
   ];
 }
 
@@ -343,11 +384,11 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     for (const el of els) { portas++; erros.push(...conferirPortaDaSemana(el, lang, aceites, linhas).map((x) => `${f}: ${x}`)); }
   }
   const plantas = prova ? plantasDaPaginaDaSemana(DIST) : [];
-  for (const p of plantas) if (!p.mordeu) erros.push(`W · a planta «${p.nome}» não mordeu: ${p.queixa}`);
+  for (const p of plantas) if (!p.mordeu && /** @type {any} */ (p).aplica !== false) erros.push(`W · a planta «${p.nome}» não mordeu: ${p.queixa}`);
   const s = semanaPelaCelula(linhas, aceites[0]);
-  const resumo = { aceites, janela: s.janela, contagens: s.contagens, mudancas: s.mudancas.length, blocos_que_mudaram: blocosQueMudaramPelaCelula(s, linhas), w1: w1.plantas, portas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu })), erros };
+  const resumo = { aceites, janela: s.janela, contagens: s.contagens, mudancas: s.mudancas.length, blocos_que_mudaram: blocosQueMudaramPelaCelula(s, linhas), w1: w1.plantas, portas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu, aplica: /** @type {any} */ (p).aplica !== false })), erros };
   if (json) fs.writeFileSync(json, JSON.stringify(resumo, null, 2) + '\n');
-  console.log(`W · a leitura da semana: janela ${s.janela.inicio} a ${s.janela.fim}, ${s.contagens.relidas} relidas, ${s.contagens.valor} mudadas de valor, ${s.contagens.proveniencia} de proveniência; W1 ${w1.plantas.filter((p) => p.mordeu).length} de ${w1.plantas.length} plantas na cópia do livro; ${portas} porta(s) da semana conferidas${prova ? `; ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas na página` : ''}.`);
+  console.log(`W · a leitura da semana: janela ${s.janela.inicio} a ${s.janela.fim}, ${s.contagens.relidas} relidas, ${s.contagens.valor} mudadas de valor, ${s.contagens.proveniencia} de proveniência; W1 ${w1.plantas.filter((p) => p.mordeu).length} de ${w1.plantas.length} plantas na cópia do livro; ${portas} porta(s) da semana conferidas${prova ? `; ${plantas.filter((p) => p.mordeu).length} de ${plantas.filter((p) => /** @type {any} */ (p).aplica !== false).length} plantas na página${plantas.some((p) => /** @type {any} */ (p).aplica === false) ? ` (${plantas.filter((p) => /** @type {any} */ (p).aplica === false).length} não se aplicam: a semana não tem mudanças de valor)` : ''}` : ''}.`);
   if (erros.length) {
     console.error(`\n  CÉLULA DA SEMANA · ${erros.length} problema(s):\n${erros.map((x) => `  · ${x}`).join('\n')}`);
     process.exit(1);

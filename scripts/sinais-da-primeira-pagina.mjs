@@ -33,6 +33,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { sinaisDaPrimeiraPagina } from '../src/lib/primeira-pagina.mjs';
+import { sinaisDasExplicacoes } from '../src/lib/explicacoes.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ALVO = process.env.OEDP_SINAIS ?? path.join(RAIZ, '.sinais', 'primeira-pagina.json');
@@ -60,6 +61,23 @@ for (const s of saidas) {
   console.warn(`  SINAL · ${s.peca ? `a peça «${s.peca}» do bloco` : 'o bloco'} «${s.bloco}» saiu da página: ${s.porque.join('; ')}`);
 }
 console.log(`sinais · ${mostrados.length} de ${sinais.length} blocos na primeira página, ${saidas.length} saída(s); o registo está em ${path.relative(RAIZ, ALVO)}.`);
+/* OS SINAIS DAS EXPLICAÇÕES (bloco EX1, 05.10.2026). Uma explicação guarda por condições as frases que comparam ou que
+   dizem uma ausência, e uma condição que deixa de ser verdadeira tira essas palavras da página sem fazer falhar a
+   construção; o sinal fica escrito ao lado do da primeira página, em `.sinais/explicacoes.json`, para o lugar de
+   direção reescrever a frase. Nunca fecha a construção. */
+{
+  const dasExplicacoes = sinaisDasExplicacoes();
+  const alvoDasExplicacoes = path.join(path.dirname(ALVO), 'explicacoes.json');
+  fs.writeFileSync(alvoDasExplicacoes, JSON.stringify({
+    o_que_e: 'As palavras das explicações que as condições declaradas tiraram da página, e porquê. Escrito por scripts/sinais-da-primeira-pagina.mjs a cada corrida, para o lugar de direção.',
+    escrito_em: new Date().toISOString(),
+    explicacoes: dasExplicacoes,
+  }, null, 2) + '\n');
+  for (const e of dasExplicacoes) for (const x of e.sinais) {
+    console.warn(`  SINAL · na explicação «${e.explicacao}», as palavras em ${x.caminho} saíram da página: ${x.condicoes.filter((c) => !c.ok).map((c) => c.texto).join('; ')}`);
+  }
+  console.log(`sinais · ${dasExplicacoes.length} explicação(ões), ${dasExplicacoes.reduce((n, e) => n + e.sinais.length, 0)} frase(s) guardada(s) fora da página; o registo está em ${path.relative(RAIZ, alvoDasExplicacoes)}.`);
+}
 let codigo = mostrados.length < MINIMO_DE_BLOCOS ? 1 : 0;
 if (codigo) console.error(`sinais · a primeira página mostra ${mostrados.length} blocos, e o mínimo é ${MINIMO_DE_BLOCOS}: é mais provável uma avaria do resolvedor do que ${sinais.length - mostrados.length} histórias mudadas de uma vez.`);
 
