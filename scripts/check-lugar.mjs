@@ -263,6 +263,17 @@ const TETOS = {
      recibos das onze séries cuja linha tem cartão, nas duas edições, cada uma com um destino repetido, o recibo da
      linha da frase; nenhuma página antiga ganhou um destino repetido e nenhuma saiu. Fechar a dívida é dar ao selo da
      frase e à porta da lista uma porta só, e leva o teto a 2 714. O horizonte continua a zero. */
+  /* R4-b (06.10.2026): VOLTA DE 2 736 A 2 714, e a medida passou a contar as vezes. A leitura a frio do Codex Astra (o
+     achado 10) mostrou o que a medida do R4 não via: ela comparava, por página, o número de destinos repetidos e um
+     exemplo, e 896 páginas que já repetiam um destino passaram a repeti-lo mais vezes (894 recibos com mais uma porta
+     para o documento, pelo título na cabeça, e a primeira página nas duas edições, pelo selo da explicação dos preços da
+     habitação). A causa corrigiu-se: o título do documento diz-se uma vez no corpo do recibo; a frase de uma série diz o
+     valor da linha pelo ponto da série; o selo do valor numa explicação conferida pela V1-R4 e o marcador de uma frase
+     por confirmar na fonte são portas obrigatórias, descontadas como as outras (`scripts/portas-b2.mjs` e a regra do
+     marcador, acima). A medição (`design/especime-v3/medicoes/r4-2026-10-05/medir-l1-r4b.mjs`) conta as vezes de cada
+     destino repetido, página a página, com a cópia da regra que recusa escrever sem bater com esta régua, e acha as 2 714
+     páginas da cabeça de partida com os mesmos destinos e as mesmas vezes; o conhecido-positivo da omissão das vezes
+     prova que a medida antiga passaria calada. */
   l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.
