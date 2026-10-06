@@ -13807,7 +13807,7 @@ Tudo aterrou dormente, sem nenhum interruptor.
 
 **Afecta:** metodo
 
-**Texto:** metodo 6a96def88b5a
+**Texto:** metodo 9f3b1d4aafd5
 
 **Data:** 06.10.2026 (o brief escrito de manhã pela leitura do diretor no telefone, §1.172; o construtor lançado às 09:17 UTC; quatro passagens do Codex, a última, H4-d, acabada às 15:14 UTC; a leitura a frio do Opus das 12:16 às 12:41; a leitura curta da H4-d pelo Opus das 15:30 às 15:49; a passagem H4-e, a redação reescrita pelo lugar de direção, com as conferências e as provas às 16:03; a leitura da H4-e pelo Codex a seguir; a aterragem numa só fusão com o M-A e o EX2, com a hora no prompt da sessão seguinte).
 
