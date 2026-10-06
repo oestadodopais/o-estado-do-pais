@@ -50,6 +50,9 @@ import { MEDIDAS_DO_DOMINIO_1 } from '../../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO, NOMES_DAS_LINHAS_DERIVADAS } from '../../src/data/nomes-das-medidas.mjs';
 import { TERMOS_DOS_CARTOES } from '../../src/data/termos-dos-cartoes.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
+import { NOMES_DAS_SERIES } from '../../src/data/series-no-tempo.mjs';
+import { FRASES_DAS_SERIES } from '../../src/data/o-que-e-das-series.mjs';
+import { lerSeriesDoPortao } from '../../scripts/series-do-portao.mjs';
 import { folhasDaLeitura, lerAuditoriaDasLeituras, leituraIndependente, corteIndependente, normal, PAGINAS_DA_LEITURA } from './leituras.mjs';
 
 const LITERAL_MINIMO = 4;
@@ -506,6 +509,203 @@ export function conferirRecibosDasLinhas(dist) {
 }
 
 /* =========================================================================
+ * AS SÉRIES NO TEMPO (bloco R4, o ponto 3 do brief): a frase «o que é» de cada série
+ * ========================================================================= */
+
+/**
+ * A linha de onde vem a frase de uma série, pela regra desta célula: a que o nome da série declara, ou a última linha
+ * presa à série pelo campo `serie`, pela ordem do período.
+ * @param {string} id @param {Map<string, any>} linhas @param {Record<string, any>} [nomes]
+ */
+export function linhaDaSerieAqui(id, linhas, nomes = /** @type {Record<string, any>} */ (NOMES_DAS_SERIES)) {
+  const d = nomes[id];
+  if (d && 'linha' in d) return /** @type {string} */ (d.linha);
+  const presas = [...linhas.values()].filter((c) => c.serie === id).sort((a, b) => String(a.reference_date).localeCompare(String(b.reference_date)));
+  return presas.length ? presas[presas.length - 1].id : null;
+}
+
+const CAMPOS_DA_SERIE_FONTE = new Set(['name', 'unit', 'source', 'document.title', 'document.edition']);
+const CAMPOS_DA_SERIE_CASA = new Set(['derivation', 'derivation_en']);
+/** @param {any} s @param {string} c */
+const campoDaSerieAqui = (s, c) => (c === 'document.title' ? s?.document?.title : c === 'document.edition' ? s?.document?.edition : s?.[c]);
+
+/**
+ * A primeira metade, para as séries: cada série no tempo tem a frase da sua linha ou uma frase auditada, nunca as duas;
+ * as partes juntas são a frase declarada; cada parte que diz tem apoio, e cada apoio vale no campo da série, na origem
+ * ou no nome que o projeto dá à série; nenhum algarismo; as origens da lista são as usadas.
+ * @param {{ auditoria?: any, series?: Map<string, any>, frases?: Record<string, any>, linhas?: Map<string, any>, origens?: Record<string, any>, nomes?: Record<string, any> }} [e]
+ */
+export function conferirAuditoriaDasSeries({
+  auditoria = lerAuditoriaDasLeituras(),
+  series = lerSeriesDoPortao(),
+  frases = /** @type {Record<string, any>} */ (FRASES_DAS_SERIES),
+  linhas = loadClaims(),
+  origens = /** @type {Record<string, any>} */ (ORIGENS_DAS_DEFINICOES),
+  nomes = /** @type {Record<string, any>} */ (NOMES_DAS_SERIES),
+} = {}) {
+  /** @type {string[]} */
+  const erros = [];
+  const contas = { series: 0, pela_linha: 0, propria: 0, partes: 0, apoios: 0, todas_na_fonte: 0, alguma_da_casa: 0 };
+  const falha = (/** @type {string} */ m) => erros.push(`K17 · séries · ${m}`);
+  const noTempo = [...series.values()].filter((x) => x.eixo === 'periodo');
+  const entradas = Array.isArray(auditoria?.series) ? auditoria.series : [];
+  if (!noTempo.length) { falha('não há séries no tempo: a célula não mediu nada'); return { erros, contas }; }
+  /** @type {Map<string, any>} */
+  const porSerie = new Map();
+  for (const e of entradas) {
+    if (porSerie.has(e.serie)) falha(`a série «${e.serie}» aparece duas vezes na auditoria`);
+    porSerie.set(e.serie, e);
+  }
+  for (const s of noTempo) {
+    contas.series++;
+    const linha = linhaDaSerieAqui(s.id, linhas, nomes);
+    if (linha) {
+      contas.pela_linha++;
+      if (!linhas.has(linha)) falha(`«${s.id}»: a linha «${linha}» não está no livro-razão`);
+      if (frases[s.id] || porSerie.has(s.id)) falha(`«${s.id}»: tem a linha «${linha}» e uma frase própria; a frase é uma, e é a da linha`);
+      continue;
+    }
+    contas.propria++;
+    if (!frases[s.id]) falha(`«${s.id}»: não tem linha nem frase declarada`);
+    if (!porSerie.has(s.id)) falha(`«${s.id}»: não tem linha nem frase auditada`);
+  }
+  for (const id of Object.keys(frases)) if (!noTempo.some((x) => x.id === id)) falha(`a declaração tem a frase de «${id}», que não é uma série no tempo`);
+  for (const id of porSerie.keys()) if (!noTempo.some((x) => x.id === id)) falha(`a auditoria tem a frase de «${id}», que não é uma série no tempo`);
+
+  for (const e of entradas) {
+    const s = series.get(e.serie);
+    const declarada = frases[e.serie]?.frase;
+    if (!s || !declarada) continue;
+    for (const lang of ['pt', 'en']) for (const p of declarada[lang] ?? []) if (typeof p !== 'string' || /\d/.test(p)) falha(`«${e.serie}» · ${lang}: a frase traz um algarismo ou um pedaço que não é texto`);
+    const folha = Array.isArray(e.folhas) && e.folhas.length === 1 ? e.folhas[0] : null;
+    const partes = Array.isArray(folha?.partes) ? folha.partes : [];
+    const juntas = (/** @type {'pt'|'en'} */ lang) => partes.map((/** @type {any} */ p) => String(p?.[lang] ?? '')).join('');
+    if (!folha || juntas('pt') !== textoDaFrase(declarada.pt) || juntas('en') !== textoDaFrase(declarada.en)) {
+      falha(`«${e.serie}»: as partes juntas não dão a frase declarada, nas duas edições (uma frase mudada precisa de nova leitura das origens)`);
+      continue;
+    }
+    /** @type {Set<string>} */
+    const usadas = new Set();
+    let daFonte = true;
+    for (const [j, p] of partes.entries()) {
+      contas.partes++;
+      const qual = `«${e.serie}», parte ${j + 1} («${curto(String(p?.pt))}»)`;
+      if (p?.classe === 'liga') {
+        for (const lang of ['pt', 'en']) if (String(p[lang] ?? '').replace(PONTUACAO, '') !== '') falha(`${qual}: está marcada como ligação e traz palavras`);
+        continue;
+      }
+      if (p?.classe !== 'diz') { falha(`${qual}: não tem classe (diz ou liga)`); continue; }
+      if (!Array.isArray(p.apoios) || !p.apoios.length) { falha(`${qual}: diz o que a série é e não tem apoio nenhum`); daFonte = false; continue; }
+      let parteDaFonte = false;
+      for (const a of p.apoios) {
+        contas.apoios++;
+        const literal = a?.literal;
+        if (typeof literal !== 'string' || literal.trim().length < LITERAL_MINIMO) { falha(`${qual}: um literal com menos de ${LITERAL_MINIMO} caracteres, que não prende nada`); continue; }
+        if (a.origem) {
+          usadas.add(a.origem);
+          const o = origens[a.origem];
+          if (!o) { falha(`${qual}: apoia-se em «${a.origem}», que não está declarada em ORIGENS_DAS_DEFINICOES`); continue; }
+          if (!['excerto', 'excertoEn', 'documento', 'publicador'].includes(a.campo) || typeof o[a.campo] !== 'string' || !o[a.campo].includes(literal)) { falha(`${qual}: cita «${curto(literal)}», que não está no campo «${a.campo}» da origem «${a.origem}»`); continue; }
+          parteDaFonte = true;
+        } else if (a.declaracao === 'nome') {
+          const n = nomes[e.serie]?.nome?.[a.lingua];
+          if (typeof n !== 'string' || !n.includes(literal)) falha(`${qual}: o nome da série (${a.lingua}) não traz «${curto(literal)}»`);
+        } else if (a.serie === 'propria') {
+          if (!CAMPOS_DA_SERIE_FONTE.has(a.campo) && !CAMPOS_DA_SERIE_CASA.has(a.campo)) { falha(`${qual}: cita o campo «${a.campo}» da série, que não pode apoiar`); continue; }
+          const v = campoDaSerieAqui(s, a.campo);
+          if (typeof v !== 'string' || !v.includes(literal)) { falha(`${qual}: cita «${curto(literal)}», que não está no campo «${a.campo}» da série`); continue; }
+          if (CAMPOS_DA_SERIE_FONTE.has(a.campo)) parteDaFonte = true;
+        } else falha(`${qual}: um apoio sem origem, campo da série nem nome`);
+      }
+      if (!parteDaFonte) daFonte = false;
+    }
+    const declaradas = new Set(e.origens ?? []);
+    for (const o of declaradas) if (!usadas.has(o)) falha(`«${e.serie}»: a origem «${o}» está na lista e não apoia parte nenhuma`);
+    for (const o of usadas) if (!declaradas.has(o)) falha(`«${e.serie}»: a origem «${o}» apoia uma parte e não está na lista`);
+    if (daFonte) contas.todas_na_fonte++; else contas.alguma_da_casa++;
+  }
+  return { erros, contas };
+}
+
+/** O texto de um elemento sem as portas dos selos. @param {any} el */
+const textoSemSelos = (el) => {
+  const c = parse(el.outerHTML);
+  for (const a of c.querySelectorAll('a.src-chip')) a.remove();
+  return normal(c.textContent);
+};
+
+/**
+ * A frase «o que é» de uma linha, pela conta desta célula, sem a metade que compara (a da série não a leva).
+ * @param {string} id @param {'pt'|'en'} lang @param {ReturnType<typeof contextoDasFamilias>} ctx
+ */
+function oQueEDaLinhaAqui(id, lang, ctx) {
+  const f = ctx.familia(id);
+  const cartao = f.tipo === 'cartao' ? id : f.tipo === 'familia' ? ctx.familias[f.chave]?.cartao ?? null : null;
+  if (cartao) {
+    const decl = /** @type {any} */ (LEITURAS_DAS_MEDIDAS)[cartao][lang];
+    return leituraIndependente(cartao, lang, { anterior: null, ue: null }, ctx.linhas, [0, corteIndependente(decl)], id).texto;
+  }
+  if (f.tipo === 'concelho') {
+    const m = MEDIDAS_DO_CONCELHO.find((x) => x.chave === f.chave);
+    return normal(textoDaFrase(m ? /** @type {any} */ (m.nota)[lang] : ctx.doConcelho[f.chave]?.frase?.[lang]));
+  }
+  return normal(textoDaFrase(ctx.familias[f.chave]?.frase?.[lang]));
+}
+
+/**
+ * Um recibo de série, conferido: uma frase «o que é», da série, na cabeça, com a origem e a linha que esta célula dá,
+ * e o texto que ela recompõe. Separado para as plantas.
+ * @param {import('node-html-parser').HTMLElement} root @param {any} s @param {'pt'|'en'} lang
+ * @param {{ ctx: ReturnType<typeof contextoDasFamilias>, frases?: Record<string, any> }} e
+ */
+export function conferirFraseDaSerie(root, s, lang, { ctx, frases = /** @type {Record<string, any>} */ (FRASES_DAS_SERIES) }) {
+  /** @type {string[]} */
+  const erros = [];
+  const falha = (/** @type {string} */ m) => erros.push(`K17 · recibo da série · ${lang} · ${s.id}: ${m}`);
+  const todas = root.querySelectorAll('[data-o-que-e-da-serie]');
+  if (todas.length !== 1) { falha(`o recibo tem ${todas.length} frase(s) «o que é», e tem uma`); return erros; }
+  const el = todas[0];
+  if (el.getAttribute('data-o-que-e-da-serie') !== s.id) falha(`a frase diz ser de «${el.getAttribute('data-o-que-e-da-serie')}»`);
+  if (!el.closest('.linha-cabeca')) falha('a frase está fora da cabeça do recibo');
+  const linha = linhaDaSerieAqui(s.id, ctx.linhas);
+  const origem = linha ? 'linha' : 'serie';
+  if (el.getAttribute('data-o-que-e-origem') !== origem || (el.getAttribute('data-o-que-e-linha') ?? null) !== linha) {
+    falha(`a frase diz vir de «${el.getAttribute('data-o-que-e-origem')}:${el.getAttribute('data-o-que-e-linha') ?? ''}», e vem de «${origem}:${linha ?? ''}»`);
+  }
+  const frase = el.querySelector('.linha-o-que-e-frase');
+  const rendido = frase ? textoSemSelos(frase) : '';
+  let esperado = null;
+  try {
+    esperado = linha ? oQueEDaLinhaAqui(linha, lang, ctx) : normal(textoDaFrase(frases[s.id]?.frase?.[lang]));
+  } catch (e) {
+    falha(`a conta desta célula não recompõe a frase: ${e instanceof Error ? e.message : e}`);
+  }
+  if (esperado !== null && rendido !== esperado) falha(`a frase rendida não é a que a conta desta célula dá: «${curto(rendido)}» contra «${curto(esperado)}»`);
+  if (!esperado) falha('a frase está vazia');
+  return erros;
+}
+
+/** A segunda metade, para as séries: os recibos das séries no tempo, nas duas edições. @param {string} dist */
+export function conferirRecibosDasSeries(dist) {
+  /** @type {string[]} */
+  const erros = [];
+  const contas = { recibos: 0, com_frase: 0 };
+  const ctx = contextoDasFamilias();
+  for (const s of [...lerSeriesDoPortao().values()].filter((x) => x.eixo === 'periodo')) {
+    for (const lang of /** @type {const} */ (['pt', 'en'])) {
+      const f = path.join(dist, ...(lang === 'en' ? ['en', 'ledger', 'series'] : ['livro-razao', 'series']), s.id, 'index.html');
+      if (!fs.existsSync(f)) { erros.push(`K17 · recibo da série · ${lang} · ${s.id}: o recibo não está construído`); continue; }
+      contas.recibos++;
+      const e = conferirFraseDaSerie(parse(fs.readFileSync(f, 'utf8')), s, lang, { ctx });
+      erros.push(...e);
+      if (!e.length) contas.com_frase++;
+    }
+  }
+  if (!contas.recibos) erros.push('K17 · recibos das séries: nenhum recibo lido; a célula não mediu nada');
+  return { erros, contas };
+}
+
+/* =========================================================================
  * AS PLANTAS, todas em memória
  * ========================================================================= */
 
@@ -595,6 +795,38 @@ export function plantasDasFamilias(dist) {
     const c = /** @type {any} */ (recibo('abrantes-populacao-2025', 'pt'));
     c.querySelector('[data-lugar-da-linha]').set_content('Viseu');
     regista('o concelho trocado no título', conferir(c, 'abrantes-populacao-2025', 'pt'), 'o título diz o lugar');
+  }
+  /* AS SÉRIES: a auditoria e os recibos. */
+  {
+    const frases = structuredClone(/** @type {Record<string, any>} */ (FRASES_DAS_SERIES));
+    delete frases['serie-ipc-indice'];
+    const a = structuredClone(base);
+    a.series = a.series.filter((/** @type {any} */ x) => x.serie !== 'serie-ipc-indice');
+    regista('uma série sem frase', conferirAuditoriaDasSeries({ auditoria: a, frases }).erros, 'não tem linha nem frase declarada');
+  }
+  {
+    const frases = structuredClone(/** @type {Record<string, any>} */ (FRASES_DAS_SERIES));
+    frases['serie-ipc-indice'].frase.pt = [frases['serie-ipc-indice'].frase.pt[0].replace('mês a mês', 'semana a semana')];
+    regista('a frase de uma série mudada sem nova auditoria', conferirAuditoriaDasSeries({ frases }).erros, 'as partes juntas não dão a frase declarada');
+  }
+  {
+    const a = structuredClone(base);
+    const e = a.series.find((/** @type {any} */ x) => x.serie === 'serie-ipc-indice');
+    const p = e.folhas[0].partes.find((/** @type {any} */ x) => x.apoios?.some((/** @type {any} */ y) => y.serie === 'propria' && y.campo === 'name' && y.literal === '; Mensal - INE'));
+    p.apoios.find((/** @type {any} */ y) => y.literal === '; Mensal - INE').literal = '; Semanal - INE';
+    regista('um literal que o campo da série não tem', conferirAuditoriaDasSeries({ auditoria: a }).erros, 'que não está no campo «name» da série');
+  }
+  {
+    const s = lerSeriesDoPortao().get('serie-ipc-rendas-variacao-homologa');
+    const root = parse(fs.readFileSync(path.join(dist, 'livro-razao', 'series', s.id, 'index.html'), 'utf8'));
+    root.querySelector('[data-o-que-e-da-serie]')?.remove();
+    regista('um recibo de série sem a frase', conferirFraseDaSerie(root, s, 'pt', { ctx }), 'frase(s) «o que é»');
+  }
+  {
+    const s = lerSeriesDoPortao().get('serie-ipc-indice');
+    const root = parse(fs.readFileSync(path.join(dist, 'en', 'ledger', 'series', s.id, 'index.html'), 'utf8'));
+    root.querySelector('[data-o-que-e-da-serie] .linha-o-que-e-frase')?.set_content(textoDaFrase(/** @type {any} */ (FRASES_DAS_SERIES)['serie-ipc-indice-anual'].frase.en));
+    regista('a frase de outra série no recibo', conferirFraseDaSerie(root, s, 'en', { ctx }), 'a frase rendida não é a que a conta desta célula dá');
   }
   return out;
 }

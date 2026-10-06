@@ -406,6 +406,10 @@ export function conferirAuditoriaDasLeituras({
   for (const d of Object.values(perguntas)) for (const o of d?.origens ?? []) usadas.add(o);
   for (const d of Object.values(paineis)) for (const o of d?.origens ?? []) usadas.add(o);
   for (const o of origensCitadas(blocos)) usadas.add(o);
+  /* R4 (05.10.2026): as frases das famílias e das séries, na mesma auditoria, também usam origens; uma origem que só
+     apoia uma delas está usada (a célula das famílias, `familias.mjs`, confere-lhe o literal). */
+  for (const o of origensCitadas(auditoria.familias ?? [])) usadas.add(o);
+  for (const o of origensCitadas(auditoria.series ?? [])) usadas.add(o);
   for (const chave of Object.keys(origens)) {
     if (!usadas.has(chave)) erros.push(`K17 · origem «${chave}»: está declarada e não apoia pergunta, painel, leitura ou bloco da primeira página nenhum`);
   }

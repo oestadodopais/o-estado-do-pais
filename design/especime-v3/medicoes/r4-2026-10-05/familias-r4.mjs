@@ -249,7 +249,7 @@ const UNIAO_COM_FRASE_PROPRIA = [
         O('rp1-ihpc-homologa', 'the annual rate of change, representing the percentage change in a reference month compared to the same month of the previous year')),
       diz(', na medida harmonizada que serve para comparar os países da União Europeia', ', on the harmonised measure used to compare the countries of the European Union',
         O('rp1-ihpc-comparavel', 'The Harmonised Index of Consumer Prices ( HICP) gives comparable measures of inflation for the countries and country groups for which it is produced.')),
-      diz('; o valor da União é uma média dos países, ponderada pelo peso de cada um.', '; the European Union’s value is an average of the countries, weighted by the weight of each.',
+      diz('; o valor da União é uma média dos países, ponderada pelo peso de cada um.', '; the European Union’s value is an average of the countries, weighted by each country’s weight.',
         O('rp1-ihpc-uniao', 'computed with a weighted average of the HICP sub-indices transmitted by the NSIs and the weights of the countries')),
     ],
   },
