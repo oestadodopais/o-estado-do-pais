@@ -21,7 +21,7 @@
 #   4. vigia a Vercel, um pedido por minuto, até ver o lançamento de produção
 #      pronto com esta cabeça no /version.json;
 #   5. corre o npm run verify:deploy;
-#   6. vigia a corrida de main no GitHub até ela acabar.
+#   6. diz o endereço da corrida de main, sem esperar por uma prova repetida.
 #
 # Nenhum caminho desta máquina fica escrito aqui: a árvore principal lê-se do Git,
 # o motor lê-se de OEDP_MOTOR ou de $HOME/Instruments/ResearchHub, e os registos
@@ -117,17 +117,13 @@ VD=$?
 echo "   verify:deploy código $VD"
 [ $VD -eq 0 ] || para 41 "o verify:deploy falhou"
 
-# ------------------------------------------------------ 6. a corrida de main
-echo "== corrida de main às $(agora) UTC"
-ID=""
-for i in {1..10}; do
-  ID="$(gh run list --repo "$REPO" --branch main --limit 5 --json databaseId,headSha --jq ".[] | select(.headSha == \"$CHEIA\") | .databaseId" | head -1)"
-  [ -n "$ID" ] && break
-  sleep 30
-done
-[ -n "$ID" ] || para 42 "não apareceu a corrida de main para $CURTA"
-gh run watch "$ID" --repo "$REPO" --interval 60 --exit-status > "$LOGS/corrida-main.log" 2>&1
-C=$?
-gh run view "$ID" --repo "$REPO" --json databaseId,status,conclusion,updatedAt --jq '"   corrida \(.databaseId) \(.status)/\(.conclusion) \(.updatedAt)"'
-[ $C -eq 0 ] || para 43 "a corrida de main não acabou verde"
-echo "ATERROU: $CURTA no ar, verify:deploy verde, corrida de main verde · $(agora) UTC"
+# ------------------------------------------------------ 6. o endereço da corrida
+# M-A: a cabeça já passou o check-run exigido no passo 1. A publicação de main
+# lança outra corrida; dá-se a ligação para a acompanhar sem a tornar uma espera.
+ENDERECO="$(gh run list --repo "$REPO" --workflow portao.yml --branch main --commit "$CHEIA" --limit 1 --json url --jq '.[0].url // empty' 2> "$LOGS/corrida-main.err")"
+if [ -n "$ENDERECO" ]; then
+  echo "   corrida de main: $ENDERECO"
+else
+  echo "   a corrida de main ainda não se leu; acompanhar https://github.com/$REPO/actions/workflows/portao.yml?query=branch%3Amain"
+fi
+echo "ATERROU: $CURTA no ar, verify:deploy verde, portao já conferido nesta cabeça · $(agora) UTC"

@@ -1,0 +1,47 @@
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "sem-ramo",
+      "codigo": 14,
+      "mensagem": "PAROU: o ramo ramo-sintetico não existe (código 14)",
+      "passou": true
+    },
+    {
+      "planta": "cabeca-errada",
+      "codigo": 15,
+      "mensagem": "PAROU: a cabeça de ramo-sintetico é aaaaaaaa, e não bbbb (código 15)",
+      "passou": true
+    },
+    {
+      "planta": "sem-main",
+      "codigo": 16,
+      "mensagem": "PAROU: main não está dentro de ramo-sintetico: a fusão não seria um avanço rápido (código 16)",
+      "passou": true
+    },
+    {
+      "planta": "sem-origin",
+      "codigo": 17,
+      "mensagem": "PAROU: origin/main não está dentro de ramo-sintetico (código 17)",
+      "passou": true
+    },
+    {
+      "planta": "sem-check",
+      "codigo": 18,
+      "mensagem": "PAROU: a verificação portao da cabeça aaaaaaaa não está verde (diz «nada») (código 18)",
+      "passou": true
+    },
+    {
+      "planta": "vermelho",
+      "codigo": 18,
+      "mensagem": "PAROU: a verificação portao da cabeça aaaaaaaa não está verde (diz «failure») (código 18)",
+      "passou": true
+    },
+    {
+      "planta": "verde",
+      "codigo": 0,
+      "mensagem": "ATERROU: aaaaaaaa no ar, verify:deploy verde, portao já conferido nesta cabeça · 09:57:38 UTC",
+      "passou": true
+    }
+  ]
+}
