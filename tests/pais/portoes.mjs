@@ -809,7 +809,8 @@ const PRIMEIRO_PROGRAMA_EX1B = (() => {
  const n = parse(fs.readFileSync(f, 'utf8')).querySelectorAll('[data-explicacao-paragrafo] [data-explicacao-nome]').find((x) => /^execucao-2026-08-despesa-programa-/.test(String(x.getAttribute('data-explicacao-nome'))));
  return n ? String(n.getAttribute('data-explicacao-nome')) : null;
 })();
-if (!prefixo || prefixo.startsWith('ex1b')) {
+/* EX1-c: o bloco corre também com `--prefixo ex1` (o filtro de `planta()` escolhe pelo nome). */
+if (!prefixo || prefixo.startsWith('ex1b') || 'ex1b-'.startsWith(prefixo)) {
  planta('ex1b-rodape-sem-a-porta-das-explicacoes','scripts/gate-html.mjs',[
   ['temas/index.html',r=>r.querySelector('nav.rodape-nav a[href="/explicacoes"]').remove()]
  ],[/R3 rodapé: o rodapé tem 7 porta\(s\) e são 8/]);
@@ -824,9 +825,8 @@ if (!prefixo || prefixo.startsWith('ex1b')) {
    ['en/explainers/dinheiro-do-estado-2026/index.html',r=>r.querySelector(`[data-explicacao-paragrafo] [data-claim="${PRIMEIRO_PROGRAMA_EX1B}"]`).set_content('99,9')]
   ],[new RegExp(`a afirmação "${PRIMEIRO_PROGRAMA_EX1B}" foi renderizada como "99,9"`)]);
  } else console.log('ex1b: o token «maiores» não se rende nesta construção; as plantas da ordem e do valor dos programas não se aplicam.');
- planta('ex1b-porta-do-tema-tirada','scripts/check-voz.mjs',[
-  ['explicacoes/dinheiro-do-estado-2026/index.html',r=>r.querySelector('[data-explicacao-portas] a[data-explicacao-porta-do-fim="estado-e-economia"]').remove()]
- ],[/a célula da explicação recusou-as em explicacoes\/dinheiro-do-estado-2026\/index\.html: X8 · as portas do fim/]);
+ /* A planta da porta do tema saiu no EX1-c, com a porta (o achado 7 da leitura a frio); a da porta dos números está no
+    bloco do EX1-c, abaixo. */
  planta('ex1b-frase-dos-dois-totais-mudada','scripts/check-voz.mjs',[
   ['en/explainers/dinheiro-do-estado-2026/index.html',r=>{const p=r.querySelector('[data-explicacao-paragrafo="seccoes[1].conteudo[2].paragrafo"]');p.set_content(p.innerHTML.replace('different things','the same thing'));}]
  ],[/a célula da explicação recusou-as em en\/explainers\/dinheiro-do-estado-2026\/index\.html: X6 · o parágrafo seccoes\[1\]\.conteudo\[2\]\.paragrafo difere da conta/]);
@@ -836,4 +836,50 @@ if (!prefixo || prefixo.startsWith('ex1b')) {
  planta('ex1b-transbordo-a-390','tests/explicacoes/frases-compostas.mjs',[
   ['explicacoes/leitura-da-semana/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<div style="width:2000px;height:1px"></div>')]
  ],[/FC2 · \/explicacoes\/leitura-da-semana\/ a 390 px: o documento tem \d+ px numa janela de 390/]);
+}
+
+/* EX1-c (06.10.2026, a passagem depois da leitura a frio do Codex Astra): estragos sobre páginas realmente construídas,
+   repostos no finally de cada planta e conferidos por sha256; correm fora do `verify`, com `--prefixo ex1c-` (ou
+   `--prefixo ex1`) e `OEDP_MEDICOES` a apontar para a pasta das medições. As linhas em que só o literal mudou contam-se à
+   parte (o achado 5); a porta do fim é só a dos números (o achado 7); o lado da dívida é o que a comparação decide (o
+   achado 9); os nomes dos ministérios são os declarados (o achado 12); uma marca solta não sai do inventário (o achado
+   14); e cada figura declarada tem de estar na página (o achado 15). As plantas da semana leem a construção e só se
+   aplicam quando ela tem mudanças só da forma de escrever. */
+const FORMAS_EX1C = (() => {
+ const f = path.join('dist', 'explicacoes/leitura-da-semana/index.html');
+ if (!fs.existsSync(f)) return null;
+ const r = parse(fs.readFileSync(f, 'utf8'));
+ const li = r.querySelector('main [data-semana-formas] [data-semana-forma]');
+ const contagem = parse(fs.readFileSync(path.join('dist', 'index.html'), 'utf8')).querySelector('[data-para-perceber] [data-semana="forma"]')?.textContent ?? null;
+ return { primeira: li ? String(li.getAttribute('data-semana-forma')) : null, contagem };
+})();
+if (!prefixo || prefixo.startsWith('ex1c') || 'ex1c-'.startsWith(prefixo)) {
+ if (FORMAS_EX1C?.primeira) {
+  planta('ex1c-semana-forma-contada-como-valor','scripts/gate-html.mjs',[
+   ['explicacoes/leitura-da-semana/index.html',r=>{const li=r.querySelector('main [data-semana-formas] [data-semana-forma]');const id=li.getAttribute('data-semana-forma');li.removeAttribute('data-semana-forma');li.setAttribute('data-semana-mudanca',id);r.querySelector('main [data-semana-mudancas]').appendChild(li);}]
+  ],[new RegExp(`EX1 · explicacoes/leitura-da-semana/index\\.html: a página tem \\d+ mudanças de valor e o portão conta \\d+ na janela [^;]*; a mais ${FORMAS_EX1C.primeira}`)]);
+ } else console.log('ex1c: a semana não tem mudanças só da forma de escrever; a planta da forma contada como valor não se aplica.');
+ if (FORMAS_EX1C?.contagem) {
+  planta('ex1c-semana-contagem-da-forma-trocada','scripts/gate-html.mjs',[
+   ['en/index.html',r=>r.querySelector('[data-para-perceber] [data-semana="forma"]').set_content('99')]
+  ],[new RegExp(`EX1 · data-semana="forma" rende «99», e o portão conta «${FORMAS_EX1C.contagem}»`)]);
+ } else console.log('ex1c: a primeira frase da semana não nomeia mudanças só da forma; a planta da contagem delas não se aplica.');
+ planta('ex1c-porta-dos-numeros-tirada','scripts/check-voz.mjs',[
+  ['explicacoes/dinheiro-do-estado-2026/index.html',r=>r.querySelector('[data-explicacao-portas] a[data-explicacao-porta-do-fim="livro"]').remove()]
+ ],[/a célula da explicação recusou-as em explicacoes\/dinheiro-do-estado-2026\/index\.html: X8 · (falta a porta|as portas do fim)/]);
+ planta('ex1c-lado-da-divida-trocado','scripts/check-voz.mjs',[
+  ['explicacoes/dinheiro-do-estado-2026/index.html',r=>{const p=r.querySelectorAll('[data-explicacao-paragrafo]').find(x=>/acima dos|abaixo dos/.test(x.text));const [de,para]=/acima dos/.test(p.text)?['acima dos','abaixo dos']:['abaixo dos','acima dos'];p.set_content(p.innerHTML.replace(de,para));}]
+ ],[/a célula da explicação recusou-as em explicacoes\/dinheiro-do-estado-2026\/index\.html: X6 · o parágrafo seccoes\[3\]\.conteudo\[0\]\.paragrafo difere da conta/]);
+ planta('ex1c-nome-de-um-ministerio-trocado','scripts/check-voz.mjs',[
+  ['en/explainers/dinheiro-do-estado-2026/index.html',r=>r.querySelector('[data-explicacao-paragrafo] [data-explicacao-nome="oe-2026-cem-euros-ministerio-financas"]').set_content('Finance')]
+ ],[/a célula da explicação recusou-as em en\/explainers\/dinheiro-do-estado-2026\/index\.html: X6 · o parágrafo seccoes\[1\]\.conteudo\[0\]\.paragrafo difere da conta/]);
+ planta('ex1c-marca-declarada-solta','scripts/check-voz.mjs',[
+  ['explicacoes/dinheiro-do-estado-2026/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p data-explicacao-declarado>Uma frase que ninguém compara.</p>')]
+ ],[/a célula da explicação recusou-as em explicacoes\/dinheiro-do-estado-2026\/index\.html: X · a marca das palavras declaradas está num sítio que a célula da explicação não confere/]);
+ planta('ex1c-marca-da-semana-solta','scripts/check-voz.mjs',[
+  ['en/explainers/weekly-reading/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p data-semana-declarado>A sentence that nobody compares.</p>')]
+ ],[/a célula da semana recusou-as em en\/explainers\/weekly-reading\/index\.html: W · a marca das frases compostas da semana está num sítio que esta célula não confere/]);
+ planta('ex1c-f22-figura-em-falta','scripts/check-formas.mjs',[
+  ['explicacoes/dinheiro-do-estado-2026/index.html',r=>r.querySelector('[data-instrumento="explicacao-dinheiro-do-estado-2026-ministerios"]').remove()]
+ ],[/F22 · a figura declarada «ministerios» da explicação «dinheiro-do-estado-2026» não está na página/]);
 }
