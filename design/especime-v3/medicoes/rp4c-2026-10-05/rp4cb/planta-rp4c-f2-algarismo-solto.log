@@ -1,0 +1,10 @@
+F1 · plantas «em 2.º trimestre» e «in 2nd quarter» recusadas; controlos íntegros aceites.
+F21 · 82 desenhos recompostos · 15 provas do módulo · 21 de 21 plantas em memória · RP4-c: 20 de 20 plantas da leitura e da legenda
+F2 · RP4-c: 18948 valores e períodos de pontos nos desenhos, cada um comparado com o seu ponto · 6 de 6 plantas em memória
+[31m
+  PORTÃO DAS FORMAS · 2 problema(s):
+[0m
+  · dist/precos/index.html: F21 · geometria ou texto acrescentado fora da escala e da leitura
+  · dist/precos/index.html: a forma "serie-do-pais" desenha «7», que tem algarismos e não resolve numa linha nem numa marca de escala declarada.
+      Um número desenhado é <Claim as="text"/> ou data-nonledger="escala-de-instrumento".
+

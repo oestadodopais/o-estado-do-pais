@@ -652,6 +652,68 @@ planta('h3-indice-sem-a-privacidade','tests/indice/indice.mjs',[
 planta('h3-voz-este-sitio-noutra-frase-da-privacidade','scripts/check-voz.mjs',[
  ['privacidade/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>Este sítio diz o que guarda.</p>')]
 ],[/marcador\(es\): ste sítio/]);
+/* RP4-c (05.10.2026): as ajudas de leitura do gráfico das séries. Estragos sobre páginas realmente construídas, repostos
+   no finally de cada planta e conferidos por sha256; correm fora do `verify`, com `--prefixo rp4c-` e `OEDP_MEDICOES` a
+   apontar para a pasta das medições do bloco. A origem nova do portão de HTML (`data-ponto-periodo`) é uma comparação:
+   um período trocado, um período de outro ponto ao lado do valor, um período fora de um desenho e um período sem a sua
+   marca têm de ser recusados; o valor de um ponto trocado na etiqueta também. A F2 recusa um algarismo solto num
+   desenho e a F21 uma marca sem o símbolo da unidade e a legenda da unidade tirada; o formato dos números recusa o «%»
+   colado numa marca e o símbolo do euro numa marca (a paragem do ponto 1: a §1.127, decisão 4). */
+const primeiraEtiqueta = (r) => r.querySelector('svg[data-forma="serie-do-pais"] [data-ponto-periodo]');
+/* RP4-c-b: a primeira zona do desenho da primeira página lê o ponto mais próximo da primeira coluna, que depende dos dados
+   (com as colunas, deixou de ser sempre janeiro de 1992). As plantas leem-na da construção e esperam a queixa com ela. */
+const ESCAPA = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const etiquetaDaConstrucao = (rel) => {
+ const t = primeiraEtiqueta(parse(fs.readFileSync(path.join('dist', rel), 'utf8')));
+ return { periodo: String(t?.getAttribute('data-ponto-periodo') ?? '#').split('#')[1], texto: t?.textContent ?? '' };
+};
+const PRIMEIRA_PT = etiquetaDaConstrucao('index.html');
+const PRIMEIRA_EN = etiquetaDaConstrucao('en/index.html');
+/* RP4-c-b: o período trocado é um período fixo de outro ponto (com as zonas por colunas, a segunda zona já não é a do mês
+   seguinte, e a planta não pode depender disso). */
+planta('rp4c-periodo-trocado','scripts/gate-html.mjs',[
+ ['index.html',r=>primeiraEtiqueta(r).set_content('dezembro de 1999')]
+],[new RegExp(`RP4-c: o período do ponto «${ESCAPA(PRIMEIRA_PT.periodo)}» da série «serie-ipc-variacao-homologa» foi renderizado como «dezembro de 1999» e a forma da casa é «${ESCAPA(PRIMEIRA_PT.texto)}»`)]);
+planta('rp4c-periodo-de-outro-ponto','scripts/gate-html.mjs',[
+ ['index.html',r=>primeiraEtiqueta(r).setAttribute('data-ponto-periodo','serie-ipc-variacao-homologa#1999-12')]
+],[new RegExp(`RP4-c: o período do ponto «1999-12» da série «serie-ipc-variacao-homologa» foi renderizado como «${ESCAPA(PRIMEIRA_PT.texto)}»`),/RP4-c: a etiqueta do período «serie-ipc-variacao-homologa#1999-12» não tem ao lado o valor do mesmo ponto/]);
+planta('rp4c-periodo-ingles-na-edicao-portuguesa','scripts/gate-html.mjs',[
+ ['index.html',r=>primeiraEtiqueta(r).set_content(PRIMEIRA_EN.texto)]
+],[new RegExp(`RP4-c: o período do ponto «${ESCAPA(PRIMEIRA_PT.periodo)}» da série «serie-ipc-variacao-homologa» foi renderizado como «${ESCAPA(PRIMEIRA_EN.texto)}»`)]);
+planta('rp4c-periodo-fora-do-desenho','scripts/gate-html.mjs',[
+ ['index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p><span data-ponto="serie-ipc-variacao-homologa#1992-01">9,41</span> <span data-ponto-periodo="serie-ipc-variacao-homologa#1992-01">janeiro de 1992</span></p>')]
+],[/RP4-c: o período «serie-ipc-variacao-homologa#1992-01» está fora de um desenho das séries/]);
+planta('rp4c-periodo-sem-marca','scripts/gate-html.mjs',[
+ ['index.html',r=>primeiraEtiqueta(r).removeAttribute('data-ponto-periodo')]
+],[/algarismos fora do livro-razão/]);
+planta('rp4c-valor-trocado-na-etiqueta','scripts/gate-html.mjs',[
+ ['en/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"] [data-ponto]').set_content('99,99')]
+],[new RegExp(`UE1: o ponto «${ESCAPA(PRIMEIRA_EN.periodo)}» da série «serie-ipc-variacao-homologa» foi renderizado como «99,99»`)]);
+planta('rp4c-f2-algarismo-solto','scripts/check-formas.mjs',[
+ ['precos/index.html',r=>r.querySelector('svg[data-forma="serie-do-pais"]').insertAdjacentHTML('beforeend','<text x="60" y="30">7</text>')]
+],[/a forma "serie-do-pais" desenha «7», que tem algarismos/]);
+planta('rp4c-f21-marca-sem-simbolo','scripts/check-formas.mjs',[
+ ['index.html',r=>{const t=r.querySelectorAll('svg[data-forma="serie-do-pais"] [data-eixo="valor"] text').find(x=>x.textContent.endsWith(' %'));t.set_content(t.textContent.replace(' %',''));}]
+],[/F21 · marcas do eixo valor diferem da recomposição/]);
+planta('rp4c-f21-legenda-da-unidade-tirada','scripts/check-formas.mjs',[
+ ['salarios-pensoes-e-apoios/index.html',r=>r.querySelector('[data-serie-unidade-legenda]').remove()]
+],[/F21 · legenda da unidade por extenso ausente/]);
+planta('rp4c-formato-simbolo-colado-numa-marca','tests/inicio/formato-dos-numeros.mjs',[
+ ['index.html',r=>{const t=r.querySelectorAll('svg[data-forma="serie-do-pais"] [data-eixo="valor"] text').find(x=>x.textContent.endsWith(' %'));t.set_content(t.textContent.replace(' %','%'));}]
+],[/F4 · index\.html: «−5%»/]);
+planta('rp4c-formato-euro-numa-marca','tests/inicio/formato-dos-numeros.mjs',[
+ ['salarios-pensoes-e-apoios/index.html',r=>{const t=r.querySelectorAll('svg[data-forma="serie-do-pais"] [data-eixo="valor"] text').find(x=>/\d\d/.test(x.textContent));t.set_content(`${t.textContent} €`);}]
+],[/F5 · salarios-pensoes-e-apoios\/index\.html/]);
+
+/* RP4-c-b (05.10.2026, a decisão do lugar de direção sobre o peso, a I208): as zonas só onde a leitura vive. Uma zona
+   posta no desenho de um cartão (a porta para o recibo) e um recibo sem as suas zonas têm de ser recusados pela F21 do
+   `check:formas`, que lê a regra do sítio do desenho na página. Correm com as do RP4-c, por `--prefixo rp4c`. */
+planta('rp4cb-zonas-num-cartao','scripts/check-formas.mjs',[
+ ['precos/index.html',r=>r.querySelector('[data-cartao-serie="serie-ipc-variacao-homologa"] svg[data-forma="serie-do-pais"]').insertAdjacentHTML('beforeend','<g><rect x="48" y="12" width="1" height="118"></rect><line x1="48" x2="48" y1="12" y2="130"></line><circle cx="48" cy="40" r="3"></circle><text x="222" y="22" text-anchor="end"><tspan data-ponto="serie-ipc-variacao-homologa#1992-01">9,41</tspan>\u00a0%<tspan x="222" dy="14" data-ponto-periodo="serie-ipc-variacao-homologa#1992-01">janeiro de 1992</tspan></text></g>')]
+],[/F21 · zonas de leitura num desenho que não as leva/]);
+planta('rp4cb-recibo-sem-zonas','scripts/check-formas.mjs',[
+ ['livro-razao/series/serie-ipc-variacao-homologa/index.html',r=>{for(const g of r.querySelector('svg[data-forma="serie-do-pais"]').childNodes.filter(n=>n.rawTagName==='g'&&n.getAttribute('data-eixo')===undefined))g.remove();}]
+],[/F21 · desenho sem as zonas de leitura fora da porta de um cartão/]);
 /* R4 (05.10.2026): o recibo de cada linha abre com o nome do recibo e a frase «O que é este número». O portão de HTML
    conta a frase em cada recibo e a régua da voz confere o nome de uma família contra a declaração; as palavras da
    frase confere-as a K17 do `check:cartao`, com as suas plantas em memória. */

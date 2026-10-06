@@ -1,15 +1,35 @@
 ---
-/** RP4: só a escala escreve algarismos; cada segmento é recomposto pela F21. */
+/** RP4: só a escala escreve algarismos; cada segmento é recomposto pela F21.
+ *
+ * RP4-c (05.10.2026, os pontos 1 e 4 do mandato): as marcas do eixo dos valores dizem o símbolo da unidade quando a
+ * unidade o tem, e um desenho sem símbolo nas marcas diz a unidade por extenso por baixo (`CampoDaSerie`, o campo da
+ * série que o portão de HTML compara); e cada ponto tem a sua zona de leitura, um grupo com a zona, a linha vertical,
+ * o ponto marcado e a etiqueta, que a folha mostra só ao passar o rato. A etiqueta escreve o valor por `PontoDaSerie`
+ * (`data-ponto`) e o período por `data-ponto-periodo`, na forma da casa (`dataDaCasa`); o portão de HTML compara os
+ * dois com o ponto da série, e a F2 e a F21 também. Nenhum guião.
+ *
+ * A PASSAGEM RP4-c-b (05.10.2026, a decisão do lugar de direção sobre o peso, a I208): as zonas só onde a leitura vive,
+ * a primeira página e os recibos, que as pedem com `comLeitura`; um cartão não as pede, porque é a porta para o recibo.
+ * E uma zona por coluna de píxel do campo, com a leitura do ponto mais próximo (o módulo do desenho diz a regra). */
 import { serieDoPais, segmentoVisivel } from '../../lib/formas/serie-do-pais.mjs';
 import { tituloDaSerie, legendasDasExclusoes } from '../../lib/formas/palavras-da-serie.mjs';
+import { getSerie } from '../../lib/series.mjs';
+import { unidadeDaLinha } from '../../i18n/unidades.mjs';
+import { dataDaCasa } from '../../lib/datas.mjs';
+import PontoDaSerie from '../serie/PontoDaSerie.astro';
+import CampoDaSerie from '../serie/CampoDaSerie.astro';
 import '../../styles/serie-do-pais.css';
 
-const { ids, lang, modo = 'unidade', largura = 360, altura = 200, nomeVisivel = false } = Astro.props;
-const desenho = serieDoPais(ids, modo, largura, altura);
+const { ids, lang, modo = 'unidade', largura = 360, altura = 200, nomeVisivel = false, comLeitura = false } = Astro.props;
+const desenho = serieDoPais(ids, modo, largura, altura, undefined, { leitura: comLeitura });
 const titulo = tituloDaSerie(desenho.linhas, lang, nomeVisivel);
 if (/\d/.test(titulo)) throw new Error('RP4: o título do desenho tem algarismos fora da escala.');
 const g = desenho.campo;
 const exclusoes = legendasDasExclusoes(desenho.excluidas, lang);
+/* A série das zonas de leitura: há zonas só num desenho de uma série no modo da unidade. */
+const daLeitura = desenho.leituras.length ? desenho.linhas[0].id : null;
+const sufixo = desenho.simbolo ? ` ${desenho.simbolo}` : '';
+const unidade = desenho.legenda ? unidadeDaLinha(String(getSerie(ids[0]).unit), lang) : null;
 ---
 <svg class="serie-do-pais" style={`max-width: ${largura}px;`} data-titulo={nomeVisivel ? 'periodo-unidade' : 'nome-periodo'} data-forma="serie-do-pais" data-series={ids.join(',')} data-modo={modo} viewBox={`0 0 ${largura} ${altura}`} role="img">
   <title>{titulo}</title>
@@ -27,7 +47,10 @@ const exclusoes = legendasDasExclusoes(desenho.excluidas, lang);
       ? <circle class="serie-do-pais-linha" data-serie-linha={l.id} cx={segmento.cx} cy={segmento.cy} r={segmento.r} />
       : <polyline class="serie-do-pais-linha" data-serie-linha={l.id} points={segmento.pontos} />;
   }))}
+  {daLeitura && desenho.leituras.map((l) => <g><rect x={l.zona.x} y={l.zona.y} width={l.zona.largura} height={l.zona.altura} /><line x1={l.mira.x} x2={l.mira.x} y1={l.mira.y1} y2={l.mira.y2} /><circle cx={l.marca.cx} cy={l.marca.cy} r={l.marca.r} /><text x={l.etiqueta.x} y={l.etiqueta.y} text-anchor={l.etiqueta.ancora}><PontoDaSerie serie={daLeitura} chave={l.periodo} as="tspan" />{sufixo}<tspan x={l.etiqueta.x} dy={l.etiqueta.dy} data-ponto-periodo={`${daLeitura}#${l.periodo}`}>{dataDaCasa(l.periodo, lang)}</tspan></text></g>)}
 </svg>
+
+{unidade && <span class="serie-do-pais-unidade" data-serie-unidade-legenda={ids[0]}><CampoDaSerie serie={ids[0]} campo="unit" valor={unidade.texto} lingua={unidade.lingua} /></span>}
 
 {exclusoes.length > 0 && <ul class="serie-exclusoes" data-serie-exclusoes={ids.join(',')}>
   {exclusoes.map(l => <li data-serie-excluida={l.id}>{l.texto}</li>)}

@@ -1,0 +1,24 @@
+{
+  "relatorio": "design/especime-v3/medicoes/rp4c-2026-10-05/LEIA-ME.md",
+  "pasta": "design/especime-v3/medicoes/rp4c-2026-10-05",
+  "ficheiros_json_lidos": 27,
+  "ilegiveis": [],
+  "conhecido_positivo": {
+    "numero": 987654321,
+    "encontrado": true
+  },
+  "numeros_conferidos": 318,
+  "numeros_com_ficheiro": 318,
+  "numeros_sem_ficheiro": 0,
+  "sem_ficheiro": [],
+  "apagado_antes_de_contar": {
+    "codigo": 148,
+    "enderecos": 0,
+    "seccoes": 4,
+    "datas": 3,
+    "resumos": 0,
+    "ordinais": 2,
+    "identificadores": 80,
+    "anos": 17
+  }
+}

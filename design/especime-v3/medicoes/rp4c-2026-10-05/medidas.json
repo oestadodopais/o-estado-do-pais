@@ -1,0 +1,3794 @@
+{
+  "bloco": "RP4-c",
+  "o_que": "as medidas do relatório do bloco (medir.py)",
+  "quantas_medidas": 416,
+  "medidas": [
+    {
+      "nome": "paragrafo_0_reproduzido_igual",
+      "valor": true,
+      "comando": "OEDP_MEDIDAS_JSON=<pasta>/brief-reproduzido.json python3 design/observatorio/medidas/BRIEF-RP4C.py, comparado com BRIEF-RP4C.json",
+      "conhecido_positivo": {
+        "o_que": "a reprodução tem as oito medidas do §0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0_medidas",
+      "valor": 8,
+      "comando": "as medidas de brief-reproduzido.json",
+      "conhecido_positivo": {
+        "o_que": "a reprodução nomeia a cabeça lida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.pixeis_minimos_de_uma_marca_intermedia_do_tempo_as_pontas",
+      "valor": 64,
+      "comando": "git show 5b004ada:src/lib/formas/serie-do-pais.mjs · a regra «posicao - campo.esquerda >= N && campo.direita - posicao >= N» das marcas intermédias do tempo",
+      "conhecido_positivo": {
+        "o_que": "o módulo constrói marcasX a partir dos anos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.marcas_do_eixo_vertical_com_o_simbolo_da_unidade",
+      "valor": 0,
+      "comando": "git show 5b004ada:src/lib/formas/serie-do-pais.mjs · as marcas do eixo vertical escritas com o símbolo «%»",
+      "conhecido_positivo": {
+        "o_que": "as marcas do eixo vertical existem (marcasY)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.linhas_de_referencia_no_modulo_da_forma",
+      "valor": 0,
+      "comando": "git show 5b004ada:src/lib/formas/serie-do-pais.mjs · as ocorrências de «referencia»",
+      "conhecido_positivo": {
+        "o_que": "o bloco das barras da primeira página desenha uma referência (a dívida a 60 %)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.regras_de_passagem_ou_foco_na_folha_do_desenho",
+      "valor": 2,
+      "comando": "git show 5b004ada:src/styles/serie-do-pais.css · as regras com :hover ou :focus",
+      "conhecido_positivo": {
+        "o_que": "a folha existe e estiliza a linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.etiquetas_de_valor_por_ponto_no_componente",
+      "valor": 0,
+      "comando": "git show 5b004ada:src/components/formas/SerieDoPais.astro · os elementos com data-ponto (o valor de um ponto, como nos recibos)",
+      "conhecido_positivo": {
+        "o_que": "o componente desenha as polylines",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.linhas_do_livro_com_derivation_nao_nula",
+      "valor": 378,
+      "comando": "git ls-tree 5b004ada ledger/claims/ e git show de cada linha · as linhas cujo campo derivation não é null",
+      "conhecido_positivo": {
+        "o_que": "os cem euros da função 01 do OE1 são uma linha derivada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.pontos_da_serie_da_inflacao",
+      "valor": 416,
+      "comando": "git show 5b004ada:ledger/series/serie-ipc-variacao-homologa.yml · as linhas «  - periodo:» da lista pontos:",
+      "conhecido_positivo": {
+        "o_que": "a série começa em 1992-01",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "paragrafo_0.mencoes_ao_banco_central_europeu_nas_leituras",
+      "valor": 2,
+      "comando": "git show 5b004ada:src/data/leituras-rp1.mjs e leituras-das-medidas.mjs · as ocorrências de «Banco Central Europeu»",
+      "conhecido_positivo": {
+        "o_que": "a leitura da comparação europeia diz que o Banco Central Europeu procura uma inflação",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.paginas_com_desenhos",
+      "valor": 58,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção da cabeça de partida)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.paginas_com_desenhos",
+      "valor": 58,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção dos portões finais)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.desenhos",
+      "valor": 82,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção da cabeça de partida)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.desenhos",
+      "valor": 82,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção dos portões finais)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.marcas_dos_valores",
+      "valor": 346,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção da cabeça de partida)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.marcas_dos_valores",
+      "valor": 346,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção dos portões finais)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.marcas_dos_valores_com_percentagem",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção da cabeça de partida)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.marcas_dos_valores_com_percentagem",
+      "valor": 162,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção dos portões finais)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.marcas_dos_valores_com_euro",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção da cabeça de partida)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.marcas_dos_valores_com_euro",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção dos portões finais)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.marcas_do_zero_sem_simbolo",
+      "valor": 82,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção da cabeça de partida)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.marcas_do_zero_sem_simbolo",
+      "valor": 82,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção dos portões finais)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.desenhos_com_legenda_da_unidade",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção da cabeça de partida)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.desenhos_com_legenda_da_unidade",
+      "valor": 34,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção dos portões finais)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.desenhos_em_euros_com_legenda",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção da cabeça de partida)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.desenhos_em_euros_com_legenda",
+      "valor": 24,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção dos portões finais)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.zonas_de_leitura",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção da cabeça de partida)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.zonas_de_leitura",
+      "valor": 26164,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção dos portões finais)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.desenhos_com_zonas",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção da cabeça de partida)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.desenhos_com_zonas",
+      "valor": 80,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção dos portões finais)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.desenhos_indexados",
+      "valor": 2,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção da cabeça de partida)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.desenhos_indexados",
+      "valor": 2,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção dos portões finais)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.desenhos_indexados_com_zonas",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção da cabeça de partida)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.desenhos_indexados_com_zonas",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção dos portões finais)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.etiquetas_do_tempo",
+      "valor": 270,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção da cabeça de partida)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.etiquetas_do_tempo",
+      "valor": 292,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json (a construção dos portões finais)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.tempo_da_primeira_pagina",
+      "valor": "1992, 2000, 2010, 2026",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "o recibo da inflação tem um desenho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.tempo_da_primeira_pagina",
+      "valor": "1992, 2000, 2010, 2020, 2026",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "o recibo da inflação tem um desenho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.valor_da_primeira_pagina",
+      "valor": "−5, 0, 5, 10, 15",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "o recibo da inflação tem um desenho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.valor_da_primeira_pagina",
+      "valor": "−5 %, 0, 5 %, 10 %, 15 %",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "o recibo da inflação tem um desenho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.tempo_do_cartao_da_inflacao",
+      "valor": "1992, 2010, 2026",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "o recibo da inflação tem um desenho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.tempo_do_cartao_da_inflacao",
+      "valor": "1992, 2010, 2026",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "o recibo da inflação tem um desenho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.antes.tempo_do_recibo_da_inflacao",
+      "valor": "1992, 2000, 2010, 2026",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "o recibo da inflação tem um desenho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.tempo_do_recibo_da_inflacao",
+      "valor": "1992, 2000, 2010, 2020, 2026",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "o recibo da inflação tem um desenho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "marcas.depois.legendas_distintas",
+      "valor": [
+        "euros",
+        "euros per month",
+        "euros per pensioner per year",
+        "euros per year",
+        "euros por ano",
+        "euros por mês",
+        "euros por pensionista por ano",
+        "index (base 2025 = 100)",
+        "per thousand people of working age",
+        "por mil pessoas em idade ativa",
+        "índice (base 2025 = 100)"
+      ],
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-marcas.mjs --dist <dist> --json marcas-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "modulo.PIXEIS_ATE_A_VIZINHA",
+      "valor": 64,
+      "comando": "src/lib/formas/serie-do-pais.mjs · export const PIXEIS_ATE_A_VIZINHA",
+      "conhecido_positivo": {
+        "o_que": "o módulo exporta simboloDasMarcas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "modulo.LARGURA_DE_UM_ANO",
+      "valor": 30.25,
+      "comando": "src/lib/formas/serie-do-pais.mjs · export const LARGURA_DE_UM_ANO",
+      "conhecido_positivo": {
+        "o_que": "o módulo exporta simboloDasMarcas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "modulo.ANOS_PARA_AS_DECADAS",
+      "valor": 20,
+      "comando": "src/lib/formas/serie-do-pais.mjs · export const ANOS_PARA_AS_DECADAS",
+      "conhecido_positivo": {
+        "o_que": "o módulo exporta simboloDasMarcas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra.antes.desenhos",
+      "valor": 16,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-letra.mjs --dist <dist> --json letra-dos-eixos-antes.json",
+      "conhecido_positivo": {
+        "o_que": "uma etiqueta de oito algarismos mede mais do que a maior de quatro (60.484)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra.antes.etiquetas_de_ano_medidas",
+      "valor": 50,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-letra.mjs --dist <dist> --json letra-dos-eixos-antes.json",
+      "conhecido_positivo": {
+        "o_que": "uma etiqueta de oito algarismos mede mais do que a maior de quatro (60.484)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra.antes.largura_maior_de_um_ano",
+      "valor": 30.25,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-letra.mjs --dist <dist> --json letra-dos-eixos-antes.json",
+      "conhecido_positivo": {
+        "o_que": "uma etiqueta de oito algarismos mede mais do que a maior de quatro (60.484)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra.antes.largura_menor_de_um_ano",
+      "valor": 30.25,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-letra.mjs --dist <dist> --json letra-dos-eixos-antes.json",
+      "conhecido_positivo": {
+        "o_que": "uma etiqueta de oito algarismos mede mais do que a maior de quatro (60.484)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra.antes.menor_espaco_entre_etiquetas_do_tempo",
+      "valor": 22.635,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-letra.mjs --dist <dist> --json letra-dos-eixos-antes.json",
+      "conhecido_positivo": {
+        "o_que": "uma etiqueta de oito algarismos mede mais do que a maior de quatro (60.484)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra.antes.letra_carregada_em_todas",
+      "valor": true,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-letra.mjs --dist <dist> --json letra-dos-eixos-antes.json",
+      "conhecido_positivo": {
+        "o_que": "uma etiqueta de oito algarismos mede mais do que a maior de quatro (60.484)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra.depois.desenhos",
+      "valor": 16,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-letra.mjs --dist <dist> --json letra-dos-eixos-depois.json",
+      "conhecido_positivo": {
+        "o_que": "uma etiqueta de oito algarismos mede mais do que a maior de quatro (60.484)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra.depois.etiquetas_de_ano_medidas",
+      "valor": 54,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-letra.mjs --dist <dist> --json letra-dos-eixos-depois.json",
+      "conhecido_positivo": {
+        "o_que": "uma etiqueta de oito algarismos mede mais do que a maior de quatro (60.484)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra.depois.largura_maior_de_um_ano",
+      "valor": 30.25,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-letra.mjs --dist <dist> --json letra-dos-eixos-depois.json",
+      "conhecido_positivo": {
+        "o_que": "uma etiqueta de oito algarismos mede mais do que a maior de quatro (60.484)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra.depois.largura_menor_de_um_ano",
+      "valor": 30.25,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-letra.mjs --dist <dist> --json letra-dos-eixos-depois.json",
+      "conhecido_positivo": {
+        "o_que": "uma etiqueta de oito algarismos mede mais do que a maior de quatro (60.484)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra.depois.menor_espaco_entre_etiquetas_do_tempo",
+      "valor": 20.757,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-letra.mjs --dist <dist> --json letra-dos-eixos-depois.json",
+      "conhecido_positivo": {
+        "o_que": "uma etiqueta de oito algarismos mede mais do que a maior de quatro (60.484)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra.depois.letra_carregada_em_todas",
+      "valor": true,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-letra.mjs --dist <dist> --json letra-dos-eixos-depois.json",
+      "conhecido_positivo": {
+        "o_que": "uma etiqueta de oito algarismos mede mais do que a maior de quatro (60.484)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "modulo.campo.cartao",
+      "valor": 174,
+      "comando": "node · serieDoPais(['serie-ipc-variacao-homologa'], 'unidade', 240, 160).campo e a de 360 por 200",
+      "conhecido_positivo": {
+        "o_que": "o desenho da primeira página é mais largo do que o do cartão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "modulo.campo.primeira",
+      "valor": 294,
+      "comando": "node · serieDoPais(['serie-ipc-variacao-homologa'], 'unidade', 240, 160).campo e a de 360 por 200",
+      "conhecido_positivo": {
+        "o_que": "o desenho da primeira página é mais largo do que o do cartão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "modulo.campo.largura_do_cartao",
+      "valor": 240,
+      "comando": "node · serieDoPais(['serie-ipc-variacao-homologa'], 'unidade', 240, 160).campo e a de 360 por 200",
+      "conhecido_positivo": {
+        "o_que": "o desenho da primeira página é mais largo do que o do cartão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "modulo.campo.largura_da_primeira",
+      "valor": 360,
+      "comando": "node · serieDoPais(['serie-ipc-variacao-homologa'], 'unidade', 240, 160).campo e a de 360 por 200",
+      "conhecido_positivo": {
+        "o_que": "o desenho da primeira página é mais largo do que o do cartão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "precos.cartoes_com_serie",
+      "valor": 6,
+      "comando": "node · os desenhos de dist/precos/index.html e os pontos de cada série pelo carregador da casa",
+      "conhecido_positivo": {
+        "o_que": "o cartão da inflação é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "precos.menos_pontos_numa_serie",
+      "valor": 309,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "o cartão da inflação é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "precos.mais_pontos_numa_serie",
+      "valor": 932,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "o cartão da inflação é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "precos.pontos_dos_cartoes",
+      "valor": 3410,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "o cartão da inflação é um deles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "livro.linhas",
+      "valor": 3195,
+      "comando": "ls ledger/claims/*.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha da inflação existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "livro.linhas_derivadas_de_uma_serie",
+      "valor": 0,
+      "comando": "ledger/claims/*.yml · as linhas cujo derived_from nomeia uma série (serie-)",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha as linhas com derived_from não vazio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "livro.linhas_da_media_e_do_objetivo",
+      "valor": 0,
+      "comando": "ls ledger/claims | grep media-desde|objetivo-de-inflacao",
+      "conhecido_positivo": {
+        "o_que": "o mesmo detetor acha a linha da inflação pelo nome",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "livro.serie_da_inflacao_casas_decimais",
+      "valor": {
+        "2": 416
+      },
+      "comando": "node · as casas decimais de cada ponto de serie-ipc-variacao-homologa, pelo carregador da casa",
+      "conhecido_positivo": {
+        "o_que": "os pontos contados são os 416 da série",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "livro.regra_7_derived_from",
+      "valor": true,
+      "comando": "ledger/README.md · a regra 7",
+      "conhecido_positivo": {
+        "o_que": "o README tem a lista das regras",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "origem.bce_estrategia_selada",
+      "valor": true,
+      "comando": "src/data/origens-c1c.mjs · c1c-bce-estrategia com o selo",
+      "conhecido_positivo": {
+        "o_que": "o excerto diz em que índice se mede o objetivo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "leitura.o_objetivo_mede_se_noutro_indice",
+      "valor": true,
+      "comando": "src/data/leituras-rp1.mjs · a frase da leitura da inflação",
+      "conhecido_positivo": {
+        "o_que": "a leitura nomeia o Banco Central Europeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.paginas_lidas",
+      "valor": 7899,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.paginas_com_desenhos",
+      "valor": 58,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.desenhos",
+      "valor": 82,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.zonas_de_leitura",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.bytes",
+      "valor": 8891269,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.gzip",
+      "valor": 899262,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.brotli",
+      "valor": 602396,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.primeira.bytes",
+      "valor": 92542,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.primeira.gzip",
+      "valor": 15570,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.primeira.brotli",
+      "valor": 12732,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.primeira.zonas_de_leitura",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.precos.bytes",
+      "valor": 99249,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · precos/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.precos.gzip",
+      "valor": 27402,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · precos/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.precos.brotli",
+      "valor": 19129,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · precos/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.precos.zonas_de_leitura",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · precos/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.recibo_da_inflacao.bytes",
+      "valor": 220507,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.recibo_da_inflacao.gzip",
+      "valor": 20646,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.recibo_da_inflacao.brotli",
+      "valor": 12889,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.recibo_da_inflacao.zonas_de_leitura",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.recibo_do_indice.bytes",
+      "valor": 449120,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.recibo_do_indice.gzip",
+      "valor": 37791,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.recibo_do_indice.brotli",
+      "valor": 21662,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.recibo_do_indice.zonas_de_leitura",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.habitacao.bytes",
+      "valor": 77419,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · habitacao/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.habitacao.gzip",
+      "valor": 17761,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · habitacao/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.habitacao.brotli",
+      "valor": 13266,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · habitacao/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.antes.habitacao.zonas_de_leitura",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · habitacao/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.paginas_lidas",
+      "valor": 7899,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.paginas_com_desenhos",
+      "valor": 58,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.desenhos",
+      "valor": 82,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.zonas_de_leitura",
+      "valor": 26164,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.bytes",
+      "valor": 19504714,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.gzip",
+      "valor": 1781594,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.brotli",
+      "valor": 1143317,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.primeira.bytes",
+      "valor": 255466,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.primeira.gzip",
+      "valor": 30918,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.primeira.brotli",
+      "valor": 22776,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.primeira.zonas_de_leitura",
+      "valor": 416,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.precos.bytes",
+      "valor": 1494887,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · precos/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.precos.gzip",
+      "valor": 142799,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · precos/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.precos.brotli",
+      "valor": 76714,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · precos/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.precos.zonas_de_leitura",
+      "valor": 3410,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · precos/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.recibo_da_inflacao.bytes",
+      "valor": 383416,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.recibo_da_inflacao.gzip",
+      "valor": 35258,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.recibo_da_inflacao.brotli",
+      "valor": 22876,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.recibo_da_inflacao.zonas_de_leitura",
+      "valor": 416,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.recibo_do_indice.bytes",
+      "valor": 795696,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.recibo_do_indice.gzip",
+      "valor": 69572,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.recibo_do_indice.brotli",
+      "valor": 41851,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.recibo_do_indice.zonas_de_leitura",
+      "valor": 944,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · livro-razao/series/serie-ipc-indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.habitacao.bytes",
+      "valor": 626234,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · habitacao/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.habitacao.gzip",
+      "valor": 63832,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · habitacao/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.habitacao.brotli",
+      "valor": 41446,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · habitacao/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "peso.depois.habitacao.zonas_de_leitura",
+      "valor": 1337,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/medir-peso.mjs --dist <dist> --json peso-{antes,depois}.json · habitacao/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.inteiras",
+      "valor": 30,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "há capturas das três rotas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.larguras",
+      "valor": [
+        390,
+        768,
+        1024,
+        1280,
+        1600
+      ],
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "a primeira largura é a do telemóvel",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.quantas_larguras",
+      "valor": 5,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "a primeira largura é a do telemóvel",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.rotas",
+      "valor": 3,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "há capturas nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.edicoes",
+      "valor": 2,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "há capturas nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.erros",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "as plantas das capturas morderam",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.plantas",
+      "valor": 3,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "uma planta tem de morder para contar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.plantas_mordidas",
+      "valor": 3,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "uma planta tem de morder para contar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.recortes_da_legenda",
+      "valor": 2,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "a legenda recortada é a unidade por extenso",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.legendas_recortadas",
+      "valor": [
+        "euros por mês",
+        "euros per month"
+      ],
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.provas_do_rato",
+      "valor": 3,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "a planta da etiqueta escondida mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.provas_do_rato_que_passaram",
+      "valor": 3,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.provas_do_toque",
+      "valor": 2,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "a planta da regra fora da consulta do rato mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.provas_do_toque_que_passaram",
+      "valor": 2,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.rato.primeira.pt",
+      "valor": "−1,17 · maio de 2009",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "a etiqueta acesa é a da zona debaixo do rato",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.rato.en.en",
+      "valor": "−1,17 · May 2009",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "a etiqueta acesa é a da zona debaixo do rato",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.rato.precos.pt",
+      "valor": "3,30 · agosto de 2026",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "a etiqueta acesa é a da zona debaixo do rato",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.letra_dos_eixos_px_menor",
+      "valor": 11.8,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "os desenhos foram medidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.letra_dos_eixos_px_maior",
+      "valor": 12,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "os desenhos foram medidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.menor_espaco_do_tempo_px",
+      "valor": 20.436,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "os desenhos foram medidos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.etiquetas_do_tempo_fora_do_desenho",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "a planta do desenho mais largo do que o ecrã mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.paginas_que_transbordam",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "a planta do desenho mais largo do que o ecrã mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.desenhos_dentro_de_uma_ligacao_a_390",
+      "valor": 14,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "há desenhos medidos a 390",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.desenhos_a_390",
+      "valor": 16,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "há desenhos medidos a 390",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.390.zonas",
+      "valor": 416,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.390.zonas_alcancaveis",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.390.largura_no_ecra",
+      "valor": 354,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.390.zona_mais_larga_px",
+      "valor": 0.697,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.390.zonas",
+      "valor": 416,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.390.zonas_alcancaveis",
+      "valor": 174,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.390.largura_no_ecra",
+      "valor": 240,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.390.zona_mais_larga_px",
+      "valor": 0.42,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.390.zonas",
+      "valor": 932,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.390.zonas_alcancaveis",
+      "valor": 174,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.390.largura_no_ecra",
+      "valor": 240,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.390.zona_mais_larga_px",
+      "valor": 0.187,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.768.zonas",
+      "valor": 416,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.768.zonas_alcancaveis",
+      "valor": 294,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.768.largura_no_ecra",
+      "valor": 360,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.768.zona_mais_larga_px",
+      "valor": 0.709,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.768.zonas",
+      "valor": 416,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.768.zonas_alcancaveis",
+      "valor": 174,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.768.largura_no_ecra",
+      "valor": 240,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.768.zona_mais_larga_px",
+      "valor": 0.42,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.768.zonas",
+      "valor": 932,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.768.zonas_alcancaveis",
+      "valor": 174,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.768.largura_no_ecra",
+      "valor": 240,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.768.zona_mais_larga_px",
+      "valor": 0.187,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.1024.zonas",
+      "valor": 416,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.1024.zonas_alcancaveis",
+      "valor": 294,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.1024.largura_no_ecra",
+      "valor": 360,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.1024.zona_mais_larga_px",
+      "valor": 0.709,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.1024.zonas",
+      "valor": 416,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.1024.zonas_alcancaveis",
+      "valor": 174,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.1024.largura_no_ecra",
+      "valor": 240,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.1024.zona_mais_larga_px",
+      "valor": 0.42,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.1024.zonas",
+      "valor": 932,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.1024.zonas_alcancaveis",
+      "valor": 174,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.1024.largura_no_ecra",
+      "valor": 240,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.1024.zona_mais_larga_px",
+      "valor": 0.187,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.1280.zonas",
+      "valor": 416,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.1280.zonas_alcancaveis",
+      "valor": 294,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.1280.largura_no_ecra",
+      "valor": 360,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.1280.zona_mais_larga_px",
+      "valor": 0.709,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.1280.zonas",
+      "valor": 416,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.1280.zonas_alcancaveis",
+      "valor": 174,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.1280.largura_no_ecra",
+      "valor": 240,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.1280.zona_mais_larga_px",
+      "valor": 0.42,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.1280.zonas",
+      "valor": 932,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.1280.zonas_alcancaveis",
+      "valor": 174,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.1280.largura_no_ecra",
+      "valor": 240,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.1280.zona_mais_larga_px",
+      "valor": 0.187,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.1600.zonas",
+      "valor": 416,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.1600.zonas_alcancaveis",
+      "valor": 294,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.1600.largura_no_ecra",
+      "valor": 360,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.primeira.1600.zona_mais_larga_px",
+      "valor": 0.709,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.1600.zonas",
+      "valor": 416,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.1600.zonas_alcancaveis",
+      "valor": 174,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.1600.largura_no_ecra",
+      "valor": 240,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_da_inflacao.1600.zona_mais_larga_px",
+      "valor": 0.42,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.1600.zonas",
+      "valor": 932,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.1600.zonas_alcancaveis",
+      "valor": 174,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.1600.largura_no_ecra",
+      "valor": 240,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.cartao_dos_combustiveis.1600.zona_mais_larga_px",
+      "valor": 0.187,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4c.mjs",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f21.desenhos_recompostos",
+      "valor": 82,
+      "comando": "node scripts/check-formas.mjs --json-rp4 formas-rp4c.json",
+      "conhecido_positivo": {
+        "o_que": "as provas do módulo correram",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f21.provas_do_modulo",
+      "valor": 15,
+      "comando": "node scripts/check-formas.mjs --json-rp4 formas-rp4c.json",
+      "conhecido_positivo": {
+        "o_que": "as provas do módulo correram",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f21.plantas",
+      "valor": 21,
+      "comando": "node scripts/check-formas.mjs --json-rp4 formas-rp4c.json",
+      "conhecido_positivo": {
+        "o_que": "uma planta tem de morder para contar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f21.plantas_mordidas",
+      "valor": 21,
+      "comando": "node scripts/check-formas.mjs --json-rp4 formas-rp4c.json",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f21.plantas_da_leitura_e_da_legenda",
+      "valor": 14,
+      "comando": "node scripts/check-formas.mjs --json-rp4 formas-rp4c.json",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f21.plantas_da_leitura_e_da_legenda_mordidas",
+      "valor": 14,
+      "comando": "node scripts/check-formas.mjs --json-rp4 formas-rp4c.json",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f2.plantas",
+      "valor": 6,
+      "comando": "node scripts/check-formas.mjs --json-rp4 formas-rp4c.json",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f2.plantas_mordidas",
+      "valor": 6,
+      "comando": "node scripts/check-formas.mjs --json-rp4 formas-rp4c.json",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f2.algarismos_de_pontos_nos_desenhos",
+      "valor": 52328,
+      "comando": "node scripts/check-formas.mjs --json-rp4 formas-rp4c.json",
+      "conhecido_positivo": {
+        "o_que": "a F2 viu valores de pontos nos desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "f21.erros",
+      "valor": 0,
+      "comando": "node scripts/check-formas.mjs --json-rp4 formas-rp4c.json",
+      "conhecido_positivo": {
+        "o_que": "as plantas da F21 morderam",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series.plantas",
+      "valor": 24,
+      "comando": "node tests/series/series.mjs --prova --json series.json",
+      "conhecido_positivo": {
+        "o_que": "as duas plantas da S6 que mudaram de forma estão entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series.plantas_mordidas",
+      "valor": 24,
+      "comando": "node tests/series/series.mjs --prova --json series.json",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series.plantas_da_s6_que_mudaram_de_forma_mordidas",
+      "valor": 2,
+      "comando": "node tests/series/series.mjs --prova --json series.json",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira.plantas",
+      "valor": 62,
+      "comando": "node tests/inicio/primeira-pagina.mjs --prova --json primeira-plantas.json",
+      "conhecido_positivo": {
+        "o_que": "a planta do RP4-c está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira.plantas_mordidas",
+      "valor": 62,
+      "comando": "node tests/inicio/primeira-pagina.mjs --prova --json primeira-plantas.json",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira.planta_do_periodo_fora_do_desenho_mordeu",
+      "valor": true,
+      "comando": "node tests/inicio/primeira-pagina.mjs --prova --json primeira-plantas.json",
+      "conhecido_positivo": {
+        "o_que": "a planta antiga do algarismo à mão num bloco também mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "g5.planta_da_linha_da_leitura_mordeu",
+      "valor": true,
+      "comando": "npm run check:primeira (o registo em conferencias/check-primeira.log)",
+      "conhecido_positivo": {
+        "o_que": "a planta antiga das guias também mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.plantas_rp4c",
+      "valor": 11,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/rp4c-2026-10-05 node tests/pais/portoes.mjs --prefixo rp4c-",
+      "conhecido_positivo": {
+        "o_que": "cada planta repôs os bytes do ficheiro que mexeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.plantas_rp4c_que_morderam",
+      "valor": 11,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/rp4c-2026-10-05 node tests/pais/portoes.mjs --prefixo rp4c-",
+      "conhecido_positivo": {
+        "o_que": "cada uma saiu com o código 1 e a queixa esperada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.plantas_rp4c_cabeca_e_estado",
+      "valor": [
+        [
+          "9277c7f9",
+          ""
+        ]
+      ],
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/rp4c-2026-10-05 node tests/pais/portoes.mjs --prefixo rp4c-",
+      "conhecido_positivo": {
+        "o_que": "a árvore seguida estava limpa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias.passos",
+      "valor": 20,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/conferencias-rp4c.sh <pasta>, pela tranca, na cabeça do commit do código",
+      "conhecido_positivo": {
+        "o_que": "o portão de HTML está entre os passos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias.passos_a_zero",
+      "valor": 20,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias.cabeca",
+      "valor": "6e0c94f2",
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "o estado da árvore seguida foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "conferencias.estado_vazio",
+      "valor": true,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "o estado da árvore seguida foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.build.codigo",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/rp4c-2026-10-05/portoes, pela tranca",
+      "conhecido_positivo": {
+        "o_que": "a cabeça do fim é a do princípio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.build.segundos",
+      "valor": 218,
+      "comando": "portoes/<g>.inicio e portoes/<g>.fim",
+      "conhecido_positivo": {
+        "o_que": "os dois carimbos existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.verify.codigo",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/rp4c-2026-10-05/portoes, pela tranca",
+      "conhecido_positivo": {
+        "o_que": "a cabeça do fim é a do princípio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.verify.segundos",
+      "valor": 1138,
+      "comando": "portoes/<g>.inicio e portoes/<g>.fim",
+      "conhecido_positivo": {
+        "o_que": "os dois carimbos existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.typecheck.codigo",
+      "valor": 0,
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/rp4c-2026-10-05/portoes, pela tranca",
+      "conhecido_positivo": {
+        "o_que": "a cabeça do fim é a do princípio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.typecheck.segundos",
+      "valor": 0,
+      "comando": "portoes/<g>.inicio e portoes/<g>.fim",
+      "conhecido_positivo": {
+        "o_que": "os dois carimbos existem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.cabeca",
+      "valor": "9277c7f9",
+      "comando": "portoes/cabeca",
+      "conhecido_positivo": {
+        "o_que": "portoes/cabeca.fim existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.estado_seguido_antes_vazio",
+      "valor": true,
+      "comando": "git status --porcelain --untracked-files=no, antes da corrida",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro do estado foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.estado_seguido_depois_vazio",
+      "valor": true,
+      "comando": "git status --porcelain --untracked-files=no, depois da corrida",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro do estado foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.passos",
+      "valor": 9,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4c.sh, pela tranca, sobre a construção dos portões",
+      "conhecido_positivo": {
+        "o_que": "as capturas estão entre os passos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.passos_a_zero",
+      "valor": 9,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.cabeca",
+      "valor": "9277c7f9",
+      "comando": "provas/cabeca e provas/cabeca.fim",
+      "conhecido_positivo": {
+        "o_que": "a cabeça do fim é a do princípio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.construcao",
+      "valor": "9277c7f9",
+      "comando": "provas/version.json (a cópia do dist/version.json da construção medida)",
+      "conhecido_positivo": {
+        "o_que": "o commit da construção é a cabeça da corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.estado_vazio",
+      "valor": true,
+      "comando": "git status --porcelain --untracked-files=no, antes das provas",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro do estado foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.estado_fim_vazio",
+      "valor": true,
+      "comando": "git status --porcelain --untracked-files=no, depois das provas",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro do estado foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa.citacoes_na_linha",
+      "valor": 431,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md",
+      "conhecido_positivo": {
+        "o_que": "o mapa tem a secção do RP4-c",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa.citacoes_longe",
+      "valor": 0,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa.citacoes_por_encontrar",
+      "valor": 0,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "registos.linhas_mudadas_nas_cadeias_no_inventario_e_nas_chaves",
+      "valor": 0,
+      "comando": "git diff --numstat 983b4585 HEAD -- src/i18n/strings.mjs design/especime-v3/INVENTARIO-FRASES.md design/especime-v3/CHAVES-EN.md",
+      "conhecido_positivo": {
+        "o_que": "o mesmo comando vê as linhas que o bloco mudou no módulo do desenho",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo.respostas_do_modelo",
+      "valor": 240,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo da sessão do construtor>",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo.simbolos_de_entrada",
+      "valor": 118469075,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo da sessão do construtor>",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo.simbolos_de_saida_minimo",
+      "valor": 48118,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo da sessão do construtor>",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo.respostas_com_a_saida_de_um_momento_do_fluxo",
+      "valor": 178,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo da sessão do construtor>",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo.segundos",
+      "valor": 6843,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo da sessão do construtor>",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo.modelos",
+      "valor": {
+        "claude-opus-5-5": 588
+      },
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4c.medidas_na_entrega",
+      "valor": 262,
+      "comando": "git show 46e675d6:design/especime-v3/medicoes/rp4c-2026-10-05/medidas.json · as medidas",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro da entrega tem a reprodução do §0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.paginas_lidas",
+      "valor": 7899,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs",
+      "conhecido_positivo": {
+        "o_que": "a primeira página e o recibo da inflação estão entre as páginas com desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.paginas_com_desenhos",
+      "valor": 58,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.desenhos",
+      "valor": 82,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.zonas_de_leitura",
+      "valor": 9474,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.bytes",
+      "valor": 12758006,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.gzip",
+      "valor": 1254443,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.brotli",
+      "valor": 835750,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.primeira.bytes",
+      "valor": 206041,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.primeira.gzip",
+      "valor": 26982,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.primeira.brotli",
+      "valor": 19744,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.primeira.zonas_de_leitura",
+      "valor": 289,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.precos.bytes",
+      "valor": 100103,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · precos/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.precos.gzip",
+      "valor": 27593,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · precos/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.precos.brotli",
+      "valor": 19247,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · precos/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.precos.zonas_de_leitura",
+      "valor": 0,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · precos/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.habitacao.bytes",
+      "valor": 78225,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · habitacao/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.habitacao.gzip",
+      "valor": 17949,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · habitacao/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.habitacao.brotli",
+      "valor": 13379,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · habitacao/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.habitacao.zonas_de_leitura",
+      "valor": 0,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · habitacao/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.recibo_da_inflacao.bytes",
+      "valor": 333991,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.recibo_da_inflacao.gzip",
+      "valor": 31078,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.recibo_da_inflacao.brotli",
+      "valor": 19915,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.recibo_da_inflacao.zonas_de_leitura",
+      "valor": 289,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.recibo_do_indice.bytes",
+      "valor": 556043,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · livro-razao/series/serie-ipc-indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.recibo_do_indice.gzip",
+      "valor": 48947,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · livro-razao/series/serie-ipc-indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.recibo_do_indice.brotli",
+      "valor": 28863,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · livro-razao/series/serie-ipc-indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.peso.recibo_do_indice.zonas_de_leitura",
+      "valor": 289,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-peso.mjs · livro-razao/series/serie-ipc-indice/index.html",
+      "conhecido_positivo": {
+        "o_que": "a página está entre as que têm desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.zonas.desenhos_com_zonas",
+      "valor": 48,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-marcas.mjs",
+      "conhecido_positivo": {
+        "o_que": "a primeira página tem «1992» no eixo do tempo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.zonas.total",
+      "valor": 9474,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-marcas.mjs",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.zonas.desenhos_indexados_com_zonas",
+      "valor": 0,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-marcas.mjs",
+      "conhecido_positivo": {
+        "o_que": "há desenhos indexados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.zonas.desenhos_nos_cartoes",
+      "valor": 32,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-marcas.mjs (os desenhos fora da primeira página e dos recibos)",
+      "conhecido_positivo": {
+        "o_que": "há desenhos de cartões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.zonas.zonas_nos_cartoes",
+      "valor": 0,
+      "comando": "sh design/especime-v3/medicoes/rp4c-2026-10-05/provas-rp4cb.sh, pela tranca, sobre a construção da cabeça da passagem · medir-marcas.mjs",
+      "conhecido_positivo": {
+        "o_que": "há desenhos de cartões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.modulo.menor",
+      "valor": 354,
+      "comando": "node · serieDoPais com { leitura: true }, a 360 e a 240, e MENOR_LARGURA_NO_ECRA",
+      "conhecido_positivo": {
+        "o_que": "a pensão, com menos pontos do que colunas, tem uma zona por ponto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.modulo.colunas",
+      "valor": 289,
+      "comando": "node · serieDoPais com { leitura: true }, a 360 e a 240, e MENOR_LARGURA_NO_ECRA",
+      "conhecido_positivo": {
+        "o_que": "a pensão, com menos pontos do que colunas, tem uma zona por ponto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.modulo.zonas",
+      "valor": 289,
+      "comando": "node · serieDoPais com { leitura: true }, a 360 e a 240, e MENOR_LARGURA_NO_ECRA",
+      "conhecido_positivo": {
+        "o_que": "a pensão, com menos pontos do que colunas, tem uma zona por ponto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.modulo.largura_da_zona",
+      "valor": 1.017,
+      "comando": "node · serieDoPais com { leitura: true }, a 360 e a 240, e MENOR_LARGURA_NO_ECRA",
+      "conhecido_positivo": {
+        "o_que": "a pensão, com menos pontos do que colunas, tem uma zona por ponto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.modulo.colunas_num_cartao",
+      "valor": 174,
+      "comando": "node · serieDoPais com { leitura: true }, a 360 e a 240, e MENOR_LARGURA_NO_ECRA",
+      "conhecido_positivo": {
+        "o_que": "a pensão, com menos pontos do que colunas, tem uma zona por ponto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.modulo.zonas_da_pensao",
+      "valor": 9,
+      "comando": "node · serieDoPais com { leitura: true }, a 360 e a 240, e MENOR_LARGURA_NO_ECRA",
+      "conhecido_positivo": {
+        "o_que": "a pensão, com menos pontos do que colunas, tem uma zona por ponto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.modulo.pontos_da_pensao",
+      "valor": 9,
+      "comando": "node · serieDoPais com { leitura: true }, a 360 e a 240, e MENOR_LARGURA_NO_ECRA",
+      "conhecido_positivo": {
+        "o_que": "a pensão, com menos pontos do que colunas, tem uma zona por ponto",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.inteiras",
+      "valor": 30,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "há capturas nas duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.erros",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "as plantas das capturas morderam",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.plantas",
+      "valor": 4,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "a planta da regra (a) está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.plantas_mordidas",
+      "valor": 4,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.provas_do_rato",
+      "valor": 3,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "a planta da etiqueta escondida mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.provas_do_rato_que_passaram",
+      "valor": 3,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.provas_do_toque",
+      "valor": 2,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "a planta da regra fora da consulta do rato mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.provas_do_toque_que_passaram",
+      "valor": 2,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.leituras_acesas_por_prova_do_rato",
+      "valor": [
+        1
+      ],
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "as provas do rato correram",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.leituras_acesas_no_toque",
+      "valor": [
+        0
+      ],
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "as provas do toque correram",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.rato.primeira.pt",
+      "valor": "−1,59 · junho de 2009",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "a etiqueta acesa é a da zona debaixo do rato",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.rato.primeira.en",
+      "valor": "−1,59 · June 2009",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "a etiqueta acesa é a da zona debaixo do rato",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.rato.recibo_da_inflacao.pt",
+      "valor": "3,30 · agosto de 2026",
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "a etiqueta acesa é a da zona debaixo do rato",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.390.zonas",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.390.zonas_alcancaveis",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.390.zona_mais_estreita_px",
+      "valor": 1.0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.390.largura_no_ecra",
+      "valor": 354,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.390.escala",
+      "valor": 0.98333,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.390.zonas",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.390.zonas_alcancaveis",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.390.zona_mais_estreita_px",
+      "valor": 1.0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.390.largura_no_ecra",
+      "valor": 354,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.390.escala",
+      "valor": 0.98333,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.768.zonas",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.768.zonas_alcancaveis",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.768.zona_mais_estreita_px",
+      "valor": 1.017,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.768.largura_no_ecra",
+      "valor": 360,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.768.escala",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.768.zonas",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.768.zonas_alcancaveis",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.768.zona_mais_estreita_px",
+      "valor": 1.017,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.768.largura_no_ecra",
+      "valor": 360,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.768.escala",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1024.zonas",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1024.zonas_alcancaveis",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1024.zona_mais_estreita_px",
+      "valor": 1.017,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1024.largura_no_ecra",
+      "valor": 360,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1024.escala",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1024.zonas",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1024.zonas_alcancaveis",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1024.zona_mais_estreita_px",
+      "valor": 1.017,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1024.largura_no_ecra",
+      "valor": 360,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1024.escala",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1280.zonas",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1280.zonas_alcancaveis",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1280.zona_mais_estreita_px",
+      "valor": 1.017,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1280.largura_no_ecra",
+      "valor": 360,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1280.escala",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1280.zonas",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1280.zonas_alcancaveis",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1280.zona_mais_estreita_px",
+      "valor": 1.017,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1280.largura_no_ecra",
+      "valor": 360,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1280.escala",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1600.zonas",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1600.zonas_alcancaveis",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1600.zona_mais_estreita_px",
+      "valor": 1.017,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1600.largura_no_ecra",
+      "valor": 360,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.primeira.1600.escala",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1600.zonas",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1600.zonas_alcancaveis",
+      "valor": 289,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o rato alcança pelo menos uma zona",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1600.zona_mais_estreita_px",
+      "valor": 1.017,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem zonas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1600.largura_no_ecra",
+      "valor": 360,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.recibo_da_inflacao.1600.escala",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "o desenho tem largura",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.desenhos_de_cartoes_medidos",
+      "valor": 60,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "há desenhos de cartões nas capturas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.desenhos_de_cartoes_com_zonas",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "há desenhos de cartões nas capturas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.escala_do_cartao_a_390",
+      "valor": 1,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "há desenhos de cartões a 390",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.largura_do_cartao_a_390",
+      "valor": 240,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.capturas.planta_da_regra_a_zona_px",
+      "valor": 0.847,
+      "comando": "node design/especime-v3/medicoes/rp4c-2026-10-05/captar-rp4cb.mjs --json rp4cb/capturas.json --prefixo rp4cb-",
+      "conhecido_positivo": {
+        "o_que": "a planta mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.f21.desenhos_recompostos",
+      "valor": 82,
+      "comando": "node scripts/check-formas.mjs --json-rp4 rp4cb/formas.json",
+      "conhecido_positivo": {
+        "o_que": "as provas do módulo correram",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.f21.provas_do_modulo",
+      "valor": 15,
+      "comando": "node scripts/check-formas.mjs --json-rp4 rp4cb/formas.json",
+      "conhecido_positivo": {
+        "o_que": "a prova das zonas por colunas está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.f21.plantas",
+      "valor": 21,
+      "comando": "node scripts/check-formas.mjs --json-rp4 rp4cb/formas.json",
+      "conhecido_positivo": {
+        "o_que": "uma planta tem de morder para contar",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.f21.plantas_mordidas",
+      "valor": 21,
+      "comando": "node scripts/check-formas.mjs --json-rp4 rp4cb/formas.json",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.f21.plantas_da_leitura_e_da_legenda",
+      "valor": 20,
+      "comando": "node scripts/check-formas.mjs --json-rp4 rp4cb/formas.json",
+      "conhecido_positivo": {
+        "o_que": "a planta de uma zona a mais está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.f21.plantas_da_leitura_e_da_legenda_mordidas",
+      "valor": 20,
+      "comando": "node scripts/check-formas.mjs --json-rp4 rp4cb/formas.json",
+      "conhecido_positivo": {
+        "o_que": "a planta de uma leitura trocada mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.f2.plantas_mordidas",
+      "valor": 6,
+      "comando": "node scripts/check-formas.mjs --json-rp4 rp4cb/formas.json",
+      "conhecido_positivo": {
+        "o_que": "a F2 tem plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.f2.plantas",
+      "valor": 6,
+      "comando": "node scripts/check-formas.mjs --json-rp4 rp4cb/formas.json",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.f2.algarismos_de_pontos_nos_desenhos",
+      "valor": 18948,
+      "comando": "node scripts/check-formas.mjs --json-rp4 rp4cb/formas.json",
+      "conhecido_positivo": {
+        "o_que": "a F2 viu valores de pontos nos desenhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.series.plantas",
+      "valor": 24,
+      "comando": "node tests/series/series.mjs --prova --json rp4cb/series.json",
+      "conhecido_positivo": {
+        "o_que": "a S6 tem plantas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.series.plantas_mordidas",
+      "valor": 24,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.primeira.plantas",
+      "valor": 62,
+      "comando": "node tests/inicio/primeira-pagina.mjs --prova --json rp4cb/primeira-plantas.json",
+      "conhecido_positivo": {
+        "o_que": "a planta do RP4-c está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.primeira.plantas_mordidas",
+      "valor": 62,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.portoes.plantas",
+      "valor": 13,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/rp4c-2026-10-05/rp4cb node tests/pais/portoes.mjs --prefixo rp4c",
+      "conhecido_positivo": {
+        "o_que": "cada planta repôs os bytes do ficheiro que mexeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.portoes.plantas_que_morderam",
+      "valor": 13,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/rp4c-2026-10-05/rp4cb node tests/pais/portoes.mjs --prefixo rp4c",
+      "conhecido_positivo": {
+        "o_que": "as duas da regra do sítio estão entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.portoes.plantas_da_regra_do_sitio",
+      "valor": 2,
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/rp4c-2026-10-05/rp4cb node tests/pais/portoes.mjs --prefixo rp4c",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.portoes.cabeca_e_estado",
+      "valor": [
+        [
+          "dd2e347c",
+          ""
+        ]
+      ],
+      "comando": "OEDP_MEDICOES=design/especime-v3/medicoes/rp4c-2026-10-05/rp4cb node tests/pais/portoes.mjs --prefixo rp4c",
+      "conhecido_positivo": {
+        "o_que": "a árvore seguida estava limpa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.conferencias.passos",
+      "valor": 10,
+      "comando": "rp4cb/conferencias/*.codigo",
+      "conhecido_positivo": {
+        "o_que": "a cabeça do fim é a do princípio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.conferencias.passos_a_zero",
+      "valor": 10,
+      "comando": "rp4cb/conferencias/*.codigo",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.conferencias.cabeca",
+      "valor": "dd2e347c",
+      "comando": "rp4cb/conferencias/cabeca",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.conferencias.estado_vazio",
+      "valor": true,
+      "comando": "rp4cb/conferencias/estado",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro do estado foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.conferencias.estado_fim_vazio",
+      "valor": true,
+      "comando": "rp4cb/conferencias/estado.fim",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro do estado foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.provas.passos",
+      "valor": 8,
+      "comando": "rp4cb/provas/*.codigo",
+      "conhecido_positivo": {
+        "o_que": "a cabeça do fim é a do princípio",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.provas.passos_a_zero",
+      "valor": 8,
+      "comando": "rp4cb/provas/*.codigo",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.provas.cabeca",
+      "valor": "dd2e347c",
+      "comando": "rp4cb/provas/cabeca",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.provas.estado_vazio",
+      "valor": true,
+      "comando": "rp4cb/provas/estado",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro do estado foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.provas.estado_fim_vazio",
+      "valor": true,
+      "comando": "rp4cb/provas/estado.fim",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro do estado foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.provas.construcao",
+      "valor": "dd2e347c",
+      "comando": "rp4cb/provas/version.json",
+      "conhecido_positivo": {
+        "o_que": "o commit da construção é a cabeça das provas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.mapa.citacoes_na_linha",
+      "valor": 435,
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md (o passo mapa das provas, rp4cb/provas/mapa.log)",
+      "conhecido_positivo": {
+        "o_que": "o mapa tem a secção do RP4-c com a leitura por colunas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.mapa.citacoes_longe",
+      "valor": 0,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.mapa.citacoes_por_encontrar",
+      "valor": 0,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "idem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.mapa.codigo",
+      "valor": 0,
+      "comando": "rp4cb/provas/mapa.codigo",
+      "conhecido_positivo": {
+        "o_que": "o registo do mapa existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo.respostas_do_modelo",
+      "valor": 47,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo> rp4cb/custo.json --desde <instante>",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo.simbolos_de_entrada",
+      "valor": 36751329,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo> rp4cb/custo.json --desde <instante>",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo.simbolos_de_saida_minimo",
+      "valor": 942,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo> rp4cb/custo.json --desde <instante>",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo.respostas_com_a_saida_de_um_momento_do_fluxo",
+      "valor": 30,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo> rp4cb/custo.json --desde <instante>",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo.segundos",
+      "valor": 2587,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo> rp4cb/custo.json --desde <instante>",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo.modelos",
+      "valor": {
+        "claude-opus-5-5": 114
+      },
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo.desde",
+      "valor": "2026-10-05T20:07:55Z",
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo-da-sessao.respostas_do_modelo",
+      "valor": 305,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo> rp4cb/custo-da-sessao.json",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo-da-sessao.simbolos_de_entrada",
+      "valor": 169389122,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo> rp4cb/custo-da-sessao.json",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo-da-sessao.simbolos_de_saida_minimo",
+      "valor": 58647,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo> rp4cb/custo-da-sessao.json",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo-da-sessao.respostas_com_a_saida_de_um_momento_do_fluxo",
+      "valor": 222,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo> rp4cb/custo-da-sessao.json",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo-da-sessao.segundos",
+      "valor": 10202,
+      "comando": "python3 design/especime-v3/medicoes/rp4c-2026-10-05/custo.py <registo> rp4cb/custo-da-sessao.json",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo-da-sessao.modelos",
+      "valor": {
+        "claude-opus-5-5": 750
+      },
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "rp4cb.custo-da-sessao.desde",
+      "valor": null,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "o registo lido tem respostas do modelo",
+        "encontrado": true
+      }
+    }
+  ]
+}

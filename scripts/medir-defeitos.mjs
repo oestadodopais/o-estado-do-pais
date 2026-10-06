@@ -230,7 +230,10 @@ const ORIGEM_DECLARADA =
      um ponto, a sua marca da fonte, o nome de um país, um campo da série, a
      contagem dos países, o lugar de Portugal e o dia da tabela. */
   '[data-ponto],[data-ponto-bandeira],[data-pais],[data-serie-campo],[data-ponto-conta],' +
-  '[data-ponto-lugar],[data-tabela-dos-paises]';
+  '[data-ponto-lugar],[data-tabela-dos-paises],' +
+  /* RP4-c (05.10.2026, o ponto 4 do mandato): o período de um ponto na etiqueta da leitura de cada ponto, que o portão
+     de HTML compara com o ponto da série pela sua cópia da forma da casa, com o valor do mesmo ponto ao lado. */
+  '[data-ponto-periodo]';
 
 /* O seletor com antepassado é lido a partir do documento. Quando o próprio
    bloco é esse antepassado, querySelector nele não o inclui no âmbito da

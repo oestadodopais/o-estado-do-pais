@@ -1,0 +1,1029 @@
+{
+  "construcao": "a construção da cabeça 983b4585 (astro build e carimbo), numa worktree destacada",
+  "commit": "983b4585cae878770efadd2112d803c3e23a570e",
+  "construido_em": "2026-10-05T18:21:58.063Z",
+  "letra_carregada_em_todas": true,
+  "desenhos": 16,
+  "etiquetas_de_ano_medidas": 50,
+  "largura_maior_de_um_ano": 30.25,
+  "largura_menor_de_um_ano": 30.25,
+  "conhecido_positivo_oito_algarismos": 60.484,
+  "conhecido_positivo_mede_mais": true,
+  "menor_espaco_entre_etiquetas_do_tempo": 22.635,
+  "paginas": [
+    {
+      "nome": "primeira",
+      "lang": "pt",
+      "rota": "/",
+      "letra": true,
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-homologa",
+          "viewBox": "0 0 360 200",
+          "tempo": [
+            {
+              "texto": "1992",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "2000",
+              "largura": 30.25,
+              "esquerda": 100.88499450683594,
+              "direita": 131.13499450683594
+            },
+            {
+              "texto": "2010",
+              "largura": 30.25,
+              "esquerda": 185.89700317382812,
+              "direita": 216.14700317382812
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 321.9159851074219,
+              "direita": 352.1659851074219
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−5",
+              "largura": 14.1875,
+              "esquerda": 25.8125,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "5",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "10",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "15",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            22.634994506835938,
+            54.76200866699219,
+            105.76898193359375
+          ],
+          "oito": 60.484375
+        }
+      ]
+    },
+    {
+      "nome": "primeira",
+      "lang": "en",
+      "rota": "/en/",
+      "letra": true,
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-homologa",
+          "viewBox": "0 0 360 200",
+          "tempo": [
+            {
+              "texto": "1992",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "2000",
+              "largura": 30.25,
+              "esquerda": 100.88499450683594,
+              "direita": 131.13499450683594
+            },
+            {
+              "texto": "2010",
+              "largura": 30.25,
+              "esquerda": 185.89700317382812,
+              "direita": 216.14700317382812
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 321.9159851074219,
+              "direita": 352.1659851074219
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−5",
+              "largura": 14.1875,
+              "esquerda": 25.8125,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "5",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "10",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "15",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            22.634994506835938,
+            54.76200866699219,
+            105.76898193359375
+          ],
+          "oito": 60.484375
+        }
+      ]
+    },
+    {
+      "nome": "precos",
+      "lang": "pt",
+      "rota": "/precos/",
+      "letra": true,
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-homologa",
+          "viewBox": "0 0 240 160",
+          "tempo": [
+            {
+              "texto": "1992",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "2010",
+              "largura": 30.25,
+              "esquerda": 123.43899536132812,
+              "direita": 153.68899536132812
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 203.94000244140625,
+              "direita": 234.19000244140625
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−5",
+              "largura": 14.1875,
+              "esquerda": 25.8125,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "5",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "10",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "15",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            45.188995361328125,
+            50.251007080078125
+          ],
+          "oito": 60.484375
+        },
+        {
+          "series": "serie-ipc-variacao-media-12-meses",
+          "viewBox": "0 0 240 160",
+          "tempo": [
+            {
+              "texto": "1992",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "2010",
+              "largura": 30.25,
+              "esquerda": 121.16700744628906,
+              "direita": 151.41700744628906
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 203.86000061035156,
+              "direita": 234.11000061035156
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−5",
+              "largura": 14.1875,
+              "esquerda": 25.8125,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "5",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "10",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            42.91700744628906,
+            52.4429931640625
+          ],
+          "oito": 60.484375
+        },
+        {
+          "series": "serie-ipc-alimentacao-variacao-homologa",
+          "viewBox": "0 0 240 160",
+          "tempo": [
+            {
+              "texto": "1992",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "2010",
+              "largura": 30.25,
+              "esquerda": 123.43899536132812,
+              "direita": 153.68899536132812
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 203.94000244140625,
+              "direita": 234.19000244140625
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−10",
+              "largura": 21.75,
+              "esquerda": 18.25,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "10",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "20",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "30",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            45.188995361328125,
+            50.251007080078125
+          ],
+          "oito": 60.484375
+        },
+        {
+          "series": "serie-ipc-energia-em-casa-variacao-homologa",
+          "viewBox": "0 0 240 160",
+          "tempo": [
+            {
+              "texto": "1949",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "1980",
+              "largura": 30.25,
+              "esquerda": 102.40000915527344,
+              "direita": 132.65000915527344
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 205.56700134277344,
+              "direita": 235.81700134277344
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−20",
+              "largura": 21.75,
+              "esquerda": 18.25,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "20",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "40",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "60",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            24.150009155273438,
+            72.9169921875
+          ],
+          "oito": 60.484375
+        },
+        {
+          "series": "serie-ipc-combustiveis-variacao-homologa",
+          "viewBox": "0 0 240 160",
+          "tempo": [
+            {
+              "texto": "1949",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "1980",
+              "largura": 30.25,
+              "esquerda": 102.40000915527344,
+              "direita": 132.65000915527344
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 205.56700134277344,
+              "direita": 235.81700134277344
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−50",
+              "largura": 21.75,
+              "esquerda": 18.25,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "50",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "100",
+              "largura": 22.6875,
+              "esquerda": 17.3125,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            24.150009155273438,
+            72.9169921875
+          ],
+          "oito": 60.484375
+        },
+        {
+          "series": "serie-ihpc-variacao-homologa-ue",
+          "viewBox": "0 0 240 160",
+          "tempo": [
+            {
+              "texto": "2000",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 202.9199981689453,
+              "direita": 233.1699981689453
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−5",
+              "largura": 14.1875,
+              "esquerda": 25.8125,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "5",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "10",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "15",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            124.66999816894531
+          ],
+          "oito": 60.484375
+        }
+      ]
+    },
+    {
+      "nome": "precos",
+      "lang": "en",
+      "rota": "/en/prices/",
+      "letra": true,
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-homologa",
+          "viewBox": "0 0 240 160",
+          "tempo": [
+            {
+              "texto": "1992",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "2010",
+              "largura": 30.25,
+              "esquerda": 123.43899536132812,
+              "direita": 153.68899536132812
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 203.94000244140625,
+              "direita": 234.19000244140625
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−5",
+              "largura": 14.1875,
+              "esquerda": 25.8125,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "5",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "10",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "15",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            45.188995361328125,
+            50.251007080078125
+          ],
+          "oito": 60.484375
+        },
+        {
+          "series": "serie-ipc-variacao-media-12-meses",
+          "viewBox": "0 0 240 160",
+          "tempo": [
+            {
+              "texto": "1992",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "2010",
+              "largura": 30.25,
+              "esquerda": 121.16700744628906,
+              "direita": 151.41700744628906
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 203.86000061035156,
+              "direita": 234.11000061035156
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−5",
+              "largura": 14.1875,
+              "esquerda": 25.8125,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "5",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "10",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            42.91700744628906,
+            52.4429931640625
+          ],
+          "oito": 60.484375
+        },
+        {
+          "series": "serie-ipc-alimentacao-variacao-homologa",
+          "viewBox": "0 0 240 160",
+          "tempo": [
+            {
+              "texto": "1992",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "2010",
+              "largura": 30.25,
+              "esquerda": 123.43899536132812,
+              "direita": 153.68899536132812
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 203.94000244140625,
+              "direita": 234.19000244140625
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−10",
+              "largura": 21.75,
+              "esquerda": 18.25,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "10",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "20",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "30",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            45.188995361328125,
+            50.251007080078125
+          ],
+          "oito": 60.484375
+        },
+        {
+          "series": "serie-ipc-energia-em-casa-variacao-homologa",
+          "viewBox": "0 0 240 160",
+          "tempo": [
+            {
+              "texto": "1949",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "1980",
+              "largura": 30.25,
+              "esquerda": 102.40000915527344,
+              "direita": 132.65000915527344
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 205.56700134277344,
+              "direita": 235.81700134277344
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−20",
+              "largura": 21.75,
+              "esquerda": 18.25,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "20",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "40",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "60",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            24.150009155273438,
+            72.9169921875
+          ],
+          "oito": 60.484375
+        },
+        {
+          "series": "serie-ipc-combustiveis-variacao-homologa",
+          "viewBox": "0 0 240 160",
+          "tempo": [
+            {
+              "texto": "1949",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "1980",
+              "largura": 30.25,
+              "esquerda": 102.40000915527344,
+              "direita": 132.65000915527344
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 205.56700134277344,
+              "direita": 235.81700134277344
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−50",
+              "largura": 21.75,
+              "esquerda": 18.25,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "50",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "100",
+              "largura": 22.6875,
+              "esquerda": 17.3125,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            24.150009155273438,
+            72.9169921875
+          ],
+          "oito": 60.484375
+        },
+        {
+          "series": "serie-ihpc-variacao-homologa-ue",
+          "viewBox": "0 0 240 160",
+          "tempo": [
+            {
+              "texto": "2000",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 202.9199981689453,
+              "direita": 233.1699981689453
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−5",
+              "largura": 14.1875,
+              "esquerda": 25.8125,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "5",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "10",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "15",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            124.66999816894531
+          ],
+          "oito": 60.484375
+        }
+      ]
+    },
+    {
+      "nome": "recibo-da-inflacao",
+      "lang": "pt",
+      "rota": "/livro-razao/series/serie-ipc-variacao-homologa/",
+      "letra": true,
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-homologa",
+          "viewBox": "0 0 360 200",
+          "tempo": [
+            {
+              "texto": "1992",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "2000",
+              "largura": 30.25,
+              "esquerda": 100.88499450683594,
+              "direita": 131.13499450683594
+            },
+            {
+              "texto": "2010",
+              "largura": 30.25,
+              "esquerda": 185.89700317382812,
+              "direita": 216.14700317382812
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 321.9159851074219,
+              "direita": 352.1659851074219
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−5",
+              "largura": 14.1875,
+              "esquerda": 25.8125,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "5",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "10",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "15",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            22.634994506835938,
+            54.76200866699219,
+            105.76898193359375
+          ],
+          "oito": 60.484375
+        }
+      ]
+    },
+    {
+      "nome": "recibo-da-inflacao",
+      "lang": "en",
+      "rota": "/en/ledger/series/serie-ipc-variacao-homologa/",
+      "letra": true,
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-homologa",
+          "viewBox": "0 0 360 200",
+          "tempo": [
+            {
+              "texto": "1992",
+              "largura": 30.25,
+              "esquerda": 48,
+              "direita": 78.25
+            },
+            {
+              "texto": "2000",
+              "largura": 30.25,
+              "esquerda": 100.88499450683594,
+              "direita": 131.13499450683594
+            },
+            {
+              "texto": "2010",
+              "largura": 30.25,
+              "esquerda": 185.89700317382812,
+              "direita": 216.14700317382812
+            },
+            {
+              "texto": "2026",
+              "largura": 30.25,
+              "esquerda": 321.9159851074219,
+              "direita": 352.1659851074219
+            }
+          ],
+          "valor": [
+            {
+              "texto": "−5",
+              "largura": 14.1875,
+              "esquerda": 25.8125,
+              "direita": 40
+            },
+            {
+              "texto": "0",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "5",
+              "largura": 7.5625,
+              "esquerda": 32.4375,
+              "direita": 40
+            },
+            {
+              "texto": "10",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            },
+            {
+              "texto": "15",
+              "largura": 15.125,
+              "esquerda": 24.875,
+              "direita": 40
+            }
+          ],
+          "espacos": [
+            22.634994506835938,
+            54.76200866699219,
+            105.76898193359375
+          ],
+          "oito": 60.484375
+        }
+      ]
+    }
+  ]
+}
