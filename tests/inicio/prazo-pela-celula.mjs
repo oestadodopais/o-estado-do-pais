@@ -1,4 +1,7 @@
 /** H2-c: a E1 pela própria check:pais, sem escrever no dist/ do sítio. */
+import { inicioDoPasso, fimDoPasso } from '../../scripts/leituras/tempos.mjs';
+const tempoDoAutoTeste = inicioDoPasso('auto-teste:pais');
+process.once('exit', codigo => fimDoPasso(tempoDoAutoTeste, codigo));
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';

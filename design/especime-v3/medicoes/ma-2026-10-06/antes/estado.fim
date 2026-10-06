@@ -1,0 +1,8 @@
+ M scripts/leituras/portoes.sh
+ M scripts/verify-depois-do-build.mjs
+ M tests/acessibilidade/alvos.mjs
+ M tests/inicio/prazo-pela-celula.mjs
+?? design/especime-v3/medicoes/ma-2026-10-06/
+?? scripts/leituras/tempos-shell.py
+?? scripts/leituras/tempos.mjs
+?? tests/leituras/tempos.py
