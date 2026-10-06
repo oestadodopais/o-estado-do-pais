@@ -72,9 +72,13 @@ medicao('plantas_da_k17_das_familias_mordidas', plantasK17.filter((/** @type {an
 const jsonSeries = path.join(AQUI, 'series-s6.json');
 const s6 = corre(['tests/series/series.mjs', '--prova', '--json', jsonSeries]);
 const dS6 = fs.existsSync(jsonSeries) ? JSON.parse(fs.readFileSync(jsonSeries, 'utf8')) : null;
-const plantasR4S6 = (dS6?.plantas ?? []).filter((/** @type {any} */ p) => / \(R4\)$/.test(p.nome));
+const plantasR4S6Aqui = (/** @type {any} */ d) => (d?.plantas ?? []).filter((/** @type {any} */ p) => / \(R4\)$/.test(p.nome));
+const plantasR4S6 = plantasR4S6Aqui(dS6);
 medicao('check_series_codigo', s6.codigo, 'node tests/series/series.mjs --prova --json series-s6.json', 'o ficheiro tem as plantas', Boolean(dS6?.plantas?.length));
-medicao('plantas_da_s6', (dS6?.plantas ?? []).length, 'node tests/series/series.mjs --prova --json · plantas', 'todas mordem', (dS6?.plantas ?? []).every((/** @type {any} */ p) => p.mordeu));
+/* R4-b (o achado da leitura a frio): a medida contava as plantas do `check:series` inteiro; conta só as da S6. */
+const plantasDaS6 = (dS6?.plantas ?? []).filter((/** @type {any} */ p) => p.celula === 'S6');
+medicao('plantas_da_s6', plantasDaS6.length, 'node tests/series/series.mjs --prova --json · as plantas com celula S6', 'todas mordem, e as quatro do R4 estão entre elas', plantasDaS6.length > 0 && plantasDaS6.every((/** @type {any} */ p) => p.mordeu) && plantasR4S6Aqui(dS6).every((/** @type {any} */ p) => p.celula === 'S6'));
+medicao('plantas_do_check_series', (dS6?.plantas ?? []).length, 'node tests/series/series.mjs --prova --json · todas as plantas, das seis células', 'há plantas de mais de uma célula', new Set((dS6?.plantas ?? []).map((/** @type {any} */ p) => p.celula)).size > 1);
 medicao('plantas_r4_da_s6', plantasR4S6.length, 'idem, as plantas cujo nome acaba em «(R4)»', 'a do lado trocado está lá e morde', plantasR4S6.some((/** @type {any} */ p) => p.nome.includes('lado trocado') && p.mordeu));
 /* A frase do último ponto em cada recibo construído: com que ponto compara e de que lado fica. */
 const comparacoes = { 'ha-um-ano': 0, anterior: 0, maior: 0, menor: 0, igual: 0, recibos: 0 };
@@ -272,6 +276,78 @@ for (const l of LEITURAS_EUROSTAT) {
   leituras.push({ url: l.url, hora: l.hora, cliente: 'curl (pedido simples, fora do cliente da casa)', sha256: createHash('sha256').update(bytes).digest('hex'), bytes: bytes.length, rotulos });
 }
 medicao('leituras_do_eurostat_fora_do_cliente_da_casa', leituras.filter((x) => x.sha256).length, 'OEDP_LEITURAS_EUROSTAT=<pasta fora do repositório> · as três respostas, com o resumo e os rótulos', 'a resposta das três classes traz o rótulo de CP041', leituras.some((x) => x.rotulos?.coicop18?.CP041 === 'Actual rental payments made for housing'));
+
+/* 9 · A PASSAGEM R4-b (06.10.2026): o marcador «por confirmar na fonte», a parte do sinal, a L1 com as vezes, as plantas
+   e as conferências desta passagem, e as capturas regeneradas (na pasta r4b/ e em capturas/r4-2026-10-05/r4b/). */
+const R4B = path.join(AQUI, 'r4b');
+const leJson = (/** @type {string} */ f) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return null; } };
+{
+  medicao('r4b_recibos_de_linha_com_o_marcador', rc.com_marcador ?? NAO, 'node tests/cartao/cartao.mjs --prova --json · contas.recibos_com_frase.com_marcador', 'são as linhas por confirmar vezes as duas edições', rc.com_marcador === (f.por_confirmar_linhas ?? -1) * 2);
+  medicao('r4b_linhas_por_confirmar_na_fonte', f.por_confirmar_linhas ?? NAO, 'idem · contas.familias.por_confirmar_linhas', 'a linha de Funchal do desemprego registado está na lista declarada', (await import(path.join(RAIZ, 'src', 'data', 'o-que-e-das-familias.mjs'))).LINHAS_POR_CONFIRMAR_NA_FONTE.includes('funchal-desemprego-registado-2025-12'));
+  medicao('r4b_entradas_por_confirmar_na_fonte', f.por_confirmar_entradas ?? NAO, 'idem · contas.familias.por_confirmar_entradas', 'a planta «uma marca a mais num recibo» morde', (c.familias_plantas_lista ?? []).some((/** @type {any} */ p) => p.nome === 'uma marca a mais num recibo' && p.mordeu));
+  medicao('r4b_series_por_confirmar_na_fonte', so.por_confirmar ?? NAO, 'idem · contas.series_o_que_e.por_confirmar', 'a planta «uma marca em falta num recibo de série» morde', (c.familias_plantas_lista ?? []).some((/** @type {any} */ p) => p.nome === 'uma marca em falta num recibo de série' && p.mordeu));
+  medicao('r4b_recibos_de_serie_com_o_marcador', rs.com_marcador ?? NAO, 'idem · contas.recibos_das_series_com_frase.com_marcador', 'são as séries por confirmar vezes as duas edições', rs.com_marcador === (so.por_confirmar ?? -1) * 2);
+  medicao('r4b_entradas_so_com_a_conta_declarada', ((f.alguma_da_casa ?? 0) + (so.alguma_da_casa ?? 0)) - ((f.por_confirmar_entradas ?? 0) + (so.por_confirmar ?? 0)), 'as entradas com alguma parte só da casa (a medida estrita do R4) menos as por confirmar na fonte (a conta declarada de uma linha calculada confirma)', 'a família dos cem euros por função do Orçamento está nas por confirmar (a parte «que o Orçamento prevê» só tem o nome do projeto)', (c.familias?.lista_da_casa ?? []).some((/** @type {string} */ x) => x.startsWith('oe-2026-cem-euros-funcao-01')));
+  medicao('r4b_recibos_com_a_parte_do_sinal', rc.com_sinal ?? NAO, 'idem · contas.recibos_com_frase.com_sinal', 'a planta «a parte do sinal tirada do recibo do ano anterior» morde', (c.familias_plantas_lista ?? []).some((/** @type {any} */ p) => p.nome === 'a parte do sinal tirada do recibo do ano anterior' && p.mordeu));
+  for (const [lang, rel] of [['pt', 'index.html'], ['en', path.join('en', 'index.html')]]) {
+    const r = parse(fs.readFileSync(path.join(DIST, rel), 'utf8'));
+    medicao(`r4b_primeira_pagina_${lang}_partes_do_sinal`, r.querySelectorAll('[data-veredicto-sinal]').length, `${rel} · [data-veredicto-sinal]`, 'a da posição de investimento internacional está lá', Boolean(r.querySelector('[data-veredicto-sinal="posicao-de-investimento-internacional-2025"]')));
+  }
+  /* O título do documento uma vez no corpo do recibo, e o valor da série pelo ponto. */
+  let cabecaComTitulo = 0, atribuicaoComTitulo = 0, portasDoPib = NAO;
+  for (const id of ids) {
+    const h = fs.readFileSync(path.join(DIST, 'livro-razao', id, 'index.html'), 'utf8');
+    const r = parse(h);
+    if (r.querySelector('.linha-nome-da-fonte [data-linha-campo="document.title"]')) {
+      cabecaComTitulo++;
+      if (r.querySelector('.linha-atribuicao [data-linha-campo="document.title"]')) atribuicaoComTitulo++;
+    }
+    if (id === 'pib-real-per-capita-2025') {
+      const alvo = 'https://ec.europa.eu/eurostat/databrowser/view/tipsna40/default/table?lang=en';
+      portasDoPib = r.querySelectorAll('body a[href]').filter((a) => (a.getAttribute('href') ?? '').split('#')[0].replace(/\/$/, '') === alvo && !a.closest('header') && !a.closest('footer')).length;
+    }
+  }
+  medicao('r4b_recibos_com_o_titulo_na_cabeca', cabecaComTitulo, 'dist/livro-razao/*/index.html · .linha-nome-da-fonte com o campo document.title', 'há recibos com o título na cabeça', cabecaComTitulo > 0);
+  medicao('r4b_recibos_com_o_titulo_tambem_na_atribuicao', atribuicaoComTitulo, 'idem, os que repetem o campo na frase de atribuição', 'a conta é a dos que a régua via repetidos, que desceu a zero', true);
+  medicao('r4b_portas_do_recibo_do_pib_para_o_documento', portasDoPib, 'dist/livro-razao/pib-real-per-capita-2025/index.html · as ligações para o documento tipsna40, fora do cabeçalho e do rodapé', 'são as da cabeça de partida (a contagem dela em l1-destinos-557844fe.json)', portasDoPib === (JSON.parse(fs.readFileSync(path.join(AQUI, 'l1-destinos-557844fe.json'), 'utf8')).repetidos_por_pagina['/livro-razao/pib-real-per-capita-2025']?.['https://ec.europa.eu/eurostat/databrowser/view/tipsna40/default/table?lang=en'] ?? -1));
+  let seriesPeloPonto = 0, seriesComSelo = 0;
+  for (const s of series) {
+    const id = s.slice(0, -4);
+    for (const rel of [path.join('livro-razao', 'series', id, 'index.html'), path.join('en', 'ledger', 'series', id, 'index.html')]) {
+      const el = parse(fs.readFileSync(path.join(DIST, rel), 'utf8')).querySelector('[data-o-que-e-da-serie]');
+      if (!el) continue;
+      if (el.querySelector('[data-ponto]')) seriesPeloPonto++;
+      if (el.querySelector('a.src-chip')) seriesComSelo++;
+    }
+  }
+  medicao('r4b_recibos_de_serie_com_o_valor_pelo_ponto', seriesPeloPonto, 'os recibos das séries com [data-ponto] na frase «o que é»', 'nenhum recibo de série tem selo na frase', seriesComSelo === 0);
+  medicao('r4b_recibos_de_serie_com_selo_na_frase', seriesComSelo, 'os recibos das séries com a.src-chip na frase «o que é»', 'a planta «o selo de volta na frase de uma série» morde', (c.familias_plantas_lista ?? []).some((/** @type {any} */ p) => p.nome.startsWith('o selo de volta na frase de uma série') && p.mordeu));
+  const l1b = leJson(path.join(AQUI, 'l1-r4b.json'));
+  for (const k of ['base', 'r4', 'agora', 'r4b_novas', 'r4b_sairam', 'r4b_agravadas', 'r4b_aliviadas', 'r4b_iguais', 'r4_novas', 'r4_agravadas_com_vezes', 'r4_agravadas_sem_vezes']) {
+    medicao(`r4b_l1_${k}`, l1b?.contagens?.[k] ?? NAO, `l1-r4b.json · contagens.${k} (medir-l1-r4b.mjs)`, 'os dois conhecidos-positivos da medida morderam (a lista da régua e a omissão das vezes)', Boolean(l1b?.conhecidos_positivos?.length === 2 && l1b.conhecidos_positivos.every((/** @type {any} */ x) => x.mordeu)));
+  }
+  const pr4 = leJson(path.join(R4B, 'plantas-portoes-r4.json')) ?? [];
+  const pr4b = leJson(path.join(R4B, 'plantas-portoes-r4b.json')) ?? [];
+  const teto = leJson(path.join(R4B, 'planta-teto-l1-r4b.json'));
+  medicao('r4b_plantas_r4_sobre_a_construcao', pr4.length, 'r4b/plantas-portoes-r4.json (tests/pais/portoes.mjs --prefixo r4-, na cabeça do código)', 'todas passaram, com a árvore seguida limpa e os ficheiros repostos', pr4.length > 0 && pr4.every((/** @type {any} */ p) => p.passou && p.estado === '' && p.ficheiros.every((/** @type {any} */ x) => x.antes === x.reposto)));
+  medicao('r4b_plantas_r4b_sobre_a_construcao', pr4b.length, 'r4b/plantas-portoes-r4b.json (--prefixo r4b-)', 'todas passaram, com a árvore seguida limpa e os ficheiros repostos', pr4b.length > 0 && pr4b.every((/** @type {any} */ p) => p.passou && p.estado === '' && p.ficheiros.every((/** @type {any} */ x) => x.antes === x.reposto)));
+  medicao('r4b_planta_do_teto_da_l1', teto?.teto ?? NAO, 'r4b/planta-teto-l1-r4b.json · o teto lido', 'a contagem do registo trocada em memória é recusada', Boolean(teto?.mordeu && teto.estado === ''));
+  const plantasV1R4b = (dPP?.plantas ?? []).filter((/** @type {any} */ p) => /parte do sinal|porta a mais|o selo de uma explicação/.test(p.nome));
+  medicao('r4b_plantas_v1r4_novas', plantasV1R4b.length, 'node tests/inicio/primeira-pagina.mjs --prova --json · as plantas do sinal e das portas', 'todas mordem', plantasV1R4b.length > 0 && plantasV1R4b.every((/** @type {any} */ p) => p.mordeu));
+  const plantasK17b = (c.familias_plantas_lista ?? []).filter((/** @type {any} */ p) => /marca|sinal|selo de volta|confirmada|confirmar/.test(p.nome));
+  medicao('r4b_plantas_k17_novas', plantasK17b.length, 'node tests/cartao/cartao.mjs --prova --json · as plantas do marcador, do sinal e da porta única', 'todas mordem', plantasK17b.length > 0 && plantasK17b.every((/** @type {any} */ p) => p.mordeu));
+  /* As conferências que a passagem tocou, corridas por conferencias-r4b.sh na cabeça do código, com a árvore limpa. */
+  const P = path.join(R4B, 'conferencias');
+  for (const nome of ['check-cartao', 'check-primeira', 'check-pais', 'check-lugar', 'check-series', 'typecheck']) {
+    const cod = fs.existsSync(path.join(P, `${nome}.codigo`)) ? Number(fs.readFileSync(path.join(P, `${nome}.codigo`), 'utf8').trim()) : NAO;
+    const est = fs.existsSync(path.join(P, `${nome}.estado`)) ? fs.readFileSync(path.join(P, `${nome}.estado`), 'utf8') : null;
+    medicao(`r4b_conferencia_${nome.replace(/-/g, '_')}_codigo`, cod, `r4b/conferencias/${nome}.codigo (conferencias-r4b.sh)`, 'a árvore seguida estava limpa', est === '');
+  }
+  const cap = leJson(path.join(R4B, 'capturas-r4b.json'));
+  medicao('r4b_capturas', cap?.capturas?.length ?? NAO, 'r4b/capturas-r4b.json · capturas (captar-r4.mjs --r4b)', 'cada uma tem o ficheiro na pasta das capturas', Boolean(cap?.capturas?.every((/** @type {any} */ x) => fs.existsSync(path.join(RAIZ, x.ficheiro)))));
+  medicao('r4b_capturas_sem_rolar_para_o_lado', cap?.capturas?.filter((/** @type {any} */ x) => x.largura_do_documento <= x.largura).length ?? NAO, 'idem · largura do documento ≤ largura da janela', 'há capturas de um recibo com o marcador', Boolean(cap?.capturas?.some((/** @type {any} */ x) => x.pagina.startsWith('linha-com-marcador'))));
+  saidaExtra.r4b_entradas_por_confirmar = { familias: c.familias?.lista_da_casa ?? [], series: so.lista_da_casa ?? [] };
+}
 
 const saida = {
   bloco: 'R4',

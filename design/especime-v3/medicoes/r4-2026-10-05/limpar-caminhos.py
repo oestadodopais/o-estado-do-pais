@@ -11,7 +11,8 @@ RAIZ = Path.cwd()
 PASTA = Path('design/especime-v3/medicoes/r4-2026-10-05/portoes')
 casa = str(Path.home())
 mudados = []
-for p in sorted(PASTA.glob('*.log')):
+# R4-b: também os registos da passagem, em r4b/ (as conferências, as plantas e as medições).
+for p in sorted([*PASTA.glob('*.log'), *Path('design/especime-v3/medicoes/r4-2026-10-05/r4b').rglob('*.log')]):
     t = p.read_text(encoding='utf-8', errors='replace')
     novo = t.replace(str(RAIZ), '<sitio>').replace(casa, '<pasta-local>')
     # A raiz das pastas pessoais compõe-se aqui, para que este guião não leve a cadeia que o detetor procura.

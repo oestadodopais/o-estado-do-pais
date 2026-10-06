@@ -23,10 +23,17 @@ import { chromium } from 'playwright';
 const dist = path.resolve('dist');
 const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const estado = execFileSync('git', ['status', '--porcelain', '--untracked-files=no'], { encoding: 'utf8' });
-const pasta = 'design/especime-v3/medicoes/r4-2026-10-05';
-const saida = 'design/especime-v3/capturas/r4-2026-10-05';
+/* `--r4b` (passagem R4-b, 06.10.2026): as capturas regeneradas vão para `capturas/r4-2026-10-05/r4b/`, o registo para
+   `r4b/capturas-r4b.json`, e entra o recibo de uma linha com o marcador «por confirmar na fonte». */
+const R4B = process.argv.includes('--r4b');
+const pasta = R4B ? 'design/especime-v3/medicoes/r4-2026-10-05/r4b' : 'design/especime-v3/medicoes/r4-2026-10-05';
+const saida = R4B ? 'design/especime-v3/capturas/r4-2026-10-05/r4b' : 'design/especime-v3/capturas/r4-2026-10-05';
 const versao = JSON.parse(await fs.readFile(path.join(dist, 'version.json'), 'utf8'));
-if (versao.commit !== cabeca) throw new Error(`A construção (${versao.commit}) não é da cabeça atual (${cabeca}).`);
+/* A construção é a da cabeça do código; por cima dela a cabeça só pode ter commits nas duas pastas das provas. */
+const porCima = versao.commit === cabeca ? [] : execFileSync('git', ['diff', '--name-only', `${versao.commit}..${cabeca}`], { encoding: 'utf8' }).split('\n').filter(Boolean);
+if (porCima.some((f) => !f.startsWith('design/especime-v3/medicoes/r4-2026-10-05/') && !f.startsWith('design/especime-v3/capturas/r4-2026-10-05/'))) {
+  throw new Error(`A construção (${versao.commit}) não é da cabeça atual (${cabeca}), e a diferença não é só de provas.`);
+}
 const larguras = [390, 768, 1024, 1280, 1600];
 const paginas = {
   'linha-pii-2025': { pt: '/livro-razao/posicao-de-investimento-internacional-2025/', en: '/en/ledger/posicao-de-investimento-internacional-2025/' },
@@ -34,6 +41,7 @@ const paginas = {
   'linha-despesa-em-id-ue': { pt: '/livro-razao/despesa-em-id-2024-ue/', en: '/en/ledger/despesa-em-id-2024-ue/' },
   'serie-rendas': { pt: '/livro-razao/series/serie-ipc-rendas-variacao-homologa/', en: '/en/ledger/series/serie-ipc-rendas-variacao-homologa/' },
   'primeira-pagina': { pt: '/', en: '/en/' },
+  ...(R4B ? { 'linha-com-marcador': { pt: '/livro-razao/funchal-desemprego-registado-2025-12/', en: '/en/ledger/funchal-desemprego-registado-2025-12/' } } : {}),
 };
 const tipos = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.png': 'image/png', '.json': 'application/json', '.webp': 'image/webp', '.xml': 'application/xml' };
 const servidor = http.createServer(async (pedido, resposta) => {
@@ -75,6 +83,8 @@ const medir = () => {
     frase_do_ultimo_ponto: texto(document.querySelector('[data-serie-ultimo]')),
     explicacoes_a_vista: document.querySelectorAll('[data-veredicto-fora] [data-veredicto-explica]').length,
     explicacoes_na_porta: document.querySelectorAll('details[data-veredicto-dentro] [data-veredicto-explica]').length,
+    marcador_por_confirmar: document.querySelectorAll('[data-por-confirmar-na-fonte] a.marcador-da-frase').length,
+    partes_do_sinal: document.querySelectorAll('[data-veredicto-sinal], [data-o-que-e-parte="sinal"]').length,
   };
 };
 
@@ -104,11 +114,12 @@ await navegador.close();
 servidor.close();
 
 const registo = {
-  bloco: 'R4',
-  guiao: `${pasta}/captar-r4.mjs`,
+  bloco: R4B ? 'R4-b' : 'R4',
+  guiao: 'design/especime-v3/medicoes/r4-2026-10-05/captar-r4.mjs' + (R4B ? ' --r4b' : ''),
   cabeca,
   estado_seguido: estado,
   construcao: versao.commit,
+  por_cima_da_construcao: porCima,
   inicio,
   fim: new Date().toISOString(),
   navegador: 'chromium (playwright), escala 1, tema claro, movimento reduzido',
@@ -116,6 +127,7 @@ const registo = {
   capturas,
   problemas,
 };
-await fs.writeFile(path.join(pasta, 'capturas-r4.json'), `${JSON.stringify(registo, null, 2)}\n`);
+await fs.mkdir(pasta, { recursive: true });
+await fs.writeFile(path.join(pasta, R4B ? 'capturas-r4b.json' : 'capturas-r4.json'), `${JSON.stringify(registo, null, 2)}\n`);
 console.log(`capturas ${capturas.length} · problemas ${problemas.length}${problemas.length ? `\n  ${problemas.join('\n  ')}` : ''}`);
 process.exit(problemas.length ? 1 : 0);
