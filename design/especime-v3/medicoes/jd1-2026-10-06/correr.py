@@ -7,6 +7,7 @@ import os
 import re
 import subprocess
 import sys
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -19,6 +20,11 @@ def limpa(texto):
     for p, label in [(SITE, "<worktree>"), (MOTOR, "<motor>"), (Path.home(), "<casa>")]:
         texto = texto.replace(str(p), label)
     texto = texto.replace(Path.home().name, "<utilizador>")
+    temporarios = {tempfile.gettempdir(), os.environ.get("TMPDIR", "").rstrip("/")} - {""}
+    temporarios |= {"/private" + p for p in temporarios if p.startswith("/var/")}
+    for p in sorted(temporarios, key=len, reverse=True):
+        texto = texto.replace(p, "<casa>/temporario")
+    texto = re.sub(r"/(?:private/)?var/folders/[^\s\"'<>]+", "<casa>/temporario", texto)
     return re.sub(r"\x1b\[[0-9;]*m", "", texto)
 
 
@@ -39,8 +45,10 @@ def main():
         fim=datetime.now(timezone.utc).isoformat(), codigo=r.returncode, cabeca=head), ensure_ascii=False, indent=2) + "\n")
     # O guião dos três portões escreve os seus próprios códigos. Só se limpam
     # caminhos dos textos, nunca se recalculam ou inferem códigos por uma barra.
+    comuns = {"cabeca", "cabeca.fim", "estado.fim"} if name == "sitio" else set()
+    prefixos = ("build.", "verify.", "typecheck.", "sitio.") if name == "sitio" else (name + ".",)
     for p in out.iterdir():
-        if p.is_file():
+        if p.is_file() and (p.name in comuns or p.name.startswith(prefixos)):
             p.write_text(limpa(p.read_text()))
     print(f"{name}: {r.returncode}")
     return r.returncode
