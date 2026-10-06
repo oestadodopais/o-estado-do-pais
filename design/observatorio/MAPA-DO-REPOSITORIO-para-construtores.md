@@ -276,6 +276,22 @@ A I121 de `design/especime-v3/ISSUES.md` avisa que a catraca **sobe sozinha** co
 
 ## 5 · Os tempos
 
+### Os guiões comuns das leituras, desde o M-A
+
+Os blocos seguintes usam estes ficheiros. As cópias históricas nas medições
+conservam a prova do que cada bloco correu; não são pontos de manutenção.
+
+| Guião | Interface e razão |
+|---|---|
+| `scripts/leituras/custo.py` | `<sessão.jsonl> [saída.json] [--desde ISO]`. Lê Claude e Codex, elimina a duplicação das partes e dos contadores acumulados, declara os campos ausentes e o limite da saída parcial. |
+| `scripts/leituras/limpar-caminhos.py` | `<pasta> --worktree <pasta> [--motor <pasta>] [--scratchpad <pasta>]`. Retira caminhos e nome de utilizador do texto e do JSON comprimido, conserva binários e não segue ligações. O `portoes.sh` chama-o no fim, mesmo num vermelho. |
+| `scripts/leituras/captar.mjs` | `<pedido.json> <pasta nova> [dist]`. O pedido nomeia a cabeça completa, as rotas portuguesa e inglesa e os recortes opcionais. Captura nas cinco larguras, confere a cabeça e os recursos e escreve os sha256; as réguas de conteúdo continuam a ser as de cada bloco. |
+| `scripts/leituras/tempos.mjs` e `tempos-shell.py` | O primeiro mede, reúne e arruma os registos; o segundo é a shell do npm só na corrida instrumentada. `tempos.json` guarda início, fim, duração e código de cada passo. |
+| `scripts/leituras/portoes.sh` | `<worktree absoluta> <pasta nova>`, com `RESEARCHHUB_DIR` no ambiente. Toma a tranca, constrói, confere a união em paralelo e corre o typecheck; cada código vem do processo terminado. `OEDP_PARALELO` permite medir outro grau. |
+| `scripts/leituras/pacote.sh` | A interface está no cabeçalho. Os códigos e tempos acompanham só as linhas dos registos citadas por `<!-- portao: portoes/verify.log \| npm run check:series · -->` no relatório. A falta de uma linha citada fecha o pacote. |
+
+### Medições anteriores ao M-A
+
 Do que está **medido** e escrito, na cabeça `8de4e841` da passagem de correção da peça 1 do B1 (`design/especime-v3/medicoes/b1-2026-09-17/LEIA-ME-peca1.md:55` a `:73`), cada comando corrido separadamente:
 
 | Comando | Início | Fim | Tempo de parede | Código |

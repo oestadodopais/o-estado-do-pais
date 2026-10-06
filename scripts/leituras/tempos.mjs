@@ -4,6 +4,7 @@
  * se perderem. O fecho reúne-os em tempos.json. O ambiente passa inteiro.
  * Uso: node scripts/leituras/tempos.mjs medir <nome> <comando> [argumentos...]
  *      node scripts/leituras/tempos.mjs fechar <pasta>
+ *      node scripts/leituras/tempos.mjs arrumar <pasta> (fecha e apaga as partes)
  * OEDP_TEMPOS_DIR aponta para a pasta de saída; sem ela o observador é inerte.
  */
 import fs from 'node:fs';
@@ -36,7 +37,10 @@ export function fechar(pasta) {
 }
 if (path.resolve(process.argv[1] ?? '') === fileURLToPath(import.meta.url)) {
   const [modo, nome, comando, ...args] = process.argv.slice(2);
-  if (modo === 'fechar') fechar(nome);
+  if (modo === 'fechar' || modo === 'arrumar') {
+    fechar(nome);
+    if (modo === 'arrumar') fs.rmSync(path.join(nome, '.tempos'), { recursive: true, force: true });
+  }
   else if (modo === 'medir') {
     const inicio = inicioDoPasso(nome);
     const filho = spawn(comando, args, { stdio: 'inherit', env: process.env });
@@ -47,5 +51,5 @@ if (path.resolve(process.argv[1] ?? '') === fileURLToPath(import.meta.url)) {
       fimDoPasso(inicio, estado);
       process.exitCode = estado;
     });
-  } else throw new Error('tempos: use medir ou fechar');
+  } else throw new Error('tempos: use medir, fechar ou arrumar');
 }

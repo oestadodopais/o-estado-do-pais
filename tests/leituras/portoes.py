@@ -13,12 +13,14 @@ RAIZ = Path(__file__).resolve().parents[2]
 casos = []
 with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
     p = Path(tmp)
+    (p / 'scripts/leituras').mkdir(parents=True)
+    (p / 'scripts/leituras/limpar-caminhos.py').symlink_to(RAIZ / 'scripts/leituras/limpar-caminhos.py')
     binario = p / 'bin'; binario.mkdir()
     comum = p / 'comum'; comum.mkdir()
     def comando(nome, corpo):
         f = binario / nome; f.write_text('#!/bin/sh\n' + corpo); f.chmod(0o755)
     comando('git', 'case "$*" in *--git-common-dir*) echo "$COMUM";; *HEAD*) echo cabeca-sintetica;; esac\n')
-    comando('npm', 'echo "$*" >> "$CHAMADAS"\n[ "$2" != build ] || exit 7\n')
+    comando('npm', 'echo "$PWD é a pasta de ensaio"\necho "$*" >> "$CHAMADAS"\n[ "$2" != build ] || exit 7\n')
     comando('node', 'echo "$*" >> "$CHAMADAS"\n')
     env = dict(os.environ, PATH=str(binario) + ':' + os.environ['PATH'], COMUM=str(comum), CHAMADAS=str(p / 'chamadas'))
     def correr(nome, **mudancas):
@@ -30,6 +32,8 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
     assert codigos == {'build': 7, 'verify': 125, 'typecheck': 0}
     assert 'verify-depois-do-build' not in (p / 'chamadas').read_text()
     assert not (comum / 'oedp-construcao.lock').exists()
+    assert '<worktree> é a pasta de ensaio' in (p / 'vermelho/build.log').read_text()
+    assert str(p) not in (p / 'vermelho/build.log').read_text()
     casos.append({'planta': 'build vermelho não paga conferências', 'codigo': r.returncode,
                   'codigos': codigos, 'mensagem': (p / 'vermelho/verify.log').read_text().strip()})
     r = correr('sem-tranca', COMUM=str(p / 'pasta-inexistente'))
