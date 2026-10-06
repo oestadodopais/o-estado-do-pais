@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "controlo com PACOTE_EXTRA",
+      "mensagem": "Só a linha citada, os três códigos e os tempos chegaram.",
+      "passou": true
+    },
+    {
+      "planta": "linha retirada do pacote",
+      "mensagem": "O pacote recusa a entrega: faltam as linhas citadas de med/portoes/verify.log.",
+      "passou": true
+    },
+    {
+      "planta": "citação sem linha de origem",
+      "mensagem": "O pacote recusa a citação: med/portoes/verify.log: não existe uma linha que comece por «npm run check:ausente ·».",
+      "passou": true
+    }
+  ]
+}

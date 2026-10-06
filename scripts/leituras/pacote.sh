@@ -11,6 +11,12 @@
 #   os ficheiros mudados nos seus caminhos tal como estão na cabeça, built/<caminho> copiado de
 #   <repositório>/dist/, e numeros-do-relatorio.txt com a saída do conferir-relatorio.py sobre o relatório.
 #   O «antes/» copia-se à mão quando a leitura compara. As plantas plantam-se depois, com plantar.py.
+#   M-A: os registos build.log, verify.log e typecheck.log com .codigo ao lado
+#   ficam fora do diff e das cópias inteiras, incluindo PACOTE_EXTRA. Conservam-se
+#   os códigos, tempos.json e só as linhas citadas no relatório pela forma:
+#   <!-- portao: portoes/verify.log | npm run check:series · -->
+#   O caminho parte da pasta do relatório. A falta da linha fecha a montagem;
+#   linhas-dos-portoes.json dá os números das linhas e o sha256 da origem.
 set -eu
 repo="$1"; base="$2"; cabeca="$3"; pacote="$4"; brief="$5"; relatorio="$6"; shift 6
 
