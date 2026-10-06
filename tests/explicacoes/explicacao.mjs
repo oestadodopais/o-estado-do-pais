@@ -646,7 +646,8 @@ export function conferirTituloNumaPorta(el, lang, linhas = loadClaims()) {
 /**
  * UMA MARCA DAS PALAVRAS DECLARADAS SÓ SAI DO INVENTÁRIO SOBRE UM ELEMENTO QUE ESTA CÉLULA COMPARA (EX1-c, o achado 14):
  * uma porta com o título (X8); e, na página de uma explicação, a folha do caminho e o `<h1>` (X5), um parágrafo cujo
- * caminho a conta dá (X6), o título de uma secção (X7), e o título e os rótulos de uma figura (a F22).
+ * caminho a conta dá (X6), o título de uma secção (X7), e o título de uma figura e o nome de cada linha dela, no rótulo
+ * da barra e na lista dos números (a F22).
  * @param {any} el @param {string|undefined} rota @param {Set<string>} comparados os caminhos dos parágrafos que a conta dá
  */
 export function marcaDaExplicacaoComparada(el, rota, comparados) {
@@ -660,7 +661,9 @@ export function marcaDaExplicacaoComparada(el, rota, comparados) {
   if (tag === 'h2') return el.parentNode?.hasAttribute?.('data-explicacao-secao') === true;
   const figura = el.closest('figure[data-forma="barras-do-livro"]');
   if (figura && tag === 'figcaption' && el.parentNode === figura) return true;
-  if (figura && el.hasAttribute('data-barra-rotulo')) return true;
+  /* O nome de uma linha, num rótulo de barra ou na lista dos números da figura: a F22 compara os dois. */
+  const instrumento = el.closest('[data-instrumento]');
+  if (el.hasAttribute('data-barra-rotulo') && instrumento?.querySelector('figure[data-forma="barras-do-livro"]')) return true;
   return false;
 }
 
