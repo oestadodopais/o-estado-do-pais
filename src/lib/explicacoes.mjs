@@ -22,7 +22,22 @@
  *     PP1: uma atualização dos dados não faz falhar a construção);
  *   · a condição `{ primeiros: [a, b, …], de: [ids] }` · as linhas nomeadas são as maiores do grupo, por
  *     esta ordem e sem empates; com `{ periodo: id, mes }` (a da primeira página) e `{ sem_linhas: padrão }`
- *     (nenhum identificador do livro casa com o padrão).
+ *     (nenhum identificador do livro casa com o padrão);
+ *   · `{ maiores: [ids], familia, n, frase, antes, abre, sufixo, fecha, entre, ultimo }` (desde o EX1-b, 06.10.2026,
+ *     a decisão do lugar de direção sobre a I213) · as `n` linhas de maior valor da lista, por ordem decrescente,
+ *     cada uma com o nome declarado e o valor ao lado (o sufixo só no primeiro), entre a `frase` que as apresenta e
+ *     as ligações declaradas. Um identificador fora da família (`familia`, a expressão que as linhas têm de casar),
+ *     uma linha repetida, um `n` fora da lista ou uma palavra com algarismos são defeitos da declaração e fecham a
+ *     construção; uma linha da família que a lista não tem (o motor publicou outra), uma linha da lista que saiu do
+ *     livro, um valor que não se lê ou um empate na fronteira dos `n` tiram as palavras todas e deixam um sinal,
+ *     como uma condição falsa.
+ *
+ * O NOME DECLARADO tem duas formas no nome do projeto (`FORMAS_DO_NOME`): o que vem depois do prefixo da família
+ * («… que vai para », as funções e os ministérios), e, desde o EX1-b, o que fica entre o começo e o fim do nome de um
+ * programa da execução («Despesa executada do programa … (», «Executed expenditure of the … programme (»).
+ *
+ * AS PORTAS DO FIM (`portas`, desde o EX1-b): `{ rota: 'livro' }`, os números e as fontes, e
+ * `{ rota, entrada }`, a página de um assunto, com o nome que `ENTRADAS` lhe dá.
  *
  * OS NÚMEROS COMPARAM-SE COMO NÚMEROS, por `parsePtNumber()`, que lê «211 891 565 579» e «−58,3».
  */
@@ -32,11 +47,25 @@ import { NOMES_OE1 } from '../data/medidas-oe1.mjs';
 import { hasClaim, getClaim, parsePtNumber, allClaims } from './ledger.mjs';
 import { dataDaCasa } from './datas.mjs';
 import { modeloDasBarrasDoLivro } from './formas/barras-do-livro.mjs';
+import { routePath } from './routes.mjs';
+import { t } from '../i18n/strings.mjs';
+import { ENTRADAS } from '../data/primeira-pagina.mjs';
 
 /** Os pedaços calculados que a gramática das explicações conhece, e mais nenhum. */
-export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'periodo', 'nome', 'sinal', 'se']);
+export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'periodo', 'nome', 'sinal', 'se', 'maiores']);
 /** O prefixo que separa, no nome do projeto de uma linha, a família do nome da função ou do ministério. */
 export const PREFIXO_DO_NOME = /** @type {const} */ ({ pt: ' que vai para ', en: ' going to ' });
+/**
+ * AS FORMAS DO NOME DECLARADO no nome do projeto de uma linha, pela ordem em que se tentam: o que vem depois do prefixo
+ * (as funções e os ministérios), e o que fica entre o começo e o fim (os programas da execução, desde o EX1-b).
+ * @type {readonly ({ familia: string, pt: { depois: string }, en: { depois: string } } | { familia: string, pt: { comeca: string, acaba: string }, en: { comeca: string, acaba: string } })[]}
+ */
+export const FORMAS_DO_NOME = [
+  { familia: 'as funções e os ministérios', pt: { depois: PREFIXO_DO_NOME.pt }, en: { depois: PREFIXO_DO_NOME.en } },
+  { familia: 'os programas da execução', pt: { comeca: 'Despesa executada do programa ', acaba: ' (' }, en: { comeca: 'Executed expenditure of the ', acaba: ' programme (' } },
+];
+/** As palavras declaradas de um token `maiores`, e mais nenhuma. */
+export const PALAVRAS_DOS_MAIORES = /** @type {const} */ (['frase', 'antes', 'abre', 'sufixo', 'fecha', 'entre', 'ultimo']);
 /** O artigo à cabeça do nome de um ministério, que o rótulo de uma barra não leva. */
 const ARTIGO_DO_ROTULO = { pt: /^(?:o|a|os|as) /, en: /^the / };
 /** As formas das figuras de uma explicação: só a das barras das linhas do livro. */
@@ -76,15 +105,26 @@ export function explicacaoMaisRecente() {
 }
 
 /**
- * O NOME DECLARADO DA FUNÇÃO OU DO MINISTÉRIO DE UMA LINHA: o pedaço do nome do projeto depois do prefixo.
+ * O NOME DECLARADO DA FUNÇÃO, DO MINISTÉRIO OU DO PROGRAMA DE UMA LINHA, pela primeira forma de `FORMAS_DO_NOME` que o
+ * nome do projeto tenha.
  * @param {string} id @param {'pt'|'en'} lang
  */
 export function nomeDaLinhaNaExplicacao(id, lang) {
   const nome = /** @type {Record<string, { pt: string, en: string }>} */ (NOMES_OE1)[id]?.[lang];
   if (typeof nome !== 'string') throw defeito(id, `a linha não tem nome do projeto em «${lang}» (src/data/medidas-oe1.mjs).`);
-  const i = nome.indexOf(PREFIXO_DO_NOME[lang]);
-  if (i < 0) throw defeito(id, `o nome do projeto «${nome}» não tem o prefixo «${PREFIXO_DO_NOME[lang].trim()}».`);
-  const resto = nome.slice(i + PREFIXO_DO_NOME[lang].length);
+  /** @type {string|null} */
+  let resto = null;
+  for (const forma of FORMAS_DO_NOME) {
+    const f = /** @type {any} */ (forma[lang]);
+    if (typeof f.depois === 'string') {
+      const i = nome.indexOf(f.depois);
+      if (i >= 0) { resto = nome.slice(i + f.depois.length); break; }
+    } else if (nome.startsWith(f.comeca)) {
+      const k = nome.indexOf(f.acaba, f.comeca.length);
+      if (k > f.comeca.length) { resto = nome.slice(f.comeca.length, k); break; }
+    }
+  }
+  if (resto === null) throw defeito(id, `o nome do projeto «${nome}» não tem nenhuma das formas do nome declarado (FORMAS_DO_NOME).`);
   if (!resto || /\d/.test(resto)) throw defeito(id, `o nome tirado do nome do projeto («${resto}») está vazio ou traz um algarismo.`);
   return resto;
 }
@@ -131,6 +171,50 @@ export function avaliarCondicaoDaExplicacao(c) {
     return { ok: casam.length === 0, texto: `nenhuma linha casa com /${c.sem_linhas}/ (${casam.length} casam)` };
   }
   throw defeito('uma condição', `forma desconhecida: ${JSON.stringify(c)}.`);
+}
+
+/**
+ * O TOKEN `maiores` (EX1-b): confere a declaração, lê os valores e devolve os pedaços das `n` maiores linhas, por ordem
+ * decrescente, ou `null` com um sinal quando os dados não deixam decidir (uma linha da família fora da lista, uma linha
+ * da lista fora do livro, um valor que não se lê, um empate na fronteira).
+ * @param {Record<string, any>} o @param {string} aqui @param {{ linhas: Set<string>, sinais: SinalDaExplicacao[] }} ctx
+ * @returns {unknown[]|null}
+ */
+export function pedacosDosMaiores(o, aqui, ctx) {
+  const ids = o.maiores;
+  if (!Array.isArray(ids) || !ids.length || ids.some((x) => typeof x !== 'string')) throw defeito(aqui, '«maiores» pede uma lista de linhas.');
+  if (new Set(ids).size !== ids.length) throw defeito(aqui, 'a lista de «maiores» repete uma linha.');
+  if (typeof o.familia !== 'string' || !o.familia) throw defeito(aqui, '«maiores» pede a família (`familia`), a expressão que as linhas da lista têm de casar.');
+  const familia = new RegExp(o.familia);
+  const fora = ids.filter((/** @type {string} */ id) => !familia.test(id));
+  if (fora.length) throw defeito(aqui, `a lista de «maiores» tem linhas fora da família /${o.familia}/: ${fora.join(', ')}.`);
+  if (!Number.isInteger(o.n) || o.n < 1 || o.n > ids.length) throw defeito(aqui, `«n» tem de ser um inteiro entre 1 e ${ids.length}.`);
+  for (const k of PALAVRAS_DOS_MAIORES) if (typeof o[k] !== 'string' || /\d/.test(o[k])) throw defeito(aqui, `a palavra «${k}» de «maiores» falta ou traz um algarismo.`);
+  const doLivro = [...allClaims()].map((l) => String(l.id)).filter((id) => familia.test(id));
+  const novas = doLivro.filter((id) => !ids.includes(id));
+  const saidas = ids.filter((/** @type {string} */ id) => !hasClaim(id));
+  const valores = ids.filter((/** @type {string} */ id) => hasClaim(id)).map((/** @type {string} */ id) => ({ id, v: numero(id) }));
+  const ilegiveis = valores.filter((x) => x.v === null).map((x) => x.id);
+  const ordem = /** @type {{ id: string, v: number }[]} */ (valores.filter((x) => x.v !== null)).sort((a, b) => b.v - a.v || a.id.localeCompare(b.id));
+  const empate = ordem.length > o.n && ordem[o.n - 1].v === ordem[o.n].v;
+  const problemas = [
+    novas.length ? `linhas da família /${o.familia}/ que a lista não tem: ${novas.join(', ')}` : null,
+    saidas.length ? `linhas da lista que o livro não tem: ${saidas.join(', ')}` : null,
+    ilegiveis.length ? `sem valor legível em ${ilegiveis.join(', ')}` : null,
+    empate ? `empate na fronteira das ${o.n} maiores: ${ordem[o.n - 1].id} e ${ordem[o.n].id}` : null,
+    ordem.length < o.n ? `só ${ordem.length} linhas com valor legível, e pedem-se ${o.n}` : null,
+  ].filter((x) => x !== null);
+  if (problemas.length) {
+    ctx.sinais.push({ caminho: aqui, condicoes: problemas.map((texto) => ({ ok: false, texto: String(texto) })) });
+    return null;
+  }
+  /** @type {unknown[]} */
+  const pecas = [o.frase];
+  ordem.slice(0, o.n).forEach((x, k) => {
+    if (k > 0) pecas.push(k === o.n - 1 ? o.ultimo : o.entre);
+    pecas.push(o.antes, { nome: x.id }, o.abre, k === 0 && o.sufixo ? { claim: x.id, sufixo: o.sufixo } : { claim: x.id }, o.fecha);
+  });
+  return pecas;
 }
 
 /**
@@ -187,6 +271,11 @@ function resolver(partes, lang, onde, ctx) {
       out.push(...resolver(o[ramo], lang, `${aqui}.${ramo}`, ctx));
       return;
     }
+    if (chave === 'maiores') {
+      const pecas = pedacosDosMaiores(o, aqui, ctx);
+      if (pecas) out.push(...resolver(pecas, lang, `${aqui}.maiores`, ctx));
+      return;
+    }
     /* chave === 'se' */
     if (!Array.isArray(o.se) || !o.se.length) throw defeito(aqui, '«se» pede uma lista de condições.');
     const condicoes = o.se.map((/** @type {any} */ c) => avaliarCondicaoDaExplicacao(c));
@@ -202,6 +291,27 @@ function resolver(partes, lang, onde, ctx) {
     else if (p !== '') juntos.push(p);
   }
   return juntos;
+}
+
+/**
+ * AS PORTAS DO FIM DE UMA EXPLICAÇÃO, numa edição: o destino e o nome de cada uma (EX1-b). Sem `portas` declaradas, a
+ * porta dos números e das fontes, que todas levam.
+ * @param {any} e @param {'pt'|'en'} lang
+ * @returns {{ rota: string, href: string, texto: string, entrada?: string }[]}
+ */
+export function portasDaExplicacao(e, lang) {
+  const s = t(lang);
+  const declaradas = Array.isArray(e.portas) ? e.portas : [{ rota: 'livro' }];
+  if (!declaradas.some((/** @type {any} */ p) => p?.rota === 'livro' && !p.entrada)) throw defeito('portas', 'uma explicação leva sempre a porta dos números e das fontes (`{ rota: \'livro\' }`).');
+  return declaradas.map((/** @type {any} */ p, /** @type {number} */ i) => {
+    if (p?.rota === 'livro' && !p.entrada) return { rota: 'livro', href: routePath('livro', lang), texto: s.nav.livro };
+    if (typeof p?.rota === 'string' && typeof p?.entrada === 'string') {
+      const entrada = /** @type {any[]} */ (ENTRADAS).find((x) => x.id === p.entrada);
+      if (!entrada || typeof entrada.nome?.[lang] !== 'string') throw defeito(`portas[${i}]`, `o assunto «${p.entrada}» não está em ENTRADAS (src/data/primeira-pagina.mjs).`);
+      return { rota: p.rota, entrada: p.entrada, href: routePath(p.rota, lang), texto: entrada.nome[lang] };
+    }
+    throw defeito(`portas[${i}]`, `uma porta de forma desconhecida: ${JSON.stringify(p)}.`);
+  });
 }
 
 /**
@@ -237,7 +347,7 @@ export function explicacaoResolvida(slug, lang) {
   return {
     slug: e.slug, escrita: e.escrita, lang,
     titulo, tituloTexto: textoDosPedacosDaExplicacao(titulo, lang),
-    abertura, seccoes, naoDiz,
+    abertura, seccoes, naoDiz, portas: portasDaExplicacao(e, lang),
     linhas: [...ctx.linhas], sinais: ctx.sinais,
   };
 }

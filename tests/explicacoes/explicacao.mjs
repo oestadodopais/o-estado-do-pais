@@ -21,7 +21,17 @@
  *     e a data de leitura é o dia do pedido; com o motor ao lado (`RESEARCHHUB_DIR`), o sha256 do ficheiro, o registo
  *     do pedido (`.pedido.json`) e o campo lido no ficheiro conferem-se carácter a carácter;
  *   · X4 · o número por extenso do título de uma figura («As dez funções», «Os dezasseis ministérios») é o número
- *     das linhas que a figura declara.
+ *     das linhas que a figura declara;
+ *   · X9 · (EX1-b, 06.10.2026) cada token `maiores` tem a declaração inteira: uma lista sem repetições, toda dentro da
+ *     família que declara, um `n` dentro da lista e as palavras declaradas sem algarismos. Uma linha da família que a
+ *     lista não tem, um valor que não se lê ou um empate na fronteira não são defeitos da declaração: tiram as palavras
+ *     da página, e a segunda metade confere que não estão lá.
+ *
+ * AS CLASSES DO EX1-b. «leitura»: uma parte que diz uma coisa que nenhuma origem diz com estas palavras, e que é a
+ * leitura do projeto sobre o que os campos citados definem; leva `sobre` (o que lê) e pelo menos um apoio, conferido
+ * como os de «diz». «aponta» passa a ter três destinos: uma secção acima (`secao`), uma porta do fim que a explicação
+ * declara (`porta`, e, se for a página de um assunto, a parte traz o nome dele entre «», nas duas edições) e os selos
+ * dos números da página (`alvo: 'selos'`), que a segunda metade confere um a um.
  *
  * A SEGUNDA METADE LÊ AS PÁGINAS CONSTRUÍDAS:
  *   · X5 · o título (o `<h1>` e a folha do caminho) é o título recomposto: as palavras declaradas e o ano pelo
@@ -33,7 +43,8 @@
  *     dá, pela ordem declarada;
  *   · X7 · os títulos das secções são os declarados, pela ordem, e «O que isto não diz» é a cadeia da casa;
  *   · X8 · as portas que levam o título de uma explicação (a lista, o índice, a primeira página) rendem o título
- *     recomposto, e a página leva no fim a porta para os números e as fontes.
+ *     recomposto, e a página leva no fim as portas que a explicação declara, pela ordem, com o destino e o nome de
+ *     cada uma (a dos números e das fontes sempre); e cada valor de um parágrafo tem ao lado o selo do seu recibo.
  *
  * O QUE NÃO CONFERE, e di-lo: não infere que o literal quer dizer o que a parte diz. Essa escolha é uma leitura,
  * feita por quem assina a auditoria, e é essa leitura que a leitura a frio relê.
@@ -47,6 +58,8 @@ import { EXPLICACOES } from '../../src/data/explicacoes/index.mjs';
 import { ORIGENS_DAS_EXPLICACOES } from '../../src/data/explicacoes/origens.mjs';
 import { ORIGENS_DAS_DEFINICOES } from '../../src/data/figuras.mjs';
 import { NOMES_OE1 } from '../../src/data/medidas-oe1.mjs';
+import { ENTRADAS } from '../../src/data/primeira-pagina.mjs';
+import { routePath } from '../../src/lib/routes.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 import { t } from '../../src/i18n/strings.mjs';
 import { conferirBarrasDoLivro } from '../formas/barras-do-livro.mjs';
@@ -67,6 +80,9 @@ const PALAVRAS_DE_LIGACAO = {
 };
 const PONTUACAO = /[\s.,:;()−%’'!?]+/g;
 const PREFIXO = { pt: ' que vai para ', en: ' going to ' };
+/* O NOME DE UM PROGRAMA DA EXECUÇÃO (EX1-b), pela regra desta célula: o que fica entre o começo e o fim do nome do projeto. */
+const PROGRAMA = { pt: ['Despesa executada do programa ', ' ('], en: ['Executed expenditure of the ', ' programme ('] };
+const PALAVRAS_DOS_MAIORES = ['frase', 'antes', 'abre', 'sufixo', 'fecha', 'entre', 'ultimo'];
 const NUMEROS_POR_EXTENSO = { dez: 10, dezasseis: 16, ten: 10, sixteen: 16 };
 const MESES = {
   pt: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
@@ -90,7 +106,11 @@ const numero = (v) => {
 /** O nome da função ou do ministério de uma linha, pela regra desta célula. @param {string} id @param {'pt'|'en'} lang */
 function nomeAqui(id, lang) {
   const n = /** @type {Record<string, { pt: string, en: string }>} */ (NOMES_OE1)[id]?.[lang];
-  return typeof n === 'string' && n.includes(PREFIXO[lang]) ? n.slice(n.indexOf(PREFIXO[lang]) + PREFIXO[lang].length) : null;
+  if (typeof n !== 'string') return null;
+  if (n.includes(PREFIXO[lang])) return n.slice(n.indexOf(PREFIXO[lang]) + PREFIXO[lang].length);
+  const [comeca, acaba] = PROGRAMA[lang];
+  const k = n.startsWith(comeca) ? n.indexOf(acaba, comeca.length) : -1;
+  return k > comeca.length ? n.slice(comeca.length, k) : null;
 }
 
 /* =========================================================================
@@ -101,12 +121,12 @@ function nomeAqui(id, lang) {
  * AS FOLHAS DE TEXTO DE UMA EXPLICAÇÃO, nas duas edições ao mesmo tempo, com o caminho e o ramo de cada uma. As duas
  * edições têm de ter a mesma forma, e uma diferença atira.
  * @param {any} e
- * @returns {{ caminho: string, pt: string, en: string, ramo: 'sinal'|'se'|null }[]}
+ * @returns {{ caminho: string, pt: string, en: string, ramo: 'sinal'|'se'|'maiores'|null }[]}
  */
 export function folhasDaExplicacao(e) {
-  /** @type {{ caminho: string, pt: string, en: string, ramo: 'sinal'|'se'|null }[]} */
+  /** @type {{ caminho: string, pt: string, en: string, ramo: 'sinal'|'se'|'maiores'|null }[]} */
   const out = [];
-  /** @param {any} a @param {any} b @param {string} c @param {'sinal'|'se'|null} ramo */
+  /** @param {any} a @param {any} b @param {string} c @param {'sinal'|'se'|'maiores'|null} ramo */
   const anda = (a, b, c, ramo) => {
     if (Array.isArray(a)) {
       if (!Array.isArray(b) || a.length !== b.length) throw new Error(`X1 · as duas edições têm formas diferentes em ${c}`);
@@ -119,6 +139,7 @@ export function folhasDaExplicacao(e) {
       return;
     }
     const ka = Object.keys(a ?? {}).filter((k) => k !== 'inicial').sort().join(','), kb = Object.keys(b ?? {}).filter((k) => k !== 'inicial').sort().join(',');
+    /* `ramo` desta folha: 'sinal', 'se' ou, desde o EX1-b, 'maiores' (as palavras de um token decidido pelos números). */
     if (ka !== kb) throw new Error(`X1 · as duas edições têm pedaços diferentes em ${c} (${ka} / ${kb})`);
     if ('sinal' in a) {
       if (a.sinal !== b.sinal) throw new Error(`X1 · as duas edições dão o sinal de linhas diferentes em ${c}`);
@@ -133,6 +154,11 @@ export function folhasDaExplicacao(e) {
     if ('claim' in a) {
       if (a.claim !== b.claim) throw new Error(`X1 · as duas edições citam linhas diferentes em ${c}`);
       if (typeof a.sufixo === 'string') out.push({ caminho: `${c}.sufixo`, pt: a.sufixo, en: b.sufixo, ramo });
+      return;
+    }
+    if ('maiores' in a) {
+      if (JSON.stringify(a.maiores) !== JSON.stringify(b.maiores) || a.n !== b.n || a.familia !== b.familia) throw new Error(`X1 · as duas edições dão listas, famílias ou contagens diferentes ao token «maiores» em ${c}`);
+      for (const k of PALAVRAS_DOS_MAIORES) if (typeof a[k] === 'string') out.push({ caminho: `${c}.${k}`, pt: a[k], en: b[k], ramo: 'maiores' });
       return;
     }
     const ia = { ...a }, ib = { ...b };
@@ -166,7 +192,7 @@ export function linhasDaExplicacao(e, linhas) {
     else if (x && typeof x === 'object') {
       for (const [k, v] of Object.entries(x)) {
         if (['claim', 'periodo', 'nome', 'sinal'].includes(k) && typeof v === 'string') out.add(v);
-        else if (['linhas', 'primeiros', 'de'].includes(k) && Array.isArray(v)) v.forEach((id) => typeof id === 'string' && out.add(id));
+        else if (['linhas', 'primeiros', 'de', 'maiores'].includes(k) && Array.isArray(v)) v.forEach((id) => typeof id === 'string' && out.add(id));
         else anda(v);
       }
     }
@@ -204,7 +230,7 @@ export function conferirAuditoriaDasExplicacoes({
 } = {}) {
   /** @type {string[]} */
   const erros = [];
-  const contas = { explicacoes: 0, folhas: 0, partes: 0, diz: 0, conta: 0, liga: 0, aponta: 0, apoios: 0, origens: 0 };
+  const contas = { explicacoes: 0, folhas: 0, partes: 0, diz: 0, conta: 0, liga: 0, aponta: 0, leitura: 0, apoios: 0, origens: 0 };
   const lista = Array.isArray(auditoria?.explicacoes) ? auditoria.explicacoes : null;
   if (!lista || !lista.length) return { erros: ['X1 · a auditoria das leituras não tem a secção «explicacoes»: a célula não mediu nada'], contas };
   for (const e of explicacoes) {
@@ -234,9 +260,13 @@ export function conferirAuditoriaDasExplicacoes({
       for (const [j, p] of partes.entries()) {
         contas.partes++;
         const qp = `${qual}, parte ${j + 1} («${curto(String(p?.pt))}»)`;
-        if (p?.classe === 'diz') {
-          contas.diz++;
-          if (!Array.isArray(p.apoios) || !p.apoios.length) { falha(`X2 · ${qp} diz o que uma coisa é e não tem apoio nenhum`); continue; }
+        if (p?.classe === 'diz' || p?.classe === 'leitura') {
+          if (p.classe === 'diz') contas.diz++;
+          else {
+            contas.leitura++;
+            if (typeof p.sobre !== 'string' || p.sobre.trim().length < LITERAL_MINIMO) { falha(`X2 · ${qp} é uma leitura do projeto e não diz sobre o que é («sobre»)`); continue; }
+          }
+          if (!Array.isArray(p.apoios) || !p.apoios.length) { falha(`X2 · ${qp} ${p.classe === 'diz' ? 'diz o que uma coisa é' : 'é uma leitura do projeto'} e não tem apoio nenhum`); continue; }
           for (const ap of p.apoios) {
             contas.apoios++;
             if (ap?.forma === 'ano') {
@@ -265,11 +295,25 @@ export function conferirAuditoriaDasExplicacoes({
           if (!f.ramo) falha(`X2 · ${qp} está marcada como conta e não está num ramo do sinal nem em palavras guardadas por condições`);
         } else if (p?.classe === 'aponta') {
           contas.aponta++;
-          const alvo = String(p.secao ?? '');
-          const idx = seccoesAcima.indexOf(alvo);
-          const daFolha = /^seccoes\[(\d+)\]/.exec(f.caminho);
-          const acima = idx >= 0 && (f.caminho.startsWith('naoDiz') || (daFolha !== null && idx < Number(daFolha[1])));
-          if (!acima) falha(`X2 · ${qp} aponta para a secção «${alvo}», que não está acima na explicação`);
+          if (typeof p.porta === 'string') {
+            /* Uma porta do fim que a explicação declara; se for a página de um assunto, a parte nomeia-o entre «». */
+            const porta = (Array.isArray(e.portas) ? e.portas : []).find((/** @type {any} */ x) => (x.entrada ?? x.rota) === p.porta);
+            if (!porta) { falha(`X2 · ${qp} aponta para a porta «${p.porta}», que a explicação não declara no fim`); continue; }
+            if (porta.entrada) {
+              const entrada = /** @type {any[]} */ (ENTRADAS).find((x) => x.id === porta.entrada);
+              for (const lang of /** @type {const} */ (['pt', 'en'])) {
+                if (!entrada || !String(p[lang] ?? '').includes(`«${entrada.nome?.[lang]}»`)) falha(`X2 · ${qp} aponta para a página do assunto «${porta.entrada}» e não traz o nome dele entre «» (${lang})`);
+              }
+            }
+          } else if (p.alvo === 'selos') {
+            /* Os selos dos números: a segunda metade confere, página a página, que cada valor tem o seu. */
+          } else {
+            const alvo = String(p.secao ?? '');
+            const idx = seccoesAcima.indexOf(alvo);
+            const daFolha = /^seccoes\[(\d+)\]/.exec(f.caminho);
+            const acima = idx >= 0 && (f.caminho.startsWith('naoDiz') || (daFolha !== null && idx < Number(daFolha[1])));
+            if (!acima) falha(`X2 · ${qp} aponta para a secção «${alvo}», que não está acima na explicação`);
+          }
         } else if (p?.classe === 'liga') {
           contas.liga++;
           for (const lang of /** @type {const} */ (['pt', 'en'])) {
@@ -277,7 +321,7 @@ export function conferirAuditoriaDasExplicacoes({
             const fora = (resto ? resto.split(/\s+/) : []).filter((w) => !PALAVRAS_DE_LIGACAO[lang].has(w));
             if (fora.length) falha(`X2 · ${qp} está marcada como ligação e traz «${fora.join(' ')}» (${lang})`);
           }
-        } else falha(`X2 · ${qp} não tem classe (diz, conta, aponta ou liga)`);
+        } else falha(`X2 · ${qp} não tem classe (diz, leitura, conta, aponta ou liga)`);
       }
     }
     for (const [k, x] of (a.folhas ?? []).entries()) if (!propriasUsadas.has(k)) falha(`X1 · a auditoria tem uma folha («${curto(String(x?.pt))}», ${x?.caminho}) que a declaração não tem`);
@@ -294,6 +338,45 @@ export function conferirAuditoriaDasExplicacoes({
     }
   }
   return { erros, contas };
+}
+
+/**
+ * X9 (EX1-b, 06.10.2026): a declaração de cada token `maiores`, nas duas edições. Os defeitos da declaração (uma lista
+ * com repetições ou com linhas fora da família que declara, um `n` fora da lista, uma palavra com algarismos) fecham a
+ * construção no resolvedor e são erros aqui; o que depende dos dados confere-se na página (X6).
+ * @param {{ explicacoes?: any[] }} [entrada]
+ */
+export function conferirMaioresDasExplicacoes({ explicacoes = EXPLICACOES } = {}) {
+  /** @type {string[]} */
+  const erros = [];
+  let tokens = 0;
+  for (const e of explicacoes) {
+    /** @param {unknown} x @param {string} c */
+    const anda = (x, c) => {
+      if (Array.isArray(x)) { x.forEach((y, i) => anda(y, `${c}[${i}]`)); return; }
+      if (!x || typeof x !== 'object') return;
+      const o = /** @type {Record<string, any>} */ (x);
+      if (!('maiores' in o)) { for (const [k, v] of Object.entries(o)) anda(v, c ? `${c}.${k}` : k); return; }
+      tokens++;
+      const falha = (/** @type {string} */ m) => erros.push(`X9 · ${e.slug}: o token «maiores» em ${c} ${m}`);
+      const ids = o.maiores;
+      if (!Array.isArray(ids) || !ids.length || ids.some((id) => typeof id !== 'string')) { falha('não tem uma lista de linhas'); return; }
+      if (new Set(ids).size !== ids.length) falha('repete uma linha');
+      /** @type {RegExp|null} */
+      let familia = null;
+      try { familia = typeof o.familia === 'string' && o.familia ? new RegExp(o.familia) : null; } catch { familia = null; }
+      if (!familia) falha('não declara a família (a expressão que as linhas da lista têm de casar)');
+      else {
+        const re = familia;
+        const fora = ids.filter((/** @type {string} */ id) => !re.test(id));
+        if (fora.length) falha(`tem linhas fora da família /${o.familia}/: ${fora.join(', ')}`);
+      }
+      if (!Number.isInteger(o.n) || o.n < 1 || o.n > ids.length) falha(`tem n=${o.n}, fora de 1 a ${ids.length}`);
+      for (const k of PALAVRAS_DOS_MAIORES) if (typeof o[k] !== 'string' || /\d/.test(o[k])) falha(`não tem a palavra «${k}», ou ela traz um algarismo`);
+    };
+    anda(e, '');
+  }
+  return { erros, contas: { tokens } };
 }
 
 /**
@@ -365,18 +448,42 @@ function condicaoAqui(c, linhas) {
 }
 
 /**
+ * AS MAIORES DE UM TOKEN `maiores`, pela conta desta célula: as `n` linhas de maior valor, por ordem decrescente, ou
+ * `null` quando os dados não deixam decidir (uma linha da família fora da lista, uma linha da lista fora do livro, um
+ * valor que não se lê, um empate na fronteira), que é quando o resolvedor tira as palavras.
+ * @param {any} p @param {Map<string, any>} linhas
+ */
+function maioresAqui(p, linhas) {
+  const familia = new RegExp(p.familia);
+  if ([...linhas.keys()].some((id) => familia.test(id) && !p.maiores.includes(id))) return null;
+  if (p.maiores.some((/** @type {string} */ id) => !linhas.has(id))) return null;
+  const v = p.maiores.map((/** @type {string} */ id) => ({ id, v: numero(linhas.get(id)?.value) }));
+  if (v.some((/** @type {any} */ x) => x.v === null) || v.length < p.n) return null;
+  v.sort((/** @type {any} */ a, /** @type {any} */ b) => b.v - a.v || a.id.localeCompare(b.id));
+  if (v.length > p.n && v[p.n - 1].v === v[p.n].v) return null;
+  return /** @type {{ id: string, v: number }[]} */ (v.slice(0, p.n));
+}
+
+/**
  * O TEXTO DE UMA PARTE DECLARADA, pela conta desta célula, com o texto dos ramos não escolhidos e das palavras que
  * uma condição falsa guarda, para se conferir que não estão na página.
  * @param {any} partes @param {'pt'|'en'} lang @param {Map<string, any>} linhas @param {string[]} ausentes
  */
 function textoAqui(partes, lang, linhas, ausentes) {
   const s = t(lang);
+  /** O valor de uma linha como o `<Claim>` o escreve, pela regra desta célula. @param {string} id @param {string} sufixo */
+  const valor = (id, sufixo) => {
+    const l = linhas.get(id);
+    const provisorio = l?.source_flag === 'p' || (l?.source_flag === '&' && l?.source_flag_note === 'Dado provisório');
+    return `${l?.value}${sufixo}${provisorio ? ` (${s.prov.dadoProvisorio})` : ''}`;
+  };
   return (Array.isArray(partes) ? partes : [partes]).map((p) => {
     if (typeof p === 'string') return p;
-    if ('claim' in p) {
-      const l = linhas.get(p.claim);
-      const provisorio = l?.source_flag === 'p' || (l?.source_flag === '&' && l?.source_flag_note === 'Dado provisório');
-      return `${l?.value}${p.sufixo ?? ''}${provisorio ? ` (${s.prov.dadoProvisorio})` : ''}`;
+    if ('claim' in p) return valor(p.claim, p.sufixo ?? '');
+    if ('maiores' in p) {
+      const r = maioresAqui(p, linhas);
+      if (!r) { ausentes.push(normal(p.frase)); return ''; }
+      return p.frase + r.map((x, k) => `${k === 0 ? '' : k === r.length - 1 ? p.ultimo : p.entre}${p.antes}${nomeAqui(x.id, lang) ?? ''}${p.abre}${valor(x.id, k === 0 ? p.sufixo : '')}${p.fecha}`).join('');
     }
     if ('periodo' in p) return periodoAqui(String(linhas.get(p.periodo)?.reference_date ?? ''), lang) ?? '';
     if ('nome' in p) {
@@ -455,7 +562,21 @@ export function conferirPaginaDaExplicacao(root, lang, slug, linhas = loadClaims
   const titulos = main.querySelectorAll('[data-explicacao-secao] > h2').map((/** @type {any} */ h) => normal(h.textContent));
   const deveTitulos = [...e.seccoes.map((/** @type {any} */ x) => x.titulo[lang]), ...(esperado.paragrafos.some((p) => p.caminho.startsWith('naoDiz')) ? [s.explicacoes.oQueIstoNaoDiz] : [])];
   if (JSON.stringify(titulos) !== JSON.stringify(deveTitulos)) erros.push(`X7 · os títulos das secções (${titulos.join(' | ')}) não são os declarados (${deveTitulos.join(' | ')})`);
-  if (!main.querySelector(`[data-explicacao-portas] a[href]`)) erros.push('X8 · falta a porta para os números e as fontes no fim');
+  /* As portas do fim (EX1-b): as declaradas, pela ordem, com o destino e o nome de cada uma; a dos números sempre. */
+  const declaradas = Array.isArray(e.portas) ? e.portas : [{ rota: 'livro' }];
+  const esperadas = declaradas.map((/** @type {any} */ d) => {
+    const entrada = d.entrada ? /** @type {any[]} */ (ENTRADAS).find((x) => x.id === d.entrada) : null;
+    return [routePath(d.rota, lang), `${d.entrada ? entrada?.nome?.[lang] : s.nav.livro} →`];
+  });
+  const lidas = main.querySelectorAll('[data-explicacao-portas] a[href]').map((/** @type {any} */ a) => [a.getAttribute('href'), normal(a.textContent)]);
+  if (!declaradas.some((/** @type {any} */ d) => d.rota === 'livro' && !d.entrada) || !lidas.some((/** @type {any} */ x) => x[0] === routePath('livro', lang))) erros.push('X8 · falta a porta para os números e as fontes no fim');
+  if (JSON.stringify(lidas) !== JSON.stringify(esperadas)) erros.push(`X8 · as portas do fim (${lidas.map((/** @type {any} */ x) => x.join(' ')).join(' · ') || 'nenhuma'}) não são as declaradas (${esperadas.map((/** @type {any} */ x) => x.join(' ')).join(' · ')})`);
+  /* Os selos (EX1-b, o destino «selos» de «aponta»): cada valor de um parágrafo tem ao lado o selo do seu recibo. */
+  for (const c of main.querySelectorAll('[data-explicacao-paragrafo] [data-claim]')) {
+    const id = c.getAttribute('data-claim');
+    const selo = c.closest('.claim')?.querySelector('a.src-chip');
+    if (!selo || !String(selo.getAttribute('href') ?? '').endsWith(`/${id}`)) erros.push(`X8 · o valor de «${id}» num parágrafo não tem ao lado o selo do seu recibo`);
+  }
   return erros;
 }
 
@@ -502,7 +623,7 @@ export function conferirPalavrasDaExplicacaoNaPagina(root, lang, rota, slug) {
  */
 export function plantasDaExplicacao(dist) {
   const linhas = loadClaims();
-  /** @type {{ nome: string, mordeu: boolean, queixa: string }[]} */
+  /** @type {{ nome: string, mordeu: boolean, queixa: string, aplica?: boolean }[]} */
   const out = [];
   const e = EXPLICACOES[0];
   const ficheiro = path.join(dist, 'explicacoes', e.slug, 'index.html');
@@ -528,6 +649,34 @@ export function plantasDaExplicacao(dist) {
   naPagina('um parágrafo a menos', (r) => { paragrafo(r, 'tinham gasto').remove(); }, /X6 · os parágrafos rendidos/);
   naPagina('o ano trocado no título', (r) => { const h = r.querySelector('h1 [data-nonledger="data-da-linha"]'); h.set_content('2025'); }, /X5 ·/);
   naPagina('o título de uma secção trocado', (r) => { r.querySelector('[data-explicacao-secao="por-funcao"] > h2').set_content('Por programa'); }, /X7 ·/);
+  /* EX1-b (06.10.2026): o token `maiores`, as portas do fim e os selos. A ordem trocada só se aplica quando o token se
+     rende (com os dados de um dia em que não se rende, a planta di-lo e não conta como falha). */
+  const doToken = parse(html).querySelectorAll('[data-explicacao-paragrafo] [data-explicacao-nome]').filter((/** @type {any} */ n) => /execucao-2026-08-despesa-programa-/.test(String(n.getAttribute('data-explicacao-nome'))));
+  if (doToken.length >= 2) {
+    naPagina('a ordem dos programas que mais gastaram trocada', (r) => {
+      const nomes = r.querySelectorAll('[data-explicacao-paragrafo] [data-explicacao-nome]').filter((/** @type {any} */ n) => /execucao-2026-08-despesa-programa-/.test(String(n.getAttribute('data-explicacao-nome'))));
+      const a = nomes[0].innerHTML, b = nomes[1].innerHTML;
+      nomes[0].set_content(b); nomes[1].set_content(a);
+    }, /X6 ·/);
+  } else out.push({ nome: 'a ordem dos programas que mais gastaram trocada', mordeu: false, aplica: false, queixa: 'o token «maiores» não se rende com os dados desta construção: a planta não se aplica' });
+  naPagina('a porta do tema tirada do fim', (r) => { r.querySelector('[data-explicacao-portas] a[data-explicacao-porta-do-fim="estado-e-economia"]').remove(); }, /X8 · as portas do fim/);
+  naPagina('o selo de um valor tirado', (r) => { r.querySelector('[data-explicacao-paragrafo] .claim a.src-chip').remove(); }, /X8 · o valor de/);
+  /* As plantas da declaração (X9): sobre uma cópia em memória. */
+  /** @param {string} nome @param {(d: any) => void} estraga @param {RegExp} mordida */
+  const naDeclaracao = (nome, estraga, mordida) => {
+    const d = structuredClone(EXPLICACOES[0]);
+    estraga(d);
+    const q = conferirMaioresDasExplicacoes({ explicacoes: [d] }).erros;
+    out.push({ nome, mordeu: q.some((x) => mordida.test(x)), queixa: q.join(' | ') || 'nenhuma' });
+  };
+  /** Os tokens `maiores` de uma declaração, nas duas edições. @param {any} x @param {any[]} [achados] @returns {any[]} */
+  const tokensMaiores = (x, achados = []) => {
+    if (Array.isArray(x)) x.forEach((y) => tokensMaiores(y, achados));
+    else if (x && typeof x === 'object') { if ('maiores' in x) achados.push(x); else Object.values(x).forEach((v) => tokensMaiores(v, achados)); }
+    return achados;
+  };
+  naDeclaracao('uma linha que não é dos programas no token «maiores»', (d) => { for (const k of tokensMaiores(d)) k.maiores = [...k.maiores, 'oe-2026-despesa-ministerio-saude']; }, /X9 · .* fora da família/);
+  naDeclaracao('um «n» maior do que a lista no token «maiores»', (d) => { for (const k of tokensMaiores(d)) k.n = k.maiores.length + 1; }, /X9 · .* fora de 1 a/);
   /* As plantas da auditoria: sobre uma cópia em memória do ficheiro. */
   const auditoria = JSON.parse(fs.readFileSync(AUDITORIA, 'utf8'));
   /** @param {string} nome @param {(a: any) => void} estraga @param {RegExp} mordida */
@@ -542,6 +691,8 @@ export function plantasDaExplicacao(dist) {
   naAuditoria('uma conta fora de um ramo e de uma condição', (a) => { const f = a.explicacoes[0].folhas.find((/** @type {any} */ x) => x.caminho === 'abertura[0][2]'); f.partes[0].classe = 'conta'; delete f.partes[0].apoios; }, /X2 · .* marcada como conta/);
   naAuditoria('uma folha sem auditoria', (a) => { a.explicacoes[0].folhas = a.explicacoes[0].folhas.filter((/** @type {any} */ x) => x.caminho !== 'titulo[0]'); }, /X1 · .* não tem auditoria/);
   naAuditoria('uma ligação com uma palavra que diz alguma coisa', (a) => { const f = a.explicacoes[0].folhas.find((/** @type {any} */ x) => x.caminho === 'abertura[0][14]'); f.partes[0].pt = ' e só '; f.pt = ' e só '; }, /X1 ·|X2 ·/);
+  naAuditoria('uma leitura do projeto sem dizer sobre o que é', (a) => { const p = a.explicacoes[0].folhas.flatMap((/** @type {any} */ x) => x.partes).find((/** @type {any} */ x) => x.classe === 'leitura'); delete p.sobre; }, /X2 · .* não diz sobre o que é/);
+  naAuditoria('uma porta do fim que a explicação não declara', (a) => { const p = a.explicacoes[0].folhas.flatMap((/** @type {any} */ x) => x.partes).find((/** @type {any} */ x) => x.classe === 'aponta' && x.porta); p.porta = 'estudo-oe-2026'; }, /X2 · .* que a explicação não declara/);
   /* A planta das origens: um sha256 de outro ficheiro, com o motor ao lado; sem ele, uma hora fora da forma. */
   const o = JSON.parse(JSON.stringify(ORIGENS_DAS_EXPLICACOES));
   const chave = Object.keys(o)[0];
@@ -562,8 +713,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const json = process.argv.includes('--json') ? process.argv[process.argv.indexOf('--json') + 1] : null;
   const a = conferirAuditoriaDasExplicacoes();
   const o = conferirOrigensDasExplicacoes();
+  const x9 = conferirMaioresDasExplicacoes();
   /** @type {string[]} */
-  const erros = [...a.erros, ...o.erros];
+  const erros = [...a.erros, ...o.erros, ...x9.erros];
   let paginas = 0;
   for (const e of EXPLICACOES) for (const [lang, base] of /** @type {const} */ ([['pt', 'explicacoes'], ['en', 'en/explainers']])) {
     const f = path.join(DIST, base, e.slug, 'index.html');
@@ -572,10 +724,10 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     erros.push(...conferirPaginaDaExplicacao(parse(fs.readFileSync(f, 'utf8')), lang, e.slug).map((x) => `${base}/${e.slug}: ${x}`));
   }
   const plantas = prova ? plantasDaExplicacao(DIST) : [];
-  for (const p of plantas) if (!p.mordeu) erros.push(`X · a planta «${p.nome}» não mordeu: ${p.queixa}`);
-  const resumo = { auditoria: a.contas, origens: o.contas, paginas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu })), erros };
+  for (const p of plantas) if (!p.mordeu && /** @type {any} */ (p).aplica !== false) erros.push(`X · a planta «${p.nome}» não mordeu: ${p.queixa}`);
+  const resumo = { auditoria: a.contas, origens: o.contas, maiores: x9.contas, paginas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu, aplica: /** @type {any} */ (p).aplica !== false })), erros };
   if (json) fs.writeFileSync(json, JSON.stringify(resumo, null, 2) + '\n');
-  console.log(`X · a explicação: ${a.contas.explicacoes} explicação(ões), ${a.contas.folhas} folhas e ${a.contas.partes} partes auditadas (${a.contas.diz} diz, ${a.contas.conta} conta, ${a.contas.aponta} aponta, ${a.contas.liga} liga), ${a.contas.origens} origens usadas; ${o.contas.origens} origens das explicações${o.contas.motor ? `, ${o.contas.lidas_no_motor} lidas no motor` : ', sem o motor ao lado'}; ${paginas} página(s) recontadas${prova ? `; ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas em memória` : ''}.`);
+  console.log(`X · a explicação: ${a.contas.explicacoes} explicação(ões), ${a.contas.folhas} folhas e ${a.contas.partes} partes auditadas (${a.contas.diz} diz, ${a.contas.leitura} leitura, ${a.contas.conta} conta, ${a.contas.aponta} aponta, ${a.contas.liga} liga), ${a.contas.origens} origens usadas; ${x9.contas.tokens} token(s) «maiores» conferidos nas duas edições; ${o.contas.origens} origens das explicações${o.contas.motor ? `, ${o.contas.lidas_no_motor} lidas no motor` : ', sem o motor ao lado'}; ${paginas} página(s) recontadas${prova ? `; ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas em memória` : ''}.`);
   if (erros.length) {
     console.error(`\n  CÉLULA DA EXPLICAÇÃO · ${erros.length} problema(s):\n${erros.map((x) => `  · ${x}`).join('\n')}`);
     process.exit(1);

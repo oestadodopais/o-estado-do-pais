@@ -15,7 +15,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { DINHEIRO_DO_ESTADO_2026 as E, ACERTOS } from '../../../../src/data/explicacoes/dinheiro-do-estado-2026.mjs';
+import { DINHEIRO_DO_ESTADO_2026 as E, ACERTOS, PROGRAMAS_DA_EXECUCAO } from '../../../../src/data/explicacoes/dinheiro-do-estado-2026.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '../../../..');
@@ -31,6 +31,9 @@ function serie(partes) {
     if ('nome' in p) return `⟨nome:${p.nome}⟩`;
     if ('sinal' in p) return `⟨sinal:${p.sinal}⟩`;
     if ('se' in p) return serie(p.partes);
+    /* EX1-b: o token `maiores` serializa-se pela frase que o apresenta e pela contagem (as palavras de cada item estão no
+       acerto X11, que o descreve). */
+    if ('maiores' in p) return `${p.frase}⟨maiores:${p.n} de ${p.maiores.length}⟩`;
     throw new Error(`pedaço desconhecido: ${JSON.stringify(p)}`);
   }).join('');
 }
@@ -75,8 +78,13 @@ acerto('X4', `e a ⟨nome:${F('08')}⟩`, `e o ⟨nome:${F('08')}⟩`);
 acerto('X5', / A fatia das Finanças é grande porque \[[^\]]+\]\./g, '');
 acerto('X6', / A figura das barras dos dezasseis ministérios, da maior para a menor\./g, '\n\n⟨figura:ministerios «Os dezasseis ministérios, de cada cem euros»⟩');
 acerto('X7', /(⟨claim:(?:divida-publica-2025|divida-publica-2025-ue|saldo-das-administracoes-publicas-2025)⟩)/g, '$1 %');
-acerto('X8', / O detalhe por programa e por ministério, com a fonte de cada número, está no estudo do Orçamento do Estado de 2026\./g, '');
+acerto('X8', / O detalhe por programa e por ministério, com a fonte de cada número, está no estudo do Orçamento do Estado de 2026\./g, ' O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque, e nos números do tema «Estado e economia».');
+/* EX1-b: os programas que mais gastaram passam ao token `maiores` (X11); a frase dos dois totais entra a seguir à figura
+   dos ministérios (X12); o saldo passa a ter o sinal com o número e a palavra no fim (X13, depois do X7, que põe o « %»). */
+acerto('X11', /; os programas que mais gastaram foram o do Trabalho, Solidariedade e Segurança Social \(⟨claim:execucao-2026-08-despesa-programa-016⟩ milhões\), o da Saúde \(⟨claim:execucao-2026-08-despesa-programa-015⟩ milhões\) e o da Gestão da Dívida Pública \(⟨claim:execucao-2026-08-despesa-programa-005⟩ milhões\)/g, `; os programas que mais gastaram foram ⟨maiores:3 de ${PROGRAMAS_DA_EXECUCAO.length}⟩`);
 acerto('X10', /^\*(Por ministério|O que já se gastou este ano|A dívida e o saldo)\.\* /gm, '## $1\n\n');
+acerto('X12', /(⟨figura:ministerios «Os dezasseis ministérios, de cada cem euros»⟩)/g, '$1\n\nAs duas contas não batem porque medem coisas diferentes: a conta por função soma tudo o que o Estado gasta com um fim, como a saúde ou a educação, seja qual for o ministério que o gasta; a conta por ministério é o orçamento de cada ministério, que paga também coisas de outros fins.');
+acerto('X13', /com um ⟨sinal:saldo-das-administracoes-publicas-2025⟩ de (⟨claim:saldo-das-administracoes-publicas-2025⟩ %) do produto\./g, 'com um saldo de $1 do produto, ⟨sinal:saldo-das-administracoes-publicas-2025⟩.');
 acerto('X10', /^\*O que isto não diz\.\* /gm, '## ⟨cadeia:explicacoes.oQueIstoNaoDiz⟩\n\n');
 /* X9 não muda palavras: as frases que comparam ficam guardadas por condições. Conta-se aqui quantas guardas a declaração tem. */
 const guardas = (JSON.stringify(E).match(/"se":\[/g) ?? []).length / 2;
