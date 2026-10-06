@@ -502,3 +502,73 @@ O commit seguinte guarda apenas o relatório, as capturas e os registos das prov
 ### O que ficou por fazer e porquê
 
 Os achados do EX1 ficam com o lugar de direção, por decisão expressa. A leitura curta do diff por outra família e a aterragem continuam com o lugar de direção. Não se fez push. A questão nova H4-6 ficou fechada nesta passagem, com as plantas da L3. O custo total de tokens não é exposto nesta sessão; fica por ler no registo do lançador.
+
+## A passagem H4-e
+
+A redação dos três papéis é do lugar de direção, reescrita depois da leitura curta do diff da H4-d (`design/especime-v3/critica/LEITURA-H4-d-2026-10-06.md`, o achado 3 e o 7): sem «peça» nem «lugares», a regra das famílias dita uma vez só, e o que a construção faz com cada número (a fonte e a data) distinguido do que a leitura faz com o que foi construído. A exceção H4-6 da L3 e as suas quatro plantas saíram com a palavra. Como a redação é de um modelo Claude, a leitura dela é do Codex, a outra família.
+
+Cabeça do código: `25499b79fc803f1723e6ed92e9927e1a36dbb8b1`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4e.py` a partir dos resultados guardados. Os portões inteiros desta cabeça correm na corrida portão do GitHub, e não na máquina; aqui correram as conferências que a mudança toca, cada uma no seu comando com o código lido de um ficheiro.
+
+### As conferências que a mudança toca
+
+| Conferência | Código lido |
+| --- | --- |
+| check-lingua | 0 |
+| check-lugar | 0 |
+| gate-html | 0 |
+
+### As plantas da política e da N1 na cabeça do código
+
+A política fez 18 plantas; a N1 fez 3. Todas falharam pela mensagem esperada; a política trabalha em cópias na memória, e a N1 repõe os ficheiros construídos byte a byte. Comandos: `node design/especime-v3/medicoes/h4-2026-10-06/provar-politica.mjs --passagem-e` e `node tests/pais/portoes.mjs --prefixo h4b-`.
+
+| Edição | Planta da política | Mensagem observada e exigida |
+| --- | --- | --- |
+| pt | um lugar a mais | H4 IA: a política tem de dizer três lugares. |
+| pt | a construção em falta | H4 IA: a política tem de dizer três lugares. |
+| pt | a medição no lugar da leitura | H4 IA: os lugares não são os da redação decidida. |
+| pt | a introdução antiga | H4 IA: a introdução dos lugares difere da redação decidida. |
+| pt | a família da construção trocada | H4 IA: as famílias e os lugares do fecho diferem da redação decidida. |
+| pt | a divisão fixa antiga | H4 IA: as famílias e os lugares do fecho diferem da redação decidida. |
+| pt | a construção e a leitura da mesma família | H4 IA: os lugares não são os da redação decidida. |
+| pt | a direção com palavras de oficina | H4 IA: os lugares não são os da redação decidida. |
+| pt | a construção com palavras de oficina | H4 IA: os lugares não são os da redação decidida. |
+| en | um lugar a mais | H4 IA: a política tem de dizer três lugares. |
+| en | a construção em falta | H4 IA: a política tem de dizer três lugares. |
+| en | a medição no lugar da leitura | H4 IA: os lugares não são os da redação decidida. |
+| en | a introdução antiga | H4 IA: a introdução dos lugares difere da redação decidida. |
+| en | a família da construção trocada | H4 IA: as famílias e os lugares do fecho diferem da redação decidida. |
+| en | a divisão fixa antiga | H4 IA: as famílias e os lugares do fecho diferem da redação decidida. |
+| en | a construção e a leitura da mesma família | H4 IA: os lugares não são os da redação decidida. |
+| en | a direção com palavras de oficina | H4 IA: os lugares não são os da redação decidida. |
+| en | a construção com palavras de oficina | H4 IA: os lugares não são os da redação decidida. |
+
+| Planta da N1 | Código lido | Mensagens exigidas e encontradas no registo |
+| --- | --- | --- |
+| h4b-menu-sem-explicacoes | 1 | N1: menu de sete errado em index\.html\.; N1: menu de sete errado em en\/index\.html\. |
+| h4b-menu-rotulo-antigo | 1 | N1: menu de sete errado em index\.html\.; N1: menu de sete errado em en\/index\.html\. |
+| h4b-menu-destino-e-ordem | 1 | N1: menu de sete errado em index\.html\.; N1: menu de sete errado em en\/index\.html\. |
+
+### As capturas do Método
+
+Foram refeitas 10 capturas de página inteira, cada uma com o recorte dos papéis e do cabeçalho, nas duas edições. [Manifesto, medidas e SHA-256](capturas-e.json). Comando: `node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --passagem-e`.
+
+| Edição | Janela, px | Página | Papéis | Cabeçalho |
+| --- | --- | --- | --- | --- |
+| pt | 390 | [captura](../../capturas/h4-2026-10-06/passagem-e/politica-pt-390.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/lugares-ia-pt-390.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/cabecalho-politica-pt-390.png) |
+| pt | 768 | [captura](../../capturas/h4-2026-10-06/passagem-e/politica-pt-768.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/lugares-ia-pt-768.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/cabecalho-politica-pt-768.png) |
+| pt | 1024 | [captura](../../capturas/h4-2026-10-06/passagem-e/politica-pt-1024.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/lugares-ia-pt-1024.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/cabecalho-politica-pt-1024.png) |
+| pt | 1280 | [captura](../../capturas/h4-2026-10-06/passagem-e/politica-pt-1280.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/lugares-ia-pt-1280.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/cabecalho-politica-pt-1280.png) |
+| pt | 1600 | [captura](../../capturas/h4-2026-10-06/passagem-e/politica-pt-1600.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/lugares-ia-pt-1600.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/cabecalho-politica-pt-1600.png) |
+| en | 390 | [captura](../../capturas/h4-2026-10-06/passagem-e/politica-en-390.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/lugares-ia-en-390.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/cabecalho-politica-en-390.png) |
+| en | 768 | [captura](../../capturas/h4-2026-10-06/passagem-e/politica-en-768.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/lugares-ia-en-768.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/cabecalho-politica-en-768.png) |
+| en | 1024 | [captura](../../capturas/h4-2026-10-06/passagem-e/politica-en-1024.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/lugares-ia-en-1024.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/cabecalho-politica-en-1024.png) |
+| en | 1280 | [captura](../../capturas/h4-2026-10-06/passagem-e/politica-en-1280.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/lugares-ia-en-1280.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/cabecalho-politica-en-1280.png) |
+| en | 1600 | [captura](../../capturas/h4-2026-10-06/passagem-e/politica-en-1600.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/lugares-ia-en-1600.png) | [captura](../../capturas/h4-2026-10-06/passagem-e/cabecalho-politica-en-1600.png) |
+
+### Os commits da passagem
+
+| Commit | Mudança |
+| --- | --- |
+| `25499b79fc803f1723e6ed92e9927e1a36dbb8b1` | H4-e: a redação dos três papéis reescrita pelo lugar de direção depois da leitura curta do diff da H4-d (o achado 3: dizia que quem constrói nunca verifica e a seguir que a construção confere o que publica, e usava «peça» em dois sentidos; o 7: a regra das famílias dita três vezes, o decalque, «em série» contra «in batches», «Os lugares» numa página cujo menu leva aos concelhos): sem «peça» nem «lugares», a regra das famílias uma vez só, a fonte e a data de cada número distinguidas da leitura; a exceção H4-6 da L3 e as suas quatro plantas saem com a palavra; o comentário do nome da União no menu diz o que foi medido (achado 9); o inventário com as dez frases novas vivas e as da H4-d retiradas; o mapa e as notas históricas do relatório (achado 11); os guiões das provas da passagem |
+
+O commit seguinte guarda apenas esta secção, as capturas e os registos das provas; a cabeça do código é a conferida acima.
