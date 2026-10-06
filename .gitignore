@@ -7,6 +7,8 @@ design-system/
 
 # dependencies
 node_modules/
+# A ligação simbólica `node_modules` de uma worktree (a pasta partilhada da árvore principal) também não é uma mudança.
+node_modules
 
 # logs
 npm-debug.log*
