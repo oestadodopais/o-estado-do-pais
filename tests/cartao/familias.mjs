@@ -138,7 +138,7 @@ export function conferirAuditoriaDasFamilias({
 } = {}) {
   /** @type {string[]} */
   const erros = [];
-  const contas = { linhas: 0, por_cartao: 0, por_concelho: 0, por_familia: 0, familias: 0, entradas: 0, partes: 0, diz: 0, apoios: 0, todas_na_fonte: 0, alguma_da_casa: 0 };
+  const contas = { linhas: 0, por_cartao: 0, por_concelho: 0, por_familia: 0, familias: 0, entradas: 0, partes: 0, diz: 0, apoios: 0, todas_na_fonte: 0, alguma_da_casa: 0, lista_da_casa: /** @type {string[]} */ ([]) };
   const falha = (/** @type {string} */ m) => erros.push(`K17 · famílias · ${m}`);
   const ctx = contextoDasFamilias({ linhas, familias, doConcelho });
 
@@ -339,7 +339,7 @@ export function conferirAuditoriaDasFamilias({
     const declaradas = new Set(e.origens ?? []);
     for (const o of declaradas) if (!usadas.has(o)) falha(`${quem}: a origem «${o}» está na lista e não apoia parte nenhuma`);
     for (const o of usadas) if (!declaradas.has(o)) falha(`${quem}: a origem «${o}» apoia uma parte e não está na lista`);
-    if (todasNaFonte) contas.todas_na_fonte++; else contas.alguma_da_casa++;
+    if (todasNaFonte) contas.todas_na_fonte++; else { contas.alguma_da_casa++; contas.lista_da_casa.push(quem); }
   }
   return { erros, contas };
 }
@@ -545,7 +545,7 @@ export function conferirAuditoriaDasSeries({
 } = {}) {
   /** @type {string[]} */
   const erros = [];
-  const contas = { series: 0, pela_linha: 0, propria: 0, partes: 0, apoios: 0, todas_na_fonte: 0, alguma_da_casa: 0 };
+  const contas = { series: 0, pela_linha: 0, propria: 0, partes: 0, apoios: 0, todas_na_fonte: 0, alguma_da_casa: 0, lista_da_casa: /** @type {string[]} */ ([]) };
   const falha = (/** @type {string} */ m) => erros.push(`K17 · séries · ${m}`);
   const noTempo = [...series.values()].filter((x) => x.eixo === 'periodo');
   const entradas = Array.isArray(auditoria?.series) ? auditoria.series : [];
@@ -622,7 +622,7 @@ export function conferirAuditoriaDasSeries({
     const declaradas = new Set(e.origens ?? []);
     for (const o of declaradas) if (!usadas.has(o)) falha(`«${e.serie}»: a origem «${o}» está na lista e não apoia parte nenhuma`);
     for (const o of usadas) if (!declaradas.has(o)) falha(`«${e.serie}»: a origem «${o}» apoia uma parte e não está na lista`);
-    if (daFonte) contas.todas_na_fonte++; else contas.alguma_da_casa++;
+    if (daFonte) contas.todas_na_fonte++; else { contas.alguma_da_casa++; contas.lista_da_casa.push(e.serie); }
   }
   return { erros, contas };
 }
