@@ -38,12 +38,13 @@ import { parse } from 'node-html-parser';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 import { MEDIDA_REUNIDA } from '../../src/lib/pais.mjs';
 import { BLOCOS_DA_PRIMEIRA_PAGINA } from '../../src/data/primeira-pagina.mjs';
-import { limiarDaLinha } from '../../src/lib/primeira-pagina.mjs';
-import { leituraDaSemana, primeiraFraseDaSemana } from '../../src/lib/leitura-da-semana.mjs';
+import { limiarDaLinha, nomeNaLista } from '../../src/lib/primeira-pagina.mjs';
+import { leituraDaSemana, primeiraFraseDaSemana, nomeNaSemana } from '../../src/lib/leitura-da-semana.mjs';
 import { dataDaCasa } from '../../src/lib/datas.mjs';
 import { milharesDaCasa } from '../../src/lib/formato.mjs';
 import { t } from '../../src/i18n/strings.mjs';
 import { unidadeDaLinha } from '../../src/i18n/unidades.mjs';
+import { plantasDoInventarioDaSemana } from './inventario.mjs';
 import { conferirOQueENasMudancas, marcaOQueEComparada, plantasDoOQueE, plantasDoSeloDaDefinicao } from './o-que-e.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
@@ -299,10 +300,10 @@ export function conferirFraseDoBloco(li, lang, primeira) {
 export function conferirResumoDaMudanca(e, x, lang, linhas) {
   const c=t(lang).semana, l=linhas.get(x.linha);
   const p=e.querySelector('[data-semana-resumo]');
-  const nome=e.querySelector('.semana-nome');
-  const onde=e.querySelector('.semana-onde');
+  const nome=nomeNaSemana(x.linha,lang);
+  const onde=nomeNaLista(x.linha,lang).qualificador === 'ue';
   const u=unidadeDaLinha(l.unit,lang);
-  const esperado=normal(`${nome?.textContent ?? ''}${onde ? c.virgula+t(lang).cartao.uniaoEuropeia : ''}${c.virgula}${dataDaCasa(String(l.reference_date),lang)}${c.virgula}${u.texto}${c.deAntes}${x.antes.valor}${c.para}${x.depois.valor}${c[x.palavra]}${c.em}${dataAqui(x.depois.data)}${c.ponto}`);
+  const esperado=normal(`${nome?.texto ?? ''}${onde ? c.virgula+t(lang).cartao.uniaoEuropeia : ''}${c.virgula}${dataDaCasa(String(l.reference_date),lang)}${c.virgula}${u.texto}${c.deAntes}${x.antes.valor}${c.para}${x.depois.valor}${c[x.palavra]}${c.em}${dataAqui(x.depois.data)}${c.ponto}`);
   const erros=[];
   if(!p || textoSemSelosAqui(p)!==esperado) erros.push(`W2 · ${x.linha}: a frase da mudança ou a unidade antes dos valores difere da composição declarada`);
   const unidades=p?.querySelectorAll('[data-linha-campo="unit"]') ?? [];
@@ -327,7 +328,8 @@ export function conferirPaginaDaSemana(root, lang, aceites, linhas = loadClaims(
   if (s.janela.inicio !== m[1]) erros.push(`W2 · a janela começa a ${m[1]} e sete dias até ${m[2]} começam a ${s.janela.inicio}`);
   const esperada = primeiraFrasePelaCelula(s, lang);
   if (normal(frase.textContent) !== esperada) erros.push(`W2 · a primeira frase difere da conta desta célula.\n      esperada: ${esperada}\n      rendida:  ${normal(frase.textContent)}`);
-  const entradas = root.querySelectorAll('main [data-semana-mudancas] [data-semana-mudanca]');
+  if(frase.parentNode?.lastChild!==frase && frase.parentNode?.children?.at(-1)!==frase) erros.push('W2 · a frase das contagens não fecha a página');
+  const entradas = root.querySelectorAll('main [data-semana-mudancas] > [data-semana-mudanca]');
   if (JSON.stringify(entradas.map((e) => e.getAttribute('data-semana-mudanca'))) !== JSON.stringify(s.mudancas.map((x) => x.linha))) {
     erros.push(`W2 · as mudanças da página (${entradas.length}) não são, pela ordem, as que esta célula conta (${s.mudancas.length}): da mudança mais recente para a mais antiga`);
   }
@@ -384,6 +386,26 @@ export function conferirPaginaDaSemana(root, lang, aceites, linhas = loadClaims(
   return erros;
 }
 
+/** O índice mantém a seleção própria; cada frase é conferida contra a última entrada do livro. */
+export function conferirMudancasDoIndice(root, lang, linhas=loadClaims()) {
+  const erros=[];
+  for(const e of root.querySelectorAll('main [data-mudou-ambito="indice"] > [data-correcao-entrada]')) {
+    const id=e.getAttribute('data-correcao-entrada'), l=linhas.get(id);
+    const cs=(l?.corrections ?? []).map((c,n)=>({...c,n})).filter(c=>['correcao','atualizacao'].includes(c.kind)).sort((a,b)=>b.date.localeCompare(a.date)||b.n-a.n);
+    const c=cs[0];
+    if(!c) {erros.push(`W2 · ${id}: o índice mostra uma mudança sem entrada no livro`);continue;}
+    const a=numero(c.old_value), b=numero(c.new_value);
+    const x={linha:id,antes:{n:c.n,valor:String(c.old_value)},depois:{n:c.n,valor:String(c.new_value),data:c.date},palavra:b>a?'subiu':b<a?'desceu':'naoMudou'};
+    erros.push(...conferirResumoDaMudanca(e,x,lang,linhas));
+    if(e.getAttribute('data-semana-palavra')!==x.palavra) erros.push(`W2 · ${id}: a palavra do lado no índice não é a da conta`);
+    for(const campo of ['old_value','new_value','date']) {
+      const marca=e.querySelector(`[data-correcao-campo="${campo}"]`);
+      if(marca?.getAttribute('data-correcao-n')!==String(c.n)||marca?.getAttribute('data-correcao-claim')!==id) erros.push(`W2 · ${id}: a marca de ${campo} no índice não é da última entrada da própria linha`);
+    }
+  }
+  return erros;
+}
+
 /**
  * W3 · uma porta da semana (a lista das explicações, a primeira página): a frase é a da página da semana, dentro de uma
  * ligação para ela.
@@ -416,10 +438,13 @@ function primeiraDaEdicao(dist, lang) {
  */
 export function marcaComparada(el, rota) {
   if (marcaOQueEComparada(el, rota)) return true;
+  if (['leituraDaSemana','indice'].includes(rota) && el.hasAttribute('data-semana-resumo')) {
+    const entrada=el.parentNode;
+    return el.rawTagName==='p' && entrada?.hasAttribute?.('data-semana-mudanca')===true && entrada.parentNode?.hasAttribute?.('data-semana-mudancas')===true && Boolean(el.closest('main')) && (rota!=='indice'||entrada.parentNode.getAttribute('data-mudou-ambito')==='indice');
+  }
   if (rota !== 'leituraDaSemana') return el.hasAttribute('data-semana-frase');
   if (!el.closest('main')) return false;
   if (el.hasAttribute('data-semana-frase')) return true;
-  if (el.hasAttribute('data-semana-resumo')) return el.parentNode?.hasAttribute?.('data-semana-mudanca') === true;
   if (el.hasAttribute('data-semana-forma')) return el.parentNode?.hasAttribute?.('data-semana-formas') === true;
   if (String(el.rawTagName).toLowerCase() === 'h2') return el.parentNode?.hasAttribute?.('data-semana-seccao') === true;
   if (el.hasAttribute('data-semana-primeira')) return ['nenhuma', 'mudaram'].includes(String(el.getAttribute('data-semana-primeira')));
@@ -438,6 +463,7 @@ export function conferirPalavrasDaSemanaNaPagina(root, lang, rota, dist) {
   const erros = [];
   erros.push(...conferirOQueENasMudancas(root, lang, rota, dist));
   if (rota === 'leituraDaSemana') erros.push(...conferirPaginaDaSemana(root, lang, aceites, linhas, primeiraDaEdicao(dist, lang)));
+  else if(rota === 'indice') erros.push(...conferirMudancasDoIndice(root,lang,linhas));
   else for (const el of root.querySelectorAll('[data-semana-frase]')) erros.push(...conferirPortaDaSemana(el, lang, aceites, linhas));
   for (const el of root.querySelectorAll('[data-semana-declarado]')) {
     if (!marcaComparada(el, rota)) erros.push(`W · a marca das frases compostas da semana está num sítio que esta célula não confere (${rota}): <${String(el.rawTagName).toLowerCase()}> «${normal(el.textContent).slice(0, 60)}»`);
@@ -507,6 +533,33 @@ export function plantasDaPaginaDaSemana(dist) {
   ];
 }
 
+/** EX2-b: as mesmas plantas nas duas superfícies e edições, com controlo intacto. */
+export function plantasDaPassagemB(dist) {
+  const plantas=[];
+  for(const [lang,f,rota] of [['pt','indice/index.html','indice'],['en','en/index/index.html','indice'],...PAGINAS_DA_SEMANA.map(([l,f])=>[l,f,'leituraDaSemana'])]) {
+    const html=fs.readFileSync(path.join(dist,f),'utf8');
+    const conferir=r=>conferirPalavrasDaSemanaNaPagina(r,lang,rota,dist);
+    const raiz=parse(html), controlo=conferir(raiz);
+    const casos=[
+      ['a unidade colada ao número',r=>{const e=r.querySelector('[data-semana-mudanca]'),u=e.querySelector('[data-linha-campo="unit"]'),v=e.querySelector('[data-correcao-campo="new_value"]');u.remove();v.insertAdjacentHTML('afterend',u.outerHTML);},'a frase da mudança ou a unidade antes dos valores'],
+      ['o qualificador da União Europeia retirado',r=>r.querySelector('[data-semana-mudanca="despesa-em-id-2024-ue"] .semana-onde').remove(),'a frase da mudança ou a unidade antes dos valores'],
+      ['o nome da fonte em vez do nome da medida',r=>r.querySelector('[data-semana-mudanca] .semana-nome').set_content('Nominal unit labour cost per hour worked'),'a frase da mudança ou a unidade antes dos valores'],
+      ['a palavra da revisão trocada por movimento da economia',r=>{const p=r.querySelector('[data-semana-resumo]');p.set_content(p.innerHTML.replace(t(lang).semana.subiu,lang==='pt'?', subiu':', rose'));},'a frase da mudança ou a unidade antes dos valores'],
+      ['um resumo declarado fora da lista',r=>{const e=r.querySelector('[data-semana-mudanca]');r.querySelector('main').insertAdjacentHTML('beforeend',`<li data-semana-mudanca="${e.getAttribute('data-semana-mudanca')}">${e.querySelector('[data-semana-resumo]').outerHTML}</li>`);},'W · a marca das frases compostas da semana está num sítio que esta célula não confere'],
+    ];
+    if(rota==='leituraDaSemana') casos.push(
+      ['as contagens à cabeça da página',r=>{const p=r.querySelector('main [data-semana-frase]');p.remove();r.querySelector('[data-semana-pagina] h1').insertAdjacentHTML('afterend',p.outerHTML);},'a frase das contagens não fecha a página'],
+      ['a frase de nenhuma mudança da primeira página retirada',r=>r.querySelector('[data-semana-primeira="nenhuma"]')?.remove(),'nenhuma frase da primeira página mudou, e a página não o diz assim']);
+    for(const [nome,estraga,mensagem] of casos) {
+      const aplicavel=nome.startsWith('as contagens') || (nome.startsWith('a frase de nenhuma') ? raiz.querySelector('[data-semana-primeira="nenhuma"]') : nome.startsWith('o qualificador') ? raiz.querySelector('[data-semana-mudanca="despesa-em-id-2024-ue"] .semana-onde') : raiz.querySelector('[data-semana-mudanca]'));
+      if(!aplicavel) {plantas.push({nome:`${nome}, ${rota}, ${lang}`,aplica:false,mordeu:false,mensagem,queixa:'a página construída não tem a entrada necessária; a planta não se aplica'});continue;}
+      const r=parse(html);estraga(r);const q=conferir(r);
+      plantas.push({nome:`${nome}, ${rota}, ${lang}`,mensagem,mordeu:!controlo.length&&q.some(x=>x.includes(mensagem)),queixa:q.join(' | ')});
+    }
+  }
+  return plantas;
+}
+
 /* ------------------------------------------------------------------------- a corrida */
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
@@ -531,9 +584,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     for (const el of els) { portas++; erros.push(...conferirPortaDaSemana(el, lang, aceites, linhas).map((x) => `${f}: ${x}`)); }
   }
   for (const [lang, f, rota] of [['pt','indice/index.html','indice'],['en','en/index/index.html','indice'],...PAGINAS_DA_SEMANA.map(([lang,f])=>[lang,f,'leituraDaSemana'])]) {
-    erros.push(...conferirOQueENasMudancas(parse(fs.readFileSync(path.join(DIST,f),'utf8')),lang,rota,DIST));
+    erros.push(...conferirPalavrasDaSemanaNaPagina(parse(fs.readFileSync(path.join(DIST,f),'utf8')),lang,rota,DIST));
   }
-  const plantas = prova ? [...plantasDaPaginaDaSemana(DIST), ...plantasDoOQueE(DIST), ...plantasDoSeloDaDefinicao()] : [];
+  const plantas = prova ? [...plantasDaPaginaDaSemana(DIST), ...plantasDoOQueE(DIST), ...plantasDoSeloDaDefinicao(), ...plantasDaPassagemB(DIST), ...plantasDoInventarioDaSemana(DIST)] : [];
   for (const p of plantas) if (!p.mordeu && /** @type {any} */ (p).aplica !== false) erros.push(`W · a planta «${p.nome}» não mordeu: ${p.queixa}`);
   const s = semanaPelaCelula(linhas, aceites[0]);
   const resumo = { construcao: JSON.parse(fs.readFileSync(path.join(DIST,'version.json'),'utf8')).commit, aceites, janela: s.janela, contagens: s.contagens, mudancas: s.mudancas.length, formas: s.formas.map((x) => ({ linha: x.linha, antes: x.antes.valor, depois: x.depois.valor })), blocos_que_mudaram: blocosQueMudaramPelaCelula(s, linhas), w1: w1.plantas, portas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu, aplica: /** @type {any} */ (p).aplica !== false, mensagem: p.mensagem ?? null, queixa: p.queixa })), erros };

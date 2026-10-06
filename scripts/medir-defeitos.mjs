@@ -56,6 +56,7 @@ import { temAviso } from '../src/lib/aviso-do-motor.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { NOMES_DAS_SERIES } from '../src/data/series-no-tempo.mjs';
 import { FAMILIAS_DAS_LINHAS, FAMILIAS_DOS_CONCELHOS } from '../src/data/o-que-e-das-familias.mjs';
+import { marcaComparada } from '../tests/explicacoes/semana.mjs';
 import { metaDoEstudoConferida } from './meta-do-estudo.mjs';
 import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
@@ -1058,6 +1059,7 @@ function frasesDaCasa(root, rotaKey) {
     for (const d of el.querySelectorAll('*')) marcados.add(d);
   }
   if (ROTAS_DA_SEMANA.has(rotaKey)) for (const el of root.querySelectorAll(SEMANA_DECLARADA)) {
+    if (!marcaComparada(el, rotaKey)) continue;
     marcados.add(el);
     for (const d of el.querySelectorAll('*')) marcados.add(d);
   }
