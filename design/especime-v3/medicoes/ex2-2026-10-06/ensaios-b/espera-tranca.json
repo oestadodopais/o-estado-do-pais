@@ -1,0 +1,16 @@
+{
+  "descricao": "Apenas a espera da tranca é encurtada; o guião portoes.sh e os filhos conservam-se.",
+  "comando_portoes": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/ex2-2026-10-06/portoes-b",
+  "provas": [
+    {
+      "caso": "espera do guião",
+      "comando": "export EX2_TRANCAPID=$$; sleep 10; :",
+      "segundos": 0.218
+    },
+    {
+      "caso": "espera de um filho",
+      "comando": "export EX2_TRANCAPID=$$; sh -c \"sleep 10; :\"; :",
+      "segundos": 10.023
+    }
+  ]
+}
