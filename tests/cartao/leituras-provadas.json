@@ -12890,8 +12890,8 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano, calculados pela casa a partir dos dois montantes da mesma notificação do INE.",
-          "en": "It is general government interest expenditure as a percentage of gross domestic product for the same year, calculated here from both amounts in the same INE notification.",
+          "pt": "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano, calculados a partir dos dois montantes da mesma notificação do INE.",
+          "en": "It is general government interest expenditure as a percentage of gross domestic product for the same year, calculated from both amounts in the same INE notification.",
           "partes": [
             {
               "pt": "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano",
@@ -12911,8 +12911,8 @@
               ]
             },
             {
-              "pt": ", calculados pela casa a partir dos dois montantes da mesma notificação do INE",
-              "en": ", calculated here from both amounts in the same INE notification",
+              "pt": ", calculados a partir dos dois montantes da mesma notificação do INE",
+              "en": ", calculated from both amounts in the same INE notification",
               "classe": "diz",
               "apoios": [
                 {

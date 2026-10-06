@@ -27,7 +27,7 @@ export const FAMILIAS_JD1 = [
     partes: [
       diz('São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano', 'It is general government interest expenditure as a percentage of gross domestic product for the same year',
         L('derivation', 'Dividir os juros das administrações públicas pelo produto interno bruto a preços de mercado do mesmo ano'), L('derivation', 'multiplicar por cem')),
-      diz(', calculados pela casa a partir dos dois montantes da mesma notificação do INE', ', calculated here from both amounts in the same INE notification', L('derivation', 'na mesma notificação do INE')),
+      diz(', calculados a partir dos dois montantes da mesma notificação do INE', ', calculated from both amounts in the same INE notification', L('derivation', 'na mesma notificação do INE')),
       ponto,
     ],
   },

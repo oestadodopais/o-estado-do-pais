@@ -83,6 +83,20 @@
   font-size: 14.5px;
   line-height: 1.62;
 }
+/* JD1: a área de toque mantém o seu tamanho; o endereço não esmaga o rótulo. */
+@media (max-width: 1023px) {
+  .linha-porta-documento > .ligacao-externa,
+  .linha-recorte-legenda > .ligacao-externa {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+  }
+  .linha-endereco-abrir,
+  .linha-endereco-bruto {
+    max-width: 100%;
+  }
+}
 .aparelho-ficha dd {
   font-size: 12.5px;
   line-height: 1.5;

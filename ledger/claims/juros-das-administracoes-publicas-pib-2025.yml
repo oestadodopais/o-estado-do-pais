@@ -30,7 +30,7 @@ check: "round ( juros-das-administracoes-publicas-2025 / pib-nominal-notificacao
 
 study: "oe-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[derivation do motor] Dividir os juros das administrações públicas pelo produto interno bruto a preços de mercado do mesmo ano, na mesma notificação do INE, e multiplicar por cem. Arredondar a duas casas decimais, com as metades para fora de zero. · [note do motor] Cálculo da casa sobre os montantes impressos nos quadros da mesma notificação. Não é uma percentagem impressa pelo INE. · Cruzado de ResearchHub content/20 Orcamento do Estado · juros-das-administracoes-publicas-pib-2025."
+note: "[derivation do motor] Dividir os juros das administrações públicas pelo produto interno bruto a preços de mercado do mesmo ano, na mesma notificação do INE, e multiplicar por cem. Arredondar a duas casas decimais, com as metades para fora de zero. · [note do motor] Cálculo sobre os montantes impressos nos quadros da mesma notificação. Não é uma percentagem impressa pelo INE. · Cruzado de ResearchHub content/20 Orcamento do Estado · juros-das-administracoes-publicas-pib-2025."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
