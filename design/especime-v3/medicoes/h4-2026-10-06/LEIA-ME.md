@@ -505,9 +505,9 @@ Os achados do EX1 ficam com o lugar de direção, por decisão expressa. A leitu
 
 ## A passagem H4-e
 
-A redação dos três papéis é do lugar de direção, reescrita depois da leitura curta do diff da H4-d (`design/especime-v3/critica/LEITURA-H4-d-2026-10-06.md`, o achado 3 e o 7): sem «peça» nem «lugares», a regra das famílias dita uma vez só, e o que a construção faz com cada número (a fonte e a data) distinguido do que a leitura faz com o que foi construído. A exceção H4-6 da L3 e as suas quatro plantas saíram com a palavra. Como a redação é de um modelo Claude, a leitura dela é do Codex, a outra família.
+A redação dos três papéis é do lugar de direção, reescrita depois da leitura curta do diff da H4-d (`design/especime-v3/critica/LEITURA-H4-d-2026-10-06.md`, o achado 3 e o 7): sem «peça» nem «lugares», a regra das famílias dita uma vez só, e o que a construção faz com cada número (a fonte e a data) distinguido do que a leitura faz com o que foi construído. A exceção H4-6 da L3 e as suas quatro plantas saíram com a palavra. Como a redação é de um modelo Claude, a leitura dela é do Codex, a outra família: a primeira leitura (`design/especime-v3/critica/LEITURA-H4-e-codex-2026-10-06.md`) mordeu as cinco plantas e achou que a regra 9 do Método («A intervenção humana») ainda dizia que a direção é de uma pessoa que escolhe o que se publica, contra a secção dos papéis e contra a §1.112; a regra passou a dizer que a direção é de um modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define, e que é essa pessoa que responde; os guiões das provas passaram a registar os seus próprios nomes. As provas abaixo são as da cabeça com essas duas mudanças.
 
-Cabeça do código: `25499b79fc803f1723e6ed92e9927e1a36dbb8b1`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4e.py` a partir dos resultados guardados. Os portões inteiros desta cabeça correm na corrida portão do GitHub, e não na máquina; aqui correram as conferências que a mudança toca, cada uma no seu comando com o código lido de um ficheiro.
+Cabeça do código: `52dd41d1aa7dcc140652468ab8bf06bc2706b01d`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4e.py` a partir dos resultados guardados. Os portões inteiros desta cabeça correm na corrida portão do GitHub, e não na máquina; aqui correram as conferências que a mudança toca, cada uma no seu comando com o código lido de um ficheiro.
 
 ### As conferências que a mudança toca
 
@@ -519,7 +519,7 @@ Cabeça do código: `25499b79fc803f1723e6ed92e9927e1a36dbb8b1`. Secção gerada 
 
 ### As plantas da política e da N1 na cabeça do código
 
-A política fez 18 plantas; a N1 fez 3. Todas falharam pela mensagem esperada; a política trabalha em cópias na memória, e a N1 repõe os ficheiros construídos byte a byte. Comandos: `node design/especime-v3/medicoes/h4-2026-10-06/provar-politica.mjs --passagem-e` e `node tests/pais/portoes.mjs --prefixo h4b-`.
+A política fez 18 plantas; a N1 fez 3. Todas falharam pela mensagem esperada; a política trabalha em cópias na memória, e a N1 repõe os ficheiros construídos byte a byte. Comandos: `node design/especime-v3/medicoes/h4-2026-10-06/provar-politica-e.mjs --passagem-e` e `node tests/pais/portoes.mjs --prefixo h4b-`.
 
 | Edição | Planta da política | Mensagem observada e exigida |
 | --- | --- | --- |
@@ -550,7 +550,7 @@ A política fez 18 plantas; a N1 fez 3. Todas falharam pela mensagem esperada; a
 
 ### As capturas do Método
 
-Foram refeitas 10 capturas de página inteira, cada uma com o recorte dos papéis e do cabeçalho, nas duas edições. [Manifesto, medidas e SHA-256](capturas-e.json). Comando: `node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --passagem-e`.
+Foram refeitas 10 capturas de página inteira, cada uma com o recorte dos papéis e do cabeçalho, nas duas edições. [Manifesto, medidas e SHA-256](capturas-e.json). Comando: `node design/especime-v3/medicoes/h4-2026-10-06/captar-h4-e.mjs --passagem-e`.
 
 | Edição | Janela, px | Página | Papéis | Cabeçalho |
 | --- | --- | --- | --- | --- |
@@ -567,8 +567,12 @@ Foram refeitas 10 capturas de página inteira, cada uma com o recorte dos papéi
 
 ### Os commits da passagem
 
+Os commits do código da H4-e, no ramo `h4-2026-10-06`, de `81e3de31` a `d81471b7`; as provas desta secção correram na cabeça `52dd41d1` do ramo de integração, que funde o H4 com o M-A e o EX2.
+
 | Commit | Mudança |
 | --- | --- |
+| `d81471b7ac6a8ee22d6acf4b68970d1f2b1af339` | H4-e: a leitura do Codex gpt-6-astra sobre a redação do lugar de direção (cinco plantas mordidas; o achado 4: a regra 9 do Método ainda dizia que a direção é de uma pessoa que escolhe o que se publica, contra a secção dos papéis e a §1.112) com o registo das plantas; a regra 9 reescrita nas duas edições (a direção é de um modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define, e é essa pessoa que responde; nem ela nem o modelo escrevem números); os guiões das provas registam os seus próprios nomes (achado 8); o gerador da secção diz a leitura e a regra |
+| `8f07e6c01d0b9145c8a86850c26dcb7b818f7dc4` | H4-e: a leitura curta do Claude Opus 5.5 sobre a H4-d (cinco plantas mordidas; o achado 3 e o 7 levaram à redação nova, o 9 e o 11 corrigidos, o 8 sem objeto, o 10 anotado como H4-7) com o registo das plantas; as provas da passagem na cabeça do código (as conferências que a mudança toca, as plantas da política e da N1, as capturas do Método nas cinco larguras) e a secção H4-e do relatório, gerada por guião |
 | `25499b79fc803f1723e6ed92e9927e1a36dbb8b1` | H4-e: a redação dos três papéis reescrita pelo lugar de direção depois da leitura curta do diff da H4-d (o achado 3: dizia que quem constrói nunca verifica e a seguir que a construção confere o que publica, e usava «peça» em dois sentidos; o 7: a regra das famílias dita três vezes, o decalque, «em série» contra «in batches», «Os lugares» numa página cujo menu leva aos concelhos): sem «peça» nem «lugares», a regra das famílias uma vez só, a fonte e a data de cada número distinguidas da leitura; a exceção H4-6 da L3 e as suas quatro plantas saem com a palavra; o comentário do nome da União no menu diz o que foi medido (achado 9); o inventário com as dez frases novas vivas e as da H4-d retiradas; o mapa e as notas históricas do relatório (achado 11); os guiões das provas da passagem |
 
 O commit seguinte guarda apenas esta secção, as capturas e os registos das provas; a cabeça do código é a conferida acima.

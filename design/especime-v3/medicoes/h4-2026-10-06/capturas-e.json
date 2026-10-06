@@ -1,14 +1,14 @@
 {
-  "comando": "node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --passagem-e",
-  "cabeca": "25499b79fc803f1723e6ed92e9927e1a36dbb8b1",
+  "comando": "node design/especime-v3/medicoes/h4-2026-10-06/captar-h4-e.mjs --passagem-e",
+  "cabeca": "52dd41d1aa7dcc140652468ab8bf06bc2706b01d",
   "estado": "",
   "construcao": {
-    "commit": "25499b79fc803f1723e6ed92e9927e1a36dbb8b1",
-    "ref": "h4-2026-10-06",
+    "commit": "52dd41d1aa7dcc140652468ab8bf06bc2706b01d",
+    "ref": "aterragem-2026-10-06-tarde",
     "env": "local",
     "origem": "git",
     "motivo": null,
-    "construido_em": "2026-10-06T15:57:01.530Z"
+    "construido_em": "2026-10-06T16:20:47.932Z"
   },
   "paginas": [
     {
@@ -16,7 +16,7 @@
       "lang": "pt",
       "rota": "/metodo",
       "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas-e/politica-pt.html",
-      "sha256": "44c542515b438a79442c398c9066948fbb8c392ba46a98c7e87d6c282ec2e6f0",
+      "sha256": "eaf9f1fefd6ca575e2aab62faee7094fa9969939042f028bb93e2b1ac40ef041",
       "folhas": [
         {
           "ficheiro": "/_astro/Base.hPEW4RoH.css",
@@ -33,7 +33,7 @@
       "lang": "en",
       "rota": "/en/method",
       "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas-e/politica-en.html",
-      "sha256": "576d50b6b7ac274f4a87ad6766ad82e290a2a8c4bcaa3d769cb4505771616055",
+      "sha256": "3387fb8456b08078f8f7871c6065902cb39a58cad97c32561639f0bd4445bc78",
       "folhas": [
         {
           "ficheiro": "/_astro/Base.hPEW4RoH.css",

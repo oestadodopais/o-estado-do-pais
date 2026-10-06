@@ -1,7 +1,7 @@
 [
   {
     "nome": "h4b-menu-sem-explicacoes",
-    "cabeca": "25499b79fc803f1723e6ed92e9927e1a36dbb8b1",
+    "cabeca": "52dd41d1aa7dcc140652468ab8bf06bc2706b01d",
     "estado": "",
     "comando": "node scripts/check-pais.mjs",
     "codigo": 1,
@@ -18,14 +18,14 @@
       },
       {
         "ficheiro": "dist/en/index.html",
-        "antes": "e91c385fbef44e971794eaebf6d8e20abaaf09e679bfbb4911df52d48d368f30",
-        "reposto": "e91c385fbef44e971794eaebf6d8e20abaaf09e679bfbb4911df52d48d368f30"
+        "antes": "5f0c869251597ad7800f8ae81f338f9ac483a386ca8e3f9f2989f7f3e1e95acf",
+        "reposto": "5f0c869251597ad7800f8ae81f338f9ac483a386ca8e3f9f2989f7f3e1e95acf"
       }
     ]
   },
   {
     "nome": "h4b-menu-rotulo-antigo",
-    "cabeca": "25499b79fc803f1723e6ed92e9927e1a36dbb8b1",
+    "cabeca": "52dd41d1aa7dcc140652468ab8bf06bc2706b01d",
     "estado": "",
     "comando": "node scripts/check-pais.mjs",
     "codigo": 1,
@@ -42,14 +42,14 @@
       },
       {
         "ficheiro": "dist/en/index.html",
-        "antes": "e91c385fbef44e971794eaebf6d8e20abaaf09e679bfbb4911df52d48d368f30",
-        "reposto": "e91c385fbef44e971794eaebf6d8e20abaaf09e679bfbb4911df52d48d368f30"
+        "antes": "5f0c869251597ad7800f8ae81f338f9ac483a386ca8e3f9f2989f7f3e1e95acf",
+        "reposto": "5f0c869251597ad7800f8ae81f338f9ac483a386ca8e3f9f2989f7f3e1e95acf"
       }
     ]
   },
   {
     "nome": "h4b-menu-destino-e-ordem",
-    "cabeca": "25499b79fc803f1723e6ed92e9927e1a36dbb8b1",
+    "cabeca": "52dd41d1aa7dcc140652468ab8bf06bc2706b01d",
     "estado": "",
     "comando": "node scripts/check-pais.mjs",
     "codigo": 1,
@@ -66,8 +66,8 @@
       },
       {
         "ficheiro": "dist/en/index.html",
-        "antes": "e91c385fbef44e971794eaebf6d8e20abaaf09e679bfbb4911df52d48d368f30",
-        "reposto": "e91c385fbef44e971794eaebf6d8e20abaaf09e679bfbb4911df52d48d368f30"
+        "antes": "5f0c869251597ad7800f8ae81f338f9ac483a386ca8e3f9f2989f7f3e1e95acf",
+        "reposto": "5f0c869251597ad7800f8ae81f338f9ac483a386ca8e3f9f2989f7f3e1e95acf"
       }
     ]
   }

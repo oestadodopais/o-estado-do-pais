@@ -48,7 +48,8 @@ for f in sorted((AQUI / 'conferencias-e').glob('*.codigo')):
     conferencias[f.stem] = int(f.read_text().strip())
     assert (AQUI / 'conferencias-e' / f'{f.stem}.cabeca').read_text().strip() == cabeca, f.stem
 assert conferencias and not any(conferencias.values()), conferencias
-commits = subprocess.check_output(['git', 'log', '--format=%H\t%s', f'{PARTIDA}..{cabeca}'], text=True).strip().split('\n')
+FIM_DO_CODIGO = 'd81471b7'  # o último commit do código da H4-e no ramo h4-2026-10-06; as provas correm na cabeça do ramo de integração
+commits = subprocess.check_output(['git', 'log', '--format=%H\t%s', f'{PARTIDA}..{FIM_DO_CODIGO}'], text=True).strip().split('\n')
 
 linhas = ['## A passagem H4-e', '',
           'A redação dos três papéis é do lugar de direção, reescrita depois da leitura curta do diff da H4-d '
@@ -79,7 +80,7 @@ linhas += ['', '### As capturas do Método', '',
 def liga(f):
     return f"[captura](../../{Path(f).relative_to('design/especime-v3')})"
 linhas += tabela(['Edição', 'Janela, px', 'Página', 'Papéis', 'Cabeçalho'], [(c['lang'], c['largura'], liga(c['ficheiro']), liga(c['recorte']), liga(c['cabecalho'])) for c in cap['capturas']])
-linhas += ['', '### Os commits da passagem', '']
+linhas += ['', '### Os commits da passagem', '', f'Os commits do código da H4-e, no ramo `h4-2026-10-06`, de `{PARTIDA[:8]}` a `{FIM_DO_CODIGO}`; as provas desta secção correram na cabeça `{cabeca[:8]}` do ramo de integração, que funde o H4 com o M-A e o EX2.', '']
 linhas += tabela(['Commit', 'Mudança'], [(f'`{h}`', s) for h, s in (c.split('\t', 1) for c in commits)])
 linhas += ['', 'O commit seguinte guarda apenas esta secção, as capturas e os registos das provas; a cabeça do código é a conferida acima.', '']
 secao = '\n'.join(linhas)
