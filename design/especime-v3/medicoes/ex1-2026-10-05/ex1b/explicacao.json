@@ -1,0 +1,116 @@
+{
+  "auditoria": {
+    "explicacoes": 1,
+    "folhas": 67,
+    "partes": 109,
+    "diz": 50,
+    "conta": 9,
+    "liga": 45,
+    "aponta": 3,
+    "leitura": 2,
+    "apoios": 75,
+    "origens": 5
+  },
+  "origens": {
+    "origens": 2,
+    "lidas_no_motor": 2,
+    "motor": true
+  },
+  "maiores": {
+    "tokens": 2
+  },
+  "paginas": 2,
+  "plantas": [
+    {
+      "nome": "o ramo do sinal trocado (excedente por défice, ou o contrário)",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "as palavras de uma condição falsa rendidas (os três programas)",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "o nome de outra função",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "um parágrafo a menos",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "o ano trocado no título",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "o título de uma secção trocado",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "a ordem dos programas que mais gastaram trocada",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "a porta do tema tirada do fim",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "o selo de um valor tirado",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "uma linha que não é dos programas no token «maiores»",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "um «n» maior do que a lista no token «maiores»",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "um literal que não está no campo que cita",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "uma conta fora de um ramo e de uma condição",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "uma folha sem auditoria",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "uma ligação com uma palavra que diz alguma coisa",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "uma leitura do projeto sem dizer sobre o que é",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "uma porta do fim que a explicação não declara",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "o sha256 de uma origem trocado (com o motor ao lado)",
+      "mordeu": true,
+      "aplica": true
+    }
+  ],
+  "erros": []
+}

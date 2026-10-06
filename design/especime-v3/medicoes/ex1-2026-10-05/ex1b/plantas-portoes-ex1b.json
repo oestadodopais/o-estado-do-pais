@@ -1,0 +1,146 @@
+[
+  {
+    "nome": "ex1b-rodape-sem-a-porta-das-explicacoes",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "R3 rodapé: o rodapé tem 7 porta\\(s\\) e são 8"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/temas/index.html",
+        "antes": "b97b3c138fe89b7591f652801b1831ea5cb182fb49bf6d2ef5f08866e18613fa",
+        "reposto": "b97b3c138fe89b7591f652801b1831ea5cb182fb49bf6d2ef5f08866e18613fa"
+      }
+    ]
+  },
+  {
+    "nome": "ex1b-rodape-com-uma-porta-a-mais",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "R3 rodapé: o rodapé tem 9 porta\\(s\\) e são 8"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/themes/index.html",
+        "antes": "ba0671063c3d6a2e2c5587b8abaf0f14559e4c43e78335c537ed13a49277cfda",
+        "reposto": "ba0671063c3d6a2e2c5587b8abaf0f14559e4c43e78335c537ed13a49277cfda"
+      }
+    ]
+  },
+  {
+    "nome": "ex1b-maiores-ordem-trocada",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a célula da explicação recusou-as em explicacoes\\/dinheiro-do-estado-2026\\/index\\.html: X6 · o parágrafo seccoes\\[2\\]\\.conteudo\\[0\\]\\.paragrafo difere da conta"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/explicacoes/dinheiro-do-estado-2026/index.html",
+        "antes": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2",
+        "reposto": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2"
+      }
+    ]
+  },
+  {
+    "nome": "ex1b-maiores-valor-trocado",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a afirmação \"execucao-2026-08-despesa-programa-016\" foi renderizada como \"99,9\""
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/explainers/dinheiro-do-estado-2026/index.html",
+        "antes": "20a5a247618715cf11361628f91e0cadadd814255102ed3fecfe03e44880067b",
+        "reposto": "20a5a247618715cf11361628f91e0cadadd814255102ed3fecfe03e44880067b"
+      }
+    ]
+  },
+  {
+    "nome": "ex1b-porta-do-tema-tirada",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a célula da explicação recusou-as em explicacoes\\/dinheiro-do-estado-2026\\/index\\.html: X8 · as portas do fim"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/explicacoes/dinheiro-do-estado-2026/index.html",
+        "antes": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2",
+        "reposto": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2"
+      }
+    ]
+  },
+  {
+    "nome": "ex1b-frase-dos-dois-totais-mudada",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node scripts/check-voz.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a célula da explicação recusou-as em en\\/explainers\\/dinheiro-do-estado-2026\\/index\\.html: X6 · o parágrafo seccoes\\[1\\]\\.conteudo\\[2\\]\\.paragrafo difere da conta"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/explainers/dinheiro-do-estado-2026/index.html",
+        "antes": "20a5a247618715cf11361628f91e0cadadd814255102ed3fecfe03e44880067b",
+        "reposto": "20a5a247618715cf11361628f91e0cadadd814255102ed3fecfe03e44880067b"
+      }
+    ]
+  },
+  {
+    "nome": "ex1b-frases-compostas-num-contentor-flexivel",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node tests/explicacoes/frases-compostas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "FC1 · \\/explicacoes\\/ a 390 px: uma frase composta dentro de um contentor inline-flex"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/explicacoes/index.html",
+        "antes": "908b4d444ff864d051bb5bf56e40eb899dc0794f32c245c5020d455b1104265e",
+        "reposto": "908b4d444ff864d051bb5bf56e40eb899dc0794f32c245c5020d455b1104265e"
+      }
+    ]
+  },
+  {
+    "nome": "ex1b-transbordo-a-390",
+    "cabeca": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+    "estado": "",
+    "comando": "node tests/explicacoes/frases-compostas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "FC2 · \\/explicacoes\\/leitura-da-semana\\/ a 390 px: o documento tem \\d+ px numa janela de 390"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/explicacoes/leitura-da-semana/index.html",
+        "antes": "aab9b4eb882a72d7574f55eb194dd1252a5f24fe591071f4bebdc5a46931e52b",
+        "reposto": "aab9b4eb882a72d7574f55eb194dd1252a5f24fe591071f4bebdc5a46931e52b"
+      }
+    ]
+  }
+]

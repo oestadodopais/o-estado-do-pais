@@ -1,0 +1,1519 @@
+{
+  "o_que_e": "EX1-b: as capturas da lista, da explicação, da leitura da semana, da primeira página e do rodapé, nas cinco larguras e nas duas edições, com as medidas no ecrã e as plantas no navegador.",
+  "construcao": "723a451fca7df75e14b3bd953a7f4f7b1da64b44",
+  "construido_em": "2026-10-06T03:19:08.830Z",
+  "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/captar-ex1b.mjs --json ex1b/capturas.json",
+  "capturas": [
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-lista-pt-390.png",
+      "sha256": "b3aaff6d35c65dff044cfbb43ecba6259150a74d91f71f79f1d306459f2d6b1d",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 931,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 298
+      }
+    },
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-rodape-pt-390.png",
+      "sha256": "24ff27cf97fa265a0619986c88cdaa36cb0a3e43fee577f27306d704cde48b83",
+      "recorte": "o rodapé"
+    },
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-lista-pt-768.png",
+      "sha256": "837200564b4a54e8bc3dd1d0bf0ad1eea7a5a0edda48065f110b6ce5fa364e67",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 900,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 202
+      }
+    },
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-rodape-pt-768.png",
+      "sha256": "97fb41a3db3f7586ace2578d89e28946310a0a5f1b472421cfd2a22d0d9cc7ed",
+      "recorte": "o rodapé"
+    },
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-lista-pt-1024.png",
+      "sha256": "b6d00d766d3ce67e06ff7c816a819fb375db9d96f1ed096b3de14c57b28dfdcb",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 900,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-rodape-pt-1024.png",
+      "sha256": "dfe1861176e1cfd8072299c6c9dfb450fb4ba13ad2eba85f92df3b5f6461c21e",
+      "recorte": "o rodapé"
+    },
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-lista-pt-1280.png",
+      "sha256": "e727e413008c9beabec6f1f2698e3e6281c0de82deb1ae3e80fa7fad577dc802",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 900,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-rodape-pt-1280.png",
+      "sha256": "24ab4c00525af419f094aa6d5b91edd491c570601392adc8b8be4fe147e29ce2",
+      "recorte": "o rodapé"
+    },
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-lista-pt-1600.png",
+      "sha256": "af958af6835e2d7c534367a16a23a600cbb9ebde78f36e1a8e87f5e3b447146e",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 900,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/explicacoes/",
+      "lang": "pt",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-rodape-pt-1600.png",
+      "sha256": "32a2523e2fec01347b5c81916ebaaf1fca080e97ba941d2540f5417a4be9a406",
+      "recorte": "o rodapé"
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-lista-en-390.png",
+      "sha256": "e87a177528c1d153046e29f8a9dba9a183ea27d208db170d3ccd8a162e50fc3a",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 906,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 298
+      }
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-rodape-en-390.png",
+      "sha256": "b497fc793a8925da1593bd86d1d933ad182cf98dee4cc70d877a935c11a9d06f",
+      "recorte": "o rodapé"
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-lista-en-768.png",
+      "sha256": "9648fac80d67137c369635c415cd007efda41c10d66405ec58a1e717a40f1120",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 900,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 202
+      }
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-rodape-en-768.png",
+      "sha256": "d0481c19b34c76d15e0bd852aca26cb722277a7589b34367474e705214a766d8",
+      "recorte": "o rodapé"
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-lista-en-1024.png",
+      "sha256": "db5d2810e6c56fe1073a5e01ae93586bee6268e1154a849309b79d4a0becbd1b",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 900,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-rodape-en-1024.png",
+      "sha256": "e2dffd7f193592aaaa20968976088cb1ed275b641bbf6a1980a5ffed0dfa8926",
+      "recorte": "o rodapé"
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-lista-en-1280.png",
+      "sha256": "51854e83f02f8a71b40285be0b6a11299f9efee5bb831edb71bdbeab9fad3833",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 900,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-rodape-en-1280.png",
+      "sha256": "7a38528dd254f9053851335563e30c76f11fd9989730a4648899b3f9dca96a9f",
+      "recorte": "o rodapé"
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-lista-en-1600.png",
+      "sha256": "48eb7b70f8e035e25e19296ca9192a0ba6560a5b411ff5607184877d8afb22f8",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 900,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/en/explainers/",
+      "lang": "en",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-rodape-en-1600.png",
+      "sha256": "a98384ae8364e48d8f0f1862477e5dceff2d56f3ba01dd850743d885ff68928e",
+      "recorte": "o rodapé"
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lang": "pt",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-explicacao-pt-390.png",
+      "sha256": "5e4a0758b80754139667bb2b774986f6bf9c2414009642eb629e382da50fba2d",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 4067,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 8,
+          "barra_mais_longa_px": 254.2,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 254.2,
+          "valores_fora_da_figura": 0
+        }
+      ],
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 298
+      }
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lang": "pt",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-explicacao-pt-768.png",
+      "sha256": "6c4e80cac928853cddc4f39ee06a744ee1c2f944df66e40e5bd599cae6e0a692",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 3083,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ],
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 202
+      }
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lang": "pt",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-explicacao-pt-1024.png",
+      "sha256": "f492281921f9eaf625a8f7d35c746bb9465b8288e1e1e11fed2b5df3b28b36b4",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 3132,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ],
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lang": "pt",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-explicacao-pt-1280.png",
+      "sha256": "d60119b0c9ae2a52227d2c29ca1688ae2db2bde9b04f88fdc63d46330c94c74c",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 3228,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ],
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "lang": "pt",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-explicacao-pt-1600.png",
+      "sha256": "f4f84d6bd9341574bcddfdb6fce19c005266e7629be13bb24916bf3a0c1af4b5",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 3249,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ],
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lang": "en",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-explicacao-en-390.png",
+      "sha256": "a59edb47f7a0dc7912226591ef9caa37476d2f7a500f9002e36f330d4886ccfa",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 4102,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 8,
+          "barra_mais_longa_px": 254.2,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 254.2,
+          "valores_fora_da_figura": 0
+        }
+      ],
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 298
+      }
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lang": "en",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-explicacao-en-768.png",
+      "sha256": "4c3face8ec28d237e63335317e65d3c3af02a484389a7b8d2019a2a30f9323c0",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 3016,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ],
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 202
+      }
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lang": "en",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-explicacao-en-1024.png",
+      "sha256": "0a4586baa5edd5bc776f09472676015fd6503f67907b711936dbbe3897a6893b",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 3065,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ],
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lang": "en",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-explicacao-en-1280.png",
+      "sha256": "c77f1e977ea5383e6dee3a05e8e12d7c0d6f9424db4491ee95cb6746c7a7b09e",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 3161,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ],
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "lang": "en",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-explicacao-en-1600.png",
+      "sha256": "34c4f850cabae33df076fa537ba00d878ef752a496b7ad5527581716bb3b035b",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 3183,
+      "figuras": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 6.3,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 199.4,
+          "valores_fora_da_figura": 0
+        }
+      ],
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "lang": "pt",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-semana-pt-390.png",
+      "sha256": "502cb3ea86c4fc041d9073e40c0a115f737dddcfcd9ef627ea9986ac919a5fde",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 2217,
+      "mudancas_rendidas": 12,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 298
+      }
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "lang": "pt",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-semana-pt-768.png",
+      "sha256": "743610d20db0a29233a3fecf6e5beef625e1d455ea84016a7b5e188b1619a606",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 1816,
+      "mudancas_rendidas": 12,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 202
+      }
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "lang": "pt",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-semana-pt-1024.png",
+      "sha256": "72a4ba6a39f1340ceef9c4c01862d33114b789904c4d7e23f799788eb89fcc39",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 1822,
+      "mudancas_rendidas": 12,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "lang": "pt",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-semana-pt-1280.png",
+      "sha256": "694e6cb4b2b029376dc1483962668f5d4ea6fd533ee8c0adf86268cd95cfe9b8",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 1872,
+      "mudancas_rendidas": 12,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "lang": "pt",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-semana-pt-1600.png",
+      "sha256": "ff44badb73821ab41bf0e1021db071cdb967db76b5c1c3584c554be2673e455b",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 1884,
+      "mudancas_rendidas": 12,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "lang": "en",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-semana-en-390.png",
+      "sha256": "9a4f0c7ad169b128394a34151cfabfc28d144fd023b1b198e4b8b4947f54c7fe",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 2169,
+      "mudancas_rendidas": 12,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 298
+      }
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "lang": "en",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-semana-en-768.png",
+      "sha256": "16648a644997fe6d4d88513ebd1525d745ff3d52cb025a43bb52ed5fcc128dbe",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 1816,
+      "mudancas_rendidas": 12,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 202
+      }
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "lang": "en",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-semana-en-1024.png",
+      "sha256": "98e86ba565454435fb4724655048f7ef4709af5269cf111b7ef98cd9d03a594c",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 1822,
+      "mudancas_rendidas": 12,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "lang": "en",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-semana-en-1280.png",
+      "sha256": "25020592d873f3fba70f92ed4c74e2bbdcc1579e23537cb46eb4f2aa05856317",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 1872,
+      "mudancas_rendidas": 12,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "lang": "en",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-semana-en-1600.png",
+      "sha256": "8b5362f466e77bdccdd5626133dd10fbaa83f34e26191663f8d4f61288e2c7f7",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 1884,
+      "mudancas_rendidas": 12,
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-primeira-pt-390.png",
+      "sha256": "a37be9dcf0abf3932b3908d57ac3a2479964702f5b5b067926ad661c5f3cfb5d",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 7291,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 184.5,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 354,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 93.8,
+            "largura_px": 354,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      },
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 298
+      }
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-para-perceber-pt-390.png",
+      "sha256": "59736284df8812d38b594c488cc2cf9e03d3f23fbc20a0ddf3d10f8f7c3024ac",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-primeira-pt-768.png",
+      "sha256": "cb92138a2c627f58f17f19ddfb2be54195ddfd80e098b0a97054f14a00f101fd",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 5723,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 159.6,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 706.6,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 68.8,
+            "largura_px": 706.6,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      },
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 202
+      }
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-para-perceber-pt-768.png",
+      "sha256": "63aa7336d7d9c2f4a3404252e1b9cd5b5c9f982ae714e5668a6ec426b665d58f",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-primeira-pt-1024.png",
+      "sha256": "f49c9a9571f10e7b0b9eaf1b25187bdfd4e1c31db8983b4267791d57ddaa3676",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 5140,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 164,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 736,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 68.8,
+            "largura_px": 736,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      },
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-para-perceber-pt-1024.png",
+      "sha256": "bff06f774c65610b08c8716a0b341b8f7a1ba7cbc40a1bdc85cd7232f0c29287",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-primeira-pt-1280.png",
+      "sha256": "8432e28c2254e273c8d91c7c7d4c2c02a1cdfb18739d8b0d988170517c72558a",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 5042,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 165.8,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 736,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 68.8,
+            "largura_px": 736,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      },
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-para-perceber-pt-1280.png",
+      "sha256": "3d76acad9da3f2503c36b755d38ff3ff26525db5fca7acc1a3498e0487532f2c",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-primeira-pt-1600.png",
+      "sha256": "1b4e360a50be4db449d3371355eedf36938ef83a77cff97ef087781066dd4772",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 5059,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 165.8,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 736,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 68.8,
+            "largura_px": 736,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      },
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/",
+          "/livro-razao",
+          "/metodo",
+          "/correcoes",
+          "/agenda",
+          "/explicacoes",
+          "/uniao-europeia",
+          "/indice"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/",
+      "lang": "pt",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-para-perceber-pt-1600.png",
+      "sha256": "e2b41ac20db7152ac794ef734eb30177a4206a9206678998af590cb31adb045e",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-primeira-en-390.png",
+      "sha256": "53a3af428182edb7bd456145f7366fa1689f10042aa96670af0107b2710f9fa7",
+      "transborda": false,
+      "largura_do_documento": 390,
+      "altura": 7147,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 185.5,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 354,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 94.8,
+            "largura_px": 354,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      },
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 298
+      }
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 390,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-para-perceber-en-390.png",
+      "sha256": "eda94341833435215f5d8f431dee7b982db44a18ac813a27481efa5283e0d88e",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-primeira-en-768.png",
+      "sha256": "e9ab749ffeddcd6dd2a06114d0186b5a4541558936cda03b56316ae141208fd3",
+      "transborda": false,
+      "largura_do_documento": 768,
+      "altura": 5769,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 160.6,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 706.6,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 69.8,
+            "largura_px": 706.6,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      },
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 202
+      }
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 768,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-para-perceber-en-768.png",
+      "sha256": "1ee4fbef313d61042ed67c13d8a8f2f06add61e6db1e4bc39126d14167cf856a",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-primeira-en-1024.png",
+      "sha256": "641969b2c30af0a111b2f8d029d0f512850b12028cabaed2c3f8d5c9842f34fb",
+      "transborda": false,
+      "largura_do_documento": 1024,
+      "altura": 5244,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 165,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 736,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 69.8,
+            "largura_px": 736,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      },
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1024,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-para-perceber-en-1024.png",
+      "sha256": "bf1bccc6d673b5c5e90c73f41871025f464111f8cb75fc7ba875ff972f63d4f8",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-primeira-en-1280.png",
+      "sha256": "d6080b6dea4e99a12732fcc77d8747680fc67709932a07dc69fd50b216950aba",
+      "transborda": false,
+      "largura_do_documento": 1280,
+      "altura": 5114,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 166.8,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 736,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 69.8,
+            "largura_px": 736,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      },
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1280,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-para-perceber-en-1280.png",
+      "sha256": "9793847d44fd9f3eef4161de62845176250870cca62cfde290fab487a50d026c",
+      "recorte": "o bloco «Para perceber»"
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-primeira-en-1600.png",
+      "sha256": "1a68c0fae0c01fd1bf13ee317f8f72a5b97ad612cb0c4bfd72a46f2fdc48ab7d",
+      "transborda": false,
+      "largura_do_documento": 1600,
+      "altura": 5131,
+      "para_perceber": {
+        "dentro_de_o_que_se_passa": true,
+        "depois_do_ultimo_bloco": true,
+        "altura_px": 166.8,
+        "portas": [
+          {
+            "porta": "explicacao",
+            "altura_px": 44,
+            "largura_px": 736,
+            "linhas": 1
+          },
+          {
+            "porta": "semana",
+            "altura_px": 69.8,
+            "largura_px": 736,
+            "linhas": 1
+          }
+        ],
+        "menor_porta_px": 44
+      },
+      "rodape": {
+        "portas": 8,
+        "destinos": [
+          "/en",
+          "/en/ledger",
+          "/en/method",
+          "/en/corrections",
+          "/en/agenda",
+          "/en/explainers",
+          "/en/european-union",
+          "/en/index"
+        ],
+        "altura_px": 130
+      }
+    },
+    {
+      "rota": "/en/",
+      "lang": "en",
+      "largura": 1600,
+      "ficheiro": "design/especime-v3/capturas/ex1-2026-10-05/ex1b-para-perceber-en-1600.png",
+      "sha256": "8f90036f4904d282d1815464c22cd63db0fefa8dce1bd0aea07a2db043f66557",
+      "recorte": "o bloco «Para perceber»"
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "uma página mais larga do que o ecrã",
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "largura": 390,
+      "mordeu": true
+    },
+    {
+      "nome": "uma porta do bloco com 20 px de altura",
+      "rota": "/",
+      "largura": 390,
+      "mordeu": true
+    },
+    {
+      "nome": "o valor de uma barra empurrado para fora da figura",
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "largura": 390,
+      "mordeu": true
+    }
+  ],
+  "erros": []
+}
