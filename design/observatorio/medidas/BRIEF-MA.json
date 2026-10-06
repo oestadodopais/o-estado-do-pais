@@ -1,0 +1,151 @@
+{
+  "brief": "design/observatorio/BRIEF-MA-a-maquinaria-sem-perda-de-protecao.md",
+  "guiao": "design/observatorio/medidas/BRIEF-MA.py",
+  "cabeca_lida": "4b29f707",
+  "medidas": [
+    {
+      "nome": "passos_do_verify",
+      "valor": 44,
+      "comando": "git show 4b29f707:package.json · os comandos de «verify» separados por &&",
+      "conhecido_positivo": {
+        "o_que": "o verify corre o check:series",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "passos_do_build",
+      "valor": 24,
+      "comando": "git show 4b29f707:package.json · os comandos de «build» separados por &&",
+      "conhecido_positivo": {
+        "o_que": "o build corre o astro build",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "passos_repetidos_do_build_no_verify",
+      "valor": 20,
+      "comando": "git show 4b29f707:package.json · os comandos de «verify» que são, letra por letra, comandos de «build»",
+      "conhecido_positivo": {
+        "o_que": "o gate:html está nas duas cadeias",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "corridas_inteiras_registadas",
+      "valor": 13,
+      "comando": "git ls-tree -r 4b29f707 design/especime-v3/medicoes · as pastas de blocos de 2026-10-05 e 2026-10-06 com portoes/verify.inicio",
+      "conhecido_positivo": {
+        "o_que": "a corrida do EX1 está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_segundos_minimo",
+      "valor": 186,
+      "comando": "git show 4b29f707:<pasta>/build.inicio e build.fim · o menor intervalo em segundos",
+      "conhecido_positivo": {
+        "o_que": "a corrida do EX1 está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_segundos_maximo",
+      "valor": 220,
+      "comando": "git show 4b29f707:<pasta>/build.inicio e build.fim · o maior intervalo em segundos",
+      "conhecido_positivo": {
+        "o_que": "a corrida do EX1 está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_segundos_minimo",
+      "valor": 1010,
+      "comando": "git show 4b29f707:<pasta>/verify.inicio e verify.fim · o menor intervalo em segundos",
+      "conhecido_positivo": {
+        "o_que": "a corrida do EX1 está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_segundos_maximo",
+      "valor": 1165,
+      "comando": "git show 4b29f707:<pasta>/verify.inicio e verify.fim · o maior intervalo em segundos",
+      "conhecido_positivo": {
+        "o_que": "a corrida do EX1 está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "build_segundos_a_28_09_arredondado",
+      "valor": 75,
+      "comando": "git show 4b29f707:design/especime-v3/medicoes/ci1-2026-09-28/LEIA-ME.md · os segundos do build na frase dos portões do CI1, arredondados",
+      "conhecido_positivo": {
+        "o_que": "a frase nomeia a medida ci1b_portao_build_s",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify_segundos_a_28_09_arredondado",
+      "valor": 471,
+      "comando": "git show 4b29f707:design/especime-v3/medicoes/ci1-2026-09-28/LEIA-ME.md · os segundos do verify na frase dos portões do CI1, arredondados",
+      "conhecido_positivo": {
+        "o_que": "a frase nomeia a medida ci1b_portao_verify_s",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "briefs_com_guiao_de_medidas",
+      "valor": 34,
+      "comando": "git ls-tree 4b29f707:design/observatorio/medidas · os guiões .py e .mjs",
+      "conhecido_positivo": {
+        "o_que": "o guião do EX1 está entre eles",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "larguras_do_check_alvos",
+      "valor": 5,
+      "comando": "git show 4b29f707:tests/acessibilidade/alvos.mjs · as entradas de LARGURAS",
+      "conhecido_positivo": {
+        "o_que": "a lista inclui 390",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "espera_fixa_depois_de_networkidle_ms",
+      "valor": 120,
+      "comando": "git show 4b29f707:tests/acessibilidade/alvos.mjs · o setTimeout a seguir ao goto com networkidle",
+      "conhecido_positivo": {
+        "o_que": "o goto espera networkidle",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "esperas_pela_corrida_de_main_no_aterrar",
+      "valor": 1,
+      "comando": "git show 4b29f707:scripts/aterrar.sh · as chamadas «gh run watch»",
+      "conhecido_positivo": {
+        "o_que": "o guião lê o check-run portao da cabeça antes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "bytes_do_mapa",
+      "valor": 274406,
+      "comando": "git show 4b29f707:design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md · bytes em UTF-8",
+      "conhecido_positivo": {
+        "o_que": "o mapa tem a secção dos portões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "citacoes_do_mapa",
+      "valor": 862,
+      "comando": "git show 4b29f707:design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md · os pedaços entre crases que acabam em :número",
+      "conhecido_positivo": {
+        "o_que": "há uma citação do gate-html.mjs",
+        "encontrado": true
+      }
+    }
+  ]
+}
