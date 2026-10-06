@@ -111,3 +111,13 @@ export const FRASES_DAS_SERIES = {
     }
   }
 };
+
+/** As séries cuja frase está por confirmar na fonte (R4-b): o recibo leva o marcador da casa ao pé dela. */
+export const SERIES_POR_CONFIRMAR_NA_FONTE = [
+  "serie-ihpc-combustiveis-variacao-homologa",
+  "serie-ihpc-combustiveis-variacao-homologa-ue",
+  "serie-ihpc-energia-da-casa-variacao-homologa",
+  "serie-ihpc-rendas-variacao-homologa",
+  "serie-precos-da-habitacao-variacao-homologa",
+  "serie-remuneracao-bruta-mensal-media-real"
+];

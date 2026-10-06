@@ -22,6 +22,7 @@ import { conferirAuditoriaDosBlocos, conferirBlocosDaPagina, plantasDosBlocos, i
 import { conferirEntradas, plantasDasEntradas } from './entradas.mjs';
 import { plantasDaReguaDasFrases } from './regua-das-frases.mjs';
 import { verificaExplicacoesDoVeredicto } from '../../scripts/pais-veredicto.mjs';
+import { portasObrigatoriasB2 } from '../../scripts/portas-b2.mjs';
 import { documentoDosAssuntos } from './paginas-dos-assuntos.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -96,6 +97,30 @@ if (process.argv.includes('--prova')) {
       const b = r.querySelector('details[data-veredicto-dentro] [data-veredicto-o-que-e]');
       a.set_content(b.innerHTML);
     }, /a frase «o que é» não é a do cartão/);
+    /* R4-b (o achado 6): a parte do sinal da posição de investimento internacional, tirada e trocada pela do outro ramo. */
+    corre('a parte do sinal tirada da explicação', (r) => {
+      r.querySelector('[data-veredicto-sinal="posicao-de-investimento-internacional-2025"]').remove();
+    }, /não diz o que o sinal quer dizer/);
+    corre('a parte do sinal do outro ramo', (r) => {
+      r.querySelector('[data-veredicto-sinal="posicao-de-investimento-internacional-2025"]').set_content(lang === 'pt' ? 'Positiva quer dizer que o país tem no exterior mais do que lhe deve.' : 'Positive means the country owns abroad more than it owes.');
+    }, /não diz o que o sinal quer dizer/);
+    /* R4-b (o achado 10): uma porta a mais dentro de uma explicação é recusada pela V1-R4, e então nenhum selo das
+       explicações sai da contagem da L1; com a página limpa, o selo do valor dos preços da habitação sai, e só ele. */
+    corre('uma porta a mais numa explicação', (r) => {
+      r.querySelector('[data-veredicto-explica="precos-da-habitacao-2025"] [data-veredicto-o-que-e]').insertAdjacentHTML('beforeend', ` <a href="${lang === 'pt' ? '/livro-razao/precos-da-habitacao-2025' : '/en/ledger/precos-da-habitacao-2025'}">porta</a>`);
+    }, /uma porta que não é o selo do valor da própria linha/);
+    {
+      const limpaDoc = parse(html);
+      const selo = limpaDoc.querySelector('[data-veredicto-explica="precos-da-habitacao-2025"] [data-veredicto-o-que-e] a.src-chip');
+      const sai = Boolean(selo) && portasObrigatoriasB2(limpaDoc, 'home', lang, indice).portas.has(selo);
+      const estragada = parse(html);
+      const alvo = estragada.querySelector('[data-veredicto-explica="precos-da-habitacao-2025"] [data-veredicto-o-que-e]');
+      alvo.insertAdjacentHTML('beforeend', ` <a href="${lang === 'pt' ? '/livro-razao/precos-da-habitacao-2025' : '/en/ledger/precos-da-habitacao-2025'}">porta</a>`);
+      const seloEstragado = alvo.querySelector('a.src-chip');
+      const extra = alvo.querySelectorAll('a').at(-1);
+      const b2 = portasObrigatoriasB2(estragada, 'home', lang, indice).portas;
+      plantasDoVeredicto.push({ nome: `o selo de uma explicação sai da L1 só com a explicação conferida (${lang})`, mordeu: sai && !b2.has(seloEstragado) && !b2.has(extra), queixa: sai ? null : 'o selo da página limpa não saiu da contagem' });
+    }
   }
   for (const x of plantasDoVeredicto) {
     relatorio.plantas.push(x);

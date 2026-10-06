@@ -1116,6 +1116,13 @@ for (const ficheiro of paginas) {
        a A4 do `check:pais` confere que está onde ele a declara e em mais lado
        nenhum. Contá-la como segunda porta era contar a obrigação como escolha. */
     if (a.matches('a.marcador.marcador-de-titulo') && href === routePath('marcador', lang)) continue;
+    /* E O MARCADOR DE UMA FRASE POR CONFIRMAR NA FONTE, pela mesma regra e com o mesmo mecanismo (passagem R4-b,
+       06.10.2026). A frase «o que é» de um recibo com uma parte que nem a fonte nem a conta declarada dizem leva o
+       marcador da casa, com a classe `marcador-da-frase`, dentro de `[data-por-confirmar-na-fonte]`; é obrigatório onde
+       a auditoria das frases o declara, e a K17 do `check:cartao` confere que está onde ela o declara e em mais lado
+       nenhum. Contá-lo como segunda porta era contar a obrigação como escolha. Só se dispensa o destino exato do
+       marcador, e só dentro dessa marca. */
+    if (a.matches('a.marcador.marcador-da-frase') && a.closest('[data-por-confirmar-na-fonte]') && href === routePath('marcador', lang)) continue;
     /* E A PORTA DA ORIGEM DE UMA DEFINIÇÃO QUE É O PRÓPRIO DOCUMENTO DA LINHA, no recibo dessa linha, pela
        mesma regra (bloco R2, 03.10.2026). Cada origem de uma definição rende o seu documento como porta para o
        endereço (a decisão do lugar de direção de 09.09.2026, em `src/components/OrigemDaDefinicao.astro`), e o

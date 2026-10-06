@@ -676,3 +676,12 @@ planta('r4-pais-lado-trocado','scripts/check-pais.mjs',[
 planta('r4-voz-fragmento-retirado-solto','scripts/check-voz.mjs',[
  ['index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>abaixo do valor de referência</p>')]
 ],[/FRASE RETIRADA QUE VOLTOU A RENDER-SE/,/«abaixo do valor de referência»/]);
+/* R4-b (06.10.2026): o marcador da frase por confirmar na fonte só sai da L1 dentro da sua marca; duas cópias fora dela,
+   num recibo sem destinos repetidos, são uma página a mais na régua. E a parte do sinal tirada da explicação da posição
+   de investimento internacional na primeira página, que a V1-R4 do `check:pais` recusa. */
+planta('r4b-l1-marcador-fora-da-marca','scripts/check-lugar.mjs',[
+ ['livro-razao/funchal-desemprego-registado-2025-12/index.html',r=>{const a=r.querySelector('[data-por-confirmar-na-fonte] a.marcador-da-frase');r.querySelector('main').insertAdjacentHTML('beforeend',`<p>${a.outerHTML} ${a.outerHTML}</p>`);}]
+],[/L1 · páginas com dois destinos iguais fora da mobília: \d+, acima do teto/]);
+planta('r4b-pais-sinal-tirado','scripts/check-pais.mjs',[
+ ['en/index.html',r=>r.querySelector('[data-veredicto-sinal="posicao-de-investimento-internacional-2025"]').remove()]
+],[/V1-R4 en: «posicao-de-investimento-internacional-2025»: a explicação não diz o que o sinal quer dizer/]);

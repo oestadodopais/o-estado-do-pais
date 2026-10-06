@@ -31,15 +31,24 @@
  */
 
 import { LEITURAS_DAS_MEDIDAS } from '../data/leituras-das-medidas.mjs';
-import { FAMILIAS_DAS_LINHAS, FAMILIAS_DOS_CONCELHOS } from '../data/o-que-e-das-familias.mjs';
+import { FAMILIAS_DAS_LINHAS, FAMILIAS_DOS_CONCELHOS, LINHAS_POR_CONFIRMAR_NA_FONTE } from '../data/o-que-e-das-familias.mjs';
 import { MEDIDAS_DO_CONCELHO } from '../data/concelhos.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
-import { partesDaLeitura, oQueEContraALinha } from './leitura-da-medida.mjs';
+import { partesDaLeitura, oQueEContraALinha, sinalDaLeitura } from './leitura-da-medida.mjs';
+import { notaDaBandeira } from './bandeira-da-fonte.mjs';
 import { nomeDaMedida, nomeDaLinhaDerivada } from './nomes.mjs';
 import { getClaim, allClaims } from './ledger.mjs';
-import { allSeries } from './series.mjs';
+import { allSeries, getSerie, pontoDaSerie } from './series.mjs';
 import { NOMES_DAS_SERIES } from '../data/series-no-tempo.mjs';
-import { FRASES_DAS_SERIES } from '../data/o-que-e-das-series.mjs';
+import { FRASES_DAS_SERIES, SERIES_POR_CONFIRMAR_NA_FONTE } from '../data/o-que-e-das-series.mjs';
+
+/* AS FRASES POR CONFIRMAR NA FONTE (passagem R4-b, 06.10.2026, o achado 5 da leitura a frio). Uma frase com uma parte que
+   nem a fonte nem a conta declarada de uma linha calculada dizem (só o nome do projeto, a ressalva da casa ou a explicação
+   de um termo) leva no recibo o marcador da casa, `[a verificar]`. As listas são do compositor, pela auditoria das
+   frases; a K17 do `check:cartao` refá-las por conta própria e confere que o marcador está onde elas dizem e em mais
+   lado nenhum. */
+const POR_CONFIRMAR = new Set(/** @type {readonly string[]} */ (LINHAS_POR_CONFIRMAR_NA_FONTE));
+const SERIES_POR_CONFIRMAR = new Set(/** @type {readonly string[]} */ (SERIES_POR_CONFIRMAR_NA_FONTE));
 
 /** @param {string} onde @param {string} razao */
 function fecha(onde, razao) {
@@ -97,30 +106,35 @@ function medidaDoConcelho(chave) {
 }
 
 /**
- * A frase «o que é» de uma linha, com a sua origem.
+ * A frase «o que é» de uma linha, com a sua origem, a parte do sinal quando a frase lê a metade «o que é» de um cartão
+ * contra outra linha e o sinal vive na metade que compara (R4-b), e se a frase está por confirmar na fonte (R4-b).
  *
  * @param {string} id @param {'pt'|'en'} lang
- * @returns {{ pedacos: any[], tipo: 'cartao'|'concelho'|'familia', chave: string, cartao: string|null }}
+ * @returns {{ pedacos: any[], tipo: 'cartao'|'concelho'|'familia', chave: string, cartao: string|null, sinal: string[] | null, porConfirmar: boolean }}
  */
 export function oQueEDaLinha(id, lang) {
   const f = familiaDaLinha(id);
+  const porConfirmar = POR_CONFIRMAR.has(id);
   if (f.tipo === 'cartao') {
     const p = partesDaLeitura(id, lang).oQueE;
     if (!p) throw fecha(`${id} · ${lang}`, 'a leitura do cartão não tem metade «o que é».');
-    return { pedacos: p.pedacos, tipo: 'cartao', chave: id, cartao: id };
+    return { pedacos: p.pedacos, tipo: 'cartao', chave: id, cartao: id, sinal: null, porConfirmar };
   }
   if (f.tipo === 'concelho') {
     const m = medidaDoConcelho(f.chave);
     const frase = m?.frase?.[lang];
     if (!Array.isArray(frase) || frase.length === 0) throw fecha(`${id} · ${lang}`, `a medida dos concelhos «${f.chave}» não declara frase nesta edição.`);
-    return { pedacos: frase, tipo: 'concelho', chave: f.chave, cartao: null };
+    return { pedacos: frase, tipo: 'concelho', chave: f.chave, cartao: null, sinal: null, porConfirmar };
   }
   const d = /** @type {Record<string, any>} */ (FAMILIAS_DAS_LINHAS)[f.chave];
   if (!d) throw fecha(`${id} · ${lang}`, `a família «${f.chave}» não está declarada em src/data/o-que-e-das-familias.mjs.`);
-  if (d.cartao) return { pedacos: oQueEContraALinha(d.cartao, lang, id).pedacos, tipo: 'familia', chave: f.chave, cartao: d.cartao };
+  if (d.cartao) {
+    const sinal = sinalDaLeitura(d.cartao, lang, id);
+    return { pedacos: oQueEContraALinha(d.cartao, lang, id).pedacos, tipo: 'familia', chave: f.chave, cartao: d.cartao, sinal: sinal ? sinal.pedacos : null, porConfirmar };
+  }
   const frase = d.frase?.[lang];
   if (!Array.isArray(frase) || frase.length === 0) throw fecha(`${id} · ${lang}`, `a família «${f.chave}» não declara frase nesta edição.`);
-  return { pedacos: frase, tipo: 'familia', chave: f.chave, cartao: null };
+  return { pedacos: frase, tipo: 'familia', chave: f.chave, cartao: null, sinal: null, porConfirmar };
 }
 
 /**
@@ -259,6 +273,9 @@ export function cobertura(linhas = allClaims()) {
   }
   for (const chave of Object.keys(FAMILIAS_DAS_LINHAS)) if (!usadas.has(chave)) erros.push(`a família «${chave}» está declarada e nenhuma linha do livro-razão a usa`);
   for (const chave of Object.keys(FAMILIAS_DOS_CONCELHOS)) if (!usadas.has(`concelho:${chave}`)) erros.push(`a família dos concelhos «${chave}» está declarada e nenhuma linha a usa`);
+  /* R4-b: uma linha por confirmar na fonte que não existe é uma lista desacertada do livro-razão. */
+  const ids = new Set([...linhas].map((c) => c.id));
+  for (const id of POR_CONFIRMAR) if (!ids.has(id)) erros.push(`a linha «${id}» está na lista das frases por confirmar na fonte e não está no livro-razão`);
   return { erros, porTipo, familiasUsadas: usadas };
 }
 
@@ -283,20 +300,39 @@ export function linhaDaSerie(id) {
 }
 
 /**
- * A frase «o que é» de uma série no tempo, com a sua origem.
+ * A frase «o que é» de uma série no tempo, com a sua origem e se está por confirmar na fonte.
+ *
+ * O VALOR DA LINHA DIZ-SE PELO PONTO DA SÉRIE (passagem R4-b, 06.10.2026, o achado 10 da leitura a frio). A frase de uma
+ * linha com cartão diz o valor da linha, e um valor de uma linha leva o seu selo, que abre o recibo da linha; no recibo
+ * da série, a lista «As linhas que são pontos desta série» já abre esse recibo, e eram duas portas para o mesmo sítio
+ * no mesmo ecrã. Quando a série tem o ponto do período da linha, com o mesmo valor, cadeia a cadeia (a S5 do
+ * `check:series` exige-o às linhas presas), o valor diz-se pelo ponto da série (`PontoDaSerie`, a origem dos valores
+ * desta página), com o sufixo e a nota da bandeira da linha: as mesmas palavras, sem a segunda porta. Um valor sem esse
+ * ponto continua a ser o da linha, com o selo.
+ *
  * @param {string} id @param {'pt'|'en'} lang
- * @returns {{ pedacos: any[], origem: 'linha'|'serie', linha: string|null }}
+ * @returns {{ pedacos: any[], origem: 'linha'|'serie', linha: string|null, porConfirmar: boolean }}
  */
 export function oQueEDaSerie(id, lang) {
   const linha = linhaDaSerie(id);
   const propria = /** @type {Record<string, any>} */ (FRASES_DAS_SERIES)[id];
   if (linha) {
     if (propria) throw fecha(`${id} · ${lang}`, `a série tem a linha «${linha}» e uma frase própria; a frase é uma, e é a da linha.`);
-    return { pedacos: oQueEDaLinha(linha, lang).pedacos, origem: 'linha', linha };
+    const o = oQueEDaLinha(linha, lang);
+    const serie = getSerie(id);
+    const pedacos = o.pedacos.map((p) => {
+      if (!p || typeof p !== 'object' || p.claim !== linha) return p;
+      const c = /** @type {any} */ (getClaim(linha));
+      const ponto = pontoDaSerie(serie, String(c.reference_date));
+      if (!ponto || String(ponto.valor) !== String(c.value)) return p;
+      const nota = notaDaBandeira(c, lang);
+      return { ponto: { serie: id, chave: String(c.reference_date) }, ...(p.sufixo ? { sufixo: p.sufixo } : {}), ...(nota ? { nota } : {}) };
+    });
+    return { pedacos, origem: 'linha', linha, porConfirmar: o.porConfirmar };
   }
   const frase = propria?.frase?.[lang];
   if (!Array.isArray(frase) || frase.length === 0) throw fecha(`${id} · ${lang}`, 'a série não tem linha nem frase própria nesta edição.');
-  return { pedacos: frase, origem: 'serie', linha: null };
+  return { pedacos: frase, origem: 'serie', linha: null, porConfirmar: SERIES_POR_CONFIRMAR.has(id) };
 }
 
 /** As séries no tempo sem frase, e as frases de séries que não existem ou que trazem um algarismo. @returns {string[]} */
@@ -307,6 +343,7 @@ export function errosDasSeries() {
   for (const id of noTempo) for (const lang of /** @type {const} */ (['pt', 'en'])) {
     try { oQueEDaSerie(id, lang); } catch (e) { erros.push(e instanceof Error ? e.message : String(e)); }
   }
+  for (const id of SERIES_POR_CONFIRMAR) if (!Object.prototype.hasOwnProperty.call(FRASES_DAS_SERIES, id)) erros.push(`a série «${id}» está por confirmar na fonte e não tem frase própria`);
   for (const [id, d] of Object.entries(FRASES_DAS_SERIES)) {
     if (!noTempo.includes(id)) erros.push(`a frase da série «${id}» está declarada e a série não é uma série no tempo`);
     for (const lang of ['pt', 'en']) for (const p of /** @type {any} */ (d).frase?.[lang] ?? []) if (typeof p !== 'string' || /\d/.test(p)) erros.push(`${id} · ${lang}: a frase traz um algarismo ou um pedaço que não é texto`);

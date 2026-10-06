@@ -656,3 +656,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | r4 | 40 cadeias novas, nenhuma retirada | por ler | Claude Opus 5.5, construtor do R4: por baixo do veredicto da primeira página, nas duas edições, a metade «o que é» da leitura auditada de cada um dos treze cartões com valor de referência (a mesma frase do cartão), as seis formas do lado de um valor de referência e o rótulo da porta dobrada dos valores de dentro. A leitura cruzada fica pendente antes da fusão. |
+
+## R4-b · a passagem de correção depois da leitura, 06.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| r4b | 2 cadeias novas, nenhuma retirada | por ler | Claude Opus 5.5, construtor da passagem R4-b, pelo achado 6 da leitura a frio do Codex Astra: a parte do sinal da leitura auditada do cartão da posição de investimento internacional, na explicação dos valores de referência da primeira página, nas duas línguas. A leitura cruzada fica pendente antes da fusão. |

@@ -294,6 +294,43 @@ export function oQueEContraALinha(id, lang, linhaId) {
 }
 
 /**
+ * O QUE O SINAL QUER DIZER, QUANDO VIVE NA METADE QUE COMPARA (passagem R4-b, 06.10.2026, o achado 6 da leitura a frio;
+ * a I208 do R4). O corte da leitura (o K2) põe na metade que compara um ramo do sinal inteiro quando o ramo compara: na
+ * posição de investimento internacional, «Negativa quer dizer que o país deve ao exterior mais do que tem lá.» vive no
+ * mesmo ramo que a comparação com o ano anterior. O cartão e o recibo da linha mostram as duas metades; onde só se lê a
+ * metade «o que é» (a explicação dos valores de referência na primeira página, o recibo de uma linha que lê a frase do
+ * cartão), esta função dá a parte do sinal sozinha: as cadeias do princípio do ramo que o valor da linha escolhe, até ao
+ * primeiro pedaço que compara. Não compõe nada: devolve palavras declaradas e auditadas na K17, e uma parte do sinal
+ * que traga outro pedaço que não uma cadeia fecha a construção (a parte do sinal não cita números).
+ *
+ * @param {string} id  a linha do cartão
+ * @param {'pt'|'en'} lang
+ * @param {string} [linhaId]  a linha cujo sinal escolhe o ramo; por omissão, a do cartão
+ * @returns {{ pedacos: string[] } | null}
+ */
+export function sinalDaLeitura(id, lang, linhaId = id) {
+  const partes = /** @type {Record<string, any>} */ (LEITURAS_DAS_MEDIDAS)[id]?.[lang];
+  if (!Array.isArray(partes)) return null;
+  const corte = corteDaLeitura(partes);
+  for (const p of partes.slice(corte)) {
+    if (!p || typeof p !== 'object' || !('sinal' in p)) continue;
+    const v = numeroDaLinha(linhaId);
+    if (v === null) throw fecha(`${id} · ${lang}`, `o valor da linha «${linhaId}» não se lê, e o ramo do sinal não se escolhe.`);
+    const ramo = /** @type {unknown[]} */ (p.sinal[v > 0 ? 'positivo' : v < 0 ? 'negativo' : 'zero'] ?? []);
+    /** @type {string[]} */
+    const antes = [];
+    for (const x of ramo) {
+      if (pedacoQueCompara(x)) break;
+      if (typeof x !== 'string') throw fecha(`${id} · ${lang}`, 'a parte do sinal traz um pedaço que não é uma cadeia.');
+      antes.push(x);
+    }
+    const texto = antes.join('').trim();
+    return texto ? { pedacos: [texto] } : null;
+  }
+  return null;
+}
+
+/**
  * A leitura de uma medida nas suas duas metades, resolvidas: o que o número é (`oQueE`) e a comparação (`comparacao`).
  * Uma metade que não tem pedaços, ou que resolve para nada (uma comparação com linhas que a régua não tem), é `null`.
  *

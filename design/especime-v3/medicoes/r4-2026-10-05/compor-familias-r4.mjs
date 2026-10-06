@@ -129,6 +129,25 @@ function verifica(a, ids, nomesDaFamilia) {
   return 'um apoio de forma desconhecida';
 }
 
+/* ------------------------------------------------------------------ o que está por confirmar na fonte (R4-b) */
+/* Uma parte que diz está confirmada numa linha quando um dos seus apoios, válido nessa linha, é da fonte (uma origem
+   declarada, um campo da fonte da linha ou o período lido da data) ou é a conta declarada de uma linha calculada
+   (`derivation`, `derivation_en`: a definição desse número, selada e refeita pelos portões). O nome do projeto, a ressalva
+   da casa e a explicação de um termo são palavras da casa: uma parte que só elas apoiam está por confirmar na fonte, e
+   a frase leva o marcador da casa no recibo dessa linha. */
+const CAMPOS_QUE_CONFIRMAM = new Set([...CAMPOS_DA_FONTE, 'derivation', 'derivation_en']);
+function confirmaNaLinha(a, id, nomesDaFamilia) {
+  if (a.ou) return a.ou.some((alt) => verifica(alt, [id], nomesDaFamilia) === null && confirmaNaLinha(alt, id, nomesDaFamilia));
+  if (a.origem || a.forma === 'ano') return true;
+  return a.linha === 'propria' && CAMPOS_QUE_CONFIRMAM.has(a.campo);
+}
+function linhasPorConfirmar(e, ids, nomesDaFamilia) {
+  const diz = e.partes.filter((p) => p.classe === 'diz');
+  return ids.filter((id) => diz.some((p) => !(p.apoios ?? []).some((a) => confirmaNaLinha(a, id, nomesDaFamilia))));
+}
+const porConfirmar = [];
+const porConfirmarDaEntrada = (todas, por) => (por.length === 0 ? null : por.length === todas.length ? true : { linhas: [...por].sort() });
+
 /* ------------------------------------------------------------------ as entradas */
 const usadas = new Set();
 const declaracao = {};
@@ -194,7 +213,10 @@ for (const e of FAMILIAS_R4) {
   const pt = e.partes.map((p) => texto(p.pt)).join('');
   const en = e.partes.map((p) => texto(p.en)).join('');
   for (const k of e.chaves) declaracao[k] = { ...(e.nome ? { nome: e.nome } : {}), frase: { pt: [pt], en: [en] } };
-  auditoria.push({ chaves: e.chaves, ...(e.nome ? { nome: e.nome } : {}), origens: r.origens, folhas: [{ pt, en, partes: e.partes }] });
+  const por = linhasPorConfirmar(e, ids, nomes);
+  porConfirmar.push(...por);
+  const pc = porConfirmarDaEntrada(ids, por);
+  auditoria.push({ chaves: e.chaves, ...(e.nome ? { nome: e.nome } : {}), origens: r.origens, ...(pc ? { por_confirmar_na_fonte: pc } : {}), folhas: [{ pt, en, partes: e.partes }] });
   (r.fonte ? classes.fonte : classes.casa).push(...e.chaves);
 }
 for (const k of linhasDe.keys()) if (!k.startsWith('concelho:') && !usadas.has(k)) falha(`a família «${k}» (${linhasDe.get(k).length} linha(s)) não tem entrada na especificação`);
@@ -221,7 +243,10 @@ for (const e of FAMILIAS_DOS_CONCELHOS_R4) {
     const enPedacos = e.partes.flatMap((p) => (Array.isArray(p.en) ? p.en : [p.en]));
     doConcelho[e.concelho] = { nome: e.nome, frase: { pt: [pt], en: enPedacos.reduce((acc, x) => (typeof x === 'string' && typeof acc[acc.length - 1] === 'string' ? (acc[acc.length - 1] += x, acc) : (acc.push(x), acc)), []) } };
   }
-  auditoria.push({ concelho: e.concelho, ...(e.nome ? { nome: e.nome } : {}), origens: r.origens, folhas: [{ pt, en, partes: e.partes }] });
+  const por = linhasPorConfirmar(e, ids, nomes);
+  porConfirmar.push(...por);
+  const pc = porConfirmarDaEntrada(ids, por);
+  auditoria.push({ concelho: e.concelho, ...(e.nome ? { nome: e.nome } : {}), origens: r.origens, ...(pc ? { por_confirmar_na_fonte: pc } : {}), folhas: [{ pt, en, partes: e.partes }] });
   (r.fonte ? classes.fonte : classes.casa).push(k);
 }
 for (const k of linhasDe.keys()) if (k.startsWith('concelho:') && !usadasConcelho.has(k.slice(9))) falha(`a medida dos concelhos «${k}» não tem entrada`);
@@ -260,6 +285,7 @@ if (erros.length) {
 const nLinhas = [...linhasDe.values()].reduce((a, v) => a + v.length, 0);
 console.log(`entradas ${FAMILIAS_R4.length + FAMILIAS_DOS_CONCELHOS_R4.length} · famílias nacionais ${Object.keys(declaracao).length} · medidas dos concelhos ${FAMILIAS_DOS_CONCELHOS_R4.length} · linhas sem cartão ${nLinhas}`);
 console.log(`com todas as partes apoiadas na fonte ${classes.fonte.length} · com alguma parte só da casa ${classes.casa.length}: ${classes.casa.join(', ')}`);
+console.log(`por confirmar na fonte: ${auditoria.filter((x) => x.por_confirmar_na_fonte).length} entradas, ${porConfirmar.length} linhas`);
 if (SECO) process.exit(0);
 
 const ordenado = Object.fromEntries(Object.keys(declaracao).sort().map((k) => [k, declaracao[k]]));
@@ -278,7 +304,14 @@ const cabeca = `/**
  * da medida em \`src/data/concelhos.mjs\`.
  */
 `;
-fs.writeFileSync(DECLARACAO, `${cabeca}export const FAMILIAS_DAS_LINHAS = ${JSON.stringify(ordenado, null, 2)};\n\nexport const FAMILIAS_DOS_CONCELHOS = ${JSON.stringify(doConcelho, null, 2)};\n`);
+const notaPorConfirmar = `
+/**
+ * AS LINHAS CUJA FRASE ESTÁ POR CONFIRMAR NA FONTE (passagem R4-b, 06.10.2026): uma parte da frase que nem a fonte nem a
+ * conta declarada de uma linha calculada dizem (só o nome do projeto, a ressalva da casa ou a explicação de um termo). O
+ * recibo dessas linhas leva o marcador da casa ao pé da frase; a K17 refaz a lista pela auditoria e confere o marcador.
+ */
+`;
+fs.writeFileSync(DECLARACAO, `${cabeca}export const FAMILIAS_DAS_LINHAS = ${JSON.stringify(ordenado, null, 2)};\n\nexport const FAMILIAS_DOS_CONCELHOS = ${JSON.stringify(doConcelho, null, 2)};\n${notaPorConfirmar}export const LINHAS_POR_CONFIRMAR_NA_FONTE = ${JSON.stringify([...new Set(porConfirmar)].sort(), null, 2)};\n`);
 
 const leitura = {
   quem: 'Claude Opus 5.5',

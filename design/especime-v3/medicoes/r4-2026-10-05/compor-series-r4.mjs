@@ -70,6 +70,10 @@ function verifica(a, s) {
   return 'um apoio de forma desconhecida';
 }
 const classeDe = (/** @type {any} */ a) => (a.origem || (a.serie === 'propria' && CAMPOS_DA_FONTE.has(a.campo)) ? 'fonte' : 'casa');
+/* R4-b: uma parte confirma-se pela fonte ou pela conta declarada de uma série calculada; o nome do projeto não confirma. */
+const confirma = (/** @type {any} */ a) => Boolean(a.origem || (a.serie === 'propria' && (CAMPOS_DA_FONTE.has(a.campo) || CAMPOS_DA_CASA.has(a.campo))));
+/** @type {string[]} */
+const porConfirmar = [];
 
 /** @type {Record<string, any>} */
 const declaracao = {};
@@ -106,7 +110,9 @@ for (const e of SERIES_R4) {
   const pt = e.partes.map((p) => p.pt).join('');
   const en = e.partes.map((p) => p.en).join('');
   declaracao[e.serie] = { frase: { pt: [pt], en: [en] } };
-  auditoria.push({ serie: e.serie, origens: [...origens], folhas: [{ pt, en, partes: e.partes }] });
+  const por = e.partes.some((/** @type {any} */ p) => p.classe === 'diz' && !(p.apoios ?? []).some(confirma));
+  if (por) porConfirmar.push(e.serie);
+  auditoria.push({ serie: e.serie, origens: [...origens], ...(por ? { por_confirmar_na_fonte: true } : {}), folhas: [{ pt, en, partes: e.partes }] });
   (daFonte ? classes.fonte : classes.casa).push(e.serie);
 }
 for (const s of noTempo) if (!linhaDaSerie(s.id) && !usadas.has(s.id)) falha(`«${s.id}» não tem linha nem frase na especificação`);
@@ -118,6 +124,7 @@ if (erros.length) {
 const comLinha = noTempo.filter((s) => linhaDaSerie(s.id)).map((s) => `${s.id} ← ${linhaDaSerie(s.id)}`);
 console.log(`séries no tempo ${noTempo.length} · com a frase da linha ${comLinha.length} · com frase própria ${SERIES_R4.length}`);
 console.log(`com todas as partes apoiadas na fonte ${classes.fonte.length} · com alguma parte só da casa ${classes.casa.length}: ${classes.casa.join(', ')}`);
+console.log(`por confirmar na fonte: ${porConfirmar.length}: ${porConfirmar.join(', ')}`);
 if (SECO) process.exit(0);
 
 const cabeca = `/**
@@ -133,7 +140,7 @@ const cabeca = `/**
  */
 `;
 const ordenado = Object.fromEntries(Object.keys(declaracao).sort().map((k) => [k, declaracao[k]]));
-fs.writeFileSync(DECLARACAO, `${cabeca}export const FRASES_DAS_SERIES = ${JSON.stringify(ordenado, null, 2)};\n`);
+fs.writeFileSync(DECLARACAO, `${cabeca}export const FRASES_DAS_SERIES = ${JSON.stringify(ordenado, null, 2)};\n\n/** As séries cuja frase está por confirmar na fonte (R4-b): o recibo leva o marcador da casa ao pé dela. */\nexport const SERIES_POR_CONFIRMAR_NA_FONTE = ${JSON.stringify(porConfirmar.sort(), null, 2)};\n`);
 const AUD = JSON.parse(fs.readFileSync(AUDITORIA, 'utf8'));
 const leitura = {
   quem: 'Claude Opus 5.5',
