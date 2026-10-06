@@ -18,8 +18,8 @@
  *     seu selo, dentro do mesmo instrumento.
  *
  * AS PLANTAS correm em memória, sobre a figura com o seu instrumento, e cada uma tem de morder com a queixa dela:
- * uma barra fora de escala, um valor trocado entre duas barras, duas barras fora de ordem, uma barra a menos e um
- * rótulo de outra linha. Nenhuma toca no `dist/`.
+ * uma barra fora de escala, um valor trocado entre duas barras, duas barras fora de ordem, uma barra a menos, um
+ * rótulo de outra linha e (desde o EX1-c) o nome de outra linha na lista dos números. Nenhuma toca no `dist/`.
  *
  * EX1-c (06.10.2026, o achado 15 da leitura a frio): A F22 PERCORRE AS FIGURAS DECLARADAS, e não só as que a página
  * tem. Cada figura que uma explicação declara tem de estar na página dela, no instrumento dela
@@ -132,6 +132,9 @@ export function conferirBarrasDoLivro(instrumento, lang, slug, linhas = loadClai
     const l = it.getAttribute('data-figura-numero');
     const chip = it.querySelectorAll('a.src-chip').map((a) => a.getAttribute('href') ?? '');
     if (!chip.some((h) => h.endsWith(`/${l}`))) erros.push(`F22 · ${id}: a linha «${l}» da lista dos números não tem o seu selo`);
+    /* O nome de cada linha na lista dos números (EX1-c, o achado 14): é o nome declarado, como o rótulo da barra. */
+    const nome = it.querySelector('[data-barra-rotulo]');
+    if (nome?.getAttribute('data-barra-rotulo') !== l || nome?.text.trim() !== rotuloPelaCelula(String(l), lang)) erros.push(`F22 · ${id}: o nome da linha «${l}» na lista dos números não é o nome declarado («${nome?.text.trim()}»)`);
   }
   return erros;
 }
@@ -171,6 +174,10 @@ export function plantasDasBarrasDoLivro(html, lang, slug) {
     planta('o rótulo de outra linha', (r) => {
       const [a, b] = r.querySelectorAll('li[data-barra] [data-barra-rotulo]');
       a.set_content(b.text);
-    }, /não é o nome declarado/),
+    }, /o rótulo da barra de .* não é o nome declarado/),
+    planta('o nome de outra linha na lista dos números', (r) => {
+      const [a, b] = r.querySelectorAll('[data-figura-numero] [data-barra-rotulo]');
+      a.set_content(b.text);
+    }, /na lista dos números não é o nome declarado/),
   ];
 }
