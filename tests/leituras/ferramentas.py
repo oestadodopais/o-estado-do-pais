@@ -35,8 +35,32 @@ r = custo.medir(jsonl(eventos),instante(3)); assert r['simbolos']['total_tokens'
 registar('acumulados Codex e corte temporal','A repetição não duplica os símbolos; o corte subtrai o contador anterior.')
 for nome, dados in [('contador recuado',jsonl(eventos+eventos[:1])),('formato sem utilização',jsonl([{'timestamp':instante(0)}])),('linha truncada',b'{')]:
     try: custo.medir(dados)
-    except (ValueError, KeyError) as e: registar(nome,str(e))
+    except TypeError as e: raise AssertionError(f'{nome}: TypeError inesperado') from e
+    except (ValueError, KeyError) as e:
+        esperado = {'contador recuado': 'O contador acumulado recuou', 'formato sem utilização': 'Não há contadores', 'linha truncada': 'Expecting property name'}[nome]
+        assert esperado in str(e), str(e)
+        registar(nome,str(e))
     else: raise AssertionError(nome)
+nulos = json.loads(jsonl(eventos).splitlines()[-1])
+nulos['payload']['info']['total_token_usage']['output_tokens'] = None
+try:
+    r = custo.medir(jsonl([*eventos, nulos]))
+except TypeError as e:
+    raise AssertionError('um contador nulo lançou TypeError') from e
+assert r['simbolos']['output_tokens'] is None
+registar('contador Codex nulo', 'output_tokens conserva null, sem TypeError nem zero fabricado.')
+ausente = json.loads(json.dumps(nulos))
+del ausente['payload']['info']['total_token_usage']['output_tokens']
+r = custo.medir(jsonl([*eventos, ausente]))
+assert r['simbolos']['output_tokens'] is None
+registar('contador Codex ausente', 'Um campo antes presente e agora ausente fica null.')
+try:
+    custo.medir(jsonl([*eventos, nulos, eventos[0]]))
+except ValueError as e:
+    assert 'O contador acumulado recuou' in str(e)
+    registar('regressão depois de contador nulo', str(e))
+else:
+    raise AssertionError('o contador nulo escondeu uma regressão')
 with tempfile.TemporaryDirectory(prefix='oedp-ma-comuns-') as tmp:
     p = Path(tmp); worktree=p/'arvore'; worktree.mkdir(); pasta=worktree/'registos'; pasta.mkdir()
     casa=p/'casa com espaço'; motor=casa/'motor'; scratch=p/'scratch'; usuario='nome-sintetico'
