@@ -97,6 +97,7 @@ import { familiaDaLinha, oQueEDaLinha, nomeNoRecibo, lugarNoRecibo, nomeDaFonteN
 import Marcador from '../components/Marcador.astro';
 import { partesDaLeitura } from '../lib/leitura-da-medida.mjs';
 import '../styles/linha.css';
+import { codigoDaIncorporacao } from '../lib/incorporar.mjs';
 
 const { lang = 'pt', id } = Astro.props;
 const s = t(lang);
@@ -1855,6 +1856,15 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           </div>
         )
       }
+
+      {LICENCA && (
+        <div class="aparelho-bloco incorporar-bloco" data-incorporar-bloco>
+          <label class="linha-campo-k" data-voz for="codigo-incorporar">{s.incorporar.titulo}</label>
+          <textarea id="codigo-incorporar" data-incorporar-codigo={id} readonly spellcheck="false" rows="6">{codigoDaIncorporacao(claim, lang)}</textarea>
+          <button type="button" data-voz hidden data-copiado={s.incorporar.copiado} data-selecionado={s.incorporar.selecionado} aria-live="polite">{s.incorporar.copiar}</button>
+        </div>
+      )}
+      <script is:inline src="/js/copiar-incorporacao.js" defer></script>
 
       {
         /* ESTA LINHA NOUTRO SÍTIO (IDENTIDADE.md §11). A mesma linha na outra

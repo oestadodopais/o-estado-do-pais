@@ -4154,3 +4154,15 @@ páginas são **conteúdo**, como «Índice» e «Privacidade», porque são o o
 | conteudo | The figures in this chart | ex1 | viva | O mesmo resumo na edição inglesa. |
 | conteudo | Para onde vai o dinheiro do Estado em 2026 | ex1 | viva | A descrição do `<head>` da primeira explicação, que é o título dela, com o ano pelo período da linha nomeada; o portão de HTML recompõe-a por conta própria. |
 | conteudo | Where the State’s money goes in 2026 | ex1 | viva | A mesma descrição na edição inglesa. |
+
+## O código incorporável (ER1)
+
+O código é recomposto antes de sair da leitura da prosa. Os estados da cópia
+são conferidos nos atributos pelo portão e exercidos no navegador.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| navegacao | Incorporar este número | er1 | viva | O rótulo do campo do código. |
+| navegacao | Embed this number | er1 | viva | O rótulo na edição inglesa. |
+| navegacao | Copiar | er1 | viva | O comando de cópia do código. |
+| navegacao | Copy | er1 | viva | O comando na edição inglesa. |

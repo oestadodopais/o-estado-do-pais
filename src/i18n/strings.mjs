@@ -14,6 +14,13 @@ export const STRINGS = {
   pt: {
     lang: 'pt-PT',
     langNome: 'Português',
+    incorporar: {
+      titulo: 'Incorporar este número', copiar: 'Copiar', copiado: 'Copiado',
+      selecionado: 'Código selecionado', lido: 'lido a', calculado: 'Calculado',
+      periodoEmFalta: 'período não indicado', leituraEmFalta: 'data de leitura não indicada',
+      atualizado: 'Este número foi atualizado a',
+      atualizadoSemData: 'Este número foi atualizado; consulte a fonte e a verificação.',
+    },
     outraLingua: 'English',
     outraLinguaCodigo: 'EN',
 
@@ -3226,6 +3233,13 @@ export const STRINGS = {
   en: {
     lang: 'en',
     langNome: 'English',
+    incorporar: {
+      titulo: 'Embed this number', copiar: 'Copy', copiado: 'Copied',
+      selecionado: 'Code selected', lido: 'read on', calculado: 'Calculated',
+      periodoEmFalta: 'period not stated', leituraEmFalta: 'reading date not stated',
+      atualizado: 'This number was updated on',
+      atualizadoSemData: 'This number was updated; see the source and verification.',
+    },
     outraLingua: 'Português',
     outraLinguaCodigo: 'PT',
 

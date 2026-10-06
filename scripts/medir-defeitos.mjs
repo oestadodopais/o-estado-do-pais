@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { tirarCodigoConferido } from './incorporar-do-portao.mjs';
 /**
  * A régua deste bloco — mede o que o BRIEF-confianca.md mediu, para se poder
  * dizer «antes» e «depois» com o mesmo instrumento.
@@ -1302,6 +1303,7 @@ for (const file of ficheiros) {
 
   const html = fs.readFileSync(file, 'utf8');
   const root = parse(html, { comment: false, blockTextElements: { script: true, style: true } });
+  tirarCodigoConferido(root, rota);
 
   /* 1 — a porta de correcções */
   const portas = root.querySelectorAll('[data-porta-correccoes]');

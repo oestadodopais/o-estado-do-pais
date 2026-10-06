@@ -25,6 +25,7 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 
 | bloco | linhas | leitura | quem, quando |
 | --- | --- | --- | --- |
+| er1 | rótulo e comando nas duas edições | por ler | Codex gpt-6-astra: código recomposto dos dados antes de sair da prosa; leitura a frio do Opus pendente. |
 | oe1-d | 2 novas | por ler | Codex gpt-6-astra, 04.10.2026: os rótulos de navegação «Ressalva» e «Caveat» identificam o aviso publicado de cada linha nos recibos e no índice. A leitura cruzada deste diff fica pendente antes da fusão. |
 | b1c | 4 novas; 4 retiradas; 2 saem do ficheiro | por ler | Claude Opus 5, 22.09.2026: o registo de `/correcoes` passou a ser uma lista só, por data, com as três classes de mudança e o lugar de cada linha. Entram o título e a nota da lista, nas duas edições; saem os dois títulos de grupo («Atualizações», «Updates») e as duas notas de grupo, nas duas edições, com a razão escrita. Os quatro cabeçalhos de coluna e os dois prefixos de leitor de ecrã saíram do `strings.mjs` com a tabela que os pedia e não tinham linha no inventário. |
 | b1-peca3-correcao | 4 novas; 2 retiradas | por ler | Codex gpt-6-astra, 22.09.2026: os dois rótulos ditados, nas duas línguas; o olho dos lugares continua vivo nas páginas de lugar. |
