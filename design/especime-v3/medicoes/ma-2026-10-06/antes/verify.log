@@ -1610,7 +1610,7 @@ História do valor: 2 controlos e 4 plantas.
   [32m✓[0m H16  [90m7906 página(s) do dist/: 7881 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 25 sem ela (e 25 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 360 de 360 passagens com uma porta no seu marco; 72 porta(s) a 390 e 72 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 0 abaixo de 44 px (nenhum) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade[0m
   [32m✓[0m H10  [90maria-expanded no dist/: 0 ocorrência(s) em 0 página(s) · ausência medida em todas as páginas próprias · conhecido positivo obrigatório: 1 ocorrência(s), recusado · Método: 10 passagem(ns), 0 sem título[0m
 [90m
-  escrito <worktree>/design/especime-v3/medicoes/ma-2026-10-06/antes/alvos.json[0m
+  escrito <temporario>[0m
 
 [32m  todas as células verdes.[0m
 
@@ -2687,7 +2687,7 @@ A leitura do olho, provada contra o motor:
 
 [90m  prova ✓ 10 forma(s) mortas vistas e 2 viva(s) deixadas em paz, e a pasta api/ lida e com o seu morto visto, num directório temporário.[0m
 
-  [32m✓[0m identificadores · 370 ficheiro(s) lidos, nenhuma declaração morta
+  [32m✓[0m identificadores · 369 ficheiro(s) lidos, nenhuma declaração morta
 
 
 > o-estado-do-pais@0.1.0 check:indice
