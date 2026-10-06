@@ -1,0 +1,10 @@
+{
+  "cabeca": "fd9659a08301e0c940a2c156a84d9e7ff10a7f0e",
+  "codigos": {
+    "build": 0,
+    "verify": 1,
+    "typecheck": 0
+  },
+  "falha": "✗ L3 · palavras fora do vocabulário fechado: 4, acima do teto 0.",
+  "estado": "substituída pela corrida verde de portoes-d; conservada como origem da H4-6"
+}

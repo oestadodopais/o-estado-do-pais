@@ -1,0 +1,60 @@
+{
+  "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+  "estado_inicial": "",
+  "corridas": [
+    {
+      "nome": "portoes-d-corrida",
+      "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h4-2026-10-06/portoes-d",
+      "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+      "estado_inicio": "",
+      "estado_fim": "",
+      "codigo": 0,
+      "duracao_segundos": 1415.689
+    },
+    {
+      "nome": "inventario-d",
+      "comando": "node design/especime-v3/medicoes/h4-2026-10-06/inventario-politica-h4d.mjs --confere",
+      "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+      "estado_inicio": "",
+      "estado_fim": "",
+      "codigo": 0,
+      "duracao_segundos": 0.089
+    },
+    {
+      "nome": "politica-d",
+      "comando": "node design/especime-v3/medicoes/h4-2026-10-06/provar-politica.mjs --passagem-d",
+      "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+      "estado_inicio": "",
+      "estado_fim": "",
+      "codigo": 0,
+      "duracao_segundos": 0.219
+    },
+    {
+      "nome": "n1-d",
+      "comando": "node tests/pais/portoes.mjs --prefixo h4b-",
+      "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+      "estado_inicio": "",
+      "estado_fim": "",
+      "codigo": 0,
+      "duracao_segundos": 16.254
+    },
+    {
+      "nome": "l3-d",
+      "comando": "node tests/pais/portoes.mjs --prefixo h4d-l3-",
+      "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+      "estado_inicio": "",
+      "estado_fim": "",
+      "codigo": 0,
+      "duracao_segundos": 122.36
+    },
+    {
+      "nome": "capturas-d-corrida",
+      "comando": "node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --passagem-d",
+      "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+      "estado_inicio": "",
+      "estado_fim": "",
+      "codigo": 0,
+      "duracao_segundos": 8.209
+    }
+  ]
+}

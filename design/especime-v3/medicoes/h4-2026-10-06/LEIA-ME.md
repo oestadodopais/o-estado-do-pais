@@ -1,6 +1,6 @@
 # H4 · a medição do menu e os lugares da inteligência artificial
 
-O registo abaixo conserva as passagens anteriores. A entrega atual e o fecho da H4-5 estão na secção «A passagem H4-c», no fim.
+O registo abaixo conserva as passagens anteriores. A entrega atual está na secção «A passagem H4-d», no fim; os estados anteriores abaixo são históricos.
 
 Construção por Codex gpt-6-astra. Texto provisório do brief; a redação final e a leitura a frio continuam por confirmar antes de aterrar.
 
@@ -363,3 +363,142 @@ Comando pela tranca: `sh scripts/leituras/portoes.sh <worktree> design/especime-
 | typecheck | 0 |
 
 Os registos completos, os códigos e as datas estão em `portoes-c/`. Os caminhos locais dos registos foram substituídos antes de guardar o pacote. A cabeça final é a do commit das provas; a corrida pertence à cabeça do código acima.
+
+## A passagem H4-d
+
+A política do Método diz os lugares como são e explica o trabalho em palavras correntes, nas duas edições. A TM4 deixa de usar a folha fiscalizada como referência e passa a provar cada proteção em falta. As decisões do lugar de direção foram cumpridas; esta passagem fecha a construção do bloco.
+
+Cabeça do código: `f958bf80eb9ffe366b5e40629b2c395ef71adcb9`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4d.py` a partir dos resultados guardados. [Resumo e conferências](resumo-h4d.json).
+
+### O tratamento de cada achado
+
+| Achado | O que mudou ou ficou reservado | Proteção e prova |
+| --- | --- | --- |
+| 1 | Estrago plantado na cópia do pacote; nenhum defeito a corrigir por este achado. | Conservado o resultado da leitura a frio. |
+| 2 | Estrago plantado na cópia do pacote; nenhum defeito a corrigir por este achado. | Conservado o resultado da leitura a frio. |
+| 3 | Estrago plantado na cópia do pacote; nenhum defeito a corrigir por este achado. | Conservado o resultado da leitura a frio. |
+| 4 | Estrago plantado na cópia do pacote; nenhum defeito a corrigir por este achado. | Conservado o resultado da leitura a frio. |
+| 5 | Estrago plantado na cópia do pacote; nenhum defeito a corrigir por este achado. | Conservado o resultado da leitura a frio. |
+| 6 | Referência independente do espaço e da letra na TM4; plantas específicas para cada proteção em falta. | Plantas novas e mensagens na tabela abaixo; o aperto da regra base exige as mensagens do espaço e da letra. |
+| 7 | Explicação EX1, reservada ao lugar de direção; texto intacto nesta passagem. | Fora do mandato H4-d, por decisão expressa. |
+| 8 | Explicação EX1, reservada ao lugar de direção; texto intacto nesta passagem. | Fora do mandato H4-d, por decisão expressa. |
+| 9 | Decisões H4-1 e H4-5 reservadas à aterragem pelo lugar de direção; sem alteração. | A TM4 conserva os limites decididos. |
+| 10 | Decisões H4-1 e H4-5 reservadas à aterragem pelo lugar de direção; sem alteração. | A TM4 conserva os limites decididos. |
+| 11 | Portões, plantas da política e da N1 e capturas do Método repetidos na cabeça do código. As plantas e capturas correm com git status --porcelain vazio. | Cabeça, estados inicial e final, códigos, mensagens e SHA-256 nos registos desta passagem. |
+| 12 | Comentários e mensagens dizem redação decidida (§1.173); o mapa descreve as portas, linhas e plantas atuais. | Conferência literal dos ficheiros; plantas da política verificam as mensagens atualizadas. |
+| 13 | O comentário regista a exceção do menu: o assunto União Europeia cabe; o nome inteiro da página permanece no título e rodapé. | Conferência do comentário; a N1 continua a recusar rótulo, ordem ou destino errados. |
+| 14 | A secção H4 do inventário tem cabeçalho e separador de tabela. | Conferência da estrutura da tabela e das frases vivas. |
+| 15 | A política permite Claude e Codex na construção e na leitura, sempre de famílias diferentes na mesma peça; Claude mantém a direção. | Plantas da divisão fixa antiga e da mesma família na construção e leitura, nas duas edições. |
+| 16 | Aplicada sem paráfrases a redação final em português e inglês, no texto público e na cópia independente do portão; inventário atualizado. | Plantas das palavras de oficina na direção e na construção, nas duas edições. |
+
+### A TM4 e as plantas novas
+
+A corrida dentro do `verify` fez 28 plantas do tema e do menu, todas com a mensagem exigida; 22 são da TM4 e 12 são novas nesta passagem. Comando: `OEDP_TEMA_MENU_JSON=design/especime-v3/medicoes/h4-2026-10-06/tema-menu-d.json node tests/inicio/tema-e-menu.mjs --prova`. [Medições e plantas completas](tema-menu-d.json).
+
+A célula calcula o espaço pela largura da janela com os valores aprovados guardados nela própria. A referência já não se lê da folha servida nem da folha fonte. A planta da regra base altera apenas a resposta CSS ao navegador e exige ambas as mensagens, a do espaço e a da letra.
+
+| Planta nova | Mensagem exigida | Mensagem observada |
+| --- | --- | --- |
+| uma porta a menos no menu | TM4 · .*o menu tem 6 portas, e são sete\. | TM4 · / a 1280 px: o menu tem 6 portas, e são sete. |
+| a última porta fora da janela | TM4 · .*o menu empurra a página | TM4 · / a 390 px: o menu empurra a página para o lado ou tem uma porta fora da sua caixa (a última porta acaba a 732 px numa janela de 390). |
+| a letra do menu a 13 px | TM4 · .*a letra ou o espaço das letras difere da regra base | TM4 · / a 390 px: a letra ou o espaço das letras difere da regra base (15px, 0.75px). |
+| a regra base apertada | TM4 · .*o espaço entre portas na mesma linha não é o da regra base | TM4 · / a 1280 px: o espaço entre portas na mesma linha não é o da regra base (34 px; lido 6 px; folgas 6, 6, 6, 6, 6, 6). |
+| a regra base apertada | TM4 · .*a letra ou o espaço das letras difere da regra base | TM4 · / a 1280 px: a letra ou o espaço das letras difere da regra base (15px, 0.75px). |
+| três linhas a 390 px | TM4 · .* a 390 px: o menu tem 3 linhas, e o máximo é duas\. | TM4 · / a 390 px: o menu tem 3 linhas, e o máximo é duas. |
+| três linhas a 430 px | TM4 · .* a 430 px: o menu tem 3 linhas, e o máximo é duas\. | TM4 · / a 430 px: o menu tem 3 linhas, e o máximo é duas. |
+| uma porta a menos no menu | TM4 · .*o menu tem 6 portas, e são sete\. | TM4 · /en/ a 1280 px: o menu tem 6 portas, e são sete. |
+| a última porta fora da janela | TM4 · .*o menu empurra a página | TM4 · /en/ a 390 px: o menu empurra a página para o lado ou tem uma porta fora da sua caixa (a última porta acaba a 733 px numa janela de 390). |
+| a letra do menu a 13 px | TM4 · .*a letra ou o espaço das letras difere da regra base | TM4 · /en/ a 390 px: a letra ou o espaço das letras difere da regra base (15px, 0.75px). |
+| a regra base apertada | TM4 · .*o espaço entre portas na mesma linha não é o da regra base | TM4 · /en/ a 1280 px: o espaço entre portas na mesma linha não é o da regra base (34 px; lido 6 px; folgas 6, 6, 6, 6, 6, 6). |
+| a regra base apertada | TM4 · .*a letra ou o espaço das letras difere da regra base | TM4 · /en/ a 1280 px: a letra ou o espaço das letras difere da regra base (15px, 0.75px). |
+| três linhas a 390 px | TM4 · .* a 390 px: o menu tem 3 linhas, e o máximo é duas\. | TM4 · /en/ a 390 px: o menu tem 3 linhas, e o máximo é duas. |
+| três linhas a 430 px | TM4 · .* a 430 px: o menu tem 3 linhas, e o máximo é duas\. | TM4 · /en/ a 430 px: o menu tem 3 linhas, e o máximo é duas. |
+
+As restantes plantas continuam no resultado completo, incluindo a porta a mais, o menu sem dobrar e o alvo de toque. Nenhuma planta da TM4 muda ficheiros da construção.
+
+### A política e a N1 na cabeça do código
+
+A política fez 18 plantas; a N1 fez 3. Todas falharam pela mensagem esperada. A política trabalha em cópias na memória; a N1 repõe os ficheiros construídos byte a byte, com o mesmo resumo antes e depois. Os registos [das corridas](corridas-d.json), [da política](plantas-politica-d.json) e [da N1](n1-d/plantas-portoes-h4b.json) identificam a cabeça acima. O estado completo do Git estava vazio no início e no fim destas corridas.
+
+| Edição | Planta da política | Mensagem observada e exigida |
+| --- | --- | --- |
+| pt | um lugar a mais | H4 IA: a política tem de dizer três lugares. |
+| pt | a construção em falta | H4 IA: a política tem de dizer três lugares. |
+| pt | a medição no lugar da leitura | H4 IA: os lugares não são os da redação decidida. |
+| pt | a introdução antiga | H4 IA: a introdução dos lugares difere da redação decidida. |
+| pt | a família da construção trocada | H4 IA: as famílias e os lugares do fecho diferem da redação decidida. |
+| pt | a divisão fixa antiga | H4 IA: as famílias e os lugares do fecho diferem da redação decidida. |
+| pt | a construção e a leitura da mesma família | H4 IA: os lugares não são os da redação decidida. |
+| pt | a direção com palavras de oficina | H4 IA: os lugares não são os da redação decidida. |
+| pt | a construção com palavras de oficina | H4 IA: os lugares não são os da redação decidida. |
+| en | um lugar a mais | H4 IA: a política tem de dizer três lugares. |
+| en | a construção em falta | H4 IA: a política tem de dizer três lugares. |
+| en | a medição no lugar da leitura | H4 IA: os lugares não são os da redação decidida. |
+| en | a introdução antiga | H4 IA: a introdução dos lugares difere da redação decidida. |
+| en | a família da construção trocada | H4 IA: as famílias e os lugares do fecho diferem da redação decidida. |
+| en | a divisão fixa antiga | H4 IA: as famílias e os lugares do fecho diferem da redação decidida. |
+| en | a construção e a leitura da mesma família | H4 IA: os lugares não são os da redação decidida. |
+| en | a direção com palavras de oficina | H4 IA: os lugares não são os da redação decidida. |
+| en | a construção com palavras de oficina | H4 IA: os lugares não são os da redação decidida. |
+
+| Planta da N1 | Código lido | Mensagens exigidas e encontradas no registo |
+| --- | --- | --- |
+| h4b-menu-sem-explicacoes | 1 | N1: menu de sete errado em index\.html\.; N1: menu de sete errado em en\/index\.html\. |
+| h4b-menu-rotulo-antigo | 1 | N1: menu de sete errado em index\.html\.; N1: menu de sete errado em en\/index\.html\. |
+| h4b-menu-destino-e-ordem | 1 | N1: menu de sete errado em index\.html\.; N1: menu de sete errado em en\/index\.html\. |
+
+### H4-6: a palavra peça na política
+
+A [primeira corrida completa](primeira-corrida-d.json) recusou a redação decidida na L3: a palavra «peça» nos lugares descreve o que se encomenda, constrói e lê. A régua passa a aceitar essa palavra apenas nos blocos inteiros aprovados, dentro da política no Método. O teto fica intacto. A redação pública mantém-se exatamente como recebida. A H4-6 fica fechada por esta distinção de contexto.
+
+As 4 plantas [da L3](l3-d/plantas-portoes-h4d-l3.json) correram na cabeça do código com a árvore limpa e repuseram cada ficheiro byte a byte. Cada uma exigiu a mensagem da L3 acima do teto.
+
+| Planta da L3 | Código lido | Mensagem exigida e encontrada |
+| --- | --- | --- |
+| h4d-l3-frase-aprovada-fora-do-metodo | 1 | L3 · palavras fora do vocabulário fechado\s+1\s+\(teto 0\) ACIMA DO TETO |
+| h4d-l3-frase-aprovada-fora-da-politica | 1 | L3 · palavras fora do vocabulário fechado\s+1\s+\(teto 0\) ACIMA DO TETO |
+| h4d-l3-frase-parecida-na-politica | 1 | L3 · palavras fora do vocabulário fechado\s+1\s+\(teto 0\) ACIMA DO TETO |
+| h4d-l3-outra-palavra-na-politica | 1 | L3 · palavras fora do vocabulário fechado\s+1\s+\(teto 0\) ACIMA DO TETO |
+
+### As capturas do Método
+
+Foram refeitas 10 capturas de página inteira, cada uma com o recorte dos lugares e do cabeçalho, nas duas edições. O menu novo está à vista. [Manifesto, medidas e SHA-256](capturas-d.json). As cópias do HTML em `paginas-d/` têm os mesmos resumos das páginas lidas pelas plantas da política. Comando: `node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --passagem-d`.
+
+| Edição | Janela, px | Linhas do menu | Espaço, px | Letra | Página | Lugares | Cabeçalho |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| pt | 390 | 2 | 16 | 15px | [captura](../../capturas/h4-2026-10-06/passagem-d/politica-pt-390.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-390.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-390.png) |
+| pt | 768 | 1 | 21,504 | 15px | [captura](../../capturas/h4-2026-10-06/passagem-d/politica-pt-768.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-768.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-768.png) |
+| pt | 1024 | 1 | 28,672 | 15px | [captura](../../capturas/h4-2026-10-06/passagem-d/politica-pt-1024.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-1024.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-1024.png) |
+| pt | 1280 | 1 | 34 | 15px | [captura](../../capturas/h4-2026-10-06/passagem-d/politica-pt-1280.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-1280.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-1280.png) |
+| pt | 1600 | 1 | 34 | 15px | [captura](../../capturas/h4-2026-10-06/passagem-d/politica-pt-1600.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-1600.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-1600.png) |
+| en | 390 | 2 | 16 | 15px | [captura](../../capturas/h4-2026-10-06/passagem-d/politica-en-390.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/lugares-ia-en-390.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-390.png) |
+| en | 768 | 1 | 21,504 | 15px | [captura](../../capturas/h4-2026-10-06/passagem-d/politica-en-768.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/lugares-ia-en-768.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-768.png) |
+| en | 1024 | 1 | 28,672 | 15px | [captura](../../capturas/h4-2026-10-06/passagem-d/politica-en-1024.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/lugares-ia-en-1024.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-1024.png) |
+| en | 1280 | 1 | 34 | 15px | [captura](../../capturas/h4-2026-10-06/passagem-d/politica-en-1280.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/lugares-ia-en-1280.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-1280.png) |
+| en | 1600 | 1 | 34 | 15px | [captura](../../capturas/h4-2026-10-06/passagem-d/politica-en-1600.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/lugares-ia-en-1600.png) | [captura](../../capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-1600.png) |
+
+### Os commits e os portões inteiros
+
+Comando pela tranca: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h4-2026-10-06/portoes-d`. A cabeça inicial e final dos portões é `f958bf80eb9ffe366b5e40629b2c395ef71adcb9`. Os códigos abaixo foram lidos dos ficheiros; os registos completos estão em `portoes-d/`.
+
+| Portão | Código lido |
+| --- | --- |
+| build | 0 |
+| verify | 0 |
+| typecheck | 0 |
+
+| Commit do código | Mudança |
+| --- | --- |
+| `f00766e3008a88c0176e7b640550716602c96747` | H4-d: provar as proteções em falta da TM4 (achado 6) |
+| `efe38f9919de985a59b9a3d90c85080f463dd860` | H4-d: retirar o provisório e atualizar a TM4 no mapa (achado 12) |
+| `aeec3c17ec62ec03bb31a40b2e8a54dfe32df52c` | H4-d: explicar a exceção do nome da União no menu (achado 13) |
+| `35efa677c73bac12e91e5ea99618d1e975ddb1c6` | H4-d: dar cabeçalho à tabela do inventário (achado 14) |
+| `fcadc7f797e1212e34ff2cf7938728e95ed65d62` | H4-d: dizer os lugares como são e em palavras correntes (achados 15 e 16) |
+| `fd9659a08301e0c940a2c156a84d9e7ff10a7f0e` | H4-d: prender as provas e capturas à cabeça limpa (achado 11) |
+| `f958bf80eb9ffe366b5e40629b2c395ef71adcb9` | H4-d: distinguir peça na política do nome de um estudo (H4-6) |
+
+O commit seguinte guarda apenas o relatório, as capturas e os registos das provas. A cabeça final é a desse commit; a cabeça do código é a conferida acima. Os caminhos locais foram substituídos antes de guardar os registos.
+
+### O que ficou por fazer e porquê
+
+Os achados do EX1 ficam com o lugar de direção, por decisão expressa. A leitura curta do diff por outra família e a aterragem continuam com o lugar de direção. Não se fez push. A questão nova H4-6 ficou fechada nesta passagem, com as plantas da L3. O custo total de tokens não é exposto nesta sessão; fica por ler no registo do lançador.
