@@ -25,16 +25,20 @@
  * edições como o H3 mediu a da União, posta só no navegador ao lado de «Estudos» com o mesmo elemento e a mesma folha:
  * não cabe em nenhuma (a fila dobra para duas linhas; as larguras e as capturas estão em
  * `design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.json`), e o menu fica com as seis. As explicações entram pelo
- * bloco «Para perceber» da primeira página, pela secção delas no índice e pela migalha das páginas delas. */
+ * bloco «Para perceber» da primeira página, pela secção delas no índice e pela migalha das páginas delas.
+ *
+ * EX1-b (06.10.2026, a decisão do lugar de direção sobre a I211): o rodapé ganha a oitava porta, «Explicações» /
+ * «Explainers», a seguir a «Agenda» e antes de «Portugal na União Europeia». As oito portas e a ordem conferem-se no
+ * portão de HTML (`scripts/indice-do-portao.mjs`), com as plantas de um rodapé sem a porta nova e de uma porta a mais. */
 export const ROTAS_NAV = ['home', 'lugares', 'temas', 'estudos', 'uniaoEuropeia', 'sobre'];
-export const ROTAS_RODAPE = ['home', 'livro', 'metodo', 'correcoes', 'agenda', 'uniaoEuropeia', 'indice'];
+export const ROTAS_RODAPE = ['home', 'livro', 'metodo', 'correcoes', 'agenda', 'explicacoes', 'uniaoEuropeia', 'indice'];
 export const ROTAS_SOBRE = ['metodo', 'correcoes', 'agenda', 'livro'];
 export const ETIQUETA_NAV = {
   home: 'inicio', lugares: 'lugares', temas: 'temas', municipios: 'municipios',
   regioes: 'regioes', distritos: 'distritos', areas: 'areas', dominios: 'dominios',
   uniaoEuropeia: 'uniaoEuropeia', estudos: 'estudos', livro: 'livro',
   agenda: 'agenda', metodo: 'metodo', correcoes: 'correcoes', sobre: 'sobre',
-  indice: 'indice',
+  indice: 'indice', explicacoes: 'explicacoes',
 };
 /** As etiquetas do menu do cabeçalho: as do rodapé, menos a da União, que no menu é a curta. */
 export const ETIQUETA_NO_MENU = { ...ETIQUETA_NAV, uniaoEuropeia: 'uniaoEuropeiaNoMenu' };

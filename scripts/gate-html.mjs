@@ -66,7 +66,7 @@ function campoDaSerieNoTempo(serie, campo, lang) {
 }
 
 /* R3 (04.10.2026): as sete portas do rodapé, com a do índice, lidas por um módulo próprio do portão. */
-import { conferirPortasDoRodape, plantasDasPortasDoRodape } from './indice-do-portao.mjs';
+import { conferirPortasDoRodape, plantasDasPortasDoRodape, PORTAS_DO_RODAPE } from './indice-do-portao.mjs';
 import {
   conferirPortaDaPrivacidade,
   conferirPaginaDaPrivacidade,
@@ -5490,7 +5490,8 @@ for (const file of ficheirosHtml(DIST)) {
    * navegação do rodapé com as sete portas pela ordem, cada uma com o destino e
    * o nome da edição da página, e a troca de língua no fim. A lista e as plantas
    * vivem em `scripts/indice-do-portao.mjs`; as plantas correm uma vez por
-   * corrida, depois do varrimento.
+   * corrida, depois do varrimento. Desde o EX1-b (06.10.2026, a I211) são oito,
+   * com a das explicações a seguir à da agenda; quantas são lê-se da lista.
    */
   RODAPE_NO_PORTAO.paginas++;
   for (const e of conferirPortasDoRodape(root, { lang: rota?.lang ?? linguaPagina ?? 'pt' })) err(e);
@@ -8114,8 +8115,8 @@ for (const file of ficheirosHtml(DIST)) {
     RODAPE_NO_PORTAO.plantas++;
     if (!planta.mordeu) erros.push({ rel: 'scripts/indice-do-portao.mjs', msg: `R3: a planta em memória «${planta.nome}» não mordeu; a conferência das portas do rodapé não vê o que existe para ver.` });
   }
-  if (RODAPE_NO_PORTAO.paginas === 0) erros.push({ rel: 'dist', msg: 'R3 rodapé: a conferência das sete portas do rodapé não viu página nenhuma.' });
-  console.log(`  R3 · as sete portas do rodapé conferidas em ${RODAPE_NO_PORTAO.paginas} página(s), com ${RODAPE_NO_PORTAO.plantas} planta(s) em memória.`);
+  if (RODAPE_NO_PORTAO.paginas === 0) erros.push({ rel: 'dist', msg: `R3 rodapé: a conferência das ${PORTAS_DO_RODAPE.pt.length} portas do rodapé não viu página nenhuma.` });
+  console.log(`  R3 · as ${PORTAS_DO_RODAPE.pt.length} portas do rodapé conferidas em ${RODAPE_NO_PORTAO.paginas} página(s), com ${RODAPE_NO_PORTAO.plantas} planta(s) em memória.`);
 }
 
 /* A PÁGINA «PRIVACIDADE» E A FRASE DOS COOKIES, DEPOIS DO VARRIMENTO (bloco H3, 05.10.2026): as plantas em memória

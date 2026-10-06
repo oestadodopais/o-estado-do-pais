@@ -18,12 +18,18 @@
  * as seis portas do menu à mão). Quem mudar uma porta do rodapé muda esta lista no mesmo commit.
  *
  * As plantas em memória (`plantasDasPortasDoRodape()`) correm em cada corrida do portão: um rodapé
- * com seis portas, a porta do índice da outra edição, a ordem trocada e duas trocas de língua têm
+ * com uma porta a menos, a porta do índice da outra edição, a ordem trocada e duas trocas de língua têm
  * de ser recusados com a queixa esperada, e o rodapé intacto tem de passar.
+ *
+ * EX1-b (06.10.2026, a decisão do lugar de direção sobre a I211): AS PORTAS PASSAM A OITO, com a das explicações
+ * («Explicações» / «Explainers») a seguir a «Agenda» e antes de «Portugal na União Europeia». A célula muda de forma e
+ * conserva o que protege: a contagem e a ordem, com o destino e o nome de cada porta, em todas as páginas com rodapé.
+ * Ganha duas plantas, a de um rodapé sem a porta nova e a de um rodapé com uma porta a mais, e as três que liam a posição
+ * das portas pelo número de antes leem-na agora pela lista.
  */
 import { parse } from 'node-html-parser';
 
-/** As sete portas da navegação do rodapé, por edição e por ordem: o destino e o nome. */
+/** As oito portas da navegação do rodapé (sete desde o R3, oito desde o EX1-b), por edição e por ordem: o destino e o nome. */
 export const PORTAS_DO_RODAPE = {
   pt: [
     ['/', 'Início'],
@@ -31,6 +37,7 @@ export const PORTAS_DO_RODAPE = {
     ['/metodo', 'Método'],
     ['/correcoes', 'Correções'],
     ['/agenda', 'Agenda'],
+    ['/explicacoes', 'Explicações'],
     ['/uniao-europeia', 'Portugal na União Europeia'],
     ['/indice', 'Índice'],
   ],
@@ -40,6 +47,7 @@ export const PORTAS_DO_RODAPE = {
     ['/en/method', 'Method'],
     ['/en/corrections', 'Corrections'],
     ['/en/agenda', 'Agenda'],
+    ['/en/explainers', 'Explainers'],
     ['/en/european-union', 'Portugal in the European Union'],
     ['/en/index', 'Index'],
   ],
@@ -113,14 +121,21 @@ export function plantasDasPortasDoRodape() {
   const resultados = [];
   for (const lang of /** @type {const} */ (['pt', 'en'])) {
     const certas = PORTAS_DO_RODAPE[lang];
+    const outra = PORTAS_DO_RODAPE[lang === 'pt' ? 'en' : 'pt'];
+    const n = certas.length;
     const limpo = conferirPortasDoRodape(rodapeDePlanta(lang, certas), { lang });
     resultados.push({ nome: `r3-rodape-intacto-${lang}`, mordeu: limpo.length === 0 });
+    /* As posições leem-se da lista (EX1-b): o índice é a última porta, e a das explicações é a que tem o destino dela. */
+    const iExplicacoes = certas.findIndex(([h]) => h === (lang === 'pt' ? '/explicacoes' : '/en/explainers'));
     const casos = [
-      ['r3-rodape-com-seis-portas', certas.slice(0, 6), 1, /tem 6 porta\(s\) e são 7/],
-      ['r3-rodape-indice-da-outra-edicao', certas.map(([h, t]) => (t === certas[6][1] ? [PORTAS_DO_RODAPE[lang === 'pt' ? 'en' : 'pt'][6][0], t] : [h, t])), 1, /a porta 7 do rodapé/],
-      ['r3-rodape-ordem-trocada', [...certas.slice(0, 5), certas[6], certas[5]], 1, /a porta 6 do rodapé/],
+      ['r3-rodape-com-uma-porta-a-menos', certas.slice(0, n - 1), 1, new RegExp(`tem ${n - 1} porta\\(s\\) e são ${n}`)],
+      ['r3-rodape-indice-da-outra-edicao', certas.map(([h, t], i) => (i === n - 1 ? [outra[n - 1][0], t] : [h, t])), 1, new RegExp(`a porta ${n} do rodapé`)],
+      ['r3-rodape-ordem-trocada', [...certas.slice(0, n - 3), certas[n - 2], certas[n - 3], certas[n - 1]], 1, new RegExp(`a porta ${n - 2} do rodapé`)],
       ['r3-rodape-duas-trocas-de-lingua', certas, 2, /2 troca\(s\) de língua/],
+      ['ex1b-rodape-sem-a-porta-das-explicacoes', certas.filter((_, i) => i !== iExplicacoes), 1, new RegExp(`tem ${n - 1} porta\\(s\\) e são ${n}`)],
+      ['ex1b-rodape-com-uma-porta-a-mais', [...certas.slice(0, iExplicacoes + 1), certas[iExplicacoes], ...certas.slice(iExplicacoes + 1)], 1, new RegExp(`tem ${n + 1} porta\\(s\\) e são ${n}`)],
     ];
+    if (iExplicacoes < 0) resultados.push({ nome: `ex1b-rodape-sem-a-porta-das-explicacoes-na-lista-${lang}`, mordeu: false });
     for (const [nome, portas, trocas, mordida] of casos) {
       const erros = conferirPortasDoRodape(rodapeDePlanta(lang, portas, trocas), { lang });
       resultados.push({ nome: `${nome}-${lang}`, mordeu: erros.some((e) => mordida.test(e)) });
