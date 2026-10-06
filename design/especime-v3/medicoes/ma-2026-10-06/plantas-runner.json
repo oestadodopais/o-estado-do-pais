@@ -2,67 +2,95 @@
   "ok": true,
   "casos": [
     {
+      "falhas": [],
       "planta": "a cadeia limpa passa, e o que o build já correu não corre outra vez",
       "mordeu": true
     },
     {
+      "falhas": [],
       "planta": "uma conferência nova só no verify corre sozinha",
       "mordeu": true
     },
     {
+      "falhas": [
+        "U: «\"/Users/nunosantos/.nvm/versions/node/v22.23.1/bin/node\" -e \"require('fs').writeFileSync(require('path').join('marcas','v2'),'')\"» está no verify, não é um passo do build e não correu aqui"
+      ],
       "planta": "uma conferência tirada da escolha fecha a célula U",
       "mordeu": true
     },
     {
+      "falhas": [
+        "U: «\"/Users/nunosantos/.nvm/versions/node/v22.23.1/bin/node\" -e \"process.exit(3)\"» correu e não saiu com 0"
+      ],
       "planta": "uma conferência vermelha fecha a corrida, e as outras acabam",
       "mordeu": true
     },
     {
+      "falhas": [
+        "D: dist/x/index.html mudou de bytes durante as conferências"
+      ],
       "planta": "uma conferência que escreve no dist/ fecha a célula D",
       "mordeu": true
     },
     {
+      "falhas": [
+        "C: dist/version.json é de dddddddddddddddddddddddddddddddddddddddd e a árvore está em cccccccccccccccccccccccccccccccccccccccc",
+        "C: dist/prova.json é de dddddddddddddddddddddddddddddddddddddddd e a árvore está em cccccccccccccccccccccccccccccccccccccccc"
+      ],
       "planta": "um dist/ de outra cabeça fecha a célula C",
       "mordeu": true
     },
     {
+      "falhas": [
+        "U: o verify tem 5 passos pelos &&, e o leitor leu 4"
+      ],
       "planta": "um passo vazio na cadeia não passa despercebido à contagem",
       "mordeu": true
     },
     {
+      "falhas": [
+        "D: dist/x/index.html foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)"
+      ],
       "planta": "uma conferência que escreve no dist/ e repõe os bytes fecha a célula D",
       "mordeu": true
     },
     {
+      "falhas": [
+        "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+      ],
       "planta": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
       "antes": {
-        "escrito": "1791274861252000000",
-        "inode": "233956481",
+        "escrito": "1791276550232000000",
+        "inode": "234247232",
         "tamanho": "19",
         "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
       },
       "depois": {
-        "escrito": "1791274861252000000",
-        "inode": "233956488",
+        "escrito": "1791276550232000000",
+        "inode": "234247239",
         "tamanho": "19",
         "resumo": "adbad8d628608be43ecbe916fd8e99b732fc607603e0150316a8d17dffa57b12"
       },
       "passos_da_troca": 1,
       "codigo_da_troca": 0,
-      "falhas": [
-        "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
-      ],
       "mordeu": true
     },
     {
+      "falhas": [
+        "D: fonte.txt foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)"
+      ],
       "planta": "uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D",
       "mordeu": true
     },
     {
+      "falhas": [
+        "C: dist/cadeia.json foi escrito a 2026-10-06T08:49:10.326Z, antes do carimbo desta construção (2026-10-06T09:48:10.327Z): é de outra construção"
+      ],
       "planta": "um cadeia.json de outra construção fecha a célula C",
       "mordeu": true
     },
     {
+      "falhas": [],
       "planta": "uma conferência que escreve na árvore corre sozinha, depois do grupo",
       "mordeu": true
     }
