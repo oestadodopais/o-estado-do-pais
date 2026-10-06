@@ -1,77 +1,12 @@
-?? design/especime-v3/medicoes/ex1-2026-10-05/conferir-leituras-provadas.py
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/check-lugar-antes-do-teto.codigo
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/check-lugar-antes-do-teto.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/construcao-fusao.cabeca
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/construcao-fusao.codigo
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/construcao-fusao.estado
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/construcao-fusao.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/construcao-main.codigo
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/construcao-main.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/construcao-provas.cabeca
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/construcao-provas.codigo
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/construcao-provas.estado
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/construcao-provas.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/frases-compostas.json
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/leituras-provadas.json
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/linhas-do-mapa-depois-do-teto.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/linhas-do-mapa-ex1.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/linhas-do-mapa-main.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/mapa-antes-dos-acertos.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/mapa-depois-dos-acertos.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-explicacao-descricao-mudada.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-explicacao-numero-trocado.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-explicacao-titulo-com-outro-ano.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-f22-barra-fora-de-escala.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-f22-valor-trocado.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-indice-sem-as-explicacoes.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-semana-contagem-trocada.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-semana-data-trocada.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-semana-fora-da-porta.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-semana-janela-de-oito-dias.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-semana-janela-de-outro-dia.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-semana-mudanca-a-mais.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-semana-mudanca-em-falta.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-unidade-com-a-marca-de-outra-linha.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-unidade-de-outra-linha.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-voz-frase-por-classificar.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-voz-porta-da-semana-com-outra-frase.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1-voz-ramo-do-sinal-trocado.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1b-frase-dos-dois-totais-mudada.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1b-frases-compostas-num-contentor-flexivel.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1b-maiores-ordem-trocada.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1b-maiores-valor-trocado.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1b-rodape-com-uma-porta-a-mais.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1b-rodape-sem-a-porta-das-explicacoes.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1b-transbordo-a-390.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1c-f22-figura-em-falta.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1c-lado-da-divida-trocado.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1c-marca-da-semana-solta.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1c-marca-declarada-solta.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1c-nome-de-um-ministerio-trocado.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1c-porta-dos-numeros-tirada.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1c-semana-contagem-da-forma-trocada.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-ex1c-semana-forma-contada-como-valor.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-r4-frase-de-outra-linha.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-r4-pais-lado-trocado.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-r4-recibo-sem-frase.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-r4-titulo-sem-nome.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-r4-voz-fragmento-retirado-solto.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-r4-voz-nome-da-familia-trocado.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-r4b-l1-marcador-fora-da-marca.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-r4b-pais-sinal-tirado.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/planta-teto-l1-fusao.json
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/plantas-portoes-ex1.json
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/plantas-portoes-r4.json
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/portoes-corrida.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/primeira-corrida-das-plantas/
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/provas-corrida.codigo
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/provas-corrida.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/provas-plantas-corrida.codigo
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/provas-plantas-corrida.log
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/provas/
-?? design/especime-v3/medicoes/ex1-2026-10-05/fusao/r4-nas-celulas.json
-?? design/especime-v3/medicoes/ex1-2026-10-05/portoes/
-?? design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao-plantas.sh
-?? design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh
-?? design/especime-v3/medicoes/ex1-2026-10-05/r4-nas-celulas.mjs
+ M design/especime-v3/medicoes/ex1-2026-10-05/portoes/build.fim
+ M design/especime-v3/medicoes/ex1-2026-10-05/portoes/build.inicio
+ M design/especime-v3/medicoes/ex1-2026-10-05/portoes/build.log
+ M design/especime-v3/medicoes/ex1-2026-10-05/portoes/cabeca
+ M design/especime-v3/medicoes/ex1-2026-10-05/portoes/cabeca.fim
+ M design/especime-v3/medicoes/ex1-2026-10-05/portoes/estado.fim
+ M design/especime-v3/medicoes/ex1-2026-10-05/portoes/typecheck.fim
+ M design/especime-v3/medicoes/ex1-2026-10-05/portoes/typecheck.inicio
+ M design/especime-v3/medicoes/ex1-2026-10-05/portoes/verify.fim
+ M design/especime-v3/medicoes/ex1-2026-10-05/portoes/verify.inicio
+ M design/especime-v3/medicoes/ex1-2026-10-05/portoes/verify.log
 ?? node_modules
