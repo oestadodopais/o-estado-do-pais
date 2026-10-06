@@ -271,6 +271,66 @@ export function corteDaLeitura(partes) {
 }
 
 /**
+ * A METADE «O QUE É» DE UM CARTÃO, RESOLVIDA CONTRA OUTRA LINHA DA MESMA MEDIDA (bloco R4, 05.10.2026, o ponto 2 do
+ * brief). O recibo de cada linha do livro-razão diz o que o número é, e a frase de uma medida é uma só (a decisão 1 do
+ * brief): o ano anterior de uma medida com cartão, ou a linha da União da mesma medida, leem a frase do cartão, com os
+ * pedaços da própria linha (o valor, o período e o ramo do sinal pelo valor dela). A metade «o que é» não compara
+ * (é o corte do K2), e por isso não cita a régua nem a referência: um pedaço desses fecha a construção aqui, em vez de
+ * render o número de outra linha no recibo desta.
+ *
+ * @param {string} id  o identificador da linha do cartão (a medida cuja leitura se lê)
+ * @param {'pt'|'en'} lang
+ * @param {string} linhaId  a linha cujo recibo rende a frase
+ */
+export function oQueEContraALinha(id, lang, linhaId) {
+  const declaracao = /** @type {Record<string, any>} */ (LEITURAS_DAS_MEDIDAS)[id];
+  const partes = declaracao?.[lang];
+  if (!Array.isArray(partes)) throw fecha(`${id} · ${lang}`, 'não há leitura declarada para esta medida nesta edição.');
+  const corte = corteDaLeitura(partes);
+  if (corte === 0) throw fecha(`${id} · ${lang}`, `a leitura não tem metade «o que é», e a linha «${linhaId}» pede-a.`);
+  const r = leituraDaMedida(id, lang, [0, corte], true, linhaId);
+  if (!r.pedacos.length) throw fecha(`${id} · ${lang}`, `a metade «o que é» resolveu para nada contra a linha «${linhaId}».`);
+  return r;
+}
+
+/**
+ * O QUE O SINAL QUER DIZER, QUANDO VIVE NA METADE QUE COMPARA (passagem R4-b, 06.10.2026, o achado 6 da leitura a frio;
+ * a I208 do R4). O corte da leitura (o K2) põe na metade que compara um ramo do sinal inteiro quando o ramo compara: na
+ * posição de investimento internacional, «Negativa quer dizer que o país deve ao exterior mais do que tem lá.» vive no
+ * mesmo ramo que a comparação com o ano anterior. O cartão e o recibo da linha mostram as duas metades; onde só se lê a
+ * metade «o que é» (a explicação dos valores de referência na primeira página, o recibo de uma linha que lê a frase do
+ * cartão), esta função dá a parte do sinal sozinha: as cadeias do princípio do ramo que o valor da linha escolhe, até ao
+ * primeiro pedaço que compara. Não compõe nada: devolve palavras declaradas e auditadas na K17, e uma parte do sinal
+ * que traga outro pedaço que não uma cadeia fecha a construção (a parte do sinal não cita números).
+ *
+ * @param {string} id  a linha do cartão
+ * @param {'pt'|'en'} lang
+ * @param {string} [linhaId]  a linha cujo sinal escolhe o ramo; por omissão, a do cartão
+ * @returns {{ pedacos: string[] } | null}
+ */
+export function sinalDaLeitura(id, lang, linhaId = id) {
+  const partes = /** @type {Record<string, any>} */ (LEITURAS_DAS_MEDIDAS)[id]?.[lang];
+  if (!Array.isArray(partes)) return null;
+  const corte = corteDaLeitura(partes);
+  for (const p of partes.slice(corte)) {
+    if (!p || typeof p !== 'object' || !('sinal' in p)) continue;
+    const v = numeroDaLinha(linhaId);
+    if (v === null) throw fecha(`${id} · ${lang}`, `o valor da linha «${linhaId}» não se lê, e o ramo do sinal não se escolhe.`);
+    const ramo = /** @type {unknown[]} */ (p.sinal[v > 0 ? 'positivo' : v < 0 ? 'negativo' : 'zero'] ?? []);
+    /** @type {string[]} */
+    const antes = [];
+    for (const x of ramo) {
+      if (pedacoQueCompara(x)) break;
+      if (typeof x !== 'string') throw fecha(`${id} · ${lang}`, 'a parte do sinal traz um pedaço que não é uma cadeia.');
+      antes.push(x);
+    }
+    const texto = antes.join('').trim();
+    return texto ? { pedacos: [texto] } : null;
+  }
+  return null;
+}
+
+/**
  * A leitura de uma medida nas suas duas metades, resolvidas: o que o número é (`oQueE`) e a comparação (`comparacao`).
  * Uma metade que não tem pedaços, ou que resolve para nada (uma comparação com linhas que a régua não tem), é `null`.
  *
@@ -301,15 +361,19 @@ export function partesDaLeitura(id, lang) {
  * @param {'pt'|'en'} lang
  * @param {[number, number] | null} [fatia]
  * @param {boolean} [podeSerVazia]
+ * @param {string} [linhaId]  a linha cujo valor, período e sinal a leitura diz (bloco R4: o recibo de uma linha da
+ *   mesma medida); por omissão, a linha do cartão. Com outra linha, um pedaço da régua ou da referência fecha a construção.
  * @returns {{ pedacos: PedacoDaFrase[], ramos: RamoEscolhido[], citadas: string[] }}
  */
-export function leituraDaMedida(id, lang, fatia = null, podeSerVazia = false) {
+export function leituraDaMedida(id, lang, fatia = null, podeSerVazia = false, linhaId = id) {
   const declaracao = /** @type {Record<string, any>} */ (LEITURAS_DAS_MEDIDAS)[id];
   const todas = declaracao?.[lang];
   if (!Array.isArray(todas)) throw fecha(`${id} · ${lang}`, 'não há leitura declarada para esta medida nesta edição.');
   const partes = fatia ? todas.slice(fatia[0], fatia[1]) : todas;
   const camaras = id === LEITURA_DAS_CAMARAS;
-  const linha = camaras ? null : getClaim(id);
+  const outraLinha = linhaId !== id;
+  if (outraLinha && camaras) throw fecha(`${id} · ${lang}`, 'o cartão das câmaras não é uma linha, e a sua leitura não se lê contra outra.');
+  const linha = camaras ? null : getClaim(linhaId);
   const valor = linha ? parsePtNumber(linha.value) : null;
   const regua = camaras ? { anterior: null, ue: null } : reguaDoCartao(id);
   const referencia = camaras ? null : (REFERENCIAS_DAS_MEDIDAS.get(id) ?? null);
@@ -328,8 +392,11 @@ export function leituraDaMedida(id, lang, fatia = null, podeSerVazia = false) {
     if (typeof parte === 'string') return [parte];
     const o = /** @type {Record<string, any>} */ (parte);
 
+    if (outraLinha && (('claim' in o && o.claim !== 'proprio') || ('periodo' in o && o.periodo !== 'proprio') || 'referencia' in o || 'compara' in o || 'estado' in o || 'comparacao' in o)) {
+      throw fecha(onde, `a leitura lida contra a linha «${linhaId}» cita a régua ou a referência do cartão, que são da linha «${id}».`);
+    }
     if ('claim' in o) {
-      const alvo = o.claim === 'proprio' ? (linha ? id : null) : o.claim === 'anterior' ? regua.anterior?.id : regua.ue?.id;
+      const alvo = o.claim === 'proprio' ? (linha ? linhaId : null) : o.claim === 'anterior' ? regua.anterior?.id : regua.ue?.id;
       if (!alvo) throw fecha(onde, `a leitura cita a linha «${o.claim}», que esta medida não tem na régua do cartão.`);
       citadas.push(alvo);
       return [o.sufixo ? { claim: alvo, sufixo: String(o.sufixo) } : { claim: alvo }];
@@ -342,7 +409,7 @@ export function leituraDaMedida(id, lang, fatia = null, podeSerVazia = false) {
         }
         const r = linha?.reference_date;
         if (typeof r !== 'string' || r === '') throw fecha(onde, 'a linha do cartão não publica o período que a leitura escreve.');
-        return [{ data: { id, campo: 'reference_date', valor: r } }];
+        return [{ data: { id: linhaId, campo: 'reference_date', valor: r } }];
       }
       const a = regua.anterior;
       if (!a || !a.periodo) throw fecha(onde, 'a leitura escreve o período anterior e a régua do cartão não o tem.');

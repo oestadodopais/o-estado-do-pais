@@ -15,7 +15,7 @@ import { LUGAR_DECLARADO_DAS_LINHAS } from '../src/data/lugar-das-linhas.mjs';
 import { ROTULOS_B1 } from '../src/data/rotulos-b1.mjs';
 import { matchPath, normalizePath, routePath } from '../src/lib/routes.mjs';
 import { t } from '../src/i18n/strings.mjs';
-import { verificaVeredictoDoPais } from './pais-veredicto.mjs';
+import { verificaVeredictoDoPais, verificaExplicacoesDoVeredicto } from './pais-veredicto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 import { conferirBlocosDaPagina, idsDosBlocos } from '../tests/inicio/blocos.mjs';
 import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
@@ -289,6 +289,8 @@ for (const lang of ['pt', 'en']) {
   /* V1, B2: a frase do veredicto contra a leitura independente das linhas,
      das referências e dos nomes; as portas têm de abrir os cartões certos. */
   erros.push(...verificaVeredictoDoPais(home, documentoDosAssuntos(dist, lang), lang, linha));
+  /* V1-R4: o que cada valor de referência mede e de que lado Portugal ficou, recontado. */
+  erros.push(...verificaExplicacoesDoVeredicto(home, documentoDosAssuntos(dist, lang), lang, linha));
   for (const [nome, doc, declarado] of [['país', home, t(lang).home], ['temas', indice, t(lang).temas]]) {
     for (const [seletor, esperado] of [
       ['head title', declarado.metaTitle], ['head meta[property="og:title"]', declarado.metaTitle],

@@ -1888,6 +1888,21 @@ export const STRINGS = {
         referencias: ' valores de referência da Comissão Europeia e dentro de ',
         lista: '. Fora: ',
         fecha: '.',
+        /* R4 (05.10.2026, o ponto 4 e a decisão 5 do brief): por baixo do veredicto, cada valor de que Portugal ficou
+           fora com a frase «o que é» da sua linha e o lado, e os de dentro numa porta dobrada com a mesma forma. O lado
+           escolhe-o a conta (`comparacaoComOLimiar`), e o valor de referência vai pela sua marca, nunca escrito aqui. */
+        ladoAntes: 'Portugal está ',
+        lados: {
+          acima: 'acima do valor de referência da Comissão Europeia, que é ',
+          abaixo: 'abaixo do valor de referência da Comissão Europeia, que é ',
+          igual: 'no valor de referência da Comissão Europeia, que é ',
+          entre: 'entre os valores de referência da Comissão Europeia, que são ',
+          acimaDaBanda: 'acima dos valores de referência da Comissão Europeia, que são ',
+          abaixoDaBanda: 'abaixo dos valores de referência da Comissão Europeia, que são ',
+        },
+        eBanda: ' e ',
+        fimLado: '.',
+        dentroK: 'Os valores de referência de que Portugal ficou dentro',
       },
       metaTitle: 'O Estado do País',
       /* PP1: a descrição acompanha a página nova, os blocos de «O que se passa» e as entradas.
@@ -2345,9 +2360,29 @@ export const STRINGS = {
         indiceIgual: ', igual à base.',
         indexadaAntes: 'As duas linhas valem cem em ',
         indexadaDepois: ': o que cada uma sobe acima de cem é o que cresceu desde então.',
+        /* R4 (05.10.2026, o ponto 3 do brief): o que é a série, por cima da tabela, e o que o último ponto quer dizer em
+           relação ao mesmo período de há um ano (ou ao ponto anterior, quando a série não o tem), com os períodos e os
+           valores pelos seus componentes e a palavra do lado escolhida pela comparação. Sem algarismos. */
+        oQueEK: 'O que é esta série',
+        ultimoEm: { mensal: 'Em ', trimestral: 'No ', semestral: 'No ', anual: 'Em ' },
+        ultimoFoi: ', o valor foi ',
+        ultimoLado: { maior: ': mais do que ', menor: ': menos do que ', igual: ': o mesmo que ' },
+        ultimoReferencia: {
+          mensal: 'no mesmo mês de há um ano, ',
+          trimestral: 'no mesmo trimestre de há um ano, ',
+          semestral: 'no mesmo semestre de há um ano, ',
+          anual: 'no ano anterior, ',
+          anterior: 'no ponto anterior da série, ',
+        },
+        ultimoArtigo: { mensal: '', trimestral: 'o ', semestral: 'o ', anual: '' },
+        ultimoQuando: ', quando foi ',
+        ultimoFim: '.',
       },
       linha: {
         eyebrow: 'Linha do livro-razão',
+        /* R4 (05.10.2026, o ponto 1 do brief): o rótulo do nome com que a fonte publica a medida, por baixo do título do
+           recibo, entre aspas e na língua da fonte. */
+        nomeNaFonteK: 'O nome na fonte',
         aparelhoK: 'Proveniência',
         /* O RÓTULO DO IDENTIFICADOR (bloco B, item B7; achado C13). O id da
            linha rendia-se solto por baixo do valor, e as duas leituras leram-no
@@ -3895,6 +3930,18 @@ export const STRINGS = {
         referencias: ' reference values and within ',
         lista: '. Outside: ',
         fecha: '.',
+        ladoAntes: 'Portugal is ',
+        lados: {
+          acima: 'above the European Commission’s reference value, which is ',
+          abaixo: 'below the European Commission’s reference value, which is ',
+          igual: 'at the European Commission’s reference value, which is ',
+          entre: 'between the European Commission’s reference values, which are ',
+          acimaDaBanda: 'above the European Commission’s reference values, which are ',
+          abaixoDaBanda: 'below the European Commission’s reference values, which are ',
+        },
+        eBanda: ' and ',
+        fimLado: '.',
+        dentroK: 'The reference values Portugal was within',
       },
       metaTitle: 'O Estado do País',
       metaDescription:
@@ -4176,9 +4223,24 @@ export const STRINGS = {
         indiceIgual: ', equal to the base.',
         indexadaAntes: 'Both lines are one hundred in ',
         indexadaDepois: ': how far each rises above one hundred is how much it has grown since then.',
+        oQueEK: 'What this series is',
+        ultimoEm: { mensal: 'In ', trimestral: 'In the ', semestral: 'In the ', anual: 'In ' },
+        ultimoFoi: ', the value was ',
+        ultimoLado: { maior: ': more than ', menor: ': less than ', igual: ': the same as ' },
+        ultimoReferencia: {
+          mensal: 'in the same month a year earlier, ',
+          trimestral: 'in the same quarter a year earlier, ',
+          semestral: 'in the same half-year a year earlier, ',
+          anual: 'in the previous year, ',
+          anterior: 'at the previous point of the series, ',
+        },
+        ultimoArtigo: { mensal: '', trimestral: 'the ', semestral: 'the ', anual: '' },
+        ultimoQuando: ', when it was ',
+        ultimoFim: '.',
       },
       linha: {
         eyebrow: 'Ledger row',
+        nomeNaFonteK: 'The name at the source',
         aparelhoK: 'Provenance',
         identificadorK: 'identifier',
         excertoNota: 'Transcribed from the source, word for word.',

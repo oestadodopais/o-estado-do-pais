@@ -254,6 +254,26 @@ const TETOS = {
      linha pode ainda abrir o recibo no cartão dela. A primeira página já estava na conta e fica com mais
      destinos repetidos pela mesma razão; nenhuma página que o bloco não refez ganhou um. As plantas de
      portas extra continuam a fechar. */
+  /* R4 (05.10.2026): SOBE DE 2 714 PARA 2 736, e a razão é medida e inteira. A frase «o que é» do recibo de uma série
+     com linha é a frase da linha (a decisão 1 do brief R4: a frase é uma, e é a do cartão); quando a linha tem cartão
+     nacional, a frase diz o valor da linha, e o valor leva o seu selo, pela regra do portão de HTML («onde aparece um
+     valor, aparece o selo»), que abre o recibo da linha que a lista «As linhas que são pontos desta série», no mesmo
+     recibo, já abria. A medição (`design/especime-v3/medicoes/r4-2026-10-05/medir-l1-r4.mjs`, com o registo da régua
+     corrida na construção da cabeça de partida, 557844fe, numa worktree à parte) acha 22 páginas novas, que são os
+     recibos das onze séries cuja linha tem cartão, nas duas edições, cada uma com um destino repetido, o recibo da
+     linha da frase; nenhuma página antiga ganhou um destino repetido e nenhuma saiu. Fechar a dívida é dar ao selo da
+     frase e à porta da lista uma porta só, e leva o teto a 2 714. O horizonte continua a zero. */
+  /* R4-b (06.10.2026): VOLTA DE 2 736 A 2 714, e a medida passou a contar as vezes. A leitura a frio do Codex Astra (o
+     achado 10) mostrou o que a medida do R4 não via: ela comparava, por página, o número de destinos repetidos e um
+     exemplo, e 896 páginas que já repetiam um destino passaram a repeti-lo mais vezes (894 recibos com mais uma porta
+     para o documento, pelo título na cabeça, e a primeira página nas duas edições, pelo selo da explicação dos preços da
+     habitação). A causa corrigiu-se: o título do documento diz-se uma vez no corpo do recibo; a frase de uma série diz o
+     valor da linha pelo ponto da série; o selo do valor numa explicação conferida pela V1-R4 e o marcador de uma frase
+     por confirmar na fonte são portas obrigatórias, descontadas como as outras (`scripts/portas-b2.mjs` e a regra do
+     marcador, acima). A medição (`design/especime-v3/medicoes/r4-2026-10-05/medir-l1-r4b.mjs`) conta as vezes de cada
+     destino repetido, página a página, com a cópia da regra que recusa escrever sem bater com esta régua, e acha as 2 714
+     páginas da cabeça de partida com os mesmos destinos e as mesmas vezes; o conhecido-positivo da omissão das vezes
+     prova que a medida antiga passaria calada. */
   /* EX1 (05.10.2026): SOBE DE 2 714 PARA 2 716, e a razão é medida e inteira. A composição em
      `design/especime-v3/medicoes/ex1-2026-10-05/l1-ex1.json` compara a lista inteira desta cabeça com a da construção
      da cabeça de partida (3664b90d), as duas com a amostra aberta: entraram duas páginas e não saiu nenhuma, e as duas
@@ -1117,6 +1137,13 @@ for (const ficheiro of paginas) {
        a A4 do `check:pais` confere que está onde ele a declara e em mais lado
        nenhum. Contá-la como segunda porta era contar a obrigação como escolha. */
     if (a.matches('a.marcador.marcador-de-titulo') && href === routePath('marcador', lang)) continue;
+    /* E O MARCADOR DE UMA FRASE POR CONFIRMAR NA FONTE, pela mesma regra e com o mesmo mecanismo (passagem R4-b,
+       06.10.2026). A frase «o que é» de um recibo com uma parte que nem a fonte nem a conta declarada dizem leva o
+       marcador da casa, com a classe `marcador-da-frase`, dentro de `[data-por-confirmar-na-fonte]`; é obrigatório onde
+       a auditoria das frases o declara, e a K17 do `check:cartao` confere que está onde ela o declara e em mais lado
+       nenhum. Contá-lo como segunda porta era contar a obrigação como escolha. Só se dispensa o destino exato do
+       marcador, e só dentro dessa marca. */
+    if (a.matches('a.marcador.marcador-da-frase') && a.closest('[data-por-confirmar-na-fonte]') && href === routePath('marcador', lang)) continue;
     /* E A PORTA DA ORIGEM DE UMA DEFINIÇÃO QUE É O PRÓPRIO DOCUMENTO DA LINHA, no recibo dessa linha, pela
        mesma regra (bloco R2, 03.10.2026). Cada origem de uma definição rende o seu documento como porta para o
        endereço (a decisão do lugar de direção de 09.09.2026, em `src/components/OrigemDaDefinicao.astro`), e o

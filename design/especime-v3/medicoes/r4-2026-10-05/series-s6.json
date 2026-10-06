@@ -1,0 +1,222 @@
+{
+  "contas": {
+    "series": 24,
+    "pontos": 7839,
+    "derivadas": 2,
+    "pontosRefeitos": 152,
+    "linhasPresas": 12,
+    "cartoesNoUltimo": 12,
+    "recibos": 48,
+    "motor": {
+      "correu": false,
+      "pontos": 0,
+      "razao": "sem RESEARCHHUB_DIR: a metade do motor não corre aqui"
+    }
+  },
+  "erros": {
+    "S1": [],
+    "S2": [],
+    "S3": [],
+    "S4": [],
+    "S5": [],
+    "S6": []
+  },
+  "plantas": [
+    {
+      "celula": "S1",
+      "nome": "um campo que não pertence à forma",
+      "espera": "os campos não são os da forma",
+      "mordeu": true,
+      "primeira": "check:series · serie-ipc-variacao-homologa: os campos não são os da forma, pela ordem dela."
+    },
+    {
+      "celula": "S1",
+      "nome": "um ponto sem excerto",
+      "espera": "não tem os quatro campos",
+      "mordeu": true,
+      "primeira": "check:series · serie-ipc-variacao-homologa: o ponto 1992-01 não tem os quatro campos."
+    },
+    {
+      "celula": "S2",
+      "nome": "um período repetido",
+      "espera": "não são crescentes e sem repetição",
+      "mordeu": true,
+      "primeira": "check:series · serie-ipc-alimentacao-variacao-homologa: os períodos não são crescentes e sem repetição em 1992-01."
+    },
+    {
+      "celula": "S2",
+      "nome": "uma lacuna por declarar",
+      "espera": "faltam na cadência",
+      "mordeu": true,
+      "primeira": "check:series · serie-linha-de-risco-de-pobreza: faltam na cadência [2002, 2003] e as lacunas são []."
+    },
+    {
+      "celula": "S3",
+      "nome": "um valor do INE fora do seu excerto",
+      "espera": "não está no seu excerto como",
+      "mordeu": true,
+      "primeira": "check:series · serie-pensao-media-anual: o valor de 2017 («5 001») não está no seu excerto como \"ind_string\" : \"5 001\"."
+    },
+    {
+      "celula": "S3",
+      "nome": "um valor do Eurostat com o índice de outro período",
+      "espera": "não está no seu excerto com o índice",
+      "mordeu": true,
+      "primeira": "check:series · serie-salario-minimo-mensal: o valor de 1999-S1 («357») não está no seu excerto com o índice do seu período."
+    },
+    {
+      "celula": "S3",
+      "nome": "o valor do ponto só numa anotação, e outro na célula (corpo sintético)",
+      "espera": "a célula 0 da resposta «9.9»",
+      "mordeu": true,
+      "primeira": "o ponto diz «1,5» e a célula 0 da resposta «9.9»"
+    },
+    {
+      "celula": "S3",
+      "nome": "a marca «e» da célula omitida no ponto e no excerto (corpo sintético)",
+      "espera": "tem «e» em status",
+      "mordeu": true,
+      "primeira": "a marca do ponto é «null» e a célula 1 da resposta tem «e» em status"
+    },
+    {
+      "celula": "S4",
+      "nome": "um ponto trocado na série derivada",
+      "espera": "não é a conta refeita",
+      "mordeu": true,
+      "primeira": "check:series · serie-cem-euros-de-2015-01: o ponto 2026-08 («77,168») não é a conta refeita."
+    },
+    {
+      "celula": "S4",
+      "nome": "um ponto trocado no salário real (RP4-m)",
+      "espera": "não é a conta refeita",
+      "mordeu": true,
+      "primeira": "check:series · serie-remuneracao-bruta-mensal-media-real: o ponto 2025 («1 376») não é a conta refeita."
+    },
+    {
+      "celula": "S4",
+      "nome": "o índice anual mexido por baixo do salário real (RP4-m)",
+      "espera": "não é a conta refeita",
+      "mordeu": true,
+      "primeira": "check:series · serie-remuneracao-bruta-mensal-media-real: o ponto 2020 («1 273») não é a conta refeita."
+    },
+    {
+      "celula": "S4",
+      "nome": "a origem mexida por baixo da derivada",
+      "espera": "não é a conta refeita",
+      "mordeu": true,
+      "primeira": "check:series · serie-cem-euros-de-2015-01: o ponto 2026-08 («77,167») não é a conta refeita."
+    },
+    {
+      "celula": "S5",
+      "nome": "um cartão com outro valor do que o ponto",
+      "espera": "não são o ponto da série",
+      "mordeu": true,
+      "primeira": "check:series · ipc-variacao-homologa: o valor e o período da linha (2026-08: 3,31) não são o ponto da série «serie-ipc-variacao-homologa» com o mesmo período."
+    },
+    {
+      "celula": "S5",
+      "nome": "um cartão desfasado: a série tem um ponto mais novo",
+      "espera": "o cartão está desfasado da série",
+      "mordeu": true,
+      "primeira": "check:series · ipc-variacao-homologa: é uma linha mostrada num cartão nacional e o seu período (2026-08) não é o último ponto da série «serie-ipc-variacao-homologa» (2026-09): o cartão está desfasado da série."
+    },
+    {
+      "celula": "S5",
+      "nome": "a comparação da União desfasada da sua série",
+      "espera": "o cartão está desfasado da série",
+      "mordeu": true,
+      "primeira": "check:series · ihpc-variacao-homologa-ue: é uma linha mostrada num cartão nacional e o seu período (2026-08) não é o último ponto da série «serie-ihpc-variacao-homologa-ue» (2026-09): o cartão está desfasado da série."
+    },
+    {
+      "celula": "S6",
+      "nome": "a frase do índice com o lado da base trocado (RP4-m)",
+      "espera": "o lado errado da base",
+      "mordeu": true,
+      "primeira": "check:series · serie-ipc-indice (pt): a frase do índice diz o lado errado da base (esperava «, acima da base.»)."
+    },
+    {
+      "celula": "S6",
+      "nome": "a legenda da figura indexada com as séries trocadas (RP4-m)",
+      "espera": "a legenda da figura indexada",
+      "mordeu": true,
+      "primeira": "check:series · serie-remuneracao-bruta-mensal-media-real (pt): a legenda da figura indexada não tem as séries declaradas, pela ordem."
+    },
+    {
+      "celula": "S6",
+      "nome": "a frase do último ponto com o lado trocado (R4)",
+      "espera": "não é a que esta conta escreve",
+      "mordeu": true,
+      "primeira": "check:series · serie-ipc-rendas-variacao-homologa (pt): a frase do último ponto não é a que esta conta escreve: «Em agosto de 2026, o valor foi 5,22 %: menos do que no mesmo mês de há um ano, agosto de 2025, quando foi 5,08 %.» contra «Em agosto de 2026, o valor foi 5,22 %: mais do que no mesmo mês de há um ano, agosto de 2025, quando foi 5,08 %.»."
+    },
+    {
+      "celula": "S6",
+      "nome": "a frase do último ponto com o período errado (R4)",
+      "espera": "compara com outro período",
+      "mordeu": true,
+      "primeira": "check:series · serie-ipc-rendas-variacao-homologa (en): a frase do último ponto compara com outro período: cita serie-ipc-rendas-variacao-homologa#2026-08, serie-ipc-rendas-variacao-homologa#2026-07, e esta conta compara 2026-08 com 2025-08."
+    },
+    {
+      "celula": "S6",
+      "nome": "a série sem o ponto de há um ano, e a frase ainda a comparar com ele (R4)",
+      "espera": "esta conta compara com «anterior»",
+      "mordeu": true,
+      "primeira": "check:series · serie-ipc-rendas-variacao-homologa (pt): valor fora dos períodos da série"
+    },
+    {
+      "celula": "S6",
+      "nome": "um recibo de série sem a frase do último ponto (R4)",
+      "espera": "frase(s) do que o último ponto quer dizer",
+      "mordeu": true,
+      "primeira": "check:series · serie-ipc-rendas-variacao-homologa (pt): o recibo tem 0 frase(s) do que o último ponto quer dizer, e tem uma."
+    },
+    {
+      "celula": "S6",
+      "nome": "um valor trocado na tabela",
+      "espera": "a linha 1 da tabela diz",
+      "mordeu": true,
+      "primeira": "check:series · serie-remuneracao-bruta-mensal-media (pt): a linha 1 da tabela diz serie-remuneracao-bruta-mensal-media#2025-T1 «1535» «1.º trimestre de 2025» «null» e a série serie-remuneracao-bruta-mensal-media#2025-T1 «1534» «1.º trimestre de 2025» «null»."
+    },
+    {
+      "celula": "S6",
+      "nome": "um ponto tirado da tabela",
+      "espera": "ponto em falta",
+      "mordeu": true,
+      "primeira": "check:series · serie-remuneracao-bruta-mensal-media (pt): ponto em falta ou repetido em 2025-T1"
+    },
+    {
+      "celula": "S6",
+      "nome": "duas colunas trocadas",
+      "espera": "célula não está na coluna",
+      "mordeu": true,
+      "primeira": "check:series · serie-remuneracao-bruta-mensal-media (pt): a célula não está na coluna de 2025-T1"
+    },
+    {
+      "celula": "S6",
+      "nome": "uma lacuna apagada da tabela anual",
+      "espera": "lacuna não é a declarada",
+      "mordeu": true,
+      "primeira": "check:series · serie-linha-de-risco-de-pobreza (pt): a lacuna não é a declarada em 2002"
+    },
+    {
+      "celula": "S6",
+      "nome": "um algarismo solto na tabela",
+      "espera": "algarismos fora das origens admitidas",
+      "mordeu": true,
+      "primeira": "check:series · serie-remuneracao-bruta-mensal-media (pt): a linha do ano 2025 tem algarismos fora das origens admitidas"
+    },
+    {
+      "celula": "S6",
+      "nome": "as duas edições com valores diferentes",
+      "espera": "a linha 1 da tabela diz",
+      "mordeu": true,
+      "primeira": "check:series · serie-remuneracao-bruta-mensal-media (en): a linha 1 da tabela diz serie-remuneracao-bruta-mensal-media#2025-T1 «1533» «1st quarter of 2025» «null» e a série serie-remuneracao-bruta-mensal-media#2025-T1 «1534» «1st quarter of 2025» «null»."
+    },
+    {
+      "celula": "S6",
+      "nome": "o período escrito fora da regra da casa",
+      "espera": "a linha 1 da tabela diz",
+      "mordeu": true,
+      "primeira": "check:series · serie-remuneracao-bruta-mensal-media (pt): a linha 1 da tabela diz serie-remuneracao-bruta-mensal-media#2025-T1 «1534» «primeiro trimestre de 2025» «null» e a série serie-remuneracao-bruta-mensal-media#2025-T1 «1534» «1.º trimestre de 2025» «null»."
+    }
+  ]
+}

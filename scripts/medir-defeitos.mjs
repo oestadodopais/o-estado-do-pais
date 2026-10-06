@@ -55,6 +55,7 @@ import { NOMES_COM_A_VARIACAO_NA_UNIDADE } from '../src/data/unidades-dos-cartoe
 import { temAviso } from '../src/lib/aviso-do-motor.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { NOMES_DAS_SERIES } from '../src/data/series-no-tempo.mjs';
+import { FAMILIAS_DAS_LINHAS, FAMILIAS_DOS_CONCELHOS } from '../src/data/o-que-e-das-familias.mjs';
 import { metaDoEstudoConferida } from './meta-do-estudo.mjs';
 import { leMarcadores, analisa, leInventario, FICHEIRO_DOS_MARCADORES } from './voz.mjs';
 
@@ -858,6 +859,25 @@ const NOMES_POR_FONTE = {
     Object.values(NOMES_DAS_SERIES).flatMap((d) => ('nome' in d ? Object.values(d.nome) : [])),
   ),
 };
+/**
+ * OS NOMES DAS FAMÍLIAS DAS LINHAS SEM NOME DO PROJETO (bloco R4, 05.10.2026). O título do recibo de uma linha sem nome
+ * do projeto é o nome da sua família, declarado em `src/data/o-que-e-das-familias.mjs` (ou, para uma família que lê a
+ * frase do cartão da mesma medida e não declara nome, o nome do cartão dessa medida, pela ordem da escada: a primeira
+ * página, o domínio, a tabela dos nomes do projeto). A régua lê os ficheiros por conta própria e confere o texto
+ * marcado contra o nome DAQUELA família, que a marca diz (`data-de-familia`), nesta edição.
+ * @type {Map<string, Record<string, string>>}
+ */
+const NOMES_DO_CARTAO = new Map([
+  ...Object.entries(NOMES_DO_PROJETO),
+  ...MEDIDAS_DO_DOMINIO_1.filter((m) => m.claim).map((m) => [m.claim, m.nome]),
+  ...FIGURAS.filter((f) => f.claim).map((f) => [f.claim, f.nome]),
+]);
+const NOMES_DAS_FAMILIAS = new Map([
+  ...Object.entries(FAMILIAS_DAS_LINHAS).map(([k, d]) => [k, d.nome ?? (d.cartao ? NOMES_DO_CARTAO.get(d.cartao) : null)]),
+  ...Object.entries(FAMILIAS_DOS_CONCELHOS).map(([k, d]) => [`concelho:${k}`, d.nome]),
+].filter(([, n]) => n));
+NOMES_POR_FONTE.familia = new Set([...NOMES_DAS_FAMILIAS.values()].flatMap((n) => Object.values(n)));
+
 /** O nome declarado de cada série no tempo sem cartão, pelo identificador da série. */
 const NOMES_POR_SERIE = new Map(
   Object.entries(NOMES_DAS_SERIES)
@@ -1398,6 +1418,27 @@ for (const file of ficheiros) {
       }
       continue;
     }
+    /* O NOME DE UMA FAMÍLIA É CONFERIDO CONTRA A SUA FAMÍLIA (bloco R4, 05.10.2026): a marca diz de que família é o
+       nome, e o texto tem de ser o nome dela nesta edição. Sem a marca da família, a identidade não se confere. */
+    if (fonte === 'familia') {
+      const daFamilia = el.getAttribute('data-de-familia');
+      const par = daFamilia ? NOMES_DAS_FAMILIAS.get(daFamilia) : null;
+      const lingua = root.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt';
+      const esperado = par ? norm(par[lingua] ?? '') : null;
+      if (!daFamilia || esperado !== t) {
+        nomesForaDaFonte.push({
+          caminho: caminho || '/',
+          fonte,
+          texto: t,
+          porque: !daFamilia
+            ? 'a marca «data-nome="familia"» não diz de que família é o nome (falta «data-de-familia»)'
+            : par
+              ? `o texto marcado não é o nome da família "${daFamilia}" nesta edição (src/data/o-que-e-das-familias.mjs diz «${esperado}»)`
+              : `a marca diz que o nome é da família "${daFamilia}", que src/data/o-que-e-das-familias.mjs não nomeia`,
+        });
+      }
+      continue;
+    }
     /* O NOME DE UMA MEDIDA É CONFERIDO CONTRA A SUA PRÓPRIA LINHA (Blocking 4).
        Quando a marca diz de que linha o nome é, a pergunta deixa de ser «está
        neste ficheiro?» e passa a ser «é o nome DESTA linha, nesta edição?». */
@@ -1682,7 +1723,15 @@ const PRIVACIDADE_INGLESA_DEPOIS_DO_ENDERECO =
    página, que é a primeira frase do mesmo texto, e que a régua lê como um bloco à parte. */
 const PRIVACIDADE_INGLESA_DESCRICAO =
   'What is kept when you send a suggestion: what you write, the language and the page you came from.';
+/* R4 (05.10.2026, o ponto 4 do brief): «abaixo do valor de referência» e «entre os valores de referência» saíram da página
+   como blocos soltos no B2 e continuam proibidos assim; voltam a render-se só dentro das frases do lado de um valor de
+   referência, por baixo do veredicto da primeira página, que a V1-R4 do `check:pais` reconta (a palavra do lado é a
+   da conta, e o valor de referência e o sinal são origens). As frases admitidas são as que a régua lê, inteiras. */
+const LADO_ABAIXO = 'Portugal está abaixo do valor de referência da Comissão Europeia, que é';
+const LADO_ENTRE = 'Portugal está entre os valores de referência da Comissão Europeia, que são';
 const RETIRADAS_DENTRO_DE_FRASE = new Map([
+  ['abaixo do valor de referência', new Set([`${LADO_ABAIXO} %.`, `${LADO_ABAIXO} − %.`, `${LADO_ABAIXO} − pp.`, `${LADO_ABAIXO} pp.`])],
+  ['entre os valores de referência', new Set([`${LADO_ENTRE} − % e %.`, `${LADO_ENTRE} % e %.`])],
   [
     'Language',
     new Set([

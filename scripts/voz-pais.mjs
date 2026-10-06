@@ -11,7 +11,7 @@ import { leituraDe } from '../src/data/leituras.mjs';
 import { primeirasFrases } from '../src/lib/estudos-b1.mjs';
 import { getClaim } from '../src/lib/ledger.mjs';
 import { POR_VERIFICAR } from '../src/data/marcador.mjs';
-import { verificaVeredictoDoPais } from './pais-veredicto.mjs';
+import { verificaVeredictoDoPais, verificaExplicacoesDoVeredicto } from './pais-veredicto.mjs';
 import { conferirBlocosDaPagina, idsDosBlocos } from '../tests/inicio/blocos.mjs';
 import { documentoDosAssuntos } from '../tests/inicio/paginas-dos-assuntos.mjs';
 import { linhaDoIndice } from '../src/lib/assuntos.mjs';
@@ -60,9 +60,14 @@ export function verificaVozPais(raiz) {
          reconta o texto, os ramos e as linhas de cada bloco; se ela recusar, os blocos ficam na lista
          fechada e a prosa deles é medida como qualquer outra. */
       const blocosConferidos = primeira && conferirBlocosDaPagina(main.parentNode, lang, rota || '/', { ids: idsDosBlocos(), primeira: true }).erros.length === 0;
+      let explicacoesConferidas = false;
       if (primeira) {
         const indice = documentoDosAssuntos(path.join(raiz, 'dist'), lang);
         erros.push(...verificaVeredictoDoPais(main.parentNode, indice, lang));
+        /* R4 (05.10.2026): as explicações dos valores de referência só saem desta lista conferidas pela V1-R4 na
+           mesma corrida (o nome, a frase do cartão, o lado e a referência); se ela recusar, a prosa delas é medida
+           aqui como qualquer outra. */
+        explicacoesConferidas = verificaExplicacoesDoVeredicto(main.parentNode, indice, lang).length === 0;
       }
       /* O rótulo de IA do topo (bloco R1, 23.09.2026) é texto aprovado, que o
          `gate:html` compara carácter a carácter com o oráculo; não é prosa da
@@ -87,6 +92,7 @@ export function verificaVozPais(raiz) {
       for (const c of main.querySelectorAll('[data-cartao-camaras]')) dispensados.add(c);
       /* A marca só sai da lista depois de a V1 conferir a frase inteira. */
       if (rota === '' || rota === 'en') for (const v of main.querySelectorAll('[data-veredicto-pais]')) dispensados.add(v);
+      if (explicacoesConferidas) for (const v of main.querySelectorAll('[data-veredicto-explica]')) dispensados.add(v);
       for (const resumo of main.querySelectorAll('.estudo-resumo')) {
         const w = WORKS.find(w=>w.slug===resumo.closest('[data-estudo]')?.getAttribute('data-estudo'));
         const esperado = w && sinopseEsperada(w, lang);
@@ -111,6 +117,8 @@ export function verificaVozPais(raiz) {
            entradas das declarações do lugar de direção, e as três portas. As três cadeias da pesquisa
            dos lugares saíram com ela (L2a): a pesquisa vive em «Lugares», e aqui seria uma segunda cópia. */
         s.primeira.oQueSePassa, s.primeira.numerosMaisRecentes, s.primeira.porOndeComecar, s.primeira.veredicto,
+        /* R4: o rótulo da porta dobrada com os valores de referência de que Portugal ficou dentro. */
+        s.home.veredicto.dentroK,
         /* O título do bloco «Para perceber» (bloco EX1, 05.10.2026). */
         s.primeira.paraPerceber,
         ...WORKS.filter(w=>w.emCurso).map(w=>s.primeira.emCurso.replace('{ano}', w.emCurso.ate?.slice(0, 4) ?? '[verify]')),

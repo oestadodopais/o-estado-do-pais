@@ -109,7 +109,7 @@ planta('feixe-estados','scripts/design-bundle.mjs',[
    planta, e cada planta com a mordida que a falha esperada tem de casar. */
 /* O título do recibo sem o espaço entre o valor e a unidade (I143). */
 planta('r1-titulo-do-recibo-colado','scripts/gate-html.mjs',[
- ['livro-razao/mourao-desemprego-registado-2025-12/index.html',r=>{const h=r.querySelector('h1.linha-valor');h.childNodes.filter(n=>n.nodeType===3&&!n.rawText.trim()).forEach(n=>h.removeChild(n));}]
+ ['livro-razao/mourao-desemprego-registado-2025-12/index.html',r=>{const h=r.querySelector('p.linha-valor');h.childNodes.filter(n=>n.nodeType===3&&!n.rawText.trim()).forEach(n=>h.removeChild(n));}]
 ],[/cola o valor à unidade/]);
 /* O rótulo de IA de volta ao rodapé, numa página que não é de estudo (I145). */
 planta('r1-rotulo-no-rodape','scripts/gate-html.mjs',[
@@ -714,6 +714,39 @@ planta('rp4cb-zonas-num-cartao','scripts/check-formas.mjs',[
 planta('rp4cb-recibo-sem-zonas','scripts/check-formas.mjs',[
  ['livro-razao/series/serie-ipc-variacao-homologa/index.html',r=>{for(const g of r.querySelector('svg[data-forma="serie-do-pais"]').childNodes.filter(n=>n.rawTagName==='g'&&n.getAttribute('data-eixo')===undefined))g.remove();}]
 ],[/F21 · desenho sem as zonas de leitura fora da porta de um cartão/]);
+/* R4 (05.10.2026): o recibo de cada linha abre com o nome do recibo e a frase «O que é este número». O portão de HTML
+   conta a frase em cada recibo e a régua da voz confere o nome de uma família contra a declaração; as palavras da
+   frase confere-as a K17 do `check:cartao`, com as suas plantas em memória. */
+planta('r4-recibo-sem-frase','scripts/gate-html.mjs',[
+ ['livro-razao/abrantes-populacao-2025/index.html',r=>r.querySelector('[data-o-que-e]').remove()]
+],[/R4: o recibo de «abrantes-populacao-2025» tem 0 frase\(s\) «O que é este número»/,/R4: \d+ de \d+ recibos construídos têm a frase/]);
+planta('r4-frase-de-outra-linha','scripts/gate-html.mjs',[
+ ['en/ledger/posicao-de-investimento-internacional-2025/index.html',r=>r.querySelector('[data-o-que-e]').setAttribute('data-o-que-e','divida-publica-2025')]
+],[/R4: a frase do recibo de «posicao-de-investimento-internacional-2025» diz ser de «divida-publica-2025»/]);
+planta('r4-titulo-sem-nome','scripts/gate-html.mjs',[
+ ['livro-razao/credito-malparado-2024/index.html',r=>r.querySelector('[data-de-linha="credito-malparado-2024"]').set_content('')]
+],[/R4: o título do recibo de «credito-malparado-2024» não tem o nome do recibo/]);
+planta('r4-voz-nome-da-familia-trocado','scripts/check-voz.mjs',[
+ ['livro-razao/credito-malparado-2024/index.html',r=>r.querySelector('[data-de-linha="credito-malparado-2024"]').set_content('Crédito à habitação')]
+],[/«data-nome="familia"» sobre «Crédito à habitação» · o texto marcado não é o nome da família "credito-malparado"/]);
+/* R4, a primeira página: o lado de um valor de referência trocado na construção (a marca e as palavras), que só a conta
+   da V1-R4 do `check:pais` recusa; e o fragmento retirado «abaixo do valor de referência» solto num bloco, que a régua da
+   voz continua a recusar fora das frases do lado que ela admite. */
+planta('r4-pais-lado-trocado','scripts/check-pais.mjs',[
+ ['index.html',r=>{const i=r.querySelector('[data-veredicto-explica="divida-publica-2025"]');i.setAttribute('data-veredicto-lado','abaixo');const f=i.querySelector('[data-veredicto-lado-frase]');f.set_content(f.innerHTML.replace('acima do valor','abaixo do valor'));}]
+],[/V1-R4 pt: «divida-publica-2025»: a explicação diz o lado «abaixo», e a conta desta célula dá «acima»/]);
+planta('r4-voz-fragmento-retirado-solto','scripts/check-voz.mjs',[
+ ['index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>abaixo do valor de referência</p>')]
+],[/FRASE RETIRADA QUE VOLTOU A RENDER-SE/,/«abaixo do valor de referência»/]);
+/* R4-b (06.10.2026): o marcador da frase por confirmar na fonte só sai da L1 dentro da sua marca; duas cópias fora dela,
+   num recibo sem destinos repetidos, são uma página a mais na régua. E a parte do sinal tirada da explicação da posição
+   de investimento internacional na primeira página, que a V1-R4 do `check:pais` recusa. */
+planta('r4b-l1-marcador-fora-da-marca','scripts/check-lugar.mjs',[
+ ['livro-razao/funchal-desemprego-registado-2025-12/index.html',r=>{const a=r.querySelector('[data-por-confirmar-na-fonte] a.marcador-da-frase');r.querySelector('main').insertAdjacentHTML('beforeend',`<p>${a.outerHTML} ${a.outerHTML}</p>`);}]
+],[/L1 · páginas com dois destinos iguais fora da mobília: \d+, acima do teto/]);
+planta('r4b-pais-sinal-tirado','scripts/check-pais.mjs',[
+ ['en/index.html',r=>r.querySelector('[data-veredicto-sinal="posicao-de-investimento-internacional-2025"]').remove()]
+],[/V1-R4 en: «posicao-de-investimento-internacional-2025»: a explicação não diz o que o sinal quer dizer/]);
 
 /* EX1 (05.10.2026): as explicações e a leitura da semana. Estragos sobre páginas realmente construídas, repostos no
    finally de cada planta e conferidos por sha256; correm fora do `verify`, com `--prefixo ex1-` e `OEDP_MEDICOES` a

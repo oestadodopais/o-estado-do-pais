@@ -1,0 +1,1 @@
+OEDP_LEITURAS_EUROSTAT= node $M/medir-r4.mjs > $M/r4b/medir-r4.log 2>&1  44.67s user 2.85s system 113% cpu 41.720 total

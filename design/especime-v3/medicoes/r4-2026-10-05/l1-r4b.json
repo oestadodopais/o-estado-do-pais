@@ -1,0 +1,155 @@
+{
+  "o_que_e": "R4-b: a L1 desta construção contra a da cabeça de partida (557844fe) e a da cabeça do R4 (57d81ea6), com as vezes de cada destino repetido contadas página a página; a régua sem mudança no que conta, com o marcador da frase por confirmar e o selo de um valor numa explicação conferida pela V1-R4 descontados como as outras portas obrigatórias.",
+  "data": "2026-10-06T04:13:13.752Z",
+  "cabeca": "00216fc45a8f56bbbc4bccf7d5e1189f091136e2",
+  "estado_seguido": "",
+  "construcao": "00216fc45a8f56bbbc4bccf7d5e1189f091136e2",
+  "base": {
+    "cabeca": "557844fe",
+    "contagem": "l1-destinos-557844fe.json",
+    "proveniencia": "l1-base-557844fe-r4b.json"
+  },
+  "r4": {
+    "cabeca": "57d81ea6",
+    "contagem": "l1-destinos-57d81ea6.json"
+  },
+  "origem": "design/especime-v3/medicoes/r4-2026-10-05/l1-r4b-check-lugar.log",
+  "codigo_da_regua": 1,
+  "contagens": {
+    "estudos": 2714,
+    "l1_paginas": 2714,
+    "teto_lido": 2736,
+    "base": 2714,
+    "r4": 2736,
+    "agora": 2714,
+    "r4b_novas": 0,
+    "r4b_sairam": 0,
+    "r4b_agravadas": 0,
+    "r4b_aliviadas": 0,
+    "r4b_iguais": 2714,
+    "r4_novas": 22,
+    "r4_agravadas_com_vezes": 896,
+    "r4_agravadas_sem_vezes": 0
+  },
+  "r4_agravadas_exemplo": [
+    {
+      "pagina": "/",
+      "antes": {
+        "/livro-razao/ipc-combustiveis-variacao-homologa": 2,
+        "/livro-razao/ipc-variacao-homologa": 2,
+        "/livro-razao/ihpc-variacao-homologa": 2,
+        "/livro-razao/ihpc-variacao-homologa-ue": 2,
+        "/precos": 2,
+        "/livro-razao/precos-da-habitacao-2025": 2,
+        "/livro-razao/precos-da-habitacao-2025-ue": 2,
+        "/livro-razao/ipc-sem-habitacao-variacao-media-12-meses": 2,
+        "/habitacao": 2,
+        "/livro-razao/remuneracao-bruta-mensal-media-periodo-anterior": 2,
+        "/livro-razao/remuneracao-bruta-mensal-media": 2,
+        "/emprego": 2,
+        "/livro-razao/divida-publica-2025-notificacao-ine-2026-09": 2,
+        "/estado-e-economia": 2,
+        "/livro-razao/racio-s80-s20-2025": 2,
+        "/livro-razao/racio-s80-s20-2025-ue": 2,
+        "/pobreza-e-desigualdade": 2
+      },
+      "r4": {
+        "/livro-razao/ipc-combustiveis-variacao-homologa": 2,
+        "/livro-razao/ipc-variacao-homologa": 2,
+        "/livro-razao/ihpc-variacao-homologa": 2,
+        "/livro-razao/ihpc-variacao-homologa-ue": 2,
+        "/precos": 2,
+        "/livro-razao/precos-da-habitacao-2025": 3,
+        "/livro-razao/precos-da-habitacao-2025-ue": 2,
+        "/livro-razao/ipc-sem-habitacao-variacao-media-12-meses": 2,
+        "/habitacao": 2,
+        "/livro-razao/remuneracao-bruta-mensal-media-periodo-anterior": 2,
+        "/livro-razao/remuneracao-bruta-mensal-media": 2,
+        "/emprego": 2,
+        "/livro-razao/divida-publica-2025-notificacao-ine-2026-09": 2,
+        "/estado-e-economia": 2,
+        "/livro-razao/racio-s80-s20-2025": 2,
+        "/livro-razao/racio-s80-s20-2025-ue": 2,
+        "/pobreza-e-desigualdade": 2
+      }
+    },
+    {
+      "pagina": "/en",
+      "antes": {
+        "/en/ledger/ipc-combustiveis-variacao-homologa": 2,
+        "/en/ledger/ipc-variacao-homologa": 2,
+        "/en/ledger/ihpc-variacao-homologa": 2,
+        "/en/ledger/ihpc-variacao-homologa-ue": 2,
+        "/en/prices": 2,
+        "/en/ledger/precos-da-habitacao-2025": 2,
+        "/en/ledger/precos-da-habitacao-2025-ue": 2,
+        "/en/ledger/ipc-sem-habitacao-variacao-media-12-meses": 2,
+        "/en/housing": 2,
+        "/en/ledger/remuneracao-bruta-mensal-media-periodo-anterior": 2,
+        "/en/ledger/remuneracao-bruta-mensal-media": 2,
+        "/en/employment": 2,
+        "/en/ledger/divida-publica-2025-notificacao-ine-2026-09": 2,
+        "/en/state-and-economy": 2,
+        "/en/ledger/racio-s80-s20-2025": 2,
+        "/en/ledger/racio-s80-s20-2025-ue": 2,
+        "/en/poverty-and-inequality": 2
+      },
+      "r4": {
+        "/en/ledger/ipc-combustiveis-variacao-homologa": 2,
+        "/en/ledger/ipc-variacao-homologa": 2,
+        "/en/ledger/ihpc-variacao-homologa": 2,
+        "/en/ledger/ihpc-variacao-homologa-ue": 2,
+        "/en/prices": 2,
+        "/en/ledger/precos-da-habitacao-2025": 3,
+        "/en/ledger/precos-da-habitacao-2025-ue": 2,
+        "/en/ledger/ipc-sem-habitacao-variacao-media-12-meses": 2,
+        "/en/housing": 2,
+        "/en/ledger/remuneracao-bruta-mensal-media-periodo-anterior": 2,
+        "/en/ledger/remuneracao-bruta-mensal-media": 2,
+        "/en/employment": 2,
+        "/en/ledger/divida-publica-2025-notificacao-ine-2026-09": 2,
+        "/en/state-and-economy": 2,
+        "/en/ledger/racio-s80-s20-2025": 2,
+        "/en/ledger/racio-s80-s20-2025-ue": 2,
+        "/en/poverty-and-inequality": 2
+      }
+    },
+    {
+      "pagina": "/en/ledger/abandono-escolar-precoce-2024",
+      "antes": {
+        "https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_14/default/table?lang=en": 3
+      },
+      "r4": {
+        "https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_14/default/table?lang=en": 4
+      }
+    },
+    {
+      "pagina": "/en/ledger/abandono-escolar-precoce-2025",
+      "antes": {
+        "https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_14/default/table?lang=en": 3
+      },
+      "r4": {
+        "https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_14/default/table?lang=en": 4
+      }
+    },
+    {
+      "pagina": "/en/ledger/abandono-escolar-precoce-2025-ue",
+      "antes": {
+        "https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_14/default/table?lang=en": 3
+      },
+      "r4": {
+        "https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_14/default/table?lang=en": 4
+      }
+    }
+  ],
+  "conhecidos_positivos": [
+    {
+      "nome": "Uma entrada retirada da lista deixa de reconciliar com a contagem da régua",
+      "mordeu": true
+    },
+    {
+      "nome": "A omissão das vezes: um destino de /distritos/ilha-da-graciosa a repetir-se mais uma vez, em memória, é agravado com as vezes e passa calado na comparação do R4",
+      "mordeu": true
+    }
+  ]
+}
