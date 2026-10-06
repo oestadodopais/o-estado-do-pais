@@ -6,7 +6,7 @@ import { parse } from 'node-html-parser';
 import { dadosDaIncorporacao } from '../../src/lib/incorporar.mjs';
 import { allClaims } from '../../src/lib/ledger.mjs';
 import { routePath, matchPath } from '../../src/lib/routes.mjs';
-import { conferirCodigo, dadosEsperados, tirarCodigoConferido, conferirCors, conferirJson } from '../../scripts/incorporar-do-portao.mjs';
+import { conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson } from '../../scripts/incorporar-do-portao.mjs';
 const dist = process.env.OEDP_DIST || 'dist';
 const linhas = allClaims();
 const resultados = { comando: 'node tests/incorporar/conferir.mjs', recibos: 0, json: 0, plantas: [] };
@@ -15,7 +15,7 @@ for (const c of linhas) {
   for (const lang of ['pt','en']) {
     assert.deepEqual(conferirJson(doc, c, lang), [], `ER1 JSON: a apresentação de ${c.id} difere da linha (${lang}).`);
     const rota = routePath('linha', lang, {slug:c.id});
-    const root = parse(fs.readFileSync(`${dist}${rota}/index.html`, 'utf8'));
+    const root = lerPaginaComCodigo(fs.readFileSync(`${dist}${rota}/index.html`, 'utf8'));
     assert.deepEqual(conferirCodigo(root, matchPath(rota)), []);
     resultados.recibos++;
   }
@@ -24,8 +24,8 @@ for (const c of linhas) {
 const c = linhas.find(c => c.source_url && c.corrections?.some(x => x.kind === 'atualizacao' && x.new_value === c.value));
 const rota = matchPath(routePath('linha','pt',{slug:c.id}));
 const inteiro = fs.readFileSync(`${dist}${routePath('linha','pt',{slug:c.id})}/index.html`, 'utf8');
-function planta(nome, muda, mensagem) {
-  const root = parse(inteiro);
+function planta(nome, muda, mensagem, html = inteiro) {
+  const root = lerPaginaComCodigo(html);
   muda(root);
   assert(conferirCodigo(root, rota).includes(mensagem), `${nome}: falta a mensagem ${mensagem}`);
   assert.throws(() => tirarCodigoConferido(root, rota), {message: new RegExp(mensagem.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))});
@@ -38,6 +38,11 @@ planta('valor-trocado', root => {
 planta('codigo-em-falta', root=>root.querySelector('textarea').remove(), 'ER1 código: falta o único código do recibo.');
 planta('marca-no-paragrafo', root=>root.querySelector('p').setAttribute('data-incorporar-codigo',c.id), 'ER1 código: marca fora do campo do recibo da própria linha.');
 planta('codigo-editavel', root=>root.querySelector('textarea').removeAttribute('readonly'), 'ER1 código: marca fora do campo do recibo da própria linha.');
+planta('comentario-no-codigo', ()=>{}, 'ER1 código: o pedaço difere da linha, carácter a carácter.',
+  inteiro.replace(/(<textarea\b[^>]*>)/, '$1<!--planta-->'));
+const mensagemLeitura = 'ER1 código: falta a leitura literal do campo.';
+assert(conferirCodigo(parse(inteiro), rota).includes(mensagemLeitura));
+resultados.plantas.push({nome:'leitura-nao-literal',mensagem:mensagemLeitura,mordeu:true});
 const caminhos = [`/livro-razao/${c.id}.json`, '/livro-razao.json', '/livro-razao.csv', '/incorporar.js', '/', `/livro-razao/${c.id}`];
 const vercel = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
 const respostas = caminhos.map(caminho=> {

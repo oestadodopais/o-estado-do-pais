@@ -87,7 +87,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'node-html-parser';
-import { tirarCodigoConferido } from '../../scripts/incorporar-do-portao.mjs';
+import { tirarCodigoConferido, lerPaginaComCodigo } from '../../scripts/incorporar-do-portao.mjs';
 import { matchPath } from '../../src/lib/routes.mjs';
 
 /**
@@ -424,7 +424,7 @@ const paginas = [];
 const arvore = new Map();
 const dom = (pag) => {
   if (!arvore.has(pag.caminho)) {
-    const doc = parse(pag.html);
+    const doc = lerPaginaComCodigo(pag.html);
     tirarCodigoConferido(doc, matchPath(pag.rota));
     for (const el of doc.querySelectorAll('script, style, template')) el.remove();
     arvore.set(pag.caminho, doc.querySelector('body') ?? doc);
@@ -1887,15 +1887,17 @@ const fim = async () => {
       const pag = paginas.find(p => p.html.includes('data-incorporar-codigo'));
       const plantas = [];
       if (!pag) { falhas.push('ER1 índice: falta um recibo para plantar.'); return ''; }
-      for (const nome of ['codigo-alterado', 'marca-fora-do-campo']) {
-        const copia = parse(pag.html);
+      for (const nome of ['codigo-alterado', 'marca-fora-do-campo', 'comentario-no-codigo']) {
+        const literal = nome === 'comentario-no-codigo'
+          ? pag.html.replace(/(<textarea\b[^>]*>)/, '$1<!--planta-->') : pag.html;
+        const copia = lerPaginaComCodigo(literal);
         if (nome === 'codigo-alterado') {
           const campo = copia.querySelector('[data-incorporar-codigo]');
           campo.set_content(campo.innerHTML + ' alterado');
-        } else copia.querySelector('p').setAttribute('data-incorporar-codigo', 'falso');
-        const mensagem = nome === 'codigo-alterado'
-          ? 'ER1 código: o pedaço difere da linha, carácter a carácter.'
-          : 'ER1 código: marca fora do campo do recibo da própria linha.';
+        } else if (nome === 'marca-fora-do-campo') copia.querySelector('p').setAttribute('data-incorporar-codigo', 'falso');
+        const mensagem = nome === 'marca-fora-do-campo'
+          ? 'ER1 código: marca fora do campo do recibo da própria linha.'
+          : 'ER1 código: o pedaço difere da linha, carácter a carácter.';
         let queixa = '';
         try { dom({ ...pag, caminho: pag.caminho + '#' + nome, html: copia.toString() }); }
         catch (e) { queixa = e.message; }
@@ -1905,7 +1907,7 @@ const fim = async () => {
       }
       medida.plantas_incorporacao = plantas;
       console.log(JSON.stringify({ plantas_incorporacao: plantas }));
-      return 'A mesma leitura do índice recusa o campo alterado e a marca fora dele.';
+      return 'A mesma leitura do índice recusa o campo alterado, o comentário e a marca fora dele.';
     });
   }
   if (NAVEGADOR) await comNavegador();

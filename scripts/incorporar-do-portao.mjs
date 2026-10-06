@@ -9,6 +9,17 @@ import { dataDaCasa } from '../src/lib/datas.mjs';
 import { t } from '../src/i18n/strings.mjs';
 import { LICENCA } from '../src/data/licenca.mjs';
 import { SITE_HOST_DISPLAY } from '../site.config.mjs';
+import { parse } from 'node-html-parser';
+const leiturasLiterais = new WeakSet();
+
+/* O textarea é texto literal, como no navegador. O analisador genérico elimina
+   comentários, o que faria comparar menos caracteres do que o botão copia. */
+export function lerPaginaComCodigo(html, opcoes = {}) {
+  const blocos = opcoes.blockTextElements ?? { script: true, noscript: true, style: true, pre: true };
+  const root = parse(html, { ...opcoes, blockTextElements: { ...blocos, textarea: true } });
+  leiturasLiterais.add(root);
+  return root;
+}
 const linhas = new Map(allClaims().map(c => [c.id, c]));
 const escape = x => String(x ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
 
@@ -48,6 +59,7 @@ export function codigoEsperado(c, lang) {
 export function conferirCodigo(root, rota) {
   const erros = [];
   const campos = root.querySelectorAll('[data-incorporar-codigo]');
+  if (campos.length && !leiturasLiterais.has(root)) erros.push('ER1 código: falta a leitura literal do campo.');
   const linha = rota?.key === 'linha' ? linhas.get(rota.params.slug) : null;
   if (linha && LICENCA && campos.length !== 1) erros.push('ER1 código: falta o único código do recibo.');
   if (linha && LICENCA) {

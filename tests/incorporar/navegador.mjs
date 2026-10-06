@@ -12,6 +12,7 @@ import { SITE_URL, SITE_HOST_DISPLAY } from '../../site.config.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
 import { t } from '../../src/i18n/strings.mjs';
 import { dadosDaIncorporacao } from '../../src/lib/incorporar.mjs';
+import { lerPaginaComCodigo } from '../../scripts/incorporar-do-portao.mjs';
 const dist = path.resolve(process.env.OEDP_DIST || 'dist');
 const i = process.argv.indexOf('--json');
 const saida = i>0 ? process.argv[i+1] : null;
@@ -119,6 +120,18 @@ try {
     await ctx.close();
   }
   modoAtual='normal';
+  // A comparação usa os caracteres que o navegador entrega ao botão de cópia.
+  {
+    const contexto=await navegador.newContext();
+    const pagina=await contexto.newPage();
+    const literal='<textarea>&lt;p&gt;<!--planta-->&lt;/p&gt;</textarea>';
+    await pagina.setContent(literal);
+    const copiado=await pagina.locator('textarea').inputValue();
+    assert.equal(copiado,'<p><!--planta--></p>');
+    assert.equal(lerPaginaComCodigo(literal).querySelector('textarea').textContent,copiado);
+    r.casos.push({lang:'pt',modo:'codigo-literal',comentarioConservado:true,textoCopiado:copiado});
+    await contexto.close();
+  }
   // O botão é exercido pelos dois caminhos, com sucesso e com recusa do clipboard.
   for(const lang of ['pt','en']){
     const ctx=await navegador.newContext({viewport:{width:390,height:900},reducedMotion:'reduce',colorScheme:'light'});
