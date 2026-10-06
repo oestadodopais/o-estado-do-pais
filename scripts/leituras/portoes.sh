@@ -37,7 +37,7 @@ done
 dono="$(cat "$tranca")"
 filho=""
 mediu=0
-fechar() {
+soltar_a_tranca() {
   resultado=$?
   # A limpeza não pode ser cortada a meio, deixando a tranca órfã.
   trap '' INT TERM
@@ -54,7 +54,7 @@ fechar() {
   fi
   exit "$resultado"
 }
-trap fechar EXIT
+trap soltar_a_tranca EXIT
 interromper() {
   trap '' INT TERM
   if [ -n "$filho" ]; then
