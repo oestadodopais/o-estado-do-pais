@@ -18,21 +18,14 @@ Três blocos estão prontos e por aterrar numa só fusão, no ramo `aterragem-20
 
 ## O que custou (a semana do Codex num dia)
 
-A semana do Codex (o plano maior) gastou-se num dia: 3 % às 09:00 UTC, 80 % às 13:50, 95 % às 16:10, 99 % às 17:16 (as duas passagens em curso ultrapassaram o teto de 95 % da §1.176; nada se lançou depois dele). Os símbolos por registo, lidos dos registos dos lançamentos desta sessão:
+A semana do Codex (o plano maior) gastou-se num dia: 3 % às 09:00 UTC, 80 % às 13:50, 95 % às 16:10, 99 % às 17:16 (as duas passagens em curso ultrapassaram o teto de 95 % da §1.176; nada se lançou depois dele). Os símbolos por registo, lidos dos registos dos lançamentos de hoje (os ficheiros de registo com data de 06.10.2026):
 
 | Registo | Símbolos («tokens used») |
 |---|---:|
-| `c2/leitura-astra.md.eventos.log` | 199 737 |
-| `ensaio-leituras/LEITURA-RP4-gpt-6-astra-high.md.eventos.log` | 119 045 |
-| `ensaio-leituras/LEITURA-RP4-gpt-6-astra-xhigh.md.eventos.log` | 160 377 |
-| `ensaio-leituras/LEITURA-RP4-gpt-6.1-sol-high.md.eventos.log` | 288 905 |
-| `ensaio-leituras/LEITURA-RP4-gpt-6.1-sol-xhigh.md.eventos.log` | 208 872 |
 | `er1/construir.log` | 991 409 |
 | `ex1/leitura-astra.md.eventos.log` | 323 575 |
 | `ex2/construir-b.log` | 653 095 |
 | `ex2/construir.log` | 643 563 |
-| `h2/construir.log` | 949 814 |
-| `h3/leitura-astra.md.eventos.log` | 216 669 |
 | `h4/construir-b.log` | 344 883 |
 | `h4/construir-c.log` | 147 619 |
 | `h4/construir-d.log` | 440 289 |
@@ -40,31 +33,15 @@ A semana do Codex (o plano maior) gastou-se num dia: 3 % às 09:00 UTC, 80 % às
 | `h4/e/LEITURA-codex-h4e.md.eventos.log` | 97 445 |
 | `juros/construir.log` | 1 581 631 |
 | `juros/pesquisa.eventos.log` | 221 785 |
-| `k2/LEITURA-sol.md.eventos.log` | 227 998 |
-| `l2b/LEITURA-sol.md.eventos.log` | 247 843 |
 | `maquinaria/construir-b.log` | 553 189 |
 | `maquinaria/construir.log` | 664 430 |
-| `oe1/construir.log` | 3 666 976 |
-| `p4/LEITURA-p4-sol.md.eventos.log` | 258 546 |
-| `r3/LEITURA-r3-sol.md.eventos.log` | 188 618 |
-| `r3/LEITURA-r3b-sol.md.eventos.log` | 175 820 |
 | `r4/leitura-astra.md.eventos.log` | 218 794 |
 | `revisao-maquinaria/revisao-astra.md.eventos.log` | 331 925 |
 | `revisao-regras/revisao-astra.md.eventos.log` | 245 401 |
-| `rotulos/AUDITORIA-r2-sol.md.eventos.log` | 225 785 |
-| `rotulos/LEITURA-r2-sol.md.eventos.log` | 317 537 |
-| `rp3/LEITURA-rp3-sol.md.eventos.log` | 260 773 |
-| `rp3/LEITURA-rp3b-sol.md.eventos.log` | 158 090 |
-| `rp4/construir-b.log` | 503 278 |
-| `rp4/construir.log` | 1 017 591 |
-| `rp4c/leitura-astra.md.eventos.log` | 213 608 |
-| `rp4m/leitura-astra.md.eventos.log` | 228 990 |
 | `rp4n/construir-b.log` | 443 295 |
 | `rp4n/construir-c.log` | 465 726 |
 | `rp4n/construir.log` | 1 262 368 |
-| `s1/LEITURA-s1-sol.md.eventos.log` | 246 029 |
-| `ue2/LEITURA-sol.md.eventos.log` | 230 593 |
-| **Total dos registos com a linha** | **20 367 820** |
+| **Total dos registos de hoje com a linha** | **10 056 326** |
 
 As leituras do Opus de hoje: EX2 350 369 e 306 644; M-A 325 236 e 286 282; H4 352 418 e 281 094; ER1 329 667; H4-e 292 790 e 358 631; a leitura do Codex da H4-e: 97 445. O Claude estava a 77 % da semana às 17:39 UTC.
 
