@@ -22,6 +22,7 @@ for (const [lang, ficheiro] of [['pt', 'dist/metodo/index.html'], ['en', 'dist/e
   intactas.push({ lang, ficheiro, sha256: sha, falhas: limpas });
   const plantas = [
     ['um lugar a mais', (r) => r.querySelector('.politica-lugares').insertAdjacentHTML('beforeend', '<li>Medição inventada</li>'), 'H4 IA: a política tem de dizer três lugares.'],
+    ['o título antigo', (r) => r.querySelector('.politica-lugares').parentNode.parentNode.querySelector('.regra-k').set_content(lang === 'pt' ? 'Os lugares' : 'The places'), 'H4 IA: o título dos papéis difere da redação decidida.'],
     ['a construção em falta', (r) => r.querySelectorAll('.politica-lugares li')[1].remove(), 'H4 IA: a política tem de dizer três lugares.'],
     ['a medição no lugar da leitura', (r) => r.querySelectorAll('.politica-lugares li')[2].set_content('Medição inventada'), 'H4 IA: os lugares não são os da redação decidida.'],
     ['a introdução antiga', (r) => r.querySelector('.politica-lugares').parentNode.querySelectorAll('p')[0].set_content(lang === 'pt' ? 'São quatro lugares.' : 'There are four places.'), 'H4 IA: a introdução dos lugares difere da redação decidida.'],

@@ -397,22 +397,22 @@ export const POLITICA = {
       {
         rotulo: { pt: 'A direção', en: 'Direction' },
         texto: {
-          pt: 'decide o que se faz, encomenda cada mudança e revê-a antes de se publicar; os números novos que as fontes publicam entram pelos portões, sem a direção os ler um a um.',
-          en: 'decides what is done, commissions each change and reviews it before it is published; new figures from the sources enter through the gates, without direction reading them one by one.',
+          pt: 'decide o que se faz, encomenda cada mudança e revê-a antes de se publicar, e escreve as explicações e os textos sobre este projeto, que a outra família de modelos lê antes de se publicarem; os números novos que as fontes publicam entram pelas verificações automáticas, sem a direção os ler um a um.',
+          en: 'decides what is done, commissions each change and reviews it before it is published, and writes the explanations and the texts about this project, which the other family of models reads before they are published; new figures from the sources enter through the automated checks, without direction reading them one by one.',
         },
       },
       {
         rotulo: { pt: 'A construção', en: 'Building' },
         texto: {
-          pt: 'constrói as páginas e o motor que lê as fontes; cada número que publica traz a fonte e a data em que foi lido.',
-          en: 'builds the pages and the engine that reads the sources; every number it publishes carries its source and the date it was read.',
+          pt: 'faz as páginas e o motor que lê as fontes; cada número que publica traz a sua fonte e a data em que foi lido, ou diz o que ainda está por confirmar.',
+          en: 'makes the pages and the engine that reads the sources; every number it publishes carries its source and the date it was read, or says what is still to be confirmed.',
         },
       },
       {
         rotulo: { pt: 'A leitura', en: 'Reading' },
         texto: {
-          pt: 'lê o que a construção entregou, sem contexto prévio e com erros plantados de propósito, para provar que os encontra, antes de se publicar.',
-          en: 'reads what building delivered, with no prior context and with errors planted on purpose, to prove it finds them, before it is published.',
+          pt: 'confere o que a construção entregou, sem contexto prévio e com erros plantados de propósito, para provar que os encontra, antes de se publicar.',
+          en: 'checks what building delivered, with no prior context and with errors planted on purpose, to prove it finds them, before it is published.',
         },
       },
     ],
@@ -428,7 +428,7 @@ export const POLITICA = {
         'Building and reading are always done by different families of models: the model that built a change never reads it. ' +
           'The Claude models from Anthropic hold the direction; building and reading are held by the Claude models ' +
           'and by Codex from OpenAI. A new model takes ' +
-          'a role only after passing the same tests the incumbent passed, and the change ' +
+          'a role only after passing the same tests the incumbent passed, and the replacement ' +
           'is written down with its date.',
       ],
     },
