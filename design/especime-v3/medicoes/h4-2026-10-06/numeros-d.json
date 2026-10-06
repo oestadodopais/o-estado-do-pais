@@ -1,0 +1,7 @@
+{
+  "comando": "python3 scripts/leituras/conferir-relatorio.py design/especime-v3/medicoes/h4-2026-10-06/LEIA-ME.md design/especime-v3/medicoes/h4-2026-10-06 --json design/especime-v3/medicoes/h4-2026-10-06/numeros-relatorio-d.json",
+  "codigo": 0,
+  "tranca_da_maquina": false,
+  "duracao_segundos": 0.199,
+  "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9"
+}

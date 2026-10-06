@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { contarFrasesDasMudancas, errosDoSeloDaDefinicao } from '../tests/explicacoes/o-que-e.mjs';
+import { conferirLugaresIA } from './lugares-ia-do-portao.mjs';
 import { conferirValorUnidade } from './valor-unidade.mjs';
 import { nomeNoRegistoAdmitido } from './nome-no-registo.mjs';
 import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
@@ -5876,6 +5877,8 @@ for (const file of ficheirosHtml(DIST)) {
      * uma frase inglesa numa página portuguesa passava por estar declarada
      * inglesa. O atributo é do gabarito e não é prova de nada.
      */
+    /* H4: os lugares conferem-se nas duas edições do Método, além do rótulo legal. */
+    if (rota?.key === 'metodo') for (const e of conferirLugaresIA(root, linguaPagina)) err(e);
     const frases = root.querySelectorAll('[data-frase-da-politica]');
     ROTULO_DE_IA.frase += frases.length;
     /* A FRASE DA POLÍTICA FICOU SÓ NO MÉTODO (P1, item 3, 15.09.2026). Era do

@@ -364,7 +364,7 @@ export const POLITICA = {
   },
 
   /**
-   * OS QUATRO LUGARES, SEM UM ÚNICO ALGARISMO (segunda passagem, 01.09.2026).
+   * OS LUGARES, SEM UM ÚNICO ALGARISMO (segunda passagem, 01.09.2026).
    *
    * A primeira passagem escreveu os nomes dos modelos com a versão («Claude
    * Opus 5», «gpt-5.6-sol») e marcou os algarismos `identificador-tecnico`. A
@@ -381,53 +381,54 @@ export const POLITICA = {
    * leitor diz o que a coisa é: mede sem ver a construção, lê sem contexto
    * prévio.
    */
+  /* H4, 06.10.2026: redação decidida pelo lugar de direção (§1.173) e reescrita na
+     passagem H4-e pela leitura curta do diff: a secção diz os três papéis em palavras
+     correntes, sem «peça» (que o §1.98 fecha) nem «lugares» (que no sítio são os
+     concelhos), diz uma vez só que a construção e a leitura são de famílias
+     diferentes, e distingue o que a construção faz com cada número (a fonte e a
+     data) do que a leitura faz com o que foi construído. */
   lugares: {
-    titulo: { pt: 'Os lugares', en: 'The places' },
+    titulo: { pt: 'Os três papéis', en: 'The three roles' },
     intro: {
-      pt: ['São quatro lugares, e a verificação é sempre de outra família de modelos:'],
-      en: ['There are four places, and checking is always done by a different family of models:'],
+      pt: ['São três papéis, todos de modelos: a direção, a construção e a leitura.'],
+      en: ['There are three roles, all held by models: direction, building and reading.'],
     },
     itens: [
       {
         rotulo: { pt: 'A direção', en: 'Direction' },
         texto: {
-          pt: 'dirige o trabalho: escreve os briefs, revê e funde.',
-          en: 'directs the work: it writes the briefs, reviews and merges.',
+          pt: 'decide o que se faz, encomenda cada mudança, revê e aprova o que se publica.',
+          en: 'decides what is done, commissions each change, reviews and approves what is published.',
         },
       },
       {
         rotulo: { pt: 'A construção', en: 'Building' },
         texto: {
-          pt: 'constrói o sítio, e verifica lotes na fonte.',
-          en: 'builds the site, and checks batches at the source.',
-        },
-      },
-      {
-        rotulo: { pt: 'A medição', en: 'Measurement' },
-        texto: {
-          pt: 'mede numa cópia, com código próprio, sem ver a construção.',
-          en: 'measures on a copy, with its own code, without seeing the build.',
+          pt: 'constrói as páginas e o motor que lê as fontes; cada número que publica traz a fonte e a data em que foi lido.',
+          en: 'builds the pages and the engine that reads the sources; every number it publishes carries its source and the date it was read.',
         },
       },
       {
         rotulo: { pt: 'A leitura', en: 'Reading' },
         texto: {
-          pt: 'lê sem contexto prévio, com erros plantados que tem de encontrar.',
-          en: 'reads with no prior context, with planted errors it has to find.',
+          pt: 'lê o que a construção entregou, sem contexto prévio e com erros plantados que tem de encontrar, antes de se publicar.',
+          en: 'reads what building delivered, with no prior context and with planted errors it has to find, before it is published.',
         },
       },
     ],
     fecho: {
       pt: [
-        'São os modelos Claude da Anthropic, em três lugares (a direção, a construção, ' +
-          'a medição), e o Codex da OpenAI na leitura. Um modelo novo só ocupa um lugar ' +
+        'A construção e a leitura são sempre de famílias de modelos diferentes: o modelo que construiu nunca é o que lê. ' +
+          'Os modelos Claude da Anthropic estão na direção; na construção e na leitura estão os modelos Claude ' +
+          'e o Codex da OpenAI. Um modelo novo só ocupa um papel ' +
           'depois de passar os mesmos testes que o titular passou, e a troca fica escrita ' +
           'com a data.',
       ],
       en: [
-        'They are the Claude models from Anthropic in three of the places (direction, ' +
-          'building, measurement), and Codex from OpenAI in the reading. A new model takes ' +
-          'a place only after passing the same tests the incumbent passed, and the change ' +
+        'Building and reading are always done by different families of models: the model that built never reads. ' +
+          'The Claude models from Anthropic hold the direction; building and reading are held by the Claude models ' +
+          'and by Codex from OpenAI. A new model takes ' +
+          'a role only after passing the same tests the incumbent passed, and the change ' +
           'is written down with its date.',
       ],
     },
