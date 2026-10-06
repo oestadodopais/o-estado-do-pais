@@ -25,14 +25,15 @@ import { conferirPrazosEmCurso, dataDaConstrucao } from './estudos-em-curso.mjs'
 const raiz = process.cwd();
 const dist = path.resolve(process.env.OEDP_DIST ?? 'dist');
 const erros = [];
-erros.push(...conferirPrazosEmCurso(WORKS, dataDaConstrucao(dist)));
+function conferirE1() {
+  erros.push(...conferirPrazosEmCurso(WORKS, dataDaConstrucao(dist)));
+  if (!erros.length) console.log('E1: prazo e razão conferidos pela chamada da check:pais.');
+}
+conferirE1();
 /* M-A: o auto-teste da ligação E1 só precisa desta célula. A corrida normal
    continua pelo ficheiro inteiro; a expressão da célula não mudou. */
-if (process.argv.includes('--celula')) {
-  const celula = process.argv[process.argv.indexOf('--celula') + 1];
-  if (celula !== 'E1') throw new Error('check:pais: a célula isolada tem de ser E1');
+if (process.argv.includes('--so-a-celula-e1-no-autoteste')) {
   for (const erro of erros) console.error(erro);
-  if (!erros.length) console.log('E1: prazo e razão conferidos pela chamada da check:pais.');
   process.exit(erros.length ? 1 : 0);
 }
 
