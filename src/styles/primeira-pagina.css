@@ -380,10 +380,15 @@
 .pp-para-perceber { margin: clamp(24px, 3vw, 36px) 0 0; padding-top: 12px; border-top: 1.5px solid var(--ink); max-width: 46rem; }
 .pp-para-perceber-titulo { font-family: var(--f-prosa); font-size: clamp(19px, 2.2vw, 24px); font-weight: 600; line-height: 1.25; margin: 0 0 6px; }
 .pp-para-perceber-portas { list-style: none; margin: 0; padding: 0; display: grid; row-gap: 4px; }
+/* A porta é um bloco de texto, e não um contentor flexível: as duas portas são frases com pedaços marcados (o ano do
+   título, as datas e as contagens da semana), e num contentor flexível cada pedaço é um item, os espaços das pontas
+   apagam-se («em2026») e a frase não dobra (a primeira página transbordava a 390 px; medido nas capturas do bloco EX1,
+   `frases-em-flex.mjs`). O alvo de toque fica nos 44 px pela altura mínima, com o ar repartido em cima e em baixo. */
 .pp-para-perceber-portas a {
-  display: inline-flex;
-  align-items: center;
+  display: block;
   min-height: 44px;
+  padding-block: 10px;
+  box-sizing: border-box;
   font-family: var(--f-prosa);
   font-size: 16.5px;
   line-height: 1.45;
