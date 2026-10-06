@@ -38,11 +38,17 @@ else: sys.exit(88)
     comando('vercel', "print('Production Ready')\n")
     comando('curl', "print(json.dumps({'commit':'a'*40}))\n")
     comando('npm', "sys.exit(0)\n")
+    mensagens = {'sem-ramo': 'não existe', 'cabeca-errada': 'e não bbbb',
+                 'sem-main': 'a fusão não seria um avanço rápido',
+                 'sem-origin': 'origin/main não está dentro',
+                 'sem-check': 'não está verde (diz «nada»)',
+                 'vermelho': 'não está verde (diz «failure»)', 'verde': 'ATERROU:'}
     for modo, esperado in [('sem-ramo',14),('cabeca-errada',15),('sem-main',16),('sem-origin',17),('sem-check',18),('vermelho',18),('verde',0)]:
         chamadas = p / 'chamadas'; chamadas.write_text('')
         env = dict(os.environ, PATH=str(binario)+':'+os.environ['PATH'], SITIO_DE_ENSAIO=str(repo), CHAMADAS=str(chamadas), MODO=modo, TMPDIR=str(p))
         r = subprocess.run(['zsh', str(RAIZ / 'scripts/aterrar.sh'), 'ramo-sintetico', 'bbbb' if modo=='cabeca-errada' else 'aaaa'], env=env, capture_output=True, text=True)
         assert r.returncode == esperado, (modo,r.stdout,r.stderr)
+        assert mensagens[modo] in r.stdout, (modo, r.stdout)
         lidas = [json.loads(l) for l in chamadas.read_text().splitlines()]
         if esperado:
             assert not any('push' in c or '--ff-only' in c for c in lidas)
