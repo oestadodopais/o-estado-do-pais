@@ -534,12 +534,12 @@ function anda(dir) {
     paginas++;
     const lang = doc.querySelector('html')?.getAttribute('lang') === 'en' ? 'en' : 'pt';
     confereTema(doc, path.relative(dist, abs), lang);
-    /* N1 · AS SEIS PORTAS (bloco P4, 02.10.2026, item 0 do brief P4): a página da União entra entre «Estudos» e
-       «Sobre», com o rótulo curto (a razão medida está em `src/lib/navegacao.mjs`). A lista esperada é escrita aqui. */
-    const esperado = lang === 'pt' ? ['Portugal','Lugares','Temas','Estudos','Europa','Sobre'] : ['Portugal','Places','Themes','Studies','Europe','About'];
+    /* N1 · AS SETE PORTAS (H4, 06.10.2026): Explicações entre Estudos e a União, com o nome inteiro.
+       A lista esperada é independente da lista que o cabeçalho rende; conserva contagem, ordem, rótulos e destinos. */
+    const esperado = lang === 'pt' ? ['Portugal','Lugares','Temas','Estudos','Explicações','União Europeia','Sobre'] : ['Portugal','Places','Themes','Studies','Explainers','European Union','About'];
     const portas = doc.querySelectorAll('#nav-principal a');
-    const destinos = lang === 'pt' ? ['/','/lugares/','/temas/','/estudos','/uniao-europeia','/sobre'] : ['/en','/en/places/','/en/themes/','/en/studies','/en/european-union','/en/about'];
-    if (JSON.stringify(portas.map(a=>normal(a.textContent))) !== JSON.stringify(esperado) || portas.some((a,i)=>a.getAttribute('href') !== destinos[i]) || doc.querySelector('.nav-menu')) erros.push(`N1: menu de seis errado em ${path.relative(dist, abs)}.`);
+    const destinos = lang === 'pt' ? ['/','/lugares/','/temas/','/estudos','/explicacoes','/uniao-europeia','/sobre'] : ['/en','/en/places/','/en/themes/','/en/studies','/en/explainers','/en/european-union','/en/about'];
+    if (JSON.stringify(portas.map(a=>normal(a.textContent))) !== JSON.stringify(esperado) || portas.some((a,i)=>a.getAttribute('href') !== destinos[i]) || doc.querySelector('.nav-menu')) erros.push(`N1: menu de sete errado em ${path.relative(dist, abs)}.`);
     /* N2 lê o rótulo onde ele está desde o bloco R1 (23.09.2026): no topo de
        cada página, e não no rodapé. O que ela protege é o mesmo, a porta e o
        ponto final numa caixa que não quebra. */
