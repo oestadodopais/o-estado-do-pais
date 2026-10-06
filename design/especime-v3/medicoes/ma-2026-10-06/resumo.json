@@ -1,0 +1,142 @@
+{
+  "base": "207d71346ea034943058fffcbbb926ddafa79e90",
+  "cabeca_do_codigo": "225f482574447483b200da460bc3183439306b86",
+  "codigos": {
+    "antes": {
+      "build": 0,
+      "verify": 0,
+      "typecheck": 0
+    },
+    "portoes": {
+      "build": 0,
+      "verify": 0,
+      "typecheck": 0
+    },
+    "portoes-antigo": {
+      "build": 0,
+      "verify": 0,
+      "typecheck": 0
+    }
+  },
+  "medidas": {
+    "antes": {
+      "inteira": 1408.54,
+      "build": 223.67192841600627,
+      "verify": 1183.9144851248711,
+      "briefs": 172.98416204098612,
+      "alvos": 332.59397816704586,
+      "auto_teste_pais": 56.984373792,
+      "typecheck": 0.7383802498225123,
+      "auto_teste_pais_invocacoes": [
+        {
+          "cadeia": "build",
+          "segundos": 28.366302542
+        },
+        {
+          "cadeia": "verify",
+          "segundos": 28.61807125
+        }
+      ]
+    },
+    "portoes": {
+      "inteira": 426.382,
+      "build": 205.3909233340528,
+      "verify": 219.71448245800002,
+      "briefs": 0.33503279199999814,
+      "alvos": 190.76996383399998,
+      "auto_teste_pais": 1.680547875,
+      "typecheck": 0.24227491579949856,
+      "auto_teste_pais_invocacoes": [
+        {
+          "cadeia": "verify",
+          "segundos": 1.680547875
+        }
+      ]
+    },
+    "portoes-antigo": {
+      "inteira": 1104.242,
+      "build": 220.56019000010565,
+      "verify": 883.2290276659187,
+      "briefs": 0.22099508391693234,
+      "alvos": 181.78155320789665,
+      "auto_teste_pais": 1.006815542,
+      "typecheck": 0.22674499987624586,
+      "auto_teste_pais_invocacoes": [
+        {
+          "cadeia": "verify",
+          "segundos": 1.006815542
+        }
+      ]
+    }
+  },
+  "menos_de_12_minutos": true,
+  "conferencias_distintas": 50,
+  "listas_iguais": true,
+  "uniao": {
+    "ok": true,
+    "falhas": [],
+    "passos_do_verify": 45,
+    "cobertos_pelo_build": 20,
+    "corridos_aqui": 25
+  },
+  "alvos_iguais": {
+    "portoes": {
+      "paginas": true,
+      "rotas": true,
+      "larguras": true,
+      "celulas": true,
+      "axe": true,
+      "graves": true,
+      "alvos_maus": true
+    },
+    "portoes-antigo": {
+      "paginas": true,
+      "rotas": true,
+      "larguras": true,
+      "celulas": true,
+      "axe": true,
+      "graves": true,
+      "alvos_maus": true
+    }
+  },
+  "passagens_alvos": 360,
+  "segundos_apresentados": {
+    "antes": {
+      "inteira": 1408.54,
+      "build": 223.672,
+      "verify": 1183.914,
+      "briefs": 172.984,
+      "alvos": 332.594,
+      "auto_teste_pais": 56.984,
+      "typecheck": 0.738
+    },
+    "portoes": {
+      "inteira": 426.382,
+      "build": 205.391,
+      "verify": 219.714,
+      "briefs": 0.335,
+      "alvos": 190.77,
+      "auto_teste_pais": 1.681,
+      "typecheck": 0.242
+    },
+    "portoes-antigo": {
+      "inteira": 1104.242,
+      "build": 220.56,
+      "verify": 883.229,
+      "briefs": 0.221,
+      "alvos": 181.782,
+      "auto_teste_pais": 1.007,
+      "typecheck": 0.227
+    }
+  },
+  "pontos_do_brief": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ]
+}
