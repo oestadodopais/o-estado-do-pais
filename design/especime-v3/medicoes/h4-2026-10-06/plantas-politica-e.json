@@ -1,27 +1,27 @@
 {
   "comando": "node design/especime-v3/medicoes/h4-2026-10-06/provar-politica-e.mjs --passagem-e",
-  "cabeca": "24bb1bb53b385e7eabcd2dd76a61d68377b50d91",
+  "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
   "estado": "",
   "estado_fim": "",
   "construcao": {
-    "commit": "24bb1bb53b385e7eabcd2dd76a61d68377b50d91",
+    "commit": "89c54f3480d9503d0fd85281ad5247d9137971c8",
     "ref": "aterragem-2026-10-06-tarde",
     "env": "local",
     "origem": "git",
     "motivo": null,
-    "construido_em": "2026-10-06T16:51:12.050Z"
+    "construido_em": "2026-10-06T17:27:25.396Z"
   },
   "intactas": [
     {
       "lang": "pt",
       "ficheiro": "dist/metodo/index.html",
-      "sha256": "a51e28ec491d5a1dd57d75b0b095604651060f93cba0959fec27f7b19fd50c4b",
+      "sha256": "2c18c7f83e3f3a7f5ba1693e25671c05094d5bb368bf7be2810d62359fa0ebb0",
       "falhas": []
     },
     {
       "lang": "en",
       "ficheiro": "dist/en/method/index.html",
-      "sha256": "5c8140a79d82575689cd8a03d0556dd1d1a8c591c3525a26f61e7793f5a59640",
+      "sha256": "47f2acf8e739fcdca3b887a155d90c5c00938a80e1f5654fce1e9b8c91851d1a",
       "falhas": []
     }
   ],
@@ -33,6 +33,15 @@
       "falhas": [
         "H4 IA: a política tem de dizer três lugares.",
         "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "o título antigo",
+      "lang": "pt",
+      "mensagem": "H4 IA: o título dos papéis difere da redação decidida.",
+      "falhas": [
+        "H4 IA: o título dos papéis difere da redação decidida."
       ],
       "passou": true
     },
@@ -116,6 +125,15 @@
       "falhas": [
         "H4 IA: a política tem de dizer três lugares.",
         "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "o título antigo",
+      "lang": "en",
+      "mensagem": "H4 IA: o título dos papéis difere da redação decidida.",
+      "falhas": [
+        "H4 IA: o título dos papéis difere da redação decidida."
       ],
       "passou": true
     },

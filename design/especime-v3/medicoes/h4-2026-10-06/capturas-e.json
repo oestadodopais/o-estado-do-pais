@@ -1,14 +1,14 @@
 {
   "comando": "node design/especime-v3/medicoes/h4-2026-10-06/captar-h4-e.mjs --passagem-e",
-  "cabeca": "24bb1bb53b385e7eabcd2dd76a61d68377b50d91",
+  "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
   "estado": "",
   "construcao": {
-    "commit": "24bb1bb53b385e7eabcd2dd76a61d68377b50d91",
+    "commit": "89c54f3480d9503d0fd85281ad5247d9137971c8",
     "ref": "aterragem-2026-10-06-tarde",
     "env": "local",
     "origem": "git",
     "motivo": null,
-    "construido_em": "2026-10-06T16:51:12.050Z"
+    "construido_em": "2026-10-06T17:27:25.396Z"
   },
   "paginas": [
     {
@@ -16,7 +16,7 @@
       "lang": "pt",
       "rota": "/metodo",
       "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas-e/politica-pt.html",
-      "sha256": "a51e28ec491d5a1dd57d75b0b095604651060f93cba0959fec27f7b19fd50c4b",
+      "sha256": "2c18c7f83e3f3a7f5ba1693e25671c05094d5bb368bf7be2810d62359fa0ebb0",
       "folhas": [
         {
           "ficheiro": "/_astro/Base.hPEW4RoH.css",
@@ -33,7 +33,7 @@
       "lang": "en",
       "rota": "/en/method",
       "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas-e/politica-en.html",
-      "sha256": "5c8140a79d82575689cd8a03d0556dd1d1a8c591c3525a26f61e7793f5a59640",
+      "sha256": "47f2acf8e739fcdca3b887a155d90c5c00938a80e1f5654fce1e9b8c91851d1a",
       "folhas": [
         {
           "ficheiro": "/_astro/Base.hPEW4RoH.css",
@@ -54,9 +54,9 @@
       "rota": "/metodo",
       "ancora": "politica-de-ia",
       "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/politica-pt-390.png",
-      "sha256": "953b8d8fc5a134f455cd1d3711a2e6efa39a2f9027bd8f4b866f1a951dc69e85",
+      "sha256": "2b677e8e27f1da9f4911b99de6cc25509a2374e4f5c87c61819fdad50a1d0aa0",
       "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/lugares-ia-pt-390.png",
-      "sha256_recorte": "1b92decfd1bb51b6fa0795573cb6911624e299ef70e0309bf237a215640963e1",
+      "sha256_recorte": "a883eb28d424e4d9ae7ab543435c8a953d1267e95110d8c3029c3a7a40130a3e",
       "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/cabecalho-politica-pt-390.png",
       "sha256_cabecalho": "4eda4f49de3b9a7a2c36870f471d1a47e10157553af619e72aa78192c9affab1",
       "medidas": {
@@ -135,9 +135,9 @@
       "rota": "/metodo",
       "ancora": "politica-de-ia",
       "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/politica-pt-768.png",
-      "sha256": "ced89d4d375df2b9c93d4f270156a5ab45e8c2e3a039e4d6a2eba0adb0460e60",
+      "sha256": "238abfb86b6024d7625bf7200790a59928727aeb7df931238ba71aafcfd48338",
       "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/lugares-ia-pt-768.png",
-      "sha256_recorte": "aa36cf2d5b8dc5f200110a4d1be6cdbaf9982962c3f6f6b18bed7e3f901d3928",
+      "sha256_recorte": "7abbdbf1dec2bea7976f3f964a7c49295c16da0fbf5508d4eb32158332428475",
       "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/cabecalho-politica-pt-768.png",
       "sha256_cabecalho": "3a34c8de21e6b7c2dfe4d2730ea4eeff79c49fe95181a8e7f8d2dfa4253c9117",
       "medidas": {
@@ -216,9 +216,9 @@
       "rota": "/metodo",
       "ancora": "politica-de-ia",
       "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/politica-pt-1024.png",
-      "sha256": "6857a3767cb1209920e778d33d5ba8812c7f7561402b5ceedcee3fc33032b102",
+      "sha256": "fbb82372be60709fff7b7d310772e010fc1df75351bf6d488df683e08db11920",
       "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/lugares-ia-pt-1024.png",
-      "sha256_recorte": "c05b105364f487202576ae9da3def9771cdfe00c5eb87cf56d571a06018daed4",
+      "sha256_recorte": "100bb4fec089a27a22cf8bc880936253f5e4785689abc9cedd2cf30d0a51128a",
       "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/cabecalho-politica-pt-1024.png",
       "sha256_cabecalho": "63b4e9c0cc1b0521a7d4baa0b47c769589d903e56191ab054d039154e8a150a8",
       "medidas": {
@@ -297,9 +297,9 @@
       "rota": "/metodo",
       "ancora": "politica-de-ia",
       "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/politica-pt-1280.png",
-      "sha256": "d9b5683c03716ff622cbe697dbcdbd83f4bc9ac2db57fdd55fd1e617998ec733",
+      "sha256": "c5b63ea739ff4e47de22741e3b0fe34544adccbb0cc71d59ca36eb3ce34f1c09",
       "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/lugares-ia-pt-1280.png",
-      "sha256_recorte": "bb434dc4971ba21fed0c8dbd0dda3b7e0a7276deb988dfe2c08bca8994a7d749",
+      "sha256_recorte": "927e773518e2d5786a388e77bc9d6fb2addacbd145eaffe32bac53776e143bd9",
       "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/cabecalho-politica-pt-1280.png",
       "sha256_cabecalho": "7786fb568fc1542c42ff0eef99f84ae063e6c521c63aa51e20bd3f52c2b89678",
       "medidas": {
@@ -378,9 +378,9 @@
       "rota": "/metodo",
       "ancora": "politica-de-ia",
       "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/politica-pt-1600.png",
-      "sha256": "224eb7a2a7395d582eafb3b30f7c5078b9b339f559a7b0461e88e346d9437f63",
+      "sha256": "860051481c8bd12d7895206ec235cfc8e932841912c681942700d441fd810ffb",
       "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/lugares-ia-pt-1600.png",
-      "sha256_recorte": "bb434dc4971ba21fed0c8dbd0dda3b7e0a7276deb988dfe2c08bca8994a7d749",
+      "sha256_recorte": "927e773518e2d5786a388e77bc9d6fb2addacbd145eaffe32bac53776e143bd9",
       "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/cabecalho-politica-pt-1600.png",
       "sha256_cabecalho": "7786fb568fc1542c42ff0eef99f84ae063e6c521c63aa51e20bd3f52c2b89678",
       "medidas": {
@@ -459,9 +459,9 @@
       "rota": "/en/method",
       "ancora": "politica-de-ia",
       "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/politica-en-390.png",
-      "sha256": "2681220828161de20412522d575342a4f849b5c786cde3e76ab7ea16d21176d8",
+      "sha256": "5d74cb64934e1bca307daa2e6c694d0b074a2effc9c022df9cf09de9ed861b18",
       "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/lugares-ia-en-390.png",
-      "sha256_recorte": "7ee6f56960eb15e2820d2c32e82b4b46c172402a7ec0e9d23acb6d79e2c6bb54",
+      "sha256_recorte": "ff3ac8e5034069e24ee826c7330b769f1e68134249a36cd0b6232db1f84f57ad",
       "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/cabecalho-politica-en-390.png",
       "sha256_cabecalho": "035300cd840873212c50cde346224d0e36e83d153da24ef27227a41be5d71d83",
       "medidas": {
@@ -540,9 +540,9 @@
       "rota": "/en/method",
       "ancora": "politica-de-ia",
       "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/politica-en-768.png",
-      "sha256": "cc15e646c748731e9952b9fe9364f266913459afb752c8a27cc90007bdcd2789",
+      "sha256": "dc1f472bc745678f01fa36f9c4e340affcfe414b1f85f7fc071c4e84b9de5e7d",
       "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/lugares-ia-en-768.png",
-      "sha256_recorte": "cdcd3fe96bc6939799fece33db273068f420e4a7a4b013438fceb8be07cdb916",
+      "sha256_recorte": "f78f98a4b30c1be14cb3240f92302d8ed3ae2c55f34edc14d3fd6d65de2cf203",
       "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/cabecalho-politica-en-768.png",
       "sha256_cabecalho": "65c478fd902c1b9b93d64c19f41f0fff51ba57df76cd3a882611824ecb0c8d23",
       "medidas": {
@@ -621,9 +621,9 @@
       "rota": "/en/method",
       "ancora": "politica-de-ia",
       "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/politica-en-1024.png",
-      "sha256": "19ac878bd2e7bf5db202638c7c65135e9c9f08d22711ce827519ab373d5281d5",
+      "sha256": "2c8599a34ba442c966ab62f46af49ec1d4d7ad1631826d4ec7bced55ff220cd9",
       "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/lugares-ia-en-1024.png",
-      "sha256_recorte": "6b38fd41e326dc8de3e5068346bde1b452d337a60d5a7ef19316ef3045881be5",
+      "sha256_recorte": "331e620a833e2412e94ac3e82697409511e0632af5e13cf2315f1caf8e7c6dbd",
       "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/cabecalho-politica-en-1024.png",
       "sha256_cabecalho": "7c21d4858ea7c816586075eaef479df5b008cd2b9cafd42dd4dd53561247fe15",
       "medidas": {
@@ -702,9 +702,9 @@
       "rota": "/en/method",
       "ancora": "politica-de-ia",
       "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/politica-en-1280.png",
-      "sha256": "845518106cd9d3329e3552f4a90f1f6273fce001e274cac286e53c67373660a0",
+      "sha256": "7930feff0c0456673301aaf4133e6fed337cf4d01edda2f07e29b354bbf01d35",
       "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/lugares-ia-en-1280.png",
-      "sha256_recorte": "999a1bd041d09e98f35fee9a546107642e372ffb372fb66c88df0b838d02db0e",
+      "sha256_recorte": "4d9f2cf61eecd65c5d2cdfc8ec4a62a4ffe844fef8bacf434ec49cbdd0083be6",
       "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/cabecalho-politica-en-1280.png",
       "sha256_cabecalho": "fbea1306e17155a69cd6b736ee5e47cd5a29eab7b7b4ad05c6739b4a2975559a",
       "medidas": {
@@ -783,9 +783,9 @@
       "rota": "/en/method",
       "ancora": "politica-de-ia",
       "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/politica-en-1600.png",
-      "sha256": "9ac5380263e0afe6cad48f87a553808cda5162d830a09ab8a02031f447472ef1",
+      "sha256": "e4961ba1765c34b45221216716c22f071d0825d68d3d629dcc450b143c0e6091",
       "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/lugares-ia-en-1600.png",
-      "sha256_recorte": "999a1bd041d09e98f35fee9a546107642e372ffb372fb66c88df0b838d02db0e",
+      "sha256_recorte": "4d9f2cf61eecd65c5d2cdfc8ec4a62a4ffe844fef8bacf434ec49cbdd0083be6",
       "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-e/cabecalho-politica-en-1600.png",
       "sha256_cabecalho": "fbea1306e17155a69cd6b736ee5e47cd5a29eab7b7b4ad05c6739b4a2975559a",
       "medidas": {
