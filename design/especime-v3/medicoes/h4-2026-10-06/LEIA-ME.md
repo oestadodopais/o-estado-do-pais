@@ -2,7 +2,7 @@
 
 O registo abaixo conserva as passagens anteriores. A entrega atual está na secção «A passagem H4-d», no fim; os estados anteriores abaixo são históricos.
 
-Construção por Codex gpt-6-astra. Texto provisório do brief; a redação final e a leitura a frio continuam por confirmar antes de aterrar.
+Construção por Codex gpt-6-astra nas passagens H4 a H4-d; a redação final dos papéis é a da passagem H4-e, pelo lugar de direção, depois da leitura curta do diff da H4-d (`design/especime-v3/critica/LEITURA-H4-d-2026-10-06.md`). As frases abaixo que chamam provisória ou final a uma redação anterior são históricas.
 
 ## O que mudou e onde parou
 
@@ -141,7 +141,7 @@ A ferramenta desta sessão não expôs uma linha `tokens used`; o custo em token
 
 O bloco continua por fechar: há uma célula ou um portão vermelho. As mensagens e os códigos abaixo são os resultados efetivos; não se declara aceitação cumprida.
 
-O cabeçalho ganha a porta das explicações e o nome inteiro da União. A regra que apertava o menu no telefone saiu: todas as larguras usam o espaço e a letra da regra base. A fila dobra onde precisa. O texto da política de IA da primeira passagem ficou intacto e está confirmado como final pela direção.
+O cabeçalho ganha a porta das explicações e o nome inteiro da União. A regra que apertava o menu no telefone saiu: todas as larguras usam o espaço e a letra da regra base. A fila dobra onde precisa. O texto da política de IA da primeira passagem ficou intacto e está confirmado como final pela direção. (Histórico: a redação mudou na H4-d e na H4-e.)
 
 Cabeça do código: `9c44ad9e31972cfbfd9d7138e29b52b9027bb63d`. Esta secção é gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4b.py`, a partir dos ficheiros abaixo; o resumo legível por máquina está em [resumo-h4b.json](resumo-h4b.json).
 
@@ -232,7 +232,7 @@ Registo: [decisoes-h4b.json](decisoes-h4b.json).
 
 - **H4-2**, resolvida. Os endereços são /metodo#politica-de-ia e /en/method#politica-de-ia. O ponto das capturas do brief foi corrigido, com a nota pedida. As capturas anteriores do Método servem.
 
-- **H4-3**, resolvida. O texto dos lugares da primeira passagem é final, pela decisão do lugar de direção referida no mandato como DECISIONS.md §1.173, ponto 2. O texto da política não foi alterado nesta passagem.
+- **H4-3**, resolvida. O texto dos lugares da primeira passagem é final, pela decisão do lugar de direção referida no mandato como DECISIONS.md §1.173, ponto 2. O texto da política não foi alterado nesta passagem. (Histórico: a redação mudou na H4-d e na H4-e.)
 
 - **H4-4**, do lugar de direção. A leitura a frio pelo Claude Opus e a conferência da entrega cabem ao lugar de direção depois desta passagem.
 

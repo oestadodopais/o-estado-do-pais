@@ -77,7 +77,6 @@ import { WORKS } from '../src/data/studies.mjs';
    registada. Ver `textoDaCabeca()`. */
 import { VERBATIM } from '../src/data/verbatim.mjs';
 import { ANCORA_DA_POLITICA } from '../src/data/politica-ia.mjs';
-import { LUGARES_IA_DO_PORTAO } from './lugares-ia-do-portao.mjs';
 import { temRegisto } from '../src/lib/registos.mjs';
 import { documentosDoEstudo } from '../src/lib/documentos.mjs';
 import { portasObrigatoriasB2 } from './portas-b2.mjs';
@@ -634,14 +633,6 @@ const EXCECOES_DO_VOCABULARIO = [
     soTrecho: true,
   },
 ];
-
-/* H4-d, H4-6: «peça» na redação decidida dos lugares significa o que se encomenda,
-   constrói e lê, não o nome de um estudo. Só a palavra, nos blocos inteiros da
-   política dentro do Método, fica fora da L3. A cópia aprovada é a do portão,
-   independente da vista; frases parecidas ou a mesma frase fora desse lugar contam. */
-const BLOCOS_DOS_LUGARES_IA = new Set([
-  LUGARES_IA_DO_PORTAO.pt.intro, ...LUGARES_IA_DO_PORTAO.pt.itens, LUGARES_IA_DO_PORTAO.pt.fecho,
-]);
 
 /* ---------------------------------------------------------------------------
  * A LEITURA DO TEXTO DA CASA
@@ -1406,13 +1397,6 @@ for (const ficheiro of paginas) {
       ...rotulosDasMarcas,
     ];
     const texto = `${cabeca} ${textoDaCasa(raiz)} ${rotulosDasMarcas.join(' ')}`;
-    const pecasDosLugares = new Map();
-    const lugares = chaveDaRota === 'metodo' && lang === 'pt'
-      ? raiz.querySelector(`#${ANCORA_DA_POLITICA} .politica-lugares`)?.parentNode : null;
-    for (const el of lugares?.querySelectorAll('p,li') ?? []) {
-      const b = el.text.replace(/\s+/g, ' ').trim();
-      if (BLOCOS_DOS_LUGARES_IA.has(b)) pecasDosLugares.set(b, (pecasDosLugares.get(b) ?? 0) + 1);
-    }
     /* A PALAVRA DA MARCA NO MÉTODO, CONTADA ONDE ELA VIVE (F1.13, item 5,
        15.09.2026). É a rota que o item 5 põe fora da conta, e é a única do sítio
        onde a palavra fica: contá-la aqui é o que prova que a régua ainda sabe
@@ -1430,10 +1414,6 @@ for (const ficheiro of paginas) {
       /* Conta por bloco, para que uma exceção possa dispensar o bloco dela. */
       let n = 0;
       for (const b of blocos) {
-        if (palavra === 'peça' && pecasDosLugares.get(b) > 0) {
-          pecasDosLugares.set(b, pecasDosLugares.get(b) - 1);
-          continue;
-        }
         n += contaForaDasExcecoes(b, palavra, (i, desconto) =>
           usoDasExcecoes.set(i, (usoDasExcecoes.get(i) ?? 0) + desconto));
       }
