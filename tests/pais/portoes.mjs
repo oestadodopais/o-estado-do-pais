@@ -511,17 +511,17 @@ planta('s1c-voz-recusa-do-metodo-mudada','scripts/check-voz.mjs',[
  ['metodo/index.html',r=>{const li=r.querySelectorAll('.politica-recusas li').find(x=>x.textContent.includes('só guarda dados pessoais'));li.set_content(li.innerHTML.replace('pelo tempo','por todo o tempo'));}]
 ],[/linha «viva» que não se rende em rota nenhuma/,/Este projeto só guarda dados pessoais de quem usa a caixa das sugestões/]);
 
-/* R3 (04.10.2026): o índice. As sete portas do rodapé contam-se em todas as páginas, com o destino e o nome de cada
+/* R3 (04.10.2026): o índice. As sete portas do rodapé (oito desde o EX1-b, e as duas plantas abaixo contam oito) contam-se em todas as páginas, com o destino e o nome de cada
    edição; a unidade de uma linha entra na lista «O que mudou» do índice pela porta estreita da entrada da própria
    linha; a lista do índice tem as linhas que mudaram, uma vez cada, e nenhuma publicação; as datas dos estudos do
    índice prendem-se à sua edição; a página está no inventário das frases; e a L1 e a L2a do `check:lugar` medem-na.
    `--prefixo r3-` corre só estas. */
 planta('r3-rodape-sem-a-porta-do-indice','scripts/gate-html.mjs',[
  ['temas/index.html',r=>r.querySelector('nav.rodape-nav a[href="/indice"]').remove()]
-],[/R3 rodapé: o rodapé tem 6 porta\(s\) e são 7/]);
+],[/R3 rodapé: o rodapé tem 7 porta\(s\) e são 8/]);
 planta('r3-rodape-indice-da-outra-edicao','scripts/gate-html.mjs',[
  ['en/themes/index.html',r=>r.querySelector('nav.rodape-nav a[href="/en/index"]').setAttribute('href','/indice')]
-],[/R3 rodapé: a porta 7 do rodapé é «Index» para \/indice; nesta edição é «Index» para \/en\/index/]);
+],[/R3 rodapé: a porta 8 do rodapé é «Index» para \/indice; nesta edição é «Index» para \/en\/index/]);
 planta('r3-unidade-de-outra-linha','scripts/gate-html.mjs',[
  ['indice/index.html',r=>r.querySelector('[data-mudou-ambito="indice"] [data-correcao-entrada] [data-linha-campo="unit"]').set_content('unidade de outra linha')]
 ],[/unidade de outra linha/]);
@@ -795,4 +795,45 @@ if (SEMANA_EX1 && (!prefixo || 'ex1-'.startsWith(prefixo) || prefixo.startsWith(
  planta('ex1-voz-porta-da-semana-com-outra-frase','scripts/check-voz.mjs',[
   ['en/index.html',r=>{const a=r.querySelector('[data-para-perceber] [data-semana-porta]');a.set_content(a.innerHTML.replace(/\.$/,', all of it.'));}]
  ],[/a célula da semana recusou-as em en\/index\.html: W3 · a frase da porta difere da conta desta célula/]);
+}
+
+/* EX1-b (06.10.2026, as decisões do lugar de direção sobre as I211 a I216 e a régua das frases compostas): estragos sobre
+   páginas realmente construídas, repostos no finally de cada planta e conferidos por sha256; correm fora do `verify`, com
+   `--prefixo ex1b-` e `OEDP_MEDICOES` a apontar para a pasta das medições. O rodapé passa a oito portas (I211); os
+   programas que mais gastaram são decididos pelos números (I213); a página leva no fim a porta do tema (I212); a frase
+   dos dois totais (I215) é uma palavra declarada como as outras; e a célula das frases compostas vê um contentor flexível
+   e um transbordo postos na construção. O programa de maior despesa lê-se da construção. */
+const PRIMEIRO_PROGRAMA_EX1B = (() => {
+ const f = path.join('dist', 'explicacoes/dinheiro-do-estado-2026/index.html');
+ if (!fs.existsSync(f)) return null;
+ const n = parse(fs.readFileSync(f, 'utf8')).querySelectorAll('[data-explicacao-paragrafo] [data-explicacao-nome]').find((x) => /^execucao-2026-08-despesa-programa-/.test(String(x.getAttribute('data-explicacao-nome'))));
+ return n ? String(n.getAttribute('data-explicacao-nome')) : null;
+})();
+if (!prefixo || prefixo.startsWith('ex1b')) {
+ planta('ex1b-rodape-sem-a-porta-das-explicacoes','scripts/gate-html.mjs',[
+  ['temas/index.html',r=>r.querySelector('nav.rodape-nav a[href="/explicacoes"]').remove()]
+ ],[/R3 rodapé: o rodapé tem 7 porta\(s\) e são 8/]);
+ planta('ex1b-rodape-com-uma-porta-a-mais','scripts/gate-html.mjs',[
+  ['en/themes/index.html',r=>{const a=r.querySelector('nav.rodape-nav a[href="/en/explainers"]');a.insertAdjacentHTML('afterend',' · <a href="/en/explainers">Explainers</a>');}]
+ ],[/R3 rodapé: o rodapé tem 9 porta\(s\) e são 8/]);
+ if (PRIMEIRO_PROGRAMA_EX1B) {
+  planta('ex1b-maiores-ordem-trocada','scripts/check-voz.mjs',[
+   ['explicacoes/dinheiro-do-estado-2026/index.html',r=>{const n=r.querySelectorAll('[data-explicacao-paragrafo] [data-explicacao-nome]').filter(x=>/^execucao-2026-08-despesa-programa-/.test(String(x.getAttribute('data-explicacao-nome'))));const a=n[0].innerHTML,b=n[1].innerHTML;n[0].set_content(b);n[1].set_content(a);}]
+  ],[/a célula da explicação recusou-as em explicacoes\/dinheiro-do-estado-2026\/index\.html: X6 · o parágrafo seccoes\[2\]\.conteudo\[0\]\.paragrafo difere da conta/]);
+  planta('ex1b-maiores-valor-trocado','scripts/gate-html.mjs',[
+   ['en/explainers/dinheiro-do-estado-2026/index.html',r=>r.querySelector(`[data-explicacao-paragrafo] [data-claim="${PRIMEIRO_PROGRAMA_EX1B}"]`).set_content('99,9')]
+  ],[new RegExp(`a afirmação "${PRIMEIRO_PROGRAMA_EX1B}" foi renderizada como "99,9"`)]);
+ } else console.log('ex1b: o token «maiores» não se rende nesta construção; as plantas da ordem e do valor dos programas não se aplicam.');
+ planta('ex1b-porta-do-tema-tirada','scripts/check-voz.mjs',[
+  ['explicacoes/dinheiro-do-estado-2026/index.html',r=>r.querySelector('[data-explicacao-portas] a[data-explicacao-porta-do-fim="estado-e-economia"]').remove()]
+ ],[/a célula da explicação recusou-as em explicacoes\/dinheiro-do-estado-2026\/index\.html: X8 · as portas do fim/]);
+ planta('ex1b-frase-dos-dois-totais-mudada','scripts/check-voz.mjs',[
+  ['en/explainers/dinheiro-do-estado-2026/index.html',r=>{const p=r.querySelector('[data-explicacao-paragrafo="seccoes[1].conteudo[2].paragrafo"]');p.set_content(p.innerHTML.replace('different things','the same thing'));}]
+ ],[/a célula da explicação recusou-as em en\/explainers\/dinheiro-do-estado-2026\/index\.html: X6 · o parágrafo seccoes\[1\]\.conteudo\[2\]\.paragrafo difere da conta/]);
+ planta('ex1b-frases-compostas-num-contentor-flexivel','tests/explicacoes/frases-compostas.mjs',[
+  ['explicacoes/index.html',r=>r.querySelector('.explicacoes-item a').setAttribute('style','display:inline-flex')]
+ ],[/FC1 · \/explicacoes\/ a 390 px: uma frase composta dentro de um contentor inline-flex/]);
+ planta('ex1b-transbordo-a-390','tests/explicacoes/frases-compostas.mjs',[
+  ['explicacoes/leitura-da-semana/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<div style="width:2000px;height:1px"></div>')]
+ ],[/FC2 · \/explicacoes\/leitura-da-semana\/ a 390 px: o documento tem \d+ px numa janela de 390/]);
 }
