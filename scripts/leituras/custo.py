@@ -45,21 +45,27 @@ def medir(dados, desde=None):
             u['_caracteres'] = max(len(json.dumps(m.get('content'),ensure_ascii=False)),anterior.get('_caracteres',0))
             u['_modelo'] = m.get('model') or 'not exposed'; por_id[m['id']] = u
         campos = ('input_tokens','cache_creation_input_tokens','cache_read_input_tokens','output_tokens')
-        somas = {k:sum(u[k] for u in por_id.values()) if all(k in u for u in por_id.values()) else None for k in campos}
+        somas = {k:sum(u[k] for u in por_id.values()) if all(type(u.get(k)) is int for u in por_id.values()) else None for k in campos}
         saida.update(formato='Claude',respostas_do_modelo=len(por_id),modelos=sorted({u['_modelo'] for u in por_id.values()}),
                      simbolos=somas,saida_minima=True,
                      respostas_com_saida_parcial=sum(u['_caracteres']>1000 and isinstance(u.get('output_tokens'),int) and u['output_tokens']<=10 for u in por_id.values()))
     elif contadores:
         anterior = {}
         for _, u in contadores:
-            if any(v < 0 or v < anterior.get(k,0) for k,v in u.items()):
-                raise ValueError('O contador acumulado recuou; não se pode somar esta sessão.')
-            anterior = u
+            for k,v in u.items():
+                if v is None: continue
+                if type(v) is not int: raise ValueError('Um contador tem de ser inteiro ou null.')
+                if v < 0 or v < anterior.get(k,0):
+                    raise ValueError('O contador acumulado recuou; não se pode somar esta sessão.')
+                anterior[k] = v
         antes = [u for t,u in contadores if corte and t and instante(t)<corte]
         depois = [(t,u) for t,u in contadores if not corte or (t and instante(t)>=corte)]
         if not depois: raise ValueError('Não há contador no intervalo pedido.')
         prev = antes[-1] if antes else {}; stamp,u = depois[-1]
-        delta = {k:v-prev.get(k,0) for k,v in u.items()}
+        campos = {k for _, contador in contadores for k in contador}
+        delta = {k: u[k] - (prev[k] if prev else 0)
+                 if type(u.get(k)) is int and (not prev or type(prev.get(k)) is int) else None
+                 for k in sorted(campos)}
         respostas = [e for e in escolhidos if e.get('type')=='response_item' and e.get('payload',{}).get('type')=='message' and e['payload'].get('role')=='assistant']
         ids = {e['payload'].get('id') or f'registo-{i}' for i,e in enumerate(respostas)}
         modelos = sorted({e.get('payload',{}).get('model') for e in escolhidos if e.get('type')=='turn_context' and e.get('payload',{}).get('model')})
