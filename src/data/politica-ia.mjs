@@ -381,9 +381,9 @@ export const POLITICA = {
    * leitor diz o que a coisa é: mede sem ver a construção, lê sem contexto
    * prévio.
    */
-  /* H4, 06.10.2026, §1.172: texto provisório do brief H4, §3, ponto 4.
-     A direção confirma a redação antes de aterrar. A medição cega não foi exercida
-     e deixa de ser apresentada como um lugar; a construção passa ao Codex. */
+  /* H4, 06.10.2026: redação decidida pelo lugar de direção (§1.173).
+     A política diz os lugares como são, com a leitura por outra família
+     de modelos que não a que construiu cada peça. */
   lugares: {
     titulo: { pt: 'Os lugares', en: 'The places' },
     intro: {

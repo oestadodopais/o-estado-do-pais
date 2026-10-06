@@ -1,6 +1,6 @@
-/** H4: os lugares da IA, pela redação provisória do brief, §3, ponto 4.
- * Cópia do lado do portão, que a vista não importa. A direção troca as duas
- * redações no mesmo commit quando confirmar o texto antes de aterrar.
+/** H4: os lugares da IA, pela redação decidida pelo lugar de direção (§1.173).
+ * Cópia do lado do portão, que a vista não importa. As duas redações
+ * mudam no mesmo commit quando a direção decide o texto.
  * O rótulo legal e o seu oráculo continuam nas conferências próprias.
  */
 export const LUGARES_IA_DO_PORTAO = {
@@ -33,9 +33,9 @@ export function conferirLugaresIA(root, lang) {
   const itens = lista.querySelectorAll('li');
   const falhas = [];
   if (itens.length !== esperado.itens.length) falhas.push('H4 IA: a política tem de dizer três lugares.');
-  if (JSON.stringify(itens.map(texto)) !== JSON.stringify(esperado.itens)) falhas.push('H4 IA: os lugares não são os da redação do brief.');
+  if (JSON.stringify(itens.map(texto)) !== JSON.stringify(esperado.itens)) falhas.push('H4 IA: os lugares não são os da redação decidida.');
   const paragrafos = lista.parentNode.querySelectorAll('p');
-  if (paragrafos.length !== 2 || texto(paragrafos[0]) !== esperado.intro) falhas.push('H4 IA: a introdução dos lugares difere da redação do brief.');
-  if (texto(paragrafos.at(-1)) !== esperado.fecho) falhas.push('H4 IA: as famílias e os lugares do fecho diferem da redação do brief.');
+  if (paragrafos.length !== 2 || texto(paragrafos[0]) !== esperado.intro) falhas.push('H4 IA: a introdução dos lugares difere da redação decidida.');
+  if (texto(paragrafos.at(-1)) !== esperado.fecho) falhas.push('H4 IA: as famílias e os lugares do fecho diferem da redação decidida.');
   return falhas;
 }
