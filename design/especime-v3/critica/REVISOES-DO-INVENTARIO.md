@@ -668,3 +668,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | --- | --- | --- | --- |
 | ex1 | 16 cadeias novas | por ler | Claude Opus 5.5, construtor do EX1: o título do bloco «Para perceber», os títulos e as descrições da lista das explicações e da leitura da semana, o resumo da lista dos números de uma figura e a descrição da primeira explicação, nas duas línguas. O texto das explicações e as frases da leitura da semana não entram: saem do inventário só conferidos pelas células da explicação e da semana, na mesma corrida do `check:voz`. Uma exceção de contexto nova em `VOZ-MARCADORES.md`, na rota de uma explicação: o nome do Ministério do Trabalho, Solidariedade e Segurança Social, que o marcador «o trabalho» mordia. |
 
+
+## H4 · os lugares da inteligência artificial
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| h4 | 6 cadeias novas, 8 retiradas | por ler | Codex gpt-6-astra: texto provisório do brief H4, §3, ponto 4. Os lugares e as famílias dizem a organização decidida na §1.172; a medição cega sai porque não foi exercida. A leitura a frio pelo Claude Opus e a confirmação da redação pela direção ficam pendentes antes da fusão. |
