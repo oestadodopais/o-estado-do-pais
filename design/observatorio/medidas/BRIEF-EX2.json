@@ -77,8 +77,8 @@
     },
     {
       "nome": "explicacoes_publicadas",
-      "valor": 0,
-      "comando": "git show 4b29f707:src/data/explicacoes/index.mjs · as chaves «slug» das explicações",
+      "valor": 1,
+      "comando": "git show 4b29f707:src/data/explicacoes/index.mjs · as entradas da lista EXPLICACOES",
       "conhecido_positivo": {
         "o_que": "a explicação do dinheiro do Estado está declarada",
         "encontrado": true
@@ -86,7 +86,7 @@
     },
     {
       "nome": "paginas_lidas_pela_celula_das_frases_compostas",
-      "valor": 8,
+      "valor": 10,
       "comando": "git show 4b29f707:tests/explicacoes/frases-compostas.mjs · as chamadas routePath fixas na declaração de ROTAS mais uma por explicação (EXPLICACOES.map), vezes as duas edições",
       "conhecido_positivo": {
         "o_que": "a célula lê a rota das explicações e a página de cada explicação",
