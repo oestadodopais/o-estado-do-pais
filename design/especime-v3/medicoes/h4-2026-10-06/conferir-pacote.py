@@ -9,12 +9,14 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import sys
 from executar import limpar
 
 AQUI = Path(__file__).resolve().parent
 RAIZ = Path.cwd()
-PORTOES = AQUI / 'portoes'
-comando = 'python3 design/especime-v3/medicoes/h4-2026-10-06/conferir-pacote.py'
+passagem_b = '--passagem-b' in sys.argv
+PORTOES = AQUI / ('portoes-b' if passagem_b else 'portoes')
+comando = 'python3 design/especime-v3/medicoes/h4-2026-10-06/conferir-pacote.py' + (' --passagem-b' if passagem_b else '')
 cabeca = (PORTOES / 'cabeca').read_text().strip()
 assert cabeca == (PORTOES / 'cabeca.fim').read_text().strip(), 'A cabeça mudou durante os portões.'
 assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip() == cabeca, 'O pacote já não está na cabeça conferida.'
@@ -35,23 +37,40 @@ def conferir(caminho, esperado):
     assert real == esperado, f'O resumo mudou: {caminho}'
     conferidos[caminho] = real
 
-for nome in ['menu-a-390.json', 'menu-depois.json']:
+for nome in ['menu-a-390.json', 'menu-depois.json'] + (['menu-depois-antes.json'] if passagem_b else []):
     dados = json.loads((AQUI / nome).read_text())
     for m in dados['medidas']:
         conferir(m['captura'], m['sha256'])
-capturas = json.loads((AQUI / 'capturas.json').read_text())
-assert capturas['cabeca'] == cabeca, 'As capturas não são da cabeça dos portões.'
-for c in capturas['capturas']:
-    conferir(c['ficheiro'], c['sha256'])
-    conferir(c['recorte'], c['sha256_recorte'])
-for p in capturas['paginas']:
-    conferir(p['copia'], p['sha256'])
-    for f in p['folhas']:
-        conferir('dist' + f['ficheiro'], f['sha256'])
+    if nome == 'menu-a-390.json' and passagem_b:
+        depois = dados['depois']
+        assert depois['cabeca'] == cabeca
+        assert depois == json.loads((AQUI / 'menu-depois.json').read_text())
+        for m in depois['medidas']:
+            conferir(m['captura'], m['sha256'])
+for nome in ['capturas.json'] + (['capturas-b.json'] if passagem_b else []):
+    capturas = json.loads((AQUI / nome).read_text())
+    atual = nome == ('capturas-b.json' if passagem_b else 'capturas.json')
+    if atual:
+        assert capturas['cabeca'] == cabeca, 'As capturas não são da cabeça dos portões.'
+        assert not capturas['erros']
+    for c in capturas['capturas']:
+        conferir(c['ficheiro'], c['sha256'])
+        conferir(c['recorte'], c['sha256_recorte'])
+    for p in capturas['paginas']:
+        conferir(p['copia'], p['sha256'])
+        for f in p['folhas']:
+            conferir('dist' + f['ficheiro'] if atual else f['copia'], f['sha256'])
+if passagem_b:
+    tm = json.loads((AQUI / 'tema-menu-b.json').read_text())
+    assert tm['cabeca'] == tm['construcao']['commit'] == cabeca
+    assert not tm['falhas'] and all(p['mordeu'] for p in tm['plantas'])
+    for p in json.loads((AQUI / 'plantas-portoes-h4b.json').read_text()):
+        assert p['passou'] and p['cabeca'] == cabeca
 
+saida = AQUI / ('conferencia-pacote-b.json' if passagem_b else 'conferencia-pacote.json')
 relatorio = (AQUI / 'LEIA-ME.md').read_text()
 for destino in re.findall(r'\]\(([^)]+)\)', relatorio):
-    assert (AQUI / destino).exists(), f'Ligação sem ficheiro: {destino}'
+    assert (AQUI / destino).exists() or (AQUI / destino) == saida, f'Ligação sem ficheiro: {destino}'
 achados = []
 for p in AQUI.rglob('*'):
     if not p.is_file():
@@ -69,5 +88,5 @@ resultado = {
     'RESEARCHHUB_DIR_definido': bool(os.environ.get('RESEARCHHUB_DIR')),
     'pasta_motor_ao_lado_da_worktree': (RAIZ.parent / 'ResearchHub').exists(),
 }
-(AQUI / 'conferencia-pacote.json').write_text(json.dumps(resultado, ensure_ascii=False, indent=2) + '\n')
+saida.write_text(json.dumps(resultado, ensure_ascii=False, indent=2) + '\n')
 print(f'Pacote conferido: {len(conferidos)} resumos iguais, códigos lidos dos ficheiros e ligações resolvidas.')
