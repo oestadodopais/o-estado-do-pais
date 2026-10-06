@@ -12,6 +12,8 @@ import sys
 import tempfile
 import os
 from unittest.mock import patch
+from contextlib import redirect_stdout
+from io import StringIO
 
 RAIZ = Path(__file__).resolve().parents[2]
 spec = importlib.util.spec_from_file_location('pacote', RAIZ/'scripts/leituras/pacote.py')
@@ -33,9 +35,10 @@ with tempfile.TemporaryDirectory(prefix='oedp-ma-pacote-') as tmp:
     guardar('med/portoes/verify.log','✓ npm run check:series · verde\n✓ npm run check:series · segunda linha\nREGISTO INTEIRO NÃO CITADO\n')
     for g in ['build','verify','typecheck']: guardar(f'med/portoes/{g}.codigo','0\n')
     guardar('med/portoes/tempos.json','{"segundos": 1}\n')
+    guardar('med/portoes/build.log', 'REGISTO SEM CITAÇÃO\n')
     head = commit(); nums = tmp/'numeros'; nums.write_text('conferência sintética\n')
     env = {**os.environ, 'PACOTE_EXTRA':'med/portoes'}
-    for k in ['PACOTE_MOTOR','PACOTE_RETIRA']: env.pop(k,None)
+    for k in ['PACOTE_MOTOR','PACOTE_RETIRA','PACOTE_LOGS']: env.pop(k,None)
     def montar(dest):
         return subprocess.run([sys.executable,str(RAIZ/'scripts/leituras/pacote.py'),str(repo),base,head,str(dest),str(repo/'brief.md'),str(repo/'med/relatorio.md'),str(nums)],env=env,capture_output=True,text=True)
     dest = tmp/'pacote'; r = montar(dest); assert r.returncode == 0, r.stderr
@@ -45,6 +48,22 @@ with tempfile.TemporaryDirectory(prefix='oedp-ma-pacote-') as tmp:
     assert all((dest/f'med/portoes/{g}.codigo').read_text()=='0\n' for g in ['build','verify','typecheck'])
     assert (dest/'med/portoes/tempos.json').is_file()
     casos.append({'planta':'controlo com PACOTE_EXTRA', 'mensagem':'Só as linhas citadas, os três códigos e os tempos chegaram.', 'passou':True})
+    assert not (dest/'med/portoes/build.log').exists()
+    for nome in ('build', 'verify'):
+        tamanho = (repo/f'med/portoes/{nome}.log').stat().st_size
+        assert f'med/portoes/{nome}.log ({tamanho} bytes;' in r.stdout
+    casos.append({'planta': 'registos omitidos são ditos com o tamanho',
+                  'mensagem': '\n'.join(l for l in r.stdout.splitlines() if 'registo reduzido' in l), 'passou': True})
+    env['PACOTE_LOGS'] = 'inteiros'
+    completo = tmp/'inteiros'
+    r = montar(completo)
+    assert r.returncode == 0, r.stderr
+    for nome in ('build', 'verify'):
+        assert (completo/f'med/portoes/{nome}.log').read_bytes() == (repo/f'med/portoes/{nome}.log').read_bytes()
+    assert json.loads((completo/'registos-dos-portoes.json').read_text())['omitidos'] == []
+    casos.append({'planta': 'PACOTE_LOGS conserva os registos inteiros',
+                  'mensagem': 'Os registos citados e sem citação chegaram byte a byte.', 'passou': True})
+    env.pop('PACOTE_LOGS')
     escrever_bytes = Path.write_bytes
     def perder_linha(alvo, dados):
         if alvo.as_posix().endswith(f):
@@ -53,7 +72,7 @@ with tempfile.TemporaryDirectory(prefix='oedp-ma-pacote-') as tmp:
     argumentos = ['pacote.py', str(repo), base, head, str(tmp/'linha-retirada'),
                   str(repo/'brief.md'), str(repo/'med/relatorio.md'), str(nums)]
     # A falha é injetada na escrita; a conferência só é chamada pelo fluxo normal.
-    with patch.dict(os.environ, env, clear=True), patch.object(sys, 'argv', argumentos), patch.object(Path, 'write_bytes', perder_linha):
+    with patch.dict(os.environ, env, clear=True), patch.object(sys, 'argv', argumentos), patch.object(Path, 'write_bytes', perder_linha), redirect_stdout(StringIO()):
         try:
             mod.principal()
         except ValueError as e:

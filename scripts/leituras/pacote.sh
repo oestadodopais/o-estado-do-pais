@@ -15,6 +15,8 @@
 #   ficam fora do diff e das cópias inteiras, incluindo PACOTE_EXTRA. Conservam-se
 #   os códigos, tempos.json e só as linhas citadas no relatório pela forma:
 #   <!-- portao: portoes/verify.log | npm run check:series · -->
+#   PACOTE_LOGS=inteiros conserva os registos inteiros. Por omissão, cada
+#   registo reduzido ou omitido é dito com o tamanho original e o conservado.
 #   O caminho parte da pasta do relatório. A falta da linha fecha a montagem;
 #   linhas-dos-portoes.json dá os números das linhas e o sha256 da origem.
 set -eu

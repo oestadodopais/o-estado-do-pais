@@ -86,7 +86,7 @@ def linhas_dos_portoes(repo, cabeca, relatorio, texto, arvore):
     return registos, filtrados, indice
 
 
-def conferir_citacoes(destino, repo, cabeca, relatorio):
+def conferir_citacoes(destino, repo, cabeca, relatorio, inteiros=False):
     """Relê a entrega e extrai as citações por uma leitura independente.
 
     Não recebe os bytes preparados pelo escritor: uma falha nessa preparação
@@ -112,6 +112,8 @@ def conferir_citacoes(destino, repo, cabeca, relatorio):
         esperadas.setdefault(f, {}).update(encontradas)
     for f, linhas in esperadas.items():
         corpo = ('\n'.join(linhas[n] for n in sorted(linhas)) + '\n').encode()
+        if inteiros:
+            corpo = git(repo, 'show', f'{cabeca}:{f}')
         alvo = destino / f
         if not alvo.is_file() or alvo.read_bytes() != corpo:
             raise ValueError(f'O pacote recusa a entrega: faltam as linhas citadas de {f}.')
@@ -125,6 +127,10 @@ def principal():
     retira = shlex.split(os.environ.get('PACOTE_RETIRA', ''))
     motor = shlex.split(os.environ.get('PACOTE_MOTOR', ''))
     extra = shlex.split(os.environ.get('PACOTE_EXTRA', ''))
+    modo_logs = os.environ.get('PACOTE_LOGS', '')
+    if modo_logs not in ('', 'inteiros'):
+        raise ValueError('PACOTE_LOGS só aceita inteiros, ou fica por definir.')
+    inteiros = modo_logs == 'inteiros'
     if motor and len(motor) < 3:
         raise ValueError('PACOTE_MOTOR exige árvore, base e cabeça, seguidas dos padrões opcionais.')
     for arvore, nome in [(repo, 'repositório')] + ([(Path(motor[0]).resolve(), 'motor')] if motor else []):
@@ -171,17 +177,29 @@ def principal():
                 nome = os.fsdecode(f)
                 if nome not in registos:
                     n_extra += copiar(repo, cabeca, nome, destino)
+    extras = {os.fsdecode(f) for e in extra for f in git(repo, 'ls-tree', '-r', '--name-only', '-z', cabeca, '--', relativo(e)).split(b'\0') if f}
+    selecionados = registos & (set(mudados) | set(filtrados) | extras)
     # Os códigos e os tempos acompanham sempre os registos do intervalo ou
-    # citados. PACOTE_EXTRA também passa pelo filtro, nunca repõe o log inteiro.
-    pastas = {str(Path(f).parent) for f in registos if f in mudados or f in filtrados}
+    # citados. PACOTE_EXTRA passa pela mesma escolha explícita de registos inteiros.
+    pastas = {str(Path(f).parent) for f in selecionados}
     for pasta in pastas:
         for f in sorted(arvore):
             if str(Path(f).parent) == pasta and (f.endswith('.codigo') or Path(f).name == 'tempos.json'):
                 copiar(repo, cabeca, f, destino)
-    for f, corpo in filtrados.items():
-        alvo = destino / f
-        alvo.parent.mkdir(parents=True, exist_ok=True)
-        alvo.write_bytes(corpo)
+    omitidos = []
+    for f in sorted(selecionados):
+        original = git(repo, 'show', f'{cabeca}:{f}')
+        corpo = original if inteiros else filtrados.get(f, b'')
+        if corpo:
+            alvo = destino / f
+            alvo.parent.mkdir(parents=True, exist_ok=True)
+            alvo.write_bytes(corpo)
+        if corpo != original:
+            omitidos.append({'registo': f, 'bytes_originais': len(original),
+                             'bytes_conservados': len(corpo), 'bytes_retirados': len(original) - len(corpo)})
+            print(f'Pacote: registo reduzido ou deixado de fora: {f} ({len(original)} bytes; {len(corpo)} conservados).')
+    (destino / 'registos-dos-portoes.json').write_text(json.dumps(
+        {'modo': 'inteiros' if inteiros else 'citados', 'omitidos': omitidos}, ensure_ascii=False, indent=2) + '\n')
     (destino / 'linhas-dos-portoes.json').write_text(json.dumps(indice, ensure_ascii=False, indent=2)+'\n')
     n_motor = 0
     if motor:
@@ -200,7 +218,7 @@ def principal():
         alvo = destino / 'built' / relativo(f)
         alvo.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(repo / 'dist' / f, alvo)
-    conferir_citacoes(destino, repo, cabeca, rel_relatorio)
+    conferir_citacoes(destino, repo, cabeca, rel_relatorio, inteiros)
     print(f'Pacote: {copiados} ficheiros mudados, {n_extra} extra, {len(retirados)} secções retiradas, {n_motor} ficheiros do motor, {len(construidos)} páginas construídas.')
 
 
