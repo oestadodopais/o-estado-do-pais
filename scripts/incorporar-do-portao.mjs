@@ -65,6 +65,8 @@ export function conferirCodigo(root, rota) {
   if (linha && LICENCA) {
     const blocos = root.querySelectorAll('[data-incorporar-bloco]');
     const bloco = blocos[0];
+    if (bloco?.querySelector('textarea') !== campos[0])
+      erros.push('ER1 código: o campo conferido não é o que o botão copia.');
     const label = bloco?.querySelector('label');
     const botao = bloco?.querySelector('button');
     const s = t(rota.lang).incorporar;
