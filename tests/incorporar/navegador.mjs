@@ -11,6 +11,7 @@ import { allClaims } from '../../src/lib/ledger.mjs';
 import { SITE_URL, SITE_HOST_DISPLAY } from '../../site.config.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
 import { t } from '../../src/i18n/strings.mjs';
+import { dadosDaIncorporacao } from '../../src/lib/incorporar.mjs';
 const dist = path.resolve(process.env.OEDP_DIST || 'dist');
 const i = process.argv.indexOf('--json');
 const saida = i>0 ? process.argv[i+1] : null;
@@ -24,11 +25,13 @@ const antigo = c.corrections.find(x=>x.kind==='atualizacao' && x.new_value===c.v
 const tipos = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css','.json':'application/json','.woff2':'font/woff2','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp'};
 const codigos = Object.fromEntries(['pt','en'].map(lang=>[lang,parse(fs.readFileSync(`${dist}${routePath('linha',lang,{slug:c.id})}/index.html`,'utf8')).querySelector('[data-incorporar-codigo]').textContent]));
 const escapar = x=>String(x).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
+const modeloBlogue = fs.readFileSync(new URL('./blogue.html',import.meta.url),'utf8');
 function blogue(lang) {
   const velho = codigos[lang].replaceAll(escapar(c.value),escapar(antigo));
   const ausente = codigos[lang].replaceAll(c.id,c.id+'-nao-existe');
   const rotulos = lang==='pt' ? ['Valor atual','Valor antigo','Pedido sem resposta'] : ['Current value','Old value','Failed request'];
-  return `<!doctype html><html lang="${t(lang).lang}"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${lang==='pt'?'Blogue de ensaio':'Test blog'}</title><style>body{font:18px/1.6 Georgia,serif;max-width:42em;margin:32px auto;padding:0 18px;color:#202124}h1{font-size:32px}h2{font-size:20px}section{border-top:1px solid #aaa;margin-top:32px}a{color:inherit;text-decoration:underline}p{overflow-wrap:anywhere}</style><h1>${lang==='pt'?'Blogue de ensaio':'Test blog'}</h1><p id="anfitria">${lang==='pt'?'Conteúdo da página que acolhe os números.':'Content of the page hosting the numbers.'}</p>${[codigos[lang],velho,ausente].map((s,n)=>`<section id="caso-${n}"><h2>${rotulos[n]}</h2>${s}</section>`).join('')}</html>`;
+  const campos={lang:t(lang).lang,titulo:lang==='pt'?'Blogue de ensaio':'Test blog',anfitria:lang==='pt'?'Conteúdo da página que acolhe os números.':'Content of the page hosting the numbers.',rotulo_atual:rotulos[0],rotulo_antigo:rotulos[1],rotulo_ausente:rotulos[2],codigo_atual:codigos[lang],codigo_antigo:velho,codigo_ausente:ausente};
+  return modeloBlogue.replace(/\{\{([a-z_]+)\}\}/g,(_,chave)=>campos[chave]);
 }
 let modoAtual = 'normal';
 const servidor = http.createServer((req,res)=>{
@@ -45,6 +48,7 @@ const servidor = http.createServer((req,res)=>{
       if (modoAtual==='redirecionamento') {res.writeHead(302,{location:'https://fora.invalid/receber'}).end();return;}
       if (modoAtual==='json-malformado') {res.end('{');return;}
       if (modoAtual==='outra-linha') {res.end(JSON.stringify({...json,linha:{...json.linha,id:c.id+'-outra'}}));return;}
+      if (modoAtual==='releitura') {res.end(JSON.stringify(jsonRelido));return;}
     }
     const bytes=fs.readFileSync(f);
     // Só o argumento da origem muda, em memória. O corpo da função é idêntico.
@@ -58,8 +62,11 @@ const sitio = await abrir(servidor), anfitria = await abrir(blog);
 const navegador = await chromium.launch({headless:true});
 const r = {transporte:'Apenas o argumento da origem e o src do guião são mapeados ao servidor local; os pedidos entre portas distintas são reais, sem fulfill.',comando:'node tests/incorporar/navegador.mjs',linha:c.id,antigo,atual:c.value,casos:[],capturas:[],plantas:[]};
 const json = JSON.parse(fs.readFileSync(`${dist}/livro-razao/${c.id}.json`,'utf8'));
+const diaSeguinte = new Date(Math.max(...[c.access_date,...(c.verifications??[]).map(v=>v.date)].filter(Boolean).map(d=>Date.parse(d))) + 24*60*60*1000).toISOString().slice(0,10);
+const linhaRelida = {...c,verifications:[...(c.verifications??[]),{date:diaSeguinte,result:'igual'}]};
+const jsonRelido = {...json,linha:linhaRelida,incorporacao:Object.fromEntries(['pt','en'].map(lang=>[lang,dadosDaIncorporacao(linhaRelida,lang)]))};
 try {
-  for (const lang of ['pt','en']) for (const modo of ['normal','sem-js','sem-cors','falha','json-malformado','outra-linha','redirecionamento']) {
+  for (const lang of ['pt','en']) for (const modo of ['normal','releitura','sem-js','sem-cors','falha','json-malformado','outra-linha','redirecionamento']) {
     const ctx = await navegador.newContext({javaScriptEnabled:modo!=='sem-js', viewport:{width:390,height:900},deviceScaleFactor:1,colorScheme:'light',reducedMotion:'reduce'});
     const pedidos = [];
     modoAtual=modo;
@@ -83,11 +90,13 @@ try {
     assert.equal(valores.length,3);
     assert.equal(valores[2].valor,c.value);
     assert.equal(valores[2].aviso,null);
-    if (modo==='normal') {
+    if (['normal','releitura'].includes(modo)) {
+      const esperado = modo==='releitura' ? jsonRelido : json;
       assert.equal(pedidos.filter(p=>p.caminho.endsWith('.json')).length,valores.length);
-      assert.equal(valores[0].valor,c.value);assert.equal(valores[0].lido,json.incorporacao[lang].data);assert.equal(valores[0].aviso,null);
-      assert.equal(valores[1].valor,c.value);assert.equal(valores[1].aviso,json.incorporacao[lang].atualizacao);
-      assert.equal(textos[0],textos[1].slice(0,-(' · '+json.incorporacao[lang].atualizacao).length));
+      assert.equal(valores[0].valor,c.value);assert.equal(valores[0].lido,esperado.incorporacao[lang].data);assert.equal(valores[0].aviso,null);
+      assert.equal(valores[1].valor,c.value);assert.equal(valores[1].aviso,esperado.incorporacao[lang].atualizacao);
+      assert.equal(textos[0],textos[1].slice(0,-(' · '+esperado.incorporacao[lang].atualizacao).length));
+      if(modo==='releitura')assert.equal(valores[0].lido,diaSeguinte);
     } else {
       assert.equal(valores[1].valor,antigo,`${modo}: o fallback mudou`);assert.equal(valores[1].aviso,null);
       const original = parse(blogue(lang)).querySelectorAll('.oedp-numero').map(n=>n.textContent);
