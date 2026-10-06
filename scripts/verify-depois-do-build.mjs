@@ -437,35 +437,35 @@ export async function plantas() {
   try {
     prepara();
     let r = await corre(limpa);
-    casos.push({ planta: 'a cadeia limpa passa, e o que o build já correu não corre outra vez', mordeu: r.ok && existe('v1') && existe('v2') && !existe('b1') && !existe('b2') && r.celulas.U.cobertos_pelo_build === 2 && r.celulas.U.corridos_aqui === 2 });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'a cadeia limpa passa, e o que o build já correu não corre outra vez', mordeu: r.ok && existe('v1') && existe('v2') && !existe('b1') && !existe('b2') && r.celulas.U.cobertos_pelo_build === 2 && r.celulas.U.corridos_aqui === 2 });
 
     prepara();
     r = await corre({ build, verify: `${limpa.verify} && ${marca('nova')}` });
-    casos.push({ planta: 'uma conferência nova só no verify corre sozinha', mordeu: r.ok && existe('nova') && r.celulas.U.corridos_aqui === 3 });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência nova só no verify corre sozinha', mordeu: r.ok && existe('nova') && r.celulas.U.corridos_aqui === 3 });
 
     prepara();
     r = await corre(limpa, { escolher: (s) => restantesDoVerify(s).filter((p) => !p.includes("'v2'")) });
-    casos.push({ planta: 'uma conferência tirada da escolha fecha a célula U', mordeu: !r.ok && !existe('v2') && r.celulas.U.falhas.some((f) => f.includes("'v2'") && f.includes('não correu aqui')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência tirada da escolha fecha a célula U', mordeu: !r.ok && !existe('v2') && r.celulas.U.falhas.some((f) => f.includes("'v2'") && f.includes('não correu aqui')) });
 
     prepara();
     r = await corre({ build, verify: `${limpa.verify} && ${node} -e "process.exit(3)"` });
-    casos.push({ planta: 'uma conferência vermelha fecha a corrida, e as outras acabam', mordeu: !r.ok && r.vermelhos.length === 1 && r.corridos.find((c) => c.codigo !== 0)?.codigo === 3 && existe('v1') && existe('v2') && r.celulas.U.falhas.some((f) => f.includes('não saiu com 0')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência vermelha fecha a corrida, e as outras acabam', mordeu: !r.ok && r.vermelhos.length === 1 && r.corridos.find((c) => c.codigo !== 0)?.codigo === 3 && existe('v1') && existe('v2') && r.celulas.U.falhas.some((f) => f.includes('não saiu com 0')) });
 
     prepara();
     r = await corre({ build, verify: `${limpa.verify} && ${node} -e "require('fs').appendFileSync('dist/x/index.html','!')"` });
-    casos.push({ planta: 'uma conferência que escreve no dist/ fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.includes('x/index.html') && f.includes('mudou')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência que escreve no dist/ fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.includes('x/index.html') && f.includes('mudou')) });
 
     prepara('d'.repeat(40));
     r = await corre(limpa);
-    casos.push({ planta: 'um dist/ de outra cabeça fecha a célula C', mordeu: !r.ok && r.celulas.C.falhas.some((f) => f.includes('version.json')) && r.celulas.C.falhas.some((f) => f.includes('prova.json')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'um dist/ de outra cabeça fecha a célula C', mordeu: !r.ok && r.celulas.C.falhas.some((f) => f.includes('version.json')) && r.celulas.C.falhas.some((f) => f.includes('prova.json')) });
 
     prepara();
     r = await corre({ build, verify: limpa.verify.replace(/ && /, ' &&  && ') });
-    casos.push({ planta: 'um passo vazio na cadeia não passa despercebido à contagem', mordeu: !r.ok && r.celulas.U.falhas.some((f) => f.includes('passos pelos &&')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'um passo vazio na cadeia não passa despercebido à contagem', mordeu: !r.ok && r.celulas.U.falhas.some((f) => f.includes('passos pelos &&')) });
 
     prepara();
     r = await corre({ build, verify: `${limpa.verify} && ${escreveERepoe('dist/x/index.html')}` });
-    casos.push({ planta: 'uma conferência que escreve no dist/ e repõe os bytes fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.includes('dist/x/index.html') && f.includes('foi escrito')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência que escreve no dist/ e repõe os bytes fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.includes('dist/x/index.html') && f.includes('foi escrito')) });
 
     prepara();
     /* H2, I194: os && da redação anterior eram separadores de CONFERÊNCIAS.
@@ -489,7 +489,7 @@ export async function plantas() {
     const premissas = antesDaTroca.resumo === depoisDaTroca.resumo
       && antesDaTroca.escrito === depoisDaTroca.escrito
       && antesDaTroca.inode !== depoisDaTroca.inode;
-    casos.push({ planta: 'uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D',
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D',
       antes: antesDaTroca, depois: depoisDaTroca, passos_da_troca: trocas.length,
       codigo_da_troca: trocas[0]?.codigo, falhas: r.celulas.D.falhas,
       mordeu: premissas && trocas.length === 1 && trocas[0].codigo === 0
@@ -497,7 +497,7 @@ export async function plantas() {
 
     prepara();
     r = await corre({ build, verify: `${limpa.verify} && ${escreveERepoe('fonte.txt')}` });
-    casos.push({ planta: 'uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.startsWith('D: fonte.txt') && f.includes('foi escrito')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.startsWith('D: fonte.txt') && f.includes('foi escrito')) });
 
     prepara();
     {
@@ -505,7 +505,7 @@ export async function plantas() {
       fs.utimesSync(path.join(dist, 'cadeia.json'), velho, velho);
     }
     r = await corre(limpa);
-    casos.push({ planta: 'um cadeia.json de outra construção fecha a célula C', mordeu: !r.ok && r.celulas.C.falhas.some((f) => f.includes('cadeia.json') && f.includes('antes do carimbo')) && !r.celulas.C.falhas.some((f) => f.includes('prova.json')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'um cadeia.json de outra construção fecha a célula C', mordeu: !r.ok && r.celulas.C.falhas.some((f) => f.includes('cadeia.json') && f.includes('antes do carimbo')) && !r.celulas.C.falhas.some((f) => f.includes('prova.json')) });
 
     prepara();
     {
@@ -514,7 +514,7 @@ export async function plantas() {
       r = await corre(comFeixe, { depoisDoGrupo: [passoDoFeixe] });
       const feixe = r.corridos.find((c) => c.passo === passoDoFeixe);
       const fimDoGrupo = Math.max(...r.corridos.filter((c) => c.fase === 'grupo').map((c) => c.fim_s));
-      casos.push({ planta: 'uma conferência que escreve na árvore corre sozinha, depois do grupo', mordeu: r.ok && existe('feixe') && feixe?.fase === 'depois' && feixe.inicio_s >= fimDoGrupo });
+      casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência que escreve na árvore corre sozinha, depois do grupo', mordeu: r.ok && existe('feixe') && feixe?.fase === 'depois' && feixe.inicio_s >= fimDoGrupo });
     }
   } finally {
     fs.rmSync(base, { recursive: true, force: true });
