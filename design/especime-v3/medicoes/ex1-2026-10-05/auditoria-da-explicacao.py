@@ -9,6 +9,12 @@ literal está mesmo no campo que cita, que cada «conta» vive num ramo do sinal
 que cada «aponta» nomeia uma secção que está acima, e que cada «liga» só tem pontuação e palavras da lista fechada.
 Não infere que o literal quer dizer o que a parte diz: isso é a leitura de quem assina (Claude Opus 5.5, 05.10.2026).
 
+EX1-b (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216): as folhas novas e mudadas. Duas
+classes ganham forma: «leitura», uma parte que nenhuma origem diz com estas palavras e que é a leitura do projeto sobre o
+que os campos citados definem (leva `sobre` e apoios, conferidos como os de «diz»); e «aponta», que pode apontar também
+para uma porta do fim que a explicação declara (`porta`) ou para os selos dos números da página (`alvo: 'selos'`). As
+palavras do token `maiores` são folhas próprias, e a «conta» vive nelas como num ramo.
+
 Corre-se da raiz do sítio: python3 design/especime-v3/medicoes/ex1-2026-10-05/auditoria-da-explicacao.py
 Com --conferir, não escreve: sai a 1 se o ficheiro não tiver a secção que este guião compõe.
 """
@@ -41,6 +47,15 @@ def liga(pt, en):
 def aponta(pt, en, secao):
     return {'pt': pt, 'en': en, 'classe': 'aponta', 'secao': secao}
 
+def aponta_porta(pt, en, porta):
+    return {'pt': pt, 'en': en, 'classe': 'aponta', 'porta': porta}
+
+def aponta_selos(pt, en):
+    return {'pt': pt, 'en': en, 'classe': 'aponta', 'alvo': 'selos'}
+
+def leitura(pt, en, sobre, *apoios):
+    return {'pt': pt, 'en': en, 'classe': 'leitura', 'sobre': sobre, 'apoios': list(apoios)}
+
 F07 = 'oe-2026-cem-euros-funcao-07'
 FUNCAO_07 = 'oe-2026-despesa-funcao-07'
 MF = 'oe-2026-cem-euros-ministerio-financas'
@@ -50,9 +65,8 @@ DMT = 'oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social'
 DME = 'oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao'
 EXD = 'execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social'
 EXR = 'execucao-2026-08-receita-efetiva-administracao-central-seguranca-social'
-P016 = 'execucao-2026-08-despesa-programa-016'
-P015 = 'execucao-2026-08-despesa-programa-015'
-P005 = 'execucao-2026-08-despesa-programa-005'
+P001 = 'execucao-2026-08-despesa-programa-001'
+F09 = 'oe-2026-cem-euros-funcao-09'
 DV = 'divida-publica-2025'
 DVUE = 'divida-publica-2025-ue'
 SALDO = 'saldo-das-administracoes-publicas-2025'
@@ -117,6 +131,21 @@ FOLHAS = [
         diz('Os dezasseis ministérios', 'The sixteen ministries', l(DMF, 'document.locator', 'POR MINISTÉRIOS')),
         diz(', de cada cem euros', ', of every hundred euros', l(MF, 'derivation', 'multiplicar por cem'), l(MF, 'derivation_en', 'multiply by one hundred')),
     ]),
+    ('seccoes[1].conteudo[2].paragrafo[0]', [
+        diz('As duas contas não batem porque medem coisas diferentes', 'The two counts do not match because they measure different things',
+            l(MF, 'derivation', 'não mede a repartição da despesa efetiva consolidada'), l(MF, 'derivation_en', 'it does not measure the allocation of consolidated effective expenditure')),
+        liga(': ', ': '),
+        diz('a conta por função soma tudo o que o Estado gasta com um fim', 'the count by function adds up everything the State spends for one purpose',
+            o(DG, 'especifica os fins e atividades típicos do Estado'), AFETACAO),
+        diz(', como a saúde ou a educação', ', such as health or education', l(F07, 'nome', 'saúde'), l(F09, 'nome', 'educação'), l(F07, 'nome', 'health'), l(F09, 'nome', 'education')),
+        leitura(', seja qual for o ministério que o gasta', ', whichever ministry spends it', 'a definição das duas classificações: a funcional reúne a despesa pelo fim, em todas as entidades da administração central',
+            o(DG, 'abrangem todas as entidades públicas integradas no perímetro da Administração Central'), o(DG, 'especifica os fins e atividades típicos do Estado')),
+        liga('; ', '; '),
+        diz('a conta por ministério é o orçamento de cada ministério', 'the count by ministry is each ministry’s budget',
+            l(MF, 'derivation', 'despesa bruta deste ministério'), l(DMF, 'document.locator', 'POR MINISTÉRIOS')),
+        leitura(', que paga também coisas de outros fins.', ', which also pays for things with other purposes.', 'a definição das duas classificações: a orgânica soma a despesa de cada ministério, com as operações financeiras e as transferências, e não a reparte pelos fins',
+            l(MF, 'derivation', 'Inclui operações financeiras e transferências internas'), l(MF, 'derivation', 'não mede a repartição da despesa efetiva consolidada')),
+    ]),
     ('seccoes[2].titulo', [diz('O que já se gastou este ano', 'What has been spent this year', l(EXD, 'name', 'Despesa efetiva'), l(EXD, 'unit', 'acumulados de janeiro a agosto'))]),
     ('seccoes[2].conteudo[0].paragrafo[0]', [diz('Até ', 'By ', l(EXD, 'unit', 'acumulados de janeiro a agosto'))]),
     ('seccoes[2].conteudo[0].paragrafo[2]', [
@@ -127,16 +156,17 @@ FOLHAS = [
     ('seccoes[2].conteudo[0].paragrafo[3].sufixo', [diz(' milhões de euros', ' million euros', l(EXD, 'unit', 'milhões de euros'))]),
     ('seccoes[2].conteudo[0].paragrafo[4]', [diz(' e recebido ', ' and taken in ', l(EXR, 'name', 'Receita efetiva'))]),
     ('seccoes[2].conteudo[0].paragrafo[5].sufixo', [diz(' milhões', ' million', l(EXR, 'unit', 'milhões de euros'))]),
-    ('seccoes[2].conteudo[0].paragrafo[6].se[0]', [
-        conta('; os programas que mais gastaram foram', '; the programmes that spent the most were'),
-        diz(' o do Trabalho, Solidariedade e Segurança Social (', ' Labour, Solidarity and Social Security (', l(P016, 'name', 'Trabalho, Solidariedade e Segurança Social')),
+    ('seccoes[2].conteudo[0].paragrafo[6].frase', [
+        liga('; ', '; '),
+        diz('os programas', 'the programmes', l(P001, 'document.locator', 'programa')),
+        conta(' que mais gastaram foram ', ' that spent the most were '),
     ]),
-    ('seccoes[2].conteudo[0].paragrafo[6].se[1].sufixo', [diz(' milhões', ' million', l(P016, 'unit', 'milhões de euros'))]),
-    ('seccoes[2].conteudo[0].paragrafo[6].se[2]', [liga('), ', '), '), diz('o da Saúde (', 'Health (', l(P015, 'name', 'Saúde'))]),
-    ('seccoes[2].conteudo[0].paragrafo[6].se[3].sufixo', [diz(' milhões', ' million', l(P015, 'unit', 'milhões de euros'))]),
-    ('seccoes[2].conteudo[0].paragrafo[6].se[4]', [liga(') e ', ') and '), diz('o da Gestão da Dívida Pública (', 'Public Debt Management (', l(P005, 'name', 'Gestão da Dívida Pública'))]),
-    ('seccoes[2].conteudo[0].paragrafo[6].se[5].sufixo', [diz(' milhões', ' million', l(P005, 'unit', 'milhões de euros'))]),
-    ('seccoes[2].conteudo[0].paragrafo[6].se[6]', [liga(')', ')')]),
+    ('seccoes[2].conteudo[0].paragrafo[6].antes', [liga('o de ', '')]),
+    ('seccoes[2].conteudo[0].paragrafo[6].abre', [liga(' (', ' (')]),
+    ('seccoes[2].conteudo[0].paragrafo[6].sufixo', [diz(' milhões', ' million', l(P001, 'unit', 'milhões de euros'))]),
+    ('seccoes[2].conteudo[0].paragrafo[6].fecha', [liga(')', ')')]),
+    ('seccoes[2].conteudo[0].paragrafo[6].entre', [liga(', ', ', ')]),
+    ('seccoes[2].conteudo[0].paragrafo[6].ultimo', [liga(' e ', ' and ')]),
     ('seccoes[2].conteudo[0].paragrafo[7]', [liga('.', '.')]),
     ('seccoes[3].titulo', [diz('A dívida e o saldo', 'Debt and the balance', l(DV, 'excerpt', 'General government gross debt'), l(SALDO, 'document.title', 'deficit/surplus'))]),
     ('seccoes[3].conteudo[0].paragrafo[0]', [diz('No fim de ', 'At the end of ', o(DIV, 'outstanding at the end of the year'))]),
@@ -152,12 +182,14 @@ FOLHAS = [
         liga(', e ', ', and '),
         diz('as contas públicas fecharam o ano', 'the public accounts closed the year', l(SALDO, 'excerpt', 'General government'), o(SAL, 'The difference between total revenue and total expenditure'), {'linha': SALDO, 'campo': 'reference_date', 'forma': 'ano'}),
         liga(' com um ', ' with a '),
+        diz('saldo', 'balance', o(SAL, 'The difference between total revenue and total expenditure'), l(SALDO, 'document.title', 'deficit/surplus')),
+        liga(' de ', ' of '),
     ]),
-    ('seccoes[3].conteudo[0].paragrafo[7].positivo[0]', [conta('excedente', 'surplus')]),
-    ('seccoes[3].conteudo[0].paragrafo[7].negativo[0]', [conta('défice', 'deficit')]),
-    ('seccoes[3].conteudo[0].paragrafo[8]', [liga(' de ', ' of ')]),
-    ('seccoes[3].conteudo[0].paragrafo[9].sufixo', [liga(' %', ' %')]),
-    ('seccoes[3].conteudo[0].paragrafo[10]', [diz(' do produto.', ' of output.', l(SALDO, 'unit', '% do PIB'))]),
+    ('seccoes[3].conteudo[0].paragrafo[7].sufixo', [liga(' %', ' %')]),
+    ('seccoes[3].conteudo[0].paragrafo[8]', [diz(' do produto', ' of output', l(SALDO, 'unit', '% do PIB')), liga(', ', ', ')]),
+    ('seccoes[3].conteudo[0].paragrafo[9].positivo[0]', [conta('um excedente', 'a surplus')]),
+    ('seccoes[3].conteudo[0].paragrafo[9].negativo[0]', [conta('um défice', 'a deficit')]),
+    ('seccoes[3].conteudo[0].paragrafo[10]', [liga('.', '.')]),
     ('naoDiz[0][0].se[0]', [
         diz('O orçamento é uma previsão', 'The budget is a forecast', o(DG, 'contemplam as despesas a pagar no ano')),
         diz(': o que se gasta de facto lê-se na execução', ': what is actually spent is read in the budget execution', l(EXD, 'document.title', 'Síntese da Execução Orçamental'), l(EXD, 'nome', 'executada')),
@@ -169,6 +201,12 @@ FOLHAS = [
         diz(' Os juros da dívida', ' The interest on the debt', o(CF, 'Public debt transactions')),
         conta(' não estão ainda no livro-razão deste projeto como linha própria', ' is not yet in this project’s ledger as a line of its own'),
         conta('; quando entrarem, esta explicação diz quanto são.', '; when it is, this explainer will say how much it is.'),
+    ]),
+    ('naoDiz[0][2]', [
+        diz(' O detalhe por programa e por ministério', ' The detail by programme and by ministry', l(P001, 'document.locator', 'programa'), l(DMF, 'document.locator', 'POR MINISTÉRIOS')),
+        aponta_selos(', com a fonte de cada número, está no recibo de cada um, a um toque,', ', with the source of each figure, is in each one’s receipt, one tap away,'),
+        liga(' e ', ' and '),
+        aponta_porta('nos números do tema «Estado e economia».', 'in the figures of the theme «State and economy».', 'estado-e-economia'),
     ]),
 ]
 
@@ -185,8 +223,8 @@ def entrada():
     return {
         'slug': 'dinheiro-do-estado-2026',
         'quem': 'Claude Opus 5.5',
-        'quando': '2026-10-05',
-        'o_que': 'a primeira leitura, sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X10 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam',
+        'quando': '2026-10-06',
+        'o_que': 'a primeira leitura (05.10.2026) e a do EX1-b (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X13 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam',
         'origens': usadas,
         'folhas': folhas,
     }

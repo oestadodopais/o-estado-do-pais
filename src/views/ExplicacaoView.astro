@@ -4,7 +4,8 @@
  *
  * A forma do §5, ponto 3, do brief: o título é a pergunta do leitor; a abertura responde com os números maiores;
  * as secções explicam a dinâmica, cada uma com os seus números e, onde a casa já tem a forma, uma figura; «O que
- * isto não diz» fecha; a porta para os recibos vai no fim. Rende o que `explicacaoResolvida()` devolve e mais
+ * isto não diz» fecha; as portas declaradas vão no fim (os recibos e, desde o EX1-b, a página de um tema). Rende o que
+ * `explicacaoResolvida()` devolve e mais
  * nada: cada número é um `<Claim>` com o selo ao lado, cada ano é a `<DataDaLinha>` de uma linha, cada nome de
  * uma função é o nome declarado da linha, e as frases que comparam só aparecem enquanto os números lhes dão
  * razão.
@@ -52,6 +53,10 @@ const path = routePath('explicacao', lang, { slug });
         ))}
       </section>
     )}
-    <p class="regra-portas explicacao-portas" data-explicacao-portas><a href={routePath('livro', lang)}>{s.nav.livro} →</a></p>
+    {/* AS PORTAS DO FIM (EX1-b, 06.10.2026): as que a explicação declara, pela ordem dela; os números e as fontes sempre, e,
+        nesta, a página do tema «Estado e economia» (a decisão do lugar de direção sobre a I212). */}
+    <p class="regra-portas explicacao-portas" data-explicacao-portas>
+      {e.portas.map((p, i) => <>{i > 0 && ' '}<a href={p.href} data-explicacao-porta-do-fim={p.entrada ?? p.rota}>{p.texto} →</a></>)}
+    </p>
   </article>
 </Base>
