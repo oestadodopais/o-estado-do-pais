@@ -1835,6 +1835,21 @@ export const STRINGS = {
         referencias: ' valores de referência da Comissão Europeia e dentro de ',
         lista: '. Fora: ',
         fecha: '.',
+        /* R4 (05.10.2026, o ponto 4 e a decisão 5 do brief): por baixo do veredicto, cada valor de que Portugal ficou
+           fora com a frase «o que é» da sua linha e o lado, e os de dentro numa porta dobrada com a mesma forma. O lado
+           escolhe-o a conta (`comparacaoComOLimiar`), e o valor de referência vai pela sua marca, nunca escrito aqui. */
+        ladoAntes: 'Portugal está ',
+        lados: {
+          acima: 'acima do valor de referência da Comissão Europeia, que é ',
+          abaixo: 'abaixo do valor de referência da Comissão Europeia, que é ',
+          igual: 'no valor de referência da Comissão Europeia, que é ',
+          entre: 'entre os valores de referência da Comissão Europeia, que são ',
+          acimaDaBanda: 'acima dos valores de referência da Comissão Europeia, que são ',
+          abaixoDaBanda: 'abaixo dos valores de referência da Comissão Europeia, que são ',
+        },
+        eBanda: ' e ',
+        fimLado: '.',
+        dentroK: 'Os valores de referência de que Portugal ficou dentro',
       },
       metaTitle: 'O Estado do País',
       /* PP1: a descrição acompanha a página nova, os blocos de «O que se passa» e as entradas.
@@ -3814,6 +3829,18 @@ export const STRINGS = {
         referencias: ' reference values and within ',
         lista: '. Outside: ',
         fecha: '.',
+        ladoAntes: 'Portugal is ',
+        lados: {
+          acima: 'above the European Commission’s reference value, which is ',
+          abaixo: 'below the European Commission’s reference value, which is ',
+          igual: 'at the European Commission’s reference value, which is ',
+          entre: 'between the European Commission’s reference values, which are ',
+          acimaDaBanda: 'above the European Commission’s reference values, which are ',
+          abaixoDaBanda: 'below the European Commission’s reference values, which are ',
+        },
+        eBanda: ' and ',
+        fimLado: '.',
+        dentroK: 'The reference values Portugal was within',
       },
       metaTitle: 'O Estado do País',
       metaDescription:

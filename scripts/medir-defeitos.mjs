@@ -1684,7 +1684,15 @@ const PRIVACIDADE_INGLESA_DEPOIS_DO_ENDERECO =
    página, que é a primeira frase do mesmo texto, e que a régua lê como um bloco à parte. */
 const PRIVACIDADE_INGLESA_DESCRICAO =
   'What is kept when you send a suggestion: what you write, the language and the page you came from.';
+/* R4 (05.10.2026, o ponto 4 do brief): «abaixo do valor de referência» e «entre os valores de referência» saíram da página
+   como blocos soltos no B2 e continuam proibidos assim; voltam a render-se só dentro das frases do lado de um valor de
+   referência, por baixo do veredicto da primeira página, que a V1-R4 do `check:pais` reconta (a palavra do lado é a
+   da conta, e o valor de referência e o sinal são origens). As frases admitidas são as que a régua lê, inteiras. */
+const LADO_ABAIXO = 'Portugal está abaixo do valor de referência da Comissão Europeia, que é';
+const LADO_ENTRE = 'Portugal está entre os valores de referência da Comissão Europeia, que são';
 const RETIRADAS_DENTRO_DE_FRASE = new Map([
+  ['abaixo do valor de referência', new Set([`${LADO_ABAIXO} %.`, `${LADO_ABAIXO} − %.`, `${LADO_ABAIXO} − pp.`, `${LADO_ABAIXO} pp.`])],
+  ['entre os valores de referência', new Set([`${LADO_ENTRE} − % e %.`, `${LADO_ENTRE} % e %.`])],
   [
     'Language',
     new Set([

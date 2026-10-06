@@ -667,3 +667,12 @@ planta('r4-titulo-sem-nome','scripts/gate-html.mjs',[
 planta('r4-voz-nome-da-familia-trocado','scripts/check-voz.mjs',[
  ['livro-razao/credito-malparado-2024/index.html',r=>r.querySelector('[data-de-linha="credito-malparado-2024"]').set_content('Crédito à habitação')]
 ],[/«data-nome="familia"» sobre «Crédito à habitação» · o texto marcado não é o nome da família "credito-malparado"/]);
+/* R4, a primeira página: o lado de um valor de referência trocado na construção (a marca e as palavras), que só a conta
+   da V1-R4 do `check:pais` recusa; e o fragmento retirado «abaixo do valor de referência» solto num bloco, que a régua da
+   voz continua a recusar fora das frases do lado que ela admite. */
+planta('r4-pais-lado-trocado','scripts/check-pais.mjs',[
+ ['index.html',r=>{const i=r.querySelector('[data-veredicto-explica="divida-publica-2025"]');i.setAttribute('data-veredicto-lado','abaixo');const f=i.querySelector('[data-veredicto-lado-frase]');f.set_content(f.innerHTML.replace('acima do valor','abaixo do valor'));}]
+],[/V1-R4 pt: «divida-publica-2025»: a explicação diz o lado «abaixo», e a conta desta célula dá «acima»/]);
+planta('r4-voz-fragmento-retirado-solto','scripts/check-voz.mjs',[
+ ['index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<p>abaixo do valor de referência</p>')]
+],[/FRASE RETIRADA QUE VOLTOU A RENDER-SE/,/«abaixo do valor de referência»/]);

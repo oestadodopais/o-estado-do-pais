@@ -35,7 +35,9 @@ import CampoDaLinha from '../components/CampoDaLinha.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
 import ValorDaProva from '../components/ValorDaProva.astro';
 import { ledeDoPainel } from '../lib/inicio.mjs';
-import { FIGURAS_PDM } from '../data/figuras.mjs';
+import { FIGURAS_PDM, comparacaoComOLimiar } from '../data/figuras.mjs';
+import Frase from '../components/Frase.astro';
+import { oQueEDaLinha } from '../lib/o-que-e-o-numero.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { prova } from '../lib/prova.mjs';
@@ -63,6 +65,34 @@ const lede = ledeDoPainel(medidasDoPainel, s.inicio.cabeca.ledePais, lang);
 const v = s.home.veredicto;
 const periodos = new Set(medidasDoPainel.map(m => m.linha.reference_date));
 if (!lede?.ano || periodos.size !== 1 || !periodos.has(lede.ano)) throw new Error('B2 veredicto: as linhas não partilham um período.');
+/* O QUE CADA VALOR DE REFERÊNCIA MEDE, E DE QUE LADO PORTUGAL FICOU (bloco R4, 05.10.2026, o ponto 4 e a decisão 5
+   do brief). Cada medida do painel leva a frase «o que é» da sua linha (a mesma do cartão, `oQueEDaLinha()`) e o lado,
+   que a conta escolhe (`comparacaoComOLimiar`, com o sinal: a posição de investimento fica fora por estar abaixo de um
+   valor negativo); o valor de referência vai pela sua marca (`{ referencia }`, o motivo do registo), e o «+» de uma
+   ponta cala-se como no veredicto do cartão. As de fora à vista, as de dentro numa porta dobrada com a mesma forma. A
+   V1-R4 do `check:pais` reconta o lado e a referência por conta própria. */
+const explicacoes = medidasDoPainel
+  .filter((m) => m.limiar && (m.estado === 'fora' || m.estado === 'dentro'))
+  .map((m) => {
+    const limiar = /** @type {any} */ (m.limiar);
+    const banda = Boolean(limiar.inferior && limiar.superior);
+    const c = comparacaoComOLimiar(m.linha, limiar);
+    const lado = banda ? (c === 'acima' ? 'acimaDaBanda' : c === 'abaixo' ? 'abaixoDaBanda' : 'entre') : c === 'noLimiar' ? 'igual' : c;
+    if (!lado) throw new Error(`R4 veredicto: o lado de «${m.claim}» não se resolve.`);
+    const sufixo = String(limiar.simbolo).startsWith(' ') ? String(limiar.simbolo) : ` ${limiar.simbolo}`;
+    const ponta = (/** @type {any} */ l) => [...(l.sinal === '−' ? ['−'] : []), { referencia: m.claim, nl: l.nl, motivo: 'limiar-do-quadro' }, sufixo];
+    const referencia = banda ? [...ponta(limiar.inferior), v.eBanda, ...ponta(limiar.superior)] : ponta(limiar);
+    return {
+      claim: m.claim,
+      nome: m.nome[lang] ?? m.nome.pt,
+      estado: m.estado,
+      lado,
+      oQueE: oQueEDaLinha(m.claim, lang).pedacos,
+      ladoPartes: [v.ladoAntes, /** @type {Record<string, string>} */ (v.lados)[lado], ...referencia, v.fimLado],
+    };
+  });
+const explicacoesFora = explicacoes.filter((x) => x.estado === 'fora');
+const explicacoesDentro = explicacoes.filter((x) => x.estado === 'dentro');
 /* Os blocos resolvem-se aqui só para a data de «O que se passa»; cada um rende-se no seu
    componente, que pergunta ao mesmo resolvedor. */
 const ids = idsDosBlocos();
@@ -98,6 +128,31 @@ const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
     <p class="pais-leitura pais-veredicto" data-veredicto-pais>
       {v.ano}<CampoDaLinha id={medidasDoPainel[0].claim} campo="reference_date" valor={lede.ano} lang={lang} />{v.abre}<ValorDaProva chave="painel_fora_do_limiar" item={p.painel_fora_do_limiar} lang={lang} />{v.de}<ValorDaProva chave="painel_com_limiar" item={p.painel_com_limiar} lang={lang} />{v.referencias}<ValorDaProva chave="painel_dentro_do_limiar" item={p.painel_dentro_do_limiar} lang={lang} />{lede && <>{v.lista}<span data-veredicto-medidas>{lede.referencias.map((m, i) => <>{i ? i === lede.referencias.length - 1 ? s.inicio.cabeca.ledePais.ultimo : s.inicio.cabeca.ledePais.separador : ''}<a data-veredicto-medida={m.claim} href={portaDoCartao(m.claim, lang)}>{m.nome}</a></>)}</span></>}{v.fecha}
     </p>
+    {explicacoesFora.length > 0 && (
+      <ul class="pp-veredicto-lista" data-veredicto-fora>
+        {explicacoesFora.map((x) => (
+          <li class="pp-veredicto-item" data-veredicto-explica={x.claim} data-veredicto-lado={x.lado}>
+            <p class="pp-veredicto-nome" data-nome="figuras" data-de-linha={x.claim}>{x.nome}</p>
+            <p class="pp-veredicto-o-que-e" data-veredicto-o-que-e={x.claim}><Frase partes={x.oQueE} lang={lang} selos={true} /></p>
+            <p class="pp-veredicto-lado" data-veredicto-lado-frase={x.claim}><Frase partes={x.ladoPartes} lang={lang} /></p>
+          </li>
+        ))}
+      </ul>
+    )}
+    {explicacoesDentro.length > 0 && (
+      <details class="pp-veredicto-dentro" data-veredicto-dentro>
+        <summary data-voz>{v.dentroK}</summary>
+        <ul class="pp-veredicto-lista">
+          {explicacoesDentro.map((x) => (
+            <li class="pp-veredicto-item" data-veredicto-explica={x.claim} data-veredicto-lado={x.lado}>
+              <p class="pp-veredicto-nome" data-nome="figuras" data-de-linha={x.claim}>{x.nome}</p>
+              <p class="pp-veredicto-o-que-e" data-veredicto-o-que-e={x.claim}><Frase partes={x.oQueE} lang={lang} selos={true} /></p>
+              <p class="pp-veredicto-lado" data-veredicto-lado-frase={x.claim}><Frase partes={x.ladoPartes} lang={lang} /></p>
+            </li>
+          ))}
+        </ul>
+      </details>
+    )}
     <p class="regra-portas"><a href={routePath('uniaoEuropeia', lang)}>{s.nav.uniaoEuropeia} →</a></p>
   </section>
 

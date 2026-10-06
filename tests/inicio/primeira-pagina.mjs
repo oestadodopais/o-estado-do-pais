@@ -21,6 +21,8 @@ import { fileURLToPath } from 'node:url';
 import { conferirAuditoriaDosBlocos, conferirBlocosDaPagina, plantasDosBlocos, idsDosBlocos, ENTRADAS, parse } from './blocos.mjs';
 import { conferirEntradas, plantasDasEntradas } from './entradas.mjs';
 import { plantasDaReguaDasFrases } from './regua-das-frases.mjs';
+import { verificaExplicacoesDoVeredicto } from '../../scripts/pais-veredicto.mjs';
+import { documentoDosAssuntos } from './paginas-dos-assuntos.mjs';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const DIST = path.resolve(process.env.OEDP_DIST ?? path.join(RAIZ, 'dist'));
@@ -59,6 +61,47 @@ for (const p of paginas) {
 const e = conferirEntradas(DIST);
 erros.push(...e.erros);
 relatorio.entradas = e.contas;
+
+/* V1-R4 (bloco R4, 05.10.2026): as plantas da explicação dos valores de referência, sobre cópias em memória da
+   primeira página: o lado trocado (a marca e as palavras, de maneira que só a conta da célula o recusa), uma medida de
+   dentro tirada da porta dobrada, e uma frase «o que é» que não é a do cartão. A célula corre limpa antes. */
+const plantasDoVeredicto = [];
+if (process.argv.includes('--prova')) {
+  for (const lang of /** @type {const} */ (['pt', 'en'])) {
+    const html = fs.readFileSync(path.join(DIST, lang === 'pt' ? '' : 'en', 'index.html'), 'utf8');
+    const indice = documentoDosAssuntos(DIST, lang);
+    const limpa = verificaExplicacoesDoVeredicto(parse(html), indice, lang);
+    if (limpa.length) erros.push(`V1-R4 · a primeira página limpa (${lang}) já tem erros: ${limpa[0]}`);
+    const corre = (/** @type {string} */ nome, /** @type {(r: any) => void} */ estraga, /** @type {RegExp} */ mordida) => {
+      const r = parse(html);
+      estraga(r);
+      const e = verificaExplicacoesDoVeredicto(r, indice, lang);
+      plantasDoVeredicto.push({ nome: `${nome} (${lang})`, mordeu: e.some((x) => mordida.test(x)), queixa: e[0] ?? null });
+    };
+    corre('o lado trocado na explicação de um valor de referência', (r) => {
+      const item = r.querySelector('[data-veredicto-fora] [data-veredicto-lado="acima"]');
+      const frase = item.querySelector('[data-veredicto-lado-frase]');
+      item.setAttribute('data-veredicto-lado', 'abaixo');
+      frase.set_content(frase.innerHTML.replace(lang === 'pt' ? 'acima do valor' : 'above the', lang === 'pt' ? 'abaixo do valor' : 'below the'));
+    }, /a explicação diz o lado «abaixo», e a conta desta célula dá «acima»/);
+    corre('uma medida de dentro fora da porta dobrada', (r) => {
+      const porta = r.querySelector('details[data-veredicto-dentro]');
+      const item = porta.querySelector('[data-veredicto-explica]');
+      const copia = item.outerHTML;
+      item.remove();
+      r.querySelector('[data-veredicto-fora]').insertAdjacentHTML('beforeend', copia);
+    }, /está dentro e a explicação está fora da porta dobrada/);
+    corre('a frase «o que é» de outra medida', (r) => {
+      const a = r.querySelector('[data-veredicto-fora] [data-veredicto-o-que-e]');
+      const b = r.querySelector('details[data-veredicto-dentro] [data-veredicto-o-que-e]');
+      a.set_content(b.innerHTML);
+    }, /a frase «o que é» não é a do cartão/);
+  }
+  for (const x of plantasDoVeredicto) {
+    relatorio.plantas.push(x);
+    if (!x.mordeu) erros.push(`V1-R4 · a planta «${x.nome}» não mordeu com a queixa esperada (disse: ${x.queixa ?? 'nada'})`);
+  }
+}
 
 if (process.argv.includes('--prova')) {
   for (const x of [...plantasDosBlocos(DIST), ...plantasDasEntradas(DIST), ...plantasDaReguaDasFrases(DIST)]) {
