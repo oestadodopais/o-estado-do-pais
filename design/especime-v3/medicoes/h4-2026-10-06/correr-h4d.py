@@ -82,6 +82,9 @@ correr('politica-d', ['node', str(AQUI / 'provar-politica.mjs'), '--passagem-d']
 ambiente['OEDP_MEDICOES'] = str(PALCO / AQUI / 'n1-d')
 (PALCO / AQUI / 'n1-d').mkdir()
 correr('n1-d', ['node', 'tests/pais/portoes.mjs', '--prefixo', 'h4b-'])
+ambiente['OEDP_MEDICOES'] = str(PALCO / AQUI / 'l3-d')
+(PALCO / AQUI / 'l3-d').mkdir()
+correr('l3-d', ['node', 'tests/pais/portoes.mjs', '--prefixo', 'h4d-l3-'])
 correr('capturas-d-corrida', ['node', str(AQUI / 'captar-h4.mjs'), '--passagem-d'])
 limpa()
 # Retira caminhos locais antes de copiar qualquer resultado para a pasta pública.
