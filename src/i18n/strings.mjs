@@ -1834,6 +1834,8 @@ export const STRINGS = {
       nenhumMudou: ', e nenhum mudou de valor nem de proveniência',
       ponto: '.',
       mudancasK: 'Os números que mudaram de valor',
+      /* EX2: a unidade precede os dois pontos e os valores. A frase sem apoio fica ausente. */
+      oQueEPorConfirmar: 'O que este número é fica por confirmar na fonte.',
       deAntes: ': de ',
       para: ' para ',
       subiu: ', subiu',
@@ -3881,6 +3883,7 @@ export const STRINGS = {
       nenhumMudou: ', and none changed value or provenance',
       ponto: '.',
       mudancasK: 'The figures that changed value',
+      oQueEPorConfirmar: 'What this number is remains to be confirmed at the source.',
       deAntes: ': from ',
       para: ' to ',
       subiu: ', rose',

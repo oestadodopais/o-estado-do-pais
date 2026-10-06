@@ -145,6 +145,7 @@
   border-bottom: 1px solid var(--rule);
   overflow-wrap: break-word;
 }
+.semana-resumo { margin: 0; }
 .semana-mudanca .semana-nome { font-weight: 600; }
 .semana-fonte,
 .semana-data,

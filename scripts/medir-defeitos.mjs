@@ -712,7 +712,7 @@ const ROTAS_DOS_BLOCOS = new Set(['home']);
 const EXPLICACAO_DECLARADA = '[data-explicacao-declarado]';
 const ROTAS_DAS_EXPLICACOES = new Set(['explicacao', 'explicacoes', 'indice', 'home']);
 const SEMANA_DECLARADA = '[data-semana-declarado]';
-const ROTAS_DA_SEMANA = new Set(['leituraDaSemana', 'explicacoes', 'home']);
+const ROTAS_DA_SEMANA = new Set(['leituraDaSemana', 'explicacoes', 'home', 'indice']);
 /**
  * A FRASE DO VEREDICTO SAI DO INVENTÁRIO NA PRIMEIRA PÁGINA, E SÓ LÁ (bloco PP1, 28.09.2026). A linha dela
  * no inventário era a frase com os valores e os nomes tirados, e por isso contava as vírgulas da lista
