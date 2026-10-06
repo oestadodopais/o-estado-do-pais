@@ -50,6 +50,19 @@ function planta(nome,script,alteracoes,mordidas) {
  console.log(`${passou?'OK':'FALHA'} ${nome}: código ${r.status}`);
  if(!passou)throw Error(`${nome}: a planta não teve todas as mordidas previstas. Ver o registo.`);
 }
+/* H4-b: a lista independente do menu continua a fechar por contagem, ordem, rótulo e destino. */
+planta('h4b-menu-sem-explicacoes','scripts/check-pais.mjs',[
+ ['index.html', r=>r.querySelector('#nav-principal a[href="/explicacoes"]').remove()],
+ ['en/index.html', r=>r.querySelector('#nav-principal a[href="/en/explainers"]').remove()]
+],[/N1: menu de sete errado em index\.html\./,/N1: menu de sete errado em en\/index\.html\./]);
+planta('h4b-menu-rotulo-antigo','scripts/check-pais.mjs',[
+ ['index.html', r=>r.querySelector('#nav-principal a[href="/uniao-europeia"]').set_content('Europa')],
+ ['en/index.html', r=>r.querySelector('#nav-principal a[href="/en/european-union"]').set_content('Europe')]
+],[/N1: menu de sete errado em index\.html\./,/N1: menu de sete errado em en\/index\.html\./]);
+planta('h4b-menu-destino-e-ordem','scripts/check-pais.mjs',[
+ ['index.html', r=>r.querySelector('#nav-principal a[href="/explicacoes"]').setAttribute('href','/agenda')],
+ ['en/index.html', r=>{const a=r.querySelector('#nav-principal a[href="/en/explainers"]'); const s=a.toString(); a.remove(); r.querySelector('#nav-principal').insertAdjacentHTML('beforeend',s);}]
+],[/N1: menu de sete errado em index\.html\./,/N1: menu de sete errado em en\/index\.html\./]);
 planta('mapa-atribuicao','scripts/check-mapa.mjs',[
  ['index.html',r=>r.querySelector('.mapa-linha').remove()]
 ],[/R6/]);

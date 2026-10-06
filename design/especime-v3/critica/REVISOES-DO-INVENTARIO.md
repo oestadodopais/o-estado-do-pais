@@ -673,4 +673,4 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
-| h4 | 6 cadeias novas, 8 retiradas | por ler | Codex gpt-6-astra: texto provisório do brief H4, §3, ponto 4. Os lugares e as famílias dizem a organização decidida na §1.172; a medição cega sai porque não foi exercida. A leitura a frio pelo Claude Opus e a confirmação da redação pela direção ficam pendentes antes da fusão. |
+| h4 | 6 cadeias novas, 8 retiradas | por ler | Codex gpt-6-astra: texto do brief H4, §3, ponto 4, confirmado como final pela H4-3 na passagem H4-b. Os lugares e as famílias dizem a organização decidida na §1.172; a medição cega sai porque não foi exercida. A leitura a frio pelo Claude Opus fica a cargo do lugar de direção antes da fusão. A passagem H4-b acrescenta as portas do menu aos usos dos rótulos já inventariados, sem mudar frases de conteúdo. |
