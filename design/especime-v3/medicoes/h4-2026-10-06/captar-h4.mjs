@@ -1,5 +1,5 @@
 /** H4: capturas da construção identificada, adaptadas do captor EX1.
- * node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs [--politica]
+ * node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs [--politica] [--passagem-b]
  * A opção acrescenta o endereço real da política, lido da tabela das rotas.
  */
 import fs from 'node:fs/promises';
@@ -13,6 +13,8 @@ import { ANCORA_DA_POLITICA } from '../../../../src/data/politica-ia.mjs';
 const AQUI = 'design/especime-v3/medicoes/h4-2026-10-06';
 const CAP = 'design/especime-v3/capturas/h4-2026-10-06';
 const DIST = path.resolve('dist');
+const passagemB = process.argv.includes('--passagem-b');
+const pastaPaginas = passagemB ? 'paginas-b' : 'paginas';
 const versao = JSON.parse(await fs.readFile('dist/version.json', 'utf8'));
 const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 if (cabeca !== versao.commit) throw Error('A construção não é desta cabeça.');
@@ -32,18 +34,18 @@ const origem = `http://127.0.0.1:${servidor.address().port}`;
 const navegador = await chromium.launch();
 const sha = (b) => createHash('sha256').update(b).digest('hex');
 const capturas = []; const paginas = []; const erros = [];
-const familias = ['primeira', 'explicacao', ...(process.argv.includes('--politica') ? ['politica'] : [])];
+const familias = ['primeira', 'explicacao', ...(process.argv.includes('--politica') || passagemB ? ['politica'] : [])];
 try {
   for (const familia of familias) for (const lang of ['pt', 'en']) {
     const rota = familia === 'primeira' ? routePath('home', lang) : familia === 'politica' ? routePath('metodo', lang) : routePath('explicacao', lang, { slug: 'dinheiro-do-estado-2026' });
     const local = `${DIST}/${rota.replace(/^\//, '')}/index.html`.replace(/\/+/g, '/');
     const bytes = await fs.readFile(local);
-    const copia = `${AQUI}/paginas/${familia}-${lang}.html`;
-    await fs.mkdir(`${AQUI}/paginas`, { recursive: true });
+    const copia = `${AQUI}/${pastaPaginas}/${familia}-${lang}.html`;
+    await fs.mkdir(`${AQUI}/${pastaPaginas}`, { recursive: true });
     await fs.writeFile(copia, bytes);
     const folhas = [...bytes.toString().matchAll(/<link[^>]+href="([^"#?]+\.css)"/g)].map((m) => m[1]);
     paginas.push({ familia, lang, rota, copia, sha256: sha(bytes), folhas: await Promise.all(folhas.map(async (f) => ({ ficheiro: f, sha256: sha(await fs.readFile(path.join(DIST, f))) }))) });
-    for (const largura of familia === 'politica' ? [390, 1280] : [390, 768, 1024, 1280, 1600]) {
+    for (const largura of familia === 'politica' ? (process.argv.includes('--politica') ? [390, 1280] : []) : [390, 768, 1024, 1280, 1600]) {
       const ctx = await navegador.newContext({ viewport: { width: largura, height: 900 }, deviceScaleFactor: 1, colorScheme: 'light', reducedMotion: 'reduce' });
       const externos = [];
       await ctx.route('**/*', (r) => new URL(r.request().url()).origin === origem ? r.continue() : (externos.push(r.request().url()), r.abort()));
@@ -70,6 +72,6 @@ try {
     if (sha(bytes) !== sha(await fs.readFile(local))) throw Error('Os bytes mudaram durante as capturas.');
   }
 } finally { await navegador.close(); servidor.close(); }
-await fs.writeFile(`${AQUI}/capturas.json`, JSON.stringify({ comando: `node ${AQUI}/captar-h4.mjs${process.argv.includes('--politica') ? ' --politica' : ''}`, cabeca, construcao: versao, paginas, capturas, erros }, null, 2) + '\n');
+await fs.writeFile(`${AQUI}/${passagemB ? 'capturas-b' : 'capturas'}.json`, JSON.stringify({ comando: `node ${AQUI}/captar-h4.mjs${process.argv.includes('--politica') ? ' --politica' : ''}${passagemB ? ' --passagem-b' : ''}`, cabeca, construcao: versao, paginas, capturas, erros }, null, 2) + '\n');
 console.log(`${capturas.length} capturas e os seus recortes; ${erros.length} erros.`);
 process.exitCode = erros.length ? 1 : 0;

@@ -4157,11 +4157,15 @@ páginas são **conteúdo**, como «Índice» e «Privacidade», porque são o o
 
 ## H4 · os lugares da inteligência artificial
 
-Texto provisório do brief H4, §3, ponto 4, nas duas edições. A direção confirma a redação antes de aterrar. Linhas geradas por `design/especime-v3/medicoes/h4-2026-10-06/inventario-politica.mjs`.
+Texto do brief H4, §3, ponto 4, confirmado como final pela decisão H4-3 do lugar de direção na passagem H4-b. Linhas geradas por `design/especime-v3/medicoes/h4-2026-10-06/inventario-politica.mjs`.
 
-| divulgacao | São três lugares, e a verificação é sempre de outra família de modelos: | h4 | viva | texto provisório do brief H4 |
-| divulgacao | A construção constrói o sítio e o motor, e verifica lotes na fonte. | h4 | viva | texto provisório do brief H4 |
-| divulgacao | São os modelos Claude da Anthropic na direção e na leitura, e o Codex da OpenAI na construção. Um modelo novo só ocupa um lugar depois de passar os mesmos testes que o titular passou, e a troca fica escrita com a data. | h4 | viva | texto provisório do brief H4 |
-| divulgacao | There are three places, and checking is always done by a different family of models: | h4 | viva | texto provisório do brief H4 |
-| divulgacao | Building builds the site and the engine, and checks batches at the source. | h4 | viva | texto provisório do brief H4 |
-| divulgacao | They are the Claude models from Anthropic in the direction and the reading, and Codex from OpenAI in the building. A new model takes a place only after passing the same tests the incumbent passed, and the change is written down with its date. | h4 | viva | texto provisório do brief H4 |
+| divulgacao | São três lugares, e a verificação é sempre de outra família de modelos: | h4 | viva | texto do brief H4, confirmado pela H4-3 |
+| divulgacao | A construção constrói o sítio e o motor, e verifica lotes na fonte. | h4 | viva | texto do brief H4, confirmado pela H4-3 |
+| divulgacao | São os modelos Claude da Anthropic na direção e na leitura, e o Codex da OpenAI na construção. Um modelo novo só ocupa um lugar depois de passar os mesmos testes que o titular passou, e a troca fica escrita com a data. | h4 | viva | texto do brief H4, confirmado pela H4-3 |
+| divulgacao | There are three places, and checking is always done by a different family of models: | h4 | viva | texto do brief H4, confirmado pela H4-3 |
+| divulgacao | Building builds the site and the engine, and checks batches at the source. | h4 | viva | texto do brief H4, confirmado pela H4-3 |
+| divulgacao | They are the Claude models from Anthropic in the direction and the reading, and Codex from OpenAI in the building. A new model takes a place only after passing the same tests the incumbent passed, and the change is written down with its date. | h4 | viva | texto do brief H4, confirmado pela H4-3 |
+
+## H4-b · as portas do menu
+
+«Explicações» / «Explainers» passa também a porta do cabeçalho. «União Europeia» / «European Union», já inventariadas como o nome do agregado, são também os rótulos da porta da União no cabeçalho. A N1 confere a lista inteira de destinos e rótulos nas duas edições; o rodapé mantém a sua lista. Nenhuma frase de conteúdo muda.

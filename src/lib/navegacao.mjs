@@ -29,8 +29,14 @@
  *
  * EX1-b (06.10.2026, a decisão do lugar de direção sobre a I211): o rodapé ganha a oitava porta, «Explicações» /
  * «Explainers», a seguir a «Agenda» e antes de «Portugal na União Europeia». As oito portas e a ordem conferem-se no
- * portão de HTML (`scripts/indice-do-portao.mjs`), com as plantas de um rodapé sem a porta nova e de uma porta a mais. */
-export const ROTAS_NAV = ['home', 'lugares', 'temas', 'estudos', 'uniaoEuropeia', 'sobre'];
+ * portão de HTML (`scripts/indice-do-portao.mjs`), com as plantas de um rodapé sem a porta nova e de uma porta a mais.
+ *
+ * H4 (06.10.2026, H4-1): sete portas e o nome inteiro da União, com a letra e o espaço da regra base. A 390 px,
+ * «União Europeia» / «European Union» cabem em duas linhas nas duas edições: 666,3125 px / 659,75 px de largura
+ * natural numa coluna de 354 px, com 16 px entre portas, sem transbordo. A 360 px a dobra natural dá três linhas,
+ * sem transbordo. As caixas, as capturas e os seus SHA-256 estão em
+ * `design/especime-v3/medicoes/h4-2026-10-06/menu-a-390.json`, antes e depois da mudança. */
+export const ROTAS_NAV = ['home', 'lugares', 'temas', 'estudos', 'explicacoes', 'uniaoEuropeia', 'sobre'];
 export const ROTAS_RODAPE = ['home', 'livro', 'metodo', 'correcoes', 'agenda', 'explicacoes', 'uniaoEuropeia', 'indice'];
 export const ROTAS_SOBRE = ['metodo', 'correcoes', 'agenda', 'livro'];
 export const ETIQUETA_NAV = {
@@ -40,5 +46,5 @@ export const ETIQUETA_NAV = {
   agenda: 'agenda', metodo: 'metodo', correcoes: 'correcoes', sobre: 'sobre',
   indice: 'indice', explicacoes: 'explicacoes',
 };
-/** As etiquetas do menu do cabeçalho: as do rodapé, menos a da União, que no menu é a curta. */
+/** As etiquetas do menu do cabeçalho: as do rodapé, com «União Europeia» / «European Union» na porta da União. */
 export const ETIQUETA_NO_MENU = { ...ETIQUETA_NAV, uniaoEuropeia: 'uniaoEuropeiaNoMenu' };

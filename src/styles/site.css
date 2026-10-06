@@ -5624,7 +5624,7 @@ a.marcador::after {
   height: 100%;
 }
 
-/* B1, peça 3; P4: seis portas, numa linha a partir de 390 px; abaixo, dobram. */
+/* H4: sete portas, com o mesmo espaço e a mesma letra em todas as larguras; a fila dobra quando precisa. */
 .menu-cinco { display: flex; flex-wrap: wrap; align-items: center; gap: 0 clamp(16px, 2.8vw, 34px); border-bottom: 1px solid var(--rule); }
 .menu-cinco a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--f-versal); font-size: 15px; font-weight: 600; letter-spacing: .05em; text-transform: lowercase; color: var(--muted); text-decoration: none; white-space: nowrap; }
 .menu-cinco a[aria-current='page'], .menu-cinco a:hover { color: var(--ink); }
@@ -5640,11 +5640,6 @@ a.marcador::after {
 .rodape-b1 a:hover { text-decoration: underline; }
 .sobre-portas { display: flex; flex-wrap: wrap; gap: 4px 20px; }
 .sobre-portas a { min-height: 44px; display: inline-flex; align-items: center; }
-/* P4: 344 px de portas numa coluna de 354 a 390 px (medido; ver navegacao.mjs). */
-@media (width <= 430px) {
-  .menu-cinco { gap: 0 6px; }
-  .menu-cinco a { font-size: 13px; letter-spacing: 0; }
-}
 
 /* ---------------------------------------------------------------------------
    O QUADRADO E A PALAVRA DO ESTADO (vieram de `inicio.css` no bloco R1,

@@ -89,4 +89,9 @@ const r = { comando: `node ${AQUI}/medir-menu.mjs ${fase}`, construcao: versao, 
   nome_inteiro_cabe: candidatos.length === 2 && candidatos.every((m) => m.portas === 7 && m.cabe_em_duas),
   politica: { rotas: politica, rota_do_brief_existe: Object.values(ROUTES).some((r) => r.pt === '/sobre/politica-ia') } };
 await fs.writeFile(`${AQUI}/${fase === 'antes' ? 'menu-a-390' : 'menu-depois'}.json`, JSON.stringify(r, null, 2) + '\n');
+if (fase === 'depois') {
+  const antes = JSON.parse(await fs.readFile(`${AQUI}/menu-a-390.json`, 'utf8'));
+  antes.depois = r;
+  await fs.writeFile(`${AQUI}/menu-a-390.json`, JSON.stringify(antes, null, 2) + '\n');
+}
 console.log(JSON.stringify({ medidas: medidas.map(({ lang, largura, forma, natural, coluna, linhas, gap, letra, sem_transbordo }) => ({ lang, largura, forma, natural, coluna, linhas, gap, letra, sem_transbordo })), nome_inteiro_cabe: r.nome_inteiro_cabe, politica: r.politica }, null, 2));
