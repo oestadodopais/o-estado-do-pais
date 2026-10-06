@@ -1,5 +1,7 @@
 # H4 · a medição do menu e os lugares da inteligência artificial
 
+O registo abaixo conserva a primeira passagem. A entrega atual e as decisões da direção estão na secção «A passagem H4-b», no fim.
+
 Construção por Codex gpt-6-astra. Texto provisório do brief; a redação final e a leitura a frio continuam por confirmar antes de aterrar.
 
 ## O que mudou e onde parou
@@ -37,7 +39,7 @@ A proposta usa o `clamp` do brief. A forma `proposta-espaco-768` ensaia o mesmo 
 
 ## O menu que ficou servido
 
-Cabeça da construção: `cb9a22296d17bed881a0f091b8f5864dcd72a571`. Comando: `node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois`. [Medidas e resumos das capturas finais](menu-depois.json). O rótulo curto continua no código, porque a questão do espaço ainda está aberta.
+Cabeça da construção: `cb9a22296d17bed881a0f091b8f5864dcd72a571`. Comando: `node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois`. [Medidas e resumos das capturas finais](menu-depois-antes.json). O rótulo curto continua no código, porque a questão do espaço ainda está aberta.
 
 | Edição | Janela, px | Portas | Coluna, px | Largura natural, px | Linhas | Espaço, px | Sem transbordo |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
@@ -54,26 +56,26 @@ Comando: `node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --politic
 
 | Página | Edição | Janela, px | Captura | Recorte |
 | --- | --- | ---: | --- | --- |
-| primeira | pt | 390 | [página](../../capturas/h4-2026-10-06/primeira-pt-390.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-390.png) |
-| primeira | pt | 768 | [página](../../capturas/h4-2026-10-06/primeira-pt-768.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-768.png) |
-| primeira | pt | 1024 | [página](../../capturas/h4-2026-10-06/primeira-pt-1024.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-1024.png) |
-| primeira | pt | 1280 | [página](../../capturas/h4-2026-10-06/primeira-pt-1280.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-1280.png) |
-| primeira | pt | 1600 | [página](../../capturas/h4-2026-10-06/primeira-pt-1600.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-1600.png) |
-| primeira | en | 390 | [página](../../capturas/h4-2026-10-06/primeira-en-390.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-en-390.png) |
-| primeira | en | 768 | [página](../../capturas/h4-2026-10-06/primeira-en-768.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-en-768.png) |
-| primeira | en | 1024 | [página](../../capturas/h4-2026-10-06/primeira-en-1024.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-en-1024.png) |
-| primeira | en | 1280 | [página](../../capturas/h4-2026-10-06/primeira-en-1280.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-en-1280.png) |
-| primeira | en | 1600 | [página](../../capturas/h4-2026-10-06/primeira-en-1600.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-en-1600.png) |
-| explicacao | pt | 390 | [página](../../capturas/h4-2026-10-06/explicacao-pt-390.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-390.png) |
-| explicacao | pt | 768 | [página](../../capturas/h4-2026-10-06/explicacao-pt-768.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-768.png) |
-| explicacao | pt | 1024 | [página](../../capturas/h4-2026-10-06/explicacao-pt-1024.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-1024.png) |
-| explicacao | pt | 1280 | [página](../../capturas/h4-2026-10-06/explicacao-pt-1280.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-1280.png) |
-| explicacao | pt | 1600 | [página](../../capturas/h4-2026-10-06/explicacao-pt-1600.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-1600.png) |
-| explicacao | en | 390 | [página](../../capturas/h4-2026-10-06/explicacao-en-390.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-390.png) |
-| explicacao | en | 768 | [página](../../capturas/h4-2026-10-06/explicacao-en-768.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-768.png) |
-| explicacao | en | 1024 | [página](../../capturas/h4-2026-10-06/explicacao-en-1024.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-1024.png) |
-| explicacao | en | 1280 | [página](../../capturas/h4-2026-10-06/explicacao-en-1280.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-1280.png) |
-| explicacao | en | 1600 | [página](../../capturas/h4-2026-10-06/explicacao-en-1600.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-1600.png) |
+| primeira | pt | 390 | [página](../../capturas/h4-2026-10-06/primeira-pt-390-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-390-antes.png) |
+| primeira | pt | 768 | [página](../../capturas/h4-2026-10-06/primeira-pt-768-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-768-antes.png) |
+| primeira | pt | 1024 | [página](../../capturas/h4-2026-10-06/primeira-pt-1024-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-1024-antes.png) |
+| primeira | pt | 1280 | [página](../../capturas/h4-2026-10-06/primeira-pt-1280-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-1280-antes.png) |
+| primeira | pt | 1600 | [página](../../capturas/h4-2026-10-06/primeira-pt-1600-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-1600-antes.png) |
+| primeira | en | 390 | [página](../../capturas/h4-2026-10-06/primeira-en-390-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-en-390-antes.png) |
+| primeira | en | 768 | [página](../../capturas/h4-2026-10-06/primeira-en-768-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-en-768-antes.png) |
+| primeira | en | 1024 | [página](../../capturas/h4-2026-10-06/primeira-en-1024-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-en-1024-antes.png) |
+| primeira | en | 1280 | [página](../../capturas/h4-2026-10-06/primeira-en-1280-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-en-1280-antes.png) |
+| primeira | en | 1600 | [página](../../capturas/h4-2026-10-06/primeira-en-1600-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-primeira-en-1600-antes.png) |
+| explicacao | pt | 390 | [página](../../capturas/h4-2026-10-06/explicacao-pt-390-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-390-antes.png) |
+| explicacao | pt | 768 | [página](../../capturas/h4-2026-10-06/explicacao-pt-768-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-768-antes.png) |
+| explicacao | pt | 1024 | [página](../../capturas/h4-2026-10-06/explicacao-pt-1024-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-1024-antes.png) |
+| explicacao | pt | 1280 | [página](../../capturas/h4-2026-10-06/explicacao-pt-1280-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-1280-antes.png) |
+| explicacao | pt | 1600 | [página](../../capturas/h4-2026-10-06/explicacao-pt-1600-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-1600-antes.png) |
+| explicacao | en | 390 | [página](../../capturas/h4-2026-10-06/explicacao-en-390-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-390-antes.png) |
+| explicacao | en | 768 | [página](../../capturas/h4-2026-10-06/explicacao-en-768-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-768-antes.png) |
+| explicacao | en | 1024 | [página](../../capturas/h4-2026-10-06/explicacao-en-1024-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-1024-antes.png) |
+| explicacao | en | 1280 | [página](../../capturas/h4-2026-10-06/explicacao-en-1280-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-1280-antes.png) |
+| explicacao | en | 1600 | [página](../../capturas/h4-2026-10-06/explicacao-en-1600-antes.png) | [pormenor](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-1600-antes.png) |
 | politica | pt | 390 | [página](../../capturas/h4-2026-10-06/politica-pt-390.png) | [pormenor](../../capturas/h4-2026-10-06/lugares-ia-pt-390.png) |
 | politica | pt | 1280 | [página](../../capturas/h4-2026-10-06/politica-pt-1280.png) | [pormenor](../../capturas/h4-2026-10-06/lugares-ia-pt-1280.png) |
 | politica | en | 390 | [página](../../capturas/h4-2026-10-06/politica-en-390.png) | [pormenor](../../capturas/h4-2026-10-06/lugares-ia-en-390.png) |
@@ -134,3 +136,134 @@ Commits lidos do Git no momento de gerar este relatório:
 A cabeça final é a do commit que guarda este relatório e os códigos. A cabeça do código está no ficheiro `portoes/cabeca`; não se atribui a corrida ao commit posterior das provas.
 
 A ferramenta desta sessão não expôs uma linha `tokens used`; o custo em tokens fica por medir pelo lançador. Não se estima a partir das percentagens de uso.
+
+## A passagem H4-b
+
+O bloco continua por fechar: há uma célula ou um portão vermelho. As mensagens e os códigos abaixo são os resultados efetivos; não se declara aceitação cumprida.
+
+O cabeçalho ganha a porta das explicações e o nome inteiro da União. A regra que apertava o menu no telefone saiu: todas as larguras usam o espaço e a letra da regra base. A fila dobra onde precisa. O texto da política de IA da primeira passagem ficou intacto e está confirmado como final pela direção.
+
+Cabeça do código: `9c44ad9e31972cfbfd9d7138e29b52b9027bb63d`. Esta secção é gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4b.py`, a partir dos ficheiros abaixo; o resumo legível por máquina está em [resumo-h4b.json](resumo-h4b.json).
+
+### O menu antes e depois
+
+Antes: `node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois`, na construção `cb9a22296d17bed881a0f091b8f5864dcd72a571`. Depois: `node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois`, na cabeça do código. As caixas de cada porta, a posição da última, as capturas e os SHA-256 estão em [menu-a-390.json](menu-a-390.json), incluindo a fase `depois`; a medida servida da primeira passagem está em [menu-depois-antes.json](menu-depois-antes.json).
+
+| Edição | Janela, px | Fase | Portas | Coluna, px | Largura natural, px | Linhas | Espaço, px | Letra | Menor alvo, px | Sem transbordo |
+| --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- | ---: | --- |
+| pt | 360 | antes | 6 | 324 | 343,65625 | 2 | 6 | 13px | 44 | sim |
+| pt | 360 | depois | 7 | 324 | 666,3125 | 3 | 16 | 15px | 44 | sim |
+| pt | 390 | antes | 6 | 354 | 343,65625 | 1 | 6 | 13px | 44 | sim |
+| pt | 390 | depois | 7 | 354 | 666,3125 | 2 | 16 | 15px | 44 | sim |
+| pt | 768 | antes | 6 | 707 | 497,910625 | 1 | 21,504 | 15px | 44 | sim |
+| pt | 768 | depois | 7 | 707 | 699,3365 | 1 | 21,504 | 15px | 44 | sim |
+| en | 360 | antes | 6 | 324 | 341,21875 | 2 | 6 | 13px | 44 | sim |
+| en | 360 | depois | 7 | 324 | 659,75 | 3 | 16 | 15px | 44 | sim |
+| en | 390 | antes | 6 | 354 | 341,21875 | 1 | 6 | 13px | 44 | sim |
+| en | 390 | depois | 7 | 354 | 659,75 | 2 | 16 | 15px | 44 | sim |
+| en | 768 | antes | 6 | 707 | 495,145 | 1 | 21,504 | 15px | 44 | sim |
+| en | 768 | depois | 7 | 707 | 692,774 | 1 | 21,504 | 15px | 44 | sim |
+
+A medida decide pelo nome inteiro: «União Europeia» e «European Union». Na largura de aceitação, as portas cabem em duas linhas nas duas edições. A janela mais estreita da tabela precisa de mais uma linha, com o mesmo espaço e a mesma letra, sem cortar nem esconder portas.
+
+### As células e as plantas
+
+Comando: `OEDP_TEMA_MENU_JSON=design/especime-v3/medicoes/h4-2026-10-06/tema-menu-b.json node tests/inicio/tema-e-menu.mjs --prova`. Resultado completo, incluindo a medida da regra base computada em cada largura: [tema-menu-b.json](tema-menu-b.json). A TM4 conserva a contagem exata, a linha única quando cabe, a dobra quando não cabe e a recusa do transbordo; confere também cada alvo de toque, a letra, o espaço das letras e as folgas de cada fila contra a regra base.
+
+| Planta | Mensagem observada pela qual falhou | Resultado |
+| --- | --- | --- |
+| uma oitava porta no menu | TM4 · / a 1280 px: o menu tem 8 portas, e são sete. | mordeu |
+| o menu apertado a 6 px | TM4 · / a 390 px: o espaço entre portas na mesma linha não é o da regra base (16 px; lido 6 px; folgas 6, 6, 6, 6, 6). | mordeu |
+| o menu sem dobrar a 320 px | TM4 · / a 320 px: as sete portas não cabem numa linha e o menu não dobrou. | mordeu |
+| uma porta sem 44 px de toque | TM4 · / a 390 px: a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px. | mordeu |
+| uma oitava porta no menu | TM4 · /en/ a 1280 px: o menu tem 8 portas, e são sete. | mordeu |
+| o menu apertado a 6 px | TM4 · /en/ a 390 px: o espaço entre portas na mesma linha não é o da regra base (16 px; lido 6 px; folgas 6, 6, 6, 6, 6). | mordeu |
+| o menu sem dobrar a 320 px | TM4 · /en/ a 320 px: as sete portas não cabem numa linha e o menu não dobrou. | mordeu |
+| uma porta sem 44 px de toque | TM4 · /en/ a 390 px: a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px. | mordeu |
+
+A regra antiga do telefone só se serve ao navegador da planta; não é reposta na folha do projeto. Cada planta exige a mensagem da sua proteção, não apenas uma falha qualquer.
+
+A N1 conserva uma lista esperada independente da lista que rende o cabeçalho, nas duas edições. As plantas adicionais correm por `OEDP_MEDICOES=design/especime-v3/medicoes/h4-2026-10-06 node tests/pais/portoes.mjs --prefixo h4b-`, com reposição byte a byte e SHA-256: [plantas-portoes-h4b.json](plantas-portoes-h4b.json).
+
+| Planta da N1 | Mensagens exigidas | Resultado |
+| --- | --- | --- |
+| h4b-menu-sem-explicacoes | N1: menu de sete errado em index.html.; N1: menu de sete errado em en/index.html. | mordeu |
+| h4b-menu-rotulo-antigo | N1: menu de sete errado em index.html.; N1: menu de sete errado em en/index.html. | mordeu |
+| h4b-menu-destino-e-ordem | N1: menu de sete errado em index.html.; N1: menu de sete errado em en/index.html. | mordeu |
+
+O inventário regista os rótulos nas novas portas e a confirmação do texto da política. As réguas da voz, da língua e do HTML mantêm as suas proteções. O rodapé já confere a lista certa e não foi alterado.
+
+A L1 contou 2716 páginas antes e 2716 depois. O teto passou de 2716 para 2716: acréscimo de 0. Não se abriu nenhuma exceção. O menu fica na exclusão de cabeçalho que a régua já tinha, e a conferência das duas grafias do mesmo destino entre menu e corpo continua a correr. Medida e comandos em [resumo-h4b.json](resumo-h4b.json), com os registos de partida e do verify.
+
+### As capturas e o pacote
+
+Comando: `node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --passagem-b`. As 20 capturas novas e os seus recortes mostram a primeira página e a explicação nas larguras pedidas, nas duas edições. [Manifesto com medidas e SHA-256](capturas-b.json). As imagens anteriores ficaram com o sufixo `-antes`, mantendo os resumos: [registo da preservação](preservadas-h4b.json). As capturas anteriores do Método continuam válidas para o texto da política; o HTML atual do Método e das páginas capturadas está em `paginas-b/`.
+
+| Página | Edição | Janela, px | Captura | Menu |
+| --- | --- | ---: | --- | --- |
+| primeira | pt | 390 | [página](../../capturas/h4-2026-10-06/primeira-pt-390.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-390.png) |
+| primeira | pt | 768 | [página](../../capturas/h4-2026-10-06/primeira-pt-768.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-768.png) |
+| primeira | pt | 1024 | [página](../../capturas/h4-2026-10-06/primeira-pt-1024.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-1024.png) |
+| primeira | pt | 1280 | [página](../../capturas/h4-2026-10-06/primeira-pt-1280.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-1280.png) |
+| primeira | pt | 1600 | [página](../../capturas/h4-2026-10-06/primeira-pt-1600.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-1600.png) |
+| primeira | en | 390 | [página](../../capturas/h4-2026-10-06/primeira-en-390.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-en-390.png) |
+| primeira | en | 768 | [página](../../capturas/h4-2026-10-06/primeira-en-768.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-en-768.png) |
+| primeira | en | 1024 | [página](../../capturas/h4-2026-10-06/primeira-en-1024.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-en-1024.png) |
+| primeira | en | 1280 | [página](../../capturas/h4-2026-10-06/primeira-en-1280.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-en-1280.png) |
+| primeira | en | 1600 | [página](../../capturas/h4-2026-10-06/primeira-en-1600.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-en-1600.png) |
+| explicacao | pt | 390 | [página](../../capturas/h4-2026-10-06/explicacao-pt-390.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-390.png) |
+| explicacao | pt | 768 | [página](../../capturas/h4-2026-10-06/explicacao-pt-768.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-768.png) |
+| explicacao | pt | 1024 | [página](../../capturas/h4-2026-10-06/explicacao-pt-1024.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-1024.png) |
+| explicacao | pt | 1280 | [página](../../capturas/h4-2026-10-06/explicacao-pt-1280.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-1280.png) |
+| explicacao | pt | 1600 | [página](../../capturas/h4-2026-10-06/explicacao-pt-1600.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-explicacao-pt-1600.png) |
+| explicacao | en | 390 | [página](../../capturas/h4-2026-10-06/explicacao-en-390.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-390.png) |
+| explicacao | en | 768 | [página](../../capturas/h4-2026-10-06/explicacao-en-768.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-768.png) |
+| explicacao | en | 1024 | [página](../../capturas/h4-2026-10-06/explicacao-en-1024.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-1024.png) |
+| explicacao | en | 1280 | [página](../../capturas/h4-2026-10-06/explicacao-en-1280.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-1280.png) |
+| explicacao | en | 1600 | [página](../../capturas/h4-2026-10-06/explicacao-en-1600.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-explicacao-en-1600.png) |
+
+A conferência do pacote corre por `python3 design/especime-v3/medicoes/h4-2026-10-06/conferir-pacote.py --passagem-b`: verifica resumos, ligações, cabeça, plantas, códigos e ausência de caminhos locais. O resultado está em [conferencia-pacote-b.json](conferencia-pacote-b.json).
+
+### As decisões e o que fica por fazer
+
+Registo: [decisoes-h4b.json](decisoes-h4b.json).
+
+- **H4-1**, resolvida. Vale a regra base do espaço em cada largura e a mesma letra. A frase do teste de aceitação foi corrigida no brief, com a nota pedida.
+
+- **H4-2**, resolvida. Os endereços são /metodo#politica-de-ia e /en/method#politica-de-ia. O ponto das capturas do brief foi corrigido, com a nota pedida. As capturas anteriores do Método servem.
+
+- **H4-3**, resolvida. O texto dos lugares da primeira passagem é final, pela decisão do lugar de direção referida no mandato como DECISIONS.md §1.173, ponto 2. O texto da política não foi alterado nesta passagem.
+
+- **H4-4**, do lugar de direção. A leitura a frio pelo Claude Opus e a conferência da entrega cabem ao lugar de direção depois desta passagem.
+
+- **H4-5**, por decidir. A medição servida confirma três linhas a 360 px nas duas edições. A TM4, com o limite literal de duas linhas até 430 px, também recusa as páginas a 320 px. Falha apenas por esse limite. A proposta enviada nesta sessão exige até duas linhas a 390 e 430 px e preserva a dobra natural abaixo dessas larguras, com o espaço, a letra, o alvo de toque e a ausência de transbordo protegidos. Não houve resposta; o limite pedido continua na célula e a H4-5 fica por decidir.
+
+A leitura a frio e a aterragem ficam com o lugar de direção, como o mandato determina. Não se fez push. O custo em tokens não foi exposto pela ferramenta durante esta passagem e fica por ler pelo lançador; não é estimado.
+
+A sequência do `verify` que ficou depois da TM4 foi executada separadamente, na mesma cabeça, com código 0 lido de `verificacoes-apos-tm4-b.codigo`. O comando exato e o resultado estão em [verificacoes-apos-tm4-b.json](verificacoes-apos-tm4-b.json), e o registo em `verificacoes-apos-tm4-b.log`. O código do `verify` continua a ser o que a corrida inteira escreveu.
+
+### Os commits e os portões inteiros
+
+Commits lidos do Git e guardados no resumo:
+
+- `e55b1f50cc0f7309fdb234e4954411d60c558188`: H4-b: corrige o espaço e o endereço no brief.
+
+- `cebf1a97dd1027208e4afb8f410cbb177662f77a`: H4-b: dá espaço às sete portas e repõe o nome da União.
+
+- `a1160dab5e763edde0fe6679fcd351ef3158db28`: H4-b: protege as sete portas, o espaço e os alvos de toque.
+
+- `00d92fed9f70fec22f30d72a1018776629f37d10`: H4-b: prepara a medição e a conferência das provas.
+
+- `9c44ad9e31972cfbfd9d7138e29b52b9027bb63d`: H4-b: guarda a prova da corrida inteira e distingue integridade de aceitação.
+
+Cabeça do código nos ficheiros `portoes-b/cabeca` e `portoes-b/cabeca.fim`: `9c44ad9e31972cfbfd9d7138e29b52b9027bb63d`. O commit seguinte guarda só o relatório e as provas.
+
+Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h4-2026-10-06/portoes-b`.
+
+| Portão | Código lido do ficheiro |
+| --- | ---: |
+| build | 0 |
+| verify | 1 |
+| typecheck | 0 |
+
+Os registos da corrida ficam em `portoes-b/`, limpos de caminhos locais antes de entrar no Git. A cabeça final é a do commit das provas; os portões pertencem à cabeça do código acima.

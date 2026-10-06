@@ -1,0 +1,235 @@
+{
+  "comando": "python3 design/especime-v3/medicoes/h4-2026-10-06/preparar-h4b.py",
+  "preservadas": [
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-390.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-390-antes.png",
+      "sha256": "f23f6f429f4cc8d1eba1c8fb0466bd1cc530bc75206587700c6c8c97f19430d6"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-390.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-390-antes.png",
+      "sha256": "693d3e41fd2d0908ecbfebb0ad422ca928e23bdd954a3a252250987886ca7494"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-768.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-768-antes.png",
+      "sha256": "970f9c0b1622de20952a29490c1114a9369fd6b9b109c812a2c943d5a9cea097"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-768.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-768-antes.png",
+      "sha256": "cfbaa50db20bec0f72539e8c4c4ce0c2222c0e470d86d38d06f1f0df045a9aa0"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-1024.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-1024-antes.png",
+      "sha256": "73fa4990e03391501bad8c28625067f0dc989b524d5b9bbcf7460168dfdda0eb"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-1024.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-1024-antes.png",
+      "sha256": "103b822c17840c78ddff54e474561755ef672e0195d9a6878962bcb60a064fac"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-1280.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-1280-antes.png",
+      "sha256": "040d8074b251f791a3f09632de620a8c3a2680e73daae397e7f56b354e046415"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-1280.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-1280-antes.png",
+      "sha256": "bfa7a654db40e58e645eb60b71f04b95051e2f21691ea3e4ed28c1028916c2e8"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-1600.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-1600-antes.png",
+      "sha256": "881da132992197073cda972ce592683bdb6291321ddd14617ef58467e2145694"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-1600.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-1600-antes.png",
+      "sha256": "bfa7a654db40e58e645eb60b71f04b95051e2f21691ea3e4ed28c1028916c2e8"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-390.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-390-antes.png",
+      "sha256": "898c54e939c5a8d6c2b0682e264cb415c92798d9f77fdc2f4eb0b2778ff23052"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-390.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-390-antes.png",
+      "sha256": "695877bfb14209d9f96223d96adeba861f532be6b0e24d8a702fb2c3b3cb2d32"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-768.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-768-antes.png",
+      "sha256": "ba656e4be3b3b346419a8d3367fc823a4c638e8f8eee028641b4dec23ec1bcfa"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-768.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-768-antes.png",
+      "sha256": "4acab99d03dc9571f1f99e3fcf71804471d01533510513b792c39e434d436b59"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-1024.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-1024-antes.png",
+      "sha256": "ceb236c3475b69c5a91bbf0cf7fab6bf49d6a86907a2e42ccb3ca2a28a160a05"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-1024.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-1024-antes.png",
+      "sha256": "b70fd4e7ae9f793953697c7e542983c94a3dd1bc77f7bab17061070bb786ebfe"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-1280.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-1280-antes.png",
+      "sha256": "72264c7dcc212c224b4d5bb8c5696582eb2f7e8b4da653d5a955ef58ea57a335"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-1280.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-1280-antes.png",
+      "sha256": "2d18762d55129f7eeb3e63d8cdd5cb3d54bd0c4cab3bd5aed89716b47735e448"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-1600.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-1600-antes.png",
+      "sha256": "0705b63bad15864e20888b997fa950a76c42a10bec8368387e278b6e25e5f162"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-1600.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-1600-antes.png",
+      "sha256": "2d18762d55129f7eeb3e63d8cdd5cb3d54bd0c4cab3bd5aed89716b47735e448"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-390.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-390-antes.png",
+      "sha256": "c196ab961f7f9c14340426e85640ee20645f5f68d049fb77016c9bf98f08bce8"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-390.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-390-antes.png",
+      "sha256": "a83b0b6be60b83d1a67f14a690b4a2da7dacf191ebf05e00c7d6aad2395beb46"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-768.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-768-antes.png",
+      "sha256": "ccdbb56a86af20a72736a188ec2a7d8ddbfd3a0b1bbd58777446a41b4377ee89"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-768.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-768-antes.png",
+      "sha256": "7fdef6f882170b3c3d34d1171b018e06bffcdd018bb4df7b3f86f55bb9688ece"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-1024.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-1024-antes.png",
+      "sha256": "b74e0c82143ccf3370e4fb458ade24d1c63fb9de169ade50c61442a795f5f3f7"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-1024.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-1024-antes.png",
+      "sha256": "70fb4ed244728c76c42c8eddb2593d612dab26030aca50692002cd1284bde619"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-1280.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-1280-antes.png",
+      "sha256": "9142f2a0640663e09faa4d0f995f42b0886502c725e0bb40cafad2b37857c6b9"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-1280.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-1280-antes.png",
+      "sha256": "bf46aa2d139912b1fd31760ff772df330d280a9f612f4b25ebcca084ad834315"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-1600.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-1600-antes.png",
+      "sha256": "654a9e7115e3b90c759bd3abe7604e9d8cd8769e56edbbe478457f85b53297a3"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-1600.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-1600-antes.png",
+      "sha256": "bf46aa2d139912b1fd31760ff772df330d280a9f612f4b25ebcca084ad834315"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-390.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-390-antes.png",
+      "sha256": "58cebdbdd50721b001699f9fe5a0563265c33dfb4732b32d70cdd93096cb134b"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-390.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-390-antes.png",
+      "sha256": "932be2b25038a74b37a138e2002eb641e0f0fffb798e388eecba032ac44a6410"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-768.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-768-antes.png",
+      "sha256": "1a8d9e976bce6c7094303804d9349d132975497e3bfaa768f2a06503136d16a0"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-768.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-768-antes.png",
+      "sha256": "282ea2e773666f4d1398b89762de349c16188548fd2989a6e05a86e11d13c25e"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-1024.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-1024-antes.png",
+      "sha256": "cd2081bb5c686ab3b257c2129d49acacf8e7bbb437d34e92e0752d5dd61dcc31"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-1024.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-1024-antes.png",
+      "sha256": "4004cb3cb0d5f20eaf5ddb9f060e91f76148f3f84597c0742db8165d2e630904"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-1280.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-1280-antes.png",
+      "sha256": "7283c1828d07230f45fcdcb376ea64ad389de22124c167651054389a61f51b60"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-1280.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-1280-antes.png",
+      "sha256": "0bcb854a004f0315f48c5d3425fb424f635e02640e4e2affa397953f89b88ac0"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-1600.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-1600-antes.png",
+      "sha256": "7a121f0e646693266173d25ad8b33ac6963fc62798aa2ea4bea8262376cbfad2"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-1600.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-1600-antes.png",
+      "sha256": "0bcb854a004f0315f48c5d3425fb424f635e02640e4e2affa397953f89b88ac0"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-360.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-360-antes.png",
+      "sha256": "b20af989b748a25167144c716567e6bf04d9c591e12b39e6158cb2b713c3e868"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-390.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-390-antes.png",
+      "sha256": "4fcfadedca1323033b54aed6aacf2bbf44c89affd8d68c70f7dcf370f59f9eef"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-768.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-768-antes.png",
+      "sha256": "03d6e5eb68965e280dd5dc29c13108ab6e51590a0e88aa3ce5886b0049075772"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-360.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-360-antes.png",
+      "sha256": "f6c1542b9003360c63b9e9e9c1cc3b322d53f404afc5930f32b0cd9a02ab206f"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-390.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-390-antes.png",
+      "sha256": "2b8bcd125940af6f418cfd81108c6bbf8e230a9ef9188e54e60127dbc5caf111"
+    },
+    {
+      "antes": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-768.png",
+      "agora": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-768-antes.png",
+      "sha256": "bb325a4a7d90920886a0d32f51d444eb909b6eb410ab1b26531f243992dc2973"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "comando": "node scripts/check-lingua.mjs",
+  "codigo": 0,
+  "tranca_da_maquina": false,
+  "duracao_segundos": 9.917,
+  "cabeca": "9c44ad9e31972cfbfd9d7138e29b52b9027bb63d"
+}

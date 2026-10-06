@@ -1,0 +1,31 @@
+{
+  "origem": "Mandato H4-b recebido nesta sessão; as decisões H4-1 a H4-4 são do lugar de direção.",
+  "questoes": [
+    {
+      "id": "H4-1",
+      "estado": "resolvida",
+      "decisao": "Vale a regra base do espaço em cada largura e a mesma letra. A frase do teste de aceitação foi corrigida no brief, com a nota pedida."
+    },
+    {
+      "id": "H4-2",
+      "estado": "resolvida",
+      "decisao": "Os endereços são /metodo#politica-de-ia e /en/method#politica-de-ia. O ponto das capturas do brief foi corrigido, com a nota pedida. As capturas anteriores do Método servem."
+    },
+    {
+      "id": "H4-3",
+      "estado": "resolvida",
+      "decisao": "O texto dos lugares da primeira passagem é final, pela decisão do lugar de direção referida no mandato como DECISIONS.md §1.173, ponto 2. O texto da política não foi alterado nesta passagem."
+    },
+    {
+      "id": "H4-4",
+      "estado": "do lugar de direção",
+      "decisao": "A leitura a frio pelo Claude Opus e a conferência da entrega cabem ao lugar de direção depois desta passagem."
+    },
+    {
+      "id": "H4-5",
+      "estado": "por decidir",
+      "decisao": "A medição servida confirma três linhas a 360 px nas duas edições. A TM4, com o limite literal de duas linhas até 430 px, também recusa as páginas a 320 px. Falha apenas por esse limite. A proposta enviada nesta sessão exige até duas linhas a 390 e 430 px e preserva a dobra natural abaixo dessas larguras, com o espaço, a letra, o alvo de toque e a ausência de transbordo protegidos. Não houve resposta; o limite pedido continua na célula e a H4-5 fica por decidir.",
+      "prova": "menu-a-390.json, fase depois, e tema-menu-b.json"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "comando": "sh -c 'npm run sinais && npm run check:nomes && npm run check:palavras && npm run design:feixe && npm run check:privacidade && npm run check:sugestoes && npm run check:rotulos && npm run check:series && npm run check:indice-do-sitio && npm run check:explicacoes && npm run check:frases-compostas'",
+  "codigo": 0,
+  "tranca_da_maquina": false,
+  "duracao_segundos": 204.907,
+  "cabeca": "9c44ad9e31972cfbfd9d7138e29b52b9027bb63d"
+}
