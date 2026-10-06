@@ -58,6 +58,13 @@ with tempfile.TemporaryDirectory(prefix='oedp-portoes-') as tmp:
     assert not tranca.exists()
     casos.append({'planta': 'tranca caducada deixa correr', 'codigo': r.returncode,
                   'mensagem': r.stderr.strip()})
+    partes = p / 'restos/.tempos'
+    partes.mkdir(parents=True)
+    (partes / 'morta.json').write_text('{"passo":"não pode entrar","segundos":999}')
+    r = correr('restos')
+    assert r.returncode == 9 and 'códigos ou partes .tempos' in r.stderr
+    assert not partes.exists() and not (p / 'restos/build.inicio').exists()
+    casos.append({'planta': 'partes de corrida morta', 'codigo': r.returncode, 'mensagem': r.stderr.strip()})
     comando('npm', 'echo "$*" >> "$CHAMADAS"\necho $$ > "$PID_FILHO"\ntouch "$TOMADA"\nsleep 30\necho indevido >> "$CHAMADAS"\n')
     tomada = p / 'tomada'
     proc = subprocess.Popen(['sh', str(RAIZ / 'scripts/leituras/portoes.sh'), str(p), 'interrompida'],

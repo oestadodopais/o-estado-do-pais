@@ -18,9 +18,6 @@ case "$W" in /*) ;; *) echo 'portoes: a worktree tem de ser absoluta' >&2; exit 
 cd "$W" || exit 9
 mkdir -p "$O" || exit 9
 O="$(cd "$O" && pwd)"
-for g in build verify typecheck; do
-  [ ! -e "$O/$g.codigo" ] || { echo 'portoes: a pasta já tem códigos; escolha uma pasta nova' >&2; exit 9; }
-done
 comum="$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null || git rev-parse --git-common-dir)" || exit 9
 case "$comum" in /*) ;; *) comum="$W/$comum";; esac
 tranca="$comum/oedp-construcao.lock"
@@ -39,15 +36,18 @@ while ! (set -C; printf '%s %s pid=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$W" "
 done
 dono="$(cat "$tranca")"
 filho=""
+mediu=0
 fechar() {
   resultado=$?
   # A limpeza não pode ser cortada a meio, deixando a tranca órfã.
   trap '' INT TERM
   trap - EXIT
-  node "$W/scripts/leituras/tempos.mjs" arrumar "$O" || resultado=9
-  python3 "$W/scripts/leituras/limpar-caminhos.py" "$O" --worktree "$W" \
-    --motor "${RESEARCHHUB_DIR:-}" --scratchpad "${OEDP_SCRATCHPAD:-}" \
-    --temporario "${TMPDIR:-/tmp}" > "$O/limpeza.json" || resultado=9
+  if [ "$mediu" -eq 1 ]; then
+    node "$W/scripts/leituras/tempos.mjs" arrumar "$O" || resultado=9
+    python3 "$W/scripts/leituras/limpar-caminhos.py" "$O" --worktree "$W" \
+      --motor "${RESEARCHHUB_DIR:-}" --scratchpad "${OEDP_SCRATCHPAD:-}" \
+      --temporario "${TMPDIR:-/tmp}" > "$O/limpeza.json" || resultado=9
+  fi
   # Uma corrida que exceda a validade não pode soltar a tranca de outra.
   if [ -f "$tranca" ] && [ "$(cat "$tranca")" = "$dono" ]; then
     rm -f "$tranca"
@@ -74,6 +74,18 @@ correr() {
   filho=""
   return "$codigo"
 }
+usada=0
+for g in build verify typecheck; do
+  [ ! -e "$O/$g.codigo" ] || usada=1
+done
+# As partes denunciam também uma corrida morta antes do primeiro código.
+# Retiram-se antes de qualquer novo relógio, mesmo quando a guarda recusa.
+if [ -e "$O/.tempos" ]; then
+  [ -z "$(find "$O/.tempos" -type f -print -quit)" ] || usada=1
+  rm -rf "$O/.tempos" || exit 9
+fi
+[ "$usada" -eq 0 ] || { echo 'portoes: a pasta já tem códigos ou partes .tempos; escolha uma pasta nova' >&2; exit 9; }
+mediu=1
 export OEDP_TEMPOS_DIR="$O"
 export npm_config_script_shell="$W/scripts/leituras/tempos-shell.py"
 git rev-parse HEAD > "$O/cabeca"
