@@ -650,3 +650,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | --- | --- | --- | --- |
 | h3 | 8 cadeias novas, 2 retiradas | por ler | Claude Opus 5.5, construtor do H3: a linha da nota da caixa das sugestões e a sua porta, o título, o texto e a descrição da página «Privacidade», nas duas línguas, todos do diretor à letra (o §5 do brief H3) menos o inglês do texto da página, que é a edição fiel; e as duas linhas da nota de 03.10.2026, retiradas com a razão. Três exceções da voz mudaram em `VOZ-MARCADORES.md` (duas entram, uma alarga as rotas, uma sai), e a dispensa de «language» passou da nota para o texto inglês da página. A leitura cruzada faz-se antes da fusão. |
 | h3 (a aterragem) | 1 cadeia mudada nas duas línguas | por ler | O lugar de direção (Claude Fable 5.1), na aterragem do H3 a 05.10.2026, pela I206: a quinta recusa da política da inteligência artificial passa a remeter o prazo para a página «Privacidade» em vez da nota da caixa, que já não o diz; a frase é a mesma no resto. |
+
+## R4 · as palavras correntes em cada número, 05.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| r4 | 40 cadeias novas, nenhuma retirada | por ler | Claude Opus 5.5, construtor do R4: por baixo do veredicto da primeira página, nas duas edições, a metade «o que é» da leitura auditada de cada um dos treze cartões com valor de referência (a mesma frase do cartão), as seis formas do lado de um valor de referência e o rótulo da porta dobrada dos valores de dentro. A leitura cruzada fica pendente antes da fusão. |

@@ -93,3 +93,92 @@ export function verificaVeredictoDoPais(home, indice, lang, linha = lerLinha) {
     falha('a frase construída difere das contagens e dos nomes recontados.');
   return erros;
 }
+
+/* V1-R4 (05.10.2026, o ponto 4 e a decisão 5 do brief R4): O QUE CADA VALOR DE REFERÊNCIA MEDE E DE QUE LADO PORTUGAL
+   FICOU, por baixo do veredicto. Recontado aqui com a mesma leitura própria das linhas e das referências: as medidas
+   de fora, pela ordem do painel, numa lista à vista; as de dentro numa porta dobrada; cada uma com o nome do cartão,
+   a frase «o que é» igual, carácter a carácter, à metade do cartão da medida na página do seu assunto (a K17 confere
+   essa metade contra a sua própria conta), e o lado escolhido por esta conta, com o sinal, e o valor de referência
+   pela sua marca, ponta a ponta. Uma medida sem valor de referência não tem explicação. */
+const CADEIAS_DO_LADO = {
+  pt: {
+    antes: 'Portugal está ',
+    acima: 'acima do valor de referência da Comissão Europeia, que é ',
+    abaixo: 'abaixo do valor de referência da Comissão Europeia, que é ',
+    igual: 'no valor de referência da Comissão Europeia, que é ',
+    entre: 'entre os valores de referência da Comissão Europeia, que são ',
+    acimaDaBanda: 'acima dos valores de referência da Comissão Europeia, que são ',
+    abaixoDaBanda: 'abaixo dos valores de referência da Comissão Europeia, que são ',
+    e: ' e ',
+  },
+  en: {
+    antes: 'Portugal is ',
+    acima: 'above the European Commission’s reference value, which is ',
+    abaixo: 'below the European Commission’s reference value, which is ',
+    igual: 'at the European Commission’s reference value, which is ',
+    entre: 'between the European Commission’s reference values, which are ',
+    acimaDaBanda: 'above the European Commission’s reference values, which are ',
+    abaixoDaBanda: 'below the European Commission’s reference values, which are ',
+    e: ' and ',
+  },
+};
+const semSelos = el => {
+  if (!el) return '';
+  const copia = el.clone();
+  for (const a of copia.querySelectorAll('a.src-chip')) a.remove();
+  return normal(copia.textContent);
+};
+export function verificaExplicacoesDoVeredicto(home, indice, lang, linha = lerLinha) {
+  const erros = [];
+  const falha = mensagem => erros.push(`V1-R4 ${lang}: ${mensagem}`);
+  const c = CADEIAS_DO_LADO[lang];
+  const seccao = home.querySelector('main [data-veredicto-seccao]');
+  if (!seccao) { falha('a secção do veredicto não existe.'); return erros; }
+  const comReferencia = FIGURAS_PDM.filter(f => f.limiar).map(f => ({ f, l: linha(f.claim) }));
+  const itens = seccao.querySelectorAll('[data-veredicto-explica]');
+  const vistos = itens.map(n => n.getAttribute('data-veredicto-explica'));
+  const fora = comReferencia.filter(m => estadoProprio(m.f, m.l) === 'fora').map(m => m.f.claim);
+  const dentro = comReferencia.filter(m => estadoProprio(m.f, m.l) === 'dentro').map(m => m.f.claim);
+  if (JSON.stringify(vistos) !== JSON.stringify([...fora, ...dentro])) falha(`as explicações (${vistos.join(', ')}) não são as medidas fora e dentro, pela ordem do painel (${[...fora, ...dentro].join(', ')}).`);
+  const porta = seccao.querySelectorAll('details[data-veredicto-dentro]');
+  if (dentro.length && porta.length !== 1) falha(`há ${porta.length} porta(s) dobrada(s) com os valores de dentro, e tem de haver uma.`);
+  for (const n of itens) {
+    const id = n.getAttribute('data-veredicto-explica');
+    const m = comReferencia.find(x => x.f.claim === id);
+    if (!m) { falha(`«${id}» tem explicação e não é uma medida do painel com valor de referência.`); continue; }
+    const estado = estadoProprio(m.f, m.l);
+    const naPorta = Boolean(n.closest('details[data-veredicto-dentro]'));
+    if ((estado === 'dentro') !== naPorta) falha(`«${id}» está ${estado} e a explicação está ${naPorta ? 'dentro' : 'fora'} da porta dobrada.`);
+    /* O LADO, pela conta desta célula, com o sinal. */
+    const v = numero(m.l.value);
+    const limite = x => x ? numero(`${x.sinal === '−' ? '-' : ''}${x.nl}`) : null;
+    const banda = Boolean(m.f.limiar.inferior && m.f.limiar.superior);
+    let lado;
+    if (banda) {
+      const inf = limite(m.f.limiar.inferior), sup = limite(m.f.limiar.superior);
+      lado = v > sup ? 'acimaDaBanda' : v < inf ? 'abaixoDaBanda' : 'entre';
+    } else {
+      const alvo = limite(m.f.limiar);
+      lado = v > alvo ? 'acima' : v < alvo ? 'abaixo' : 'igual';
+    }
+    if (n.getAttribute('data-veredicto-lado') !== lado) falha(`«${id}»: a explicação diz o lado «${n.getAttribute('data-veredicto-lado')}», e a conta desta célula dá «${lado}».`);
+    const sufixo = String(m.f.limiar.simbolo).startsWith(' ') ? String(m.f.limiar.simbolo) : ` ${m.f.limiar.simbolo}`;
+    const ponta = x => `${x.sinal === '−' ? '−' : ''}${x.nl}${sufixo}`;
+    const referencia = banda ? `${ponta(m.f.limiar.inferior)}${c.e}${ponta(m.f.limiar.superior)}` : ponta(m.f.limiar);
+    const frase = n.querySelector('[data-veredicto-lado-frase]');
+    const esperada = normal(`${c.antes}${c[lado]}${referencia}.`);
+    if (normal(frase?.textContent) !== esperada) falha(`«${id}»: a frase do lado é «${normal(frase?.textContent)}» e a conta desta célula escreve «${esperada}».`);
+    const marcas = frase ? frase.querySelectorAll('[data-referencia]') : [];
+    const pontas = banda ? [m.f.limiar.inferior, m.f.limiar.superior] : [m.f.limiar];
+    if (marcas.length !== pontas.length || marcas.some((x, i) => x.getAttribute('data-referencia') !== id || normal(x.textContent) !== pontas[i].nl || x.getAttribute('data-nonledger') !== 'limiar-do-quadro'))
+      falha(`«${id}»: o valor de referência não vai pela sua marca, ponta a ponta.`);
+    /* O NOME E A FRASE «O QUE É», a do cartão. */
+    const nome = n.querySelector(`[data-nome="figuras"][data-de-linha="${id}"]`);
+    if (normal(nome?.textContent) !== normal(m.f.nome[lang] ?? m.f.nome.pt)) falha(`«${id}»: o nome não é o do cartão.`);
+    const oQueE = n.querySelector(`[data-veredicto-o-que-e="${id}"]`);
+    const doCartao = indice.querySelector(`[data-cartao-medida="${id}"] [data-leitura-parte="o-que-e"]`);
+    if (!doCartao) falha(`«${id}»: o cartão da medida não tem a metade «o que é» na página do assunto.`);
+    else if (semSelos(oQueE) !== semSelos(doCartao)) falha(`«${id}»: a frase «o que é» não é a do cartão («${semSelos(oQueE).slice(0, 60)}» contra «${semSelos(doCartao).slice(0, 60)}»).`);
+  }
+  return erros;
+}

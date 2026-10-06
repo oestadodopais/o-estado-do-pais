@@ -326,6 +326,26 @@
 .pp-entrada-fonte, .pp-entrada-fonte .fonte-da-carta { font-family: var(--f-instr); font-size: 12px; line-height: 1.45; color: var(--muted); }
 
 .pp-veredicto .pais-leitura { font-size: clamp(18px, 1.9vw, 22px); }
+/* R4 (05.10.2026): o que cada valor de referência mede e de que lado Portugal ficou, por baixo do veredicto; os de
+   dentro numa porta dobrada, com a forma da porta dos números dos blocos. */
+.pp-veredicto-lista { list-style: none; margin: 14px 0 0; padding: 0; border-top: 1px solid var(--rule); }
+.pp-veredicto-item { padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.pp-veredicto-nome { font-family: var(--f-versal); font-size: 15px; line-height: 1.3; color: var(--ink); margin: 0 0 4px; }
+.pp-veredicto-o-que-e, .pp-veredicto-lado { font-family: var(--f-prosa); font-size: 16px; line-height: 1.5; color: var(--ink); margin: 0; max-width: 62ch; overflow-wrap: anywhere; }
+.pp-veredicto-lado { margin-top: 4px; }
+.pp-veredicto-dentro { margin: 10px 0 0; font-family: var(--f-instr); font-size: 13px; color: var(--muted); }
+.pp-veredicto-dentro > summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 3px;
+}
+.pp-veredicto-dentro[open] > summary { color: var(--ink); }
+.pp-veredicto-dentro .pp-veredicto-lista { margin-top: 4px; }
 .pp-portas { margin-top: clamp(26px, 3.4vw, 40px); display: flex; flex-wrap: wrap; gap: 0 28px; }
 .pp-portas .regra-portas { margin-top: 0; }
 .pp-portas .regra-portas a, .pp-veredicto .regra-portas a, .entrada-portas a { display: inline-flex; align-items: center; min-height: 44px; }
