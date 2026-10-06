@@ -19,10 +19,12 @@ O QUE ESTE PORTÃO EXIGE, de cada brief que lhe cabe:
   1. existe um guião ao lado do brief, `design/observatorio/medidas/<chave>.py`
      ou `.mjs`, que corre sem argumentos a partir da raiz do repositório, e a
      chave de um brief é de um brief só;
-  2. o guião corre e sai a 0, e o ficheiro que ele escreve nomeia o brief que
-     foi conferido e o guião que correu;
-  3. o que ele mede agora é, medida a medida, o que está escrito em
-     `design/observatorio/medidas/<chave>.json`;
+  2. no GitHub (GITHUB_ACTIONS ou CI presente), todos os guiões correm e saem
+     a 0. Na máquina, um selo dos mesmos bytes pode reutilizar uma corrida
+     verde registada com cabeça, hora e invocação; um selo sem registo recusa-se;
+  3. o que o guião mede é, medida a medida, o JSON escrito. --escrever-presos
+     ignora os selos e só grava os guiões verdes dessa mesma invocação. O JSON,
+     os conhecidos positivos e a ligação ao §0 conferem-se sempre;
   4. cada medição traz um conhecido-positivo encontrado: algo que o MESMO
      detetor tem de achar para provar que vê;
   5. cada número do §0 do brief LIGA à medição que o mede, pela frase.
@@ -130,6 +132,8 @@ sua frase; não confere que a frase à volta diga o que o número mede. Um núme
 por extenso não se vê, e por isso a regra de escrita acima. O que conta como
 número está definido num sítio só, `scripts/leituras/numeros.py`.
 """
+from datetime import datetime, timezone
+import uuid
 import glob
 import hashlib
 import json
@@ -285,7 +289,33 @@ def corre_guiao(guiao, erros):
             return None
 
 
-def confere(caminho, erros, ligacoes, contagens, presos=None, novos=None, estado=None):
+def no_github():
+    return 'GITHUB_ACTIONS' in os.environ or 'CI' in os.environ
+
+
+def registo_da_corrida(argv):
+    return {'cabeca': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=RAIZ, text=True).strip(),
+            'hora': datetime.now(timezone.utc).isoformat(),
+            'invocacao': ['python3', 'scripts/check-briefs.py', *argv],
+            'id': str(uuid.uuid4()), 'codigo': 0}
+
+
+def registo_valido(registo):
+    if not isinstance(registo, dict):
+        return False
+    try:
+        hora = datetime.fromisoformat(registo['hora'])
+        uuid.UUID(registo['id'])
+        return (re.fullmatch(r'[0-9a-f]{40}', registo['cabeca']) is not None
+                and hora.tzinfo is not None and registo['codigo'] == 0
+                and isinstance(registo['invocacao'], list)
+                and registo['invocacao'][:2] == ['python3', 'scripts/check-briefs.py']
+                and '--escrever-presos' in registo['invocacao'])
+    except (ValueError, KeyError, TypeError):
+        return False
+
+
+def confere(caminho, erros, ligacoes, contagens, presos=None, novos=None, estado=None, corrida=None):
     """Confere um brief. Devolve o ficheiro das medições lido do repositório, ou None."""
     erros_antes = len(erros)
     nome = os.path.basename(caminho)
@@ -320,7 +350,12 @@ def confere(caminho, erros, ligacoes, contagens, presos=None, novos=None, estado
 
     selo = {'brief_sha256': sha(caminho), 'guiao': rel(guioes[0]),
             'guiao_sha256': sha(guioes[0]), 'medidas_sha256': sha(ficheiro)}
-    preso = (presos or {}).get(rel(caminho)) == selo
+    anterior = (presos or {}).get(rel(caminho), {})
+    mesmos_bytes = isinstance(anterior, dict) and all(anterior.get(k) == v for k, v in selo.items())
+    preso = mesmos_bytes and not no_github() and corrida is None
+    if preso and not registo_valido(anterior.get('execucao')):
+        erros.append(f'{nome}: selo recusado: falta o registo de execução verde com cabeça, hora e invocação.')
+        return None
     if estado is not None:
         estado['presos' if preso else 'reexecutados'] += 1
     medido = escrito if preso else corre_guiao(guioes[0], erros)
@@ -362,8 +397,8 @@ def confere(caminho, erros, ligacoes, contagens, presos=None, novos=None, estado
     if c:
         for k, v in c.items():
             contagens[k] = contagens.get(k, 0) + v
-    if novos is not None and len(erros) == erros_antes:
-        novos[rel(caminho)] = selo
+    if novos is not None and corrida is not None and not preso and len(erros) == erros_antes:
+        novos[rel(caminho)] = {**selo, 'execucao': corrida}
     return escrito
 
 
@@ -485,10 +520,15 @@ def main(argv):
                     raise ValueError('briefs não é um objeto')
         except (ValueError, KeyError, TypeError) as erro:
             erros.append(f'presos.json ilegível: {erro}')
+    corrida = registo_da_corrida(argv) if '--escrever-presos' in argv else None
+    if no_github():
+        print('check:briefs · GitHub/CI: selos ignorados; todos os guiões correm nesta invocação.')
+    elif corrida is not None:
+        print('check:briefs · gravação: selos ignorados; só se selam guiões verdes desta invocação.')
     novos, estado = {}, {'presos': 0, 'reexecutados': 0}
     medidas_do_m5 = None
     for b in conferidos:
-        lido = confere(b, erros, ligacoes, contagens, presos, novos, estado)
+        lido = confere(b, erros, ligacoes, contagens, presos, novos, estado, corrida)
         if os.path.basename(b).startswith('BRIEF-M5-'):
             medidas_do_m5 = lido
 
@@ -518,7 +558,7 @@ def main(argv):
           f'{CORTE[2]:02d}.{CORTE[1]:02d}.{CORTE[0]}) · {len(por_nomeacao)} isento(s) por nomeação, '
           f'os {len(isentos)} presos por sha256 em {rel(ISENTOS)}')
     print(f'check:briefs · {estado["presos"]} brief(s) presos conferidos pelos bytes e pelo JSON; '
-          f'{estado["reexecutados"]} guião(ões) reexecutado(s).')
+          f'{estado["reexecutados"]} guião(ões) reexecutado(s). O GitHub corre todos os guiões.')
     if not so_contagens:
         for b in conferidos:
             print(f'    conferido: {os.path.basename(b)} (medidas/{chave_do_brief(b)}.json)')
@@ -541,6 +581,8 @@ def main(argv):
             print(f'    · {e}')
         return 1
     if '--escrever-presos' in argv:
+        if len(novos) != len(conferidos):
+            raise ValueError('Não se escrevem selos sem execução verde de todos os guiões nesta invocação.')
         conteudo = json.dumps({'conferidor_sha256': sha(__file__), 'briefs': novos},
                               ensure_ascii=False, indent=2) + '\n'
         if not os.path.isfile(PRESOS) or open(PRESOS, encoding='utf-8').read() != conteudo:

@@ -1,215 +1,707 @@
 {
-  "conferidor_sha256": "b1d1f6b59582259bd0de4676a2d6df70de0a12fc8850d9228a9759bc4d90964a",
+  "conferidor_sha256": "1f9fb942eac3597ce2475dc45e9adf92fb147ccdc74567e622c29578b8923b4f",
   "briefs": {
     "design/observatorio/BRIEF-B2-o-veredicto-e-as-paginas-dos-temas.md": {
       "brief_sha256": "675a1f09b219f94a4cfda8438ce508a01c81f99cf4da7dfc7fd671a055ca94e2",
       "guiao": "design/observatorio/medidas/BRIEF-B2.py",
       "guiao_sha256": "f03682bf8048b20b0fbef76e047595ed9731e7d68003dd2c645df1ad540b0b06",
-      "medidas_sha256": "f59889ef73f9adca5d39af229a17b2fc4fd7ae909ef298b4d3ce66d452a35701"
+      "medidas_sha256": "f59889ef73f9adca5d39af229a17b2fc4fd7ae909ef298b4d3ce66d452a35701",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-C1-as-correcoes-de-confianca.md": {
       "brief_sha256": "7ef7bfa9689ec2d86cb8e27fc625964fb9bfe0c130190da36c461794e09745f3",
       "guiao": "design/observatorio/medidas/BRIEF-C1.py",
       "guiao_sha256": "78516c20036ab0e3668da347ead722eb64917fba760a2d7174fc3a2b2fc8dfc0",
-      "medidas_sha256": "c20d9794dbf83e6c0f9eb4909f481905568789dc92dfeaadcdac9d76aa12ef47"
+      "medidas_sha256": "c20d9794dbf83e6c0f9eb4909f481905568789dc92dfeaadcdac9d76aa12ef47",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-C2-as-nove-revisoes-da-eurostat.md": {
       "brief_sha256": "56e387ae26d6e2cebdf623e1268a29bb7a28392171921dc44a5f074599326628",
       "guiao": "design/observatorio/medidas/BRIEF-C2.py",
       "guiao_sha256": "6da5dc6870f2e22eec953fa543e67312e64b22a970a12e3edfe9db710025b08b",
-      "medidas_sha256": "a9d01494711e7b55733c1e172ed8b4bba3871091ec3cf08ac2360212f4718681"
+      "medidas_sha256": "a9d01494711e7b55733c1e172ed8b4bba3871091ec3cf08ac2360212f4718681",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-CI1-o-portao-em-metade-do-tempo.md": {
       "brief_sha256": "9c01212ca44ce41b025207c4e195a8f60a05d0f408fa17dba3a776e49952a3b2",
       "guiao": "design/observatorio/medidas/BRIEF-CI1.py",
       "guiao_sha256": "7214fe6845c4e22ace79a35216a2361605494d371f0b5a8468471cb3ff05b8ae",
-      "medidas_sha256": "83c26bcfb28e7a8167c9c60b48814c6efc1d2070c96e6d2ed12d54ff93cca9d1"
+      "medidas_sha256": "83c26bcfb28e7a8167c9c60b48814c6efc1d2070c96e6d2ed12d54ff93cca9d1",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-E0-as-linhas-da-casa-no-registo-das-mudancas.md": {
       "brief_sha256": "751912085d3a88b77cfbacb8e554478b412351dad8f41ee2dbbee78d075826ff",
       "guiao": "design/observatorio/medidas/BRIEF-E0.py",
       "guiao_sha256": "d3f0de4496abd8e555d837ab931c41f12920e240118d58681bd09d87f3008e97",
-      "medidas_sha256": "2f9cf3ccccbd4e35f87defc8efacef7a3140792db796b570f21838f3824f8491"
+      "medidas_sha256": "2f9cf3ccccbd4e35f87defc8efacef7a3140792db796b570f21838f3824f8491",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-E1-os-estudos-de-evora-um-conjunto-coerente.md": {
       "brief_sha256": "5813b68698d93f6afac4575a2df08cc81d27ddb13e348205903e80fb2c4eba78",
       "guiao": "design/observatorio/medidas/BRIEF-E1.py",
       "guiao_sha256": "d28f92712759cdcdbc9e6bd99f80e5aaf33f4bfe841be3d19260cf3c9d1f9c85",
-      "medidas_sha256": "aded063eab2ba0bf288db2a4f57a0ba79b98a013b9ebfe9d1dc65fa200a2be83"
+      "medidas_sha256": "aded063eab2ba0bf288db2a4f57a0ba79b98a013b9ebfe9d1dc65fa200a2be83",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
+    },
+    "design/observatorio/BRIEF-ER1-o-recibo-incorporavel.md": {
+      "brief_sha256": "7adc7d4e301958e1ec77ad8c686827036535ffb5f05c1243699100c45dc80941",
+      "guiao": "design/observatorio/medidas/BRIEF-ER1.py",
+      "guiao_sha256": "8274c9f8fcfe9249e1dd4e830b3a451fc9c9c8ab32748b86664ae51e2a00af62",
+      "medidas_sha256": "a6ba1d958830e4f312bc1a87d0c6ca47dc9da74ba91d1005164e75e1ea8152ea",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md": {
       "brief_sha256": "55ce5dad46e1801dd89c440ae69138b344ee3a2aabf186148047ac9e02aa43bb",
       "guiao": "design/observatorio/medidas/BRIEF-EX1.py",
       "guiao_sha256": "816738f9ce33b5f19546828f093e37e218cc6995c340055d2c8cf78e48545ace",
-      "medidas_sha256": "758825a638c0865329dcba5a7cee9e8f3f5d4b2c4db61501b5535d4402e4e73f"
+      "medidas_sha256": "758825a638c0865329dcba5a7cee9e8f3f5d4b2c4db61501b5535d4402e4e73f",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
+    },
+    "design/observatorio/BRIEF-EX2-a-leitura-da-semana-com-o-que-cada-numero-e.md": {
+      "brief_sha256": "3cfb56d97b85e36ad5f24224813be41e497fb554187f52ebeda09fd1b26a7b85",
+      "guiao": "design/observatorio/medidas/BRIEF-EX2.py",
+      "guiao_sha256": "94722cc1fe0bae1de697acd0f4bdc3ecd2a758a3316ccf3efdbfb6a216ad4775",
+      "medidas_sha256": "8f22487afd3f6224721ba7564bc0608badd224d6343f9fe15f2b8f83c8ad2f8f",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-F22b-as-corridas-prontas-a-armar.md": {
       "brief_sha256": "050376f5ee2d2d4849db613394ce16b976c7ad56b4fb6e18739888d2161626cb",
       "guiao": "design/observatorio/medidas/BRIEF-F22b.py",
       "guiao_sha256": "c55d1ee9c040e67f14d29cf6013536fe6da2a57d3fd94b0a99cd68a45ad24f88",
-      "medidas_sha256": "ffe31c46ca8b3d13dd4a99e413746e1819c914fbd312cb7a4c8670b99091932b"
+      "medidas_sha256": "ffe31c46ca8b3d13dd4a99e413746e1819c914fbd312cb7a4c8670b99091932b",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-H2-a-passagem-de-higiene-de-04-10.md": {
       "brief_sha256": "898c7cc2abe15979e131b18a438faf9191c0d73b7ed8d6aa151c1ec8287bf1cf",
       "guiao": "design/observatorio/medidas/BRIEF-H2.py",
       "guiao_sha256": "07578a4f2deb16d5d47b216220865354bd113f52590be51b70f7fe7843092f20",
-      "medidas_sha256": "239eb6885917cfc400210576ea6c500f1bdb96f8c31c125279e32c4b324e2dd7"
+      "medidas_sha256": "239eb6885917cfc400210576ea6c500f1bdb96f8c31c125279e32c4b324e2dd7",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-H3-a-passagem-de-higiene-de-05-10.md": {
       "brief_sha256": "3cd80eb6158816a066ca97f8a188773c94e6d8e8e425bc08efc0293990397fca",
       "guiao": "design/observatorio/medidas/BRIEF-H3.py",
       "guiao_sha256": "18c1d198339789228098ddf97033315933c950423d7e9c54d51b28954d0bed2e",
-      "medidas_sha256": "7e75e7a5e5bcf598fac7d00737548cb39d39da98269dd8bc4eb4e60ae26925b0"
+      "medidas_sha256": "7e75e7a5e5bcf598fac7d00737548cb39d39da98269dd8bc4eb4e60ae26925b0",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-H4-o-menu-do-telefone-em-duas-linhas.md": {
       "brief_sha256": "fd228d5ec74a3969d310cb201fb26719c2a78af38929a82ecdd56822b326f07c",
       "guiao": "design/observatorio/medidas/BRIEF-H4.py",
       "guiao_sha256": "3266a6bc04e063d24b3a682ad2a590dd7509163057a83f4e5cc631e9d0b1fef5",
-      "medidas_sha256": "d8c9957a959261789472dcd68c89de300214b933e47e2bb74917154e0a2cae77"
+      "medidas_sha256": "d8c9957a959261789472dcd68c89de300214b933e47e2bb74917154e0a2cae77",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
+    },
+    "design/observatorio/BRIEF-JD1-os-juros-e-a-divida-do-estado-no-livro-razao.md": {
+      "brief_sha256": "08ff249c3e2a184749769b133e4875d49e75dbe599d05c563354152600d9bb89",
+      "guiao": "design/observatorio/medidas/BRIEF-JD1.py",
+      "guiao_sha256": "c28bd77bbe7bdb7350e54cf7cf403139f5141b6a8e036c6d5c685ba409ff7967",
+      "medidas_sha256": "50ff4ba042413d419abc0d229a7cfb7c30b8d9bc48d08eda7c1cfb9bae92fa5b",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-K2-o-cartao-para-o-telemovel.md": {
       "brief_sha256": "69d43f83d8bac65af7e9cb425264f03257f1f46d2e1b0b822bf1bb7207ca9166",
       "guiao": "design/observatorio/medidas/BRIEF-K2.py",
       "guiao_sha256": "f49cc950732e56d343176d9c5e4f9eadcd15fd2c6588f0e60717e0b811f8bedf",
-      "medidas_sha256": "222caff5139b747a5b5cbe06f612453a51f2889838aba581843032572e3b2217"
+      "medidas_sha256": "222caff5139b747a5b5cbe06f612453a51f2889838aba581843032572e3b2217",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-L1-a-leitura-de-cada-medida.md": {
       "brief_sha256": "1030d355c92583611b42f05a66e455c8b9a7d52d06026988fca8fe101f810fcc",
       "guiao": "design/observatorio/medidas/BRIEF-L1.py",
       "guiao_sha256": "8639a3b006bc274f970171ad890bbadacb782d794ec1dcf1cf80b30f958c2fc0",
-      "medidas_sha256": "08dc8afb3f7415518269977a7cb812d7a01e57bf5da7f059efafb3f96a357ff7"
+      "medidas_sha256": "08dc8afb3f7415518269977a7cb812d7a01e57bf5da7f059efafb3f96a357ff7",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-L2a-o-mapa-primeiro.md": {
       "brief_sha256": "73dd0d43f4a545ecab6dca992ed9405bf7674fe19fe5c8f96bd913e9b434497b",
       "guiao": "design/observatorio/medidas/BRIEF-L2a.py",
       "guiao_sha256": "24bdc3fc2429ffb03b26095a458c5561d34af01fe2d8a569454f7ea67f0d0366",
-      "medidas_sha256": "6ccfe449fe32177927862a8f69541d6deb8f98b8f1878cf4c4cbbe0dffd14254"
+      "medidas_sha256": "6ccfe449fe32177927862a8f69541d6deb8f98b8f1878cf4c4cbbe0dffd14254",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-L2b-o-concelho-entre-os-308.md": {
       "brief_sha256": "11a280301fb6e3677ab5e38356340f2a780fabe3880aef3485206b73295d8b33",
       "guiao": "design/observatorio/medidas/BRIEF-L2b.py",
       "guiao_sha256": "eaa023fe842e86ee9496e86634ea0225803f92e90c8d38efe4117e5de2aee060",
-      "medidas_sha256": "b508251013fd86b7aa420f5fc68aa9c73c1cc982fa8f262bac677181f446707d"
+      "medidas_sha256": "b508251013fd86b7aa420f5fc68aa9c73c1cc982fa8f262bac677181f446707d",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-M4b-o-livro-razao-do-11-reparado-e-declarado.md": {
       "brief_sha256": "2daad463a4b2eec454862b9ec5e965ffe0e47304535e2037cc231fd5b9618f53",
       "guiao": "design/observatorio/medidas/BRIEF-M4b.py",
       "guiao_sha256": "374cc67509e59e5fc7a4391f2000fec712781c566301e5edee374138fd0750fd",
-      "medidas_sha256": "f8b062a7324035ccbed779916a86b5c722878d7baeda4964c57f1c13d43589d4"
+      "medidas_sha256": "f8b062a7324035ccbed779916a86b5c722878d7baeda4964c57f1c13d43589d4",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-M5-as-medicoes-provam-que-veem.md": {
       "brief_sha256": "7b96c50364d4cc2988248129e759e62d7525e40266d97b3b3577966d5d690904",
       "guiao": "design/observatorio/medidas/BRIEF-M5.py",
       "guiao_sha256": "2e7aa6783549961d1c8bd0462aa32cb8c2a1f437a78504fc884bb16b59794639",
-      "medidas_sha256": "e5e47be648807845d9f20ec3c817ed1097a58632f6bfc8e3c1dd222fd9b5ca97"
+      "medidas_sha256": "e5e47be648807845d9f20ec3c817ed1097a58632f6bfc8e3c1dd222fd9b5ca97",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-MA-a-maquinaria-sem-perda-de-protecao.md": {
       "brief_sha256": "3470ffd55f428173f7c3667a93e14c07c455fb244583691eb68ee2f14cb8945a",
       "guiao": "design/observatorio/medidas/BRIEF-MA.py",
       "guiao_sha256": "b622bd138c9814d78b3068741d8285b309ef6f592c5e85c5bd2834bb3b522242",
-      "medidas_sha256": "29e282eb4ce50f85c4be7653601f252451ce2eec4e3188204f11b035945d10a0"
+      "medidas_sha256": "29e282eb4ce50f85c4be7653601f252451ce2eec4e3188204f11b035945d10a0",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-N1-uma-porta-por-assunto.md": {
       "brief_sha256": "031dff9d4f54167b435c58c2c054a47f6cededbf89b72994420c3120779363f3",
       "guiao": "design/observatorio/medidas/BRIEF-N1.py",
       "guiao_sha256": "6587624f625065a45ee0ef1eddf2c50a0ce836abbcd6ff144ae7f92fdd1f4e56",
-      "medidas_sha256": "cb2e5d4aa8edd4f9d6dbce6db1db1fcb164a0d073eaeac7284906ca5a80f768b"
+      "medidas_sha256": "cb2e5d4aa8edd4f9d6dbce6db1db1fcb164a0d073eaeac7284906ca5a80f768b",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-OE1-o-dinheiro-do-estado-por-ministerio.md": {
       "brief_sha256": "5a95e95703bac5cba908afed197917a77aeb183e27387445c75cae1d58172f37",
       "guiao": "design/observatorio/medidas/BRIEF-OE1.py",
       "guiao_sha256": "0650b97229d91f26b4b27f644242f18803199212178f9e8a1561bba36784c645",
-      "medidas_sha256": "6471a59b42b30b559e0de301de767781040ae693561b59ed63f11278212e7a11"
+      "medidas_sha256": "6471a59b42b30b559e0de301de767781040ae693561b59ed63f11278212e7a11",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-P4-os-pequenos-do-sitio.md": {
       "brief_sha256": "8d3ef26db446ba88df17385075dcd54bd7e85030fb3a43e6c790ffc965568589",
       "guiao": "design/observatorio/medidas/BRIEF-P4.py",
       "guiao_sha256": "247a8e7fdc9f830755ecf88a5651157cf76d0f8f67aea77154b98d184c1a52ae",
-      "medidas_sha256": "8f8e4ef6a1bc7cc93daeafecf23bdcee5c68653b94069a49473bb3b0cc550b2c"
+      "medidas_sha256": "8f8e4ef6a1bc7cc93daeafecf23bdcee5c68653b94069a49473bb3b0cc550b2c",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-PP1-a-primeira-pagina-de-um-leitor-comum.md": {
       "brief_sha256": "c72bb1e071e43e5b948885a58ec18aabd5eeb60aa3f636f7c3b82a8feb1738f2",
       "guiao": "design/observatorio/medidas/BRIEF-PP1.py",
       "guiao_sha256": "9c31b764413346faad774cb20af17fdaf5ae3c858a471d5a5e021df610e1421f",
-      "medidas_sha256": "71573cca1e41a39df1074ce4e07b047de14ee9a30de537f9d9a3aba6436ac76c"
+      "medidas_sha256": "71573cca1e41a39df1074ce4e07b047de14ee9a30de537f9d9a3aba6436ac76c",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-R1-o-lado-do-leitor-depois-da-leitura-de-fora.md": {
       "brief_sha256": "da207f66ca0f043c20ded84a87caf851d90718592f59cc0328263d53b312b577",
       "guiao": "design/observatorio/medidas/BRIEF-R1.py",
       "guiao_sha256": "6d8df1f3c2deb291bc19c55aac5611e6b2587f9f19e17baf65e146306a8ffeb2",
-      "medidas_sha256": "aaac20e308e64215c038bfc1a64d29a56f8636a4999a6440a200dd1e62f2ecbe"
+      "medidas_sha256": "aaac20e308e64215c038bfc1a64d29a56f8636a4999a6440a200dd1e62f2ecbe",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-R2-os-rotulos-do-sitio.md": {
       "brief_sha256": "0ca5d822e3a5612ffaff48b5ee8351bfa9c8baa56067dc2e3a32494c03298739",
       "guiao": "design/observatorio/medidas/BRIEF-R2.py",
       "guiao_sha256": "62fca294615bc3c50225dadd521fe646a21179821a996be4f31f4047334fb633",
-      "medidas_sha256": "b9e5353406a79332613c34d6aaff0363fb829981f535692a27b1281d533fd813"
+      "medidas_sha256": "b9e5353406a79332613c34d6aaff0363fb829981f535692a27b1281d533fd813",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-R3-o-indice-do-sitio.md": {
       "brief_sha256": "f54846aa5dae1846197fdadfabb0e78ad0db0173faaa1f880a0c4d2a4a5d468a",
       "guiao": "design/observatorio/medidas/BRIEF-R3.py",
       "guiao_sha256": "2e9cdbe0cd87109438134e84cd3e62e943bb531cf0143e083540969df04317d1",
-      "medidas_sha256": "e9858d71fe691f52fede2aab530c56b1ba4091c193b2992abae9ec5aecbeeee2"
+      "medidas_sha256": "e9858d71fe691f52fede2aab530c56b1ba4091c193b2992abae9ec5aecbeeee2",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-R4-as-palavras-correntes-em-cada-numero.md": {
       "brief_sha256": "9c135aa01b1c9cfa8f6aa3fc8c9fd8bad31bb7b93ab4ed5a885c8e402702216c",
       "guiao": "design/observatorio/medidas/BRIEF-R4.py",
       "guiao_sha256": "57c5ea09f54f54be12aaa048e59621253005bb05a14b8a3c69e7d67cc042e2b5",
-      "medidas_sha256": "86a33a6fc449a50b0d57c6cfd625402c5c93a8aabe26f0a6ef1841f942997c4e"
+      "medidas_sha256": "86a33a6fc449a50b0d57c6cfd625402c5c93a8aabe26f0a6ef1841f942997c4e",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-RP1-rendimentos-e-precos-os-cartoes.md": {
       "brief_sha256": "d5800d21a79eb1e0d01f9cb99516d6d49964f6d7fb84a57a072bd59a790340dc",
       "guiao": "design/observatorio/medidas/BRIEF-RP1.py",
       "guiao_sha256": "aa46a47815fcdbda26cd25b9db26188a1600034f539d074cbb27abc2624850b4",
-      "medidas_sha256": "fce24f333d0767997e32b40b4a8440857428f614af6ead3402f9cf9072b446c5"
+      "medidas_sha256": "fce24f333d0767997e32b40b4a8440857428f614af6ead3402f9cf9072b446c5",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-RP2-rendimentos-e-precos-os-documentos-e-as-outras-apis.md": {
       "brief_sha256": "1ad41e2bd92c9283035510e60d3db683f626b952147816c86ea981a2ffc9fe13",
       "guiao": "design/observatorio/medidas/BRIEF-RP2.py",
       "guiao_sha256": "16bca25919eefd978e0fa17ac518e98ca57948464578089ab94b42659814967e",
-      "medidas_sha256": "ba08c65ab7bd98585db4b183d5f88fe1ea21ba522d29cb1f2a53600e33666ab4"
+      "medidas_sha256": "ba08c65ab7bd98585db4b183d5f88fe1ea21ba522d29cb1f2a53600e33666ab4",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-RP3-as-series-no-motor-e-no-livro.md": {
       "brief_sha256": "d5e2d9567970cfa97a78272879e5b03dcca524111e3572ce9b16c8818f2925b1",
       "guiao": "design/observatorio/medidas/BRIEF-RP3.py",
       "guiao_sha256": "fa83803ec4a6cd401cab598324a9aeae2d6445e976489c8569125af9f299b747",
-      "medidas_sha256": "dcb8e2c13bc4192727a51c1d541e3baba730900d31ce1d7e4be22ec31aaf6e29"
+      "medidas_sha256": "dcb8e2c13bc4192727a51c1d541e3baba730900d31ce1d7e4be22ec31aaf6e29",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-RP4-o-grafico-das-series-no-cartao-e-no-recibo.md": {
       "brief_sha256": "071705698a9183ab2e4dea791e3faef4c13669b506d1cdedec29f96fd4b15bcc",
       "guiao": "design/observatorio/medidas/BRIEF-RP4.py",
       "guiao_sha256": "c6f19b4b45aefadd7c0fb129313b937e84eb4c7cf766b1180ff4be5140daa58b",
-      "medidas_sha256": "338a118c35d509bea7e66bae3839be36570765e89a841a1209a27822d930edbe"
+      "medidas_sha256": "338a118c35d509bea7e66bae3839be36570765e89a841a1209a27822d930edbe",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-RP4C-as-ajudas-de-leitura-do-grafico.md": {
       "brief_sha256": "6fcead1215a22ff8dd5f6bf934e2249451d81a49a174302e8eb52c5edf3d837e",
       "guiao": "design/observatorio/medidas/BRIEF-RP4C.py",
       "guiao_sha256": "fa23f931c6b49ebc2e4a40db6f0ab7b5199fe36c21ce66e521c72ddae1c24cd2",
-      "medidas_sha256": "cc4fd76ca857f3b9f7590abc3a369ad6235bccdb5bcf2d2f445b54a851178892"
+      "medidas_sha256": "cc4fd76ca857f3b9f7590abc3a369ad6235bccdb5bcf2d2f445b54a851178892",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-RP4M-as-series-que-faltam-e-o-corredor-das-series.md": {
       "brief_sha256": "0715e353ce99d21ea9b0c251c69943e68933e610238ee394ea9030aa11832f7e",
       "guiao": "design/observatorio/medidas/BRIEF-RP4M.py",
       "guiao_sha256": "562b228995e68468d6c69aa6e504060b04481ab9e9dd028933e9b1297f3841e4",
-      "medidas_sha256": "84c0642e79e68850eb78f9b83d06dcdf373c792529051802d8aa601771f72b6c"
+      "medidas_sha256": "84c0642e79e68850eb78f9b83d06dcdf373c792529051802d8aa601771f72b6c",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
+    },
+    "design/observatorio/BRIEF-RP4N-selar-na-fonte-o-que-as-frases-ainda-dizem-pelo-nome.md": {
+      "brief_sha256": "a0b7dbfb1a6e6e623bec32edde84a7026f204bbea35a0152d070f5c4605cd640",
+      "guiao": "design/observatorio/medidas/BRIEF-RP4N.py",
+      "guiao_sha256": "eeea05f0b9bef7d6085ff1c4c6ae3f4c6332e5448e61b7129e6a18206200b659",
+      "medidas_sha256": "86500a9ae23263838130eb5e535c3e1dbcaaa7cbf7fb884931890bea2fa93818",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-S1-a-caixa-das-sugestoes.md": {
       "brief_sha256": "b6d3ab78e8c0a103b5895445281853a8b75a581d19cecc6dbf0efeef8d5d9c1a",
       "guiao": "design/observatorio/medidas/BRIEF-S1.py",
       "guiao_sha256": "f292d2dbee99f9b7326c01c8340959f56d08b69fc77cd017fca27848d2ec4de6",
-      "medidas_sha256": "be06132a2f7e3708fbc15426f393c0817cd5286081e2ed8789af7fdabce9206c"
+      "medidas_sha256": "be06132a2f7e3708fbc15426f393c0817cd5286081e2ed8789af7fdabce9206c",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-UE1-onde-portugal-fica-entre-os-27.md": {
       "brief_sha256": "264c3a0e29a9cf040cf5702b35d0c1b2e0ad1bfc94154b09df8e8545b4c6932c",
       "guiao": "design/observatorio/medidas/BRIEF-UE1.py",
       "guiao_sha256": "2282df24bd5691143ef0fe869baef4deec2374c21fdc7ddedaabb4c33ee5cb2c",
-      "medidas_sha256": "2a155ff61c26ff482d86d1b54217594007231c1549c6160c5895c0b4f9d4f28c"
+      "medidas_sha256": "2a155ff61c26ff482d86d1b54217594007231c1549c6160c5895c0b4f9d4f28c",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     },
     "design/observatorio/BRIEF-UE2-a-pagina-dos-paises.md": {
       "brief_sha256": "9cae10200755cc1ddad9c098727330dc933974cfc5d75902ff620513d0a4a89d",
       "guiao": "design/observatorio/medidas/BRIEF-UE2.py",
       "guiao_sha256": "dcf1ce3e5d3d0621464d10e1eaad5a0be843d151b6f76aea30b099f8b163056d",
-      "medidas_sha256": "35c927f18158f97f7fee191f5f783df4f1f3b5b6dc4d6f3653bfd981c0e63a1d"
+      "medidas_sha256": "35c927f18158f97f7fee191f5f783df4f1f3b5b6dc4d6f3653bfd981c0e63a1d",
+      "execucao": {
+        "cabeca": "58ab143bf978db8b2acfd41df6be3d405a4bffb9",
+        "hora": "2026-10-06T11:48:10.932483+00:00",
+        "invocacao": [
+          "python3",
+          "scripts/check-briefs.py",
+          "--escrever-presos",
+          "--contagens"
+        ],
+        "id": "8b7e2943-0931-4b9c-9f4d-7188c22ba018",
+        "codigo": 0
+      }
     }
   }
 }
