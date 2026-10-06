@@ -254,6 +254,15 @@ const TETOS = {
      linha pode ainda abrir o recibo no cartão dela. A primeira página já estava na conta e fica com mais
      destinos repetidos pela mesma razão; nenhuma página que o bloco não refez ganhou um. As plantas de
      portas extra continuam a fechar. */
+  /* R4 (05.10.2026): SOBE DE 2 714 PARA 2 736, e a razão é medida e inteira. A frase «o que é» do recibo de uma série
+     com linha é a frase da linha (a decisão 1 do brief R4: a frase é uma, e é a do cartão); quando a linha tem cartão
+     nacional, a frase diz o valor da linha, e o valor leva o seu selo, pela regra do portão de HTML («onde aparece um
+     valor, aparece o selo»), que abre o recibo da linha que a lista «As linhas que são pontos desta série», no mesmo
+     recibo, já abria. A medição (`design/especime-v3/medicoes/r4-2026-10-05/medir-l1-r4.mjs`, com o registo da régua
+     corrida na construção da cabeça de partida, 557844fe, numa worktree à parte) acha 22 páginas novas, que são os
+     recibos das onze séries cuja linha tem cartão, nas duas edições, cada uma com um destino repetido, o recibo da
+     linha da frase; nenhuma página antiga ganhou um destino repetido e nenhuma saiu. Fechar a dívida é dar ao selo da
+     frase e à porta da lista uma porta só, e leva o teto a 2 714. O horizonte continua a zero. */
   l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.
