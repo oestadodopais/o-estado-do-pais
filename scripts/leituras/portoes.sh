@@ -10,6 +10,8 @@
 # A criação exclusiva da tranca impede duas worktrees de a tomarem juntas.
 # Se a escrita for recusada, para; uma tranca existente espera, sem a fazer
 # caducar enquanto uma construção possa estar a usá-la.
+# No fim, mesmo vermelho, agrega os tempos, retira as partes temporárias e
+# limpa caminhos locais. Só depois solta a tranca. Uma falha da limpeza sai a 9.
 set -u
 W="$1"; O="$2"
 case "$W" in /*) ;; *) echo 'portoes: a worktree tem de ser absoluta' >&2; exit 9;; esac
@@ -28,7 +30,15 @@ while ! (set -C; printf '%s %s pid=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$W" "
   [ "$esperou" -ne 0 ] || echo 'à espera da tranca da máquina' >&2
   esperou=1; sleep 10
 done
-trap 'rm -f "$tranca"' EXIT
+fechar() {
+  resultado=$?
+  trap - EXIT
+  node "$W/scripts/leituras/tempos.mjs" arrumar "$O" || resultado=9
+  python3 "$W/scripts/leituras/limpar-caminhos.py" "$O" --worktree "$W" > "$O/limpeza.json" || resultado=9
+  rm -f "$tranca"
+  exit "$resultado"
+}
+trap fechar EXIT
 trap 'exit 130' INT TERM
 export OEDP_TEMPOS_DIR="$O"
 export npm_config_script_shell="$W/scripts/leituras/tempos-shell.py"
@@ -50,12 +60,10 @@ for g in build verify typecheck; do
   echo "$codigo" > "$O/$g.codigo"
   date -u +%Y-%m-%dT%H:%M:%SZ > "$O/$g.fim"
   if [ "$codigo" -gt 128 ]; then
-    node scripts/leituras/tempos.mjs fechar "$O"
     echo "portão $g interrompido; a corrida para aqui" >&2
     exit "$codigo"
   fi
 done
-node scripts/leituras/tempos.mjs fechar "$O"
 git rev-parse HEAD > "$O/cabeca.fim"
 git status --short > "$O/estado.fim"
 echo "FIM $(cut -c1-8 "$O/cabeca") build=$(cat "$O/build.codigo") verify=$(cat "$O/verify.codigo") typecheck=$(cat "$O/typecheck.codigo")"

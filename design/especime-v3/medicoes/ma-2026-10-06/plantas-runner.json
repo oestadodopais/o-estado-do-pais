@@ -13,14 +13,14 @@
     },
     {
       "falhas": [
-        "U: «\"/Users/nunosantos/.nvm/versions/node/v22.23.1/bin/node\" -e \"require('fs').writeFileSync(require('path').join('marcas','v2'),'')\"» está no verify, não é um passo do build e não correu aqui"
+        "U: «\"<casa>/.nvm/versions/node/v22.23.1/bin/node\" -e \"require('fs').writeFileSync(require('path').join('marcas','v2'),'')\"» está no verify, não é um passo do build e não correu aqui"
       ],
       "planta": "uma conferência tirada da escolha fecha a célula U",
       "mordeu": true
     },
     {
       "falhas": [
-        "U: «\"/Users/nunosantos/.nvm/versions/node/v22.23.1/bin/node\" -e \"process.exit(3)\"» correu e não saiu com 0"
+        "U: «\"<casa>/.nvm/versions/node/v22.23.1/bin/node\" -e \"process.exit(3)\"» correu e não saiu com 0"
       ],
       "planta": "uma conferência vermelha fecha a corrida, e as outras acabam",
       "mordeu": true
