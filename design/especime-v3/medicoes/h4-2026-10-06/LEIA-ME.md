@@ -1,6 +1,6 @@
 # H4 · a medição do menu e os lugares da inteligência artificial
 
-O registo abaixo conserva a primeira passagem. A entrega atual e as decisões da direção estão na secção «A passagem H4-b», no fim.
+O registo abaixo conserva as passagens anteriores. A entrega atual e o fecho da H4-5 estão na secção «A passagem H4-c», no fim.
 
 Construção por Codex gpt-6-astra. Texto provisório do brief; a redação final e a leitura a frio continuam por confirmar antes de aterrar.
 
@@ -267,3 +267,99 @@ Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/
 | typecheck | 0 |
 
 Os registos da corrida ficam em `portoes-b/`, limpos de caminhos locais antes de entrar no Git. A cabeça final é a do commit das provas; os portões pertencem à cabeça do código acima.
+
+## A passagem H4-c
+
+A H4-5 está fechada. A construção cumpre a decisão e os portões inteiros terminaram sem falhas. A alteração é da regra de aceitação e da sua prova; o menu servido conserva a dobra natural, as portas e o nome inteiro da União da passagem anterior.
+
+Cabeça do código: `45c5a6cd000b9dbdaebe3aee310b6122c25aa512`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4c.py`, a partir dos ficheiros de medição e dos códigos. [Resumo e comandos](resumo-h4c.json).
+
+### A decisão
+
+O menu do telefone segue a dobra natural pela regra base: até aos 430 px, a TM4 exige no máximo 2 linhas a 390 e a 430 px e no máximo 3 linhas a 360 e a 320 px; em todas as larguras, nenhuma porta sai da janela, cada porta tem 44 px de altura de toque, o espaço entre portas vizinhas na mesma linha é o da regra base nessa largura e a letra é a da regra base (decidido a 06.10.2026 pela H4-5).
+
+A frase foi acrescentada ao ponto da TM4 no brief, num commit próprio. [Decisão lida do brief](decisoes-h4c.json).
+
+### As medidas do menu por largura
+
+Comando: `node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois --passagem-c`. A fase `depois` de [menu-a-390.json](menu-a-390.json) contém as caixas de todas as portas, a posição da última, as capturas e os SHA-256. A fase anterior está conservada em `depois_h4b`; as imagens anteriores mantêm os seus ficheiros.
+
+| Edição | Janela, px | Portas | Coluna, px | Largura natural, px | Linhas | Máximo | Espaço, px | Letra | Menor alvo, px | Sem transbordo |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| pt | 320 | 7 | 284 | 666,3125 | 3 | 3 | 16 | 15px | 44 | sim |
+| pt | 360 | 7 | 324 | 666,3125 | 3 | 3 | 16 | 15px | 44 | sim |
+| pt | 390 | 7 | 354 | 666,3125 | 2 | 2 | 16 | 15px | 44 | sim |
+| pt | 430 | 7 | 394 | 666,3125 | 2 | 2 | 16 | 15px | 44 | sim |
+| en | 320 | 7 | 284 | 659,75 | 3 | 3 | 16 | 15px | 44 | sim |
+| en | 360 | 7 | 324 | 659,75 | 3 | 3 | 16 | 15px | 44 | sim |
+| en | 390 | 7 | 354 | 659,75 | 2 | 2 | 16 | 15px | 44 | sim |
+| en | 430 | 7 | 394 | 659,75 | 2 | 2 | 16 | 15px | 44 | sim |
+
+O espaço entre vizinhas e a letra são comparados com a regra base resolvida pelo navegador nessa largura, incluindo o espaço das letras. O guião do pacote cruza as medidas da coluna, a contagem das portas e das linhas, as folgas, a letra e os alvos de toque com os resultados da TM4.
+
+### As plantas e as mensagens
+
+Comando da célula e das plantas, executado dentro do `verify`: `OEDP_TEMA_MENU_JSON=design/especime-v3/medicoes/h4-2026-10-06/tema-menu-c.json node tests/inicio/tema-e-menu.mjs --prova`. [Resultados completos](tema-menu-c.json).
+
+| Planta | Mensagem observada e exigida | Resultado |
+| --- | --- | --- |
+| uma oitava porta no menu | TM4 · / a 1280 px: o menu tem 8 portas, e são sete. | mordeu |
+| o menu apertado a 6 px | TM4 · / a 390 px: o espaço entre portas na mesma linha não é o da regra base (16 px; lido 6 px; folgas 6, 6, 6, 6, 6). | mordeu |
+| o menu sem dobrar a 320 px | TM4 · / a 320 px: as sete portas não cabem numa linha e o menu não dobrou. | mordeu |
+| quatro linhas a 320 px | TM4 · / a 320 px: o menu tem 4 linhas, e o máximo é três. | mordeu |
+| uma porta sem 44 px de toque | TM4 · / a 390 px: a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px. | mordeu |
+| uma oitava porta no menu | TM4 · /en/ a 1280 px: o menu tem 8 portas, e são sete. | mordeu |
+| o menu apertado a 6 px | TM4 · /en/ a 390 px: o espaço entre portas na mesma linha não é o da regra base (16 px; lido 6 px; folgas 6, 6, 6, 6, 6). | mordeu |
+| o menu sem dobrar a 320 px | TM4 · /en/ a 320 px: as sete portas não cabem numa linha e o menu não dobrou. | mordeu |
+| quatro linhas a 320 px | TM4 · /en/ a 320 px: o menu tem 4 linhas, e o máximo é três. | mordeu |
+| uma porta sem 44 px de toque | TM4 · /en/ a 390 px: a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px. | mordeu |
+
+A planta nova serve ao navegador a regra base com um espaço maior e exige a mensagem da quarta linha. As outras plantas ficam. Nenhuma delas altera a folha fonte nem os ficheiros construídos.
+
+### As capturas acrescentadas
+
+Comando: `node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --passagem-c`. [Manifesto com medidas e SHA-256](capturas-c.json). As páginas construídas estão em `paginas-c/`.
+
+| Edição | Janela, px | Página | Menu |
+| --- | --- | --- | --- |
+| pt | 320 | [captura](../../capturas/h4-2026-10-06/primeira-pt-320.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-320.png) |
+| pt | 360 | [captura](../../capturas/h4-2026-10-06/primeira-pt-360.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-pt-360.png) |
+| en | 320 | [captura](../../capturas/h4-2026-10-06/primeira-en-320.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-en-320.png) |
+| en | 360 | [captura](../../capturas/h4-2026-10-06/primeira-en-360.png) | [recorte](../../capturas/h4-2026-10-06/cabecalho-primeira-en-360.png) |
+
+O transbordo do documento que a passagem anterior já separava do menu continua medido. Nenhuma porta sai da janela. As fontes do sítio não mudaram nesta passagem; o ajuste desse transbordo do corpo fica fora deste mandato.
+
+| Edição | Janela, px | Documento, px |
+| --- | --- | --- |
+| pt | 320 | 322 |
+| en | 320 | 335 |
+
+Conferência: `python3 design/especime-v3/medicoes/h4-2026-10-06/conferir-pacote.py --passagem-c`. O guião confere a cabeça, os códigos, as medidas, as plantas, os resumos das capturas novas e anteriores, as páginas, as folhas e as ligações, e procura caminhos locais. [Resultado](conferencia-pacote-c.json).
+
+### O que fica por fazer
+
+A construção pedida nesta passagem está concluída e a H4-5 fechada. A leitura a frio por outra família e a conferência antes da aterragem continuam com o lugar de direção, como já estava registado na H4-4. Não se fez push. Não surgiu uma questão nova. O custo em tokens não foi exposto pela ferramenta e fica por ler pelo lançador.
+
+### Os commits e os portões inteiros
+
+Commits lidos do Git, guardados no resumo:
+
+- `79f66ed4ce43a4d8fb35f32e636c88359edc01e9`: H4-c: regista no brief os limites decididos pela H4-5.
+
+- `b0eea25d6309e1b74668e3cf1ba9585eeb59b241`: H4-c: protege os limites por largura e prova a quarta linha.
+
+- `54a71206d35e2d3f84df76a4a030d2acd05e797e`: H4-c: prepara as medidas por largura e o fecho das provas.
+
+- `45c5a6cd000b9dbdaebe3aee310b6122c25aa512`: H4-c: distingue a janela da coluna nos registos da TM4.
+
+Cabeça do código, lida de `portoes-c/cabeca` e `portoes-c/cabeca.fim`: `45c5a6cd000b9dbdaebe3aee310b6122c25aa512`. O commit seguinte contém só o relatório e as provas.
+
+Comando pela tranca: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h4-2026-10-06/portoes-c`. A variável `OEDP_TEMA_MENU_JSON` guarda a prova da TM4 durante o próprio `verify`.
+
+| Portão | Código lido do ficheiro |
+| --- | --- |
+| build | 0 |
+| verify | 0 |
+| typecheck | 0 |
+
+Os registos completos, os códigos e as datas estão em `portoes-c/`. Os caminhos locais dos registos foram substituídos antes de guardar o pacote. A cabeça final é a do commit das provas; a corrida pertence à cabeça do código acima.
