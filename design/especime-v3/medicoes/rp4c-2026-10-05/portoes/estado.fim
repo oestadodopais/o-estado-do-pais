@@ -1,0 +1,12 @@
+ M design/especime-v3/medicoes/rp4c-2026-10-05/portoes/build.fim
+ M design/especime-v3/medicoes/rp4c-2026-10-05/portoes/build.inicio
+ M design/especime-v3/medicoes/rp4c-2026-10-05/portoes/build.log
+ M design/especime-v3/medicoes/rp4c-2026-10-05/portoes/cabeca
+ M design/especime-v3/medicoes/rp4c-2026-10-05/portoes/cabeca.fim
+ M design/especime-v3/medicoes/rp4c-2026-10-05/portoes/estado.fim
+ M design/especime-v3/medicoes/rp4c-2026-10-05/portoes/typecheck.fim
+ M design/especime-v3/medicoes/rp4c-2026-10-05/portoes/typecheck.inicio
+ M design/especime-v3/medicoes/rp4c-2026-10-05/portoes/verify.fim
+ M design/especime-v3/medicoes/rp4c-2026-10-05/portoes/verify.inicio
+ M design/especime-v3/medicoes/rp4c-2026-10-05/portoes/verify.log
+?? node_modules

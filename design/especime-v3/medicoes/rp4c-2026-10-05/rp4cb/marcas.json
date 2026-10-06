@@ -1,0 +1,1891 @@
+{
+  "construcao": "a construção da passagem RP4-c-b",
+  "dist_commit": "dd2e347caf5f2fb913cf60cfb4f6b8e55fa86081",
+  "construido_em": "2026-10-05T20:41:14.988Z",
+  "paginas_com_desenhos": 58,
+  "desenhos": 82,
+  "marcas_dos_valores": 346,
+  "marcas_dos_valores_com_percentagem": 162,
+  "marcas_dos_valores_com_euro": 0,
+  "marcas_do_zero_sem_simbolo": 82,
+  "desenhos_com_legenda_da_unidade": 34,
+  "desenhos_em_euros_com_legenda": 24,
+  "legendas_distintas": [
+    "euros",
+    "euros per month",
+    "euros per pensioner per year",
+    "euros per year",
+    "euros por ano",
+    "euros por mês",
+    "euros por pensionista por ano",
+    "index (base 2025 = 100)",
+    "per thousand people of working age",
+    "por mil pessoas em idade ativa",
+    "índice (base 2025 = 100)"
+  ],
+  "zonas_de_leitura": 9474,
+  "desenhos_com_zonas": 48,
+  "desenhos_indexados": 2,
+  "desenhos_indexados_com_zonas": 0,
+  "tempo_da_primeira_pagina": [
+    "1992",
+    "2000",
+    "2010",
+    "2020",
+    "2026"
+  ],
+  "valor_da_primeira_pagina": [
+    "−5 %",
+    "0",
+    "5 %",
+    "10 %",
+    "15 %"
+  ],
+  "tempo_do_cartao_da_inflacao": [
+    "1992",
+    "2010",
+    "2026"
+  ],
+  "tempo_do_recibo_da_inflacao": [
+    "1992",
+    "2000",
+    "2010",
+    "2020",
+    "2026"
+  ],
+  "etiquetas_do_tempo": 292,
+  "conhecido_positivo_primeira_pagina_tem_1992": true,
+  "conhecido_positivo_recibo_da_inflacao": true,
+  "paginas": [
+    {
+      "pagina": "areas/trabalho-solidariedade-e-seguranca-social/index.html",
+      "desenhos": [
+        {
+          "series": "serie-remuneracao-bruta-mensal-media",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2025",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "500",
+            "1 000",
+            "1 500",
+            "2 000"
+          ],
+          "zonas": 0,
+          "legenda": "euros por mês"
+        },
+        {
+          "series": "serie-pensao-media-anual",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2017",
+            "2020",
+            "2022",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "5 000",
+            "10 000"
+          ],
+          "zonas": 0,
+          "legenda": "euros por pensionista por ano"
+        },
+        {
+          "series": "serie-beneficiarios-do-rsi-por-mil",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2023",
+            "2024"
+          ],
+          "valor": [
+            "0",
+            "10",
+            "20",
+            "30"
+          ],
+          "zonas": 0,
+          "legenda": "por mil pessoas em idade ativa"
+        },
+        {
+          "series": "serie-linha-de-risco-de-pobreza",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1995",
+            "2010",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "5 000",
+            "10 000"
+          ],
+          "zonas": 0,
+          "legenda": "euros por ano"
+        }
+      ]
+    },
+    {
+      "pagina": "en/areas/trabalho-solidariedade-e-seguranca-social/index.html",
+      "desenhos": [
+        {
+          "series": "serie-remuneracao-bruta-mensal-media",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2025",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "500",
+            "1 000",
+            "1 500",
+            "2 000"
+          ],
+          "zonas": 0,
+          "legenda": "euros per month"
+        },
+        {
+          "series": "serie-pensao-media-anual",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2017",
+            "2020",
+            "2022",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "5 000",
+            "10 000"
+          ],
+          "zonas": 0,
+          "legenda": "euros per pensioner per year"
+        },
+        {
+          "series": "serie-beneficiarios-do-rsi-por-mil",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2023",
+            "2024"
+          ],
+          "valor": [
+            "0",
+            "10",
+            "20",
+            "30"
+          ],
+          "zonas": 0,
+          "legenda": "per thousand people of working age"
+        },
+        {
+          "series": "serie-linha-de-risco-de-pobreza",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1995",
+            "2010",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "5 000",
+            "10 000"
+          ],
+          "zonas": 0,
+          "legenda": "euros per year"
+        }
+      ]
+    },
+    {
+      "pagina": "en/housing/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-rendas-variacao-homologa",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1949",
+            "1980",
+            "2026"
+          ],
+          "valor": [
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        },
+        {
+          "series": "serie-ipc-sem-habitacao-variacao-media-12-meses",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1992",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1992",
+            "2000",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %",
+            "15 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-beneficiarios-do-rsi-por-mil/index.html",
+      "desenhos": [
+        {
+          "series": "serie-beneficiarios-do-rsi-por-mil",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2023",
+            "2024"
+          ],
+          "valor": [
+            "0",
+            "10",
+            "20",
+            "30"
+          ],
+          "zonas": 2,
+          "legenda": "per thousand people of working age"
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-cem-euros-de-2015-01/index.html",
+      "desenhos": [
+        {
+          "series": "serie-cem-euros-de-2015-01",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2015",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "50",
+            "100",
+            "150"
+          ],
+          "zonas": 140,
+          "legenda": "euros"
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ihpc-combustiveis-variacao-homologa-ue/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ihpc-combustiveis-variacao-homologa-ue",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2000",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ihpc-combustiveis-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ihpc-combustiveis-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1997",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−40 %",
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ihpc-energia-da-casa-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ihpc-energia-da-casa-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1997",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ihpc-rendas-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ihpc-rendas-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1997",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "2 %",
+            "4 %",
+            "6 %",
+            "8 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ihpc-variacao-homologa-ue/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ihpc-variacao-homologa-ue",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2000",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %",
+            "15 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ihpc-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ihpc-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1997",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %",
+            "15 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-alimentacao-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-alimentacao-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1992",
+            "2000",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−10 %",
+            "0",
+            "10 %",
+            "20 %",
+            "30 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-combustiveis-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-combustiveis-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1949",
+            "1970",
+            "1990",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−50 %",
+            "0",
+            "50 %",
+            "100 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-energia-em-casa-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-energia-em-casa-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1949",
+            "1970",
+            "1990",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %",
+            "60 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-indice-anual/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-indice-anual",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1948",
+            "1970",
+            "1990",
+            "2010",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "50",
+            "100"
+          ],
+          "zonas": 78,
+          "legenda": "index (base 2025 = 100)"
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-indice/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-indice",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1948",
+            "1970",
+            "1990",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "50",
+            "100",
+            "150"
+          ],
+          "zonas": 289,
+          "legenda": "index (base 2025 = 100)"
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-rendas-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-rendas-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1949",
+            "1970",
+            "1990",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-sem-habitacao-variacao-media-12-meses/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-sem-habitacao-variacao-media-12-meses",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1992",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1992",
+            "2000",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %",
+            "15 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-ipc-variacao-media-12-meses/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-media-12-meses",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1992",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-linha-de-risco-de-pobreza/index.html",
+      "desenhos": [
+        {
+          "series": "serie-linha-de-risco-de-pobreza",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1995",
+            "2010",
+            "2020",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "5 000",
+            "10 000"
+          ],
+          "zonas": 29,
+          "legenda": "euros per year"
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-pensao-media-anual/index.html",
+      "desenhos": [
+        {
+          "series": "serie-pensao-media-anual",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2017",
+            "2020",
+            "2022",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "5 000",
+            "10 000"
+          ],
+          "zonas": 9,
+          "legenda": "euros per pensioner per year"
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-precos-da-habitacao-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-precos-da-habitacao-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2009",
+            "2015",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−10 %",
+            "0",
+            "10 %",
+            "20 %"
+          ],
+          "zonas": 70,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-remuneracao-bruta-mensal-media-anual/index.html",
+      "desenhos": [
+        {
+          "series": "serie-remuneracao-bruta-mensal-media-anual",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2014",
+            "2020",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "500",
+            "1 000",
+            "1 500",
+            "2 000"
+          ],
+          "zonas": 12,
+          "legenda": "euros per month"
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-remuneracao-bruta-mensal-media-real/index.html",
+      "desenhos": [
+        {
+          "series": "serie-remuneracao-bruta-mensal-media-anual,serie-remuneracao-bruta-mensal-media-real",
+          "modo": "indice",
+          "largura": 360,
+          "tempo": [
+            "2014",
+            "2020",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "50",
+            "100",
+            "150"
+          ],
+          "zonas": 0,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-remuneracao-bruta-mensal-media/index.html",
+      "desenhos": [
+        {
+          "series": "serie-remuneracao-bruta-mensal-media",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2025",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "500",
+            "1 000",
+            "1 500",
+            "2 000"
+          ],
+          "zonas": 6,
+          "legenda": "euros per month"
+        }
+      ]
+    },
+    {
+      "pagina": "en/ledger/series/serie-salario-minimo-mensal/index.html",
+      "desenhos": [
+        {
+          "series": "serie-salario-minimo-mensal",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1999",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "500",
+            "1 000",
+            "1 500"
+          ],
+          "zonas": 56,
+          "legenda": "euros per month"
+        }
+      ]
+    },
+    {
+      "pagina": "en/pay-pensions-and-benefits/index.html",
+      "desenhos": [
+        {
+          "series": "serie-remuneracao-bruta-mensal-media",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2025",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "500",
+            "1 000",
+            "1 500",
+            "2 000"
+          ],
+          "zonas": 0,
+          "legenda": "euros per month"
+        },
+        {
+          "series": "serie-pensao-media-anual",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2017",
+            "2020",
+            "2022",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "5 000",
+            "10 000"
+          ],
+          "zonas": 0,
+          "legenda": "euros per pensioner per year"
+        },
+        {
+          "series": "serie-beneficiarios-do-rsi-por-mil",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2023",
+            "2024"
+          ],
+          "valor": [
+            "0",
+            "10",
+            "20",
+            "30"
+          ],
+          "zonas": 0,
+          "legenda": "per thousand people of working age"
+        },
+        {
+          "series": "serie-linha-de-risco-de-pobreza",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1995",
+            "2010",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "5 000",
+            "10 000"
+          ],
+          "zonas": 0,
+          "legenda": "euros per year"
+        }
+      ]
+    },
+    {
+      "pagina": "en/prices/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-homologa",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1992",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %",
+            "15 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        },
+        {
+          "series": "serie-ipc-variacao-media-12-meses",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1992",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        },
+        {
+          "series": "serie-ipc-alimentacao-variacao-homologa",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1992",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−10 %",
+            "0",
+            "10 %",
+            "20 %",
+            "30 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        },
+        {
+          "series": "serie-ipc-energia-em-casa-variacao-homologa",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1949",
+            "1980",
+            "2026"
+          ],
+          "valor": [
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %",
+            "60 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        },
+        {
+          "series": "serie-ipc-combustiveis-variacao-homologa",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1949",
+            "1980",
+            "2026"
+          ],
+          "valor": [
+            "−50 %",
+            "0",
+            "50 %",
+            "100 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        },
+        {
+          "series": "serie-ihpc-variacao-homologa-ue",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2000",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %",
+            "15 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "habitacao/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-rendas-variacao-homologa",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1949",
+            "1980",
+            "2026"
+          ],
+          "valor": [
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        },
+        {
+          "series": "serie-ipc-sem-habitacao-variacao-media-12-meses",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1992",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1992",
+            "2000",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %",
+            "15 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-beneficiarios-do-rsi-por-mil/index.html",
+      "desenhos": [
+        {
+          "series": "serie-beneficiarios-do-rsi-por-mil",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2023",
+            "2024"
+          ],
+          "valor": [
+            "0",
+            "10",
+            "20",
+            "30"
+          ],
+          "zonas": 2,
+          "legenda": "por mil pessoas em idade ativa"
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-cem-euros-de-2015-01/index.html",
+      "desenhos": [
+        {
+          "series": "serie-cem-euros-de-2015-01",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2015",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "50",
+            "100",
+            "150"
+          ],
+          "zonas": 140,
+          "legenda": "euros"
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ihpc-combustiveis-variacao-homologa-ue/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ihpc-combustiveis-variacao-homologa-ue",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2000",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ihpc-combustiveis-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ihpc-combustiveis-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1997",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−40 %",
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ihpc-energia-da-casa-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ihpc-energia-da-casa-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1997",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ihpc-rendas-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ihpc-rendas-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1997",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "2 %",
+            "4 %",
+            "6 %",
+            "8 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ihpc-variacao-homologa-ue/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ihpc-variacao-homologa-ue",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2000",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %",
+            "15 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ihpc-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ihpc-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1997",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %",
+            "15 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-alimentacao-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-alimentacao-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1992",
+            "2000",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−10 %",
+            "0",
+            "10 %",
+            "20 %",
+            "30 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-combustiveis-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-combustiveis-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1949",
+            "1970",
+            "1990",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−50 %",
+            "0",
+            "50 %",
+            "100 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-energia-em-casa-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-energia-em-casa-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1949",
+            "1970",
+            "1990",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %",
+            "60 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-indice-anual/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-indice-anual",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1948",
+            "1970",
+            "1990",
+            "2010",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "50",
+            "100"
+          ],
+          "zonas": 78,
+          "legenda": "índice (base 2025 = 100)"
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-indice/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-indice",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1948",
+            "1970",
+            "1990",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "50",
+            "100",
+            "150"
+          ],
+          "zonas": 289,
+          "legenda": "índice (base 2025 = 100)"
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-rendas-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-rendas-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1949",
+            "1970",
+            "1990",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-sem-habitacao-variacao-media-12-meses/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-sem-habitacao-variacao-media-12-meses",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1992",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1992",
+            "2000",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %",
+            "15 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-ipc-variacao-media-12-meses/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-media-12-meses",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1992",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %"
+          ],
+          "zonas": 289,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-linha-de-risco-de-pobreza/index.html",
+      "desenhos": [
+        {
+          "series": "serie-linha-de-risco-de-pobreza",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1995",
+            "2010",
+            "2020",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "5 000",
+            "10 000"
+          ],
+          "zonas": 29,
+          "legenda": "euros por ano"
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-pensao-media-anual/index.html",
+      "desenhos": [
+        {
+          "series": "serie-pensao-media-anual",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2017",
+            "2020",
+            "2022",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "5 000",
+            "10 000"
+          ],
+          "zonas": 9,
+          "legenda": "euros por pensionista por ano"
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-precos-da-habitacao-variacao-homologa/index.html",
+      "desenhos": [
+        {
+          "series": "serie-precos-da-habitacao-variacao-homologa",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2009",
+            "2015",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "−10 %",
+            "0",
+            "10 %",
+            "20 %"
+          ],
+          "zonas": 70,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-remuneracao-bruta-mensal-media-anual/index.html",
+      "desenhos": [
+        {
+          "series": "serie-remuneracao-bruta-mensal-media-anual",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2014",
+            "2020",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "500",
+            "1 000",
+            "1 500",
+            "2 000"
+          ],
+          "zonas": 12,
+          "legenda": "euros por mês"
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-remuneracao-bruta-mensal-media-real/index.html",
+      "desenhos": [
+        {
+          "series": "serie-remuneracao-bruta-mensal-media-anual,serie-remuneracao-bruta-mensal-media-real",
+          "modo": "indice",
+          "largura": 360,
+          "tempo": [
+            "2014",
+            "2020",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "50",
+            "100",
+            "150"
+          ],
+          "zonas": 0,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-remuneracao-bruta-mensal-media/index.html",
+      "desenhos": [
+        {
+          "series": "serie-remuneracao-bruta-mensal-media",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "2025",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "500",
+            "1 000",
+            "1 500",
+            "2 000"
+          ],
+          "zonas": 6,
+          "legenda": "euros por mês"
+        }
+      ]
+    },
+    {
+      "pagina": "livro-razao/series/serie-salario-minimo-mensal/index.html",
+      "desenhos": [
+        {
+          "series": "serie-salario-minimo-mensal",
+          "modo": "unidade",
+          "largura": 360,
+          "tempo": [
+            "1999",
+            "2010",
+            "2020",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "500",
+            "1 000",
+            "1 500"
+          ],
+          "zonas": 56,
+          "legenda": "euros por mês"
+        }
+      ]
+    },
+    {
+      "pagina": "precos/index.html",
+      "desenhos": [
+        {
+          "series": "serie-ipc-variacao-homologa",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1992",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %",
+            "15 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        },
+        {
+          "series": "serie-ipc-variacao-media-12-meses",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1992",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        },
+        {
+          "series": "serie-ipc-alimentacao-variacao-homologa",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1992",
+            "2010",
+            "2026"
+          ],
+          "valor": [
+            "−10 %",
+            "0",
+            "10 %",
+            "20 %",
+            "30 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        },
+        {
+          "series": "serie-ipc-energia-em-casa-variacao-homologa",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1949",
+            "1980",
+            "2026"
+          ],
+          "valor": [
+            "−20 %",
+            "0",
+            "20 %",
+            "40 %",
+            "60 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        },
+        {
+          "series": "serie-ipc-combustiveis-variacao-homologa",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1949",
+            "1980",
+            "2026"
+          ],
+          "valor": [
+            "−50 %",
+            "0",
+            "50 %",
+            "100 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        },
+        {
+          "series": "serie-ihpc-variacao-homologa-ue",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2000",
+            "2026"
+          ],
+          "valor": [
+            "−5 %",
+            "0",
+            "5 %",
+            "10 %",
+            "15 %"
+          ],
+          "zonas": 0,
+          "legenda": null
+        }
+      ]
+    },
+    {
+      "pagina": "salarios-pensoes-e-apoios/index.html",
+      "desenhos": [
+        {
+          "series": "serie-remuneracao-bruta-mensal-media",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2025",
+            "2026"
+          ],
+          "valor": [
+            "0",
+            "500",
+            "1 000",
+            "1 500",
+            "2 000"
+          ],
+          "zonas": 0,
+          "legenda": "euros por mês"
+        },
+        {
+          "series": "serie-pensao-media-anual",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2017",
+            "2020",
+            "2022",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "5 000",
+            "10 000"
+          ],
+          "zonas": 0,
+          "legenda": "euros por pensionista por ano"
+        },
+        {
+          "series": "serie-beneficiarios-do-rsi-por-mil",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "2023",
+            "2024"
+          ],
+          "valor": [
+            "0",
+            "10",
+            "20",
+            "30"
+          ],
+          "zonas": 0,
+          "legenda": "por mil pessoas em idade ativa"
+        },
+        {
+          "series": "serie-linha-de-risco-de-pobreza",
+          "modo": "unidade",
+          "largura": 240,
+          "tempo": [
+            "1995",
+            "2010",
+            "2025"
+          ],
+          "valor": [
+            "0",
+            "5 000",
+            "10 000"
+          ],
+          "zonas": 0,
+          "legenda": "euros por ano"
+        }
+      ]
+    }
+  ]
+}

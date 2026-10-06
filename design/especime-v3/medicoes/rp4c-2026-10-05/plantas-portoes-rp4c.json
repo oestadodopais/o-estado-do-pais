@@ -1,0 +1,201 @@
+[
+  {
+    "nome": "rp4c-periodo-trocado",
+    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "RP4-c: o período do ponto «1992-01» da série «serie-ipc-variacao-homologa» foi renderizado como «fevereiro de 1992» e a forma da casa é «janeiro de 1992»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb",
+        "reposto": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb"
+      }
+    ]
+  },
+  {
+    "nome": "rp4c-periodo-de-outro-ponto",
+    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "RP4-c: o período do ponto «1992-02» da série «serie-ipc-variacao-homologa» foi renderizado como «janeiro de 1992»",
+      "RP4-c: a etiqueta do período «serie-ipc-variacao-homologa#1992-02» não tem ao lado o valor do mesmo ponto"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb",
+        "reposto": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb"
+      }
+    ]
+  },
+  {
+    "nome": "rp4c-periodo-ingles-na-edicao-portuguesa",
+    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "RP4-c: o período do ponto «1992-01» da série «serie-ipc-variacao-homologa» foi renderizado como «January 1992»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb",
+        "reposto": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb"
+      }
+    ]
+  },
+  {
+    "nome": "rp4c-periodo-fora-do-desenho",
+    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "RP4-c: o período «serie-ipc-variacao-homologa#1992-01» está fora de um desenho das séries"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb",
+        "reposto": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb"
+      }
+    ]
+  },
+  {
+    "nome": "rp4c-periodo-sem-marca",
+    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "algarismos fora do livro-razão"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb",
+        "reposto": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb"
+      }
+    ]
+  },
+  {
+    "nome": "rp4c-valor-trocado-na-etiqueta",
+    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "estado": "",
+    "comando": "node scripts/gate-html.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "UE1: o ponto «1992-01» da série «serie-ipc-variacao-homologa» foi renderizado como «9,42»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "9308874dd520520fb166a5e633bbb1ab80e9b7a795ec4849dde0c4adacbf1aef",
+        "reposto": "9308874dd520520fb166a5e633bbb1ab80e9b7a795ec4849dde0c4adacbf1aef"
+      }
+    ]
+  },
+  {
+    "nome": "rp4c-f2-algarismo-solto",
+    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "estado": "",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "a forma \"serie-do-pais\" desenha «7», que tem algarismos"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/precos/index.html",
+        "antes": "89833066b939d64c33bb37696edf91cb14995d91e05dffb959d60bc07d8d36b7",
+        "reposto": "89833066b939d64c33bb37696edf91cb14995d91e05dffb959d60bc07d8d36b7"
+      }
+    ]
+  },
+  {
+    "nome": "rp4c-f21-marca-sem-simbolo",
+    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "estado": "",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "F21 · marcas do eixo valor diferem da recomposição"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb",
+        "reposto": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb"
+      }
+    ]
+  },
+  {
+    "nome": "rp4c-f21-legenda-da-unidade-tirada",
+    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "estado": "",
+    "comando": "node scripts/check-formas.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "F21 · legenda da unidade por extenso ausente"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/salarios-pensoes-e-apoios/index.html",
+        "antes": "8cbab6790040b30bf4d5ca954109b364c4d0f28d1d0a269742d03e2b8757621e",
+        "reposto": "8cbab6790040b30bf4d5ca954109b364c4d0f28d1d0a269742d03e2b8757621e"
+      }
+    ]
+  },
+  {
+    "nome": "rp4c-formato-simbolo-colado-numa-marca",
+    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "estado": "",
+    "comando": "node tests/inicio/formato-dos-numeros.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "F4 · index\\.html: «−5%»"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb",
+        "reposto": "d98da6a3525e72ca4cd0140af1fd19f81cfe7f0c5fd272e567c804addaa77fdb"
+      }
+    ]
+  },
+  {
+    "nome": "rp4c-formato-euro-numa-marca",
+    "cabeca": "9277c7f95e01a51dc043ea87f454ef48c04592ba",
+    "estado": "",
+    "comando": "node tests/inicio/formato-dos-numeros.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "F5 · salarios-pensoes-e-apoios\\/index\\.html"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/salarios-pensoes-e-apoios/index.html",
+        "antes": "8cbab6790040b30bf4d5ca954109b364c4d0f28d1d0a269742d03e2b8757621e",
+        "reposto": "8cbab6790040b30bf4d5ca954109b364c4d0f28d1d0a269742d03e2b8757621e"
+      }
+    ]
+  }
+]

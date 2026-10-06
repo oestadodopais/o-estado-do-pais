@@ -734,7 +734,7 @@ const UNIDADES_DA_CASA = { vistas: 0, doConcelho: 0, doMapa: 0, naFaixa: 0 };
 /* O TETO DO ÍNDICE DE DÍVIDA (passagem P4-c, 02.10.2026): a linha que a medida do concelho declara como teto, lida da
    declaração; o cartão do índice mostra-a na linha do estado, sem marca própria, e só ela entra por essa porta. */
 const TETO_DO_INDICE = MEDIDAS_DO_CONCELHO.find((m) => m.chave === 'indice')?.tecto ?? null;
-const ORIGENS_DAS_SERIES = { pontos: 0, bandeiras: 0, paises: 0, campos: 0, contas: 0, lugares: 0, tabela: 0 };
+const ORIGENS_DAS_SERIES = { pontos: 0, bandeiras: 0, paises: 0, campos: 0, contas: 0, lugares: 0, tabela: 0, periodos: 0 };
 /** L2b: as origens da faixa do concelho, contadas pelo lado da página. */
 const ORIGENS_DOS_CONCELHOS = { lugares: 0, contas: 0, empates: 0, valoresNaFaixa: 0, portugal: 0 };
 let ficheiros = 0;
@@ -1051,6 +1051,38 @@ function textoSemSelosGate(el) {
 function dataDaCasaGate(valor) {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(valor);
   return m ? `${m[3]}.${m[2]}.${m[1]}` : valor;
+}
+
+/**
+ * O PERÍODO DE UM PONTO DE UMA SÉRIE NO TEMPO NA FORMA DA CASA, a cópia própria do portão (bloco RP4-c, 05.10.2026, o
+ * ponto 4 do mandato), pela mesma razão da data acima: a regra vive em `src/lib/datas.mjs` (o mês «agosto de 2026» /
+ * «August 2026», o trimestre «2.º trimestre de 2026» / «2nd quarter of 2026», o semestre «1.º semestre de 2026» / «1st
+ * half of 2026», e o ano como está), e está escrita OUTRA VEZ aqui, com os meses por extenso, para o portão não
+ * confirmar a função que o gabarito usa. Um período fora destas formas não tem forma da casa (`null`).
+ * @param {string} periodo @param {string} lang
+ */
+const MESES_DO_PORTAO = {
+  pt: ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
+  en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+};
+function periodoDaCasaGate(periodo, lang) {
+  const en = lang === 'en';
+  let m = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(periodo);
+  if (m) return en ? `${MESES_DO_PORTAO.en[Number(m[2]) - 1]} ${m[1]}` : `${MESES_DO_PORTAO.pt[Number(m[2]) - 1]} de ${m[1]}`;
+  m = /^(\d{4})-T([1-4])$/.exec(periodo);
+  if (m) return en ? `${m[2]}${['st', 'nd', 'rd', 'th'][Number(m[2]) - 1]} quarter of ${m[1]}` : `${m[2]}.º trimestre de ${m[1]}`;
+  m = /^(\d{4})-S([12])$/.exec(periodo);
+  if (m) return en ? `${m[2]}${['st', 'nd'][Number(m[2]) - 1]} half of ${m[1]}` : `${m[2]}.º semestre de ${m[1]}`;
+  return /^\d{4}$/.test(periodo) ? periodo : null;
+}
+/* O CONHECIDO-POSITIVO DA CÓPIA (RP4-c): as formas que o recibo de uma série já escreve, uma por cadência e por
+   edição; uma cópia que deixe de as dar fecha o portão antes de ler uma página. */
+for (const [periodo, lang, esperado] of [
+  ['2026-08', 'pt', 'agosto de 2026'], ['2026-08', 'en', 'August 2026'], ['2025-T2', 'pt', '2.º trimestre de 2025'],
+  ['2025-T2', 'en', '2nd quarter of 2025'], ['1999-S1', 'pt', '1.º semestre de 1999'], ['1999-S1', 'en', '1st half of 1999'],
+  ['2025', 'pt', '2025'], ['2025-13', 'pt', null],
+]) {
+  if (periodoDaCasaGate(periodo, lang) !== esperado) throw new Error(`gate:html · a cópia da forma do período dá «${periodoDaCasaGate(periodo, lang)}» para ${periodo} (${lang}) e devia dar «${esperado}».`);
 }
 
 /**
@@ -6055,6 +6087,30 @@ for (const file of ficheirosHtml(DIST)) {
     }
     aRemover.push(el);
   }
+  /**
+   * A LEITURA DE CADA PONTO NO DESENHO DAS SÉRIES (bloco RP4-c, 05.10.2026, o ponto 4 do mandato). Uma origem nova,
+   * `data-ponto-periodo="<série>#<período>"`: o período de um ponto de uma série no tempo, escrito na etiqueta da
+   * leitura de cada ponto. É uma comparação e não uma dispensa: a série no tempo tem de ter o ponto; o texto tem de ser
+   * o período desse ponto na forma da casa, pela cópia deste portão (`periodoDaCasaGate`); a etiqueta tem de ter, ao
+   * lado, o valor do MESMO ponto (um `data-ponto` com a mesma chave, que o laço acima compara com a série), para um
+   * valor de um mês não se ler com o período de outro; e a marca só vive dentro de um desenho das séries.
+   */
+  for (const el of body.querySelectorAll('[data-ponto-periodo]')) {
+    ORIGENS_DAS_SERIES.periodos++;
+    const chave = String(el.getAttribute('data-ponto-periodo') ?? '');
+    const { sid, geo: periodo, serie, ponto } = serieDaMarca(el, 'data-ponto-periodo');
+    const valores = el.parentNode?.querySelectorAll?.('[data-ponto]') ?? [];
+    if (!ponto || serie?.eixo !== 'periodo') {
+      err(`RP4-c: um período diz ser do ponto «${periodo}» da série «${sid}», e a série no tempo não tem esse ponto.`);
+    } else if (textoTranscrito(el) !== periodoDaCasaGate(String(periodo), linguaDaSerie)) {
+      err(`RP4-c: o período do ponto «${periodo}» da série «${sid}» foi renderizado como «${textoTranscrito(el)}» e a forma da casa é «${periodoDaCasaGate(String(periodo), linguaDaSerie)}».`);
+    }
+    if (valores.length !== 1 || valores[0].getAttribute('data-ponto') !== chave) {
+      err(`RP4-c: a etiqueta do período «${chave}» não tem ao lado o valor do mesmo ponto (tem ${valores.map((v) => v.getAttribute('data-ponto')).join(', ') || 'nenhum'}).`);
+    }
+    if (!el.closest('svg[data-forma="serie-do-pais"]')) err(`RP4-c: o período «${chave}» está fora de um desenho das séries.`);
+    aRemover.push(el);
+  }
   for (const el of body.querySelectorAll('[data-ponto-bandeira]')) {
     ORIGENS_DAS_SERIES.bandeiras++;
     const { sid, geo, ponto } = serieDaMarca(el, 'data-ponto-bandeira');
@@ -9063,6 +9119,10 @@ for (const [id, serie] of SERIES_NO_TEMPO) {
 if (SERIES_DE_PAISES.size && (ORIGENS_DAS_SERIES.pontos === 0 || ORIGENS_DAS_SERIES.paises === 0)) {
   erros.push({ rel: 'ledger/series', msg: 'UE1: há séries e nenhuma página rendeu um ponto ou um nome de país: o detetor não viu nada.' });
 }
+/* RP4-c: há séries no tempo desenhadas e nenhuma página rendeu o período de um ponto: o detetor da origem nova não viu nada. */
+if ([...SERIES_DO_PORTAO.values()].some((s) => s.eixo === 'periodo') && ORIGENS_DAS_SERIES.periodos === 0) {
+  erros.push({ rel: 'ledger/series', msg: 'RP4-c: há séries no tempo e nenhuma página rendeu o período de um ponto num desenho: o detetor de data-ponto-periodo não viu nada.' });
+}
 /* L2b-c (o achado 4 da leitura a frio): a direção de cada medida na tabela da vista tem de bater com a autoridade
    do portão, que é com a que ele reconta os lugares. Uma direção trocada só na vista dava lugares que a recontagem
    recusa; trocada nas duas, já não passa calada, porque são duas declarações escritas à parte. */
@@ -9110,6 +9170,7 @@ console.log(
       ` · séries: ${seriesConstruidas.size} página(s), ${ORIGENS_DAS_SERIES.pontos} ponto(s), ` +
       `${ORIGENS_DAS_SERIES.paises} nome(s) de país, ${ORIGENS_DAS_SERIES.campos} campo(s), ` +
       `${ORIGENS_DAS_SERIES.contas + ORIGENS_DAS_SERIES.lugares} recontagem(ns) conferidos` +
+      ` · RP4-c: ${ORIGENS_DAS_SERIES.periodos} período(s) de pontos nos desenhos, cada um com o valor do mesmo ponto ao lado` +
       ` · UE1b: ${UE1B.portas} porta(s) dos recibos das linhas para as séries, ${UE1B.legendas} legenda(s) das marcas com ${UE1B.marcasNasLegendas} marca(s)` +
       ` · UE1d: ${UE1D.definicoes} definição(ões) declarada(s) nos recibos das séries` +
       ` · UE1e: ${UE1E.semPortugal} recibo(s) das séries sem Portugal na definição, ${UE1E.formaDaSerie} com a forma do recibo da série (${UE1E.formasDeclaradas} declarada(s))` +

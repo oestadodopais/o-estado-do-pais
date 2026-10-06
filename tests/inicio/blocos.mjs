@@ -490,8 +490,13 @@ export function conferirBlocosDaPagina(root, lang, rota, { ids, primeira = false
     /* CADA ALGARISMO NUMA MARCA, e só as linhas que o bloco nomeia. */
     /* As marcas de origem que o portão de HTML confere: o valor de uma linha, um contexto declarado,
        uma chave da prova, e um campo transcrito de uma linha (o título de um documento que traz um
-       algarismo, «2ª Notificação», é comparado com a linha carácter a carácter). */
-    const marcado = (/** @type {any} */ n) => { for (let q = n.parentNode; q && q !== el.parentNode; q = q.parentNode) { const at = q.attributes ?? {}; if ('data-claim' in at || 'data-nonledger' in at || 'data-prova' in at || 'data-linha-campo' in at || 'data-verbatim' in at) return true; } return false; };
+       algarismo, «2ª Notificação», é comparado com a linha carácter a carácter).
+       DESDE O BLOCO RP4-c (05.10.2026, o ponto 4 do mandato), também o valor e o período de um ponto de uma série
+       (`data-ponto`, `data-ponto-periodo`), que a etiqueta da leitura de cada ponto escreve no desenho da série do
+       bloco, e SÓ DENTRO DESSE DESENHO: o portão de HTML compara os dois com o ponto da série (o período pela sua cópia
+       da forma da casa, com o valor do mesmo ponto ao lado), e a F2 e a F21 do `check:formas` também. Fora do desenho,
+       um algarismo com uma destas marcas continua sem origem para esta célula, e a planta di-lo. */
+    const marcado = (/** @type {any} */ n) => { for (let q = n.parentNode; q && q !== el.parentNode; q = q.parentNode) { const at = q.attributes ?? {}; if ('data-claim' in at || 'data-nonledger' in at || 'data-prova' in at || 'data-linha-campo' in at || 'data-verbatim' in at) return true; if (('data-ponto' in at || 'data-ponto-periodo' in at) && q.closest?.('svg[data-forma="serie-do-pais"]')) return true; } return false; };
     const anda = (/** @type {any} */ n) => {
       if (n.nodeType === NodeType.TEXT_NODE) { if (/\d/.test(n.text) && !marcado(n)) falha(id, `o bloco escreve um algarismo sem marca de origem: «${curto(normal(n.text))}»`); return; }
       const tag = String(n.rawTagName ?? '').toLowerCase();
@@ -689,6 +694,8 @@ export function plantasDosBlocos(dist) {
   regista('uma palavra plantada numa frase', pagina((r) => { const f = bloco(r, 'pobreza').querySelector('[data-bloco-frase]'); f.set_content(f.innerHTML.replace('era menor', 'era bem menor')); }), /o texto rendido da frase difere do que o resolvedor dá/);
   regista('o ramo trocado', pagina((r) => { const f = bloco(r, 'estado').querySelector('[data-bloco-frase]'); f.set_content(f.innerHTML.replace('desceu', 'subiu')); }), /o texto de um ramo que a conta não escolheu está na frase: «subiu»/);
   regista('um algarismo escrito à mão num bloco', pagina((r) => { bloco(r, 'precos').querySelector('[data-bloco-ressalva]').insertAdjacentHTML('beforeend', ' Em 12 meses.'); }), /algarismo sem marca de origem/);
+  /* RP4-c: a marca do período de um ponto só vale dentro do desenho da série; fora dele, o algarismo não tem origem. */
+  regista('o período de um ponto fora do desenho da série (RP4-c)', pagina((r) => { bloco(r, 'precos').querySelector('[data-bloco-ressalva]').insertAdjacentHTML('beforeend', ' <span data-ponto-periodo="serie-ipc-variacao-homologa#1992-01">janeiro de 1992</span>'); }), /algarismo sem marca de origem: «janeiro de 1992»/);
   regista('um travessão numa frase', pagina((r) => { const f = bloco(r, 'estado').querySelector('[data-bloco-ressalva]'); f.set_content(f.innerHTML.replace('devem,', 'devem —')); }), /tem um travessão/);
   regista('a linha de outro bloco citada', pagina((r) => { bloco(r, 'precos').querySelector('[data-bloco-frase] [data-claim]').setAttribute('data-claim', 'divida-publica-2025'); }), /o bloco cita a linha «divida-publica-2025», que o bloco não nomeia/);
   regista('o valor de referência trocado', pagina((r) => { bloco(r, 'estado').querySelector('[data-bloco-frase] [data-referencia]').set_content('50'); }), /o valor de referência de «divida-publica-2025» é «50»/);
