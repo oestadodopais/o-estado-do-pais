@@ -18,9 +18,6 @@ cd "$W" || exit 9
 # A PASTA DE SAÍDA CRIA-SE DEPOIS DE ENTRAR NA WORKTREE (a releitura do E0b, achado 10): antes, um caminho
 # relativo era criado na árvore de quem chamava, e cada redirecionamento seguinte falhava.
 mkdir -p "$O"
-O="$(cd "$O" && pwd)"
-export OEDP_TEMPOS_DIR="$O"
-export npm_config_script_shell="$W/scripts/leituras/tempos-shell.py"
 comum="$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null || git rev-parse --git-common-dir)"
 case "$comum" in /*) ;; *) comum="$W/$comum";; esac
 tranca="$comum/oedp-construcao.lock"
@@ -31,7 +28,7 @@ while [ -f "$tranca" ]; do
   [ "$esperou" -eq 0 ] && echo "à espera da tranca da máquina: $(cat "$tranca")" >&2
   esperou=1; sleep 10
 done
-printf '%s %s pid=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$W" "$$" > "$tranca" || exit 9
+printf '%s %s pid=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$W" "$$" > "$tranca"
 # UMA INTERRUPÇÃO SOLTA A TRANCA E SAI (o mesmo achado 10): a primeira redação soltava-a e seguia para o portão
 # seguinte sem ela.
 trap 'rm -f "$tranca"' EXIT
@@ -46,7 +43,6 @@ for g in build verify typecheck; do
   # seguintes não correm, porque o que se lia deles não seria de uma corrida inteira.
   if [ "$(cat "$O/$g.codigo")" -gt 128 ]; then echo "portão $g interrompido (código $(cat "$O/$g.codigo")); a corrida para aqui" >&2; exit "$(cat "$O/$g.codigo")"; fi
 done
-node scripts/leituras/tempos.mjs fechar "$O"
 git rev-parse HEAD > "$O/cabeca.fim"
 git status --short > "$O/estado.fim"
 echo "FIM $(cut -c1-8 "$O/cabeca") build=$(cat "$O/build.codigo") verify=$(cat "$O/verify.codigo") typecheck=$(cat "$O/typecheck.codigo")"

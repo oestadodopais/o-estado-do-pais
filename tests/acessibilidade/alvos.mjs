@@ -126,7 +126,8 @@ const opcao = (nome) => {
   const i = argv.indexOf(nome);
   return i >= 0 ? (argv[i + 1] ?? true) : null;
 };
-const FICHEIRO_JSON = opcao('--json');
+// M-A: a medição conserva também cada página e largura, antes de mudar a espera.
+const FICHEIRO_JSON = opcao('--json') ?? (process.env.OEDP_TEMPOS_DIR ? path.join(process.env.OEDP_TEMPOS_DIR, 'alvos.json') : null);
 const VERMELHOS = argv.includes('--vermelhos');
 const SO = opcao('--so');
 
@@ -2276,6 +2277,7 @@ if (FICHEIRO_JSON) {
         rotas: ROTAS.map((r) => r.rota),
         larguras: LARGURAS,
         celulas: limpas,
+        paginas: primeira.paginas,
         axe: primeira.axe,
         graves: primeira.graves,
         dist_varrido: DIST_VARRIDO,

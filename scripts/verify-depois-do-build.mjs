@@ -89,6 +89,7 @@
  *       node scripts/verify-depois-do-build.mjs --prova      (só as plantas)
  *       node scripts/verify-depois-do-build.mjs --a-seco     (diz o que correria)
  */
+import { inicioDoPasso, fimDoPasso, fechar } from './leituras/tempos.mjs';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -319,7 +320,7 @@ const FOLGA_DO_RELOGIO_MS = 2000;
  * chama. A saída de cada um guarda-se e escreve-se inteira quando ele acaba,
  * para o registo não ficar às fatias.
  */
-async function correPassos(passos, { raiz, paralelo, escreve, fase = 'grupo', t0 = Date.now() }) {
+async function correPassos(passos, { raiz, paralelo, escreve, fase = 'grupo', t0 = Date.now(), medir = false }) {
   const corridos = [];
   const fila = [...passos];
   const noCi = process.env.GITHUB_ACTIONS === 'true';
@@ -327,12 +328,13 @@ async function correPassos(passos, { raiz, paralelo, escreve, fase = 'grupo', t0
     while (fila.length > 0) {
       const passo = fila.shift();
       const inicio = Date.now();
+      const tempo = inicioDoPasso(passo, 'verify');
       escreve(`▶ ${passo} · começou aos ${((inicio - t0) / 1000).toFixed(1)} s${fase === 'depois' ? ', depois do grupo, sozinho' : ''}\n`);
       const registo = { passo, fase, codigo: /** @type {number|null} */ (null), segundos: 0, inicio_s: (inicio - t0) / 1000, fim_s: 0, saida: '' };
       corridos.push(registo);
       const partes = [];
       const codigo = await new Promise((resolve) => {
-        const filho = spawn('sh', ['-c', passo], { cwd: raiz, env: process.env, stdio: ['ignore', 'pipe', 'pipe'] });
+        const filho = spawn('sh', ['-c', passo], { cwd: raiz, env: { ...process.env, ...(medir ? { OEDP_TEMPOS_PASSO: '1', OEDP_CADEIA: 'verify' } : {}) }, stdio: ['ignore', 'pipe', 'pipe'] });
         filho.stdout.on('data', (d) => partes.push(d));
         filho.stderr.on('data', (d) => partes.push(d));
         filho.on('error', (e) => {
@@ -341,6 +343,7 @@ async function correPassos(passos, { raiz, paralelo, escreve, fase = 'grupo', t0
         });
         filho.on('close', (c, sinal) => resolve(c ?? (sinal ? 128 : 1)));
       });
+      if (medir) fimDoPasso(tempo, codigo);
       registo.codigo = codigo;
       registo.segundos = (Date.now() - inicio) / 1000;
       registo.fim_s = (Date.now() - t0) / 1000;
@@ -374,8 +377,8 @@ export async function correr(o) {
   const retrato = () => ({ dist: estadoDaPasta(o.dist), arvore: listaDaArvore === null ? null : estadoDaArvore(o.raiz, listaDaArvore) });
   const antes = retrato();
   const t0 = Date.now();
-  const doGrupo = await correPassos(grupo, { raiz: o.raiz, paralelo: o.paralelo, escreve, t0 });
-  const depoisDoGrupo = await correPassos(sozinhas, { raiz: o.raiz, paralelo: 1, escreve, fase: 'depois', t0 });
+  const doGrupo = await correPassos(grupo, { raiz: o.raiz, paralelo: o.paralelo, escreve, t0, medir: o.medir });
+  const depoisDoGrupo = await correPassos(sozinhas, { raiz: o.raiz, paralelo: 1, escreve, fase: 'depois', t0, medir: o.medir });
   const corridos = [...doGrupo, ...depoisDoGrupo];
   const depois = retrato();
   const U = celulaDaUniao(o.scripts, corridos);
@@ -562,7 +565,10 @@ async function principal() {
     cabeca = null;
   }
   console.log(`  ${paralelo} processo(s) lado a lado · cabeça ${cabeca ?? '(não lida)'}\n`);
-  const r = await correr({ raiz: RAIZ, scripts, dist: path.join(RAIZ, 'dist'), cabeca, paralelo });
+  const tempoVerify = inicioDoPasso('cadeia:verify', 'verify');
+  const r = await correr({ medir: true, raiz: RAIZ, scripts, dist: path.join(RAIZ, 'dist'), cabeca, paralelo });
+  fimDoPasso(tempoVerify, r.ok ? 0 : 1);
+  if (process.env.OEDP_TEMPOS_DIR) fechar(process.env.OEDP_TEMPOS_DIR);
   const segundos = (Date.now() - t0) / 1000;
 
   console.log('\n  O VERIFY DEPOIS DO BUILD');
