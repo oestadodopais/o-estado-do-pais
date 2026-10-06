@@ -1,0 +1,508 @@
+{
+  "o_que_e": "FC · as frases compostas da casa dentro de contentores flexíveis e os documentos mais largos do que a janela nas duas larguras, nas páginas onde as frases compostas se rendem.",
+  "construcao": "421d0513befe6dcc517a46532bf8ab5adf83bf3b",
+  "construido_em": "2026-10-06T12:27:02.068Z",
+  "resultados": [
+    {
+      "rota": "/",
+      "largura": 390,
+      "pedacos": 42,
+      "blocos": 35,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/precos/",
+      "largura": 390,
+      "pedacos": 13,
+      "blocos": 0,
+      "cartoes": 13,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/indice/",
+      "largura": 390,
+      "pedacos": 57,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/explicacoes/",
+      "largura": 390,
+      "pedacos": 7,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 390,
+      "pedacos": 87,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "largura": 390,
+      "pedacos": 44,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/en/",
+      "largura": 390,
+      "pedacos": 42,
+      "blocos": 35,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/en/prices/",
+      "largura": 390,
+      "pedacos": 13,
+      "blocos": 0,
+      "cartoes": 13,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/en/index/",
+      "largura": 390,
+      "pedacos": 57,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/en/explainers/",
+      "largura": 390,
+      "pedacos": 7,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 390,
+      "pedacos": 87,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "largura": 390,
+      "pedacos": 44,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 390,
+      "janela": 390
+    },
+    {
+      "rota": "/",
+      "largura": 1280,
+      "pedacos": 42,
+      "blocos": 35,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/precos/",
+      "largura": 1280,
+      "pedacos": 13,
+      "blocos": 0,
+      "cartoes": 13,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/indice/",
+      "largura": 1280,
+      "pedacos": 57,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/explicacoes/",
+      "largura": 1280,
+      "pedacos": 7,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 1280,
+      "pedacos": 87,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/explicacoes/dinheiro-do-estado-2026/",
+      "largura": 1280,
+      "pedacos": 44,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/en/",
+      "largura": 1280,
+      "pedacos": 42,
+      "blocos": 35,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/en/prices/",
+      "largura": 1280,
+      "pedacos": 13,
+      "blocos": 0,
+      "cartoes": 13,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/en/index/",
+      "largura": 1280,
+      "pedacos": 57,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/en/explainers/",
+      "largura": 1280,
+      "pedacos": 7,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 1280,
+      "pedacos": 87,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    },
+    {
+      "rota": "/en/explainers/dinheiro-do-estado-2026/",
+      "largura": 1280,
+      "pedacos": 44,
+      "blocos": 0,
+      "cartoes": 0,
+      "flex": [],
+      "largura_do_documento": 1280,
+      "janela": 1280
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "explicações, flex, pt, 390",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /explicacoes/ a 390 px: uma frase composta dentro de um contentor flex (a): «Para onde vai o dinheiro do Estado em 2026»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "explicações, largura, pt, 390",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /explicacoes/ a 390 px: o documento tem 2018 px numa janela de 390"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "primeira página, flex, pt, 390",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · / a 390 px: uma frase composta dentro de um contentor flex (p.pp-frase): «Em agosto de 2026, os combustíveis estavam 23,78 %fonte · INE mais car»",
+        "FC2 · / a 390 px: o documento tem 545 px numa janela de 390"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "primeira página, largura, pt, 390",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · / a 390 px: o documento tem 2018 px numa janela de 390"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "comparação dos cartões, flex, pt, 390",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /precos/ a 390 px: uma frase composta dentro de um contentor flex (p.cartao-medida-leitura): «A variação é maior do que a da média da União Europeia. O Banco Centra»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "comparação dos cartões, largura, pt, 390",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /precos/ a 390 px: o documento tem 2018 px numa janela de 390"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "definição dos cartões aberta, flex, pt, 390",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /precos/ a 390 px: uma frase composta dentro de um contentor flex (p.cartao-medida-leitura.cartao-medida-o-que-e): «Em agosto de 2026 os preços no consumidor estavam, em média, 3,30 % ac»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "definição dos cartões aberta, largura, pt, 390",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /precos/ a 390 px: o documento tem 2018 px numa janela de 390"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "explicações, flex, pt, 1280",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /explicacoes/ a 1280 px: uma frase composta dentro de um contentor flex (a): «Para onde vai o dinheiro do Estado em 2026»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "explicações, largura, pt, 1280",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /explicacoes/ a 1280 px: o documento tem 2094 px numa janela de 1280"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "primeira página, flex, pt, 1280",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · / a 1280 px: uma frase composta dentro de um contentor flex (p.pp-frase): «Em agosto de 2026, os combustíveis estavam 23,78 %fonte · INE mais car»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "primeira página, largura, pt, 1280",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · / a 1280 px: o documento tem 2094 px numa janela de 1280"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "comparação dos cartões, flex, pt, 1280",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /precos/ a 1280 px: uma frase composta dentro de um contentor flex (p.cartao-medida-leitura): «A variação é maior do que a da média da União Europeia. O Banco Centra»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "comparação dos cartões, largura, pt, 1280",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /precos/ a 1280 px: o documento tem 2375 px numa janela de 1280"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "definição dos cartões aberta, flex, pt, 1280",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /precos/ a 1280 px: uma frase composta dentro de um contentor flex (p.cartao-medida-leitura.cartao-medida-o-que-e): «Em agosto de 2026 os preços no consumidor estavam, em média, 3,30 % ac»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "definição dos cartões aberta, largura, pt, 1280",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /precos/ a 1280 px: o documento tem 2094 px numa janela de 1280"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "explicações, flex, en, 390",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /en/explainers/ a 390 px: uma frase composta dentro de um contentor flex (a): «Where the State’s money goes in 2026»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "explicações, largura, en, 390",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /en/explainers/ a 390 px: o documento tem 2018 px numa janela de 390"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "primeira página, flex, en, 390",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /en/ a 390 px: uma frase composta dentro de um contentor flex (p.pp-frase): «In August 2026, fuel was 23,78 %source · INE more expensive than a yea»",
+        "FC2 · /en/ a 390 px: o documento tem 487 px numa janela de 390"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "primeira página, largura, en, 390",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /en/ a 390 px: o documento tem 2018 px numa janela de 390"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "comparação dos cartões, flex, en, 390",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /en/prices/ a 390 px: uma frase composta dentro de um contentor flex (p.cartao-medida-leitura): «The change is larger than the European Union average. The European Cen»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "comparação dos cartões, largura, en, 390",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /en/prices/ a 390 px: o documento tem 2018 px numa janela de 390"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "definição dos cartões aberta, flex, en, 390",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /en/prices/ a 390 px: uma frase composta dentro de um contentor flex (p.cartao-medida-leitura.cartao-medida-o-que-e): «In August 2026 consumer prices were, on average, 3,30 % above a year e»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "definição dos cartões aberta, largura, en, 390",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /en/prices/ a 390 px: o documento tem 2018 px numa janela de 390"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "explicações, flex, en, 1280",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /en/explainers/ a 1280 px: uma frase composta dentro de um contentor flex (a): «Where the State’s money goes in 2026»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "explicações, largura, en, 1280",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /en/explainers/ a 1280 px: o documento tem 2094 px numa janela de 1280"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "primeira página, flex, en, 1280",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /en/ a 1280 px: uma frase composta dentro de um contentor flex (p.pp-frase): «In August 2026, fuel was 23,78 %source · INE more expensive than a yea»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "primeira página, largura, en, 1280",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /en/ a 1280 px: o documento tem 2094 px numa janela de 1280"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "comparação dos cartões, flex, en, 1280",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /en/prices/ a 1280 px: uma frase composta dentro de um contentor flex (p.cartao-medida-leitura): «The change is larger than the European Union average. The European Cen»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "comparação dos cartões, largura, en, 1280",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /en/prices/ a 1280 px: o documento tem 2375 px numa janela de 1280"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "definição dos cartões aberta, flex, en, 1280",
+      "mensagem": "FC1 ·",
+      "queixas": [
+        "FC1 · /en/prices/ a 1280 px: uma frase composta dentro de um contentor flex (p.cartao-medida-leitura.cartao-medida-o-que-e): «In August 2026 consumer prices were, on average, 3,30 % above a year e»"
+      ],
+      "mordeu": true
+    },
+    {
+      "nome": "definição dos cartões aberta, largura, en, 1280",
+      "mensagem": "FC2 ·",
+      "queixas": [
+        "FC2 · /en/prices/ a 1280 px: o documento tem 2094 px numa janela de 1280"
+      ],
+      "mordeu": true
+    }
+  ],
+  "erros": []
+}

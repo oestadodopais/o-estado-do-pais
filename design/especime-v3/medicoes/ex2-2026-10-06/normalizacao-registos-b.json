@@ -1,0 +1,56 @@
+{
+  "operacao": "Remover apenas espaços no fim das linhas e linhas vazias no fim dos registos, depois de substituir os caminhos pessoais pelos marcadores da casa. Os códigos e as mensagens conservam-se.",
+  "metodo": "Python: rstrip de espaço, tabulação e retorno de carro em cada linha; uma quebra final nos registos não vazios.",
+  "registos": [
+    {
+      "ficheiro": "design/especime-v3/medicoes/ex2-2026-10-06/conferencias-b/css.log",
+      "antes_sha256": "5eabe088d1615b2978f6e3b190a812ad48a3bd3f982a0dfa82b349e2dab320eb",
+      "depois_sha256": "78ed71e2637fad1d352600f55266034a44f07c38f614d806b1fc5f90f7e1f1bb"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/ex2-2026-10-06/conferencias-b/html.log",
+      "antes_sha256": "3df4d77bfb18c7f5c9b5242b7670167d5e81b92c9bf47407d5e5b26af6217d30",
+      "depois_sha256": "54f5fc77d89c4acf48fe3ae80b6710e97413a48959030a5f7aaccf3406412732"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/ex2-2026-10-06/conferencias-b/lingua.log",
+      "antes_sha256": "929a3c0fc25ac4530e41304e234548ce1e15b59d3423f2e9ffa9dfac2bf7cf68",
+      "depois_sha256": "6208c626e1fc6d05885caa850a9207043414084f6da3a65189ecee987a76aa7f"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/ex2-2026-10-06/conferencias-b/voz.log",
+      "antes_sha256": "cc989b457fef554e55710b8ddcb7f0aaff050da785ec60383f8af298698df251",
+      "depois_sha256": "5044d8dde712b98f18e3ab21239f6cb69d70b9b267245e53ece1863346483763"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/ex2-2026-10-06/ensaios-b/html.log",
+      "antes_sha256": "c409d6106a8113bd78aa44c1fe2a347ecd1d647b53fb03544f533c1579f3bcdd",
+      "depois_sha256": "c83ea83ecfb204da49dba36b150405f12e39766dcca73028a8484bae6c39d989"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/ex2-2026-10-06/ensaios-b/portoes-92e31db8/build.log",
+      "antes_sha256": "7b3ed0ada331d2b25af929775d44e5a3fa02db5e10a964d1bfac38fe1dc601dc",
+      "depois_sha256": "5037112468e79c9ada1f1d2e5a971d45656c052c649f7f7a7c28859b5805061a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/ex2-2026-10-06/ensaios-b/portoes-92e31db8/typecheck.log",
+      "antes_sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b",
+      "depois_sha256": "def8b7c9f74254cfdad4730436583f73e413bc3d3cd7b0c9ecab585398cee8ae"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/ex2-2026-10-06/ensaios-b/portoes-92e31db8/verify.log",
+      "antes_sha256": "7a32f31d0afb373866a103291b9e0df0de7e38b8e9a59e779d9914c0f37cbf7a",
+      "depois_sha256": "3ea1367d6a9b8a96b0871add848f531de8072b461097c29c6cc6e1c5ef4e058a"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/ex2-2026-10-06/portoes-b/build.log",
+      "antes_sha256": "6d3c2af39ad38b991acaaee3e051f843ecc9cf8ec7e6879896a0a8bfea74ee2b",
+      "depois_sha256": "6ac92b93507c20cb7829b448eec07f48fe04e06210906f4511a2d8ece7e6816b"
+    },
+    {
+      "ficheiro": "design/especime-v3/medicoes/ex2-2026-10-06/portoes-b/typecheck.log",
+      "antes_sha256": "f28b1ee05f63a256bf5c6a2a1ae62a32a3c86b6d1fe4b2939dfbeb3ddca44d5b",
+      "depois_sha256": "def8b7c9f74254cfdad4730436583f73e413bc3d3cd7b0c9ecab585398cee8ae"
+    }
+  ]
+}

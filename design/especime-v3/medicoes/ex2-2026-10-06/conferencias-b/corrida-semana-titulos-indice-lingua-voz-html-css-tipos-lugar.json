@@ -1,0 +1,74 @@
+[
+  {
+    "nome": "semana",
+    "comando": "node tests/explicacoes/semana.mjs --prova --json design/especime-v3/medicoes/ex2-2026-10-06/semana-b.json",
+    "cabeca": "421d0513befe6dcc517a46532bf8ab5adf83bf3b",
+    "inicio": "2026-10-06T12:27:02.096Z",
+    "fim": "2026-10-06T12:27:06.757Z",
+    "codigo": 0
+  },
+  {
+    "nome": "titulos",
+    "comando": "node tests/pais/pais.mjs --json design/especime-v3/medicoes/ex2-2026-10-06/titulos-plantas-b.json",
+    "cabeca": "421d0513befe6dcc517a46532bf8ab5adf83bf3b",
+    "inicio": "2026-10-06T12:27:06.757Z",
+    "fim": "2026-10-06T12:27:07.830Z",
+    "codigo": 1
+  },
+  {
+    "nome": "indice",
+    "comando": "node tests/indice/indice.mjs --prova",
+    "cabeca": "421d0513befe6dcc517a46532bf8ab5adf83bf3b",
+    "inicio": "2026-10-06T12:27:07.831Z",
+    "fim": "2026-10-06T12:27:23.929Z",
+    "codigo": 0
+  },
+  {
+    "nome": "lingua",
+    "comando": "node scripts/check-lingua.mjs",
+    "cabeca": "421d0513befe6dcc517a46532bf8ab5adf83bf3b",
+    "inicio": "2026-10-06T12:27:23.929Z",
+    "fim": "2026-10-06T12:27:30.030Z",
+    "codigo": 0
+  },
+  {
+    "nome": "voz",
+    "comando": "node scripts/check-voz.mjs",
+    "cabeca": "421d0513befe6dcc517a46532bf8ab5adf83bf3b",
+    "inicio": "2026-10-06T12:27:30.030Z",
+    "fim": "2026-10-06T12:28:09.416Z",
+    "codigo": 0
+  },
+  {
+    "nome": "html",
+    "comando": "node scripts/gate-html.mjs",
+    "cabeca": "421d0513befe6dcc517a46532bf8ab5adf83bf3b",
+    "inicio": "2026-10-06T12:28:09.416Z",
+    "fim": "2026-10-06T12:28:43.502Z",
+    "codigo": 1
+  },
+  {
+    "nome": "css",
+    "comando": "node scripts/check-css.mjs --prova",
+    "cabeca": "421d0513befe6dcc517a46532bf8ab5adf83bf3b",
+    "inicio": "2026-10-06T12:28:43.502Z",
+    "fim": "2026-10-06T12:28:48.533Z",
+    "codigo": 0
+  },
+  {
+    "nome": "tipos",
+    "comando": "node node_modules/typescript/bin/tsc -p tsconfig.check.json",
+    "cabeca": "421d0513befe6dcc517a46532bf8ab5adf83bf3b",
+    "inicio": "2026-10-06T12:28:48.534Z",
+    "fim": "2026-10-06T12:28:48.767Z",
+    "codigo": 0
+  },
+  {
+    "nome": "lugar",
+    "comando": "node scripts/check-lugar.mjs",
+    "cabeca": "421d0513befe6dcc517a46532bf8ab5adf83bf3b",
+    "inicio": "2026-10-06T12:28:48.767Z",
+    "fim": "2026-10-06T12:29:18.082Z",
+    "codigo": 0
+  }
+]

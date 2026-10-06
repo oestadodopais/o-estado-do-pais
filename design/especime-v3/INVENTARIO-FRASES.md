@@ -4154,3 +4154,12 @@ páginas são **conteúdo**, como «Índice» e «Privacidade», porque são o o
 | conteudo | The figures in this chart | ex1 | viva | O mesmo resumo na edição inglesa. |
 | conteudo | Para onde vai o dinheiro do Estado em 2026 | ex1 | viva | A descrição do `<head>` da primeira explicação, que é o título dela, com o ano pelo período da linha nomeada; o portão de HTML recompõe-a por conta própria. |
 | conteudo | Where the State’s money goes in 2026 | ex1 | viva | A mesma descrição na edição inglesa. |
+
+## EX2-b · as revisões da fonte
+
+As frases das mudanças no índice passam pela mesma auditoria `data-semana-declarado` da leitura da semana.
+As palavras «a fonte reviu para cima» e «a fonte reviu para baixo» e as gémeas inglesas vêm de `strings.mjs`,
+chave `semana`; a W recompõe a frase inteira com o livro e `nomeNaSemana`. Só sai do inventário um resumo cuja
+entrada esteja diretamente dentro da lista conferida. A W4 compara a definição de cada grupo e os sinais com
+os recibos da mesma edição. As plantas retiram o qualificador da União Europeia, colam a unidade ao valor no
+índice e declaram um resumo fora da lista. Os títulos dos estudos conservam o nome publicado, sem marcador.

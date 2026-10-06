@@ -32,6 +32,7 @@
  * o identificador no metadado, que é o que ela tem.
  */
 import CampoDaLinha from './CampoDaLinha.astro';
+import { nomeNaSemana } from '../lib/leitura-da-semana.mjs';
 import { nomeDaMedida, nomeDoCartao, nomeDoCartaoComAUnidade, eNomeDeMedida } from '../lib/nomes.mjs';
 import { linguaDoRotuloDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
 
@@ -49,11 +50,11 @@ import { linguaDoRotuloDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua
 /* `cartao-com-unidade` (passagem R2-b, 04.10.2026): a escada do cartão, com o nome de nível primeiro quando a unidade
    declarada do cartão diz a variação; só a pede quem imprime essa unidade ao pé do nome. */
 const { linha: c, lang = 'pt', class: klass = 'livro-item-nome', escada = 'livro' } = Astro.props;
-if (escada !== 'livro' && escada !== 'cartao' && escada !== 'cartao-com-unidade') {
-  throw new Error(`<NomeDaMedida>: escada desconhecida «${escada}» (é «livro», «cartao» ou «cartao-com-unidade»).`);
+if (escada !== 'semana' && escada !== 'livro' && escada !== 'cartao' && escada !== 'cartao-com-unidade') {
+  throw new Error(`<NomeDaMedida>: escada desconhecida «${escada}» (é «livro», «cartao», «cartao-com-unidade» ou «semana»).`);
 }
 const nome =
-  escada === 'cartao' ? nomeDoCartao(c, lang) : escada === 'cartao-com-unidade' ? nomeDoCartaoComAUnidade(c, lang) : nomeDaMedida(c, lang);
+  escada === 'semana' ? nomeNaSemana(c.id, lang) : escada === 'cartao' ? nomeDoCartao(c, lang) : escada === 'cartao-com-unidade' ? nomeDoCartaoComAUnidade(c, lang) : nomeDaMedida(c, lang);
 if (nome !== null && !eNomeDeMedida(nome)) {
   throw new Error(`nomes: nome mal formado para a linha "${c.id}"`);
 }

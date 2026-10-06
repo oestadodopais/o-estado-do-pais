@@ -1,0 +1,404 @@
+{
+  "comando": "node design/especime-v3/medicoes/ex2-2026-10-06/medir-entrega.mjs",
+  "cabeca_lida": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
+  "cabeca_codigo": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
+  "base": "d1becbf8f167643ca8d53a4479f8f6bbee0f7183",
+  "janela": {
+    "inicio": "2026-09-30",
+    "fim": "2026-10-06"
+  },
+  "portoes": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0
+  },
+  "cabeca_portoes": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
+  "cabeca_fim": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
+  "paginas": [
+    {
+      "lang": "pt",
+      "rota": "leituraDaSemana",
+      "ficheiro": "dist/explicacoes/leitura-da-semana/index.html",
+      "sha256": "6065e74454ca99dd296f5aabe3dfabcce3c236351f60d4bd903532ee08d0394c",
+      "mudancas": [
+        {
+          "linha": "custo-unitario-do-trabalho-2024",
+          "resumo": "Custo do trabalho por unidade produzida (custo unitário do trabalho), 2024, variação em três anos, %: de 17,7 para 17,9, subiu, em 05.10.2026. fonte · Eurostat",
+          "antes": "17,7",
+          "depois": "17,9",
+          "frase": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "despesa-em-id-2024-ue",
+          "resumo": "Despesa em investigação e desenvolvimento, União Europeia, 2024, % do PIB: de 2,24 para 2,26, subiu, em 05.10.2026. fonte · Eurostat",
+          "antes": "2,24",
+          "depois": "2,26",
+          "frase": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "formacao-bruta-de-capital-fixo-2024",
+          "resumo": "Investimento em bens duradouros para produzir (formação bruta de capital fixo), 2024, % do PIB: de 20,4 para 20,5, subiu, em 05.10.2026. fonte · Eurostat",
+          "antes": "20,4",
+          "depois": "20,5",
+          "frase": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "formacao-bruta-de-capital-fixo-2025",
+          "resumo": "Investimento em bens duradouros para produzir (formação bruta de capital fixo), 2025, % do PIB: de 20,7 para 21,0, subiu, em 05.10.2026. fonte · Eurostat",
+          "antes": "20,7",
+          "depois": "21,0",
+          "frase": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "pib-real-per-capita-2024",
+          "resumo": "PIB real por habitante, 2024, euros por habitante · volumes encadeados (2015): de 20 430 para 20 520, subiu, em 05.10.2026. fonte · Eurostat",
+          "antes": "20 430",
+          "depois": "20 520",
+          "frase": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "pib-real-per-capita-2025",
+          "resumo": "PIB real por habitante, 2025, euros por habitante · volumes encadeados (2015): de 20 600 para 20 700, subiu, em 05.10.2026. fonte · Eurostat",
+          "antes": "20 600",
+          "depois": "20 700",
+          "frase": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "posicao-de-investimento-internacional-2024",
+          "resumo": "O que o país tem no exterior menos o que deve (posição de investimento internacional), 2024, % do PIB: de −58,9 para −58,3, subiu, em 05.10.2026. fonte · Eurostat",
+          "antes": "−58,9",
+          "depois": "−58,3",
+          "frase": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "posicao-de-investimento-internacional-2025",
+          "resumo": "O que o país tem no exterior menos o que deve (posição de investimento internacional), 2025, % do PIB: de −50,2 para −49,6, subiu, em 05.10.2026. fonte · Eurostat",
+          "antes": "−50,2",
+          "depois": "−49,6",
+          "frase": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "saldo-da-balanca-corrente-2024",
+          "resumo": "Saldo da balança corrente, 2024, % do PIB (média de três anos): de 0,3 para 0,4, subiu, em 05.10.2026. fonte · Eurostat",
+          "antes": "0,3",
+          "depois": "0,4",
+          "frase": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        }
+      ],
+      "frases": 9,
+      "ausencias": 0
+    },
+    {
+      "lang": "en",
+      "rota": "leituraDaSemana",
+      "ficheiro": "dist/en/explainers/weekly-reading/index.html",
+      "sha256": "0243b9f0f5a0a4711ef82965d8e04955f384f9f70406d34d44ddc4cb71b51857",
+      "mudancas": [
+        {
+          "linha": "custo-unitario-do-trabalho-2024",
+          "resumo": "Labour cost per unit of output (unit labour cost), 2024, three-year change, %: from 17,7 to 17,9, rose, on 05.10.2026. source · Eurostat",
+          "antes": "17,7",
+          "depois": "17,9",
+          "frase": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "despesa-em-id-2024-ue",
+          "resumo": "Spending on research and development, European Union, 2024, % of GDP: from 2,24 to 2,26, rose, on 05.10.2026. source · Eurostat",
+          "antes": "2,24",
+          "depois": "2,26",
+          "frase": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "formacao-bruta-de-capital-fixo-2024",
+          "resumo": "Investment in durable goods used for production (gross fixed capital formation), 2024, % of GDP: from 20,4 to 20,5, rose, on 05.10.2026. source · Eurostat",
+          "antes": "20,4",
+          "depois": "20,5",
+          "frase": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "formacao-bruta-de-capital-fixo-2025",
+          "resumo": "Investment in durable goods used for production (gross fixed capital formation), 2025, % of GDP: from 20,7 to 21,0, rose, on 05.10.2026. source · Eurostat",
+          "antes": "20,7",
+          "depois": "21,0",
+          "frase": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "pib-real-per-capita-2024",
+          "resumo": "Real GDP per capita, 2024, euro per capita · chain linked volumes (2015): from 20 430 to 20 520, rose, on 05.10.2026. source · Eurostat",
+          "antes": "20 430",
+          "depois": "20 520",
+          "frase": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "pib-real-per-capita-2025",
+          "resumo": "Real GDP per capita, 2025, euro per capita · chain linked volumes (2015): from 20 600 to 20 700, rose, on 05.10.2026. source · Eurostat",
+          "antes": "20 600",
+          "depois": "20 700",
+          "frase": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "posicao-de-investimento-internacional-2024",
+          "resumo": "What the country owns abroad minus what it owes (net international investment position), 2024, % of GDP: from −58,9 to −58,3, rose, on 05.10.2026. source · Eurostat",
+          "antes": "−58,9",
+          "depois": "−58,3",
+          "frase": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "posicao-de-investimento-internacional-2025",
+          "resumo": "What the country owns abroad minus what it owes (net international investment position), 2025, % of GDP: from −50,2 to −49,6, rose, on 05.10.2026. source · Eurostat",
+          "antes": "−50,2",
+          "depois": "−49,6",
+          "frase": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "saldo-da-balanca-corrente-2024",
+          "resumo": "Current account balance, 2024, % of GDP (three-year average): from 0,3 to 0,4, rose, on 05.10.2026. source · Eurostat",
+          "antes": "0,3",
+          "depois": "0,4",
+          "frase": "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        }
+      ],
+      "frases": 9,
+      "ausencias": 0
+    },
+    {
+      "lang": "pt",
+      "rota": "indice",
+      "ficheiro": "dist/indice/index.html",
+      "sha256": "79821a5cbc1cb36798b84e25474a98ffbf6f9c15d43375319bd0c9c6d5d603ec",
+      "mudancas": [
+        {
+          "linha": "custo-unitario-do-trabalho-2024",
+          "resumo": "Nominal unit labour cost per hour worked17,7 → 17,9 variação em três anos, %fonte · Eurostat",
+          "antes": "17,7",
+          "depois": "17,9",
+          "frase": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "despesa-em-id-2024-ue",
+          "resumo": "Gross domestic expenditure on research and development (R&D)2,24 → 2,26 % do PIBfonte · Eurostat",
+          "antes": "2,24",
+          "depois": "2,26",
+          "frase": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "formacao-bruta-de-capital-fixo-2024",
+          "resumo": "Gross fixed capital formation at current prices20,4 → 20,5 % do PIBfonte · Eurostat",
+          "antes": "20,4",
+          "depois": "20,5",
+          "frase": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "formacao-bruta-de-capital-fixo-2025",
+          "resumo": "Investimento em bens duradouros para produzir (formação bruta de capital fixo)20,7 → 21,0 % do PIBfonte · Eurostat",
+          "antes": "20,7",
+          "depois": "21,0",
+          "frase": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "pib-real-per-capita-2024",
+          "resumo": "Real GDP per capita20 430 → 20 520 euros por habitante · volumes encadeados (2015)fonte · Eurostat",
+          "antes": "20 430",
+          "depois": "20 520",
+          "frase": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "pib-real-per-capita-2025",
+          "resumo": "PIB real por habitante20 600 → 20 700 euros por habitante · volumes encadeados (2015)fonte · Eurostat",
+          "antes": "20 600",
+          "depois": "20 700",
+          "frase": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "posicao-de-investimento-internacional-2024",
+          "resumo": "Net international investment position - annual data−58,9 → −58,3 % do PIBfonte · Eurostat",
+          "antes": "−58,9",
+          "depois": "−58,3",
+          "frase": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "posicao-de-investimento-internacional-2025",
+          "resumo": "O que o país tem no exterior menos o que deve (posição de investimento internacional)−50,2 → −49,6 % do PIBfonte · Eurostat",
+          "antes": "−50,2",
+          "depois": "−49,6",
+          "frase": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        }
+      ],
+      "frases": 8,
+      "ausencias": 0
+    },
+    {
+      "lang": "en",
+      "rota": "indice",
+      "ficheiro": "dist/en/index/index.html",
+      "sha256": "44539bc5aa7f4b390475ee0bd6f482e3d0006accf868e29ee6faaab7f82f96ee",
+      "mudancas": [
+        {
+          "linha": "custo-unitario-do-trabalho-2024",
+          "resumo": "Nominal unit labour cost per hour worked17,7 → 17,9 three-year change, %source · Eurostat",
+          "antes": "17,7",
+          "depois": "17,9",
+          "frase": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "despesa-em-id-2024-ue",
+          "resumo": "Gross domestic expenditure on research and development (R&D)2,24 → 2,26 % of GDPsource · Eurostat",
+          "antes": "2,24",
+          "depois": "2,26",
+          "frase": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "formacao-bruta-de-capital-fixo-2024",
+          "resumo": "Gross fixed capital formation at current prices20,4 → 20,5 % of GDPsource · Eurostat",
+          "antes": "20,4",
+          "depois": "20,5",
+          "frase": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "formacao-bruta-de-capital-fixo-2025",
+          "resumo": "Investment in durable goods used for production (gross fixed capital formation)20,7 → 21,0 % of GDPsource · Eurostat",
+          "antes": "20,7",
+          "depois": "21,0",
+          "frase": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "pib-real-per-capita-2024",
+          "resumo": "Real GDP per capita20 430 → 20 520 euro per capita · chain linked volumes (2015)source · Eurostat",
+          "antes": "20 430",
+          "depois": "20 520",
+          "frase": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "pib-real-per-capita-2025",
+          "resumo": "Real GDP per capita20 600 → 20 700 euro per capita · chain linked volumes (2015)source · Eurostat",
+          "antes": "20 600",
+          "depois": "20 700",
+          "frase": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "posicao-de-investimento-internacional-2024",
+          "resumo": "Net international investment position - annual data−58,9 → −58,3 % of GDPsource · Eurostat",
+          "antes": "−58,9",
+          "depois": "−58,3",
+          "frase": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        },
+        {
+          "linha": "posicao-de-investimento-internacional-2025",
+          "resumo": "What the country owns abroad minus what it owes (net international investment position)−50,2 → −49,6 % of GDPsource · Eurostat",
+          "antes": "−50,2",
+          "depois": "−49,6",
+          "frase": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+          "ausencia": "",
+          "portas_na_frase": 0
+        }
+      ],
+      "frases": 8,
+      "ausencias": 0
+    }
+  ],
+  "unidades": {
+    "parenteses": {
+      "amostras": 164,
+      "transbordos": 0,
+      "linhas_total": 183,
+      "parenteses_aninhados": 10
+    },
+    "antes": {
+      "amostras": 164,
+      "transbordos": 0,
+      "linhas_total": 183,
+      "parenteses_aninhados": 0
+    }
+  },
+  "escolha": "antes",
+  "por_confirmar_na_semana": 0,
+  "fc": {
+    "paginas": 12,
+    "passagens": 24,
+    "plantas": 32,
+    "erros": []
+  },
+  "capturas": {
+    "quantidade": 40,
+    "erros": []
+  },
+  "caminhos_protegidos": [
+    "ledger",
+    "src/lib",
+    "src/data",
+    "src/views/LinhaView.astro",
+    "scripts/check-lugar.mjs"
+  ],
+  "ficheiros_protegidos_alterados": [],
+  "commits": [
+    "831a7fc9da041b742297d3fbb047191e993aefab EX2: medir as unidades e o âmbito antes da construção",
+    "5f7549e6637bf9257b0cba5ba2557e4fa628b1d0 EX2: mostrar a definição provada sob cada mudança",
+    "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f EX2: conferir as frases dos blocos e dos cartões no navegador"
+  ]
+}

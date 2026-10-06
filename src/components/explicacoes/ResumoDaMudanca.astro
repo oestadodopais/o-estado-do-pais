@@ -1,0 +1,26 @@
+---
+/* EX2-b: a mesma gramática nas mudanças da semana e do índice. */
+import NomeDaMedida from '../NomeDaMedida.astro';
+import DataDaLinha from '../DataDaLinha.astro';
+import CampoDaLinha from '../CampoDaLinha.astro';
+import Provenance from '../Provenance.astro';
+import {getClaim} from '../../lib/ledger.mjs';
+import {nomeNaLista} from '../../lib/primeira-pagina.mjs';
+import {unidadeDaLinha} from '../../i18n/unidades.mjs';
+import {dataDaCasa} from '../../lib/datas.mjs';
+import {t} from '../../i18n/strings.mjs';
+const {mudanca: m, lang = 'pt', indice = false} = Astro.props;
+const linha = getClaim(m.linha), nome = nomeNaLista(m.linha, lang);
+const unidade = unidadeDaLinha(linha.unit, lang), s = t(lang);
+---
+<p class:list={['semana-resumo', indice && 'lugar-mudou-o-que']} data-semana-resumo data-semana-declarado>
+  <NomeDaMedida linha={getClaim(nome.linha)} lang={lang} escada="semana" class="semana-nome" />
+  {nome.qualificador === 'ue' && <>{s.semana.virgula}<span class="semana-onde">{s.cartao.uniaoEuropeia}</span></>}
+  {s.semana.virgula}<DataDaLinha id={linha.id} campo="reference_date" valor={String(linha.reference_date)} lang={lang} />
+  {s.semana.virgula}<CampoDaLinha id={linha.id} campo="unit" valor={unidade.texto} lang={lang} lingua={unidade.lingua} class="semana-unidade" />
+  {s.semana.deAntes}<span class="semana-valor" data-correcao-claim={linha.id} data-correcao-n={String(m.antes.n)} data-correcao-campo="old_value">{m.antes.valor}</span>
+  {s.semana.para}<span class="semana-valor" data-correcao-claim={linha.id} data-correcao-n={String(m.depois.n)} data-correcao-campo="new_value">{m.depois.valor}</span>
+  {s.semana[m.palavra]}
+  {s.semana.em}<time class="semana-data" datetime={m.depois.data} data-correcao-claim={linha.id} data-correcao-n={String(m.depois.n)} data-correcao-campo="date">{dataDaCasa(m.depois.data)}</time>{s.semana.ponto}
+  {' '}<Provenance id={linha.id} lang={lang} />
+</p>

@@ -1,0 +1,1935 @@
+{
+  "comando": "node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex2.mjs",
+  "cabeca": "8c3a08b9dcfb48595be70d6d47385b0427cc3b62",
+  "versao": {
+    "commit": "8c3a08b9dcfb48595be70d6d47385b0427cc3b62",
+    "ref": "ex2-2026-10-06",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-06T13:50:07.911Z"
+  },
+  "capturas": [
+    {
+      "nome": "semana",
+      "lang": "pt",
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 390,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-390-inteira.png",
+      "sha256": "3e476f36baf1dc45ac76edb7ebe1334d42c56aa47d3e7c0a6f65cfd9e9d9527a",
+      "medidas": {
+        "largura": 390,
+        "janela": 390,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "pt",
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 390,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-390-mudancas.png",
+      "sha256": "79726745a337f49493ab699e0afa9cdc1a68b24f03de8d6fbc06a38bd581a82c",
+      "medidas": {
+        "largura": 390,
+        "janela": 390,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "pt",
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 768,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-768-inteira.png",
+      "sha256": "f40277f7ada4a0ab38ad4b2b7cabc8f3a0c48567f7bf9949c698b84688cd74be",
+      "medidas": {
+        "largura": 768,
+        "janela": 768,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "pt",
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 768,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-768-mudancas.png",
+      "sha256": "cac0d7ad148020c545cdf121b29d99f3eaab575ff63ed91b1415e476894b588e",
+      "medidas": {
+        "largura": 768,
+        "janela": 768,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "pt",
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 1024,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1024-inteira.png",
+      "sha256": "59c1b6faa9f93b9c3460010f7ec8143ca9dc514d82d5bff57f16e0f4247024b4",
+      "medidas": {
+        "largura": 1024,
+        "janela": 1024,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "pt",
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 1024,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1024-mudancas.png",
+      "sha256": "0aef2ed4b940f345aa2948df9263513ca91e55eb9df8d1d3400b13e5b75bd799",
+      "medidas": {
+        "largura": 1024,
+        "janela": 1024,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "pt",
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 1280,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1280-inteira.png",
+      "sha256": "ad722d2306ec18970ccabefbc8b3c871b4689538b0f9e7463d6d1d6626295bb0",
+      "medidas": {
+        "largura": 1280,
+        "janela": 1280,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "pt",
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 1280,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1280-mudancas.png",
+      "sha256": "2484d20efead84ea212d5ff42e568fcbb14501d70f44558212afb14f12bf2618",
+      "medidas": {
+        "largura": 1280,
+        "janela": 1280,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "pt",
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 1600,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1600-inteira.png",
+      "sha256": "3e250ec5f1171b3e26b5cfcf2e4f970fb5d606c2a0bb7b6a27b33aab84505ac2",
+      "medidas": {
+        "largura": 1600,
+        "janela": 1600,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "pt",
+      "rota": "/explicacoes/leitura-da-semana/",
+      "largura": 1600,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1600-mudancas.png",
+      "sha256": "ef99719875de5f142acf11b29e25fce1ee4345eecb112efa77034f70ff67f9ad",
+      "medidas": {
+        "largura": 1600,
+        "janela": 1600,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "en",
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 390,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-390-inteira.png",
+      "sha256": "0f588c3be9cc3f38320e635bceb219f682bb806b3b5888f184867771b83978e9",
+      "medidas": {
+        "largura": 390,
+        "janela": 390,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "en",
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 390,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-390-mudancas.png",
+      "sha256": "8857afc54e36389fc45107a9fb646197967d7a78b1bb2efeffb720b0b6e7095e",
+      "medidas": {
+        "largura": 390,
+        "janela": 390,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "en",
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 768,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-768-inteira.png",
+      "sha256": "4d422be2ef836f13bdfc68204e0741f8a7ac18e3bc7780c0076582d48ba7b3ae",
+      "medidas": {
+        "largura": 768,
+        "janela": 768,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "en",
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 768,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-768-mudancas.png",
+      "sha256": "0bd36b3baf173a5111ce02e41065d075701039f5b3dd398f7c60e44e816d4265",
+      "medidas": {
+        "largura": 768,
+        "janela": 768,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "en",
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 1024,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1024-inteira.png",
+      "sha256": "98ae1a3dddc2331c2a4db859fd2d6427b18b260583cecc2cd8180e2e0d49d07d",
+      "medidas": {
+        "largura": 1024,
+        "janela": 1024,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "en",
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 1024,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1024-mudancas.png",
+      "sha256": "497ca5bd750a18f333a273da9fbbb4e3622f09535990bd964d70a9c830ecd93a",
+      "medidas": {
+        "largura": 1024,
+        "janela": 1024,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "en",
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 1280,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1280-inteira.png",
+      "sha256": "9678c5b44206968b6391e05e9160433123592abbf62644f0735fce9773b752ef",
+      "medidas": {
+        "largura": 1280,
+        "janela": 1280,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "en",
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 1280,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1280-mudancas.png",
+      "sha256": "ee40dfefc0b1231e665977413f90bf9d6fe53ff56d430d06392c1ad84beeebf2",
+      "medidas": {
+        "largura": 1280,
+        "janela": 1280,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "en",
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 1600,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1600-inteira.png",
+      "sha256": "57e593b098700f05f1b8c267c455dd3815c55ffdb1c98114cde59919ce749c29",
+      "medidas": {
+        "largura": 1600,
+        "janela": 1600,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "semana",
+      "lang": "en",
+      "rota": "/en/explainers/weekly-reading/",
+      "largura": 1600,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1600-mudancas.png",
+      "sha256": "ba0a4a853d2b5935b239d12aa68d08a41cf2e9bd5d1cc59b8832b3006b514ce0",
+      "medidas": {
+        "largura": 1600,
+        "janela": 1600,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "saldo-da-balanca-corrente-2024",
+            "por_confirmar": false,
+            "texto": "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "pt",
+      "rota": "/indice/",
+      "largura": 390,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-390-inteira.png",
+      "sha256": "a46d66e7dbcb1ba3bf583b65053ecb95f556a089c638eed619b0f080856a2edf",
+      "medidas": {
+        "largura": 390,
+        "janela": 390,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "pt",
+      "rota": "/indice/",
+      "largura": 390,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-390-mudancas.png",
+      "sha256": "d9de79bfc29906336701be853b85b6f94b57b9c6b4fe4a9a4b6ae405cc5ff84b",
+      "medidas": {
+        "largura": 390,
+        "janela": 390,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "pt",
+      "rota": "/indice/",
+      "largura": 768,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-768-inteira.png",
+      "sha256": "6d101842df2e28224c893f8796ab905ad7f0169eeb166415cbc3c29ed67fb90f",
+      "medidas": {
+        "largura": 768,
+        "janela": 768,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "pt",
+      "rota": "/indice/",
+      "largura": 768,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-768-mudancas.png",
+      "sha256": "45f67e58ff4e9f2272f46ffcceff13a7939cc0f69e78e48618a726b164169fce",
+      "medidas": {
+        "largura": 768,
+        "janela": 768,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "pt",
+      "rota": "/indice/",
+      "largura": 1024,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1024-inteira.png",
+      "sha256": "64c045a64b153a6c7231fc87832cf569f383f903385b5d07330a1c3f1ba3fbd3",
+      "medidas": {
+        "largura": 1024,
+        "janela": 1024,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "pt",
+      "rota": "/indice/",
+      "largura": 1024,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1024-mudancas.png",
+      "sha256": "8d330fba7a23fc933e48963de0b2368a6681fe1e46c7585d63ee021cb7681749",
+      "medidas": {
+        "largura": 1024,
+        "janela": 1024,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "pt",
+      "rota": "/indice/",
+      "largura": 1280,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1280-inteira.png",
+      "sha256": "3ebb9b3d2e6e5fc63c2eebab3c6e2f441c364a9260c1913d39713c0630234791",
+      "medidas": {
+        "largura": 1280,
+        "janela": 1280,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "pt",
+      "rota": "/indice/",
+      "largura": 1280,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1280-mudancas.png",
+      "sha256": "422c032611c6a43b8919a49242135ee65ae741d8a02f0c0703fa213b586f2213",
+      "medidas": {
+        "largura": 1280,
+        "janela": 1280,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "pt",
+      "rota": "/indice/",
+      "largura": 1600,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1600-inteira.png",
+      "sha256": "f3b0c612dccef9d5f3c663eb505b29982100776f57071cd7999017bde2d6df8f",
+      "medidas": {
+        "largura": 1600,
+        "janela": 1600,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "pt",
+      "rota": "/indice/",
+      "largura": 1600,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1600-mudancas.png",
+      "sha256": "422c032611c6a43b8919a49242135ee65ae741d8a02f0c0703fa213b586f2213",
+      "medidas": {
+        "largura": 1600,
+        "janela": 1600,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "en",
+      "rota": "/en/index/",
+      "largura": 390,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-390-inteira.png",
+      "sha256": "eef83184f6325fbfc1455c75c78b96a8f7756156d96d24c72db4fb015750a0ae",
+      "medidas": {
+        "largura": 390,
+        "janela": 390,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "en",
+      "rota": "/en/index/",
+      "largura": 390,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-390-mudancas.png",
+      "sha256": "5994abae7e92a25ace4a8cd3f6406e08e98e555149e64ae7a52c566f4d322f49",
+      "medidas": {
+        "largura": 390,
+        "janela": 390,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "en",
+      "rota": "/en/index/",
+      "largura": 768,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-768-inteira.png",
+      "sha256": "fcd14cdef7d89e0b5f6025b721adfad73a595f585722c83721a24f92e3bd07d1",
+      "medidas": {
+        "largura": 768,
+        "janela": 768,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "en",
+      "rota": "/en/index/",
+      "largura": 768,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-768-mudancas.png",
+      "sha256": "28ffcb27647817d704d06a3aae64921b2d65d298f85457971224e8b57fa16a30",
+      "medidas": {
+        "largura": 768,
+        "janela": 768,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "en",
+      "rota": "/en/index/",
+      "largura": 1024,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1024-inteira.png",
+      "sha256": "19caeff27d29d5c02a30bd75325881ebfe111bfcc1cea78fb934865c1e97e1f1",
+      "medidas": {
+        "largura": 1024,
+        "janela": 1024,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "en",
+      "rota": "/en/index/",
+      "largura": 1024,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1024-mudancas.png",
+      "sha256": "c6bc68ff7eb0b854e326584244b4c1220854f15b7963e5aaab6e2fa5dc7a2fbf",
+      "medidas": {
+        "largura": 1024,
+        "janela": 1024,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "en",
+      "rota": "/en/index/",
+      "largura": 1280,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1280-inteira.png",
+      "sha256": "42392e7c0f5da28fd728932bcfc13430756cb56a31ecb52a0745a864a55302cd",
+      "medidas": {
+        "largura": 1280,
+        "janela": 1280,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "en",
+      "rota": "/en/index/",
+      "largura": 1280,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1280-mudancas.png",
+      "sha256": "44837d405378162cf58d3e3bdb7ca890b99cf5f2ae2fd873c87f4fb521b00542",
+      "medidas": {
+        "largura": 1280,
+        "janela": 1280,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "en",
+      "rota": "/en/index/",
+      "largura": 1600,
+      "sufixo": "inteira",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1600-inteira.png",
+      "sha256": "f6c5496945a3b7e55459dab27132490abc4a60b753c5d8520369aa46654eb983",
+      "medidas": {
+        "largura": 1600,
+        "janela": 1600,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          }
+        ]
+      }
+    },
+    {
+      "nome": "indice",
+      "lang": "en",
+      "rota": "/en/index/",
+      "largura": 1600,
+      "sufixo": "mudancas",
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1600-mudancas.png",
+      "sha256": "44837d405378162cf58d3e3bdb7ca890b99cf5f2ae2fd873c87f4fb521b00542",
+      "medidas": {
+        "largura": 1600,
+        "janela": 1600,
+        "frases": [
+          {
+            "linha": "custo-unitario-do-trabalho-2024",
+            "por_confirmar": false,
+            "texto": "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.",
+            "display": "block"
+          },
+          {
+            "linha": "despesa-em-id-2024-ue",
+            "por_confirmar": false,
+            "texto": "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "formacao-bruta-de-capital-fixo-2025",
+            "por_confirmar": false,
+            "texto": "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          },
+          {
+            "linha": "pib-real-per-capita-2025",
+            "por_confirmar": false,
+            "texto": "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes.",
+            "display": "block"
+          },
+          {
+            "linha": "posicao-de-investimento-internacional-2025",
+            "por_confirmar": false,
+            "texto": "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.",
+            "display": "block"
+          }
+        ]
+      }
+    }
+  ],
+  "erros": []
+}

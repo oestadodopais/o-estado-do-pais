@@ -1,0 +1,35 @@
+---
+/* EX2: a mesma frase do recibo, sem repetir a porta. A frase por confirmar fica ausente. */
+import Frase from '../Frase.astro';
+import { oQueEDaLinha } from '../../lib/o-que-e-o-numero.mjs';
+import { t } from '../../i18n/strings.mjs';
+const { ids = [], lang = 'pt' } = Astro.props;
+const id = ids.at(-1);
+const leitura = id ? oQueEDaLinha(id, lang) : null;
+const sinais = [];
+const vistos = new Set();
+for (const linha of ids) {
+  const l = oQueEDaLinha(linha, lang);
+  if (!l.porConfirmar && l.sinal && !vistos.has(JSON.stringify(l.sinal))) {
+    vistos.add(JSON.stringify(l.sinal)); sinais.push({id: linha, pedacos: l.sinal});
+  }
+}
+---
+{leitura && (leitura.porConfirmar ? (
+  <p class="mudanca-o-que-e" data-o-que-e-por-confirmar={id} data-semana-declarado>{t(lang).semana.oQueEPorConfirmar}</p>
+) : (
+  <p class="mudanca-o-que-e" data-o-que-e={id} data-semana-declarado><Frase partes={leitura.pedacos} lang={lang} selos={false} /></p>
+))}
+{sinais.map(sinal => <p class="mudanca-o-que-e" data-o-que-e-sinal={sinal.id} data-semana-declarado><Frase partes={sinal.pedacos} lang={lang} selos={false} /></p>)}
+
+<style>
+  .mudanca-o-que-e {
+    margin: 8px 0 0;
+    max-width: var(--measure);
+    font-family: var(--f-prosa);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink);
+    overflow-wrap: break-word;
+  }
+</style>

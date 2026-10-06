@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T11:07:23+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "p1",
+   "ficheiro": "built/explicacoes/leitura-da-semana/index.html",
+   "descricao": "o valor novo do custo unitário do trabalho na página da semana em português diz 17,8 em vez de 17,9 (o registo das correções e o recibo dizem 17,9)",
+   "sha256_antes": "6065e74454ca99dd296f5aabe3dfabcce3c236351f60d4bd903532ee08d0394c",
+   "sha256_depois": "8b8df057ce02d81b861d43f89a448450f45426f71b215e6a7f00d13c2eafc65d",
+   "contexto_antes": "cao-n=\"1\" data-correcao-campo=\"old_value\">17,7</span> para <span class=\"semana-valor\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"new_value\">17,9</span>, subiu, em <time class=\"semana-data\" datetime=\"2026-10-05\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"date\"",
+   "contexto_depois": "cao-n=\"1\" data-correcao-campo=\"old_value\">17,7</span> para <span class=\"semana-valor\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"new_value\">17,8</span>, subiu, em <time class=\"semana-data\" datetime=\"2026-10-05\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"date\""
+  },
+  {
+   "id": "p2",
+   "ficheiro": "built/en/explainers/weekly-reading/index.html",
+   "descricao": "a frase «o que é» da primeira mudança na edição inglesa diz «fell» em vez de «rose», e já não é a do recibo",
+   "sha256_antes": "0243b9f0f5a0a4711ef82965d8e04955f384f9f70406d34d44ddc4cb71b51857",
+   "sha256_depois": "2ee81d8d62db074f5e9575132bf1765dc50313834b815f9186428fc61a68fc89",
+   "contexto_antes": "> · <span>Eurostat</span></span></a></p><p class=\"mudanca-o-que-e\" data-o-que-e=\"custo-unitario-do-trabalho-2024\" data-semana-declarado data-astro-cid-oiwkbdqf>It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces.</p></li><li class=\"semana-mudanca\" data-correcao-entrada=\"despesa-em-id-2024-ue\" data-semana-mudanca=\"des",
+   "contexto_depois": "> · <span>Eurostat</span></span></a></p><p class=\"mudanca-o-que-e\" data-o-que-e=\"custo-unitario-do-trabalho-2024\" data-semana-declarado data-astro-cid-oiwkbdqf>It is how much the cost of labour per unit produced fell over three years: what is paid for labour divided by what it produces.</p></li><li class=\"semana-mudanca\" data-correcao-entrada=\"despesa-em-id-2024-ue\" data-semana-mudanca=\"des"
+  },
+  {
+   "id": "p3",
+   "ficheiro": "tests/explicacoes/frases-compostas.mjs",
+   "descricao": "a célula das frases compostas deixa de ler a página de tema com os cartões (a rota entradaDinheiro sai de ROTAS), enquanto o relatório diz que a lê",
+   "sha256_antes": "6b313147b15e27864a06da077dbdb51c16d8fcd626889971448ca006a8f710c2",
+   "sha256_depois": "56471b1c5a1c70b77fb6767f2cf5f2e30a62f8b5e4cc8b67a461aee7ed215e8b",
+   "contexto_antes": " (/** @type {string} */ p) => (p.endsWith('/') ? p : `${p}/`);\nconst ROTAS = /** @type {const} */ (['pt', 'en']).flatMap((lang) => [\n  routePath('home', lang), routePath('entradaDinheiro', lang), routePath('indice', lang), routePath('explicacoes', lang), routePath('leituraDaSemana', lang),\n  ...EXPLICACOES.map((e) => routePath('explicacao', lang, { slug:",
+   "contexto_depois": " (/** @type {string} */ p) => (p.endsWith('/') ? p : `${p}/`);\nconst ROTAS = /** @type {const} */ (['pt', 'en']).flatMap((lang) => [\n  routePath('home', lang), routePath('indice', lang), routePath('explicacoes', lang), routePath('leituraDaSemana', lang),\n  ...EXPLICACOES.map((e) => routePath('explicacao', lang, { slug:"
+  },
+  {
+   "id": "p4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que 1 das 9 mudanças ficou sem frase por confirmar, e a página construída mostra as 9 frases e nenhuma ausência",
+   "sha256_antes": "f31d1fdbea3ab587cdf3817f22225966316f5fd796efca63498654040bdfedd6",
+   "sha256_depois": "3a0e6ddae214b4f7f865231e19e54a4105454d31e52db39b8ecd5cd948aabbc6",
+   "contexto_antes": "ziu [base.json](base.json). O livro tem 3195 linhas, 3184 no âmbito, 41 unidades, 25 começadas por palavra. A semana construída vai de 2026-09-30 a 2026-10-06: 9 mudanças, 0 sem frase por confirmar. As mudanças e as frases lidas do HTML estão abaixo e em [entrega.json](entrega.json).\n\n**Na leitura da semana, a unidade vem antes dos dois pontos, imediatame",
+   "contexto_depois": "ziu [base.json](base.json). O livro tem 3195 linhas, 3184 no âmbito, 41 unidades, 25 começadas por palavra. A semana construída vai de 2026-09-30 a 2026-10-06: 9 mudanças, 1 sem frase por confirmar. As mudanças e as frases lidas do HTML estão abaixo e em [entrega.json](entrega.json).\n\n**Na leitura da semana, a unidade vem antes dos dois pontos, imediatame"
+  },
+  {
+   "id": "p5",
+   "ficheiro": "tests/explicacoes/o-que-e.mjs",
+   "descricao": "a célula W4 deixa de comparar a frase mostrada com a do recibo (a comparação dos textos sai da condição), e passa a aceitar qualquer frase",
+   "sha256_antes": "aea29fbe26eb60938788544f2ebdf120c704dcbcb5f6437f14303db9f19e0b4c",
+   "sha256_depois": "ade1bc123e98b4522a18a7d9e86ed56b18fd23ff82c8fc597f001b68c7bceff3",
+   "contexto_antes": "al=recibo.querySelector(`[data-o-que-e=\"${id}\"] [data-o-que-e-parte=\"o-que-e\"]`);\n      if(!original || original.querySelector('[data-por-confirmar-na-fonte]') || normal(frase.textContent)!==normal(original.textContent)) erros.push(`W4 · ${id}: a frase mostrada não é a do recibo da mesma linha e edição`);\n      else if(JSON.stringify(assinatura(frase))!==JSON.stringify(assinat",
+   "contexto_depois": "al=recibo.querySelector(`[data-o-que-e=\"${id}\"] [data-o-que-e-parte=\"o-que-e\"]`);\n      if(!original || original.querySelector('[data-por-confirmar-na-fonte]') ) erros.push(`W4 · ${id}: a frase mostrada não é a do recibo da mesma linha e edição`);\n      else if(JSON.stringify(assinatura(frase))!==JSON.stringify(assinat"
+  }
+ ]
+}

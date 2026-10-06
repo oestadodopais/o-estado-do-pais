@@ -1,0 +1,64 @@
+{
+  "comando": "node design/especime-v3/medicoes/ex2-2026-10-06/medir-titulos-b.mjs",
+  "causa": "TituloDeTrabalho lê titleUnverified e acrescenta Marcador. As duas edições inglesas mantêm o título português; as portuguesas não declaram titleUnverified.",
+  "casos": [
+    {
+      "estudo": "onde-esta-a-agua",
+      "edicoes": [
+        {
+          "lang": "pt",
+          "titulo": "Onde está a água?",
+          "titleUnverified": false,
+          "lingua": null
+        },
+        {
+          "lang": "en",
+          "titulo": "Onde está a água?",
+          "titleUnverified": true,
+          "lingua": "pt-PT"
+        }
+      ],
+      "paginas": [
+        {
+          "lang": "pt",
+          "titulo": "Onde está a água?",
+          "marcas": 0
+        },
+        {
+          "lang": "en",
+          "titulo": "Onde está a água?",
+          "marcas": 1
+        }
+      ]
+    },
+    {
+      "estudo": "agua-nao-faturada",
+      "edicoes": [
+        {
+          "lang": "pt",
+          "titulo": "Água Não Faturada",
+          "titleUnverified": false,
+          "lingua": null
+        },
+        {
+          "lang": "en",
+          "titulo": "Água Não Faturada",
+          "titleUnverified": true,
+          "lingua": "pt-PT"
+        }
+      ],
+      "paginas": [
+        {
+          "lang": "pt",
+          "titulo": "Água Não Faturada",
+          "marcas": 0
+        },
+        {
+          "lang": "en",
+          "titulo": "Água Não Faturada",
+          "marcas": 1
+        }
+      ]
+    }
+  ]
+}

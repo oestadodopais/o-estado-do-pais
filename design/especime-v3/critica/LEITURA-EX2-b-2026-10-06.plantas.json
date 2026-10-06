@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T14:23:49+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "p1",
+   "ficheiro": "built/explicacoes/leitura-da-semana/index.html",
+   "descricao": "a página portuguesa diz que a fonte reviu para baixo o custo unitário do trabalho, quando os valores (de 17,7 para 17,9) e a edição inglesa dizem para cima",
+   "sha256_antes": "c1e46967040e5ac69d0cb4f78ad6a82086f97c51763565035732d9c71fdc61fd",
+   "sha256_depois": "468ae405de1a6b0f41140d5642e406813ed2fccf4c0473ec79663f703da89c72",
+   "contexto_antes": "old_value\">17,7</span> para <span class=\"semana-valor\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"new_value\">17,9</span>, a fonte reviu para cima, em <time class=\"semana-data\" datetime=\"2026-10-05\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"date\">05.10.2026<",
+   "contexto_depois": "old_value\">17,7</span> para <span class=\"semana-valor\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"new_value\">17,9</span>, a fonte reviu para baixo, em <time class=\"semana-data\" datetime=\"2026-10-05\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"date\">05.10.2026<"
+  },
+  {
+   "id": "p2",
+   "ficheiro": "src/i18n/strings.mjs",
+   "descricao": "a cadeia inglesa da revisão diz «upward» no ficheiro copiado, e a página construída e a auditoria dizem «upwards»",
+   "sha256_antes": "1959a6c0c43c02fab8f35b318450a88a2bb87f473aed4201ad75b83ab109bafa",
+   "sha256_depois": "f236531e9b09be0815af810c6d341c279d924c092d4fd9a25a0b6a0c341ad2dc",
+   "contexto_antes": "that changed value',\n      oQueEPorConfirmar: 'What this number is remains to be confirmed at the source.',\n      deAntes: ': from ',\n      para: ' to ',\n      subiu: ', the source revised it upwards',\n      desceu: ', the source revised it downwards',\n      naoMudou: ', did not change',\n      em: ', on ',\n      primeiraK: 'The front page',\n      primeiraNenh",
+   "contexto_depois": "that changed value',\n      oQueEPorConfirmar: 'What this number is remains to be confirmed at the source.',\n      deAntes: ': from ',\n      para: ' to ',\n      subiu: ', the source revised it upward',\n      desceu: ', the source revised it downwards',\n      naoMudou: ', did not change',\n      em: ', on ',\n      primeiraK: 'The front page',\n      primeiraNenh"
+  },
+  {
+   "id": "p3",
+   "ficheiro": "tests/explicacoes/o-que-e.mjs",
+   "descricao": "a célula deixa de agrupar as linhas da mesma medida (cada entrada é o seu grupo), e a regra da definição uma vez por grupo fica vazia",
+   "sha256_antes": "13163798aec360fdb7b890a2370302f4501bed387df4036c64d50dc15018fcf7",
+   "sha256_depois": "9adb587b31269a5dfcedf7503ae96180271dcfa567cff228a34dcc86d1f178e9",
+   "contexto_antes": "grupos=[];\n  for (const e of entradas) {\n    const id=e.getAttribute('data-correcao-entrada'), nome=nomeNaLista(id,lang);\n    const chave=JSON.stringify(nome);\n    if(grupos.at(-1)?.chave===chave) grupos.at(-1).entradas.push(e);\n    else grupos.push({chave,entradas:[e]});\n  }\n  return grupos;\n}\n\n/** A identidade e a quantidade são também lidas pelo portão de HTML. */\nexport function co",
+   "contexto_depois": "grupos=[];\n  for (const e of entradas) {\n    const id=e.getAttribute('data-correcao-entrada'), nome=nomeNaLista(id,lang);\n    const chave=JSON.stringify(nome);\n    if(false && grupos.at(-1)?.chave===chave) grupos.at(-1).entradas.push(e);\n    else grupos.push({chave,entradas:[e]});\n  }\n  return grupos;\n}\n\n/** A identidade e a quantidade são também lidas pelo portão de HTML. */\nexport function co"
+  },
+  {
+   "id": "p4",
+   "ficheiro": "built/indice/index.html",
+   "descricao": "o índice português mostra 17,8 como valor novo do custo unitário do trabalho; a leitura da semana, o recibo e o registo das correções dizem 17,9",
+   "sha256_antes": "363aaef8e88487dfcfd84b3558a30daf70bbce73e0568255f543ccee9e88cb52",
+   "sha256_depois": "29a858dc5f308f557bd59e1c01db3e8498012e1a70f61d3c4560f214443899f5",
+   "contexto_antes": "old_value\">17,7</span> para <span class=\"semana-valor\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"new_value\">17,9</span>, a fonte reviu para cima, em <time class=\"semana-data\" datetime=\"2026-10-05\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-cor",
+   "contexto_depois": "old_value\">17,7</span> para <span class=\"semana-valor\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"new_value\">17,8</span>, a fonte reviu para cima, em <time class=\"semana-data\" datetime=\"2026-10-05\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-cor"
+  },
+  {
+   "id": "p5",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que há 2 definições com algarismos nesta construção, e os ficheiros e as páginas mostram 0",
+   "sha256_antes": "bc1385284db14e9859d19ce5d046c30de931a6d3589edab20c9fc52430369795",
+   "sha256_depois": "e77b36523c2de8a6f775b8b735fc683a08ec4ef29f8f25ffa7477d3cb7e0855b",
+   "contexto_antes": "te mostrado nas duas edições consta de [passagem-b.json](passagem-b.json).\n\nAs células do selo da definição e dos pedaços marcados são vazias nesta construção: 0 definições com algarismos e 0 pedaços marcados, entre 22 definições. As plantas sintéticas dos auxiliares não provam `auditaSelo` numa definição real com valor. Este limite fica declarado, sem aumentar a pr",
+   "contexto_depois": "te mostrado nas duas edições consta de [passagem-b.json](passagem-b.json).\n\nAs células do selo da definição e dos pedaços marcados são vazias nesta construção: 2 definições com algarismos e 0 pedaços marcados, entre 22 definições. As plantas sintéticas dos auxiliares não provam `auditaSelo` numa definição real com valor. Este limite fica declarado, sem aumentar a pr"
+  }
+ ]
+}

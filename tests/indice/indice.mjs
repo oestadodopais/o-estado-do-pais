@@ -123,10 +123,7 @@ export function resolve(caminho, existe = (f) => fs.existsSync(f) && fs.statSync
 function portasDoIndice(doc, lang) {
   const main = doc.querySelector('main');
   if (!main) return { portas: [], seccoes: [], todas: [] };
-  const marcador = routePath('marcador', lang);
-  const dispensada = (a) =>
-    a.closest('[data-rotulo-ia="topo"]') !== null ||
-    ((a.getAttribute('class') ?? '').split(/\s+/).includes('marcador-de-titulo') && destino(a.getAttribute('href')) === marcador);
+  const dispensada = (a) => a.closest('[data-rotulo-ia="topo"]') !== null;
   const todas = main.querySelectorAll('a[href]').filter((a) => !dispensada(a));
   const portas = todas.filter((a) => a.closest('[data-mudou-ambito]') === null);
   return { portas, todas, seccoes: main.querySelectorAll('[data-indice-seccao]').map((s) => s.getAttribute('data-indice-seccao')) };

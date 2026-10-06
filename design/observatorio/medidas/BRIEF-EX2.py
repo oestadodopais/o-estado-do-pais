@@ -74,7 +74,14 @@ medicao("vezes_que_a_unidade_entra_na_frase_da_semana", len(re.findall(r'campo="
 fc = git("show", f"{CAB}:tests/explicacoes/frases-compostas.mjs") or ""
 decl = re.search(r"const ROTAS = .*?const LARGURAS", fc, re.S)
 chamadas = re.findall(r"routePath\('([a-zA-Z]+)', lang\)", decl.group(0)) if decl else []
-medicao("paginas_lidas_pela_celula_das_frases_compostas", 2 * len(chamadas) if decl else NAO, f"git show {CAB}:tests/explicacoes/frases-compostas.mjs · as chamadas routePath na declaração de ROTAS, vezes as duas edições", "a célula lê a rota das explicações", "explicacoes" in chamadas)
+# EX2-1 (06.10.2026, o construtor do EX2): a primeira forma contava só as rotas fixas (8) e esquecia a página de cada
+# explicação, que a declaração acrescenta por EXPLICACOES.map; a célula lê as fixas mais uma por explicação, nas duas edições.
+expl = git("show", f"{CAB}:src/data/explicacoes/index.mjs") or ""
+lista_expl = re.search(r"export const EXPLICACOES = \[([^\]]*)\]", expl)
+n_expl = len([x for x in lista_expl.group(1).split(",") if x.strip()]) if lista_expl else 0
+por_explicacao = bool(decl) and "EXPLICACOES.map" in decl.group(0)
+medicao("explicacoes_publicadas", n_expl if expl else NAO, f"git show {CAB}:src/data/explicacoes/index.mjs · as entradas da lista EXPLICACOES", "a explicação do dinheiro do Estado está declarada", "DINHEIRO_DO_ESTADO_2026" in expl)
+medicao("paginas_lidas_pela_celula_das_frases_compostas", 2 * (len(chamadas) + n_expl) if decl and expl and por_explicacao else NAO, f"git show {CAB}:tests/explicacoes/frases-compostas.mjs · as chamadas routePath fixas na declaração de ROTAS mais uma por explicação (EXPLICACOES.map), vezes as duas edições", "a célula lê a rota das explicações e a página de cada explicação", "explicacoes" in chamadas and por_explicacao)
 
 saida = pathlib.Path(os.environ.get("OEDP_MEDIDAS_JSON") or (SITIO / "design/observatorio/medidas/BRIEF-EX2.json"))
 saida.parent.mkdir(parents=True, exist_ok=True)
