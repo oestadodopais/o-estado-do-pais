@@ -1,0 +1,101 @@
+{
+  "brief": "design/observatorio/BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md",
+  "declaracao": "src/data/explicacoes/dinheiro-do-estado-2026.mjs",
+  "blocos": 15,
+  "acertos": [
+    {
+      "id": "X1",
+      "vezes": 1
+    },
+    {
+      "id": "X1",
+      "vezes": 1
+    },
+    {
+      "id": "X1",
+      "vezes": 1
+    },
+    {
+      "id": "X1",
+      "vezes": 1
+    },
+    {
+      "id": "X2",
+      "vezes": 1
+    },
+    {
+      "id": "X3",
+      "vezes": 1
+    },
+    {
+      "id": "X3",
+      "vezes": 1
+    },
+    {
+      "id": "X4",
+      "vezes": 1
+    },
+    {
+      "id": "X5",
+      "vezes": 1
+    },
+    {
+      "id": "X6",
+      "vezes": 1
+    },
+    {
+      "id": "X7",
+      "vezes": 3
+    },
+    {
+      "id": "X8",
+      "vezes": 1
+    },
+    {
+      "id": "X11",
+      "vezes": 1
+    },
+    {
+      "id": "X10",
+      "vezes": 3
+    },
+    {
+      "id": "X12",
+      "vezes": 1
+    },
+    {
+      "id": "X13",
+      "vezes": 1
+    },
+    {
+      "id": "X14",
+      "vezes": 1
+    },
+    {
+      "id": "X14",
+      "vezes": 1
+    },
+    {
+      "id": "X15",
+      "vezes": 1
+    },
+    {
+      "id": "X16",
+      "vezes": 1
+    },
+    {
+      "id": "X17",
+      "vezes": 1
+    },
+    {
+      "id": "X10",
+      "vezes": 1
+    },
+    {
+      "id": "X9",
+      "vezes": 5
+    }
+  ],
+  "iguais": true,
+  "erros": []
+}

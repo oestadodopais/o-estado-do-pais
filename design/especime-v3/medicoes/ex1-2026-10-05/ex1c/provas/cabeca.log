@@ -1,0 +1,9 @@
+cabeça: 090dd5dc401b736c105b7f21972515060959ee2a
+estado dos ficheiros seguidos: 0 linha(s)
+---
+
+> o-estado-do-pais@0.1.0 check:cabeca
+> node tests/inicio/hierarquia-b2.mjs
+
+check:cabeca C1; construção 090dd5dc401b736c105b7f21972515060959ee2a; 140 cabeças; 4 mordidas; 10 reposições
+check:cabeca: PASS

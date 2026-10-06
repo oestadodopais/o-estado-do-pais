@@ -1,0 +1,61 @@
+{
+  "o_que_e": "EX1-c: o texto rendido das páginas que a passagem mudou, lido da construção (frases-rendidas.mjs).",
+  "construcao": "090dd5dc401b736c105b7f21972515060959ee2a",
+  "construido_em": "2026-10-06T05:34:46.924Z",
+  "explicacao": {
+    "pt": {
+      "paragrafos": {
+        "abertura[0]": "O Orçamento do Estado para 2026 diz, euro a euro, para onde vai o dinheiro. De cada cem euros, 17,07 vão para a saúde, 13,73 para a proteção social, 10,91 para a educação e 11,77 para os assuntos económicos. A maior fatia, 33,18, é a dos serviços gerais das administrações públicas, onde a classificação das funções conta os juros da dívida e as transferências entre administrações.",
+        "seccoes[0].conteudo[1].paragrafo": "A defesa leva 3,25, a segurança e ordem pública 5,27, a proteção do ambiente 2,29, a habitação e infraestruturas coletivas 1,47 e o desporto, recreação, cultura e religião 1,05.",
+        "seccoes[1].conteudo[0].paragrafo": "Visto pelos ministérios, o maior é o Ministério das Finanças, com 60,12 de cada cem euros, 211 891 565 579 euros; seguem-se o Ministério da Saúde (13,28), o Ministério do Trabalho, Solidariedade e Segurança Social (10,69) e o Ministério da Educação, Ciência e Inovação (4,16).",
+        "seccoes[1].conteudo[2].paragrafo": "As duas contas não batem porque medem coisas diferentes: a conta por função soma o que a administração central gasta com cada fim, como a saúde ou a educação, sem as operações financeiras nem as transferências entre os seus serviços; a conta por ministério é o orçamento de cada ministério, com as operações financeiras e as transferências entre serviços do Estado.",
+        "seccoes[2].conteudo[0].paragrafo": "Até agosto de 2026, a administração central e a segurança social tinham gasto 80 464,5 milhões de euros e recebido 79 618,7 milhões; os programas que mais gastaram foram o de Trabalho, Solidariedade e Segurança Social (17 636,8 milhões), o de Saúde (11 822,6) e o de Finanças (5 337,6).",
+        "seccoes[3].conteudo[0].paragrafo": "No fim de 2025, a dívida pública valia 89,7 % do que o país produz num ano, acima dos 81,7 % da média da União Europeia, e as contas públicas fecharam o ano com um saldo de 0,7 % do produto, um excedente (recebeu mais do que gastou).",
+        "naoDiz[0]": "O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a de agosto está acima. Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram. O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque."
+      },
+      "portas_do_fim": [
+        [
+          "/livro-razao",
+          "Números e fontes →"
+        ]
+      ]
+    },
+    "en": {
+      "paragrafos": {
+        "abertura[0]": "The State Budget for 2026 says, euro by euro, where the money goes. Of every hundred euros, 17,07 go to health, 13,73 to social protection, 10,91 to education and 11,77 to economic affairs. The largest share, 33,18, is general public services, where the classification of functions counts the interest on the debt and the transfers between levels of government.",
+        "seccoes[0].conteudo[1].paragrafo": "Defence takes 3,25, public order and safety 5,27, environmental protection 2,29, housing and community amenities 1,47 and recreation, culture and religion 1,05.",
+        "seccoes[1].conteudo[0].paragrafo": "Seen by ministry, the largest is the Ministry of Finance, with 60,12 of every hundred euros, 211 891 565 579 euros; then come the Ministry of Health (13,28), the Ministry of Labour, Solidarity and Social Security (10,69) and the Ministry of Education, Science and Innovation (4,16).",
+        "seccoes[1].conteudo[2].paragrafo": "The two counts do not match because they measure different things: the count by function adds up what central government spends on each purpose, such as health or education, without financial transactions or transfers between its own services; the count by ministry is each ministry’s budget, including financial transactions and transfers between State services.",
+        "seccoes[2].conteudo[0].paragrafo": "By August 2026, central government and social security had spent 80 464,5 million euros and taken in 79 618,7 million; the programmes that spent the most were Labour, Solidarity and Social Security (17 636,8 million), Health (11 822,6) and Finance (5 337,6).",
+        "seccoes[3].conteudo[0].paragrafo": "At the end of 2025, public debt was worth 89,7 % of what the country produces in a year, above the 81,7 % average of the European Union, and the public accounts closed the year with a balance of 0,7 % of output, a surplus (it took in more than it spent).",
+        "naoDiz[0]": "The budget is a forecast: what is actually spent is read in the budget execution, month by month, and August’s is above. Missing here is the cost of the interest on the debt, which the Budget also forecasts and which these figures do not show. The detail by programme and by ministry, with the source of each figure, is in each one’s receipt, one tap away."
+      },
+      "portas_do_fim": [
+        [
+          "/en/ledger",
+          "Numbers and sources →"
+        ]
+      ]
+    }
+  },
+  "semana": {
+    "pt": {
+      "primeira_frase": "Entre 30.09.2026 e 06.10.2026, 90 números foram relidos na fonte, 9 mudaram de valor, 3 mudaram só na forma de escrever e 9 mudaram de proveniência.",
+      "mudancas_de_valor": 9,
+      "formas": [
+        "Fluxo de crédito às empresas (não financeiras), 2025: a fonte passou a escrever 3,0, onde escrevia 3, em 02.10.2026.",
+        "Jovens sem emprego, escola ou formação, 2025: a fonte passou a escrever 8,0, onde escrevia 8, em 02.10.2026.",
+        "Taxa de desemprego, 2025: a fonte passou a escrever 6,0, onde escrevia 6, em 30.09.2026."
+      ]
+    },
+    "en": {
+      "primeira_frase": "Between 30.09.2026 and 06.10.2026, 90 figures were re-read at the source, 9 changed value, 3 changed only in how they are written and 9 changed provenance.",
+      "mudancas_de_valor": 9,
+      "formas": [
+        "Credit flow to (non-financial) companies, 2025: the source now writes 3,0, where it wrote 3, on 02.10.2026.",
+        "Young people not in employment, education or training, 2025: the source now writes 8,0, where it wrote 8, on 02.10.2026.",
+        "Unemployment rate, 2025: the source now writes 6,0, where it wrote 6, on 30.09.2026."
+      ]
+    }
+  }
+}

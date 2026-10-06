@@ -1,0 +1,110 @@
+{
+  "aceites": [
+    "2026-10-06"
+  ],
+  "janela": {
+    "inicio": "2026-09-30",
+    "fim": "2026-10-06"
+  },
+  "contagens": {
+    "relidas": 90,
+    "valor": 9,
+    "forma": 3,
+    "proveniencia": 9
+  },
+  "mudancas": 9,
+  "formas": [
+    {
+      "linha": "fluxo-de-credito-as-empresas-2025",
+      "antes": "3",
+      "depois": "3,0"
+    },
+    {
+      "linha": "jovens-nem-2025",
+      "antes": "8",
+      "depois": "8,0"
+    },
+    {
+      "linha": "taxa-de-desemprego-mip-2025",
+      "antes": "6",
+      "depois": "6,0"
+    }
+  ],
+  "blocos_que_mudaram": [],
+  "w1": [
+    {
+      "nome": "um valor mudado dentro da janela (abrantes-desemprego-registado-2025-12, 1 158 para 1 159)",
+      "pediu": "mais uma linha mudada, «subiu»",
+      "viu": "resolvedor 10 (subiu), célula 10",
+      "mordeu": true
+    },
+    {
+      "nome": "uma releitura igual dentro da janela (abrantes-divida-dgal-2024)",
+      "pediu": "mais uma relida e nenhuma mudança",
+      "viu": "resolvedor 91 relidas e 9 mudadas, célula 91 e 9",
+      "mordeu": true
+    },
+    {
+      "nome": "uma entrada fora da janela (abrantes-empresas-2024, 2026-09-29)",
+      "pediu": "nada muda",
+      "viu": "resolvedor {\"relidas\":90,\"valor\":9,\"forma\":3,\"proveniencia\":9}, célula {\"relidas\":90,\"valor\":9,\"forma\":3,\"proveniencia\":9}",
+      "mordeu": true
+    },
+    {
+      "nome": "uma entrada só de literal dentro da janela (abrantes-ganho-medio-mensal-2024, 1 422,4 para 1 422,40)",
+      "pediu": "o mesmo número de mudanças de valor e mais uma só da forma de escrever",
+      "viu": "resolvedor 9 de valor e 4 de forma, célula 9 e 4",
+      "mordeu": true
+    },
+    {
+      "nome": "uma semana sem entrada nenhuma dentro da janela (2026-09-30 a 2026-10-06)",
+      "pediu": "zero nas três contagens, nenhuma mudança, e a mesma primeira frase com nada relido e nada mudado",
+      "viu": "resolvedor {\"relidas\":0,\"valor\":0,\"forma\":0,\"proveniencia\":0}, célula {\"relidas\":0,\"valor\":0,\"forma\":0,\"proveniencia\":0}; pt: «Entre 30.09.2026 e 06.10.2026, nenhum número foi relido na fonte, e nenhum mudou de valor nem de proveniência.» · en: «Between 30.09.2026 and 06.10.2026, no figure was re-read at the source, and none changed value or provenance.»",
+      "mordeu": true
+    }
+  ],
+  "portas": 4,
+  "plantas": [
+    {
+      "nome": "a frase de um bloco citado com uma palavra trocada",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "uma marca das frases compostas num parágrafo que esta célula não compara",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "o literal de agora de uma mudança só da forma trocado",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "uma contagem trocada",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "a janela de outro dia",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "uma mudança a menos",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "a palavra do lado trocada",
+      "mordeu": true,
+      "aplica": true
+    },
+    {
+      "nome": "o valor de antes de outra entrada",
+      "mordeu": true,
+      "aplica": true
+    }
+  ],
+  "erros": []
+}
