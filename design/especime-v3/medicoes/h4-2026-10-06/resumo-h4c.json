@@ -1,0 +1,955 @@
+{
+  "comando": "python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4c.py",
+  "cabeca_codigo": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+  "partida": "c86015929c91280c07be98a07fae1ad66fc1dde6",
+  "commits": [
+    {
+      "cabeca": "79f66ed4ce43a4d8fb35f32e636c88359edc01e9",
+      "assunto": "H4-c: regista no brief os limites decididos pela H4-5."
+    },
+    {
+      "cabeca": "b0eea25d6309e1b74668e3cf1ba9585eeb59b241",
+      "assunto": "H4-c: protege os limites por largura e prova a quarta linha."
+    },
+    {
+      "cabeca": "54a71206d35e2d3f84df76a4a030d2acd05e797e",
+      "assunto": "H4-c: prepara as medidas por largura e o fecho das provas."
+    },
+    {
+      "cabeca": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+      "assunto": "H4-c: distingue a janela da coluna nos registos da TM4."
+    }
+  ],
+  "codigos": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0
+  },
+  "comando_dos_commits": "git log --reverse --format='%H %s' c86015929c91280c07be98a07fae1ad66fc1dde6..45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+  "comando_das_fontes": "git diff --name-only c86015929c91280c07be98a07fae1ad66fc1dde6 45c5a6cd000b9dbdaebe3aee310b6122c25aa512 -- src",
+  "fontes_alteradas": [],
+  "limites_linhas_telefone": {
+    "320": 3,
+    "360": 3,
+    "390": 2,
+    "430": 2
+  },
+  "medidas": [
+    {
+      "lang": "pt",
+      "largura": 320,
+      "forma": "servida",
+      "coluna": 284,
+      "natural": 666.3125,
+      "linhas": 3,
+      "portas": 7,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/",
+          "x": 18,
+          "y": 0,
+          "largura": 83.890625,
+          "altura": 44,
+          "direita": 101.890625,
+          "fundo": 44
+        },
+        {
+          "texto": "Lugares",
+          "href": "/lugares/",
+          "x": 117.890625,
+          "y": 0,
+          "largura": 70.515625,
+          "altura": 44,
+          "direita": 188.40625,
+          "fundo": 44
+        },
+        {
+          "texto": "Temas",
+          "href": "/temas/",
+          "x": 204.40625,
+          "y": 0,
+          "largura": 52.890625,
+          "altura": 44,
+          "direita": 257.296875,
+          "fundo": 44
+        },
+        {
+          "texto": "Estudos",
+          "href": "/estudos",
+          "x": 18,
+          "y": 44,
+          "largura": 71.46875,
+          "altura": 44,
+          "direita": 89.46875,
+          "fundo": 88
+        },
+        {
+          "texto": "Explicações",
+          "href": "/explicacoes",
+          "x": 105.46875,
+          "y": 44,
+          "largura": 106.75,
+          "altura": 44,
+          "direita": 212.21875,
+          "fundo": 88
+        },
+        {
+          "texto": "União Europeia",
+          "href": "/uniao-europeia",
+          "x": 18,
+          "y": 88,
+          "largura": 135.359375,
+          "altura": 44,
+          "direita": 153.359375,
+          "fundo": 132
+        },
+        {
+          "texto": "Sobre",
+          "href": "/sobre",
+          "x": 169.359375,
+          "y": 88,
+          "largura": 49.4375,
+          "altura": 44,
+          "direita": 218.796875,
+          "fundo": 132
+        }
+      ],
+      "ultima": {
+        "texto": "Sobre",
+        "href": "/sobre",
+        "x": 169.359375,
+        "y": 88,
+        "largura": 49.4375,
+        "altura": 44,
+        "direita": 218.796875,
+        "fundo": 132
+      },
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "letra": "15px",
+      "espaco_das_letras": "0.75px",
+      "sem_transbordo": true,
+      "cabe_em_duas": false,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-320-c.png",
+      "sha256": "b21e0ce99196e64557f2d99ae9998e207f41d15d4372b27951f81e8b31188fe4"
+    },
+    {
+      "lang": "pt",
+      "largura": 360,
+      "forma": "servida",
+      "coluna": 324,
+      "natural": 666.3125,
+      "linhas": 3,
+      "portas": 7,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/",
+          "x": 18,
+          "y": 0,
+          "largura": 83.890625,
+          "altura": 44,
+          "direita": 101.890625,
+          "fundo": 44
+        },
+        {
+          "texto": "Lugares",
+          "href": "/lugares/",
+          "x": 117.890625,
+          "y": 0,
+          "largura": 70.515625,
+          "altura": 44,
+          "direita": 188.40625,
+          "fundo": 44
+        },
+        {
+          "texto": "Temas",
+          "href": "/temas/",
+          "x": 204.40625,
+          "y": 0,
+          "largura": 52.890625,
+          "altura": 44,
+          "direita": 257.296875,
+          "fundo": 44
+        },
+        {
+          "texto": "Estudos",
+          "href": "/estudos",
+          "x": 18,
+          "y": 44,
+          "largura": 71.46875,
+          "altura": 44,
+          "direita": 89.46875,
+          "fundo": 88
+        },
+        {
+          "texto": "Explicações",
+          "href": "/explicacoes",
+          "x": 105.46875,
+          "y": 44,
+          "largura": 106.75,
+          "altura": 44,
+          "direita": 212.21875,
+          "fundo": 88
+        },
+        {
+          "texto": "União Europeia",
+          "href": "/uniao-europeia",
+          "x": 18,
+          "y": 88,
+          "largura": 135.359375,
+          "altura": 44,
+          "direita": 153.359375,
+          "fundo": 132
+        },
+        {
+          "texto": "Sobre",
+          "href": "/sobre",
+          "x": 169.359375,
+          "y": 88,
+          "largura": 49.4375,
+          "altura": 44,
+          "direita": 218.796875,
+          "fundo": 132
+        }
+      ],
+      "ultima": {
+        "texto": "Sobre",
+        "href": "/sobre",
+        "x": 169.359375,
+        "y": 88,
+        "largura": 49.4375,
+        "altura": 44,
+        "direita": 218.796875,
+        "fundo": 132
+      },
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "letra": "15px",
+      "espaco_das_letras": "0.75px",
+      "sem_transbordo": true,
+      "cabe_em_duas": false,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-360-c.png",
+      "sha256": "d5b570f2db587a6572eebfc9a8389bfb8a5bdde0252dc718cf3859caf53abb1a"
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "forma": "servida",
+      "coluna": 354,
+      "natural": 666.3125,
+      "linhas": 2,
+      "portas": 7,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/",
+          "x": 18,
+          "y": 0,
+          "largura": 83.890625,
+          "altura": 44,
+          "direita": 101.890625,
+          "fundo": 44
+        },
+        {
+          "texto": "Lugares",
+          "href": "/lugares/",
+          "x": 117.890625,
+          "y": 0,
+          "largura": 70.515625,
+          "altura": 44,
+          "direita": 188.40625,
+          "fundo": 44
+        },
+        {
+          "texto": "Temas",
+          "href": "/temas/",
+          "x": 204.40625,
+          "y": 0,
+          "largura": 52.890625,
+          "altura": 44,
+          "direita": 257.296875,
+          "fundo": 44
+        },
+        {
+          "texto": "Estudos",
+          "href": "/estudos",
+          "x": 273.296875,
+          "y": 0,
+          "largura": 71.46875,
+          "altura": 44,
+          "direita": 344.765625,
+          "fundo": 44
+        },
+        {
+          "texto": "Explicações",
+          "href": "/explicacoes",
+          "x": 18,
+          "y": 44,
+          "largura": 106.75,
+          "altura": 44,
+          "direita": 124.75,
+          "fundo": 88
+        },
+        {
+          "texto": "União Europeia",
+          "href": "/uniao-europeia",
+          "x": 140.75,
+          "y": 44,
+          "largura": 135.359375,
+          "altura": 44,
+          "direita": 276.109375,
+          "fundo": 88
+        },
+        {
+          "texto": "Sobre",
+          "href": "/sobre",
+          "x": 292.109375,
+          "y": 44,
+          "largura": 49.4375,
+          "altura": 44,
+          "direita": 341.546875,
+          "fundo": 88
+        }
+      ],
+      "ultima": {
+        "texto": "Sobre",
+        "href": "/sobre",
+        "x": 292.109375,
+        "y": 44,
+        "largura": 49.4375,
+        "altura": 44,
+        "direita": 341.546875,
+        "fundo": 88
+      },
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "letra": "15px",
+      "espaco_das_letras": "0.75px",
+      "sem_transbordo": true,
+      "cabe_em_duas": true,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-390-c.png",
+      "sha256": "ebb800fa52688c5ffed44723b61100d320e070fbde8cb181c77539573d59f56b"
+    },
+    {
+      "lang": "pt",
+      "largura": 430,
+      "forma": "servida",
+      "coluna": 394,
+      "natural": 666.3125,
+      "linhas": 2,
+      "portas": 7,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/",
+          "x": 18,
+          "y": 0,
+          "largura": 83.890625,
+          "altura": 44,
+          "direita": 101.890625,
+          "fundo": 44
+        },
+        {
+          "texto": "Lugares",
+          "href": "/lugares/",
+          "x": 117.890625,
+          "y": 0,
+          "largura": 70.515625,
+          "altura": 44,
+          "direita": 188.40625,
+          "fundo": 44
+        },
+        {
+          "texto": "Temas",
+          "href": "/temas/",
+          "x": 204.40625,
+          "y": 0,
+          "largura": 52.890625,
+          "altura": 44,
+          "direita": 257.296875,
+          "fundo": 44
+        },
+        {
+          "texto": "Estudos",
+          "href": "/estudos",
+          "x": 273.296875,
+          "y": 0,
+          "largura": 71.46875,
+          "altura": 44,
+          "direita": 344.765625,
+          "fundo": 44
+        },
+        {
+          "texto": "Explicações",
+          "href": "/explicacoes",
+          "x": 18,
+          "y": 44,
+          "largura": 106.75,
+          "altura": 44,
+          "direita": 124.75,
+          "fundo": 88
+        },
+        {
+          "texto": "União Europeia",
+          "href": "/uniao-europeia",
+          "x": 140.75,
+          "y": 44,
+          "largura": 135.359375,
+          "altura": 44,
+          "direita": 276.109375,
+          "fundo": 88
+        },
+        {
+          "texto": "Sobre",
+          "href": "/sobre",
+          "x": 292.109375,
+          "y": 44,
+          "largura": 49.4375,
+          "altura": 44,
+          "direita": 341.546875,
+          "fundo": 88
+        }
+      ],
+      "ultima": {
+        "texto": "Sobre",
+        "href": "/sobre",
+        "x": 292.109375,
+        "y": 44,
+        "largura": 49.4375,
+        "altura": 44,
+        "direita": 341.546875,
+        "fundo": 88
+      },
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "letra": "15px",
+      "espaco_das_letras": "0.75px",
+      "sem_transbordo": true,
+      "cabe_em_duas": true,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-430-c.png",
+      "sha256": "43e39e3727f4885db0e3b27c726a7a1c36736731fdd71dff6a77022ad6fc3c01"
+    },
+    {
+      "lang": "en",
+      "largura": 320,
+      "forma": "servida",
+      "coluna": 284,
+      "natural": 659.75,
+      "linhas": 3,
+      "portas": 7,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/en",
+          "x": 18,
+          "y": 0,
+          "largura": 83.890625,
+          "altura": 44,
+          "direita": 101.890625,
+          "fundo": 44
+        },
+        {
+          "texto": "Places",
+          "href": "/en/places/",
+          "x": 117.890625,
+          "y": 0,
+          "largura": 57.6875,
+          "altura": 44,
+          "direita": 175.578125,
+          "fundo": 44
+        },
+        {
+          "texto": "Themes",
+          "href": "/en/themes/",
+          "x": 191.578125,
+          "y": 0,
+          "largura": 63.734375,
+          "altura": 44,
+          "direita": 255.3125,
+          "fundo": 44
+        },
+        {
+          "texto": "Studies",
+          "href": "/en/studies",
+          "x": 18,
+          "y": 44,
+          "largura": 65.890625,
+          "altura": 44,
+          "direita": 83.890625,
+          "fundo": 88
+        },
+        {
+          "texto": "Explainers",
+          "href": "/en/explainers",
+          "x": 99.890625,
+          "y": 44,
+          "largura": 96.34375,
+          "altura": 44,
+          "direita": 196.234375,
+          "fundo": 88
+        },
+        {
+          "texto": "European Union",
+          "href": "/en/european-union",
+          "x": 18,
+          "y": 88,
+          "largura": 142,
+          "altura": 44,
+          "direita": 160,
+          "fundo": 132
+        },
+        {
+          "texto": "About",
+          "href": "/en/about",
+          "x": 176,
+          "y": 88,
+          "largura": 54.203125,
+          "altura": 44,
+          "direita": 230.203125,
+          "fundo": 132
+        }
+      ],
+      "ultima": {
+        "texto": "About",
+        "href": "/en/about",
+        "x": 176,
+        "y": 88,
+        "largura": 54.203125,
+        "altura": 44,
+        "direita": 230.203125,
+        "fundo": 132
+      },
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "letra": "15px",
+      "espaco_das_letras": "0.75px",
+      "sem_transbordo": true,
+      "cabe_em_duas": false,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-320-c.png",
+      "sha256": "a29e6abfa6e64107879e4a6da13e2175629a21b1db104b15e90ed6fb914aac16"
+    },
+    {
+      "lang": "en",
+      "largura": 360,
+      "forma": "servida",
+      "coluna": 324,
+      "natural": 659.75,
+      "linhas": 3,
+      "portas": 7,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/en",
+          "x": 18,
+          "y": 0,
+          "largura": 83.890625,
+          "altura": 44,
+          "direita": 101.890625,
+          "fundo": 44
+        },
+        {
+          "texto": "Places",
+          "href": "/en/places/",
+          "x": 117.890625,
+          "y": 0,
+          "largura": 57.6875,
+          "altura": 44,
+          "direita": 175.578125,
+          "fundo": 44
+        },
+        {
+          "texto": "Themes",
+          "href": "/en/themes/",
+          "x": 191.578125,
+          "y": 0,
+          "largura": 63.734375,
+          "altura": 44,
+          "direita": 255.3125,
+          "fundo": 44
+        },
+        {
+          "texto": "Studies",
+          "href": "/en/studies",
+          "x": 271.3125,
+          "y": 0,
+          "largura": 65.890625,
+          "altura": 44,
+          "direita": 337.203125,
+          "fundo": 44
+        },
+        {
+          "texto": "Explainers",
+          "href": "/en/explainers",
+          "x": 18,
+          "y": 44,
+          "largura": 96.34375,
+          "altura": 44,
+          "direita": 114.34375,
+          "fundo": 88
+        },
+        {
+          "texto": "European Union",
+          "href": "/en/european-union",
+          "x": 130.34375,
+          "y": 44,
+          "largura": 142,
+          "altura": 44,
+          "direita": 272.34375,
+          "fundo": 88
+        },
+        {
+          "texto": "About",
+          "href": "/en/about",
+          "x": 18,
+          "y": 88,
+          "largura": 54.203125,
+          "altura": 44,
+          "direita": 72.203125,
+          "fundo": 132
+        }
+      ],
+      "ultima": {
+        "texto": "About",
+        "href": "/en/about",
+        "x": 18,
+        "y": 88,
+        "largura": 54.203125,
+        "altura": 44,
+        "direita": 72.203125,
+        "fundo": 132
+      },
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "letra": "15px",
+      "espaco_das_letras": "0.75px",
+      "sem_transbordo": true,
+      "cabe_em_duas": false,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-360-c.png",
+      "sha256": "243eb61a3ed822fdccc40f05d1d5f8d831f36ac8638403a44b57f4cdacf30aaa"
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "forma": "servida",
+      "coluna": 354,
+      "natural": 659.75,
+      "linhas": 2,
+      "portas": 7,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/en",
+          "x": 18,
+          "y": 0,
+          "largura": 83.890625,
+          "altura": 44,
+          "direita": 101.890625,
+          "fundo": 44
+        },
+        {
+          "texto": "Places",
+          "href": "/en/places/",
+          "x": 117.890625,
+          "y": 0,
+          "largura": 57.6875,
+          "altura": 44,
+          "direita": 175.578125,
+          "fundo": 44
+        },
+        {
+          "texto": "Themes",
+          "href": "/en/themes/",
+          "x": 191.578125,
+          "y": 0,
+          "largura": 63.734375,
+          "altura": 44,
+          "direita": 255.3125,
+          "fundo": 44
+        },
+        {
+          "texto": "Studies",
+          "href": "/en/studies",
+          "x": 271.3125,
+          "y": 0,
+          "largura": 65.890625,
+          "altura": 44,
+          "direita": 337.203125,
+          "fundo": 44
+        },
+        {
+          "texto": "Explainers",
+          "href": "/en/explainers",
+          "x": 18,
+          "y": 44,
+          "largura": 96.34375,
+          "altura": 44,
+          "direita": 114.34375,
+          "fundo": 88
+        },
+        {
+          "texto": "European Union",
+          "href": "/en/european-union",
+          "x": 130.34375,
+          "y": 44,
+          "largura": 142,
+          "altura": 44,
+          "direita": 272.34375,
+          "fundo": 88
+        },
+        {
+          "texto": "About",
+          "href": "/en/about",
+          "x": 288.34375,
+          "y": 44,
+          "largura": 54.203125,
+          "altura": 44,
+          "direita": 342.546875,
+          "fundo": 88
+        }
+      ],
+      "ultima": {
+        "texto": "About",
+        "href": "/en/about",
+        "x": 288.34375,
+        "y": 44,
+        "largura": 54.203125,
+        "altura": 44,
+        "direita": 342.546875,
+        "fundo": 88
+      },
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "letra": "15px",
+      "espaco_das_letras": "0.75px",
+      "sem_transbordo": true,
+      "cabe_em_duas": true,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-390-c.png",
+      "sha256": "b7102683f0864dba86660a040b4b5574e5e7cb9967dc803de1b64ea2bfa1fbd5"
+    },
+    {
+      "lang": "en",
+      "largura": 430,
+      "forma": "servida",
+      "coluna": 394,
+      "natural": 659.75,
+      "linhas": 2,
+      "portas": 7,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/en",
+          "x": 18,
+          "y": 0,
+          "largura": 83.890625,
+          "altura": 44,
+          "direita": 101.890625,
+          "fundo": 44
+        },
+        {
+          "texto": "Places",
+          "href": "/en/places/",
+          "x": 117.890625,
+          "y": 0,
+          "largura": 57.6875,
+          "altura": 44,
+          "direita": 175.578125,
+          "fundo": 44
+        },
+        {
+          "texto": "Themes",
+          "href": "/en/themes/",
+          "x": 191.578125,
+          "y": 0,
+          "largura": 63.734375,
+          "altura": 44,
+          "direita": 255.3125,
+          "fundo": 44
+        },
+        {
+          "texto": "Studies",
+          "href": "/en/studies",
+          "x": 271.3125,
+          "y": 0,
+          "largura": 65.890625,
+          "altura": 44,
+          "direita": 337.203125,
+          "fundo": 44
+        },
+        {
+          "texto": "Explainers",
+          "href": "/en/explainers",
+          "x": 18,
+          "y": 44,
+          "largura": 96.34375,
+          "altura": 44,
+          "direita": 114.34375,
+          "fundo": 88
+        },
+        {
+          "texto": "European Union",
+          "href": "/en/european-union",
+          "x": 130.34375,
+          "y": 44,
+          "largura": 142,
+          "altura": 44,
+          "direita": 272.34375,
+          "fundo": 88
+        },
+        {
+          "texto": "About",
+          "href": "/en/about",
+          "x": 288.34375,
+          "y": 44,
+          "largura": 54.203125,
+          "altura": 44,
+          "direita": 342.546875,
+          "fundo": 88
+        }
+      ],
+      "ultima": {
+        "texto": "About",
+        "href": "/en/about",
+        "x": 288.34375,
+        "y": 44,
+        "largura": 54.203125,
+        "altura": 44,
+        "direita": 342.546875,
+        "fundo": 88
+      },
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "letra": "15px",
+      "espaco_das_letras": "0.75px",
+      "sem_transbordo": true,
+      "cabe_em_duas": true,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-430-c.png",
+      "sha256": "6956ebddca87db630f3edb9e796695718c53d7ba6bff829348cc5fa4d56978a7"
+    }
+  ],
+  "plantas_tm4": [
+    {
+      "nome": "uma oitava porta no menu",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*o menu tem 8 portas, e são sete\\.",
+      "queixa": "TM4 · / a 1280 px: o menu tem 8 portas, e são sete."
+    },
+    {
+      "nome": "o menu apertado a 6 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*o espaço entre portas na mesma linha não é o da regra base",
+      "queixa": "TM4 · / a 390 px: o espaço entre portas na mesma linha não é o da regra base (16 px; lido 6 px; folgas 6, 6, 6, 6, 6)."
+    },
+    {
+      "nome": "o menu sem dobrar a 320 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*as sete portas não cabem numa linha e o menu não dobrou\\.",
+      "queixa": "TM4 · / a 320 px: as sete portas não cabem numa linha e o menu não dobrou."
+    },
+    {
+      "nome": "quatro linhas a 320 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .* a 320 px: o menu tem 4 linhas, e o máximo é três\\.",
+      "queixa": "TM4 · / a 320 px: o menu tem 4 linhas, e o máximo é três."
+    },
+    {
+      "nome": "uma porta sem 44 px de toque",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px\\.",
+      "queixa": "TM4 · / a 390 px: a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px."
+    },
+    {
+      "nome": "uma oitava porta no menu",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*o menu tem 8 portas, e são sete\\.",
+      "queixa": "TM4 · /en/ a 1280 px: o menu tem 8 portas, e são sete."
+    },
+    {
+      "nome": "o menu apertado a 6 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*o espaço entre portas na mesma linha não é o da regra base",
+      "queixa": "TM4 · /en/ a 390 px: o espaço entre portas na mesma linha não é o da regra base (16 px; lido 6 px; folgas 6, 6, 6, 6, 6)."
+    },
+    {
+      "nome": "o menu sem dobrar a 320 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*as sete portas não cabem numa linha e o menu não dobrou\\.",
+      "queixa": "TM4 · /en/ a 320 px: as sete portas não cabem numa linha e o menu não dobrou."
+    },
+    {
+      "nome": "quatro linhas a 320 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .* a 320 px: o menu tem 4 linhas, e o máximo é três\\.",
+      "queixa": "TM4 · /en/ a 320 px: o menu tem 4 linhas, e o máximo é três."
+    },
+    {
+      "nome": "uma porta sem 44 px de toque",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px\\.",
+      "queixa": "TM4 · /en/ a 390 px: a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px."
+    }
+  ],
+  "falhas_tm": [],
+  "capturas_novas": 4,
+  "transbordos_documento": [
+    {
+      "edicao": "pt",
+      "janela": 320,
+      "documento": 322
+    },
+    {
+      "edicao": "en",
+      "janela": 320,
+      "documento": 335
+    }
+  ],
+  "comando_dos_portoes": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h4-2026-10-06/portoes-c",
+  "ambiente_dos_portoes": {
+    "OEDP_TEMA_MENU_JSON": "design/especime-v3/medicoes/h4-2026-10-06/tema-menu-c.json"
+  }
+}

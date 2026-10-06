@@ -1,0 +1,1845 @@
+{
+  "comando": "node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --politica",
+  "cabeca": "cb9a22296d17bed881a0f091b8f5864dcd72a571",
+  "construcao": {
+    "commit": "cb9a22296d17bed881a0f091b8f5864dcd72a571",
+    "ref": "h4-2026-10-06",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-06T09:46:20.180Z"
+  },
+  "paginas": [
+    {
+      "familia": "primeira",
+      "lang": "pt",
+      "rota": "/",
+      "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas/primeira-pt.html",
+      "sha256": "c0ca5183f201bb6cb25573bd032b12ae5262bf3764f15f5efc8e70efb45abaa3",
+      "folhas": [
+        {
+          "ficheiro": "/_astro/primeira-pagina.sUQIxm-E.css",
+          "sha256": "1d6224df77b82eec35063368cea406822f23ca540f819c078dee626d5cfadff2",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/primeira-pagina.sUQIxm-E.css"
+        },
+        {
+          "ficheiro": "/_astro/Base.BM5mBVIv.css",
+          "sha256": "259c6a44de1f70200c4d1d3a5aca8e40ba5e5f8856a1fd714cf273de52cbac44",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/Base.BM5mBVIv.css"
+        },
+        {
+          "ficheiro": "/_astro/inicio.DYisJLJ2.css",
+          "sha256": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/inicio.DYisJLJ2.css"
+        },
+        {
+          "ficheiro": "/_astro/lugar.bxF38FjU.css",
+          "sha256": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/lugar.bxF38FjU.css"
+        }
+      ]
+    },
+    {
+      "familia": "primeira",
+      "lang": "en",
+      "rota": "/en",
+      "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas/primeira-en.html",
+      "sha256": "8acd6634b84b75220e5aa57bcc30d8fea2ed2916148cd8c25d1a664477477b2c",
+      "folhas": [
+        {
+          "ficheiro": "/_astro/primeira-pagina.sUQIxm-E.css",
+          "sha256": "1d6224df77b82eec35063368cea406822f23ca540f819c078dee626d5cfadff2",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/primeira-pagina.sUQIxm-E.css"
+        },
+        {
+          "ficheiro": "/_astro/Base.BM5mBVIv.css",
+          "sha256": "259c6a44de1f70200c4d1d3a5aca8e40ba5e5f8856a1fd714cf273de52cbac44",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/Base.BM5mBVIv.css"
+        },
+        {
+          "ficheiro": "/_astro/inicio.DYisJLJ2.css",
+          "sha256": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/inicio.DYisJLJ2.css"
+        },
+        {
+          "ficheiro": "/_astro/lugar.bxF38FjU.css",
+          "sha256": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/lugar.bxF38FjU.css"
+        }
+      ]
+    },
+    {
+      "familia": "explicacao",
+      "lang": "pt",
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas/explicacao-pt.html",
+      "sha256": "18623d59092e447e59a3fd77aff7853617b08990d7203c6e05f962b4fff86ea2",
+      "folhas": [
+        {
+          "ficheiro": "/_astro/Base.BM5mBVIv.css",
+          "sha256": "259c6a44de1f70200c4d1d3a5aca8e40ba5e5f8856a1fd714cf273de52cbac44",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/Base.BM5mBVIv.css"
+        }
+      ]
+    },
+    {
+      "familia": "explicacao",
+      "lang": "en",
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas/explicacao-en.html",
+      "sha256": "1e3a7c1d10eea035945230d097e899ddf3f5b27ca6d9f4afcf1a344340bd9838",
+      "folhas": [
+        {
+          "ficheiro": "/_astro/Base.BM5mBVIv.css",
+          "sha256": "259c6a44de1f70200c4d1d3a5aca8e40ba5e5f8856a1fd714cf273de52cbac44",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/Base.BM5mBVIv.css"
+        }
+      ]
+    },
+    {
+      "familia": "politica",
+      "lang": "pt",
+      "rota": "/metodo",
+      "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas/politica-pt.html",
+      "sha256": "a7016a151d6ea856637cf22643102fc329b8fb11ec65902e077a0b18f0bbd17d",
+      "folhas": [
+        {
+          "ficheiro": "/_astro/Base.BM5mBVIv.css",
+          "sha256": "259c6a44de1f70200c4d1d3a5aca8e40ba5e5f8856a1fd714cf273de52cbac44",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/Base.BM5mBVIv.css"
+        },
+        {
+          "ficheiro": "/_astro/leitura.TndJzC6O.css",
+          "sha256": "c96affefd00a2dd221cd89e2086e266a2e7e0e3cfd4ce504551a72b45b60af9e",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/leitura.TndJzC6O.css"
+        }
+      ]
+    },
+    {
+      "familia": "politica",
+      "lang": "en",
+      "rota": "/en/method",
+      "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas/politica-en.html",
+      "sha256": "697b669f40b744d2da9bfb43633366ba07a12d7a29bc17ea2a5322e2bad7c8dd",
+      "folhas": [
+        {
+          "ficheiro": "/_astro/Base.BM5mBVIv.css",
+          "sha256": "259c6a44de1f70200c4d1d3a5aca8e40ba5e5f8856a1fd714cf273de52cbac44",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/Base.BM5mBVIv.css"
+        },
+        {
+          "ficheiro": "/_astro/leitura.TndJzC6O.css",
+          "sha256": "c96affefd00a2dd221cd89e2086e266a2e7e0e3cfd4ce504551a72b45b60af9e",
+          "copia": "design/especime-v3/medicoes/h4-2026-10-06/folhas-antes/leitura.TndJzC6O.css"
+        }
+      ]
+    }
+  ],
+  "capturas": [
+    {
+      "familia": "primeira",
+      "lang": "pt",
+      "largura": 390,
+      "rota": "/",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-390-antes.png",
+      "sha256": "f23f6f429f4cc8d1eba1c8fb0466bd1cc530bc75206587700c6c8c97f19430d6",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-390-antes.png",
+      "sha256_recorte": "693d3e41fd2d0908ecbfebb0ad422ca928e23bdd954a3a252250987886ca7494",
+      "medidas": {
+        "documento": 390,
+        "janela": 390,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 18,
+            "y": 0,
+            "largura": 67.5,
+            "altura": 44,
+            "direita": 85.5
+          },
+          {
+            "texto": "Lugares",
+            "x": 91.5,
+            "y": 0,
+            "largura": 56.578125,
+            "altura": 44,
+            "direita": 148.078125
+          },
+          {
+            "texto": "Temas",
+            "x": 154.078125,
+            "y": 0,
+            "largura": 42.59375,
+            "altura": 44,
+            "direita": 196.671875
+          },
+          {
+            "texto": "Estudos",
+            "x": 202.671875,
+            "y": 0,
+            "largura": 57.390625,
+            "altura": 44,
+            "direita": 260.0625
+          },
+          {
+            "texto": "Europa",
+            "x": 266.0625,
+            "y": 0,
+            "largura": 50,
+            "altura": 44,
+            "direita": 316.0625
+          },
+          {
+            "texto": "Sobre",
+            "x": 322.0625,
+            "y": 0,
+            "largura": 39.59375,
+            "altura": 44,
+            "direita": 361.65625
+          }
+        ],
+        "gap": 6,
+        "letra": "13px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "primeira",
+      "lang": "pt",
+      "largura": 768,
+      "rota": "/",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-768-antes.png",
+      "sha256": "970f9c0b1622de20952a29490c1114a9369fd6b9b109c812a2c943d5a9cea097",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-768-antes.png",
+      "sha256_recorte": "cfbaa50db20bec0f72539e8c4c4ce0c2222c0e470d86d38d06f1f0df045a9aa0",
+      "medidas": {
+        "documento": 768,
+        "janela": 768,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 30.71875,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 114.609375
+          },
+          {
+            "texto": "Lugares",
+            "x": 136.109375,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 206.625
+          },
+          {
+            "texto": "Temas",
+            "x": 228.125,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 281.015625
+          },
+          {
+            "texto": "Estudos",
+            "x": 302.515625,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 373.984375
+          },
+          {
+            "texto": "Europa",
+            "x": 395.484375,
+            "y": 0,
+            "largura": 62.1875,
+            "altura": 44,
+            "direita": 457.671875
+          },
+          {
+            "texto": "Sobre",
+            "x": 479.171875,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 528.609375
+          }
+        ],
+        "gap": 21.504,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "primeira",
+      "lang": "pt",
+      "largura": 1024,
+      "rota": "/",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-1024-antes.png",
+      "sha256": "73fa4990e03391501bad8c28625067f0dc989b524d5b9bbcf7460168dfdda0eb",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-1024-antes.png",
+      "sha256_recorte": "103b822c17840c78ddff54e474561755ef672e0195d9a6878962bcb60a064fac",
+      "medidas": {
+        "documento": 1024,
+        "janela": 1024,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 40.953125,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 124.84375
+          },
+          {
+            "texto": "Lugares",
+            "x": 153.515625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 224.03125
+          },
+          {
+            "texto": "Temas",
+            "x": 252.703125,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 305.59375
+          },
+          {
+            "texto": "Estudos",
+            "x": 334.265625,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 405.734375
+          },
+          {
+            "texto": "Europa",
+            "x": 434.40625,
+            "y": 0,
+            "largura": 62.1875,
+            "altura": 44,
+            "direita": 496.59375
+          },
+          {
+            "texto": "Sobre",
+            "x": 525.265625,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 574.703125
+          }
+        ],
+        "gap": 28.672,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "primeira",
+      "lang": "pt",
+      "largura": 1280,
+      "rota": "/",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-1280-antes.png",
+      "sha256": "040d8074b251f791a3f09632de620a8c3a2680e73daae397e7f56b354e046415",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-1280-antes.png",
+      "sha256_recorte": "bfa7a654db40e58e645eb60b71f04b95051e2f21691ea3e4ed28c1028916c2e8",
+      "medidas": {
+        "documento": 1280,
+        "janela": 1280,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 94,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 177.890625
+          },
+          {
+            "texto": "Lugares",
+            "x": 211.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 282.40625
+          },
+          {
+            "texto": "Temas",
+            "x": 316.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 369.296875
+          },
+          {
+            "texto": "Estudos",
+            "x": 403.296875,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 474.765625
+          },
+          {
+            "texto": "Europa",
+            "x": 508.765625,
+            "y": 0,
+            "largura": 62.1875,
+            "altura": 44,
+            "direita": 570.953125
+          },
+          {
+            "texto": "Sobre",
+            "x": 604.953125,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 654.390625
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "primeira",
+      "lang": "pt",
+      "largura": 1600,
+      "rota": "/",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-1600-antes.png",
+      "sha256": "881da132992197073cda972ce592683bdb6291321ddd14617ef58467e2145694",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-1600-antes.png",
+      "sha256_recorte": "bfa7a654db40e58e645eb60b71f04b95051e2f21691ea3e4ed28c1028916c2e8",
+      "medidas": {
+        "documento": 1600,
+        "janela": 1600,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 254,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 337.890625
+          },
+          {
+            "texto": "Lugares",
+            "x": 371.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 442.40625
+          },
+          {
+            "texto": "Temas",
+            "x": 476.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 529.296875
+          },
+          {
+            "texto": "Estudos",
+            "x": 563.296875,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 634.765625
+          },
+          {
+            "texto": "Europa",
+            "x": 668.765625,
+            "y": 0,
+            "largura": 62.1875,
+            "altura": 44,
+            "direita": 730.953125
+          },
+          {
+            "texto": "Sobre",
+            "x": 764.953125,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 814.390625
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "primeira",
+      "lang": "en",
+      "largura": 390,
+      "rota": "/en",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-390-antes.png",
+      "sha256": "898c54e939c5a8d6c2b0682e264cb415c92798d9f77fdc2f4eb0b2778ff23052",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-390-antes.png",
+      "sha256_recorte": "695877bfb14209d9f96223d96adeba861f532be6b0e24d8a702fb2c3b3cb2d32",
+      "medidas": {
+        "documento": 390,
+        "janela": 390,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 18,
+            "y": 0,
+            "largura": 67.5,
+            "altura": 44,
+            "direita": 85.5
+          },
+          {
+            "texto": "Places",
+            "x": 91.5,
+            "y": 0,
+            "largura": 46.09375,
+            "altura": 44,
+            "direita": 137.59375
+          },
+          {
+            "texto": "Themes",
+            "x": 143.59375,
+            "y": 0,
+            "largura": 51.328125,
+            "altura": 44,
+            "direita": 194.921875
+          },
+          {
+            "texto": "Studies",
+            "x": 200.921875,
+            "y": 0,
+            "largura": 52.546875,
+            "altura": 44,
+            "direita": 253.46875
+          },
+          {
+            "texto": "Europe",
+            "x": 259.46875,
+            "y": 0,
+            "largura": 50.015625,
+            "altura": 44,
+            "direita": 309.484375
+          },
+          {
+            "texto": "About",
+            "x": 315.484375,
+            "y": 0,
+            "largura": 43.734375,
+            "altura": 44,
+            "direita": 359.21875
+          }
+        ],
+        "gap": 6,
+        "letra": "13px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "primeira",
+      "lang": "en",
+      "largura": 768,
+      "rota": "/en",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-768-antes.png",
+      "sha256": "ba656e4be3b3b346419a8d3367fc823a4c638e8f8eee028641b4dec23ec1bcfa",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-768-antes.png",
+      "sha256_recorte": "4acab99d03dc9571f1f99e3fcf71804471d01533510513b792c39e434d436b59",
+      "medidas": {
+        "documento": 768,
+        "janela": 768,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 30.71875,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 114.609375
+          },
+          {
+            "texto": "Places",
+            "x": 136.109375,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 193.796875
+          },
+          {
+            "texto": "Themes",
+            "x": 215.296875,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 279.03125
+          },
+          {
+            "texto": "Studies",
+            "x": 300.53125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 366.421875
+          },
+          {
+            "texto": "Europe",
+            "x": 387.921875,
+            "y": 0,
+            "largura": 62.21875,
+            "altura": 44,
+            "direita": 450.140625
+          },
+          {
+            "texto": "About",
+            "x": 471.640625,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 525.84375
+          }
+        ],
+        "gap": 21.504,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "primeira",
+      "lang": "en",
+      "largura": 1024,
+      "rota": "/en",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-1024-antes.png",
+      "sha256": "ceb236c3475b69c5a91bbf0cf7fab6bf49d6a86907a2e42ccb3ca2a28a160a05",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-1024-antes.png",
+      "sha256_recorte": "b70fd4e7ae9f793953697c7e542983c94a3dd1bc77f7bab17061070bb786ebfe",
+      "medidas": {
+        "documento": 1024,
+        "janela": 1024,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 40.953125,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 124.84375
+          },
+          {
+            "texto": "Places",
+            "x": 153.515625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 211.203125
+          },
+          {
+            "texto": "Themes",
+            "x": 239.875,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 303.609375
+          },
+          {
+            "texto": "Studies",
+            "x": 332.28125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 398.171875
+          },
+          {
+            "texto": "Europe",
+            "x": 426.84375,
+            "y": 0,
+            "largura": 62.21875,
+            "altura": 44,
+            "direita": 489.0625
+          },
+          {
+            "texto": "About",
+            "x": 517.734375,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 571.9375
+          }
+        ],
+        "gap": 28.672,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "primeira",
+      "lang": "en",
+      "largura": 1280,
+      "rota": "/en",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-1280-antes.png",
+      "sha256": "72264c7dcc212c224b4d5bb8c5696582eb2f7e8b4da653d5a955ef58ea57a335",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-1280-antes.png",
+      "sha256_recorte": "2d18762d55129f7eeb3e63d8cdd5cb3d54bd0c4cab3bd5aed89716b47735e448",
+      "medidas": {
+        "documento": 1280,
+        "janela": 1280,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 94,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 177.890625
+          },
+          {
+            "texto": "Places",
+            "x": 211.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 269.578125
+          },
+          {
+            "texto": "Themes",
+            "x": 303.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 367.3125
+          },
+          {
+            "texto": "Studies",
+            "x": 401.3125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 467.203125
+          },
+          {
+            "texto": "Europe",
+            "x": 501.203125,
+            "y": 0,
+            "largura": 62.21875,
+            "altura": 44,
+            "direita": 563.421875
+          },
+          {
+            "texto": "About",
+            "x": 597.421875,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 651.625
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "primeira",
+      "lang": "en",
+      "largura": 1600,
+      "rota": "/en",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-1600-antes.png",
+      "sha256": "0705b63bad15864e20888b997fa950a76c42a10bec8368387e278b6e25e5f162",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-1600-antes.png",
+      "sha256_recorte": "2d18762d55129f7eeb3e63d8cdd5cb3d54bd0c4cab3bd5aed89716b47735e448",
+      "medidas": {
+        "documento": 1600,
+        "janela": 1600,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 254,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 337.890625
+          },
+          {
+            "texto": "Places",
+            "x": 371.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 429.578125
+          },
+          {
+            "texto": "Themes",
+            "x": 463.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 527.3125
+          },
+          {
+            "texto": "Studies",
+            "x": 561.3125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 627.203125
+          },
+          {
+            "texto": "Europe",
+            "x": 661.203125,
+            "y": 0,
+            "largura": 62.21875,
+            "altura": 44,
+            "direita": 723.421875
+          },
+          {
+            "texto": "About",
+            "x": 757.421875,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 811.625
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "explicacao",
+      "lang": "pt",
+      "largura": 390,
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-390-antes.png",
+      "sha256": "c196ab961f7f9c14340426e85640ee20645f5f68d049fb77016c9bf98f08bce8",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-390-antes.png",
+      "sha256_recorte": "a83b0b6be60b83d1a67f14a690b4a2da7dacf191ebf05e00c7d6aad2395beb46",
+      "medidas": {
+        "documento": 390,
+        "janela": 390,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 18,
+            "y": 0,
+            "largura": 67.5,
+            "altura": 44,
+            "direita": 85.5
+          },
+          {
+            "texto": "Lugares",
+            "x": 91.5,
+            "y": 0,
+            "largura": 56.578125,
+            "altura": 44,
+            "direita": 148.078125
+          },
+          {
+            "texto": "Temas",
+            "x": 154.078125,
+            "y": 0,
+            "largura": 42.59375,
+            "altura": 44,
+            "direita": 196.671875
+          },
+          {
+            "texto": "Estudos",
+            "x": 202.671875,
+            "y": 0,
+            "largura": 57.390625,
+            "altura": 44,
+            "direita": 260.0625
+          },
+          {
+            "texto": "Europa",
+            "x": 266.0625,
+            "y": 0,
+            "largura": 50,
+            "altura": 44,
+            "direita": 316.0625
+          },
+          {
+            "texto": "Sobre",
+            "x": 322.0625,
+            "y": 0,
+            "largura": 39.59375,
+            "altura": 44,
+            "direita": 361.65625
+          }
+        ],
+        "gap": 6,
+        "letra": "13px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "explicacao",
+      "lang": "pt",
+      "largura": 768,
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-768-antes.png",
+      "sha256": "ccdbb56a86af20a72736a188ec2a7d8ddbfd3a0b1bbd58777446a41b4377ee89",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-768-antes.png",
+      "sha256_recorte": "7fdef6f882170b3c3d34d1171b018e06bffcdd018bb4df7b3f86f55bb9688ece",
+      "medidas": {
+        "documento": 768,
+        "janela": 768,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 30.71875,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 114.609375
+          },
+          {
+            "texto": "Lugares",
+            "x": 136.109375,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 206.625
+          },
+          {
+            "texto": "Temas",
+            "x": 228.125,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 281.015625
+          },
+          {
+            "texto": "Estudos",
+            "x": 302.515625,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 373.984375
+          },
+          {
+            "texto": "Europa",
+            "x": 395.484375,
+            "y": 0,
+            "largura": 62.1875,
+            "altura": 44,
+            "direita": 457.671875
+          },
+          {
+            "texto": "Sobre",
+            "x": 479.171875,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 528.609375
+          }
+        ],
+        "gap": 21.504,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "explicacao",
+      "lang": "pt",
+      "largura": 1024,
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-1024-antes.png",
+      "sha256": "b74e0c82143ccf3370e4fb458ade24d1c63fb9de169ade50c61442a795f5f3f7",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-1024-antes.png",
+      "sha256_recorte": "70fb4ed244728c76c42c8eddb2593d612dab26030aca50692002cd1284bde619",
+      "medidas": {
+        "documento": 1024,
+        "janela": 1024,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 40.953125,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 124.84375
+          },
+          {
+            "texto": "Lugares",
+            "x": 153.515625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 224.03125
+          },
+          {
+            "texto": "Temas",
+            "x": 252.703125,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 305.59375
+          },
+          {
+            "texto": "Estudos",
+            "x": 334.265625,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 405.734375
+          },
+          {
+            "texto": "Europa",
+            "x": 434.40625,
+            "y": 0,
+            "largura": 62.1875,
+            "altura": 44,
+            "direita": 496.59375
+          },
+          {
+            "texto": "Sobre",
+            "x": 525.265625,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 574.703125
+          }
+        ],
+        "gap": 28.672,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "explicacao",
+      "lang": "pt",
+      "largura": 1280,
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-1280-antes.png",
+      "sha256": "9142f2a0640663e09faa4d0f995f42b0886502c725e0bb40cafad2b37857c6b9",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-1280-antes.png",
+      "sha256_recorte": "bf46aa2d139912b1fd31760ff772df330d280a9f612f4b25ebcca084ad834315",
+      "medidas": {
+        "documento": 1280,
+        "janela": 1280,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 94,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 177.890625
+          },
+          {
+            "texto": "Lugares",
+            "x": 211.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 282.40625
+          },
+          {
+            "texto": "Temas",
+            "x": 316.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 369.296875
+          },
+          {
+            "texto": "Estudos",
+            "x": 403.296875,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 474.765625
+          },
+          {
+            "texto": "Europa",
+            "x": 508.765625,
+            "y": 0,
+            "largura": 62.1875,
+            "altura": 44,
+            "direita": 570.953125
+          },
+          {
+            "texto": "Sobre",
+            "x": 604.953125,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 654.390625
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "explicacao",
+      "lang": "pt",
+      "largura": 1600,
+      "rota": "/explicacoes/dinheiro-do-estado-2026",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/explicacao-pt-1600-antes.png",
+      "sha256": "654a9e7115e3b90c759bd3abe7604e9d8cd8769e56edbbe478457f85b53297a3",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-1600-antes.png",
+      "sha256_recorte": "bf46aa2d139912b1fd31760ff772df330d280a9f612f4b25ebcca084ad834315",
+      "medidas": {
+        "documento": 1600,
+        "janela": 1600,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 254,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 337.890625
+          },
+          {
+            "texto": "Lugares",
+            "x": 371.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 442.40625
+          },
+          {
+            "texto": "Temas",
+            "x": 476.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 529.296875
+          },
+          {
+            "texto": "Estudos",
+            "x": 563.296875,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 634.765625
+          },
+          {
+            "texto": "Europa",
+            "x": 668.765625,
+            "y": 0,
+            "largura": 62.1875,
+            "altura": 44,
+            "direita": 730.953125
+          },
+          {
+            "texto": "Sobre",
+            "x": 764.953125,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 814.390625
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "explicacao",
+      "lang": "en",
+      "largura": 390,
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-390-antes.png",
+      "sha256": "58cebdbdd50721b001699f9fe5a0563265c33dfb4732b32d70cdd93096cb134b",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-390-antes.png",
+      "sha256_recorte": "932be2b25038a74b37a138e2002eb641e0f0fffb798e388eecba032ac44a6410",
+      "medidas": {
+        "documento": 390,
+        "janela": 390,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 18,
+            "y": 0,
+            "largura": 67.5,
+            "altura": 44,
+            "direita": 85.5
+          },
+          {
+            "texto": "Places",
+            "x": 91.5,
+            "y": 0,
+            "largura": 46.09375,
+            "altura": 44,
+            "direita": 137.59375
+          },
+          {
+            "texto": "Themes",
+            "x": 143.59375,
+            "y": 0,
+            "largura": 51.328125,
+            "altura": 44,
+            "direita": 194.921875
+          },
+          {
+            "texto": "Studies",
+            "x": 200.921875,
+            "y": 0,
+            "largura": 52.546875,
+            "altura": 44,
+            "direita": 253.46875
+          },
+          {
+            "texto": "Europe",
+            "x": 259.46875,
+            "y": 0,
+            "largura": 50.015625,
+            "altura": 44,
+            "direita": 309.484375
+          },
+          {
+            "texto": "About",
+            "x": 315.484375,
+            "y": 0,
+            "largura": 43.734375,
+            "altura": 44,
+            "direita": 359.21875
+          }
+        ],
+        "gap": 6,
+        "letra": "13px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "explicacao",
+      "lang": "en",
+      "largura": 768,
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-768-antes.png",
+      "sha256": "1a8d9e976bce6c7094303804d9349d132975497e3bfaa768f2a06503136d16a0",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-768-antes.png",
+      "sha256_recorte": "282ea2e773666f4d1398b89762de349c16188548fd2989a6e05a86e11d13c25e",
+      "medidas": {
+        "documento": 768,
+        "janela": 768,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 30.71875,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 114.609375
+          },
+          {
+            "texto": "Places",
+            "x": 136.109375,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 193.796875
+          },
+          {
+            "texto": "Themes",
+            "x": 215.296875,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 279.03125
+          },
+          {
+            "texto": "Studies",
+            "x": 300.53125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 366.421875
+          },
+          {
+            "texto": "Europe",
+            "x": 387.921875,
+            "y": 0,
+            "largura": 62.21875,
+            "altura": 44,
+            "direita": 450.140625
+          },
+          {
+            "texto": "About",
+            "x": 471.640625,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 525.84375
+          }
+        ],
+        "gap": 21.504,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "explicacao",
+      "lang": "en",
+      "largura": 1024,
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-1024-antes.png",
+      "sha256": "cd2081bb5c686ab3b257c2129d49acacf8e7bbb437d34e92e0752d5dd61dcc31",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-1024-antes.png",
+      "sha256_recorte": "4004cb3cb0d5f20eaf5ddb9f060e91f76148f3f84597c0742db8165d2e630904",
+      "medidas": {
+        "documento": 1024,
+        "janela": 1024,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 40.953125,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 124.84375
+          },
+          {
+            "texto": "Places",
+            "x": 153.515625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 211.203125
+          },
+          {
+            "texto": "Themes",
+            "x": 239.875,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 303.609375
+          },
+          {
+            "texto": "Studies",
+            "x": 332.28125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 398.171875
+          },
+          {
+            "texto": "Europe",
+            "x": 426.84375,
+            "y": 0,
+            "largura": 62.21875,
+            "altura": 44,
+            "direita": 489.0625
+          },
+          {
+            "texto": "About",
+            "x": 517.734375,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 571.9375
+          }
+        ],
+        "gap": 28.672,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "explicacao",
+      "lang": "en",
+      "largura": 1280,
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-1280-antes.png",
+      "sha256": "7283c1828d07230f45fcdcb376ea64ad389de22124c167651054389a61f51b60",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-1280-antes.png",
+      "sha256_recorte": "0bcb854a004f0315f48c5d3425fb424f635e02640e4e2affa397953f89b88ac0",
+      "medidas": {
+        "documento": 1280,
+        "janela": 1280,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 94,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 177.890625
+          },
+          {
+            "texto": "Places",
+            "x": 211.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 269.578125
+          },
+          {
+            "texto": "Themes",
+            "x": 303.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 367.3125
+          },
+          {
+            "texto": "Studies",
+            "x": 401.3125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 467.203125
+          },
+          {
+            "texto": "Europe",
+            "x": 501.203125,
+            "y": 0,
+            "largura": 62.21875,
+            "altura": 44,
+            "direita": 563.421875
+          },
+          {
+            "texto": "About",
+            "x": 597.421875,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 651.625
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "explicacao",
+      "lang": "en",
+      "largura": 1600,
+      "rota": "/en/explainers/dinheiro-do-estado-2026",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/explicacao-en-1600-antes.png",
+      "sha256": "7a121f0e646693266173d25ad8b33ac6963fc62798aa2ea4bea8262376cbfad2",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-1600-antes.png",
+      "sha256_recorte": "0bcb854a004f0315f48c5d3425fb424f635e02640e4e2affa397953f89b88ac0",
+      "medidas": {
+        "documento": 1600,
+        "janela": 1600,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 254,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 337.890625
+          },
+          {
+            "texto": "Places",
+            "x": 371.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 429.578125
+          },
+          {
+            "texto": "Themes",
+            "x": 463.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 527.3125
+          },
+          {
+            "texto": "Studies",
+            "x": 561.3125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 627.203125
+          },
+          {
+            "texto": "Europe",
+            "x": 661.203125,
+            "y": 0,
+            "largura": 62.21875,
+            "altura": 44,
+            "direita": 723.421875
+          },
+          {
+            "texto": "About",
+            "x": 757.421875,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 811.625
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "politica",
+      "lang": "pt",
+      "largura": 390,
+      "rota": "/metodo",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/politica-pt-390.png",
+      "sha256": "f06c8d78f495d8da294d1314aea343b4a870af3376668909b502b25a6af8e232",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/lugares-ia-pt-390.png",
+      "sha256_recorte": "7e3822550c259a07c8fe9e10d1e9603c65ca86fa1f4844044bbef691b762f959",
+      "medidas": {
+        "documento": 390,
+        "janela": 390,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 18,
+            "y": 0,
+            "largura": 67.5,
+            "altura": 44,
+            "direita": 85.5
+          },
+          {
+            "texto": "Lugares",
+            "x": 91.5,
+            "y": 0,
+            "largura": 56.578125,
+            "altura": 44,
+            "direita": 148.078125
+          },
+          {
+            "texto": "Temas",
+            "x": 154.078125,
+            "y": 0,
+            "largura": 42.59375,
+            "altura": 44,
+            "direita": 196.671875
+          },
+          {
+            "texto": "Estudos",
+            "x": 202.671875,
+            "y": 0,
+            "largura": 57.390625,
+            "altura": 44,
+            "direita": 260.0625
+          },
+          {
+            "texto": "Europa",
+            "x": 266.0625,
+            "y": 0,
+            "largura": 50,
+            "altura": 44,
+            "direita": 316.0625
+          },
+          {
+            "texto": "Sobre",
+            "x": 322.0625,
+            "y": 0,
+            "largura": 39.59375,
+            "altura": 44,
+            "direita": 361.65625
+          }
+        ],
+        "gap": 6,
+        "letra": "13px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "politica",
+      "lang": "pt",
+      "largura": 1280,
+      "rota": "/metodo",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/politica-pt-1280.png",
+      "sha256": "dcfaecd39cc969810c42dfe95e957254a1acba7972f9bc17c88e28a512a48c65",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/lugares-ia-pt-1280.png",
+      "sha256_recorte": "d132dc9f4884026d550a9bfda58e6d4701959966882f978b192f705c438de036",
+      "medidas": {
+        "documento": 1280,
+        "janela": 1280,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 94,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 177.890625
+          },
+          {
+            "texto": "Lugares",
+            "x": 211.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 282.40625
+          },
+          {
+            "texto": "Temas",
+            "x": 316.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 369.296875
+          },
+          {
+            "texto": "Estudos",
+            "x": 403.296875,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 474.765625
+          },
+          {
+            "texto": "Europa",
+            "x": 508.765625,
+            "y": 0,
+            "largura": 62.1875,
+            "altura": 44,
+            "direita": 570.953125
+          },
+          {
+            "texto": "Sobre",
+            "x": 604.953125,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 654.390625
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "politica",
+      "lang": "en",
+      "largura": 390,
+      "rota": "/en/method",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/politica-en-390.png",
+      "sha256": "fb5841cb2543fd71e2a5b48c60f39fb5b9f61269e47f463dfa3b41da288d8d02",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/lugares-ia-en-390.png",
+      "sha256_recorte": "cabb63c851a75947670a4c5eee0103e388083c745af5b9ce66187e6e04082dc3",
+      "medidas": {
+        "documento": 390,
+        "janela": 390,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 18,
+            "y": 0,
+            "largura": 67.5,
+            "altura": 44,
+            "direita": 85.5
+          },
+          {
+            "texto": "Places",
+            "x": 91.5,
+            "y": 0,
+            "largura": 46.09375,
+            "altura": 44,
+            "direita": 137.59375
+          },
+          {
+            "texto": "Themes",
+            "x": 143.59375,
+            "y": 0,
+            "largura": 51.328125,
+            "altura": 44,
+            "direita": 194.921875
+          },
+          {
+            "texto": "Studies",
+            "x": 200.921875,
+            "y": 0,
+            "largura": 52.546875,
+            "altura": 44,
+            "direita": 253.46875
+          },
+          {
+            "texto": "Europe",
+            "x": 259.46875,
+            "y": 0,
+            "largura": 50.015625,
+            "altura": 44,
+            "direita": 309.484375
+          },
+          {
+            "texto": "About",
+            "x": 315.484375,
+            "y": 0,
+            "largura": 43.734375,
+            "altura": 44,
+            "direita": 359.21875
+          }
+        ],
+        "gap": 6,
+        "letra": "13px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "politica",
+      "lang": "en",
+      "largura": 1280,
+      "rota": "/en/method",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/politica-en-1280.png",
+      "sha256": "3d3915c113a2011f55524f5a30e57f2c16bc14d9ccf6fb174b19e32db1ac19fa",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/lugares-ia-en-1280.png",
+      "sha256_recorte": "2dd3f96a2575b66cf12e363bcfea2d4380e4e0a4f06fec8a7b1ee6358a198aba",
+      "medidas": {
+        "documento": 1280,
+        "janela": 1280,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 94,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 177.890625
+          },
+          {
+            "texto": "Places",
+            "x": 211.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 269.578125
+          },
+          {
+            "texto": "Themes",
+            "x": 303.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 367.3125
+          },
+          {
+            "texto": "Studies",
+            "x": 401.3125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 467.203125
+          },
+          {
+            "texto": "Europe",
+            "x": 501.203125,
+            "y": 0,
+            "largura": 62.21875,
+            "altura": 44,
+            "direita": 563.421875
+          },
+          {
+            "texto": "About",
+            "x": 597.421875,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 651.625
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    }
+  ],
+  "erros": []
+}

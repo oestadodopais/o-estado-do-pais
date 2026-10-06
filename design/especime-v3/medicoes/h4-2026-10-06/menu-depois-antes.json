@@ -1,0 +1,591 @@
+{
+  "comando": "node design/especime-v3/medicoes/h4-2026-10-06/medir-menu.mjs depois",
+  "construcao": {
+    "commit": "cb9a22296d17bed881a0f091b8f5864dcd72a571",
+    "ref": "h4-2026-10-06",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-06T09:46:20.180Z"
+  },
+  "cabeca": "cb9a22296d17bed881a0f091b8f5864dcd72a571",
+  "fase": "depois",
+  "medidas": [
+    {
+      "lang": "pt",
+      "largura": 360,
+      "forma": "servida",
+      "coluna": 324,
+      "natural": 343.65625,
+      "linhas": 2,
+      "portas": 6,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/",
+          "x": 18,
+          "y": 0,
+          "largura": 67.5,
+          "altura": 44,
+          "direita": 85.5,
+          "fundo": 44
+        },
+        {
+          "texto": "Lugares",
+          "href": "/lugares/",
+          "x": 91.5,
+          "y": 0,
+          "largura": 56.578125,
+          "altura": 44,
+          "direita": 148.078125,
+          "fundo": 44
+        },
+        {
+          "texto": "Temas",
+          "href": "/temas/",
+          "x": 154.078125,
+          "y": 0,
+          "largura": 42.59375,
+          "altura": 44,
+          "direita": 196.671875,
+          "fundo": 44
+        },
+        {
+          "texto": "Estudos",
+          "href": "/estudos",
+          "x": 202.671875,
+          "y": 0,
+          "largura": 57.390625,
+          "altura": 44,
+          "direita": 260.0625,
+          "fundo": 44
+        },
+        {
+          "texto": "Europa",
+          "href": "/uniao-europeia",
+          "x": 266.0625,
+          "y": 0,
+          "largura": 50,
+          "altura": 44,
+          "direita": 316.0625,
+          "fundo": 44
+        },
+        {
+          "texto": "Sobre",
+          "href": "/sobre",
+          "x": 18,
+          "y": 44,
+          "largura": 39.59375,
+          "altura": 44,
+          "direita": 57.59375,
+          "fundo": 88
+        }
+      ],
+      "ultima": {
+        "texto": "Sobre",
+        "href": "/sobre",
+        "x": 18,
+        "y": 44,
+        "largura": 39.59375,
+        "altura": 44,
+        "direita": 57.59375,
+        "fundo": 88
+      },
+      "gap": 6,
+      "folgas": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "letra": "13px",
+      "espaco_das_letras": "normal",
+      "sem_transbordo": true,
+      "cabe_em_duas": true,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-360-antes.png",
+      "sha256": "b20af989b748a25167144c716567e6bf04d9c591e12b39e6158cb2b713c3e868"
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "forma": "servida",
+      "coluna": 354,
+      "natural": 343.65625,
+      "linhas": 1,
+      "portas": 6,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/",
+          "x": 18,
+          "y": 0,
+          "largura": 67.5,
+          "altura": 44,
+          "direita": 85.5,
+          "fundo": 44
+        },
+        {
+          "texto": "Lugares",
+          "href": "/lugares/",
+          "x": 91.5,
+          "y": 0,
+          "largura": 56.578125,
+          "altura": 44,
+          "direita": 148.078125,
+          "fundo": 44
+        },
+        {
+          "texto": "Temas",
+          "href": "/temas/",
+          "x": 154.078125,
+          "y": 0,
+          "largura": 42.59375,
+          "altura": 44,
+          "direita": 196.671875,
+          "fundo": 44
+        },
+        {
+          "texto": "Estudos",
+          "href": "/estudos",
+          "x": 202.671875,
+          "y": 0,
+          "largura": 57.390625,
+          "altura": 44,
+          "direita": 260.0625,
+          "fundo": 44
+        },
+        {
+          "texto": "Europa",
+          "href": "/uniao-europeia",
+          "x": 266.0625,
+          "y": 0,
+          "largura": 50,
+          "altura": 44,
+          "direita": 316.0625,
+          "fundo": 44
+        },
+        {
+          "texto": "Sobre",
+          "href": "/sobre",
+          "x": 322.0625,
+          "y": 0,
+          "largura": 39.59375,
+          "altura": 44,
+          "direita": 361.65625,
+          "fundo": 44
+        }
+      ],
+      "ultima": {
+        "texto": "Sobre",
+        "href": "/sobre",
+        "x": 322.0625,
+        "y": 0,
+        "largura": 39.59375,
+        "altura": 44,
+        "direita": 361.65625,
+        "fundo": 44
+      },
+      "gap": 6,
+      "folgas": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "letra": "13px",
+      "espaco_das_letras": "normal",
+      "sem_transbordo": true,
+      "cabe_em_duas": true,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-390-antes.png",
+      "sha256": "4fcfadedca1323033b54aed6aacf2bbf44c89affd8d68c70f7dcf370f59f9eef"
+    },
+    {
+      "lang": "pt",
+      "largura": 768,
+      "forma": "servida",
+      "coluna": 707,
+      "natural": 497.910625,
+      "linhas": 1,
+      "portas": 6,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/",
+          "x": 30.71875,
+          "y": 0,
+          "largura": 83.890625,
+          "altura": 44,
+          "direita": 114.609375,
+          "fundo": 44
+        },
+        {
+          "texto": "Lugares",
+          "href": "/lugares/",
+          "x": 136.109375,
+          "y": 0,
+          "largura": 70.515625,
+          "altura": 44,
+          "direita": 206.625,
+          "fundo": 44
+        },
+        {
+          "texto": "Temas",
+          "href": "/temas/",
+          "x": 228.125,
+          "y": 0,
+          "largura": 52.890625,
+          "altura": 44,
+          "direita": 281.015625,
+          "fundo": 44
+        },
+        {
+          "texto": "Estudos",
+          "href": "/estudos",
+          "x": 302.515625,
+          "y": 0,
+          "largura": 71.46875,
+          "altura": 44,
+          "direita": 373.984375,
+          "fundo": 44
+        },
+        {
+          "texto": "Europa",
+          "href": "/uniao-europeia",
+          "x": 395.484375,
+          "y": 0,
+          "largura": 62.1875,
+          "altura": 44,
+          "direita": 457.671875,
+          "fundo": 44
+        },
+        {
+          "texto": "Sobre",
+          "href": "/sobre",
+          "x": 479.171875,
+          "y": 0,
+          "largura": 49.4375,
+          "altura": 44,
+          "direita": 528.609375,
+          "fundo": 44
+        }
+      ],
+      "ultima": {
+        "texto": "Sobre",
+        "href": "/sobre",
+        "x": 479.171875,
+        "y": 0,
+        "largura": 49.4375,
+        "altura": 44,
+        "direita": 528.609375,
+        "fundo": 44
+      },
+      "gap": 21.504,
+      "folgas": [
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5
+      ],
+      "letra": "15px",
+      "espaco_das_letras": "0.75px",
+      "sem_transbordo": true,
+      "cabe_em_duas": true,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-768-antes.png",
+      "sha256": "03d6e5eb68965e280dd5dc29c13108ab6e51590a0e88aa3ce5886b0049075772"
+    },
+    {
+      "lang": "en",
+      "largura": 360,
+      "forma": "servida",
+      "coluna": 324,
+      "natural": 341.21875,
+      "linhas": 2,
+      "portas": 6,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/en",
+          "x": 18,
+          "y": 0,
+          "largura": 67.5,
+          "altura": 44,
+          "direita": 85.5,
+          "fundo": 44
+        },
+        {
+          "texto": "Places",
+          "href": "/en/places/",
+          "x": 91.5,
+          "y": 0,
+          "largura": 46.09375,
+          "altura": 44,
+          "direita": 137.59375,
+          "fundo": 44
+        },
+        {
+          "texto": "Themes",
+          "href": "/en/themes/",
+          "x": 143.59375,
+          "y": 0,
+          "largura": 51.328125,
+          "altura": 44,
+          "direita": 194.921875,
+          "fundo": 44
+        },
+        {
+          "texto": "Studies",
+          "href": "/en/studies",
+          "x": 200.921875,
+          "y": 0,
+          "largura": 52.546875,
+          "altura": 44,
+          "direita": 253.46875,
+          "fundo": 44
+        },
+        {
+          "texto": "Europe",
+          "href": "/en/european-union",
+          "x": 259.46875,
+          "y": 0,
+          "largura": 50.015625,
+          "altura": 44,
+          "direita": 309.484375,
+          "fundo": 44
+        },
+        {
+          "texto": "About",
+          "href": "/en/about",
+          "x": 18,
+          "y": 44,
+          "largura": 43.734375,
+          "altura": 44,
+          "direita": 61.734375,
+          "fundo": 88
+        }
+      ],
+      "ultima": {
+        "texto": "About",
+        "href": "/en/about",
+        "x": 18,
+        "y": 44,
+        "largura": 43.734375,
+        "altura": 44,
+        "direita": 61.734375,
+        "fundo": 88
+      },
+      "gap": 6,
+      "folgas": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "letra": "13px",
+      "espaco_das_letras": "normal",
+      "sem_transbordo": true,
+      "cabe_em_duas": true,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-360-antes.png",
+      "sha256": "f6c1542b9003360c63b9e9e9c1cc3b322d53f404afc5930f32b0cd9a02ab206f"
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "forma": "servida",
+      "coluna": 354,
+      "natural": 341.21875,
+      "linhas": 1,
+      "portas": 6,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/en",
+          "x": 18,
+          "y": 0,
+          "largura": 67.5,
+          "altura": 44,
+          "direita": 85.5,
+          "fundo": 44
+        },
+        {
+          "texto": "Places",
+          "href": "/en/places/",
+          "x": 91.5,
+          "y": 0,
+          "largura": 46.09375,
+          "altura": 44,
+          "direita": 137.59375,
+          "fundo": 44
+        },
+        {
+          "texto": "Themes",
+          "href": "/en/themes/",
+          "x": 143.59375,
+          "y": 0,
+          "largura": 51.328125,
+          "altura": 44,
+          "direita": 194.921875,
+          "fundo": 44
+        },
+        {
+          "texto": "Studies",
+          "href": "/en/studies",
+          "x": 200.921875,
+          "y": 0,
+          "largura": 52.546875,
+          "altura": 44,
+          "direita": 253.46875,
+          "fundo": 44
+        },
+        {
+          "texto": "Europe",
+          "href": "/en/european-union",
+          "x": 259.46875,
+          "y": 0,
+          "largura": 50.015625,
+          "altura": 44,
+          "direita": 309.484375,
+          "fundo": 44
+        },
+        {
+          "texto": "About",
+          "href": "/en/about",
+          "x": 315.484375,
+          "y": 0,
+          "largura": 43.734375,
+          "altura": 44,
+          "direita": 359.21875,
+          "fundo": 44
+        }
+      ],
+      "ultima": {
+        "texto": "About",
+        "href": "/en/about",
+        "x": 315.484375,
+        "y": 0,
+        "largura": 43.734375,
+        "altura": 44,
+        "direita": 359.21875,
+        "fundo": 44
+      },
+      "gap": 6,
+      "folgas": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "letra": "13px",
+      "espaco_das_letras": "normal",
+      "sem_transbordo": true,
+      "cabe_em_duas": true,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-390-antes.png",
+      "sha256": "2b8bcd125940af6f418cfd81108c6bbf8e230a9ef9188e54e60127dbc5caf111"
+    },
+    {
+      "lang": "en",
+      "largura": 768,
+      "forma": "servida",
+      "coluna": 707,
+      "natural": 495.145,
+      "linhas": 1,
+      "portas": 6,
+      "caixas": [
+        {
+          "texto": "Portugal",
+          "href": "/en",
+          "x": 30.71875,
+          "y": 0,
+          "largura": 83.890625,
+          "altura": 44,
+          "direita": 114.609375,
+          "fundo": 44
+        },
+        {
+          "texto": "Places",
+          "href": "/en/places/",
+          "x": 136.109375,
+          "y": 0,
+          "largura": 57.6875,
+          "altura": 44,
+          "direita": 193.796875,
+          "fundo": 44
+        },
+        {
+          "texto": "Themes",
+          "href": "/en/themes/",
+          "x": 215.296875,
+          "y": 0,
+          "largura": 63.734375,
+          "altura": 44,
+          "direita": 279.03125,
+          "fundo": 44
+        },
+        {
+          "texto": "Studies",
+          "href": "/en/studies",
+          "x": 300.53125,
+          "y": 0,
+          "largura": 65.890625,
+          "altura": 44,
+          "direita": 366.421875,
+          "fundo": 44
+        },
+        {
+          "texto": "Europe",
+          "href": "/en/european-union",
+          "x": 387.921875,
+          "y": 0,
+          "largura": 62.21875,
+          "altura": 44,
+          "direita": 450.140625,
+          "fundo": 44
+        },
+        {
+          "texto": "About",
+          "href": "/en/about",
+          "x": 471.640625,
+          "y": 0,
+          "largura": 54.203125,
+          "altura": 44,
+          "direita": 525.84375,
+          "fundo": 44
+        }
+      ],
+      "ultima": {
+        "texto": "About",
+        "href": "/en/about",
+        "x": 471.640625,
+        "y": 0,
+        "largura": 54.203125,
+        "altura": 44,
+        "direita": 525.84375,
+        "fundo": 44
+      },
+      "gap": 21.504,
+      "folgas": [
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5
+      ],
+      "letra": "15px",
+      "espaco_das_letras": "0.75px",
+      "sem_transbordo": true,
+      "cabe_em_duas": true,
+      "captura": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-768-antes.png",
+      "sha256": "bb325a4a7d90920886a0d32f51d444eb909b6eb410ab1b26531f243992dc2973"
+    }
+  ],
+  "nome_inteiro_cabe": false,
+  "politica": {
+    "rotas": {
+      "pt": "/metodo#politica-de-ia",
+      "en": "/en/method#politica-de-ia"
+    },
+    "rota_do_brief_existe": false
+  }
+}

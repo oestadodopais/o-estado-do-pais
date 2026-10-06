@@ -1,0 +1,6 @@
+{
+  "comando": "node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --politica",
+  "codigo": 0,
+  "duracao_segundos": 18.311,
+  "cabeca": "cb9a22296d17bed881a0f091b8f5864dcd72a571"
+}

@@ -1,0 +1,114 @@
+{
+  "comando": "node design/especime-v3/medicoes/h4-2026-10-06/provar-politica.mjs",
+  "intactas": [
+    {
+      "lang": "pt",
+      "ficheiro": "dist/metodo/index.html",
+      "sha256": "a7016a151d6ea856637cf22643102fc329b8fb11ec65902e077a0b18f0bbd17d",
+      "falhas": []
+    },
+    {
+      "lang": "en",
+      "ficheiro": "dist/en/method/index.html",
+      "sha256": "697b669f40b744d2da9bfb43633366ba07a12d7a29bc17ea2a5322e2bad7c8dd",
+      "falhas": []
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "um lugar a mais",
+      "lang": "pt",
+      "mensagem": "H4 IA: a política tem de dizer três lugares.",
+      "falhas": [
+        "H4 IA: a política tem de dizer três lugares.",
+        "H4 IA: os lugares não são os da redação do brief."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a construção em falta",
+      "lang": "pt",
+      "mensagem": "H4 IA: a política tem de dizer três lugares.",
+      "falhas": [
+        "H4 IA: a política tem de dizer três lugares.",
+        "H4 IA: os lugares não são os da redação do brief."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a medição no lugar da leitura",
+      "lang": "pt",
+      "mensagem": "H4 IA: os lugares não são os da redação do brief.",
+      "falhas": [
+        "H4 IA: os lugares não são os da redação do brief."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a introdução antiga",
+      "lang": "pt",
+      "mensagem": "H4 IA: a introdução dos lugares difere da redação do brief.",
+      "falhas": [
+        "H4 IA: a introdução dos lugares difere da redação do brief."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a família da construção trocada",
+      "lang": "pt",
+      "mensagem": "H4 IA: as famílias e os lugares do fecho diferem da redação do brief.",
+      "falhas": [
+        "H4 IA: as famílias e os lugares do fecho diferem da redação do brief."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "um lugar a mais",
+      "lang": "en",
+      "mensagem": "H4 IA: a política tem de dizer três lugares.",
+      "falhas": [
+        "H4 IA: a política tem de dizer três lugares.",
+        "H4 IA: os lugares não são os da redação do brief."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a construção em falta",
+      "lang": "en",
+      "mensagem": "H4 IA: a política tem de dizer três lugares.",
+      "falhas": [
+        "H4 IA: a política tem de dizer três lugares.",
+        "H4 IA: os lugares não são os da redação do brief."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a medição no lugar da leitura",
+      "lang": "en",
+      "mensagem": "H4 IA: os lugares não são os da redação do brief.",
+      "falhas": [
+        "H4 IA: os lugares não são os da redação do brief."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a introdução antiga",
+      "lang": "en",
+      "mensagem": "H4 IA: a introdução dos lugares difere da redação do brief.",
+      "falhas": [
+        "H4 IA: a introdução dos lugares difere da redação do brief."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a família da construção trocada",
+      "lang": "en",
+      "mensagem": "H4 IA: as famílias e os lugares do fecho diferem da redação do brief.",
+      "falhas": [
+        "H4 IA: as famílias e os lugares do fecho diferem da redação do brief."
+      ],
+      "passou": true
+    }
+  ],
+  "passou": true
+}

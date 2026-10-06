@@ -1,0 +1,4091 @@
+{
+  "comando": "OEDP_TEMA_MENU_JSON=design/especime-v3/medicoes/h4-2026-10-06/tema-menu-c.json node tests/inicio/tema-e-menu.mjs --prova",
+  "cabeca": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+  "construcao": {
+    "commit": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+    "ref": "h4-2026-10-06",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-06T11:45:30.652Z"
+  },
+  "limites_linhas_telefone": {
+    "320": 3,
+    "360": 3,
+    "390": 2,
+    "430": 2
+  },
+  "medidas_menu": [
+    {
+      "rota": "/",
+      "janela": 320,
+      "portas": 7,
+      "topos": 3,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 284,
+      "natural": 666.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 257.296875,
+      "transborda": false
+    },
+    {
+      "rota": "/",
+      "janela": 360,
+      "portas": 7,
+      "topos": 3,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 324,
+      "natural": 666.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 257.296875,
+      "transborda": false
+    },
+    {
+      "rota": "/",
+      "janela": 430,
+      "portas": 7,
+      "topos": 2,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 394,
+      "natural": 666.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 344.765625,
+      "transborda": false
+    },
+    {
+      "rota": "/",
+      "janela": 390,
+      "portas": 7,
+      "topos": 2,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 354,
+      "natural": 666.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 344.765625,
+      "transborda": false
+    },
+    {
+      "rota": "/",
+      "janela": 768,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 21.504,
+      "gap": 21.504,
+      "folgas": [
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5
+      ],
+      "largura": 706.5625,
+      "natural": 699.3365,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 730.03125,
+      "transborda": false
+    },
+    {
+      "rota": "/",
+      "janela": 1024,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 28.672,
+      "gap": 28.672,
+      "folgas": [
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875
+      ],
+      "largura": 942.09375,
+      "natural": 742.3445,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 783.296875,
+      "transborda": false
+    },
+    {
+      "rota": "/",
+      "janela": 1280,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 34,
+      "gap": 34,
+      "folgas": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "largura": 1092,
+      "natural": 774.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 868.3125,
+      "transborda": false
+    },
+    {
+      "rota": "/",
+      "janela": 1600,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 34,
+      "gap": 34,
+      "folgas": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "largura": 1092,
+      "natural": 774.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 1028.3125,
+      "transborda": false
+    },
+    {
+      "rota": "/en/",
+      "janela": 320,
+      "portas": 7,
+      "topos": 3,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 284,
+      "natural": 659.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 255.3125,
+      "transborda": false
+    },
+    {
+      "rota": "/en/",
+      "janela": 360,
+      "portas": 7,
+      "topos": 3,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 324,
+      "natural": 659.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 337.203125,
+      "transborda": false
+    },
+    {
+      "rota": "/en/",
+      "janela": 430,
+      "portas": 7,
+      "topos": 2,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 394,
+      "natural": 659.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 342.546875,
+      "transborda": false
+    },
+    {
+      "rota": "/en/",
+      "janela": 390,
+      "portas": 7,
+      "topos": 2,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 354,
+      "natural": 659.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 342.546875,
+      "transborda": false
+    },
+    {
+      "rota": "/en/",
+      "janela": 768,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 21.504,
+      "gap": 21.504,
+      "folgas": [
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5
+      ],
+      "largura": 706.5625,
+      "natural": 692.774,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 723.46875,
+      "transborda": false
+    },
+    {
+      "rota": "/en/",
+      "janela": 1024,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 28.672,
+      "gap": 28.672,
+      "folgas": [
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875
+      ],
+      "largura": 942.09375,
+      "natural": 735.782,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 776.734375,
+      "transborda": false
+    },
+    {
+      "rota": "/en/",
+      "janela": 1280,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 34,
+      "gap": 34,
+      "folgas": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "largura": 1092,
+      "natural": 767.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 861.75,
+      "transborda": false
+    },
+    {
+      "rota": "/en/",
+      "janela": 1600,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 34,
+      "gap": 34,
+      "folgas": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "largura": 1092,
+      "natural": 767.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 1021.75,
+      "transborda": false
+    },
+    {
+      "rota": "/lugares/",
+      "janela": 320,
+      "portas": 7,
+      "topos": 3,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 284,
+      "natural": 666.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 257.296875,
+      "transborda": false
+    },
+    {
+      "rota": "/lugares/",
+      "janela": 360,
+      "portas": 7,
+      "topos": 3,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 324,
+      "natural": 666.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 257.296875,
+      "transborda": false
+    },
+    {
+      "rota": "/lugares/",
+      "janela": 430,
+      "portas": 7,
+      "topos": 2,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 394,
+      "natural": 666.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 344.765625,
+      "transborda": false
+    },
+    {
+      "rota": "/lugares/",
+      "janela": 390,
+      "portas": 7,
+      "topos": 2,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 354,
+      "natural": 666.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 344.765625,
+      "transborda": false
+    },
+    {
+      "rota": "/lugares/",
+      "janela": 768,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 21.504,
+      "gap": 21.504,
+      "folgas": [
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5
+      ],
+      "largura": 706.5625,
+      "natural": 699.3365,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 730.03125,
+      "transborda": false
+    },
+    {
+      "rota": "/lugares/",
+      "janela": 1024,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 28.672,
+      "gap": 28.672,
+      "folgas": [
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875
+      ],
+      "largura": 942.09375,
+      "natural": 742.3445,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 783.296875,
+      "transborda": false
+    },
+    {
+      "rota": "/lugares/",
+      "janela": 1280,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 34,
+      "gap": 34,
+      "folgas": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "largura": 1092,
+      "natural": 774.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 868.3125,
+      "transborda": false
+    },
+    {
+      "rota": "/lugares/",
+      "janela": 1600,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 34,
+      "gap": 34,
+      "folgas": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "largura": 1092,
+      "natural": 774.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 1028.3125,
+      "transborda": false
+    },
+    {
+      "rota": "/en/places/",
+      "janela": 320,
+      "portas": 7,
+      "topos": 3,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 284,
+      "natural": 659.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 255.3125,
+      "transborda": false
+    },
+    {
+      "rota": "/en/places/",
+      "janela": 360,
+      "portas": 7,
+      "topos": 3,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 324,
+      "natural": 659.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 337.203125,
+      "transborda": false
+    },
+    {
+      "rota": "/en/places/",
+      "janela": 430,
+      "portas": 7,
+      "topos": 2,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 394,
+      "natural": 659.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 342.546875,
+      "transborda": false
+    },
+    {
+      "rota": "/en/places/",
+      "janela": 390,
+      "portas": 7,
+      "topos": 2,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 354,
+      "natural": 659.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 342.546875,
+      "transborda": false
+    },
+    {
+      "rota": "/en/places/",
+      "janela": 768,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 21.504,
+      "gap": 21.504,
+      "folgas": [
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5
+      ],
+      "largura": 706.5625,
+      "natural": 692.774,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 723.46875,
+      "transborda": false
+    },
+    {
+      "rota": "/en/places/",
+      "janela": 1024,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 28.672,
+      "gap": 28.672,
+      "folgas": [
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875
+      ],
+      "largura": 942.09375,
+      "natural": 735.782,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 776.734375,
+      "transborda": false
+    },
+    {
+      "rota": "/en/places/",
+      "janela": 1280,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 34,
+      "gap": 34,
+      "folgas": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "largura": 1092,
+      "natural": 767.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 861.75,
+      "transborda": false
+    },
+    {
+      "rota": "/en/places/",
+      "janela": 1600,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 34,
+      "gap": 34,
+      "folgas": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "largura": 1092,
+      "natural": 767.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 1021.75,
+      "transborda": false
+    },
+    {
+      "rota": "/uniao-europeia/",
+      "janela": 320,
+      "portas": 7,
+      "topos": 3,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 284,
+      "natural": 666.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 257.296875,
+      "transborda": false
+    },
+    {
+      "rota": "/uniao-europeia/",
+      "janela": 360,
+      "portas": 7,
+      "topos": 3,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 324,
+      "natural": 666.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 257.296875,
+      "transborda": false
+    },
+    {
+      "rota": "/uniao-europeia/",
+      "janela": 430,
+      "portas": 7,
+      "topos": 2,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 394,
+      "natural": 666.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 344.765625,
+      "transborda": false
+    },
+    {
+      "rota": "/uniao-europeia/",
+      "janela": 390,
+      "portas": 7,
+      "topos": 2,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 354,
+      "natural": 666.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 344.765625,
+      "transborda": false
+    },
+    {
+      "rota": "/uniao-europeia/",
+      "janela": 768,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 21.504,
+      "gap": 21.504,
+      "folgas": [
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5
+      ],
+      "largura": 706.5625,
+      "natural": 699.3365,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 730.03125,
+      "transborda": false
+    },
+    {
+      "rota": "/uniao-europeia/",
+      "janela": 1024,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 28.672,
+      "gap": 28.672,
+      "folgas": [
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875
+      ],
+      "largura": 942.09375,
+      "natural": 742.3445,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 783.296875,
+      "transborda": false
+    },
+    {
+      "rota": "/uniao-europeia/",
+      "janela": 1280,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 34,
+      "gap": 34,
+      "folgas": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "largura": 1092,
+      "natural": 774.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 868.3125,
+      "transborda": false
+    },
+    {
+      "rota": "/uniao-europeia/",
+      "janela": 1600,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 34,
+      "gap": 34,
+      "folgas": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "largura": 1092,
+      "natural": 774.3125,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Lugares",
+          "altura": 44
+        },
+        {
+          "texto": "Temas",
+          "altura": 44
+        },
+        {
+          "texto": "Estudos",
+          "altura": 44
+        },
+        {
+          "texto": "Explicações",
+          "altura": 44
+        },
+        {
+          "texto": "União Europeia",
+          "altura": 44
+        },
+        {
+          "texto": "Sobre",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 1028.3125,
+      "transborda": false
+    },
+    {
+      "rota": "/en/european-union/",
+      "janela": 320,
+      "portas": 7,
+      "topos": 3,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 284,
+      "natural": 659.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 255.3125,
+      "transborda": false
+    },
+    {
+      "rota": "/en/european-union/",
+      "janela": 360,
+      "portas": 7,
+      "topos": 3,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 324,
+      "natural": 659.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 337.203125,
+      "transborda": false
+    },
+    {
+      "rota": "/en/european-union/",
+      "janela": 430,
+      "portas": 7,
+      "topos": 2,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 394,
+      "natural": 659.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 342.546875,
+      "transborda": false
+    },
+    {
+      "rota": "/en/european-union/",
+      "janela": 390,
+      "portas": 7,
+      "topos": 2,
+      "gapBase": 16,
+      "gap": 16,
+      "folgas": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "largura": 354,
+      "natural": 659.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 342.546875,
+      "transborda": false
+    },
+    {
+      "rota": "/en/european-union/",
+      "janela": 768,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 21.504,
+      "gap": 21.504,
+      "folgas": [
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5,
+        21.5
+      ],
+      "largura": 706.5625,
+      "natural": 692.774,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 723.46875,
+      "transborda": false
+    },
+    {
+      "rota": "/en/european-union/",
+      "janela": 1024,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 28.672,
+      "gap": 28.672,
+      "folgas": [
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875,
+        28.671875
+      ],
+      "largura": 942.09375,
+      "natural": 735.782,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 776.734375,
+      "transborda": false
+    },
+    {
+      "rota": "/en/european-union/",
+      "janela": 1280,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 34,
+      "gap": 34,
+      "folgas": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "largura": 1092,
+      "natural": 767.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 861.75,
+      "transborda": false
+    },
+    {
+      "rota": "/en/european-union/",
+      "janela": 1600,
+      "portas": 7,
+      "topos": 1,
+      "gapBase": 34,
+      "gap": 34,
+      "folgas": [
+        34,
+        34,
+        34,
+        34,
+        34,
+        34
+      ],
+      "largura": 1092,
+      "natural": 767.75,
+      "alvos": [
+        {
+          "texto": "Portugal",
+          "altura": 44
+        },
+        {
+          "texto": "Places",
+          "altura": 44
+        },
+        {
+          "texto": "Themes",
+          "altura": 44
+        },
+        {
+          "texto": "Studies",
+          "altura": 44
+        },
+        {
+          "texto": "Explainers",
+          "altura": 44
+        },
+        {
+          "texto": "European Union",
+          "altura": 44
+        },
+        {
+          "texto": "About",
+          "altura": 44
+        }
+      ],
+      "letras": [
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        },
+        {
+          "letra": "15px",
+          "espaco": "0.75px"
+        }
+      ],
+      "letraBase": "15px",
+      "espacoLetrasBase": "0.75px",
+      "dentro": true,
+      "direita": 1021.75,
+      "transborda": false
+    }
+  ],
+  "papeis": {
+    "claro": "#f6f7f4",
+    "escuro": "#15171a"
+  },
+  "contas": {
+    "tm1": 24,
+    "tm2": 30,
+    "tm3": 6,
+    "tm4": 48
+  },
+  "falhas": [],
+  "plantas": [
+    {
+      "nome": "a paleta escura pela preferência do sistema",
+      "mordeu": true,
+      "mensagem_exigida": "TM1 · .*o fundo é rgb",
+      "queixa": "TM1 · / a 390 px, aparelho escuro, com guião: o fundo é rgb(21, 23, 26) e o papel claro é rgb(246, 247, 244)."
+    },
+    {
+      "nome": "a guarda tirada do <head>",
+      "mordeu": true,
+      "mensagem_exigida": "TM3 · .*não se aplicou antes da primeira pintura",
+      "queixa": "TM3 · /lugares/ a 390 px, sem nada guardado: depois de escolher o escuro, a escolha não se aplicou antes da primeira pintura (ordem lida: [\"corpo\",\"tema\"])."
+    },
+    {
+      "nome": "um manipulador que aplica o claro a todos os cliques",
+      "mordeu": true,
+      "mensagem_exigida": "TM3 · .*o toque em «escuro» deixou a raiz «null»",
+      "queixa": "TM3 · / a 390 px, sem nada guardado: o toque em «escuro» deixou a raiz «null», a chave «light», o fundo rgb(246, 247, 244), a cor da mobília #f6f7f4 e os botões light:true dark:false; o escuro é a raiz «dark», a chave «dark», o fundo rgb(21, 23, 26) e a cor #15171a."
+    },
+    {
+      "nome": "a guarda no fim do <body>",
+      "mordeu": true,
+      "mensagem_exigida": "TM3 · .*não se aplicou antes da primeira pintura",
+      "queixa": "TM3 · /en/ a 390 px, sem nada guardado: depois de escolher o escuro, a escolha não se aplicou antes da primeira pintura (ordem lida: [\"corpo\",\"tema\",\"tema\"])."
+    },
+    {
+      "nome": "o comando tirado do cabeçalho",
+      "mordeu": true,
+      "mensagem_exigida": "TM2 · .*não há comando do tema",
+      "queixa": "TM2 · /uniao-europeia/ a 1024 px: não há comando do tema no cabeçalho."
+    },
+    {
+      "nome": "um botão do tema com 30 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM2 · .*mede .* px, e o alvo é de 44 por 44",
+      "queixa": "TM2 · /en/places/ a 390 px: o botão «light» mede 41.5 por 30.0 px, e o alvo é de 44 por 44."
+    },
+    {
+      "nome": "uma oitava porta no menu",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*o menu tem 8 portas, e são sete\\.",
+      "queixa": "TM4 · / a 1280 px: o menu tem 8 portas, e são sete."
+    },
+    {
+      "nome": "o menu apertado a 6 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*o espaço entre portas na mesma linha não é o da regra base",
+      "queixa": "TM4 · / a 390 px: o espaço entre portas na mesma linha não é o da regra base (16 px; lido 6 px; folgas 6, 6, 6, 6, 6)."
+    },
+    {
+      "nome": "o menu sem dobrar a 320 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*as sete portas não cabem numa linha e o menu não dobrou\\.",
+      "queixa": "TM4 · / a 320 px: as sete portas não cabem numa linha e o menu não dobrou."
+    },
+    {
+      "nome": "quatro linhas a 320 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .* a 320 px: o menu tem 4 linhas, e o máximo é três\\.",
+      "queixa": "TM4 · / a 320 px: o menu tem 4 linhas, e o máximo é três."
+    },
+    {
+      "nome": "uma porta sem 44 px de toque",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px\\.",
+      "queixa": "TM4 · / a 390 px: a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px."
+    },
+    {
+      "nome": "uma oitava porta no menu",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*o menu tem 8 portas, e são sete\\.",
+      "queixa": "TM4 · /en/ a 1280 px: o menu tem 8 portas, e são sete."
+    },
+    {
+      "nome": "o menu apertado a 6 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*o espaço entre portas na mesma linha não é o da regra base",
+      "queixa": "TM4 · /en/ a 390 px: o espaço entre portas na mesma linha não é o da regra base (16 px; lido 6 px; folgas 6, 6, 6, 6, 6)."
+    },
+    {
+      "nome": "o menu sem dobrar a 320 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*as sete portas não cabem numa linha e o menu não dobrou\\.",
+      "queixa": "TM4 · /en/ a 320 px: as sete portas não cabem numa linha e o menu não dobrou."
+    },
+    {
+      "nome": "quatro linhas a 320 px",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .* a 320 px: o menu tem 4 linhas, e o máximo é três\\.",
+      "queixa": "TM4 · /en/ a 320 px: o menu tem 4 linhas, e o máximo é três."
+    },
+    {
+      "nome": "uma porta sem 44 px de toque",
+      "mordeu": true,
+      "mensagem_exigida": "TM4 · .*a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px\\.",
+      "queixa": "TM4 · /en/ a 390 px: a porta «Portugal» mede 30 px de altura, e o alvo de toque é de 44 px."
+    }
+  ],
+  "documentos_mais_largos_do_que_a_janela": [
+    {
+      "rota": "/",
+      "largura": 320,
+      "documento": 322,
+      "janela": 320
+    },
+    {
+      "rota": "/en/",
+      "largura": 320,
+      "documento": 335,
+      "janela": 320
+    }
+  ]
+}

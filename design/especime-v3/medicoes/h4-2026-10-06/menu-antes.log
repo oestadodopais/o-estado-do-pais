@@ -1,0 +1,210 @@
+{
+  "medidas": [
+    {
+      "lang": "pt",
+      "largura": 360,
+      "forma": "servida",
+      "natural": 343.65625,
+      "coluna": 324,
+      "linhas": 2,
+      "gap": 6,
+      "letra": "13px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "pt",
+      "largura": 360,
+      "forma": "proposta",
+      "natural": 666.3125,
+      "coluna": 324,
+      "linhas": 3,
+      "gap": 16,
+      "letra": "15px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "pt",
+      "largura": 360,
+      "forma": "proposta-espaco-768",
+      "natural": 699.3365,
+      "coluna": 324,
+      "linhas": 3,
+      "gap": 21.504,
+      "letra": "15px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "forma": "servida",
+      "natural": 343.65625,
+      "coluna": 354,
+      "linhas": 1,
+      "gap": 6,
+      "letra": "13px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "forma": "proposta",
+      "natural": 666.3125,
+      "coluna": 354,
+      "linhas": 2,
+      "gap": 16,
+      "letra": "15px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "pt",
+      "largura": 390,
+      "forma": "proposta-espaco-768",
+      "natural": 699.3365,
+      "coluna": 354,
+      "linhas": 2,
+      "gap": 21.504,
+      "letra": "15px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "pt",
+      "largura": 768,
+      "forma": "servida",
+      "natural": 497.910625,
+      "coluna": 707,
+      "linhas": 1,
+      "gap": 21.504,
+      "letra": "15px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "pt",
+      "largura": 768,
+      "forma": "proposta",
+      "natural": 699.3365,
+      "coluna": 707,
+      "linhas": 1,
+      "gap": 21.504,
+      "letra": "15px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "pt",
+      "largura": 768,
+      "forma": "proposta-espaco-768",
+      "natural": 699.3365,
+      "coluna": 707,
+      "linhas": 1,
+      "gap": 21.504,
+      "letra": "15px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "en",
+      "largura": 360,
+      "forma": "servida",
+      "natural": 341.21875,
+      "coluna": 324,
+      "linhas": 2,
+      "gap": 6,
+      "letra": "13px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "en",
+      "largura": 360,
+      "forma": "proposta",
+      "natural": 659.75,
+      "coluna": 324,
+      "linhas": 3,
+      "gap": 16,
+      "letra": "15px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "en",
+      "largura": 360,
+      "forma": "proposta-espaco-768",
+      "natural": 692.774,
+      "coluna": 324,
+      "linhas": 3,
+      "gap": 21.504,
+      "letra": "15px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "forma": "servida",
+      "natural": 341.21875,
+      "coluna": 354,
+      "linhas": 1,
+      "gap": 6,
+      "letra": "13px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "forma": "proposta",
+      "natural": 659.75,
+      "coluna": 354,
+      "linhas": 2,
+      "gap": 16,
+      "letra": "15px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "en",
+      "largura": 390,
+      "forma": "proposta-espaco-768",
+      "natural": 692.774,
+      "coluna": 354,
+      "linhas": 2,
+      "gap": 21.504,
+      "letra": "15px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "en",
+      "largura": 768,
+      "forma": "servida",
+      "natural": 495.145,
+      "coluna": 707,
+      "linhas": 1,
+      "gap": 21.504,
+      "letra": "15px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "en",
+      "largura": 768,
+      "forma": "proposta",
+      "natural": 692.774,
+      "coluna": 707,
+      "linhas": 1,
+      "gap": 21.504,
+      "letra": "15px",
+      "sem_transbordo": true
+    },
+    {
+      "lang": "en",
+      "largura": 768,
+      "forma": "proposta-espaco-768",
+      "natural": 692.774,
+      "coluna": 707,
+      "linhas": 1,
+      "gap": 21.504,
+      "letra": "15px",
+      "sem_transbordo": true
+    }
+  ],
+  "nome_inteiro_cabe": true,
+  "politica": {
+    "rotas": {
+      "pt": "/metodo#politica-de-ia",
+      "en": "/en/method#politica-de-ia"
+    },
+    "rota_do_brief_existe": false
+  }
+}

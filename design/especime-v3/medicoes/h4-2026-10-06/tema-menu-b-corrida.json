@@ -1,0 +1,7 @@
+{
+  "comando": "node tests/inicio/tema-e-menu.mjs --prova --json design/especime-v3/medicoes/h4-2026-10-06/tema-menu-b.json",
+  "codigo": 1,
+  "tranca_da_maquina": false,
+  "duracao_segundos": 82.41,
+  "cabeca": "00d92fed9f70fec22f30d72a1018776629f37d10"
+}

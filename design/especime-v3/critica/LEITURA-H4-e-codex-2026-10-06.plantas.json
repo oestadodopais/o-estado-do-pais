@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T16:04:14+00:00",
+ "copia": "<scratchpad>/h4/pacote-leitura-e",
+ "plantas": [
+  {
+   "id": "p1",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "a página construída do Método em português diz que o modelo que construiu é também o que lê, o contrário da redação e da cópia do portão",
+   "sha256_antes": "44c542515b438a79442c398c9066948fbb8c392ba46a98c7e87d6c282ec2e6f0",
+   "sha256_depois": "8a2afb905d73593ca5d553625b25da86945802aad36abd9b0bcf64aec92eb34e",
+   "contexto_antes": "erros plantados que tem de encontrar, antes de se publicar.</li></ul><p class=\"metodo-p\">A construção e a leitura são sempre de famílias de modelos diferentes: o modelo que construiu nunca é o que lê. Os modelos Claude da Anthropic estão na direção; na construção e na leitura estão os modelos Claude e o Codex da OpenAI. Um modelo novo só ocupa um papel depo",
+   "contexto_depois": "erros plantados que tem de encontrar, antes de se publicar.</li></ul><p class=\"metodo-p\">A construção e a leitura são sempre de famílias de modelos diferentes: o modelo que construiu é também o que lê. Os modelos Claude da Anthropic estão na direção; na construção e na leitura estão os modelos Claude e o Codex da OpenAI. Um modelo novo só ocupa um papel depo"
+  },
+  {
+   "id": "p2",
+   "ficheiro": "scripts/lugares-ia-do-portao.mjs",
+   "descricao": "a cópia do portão diz em inglês que os três papéis são de pessoas, divergindo da vista e da página construída",
+   "sha256_antes": "3c07a7f86353abb42aff8c99304c9bc4fd0b7336ca7cdb2a77462f805a20856c",
+   "sha256_depois": "8022424300ec3b72615271cec31d7a763c9cfedc676bb7f5e966a2a7d05fde25",
+   "contexto_antes": "Codex da OpenAI. Um modelo novo só ocupa um papel depois de passar os mesmos testes que o titular passou, e a troca fica escrita com a data.',\n  },\n  en: {\n    intro: 'There are three roles, all held by models: direction, building and reading.',\n    itens: [\n      'Direction decides what is done, commissions each change, reviews and approves what is published.',\n      'Building builds the pages and the",
+   "contexto_depois": "Codex da OpenAI. Um modelo novo só ocupa um papel depois de passar os mesmos testes que o titular passou, e a troca fica escrita com a data.',\n  },\n  en: {\n    intro: 'There are three roles, all held by people: direction, building and reading.',\n    itens: [\n      'Direction decides what is done, commissions each change, reviews and approves what is published.',\n      'Building builds the pages and the"
+  },
+  {
+   "id": "p3",
+   "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+   "descricao": "uma frase da redação H4-d, retirada, volta a estar viva no inventário",
+   "sha256_antes": "b7101a5268c2384317242b482f6a953d845830cae5006d926ca933d8553babbc",
+   "sha256_depois": "deebf4b9aa7d8f5e1dee922baab52cdab1307d39bff7d60aa19644e3ca5118b8",
+   "contexto_antes": "reção depois da leitura curta do diff (sem «peça» nem «lugares», a regra das famílias dita uma vez, a fonte e a data de cada número distinguidas da leitura). |\n| divulgacao | A leitura lê cada peça sem contexto prévio, com erros plantados que tem de encontrar, e é sempre de outra família de modelos que a construção. | h4 | retirada | H4-e: a redação reescrita pelo lugar de direção depois da leitura curta do diff (sem «peça» nem «lugares», a regra das famílias dita uma vez, a fonte e a data ",
+   "contexto_depois": "reção depois da leitura curta do diff (sem «peça» nem «lugares», a regra das famílias dita uma vez, a fonte e a data de cada número distinguidas da leitura). |\n| divulgacao | A leitura lê cada peça sem contexto prévio, com erros plantados que tem de encontrar, e é sempre de outra família de modelos que a construção. | h4 | viva | H4-e: a redação reescrita pelo lugar de direção depois da leitura curta do diff (sem «peça» nem «lugares», a regra das famílias dita uma vez, a fonte e a data "
+  },
+  {
+   "id": "p4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a secção H4-e do relatório reclama uma corrida inteira dos portões na máquina, a 0, que nenhum ficheiro do pacote tem",
+   "sha256_antes": "227c5e639196718d10e7be7cac41c0d1b39d3b1a8eb4a3632dbb2e0c7434273a",
+   "sha256_depois": "80970c89bf3bad3c849427c7a8d2e70297167ef062caef9df1f3776ec87ee09e",
+   "contexto_antes": "b79fc803f1723e6ed92e9927e1a36dbb8b1`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4e.py` a partir dos resultados guardados. Os portões inteiros desta cabeça correm na corrida portão do GitHub, e não na máquina; aqui correram as conferências que a mudança toca, cada uma no seu comando com o código lido de um ficheiro.\n\n### As conferências que a mudança toca\n\n| Conferência | Código lido |\n| --- | --- |\n| check-lingua ",
+   "contexto_depois": "b79fc803f1723e6ed92e9927e1a36dbb8b1`. Secção gerada por `python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4e.py` a partir dos resultados guardados. Os portões inteiros desta cabeça correram na máquina, a 0, e na corrida portão do GitHub; aqui correram também as conferências que a mudança toca, cada uma no seu comando com o código lido de um ficheiro.\n\n### As conferências que a mudança toca\n\n| Conferência | Código lido |\n| --- | --- |\n| check-lingua "
+  },
+  {
+   "id": "p5",
+   "ficheiro": "scripts/check-lugar.mjs",
+   "descricao": "a régua L3 volta a dispensar «peça» em qualquer bloco de qualquer página, contra o diff que retira a exceção",
+   "sha256_antes": "d3efa5bbb787255746db8546dd5c36155c1ac36c23de8afca05ac704346966d4",
+   "sha256_depois": "cc20aab09cec449a6e5bb1bead67a96792fbb310e6eaffb7dc24bf2724bcff2c",
+   "contexto_antes": "      if (chaveDaRota === 'metodo' && PALAVRAS_DA_MARCA.has(palavra)) continue;\n      /* Conta por bloco, para que uma exceção possa dispensar o bloco dela. */\n      let n = 0;\n      for (const b of blocos) {\n        n += contaForaDasExcecoes(b, palavra, (i, desconto) =>\n          usoDasExcecoes.set(i, (usoDasExcecoes.get(i) ?? 0) + desconto));\n      }\n      if (!n) continue;\n      medidas.l3_vocabulario += n;\n",
+   "contexto_depois": "      if (chaveDaRota === 'metodo' && PALAVRAS_DA_MARCA.has(palavra)) continue;\n      /* Conta por bloco, para que uma exceção possa dispensar o bloco dela. */\n      let n = 0;\n      for (const b of blocos) {\n        if (palavra === 'peça') continue;\n        n += contaForaDasExcecoes(b, palavra, (i, desconto) =>\n          usoDasExcecoes.set(i, (usoDasExcecoes.get(i) ?? 0) + desconto));\n      }\n      if (!n) continue;\n      medidas.l3_vocabulario += n;\n"
+  }
+ ]
+}
