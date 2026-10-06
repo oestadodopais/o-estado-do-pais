@@ -8,8 +8,8 @@
 # processos locais (por omissão quatro, o ensaio inicial do CI1). O workflow
 # portao.yml e a cadeia completa de npm run verify ficam independentes daqui.
 # A criação exclusiva da tranca impede duas worktrees de a tomarem juntas.
-# Se a escrita for recusada, para; uma tranca existente espera, sem a fazer
-# caducar enquanto uma construção possa estar a usá-la.
+# Se a escrita for recusada, para; se já existe uma tranca, espera e diz o dono.
+# Pela M46, uma tranca com mais de quarenta minutos caduca.
 # No fim, mesmo vermelho, agrega os tempos, retira as partes temporárias e
 # limpa caminhos locais. Só depois solta a tranca. Uma falha da limpeza sai a 9.
 set -u
@@ -24,22 +24,54 @@ done
 comum="$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null || git rev-parse --git-common-dir)" || exit 9
 case "$comum" in /*) ;; *) comum="$W/$comum";; esac
 tranca="$comum/oedp-construcao.lock"
+idade() {
+  python3 -c 'import os,sys,time; print(int(time.time()-os.stat(sys.argv[1]).st_mtime))' "$tranca"
+}
 esperou=0
 while ! (set -C; printf '%s %s pid=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$W" "$$" > "$tranca") 2>/dev/null; do
   [ -f "$tranca" ] || { echo 'portoes: não foi possível tomar a tranca; nenhum portão correu' >&2; exit 9; }
-  [ "$esperou" -ne 0 ] || echo 'à espera da tranca da máquina' >&2
+  if [ "$(idade)" -gt 2400 ]; then
+    python3 "$W/scripts/leituras/tranca.py" "$tranca" || exit 9
+    continue
+  fi
+  [ "$esperou" -ne 0 ] || echo "à espera da tranca da máquina: $(cat "$tranca")" >&2
   esperou=1; sleep 10
 done
+dono="$(cat "$tranca")"
+filho=""
 fechar() {
   resultado=$?
+  # A limpeza não pode ser cortada a meio, deixando a tranca órfã.
+  trap '' INT TERM
   trap - EXIT
   node "$W/scripts/leituras/tempos.mjs" arrumar "$O" || resultado=9
   python3 "$W/scripts/leituras/limpar-caminhos.py" "$O" --worktree "$W" > "$O/limpeza.json" || resultado=9
-  rm -f "$tranca"
+  # Uma corrida que exceda a validade não pode soltar a tranca de outra.
+  if [ -f "$tranca" ] && [ "$(cat "$tranca")" = "$dono" ]; then
+    rm -f "$tranca"
+  fi
   exit "$resultado"
 }
 trap fechar EXIT
-trap 'exit 130' INT TERM
+interromper() {
+  trap '' INT TERM
+  if [ -n "$filho" ]; then
+    kill -TERM "$filho" 2>/dev/null || :
+    wait "$filho" 2>/dev/null || :
+  fi
+  echo 'portoes: corrida interrompida; os portões seguintes não correm' >&2
+  exit 130
+}
+trap interromper INT TERM
+correr() {
+  registo="$1"; shift
+  python3 "$W/scripts/leituras/processo.py" "$@" > "$registo" 2>&1 &
+  filho=$!
+  wait "$filho"
+  codigo=$?
+  filho=""
+  return "$codigo"
+}
 export OEDP_TEMPOS_DIR="$O"
 export npm_config_script_shell="$W/scripts/leituras/tempos-shell.py"
 git rev-parse HEAD > "$O/cabeca"
@@ -50,11 +82,11 @@ for g in build verify typecheck; do
       echo 'verify: não correu; o build não ficou verde e não pode pagar passos da união' > "$O/verify.log"
       codigo=125
     else
-      node scripts/verify-depois-do-build.mjs --paralelo "${OEDP_PARALELO:-4}" --json "$O/verify.json" > "$O/verify.log" 2>&1
+      correr "$O/verify.log" node scripts/verify-depois-do-build.mjs --paralelo "${OEDP_PARALELO:-4}" --json "$O/verify.json"
       codigo=$?
     fi
   else
-    npm run "$g" > "$O/$g.log" 2>&1
+    correr "$O/$g.log" npm run "$g"
     codigo=$?
   fi
   echo "$codigo" > "$O/$g.codigo"
