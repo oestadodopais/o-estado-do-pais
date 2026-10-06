@@ -6,7 +6,9 @@ const le=f=>JSON.parse(fs.readFileSync(path.join(pasta,f),'utf8'));
 const e=le('entrega-b.json'), b=le('base.json'), u=le('unidades.json'), w=le('semana-b.json'), fc=le('frases-compostas-b.json'), passagem=le('passagem-b.json'), pais=le('titulos-plantas-b.json');
 const semana=e.paginas.find(p=>p.lang==='pt'&&p.rota==='leituraDaSemana');
 const esc=s=>String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('|','&#124;').replaceAll('\n',' ');
-const plantas=[...w.plantas,...fc.plantas,...pais.filter(p=>p.celula.startsWith('A4')).map(p=>({nome:p.nome,mordeu:p.passou,queixa:p.saida.split('\n').filter(l=>l.includes('A4')).join('\n')}))];
+const l1=le('plantas-portoes-lugar-marcador-de-titulo.json');
+const mensagemL1=fs.readFileSync(path.join(pasta,'planta-lugar-marcador-de-titulo.log'),'utf8').replace(/\x1b\[[0-9;]*m/g,'').split('\n').filter(l=>l.includes('L1')&&l.includes('ACIMA DO TETO')).join(' | ');
+const plantas=[...l1.map(p=>({nome:p.nome,mordeu:p.passou,queixa:mensagemL1})),...w.plantas,...fc.plantas,...pais.filter(p=>p.celula.startsWith('A4')||p.nome.startsWith('valor anterior errado no índice')).map(p=>({nome:p.nome,mordeu:p.passou,queixa:p.saida.split('\n').filter(l=>l.includes('A4')||l.includes('M3')).join('\n')}))];
 const frases=e.paginas.map(p=>`### ${p.rota}, ${p.lang.toUpperCase()}\n\n`+p.mudancas.map(m=>`- **${m.linha}**. ${m.resumo}${m.frase||m.ausencia?`\n\n  ${m.frase||m.ausencia}`:''}${m.sinais.map(s=>`\n\n  ${s.texto} (Recibo: \`${s.linha}\`.)`).join('')}`).join('\n\n')).join('\n\n');
 const tabelaPlantas=ps=>`| Planta | Mordeu | Mensagem observada |\n|---|---|---|\n`+ps.map(p=>`| ${esc(p.nome)} | ${p.aplica===false?'não se aplica':p.mordeu?'sim':'não'} | ${esc(p.queixa??p.queixas?.join(' / '))} |`).join('\n');
 const texto=`# EX2 · a leitura da semana diz o que cada número é
@@ -41,9 +43,11 @@ As células do selo da definição e dos pedaços marcados são vazias nesta con
 
 ## Plantas e mensagens
 
-As plantas estragam cópias em memória ou o navegador. Exigem o controlo intacto e a mensagem da célula que julga a página. Os ficheiros completos são [semana-b.json](semana-b.json), [frases-compostas-b.json](frases-compostas-b.json) e [titulos-plantas-b.json](titulos-plantas-b.json). Comandos: \`node tests/explicacoes/semana.mjs --prova --json design/especime-v3/medicoes/ex2-2026-10-06/semana-b.json\`, a régua visual indicada acima e \`node tests/pais/pais.mjs --json design/especime-v3/medicoes/ex2-2026-10-06/titulos-plantas-b.json\`. As plantas da cópia do livro continuam em \`semana-b.json → w1\`.
+As plantas estragam cópias em memória ou o navegador. Exigem o controlo intacto e a mensagem da célula que julga a página. Os ficheiros completos são [semana-b.json](semana-b.json), [frases-compostas-b.json](frases-compostas-b.json) e [titulos-plantas-b.json](titulos-plantas-b.json). Comandos: \`node tests/explicacoes/semana.mjs --prova --json design/especime-v3/medicoes/ex2-2026-10-06/semana-b.json\`, a régua visual indicada acima e \`node tests/pais/pais.mjs --json design/especime-v3/medicoes/ex2-2026-10-06/titulos-plantas-b.json\`. A antiga dispensa do marcador de título também foi testada por \`OEDP_MEDICOES=design/especime-v3/medicoes/ex2-2026-10-06 node tests/pais/portoes.mjs --only lugar-marcador-de-titulo\`, em [plantas-portoes-lugar-marcador-de-titulo.json](plantas-portoes-lugar-marcador-de-titulo.json). As plantas da cópia do livro continuam em \`semana-b.json → w1\`.
 
 ${tabelaPlantas(plantas)}
+
+Os ensaios iniciais estão em [ensaios-b/](ensaios-b/). A prova dos títulos encontrou a exigência antiga de riscar o valor anterior na M3. A conferência HTML foi chamada antes de gerar os cartões de partilha, um erro da preparação parcial do construtor. Corrigiu-se a M3 com uma planta de valor errado e geraram-se os cartões antes da corrida completa.
 
 ## Portões na cabeça do código
 

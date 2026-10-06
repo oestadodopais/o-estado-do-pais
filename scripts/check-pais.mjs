@@ -445,7 +445,8 @@ function confereCorrecoes(lista, onde) {
     const ns = marcas.map(m => m.getAttribute('data-correcao-n'));
     const campos = marcas.map(m => m.getAttribute('data-correcao-campo'));
     const correcao = /^\d+$/.test(ns[0] ?? '') ? linha(id).corrections?.[Number(ns[0])] : null;
-    const antes = e.querySelector('s[data-correcao-campo="old_value"]');
+    /* EX2-b: o índice escreve o valor anterior na frase, sem o riscar. A marca e o literal continuam obrigatórios. */
+    const antes = e.querySelector('[data-correcao-campo="old_value"]');
     const depois = e.querySelector('[data-correcao-campo="new_value"]');
     const quando = e.querySelector('[data-correcao-campo="date"][datetime]');
     if (marcas.length < 3 || new Set(ns).size !== 1 || !correcao ||
