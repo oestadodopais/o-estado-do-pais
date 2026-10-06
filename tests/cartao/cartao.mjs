@@ -230,7 +230,7 @@ import {
 import { auditarVeredicto, veredictoEsperado } from './veredicto.mjs';
 import { auditarPerguntas, lerAuditoriaDasPerguntas } from './perguntas.mjs';
 import { conferirAuditoriaDasLeituras, conferirLeiturasRendidas, plantasDaK17 } from './leituras.mjs';
-import { conferirAuditoriaDasFamilias, conferirRecibosDasLinhas, plantasDasFamilias } from './familias.mjs';
+import { conferirAuditoriaDasFamilias, conferirRecibosDasLinhas, conferirAuditoriaDasSeries, conferirRecibosDasSeries, plantasDasFamilias } from './familias.mjs';
 import { conferirOrdemDaPagina, plantasDaOrdem } from './ordem.mjs';
 import { REFERENCIAS_DAS_MEDIDAS } from '../../src/data/referencias-das-medidas.mjs';
 import { t } from '../../src/i18n/strings.mjs';
@@ -1927,6 +1927,13 @@ if (PROVA) {
   r.erros.push(...recibos.erros);
   r.contas.familias = familias.contas;
   r.contas.recibos_com_frase = recibos.contas;
+  /* E AS SÉRIES NO TEMPO (o ponto 3): a frase da linha da série, ou a frase auditada dela, em cada recibo de série. */
+  const seriesAud = conferirAuditoriaDasSeries();
+  r.erros.push(...seriesAud.erros);
+  const recibosDasSeries = conferirRecibosDasSeries(DIST);
+  r.erros.push(...recibosDasSeries.erros);
+  r.contas.series_o_que_e = seriesAud.contas;
+  r.contas.recibos_das_series_com_frase = recibosDasSeries.contas;
   if (PROVA) {
     const plantas = plantasDasFamilias(DIST);
     for (const x of plantas) if (!x.mordeu) r.erros.push(`K17 · famílias NÃO MORDEU ${x.nome}: ${x.queixa ?? 'nenhum vermelho'}`);
@@ -2060,6 +2067,12 @@ console.log(
   cinza(
     `      recibos com a frase conferida                       ${r.contas.recibos_com_frase.com_frase} de ${r.contas.recibos_com_frase.recibos}` +
       (PROVA ? ` · ${r.contas.familias_plantas_mordidas} de ${r.contas.familias_plantas} plantas a morder` : ''),
+  ),
+);
+console.log(
+  cinza(
+    `      séries no tempo com frase «o que é»                 ${r.contas.series_o_que_e.series} (${r.contas.series_o_que_e.pela_linha} pela linha, ${r.contas.series_o_que_e.propria} com frase auditada, ` +
+      `${r.contas.series_o_que_e.todas_na_fonte} com todas as partes na fonte); recibos de série conferidos ${r.contas.recibos_das_series_com_frase.com_frase} de ${r.contas.recibos_das_series_com_frase.recibos}`,
   ),
 );
 console.log(cinza(`    medidas com grupo etário fixado na linha (K13)         ${r.contas.medidas_com_grupo_etario}`));

@@ -37,6 +37,9 @@ import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { partesDaLeitura, oQueEContraALinha } from './leitura-da-medida.mjs';
 import { nomeDaMedida, nomeDaLinhaDerivada } from './nomes.mjs';
 import { getClaim, allClaims } from './ledger.mjs';
+import { allSeries } from './series.mjs';
+import { NOMES_DAS_SERIES } from '../data/series-no-tempo.mjs';
+import { FRASES_DAS_SERIES } from '../data/o-que-e-das-series.mjs';
 
 /** @param {string} onde @param {string} razao */
 function fecha(onde, razao) {
@@ -259,8 +262,60 @@ export function cobertura(linhas = allClaims()) {
   return { erros, porTipo, familiasUsadas: usadas };
 }
 
+/**
+ * ===========================================================================
+ * O QUE É CADA SÉRIE NO TEMPO (bloco R4, o ponto 3 do brief)
+ * ===========================================================================
+ * A frase de uma série vem da sua linha do livro-razão, quando a há: a que o nome da série declara
+ * (`NOMES_DAS_SERIES`, `{ linha }`) ou, se o nome não declara linha, a última linha presa à série pelo campo `serie`.
+ * As séries sem linha leem a frase escrita e provada para elas (`src/data/o-que-e-das-series.mjs`). Uma série com as
+ * duas, ou sem nenhuma, fecha a construção.
+ */
+
+/** A linha de onde vem a frase de uma série no tempo, ou `null`. @param {string} id */
+export function linhaDaSerie(id) {
+  const d = /** @type {Record<string, any>} */ (NOMES_DAS_SERIES)[id];
+  if (d && 'linha' in d) return /** @type {string} */ (d.linha);
+  const presas = allClaims()
+    .filter((c) => /** @type {Record<string, unknown>} */ (/** @type {unknown} */ (c)).serie === id)
+    .sort((a, b) => String(a.reference_date).localeCompare(String(b.reference_date)));
+  return presas.length ? presas[presas.length - 1].id : null;
+}
+
+/**
+ * A frase «o que é» de uma série no tempo, com a sua origem.
+ * @param {string} id @param {'pt'|'en'} lang
+ * @returns {{ pedacos: any[], origem: 'linha'|'serie', linha: string|null }}
+ */
+export function oQueEDaSerie(id, lang) {
+  const linha = linhaDaSerie(id);
+  const propria = /** @type {Record<string, any>} */ (FRASES_DAS_SERIES)[id];
+  if (linha) {
+    if (propria) throw fecha(`${id} · ${lang}`, `a série tem a linha «${linha}» e uma frase própria; a frase é uma, e é a da linha.`);
+    return { pedacos: oQueEDaLinha(linha, lang).pedacos, origem: 'linha', linha };
+  }
+  const frase = propria?.frase?.[lang];
+  if (!Array.isArray(frase) || frase.length === 0) throw fecha(`${id} · ${lang}`, 'a série não tem linha nem frase própria nesta edição.');
+  return { pedacos: frase, origem: 'serie', linha: null };
+}
+
+/** As séries no tempo sem frase, e as frases de séries que não existem ou que trazem um algarismo. @returns {string[]} */
+export function errosDasSeries() {
+  /** @type {string[]} */
+  const erros = [];
+  const noTempo = allSeries().filter((s) => s.eixo === 'periodo').map((s) => s.id);
+  for (const id of noTempo) for (const lang of /** @type {const} */ (['pt', 'en'])) {
+    try { oQueEDaSerie(id, lang); } catch (e) { erros.push(e instanceof Error ? e.message : String(e)); }
+  }
+  for (const [id, d] of Object.entries(FRASES_DAS_SERIES)) {
+    if (!noTempo.includes(id)) erros.push(`a frase da série «${id}» está declarada e a série não é uma série no tempo`);
+    for (const lang of ['pt', 'en']) for (const p of /** @type {any} */ (d).frase?.[lang] ?? []) if (typeof p !== 'string' || /\d/.test(p)) erros.push(`${id} · ${lang}: a frase traz um algarismo ou um pedaço que não é texto`);
+  }
+  return erros;
+}
+
 {
-  const erros = [...errosDasFamilias(), ...cobertura().erros];
+  const erros = [...errosDasFamilias(), ...cobertura().erros, ...errosDasSeries()];
   if (erros.length) {
     throw new Error(`o que é cada número: ${erros.length} defeito(s):\n  ${erros.slice(0, 40).join('\n  ')}${erros.length > 40 ? `\n  … e mais ${erros.length - 40}` : ''}\n`);
   }

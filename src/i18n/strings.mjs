@@ -2292,6 +2292,23 @@ export const STRINGS = {
         indiceIgual: ', igual à base.',
         indexadaAntes: 'As duas linhas valem cem em ',
         indexadaDepois: ': o que cada uma sobe acima de cem é o que cresceu desde então.',
+        /* R4 (05.10.2026, o ponto 3 do brief): o que é a série, por cima da tabela, e o que o último ponto quer dizer em
+           relação ao mesmo período de há um ano (ou ao ponto anterior, quando a série não o tem), com os períodos e os
+           valores pelos seus componentes e a palavra do lado escolhida pela comparação. Sem algarismos. */
+        oQueEK: 'O que é esta série',
+        ultimoEm: { mensal: 'Em ', trimestral: 'No ', semestral: 'No ', anual: 'Em ' },
+        ultimoFoi: ', o valor foi ',
+        ultimoLado: { maior: ': mais do que ', menor: ': menos do que ', igual: ': o mesmo que ' },
+        ultimoReferencia: {
+          mensal: 'no mesmo mês de há um ano, ',
+          trimestral: 'no mesmo trimestre de há um ano, ',
+          semestral: 'no mesmo semestre de há um ano, ',
+          anual: 'no ano anterior, ',
+          anterior: 'no ponto anterior da série, ',
+        },
+        ultimoArtigo: { mensal: '', trimestral: 'o ', semestral: 'o ', anual: '' },
+        ultimoQuando: ', quando foi ',
+        ultimoFim: '.',
       },
       linha: {
         eyebrow: 'Linha do livro-razão',
@@ -4078,6 +4095,20 @@ export const STRINGS = {
         indiceIgual: ', equal to the base.',
         indexadaAntes: 'Both lines are one hundred in ',
         indexadaDepois: ': how far each rises above one hundred is how much it has grown since then.',
+        oQueEK: 'What this series is',
+        ultimoEm: { mensal: 'In ', trimestral: 'In the ', semestral: 'In the ', anual: 'In ' },
+        ultimoFoi: ', the value was ',
+        ultimoLado: { maior: ': more than ', menor: ': less than ', igual: ': the same as ' },
+        ultimoReferencia: {
+          mensal: 'in the same month a year earlier, ',
+          trimestral: 'in the same quarter a year earlier, ',
+          semestral: 'in the same half-year a year earlier, ',
+          anual: 'in the previous year, ',
+          anterior: 'at the previous point of the series, ',
+        },
+        ultimoArtigo: { mensal: '', trimestral: 'the ', semestral: 'the ', anual: '' },
+        ultimoQuando: ', when it was ',
+        ultimoFim: '.',
       },
       linha: {
         eyebrow: 'Ledger row',

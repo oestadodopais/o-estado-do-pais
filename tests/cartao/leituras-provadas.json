@@ -31,6 +31,11 @@
       "quem": "Claude Opus 5.5",
       "quando": "2026-10-05",
       "o_que": "o bloco R4: as frases «o que é» das famílias das linhas sem cartão nacional (as do ano anterior e da União das medidas com cartão leem a frase do cartão contra a própria linha; as outras têm frase própria), e as partes das oito notas das medidas dos concelhos e da frase nova do limite da dívida, cada parte com o literal que a apoia nas linhas da família, numa origem declarada, num termo explicado em TERMOS_DOS_CARTOES ou, onde a fonte não diz o que a medida é, no nome do projeto"
+    },
+    {
+      "quem": "Claude Opus 5.5",
+      "quando": "2026-10-05",
+      "o_que": "o bloco R4, as séries: as frases «o que é» das dez séries no tempo sem linha do livro-razão, cada parte com o literal que a apoia num campo da própria série, numa origem declarada (com os rótulos das classes do IHPC e da unidade do índice de preços da habitação trimestral, lidos na API do Eurostat a 05.10.2026) ou, onde nenhum dos dois o diz, no nome que o projeto dá à série"
     }
   ],
   "comuns": [
@@ -7667,7 +7672,7 @@
       "folhas": [
         {
           "pt": "É quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia; o valor da União é uma média dos países, ponderada pelo peso de cada um.",
-          "en": "It is how much consumer prices changed compared with the same month a year earlier, on the harmonised measure used to compare the countries of the European Union; the European Union’s value is an average of the countries, weighted by the weight of each.",
+          "en": "It is how much consumer prices changed compared with the same month a year earlier, on the harmonised measure used to compare the countries of the European Union; the European Union’s value is an average of the countries, weighted by each country’s weight.",
           "partes": [
             {
               "pt": "É quanto mudaram os preços no consumidor face ao mesmo mês do ano anterior",
@@ -7695,7 +7700,7 @@
             },
             {
               "pt": "; o valor da União é uma média dos países, ponderada pelo peso de cada um.",
-              "en": "; the European Union’s value is an average of the countries, weighted by the weight of each.",
+              "en": "; the European Union’s value is an average of the countries, weighted by each country’s weight.",
               "classe": "diz",
               "apoios": [
                 {
@@ -13349,6 +13354,904 @@
                   "literal": "Direção-Geral das Autarquias Locais (DGAL)"
                 }
               ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "series": [
+    {
+      "serie": "serie-cem-euros-de-2015-01",
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É o que cem euros compram em cada mês, contados em euros do primeiro mês da série, depois de descontada a subida dos preços no consumidor (índice de preços no consumidor do INE).",
+          "en": "It is what one hundred euros buy each month, counted in euros of the series’ first month, net of the rise in consumer prices (the INE consumer price index).",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o que cem euros compram em cada mês, contados em euros do primeiro mês da série,",
+              "en": "It is what one hundred euros buy each month, counted in euros of the series’ first month,",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "derivation",
+                  "literal": "É o que cem euros compram no mês t, contado em euros de janeiro de 2015."
+                },
+                {
+                  "serie": "propria",
+                  "campo": "derivation",
+                  "literal": "Para cada mês t desde janeiro de 2015"
+                },
+                {
+                  "serie": "propria",
+                  "campo": "derivation_en",
+                  "literal": "It is what one hundred euros buy in month t, counted in January 2015 euros."
+                },
+                {
+                  "serie": "propria",
+                  "campo": "derivation_en",
+                  "literal": "For each month t from January 2015"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " depois de descontada a subida dos preços no consumidor",
+              "en": " net of the rise in consumer prices",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "derivation",
+                  "literal": "100 × I(janeiro de 2015) ÷ I(t)"
+                },
+                {
+                  "serie": "propria",
+                  "campo": "derivation_en",
+                  "literal": "100 × I(January 2015) ÷ I(t)"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " (índice de preços no consumidor do INE)",
+              "en": " (the INE consumer price index)",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "derivation",
+                  "literal": "índice de preços no consumidor do INE"
+                },
+                {
+                  "serie": "propria",
+                  "campo": "derivation_en",
+                  "literal": "the INE consumer price index"
+                }
+              ]
+            },
+            {
+              "classe": "liga",
+              "pt": ".",
+              "en": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serie": "serie-ihpc-combustiveis-variacao-homologa-ue",
+      "origens": [
+        "rp1-ihpc-homologa",
+        "rp1-ihpc-comparavel",
+        "rp1-ihpc-uniao"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto mudaram os preços dos combustíveis face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor); o valor da União é uma média dos países, ponderada pelo peso de cada um.",
+          "en": "It is how much fuel prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices); the European Union’s value is an average of the countries, weighted by each country’s weight.",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É quanto mudaram",
+              "en": "It is how much",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "the annual rate of change, representing the percentage change"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " os preços dos combustíveis",
+              "en": " fuel prices changed",
+              "apoios": [
+                {
+                  "declaracao": "nome",
+                  "lingua": "pt",
+                  "literal": "combustíveis"
+                },
+                {
+                  "declaracao": "nome",
+                  "lingua": "en",
+                  "literal": "Fuel prices"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " face ao mesmo mês do ano anterior,",
+              "en": " compared with the same month of the previous year,",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "compared to the same month of the previous year"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " na medida harmonizada que serve para comparar os países da União Europeia",
+              "en": " in the harmonised measure used to compare the countries of the European Union",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-comparavel",
+                  "campo": "excerto",
+                  "literal": "gives comparable measures of inflation for the countries"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " (índice harmonizado de preços no consumidor)",
+              "en": " (harmonised index of consumer prices)",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "Harmonised index of consumer prices (HICP)"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": "; o valor da União é uma média dos países, ponderada pelo peso de cada um",
+              "en": "; the European Union’s value is an average of the countries, weighted by each country’s weight",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-uniao",
+                  "campo": "excerto",
+                  "literal": "computed with a weighted average"
+                },
+                {
+                  "serie": "propria",
+                  "campo": "document.edition",
+                  "literal": "geo=EU27_2020"
+                }
+              ]
+            },
+            {
+              "classe": "liga",
+              "pt": ".",
+              "en": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serie": "serie-ihpc-combustiveis-variacao-homologa",
+      "origens": [
+        "rp1-ihpc-homologa",
+        "rp1-ihpc-comparavel"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto mudaram, em Portugal, os preços dos combustíveis face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+          "en": "It is how much, in Portugal, fuel prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É quanto mudaram",
+              "en": "It is how much",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "the annual rate of change, representing the percentage change"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": ", em Portugal,",
+              "en": ", in Portugal,",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "document.edition",
+                  "literal": "geo=PT"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " os preços dos combustíveis",
+              "en": " fuel prices changed",
+              "apoios": [
+                {
+                  "declaracao": "nome",
+                  "lingua": "pt",
+                  "literal": "combustíveis"
+                },
+                {
+                  "declaracao": "nome",
+                  "lingua": "en",
+                  "literal": "Fuel prices"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " face ao mesmo mês do ano anterior,",
+              "en": " compared with the same month of the previous year,",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "compared to the same month of the previous year"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " na medida harmonizada que serve para comparar os países da União Europeia",
+              "en": " in the harmonised measure used to compare the countries of the European Union",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-comparavel",
+                  "campo": "excerto",
+                  "literal": "gives comparable measures of inflation for the countries"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " (índice harmonizado de preços no consumidor)",
+              "en": " (harmonised index of consumer prices)",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "Harmonised index of consumer prices (HICP)"
+                }
+              ]
+            },
+            {
+              "classe": "liga",
+              "pt": ".",
+              "en": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serie": "serie-ihpc-energia-da-casa-variacao-homologa",
+      "origens": [
+        "rp1-ihpc-homologa",
+        "rp1-ihpc-comparavel"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto mudaram, em Portugal, os preços da energia usada em casa face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+          "en": "It is how much, in Portugal, the prices of energy used at home changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É quanto mudaram",
+              "en": "It is how much",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "the annual rate of change, representing the percentage change"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": ", em Portugal,",
+              "en": ", in Portugal,",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "document.edition",
+                  "literal": "geo=PT"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " os preços da energia usada em casa",
+              "en": " the prices of energy used at home changed",
+              "apoios": [
+                {
+                  "declaracao": "nome",
+                  "lingua": "pt",
+                  "literal": "energia em casa"
+                },
+                {
+                  "declaracao": "nome",
+                  "lingua": "en",
+                  "literal": "Home energy prices"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " face ao mesmo mês do ano anterior,",
+              "en": " compared with the same month of the previous year,",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "compared to the same month of the previous year"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " na medida harmonizada que serve para comparar os países da União Europeia",
+              "en": " in the harmonised measure used to compare the countries of the European Union",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-comparavel",
+                  "campo": "excerto",
+                  "literal": "gives comparable measures of inflation for the countries"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " (índice harmonizado de preços no consumidor)",
+              "en": " (harmonised index of consumer prices)",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "Harmonised index of consumer prices (HICP)"
+                }
+              ]
+            },
+            {
+              "classe": "liga",
+              "pt": ".",
+              "en": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serie": "serie-ihpc-rendas-variacao-homologa",
+      "origens": [
+        "rp1-ihpc-homologa",
+        "rp1-ihpc-comparavel"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+          "en": "It is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É quanto mudaram",
+              "en": "It is how much",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "the annual rate of change, representing the percentage change"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": ", em Portugal,",
+              "en": ", in Portugal,",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "document.edition",
+                  "literal": "geo=PT"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " os preços das rendas",
+              "en": " rent prices changed",
+              "apoios": [
+                {
+                  "declaracao": "nome",
+                  "lingua": "pt",
+                  "literal": "rendas"
+                },
+                {
+                  "declaracao": "nome",
+                  "lingua": "en",
+                  "literal": "Rent prices"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " face ao mesmo mês do ano anterior,",
+              "en": " compared with the same month of the previous year,",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-homologa",
+                  "campo": "excerto",
+                  "literal": "compared to the same month of the previous year"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " na medida harmonizada que serve para comparar os países da União Europeia",
+              "en": " in the harmonised measure used to compare the countries of the European Union",
+              "apoios": [
+                {
+                  "origem": "rp1-ihpc-comparavel",
+                  "campo": "excerto",
+                  "literal": "gives comparable measures of inflation for the countries"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " (índice harmonizado de preços no consumidor)",
+              "en": " (harmonised index of consumer prices)",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "Harmonised index of consumer prices (HICP)"
+                }
+              ]
+            },
+            {
+              "classe": "liga",
+              "pt": ".",
+              "en": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serie": "serie-ipc-indice",
+      "origens": [
+        "rp1-ipc-metodo"
+      ],
+      "folhas": [
+        {
+          "pt": "Mede, mês a mês, a evolução dos preços de um conjunto de bens e serviços que representa o que as famílias residentes gastam em consumo (índice de preços no consumidor).",
+          "en": "It measures, month by month, the change in the prices of a set of goods and services that represents what resident households spend on consumption (consumer price index).",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "Mede, mês a mês,",
+              "en": "It measures, month by month,",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "; Mensal - INE"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " a evolução dos preços de um conjunto de bens e serviços que representa o que as famílias residentes gastam em consumo",
+              "en": " the change in the prices of a set of goods and services that represents what resident households spend on consumption",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-metodo",
+                  "campo": "excerto",
+                  "literal": "medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " (índice de preços no consumidor)",
+              "en": " (consumer price index)",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "Índice de preços no consumidor (IPC, Base - 2025)"
+                }
+              ]
+            },
+            {
+              "classe": "liga",
+              "pt": ".",
+              "en": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serie": "serie-ipc-indice-anual",
+      "origens": [
+        "rp1-ipc-metodo"
+      ],
+      "folhas": [
+        {
+          "pt": "Mede, ano a ano, a evolução dos preços de um conjunto de bens e serviços que representa o que as famílias residentes gastam em consumo (índice de preços no consumidor).",
+          "en": "It measures, year by year, the change in the prices of a set of goods and services that represents what resident households spend on consumption (consumer price index).",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "Mede, ano a ano,",
+              "en": "It measures, year by year,",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "; Anual - INE"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " a evolução dos preços de um conjunto de bens e serviços que representa o que as famílias residentes gastam em consumo",
+              "en": " the change in the prices of a set of goods and services that represents what resident households spend on consumption",
+              "apoios": [
+                {
+                  "origem": "rp1-ipc-metodo",
+                  "campo": "excerto",
+                  "literal": "medir a evolução dos preços de um conjunto de bens e serviços considerados representativos da estrutura de despesa monetária de consumo final das famílias residentes em Portugal"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " (índice de preços no consumidor)",
+              "en": " (consumer price index)",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "Índice de preços no consumidor (IPC, Base - 2025)"
+                }
+              ]
+            },
+            {
+              "classe": "liga",
+              "pt": ".",
+              "en": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serie": "serie-precos-da-habitacao-variacao-homologa",
+      "origens": [
+        "glossario-hpi",
+        "eurostat-tipsho20-descricao"
+      ],
+      "folhas": [
+        {
+          "pt": "É quanto mudaram num ano os preços de transação das casas compradas pelas famílias em Portugal, novas e usadas, em cada trimestre (índice de preços da habitação).",
+          "en": "It is the change over a year in the transaction prices of dwellings purchased by households in Portugal, new and existing, in each quarter (house price index).",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É quanto mudaram num ano",
+              "en": "It is the change over a year in",
+              "apoios": [
+                {
+                  "declaracao": "nome",
+                  "lingua": "pt",
+                  "literal": "variação num ano"
+                },
+                {
+                  "declaracao": "nome",
+                  "lingua": "en",
+                  "literal": "change over a year"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " os preços de transação das casas compradas pelas famílias",
+              "en": " the transaction prices of dwellings purchased by households",
+              "apoios": [
+                {
+                  "origem": "glossario-hpi",
+                  "campo": "excerto",
+                  "literal": "measures the changes in the transaction prices of dwellings purchased by households"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " em Portugal",
+              "en": " in Portugal",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "document.edition",
+                  "literal": "geo=PT"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": ", novas e usadas,",
+              "en": ", new and existing,",
+              "apoios": [
+                {
+                  "origem": "eurostat-tipsho20-descricao",
+                  "campo": "excerto",
+                  "literal": "both new and existing"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " em cada trimestre",
+              "en": " in each quarter",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "House price index - quarterly data"
+                },
+                {
+                  "serie": "propria",
+                  "campo": "document.edition",
+                  "literal": "freq=Q"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " (índice de preços da habitação)",
+              "en": " (house price index)",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "House price index"
+                }
+              ]
+            },
+            {
+              "classe": "liga",
+              "pt": ".",
+              "en": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serie": "serie-remuneracao-bruta-mensal-media-anual",
+      "origens": [
+        "rp1-remuneracao-trabalhadores",
+        "rp1-remuneracao-bruta",
+        "rp1-remuneracao-subsidios"
+      ],
+      "folhas": [
+        {
+          "pt": "É o que quem trabalha por conta de outrem ganha em média por mês, antes de descontos e contando os subsídios, em cada ano, nos postos de trabalho declarados à Segurança Social e à Caixa Geral de Aposentações; cada pessoa conta tantas vezes quantos os empregos que tem (remuneração bruta mensal média).",
+          "en": "It is what employees earn on average per month, before deductions and including holiday and Christmas pay, in each year, in the jobs declared to Social Security and to the civil-service pension fund; each person counts as many times as the jobs they hold (average gross monthly pay).",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É o que quem trabalha por conta de outrem",
+              "en": "It is what employees",
+              "apoios": [
+                {
+                  "origem": "rp1-remuneracao-trabalhadores",
+                  "campo": "excerto",
+                  "literal": "universo de trabalhadores por conta de outrem"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " ganha em média por mês,",
+              "en": " earn on average per month,",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "Remuneração bruta mensal média por trabalhador"
+                },
+                {
+                  "serie": "propria",
+                  "campo": "unit",
+                  "literal": "€ por mês"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " antes de descontos",
+              "en": " before deductions",
+              "apoios": [
+                {
+                  "origem": "rp1-remuneracao-bruta",
+                  "campo": "excerto",
+                  "literal": "Remuneração ilíquida"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " e contando os subsídios,",
+              "en": " and including holiday and Christmas pay,",
+              "apoios": [
+                {
+                  "origem": "rp1-remuneracao-subsidios",
+                  "campo": "excerto",
+                  "literal": "“Subsídio de férias” e “Subsídio de Natal”"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " em cada ano,",
+              "en": " in each year,",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "; Anual - Declaração Mensal"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " nos postos de trabalho declarados à Segurança Social e à Caixa Geral de Aposentações;",
+              "en": " in the jobs declared to Social Security and to the civil-service pension fund;",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "Declaração Mensal de Remunerações da Segurança Social e Relação Contributiva da Caixa Geral de Aposentações"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " cada pessoa conta tantas vezes quantos os empregos que tem",
+              "en": " each person counts as many times as the jobs they hold",
+              "apoios": [
+                {
+                  "origem": "rp1-remuneracao-trabalhadores",
+                  "campo": "excerto",
+                  "literal": "aqueles com mais de um emprego são contabilizados tantas vezes quanto o número de empregos que tenham"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " (remuneração bruta mensal média)",
+              "en": " (average gross monthly pay)",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "name",
+                  "literal": "Remuneração bruta mensal média"
+                }
+              ]
+            },
+            {
+              "classe": "liga",
+              "pt": ".",
+              "en": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "serie": "serie-remuneracao-bruta-mensal-media-real",
+      "origens": [],
+      "folhas": [
+        {
+          "pt": "É a remuneração média antes de descontos de cada ano contada nos euros do ano que a unidade nomeia, isto é, descontada a subida dos preços desde esse ano (remuneração em termos reais).",
+          "en": "It is each year’s average pay before deductions counted in euros of the year the unit names, that is, net of the rise in prices since that year (pay in real terms).",
+          "partes": [
+            {
+              "classe": "diz",
+              "pt": "É a remuneração média antes de descontos de cada ano",
+              "en": "It is each year’s average pay before deductions",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "derivation",
+                  "literal": "W é a remuneração bruta mensal média por trabalhador que o INE publica por ano"
+                },
+                {
+                  "serie": "propria",
+                  "campo": "derivation_en",
+                  "literal": "W is the average gross monthly pay per worker that INE publishes by year"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " contada nos euros do ano que a unidade nomeia,",
+              "en": " counted in euros of the year the unit names,",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "derivation",
+                  "literal": "É a remuneração de cada ano contada em euros de 2015"
+                },
+                {
+                  "serie": "propria",
+                  "campo": "derivation_en",
+                  "literal": "counted in 2015 euros"
+                },
+                {
+                  "serie": "propria",
+                  "campo": "unit",
+                  "literal": "euros de 2015 por mês"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " isto é, descontada a subida dos preços desde esse ano",
+              "en": " that is, net of the rise in prices since that year",
+              "apoios": [
+                {
+                  "serie": "propria",
+                  "campo": "derivation",
+                  "literal": "isto é, descontada a subida dos preços desde esse ano"
+                },
+                {
+                  "serie": "propria",
+                  "campo": "derivation_en",
+                  "literal": "that is, net of the rise in prices since that year"
+                }
+              ]
+            },
+            {
+              "classe": "diz",
+              "pt": " (remuneração em termos reais)",
+              "en": " (pay in real terms)",
+              "apoios": [
+                {
+                  "declaracao": "nome",
+                  "lingua": "pt",
+                  "literal": "em termos reais"
+                },
+                {
+                  "declaracao": "nome",
+                  "lingua": "en",
+                  "literal": "in real terms"
+                }
+              ]
+            },
+            {
+              "classe": "liga",
+              "pt": ".",
+              "en": "."
             }
           ]
         }
