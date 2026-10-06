@@ -25,7 +25,18 @@ import { conferirPrazosEmCurso, dataDaConstrucao } from './estudos-em-curso.mjs'
 const raiz = process.cwd();
 const dist = path.resolve(process.env.OEDP_DIST ?? 'dist');
 const erros = [];
-erros.push(...conferirPrazosEmCurso(WORKS, dataDaConstrucao(dist)));
+function conferirE1() {
+  erros.push(...conferirPrazosEmCurso(WORKS, dataDaConstrucao(dist)));
+  if (!erros.length) console.log('E1: prazo e razão conferidos pela chamada da check:pais.');
+}
+conferirE1();
+/* M-A: o auto-teste da ligação E1 só precisa desta célula. A corrida normal
+   continua pelo ficheiro inteiro; a expressão da célula não mudou. */
+if (process.argv.includes('--so-a-celula-e1-no-autoteste')) {
+  for (const erro of erros) console.error(erro);
+  process.exit(erros.length ? 1 : 0);
+}
+
 const normal = s => (s ?? '').replace(/\s+/g, ' ').trim();
 const le = rel => parse(fs.readFileSync(path.join(dist, rel, 'index.html'), 'utf8'));
 const linha = id => load(fs.readFileSync(path.join(raiz, 'ledger/claims', `${id}.yml`), 'utf8'));

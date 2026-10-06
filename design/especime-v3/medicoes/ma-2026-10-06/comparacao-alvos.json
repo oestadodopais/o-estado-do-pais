@@ -1,0 +1,14 @@
+{
+  "iguais": {
+    "paginas": true,
+    "rotas": true,
+    "larguras": true,
+    "celulas": true,
+    "axe": true,
+    "graves": true,
+    "alvos_maus": true
+  },
+  "passagens": 360,
+  "paginas_antes_sha256": "f3f7abb73bf086695edd50e8603622df8eee5c77ffb5e6c82b60921a3d2cf19d",
+  "paginas_depois_sha256": "f3f7abb73bf086695edd50e8603622df8eee5c77ffb5e6c82b60921a3d2cf19d"
+}
