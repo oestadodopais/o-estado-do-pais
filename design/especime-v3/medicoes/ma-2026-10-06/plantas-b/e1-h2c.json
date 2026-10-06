@@ -1,0 +1,47 @@
+{
+  "comando": "node tests/inicio/prazo-pela-celula.mjs",
+  "dist_de_ensaio": "cópia temporária independente de version.json; só a célula E1",
+  "casos": [
+    {
+      "nome": "planta: opção da E1 no package.json",
+      "queixas_e1": [
+        "check:pais: a opção só da E1 não pode entrar na cadeia de produção."
+      ]
+    },
+    {
+      "nome": "controlo: a chamada E1 aceita a ficha limpa",
+      "codigo": 0,
+      "queixas_e1": [
+        "E1: prazo e razão conferidos pela chamada da check:pais."
+      ]
+    },
+    {
+      "nome": "planta: prazo passado pela check:pais",
+      "codigo": 1,
+      "queixas_e1": [
+        "E1: prazo emCurso passado em evora-2027-capital-europeia-da-cultura (2027-12-31, construção 2028-01-01); a ficha tem de ser decidida: prolongar a data ou tirar o campo emCurso."
+      ]
+    },
+    {
+      "nome": "planta: razão em branco pela check:pais",
+      "codigo": 1,
+      "queixas_e1": [
+        "E1: declaração emCurso incompleta em evora-2027-capital-europeia-da-cultura: exige razão e data de fim válida."
+      ]
+    },
+    {
+      "nome": "controlo da planta: sem a chamada E1, prazo deixa de ser recusado",
+      "codigo": 0,
+      "queixas_e1": []
+    },
+    {
+      "nome": "controlo da planta: sem a chamada E1, razão deixa de ser recusado",
+      "codigo": 0,
+      "queixas_e1": []
+    }
+  ],
+  "conhecido_positivo": {
+    "o_que": "a mesma data passada e a mesma razão em branco passam se a chamada E1 for retirada da cópia do guião",
+    "encontrado": true
+  }
+}

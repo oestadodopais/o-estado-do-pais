@@ -1,0 +1,544 @@
+[
+  {
+    "ficheiro": "plantas-runner.json",
+    "nome": "a cadeia limpa passa, e o que o build já correu não corre outra vez",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-runner.json",
+    "nome": "uma conferência nova só no verify corre sozinha",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-runner.json",
+    "nome": "uma conferência tirada da escolha fecha a célula U",
+    "mensagens": [
+      "U: «\"<casa>/.nvm/versions/node/v22.23.1/bin/node\" -e \"require('fs').writeFileSync(require('path').join('marcas','v2'),'')\"» está no verify, não é um passo do build e não correu aqui"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-runner.json",
+    "nome": "uma conferência vermelha fecha a corrida, e as outras acabam",
+    "mensagens": [
+      "U: «\"<casa>/.nvm/versions/node/v22.23.1/bin/node\" -e \"process.exit(3)\"» correu e não saiu com 0"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-runner.json",
+    "nome": "uma conferência que escreve no dist/ fecha a célula D",
+    "mensagens": [
+      "D: dist/x/index.html mudou de bytes durante as conferências"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-runner.json",
+    "nome": "um dist/ de outra cabeça fecha a célula C",
+    "mensagens": [
+      "C: dist/version.json é de dddddddddddddddddddddddddddddddddddddddd e a árvore está em cccccccccccccccccccccccccccccccccccccccc",
+      "C: dist/prova.json é de dddddddddddddddddddddddddddddddddddddddd e a árvore está em cccccccccccccccccccccccccccccccccccccccc"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-runner.json",
+    "nome": "um passo vazio na cadeia não passa despercebido à contagem",
+    "mensagens": [
+      "U: o verify tem 5 passos pelos &&, e o leitor leu 4"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-runner.json",
+    "nome": "uma conferência que escreve no dist/ e repõe os bytes fecha a célula D",
+    "mensagens": [
+      "D: dist/x/index.html foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-runner.json",
+    "nome": "uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D",
+    "mensagens": [
+      "D: dist/x/index.html foi substituído por outro ficheiro durante as conferências (o inode mudou)"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-runner.json",
+    "nome": "uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D",
+    "mensagens": [
+      "D: fonte.txt foi escrito durante as conferências (os bytes podem ter voltado, a hora de escrita não)"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-runner.json",
+    "nome": "um cadeia.json de outra construção fecha a célula C",
+    "mensagens": [
+      "C: dist/cadeia.json foi escrito a 2026-10-06T08:49:10.326Z, antes do carimbo desta construção (2026-10-06T09:48:10.327Z): é de outra construção"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-runner.json",
+    "nome": "uma conferência que escreve na árvore corre sozinha, depois do grupo",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-portoes.json",
+    "nome": "build vermelho não paga conferências",
+    "mensagens": [
+      "verify: não correu; o build não ficou verde e não pode pagar passos da união"
+    ],
+    "codigo": 1
+  },
+  {
+    "ficheiro": "plantas-portoes.json",
+    "nome": "escrita da tranca recusada",
+    "mensagens": [
+      "portoes: não foi possível tomar a tranca; nenhum portão correu"
+    ],
+    "codigo": 9
+  },
+  {
+    "ficheiro": "plantas-portoes.json",
+    "nome": "tranca de outra corrida não é substituída nem solta",
+    "mensagens": [
+      "à espera da tranca da máquina"
+    ],
+    "codigo": -15
+  },
+  {
+    "ficheiro": "plantas-briefs.json",
+    "nome": "controlo preso não volta a executar o guião",
+    "mensagens": [
+      "bytes iguais; §0 e JSON conferidos"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-briefs.json",
+    "nome": "número alterado no brief preso",
+    "mensagens": [
+      "BRIEF-ENSAIO-prova.md: o §0 escreve «14» e esse número não é o valor de nenhuma das medições nomeadas na sua frase (`objetos`=13).\n      «Há 14 objetos (`objetos`).»"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-briefs.json",
+    "nome": "número alterado no guião preso",
+    "mensagens": [
+      "BRIEF-ENSAIO-prova.md: a medição «objetos» vale 14 hoje e o ficheiro diz 13.\n      comando: ensaio sintético"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-briefs.json",
+    "nome": "JSON alterado com os selos antigos",
+    "mensagens": [
+      "BRIEF-ENSAIO-prova.md: a medição «objetos» vale 13 hoje e o ficheiro diz 14.\n      comando: ensaio sintético",
+      "BRIEF-ENSAIO-prova.md: o §0 escreve «13» e esse número não é o valor de nenhuma das medições nomeadas na sua frase (`objetos`=14).\n      «Há 13 objetos (`objetos`).»"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "e1-h2c.json",
+    "nome": "controlo: a chamada E1 aceita a ficha limpa",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": 0
+  },
+  {
+    "ficheiro": "e1-h2c.json",
+    "nome": "planta: prazo passado pela check:pais",
+    "mensagens": [
+      "E1: prazo emCurso passado em evora-2027-capital-europeia-da-cultura (2027-12-31, construção 2028-01-01); a ficha tem de ser decidida: prolongar a data ou tirar o campo emCurso."
+    ],
+    "codigo": 1
+  },
+  {
+    "ficheiro": "e1-h2c.json",
+    "nome": "planta: razão em branco pela check:pais",
+    "mensagens": [
+      "E1: declaração emCurso incompleta em evora-2027-capital-europeia-da-cultura: exige razão e data de fim válida."
+    ],
+    "codigo": 1
+  },
+  {
+    "ficheiro": "e1-h2c.json",
+    "nome": "controlo da planta: sem a chamada E1, prazo deixa de ser recusado",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": 0
+  },
+  {
+    "ficheiro": "e1-h2c.json",
+    "nome": "controlo da planta: sem a chamada E1, razão deixa de ser recusado",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": 0
+  },
+  {
+    "ficheiro": "plantas-aterrar.json",
+    "nome": "sem-ramo",
+    "mensagens": [
+      "PAROU: o ramo ramo-sintetico não existe (código 14)"
+    ],
+    "codigo": 14
+  },
+  {
+    "ficheiro": "plantas-aterrar.json",
+    "nome": "cabeca-errada",
+    "mensagens": [
+      "PAROU: a cabeça de ramo-sintetico é aaaaaaaa, e não bbbb (código 15)"
+    ],
+    "codigo": 15
+  },
+  {
+    "ficheiro": "plantas-aterrar.json",
+    "nome": "sem-main",
+    "mensagens": [
+      "PAROU: main não está dentro de ramo-sintetico: a fusão não seria um avanço rápido (código 16)"
+    ],
+    "codigo": 16
+  },
+  {
+    "ficheiro": "plantas-aterrar.json",
+    "nome": "sem-origin",
+    "mensagens": [
+      "PAROU: origin/main não está dentro de ramo-sintetico (código 17)"
+    ],
+    "codigo": 17
+  },
+  {
+    "ficheiro": "plantas-aterrar.json",
+    "nome": "sem-check",
+    "mensagens": [
+      "PAROU: a verificação portao da cabeça aaaaaaaa não está verde (diz «nada») (código 18)"
+    ],
+    "codigo": 18
+  },
+  {
+    "ficheiro": "plantas-aterrar.json",
+    "nome": "vermelho",
+    "mensagens": [
+      "PAROU: a verificação portao da cabeça aaaaaaaa não está verde (diz «failure») (código 18)"
+    ],
+    "codigo": 18
+  },
+  {
+    "ficheiro": "plantas-aterrar.json",
+    "nome": "verde",
+    "mensagens": [
+      "ATERROU: aaaaaaaa no ar, verify:deploy verde, portao já conferido nesta cabeça · 09:57:38 UTC"
+    ],
+    "codigo": 0
+  },
+  {
+    "ficheiro": "plantas-pacote-ma.json",
+    "nome": "controlo com PACOTE_EXTRA",
+    "mensagens": [
+      "Só a linha citada, os três códigos e os tempos chegaram."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-ma.json",
+    "nome": "linha retirada do pacote",
+    "mensagens": [
+      "O pacote recusa a entrega: faltam as linhas citadas de med/portoes/verify.log."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-ma.json",
+    "nome": "citação sem linha de origem",
+    "mensagens": [
+      "O pacote recusa a citação: med/portoes/verify.log: não existe uma linha que comece por «npm run check:ausente ·»."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "a montagem corre a zero",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "controlo sem variáveis conserva o diff gerado",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "controlo limpo: a cópia conserva os bytes esperados",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "a página construída chega",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "planta do argumento ponto: a montagem conserva a pontuação",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "planta: bytes do sítio diferentes da cabeça são recusados antes da cópia",
+    "mensagens": [
+      "ValueError: O pacote recusa a árvore do repositório: há modificações em ficheiros seguidos por comitar."
+    ],
+    "codigo": 1
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "planta: bytes do motor diferentes da cabeça são recusados antes da cópia",
+    "mensagens": [
+      "ValueError: O pacote recusa a árvore do motor: há modificações em ficheiros seguidos por comitar."
+    ],
+    "codigo": 1
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "a montagem corre a zero",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "os dois lados e as exclusões conferem",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "a tabela nomeia o caminho e as linhas retiradas",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "o diff do motor declara as exclusões na primeira linha",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "a conferência dos números chega ao pacote",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "PACOTE_EXTRA conserva os bytes",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "planta: uma secção excluída que volte ao diff morde",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "planta: ficheiro do motor alterado morde",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "reposição dos dois lados",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "nenhum caminho temporário foi guardado",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "a montagem corre a zero",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "um relatório não conferido chega com o código de aviso",
+    "mensagens": [
+      "Controlo sem queixa; condição conferida pelo ensaio."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-pacote-h2.json",
+    "nome": "planta: relatório inexistente recusa pela conferência do relatório",
+    "mensagens": [
+      "conferir-relatorio.py: não existe o relatório <ensaio>/sitio/medicoes/relatorio-ausente.md"
+    ],
+    "codigo": 1
+  },
+  {
+    "ficheiro": "plantas-ferramentas.json",
+    "nome": "partes repetidas de Claude",
+    "mensagens": [
+      "Uma resposta; entrada da última parte e máximo da saída, marcado como mínimo."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-ferramentas.json",
+    "nome": "acumulados Codex e corte temporal",
+    "mensagens": [
+      "A repetição não duplica os símbolos; o corte subtrai o contador anterior."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-ferramentas.json",
+    "nome": "contador recuado",
+    "mensagens": [
+      "O contador acumulado recuou; não se pode somar esta sessão."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-ferramentas.json",
+    "nome": "formato sem utilização",
+    "mensagens": [
+      "Não há contadores de utilização reconhecidos no intervalo pedido."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-ferramentas.json",
+    "nome": "linha truncada",
+    "mensagens": [
+      "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-ferramentas.json",
+    "nome": "limpeza de texto, gzip, binários e ligações",
+    "mensagens": [
+      "Caminhos retirados; segunda passagem sem mudanças; binário e alvo da ligação intactos."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-ferramentas.json",
+    "nome": "capturas e recortes nas duas edições",
+    "mensagens": [
+      "Cinco larguras por edição; PNG, sha256 e recursos conferidos; construção intacta."
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-ferramentas.json",
+    "nome": "captura de outra cabeça",
+    "mensagens": [
+      "captar: a cabeça pedida não é a de dist/version.json"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-ferramentas.json",
+    "nome": "pedido externo na captura",
+    "mensagens": [
+      "ensaio-pt-390: pedidos externos, recursos em falta ou erros do navegador"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "plantas-ferramentas.json",
+    "nome": "recorte ausente",
+    "mensagens": [
+      "ensaio-pt-390: o recorte cartao não aparece uma vez"
+    ],
+    "codigo": null
+  },
+  {
+    "ficheiro": "portoes/alvos.json.gz",
+    "nome": "folha atrasada reduz o alvo",
+    "mensagens": [
+      "H16: 7906 página(s) do dist/: 7881 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 25 sem ela (e 25 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 360 de 360 passagens com uma porta no seu marco; 72 porta(s) a 390 e 72 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 1 abaixo de 44 px (1× button.sugestoes-enviar «Enviar a sugestão» · 88×32 de toque (caixa 127.3×30)) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade"
+    ]
+  },
+  {
+    "ficheiro": "portoes/alvos.json.gz",
+    "nome": "alvo abaixo de 44 px",
+    "mensagens": [
+      "H16: 7906 página(s) do dist/: 7881 com a porta das sugestões dentro do <footer>, 0 fora dele, 0 com mais de uma, 25 sem ela (e 25 sem a das correções; 0 página(s) sem a das sugestões e com a das correções, 0 sem a das correções e com a das sugestões) · nas rotas medidas: 360 de 360 passagens com uma porta no seu marco; 72 porta(s) a 390 e 72 a partir de 1024, 0 sem o alvo (nenhum) · o botão do formulário: 10 medição(ões), 1 abaixo de 44 px (1× button.sugestoes-enviar «Enviar a sugestão» · 88×32 de toque (caixa 127.3×30)) · o campo armadilhado: 10 medição(ões), 0 à vista, no teclado ou na árvore de acessibilidade"
+    ]
+  },
+  {
+    "ficheiro": "portoes/alvos.json.gz",
+    "nome": "etiqueta cortada depois da primeira linha",
+    "mensagens": [
+      "H14: 360 passagens de todas as famílias com o rótulo de IA no topo: 1 sem linha única, corpo de 12 px ou posição antes do título (sugestoes/pt@390)"
+    ]
+  },
+  {
+    "ficheiro": "tempos-planta.log",
+    "nome": "ambiente, falha e passo seguinte no instrumento",
+    "mensagens": [
+      "tempos: o ambiente chegou; o código 7 foi conservado; o passo seguinte não correu; cada passo tem início, fim e duração."
+    ]
+  }
+]

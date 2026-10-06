@@ -1,0 +1,124 @@
+#!/usr/bin/env python3
+"""Exerce custos Claude/Codex, limpeza idempotente e capturas locais com plantas.
+
+Uso: python3 tests/leituras/ferramentas.py [--json ficheiro] [--sem-capturas].
+As sessões e páginas são sintéticas. O ensaio não lê mensagens reais, não
+usa rede externa e não toca na construção do projeto nem no motor.
+"""
+import gzip
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+from unittest.mock import patch
+
+RAIZ = Path(__file__).resolve().parents[2]
+def modulo(nome, ficheiro):
+    s = importlib.util.spec_from_file_location(nome, RAIZ/'scripts/leituras'/ficheiro)
+    m = importlib.util.module_from_spec(s); s.loader.exec_module(m); return m
+custo = modulo('custo','custo.py'); limpar = modulo('limpar','limpar-caminhos.py')
+casos = []
+def registar(nome, mensagem): casos.append({'planta':nome,'mensagem':mensagem,'passou':True})
+def jsonl(eventos): return ('\n'.join(json.dumps(e) for e in eventos)+'\n').encode()
+def instante(n): return f'2026-10-06T00:00:{n:02}Z'
+
+eventos = [{'timestamp':instante(n),'message':{'id':'id-sintetico','model':'modelo-de-ensaio',
+           'usage':{'input_tokens':20,'cache_creation_input_tokens':3,'cache_read_input_tokens':4,'output_tokens':saida},'content':'x'*1200}} for n,saida in [(0,2),(5,8),(8,3)]]
+r = custo.medir(jsonl(eventos)); assert r['respostas_do_modelo']==1 and r['simbolos']['output_tokens']==8 and r['simbolos']['input_tokens']==20 and r['segundos']==8 and r['respostas_com_saida_parcial']==1
+registar('partes repetidas de Claude','Uma resposta; entrada da última parte e máximo da saída, marcado como mínimo.')
+eventos = [{'timestamp':instante(n),'type':'event_msg','payload':{'type':'token_count','info':{'total_token_usage':{'input_tokens':entrada,'output_tokens':saida,'cached_input_tokens':0,'total_tokens':entrada+saida}}}} for n,entrada,saida in [(0,10,2),(5,20,4),(9,20,4)]]
+r = custo.medir(jsonl(eventos)); assert r['simbolos']['total_tokens']==24 and r['respostas_do_modelo'] is None
+r = custo.medir(jsonl(eventos),instante(3)); assert r['simbolos']['total_tokens']==12
+registar('acumulados Codex e corte temporal','A repetição não duplica os símbolos; o corte subtrai o contador anterior.')
+for nome, dados in [('contador recuado',jsonl(eventos+eventos[:1])),('formato sem utilização',jsonl([{'timestamp':instante(0)}])),('linha truncada',b'{')]:
+    try: custo.medir(dados)
+    except TypeError as e: raise AssertionError(f'{nome}: TypeError inesperado') from e
+    except (ValueError, KeyError) as e:
+        esperado = {'contador recuado': 'O contador acumulado recuou', 'formato sem utilização': 'Não há contadores', 'linha truncada': 'Expecting property name'}[nome]
+        assert esperado in str(e), str(e)
+        registar(nome,str(e))
+    else: raise AssertionError(nome)
+nulos = json.loads(jsonl(eventos).splitlines()[-1])
+nulos['payload']['info']['total_token_usage']['output_tokens'] = None
+try:
+    r = custo.medir(jsonl([*eventos, nulos]))
+except TypeError as e:
+    raise AssertionError('um contador nulo lançou TypeError') from e
+assert r['simbolos']['output_tokens'] is None
+registar('contador Codex nulo', 'output_tokens conserva null, sem TypeError nem zero fabricado.')
+ausente = json.loads(json.dumps(nulos))
+del ausente['payload']['info']['total_token_usage']['output_tokens']
+r = custo.medir(jsonl([*eventos, ausente]))
+assert r['simbolos']['output_tokens'] is None
+registar('contador Codex ausente', 'Um campo antes presente e agora ausente fica null.')
+try:
+    custo.medir(jsonl([*eventos, nulos, eventos[0]]))
+except ValueError as e:
+    assert 'O contador acumulado recuou' in str(e)
+    registar('regressão depois de contador nulo', str(e))
+else:
+    raise AssertionError('o contador nulo escondeu uma regressão')
+with tempfile.TemporaryDirectory(prefix='oedp-ma-comuns-') as tmp:
+    p = Path(tmp); worktree=p/'arvore'; worktree.mkdir(); pasta=worktree/'registos'; pasta.mkdir()
+    casa=p/'casa com espaço'; motor=casa/'motor'; scratch=p/'scratch'; usuario='nome-sintetico'
+    texto=f'{worktree}/a {motor}/b {scratch}/c {casa}/d {usuario} /pasta/{usuario}/ficheiro\n'
+    (pasta/'registo.log').write_text(texto); (pasta/'dados.json.gz').write_bytes(gzip.compress(texto.encode()))
+    (pasta/'imagem.png').write_bytes(b'\x89PNG\0\xff')
+    fora=p/'fora'; fora.write_text(texto); (pasta/'ligacao').symlink_to(fora)
+    args=dict(pasta=pasta,worktree=worktree,motor=motor,scratchpad=scratch,casa=casa,utilizador=usuario)
+    r=limpar.limpar(**args); esperado='<worktree>/a <motor>/b <scratchpad>/c <casa>/d nome-sintetico /pasta/<utilizador>/ficheiro\n'
+    assert (pasta/'registo.log').read_text()==esperado and gzip.decompress((pasta/'dados.json.gz').read_bytes()).decode()==esperado
+    assert (pasta/'imagem.png').read_bytes()==b'\x89PNG\0\xff' and fora.read_text()==texto
+    assert limpar.limpar(**args)['mudados']==[]
+    registar('limpeza de texto, gzip, binários e ligações','Caminhos retirados; segunda passagem sem mudanças; binário e alvo da ligação intactos.')
+    (pasta/'temporarios.log').write_text('/private/var/folders/ab/cd/T/ensaio/ficheiro /tmp/ensaio/ficheiro ' + str(p/'tmp-especial'/'ficheiro'))
+    limpar.limpar(**args, temporario=p/'tmp-especial')
+    assert (pasta/'temporarios.log').read_text() == '<temporario> <temporario> <temporario>/ficheiro'
+    # Um «/tmp/» no meio de um caminho do repositório ou de um endereço não é uma pasta temporária (a segunda leitura do M-A, o achado 9).
+    (pasta/'nao-temporarios.log').write_text('dist/tmp/pagina.html https://exemplo.pt/tmp/relatorio.pdf e /tmp/ensaio/f')
+    limpar.limpar(**args, temporario=p/'tmp-especial')
+    assert (pasta/'nao-temporarios.log').read_text() == 'dist/tmp/pagina.html https://exemplo.pt/tmp/relatorio.pdf e <temporario>', (pasta/'nao-temporarios.log').read_text()
+    registar('caminhos temporários', 'Pastas temporárias do sistema e TMPDIR retirados.')
+    (pasta/'palavra.log').write_text('transportoes portoes /pasta/portoes/ficheiro')
+    limpar.limpar(**{**args, 'utilizador': 'portoes'})
+    assert (pasta/'palavra.log').read_text() == 'transportoes portoes /pasta/<utilizador>/ficheiro'
+    registar('utilizador dentro de palavra comum', 'transportoes e portoes intactos; só o componente do caminho mudou.')
+    temporario = p / 'temporario-do-ambiente'
+    (pasta/'ambiente.log').write_text(f'{scratch}/nota {temporario}/saida')
+    with patch.dict(limpar.os.environ, {'OEDP_SCRATCHPAD': str(scratch), 'TMPDIR': str(temporario)}):
+        limpar.limpar(**{**args, 'scratchpad': None})
+    assert (pasta/'ambiente.log').read_text() == '<scratchpad>/nota <temporario>/saida'
+    registar('scratchpad e TMPDIR pelo ambiente', 'OEDP_SCRATCHPAD e TMPDIR chegaram ao limpador.')
+    if '--sem-capturas' not in sys.argv:
+        dist=p/'dist'; (dist/'en').mkdir(parents=True)
+        head='a'*40; (dist/'version.json').write_text(json.dumps({'commit':head}))
+        html='<!doctype html><html lang="pt"><head><link rel="stylesheet" href="/forma.css"></head><body><article><h1>Ensaio das capturas</h1><p>Página sintética.</p></article></body></html>'
+        (dist/'index.html').write_text(html); (dist/'en/index.html').write_text(html)
+        (dist/'forma.css').write_text('body{margin:24px;font:16px sans-serif}article{padding:20px;background:#eee}')
+        pedido=p/'pedido.json'; conf={'cabeca':head,'paginas':[{'nome':'ensaio','pt':'/','en':'/en/','recortes':[{'nome':'cartao','seletor':'article'}]}]}
+        pedido.write_text(json.dumps(conf))
+        def captar(nome): return subprocess.run(['node',str(RAIZ/'scripts/leituras/captar.mjs'),str(pedido),str(p/nome),str(dist)],capture_output=True,text=True)
+        hashes={f.relative_to(dist).as_posix():hashlib.sha256(f.read_bytes()).hexdigest() for f in dist.rglob('*') if f.is_file()}
+        r=captar('limpo'); assert r.returncode==0,r.stdout+r.stderr
+        recibo=json.loads((p/'limpo/capturas.json').read_text()); assert len(recibo['resultados'])==10
+        assert len(list((p/'limpo').glob('*.png')))==20
+        for f,selo in recibo['recursos'].items(): assert hashes[f]==selo
+        for item in recibo['resultados']:
+            for f in [item,*item['recortes']]: assert hashlib.sha256((p/'limpo'/f['ficheiro']).read_bytes()).hexdigest()==f['sha256']
+        assert all(hashlib.sha256((dist/f).read_bytes()).hexdigest()==s for f,s in hashes.items())
+        registar('capturas e recortes nas duas edições','Cinco larguras por edição; PNG, sha256 e recursos conferidos; construção intacta.')
+        conf['cabeca']='b'*40; pedido.write_text(json.dumps(conf)); r=captar('cabeca'); assert r.returncode!=0 and not (p/'cabeca').exists()
+        assert 'a cabeça pedida não é a de dist/version.json' in r.stderr
+        registar('captura de outra cabeça','captar: a cabeça pedida não é a de dist/version.json')
+        conf['cabeca']=head; pedido.write_text(json.dumps(conf)); (dist/'index.html').write_text(html.replace('</body>','<img src="https://example.invalid/ensaio.png"></body>'))
+        r=captar('externo'); assert r.returncode!=0; rec=json.loads((p/'externo/capturas.json').read_text()); assert rec['falhas'] and rec['resultados'][0]['externos']
+        registar('pedido externo na captura',rec['falhas'][0])
+        (dist/'index.html').write_text(html.replace('<article>','<section>').replace('</article>','</section>'))
+        r=captar('recorte'); assert r.returncode!=0; rec=json.loads((p/'recorte/capturas.json').read_text()); assert 'não aparece uma vez' in rec['falhas'][0]
+        registar('recorte ausente',rec['falhas'][0])
+saida={'ok':True,'casos':casos}
+if '--json' in sys.argv: Path(sys.argv[sys.argv.index('--json')+1]).write_text(json.dumps(saida,ensure_ascii=False,indent=2)+'\n')
+print(json.dumps(saida,ensure_ascii=False,indent=2))
