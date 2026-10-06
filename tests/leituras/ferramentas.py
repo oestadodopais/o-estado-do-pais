@@ -77,6 +77,10 @@ with tempfile.TemporaryDirectory(prefix='oedp-ma-comuns-') as tmp:
     (pasta/'temporarios.log').write_text('/private/var/folders/ab/cd/T/ensaio/ficheiro /tmp/ensaio/ficheiro ' + str(p/'tmp-especial'/'ficheiro'))
     limpar.limpar(**args, temporario=p/'tmp-especial')
     assert (pasta/'temporarios.log').read_text() == '<temporario> <temporario> <temporario>/ficheiro'
+    # Um «/tmp/» no meio de um caminho do repositório ou de um endereço não é uma pasta temporária (a segunda leitura do M-A, o achado 9).
+    (pasta/'nao-temporarios.log').write_text('dist/tmp/pagina.html https://exemplo.pt/tmp/relatorio.pdf e /tmp/ensaio/f')
+    limpar.limpar(**args, temporario=p/'tmp-especial')
+    assert (pasta/'nao-temporarios.log').read_text() == 'dist/tmp/pagina.html https://exemplo.pt/tmp/relatorio.pdf e <temporario>', (pasta/'nao-temporarios.log').read_text()
     registar('caminhos temporários', 'Pastas temporárias do sistema e TMPDIR retirados.')
     (pasta/'palavra.log').write_text('transportoes portoes /pasta/portoes/ficheiro')
     limpar.limpar(**{**args, 'utilizador': 'portoes'})

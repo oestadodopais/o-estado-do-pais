@@ -40,8 +40,11 @@ def substituir_texto(texto, trocas, utilizador):
     for origem in sorted(trocas, key=len, reverse=True):
         padrao = re.escape(origem) + r'(?=/|$|[\s"\'<>:,;()\[\]{}])'
         novo = re.sub(padrao, lambda _: trocas[origem], novo)
-    # Outros processos podem ter usado pastas temporárias fora do TMPDIR atual.
-    novo = re.sub(r'/(?:private/)?var/folders/[^\s"\'<>:\x1b]+|/(?:private/)?tmp/[^\s"\'<>:\x1b]+', '<temporario>', novo)
+    # Outros processos podem ter usado pastas temporárias fora do TMPDIR atual. O caminho tem de começar onde começa um
+    # caminho (no início, depois de um espaço, de aspas, de «=», de um parêntesis ou de uma vírgula): sem esta âncora,
+    # «dist/tmp/pagina.html» e «https://exemplo.pt/tmp/relatorio.pdf» eram reescritos (a segunda leitura do M-A, o achado 9).
+    inicio = r'(?<![^\s"\'=(\[,<])'
+    novo = re.sub(inicio + r'/(?:private/)?var/folders/[^\s"\'<>:\x1b]+|' + inicio + r'/(?:private/)?tmp/[^\s"\'<>:\x1b]+', '<temporario>', novo)
     novo = re.sub('/' + 'Users' + r'/[^/\s"\x1b]+', '<casa>', novo)
     # O nome só identifica a máquina quando é um componente de caminho.
     if utilizador:
