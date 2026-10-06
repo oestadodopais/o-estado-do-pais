@@ -53,6 +53,6 @@ if (passagemE && (estadoFim || execFileSync('git', ['rev-parse', 'HEAD'], { enco
 const ficheiro = `design/especime-v3/medicoes/h4-2026-10-06/plantas-politica${passagemE ? '-e' : ''}.json`;
 const destino = passagemE ? path.join(process.env.OEDP_H4_PROVAS ?? '.', ficheiro) : ficheiro;
 fs.mkdirSync(path.dirname(destino), { recursive: true });
-fs.writeFileSync(destino, JSON.stringify({ comando: 'node design/especime-v3/medicoes/h4-2026-10-06/provar-politica.mjs' + (passagemE ? ' --passagem-e' : ''), cabeca, estado, estado_fim: estadoFim, construcao, intactas, plantas: resultados, passou }, null, 2) + '\n');
+fs.writeFileSync(destino, JSON.stringify({ comando: 'node design/especime-v3/medicoes/h4-2026-10-06/provar-politica-e.mjs' + (passagemE ? ' --passagem-e' : ''), cabeca, estado, estado_fim: estadoFim, construcao, intactas, plantas: resultados, passou }, null, 2) + '\n');
 console.log(`${resultados.length} plantas dos lugares: ${resultados.filter((r) => r.passou).length} morderam a mensagem esperada.`);
 process.exitCode = passou ? 0 : 1;

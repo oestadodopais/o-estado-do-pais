@@ -81,6 +81,6 @@ try {
     if (sha(bytes) !== sha(await fs.readFile(local))) throw Error('Os bytes mudaram durante as capturas.');
   }
 } finally { await navegador.close(); servidor.close(); }
-await fs.writeFile(destino(`${AQUI}/${passagemE ? 'capturas-e' : passagemC ? 'capturas-c' : passagemB ? 'capturas-b' : 'capturas'}.json`), JSON.stringify({ comando: `node ${AQUI}/captar-h4.mjs${process.argv.includes('--politica') ? ' --politica' : ''}${passagemB ? ' --passagem-b' : ''}${passagemC ? ' --passagem-c' : ''}${passagemE ? ' --passagem-e' : ''}`, cabeca, estado, construcao: versao, paginas, capturas, erros }, null, 2) + '\n');
+await fs.writeFile(destino(`${AQUI}/${passagemE ? 'capturas-e' : passagemC ? 'capturas-c' : passagemB ? 'capturas-b' : 'capturas'}.json`), JSON.stringify({ comando: `node ${AQUI}/captar-h4-e.mjs${process.argv.includes('--politica') ? ' --politica' : ''}${passagemB ? ' --passagem-b' : ''}${passagemC ? ' --passagem-c' : ''}${passagemE ? ' --passagem-e' : ''}`, cabeca, estado, construcao: versao, paginas, capturas, erros }, null, 2) + '\n');
 console.log(`${capturas.length} capturas e os seus recortes; ${erros.length} erros.`);
 process.exitCode = erros.length ? 1 : 0;

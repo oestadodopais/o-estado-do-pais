@@ -55,7 +55,12 @@ linhas = ['## A passagem H4-e', '',
           '(`design/especime-v3/critica/LEITURA-H4-d-2026-10-06.md`, o achado 3 e o 7): sem «peça» nem «lugares», '
           'a regra das famílias dita uma vez só, e o que a construção faz com cada número (a fonte e a data) distinguido '
           'do que a leitura faz com o que foi construído. A exceção H4-6 da L3 e as suas quatro plantas saíram com a palavra. '
-          'Como a redação é de um modelo Claude, a leitura dela é do Codex, a outra família.', '',
+          'Como a redação é de um modelo Claude, a leitura dela é do Codex, a outra família: a primeira leitura '
+          '(`design/especime-v3/critica/LEITURA-H4-e-codex-2026-10-06.md`) mordeu as cinco plantas e achou que a regra 9 do Método '
+          '(«A intervenção humana») ainda dizia que a direção é de uma pessoa que escolhe o que se publica, contra a secção dos papéis '
+          'e contra a §1.112; a regra passou a dizer que a direção é de um modelo, que decide o que se publica dentro das regras e das '
+          'recusas que uma pessoa com nome define, e que é essa pessoa que responde; os guiões das provas passaram a registar os seus '
+          'próprios nomes. As provas abaixo são as da cabeça com essas duas mudanças.', '',
           f'Cabeça do código: `{cabeca}`. Secção gerada por `{COMANDO}` a partir dos resultados guardados. '
           'Os portões inteiros desta cabeça correm na corrida portão do GitHub, e não na máquina; aqui correram as '
           'conferências que a mudança toca, cada uma no seu comando com o código lido de um ficheiro.', '',
