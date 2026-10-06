@@ -4,7 +4,7 @@
 Uso (da raiz do sítio, depois dos portões, das provas e da limpeza dos registos):
   python3 design/especime-v3/medicoes/ex1-2026-10-05/medir.py
 
-Lê só ficheiros desta pasta (os registos dos portões em `portoes/`, os das provas em `provas/`, os JSON que as provas
+Lê só ficheiros desta pasta (os registos dos portões em `entrega/portoes/`, `ex1b/portoes/` e `portoes/`, os das provas em `provas/`, os JSON que as provas
 escreveram) e as linhas do livro-razão que o relatório cita, e escreve `medidas.json`. Uma medida cujo conhecido-positivo
 falhe fica com `encontrado: false` e o guião sai com 1: um valor lido de um ficheiro que não tem o que se procurava não
 é um valor. Nenhum número se escreve aqui à mão: cada um sai de um ficheiro, por uma expressão ou por uma chave.
@@ -52,38 +52,41 @@ def segundos(pasta, nome):
 
 
 # ------------------------------------------------------------------ os portões
-CMD_PORTOES = "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes"
-cab = ler("portoes/cabeca").strip()
-medida("portoes.cabeca", cab, CMD_PORTOES, "a cabeça dos portões é a de antes e a de depois da corrida", cab and cab == ler("portoes/cabeca-antes-da-corrida").strip() == ler("portoes/cabeca.fim").strip() == ler("portoes/cabeca-depois-da-corrida").strip())
+# A ENTREGA DO EX1 (05.10.2026): os registos dos portões da cabeça 1d64052a mudaram-se de `portoes/` para `entrega/portoes/`
+# na fusão com o main de 06.10.2026, para que a corrida da fusão escreva em `portoes/`, como o mandato a pede.
+E = "entrega/portoes"
+CMD_PORTOES = "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão)"
+cab = ler(f"{E}/cabeca").strip()
+medida("portoes.cabeca", cab, CMD_PORTOES, "a cabeça dos portões é a de antes e a de depois da corrida", cab and cab == ler(f"{E}/cabeca-antes-da-corrida").strip() == ler(f"{E}/cabeca.fim").strip() == ler(f"{E}/cabeca-depois-da-corrida").strip())
 for g in ("build", "verify", "typecheck"):
-    c = ler(f"portoes/{g}.codigo").strip()
-    medida(f"portoes.{g}.codigo", int(c) if c.isdigit() else None, CMD_PORTOES + f" (portoes/{g}.codigo)", f"o registo portoes/{g}.log começa pela linha do npm do portão", f"> o-estado-do-pais@0.1.0 {g}" in ler(f"portoes/{g}.log"))
-    s = segundos("portoes", g)
-    medida(f"portoes.{g}.segundos", s, CMD_PORTOES + f" (portoes/{g}.inicio e .fim)", "as duas horas estão escritas", s is not None)
+    c = ler(f"{E}/{g}.codigo").strip()
+    medida(f"portoes.{g}.codigo", int(c) if c.isdigit() else None, CMD_PORTOES + f" ({E}/{g}.codigo)", f"o registo {E}/{g}.log começa pela linha do npm do portão", f"> o-estado-do-pais@0.1.0 {g}" in ler(f"{E}/{g}.log"))
+    s = segundos(E, g)
+    medida(f"portoes.{g}.segundos", s, CMD_PORTOES + f" ({E}/{g}.inicio e .fim)", "as duas horas estão escritas", s is not None)
 for q in ("antes", "depois"):
-    t = ler(f"portoes/estado-seguido-{q}")
-    medida(f"portoes.estado_seguido_{q}.linhas", len([l for l in t.splitlines() if l.strip()]), f"git status --porcelain --untracked-files=no > portoes/estado-seguido-{q}", "o ficheiro foi escrito", (AQUI / f"portoes/estado-seguido-{q}").exists())
-verify = ler("portoes/verify.log")
+    t = ler(f"{E}/estado-seguido-{q}")
+    medida(f"portoes.estado_seguido_{q}.linhas", len([l for l in t.splitlines() if l.strip()]), f"git status --porcelain --untracked-files=no > {E}/estado-seguido-{q}", "o ficheiro foi escrito", (AQUI / f"{E}/estado-seguido-{q}").exists())
+verify = ler(f"{E}/verify.log")
 m = re.search(r"EX1 · (\d+) marca\(s\) da leitura da semana recontadas na janela que acaba a (\S+), (\d+) página\(s\) de explicação e (\d+) <head> de explicação conferidos", verify)
 for k, i in (("marcas_da_semana", 1), ("paginas_de_explicacao", 3), ("heads_de_explicacao", 4)):
-    medida(f"verify.gate_html.{k}", int(m.group(i)) if m else None, "npm run verify (portoes/verify.log, a linha «EX1 · … marca(s) da leitura da semana recontadas»)", "a linha do portão de HTML está no registo", m)
-medida("verify.gate_html.fim_da_janela", m.group(2) if m else None, "npm run verify (portoes/verify.log)", "a linha do portão de HTML está no registo", m)
+    medida(f"verify.gate_html.{k}", int(m.group(i)) if m else None, f"npm run verify ({E}/verify.log, a linha «EX1 · … marca(s) da leitura da semana recontadas»)", "a linha do portão de HTML está no registo", m)
+medida("verify.gate_html.fim_da_janela", m.group(2) if m else None, f"npm run verify ({E}/verify.log)", "a linha do portão de HTML está no registo", m)
 m = re.search(r"F22 · (\d+) figuras das explicações recompostas das linhas · (\d+) de (\d+) plantas em memória", verify)
 for k, i in (("figuras", 1), ("plantas_que_morderam", 2), ("plantas", 3)):
-    medida(f"verify.check_formas.f22_{k}", int(m.group(i)) if m else None, "npm run verify (portoes/verify.log, a linha «F22 · …»)", "a linha da F22 está no registo", m)
+    medida(f"verify.check_formas.f22_{k}", int(m.group(i)) if m else None, f"npm run verify ({E}/verify.log, a linha «F22 · …»)", "a linha da F22 está no registo", m)
 m = re.search(r"L1 · páginas com dois destinos iguais fora da mobília\s+(\d+)\s+\(teto (\d+)\)", verify)
-medida("verify.check_lugar.l1", int(m.group(1)) if m else None, "npm run verify (portoes/verify.log, a linha «L1 · …»)", "a linha da L1 está no registo", m)
-medida("verify.check_lugar.l1_teto", int(m.group(2)) if m else None, "npm run verify (portoes/verify.log)", "a linha da L1 está no registo", m)
+medida("verify.check_lugar.l1", int(m.group(1)) if m else None, f"npm run verify ({E}/verify.log, a linha «L1 · …»)", "a linha da L1 está no registo", m)
+medida("verify.check_lugar.l1_teto", int(m.group(2)) if m else None, f"npm run verify ({E}/verify.log)", "a linha da L1 está no registo", m)
 m = re.search(r"EX1: (\d+) página\(s\) com as palavras das explicações e as frases da semana conferidas", verify)
-medida("verify.check_voz.paginas_ex1", int(m.group(1)) if m else None, "npm run verify (portoes/verify.log, a linha «EX1: … página(s) com as palavras das explicações»)", "a linha do check:voz está no registo", m)
+medida("verify.check_voz.paginas_ex1", int(m.group(1)) if m else None, f"npm run verify ({E}/verify.log, a linha «EX1: … página(s) com as palavras das explicações»)", "a linha do check:voz está no registo", m)
 m = re.search(r"X · a explicação: .*? (\d+) de (\d+) plantas em memória", verify)
-medida("verify.check_explicacoes.x_plantas", [int(m.group(1)), int(m.group(2))] if m else None, "npm run verify (portoes/verify.log, a linha «X · a explicação»)", "a linha da célula X está no registo", m)
+medida("verify.check_explicacoes.x_plantas", [int(m.group(1)), int(m.group(2))] if m else None, f"npm run verify ({E}/verify.log, a linha «X · a explicação»)", "a linha da célula X está no registo", m)
 m = re.search(r"W · a leitura da semana: janela (\S+) a (\S+), (\d+) relidas, (\d+) mudadas de valor, (\d+) de proveniência; W1 (\d+) de (\d+) plantas na cópia do livro; (\d+) porta\(s\) da semana conferidas; (\d+) de (\d+) plantas na página", verify)
 medida("verify.check_explicacoes.w", {"inicio": m.group(1), "fim": m.group(2), "relidas": int(m.group(3)), "valor": int(m.group(4)), "proveniencia": int(m.group(5)), "w1": [int(m.group(6)), int(m.group(7))], "portas": int(m.group(8)), "plantas_na_pagina": [int(m.group(9)), int(m.group(10))]} if m else None,
-       "npm run verify (portoes/verify.log, a linha «W · a leitura da semana»)", "a linha da célula W está no registo", m)
+       f"npm run verify ({E}/verify.log, a linha «W · a leitura da semana»)", "a linha da célula W está no registo", m)
 m = re.search(r"H3 .*?(\d+) página\(s\) do dist/: 0 sem título único", verify)
-medida("verify.check_alvos.paginas_do_dist", int(m.group(1)) if m else None, "npm run verify (portoes/verify.log, a H3 do check:alvos)", "a linha da H3 está no registo", m)
-medida("verify.check_alvos.todas_verdes", "todas as células verdes" in verify, "npm run verify (portoes/verify.log)", "o check:alvos correu (a linha H10 está no registo)", "H10" in verify)
+medida("verify.check_alvos.paginas_do_dist", int(m.group(1)) if m else None, f"npm run verify ({E}/verify.log, a H3 do check:alvos)", "a linha da H3 está no registo", m)
+medida("verify.check_alvos.todas_verdes", "todas as células verdes" in verify, f"npm run verify ({E}/verify.log)", "o check:alvos correu (a linha H10 está no registo)", "H10" in verify)
 
 # ------------------------------------------------------------------ as provas
 CMD_PROVAS = "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh"
