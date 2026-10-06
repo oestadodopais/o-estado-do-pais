@@ -1,0 +1,454 @@
+{
+  "o_que_e": "As peças do R4 nas páginas que as células do EX1 leem, na construção da fusão, e quantas caem dentro de uma marca das frases compostas do EX1.",
+  "data": "2026-10-06T06:50:26.676Z",
+  "cabeca": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+  "construcao": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+  "main": "42c7ed7e99ba6428573e3b9115c4e4a229b1423a",
+  "seletores": {
+    "explicacao_de_um_valor_de_referencia": "[data-veredicto-explica]",
+    "frase_o_que_e_da_explicacao": "[data-veredicto-o-que-e]",
+    "parte_do_sinal": "[data-veredicto-sinal]",
+    "frase_o_que_e_de_um_recibo": "[data-o-que-e]",
+    "marcador_por_confirmar_na_fonte": "[data-por-confirmar-na-fonte], a.marcador-da-frase",
+    "ultimo_ponto_de_uma_serie": "[data-serie-ultimo]"
+  },
+  "marcas_do_ex1": "[data-explicacao-declarado], [data-semana-declarado], [data-explicacao-porta], [data-semana-frase]",
+  "paginas_lidas": 10,
+  "paginas_com_pecas_do_r4": [
+    "/",
+    "/en"
+  ],
+  "pecas_dentro_de_uma_marca_do_ex1": 0,
+  "paginas": [
+    {
+      "url": "/",
+      "rota": "home",
+      "celulas": [
+        "FC",
+        "W",
+        "voz"
+      ],
+      "pecas_do_r4": 27,
+      "dentro_de_uma_marca_do_ex1": 0,
+      "pecas": {
+        "explicacao_de_um_valor_de_referencia": {
+          "total": 13,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_da_explicacao": {
+          "total": 13,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "parte_do_sinal": {
+          "total": 1,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_de_um_recibo": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "marcador_por_confirmar_na_fonte": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "ultimo_ponto_de_uma_serie": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        }
+      }
+    },
+    {
+      "url": "/indice",
+      "rota": "indice",
+      "celulas": [
+        "FC",
+        "voz"
+      ],
+      "pecas_do_r4": 0,
+      "dentro_de_uma_marca_do_ex1": 0,
+      "pecas": {
+        "explicacao_de_um_valor_de_referencia": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_da_explicacao": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "parte_do_sinal": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_de_um_recibo": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "marcador_por_confirmar_na_fonte": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "ultimo_ponto_de_uma_serie": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        }
+      }
+    },
+    {
+      "url": "/explicacoes",
+      "rota": "explicacoes",
+      "celulas": [
+        "FC",
+        "voz"
+      ],
+      "pecas_do_r4": 0,
+      "dentro_de_uma_marca_do_ex1": 0,
+      "pecas": {
+        "explicacao_de_um_valor_de_referencia": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_da_explicacao": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "parte_do_sinal": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_de_um_recibo": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "marcador_por_confirmar_na_fonte": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "ultimo_ponto_de_uma_serie": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        }
+      }
+    },
+    {
+      "url": "/explicacoes/leitura-da-semana",
+      "rota": "leituraDaSemana",
+      "celulas": [
+        "FC",
+        "W",
+        "voz"
+      ],
+      "pecas_do_r4": 0,
+      "dentro_de_uma_marca_do_ex1": 0,
+      "pecas": {
+        "explicacao_de_um_valor_de_referencia": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_da_explicacao": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "parte_do_sinal": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_de_um_recibo": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "marcador_por_confirmar_na_fonte": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "ultimo_ponto_de_uma_serie": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        }
+      }
+    },
+    {
+      "url": "/explicacoes/dinheiro-do-estado-2026",
+      "rota": "explicacao",
+      "celulas": [
+        "FC",
+        "X",
+        "voz"
+      ],
+      "pecas_do_r4": 0,
+      "dentro_de_uma_marca_do_ex1": 0,
+      "pecas": {
+        "explicacao_de_um_valor_de_referencia": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_da_explicacao": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "parte_do_sinal": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_de_um_recibo": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "marcador_por_confirmar_na_fonte": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "ultimo_ponto_de_uma_serie": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        }
+      }
+    },
+    {
+      "url": "/en",
+      "rota": "home",
+      "celulas": [
+        "FC",
+        "W",
+        "voz"
+      ],
+      "pecas_do_r4": 27,
+      "dentro_de_uma_marca_do_ex1": 0,
+      "pecas": {
+        "explicacao_de_um_valor_de_referencia": {
+          "total": 13,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_da_explicacao": {
+          "total": 13,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "parte_do_sinal": {
+          "total": 1,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_de_um_recibo": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "marcador_por_confirmar_na_fonte": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "ultimo_ponto_de_uma_serie": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        }
+      }
+    },
+    {
+      "url": "/en/index",
+      "rota": "indice",
+      "celulas": [
+        "FC",
+        "voz"
+      ],
+      "pecas_do_r4": 0,
+      "dentro_de_uma_marca_do_ex1": 0,
+      "pecas": {
+        "explicacao_de_um_valor_de_referencia": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_da_explicacao": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "parte_do_sinal": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_de_um_recibo": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "marcador_por_confirmar_na_fonte": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "ultimo_ponto_de_uma_serie": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        }
+      }
+    },
+    {
+      "url": "/en/explainers",
+      "rota": "explicacoes",
+      "celulas": [
+        "FC",
+        "voz"
+      ],
+      "pecas_do_r4": 0,
+      "dentro_de_uma_marca_do_ex1": 0,
+      "pecas": {
+        "explicacao_de_um_valor_de_referencia": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_da_explicacao": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "parte_do_sinal": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_de_um_recibo": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "marcador_por_confirmar_na_fonte": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "ultimo_ponto_de_uma_serie": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        }
+      }
+    },
+    {
+      "url": "/en/explainers/weekly-reading",
+      "rota": "leituraDaSemana",
+      "celulas": [
+        "FC",
+        "W",
+        "voz"
+      ],
+      "pecas_do_r4": 0,
+      "dentro_de_uma_marca_do_ex1": 0,
+      "pecas": {
+        "explicacao_de_um_valor_de_referencia": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_da_explicacao": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "parte_do_sinal": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_de_um_recibo": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "marcador_por_confirmar_na_fonte": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "ultimo_ponto_de_uma_serie": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        }
+      }
+    },
+    {
+      "url": "/en/explainers/dinheiro-do-estado-2026",
+      "rota": "explicacao",
+      "celulas": [
+        "FC",
+        "X",
+        "voz"
+      ],
+      "pecas_do_r4": 0,
+      "dentro_de_uma_marca_do_ex1": 0,
+      "pecas": {
+        "explicacao_de_um_valor_de_referencia": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_da_explicacao": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "parte_do_sinal": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "frase_o_que_e_de_um_recibo": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "marcador_por_confirmar_na_fonte": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        },
+        "ultimo_ponto_de_uma_serie": {
+          "total": 0,
+          "dentro_de_uma_marca_do_ex1": 0
+        }
+      }
+    }
+  ],
+  "primeira_pagina_do_main": {
+    "pt": {
+      "explicacao_de_um_valor_de_referencia": {
+        "total": 13,
+        "dentro_de_uma_marca_do_ex1": 0
+      },
+      "frase_o_que_e_da_explicacao": {
+        "total": 13,
+        "dentro_de_uma_marca_do_ex1": 0
+      },
+      "parte_do_sinal": {
+        "total": 1,
+        "dentro_de_uma_marca_do_ex1": 0
+      },
+      "frase_o_que_e_de_um_recibo": {
+        "total": 0,
+        "dentro_de_uma_marca_do_ex1": 0
+      },
+      "marcador_por_confirmar_na_fonte": {
+        "total": 0,
+        "dentro_de_uma_marca_do_ex1": 0
+      },
+      "ultimo_ponto_de_uma_serie": {
+        "total": 0,
+        "dentro_de_uma_marca_do_ex1": 0
+      }
+    },
+    "en": {
+      "explicacao_de_um_valor_de_referencia": {
+        "total": 13,
+        "dentro_de_uma_marca_do_ex1": 0
+      },
+      "frase_o_que_e_da_explicacao": {
+        "total": 13,
+        "dentro_de_uma_marca_do_ex1": 0
+      },
+      "parte_do_sinal": {
+        "total": 1,
+        "dentro_de_uma_marca_do_ex1": 0
+      },
+      "frase_o_que_e_de_um_recibo": {
+        "total": 0,
+        "dentro_de_uma_marca_do_ex1": 0
+      },
+      "marcador_por_confirmar_na_fonte": {
+        "total": 0,
+        "dentro_de_uma_marca_do_ex1": 0
+      },
+      "ultimo_ponto_de_uma_serie": {
+        "total": 0,
+        "dentro_de_uma_marca_do_ex1": 0
+      }
+    }
+  },
+  "conhecidos_positivos": [
+    {
+      "nome": "Os seletores acham a explicação de cada valor de referência e a parte do sinal na primeira página da construção do main, nas duas edições",
+      "mordeu": true
+    },
+    {
+      "nome": "Uma explicação do R4 posta, em memória, dentro de uma marca do EX1 conta-se como dentro",
+      "mordeu": true
+    }
+  ]
+}

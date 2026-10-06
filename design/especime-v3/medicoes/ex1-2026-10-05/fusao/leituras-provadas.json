@@ -1,0 +1,46 @@
+{
+  "o_que_e": "As leituras provadas depois da fusão com o main de 06.10.2026: cada chave do main com o mesmo valor e a chave das explicações do ramo antes da fusão.",
+  "ficheiro": "tests/cartao/leituras-provadas.json",
+  "main": "42c7ed7e",
+  "ramo_antes_da_fusao": "458f3e18",
+  "chaves": {
+    "schema": 1,
+    "o_que_e": "texto",
+    "leituras": 7,
+    "comuns": 38,
+    "medidas": 49,
+    "familias": 181,
+    "series": 10,
+    "explicacoes": 1
+  },
+  "chaves_do_main": {
+    "schema": 1,
+    "o_que_e": "texto",
+    "leituras": 7,
+    "comuns": 38,
+    "medidas": 49,
+    "familias": 181,
+    "series": 10
+  },
+  "iguais_ao_main": [
+    "comuns",
+    "familias",
+    "leituras",
+    "medidas",
+    "o_que_e",
+    "schema",
+    "series"
+  ],
+  "explicacoes_iguais_as_do_ramo": true,
+  "erros": [],
+  "conhecidos_positivos": [
+    {
+      "nome": "uma família do main tirada",
+      "mordeu": true
+    },
+    {
+      "nome": "a chave das explicações tirada",
+      "mordeu": true
+    }
+  ]
+}

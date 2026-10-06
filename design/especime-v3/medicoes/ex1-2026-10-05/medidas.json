@@ -5,7 +5,7 @@
     {
       "nome": "portoes.cabeca",
       "valor": "1d64052a5bbe45e92608a997bebe17742bbcb0aa",
-      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão)",
       "conhecido_positivo": {
         "o_que": "a cabeça dos portões é a de antes e a de depois da corrida",
         "encontrado": true
@@ -14,16 +14,16 @@
     {
       "nome": "portoes.build.codigo",
       "valor": 0,
-      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/build.codigo)",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão) (entrega/portoes/build.codigo)",
       "conhecido_positivo": {
-        "o_que": "o registo portoes/build.log começa pela linha do npm do portão",
+        "o_que": "o registo entrega/portoes/build.log começa pela linha do npm do portão",
         "encontrado": true
       }
     },
     {
       "nome": "portoes.build.segundos",
       "valor": 209,
-      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/build.inicio e .fim)",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão) (entrega/portoes/build.inicio e .fim)",
       "conhecido_positivo": {
         "o_que": "as duas horas estão escritas",
         "encontrado": true
@@ -32,16 +32,16 @@
     {
       "nome": "portoes.verify.codigo",
       "valor": 0,
-      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/verify.codigo)",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão) (entrega/portoes/verify.codigo)",
       "conhecido_positivo": {
-        "o_que": "o registo portoes/verify.log começa pela linha do npm do portão",
+        "o_que": "o registo entrega/portoes/verify.log começa pela linha do npm do portão",
         "encontrado": true
       }
     },
     {
       "nome": "portoes.verify.segundos",
       "valor": 1131,
-      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/verify.inicio e .fim)",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão) (entrega/portoes/verify.inicio e .fim)",
       "conhecido_positivo": {
         "o_que": "as duas horas estão escritas",
         "encontrado": true
@@ -50,16 +50,16 @@
     {
       "nome": "portoes.typecheck.codigo",
       "valor": 0,
-      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/typecheck.codigo)",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão) (entrega/portoes/typecheck.codigo)",
       "conhecido_positivo": {
-        "o_que": "o registo portoes/typecheck.log começa pela linha do npm do portão",
+        "o_que": "o registo entrega/portoes/typecheck.log começa pela linha do npm do portão",
         "encontrado": true
       }
     },
     {
       "nome": "portoes.typecheck.segundos",
       "valor": 0,
-      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/typecheck.inicio e .fim)",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão) (entrega/portoes/typecheck.inicio e .fim)",
       "conhecido_positivo": {
         "o_que": "as duas horas estão escritas",
         "encontrado": true
@@ -68,7 +68,7 @@
     {
       "nome": "portoes.estado_seguido_antes.linhas",
       "valor": 0,
-      "comando": "git status --porcelain --untracked-files=no > portoes/estado-seguido-antes",
+      "comando": "git status --porcelain --untracked-files=no > entrega/portoes/estado-seguido-antes",
       "conhecido_positivo": {
         "o_que": "o ficheiro foi escrito",
         "encontrado": true
@@ -77,7 +77,7 @@
     {
       "nome": "portoes.estado_seguido_depois.linhas",
       "valor": 0,
-      "comando": "git status --porcelain --untracked-files=no > portoes/estado-seguido-depois",
+      "comando": "git status --porcelain --untracked-files=no > entrega/portoes/estado-seguido-depois",
       "conhecido_positivo": {
         "o_que": "o ficheiro foi escrito",
         "encontrado": true
@@ -86,7 +86,7 @@
     {
       "nome": "verify.gate_html.marcas_da_semana",
       "valor": 30,
-      "comando": "npm run verify (portoes/verify.log, a linha «EX1 · … marca(s) da leitura da semana recontadas»)",
+      "comando": "npm run verify (entrega/portoes/verify.log, a linha «EX1 · … marca(s) da leitura da semana recontadas»)",
       "conhecido_positivo": {
         "o_que": "a linha do portão de HTML está no registo",
         "encontrado": true
@@ -95,7 +95,7 @@
     {
       "nome": "verify.gate_html.paginas_de_explicacao",
       "valor": 2,
-      "comando": "npm run verify (portoes/verify.log, a linha «EX1 · … marca(s) da leitura da semana recontadas»)",
+      "comando": "npm run verify (entrega/portoes/verify.log, a linha «EX1 · … marca(s) da leitura da semana recontadas»)",
       "conhecido_positivo": {
         "o_que": "a linha do portão de HTML está no registo",
         "encontrado": true
@@ -104,7 +104,7 @@
     {
       "nome": "verify.gate_html.heads_de_explicacao",
       "valor": 2,
-      "comando": "npm run verify (portoes/verify.log, a linha «EX1 · … marca(s) da leitura da semana recontadas»)",
+      "comando": "npm run verify (entrega/portoes/verify.log, a linha «EX1 · … marca(s) da leitura da semana recontadas»)",
       "conhecido_positivo": {
         "o_que": "a linha do portão de HTML está no registo",
         "encontrado": true
@@ -113,7 +113,7 @@
     {
       "nome": "verify.gate_html.fim_da_janela",
       "valor": "2026-10-06",
-      "comando": "npm run verify (portoes/verify.log)",
+      "comando": "npm run verify (entrega/portoes/verify.log)",
       "conhecido_positivo": {
         "o_que": "a linha do portão de HTML está no registo",
         "encontrado": true
@@ -122,7 +122,7 @@
     {
       "nome": "verify.check_formas.f22_figuras",
       "valor": 4,
-      "comando": "npm run verify (portoes/verify.log, a linha «F22 · …»)",
+      "comando": "npm run verify (entrega/portoes/verify.log, a linha «F22 · …»)",
       "conhecido_positivo": {
         "o_que": "a linha da F22 está no registo",
         "encontrado": true
@@ -131,7 +131,7 @@
     {
       "nome": "verify.check_formas.f22_plantas_que_morderam",
       "valor": 10,
-      "comando": "npm run verify (portoes/verify.log, a linha «F22 · …»)",
+      "comando": "npm run verify (entrega/portoes/verify.log, a linha «F22 · …»)",
       "conhecido_positivo": {
         "o_que": "a linha da F22 está no registo",
         "encontrado": true
@@ -140,7 +140,7 @@
     {
       "nome": "verify.check_formas.f22_plantas",
       "valor": 10,
-      "comando": "npm run verify (portoes/verify.log, a linha «F22 · …»)",
+      "comando": "npm run verify (entrega/portoes/verify.log, a linha «F22 · …»)",
       "conhecido_positivo": {
         "o_que": "a linha da F22 está no registo",
         "encontrado": true
@@ -149,7 +149,7 @@
     {
       "nome": "verify.check_lugar.l1",
       "valor": 2716,
-      "comando": "npm run verify (portoes/verify.log, a linha «L1 · …»)",
+      "comando": "npm run verify (entrega/portoes/verify.log, a linha «L1 · …»)",
       "conhecido_positivo": {
         "o_que": "a linha da L1 está no registo",
         "encontrado": true
@@ -158,7 +158,7 @@
     {
       "nome": "verify.check_lugar.l1_teto",
       "valor": 2716,
-      "comando": "npm run verify (portoes/verify.log)",
+      "comando": "npm run verify (entrega/portoes/verify.log)",
       "conhecido_positivo": {
         "o_que": "a linha da L1 está no registo",
         "encontrado": true
@@ -167,7 +167,7 @@
     {
       "nome": "verify.check_voz.paginas_ex1",
       "valor": 10,
-      "comando": "npm run verify (portoes/verify.log, a linha «EX1: … página(s) com as palavras das explicações»)",
+      "comando": "npm run verify (entrega/portoes/verify.log, a linha «EX1: … página(s) com as palavras das explicações»)",
       "conhecido_positivo": {
         "o_que": "a linha do check:voz está no registo",
         "encontrado": true
@@ -179,7 +179,7 @@
         11,
         11
       ],
-      "comando": "npm run verify (portoes/verify.log, a linha «X · a explicação»)",
+      "comando": "npm run verify (entrega/portoes/verify.log, a linha «X · a explicação»)",
       "conhecido_positivo": {
         "o_que": "a linha da célula X está no registo",
         "encontrado": true
@@ -203,7 +203,7 @@
           5
         ]
       },
-      "comando": "npm run verify (portoes/verify.log, a linha «W · a leitura da semana»)",
+      "comando": "npm run verify (entrega/portoes/verify.log, a linha «W · a leitura da semana»)",
       "conhecido_positivo": {
         "o_que": "a linha da célula W está no registo",
         "encontrado": true
@@ -212,7 +212,7 @@
     {
       "nome": "verify.check_alvos.paginas_do_dist",
       "valor": 7906,
-      "comando": "npm run verify (portoes/verify.log, a H3 do check:alvos)",
+      "comando": "npm run verify (entrega/portoes/verify.log, a H3 do check:alvos)",
       "conhecido_positivo": {
         "o_que": "a linha da H3 está no registo",
         "encontrado": true
@@ -221,7 +221,7 @@
     {
       "nome": "verify.check_alvos.todas_verdes",
       "valor": true,
-      "comando": "npm run verify (portoes/verify.log)",
+      "comando": "npm run verify (entrega/portoes/verify.log)",
       "conhecido_positivo": {
         "o_que": "o check:alvos correu (a linha H10 está no registo)",
         "encontrado": true
@@ -993,7 +993,7 @@
     {
       "nome": "primeira.portoes.cabeca",
       "valor": "482546471b44046b9ec4d5b7093b9ac78c2d35f1",
-      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na primeira corrida, guardada em primeira-corrida/portoes)",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão) (na primeira corrida, guardada em primeira-corrida/portoes)",
       "conhecido_positivo": {
         "o_que": "a cabeça é a de antes e a de depois dessa corrida",
         "encontrado": true
@@ -1002,7 +1002,7 @@
     {
       "nome": "primeira.portoes.build.codigo",
       "valor": 0,
-      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (primeira-corrida/portoes/build.codigo)",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão) (primeira-corrida/portoes/build.codigo)",
       "conhecido_positivo": {
         "o_que": "o registo primeira-corrida/portoes/build.log começa pela linha do npm do portão",
         "encontrado": true
@@ -1011,7 +1011,7 @@
     {
       "nome": "primeira.portoes.verify.codigo",
       "valor": 0,
-      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (primeira-corrida/portoes/verify.codigo)",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão) (primeira-corrida/portoes/verify.codigo)",
       "conhecido_positivo": {
         "o_que": "o registo primeira-corrida/portoes/verify.log começa pela linha do npm do portão",
         "encontrado": true
@@ -1020,7 +1020,7 @@
     {
       "nome": "primeira.portoes.typecheck.codigo",
       "valor": 0,
-      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (primeira-corrida/portoes/typecheck.codigo)",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na entrega do EX1, guardada em entrega/portoes desde a fusão) (primeira-corrida/portoes/typecheck.codigo)",
       "conhecido_positivo": {
         "o_que": "o registo primeira-corrida/portoes/typecheck.log começa pela linha do npm do portão",
         "encontrado": true
@@ -1250,22 +1250,22 @@
     {
       "nome": "custo",
       "valor": {
-        "respostas_do_modelo": 696,
+        "respostas_do_modelo": 884,
         "modelos": {
-          "claude-opus-5-5": 1320
+          "claude-opus-5-5": 1667
         },
         "simbolos": {
-          "input_tokens": 1392,
-          "cache_creation_input_tokens": 18886980,
-          "cache_read_input_tokens": 348421366,
-          "output_tokens": 128196
+          "input_tokens": 1768,
+          "cache_creation_input_tokens": 21424091,
+          "cache_read_input_tokens": 411940627,
+          "output_tokens": 132987
         },
-        "simbolos_de_entrada": 367309738,
-        "simbolos_de_saida_minimo": 128196,
-        "respostas_com_a_saida_de_um_momento_do_fluxo": 433,
-        "segundos": 29173,
+        "simbolos_de_entrada": 433366486,
+        "simbolos_de_saida_minimo": 132987,
+        "respostas_com_a_saida_de_um_momento_do_fluxo": 582,
+        "segundos": 35269,
         "primeira_entrada": "2026-10-05T21:56:57.367Z",
-        "lido_em": "2026-10-06T06:03:10Z"
+        "lido_em": "2026-10-06T07:44:47Z"
       },
       "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/custo.py <registo da sessão do construtor>",
       "conhecido_positivo": {
@@ -2758,6 +2758,698 @@
         "lido_em": "2026-10-06T06:03:10Z"
       },
       "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/custo.py <registo da sessão do construtor> ex1c/custo.json --desde <a primeira entrada da passagem>",
+      "conhecido_positivo": {
+        "o_que": "o registo foi lido (o sha256 está escrito)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.portoes.cabeca",
+      "valor": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes",
+      "conhecido_positivo": {
+        "o_que": "a cabeça dos portões é a de antes e a de depois da corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.portoes.build.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/build.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo portoes/build.log traz a linha do npm do portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.portoes.build.segundos",
+      "valor": 223,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/build.inicio e .fim)",
+      "conhecido_positivo": {
+        "o_que": "as duas horas estão escritas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.portoes.verify.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/verify.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo portoes/verify.log traz a linha do npm do portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.portoes.verify.segundos",
+      "valor": 1176,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/verify.inicio e .fim)",
+      "conhecido_positivo": {
+        "o_que": "as duas horas estão escritas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.portoes.typecheck.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/typecheck.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo portoes/typecheck.log traz a linha do npm do portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.portoes.typecheck.segundos",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/typecheck.inicio e .fim)",
+      "conhecido_positivo": {
+        "o_que": "as duas horas estão escritas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.portoes.estado_seguido_antes.linhas",
+      "valor": 0,
+      "comando": "git status --porcelain --untracked-files=no > portoes/estado-seguido-antes",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.portoes.estado_seguido_depois.linhas",
+      "valor": 0,
+      "comando": "git status --porcelain --untracked-files=no > portoes/estado-seguido-depois",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.verify.l1",
+      "valor": [
+        2716,
+        2716
+      ],
+      "comando": "npm run verify (portoes/verify.log, a linha «L1 · …»)",
+      "conhecido_positivo": {
+        "o_que": "a linha da L1 está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.verify.frases_compostas",
+      "valor": [
+        20,
+        10,
+        356,
+        0,
+        0,
+        2,
+        2
+      ],
+      "comando": "npm run verify (portoes/verify.log, a linha «FC · …»)",
+      "conhecido_positivo": {
+        "o_que": "a linha da célula está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.teto.antes",
+      "valor": 2714,
+      "comando": "git show 42c7ed7e:scripts/lugar-tetos-b1.json",
+      "conhecido_positivo": {
+        "o_que": "o registo do main aponta a medição da R4-b",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.teto.depois",
+      "valor": 2716,
+      "comando": "git show <cabeça dos portões>:scripts/lugar-tetos-b1.json",
+      "conhecido_positivo": {
+        "o_que": "o registo aponta a medição da fusão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.l1",
+      "valor": {
+        "main": 2714,
+        "estudos": 2716,
+        "novas": 2,
+        "sairam": 0,
+        "agravadas": 0,
+        "aliviadas": 0,
+        "iguais": 2714
+      },
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/medir-l1-fusao.mjs <worktree do main, construída> (fusao/l1-fusao.json)",
+      "conhecido_positivo": {
+        "o_que": "a contagem é a que o teto lê, e a régua do main correu com 0",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.l1.cabecas",
+      "valor": {
+        "fusao": "e0ad595d",
+        "main": "42c7ed7e"
+      },
+      "comando": "idem (as cabeças medidas)",
+      "conhecido_positivo": {
+        "o_que": "cada construção é a da sua cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.l1.paginas_novas",
+      "valor": {
+        "/en/explainers/dinheiro-do-estado-2026": 14,
+        "/explicacoes/dinheiro-do-estado-2026": 14
+      },
+      "comando": "idem (as páginas novas e os seus destinos repetidos)",
+      "conhecido_positivo": {
+        "o_que": "cada destino de cada página nova é um recibo de uma linha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.l1.composicao",
+      "valor": {
+        "/en/explainers/dinheiro-do-estado-2026": {
+          "funcoes": 10,
+          "ministerios": 4
+        },
+        "/explicacoes/dinheiro-do-estado-2026": {
+          "funcoes": 10,
+          "ministerios": 4
+        }
+      },
+      "comando": "idem (os recibos de cada página nova, pela família da linha)",
+      "conhecido_positivo": {
+        "o_que": "as duas famílias somam os destinos de cada página",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.l1.plantas",
+      "valor": [
+        7,
+        7
+      ],
+      "comando": "idem (os conhecidos-positivos em memória)",
+      "conhecido_positivo": {
+        "o_que": "a lista não está vazia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.planta_teto",
+      "valor": {
+        "codigo_sem_planta": 0,
+        "codigo": 1,
+        "mordeu": true
+      },
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/planta-teto-l1-fusao.mjs (fusao/planta-teto-l1-fusao.json, corrida nas provas)",
+      "conhecido_positivo": {
+        "o_que": "a planta correu na cabeça das provas, com a árvore seguida limpa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.cabeca",
+      "valor": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída>",
+      "conhecido_positivo": {
+        "o_que": "a cabeça das provas é a do fim delas e a dos portões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.estado.linhas",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/estado)",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.construcao",
+      "valor": "4893eb5d1a2ed07f36af774b28227a0a1bf436ae",
+      "comando": "cp dist/version.json fusao/provas/version.json",
+      "conhecido_positivo": {
+        "o_que": "a construção medida é a da cabeça das provas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.leituras-provadas.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/leituras-provadas.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/leituras-provadas.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.cartao.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/cartao.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/cartao.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.lugar.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/lugar.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/lugar.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.planta-teto.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/planta-teto.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/planta-teto.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.voz.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/voz.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/voz.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.lingua.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/lingua.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/lingua.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.explicacoes.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/explicacoes.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/explicacoes.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.frases-compostas.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/frases-compostas.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/frases-compostas.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.pais.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/pais.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/pais.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.r4-nas-celulas.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/r4-nas-celulas.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/r4-nas-celulas.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.ledger.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/ledger.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/ledger.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.mapa.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/mapa.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/mapa.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.plantas-ex1.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/plantas-ex1.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/plantas-ex1.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.provas.plantas-r4.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-fusao.sh <worktree do main, construída> (fusao/provas/plantas-r4.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o código está escrito e o registo fusao/provas/plantas-r4.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.k17_no_registo",
+      "valor": true,
+      "comando": "npm run check:cartao (fusao/provas/cartao.log)",
+      "conhecido_positivo": {
+        "o_que": "o registo traz a K17",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.leituras_provadas",
+      "valor": {
+        "chaves": {
+          "schema": 1,
+          "o_que_e": "texto",
+          "leituras": 7,
+          "comuns": 38,
+          "medidas": 49,
+          "familias": 181,
+          "series": 10,
+          "explicacoes": 1
+        },
+        "iguais_ao_main": 7,
+        "chaves_do_main": 7,
+        "explicacoes_iguais_as_do_ramo": true,
+        "erros": 0
+      },
+      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/conferir-leituras-provadas.py fusao/leituras-provadas.json",
+      "conhecido_positivo": {
+        "o_que": "os dois conhecidos-positivos morderam",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.r4_nas_celulas",
+      "valor": {
+        "paginas_lidas": 10,
+        "paginas_com_pecas_do_r4": [
+          "/",
+          "/en"
+        ],
+        "pecas_dentro_de_uma_marca_do_ex1": 0,
+        "explicacoes_pt": 13,
+        "explicacoes_en": 13,
+        "sinal_pt": 1,
+        "sinal_en": 1
+      },
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/r4-nas-celulas.mjs <worktree do main, construída> fusao/r4-nas-celulas.json",
+      "conhecido_positivo": {
+        "o_que": "os dois conhecidos-positivos morderam, na construção das provas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.frases_compostas",
+      "valor": {
+        "passagens": 20,
+        "paginas": 10,
+        "pedacos": 356,
+        "flex": 0,
+        "transbordos": 0,
+        "plantas": [
+          2,
+          2
+        ],
+        "erros": 0
+      },
+      "comando": "node tests/explicacoes/frases-compostas.mjs --json fusao/frases-compostas.json",
+      "conhecido_positivo": {
+        "o_que": "a construção lida é a das provas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.frases_compostas.primeira_pagina",
+      "valor": {
+        "/ a 390": [
+          7,
+          390,
+          390
+        ],
+        "/en/ a 390": [
+          7,
+          390,
+          390
+        ],
+        "/ a 1280": [
+          7,
+          1280,
+          1280
+        ],
+        "/en/ a 1280": [
+          7,
+          1280,
+          1280
+        ]
+      },
+      "comando": "idem (a primeira página: pedaços, largura do documento e janela)",
+      "conhecido_positivo": {
+        "o_que": "a primeira página está nos resultados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.plantas_ex1",
+      "valor": {
+        "quantas": 33,
+        "passaram": 33
+      },
+      "comando": "OEDP_MEDICOES=<pasta>/fusao OEDP_EXIGIR_ARVORE_LIMPA=1 node tests/pais/portoes.mjs --prefixo ex1",
+      "conhecido_positivo": {
+        "o_que": "cada planta repôs os bytes do dist/, saiu com 1 e correu na cabeça das provas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.plantas_r4",
+      "valor": {
+        "quantas": 8,
+        "passaram": 8
+      },
+      "comando": "OEDP_MEDICOES=<pasta>/fusao OEDP_EXIGIR_ARVORE_LIMPA=1 node tests/pais/portoes.mjs --prefixo r4",
+      "conhecido_positivo": {
+        "o_que": "cada planta repôs os bytes do dist/, saiu com 1 e correu na cabeça das provas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.primeira_corrida_das_plantas",
+      "valor": {
+        "ex1": {
+          "ok": 21,
+          "codigo": 1,
+          "queixa_da_arvore_suja": true
+        },
+        "r4": {
+          "ok": 0,
+          "codigo": 1,
+          "queixa_da_arvore_suja": true
+        }
+      },
+      "comando": "os registos da primeira corrida de provas-fusao.sh, guardados em fusao/primeira-corrida-das-plantas/",
+      "conhecido_positivo": {
+        "o_que": "os dois registos trazem a queixa da árvore suja",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.mapa.pela_conta_main",
+      "valor": 202,
+      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py <base> --escrever [--mapa <pedaço>] (fusao/linhas-do-mapa-main.log)",
+      "conhecido_positivo": {
+        "o_que": "o número é o das linhas da lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.mapa.pela_conta_ex1",
+      "valor": 11,
+      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py <base> --escrever [--mapa <pedaço>] (fusao/linhas-do-mapa-ex1.log)",
+      "conhecido_positivo": {
+        "o_que": "o número é o das linhas da lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.mapa.pela_conta_depois_do_teto",
+      "valor": 37,
+      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py <base> --escrever [--mapa <pedaço>] (fusao/linhas-do-mapa-depois-do-teto.log)",
+      "conhecido_positivo": {
+        "o_que": "o número é o das linhas da lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.mapa.antes_dos_acertos",
+      "valor": {
+        "conferidas": 546,
+        "longe": 3,
+        "nao_encontradas": 0,
+        "fora": 0
+      },
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md (fusao/mapa-antes-dos-acertos.log)",
+      "conhecido_positivo": {
+        "o_que": "as quatro linhas do guião estão no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.mapa.depois_dos_acertos",
+      "valor": {
+        "conferidas": 549,
+        "longe": 0,
+        "nao_encontradas": 0,
+        "fora": 0
+      },
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md (fusao/mapa-depois-dos-acertos.log)",
+      "conhecido_positivo": {
+        "o_que": "as quatro linhas do guião estão no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.mapa.no_fim",
+      "valor": {
+        "conferidas": 549,
+        "longe": 0,
+        "nao_encontradas": 0,
+        "fora": 0
+      },
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md (fusao/provas/mapa.log)",
+      "conhecido_positivo": {
+        "o_que": "as quatro linhas do guião estão no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.decisoes",
+      "valor": {
+        "ultima": "1.170",
+        "penultima": "1.171",
+        "linhas_em_branco_entre": 1
+      },
+      "comando": "git show <cabeça dos portões>:DECISIONS.md (os dois últimos títulos e as linhas em branco antes do último)",
+      "conhecido_positivo": {
+        "o_que": "o último título é o da §1.170",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.decisoes.acrescento",
+      "valor": {
+        "linhas_acrescentadas": 11,
+        "linhas_tiradas": 0
+      },
+      "comando": "git diff --numstat 42c7ed7e <cabeça dos portões> -- DECISIONS.md",
+      "conhecido_positivo": {
+        "o_que": "o diff nomeia o ficheiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.decisoes.ficheiro_da_entrada_apagado",
+      "valor": true,
+      "comando": "git ls-tree -r --name-only <cabeça dos portões> design/observatorio/",
+      "conhecido_positivo": {
+        "o_que": "a lista da pasta tem o mapa (a árvore foi lida)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.decisoes.entradas",
+      "valor": 134,
+      "comando": "npm run ledger:check (fusao/provas/ledger.log)",
+      "conhecido_positivo": {
+        "o_que": "a linha da amarra das decisões está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.critica.sha256",
+      "valor": {
+        "LEITURA-EX1-2026-10-06.md": "2ef740251853cb5533b72d1a04274533c875f73d2d300ce340de560ceedf78ac",
+        "LEITURA-EX1-2026-10-06.plantas.json": "e2725200a6a04a6d50afcaa0b3f968c25dbeaa18558cc984885ced2dd3db4d63"
+      },
+      "comando": "git show <cabeça dos portões>:<ficheiro> | sha256 (os dois ficheiros da leitura a frio, como o lugar de direção os deixou)",
+      "conhecido_positivo": {
+        "o_que": "os bytes são os do ficheiro na árvore",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.limpeza",
+      "valor": {
+        "ficheiros_limpos_quantos": 8,
+        "trocas": 13,
+        "restos_depois": []
+      },
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 design/especime-v3/medicoes/ex1-2026-10-05/limpar-registos.py limpeza-fusao.json",
+      "conhecido_positivo": {
+        "o_que": "a limpeza correu e escreveu a lista dos ficheiros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.limpeza.segunda",
+      "valor": {
+        "ficheiros_limpos_quantos": 0,
+        "trocas": 0,
+        "restos_depois": []
+      },
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> python3 design/especime-v3/medicoes/ex1-2026-10-05/limpar-registos.py limpeza-fusao-segunda.json",
+      "conhecido_positivo": {
+        "o_que": "a limpeza correu e escreveu a lista dos ficheiros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.limpeza.guiao_partido",
+      "valor": true,
+      "comando": "a lista dos ficheiros da primeira limpeza (limpeza-fusao.json)",
+      "conhecido_positivo": {
+        "o_que": "a lista foi lida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "fusao.custo",
+      "valor": {
+        "respostas_do_modelo": 170,
+        "modelos": {
+          "claude-opus-5-5": 321
+        },
+        "simbolos_de_entrada": 49736480,
+        "simbolos_de_saida_minimo": 2679,
+        "respostas_com_a_saida_de_um_momento_do_fluxo": 141,
+        "segundos": 5818,
+        "primeira_entrada": "2026-10-06T06:07:48.442Z",
+        "desde": "2026-10-06T06:07:48.442Z",
+        "lido_em": "2026-10-06T07:44:47Z"
+      },
+      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/custo.py <registo da sessão do construtor> fusao/custo.json --desde <a mensagem da fusão>",
       "conhecido_positivo": {
         "o_que": "o registo foi lido (o sha256 está escrito)",
         "encontrado": true

@@ -1,0 +1,36 @@
+cabeça: 4893eb5d1a2ed07f36af774b28227a0a1bf436ae
+estado dos ficheiros seguidos: 0 linha(s)
+---
+OK ex1-semana-data-trocada: código 1
+OK ex1-semana-contagem-trocada: código 1
+OK ex1-semana-janela-de-outro-dia: código 1
+OK ex1-semana-janela-de-oito-dias: código 1
+OK ex1-semana-fora-da-porta: código 1
+OK ex1-semana-mudanca-a-mais: código 1
+OK ex1-semana-mudanca-em-falta: código 1
+OK ex1-unidade-de-outra-linha: código 1
+OK ex1-unidade-com-a-marca-de-outra-linha: código 1
+OK ex1-explicacao-titulo-com-outro-ano: código 1
+OK ex1-explicacao-descricao-mudada: código 1
+OK ex1-explicacao-numero-trocado: código 1
+OK ex1-f22-barra-fora-de-escala: código 1
+OK ex1-f22-valor-trocado: código 1
+OK ex1-indice-sem-as-explicacoes: código 1
+OK ex1-voz-frase-por-classificar: código 1
+OK ex1-voz-ramo-do-sinal-trocado: código 1
+OK ex1-voz-porta-da-semana-com-outra-frase: código 1
+OK ex1b-rodape-sem-a-porta-das-explicacoes: código 1
+OK ex1b-rodape-com-uma-porta-a-mais: código 1
+OK ex1b-maiores-ordem-trocada: código 1
+file://<worktree do sítio>/tests/pais/portoes.mjs:35
+ if(process.env.OEDP_EXIGIR_ARVORE_LIMPA==='1' && estado)throw Error(`${nome}: a prova exige uma árvore seguida limpa.`);
+                                                               ^
+
+Error: ex1b-maiores-valor-trocado: a prova exige uma árvore seguida limpa.
+    at planta (file://<worktree do sítio>/tests/pais/portoes.mjs:35:64)
+    at file://<worktree do sítio>/tests/pais/portoes.mjs:857:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

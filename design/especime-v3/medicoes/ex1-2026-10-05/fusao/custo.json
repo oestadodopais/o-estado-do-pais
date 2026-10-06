@@ -1,0 +1,26 @@
+{
+  "o_que": "o custo da passagem que escreveu fusao/custo.json, lido do registo da sessão do seu construtor (custo.py)",
+  "registo_sha256": "5b3b03f67cca374dafbf09b2d2ae91284b2fd4a0ea93bdfdd9b3e8f8f22b154a",
+  "respostas_do_modelo": 170,
+  "modelos": {
+    "claude-opus-5-5": 321
+  },
+  "simbolos": {
+    "input_tokens": 340,
+    "cache_creation_input_tokens": 2499448,
+    "cache_read_input_tokens": 47236692,
+    "output_tokens": 2679
+  },
+  "simbolos_de_entrada": 49736480,
+  "simbolos_de_entrada_quer_dizer": "a entrada de cada resposta, somada: a nova, a escrita na cache e a lida da cache",
+  "simbolos_de_saida_minimo": 2679,
+  "respostas_com_a_saida_de_um_momento_do_fluxo": 141,
+  "simbolos_de_saida_quer_dizer": "um mínimo: em tantas respostas quantas a contagem ao lado, o registo guardou a saída de um momento do fluxo e não a final",
+  "primeira_entrada": "2026-10-06T06:07:48.442Z",
+  "ultima_entrada": "2026-10-06T07:44:46.737Z",
+  "lido_em": "2026-10-06T07:44:47Z",
+  "segundos": 5818,
+  "segundos_quer_dizer": "da primeira entrada do registo da sessão até ao momento desta leitura",
+  "desde": "2026-10-06T06:07:48.442Z",
+  "desde_quer_dizer": "só as entradas do registo desde este instante (a passagem que escreveu o ficheiro); null quer dizer o registo inteiro"
+}
