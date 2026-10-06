@@ -1,0 +1,23 @@
+{
+  "cabeca": "00216fc45a8f56bbbc4bccf7d5e1189f091136e2",
+  "contagens": {
+    "estudos": 2714,
+    "l1_paginas": 2714,
+    "teto_lido": 2736,
+    "base": 2714,
+    "r4": 2736,
+    "agora": 2714,
+    "r4b_novas": 0,
+    "r4b_sairam": 0,
+    "r4b_agravadas": 0,
+    "r4b_aliviadas": 0,
+    "r4b_iguais": 2714,
+    "r4_novas": 22,
+    "r4_agravadas_com_vezes": 896,
+    "r4_agravadas_sem_vezes": 0
+  },
+  "conhecidos_positivos": [
+    true,
+    true
+  ]
+}

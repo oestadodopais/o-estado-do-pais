@@ -1,0 +1,38 @@
+[
+  {
+    "nome": "r4b-l1-marcador-fora-da-marca",
+    "cabeca": "090557ab999d324b6e52f22a6f8408e5c3737355",
+    "estado": "",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L1 · páginas com dois destinos iguais fora da mobília: \\d+, acima do teto"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/livro-razao/funchal-desemprego-registado-2025-12/index.html",
+        "antes": "1c95f9ea4b5ac3dbbb0ef8b7a1fa0ad5750c3eb095518e5cb3ede7bc83588ff0",
+        "reposto": "1c95f9ea4b5ac3dbbb0ef8b7a1fa0ad5750c3eb095518e5cb3ede7bc83588ff0"
+      }
+    ]
+  },
+  {
+    "nome": "r4b-pais-sinal-tirado",
+    "cabeca": "090557ab999d324b6e52f22a6f8408e5c3737355",
+    "estado": "",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "V1-R4 en: «posicao-de-investimento-internacional-2025»: a explicação não diz o que o sinal quer dizer"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "d3c22886c31a1294e6a0db0a53cf3c30175e42ffeac397894232e0297d3c5b58",
+        "reposto": "d3c22886c31a1294e6a0db0a53cf3c30175e42ffeac397894232e0297d3c5b58"
+      }
+    ]
+  }
+]
