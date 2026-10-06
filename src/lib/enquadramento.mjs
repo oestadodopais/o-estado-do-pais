@@ -453,7 +453,14 @@ export function reguaDaMedida(id) {
           periodo: valorDoPeriodo(chaves.anterior),
         }
       : null;
-  const ue = chaves.ue && hasClaim(chaves.ue) ? { id: chaves.ue } : null;
+  /* JD1: o sufixo identifica uma candidata, mas não prova que seja comparável.
+     Os juros portugueses em milhões de euros e a percentagem europeia têm
+     os ids previstos no brief; a unidade e o período continuam a decidir. */
+  const principal = hasClaim(id) ? getClaim(id) : null;
+  const candidataUe = chaves.ue && hasClaim(chaves.ue) ? getClaim(chaves.ue) : null;
+  const ue = chaves.ue && principal && candidataUe && textoOuNulo(principal.unit) !== null && principal.unit === candidataUe.unit &&
+    textoOuNulo(principal.reference_date) !== null && principal.reference_date === candidataUe.reference_date
+    ? { id: chaves.ue } : null;
   return { anterior: anterior && mesmaSerie(id, anterior.id) ? anterior : null, ue };
 }
 

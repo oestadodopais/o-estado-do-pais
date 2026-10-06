@@ -1981,10 +1981,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano, calculados pela casa a partir dos dois montantes da mesma notificação do INE."
+        "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano, calculados a partir dos dois montantes da mesma notificação do INE."
       ],
       "en": [
-        "It is general government interest expenditure as a percentage of gross domestic product for the same year, calculated here from both amounts in the same INE notification."
+        "It is general government interest expenditure as a percentage of gross domestic product for the same year, calculated from both amounts in the same INE notification."
       ]
     }
   },
