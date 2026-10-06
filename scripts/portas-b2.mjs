@@ -2,7 +2,7 @@
  * A devolução contém nós concretos, nunca um bloco nem um seletor a dispensar.
  * Uma porta acrescentada fica no contador; uma porta obrigatória repetida ou
  * alterada torna o bloco inválido e nenhuma porta dele sai da contagem. */
-import { verificaVeredictoDoPais } from './pais-veredicto.mjs';
+import { verificaVeredictoDoPais, verificaExplicacoesDoVeredicto } from './pais-veredicto.mjs';
 import { verificaCartaoDasCamaras } from './pais-camaras.mjs';
 
 const CHAVES_DO_VEREDICTO = ['painel_fora_do_limiar', 'painel_com_limiar', 'painel_dentro_do_limiar'];
@@ -28,6 +28,22 @@ export function portasObrigatoriasB2(raiz, familia, lang, temas = null) {
     for (const chave of CHAVES_DO_VEREDICTO)
       portas.add(veredicto.querySelector(`a[data-prova="${chave}"]`));
     for (const a of veredicto.querySelectorAll('a[data-veredicto-medida]')) portas.add(a);
+    /* R4-b (06.10.2026): O SELO DE UM VALOR NA EXPLICAÇÃO DE UM VALOR DE REFERÊNCIA. A frase «o que é» do cartão dos
+       preços da habitação diz o valor da linha, e um valor leva o seu selo («onde aparece um valor, aparece o selo»,
+       a regra do portão de HTML), que abre o recibo que o bloco de «O que se passa» já abre. É uma porta obrigatória, e
+       contá-la como segunda porta era contar a obrigação como escolha, como as do veredicto. Só sai depois de a V1-R4
+       conferir a explicação inteira (o nome, a frase do cartão, o lado, a referência, e que cada porta dela é o selo do
+       valor da própria linha), e só o selo dentro da frase «o que é» ou da parte do sinal que abre o recibo da própria
+       medida: outra porta dentro ou fora da explicação continua a contar. */
+    if (temas && verificaExplicacoesDoVeredicto(raiz, temas, lang).length === 0) {
+      for (const item of raiz.querySelectorAll('main [data-veredicto-explica]')) {
+        const id = item.getAttribute('data-veredicto-explica');
+        const recibo = lang === 'pt' ? `/livro-razao/${id}` : `/en/ledger/${id}`;
+        for (const a of item.querySelectorAll('[data-veredicto-o-que-e] a.src-chip, [data-veredicto-sinal] a.src-chip')) {
+          if (a.getAttribute('href') === recibo) portas.add(a);
+        }
+      }
+    }
   }
   return { portas, erros };
 }

@@ -41,7 +41,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse, NodeType } from 'node-html-parser';
 
-import { FAMILIAS_DAS_LINHAS, FAMILIAS_DOS_CONCELHOS } from '../../src/data/o-que-e-das-familias.mjs';
+import { FAMILIAS_DAS_LINHAS, FAMILIAS_DOS_CONCELHOS, LINHAS_POR_CONFIRMAR_NA_FONTE } from '../../src/data/o-que-e-das-familias.mjs';
+import { POR_VERIFICAR } from '../../src/data/marcador.mjs';
 import { MEDIDAS_DO_CONCELHO } from '../../src/data/concelhos.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../../src/data/municipios.mjs';
 import { LEITURAS_DAS_MEDIDAS } from '../../src/data/leituras-das-medidas.mjs';
@@ -51,7 +52,7 @@ import { NOMES_DO_PROJETO, NOMES_DAS_LINHAS_DERIVADAS } from '../../src/data/nom
 import { TERMOS_DOS_CARTOES } from '../../src/data/termos-dos-cartoes.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 import { NOMES_DAS_SERIES } from '../../src/data/series-no-tempo.mjs';
-import { FRASES_DAS_SERIES } from '../../src/data/o-que-e-das-series.mjs';
+import { FRASES_DAS_SERIES, SERIES_POR_CONFIRMAR_NA_FONTE } from '../../src/data/o-que-e-das-series.mjs';
 import { lerSeriesDoPortao } from '../../scripts/series-do-portao.mjs';
 import { folhasDaLeitura, lerAuditoriaDasLeituras, leituraIndependente, corteIndependente, normal, PAGINAS_DA_LEITURA } from './leituras.mjs';
 
@@ -64,6 +65,30 @@ const campoDaLinha = (l, c) => (c === 'document.title' ? l?.document?.title : c 
 /** O texto de uma frase de pedaços (as cadeias e os termos de outra língua). @param {unknown} x */
 export const textoDaFrase = (x) => (Array.isArray(x) ? x.map((p) => (typeof p === 'string' ? p : p?.termo ?? '')).join('') : typeof x === 'string' ? x : '');
 const curto = (/** @type {string} */ s) => (s.length > 60 ? `${s.slice(0, 57)}…` : s);
+/** Um valor do livro-razão como número, pela conta desta célula. @param {unknown} v */
+const numeroAqui = (v) => { const t = String(v ?? '').replace(/[\s\u00a0\u202f\u2009]/g, '').replace(/\u2212/g, '-').replace(',', '.'); return /^-?\d+(\.\d+)?$/.test(t) ? Number(t) : null; };
+/**
+ * A parte do sinal de uma leitura de um cartão contra uma linha, pela conta desta célula (R4-b): o primeiro ramo do sinal
+ * depois do corte, escolhido pelo valor da linha, até ao primeiro pedaço que compara.
+ * @param {string} cartao @param {'pt'|'en'} lang @param {any} linha
+ */
+export function parteDoSinalAqui(cartao, lang, linha) {
+  const partes = /** @type {any} */ (LEITURAS_DAS_MEDIDAS)[cartao]?.[lang];
+  const v = numeroAqui(linha?.value);
+  if (!Array.isArray(partes) || v === null) return null;
+  const compara = (/** @type {any} */ x) => (Array.isArray(x) ? x.some(compara)
+    : Boolean(x && typeof x === 'object' && ('compara' in x || 'estado' in x || 'comparacao' in x || ('sinal' in x && Object.values(x.sinal ?? {}).some(compara)))));
+  const corte = partes.findIndex(compara);
+  for (const p of corte < 0 ? [] : partes.slice(corte)) {
+    if (!p || typeof p !== 'object' || !('sinal' in p)) continue;
+    const ramo = p.sinal[v > 0 ? 'positivo' : v < 0 ? 'negativo' : 'zero'] ?? [];
+    /** @type {string[]} */
+    const antes = [];
+    for (const x of ramo) { if (compara(x) || typeof x !== 'string') break; antes.push(x); }
+    return normal(antes.join('')) || null;
+  }
+  return null;
+}
 
 /* ------------------------------------------------------------------ a regra das famílias, desta célula */
 /** O identificador sem o período no fim, com o «-ue» guardado. @param {string} id */
@@ -135,10 +160,13 @@ export function conferirAuditoriaDasFamilias({
   familias = FAMILIAS_DAS_LINHAS,
   doConcelho = FAMILIAS_DOS_CONCELHOS,
   origens = /** @type {Record<string, any>} */ (ORIGENS_DAS_DEFINICOES),
+  porConfirmarDeclaradas = /** @type {readonly string[]} */ (LINHAS_POR_CONFIRMAR_NA_FONTE),
 } = {}) {
   /** @type {string[]} */
   const erros = [];
-  const contas = { linhas: 0, por_cartao: 0, por_concelho: 0, por_familia: 0, familias: 0, entradas: 0, partes: 0, diz: 0, apoios: 0, todas_na_fonte: 0, alguma_da_casa: 0, lista_da_casa: /** @type {string[]} */ ([]) };
+  const contas = { linhas: 0, por_cartao: 0, por_concelho: 0, por_familia: 0, familias: 0, entradas: 0, partes: 0, diz: 0, apoios: 0, todas_na_fonte: 0, alguma_da_casa: 0, lista_da_casa: /** @type {string[]} */ ([]), por_confirmar_entradas: 0, por_confirmar_linhas: 0 };
+  /** As linhas cuja frase está por confirmar na fonte, pela conta desta célula (R4-b). @type {Set<string>} */
+  const porConfirmar = new Set();
   const falha = (/** @type {string} */ m) => erros.push(`K17 · famílias · ${m}`);
   const ctx = contextoDasFamilias({ linhas, familias, doConcelho });
 
@@ -157,7 +185,7 @@ export function conferirAuditoriaDasFamilias({
   contas.familias = linhasDe.size;
 
   const entradas = Array.isArray(auditoria?.familias) ? auditoria.familias : [];
-  if (!entradas.length) { falha('a auditoria não tem a chave «familias»: a célula não mediu nada'); return { erros, contas }; }
+  if (!entradas.length) { falha('a auditoria não tem a chave «familias»: a célula não mediu nada'); return { erros, contas, porConfirmar }; }
   /** @type {Map<string, any>} */
   const porFamilia = new Map();
   for (const e of entradas) {
@@ -225,6 +253,12 @@ export function conferirAuditoriaDasFamilias({
     return classeDe(a);
   };
   const classeDe = (/** @type {any} */ a) => (a.origem || (a.linha && (CAMPOS_DA_FONTE.has(a.campo) || a.forma === 'ano')) ? 'fonte' : 'casa');
+  /* R4-b: UMA PARTE CONFIRMA-SE NUMA LINHA quando um apoio válido nessa linha é da fonte (uma origem, um campo da fonte, o
+     período da data) ou é a conta declarada de uma linha calculada (`derivation`, `derivation_en`), que é a definição
+     desse número; o nome do projeto, a ressalva e a explicação de um termo são palavras da casa e não confirmam. */
+  const confirmaNaLinha = (/** @type {any} */ a, /** @type {string} */ id) => (Array.isArray(a?.ou)
+    ? a.ou.some((/** @type {any} */ alt) => verifica(alt, [id]) === null && confirmaNaLinha(alt, id))
+    : Boolean(a?.origem || a?.forma === 'ano' || (a?.linha === 'propria' && (CAMPOS_DA_FONTE.has(a.campo) || a.campo === 'derivation' || a.campo === 'derivation_en'))));
   /** @param {any} a @param {string[]} ids @returns {string|null} */
   const verifica = (a, ids) => {
     if (a?.forma === 'ano') {
@@ -340,8 +374,23 @@ export function conferirAuditoriaDasFamilias({
     for (const o of declaradas) if (!usadas.has(o)) falha(`${quem}: a origem «${o}» está na lista e não apoia parte nenhuma`);
     for (const o of usadas) if (!declaradas.has(o)) falha(`${quem}: a origem «${o}» apoia uma parte e não está na lista`);
     if (todasNaFonte) contas.todas_na_fonte++; else { contas.alguma_da_casa++; contas.lista_da_casa.push(quem); }
+    /* R4-b: O QUE ESTÁ POR CONFIRMAR NA FONTE, linha a linha, contra o que a auditoria declara. */
+    const diz = partes.filter((/** @type {any} */ p) => p?.classe === 'diz');
+    const por = ids.filter((id) => diz.some((/** @type {any} */ p) => !(p.apoios ?? []).some((/** @type {any} */ a) => confirmaNaLinha(a, id))));
+    const esperado = por.length === 0 ? null : por.length === ids.length ? true : [...por].sort();
+    const declarado = e.por_confirmar_na_fonte === true ? true : Array.isArray(e.por_confirmar_na_fonte?.linhas) ? [...e.por_confirmar_na_fonte.linhas].sort() : e.por_confirmar_na_fonte ? 'forma desconhecida' : null;
+    if (JSON.stringify(esperado) !== JSON.stringify(declarado)) {
+      falha(`${quem}: a auditoria diz «por confirmar na fonte» ${JSON.stringify(declarado)}, e a conta desta célula dá ${JSON.stringify(esperado === true ? true : esperado)}`);
+    }
+    if (por.length) contas.por_confirmar_entradas++;
+    for (const id of por) porConfirmar.add(id);
   }
-  return { erros, contas };
+  /* AS LINHAS DECLARADAS AO RESOLVEDOR SÃO AS DESTA CONTA, nem mais nem menos (`LINHAS_POR_CONFIRMAR_NA_FONTE`). */
+  const declaradas = new Set(porConfirmarDeclaradas);
+  for (const id of porConfirmar) if (!declaradas.has(id)) falha(`a linha «${id}» está por confirmar na fonte pela auditoria e não está na lista que o resolvedor lê (uma marca em falta)`);
+  for (const id of declaradas) if (!porConfirmar.has(id)) falha(`a linha «${id}» está na lista das frases por confirmar e a auditoria não a declara (uma marca a mais)`);
+  contas.por_confirmar_linhas = porConfirmar.size;
+  return { erros, contas, porConfirmar };
 }
 
 /* =========================================================================
@@ -402,9 +451,9 @@ export function cabecaDoRecibo(html) {
 /**
  * Um recibo, conferido. Separado para as plantas o exercerem sobre uma cópia em memória.
  * @param {import('node-html-parser').HTMLElement} cabeca @param {string} id @param {'pt'|'en'} lang
- * @param {{ ctx: ReturnType<typeof contextoDasFamilias>, cartoes: ReturnType<typeof reguasDosCartoes> }} e
+ * @param {{ ctx: ReturnType<typeof contextoDasFamilias>, cartoes: ReturnType<typeof reguasDosCartoes>, porConfirmar?: Set<string> }} e
  */
-export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes }) {
+export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConfirmar = new Set() }) {
   /** @type {string[]} */
   const erros = [];
   const falha = (/** @type {string} */ m) => erros.push(`K17 · recibo · ${lang} · ${id}: ${m}`);
@@ -419,7 +468,27 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes }) {
   }
   const oQueE = el.querySelector('[data-o-que-e-parte="o-que-e"]');
   const comparacao = el.querySelector('[data-o-que-e-parte="comparacao"]');
-  const rendidoOQueE = oQueE ? normal(oQueE.textContent) : '';
+  /* R4-b: O MARCADOR «POR CONFIRMAR NA FONTE», onde a conta desta célula sobre a auditoria o põe e em mais lado nenhum:
+     um só, ao pé da frase, o marcador da casa com a porta da sua página; o texto da frase lê-se sem ele. */
+  const marcas = cabeca.querySelectorAll('[data-por-confirmar-na-fonte]');
+  if (porConfirmar.has(id)) {
+    const a = marcas.length === 1 ? marcas[0].querySelector('a.marcador.marcador-da-frase') : null;
+    if (marcas.length !== 1 || marcas[0].getAttribute('data-por-confirmar-na-fonte') !== id || !marcas[0].closest('[data-o-que-e-parte="o-que-e"]')) {
+      falha(`a frase está por confirmar na fonte e o recibo tem ${marcas.length} marcador(es) ao pé dela, e tem um (uma marca em falta)`);
+    } else if (!a || a.getAttribute('href') !== (lang === 'pt' ? '/a-verificar' : '/en/to-verify') || normal(a.textContent) !== POR_VERIFICAR) {
+      falha('o marcador da frase não é o marcador da casa com a porta da sua página');
+    }
+  } else if (marcas.length) falha('o recibo tem o marcador «por confirmar na fonte» e a auditoria não o declara (uma marca a mais)');
+  const semMarca = (/** @type {any} */ x) => { if (!x) return ''; const c = parse(x.outerHTML); for (const m of c.querySelectorAll('[data-por-confirmar-na-fonte]')) m.remove(); return normal(c.textContent); };
+  const rendidoOQueE = semMarca(oQueE);
+  /* R4-b: A PARTE DO SINAL, quando a frase lê a metade «o que é» de um cartão contra esta linha e o sinal vive na metade
+     que compara: pela conta desta célula, o ramo que o valor da linha escolhe, até ao primeiro pedaço que compara. */
+  const sinais = el.querySelectorAll('[data-o-que-e-parte="sinal"]');
+  const cartaoDaFamilia = f.tipo === 'familia' ? ctx.familias[f.chave]?.cartao ?? null : null;
+  const sinalEsperado = cartaoDaFamilia ? parteDoSinalAqui(cartaoDaFamilia, lang, ctx.linhas.get(id)) : null;
+  if (sinalEsperado) {
+    if (sinais.length !== 1 || normal(sinais[0].textContent) !== sinalEsperado) falha(`a frase lê o cartão «${cartaoDaFamilia}» e não diz o que o sinal quer dizer, como a conta desta célula manda («${sinalEsperado}»)`);
+  } else if (sinais.length) falha('o recibo tem uma parte do sinal que a conta desta célula não dá');
   const rendidoComparacao = comparacao ? normal(comparacao.textContent) : '';
   /* O TEXTO, PELA CONTA DESTA CÉLULA. */
   let esperado = null;
@@ -484,11 +553,14 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes }) {
   return erros;
 }
 
-/** A segunda metade, sobre o `dist/`: os recibos de todas as linhas, nas duas edições. @param {string} dist */
-export function conferirRecibosDasLinhas(dist) {
+/**
+ * A segunda metade, sobre o `dist/`: os recibos de todas as linhas, nas duas edições.
+ * @param {string} dist @param {Set<string>} [porConfirmar]  as linhas por confirmar na fonte, pela conta desta célula
+ */
+export function conferirRecibosDasLinhas(dist, porConfirmar = conferirAuditoriaDasFamilias().porConfirmar) {
   /** @type {string[]} */
   const erros = [];
-  const contas = { recibos: 0, com_frase: 0, cartao: 0, concelho: 0, familia: 0 };
+  const contas = { recibos: 0, com_frase: 0, cartao: 0, concelho: 0, familia: 0, com_marcador: 0, com_sinal: 0 };
   const ctx = contextoDasFamilias();
   const cartoes = reguasDosCartoes(dist);
   if (!cartoes.size) erros.push('K17 · recibos: as páginas de assunto não renderam cartão nenhum, e as frases dos cartões não se conferem');
@@ -499,9 +571,14 @@ export function conferirRecibosDasLinhas(dist) {
       contas.recibos++;
       const cabeca = cabecaDoRecibo(fs.readFileSync(f, 'utf8'));
       if (!cabeca) { erros.push(`K17 · recibo · ${lang} · ${id}: o recibo não tem cabeça`); continue; }
-      const e = conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes });
+      const e = conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConfirmar });
       erros.push(...e);
-      if (!e.length) { contas.com_frase++; contas[/** @type {'cartao'|'concelho'|'familia'} */ (ctx.familia(id).tipo)]++; }
+      if (!e.length) {
+        contas.com_frase++;
+        contas[/** @type {'cartao'|'concelho'|'familia'} */ (ctx.familia(id).tipo)]++;
+        if (cabeca.querySelector('[data-por-confirmar-na-fonte]')) contas.com_marcador++;
+        if (cabeca.querySelector('[data-o-que-e-parte="sinal"]')) contas.com_sinal++;
+      }
     }
   }
   if (contas.recibos === 0) erros.push('K17 · recibos: nenhum recibo lido; a célula não mediu nada');
@@ -542,14 +619,17 @@ export function conferirAuditoriaDasSeries({
   linhas = loadClaims(),
   origens = /** @type {Record<string, any>} */ (ORIGENS_DAS_DEFINICOES),
   nomes = /** @type {Record<string, any>} */ (NOMES_DAS_SERIES),
+  porConfirmarDeclaradas = /** @type {readonly string[]} */ (SERIES_POR_CONFIRMAR_NA_FONTE),
 } = {}) {
   /** @type {string[]} */
   const erros = [];
-  const contas = { series: 0, pela_linha: 0, propria: 0, partes: 0, apoios: 0, todas_na_fonte: 0, alguma_da_casa: 0, lista_da_casa: /** @type {string[]} */ ([]) };
+  const contas = { series: 0, pela_linha: 0, propria: 0, partes: 0, apoios: 0, todas_na_fonte: 0, alguma_da_casa: 0, lista_da_casa: /** @type {string[]} */ ([]), por_confirmar: 0 };
+  /** As séries com frase própria por confirmar na fonte, pela conta desta célula (R4-b). @type {Set<string>} */
+  const porConfirmar = new Set();
   const falha = (/** @type {string} */ m) => erros.push(`K17 · séries · ${m}`);
   const noTempo = [...series.values()].filter((x) => x.eixo === 'periodo');
   const entradas = Array.isArray(auditoria?.series) ? auditoria.series : [];
-  if (!noTempo.length) { falha('não há séries no tempo: a célula não mediu nada'); return { erros, contas }; }
+  if (!noTempo.length) { falha('não há séries no tempo: a célula não mediu nada'); return { erros, contas, porConfirmar }; }
   /** @type {Map<string, any>} */
   const porSerie = new Map();
   for (const e of entradas) {
@@ -623,8 +703,16 @@ export function conferirAuditoriaDasSeries({
     for (const o of declaradas) if (!usadas.has(o)) falha(`«${e.serie}»: a origem «${o}» está na lista e não apoia parte nenhuma`);
     for (const o of usadas) if (!declaradas.has(o)) falha(`«${e.serie}»: a origem «${o}» apoia uma parte e não está na lista`);
     if (daFonte) contas.todas_na_fonte++; else { contas.alguma_da_casa++; contas.lista_da_casa.push(e.serie); }
+    /* R4-b: por confirmar na fonte quando uma parte que diz não tem apoio da fonte nem da conta declarada da série. */
+    const confirma = (/** @type {any} */ a) => Boolean(a?.origem || (a?.serie === 'propria' && (CAMPOS_DA_SERIE_FONTE.has(a.campo) || CAMPOS_DA_SERIE_CASA.has(a.campo))));
+    const por = partes.some((/** @type {any} */ p) => p?.classe === 'diz' && !(p.apoios ?? []).some(confirma));
+    if (por !== (e.por_confirmar_na_fonte === true)) falha(`«${e.serie}»: a auditoria diz «por confirmar na fonte» ${JSON.stringify(e.por_confirmar_na_fonte ?? null)}, e a conta desta célula dá ${por}`);
+    if (por) { porConfirmar.add(e.serie); contas.por_confirmar++; }
   }
-  return { erros, contas };
+  const declaradas = new Set(porConfirmarDeclaradas);
+  for (const id of porConfirmar) if (!declaradas.has(id)) falha(`a série «${id}» está por confirmar na fonte pela auditoria e não está na lista que o resolvedor lê (uma marca em falta)`);
+  for (const id of declaradas) if (!porConfirmar.has(id)) falha(`a série «${id}» está na lista das frases por confirmar e a auditoria não a declara (uma marca a mais)`);
+  return { erros, contas, porConfirmar };
 }
 
 /** O texto de um elemento sem as portas dos selos. @param {any} el */
@@ -656,9 +744,9 @@ function oQueEDaLinhaAqui(id, lang, ctx) {
  * Um recibo de série, conferido: uma frase «o que é», da série, na cabeça, com a origem e a linha que esta célula dá,
  * e o texto que ela recompõe. Separado para as plantas.
  * @param {import('node-html-parser').HTMLElement} root @param {any} s @param {'pt'|'en'} lang
- * @param {{ ctx: ReturnType<typeof contextoDasFamilias>, frases?: Record<string, any> }} e
+ * @param {{ ctx: ReturnType<typeof contextoDasFamilias>, frases?: Record<string, any>, porConfirmarLinhas?: Set<string>, porConfirmarSeries?: Set<string> }} e
  */
-export function conferirFraseDaSerie(root, s, lang, { ctx, frases = /** @type {Record<string, any>} */ (FRASES_DAS_SERIES) }) {
+export function conferirFraseDaSerie(root, s, lang, { ctx, frases = /** @type {Record<string, any>} */ (FRASES_DAS_SERIES), porConfirmarLinhas = new Set(), porConfirmarSeries = new Set() }) {
   /** @type {string[]} */
   const erros = [];
   const falha = (/** @type {string} */ m) => erros.push(`K17 · recibo da série · ${lang} · ${s.id}: ${m}`);
@@ -673,7 +761,31 @@ export function conferirFraseDaSerie(root, s, lang, { ctx, frases = /** @type {R
     falha(`a frase diz vir de «${el.getAttribute('data-o-que-e-origem')}:${el.getAttribute('data-o-que-e-linha') ?? ''}», e vem de «${origem}:${linha ?? ''}»`);
   }
   const frase = el.querySelector('.linha-o-que-e-frase');
-  const rendido = frase ? textoSemSelos(frase) : '';
+  /* R4-b: O MARCADOR «POR CONFIRMAR NA FONTE», pela conta desta célula: o da linha, quando a frase é a dela; o da série,
+     quando a frase é a escrita para ela. Um só, ao pé da frase, e em mais lado nenhum. */
+  const deve = linha ? porConfirmarLinhas.has(linha) : porConfirmarSeries.has(s.id);
+  const marcas = el.querySelectorAll('[data-por-confirmar-na-fonte]');
+  if (deve) {
+    const a = marcas.length === 1 ? marcas[0].querySelector('a.marcador.marcador-da-frase') : null;
+    if (marcas.length !== 1 || marcas[0].getAttribute('data-por-confirmar-na-fonte') !== s.id || !a || a.getAttribute('href') !== (lang === 'pt' ? '/a-verificar' : '/en/to-verify') || normal(a.textContent) !== POR_VERIFICAR) {
+      falha(`a frase está por confirmar na fonte e o recibo não tem o marcador da casa ao pé dela (uma marca em falta)`);
+    }
+  } else if (marcas.length) falha('o recibo tem o marcador «por confirmar na fonte» e a auditoria não o declara (uma marca a mais)');
+  /* R4-b: UMA PORTA SÓ. O valor da linha diz-se pelo ponto da série quando a série tem o ponto do período da linha com o
+     mesmo valor, e então a frase não tem selo nenhum; um selo que abra o recibo de uma linha que a lista das linhas da
+     série já abre é a segunda porta para o mesmo sítio que a L1 conta. */
+  const daLista = new Set(root.querySelectorAll('[data-linha-da-serie] a[href]').map((a) => a.getAttribute('href')));
+  for (const a of el.querySelectorAll('a.src-chip')) if (daLista.has(a.getAttribute('href'))) falha(`o selo da frase abre «${a.getAttribute('href')}», que a lista das linhas da série já abre: duas portas para o mesmo sítio`);
+  if (linha) {
+    const l = ctx.linhas.get(linha);
+    const ponto = (s.pontos ?? []).find((/** @type {any} */ p) => String(p.periodo) === String(l?.reference_date) && String(p.valor) === String(l?.value));
+    /* Uma frase de família não diz valor nenhum; a de um cartão diz o da linha, e então tem de o dizer pelo ponto. */
+    if (ponto && el.querySelector(`[data-claim="${linha}"]`)) {
+      falha(`a série tem o ponto ${ponto.periodo} com o valor da linha, e a frase diz o valor pela linha, com o selo, em vez de o dizer pelo ponto da série`);
+    }
+  }
+  const semMarca = frase ? (() => { const c = parse(frase.outerHTML); for (const m of c.querySelectorAll('[data-por-confirmar-na-fonte]')) m.remove(); return c; })() : null;
+  const rendido = semMarca ? textoSemSelos(semMarca) : '';
   let esperado = null;
   try {
     esperado = linha ? oQueEDaLinhaAqui(linha, lang, ctx) : normal(textoDaFrase(frases[s.id]?.frase?.[lang]));
@@ -685,20 +797,24 @@ export function conferirFraseDaSerie(root, s, lang, { ctx, frases = /** @type {R
   return erros;
 }
 
-/** A segunda metade, para as séries: os recibos das séries no tempo, nas duas edições. @param {string} dist */
-export function conferirRecibosDasSeries(dist) {
+/**
+ * A segunda metade, para as séries: os recibos das séries no tempo, nas duas edições.
+ * @param {string} dist @param {Set<string>} [porConfirmarLinhas] @param {Set<string>} [porConfirmarSeries]
+ */
+export function conferirRecibosDasSeries(dist, porConfirmarLinhas = conferirAuditoriaDasFamilias().porConfirmar, porConfirmarSeries = conferirAuditoriaDasSeries().porConfirmar) {
   /** @type {string[]} */
   const erros = [];
-  const contas = { recibos: 0, com_frase: 0 };
+  const contas = { recibos: 0, com_frase: 0, com_marcador: 0 };
   const ctx = contextoDasFamilias();
   for (const s of [...lerSeriesDoPortao().values()].filter((x) => x.eixo === 'periodo')) {
     for (const lang of /** @type {const} */ (['pt', 'en'])) {
       const f = path.join(dist, ...(lang === 'en' ? ['en', 'ledger', 'series'] : ['livro-razao', 'series']), s.id, 'index.html');
       if (!fs.existsSync(f)) { erros.push(`K17 · recibo da série · ${lang} · ${s.id}: o recibo não está construído`); continue; }
       contas.recibos++;
-      const e = conferirFraseDaSerie(parse(fs.readFileSync(f, 'utf8')), s, lang, { ctx });
+      const root = parse(fs.readFileSync(f, 'utf8'));
+      const e = conferirFraseDaSerie(root, s, lang, { ctx, porConfirmarLinhas, porConfirmarSeries });
       erros.push(...e);
-      if (!e.length) contas.com_frase++;
+      if (!e.length) { contas.com_frase++; if (root.querySelector('[data-o-que-e-da-serie] [data-por-confirmar-na-fonte]')) contas.com_marcador++; }
     }
   }
   if (!contas.recibos) erros.push('K17 · recibos das séries: nenhum recibo lido; a célula não mediu nada');
@@ -765,11 +881,39 @@ export function plantasDasFamilias(dist) {
     e.folhas[0].partes[0].apoios = [];
     regista('uma parte que diz sem apoio', conferirAuditoriaDasFamilias({ auditoria: a }).erros, 'não tem apoio nenhum');
   }
+  /* R4-b · A AUDITORIA DO QUE ESTÁ POR CONFIRMAR NA FONTE. */
+  {
+    const declaradas = [...LINHAS_POR_CONFIRMAR_NA_FONTE].filter((x) => x !== 'funchal-desemprego-registado-2025-12');
+    regista('a lista do resolvedor sem uma linha por confirmar', conferirAuditoriaDasFamilias({ auditoria: base, porConfirmarDeclaradas: declaradas }).erros, 'não está na lista que o resolvedor lê');
+  }
+  {
+    const a = structuredClone(base);
+    const e = a.familias.find((/** @type {any} */ x) => x.chaves?.includes('agua-nao-faturada-portugal'));
+    delete e.por_confirmar_na_fonte;
+    regista('a auditoria a dar como confirmada uma frase por confirmar', conferirAuditoriaDasFamilias({ auditoria: a }).erros, 'a auditoria diz «por confirmar na fonte» null');
+  }
   /* A SEGUNDA METADE, sobre cópias de recibos em memória. */
   const ctx = contextoDasFamilias();
   const cartoes = reguasDosCartoes(dist);
+  const porConfirmarAqui = conferirAuditoriaDasFamilias().porConfirmar;
+  const porConfirmarSeriesAqui = conferirAuditoriaDasSeries().porConfirmar;
   const recibo = (/** @type {string} */ id, /** @type {'pt'|'en'} */ lang) => cabecaDoRecibo(fs.readFileSync(path.join(dist, ...(lang === 'en' ? ['en', 'ledger'] : ['livro-razao']), id, 'index.html'), 'utf8'));
-  const conferir = (/** @type {any} */ c, /** @type {string} */ id, /** @type {'pt'|'en'} */ lang) => conferirCabecaDoRecibo(c, id, lang, { ctx, cartoes });
+  const conferir = (/** @type {any} */ c, /** @type {string} */ id, /** @type {'pt'|'en'} */ lang) => conferirCabecaDoRecibo(c, id, lang, { ctx, cartoes, porConfirmar: porConfirmarAqui });
+  {
+    const c = /** @type {any} */ (recibo('abrantes-populacao-2025', 'pt'));
+    c.querySelector('[data-o-que-e-parte="o-que-e"]').insertAdjacentHTML('beforeend', '<span class="linha-por-confirmar" data-por-confirmar-na-fonte="abrantes-populacao-2025"> <a class="marcador marcador-da-frase" href="/a-verificar" lang="pt-PT">[a verificar]</a></span>');
+    regista('uma marca a mais num recibo', conferir(c, 'abrantes-populacao-2025', 'pt'), 'uma marca a mais');
+  }
+  {
+    const c = /** @type {any} */ (recibo('funchal-desemprego-registado-2025-12', 'en'));
+    c.querySelector('[data-por-confirmar-na-fonte]').remove();
+    regista('uma marca em falta num recibo', conferir(c, 'funchal-desemprego-registado-2025-12', 'en'), 'uma marca em falta');
+  }
+  {
+    const c = /** @type {any} */ (recibo('posicao-de-investimento-internacional-2024', 'pt'));
+    c.querySelector('[data-o-que-e-parte="sinal"]').remove();
+    regista('a parte do sinal tirada do recibo do ano anterior', conferir(c, 'posicao-de-investimento-internacional-2024', 'pt'), 'não diz o que o sinal quer dizer');
+  }
   {
     const c = /** @type {any} */ (recibo('abrantes-populacao-2025', 'pt'));
     c.querySelector('[data-o-que-e]').remove();
@@ -816,17 +960,39 @@ export function plantasDasFamilias(dist) {
     p.apoios.find((/** @type {any} */ y) => y.literal === '; Mensal - INE').literal = '; Semanal - INE';
     regista('um literal que o campo da série não tem', conferirAuditoriaDasSeries({ auditoria: a }).erros, 'que não está no campo «name» da série');
   }
+  const conjuntos = { porConfirmarLinhas: porConfirmarAqui, porConfirmarSeries: porConfirmarSeriesAqui };
+  const reciboDaSerie = (/** @type {string} */ id, /** @type {'pt'|'en'} */ lang) => parse(fs.readFileSync(path.join(dist, ...(lang === 'en' ? ['en', 'ledger', 'series'] : ['livro-razao', 'series']), id, 'index.html'), 'utf8'));
   {
     const s = lerSeriesDoPortao().get('serie-ipc-rendas-variacao-homologa');
-    const root = parse(fs.readFileSync(path.join(dist, 'livro-razao', 'series', s.id, 'index.html'), 'utf8'));
+    const root = reciboDaSerie(s.id, 'pt');
     root.querySelector('[data-o-que-e-da-serie]')?.remove();
-    regista('um recibo de série sem a frase', conferirFraseDaSerie(root, s, 'pt', { ctx }), 'frase(s) «o que é»');
+    regista('um recibo de série sem a frase', conferirFraseDaSerie(root, s, 'pt', { ctx, ...conjuntos }), 'frase(s) «o que é»');
   }
   {
     const s = lerSeriesDoPortao().get('serie-ipc-indice');
-    const root = parse(fs.readFileSync(path.join(dist, 'en', 'ledger', 'series', s.id, 'index.html'), 'utf8'));
+    const root = reciboDaSerie(s.id, 'en');
     root.querySelector('[data-o-que-e-da-serie] .linha-o-que-e-frase')?.set_content(textoDaFrase(/** @type {any} */ (FRASES_DAS_SERIES)['serie-ipc-indice-anual'].frase.en));
-    regista('a frase de outra série no recibo', conferirFraseDaSerie(root, s, 'en', { ctx }), 'a frase rendida não é a que a conta desta célula dá');
+    regista('a frase de outra série no recibo', conferirFraseDaSerie(root, s, 'en', { ctx, ...conjuntos }), 'a frase rendida não é a que a conta desta célula dá');
+  }
+  /* R4-b · AS SÉRIES: o marcador a mais e em falta, e a segunda porta de volta. */
+  {
+    const s = lerSeriesDoPortao().get('serie-ipc-indice');
+    const root = reciboDaSerie(s.id, 'pt');
+    root.querySelector('[data-o-que-e-da-serie] .linha-o-que-e-frase')?.insertAdjacentHTML('beforeend', '<span class="linha-por-confirmar" data-por-confirmar-na-fonte="serie-ipc-indice"> <a class="marcador marcador-da-frase" href="/a-verificar" lang="pt-PT">[a verificar]</a></span>');
+    regista('uma marca a mais num recibo de série', conferirFraseDaSerie(root, s, 'pt', { ctx, ...conjuntos }), 'uma marca a mais');
+  }
+  {
+    const s = lerSeriesDoPortao().get('serie-ihpc-rendas-variacao-homologa');
+    const root = reciboDaSerie(s.id, 'en');
+    root.querySelector('[data-o-que-e-da-serie] [data-por-confirmar-na-fonte]')?.remove();
+    regista('uma marca em falta num recibo de série', conferirFraseDaSerie(root, s, 'en', { ctx, ...conjuntos }), 'uma marca em falta');
+  }
+  {
+    const s = lerSeriesDoPortao().get('serie-ipc-rendas-variacao-homologa');
+    const root = reciboDaSerie(s.id, 'pt');
+    const porta = root.querySelector('[data-linha-da-serie] a[href]')?.getAttribute('href');
+    root.querySelector('[data-o-que-e-da-serie] .linha-o-que-e-frase')?.insertAdjacentHTML('beforeend', `<a class="src-chip" href="${porta}">fonte</a>`);
+    regista('o selo de volta na frase de uma série, com a porta que a lista já tem', conferirFraseDaSerie(root, s, 'pt', { ctx, ...conjuntos }), 'duas portas para o mesmo sítio');
   }
   return out;
 }

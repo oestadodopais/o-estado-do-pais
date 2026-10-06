@@ -4112,3 +4112,15 @@ fechada da primeira página depois de a V1-R4 do `check:pais` as conferir na mes
 | conteudo | Portugal is below the European Commission’s reference value, which is − %. | r4 | viva | A forma inglesa do lado de um valor de referência, com a mesma conta (R4). |
 | conteudo | Portugal is between the European Commission’s reference values, which are − % and %. | r4 | viva | A forma inglesa do lado de um valor de referência, com a mesma conta (R4). |
 | conteudo | The reference values Portugal was within | r4 | viva | O mesmo rótulo na edição inglesa (R4). |
+
+## R4-b · a passagem de correção depois da leitura, 06.10.2026
+
+A leitura a frio do R4 (o achado 6) pediu que a explicação da posição de investimento internacional, por baixo do
+veredicto da primeira página, diga também o que o sinal quer dizer, como o cartão e o recibo dizem: a parte do sinal da
+leitura auditada do cartão, que vive na metade que compara e por isso não vinha com a metade «o que é». Sai da lista
+fechada e do arame da classe com as outras partes da explicação, conferida pela V1-R4 na mesma corrida.
+
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
+| conteudo | Negativa quer dizer que o país deve ao exterior mais do que tem lá. | r4b | viva | A parte do sinal da leitura auditada do cartão da posição de investimento internacional (a K17), na explicação dos valores de referência da primeira página (passagem R4-b, o achado 6 da leitura a frio); o ramo escolhe-o o valor da linha. |
+| conteudo | Negative means the country owes abroad more than it owns there. | r4b | viva | A mesma parte do sinal na edição inglesa (R4-b). |

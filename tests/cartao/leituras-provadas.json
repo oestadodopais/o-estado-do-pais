@@ -8107,6 +8107,7 @@
         "oe-2026-cem-euros-funcao-10"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central que o Orçamento prevê: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
@@ -8176,6 +8177,7 @@
         "execucao-2026-07-cem-euros-funcao-10"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É quanto foi para esta função em cada cem euros da despesa efetiva consolidada que a administração central gastou de janeiro a julho: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
@@ -8245,6 +8247,7 @@
         "oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
@@ -8300,6 +8303,7 @@
         "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da despesa bruta da administração central que o Orçamento prevê; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
@@ -8376,6 +8380,7 @@
         "oe-2026-despesa-funcao-10"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
@@ -8450,6 +8455,7 @@
         "execucao-2026-07-despesa-funcao-10"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
@@ -8511,6 +8517,7 @@
         "execucao-2026-07-diferencas-consolidacao-funcional"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a diferença de consolidação da despesa por funções da administração central: o acerto que se soma às funções para chegar ao total da despesa efetiva consolidada, e não uma função.",
@@ -8573,6 +8580,7 @@
         "oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
@@ -8638,6 +8646,7 @@
         "oe-2026-despesa-ministerio-encargos-gerais-do-estado"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É o que o Orçamento prevê para os encargos gerais do Estado num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
@@ -8727,6 +8736,7 @@
         "oe-2026-despesa-programa-020"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
@@ -8811,6 +8821,7 @@
         "execucao-2026-08-despesa-programa-020"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam.",
@@ -8871,6 +8882,7 @@
         "execucao-2026-08-subtotal-programas"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a soma da despesa efetiva consolidada de cada programa da administração central, de janeiro a agosto: cada programa sem as suas transferências internas, mas com as transferências entre programas ainda por tirar.",
@@ -9005,6 +9017,7 @@
         "execucao-2026-08-despesa-efetiva-administracao-central"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a despesa efetiva da administração central: o que ela gasta sem contar as operações com ativos e passivos financeiros.",
@@ -9062,6 +9075,7 @@
         "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a despesa efetiva da administração central e da segurança social, somadas sem as transferências entre os seus serviços: o que gastam sem contar as operações com ativos e passivos financeiros.",
@@ -9117,6 +9131,7 @@
         "execucao-2026-08-receita-efetiva-administracao-central"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros.",
@@ -9174,6 +9189,7 @@
         "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros.",
@@ -9223,6 +9239,7 @@
         "execucao-2026-07-despesa-orcamental-administracao-central"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É toda a despesa orçamental da administração central, incluindo as operações com ativos e passivos financeiros, que a despesa efetiva não conta.",
@@ -9262,6 +9279,7 @@
         "execucao-2026-07-receita-orcamental-administracao-central"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É toda a receita orçamental da administração central, incluindo os recebimentos de ativos e passivos financeiros, que a receita efetiva não conta.",
@@ -9301,6 +9319,7 @@
         "execucao-2026-07-despesa-primaria-administracao-central"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a despesa da administração central sem os juros da dívida, a que a fonte chama despesa primária.",
@@ -9410,6 +9429,7 @@
         "execucao-2026-08-saldo-global-administracao-central-seguranca-social"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É o saldo global da administração central e da segurança social: a receita efetiva menos a despesa efetiva; não é a dívida que se emitiu.",
@@ -9454,6 +9474,7 @@
         "execucao-2026-07-saldo-primario-administracao-central"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É o saldo da administração central sem os juros da dívida, a que a fonte chama saldo primário.",
@@ -9548,6 +9569,7 @@
         "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a parte da despesa orçamental da administração central feita em operações com ativos e passivos financeiros, que a despesa efetiva não conta.",
@@ -9587,6 +9609,7 @@
         "execucao-2026-07-ativos-e-passivos-da-receita-administracao-central"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a parte da receita orçamental da administração central que vem de operações com ativos e passivos financeiros, que a receita efetiva não conta.",
@@ -9675,6 +9698,7 @@
         "execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É o que a administração central e a segurança social receberam de novos passivos financeiros, menos o que amortizaram; não é a parte da despesa paga com dívida.",
@@ -9718,6 +9742,7 @@
         "oe-2026-despesa-bruta-administracao-central"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a soma de toda a despesa dos serviços da administração central que o Orçamento prevê para o ano, em bruto; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
@@ -9788,6 +9813,7 @@
         "oe-2026-receita-bruta-administracao-central"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a soma de toda a receita dos serviços da administração central que o Orçamento prevê para o ano, em bruto; a receita bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma.",
@@ -9843,6 +9869,7 @@
         "oe-2026-despesa-total"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a despesa total que o Orçamento prevê para o ano, consolidada: sem as transferências entre os serviços de que é feita, mas com as operações financeiras.",
@@ -9906,6 +9933,7 @@
         "oe-2026-receita-consolidada-seguranca-social"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a receita total que o Orçamento prevê para o ano, consolidada: sem as transferências entre os serviços de que é feita, mas com as operações financeiras.",
@@ -10442,6 +10470,7 @@
         "portugal-concentracao-vab4"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a parte do valor acrescentado bruto das empresas que cabe às quatro maiores; o valor acrescentado bruto é o valor do que se produz menos o valor dos bens e serviços consumidos para o produzir.",
@@ -10483,6 +10512,7 @@
         "evora-vab-empresarial"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É o valor acrescentado bruto das empresas do concelho, somado sobre todas as atividades: o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.",
@@ -10738,6 +10768,7 @@
         "evora-divida-inicio-mandato-reexpressa"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a dívida do início do mandato como a apresenta um relatório de gestão posterior: reexpressa quer dizer apresentada de novo mais tarde.",
@@ -11318,6 +11349,7 @@
         "evora-pelouros-2025-vereadora"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo: cada pelouro é uma área da câmara a seu cargo.",
@@ -11515,6 +11547,7 @@
         "evora-prr-aprovado"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "São as verbas do Plano de Recuperação e Resiliência aprovadas para projetos no concelho, pela listagem de entidades do plano.",
@@ -11558,6 +11591,7 @@
         "evora-prr-pago"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "São as verbas do Plano de Recuperação e Resiliência já pagas a projetos no concelho, pela listagem de entidades do plano.",
@@ -11601,6 +11635,7 @@
         "evora-prr-vencido-aprovado"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "São as verbas aprovadas em projetos no concelho cujo prazo de conclusão já passou, pela listagem de entidades do Plano de Recuperação e Resiliência.",
@@ -12415,6 +12450,7 @@
         "agua-nao-faturada-portugal"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a parte da água que não é faturada, pelo relatório anual dos serviços de águas e resíduos.",
@@ -12559,6 +12595,7 @@
         "penalizacao-antecipacao-um-ano-neutra"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É o corte na pensão por um ano de antecipação da reforma que deixaria o sistema de pensões sem ganhar nem perder, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social.",
@@ -12624,6 +12661,7 @@
         "factor-sustentabilidade"
       ],
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica: abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta.",
@@ -12870,6 +12908,21 @@
     {
       "concelho": "desempregoRegistado",
       "origens": [],
+      "por_confirmar_na_fonte": {
+        "linhas": [
+          "calheta-desemprego-registado-2025-12",
+          "camara-de-lobos-desemprego-registado-2025-12",
+          "funchal-desemprego-registado-2025-12",
+          "machico-desemprego-registado-2025-12",
+          "ponta-do-sol-desemprego-registado-2025-12",
+          "porto-moniz-desemprego-registado-2025-12",
+          "porto-santo-desemprego-registado-2025-12",
+          "ribeira-brava-desemprego-registado-2025-12",
+          "santa-cruz-desemprego-registado-2025-12",
+          "santana-desemprego-registado-2025-12",
+          "sao-vicente-desemprego-registado-2025-12"
+        ]
+      },
       "folhas": [
         {
           "pt": "Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).",
@@ -13446,6 +13499,7 @@
         "rp1-ihpc-comparavel",
         "rp1-ihpc-uniao"
       ],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É quanto mudaram os preços dos combustíveis face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor); o valor da União é uma média dos países, ponderada pelo peso de cada um.",
@@ -13548,6 +13602,7 @@
         "rp1-ihpc-homologa",
         "rp1-ihpc-comparavel"
       ],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É quanto mudaram, em Portugal, os preços dos combustíveis face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
@@ -13645,6 +13700,7 @@
         "rp1-ihpc-homologa",
         "rp1-ihpc-comparavel"
       ],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É quanto mudaram, em Portugal, os preços da energia usada em casa face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
@@ -13742,6 +13798,7 @@
         "rp1-ihpc-homologa",
         "rp1-ihpc-comparavel"
       ],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
@@ -13949,6 +14006,7 @@
         "glossario-hpi",
         "eurostat-tipsho20-descricao"
       ],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É quanto mudaram num ano os preços de transação das casas compradas pelas famílias em Portugal, novas e usadas, em cada trimestre (índice de preços da habitação).",
@@ -14170,6 +14228,7 @@
     {
       "serie": "serie-remuneracao-bruta-mensal-media-real",
       "origens": [],
+      "por_confirmar_na_fonte": true,
       "folhas": [
         {
           "pt": "É a remuneração média antes de descontos de cada ano contada nos euros do ano que a unidade nomeia, isto é, descontada a subida dos preços desde esse ano (remuneração em termos reais).",

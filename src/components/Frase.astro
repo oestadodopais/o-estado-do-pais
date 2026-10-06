@@ -36,6 +36,10 @@
  *                                   os rótulos de uma frase que vive ao lado de
  *                                   marcas de origem, que a régua salta em rotas
  *                                   fora de `ROTAS_COM_ORIGEM_LIDA`.
+ *   { ponto: { serie, chave }, sufixo, nota } · o valor de um ponto de uma série, pela sua marca
+ *                                   (`PontoDaSerie`), com o símbolo da unidade e a nota da bandeira da linha
+ *                                   com o mesmo valor (passagem R4-b, 06.10.2026: a frase de uma linha no
+ *                                   recibo da série que a tem por ponto, sem uma segunda porta para o recibo)
  *   { termo: '…', lingua: 'pt-PT' } · um termo de outra língua dentro da frase, com a marca `lang`
  *                                   (bloco R2, 03.10.2026): o termo da fonte que a edição
  *                                   inglesa cita em português, como a I91 manda para um nome
@@ -54,6 +58,7 @@ import Claim from './Claim.astro';
 import DataDaLinha from './DataDaLinha.astro';
 import ValorDaProva from './ValorDaProva.astro';
 import DefinicaoDoMarcador from './DefinicaoDoMarcador.astro';
+import PontoDaSerie from './serie/PontoDaSerie.astro';
 import { routePath } from '../lib/routes.mjs';
 import { VERBATIM } from '../data/verbatim.mjs';
 
@@ -74,6 +79,14 @@ const { partes, lang = 'pt', selos = false } = Astro.props;
     if (typeof parte === 'string') return <Fragment set:text={parte} />;
     if (parte.claim)
       return <Claim id={parte.claim} lang={lang} chip={selos} sufixo={parte.sufixo ?? ''} />;
+    if (parte.ponto)
+      return (
+        <>
+          <PontoDaSerie serie={parte.ponto.serie} chave={parte.ponto.chave} />
+          {parte.sufixo && <span class="ponto-da-serie-sufixo" set:text={parte.sufixo} />}
+          {parte.nota && <span class="ponto-da-serie-nota">{' ('}{parte.nota}{')'}</span>}
+        </>
+      );
     if (parte.ref) return <span data-nonledger="data-de-referencia">{parte.ref}</span>;
     {/* O NOME DE UM LUGAR DENTRO DE UMA FRASE (B1, peça 2, 21.09.2026). É a
         mesma marca que a manchete já usa (`Manchete.astro`): `data-lugar` diz

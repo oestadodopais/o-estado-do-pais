@@ -38,6 +38,7 @@ import { ledeDoPainel } from '../lib/inicio.mjs';
 import { FIGURAS_PDM, comparacaoComOLimiar } from '../data/figuras.mjs';
 import Frase from '../components/Frase.astro';
 import { oQueEDaLinha } from '../lib/o-que-e-o-numero.mjs';
+import { sinalDaLeitura } from '../lib/leitura-da-medida.mjs';
 import { getClaim } from '../lib/ledger.mjs';
 import { estadoDaMedida } from '../lib/estado.mjs';
 import { prova } from '../lib/prova.mjs';
@@ -88,6 +89,9 @@ const explicacoes = medidasDoPainel
       estado: m.estado,
       lado,
       oQueE: oQueEDaLinha(m.claim, lang).pedacos,
+      /* R4-b (06.10.2026, o achado 6 da leitura a frio): o que o sinal quer dizer, quando vive na metade que compara do
+         cartão (a posição de investimento internacional), pela mesma leitura auditada. */
+      sinal: sinalDaLeitura(m.claim, lang)?.pedacos.join('') ?? null,
       ladoPartes: [v.ladoAntes, /** @type {Record<string, string>} */ (v.lados)[lado], ...referencia, v.fimLado],
     };
   });
@@ -134,6 +138,7 @@ const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
           <li class="pp-veredicto-item" data-veredicto-explica={x.claim} data-veredicto-lado={x.lado}>
             <p class="pp-veredicto-nome" data-nome="figuras" data-de-linha={x.claim}>{x.nome}</p>
             <p class="pp-veredicto-o-que-e" data-veredicto-o-que-e={x.claim}><Frase partes={x.oQueE} lang={lang} selos={true} /></p>
+            {x.sinal && <p class="pp-veredicto-o-que-e pp-veredicto-sinal" data-veredicto-sinal={x.claim}>{x.sinal}</p>}
             <p class="pp-veredicto-lado" data-veredicto-lado-frase={x.claim}><Frase partes={x.ladoPartes} lang={lang} /></p>
           </li>
         ))}
@@ -147,6 +152,7 @@ const recente = periodoDosNumerosMaisRecentes(blocosDaPagina(ids, lang));
             <li class="pp-veredicto-item" data-veredicto-explica={x.claim} data-veredicto-lado={x.lado}>
               <p class="pp-veredicto-nome" data-nome="figuras" data-de-linha={x.claim}>{x.nome}</p>
               <p class="pp-veredicto-o-que-e" data-veredicto-o-que-e={x.claim}><Frase partes={x.oQueE} lang={lang} selos={true} /></p>
+              {x.sinal && <p class="pp-veredicto-o-que-e pp-veredicto-sinal" data-veredicto-sinal={x.claim}>{x.sinal}</p>}
               <p class="pp-veredicto-lado" data-veredicto-lado-frase={x.claim}><Frase partes={x.ladoPartes} lang={lang} /></p>
             </li>
           ))}

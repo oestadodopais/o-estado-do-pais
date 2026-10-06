@@ -94,6 +94,7 @@ import { LICENCA } from '../data/licenca.mjs';
 import { CONJUNTO } from '../lib/conjunto.mjs';
 import { LANGS } from '../lib/routes.mjs';
 import { familiaDaLinha, oQueEDaLinha, nomeNoRecibo, lugarNoRecibo, nomeDaFonteNoRecibo } from '../lib/o-que-e-o-numero.mjs';
+import Marcador from '../components/Marcador.astro';
 import { partesDaLeitura } from '../lib/leitura-da-medida.mjs';
 import '../styles/linha.css';
 
@@ -616,7 +617,12 @@ const atribuicaoPecas = [
         lingua: linguaDaFonte(claim.source, lang),
       }
     : null,
-  presente(claim.document?.title)
+  /* R4-b (06.10.2026, o achado 10 da leitura a frio): O TÍTULO DO DOCUMENTO DIZ-SE UMA VEZ NO CORPO DO RECIBO. Desde o
+     R4 a cabeça diz «O nome na fonte «…»», com a porta para o documento; repeti-lo aqui era pôr mais uma porta para o
+     mesmo sítio no mesmo ecrã (o recibo do PIB passou de três a quatro), que é o que a L1 do `check:lugar` conta. Onde
+     a cabeça diz o título, a frase diz quem publicou e a edição; onde a cabeça diz o rótulo da fonte (uma linha sem
+     título de documento), não há título para tirar. */
+  presente(claim.document?.title) && nomeDaFonte?.campo !== 'document.title'
     ? {
         k: s.livro.linha.publicadoEm,
         campo: 'document.title',
@@ -752,7 +758,16 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
     )}
     <div class="linha-o-que-e" data-o-que-e={id} data-o-que-e-tipo={oQueE.tipo} data-o-que-e-familia={oQueE.chave}>
       <p class="linha-o-que-e-k" data-voz>{s.cartao.oQueE}</p>
-      <p class="linha-o-que-e-frase" data-o-que-e-parte="o-que-e"><Frase partes={oQueE.pedacos} lang={lang} selos={false} /></p>
+      <p class="linha-o-que-e-frase" data-o-que-e-parte="o-que-e"><Frase partes={oQueE.pedacos} lang={lang} selos={false} />{oQueE.porConfirmar && (
+        <span class="linha-por-confirmar" data-por-confirmar-na-fonte={id}>{' '}<Marcador lang={lang} class="marcador-da-frase" /></span>
+      )}</p>
+      {/* R4-b (06.10.2026): A PARTE DO SINAL, quando a frase lê a metade «o que é» de um cartão contra esta linha e o
+          sinal vive na metade que compara (a posição de investimento internacional do ano anterior). E O MARCADOR,
+          acima, quando uma parte da frase está por confirmar na fonte: o marcador da casa, com a classe que diz à L1
+          que é um marcador obrigatório (`marcador-da-frase`), e que a K17 confere onde a auditoria o declara. */}
+      {oQueE.sinal && (
+        <p class="linha-o-que-e-frase" data-o-que-e-parte="sinal">{oQueE.sinal.join('')}</p>
+      )}
       {comparacaoDoCartao && (
         <p class="linha-o-que-e-frase" data-o-que-e-parte="comparacao"><Frase partes={comparacaoDoCartao.pedacos} lang={lang} selos={false} /></p>
       )}

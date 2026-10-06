@@ -1923,14 +1923,14 @@ if (PROVA) {
      As plantas correm com `--prova`, em memória. */
   const familias = conferirAuditoriaDasFamilias();
   r.erros.push(...familias.erros);
-  const recibos = conferirRecibosDasLinhas(DIST);
+  const recibos = conferirRecibosDasLinhas(DIST, familias.porConfirmar);
   r.erros.push(...recibos.erros);
   r.contas.familias = familias.contas;
   r.contas.recibos_com_frase = recibos.contas;
   /* E AS SÉRIES NO TEMPO (o ponto 3): a frase da linha da série, ou a frase auditada dela, em cada recibo de série. */
   const seriesAud = conferirAuditoriaDasSeries();
   r.erros.push(...seriesAud.erros);
-  const recibosDasSeries = conferirRecibosDasSeries(DIST);
+  const recibosDasSeries = conferirRecibosDasSeries(DIST, familias.porConfirmar, seriesAud.porConfirmar);
   r.erros.push(...recibosDasSeries.erros);
   r.contas.series_o_que_e = seriesAud.contas;
   r.contas.recibos_das_series_com_frase = recibosDasSeries.contas;
@@ -2066,6 +2066,8 @@ console.log(
 console.log(
   cinza(
     `      recibos com a frase conferida                       ${r.contas.recibos_com_frase.com_frase} de ${r.contas.recibos_com_frase.recibos}` +
+      ` (${r.contas.recibos_com_frase.com_marcador} com o marcador «por confirmar na fonte», ${r.contas.recibos_com_frase.com_sinal} com a parte do sinal; ` +
+      `${r.contas.familias.por_confirmar_entradas} entradas e ${r.contas.familias.por_confirmar_linhas} linhas por confirmar)` +
       (PROVA ? ` · ${r.contas.familias_plantas_mordidas} de ${r.contas.familias_plantas} plantas a morder` : ''),
   ),
 );

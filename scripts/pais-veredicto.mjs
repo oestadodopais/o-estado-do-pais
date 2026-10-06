@@ -8,6 +8,7 @@ import path from 'node:path';
 import { load } from 'js-yaml';
 import { FIGURAS_PDM } from '../src/data/figuras.mjs';
 import { ENTRADAS } from '../src/data/primeira-pagina.mjs';
+import { LEITURAS_DAS_MEDIDAS } from '../src/data/leituras-das-medidas.mjs';
 
 const normal = s => String(s ?? '').replace(/\s+/g, ' ').trim();
 const lerLinha = id => load(fs.readFileSync(path.join(process.cwd(), 'ledger/claims', `${id}.yml`), 'utf8'));
@@ -179,6 +180,44 @@ export function verificaExplicacoesDoVeredicto(home, indice, lang, linha = lerLi
     const doCartao = indice.querySelector(`[data-cartao-medida="${id}"] [data-leitura-parte="o-que-e"]`);
     if (!doCartao) falha(`«${id}»: o cartão da medida não tem a metade «o que é» na página do assunto.`);
     else if (semSelos(oQueE) !== semSelos(doCartao)) falha(`«${id}»: a frase «o que é» não é a do cartão («${semSelos(oQueE).slice(0, 60)}» contra «${semSelos(doCartao).slice(0, 60)}»).`);
+    /* R4-b: A PARTE DO SINAL, pela conta desta célula: na declaração da leitura do cartão, o primeiro ramo do sinal que
+       fica depois do corte (o primeiro pedaço de topo que compara), escolhido pelo valor da linha, até ao primeiro pedaço
+       que compara. Quando há, a explicação di-la, e é o princípio da metade que compara do cartão na página do assunto;
+       quando não há, a explicação não tem parte do sinal. */
+    const esperadoSinal = parteDoSinalAqui(id, lang, v);
+    const sinais = n.querySelectorAll(`[data-veredicto-sinal]`);
+    if (esperadoSinal) {
+      const comparaDoCartao = indice.querySelector(`[data-cartao-medida="${id}"] [data-leitura-parte="comparacao"]`);
+      if (sinais.length !== 1 || sinais[0].getAttribute('data-veredicto-sinal') !== id || normal(sinais[0].textContent) !== esperadoSinal) {
+        falha(`«${id}»: a explicação não diz o que o sinal quer dizer, como a conta desta célula manda («${esperadoSinal}»).`);
+      } else if (!semSelos(comparaDoCartao).startsWith(esperadoSinal)) {
+        falha(`«${id}»: a parte do sinal da explicação não é a do cartão na página do assunto.`);
+      }
+    } else if (sinais.length) falha(`«${id}»: a explicação tem uma parte do sinal, e a leitura do cartão não a tem depois do corte.`);
+    /* R4-b: OS SELOS DA EXPLICAÇÃO abrem o recibo da linha da própria medida, e só ela: um valor de outra linha, ou uma
+       porta para outro sítio, não cabe aqui. São os nós que o B2 tira da contagem da L1 (`scripts/portas-b2.mjs`). */
+    const recibo = lang === 'pt' ? `/livro-razao/${id}` : `/en/ledger/${id}`;
+    for (const c of n.querySelectorAll('[data-claim]')) if (c.getAttribute('data-claim') !== id) falha(`«${id}»: a explicação cita a linha «${c.getAttribute('data-claim')}».`);
+    for (const a of n.querySelectorAll('a[href]')) {
+      if (!a.classList.contains('src-chip') || a.getAttribute('href') !== recibo) falha(`«${id}»: a explicação tem uma porta que não é o selo do valor da própria linha («${a.getAttribute('href')}»).`);
+    }
   }
   return erros;
+}
+
+/** A parte do sinal de uma leitura, pela conta desta célula. @param {string} id @param {'pt'|'en'} lang @param {number} v */
+function parteDoSinalAqui(id, lang, v) {
+  const partes = /** @type {any} */ (LEITURAS_DAS_MEDIDAS)[id]?.[lang];
+  if (!Array.isArray(partes) || !Number.isFinite(v)) return null;
+  const compara = x => Array.isArray(x) ? x.some(compara)
+    : Boolean(x && typeof x === 'object' && ('compara' in x || 'estado' in x || 'comparacao' in x || ('sinal' in x && Object.values(x.sinal ?? {}).some(compara))));
+  const corte = partes.findIndex(compara);
+  for (const p of corte < 0 ? [] : partes.slice(corte)) {
+    if (!p || typeof p !== 'object' || !('sinal' in p)) continue;
+    const ramo = p.sinal[v > 0 ? 'positivo' : v < 0 ? 'negativo' : 'zero'] ?? [];
+    const antes = [];
+    for (const x of ramo) { if (compara(x) || typeof x !== 'string') break; antes.push(x); }
+    return normal(antes.join('')) || null;
+  }
+  return null;
 }

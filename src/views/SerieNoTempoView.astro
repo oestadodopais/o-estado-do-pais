@@ -43,6 +43,7 @@ import CampoDaSerie from '../components/serie/CampoDaSerie.astro';
 import DataDaSerie from '../components/serie/DataDaSerie.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
 import Frase from '../components/Frase.astro';
+import Marcador from '../components/Marcador.astro';
 import { oQueEDaSerie } from '../lib/o-que-e-o-numero.mjs';
 import { comparacaoDoUltimoPonto } from '../lib/formas/ultimo-ponto-da-serie.mjs';
 import { allClaims, parsePtNumber } from '../lib/ledger.mjs';
@@ -148,7 +149,9 @@ const unidadeNaFrase = !eIndice;
     }
     <div class="linha-o-que-e" data-o-que-e-da-serie={id} data-o-que-e-origem={oQueEDaSerieAqui.origem} data-o-que-e-linha={oQueEDaSerieAqui.linha ?? undefined}>
       <p class="linha-o-que-e-k" data-voz>{st.oQueEK}</p>
-      <p class="linha-o-que-e-frase"><Frase partes={oQueEDaSerieAqui.pedacos} lang={lang} selos={true} /></p>
+      <p class="linha-o-que-e-frase"><Frase partes={oQueEDaSerieAqui.pedacos} lang={lang} selos={true} />{oQueEDaSerieAqui.porConfirmar && (
+        <span class="linha-por-confirmar" data-por-confirmar-na-fonte={id}>{' '}<Marcador lang={lang} class="marcador-da-frase" /></span>
+      )}</p>
     </div>
     <p class="serie-periodo">
       <span class="linha-campo-k">{st.periodosK}</span>{' '}
