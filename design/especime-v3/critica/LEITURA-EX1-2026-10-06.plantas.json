@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T04:18:53+00:00",
+ "copia": "<pacote>",
+ "plantas": [
+  {
+   "id": "P1",
+   "ficheiro": "src/data/explicacoes/dinheiro-do-estado-2026.mjs",
+   "descricao": "o token dos programas que mais gastaram pede dois (n: 2) na edição portuguesa onde a página construída lista três",
+   "sha256_antes": "5f5d75cec7a617b158350d9495cea206d2c0072c309d42a998a5ec569e53fba2",
+   "sha256_depois": "c7520487a3112121dbbec5ad73a4a0f4034e47c6236923a672ad06cb39509a26",
+   "contexto_antes": ": DESPESA_EXECUTADA }, ', a administração central e a segurança social tinham gasto ',\n              { claim: DESPESA_EXECUTADA, sufixo: ' milhões de euros' }, ' e recebido ', { claim: RECEITA_EXECUTADA, sufixo: ' milhões' },\n              { maiores: PROGRAMAS_DA_EXECUCAO, familia: FAMILIA_DOS_PROGRAMAS, n: 3,\n                frase: '; os programas que mais gastaram foram ', antes: 'o de ', abre: ' (', sufixo: ' milhões', fecha: ')', entre: ', ', ultimo: ' e ' },\n   ",
+   "contexto_depois": ": DESPESA_EXECUTADA }, ', a administração central e a segurança social tinham gasto ',\n              { claim: DESPESA_EXECUTADA, sufixo: ' milhões de euros' }, ' e recebido ', { claim: RECEITA_EXECUTADA, sufixo: ' milhões' },\n              { maiores: PROGRAMAS_DA_EXECUCAO, familia: FAMILIA_DOS_PROGRAMAS, n: 2,\n                frase: '; os programas que mais gastaram foram ', antes: 'o de ', abre: ' (', sufixo: ' milhões', fecha: ')', entre: ', ', ultimo: ' e ' },\n   "
+  },
+  {
+   "id": "P2",
+   "ficheiro": "built/explicacoes/dinheiro-do-estado-2026/index.html",
+   "descricao": "a página construída diz «um défice» com um saldo positivo",
+   "sha256_antes": "d941ff36d9e000655336aefd53d54f52cfeee036814142883e820e132dba18e2",
+   "sha256_depois": "3fe5d569f693caddf17e1520d772a7d5b0b0f85995fcdb126088685b835a35da",
+   "contexto_antes": "\" data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span lang=\"en\">Eurostat</span></span></a></span> do produto, um excedente.</p></section><section class=\"explicacao-secao explicacao-nao-diz\" data-explicacao-secao=\"o-que-nao-diz\" aria-labelledby=\"explicacao-o-que-nao-diz\"><h2 class=\"e",
+   "contexto_depois": "\" data-selo-etiqueta=\"Eurostat\" title=\"Eurostat\"><span class=\"src-chip-texto\">fonte</span><span class=\"vh\"> · <span lang=\"en\">Eurostat</span></span></a></span> do produto, um défice.</p></section><section class=\"explicacao-secao explicacao-nao-diz\" data-explicacao-secao=\"o-que-nao-diz\" aria-labelledby=\"explicacao-o-que-nao-diz\"><h2 class=\"e"
+  },
+  {
+   "id": "P3",
+   "ficheiro": "src/lib/explicacoes.mjs",
+   "descricao": "a ordenação do token «maiores» passa a crescente no módulo: os três menores, contra a página construída",
+   "sha256_antes": "699cd5db0fdcfb4155eed54118199d3eae045f667e77b827546664c31a000f0b",
+   "sha256_depois": "0c2ad9e4c0c8132bbc238ff0d4eca4008ae1dab8317b46e8645f0228d8cc27b3",
+   "contexto_antes": "egiveis = valores.filter((x) => x.v === null).map((x) => x.id);\n  const ordem = /** @type {{ id: string, v: number }[]} */ (valores.filter((x) => x.v !== null)).sort((a, b) => b.v - a.v || a.id.localeCompare(b.id));\n  const empate = ordem.length > o.n && ordem[o.n - 1].v === ordem[o.n].v;\n  const problemas = [\n    novas.length ? `linhas da família /${o.familia}/ que a lis",
+   "contexto_depois": "egiveis = valores.filter((x) => x.v === null).map((x) => x.id);\n  const ordem = /** @type {{ id: string, v: number }[]} */ (valores.filter((x) => x.v !== null)).sort((a, b) => a.v - b.v || a.id.localeCompare(b.id));\n  const empate = ordem.length > o.n && ordem[o.n - 1].v === ordem[o.n].v;\n  const problemas = [\n    novas.length ? `linhas da família /${o.familia}/ que a lis"
+  },
+  {
+   "id": "P4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz «489 conferidas» onde a medida diz «499 conferidas»",
+   "sha256_antes": "90355ceb2b7a4519e6882f3161cdb37e9f2c52bdf61babbbe58704c73a80af38",
+   "sha256_depois": "7ff035e333c0c77cce9950b5d5dff36c267ae9f8ddb20a86ef0f0c31cfe98c17",
+   "contexto_antes": "38 referências postas em dia pela conta do diff (`ex1b/linhas-do-mapa.log`) e 0 à mão, entre 543 comparadas (`ex1b/mapa-a-mao.json`); com a subsecção do EX1-b, 499 conferidas e 0 longe.\n\nAs capturas: 60 com o prefixo `ex1b-`, 40 delas páginas inteiras (a lista, a explicação, a leitura da semana e a primeira página, nas cinco largura",
+   "contexto_depois": "38 referências postas em dia pela conta do diff (`ex1b/linhas-do-mapa.log`) e 0 à mão, entre 543 comparadas (`ex1b/mapa-a-mao.json`); com a subsecção do EX1-b, 489 conferidas e 0 longe.\n\nAs capturas: 60 com o prefixo `ex1b-`, 40 delas páginas inteiras (a lista, a explicação, a leitura da semana e a primeira página, nas cinco largura"
+  },
+  {
+   "id": "P5",
+   "ficheiro": "built/explicacoes/leitura-da-semana/index.html",
+   "descricao": "a leitura da semana construída troca o valor antigo e o novo do custo unitário do trabalho (17,9 para 17,7), contra o registo da linha",
+   "sha256_antes": "aab9b4eb882a72d7574f55eb194dd1252a5f24fe591071f4bebdc5a46931e52b",
+   "sha256_depois": "23bd8dc16cd4788c71d2f9fe69f9e12ac78eea54444b0c4e6e23a06ca7af9e61",
+   "contexto_antes": "balho-2024\" data-de-campo=\"reference_date\">2024</span>: de <span class=\"semana-valor\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"old_value\">17,7</span> para <span class=\"semana-valor\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"new_value\">17,9</span> <span class=\"campo-valor semana-unidade\" lang=\"pt-PT\" data-linha-claim=\"custo-unitario-do-trabalho-2024\" data-linha-campo=\"unit\">variação em três anos, %</span",
+   "contexto_depois": "balho-2024\" data-de-campo=\"reference_date\">2024</span>: de <span class=\"semana-valor\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"old_value\">17,9</span> para <span class=\"semana-valor\" data-correcao-claim=\"custo-unitario-do-trabalho-2024\" data-correcao-n=\"1\" data-correcao-campo=\"new_value\">17,7</span> <span class=\"campo-valor semana-unidade\" lang=\"pt-PT\" data-linha-claim=\"custo-unitario-do-trabalho-2024\" data-linha-campo=\"unit\">variação em três anos, %</span"
+  }
+ ]
+}
