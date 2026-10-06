@@ -1,0 +1,88 @@
+{
+  "brief": "design/observatorio/BRIEF-JD1-os-juros-e-a-divida-do-estado-no-livro-razao.md",
+  "guiao": "design/observatorio/medidas/BRIEF-JD1.py",
+  "cabeca_lida": "6bc9b86b",
+  "medidas": [
+    {
+      "nome": "linhas_da_divida_publica",
+      "valor": 5,
+      "comando": "git ls-tree 6bc9b86b:ledger/claims · os ids que casam com /^divida-publica-/",
+      "conhecido_positivo": {
+        "o_que": "a linha da dívida de dois mil e vinte e cinco está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_saldo_das_administracoes_publicas",
+      "valor": 3,
+      "comando": "git ls-tree 6bc9b86b:ledger/claims · os ids que casam com /^saldo-das-administracoes-publicas-/",
+      "conhecido_positivo": {
+        "o_que": "a linha do saldo de dois mil e vinte e cinco está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_dos_juros_e_do_custo_da_divida",
+      "valor": 0,
+      "comando": "git ls-tree 6bc9b86b:ledger/claims · os ids que casam com /^(juros|despesa-com-juros|custo-da-divida|custo-do-stock|necessidades-de-financiamento|emissoes-de-divida|divida-direta)/",
+      "conhecido_positivo": {
+        "o_que": "a lista das linhas lê-se (a linha da dívida pública existe)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_da_despesa_por_programa_do_orcamento_de_2026",
+      "valor": 20,
+      "comando": "git ls-tree 6bc9b86b:ledger/claims · os ids que casam com /^oe-2026-despesa-programa-/",
+      "conhecido_positivo": {
+        "o_que": "o programa 005 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_da_despesa_por_programa_executada_ate_agosto",
+      "valor": 20,
+      "comando": "git ls-tree 6bc9b86b:ledger/claims · os ids que casam com /^execucao-2026-08-despesa-programa-/",
+      "conhecido_positivo": {
+        "o_que": "o programa 005 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_executadas_do_programa_da_gestao_da_divida",
+      "valor": 1,
+      "comando": "git show 6bc9b86b:ledger/claims/execucao-2026-08-despesa-programa-005.yml · a linha nomeia a Gestão da Dívida Pública, contada uma vez",
+      "conhecido_positivo": {
+        "o_que": "a linha tem valor e unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_no_tempo_registadas_no_sitio",
+      "valor": 24,
+      "comando": "git show 6bc9b86b:src/data/series-no-tempo.mjs · as chaves «serie-…» ao nível do registo",
+      "conhecido_positivo": {
+        "o_que": "a série das rendas está registada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_das_obrigacoes_do_tesouro_no_sitio",
+      "valor": 0,
+      "comando": "git show 6bc9b86b:src/data/series-no-tempo.mjs · as chaves com «obrigacoes» ou «rendibilidade»",
+      "conhecido_positivo": {
+        "o_que": "a série das rendas está registada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiros_de_series_no_livro",
+      "valor": 34,
+      "comando": "git ls-tree 6bc9b86b:ledger/series · os .yml",
+      "conhecido_positivo": {
+        "o_que": "a série das rendas tem ficheiro",
+        "encontrado": true
+      }
+    }
+  ]
+}
