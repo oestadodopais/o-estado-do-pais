@@ -4,8 +4,6 @@
  * independentemente da sua marca no HTML. A retirada da chamada E1 numa cópia
  * do guião tem de fazer as mesmas plantas deixar de morder. */
 import { inicioDoPasso, fimDoPasso } from '../../scripts/leituras/tempos.mjs';
-const tempoDoAutoTeste = inicioDoPasso('auto-teste:pais');
-process.once('exit', codigo => fimDoPasso(tempoDoAutoTeste, codigo));
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -14,6 +12,9 @@ import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import { parse } from 'node-html-parser';
 import { WORKS } from '../../src/data/studies.mjs';
+
+const tempoDoAutoTeste = inicioDoPasso('auto-teste:pais');
+process.once('exit', codigo => fimDoPasso(tempoDoAutoTeste, codigo));
 
 const raiz = process.cwd();
 const origem = path.resolve(process.env.OEDP_DIST ?? 'dist');
@@ -31,8 +32,8 @@ const cadeiaPlantada = conferirCadeiaDoPais({ ...scripts,
   'check:pais': scripts['check:pais'] + ' --so-a-celula-e1-no-autoteste' });
 assert.deepEqual(cadeiaPlantada, ['check:pais: a opção só da E1 não pode entrar na cadeia de produção.']);
 casos.push({ nome: 'planta: opção da E1 no package.json', queixas_e1: cadeiaPlantada });
-// A ficha e os HTML mantêm o mesmo horizonte; só o relógio da construção de
-// ensaio avança. Assim, a data passada não se esconde atrás de uma marca errada.
+// Os HTML reais só escolhem um estudo comum às duas edições. O ensaio copia
+// o carimbo e avança o relógio; a célula E1 confere a ficha declarada, sem HTML.
 const primeiras = ['index.html', 'en/index.html'].map(f => parse(fs.readFileSync(path.join(origem, f), 'utf8')));
 const comuns = primeiras[0].querySelectorAll('#trabalhos [data-estudo]').map(e => e.getAttribute('data-estudo'))
   .filter(slug => primeiras[1].querySelector(`#trabalhos [data-estudo="${slug}"]`));

@@ -35,7 +35,9 @@ export function fechar(pasta) {
   fs.writeFileSync(path.join(pasta, 'tempos.json'), JSON.stringify(r, null, 2) + '\n');
   return r;
 }
-if (path.resolve(process.argv[1] ?? '') === fileURLToPath(import.meta.url)) {
+// O módulo também é chamado por ligações, incluindo o alias da pasta temporária.
+const entrada = process.argv[1];
+if (entrada && fs.existsSync(entrada) && fs.realpathSync(entrada) === fileURLToPath(import.meta.url)) {
   const [modo, nome, comando, ...args] = process.argv.slice(2);
   if (modo === 'fechar' || modo === 'arrumar') {
     fechar(nome);

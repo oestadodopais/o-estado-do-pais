@@ -489,7 +489,7 @@ export async function plantas() {
     const premissas = antesDaTroca.resumo === depoisDaTroca.resumo
       && antesDaTroca.escrito === depoisDaTroca.escrito
       && antesDaTroca.inode !== depoisDaTroca.inode;
-    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D',
+    casos.push({ planta: 'uma conferência que troca um ficheiro do dist/ por uma cópia com os mesmos bytes e a mesma hora de escrita fecha a célula D',
       antes: antesDaTroca, depois: depoisDaTroca, passos_da_troca: trocas.length,
       codigo_da_troca: trocas[0]?.codigo, falhas: r.celulas.D.falhas,
       mordeu: premissas && trocas.length === 1 && trocas[0].codigo === 0

@@ -107,6 +107,7 @@ with tempfile.TemporaryDirectory(prefix='oedp-ma-comuns-') as tmp:
         assert all(hashlib.sha256((dist/f).read_bytes()).hexdigest()==s for f,s in hashes.items())
         registar('capturas e recortes nas duas edições','Cinco larguras por edição; PNG, sha256 e recursos conferidos; construção intacta.')
         conf['cabeca']='b'*40; pedido.write_text(json.dumps(conf)); r=captar('cabeca'); assert r.returncode!=0 and not (p/'cabeca').exists()
+        assert 'a cabeça pedida não é a de dist/version.json' in r.stderr
         registar('captura de outra cabeça','captar: a cabeça pedida não é a de dist/version.json')
         conf['cabeca']=head; pedido.write_text(json.dumps(conf)); (dist/'index.html').write_text(html.replace('</body>','<img src="https://example.invalid/ensaio.png"></body>'))
         r=captar('externo'); assert r.returncode!=0; rec=json.loads((p/'externo/capturas.json').read_text()); assert rec['falhas'] and rec['resultados'][0]['externos']

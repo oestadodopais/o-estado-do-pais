@@ -2219,7 +2219,7 @@ async function plantasDaEspera(limpa, limpas, dist, cartoes, leis, folhas) {
     { nome: 'alvo abaixo de 44 px', css: pequena, atraso: 0, celula: 'H16' },
     { nome: 'etiqueta cortada depois da primeira linha', css: cortada, atraso: 0, celula: 'H14' },
   ]) {
-    const anterior = ESTRAGO;
+    const anterior = { estrago: ESTRAGO, folha: folhaDeEnsaio, celulas };
     const contexto = await nav.newContext({ viewport: { width: alvo.largura, height: 900 } });
     try {
       folhaDeEnsaio = { ...caso, pedida: false, servida: false };
@@ -2237,12 +2237,12 @@ async function plantasDaEspera(limpa, limpas, dist, cartoes, leis, folhas) {
       resultados.push({ nome: caso.nome, celula: caso.celula, mensagem: mordida.prova, folha_servida: folhaDeEnsaio.servida, mordeu: true });
       console.log(`check:alvos · planta M-A · ${caso.nome} · ${caso.celula}: ${mordida.prova}`);
     } finally {
-      ESTRAGO = anterior;
-      folhaDeEnsaio = null;
+      ESTRAGO = anterior.estrago;
+      folhaDeEnsaio = anterior.folha;
+      celulas = anterior.celulas;
       await contexto.close();
     }
   }
-  celulas = limpas;
   return resultados;
 }
 

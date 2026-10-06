@@ -66,6 +66,7 @@ def principal():
         for rotulo, comando in comandos:
             entradas = [p for p in corrida['passos'] if p['passo'] == comando]
             medidas[nome][rotulo] = sum(p['segundos'] for p in entradas) if entradas else None
+    assert medidas['portoes-b']['check:leituras'] is not None, 'Falta o tempo do check:leituras.'
     listas = {nome: Counter(p['passo'] for p in t['passos'] if not p['passo'].startswith('cadeia:')
                            and p['passo'] not in ('auto-teste:pais', 'npm run check:pais:auto-teste'))
               for nome, t in tempos.items()}
@@ -140,22 +141,22 @@ def principal():
     linhas += ['| ' + n + ' | ' + ' | '.join(str(v) for v in codigos[n].values()) + ' |' for n in nomes]
     linhas += ['', 'As cabeças de entrada e saída são iguais em cada corrida. O workflow não mudou nesta passagem. A célula U confirmou a cobertura, D a ausência de escritas durante o verify, e C a cabeça da construção.', '', '## O que mudou por achado', '',
                '| Achado | Mudança | Planta que o protege |', '|---|---|---|',
-               '| 1 | Estrago só na cópia; a U já recusava passos ausentes. | Conferência retirada da escolha fecha U. |',
-               '| 2 | Estrago só na cópia; a aterragem já parava com o check-run vermelho. | Sem check e check vermelho param antes de publicar, com comandos substituídos. |',
-               '| 3 | Estrago só na cópia; o selo já incluía o sha256 do guião. | Mudança do guião provoca reexecução. |',
-               '| 4 | Estrago só na cópia; a interrupção já estava ligada. A planta foi alargada pelo achado 9. | TERM depois de tomar a tranca para e liberta. |',
-               '| 5 | Estrago só na cópia; a tabela tinha o valor dos ficheiros. | O gerador relê os tempos e os códigos. |',
-               '| 6 | `check:leituras` descobre todos os guiões Python da pasta e entra no verify e no GitHub. O ambiente dos processos sintéticos fica isolado do relógio real. | Cada guião afirma o código e a mensagem; a cadeia fica vermelha se qualquer um falhar. |',
-               '| 7 | Só `--escrever-presos` grava, depois de todos os guiões correrem verdes nessa invocação, com cabeça, hora, invocação e identificador. CI ignora selos; a saída e o mapa dizem a regra. | Selo manual recusado; gravação reexecuta; corrida vermelha não sela; cada variável de CI força execução. |',
-               '| 8 | O «antes» foi substituído por uma corrida limpa na cabeça do brief. | O gerador exige estados vazios, cabeças iguais e bytes do portoes.sh iguais ao objeto Git. |',
-               '| 9 | A tranca caduca pela regra da M46 e a espera imprime o dono. TERM termina o grupo do portão antes de soltar a tranca. | Tranca ocupada conservada; caducada substituída; TERM depois de tomada para a corrida e solta a tranca. |',
-               '| 10 | A limpeza cobre pastas temporárias e o scratchpad; só substitui o utilizador como componente de caminho. | Temporários; palavra comum intacta; texto e gzip; idempotência; binários e ligações. |',
-               '| 11 | A conferência relê o relatório e o ficheiro entregue, com extração independente das citações. | Uma linha apagada durante a escrita fecha a montagem pelo fluxo normal. |',
-               '| 12 | Registos reduzidos ou omitidos são ditos com os tamanhos; `PACOTE_LOGS=inteiros` conserva-os completos. | Aviso e tamanhos conferidos; registos citados e sem citação chegam byte a byte no modo inteiro. |',
-               '| 13 | A opção chama-se `--so-a-celula-e1-no-autoteste`; a mensagem verde vive dentro da chamada E1. | Prazo, razão e retirada da chamada; opção plantada no guião check:pais do package.json recusada. |',
-               '| 14 | A guarda reconhece partes de tempos e apaga-as antes de qualquer relógio novo. | Pasta com partes de corrida morta é recusada, sem as misturar noutra corrida. |',
-               '| 15 | Contadores nulos ou ausentes conservam null; a regressão compara o último valor conhecido. | Nulo sem TypeError; campo ausente; regressão depois de null. |',
-               '| 16 | A lista do mapa foi lida da cadeia inteira, incluindo o auto-teste do país e as leituras; as referências foram acertadas. | `conferir-mapa.py`, com o resultado conservado em plantas-b. |',
+               '| `1` | Estrago só na cópia; a U já recusava passos ausentes. | Conferência retirada da escolha fecha U. |',
+               '| `2` | Estrago só na cópia; a aterragem já parava com o check-run vermelho. | Sem check e check vermelho param antes de publicar, com comandos substituídos. |',
+               '| `3` | Estrago só na cópia; o selo já incluía o sha256 do guião. | Mudança do guião provoca reexecução. |',
+               '| `4` | Estrago só na cópia; a interrupção já estava ligada. A planta foi alargada pelo achado 9. | TERM depois de tomar a tranca para e liberta. |',
+               '| `5` | Estrago só na cópia; a tabela tinha o valor dos ficheiros. | O gerador relê os tempos e os códigos. |',
+               '| `6` | `check:leituras` descobre todos os guiões Python da pasta e entra no verify e no GitHub. O ambiente dos processos sintéticos fica isolado do relógio real. | Cada guião afirma o código e a mensagem; a cadeia fica vermelha se qualquer um falhar. |',
+               '| `7` | Só `--escrever-presos` grava, depois de todos os guiões correrem verdes nessa invocação, com cabeça, hora, invocação e identificador. CI ignora selos; a saída e o mapa dizem a regra. | Selo manual recusado; gravação reexecuta; corrida vermelha não sela; cada variável de CI força execução. |',
+               '| `8` | O «antes» foi substituído por uma corrida limpa na cabeça do brief. | O gerador exige estados vazios, cabeças iguais e bytes do portoes.sh iguais ao objeto Git. |',
+               '| `9` | A tranca caduca pela regra da M46 e a espera imprime o dono. TERM termina o grupo do portão antes de soltar a tranca. | Tranca ocupada conservada; caducada substituída; TERM depois de tomada para a corrida e solta a tranca. |',
+               '| `10` | A limpeza cobre pastas temporárias e o scratchpad; só substitui o utilizador como componente de caminho. | Temporários; palavra comum intacta; texto e gzip; idempotência; binários e ligações. |',
+               '| `11` | A conferência relê o relatório e o ficheiro entregue, com extração independente das citações. | Uma linha apagada durante a escrita fecha a montagem pelo fluxo normal. |',
+               '| `12` | Registos reduzidos ou omitidos são ditos com os tamanhos; `PACOTE_LOGS=inteiros` conserva-os completos. | Aviso e tamanhos conferidos; registos citados e sem citação chegam byte a byte no modo inteiro. |',
+               '| `13` | A opção chama-se `--so-a-celula-e1-no-autoteste`; a mensagem verde vive dentro da chamada E1. | Prazo, razão e retirada da chamada; opção plantada no guião check:pais do package.json recusada. |',
+               '| `14` | A guarda reconhece partes de tempos e apaga-as antes de qualquer relógio novo. | Pasta com partes de corrida morta é recusada, sem as misturar noutra corrida. |',
+               '| `15` | Contadores nulos ou ausentes conservam null; a regressão compara o último valor conhecido. | Nulo sem TypeError; campo ausente; regressão depois de null. |',
+               '| `16` | A lista do mapa foi lida da cadeia inteira, incluindo o auto-teste do país e as leituras; as referências foram acertadas. | `conferir-mapa.py`, com o resultado conservado em plantas-b. |',
                '| Code | `soltar_a_tranca`; chave falhas única; limpador e custos em funções legíveis; globais da espera repostos em finally; imports e comentário E1; regra dos logs no cabeçalho do pacote. | As mesmas plantas, as plantas da espera e os portões finais. |', '',
                '## Cobertura observada', '',
                f'O mapa ficou com {mapa["longe"]} citações longe, {mapa["por_encontrar"]} por encontrar e {mapa["fora"]} referências para lá do fim, lidas de plantas-b/mapa.log. Foram observados {len(listas["antes"])} comandos distintos no «antes» e {len(listas["portoes-b"])} na corrida nova, sem retirar comandos. O auto-teste que antes estava dentro do check:pais aparece agora como passo próprio; fica fora desta contagem de comandos para a comparação não o contar duas vezes. O check:leituras correu {len(leituras["guioes"])} guiões.', '',
@@ -170,9 +171,10 @@ def principal():
                '- **MA-2.** A leitura a frio da primeira passagem e a decisão do lugar de direção foram recebidas e aplicadas. A aceitação desta passagem pertence ao lugar de direção.',
                '- **MA-3.** O total final de símbolos do lançador não está exposto nesta sessão; não se inventa a partir dos contadores parciais.',
                f'- **MA-4, resolvida.** A cabeça do brief não exportava as páginas dos alvos. Depois da corrida cronometrada, uma sonda externa acrescentou em memória apenas a escrita final dos resultados já calculados pelo guião original. O SHA identifica os bytes originais; o carregador fica em `antes/instrumentacao/observar-alvos.mjs`; o código dessa corrida e o estado limpo posterior também ficam conservados. As {len(observacao["paginas"])} passagens são iguais, como objetos completos, às da cabeça do código nova, sem arredondamento. Também são iguais as rotas, larguras, células, resultados do axe, violações graves e alvos maus. Esta exportação separada não entra no tempo do «antes».', '', 
+               '- **MA-5, resolvida.** O agregador comparava o caminho da invocação com o caminho real do módulo e podia sair sem escrever quando chamado por uma ligação. Passa a resolver a ligação; a planta retira o JSON anterior e exige um novo ficheiro idêntico. A recolha do «antes» usou o caminho real, e o seu ficheiro de tempos foi lido e conferido.', '',
                'Não houve push, publicação ou alteração do motor. Os testes da aterragem substituem os comandos externos. A espera por uma tranca de outra worktree foi respeitada.', '',
                '## Commits desta passagem', '']
-    linhas += ['- `' + l.split(' ', 1)[0] + '` ' + l.split(' ', 1)[1]
+    linhas += ['- `' + l.split(' ', 1)[0] + '` ' + re.sub(r'^M-A-b (\d+):', r'`M-A-b \1`:', l.split(' ', 1)[1])
                for l in git('log', '--reverse', '--format=%h %s', 'beb1e37d..' + head).splitlines()]
     linhas += ['', 'O último commit junta apenas o relatório e as provas. Os trailers pedidos estão nos commits desta passagem.', '']
     for prefixo in ('U ✓', 'D ✓', 'C ✓', 'npm run check:briefs ·', 'npm run check:leituras ·', 'npm run check:series ·', 'npm run check:pais:auto-teste ·', 'npm run check:alvos ·'):

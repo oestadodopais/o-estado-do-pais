@@ -5,6 +5,10 @@ H2, M49: PACOTE_RETIRA filtra apenas o diff do sítio; PACOTE_MOTOR filtra o
 motor inteiro (diff e ficheiros). Padrões fnmatch sobre o caminho relativo
 completo, sensíveis a maiúsculas. Aspas interiores permitem espaços. As
 cópias vêm dos objetos Git da cabeça, nunca da árvore de trabalho.
+Qualquer build.log, verify.log ou typecheck.log com um .codigo ao lado é um
+registo de portão. Por omissão só chegam as linhas citadas no relatório,
+com os códigos e tempos; cada redução é dita com os tamanhos. PACOTE_LOGS=inteiros
+conserva os registos completos. A entrega relê as citações independentemente.
 """
 import fnmatch
 import hashlib
