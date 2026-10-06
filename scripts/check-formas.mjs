@@ -152,7 +152,7 @@ import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
 import { conferirCalendario, plantasDoCalendario } from '../tests/municipio/calendario.mjs';
 import { FORMAS_DOS_BLOCOS } from '../src/lib/primeira-pagina.mjs';
 import { FORMAS_DAS_FIGURAS } from '../src/lib/explicacoes.mjs';
-import { conferirBarrasDoLivro, plantasDasBarrasDoLivro } from '../tests/formas/barras-do-livro.mjs';
+import { conferirBarrasDoLivro, plantasDasBarrasDoLivro, figurasDeclaradasEmFalta, plantasDasFigurasDeclaradas } from '../tests/formas/barras-do-livro.mjs';
 import { lerSeriesDoPortao, lerPaisesDoPortao, contaDaFaixa } from './series-do-portao.mjs';
 import { conferirFaixas, plantasDaFaixa, conferirPalavrasDaFaixa, plantasDasPalavrasDaFaixa, plantasDosEmpates } from '../tests/cartao/faixa.mjs';
 import { conferirSeccaoDosPaises, plantasDaSeccao, plantaDaTabela } from '../tests/uniao/paises.mjs';
@@ -280,7 +280,7 @@ const plantasDaLeituraRP4C = [];
 let desenhosRP4 = 0;
 /** F22 (bloco EX1, 05.10.2026): as figuras das explicações recompostas, e as plantas delas, uma vez por edição. */
 let figurasEX1 = 0;
-/** @type {{ lang: string, nome: string, mordeu: boolean, queixa: string }[]} */
+/** @type {{ lang: string, nome: string, mordeu: boolean, queixa: string, de?: string }[]} */
 const plantasEX1 = [];
 const recibosRP4 = new Set();
 /* RP4-m: os dois controlos das plantas da regra da página, o primeiro de cada um que a corrida vê. */
@@ -696,10 +696,19 @@ for (const ficheiro of paginasDe(DIST)) {
   if (rota?.key === 'explicacao') {
     const lang = rota.lang === 'en' ? 'en' : 'pt';
     const slug = String(rota.params.slug);
+    /* EX1-c (06.10.2026, o achado 15 da leitura a frio): cada figura declarada tem de estar na página, e a planta de uma
+       figura tirada corre uma vez por edição. */
+    for (const e of figurasDeclaradasEmFalta(root, slug)) err(`${rel}: ${e}`);
+    if (!plantasEX1.some((p) => p.lang === lang && p.de === 'presenca')) {
+      for (const p of plantasDasFigurasDeclaradas(html, slug)) {
+        plantasEX1.push({ lang, de: 'presenca', ...p });
+        if (!p.mordeu) err(`${rel}: F22 · planta «${p.nome}» não mordeu: ${p.queixa}`);
+      }
+    }
     for (const instrumento of root.querySelectorAll('[data-instrumento]').filter((x) => x.querySelector('figure[data-forma="barras-do-livro"]'))) {
       figurasEX1++;
       for (const e of conferirBarrasDoLivro(instrumento, lang, slug)) err(`${rel}: ${e}`);
-      if (!plantasEX1.some((p) => p.lang === lang)) {
+      if (!plantasEX1.some((p) => p.lang === lang && p.de !== 'presenca')) {
         for (const p of plantasDasBarrasDoLivro(instrumento.outerHTML, lang, slug)) {
           plantasEX1.push({ lang, ...p });
           if (!p.mordeu) err(`${rel}: F22 · planta «${p.nome}» não mordeu: ${p.queixa}`);
@@ -1610,7 +1619,8 @@ for (const lang of LANGS) {
   if (!plantasF2.some((p) => p.lang === lang)) err(`F2 · as plantas dos pontos no desenho não correram na edição ${lang}`);
 }
 if (!contas.algarismos_de_pontos_nos_desenhos) err('F2 · nenhum valor nem período de um ponto num desenho das séries: o conhecido-positivo da leitura de cada ponto falhou.');
-for (const lang of ['pt', 'en']) if (!plantasEX1.some((p) => p.lang === lang)) err(`F22 · as plantas das barras das explicações não correram na edição ${lang}: nenhuma figura vista`);
+for (const lang of ['pt', 'en']) if (!plantasEX1.some((p) => p.lang === lang && p.de !== 'presenca')) err(`F22 · as plantas das barras das explicações não correram na edição ${lang}: nenhuma figura vista`);
+for (const lang of ['pt', 'en']) if (!plantasEX1.some((p) => p.lang === lang && p.de === 'presenca')) err(`F22 · a planta da presença das figuras declaradas não correu na edição ${lang}: nenhuma explicação vista`);
 if (figurasEX1 === 0) err('F22 · não viu figura `barras-do-livro` nenhuma');
 console.log(`F22 · ${figurasEX1} figuras das explicações recompostas das linhas · ${plantasEX1.filter((p) => p.mordeu).length} de ${plantasEX1.length} plantas em memória`);
 console.log(`F21 · ${desenhosRP4} desenhos recompostos · ${provasRP4.length} provas do módulo · ${plantasRP4.filter((p) => p.mordeu).length} de ${plantasRP4.length} plantas em memória · RP4-c: ${plantasDaLeituraRP4C.filter((p) => p.mordeu).length} de ${plantasDaLeituraRP4C.length} plantas da leitura e da legenda`);

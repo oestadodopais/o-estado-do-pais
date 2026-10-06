@@ -20,6 +20,10 @@
  * AS PLANTAS correm em memória, sobre a figura com o seu instrumento, e cada uma tem de morder com a queixa dela:
  * uma barra fora de escala, um valor trocado entre duas barras, duas barras fora de ordem, uma barra a menos e um
  * rótulo de outra linha. Nenhuma toca no `dist/`.
+ *
+ * EX1-c (06.10.2026, o achado 15 da leitura a frio): A F22 PERCORRE AS FIGURAS DECLARADAS, e não só as que a página
+ * tem. Cada figura que uma explicação declara tem de estar na página dela, no instrumento dela
+ * (`figurasDeclaradasEmFalta`), com a planta de uma figura tirada da página.
  */
 import { parse } from 'node-html-parser';
 import { EXPLICACOES } from '../../src/data/explicacoes/index.mjs';
@@ -44,6 +48,35 @@ export function figuraDeclarada(slug, id) {
   const e = /** @type {any} */ (EXPLICACOES.find((x) => x.slug === slug));
   for (const s of e?.seccoes ?? []) for (const b of s.conteudo ?? []) if (b.figura?.id === id) return b.figura;
   return null;
+}
+
+/**
+ * AS FIGURAS DECLARADAS QUE A PÁGINA NÃO TEM (EX1-c): cada figura de cada secção da explicação tem de estar no seu
+ * instrumento (`explicacao-<slug>-<id>`), com a figura `barras-do-livro` dela dentro.
+ * @param {any} root a raiz da página da explicação @param {string} slug @returns {string[]}
+ */
+export function figurasDeclaradasEmFalta(root, slug) {
+  const e = /** @type {any} */ (EXPLICACOES.find((x) => x.slug === slug));
+  if (!e) return [`F22 · a página da explicação «${slug}» não tem declaração`];
+  /** @type {string[]} */
+  const erros = [];
+  for (const s of e.seccoes ?? []) for (const b of s.conteudo ?? []) {
+    if (!b.figura) continue;
+    const id = String(b.figura.id);
+    const instrumento = root.querySelector(`[data-instrumento="explicacao-${slug}-${id}"]`);
+    if (!instrumento || !instrumento.querySelector(`figure[data-forma="barras-do-livro"][data-barras-do-livro="${id}"]`)) erros.push(`F22 · a figura declarada «${id}» da explicação «${slug}» não está na página`);
+  }
+  return erros;
+}
+
+/** As plantas da presença das figuras declaradas, em memória, sobre a página inteira. @param {string} html @param {string} slug */
+export function plantasDasFigurasDeclaradas(html, slug) {
+  const controlo = figurasDeclaradasEmFalta(parse(html), slug);
+  const r = parse(html);
+  const instrumentos = r.querySelectorAll('[data-instrumento]').filter((x) => x.querySelector('figure[data-forma="barras-do-livro"]'));
+  instrumentos.at(-1)?.remove();
+  const q = figurasDeclaradasEmFalta(r, slug);
+  return [{ nome: 'uma figura declarada tirada da página', mordeu: controlo.length === 0 && instrumentos.length > 0 && q.some((x) => /F22 · a figura declarada/.test(x)), queixa: q.join(' | ') || 'nenhuma queixa' }];
 }
 
 /** O rótulo de uma linha, pela regra desta célula. @param {string} id @param {'pt'|'en'} lang */
