@@ -290,6 +290,23 @@ conservam a prova do que cada bloco correu; não são pontos de manutenção.
 | `scripts/leituras/portoes.sh` | `<worktree absoluta> <pasta nova>`, com `RESEARCHHUB_DIR` no ambiente. Toma a tranca, constrói, confere a união em paralelo e corre o typecheck; cada código vem do processo terminado. `OEDP_PARALELO` permite medir outro grau. |
 | `scripts/leituras/pacote.sh` | A interface está no cabeçalho. Os códigos e tempos acompanham só as linhas dos registos citadas por `<!-- portao: portoes/verify.log \| npm run check:series · -->` no relatório. A falta de uma linha citada fecha o pacote. |
 
+<!-- MA-TEMPOS-INICIO -->
+### Medido no M-A, 06.10.2026
+
+Cabeça do brief `207d7134`, cabeça do código `225f4825`. Tempos lidos dos ficheiros `antes/tempos.json`, `portoes/tempos.json` e `portoes-antigo/tempos.json` em `design/especime-v3/medicoes/ma-2026-10-06/`, gerados por `relatorio.py`. A corrida nova usa a tranca e quatro processos, com a união, a imutabilidade e a cabeça conferidas.
+
+| Medida, em segundos | Cabeça do brief | Código, guião novo | Mesmo código, guião antigo |
+|---|---:|---:|---:|
+| Corrida inteira | 1408,540 | 426,382 | 1104,242 |
+| build | 223,672 | 205,391 | 220,560 |
+| verify | 1183,914 | 219,714 | 883,229 |
+| check:briefs | 172,984 | 0,335 | 0,221 |
+| check:alvos | 332,594 | 190,770 | 181,782 |
+| Auto-teste do país, soma | 56,984 | 1,681 | 1,007 |
+| typecheck | 0,738 | 0,242 | 0,227 |
+
+<!-- MA-TEMPOS-FIM -->
+
 ### Medições anteriores ao M-A
 
 Do que está **medido** e escrito, na cabeça `8de4e841` da passagem de correção da peça 1 do B1 (`design/especime-v3/medicoes/b1-2026-09-17/LEIA-ME-peca1.md:55` a `:73`), cada comando corrido separadamente:
