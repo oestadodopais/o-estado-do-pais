@@ -16,7 +16,10 @@
  *     prefixo da família («… que vai para », «… going to »). É o que o texto do brief chama
  *     «[nome: id]»; um nome sem o prefixo é um defeito da declaração e fecha a construção;
  *   · `{ sinal: id, positivo, negativo, zero? }` · a palavra que o sinal do valor da linha decide; um
- *     valor de sinal sem ramo declarado fecha a construção;
+ *     valor de sinal sem ramo declarado fecha a construção (a primeira explicação declara os três desde o EX1-c);
+ *   · `{ compara: [a, b], maior, menor, igual }` (desde o EX1-c, 06.10.2026, o achado 9 da leitura a frio) · as
+ *     palavras que a comparação dos valores de a e de b escolhe, como na primeira página; um ramo pode trazer
+ *     tokens (o valor de b, por exemplo); os três ramos são obrigatórios, e um valor que não se lê fecha a construção;
  *   · `{ se: [condições], partes }` · palavras que só se rendem enquanto as condições forem verdadeiras;
  *     uma condição falsa tira as palavras e deixa um sinal, e nunca fecha a construção (o §5.2 do brief
  *     PP1: uma atualização dos dados não faz falhar a construção);
@@ -52,7 +55,7 @@ import { t } from '../i18n/strings.mjs';
 import { ENTRADAS } from '../data/primeira-pagina.mjs';
 
 /** Os pedaços calculados que a gramática das explicações conhece, e mais nenhum. */
-export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'periodo', 'nome', 'sinal', 'se', 'maiores']);
+export const CHAVES_DA_EXPLICACAO = /** @type {const} */ (['claim', 'periodo', 'nome', 'sinal', 'se', 'maiores', 'compara']);
 /** O prefixo que separa, no nome do projeto de uma linha, a família do nome da função ou do ministério. */
 export const PREFIXO_DO_NOME = /** @type {const} */ ({ pt: ' que vai para ', en: ' going to ' });
 /**
@@ -268,6 +271,16 @@ function resolver(partes, lang, onde, ctx) {
       if (!(ramo in o)) throw defeito(aqui, `o valor de «${o.sinal}» pede o ramo «${ramo}», e a declaração não o tem.`);
       for (const r of ['positivo', 'negativo']) if (!(r in o)) throw defeito(aqui, `falta o ramo «${r}».`);
       ctx.linhas.add(o.sinal);
+      out.push(...resolver(o[ramo], lang, `${aqui}.${ramo}`, ctx));
+      return;
+    }
+    if (chave === 'compara') {
+      if (!Array.isArray(o.compara) || o.compara.length !== 2) throw defeito(aqui, '«compara» pede duas linhas.');
+      for (const r of ['maior', 'menor', 'igual']) if (!(r in o)) throw defeito(aqui, `falta o ramo «${r}».`);
+      const [a, b] = o.compara.map((/** @type {string} */ id) => numero(id));
+      if (a === null || b === null) throw defeito(aqui, `os valores de ${o.compara.join(' e ')} não se leem como números.`);
+      const ramo = a > b ? 'maior' : a < b ? 'menor' : 'igual';
+      o.compara.forEach((/** @type {string} */ id) => ctx.linhas.add(id));
       out.push(...resolver(o[ramo], lang, `${aqui}.${ramo}`, ctx));
       return;
     }

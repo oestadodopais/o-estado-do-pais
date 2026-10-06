@@ -16,8 +16,12 @@
  *   · `{ nome: id }`: o nome declarado da função de uma linha, tirado do nome do projeto dela
  *     (`src/data/medidas-oe1.mjs`), que é onde o texto do brief diz «[nome: id]»; `inicial` põe a
  *     primeira letra em maiúscula, para a edição inglesa começar uma frase por um nome;
- *   · `{ sinal: id, positivo, negativo }`: a palavra que o sinal do valor da linha decide («excedente»
- *     ou «défice»);
+ *   · `{ sinal: id, positivo, negativo, zero }`: a palavra que o sinal do valor da linha decide («um excedente
+ *     (recebeu mais do que gastou)», «um défice (gastou mais do que recebeu)» ou, desde o EX1-c, «um saldo nulo
+ *     (recebeu o mesmo que gastou)»: com os três ramos, nenhum valor fecha a construção);
+ *   · `{ compara: [a, b], maior, menor, igual }` (desde o EX1-c, 06.10.2026, o achado 9 da leitura a frio, pela
+ *     gramática da primeira página): as palavras que a comparação dos valores de a e de b escolhe («acima dos …
+ *     da média da União Europeia» ou «abaixo»);
  *   · `{ se: [condições], partes }`: palavras que só se rendem enquanto as condições declaradas forem
  *     verdadeiras. É assim que uma frase que compara («a maior fatia», «o maior é o das Finanças») se
  *     mantém certa sozinha: quando os números deixam de lhe dar razão, sai da página, e o guião dos sinais
@@ -29,8 +33,8 @@
  *     identificador fora da família é um defeito da declaração; uma linha nova da família, um valor que
  *     não se lê ou um empate na fronteira tiram as palavras e deixam um sinal.
  *
- * AS PORTAS DO FIM (`portas`, desde o EX1-b): os recibos (`livro`) e, por decisão do lugar de direção sobre a
- * I212, a página do tema «Estado e economia», cujo nome sai de `ENTRADAS` (`src/data/primeira-pagina.mjs`).
+ * AS PORTAS DO FIM (`portas`, desde o EX1-b): os recibos (`livro`). A página de um tema pode entrar, com o nome que
+ * `ENTRADAS` (`src/data/primeira-pagina.mjs`) lhe dá; a do tema «Estado e economia» saiu no EX1-c (o achado 7).
  *
  * O QUE MUDOU EM RELAÇÃO AO TEXTO DO BRIEF, e é tudo: a lista `ACERTOS`, abaixo, cada um com a razão. O
  * guião `design/especime-v3/medicoes/ex1-2026-10-05/acertos-ex1.mjs` rende o texto português desta
@@ -134,11 +138,11 @@ export const DINHEIRO_DO_ESTADO_2026 = {
           paragrafo: {
             pt: [
               { se: [O_MAIOR_MINISTERIO], partes: [
-                'Visto pelos ministérios, o maior é o das Finanças, com ', { claim: M('financas') }, ' de cada cem euros, ',
+                'Visto pelos ministérios, o maior é ', { nome: M('financas') }, ', com ', { claim: M('financas') }, ' de cada cem euros, ',
                 { claim: DESPESA_DAS_FINANCAS, sufixo: ' euros' },
                 { se: [OS_QUATRO_MINISTERIOS], partes: [
-                  '; seguem-se a Saúde (', { claim: M('saude') }, '), o Trabalho, Solidariedade e Segurança Social (',
-                  { claim: M('trabalho-solidariedade-e-seguranca-social') }, ') e a Educação, Ciência e Inovação (',
+                  '; seguem-se ', { nome: M('saude') }, ' (', { claim: M('saude') }, '), ', { nome: M('trabalho-solidariedade-e-seguranca-social') }, ' (',
+                  { claim: M('trabalho-solidariedade-e-seguranca-social') }, ') e ', { nome: M('educacao-ciencia-e-inovacao') }, ' (',
                   { claim: M('educacao-ciencia-e-inovacao') }, ')',
                 ] },
                 '.',
@@ -146,11 +150,11 @@ export const DINHEIRO_DO_ESTADO_2026 = {
             ],
             en: [
               { se: [O_MAIOR_MINISTERIO], partes: [
-                'Seen by ministry, the largest is Finance, with ', { claim: M('financas') }, ' of every hundred euros, ',
+                'Seen by ministry, the largest is ', { nome: M('financas') }, ', with ', { claim: M('financas') }, ' of every hundred euros, ',
                 { claim: DESPESA_DAS_FINANCAS, sufixo: ' euros' },
                 { se: [OS_QUATRO_MINISTERIOS], partes: [
-                  '; then come Health (', { claim: M('saude') }, '), Labour, Solidarity and Social Security (',
-                  { claim: M('trabalho-solidariedade-e-seguranca-social') }, ') and Education, Science and Innovation (',
+                  '; then come ', { nome: M('saude') }, ' (', { claim: M('saude') }, '), ', { nome: M('trabalho-solidariedade-e-seguranca-social') }, ' (',
+                  { claim: M('trabalho-solidariedade-e-seguranca-social') }, ') and ', { nome: M('educacao-ciencia-e-inovacao') }, ' (',
                   { claim: M('educacao-ciencia-e-inovacao') }, ')',
                 ] },
                 '.',
@@ -160,12 +164,13 @@ export const DINHEIRO_DO_ESTADO_2026 = {
         },
         { figura: { forma: 'barras-do-livro', id: 'ministerios', linhas: MINISTERIOS, titulo: { pt: 'Os dezasseis ministérios, de cada cem euros', en: 'The sixteen ministries, of every hundred euros' } } },
         /* EX1-b (06.10.2026, a decisão do lugar de direção sobre a I215): as duas contas dão à saúde e à educação partes
-           diferentes, e a página diz porquê. A auditoria cita a origem de cada parte e marca como leitura do projeto as
-           duas que nenhuma origem diz com estas palavras. */
+           diferentes, e a página diz porquê. EX1-c (06.10.2026, o achado 6 da leitura a frio): a frase diz em palavras
+           correntes o que cada conta inclui e exclui, pelos apoios da auditoria (a descrição da classificação funcional
+           no dados.gov.pt e as ressalvas e derivações das linhas), e nenhuma parte fica como leitura do projeto. */
         {
           paragrafo: {
-            pt: ['As duas contas não batem porque medem coisas diferentes: a conta por função soma tudo o que o Estado gasta com um fim, como a saúde ou a educação, seja qual for o ministério que o gasta; a conta por ministério é o orçamento de cada ministério, que paga também coisas de outros fins.'],
-            en: ['The two counts do not match because they measure different things: the count by function adds up everything the State spends for one purpose, such as health or education, whichever ministry spends it; the count by ministry is each ministry’s budget, which also pays for things with other purposes.'],
+            pt: ['As duas contas não batem porque medem coisas diferentes: a conta por função soma o que a administração central gasta com cada fim, como a saúde ou a educação, sem as operações financeiras nem as transferências entre os seus serviços; a conta por ministério é o orçamento de cada ministério, com as operações financeiras e as transferências entre serviços do Estado.'],
+            en: ['The two counts do not match because they measure different things: the count by function adds up what central government spends on each purpose, such as health or education, without financial transactions or transfers between its own services; the count by ministry is each ministry’s budget, including financial transactions and transfers between State services.'],
           },
         },
       ],
@@ -201,14 +206,22 @@ export const DINHEIRO_DO_ESTADO_2026 = {
         {
           paragrafo: {
             pt: [
-              'No fim de ', { periodo: DIVIDA }, ', a dívida pública valia ', { claim: DIVIDA, sufixo: PC }, ' do que o país produz num ano, contra ',
-              { claim: DIVIDA_UE, sufixo: PC }, ' na média da União Europeia, e as contas públicas fecharam o ano com um saldo de ',
-              { claim: SALDO, sufixo: PC }, ' do produto, ', { sinal: SALDO, positivo: ['um excedente'], negativo: ['um défice'] }, '.',
+              'No fim de ', { periodo: DIVIDA }, ', a dívida pública valia ', { claim: DIVIDA, sufixo: PC }, ' do que o país produz num ano, ',
+              { compara: [DIVIDA, DIVIDA_UE],
+                maior: ['acima dos ', { claim: DIVIDA_UE, sufixo: PC }, ' da média da União Europeia'],
+                menor: ['abaixo dos ', { claim: DIVIDA_UE, sufixo: PC }, ' da média da União Europeia'],
+                igual: ['igual aos ', { claim: DIVIDA_UE, sufixo: PC }, ' da média da União Europeia'] },
+              ', e as contas públicas fecharam o ano com um saldo de ', { claim: SALDO, sufixo: PC }, ' do produto, ',
+              { sinal: SALDO, positivo: ['um excedente (recebeu mais do que gastou)'], negativo: ['um défice (gastou mais do que recebeu)'], zero: ['um saldo nulo (recebeu o mesmo que gastou)'] }, '.',
             ],
             en: [
-              'At the end of ', { periodo: DIVIDA }, ', public debt was worth ', { claim: DIVIDA, sufixo: PC }, ' of what the country produces in a year, against ',
-              { claim: DIVIDA_UE, sufixo: PC }, ' on average in the European Union, and the public accounts closed the year with a balance of ',
-              { claim: SALDO, sufixo: PC }, ' of output, ', { sinal: SALDO, positivo: ['a surplus'], negativo: ['a deficit'] }, '.',
+              'At the end of ', { periodo: DIVIDA }, ', public debt was worth ', { claim: DIVIDA, sufixo: PC }, ' of what the country produces in a year, ',
+              { compara: [DIVIDA, DIVIDA_UE],
+                maior: ['above the ', { claim: DIVIDA_UE, sufixo: PC }, ' average of the European Union'],
+                menor: ['below the ', { claim: DIVIDA_UE, sufixo: PC }, ' average of the European Union'],
+                igual: ['equal to the ', { claim: DIVIDA_UE, sufixo: PC }, ' average of the European Union'] },
+              ', and the public accounts closed the year with a balance of ', { claim: SALDO, sufixo: PC }, ' of output, ',
+              { sinal: SALDO, positivo: ['a surplus (it took in more than it spent)'], negativo: ['a deficit (it spent more than it took in)'], zero: ['a zero balance (it took in as much as it spent)'] }, '.',
             ],
           },
         },
@@ -220,19 +233,20 @@ export const DINHEIRO_DO_ESTADO_2026 = {
     {
       pt: [
         { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a de agosto está acima.'] },
-        { se: [SEM_LINHAS_DOS_JUROS], partes: [' Os juros da dívida não estão ainda no livro-razão deste projeto como linha própria; quando entrarem, esta explicação diz quanto são.'] },
-        ' O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque, e nos números do tema «Estado e economia».',
+        { se: [SEM_LINHAS_DOS_JUROS], partes: [' Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram.'] },
+        ' O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.',
       ],
       en: [
         { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['The budget is a forecast: what is actually spent is read in the budget execution, month by month, and August’s is above.'] },
-        { se: [SEM_LINHAS_DOS_JUROS], partes: [' The interest on the debt is not yet in this project’s ledger as a line of its own; when it is, this explainer will say how much it is.'] },
-        ' The detail by programme and by ministry, with the source of each figure, is in each one’s receipt, one tap away, and in the figures of the theme «State and economy».',
+        { se: [SEM_LINHAS_DOS_JUROS], partes: [' Missing here is the cost of the interest on the debt, which the Budget also forecasts and which these figures do not show.'] },
+        ' The detail by programme and by ministry, with the source of each figure, is in each one’s receipt, one tap away.',
       ],
     },
   ],
-  /** As portas do fim (o §5, ponto 3, do brief, e a decisão do lugar de direção sobre a I212): os recibos e a página do
-      tema, com o nome que `ENTRADAS` lhe dá; a porta para o estudo do Orçamento de 2026 volta quando ele tiver página. */
-  portas: [{ rota: 'livro' }, { rota: 'entradaEstado', entrada: 'estado-e-economia' }],
+  /** As portas do fim (o §5, ponto 3, do brief, e a decisão do lugar de direção sobre a I212): os recibos. A da página do
+      tema «Estado e economia» saiu no EX1-c (o achado 7 da leitura a frio): essa página não tem as linhas do Orçamento
+      nem as da execução. A porta para o estudo do Orçamento de 2026 volta quando ele tiver página. */
+  portas: [{ rota: 'livro' }],
 };
 
 /**
@@ -248,10 +262,14 @@ export const ACERTOS = [
   { id: 'X5', onde: 'por ministério', o_que: 'a frase «A fatia das Finanças é grande porque […]» não se rende, e a das Finanças acaba em «de cada cem euros» e no valor em euros', razao: 'o relatório do Orçamento do Estado de 2026 não está alojado no motor (a pasta do estudo OE1 tem os mapas, os ficheiros do dados.gov.pt, as sínteses da execução e as respostas do Eurostat): a razão não se leu na fonte, e o brief manda que a frase acabe aí' },
   { id: 'X6', onde: 'por ministério', o_que: '«A figura das barras dos dezasseis ministérios, da maior para a menor.» é a figura, com o título «Os dezasseis ministérios, de cada cem euros»', razao: 'é uma instrução ao construtor; o título tem a forma do da figura das funções' },
   { id: 'X7', onde: 'dívida e saldo', o_que: 'os três valores levam o símbolo « %» ao lado', razao: 'a unidade das três linhas é «% do PIB»: sem o símbolo, «valia 89,7 do que o país produz» lia-se como uma quantia' },
-  { id: 'X8', onde: 'o que isto não diz', o_que: 'a frase «O detalhe por programa e por ministério, com a fonte de cada número, está no estudo do Orçamento do Estado de 2026.» passa a «O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque, e nos números do tema «Estado e economia».», e a porta do fim é a da página do tema, ao lado da dos recibos', razao: 'a decisão do lugar de direção de 06.10.2026 sobre a I212: o estudo `oe-2026` não tem página nem rota (`src/data/studies.mjs`, `INTERNAL_SOURCES`: «Este registo não cria um trabalho em WORKS, uma página ou uma rota»); a porta para o estudo volta quando ele tiver página' },
+  { id: 'X8', onde: 'o que isto não diz', o_que: 'a frase «O detalhe por programa e por ministério, com a fonte de cada número, está no estudo do Orçamento do Estado de 2026.» passa a «O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.», e a porta do fim é a dos recibos', razao: 'a decisão do lugar de direção de 06.10.2026 sobre a I212: o estudo `oe-2026` não tem página nem rota (`src/data/studies.mjs`, `INTERNAL_SOURCES`: «Este registo não cria um trabalho em WORKS, uma página ou uma rota»), e a porta para ele volta quando a tiver; a passagem EX1-c tirou a frase e a porta do tema «Estado e economia» (o achado 7 da leitura a frio: essa página não tem as linhas do Orçamento nem as da execução)' },
   { id: 'X9', onde: 'abertura, ministérios, o que isto não diz', o_que: 'as frases que comparam ou que dizem uma ausência ficam guardadas por condições declaradas (`se`)', razao: 'uma frase avaliativa leva o ramo que os números decidem (§1 do brief); quando os números deixam de lhe dar razão, sai da página e deixa um sinal' },
   { id: 'X10', onde: 'secções', o_que: 'os títulos das secções sem o ponto final («Por função.» passa a título «Por função»), e «O que isto não diz» é a cadeia da casa', razao: 'são títulos de secção; o último é o mesmo em todas as explicações (o §5, ponto 3, do brief)' },
   { id: 'X11', onde: 'o que já se gastou este ano', o_que: '«os programas que mais gastaram foram o do Trabalho, Solidariedade e Segurança Social (…), o da Saúde (…) e o da Gestão da Dívida Pública (…)» passa ao token `maiores`: os três programas de maior despesa, por ordem decrescente, cada um com o nome declarado da linha e o valor ao lado («o de [nome] ([valor] milhões), o de [nome] ([valor]) e o de [nome] ([valor])»), decididos pelos números em cada construção', razao: 'a decisão do lugar de direção de 06.10.2026 sobre a I213: com os números de 05.10.2026 a frase do brief era falsa (o programa 004, Finanças, gastou 5 337,6 milhões e o 005, 5 212,7); a decisão diz «dezanove programas», e o livro tem vinte (de `execucao-2026-08-despesa-programa-001` a `-020`, com a mesma unidade, o mesmo período e o mesmo quadro da fonte), e o token lê a família inteira' },
-  { id: 'X12', onde: 'por ministério', o_que: 'entra, a seguir à figura dos ministérios, a frase «As duas contas não batem porque medem coisas diferentes: a conta por função soma tudo o que o Estado gasta com um fim, como a saúde ou a educação, seja qual for o ministério que o gasta; a conta por ministério é o orçamento de cada ministério, que paga também coisas de outros fins.»', razao: 'a decisão do lugar de direção de 06.10.2026 sobre a I215: a página dava duas respostas a «quanto é a saúde» e a «quanto é a educação» sem dizer porquê; a auditoria cita a origem de cada parte e marca como leitura do projeto as duas que nenhuma origem diz com estas palavras' },
-  { id: 'X13', onde: 'a dívida e o saldo', o_que: '«com um [excedente|défice] de [saldo] do produto» passa a «com um saldo de [saldo] do produto, [um excedente|um défice]»', razao: 'a decisão do lugar de direção de 06.10.2026 sobre a I216: com um saldo negativo, a forma do brief diria «um défice de» seguido do valor com o sinal menos; o sinal fica com o número e a palavra vai para o fim' },
+  { id: 'X12', onde: 'por ministério', o_que: 'entra, a seguir à figura dos ministérios, a frase «As duas contas não batem porque medem coisas diferentes: a conta por função soma o que a administração central gasta com cada fim, como a saúde ou a educação, sem as operações financeiras nem as transferências entre os seus serviços; a conta por ministério é o orçamento de cada ministério, com as operações financeiras e as transferências entre serviços do Estado.»', razao: 'a decisão do lugar de direção de 06.10.2026 sobre a I215, com a forma do EX1-c (o achado 6 da leitura a frio): a frase diz o que cada conta inclui e exclui, pelos apoios que a auditoria já tinha (a descrição da classificação funcional no dados.gov.pt, as ressalvas e as derivações das linhas)' },
+  { id: 'X13', onde: 'a dívida e o saldo', o_que: '«com um [excedente|défice] de [saldo] do produto» passa a «com um saldo de [saldo] do produto, [ramo do sinal]»', razao: 'a decisão do lugar de direção de 06.10.2026 sobre a I216: com um saldo negativo, a forma do brief diria «um défice de» seguido do valor com o sinal menos; o sinal fica com o número e a palavra vai para o fim' },
+  { id: 'X14', onde: 'por ministério', o_que: '«o das Finanças», «a Saúde», «o Trabalho, Solidariedade e Segurança Social» e «a Educação, Ciência e Inovação» passam a `{ nome }`, o nome declarado da linha de cada ministério («o Ministério das Finanças», …)', razao: 'o achado 12 da leitura a frio (EX1-c, 06.10.2026): os nomes estavam escritos à mão nas duas edições, e o mandato do brief pedia os nomes dos ministérios pelos nomes declarados das linhas' },
+  { id: 'X15', onde: 'a dívida e o saldo', o_que: '«contra [dívida da União] na média da União Europeia» passa ao token `compara`: «acima dos [dívida da União] da média da União Europeia», «abaixo» ou «igual aos», pela comparação dos dois valores', razao: 'o achado 9 da leitura a frio (EX1-c, 06.10.2026): a frase dizia os dois números e não o lado, que a primeira página já diz pela mesma gramática' },
+  { id: 'X16', onde: 'a dívida e o saldo', o_que: 'os ramos do sinal ganham a explicação entre parênteses, «um excedente (recebeu mais do que gastou)» e «um défice (gastou mais do que recebeu)», e o ramo «zero», «um saldo nulo (recebeu o mesmo que gastou)»', razao: 'os achados 9 e 17 da leitura a frio (EX1-c, 06.10.2026): a palavra sozinha não diz o que quer dizer, e sem o ramo «zero» um saldo de exatamente zero fechava a construção' },
+  { id: 'X17', onde: 'o que isto não diz', o_que: '«Os juros da dívida não estão ainda no livro-razão deste projeto como linha própria; quando entrarem, esta explicação diz quanto são.» passa a «Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram.»', razao: 'o achado 16 da leitura a frio (EX1-c, 06.10.2026): a frase falava do livro-razão do projeto e prometia uma atualização, e o sítio não se explica a si próprio nas páginas de conteúdo; a frase continua guardada pela condição de nenhuma linha dos juros' },
 ];

@@ -6433,7 +6433,7 @@
       "slug": "dinheiro-do-estado-2026",
       "quem": "Claude Opus 5.5",
       "quando": "2026-10-06",
-      "o_que": "a primeira leitura (05.10.2026) e a do EX1-b (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X13 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam",
+      "o_que": "a primeira leitura (05.10.2026), a do EX1-b e a do EX1-c (06.10.2026, as decisões do lugar de direção sobre as I212, I213, I215 e I216, e as correções da leitura a frio), sobre o texto do brief EX1, §5, ponto 4, com os acertos X1 a X17 da declaração, e sobre as origens das explicações (a descrição do conjunto da despesa por classificação funcional no dados.gov.pt e os rótulos da classificação das funções na resposta do Eurostat, os dois alojados pelo bloco OE1 no motor) e as das definições que os cartões da dívida, do PIB e do saldo já citam",
       "origens": [
         "dados-gov-oe-despesa-funcional",
         "eurostat-cofog-divisao-01",
@@ -6928,8 +6928,8 @@
         },
         {
           "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[0]",
-          "pt": "Visto pelos ministérios, o maior é o das Finanças, com ",
-          "en": "Seen by ministry, the largest is Finance, with ",
+          "pt": "Visto pelos ministérios, o maior é ",
+          "en": "Seen by ministry, the largest is ",
           "partes": [
             {
               "pt": "Visto pelos ministérios",
@@ -6944,22 +6944,17 @@
               ]
             },
             {
-              "pt": ", o maior é",
-              "en": ", the largest is",
+              "pt": ", o maior é ",
+              "en": ", the largest is ",
               "classe": "conta"
-            },
-            {
-              "pt": " o das Finanças",
-              "en": " Finance",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "oe-2026-despesa-ministerio-financas",
-                  "campo": "excerpt",
-                  "literal": "FINANÇAS"
-                }
-              ]
-            },
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[2]",
+          "pt": ", com ",
+          "en": ", with ",
+          "partes": [
             {
               "pt": ", com ",
               "en": ", with ",
@@ -6968,7 +6963,7 @@
           ]
         },
         {
-          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[2]",
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[4]",
           "pt": " de cada cem euros, ",
           "en": " of every hundred euros, ",
           "partes": [
@@ -6992,7 +6987,7 @@
           ]
         },
         {
-          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[3].sufixo",
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[5].sufixo",
           "pt": " euros",
           "en": " euros",
           "partes": [
@@ -7011,79 +7006,79 @@
           ]
         },
         {
-          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[4].se[0]",
-          "pt": "; seguem-se a Saúde (",
-          "en": "; then come Health (",
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[6].se[0]",
+          "pt": "; seguem-se ",
+          "en": "; then come ",
           "partes": [
             {
-              "pt": "; seguem-se",
-              "en": "; then come",
+              "pt": "; seguem-se ",
+              "en": "; then come ",
               "classe": "conta"
-            },
-            {
-              "pt": " a Saúde (",
-              "en": " Health (",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "oe-2026-despesa-ministerio-saude",
-                  "campo": "excerpt",
-                  "literal": "SAÚDE"
-                }
-              ]
             }
           ]
         },
         {
-          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[4].se[2]",
-          "pt": "), o Trabalho, Solidariedade e Segurança Social (",
-          "en": "), Labour, Solidarity and Social Security (",
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[6].se[2]",
+          "pt": " (",
+          "en": " (",
+          "partes": [
+            {
+              "pt": " (",
+              "en": " (",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[6].se[4]",
+          "pt": "), ",
+          "en": "), ",
           "partes": [
             {
               "pt": "), ",
               "en": "), ",
               "classe": "liga"
-            },
-            {
-              "pt": "o Trabalho, Solidariedade e Segurança Social (",
-              "en": "Labour, Solidarity and Social Security (",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social",
-                  "campo": "excerpt",
-                  "literal": "TRABALHO, SOLIDARIEDADE E SEGURANÇA SOCIAL"
-                }
-              ]
             }
           ]
         },
         {
-          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[4].se[4]",
-          "pt": ") e a Educação, Ciência e Inovação (",
-          "en": ") and Education, Science and Innovation (",
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[6].se[6]",
+          "pt": " (",
+          "en": " (",
+          "partes": [
+            {
+              "pt": " (",
+              "en": " (",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[6].se[8]",
+          "pt": ") e ",
+          "en": ") and ",
           "partes": [
             {
               "pt": ") e ",
               "en": ") and ",
               "classe": "liga"
-            },
-            {
-              "pt": "a Educação, Ciência e Inovação (",
-              "en": "Education, Science and Innovation (",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao",
-                  "campo": "excerpt",
-                  "literal": "EDUCAÇÃO, CIÊNCIA E INOVAÇÃO"
-                }
-              ]
             }
           ]
         },
         {
-          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[4].se[6]",
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[6].se[10]",
+          "pt": " (",
+          "en": " (",
+          "partes": [
+            {
+              "pt": " (",
+              "en": " (",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[6].se[12]",
           "pt": ")",
           "en": ")",
           "partes": [
@@ -7095,7 +7090,7 @@
           ]
         },
         {
-          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[5]",
+          "caminho": "seccoes[1].conteudo[0].paragrafo[0].se[7]",
           "pt": ".",
           "en": ".",
           "partes": [
@@ -7144,8 +7139,8 @@
         },
         {
           "caminho": "seccoes[1].conteudo[2].paragrafo[0]",
-          "pt": "As duas contas não batem porque medem coisas diferentes: a conta por função soma tudo o que o Estado gasta com um fim, como a saúde ou a educação, seja qual for o ministério que o gasta; a conta por ministério é o orçamento de cada ministério, que paga também coisas de outros fins.",
-          "en": "The two counts do not match because they measure different things: the count by function adds up everything the State spends for one purpose, such as health or education, whichever ministry spends it; the count by ministry is each ministry’s budget, which also pays for things with other purposes.",
+          "pt": "As duas contas não batem porque medem coisas diferentes: a conta por função soma o que a administração central gasta com cada fim, como a saúde ou a educação, sem as operações financeiras nem as transferências entre os seus serviços; a conta por ministério é o orçamento de cada ministério, com as operações financeiras e as transferências entre serviços do Estado.",
+          "en": "The two counts do not match because they measure different things: the count by function adds up what central government spends on each purpose, such as health or education, without financial transactions or transfers between its own services; the count by ministry is each ministry’s budget, including financial transactions and transfers between State services.",
           "partes": [
             {
               "pt": "As duas contas não batem porque medem coisas diferentes",
@@ -7170,8 +7165,8 @@
               "classe": "liga"
             },
             {
-              "pt": "a conta por função soma tudo o que o Estado gasta com um fim",
-              "en": "the count by function adds up everything the State spends for one purpose",
+              "pt": "a conta por função soma o que a administração central gasta com cada fim",
+              "en": "the count by function adds up what central government spends on each purpose",
               "classe": "diz",
               "apoios": [
                 {
@@ -7182,7 +7177,7 @@
                 {
                   "origem": "dados-gov-oe-despesa-funcional",
                   "campo": "excerto",
-                  "literal": "afetação dos recursos públicos"
+                  "literal": "abrangem todas as entidades públicas integradas no perímetro da Administração Central"
                 }
               ]
             },
@@ -7214,20 +7209,19 @@
               ]
             },
             {
-              "pt": ", seja qual for o ministério que o gasta",
-              "en": ", whichever ministry spends it",
-              "classe": "leitura",
-              "sobre": "a definição das duas classificações: a funcional reúne a despesa pelo fim, em todas as entidades da administração central",
+              "pt": ", sem as operações financeiras nem as transferências entre os seus serviços",
+              "en": ", without financial transactions or transfers between its own services",
+              "classe": "diz",
               "apoios": [
                 {
                   "origem": "dados-gov-oe-despesa-funcional",
                   "campo": "excerto",
-                  "literal": "abrangem todas as entidades públicas integradas no perímetro da Administração Central"
+                  "literal": "excluem os fluxos relativos a operações financeiras"
                 },
                 {
-                  "origem": "dados-gov-oe-despesa-funcional",
-                  "campo": "excerto",
-                  "literal": "especifica os fins e atividades típicos do Estado"
+                  "linha": "oe-2026-cem-euros-funcao-07",
+                  "campo": "ressalva",
+                  "literal": "exclui ativos e passivos financeiros e transferências internas entre os serviços considerados"
                 }
               ]
             },
@@ -7254,20 +7248,19 @@
               ]
             },
             {
-              "pt": ", que paga também coisas de outros fins.",
-              "en": ", which also pays for things with other purposes.",
-              "classe": "leitura",
-              "sobre": "a definição das duas classificações: a orgânica soma a despesa de cada ministério, com as operações financeiras e as transferências, e não a reparte pelos fins",
+              "pt": ", com as operações financeiras e as transferências entre serviços do Estado.",
+              "en": ", including financial transactions and transfers between State services.",
+              "classe": "diz",
               "apoios": [
                 {
                   "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "derivation",
-                  "literal": "Inclui operações financeiras e transferências internas"
+                  "campo": "ressalva",
+                  "literal": "inclui operações financeiras e transferências entre serviços do Estado"
                 },
                 {
                   "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "derivation",
-                  "literal": "não mede a repartição da despesa efetiva consolidada"
+                  "campo": "ressalva_en",
+                  "literal": "includes financial transactions and transfers between State services"
                 }
               ]
             }
@@ -7620,8 +7613,8 @@
         },
         {
           "caminho": "seccoes[3].conteudo[0].paragrafo[4]",
-          "pt": " do que o país produz num ano, contra ",
-          "en": " of what the country produces in a year, against ",
+          "pt": " do que o país produz num ano, ",
+          "en": " of what the country produces in a year, ",
           "partes": [
             {
               "pt": " do que o país produz num ano",
@@ -7641,14 +7634,26 @@
               ]
             },
             {
-              "pt": ", contra ",
-              "en": ", against ",
+              "pt": ", ",
+              "en": ", ",
               "classe": "liga"
             }
           ]
         },
         {
-          "caminho": "seccoes[3].conteudo[0].paragrafo[5].sufixo",
+          "caminho": "seccoes[3].conteudo[0].paragrafo[5].maior[0]",
+          "pt": "acima dos ",
+          "en": "above the ",
+          "partes": [
+            {
+              "pt": "acima dos ",
+              "en": "above the ",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[5].maior[1].sufixo",
           "pt": " %",
           "en": " %",
           "partes": [
@@ -7660,13 +7665,13 @@
           ]
         },
         {
-          "caminho": "seccoes[3].conteudo[0].paragrafo[6]",
-          "pt": " na média da União Europeia, e as contas públicas fecharam o ano com um saldo de ",
-          "en": " on average in the European Union, and the public accounts closed the year with a balance of ",
+          "caminho": "seccoes[3].conteudo[0].paragrafo[5].maior[2]",
+          "pt": " da média da União Europeia",
+          "en": " average of the European Union",
           "partes": [
             {
-              "pt": " na média da União Europeia",
-              "en": " on average in the European Union",
+              "pt": " da média da União Europeia",
+              "en": " average of the European Union",
               "classe": "diz",
               "apoios": [
                 {
@@ -7675,7 +7680,100 @@
                   "literal": "European Union - 27 countries (from 2020)"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[5].menor[0]",
+          "pt": "abaixo dos ",
+          "en": "below the ",
+          "partes": [
+            {
+              "pt": "abaixo dos ",
+              "en": "below the ",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[5].menor[1].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[5].menor[2]",
+          "pt": " da média da União Europeia",
+          "en": " average of the European Union",
+          "partes": [
+            {
+              "pt": " da média da União Europeia",
+              "en": " average of the European Union",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "divida-publica-2025-ue",
+                  "campo": "excerpt",
+                  "literal": "European Union - 27 countries (from 2020)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[5].igual[0]",
+          "pt": "igual aos ",
+          "en": "equal to the ",
+          "partes": [
+            {
+              "pt": "igual aos ",
+              "en": "equal to the ",
+              "classe": "conta"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[5].igual[1].sufixo",
+          "pt": " %",
+          "en": " %",
+          "partes": [
+            {
+              "pt": " %",
+              "en": " %",
+              "classe": "liga"
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[5].igual[2]",
+          "pt": " da média da União Europeia",
+          "en": " average of the European Union",
+          "partes": [
+            {
+              "pt": " da média da União Europeia",
+              "en": " average of the European Union",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "divida-publica-2025-ue",
+                  "campo": "excerpt",
+                  "literal": "European Union - 27 countries (from 2020)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[6]",
+          "pt": ", e as contas públicas fecharam o ano com um saldo de ",
+          "en": ", and the public accounts closed the year with a balance of ",
+          "partes": [
             {
               "pt": ", e ",
               "en": ", and ",
@@ -7770,25 +7868,73 @@
         },
         {
           "caminho": "seccoes[3].conteudo[0].paragrafo[9].positivo[0]",
-          "pt": "um excedente",
-          "en": "a surplus",
+          "pt": "um excedente (recebeu mais do que gastou)",
+          "en": "a surplus (it took in more than it spent)",
           "partes": [
             {
               "pt": "um excedente",
               "en": "a surplus",
               "classe": "conta"
+            },
+            {
+              "pt": " (recebeu mais do que gastou)",
+              "en": " (it took in more than it spent)",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-gfs-saldo",
+                  "campo": "excerto",
+                  "literal": "The difference between total revenue and total expenditure"
+                }
+              ]
             }
           ]
         },
         {
           "caminho": "seccoes[3].conteudo[0].paragrafo[9].negativo[0]",
-          "pt": "um défice",
-          "en": "a deficit",
+          "pt": "um défice (gastou mais do que recebeu)",
+          "en": "a deficit (it spent more than it took in)",
           "partes": [
             {
               "pt": "um défice",
               "en": "a deficit",
               "classe": "conta"
+            },
+            {
+              "pt": " (gastou mais do que recebeu)",
+              "en": " (it spent more than it took in)",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-gfs-saldo",
+                  "campo": "excerto",
+                  "literal": "The difference between total revenue and total expenditure"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "caminho": "seccoes[3].conteudo[0].paragrafo[9].zero[0]",
+          "pt": "um saldo nulo (recebeu o mesmo que gastou)",
+          "en": "a zero balance (it took in as much as it spent)",
+          "partes": [
+            {
+              "pt": "um saldo nulo",
+              "en": "a zero balance",
+              "classe": "conta"
+            },
+            {
+              "pt": " (recebeu o mesmo que gastou)",
+              "en": " (it took in as much as it spent)",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "eurostat-gfs-saldo",
+                  "campo": "excerto",
+                  "literal": "The difference between total revenue and total expenditure"
+                }
+              ]
             }
           ]
         },
@@ -7872,12 +8018,17 @@
         },
         {
           "caminho": "naoDiz[0][1].se[0]",
-          "pt": " Os juros da dívida não estão ainda no livro-razão deste projeto como linha própria; quando entrarem, esta explicação diz quanto são.",
-          "en": " The interest on the debt is not yet in this project’s ledger as a line of its own; when it is, this explainer will say how much it is.",
+          "pt": " Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram.",
+          "en": " Missing here is the cost of the interest on the debt, which the Budget also forecasts and which these figures do not show.",
           "partes": [
             {
-              "pt": " Os juros da dívida",
-              "en": " The interest on the debt",
+              "pt": " Falta aqui",
+              "en": " Missing here is",
+              "classe": "conta"
+            },
+            {
+              "pt": " o custo dos juros da dívida",
+              "en": " the cost of the interest on the debt",
               "classe": "diz",
               "apoios": [
                 {
@@ -7888,21 +8039,33 @@
               ]
             },
             {
-              "pt": " não estão ainda no livro-razão deste projeto como linha própria",
-              "en": " is not yet in this project’s ledger as a line of its own",
-              "classe": "conta"
+              "pt": ", que o Orçamento também prevê",
+              "en": ", which the Budget also forecasts",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "dados-gov-oe-despesa-funcional",
+                  "campo": "excerto",
+                  "literal": "contemplam as despesas a pagar no ano"
+                },
+                {
+                  "origem": "eurostat-cofog-divisao-01",
+                  "campo": "excerto",
+                  "literal": "Public debt transactions"
+                }
+              ]
             },
             {
-              "pt": "; quando entrarem, esta explicação diz quanto são.",
-              "en": "; when it is, this explainer will say how much it is.",
+              "pt": " e que estes números não mostram.",
+              "en": " and which these figures do not show.",
               "classe": "conta"
             }
           ]
         },
         {
           "caminho": "naoDiz[0][2]",
-          "pt": " O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque, e nos números do tema «Estado e economia».",
-          "en": " The detail by programme and by ministry, with the source of each figure, is in each one’s receipt, one tap away, and in the figures of the theme «State and economy».",
+          "pt": " O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.",
+          "en": " The detail by programme and by ministry, with the source of each figure, is in each one’s receipt, one tap away.",
           "partes": [
             {
               "pt": " O detalhe por programa e por ministério",
@@ -7922,21 +8085,10 @@
               ]
             },
             {
-              "pt": ", com a fonte de cada número, está no recibo de cada um, a um toque,",
-              "en": ", with the source of each figure, is in each one’s receipt, one tap away,",
+              "pt": ", com a fonte de cada número, está no recibo de cada um, a um toque.",
+              "en": ", with the source of each figure, is in each one’s receipt, one tap away.",
               "classe": "aponta",
               "alvo": "selos"
-            },
-            {
-              "pt": " e ",
-              "en": " and ",
-              "classe": "liga"
-            },
-            {
-              "pt": "nos números do tema «Estado e economia».",
-              "en": "in the figures of the theme «State and economy».",
-              "classe": "aponta",
-              "porta": "estado-e-economia"
             }
           ]
         }
