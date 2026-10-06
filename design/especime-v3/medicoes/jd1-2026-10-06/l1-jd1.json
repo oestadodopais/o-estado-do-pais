@@ -1,0 +1,100 @@
+{
+  "comando": "node design/especime-v3/medicoes/jd1-2026-10-06/medir-l1.mjs --write",
+  "cabeca": "5a87309a9acb81fb8f1c40009516e9cb050fd1a4",
+  "construcao": "5a87309a9acb81fb8f1c40009516e9cb050fd1a4",
+  "base": "design/especime-v3/medicoes/ex1-2026-10-05/fusao/l1-destinos-e0ad595d.json",
+  "contagem": "design/especime-v3/medicoes/jd1-2026-10-06/l1-destinos.json",
+  "contagens": {
+    "estudos": 2744,
+    "anteriores": 2716,
+    "novas": 28,
+    "antigas_alteradas": 0
+  },
+  "novas": {
+    "/en/ledger/custo-da-divida-emitida-2026-08": {
+      "/en/method": 2
+    },
+    "/en/ledger/custo-do-stock-da-divida-direta-2025": {
+      "/en/method": 2
+    },
+    "/en/ledger/divida-direta-do-estado-2026-08": {
+      "/en/method": 2
+    },
+    "/en/ledger/emissoes-de-divida-fundada-2025": {
+      "/en/method": 2
+    },
+    "/en/ledger/juros-das-administracoes-publicas-2024": {
+      "/en/method": 2
+    },
+    "/en/ledger/juros-das-administracoes-publicas-2025": {
+      "/en/method": 2
+    },
+    "/en/ledger/juros-das-administracoes-publicas-2025-ue": {
+      "/en/method": 2
+    },
+    "/en/ledger/juros-das-administracoes-publicas-pib-2024": {
+      "/en/method": 2
+    },
+    "/en/ledger/juros-das-administracoes-publicas-pib-2025": {
+      "/en/method": 2
+    },
+    "/en/ledger/juros-e-outros-encargos-execucao-2025-08": {
+      "/en/method": 2
+    },
+    "/en/ledger/juros-e-outros-encargos-execucao-2026-08": {
+      "/en/method": 2
+    },
+    "/en/ledger/necessidades-brutas-de-financiamento-2025": {
+      "/en/method": 2
+    },
+    "/en/ledger/pib-nominal-notificacao-setembro-2024": {
+      "/en/method": 2
+    },
+    "/en/ledger/pib-nominal-notificacao-setembro-2025": {
+      "/en/method": 2
+    },
+    "/livro-razao/custo-da-divida-emitida-2026-08": {
+      "/metodo": 2
+    },
+    "/livro-razao/custo-do-stock-da-divida-direta-2025": {
+      "/metodo": 2
+    },
+    "/livro-razao/divida-direta-do-estado-2026-08": {
+      "/metodo": 2
+    },
+    "/livro-razao/emissoes-de-divida-fundada-2025": {
+      "/metodo": 2
+    },
+    "/livro-razao/juros-das-administracoes-publicas-2024": {
+      "/metodo": 2
+    },
+    "/livro-razao/juros-das-administracoes-publicas-2025": {
+      "/metodo": 2
+    },
+    "/livro-razao/juros-das-administracoes-publicas-2025-ue": {
+      "/metodo": 2
+    },
+    "/livro-razao/juros-das-administracoes-publicas-pib-2024": {
+      "/metodo": 2
+    },
+    "/livro-razao/juros-das-administracoes-publicas-pib-2025": {
+      "/metodo": 2
+    },
+    "/livro-razao/juros-e-outros-encargos-execucao-2025-08": {
+      "/metodo": 2
+    },
+    "/livro-razao/juros-e-outros-encargos-execucao-2026-08": {
+      "/metodo": 2
+    },
+    "/livro-razao/necessidades-brutas-de-financiamento-2025": {
+      "/metodo": 2
+    },
+    "/livro-razao/pib-nominal-notificacao-setembro-2024": {
+      "/metodo": 2
+    },
+    "/livro-razao/pib-nominal-notificacao-setembro-2025": {
+      "/metodo": 2
+    }
+  },
+  "razao": "Só entram os recibos declarados no cruzamento JD1, nas duas edições. Cada um repete apenas a porta do Método, como os recibos anteriores. Todas as páginas anteriores conservam os destinos e a multiplicidade."
+}
