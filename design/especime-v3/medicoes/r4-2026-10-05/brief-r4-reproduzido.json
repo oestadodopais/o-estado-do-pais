@@ -1,0 +1,106 @@
+{
+  "brief": "design/observatorio/BRIEF-R4-as-palavras-correntes-em-cada-numero.md",
+  "guiao": "design/observatorio/medidas/BRIEF-R4.py",
+  "cabeca_lida": "557844fe",
+  "medidas": [
+    {
+      "nome": "linhas_do_livro_razao",
+      "valor": 3195,
+      "comando": "git ls-tree 557844fe:ledger/claims · os ficheiros .yml",
+      "conhecido_positivo": {
+        "o_que": "a linha pib-real-per-capita-2024 está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_leitura_provada_num_cartao",
+      "valor": 48,
+      "comando": "git show 557844fe:tests/cartao/leituras-provadas.json · as entradas de «medidas» cujo id é uma linha do livro",
+      "conhecido_positivo": {
+        "o_que": "pib-real-per-capita-2025 tem leitura provada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_com_nome_do_projeto",
+      "valor": 121,
+      "comando": "git show 557844fe:src/data/nomes-das-medidas.mjs · as chaves das tabelas dos nomes que são linhas do livro",
+      "conhecido_positivo": {
+        "o_que": "a tabela dos nomes tem pelo menos uma linha do livro como chave",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "familias_de_medida_sem_frase_provada",
+      "valor": 303,
+      "comando": "os ids sem leitura provada, sem o período no fim; nas linhas dos concelhos a família é o sufixo comum a vinte ou mais ids",
+      "conhecido_positivo": {
+        "o_que": "a família «populacao» junta as linhas dos concelhos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "familias_municipais_sem_frase_provada",
+      "valor": 12,
+      "comando": "as famílias cujo sufixo aparece em vinte ou mais ids",
+      "conhecido_positivo": {
+        "o_que": "a família «divida-dgal» está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_dos_concelhos_sem_frase_provada",
+      "valor": 2817,
+      "comando": "a soma das linhas das famílias municipais",
+      "conhecido_positivo": {
+        "o_que": "há mais de duas mil e quinhentas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_nacionais_e_da_uniao_sem_frase_provada",
+      "valor": 330,
+      "comando": "as linhas sem leitura provada que não são de uma família municipal",
+      "conhecido_positivo": {
+        "o_que": "abandono-escolar-precoce-2024 está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_no_tempo",
+      "valor": 24,
+      "comando": "git ls-tree 557844fe:ledger/series · os ficheiros serie-*.yml",
+      "conhecido_positivo": {
+        "o_que": "serie-ipc-variacao-homologa está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_com_frase_do_ultimo_ponto",
+      "valor": 2,
+      "comando": "as séries no tempo cuja unidade é um índice com base (a frase da S6 do RP4-m)",
+      "conhecido_positivo": {
+        "o_que": "serie-ipc-indice é uma delas ou a lista está vazia antes do RP4-m",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_sem_frase_do_ultimo_ponto",
+      "valor": 22,
+      "comando": "as séries no tempo menos as de índice",
+      "conhecido_positivo": {
+        "o_que": "serie-ipc-variacao-homologa está entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "ficheiro_da_primeira_pagina_lido",
+      "valor": "sim",
+      "comando": "git show 557844fe:src/views/HomeView.astro",
+      "conhecido_positivo": {
+        "o_que": "a vista fala dos valores de referência",
+        "encontrado": true
+      }
+    }
+  ]
+}

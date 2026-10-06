@@ -1,0 +1,586 @@
+{
+  "auditoria": {
+    "blocos": 5,
+    "folhas": 81,
+    "partes": 128,
+    "diz": 76,
+    "conta": 24,
+    "liga": 28,
+    "apoios": 103,
+    "algarismos": 14,
+    "origens": 24,
+    "marcadores_corridos": 161
+  },
+  "paginas": [
+    {
+      "rota": "/",
+      "blocos_declarados": 5,
+      "blocos_mostrados": 5,
+      "pecas_mostradas": 5,
+      "textos": 21,
+      "numeros_na_lista": 30,
+      "valores_desenhados": 22,
+      "barras": 22,
+      "pontas": 8,
+      "referencias": 3,
+      "erros": 0
+    },
+    {
+      "rota": "/en/",
+      "blocos_declarados": 5,
+      "blocos_mostrados": 5,
+      "pecas_mostradas": 5,
+      "textos": 21,
+      "numeros_na_lista": 30,
+      "valores_desenhados": 22,
+      "barras": 22,
+      "pontas": 8,
+      "referencias": 3,
+      "erros": 0
+    },
+    {
+      "rota": "/precos/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    },
+    {
+      "rota": "/en/prices/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    },
+    {
+      "rota": "/salarios-pensoes-e-apoios/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    },
+    {
+      "rota": "/en/pay-pensions-and-benefits/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    },
+    {
+      "rota": "/pobreza-e-desigualdade/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    },
+    {
+      "rota": "/en/poverty-and-inequality/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    },
+    {
+      "rota": "/emprego/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    },
+    {
+      "rota": "/en/employment/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    },
+    {
+      "rota": "/habitacao/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    },
+    {
+      "rota": "/en/housing/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    },
+    {
+      "rota": "/educacao-e-saude/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    },
+    {
+      "rota": "/en/education-and-health/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    },
+    {
+      "rota": "/estado-e-economia/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    },
+    {
+      "rota": "/en/state-and-economy/",
+      "blocos_declarados": 0,
+      "blocos_mostrados": 0,
+      "pecas_mostradas": 0,
+      "textos": 0,
+      "numeros_na_lista": 0,
+      "valores_desenhados": 0,
+      "barras": 0,
+      "pontas": 0,
+      "referencias": 0,
+      "erros": 0
+    }
+  ],
+  "entradas": {
+    "edicoes": 2,
+    "cartoes_dos_temas": 0,
+    "cartoes_nas_entradas": 94,
+    "fora": 0,
+    "entradas_na_primeira": 16,
+    "entradas_no_indice": 16,
+    "mapas_do_sitio": 1,
+    "enderecos_no_mapa_do_sitio": 7826,
+    "entradas_no_mapa_do_sitio": 16,
+    "redirecionamentos": 13
+  },
+  "plantas": [
+    {
+      "nome": "série inexistente",
+      "controlo": true,
+      "mordeu": true,
+      "queixa": "livro-razão: a série «serie-inexistente» não existe em ledger/series/."
+    },
+    {
+      "nome": "série de países",
+      "controlo": true,
+      "mordeu": true,
+      "queixa": "primeira página: a série do bloco não é uma série no tempo."
+    },
+    {
+      "nome": "gráfico retirado do bloco",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "RP4 · falta a série da inflação no bloco dos preços"
+    },
+    {
+      "nome": "gráfico fora da coluna das barras",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "RP4 · barras e série fora do mesmo contentor"
+    },
+    {
+      "nome": "unidade do desenho retirada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "RP4 · falta a unidade declarada da série no bloco"
+    },
+    {
+      "nome": "unidade do desenho trocada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "RP4 · falta a unidade declarada da série no bloco"
+    },
+    {
+      "nome": "série inexistente",
+      "controlo": true,
+      "mordeu": true,
+      "queixa": "livro-razão: a série «serie-inexistente» não existe em ledger/series/."
+    },
+    {
+      "nome": "série de países",
+      "controlo": true,
+      "mordeu": true,
+      "queixa": "primeira página: a série do bloco não é uma série no tempo."
+    },
+    {
+      "nome": "gráfico retirado do bloco",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "RP4 · falta a série da inflação no bloco dos preços"
+    },
+    {
+      "nome": "gráfico fora da coluna das barras",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "RP4 · barras e série fora do mesmo contentor"
+    },
+    {
+      "nome": "unidade do desenho retirada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "RP4 · falta a unidade declarada da série no bloco"
+    },
+    {
+      "nome": "unidade do desenho trocada",
+      "controlo": 0,
+      "mordeu": true,
+      "queixa": "RP4 · falta a unidade declarada da série no bloco"
+    },
+    {
+      "nome": "o lado trocado na explicação de um valor de referência (pt)",
+      "mordeu": true,
+      "queixa": "V1-R4 pt: «divida-publica-2025»: a explicação diz o lado «abaixo», e a conta desta célula dá «acima»."
+    },
+    {
+      "nome": "uma medida de dentro fora da porta dobrada (pt)",
+      "mordeu": true,
+      "queixa": "V1-R4 pt: «desempenho-das-exportacoes-2025» está dentro e a explicação está fora da porta dobrada."
+    },
+    {
+      "nome": "a frase «o que é» de outra medida (pt)",
+      "mordeu": true,
+      "queixa": "V1-R4 pt: «divida-publica-2025»: a frase «o que é» não é a do cartão («É quanto mudou em três anos a quota de Portugal nas exportaç» contra «É tudo o que as administrações públicas devem, em percentage»)."
+    },
+    {
+      "nome": "o lado trocado na explicação de um valor de referência (en)",
+      "mordeu": true,
+      "queixa": "V1-R4 en: «divida-publica-2025»: a explicação diz o lado «abaixo», e a conta desta célula dá «acima»."
+    },
+    {
+      "nome": "uma medida de dentro fora da porta dobrada (en)",
+      "mordeu": true,
+      "queixa": "V1-R4 en: «desempenho-das-exportacoes-2025» está dentro e a explicação está fora da porta dobrada."
+    },
+    {
+      "nome": "a frase «o que é» de outra medida (en)",
+      "mordeu": true,
+      "queixa": "V1-R4 en: «divida-publica-2025»: a frase «o que é» não é a do cartão («It is how much Portugal’s share of the exports of advanced e» contra «It is everything general government owes, as a percentage of»)."
+    },
+    {
+      "nome": "uma palavra que diz o que a medida é, sem apoio",
+      "mordeu": true,
+      "queixa": "PP1 · casa: a folha «Quem arrenda a preço de mercado» (desenho.paineis[1].titulo), parte 1 («Quem arrenda a preço de mercado») diz o que uma medida é e não tem apoio nenhum"
+    },
+    {
+      "nome": "um literal que o campo não tem",
+      "mordeu": true,
+      "queixa": "PP1 · estado: a folha «A dívida pública » (frase[0]), parte 1 («A dívida pública ») cita «general government sector debts», que não está no campo «excerto» da origem «pdm-divida-publica»"
+    },
+    {
+      "nome": "uma palavra mudada sem nova leitura",
+      "mordeu": true,
+      "queixa": "PP1 · pobreza: a folha «O risco de pobreza mede-se sempre contra o rendimento de …» (ressalva[0]) não tem auditoria: uma palavra mudada precisa de nova leitura das origens"
+    },
+    {
+      "nome": "uma conta fora de um ramo sem guarda",
+      "mordeu": true,
+      "queixa": "PP1 · precos: a folha « mais caros do que um ano antes. Os preços no seu conjunt…» (frase[4]), parte 1 (« mais caros») é uma conta fora de um ramo e não diz que condições a guardam"
+    },
+    {
+      "nome": "uma guarda que não é uma comparação",
+      "mordeu": true,
+      "queixa": "PP1 · precos: a folha « mais caros do que um ano antes. Os preços no seu conjunt…» (frase[4]), parte 1 (« mais caros») é guardada pela condição 0, que não é uma comparação"
+    },
+    {
+      "nome": "uma palavra de ligação que diz alguma coisa",
+      "mordeu": true,
+      "queixa": "PP1 · estado: a folha « desde » (frase[2]), parte 1 (« desde ») está marcada como ligação e traz «desde» (pt), que não é uma palavra de ligação"
+    },
+    {
+      "nome": "um algarismo cujo literal não o traz",
+      "mordeu": true,
+      "queixa": "PP1 · pobreza: o algarismo «60» (ressalva[1]): o literal «national median equalised disposable income» não traz o algarismo"
+    },
+    {
+      "nome": "uma origem listada que não apoia nada",
+      "mordeu": true,
+      "queixa": "PP1 · trabalho: a origem «glossario-hpi» está na lista da auditoria e não apoia parte nenhuma do bloco"
+    },
+    {
+      "nome": "a autorreferência numa palavra declarada",
+      "mordeu": true,
+      "queixa": "PP1 · estado: a folha «É tudo o que as administrações públicas devem, e este sít…» (ressalva) (pt) morde o marcador de autorreferência «ste sítio, mostra-o»"
+    },
+    {
+      "nome": "uma palavra plantada numa frase",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · pobreza: o texto rendido da frase difere do que o resolvedor dá: «Em 2025, a parte das pessoas em risco de pobreza ou exclu…» contra «Em 2025, a parte das pessoas em risco de pobreza ou exclu…»"
+    },
+    {
+      "nome": "o ramo trocado",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · estado: o texto de um ramo que a conta não escolheu está na frase: «subiu»"
+    },
+    {
+      "nome": "um algarismo escrito à mão num bloco",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · precos: o bloco escreve um algarismo sem marca de origem: «Em 12 meses.»"
+    },
+    {
+      "nome": "um travessão numa frase",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · estado: da ressalva tem um travessão: «É tudo o que as administrações públicas devem — em percen…»"
+    },
+    {
+      "nome": "a linha de outro bloco citada",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · precos: o bloco cita a linha «divida-publica-2025», que o bloco não nomeia"
+    },
+    {
+      "nome": "o valor de referência trocado",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · estado: o valor de referência de «divida-publica-2025» é «50» na página e «60» em referencias.json"
+    },
+    {
+      "nome": "um número tirado da lista do bloco",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · casa: a lista «Os números deste bloco» não tem a linha sobrecarga-do-custo-da-habitacao-2025-ue"
+    },
+    {
+      "nome": "a porta de um número da lista tirada",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · trabalho: a linha da lista de taxa-de-emprego-2025 está sem a porta do recibo (/livro-razao/taxa-de-emprego-2025)"
+    },
+    {
+      "nome": "o sufixo de um número da lista trocado",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · trabalho: o texto da linha da lista de remuneracao-bruta-mensal-media, fora das marcas, é «euros por ano (dado provisório)» e a conta desta célula dá «euros por mês (dado provisório)»"
+    },
+    {
+      "nome": "a palavra da União tirada de um número da União",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · casa: a linha da lista de sobrecarga-do-custo-da-habitacao-2025-ue leva o nome da medida sobrecarga-do-custo-da-habitacao-2025 sem a palavra da União, e o número é o agregado da União"
+    },
+    {
+      "nome": "a linha da fonte sem um publicador",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · precos: a linha da fonte diz «INE · agosto de 2026» e a conta desta célula dá «INE, Eurostat · agosto de 2026, agosto de 2026»"
+    },
+    {
+      "nome": "a data de «O que se passa» trocada",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta): a data de «O que se passa» diz «julho de 2026» e a conta desta célula dá «agosto de 2026»"
+    },
+    {
+      "nome": "uma ponta da escala trocada",
+      "mordeu": true,
+      "queixa": "PP1 · /en/ (planta) · trabalho: as pontas da escala do painel 1 são «0 e 90» e a régua declarada dá «0 e 100»"
+    },
+    {
+      "nome": "um comprimento escrito com outra escala",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · casa: a barra de sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025 está escrita com 50% e a conta desta célula dá 72.0000%"
+    },
+    {
+      "nome": "uma palavra no rótulo da linha de referência",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · estado: o rótulo da linha de referência diz «limite da casa 60 %» e a conta desta célula dá «valor de referência 60 %»"
+    },
+    {
+      "nome": "a linha do valor de referência nos 50",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · estado: a linha do valor de referência está escrita em 53.4759% e a conta desta célula dá 64.1711%"
+    },
+    {
+      "nome": "um bloco rendido com a condição falsa",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · precos: o bloco está na página e as condições dele são falsas pela conta desta célula (ou o bloco não é desta página)"
+    },
+    {
+      "nome": "uma peça rendida com a condição falsa",
+      "mordeu": true,
+      "queixa": "PP1 · / (planta) · estado: as peças rendidas (revisao-do-ine) não são as que as condições deixam mostrar (nenhuma)"
+    },
+    {
+      "nome": "cartão inteiro repetido noutra página de assunto",
+      "mordeu": true,
+      "queixa": "N1C pt: cartão pensao-media-anual-2025 inteiro em mais de uma página de assunto (salarios-pensoes-e-apoios, emprego)."
+    },
+    {
+      "nome": "cartão autónomo da União indevido",
+      "mordeu": true,
+      "queixa": "E2 pt: cartão ihpc-variacao-homologa-ue fora do catálogo nacional."
+    },
+    {
+      "nome": "cartão fora do catálogo permitido",
+      "mordeu": true,
+      "queixa": "E2 pt: cartão cartao-fora-do-catalogo fora do catálogo nacional."
+    },
+    {
+      "nome": "cartão nacional omitido",
+      "mordeu": true,
+      "queixa": "E1 en: cartão licencas-de-construcao-2025 em falta nas páginas de assunto."
+    },
+    {
+      "nome": "inquilinos depois do total (pt)",
+      "mordeu": true,
+      "queixa": "T10 pt habitacao: a habitação não abre com os inquilinos e o total a seguir."
+    },
+    {
+      "nome": "inquilinos depois do total (en)",
+      "mordeu": true,
+      "queixa": "T10 en habitacao: a habitação não abre com os inquilinos e o total a seguir."
+    },
+    {
+      "nome": "cartão inteiro nos temas",
+      "mordeu": true,
+      "queixa": "N1I pt: o índice dos temas voltou a render cartões inteiros."
+    },
+    {
+      "nome": "porta retirada da primeira página",
+      "mordeu": true,
+      "queixa": "E4 pt: a ordem das portas da primeira difere da declaração."
+    },
+    {
+      "nome": "linha longa indevida no índice",
+      "mordeu": true,
+      "queixa": "E4 en: porta precos da índice difere da declaração."
+    },
+    {
+      "nome": "título dos lugares diferente do índice",
+      "mordeu": true,
+      "queixa": "E7 pt: os títulos dos lugares diferem das secções do índice."
+    },
+    {
+      "nome": "secção retirada do índice",
+      "mordeu": true,
+      "queixa": "E4 pt: as secções de precos não estão no índice pela ordem declarada."
+    },
+    {
+      "nome": "âmbito errado na página de assunto",
+      "mordeu": true,
+      "queixa": "E3 pt: o título ou o âmbito de emprego difere da declaração."
+    },
+    {
+      "nome": "cartão das câmaras retirado dos lugares",
+      "mordeu": true,
+      "queixa": "N1L pt: falta o cartão das câmaras nos lugares."
+    },
+    {
+      "nome": "porta omitida do mapa do sítio",
+      "mordeu": true,
+      "queixa": "E5 en: /en/employment/ não está no mapa do sítio."
+    },
+    {
+      "nome": "mapa nomeado em falta",
+      "mordeu": true,
+      "queixa": "E5: o índice do mapa do sítio nomeia /sitemap-1.xml, que a construção não tem."
+    },
+    {
+      "nome": "redirecionamento inglês para a página errada",
+      "mordeu": true,
+      "queixa": "N1R /en/my-work: redirecionamento incorreto."
+    },
+    {
+      "nome": "país retirado da declaração",
+      "mordeu": true,
+      "queixa": "E6 pt: o âmbito de emprego não nomeia Portugal."
+    },
+    {
+      "nome": "uma frase com um valor fora dos cartões de uma entrada fica por classificar",
+      "mordeu": true,
+      "queixa": "bloco por classificar em /precos: «Frase plantada fora dos cartões de uma entrada, com um valor ao lado.»"
+    },
+    {
+      "nome": "a marca dos blocos numa página de concelho não tira nada do inventário",
+      "mordeu": true,
+      "queixa": "bloco por classificar em /municipios/abrantes: «Frase plantada com a marca dos blocos numa página de concelho.»"
+    },
+    {
+      "nome": "a marca do veredicto numa página de concelho não tira nada do inventário",
+      "mordeu": true,
+      "queixa": "bloco por classificar em /municipios/abrantes: «Frase plantada com a marca do veredicto numa página de concelho.»"
+    },
+    {
+      "nome": "controlo: dentro de um cartão de uma entrada, a régua faz o que faz na página dos temas",
+      "mordeu": true,
+      "queixa": null
+    },
+    {
+      "nome": "controlo: a marca dos blocos na primeira página tira a frase do inventário",
+      "mordeu": true,
+      "queixa": null
+    }
+  ],
+  "erros": []
+}
