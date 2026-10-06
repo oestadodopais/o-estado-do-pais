@@ -604,10 +604,10 @@ export const REGRAS = [
     titulo: { pt: 'A intervenção humana', en: 'Human intervention' },
     regra: {
       pt: [
-        'A direção é de uma pessoa, que escolhe o que se publica e responde por ele; não escreve números. A autoria por inteligência artificial está declarada no Sobre, e todas as páginas construídas levam a porta para lá. Nos documentos de estudo, uma frase marcada «(inferência)» é a leitura que o modelo faz dos números com fonte, e não uma constatação com fonte em si mesma.',
+        'A direção é de um modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define; é essa pessoa que responde pelo que se publica. Nem ela nem o modelo escrevem números. A autoria por inteligência artificial está declarada no Sobre, e todas as páginas construídas levam a porta para lá. Nos documentos de estudo, uma frase marcada «(inferência)» é a leitura que o modelo faz dos números com fonte, e não uma constatação com fonte em si mesma.',
       ],
       en: [
-        'It is directed by one person, who chooses what gets published and answers for it; that person does not write figures. Authorship by artificial intelligence is stated on the About page, and every page built carries the door to it. In the study documents, a sentence marked “(inference)” is the model’s reading of the sourced figures, and not a sourced finding in itself.',
+        'It is directed by a model, which decides what gets published within the rules and the refusals that a named person sets; that person answers for what is published. Neither the person nor the model writes figures. Authorship by artificial intelligence is stated on the About page, and every page built carries the door to it. In the study documents, a sentence marked “(inference)” is the model’s reading of the sourced figures, and not a sourced finding in itself.',
       ],
     },
     mecanismo: {
