@@ -31,11 +31,11 @@
  * as duas vias são leituras do livro-razão e não palpites:
  *
  *   · **o agregado da União** é `<slug>-<período>-ue`, que é o nome que o motor
- *     dá à linha que sela (`enquadramento-2026-09-15`). É uma REGRA DE NOME: ou a
- *     linha com aquele nome está no livro-razão, e então é o agregado daquela
- *     medida naquele período por construção do motor, ou não está, e não há
- *     comparação. Cinco medidas não a têm, e a razão é da fonte e não da casa: o
- *     conjunto do Eurostat não traz valor no agregado naquele período;
+ *     dá à linha que sela (`enquadramento-2026-09-15`). Esta regra de nome
+ *     encontra a candidata; desde o JD1, só se mostra quando a unidade e o
+ *     período coincidem com os da linha principal. Um montante em euros não
+ *     se compara com uma percentagem apenas por os identificadores coincidirem.
+ *     Sem linha europeia no livro, não há comparação;
  *   · **o período anterior** PROCURA-SE NO LIVRO-RAZÃO, e não se calcula. A
  *     primeira redação deste ficheiro escrevia `<slug>-<ano - 1>`, e estava
  *     errada: `competencias-digitais-2025` é uma série BIENAL e o período
@@ -434,7 +434,7 @@ export function nomeOficial(id) {
 }
 
 /**
- * A régua de uma medida: só as linhas que existem.
+ * A régua de uma medida: só as linhas que existem e cumprem as regras de comparação.
  *
  * @param {string} id  o identificador da linha da medida
  * @returns {{ anterior: { id: string, periodo: string|null }|null, ue: { id: string }|null }}
