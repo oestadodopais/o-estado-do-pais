@@ -254,6 +254,16 @@ const TETOS = {
      linha pode ainda abrir o recibo no cartão dela. A primeira página já estava na conta e fica com mais
      destinos repetidos pela mesma razão; nenhuma página que o bloco não refez ganhou um. As plantas de
      portas extra continuam a fechar. */
+  /* EX1 (05.10.2026): SOBE DE 2 714 PARA 2 716, e a razão é medida e inteira. A composição em
+     `design/especime-v3/medicoes/ex1-2026-10-05/l1-ex1.json` compara a lista inteira desta cabeça com a da construção
+     da cabeça de partida (3664b90d), as duas com a amostra aberta: entraram duas páginas e não saiu nenhuma, e as duas
+     são as da primeira explicação, nas duas edições, que nasceram com o bloco. Cada figura de uma explicação tem a lista
+     «Os números desta figura», com a porta do recibo de cada barra, que é a legenda dos selos do desenho; um número que
+     o texto já cita com o selo abre o mesmo recibo duas vezes (catorze por página: as dez funções e os quatro
+     ministérios que a frase nomeia), a mesma mobília que a primeira página e as entradas trazem desde o PP1. Nenhuma
+     página antiga mudou: os destinos repetidos, o exemplo e as vezes de cada uma são os da cabeça de partida. As
+     plantas de uma página a mais, de uma página antiga agravada, de uma entrada em falta e de um destino que não é um
+     recibo desenhado e citado continuam a fechar. */
   l1_paginas: TETO_B1.l1_paginas, // B1: o teto medido está escrito uma só vez no registo.
   /* L2a · páginas, fora de `/municipios`, que ligam a mais de `L2_LIMITE_NOMES`
      concelhos fora de uma lista fechada.

@@ -1,0 +1,88 @@
+{
+  "o_que_e": "EX1: a contagem L1 cresce só pelas duas páginas da primeira explicação, nas duas edições. A lista da cabeça de partida (3664b90d) fica igual página a página (destinos, exemplo e vezes), e os destinos repetidos de cada página nova são os recibos das linhas que uma figura desenha e que o texto cita com o selo, duas vezes cada. A régua não muda; muda a medição que o teto aponta.",
+  "data": "2026-10-05T23:32:04.190Z",
+  "cabeca": "2405f8a84f0006726312ced5b0729a422d5170a1",
+  "construcao": "2405f8a84f0006726312ced5b0729a422d5170a1",
+  "origem_anterior": "design/especime-v3/medicoes/ex1-2026-10-05/l1-base-3664b90d.log",
+  "cabeca_anterior": "3664b90d",
+  "origem": "design/especime-v3/medicoes/ex1-2026-10-05/l1-ex1-check-lugar.log",
+  "comando": "AMOSTRA=100000 node scripts/check-lugar.mjs",
+  "codigo_da_regua": 0,
+  "teto_lido": 2716,
+  "contagens": {
+    "estudos": 2716,
+    "l1_paginas": 2716,
+    "antes": 2714,
+    "entradas": 2,
+    "saidas": 0,
+    "antigas_alteradas": 0
+  },
+  "entradas": [
+    {
+      "url": "/en/explainers/dinheiro-do-estado-2026",
+      "destinos": 14,
+      "exemplo": "/en/ledger/oe-2026-cem-euros-funcao-07",
+      "vezes": 2,
+      "destinos_repetidos": [
+        "/en/ledger/oe-2026-cem-euros-funcao-01",
+        "/en/ledger/oe-2026-cem-euros-funcao-02",
+        "/en/ledger/oe-2026-cem-euros-funcao-03",
+        "/en/ledger/oe-2026-cem-euros-funcao-04",
+        "/en/ledger/oe-2026-cem-euros-funcao-05",
+        "/en/ledger/oe-2026-cem-euros-funcao-06",
+        "/en/ledger/oe-2026-cem-euros-funcao-07",
+        "/en/ledger/oe-2026-cem-euros-funcao-08",
+        "/en/ledger/oe-2026-cem-euros-funcao-09",
+        "/en/ledger/oe-2026-cem-euros-funcao-10",
+        "/en/ledger/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+        "/en/ledger/oe-2026-cem-euros-ministerio-financas",
+        "/en/ledger/oe-2026-cem-euros-ministerio-saude",
+        "/en/ledger/oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social"
+      ]
+    },
+    {
+      "url": "/explicacoes/dinheiro-do-estado-2026",
+      "destinos": 14,
+      "exemplo": "/livro-razao/oe-2026-cem-euros-funcao-07",
+      "vezes": 2,
+      "destinos_repetidos": [
+        "/livro-razao/oe-2026-cem-euros-funcao-01",
+        "/livro-razao/oe-2026-cem-euros-funcao-02",
+        "/livro-razao/oe-2026-cem-euros-funcao-03",
+        "/livro-razao/oe-2026-cem-euros-funcao-04",
+        "/livro-razao/oe-2026-cem-euros-funcao-05",
+        "/livro-razao/oe-2026-cem-euros-funcao-06",
+        "/livro-razao/oe-2026-cem-euros-funcao-07",
+        "/livro-razao/oe-2026-cem-euros-funcao-08",
+        "/livro-razao/oe-2026-cem-euros-funcao-09",
+        "/livro-razao/oe-2026-cem-euros-funcao-10",
+        "/livro-razao/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+        "/livro-razao/oe-2026-cem-euros-ministerio-financas",
+        "/livro-razao/oe-2026-cem-euros-ministerio-saude",
+        "/livro-razao/oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social"
+      ]
+    }
+  ],
+  "conhecidos_positivos": [
+    {
+      "nome": "Uma página a mais fora das explicações é recusada",
+      "mordeu": true
+    },
+    {
+      "nome": "Uma página antiga agravada é recusada",
+      "mordeu": true
+    },
+    {
+      "nome": "Uma página das explicações em falta é recusada",
+      "mordeu": true
+    },
+    {
+      "nome": "Um destino repetido que não é um recibo desenhado e citado é recusado",
+      "mordeu": true
+    },
+    {
+      "nome": "A contagem do registo trocada em memória é recusada pela régua do teto",
+      "mordeu": true
+    }
+  ]
+}

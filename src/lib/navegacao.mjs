@@ -19,7 +19,13 @@
  * H3 (05.10.2026, o §3, ponto 3, do brief H3): o brief mandou medir outra vez «União Europeia» no menu, a 390 px e nas
  * duas edições, e pô-lo se as seis portas coubessem numa linha. Medido e capturado no navegador, com o nome inteiro posto
  * no lugar do rótulo curto só nessa medição: não cabe em nenhuma das duas (o relatório do bloco H3 tem as larguras), e
- * o rótulo curto fica. A porta «Privacidade» do mesmo bloco vive fora desta lista, ao lado da das sugestões. */
+ * o rótulo curto fica. A porta «Privacidade» do mesmo bloco vive fora desta lista, ao lado da das sugestões.
+ *
+ * EX1 (05.10.2026, o ponto 3 do mandato): a sétima porta, «Explicações» / «Explainers», foi medida a 390 px nas duas
+ * edições como o H3 mediu a da União, posta só no navegador ao lado de «Estudos» com o mesmo elemento e a mesma folha:
+ * não cabe em nenhuma (a fila dobra para duas linhas; as larguras e as capturas estão em
+ * `design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.json`), e o menu fica com as seis. As explicações entram pelo
+ * bloco «Para perceber» da primeira página, pela secção delas no índice e pela migalha das páginas delas. */
 export const ROTAS_NAV = ['home', 'lugares', 'temas', 'estudos', 'uniaoEuropeia', 'sobre'];
 export const ROTAS_RODAPE = ['home', 'livro', 'metodo', 'correcoes', 'agenda', 'uniaoEuropeia', 'indice'];
 export const ROTAS_SOBRE = ['metodo', 'correcoes', 'agenda', 'livro'];
