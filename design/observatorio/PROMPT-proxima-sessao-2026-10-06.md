@@ -1,5 +1,7 @@
 # Prompt para a sessão seguinte, O Estado do País (depois de 06.10.2026 à noite)
 
+> **Atualização das 19:50 UTC (esta é a versão final, no Desktop e no repositório).** O diretor mandou gastar o último ponto do Codex na leitura do diff inteiro da H4-e (18:51 UTC, 136 613 símbolos, cinco plantas mordidas, nada errado nos papéis nem nas regras 8 e 9); os três blocos (M-A, EX2, H4) **aterraram: `main` em `3948eb89`, no ar às 19:29 UTC, `verify:deploy` verde, a corrida de `main` verde às 19:48**. O passo 1 abaixo está feito, e o passo 2 também (os ramos fundidos e as worktrees apagados; o estado no fim di-lo). A primeira passagem de segunda-feira ganha um ponto pequeno, pedido pelo editor na leitura do Codex: a secção «O que se publica sem uma pessoa ler» do Método ainda diz «portões verdes» e «portão vermelho» sem os explicar, e passa a dizer as verificações automáticas a passar ou a falhar, com a sua leitura pela outra família antes de aterrar.
+
 *Escrito pelo lugar de direção (Claude Fable 5.1) no fecho da sessão de 06.10.2026. O estado lê-se pelo guião e vai no bloco do fim; o que está aqui em cima é o que a sessão seguinte faz, por ordem, e porquê.*
 
 ## O que ficou por aterrar e porquê
@@ -47,39 +49,36 @@ As leituras do Opus de hoje: EX2 350 369 e 306 644; M-A 325 236 e 286 282; H4 35
 
 ## O estado lido pelo guião
 
-*(lido na worktree de integração; os caminhos da máquina substituídos por `<sitio>`, `<motor>`, `<casa>` e `<utilizador>`)*
+*(lido às 19:5x UTC, depois da aterragem e da limpeza dos ramos; os caminhos da máquina substituídos por `<sitio>`, `<motor>`, `<casa>` e `<utilizador>`)*
 
-## O estado, lido a 06.10.2026 às 17:40:26 UTC por `scripts/leituras/estado.py`
+## O estado, lido a 06.10.2026 às 19:51:19 UTC por `scripts/leituras/estado.py`
 
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`<sitio>`)
-- `main`: f1b1b131 · 2026-10-06T15:40:45+01:00 · Os registos da tarde de 06.10: a §1.176 (o teto do Codex a noventa e cinco só nesta semana, o do Claude a oitenta e cinco), a §1.17  (`git log -1 main`)
-- `origin/main`: f1b1b131 · 2026-10-06T15:40:45+01:00 · Os registos da tarde de 06.10: a §1.176 (o teto do Codex a noventa e cinco só nesta semana, o do Claude a oitenta e cinco), a §1.17  (`git log -1 origin/main`)
+- `main`: 3948eb89 · 2026-10-06T20:00:30+01:00 · A §1.180 fechada: a leitura do Codex do diff inteiro da H4-e (18:51 UTC, o último ponto da semana por decisão do diretor), o pedido  (`git log -1 main`)
+- `origin/main`: 3948eb89 · 2026-10-06T20:00:30+01:00 · A §1.180 fechada: a leitura do Codex do diff inteiro da H4-e (18:51 UTC, o último ponto da semana por decisão do diretor), o pedido  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
-- ramos locais: `aterragem-2026-10-06-tarde f3b58cad`, `c2-2026-10-05 461de524`, `er1-2026-10-06 56a582dd`, `ex2-2026-10-06 44461ab2`, `h4-2026-10-06 d81471b7`, `jd1-2026-10-06 2775a8d6`, `ma-2026-10-06 98c1275d`, `main f1b1b131`, `registos-2026-10-06-tarde f1b1b131`, `rp4n-2026-10-06 c7903767`  (`git branch`)
-- ramos no remoto: `aterragem-2026-10-06-tarde`, `er1-2026-10-06`, `ex2-2026-10-06`, `h4-2026-10-06`, `ma-2026-10-06`, `main`, `registos-2026-10-06-tarde`  (`git ls-remote --heads origin`)
-- worktree: `<sitio> f1b1b131 [main]`
-- worktree: `<sitio>/.claude/worktrees/aterragem-2026-10-06 f3b58cad [aterragem-2026-10-06-tarde]`
+- ramos locais: `c2-2026-10-05 461de524`, `er1-2026-10-06 56a582dd`, `jd1-2026-10-06 d1755ff4`, `main 3948eb89`, `registos-2026-10-06-noite 3948eb89`, `rp4n-2026-10-06 be23d525`  (`git branch`)
+- ramos no remoto: `er1-2026-10-06`, `main`  (`git ls-remote --heads origin`)
+- worktree: `<sitio> 3948eb89 [main]`
 - worktree: `<sitio>/.claude/worktrees/er1-2026-10-06 56a582dd [er1-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/ex2-2026-10-06 44461ab2 [ex2-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/h4-2026-10-06 d81471b7 [h4-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/jd1-2026-10-06 2775a8d6 [jd1-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/ma-2026-10-06 98c1275d [ma-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/rp4n-2026-10-06 c7903767 [rp4n-2026-10-06]`
+- worktree: `<sitio>/.claude/worktrees/jd1-2026-10-06 d1755ff4 [jd1-2026-10-06]`
+- worktree: `<sitio>/.claude/worktrees/registos-noite 3948eb89 [registos-2026-10-06-noite]`
+- worktree: `<sitio>/.claude/worktrees/rp4n-2026-10-06 be23d525 [rp4n-2026-10-06]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 37504398182 · `f3b58cad` · aterragem-2026-10-06-tarde · portão · **in_progress / SEM CONCLUSÃO** · criada 2026-10-06T17:32:56Z · atualizada 2026-10-06T17:33:01Z
-- 37495889893 · `12b60426` · aterragem-2026-10-06-tarde · portão · **completed / success** · criada 2026-10-06T16:27:48Z · atualizada 2026-10-06T16:50:39Z
-- 37495889884 · `12b60426` · aterragem-2026-10-06-tarde · portão · **completed / cancelled** · criada 2026-10-06T16:27:48Z · atualizada 2026-10-06T16:27:50Z
-- 37492775161 · `8f07e6c0` · h4-2026-10-06 · portão · **completed / success** · criada 2026-10-06T16:04:23Z · atualizada 2026-10-06T16:23:24Z
-- 37487149373 · `56a582dd` · er1-2026-10-06 · portão · **completed / success** · criada 2026-10-06T15:23:52Z · atualizada 2026-10-06T15:47:20Z
-- 37484196596 · `f1b1b131` · main · portão · **completed / success** · criada 2026-10-06T15:03:45Z · atualizada 2026-10-06T15:17:16Z
+- 37517593624 · `3948eb89` · main · portão · **completed / success** · criada 2026-10-06T19:15:28Z · atualizada 2026-10-06T19:48:12Z
+- 37515715838 · `3948eb89` · aterragem-2026-10-06-tarde · portão · **completed / success** · criada 2026-10-06T19:00:45Z · atualizada 2026-10-06T19:14:57Z
+- 37515294302 · `0b2af142` · aterragem-2026-10-06-tarde · portão · **completed / cancelled** · criada 2026-10-06T18:57:29Z · atualizada 2026-10-06T19:01:35Z
+- 37511112636 · `f19b242a` · aterragem-2026-10-06-tarde · portão · **completed / success** · criada 2026-10-06T18:24:50Z · atualizada 2026-10-06T18:41:44Z
+- 37508344147 · `0b738cc8` · aterragem-2026-10-06-tarde · portão · **completed / success** · criada 2026-10-06T18:03:28Z · atualizada 2026-10-06T18:23:14Z
+- 37506930359 · `48834fde` · aterragem-2026-10-06-tarde · portão · **completed / cancelled** · criada 2026-10-06T17:52:39Z · atualizada 2026-10-06T18:03:47Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `f1b1b131` · construído em 2026-10-06T15:06:34.352Z · ref `main` · production
-- igual a `origin/main` (`f1b1b131`): **sim**
+- commit no ar: `3948eb89` · construído em 2026-10-06T19:18:24.538Z · ref `main` · production
+- igual a `origin/main` (`3948eb89`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`<motor>`)
@@ -94,9 +93,9 @@ As leituras do Opus de hoje: EX2 350 369 e 306 644; M-A 325 236 e 286 282; H4 35
 - worktree: `<motor>/.claude/worktrees/rp4n-2026-10-06 eb4a5cb [rp4n-2026-10-06]`
 
 ### O uso das duas subscrições (`python3 scripts/leituras/uso.py`)
-    Claude (escrito pela linha de estado a 06.10.2026 17:40 UTC):
-      janela de 5 horas: 3% usados, repõe a 06.10.2026 22:30 UTC
-      semana: 77% usados, repõe a 12.10.2026 10:00 UTC
+    Claude (escrito pela linha de estado a 06.10.2026 19:51 UTC):
+      janela de 5 horas: 10% usados, repõe a 06.10.2026 22:30 UTC
+      semana: 79% usados, repõe a 12.10.2026 10:00 UTC
     Codex (última leitura: 2026-10-06T17:16:12.978Z; plano «pro»):
       semana: 99.0% usados, repõe a 12.10.2026 07:38 UTC
 
@@ -140,5 +139,4 @@ As leituras do Opus de hoje: EX2 350 369 e 306 644; M-A 325 236 e 286 282; H4 35
     - tokens used 493,377
 - `codex-rp1c.log`: INICIO 17:08:33 modelo=gpt-6-astra raciocínio=xhigh · **FIM exit=0 18:04:04** · 31423 linhas
     - tokens used 457,106
-
 
