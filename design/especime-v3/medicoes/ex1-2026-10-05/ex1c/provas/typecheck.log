@@ -1,0 +1,7 @@
+cabeça: 090dd5dc401b736c105b7f21972515060959ee2a
+estado dos ficheiros seguidos: 0 linha(s)
+---
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+

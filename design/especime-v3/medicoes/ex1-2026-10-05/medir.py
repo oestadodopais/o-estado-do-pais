@@ -11,6 +11,7 @@ falhe fica com `encontrado: false` e o guião sai com 1: um valor lido de um fic
 """
 import json
 import re
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -26,6 +27,12 @@ def medida(nome, valor, comando, o_que, encontrado):
     medidas.append({"nome": nome, "valor": valor, "comando": comando, "conhecido_positivo": {"o_que": o_que, "encontrado": bool(encontrado)}})
     if not encontrado:
         falhas.append(nome)
+
+
+def git_show(rev, caminho):
+    """Um ficheiro do repositório como estava numa cabeça (EX1-c): as medidas de uma passagem leem os ficheiros vivos
+    como eles estavam no fim dela, e não como uma passagem seguinte os deixou."""
+    return subprocess.run(["git", "-C", str(SITIO), "show", f"{rev}:{caminho}"], capture_output=True, text=True, check=True).stdout
 
 
 def ler(p):
@@ -91,16 +98,17 @@ for passo in ("brief", "acertos", "explicacao", "semana", "sinais", "menu", "cap
 
 # ------------------------------------------------------------------ o §0 do brief, reproduzido
 rep = js("brief-reproduzido.json") or {"medidas": []}
-br = json.loads((SITIO / "design/observatorio/medidas/BRIEF-EX1.json").read_text(encoding="utf-8"))
+# O ficheiro do brief como estava na passagem EX1 (a I210 mudou-o na passagem EX1-b).
+br = json.loads(git_show("629d065f", "design/observatorio/medidas/BRIEF-EX1.json"))
 pares = {x["nome"]: x["valor"] for x in br["medidas"]}
 iguais = [x["nome"] for x in rep["medidas"] if pares.get(x["nome"]) == x["valor"]]
 medida("brief.medidas", len(rep["medidas"]), "OEDP_MEDIDAS_JSON=<pasta>/brief-reproduzido.json python3 design/observatorio/medidas/BRIEF-EX1.py", "a cabeça lida é a do brief e cada medida tem o seu conhecido-positivo encontrado", rep.get("cabeca_lida") == br.get("cabeca_lida") and all(x["conhecido_positivo"]["encontrado"] for x in rep["medidas"]))
-medida("brief.medidas_iguais_as_do_brief", len(iguais), "a comparação de brief-reproduzido.json com design/observatorio/medidas/BRIEF-EX1.json", "as duas listas têm as mesmas medidas", set(pares) == {x["nome"] for x in rep["medidas"]})
+medida("brief.medidas_iguais_as_do_brief", len(iguais), "a comparação de brief-reproduzido.json com git show 629d065f:design/observatorio/medidas/BRIEF-EX1.json", "as duas listas têm as mesmas medidas", set(pares) == {x["nome"] for x in rep["medidas"]})
 antes = js("brief-reproduzido-antes-de-mexer.json") or {"medidas": []}
 medida("brief.antes_de_mexer.medidas_iguais", sum(1 for x, y in zip(antes["medidas"], br["medidas"]) if x == y), "OEDP_MEDIDAS_JSON=<pasta temporária>/brief-ex1-reproduzido.json python3 design/observatorio/medidas/BRIEF-EX1.py, antes do primeiro commit do bloco (copiado para brief-reproduzido-antes-de-mexer.json)", "a reprodução leu a cabeça do brief e tem as mesmas medidas", antes.get("cabeca_lida") == br.get("cabeca_lida") and len(antes["medidas"]) == len(br["medidas"]))
 menu = js("menu-a-390.json") or {"medidas": []}
 pub = [x for x in menu["medidas"] if x["forma"] == "publicada"]
-medida("brief.portas_do_menu", pares.get("portas_do_menu"), "design/observatorio/medidas/BRIEF-EX1.json", "a medida está no ficheiro do brief", "portas_do_menu" in pares)
+medida("brief.portas_do_menu", pares.get("portas_do_menu"), "git show 629d065f:design/observatorio/medidas/BRIEF-EX1.json (o ficheiro do brief na passagem EX1)", "a medida está no ficheiro do brief", "portas_do_menu" in pares)
 medida("menu.portas_publicadas", sorted({x["portas"] for x in pub}), "node design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.mjs (menu-a-390.json, a forma «publicada»)", "as duas edições foram medidas", len(pub) == 2)
 for x in menu["medidas"]:
     chave = f"menu.{x['lang']}.{'publicada' if x['forma'] == 'publicada' else 'com_a_setima'}"
@@ -214,10 +222,10 @@ medida("mapa.referencias_postas_em_dia_pela_conta", int(m.group(1)) if m else No
 mm = js("mapa-a-mao.json") or {}
 medida("mapa.corrigidas_a_mao", mm.get("corrigidas_a_mao"), "python3 design/especime-v3/medicoes/ex1-2026-10-05/mapa-a-mao.py 3664b90d c885cb4c --json <pasta>/mapa-a-mao.json", "a comparação leu as referências das linhas que já existiam", (mm.get("referencias_comparadas") or 0) > 0 and len(mm.get("lista", [])) == mm.get("corrigidas_a_mao"))
 medida("mapa.referencias_comparadas", mm.get("referencias_comparadas"), "idem", "a lista das corrigidas tem a forma escrita", isinstance(mm.get("lista"), list))
-ch = (SITIO / "design/especime-v3/CHAVES-EN.md").read_text(encoding="utf-8")
+ch = git_show("629d065f", "design/especime-v3/CHAVES-EN.md")
 sec = ch.split("## EX1 · as explicações e a leitura da semana, 05.10.2026", 1)
 linhas_ch = [l for l in sec[1].split("\n## ", 1)[0].splitlines() if l.startswith("| `")] if len(sec) == 2 else []
-medida("chaves_en.ex1", len(linhas_ch), "a contagem das linhas da tabela da secção do EX1 em design/especime-v3/CHAVES-EN.md", "a secção existe e a primeira linha é a de nav.explicacoes", bool(linhas_ch) and linhas_ch[0].startswith("| `nav.explicacoes`"))
+medida("chaves_en.ex1", len(linhas_ch), "a contagem das linhas da tabela da secção do EX1 em git show 629d065f:design/especime-v3/CHAVES-EN.md (as chaves da passagem EX1)", "a secção existe e a primeira linha é a de nav.explicacoes", bool(linhas_ch) and linhas_ch[0].startswith("| `nav.explicacoes`"))
 
 # ------------------------------------------------------------------ o custo e a limpeza
 cu = js("custo.json") or {}
@@ -263,13 +271,13 @@ for passo in ("brief", "briefs", "acertos", "explicacao", "semana", "sinais", "f
     medida(f"ex1b.provas.{passo}.codigo", int(c) if c.isdigit() else None, CMD_PROVAS_B + f" ({B}/provas/{passo}.codigo)", f"o registo {B}/provas/{passo}.log começa pela cabeça", ler(f"{B}/provas/{passo}.log").startswith("cabeça: "))
 # I210
 rb = js(f"{B}/brief-reproduzido.json") or {"medidas": []}
-br2 = json.loads((SITIO / "design/observatorio/medidas/BRIEF-EX1.json").read_text(encoding="utf-8"))
+br2 = json.loads(git_show("723a451f", "design/observatorio/medidas/BRIEF-EX1.json"))
 pm = next((x for x in rb["medidas"] if x["nome"] == "portas_do_menu"), None)
 medida("ex1b.brief.portas_do_menu", pm["valor"] if pm else None, "OEDP_MEDIDAS_JSON=<pasta>/ex1b/brief-reproduzido.json python3 design/observatorio/medidas/BRIEF-EX1.py", "o conhecido-positivo da medida foi encontrado (o cabeçalho percorre ROTAS_NAV e a porta da União está nela)", pm and pm["conhecido_positivo"]["encontrado"])
-medida("ex1b.brief.medidas_iguais_as_do_brief", sum(1 for x in rb["medidas"] if {y["nome"]: y["valor"] for y in br2["medidas"]}.get(x["nome"]) == x["valor"]), "a comparação de ex1b/brief-reproduzido.json com design/observatorio/medidas/BRIEF-EX1.json", "as duas listas têm as mesmas medidas", {x["nome"] for x in rb["medidas"]} == {y["nome"] for y in br2["medidas"]})
-brief_md = (SITIO / "design/observatorio/BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md").read_text(encoding="utf-8")
+medida("ex1b.brief.medidas_iguais_as_do_brief", sum(1 for x in rb["medidas"] if {y["nome"]: y["valor"] for y in br2["medidas"]}.get(x["nome"]) == x["valor"]), "a comparação de ex1b/brief-reproduzido.json com git show 723a451f:design/observatorio/medidas/BRIEF-EX1.json", "as duas listas têm as mesmas medidas", {x["nome"] for x in rb["medidas"]} == {y["nome"] for y in br2["medidas"]})
+brief_md = git_show("723a451f", "design/observatorio/BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md")
 m = re.search(r"e (\d+) portas no menu \(`portas_do_menu`\)", brief_md)
-medida("ex1b.brief.paragrafo_0_portas_do_menu", int(m.group(1)) if m else None, "a frase do §0 do brief com `portas_do_menu`", "a frase está no brief", m)
+medida("ex1b.brief.paragrafo_0_portas_do_menu", int(m.group(1)) if m else None, "a frase do §0 do brief com `portas_do_menu` (git show 723a451f, o brief da passagem EX1-b)", "a frase está no brief", m)
 m = re.search(r"✓ (\d+) número\(s\) do §0 ligado\(s\) à sua medição", ler(f"{B}/provas/briefs.log"))
 medida("ex1b.check_briefs.numeros_ligados", int(m.group(1)) if m else None, "python3 scripts/check-briefs.py (ex1b/provas/briefs.log)", "o brief do EX1 foi conferido", "conferido: BRIEF-EX1-o-espaco-das-explicacoes-e-a-leitura-semanal.md" in ler(f"{B}/provas/briefs.log"))
 # I211
@@ -295,10 +303,10 @@ medida("ex1b.explicacao.auditoria", {k: aub.get(k) for k in ("folhas", "partes",
 medida("ex1b.explicacao.maiores", (exb.get("maiores") or {}).get("tokens"), "idem (X9)", "a célula correu sem erros", exb and not exb.get("erros"))
 medida("ex1b.explicacao.plantas", [sum(1 for q in exb.get("plantas", []) if q["mordeu"]), sum(1 for q in exb.get("plantas", []) if q.get("aplica", True))], "idem", "todas as que se aplicam morderam", exb.get("plantas") and all(q["mordeu"] for q in exb["plantas"] if q.get("aplica", True)))
 medida("ex1b.explicacao.plantas_novas", [q["nome"] for q in exb.get("plantas", []) if re.search(r"programas|«maiores»|porta|selo|leitura", q["nome"])], "idem", "as plantas do token, das portas, dos selos e da leitura estão na lista", any("«maiores»" in q["nome"] for q in exb.get("plantas", [])))
-aud = json.loads((SITIO / "tests/cartao/leituras-provadas.json").read_text(encoding="utf-8"))
+aud = json.loads(git_show("723a451f", "tests/cartao/leituras-provadas.json"))
 ent = next((x for x in aud.get("explicacoes", []) if x.get("slug") == "dinheiro-do-estado-2026"), {})
 leituras = [{"pt": q["pt"], "sobre": q["sobre"]} for f in ent.get("folhas", []) for q in f["partes"] if q.get("classe") == "leitura"]
-medida("ex1b.auditoria.partes_de_leitura", leituras, "as partes da classe «leitura» na secção «explicacoes» de tests/cartao/leituras-provadas.json", "cada uma traz «sobre»", bool(leituras) and all(q["sobre"] for q in leituras))
+medida("ex1b.auditoria.partes_de_leitura", leituras, "as partes da classe «leitura» na secção «explicacoes» de git show 723a451f:tests/cartao/leituras-provadas.json (a auditoria da passagem EX1-b)", "cada uma traz «sobre»", bool(leituras) and all(q["sobre"] for q in leituras))
 sib = js(f"{B}/sinais-explicacoes.json") or {}
 medida("ex1b.sinais.frases_guardadas_fora", sum(len(x.get("sinais", [])) for x in sib.get("explicacoes", [])), "node scripts/sinais-da-primeira-pagina.mjs; cp .sinais/explicacoes.json <pasta>/ex1b/sinais-explicacoes.json", "o ficheiro dos sinais tem a explicação", bool(sib.get("explicacoes")))
 # o programa de maior despesa e os seguintes, lidos do livro (I213)
@@ -338,6 +346,83 @@ medida("ex1b.mapa.corrigidas_a_mao", mmb.get("corrigidas_a_mao"), "python3 desig
 medida("ex1b.mapa.referencias_comparadas", mmb.get("referencias_comparadas"), "idem", "a lista tem a forma escrita", isinstance(mmb.get("lista"), list))
 cub = js(f"{B}/custo.json") or {}
 medida("ex1b.custo", {k: cub.get(k) for k in ("respostas_do_modelo", "modelos", "simbolos_de_entrada", "simbolos_de_saida_minimo", "respostas_com_a_saida_de_um_momento_do_fluxo", "segundos", "primeira_entrada", "desde", "lido_em")}, "python3 design/especime-v3/medicoes/ex1-2026-10-05/custo.py <registo da sessão do construtor> ex1b/custo.json --desde <a primeira entrada da passagem>", "o registo foi lido (o sha256 está escrito)", bool(cub.get("registo_sha256")))
+
+# ================================================================== EX1-c (06.10.2026), em ex1c/
+C = "ex1c"
+CMD_PROVAS_C = "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1c.sh"
+pc_ = ler(f"{C}/provas/cabeca").strip()
+medida("ex1c.provas.cabeca", pc_, CMD_PROVAS_C, "a cabeça das provas é a do fim delas", pc_ and pc_ == ler(f"{C}/provas/cabeca.fim").strip())
+medida("ex1c.provas.estado.linhas", len([l for l in ler(f"{C}/provas/estado").splitlines() if l.strip()]), CMD_PROVAS_C + f" ({C}/provas/estado)", "o ficheiro foi escrito", (AQUI / f"{C}/provas/estado").exists())
+vc = js(f"{C}/provas/version.json") or {}
+medida("ex1c.provas.construcao", vc.get("commit"), f"cp dist/version.json {C}/provas/version.json", "a construção medida é a da cabeça das provas", vc.get("commit") == pc_)
+PASSOS_C = ("typecheck", "acertos", "explicacao", "semana", "check-explicacoes", "formas", "frases-compostas", "gate-html", "voz", "cabeca", "lingua", "lugar", "alvos", "sinais", "frases-rendidas", "capturas", "plantas-dos-portoes", "mapa")
+for passo in PASSOS_C:
+    c = ler(f"{C}/provas/{passo}.codigo").strip()
+    medida(f"ex1c.provas.{passo}.codigo", int(c) if c.isdigit() else None, CMD_PROVAS_C + f" ({C}/provas/{passo}.codigo)", f"o registo {C}/provas/{passo}.log começa pela cabeça", ler(f"{C}/provas/{passo}.log").startswith("cabeça: "))
+# o achado 5: a semana
+sc = js(f"{C}/semana.json") or {}
+medida("ex1c.semana.contagens", sc.get("contagens"), "node tests/explicacoes/semana.mjs --prova --json <pasta>/ex1c/semana.json", "a célula correu sem erros", sc and not sc.get("erros"))
+medida("ex1c.semana.janela", sc.get("janela"), "idem", "a janela acaba num dia que o carimbo aceita", (sc.get("janela") or {}).get("fim") in (sc.get("aceites") or []))
+medida("ex1c.semana.formas", sc.get("formas"), "idem (as linhas em que só o literal mudou, com o literal de antes e o de agora)", "a lista tem a contagem de forma", isinstance(sc.get("formas"), list) and len(sc.get("formas")) == (sc.get("contagens") or {}).get("forma"))
+medida("ex1c.semana.w1", [{"nome": p["nome"], "mordeu": p["mordeu"]} for p in sc.get("w1", [])], "idem", "as plantas da cópia do livro morderam, a do literal entre elas", sc.get("w1") and all(p["mordeu"] for p in sc["w1"]) and any("só de literal" in p["nome"] for p in sc["w1"]))
+medida("ex1c.semana.plantas_na_pagina", [sum(1 for p in sc.get("plantas", []) if p["mordeu"]), sum(1 for p in sc.get("plantas", []) if p.get("aplica", True))], "idem", "todas as que se aplicam morderam", sc.get("plantas") and all(p["mordeu"] for p in sc["plantas"] if p.get("aplica", True)))
+medida("ex1c.semana.plantas_novas", [p["nome"] for p in sc.get("plantas", []) if re.search(r"bloco|marca|literal", p["nome"])], "idem", "as plantas da frase de um bloco, da marca solta e do literal estão na lista", any("bloco" in p["nome"] for p in sc.get("plantas", [])))
+gl = ler(f"{C}/provas/gate-html.log")
+m = re.search(r"EX1 · (\d+) marca\(s\) da leitura da semana recontadas na janela que acaba a (\S+), (\d+) página\(s\) de explicação e (\d+) <head> de explicação conferidos", gl)
+medida("ex1c.gate.marcas_da_semana", int(m.group(1)) if m else None, "node scripts/gate-html.mjs (ex1c/provas/gate-html.log)", "a linha do portão está no registo", m)
+fr = js(f"{C}/frases-rendidas.json") or {}
+medida("ex1c.semana.primeira_frase_pt", ((fr.get("semana") or {}).get("pt") or {}).get("primeira_frase"), "node design/especime-v3/medicoes/ex1-2026-10-05/frases-rendidas.mjs <pasta>/ex1c/frases-rendidas.json", "a frase foi lida da construção das provas", fr.get("construcao") == pc_)
+medida("ex1c.semana.formas_rendidas_pt", ((fr.get("semana") or {}).get("pt") or {}).get("formas"), "idem", "a página rende uma entrada por linha da contagem de forma", len(((fr.get("semana") or {}).get("pt") or {}).get("formas") or []) == (sc.get("contagens") or {}).get("forma"))
+# os achados da explicação
+ec = js(f"{C}/explicacao.json") or {}
+auc = ec.get("auditoria", {})
+medida("ex1c.explicacao.auditoria", {k: auc.get(k) for k in ("folhas", "partes", "diz", "leitura", "conta", "aponta", "liga", "origens")}, "node tests/explicacoes/explicacao.mjs --prova --json <pasta>/ex1c/explicacao.json", "a célula correu sem erros", ec and not ec.get("erros"))
+medida("ex1c.explicacao.tokens", {"maiores": (ec.get("maiores") or {}).get("tokens"), "ramos": (ec.get("ramos") or {}).get("tokens")}, "idem (X9 e X10)", "a célula correu sem erros", ec and not ec.get("erros"))
+medida("ex1c.explicacao.plantas", [sum(1 for q in ec.get("plantas", []) if q["mordeu"]), sum(1 for q in ec.get("plantas", []) if q.get("aplica", True))], "idem", "todas as que se aplicam morderam", ec.get("plantas") and all(q["mordeu"] for q in ec["plantas"] if q.get("aplica", True)))
+medida("ex1c.explicacao.plantas_novas", [q["nome"] for q in ec.get("plantas", []) if re.search(r"a menos|zero|lado|marca|figura declarada|porta dos números", q["nome"])], "idem", "as plantas do EX1-c estão na lista", any("zero" in q["nome"] for q in ec.get("plantas", [])))
+pt_ = ((fr.get("explicacao") or {}).get("pt") or {}).get("paragrafos") or {}
+en_ = ((fr.get("explicacao") or {}).get("en") or {}).get("paragrafos") or {}
+for chave, caminho in (("ministerios", "seccoes[1].conteudo[0].paragrafo"), ("dois_totais", "seccoes[1].conteudo[2].paragrafo"), ("programas", "seccoes[2].conteudo[0].paragrafo"), ("divida_e_saldo", "seccoes[3].conteudo[0].paragrafo"), ("o_que_isto_nao_diz", "naoDiz[0]")):
+    medida(f"ex1c.texto.{chave}", {"pt": pt_.get(caminho), "en": en_.get(caminho)}, "node design/especime-v3/medicoes/ex1-2026-10-05/frases-rendidas.mjs <pasta>/ex1c/frases-rendidas.json", "o parágrafo está nas duas edições da construção das provas", bool(pt_.get(caminho)) and bool(en_.get(caminho)) and fr.get("construcao") == pc_)
+medida("ex1c.texto.portas_do_fim", ((fr.get("explicacao") or {}).get("pt") or {}).get("portas_do_fim"), "idem", "a página tem portas no fim", bool(((fr.get("explicacao") or {}).get("pt") or {}).get("portas_do_fim")))
+aud_c = json.loads((SITIO / "tests/cartao/leituras-provadas.json").read_text(encoding="utf-8"))
+ent_c = next((x for x in aud_c.get("explicacoes", []) if x.get("slug") == "dinheiro-do-estado-2026"), {})
+f215 = next((f for f in ent_c.get("folhas", []) if f["caminho"] == "seccoes[1].conteudo[2].paragrafo[0]"), {"partes": []})
+medida("ex1c.auditoria.frase_dos_dois_totais", [{"pt": q["pt"], "classe": q["classe"], "apoios": len(q.get("apoios", []))} for q in f215["partes"]], "as partes da folha seccoes[1].conteudo[2].paragrafo[0] em tests/cartao/leituras-provadas.json", "cada parte que diz alguma coisa tem apoio, e nenhuma é leitura", f215["partes"] and all(q["classe"] != "leitura" for q in f215["partes"]) and all(q.get("apoios") for q in f215["partes"] if q["classe"] == "diz"))
+acc = js(f"{C}/acertos.json") or {}
+somas_c = {}
+for x in acc.get("acertos", []):
+    somas_c[x["id"]] = somas_c.get(x["id"], 0) + x["vezes"]
+medida("ex1c.acertos.blocos", acc.get("blocos"), "node design/especime-v3/medicoes/ex1-2026-10-05/acertos-ex1.mjs --json <pasta>/ex1c/acertos.json", "o texto do brief com os acertos é o da declaração, e nenhum erro", acc.get("iguais") is True and not acc.get("erros"))
+medida("ex1c.acertos.exercidos", somas_c, "idem", "os dezassete acertos estão na lista", len(somas_c) == 17)
+fo = ler(f"{C}/provas/formas.log")
+m = re.search(r"F22 · (\d+) figuras das explicações recompostas das linhas · (\d+) de (\d+) plantas em memória", fo)
+medida("ex1c.formas.f22", {"figuras": int(m.group(1)), "plantas": [int(m.group(2)), int(m.group(3))]} if m else None, "node scripts/check-formas.mjs (ex1c/provas/formas.log)", "a linha da F22 está no registo", m)
+fcc = js(f"{C}/frases-compostas.json") or {}
+medida("ex1c.frases_compostas", {"passagens": len(fcc.get("resultados", [])), "pedacos": sum(r["pedacos"] for r in fcc.get("resultados", [])), "erros": len(fcc.get("erros", [""])), "plantas": [sum(1 for q in fcc.get("plantas", []) if q["mordeu"]), len(fcc.get("plantas", []))]} if fcc else None, "node tests/explicacoes/frases-compostas.mjs --json <pasta>/ex1c/frases-compostas.json", "a medida é da construção das provas e as plantas morderam", fcc.get("construcao") == pc_ and bool(fcc.get("plantas")) and all(q["mordeu"] for q in fcc.get("plantas", [])))
+sic = js(f"{C}/sinais-explicacoes.json") or {}
+medida("ex1c.sinais.frases_guardadas_fora", sum(len(x.get("sinais", [])) for x in sic.get("explicacoes", [])), "node scripts/sinais-da-primeira-pagina.mjs; cp .sinais/explicacoes.json <pasta>/ex1c/sinais-explicacoes.json", "o ficheiro tem a explicação", bool(sic.get("explicacoes")))
+cpc = js(f"{C}/capturas.json") or {"capturas": [], "plantas": [], "erros": ["sem capturas"]}
+inteiras_c = [c for c in cpc["capturas"] if "recorte" not in c]
+medida("ex1c.capturas.quantas", len(cpc["capturas"]), "node design/especime-v3/medicoes/ex1-2026-10-05/captar-ex1c.mjs --json ex1c/capturas.json", "cada captura tem o sha256 e o ficheiro existe", all(c.get("sha256") and (SITIO / c["ficheiro"]).exists() for c in cpc["capturas"]))
+medida("ex1c.capturas.transbordos", sum(1 for c in inteiras_c if c.get("transborda")), "idem", "a planta do transbordo mordeu", any(q["nome"].startswith("uma página mais larga") and q["mordeu"] for q in cpc["plantas"]))
+medida("ex1c.capturas.erros", len(cpc["erros"]), "idem", "a corrida chegou ao fim", bool(cpc["plantas"]))
+medida("ex1c.capturas.plantas", [sum(1 for q in cpc["plantas"] if q["mordeu"]), len(cpc["plantas"])], "idem", "as três plantas correram", len(cpc["plantas"]) == 3)
+plc = js(f"{C}/plantas-portoes-ex1.json") or []
+medida("ex1c.plantas_dos_portoes.quantas", len(plc), "OEDP_MEDICOES=<pasta>/ex1c OEDP_EXIGIR_ARVORE_LIMPA=1 node tests/pais/portoes.mjs --prefixo ex1", "cada planta repôs os bytes do dist/ e correu na cabeça das provas", plc and all(all(f["antes"] == f["reposto"] for f in q["ficheiros"]) and q["cabeca"] == pc_ for q in plc))
+medida("ex1c.plantas_dos_portoes.passaram", sum(1 for q in plc if q["passou"]), "idem", "cada uma saiu com 1 e com as mordidas previstas", plc and all(q["codigo"] == 1 for q in plc))
+medida("ex1c.plantas_dos_portoes.do_ex1c", [q["nome"] for q in plc if q["nome"].startswith("ex1c-")], "idem", "as plantas do EX1-c estão na lista", any(q["nome"].startswith("ex1c-") for q in plc))
+for nome, f in (("ex1c.mapa.antes_da_conta", f"{C}/mapa-antes-da-conta.log"), ("ex1c.mapa.no_fim", f"{C}/provas/mapa.log")):
+    v = conta_mapa(ler(f))
+    medida(nome, v, f"python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md ({f})", "as três linhas da contagem estão no registo", v is not None)
+lmc = ler(f"{C}/linhas-do-mapa.log")
+m = re.search(r"(\d+) referência\(s\) postas em dia", lmc)
+medida("ex1c.mapa.referencias_postas_em_dia_pela_conta", int(m.group(1)) if m else None, "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py c24db3b2 --escrever (ex1c/linhas-do-mapa.log)", "o número é o das linhas da lista", m and int(m.group(1)) == len(re.findall(r"^mapa l\.\d+ ", lmc, re.M)))
+chc = (SITIO / "design/especime-v3/CHAVES-EN.md").read_text(encoding="utf-8")
+novas_c = [k for k in ("umDeForma", "variosDeForma", "formasK", "passouAEscrever", "ondeEscrevia") if f"| `semana.{k}` |" in chc]
+medida("ex1c.chaves_en.novas", len(novas_c), "as linhas das chaves novas da semana em design/especime-v3/CHAVES-EN.md", "cada uma é uma chave de src/i18n/strings.mjs", all(f"{k}: " in (SITIO / "src/i18n/strings.mjs").read_text(encoding="utf-8") for k in novas_c) and bool(novas_c))
+cuc = js(f"{C}/custo.json") or {}
+medida("ex1c.custo", {k: cuc.get(k) for k in ("respostas_do_modelo", "modelos", "simbolos_de_entrada", "simbolos_de_saida_minimo", "respostas_com_a_saida_de_um_momento_do_fluxo", "segundos", "primeira_entrada", "desde", "lido_em")}, "python3 design/especime-v3/medicoes/ex1-2026-10-05/custo.py <registo da sessão do construtor> ex1c/custo.json --desde <a primeira entrada da passagem>", "o registo foi lido (o sha256 está escrito)", bool(cuc.get("registo_sha256")))
 
 (AQUI / "medidas.json").write_text(json.dumps({"bloco": "EX1", "guiao": REL(__file__), "medidas": medidas, "falhas": falhas}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(f"{len(medidas)} medidas, {len(falhas)} com o conhecido-positivo por encontrar" + (f": {', '.join(falhas)}" if falhas else ""))

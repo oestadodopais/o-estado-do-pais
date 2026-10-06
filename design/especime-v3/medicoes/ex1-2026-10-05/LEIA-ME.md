@@ -2,7 +2,7 @@
 
 *O construtor é o Claude Opus 5.5 (a definição `construtor`), na worktree do ramo `ex1-2026-10-05`, a partir de `3664b90d`, com o brief em `28022431`; escrito a 06.10.2026. Cada número deste relatório está num ficheiro desta pasta: `medidas.json`, escrito por `medir.py` com o comando e o conhecido-positivo de cada medida, e os JSON que as provas escreveram ao lado. Sem travessões.*
 
-O relatório tem duas passagens: a do bloco EX1 (05 e 06.10.2026), nas secções que se seguem, e a passagem de correção EX1-b (06.10.2026), com as decisões do lugar de direção sobre as questões I210 a I216 e a régua das frases compostas, na secção «EX1-b, as decisões do lugar de direção». As medidas da segunda vivem em `ex1b/`, e as capturas dela têm o prefixo `ex1b-`.
+O relatório tem três passagens: a do bloco EX1 (05 e 06.10.2026), nas secções que se seguem; a passagem de correção EX1-b (06.10.2026), com as decisões do lugar de direção sobre as questões I210 a I216 e a régua das frases compostas, na secção «EX1-b, as decisões do lugar de direção»; e a passagem EX1-c (06.10.2026), com as correções da leitura a frio do Codex Astra, na secção «EX1-c, a passagem depois da leitura». As medidas da segunda vivem em `ex1b/` e as da terceira em `ex1c/`, e as capturas delas têm os prefixos `ex1b-` e `ex1c-`.
 
 ## As cabeças e os três portões (a passagem EX1)
 
@@ -22,7 +22,7 @@ Os três portões correram primeiro na cabeça `482546471b44046b9ec4d5b7093b9ac7
 
 ## O §0 do brief, reproduzido
 
-O guião do brief (`design/observatorio/medidas/BRIEF-EX1.py`, sobre `3664b90d`) correu antes do primeiro commit do bloco e outra vez nas provas: 15 das 16 medidas iguais às do brief antes de mexer (`brief-reproduzido-antes-de-mexer.json`), e 15 iguais nas provas (`brief-reproduzido.json`). Bate, com uma ressalva que não é de reprodução: a medida `portas_do_menu` diz 6, e o menu tem 6 portas, contadas no navegador a 390 px nas duas edições (`menu-a-390.json`); o guião conta as linhas do objeto `ETIQUETA_NAV` que começam por uma chave, e não as portas (a I210).
+O guião do brief (`design/observatorio/medidas/BRIEF-EX1.py`, sobre `3664b90d`) correu antes do primeiro commit do bloco e outra vez nas provas: 16 das 16 medidas iguais às do brief antes de mexer (`brief-reproduzido-antes-de-mexer.json`), e 16 iguais nas provas (`brief-reproduzido.json`). Bate, com uma ressalva que não é de reprodução: a medida `portas_do_menu` diz 5, e o menu tem 6 portas, contadas no navegador a 390 px nas duas edições (`menu-a-390.json`); o guião conta as linhas do objeto `ETIQUETA_NAV` que começam por uma chave, e não as portas (a I210).
 
 ## O mandato, ponto a ponto
 
@@ -94,7 +94,7 @@ As plantas em memória, que correm dentro das réguas a cada corrida: 11 de 11 d
 
 ## O custo e o modelo
 
-O custo do bloco inteiro, com a passagem EX1-b, lido do registo da sessão do construtor até ao fecho desta passagem: o modelo é o Claude Opus 5.5 em todas as 603 respostas que o registo guarda (`custo.json`, lido por `custo.py` do registo da sessão do construtor, com o sha256 dos bytes lidos). Somam 293 011 581 símbolos de entrada (a nova, a escrita na cache e a lida da cache) e pelo menos 125 120 de saída (um mínimo: em 392 respostas o registo guardou a saída de um momento do fluxo e não a final), em 22 688 segundos, da primeira entrada do registo até à leitura. O total cumulativo que a ferramenta reporta lê-se do lado do lugar de direção, quando o agente acaba; a leitura daqui fica antes do último commit e da resposta final.
+O custo do bloco inteiro, com as passagens EX1-b e EX1-c, lido do registo da sessão do construtor até ao fecho da passagem EX1-c: o modelo é o Claude Opus 5.5 em todas as 696 respostas que o registo guarda (`custo.json`, lido por `custo.py` do registo da sessão do construtor, com o sha256 dos bytes lidos). Somam 367 309 738 símbolos de entrada (a nova, a escrita na cache e a lida da cache) e pelo menos 128 196 de saída (um mínimo: em 433 respostas o registo guardou a saída de um momento do fluxo e não a final), em 29 173 segundos, da primeira entrada do registo até à leitura. O total cumulativo que a ferramenta reporta lê-se do lado do lugar de direção, quando o agente acaba; a leitura daqui fica antes do último commit e da resposta final.
 
 ## EX1-b, as decisões do lugar de direção
 
@@ -140,11 +140,65 @@ Os commits da passagem:
 
 O custo da passagem, lido do mesmo registo da sessão desde a primeira entrada dela (`ex1b/custo.json`): 111 respostas do Claude Opus 5.5, 65 452 822 símbolos de entrada e pelo menos 1 398 de saída, em 7 504 segundos.
 
+## EX1-c, a passagem depois da leitura
+
+A leitura a frio do Codex Astra (`xhigh`) voltou com as cinco plantas mordidas e dez correções, feitas nesta passagem, na mesma worktree e no mesmo ramo; os três portões inteiros corre-os o lugar de direção. As provas correram na construção da cabeça do código, `090dd5dc401b736c105b7f21972515060959ee2a` (`ex1c/provas/`), com as conferências que a passagem toca, cada uma no seu comando, com o código escrito num ficheiro e o estado dos ficheiros seguidos com 0 linhas:
+
+| conferência | código (lido de `ex1c/provas/<passo>.codigo`) |
+|---|---|
+| `npm run typecheck` | 0 |
+| a célula X (`tests/explicacoes/explicacao.mjs --prova`) | 0 |
+| a célula W (`tests/explicacoes/semana.mjs --prova`) | 0 |
+| `npm run check:explicacoes` | 0 |
+| a F22 (`scripts/check-formas.mjs`) | 0 |
+| `check:frases-compostas` | 0 |
+| o portão de HTML | 0 |
+| `check:voz`, onde as células X e W correm sobre as páginas | 0 |
+| `check:cabeca`, `check:lingua`, `check:lugar` e `check:alvos`, pela secção nova da página da semana | 0, 0, 0 e 0 |
+| o guião dos acertos | 0 |
+| as plantas sobre a construção (`tests/pais/portoes.mjs --prefixo ex1`) | 0 |
+| o mapa (`conferir-mapa.py`) | 0 |
+
+As dez correções:
+
+| achado | o que mudou | a medida | as plantas |
+|---|---|---|---|
+| 5, a contagem do que mudou de valor | uma mudança de valor é uma mudança do número; as linhas em que só o literal mudou contam-se à parte, a primeira frase nomeia-as quando há alguma, e a página diz cada uma pelo que é, numa secção própria; o resolvedor, o portão de HTML e a célula W seguem a mesma regra | na janela de 2026-09-30 a 2026-10-06: 9 mudaram de valor e 3 só na forma de escrever, as três da leitura a frio (`ex1c/semana.json`); a primeira frase rendida: «Entre 30.09.2026 e 06.10.2026, 90 números foram relidos na fonte, 9 mudaram de valor, 3 mudaram só na forma de escrever e 9 mudaram de proveniência.»; e uma das entradas: «Fluxo de crédito às empresas (não financeiras), 2025: a fonte passou a escrever 3,0, onde escrevia 3, em 02.10.2026.» (`ex1c/frases-rendidas.json`); o portão recontou 36 marcas da semana | `uma entrada só de literal dentro da janela`, na cópia do livro; `o literal de agora de uma mudança só da forma trocado`, na página; `ex1c-semana-forma-contada-como-valor` e `ex1c-semana-contagem-da-forma-trocada`, sobre a construção |
+| 6, os dois denominadores | a frase dos dois totais diz o que cada conta inclui e exclui, pelos apoios que a auditoria já tinha | «As duas contas não batem porque medem coisas diferentes: a conta por função soma o que a administração central gasta com cada fim, como a saúde ou a educação, sem as operações financeiras nem as transferências entre os seus serviços; a conta por ministério é o orçamento de cada ministério, com as operações financeiras e as transferências entre serviços do Estado.»; na auditoria, cada parte que diz alguma coisa tem o seu literal, e nenhuma fica como leitura do projeto (`ex1c.auditoria.frase_dos_dois_totais` em `medidas.json`) | `ex1b-frase-dos-dois-totais-mudada`, sobre a construção |
+| 7, a porta para o tema | a última frase de «O que isto não diz» acaba nos recibos, e a porta do tema sai; a nota da I212 continua a dizer que a porta para o estudo volta quando ele tiver página | «O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a de agosto está acima. Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram. O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.» | `a porta dos números tirada do fim`, em memória; `ex1c-porta-dos-numeros-tirada`, sobre a construção |
+| 9, o saldo e a dívida em palavras | a dívida diz o lado pelo token novo `compara`, da gramática da primeira página; o sinal do saldo ganha a explicação entre parênteses | «No fim de 2025, a dívida pública valia 89,7 % do que o país produz num ano, acima dos 81,7 % da média da União Europeia, e as contas públicas fecharam o ano com um saldo de 0,7 % do produto, um excedente (recebeu mais do que gastou).» | `o lado da dívida trocado`, em memória; `ex1c-lado-da-divida-trocado`, sobre a construção |
+| 12, os nomes dos ministérios | os quatro nomes passam a `{ nome }`, o nome declarado da linha, nas duas edições | «Visto pelos ministérios, o maior é o Ministério das Finanças, com 60,12 de cada cem euros, 211 891 565 579 euros; seguem-se o Ministério da Saúde (13,28), o Ministério do Trabalho, Solidariedade e Segurança Social (10,69) e o Ministério da Educação, Ciência e Inovação (4,16).» | `ex1c-nome-de-um-ministerio-trocado`, sobre a construção |
+| 13, a X9 | a X9 recusa a família incompleta, além do intruso | a X9 conferiu 2 tokens `maiores` | `um programa a menos no token «maiores»` e `uma linha que não é dos programas no token «maiores»`, na declaração |
+| 14, as isenções do texto declarado | uma marca das palavras declaradas, ou das frases da semana, só sai do inventário sobre um elemento que a sua célula compara, e a W compara cada frase da primeira página que a página da semana cita com a que a primeira página rende; a primeira construção desta passagem achou mais um caso, o nome de cada linha na lista dos números de uma figura, que nenhuma régua comparava, e a F22 passou a compará-lo | as células X e W e o `check:voz` a 0 nas provas | `uma marca das palavras declaradas num parágrafo que a célula não compara` e `uma marca das frases compostas num parágrafo que esta célula não compara`, em memória; `a frase de um bloco citado com uma palavra trocada`; `o nome de outra linha na lista dos números`, na F22; `ex1c-marca-declarada-solta` e `ex1c-marca-da-semana-solta`, sobre a construção |
+| 15, a F22 | a F22 percorre as figuras declaradas e exige cada uma na página | a F22 recompôs 4 figuras, com 14 de 14 plantas em memória (`ex1c/provas/formas.log`) | `uma figura declarada tirada da página`, em memória; `ex1c-f22-figura-em-falta`, sobre a construção |
+| 16, a prosa sobre a casa | a frase dos juros deixa de falar do livro-razão do projeto | a frase está no parágrafo de «O que isto não diz», acima | a frase continua guardada pela condição de nenhuma linha dos juros |
+| 17, o saldo de exatamente zero | o ramo «zero» do sinal, «um saldo nulo (recebeu o mesmo que gastou)»; a X10 exige os três ramos de cada `sinal` e de cada `compara` | a X10 conferiu 4 tokens (os dois sinais e as duas comparações) | `o ramo «zero» tirado do sinal do saldo`, na declaração |
+
+A primeira explicação, depois da passagem: o guião dos acertos dá 15 blocos, com o texto do brief e os acertos X1 a X17 igual ao da declaração (`ex1c/acertos.json`); a auditoria tem 80 folhas e 118 partes (54 «diz», 0 «leitura», 13 «conta», 2 «aponta», 49 «liga»), com 5 origens; a célula X tem 23 de 23 plantas a morder, e a W 8 de 8 na página; nenhuma frase fica guardada fora da página (0 sinais).
+
+As plantas sobre a construção, as do EX1, do EX1-b e do EX1-c numa corrida só (o bloco das do EX1-b corre agora também com `--prefixo ex1`): 33, com a árvore seguida limpa e os bytes do `dist/` repostos e conferidos por sha256; 33 passaram (`ex1c/plantas-portoes-ex1.json`). A célula das frases compostas: 20 passagens, 356 pedaços, 0 erros, 2 de 2 plantas. As capturas das três páginas: 30 com o prefixo `ex1c-`, nas cinco larguras e nas duas edições, com 0 transbordos e 3 de 3 plantas a morder (`ex1c/capturas.json`). O mapa: depois das edições do código, 13 citações longe da linha; 20 postas em dia pela conta do diff (`ex1c/linhas-do-mapa.log`); com a subsecção do EX1-c, 514 conferidas e 0 longe.
+
+Três coisas que esta passagem apanhou, corrigidas antes destas provas: a primeira construção recusou no `check:voz` as marcas dos nomes na lista dos números das figuras (a regra nova das marcas fez o que devia, e a F22 passou a comparar esses nomes); a planta da frase de um bloco citado não mordia na primeira corrida das provas, porque trocava uma palavra dentro de um atributo do HTML, e passou a trocá-la no texto visível; e o relatório da passagem EX1-b dizia, na secção do §0 do brief, «15 das 16 medidas iguais» e que a medida `portas_do_menu` «diz 6», porque o guião das medidas lia o ficheiro do brief vivo, que a I210 tinha mudado. O guião passou a ler os ficheiros que uma passagem seguinte mudou como eles estavam na cabeça da passagem que os mede (`git show`), e essa secção volta a dizer o que a passagem EX1 mediu: 16 de 16, e 5.
+
+Os commits da passagem:
+
+| commit | o que traz |
+|---|---|
+| `c9a31644` | os achados 5 e 14 na semana: as mudanças só da forma de escrever, as marcas comparadas e as frases citadas da primeira página |
+| `955c0a33` | os achados 6, 7, 9, 12, 13, 14, 16 e 17 na explicação: o texto, o token `compara`, a X9, a X10, as marcas comparadas, a auditoria e os acertos |
+| `ac7eb110` | o achado 15: a F22 das figuras declaradas |
+| `97a087bb` | as plantas `ex1c-` sobre a construção e o guião das capturas das três páginas |
+| `f7a4533f` | os registos: as I212, I213, I215 e I216 em `ISSUES.md`, as chaves novas e o mapa |
+| `3ed466fd` | o nome de cada linha na lista dos números, comparado pela F22 |
+| `090dd5dc` | a planta da frase de um bloco citado, no texto visível (a cabeça do código) |
+| o seguinte | as provas da passagem: `ex1c/` e as capturas `ex1c-` |
+
+O custo da passagem, lido do registo da sessão desde a primeira entrada dela (`ex1c/custo.json`): 84 respostas do Claude Opus 5.5, 67 855 298 símbolos de entrada e pelo menos 1 180 de saída, em 5 469 segundos.
+
 ## O que ficou por fazer
 
-- A leitura a frio pelo Codex Astra `xhigh`, com os cinco estragos plantados e o teste dos dois minutos sobre as três páginas: é do lugar de direção.
-- Um saldo de exatamente zero fecharia a construção, porque a declaração do saldo não tem o ramo «zero» (como desde o EX1); fica dito em `ISSUES.md`, na I216.
+- Os três portões inteiros, a publicação e a aterragem: são do lugar de direção.
 - A célula das frases compostas lê as frases das explicações e da leitura da semana; as outras frases compostas da casa (os blocos da primeira página, as leituras dos cartões) não estão nela, e alargá-la é uma decisão do lugar de direção.
 - As barras mais curtas da figura dos ministérios continuam sem se ver a 390 px; o valor escrito ao lado é a leitura delas.
-- Em `tests/pais/portoes.mjs`, o bloco das plantas do EX1-b só corre com um prefixo que comece por «ex1b»: com `--prefixo ex1` correm só as do EX1, e as provas desta passagem correram as duas por prefixos separados. É uma linha a mudar na próxima passagem que mexa no ficheiro.
-- A leitura da semana muda com o dia da construção: as contagens deste relatório são as das construções dos portões, e a página no ar dirá as do dia em que aterrar.
+- Nas capturas da explicação a 390 px, o parêntese que abre antes de um valor com selo fica às vezes no fim da linha, e o valor desce para a seguinte («Segurança Social (» e, na linha de baixo, o valor); é da quebra de linha do navegador antes da caixa do valor, e não muda nenhum número nem nenhuma palavra.
+- A leitura da semana muda com o dia da construção: as contagens deste relatório são as das construções das provas, e a página no ar dirá as do dia em que aterrar.
