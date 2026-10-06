@@ -13720,3 +13720,33 @@ Tudo aterrou dormente, sem nenhum interruptor.
 
 **O custo.** As três revisões: 331 925 símbolos (o Codex, a maquinaria), 485 279 (o Opus, a maquinaria e as regras), e o da leitura das regras pelo Codex na linha «tokens used» do registo (`REVISAO-REGRAS-astra-2026-10-06.md`). O lugar de direção: as horas desta manhã, do uso da semana do Claude, que estava a 61 % às 08:46 UTC.
 
+### 1.173 O diretor reafirma que o lugar de direção dirige: as ideias dele são contributos, o que não se adota diz-se-lhe com a razão, e a escolha do construtor da maquinaria é do lugar de direção, com a dupla verificação
+
+**Afecta:** nenhum
+
+**Data:** 06.10.2026, cerca das 09:30 UTC (na conversa, depois da §1.172).
+
+**O que o diretor disse, por palavras dele.** «Go do what you think is best. I would like you to keep taking the decisions and not relying on my decisions. You should run the project, you should be the head of the project, not me. I would give some inputs that you can take in consideration and see the best way to do it, and implement the ones you find useful, and the ones that you don't find useful you should tell me, and not hide or ignore or pretend that they're fine and do them without agreeing. Every decision from the project is up to you.» Sobre o Codex: o Astra em `xhigh» parece dar a melhor saída e sair mais barato do que o 6.1 em alguns casos; «we need to make sure that everything is double checked». Sobre a maquinaria: perguntou se o construtor devia ser o Astra ou o Opus, porque o M-A «will be the foundation of everything», e se o código do Astra seria tão robusto como o do Opus.
+
+**O que o lugar de direção decide.** (1) A regra da §1.112 fica assim, com estas palavras no `CLAUDE.md`: os contributos do diretor avaliam-se e decidem-se no lugar de direção; o que não se adota diz-se-lhe com a razão, nunca se finge que se adotou nem se adota sem concordar. (2) Pelo mesmo princípio, o texto da página da política de IA que a §1.172 propunha ao diretor decide-se no lugar de direção: é uma atualização de facto (quem faz o quê) e não muda o que a página promete (tudo gerado por IA, nenhum humano a rever cada peça, uma pessoa com nome a responder); aterra com o H4, e o diretor foi avisado e pode opor-se. (3) O M-A fica no Codex Astra, pelas razões que o lugar de direção lhe deu: a corrida `portão` do GitHub não muda e é o portão de cada aterragem, por isso um defeito no corredor da máquina não deixa nada vermelho chegar ao sítio; as provas do bloco são estruturais (a célula U, as doze plantas, uma conferência plantada só no `verify`); a leitura a frio do Opus pergunta primeiro se alguma conferência deixou de correr ou corre sobre menos, e o lugar de direção confere essa lista com as próprias mãos. O M-B (a arquitetura dos registos: o mapa por âncoras, os inventários, o relatório gerado) decide-se depois de ver a qualidade da entrega do M-A, com o Opus como construtor por omissão se a semana do Claude o permitir. O que o lugar de direção não afirma, porque não mediu: que o código do Astra é tão robusto como o do Opus; a única medida entre os dois nesta casa é como leitores (M51: o Opus achou mais, o Astra custou metade). (4) O Astra `xhigh` fica o modelo do Codex por omissão nas construções e nas leituras, pela M51 e por este contributo; o Sol fica para uma segunda leitura quando o lugar de direção a pedir.
+
+### 1.174 O ritmo do uso: constrói-se tudo o que está briefado o mais depressa possível, até cerca de oitenta por cento de cada subscrição, e guardam-se os últimos vinte para ler, corrigir e aterrar; o que não couber espera pela semana seguinte
+
+**Afecta:** nenhum
+
+**Data:** 06.10.2026, cerca das 10:40 UTC (na conversa).
+
+**O que o diretor disse, por palavras dele.** «I would rather have everything built as soon as possible so we can stop building and assess everything and get it to readers, instead of pacing the whole week … keep maybe 15 percent or 20 percent of usage for the rest of the week … if you can't build everything, we can just wait for the next week.»
+
+**O que o lugar de direção decide.** O contributo adota-se, porque os limites da subscrição são do diretor e a razão é boa: um bloco construído e lido cedo chega ao leitor cedo, e o ritmo de uma semana inteira adiava-o sem o proteger. A regra: lança-se tudo o que tem brief, em paralelo, enquanto cada subscrição estiver abaixo dos oitenta por cento da semana; a partir daí não se lança construção nova, e os últimos vinte por cento ficam para as leituras a frio (do Claude, as dos blocos do Codex), as passagens de correção e as aterragens; o teto dos noventa e sete por cento da §1.160 não muda, e fecha-se num ponto seguro antes dele. O que não couber na semana espera pela reposição, construído e por ler, ou por construir. A vigia do uso avisa aos oitenta por cento nas duas subscrições. A ordem da fila a 06.10: o JD1 (lançado às 10:40 UTC), o recibo incorporável (brief por escrever), o M-B depois de o M-A e os blocos de conteúdo aterrarem (porque reescreve o mapa e os inventários que todos tocam), o RP4-n-b depois do RP4-n, a segunda explicação depois do JD1.
+
+### 1.175 O teto do uso baixa de noventa e sete para noventa por cento, para o diretor ter uso diário; a linha de não lançar fica nos oitenta
+
+**Afecta:** nenhum
+
+**Data:** 06.10.2026, cerca das 10:50 UTC (na conversa, a seguir à §1.174).
+
+**O que o diretor disse, por palavras dele.** «Can we adjust and try to have the hard stop at 90 % instead of 97, or 95, so we can keep some usage for daily use.»
+
+**O que o lugar de direção decide.** Adota-se aos noventa, porque os limites da subscrição são do diretor e a margem é para o uso dele: a partir dos noventa por cento da semana de qualquer das duas subscrições não se lança nada (nem construção, nem leitura, nem aterragem nova) e fecha-se num ponto seguro, como a §1.160 mandava aos noventa e sete; a linha de não lançar construção nova fica nos oitenta (§1.174), e entre os oitenta e os noventa só correm as leituras a frio, as passagens de correção e as aterragens do que já está construído. O `CLAUDE.md` (o passo 2 e a regra 10) diz os dois números; a vigia do uso avisa aos oitenta e aos noventa.
+

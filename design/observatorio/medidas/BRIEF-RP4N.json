@@ -1,0 +1,97 @@
+{
+  "brief": "design/observatorio/BRIEF-RP4N-selar-na-fonte-o-que-as-frases-ainda-dizem-pelo-nome.md",
+  "guiao": "design/observatorio/medidas/BRIEF-RP4N.py",
+  "cabeca_lida": "4b29f707",
+  "medidas": [
+    {
+      "nome": "linhas_com_a_frase_por_confirmar",
+      "valor": 174,
+      "comando": "git show 4b29f707:src/data/o-que-e-das-familias.mjs · as entradas de LINHAS_POR_CONFIRMAR_NA_FONTE",
+      "conhecido_positivo": {
+        "o_que": "a linha da água não faturada está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_marcadas_do_desemprego_registado_da_madeira",
+      "valor": 11,
+      "comando": "as linhas marcadas cujo id contém «-desemprego-registado-» (os concelhos da Madeira, pelo Instituto de Emprego da Madeira)",
+      "conhecido_positivo": {
+        "o_que": "a linha da Calheta é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_marcadas_do_orcamento_de_2026",
+      "valor": 92,
+      "comando": "as linhas marcadas cujo id começa por «oe-2026-»",
+      "conhecido_positivo": {
+        "o_que": "a linha dos cem euros da saúde é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_marcadas_da_execucao_de_2026",
+      "valor": 56,
+      "comando": "as linhas marcadas cujo id começa por «execucao-2026-»",
+      "conhecido_positivo": {
+        "o_que": "a despesa efetiva de agosto é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_marcadas_de_evora",
+      "valor": 11,
+      "comando": "as linhas marcadas cujo id começa por «evora-»",
+      "conhecido_positivo": {
+        "o_que": "a linha das verbas do PRR pagas é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_marcadas_restantes",
+      "valor": 4,
+      "comando": "as linhas marcadas que não são de nenhum dos quatro grupos",
+      "conhecido_positivo": {
+        "o_que": "a linha da água não faturada é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_com_a_frase_por_confirmar",
+      "valor": 6,
+      "comando": "git show 4b29f707:src/data/o-que-e-das-series.mjs · as entradas de SERIES_POR_CONFIRMAR_NA_FONTE",
+      "conhecido_positivo": {
+        "o_que": "a série das rendas está na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "series_marcadas_do_eurostat",
+      "valor": 5,
+      "comando": "as séries marcadas cujo id começa por serie-ihpc- ou é a dos preços da habitação (as do Eurostat sem linha presa)",
+      "conhecido_positivo": {
+        "o_que": "a série dos combustíveis da União é uma delas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "partes_apoiadas_no_nome_do_projeto_nas_familias",
+      "valor": 45,
+      "comando": "git show 4b29f707:tests/cartao/leituras-provadas.json · as partes das famílias com um apoio «declaracao» (o nome que o projeto deu à linha)",
+      "conhecido_positivo": {
+        "o_que": "a auditoria tem 181 famílias",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "partes_apoiadas_no_nome_do_projeto_nas_series",
+      "valor": 6,
+      "comando": "git show 4b29f707:tests/cartao/leituras-provadas.json · as partes das séries com um apoio «declaracao»",
+      "conhecido_positivo": {
+        "o_que": "a série das rendas tem auditoria",
+        "encontrado": true
+      }
+    }
+  ]
+}
