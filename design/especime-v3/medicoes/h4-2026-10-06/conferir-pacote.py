@@ -21,7 +21,8 @@ cabeca = (PORTOES / 'cabeca').read_text().strip()
 assert cabeca == (PORTOES / 'cabeca.fim').read_text().strip(), 'A cabeça mudou durante os portões.'
 assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip() == cabeca, 'O pacote já não está na cabeça conferida.'
 codigos = {g: int((PORTOES / f'{g}.codigo').read_text()) for g in ['build', 'verify', 'typecheck']}
-assert all(c == 0 for c in codigos.values()), 'Há um portão vermelho.'
+aceitacao_cumprida = all(c == 0 for c in codigos.values())
+falhas_tm4 = []
 
 # Os códigos e as datas ficam intactos. Só os registos recebem a limpeza,
 # incluindo os espaços no fim da linha que o terminal deixa no registo.
@@ -63,7 +64,9 @@ for nome in ['capturas.json'] + (['capturas-b.json'] if passagem_b else []):
 if passagem_b:
     tm = json.loads((AQUI / 'tema-menu-b.json').read_text())
     assert tm['cabeca'] == tm['construcao']['commit'] == cabeca
-    assert not tm['falhas'] and all(p['mordeu'] for p in tm['plantas'])
+    falhas_tm4 = tm['falhas']
+    aceitacao_cumprida = aceitacao_cumprida and not falhas_tm4
+    assert all(p['mordeu'] for p in tm['plantas'])
     for p in json.loads((AQUI / 'plantas-portoes-h4b.json').read_text()):
         assert p['passou'] and p['cabeca'] == cabeca
 
@@ -84,9 +87,12 @@ for p in AQUI.rglob('*'):
 assert not achados, f'Caminhos locais por limpar: {achados}'
 resultado = {
     'comando': comando, 'cabeca_codigo': cabeca, 'codigos': codigos,
+    'integridade_conferida': True, 'aceitacao_cumprida': aceitacao_cumprida, 'falhas_tm4': falhas_tm4,
     'ficheiros_conferidos': conferidos, 'achados_de_caminhos_locais': achados,
     'RESEARCHHUB_DIR_definido': bool(os.environ.get('RESEARCHHUB_DIR')),
     'pasta_motor_ao_lado_da_worktree': (RAIZ.parent / 'ResearchHub').exists(),
 }
 saida.write_text(json.dumps(resultado, ensure_ascii=False, indent=2) + '\n')
-print(f'Pacote conferido: {len(conferidos)} resumos iguais, códigos lidos dos ficheiros e ligações resolvidas.')
+print(f'Integridade do pacote conferida: {len(conferidos)} resumos iguais, códigos lidos dos ficheiros e ligações resolvidas.')
+print('Aceitação cumprida.' if aceitacao_cumprida else 'Aceitação por cumprir: há uma célula ou um portão vermelho.')
+sys.exit(0 if aceitacao_cumprida else 1)
