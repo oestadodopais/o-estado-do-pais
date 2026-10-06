@@ -1,0 +1,12 @@
+
+> o-estado-do-pais@0.1.0 check:dados
+> node scripts/check-dados.mjs
+
+
+[90m  dados descarregáveis · 3 ficheiros · 6 endereços ligados[0m
+[90m  C7 · 2464 medidas de 308 concelhos conferidas no livro-razão[0m
+[90m  ficheiros alojados · 3 linha(s) com document.hosted · 3 recontada(s)[0m
+[90m  conjunto de dados · 3195 registos no CSV · 2046 com o rótulo da fonte · 3195 ficheiros de linha · licença CC BY 4.0 · 3197 endereço(s) ligado(s)[0m
+
+  [32m✓[0m os ficheiros existem, batem certo com as origens e estão ligados nas duas edições.
+

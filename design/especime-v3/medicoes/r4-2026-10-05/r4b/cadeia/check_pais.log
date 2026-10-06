@@ -1,0 +1,747 @@
+
+> o-estado-do-pais@0.1.0 check:pais
+> node scripts/check-pais.mjs && node tests/inicio/linhas-da-casa.mjs --prova && node tests/inicio/estudos-em-curso.mjs
+
+T9: 30 cartões com valor de referência nos temas e nas entradas, 10 fora e 20 dentro, cada um com a cor do seu estado.
+B1 país: 47 medidas, 9 temas, 7876 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 56 mudanças, 98 títulos de edição.
+B1 país: todas as conferências a 0.
+{
+  "erros": [],
+  "medidas": {
+    "linhas": [
+      {
+        "id": "taxa-de-desemprego-2025",
+        "valor": "6,0",
+        "entrada": {
+          "date": "2026-09-30",
+          "kind": "correcao",
+          "old_value": "6",
+          "new_value": "6,0"
+        },
+        "seladas": 1
+      },
+      {
+        "id": "taxa-de-desemprego-mip-2025",
+        "valor": "6,0",
+        "entrada": {
+          "date": "2026-09-30",
+          "kind": "correcao",
+          "old_value": "6",
+          "new_value": "6,0"
+        },
+        "seladas": 1
+      },
+      {
+        "id": "correcoes-publicadas",
+        "valor": "7",
+        "entrada": {
+          "date": "2026-09-30",
+          "kind": "atualizacao",
+          "old_value": "3",
+          "new_value": "5"
+        },
+        "seladas": 2
+      }
+    ],
+    "registos": [
+      {
+        "lang": "pt",
+        "id": "taxa-de-desemprego-2025",
+        "itens": 1,
+        "lugar": "Portugal",
+        "porta": "/"
+      },
+      {
+        "lang": "pt",
+        "id": "taxa-de-desemprego-mip-2025",
+        "itens": 1,
+        "lugar": "Portugal",
+        "porta": "/"
+      },
+      {
+        "lang": "pt",
+        "id": "correcoes-publicadas",
+        "itens": 1,
+        "lugar": "O Estado do País",
+        "porta": "/correcoes"
+      },
+      {
+        "lang": "en",
+        "id": "taxa-de-desemprego-2025",
+        "itens": 1,
+        "lugar": "Portugal",
+        "porta": "/en"
+      },
+      {
+        "lang": "en",
+        "id": "taxa-de-desemprego-mip-2025",
+        "itens": 1,
+        "lugar": "Portugal",
+        "porta": "/en"
+      },
+      {
+        "lang": "en",
+        "id": "correcoes-publicadas",
+        "itens": 1,
+        "lugar": "O Estado do País",
+        "porta": "/en/corrections"
+      }
+    ],
+    "nomes": [
+      {
+        "lang": "pt",
+        "id": "custo-unitario-do-trabalho-2024",
+        "n": 1,
+        "lido": "Nominal unit labour cost per hour worked",
+        "esperado": "Nominal unit labour cost per hour worked"
+      },
+      {
+        "lang": "pt",
+        "id": "despesa-em-id-2024-ue",
+        "n": 1,
+        "lido": "Gross domestic expenditure on research and development (R&D)",
+        "esperado": "Gross domestic expenditure on research and development (R&D)"
+      },
+      {
+        "lang": "pt",
+        "id": "formacao-bruta-de-capital-fixo-2024",
+        "n": 1,
+        "lido": "Gross fixed capital formation at current prices",
+        "esperado": "Gross fixed capital formation at current prices"
+      },
+      {
+        "lang": "pt",
+        "id": "formacao-bruta-de-capital-fixo-2025",
+        "n": 1,
+        "lido": "Investimento em bens duradouros para produzir (formação bruta de capital fixo)",
+        "esperado": "Investimento em bens duradouros para produzir (formação bruta de capital fixo)"
+      },
+      {
+        "lang": "pt",
+        "id": "pib-real-per-capita-2024",
+        "n": 1,
+        "lido": "Real GDP per capita",
+        "esperado": "Real GDP per capita"
+      },
+      {
+        "lang": "pt",
+        "id": "pib-real-per-capita-2025",
+        "n": 1,
+        "lido": "PIB real por habitante",
+        "esperado": "PIB real por habitante"
+      },
+      {
+        "lang": "pt",
+        "id": "posicao-de-investimento-internacional-2024",
+        "n": 0,
+        "lido": "Net international investment position - annual data",
+        "esperado": "Net international investment position - annual data"
+      },
+      {
+        "lang": "pt",
+        "id": "posicao-de-investimento-internacional-2025",
+        "n": 0,
+        "lido": "O que o país tem no exterior menos o que deve (posição de investimento internacional)",
+        "esperado": "O que o país tem no exterior menos o que deve (posição de investimento internacional)"
+      },
+      {
+        "lang": "pt",
+        "id": "saldo-da-balanca-corrente-2024",
+        "n": 0,
+        "lido": "Current account balance - 3 year average",
+        "esperado": "Current account balance - 3 year average"
+      },
+      {
+        "lang": "pt",
+        "id": "correcoes-publicadas",
+        "n": 1,
+        "lido": "Correções publicadas",
+        "esperado": "Correções publicadas"
+      },
+      {
+        "lang": "pt",
+        "id": "fluxo-de-credito-as-empresas-2025",
+        "n": 0,
+        "lido": "Fluxo de crédito às empresas (não financeiras)",
+        "esperado": "Fluxo de crédito às empresas (não financeiras)"
+      },
+      {
+        "lang": "pt",
+        "id": "jovens-nem-2025",
+        "n": 0,
+        "lido": "Jovens sem emprego, escola ou formação",
+        "esperado": "Jovens sem emprego, escola ou formação"
+      },
+      {
+        "lang": "pt",
+        "id": "edicoes-publicadas",
+        "n": 0,
+        "lido": "Edições publicadas",
+        "esperado": "Edições publicadas"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 4,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-publicados",
+        "n": 0,
+        "lido": "Estudos publicados",
+        "esperado": "Estudos publicados"
+      },
+      {
+        "lang": "pt",
+        "id": "correcoes-publicadas",
+        "n": 0,
+        "lido": "Correções publicadas",
+        "esperado": "Correções publicadas"
+      },
+      {
+        "lang": "pt",
+        "id": "taxa-de-desemprego-2025",
+        "n": 0,
+        "lido": "Taxa de desemprego",
+        "esperado": "Taxa de desemprego"
+      },
+      {
+        "lang": "pt",
+        "id": "taxa-de-desemprego-mip-2025",
+        "n": 0,
+        "lido": "Taxa de desemprego",
+        "esperado": "Taxa de desemprego"
+      },
+      {
+        "lang": "pt",
+        "id": "divida-das-familias-2025-ue",
+        "n": 0,
+        "lido": "Dívida das famílias",
+        "esperado": "Dívida das famílias"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 3,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-aprovado-2026",
+        "n": 5,
+        "lido": "Verbas do Plano de Recuperação e Resiliência (PRR) aprovadas para Évora",
+        "esperado": "Verbas do Plano de Recuperação e Resiliência (PRR) aprovadas para Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-execucao-2026",
+        "n": 1,
+        "lido": "Parte das verbas aprovadas que já foi paga",
+        "esperado": "Parte das verbas aprovadas que já foi paga"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-pago-2026",
+        "n": 5,
+        "lido": "Verbas do Plano de Recuperação e Resiliência (PRR) pagas em Évora",
+        "esperado": "Verbas do Plano de Recuperação e Resiliência (PRR) pagas em Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-vencido-aprovado-2026",
+        "n": 5,
+        "lido": "Verbas aprovadas em projetos fora de prazo",
+        "esperado": "Verbas aprovadas em projetos fora de prazo"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-vencido-quota-2026",
+        "n": 1,
+        "lido": "Parte das verbas aprovadas em projetos fora de prazo",
+        "esperado": "Parte das verbas aprovadas em projetos fora de prazo"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-aprovado-2026",
+        "n": 3,
+        "lido": "Verbas do Plano de Recuperação e Resiliência (PRR) aprovadas para Évora",
+        "esperado": "Verbas do Plano de Recuperação e Resiliência (PRR) aprovadas para Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-execucao-2026",
+        "n": 0,
+        "lido": "Parte das verbas aprovadas que já foi paga",
+        "esperado": "Parte das verbas aprovadas que já foi paga"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-pago-2026",
+        "n": 3,
+        "lido": "Verbas do Plano de Recuperação e Resiliência (PRR) pagas em Évora",
+        "esperado": "Verbas do Plano de Recuperação e Resiliência (PRR) pagas em Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-vencido-aprovado-2026",
+        "n": 3,
+        "lido": "Verbas aprovadas em projetos fora de prazo",
+        "esperado": "Verbas aprovadas em projetos fora de prazo"
+      },
+      {
+        "lang": "pt",
+        "id": "evora-prr-vencido-quota-2026",
+        "n": 0,
+        "lido": "Parte das verbas aprovadas em projetos fora de prazo",
+        "esperado": "Parte das verbas aprovadas em projetos fora de prazo"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 2,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "pib-pc-alentejo-2000",
+        "n": 0,
+        "lido": "Produto interno bruto por habitante no Alentejo",
+        "esperado": "Produto interno bruto por habitante no Alentejo"
+      },
+      {
+        "lang": "pt",
+        "id": "pib-pc-alentejo-2024",
+        "n": 0,
+        "lido": "Produto interno bruto por habitante no Alentejo",
+        "esperado": "Produto interno bruto por habitante no Alentejo"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 1,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "pt",
+        "id": "estudos-evora-publicados",
+        "n": 0,
+        "lido": "Estudos publicados sobre Évora",
+        "esperado": "Estudos publicados sobre Évora"
+      },
+      {
+        "lang": "en",
+        "id": "custo-unitario-do-trabalho-2024",
+        "n": 1,
+        "lido": "Nominal unit labour cost per hour worked",
+        "esperado": "Nominal unit labour cost per hour worked"
+      },
+      {
+        "lang": "en",
+        "id": "despesa-em-id-2024-ue",
+        "n": 1,
+        "lido": "Gross domestic expenditure on research and development (R&D)",
+        "esperado": "Gross domestic expenditure on research and development (R&D)"
+      },
+      {
+        "lang": "en",
+        "id": "formacao-bruta-de-capital-fixo-2024",
+        "n": 1,
+        "lido": "Gross fixed capital formation at current prices",
+        "esperado": "Gross fixed capital formation at current prices"
+      },
+      {
+        "lang": "en",
+        "id": "formacao-bruta-de-capital-fixo-2025",
+        "n": 1,
+        "lido": "Investment in durable goods used for production (gross fixed capital formation)",
+        "esperado": "Investment in durable goods used for production (gross fixed capital formation)"
+      },
+      {
+        "lang": "en",
+        "id": "pib-real-per-capita-2024",
+        "n": 1,
+        "lido": "Real GDP per capita",
+        "esperado": "Real GDP per capita"
+      },
+      {
+        "lang": "en",
+        "id": "pib-real-per-capita-2025",
+        "n": 1,
+        "lido": "Real GDP per capita",
+        "esperado": "Real GDP per capita"
+      },
+      {
+        "lang": "en",
+        "id": "posicao-de-investimento-internacional-2024",
+        "n": 0,
+        "lido": "Net international investment position - annual data",
+        "esperado": "Net international investment position - annual data"
+      },
+      {
+        "lang": "en",
+        "id": "posicao-de-investimento-internacional-2025",
+        "n": 0,
+        "lido": "What the country owns abroad minus what it owes (net international investment position)",
+        "esperado": "What the country owns abroad minus what it owes (net international investment position)"
+      },
+      {
+        "lang": "en",
+        "id": "saldo-da-balanca-corrente-2024",
+        "n": 0,
+        "lido": "Current account balance - 3 year average",
+        "esperado": "Current account balance - 3 year average"
+      },
+      {
+        "lang": "en",
+        "id": "correcoes-publicadas",
+        "n": 1,
+        "lido": "Published corrections",
+        "esperado": "Published corrections"
+      },
+      {
+        "lang": "en",
+        "id": "fluxo-de-credito-as-empresas-2025",
+        "n": 0,
+        "lido": "Credit flow to (non-financial) companies",
+        "esperado": "Credit flow to (non-financial) companies"
+      },
+      {
+        "lang": "en",
+        "id": "jovens-nem-2025",
+        "n": 0,
+        "lido": "Young people not in employment, education or training",
+        "esperado": "Young people not in employment, education or training"
+      },
+      {
+        "lang": "en",
+        "id": "edicoes-publicadas",
+        "n": 0,
+        "lido": "Published editions",
+        "esperado": "Published editions"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 4,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-publicados",
+        "n": 0,
+        "lido": "Published studies",
+        "esperado": "Published studies"
+      },
+      {
+        "lang": "en",
+        "id": "correcoes-publicadas",
+        "n": 0,
+        "lido": "Published corrections",
+        "esperado": "Published corrections"
+      },
+      {
+        "lang": "en",
+        "id": "taxa-de-desemprego-2025",
+        "n": 0,
+        "lido": "Unemployment rate",
+        "esperado": "Unemployment rate"
+      },
+      {
+        "lang": "en",
+        "id": "taxa-de-desemprego-mip-2025",
+        "n": 0,
+        "lido": "Unemployment rate",
+        "esperado": "Unemployment rate"
+      },
+      {
+        "lang": "en",
+        "id": "divida-das-familias-2025-ue",
+        "n": 0,
+        "lido": "Household debt",
+        "esperado": "Household debt"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 3,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-aprovado-2026",
+        "n": 5,
+        "lido": "Recovery and Resilience Plan (PRR) funds approved for Évora",
+        "esperado": "Recovery and Resilience Plan (PRR) funds approved for Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-execucao-2026",
+        "n": 1,
+        "lido": "Share of approved funds already paid",
+        "esperado": "Share of approved funds already paid"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-pago-2026",
+        "n": 5,
+        "lido": "Recovery and Resilience Plan (PRR) funds paid in Évora",
+        "esperado": "Recovery and Resilience Plan (PRR) funds paid in Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-vencido-aprovado-2026",
+        "n": 5,
+        "lido": "Approved funds in projects past their deadline",
+        "esperado": "Approved funds in projects past their deadline"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-vencido-quota-2026",
+        "n": 1,
+        "lido": "Share of approved funds in projects past their deadline",
+        "esperado": "Share of approved funds in projects past their deadline"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-aprovado-2026",
+        "n": 3,
+        "lido": "Recovery and Resilience Plan (PRR) funds approved for Évora",
+        "esperado": "Recovery and Resilience Plan (PRR) funds approved for Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-execucao-2026",
+        "n": 0,
+        "lido": "Share of approved funds already paid",
+        "esperado": "Share of approved funds already paid"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-pago-2026",
+        "n": 3,
+        "lido": "Recovery and Resilience Plan (PRR) funds paid in Évora",
+        "esperado": "Recovery and Resilience Plan (PRR) funds paid in Évora"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-vencido-aprovado-2026",
+        "n": 3,
+        "lido": "Approved funds in projects past their deadline",
+        "esperado": "Approved funds in projects past their deadline"
+      },
+      {
+        "lang": "en",
+        "id": "evora-prr-vencido-quota-2026",
+        "n": 0,
+        "lido": "Share of approved funds in projects past their deadline",
+        "esperado": "Share of approved funds in projects past their deadline"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 2,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      },
+      {
+        "lang": "en",
+        "id": "pib-pc-alentejo-2000",
+        "n": 0,
+        "lido": "Gross domestic product per inhabitant in the Alentejo",
+        "esperado": "Gross domestic product per inhabitant in the Alentejo"
+      },
+      {
+        "lang": "en",
+        "id": "pib-pc-alentejo-2024",
+        "n": 0,
+        "lido": "Gross domestic product per inhabitant in the Alentejo",
+        "esperado": "Gross domestic product per inhabitant in the Alentejo"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 1,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      },
+      {
+        "lang": "en",
+        "id": "estudos-evora-publicados",
+        "n": 0,
+        "lido": "Published studies about Évora",
+        "esperado": "Published studies about Évora"
+      }
+    ],
+    "valores_visiveis": [
+      {
+        "lang": "pt",
+        "pagina": "primeira",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      },
+      {
+        "lang": "pt",
+        "pagina": "emprego",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      },
+      {
+        "lang": "en",
+        "pagina": "primeira",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          },
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      },
+      {
+        "lang": "en",
+        "pagina": "emprego",
+        "valores": [
+          {
+            "id": "taxa-de-desemprego-mip-2025",
+            "texto": "6,0",
+            "com_unidade": true
+          }
+        ]
+      }
+    ],
+    "correcoes_contadas": 7
+  },
+  "plantas": [
+    {
+      "nome": "A: contador sem declaração, A3",
+      "codigo": 1,
+      "mordida": "A3: .*uma linha do registo sem lugar",
+      "queixa": "A3: correcoes/index.html: uma linha do registo sem lugar que se possa compor.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "A: contador sem declaração, resolvedor",
+      "codigo": 1,
+      "mordida": "correcoes-publicadas.*nenhuma declaração diz de que lugar é",
+      "queixa": "mudancas: a linha \"correcoes-publicadas\" mudou e nenhuma declaração diz de que lugar é. Escreva-o em src/data/lugar-das-linhas.mjs, com a razão.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "declaração falsa de Portugal",
+      "codigo": 1,
+      "mordida": "A1: correcoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais»",
+      "queixa": "A1: correcoes-publicadas é declarado de «portugal» e deriva de «o-estado-do-pais».",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "data antiga do contador",
+      "codigo": 1,
+      "mordida": "E0b datas: o contador tem uma data anterior",
+      "queixa": "E0b datas: o contador tem uma data anterior à sua última recontagem.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "valor pela marca do nome no portão real",
+      "codigo": 1,
+      "mordida": "data-linha-claim=\"divida-das-familias-2025-ue\" numa página que não é do livro-razão",
+      "queixa": "    \u001b[31m✗\u001b[0m data-linha-claim=\"divida-das-familias-2025-ue\" numa página que não é do livro-razão. Esta marca é dos campos de uma linha, na página dessa linha ou no índice.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "nome fora da página do registo",
+      "mordeu": true,
+      "queixa": "A porta estreita do portão recusa o contexto plantado.",
+      "memoria_isolada": true
+    },
+    {
+      "nome": "nome de outra linha na entrada",
+      "mordeu": true,
+      "queixa": "A porta estreita do portão recusa o contexto plantado.",
+      "memoria_isolada": true
+    },
+    {
+      "nome": "B: taxa-de-desemprego-2025 sem entrada selada",
+      "codigo": 1,
+      "mordida": "taxa-de-desemprego-2025\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+      "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "B: taxa-de-desemprego-mip-2025 sem entrada selada",
+      "codigo": 1,
+      "mordida": "taxa-de-desemprego-mip-2025\\.yml.*história do valor: a lista tem 1 entradas e o registo sela 0",
+      "queixa": "    \u001b[31m✗\u001b[0m [taxa-de-desemprego-mip-2025.yml] história do valor: a lista tem 1 entradas e o registo sela 0.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "B: correcoes-publicadas sem entrada selada",
+      "codigo": 1,
+      "mordida": "correcoes-publicadas\\.yml.*história do valor: a lista tem 2 entradas e o registo sela 0",
+      "queixa": "    \u001b[31m✗\u001b[0m [correcoes-publicadas.yml] história do valor: a lista tem 2 entradas e o registo sela 0.",
+      "mordeu": true,
+      "memoria_isolada": true
+    },
+    {
+      "nome": "decimal retirado da primeira",
+      "mordeu": true,
+      "queixa": "E0 visível pt primeira: falta o valor publicado com a unidade.",
+      "memoria_isolada": true
+    },
+    {
+      "nome": "lugar retirado do registo inglês",
+      "mordeu": true,
+      "queixa": "E0 registo en: correcoes-publicadas perdeu a mudança ou o lugar com a porta.",
+      "memoria_isolada": true
+    },
+    {
+      "nome": "nome retirado da recontagem",
+      "mordeu": true,
+      "queixa": "E0b nome pt: correcoes-publicadas, entrada 1, perdeu o nome da medida.",
+      "memoria_isolada": true
+    },
+    {
+      "nome": "nome retirado da dívida das famílias",
+      "mordeu": true,
+      "queixa": "E0b nome en: divida-das-familias-2025-ue, entrada 0, perdeu o nome da medida.",
+      "memoria_isolada": true
+    }
+  ]
+}
+mordeu · prazo passado · E1: prazo emCurso passado em planta-do-prazo (2026-10-05, construção 2026-10-06); a ficha tem de ser decidida: prolongar a data ou tirar o campo emCurso.
+H2-b: 28 controlos e plantas do prazo e da composição dos estudos, data da construção 2026-10-06, sem escrever em dist/.
+H2-c: 5 corridas da check:pais em cópias temporárias; prazo e razão mordem pela E1; a retirada da chamada é detetada.
+mordeu · E1: prazo emCurso passado em evora-2027-capital-europeia-da-cultura (2027-12-31, construção 2028-01-01); a ficha tem de ser decidida: prolongar a data ou tirar o campo emCurso.
+mordeu · E1: declaração emCurso incompleta em evora-2027-capital-europeia-da-cultura: exige razão e data de fim válida.

@@ -1,0 +1,3 @@
+A cadeia da construção (os passos de `npm run build` depois do `astro build`, cada um no seu comando, com o código num
+ficheiro), corrida na cabeça do código da passagem R4-b (090557ab), antes das conferências de r4b/conferencias/.
+Os registos estão sem os caminhos da máquina.

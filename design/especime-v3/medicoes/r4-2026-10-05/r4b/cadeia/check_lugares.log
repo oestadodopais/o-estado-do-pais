@@ -1,0 +1,19 @@
+
+> o-estado-do-pais@0.1.0 check:lugares
+> node scripts/check-lugares.mjs && node tests/municipio/indice-de-divida.mjs --prova
+
+
+[32m  lugares ✓ [0m308 concelhos, 29 distritos e ilhas, 9 regiões lidos dos três extratos da Carta · 0 sem região, 0 sem distrito · as 308 linhas do poder de compra declaram a base do índice · 9 chaves com tema · 4928 medida(s) rendidas em 616 página(s), todas debaixo do tema que a tabela lhes dá · as palavras da leitura e da régua recalculadas do livro-razão em todas elas · o ganho médio contra Portugal recontado em 616 leitura(s), e 0 sem com que comparar
+
+índice de dívida · 616 página(s) de concelho, 614 com valor (594 dentro e 20 fora do limite), 2 sem valor · 2 mapa(s) da dívida em «Lugares» · 10 planta(s), 10 a morder
+  mordeu · a unidade antiga de volta
+  mordeu · a unidade sem a média
+  mordeu · a unidade sem os anos anteriores
+  mordeu · o teto escrito à mão
+  mordeu · as palavras do estado de antes
+  mordeu · o estado trocado
+  mordeu · a dobra mudada
+  mordeu · a legenda do mapa da dívida na forma antiga
+  mordeu · o teto do cabeçalho da tabela escrito à mão
+  mordeu · as palavras de antes no cartão das câmaras
+índice de dívida · todas as células a 0.

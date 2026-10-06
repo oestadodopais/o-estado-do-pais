@@ -322,6 +322,26 @@
       "queixa": "V1-R4 pt: «divida-publica-2025»: a frase «o que é» não é a do cartão («É quanto mudou em três anos a quota de Portugal nas exportaç» contra «É tudo o que as administrações públicas devem, em percentage»)."
     },
     {
+      "nome": "a parte do sinal tirada da explicação (pt)",
+      "mordeu": true,
+      "queixa": "V1-R4 pt: «posicao-de-investimento-internacional-2025»: a explicação não diz o que o sinal quer dizer, como a conta desta célula manda («Negativa quer dizer que o país deve ao exterior mais do que tem lá.»)."
+    },
+    {
+      "nome": "a parte do sinal do outro ramo (pt)",
+      "mordeu": true,
+      "queixa": "V1-R4 pt: «posicao-de-investimento-internacional-2025»: a explicação não diz o que o sinal quer dizer, como a conta desta célula manda («Negativa quer dizer que o país deve ao exterior mais do que tem lá.»)."
+    },
+    {
+      "nome": "uma porta a mais numa explicação (pt)",
+      "mordeu": true,
+      "queixa": "V1-R4 pt: «precos-da-habitacao-2025»: a frase «o que é» não é a do cartão («Em 2025 os preços das casas compradas pelas famílias subiram» contra «Em 2025 os preços das casas compradas pelas famílias subiram»)."
+    },
+    {
+      "nome": "o selo de uma explicação sai da L1 só com a explicação conferida (pt)",
+      "mordeu": true,
+      "queixa": null
+    },
+    {
       "nome": "o lado trocado na explicação de um valor de referência (en)",
       "mordeu": true,
       "queixa": "V1-R4 en: «divida-publica-2025»: a explicação diz o lado «abaixo», e a conta desta célula dá «acima»."
@@ -335,6 +355,26 @@
       "nome": "a frase «o que é» de outra medida (en)",
       "mordeu": true,
       "queixa": "V1-R4 en: «divida-publica-2025»: a frase «o que é» não é a do cartão («It is how much Portugal’s share of the exports of advanced e» contra «It is everything general government owes, as a percentage of»)."
+    },
+    {
+      "nome": "a parte do sinal tirada da explicação (en)",
+      "mordeu": true,
+      "queixa": "V1-R4 en: «posicao-de-investimento-internacional-2025»: a explicação não diz o que o sinal quer dizer, como a conta desta célula manda («Negative means the country owes abroad more than it owns there.»)."
+    },
+    {
+      "nome": "a parte do sinal do outro ramo (en)",
+      "mordeu": true,
+      "queixa": "V1-R4 en: «posicao-de-investimento-internacional-2025»: a explicação não diz o que o sinal quer dizer, como a conta desta célula manda («Negative means the country owes abroad more than it owns there.»)."
+    },
+    {
+      "nome": "uma porta a mais numa explicação (en)",
+      "mordeu": true,
+      "queixa": "V1-R4 en: «precos-da-habitacao-2025»: a frase «o que é» não é a do cartão («In 2025 the prices of homes bought by households rose 17,6 %» contra «In 2025 the prices of homes bought by households rose 17,6 %»)."
+    },
+    {
+      "nome": "o selo de uma explicação sai da L1 só com a explicação conferida (en)",
+      "mordeu": true,
+      "queixa": null
     },
     {
       "nome": "uma palavra que diz o que a medida é, sem apoio",

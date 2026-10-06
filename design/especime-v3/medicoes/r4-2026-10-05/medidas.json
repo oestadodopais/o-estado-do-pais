@@ -1,9 +1,9 @@
 {
   "bloco": "R4",
   "guiao": "design/especime-v3/medicoes/r4-2026-10-05/medir-r4.mjs",
-  "cabeca": "57d81ea6331b6bf70f228b23afea1cce8d299130",
+  "cabeca": "db033a39f55bd20374fc16d295d35116353256e5",
   "estado_seguido": "",
-  "construcao": "57d81ea6331b6bf70f228b23afea1cce8d299130",
+  "construcao": "090557ab999d324b6e52f22a6f8408e5c3737355",
   "medidas": [
     {
       "nome": "linhas_do_livro_razao",
@@ -250,7 +250,7 @@
     },
     {
       "nome": "plantas_da_k17_das_familias",
-      "valor": 17,
+      "valor": 25,
       "comando": "node tests/cartao/cartao.mjs --prova --json · contas.familias_plantas_lista",
       "conhecido_positivo": {
         "o_que": "todas mordem",
@@ -259,7 +259,7 @@
     },
     {
       "nome": "plantas_da_k17_das_familias_mordidas",
-      "valor": 17,
+      "valor": 25,
       "comando": "idem, as que morderam",
       "conhecido_positivo": {
         "o_que": "a primeira é a de uma linha sem frase",
@@ -277,10 +277,19 @@
     },
     {
       "nome": "plantas_da_s6",
-      "valor": 28,
-      "comando": "node tests/series/series.mjs --prova --json · plantas",
+      "valor": 13,
+      "comando": "node tests/series/series.mjs --prova --json · as plantas com celula S6",
       "conhecido_positivo": {
-        "o_que": "todas mordem",
+        "o_que": "todas mordem, e as quatro do R4 estão entre elas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_do_check_series",
+      "valor": 28,
+      "comando": "node tests/series/series.mjs --prova --json · todas as plantas, das seis células",
+      "conhecido_positivo": {
+        "o_que": "há plantas de mais de uma célula",
         "encontrado": true
       }
     },
@@ -826,7 +835,7 @@
     },
     {
       "nome": "segundos_do_commit_do_brief_a_cabeca_medida",
-      "valor": 27526,
+      "valor": 33948,
       "comando": "git show -s --format=%ct 9424e9e7 e HEAD",
       "conhecido_positivo": {
         "o_que": "a cabeça medida é posterior ao brief",
@@ -907,7 +916,7 @@
     },
     {
       "nome": "conferir_mapa_citacoes_na_linha",
-      "valor": 420,
+      "valor": 429,
       "comando": "idem · «citações conferidas na linha citada (±7)»",
       "conhecido_positivo": {
         "o_que": "a secção do R4 cita o resolvedor",
@@ -916,7 +925,7 @@
     },
     {
       "nome": "conferir_mapa_citacoes_longe",
-      "valor": 24,
+      "valor": 27,
       "comando": "idem · «citação está no ficheiro, mas longe da linha citada»",
       "conhecido_positivo": {
         "o_que": "a conta é um número",
@@ -938,6 +947,348 @@
       "comando": "OEDP_LEITURAS_EUROSTAT=<pasta fora do repositório> · as três respostas, com o resumo e os rótulos",
       "conhecido_positivo": {
         "o_que": "a resposta das três classes traz o rótulo de CP041",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_recibos_de_linha_com_o_marcador",
+      "valor": 348,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · contas.recibos_com_frase.com_marcador",
+      "conhecido_positivo": {
+        "o_que": "são as linhas por confirmar vezes as duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_linhas_por_confirmar_na_fonte",
+      "valor": 174,
+      "comando": "idem · contas.familias.por_confirmar_linhas",
+      "conhecido_positivo": {
+        "o_que": "a linha de Funchal do desemprego registado está na lista declarada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_entradas_por_confirmar_na_fonte",
+      "valor": 39,
+      "comando": "idem · contas.familias.por_confirmar_entradas",
+      "conhecido_positivo": {
+        "o_que": "a planta «uma marca a mais num recibo» morde",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_series_por_confirmar_na_fonte",
+      "valor": 6,
+      "comando": "idem · contas.series_o_que_e.por_confirmar",
+      "conhecido_positivo": {
+        "o_que": "a planta «uma marca em falta num recibo de série» morde",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_recibos_de_serie_com_o_marcador",
+      "valor": 12,
+      "comando": "idem · contas.recibos_das_series_com_frase.com_marcador",
+      "conhecido_positivo": {
+        "o_que": "são as séries por confirmar vezes as duas edições",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_entradas_so_com_a_conta_declarada",
+      "valor": 15,
+      "comando": "as entradas com alguma parte só da casa (a medida estrita do R4) menos as por confirmar na fonte (a conta declarada de uma linha calculada confirma)",
+      "conhecido_positivo": {
+        "o_que": "a família dos cem euros por função do Orçamento está nas por confirmar (a parte «que o Orçamento prevê» só tem o nome do projeto)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_recibos_com_a_parte_do_sinal",
+      "valor": 2,
+      "comando": "idem · contas.recibos_com_frase.com_sinal",
+      "conhecido_positivo": {
+        "o_que": "a planta «a parte do sinal tirada do recibo do ano anterior» morde",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_primeira_pagina_pt_partes_do_sinal",
+      "valor": 1,
+      "comando": "index.html · [data-veredicto-sinal]",
+      "conhecido_positivo": {
+        "o_que": "a da posição de investimento internacional está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_primeira_pagina_en_partes_do_sinal",
+      "valor": 1,
+      "comando": "en/index.html · [data-veredicto-sinal]",
+      "conhecido_positivo": {
+        "o_que": "a da posição de investimento internacional está lá",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_recibos_com_o_titulo_na_cabeca",
+      "valor": 2826,
+      "comando": "dist/livro-razao/*/index.html · .linha-nome-da-fonte com o campo document.title",
+      "conhecido_positivo": {
+        "o_que": "há recibos com o título na cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_recibos_com_o_titulo_tambem_na_atribuicao",
+      "valor": 0,
+      "comando": "idem, os que repetem o campo na frase de atribuição",
+      "conhecido_positivo": {
+        "o_que": "a conta é a dos que a régua via repetidos, que desceu a zero",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_portas_do_recibo_do_pib_para_o_documento",
+      "valor": 3,
+      "comando": "dist/livro-razao/pib-real-per-capita-2025/index.html · as ligações para o documento tipsna40, fora do cabeçalho e do rodapé",
+      "conhecido_positivo": {
+        "o_que": "são as da cabeça de partida (a contagem dela em l1-destinos-557844fe.json)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_recibos_de_serie_com_o_valor_pelo_ponto",
+      "valor": 24,
+      "comando": "os recibos das séries com [data-ponto] na frase «o que é»",
+      "conhecido_positivo": {
+        "o_que": "nenhum recibo de série tem selo na frase",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_recibos_de_serie_com_selo_na_frase",
+      "valor": 0,
+      "comando": "os recibos das séries com a.src-chip na frase «o que é»",
+      "conhecido_positivo": {
+        "o_que": "a planta «o selo de volta na frase de uma série» morde",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_l1_base",
+      "valor": 2714,
+      "comando": "l1-r4b.json · contagens.base (medir-l1-r4b.mjs)",
+      "conhecido_positivo": {
+        "o_que": "os dois conhecidos-positivos da medida morderam (a lista da régua e a omissão das vezes)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_l1_r4",
+      "valor": 2736,
+      "comando": "l1-r4b.json · contagens.r4 (medir-l1-r4b.mjs)",
+      "conhecido_positivo": {
+        "o_que": "os dois conhecidos-positivos da medida morderam (a lista da régua e a omissão das vezes)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_l1_agora",
+      "valor": 2714,
+      "comando": "l1-r4b.json · contagens.agora (medir-l1-r4b.mjs)",
+      "conhecido_positivo": {
+        "o_que": "os dois conhecidos-positivos da medida morderam (a lista da régua e a omissão das vezes)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_l1_r4b_novas",
+      "valor": 0,
+      "comando": "l1-r4b.json · contagens.r4b_novas (medir-l1-r4b.mjs)",
+      "conhecido_positivo": {
+        "o_que": "os dois conhecidos-positivos da medida morderam (a lista da régua e a omissão das vezes)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_l1_r4b_sairam",
+      "valor": 0,
+      "comando": "l1-r4b.json · contagens.r4b_sairam (medir-l1-r4b.mjs)",
+      "conhecido_positivo": {
+        "o_que": "os dois conhecidos-positivos da medida morderam (a lista da régua e a omissão das vezes)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_l1_r4b_agravadas",
+      "valor": 0,
+      "comando": "l1-r4b.json · contagens.r4b_agravadas (medir-l1-r4b.mjs)",
+      "conhecido_positivo": {
+        "o_que": "os dois conhecidos-positivos da medida morderam (a lista da régua e a omissão das vezes)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_l1_r4b_aliviadas",
+      "valor": 0,
+      "comando": "l1-r4b.json · contagens.r4b_aliviadas (medir-l1-r4b.mjs)",
+      "conhecido_positivo": {
+        "o_que": "os dois conhecidos-positivos da medida morderam (a lista da régua e a omissão das vezes)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_l1_r4b_iguais",
+      "valor": 2714,
+      "comando": "l1-r4b.json · contagens.r4b_iguais (medir-l1-r4b.mjs)",
+      "conhecido_positivo": {
+        "o_que": "os dois conhecidos-positivos da medida morderam (a lista da régua e a omissão das vezes)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_l1_r4_novas",
+      "valor": 22,
+      "comando": "l1-r4b.json · contagens.r4_novas (medir-l1-r4b.mjs)",
+      "conhecido_positivo": {
+        "o_que": "os dois conhecidos-positivos da medida morderam (a lista da régua e a omissão das vezes)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_l1_r4_agravadas_com_vezes",
+      "valor": 896,
+      "comando": "l1-r4b.json · contagens.r4_agravadas_com_vezes (medir-l1-r4b.mjs)",
+      "conhecido_positivo": {
+        "o_que": "os dois conhecidos-positivos da medida morderam (a lista da régua e a omissão das vezes)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_l1_r4_agravadas_sem_vezes",
+      "valor": 0,
+      "comando": "l1-r4b.json · contagens.r4_agravadas_sem_vezes (medir-l1-r4b.mjs)",
+      "conhecido_positivo": {
+        "o_que": "os dois conhecidos-positivos da medida morderam (a lista da régua e a omissão das vezes)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_plantas_r4_sobre_a_construcao",
+      "valor": 6,
+      "comando": "r4b/plantas-portoes-r4.json (tests/pais/portoes.mjs --prefixo r4-, na cabeça do código)",
+      "conhecido_positivo": {
+        "o_que": "todas passaram, com a árvore seguida limpa e os ficheiros repostos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_plantas_r4b_sobre_a_construcao",
+      "valor": 2,
+      "comando": "r4b/plantas-portoes-r4b.json (--prefixo r4b-)",
+      "conhecido_positivo": {
+        "o_que": "todas passaram, com a árvore seguida limpa e os ficheiros repostos",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_planta_do_teto_da_l1",
+      "valor": 2714,
+      "comando": "r4b/planta-teto-l1-r4b.json · o teto lido",
+      "conhecido_positivo": {
+        "o_que": "a contagem do registo trocada em memória é recusada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_plantas_v1r4_novas",
+      "valor": 8,
+      "comando": "node tests/inicio/primeira-pagina.mjs --prova --json · as plantas do sinal e das portas",
+      "conhecido_positivo": {
+        "o_que": "todas mordem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_plantas_k17_novas",
+      "valor": 8,
+      "comando": "node tests/cartao/cartao.mjs --prova --json · as plantas do marcador, do sinal e da porta única",
+      "conhecido_positivo": {
+        "o_que": "todas mordem",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_conferencia_check_cartao_codigo",
+      "valor": 0,
+      "comando": "r4b/conferencias/check-cartao.codigo (conferencias-r4b.sh)",
+      "conhecido_positivo": {
+        "o_que": "a árvore seguida estava limpa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_conferencia_check_primeira_codigo",
+      "valor": 0,
+      "comando": "r4b/conferencias/check-primeira.codigo (conferencias-r4b.sh)",
+      "conhecido_positivo": {
+        "o_que": "a árvore seguida estava limpa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_conferencia_check_pais_codigo",
+      "valor": 0,
+      "comando": "r4b/conferencias/check-pais.codigo (conferencias-r4b.sh)",
+      "conhecido_positivo": {
+        "o_que": "a árvore seguida estava limpa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_conferencia_check_lugar_codigo",
+      "valor": 0,
+      "comando": "r4b/conferencias/check-lugar.codigo (conferencias-r4b.sh)",
+      "conhecido_positivo": {
+        "o_que": "a árvore seguida estava limpa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_conferencia_check_series_codigo",
+      "valor": 0,
+      "comando": "r4b/conferencias/check-series.codigo (conferencias-r4b.sh)",
+      "conhecido_positivo": {
+        "o_que": "a árvore seguida estava limpa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_conferencia_typecheck_codigo",
+      "valor": 0,
+      "comando": "r4b/conferencias/typecheck.codigo (conferencias-r4b.sh)",
+      "conhecido_positivo": {
+        "o_que": "a árvore seguida estava limpa",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_capturas",
+      "valor": 62,
+      "comando": "r4b/capturas-r4b.json · capturas (captar-r4.mjs --r4b)",
+      "conhecido_positivo": {
+        "o_que": "cada uma tem o ficheiro na pasta das capturas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "r4b_capturas_sem_rolar_para_o_lado",
+      "valor": 62,
+      "comando": "idem · largura do documento ≤ largura da janela",
+      "conhecido_positivo": {
+        "o_que": "há capturas de um recibo com o marcador",
         "encontrado": true
       }
     }
@@ -1898,5 +2249,71 @@
   "portoes": {
     "cabeca": "57d81ea6331b6bf70f228b23afea1cce8d299130",
     "cabeca_fim": "57d81ea6331b6bf70f228b23afea1cce8d299130"
+  },
+  "r4b_entradas_por_confirmar": {
+    "familias": [
+      "oe-2026-cem-euros-funcao-01, oe-2026-cem-euros-funcao-02, oe-2026-cem-euros-funcao-03, oe-2026-cem-euros-funcao-04, oe-2026-cem-euros-funcao-05, oe-2026-cem-euros-funcao-06, oe-2026-cem-euros-funcao-07, oe-2026-cem-euros-funcao-08, oe-2026-cem-euros-funcao-09, oe-2026-cem-euros-funcao-10",
+      "execucao-2026-07-cem-euros-funcao-01, execucao-2026-07-cem-euros-funcao-02, execucao-2026-07-cem-euros-funcao-03, execucao-2026-07-cem-euros-funcao-04, execucao-2026-07-cem-euros-funcao-05, execucao-2026-07-cem-euros-funcao-06, execucao-2026-07-cem-euros-funcao-07, execucao-2026-07-cem-euros-funcao-08, execucao-2026-07-cem-euros-funcao-09, execucao-2026-07-cem-euros-funcao-10",
+      "oe-2026-cem-euros-ministerio-administracao-interna, oe-2026-cem-euros-ministerio-agricultura-e-mar, oe-2026-cem-euros-ministerio-ambiente-e-energia, oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto, oe-2026-cem-euros-ministerio-defesa-nacional, oe-2026-cem-euros-ministerio-economia-e-coesao-territorial, oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao, oe-2026-cem-euros-ministerio-financas, oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao, oe-2026-cem-euros-ministerio-justica, oe-2026-cem-euros-ministerio-negocios-estrangeiros, oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros, oe-2026-cem-euros-ministerio-reforma-do-estado, oe-2026-cem-euros-ministerio-saude, oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social",
+      "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado",
+      "oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10",
+      "execucao-2026-07-despesa-funcao-01, execucao-2026-07-despesa-funcao-02, execucao-2026-07-despesa-funcao-03, execucao-2026-07-despesa-funcao-04, execucao-2026-07-despesa-funcao-05, execucao-2026-07-despesa-funcao-06, execucao-2026-07-despesa-funcao-07, execucao-2026-07-despesa-funcao-08, execucao-2026-07-despesa-funcao-09, execucao-2026-07-despesa-funcao-10",
+      "oe-2026-diferencas-consolidacao-funcional, execucao-2026-07-diferencas-consolidacao-funcional",
+      "oe-2026-despesa-ministerio-administracao-interna, oe-2026-despesa-ministerio-agricultura-e-mar, oe-2026-despesa-ministerio-ambiente-e-energia, oe-2026-despesa-ministerio-cultura-juventude-e-desporto, oe-2026-despesa-ministerio-defesa-nacional, oe-2026-despesa-ministerio-economia-e-coesao-territorial, oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao, oe-2026-despesa-ministerio-financas, oe-2026-despesa-ministerio-infraestruturas-e-habitacao, oe-2026-despesa-ministerio-justica, oe-2026-despesa-ministerio-negocios-estrangeiros, oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros, oe-2026-despesa-ministerio-reforma-do-estado, oe-2026-despesa-ministerio-saude, oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social",
+      "oe-2026-despesa-ministerio-encargos-gerais-do-estado",
+      "oe-2026-despesa-programa-001, oe-2026-despesa-programa-002, oe-2026-despesa-programa-003, oe-2026-despesa-programa-004, oe-2026-despesa-programa-005, oe-2026-despesa-programa-006, oe-2026-despesa-programa-007, oe-2026-despesa-programa-008, oe-2026-despesa-programa-009, oe-2026-despesa-programa-010, oe-2026-despesa-programa-011, oe-2026-despesa-programa-012, oe-2026-despesa-programa-013, oe-2026-despesa-programa-014, oe-2026-despesa-programa-015, oe-2026-despesa-programa-016, oe-2026-despesa-programa-017, oe-2026-despesa-programa-018, oe-2026-despesa-programa-019, oe-2026-despesa-programa-020",
+      "execucao-2026-08-despesa-programa-001, execucao-2026-08-despesa-programa-002, execucao-2026-08-despesa-programa-003, execucao-2026-08-despesa-programa-004, execucao-2026-08-despesa-programa-005, execucao-2026-08-despesa-programa-006, execucao-2026-08-despesa-programa-007, execucao-2026-08-despesa-programa-008, execucao-2026-08-despesa-programa-009, execucao-2026-08-despesa-programa-010, execucao-2026-08-despesa-programa-011, execucao-2026-08-despesa-programa-012, execucao-2026-08-despesa-programa-013, execucao-2026-08-despesa-programa-014, execucao-2026-08-despesa-programa-015, execucao-2026-08-despesa-programa-016, execucao-2026-08-despesa-programa-017, execucao-2026-08-despesa-programa-018, execucao-2026-08-despesa-programa-019, execucao-2026-08-despesa-programa-020",
+      "execucao-2026-08-subtotal-programas",
+      "oe-2026-despesa-efetiva-administracao-central, execucao-2026-07-despesa-efetiva-administracao-central, execucao-2026-08-despesa-efetiva-administracao-central",
+      "oe-2026-despesa-efetiva-administracao-central-seguranca-social, execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
+      "oe-2026-receita-efetiva-administracao-central, execucao-2026-07-receita-efetiva-administracao-central, execucao-2026-08-receita-efetiva-administracao-central",
+      "oe-2026-receita-efetiva-administracao-central-seguranca-social, execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
+      "oe-2026-despesa-orcamental-administracao-central, execucao-2026-07-despesa-orcamental-administracao-central",
+      "oe-2026-receita-orcamental-administracao-central, execucao-2026-07-receita-orcamental-administracao-central",
+      "oe-2026-despesa-primaria-administracao-central, execucao-2026-07-despesa-primaria-administracao-central",
+      "oe-2026-saldo-global-administracao-central-seguranca-social, execucao-2026-08-saldo-global-administracao-central-seguranca-social",
+      "oe-2026-saldo-primario-administracao-central, execucao-2026-07-saldo-primario-administracao-central",
+      "oe-2026-ativos-e-passivos-da-despesa-administracao-central, execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
+      "oe-2026-ativos-e-passivos-da-receita-administracao-central, execucao-2026-07-ativos-e-passivos-da-receita-administracao-central",
+      "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social, execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social",
+      "oe-2026-despesa-bruta-administracao-central",
+      "oe-2026-receita-bruta-administracao-central",
+      "oe-2026-despesa-consolidada-administracao-central, oe-2026-despesa-consolidada-seguranca-social, oe-2026-despesa-total",
+      "oe-2026-receita-consolidada-administracao-central, oe-2026-receita-consolidada-seguranca-social",
+      "distancia-acores-ue27, distancia-alentejo-ue27, distancia-algarve-ue27, distancia-centro-ue27, distancia-grande-lisboa-ue27, distancia-madeira-ue27, distancia-norte-ue27, distancia-oeste-e-vale-do-tejo-ue27, distancia-peninsula-de-setubal-ue27",
+      "distancia-portugal-ue27",
+      "distancia-setubal-grande-lisboa",
+      "evora-concentracao-vab4, portugal-concentracao-vab4",
+      "evora-vab-empresarial",
+      "evora-divergencia-municipio-dgal",
+      "evora-divida-inicio-mandato-reexpressa",
+      "evora-pelouros-2021-presidente, evora-pelouros-2021-vice-presidente, evora-pelouros-2025-presidente, evora-pelouros-2025-vice-presidente, evora-pelouros-2025-vereadora",
+      "evora-pelouros-2021-total, evora-pelouros-2025-total",
+      "evora-prr-aprovado",
+      "evora-prr-pago",
+      "evora-prr-vencido-aprovado",
+      "evora-prr-execucao",
+      "evora-prr-vencido-quota",
+      "correcoes-publicadas",
+      "estudos-publicados",
+      "edicoes-publicadas",
+      "estudos-evora-publicados",
+      "municipios-portugal-caop",
+      "municipios-com-estudo-aprofundado",
+      "municipios-sem-estudo-aprofundado",
+      "agua-nao-faturada-portugal",
+      "penalizacao-antecipacao-um-ano-neutra",
+      "factor-sustentabilidade",
+      "concelho:desempregoRegistado"
+    ],
+    "series": [
+      "serie-cem-euros-de-2015-01",
+      "serie-ihpc-combustiveis-variacao-homologa-ue",
+      "serie-ihpc-combustiveis-variacao-homologa",
+      "serie-ihpc-energia-da-casa-variacao-homologa",
+      "serie-ihpc-rendas-variacao-homologa",
+      "serie-precos-da-habitacao-variacao-homologa",
+      "serie-remuneracao-bruta-mensal-media-real"
+    ]
   }
 }
