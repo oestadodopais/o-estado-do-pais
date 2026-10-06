@@ -1,6 +1,6 @@
 # H4 · a medição do menu e os lugares da inteligência artificial
 
-O registo abaixo conserva as passagens anteriores. A entrega atual está na secção «A passagem H4-d», no fim; os estados anteriores abaixo são históricos.
+O registo abaixo conserva as passagens anteriores. A entrega atual está na secção «A passagem H4-e», no fim; os estados anteriores abaixo são históricos.
 
 Construção por Codex gpt-6-astra nas passagens H4 a H4-d; a redação final dos papéis é a da passagem H4-e, pelo lugar de direção, depois da leitura curta do diff da H4-d (`design/especime-v3/critica/LEITURA-H4-d-2026-10-06.md`). As frases abaixo que chamam provisória ou final a uma redação anterior são históricas.
 

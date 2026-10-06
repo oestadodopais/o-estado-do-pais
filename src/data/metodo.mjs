@@ -551,7 +551,7 @@ export const REGRAS = [
         'A inteligência artificial propõe o que medir, a partir de critérios declarados: o que os quadros com que as instituições avaliam Portugal apontam como problema, o que as fontes oficiais vão publicar, o que os leitores perguntam ou corrigem. A direção decide. A lista do que está em curso, do que se segue e do porquê é pública, e nada sai dela em silêncio.',
       ],
       en: [
-        'Artificial intelligence proposes what to measure, from declared criteria: what the frameworks the institutions use to assess Portugal flag as a problem, what the official sources will publish, what readers ask about or correct. The director decides. The list of what is under way, what comes next and why is public, and nothing leaves it in silence.',
+        'Artificial intelligence proposes what to measure, from declared criteria: what the frameworks the institutions use to assess Portugal flag as a problem, what the official sources will publish, what readers ask about or correct. Direction decides. The list of what is under way, what comes next and why is public, and nothing leaves it in silence.',
       ],
     },
     /* O mecanismo lido contra a página construída, a 16.08.2026: a página existe
@@ -563,7 +563,7 @@ export const REGRAS = [
         'A pergunta de um estudo é fixada e guardada no motor antes da recolha, e a agenda mostra, item a item, o critério que o pôs lá, quem o propôs, quem o decidiu, e cada mudança de estado com a sua data e o seu motivo. Onde não há critério, ou onde não há ainda decisão da direção, a página di-lo.',
       ],
       en: [
-        'The question of a study is fixed and stored in the engine before collection begins, and the agenda shows, item by item, the criterion that put it there, who proposed it, who decided it, and every change of state with its date and its reason. Where there is no criterion, or no director decision yet, the page says so.',
+        'The question of a study is fixed and stored in the engine before collection begins, and the agenda shows, item by item, the criterion that put it there, who proposed it, who decided it, and every change of state with its date and its reason. Where there is no criterion, or no decision by direction yet, the page says so.',
       ],
     },
     /* A prova desta regra são as contagens da agenda, e mais nada. A contagem
