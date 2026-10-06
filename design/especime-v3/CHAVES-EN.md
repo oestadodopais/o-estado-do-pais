@@ -1505,3 +1505,45 @@ Uma chave nova em `src/i18n/strings.mjs`, e três textos de dados ao lado, que n
 | `SUGESTOES.portaDaNota` | Como tratamos os seus dados | How we handle your data | a porta da nota para a página «Privacidade», as duas do brief |
 | `PRIVACIDADE.texto` (`src/data/privacidade.mjs`) | o texto do §5, decisão 2, do brief, à letra | a edição fiel, frase a frase | onde a frase portuguesa diz o mesmo que a nota aprovada a 03.10.2026, o inglês é o que o diretor aprovou com ela («What is kept», «The data is held on servers in the European Union», «A decided suggestion is deleted after ninety days; an undecided one after a year», «you may also complain to the Portuguese data protection authority, the Comissão Nacional de Proteção de Dados (cnpd.pt)»); onde mudou, diz o mesmo que a frase nova («what remains of it, for one hour, is a mark from which it cannot be recovered», «the services that host the site and the box», «O Estado do País is responsible for this data», «This site does not use cookies or track who reads it»). O nome do projeto fica em português, como em todas as páginas inglesas |
 | `PRIVACIDADE.descricao` | a primeira frase do texto | a primeira frase da edição inglesa | a descrição do `<head>`: o que a página é |
+
+## EX1 · as explicações e a leitura da semana, 05.10.2026
+
+As chaves novas em `src/i18n/strings.mjs`, lidas do ficheiro por guião na construção do bloco; as peças com espaço nas pontas vão entre «» com o espaço. As peças da primeira frase da leitura da semana compõem-se pela conta das três contagens (nenhum, um, vários), e as do inglês dizem a mesma frase na ordem do inglês. O texto da explicação não está aqui: é do lugar de direção, em `src/data/explicacoes/`, com a edição inglesa fiel ao lado da portuguesa e as duas na auditoria das leituras.
+
+| chave | pt | en | nota |
+|---|---|---|---|
+| `nav.explicacoes` | «Explicações» | «Explainers» | o `<h1>` da lista das explicações, a migalha dela e a porta dela no índice |
+| `primeira.paraPerceber` | «Para perceber» | «To understand» | o título do bloco que fecha «O que se passa» na primeira página |
+| `indice.seccoes.explicacoes` | «As explicações» | «Explainers» | o nome da secção do índice que abre a lista |
+| `explicacoes.metaDescription` | «O que mudou nos números do país na última semana, e explicações em português corrente de como os números se ligam.» | «What changed in the country’s figures over the last week, and explainers in everyday words on how the figures fit together.» | a descrição do `<head>` da lista; o inglês diz «everyday words» e não «plain language», porque a frase retirada «Language» morde dentro de uma frase nova |
+| `explicacoes.listaK` | «As explicações» | «The explainers» | o título da lista das explicações na página delas |
+| `explicacoes.oQueIstoNaoDiz` | «O que isto não diz» | «What this does not say» | o título da secção que fecha cada explicação (o §5, ponto 3, do brief) |
+| `explicacoes.numerosDaFigura` | «Os números desta figura» | «The figures in this chart» | o resumo da lista dobrada dos números de uma figura, com a porta do recibo de cada um |
+| `semana.titulo` | «A leitura da semana» | «This week’s reading» | o título da leitura da semana, na lista, no `<h1>` e na migalha |
+| `semana.metaDescription` | «O que mudou nos números do país nos últimos sete dias, de quanto para quanto, e lido de onde.» | «What changed in the country’s figures over the last seven days, from how much to how much, and read from where.» | a descrição do `<head>` da página da semana |
+| `semana.entre` | «Entre » | «Between » | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.e` | « e » | « and » | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.virgula` | «, » | «, » | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.nenhumRelido` | «nenhum número foi relido na fonte» | «no figure was re-read at the source» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.umRelido` | « número foi relido na fonte» | « figure was re-read at the source» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.variosRelidos` | « números foram relidos na fonte» | « figures were re-read at the source» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.nenhumDeValor` | «nenhum mudou de valor» | «none changed value» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.umDeValor` | « mudou de valor» | « changed value» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.variosDeValor` | « mudaram de valor» | « changed value» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.nenhumDeProveniencia` | «nenhum mudou de proveniência» | «none changed provenance» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.umDeProveniencia` | « mudou de proveniência» | « changed provenance» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.variosDeProveniencia` | « mudaram de proveniência» | « changed provenance» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.nenhumMudou` | «, e nenhum mudou de valor nem de proveniência» | «, and none changed value or provenance» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.ponto` | «.» | «.» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.mudancasK` | «Os números que mudaram de valor» | «The figures that changed value» | o título da lista das mudanças de valor |
+| `semana.deAntes` | «: de » | «: from » | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.para` | « para » | « to » | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.subiu` | «, subiu» | «, rose» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.desceu` | «, desceu» | «, fell» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.naoMudou` | «, não mudou» | «, did not change» | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.em` | «, em » | «, on » | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
+| `semana.primeiraK` | «A primeira página» | «The front page» | o título da secção das frases da primeira página |
+| `semana.primeiraNenhuma` | «Nenhuma frase da primeira página mudou por causa disto.» | «No sentence on the front page changed because of this.» | quando nenhuma frase da primeira página mudou de ramo |
+| `semana.primeiraMudaram` | «Estas frases da primeira página mudaram por causa disto:» | «These sentences on the front page changed because of this:» | quando alguma mudou, antes da lista delas |
+| `semana.saiuDaPrimeira` | «saiu da primeira página.» | «left the front page.» | quando o bloco de uma frase saiu da primeira página |
+| `semana.doisPontos` | «: » | «: » | uma peça da primeira frase da leitura da semana ou da frase de cada mudança |
