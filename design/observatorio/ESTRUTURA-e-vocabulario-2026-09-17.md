@@ -48,9 +48,11 @@ A nota do lugar de direção no §5 do brief, em `c0cbc79b`, fecha a divergênci
 
 A study is a page with: the title; the project's reading (the opening: «Em resumo», «O que este projeto conclui», «O que podia funcionar melhor»); the text of the study; at the end, one line: «Documento original (PDF)» for the edition as published, and the date. There is no "Edições" box and no second door. The English edition is reached by the site's language switch, as every other page. The studies list shows every study newest first, with its title, its place and theme, its date and the first paragraph of its reading. The front page and each place page show their studies the same way. A study's numbers keep their receipts exactly as today.
 
-## 4 · O menu: cinco entradas
+## 4 · O menu: seis entradas desde 03.10.2026, e a decisão de 06.10.2026
 
-**Portugal · Lugares · Temas · Estudos · Sobre.** Portugal abre a primeira página. Lugares abre a geografia. Temas abre as oito portas do §2. Estudos abre a lista. Sobre reúne as portas do que o projeto diz sobre si. Método, Correções, Agenda, Números e fontes e Portugal na União Europeia continuam acessíveis pelo rodapé. Os domínios e as áreas de governo saem dele.
+**Portugal · Lugares · Temas · Estudos · Europa · Sobre** (a sexta porta, a da página «Portugal na União Europeia», entrou com o P4, §1.153; o rótulo curto «Europa» porque o nome inteiro não cabia numa linha a 390 px, medido no P4 e outra vez no H3, §1.168). Portugal abre a primeira página. Lugares abre a geografia. Temas abre as oito portas do §2. Estudos abre a lista. Sobre reúne as portas do que o projeto diz sobre si. Método, Correções, Agenda, Números e fontes, Índice e Explicações continuam acessíveis pelo rodapé. Os domínios e as áreas de governo saem dele.
+
+**A decisão de 06.10.2026 (§1.172, pelo leitor no telefone):** a regra de uma só linha a 390 px é o que aperta as seis portas umas contra as outras (6 px entre elas, a letra a 13 px, `site.css`), e o leitor não distingue onde acaba uma e começa a outra. A largura do telefone passa a ter o menu em duas linhas, com o mesmo espaço entre portas e a mesma letra das outras larguras; com duas linhas cabem a sétima porta, «Explicações», e o nome inteiro, «União Europeia», se a medição do bloco H4 nas duas edições o confirmar; o que não couber em duas linhas fica como está. A ordem: Portugal · Lugares · Temas · Estudos · Explicações · União Europeia · Sobre.
 
 ## 5 · The three rules that the checks enforce [P]
 
