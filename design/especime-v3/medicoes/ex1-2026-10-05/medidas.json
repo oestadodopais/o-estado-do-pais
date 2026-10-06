@@ -1,0 +1,1291 @@
+{
+  "bloco": "EX1",
+  "guiao": "design/especime-v3/medicoes/ex1-2026-10-05/medir.py",
+  "medidas": [
+    {
+      "nome": "portoes.cabeca",
+      "valor": "1d64052a5bbe45e92608a997bebe17742bbcb0aa",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes",
+      "conhecido_positivo": {
+        "o_que": "a cabeça dos portões é a de antes e a de depois da corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.build.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/build.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo portoes/build.log começa pela linha do npm do portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.build.segundos",
+      "valor": 209,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/build.inicio e .fim)",
+      "conhecido_positivo": {
+        "o_que": "as duas horas estão escritas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.verify.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/verify.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo portoes/verify.log começa pela linha do npm do portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.verify.segundos",
+      "valor": 1131,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/verify.inicio e .fim)",
+      "conhecido_positivo": {
+        "o_que": "as duas horas estão escritas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.typecheck.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/typecheck.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo portoes/typecheck.log começa pela linha do npm do portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.typecheck.segundos",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (portoes/typecheck.inicio e .fim)",
+      "conhecido_positivo": {
+        "o_que": "as duas horas estão escritas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.estado_seguido_antes.linhas",
+      "valor": 0,
+      "comando": "git status --porcelain --untracked-files=no > portoes/estado-seguido-antes",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portoes.estado_seguido_depois.linhas",
+      "valor": 0,
+      "comando": "git status --porcelain --untracked-files=no > portoes/estado-seguido-depois",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.gate_html.marcas_da_semana",
+      "valor": 30,
+      "comando": "npm run verify (portoes/verify.log, a linha «EX1 · … marca(s) da leitura da semana recontadas»)",
+      "conhecido_positivo": {
+        "o_que": "a linha do portão de HTML está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.gate_html.paginas_de_explicacao",
+      "valor": 2,
+      "comando": "npm run verify (portoes/verify.log, a linha «EX1 · … marca(s) da leitura da semana recontadas»)",
+      "conhecido_positivo": {
+        "o_que": "a linha do portão de HTML está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.gate_html.heads_de_explicacao",
+      "valor": 2,
+      "comando": "npm run verify (portoes/verify.log, a linha «EX1 · … marca(s) da leitura da semana recontadas»)",
+      "conhecido_positivo": {
+        "o_que": "a linha do portão de HTML está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.gate_html.fim_da_janela",
+      "valor": "2026-10-06",
+      "comando": "npm run verify (portoes/verify.log)",
+      "conhecido_positivo": {
+        "o_que": "a linha do portão de HTML está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.check_formas.f22_figuras",
+      "valor": 4,
+      "comando": "npm run verify (portoes/verify.log, a linha «F22 · …»)",
+      "conhecido_positivo": {
+        "o_que": "a linha da F22 está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.check_formas.f22_plantas_que_morderam",
+      "valor": 10,
+      "comando": "npm run verify (portoes/verify.log, a linha «F22 · …»)",
+      "conhecido_positivo": {
+        "o_que": "a linha da F22 está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.check_formas.f22_plantas",
+      "valor": 10,
+      "comando": "npm run verify (portoes/verify.log, a linha «F22 · …»)",
+      "conhecido_positivo": {
+        "o_que": "a linha da F22 está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.check_lugar.l1",
+      "valor": 2716,
+      "comando": "npm run verify (portoes/verify.log, a linha «L1 · …»)",
+      "conhecido_positivo": {
+        "o_que": "a linha da L1 está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.check_lugar.l1_teto",
+      "valor": 2716,
+      "comando": "npm run verify (portoes/verify.log)",
+      "conhecido_positivo": {
+        "o_que": "a linha da L1 está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.check_voz.paginas_ex1",
+      "valor": 10,
+      "comando": "npm run verify (portoes/verify.log, a linha «EX1: … página(s) com as palavras das explicações»)",
+      "conhecido_positivo": {
+        "o_que": "a linha do check:voz está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.check_explicacoes.x_plantas",
+      "valor": [
+        11,
+        11
+      ],
+      "comando": "npm run verify (portoes/verify.log, a linha «X · a explicação»)",
+      "conhecido_positivo": {
+        "o_que": "a linha da célula X está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.check_explicacoes.w",
+      "valor": {
+        "inicio": "2026-09-30",
+        "fim": "2026-10-06",
+        "relidas": 90,
+        "valor": 12,
+        "proveniencia": 9,
+        "w1": [
+          4,
+          4
+        ],
+        "portas": 4,
+        "plantas_na_pagina": [
+          5,
+          5
+        ]
+      },
+      "comando": "npm run verify (portoes/verify.log, a linha «W · a leitura da semana»)",
+      "conhecido_positivo": {
+        "o_que": "a linha da célula W está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.check_alvos.paginas_do_dist",
+      "valor": 7906,
+      "comando": "npm run verify (portoes/verify.log, a H3 do check:alvos)",
+      "conhecido_positivo": {
+        "o_que": "a linha da H3 está no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "verify.check_alvos.todas_verdes",
+      "valor": true,
+      "comando": "npm run verify (portoes/verify.log)",
+      "conhecido_positivo": {
+        "o_que": "o check:alvos correu (a linha H10 está no registo)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.cabeca",
+      "valor": "1d64052a5bbe45e92608a997bebe17742bbcb0aa",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh",
+      "conhecido_positivo": {
+        "o_que": "a cabeça das provas é a dos portões e a do fim das provas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.estado.linhas",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh (provas/estado)",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.construcao",
+      "valor": "1d64052a5bbe45e92608a997bebe17742bbcb0aa",
+      "comando": "cp dist/version.json provas/version.json",
+      "conhecido_positivo": {
+        "o_que": "a construção medida é a da cabeça dos portões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.brief.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh (provas/brief.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo provas/brief.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.acertos.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh (provas/acertos.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo provas/acertos.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.explicacao.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh (provas/explicacao.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo provas/explicacao.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.semana.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh (provas/semana.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo provas/semana.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.sinais.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh (provas/sinais.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo provas/sinais.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.menu.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh (provas/menu.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo provas/menu.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.capturas.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh (provas/capturas.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo provas/capturas.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.frases-em-flex.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh (provas/frases-em-flex.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo provas/frases-em-flex.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.plantas-dos-portoes.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh (provas/plantas-dos-portoes.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo provas/plantas-dos-portoes.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.mapa.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh (provas/mapa.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo provas/mapa.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "provas.mapa-a-mao.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh design/especime-v3/medicoes/ex1-2026-10-05/com-tranca.sh <worktree do sítio> <registo> <código> sh design/especime-v3/medicoes/ex1-2026-10-05/provas-ex1.sh (provas/mapa-a-mao.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo provas/mapa-a-mao.log começa pela cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "brief.medidas",
+      "valor": 16,
+      "comando": "OEDP_MEDIDAS_JSON=<pasta>/brief-reproduzido.json python3 design/observatorio/medidas/BRIEF-EX1.py",
+      "conhecido_positivo": {
+        "o_que": "a cabeça lida é a do brief e cada medida tem o seu conhecido-positivo encontrado",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "brief.medidas_iguais_as_do_brief",
+      "valor": 16,
+      "comando": "a comparação de brief-reproduzido.json com design/observatorio/medidas/BRIEF-EX1.json",
+      "conhecido_positivo": {
+        "o_que": "as duas listas têm as mesmas medidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "brief.antes_de_mexer.medidas_iguais",
+      "valor": 16,
+      "comando": "OEDP_MEDIDAS_JSON=<pasta temporária>/brief-ex1-reproduzido.json python3 design/observatorio/medidas/BRIEF-EX1.py, antes do primeiro commit do bloco (copiado para brief-reproduzido-antes-de-mexer.json)",
+      "conhecido_positivo": {
+        "o_que": "a reprodução leu a cabeça do brief e tem as mesmas medidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "brief.portas_do_menu",
+      "valor": 5,
+      "comando": "design/observatorio/medidas/BRIEF-EX1.json",
+      "conhecido_positivo": {
+        "o_que": "a medida está no ficheiro do brief",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu.portas_publicadas",
+      "valor": [
+        6
+      ],
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.mjs (menu-a-390.json, a forma «publicada»)",
+      "conhecido_positivo": {
+        "o_que": "as duas edições foram medidas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu.pt.publicada",
+      "valor": {
+        "portas": 6,
+        "largura_das_portas_px": 343.7,
+        "coluna_px": 354,
+        "linhas": 1,
+        "cabe": true,
+        "falta_px": 0
+      },
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.mjs",
+      "conhecido_positivo": {
+        "o_que": "a captura do cabeçalho existe com o sha256 escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu.pt.com_a_setima",
+      "valor": {
+        "portas": 7,
+        "largura_das_portas_px": 435,
+        "coluna_px": 354,
+        "linhas": 2,
+        "cabe": false,
+        "falta_px": 81
+      },
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.mjs",
+      "conhecido_positivo": {
+        "o_que": "a captura do cabeçalho existe com o sha256 escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu.en.publicada",
+      "valor": {
+        "portas": 6,
+        "largura_das_portas_px": 341.2,
+        "coluna_px": 354,
+        "linhas": 1,
+        "cabe": true,
+        "falta_px": 0
+      },
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.mjs",
+      "conhecido_positivo": {
+        "o_que": "a captura do cabeçalho existe com o sha256 escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu.en.com_a_setima",
+      "valor": {
+        "portas": 7,
+        "largura_das_portas_px": 424.2,
+        "coluna_px": 354,
+        "linhas": 2,
+        "cabe": false,
+        "falta_px": 70.2
+      },
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.mjs",
+      "conhecido_positivo": {
+        "o_que": "a captura do cabeçalho existe com o sha256 escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "menu.decisao",
+      "valor": "fica fora do menu",
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.mjs",
+      "conhecido_positivo": {
+        "o_que": "a medida é da construção dos portões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "acertos.blocos",
+      "valor": 14,
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/acertos-ex1.mjs --json <pasta>/acertos.json",
+      "conhecido_positivo": {
+        "o_que": "o texto do brief com os acertos é o da declaração, e nenhum erro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "acertos.exercidos",
+      "valor": {
+        "X1": 4,
+        "X2": 1,
+        "X3": 2,
+        "X4": 1,
+        "X5": 1,
+        "X6": 1,
+        "X7": 3,
+        "X8": 1,
+        "X10": 4,
+        "X9": 6
+      },
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/acertos-ex1.mjs",
+      "conhecido_positivo": {
+        "o_que": "os dez acertos estão na lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "explicacao.auditoria",
+      "valor": {
+        "explicacoes": 1,
+        "folhas": 65,
+        "partes": 95,
+        "diz": 48,
+        "conta": 9,
+        "aponta": 1,
+        "liga": 37,
+        "origens": 5
+      },
+      "comando": "node tests/explicacoes/explicacao.mjs --prova --json <pasta>/explicacao.json",
+      "conhecido_positivo": {
+        "o_que": "a auditoria correu sem erros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "explicacao.origens",
+      "valor": {
+        "origens": 2,
+        "lidas_no_motor": 2,
+        "motor": true
+      },
+      "comando": "node tests/explicacoes/explicacao.mjs --prova (com o motor ao lado)",
+      "conhecido_positivo": {
+        "o_que": "as origens foram lidas no motor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "explicacao.paginas",
+      "valor": 2,
+      "comando": "node tests/explicacoes/explicacao.mjs --prova",
+      "conhecido_positivo": {
+        "o_que": "as plantas correram",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "explicacao.plantas",
+      "valor": [
+        11,
+        11
+      ],
+      "comando": "node tests/explicacoes/explicacao.mjs --prova",
+      "conhecido_positivo": {
+        "o_que": "todas morderam",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "semana.janela",
+      "valor": {
+        "inicio": "2026-09-30",
+        "fim": "2026-10-06"
+      },
+      "comando": "node tests/explicacoes/semana.mjs --prova --json <pasta>/semana.json",
+      "conhecido_positivo": {
+        "o_que": "a janela acaba num dia que o carimbo da construção aceita",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "semana.contagens",
+      "valor": {
+        "relidas": 90,
+        "valor": 12,
+        "proveniencia": 9
+      },
+      "comando": "node tests/explicacoes/semana.mjs --prova",
+      "conhecido_positivo": {
+        "o_que": "a célula correu sem erros",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "semana.mudancas",
+      "valor": 12,
+      "comando": "node tests/explicacoes/semana.mjs --prova",
+      "conhecido_positivo": {
+        "o_que": "o número de mudanças é o da contagem de valor",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "semana.blocos_que_mudaram",
+      "valor": [],
+      "comando": "node tests/explicacoes/semana.mjs --prova",
+      "conhecido_positivo": {
+        "o_que": "a chave está no resumo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "semana.w1",
+      "valor": [
+        {
+          "nome": "um valor mudado dentro da janela (abrantes-desemprego-registado-2025-12, 1 158 para 1 159)",
+          "mordeu": true
+        },
+        {
+          "nome": "uma releitura igual dentro da janela (abrantes-divida-dgal-2024)",
+          "mordeu": true
+        },
+        {
+          "nome": "uma entrada fora da janela (abrantes-empresas-2024, 2026-09-29)",
+          "mordeu": true
+        },
+        {
+          "nome": "uma semana sem entrada nenhuma dentro da janela (2026-09-30 a 2026-10-06)",
+          "mordeu": true
+        }
+      ],
+      "comando": "node tests/explicacoes/semana.mjs --prova",
+      "conhecido_positivo": {
+        "o_que": "as quatro plantas da cópia do livro morderam",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "semana.plantas_na_pagina",
+      "valor": [
+        5,
+        5
+      ],
+      "comando": "node tests/explicacoes/semana.mjs --prova",
+      "conhecido_positivo": {
+        "o_que": "todas as que se aplicam morderam",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "semana.portas",
+      "valor": 4,
+      "comando": "node tests/explicacoes/semana.mjs --prova",
+      "conhecido_positivo": {
+        "o_que": "a chave está no resumo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "sinais.explicacoes",
+      "valor": {
+        "o_que_e": "As palavras das explicações que as condições declaradas tiraram da página, e porquê. Escrito por scripts/sinais-da-primeira-pagina.mjs a cada corrida, para o lugar de direção.",
+        "escrito_em": "2026-10-06T01:56:11.566Z",
+        "explicacoes": [
+          {
+            "explicacao": "dinheiro-do-estado-2026",
+            "sinais": [
+              {
+                "caminho": "seccoes[2].conteudo[0].paragrafo[6]",
+                "condicoes": [
+                  {
+                    "ok": false,
+                    "texto": "execucao-2026-08-despesa-programa-016 > execucao-2026-08-despesa-programa-015 > execucao-2026-08-despesa-programa-005 > as outras 17 do grupo"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "comando": "node scripts/sinais-da-primeira-pagina.mjs; cp .sinais/explicacoes.json <pasta>/sinais-explicacoes.json",
+      "conhecido_positivo": {
+        "o_que": "o ficheiro dos sinais foi escrito",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha.execucao-2026-08-despesa-programa-004",
+      "valor": {
+        "value": "5 337,6",
+        "unit": "milhões de euros, acumulados de janeiro a agosto",
+        "name": "Finanças"
+      },
+      "comando": "grep '^value:' ledger/claims/execucao-2026-08-despesa-programa-004.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha tem valor e unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha.execucao-2026-08-despesa-programa-005",
+      "valor": {
+        "value": "5 212,7",
+        "unit": "milhões de euros, acumulados de janeiro a agosto",
+        "name": "Gestão da Dívida Pública"
+      },
+      "comando": "grep '^value:' ledger/claims/execucao-2026-08-despesa-programa-005.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha tem valor e unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha.execucao-2026-08-despesa-programa-015",
+      "valor": {
+        "value": "11 822,6",
+        "unit": "milhões de euros, acumulados de janeiro a agosto",
+        "name": "Saúde"
+      },
+      "comando": "grep '^value:' ledger/claims/execucao-2026-08-despesa-programa-015.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha tem valor e unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha.execucao-2026-08-despesa-programa-016",
+      "valor": {
+        "value": "17 636,8",
+        "unit": "milhões de euros, acumulados de janeiro a agosto",
+        "name": "Trabalho, Solidariedade e Segurança Social"
+      },
+      "comando": "grep '^value:' ledger/claims/execucao-2026-08-despesa-programa-016.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha tem valor e unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha.oe-2026-cem-euros-funcao-07",
+      "valor": {
+        "value": "17,07",
+        "unit": "%",
+        "name": null
+      },
+      "comando": "grep '^value:' ledger/claims/oe-2026-cem-euros-funcao-07.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha tem valor e unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha.oe-2026-cem-euros-funcao-09",
+      "valor": {
+        "value": "10,91",
+        "unit": "%",
+        "name": null
+      },
+      "comando": "grep '^value:' ledger/claims/oe-2026-cem-euros-funcao-09.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha tem valor e unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha.oe-2026-cem-euros-ministerio-saude",
+      "valor": {
+        "value": "13,28",
+        "unit": "%",
+        "name": null
+      },
+      "comando": "grep '^value:' ledger/claims/oe-2026-cem-euros-ministerio-saude.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha tem valor e unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha.oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
+      "valor": {
+        "value": "4,16",
+        "unit": "%",
+        "name": null
+      },
+      "comando": "grep '^value:' ledger/claims/oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha tem valor e unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha.saldo-das-administracoes-publicas-2025",
+      "valor": {
+        "value": "0,7",
+        "unit": "% do PIB",
+        "name": "Government deficit/surplus, debt and associated data"
+      },
+      "comando": "grep '^value:' ledger/claims/saldo-das-administracoes-publicas-2025.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha tem valor e unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha.divida-publica-2025",
+      "valor": {
+        "value": "89,7",
+        "unit": "% do PIB",
+        "name": null
+      },
+      "comando": "grep '^value:' ledger/claims/divida-publica-2025.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha tem valor e unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linha.divida-publica-2025-ue",
+      "valor": {
+        "value": "81,7",
+        "unit": "% do PIB",
+        "name": null
+      },
+      "comando": "grep '^value:' ledger/claims/divida-publica-2025-ue.yml",
+      "conhecido_positivo": {
+        "o_que": "a linha tem valor e unidade",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.quantas",
+      "valor": 50,
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/captar-ex1.mjs --json capturas.json",
+      "conhecido_positivo": {
+        "o_que": "cada captura tem o sha256 e o ficheiro existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.paginas_inteiras",
+      "valor": 40,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "quatro rotas, duas edições, cinco larguras",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.transbordos",
+      "valor": 0,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "a planta do transbordo mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.plantas",
+      "valor": [
+        3,
+        3
+      ],
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "as três plantas correram",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.erros",
+      "valor": 0,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "a corrida chegou ao fim (as plantas estão no ficheiro)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.figuras.pt.390",
+      "valor": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 8,
+          "barra_mais_longa_px": 254.2,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 254.2,
+          "valores_fora_da_figura": 0
+        }
+      ],
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "a planta do valor fora da figura mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.figuras.en.390",
+      "valor": [
+        {
+          "figura": "funcoes",
+          "barras": 10,
+          "barra_mais_curta_px": 8,
+          "barra_mais_longa_px": 254.2,
+          "valores_fora_da_figura": 0
+        },
+        {
+          "figura": "ministerios",
+          "barras": 16,
+          "barra_mais_curta_px": 0.2,
+          "barra_mais_longa_px": 254.2,
+          "valores_fora_da_figura": 0
+        }
+      ],
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "a planta do valor fora da figura mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.semana.pt.mudancas_rendidas",
+      "valor": 12,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "a página da semana foi capturada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.semana.en.mudancas_rendidas",
+      "valor": 12,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "a página da semana foi capturada",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.para_perceber.pt.390",
+      "valor": {
+        "altura_px": 184.5,
+        "menor_porta_px": 44,
+        "alturas_das_portas_px": [
+          44,
+          93.8
+        ],
+        "fecha_o_que_se_passa": true
+      },
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "a planta da porta curta mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "capturas.para_perceber.en.390",
+      "valor": {
+        "altura_px": 185.5,
+        "menor_porta_px": 44,
+        "alturas_das_portas_px": [
+          44,
+          94.8
+        ],
+        "fecha_o_que_se_passa": true
+      },
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "a planta da porta curta mordeu",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "frases_em_flex.erros",
+      "valor": 0,
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/frases-em-flex.mjs --json <pasta>/frases-em-flex.json",
+      "conhecido_positivo": {
+        "o_que": "a planta da porta num contentor flexível mordeu, na construção dos portões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "frases_em_flex.passagens",
+      "valor": 20,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "cada passagem viu pedaços marcados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "frases_em_flex.pedacos",
+      "valor": 184,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "a contagem é a soma das passagens",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira.portoes.cabeca",
+      "valor": "482546471b44046b9ec4d5b7093b9ac78c2d35f1",
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (na primeira corrida, guardada em primeira-corrida/portoes)",
+      "conhecido_positivo": {
+        "o_que": "a cabeça é a de antes e a de depois dessa corrida",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira.portoes.build.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (primeira-corrida/portoes/build.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo primeira-corrida/portoes/build.log começa pela linha do npm do portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira.portoes.verify.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (primeira-corrida/portoes/verify.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo primeira-corrida/portoes/verify.log começa pela linha do npm do portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira.portoes.typecheck.codigo",
+      "valor": 0,
+      "comando": "RESEARCHHUB_DIR=<worktree do motor> sh scripts/leituras/portoes.sh <worktree do sítio> design/especime-v3/medicoes/ex1-2026-10-05/portoes (primeira-corrida/portoes/typecheck.codigo)",
+      "conhecido_positivo": {
+        "o_que": "o registo primeira-corrida/portoes/typecheck.log começa pela linha do npm do portão",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira.capturas.transbordos",
+      "valor": [
+        536,
+        546
+      ],
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/captar-ex1.mjs, na primeira corrida (primeira-corrida/capturas.json)",
+      "conhecido_positivo": {
+        "o_que": "a corrida mediu a construção da primeira cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira.capturas.plantas_que_nao_morderam",
+      "valor": 2,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "as plantas estão no ficheiro",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira.frases_em_flex.erros",
+      "valor": 14,
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/frases-em-flex.mjs, sobre a construção da primeira cabeça (primeira-corrida/frases-em-flex.json)",
+      "conhecido_positivo": {
+        "o_que": "a corrida mediu a construção da primeira cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "primeira.frases_em_flex.contentores",
+      "valor": 12,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "há resultados",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "css.movimento_reduzido.duracao_das_transicoes_ms",
+      "valor": 0.01,
+      "comando": "a regra do movimento reduzido em src/styles/site.css (transition-duration)",
+      "conhecido_positivo": {
+        "o_que": "a regra está na folha",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_dos_portoes.quantas",
+      "valor": 18,
+      "comando": "OEDP_MEDICOES=<pasta> OEDP_EXIGIR_ARVORE_LIMPA=1 node tests/pais/portoes.mjs --prefixo ex1-",
+      "conhecido_positivo": {
+        "o_que": "cada planta repôs os bytes do dist/ (sha256 antes e depois iguais) e correu na cabeça dos portões",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_dos_portoes.passaram",
+      "valor": 18,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "cada uma saiu com 1 e com as mordidas previstas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "plantas_dos_portoes.nomes",
+      "valor": [
+        "ex1-semana-data-trocada",
+        "ex1-semana-contagem-trocada",
+        "ex1-semana-janela-de-outro-dia",
+        "ex1-semana-janela-de-oito-dias",
+        "ex1-semana-fora-da-porta",
+        "ex1-semana-mudanca-a-mais",
+        "ex1-semana-mudanca-em-falta",
+        "ex1-unidade-de-outra-linha",
+        "ex1-unidade-com-a-marca-de-outra-linha",
+        "ex1-explicacao-titulo-com-outro-ano",
+        "ex1-explicacao-descricao-mudada",
+        "ex1-explicacao-numero-trocado",
+        "ex1-f22-barra-fora-de-escala",
+        "ex1-f22-valor-trocado",
+        "ex1-indice-sem-as-explicacoes",
+        "ex1-voz-frase-por-classificar",
+        "ex1-voz-ramo-do-sinal-trocado",
+        "ex1-voz-porta-da-semana-com-outra-frase"
+      ],
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "a lista não está vazia",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1.contagens",
+      "valor": {
+        "estudos": 2716,
+        "l1_paginas": 2716,
+        "antes": 2714,
+        "entradas": 2,
+        "saidas": 0,
+        "antigas_alteradas": 0
+      },
+      "comando": "AMOSTRA=100000 node scripts/check-lugar.mjs (medir-l1.mjs)",
+      "conhecido_positivo": {
+        "o_que": "as plantas da medição morderam",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1.entradas",
+      "valor": [
+        {
+          "url": "/en/explainers/dinheiro-do-estado-2026",
+          "destinos": 14
+        },
+        {
+          "url": "/explicacoes/dinheiro-do-estado-2026",
+          "destinos": 14
+        }
+      ],
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/medir-l1.mjs",
+      "conhecido_positivo": {
+        "o_que": "as entradas são as duas páginas da explicação",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1.plantas",
+      "valor": 5,
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/medir-l1.mjs",
+      "conhecido_positivo": {
+        "o_que": "a medição é da construção da sua cabeça",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "l1.cabeca_da_medicao",
+      "valor": "2405f8a84f0006726312ced5b0729a422d5170a1",
+      "comando": "node design/especime-v3/medicoes/ex1-2026-10-05/medir-l1.mjs",
+      "conhecido_positivo": {
+        "o_que": "a cabeça está escrita",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa.na_cabeca_de_partida",
+      "valor": {
+        "conferidas": 451,
+        "longe": 0,
+        "nao_encontradas": 0
+      },
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md (mapa-na-cabeca-de-partida.log): a corrida do conferir-mapa.py numa worktree da cabeça de partida, antes do bloco",
+      "conhecido_positivo": {
+        "o_que": "as três linhas da contagem estão no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa.antes_da_conta",
+      "valor": {
+        "conferidas": 392,
+        "longe": 59,
+        "nao_encontradas": 0
+      },
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md (mapa-antes-da-conta.log): a corrida do conferir-mapa.py com o código do bloco e o mapa ainda por pôr em dia",
+      "conhecido_positivo": {
+        "o_que": "as três linhas da contagem estão no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa.no_fim",
+      "valor": {
+        "conferidas": 484,
+        "longe": 0,
+        "nao_encontradas": 0
+      },
+      "comando": "python3 scripts/leituras/conferir-mapa.py design/observatorio/MAPA-DO-REPOSITORIO-para-construtores.md (provas/mapa.log): a corrida do conferir-mapa.py nas provas, na cabeça dos portões",
+      "conhecido_positivo": {
+        "o_que": "as três linhas da contagem estão no registo",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa.referencias_postas_em_dia_pela_conta",
+      "valor": 195,
+      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/linhas-do-mapa.py 3664b90d --escrever (linhas-do-mapa.log)",
+      "conhecido_positivo": {
+        "o_que": "o número é o das linhas da lista",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa.corrigidas_a_mao",
+      "valor": 3,
+      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/mapa-a-mao.py 3664b90d c885cb4c --json <pasta>/mapa-a-mao.json",
+      "conhecido_positivo": {
+        "o_que": "a comparação leu as referências das linhas que já existiam",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "mapa.referencias_comparadas",
+      "valor": 499,
+      "comando": "idem",
+      "conhecido_positivo": {
+        "o_que": "a lista das corrigidas tem a forma escrita",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "chaves_en.ex1",
+      "valor": 35,
+      "comando": "a contagem das linhas da tabela da secção do EX1 em design/especime-v3/CHAVES-EN.md",
+      "conhecido_positivo": {
+        "o_que": "a secção existe e a primeira linha é a de nav.explicacoes",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "custo",
+      "valor": {
+        "respostas_do_modelo": 475,
+        "modelos": {
+          "claude-opus-5-5": 966
+        },
+        "simbolos": {
+          "input_tokens": 950,
+          "cache_creation_input_tokens": 7788885,
+          "cache_read_input_tokens": 211772450,
+          "output_tokens": 121928
+        },
+        "simbolos_de_entrada": 219562285,
+        "simbolos_de_saida_minimo": 121928,
+        "respostas_com_a_saida_de_um_momento_do_fluxo": 310,
+        "segundos": 14886,
+        "primeira_entrada": "2026-10-05T21:56:57.367Z",
+        "lido_em": "2026-10-06T02:05:03Z"
+      },
+      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/custo.py <registo da sessão do construtor>",
+      "conhecido_positivo": {
+        "o_que": "o registo foi lido (o sha256 está escrito)",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "limpeza",
+      "valor": {
+        "ficheiros_limpos_quantos": 4,
+        "trocas": 6,
+        "restos_depois": []
+      },
+      "comando": "python3 design/especime-v3/medicoes/ex1-2026-10-05/limpar-registos.py",
+      "conhecido_positivo": {
+        "o_que": "a limpeza correu",
+        "encontrado": true
+      }
+    }
+  ],
+  "falhas": []
+}

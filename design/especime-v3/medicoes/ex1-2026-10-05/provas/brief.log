@@ -1,0 +1,19 @@
+cabeça: 1d64052a5bbe45e92608a997bebe17742bbcb0aa
+estado dos ficheiros seguidos: 0 linha(s)
+---
+linhas_do_orcamento_do_estado_de_2026: 94 · conhecido-positivo ok
+linhas_dos_cem_euros_por_funcao: 10 · conhecido-positivo ok
+linhas_dos_cem_euros_por_ministerio: 16 · conhecido-positivo ok
+linhas_da_despesa_por_ministerio: 16 · conhecido-positivo ok
+linhas_da_despesa_por_funcao_de_2024: 30 · conhecido-positivo ok
+linhas_da_execucao_orcamental_de_agosto_de_2026: 31 · conhecido-positivo ok
+linhas_da_divida_publica: 5 · conhecido-positivo ok
+linhas_do_saldo_das_administracoes_publicas: 3 · conhecido-positivo ok
+linhas_sobre_os_juros_da_divida: 0 · conhecido-positivo ok
+entradas_datadas_nas_linhas: 3870 · conhecido-positivo ok
+entradas_datadas_desde_28_09_2026: 203 · conhecido-positivo ok
+estudos_publicados: 18 · conhecido-positivo ok
+rotas_de_explicacoes_no_sitio: 0 · conhecido-positivo ok
+blocos_da_primeira_pagina: 13 · conhecido-positivo ok
+frases_com_ramo_decidido_pelos_numeros_na_primeira_pagina: 4 · conhecido-positivo ok
+portas_do_menu: 5 · conhecido-positivo ok

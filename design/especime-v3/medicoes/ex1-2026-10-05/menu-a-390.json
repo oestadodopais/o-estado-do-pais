@@ -1,0 +1,60 @@
+{
+  "o_que_e": "A sétima porta do menu, «Explicações» / «Explainers», ao lado de «Estudos», medida a 390 px nas duas edições, com a porta posta só no navegador.",
+  "construcao": "1d64052a5bbe45e92608a997bebe17742bbcb0aa",
+  "construido_em": "2026-10-06T01:21:36.709Z",
+  "medidas": [
+    {
+      "lang": "pt",
+      "forma": "publicada",
+      "coluna": 354,
+      "natural": 343.7,
+      "linhas": 1,
+      "portas": 6,
+      "rotulos": "Portugal · Lugares · Temas · Estudos · Europa · Sobre",
+      "cabe": true,
+      "falta": 0,
+      "captura": "design/especime-v3/capturas/ex1-2026-10-05/menu-publicado-pt-390.png",
+      "sha256": "4fcfadedca1323033b54aed6aacf2bbf44c89affd8d68c70f7dcf370f59f9eef"
+    },
+    {
+      "lang": "pt",
+      "forma": "com a sétima porta",
+      "coluna": 354,
+      "natural": 435,
+      "linhas": 2,
+      "portas": 7,
+      "rotulos": "Portugal · Lugares · Temas · Estudos · Explicações · Europa · Sobre",
+      "cabe": false,
+      "falta": 81,
+      "captura": "design/especime-v3/capturas/ex1-2026-10-05/menu-com-a-setima-pt-390.png",
+      "sha256": "eb1c8251363430eb68a69cbd6dc3a5aab04aa009e9a9bcd7a258ade25678f643"
+    },
+    {
+      "lang": "en",
+      "forma": "publicada",
+      "coluna": 354,
+      "natural": 341.2,
+      "linhas": 1,
+      "portas": 6,
+      "rotulos": "Portugal · Places · Themes · Studies · Europe · About",
+      "cabe": true,
+      "falta": 0,
+      "captura": "design/especime-v3/capturas/ex1-2026-10-05/menu-publicado-en-390.png",
+      "sha256": "2b8bcd125940af6f418cfd81108c6bbf8e230a9ef9188e54e60127dbc5caf111"
+    },
+    {
+      "lang": "en",
+      "forma": "com a sétima porta",
+      "coluna": 354,
+      "natural": 424.2,
+      "linhas": 2,
+      "portas": 7,
+      "rotulos": "Portugal · Places · Themes · Studies · Explainers · Europe · About",
+      "cabe": false,
+      "falta": 70.2,
+      "captura": "design/especime-v3/capturas/ex1-2026-10-05/menu-com-a-setima-en-390.png",
+      "sha256": "e285fc6b113127656a9f954e2df315cf95d30adf0e428e220a3515835b81e94c"
+    }
+  ],
+  "decisao": "fica fora do menu"
+}

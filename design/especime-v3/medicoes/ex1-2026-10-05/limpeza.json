@@ -1,0 +1,36 @@
+{
+  "o_que": "a limpeza dos caminhos da máquina nos registos desta pasta (limpar-registos.py)",
+  "ficheiros_limpos": [
+    {
+      "ficheiro": "portoes/build.log",
+      "trocas": 1,
+      "sha256_antes": "28363ad29077849e9303d2223cb5e966d94664b775b548eb29c910a56764c5fc",
+      "sha256_depois": "906ad70e778cd0581c82026342632283128a70cb8ba67de3243c42a081e0d2a0"
+    },
+    {
+      "ficheiro": "portoes/verify.log",
+      "trocas": 2,
+      "sha256_antes": "260ddb7b799be1dab33b2b16b495a793161eda7e5e328e03fe69a72739b24514",
+      "sha256_depois": "d692407389020076d320736e28102201109de10d9a1700b0650d7475014b0926"
+    },
+    {
+      "ficheiro": "primeira-corrida/portoes/build.log",
+      "trocas": 1,
+      "sha256_antes": "77c75031efd0dba8989a7301964834ee5a1308f1a0ba9912e2728e7da03a8957",
+      "sha256_depois": "1642db3c0e3cbe4f1eb7c2749215584da8a31649a3ddb5e3a94cf57b809d1aaa"
+    },
+    {
+      "ficheiro": "primeira-corrida/portoes/verify.log",
+      "trocas": 2,
+      "sha256_antes": "d7f21c5af1c51ebd7cc29210bd0c3cfb783398ae979016cefe1f5dfa18d55cea",
+      "sha256_depois": "67de01e13abd823aa1e0f2466263636366f912864d4babb2cedf55873d124638"
+    }
+  ],
+  "ficheiros_limpos_quantos": 4,
+  "trocas": 6,
+  "restos_depois": [],
+  "segunda_corrida": {
+    "trocas": 0,
+    "restos_depois": []
+  }
+}
