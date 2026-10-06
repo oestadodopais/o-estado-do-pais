@@ -90,7 +90,8 @@ if passagem_c:
     depois = json.loads((AQUI / 'menu-depois.json').read_text())
     for m in depois['medidas']:
         rota = '/' if m['lang'] == 'pt' else '/en/'
-        celula = next(x for x in tm['medidas_menu'] if x['rota'] == rota and x['largura'] == m['largura'])
+        celula = next(x for x in tm['medidas_menu'] if x['rota'] == rota and x['janela'] == m['largura'])
+        assert abs(celula['largura'] - m['coluna']) <= 0.5
         assert m['portas'] == celula['portas'] == 7
         assert m['linhas'] == celula['topos'] <= tm['limites_linhas_telefone'].get(str(m['largura']), 1)
         assert m['sem_transbordo'] and celula['dentro'] and not celula['transborda']
