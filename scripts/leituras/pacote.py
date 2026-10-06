@@ -7,9 +7,12 @@ completo, sensíveis a maiúsculas. Aspas interiores permitem espaços. As
 cópias vêm dos objetos Git da cabeça, nunca da árvore de trabalho.
 """
 import fnmatch
+import hashlib
+import json
 import os
 from pathlib import Path, PurePosixPath
 import shlex
+import re
 import shutil
 import subprocess
 import sys
@@ -52,6 +55,44 @@ def diferenca(repo, base, cabeca, f):
                                     'diff', '--no-renames', base, cabeca, '--', f])
 
 
+def linhas_dos_portoes(repo, cabeca, relatorio, texto, arvore):
+    """Comentários portao: <registo relativo ao relatório> | <início da linha>.
+
+    Só se retiram ANSI, espaço inicial e os marcadores ✓, ✗ e ▶ para comparar
+    o início. Copiam-se as linhas originais, com os seus números no índice.
+    A falta de uma citação fecha a montagem antes de criar a pasta.
+    """
+    registos = {f for f in arvore if Path(f).name in {'build.log', 'verify.log', 'typecheck.log'}
+                and str(Path(f).with_suffix('.codigo')) in arvore}
+    citadas, indice = {}, []
+    for nome, prefixo in re.findall(r'<!--\s*portao:\s*([^|\n]+)\|\s*(.*?)\s*-->', texto):
+        f = os.path.normpath(str(Path(relatorio).parent / nome.strip()))
+        relativo(f)
+        if f not in registos or not prefixo:
+            raise ValueError(f'O pacote recusa a citação: registo de portão ausente ou início vazio: {f}.')
+        corpo = git(repo, 'show', f'{cabeca}:{f}')
+        achadas = []
+        for n, linha in enumerate(corpo.decode().splitlines(), 1):
+            limpa = re.sub(r'\x1b\[[0-9;]*m', '', linha).lstrip(' \t✓✗▶')
+            if limpa.startswith(prefixo):
+                achadas.append(n)
+                citadas.setdefault(f, {})[n] = linha
+        if not achadas:
+            raise ValueError(f'O pacote recusa a citação: {f}: não existe uma linha que comece por «{prefixo}».')
+        indice.append({'registo': f, 'inicio': prefixo, 'linhas': achadas,
+                       'origem_sha256': hashlib.sha256(corpo).hexdigest()})
+    filtrados = {f: ('\n'.join(linhas[n] for n in sorted(linhas)) + '\n').encode()
+                 for f, linhas in citadas.items()}
+    return registos, filtrados, indice
+
+
+def conferir_citacoes(destino, filtrados):
+    for f, corpo in filtrados.items():
+        alvo = destino / f
+        if not alvo.is_file() or alvo.read_bytes() != corpo:
+            raise ValueError(f'O pacote recusa a entrega: faltam as linhas citadas de {f}.')
+
+
 def principal():
     repo, base, cabeca, destino, brief, relatorio, numeros, *construidos = sys.argv[1:]
     # Nunca substituir o argumento literal: «.» apagava todos os pontos do texto.
@@ -69,6 +110,11 @@ def principal():
     mudados = caminhos(repo, base, cabeca)
     do_motor = caminhos(motor[0], motor[1], motor[2]) if motor else []
     rel_relatorio = os.path.relpath(Path(relatorio).resolve(), repo)
+    arvore = {os.fsdecode(f) for f in git(repo, 'ls-tree', '-r', '--name-only', '-z', cabeca).split(b'\0') if f}
+    registos, filtrados, indice = linhas_dos_portoes(repo, cabeca, rel_relatorio,
+                                                  Path(relatorio).read_text(), arvore)
+    if destino.exists() and any(destino.iterdir()):
+        raise ValueError('O pacote exige uma pasta nova ou vazia: não conserva registos de uma montagem anterior.')
     destino.mkdir(parents=True, exist_ok=True)
     texto_numeros = Path(numeros).read_text().replace(repo_dado, '<sitio>').replace(str(repo), '<sitio>').replace(str(Path.home()), '<pasta-local>')
     (destino / 'numeros-do-relatorio.txt').write_text(texto_numeros)
@@ -77,6 +123,8 @@ def principal():
     retirados, partes, copiados = [], [], 0
     for f in mudados:
         if f == rel_relatorio or bate(f, ['*.png', '*.jpg', '*.webp']):
+            continue
+        if f in registos:
             continue
         trecho = diferenca(repo, base, cabeca, f)
         if bate(f, retira):
@@ -96,7 +144,21 @@ def principal():
     for e in extra:
         for f in git(repo, 'ls-tree', '-r', '--name-only', '-z', cabeca, '--', relativo(e)).split(b'\0'):
             if f:
-                n_extra += copiar(repo, cabeca, os.fsdecode(f), destino)
+                nome = os.fsdecode(f)
+                if nome not in registos:
+                    n_extra += copiar(repo, cabeca, nome, destino)
+    # Os códigos e os tempos acompanham sempre os registos do intervalo ou
+    # citados. PACOTE_EXTRA também passa pelo filtro, nunca repõe o log inteiro.
+    pastas = {str(Path(f).parent) for f in registos if f in mudados or f in filtrados}
+    for pasta in pastas:
+        for f in sorted(arvore):
+            if str(Path(f).parent) == pasta and (f.endswith('.codigo') or Path(f).name == 'tempos.json'):
+                copiar(repo, cabeca, f, destino)
+    for f, corpo in filtrados.items():
+        alvo = destino / f
+        alvo.parent.mkdir(parents=True, exist_ok=True)
+        alvo.write_bytes(corpo)
+    (destino / 'linhas-dos-portoes.json').write_text(json.dumps(indice, ensure_ascii=False, indent=2)+'\n')
     n_motor = 0
     if motor:
         pasta = destino / 'motor'
@@ -114,6 +176,7 @@ def principal():
         alvo = destino / 'built' / relativo(f)
         alvo.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(repo / 'dist' / f, alvo)
+    conferir_citacoes(destino, filtrados)
     print(f'Pacote: {copiados} ficheiros mudados, {n_extra} extra, {len(retirados)} secções retiradas, {n_motor} ficheiros do motor, {len(construidos)} páginas construídas.')
 
 
