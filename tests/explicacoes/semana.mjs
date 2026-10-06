@@ -448,7 +448,8 @@ export function plantasDaPaginaDaSemana(dist) {
   const liDoBloco = (/** @type {string} */ frase) => parse(`<ul><li data-semana-bloco="${idDoBloco}" data-semana-declarado><span>${tituloDoBloco}</span>${t('pt').semana.doisPontos}${frase}</li></ul>`).querySelector('li');
   const fraseCerta = blocoNaPrimeira ? blocoNaPrimeira.innerHTML : '';
   const controloDoBloco = idDoBloco ? conferirFraseDoBloco(liDoBloco(fraseCerta), 'pt', primeira) : ['sem bloco'];
-  const trocada = fraseCerta.replace(/([A-Za-zÀ-ÿ]{5,})/, '$1x');
+  /* A palavra trocada vai no texto visível, à cabeça da frase (uma troca dentro do HTML podia cair num atributo). */
+  const trocada = `Ontem, ${fraseCerta}`;
   const qBloco = idDoBloco ? conferirFraseDoBloco(liDoBloco(trocada), 'pt', primeira) : [];
   /* E (o mesmo achado) uma marca das frases compostas num parágrafo que esta célula não compara. */
   const comMarcaSolta = parse(html);
