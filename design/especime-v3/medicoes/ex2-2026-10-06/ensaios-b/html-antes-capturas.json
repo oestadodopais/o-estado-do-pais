@@ -1,0 +1,22 @@
+{
+  "comando": "SHA-256 dos quatro HTML de dist, antes de captar-ex2.mjs; comparar com entrega-b.json depois dos portões",
+  "cabeca": "8c3a08b9dcfb48595be70d6d47385b0427cc3b62",
+  "paginas": [
+    {
+      "ficheiro": "dist/explicacoes/leitura-da-semana/index.html",
+      "sha256": "c1e46967040e5ac69d0cb4f78ad6a82086f97c51763565035732d9c71fdc61fd"
+    },
+    {
+      "ficheiro": "dist/en/explainers/weekly-reading/index.html",
+      "sha256": "9a6d86ce055e9bf97697e0d9b59a05e92d7b4609cb0e33cfe3c81e5339f14f10"
+    },
+    {
+      "ficheiro": "dist/indice/index.html",
+      "sha256": "363aaef8e88487dfcfd84b3558a30daf70bbce73e0568255f543ccee9e88cb52"
+    },
+    {
+      "ficheiro": "dist/en/index/index.html",
+      "sha256": "687a3165803b01d4bd59ea08f986a4cfdd72cbe26da1a2e0c53d87f1cc9a802e"
+    }
+  ]
+}

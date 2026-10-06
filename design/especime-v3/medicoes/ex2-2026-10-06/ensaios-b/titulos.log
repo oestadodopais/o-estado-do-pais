@@ -1,0 +1,30 @@
+file://<worktree>/tests/pais/pais.mjs:47
+ if(!passou)throw Error(`${nome}: ${saida}`);
+                  ^
+
+Error: páginas sem estrago: T9: 30 cartões com valor de referência nos temas e nas entradas, 10 fora e 20 dentro, cada um com a cor do seu estado.
+B1 país: 47 medidas, 9 temas, 28 menus, 4 mudanças declaradas, 4 listas com teto 8, 2 registos de 56 mudanças, 98 títulos de edição.
+M3: en/index/index.html (indice): custo-unitario-do-trabalho-2024 mistura correções, repete o valor ou difere da correção declarada.
+M3: en/index/index.html (indice): despesa-em-id-2024-ue mistura correções, repete o valor ou difere da correção declarada.
+M3: en/index/index.html (indice): formacao-bruta-de-capital-fixo-2024 mistura correções, repete o valor ou difere da correção declarada.
+M3: en/index/index.html (indice): formacao-bruta-de-capital-fixo-2025 mistura correções, repete o valor ou difere da correção declarada.
+M3: en/index/index.html (indice): pib-real-per-capita-2024 mistura correções, repete o valor ou difere da correção declarada.
+M3: en/index/index.html (indice): pib-real-per-capita-2025 mistura correções, repete o valor ou difere da correção declarada.
+M3: en/index/index.html (indice): posicao-de-investimento-internacional-2024 mistura correções, repete o valor ou difere da correção declarada.
+M3: en/index/index.html (indice): posicao-de-investimento-internacional-2025 mistura correções, repete o valor ou difere da correção declarada.
+M3: indice/index.html (indice): custo-unitario-do-trabalho-2024 mistura correções, repete o valor ou difere da correção declarada.
+M3: indice/index.html (indice): despesa-em-id-2024-ue mistura correções, repete o valor ou difere da correção declarada.
+M3: indice/index.html (indice): formacao-bruta-de-capital-fixo-2024 mistura correções, repete o valor ou difere da correção declarada.
+M3: indice/index.html (indice): formacao-bruta-de-capital-fixo-2025 mistura correções, repete o valor ou difere da correção declarada.
+M3: indice/index.html (indice): pib-real-per-capita-2024 mistura correções, repete o valor ou difere da correção declarada.
+M3: indice/index.html (indice): pib-real-per-capita-2025 mistura correções, repete o valor ou difere da correção declarada.
+M3: indice/index.html (indice): posicao-de-investimento-internacional-2024 mistura correções, repete o valor ou difere da correção declarada.
+M3: indice/index.html (indice): posicao-de-investimento-internacional-2025 mistura correções, repete o valor ou difere da correção declarada.
+
+    at prova (file://<worktree>/tests/pais/pais.mjs:47:19)
+    at file://<worktree>/tests/pais/pais.mjs:50:2
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:681:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.23.1

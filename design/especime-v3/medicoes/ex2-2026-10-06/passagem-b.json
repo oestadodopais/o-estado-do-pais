@@ -1,0 +1,245 @@
+{
+  "comando": "node design/especime-v3/medicoes/ex2-2026-10-06/medir-passagem-b.mjs",
+  "decisoes": [
+    {
+      "achados": [
+        1,
+        2,
+        7,
+        8,
+        9
+      ],
+      "feito": "Eram estragos nas cópias da direção; não se corrigiu o ramo por eles.",
+      "plantas": []
+    },
+    {
+      "achados": [
+        3
+      ],
+      "feito": "O índice escreve a unidade antes dos dois pontos e a revisão pelos mesmos componente e cadeias da semana. A W confere o resumo contra o livro. A M3 deixa de exigir o valor anterior riscado e conserva a conferência da identidade, da entrada, dos valores e da data.",
+      "plantas": [
+        "a unidade colada ao número",
+        "valor anterior errado no índice"
+      ]
+    },
+    {
+      "achados": [
+        4,
+        5
+      ],
+      "feito": "A palavra do lado diz «a fonte reviu para cima» ou «a fonte reviu para baixo», com as gémeas inglesas. O nome vem de nomeNaSemana nas duas páginas e é o mesmo nos anos da mesma medida. Uma definição por grupo, sob a última linha, é comparada com todos os recibos desse grupo. Os sinais dos recibos acompanham a definição, sem repetição. A semana abre com os valores e fecha com as contagens; conserva a secção da forma e a frase de nenhuma mudança de ramo na primeira página.",
+      "plantas": [
+        "a palavra da revisão trocada",
+        "o nome da fonte em vez",
+        "a definição repetida no grupo",
+        "a definição em falta no grupo",
+        "uma palavra trocada no sinal",
+        "o sinal em falta no grupo",
+        "as contagens à cabeça",
+        "a frase de nenhuma mudança"
+      ]
+    },
+    {
+      "achados": [
+        6
+      ],
+      "feito": "O título conserva o nome publicado do documento; a falta de tradução deixa de produzir a marca. O título português leva lang=\"pt\" na edição inglesa. A A4 recusa a marca, confere o nome e a língua; a L1 deixa de dispensar a antiga porta.",
+      "plantas": [
+        "marca de incerteza num título",
+        "título publicado com palavras trocadas",
+        "título português sem língua"
+      ]
+    },
+    {
+      "achados": [
+        10
+      ],
+      "feito": "A W2 compõe o nome de nomeNaSemana e o qualificador dos dados da linha, sem ler nenhum deles da página.",
+      "plantas": [
+        "o qualificador da União Europeia retirado",
+        "o nome da fonte em vez"
+      ]
+    },
+    {
+      "achados": [
+        11
+      ],
+      "feito": "A entrada do resumo declarado tem de estar diretamente dentro da lista de mudanças que a W confere.",
+      "plantas": [
+        "um resumo declarado fora da lista"
+      ]
+    },
+    {
+      "achados": [
+        12
+      ],
+      "feito": "A geometria empatou. A contagem dos parênteses aninhados apoiou o desempate, mas a unidade antes dos dois pontos é uma decisão da direção confirmada neste mandato. O ensaio curto não inclui o período; a adjacência do ano com o ano de base fica como limite para os recibos.",
+      "plantas": []
+    },
+    {
+      "achados": [
+        13
+      ],
+      "feito": "As alterações ao brief pertencem à direção, posteriores à primeira entrega. Nenhuma alteração nesta passagem.",
+      "plantas": []
+    },
+    {
+      "achados": [
+        14
+      ],
+      "feito": "O relatório inteiro, incluindo as questões abertas e esta secção, é saída do escrever-relatorio.mjs. A conferência regenera-o e compara os bytes.",
+      "plantas": []
+    },
+    {
+      "achados": [
+        15
+      ],
+      "feito": "As células do selo da definição e dos seus pedaços marcados são vazias nesta construção: as definições não têm algarismos nem esses pedaços. As plantas sintéticas continuam a testar os auxiliares; não são prova de auditaSelo sobre uma definição real com valor.",
+      "plantas": []
+    },
+    {
+      "achados": [
+        16
+      ],
+      "feito": "O manifesto das plantas do construtor foi retirado do repositório. As plantas de leitura a frio pertencem à direção, nas cópias do pacote; esta passagem não constrói nem commita esse manifesto.",
+      "plantas": []
+    }
+  ],
+  "titulos_antes": [
+    {
+      "estudo": "onde-esta-a-agua",
+      "edicoes": [
+        {
+          "lang": "pt",
+          "titulo": "Onde está a água?",
+          "titleUnverified": false,
+          "lingua": null
+        },
+        {
+          "lang": "en",
+          "titulo": "Onde está a água?",
+          "titleUnverified": true,
+          "lingua": "pt-PT"
+        }
+      ],
+      "paginas": [
+        {
+          "lang": "pt",
+          "titulo": "Onde está a água?",
+          "marcas": 0
+        },
+        {
+          "lang": "en",
+          "titulo": "Onde está a água?",
+          "marcas": 1
+        }
+      ]
+    },
+    {
+      "estudo": "agua-nao-faturada",
+      "edicoes": [
+        {
+          "lang": "pt",
+          "titulo": "Água Não Faturada",
+          "titleUnverified": false,
+          "lingua": null
+        },
+        {
+          "lang": "en",
+          "titulo": "Água Não Faturada",
+          "titleUnverified": true,
+          "lingua": "pt-PT"
+        }
+      ],
+      "paginas": [
+        {
+          "lang": "pt",
+          "titulo": "Água Não Faturada",
+          "marcas": 0
+        },
+        {
+          "lang": "en",
+          "titulo": "Água Não Faturada",
+          "marcas": 1
+        }
+      ]
+    }
+  ],
+  "paginas": [
+    {
+      "lang": "pt",
+      "ficheiro": "dist/indice/index.html",
+      "definicoes": 5,
+      "definicoes_com_algarismos": 0,
+      "pedacos_marcados": 0,
+      "sinais": 1,
+      "primeira_nenhuma": null,
+      "titulos_com_marca": 0
+    },
+    {
+      "lang": "en",
+      "ficheiro": "dist/en/index/index.html",
+      "definicoes": 5,
+      "definicoes_com_algarismos": 0,
+      "pedacos_marcados": 0,
+      "sinais": 1,
+      "primeira_nenhuma": null,
+      "titulos_com_marca": 0
+    },
+    {
+      "lang": "pt",
+      "ficheiro": "dist/explicacoes/leitura-da-semana/index.html",
+      "definicoes": 6,
+      "definicoes_com_algarismos": 0,
+      "pedacos_marcados": 0,
+      "sinais": 1,
+      "primeira_nenhuma": "Nenhuma frase da primeira página mudou por causa disto.",
+      "titulos_com_marca": 0
+    },
+    {
+      "lang": "en",
+      "ficheiro": "dist/en/explainers/weekly-reading/index.html",
+      "definicoes": 6,
+      "definicoes_com_algarismos": 0,
+      "pedacos_marcados": 0,
+      "sinais": 1,
+      "primeira_nenhuma": "No sentence on the front page changed because of this.",
+      "titulos_com_marca": 0
+    }
+  ],
+  "unidades": {
+    "parenteses": {
+      "amostras": 164,
+      "transbordos": 0,
+      "linhas_total": 183,
+      "parenteses_aninhados": 10
+    },
+    "antes": {
+      "amostras": 164,
+      "transbordos": 0,
+      "linhas_total": 183,
+      "parenteses_aninhados": 0
+    },
+    "parenteses_por_amostra": {
+      "antes": 0,
+      "parenteses": 20
+    }
+  },
+  "primeira_nenhuma_desde_ex1": [
+    "c6558836f045b3fbb723ff694639f738ca886adc EX1: as explicações e a leitura da semana (as três rotas, a primeira explicação com o texto do §5 do brief, a leitura gerada do registo das correções, o bloco «Para perceber» da primeira página e a secção do índice)"
+  ],
+  "questoes": [
+    {
+      "id": "EX2-1",
+      "estado": "Resolvida pela direção na correção do brief, antes desta passagem."
+    },
+    {
+      "id": "EX2-2",
+      "estado": "A leitura a frio recebida foi tratada por esta passagem. Falta a leitura curta do diff e a conferência da direção antes de aterrar, pela regra do projeto. Não houve publicação."
+    },
+    {
+      "id": "EX2-3",
+      "estado": "As referências para dizer se um valor é alto ou baixo e o ano de base dos volumes encadeados ficam para o bloco dos recibos. A adjacência do período com o ano de base não foi medida no ensaio curto das unidades."
+    }
+  ]
+}
