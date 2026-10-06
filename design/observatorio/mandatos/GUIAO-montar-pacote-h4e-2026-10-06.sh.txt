@@ -1,0 +1,24 @@
+# Cópia de referência do guião usado a 06.10.2026, com os caminhos da máquina substituídos (<sitio>, <motor>, <scratchpad>, <casa>, <utilizador>); não corre assim, reescreve-se com os caminhos reais fora do repositório.
+#!/bin/sh
+# Monta o pacote da leitura do Codex sobre a passagem H4-e (a redação do lugar de direção): o diff desde a cabeça da H4-d
+# (81e3de31) até à cabeça final, os ficheiros mudados inteiros, a pasta das medições, as páginas construídas do Método nas
+# duas edições, e a leitura curta da H4-d.
+set -eu
+S=<scratchpad>
+R=<sitio>
+O=$R/.claude/worktrees/aterragem-2026-10-06
+PAC=${PAC_LEITURA:-$S/h4/pacote-leitura-e}
+BASE=${BASE_LEITURA:-81e3de31}
+CAB=${CAB_LEITURA:-$(git -C "$O" rev-parse --short=8 HEAD)}
+rm -rf "$PAC" "$PAC.plantas.json"
+paginas=""
+for p in metodo/index.html en/method/index.html; do [ -f "$O/dist/$p" ] && paginas="$paginas $p"; done
+PROVAS=""; for f in $(cd "$O" && ls design/especime-v3/medicoes/h4-2026-10-06/plantas-politica-e.json design/especime-v3/medicoes/h4-2026-10-06/capturas-e.json design/especime-v3/medicoes/h4-2026-10-06/corridas-e.json design/especime-v3/medicoes/h4-2026-10-06/n1-e/* design/especime-v3/medicoes/h4-2026-10-06/conferencias-e/* design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4e.py design/especime-v3/medicoes/h4-2026-10-06/correr-h4e.py design/especime-v3/medicoes/h4-2026-10-06/provar-politica-e.mjs design/especime-v3/medicoes/h4-2026-10-06/captar-h4-e.mjs design/especime-v3/medicoes/h4-2026-10-06/inventario-politica-h4e.mjs 2>/dev/null); do PROVAS="$PROVAS $f"; done
+PACOTE_EXTRA="$PROVAS src/data/metodo.mjs src/data/politica-ia.mjs scripts/lugares-ia-do-portao.mjs scripts/check-lugar.mjs tests/pais/portoes.mjs src/i18n/strings.mjs design/especime-v3/critica/LEITURA-H4-d-2026-10-06.md design/especime-v3/critica/LEITURA-H4-e-codex-2026-10-06.md design/especime-v3/INVENTARIO-FRASES.md" \
+PACOTE_RETIRA="design/especime-v3/capturas/* design/especime-v3/medicoes/h4-2026-10-06/portoes/* design/especime-v3/medicoes/h4-2026-10-06/portoes-b/* design/especime-v3/medicoes/h4-2026-10-06/portoes-c/* design/especime-v3/medicoes/h4-2026-10-06/portoes-d/* design/especime-v3/medicoes/h4-2026-10-06/tema-menu-c.json design/especime-v3/medicoes/h4-2026-10-06/tema-menu.json design/especime-v3/medicoes/h4-2026-10-06/tema-menu-b.json design/especime-v3/medicoes/h4-2026-10-06/tema-menu-d.json" \
+sh $R/scripts/leituras/pacote.sh "$O" $BASE "$CAB" "$PAC" \
+  "$O/design/observatorio/BRIEF-H4-o-menu-do-telefone-em-duas-linhas.md" \
+  "$O/design/especime-v3/medicoes/h4-2026-10-06/LEIA-ME.md" \
+  $paginas
+mkdir -p "$PAC/capturas"; for c in "$O"/design/especime-v3/capturas/h4-2026-10-06/passagem-e/*390*.png; do [ -f "$c" ] && cp "$c" "$PAC/capturas/"; done
+echo "pacote: $PAC · cabeça $CAB · $(find "$PAC" -type f | wc -l | tr -d ' ') ficheiros · $(du -sm "$PAC" | cut -f1) MB"

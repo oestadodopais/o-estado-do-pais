@@ -1,0 +1,46 @@
+# Cópia de referência do guião usado a 06.10.2026, com os caminhos da máquina substituídos (<sitio>, <motor>, <scratchpad>, <casa>, <utilizador>); não corre assim, reescreve-se com os caminhos reais fora do repositório.
+#!/bin/sh
+# Depois do build na cabeça da H4-e: as conferências que a mudança toca (códigos lidos de ficheiro), as provas da passagem
+# (correr-h4e.py), a secção do relatório (relatorio-h4e.py) e o commit das provas. Nada aqui chama os portões inteiros.
+set -u
+H=<sitio>/.claude/worktrees/aterragem-2026-10-06
+S=<scratchpad>
+D=design/especime-v3/medicoes/h4-2026-10-06
+P=.claude/h4e/conferencias
+cd "$H" || exit 9
+cab=$(git rev-parse HEAD)
+[ -z "$(git status --porcelain | grep -v '^?? node_modules$')" ] || { echo "árvore suja"; git status --short | head -5; exit 1; }
+[ "$(node -e "console.log(require('./dist/version.json').commit)")" = "$cab" ] || { echo "o dist não é desta cabeça"; exit 1; }
+rm -rf "$P"; mkdir -p "$P"
+for c in check:lugar gate:html check:lingua check:voz; do
+  n=$(echo "$c" | tr ':' '-')
+  npm run "$c" > "$P/$n.log" 2>&1; echo $? > "$P/$n.codigo"; echo "$cab" > "$P/$n.cabeca"
+  echo "$c: código $(cat "$P/$n.codigo") $(date -u +%H:%M)"
+done
+python3 - <<'PY'
+import pathlib, sys
+sys.path.insert(0, 'design/especime-v3/medicoes/h4-2026-10-06')
+from executar import limpar
+for p in pathlib.Path('.claude/h4e/conferencias').glob('*.log'):
+    t = p.read_text(errors='replace'); l = '\n'.join(x.rstrip() for x in limpar(t).splitlines()) + '\n'
+    p.write_text(l)
+print('registos limpos')
+PY
+if grep -q -v '^0$' "$P"/*.codigo; then echo "CONFERÊNCIA VERMELHA: não se corre o resto"; grep -v '^0$' "$P"/*.codigo; exit 1; fi
+rm -rf .claude/h4e/provas .claude/h4e/npm-cache
+python3 $D/correr-h4e.py > "$S/h4/e/correr.log" 2>&1; echo $? > "$S/h4/e/correr.codigo"
+echo "correr-h4e: código $(cat "$S/h4/e/correr.codigo") $(date -u +%H:%M)"; tail -3 "$S/h4/e/correr.log" | cut -c1-200
+[ "$(cat "$S/h4/e/correr.codigo")" = "0" ] || exit 1
+mkdir -p "$D/conferencias-e"; cp "$P"/*.codigo "$P"/*.cabeca "$P"/*.log "$D/conferencias-e/"
+python3 $D/relatorio-h4e.py > "$S/h4/e/relatorio.log" 2>&1; echo $? > "$S/h4/e/relatorio.codigo"
+echo "relatorio-h4e: código $(cat "$S/h4/e/relatorio.codigo")"; tail -2 "$S/h4/e/relatorio.log" | cut -c1-200
+[ "$(cat "$S/h4/e/relatorio.codigo")" = "0" ] || exit 1
+rm -rf "$D/__pycache__"; if grep -rl --exclude-dir=__pycache__ "<utilizador>\|<casa>" "$D" design/especime-v3/capturas/h4-2026-10-06/passagem-e | head -3 | grep -q .; then echo "CAMINHO DA MÁQUINA nas provas"; exit 1; fi
+git add "$D" design/especime-v3/capturas/h4-2026-10-06/passagem-e
+git commit -q -F - <<'MSG'
+H4-e: as provas da passagem na cabeça da regra 9 reescrita (as conferências que a mudança toca, as plantas da política e da N1, as capturas do Método nas cinco larguras) e a secção H4-e do relatório, regenerada por guião
+
+Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_019Dr4reeqSo5uscMFC16k9g
+MSG
+echo "commit das provas: $(git log -1 --format=%h) $(date -u +%H:%M)"; git status --short | wc -l

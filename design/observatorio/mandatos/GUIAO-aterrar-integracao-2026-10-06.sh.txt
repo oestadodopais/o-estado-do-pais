@@ -1,0 +1,28 @@
+# Cópia de referência do guião usado a 06.10.2026, com os caminhos da máquina substituídos (<sitio>, <motor>, <scratchpad>, <casa>, <utilizador>); não corre assim, reescreve-se com os caminhos reais fora do repositório.
+#!/bin/sh
+# A aterragem de um ramo de integração: publica o ramo, constrói na worktree dele e corre as duas conferências que precisam
+# do motor ao lado (check:series, check:cruzamento --with-origin) enquanto a corrida portão do GitHub corre, espera pela
+# corrida verde na cabeça, e só então chama o aterrar.sh da árvore principal (em main).
+# uso: aterrar-integracao.sh <ramo> <worktree do ramo> <motor>   (a cabeça lê-se da worktree)
+set -u
+R=<sitio>
+S=<scratchpad>
+ramo=$1; W=$2; MOTOR=$3
+CAB=$(git -C "$W" rev-parse --short=8 HEAD); echo "cabeça de $ramo: $CAB $(date -u +%H:%M)"
+[ "$(git -C "$W" status --porcelain | grep -v '^?? node_modules$' | wc -l | tr -d ' ')" = "0" ] || { echo "worktree suja: não aterra"; exit 1; }
+git -C "$W" push -u origin "$ramo" 2>&1 | tail -1
+D=$S/registos/motor-ao-lado-$ramo; mkdir -p "$D"
+( cd "$W" && npm run build > "$D/build.log" 2>&1; echo $? > "$D/build.codigo"; export RESEARCHHUB_DIR="$MOTOR"; npm run check:series > "$D/check:series.log" 2>&1; echo $? > "$D/check:series.codigo"; npm run check:cruzamento -- --with-origin > "$D/check:cruzamento.log" 2>&1; echo $? > "$D/check:cruzamento.codigo" ) &
+LOCAL=$!
+sleep 75; ID=""
+for i in $(seq 1 12); do ID=$(gh run list --repo oestadodopais/o-estado-do-pais --branch "$ramo" --limit 3 --json databaseId,headSha --jq ".[] | select(.headSha | startswith(\"$CAB\")) | .databaseId" | head -1); [ -n "$ID" ] && break; sleep 15; done
+echo "corrida de $ramo: ${ID:-não apareceu} $(date -u +%H:%M)"; [ -z "$ID" ] && { wait $LOCAL; exit 1; }
+gh run watch "$ID" --repo oestadodopais/o-estado-do-pais --interval 60 --exit-status > /dev/null 2>&1; C=$?
+gh run view "$ID" --repo oestadodopais/o-estado-do-pais --json status,conclusion --jq '"corrida \(.status)/\(.conclusion)"'
+wait $LOCAL
+echo "build $(cat "$D/build.codigo") · check:series $(cat "$D/check:series.codigo") · cruzamento $(cat "$D/check:cruzamento.codigo") · $(date -u +%H:%M)"
+[ $C -ne 0 ] && { echo "CI vermelha: não aterra"; exit 1; }
+if [ "$(cat "$D/build.codigo")" = "0" ] && [ "$(cat "$D/check:series.codigo")" = "0" ] && [ "$(cat "$D/check:cruzamento.codigo")" = "0" ]; then
+  cd "$R" || exit 9; [ "$(git branch --show-current)" = "main" ] || { echo "a árvore principal não está em main"; exit 1; }
+  zsh scripts/aterrar.sh "$ramo" "$CAB" - > "$S/registos/aterragem-$ramo.log" 2>&1; echo "aterrar exit=$?"; tail -2 "$S/registos/aterragem-$ramo.log" | cut -c1-160
+else echo "NÃO ATERROU"; fi
