@@ -1,73 +1,108 @@
-# Prompt para a sessão seguinte, O Estado do País (depois de 06.10.2026 à tarde)
+# Prompt para a sessão seguinte, O Estado do País (depois de 06.10.2026 à noite)
 
-*Escrito pelo lugar de direção (Claude Fable 5.1) às 14:45 UTC de 06.10.2026, a meio de um dia de construção, a pedido do diretor («record it in the most accurate, proper way, so if we lose this session the next session will understand what's going on»). O estado do §6 foi lido por `scripts/leituras/estado.py` nessa hora; no fecho da sessão relê-se. Sem travessões.*
+*Escrito pelo lugar de direção (Claude Fable 5.1) no fecho da sessão de 06.10.2026. O estado lê-se pelo guião e vai no bloco do fim; o que está aqui em cima é o que a sessão seguinte faz, por ordem, e porquê.*
 
-## 1 · O que está no ar
+## O que ficou por aterrar e porquê
 
-- `main` em `f5fb384e`: as regras reescritas de 06.10 (`CLAUDE.md`, as regras 1 a 13), a política com a emenda de 06.10, as decisões §1.172 (a revisão das regras e da maquinaria; o Codex constrói e o Opus lê; a marca «[a verificar]» deixa de publicar), §1.173 (o diretor reafirma que o lugar de direção dirige), §1.174 (construir tudo até aos oitenta por cento) e §1.175 (o teto aos noventa), os briefs H4, M-A, EX2, RP4-n, JD1 e ER1 com os guiões de medidas, a pesquisa das fontes dos juros e da dívida, e as três revisões a frio da maquinaria e das regras em `design/especime-v3/critica/`.
-- O sítio no ar é o EX1 da manhã (a explicação do dinheiro do Estado, a leitura da semana) com as regras novas; nenhum bloco de conteúdo construído hoje aterrou ainda à hora deste prompt. A ordem das aterragens: o H4 primeiro (leva o texto novo da política de IA, que tem de aterrar com o primeiro bloco construído pelo Codex), depois o EX2, o M-A e o RP4-n.
+Três blocos estão prontos e por aterrar numa só fusão, no ramo `aterragem-2026-10-06-tarde` (a worktree `.claude/worktrees/aterragem-2026-10-06`): o M-A (a maquinaria sem perda de proteção, §1.178), o EX2 (a leitura da semana com o que cada número é, §1.179) e o H4 (o menu do telefone em duas linhas e a política de IA a dizer os três papéis, §1.180). Não aterraram a 06.10 porque a redação final da política de IA é do lugar de direção (um modelo Claude), o Codex só leu a sua primeira volta (achou a regra 9 do Método por reescrever) e chegou ao teto da semana; as três voltas seguintes só tiveram leituras do Opus, e a página promete que a construção e a leitura são sempre de famílias diferentes. Aterrar assim contradizia a página no dia em que saísse. O diretor não respondeu à pergunta de gastar o último ponto do Codex à noite, e o teto é dele.
 
-## 2 · O que está a meio (cada ramo numa worktree em `.claude/worktrees/<ramo>`)
+## O que a sessão seguinte faz primeiro, por esta ordem
 
-- **h4-2026-10-06** (o menu do telefone em duas linhas, as sete portas, «União Europeia» por extenso, a política de IA com três lugares em palavras correntes): três passagens entregues, a quarta (H4-d) lançada às 12:44 UTC pelo mandato `<scratchpad>/h4/PROMPT-h4d-codex.md`; a leitura a frio do Opus feita (`critica/LEITURA-H4-2026-10-06.md`, cinco plantas mordidas); `main` fundido e o mapa posto em dia (`7d8459d8`, CI verde); a cabeça da H4-d precisa de CI; depois aterra. A entrada do registo está rascunhada em `<scratchpad>/registos/decisao-1.178-h4-rascunho.md` (o número final é o seguinte ao último da §1 quando aterrar; o carimbo «Texto: sobre» lê-se do erro do `ledger:check`).
-- **ex2-2026-10-06** (a leitura da semana com a frase «o que é» de cada número, a unidade antes dos dois pontos, «a fonte reviu para cima/para baixo», o índice com a mesma gramática, os títulos dos estudos sem marca no índice inglês): a passagem EX2-b entregue (`b8b9e74f`), `main` fundido e o mapa posto em dia (`a70d9e43`), CI a correr; a segunda leitura curta do Opus lançada às 14:25 UTC (`<scratchpad>/ex2/PROMPT-leitura-b-completo.md`, cinco plantas em `<scratchpad>/ex2/pacote-leitura-b`); aterra depois do H4. A primeira leitura está em `critica/LEITURA-EX2-2026-10-06.md`. A passagem EX1-d (três correções ao texto da explicação do EX1: a frase dos juros que contradizia outra, «está acima», e o saldo da execução em palavras com a linha do livro) está briefada em `design/observatorio/mandatos/MANDATO-EX1-d-2026-10-06.md` e por lançar.
-- **ma-2026-10-06** (a maquinaria sem perda de proteção): entregue, lido duas vezes pelo Opus (`critica/LEITURA-MA-2026-10-06.md` e `LEITURA-MA-b-2026-10-06.md`, dez plantas mordidas, o veredicto «aceitável como fundação»), a passagem M-A-b entregue, o limpador corrigido pelo lugar de direção (`89de5eaa`), CI a correr; aterra depois do EX2. A corrida inteira na máquina passou de 1 482,7 s a 414,7 s com as mesmas conferências; o `aterrar.sh` novo já não espera pela corrida de `main`. A entrada do registo está rascunhada em `<scratchpad>/registos/decisao-1.177-ma-rascunho.md` (renumerar).
-- **rp4n-2026-10-06** (sítio e motor, a worktree do motor em `<motor>/.claude/worktrees/rp4n-2026-10-06`): as 174 linhas e as 6 séries sem a marca «[a verificar]» nas frases «o que é» (24 origens seladas de 11 documentos ou corpos), a célula nova do `gate:html` que recusa a marca onde há uma afirmação e conta onde ela diz uma ausência; a terceira passagem (RP4-n-c, a lista completa dos tipos aceites) lançada às 14:23 UTC; depois a leitura curta do Opus e a aterragem (o sítio e o motor, com `aterrar.sh <ramo> <cabeça> rp4n-2026-10-06`). O relatório lista as páginas com marcas aceites para o bloco dos recibos.
-- **jd1-2026-10-06** (sítio e motor): os juros e a dívida do Estado no livro-razão; o construtor a correr desde 10:41 UTC; pára aos noventa e três por cento da semana do Codex se não estiver nos portões finais; os commits ficam; retoma-se depois da reposição (12.10.2026, 07:38 UTC) com uma passagem que lê o relatório e acaba.
-- **er1-2026-10-06**: o recibo incorporável; o construtor a correr desde 10:57 UTC; pára aos noventa por cento; idem.
-- O ramo local `c2-2026-10-05` fica para o diretor (só se apaga à força).
-- Os mandatos, os pacotes das leituras e as plantas desta sessão estão em `<scratchpad>` (a pasta da sessão em `/private/tmp/claude-501/…/scratchpad`, que pode já não existir); o que é durável está no repositório (`critica/`, `medicoes/`, `mandatos/`).
+1. Depois da reposição do Codex (12.10.2026 às 07:38 UTC): o pacote da leitura do diff inteiro da H4-e, montado na worktree de integração com `BASE_LEITURA=0d1a9616 PAC_LEITURA=<scratchpad>/h4/pacote-leitura-e4 sh <scratchpad>/h4/montar-pacote-e.sh` (o guião está no bloco de notas desta sessão; se o bloco de notas se perdeu, o guião `scripts/leituras/pacote.sh` com a base `0d1a9616`, a cabeça do ramo, as páginas `metodo/index.html` e `en/method/index.html` construídas nessa cabeça, e os extras `src/data/metodo.mjs`, `src/data/politica-ia.mjs`, `scripts/lugares-ia-do-portao.mjs`, `scripts/check-lugar.mjs`, `tests/pais/portoes.mjs`, `src/i18n/strings.mjs`, as três leituras da H4-e em `design/especime-v3/critica/` e o inventário das frases), com cinco plantas novas (as dez anteriores estão descritas nas leituras arquivadas, que o leitor vê), e a leitura pelo `scripts/leituras/ler.sh` com `CODEX_RACIOCINIO=high` e o prompt `design/observatorio/mandatos/PROMPT-LEITURA-H4-e-codex-2026-10-12.md`. Se a leitura disser «ready to land»: arquivar a leitura e as plantas em `design/especime-v3/critica/LEITURA-H4-e-d-2026-10-12.md`, pôr na §1.180 o veredicto e os símbolos, e aterrar com `sh <scratchpad>/registos/aterrar-integracao.sh aterragem-2026-10-06-tarde <worktree de integração> ~/Instruments/ResearchHub` (publica o ramo, constrói e corre o `check:series` e o `check:cruzamento --with-origin` na worktree, espera pela corrida portão verde na cabeça e chama o `aterrar.sh` da árvore principal em `main`). Se disser «not yet»: corrigir no mesmo ramo, reconstruir, correr `provas-e.sh` (as conferências que a mudança toca, as provas e a secção H4-e do relatório) e repetir a leitura.
+2. Depois da aterragem: apagar os ramos fundidos (`ma-2026-10-06`, `ex2-2026-10-06`, `h4-2026-10-06`, `registos-2026-10-06-tarde`, `aterragem-2026-10-06-tarde`) e as worktrees, cada remoção em comando separado dos `push`.
+3. O ER1-b (o recibo incorporável, a passagem de correção): o mandato está em `design/observatorio/mandatos/MANDATO-ER1-b-2026-10-06.md` no ramo `er1-2026-10-06`, com a entrada do registo em `ENTRADA-ER1-aterragem.md`; o Codex em `high`, uma worktree desse ramo com `main` fundido.
+4. O RP4-n e o JD1: as leituras a frio do Opus de 06.10 à noite estão em `design/especime-v3/critica/LEITURA-RP4N-2026-10-06.md` e `LEITURA-JD1-2026-10-06.md` (se um destes ficheiros não existir no ramo de integração, a leitura ainda corria quando a sessão fechou, perdeu-se com ela, e repete-se: o pacote do RP4-n monta-se com o guião do bloco de notas ou pelo `pacote.sh` com a base `d1becbf8` e o motor `465d01e..eb4a5cb`, mais os onze documentos citados em «Origens novas» do relatório copiados para `motor/` com `sha256.txt`; o do JD1 com a base `4f49b677` e o motor `465d01e..f503a5b`, com os corpos de `indicators/out/jd1-2026-10-06/` e o `sha256.txt`); o que cada uma mandou corrigir, a passagem de correção pelo Codex, a leitura curta e a aterragem (o RP4-n com o ramo do motor `rp4n-2026-10-06` por `--ff-only` em `master`; o JD1 com o ramo do motor `jd1-2026-10-06`). Os rascunhos das entradas §1.181 (RP4-n) e §1.182 (JD1) estão no bloco de notas desta sessão e, se ele se perdeu, escrevem-se pelos relatórios dos blocos.
+5. O M-B, em duas peças pequenas, a primeira delas: o `aterrar.sh` corre o `check:series` e o `check:cruzamento --with-origin` por si, e recusa fundir sem os dois a 0 na cabeça (a §1.178 di-lo); o `pacote.sh` recusa montar sobre um registo de plantas existente (M58); a tranca com entrada atómica (a JD1-6); os três pequenos da segunda leitura do M-A (MA-6 a MA-8).
+6. O quadro de medição contínua (§1.177, M57), por guião.
+7. A EX1-d (o mandato em `design/observatorio/mandatos/MANDATO-EX1-d-2026-10-06.md`) e, quando o JD1 aterrar, a segunda explicação.
 
-## 3 · As decisões da tarde e o plano
+## O que custou (a semana do Codex num dia)
 
-- **§1.176:** o teto do Codex sobe a noventa e cinco por cento só nesta semana; o do Claude desce a oitenta e cinco (não se lança nada que custe Claude acima dos oitenta), porque o Claude é o uso diário do diretor.
-- **§1.177 (a viabilidade):** o dia custou oitenta e cinco pontos da semana do Codex (sete a oito milhões de símbolos); as causas, por ordem: o contexto reenviado a cada volta (o mapa de 274 KB à partida), tudo em `xhigh`, blocos com três ou quatro mudanças, as passagens de correção a reler tudo. O plano: um bloco é uma mudança com o custo-alvo de trezentos mil símbolos; o raciocínio por tarefa (`high` nas construções e nas passagens mecânicas, `xhigh` só nas leituras de blocos com números); os construtores decidem as ambiguidades pequenas; só Blocking e Major antes de aterrar; o M-B primeiro, em dois blocos pequenos; um bloco por dia. O quadro de medição contínua (uma linha por bloco escrita por guião; as fugas por área; a cobertura das plantas; o teste dos dois minutos; os ensaios de nível pela M51; a página semanal) constrói-se como um bloco pequeno de guiões antes do bloco de conteúdo seguinte, e os números de hoje são as primeiras linhas (M57).
+A semana do Codex (o plano maior) gastou-se num dia: 3 % às 09:00 UTC, 80 % às 13:50, 95 % às 16:10, 99 % às 17:16 (as duas passagens em curso ultrapassaram o teto de 95 % da §1.176; nada se lançou depois dele). Os símbolos por registo, lidos dos registos dos lançamentos desta sessão:
 
-## 4 · O que fazer a seguir, por ordem
+| Registo | Símbolos («tokens used») |
+|---|---:|
+| `c2/leitura-astra.md.eventos.log` | 199 737 |
+| `ensaio-leituras/LEITURA-RP4-gpt-6-astra-high.md.eventos.log` | 119 045 |
+| `ensaio-leituras/LEITURA-RP4-gpt-6-astra-xhigh.md.eventos.log` | 160 377 |
+| `ensaio-leituras/LEITURA-RP4-gpt-6.1-sol-high.md.eventos.log` | 288 905 |
+| `ensaio-leituras/LEITURA-RP4-gpt-6.1-sol-xhigh.md.eventos.log` | 208 872 |
+| `er1/construir.log` | 991 409 |
+| `ex1/leitura-astra.md.eventos.log` | 323 575 |
+| `ex2/construir-b.log` | 653 095 |
+| `ex2/construir.log` | 643 563 |
+| `h2/construir.log` | 949 814 |
+| `h3/leitura-astra.md.eventos.log` | 216 669 |
+| `h4/construir-b.log` | 344 883 |
+| `h4/construir-c.log` | 147 619 |
+| `h4/construir-d.log` | 440 289 |
+| `h4/construir.log` | 425 904 |
+| `h4/e/LEITURA-codex-h4e.md.eventos.log` | 97 445 |
+| `juros/construir.log` | 1 581 631 |
+| `juros/pesquisa.eventos.log` | 221 785 |
+| `k2/LEITURA-sol.md.eventos.log` | 227 998 |
+| `l2b/LEITURA-sol.md.eventos.log` | 247 843 |
+| `maquinaria/construir-b.log` | 553 189 |
+| `maquinaria/construir.log` | 664 430 |
+| `oe1/construir.log` | 3 666 976 |
+| `p4/LEITURA-p4-sol.md.eventos.log` | 258 546 |
+| `r3/LEITURA-r3-sol.md.eventos.log` | 188 618 |
+| `r3/LEITURA-r3b-sol.md.eventos.log` | 175 820 |
+| `r4/leitura-astra.md.eventos.log` | 218 794 |
+| `revisao-maquinaria/revisao-astra.md.eventos.log` | 331 925 |
+| `revisao-regras/revisao-astra.md.eventos.log` | 245 401 |
+| `rotulos/AUDITORIA-r2-sol.md.eventos.log` | 225 785 |
+| `rotulos/LEITURA-r2-sol.md.eventos.log` | 317 537 |
+| `rp3/LEITURA-rp3-sol.md.eventos.log` | 260 773 |
+| `rp3/LEITURA-rp3b-sol.md.eventos.log` | 158 090 |
+| `rp4/construir-b.log` | 503 278 |
+| `rp4/construir.log` | 1 017 591 |
+| `rp4c/leitura-astra.md.eventos.log` | 213 608 |
+| `rp4m/leitura-astra.md.eventos.log` | 228 990 |
+| `rp4n/construir-b.log` | 443 295 |
+| `rp4n/construir-c.log` | 465 726 |
+| `rp4n/construir.log` | 1 262 368 |
+| `s1/LEITURA-s1-sol.md.eventos.log` | 246 029 |
+| `ue2/LEITURA-sol.md.eventos.log` | 230 593 |
+| **Total dos registos com a linha** | **20 367 820** |
 
-1. Acabar as aterragens em curso (o H4, o EX2, o M-A, o RP4-n), cada uma com: a leitura curta se faltar, `main` fundido, o `conferir-mapa.py` a 0 longe e 0 por encontrar, a corrida `portão` verde na cabeça, o `aterrar.sh`, e a entrada no registo (os rascunhos em `<scratchpad>/registos/`, ou, se se perderam, as leituras em `critica/` e os relatórios em `medicoes/` chegam para a escrever); as worktrees e os ramos apagam-se depois.
-2. Fechar o dia: o custo de cada bloco na página do quadro (M57), o cofre do diretor (`~/Obsidian/Experiments/O Estado do País.md`), a lista de progresso e este prompt no Desktop, o estado relido por `estado.py`.
-3. Na segunda-feira, depois da reposição: o bloco do quadro de medição; o M-B em dois blocos pequenos (o mapa por âncoras com a história fora; os inventários gerados e o relatório gerado); a EX1-d; retomar o JD1 e o ER1; a segunda explicação quando o JD1 aterrar; o RP4-n-b (a I202, a I208, o corredor) e o bloco dos recibos (as marcas aceites, as referências de alto e baixo, o ano de base).
+As leituras do Opus de hoje: EX2 350 369 e 306 644; M-A 325 236 e 286 282; H4 352 418 e 281 094; ER1 329 667; H4-e 292 790 e 358 631; a leitura do Codex da H4-e: 97 445. O Claude estava a 77 % da semana às 17:39 UTC.
 
-## 5 · As preocupações do diretor, por palavras dele (§1.177)
+## O estado lido pelo guião
 
-«If we keep going like that, the project won't be viable. I was trying to make something that could be kept with a relatively low cost … sound, robust, but efficient at the same time, with the quality, making sure that the numbers are correct.» «Some tasks don't need extra high … that goes for Astra, Opus, some can be used by Sonnet … I rely on you to find those sweet spots where we keep high accuracy but gain efficiency on the whole project … the problem is the measuring.» O que se tenta conseguir: um sítio exato, verdadeiro e conferível, a custo baixo e medido. O que ele pediu também: não lhe chamar diretor nas mensagens (o termo fica como o nome do lugar nos documentos); as decisões são do lugar de direção, e o que não se adota diz-se-lhe com a razão.
+*(lido na worktree de integração; os caminhos da máquina substituídos por `<sitio>`, `<motor>`, `<casa>` e `<utilizador>`)*
 
-## 6 · O uso às 14:45 UTC
-
-semana: 70% usados, repõe a 12.10.2026 10:00 UTC
-  semana: 86.0% usados, repõe a 12.10.2026 07:38 UTC
-
-## O estado, lido a 06.10.2026 às 14:40:00 UTC por `scripts/leituras/estado.py`
+## O estado, lido a 06.10.2026 às 17:40:26 UTC por `scripts/leituras/estado.py`
 
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
 ### O sítio (`<sitio>`)
-- `main`: f5fb384e · 2026-10-06T11:57:14+01:00 · O brief ER1 (o recibo incorporável: o código que um jornal ou um blogue cola para mostrar um número com a sua fonte, a sua data e a  (`git log -1 main`)
-- `origin/main`: f5fb384e · 2026-10-06T11:57:14+01:00 · O brief ER1 (o recibo incorporável: o código que um jornal ou um blogue cola para mostrar um número com a sua fonte, a sua data e a  (`git log -1 origin/main`)
+- `main`: f1b1b131 · 2026-10-06T15:40:45+01:00 · Os registos da tarde de 06.10: a §1.176 (o teto do Codex a noventa e cinco só nesta semana, o do Claude a oitenta e cinco), a §1.17  (`git log -1 main`)
+- `origin/main`: f1b1b131 · 2026-10-06T15:40:45+01:00 · Os registos da tarde de 06.10: a §1.176 (o teto do Codex a noventa e cinco só nesta semana, o do Claude a oitenta e cinco), a §1.17  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
-- árvore principal: 3 entrada(s) por registar: `M CLAUDE.md`; `M DECISIONS.md`; `M design/observatorio/REGISTO-DE-MELHORIAS.md`  (`git status --short`, código 0)
-- ramos locais: `c2-2026-10-05 461de524`, `er1-2026-10-06 645ecde7`, `ex2-2026-10-06 a70d9e43`, `h4-2026-10-06 f958bf80`, `jd1-2026-10-06 6147a578`, `ma-2026-10-06 89de5eaa`, `main f5fb384e`, `registos-2026-10-06-tarde f5fb384e`, `rp4n-2026-10-06 1065d1f0`  (`git branch`)
-- ramos no remoto: `ex2-2026-10-06`, `h4-2026-10-06`, `ma-2026-10-06`, `main`  (`git ls-remote --heads origin`)
-- worktree: `<sitio> f5fb384e [registos-2026-10-06-tarde]`
-- worktree: `<sitio>/.claude/worktrees/er1-2026-10-06 645ecde7 [er1-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/ex2-2026-10-06 a70d9e43 [ex2-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/h4-2026-10-06 f958bf80 [h4-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/jd1-2026-10-06 6147a578 [jd1-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/ma-2026-10-06 89de5eaa [ma-2026-10-06]`
-- worktree: `<sitio>/.claude/worktrees/rp4n-2026-10-06 1065d1f0 [rp4n-2026-10-06]`
+- árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
+- ramos locais: `aterragem-2026-10-06-tarde f3b58cad`, `c2-2026-10-05 461de524`, `er1-2026-10-06 56a582dd`, `ex2-2026-10-06 44461ab2`, `h4-2026-10-06 d81471b7`, `jd1-2026-10-06 2775a8d6`, `ma-2026-10-06 98c1275d`, `main f1b1b131`, `registos-2026-10-06-tarde f1b1b131`, `rp4n-2026-10-06 c7903767`  (`git branch`)
+- ramos no remoto: `aterragem-2026-10-06-tarde`, `er1-2026-10-06`, `ex2-2026-10-06`, `h4-2026-10-06`, `ma-2026-10-06`, `main`, `registos-2026-10-06-tarde`  (`git ls-remote --heads origin`)
+- worktree: `<sitio> f1b1b131 [main]`
+- worktree: `<sitio>/.claude/worktrees/aterragem-2026-10-06 f3b58cad [aterragem-2026-10-06-tarde]`
+- worktree: `<sitio>/.claude/worktrees/er1-2026-10-06 56a582dd [er1-2026-10-06]`
+- worktree: `<sitio>/.claude/worktrees/ex2-2026-10-06 44461ab2 [ex2-2026-10-06]`
+- worktree: `<sitio>/.claude/worktrees/h4-2026-10-06 d81471b7 [h4-2026-10-06]`
+- worktree: `<sitio>/.claude/worktrees/jd1-2026-10-06 2775a8d6 [jd1-2026-10-06]`
+- worktree: `<sitio>/.claude/worktrees/ma-2026-10-06 98c1275d [ma-2026-10-06]`
+- worktree: `<sitio>/.claude/worktrees/rp4n-2026-10-06 c7903767 [rp4n-2026-10-06]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
-- 37478767589 · `a70d9e43` · ex2-2026-10-06 · portão · **in_progress / SEM CONCLUSÃO** · criada 2026-10-06T14:25:01Z · atualizada 2026-10-06T14:25:36Z
-- 37478289961 · `b0f3a6cc` · ex2-2026-10-06 · portão · **completed / cancelled** · criada 2026-10-06T14:21:37Z · atualizada 2026-10-06T14:25:32Z
-- 37477054620 · `89de5eaa` · ma-2026-10-06 · portão · **in_progress / SEM CONCLUSÃO** · criada 2026-10-06T14:12:44Z · atualizada 2026-10-06T14:13:27Z
-- 37474596274 · `70fc8bc4` · ma-2026-10-06 · portão · **completed / cancelled** · criada 2026-10-06T13:54:54Z · atualizada 2026-10-06T14:13:22Z
-- 37461966871 · `7d8459d8` · h4-2026-10-06 · portão · **completed / success** · criada 2026-10-06T12:15:27Z · atualizada 2026-10-06T12:29:55Z
-- 37457378535 · `e1912395` · ma-2026-10-06 · portão · **completed / success** · criada 2026-10-06T11:35:09Z · atualizada 2026-10-06T11:56:28Z
+- 37504398182 · `f3b58cad` · aterragem-2026-10-06-tarde · portão · **in_progress / SEM CONCLUSÃO** · criada 2026-10-06T17:32:56Z · atualizada 2026-10-06T17:33:01Z
+- 37495889893 · `12b60426` · aterragem-2026-10-06-tarde · portão · **completed / success** · criada 2026-10-06T16:27:48Z · atualizada 2026-10-06T16:50:39Z
+- 37495889884 · `12b60426` · aterragem-2026-10-06-tarde · portão · **completed / cancelled** · criada 2026-10-06T16:27:48Z · atualizada 2026-10-06T16:27:50Z
+- 37492775161 · `8f07e6c0` · h4-2026-10-06 · portão · **completed / success** · criada 2026-10-06T16:04:23Z · atualizada 2026-10-06T16:23:24Z
+- 37487149373 · `56a582dd` · er1-2026-10-06 · portão · **completed / success** · criada 2026-10-06T15:23:52Z · atualizada 2026-10-06T15:47:20Z
+- 37484196596 · `f1b1b131` · main · portão · **completed / success** · criada 2026-10-06T15:03:45Z · atualizada 2026-10-06T15:17:16Z
 
 ### O que está no ar (`/version.json` do sítio publicado)
-- commit no ar: `f5fb384e` · construído em 2026-10-06T11:24:39.433Z · ref `main` · production
-- igual a `origin/main` (`f5fb384e`): **sim**
+- commit no ar: `f1b1b131` · construído em 2026-10-06T15:06:34.352Z · ref `main` · production
+- igual a `origin/main` (`f1b1b131`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
 ### O motor (`<motor>`)
@@ -82,11 +117,11 @@ semana: 70% usados, repõe a 12.10.2026 10:00 UTC
 - worktree: `<motor>/.claude/worktrees/rp4n-2026-10-06 eb4a5cb [rp4n-2026-10-06]`
 
 ### O uso das duas subscrições (`python3 scripts/leituras/uso.py`)
-    Claude (escrito pela linha de estado a 06.10.2026 14:40 UTC):
-      janela de 5 horas: 12% usados, repõe a 06.10.2026 17:30 UTC
-      semana: 70% usados, repõe a 12.10.2026 10:00 UTC
-    Codex (última leitura: 2026-10-06T14:39:42.833Z; plano «pro»):
-      semana: 86.0% usados, repõe a 12.10.2026 07:38 UTC
+    Claude (escrito pela linha de estado a 06.10.2026 17:40 UTC):
+      janela de 5 horas: 3% usados, repõe a 06.10.2026 22:30 UTC
+      semana: 77% usados, repõe a 12.10.2026 10:00 UTC
+    Codex (última leitura: 2026-10-06T17:16:12.978Z; plano «pro»):
+      semana: 99.0% usados, repõe a 12.10.2026 07:38 UTC
 
 ### Os construtores do Codex (`.claude/codex-*.log`)
 - `codex-b2-peca1-correcao-2.log`: INICIO 21:07:38 modelo=gpt-6-astra raciocínio=xhigh · **FIM exit=1 21:17:31** · 17379 linhas
@@ -128,3 +163,5 @@ semana: 70% usados, repõe a 12.10.2026 10:00 UTC
     - tokens used 493,377
 - `codex-rp1c.log`: INICIO 17:08:33 modelo=gpt-6-astra raciocínio=xhigh · **FIM exit=0 18:04:04** · 31423 linhas
     - tokens used 457,106
+
+
