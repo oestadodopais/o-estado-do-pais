@@ -4159,6 +4159,8 @@ páginas são **conteúdo**, como «Índice» e «Privacidade», porque são o o
 
 Texto do brief H4, §3, ponto 4, confirmado como final pela decisão H4-3 do lugar de direção na passagem H4-b. Linhas geradas por `design/especime-v3/medicoes/h4-2026-10-06/inventario-politica.mjs`.
 
+| classe | texto | bloco | estado | razão |
+| --- | --- | --- | --- | --- |
 | divulgacao | São três lugares, e a verificação é sempre de outra família de modelos: | h4 | viva | texto do brief H4, confirmado pela H4-3 |
 | divulgacao | A construção constrói o sítio e o motor, e verifica lotes na fonte. | h4 | viva | texto do brief H4, confirmado pela H4-3 |
 | divulgacao | São os modelos Claude da Anthropic na direção e na leitura, e o Codex da OpenAI na construção. Um modelo novo só ocupa um lugar depois de passar os mesmos testes que o titular passou, e a troca fica escrita com a data. | h4 | viva | texto do brief H4, confirmado pela H4-3 |
