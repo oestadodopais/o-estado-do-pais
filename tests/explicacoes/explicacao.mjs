@@ -27,6 +27,13 @@
  *     lista não tem, um valor que não se lê ou um empate na fronteira não são defeitos da declaração: tiram as palavras
  *     da página, e a segunda metade confere que não estão lá.
  *
+ * O EX1-c (06.10.2026, os achados 13, 14, 15 e 17 da leitura a frio): a X9 recusa também uma lista de `maiores` que não
+ * tenha a família inteira do livro (um membro a menos), além de um intruso; a X10 exige os três ramos de cada `sinal`
+ * (positivo, negativo e zero) e de cada `compara` (maior, menor e igual), para que nenhum valor feche a construção; uma
+ * marca `data-explicacao-declarado` só sai do inventário sobre um elemento que a célula compara (o título, um parágrafo
+ * que a conta dá, o título de uma secção, o título e os rótulos de uma figura, a folha do caminho, uma porta); e cada
+ * figura declarada tem de estar na página (a F22).
+ *
  * AS CLASSES DO EX1-b. «leitura»: uma parte que diz uma coisa que nenhuma origem diz com estas palavras, e que é a
  * leitura do projeto sobre o que os campos citados definem; leva `sobre` (o que lê) e pelo menos um apoio, conferido
  * como os de «diz». «aponta» passa a ter três destinos: uma secção acima (`secao`), uma porta do fim que a explicação
@@ -62,7 +69,7 @@ import { ENTRADAS } from '../../src/data/primeira-pagina.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 import { t } from '../../src/i18n/strings.mjs';
-import { conferirBarrasDoLivro } from '../formas/barras-do-livro.mjs';
+import { conferirBarrasDoLivro, figurasDeclaradasEmFalta } from '../formas/barras-do-livro.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..', '..');
@@ -121,12 +128,12 @@ function nomeAqui(id, lang) {
  * AS FOLHAS DE TEXTO DE UMA EXPLICAÇÃO, nas duas edições ao mesmo tempo, com o caminho e o ramo de cada uma. As duas
  * edições têm de ter a mesma forma, e uma diferença atira.
  * @param {any} e
- * @returns {{ caminho: string, pt: string, en: string, ramo: 'sinal'|'se'|'maiores'|null }[]}
+ * @returns {{ caminho: string, pt: string, en: string, ramo: 'sinal'|'se'|'maiores'|'compara'|null }[]}
  */
 export function folhasDaExplicacao(e) {
-  /** @type {{ caminho: string, pt: string, en: string, ramo: 'sinal'|'se'|'maiores'|null }[]} */
+  /** @type {{ caminho: string, pt: string, en: string, ramo: 'sinal'|'se'|'maiores'|'compara'|null }[]} */
   const out = [];
-  /** @param {any} a @param {any} b @param {string} c @param {'sinal'|'se'|'maiores'|null} ramo */
+  /** @param {any} a @param {any} b @param {string} c @param {'sinal'|'se'|'maiores'|'compara'|null} ramo */
   const anda = (a, b, c, ramo) => {
     if (Array.isArray(a)) {
       if (!Array.isArray(b) || a.length !== b.length) throw new Error(`X1 · as duas edições têm formas diferentes em ${c}`);
@@ -149,6 +156,11 @@ export function folhasDaExplicacao(e) {
     if ('se' in a) {
       if (JSON.stringify(a.se) !== JSON.stringify(b.se)) throw new Error(`X1 · as duas edições guardam as palavras com condições diferentes em ${c}`);
       anda(a.partes, b.partes, `${c}.se`, 'se');
+      return;
+    }
+    if ('compara' in a) {
+      if (JSON.stringify(a.compara) !== JSON.stringify(b.compara)) throw new Error(`X1 · as duas edições comparam linhas diferentes em ${c}`);
+      for (const r of ['maior', 'menor', 'igual']) if (r in a) anda(a[r], b[r], `${c}.${r}`, 'compara');
       return;
     }
     if ('claim' in a) {
@@ -192,7 +204,7 @@ export function linhasDaExplicacao(e, linhas) {
     else if (x && typeof x === 'object') {
       for (const [k, v] of Object.entries(x)) {
         if (['claim', 'periodo', 'nome', 'sinal'].includes(k) && typeof v === 'string') out.add(v);
-        else if (['linhas', 'primeiros', 'de', 'maiores'].includes(k) && Array.isArray(v)) v.forEach((id) => typeof id === 'string' && out.add(id));
+        else if (['linhas', 'primeiros', 'de', 'maiores', 'compara'].includes(k) && Array.isArray(v)) v.forEach((id) => typeof id === 'string' && out.add(id));
         else anda(v);
       }
     }
@@ -346,7 +358,7 @@ export function conferirAuditoriaDasExplicacoes({
  * construção no resolvedor e são erros aqui; o que depende dos dados confere-se na página (X6).
  * @param {{ explicacoes?: any[] }} [entrada]
  */
-export function conferirMaioresDasExplicacoes({ explicacoes = EXPLICACOES } = {}) {
+export function conferirMaioresDasExplicacoes({ explicacoes = EXPLICACOES, linhas = loadClaims() } = {}) {
   /** @type {string[]} */
   const erros = [];
   let tokens = 0;
@@ -370,9 +382,42 @@ export function conferirMaioresDasExplicacoes({ explicacoes = EXPLICACOES } = {}
         const re = familia;
         const fora = ids.filter((/** @type {string} */ id) => !re.test(id));
         if (fora.length) falha(`tem linhas fora da família /${o.familia}/: ${fora.join(', ')}`);
+        /* A família inteira (EX1-c, o achado 13): uma linha do livro que case com a família e não esteja na lista é um
+           defeito da declaração, porque as maiores contar-se-iam sem ela. */
+        const faltam = [...linhas.keys()].filter((id) => re.test(id) && !ids.includes(id));
+        if (faltam.length) falha(`não tem a família inteira /${o.familia}/ do livro: faltam ${faltam.join(', ')}`);
       }
       if (!Number.isInteger(o.n) || o.n < 1 || o.n > ids.length) falha(`tem n=${o.n}, fora de 1 a ${ids.length}`);
       for (const k of PALAVRAS_DOS_MAIORES) if (typeof o[k] !== 'string' || /\d/.test(o[k])) falha(`não tem a palavra «${k}», ou ela traz um algarismo`);
+    };
+    anda(e, '');
+  }
+  return { erros, contas: { tokens } };
+}
+
+/**
+ * X10 (EX1-c, 06.10.2026, o achado 17 da leitura a frio): cada token que um valor decide declara todos os ramos que o
+ * valor pode pedir: um `sinal`, o positivo, o negativo e o zero; um `compara`, o maior, o menor e o igual. Sem um deles,
+ * o valor que o pedir fecha a construção (era o caso de um saldo de exatamente zero).
+ * @param {{ explicacoes?: any[] }} [entrada]
+ */
+export function conferirRamosDasExplicacoes({ explicacoes = EXPLICACOES } = {}) {
+  /** @type {string[]} */
+  const erros = [];
+  let tokens = 0;
+  for (const e of explicacoes) {
+    /** @param {unknown} x @param {string} c */
+    const anda = (x, c) => {
+      if (Array.isArray(x)) { x.forEach((y, i) => anda(y, `${c}[${i}]`)); return; }
+      if (!x || typeof x !== 'object') return;
+      const o = /** @type {Record<string, any>} */ (x);
+      const ramos = 'sinal' in o ? ['positivo', 'negativo', 'zero'] : 'compara' in o ? ['maior', 'menor', 'igual'] : null;
+      if (ramos) {
+        tokens++;
+        const faltam = ramos.filter((r) => !(r in o));
+        if (faltam.length) erros.push(`X10 · ${e.slug}: o token «${'sinal' in o ? 'sinal' : 'compara'}» em ${c} não declara o ramo ${faltam.map((r) => `«${r}»`).join(', ')}`);
+      }
+      for (const [k, v] of Object.entries(o)) anda(v, c ? `${c}.${k}` : k);
     };
     anda(e, '');
   }
@@ -490,6 +535,12 @@ function textoAqui(partes, lang, linhas, ausentes) {
       const n = nomeAqui(p.nome, lang) ?? '';
       return p.inicial ? n.charAt(0).toUpperCase() + n.slice(1) : n;
     }
+    if ('compara' in p) {
+      const [a, b] = p.compara.map((/** @type {string} */ id) => numero(linhas.get(id)?.value));
+      const ramo = a === null || b === null ? null : a > b ? 'maior' : a < b ? 'menor' : 'igual';
+      for (const r of ['maior', 'menor', 'igual']) if (r !== ramo && r in p) ausentes.push(normal(textoAqui(p[r], lang, linhas, [])));
+      return ramo && ramo in p ? textoAqui(p[ramo], lang, linhas, ausentes) : '';
+    }
     if ('sinal' in p) {
       const v = numero(linhas.get(p.sinal)?.value);
       const ramo = v === null ? null : v > 0 ? 'positivo' : v < 0 ? 'negativo' : 'zero';
@@ -593,6 +644,27 @@ export function conferirTituloNumaPorta(el, lang, linhas = loadClaims()) {
 }
 
 /**
+ * UMA MARCA DAS PALAVRAS DECLARADAS SÓ SAI DO INVENTÁRIO SOBRE UM ELEMENTO QUE ESTA CÉLULA COMPARA (EX1-c, o achado 14):
+ * uma porta com o título (X8); e, na página de uma explicação, a folha do caminho e o `<h1>` (X5), um parágrafo cujo
+ * caminho a conta dá (X6), o título de uma secção (X7), e o título e os rótulos de uma figura (a F22).
+ * @param {any} el @param {string|undefined} rota @param {Set<string>} comparados os caminhos dos parágrafos que a conta dá
+ */
+export function marcaDaExplicacaoComparada(el, rota, comparados) {
+  if (el.hasAttribute('data-explicacao-porta')) return true;
+  if (rota !== 'explicacao') return false;
+  if (el.hasAttribute('data-explicacao-caminho')) return true;
+  if (!el.closest('main')) return false;
+  const tag = String(el.rawTagName).toLowerCase();
+  if (tag === 'h1' && el.hasAttribute('data-explicacao-titulo')) return true;
+  if (el.hasAttribute('data-explicacao-paragrafo')) return comparados.has(String(el.getAttribute('data-explicacao-paragrafo')));
+  if (tag === 'h2') return el.parentNode?.hasAttribute?.('data-explicacao-secao') === true;
+  const figura = el.closest('figure[data-forma="barras-do-livro"]');
+  if (figura && tag === 'figcaption' && el.parentNode === figura) return true;
+  if (figura && el.hasAttribute('data-barra-rotulo')) return true;
+  return false;
+}
+
+/**
  * AS PALAVRAS DECLARADAS DE UMA PÁGINA, conferidas antes de saírem do inventário das frases: o `check:voz` chama esta
  * função em cada página onde a marca `data-explicacao-declarado` se rende, e uma queixa fecha a construção.
  * @param {any} root @param {'pt'|'en'} lang @param {string|undefined} rota @param {string|undefined} slug
@@ -603,16 +675,19 @@ export function conferirPalavrasDaExplicacaoNaPagina(root, lang, rota, slug) {
   const erros = [];
   if (rota === 'explicacao' && slug) {
     erros.push(...conferirPaginaDaExplicacao(root, lang, slug, linhas));
-    /* Os rótulos das barras são nomes declarados das linhas: confere-os a F22, aqui, na mesma corrida. */
+    /* Os rótulos das barras são nomes declarados das linhas: confere-os a F22, aqui, na mesma corrida; e cada figura
+       declarada tem de estar na página (EX1-c, o achado 15). */
     for (const instrumento of root.querySelectorAll('[data-instrumento]').filter((/** @type {any} */ x) => x.querySelector('figure[data-forma="barras-do-livro"]'))) {
       erros.push(...conferirBarrasDoLivro(instrumento, lang, slug, linhas));
     }
+    erros.push(...figurasDeclaradasEmFalta(root, slug));
   }
   for (const el of root.querySelectorAll('[data-explicacao-porta]')) erros.push(...conferirTituloNumaPorta(el, lang, linhas));
-  /* Uma marca fora dos sítios que esta célula confere não sai do inventário: é um erro. */
+  /* Uma marca fora dos elementos que esta célula compara não sai do inventário: é um erro (EX1-c, o achado 14). */
+  const e = rota === 'explicacao' && slug ? /** @type {any} */ (EXPLICACOES.find((x) => x.slug === slug)) : null;
+  const comparados = new Set(e ? explicacaoPelaCelula(e, lang, linhas).paragrafos.map((p) => p.caminho) : []);
   for (const el of root.querySelectorAll('[data-explicacao-declarado]')) {
-    const conferido = el.hasAttribute('data-explicacao-porta') || (rota === 'explicacao' && (el.closest('main') || el.hasAttribute('data-explicacao-caminho')));
-    if (!conferido) erros.push(`X · a marca das palavras declaradas está num sítio que a célula da explicação não confere (${rota})`);
+    if (!marcaDaExplicacaoComparada(el, rota, comparados)) erros.push(`X · a marca das palavras declaradas está num sítio que a célula da explicação não confere (${rota}): <${String(el.rawTagName).toLowerCase()}> «${normal(el.textContent).slice(0, 60)}»`);
   }
   return erros;
 }
@@ -659,7 +734,21 @@ export function plantasDaExplicacao(dist) {
       nomes[0].set_content(b); nomes[1].set_content(a);
     }, /X6 ·/);
   } else out.push({ nome: 'a ordem dos programas que mais gastaram trocada', mordeu: false, aplica: false, queixa: 'o token «maiores» não se rende com os dados desta construção: a planta não se aplica' });
-  naPagina('a porta do tema tirada do fim', (r) => { r.querySelector('[data-explicacao-portas] a[data-explicacao-porta-do-fim="estado-e-economia"]').remove(); }, /X8 · as portas do fim/);
+  naPagina('a porta dos números tirada do fim', (r) => { r.querySelector('[data-explicacao-portas] a[data-explicacao-porta-do-fim="livro"]').remove(); }, /X8 · (falta a porta|as portas do fim)/);
+  /* EX1-c (06.10.2026): o lado da dívida pelo `compara`, a marca solta e a figura declarada em falta. */
+  naPagina('o lado da dívida trocado', (r) => { const p = paragrafo(r, 'acima dos') ?? paragrafo(r, 'abaixo dos'); const [de, para] = normal(p.textContent).includes('acima dos') ? ['acima dos', 'abaixo dos'] : ['abaixo dos', 'acima dos']; p.set_content(p.innerHTML.replace(de, para)); }, /X6 ·/);
+  {
+    const r = parse(html);
+    r.querySelector('main').insertAdjacentHTML('beforeend', '<p data-explicacao-declarado>Uma frase que ninguém compara.</p>');
+    const q = conferirPalavrasDaExplicacaoNaPagina(r, 'pt', 'explicacao', e.slug);
+    out.push({ nome: 'uma marca das palavras declaradas num parágrafo que a célula não compara', mordeu: controlo.length === 0 && q.some((x) => /X · a marca das palavras declaradas está num sítio/.test(x)), queixa: q.join(' | ') || 'nenhuma' });
+  }
+  {
+    const r = parse(html);
+    r.querySelectorAll('[data-instrumento]').filter((/** @type {any} */ x) => x.querySelector('figure[data-forma="barras-do-livro"]')).at(-1)?.remove();
+    const q = figurasDeclaradasEmFalta(r, e.slug);
+    out.push({ nome: 'uma figura declarada tirada da página', mordeu: figurasDeclaradasEmFalta(parse(html), e.slug).length === 0 && q.some((x) => /F22 · a figura declarada/.test(x)), queixa: q.join(' | ') || 'nenhuma' });
+  }
   naPagina('o selo de um valor tirado', (r) => { r.querySelector('[data-explicacao-paragrafo] .claim a.src-chip').remove(); }, /X8 · o valor de/);
   /* As plantas da declaração (X9): sobre uma cópia em memória. */
   /** @param {string} nome @param {(d: any) => void} estraga @param {RegExp} mordida */
@@ -676,6 +765,16 @@ export function plantasDaExplicacao(dist) {
     return achados;
   };
   naDeclaracao('uma linha que não é dos programas no token «maiores»', (d) => { for (const k of tokensMaiores(d)) k.maiores = [...k.maiores, 'oe-2026-despesa-ministerio-saude']; }, /X9 · .* fora da família/);
+  naDeclaracao('um programa a menos no token «maiores»', (d) => { for (const k of tokensMaiores(d)) k.maiores = k.maiores.slice(0, -1); }, /X9 · .* não tem a família inteira/);
+  {
+    /* X10: o ramo «zero» tirado do sinal do saldo. */
+    const d = structuredClone(EXPLICACOES[0]);
+    /** @param {any} x */
+    const tira = (x) => { if (Array.isArray(x)) x.forEach(tira); else if (x && typeof x === 'object') { if ('sinal' in x) delete x.zero; Object.values(x).forEach(tira); } };
+    tira(d);
+    const q = conferirRamosDasExplicacoes({ explicacoes: [d] }).erros;
+    out.push({ nome: 'o ramo «zero» tirado do sinal do saldo', mordeu: conferirRamosDasExplicacoes().erros.length === 0 && q.some((x) => /X10 · .*«zero»/.test(x)), queixa: q.join(' | ') || 'nenhuma' });
+  }
   naDeclaracao('um «n» maior do que a lista no token «maiores»', (d) => { for (const k of tokensMaiores(d)) k.n = k.maiores.length + 1; }, /X9 · .* fora de 1 a/);
   /* As plantas da auditoria: sobre uma cópia em memória do ficheiro. */
   const auditoria = JSON.parse(fs.readFileSync(AUDITORIA, 'utf8'));
@@ -691,8 +790,10 @@ export function plantasDaExplicacao(dist) {
   naAuditoria('uma conta fora de um ramo e de uma condição', (a) => { const f = a.explicacoes[0].folhas.find((/** @type {any} */ x) => x.caminho === 'abertura[0][2]'); f.partes[0].classe = 'conta'; delete f.partes[0].apoios; }, /X2 · .* marcada como conta/);
   naAuditoria('uma folha sem auditoria', (a) => { a.explicacoes[0].folhas = a.explicacoes[0].folhas.filter((/** @type {any} */ x) => x.caminho !== 'titulo[0]'); }, /X1 · .* não tem auditoria/);
   naAuditoria('uma ligação com uma palavra que diz alguma coisa', (a) => { const f = a.explicacoes[0].folhas.find((/** @type {any} */ x) => x.caminho === 'abertura[0][14]'); f.partes[0].pt = ' e só '; f.pt = ' e só '; }, /X1 ·|X2 ·/);
-  naAuditoria('uma leitura do projeto sem dizer sobre o que é', (a) => { const p = a.explicacoes[0].folhas.flatMap((/** @type {any} */ x) => x.partes).find((/** @type {any} */ x) => x.classe === 'leitura'); delete p.sobre; }, /X2 · .* não diz sobre o que é/);
-  naAuditoria('uma porta do fim que a explicação não declara', (a) => { const p = a.explicacoes[0].folhas.flatMap((/** @type {any} */ x) => x.partes).find((/** @type {any} */ x) => x.classe === 'aponta' && x.porta); p.porta = 'estudo-oe-2026'; }, /X2 · .* que a explicação não declara/);
+  /* EX1-c: a auditoria já não tem partes de leitura nem de porta; as duas plantas fazem uma (uma «diz» passada a leitura
+     sem `sobre`; o destino «selos» trocado por uma porta que a explicação não declara). */
+  naAuditoria('uma leitura do projeto sem dizer sobre o que é', (a) => { const p = a.explicacoes[0].folhas.flatMap((/** @type {any} */ x) => x.partes).find((/** @type {any} */ x) => x.classe === 'diz'); p.classe = 'leitura'; delete p.sobre; }, /X2 · .* não diz sobre o que é/);
+  naAuditoria('uma porta do fim que a explicação não declara', (a) => { const p = a.explicacoes[0].folhas.flatMap((/** @type {any} */ x) => x.partes).find((/** @type {any} */ x) => x.classe === 'aponta' && x.alvo === 'selos'); delete p.alvo; p.porta = 'estudo-oe-2026'; }, /X2 · .* que a explicação não declara/);
   /* A planta das origens: um sha256 de outro ficheiro, com o motor ao lado; sem ele, uma hora fora da forma. */
   const o = JSON.parse(JSON.stringify(ORIGENS_DAS_EXPLICACOES));
   const chave = Object.keys(o)[0];
@@ -714,8 +815,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const a = conferirAuditoriaDasExplicacoes();
   const o = conferirOrigensDasExplicacoes();
   const x9 = conferirMaioresDasExplicacoes();
+  const x10 = conferirRamosDasExplicacoes();
   /** @type {string[]} */
-  const erros = [...a.erros, ...o.erros, ...x9.erros];
+  const erros = [...a.erros, ...o.erros, ...x9.erros, ...x10.erros];
   let paginas = 0;
   for (const e of EXPLICACOES) for (const [lang, base] of /** @type {const} */ ([['pt', 'explicacoes'], ['en', 'en/explainers']])) {
     const f = path.join(DIST, base, e.slug, 'index.html');
@@ -725,9 +827,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   }
   const plantas = prova ? plantasDaExplicacao(DIST) : [];
   for (const p of plantas) if (!p.mordeu && /** @type {any} */ (p).aplica !== false) erros.push(`X · a planta «${p.nome}» não mordeu: ${p.queixa}`);
-  const resumo = { auditoria: a.contas, origens: o.contas, maiores: x9.contas, paginas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu, aplica: /** @type {any} */ (p).aplica !== false })), erros };
+  const resumo = { auditoria: a.contas, origens: o.contas, maiores: x9.contas, ramos: x10.contas, paginas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu, aplica: /** @type {any} */ (p).aplica !== false })), erros };
   if (json) fs.writeFileSync(json, JSON.stringify(resumo, null, 2) + '\n');
-  console.log(`X · a explicação: ${a.contas.explicacoes} explicação(ões), ${a.contas.folhas} folhas e ${a.contas.partes} partes auditadas (${a.contas.diz} diz, ${a.contas.leitura} leitura, ${a.contas.conta} conta, ${a.contas.aponta} aponta, ${a.contas.liga} liga), ${a.contas.origens} origens usadas; ${x9.contas.tokens} token(s) «maiores» conferidos nas duas edições; ${o.contas.origens} origens das explicações${o.contas.motor ? `, ${o.contas.lidas_no_motor} lidas no motor` : ', sem o motor ao lado'}; ${paginas} página(s) recontadas${prova ? `; ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas em memória` : ''}.`);
+  console.log(`X · a explicação: ${a.contas.explicacoes} explicação(ões), ${a.contas.folhas} folhas e ${a.contas.partes} partes auditadas (${a.contas.diz} diz, ${a.contas.leitura} leitura, ${a.contas.conta} conta, ${a.contas.aponta} aponta, ${a.contas.liga} liga), ${a.contas.origens} origens usadas; ${x9.contas.tokens} token(s) «maiores» conferidos nas duas edições; ${x10.contas.tokens} token(s) de ramos (sinal e compara) com os três ramos; ${o.contas.origens} origens das explicações${o.contas.motor ? `, ${o.contas.lidas_no_motor} lidas no motor` : ', sem o motor ao lado'}; ${paginas} página(s) recontadas${prova ? `; ${plantas.filter((p) => p.mordeu).length} de ${plantas.length} plantas em memória` : ''}.`);
   if (erros.length) {
     console.error(`\n  CÉLULA DA EXPLICAÇÃO · ${erros.length} problema(s):\n${erros.map((x) => `  · ${x}`).join('\n')}`);
     process.exit(1);
