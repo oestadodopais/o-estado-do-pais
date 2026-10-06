@@ -30,6 +30,8 @@ import Base from '../layouts/Base.astro';
 import Gaveta from '../components/inicio/Gaveta.astro';
 import PortasDoIndice from '../components/indice/PortasDoIndice.astro';
 import Provenance from '../components/Provenance.astro';
+import OQueENaMudanca from '../components/explicacoes/OQueENaMudanca.astro';
+import { parsePtNumber } from '../lib/ledger.mjs';
 import CampoDaLinha from '../components/CampoDaLinha.astro';
 import { indiceDoSitio } from '../lib/indice.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
@@ -114,45 +116,48 @@ const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'e
                   com a língua da fonte, e a unidade pelo `CampoDaLinha` do campo `unit`. A página de
                   um lugar só rende o primeiro e escreve a unidade sem marca; aqui nenhum nome cai e
                   a unidade tem origem. */}
-              <p class="lugar-mudou-o-que">
-                {e.nome?.fonte && (
-                  <span class="lugar-mudou-nome" data-nome={e.nome.fonte} data-de-linha={e.claim}>
-                    {e.nome.texto}
-                  </span>
-                )}
-                {e.nome?.campo && (
-                  <CampoDaLinha
-                    id={e.claim}
-                    campo={e.nome.campo}
-                    valor={e.nome.texto}
-                    lang={lang}
-                    class="lugar-mudou-nome"
-                    lingua={e.nome.campo === 'name'
-                      ? linguaDoRotuloDaFonte(e.nome.texto, lang)
-                      : linguaDoTituloDoDocumento(e.nome.texto, lang)}
-                  />
-                )}
-                <span class="lugar-mudou-par">
-                  <s data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="old_value">
-                    {e.antes}
-                  </s>
-                  {' → '}
-                  <span data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="new_value">
-                    {e.depois}
-                  </span>
-                  {' '}
-                  {e.unidade && (
+              <div class="indice-mudou-leitura">
+                <p class="lugar-mudou-o-que">
+                  {e.nome?.fonte && (
+                    <span class="lugar-mudou-nome" data-nome={e.nome.fonte} data-de-linha={e.claim}>
+                      {e.nome.texto}
+                    </span>
+                  )}
+                  {e.nome?.campo && (
                     <CampoDaLinha
                       id={e.claim}
-                      campo="unit"
-                      valor={unidadeDaLinha(e.unidade, lang).texto}
+                      campo={e.nome.campo}
+                      valor={e.nome.texto}
                       lang={lang}
-                      lingua={unidadeDaLinha(e.unidade, lang).lingua}
+                      class="lugar-mudou-nome"
+                      lingua={e.nome.campo === 'name'
+                        ? linguaDoRotuloDaFonte(e.nome.texto, lang)
+                        : linguaDoTituloDoDocumento(e.nome.texto, lang)}
                     />
                   )}
-                  <Provenance id={e.claim} lang={lang} />
-                </span>
-              </p>
+                  <span class="lugar-mudou-par">
+                    <s data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="old_value">
+                      {e.antes}
+                    </s>
+                    {' → '}
+                    <span data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="new_value">
+                      {e.depois}
+                    </span>
+                    {' '}
+                    {e.unidade && (
+                      <CampoDaLinha
+                        id={e.claim}
+                        campo="unit"
+                        valor={unidadeDaLinha(e.unidade, lang).texto}
+                        lang={lang}
+                        lingua={unidadeDaLinha(e.unidade, lang).lingua}
+                      />
+                    )}
+                    <Provenance id={e.claim} lang={lang} />
+                  </span>
+                </p>
+                {parsePtNumber(e.antes) !== parsePtNumber(e.depois) && <OQueENaMudanca id={e.claim} lang={lang} />}
+              </div>
             </li>
           ))}
         </ol>

@@ -43,6 +43,8 @@ import { leituraDaSemana, primeiraFraseDaSemana } from '../../src/lib/leitura-da
 import { dataDaCasa } from '../../src/lib/datas.mjs';
 import { milharesDaCasa } from '../../src/lib/formato.mjs';
 import { t } from '../../src/i18n/strings.mjs';
+import { unidadeDaLinha } from '../../src/i18n/unidades.mjs';
+import { conferirOQueENasMudancas, marcaOQueEComparada, plantasDoOQueE, plantasDoSeloDaDefinicao } from './o-que-e.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 const RAIZ = path.resolve(AQUI, '..', '..');
@@ -293,6 +295,21 @@ export function conferirFraseDoBloco(li, lang, primeira) {
   return rendida === esperada ? [] : [`W2 · a frase do bloco «${id}» na página da semana não é a que a primeira página rende.\n      esperada: ${esperada}\n      rendida:  ${rendida}`];
 }
 
+/** EX2: a frase inteira, com a unidade antes dos valores, composta das cadeias e dos campos. */
+export function conferirResumoDaMudanca(e, x, lang, linhas) {
+  const c=t(lang).semana, l=linhas.get(x.linha);
+  const p=e.querySelector('[data-semana-resumo]');
+  const nome=e.querySelector('.semana-nome');
+  const onde=e.querySelector('.semana-onde');
+  const u=unidadeDaLinha(l.unit,lang);
+  const esperado=normal(`${nome?.textContent ?? ''}${onde ? c.virgula+t(lang).cartao.uniaoEuropeia : ''}${c.virgula}${dataDaCasa(String(l.reference_date),lang)}${c.virgula}${u.texto}${c.deAntes}${x.antes.valor}${c.para}${x.depois.valor}${c[x.palavra]}${c.em}${dataAqui(x.depois.data)}${c.ponto}`);
+  const erros=[];
+  if(!p || textoSemSelosAqui(p)!==esperado) erros.push(`W2 · ${x.linha}: a frase da mudança ou a unidade antes dos valores difere da composição declarada`);
+  const unidades=p?.querySelectorAll('[data-linha-campo="unit"]') ?? [];
+  if(unidades.length!==1 || unidades[0].getAttribute('data-linha-claim')!==x.linha || normal(unidades[0].textContent)!==normal(u.texto)) erros.push(`W2 · ${x.linha}: a unidade não é o campo da própria linha, uma vez`);
+  return erros;
+}
+
 /**
  * W2 · a página da semana numa edição. Com `primeira` (a raiz da primeira página da mesma edição), cada frase da primeira
  * página que a página cita compara-se com a que a primeira página rende (EX1-c).
@@ -318,13 +335,15 @@ export function conferirPaginaDaSemana(root, lang, aceites, linhas = loadClaims(
   for (const x of s.mudancas) {
     const e = entradas.find((y) => y.getAttribute('data-semana-mudanca') === x.linha);
     if (!e) continue;
+    erros.push(...conferirResumoDaMudanca(e, x, lang, linhas));
     const marca = (/** @type {string} */ campo) => e.querySelector(`[data-correcao-campo="${campo}"]`);
     if (marca('old_value')?.getAttribute('data-correcao-n') !== String(x.antes.n) || normal(marca('old_value')?.textContent) !== normal(x.antes.valor)) erros.push(`W2 · ${x.linha}: o valor de antes não é o da primeira mudança da janela (${x.antes.valor}, entrada ${x.antes.n})`);
     if (marca('new_value')?.getAttribute('data-correcao-n') !== String(x.depois.n) || normal(marca('new_value')?.textContent) !== normal(x.depois.valor)) erros.push(`W2 · ${x.linha}: o valor de agora não é o da última mudança da janela (${x.depois.valor}, entrada ${x.depois.n})`);
     if (normal(marca('date')?.textContent) !== dataAqui(x.depois.data)) erros.push(`W2 · ${x.linha}: o dia não é o da última mudança (${dataAqui(x.depois.data)})`);
+    const textoResumo = normal(e.querySelector('[data-semana-resumo]')?.textContent);
     const palavra = PALAVRA[/** @type {'subiu'|'desceu'|'naoMudou'} */ (x.palavra)];
-    if (e.getAttribute('data-semana-palavra') !== x.palavra || !palavra || !normal(e.textContent).includes(normal(palavra))) erros.push(`W2 · ${x.linha}: a palavra do lado não é a da conta («${x.palavra}»)`);
-    for (const [k, w] of Object.entries(PALAVRA)) if (k !== x.palavra && normal(e.textContent).includes(normal(w).replace(/^,\s*/, ', '))) erros.push(`W2 · ${x.linha}: a entrada traz a palavra de um ramo que a conta não escolheu («${w}»)`);
+    if (e.getAttribute('data-semana-palavra') !== x.palavra || !palavra || !textoResumo.includes(normal(palavra))) erros.push(`W2 · ${x.linha}: a palavra do lado não é a da conta («${x.palavra}»)`);
+    for (const [k, w] of Object.entries(PALAVRA)) if (k !== x.palavra && textoResumo.includes(normal(w).replace(/^,\s*/, ', '))) erros.push(`W2 · ${x.linha}: a entrada traz a palavra de um ramo que a conta não escolheu («${w}»)`);
   }
   /* AS QUE MUDARAM SÓ NA FORMA DE ESCREVER (EX1-c): pela ordem desta célula, cada uma com o literal de agora, o de antes
      e o dia, e as palavras que a dizem pelo que é. */
@@ -396,10 +415,11 @@ function primeiraDaEdicao(dist, lang) {
  * @param {any} el @param {string|undefined} rota
  */
 export function marcaComparada(el, rota) {
+  if (marcaOQueEComparada(el, rota)) return true;
   if (rota !== 'leituraDaSemana') return el.hasAttribute('data-semana-frase');
   if (!el.closest('main')) return false;
   if (el.hasAttribute('data-semana-frase')) return true;
-  if (el.hasAttribute('data-semana-mudanca')) return el.parentNode?.hasAttribute?.('data-semana-mudancas') === true;
+  if (el.hasAttribute('data-semana-resumo')) return el.parentNode?.hasAttribute?.('data-semana-mudanca') === true;
   if (el.hasAttribute('data-semana-forma')) return el.parentNode?.hasAttribute?.('data-semana-formas') === true;
   if (String(el.rawTagName).toLowerCase() === 'h2') return el.parentNode?.hasAttribute?.('data-semana-seccao') === true;
   if (el.hasAttribute('data-semana-primeira')) return ['nenhuma', 'mudaram'].includes(String(el.getAttribute('data-semana-primeira')));
@@ -416,6 +436,7 @@ export function conferirPalavrasDaSemanaNaPagina(root, lang, rota, dist) {
   const aceites = diasAceites(dist);
   /** @type {string[]} */
   const erros = [];
+  erros.push(...conferirOQueENasMudancas(root, lang, rota, dist));
   if (rota === 'leituraDaSemana') erros.push(...conferirPaginaDaSemana(root, lang, aceites, linhas, primeiraDaEdicao(dist, lang)));
   else for (const el of root.querySelectorAll('[data-semana-frase]')) erros.push(...conferirPortaDaSemana(el, lang, aceites, linhas));
   for (const el of root.querySelectorAll('[data-semana-declarado]')) {
@@ -436,7 +457,7 @@ export function plantasDaPaginaDaSemana(dist) {
     const r = parse(html);
     estraga(r);
     const q = conferirPaginaDaSemana(r, 'pt', aceites, linhas, primeira);
-    return { nome, mordeu: controlo.length === 0 && q.some((x) => mordida.test(x)), queixa: q.join(' | ') || 'nenhuma' };
+    return { nome, mensagem: mordida.source, mordeu: controlo.length === 0 && q.some((x) => mordida.test(x)), queixa: q.join(' | ') || 'nenhuma' };
   };
   const comFormas = parse(html).querySelector('main [data-semana-forma]') !== null;
   /* EX1-c (o achado 14): a frase de um bloco citado compara-se com a da primeira página. A planta escreve a entrada de um
@@ -475,6 +496,9 @@ export function plantasDaPaginaDaSemana(dist) {
       ? planta('uma mudança a menos', (r) => { r.querySelector('[data-semana-mudanca]').remove(); }, /W2 · as mudanças da página/)
       : planta('uma mudança a mais', (r) => { r.querySelector('main [data-semana-frase]').insertAdjacentHTML('afterend', '<ol data-semana-mudancas><li data-semana-mudanca="planta-w2" data-correcao-entrada="planta-w2"></li></ol>'); }, /W2 · as mudanças da página/),
     comEntradas
+      ? planta('a unidade colada ao número', (r) => { const e=r.querySelector('[data-semana-mudanca]');const u=e.querySelector('[data-linha-campo="unit"]');const v=e.querySelector('[data-correcao-campo="new_value"]');u.remove();v.insertAdjacentHTML('afterend',u.outerHTML); }, /W2 · .*a frase da mudança ou a unidade antes dos valores/)
+      : naoSeAplica('a unidade colada ao número'),
+    comEntradas
       ? planta('a palavra do lado trocada', (r) => { const e = r.querySelector('[data-semana-mudanca]'); const p = e.getAttribute('data-semana-palavra'); e.setAttribute('data-semana-palavra', p === 'subiu' ? 'desceu' : 'subiu'); }, /W2 · .*a palavra do lado/)
       : naoSeAplica('a palavra do lado trocada'),
     comEntradas
@@ -488,7 +512,7 @@ export function plantasDaPaginaDaSemana(dist) {
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const DIST = process.env.OEDP_DIST ? path.resolve(process.env.OEDP_DIST) : path.join(RAIZ, 'dist');
   const prova = process.argv.includes('--prova');
-  const json = process.argv.includes('--json') ? process.argv[process.argv.indexOf('--json') + 1] : null;
+  const json = process.argv.includes('--json') ? process.argv[process.argv.indexOf('--json') + 1] : process.env.OEDP_SEMANA_JSON ?? null;
   const aceites = diasAceites(DIST);
   const linhas = loadClaims();
   const w1 = provaNaCopiaPlantada(aceites[0]);
@@ -506,10 +530,13 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     if (!els.length) erros.push(`W3 · ${f} não tem a porta da semana`);
     for (const el of els) { portas++; erros.push(...conferirPortaDaSemana(el, lang, aceites, linhas).map((x) => `${f}: ${x}`)); }
   }
-  const plantas = prova ? plantasDaPaginaDaSemana(DIST) : [];
+  for (const [lang, f, rota] of [['pt','indice/index.html','indice'],['en','en/index/index.html','indice'],...PAGINAS_DA_SEMANA.map(([lang,f])=>[lang,f,'leituraDaSemana'])]) {
+    erros.push(...conferirOQueENasMudancas(parse(fs.readFileSync(path.join(DIST,f),'utf8')),lang,rota,DIST));
+  }
+  const plantas = prova ? [...plantasDaPaginaDaSemana(DIST), ...plantasDoOQueE(DIST), ...plantasDoSeloDaDefinicao()] : [];
   for (const p of plantas) if (!p.mordeu && /** @type {any} */ (p).aplica !== false) erros.push(`W · a planta «${p.nome}» não mordeu: ${p.queixa}`);
   const s = semanaPelaCelula(linhas, aceites[0]);
-  const resumo = { aceites, janela: s.janela, contagens: s.contagens, mudancas: s.mudancas.length, formas: s.formas.map((x) => ({ linha: x.linha, antes: x.antes.valor, depois: x.depois.valor })), blocos_que_mudaram: blocosQueMudaramPelaCelula(s, linhas), w1: w1.plantas, portas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu, aplica: /** @type {any} */ (p).aplica !== false })), erros };
+  const resumo = { construcao: JSON.parse(fs.readFileSync(path.join(DIST,'version.json'),'utf8')).commit, aceites, janela: s.janela, contagens: s.contagens, mudancas: s.mudancas.length, formas: s.formas.map((x) => ({ linha: x.linha, antes: x.antes.valor, depois: x.depois.valor })), blocos_que_mudaram: blocosQueMudaramPelaCelula(s, linhas), w1: w1.plantas, portas, plantas: plantas.map((p) => ({ nome: p.nome, mordeu: p.mordeu, aplica: /** @type {any} */ (p).aplica !== false, mensagem: p.mensagem ?? null, queixa: p.queixa })), erros };
   if (json) fs.writeFileSync(json, JSON.stringify(resumo, null, 2) + '\n');
   console.log(`W · a leitura da semana: janela ${s.janela.inicio} a ${s.janela.fim}, ${s.contagens.relidas} relidas, ${s.contagens.valor} mudadas de valor, ${s.contagens.forma} só na forma de escrever, ${s.contagens.proveniencia} de proveniência; W1 ${w1.plantas.filter((p) => p.mordeu).length} de ${w1.plantas.length} plantas na cópia do livro; ${portas} porta(s) da semana conferidas${prova ? `; ${plantas.filter((p) => p.mordeu).length} de ${plantas.filter((p) => /** @type {any} */ (p).aplica !== false).length} plantas na página${plantas.some((p) => /** @type {any} */ (p).aplica === false) ? ` (${plantas.filter((p) => /** @type {any} */ (p).aplica === false).length} não se aplicam: a semana não tem mudanças de valor)` : ''}` : ''}.`);
   if (erros.length) {

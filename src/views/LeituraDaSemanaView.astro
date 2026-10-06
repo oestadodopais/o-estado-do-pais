@@ -24,6 +24,7 @@
  */
 import Base from '../layouts/Base.astro';
 import FraseDaSemana from '../components/explicacoes/FraseDaSemana.astro';
+import OQueENaMudanca from '../components/explicacoes/OQueENaMudanca.astro';
 import Frase from '../components/Frase.astro';
 import NomeDaMedida from '../components/NomeDaMedida.astro';
 import DataDaLinha from '../components/DataDaLinha.astro';
@@ -66,16 +67,19 @@ const formas = leitura.formas.map((f) => ({ ...f, linha: getClaim(f.linha), nome
         <h2 class="semana-secao-titulo" id="semana-mudancas" data-semana-declarado>{s.semana.mudancasK}</h2>
         <ol class="semana-mudancas" data-semana-mudancas>
           {mudancas.map((m) => (
-            <li class="semana-mudanca" data-correcao-entrada={m.linha.id} data-semana-mudanca={m.linha.id} data-semana-palavra={m.palavra} data-semana-declarado>
-              <NomeDaMedida linha={getClaim(m.nome.linha)} lang={lang} escada="cartao" class="semana-nome" />
-              {m.nome.qualificador === 'ue' && <>{s.semana.virgula}<span class="semana-onde">{s.cartao.uniaoEuropeia}</span></>}
-              {s.semana.virgula}<DataDaLinha id={m.linha.id} campo="reference_date" valor={String(m.linha.reference_date)} lang={lang} />
-              {s.semana.deAntes}<span class="semana-valor" data-correcao-claim={m.linha.id} data-correcao-n={String(m.antes.n)} data-correcao-campo="old_value">{m.antes.valor}</span>
-              {s.semana.para}<span class="semana-valor" data-correcao-claim={m.linha.id} data-correcao-n={String(m.depois.n)} data-correcao-campo="new_value">{m.depois.valor}</span>
-              {m.unidade && <>{' '}<CampoDaLinha id={m.linha.id} campo="unit" valor={m.unidade.texto} lang={lang} lingua={m.unidade.lingua} class="semana-unidade" /></>}
-              {m.palavra === 'subiu' ? s.semana.subiu : m.palavra === 'desceu' ? s.semana.desceu : s.semana.naoMudou}
-              {s.semana.em}<time class="semana-data" datetime={m.depois.data} data-correcao-claim={m.linha.id} data-correcao-n={String(m.depois.n)} data-correcao-campo="date">{dataDaCasa(m.depois.data)}</time>{s.semana.ponto}
-              {' '}<Provenance id={m.linha.id} lang={lang} />
+            <li class="semana-mudanca" data-correcao-entrada={m.linha.id} data-semana-mudanca={m.linha.id} data-semana-palavra={m.palavra}>
+              <p class="semana-resumo" data-semana-resumo data-semana-declarado>
+                <NomeDaMedida linha={getClaim(m.nome.linha)} lang={lang} escada="cartao" class="semana-nome" />
+                {m.nome.qualificador === 'ue' && <>{s.semana.virgula}<span class="semana-onde">{s.cartao.uniaoEuropeia}</span></>}
+                {s.semana.virgula}<DataDaLinha id={m.linha.id} campo="reference_date" valor={String(m.linha.reference_date)} lang={lang} />
+                {m.unidade && <>{s.semana.virgula}<CampoDaLinha id={m.linha.id} campo="unit" valor={m.unidade.texto} lang={lang} lingua={m.unidade.lingua} class="semana-unidade" /></>}
+                {s.semana.deAntes}<span class="semana-valor" data-correcao-claim={m.linha.id} data-correcao-n={String(m.antes.n)} data-correcao-campo="old_value">{m.antes.valor}</span>
+                {s.semana.para}<span class="semana-valor" data-correcao-claim={m.linha.id} data-correcao-n={String(m.depois.n)} data-correcao-campo="new_value">{m.depois.valor}</span>
+                {m.palavra === 'subiu' ? s.semana.subiu : m.palavra === 'desceu' ? s.semana.desceu : s.semana.naoMudou}
+                {s.semana.em}<time class="semana-data" datetime={m.depois.data} data-correcao-claim={m.linha.id} data-correcao-n={String(m.depois.n)} data-correcao-campo="date">{dataDaCasa(m.depois.data)}</time>{s.semana.ponto}
+                {' '}<Provenance id={m.linha.id} lang={lang} />
+              </p>
+              <OQueENaMudanca id={m.linha.id} lang={lang} />
             </li>
           ))}
         </ol>
