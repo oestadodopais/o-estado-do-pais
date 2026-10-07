@@ -4220,7 +4220,7 @@ Redação do lugar de direção pela §1.181 (o acrescento (f)) e pela §1.182, 
 
 | classe | texto | bloco | estado | razão |
 | --- | --- | --- | --- | --- |
-| divulgacao | Publica-se · Um valor novo da mesma medida, no mesmo formato, da mesma fonte, quando passa em todas as verificações automáticas: as conferências que correm em cada construção das páginas e a param à primeira diferença. | tp1 | viva | — |
-| divulgacao | Published · A new value of the same measure, in the same format, from the same source, when it passes every automated check: the checks that run on every build of the pages and stop the build at the first difference. | tp1 | viva | — |
+| divulgacao | Publica-se · Um valor novo da mesma medida, no mesmo formato, da mesma fonte, quando passa em todas as verificações automáticas. | tp1 | viva | — |
+| divulgacao | Published · A new value of the same measure, in the same format, from the same source, when it passes every automated check. | tp1 | viva | — |
 | divulgacao | Não se publica, e a direção decide · Uma medida nova; uma definição mudada; um ficheiro que o motor já não reconhece; uma revisão da fonte; uma verificação automática que falha; uma fonte que deixou de responder. | tp1 | viva | — |
 | divulgacao | Not published, and direction decides · A new measure; a changed definition; a file the engine no longer recognises; a revision at the source; an automated check that fails; a source that has stopped answering. | tp1 | viva | — |

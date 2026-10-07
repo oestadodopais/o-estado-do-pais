@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-07T10:08:40+00:00",
+ "copia": "/private/tmp/claude-501/-Users-nunosantos-Instruments-OEstadoDoPais/0e161edd-e0ff-4508-8a9b-3c2ddcb77b38/scratchpad/textos/pacote-leitura",
+ "plantas": [
+  {
+   "id": "tp1-p1",
+   "ficheiro": "src/data/politica-ia.mjs",
+   "descricao": "a fonte: 'privately funded' passa a 'publicly funded' na cópia de politica-ia.mjs; o diff, o oráculo e a página construída dizem 'privately'",
+   "sha256_antes": "950d5ea1244738f18b27d1fda65f1ab8d95358f26d9101143dcd7fecf9f4b038",
+   "sha256_depois": "4bd4033c5c7c02aabb694ef0cd2c05175ac9982dda17ef8bdfc09ef57e3f4905",
+   "contexto_antes": "ma inteligência ' +\n    'artificial e financiado em privado.',\n  en:\n    'O Estado do País is an independent project, run by an artificial intelligence ' +\n    'and privately funded.',\n};\n\n/**\n * ---------------------------------------------------------------------------\n * O CONTACTO · a terceira frase do Sobre (07.10.2026, §1.181, o acresce",
+   "contexto_depois": "ma inteligência ' +\n    'artificial e financiado em privado.',\n  en:\n    'O Estado do País is an independent project, run by an artificial intelligence ' +\n    'and publicly funded.',\n};\n\n/**\n * ---------------------------------------------------------------------------\n * O CONTACTO · a terceira frase do Sobre (07.10.2026, §1.181, o acresce"
+  },
+  {
+   "id": "tp1-p2",
+   "ficheiro": "scripts/gate-html.mjs",
+   "descricao": "a régua: 'esperadoContacto' passa a 'contacto.length', e a conferência do número de frases do contacto deixa de poder falhar",
+   "sha256_antes": "3d67a027e5c8ea29fa75ef56d71980da85e5a928f30fcea85905bda362254950",
+   "sha256_depois": "cee0c51975c038c0f6a4fbfddcb9f54b9142b90d2090d08a9329f1b57e232cd8",
+   "contexto_antes": " cadeia decidida, carácter a carácter.\n     */\n    const contacto = root.querySelectorAll('[data-contacto]');\n    ROTULO_DE_IA.contacto += contacto.length;\n    const esperadoContacto = rota?.key === 'sobre' ? 1 : 0;\n    if (contacto.length !== esperadoContacto) {\n      err(\n        `esta página rende ${contacto.length} frase(s) do contacto e devia render ` +\n          `${e",
+   "contexto_depois": " cadeia decidida, carácter a carácter.\n     */\n    const contacto = root.querySelectorAll('[data-contacto]');\n    ROTULO_DE_IA.contacto += contacto.length;\n    const esperadoContacto = contacto.length;\n    if (contacto.length !== esperadoContacto) {\n      err(\n        `esta página rende ${contacto.length} frase(s) do contacto e devia render ` +\n          `${e"
+  },
+  {
+   "id": "tp1-p3",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "a página construída: o rótulo do segundo caso volta a 'Não se publica, e uma pessoa é avisada' na cópia da página; a fonte, o inventário e a página inglesa dizem 'a direção decide'",
+   "sha256_antes": "ed66955be63c9671a32927b2954838d519453ff2ba7a45ef0bf5261e52f6021a",
+   "sha256_depois": "8551393ba28df6662b2985d603855bea99430fbb28868cdb046c263f892a0241",
+   "contexto_antes": "erificações automáticas: as conferências que correm em cada construção das páginas e a param à primeira diferença.</p><p class=\"metodo-p politica-caso\"><strong>Não se publica, e a direção decide</strong> · Uma medida nova; uma definição mudada; um ficheiro que o motor já não reconhece; uma revisão da fonte; uma verificação automática que falha; uma fon",
+   "contexto_depois": "erificações automáticas: as conferências que correm em cada construção das páginas e a param à primeira diferença.</p><p class=\"metodo-p politica-caso\"><strong>Não se publica, e uma pessoa é avisada</strong> · Uma medida nova; uma definição mudada; um ficheiro que o motor já não reconhece; uma revisão da fonte; uma verificação automática que falha; uma fon"
+  },
+  {
+   "id": "tp1-p4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório: 'com 0 entrada(s) por registar na árvore' passa a 'com 2 entrada(s)'; o conferencias/cabeca.json diz 0",
+   "sha256_antes": "714c0e7bab2525781cfb3d6a985bac12d1e556b20c20a59303da342befce71de",
+   "sha256_depois": "71715df02c8df5fc3bdf596092fa1b7d3039f9d9519ef833ef1cd47502531979",
+   "contexto_antes": "usas não mudam. Os textos decididos estão em `brief.md` do pacote e na §1.182.\n\n## Onde parou\n\nA cabeça do código é `48cd92225b198ea9380a4f3b0707d13dece8947b`, com 0 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:01:01Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub ",
+   "contexto_depois": "usas não mudam. Os textos decididos estão em `brief.md` do pacote e na §1.182.\n\n## Onde parou\n\nA cabeça do código é `48cd92225b198ea9380a4f3b0707d13dece8947b`, com 2 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:01:01Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub "
+  },
+  {
+   "id": "tp1-p5",
+   "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+   "descricao": "o inventário: a linha viva inglesa 'stop the build at the first difference' passa a 'stop the build at the first error' na cópia; a página construída diz 'difference'",
+   "sha256_antes": "e304ed85ce0fb8b275b9242fbac9cd681d43327a95f8235baad704f82e1e68c6",
+   "sha256_depois": "ef34500009ecd496c41bad9d4ea1bdd15c718ab6d3bd8b768275f2b8f0422270",
+   "contexto_antes": " value of the same measure, in the same format, from the same source, when it passes every automated check: the checks that run on every build of the pages and stop the build at the first difference. | tp1 | viva | — |\n| divulgacao | Não se publica, e a direção decide · Uma medida nova; uma definição mudada; um ficheiro que o motor já não reconhece; uma revisão da fonte; uma ",
+   "contexto_depois": " value of the same measure, in the same format, from the same source, when it passes every automated check: the checks that run on every build of the pages and stop the build at the first error. | tp1 | viva | — |\n| divulgacao | Não se publica, e a direção decide · Uma medida nova; uma definição mudada; um ficheiro que o motor já não reconhece; uma revisão da fonte; uma "
+  }
+ ]
+}
