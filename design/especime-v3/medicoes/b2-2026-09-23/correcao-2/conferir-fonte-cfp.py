@@ -33,7 +33,7 @@ from pathlib import Path
 AQUI = Path(__file__).resolve().parent
 SITIO = AQUI.parents[4]
 MOTOR = Path(os.environ.get(
-    "B2_MOTOR", Path.home() / "Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23"))
+    "B2_MOTOR", Path.home() / "<projetos>/ResearchHub/.worktrees/b2-peca1-2026-09-23"))
 BASE = "5269763acf380792e3e7ae660dcf5b947fe4d049"  # a cabeça do motor antes desta passagem
 FONTE = Path("content/13 Dominios/source")
 PDF = FONTE / "cfp/parecer-2026-02-rap26.pdf"

@@ -32,7 +32,7 @@ Nenhum número novo: se uma comparação precisa de um número que não está no
 
 ## 4 · Onde se constrói, e a fronteira com o F1.1
 
-- Ramo `dominio-2026-09-03` numa worktree própria (`git worktree add .claude/worktrees/dominio-2026-09-03 -b dominio-2026-09-03 origin/main`), a partir de `origin/main` depois da fusão do F0.9 (confirma o SHA de partida com `git log -1 --format=%h origin/main`). Nunca `git checkout` na árvore principal; nunca `git add -A` nem `git add .`.
+- Ramo `dominio-2026-09-03` numa worktree própria (`git worktree add <worktrees>/dominio-2026-09-03 -b dominio-2026-09-03 origin/main`), a partir de `origin/main` depois da fusão do F0.9 (confirma o SHA de partida com `git log -1 --format=%h origin/main`). Nunca `git checkout` na árvore principal; nunca `git add -A` nem `git add .`.
 - **Ficheiros deste bloco:** os do item 1, `src/views/MunicipioView.astro`, `src/components/formas/**` (novo), `scripts/check-formas.mjs` (novo, se `check:dados` não chegar) e a sua entrada no `verify`, `src/i18n/strings.mjs` (só chaves novas de `dominio`; acrescentar, não renomear), `src/data/figuras.mjs` (só para declarar as frases novas na forma do F0.9), `tests/dominio/*.mjs` (novo), `design/especime-v3/medicoes/dominio-construtor.md`, `design/especime-v3/CHAVES-EN.md`, `DECISIONS.md` só na emenda datada à §1.90, `VISAO.md` só no §4.
 - O F1.1 é dono de `src/views/HomeView.astro`, dos componentes da primeira página, de `public/js/inicio.js` e de `tests/inicio/*`.
 

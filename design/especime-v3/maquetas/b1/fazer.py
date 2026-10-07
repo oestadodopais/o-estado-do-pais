@@ -28,7 +28,7 @@ import json
 import os
 import re
 
-RAIZ = '/Users/UTILIZADOR/Instruments/OEstadoDoPais'
+RAIZ = '<casa>/<projetos>/OEstadoDoPais'
 DIST = os.path.join(RAIZ, 'dist')
 AQUI = os.path.dirname(os.path.abspath(__file__))
 

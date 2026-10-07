@@ -860,7 +860,7 @@
   },
   "segunda": {
     "cabeca": "5b76753fda03bfb7291bf7b1aacdf307cf1ca781",
-    "comando": "node tests/inicio/porta.mjs --vermelhos --json /tmp/b1-porta-segunda.json",
+    "comando": "node tests/inicio/porta.mjs --vermelhos --json <temporario>",
     "codigo": 0,
     "resultados": [
       {

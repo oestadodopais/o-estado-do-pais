@@ -46,11 +46,11 @@
 - ramos locais: `c1-2026-09-28 168d9093`, `ci1-2026-09-28 50c79966`, `f22b-2026-09-28 01362b78`, `main a677770f`, `pp1-2026-09-28 220861c0`, `registos-2026-09-29 5448c76a`  (`git branch`)
 - ramos no remoto: `c1-2026-09-28`, `ci1-2026-09-28`, `main`, `pp1-2026-09-28`, `registos-2026-09-29`  (`git ls-remote --heads origin`)
 - worktree: `<a árvore principal do sítio> a677770f [main]`
-- worktree: `<a árvore principal do sítio>/.claude/worktrees/c1-2026-09-28 168d9093 [c1-2026-09-28]`
-- worktree: `<a árvore principal do sítio>/.claude/worktrees/ci1-2026-09-28 50c79966 [ci1-2026-09-28]`
-- worktree: `<a árvore principal do sítio>/.claude/worktrees/f22b-2026-09-28 01362b78 [f22b-2026-09-28]`
-- worktree: `<a árvore principal do sítio>/.claude/worktrees/pp1-2026-09-28 220861c0 [pp1-2026-09-28]`
-- worktree: `<a árvore principal do sítio>/.claude/worktrees/registos-2026-09-29 5448c76a [registos-2026-09-29]`
+- worktree: `<a árvore principal do sítio>/<worktrees>/c1-2026-09-28 168d9093 [c1-2026-09-28]`
+- worktree: `<a árvore principal do sítio>/<worktrees>/ci1-2026-09-28 50c79966 [ci1-2026-09-28]`
+- worktree: `<a árvore principal do sítio>/<worktrees>/f22b-2026-09-28 01362b78 [f22b-2026-09-28]`
+- worktree: `<a árvore principal do sítio>/<worktrees>/pp1-2026-09-28 220861c0 [pp1-2026-09-28]`
+- worktree: `<a árvore principal do sítio>/<worktrees>/registos-2026-09-29 5448c76a [registos-2026-09-29]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
 - 36534779659 · `cec84d3c` · registos-2026-09-29 · portão · **completed / success** · criada 2026-09-29T07:07:17Z · atualizada 2026-09-29T07:17:30Z
@@ -65,16 +65,16 @@
 - igual a `origin/main` (`17758ec7`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
-### O motor (`~/Instruments/ResearchHub`)
+### O motor (`~/<projetos>/ResearchHub`)
 - `master`: a75ef11 · 2026-09-28T12:32:28+01:00 · Painel semanal de 28.09: as quatro saídas da corrida das 08:30 UTC, 91 afirmações reconferidas, 4 alarmes, 19 avisos  (`git log -1 master`)
 - `origin/master`: a75ef11 · 2026-09-28T12:32:28+01:00 · Painel semanal de 28.09: as quatro saídas da corrida das 08:30 UTC, 91 afirmações reconferidas, 4 alarmes, 19 avisos  (`git log -1 origin/master`)
 - `master` está 0 à frente e 0 atrás de `origin/master`  (`git rev-list --left-right --count`)
 - árvore principal: 5 entrada(s) por registar: `M sweeps/state.json`; `?? .maintenance-locks/`; `?? indicators/out/pde-2026-09-23/`; `?? publisher/recortes/manifest.regioes.json`; `?? sweeps/sweep-2026-09-01.md`  (`git status --short`, código 0)
 - ramos locais: `c1-2026-09-28 68318e0`, `f22b-2026-09-28 5335e12`, `master a75ef11`  (`git branch`)
 - ramos no remoto: `master`  (`git ls-remote --heads origin`)
-- worktree: `~/Instruments/ResearchHub a75ef11 [master]`
-- worktree: `~/Instruments/ResearchHub/.worktrees/c1-2026-09-28 68318e0 [c1-2026-09-28]`
-- worktree: `~/Instruments/ResearchHub/.worktrees/f22b-2026-09-28 5335e12 [f22b-2026-09-28]`
+- worktree: `~/<projetos>/ResearchHub a75ef11 [master]`
+- worktree: `~/<projetos>/ResearchHub/.worktrees/c1-2026-09-28 68318e0 [c1-2026-09-28]`
+- worktree: `~/<projetos>/ResearchHub/.worktrees/f22b-2026-09-28 5335e12 [f22b-2026-09-28]`
 
 ### O uso das duas subscrições (`python3 scripts/leituras/uso.py`)
     Claude (escrito pela linha de estado a 29.09.2026 07:53 UTC):

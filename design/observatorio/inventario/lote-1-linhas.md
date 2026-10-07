@@ -4,7 +4,7 @@
 
 ## Contexto útil
 
-O sítio já publica 13 medidas do Procedimento dos Desequilíbrios Macroeconómicos e 8 do Painel Social Europeu (as 32 linhas em `~/Instruments/OEstadoDoPais/ledger/claims/*-2025.yml` e `despesa-em-id-2024.yml`; cada uma tem `source_url`, `path` e `excerpt`, podes lê-las para ver o endereço exato que a casa usa), e sete medidas por concelho para os 308 concelhos (população, poder de compra, empresas, dívida total da câmara, limite legal da dívida, prazo médio de pagamentos, desemprego registado; as linhas em `ledger/claims/<concelho>-*.yml`). Onde uma linha abaixo já existe no sítio, o que falta são as colunas que o livro-razão não tem: a definição publicada, o início da série, a data de publicação, o calendário de difusão, a licença, a comparação que a fonte permite.
+O sítio já publica 13 medidas do Procedimento dos Desequilíbrios Macroeconómicos e 8 do Painel Social Europeu (as 32 linhas em `~/<projetos>/OEstadoDoPais/ledger/claims/*-2025.yml` e `despesa-em-id-2024.yml`; cada uma tem `source_url`, `path` e `excerpt`, podes lê-las para ver o endereço exato que a casa usa), e sete medidas por concelho para os 308 concelhos (população, poder de compra, empresas, dívida total da câmara, limite legal da dívida, prazo médio de pagamentos, desemprego registado; as linhas em `ledger/claims/<concelho>-*.yml`). Onde uma linha abaixo já existe no sítio, o que falta são as colunas que o livro-razão não tem: a definição publicada, o início da série, a data de publicação, o calendário de difusão, a licença, a comparação que a fonte permite.
 
 ## As linhas
 

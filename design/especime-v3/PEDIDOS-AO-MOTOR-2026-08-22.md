@@ -1,4 +1,4 @@
-# Pedidos ao motor · sessão própria em `~/Instruments/ResearchHub` (escritos a 22.08.2026 pelo lugar de direção, Claude Fable 5)
+# Pedidos ao motor · sessão própria em `~/<projetos>/ResearchHub` (escritos a 22.08.2026 pelo lugar de direção, Claude Fable 5)
 
 *O prompt de 22.08 separa o que é tarefa deste repositório do que é pedido ao motor. Estes são os pedidos, na ordem em que o sítio precisa deles, com o que o sítio já sabe sobre cada um. A sessão do motor é plan-gated: apresenta o plano e a estimativa antes de construir, e nada do que sair daqui atravessa para o sítio sem o bloco de republicação (`DECISIONS.md` §1.49) e a leitura cruzada de outra família. Sem travessões neste ficheiro por escolha.*
 

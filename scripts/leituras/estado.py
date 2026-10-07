@@ -32,9 +32,11 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-SITIO = Path(__file__).resolve().parents[2] if Path(__file__).resolve().parent.name == "leituras" \
-    else Path(os.path.expanduser("~/Instruments/OEstadoDoPais"))
-MOTOR = Path(os.path.expanduser("~/Instruments/ResearchHub"))
+SITIO = Path(os.environ.get("OEDP_SITE", Path(__file__).resolve().parents[2]))
+PRINCIPAL = Path(subprocess.check_output(
+    ["git", "-C", str(SITIO), "rev-parse", "--path-format=absolute", "--git-common-dir"], text=True).strip()).parent
+MOTOR = Path(os.environ.get("RESEARCHHUB_DIR", os.environ.get("OEDP_MOTOR", PRINCIPAL.parent / "ResearchHub")))
+
 ANFITRIAO = "xn--oestadodopas-2fb.pt"
 FALHAS: list[str] = []
 

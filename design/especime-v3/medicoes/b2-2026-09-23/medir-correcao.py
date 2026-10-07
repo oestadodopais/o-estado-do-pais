@@ -7,7 +7,7 @@ from pathlib import Path
 
 B = Path(__file__).resolve().parent
 R = B.parents[3]
-MOTOR = Path.home() / 'Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23'
+MOTOR = Path.home() / '<projetos>/ResearchHub/.worktrees/b2-peca1-2026-09-23'
 BASE = '8eb528f9'
 LINHA = 'ledger/claims/sobrecarga-do-custo-da-habitacao-inquilinos-mercado-2025-ue.yml'
 

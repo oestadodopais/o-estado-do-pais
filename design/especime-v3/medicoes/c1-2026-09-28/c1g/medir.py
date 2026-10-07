@@ -80,7 +80,7 @@ def medir():
     exige(not achados and positivos and all(positivos), 'Falhou a privacidade dos ficheiros da passagem.')
     relatorio = ler(AQUI/'relatorio.json')
     exige(relatorio['numeros_sem_ficheiro'] == 0 and relatorio['conhecido_positivo']['encontrado'], 'O relatório não passou.')
-    motor = Path.home()/'Instruments/ResearchHub/.worktrees/c1-2026-09-28'
+    motor = Path.home()/'<projetos>/ResearchHub/.worktrees/c1-2026-09-28'
     motor_estado = {'cabeca':git('rev-parse','HEAD',repo=motor), 'limpa':not git('status','--porcelain',repo=motor)}
     exige(motor_estado == {'cabeca':'68318e0da2036cc29e4704fa1bb8a96dee246095','limpa':True}, 'O motor não está no estado recebido.')
     commits = [dict(zip(('hash','assunto'),l.split(' ',1))) for l in git('log','--reverse','--format=%H %s','48a5a1c181c1753036d301204884c57119bba8a5..HEAD').splitlines()]

@@ -1,6 +1,6 @@
 # Brief · B1 · As quatro páginas que fixam a gramática, e o menu de cinco
 
-*Escrito pelo lugar de direção (Claude Fable 5.1) a 17.09.2026, o primeiro bloco da reconstrução da superfície (`design/observatorio/ESTRUTURA-e-vocabulario-2026-09-17.md`; a decisão do diretor de 17.09 na §1.112: o lugar de direção dirige, o diretor é o leitor). As maquetas em `scratchpad/estrutura/maquetas/` (`pais.html`, `evora.html`, `estudo.html`, `estudos.html`, com as oito capturas a 390 e 1 280) são a especificação visual: o que elas mostram é o que a página faz; o que elas não mostram não entra. O construtor é o Claude Opus 5, na worktree `.claude/worktrees/b1-2026-09-17` (ramo `b1-2026-09-17`, sobre `main`). Sem travessões na prosa.*
+*Escrito pelo lugar de direção (Claude Fable 5.1) a 17.09.2026, o primeiro bloco da reconstrução da superfície (`design/observatorio/ESTRUTURA-e-vocabulario-2026-09-17.md`; a decisão do diretor de 17.09 na §1.112: o lugar de direção dirige, o diretor é o leitor). As maquetas em `scratchpad/estrutura/maquetas/` (`pais.html`, `evora.html`, `estudo.html`, `estudos.html`, com as oito capturas a 390 e 1 280) são a especificação visual: o que elas mostram é o que a página faz; o que elas não mostram não entra. O construtor é o Claude Opus 5, na worktree `<worktrees>/b1-2026-09-17` (ramo `b1-2026-09-17`, sobre `main`). Sem travessões na prosa.*
 
 ## 0 · O teste de aceitação, dito antes
 

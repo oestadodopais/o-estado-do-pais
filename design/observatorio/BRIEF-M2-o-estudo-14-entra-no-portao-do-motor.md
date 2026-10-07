@@ -1,6 +1,6 @@
 # Brief · M2 · O estudo de Évora 2027 entra no portão do motor
 
-*Escrito pelo lugar de direção (Claude Fable 5.1) a 21.09.2026, a partir da I122 e da M11 do registo das melhorias. Um bloco pequeno, só no motor (`~/Instruments/ResearchHub`), numa worktree do motor; o construtor é o Claude Opus. Sem travessões na prosa.*
+*Escrito pelo lugar de direção (Claude Fable 5.1) a 21.09.2026, a partir da I122 e da M11 do registo das melhorias. Um bloco pequeno, só no motor (`~/<projetos>/ResearchHub`), numa worktree do motor; o construtor é o Claude Opus. Sem travessões na prosa.*
 
 ## 0 · O teste de aceitação, dito antes
 
@@ -20,7 +20,7 @@ Feito quer dizer: `python3 -m core.gate` no motor imprime linhas para o estudo 1
 | 4 | O campo `derivation` das 124 linhas: se é proveniência e não aritmética, a saída certa é a que o motor já usar para linhas transcritas noutros estudos (vê como o 09 e o 12 escrevem uma linha transcrita); se o motor não tiver forma, propõe uma no relatório e não a inventes no livro-razão | a decisão escrita; a dívida de derivação do 14 medida antes e depois |
 | 5 | Declarar o 14 em `core/gate_baselines.json` (os quatro entregáveis, os pares de edições) e, se o método do E1 tiver registo prévio em `core/prereg`, ligá-lo; se não tiver, dizê-lo: um registo escrito depois da recolha não certifica nada e não se escreve agora | `python3 -m core.gate` com as linhas do 14, a passar |
 | 6 | A planta: numa cópia de uma edição do 14, trocar um algarismo de um valor com linha; o portão tem de falhar nessa edição; repor os bytes; o portão volta a passar | a saída das duas corridas no relatório |
-| 7 | Conferir as outras três pastas sem entregável (02, 05, 11): têm estudo publicado no sítio (`~/Instruments/OEstadoDoPais/src/data/studies.mjs` diz a origem de cada estudo)? Para cada uma: regista-se, ou diz-se porque não (um documento alojado sem livro-razão no motor não tem o que reconciliar) | a tabela das três, com a razão |
+| 7 | Conferir as outras três pastas sem entregável (02, 05, 11): têm estudo publicado no sítio (`~/<projetos>/OEstadoDoPais/src/data/studies.mjs` diz a origem de cada estudo)? Para cada uma: regista-se, ou diz-se porque não (um documento alojado sem livro-razão no motor não tem o que reconciliar) | a tabela das três, com a razão |
 | 8 | A regra escrita onde um construtor do motor a lê (`USING.md`): um estudo novo entra em `gate_baselines.json` no mesmo bloco em que nasce | a frase, com a data |
 
 ## 3 · O que não se faz

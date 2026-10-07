@@ -37,7 +37,7 @@ Cada afirmação tua é de uma de três espécies e diz qual: **verificado** (le
 
 ## 3 · Regras que não se quebram
 
-- **Não escreves em nenhum repositório**: nem em `~/Instruments/OEstadoDoPais` nem em `~/Instruments/ResearchHub`. Podes ler os dois (para saber o que a casa já publica: `ledger/claims/*.yml` no sítio, `indicators/coverage/` no motor). Escreves só na pasta de saída indicada no lote.
+- **Não escreves em nenhum repositório**: nem em `~/<projetos>/OEstadoDoPais` nem em `~/<projetos>/ResearchHub`. Podes ler os dois (para saber o que a casa já publica: `ledger/claims/*.yml` no sítio, `indicators/coverage/` no motor). Escreves só na pasta de saída indicada no lote.
 - **Nada de memória.** Um valor, uma data, uma periodicidade ou uma licença que não tenhas lido hoje não entra; `[verify]` no lugar.
 - **Prosa nova em português** (Acordo Ortográfico), sem travessões («—»); os travessões que estejam dentro de texto copiado do publicador ficam, porque são dele.
 - **Não acrescentas linhas** ao lote; candidatas melhores vão para `notas`.

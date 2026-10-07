@@ -31,7 +31,7 @@ from pathlib import Path
 AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parents[3]
 MOTOR = Path(os.environ.get(
-    "B2_MOTOR", Path.home() / "Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23"))
+    "B2_MOTOR", Path.home() / "<projetos>/ResearchHub/.worktrees/b2-peca1-2026-09-23"))
 COPIA_ANTERIOR = "ed44e493"
 FALHAS = []
 

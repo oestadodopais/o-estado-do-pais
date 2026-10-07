@@ -28,7 +28,7 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const WORKTREE = path.join(process.env.HOME, 'Instruments/OEstadoDoPais/.claude/worktrees/c1-2026-09-28');
+const WORKTREE = path.join(process.env.HOME, '<projetos>/OEstadoDoPais/<worktrees>/c1-2026-09-28');
 const { chromium } = await import(pathToFileURL(path.join(WORKTREE, 'node_modules/playwright/index.mjs')).href);
 const pasta = path.dirname(fileURLToPath(import.meta.url));
 
