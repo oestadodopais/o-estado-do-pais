@@ -1,6 +1,15 @@
 {
+  "naoAbrangidas": {
+    "pagina-da-marca": 4,
+    "selo-proveniencia": 98,
+    "source": 12,
+    "document.title": 8,
+    "document.edition": 8,
+    "referencia-no-livro": 2,
+    "nota-alcance": 4
+  },
   "comando": "node design/especime-v3/medicoes/rp4n-2026-10-06/medir-b.mjs antes <copia-do-HTML-anterior>",
-  "cabeca": "e0031c88a81c7640c6f98f9b5224ca3909383304",
+  "cabeca": "52e09ab5bb06d4f33370cdb704098b10253736cf",
   "totais": {
     "paginas": 46,
     "aceites": 78,
@@ -423,11 +432,13 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "pagina-da-marca",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "O marcador [a verificar] · O Estado do País"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "pagina-da-marca",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
         }
@@ -439,56 +450,67 @@
       "aceites": [
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado a fonte não publica data"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] a fonte não publica data"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] a fonte não publica data"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] a fonte não publica data"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] a fonte não publica data"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] a fonte não publica data"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] a fonte não foi lida"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] a fonte não publica data"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] a fonte não publica data"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] a fonte não publica data"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] a fonte não publica data"
         }
@@ -501,6 +523,7 @@
       "aceites": [
         {
           "tipo": "data",
+          "superficie": "reference_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar]"
         }
@@ -508,11 +531,13 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · ERSAR[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte[a verificar]"
         }
@@ -525,26 +550,31 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         }
@@ -557,46 +587,55 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         }
@@ -608,56 +647,67 @@
       "aceites": [
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] · a field not confirmed against the source, not a doubt about what is published the source publishes no date"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] the source publishes no date"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] the source publishes no date"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] the source publishes no date"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] the source publishes no date"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] the source publishes no date"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] the source was not read"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] the source publishes no date"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] the source publishes no date"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] the source publishes no date"
         },
         {
           "tipo": "data",
+          "superficie": "data",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] the source publishes no date"
         }
@@ -670,6 +720,7 @@
       "aceites": [
         {
           "tipo": "data",
+          "superficie": "reference_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] (to verify)"
         }
@@ -677,16 +728,19 @@
       "recusadas": [
         {
           "tipo": "titulo-estudo",
+          "superficie": "titulo-estudo",
           "mensagem": "RP4N: marca recusada em titulo-estudo",
           "contexto": "Água Não Faturada[a verificar] · a field not confirmed against the source, not a doubt about what is published"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · ERSAR[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source[a verificar]"
         }
@@ -699,26 +753,31 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         }
@@ -731,56 +790,67 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "titulo-estudo",
+          "superficie": "titulo-estudo",
           "mensagem": "RP4N: marca recusada em titulo-estudo",
           "contexto": "Study published · Água Não Faturada[a verificar]"
         },
         {
           "tipo": "titulo-estudo",
+          "superficie": "titulo-estudo",
           "mensagem": "RP4N: marca recusada em titulo-estudo",
           "contexto": "Study published · Onde está a água?[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         }
@@ -793,11 +863,13 @@
       "recusadas": [
         {
           "tipo": "titulo-estudo",
+          "superficie": "titulo-estudo",
           "mensagem": "RP4N: marca recusada em titulo-estudo",
           "contexto": "Onde está a água?[a verificar] · a field not confirmed against the source, not a doubt about what is published12.08.2026"
         },
         {
           "tipo": "titulo-estudo",
+          "superficie": "titulo-estudo",
           "mensagem": "RP4N: marca recusada em titulo-estudo",
           "contexto": "Água Não Faturada[a verificar]12.08.2026"
         }
@@ -809,11 +881,13 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
         },
         {
           "tipo": "endereco",
+          "superficie": "source_url",
           "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
           "contexto": "[a verificar] (to verify)"
         }
@@ -821,6 +895,7 @@
       "recusadas": [
         {
           "tipo": "titulo-estudo",
+          "superficie": "titulo-estudo",
           "mensagem": "RP4N: marca recusada em titulo-estudo",
           "contexto": "Published byERSARDocumentRASARP — Relatório Anual dos Serviços de Águas e Resíduos em PortugalEdition2025Data for2024StudyÁgua Não Faturada[a verificar]"
         }
@@ -832,16 +907,19 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
         },
         {
           "tipo": "endereco",
+          "superficie": "source_url",
           "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] (to verify)"
         }
@@ -849,16 +927,19 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "source",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.title",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.edition",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         }
@@ -870,16 +951,19 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
         },
         {
           "tipo": "endereco",
+          "superficie": "source_url",
           "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] (to verify)"
         }
@@ -887,16 +971,19 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "source",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.title",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.edition",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         }
@@ -908,21 +995,25 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
         },
         {
           "tipo": "endereco",
+          "superficie": "source_url",
           "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "data",
+          "superficie": "reference_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] (to verify)"
         }
@@ -930,21 +1021,25 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "source",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.title",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.edition",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "titulo-estudo",
+          "superficie": "titulo-estudo",
           "mensagem": "RP4N: marca recusada em titulo-estudo",
           "contexto": "Published by[a verificar] (to verify)Document[a verificar] (to verify)Edition[a verificar] (to verify)Data for[a verificar] (to verify)StudyÁgua Não Faturada[a verificar]"
         }
@@ -956,6 +1051,7 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
         }
@@ -968,6 +1064,7 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
         }
@@ -980,6 +1077,7 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
         }
@@ -992,26 +1090,31 @@
       "aceites": [
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "data",
+          "superficie": "reference_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] (to verify)"
         }
@@ -1019,61 +1122,73 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · ERSAR[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "source",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "source",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "source",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · PORDATA[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "referencia-no-livro",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         }
@@ -1086,6 +1201,7 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "nota-alcance",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "This value is for mainland Portugal. In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. In Madeira, the value is set by a separate regional decree, which is not a source of any line in this ledger: ["
         }
@@ -1097,16 +1213,19 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
         },
         {
           "tipo": "endereco",
+          "superficie": "source_url",
           "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar] (to verify)"
         }
@@ -1114,11 +1233,13 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.title",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.edition",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] (to verify)"
         }
@@ -1131,6 +1252,7 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "nota-alcance",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "This measure’s target belongs to the European Union as a whole, not to Portugal; a national target of its own remains [a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published."
         }
@@ -1142,6 +1264,7 @@
       "aceites": [
         {
           "tipo": "referencia-metodo",
+          "superficie": "referencia-metodo",
           "mensagem": "RP4N: marca aceite provisoriamente (referencia-metodo)",
           "contexto": "Beside every measurement there is a seal that opens its row: filled when the origin is complete, dashed when a field is missing. A missing field is written [a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is publishe"
         }
@@ -1154,6 +1277,7 @@
       "aceites": [
         {
           "tipo": "pessoa-I77",
+          "superficie": "pessoa-I77",
           "mensagem": "RP4N: marca aceite provisoriamente (pessoa-I77)",
           "contexto": "José Ernesto d’Oliveira, then Manuel Melgão [a verificar] (to verify) from 01.05.2013"
         }
@@ -1161,21 +1285,25 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         }
@@ -1188,11 +1316,13 @@
       "recusadas": [
         {
           "tipo": "titulo-estudo",
+          "superficie": "titulo-estudo",
           "mensagem": "RP4N: marca recusada em titulo-estudo",
           "contexto": "Home›Studies›Água Não Faturada[a verificar] · a field not confirmed against the source, not a doubt about what is published"
         },
         {
           "tipo": "titulo-estudo",
+          "superficie": "titulo-estudo",
           "mensagem": "RP4N: marca recusada em titulo-estudo",
           "contexto": "Água Não Faturada[a verificar]Non-revenue water in Portugal’s public supply systems.Edition as published · published on 12.08.2026"
         }
@@ -1205,66 +1335,79 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         }
@@ -1277,41 +1420,49 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
         }
@@ -1324,11 +1475,13 @@
       "recusadas": [
         {
           "tipo": "titulo-estudo",
+          "superficie": "titulo-estudo",
           "mensagem": "RP4N: marca recusada em titulo-estudo",
           "contexto": "Onde está a água?[a verificar] · a field not confirmed against the source, not a doubt about what is published"
         },
         {
           "tipo": "titulo-estudo",
+          "superficie": "titulo-estudo",
           "mensagem": "RP4N: marca recusada em titulo-estudo",
           "contexto": "Água Não Faturada[a verificar]"
         }
@@ -1341,11 +1494,13 @@
       "recusadas": [
         {
           "tipo": "titulo-estudo",
+          "superficie": "titulo-estudo",
           "mensagem": "RP4N: marca recusada em titulo-estudo",
           "contexto": "Home›Studies›Onde está a água?[a verificar] · a field not confirmed against the source, not a doubt about what is published"
         },
         {
           "tipo": "titulo-estudo",
+          "superficie": "titulo-estudo",
           "mensagem": "RP4N: marca recusada em titulo-estudo",
           "contexto": "Onde está a água?[a verificar]Portugal's water, where it is, where it comes from, and what autonomy would actually take.Edition as published · published on 12.08.2026"
         }
@@ -1358,11 +1513,13 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "pagina-da-marca",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "The [a verificar] marker · O Estado do País"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "pagina-da-marca",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar] · a field not confirmed against the source, not a doubt about what is published"
         }
@@ -1375,66 +1532,79 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         }
@@ -1447,41 +1617,49 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         }
@@ -1493,11 +1671,13 @@
       "aceites": [
         {
           "tipo": "pessoa-I77",
+          "superficie": "pessoa-I77",
           "mensagem": "RP4N: marca aceite provisoriamente (pessoa-I77)",
           "contexto": "Quem governou a Câmara de Évora, 2009 a 2025: as eleições, os executivos, os pelouros e as decisões Em resumo Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo? Este estudo junta os resultados o"
         },
         {
           "tipo": "pessoa-I77",
+          "superficie": "pessoa-I77",
           "mensagem": "RP4N: marca aceite provisoriamente (pessoa-I77)",
           "contexto": "Quem governou a Câmara de Évora, 2009 a 2025: as eleições, os executivos, os pelouros e as decisões Em resumo Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo? Este estudo junta os resultados o"
         }
@@ -1510,11 +1690,13 @@
       "aceites": [
         {
           "tipo": "pessoa-I77",
+          "superficie": "pessoa-I77",
           "mensagem": "RP4N: marca aceite provisoriamente (pessoa-I77)",
           "contexto": "Secção 4 de 13Os limites deste documentoUm partido é dono das suas decisões, não de uma curva. As decisões — entrar num programa de apoio do Estado, contratar um empréstimo, assinar um acordo de pagamento de dívida, fixar uma taxa de imposto — são atos de um e"
         },
         {
           "tipo": "pessoa-I77",
+          "superficie": "pessoa-I77",
           "mensagem": "RP4N: marca aceite provisoriamente (pessoa-I77)",
           "contexto": "Secção 4 de 13Os limites deste documentoUm partido é dono das suas decisões, não de uma curva. As decisões — entrar num programa de apoio do Estado, contratar um empréstimo, assinar um acordo de pagamento de dívida, fixar uma taxa de imposto — são atos de um e"
         }
@@ -1527,11 +1709,13 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
         },
         {
           "tipo": "endereco",
+          "superficie": "source_url",
           "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
           "contexto": "[a verificar]"
         }
@@ -1544,16 +1728,19 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
         },
         {
           "tipo": "endereco",
+          "superficie": "source_url",
           "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar]"
         }
@@ -1561,16 +1748,19 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "source",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.title",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.edition",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         }
@@ -1582,16 +1772,19 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
         },
         {
           "tipo": "endereco",
+          "superficie": "source_url",
           "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar]"
         }
@@ -1599,16 +1792,19 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "source",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.title",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.edition",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         }
@@ -1620,21 +1816,25 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
         },
         {
           "tipo": "endereco",
+          "superficie": "source_url",
           "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "data",
+          "superficie": "reference_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar]"
         }
@@ -1642,16 +1842,19 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "source",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.title",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.edition",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         }
@@ -1663,6 +1866,7 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
         }
@@ -1675,6 +1879,7 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
         }
@@ -1687,6 +1892,7 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
         }
@@ -1699,26 +1905,31 @@
       "aceites": [
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "data",
+          "superficie": "reference_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar]"
         }
@@ -1726,61 +1937,73 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · ERSAR[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "source",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "source",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "source",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · PORDATA[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "referencia-no-livro",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         }
@@ -1793,6 +2016,7 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "nota-alcance",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "Este valor é o do território continental. Nos Açores, a lei regional soma-lhe um acréscimo, e o diploma é uma das fontes da pergunta abaixo. Na Madeira, o valor é fixado por diploma regional próprio, que não é fonte de nenhuma linha deste livro: [a verificar] "
         }
@@ -1804,16 +2028,19 @@
       "aceites": [
         {
           "tipo": "excerto",
+          "superficie": "excerpt",
           "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
           "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
         },
         {
           "tipo": "endereco",
+          "superficie": "source_url",
           "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "data",
+          "superficie": "access_date",
           "mensagem": "RP4N: marca aceite provisoriamente (data)",
           "contexto": "[a verificar]"
         }
@@ -1821,11 +2048,13 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.title",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "document.edition",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "[a verificar]"
         }
@@ -1838,6 +2067,7 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "nota-alcance",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "A meta desta medida é da União Europeia no seu conjunto e não de Portugal; uma meta nacional própria permanece [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado."
         }
@@ -1849,6 +2079,7 @@
       "aceites": [
         {
           "tipo": "referencia-metodo",
+          "superficie": "referencia-metodo",
           "mensagem": "RP4N: marca aceite provisoriamente (referencia-metodo)",
           "contexto": "Ao lado de cada medição há um selo que abre a sua linha: cheio quando a origem está completa, a tracejado quando falta um campo. Um campo em falta escreve-se [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado; a"
         }
@@ -1861,6 +2092,7 @@
       "aceites": [
         {
           "tipo": "pessoa-I77",
+          "superficie": "pessoa-I77",
           "mensagem": "RP4N: marca aceite provisoriamente (pessoa-I77)",
           "contexto": "José Ernesto d’Oliveira, depois Manuel Melgão [a verificar] a partir de 01.05.2013"
         }
@@ -1868,21 +2100,25 @@
       "recusadas": [
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         },
         {
           "tipo": "fora-dos-tipos",
+          "superficie": "selo-proveniencia",
           "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar",
           "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
         }

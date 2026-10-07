@@ -32,7 +32,9 @@ if(fase==='antes'){
  assert.equal(totais.aceites+totais.recusadas,primeira.contagens.marcas_nas_paginas);
  for(const p of paginas)assert.equal(p.sha256,primeira.paginas_com_marcadores.find(a=>a.ficheiro===p.pagina)?.sha256);
 }
-const resultado={comando:`node design/especime-v3/medicoes/rp4n-2026-10-06/medir-b.mjs ${fase}${fase==='antes'?' <copia-do-HTML-anterior>':''}`,cabeca:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),totais,tipos,paginas};
+const naoAbrangidas={};
+for(const p of paginas)for(const m of p.recusadas.filter(m=>m.tipo==='fora-dos-tipos'))naoAbrangidas[m.superficie]=(naoAbrangidas[m.superficie]??0)+1;
+const resultado={naoAbrangidas,comando:`node design/especime-v3/medicoes/rp4n-2026-10-06/medir-b.mjs ${fase}${fase==='antes'?' <copia-do-HTML-anterior>':''}`,cabeca:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),totais,tipos,paginas};
 const destino=`design/especime-v3/medicoes/rp4n-2026-10-06/${fase}-b`;
 fs.mkdirSync(destino,{recursive:true});fs.writeFileSync(`${destino}/medidas.json`,JSON.stringify(resultado,null,2)+'\n');
 console.log(JSON.stringify({totais,tipos:Object.fromEntries(Object.entries(tipos).map(([k,v])=>[k,Object.fromEntries(Object.entries(v).map(([t,d])=>[t,d.ocorrencias]))]))},null,2));

@@ -33,7 +33,7 @@ function recusado(n, rota) {
   if (perto(n, '[data-por-confirmar-na-fonte]')) return 'o-que-e-linha';
   if (perto(n, '[data-nonledger="titulo-de-estudo"], .marcador-de-titulo')) return 'titulo-estudo';
   if (perto(n, '[data-lugar-da-linha], [data-lugar], [data-pais-nome], .municipio-nome, .lugar-nome')) return 'nome-lugar';
-  if (perto(n, '.serie-titulo, [data-serie-campo="name"], [data-serie-tempo-campo="name"]')) return 'nome-serie';
+  if (perto(n, '.serie-titulo, [data-nome="serie"], [data-serie-campo="name"], [data-serie-tempo-campo="name"]')) return 'nome-serie';
   if (perto(n, '[data-nome], [data-linha-campo="name"], [data-nonledger="nome-oficial-da-medida"]')) return 'nome-medida';
   if (perto(n, '[data-cartao-leitura], .cartao-medida-leitura')) return 'leitura-cartao';
   if (rota?.key === 'home') return 'primeira-pagina';
@@ -47,7 +47,7 @@ function aceite(n, {rota, claims, municipios = []}) {
     const chave = campo.getAttribute('data-linha-campo');
     const linha = claims?.get(campo.getAttribute('data-linha-claim'));
     // O campo que dá a exceção tem de existir no livro e declarar a ausência.
-    if (texto(campo).trim() !== valor(linha, chave) || typeof valor(linha, chave) !== 'string' || !/\[\s*(?:a\s+verificar|to\s+verify)\s*\]/iu.test(valor(linha, chave))) return null;
+    if (texto(campo).trim() !== valor(linha, chave) || typeof valor(linha, chave) !== 'string' || !/^\[\s*(?:a\s+verificar|to\s+verify)\s*\]$/iu.test(valor(linha, chave))) return null;
     if (['published_at','access_date','reference_date','document.date','document.published_at','document.access_date','document.reference_date'].includes(chave)) return 'data';
     if (chave === 'excerpt') return 'excerto';
     if (chave === 'source_url' || chave === 'document.url') return 'endereco';
@@ -94,7 +94,9 @@ export function inventariarMarcadores(raiz, contexto = {}) {
     const proibido = recusado(n, contexto.rota);
     const tipo = proibido ?? aceite(n, contexto) ?? 'fora-dos-tipos';
     const aceita = TIPOS_ACEITES.includes(tipo);
-    (aceita ? aceites : recusadas).push({tipo, mensagem:aceita ? `RP4N: marca aceite provisoriamente (${tipo})` : tipo === 'fora-dos-tipos' ? GENERICA : `RP4N: marca recusada em ${tipo}`, contexto:texto(n.parentNode ?? n).replace(/\s+/g,' ').trim().slice(0,260)});
+    const campo = perto(n, '[data-linha-campo]')?.getAttribute('data-linha-campo');
+    const superficie = campo ?? (perto(n, '.src-chip') ? 'selo-proveniencia' : perto(n, '.linha-alcance') ? 'nota-alcance' : contexto.rota?.key === 'marcador' ? 'pagina-da-marca' : perto(n, '.aparelho-nota') ? 'referencia-no-livro' : tipo);
+    (aceita ? aceites : recusadas).push({tipo, superficie, mensagem:aceita ? `RP4N: marca aceite provisoriamente (${tipo})` : tipo === 'fora-dos-tipos' ? GENERICA : `RP4N: marca recusada em ${tipo}`, contexto:texto(n.parentNode ?? n).replace(/\s+/g,' ').trim().slice(0,260)});
   }
   return {aceites, recusadas};
 }
