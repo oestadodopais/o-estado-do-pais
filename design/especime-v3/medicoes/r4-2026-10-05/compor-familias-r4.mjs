@@ -104,6 +104,8 @@ function verifica(a, ids, nomesDaFamilia) {
   if (typeof a.literal !== 'string' && !a.termo) return 'um apoio sem literal';
   if (a.literal !== undefined && a.literal.trim().length < 4) return `o literal «${a.literal}» tem menos de quatro caracteres`;
   if (a.origem) {
+      if (a.origem === 'rp4n-ac-ss' && ids.some(id => linhas.get(id)?.reference_date !== '2026-08')) return 'o recorte de janeiro a agosto não apoia uma linha anual';
+      if (a.origem === 'rp4n-ac-ss-orcamento' && ids.some(id => linhas.get(id)?.reference_date !== '2026' || !linhas.get(id)?.document?.locator?.includes('Orçamento Inicial 2026'))) return 'o recorte do Orçamento Inicial não apoia esta linha de execução';
     const o = ORIGENS_DAS_DEFINICOES[a.origem];
     if (!o) return `a origem «${a.origem}» não está declarada`;
     if (typeof o[a.campo] !== 'string' || !o[a.campo].includes(a.literal)) return `«${a.literal}» não está no campo «${a.campo}» da origem «${a.origem}»`;

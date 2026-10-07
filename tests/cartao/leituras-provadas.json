@@ -8982,7 +8982,6 @@
     },
     {
       "chaves": [
-        "oe-2026-despesa-efetiva-administracao-central-seguranca-social",
         "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social"
       ],
       "origens": [
@@ -9011,6 +9010,57 @@
                 },
                 {
                   "origem": "rp4n-ac-ss",
+                  "campo": "excerto",
+                  "literal": "Administração Central e Segurança Social"
+                }
+              ]
+            },
+            {
+              "pt": ": o que gastam sem contar as operações com ativos e passivos financeiros.",
+              "en": ": what they spend without counting transactions in financial assets and liabilities.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-despesa-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2026-despesa-efetiva-administracao-central-seguranca-social"
+      ],
+      "origens": [
+        "rp4n-ac-ss-orcamento",
+        "rp4n-despesa-efetiva"
+      ],
+      "folhas": [
+        {
+          "pt": "É a despesa efetiva da administração central e da segurança social, somadas sem as transferências entre os seus serviços: o que gastam sem contar as operações com ativos e passivos financeiros.",
+          "en": "It is the effective expenditure of central administration and social security, added together without the transfers between their services: what they spend without counting transactions in financial assets and liabilities.",
+          "partes": [
+            {
+              "pt": "É a despesa efetiva da administração central e da segurança social, somadas sem as transferências entre os seus serviços",
+              "en": "It is the effective expenditure of central administration and social security, added together without the transfers between their services",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Despesa efetiva"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "ressalva",
+                  "literal": "transferências internas entre os serviços considerados"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
                   "campo": "excerto",
                   "literal": "Administração Central e Segurança Social"
                 }
@@ -9096,7 +9146,6 @@
     },
     {
       "chaves": [
-        "oe-2026-receita-efetiva-administracao-central-seguranca-social",
         "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social"
       ],
       "origens": [
@@ -9121,6 +9170,63 @@
                 },
                 {
                   "origem": "rp4n-ac-ss",
+                  "campo": "excerto",
+                  "literal": "Administração Central e Segurança Social"
+                }
+              ]
+            },
+            {
+              "pt": ": o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.",
+              "en": ": what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "rp4n-receita-efetiva",
+                  "campo": "excerto",
+                  "literal": "financeiros"
+                },
+                {
+                  "origem": "rp4n-receita-efetiva",
+                  "campo": "excerto",
+                  "literal": "saldos de gerência"
+                },
+                {
+                  "origem": "rp4n-saldos-gerencia",
+                  "campo": "excerto",
+                  "literal": "gerência (ano) anterior."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2026-receita-efetiva-administracao-central-seguranca-social"
+      ],
+      "origens": [
+        "rp4n-ac-ss-orcamento",
+        "rp4n-receita-efetiva",
+        "rp4n-saldos-gerencia"
+      ],
+      "folhas": [
+        {
+          "pt": "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.",
+          "en": "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.",
+          "partes": [
+            {
+              "pt": "É a receita efetiva da administração central e da segurança social",
+              "en": "It is the effective revenue of central administration and social security",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Receita efetiva"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
                   "campo": "excerto",
                   "literal": "Administração Central e Segurança Social"
                 }
@@ -9551,7 +9657,6 @@
     },
     {
       "chaves": [
-        "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social",
         "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social"
       ],
       "origens": [
@@ -9574,6 +9679,51 @@
                 },
                 {
                   "origem": "rp4n-ac-ss",
+                  "campo": "excerto",
+                  "literal": "Administração Central e Segurança Social"
+                }
+              ]
+            },
+            {
+              "pt": " (a fonte chama-lhes ativos financeiros líquidos de reembolsos).",
+              "en": " (the source calls them financial assets net of repayments).",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Ativos financeiros líquidos de reembolsos"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "chaves": [
+        "oe-2026-ativos-financeiros-liquidos-administracao-central-seguranca-social"
+      ],
+      "origens": [
+        "rp4n-ac-ss-orcamento"
+      ],
+      "folhas": [
+        {
+          "pt": "É o que a administração central e a segurança social puseram em ativos financeiros, descontados os reembolsos que receberam (a fonte chama-lhes ativos financeiros líquidos de reembolsos).",
+          "en": "It is what central administration and social security put into financial assets, less the repayments they received (the source calls them financial assets net of repayments).",
+          "partes": [
+            {
+              "pt": "É o que a administração central e a segurança social puseram em ativos financeiros, descontados os reembolsos que receberam",
+              "en": "It is what central administration and social security put into financial assets, less the repayments they received",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "linha": "propria",
+                  "campo": "name",
+                  "literal": "Ativos financeiros líquidos de reembolsos"
+                },
+                {
+                  "origem": "rp4n-ac-ss-orcamento",
                   "campo": "excerto",
                   "literal": "Administração Central e Segurança Social"
                 }
