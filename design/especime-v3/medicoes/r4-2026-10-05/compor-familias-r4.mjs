@@ -141,7 +141,7 @@ function verifica(a, ids, nomesDaFamilia) {
 const CAMPOS_QUE_CONFIRMAM = new Set([...CAMPOS_DA_FONTE, 'derivation', 'derivation_en']);
 function confirmaNaLinha(a, id, nomesDaFamilia) {
   if (a.ou) return a.ou.some((alt) => verifica(alt, [id], nomesDaFamilia) === null && confirmaNaLinha(alt, id, nomesDaFamilia));
-  if (a.origem || a.forma === 'ano') return true;
+  if (a.ficheiro || a.origem || a.forma === 'ano') return true;
   return a.linha === 'propria' && CAMPOS_QUE_CONFIRMAM.has(a.campo);
 }
 function linhasPorConfirmar(e, ids, nomesDaFamilia) {
