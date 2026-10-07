@@ -587,7 +587,7 @@ const estudo = studyTitle(claim.study, lang).titulo;
  * confere o texto renderizado contra a mesma função, como já fazia com a
  * `derivation` e com a nota de bandeira.
  */
-const unidade = unidadeDaLinha(claim.unit, lang);
+const unidade = unidadeDaLinha(claim.unit, lang, claim.value);
 
 /**
  * A FRASE DE ATRIBUIÇÃO (v2, §11 iii da ordem do recibo).

@@ -172,7 +172,7 @@ function confereEntrada(e, ids, chaveDeAuditoria, nomesDaFamilia) {
     }
     if (p.classe === 'ausencia') {
       familiaDaFonte = false;
-      if (e.partes.length !== 1 || !ids.length || !ids.every(id => ['avisos-pt2030-abertos', 'avisos-pt2030-pessoas-singulares', 'ciclo-substituicao-condutas'].includes(id)) || p.pt !== (ids[0] === 'ciclo-substituicao-condutas' ? 'A fonte deste cálculo ainda não foi confirmada.' : 'Os avisos consultados não definem por palavras esta contagem.') || p.en !== (ids[0] === 'ciclo-substituicao-condutas' ? 'The source of this calculation has not yet been confirmed.' : 'The notices consulted do not define this count in words.') || p.apoios || ids.some(id => linhas.get(id)?.excerpt !== '[a verificar]')) falha(`${onde}: a ausência não corresponde à falta do excerto`);
+      if (e.partes.length !== 1 || !ids.length || !ids.every(id => ['avisos-pt2030-abertos', 'avisos-pt2030-pessoas-singulares', 'ciclo-substituicao-condutas'].includes(id)) || p.pt !== 'A fonte publica este número sem o definir por palavras.' || p.en !== 'The source publishes this number without defining it in words.' || p.apoios || ids.some(id => linhas.get(id)?.excerpt !== '[a verificar]')) falha(`${onde}: a ausência não corresponde à falta do excerto`);
       continue;
     }
     if (!p.apoios?.length) { falha(`${onde}: diz e não tem apoio`); continue; }

@@ -33,6 +33,11 @@
       "o_que": "RP4-n: séries recompostas pelos rótulos dos corpos selados e pelas contas declaradas; construção para leitura a frio, não aprovação."
     },
     {
+      "quem": "Codex gpt-6-astra",
+      "quando": "2026-10-07",
+      "o_que": "RP4-n-d, RP4N-9: a explicação conserva a distinção entre as duas contas e perde só a oração apoiada na nota não selada da despesa bruta. O cliente da origem funcional acompanha o recibo corrigido no motor. Construção para conferência da direção."
+    },
+    {
       "quem": "Claude Opus 5.5",
       "quando": "2026-10-05",
       "o_que": "o bloco R4: as frases «o que é» das famílias das linhas sem cartão nacional (as do ano anterior e da União das medidas com cartão leem a frase do cartão contra a própria linha; as outras têm frase própria), e as partes das oito notas das medidas dos concelhos e da frase nova do limite da dívida, cada parte com o literal que a apoia nas linhas da família, numa origem declarada, num termo explicado em TERMOS_DOS_CARTOES ou, onde a fonte não diz o que a medida é, no nome do projeto"
@@ -41,11 +46,6 @@
       "quem": "Codex",
       "quando": "2026-10-06",
       "o_que": "RP4-n: famílias recompostas com as origens documentais exportadas pelo motor; as ausências ficam declaradas. Construção para leitura a frio, não aprovação."
-    },
-    {
-      "quem": "Codex gpt-6-astra",
-      "quando": "2026-10-07",
-      "o_que": "RP4-n-d, RP4N-9: a explicação conserva a distinção entre as duas contas e perde só a oração apoiada na nota não selada da despesa bruta. O cliente da origem funcional acompanha o recibo corrigido no motor. Construção para conferência da direção."
     }
   ],
   "comuns": [
@@ -12345,13 +12345,13 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "Os avisos consultados não definem por palavras esta contagem.",
-          "en": "The notices consulted do not define this count in words.",
+          "pt": "A fonte publica este número sem o definir por palavras.",
+          "en": "The source publishes this number without defining it in words.",
           "partes": [
             {
               "classe": "ausencia",
-              "pt": "Os avisos consultados não definem por palavras esta contagem.",
-              "en": "The notices consulted do not define this count in words."
+              "pt": "A fonte publica este número sem o definir por palavras.",
+              "en": "The source publishes this number without defining it in words."
             }
           ]
         }
@@ -12364,13 +12364,13 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "Os avisos consultados não definem por palavras esta contagem.",
-          "en": "The notices consulted do not define this count in words.",
+          "pt": "A fonte publica este número sem o definir por palavras.",
+          "en": "The source publishes this number without defining it in words.",
           "partes": [
             {
               "classe": "ausencia",
-              "pt": "Os avisos consultados não definem por palavras esta contagem.",
-              "en": "The notices consulted do not define this count in words."
+              "pt": "A fonte publica este número sem o definir por palavras.",
+              "en": "The source publishes this number without defining it in words."
             }
           ]
         }
@@ -12383,13 +12383,13 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "A fonte deste cálculo ainda não foi confirmada.",
-          "en": "The source of this calculation has not yet been confirmed.",
+          "pt": "A fonte publica este número sem o definir por palavras.",
+          "en": "The source publishes this number without defining it in words.",
           "partes": [
             {
               "classe": "ausencia",
-              "pt": "A fonte deste cálculo ainda não foi confirmada.",
-              "en": "The source of this calculation has not yet been confirmed."
+              "pt": "A fonte publica este número sem o definir por palavras.",
+              "en": "The source publishes this number without defining it in words."
             }
           ]
         }

@@ -46,20 +46,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "avisos-pt2030-abertos": {
     "frase": {
       "pt": [
-        "Os avisos consultados não definem por palavras esta contagem."
+        "A fonte publica este número sem o definir por palavras."
       ],
       "en": [
-        "The notices consulted do not define this count in words."
+        "The source publishes this number without defining it in words."
       ]
     }
   },
   "avisos-pt2030-pessoas-singulares": {
     "frase": {
       "pt": [
-        "Os avisos consultados não definem por palavras esta contagem."
+        "A fonte publica este número sem o definir por palavras."
       ],
       "en": [
-        "The notices consulted do not define this count in words."
+        "The source publishes this number without defining it in words."
       ]
     }
   },
@@ -69,10 +69,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "ciclo-substituicao-condutas": {
     "frase": {
       "pt": [
-        "A fonte deste cálculo ainda não foi confirmada."
+        "A fonte publica este número sem o definir por palavras."
       ],
       "en": [
-        "The source of this calculation has not yet been confirmed."
+        "The source publishes this number without defining it in words."
       ]
     }
   },
