@@ -1108,3 +1108,7 @@ linha ganha o campo por inferência do identificador ou da edição.
 Cada uma destas excepções tem de justificar-se em `allowlist.yml`. Se a lista
 começar a crescer, quase de certeza está lá alguma coisa que devia ser uma
 afirmação.
+
+### Retirada da publicação
+
+`publication: "withdrawn"` conserva a linha no livro em disco e na validação integral, mas exclui-a do carregador de publicação, dos recibos, dos cartões, dos índices, das descargas e das contagens do Método. O acesso explícito de auditoria usa `loadClaims({ includeWithdrawn: true })`. Qualquer outro valor do campo é recusado.

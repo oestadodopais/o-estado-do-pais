@@ -42,12 +42,12 @@ for (const [nome, altera, mensagem] of [
   morde('nome do projeto de volta numa série', conferirAuditoriaDasSeries({auditoria:a}).erros, 'o nome do projeto não pode apoiar uma frase');
 }
 {
-  const linhas = structuredClone(loadClaims());
+  const linhas = structuredClone(loadClaims({ includeWithdrawn: true }));
   linhas.get('avisos-pt2030-abertos').excerpt = 'Um excerto existente.';
   morde('ausência declarada quando há excerto', conferirAuditoriaDasFamilias({linhas}).erros, 'a ausência não corresponde à falta do excerto');
 }
 {
-  const linhas = structuredClone(loadClaims());
+  const linhas = structuredClone(loadClaims({ includeWithdrawn: true }));
   linhas.get('evora-prr-aprovado-2026').document.computed_over.files[0].sha256 = '';
   morde('seleção calculada sem resumo do ficheiro', conferirAuditoriaDasFamilias({linhas}).erros, 'a seleção calculada não tem ficheiros selados');
 }
@@ -94,7 +94,7 @@ for (const [nome, altera, mensagem] of [
   ['PRR seleção alargada', l => {l.document.computed_over.filter = 'todos';}, 'seleção da casa difere'],
   ['PRR soma alterada', l => {l.value = '1';}, 'difere da soma conferida'],
 ]) {
-  const linhas = structuredClone(loadClaims()); altera(linhas.get('evora-prr-aprovado-2026'));
+  const linhas = structuredClone(loadClaims({ includeWithdrawn: true })); altera(linhas.get('evora-prr-aprovado-2026'));
   morde(nome, conferirAuditoriaDasFamilias({linhas}).erros, mensagem);
 }
 {
@@ -134,13 +134,13 @@ assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
 console.log(`RP4N-d documental: PASS, ${plantas.length} plantas e controlos de classificação e de definição`);
 
 // Achado 14: a explicação não selada não pode regressar através da exportação.
-for (const l of loadClaims().values()) {
+for (const l of loadClaims({ includeWithdrawn: true }).values()) {
   assert(!String(l.ressalva ?? '').includes('A despesa bruta inclui operações financeiras'), `${l.id}: regressou a nota não selada`);
   assert(!String(l.ressalva_en ?? '').includes('Gross expenditure includes financial transactions'), `${l.id}: regressou a nota não selada inglesa`);
 }
 console.log('RP4N-d nota: PASS, ausência da explicação não selada em todas as linhas');
 {
-  const linhas = structuredClone(loadClaims());
+  const linhas = structuredClone(loadClaims({ includeWithdrawn: true }));
   const l = linhas.get('penalizacao-antecipacao-um-ano-neutra');
   l.excerpt = l.excerpt.replace('Decrementos por reforma antecipada: caso geral', 'legenda retirada');
   morde('legenda da pensão retirada', conferirAuditoriaDasFamilias({linhas}).erros, 'não está no campo «excerpt»');
@@ -155,7 +155,7 @@ export function conferirExcertoDaPensao(linha) {
     ? [] : ['RP4N-e: o excerto da pensão deve conter só o rótulo, o valor e a nota da fonte'];
 }
 {
-  const l = structuredClone(loadClaims().get('penalizacao-antecipacao-um-ano-neutra'));
+  const l = structuredClone(loadClaims({ includeWithdrawn: true }).get('penalizacao-antecipacao-um-ano-neutra'));
   assert.deepEqual(conferirExcertoDaPensao(l), []);
   l.excerpt += '\n91.8%\n84.3%';
   morde('despejo dos eixos no excerto da pensão', conferirExcertoDaPensao(l), 'só o rótulo, o valor e a nota da fonte');
@@ -181,5 +181,17 @@ export function conferirExcertoDaPensao(linha) {
  const {FAMILIAS_DAS_LINHAS}=await import('../../src/data/o-que-e-das-familias.mjs');
  for(const [k,v] of Object.entries(FAMILIAS_DAS_LINHAS)) if(k.startsWith('oe-2026-cem-euros-ministerio-')) {
   assert(!JSON.stringify(v.frase).match(/despesa bruta|gross expenditure/),`${k}: termo sem definição`);
+ }
+}
+
+// RP4-n-e: a linha retirada fica no livro, mas não no carregador de publicação.
+{
+ const id='ciclo-substituicao-condutas';
+ assert.equal(loadClaims({includeWithdrawn:true}).get(id).publication,'withdrawn');
+ assert(!loadClaims().has(id),'RP4N-e: uma linha retirada chegou ao compositor');
+ for(const lang of ['pt','en']) {
+  const base=lang==='pt'?'livro-razao':'en/ledger';
+  assert(!fs.existsSync(`dist/${base}/${id}/index.html`),'RP4N-e: uma linha retirada tem página');
+  assert(!fs.readFileSync(`dist/${base}/index.html`,'utf8').includes(id),'RP4N-e: uma linha retirada chegou ao índice');
  }
 }

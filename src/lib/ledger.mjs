@@ -329,6 +329,7 @@ export const CAMPOS = /** @type {const} */ ([
   'attributed_to',
   'study',
   'note',
+  'publication',
   'corrections',
   'verifications',
 ]);
@@ -366,7 +367,7 @@ export const CAMPOS = /** @type {const} */ ([
  * descarregável não a leva, e quem escrever a terceira superfície tira-a da
  * mesma lista em vez de se lembrar dela.
  */
-export const CAMPOS_NAO_PUBLICADOS = ['note'];
+export const CAMPOS_NAO_PUBLICADOS = ['note', 'publication'];
 
 /** Os campos publicados, na ordem do formato. */
 export const CAMPOS_PUBLICADOS = CAMPOS.filter((c) => !CAMPOS_NAO_PUBLICADOS.includes(c));
@@ -1045,8 +1046,8 @@ export const VERIFICACOES_MOSTRADAS = 2;
 let _cache = null;
 
 /** Carrega e devolve Map<id, claim>. Lança se o YAML estiver partido. */
-export function loadClaims() {
-  if (_cache) return _cache;
+export function loadClaims({ includeWithdrawn = false } = {}) {
+  if (_cache) return includeWithdrawn ? _cache : new Map([..._cache].filter(([, c]) => c.publication !== 'withdrawn'));
   /** @type {Map<string, Linha>} */
   const map = new Map();
   /** @type {string[]} */
@@ -1077,7 +1078,7 @@ export function loadClaims() {
     map.set(doc.id, doc);
   }
   _cache = map;
-  return map;
+  return includeWithdrawn ? map : new Map([...map].filter(([, c]) => c.publication !== 'withdrawn'));
 }
 
 /**
@@ -1546,7 +1547,7 @@ function ausente(v) {
  * Devolve { errors: string[], warnings: string[], stats }.
  */
 export function validateLedger() {
-  const claims = loadClaims();
+  const claims = loadClaims({ includeWithdrawn: true });
   const historiasSeladas = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'ledger', 'historias-valores.json'), 'utf8'));
   // As expressões `check` também podem contar o próprio registo de correções.
   const env = { ...COUNTS, ...contagensDoRegisto(claims) };
@@ -1563,6 +1564,7 @@ export function validateLedger() {
 
   for (const [id, c] of claims) {
     const onde = `[${c.__file}]`;
+    if (c.publication !== undefined && c.publication !== 'withdrawn') errors.push(`${onde} publication só aceita withdrawn ou a ausência do campo`);
     /* O bloco `document`, conferido uma vez: é um mapa, ou é `null`. Os valores
        lá dentro continuam por conferir, e cada conferência abaixo confere o seu. */
     const doc = documentoDaLinha(c);
