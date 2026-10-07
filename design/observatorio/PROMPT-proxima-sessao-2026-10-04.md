@@ -51,7 +51,7 @@
 - ramos locais: `main 987f15cd`, `oe1-2026-10-04 9db8ab1e`, `r3-2026-10-04 96bfd99e`, `registos-2026-10-04-b 987f15cd`, `rp3-2026-10-04 a60a728b`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
 - worktree: `<sítio> 987f15cd [main]`
-- worktree: `<sítio>/.claude/worktrees/registos-2026-10-04-b 987f15cd [registos-2026-10-04-b]`
+- worktree: `<sítio>/<worktrees>/registos-2026-10-04-b 987f15cd [registos-2026-10-04-b]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
 - 37226904802 · `987f15cd` · main · portão · **completed / success** · criada 2026-10-04T19:05:03Z · atualizada 2026-10-04T19:20:37Z

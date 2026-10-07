@@ -10,7 +10,7 @@ import tempfile
 from pathlib import Path
 AQUI=Path(__file__).resolve().parent
 RAIZ=AQUI.parents[3]
-MOTOR=Path(os.environ.get('RP1_MOTOR',str(Path.home()/'Instruments/ResearchHub/.worktrees/rp1-2026-09-26')))
+MOTOR=Path(os.environ.get('RP1_MOTOR',str(Path.home()/'<projetos>/ResearchHub/.worktrees/rp1-2026-09-26')))
 
 def normal(s): return ' '.join(s.split())
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()

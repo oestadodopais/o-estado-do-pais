@@ -714,9 +714,9 @@ com todas as células de cada uma vermelhas:
 
 | portão | comando | saída |
 | --- | --- | --- |
-| construção | `npm run build > /tmp/f11d-build3.log 2>&1; echo "build $?"` | 0 |
-| tipos | `npm run typecheck > /tmp/f11d-typecheck2.log 2>&1; echo "typecheck $?"` | 0 |
-| verificação | `npm run verify > /tmp/f11d-verify2.log 2>&1; echo "verify $?"` | 0 |
+| construção | `npm run build > <temporario> 2>&1; echo "build $?"` | 0 |
+| tipos | `npm run typecheck > <temporario> 2>&1; echo "typecheck $?"` | 0 |
+| verificação | `npm run verify > <temporario> 2>&1; echo "verify $?"` | 0 |
 
 **As outras três réguas do bloco:**
 

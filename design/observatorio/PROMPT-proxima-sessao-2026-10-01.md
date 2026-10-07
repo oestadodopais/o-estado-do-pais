@@ -37,15 +37,15 @@
 
 *Cada linha foi lida agora, do comando que ela própria diz. O que não se leu diz «NÃO LIDO». Nada aqui foi escrito de memória; o que se acrescentar à mão por baixo deste bloco diz que o foi.*
 
-### O sítio (`~/Instruments/OEstadoDoPais/.claude/worktrees/prompt-2026-10-01`)
+### O sítio (`~/<projetos>/OEstadoDoPais/<worktrees>/prompt-2026-10-01`)
 - `main`: 6e6755b0 · 2026-10-01T10:24:36+01:00 · §1.148: o E1 construído pelo Opus em cinco passagens e lido a frio três vezes pelo Codex, com as decisões do lugar de direção nos p  (`git log -1 main`)
 - `origin/main`: 6e6755b0 · 2026-10-01T10:24:36+01:00 · §1.148: o E1 construído pelo Opus em cinco passagens e lido a frio três vezes pelo Codex, com as decisões do lugar de direção nos p  (`git log -1 origin/main`)
 - `main` está 0 à frente e 0 atrás de `origin/main`  (`git rev-list --left-right --count`)
 - árvore principal: 0 entrada(s) por registar  (`git status --short`, código 0)
 - ramos locais: `main 6e6755b0`, `prompt-2026-10-01 6e6755b0`  (`git branch`)
 - ramos no remoto: `main`  (`git ls-remote --heads origin`)
-- worktree: `~/Instruments/OEstadoDoPais 6e6755b0 [main]`
-- worktree: `~/Instruments/OEstadoDoPais/.claude/worktrees/prompt-2026-10-01 6e6755b0 [prompt-2026-10-01]`
+- worktree: `~/<projetos>/OEstadoDoPais 6e6755b0 [main]`
+- worktree: `~/<projetos>/OEstadoDoPais/<worktrees>/prompt-2026-10-01 6e6755b0 [prompt-2026-10-01]`
 
 ### As últimas corridas da CI (`gh run list --limit 6`)
 - 36845421726 · `6e6755b0` · main · portão · **completed / success** · criada 2026-10-01T09:51:30Z · atualizada 2026-10-01T10:02:40Z
@@ -60,14 +60,14 @@
 - igual a `origin/main` (`6e6755b0`): **sim**
 - isto NÃO substitui o `npm run verify:deploy`, que confere também as respostas e os cabeçalhos.
 
-### O motor (`~/Instruments/ResearchHub`)
+### O motor (`~/<projetos>/ResearchHub`)
 - `master`: d2495a7 · 2026-10-01T09:10:22+01:00 · E1e: os registos de conteúdo do 17 e do 18 refeitos depois das emendas  (`git log -1 master`)
 - `origin/master`: d2495a7 · 2026-10-01T09:10:22+01:00 · E1e: os registos de conteúdo do 17 e do 18 refeitos depois das emendas  (`git log -1 origin/master`)
 - `master` está 0 à frente e 0 atrás de `origin/master`  (`git rev-list --left-right --count`)
 - árvore principal: 6 entrada(s) por registar: `M sweeps/state.json`; `?? .maintenance-locks/`; `?? indicators/out/pde-2026-09-23/`; `?? publisher/recortes/manifest.regioes.json`; `?? sweeps/sweep-2026-09-01.md`; `?? sweeps/sweep-2026-10-01.md`  (`git status --short`, código 0)
 - ramos locais: `master d2495a7`  (`git branch`)
 - ramos no remoto: `master`  (`git ls-remote --heads origin`)
-- worktree: `~/Instruments/ResearchHub d2495a7 [master]`
+- worktree: `~/<projetos>/ResearchHub d2495a7 [master]`
 
 ### O uso das duas subscrições (`python3 scripts/leituras/uso.py`)
     Claude (escrito pela linha de estado a 01.10.2026 10:03 UTC):

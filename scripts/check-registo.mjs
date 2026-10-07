@@ -163,7 +163,7 @@
  * e a construção, que nunca passa a bandeira, PARA se a variável estiver posta.
  *
  * Uso:  node scripts/check-registo.mjs
- *       OEDP_REGISTO_DIR=/tmp/copia node scripts/check-registo.mjs --prova
+ *       OEDP_REGISTO_DIR=<temporario> node scripts/check-registo.mjs --prova
  */
 
 import fs from 'node:fs';

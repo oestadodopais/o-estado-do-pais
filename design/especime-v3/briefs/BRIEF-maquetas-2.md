@@ -74,4 +74,4 @@ Rótulo «CORREÇÕES»; título «Correções» (Spectral 56); subtítulo «O q
 
 ## 5 · Entrega
 
-Como no brief 1 §7: verificar fecho de elementos, aspas, ausência de `{{`, ausência de travessões entre espaços (os títulos transcritos e o «→» ficam), dígitos só os do brief, largura da raiz e `$preview` medidos (Playwright existe em `/Users/UTILIZADOR/node_modules`). Devolver caminhos, alturas e a lista (vazia) de textos em falta.
+Como no brief 1 §7: verificar fecho de elementos, aspas, ausência de `{{`, ausência de travessões entre espaços (os títulos transcritos e o «→» ficam), dígitos só os do brief, largura da raiz e `$preview` medidos (Playwright existe em `<casa>/node_modules`). Devolver caminhos, alturas e a lista (vazia) de textos em falta.

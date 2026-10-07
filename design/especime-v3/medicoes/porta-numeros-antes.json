@@ -1,5 +1,5 @@
 {
-  "dist": "/tmp/dist-antes",
+  "dist": "<temporario>",
   "so": [
     "index.html",
     "en/index.html"

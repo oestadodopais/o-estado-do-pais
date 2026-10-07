@@ -11,7 +11,7 @@ O sítio O Estado do País está a fazer o inventário das fontes das medidas da
 1. Abre o endereço de máquina e o de leitura da linha (`curl` ou `python3`, com `User-Agent: OEstadoDoPais/medicao`); regista o estado HTTP e a hora UTC.
 2. Para cada célula testável (publicador, definição, primeiro período da série, periodicidade, último período, data de publicação, nível geográfico mais fino, licença, excerto, valor mais recente), compara o que a fonte diz hoje com o que a linha afirma. Escreve `bate`, `não bate` (com os dois valores), ou `não testável daqui` (com a razão).
 3. Para as linhas do INE, os pedidos são em série, com 2 segundos de intervalo, nunca em paralelo; a 429 esperas 30 segundos e tentas uma vez.
-4. Não corriges nada, não escreves em nenhum repositório (podes ler os dois, `~/Instruments/OEstadoDoPais` e `~/Instruments/ResearchHub`), não acrescentas linhas. Só medes e escreves o relatório na pasta de saída.
+4. Não corriges nada, não escreves em nenhum repositório (podes ler os dois, `~/<projetos>/OEstadoDoPais` e `~/<projetos>/ResearchHub`), não acrescentas linhas. Só medes e escreves o relatório na pasta de saída.
 5. Há **estragos plantados** na amostra (células deliberadamente erradas). Não sabes quantos nem onde. Uma célula que não bata é um achado, seja planta ou erro real; regista todas.
 
 ## 2 · A saída

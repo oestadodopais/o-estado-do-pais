@@ -1,6 +1,6 @@
 # Estimativa da parte 3 · o sítio constrói as páginas de leitura a partir dos registos de conteúdo do motor
 
-*Escrita a 24.08.2026 pelo construtor (Claude Opus 5), no ramo `main` de `~/Instruments/OEstadoDoPais`, árvore limpa. Resposta à secção **B2** de `PEDIDOS-AO-MOTOR-2026-08-22.md` («o sítio (parte 3, etapa própria depois desta) constrói a página do estudo a partir dele») e à **B4a** («`check:cadeia`, um guião da construção do sítio»). Nada foi construído, nada foi editado: este ficheiro é a única coisa que esta corrida escreveu, e não há commit. O documento é plan-gated — o diretor decide sobre ele antes de qualquer construção.*
+*Escrita a 24.08.2026 pelo construtor (Claude Opus 5), no ramo `main` de `~/<projetos>/OEstadoDoPais`, árvore limpa. Resposta à secção **B2** de `PEDIDOS-AO-MOTOR-2026-08-22.md` («o sítio (parte 3, etapa própria depois desta) constrói a página do estudo a partir dele») e à **B4a** («`check:cadeia`, um guião da construção do sítio»). Nada foi construído, nada foi editado: este ficheiro é a única coisa que esta corrida escreveu, e não há commit. O documento é plan-gated — o diretor decide sobre ele antes de qualquer construção.*
 
 *Todos os números levam um rótulo: **medido** (corri o comando ou li o ficheiro nesta sessão, e digo qual), **inferido** (raciocinado a partir de prova que nomeio) ou **por confirmar** (não sei, e digo-o). O motor foi lido em modo de leitura; nenhum ficheiro seu foi tocado, e a árvore de `content/11`, onde outra sessão trabalha, foi só listada.*
 
