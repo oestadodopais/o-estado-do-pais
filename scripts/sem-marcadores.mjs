@@ -49,6 +49,18 @@ function recusado(n, rota) {
 }
 
 function aceite(n, {rota, claims, municipios = []}) {
+  // A marca de água repete a falta de um campo do recibo. A classe sozinha não dá dispensa.
+  if (n.hasAttribute?.('data-marca') && n.matches('.marca-agua') && rota?.key === 'linha') {
+    const linha = claims?.get(rota.params?.slug);
+    const falta = v => v === '[a verificar]';
+    if (perto(n, 'section#prova') && falta(linha?.excerpt)) return 'excerto';
+    if (perto(n, 'section[aria-labelledby="pedido"]') && falta(linha?.source_url)) return 'endereco';
+    const ficha = perto(n, '.aparelho-ficha');
+    if (ficha && ficha.querySelectorAll('[data-linha-campo][data-linha-claim]').some(c =>
+      c.getAttribute('data-linha-claim') === rota.params.slug &&
+      ['source','document.title','document.edition','published_at','access_date','reference_date'].includes(c.getAttribute('data-linha-campo')) &&
+      falta(valor(linha, c.getAttribute('data-linha-campo'))) && texto(c).trim() === '[a verificar]')) return 'selo-proveniencia';
+  }
   const campo = perto(n, '[data-linha-campo][data-linha-claim], [data-de-campo][data-de-linha]');
   if (campo) {
     const chave = campo.getAttribute('data-linha-campo') ?? campo.getAttribute('data-de-campo');
@@ -105,17 +117,20 @@ export function inventariarMarcadores(raiz, contexto = {}) {
     while (n && !tocadas.every(f => {for(let p=f.n;p;p=p.parentNode) if(p===n)return true; return false;})) n = n.parentNode;
     nos.push({n, folhas:tocadas.map(f=>f.n)});
   }
+  for (const n of raiz.querySelectorAll('[data-marca]')) {
+    for (const _ of n.getAttribute('data-marca').matchAll(MARCA)) nos.push({n, folhas:[], atributo:'data-marca'});
+  }
   for (const n of raiz.querySelectorAll('.marcador, [data-por-confirmar-na-fonte]')) {
-    if (!nos.some(p => p.folhas.some(f => {for(let a=f;a;a=a.parentNode)if(a===n)return true;return false;}))) nos.push({n, folhas:[]});
+    if (!nos.some(p => p.n === n || p.folhas.some(f => {for(let a=f;a;a=a.parentNode)if(a===n)return true;return false;}))) nos.push({n, folhas:[]});
   }
   const aceites = [], recusadas = [];
-  for (const {n, folhas} of nos) {
+  for (const {n, folhas, atributo} of nos) {
     const proibido = recusado(n, contexto.rota) ?? folhas.map(f=>recusado(f.parentNode, contexto.rota)).find(Boolean);
     const tipo = proibido ?? aceite(n, contexto) ?? 'fora-dos-tipos';
     const aceita = TIPOS_ACEITES.includes(tipo);
     const campo = perto(n, '[data-linha-campo]')?.getAttribute('data-linha-campo');
     const superficie = campo ?? (perto(n, '.src-chip') ? 'selo-proveniencia' : perto(n, '.linha-alcance') ? 'nota-alcance' : contexto.rota?.key === 'marcador' ? 'pagina-da-marca' : perto(n, '.aparelho-nota') ? 'referencia-no-livro' : tipo);
-    (aceita ? aceites : recusadas).push({tipo, superficie, mensagem:aceita ? `RP4N: marca aceite provisoriamente (${tipo})` : tipo === 'fora-dos-tipos' ? GENERICA : `RP4N: marca recusada em ${tipo}`, contexto:texto(n.parentNode ?? n).replace(/\s+/g,' ').trim().slice(0,260)});
+    (aceita ? aceites : recusadas).push({tipo, superficie, ...(atributo ? {atributo} : {}), mensagem:aceita ? `RP4N: marca aceite provisoriamente (${tipo})` : tipo === 'fora-dos-tipos' ? GENERICA : `RP4N: marca recusada em ${tipo}`, contexto:texto(n.parentNode ?? n).replace(/\s+/g,' ').trim().slice(0,260)});
   }
   return {aceites, recusadas};
 }

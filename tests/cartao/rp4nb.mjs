@@ -80,6 +80,16 @@ export function plantasDosMarcadores() {
  prova('referência do livro com afirmação',`<p class="aparelho-nota">Uma afirmação ${marca}</p>`,'fora-dos-tipos',false,{key:'livro'});
  prova('referência do livro com glosa',`<p class="aparelho-nota">${marca}<span> (to verify)</span></p>`,'referencia-no-livro',true,{key:'livro'});
  prova('página inglesa da própria marca','<title>[to verify]</title>','pagina-da-marca',true,{key:'marcador',lang:'en'});
+ for (const lingua of ['pt','en']) {
+  const atributo = `<span class="marca-agua" data-marca="${lingua==='pt'?'[a verificar]':'[to verify]'}"></span>`;
+  const rota = {key:'linha',params:{slug:'planta'}};
+  prova(`atributo no excerto ausente (${lingua})`, `<section id="prova">${atributo}</section>`, 'excerto', true, rota);
+  prova(`atributo no endereço ausente (${lingua})`, `<section aria-labelledby="pedido">${atributo}</section>`, 'endereco', true, rota);
+  prova(`atributo numa afirmação (${lingua})`, `<div data-o-que-e="planta"><section id="prova">${atributo}</section></div>`, 'o-que-e-linha', false, rota);
+  prova(`atributo fora de campo (${lingua})`, atributo, 'fora-dos-tipos', false, rota);
+ }
+ const duas=inventariarMarcadores(parse('<p data-marca="[a verificar]">[a verificar]</p>'));
+ assert.equal(duas.recusadas.length,2,'texto e atributo são duas ocorrências');
  for(const tipo of [...TIPOS_ACEITES,...TIPOS_RECUSADOS])assert(plantas.some(p=>p.tipo===tipo),`falta planta para ${tipo}`);
  return plantas;
 }
