@@ -1,0 +1,7 @@
+{
+  "comando": "npm run check:cruzamento -- --with-origin",
+  "inicio": "2026-10-07T12:33:10.985384+00:00",
+  "fim": "2026-10-07T12:33:11.440480+00:00",
+  "codigo": 0,
+  "cabeca": "466f83871ae13eff45a9cd28dcb73470a45114cc"
+}

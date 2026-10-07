@@ -1,0 +1,147 @@
+{
+  "cabecas_codigo": {
+    "sitio": "466f83871ae13eff45a9cd28dcb73470a45114cc",
+    "motor": "481e15e2ba384703dfdfb83b7aca62f4b3ae24ef"
+  },
+  "codigos": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0,
+    "motor": 0,
+    "export-series": 0,
+    "vs1-vs7": 0,
+    "series-temporais": 0,
+    "series": 0,
+    "cruzamento": 0
+  },
+  "capturas": 60,
+  "capturas_com_resumo_e_largura_conferidos": true,
+  "capturas_inspecionadas": 60,
+  "privacidade": {
+    "sitio_ficheiros_lidos": 20890,
+    "sitio_ocorrencias": 0,
+    "sitio_nome_utilizador": 0,
+    "motor_ficheiros_com_ocorrencias_iniciais": 65,
+    "motor_ficheiros_com_ocorrencias_finais": 65,
+    "motor_mesmos_ficheiros_preexistentes": true,
+    "motor_linhas_acrescentadas_com_ocorrencias": 0,
+    "limite": "A limpeza integral dos registos antigos do motor não foi feita; caminhos de outras corridas protegidos pelo lançamento."
+  },
+  "ficheiros_protegidos_do_motor_alterados": [],
+  "trailers_conferidos": true,
+  "package_lock_inalterado_na_fusao": true,
+  "commits": {
+    "sitio": [
+      {
+        "cabeca": "64d81b2137f8f97fc5f724d30d2c98de94eceacb",
+        "assunto": "Funde main f3aaa3e7 no ramo JD1 antes da passagem JD1-b"
+      },
+      {
+        "cabeca": "9ffbc7bde9d4dc5de3b585dc3bacf22ffd43ed89",
+        "assunto": "JD1-b: confere fusão verde, mapa e controlos do pacote"
+      },
+      {
+        "cabeca": "2d16cd4fb3c3aac4f77c420aaab9139c047fd3d6",
+        "assunto": "JD1-b: conservar as leituras distintas do mesmo dia (achado 17)"
+      },
+      {
+        "cabeca": "828fbcfd362bb7ba1d9e22c5f5c05a16db1fc97d",
+        "assunto": "JD1-b: diz que os valores INE de 2025 são provisórios (achado 5)"
+      },
+      {
+        "cabeca": "3713016918e8ef3f2812cbae6992d9dd49fcc245",
+        "assunto": "JD1-b: fixar as catorze linhas e dizer o alcance da L1 (achado 16)"
+      },
+      {
+        "cabeca": "3f0f301148bc0380ab64e14c61a796a70251a94c",
+        "assunto": "JD1-b: retirar a estrutura local de todos os ficheiros do ramo (achado 19)"
+      },
+      {
+        "cabeca": "4c238ab3766f789d095da24cf87191b0f41b6453",
+        "assunto": "JD1-b: preparar as sessenta capturas e os códigos próprios da passagem"
+      },
+      {
+        "cabeca": "8f03806257efe050b9928a554849496bcca1da21",
+        "assunto": "JD1-b: explicar as medidas e dar escala aos recibos (achados 6–8)"
+      },
+      {
+        "cabeca": "25e8ddcaabfc745bb5c684bbab55e8aa9f59262b",
+        "assunto": "JD1-b: nomear o perímetro e a base de cada medida (achado 11)"
+      },
+      {
+        "cabeca": "ca4dc1eb598f7f8daac73f5843e6c04195835aae",
+        "assunto": "JD1-b: conferir o caminho JSON da prova europeia (achados 6–8)"
+      },
+      {
+        "cabeca": "cd760c428d23fa888dec5740616f04d6c35e4d99",
+        "assunto": "JD1-b: ligar os custos aos rótulos assinalados do gráfico (achado 9)"
+      },
+      {
+        "cabeca": "1b2076d887edff440ea494910e88c3d839ed72b6",
+        "assunto": "JD1-b: conservar o ano e a data tal como a fonte os dá (achado 12)"
+      },
+      {
+        "cabeca": "6353dcf5954dc85f7a1c72a0536d70f1f4dca18a",
+        "assunto": "JD1-b: cortar o excerto antes dos gráficos vizinhos (achado 9)"
+      },
+      {
+        "cabeca": "b6b2c08c1df485c601b1f7c42786d519638dcf46",
+        "assunto": "JD1-b: tornar visível a parcela do financiamento no quadro da fonte (achados 6 a 8)"
+      },
+      {
+        "cabeca": "eba709a8432226298c3f53bb86188bf673121e9a",
+        "assunto": "JD1-b: usar um título por publicação do INE e da execução (achado 13)"
+      },
+      {
+        "cabeca": "79ed513d8b72fb9e4e145470b4c0ca58fceb3c2b",
+        "assunto": "JD1-b: cruzar a escrita normalizada do saldo do motor (achado 15)"
+      },
+      {
+        "cabeca": "da42d05a6f7962f78fa7395e02fec7e138e741dc",
+        "assunto": "JD1-b: retirar os títulos antigos do catálogo de línguas (achado 13)"
+      },
+      {
+        "cabeca": "1e7069318695fc35d704e27eed54509a32a56f23",
+        "assunto": "JD1-b: atualizar os resumos dos briefs após a limpeza de caminhos (achado 19)"
+      },
+      {
+        "cabeca": "466f83871ae13eff45a9cd28dcb73470a45114cc",
+        "assunto": "JD1-b: ligar o fim de agosto ao saldo por pagar"
+      }
+    ],
+    "motor": [
+      {
+        "cabeca": "9671b7bcf8946b63896014cb3bc35f133c93afb6",
+        "assunto": "JD1-b: ler a série pela cor da legenda e provar as colunas"
+      },
+      {
+        "cabeca": "b052fb2370ec125c498a9f21775ee951d11d7930",
+        "assunto": "JD1-b: mostrar a célula da União e a parcela das amortizações"
+      },
+      {
+        "cabeca": "568670c2a7a019b9ed8a0c5da0eaa62c4f0799f2",
+        "assunto": "JD1-b: mostrar os rótulos dos custos no recorte do gráfico"
+      },
+      {
+        "cabeca": "d2111cfeb7b4ab4ac2cb81ee8beeab97749c08a0",
+        "assunto": "JD1-b: conservar as datas que o IGCP imprime"
+      },
+      {
+        "cabeca": "3b05f652c1752f74dc9b2e654a73461a64e6df81",
+        "assunto": "JD1-b: limitar o excerto ao gráfico dos custos"
+      },
+      {
+        "cabeca": "725198af4435e20e6ae2d4ad4a8b496b0f61463c",
+        "assunto": "JD1-b: usar um título por documento partilhado"
+      },
+      {
+        "cabeca": "f25f2617fabbc48ac5713cd6f88de2ea790ccb7b",
+        "assunto": "JD1-b: guardar a dívida com espaços nos milhares"
+      },
+      {
+        "cabeca": "481e15e2ba384703dfdfb83b7aca62f4b3ae24ef",
+        "assunto": "JD1-b: exigir as vinte e cinco séries previstas"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "cabecas": {
+    "sitio": "1e7069318695fc35d704e27eed54509a32a56f23",
+    "motor": "481e15e2ba384703dfdfb83b7aca62f4b3ae24ef"
+  },
+  "codigos": {
+    "motor": 0,
+    "export-series": 0,
+    "vs1-vs7": 0,
+    "series-temporais": 0,
+    "series": 0,
+    "cruzamento": 0
+  },
+  "cabecas_inalteradas": true,
+  "tranca": "oedp-construcao.lock",
+  "aquisicao": "criação exclusiva"
+}

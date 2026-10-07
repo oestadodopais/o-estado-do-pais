@@ -1,0 +1,45 @@
+{
+  "cabeca_codigo": "466f83871ae13eff45a9cd28dcb73470a45114cc",
+  "ficheiros": [
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-ue-pt-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-ue-pt-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-ue-en-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-ue-en-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2025-08-pt-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2025-08-pt-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2025-08-en-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2025-08-en-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2026-08-pt-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2026-08-pt-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2026-08-en-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-e-outros-encargos-execucao-2026-08-en-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-do-stock-da-divida-direta-2025-pt-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-do-stock-da-divida-direta-2025-pt-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-do-stock-da-divida-direta-2025-en-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-do-stock-da-divida-direta-2025-en-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-pt-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-pt-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-en-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/custo-da-divida-emitida-2026-08-en-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/necessidades-brutas-de-financiamento-2025-pt-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/necessidades-brutas-de-financiamento-2025-pt-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/necessidades-brutas-de-financiamento-2025-en-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/necessidades-brutas-de-financiamento-2025-en-1280.png"
+  ],
+  "problemas": [],
+  "observacoes": [
+    "Inspeção visual direta dos 24 PNG completos, nas edições portuguesa e inglesa a 390 e 1280 px. Títulos, frases, valores principais, ligações de prova, proveniência e rodapés sem cortes ou sobreposição visíveis.",
+    "União Europeia: valor 1,9 % do PIB, campo devolvido e pedido Eurostat visíveis; comparação com Portugal 1,95 e ano 2025 legíveis. A frase explica a diferença entre as versões portuguesa de setembro e europeia de julho.",
+    "Execução: 4 727,8 em 2025 e 5 218,2 em 2026, em milhões de euros, com janeiro a agosto no título e distinção de caixa na frase. O recibo de 2026 mostra 4 727,8 como período anterior, agosto de 2025. As ligações indicam a página 7 e a proveniência distingue a folha do PDF da numeração impressa.",
+    "Custo da dívida em circulação: recorte IGCP com título, unidades, legenda das duas séries, anos e fonte visíveis. O realce incide em 2,1 na série azul de 2025 nas quatro imagens.",
+    "Custo da dívida emitida: recorte IGCP com título, unidades, legenda das duas séries, anos e fonte visíveis. O realce incide em 3,4 na série vermelha de 2026 nas quatro imagens. O excerto já não contém os rótulos dos gráficos vizinhos.",
+    "Financiamento: quadro completo com cabeçalhos 2024 e 2025 legíveis nas quatro imagens. A célula 56 976 da linha de amortizações e anulações e a célula 67 601 do total estão realçadas na coluna 2025. As linhas e os valores cabem a 390 px, incluindo os nomes que ocupam mais de uma linha.",
+    "Os hashes dos 24 PNG inspecionados coincidem com o manifesto de capturas da cabeça de código declarada. Nenhum PNG ou ficheiro de código foi alterado nesta inspeção."
+  ],
+  "revalidacao": {
+    "cabeca_inspecao_visual": "1e7069318695fc35d704e27eed54509a32a56f23",
+    "cabeca_nova_captura": "466f83871ae13eff45a9cd28dcb73470a45114cc",
+    "metodo": "Todas as imagens foram refeitas. A igualdade SHA-256 confirma os mesmos bytes dos PNG inspecionados visualmente.",
+    "ficheiros_identicos": 24
+  }
+}
