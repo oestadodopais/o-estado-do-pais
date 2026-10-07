@@ -1,5 +1,8 @@
 import { createHash } from 'node:crypto';
-/** RP4N-1: recusa das afirmações; inventário das ausências toleradas nos recibos.
+import { provenienciaIncompleta } from '../src/lib/ledger.mjs';
+import { matchPath } from '../src/lib/routes.mjs';
+/** RP4N-1 e RP4N-5: recusa das afirmações; inventário das ausências dos recibos
+ * e dos lugares em que a casa explica a própria marca.
  * Uma classe não dá dispensa a uma frase: as superfícies proibidas são lidas primeiro.
  * Os restantes portões continuam a comparar campos e a exigir a proteção I77.
  */
@@ -7,7 +10,11 @@ export const TIPOS_RECUSADOS = [
   'o-que-e-linha', 'o-que-e-familia', 'o-que-e-serie', 'nome-medida', 'nome-serie',
   'nome-lugar', 'titulo-estudo', 'leitura-cartao', 'primeira-pagina', 'explicacao', 'fora-dos-tipos',
 ];
-export const TIPOS_ACEITES = ['data', 'excerto', 'endereco', 'pessoa-I77', 'referencia-metodo', 'referencia-sobre'];
+export const TIPOS_ACEITES = [
+  'data', 'excerto', 'endereco', 'pessoa-I77', 'referencia-metodo', 'referencia-sobre',
+  'selo-proveniencia', 'publicador', 'titulo-documento', 'edicao-documento',
+  'nota-alcance', 'referencia-no-livro', 'pagina-da-marca',
+];
 const MARCA = /\[\s*(?:a\s+verificar|to\s+verify)\s*\]/giu;
 // Os parágrafos citados sobre a identidade da I77, conferidos no documento e na transcrição.
 // Um nome diferente ou uma frase acrescentada deixa de beneficiar da exceção.
@@ -51,7 +58,20 @@ function aceite(n, {rota, claims, municipios = []}) {
     if (['published_at','access_date','reference_date','document.hosted.snapshot_date'].includes(chave) || /^document\.computed_over\.files\.\d+\.snapshot_date$/.test(chave) || /^verifications\.\d+\.date$/.test(chave)) return 'data';
     if (chave === 'excerpt') return 'excerto';
     if (chave === 'source_url' || chave === 'document.url') return 'endereco';
+    if (chave === 'source') return 'publicador';
+    if (chave === 'document.title') return 'titulo-documento';
+    if (chave === 'document.edition') return 'edicao-documento';
   }
+  // O selo é a porta de um recibo cuja proveniência está incompleta. A célula
+  // própria do selo continua a conferir o texto, a etiqueta e o destino.
+  const selo = perto(n, 'a.src-chip[data-nonledger="proveniencia"]');
+  const destino = selo && matchPath((selo.getAttribute('href') ?? '').split('#')[0]);
+  if (destino?.key === 'linha' && provenienciaIncompleta(claims?.get(destino.params.slug))) return 'selo-proveniencia';
+  if (rota?.key === 'linha' && claims?.has(rota.params?.slug) && perto(n, '.linha-alcance')) return 'nota-alcance';
+  // No livro, a referência é uma amostra isolada, com a glosa inglesa opcional.
+  const referencia = perto(n, '.aparelho-nota');
+  if (rota?.key === 'livro' && referencia && /^\[a verificar\](?:\s*\(to verify\))?$/.test(texto(referencia).trim())) return 'referencia-no-livro';
+  if (rota?.key === 'marcador') return 'pagina-da-marca';
   if (rota?.key === 'agenda' && perto(n, '[data-agenda-sem-data]') && perto(n, '[data-agenda]')) return 'data';
   if (rota?.key === 'municipio') {
     const m = municipios.find(m => m.slug === rota.params.slug);
