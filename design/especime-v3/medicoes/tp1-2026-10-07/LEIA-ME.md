@@ -8,7 +8,7 @@ Nas duas edições, o Sobre diz o que o projeto é nas palavras do diretor (um p
 
 ## Onde parou
 
-A cabeça do código é `4a261f3a9b4cee9cc06d6a33538a1f6b3b7f8121`, com 32 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:38:12Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub corre na cabeça que aterra; na máquina correram as conferências que a mudança toca, abaixo.
+A cabeça do código é `67358e76e7405034084fee2681570531895d0b5e`, com 0 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:53:29Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub corre na cabeça que aterra; na máquina correram as conferências que a mudança toca, abaixo.
 
 ## O que ficou aberto
 
@@ -43,7 +43,7 @@ Corridas por `conferencias/conferir-tp1.sh`, cada uma com o código em `conferen
 
 ## As capturas
 
-O registo `design/especime-v3/capturas/tp1-2026-10-07/capturas.json` diz a cabeça `4a261f3a9b4cee9cc06d6a33538a1f6b3b7f8121`, as larguras 390, 768, 1024, 1280, 1600 px, 20 resultados com o sha256 de cada captura, 0 falhas e `ok` a true; a pasta tem 20 ficheiros PNG (as duas páginas, as duas edições, as cinco larguras).
+O registo `design/especime-v3/capturas/tp1-2026-10-07/capturas.json` diz a cabeça `67358e76e7405034084fee2681570531895d0b5e`, as larguras 390, 768, 1024, 1280, 1600 px, 20 resultados com o sha256 de cada captura, 0 falhas e `ok` a true; a pasta tem 20 ficheiros PNG (as duas páginas, as duas edições, as cinco larguras).
 
 ## O custo
 

@@ -1,5 +1,5 @@
 {
-  "cabeca": "4a261f3a9b4cee9cc06d6a33538a1f6b3b7f8121",
+  "cabeca": "67358e76e7405034084fee2681570531895d0b5e",
   "larguras": [
     390,
     768,
@@ -310,7 +310,7 @@
     }
   ],
   "recursos": {
-    "version.json": "6f806b9ec71e83893df5c24b7842769520df7c98bd9ed55082a01c9d40b4b67d",
+    "version.json": "f4a493ef2e92fdf542981ce942498e114a68b1e653560e9ff5ca5c3dfa5d2376",
     "sobre/index.html": "9e590dfac94a901bc55af6b5f69ebd9af96b0d9cc501da30151c3b75a371f7df",
     "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
     "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
