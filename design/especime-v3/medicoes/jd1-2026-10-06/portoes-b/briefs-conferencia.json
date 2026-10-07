@@ -1,0 +1,147 @@
+[
+  {
+    "brief": "design/observatorio/BRIEF-B1-as-quatro-paginas.md",
+    "mudancas": [
+      {
+        "marcador": "<pasta-das-worktrees>/",
+        "ocorrencias": 1
+      }
+    ],
+    "so_caminhos": true,
+    "inalterado_desde_limpeza": true
+  },
+  {
+    "brief": "design/observatorio/BRIEF-F1.1-porta-da-frente.md",
+    "mudancas": [
+      {
+        "marcador": "<motor>",
+        "ocorrencias": 1
+      },
+      {
+        "marcador": "<pasta-das-worktrees>/",
+        "ocorrencias": 1
+      }
+    ],
+    "so_caminhos": true,
+    "inalterado_desde_limpeza": true
+  },
+  {
+    "brief": "design/observatorio/BRIEF-F1.2-pagina-do-dominio.md",
+    "mudancas": [
+      {
+        "marcador": "<pasta-das-worktrees>/",
+        "ocorrencias": 1
+      }
+    ],
+    "so_caminhos": true,
+    "inalterado_desde_limpeza": true
+  },
+  {
+    "brief": "design/observatorio/BRIEF-F1.6-o-atraso-do-iefp-e-as-duas-frases.md",
+    "mudancas": [
+      {
+        "marcador": "<motor>",
+        "ocorrencias": 1
+      }
+    ],
+    "so_caminhos": true,
+    "inalterado_desde_limpeza": true
+  },
+  {
+    "brief": "design/observatorio/BRIEF-F2.6-o-calendario-a-serio.md",
+    "mudancas": [
+      {
+        "marcador": "<motor>",
+        "ocorrencias": 2
+      }
+    ],
+    "so_caminhos": true,
+    "inalterado_desde_limpeza": true
+  },
+  {
+    "brief": "design/observatorio/BRIEF-I129-o-grupo-etario-dos-jovens-nem.md",
+    "mudancas": [
+      {
+        "marcador": "<motor>",
+        "ocorrencias": 1
+      },
+      {
+        "marcador": "<sitio>",
+        "ocorrencias": 1
+      },
+      {
+        "marcador": "<pasta-das-worktrees>/",
+        "ocorrencias": 1
+      }
+    ],
+    "so_caminhos": true,
+    "inalterado_desde_limpeza": true
+  },
+  {
+    "brief": "design/observatorio/BRIEF-M1-o-nome-das-entradas-sem-nome.md",
+    "mudancas": [
+      {
+        "marcador": "<motor>",
+        "ocorrencias": 2
+      }
+    ],
+    "so_caminhos": true,
+    "inalterado_desde_limpeza": true
+  },
+  {
+    "brief": "design/observatorio/BRIEF-M2-o-estudo-14-entra-no-portao-do-motor.md",
+    "mudancas": [
+      {
+        "marcador": "<motor>",
+        "ocorrencias": 1
+      },
+      {
+        "marcador": "<sitio>",
+        "ocorrencias": 1
+      }
+    ],
+    "so_caminhos": true,
+    "inalterado_desde_limpeza": true
+  },
+  {
+    "brief": "design/observatorio/BRIEF-M3-os-nomes-oficiais-conferidos-no-motor.md",
+    "mudancas": [
+      {
+        "marcador": "<motor>",
+        "ocorrencias": 1
+      }
+    ],
+    "so_caminhos": true,
+    "inalterado_desde_limpeza": true
+  },
+  {
+    "brief": "design/observatorio/BRIEF-P2-o-numero-e-o-seu-sentido.md",
+    "mudancas": [
+      {
+        "marcador": "<worktree>",
+        "ocorrencias": 1
+      },
+      {
+        "marcador": "<motor>",
+        "ocorrencias": 1
+      },
+      {
+        "marcador": "<pasta-das-worktrees>/",
+        "ocorrencias": 1
+      }
+    ],
+    "so_caminhos": true,
+    "inalterado_desde_limpeza": true
+  },
+  {
+    "brief": "design/observatorio/BRIEF-P3-os-nomes-e-a-lingua.md",
+    "mudancas": [
+      {
+        "marcador": "<pasta-das-worktrees>/",
+        "ocorrencias": 1
+      }
+    ],
+    "so_caminhos": true,
+    "inalterado_desde_limpeza": true
+  }
+]

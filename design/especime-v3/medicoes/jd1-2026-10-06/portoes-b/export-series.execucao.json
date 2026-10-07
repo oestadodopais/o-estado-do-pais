@@ -1,0 +1,7 @@
+{
+  "comando": "python3 -m publisher.export_series --site <worktree>",
+  "inicio": "2026-10-07T12:12:49.088519+00:00",
+  "fim": "2026-10-07T12:13:14.045950+00:00",
+  "codigo": 0,
+  "cabeca": "481e15e2ba384703dfdfb83b7aca62f4b3ae24ef"
+}

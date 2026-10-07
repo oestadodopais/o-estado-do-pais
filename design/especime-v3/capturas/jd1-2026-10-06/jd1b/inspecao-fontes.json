@@ -1,0 +1,44 @@
+{
+  "cabeca_codigo": "466f83871ae13eff45a9cd28dcb73470a45114cc",
+  "ficheiros": [
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2024-pt-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2024-pt-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2024-en-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2024-en-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-pt-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-pt-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-en-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-2025-en-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2024-pt-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2024-pt-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2024-en-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2024-en-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2025-pt-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2025-pt-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2025-en-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/pib-nominal-notificacao-setembro-2025-en-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2024-pt-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2024-pt-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2024-en-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2024-en-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2025-pt-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2025-pt-1280.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2025-en-390.png",
+    "design/especime-v3/capturas/jd1-2026-10-06/jd1b/juros-das-administracoes-publicas-pib-2025-en-1280.png"
+  ],
+  "problemas": [],
+  "observacoes": [
+    "Inspeção visual dos 24 PNG originais: seis linhas INE, nas edições portuguesa e inglesa, a 390 e 1 280 px. Os ficheiros coincidem com os hashes do manifesto capturas-b.json.",
+    "Títulos, valores, unidades, explicações, excertos e proveniência legíveis. Não observei cortes, sobreposições ou transbordo horizontal. A disposição passa de duas colunas para uma nas capturas estreitas; os endereços e expressões longos quebram dentro da coluna.",
+    "As linhas de juros apresentam 5 983,4 em 2024 e 6 028,2 em 2025; as do PIB apresentam 291 152,8 e 308 538,2. A fonte é INE e o título documental é uniforme nas duas edições. As referências indicam a página e a coluna do ano correspondente.",
+    "O texto identifica explicitamente 2025 como provisório. Nas linhas de 2024, a mesma explicação de família conserva essa qualificação dirigida a 2025; a proveniência identifica corretamente 2024.",
+    "As percentagens apresentam 2,06 para 2024 e 1,95 para 2025. A aritmética e as duas ligações aos operandos do mesmo ano estão visíveis. A linha de 2025 mostra o período anterior com 2,06 e a União Europeia com 1,9 nas quatro capturas.",
+    "A explicação da comparação de 2025 declara as versões distintas: notificação portuguesa de setembro e contas da União atualizadas pelo Eurostat em julho. A edição inglesa conserva os títulos e rótulos originais das fontes portuguesas."
+  ],
+  "revalidacao": {
+    "cabeca_inspecao_visual": "1e7069318695fc35d704e27eed54509a32a56f23",
+    "cabeca_nova_captura": "466f83871ae13eff45a9cd28dcb73470a45114cc",
+    "metodo": "Todas as imagens foram refeitas. A igualdade SHA-256 confirma os mesmos bytes dos PNG inspecionados visualmente.",
+    "ficheiros_identicos": 24
+  }
+}
