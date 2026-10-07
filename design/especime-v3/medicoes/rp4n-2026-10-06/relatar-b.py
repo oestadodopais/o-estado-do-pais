@@ -72,6 +72,11 @@ linhas += [f'| motor, corrida anterior na mesma cabeça | `portoes/motor.codigo`
     '### Plantas e mensagens', '', f'As {len(plantas)} plantas afirmam a mensagem, o lado da decisão e a contagem da ocorrência e da página. Correm também dentro do `gate:html`.', '', '| Planta | Decisão | Mensagem | Contagem afirmada |', '|---|---|---|---:|']
 for p in plantas:
     linhas.append('| ' + ' | '.join(md(p[k]) for k in ('nome', 'estado', 'mensagem', 'contagem')) + ' |')
+titulos = ler(BASE / 'conferencias-b' / 'titulos.json')
+assert titulos['codigo'] == int((BASE / 'conferencias-b' / 'titulos.codigo').read_text())
+linhas += ['', f"A conferência dos títulos também correu sobre cópias do HTML construído. Código lido de `conferencias-b/titulos.codigo`: {titulos['codigo']}. As {len(titulos['plantas'])} plantas da A4 abaixo confirmam a recusa da marca nas páginas e de uma declaração de título por confirmar, mesmo sem marca rendida.", '', '| Planta da A4 | Mensagens afirmadas | Código esperado e observado |', '|---|---|---:|']
+for p in titulos['plantas']:
+    linhas.append(f"| {md(p['nome'])} | {md(chr(10).join(p['mensagens']))} | {p['codigo']} |")
 linhas += ['', '### Páginas com marcas aceites para o bloco dos recibos', '', '| Página | Ocorrências aceites por tipo |', '|---|---|']
 for p in depois['paginas']:
     if not p['aceites']:
@@ -85,6 +90,7 @@ linhas += ['', 'A lista com cada ocorrência, contexto e resumo da página está
     'node tests/cartao/rp4nb.mjs --registo',
     'RESEARCHHUB_DIR=<motor> sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/rp4n-2026-10-06/portoes-b',
     'node design/especime-v3/medicoes/rp4n-2026-10-06/medir-b.mjs depois',
+    'node design/especime-v3/medicoes/rp4n-2026-10-06/conferir-titulos-b.mjs',
     'RESEARCHHUB_DIR=<motor> python3 design/especime-v3/medicoes/rp4n-2026-10-06/relatar-b.py', '```', '',
     'Commits desta passagem antes do commit final do relatório e dos códigos:', '', '```text',
     git(SITE, 'log', '--reverse', '--format=%H %s', f'{INICIO}..HEAD'), '```', '',
