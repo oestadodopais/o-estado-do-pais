@@ -13165,7 +13165,7 @@
       "serie": "serie-ihpc-combustiveis-variacao-homologa-ue",
       "origens": [
         "rp1-ihpc-homologa",
-        "rp4n-combustiveis",
+        "rp4n-combustiveis-ue",
         "rp1-ihpc-comparavel",
         "rp1-ihpc-uniao"
       ],
@@ -13192,7 +13192,7 @@
               "en": " fuel and lubricant prices for personal transport changed",
               "apoios": [
                 {
-                  "origem": "rp4n-combustiveis",
+                  "origem": "rp4n-combustiveis-ue",
                   "campo": "excerto",
                   "literal": "Fuels and lubricants for personal transport equipment"
                 }

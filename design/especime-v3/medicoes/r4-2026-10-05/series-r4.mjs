@@ -81,7 +81,7 @@ export const SERIES_R4 = [
     serie: 'serie-ihpc-combustiveis-variacao-homologa-ue',
     partes: [
       diz('É quanto mudaram', 'It is how much', VARIACAO_HOMOLOGA),
-      COMBUSTIVEIS,
+      {...COMBUSTIVEIS, apoios: [O('rp4n-combustiveis-ue', 'Fuels and lubricants for personal transport equipment')]},
       diz(' face ao mesmo mês do ano anterior,', ' compared with the same month of the previous year,', MESMO_MES),
       diz(' na medida harmonizada que serve para comparar os países da União Europeia', ' in the harmonised measure used to compare the countries of the European Union', COMPARAVEL),
       diz(' (índice harmonizado de preços no consumidor)', ' (harmonised index of consumer prices)', NOME_DO_IHPC),

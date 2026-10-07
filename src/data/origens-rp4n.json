@@ -443,6 +443,32 @@
       "sha256": "5535ef96382360a8a8d1f59a993cb83caf181f86459ac98a21ac4444d277b4d1"
     }
   },
+  "rp4n-combustiveis-ue": {
+    "publicador": "Eurostat",
+    "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr?format=JSON&lang=EN&unit=RCH_A&coicop18=CP0722&geo=EU27_2020&sinceTimePeriod=1996-01",
+    "lido": "2026-10-04",
+    "lingua": "en",
+    "excerto": "Fuels and lubricants for personal transport equipment (ND)",
+    "extracao": {
+      "caminho": [
+        "dimension",
+        "coicop18",
+        "category",
+        "label",
+        "CP0722"
+      ]
+    },
+    "serie": "serie-ihpc-combustiveis-variacao-homologa-ue",
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp3/175-eurostat-serie-ihpc-combustiveis-variacao-homologa-ue.json",
+      "campo": "dimension.coicop18.category.label.CP0722",
+      "hora": "2026-10-04T03:55:13Z",
+      "cliente": "publisher.dominios_fetch.buscar → core.http.HttpClient.condicional",
+      "sha256": "250d402db99b5d53e1a53cbbe67d2d2fbb272ca923e29ea7d616b2f89cc94a87"
+    }
+  },
   "rp4n-energia": {
     "publicador": "Eurostat",
     "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",
