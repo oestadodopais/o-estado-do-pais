@@ -1967,10 +1967,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "É a despesa em juros das administrações públicas, nas contas nacionais."
+        "É a despesa em juros das administrações públicas, nas contas nacionais. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis."
       ],
       "en": [
-        "It is interest expenditure by general government, in national accounts."
+        "It is interest expenditure by general government, in national accounts. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification."
       ]
     }
   },
@@ -1981,10 +1981,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano, calculados a partir dos dois montantes da mesma notificação do INE."
+        "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano, calculados a partir dos dois montantes da mesma notificação do INE. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis."
       ],
       "en": [
-        "It is general government interest expenditure as a percentage of gross domestic product for the same year, calculated from both amounts in the same INE notification."
+        "It is general government interest expenditure as a percentage of gross domestic product for the same year, calculated from both amounts in the same INE notification. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification."
       ]
     }
   },
@@ -3101,10 +3101,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "É o produto interno bruto a preços de mercado."
+        "É o produto interno bruto a preços de mercado. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis."
       ],
       "en": [
-        "It is gross domestic product at market prices."
+        "It is gross domestic product at market prices. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification."
       ]
     }
   },

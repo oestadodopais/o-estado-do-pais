@@ -12792,12 +12792,13 @@
       },
       "origens": [
         "jd1-ine-despesa",
-        "jd1-ine-ambito"
+        "jd1-ine-ambito",
+        "jd1-ine-provisorio"
       ],
       "folhas": [
         {
-          "pt": "É a despesa em juros das administrações públicas, nas contas nacionais.",
-          "en": "It is interest expenditure by general government, in national accounts.",
+          "pt": "É a despesa em juros das administrações públicas, nas contas nacionais. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+          "en": "It is interest expenditure by general government, in national accounts. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
           "partes": [
             {
               "pt": "É a despesa em juros",
@@ -12844,6 +12845,23 @@
               "pt": ".",
               "en": ".",
               "classe": "liga"
+            },
+            {
+              "pt": " O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+              "en": " The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-ine-provisorio",
+                  "campo": "excerto",
+                  "literal": "os relativos a 2025 são provisórios4."
+                },
+                {
+                  "origem": "jd1-ine-ambito",
+                  "campo": "excerto",
+                  "literal": "Setembro de 2026"
+                }
+              ]
             }
           ]
         }
@@ -12857,11 +12875,14 @@
         "pt": "PIB a preços de mercado, notificação de setembro",
         "en": "GDP at market prices, September notification"
       },
-      "origens": [],
+      "origens": [
+        "jd1-ine-provisorio",
+        "jd1-ine-ambito"
+      ],
       "folhas": [
         {
-          "pt": "É o produto interno bruto a preços de mercado.",
-          "en": "It is gross domestic product at market prices.",
+          "pt": "É o produto interno bruto a preços de mercado. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+          "en": "It is gross domestic product at market prices. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
           "partes": [
             {
               "pt": "É o produto interno bruto a preços de mercado",
@@ -12879,6 +12900,23 @@
               "pt": ".",
               "en": ".",
               "classe": "liga"
+            },
+            {
+              "pt": " O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+              "en": " The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-ine-provisorio",
+                  "campo": "excerto",
+                  "literal": "os relativos a 2025 são provisórios4."
+                },
+                {
+                  "origem": "jd1-ine-ambito",
+                  "campo": "excerto",
+                  "literal": "Setembro de 2026"
+                }
+              ]
             }
           ]
         }
@@ -12892,11 +12930,14 @@
         "pt": "Juros das administrações públicas em percentagem do PIB",
         "en": "General government interest expenditure as a share of GDP"
       },
-      "origens": [],
+      "origens": [
+        "jd1-ine-provisorio",
+        "jd1-ine-ambito"
+      ],
       "folhas": [
         {
-          "pt": "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano, calculados a partir dos dois montantes da mesma notificação do INE.",
-          "en": "It is general government interest expenditure as a percentage of gross domestic product for the same year, calculated from both amounts in the same INE notification.",
+          "pt": "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano, calculados a partir dos dois montantes da mesma notificação do INE. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+          "en": "It is general government interest expenditure as a percentage of gross domestic product for the same year, calculated from both amounts in the same INE notification. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
           "partes": [
             {
               "pt": "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano",
@@ -12931,6 +12972,23 @@
               "pt": ".",
               "en": ".",
               "classe": "liga"
+            },
+            {
+              "pt": " O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+              "en": " The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-ine-provisorio",
+                  "campo": "excerto",
+                  "literal": "os relativos a 2025 são provisórios4."
+                },
+                {
+                  "origem": "jd1-ine-ambito",
+                  "campo": "excerto",
+                  "literal": "Setembro de 2026"
+                }
+              ]
             }
           ]
         }

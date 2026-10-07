@@ -1,5 +1,12 @@
 [
   {
+    "origem": "jd1-ine-provisorio",
+    "sha256": "58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
     "origem": "jd1-ine-ambito",
     "sha256": "58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d",
     "literal": true,

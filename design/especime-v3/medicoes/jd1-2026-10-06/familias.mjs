@@ -4,6 +4,11 @@ const O = (origem, literal) => ({ origem, campo: 'excerto', literal });
 const diz = (pt, en, ...apoios) => ({ pt, en, classe: 'diz', apoios });
 const liga = (pt, en) => ({ pt, en, classe: 'liga' });
 const ponto = liga('.', '.');
+// JD1-b, achado 5: a família inclui os dois anos; a ressalva nomeia apenas o provisório.
+const provisorio = diz(' O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.',
+  'The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.'.replace(/^/, ' '),
+  O('jd1-ine-provisorio', 'os relativos a 2025 são provisórios4.'), O('jd1-ine-ambito', 'Setembro de 2026'));
+
 
 export const FAMILIAS_JD1 = [
   {
@@ -13,13 +18,13 @@ export const FAMILIAS_JD1 = [
       diz('É a despesa em juros', 'It is interest expenditure', L('name', 'Juros'), O('jd1-ine-despesa', 'O quadro 9 apresenta a despesa')),
       diz(' das administrações públicas', ' by general government', O('jd1-ine-ambito', 'Administrações Públicas')),
       diz(', nas contas nacionais', ', in national accounts', O('jd1-ine-ambito', 'Sistema Europeu de Contas Nacionais e Regionais 2010')),
-      ponto,
+      ponto, provisorio,
     ],
   },
   {
     chaves: ['pib-nominal-notificacao-setembro'],
     nome: { pt: 'PIB a preços de mercado, notificação de setembro', en: 'GDP at market prices, September notification' },
-    partes: [diz('É o produto interno bruto a preços de mercado', 'It is gross domestic product at market prices', L('name', 'Produto Interno Bruto, a preços de mercado')), ponto],
+    partes: [diz('É o produto interno bruto a preços de mercado', 'It is gross domestic product at market prices', L('name', 'Produto Interno Bruto, a preços de mercado')), ponto, provisorio],
   },
   {
     chaves: ['juros-das-administracoes-publicas-pib'],
@@ -28,7 +33,7 @@ export const FAMILIAS_JD1 = [
       diz('São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano', 'It is general government interest expenditure as a percentage of gross domestic product for the same year',
         L('derivation', 'Dividir os juros das administrações públicas pelo produto interno bruto a preços de mercado do mesmo ano'), L('derivation', 'multiplicar por cem')),
       diz(', calculados a partir dos dois montantes da mesma notificação do INE', ', calculated from both amounts in the same INE notification', L('derivation', 'na mesma notificação do INE')),
-      ponto,
+      ponto, provisorio,
     ],
   },
   {
