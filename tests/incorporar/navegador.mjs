@@ -102,7 +102,7 @@ try {
       const esperado = modo==='releitura' ? jsonRelido : json;
       assert.equal(pedidos.filter(p=>p.caminho.endsWith('.json')).length,valores.length);
       assert.equal(valores[4].valor,calculada.value, 'ER1 navegador: a linha calculada sem data não foi atualizada.');
-      assert(textos[4].includes(lang==='pt'?'calculado por este projeto':'calculated by this project'));
+      assert.equal(textos[4].split(lang==='pt'?'calculado por este projeto':'calculated by this project').length-1,1, 'ER1 calculado: a indicação de cálculo tem de aparecer uma vez.');
       assert.equal(valores[0].valor,c.value);assert.equal(valores[0].lido,esperado.incorporacao[lang].data);assert.equal(valores[0].aviso,null);
       assert.equal(valores[1].valor,c.value);assert.equal(valores[1].aviso,esperado.incorporacao[lang].atualizacao);
       assert.equal(textos[0],textos[1].slice(0,-(' · '+esperado.incorporacao[lang].atualizacao).length));

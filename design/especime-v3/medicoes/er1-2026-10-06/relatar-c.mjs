@@ -20,7 +20,7 @@ const texto=`
 
 ## A passagem ER1-c
 
-A recusa foi limitada às marcas na fonte ou na data de acesso. As linhas calculadas sem data própria recebem código com «calculado por este projeto» / «calculated by this project». A licença e as notas ficam separadas por « · », e o exemplo do Método abre o recibo da dívida pública.
+A recusa foi limitada às marcas na fonte ou na data de acesso. As linhas calculadas sem data própria recebem código com «calculado por este projeto» / «calculated by this project». ER1-8 evita repetir essa indicação quando fonte e leitura são iguais. A licença e as notas ficam separadas por « · », e o exemplo do Método abre o recibo da dívida pública.
 
 Há uma condição do mandato que não se pode declarar satisfeita: o Método conta ${m.metodo.porConfirmar} linhas com algum campo por confirmar, mas só ${m.marcasFonteData.length} têm marca na fonte ou na data de acesso. ER1-7 regista esta divergência. A recusa expressamente pedida aplica-se; não se alterou a contagem do Método nem se alargou a recusa para forçar igualdade.
 
