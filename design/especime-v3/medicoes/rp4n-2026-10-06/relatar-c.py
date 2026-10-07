@@ -9,6 +9,7 @@ BASE = Path(__file__).resolve().parent
 SITE = BASE.parents[3]
 MOTOR = Path(os.environ['RESEARCHHUB_DIR'])
 PORTOES = BASE / 'portoes-c'
+INICIAIS = BASE / 'portoes-c-iniciais'
 
 def git(raiz, *args):
     return subprocess.check_output(['git', '-C', str(raiz), *args], text=True).strip()
@@ -29,16 +30,24 @@ novas = [p for p in plantas if p['nome'] not in nomes_anteriores]
 assert all(p in plantas for p in ler('plantas-b.json')['plantas']), 'uma planta anterior mudou'
 cabeca = (PORTOES / 'cabeca').read_text().strip()
 assert cabeca == (PORTOES / 'cabeca.fim').read_text().strip() == depois['cabeca']
-for g in ('build', 'verify', 'typecheck'):
-    assert (PORTOES / f'{g}.fim').exists(), f'{g} não terminou'
-for p in PORTOES.iterdir():
-    if p.is_file():
-        p.write_text(limpar(p.read_text()))
+for pasta in (PORTOES, INICIAIS):
+    for g in ('build', 'verify', 'typecheck'):
+        assert (pasta / f'{g}.fim').exists(), f'{pasta.name}/{g} não terminou'
+    for p in pasta.iterdir():
+        if p.is_file():
+            p.write_text(limpar(p.read_text()))
 codigos = {g: int((PORTOES / f'{g}.codigo').read_text()) for g in ('build', 'verify', 'typecheck')}
+codigos_iniciais = {g: int((INICIAIS / f'{g}.codigo').read_text()) for g in codigos}
+voz = ler('conferencias-c/voz-antes.json')
+assert voz['cabeca'] == (INICIAIS / 'cabeca').read_text().strip() == (INICIAIS / 'cabeca.fim').read_text().strip()
+ocorrencias_voz = sum(p['ocorrencias'] for p in voz['por_classificar'])
+problemas_voz = ocorrencias_voz + len(voz['vivas_que_nao_rendem'])
+for g in ('build', 'verify'):
+    assert f'PORTÃO DA VOZ · {problemas_voz} problema(s)' in (INICIAIS / f'{g}.log').read_text()
 cabeca_motor = git(MOTOR, 'rev-parse', 'HEAD')
 assert cabeca_motor == git(SITE, 'show', f"{antes['cabeca']}:design/especime-v3/medicoes/rp4n-2026-10-06/portoes/motor.cabeca")
 assert not git(MOTOR, 'status', '--porcelain'), 'o motor tem alterações'
-assert not git(SITE, 'diff', cabeca, '--', 'scripts', 'tests', 'src', 'ledger', 'package.json', 'package-lock.json'), 'o código mudou depois dos portões'
+assert not git(SITE, 'diff', cabeca, '--', 'scripts', 'tests', 'src', 'ledger', 'package.json', 'package-lock.json', 'design/especime-v3/INVENTARIO-FRASES.md', 'design/especime-v3/critica/REVISOES-DO-INVENTARIO.md'), 'o código ou o inventário mudou depois dos portões'
 # As superfícies recusadas na lista antiga passam aos tipos agora autorizados.
 # A contagem vem das ocorrências antigas, sem transcrever algarismos do mandato.
 equivalencias = {'source': 'publicador', 'document.title': 'titulo-documento', 'document.edition': 'edicao-documento'}
@@ -89,15 +98,25 @@ linhas += ['', '### Cabeças e códigos lidos', '', '| Repositório | Cabeça do
 for g, c in codigos.items():
     linhas.append(f'| {g} | `portoes-c/{g}.codigo` | {c} |')
 linhas += ['', 'As cabeças de início e fim da corrida são iguais. Os portões correram inteiros pela tranca. Os registos foram conservados com os caminhos da máquina substituídos. O motor não mudou e não teve nova corrida.', '',
+    '### RP4N-6. Inventário da voz desfasado', '',
+    f"A primeira corrida, na cabeça `{voz['cabeca']}`, encontrou {problemas_voz} problemas no portão da voz: {ocorrencias_voz} ocorrências das frases já publicadas por classificar e {len(voz['vivas_que_nao_rendem'])} declarações antigas ainda vivas que deixaram de se render. O diagnóstico completo está em `conferencias-c/voz-antes.json`.", '',
+    'As declarações antigas, com a qualificação não sustentada, passaram a retiradas; as frases já publicadas em `src/data/concelhos.mjs` e já conferidas em `tests/cartao/leituras-provadas.json` entraram como conteúdo. A revisão ficou registada como por ler. Não se alterou a frase das páginas, a medida, o número ou a fonte. A repetição integral dos portões confere esta sincronização.', '',
+    '| Frase já publicada | Ocorrências por classificar na primeira corrida |', '|---|---:|']
+for p in voz['por_classificar']:
+    linhas.append(f"| {p['texto']} | {p['ocorrencias']} |")
+linhas += ['', '| Portão da primeira corrida | Ficheiro | Código lido |', '|---|---|---:|']
+for g, c in codigos_iniciais.items():
+    linhas.append(f'| {g} | `portoes-c-iniciais/{g}.codigo` | {c} |')
+linhas += ['', 'Os comandos posteriores à falha da voz nas cadeias da primeira corrida não se consideram executados. Os códigos do fecho são os de `portoes-c`, na cabeça do código indicada acima.', '',
     '### Pendências', '']
 recusadas = [(p['pagina'], m) for p in depois['paginas'] for m in p['recusadas']]
 if recusadas:
-    linhas += ['**RP4N-6. Ocorrências ainda recusadas.** A passagem para aqui.', '', '| Página | Tipo | Contexto |', '|---|---|---|']
+    linhas += ['**RP4N-7. Ocorrências ainda recusadas.** A passagem para aqui.', '', '| Página | Tipo | Contexto |', '|---|---|---|']
     for pagina, m in recusadas:
         contexto = m['contexto'].replace('|', '\\|')
         linhas.append(f"| `{pagina}` | {m['tipo']} | {contexto} |")
 else:
-    linhas += ['Não sobrou nenhuma ocorrência fora dos tipos nem em superfície de afirmação. A RP4N-5 fica resolvida e não se abriu questão nova. As ausências aceites ficam inventariadas para o bloco dos recibos as dizer por palavras. Permanecem fora desta passagem o relatório das pensões (RP4N-2, falha de certificado já registada), a leitura do vocabulário do PRR (RP4N-3) e a leitura independente com a conferência final da direção (RP4N-4). Não houve fusão nem publicação.']
+    linhas += ['Não sobrou nenhuma ocorrência fora dos tipos nem em superfície de afirmação. A RP4N-5 fica resolvida. A RP4N-6 foi corrigida pela sincronização do inventário da voz. As ausências aceites ficam inventariadas para o bloco dos recibos as dizer por palavras. Permanecem fora desta passagem o relatório das pensões (RP4N-2, falha de certificado já registada), a leitura do vocabulário do PRR (RP4N-3) e a leitura independente com a conferência final da direção (RP4N-4). Não houve fusão nem publicação.']
 linhas += ['', '### Comandos e commits', '', '```sh',
     'node design/especime-v3/medicoes/rp4n-2026-10-06/medir-c.mjs antes',
     'node tests/cartao/rp4nb.mjs --registo-c',
