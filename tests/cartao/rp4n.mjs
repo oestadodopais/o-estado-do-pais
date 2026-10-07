@@ -42,14 +42,14 @@ for (const [nome, altera, mensagem] of [
   morde('nome do projeto de volta numa série', conferirAuditoriaDasSeries({auditoria:a}).erros, 'o nome do projeto não pode apoiar uma frase');
 }
 {
-  const linhas = loadClaims();
+  const linhas = structuredClone(loadClaims());
   linhas.get('avisos-pt2030-abertos').excerpt = 'Um excerto existente.';
   morde('ausência declarada quando há excerto', conferirAuditoriaDasFamilias({linhas}).erros, 'a ausência não corresponde à falta do excerto');
 }
 {
-  const linhas = loadClaims();
+  const linhas = structuredClone(loadClaims());
   linhas.get('evora-prr-aprovado-2026').document.computed_over.files[0].sha256 = '';
-  morde('seleção calculada sem resumo do ficheiro', conferirAuditoriaDasFamilias({linhas}).erros, 'a seleção calculada de «evora-prr-aprovado-2026» não tem ficheiros selados');
+  morde('seleção calculada sem resumo do ficheiro', conferirAuditoriaDasFamilias({linhas}).erros, 'a seleção calculada não tem ficheiros selados');
 }
 for (const aninhada of [false,true]) {
   const a = structuredClone(auditoria);
@@ -85,3 +85,25 @@ for (const lang of ['pt','en']) {
 }
 if (process.argv.includes('--registo')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/plantas-sitio.json', JSON.stringify({plantas},null,2)+'\n');
 console.log(`RP4N: PASS, ${plantas.length} plantas com a mensagem afirmada`);
+
+// RP4-n-d: não basta um campo plausível nem um resumo com 64 caracteres.
+for (const [nome, altera, mensagem] of [
+  ['PRR coluna inventada', l => {l.document.computed_over.column = 'valor_inventado';}, 'não está no cabeçalho selado'],
+  ['PRR outro Excel plausível', l => {l.document.computed_over.files[0].sha256 = 'a'.repeat(64);}, 'iguais aos Excel lidos'],
+  ['PRR instantâneo alterado', l => {l.document.computed_over.files[0].snapshot_date = '2026-08-20';}, 'iguais aos Excel lidos'],
+  ['PRR seleção alargada', l => {l.document.computed_over.filter = 'todos';}, 'seleção da casa difere'],
+  ['PRR soma alterada', l => {l.value = '1';}, 'difere da soma conferida'],
+]) {
+  const linhas = structuredClone(loadClaims()); altera(linhas.get('evora-prr-aprovado-2026'));
+  morde(nome, conferirAuditoriaDasFamilias({linhas}).erros, mensagem);
+}
+{
+  const a = structuredClone(auditoria);
+  const e = a.familias.find(e => e.chaves?.includes('evora-prr-aprovado'));
+  e.folhas[0].partes[0].apoios.push({linha:'propria', campo:'document.computed_over.filter', literal:'Évora'});
+  morde('PRR filtro promovido a fonte', conferirAuditoriaDasFamilias({auditoria:a}).erros, 'campo «document.computed_over.filter», que não pode apoiar');
+  e.folhas[0].partes[0].apoios.pop();
+  e.folhas[0].partes[0].apoios.push({ficheiro:'entidades', campo:'cabecalho', literal:'coluna_inventada'});
+  morde('PRR cabeçalho inventado', conferirAuditoriaDasFamilias({auditoria:a}).erros, 'literal não foi lido');
+}
+console.log(`RP4N-d: PASS, ${plantas.length} plantas acumuladas com a mensagem afirmada`);

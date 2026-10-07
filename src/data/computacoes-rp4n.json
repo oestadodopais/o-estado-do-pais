@@ -1,0 +1,86 @@
+{
+  "ficheiros": {
+    "entidades": {
+      "file": "listagem-de-entidades-prr-20260819.xlsx",
+      "sha256": "34f6e5b555f5cdbfcdc35535cd3e0e27717c6ad5ef681905d8d7620fffb7fe3b",
+      "bytes": 44456372,
+      "motor": "content/13 Dominios/source/rp4n/prr/listagem-de-entidades-prr-20260819.xlsx",
+      "sheet": "Sheet1",
+      "headers": [
+        "cd_entidade",
+        "dt_referencia",
+        "nif_entidade",
+        "ds_entidade",
+        "papel_entidade",
+        "atividade_economica",
+        "localizacao_sede",
+        "valor_contratado",
+        "valor_pago",
+        "cd_projeto"
+      ],
+      "rows": 802450,
+      "snapshot_date": "2026-08-19"
+    },
+    "projetos": {
+      "file": "listagem-de-projetos-prr-20260819.xlsx",
+      "sha256": "121122320839671b5e86f114ee24dff5296cc30444327812872510e41b85d6ea",
+      "bytes": 40486735,
+      "motor": "content/13 Dominios/source/rp4n/prr/listagem-de-projetos-prr-20260819.xlsx",
+      "sheet": "Sheet1",
+      "headers": [
+        "cd_projeto",
+        "dt_referencia",
+        "ds_projeto",
+        "sumario",
+        "valor_aprovado",
+        "valor_pago",
+        "subvencoes",
+        "emprestimos",
+        "nota_final_candidatura",
+        "cd_investimento",
+        "dt_inicio",
+        "dt_prevista_conclusao",
+        "dt_efetiva_conclusao"
+      ],
+      "rows": 397030,
+      "snapshot_date": "2026-08-19"
+    }
+  },
+  "literais": {
+    "entidades": {
+      "papel_entidade": [
+        "Beneficiário Direto",
+        "Beneficiário Intermediário"
+      ],
+      "localizacao_sede": [
+        "Évora"
+      ]
+    }
+  },
+  "selecao_da_casa": {
+    "sede": "Évora",
+    "papeis": [
+      "Beneficiário Intermediário",
+      "Beneficiário Direto"
+    ],
+    "prazo": "anterior ao instantâneo",
+    "conclusao": "vazia"
+  },
+  "resultados": {
+    "evora-prr-aprovado-2026": {
+      "column": "valor_contratado",
+      "rows": 2311,
+      "value": "167372755.84"
+    },
+    "evora-prr-pago-2026": {
+      "column": "valor_pago",
+      "rows": 2311,
+      "value": "86944668.69"
+    },
+    "evora-prr-vencido-aprovado-2026": {
+      "column": "valor_contratado",
+      "rows": 608,
+      "value": "102624703.85"
+    }
+  }
+}

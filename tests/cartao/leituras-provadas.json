@@ -11523,14 +11523,19 @@
                   "literal": "valor_contratado"
                 },
                 {
-                  "linha": "propria",
-                  "campo": "document.computed_over.filter",
-                  "literal": "Beneficiário Intermediário, Beneficiário Direto"
+                  "ficheiro": "entidades",
+                  "campo": "papel_entidade",
+                  "literal": "Beneficiário Intermediário"
                 },
                 {
-                  "linha": "propria",
-                  "campo": "document.computed_over.filter",
-                  "literal": "localizacao_sede = Évora"
+                  "ficheiro": "entidades",
+                  "campo": "papel_entidade",
+                  "literal": "Beneficiário Direto"
+                },
+                {
+                  "ficheiro": "entidades",
+                  "campo": "localizacao_sede",
+                  "literal": "Évora"
                 }
               ]
             },
@@ -11572,14 +11577,19 @@
                   "literal": "valor_pago"
                 },
                 {
-                  "linha": "propria",
-                  "campo": "document.computed_over.filter",
-                  "literal": "Beneficiário Intermediário, Beneficiário Direto"
+                  "ficheiro": "entidades",
+                  "campo": "papel_entidade",
+                  "literal": "Beneficiário Intermediário"
                 },
                 {
-                  "linha": "propria",
-                  "campo": "document.computed_over.filter",
-                  "literal": "localizacao_sede = Évora"
+                  "ficheiro": "entidades",
+                  "campo": "papel_entidade",
+                  "literal": "Beneficiário Direto"
+                },
+                {
+                  "ficheiro": "entidades",
+                  "campo": "localizacao_sede",
+                  "literal": "Évora"
                 }
               ]
             },
@@ -11621,24 +11631,29 @@
                   "literal": "valor_contratado"
                 },
                 {
-                  "linha": "propria",
-                  "campo": "document.computed_over.filter",
-                  "literal": "Beneficiário Intermediário, Beneficiário Direto"
+                  "ficheiro": "entidades",
+                  "campo": "papel_entidade",
+                  "literal": "Beneficiário Intermediário"
                 },
                 {
-                  "linha": "propria",
-                  "campo": "document.computed_over.filter",
-                  "literal": "localizacao_sede = Évora"
+                  "ficheiro": "entidades",
+                  "campo": "papel_entidade",
+                  "literal": "Beneficiário Direto"
                 },
                 {
-                  "linha": "propria",
-                  "campo": "document.computed_over.filter",
-                  "literal": "dt_prevista_conclusao anterior à data do instantâneo"
+                  "ficheiro": "entidades",
+                  "campo": "localizacao_sede",
+                  "literal": "Évora"
                 },
                 {
-                  "linha": "propria",
-                  "campo": "document.computed_over.filter",
-                  "literal": "dt_efetiva_conclusao vazia"
+                  "ficheiro": "projetos",
+                  "campo": "cabecalho",
+                  "literal": "dt_prevista_conclusao"
+                },
+                {
+                  "ficheiro": "projetos",
+                  "campo": "cabecalho",
+                  "literal": "dt_efetiva_conclusao"
                 }
               ]
             },

@@ -1,0 +1,12 @@
+{
+  "exporter": "ResearchHub/publisher/rp4n_prr.py",
+  "files": {
+    "computacoes-rp4n.json": {
+      "destino": "src/data",
+      "exporter": "ResearchHub/publisher/rp4n_prr.py",
+      "exported_sha256": "c7bd15a318872b4b07ed39ed00ba8f2f24a508de8ff47cf885640da6d2cdbb95",
+      "origin_sha256": "c7bd15a318872b4b07ed39ed00ba8f2f24a508de8ff47cf885640da6d2cdbb95",
+      "origin_path": "content/13 Dominios/computacoes-rp4n.json"
+    }
+  }
+}

@@ -1,3 +1,4 @@
+const X = (ficheiro, campo, literal) => ({ ficheiro, campo, literal });
 /**
  * =============================================================================
  * AS FRASES DAS FAMÍLIAS · a especificação do bloco R4 (05.10.2026)
@@ -915,7 +916,7 @@ const EVORA = [
     chaves: ['evora-prr-aprovado'],
     instantaneo: true,
     partes: [
-      diz("São as verbas contratadas do Plano de Recuperação e Resiliência por beneficiários intermediários e diretos com sede no concelho", "These are Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality", L('document.computed_over.column', 'valor_contratado'), L('document.computed_over.filter', 'Beneficiário Intermediário, Beneficiário Direto'), L('document.computed_over.filter', 'localizacao_sede = Évora')),
+      diz("São as verbas contratadas do Plano de Recuperação e Resiliência por beneficiários intermediários e diretos com sede no concelho", "These are Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality", L('document.computed_over.column', 'valor_contratado'), X('entidades', 'papel_entidade', 'Beneficiário Intermediário'), X('entidades', 'papel_entidade', 'Beneficiário Direto'), X('entidades', 'localizacao_sede', 'Évora')),
       diz(', pela listagem de entidades do plano.', ', from the plan’s list of entities.', L('document.title', 'Listagem de entidades PRR')),
     ],
   },
@@ -923,7 +924,7 @@ const EVORA = [
     chaves: ['evora-prr-pago'],
     instantaneo: true,
     partes: [
-      diz("São as verbas pagas do Plano de Recuperação e Resiliência a beneficiários intermediários e diretos com sede no concelho", "These are Recovery and Resilience Plan funds paid to intermediate and direct beneficiaries headquartered in the municipality", L('document.computed_over.column', 'valor_pago'), L('document.computed_over.filter', 'Beneficiário Intermediário, Beneficiário Direto'), L('document.computed_over.filter', 'localizacao_sede = Évora')),
+      diz("São as verbas pagas do Plano de Recuperação e Resiliência a beneficiários intermediários e diretos com sede no concelho", "These are Recovery and Resilience Plan funds paid to intermediate and direct beneficiaries headquartered in the municipality", L('document.computed_over.column', 'valor_pago'), X('entidades', 'papel_entidade', 'Beneficiário Intermediário'), X('entidades', 'papel_entidade', 'Beneficiário Direto'), X('entidades', 'localizacao_sede', 'Évora')),
       diz(', pela listagem de entidades do plano.', ', from the plan’s list of entities.', L('document.title', 'Listagem de entidades PRR')),
     ],
   },
@@ -931,7 +932,7 @@ const EVORA = [
     chaves: ['evora-prr-vencido-aprovado'],
     instantaneo: true,
     partes: [
-      diz("São as verbas contratadas por beneficiários intermediários e diretos com sede no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada", "These are funds contracted by intermediate and direct beneficiaries headquartered in the municipality, with a completion deadline before the snapshot and no completion recorded", L('document.computed_over.column', 'valor_contratado'), L('document.computed_over.filter', 'Beneficiário Intermediário, Beneficiário Direto'), L('document.computed_over.filter', 'localizacao_sede = Évora'), L('document.computed_over.filter', 'dt_prevista_conclusao anterior à data do instantâneo'), L('document.computed_over.filter', 'dt_efetiva_conclusao vazia')),
+      diz("São as verbas contratadas por beneficiários intermediários e diretos com sede no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada", "These are funds contracted by intermediate and direct beneficiaries headquartered in the municipality, with a completion deadline before the snapshot and no completion recorded", L('document.computed_over.column', 'valor_contratado'), X('entidades', 'papel_entidade', 'Beneficiário Intermediário'), X('entidades', 'papel_entidade', 'Beneficiário Direto'), X('entidades', 'localizacao_sede', 'Évora'), X('projetos', 'cabecalho', 'dt_prevista_conclusao'), X('projetos', 'cabecalho', 'dt_efetiva_conclusao')),
       diz(', pela listagem de entidades do Plano de Recuperação e Resiliência.', ', from the Recovery and Resilience Plan’s list of entities.', L('document.title', 'Listagem de entidades PRR')),
     ],
   },
