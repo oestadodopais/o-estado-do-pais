@@ -6,7 +6,7 @@ import { parse } from 'node-html-parser';
 import { dadosDaIncorporacao } from '../../src/lib/incorporar.mjs';
 import { allClaims } from '../../src/lib/ledger.mjs';
 import { routePath, matchPath } from '../../src/lib/routes.mjs';
-import { conferirInventarioIncorporacao, provenienciaConfirmada, conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson } from '../../scripts/incorporar-do-portao.mjs';
+import { conferirExemploNoMetodo, conferirInventarioIncorporacao, provenienciaConfirmada, conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson } from '../../scripts/incorporar-do-portao.mjs';
 const dist = process.env.OEDP_DIST || 'dist';
 const linhas = allClaims();
 const resultados = { comando: 'node tests/incorporar/conferir.mjs', recibos: 0, semCodigo: 0, comCodigo: 0, json: 0, plantas: [] };
@@ -126,6 +126,16 @@ for(const campo of Object.keys(doc.incorporacao.pt)){
   resultados.plantas.push({nome:'json-'+campo,mensagem,mordeu:true});
 }
 execFileSync(process.execPath,['scripts/gerar-incorporar.mjs','--conferir']);
+for (const lang of ['pt','en']) {
+  const caminho = routePath('metodo',lang);
+  const root = lerPaginaComCodigo(fs.readFileSync(`${dist}${caminho}/index.html`,'utf8'));
+  assert.deepEqual(conferirExemploNoMetodo(root,lang), []);
+  const porta = root.querySelectorAll('#livro-razao a').find(a => a.getAttribute('href').endsWith('/custo-unitario-do-trabalho-2024'));
+  porta.remove();
+  const mensagem = 'ER1 Método: falta a porta para o recibo de exemplo da edição.';
+  assert(conferirCodigo(root,matchPath(caminho)).includes(mensagem));
+  resultados.plantas.push({nome:'metodo-sem-exemplo-'+lang,mensagem,mordeu:true});
+}
 const inventario = fs.readFileSync('design/especime-v3/INVENTARIO-FRASES.md','utf8');
 assert.deepEqual(conferirInventarioIncorporacao(inventario), []);
 for (const linha of inventario.split('\n').filter(l => l.startsWith('| `incorporar.'))) {

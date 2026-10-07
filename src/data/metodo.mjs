@@ -346,7 +346,11 @@ export const REGRAS = [
         rotulo: { pt: 'com proveniência completa', en: 'with complete provenance' },
       },
     ],
-    ligacoes: [{ rota: 'livro', rotulo: { pt: 'Ver o livro-razão', en: 'See the ledger' } }],
+    ligacoes: [
+      { rota: 'livro', rotulo: { pt: 'Ver o livro-razão', en: 'See the ledger' } },
+      { rota: 'linha', params: { slug: 'custo-unitario-do-trabalho-2024' },
+        rotulo: { pt: 'Ver o recibo de exemplo', en: 'See the example receipt' } },
+    ],
   },
 
   {

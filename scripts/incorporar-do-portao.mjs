@@ -78,8 +78,15 @@ export function conferirInventarioIncorporacao(texto) {
 }
 const errosDoInventario = conferirInventarioIncorporacao(fs.readFileSync(new URL('../design/especime-v3/INVENTARIO-FRASES.md', import.meta.url), 'utf8'));
 
+export function conferirExemploNoMetodo(root, lang) {
+  const href = (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + 'custo-unitario-do-trabalho-2024';
+  const texto = lang === 'en' ? 'See the example receipt' : 'Ver o recibo de exemplo';
+  return root.querySelectorAll('#livro-razao a').some(a => a.getAttribute('href') === href && a.textContent.trim() === texto + ' →')
+    ? [] : ['ER1 Método: falta a porta para o recibo de exemplo da edição.'];
+}
+
 export function conferirCodigo(root, rota) {
-  const erros = [...errosDoInventario];
+  const erros = [...errosDoInventario, ...(rota?.key === 'metodo' ? conferirExemploNoMetodo(root, rota.lang) : [])];
   const campos = root.querySelectorAll('[data-incorporar-codigo]');
   if (campos.length && !leiturasLiterais.has(root)) erros.push('ER1 código: falta a leitura literal do campo.');
   const linha = rota?.key === 'linha' ? linhas.get(rota.params.slug) : null;
