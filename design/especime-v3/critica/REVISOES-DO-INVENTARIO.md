@@ -692,3 +692,5 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | rp4ne | Fim do mês substituído por mês de referência | por ler | Codex gpt-6-astra: a origem da Madeira não prova a precisão para os outros publicadores. A frase passa a apoiar-se na edição mensal da linha. A leitura cruzada fica com a direção. |
+
+| rp4ne | Contagens do índice relidas na construção | por ler | As contagens das linhas publicadas acompanham a retirada das condutas. Cadeias copiadas pelo guião do diagnóstico da voz, sem números introduzidos à mão. |

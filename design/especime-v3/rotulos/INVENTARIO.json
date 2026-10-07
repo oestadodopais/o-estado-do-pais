@@ -1,8 +1,8 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "7a66b2470bb17cd1b3285b0bc36c1685ae18d258",
+ "cabeca": "c46a5ee5987b71216c50aadb92e33e3f777847c5",
  "contas": {
-  "paginas": 7906,
+  "paginas": 7904,
   "paginas_com_cartoes": 704,
   "cartoes": 5290,
   "familias": {
@@ -91,7 +91,7 @@
   },
   "concelho|en|concelho:desempregoRegistado": {
    "dobra": {
-    "Counts the unemployed people registered with the employment service at month end (registered unemployment).": 308
+    "Counts the unemployed people registered with the employment service in the reference month (registered unemployment).": 308
    },
    "nome": {
     "Registered unemployment": 308
@@ -267,7 +267,7 @@
   },
   "concelho|pt|concelho:desempregoRegistado": {
    "dobra": {
-    "Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).": 308
+    "Conta as pessoas desempregadas inscritas nos serviços de emprego no mês de referência (desemprego registado).": 308
    },
    "nome": {
     "Desemprego registado": 308
@@ -1620,7 +1620,7 @@
   },
   "nacional|en|evora-prr-vencido-aprovado-2026": {
    "nome": {
-    "Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with a deadline before the snapshot and no completion recorded": 1
+    "Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with an earlier deadline and no completion recorded, in the snapshot of 19.08.2026": 1
    },
    "periodo": {
     "in #": 1
@@ -3393,7 +3393,7 @@
   },
   "nacional|pt|evora-prr-vencido-aprovado-2026": {
    "nome": {
-    "Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo anterior ao instantâneo e sem conclusão registada": 1
+    "Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo anterior e sem conclusão registada, no instantâneo de 19.08.2026": 1
    },
    "periodo": {
     "em #": 1
