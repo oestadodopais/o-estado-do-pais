@@ -1,0 +1,105 @@
+{
+  "procedimento": "Inspeção dos recortes com view_image; SHA-256 lidos dos manifestos e reconferidos nos ficheiros.",
+  "cabeca_inspecionada": "00d92fed9f70fec22f30d72a1018776629f37d10",
+  "observacoes": "Os nomes das portas estão inteiros e separados. O menu cabe numa linha nas larguras grandes e em duas na largura de aceitação. Na janela mais estreita da medição, precisa de três linhas, sem transbordo; é a H4-5 pendente.",
+  "ficheiros": [
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-390.png",
+      "sha256": "ae9c1e1dad7c3ecb184ab31df34c025e7fdf7cae766023e8ccd8c7926a0a8dd5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-768.png",
+      "sha256": "7d026305ac692ff9b5f7509eb22e22b3c39cd6ccedc2dc9c77e97ee7d0239754"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-1024.png",
+      "sha256": "272f62f3118adbc63a4fad87b1a6469b44c0484cb3cb7334e220617afe9248ef"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-1280.png",
+      "sha256": "cb64eb45affa48ee8b921a18184a9cb59cf40f85d5b2df15554bf17bce181d1d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-1600.png",
+      "sha256": "cb64eb45affa48ee8b921a18184a9cb59cf40f85d5b2df15554bf17bce181d1d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-390.png",
+      "sha256": "2206b930b890338916e6969db0bf38ed82bf827d4cfb79ec999f023731e72353"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-768.png",
+      "sha256": "b0dc85e6b6f97b75484b4fcda7fbb7594e80642e2397bccea3b95cb00aff2d8e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-1024.png",
+      "sha256": "db478eb53b7176afde012893b1eb446f25b47edc93c11a1a3169bc4b800eed7e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-1280.png",
+      "sha256": "29f259ac698e0ac5df9d83b1cb3c65cbf8124b5124ab3005453d0c412f7fb468"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-1600.png",
+      "sha256": "29f259ac698e0ac5df9d83b1cb3c65cbf8124b5124ab3005453d0c412f7fb468"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-390.png",
+      "sha256": "c6cade31f46e085a5b7cb77f495427fae0bfd1fd3846ef17cdc06e510b927d4f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-768.png",
+      "sha256": "6e05e671e4c78c179bfa062d9ac3edb7cabbc976b362f7bde954b4d862008b7f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-1024.png",
+      "sha256": "9b2a7080f767ffa23224d3ecc79e6385717d7e3b83e3841f128601d2ed51de65"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-1280.png",
+      "sha256": "14dfaa565be8e63f1f767608ea2e088dae7d8e3d8d7789fb6497da6beddedcc7"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-pt-1600.png",
+      "sha256": "14dfaa565be8e63f1f767608ea2e088dae7d8e3d8d7789fb6497da6beddedcc7"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-390.png",
+      "sha256": "7c976737bc75fccd45b9ad979845d0eef59cd307f34eb7dc22e0bffae30f5947"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-768.png",
+      "sha256": "2f5096983176247771c817a39b2bee120360d91c99b288f1bba4ceae9b70d523"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-1024.png",
+      "sha256": "aaf3b460abd69afeb23f1534912dbac90ec627d95697223c4aa832601a4c0a3d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-1280.png",
+      "sha256": "a045eac5444f591dfeb44c341a351d767e49fe21f289d1531bf15eea3f9d65b3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-explicacao-en-1600.png",
+      "sha256": "a045eac5444f591dfeb44c341a351d767e49fe21f289d1531bf15eea3f9d65b3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-360.png",
+      "sha256": "d5b570f2db587a6572eebfc9a8389bfb8a5bdde0252dc718cf3859caf53abb1a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-pt-390.png",
+      "sha256": "ebb800fa52688c5ffed44723b61100d320e070fbde8cb181c77539573d59f56b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-360.png",
+      "sha256": "243eb61a3ed822fdccc40f05d1d5f8d831f36ac8638403a44b57f4cdacf30aaa"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/menu-depois-servida-en-390.png",
+      "sha256": "b7102683f0864dba86660a040b4b5574e5e7cb9967dc803de1b64ea2bfa1fbd5"
+    }
+  ],
+  "cabeca_reconferida": "9c44ad9e31972cfbfd9d7138e29b52b9027bb63d",
+  "resumos_reconferidos": true
+}

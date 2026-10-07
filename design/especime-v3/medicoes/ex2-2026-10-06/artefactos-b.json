@@ -1,0 +1,417 @@
+{
+  "comando": "node design/especime-v3/medicoes/ex2-2026-10-06/conferir-artefactos-b.mjs",
+  "cabeca_codigo": "8c3a08b9dcfb48595be70d6d47385b0427cc3b62",
+  "portoes": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0
+  },
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-390-inteira.png",
+      "sha256": "3e476f36baf1dc45ac76edb7ebe1334d42c56aa47d3e7c0a6f65cfd9e9d9527a",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-390-mudancas.png",
+      "sha256": "79726745a337f49493ab699e0afa9cdc1a68b24f03de8d6fbc06a38bd581a82c",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-768-inteira.png",
+      "sha256": "f40277f7ada4a0ab38ad4b2b7cabc8f3a0c48567f7bf9949c698b84688cd74be",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-768-mudancas.png",
+      "sha256": "cac0d7ad148020c545cdf121b29d99f3eaab575ff63ed91b1415e476894b588e",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1024-inteira.png",
+      "sha256": "59c1b6faa9f93b9c3460010f7ec8143ca9dc514d82d5bff57f16e0f4247024b4",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1024-mudancas.png",
+      "sha256": "0aef2ed4b940f345aa2948df9263513ca91e55eb9df8d1d3400b13e5b75bd799",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1280-inteira.png",
+      "sha256": "ad722d2306ec18970ccabefbc8b3c871b4689538b0f9e7463d6d1d6626295bb0",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1280-mudancas.png",
+      "sha256": "2484d20efead84ea212d5ff42e568fcbb14501d70f44558212afb14f12bf2618",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1600-inteira.png",
+      "sha256": "3e250ec5f1171b3e26b5cfcf2e4f970fb5d606c2a0bb7b6a27b33aab84505ac2",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1600-mudancas.png",
+      "sha256": "ef99719875de5f142acf11b29e25fce1ee4345eecb112efa77034f70ff67f9ad",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-390-inteira.png",
+      "sha256": "0f588c3be9cc3f38320e635bceb219f682bb806b3b5888f184867771b83978e9",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-390-mudancas.png",
+      "sha256": "8857afc54e36389fc45107a9fb646197967d7a78b1bb2efeffb720b0b6e7095e",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-768-inteira.png",
+      "sha256": "4d422be2ef836f13bdfc68204e0741f8a7ac18e3bc7780c0076582d48ba7b3ae",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-768-mudancas.png",
+      "sha256": "0bd36b3baf173a5111ce02e41065d075701039f5b3dd398f7c60e44e816d4265",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1024-inteira.png",
+      "sha256": "98ae1a3dddc2331c2a4db859fd2d6427b18b260583cecc2cd8180e2e0d49d07d",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1024-mudancas.png",
+      "sha256": "497ca5bd750a18f333a273da9fbbb4e3622f09535990bd964d70a9c830ecd93a",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1280-inteira.png",
+      "sha256": "9678c5b44206968b6391e05e9160433123592abbf62644f0735fce9773b752ef",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1280-mudancas.png",
+      "sha256": "ee40dfefc0b1231e665977413f90bf9d6fe53ff56d430d06392c1ad84beeebf2",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1600-inteira.png",
+      "sha256": "57e593b098700f05f1b8c267c455dd3815c55ffdb1c98114cde59919ce749c29",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1600-mudancas.png",
+      "sha256": "ba0a4a853d2b5935b239d12aa68d08a41cf2e9bd5d1cc59b8832b3006b514ce0",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-390-inteira.png",
+      "sha256": "a46d66e7dbcb1ba3bf583b65053ecb95f556a089c638eed619b0f080856a2edf",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-390-mudancas.png",
+      "sha256": "d9de79bfc29906336701be853b85b6f94b57b9c6b4fe4a9a4b6ae405cc5ff84b",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-768-inteira.png",
+      "sha256": "6d101842df2e28224c893f8796ab905ad7f0169eeb166415cbc3c29ed67fb90f",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-768-mudancas.png",
+      "sha256": "45f67e58ff4e9f2272f46ffcceff13a7939cc0f69e78e48618a726b164169fce",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1024-inteira.png",
+      "sha256": "64c045a64b153a6c7231fc87832cf569f383f903385b5d07330a1c3f1ba3fbd3",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1024-mudancas.png",
+      "sha256": "8d330fba7a23fc933e48963de0b2368a6681fe1e46c7585d63ee021cb7681749",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1280-inteira.png",
+      "sha256": "3ebb9b3d2e6e5fc63c2eebab3c6e2f441c364a9260c1913d39713c0630234791",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1280-mudancas.png",
+      "sha256": "422c032611c6a43b8919a49242135ee65ae741d8a02f0c0703fa213b586f2213",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1600-inteira.png",
+      "sha256": "f3b0c612dccef9d5f3c663eb505b29982100776f57071cd7999017bde2d6df8f",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1600-mudancas.png",
+      "sha256": "422c032611c6a43b8919a49242135ee65ae741d8a02f0c0703fa213b586f2213",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-390-inteira.png",
+      "sha256": "eef83184f6325fbfc1455c75c78b96a8f7756156d96d24c72db4fb015750a0ae",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-390-mudancas.png",
+      "sha256": "5994abae7e92a25ace4a8cd3f6406e08e98e555149e64ae7a52c566f4d322f49",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-768-inteira.png",
+      "sha256": "fcd14cdef7d89e0b5f6025b721adfad73a595f585722c83721a24f92e3bd07d1",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-768-mudancas.png",
+      "sha256": "28ffcb27647817d704d06a3aae64921b2d65d298f85457971224e8b57fa16a30",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1024-inteira.png",
+      "sha256": "19caeff27d29d5c02a30bd75325881ebfe111bfcc1cea78fb934865c1e97e1f1",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1024-mudancas.png",
+      "sha256": "c6bc68ff7eb0b854e326584244b4c1220854f15b7963e5aaab6e2fa5dc7a2fbf",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1280-inteira.png",
+      "sha256": "42392e7c0f5da28fd728932bcfc13430756cb56a31ecb52a0745a864a55302cd",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1280-mudancas.png",
+      "sha256": "44837d405378162cf58d3e3bdb7ca890b99cf5f2ae2fd873c87f4fb521b00542",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1600-inteira.png",
+      "sha256": "f6c5496945a3b7e55459dab27132490abc4a60b753c5d8520369aa46654eb983",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1600-mudancas.png",
+      "sha256": "44837d405378162cf58d3e3bdb7ca890b99cf5f2ae2fd873c87f4fb521b00542",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-390-inteira-antes.png",
+      "sha256": "04659d5b8d407bbf308f65403ca484fff1f32bda60cea6cab9a61e683907215e",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-390-mudancas-antes.png",
+      "sha256": "73e1ef8df6187f6c34a329c83ded61647a3c7dc795e57a97691c5587b535ea74",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-768-inteira-antes.png",
+      "sha256": "d9df3a497a4594b181e91e181de64c321bf41606704d6b4eb4180f2df1a2346f",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-768-mudancas-antes.png",
+      "sha256": "f66198b9487715bc6997c8b7286d44f5db4bc45bbca377cd07a7a2017033f3cd",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1024-inteira-antes.png",
+      "sha256": "7c2fd3812fd0bc5c2c90a56c7084fdf228d3b76b962916ff5ac74567e75073ea",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1024-mudancas-antes.png",
+      "sha256": "abb7b4f96464451a0231ca2e655655665a24c26c4a62eede20923834b85f7a71",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1280-inteira-antes.png",
+      "sha256": "c7312a2c13ac546c394afd308296aa42f840c6f1016cfe0a41c3d44fae5ac8a0",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1280-mudancas-antes.png",
+      "sha256": "2a2d74e25beccca4513e1d6f2ffabeff8fc4a83605291dedf291016db5d7a349",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1600-inteira-antes.png",
+      "sha256": "3abb42a473d3897500ea24850f732537ad1b7e8ad5ee701af7aac109ba2eb8ae",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1600-mudancas-antes.png",
+      "sha256": "a7078d1665de685c5c7b708461b38f03438ab8c572687076650dad5ab5c4ffee",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-390-inteira-antes.png",
+      "sha256": "80f91627b126d221f3f2c870dd7e39d5f4c69462d100f42f9d86fccd24f50552",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-390-mudancas-antes.png",
+      "sha256": "235bcb64ea263f4605db2e5a3a5fc00929c5df915b4dc2eabebc576600618ed0",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-768-inteira-antes.png",
+      "sha256": "aa0bf9cdbd7f02b78b8c58c2bb46b717f1106f0c2a58ed7da31f05fe3d418f10",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-768-mudancas-antes.png",
+      "sha256": "d3c5ad1aacc2f97ba11e993173cf1eb65edf1bb8c19bb83b42b33023b2569c11",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1024-inteira-antes.png",
+      "sha256": "7c1f93acb98856842c9b2a81ac56207f8ae5e6343ea880946a4060b1b14add54",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1024-mudancas-antes.png",
+      "sha256": "dd42fd11ba6d2284c552b8d52bc1e9982b0d5d0e211023d24ea43779adb48ad2",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1280-inteira-antes.png",
+      "sha256": "648c8689312e3d7c43bc5c24ed9e1031faa9cca25143e284685d3a1b4f142b29",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1280-mudancas-antes.png",
+      "sha256": "57377bddfa7a177a48433f6ccbb1f5956b59cc93e060b02396b52fabaf3b16bb",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1600-inteira-antes.png",
+      "sha256": "6065d11f4a46a2ed86cb906bbf4fc63e74f20a24f23bb137fcad87fb1b0c756b",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1600-mudancas-antes.png",
+      "sha256": "ef6d26c7527bde12b32a0e9160897e06cfe848bfa56b270da9029188b0a943ca",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-390-inteira-antes.png",
+      "sha256": "316b87de215fa8c20838fad00dd897d96ea9ae07a9ea3cd2217ed3ebf0312637",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-390-mudancas-antes.png",
+      "sha256": "7ecf82e6864bfe460c2f2da45fd9c1dcdfcbde81ccf029d607c732c94102880b",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-768-inteira-antes.png",
+      "sha256": "8b266909d72b6147c5c9b6187a825bb1d2a0d8e5bd9a3d15de93007c2edfa7fd",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-768-mudancas-antes.png",
+      "sha256": "78ec32d0300eccf4b908ddf3dadc5dcc7ef3bf7b978ecc0886da59d42bfa4436",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1024-inteira-antes.png",
+      "sha256": "ec272b5c03a42930dfc6bf4b17b4c0cb6f18a416cd153870f019b51453302a3e",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1024-mudancas-antes.png",
+      "sha256": "2e787f3789f2e1c4c1b81e064be9c40bad664dd73d54c85b8ac41e435df868fb",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1280-inteira-antes.png",
+      "sha256": "51d386136d0d7cb4581975e564118e6e87b72c9e7d296aa3c288a37ceb198788",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1280-mudancas-antes.png",
+      "sha256": "df2290371b949f9763ad9e4d10a078479beab5269bdea35bb94dbc0ceee4b71b",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1600-inteira-antes.png",
+      "sha256": "04b5e6c8b1ef0d0ccaf3b926dbe5b7b6a40ba8e752e907b37ade080c9160bb9c",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1600-mudancas-antes.png",
+      "sha256": "df2290371b949f9763ad9e4d10a078479beab5269bdea35bb94dbc0ceee4b71b",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-390-inteira-antes.png",
+      "sha256": "e77d294d2950a9bd7594f5409007335a053163278b721b3a1a7eda8e1cfe7c5e",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-390-mudancas-antes.png",
+      "sha256": "07c7d505aab92129dea8666665e89f23605f987747eb1b0e6b990fff3824e8fa",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-768-inteira-antes.png",
+      "sha256": "cfd2ab172065d75dda90b6a1072311a045267018b155f68c0cd8b8839f7f5b90",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-768-mudancas-antes.png",
+      "sha256": "967f50ff774fcac79eea3040027a574ae40383d05bf9a3f7a1b362760217448f",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1024-inteira-antes.png",
+      "sha256": "4064305ed5b2d3616674ca3698bee34bf8ed62bac0d101f31cc3f10aa93b06d0",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1024-mudancas-antes.png",
+      "sha256": "0fb8555f1b368c9206ebcee498652e08dc8887164bd726b39fab3091409af278",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1280-inteira-antes.png",
+      "sha256": "fa2b2295308fa70c50555481fb874428f83cb4977dab58eae7880e45bf084a7a",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1280-mudancas-antes.png",
+      "sha256": "f2c31cbf4063cf57b19599d1b767619a258c59c2d9b2fa952e83ef29f506b02c",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1600-inteira-antes.png",
+      "sha256": "e09833b8f075c164289386365cacbda1fd6f3af3dade92b2088ce504c2bfeaf0",
+      "igual": true
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1600-mudancas-antes.png",
+      "sha256": "f2c31cbf4063cf57b19599d1b767619a258c59c2d9b2fa952e83ef29f506b02c",
+      "igual": true
+    }
+  ],
+  "relatorio": {
+    "antes": "bc1385284db14e9859d19ce5d046c30de931a6d3589edab20c9fc52430369795",
+    "regenerado": "bc1385284db14e9859d19ce5d046c30de931a6d3589edab20c9fc52430369795",
+    "identico": true
+  },
+  "erros": []
+}

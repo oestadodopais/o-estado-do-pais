@@ -20,21 +20,18 @@
  * É por isso que «O que mudou» leva só as linhas do livro-razão que mudaram, uma vez cada (a razão
  * está em `mudancasDoIndice()`), e que «Lugares» não se repete entre os temas.
  *
- * «O QUE MUDOU» TEM A FORMA DAS PÁGINAS DOS LUGARES (B1c): a data, o nome da medida, o valor antigo
- * riscado, a seta, o valor novo com a unidade e a marca da fonte, que é a porta para o recibo da
- * linha. Os dois valores entram por `data-correcao-*`, que o portão de HTML compara com o campo
- * `corrections` da própria linha, e a lista declara o seu âmbito (`data-mudou-ambito="indice"`),
- * para as células A1, A2, C1 e M3 do `check:pais` a medirem como medem as outras.
+ * «O QUE MUDOU» usa a mesma gramática da leitura da semana. Conserva a seleção do índice, o lugar escrito e o
+ * selo da própria linha. As células do índice conferem a seleção; a W confere a frase contra o livro e a W4
+ * confere as definições e os sinais contra os recibos.
  */
 import Base from '../layouts/Base.astro';
 import Gaveta from '../components/inicio/Gaveta.astro';
 import PortasDoIndice from '../components/indice/PortasDoIndice.astro';
-import Provenance from '../components/Provenance.astro';
-import CampoDaLinha from '../components/CampoDaLinha.astro';
+import ResumoDaMudanca from '../components/explicacoes/ResumoDaMudanca.astro';
+import { grupoQueFecha } from '../lib/leitura-da-semana.mjs';
+import OQueENaMudanca from '../components/explicacoes/OQueENaMudanca.astro';
+import { parsePtNumber } from '../lib/ledger.mjs';
 import { indiceDoSitio } from '../lib/indice.mjs';
-import { dataDaCasa } from '../lib/datas.mjs';
-import { unidadeDaLinha } from '../i18n/unidades.mjs';
-import { linguaDoRotuloDaFonte, linguaDoTituloDoDocumento } from '../i18n/lingua-dos-titulos.mjs';
 import { routePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
 /* As listas e as gavetas são as da página dos lugares, e as linhas de «O que mudou» as da página
@@ -42,11 +39,18 @@ import { t } from '../i18n/strings.mjs';
 import '../styles/inicio.css';
 import '../styles/lugar.css';
 import '../styles/indice.css';
+import '../styles/explicacoes.css';
 
 const { lang = 'pt' } = Astro.props;
 const s = t(lang);
 const path = routePath('indice', lang);
 const indice = indiceDoSitio(lang);
+const mudancas = indice.mudou.mudancas.map(e => ({
+  ...e, linha: e.claim,
+  antes: {n: e.n, valor: e.antes}, depois: {n: e.n, valor: e.depois, data: e.data},
+  palavra: parsePtNumber(e.depois) > parsePtNumber(e.antes) ? 'subiu' : parsePtNumber(e.depois) < parsePtNumber(e.antes) ? 'desceu' : 'naoMudou',
+}));
+const ids = mudancas.map(e => e.claim);
 /* AS EXPLICAÇÕES (bloco EX1, 05.10.2026) entram a seguir aos estudos. */
 const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'explicacoes', 'numeros', 'projeto']);
 ---
@@ -85,74 +89,12 @@ const seccoes = /** @type {const} */ (['pais', 'lugares', 'uniao', 'estudos', 'e
     <section class="indice-secao" aria-labelledby="indice-mudou" data-indice-seccao="mudou">
       <h2 class="indice-secao-titulo" id="indice-mudou">{indice.mudou.titulo}</h2>
       <div class="indice-corpo">
-        <ol class="lugar-mudou indice-mudou" data-mudou-ambito="indice">
-          {indice.mudou.mudancas.map((e) => (
-            <li data-mudanca="correcao" data-correcao-entrada={e.claim}>
-              <time
-                class="lugar-mudou-data"
-                datetime={e.data}
-                data-correcao-claim={e.claim}
-                data-correcao-n={String(e.n)}
-                data-correcao-campo="date"
-              >
-                {dataDaCasa(e.data)}
-              </time>
-              {/* O LUGAR DE CADA LINHA, ESCRITO E SEM PORTA (a passagem final do R3, pelas capturas). A
-                  lista do índice junta linhas de todos os lugares, como o registo, e um número sem o seu
-                  lugar lê-se como de Portugal: a dívida das famílias da União, que entra na lista quando
-                  as duas taxas de desemprego passam a contar uma vez, ler-se-ia como a de Portugal.
-                  O nome é o que o registo escreve ao pé da mesma entrada (`lugarDaLinha()`, em
-                  `src/lib/mudancas.mjs`), e a célula do índice confere-o contra o registo construído; a
-                  porta do lugar é a da sua secção, nesta mesma página, e uma segunda porta para o mesmo
-                  destino é o que a L1 conta. Não leva a marca dos lugares (`data-lugar`): a régua das
-                  frases tira da descrição do `<head>` o nome de cada lugar marcado, e «União Europeia»
-                  está na descrição desta página, que deixava de ser a frase declarada. O nome não é
-                  uma frase da casa, e a régua não o recolhe, porque não é um bloco. */}
+        <ol class="semana-mudancas indice-mudou" data-mudou-ambito="indice" data-semana-mudancas>
+          {mudancas.map((e, i) => (
+            <li class="semana-mudanca" data-mudanca="correcao" data-correcao-entrada={e.claim} data-semana-mudanca={e.claim} data-semana-palavra={e.palavra}>
               <span class="indice-mudou-lugar">{e.lugar.nome}</span>
-              {/* O NOME E A UNIDADE COM AS MARCAS DO REGISTO (`RegistoCorrecoes.astro`): o nome
-                  declarado com `data-nome`, o nome lido de um campo da linha pelo `CampoDaLinha`
-                  com a língua da fonte, e a unidade pelo `CampoDaLinha` do campo `unit`. A página de
-                  um lugar só rende o primeiro e escreve a unidade sem marca; aqui nenhum nome cai e
-                  a unidade tem origem. */}
-              <p class="lugar-mudou-o-que">
-                {e.nome?.fonte && (
-                  <span class="lugar-mudou-nome" data-nome={e.nome.fonte} data-de-linha={e.claim}>
-                    {e.nome.texto}
-                  </span>
-                )}
-                {e.nome?.campo && (
-                  <CampoDaLinha
-                    id={e.claim}
-                    campo={e.nome.campo}
-                    valor={e.nome.texto}
-                    lang={lang}
-                    class="lugar-mudou-nome"
-                    lingua={e.nome.campo === 'name'
-                      ? linguaDoRotuloDaFonte(e.nome.texto, lang)
-                      : linguaDoTituloDoDocumento(e.nome.texto, lang)}
-                  />
-                )}
-                <span class="lugar-mudou-par">
-                  <s data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="old_value">
-                    {e.antes}
-                  </s>
-                  {' → '}
-                  <span data-correcao-claim={e.claim} data-correcao-n={String(e.n)} data-correcao-campo="new_value">
-                    {e.depois}
-                  </span>
-                  {' '}
-                  {e.unidade && (
-                    <CampoDaLinha
-                      id={e.claim}
-                      campo="unit"
-                      valor={unidadeDaLinha(e.unidade, lang).texto}
-                      lang={lang}
-                      lingua={unidadeDaLinha(e.unidade, lang).lingua}
-                    />
-                  )}
-                  <Provenance id={e.claim} lang={lang} />
-                </span>
-              </p>
+              <ResumoDaMudanca mudanca={e} lang={lang} indice />
+              {e.palavra !== 'naoMudou' && <OQueENaMudanca ids={grupoQueFecha(ids, i, lang)} lang={lang} />}
             </li>
           ))}
         </ol>

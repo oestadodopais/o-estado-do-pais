@@ -1,0 +1,197 @@
+{
+  "comando": "node design/especime-v3/medicoes/h4-2026-10-06/provar-politica.mjs --passagem-d",
+  "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+  "estado": "",
+  "estado_fim": "",
+  "construcao": {
+    "commit": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+    "ref": "h4-2026-10-06",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-06T14:43:10.183Z"
+  },
+  "intactas": [
+    {
+      "lang": "pt",
+      "ficheiro": "dist/metodo/index.html",
+      "sha256": "74e229219a7a2dcf225a419d687d76a1248f7ed1ed2ffc8252fbf269ce3131ab",
+      "falhas": []
+    },
+    {
+      "lang": "en",
+      "ficheiro": "dist/en/method/index.html",
+      "sha256": "ae5b101176955b0f25dd9c2a251710f9c2218d3b83ea373b7b2132e9047e417f",
+      "falhas": []
+    }
+  ],
+  "plantas": [
+    {
+      "nome": "um lugar a mais",
+      "lang": "pt",
+      "mensagem": "H4 IA: a política tem de dizer três lugares.",
+      "falhas": [
+        "H4 IA: a política tem de dizer três lugares.",
+        "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a construção em falta",
+      "lang": "pt",
+      "mensagem": "H4 IA: a política tem de dizer três lugares.",
+      "falhas": [
+        "H4 IA: a política tem de dizer três lugares.",
+        "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a medição no lugar da leitura",
+      "lang": "pt",
+      "mensagem": "H4 IA: os lugares não são os da redação decidida.",
+      "falhas": [
+        "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a introdução antiga",
+      "lang": "pt",
+      "mensagem": "H4 IA: a introdução dos lugares difere da redação decidida.",
+      "falhas": [
+        "H4 IA: a introdução dos lugares difere da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a família da construção trocada",
+      "lang": "pt",
+      "mensagem": "H4 IA: as famílias e os lugares do fecho diferem da redação decidida.",
+      "falhas": [
+        "H4 IA: as famílias e os lugares do fecho diferem da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a divisão fixa antiga",
+      "lang": "pt",
+      "mensagem": "H4 IA: as famílias e os lugares do fecho diferem da redação decidida.",
+      "falhas": [
+        "H4 IA: as famílias e os lugares do fecho diferem da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a construção e a leitura da mesma família",
+      "lang": "pt",
+      "mensagem": "H4 IA: os lugares não são os da redação decidida.",
+      "falhas": [
+        "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a direção com palavras de oficina",
+      "lang": "pt",
+      "mensagem": "H4 IA: os lugares não são os da redação decidida.",
+      "falhas": [
+        "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a construção com palavras de oficina",
+      "lang": "pt",
+      "mensagem": "H4 IA: os lugares não são os da redação decidida.",
+      "falhas": [
+        "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "um lugar a mais",
+      "lang": "en",
+      "mensagem": "H4 IA: a política tem de dizer três lugares.",
+      "falhas": [
+        "H4 IA: a política tem de dizer três lugares.",
+        "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a construção em falta",
+      "lang": "en",
+      "mensagem": "H4 IA: a política tem de dizer três lugares.",
+      "falhas": [
+        "H4 IA: a política tem de dizer três lugares.",
+        "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a medição no lugar da leitura",
+      "lang": "en",
+      "mensagem": "H4 IA: os lugares não são os da redação decidida.",
+      "falhas": [
+        "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a introdução antiga",
+      "lang": "en",
+      "mensagem": "H4 IA: a introdução dos lugares difere da redação decidida.",
+      "falhas": [
+        "H4 IA: a introdução dos lugares difere da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a família da construção trocada",
+      "lang": "en",
+      "mensagem": "H4 IA: as famílias e os lugares do fecho diferem da redação decidida.",
+      "falhas": [
+        "H4 IA: as famílias e os lugares do fecho diferem da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a divisão fixa antiga",
+      "lang": "en",
+      "mensagem": "H4 IA: as famílias e os lugares do fecho diferem da redação decidida.",
+      "falhas": [
+        "H4 IA: as famílias e os lugares do fecho diferem da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a construção e a leitura da mesma família",
+      "lang": "en",
+      "mensagem": "H4 IA: os lugares não são os da redação decidida.",
+      "falhas": [
+        "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a direção com palavras de oficina",
+      "lang": "en",
+      "mensagem": "H4 IA: os lugares não são os da redação decidida.",
+      "falhas": [
+        "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    },
+    {
+      "nome": "a construção com palavras de oficina",
+      "lang": "en",
+      "mensagem": "H4 IA: os lugares não são os da redação decidida.",
+      "falhas": [
+        "H4 IA: os lugares não são os da redação decidida."
+      ],
+      "passou": true
+    }
+  ],
+  "passou": true
+}

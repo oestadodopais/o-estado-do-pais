@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "build vermelho não paga conferências",
+      "codigo": 1,
+      "codigos": {
+        "build": 7,
+        "verify": 125,
+        "typecheck": 0
+      },
+      "mensagem": "verify: não correu; o build não ficou verde e não pode pagar passos da união"
+    },
+    {
+      "planta": "escrita da tranca recusada",
+      "codigo": 9,
+      "mensagem": "portoes: não foi possível tomar a tranca; nenhum portão correu"
+    },
+    {
+      "planta": "tranca de outra corrida não é substituída nem solta",
+      "mensagem": "à espera da tranca da máquina",
+      "codigo": -15
+    }
+  ]
+}

@@ -1,0 +1,383 @@
+{
+  "comando": "node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --passagem-c",
+  "cabeca": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+  "construcao": {
+    "commit": "45c5a6cd000b9dbdaebe3aee310b6122c25aa512",
+    "ref": "h4-2026-10-06",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-06T11:45:30.652Z"
+  },
+  "paginas": [
+    {
+      "familia": "primeira",
+      "lang": "pt",
+      "rota": "/",
+      "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas-c/primeira-pt.html",
+      "sha256": "f79fd309e56180b1be9ea0fba8b0ff053f04bd6a9116322f97040cd7457c4d0d",
+      "folhas": [
+        {
+          "ficheiro": "/_astro/primeira-pagina.sUQIxm-E.css",
+          "sha256": "1d6224df77b82eec35063368cea406822f23ca540f819c078dee626d5cfadff2"
+        },
+        {
+          "ficheiro": "/_astro/Base.hPEW4RoH.css",
+          "sha256": "f274081feb3c23a41b42c82b431fdc82ca2c162f791dec18fbb98087803084ff"
+        },
+        {
+          "ficheiro": "/_astro/inicio.DYisJLJ2.css",
+          "sha256": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9"
+        },
+        {
+          "ficheiro": "/_astro/lugar.bxF38FjU.css",
+          "sha256": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd"
+        }
+      ]
+    },
+    {
+      "familia": "primeira",
+      "lang": "en",
+      "rota": "/en",
+      "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas-c/primeira-en.html",
+      "sha256": "e91c385fbef44e971794eaebf6d8e20abaaf09e679bfbb4911df52d48d368f30",
+      "folhas": [
+        {
+          "ficheiro": "/_astro/primeira-pagina.sUQIxm-E.css",
+          "sha256": "1d6224df77b82eec35063368cea406822f23ca540f819c078dee626d5cfadff2"
+        },
+        {
+          "ficheiro": "/_astro/Base.hPEW4RoH.css",
+          "sha256": "f274081feb3c23a41b42c82b431fdc82ca2c162f791dec18fbb98087803084ff"
+        },
+        {
+          "ficheiro": "/_astro/inicio.DYisJLJ2.css",
+          "sha256": "1887d09fd2f5e2597bbe8b9ce00ee29695cd096d2db1486ff34d9b9013da3be9"
+        },
+        {
+          "ficheiro": "/_astro/lugar.bxF38FjU.css",
+          "sha256": "ca5ecb9c51f88f1c0f5c59652689ed2ca642ad4dee9eaf4fbc51328d9dd957fd"
+        }
+      ]
+    }
+  ],
+  "capturas": [
+    {
+      "familia": "primeira",
+      "lang": "pt",
+      "largura": 320,
+      "rota": "/",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-320.png",
+      "sha256": "cd72d5eb3f36006392e46e3c058eda2b8082261699bf6410726330673c1b4927",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-320.png",
+      "sha256_recorte": "85ef8b99c61af39ace28383e58a1aa24679b1341490d3c9993c37d09dfc7dcc4",
+      "medidas": {
+        "documento": 322,
+        "janela": 320,
+        "linhas": 3,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 18,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 101.890625
+          },
+          {
+            "texto": "Lugares",
+            "x": 117.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 188.40625
+          },
+          {
+            "texto": "Temas",
+            "x": 204.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 257.296875
+          },
+          {
+            "texto": "Estudos",
+            "x": 18,
+            "y": 44,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 89.46875
+          },
+          {
+            "texto": "Explicações",
+            "x": 105.46875,
+            "y": 44,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 212.21875
+          },
+          {
+            "texto": "União Europeia",
+            "x": 18,
+            "y": 88,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 153.359375
+          },
+          {
+            "texto": "Sobre",
+            "x": 169.359375,
+            "y": 88,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 218.796875
+          }
+        ],
+        "gap": 16,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "primeira",
+      "lang": "pt",
+      "largura": 360,
+      "rota": "/",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-pt-360.png",
+      "sha256": "f6356a1fff5323b983ebe273163fac16fffb80ab71b41bd1538b5f4a9e52c509",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-pt-360.png",
+      "sha256_recorte": "224bdb5555fb4f8aa44fd2f61b2059bd4d3ab5c6d977657b8100fe08f74ab352",
+      "medidas": {
+        "documento": 360,
+        "janela": 360,
+        "linhas": 3,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 18,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 101.890625
+          },
+          {
+            "texto": "Lugares",
+            "x": 117.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 188.40625
+          },
+          {
+            "texto": "Temas",
+            "x": 204.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 257.296875
+          },
+          {
+            "texto": "Estudos",
+            "x": 18,
+            "y": 44,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 89.46875
+          },
+          {
+            "texto": "Explicações",
+            "x": 105.46875,
+            "y": 44,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 212.21875
+          },
+          {
+            "texto": "União Europeia",
+            "x": 18,
+            "y": 88,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 153.359375
+          },
+          {
+            "texto": "Sobre",
+            "x": 169.359375,
+            "y": 88,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 218.796875
+          }
+        ],
+        "gap": 16,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "primeira",
+      "lang": "en",
+      "largura": 320,
+      "rota": "/en",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-320.png",
+      "sha256": "4f22deeb1442f1ed24bec5990c23c542bf6c301771b578953f8fc5ee5b4be373",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-320.png",
+      "sha256_recorte": "1bd1dcd77dbb8aca5ceeab2cd563e18d9ca83f4d89e9e996463fd5763678b759",
+      "medidas": {
+        "documento": 335,
+        "janela": 320,
+        "linhas": 3,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 18,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 101.890625
+          },
+          {
+            "texto": "Places",
+            "x": 117.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 175.578125
+          },
+          {
+            "texto": "Themes",
+            "x": 191.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 255.3125
+          },
+          {
+            "texto": "Studies",
+            "x": 18,
+            "y": 44,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 83.890625
+          },
+          {
+            "texto": "Explainers",
+            "x": 99.890625,
+            "y": 44,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 196.234375
+          },
+          {
+            "texto": "European Union",
+            "x": 18,
+            "y": 88,
+            "largura": 142,
+            "altura": 44,
+            "direita": 160
+          },
+          {
+            "texto": "About",
+            "x": 176,
+            "y": 88,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 230.203125
+          }
+        ],
+        "gap": 16,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "primeira",
+      "lang": "en",
+      "largura": 360,
+      "rota": "/en",
+      "ancora": null,
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/primeira-en-360.png",
+      "sha256": "26c702a68809879dadf08994a75d5cd2177c6200ffac5f386f30ce6d2ffa8a7a",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/cabecalho-primeira-en-360.png",
+      "sha256_recorte": "85428acf4f948f11740bec75f4e9c04e020d9d81d7191cfbb899d4436d5ef34d",
+      "medidas": {
+        "documento": 360,
+        "janela": 360,
+        "linhas": 3,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 18,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 101.890625
+          },
+          {
+            "texto": "Places",
+            "x": 117.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 175.578125
+          },
+          {
+            "texto": "Themes",
+            "x": 191.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 255.3125
+          },
+          {
+            "texto": "Studies",
+            "x": 271.3125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 337.203125
+          },
+          {
+            "texto": "Explainers",
+            "x": 18,
+            "y": 44,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 114.34375
+          },
+          {
+            "texto": "European Union",
+            "x": 130.34375,
+            "y": 44,
+            "largura": 142,
+            "altura": 44,
+            "direita": 272.34375
+          },
+          {
+            "texto": "About",
+            "x": 18,
+            "y": 88,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 72.203125
+          }
+        ],
+        "gap": 16,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 0
+      },
+      "pedidos_externos": []
+    }
+  ],
+  "erros": []
+}

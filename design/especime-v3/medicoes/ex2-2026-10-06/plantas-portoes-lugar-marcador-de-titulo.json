@@ -1,0 +1,20 @@
+[
+  {
+    "nome": "lugar-marcador-de-titulo",
+    "cabeca": "c2d73ad06f335a9c5b38831c4d2d31e5eb4d096b",
+    "estado": "",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L1 .*ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/en/studies/index.html",
+        "antes": "b11c173715b72be16e7caecbecc8db7b7e5f2ae2da820190827f0fc948116840",
+        "reposto": "b11c173715b72be16e7caecbecc8db7b7e5f2ae2da820190827f0fc948116840"
+      }
+    ]
+  }
+]
