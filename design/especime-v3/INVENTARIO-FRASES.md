@@ -3896,8 +3896,8 @@ algarismo declarado e a régua salta-a nas rotas onde ela se rende. Escrito por
 | conteudo | Estimates how many people have their home in the municipality (resident population), from the statistics institute’s annual estimate. | r2 | viva | A mesma dobra na edição inglesa; «have their home», e não «live», que é uma frase retirada deste inventário. |
 | conteudo | Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado). | r2 | viva | A dobra do cartão do desemprego registado em cada página de concelho (achado 23). |
 | conteudo | Counts the unemployed people registered with the employment service at month end (registered unemployment). | r2 | viva | A mesma dobra na edição inglesa. |
-| conteudo | Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas). | r2 | viva | A dobra do cartão das empresas em cada página de concelho (achado 23). |
-| conteudo | Counts the non-financial enterprises attributed to the municipality (integrated business accounts system). | r2 | viva | A mesma dobra na edição inglesa. |
+| conteudo | Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas). | rp4nc | retirada | RP4N-6: a passagem RP4-n já retirou a qualificação não sustentada; esta declaração antiga ficou por sincronizar no inventário. A frase atual está na secção RP4-n-c. |
+| conteudo | Counts the non-financial enterprises attributed to the municipality (integrated business accounts system). | rp4nc | retirada | RP4N-6: a passagem RP4-n já retirou a qualificação não sustentada; esta declaração antiga ficou por sincronizar no inventário. A frase atual está na secção RP4-n-c. |
 | conteudo | A dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais e as exceções da lei). | r2 | retirada | Passagem R2-b (04.10.2026, a decisão do lugar de direção): a dobra da dívida dos concelhos diz também a contribuição para o Fundo de Apoio Municipal, que a coluna da DGAL exclui; a forma nova está na secção da passagem r2b. |
 | conteudo | The council’s debt that counts towards the legal limit at year end (DGAL’s “ dívida total ”, without non-budget debts and the exceptions in the law). | r2 | retirada | Passagem R2-b (04.10.2026, a decisão do lugar de direção): a dobra da dívida dos concelhos diz também a contribuição para o Fundo de Apoio Municipal, que a coluna da DGAL exclui; a forma nova está na secção da passagem r2b. |
 | conteudo | O número médio de dias que a câmara demora a pagar aos fornecedores (prazo médio de pagamento), pela lista anual da DGAL. | r2 | viva | A dobra do cartão do prazo médio de pagamento em cada página de concelho (achado 26), com o termo do título da lista da DGAL, no singular. |
@@ -4213,3 +4213,12 @@ Redação decidida pelo lugar de direção (§1.173), revista na passagem H4-d p
 ## H4-b · as portas do menu
 
 «Explicações» / «Explainers» passa também a porta do cabeçalho. «União Europeia» / «European Union», já inventariadas como o nome do agregado, são também os rótulos da porta da União no cabeçalho. A N1 confere a lista inteira de destinos e rótulos nas duas edições; o rodapé mantém a sua lista. Nenhuma frase de conteúdo muda.
+
+## RP4-n-c · sincronização do inventário da voz
+
+As frases já publicadas nas páginas dos concelhos, nas duas edições, e conferidas pela prova do cartão. A RP4N-6 sincroniza a declaração; não altera o texto publicado nem o que a medida conta.
+
+| classe | texto | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | Counts the enterprises attributed to the municipality (integrated business accounts system). | rp4nc | viva | Frase de src/data/concelhos.mjs, já presente em tests/cartao/leituras-provadas.json desde a RP4-n. |
+| conteudo | Conta as empresas atribuídas ao concelho (sistema de contas integradas das empresas). | rp4nc | viva | Frase de src/data/concelhos.mjs, já presente em tests/cartao/leituras-provadas.json desde a RP4-n. |
