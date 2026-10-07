@@ -57,11 +57,11 @@ import { lerSeriesDoPortao } from '../../scripts/series-do-portao.mjs';
 import { folhasDaLeitura, lerAuditoriaDasLeituras, leituraIndependente, corteIndependente, normal, PAGINAS_DA_LEITURA } from './leituras.mjs';
 
 const LITERAL_MINIMO = 4;
-const CAMPOS_DA_FONTE = new Set(['excerpt', 'unit', 'name', 'source', 'document.title', 'document.locator', 'document.edition']);
+const CAMPOS_DA_FONTE = new Set(['excerpt', 'unit', 'name', 'source', 'document.title', 'document.locator', 'document.edition', 'document.computed_over.column', 'document.computed_over.filter']);
 const CAMPOS_DA_CASA = new Set(['derivation', 'derivation_en', 'ressalva', 'ressalva_en']);
 const PONTUACAO = /[\s.,:;()−%’'!?]+/g;
 /** @param {any} l @param {string} c */
-const campoDaLinha = (l, c) => (c === 'document.title' ? l?.document?.title : c === 'document.locator' ? l?.document?.locator : c === 'document.edition' ? l?.document?.edition : l?.[c]);
+const campoDaLinha = (l, c) => (c === 'document.title' ? l?.document?.title : c === 'document.locator' ? l?.document?.locator : c === 'document.edition' ? l?.document?.edition : c === 'document.computed_over.column' ? l?.document?.computed_over?.column : c === 'document.computed_over.filter' ? l?.document?.computed_over?.filter : l?.[c]);
 /** O texto de uma frase de pedaços (as cadeias e os termos de outra língua). @param {unknown} x */
 export const textoDaFrase = (x) => (Array.isArray(x) ? x.map((p) => (typeof p === 'string' ? p : p?.termo ?? '')).join('') : typeof x === 'string' ? x : '');
 const curto = (/** @type {string} */ s) => (s.length > 60 ? `${s.slice(0, 57)}…` : s);
@@ -281,17 +281,12 @@ export function conferirAuditoriaDasFamilias({
       if (!o[a.campo].includes(literal)) return `cita «${curto(literal)}», que não está no campo «${a.campo}» da origem «${a.origem}»`;
       return null;
     }
-    if (a.declaracao === 'nome') {
-      for (const id of ids) {
-        const n = nomes(id, a.lingua === 'en' ? 'en' : 'pt');
-        if (typeof n !== 'string' || !n.includes(literal)) return `o nome do recibo de «${id}» (${a.lingua}) não traz «${curto(literal)}»`;
-      }
-      return null;
-    }
+    if (a.declaracao === 'nome') return 'o nome do projeto não pode apoiar uma frase';
     if (a.linha === 'propria') {
       if (!CAMPOS_DA_FONTE.has(a.campo) && !CAMPOS_DA_CASA.has(a.campo)) return `cita o campo «${a.campo}», que não pode apoiar`;
       for (const id of ids) {
-        const v = campoDaLinha(linhas.get(id), a.campo);
+        if (a.campo.startsWith('document.computed_over.') && !(linhas.get(id)?.document?.computed_over?.files?.length && linhas.get(id).document.computed_over.files.every(f => /^[a-f0-9]{64}$/.test(f.sha256) && f.file))) return `a seleção calculada de «${id}» não tem ficheiros selados`;
+      const v = campoDaLinha(linhas.get(id), a.campo);
         if (typeof v !== 'string' || !v.includes(literal)) return `cita «${curto(literal)}», que não está no campo «${a.campo}» da linha «${id}»`;
       }
       return null;
@@ -356,6 +351,10 @@ export function conferirAuditoriaDasFamilias({
       const qual = `${quem}, parte ${j + 1} («${curto(textoDaFrase(p?.pt))}»)`;
       if (p?.classe === 'liga') {
         for (const lang of ['pt', 'en']) if (textoDaFrase(p[lang]).replace(PONTUACAO, '') !== '') falha(`${qual}: está marcada como ligação e traz palavras`);
+        continue;
+      }
+      if (p?.classe === 'ausencia') {
+        if (partes.length !== 1 || p.pt !== 'Não há excerto da fonte que permita explicar este número.' || p.en !== 'No source excerpt is available to explain this number.' || p.apoios || ids.some(id => linhas.get(id)?.excerpt !== '[a verificar]')) falha(`${qual}: a ausência não corresponde à falta do excerto`);
         continue;
       }
       if (p?.classe !== 'diz') { falha(`${qual}: não tem classe (diz ou liga)`); continue; }
@@ -471,14 +470,8 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
   /* R4-b: O MARCADOR «POR CONFIRMAR NA FONTE», onde a conta desta célula sobre a auditoria o põe e em mais lado nenhum:
      um só, ao pé da frase, o marcador da casa com a porta da sua página; o texto da frase lê-se sem ele. */
   const marcas = cabeca.querySelectorAll('[data-por-confirmar-na-fonte]');
-  if (porConfirmar.has(id)) {
-    const a = marcas.length === 1 ? marcas[0].querySelector('a.marcador.marcador-da-frase') : null;
-    if (marcas.length !== 1 || marcas[0].getAttribute('data-por-confirmar-na-fonte') !== id || !marcas[0].closest('[data-o-que-e-parte="o-que-e"]')) {
-      falha(`a frase está por confirmar na fonte e o recibo tem ${marcas.length} marcador(es) ao pé dela, e tem um (uma marca em falta)`);
-    } else if (!a || a.getAttribute('href') !== (lang === 'pt' ? '/a-verificar' : '/en/to-verify') || normal(a.textContent) !== POR_VERIFICAR) {
-      falha('o marcador da frase não é o marcador da casa com a porta da sua página');
-    }
-  } else if (marcas.length) falha('o recibo tem o marcador «por confirmar na fonte» e a auditoria não o declara (uma marca a mais)');
+  if (porConfirmar.has(id)) falha('a frase por confirmar não pode ser publicada');
+  if (marcas.length) falha('o recibo contém uma marca por confirmar (uma marca a mais)');
   const semMarca = (/** @type {any} */ x) => { if (!x) return ''; const c = parse(x.outerHTML); for (const m of c.querySelectorAll('[data-por-confirmar-na-fonte]')) m.remove(); return normal(c.textContent); };
   const rendidoOQueE = semMarca(oQueE);
   /* R4-b: A PARTE DO SINAL, quando a frase lê a metade «o que é» de um cartão contra esta linha e o sinal vive na metade
@@ -688,8 +681,7 @@ export function conferirAuditoriaDasSeries({
           if (!['excerto', 'excertoEn', 'documento', 'publicador'].includes(a.campo) || typeof o[a.campo] !== 'string' || !o[a.campo].includes(literal)) { falha(`${qual}: cita «${curto(literal)}», que não está no campo «${a.campo}» da origem «${a.origem}»`); continue; }
           parteDaFonte = true;
         } else if (a.declaracao === 'nome') {
-          const n = nomes[e.serie]?.nome?.[a.lingua];
-          if (typeof n !== 'string' || !n.includes(literal)) falha(`${qual}: o nome da série (${a.lingua}) não traz «${curto(literal)}»`);
+          falha(`${qual}: o nome do projeto não pode apoiar uma frase`);
         } else if (a.serie === 'propria') {
           if (!CAMPOS_DA_SERIE_FONTE.has(a.campo) && !CAMPOS_DA_SERIE_CASA.has(a.campo)) { falha(`${qual}: cita o campo «${a.campo}» da série, que não pode apoiar`); continue; }
           const v = campoDaSerieAqui(s, a.campo);
@@ -761,16 +753,11 @@ export function conferirFraseDaSerie(root, s, lang, { ctx, frases = /** @type {R
     falha(`a frase diz vir de «${el.getAttribute('data-o-que-e-origem')}:${el.getAttribute('data-o-que-e-linha') ?? ''}», e vem de «${origem}:${linha ?? ''}»`);
   }
   const frase = el.querySelector('.linha-o-que-e-frase');
-  /* R4-b: O MARCADOR «POR CONFIRMAR NA FONTE», pela conta desta célula: o da linha, quando a frase é a dela; o da série,
-     quando a frase é a escrita para ela. Um só, ao pé da frase, e em mais lado nenhum. */
+  /* RP4-n: uma frase por confirmar e qualquer marcador no recibo são recusados. */
   const deve = linha ? porConfirmarLinhas.has(linha) : porConfirmarSeries.has(s.id);
   const marcas = el.querySelectorAll('[data-por-confirmar-na-fonte]');
-  if (deve) {
-    const a = marcas.length === 1 ? marcas[0].querySelector('a.marcador.marcador-da-frase') : null;
-    if (marcas.length !== 1 || marcas[0].getAttribute('data-por-confirmar-na-fonte') !== s.id || !a || a.getAttribute('href') !== (lang === 'pt' ? '/a-verificar' : '/en/to-verify') || normal(a.textContent) !== POR_VERIFICAR) {
-      falha(`a frase está por confirmar na fonte e o recibo não tem o marcador da casa ao pé dela (uma marca em falta)`);
-    }
-  } else if (marcas.length) falha('o recibo tem o marcador «por confirmar na fonte» e a auditoria não o declara (uma marca a mais)');
+  if (deve) falha('a frase por confirmar não pode ser publicada');
+  if (marcas.length) falha('o recibo contém uma marca por confirmar (uma marca a mais)');
   /* R4-b: UMA PORTA SÓ. O valor da linha diz-se pelo ponto da série quando a série tem o ponto do período da linha com o
      mesmo valor, e então a frase não tem selo nenhum; um selo que abra o recibo de uma linha que a lista das linhas da
      série já abre é a segunda porta para o mesmo sítio que a L1 conta. */
@@ -883,14 +870,14 @@ export function plantasDasFamilias(dist) {
   }
   /* R4-b · A AUDITORIA DO QUE ESTÁ POR CONFIRMAR NA FONTE. */
   {
-    const declaradas = [...LINHAS_POR_CONFIRMAR_NA_FONTE].filter((x) => x !== 'funchal-desemprego-registado-2025-12');
-    regista('a lista do resolvedor sem uma linha por confirmar', conferirAuditoriaDasFamilias({ auditoria: base, porConfirmarDeclaradas: declaradas }).erros, 'não está na lista que o resolvedor lê');
+    const declaradas = [...LINHAS_POR_CONFIRMAR_NA_FONTE, 'funchal-desemprego-registado-2025-12'];
+    regista('a lista do resolvedor com uma linha confirmada', conferirAuditoriaDasFamilias({ auditoria: base, porConfirmarDeclaradas: declaradas }).erros, 'a auditoria não a declara');
   }
   {
     const a = structuredClone(base);
     const e = a.familias.find((/** @type {any} */ x) => x.chaves?.includes('agua-nao-faturada-portugal'));
-    delete e.por_confirmar_na_fonte;
-    regista('a auditoria a dar como confirmada uma frase por confirmar', conferirAuditoriaDasFamilias({ auditoria: a }).erros, 'a auditoria diz «por confirmar na fonte» null');
+    e.por_confirmar_na_fonte = true;
+    regista('a auditoria a dar como pendente uma frase confirmada', conferirAuditoriaDasFamilias({ auditoria: a }).erros, 'a auditoria diz «por confirmar na fonte» true');
   }
   /* A SEGUNDA METADE, sobre cópias de recibos em memória. */
   const ctx = contextoDasFamilias();
@@ -906,8 +893,7 @@ export function plantasDasFamilias(dist) {
   }
   {
     const c = /** @type {any} */ (recibo('funchal-desemprego-registado-2025-12', 'en'));
-    c.querySelector('[data-por-confirmar-na-fonte]').remove();
-    regista('uma marca em falta num recibo', conferir(c, 'funchal-desemprego-registado-2025-12', 'en'), 'uma marca em falta');
+    regista('uma frase declarada pendente num recibo', conferirCabecaDoRecibo(c, 'funchal-desemprego-registado-2025-12', 'en', {ctx, cartoes, porConfirmar: new Set(['funchal-desemprego-registado-2025-12'])}), 'a frase por confirmar não pode ser publicada');
   }
   {
     const c = /** @type {any} */ (recibo('posicao-de-investimento-internacional-2024', 'pt'));
@@ -984,8 +970,7 @@ export function plantasDasFamilias(dist) {
   {
     const s = lerSeriesDoPortao().get('serie-ihpc-rendas-variacao-homologa');
     const root = reciboDaSerie(s.id, 'en');
-    root.querySelector('[data-o-que-e-da-serie] [data-por-confirmar-na-fonte]')?.remove();
-    regista('uma marca em falta num recibo de série', conferirFraseDaSerie(root, s, 'en', { ctx, ...conjuntos }), 'uma marca em falta');
+    regista('uma série declarada pendente num recibo', conferirFraseDaSerie(root, s, 'en', { ctx, ...conjuntos, porConfirmarSeries: new Set([s.id]) }), 'a frase por confirmar não pode ser publicada');
   }
   {
     const s = lerSeriesDoPortao().get('serie-ipc-rendas-variacao-homologa');

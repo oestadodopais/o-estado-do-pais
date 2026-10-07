@@ -1,0 +1,12 @@
+{
+  "exporter": "ResearchHub/publisher/rp4n_origens.py",
+  "files": {
+    "origens-rp4n.json": {
+      "destino": "src/data",
+      "exporter": "ResearchHub/publisher/rp4n_origens.py",
+      "exported_sha256": "9998b4b2561488f28163d421e5d7e225ca9fb2a31e8d15bfff168d90c8c55fff",
+      "origin_sha256": "9998b4b2561488f28163d421e5d7e225ca9fb2a31e8d15bfff168d90c8c55fff",
+      "origin_path": "content/13 Dominios/origens-rp4n.json"
+    }
+  }
+}
