@@ -151,6 +151,9 @@ export function contextoDasFamilias({ linhas = loadClaims(), familias = FAMILIAS
  * A PRIMEIRA METADE: a auditoria contra a declaração, as origens e as linhas
  * ========================================================================= */
 
+/** A proibição vale também dentro das alternativas e nos apoios com mais de uma forma. @param {any} a @returns {boolean} */
+function temNomeDoProjeto(a) { return a?.declaracao === 'nome' || (Array.isArray(a?.ou) && a.ou.some(temNomeDoProjeto)); }
+
 /**
  * @param {{ auditoria?: any, linhas?: Map<string, any>, familias?: Record<string, any>, doConcelho?: Record<string, any>, origens?: Record<string, any> }} [entrada]
  */
@@ -239,6 +242,7 @@ export function conferirAuditoriaDasFamilias({
    */
   const apoio = (a, ids, onde) => {
     contas.apoios++;
+    if (temNomeDoProjeto(a)) { falha(`${onde}: o nome do projeto não pode apoiar uma frase`); return null; }
     if (Array.isArray(a?.ou)) {
       let classe = 'fonte';
       for (const id of ids) {
@@ -671,6 +675,7 @@ export function conferirAuditoriaDasSeries({
       let parteDaFonte = false;
       for (const a of p.apoios) {
         contas.apoios++;
+        if (temNomeDoProjeto(a)) { falha(`${qual}: o nome do projeto não pode apoiar uma frase`); continue; }
         const literal = a?.literal;
         if (typeof literal !== 'string' || literal.trim().length < LITERAL_MINIMO) { falha(`${qual}: um literal com menos de ${LITERAL_MINIMO} caracteres, que não prende nada`); continue; }
         if (a.origem) {

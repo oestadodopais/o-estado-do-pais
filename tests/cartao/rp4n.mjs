@@ -49,6 +49,19 @@ for (const [nome, altera] of [
   linhas.get('evora-prr-aprovado-2026').document.computed_over.files[0].sha256 = '';
   morde('seleção calculada sem resumo do ficheiro', conferirAuditoriaDasFamilias({linhas}).erros, 'a seleção calculada de «evora-prr-aprovado-2026» não tem ficheiros selados');
 }
+for (const aninhada of [false,true]) {
+  const a = structuredClone(auditoria);
+  const p = a.familias.find(e => e.chaves?.includes('oe-2026-despesa-funcao-01')).folhas[0].partes[0];
+  const nome = {declaracao:'nome',lingua:'pt',literal:'orçamentada'};
+  p.apoios[0] = {ou:[p.apoios[0], aninhada ? {ou:[nome]} : nome]};
+  morde(`nome numa alternativa ${aninhada ? 'aninhada' : 'simples'}`, conferirAuditoriaDasFamilias({auditoria:a}).erros, 'o nome do projeto não pode apoiar uma frase');
+}
+{
+  const a = structuredClone(auditoria);
+  const p = a.series.find(e => e.serie === 'serie-ihpc-rendas-variacao-homologa').folhas[0].partes.find(p => p.apoios?.some(a => a.origem));
+  p.apoios.find(a => a.origem).declaracao = 'nome';
+  morde('nome misturado com uma origem válida', conferirAuditoriaDasSeries({auditoria:a}).erros, 'o nome do projeto não pode apoiar uma frase');
+}
 for (const lang of ['pt','en']) {
   const caminho = `dist/${lang === 'pt' ? 'livro-razao' : 'en/ledger'}/posicao-de-investimento-internacional-2025/index.html`;
   const html = fs.readFileSync(caminho, 'utf8');

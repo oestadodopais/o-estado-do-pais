@@ -70,11 +70,15 @@ const nomeDaCasa = (id, lingua) => {
 };
 const texto = (x) => (Array.isArray(x) ? x.map((p) => (typeof p === 'string' ? p : p.termo)).join('') : x);
 
+/** A proibição vale também dentro das alternativas e nos apoios com mais de uma forma. @param {any} a @returns {boolean} */
+function temNomeDoProjeto(a) { return a?.declaracao === 'nome' || (Array.isArray(a?.ou) && a.ou.some(temNomeDoProjeto)); }
+
 /**
  * Um apoio, conferido para cada linha. Devolve a classe do apoio: 'fonte', 'casa' ou null (falhou).
  * @param {any} a @param {string[]} ids @param {string} onde @param {Map<string, string>} nomesDaFamilia
  */
 function apoio(a, ids, onde, nomesDaFamilia) {
+  if (temNomeDoProjeto(a)) { falha(`${onde}: o nome do projeto não pode apoiar uma frase`); return null; }
   if (a.ou) {
     let classe = 'fonte';
     for (const id of ids) {
