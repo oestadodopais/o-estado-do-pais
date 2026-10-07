@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-07T12:16:55+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "rp4nd-p1",
+   "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+   "descricao": "o inventário: uma linha viva do bloco rp4n perde uma palavra na cópia ('Counts the enterprises attributed to the municipality (integ')",
+   "sha256_antes": "8a14a850f066ecd6a789581d594c6bc4126391f0fc5652990bae0aab0f004382",
+   "sha256_depois": "3d92b3a2c05bc449bd0793f8ff6d954fa855defbd430b150cd5fe2870743c916",
+   "contexto_antes": "sincroniza a declaração; não altera o texto publicado nem o que a medida conta.\n\n| classe | texto | bloco | estado | razão |\n|---|---|---|---|---|\n| conteudo | Counts the enterprises attributed to the municipality (integrated business accounts system). | rp4nc | viva | Frase de src/data/concelhos.mjs, já presente em tests/cartao/leituras-provadas.json desde a RP4-n. |\n| conteudo | Conta as empresas atribuídas",
+   "contexto_depois": "sincroniza a declaração; não altera o texto publicado nem o que a medida conta.\n\n| classe | texto | bloco | estado | razão |\n|---|---|---|---|---|\n| conteudo | Counts the enterprises attributed to the municipality (integrated business system). | rp4nc | viva | Frase de src/data/concelhos.mjs, já presente em tests/cartao/leituras-provadas.json desde a RP4-n. |\n| conteudo | Conta as empresas atribuídas"
+  },
+  {
+   "id": "rp4nd-p2",
+   "ficheiro": "motor/publisher/rp4n_origens_test.py",
+   "descricao": "a régua do motor: a primeira asserção do teste das origens passa a assert True na cópia; o teste deixa de provar",
+   "sha256_antes": "99267085cb39506a8a9d4419f33925648b25ac018b4e06dd6fbaa4a57b963832",
+   "sha256_depois": "affbe10a39c7916baea2f11fa1e47b23e4e6831b509d35201624534e508f3ad8",
+   "contexto_antes": "in():\n    origens = json.loads(O.DESTINO.read_text())\n    O.conferir(origens)\n    pensoes = O.ROOT / \"content/13 Dominios/source/rp4n/pensoes-copia-alojada.pdf\"\n    assert hashlib.sha256(pensoes.read_bytes()).hexdigest() == \"555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366\"\n    pagina = subprocess.check_output([\"pdftotext\", \"-f\", \"273\", \"-l\", \"273\", str(pensoes), \"-\"], text=True)\n    assert \"Figura 8.4: Decrementos por reforma ant",
+   "contexto_depois": "in():\n    origens = json.loads(O.DESTINO.read_text())\n    O.conferir(origens)\n    pensoes = O.ROOT / \"content/13 Dominios/source/rp4n/pensoes-copia-alojada.pdf\"\n    assert True  # hashlib.sha256(pensoes.read_bytes()).hexdigest() == \"555936bdc750f66826c4919fab5d288e0b726a76e72f224ba655c82390381366\"\n    pagina = subprocess.check_output([\"pdftotext\", \"-f\", \"273\", \"-l\", \"273\", str(pensoes), \"-\"], text=True)\n    assert \"Figura 8.4: Decrementos por reforma ant"
+  },
+  {
+   "id": "rp4nd-p3",
+   "ficheiro": "built/livro-razao/agua-nao-faturada-portugal-2024/index.html",
+   "descricao": "a página construída: o título do recibo da água não faturada passa a 26,6 % na cópia; o corpo, os dados e a página inglesa dizem 26,5",
+   "sha256_antes": "9c567ca5ab364bf68eea581c88ba3dc7ce26b17111160863a4f9c1bf4458f764",
+   "sha256_depois": "90ccbc8c32664ded91feb0fe79628cce8f7c7115971acd304a592bed83b03457",
+   "contexto_antes": "<!DOCTYPE html><html lang=\"pt-PT\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>26,5 % · Números e fontes · O Estado do País</title><meta name=\"description\" content=\"Linha do livro-razão agua-nao-faturada-portugal-2024 · 26,5 % · Publicado por: ERSAR · RASARP — Relatório Anual dos Serviços d",
+   "contexto_depois": "<!DOCTYPE html><html lang=\"pt-PT\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>26,6 % · Números e fontes · O Estado do País</title><meta name=\"description\" content=\"Linha do livro-razão agua-nao-faturada-portugal-2024 · 26,5 % · Publicado por: ERSAR · RASARP — Relatório Anual dos Serviços d"
+  },
+  {
+   "id": "rp4nd-p4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório: 'Foram refeitas 140 capturas' passa a 142; o manifesto e a pasta dizem 140",
+   "sha256_antes": "ecb8e0c252ee995b32df8b63993a16ce3cd6559551cc36a3c26dc66b0f345dbe",
+   "sha256_depois": "6b79202a8a2752cfb3056efc681343f5c569010ad18aacf256af4e38719ecbef",
+   "contexto_antes": "cia; as tentativas conservam a cabeça efetivamente corrida. Todos os commits próprios, incluindo a fusão, têm os dois trailers.\n\n### Capturas e marcas aceites\n\nForam refeitas 140 capturas, de catorze casos nas duas edições, a 390, 768, 1024, 1280 e 1600 píxeis. O manifesto `d/capturas.json` guarda a versão e os resumos. Não encontrou erros de pá",
+   "contexto_depois": "cia; as tentativas conservam a cabeça efetivamente corrida. Todos os commits próprios, incluindo a fusão, têm os dois trailers.\n\n### Capturas e marcas aceites\n\nForam refeitas 142 capturas, de catorze casos nas duas edições, a 390, 768, 1024, 1280 e 1600 píxeis. O manifesto `d/capturas.json` guarda a versão e os resumos. Não encontrou erros de pá"
+  },
+  {
+   "id": "rp4nd-p5",
+   "ficheiro": "motor/publisher/recortes/rp4n-origens.json",
+   "descricao": "a origem do motor: a página do excerto da origem rp4n-orcamento passa de 85 a 58 na cópia; o PDF alojado e o recibo dizem 85",
+   "sha256_antes": "a523e3a2da6b471083fe2c875fb70e7f4ecfdd77fadb03751f77966fd3e68e82",
+   "sha256_depois": "8320cd70d4da6e97e3881c4d7f1be82d59a1c4a1ee41ce0e380daa39b34e5660",
+   "contexto_antes": "{\n  \"documentos\": [\n    {\n      \"chave\": \"rp4n-orcamento\",\n      \"publicador\": \"Entidade Orçamental\",\n      \"documento\": \"Síntese da Execução Orçamental | agosto 2026\",\n      \"motor\": \"content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf\",\n      \"recibo\": \"content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json\",\n      \"pagina\": 85,\n      \"inicio\": \"Orçamento aprovado —\",\n      \"fim\": \"Orçamento retificativo —\"\n    },\n    {\n      \"chave\": \"rp4n-consolidacao\",\n      \"publicador\": \"Entidade",
+   "contexto_depois": "{\n  \"documentos\": [\n    {\n      \"chave\": \"rp4n-orcamento\",\n      \"publicador\": \"Entidade Orçamental\",\n      \"documento\": \"Síntese da Execução Orçamental | agosto 2026\",\n      \"motor\": \"content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf\",\n      \"recibo\": \"content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json\",\n      \"pagina\": 58,\n      \"inicio\": \"Orçamento aprovado —\",\n      \"fim\": \"Orçamento retificativo —\"\n    },\n    {\n      \"chave\": \"rp4n-consolidacao\",\n      \"publicador\": \"Entidade"
+  }
+ ]
+}
