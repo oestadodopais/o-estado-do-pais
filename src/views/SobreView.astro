@@ -16,14 +16,17 @@
  *
  * A AUTORIA VIVE AQUI, nas palavras da própria direção («produzido
  * maioritariamente por inteligência artificial, com o mínimo de intervenção
- * humana»), desde que o rodapé passou a ser navegação só. O nome de quem
- * dirige está na regra 9 do Método, que é onde a intervenção humana se
- * descreve.
+ * humana»), desde que o rodapé passou a ser navegação só. Desde 07.10.2026
+ * (§1.181, o acrescento (f)) o sítio não diz quem responde por ele: a regra 9
+ * do Método diz que a direção é de um modelo, e esta página diz o que o projeto
+ * é (independente, conduzido por uma inteligência artificial, financiado em
+ * privado) e como se lhe escreve (o endereço das correções).
  *
  * ---------------------------------------------------------------------------
  * E DESDE 01.09.2026 UMA TERCEIRA FRASE DECIDIDA, QUE MUDOU A 15.09.2026
  * ---------------------------------------------------------------------------
- * «Duas frases e uma porta» passa a ser três frases decididas e duas portas.
+ * «Duas frases e uma porta» passa a ser três frases decididas e duas portas; a
+ * 07.10.2026 (§1.182) entra a quarta, o contacto, pela mesma disciplina.
  *
  * A terceira era a frase da política («Escrito, conferido e atualizado por
  * sistemas de IA sob uma política publicada…»), e desde 15.09.2026 é a frase
@@ -53,7 +56,8 @@
  */
 import Base from '../layouts/Base.astro';
 import { SOBRE } from '../data/sobre.mjs';
-import { ANCORA_DA_POLITICA, O_PROJETO, POLITICA } from '../data/politica-ia.mjs';
+import { ANCORA_DA_POLITICA, CONTACTO, O_PROJETO, POLITICA } from '../data/politica-ia.mjs';
+import { ENDERECO_CORRECOES } from '../data/metodo.mjs';
 import { ROTAS_SOBRE, ETIQUETA_NAV } from '../lib/navegacao.mjs';
 import { routePath, otherLanguagePath } from '../lib/routes.mjs';
 import { t } from '../i18n/strings.mjs';
@@ -86,6 +90,13 @@ const politica = `${routePath('metodo', lang)}#${ANCORA_DA_POLITICA}`;
       <p class="lede sobre-projeto" data-o-projeto={lang}>{O_PROJETO[lang]}</p>
 
       <p class="lede sobre-texto" data-sobre={lang}>{SOBRE[lang].texto}</p>
+
+      {/* O CONTACTO (07.10.2026, §1.181, o acrescento (f), e §1.182): o sítio não diz quem
+          responde por ele e diz como se lhe escreve, pelo endereço das correções. A frase é
+          texto decidido em `src/data/politica-ia.mjs` (`CONTACTO`), partida em dois pedaços
+          à volta da ligação `mailto:`; `data-contacto` é a marca que o `gate:html` compara,
+          carácter a carácter, com a cadeia inteira do oráculo, como faz a `data-o-projeto`. */}
+      <p class="lede sobre-contacto" data-contacto={lang}>{CONTACTO[lang].antes}<a href={`mailto:${ENDERECO_CORRECOES}`}>{ENDERECO_CORRECOES}</a>{CONTACTO[lang].depois}</p>
 
       {/* A REGRA DOS NOMES (diretor, 15.09.2026; a emenda da política da
           autonomia, item 8 do bloco P3). Diz-se aqui e em mais lado nenhum: a
