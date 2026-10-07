@@ -191,6 +191,20 @@
       "contagem": 1
     },
     {
+      "nome": "marca partida entre elementos de um excerto",
+      "tipo": "excerto",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+      "contagem": 1
+    },
+    {
+      "nome": "declaração proibida numa parte da marca",
+      "tipo": "o-que-e-linha",
+      "estado": "recusadas",
+      "mensagem": "RP4N: marca recusada em o-que-e-linha",
+      "contagem": 1
+    },
+    {
       "nome": "endereço ausente",
       "tipo": "endereco",
       "estado": "aceites",
