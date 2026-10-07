@@ -322,12 +322,12 @@ function localizadorJd1Confere(onde, linha) {
     const nome = juros ? 'Juros' : 'Produto Interno Bruto, a preços de mercado';
     const quadro = juros ? 9 : 1, pagina = juros ? 12 : 2;
     return linha.name === nome && linha.reference_date === ine[2] && d.page === pagina &&
-      d.title === 'Procedimento dos Défices Excessivos' &&
+      d.title === 'Procedimento dos Défices Excessivos 2ª Notificação' &&
       onde === `Quadro ${quadro}, ${nome}${juros ? ' (D.41)' : ''}, coluna ${ine[2]}, p. ${pagina}`;
   }
   const eo = /^juros-e-outros-encargos-execucao-(2025|2026)-08$/.exec(id);
   if (eo) return linha.name === 'Juros e outros encargos' && linha.reference_date === `${eo[1]}-08` &&
-    d.page === 7 && d.title === 'Síntese da Execução Orçamental' &&
+    d.page === 7 && d.title === 'Síntese da Execução Orçamental | agosto 2026' &&
     onde === `Quadro 1, Conta consolidada das Administrações Públicas, execução acumulada ${eo[1]}, janeiro a agosto, folha 7 do PDF (numeração impressa: 3)`;
   /** @type {Record<string, string[]>} */
   const custos = {

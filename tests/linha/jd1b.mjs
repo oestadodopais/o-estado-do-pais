@@ -191,3 +191,32 @@ for (const lang of ['pt', 'en']) {
   }
 }
 console.log(`JD1-b: ano da emissão e data do boletim conservados; ${plantasPeriodo} plantas morderam.`);
+
+// Uma publicação conserva o título já usado no R1 e no OE1, no HTML e no anexo PDF.
+const documentosJd1 = [
+  ['saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09', [
+    'juros-das-administracoes-publicas-2024', 'juros-das-administracoes-publicas-2025',
+    'pib-nominal-notificacao-setembro-2024', 'pib-nominal-notificacao-setembro-2025']],
+  ['execucao-2026-08-despesa-programa-014', [
+    'juros-e-outros-encargos-execucao-2025-08', 'juros-e-outros-encargos-execucao-2026-08']],
+];
+export function mesmoTituloDoDocumento(linha, existente) {
+  return linha.document.title === existente.document.title;
+}
+let plantasTitulos = 0;
+for (const [existenteId, ids] of documentosJd1) for (const id of ids) {
+  const linha = getClaim(id), existente = getClaim(existenteId);
+  assert.ok(mesmoTituloDoDocumento(linha, existente), `${id}: título diferente para o mesmo documento`);
+  if (process.argv.includes('--prova')) {
+    const trocada = structuredClone(linha);
+    trocada.document.title = 'Título abreviado';
+    assert.ok(!mesmoTituloDoDocumento(trocada, existente));
+    plantasTitulos++;
+  }
+  if (!process.argv.includes('--declaracoes')) for (const prefixo of ['livro-razao', 'en/ledger']) {
+    const html = parse(fs.readFileSync(`dist/${prefixo}/${id}/index.html`, 'utf8'));
+    const titulo = html.querySelector('[data-linha-campo="document.title"]')?.textContent;
+    assert.equal(titulo, existente.document.title, `${id}: título diferente no recibo`);
+  }
+}
+console.log(`JD1-b: título único dos documentos do INE e da execução; ${plantasTitulos} plantas morderam.`);

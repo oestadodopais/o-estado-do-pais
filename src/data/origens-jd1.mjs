@@ -22,7 +22,7 @@ export const ORIGENS_JD1 = {
   },
   "jd1-eo-administracoes": {
     "publicador": "Entidade Orçamental",
-    "documento": "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 82",
+    "documento": "Síntese da Execução Orçamental | agosto 2026, glossário, folha 82",
     "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
     "lido": "2026-10-06",
     "lingua": "pt",
@@ -42,7 +42,7 @@ export const ORIGENS_JD1 = {
   },
   "jd1-eo-ativos": {
     "publicador": "Entidade Orçamental",
-    "documento": "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 82",
+    "documento": "Síntese da Execução Orçamental | agosto 2026, glossário, folha 82",
     "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
     "lido": "2026-10-06",
     "lingua": "pt",
@@ -62,7 +62,7 @@ export const ORIGENS_JD1 = {
   },
   "jd1-eo-saldo": {
     "publicador": "Entidade Orçamental",
-    "documento": "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 87",
+    "documento": "Síntese da Execução Orçamental | agosto 2026, glossário, folha 87",
     "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
     "lido": "2026-10-06",
     "lingua": "pt",
@@ -112,7 +112,7 @@ export const ORIGENS_JD1 = {
   },
   "jd1-ine-contas": {
     "publicador": "Instituto Nacional de Estatística",
-    "documento": "Procedimento dos Défices Excessivos, setembro de 2026, folha 4",
+    "documento": "Procedimento dos Défices Excessivos 2ª Notificação, setembro de 2026, folha 4",
     "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=816377733&att_display=n&att_download=y",
     "lido": "2026-10-06",
     "lingua": "pt",
@@ -132,7 +132,7 @@ export const ORIGENS_JD1 = {
   },
   "jd1-eo-glossario": {
     "publicador": "Entidade Orçamental",
-    "documento": "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 83",
+    "documento": "Síntese da Execução Orçamental | agosto 2026, glossário, folha 83",
     "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
     "lido": "2026-10-06",
     "lingua": "pt",
@@ -267,7 +267,7 @@ export const ORIGENS_JD1 = {
   },
   "jd1-ine-provisorio": {
     "publicador": "Instituto Nacional de Estatística",
-    "documento": "Procedimento dos Défices Excessivos, setembro de 2026, folha 3",
+    "documento": "Procedimento dos Défices Excessivos 2ª Notificação, setembro de 2026, folha 3",
     "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=816377733&att_display=n&att_download=y",
     "lido": "2026-10-06",
     "lingua": "pt",
@@ -287,7 +287,7 @@ export const ORIGENS_JD1 = {
   },
   "jd1-ine-ambito": {
     "publicador": "Instituto Nacional de Estatística",
-    "documento": "Procedimento dos Défices Excessivos, setembro de 2026, folha 2",
+    "documento": "Procedimento dos Défices Excessivos 2ª Notificação, setembro de 2026, folha 2",
     "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=816377733&att_display=n&att_download=y",
     "lido": "2026-10-06",
     "lingua": "pt",
@@ -307,7 +307,7 @@ export const ORIGENS_JD1 = {
   },
   "jd1-ine-despesa": {
     "publicador": "Instituto Nacional de Estatística",
-    "documento": "Procedimento dos Défices Excessivos, setembro de 2026, quadro 9, folha 12",
+    "documento": "Procedimento dos Défices Excessivos 2ª Notificação, setembro de 2026, quadro 9, folha 12",
     "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=816377733&att_display=n&att_download=y",
     "lido": "2026-10-06",
     "lingua": "pt",
@@ -327,7 +327,7 @@ export const ORIGENS_JD1 = {
   },
   "jd1-eo-conta": {
     "publicador": "Entidade Orçamental",
-    "documento": "Síntese da Execução Orçamental, agosto de 2026, folha 7, página impressa 3",
+    "documento": "Síntese da Execução Orçamental | agosto 2026, folha 7, página impressa 3",
     "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
     "lido": "2026-10-06",
     "lingua": "pt",
@@ -347,7 +347,7 @@ export const ORIGENS_JD1 = {
   },
   "jd1-eo-caixa": {
     "publicador": "Entidade Orçamental",
-    "documento": "Síntese da Execução Orçamental, agosto de 2026, folha 44, página impressa 40",
+    "documento": "Síntese da Execução Orçamental | agosto 2026, folha 44, página impressa 40",
     "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
     "lido": "2026-10-06",
     "lingua": "pt",
