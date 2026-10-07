@@ -1,5 +1,25 @@
 /** Gerado por design/especime-v3/medicoes/jd1-2026-10-06/origens.py. */
 export const ORIGENS_JD1 = {
+  "jd1-ine-provisorio": {
+    "publicador": "Instituto Nacional de Estatística",
+    "documento": "Procedimento dos Défices Excessivos, setembro de 2026, folha 3",
+    "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=816377733&att_display=n&att_download=y",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "Os dados de 2024 têm agora uma natureza final e os relativos a 2025 são provisórios4.",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/002-ine-pde-setembro-2026.pdf",
+      "hora": "2026-10-06T10:45:57Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d",
+      "campo": "pdftotext -layout, folha 3",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1-2026-10-06/002-ine-pde-setembro-2026.txt",
+        "sha256": "3e8580f92458bba2da44f71d66171bec6cca62c03f5c61dfd3ab069d488f89d4",
+        "ferramenta": "pdftotext version 26.09.0"
+      }
+    }
+  },
   "jd1-ine-ambito": {
     "publicador": "Instituto Nacional de Estatística",
     "documento": "Procedimento dos Défices Excessivos, setembro de 2026, folha 2",
