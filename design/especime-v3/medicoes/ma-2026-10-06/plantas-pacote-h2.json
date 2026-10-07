@@ -1,0 +1,91 @@
+{
+  "ok": true,
+  "casos": [
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "controlo sem variáveis conserva o diff gerado",
+      "passou": true
+    },
+    {
+      "nome": "controlo limpo: a cópia conserva os bytes esperados",
+      "passou": true
+    },
+    {
+      "nome": "a página construída chega",
+      "passou": true
+    },
+    {
+      "nome": "planta do argumento ponto: a montagem conserva a pontuação",
+      "passou": true
+    },
+    {
+      "nome": "planta: bytes do sítio diferentes da cabeça são recusados antes da cópia",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa a árvore do repositório: há modificações em ficheiros seguidos por comitar."
+    },
+    {
+      "nome": "planta: bytes do motor diferentes da cabeça são recusados antes da cópia",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "ValueError: O pacote recusa a árvore do motor: há modificações em ficheiros seguidos por comitar."
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "os dois lados e as exclusões conferem",
+      "passou": true
+    },
+    {
+      "nome": "a tabela nomeia o caminho e as linhas retiradas",
+      "passou": true
+    },
+    {
+      "nome": "o diff do motor declara as exclusões na primeira linha",
+      "passou": true
+    },
+    {
+      "nome": "a conferência dos números chega ao pacote",
+      "passou": true
+    },
+    {
+      "nome": "PACOTE_EXTRA conserva os bytes",
+      "passou": true
+    },
+    {
+      "nome": "planta: uma secção excluída que volte ao diff morde",
+      "passou": true
+    },
+    {
+      "nome": "planta: ficheiro do motor alterado morde",
+      "passou": true
+    },
+    {
+      "nome": "reposição dos dois lados",
+      "passou": true
+    },
+    {
+      "nome": "nenhum caminho temporário foi guardado",
+      "passou": true
+    },
+    {
+      "nome": "a montagem corre a zero",
+      "passou": true
+    },
+    {
+      "nome": "um relatório não conferido chega com o código de aviso",
+      "passou": true
+    },
+    {
+      "nome": "planta: relatório inexistente recusa pela conferência do relatório",
+      "passou": true,
+      "codigo": 1,
+      "queixa": "conferir-relatorio.py: não existe o relatório <ensaio>/sitio/medicoes/relatorio-ausente.md"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T18:51:19+00:00",
+ "copia": "<scratchpad>/h4/pacote-leitura-e4",
+ "plantas": [
+  {
+   "id": "s1",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "a página portuguesa construída do Método volta a dizer na regra 8 que a inteligência artificial propõe, onde a fonte diz que a construção propõe",
+   "sha256_antes": "2c18c7f83e3f3a7f5ba1693e25671c05094d5bb368bf7be2810d62359fa0ebb0",
+   "sha256_depois": "1503b0368bcf95a7fca95c7e6a20ff5687d891cb095f2c94f569a55212e2fe0c",
+   "contexto_antes": " class=\"regra-n\" data-nonledger=\"numeracao\">8</span><h2 class=\"regra-titulo\">O que se mede a seguir</h2></summary><div class=\"metodo-corpo\"><p class=\"metodo-p\">A construção propõe o que medir, a partir de critérios declarados: o que os quadros com que as instituições avaliam Portugal apontam como problema, o que as fontes oficiais vão publicar, o que os leitores perguntam ou corrige",
+   "contexto_depois": " class=\"regra-n\" data-nonledger=\"numeracao\">8</span><h2 class=\"regra-titulo\">O que se mede a seguir</h2></summary><div class=\"metodo-corpo\"><p class=\"metodo-p\">A inteligência artificial propõe o que medir, a partir de critérios declarados: o que os quadros com que as instituições avaliam Portugal apontam como problema, o que as fontes oficiais vão publicar, o que os leitores perguntam ou corrige"
+  },
+  {
+   "id": "s2",
+   "ficheiro": "scripts/lugares-ia-do-portao.mjs",
+   "descricao": "a cópia do portão diz que a construção cala o que está por confirmar, contra a vista e a página construída",
+   "sha256_antes": "6605567e2963e1bd0d47214c85c36bbc43c40f4fcb2dd969ff7abc14fa670912",
+   "sha256_depois": "46c2a1ae45fd7acbf78c9cc8656573c415461fc6c7fb3b2a43b3ff83e0a3ea7d",
+   "contexto_antes": "m a direção os ler um a um.',\n      'A construção faz as páginas e o motor que lê as fontes; cada número que publica traz a sua fonte e a data em que foi lido, ou diz o que ainda está por confirmar.',\n      'A leitura confere o que a construção entregou, sem contexto prévio e com erros plantados de propósito, para provar que os encontra, antes de se public",
+   "contexto_depois": "m a direção os ler um a um.',\n      'A construção faz as páginas e o motor que lê as fontes; cada número que publica traz a sua fonte e a data em que foi lido, ou cala o que ainda está por confirmar.',\n      'A leitura confere o que a construção entregou, sem contexto prévio e com erros plantados de propósito, para provar que os encontra, antes de se public"
+  },
+  {
+   "id": "s3",
+   "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+   "descricao": "a linha viva inglesa do papel da construção fica marcada como retirada no inventário",
+   "sha256_antes": "69934abd8b634c4044968a8c8ff5d95c9e09b09a22db3039a610db69397e3ff3",
+   "sha256_depois": "17dd99cbdc40a0d8fc3f60f18a162a6fc6bb15618ef409e36cc542d3151ad1f9",
+   "contexto_antes": "ction reading them one by one. | h4 | viva | H4-e, quarta volta: redação decidida pelo lugar de direção (§1.173), reescrita depois das três leituras da H4-e. |\n| divulgacao | Building makes the pages and the engine that reads the sources; every number it publishes carries its source and the date it was read, or says what is still to be confirmed. | h4 | viva | H4-e, quarta volta: redação decidida pelo lugar de direção (§1.173), reescrita depois das três leituras da H4-e. |\n| divulgacao | Reading checks what building ",
+   "contexto_depois": "ction reading them one by one. | h4 | viva | H4-e, quarta volta: redação decidida pelo lugar de direção (§1.173), reescrita depois das três leituras da H4-e. |\n| divulgacao | Building makes the pages and the engine that reads the sources; every number it publishes carries its source and the date it was read, or says what is still to be confirmed. | h4 | retirada | H4-e, quarta volta: redação decidida pelo lugar de direção (§1.173), reescrita depois das três leituras da H4-e. |\n| divulgacao | Reading checks what building "
+  },
+  {
+   "id": "s4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a secção H4-e do relatório diz dezoito plantas da política, e o registo diz vinte",
+   "sha256_antes": "808149a056c9071ee1c6c0e625e0e90423832066c45f359be3897592606ad972",
+   "sha256_depois": "1a559b1d503a962ba244fca02877c3270885a05d1fe2bef8f0846fa86bfed901",
+   "contexto_antes": "digo lido |\n| --- | --- |\n| check-lingua | 0 |\n| check-lugar | 0 |\n| check-voz | 0 |\n| gate-html | 0 |\n\n### As plantas da política e da N1 na cabeça do código\n\nA política fez 20 plantas; a N1 fez 3. Todas falharam pela mensagem esperada; a política trabalha em cópias na memória, e a N1 repõe os ficheiros construídos byte a byte. Comandos: `node design/espe",
+   "contexto_depois": "digo lido |\n| --- | --- |\n| check-lingua | 0 |\n| check-lugar | 0 |\n| check-voz | 0 |\n| gate-html | 0 |\n\n### As plantas da política e da N1 na cabeça do código\n\nA política fez 18 plantas; a N1 fez 3. Todas falharam pela mensagem esperada; a política trabalha em cópias na memória, e a N1 repõe os ficheiros construídos byte a byte. Comandos: `node design/espe"
+  },
+  {
+   "id": "s5",
+   "ficheiro": "src/data/metodo.mjs",
+   "descricao": "a fonte inglesa da regra 9 diz que é o modelo que define as regras e as recusas, contra a portuguesa, a página construída e a frase da via escolhida",
+   "sha256_antes": "b173f3585c64fbe61323398820c3a7134f30866096ca77ceaecfeed459be9986",
+   "sha256_depois": "2b6996cd2b2d42f76cd775373b01c6622488fe9d4e7dbee1d1666ade569703c9",
+   "contexto_antes": "ma frase marcada «(inferência)» é a leitura que o modelo faz dos números com fonte, e não uma constatação com fonte em si mesma.',\n      ],\n      en: [\n        'It is directed by a model, which decides what gets published within the rules and the refusals that a named person sets; that person answers for what is published. Neither the person nor the model writes figures. Authorship by artificial intelligence is stated on the About page, and every page built carries the door to it",
+   "contexto_depois": "ma frase marcada «(inferência)» é a leitura que o modelo faz dos números com fonte, e não uma constatação com fonte em si mesma.',\n      ],\n      en: [\n        'It is directed by a model, which decides what gets published and sets the rules and the refusals; a named person answers for what is published. Neither the person nor the model writes figures. Authorship by artificial intelligence is stated on the About page, and every page built carries the door to it"
+  }
+ ]
+}

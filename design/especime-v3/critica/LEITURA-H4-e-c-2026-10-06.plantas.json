@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T16:57:24+00:00",
+ "copia": "<scratchpad>/h4/pacote-leitura-e",
+ "plantas": [
+  {
+   "id": "r1",
+   "ficheiro": "built/en/method/index.html",
+   "descricao": "a página inglesa construída do Método ainda diz «The director decides» na regra 8, contra a fonte e contra a portuguesa",
+   "sha256_antes": "5c8140a79d82575689cd8a03d0556dd1d1a8c591c3525a26f61e7793f5a59640",
+   "sha256_depois": "ba8b2747f733b0f578b217dc22ceedd66bd961d3c69c491c36e18975affb65d9",
+   "contexto_antes": "eria: what the frameworks the institutions use to assess Portugal flag as a problem, what the official sources will publish, what readers ask about or correct. Direction decides. The list of what is under way, what comes next and why is public, and nothing leaves it in silence.</p><div class=\"regra-linha\"><span class=\"regra-k\">Mechanism</span><p class=\"regra-v\">The ",
+   "contexto_depois": "eria: what the frameworks the institutions use to assess Portugal flag as a problem, what the official sources will publish, what readers ask about or correct. The director decides. The list of what is under way, what comes next and why is public, and nothing leaves it in silence.</p><div class=\"regra-linha\"><span class=\"regra-k\">Mechanism</span><p class=\"regra-v\">The "
+  },
+  {
+   "id": "r2",
+   "ficheiro": "src/data/politica-ia.mjs",
+   "descricao": "a vista diz que a direção lê os números novos um a um, contra a cópia do portão, a página construída e o parágrafo da revisão por amostra",
+   "sha256_antes": "46ed1089eefb61273f922bf2606688c846a1f30c5c71404b754c1b85ebd0cdf6",
+   "sha256_depois": "b482e5edd5f4af694f69386847b5895da8a8d57344aa4ba60a20f013ea67d7aa",
+   "contexto_antes": "       rotulo: { pt: 'A direção', en: 'Direction' },\n        texto: {\n          pt: 'decide o que se faz, encomenda cada mudança e revê-a antes de se publicar; os números novos que as fontes publicam entram pelos portões, sem a direção os ler um a um.',\n          en: 'decides what is done, commissions each change and reviews it before it is published; new figures from the sources enter through the gates, wit",
+   "contexto_depois": "       rotulo: { pt: 'A direção', en: 'Direction' },\n        texto: {\n          pt: 'decide o que se faz, encomenda cada mudança e revê-a antes de se publicar; os números novos que as fontes publicam entram pelos portões, e a direção lê-os um a um.',\n          en: 'decides what is done, commissions each change and reviews it before it is published; new figures from the sources enter through the gates, wit"
+  },
+  {
+   "id": "r3",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a secção H4-e do relatório diz oito capturas do Método, e o manifesto diz dez",
+   "sha256_antes": "6c83c8d0a0aa4451d9f465f47ff296c8c5055caf923336fa9c4e156224c0c40d",
+   "sha256_depois": "e198ac045669cada200b9b9a4bf8796d0c01c6f6032983eeb035f4d1ea06a6cc",
+   "contexto_antes": ".html\\. |\n| h4b-menu-destino-e-ordem | 1 | N1: menu de sete errado em index\\.html\\.; N1: menu de sete errado em en\\/index\\.html\\. |\n\n### As capturas do Método\n\nForam refeitas 10 capturas de página inteira, cada uma com o recorte dos papéis e do cabeçalho, nas duas edições. [Manifesto, medidas e SHA-256](capturas-e.json). Comando: `node design/especime-v3/medicoes/h4-2026-10-06/captar-h4-e.mjs --passagem-e`.\n\n| ",
+   "contexto_depois": ".html\\. |\n| h4b-menu-destino-e-ordem | 1 | N1: menu de sete errado em index\\.html\\.; N1: menu de sete errado em en\\/index\\.html\\. |\n\n### As capturas do Método\n\nForam refeitas 8 capturas de página inteira, cada uma com o recorte dos papéis e do cabeçalho, nas duas edições. [Manifesto, medidas e SHA-256](capturas-e.json). Comando: `node design/especime-v3/medicoes/h4-2026-10-06/captar-h4-e.mjs --passagem-e`.\n\n| "
+  },
+  {
+   "id": "r4",
+   "ficheiro": "design/especime-v3/INVENTARIO-FRASES.md",
+   "descricao": "a linha viva do papel da direção no inventário diz «depois de se publicar», e a página diz «antes»",
+   "sha256_antes": "bf54fdb41c78039197249edc5e70325dd26759cd608b7b18428d6d28405b3e9a",
+   "sha256_depois": "4486b4441fc97699ff4ac424ade298afc9c61e54878daf2287e8517d3a068441",
+   "contexto_antes": "egunda leitura (o que a direção aprova e o que os portões publicam sozinhos; o que os erros plantados provam; o modelo que construiu uma mudança nunca a lê). |\n| divulgacao | A direção decide o que se faz, encomenda cada mudança e revê-a antes de se publicar; os números novos que as fontes publicam entram pelos portões, sem a direção os ler um a um. | h4 | viva | H4-e, segunda volta: redação decidida pelo lugar de d",
+   "contexto_depois": "egunda leitura (o que a direção aprova e o que os portões publicam sozinhos; o que os erros plantados provam; o modelo que construiu uma mudança nunca a lê). |\n| divulgacao | A direção decide o que se faz, encomenda cada mudança e revê-a depois de se publicar; os números novos que as fontes publicam entram pelos portões, sem a direção os ler um a um. | h4 | viva | H4-e, segunda volta: redação decidida pelo lugar de d"
+  },
+  {
+   "id": "r5",
+   "ficheiro": "scripts/lugares-ia-do-portao.mjs",
+   "descricao": "a cópia do portão diz em inglês que o modelo que construiu uma mudança a lê às vezes, contra a vista e a página construída",
+   "sha256_antes": "fdeecb5ee32ca838fe272f51a874265e8cdac80e1735690edec2640da67559e3",
+   "sha256_depois": "9c7ab67618116e7dcd526762c705be2eba04e78ae26369125ab1ea5c40e03bc2",
+   "contexto_antes": " planted on purpose, to prove it finds them, before it is published.',\n    ],\n    fecho: 'Building and reading are always done by different families of models: the model that built a change never reads it. The Claude models from Anthropic hold the direction; building and reading are held by the Claude models and by Codex from OpenAI. A new model takes a role only",
+   "contexto_depois": " planted on purpose, to prove it finds them, before it is published.',\n    ],\n    fecho: 'Building and reading are always done by different families of models: the model that built a change sometimes reads it. The Claude models from Anthropic hold the direction; building and reading are held by the Claude models and by Codex from OpenAI. A new model takes a role only"
+  }
+ ]
+}

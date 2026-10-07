@@ -47,7 +47,7 @@ import { allClaims, getClaim, hasClaim, parsePtNumber } from './ledger.mjs';
 import { MEDIDA_REUNIDA } from './pais.mjs';
 import { nomeDaLinhaDerivada, nomeDoCartao } from './nomes.mjs';
 import { BLOCOS_DA_PRIMEIRA_PAGINA } from '../data/primeira-pagina.mjs';
-import { limiarDaLinha } from './primeira-pagina.mjs';
+import { limiarDaLinha, nomeNaLista } from './primeira-pagina.mjs';
 
 /** O estudo das contagens do próprio projeto, fora do âmbito da leitura. */
 export const ESTUDO_DO_PROJETO = 'o-estado-do-pais';
@@ -241,7 +241,7 @@ export function frasesDaPrimeiraQueMudaram(valoresAntes) {
 
 /** O nome de uma linha na leitura da semana: o da escada do cartão, com o nome declarado da linha derivada à frente. @param {string} id @param {'pt'|'en'} lang */
 export function nomeNaSemana(id, lang) {
-  const l = getClaim(id);
+  const l = getClaim(nomeNaLista(id, lang).linha);
   return nomeDaLinhaDerivada(l, lang) ?? nomeDoCartao(l, lang);
 }
 
@@ -287,4 +287,21 @@ export function primeiraFraseDaSemana(leitura, s, data, contagem) {
     else juntos.push(x);
   }
   return juntos;
+}
+
+/** A identidade da medida conserva o lugar; anos consecutivos partilham a definição.
+ * @param {string} id @param {'pt'|'en'} lang */
+export function medidaNaSemana(id, lang) {
+  const nome = nomeNaLista(id, lang);
+  return `${nome.linha}/${nome.qualificador ?? ''}`;
+}
+
+/** Os identificadores do grupo só se devolvem na última linha consecutiva.
+ * @param {string[]} ids @param {number} i @param {'pt'|'en'} lang */
+export function grupoQueFecha(ids, i, lang) {
+  const chave = medidaNaSemana(ids[i], lang);
+  if (i + 1 < ids.length && medidaNaSemana(ids[i + 1], lang) === chave) return [];
+  let inicio = i;
+  while (inicio > 0 && medidaNaSemana(ids[inicio - 1], lang) === chave) inicio--;
+  return ids.slice(inicio, i + 1);
 }

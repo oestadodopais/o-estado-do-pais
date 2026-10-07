@@ -1,0 +1,133 @@
+{
+  "brief": "design/observatorio/BRIEF-H4-o-menu-do-telefone-em-duas-linhas.md",
+  "guiao": "design/observatorio/medidas/BRIEF-H4.py",
+  "cabeca_lida": "207d7134",
+  "medidas": [
+    {
+      "nome": "portas_do_menu",
+      "valor": 6,
+      "comando": "git show 207d7134:src/lib/navegacao.mjs · as entradas de ROTAS_NAV",
+      "conhecido_positivo": {
+        "o_que": "a porta da União é uma das entradas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_do_rodape",
+      "valor": 8,
+      "comando": "git show 207d7134:src/lib/navegacao.mjs · as entradas de ROTAS_RODAPE",
+      "conhecido_positivo": {
+        "o_que": "a porta das explicações é uma das entradas do rodapé",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "largura_da_regra_do_telefone_px",
+      "valor": 430,
+      "comando": "git show 207d7134:src/styles/site.css · a largura do @media que aperta o .menu-cinco",
+      "conhecido_positivo": {
+        "o_que": "o bloco @media contém a regra do .menu-cinco",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "espaco_entre_portas_ate_430_px",
+      "valor": 6,
+      "comando": "git show 207d7134:src/styles/site.css · o gap do .menu-cinco dentro do @media do telefone",
+      "conhecido_positivo": {
+        "o_que": "o bloco @media contém a regra do .menu-cinco",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra_do_menu_ate_430_px",
+      "valor": 13,
+      "comando": "git show 207d7134:src/styles/site.css · o font-size do .menu-cinco a dentro do @media do telefone",
+      "conhecido_positivo": {
+        "o_que": "o bloco @media contém a regra do .menu-cinco",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "espaco_minimo_entre_portas_nas_outras_larguras",
+      "valor": 16,
+      "comando": "git show 207d7134:src/styles/site.css · o mínimo do clamp do gap do .menu-cinco",
+      "conhecido_positivo": {
+        "o_que": "a regra base do .menu-cinco usa clamp",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "letra_do_menu_nas_outras_larguras",
+      "valor": 15,
+      "comando": "git show 207d7134:src/styles/site.css · o font-size da regra base do .menu-cinco a",
+      "conhecido_positivo": {
+        "o_que": "a regra base do .menu-cinco a existe",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "largura_do_telefone_px",
+      "valor": 390,
+      "comando": "git show 207d7134:tests/acessibilidade/alvos.mjs · a primeira largura de LARGURAS",
+      "conhecido_positivo": {
+        "o_que": "a lista das larguras inclui 1280",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "largura_natural_das_seis_portas_pt_a_390_px",
+      "valor": 344,
+      "comando": "git show 207d7134:design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.json · «natural» da forma publicada em pt, arredondado",
+      "conhecido_positivo": {
+        "o_que": "a medida publicada em pt tem seis portas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "coluna_do_menu_a_390_px",
+      "valor": 354,
+      "comando": "git show 207d7134:design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.json · «coluna» da forma publicada em pt",
+      "conhecido_positivo": {
+        "o_que": "a medida publicada em pt tem seis portas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "largura_natural_das_sete_portas_pt_a_390_px",
+      "valor": 435,
+      "comando": "git show 207d7134:design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.json · «natural» da forma com a sétima porta em pt, arredondado",
+      "conhecido_positivo": {
+        "o_que": "a medida com a sétima porta em pt tem sete portas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "linhas_do_menu_com_sete_portas_pt_a_390_px",
+      "valor": 2,
+      "comando": "git show 207d7134:design/especime-v3/medicoes/ex1-2026-10-05/menu-a-390.json · «linhas» da forma com a sétima porta em pt",
+      "conhecido_positivo": {
+        "o_que": "a medida com a sétima porta em pt tem sete portas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "portas_exigidas_pela_celula_tm4",
+      "valor": 6,
+      "comando": "git show 207d7134:tests/inicio/tema-e-menu.mjs · o número da comparação «e.menu.portas !==»",
+      "conhecido_positivo": {
+        "o_que": "a célula escreve «TM4» na queixa das portas",
+        "encontrado": true
+      }
+    },
+    {
+      "nome": "lugares_declarados_na_politica_de_ia",
+      "valor": 4,
+      "comando": "git show 207d7134:src/data/politica-ia.mjs · os «rotulo» da secção «lugares»",
+      "conhecido_positivo": {
+        "o_que": "um dos lugares chama-se «A leitura»",
+        "encontrado": true
+      }
+    }
+  ]
+}

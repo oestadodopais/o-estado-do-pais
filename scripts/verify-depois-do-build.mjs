@@ -89,6 +89,7 @@
  *       node scripts/verify-depois-do-build.mjs --prova      (só as plantas)
  *       node scripts/verify-depois-do-build.mjs --a-seco     (diz o que correria)
  */
+import { inicioDoPasso, fimDoPasso, fechar } from './leituras/tempos.mjs';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -319,7 +320,7 @@ const FOLGA_DO_RELOGIO_MS = 2000;
  * chama. A saída de cada um guarda-se e escreve-se inteira quando ele acaba,
  * para o registo não ficar às fatias.
  */
-async function correPassos(passos, { raiz, paralelo, escreve, fase = 'grupo', t0 = Date.now() }) {
+async function correPassos(passos, { raiz, paralelo, escreve, fase = 'grupo', t0 = Date.now(), medir = false }) {
   const corridos = [];
   const fila = [...passos];
   const noCi = process.env.GITHUB_ACTIONS === 'true';
@@ -327,12 +328,13 @@ async function correPassos(passos, { raiz, paralelo, escreve, fase = 'grupo', t0
     while (fila.length > 0) {
       const passo = fila.shift();
       const inicio = Date.now();
+      const tempo = inicioDoPasso(passo, 'verify');
       escreve(`▶ ${passo} · começou aos ${((inicio - t0) / 1000).toFixed(1)} s${fase === 'depois' ? ', depois do grupo, sozinho' : ''}\n`);
       const registo = { passo, fase, codigo: /** @type {number|null} */ (null), segundos: 0, inicio_s: (inicio - t0) / 1000, fim_s: 0, saida: '' };
       corridos.push(registo);
       const partes = [];
       const codigo = await new Promise((resolve) => {
-        const filho = spawn('sh', ['-c', passo], { cwd: raiz, env: process.env, stdio: ['ignore', 'pipe', 'pipe'] });
+        const filho = spawn('sh', ['-c', passo], { cwd: raiz, env: { ...process.env, ...(medir ? { OEDP_TEMPOS_PASSO: '1', OEDP_CADEIA: 'verify' } : {}) }, stdio: ['ignore', 'pipe', 'pipe'] });
         filho.stdout.on('data', (d) => partes.push(d));
         filho.stderr.on('data', (d) => partes.push(d));
         filho.on('error', (e) => {
@@ -341,6 +343,7 @@ async function correPassos(passos, { raiz, paralelo, escreve, fase = 'grupo', t0
         });
         filho.on('close', (c, sinal) => resolve(c ?? (sinal ? 128 : 1)));
       });
+      if (medir) fimDoPasso(tempo, codigo);
       registo.codigo = codigo;
       registo.segundos = (Date.now() - inicio) / 1000;
       registo.fim_s = (Date.now() - t0) / 1000;
@@ -374,8 +377,8 @@ export async function correr(o) {
   const retrato = () => ({ dist: estadoDaPasta(o.dist), arvore: listaDaArvore === null ? null : estadoDaArvore(o.raiz, listaDaArvore) });
   const antes = retrato();
   const t0 = Date.now();
-  const doGrupo = await correPassos(grupo, { raiz: o.raiz, paralelo: o.paralelo, escreve, t0 });
-  const depoisDoGrupo = await correPassos(sozinhas, { raiz: o.raiz, paralelo: 1, escreve, fase: 'depois', t0 });
+  const doGrupo = await correPassos(grupo, { raiz: o.raiz, paralelo: o.paralelo, escreve, t0, medir: o.medir });
+  const depoisDoGrupo = await correPassos(sozinhas, { raiz: o.raiz, paralelo: 1, escreve, fase: 'depois', t0, medir: o.medir });
   const corridos = [...doGrupo, ...depoisDoGrupo];
   const depois = retrato();
   const U = celulaDaUniao(o.scripts, corridos);
@@ -434,35 +437,35 @@ export async function plantas() {
   try {
     prepara();
     let r = await corre(limpa);
-    casos.push({ planta: 'a cadeia limpa passa, e o que o build já correu não corre outra vez', mordeu: r.ok && existe('v1') && existe('v2') && !existe('b1') && !existe('b2') && r.celulas.U.cobertos_pelo_build === 2 && r.celulas.U.corridos_aqui === 2 });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'a cadeia limpa passa, e o que o build já correu não corre outra vez', mordeu: r.ok && existe('v1') && existe('v2') && !existe('b1') && !existe('b2') && r.celulas.U.cobertos_pelo_build === 2 && r.celulas.U.corridos_aqui === 2 });
 
     prepara();
     r = await corre({ build, verify: `${limpa.verify} && ${marca('nova')}` });
-    casos.push({ planta: 'uma conferência nova só no verify corre sozinha', mordeu: r.ok && existe('nova') && r.celulas.U.corridos_aqui === 3 });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência nova só no verify corre sozinha', mordeu: r.ok && existe('nova') && r.celulas.U.corridos_aqui === 3 });
 
     prepara();
     r = await corre(limpa, { escolher: (s) => restantesDoVerify(s).filter((p) => !p.includes("'v2'")) });
-    casos.push({ planta: 'uma conferência tirada da escolha fecha a célula U', mordeu: !r.ok && !existe('v2') && r.celulas.U.falhas.some((f) => f.includes("'v2'") && f.includes('não correu aqui')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência tirada da escolha fecha a célula U', mordeu: !r.ok && !existe('v2') && r.celulas.U.falhas.some((f) => f.includes("'v2'") && f.includes('não correu aqui')) });
 
     prepara();
     r = await corre({ build, verify: `${limpa.verify} && ${node} -e "process.exit(3)"` });
-    casos.push({ planta: 'uma conferência vermelha fecha a corrida, e as outras acabam', mordeu: !r.ok && r.vermelhos.length === 1 && r.corridos.find((c) => c.codigo !== 0)?.codigo === 3 && existe('v1') && existe('v2') && r.celulas.U.falhas.some((f) => f.includes('não saiu com 0')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência vermelha fecha a corrida, e as outras acabam', mordeu: !r.ok && r.vermelhos.length === 1 && r.corridos.find((c) => c.codigo !== 0)?.codigo === 3 && existe('v1') && existe('v2') && r.celulas.U.falhas.some((f) => f.includes('não saiu com 0')) });
 
     prepara();
     r = await corre({ build, verify: `${limpa.verify} && ${node} -e "require('fs').appendFileSync('dist/x/index.html','!')"` });
-    casos.push({ planta: 'uma conferência que escreve no dist/ fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.includes('x/index.html') && f.includes('mudou')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência que escreve no dist/ fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.includes('x/index.html') && f.includes('mudou')) });
 
     prepara('d'.repeat(40));
     r = await corre(limpa);
-    casos.push({ planta: 'um dist/ de outra cabeça fecha a célula C', mordeu: !r.ok && r.celulas.C.falhas.some((f) => f.includes('version.json')) && r.celulas.C.falhas.some((f) => f.includes('prova.json')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'um dist/ de outra cabeça fecha a célula C', mordeu: !r.ok && r.celulas.C.falhas.some((f) => f.includes('version.json')) && r.celulas.C.falhas.some((f) => f.includes('prova.json')) });
 
     prepara();
     r = await corre({ build, verify: limpa.verify.replace(/ && /, ' &&  && ') });
-    casos.push({ planta: 'um passo vazio na cadeia não passa despercebido à contagem', mordeu: !r.ok && r.celulas.U.falhas.some((f) => f.includes('passos pelos &&')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'um passo vazio na cadeia não passa despercebido à contagem', mordeu: !r.ok && r.celulas.U.falhas.some((f) => f.includes('passos pelos &&')) });
 
     prepara();
     r = await corre({ build, verify: `${limpa.verify} && ${escreveERepoe('dist/x/index.html')}` });
-    casos.push({ planta: 'uma conferência que escreve no dist/ e repõe os bytes fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.includes('dist/x/index.html') && f.includes('foi escrito')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência que escreve no dist/ e repõe os bytes fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.includes('dist/x/index.html') && f.includes('foi escrito')) });
 
     prepara();
     /* H2, I194: os && da redação anterior eram separadores de CONFERÊNCIAS.
@@ -494,7 +497,7 @@ export async function plantas() {
 
     prepara();
     r = await corre({ build, verify: `${limpa.verify} && ${escreveERepoe('fonte.txt')}` });
-    casos.push({ planta: 'uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.startsWith('D: fonte.txt') && f.includes('foi escrito')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência que escreve um ficheiro seguido da árvore e o repõe fecha a célula D', mordeu: !r.ok && r.celulas.D.falhas.some((f) => f.startsWith('D: fonte.txt') && f.includes('foi escrito')) });
 
     prepara();
     {
@@ -502,7 +505,7 @@ export async function plantas() {
       fs.utimesSync(path.join(dist, 'cadeia.json'), velho, velho);
     }
     r = await corre(limpa);
-    casos.push({ planta: 'um cadeia.json de outra construção fecha a célula C', mordeu: !r.ok && r.celulas.C.falhas.some((f) => f.includes('cadeia.json') && f.includes('antes do carimbo')) && !r.celulas.C.falhas.some((f) => f.includes('prova.json')) });
+    casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'um cadeia.json de outra construção fecha a célula C', mordeu: !r.ok && r.celulas.C.falhas.some((f) => f.includes('cadeia.json') && f.includes('antes do carimbo')) && !r.celulas.C.falhas.some((f) => f.includes('prova.json')) });
 
     prepara();
     {
@@ -511,7 +514,7 @@ export async function plantas() {
       r = await corre(comFeixe, { depoisDoGrupo: [passoDoFeixe] });
       const feixe = r.corridos.find((c) => c.passo === passoDoFeixe);
       const fimDoGrupo = Math.max(...r.corridos.filter((c) => c.fase === 'grupo').map((c) => c.fim_s));
-      casos.push({ planta: 'uma conferência que escreve na árvore corre sozinha, depois do grupo', mordeu: r.ok && existe('feixe') && feixe?.fase === 'depois' && feixe.inicio_s >= fimDoGrupo });
+      casos.push({ falhas: Object.values(r.celulas).flatMap(c => c?.falhas ?? []), planta: 'uma conferência que escreve na árvore corre sozinha, depois do grupo', mordeu: r.ok && existe('feixe') && feixe?.fase === 'depois' && feixe.inicio_s >= fimDoGrupo });
     }
   } finally {
     fs.rmSync(base, { recursive: true, force: true });
@@ -562,7 +565,10 @@ async function principal() {
     cabeca = null;
   }
   console.log(`  ${paralelo} processo(s) lado a lado · cabeça ${cabeca ?? '(não lida)'}\n`);
-  const r = await correr({ raiz: RAIZ, scripts, dist: path.join(RAIZ, 'dist'), cabeca, paralelo });
+  const tempoVerify = inicioDoPasso('cadeia:verify', 'verify');
+  const r = await correr({ medir: true, raiz: RAIZ, scripts, dist: path.join(RAIZ, 'dist'), cabeca, paralelo });
+  fimDoPasso(tempoVerify, r.ok ? 0 : 1);
+  if (process.env.OEDP_TEMPOS_DIR) fechar(process.env.OEDP_TEMPOS_DIR);
   const segundos = (Date.now() - t0) / 1000;
 
   console.log('\n  O VERIFY DEPOIS DO BUILD');
