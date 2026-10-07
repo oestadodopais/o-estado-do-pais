@@ -3052,7 +3052,7 @@ function campoDaLinha(claim, campo, lang) {
          daquela linha naquela edição, e a tabela de tradução é prosa da casa,
          conferida contra o livro-razão por `scripts/check-lingua.mjs` — que é
          quem obriga toda a unidade do livro-razão a ter entrada ou marca. */
-      return unidadeDaLinha(claim.unit, lang).texto;
+      return unidadeDaLinha(claim.unit, lang, claim.value).texto;
     case 'derivation':
       return derivacaoDaLinha(claim, lang);
     case 'source_flag_note':
@@ -8941,7 +8941,7 @@ for (const [nomePng, registo] of REGISTOS_DOS_CARTOES) {
       }
       const desenhado =
         v.campo === 'unit'
-          ? unidadeDaLinha(claim.unit, registo.edicao).texto
+          ? unidadeDaLinha(claim.unit, registo.edicao, claim.value).texto
           : String(doDisco);
       if (formaDoValor(desenhado) !== formaDoValor(String(v.texto))) {
         errC(

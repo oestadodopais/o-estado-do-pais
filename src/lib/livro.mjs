@@ -74,7 +74,7 @@ export function valorComUnidade(claim, lang = null) {
      unidade em todos os cartões») a forma da casa é o espaço, e o título, a descrição e o cartão de partilha de uma
      página de linha passam a escrevê-la como o cartão («6,1 %», «89,2 % do PIB»). Sem língua, a unidade continua a
      ser a cadeia do livro-razão, como a nota acima diz. */
-  const unidade = lang === null ? String(claim.unit ?? '') : unidadeDaLinha(claim.unit, lang).texto;
+  const unidade = lang === null ? String(claim.unit ?? '') : unidadeDaLinha(claim.unit, lang, claim.value).texto;
   if (!unidade) return String(claim.value);
   return `${claim.value} ${unidade}`;
 }
