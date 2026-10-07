@@ -16,7 +16,7 @@
 - **O achado 16.** As duas conferências voltam a ter a contagem esperada escrita (o número de linhas do JD1 e o número de séries), e o comentário da L1 diz o que a medida compara.
 - **O achado 17.** A entrada do registo das leituras do R4 de 05.10.2026 (as séries) repõe-se, e o filtro do compositor deixa de apagar entradas da mesma data.
 - **O achado 18.** O relatório diz o custo da construção (a linha «tokens used» do registo do lançador: 1 581 631 para a primeira passagem) e mostra a corrida das conferências VS1 a VS7 da exportação da série, com o comando e a saída.
-- **O achado 19.** Os registos e a tranca commitados perdem a disposição das pastas da máquina: o limpador substitui a raiz da worktree por `<worktree>` e a pasta do sítio por `<sitio>` antes de qualquer commit; nenhum ficheiro do ramo pode conter «Instruments/» nem «.claude/worktrees/». A regra 9 é esta, e a conferência da corrida portão passa a recusar esses dois pedaços (uma mudança pequena em `scripts/`, com a sua planta).
+- **O achado 19.** Os registos e a tranca commitados perdem a disposição das pastas da máquina: o limpador substitui a raiz da worktree por `<worktree>` e a pasta do sítio por `<sitio>` antes de qualquer commit; nenhum ficheiro do ramo pode conter «<pasta-dos-projetos>/» nem «<pasta-das-worktrees>/». A regra 9 é esta, e a conferência da corrida portão passa a recusar esses dois pedaços (uma mudança pequena em `scripts/`, com a sua planta).
 - **A JD1-6** (a entrada não atómica da tranca comum) fica para o M-B.
 
 ## O que fazes

@@ -199,7 +199,7 @@ em 441 px com `tabular-nums`, contra 284,4 e 448,9 sem a feature.
 
 ## 6 · O motor, e o que lá não foi tocado
 
-Três corridas, do `~/Instruments/ResearchHub` em `master` `1869d48`, e mais
+Três corridas, do `<motor>` em `master` `1869d48`, e mais
 nenhum comando:
 
 ```

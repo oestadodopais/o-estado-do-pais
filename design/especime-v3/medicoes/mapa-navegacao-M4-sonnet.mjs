@@ -18,7 +18,7 @@ import net from 'node:net';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const REPO = '/Users/UTILIZADOR/Instruments/OEstadoDoPais';
+const REPO = process.cwd();
 const SCRATCH = '/private/tmp/claude-501/-Users-UTILIZADOR-Instruments-OEstadoDoPais/96fffa41-d97f-4a27-9708-e0326fe38d18/scratchpad';
 const DIST_DEPOIS = path.join(SCRATCH, 'dist-mapa-depois');
 const DIST_ANTES = path.join(SCRATCH, 'dist-antes-mapa');

@@ -8,7 +8,7 @@ Um leitor comum abre a página no telemóvel e, nos primeiros dois ecrãs, perce
 
 ## A identidade (fechada, não se reinventa)
 
-Usa as folhas de estilo do sítio como base: as de `~/Instruments/OEstadoDoPais/.claude/worktrees/c1-2026-09-28/design/especime-v3/medicoes/c1-2026-09-28/paginas-depois/_astro/` (e, se precisares dos tipos, os ficheiros de letra em `~/Instruments/OEstadoDoPais/.claude/worktrees/c1-2026-09-28/dist/`; copia o que usares para esta pasta; lê as variáveis de cor, os tipos Spectral e Bitter e os espaçamentos) e a página congelada `index.html` da mesma pasta como referência do cabeçalho, do menu e do rodapé. A cor só onde há valor de referência publicado (a dívida pública tem o de 60 %; os preços das casas o de 9 %); o resto em preto, cinzentos e a cor de texto do sítio. Sem travessões no texto.
+Usa as folhas de estilo do sítio como base: as de `<worktree>/design/especime-v3/medicoes/c1-2026-09-28/paginas-depois/_astro/` (e, se precisares dos tipos, os ficheiros de letra em `<worktree>/dist/`; copia o que usares para esta pasta; lê as variáveis de cor, os tipos Spectral e Bitter e os espaçamentos) e a página congelada `index.html` da mesma pasta como referência do cabeçalho, do menu e do rodapé. A cor só onde há valor de referência publicado (a dívida pública tem o de 60 %; os preços das casas o de 9 %); o resto em preto, cinzentos e a cor de texto do sítio. Sem travessões no texto.
 
 ## Os cinco blocos, por esta ordem, com as palavras e os números exatos
 
@@ -46,7 +46,7 @@ As entradas por pergunta da vida, como cinco blocos pequenos com uma linha cada 
 ## O que entregas
 
 - `index.html` (e as folhas de estilo que precisares) nesta pasta, que abra sozinho no navegador, sem guiões de fora;
-- as capturas: a página inteira a 390 px e a 1 280 px, e o primeiro ecrã a 390 px (390 × 844), em PNG, feitas com o Playwright que existe em `~/Instruments/OEstadoDoPais/.claude/worktrees/c1-2026-09-28/node_modules` (um guião `captar.mjs` nesta pasta);
+- as capturas: a página inteira a 390 px e a 1 280 px, e o primeiro ecrã a 390 px (390 × 844), em PNG, feitas com o Playwright que existe em `<worktree>/node_modules` (um guião `captar.mjs` nesta pasta);
 - `LEIA-ME.md` com as decisões de desenho que tomaste, o que puseste em cada largura e o que não conseguiste;
 - a verificação: um guião que confirma que cada número da página é um dos da lista acima, com o `data-linha` certo, e que não há outros números além dos anos e dos meses.
 

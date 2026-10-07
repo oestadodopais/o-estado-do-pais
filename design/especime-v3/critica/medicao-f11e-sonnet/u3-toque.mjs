@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import { abrePagina, BASE, pontosEmEcraNoNavegador } from './lib.mjs';
 
-const RAIZ = '/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos';
+const RAIZ = process.cwd();
 const pais = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/pais.json`, 'utf8'));
 const evora = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/distritos/evora.json`, 'utf8'));
 

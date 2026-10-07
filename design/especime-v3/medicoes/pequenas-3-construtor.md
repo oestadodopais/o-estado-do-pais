@@ -95,7 +95,7 @@ de ser verdade.
 
 ### O lado do motor, atravessado
 
-Corrido a partir de `~/Instruments/ResearchHub`, e foi o único comando que corri
+Corrido a partir de `<motor>`, e foi o único comando que corri
 lá:
 
 ```

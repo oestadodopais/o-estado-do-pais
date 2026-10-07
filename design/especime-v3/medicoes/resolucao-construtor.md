@@ -248,7 +248,7 @@ O caminho que fecharia isto sozinho é a especificação entrar na cópia versio
 
 ## 8 · Os ficheiros
 
-**Motor** (`~/Instruments/ResearchHub-worktrees/resolucao-2026-09-02`, ramo `resolucao-2026-09-02`):
+**Motor** (`<motor>-worktrees/resolucao-2026-09-02`, ramo `resolucao-2026-09-02`):
 
 | ficheiro | o quê |
 |---|---|
@@ -259,7 +259,7 @@ O caminho que fecharia isto sozinho é a especificação entrar na cópia versio
 | `core/eyetext_test.py` | os seis pontos de código cruzados, cinco espaços da classe, e a conta |
 | `publisher/cruzar_paridade.py` | **novo**, a travessia da especificação e o registo dos dois resumos |
 
-**Sítio** (`.claude/worktrees/resolucao-2026-09-02`, ramo `resolucao-2026-09-02`):
+**Sítio** (`<pasta-das-worktrees>/resolucao-2026-09-02`, ramo `resolucao-2026-09-02`):
 
 | ficheiro | o quê |
 |---|---|

@@ -264,7 +264,7 @@ para a linha, e é lá que a fonte está escrita com as suas três datas.
 *(as células e os comandos estão em `tests/inicio/leitura.mjs`, `porta.mjs`,
 `faixa.mjs`, `lista.mjs`, `matriz.mjs` e `numeros-novos.mjs`; o «antes» é a
 construção de `1dbd1cef`, medida numa árvore própria (`git worktree add
-.claude/worktrees/base-1dbd1cef --detach 1dbd1cef`), e o «depois» é a deste ramo)*
+<pasta-das-worktrees>/base-1dbd1cef --detach 1dbd1cef`), e o «depois» é a deste ramo)*
 
 | # | medida | antes | depois | régua |
 |---|---|---|---|---|
