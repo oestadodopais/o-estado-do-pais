@@ -1,6 +1,6 @@
 <!-- Rascunho da entrada do registo, escrito a 06.10.2026 pelo lugar de direção; entra em DECISIONS.md na aterragem do bloco, com os campos entre parênteses retos preenchidos. -->
 
-### 1.181 O RP4-n aterra: o que as frases «o que é» ainda diziam pelo nome do projeto foi selado na fonte ou saiu, e a marca «[a verificar]» só fica onde diz uma ausência num campo de proveniência de um recibo, contada e listada para o bloco dos recibos
+### 1.182 O RP4-n aterra: o que as frases «o que é» ainda diziam pelo nome do projeto foi selado na fonte ou saiu, e a marca «[a verificar]» só fica onde diz uma ausência num campo de proveniência de um recibo, contada e listada para o bloco dos recibos
 
 **Afecta:** nenhum
 
