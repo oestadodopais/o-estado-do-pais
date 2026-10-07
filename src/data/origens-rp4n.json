@@ -417,6 +417,31 @@
       "sha256": "be0c8f8228552a27e48de3cbd2ea3a994d9020d1f2385ef6103f69afd282964a"
     }
   },
+  "rp4n-agua-nao-faturada": {
+    "publicador": "Agência Portuguesa do Ambiente",
+    "documento": "Eficiência hídrica - setor urbano",
+    "url": "https://rea.apambiente.pt/content/efici%C3%AAncia-h%C3%ADdrica-setor-urbano",
+    "lido": "2026-10-07",
+    "lingua": "pt",
+    "excerto": "É expresso em percentagem de água entrada no sistema que não é faturada.",
+    "recibo": "content/13 Dominios/source/rp4n/agua-apa.pedido.json",
+    "extracao": {
+      "caminho": [
+        "html"
+      ],
+      "inicio": "É expresso em percentagem de água entrada",
+      "fim": "</p>\n<p> </p>\n<p align=\"center\"><strong>Água não faturada – valores de referência",
+      "formato": "html"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/13 Dominios/source/rp4n/agua-apa.html",
+      "campo": "html",
+      "hora": "2026-10-07T09:56:44Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "72f86b8db94b091a1fd13804593fa58c3e484e1a422cb96a284e08b2467415d6"
+    }
+  },
   "rp4n-combustiveis": {
     "publicador": "Eurostat",
     "documento": "Harmonised index of consumer prices (HICP) - ECOICOP ver.2 - indices and rates of change, monthly data",

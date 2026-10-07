@@ -167,7 +167,7 @@ function confereEntrada(e, ids, chaveDeAuditoria, nomesDaFamilia) {
       continue;
     }
     if (p.classe === 'ausencia') {
-      if (e.partes.length !== 1 || p.pt !== 'Não há excerto da fonte que permita explicar este número.' || p.en !== 'No source excerpt is available to explain this number.' || p.apoios || ids.some(id => linhas.get(id)?.excerpt !== '[a verificar]')) falha(`${onde}: a ausência não corresponde à falta do excerto`);
+      if (e.partes.length !== 1 || !ids.length || !ids.every(id => ['avisos-pt2030-abertos', 'avisos-pt2030-pessoas-singulares', 'ciclo-substituicao-condutas'].includes(id)) || p.pt !== (ids[0] === 'ciclo-substituicao-condutas' ? 'A fonte deste cálculo ainda não foi confirmada.' : 'Os avisos consultados não definem por palavras esta contagem.') || p.en !== (ids[0] === 'ciclo-substituicao-condutas' ? 'The source of this calculation has not yet been confirmed.' : 'The notices consulted do not define this count in words.') || p.apoios || ids.some(id => linhas.get(id)?.excerpt !== '[a verificar]')) falha(`${onde}: a ausência não corresponde à falta do excerto`);
       continue;
     }
     if (!p.apoios?.length) { falha(`${onde}: diz e não tem apoio`); continue; }

@@ -26,10 +26,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "agua-nao-faturada-portugal": {
     "frase": {
       "pt": [
-        "Não há excerto da fonte que permita explicar este número."
+        "É a parte da água que entra no sistema e não é faturada."
       ],
       "en": [
-        "No source excerpt is available to explain this number."
+        "It is the share of water entering the system that is not billed."
       ]
     }
   },
@@ -46,20 +46,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "avisos-pt2030-abertos": {
     "frase": {
       "pt": [
-        "Não há excerto da fonte que permita explicar este número."
+        "Os avisos consultados não definem por palavras esta contagem."
       ],
       "en": [
-        "No source excerpt is available to explain this number."
+        "The notices consulted do not define this count in words."
       ]
     }
   },
   "avisos-pt2030-pessoas-singulares": {
     "frase": {
       "pt": [
-        "Não há excerto da fonte que permita explicar este número."
+        "Os avisos consultados não definem por palavras esta contagem."
       ],
       "en": [
-        "No source excerpt is available to explain this number."
+        "The notices consulted do not define this count in words."
       ]
     }
   },
@@ -69,10 +69,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "ciclo-substituicao-condutas": {
     "frase": {
       "pt": [
-        "Não há excerto da fonte que permita explicar este número."
+        "A fonte deste cálculo ainda não foi confirmada."
       ],
       "en": [
-        "No source excerpt is available to explain this number."
+        "The source of this calculation has not yet been confirmed."
       ]
     }
   },
