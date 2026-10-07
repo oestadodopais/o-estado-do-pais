@@ -467,8 +467,7 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
   }
   const oQueE = el.querySelector('[data-o-que-e-parte="o-que-e"]');
   const comparacao = el.querySelector('[data-o-que-e-parte="comparacao"]');
-  /* R4-b: O MARCADOR «POR CONFIRMAR NA FONTE», onde a conta desta célula sobre a auditoria o põe e em mais lado nenhum:
-     um só, ao pé da frase, o marcador da casa com a porta da sua página; o texto da frase lê-se sem ele. */
+  /* RP4-n: a frase por confirmar e o marcador no recibo são recusados. */
   const marcas = cabeca.querySelectorAll('[data-por-confirmar-na-fonte]');
   if (porConfirmar.has(id)) falha('a frase por confirmar não pode ser publicada');
   if (marcas.length) falha('o recibo contém uma marca por confirmar (uma marca a mais)');
