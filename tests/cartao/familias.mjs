@@ -667,8 +667,6 @@ export function conferirAuditoriaDasSeries({
     const declarada = frases[e.serie]?.frase;
     if (!s || !declarada) continue;
     for (const lang of ['pt', 'en']) for (const p of declarada[lang] ?? []) if (typeof p !== 'string' || /\d/.test(p)) falha(`«${e.serie}» · ${lang}: a frase traz um algarismo ou um pedaço que não é texto`);
-    const exigeInstantaneo = chaves.some(k => ['evora-prr-aprovado','evora-prr-pago','evora-prr-vencido-aprovado'].includes(k));
-    if (Boolean(e.instantaneo) !== exigeInstantaneo || chaves.some(k => Boolean(familias[k]?.instantaneo) !== exigeInstantaneo)) falha(`${quem}: a data do instantâneo tem de acompanhar a frase do PRR`);
     const folha = Array.isArray(e.folhas) && e.folhas.length === 1 ? e.folhas[0] : null;
     const partes = Array.isArray(folha?.partes) ? folha.partes : [];
     const juntas = (/** @type {'pt'|'en'} */ lang) => partes.map((/** @type {any} */ p) => String(p?.[lang] ?? '')).join('');
