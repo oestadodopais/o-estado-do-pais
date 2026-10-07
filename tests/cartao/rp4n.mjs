@@ -160,3 +160,18 @@ export function conferirExcertoDaPensao(linha) {
   l.excerpt += '\n91.8%\n84.3%';
   morde('despejo dos eixos no excerto da pensão', conferirExcertoDaPensao(l), 'só o rótulo, o valor e a nota da fonte');
 }
+
+// RP4-n-e: nem uma paráfrase da ausência, nem uma unidade sem concordância.
+{
+ const a=structuredClone(auditoria); const e=a.familias.find(e=>e.chaves?.includes('avisos-pt2030-abertos'));
+ e.folhas[0].partes[0].pt='Os avisos consultados não definem por palavras esta contagem.';
+ const {FAMILIAS_DAS_LINHAS}=await import('../../src/data/o-que-e-das-familias.mjs');
+ const familias=structuredClone(FAMILIAS_DAS_LINHAS);
+ for(const k of e.chaves) familias[k].frase.pt=[e.folhas[0].partes[0].pt];
+ morde('paráfrase da ausência',conferirAuditoriaDasFamilias({auditoria:a,familias}).erros,'a ausência não corresponde');
+ const {unidadeDaLinha}=await import('../../src/i18n/unidades.mjs');
+ for(const [lang,um,dois] of [['pt','aviso','avisos'],['en','notice','notices']]) {
+  assert.equal(unidadeDaLinha('avisos',lang,'1').texto,um);
+  assert.equal(unidadeDaLinha('avisos',lang,'2').texto,dois);
+ }
+}

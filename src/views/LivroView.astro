@@ -286,10 +286,10 @@ const p = prova(lang);
                 <CampoDaLinha
                   id={c.id}
                   campo="unit"
-                  valor={unidadeDaLinha(c.unit, lang).texto}
+                  valor={unidadeDaLinha(c.unit, lang, c.value).texto}
                   lang={lang}
                   class="livro-item-unidade"
-                  lingua={unidadeDaLinha(c.unit, lang).lingua}
+                  lingua={unidadeDaLinha(c.unit, lang, c.value).lingua}
                 />
                 {c.reference_date !== null && c.reference_date !== undefined && (
                   <span class="livro-item-campo">

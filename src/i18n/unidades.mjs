@@ -54,6 +54,7 @@
  * raras, para que quem lê veja primeiro o que mais se rende.
  */
 export const UNIDADES = {
+  'avisos': 'notices',
   // OE1: tradução de dicionário da unidade monetária.
   'milhões de euros': 'million euros',
   // OE1-d: factos de dicionário, incluindo o período acumulado da linha.
@@ -242,8 +243,10 @@ export const UNIDADES_EM_PORTUGUES = {
  *
  * @param {unknown} unit
  * @param {string} [lang]
+ * @param {unknown} [value]
  */
-export function unidadeDaLinha(unit, lang = 'pt') {
+export function unidadeDaLinha(unit, lang = 'pt', value = null) {
+  if (unit === 'avisos') return { texto: lang === 'en' ? (String(value) === '1' ? 'notice' : 'notices') : (String(value) === '1' ? 'aviso' : 'avisos'), lingua: lang === 'en' ? null : 'pt-PT' };
   const cru = unit === null || unit === undefined ? '' : String(unit);
   if (lang !== 'en') return { texto: dinheiroComPalavra(cru), lingua: 'pt-PT' };
   const traduzida = Object.prototype.hasOwnProperty.call(UNIDADES, cru)
