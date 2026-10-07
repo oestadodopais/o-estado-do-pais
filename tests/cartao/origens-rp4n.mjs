@@ -8,6 +8,10 @@ import {isDeepStrictEqual} from 'node:util';
 
 const caminho = new URL('../../src/data/origens-rp4n.json', import.meta.url);
 const registo = new URL('../../ledger/cruzamentos/origens-rp4n.json', import.meta.url);
+const chavesExportadas = new Set(Object.keys(JSON.parse(fs.readFileSync(caminho, 'utf8'))));
+
+/** A exigência do selo vem da exportação, não de um campo que se possa apagar. @param {string} chave */
+export const eOrigemRP4N = (chave) => chavesExportadas.has(chave);
 
 export function conferirOrigemRP4N(chave, origem) {
   const bytes = fs.readFileSync(caminho);
