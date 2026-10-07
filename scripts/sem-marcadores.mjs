@@ -28,7 +28,7 @@ const valor = (o, campo) => campo.split('.').reduce((v,k) => v?.[k], o);
 function recusado(n, rota) {
   if (perto(n, '[data-o-que-e-da-serie], [data-serie-o-que-conta]')) return 'o-que-e-serie';
   const frase = perto(n, '[data-o-que-e]');
-  if (frase) return frase.getAttribute('data-o-que-e-tipo') === 'familia' || frase.hasAttribute('data-o-que-e-familia') ? 'o-que-e-familia' : 'o-que-e-linha';
+  if (frase) return ['familia','concelho'].includes(frase.getAttribute('data-o-que-e-tipo')) ? 'o-que-e-familia' : 'o-que-e-linha';
   if (perto(n, '[data-leitura-parte="o-que-e"], [data-definicao-da-medida], [data-definicao]')) return 'o-que-e-linha';
   if (perto(n, '[data-por-confirmar-na-fonte]')) return 'o-que-e-linha';
   if (perto(n, '[data-nonledger="titulo-de-estudo"], .marcador-de-titulo')) return 'titulo-estudo';
