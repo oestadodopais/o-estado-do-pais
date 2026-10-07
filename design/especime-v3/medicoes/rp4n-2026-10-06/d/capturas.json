@@ -1,0 +1,1413 @@
+{
+  "versao": {
+    "commit": "b72eac200831e8e5904ac0c1567b56eec1fac130",
+    "ref": "rp4n-2026-10-07",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-07T11:23:28.420Z"
+  },
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/orcamento-pt-390.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "32070f738bcc0b902321b28dcd7f9d835d599ac5b7e9ac8b1c54a01acaef7426"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/orcamento-pt-768.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "438471ae0230c99152b60f4a0bc21f5373c8b5cf7a1aa15cf6ffa592173af2bc"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/orcamento-pt-1024.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "180f96d93ee1c9bf3ecc0213d7da71d3b5c0c65d77691340e0cf7435a4dd0711"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/orcamento-pt-1280.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "88e244f2d8d853c64797a4df0e2d285585c4f186906e8abbc1cf6bc2620f5bd9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/orcamento-pt-1600.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "5a719c69d799801a05d08751f05f1e363c30d6bb99716e57245c2da4f5fb8dee"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/orcamento-en-390.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "bdab2f0b96db67ad40d2e67c0fc985303c32107c01ae32ffdb7413c94944ab13"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/orcamento-en-768.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "3566714df4040434f4a778bfe7044ce822a60007ebad2f9c9293d5a3e04a4f7c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/orcamento-en-1024.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "1e6a2aaf2e852cf2d279e31a15445ec8c3912c815263add106985e6f328e2601"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/orcamento-en-1280.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "d70f9395d60bebf47b23caed582ea5a5675c325e3fa06b21f1d407f129c2fc0a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/orcamento-en-1600.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "126c1ac4f34a99bb910b56124d96840667e3b9699c8d01cd238ca00fe1823e16"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/execucao-pt-390.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "351142be114e83b1f4d5a3b828e7b966faf81dfbbd2f273dbe88a5b37c8389b8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/execucao-pt-768.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "e9320caf0daa4e74d7a163dca1918b31950058502c449bec043827d0be276fbd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/execucao-pt-1024.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "3442fc52b7bd58d7d6c49a429d078234e8451379288fb43e064dc3ad65884b9f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/execucao-pt-1280.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "960dc9d00ffe772736030bafdff619a78cb85577b4221f93573350167dcf1718"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/execucao-pt-1600.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços.",
+      "marcadores": 0,
+      "sha256": "bd3deae3cc5b07b6c7961883cb23de2c5dcc5573c11abc589a8ea55366810add"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/execucao-en-390.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "12506ba377c575007f8d2e47a1d66b85af138a801fa1e67e4ebd254cf4755977"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/execucao-en-768.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "4788258179f78ee64478bf14794b03eb1585903aeb856b12c34f6b208dcd6cbd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/execucao-en-1024.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "c6804a3cdc85b4fd265e791ea93b5a88d2ce13cdec9b0037d54427865c8c0432"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/execucao-en-1280.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "8592525f5aceeeab75a64155d2daa5b6e3331dd56bf9e7bd0fce0ea3c530162e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/execucao-en-1600.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services.",
+      "marcadores": 0,
+      "sha256": "400b35a9f1e4816339ec56e3518f852ef8b6a64ebadeb24dd0a393039ad08e38"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/evora-pt-390.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo.",
+      "marcadores": 0,
+      "sha256": "ac48a06a005225517cfb52e929ba0dd591869de7d1c4f4dc3443b1bc6d37966f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/evora-pt-768.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo.",
+      "marcadores": 0,
+      "sha256": "e280533b461e033bfa7427e995e4150b79e7968fb7fc5a25b50cbc28cf51dea3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/evora-pt-1024.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo.",
+      "marcadores": 0,
+      "sha256": "e0c8f0fa0e21444ec1dbbda783d1d2de824ad1a6ba59c2fd5a5833739c321a12"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/evora-pt-1280.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo.",
+      "marcadores": 0,
+      "sha256": "523e92f8bf7280094ea310dcad22f884a0c0d89ccbae840aa4ef405288fcb0fb"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/evora-pt-1600.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo.",
+      "marcadores": 0,
+      "sha256": "b6249e31c3b581ebd23fe023f895b2fc6af1fc33997c46769975e9de3a9fc39c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/evora-en-390.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive.",
+      "marcadores": 0,
+      "sha256": "f6f548ad9a49ada98dd77d716a9b04dc64fc43ca3a74602b928d57ff73f20d9f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/evora-en-768.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive.",
+      "marcadores": 0,
+      "sha256": "8e95713e7369f8cc900c8c35b1c268e03002b82c77e6f2559dae2f591f118b87"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/evora-en-1024.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive.",
+      "marcadores": 0,
+      "sha256": "cfcf8221783b29159c52c11716588b8a48e0fdf716f1413fd4de0af370e06684"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/evora-en-1280.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive.",
+      "marcadores": 0,
+      "sha256": "9e7653f8fab5f28ab399b08742f52a12eab77c75fccad13589d483a1dddce1e4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/evora-en-1600.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive.",
+      "marcadores": 0,
+      "sha256": "dea4b50882b8a7642369b09b60e6dd1d18c62f10a7867d6b1a04dbdae31397fd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/madeira-pt-390.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).",
+      "marcadores": 0,
+      "sha256": "503d299bb0e49f09d816a14898eedaaf541d8fa707ffa65bc4b52b563a33fa43"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/madeira-pt-768.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).",
+      "marcadores": 0,
+      "sha256": "5d84e9f6bf88be11cb95a715f423cb069f6d9b3d2fad7441e0a4db175406ad1f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/madeira-pt-1024.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).",
+      "marcadores": 0,
+      "sha256": "04717ccc76d0dda002d0b033209e9948a54fa6fbce2f0b11c19b873801b06c20"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/madeira-pt-1280.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).",
+      "marcadores": 0,
+      "sha256": "c1e75158cfd55aa738b8570bbd104e5fda12129384483e9be31a8dc57754dea1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/madeira-pt-1600.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).",
+      "marcadores": 0,
+      "sha256": "73ca558634a2a83413a158d640ae41a1af279c7c191aa0a8a7359d49dc7a061c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/madeira-en-390.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment).",
+      "marcadores": 0,
+      "sha256": "994567dfc6cbbe418a850713a19a3fd55f47d6870d9057e2905dd11cca5935cc"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/madeira-en-768.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment).",
+      "marcadores": 0,
+      "sha256": "347f199ea51a33cedaacae917547bcf627ac71bfd525dc9c6be927820fb4b3e0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/madeira-en-1024.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment).",
+      "marcadores": 0,
+      "sha256": "cea625571d68130e4fd7116c4430ce4c4f103e8eee46934e0e353810ac372862"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/madeira-en-1280.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment).",
+      "marcadores": 0,
+      "sha256": "94bb22f401e43dd1ed95d05ae973b743ae9aceb80dce6b00bae2f1fd1ee9bff1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/madeira-en-1600.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment).",
+      "marcadores": 0,
+      "sha256": "d600604343db0de5486dda23d1c114bdbe5fe050e2afe7492fe658cc363b2c16"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/pensao-pt-390.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica.",
+      "marcadores": 0,
+      "sha256": "44fc2f39a66d89838fa3a71ac084ba2c2300fc8523ee6e14c4e778e833025775"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/pensao-pt-768.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica.",
+      "marcadores": 0,
+      "sha256": "e4b239261f46b4e289ffa620a04ded8c0b43619e796ed0cf4847d52818b89b63"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/pensao-pt-1024.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica.",
+      "marcadores": 0,
+      "sha256": "22b463396727d1661626200379ded28e44aa0bc9a8ff9b14cc1f7783707c1489"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/pensao-pt-1280.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica.",
+      "marcadores": 0,
+      "sha256": "feb1c43d376ad0ffce335ed778cce7074352397c61e8f45f70c276d3bc7f3a7f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/pensao-pt-1600.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica.",
+      "marcadores": 0,
+      "sha256": "ae098d63ba7a4c90bae56cfd719053032ec90ca8d2d1b67743ced7ee0a4c0a74"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/pensao-en-390.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies.",
+      "marcadores": 0,
+      "sha256": "0ad537c2ac62cabc9cbe89b64ab4a7172137725a5d81f74ef42849634c7db6ed"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/pensao-en-768.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies.",
+      "marcadores": 0,
+      "sha256": "4efee3cc8c68cb4911f8639d6e63ef71ba2088b9baa9ab9ce1c6e45b6ea965b5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/pensao-en-1024.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies.",
+      "marcadores": 0,
+      "sha256": "003e737f524a4fa0499d205b9e1bff747657bc81ce19c9fc687cbb9ae33887c8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/pensao-en-1280.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies.",
+      "marcadores": 0,
+      "sha256": "4234c9e9c57a08a1492c82789bf889a6f83b3ccc87e381ba296038fb9d8194dc"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/pensao-en-1600.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies.",
+      "marcadores": 0,
+      "sha256": "ce69dcecb61dcd8ae7cee3e2a3fc2001e9b3b37775af9a57fbc2b3003c7e8285"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/eurostat-pt-390.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+      "marcadores": 0,
+      "sha256": "385c490500b5c21d387268257e1fcb154d11765432385e975dcc3f0cb1578caa"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/eurostat-pt-768.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+      "marcadores": 0,
+      "sha256": "d531927799d5f3214a485f606140b12d25a2bc583707d138569b90c5fa1cbb31"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/eurostat-pt-1024.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+      "marcadores": 0,
+      "sha256": "016fcad25785f4efbfb76cc4eff9e592c2556bbe468959c5fb27beca18048ce3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/eurostat-pt-1280.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+      "marcadores": 0,
+      "sha256": "e4734b08dc531d573144c46e762c6594bfe684703d0826fab6d9023ce38a8147"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/eurostat-pt-1600.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor).",
+      "marcadores": 0,
+      "sha256": "e2d9f9fc28ee1663e96d8f375c948105e3d0b4efb6acd9c9b0c8e42c060d40ab"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/eurostat-en-390.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+      "marcadores": 0,
+      "sha256": "77e7e33d62eb3bf3ce04d04b8b140c721b6aafedf7199d0408bb9bd68250c60e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/eurostat-en-768.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+      "marcadores": 0,
+      "sha256": "c72710e3b9917bf0dea0c818badce751a15fd8ed2aa474df3cf9820f11dc12a6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/eurostat-en-1024.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+      "marcadores": 0,
+      "sha256": "90630b694ecef7d5489c86a6315873d140b904d662f2ebdf91e03f52533bb2bb"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/eurostat-en-1280.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+      "marcadores": 0,
+      "sha256": "b67b7f678a8bd78abf6259e4b40973abcfcf1889eef345ceb974de5ec01658f5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/eurostat-en-1600.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices).",
+      "marcadores": 0,
+      "sha256": "f1ff6f3cb00acbbe28390e5067a1805914f598629c49898ecc5567f583d9c8cf"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/corte-pt-390.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a redução da pensão calculada para a reforma antecipada no caso geral, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social.",
+      "marcadores": 0,
+      "sha256": "c65f4bff932a301d8fd3ef3dce3d8ccc63f7541e721d666e5a6d67ea25474699"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/corte-pt-768.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ a redução da pensão calculada para a reforma antecipada no caso geral, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social.",
+      "marcadores": 0,
+      "sha256": "a669ddaec9c0c6a88edd28c80041397543077f50604aa681c25d9408580af299"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/corte-pt-1024.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ a redução da pensão calculada para a reforma antecipada no caso geral, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social.",
+      "marcadores": 0,
+      "sha256": "0d906c05bc156c13edc9a4558d94873583f105aaaf5ed4ba47e82e213e146063"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/corte-pt-1280.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ a redução da pensão calculada para a reforma antecipada no caso geral, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social.",
+      "marcadores": 0,
+      "sha256": "63d9e8d52deb6215db2c1ead93bc81959535c0720f9bd9977f6a1255353ad885"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/corte-pt-1600.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ a redução da pensão calculada para a reforma antecipada no caso geral, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social.",
+      "marcadores": 0,
+      "sha256": "d9d408b043f53fa923263a038138beb00d9fee7183282382d66866bb87d3e56c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/corte-en-390.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the pension reduction calculated for early retirement in the general case, counting the contributions no longer paid and the rights that are added, from the calculations of the final report on social security reform.",
+      "marcadores": 0,
+      "sha256": "ed1e5f431e4a8dd27d539e72a1bb946dd4be3d8b6af96cf78b6ffd88c73bd810"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/corte-en-768.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is the pension reduction calculated for early retirement in the general case, counting the contributions no longer paid and the rights that are added, from the calculations of the final report on social security reform.",
+      "marcadores": 0,
+      "sha256": "7f18d4429a31071656dce1b8adff6e34bed2406933ec6406a5b38cc3be65c832"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/corte-en-1024.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is the pension reduction calculated for early retirement in the general case, counting the contributions no longer paid and the rights that are added, from the calculations of the final report on social security reform.",
+      "marcadores": 0,
+      "sha256": "1590f5a4547d18e7cd7eda9dcb82883ab3447160509f272041010fdd5e4f7a74"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/corte-en-1280.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the pension reduction calculated for early retirement in the general case, counting the contributions no longer paid and the rights that are added, from the calculations of the final report on social security reform.",
+      "marcadores": 0,
+      "sha256": "395d097c559cd43f77feb251134cc85760ef1a4ffc1470c7e44a62c297a82116"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/corte-en-1600.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is the pension reduction calculated for early retirement in the general case, counting the contributions no longer paid and the rights that are added, from the calculations of the final report on social security reform.",
+      "marcadores": 0,
+      "sha256": "e9ccc48d2b91cce9dcda483c5d1b0ad8bf632dde32d9acbf2bee7190f3cef103"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/agua-pt-390.png",
+      "rota": "/livro-razao/agua-nao-faturada-portugal-2024/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a parte da água que entra no sistema e não é faturada.",
+      "marcadores": 0,
+      "sha256": "a339fd50881861f1cf5bdbbaf6097be5ffdc72f833ab0050624e412b16e6015e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/agua-pt-768.png",
+      "rota": "/livro-razao/agua-nao-faturada-portugal-2024/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ a parte da água que entra no sistema e não é faturada.",
+      "marcadores": 0,
+      "sha256": "1d4cd1329b31f46defd87a4fbd9053154c148c126fff74d6a02d7a4924796fef"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/agua-pt-1024.png",
+      "rota": "/livro-razao/agua-nao-faturada-portugal-2024/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ a parte da água que entra no sistema e não é faturada.",
+      "marcadores": 0,
+      "sha256": "8e9b69ad7415bfa16b3c33ab8caa7059fcef9997c66e659fc124649062936504"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/agua-pt-1280.png",
+      "rota": "/livro-razao/agua-nao-faturada-portugal-2024/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ a parte da água que entra no sistema e não é faturada.",
+      "marcadores": 0,
+      "sha256": "0a08738299c767e29b5e630784e87ed635d971f89ec979d511722dc0626ed5d8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/agua-pt-1600.png",
+      "rota": "/livro-razao/agua-nao-faturada-portugal-2024/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ a parte da água que entra no sistema e não é faturada.",
+      "marcadores": 0,
+      "sha256": "d4220e7da765f8071bd958618264a3ad79ddf6efcff2e347fed74b03529b445e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/agua-en-390.png",
+      "rota": "/en/ledger/agua-nao-faturada-portugal-2024/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the share of water entering the system that is not billed.",
+      "marcadores": 0,
+      "sha256": "4872d7df89f449c689ea78a3f6649ce2ce53a5711819094e6c2a5c77f4d9614d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/agua-en-768.png",
+      "rota": "/en/ledger/agua-nao-faturada-portugal-2024/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is the share of water entering the system that is not billed.",
+      "marcadores": 0,
+      "sha256": "6d9578fb8af4fe10385e5c9c25d3faabb4bd3b5e7a1adf271d4896efadc3d0a5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/agua-en-1024.png",
+      "rota": "/en/ledger/agua-nao-faturada-portugal-2024/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is the share of water entering the system that is not billed.",
+      "marcadores": 0,
+      "sha256": "be102f23e3fe1a0be02bb16b66684e1f68916703b2b15b9761cf582a80b0e876"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/agua-en-1280.png",
+      "rota": "/en/ledger/agua-nao-faturada-portugal-2024/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the share of water entering the system that is not billed.",
+      "marcadores": 0,
+      "sha256": "6e79470d56e9f1b8f1e0779ebf4dbc4f9d78bf046aed62271fd5f33858e00460"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/agua-en-1600.png",
+      "rota": "/en/ledger/agua-nao-faturada-portugal-2024/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is the share of water entering the system that is not billed.",
+      "marcadores": 0,
+      "sha256": "ffa565e6d4febb05573a240ec6208433588721755ae5e10da099c4ea81881896"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr-pt-390.png",
+      "rota": "/livro-razao/evora-prr-aprovado-2026/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroSão as verbas contratadas do Plano de Recuperação e Resiliência por beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "751abcfc3a812afc3d9da5092bd6a77f05541fbe5526a81c6686500242f4d9f0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr-pt-768.png",
+      "rota": "/livro-razao/evora-prr-aprovado-2026/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroSão as verbas contratadas do Plano de Recuperação e Resiliência por beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "bd9a007b69b32027bf90680c1100cc1835da814b116c4fa9ea73ca48bdd23418"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr-pt-1024.png",
+      "rota": "/livro-razao/evora-prr-aprovado-2026/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroSão as verbas contratadas do Plano de Recuperação e Resiliência por beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "3f45903e798357c1fd011730c5098b7cb36b7f232ff4c4ee9dde7b310f28dbd3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr-pt-1280.png",
+      "rota": "/livro-razao/evora-prr-aprovado-2026/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroSão as verbas contratadas do Plano de Recuperação e Resiliência por beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "9e252a138108d976f6317c13528e378de16a488c0ac28f44ea5ec410c8505f06"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr-pt-1600.png",
+      "rota": "/livro-razao/evora-prr-aprovado-2026/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroSão as verbas contratadas do Plano de Recuperação e Resiliência por beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "4c92bf5ef0fcb763d9fb3a27b399229515098ee02063b4f878368a47d7b0b6e1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr-en-390.png",
+      "rota": "/en/ledger/evora-prr-aprovado-2026/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isThese are Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "bbc8f924cebaf6e7338f7d9555b846d21d1247c8b34ab2111e5f097bb691b4d0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr-en-768.png",
+      "rota": "/en/ledger/evora-prr-aprovado-2026/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isThese are Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "2bf4103000c828b5a08561af2e90dd62009145e5bbcc4f2232392661866420a5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr-en-1024.png",
+      "rota": "/en/ledger/evora-prr-aprovado-2026/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isThese are Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "364c504232e0ff61ec6e455ac52b110fd3262910422ea4118d0fc7cb626717e6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr-en-1280.png",
+      "rota": "/en/ledger/evora-prr-aprovado-2026/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isThese are Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "c7793a40ac707cfa626237e4fd9e4e3a991676d5e5c12b24e51e4ae42a1b9dc5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr-en-1600.png",
+      "rota": "/en/ledger/evora-prr-aprovado-2026/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isThese are Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "9f2380c4a481d95b12ec81951bcb9c405e0febdd265078e18e5f3f79aacf135b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_pago-pt-390.png",
+      "rota": "/livro-razao/evora-prr-pago-2026/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroSão as verbas pagas do Plano de Recuperação e Resiliência a beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "6ffb21afdddc16fd143b5b94c5a474e4ce90166114bf06d7c3dfd0e278b7dd4e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_pago-pt-768.png",
+      "rota": "/livro-razao/evora-prr-pago-2026/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroSão as verbas pagas do Plano de Recuperação e Resiliência a beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "fa5f04a32b809194d8153a1c9277738a50bce58e2d2c13d0ef6548bc4d409fd4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_pago-pt-1024.png",
+      "rota": "/livro-razao/evora-prr-pago-2026/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroSão as verbas pagas do Plano de Recuperação e Resiliência a beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "032172c783c7a944cdc16f1acfb11f56039b93d99555c6434078eae3df460c68"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_pago-pt-1280.png",
+      "rota": "/livro-razao/evora-prr-pago-2026/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroSão as verbas pagas do Plano de Recuperação e Resiliência a beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "6792748e9e53c23521640ea364f70f86f9bb984aace3e61aea626949ec11df8d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_pago-pt-1600.png",
+      "rota": "/livro-razao/evora-prr-pago-2026/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroSão as verbas pagas do Plano de Recuperação e Resiliência a beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "763277678b1ec2646a4783d9b63ec0fd16f5d3322874324b749e5fa1fd2589f3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_pago-en-390.png",
+      "rota": "/en/ledger/evora-prr-pago-2026/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isThese are Recovery and Resilience Plan funds paid to intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "8ff842cc4eb42698b435669fa5d0fa40ce6208e3e19a54c48724dfc52e25aa99"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_pago-en-768.png",
+      "rota": "/en/ledger/evora-prr-pago-2026/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isThese are Recovery and Resilience Plan funds paid to intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "6c44bb1c3dd82d6159b666579f85550729a127d064cf12b8a8211fa184e4c6c5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_pago-en-1024.png",
+      "rota": "/en/ledger/evora-prr-pago-2026/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isThese are Recovery and Resilience Plan funds paid to intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "1f647a23305c49b47b44f9b239febf5999361c5e8394fb6c40d6d355fa62ac31"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_pago-en-1280.png",
+      "rota": "/en/ledger/evora-prr-pago-2026/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isThese are Recovery and Resilience Plan funds paid to intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "f813787bcd82180849fea6c4badee639d0ba6ee1ca9f08ef87b260495f962f26"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_pago-en-1600.png",
+      "rota": "/en/ledger/evora-prr-pago-2026/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isThese are Recovery and Resilience Plan funds paid to intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "116cb4577e33d9b975330f3c961ef0d3555d0acb4dc91f2efe6834538f322822"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_vencido-pt-390.png",
+      "rota": "/livro-razao/evora-prr-vencido-aprovado-2026/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroSão as verbas contratadas por beneficiários intermediários e diretos com sede no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada, pela listagem de entidades do Plano de Recuperação e Resiliência, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "64d1b4834198a86d08d32b8b7a19829e5a2f443bf90c404104304dd922d64dd0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_vencido-pt-768.png",
+      "rota": "/livro-razao/evora-prr-vencido-aprovado-2026/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroSão as verbas contratadas por beneficiários intermediários e diretos com sede no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada, pela listagem de entidades do Plano de Recuperação e Resiliência, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "c7fc09915d02c030f3eb95a71f000b90e416dd0cdf8c472ddb2df74c30a381c3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_vencido-pt-1024.png",
+      "rota": "/livro-razao/evora-prr-vencido-aprovado-2026/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroSão as verbas contratadas por beneficiários intermediários e diretos com sede no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada, pela listagem de entidades do Plano de Recuperação e Resiliência, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "5eb9f82ff10773d9ce7a4b5feec4489f615bd6fd2830ead95fd2283e5bc6cb3a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_vencido-pt-1280.png",
+      "rota": "/livro-razao/evora-prr-vencido-aprovado-2026/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroSão as verbas contratadas por beneficiários intermediários e diretos com sede no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada, pela listagem de entidades do Plano de Recuperação e Resiliência, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "4ed8da6a06f7b5739fe78f69204fe98ff788b854d9a4bd1fea8af8e1a2ff9694"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_vencido-pt-1600.png",
+      "rota": "/livro-razao/evora-prr-vencido-aprovado-2026/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroSão as verbas contratadas por beneficiários intermediários e diretos com sede no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada, pela listagem de entidades do Plano de Recuperação e Resiliência, no instantâneo de 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "41d6bacd977598559c3fa4040b3c986851a9aefab8208562a2a2a5ad6fc1a60a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_vencido-en-390.png",
+      "rota": "/en/ledger/evora-prr-vencido-aprovado-2026/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isThese are funds contracted by intermediate and direct beneficiaries headquartered in the municipality, with a completion deadline before the snapshot and no completion recorded, from the Recovery and Resilience Plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "343924ded7c8f41c19e043d047ea23cdae5b331ab63a25ff764e3eee8c36ddd3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_vencido-en-768.png",
+      "rota": "/en/ledger/evora-prr-vencido-aprovado-2026/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isThese are funds contracted by intermediate and direct beneficiaries headquartered in the municipality, with a completion deadline before the snapshot and no completion recorded, from the Recovery and Resilience Plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "f1d225fec1443556c6512cdddcfd8fd5551107d5e9af628fc04feddd8895585b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_vencido-en-1024.png",
+      "rota": "/en/ledger/evora-prr-vencido-aprovado-2026/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isThese are funds contracted by intermediate and direct beneficiaries headquartered in the municipality, with a completion deadline before the snapshot and no completion recorded, from the Recovery and Resilience Plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "1d7b186a4fbe60a5af60de7ecb68c8be7e5013f74cf7b3d18162d188ce585ac5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_vencido-en-1280.png",
+      "rota": "/en/ledger/evora-prr-vencido-aprovado-2026/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isThese are funds contracted by intermediate and direct beneficiaries headquartered in the municipality, with a completion deadline before the snapshot and no completion recorded, from the Recovery and Resilience Plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "1cf503e8202d69fb1312de9a2b6f0eb82877099ffabe9c862490f96e1fcf95e1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/prr_vencido-en-1600.png",
+      "rota": "/en/ledger/evora-prr-vencido-aprovado-2026/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isThese are funds contracted by intermediate and direct beneficiaries headquartered in the municipality, with a completion deadline before the snapshot and no completion recorded, from the Recovery and Resilience Plan’s list of entities, in the snapshot of 19.08.2026.",
+      "marcadores": 0,
+      "sha256": "977a8f877aef246623b63264ffe8a90ca07e6858b2a1e4e8745836c611f1f47c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/consolidacao-pt-390.png",
+      "rota": "/livro-razao/oe-2026-diferencas-consolidacao-funcional/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta por funções da administração central.",
+      "marcadores": 0,
+      "sha256": "c89b54181dc7120d0ee820453f5f784abf1c041c0be79ebb2f55af69b18cf5e7"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/consolidacao-pt-768.png",
+      "rota": "/livro-razao/oe-2026-diferencas-consolidacao-funcional/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta por funções da administração central.",
+      "marcadores": 0,
+      "sha256": "9ecb3016364ab122755dfd84adaefbf6d9a0594b242ae388653de1ef9d480393"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/consolidacao-pt-1024.png",
+      "rota": "/livro-razao/oe-2026-diferencas-consolidacao-funcional/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta por funções da administração central.",
+      "marcadores": 0,
+      "sha256": "d5458b067a89e482374fe09420d32d13d8962452e4428e936c4d453bc70a3ea9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/consolidacao-pt-1280.png",
+      "rota": "/livro-razao/oe-2026-diferencas-consolidacao-funcional/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta por funções da administração central.",
+      "marcadores": 0,
+      "sha256": "196f37e611c7cbd11e732e55a0ea40603f76411c8cdbc889f1152cdd2df5ac75"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/consolidacao-pt-1600.png",
+      "rota": "/livro-razao/oe-2026-diferencas-consolidacao-funcional/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta por funções da administração central.",
+      "marcadores": 0,
+      "sha256": "2c7fb8119fe0af9ad59010eebd1b265cb7f9a73fc50442d1e4a9e6dfb2b629b8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/consolidacao-en-390.png",
+      "rota": "/en/ledger/oe-2026-diferencas-consolidacao-funcional/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in central administration’s account by function.",
+      "marcadores": 0,
+      "sha256": "887c66cd47ba5d57de90c287370041226a577484dc8dbf8f0835e921e69ea5be"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/consolidacao-en-768.png",
+      "rota": "/en/ledger/oe-2026-diferencas-consolidacao-funcional/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in central administration’s account by function.",
+      "marcadores": 0,
+      "sha256": "1be0d15fac1da2b76299daaffcf311c31daf7a6e783ebd6ce4825413eb8636fc"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/consolidacao-en-1024.png",
+      "rota": "/en/ledger/oe-2026-diferencas-consolidacao-funcional/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in central administration’s account by function.",
+      "marcadores": 0,
+      "sha256": "d11e916356cc432f1862a11a60af45634f516d8e83e623069d8536fe6606bfcf"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/consolidacao-en-1280.png",
+      "rota": "/en/ledger/oe-2026-diferencas-consolidacao-funcional/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in central administration’s account by function.",
+      "marcadores": 0,
+      "sha256": "36e06bfefa66606b986addd351f36012c7641ea7fbd0ac2950c57079d0f301a3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/consolidacao-en-1600.png",
+      "rota": "/en/ledger/oe-2026-diferencas-consolidacao-funcional/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in central administration’s account by function.",
+      "marcadores": 0,
+      "sha256": "d73398a06a9fe91dd4bba04e61298632c49485e4aead92e9139aea52c23052cd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/primario-pt-390.png",
+      "rota": "/livro-razao/oe-2026-saldo-primario-administracao-central/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a receita efetiva da administração central menos a sua despesa efetiva sem juros e outros encargos, a que a fonte chama saldo primário.",
+      "marcadores": 0,
+      "sha256": "34c112ed2f577ed58b269b1d8bc803144c57c6baface5afd9da5596a8c5ceeb6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/primario-pt-768.png",
+      "rota": "/livro-razao/oe-2026-saldo-primario-administracao-central/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ a receita efetiva da administração central menos a sua despesa efetiva sem juros e outros encargos, a que a fonte chama saldo primário.",
+      "marcadores": 0,
+      "sha256": "29e1fd7ad3e55d7ece9299b4d35dd7f28b409827f1c7900441c02bb1020f37de"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/primario-pt-1024.png",
+      "rota": "/livro-razao/oe-2026-saldo-primario-administracao-central/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ a receita efetiva da administração central menos a sua despesa efetiva sem juros e outros encargos, a que a fonte chama saldo primário.",
+      "marcadores": 0,
+      "sha256": "144e334405cba66ad72d8af2cc871a03be8a4acc0f715ac7580e7789c9e55a1e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/primario-pt-1280.png",
+      "rota": "/livro-razao/oe-2026-saldo-primario-administracao-central/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ a receita efetiva da administração central menos a sua despesa efetiva sem juros e outros encargos, a que a fonte chama saldo primário.",
+      "marcadores": 0,
+      "sha256": "4d52d29c0f66bcf32ce3a0ee88b8202620077ba624e4aaf773875af598165d26"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/primario-pt-1600.png",
+      "rota": "/livro-razao/oe-2026-saldo-primario-administracao-central/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ a receita efetiva da administração central menos a sua despesa efetiva sem juros e outros encargos, a que a fonte chama saldo primário.",
+      "marcadores": 0,
+      "sha256": "69b3d96b5d21b30f7d72b8cf303aa7727ddd3d6f8961f69a2359b04dfb637620"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/primario-en-390.png",
+      "rota": "/en/ledger/oe-2026-saldo-primario-administracao-central/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is central administration’s effective revenue minus its effective expenditure excluding interest and other charges, which the source calls primary balance.",
+      "marcadores": 0,
+      "sha256": "b10f7b1678b114e4c88ae65e4021ee0d4ccc09c649a0b27b93fa94b210d2ab28"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/primario-en-768.png",
+      "rota": "/en/ledger/oe-2026-saldo-primario-administracao-central/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is central administration’s effective revenue minus its effective expenditure excluding interest and other charges, which the source calls primary balance.",
+      "marcadores": 0,
+      "sha256": "7c5af786d7ce2703579fba3314a007ba8e4b00ae0cb595fabac985fbfa5a0ba2"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/primario-en-1024.png",
+      "rota": "/en/ledger/oe-2026-saldo-primario-administracao-central/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is central administration’s effective revenue minus its effective expenditure excluding interest and other charges, which the source calls primary balance.",
+      "marcadores": 0,
+      "sha256": "c3b675237075843e2b2b8326f24cfc56ba7083f68bac2bc47ef3904aa8a99de6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/primario-en-1280.png",
+      "rota": "/en/ledger/oe-2026-saldo-primario-administracao-central/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is central administration’s effective revenue minus its effective expenditure excluding interest and other charges, which the source calls primary balance.",
+      "marcadores": 0,
+      "sha256": "e308ec3f02190cf3eb8ca9a6de433edb5761329216ea4b51a7b3311952463403"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/primario-en-1600.png",
+      "rota": "/en/ledger/oe-2026-saldo-primario-administracao-central/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is central administration’s effective revenue minus its effective expenditure excluding interest and other charges, which the source calls primary balance.",
+      "marcadores": 0,
+      "sha256": "397901faa379a18069aa992aebb41d3b612cd783ee9ef7ba393a97a5a19f8546"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/vab-pt-390.png",
+      "rota": "/livro-razao/evora-vab-empresarial-2024/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ o valor acrescentado bruto das empresas do concelho, somado sobre todas as atividades: o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.",
+      "marcadores": 0,
+      "sha256": "bd19a45cb8ae2c0e653a2b9ea4cf464523ae6f05ecf48d689b0751e7bfea046d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/vab-pt-768.png",
+      "rota": "/livro-razao/evora-vab-empresarial-2024/",
+      "lang": "pt",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "O que é este númeroÉ o valor acrescentado bruto das empresas do concelho, somado sobre todas as atividades: o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.",
+      "marcadores": 0,
+      "sha256": "6e7b407c80878885d0333daacbb2b8f191a3e683a184d384777a9299c19e9a95"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/vab-pt-1024.png",
+      "rota": "/livro-razao/evora-vab-empresarial-2024/",
+      "lang": "pt",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "O que é este númeroÉ o valor acrescentado bruto das empresas do concelho, somado sobre todas as atividades: o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.",
+      "marcadores": 0,
+      "sha256": "81d8525f4e812f5e9c680fb5bcdbba6004470e7094400c9e179ea338ff4d7ed6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/vab-pt-1280.png",
+      "rota": "/livro-razao/evora-vab-empresarial-2024/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ o valor acrescentado bruto das empresas do concelho, somado sobre todas as atividades: o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.",
+      "marcadores": 0,
+      "sha256": "6a961996ba324713450f5e6f17e610a919b084941cc016a2d4a883187fa3599c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/vab-pt-1600.png",
+      "rota": "/livro-razao/evora-vab-empresarial-2024/",
+      "lang": "pt",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "O que é este númeroÉ o valor acrescentado bruto das empresas do concelho, somado sobre todas as atividades: o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.",
+      "marcadores": 0,
+      "sha256": "cc6163f627479d55b83df9cfcb53c2f391b229e8e45076d2f986c918d61cfb95"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/vab-en-390.png",
+      "rota": "/en/ledger/evora-vab-empresarial-2024/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the gross value added of the municipality’s companies, added up over all activities: the value of what they produce minus the value of the goods and services used up in producing it.",
+      "marcadores": 0,
+      "sha256": "380181a776c7fd966a56d0cd37eb3ea25be8282d197b9f7f3ee1bc91aac59549"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/vab-en-768.png",
+      "rota": "/en/ledger/evora-vab-empresarial-2024/",
+      "lang": "en",
+      "largura": 768,
+      "largura_documento": 768,
+      "frase": "What this number isIt is the gross value added of the municipality’s companies, added up over all activities: the value of what they produce minus the value of the goods and services used up in producing it.",
+      "marcadores": 0,
+      "sha256": "bdd9a40a655f87cac7ed2e14e581143252640fcafd3a6f2a58e1813e7b750834"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/vab-en-1024.png",
+      "rota": "/en/ledger/evora-vab-empresarial-2024/",
+      "lang": "en",
+      "largura": 1024,
+      "largura_documento": 1024,
+      "frase": "What this number isIt is the gross value added of the municipality’s companies, added up over all activities: the value of what they produce minus the value of the goods and services used up in producing it.",
+      "marcadores": 0,
+      "sha256": "d2a531bfbda507830bce22e58bfa2dd65b78aec7d011236aeb17fdb79ad596b9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/vab-en-1280.png",
+      "rota": "/en/ledger/evora-vab-empresarial-2024/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the gross value added of the municipality’s companies, added up over all activities: the value of what they produce minus the value of the goods and services used up in producing it.",
+      "marcadores": 0,
+      "sha256": "96565185c3be46646a61fb727afb0fdb874c74c423b9d997467e015f790288fd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/d/vab-en-1600.png",
+      "rota": "/en/ledger/evora-vab-empresarial-2024/",
+      "lang": "en",
+      "largura": 1600,
+      "largura_documento": 1600,
+      "frase": "What this number isIt is the gross value added of the municipality’s companies, added up over all activities: the value of what they produce minus the value of the goods and services used up in producing it.",
+      "marcadores": 0,
+      "sha256": "e34affbe335ff00cd9392c470be25753f441293feec63e9a19cab6ca8ca5d049"
+    }
+  ],
+  "problemas": []
+}

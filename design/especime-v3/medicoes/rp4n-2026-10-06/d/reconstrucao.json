@@ -1,0 +1,132 @@
+[
+  {
+    "antigo": "6c55ab9762c752e0096716d2f469f015ed863723",
+    "novo": "46a83b45d2e68e4d7884f3404021fb31bf5cda0b",
+    "assunto": "Selar as frases das famílias e séries nas palavras das fontes"
+  },
+  {
+    "antigo": "d3d1a17abdc64483be0455e9e596163113a15b0c",
+    "novo": "212685dd2d7c7b2faa468caedadcca5dd06f94df",
+    "assunto": "Prender a frase da União à origem da própria série"
+  },
+  {
+    "antigo": "099289ef243a0c920719240b0aa8410b3e91d0b9",
+    "novo": "47cb825c0c8feabc8e5a187401d876d321e99654",
+    "assunto": "Recusar marcas de informação por confirmar nas páginas"
+  },
+  {
+    "antigo": "0b76a326c5713e7037052cf5d62bf69fbfe4be71",
+    "novo": "186c26c262385914e7e4506f4fbd4fef3df0f6b2",
+    "assunto": "Aplicar a recusa também aos documentos citados"
+  },
+  {
+    "antigo": "5579bf0498430fc5642dd392d0c0a645e27a95dc",
+    "novo": "ecb7811b60d5ed163a3776b86fdbdb80a265d55a",
+    "assunto": "Completar a receita efetiva com a exclusão dos saldos de gerência"
+  },
+  {
+    "antigo": "d95a46e3e0baf19c87af86033baa2b6c27eb2e4e",
+    "novo": "92ca0dd5b6240353cfe37dbd0db97787806092a5",
+    "assunto": "Recusar o nome também nas alternativas e nos apoios misturados"
+  },
+  {
+    "antigo": "579c9dd463f98753c05c4e16ff2bb73a856adf6d",
+    "novo": "f88f6841a012794e2eafb34a80e13aa17f80f284",
+    "assunto": "Exigir o selo documental mesmo quando o apagam da origem"
+  },
+  {
+    "antigo": "bf347dd81e2200d33a3a68ddb4c9d2f1267d9f6a",
+    "novo": "d6d4becd9afea38a2ee4449c2ecb248b43f5df74",
+    "assunto": "Guardar as medições e as provas do RP4-n bloqueado na recusa global"
+  },
+  {
+    "antigo": "f16184581c55bd85512049713001341960130dc8",
+    "novo": "d417c4d85aab40f0bc8e316e1ad8504d400ea109",
+    "assunto": "Mostrar os títulos publicados dos estudos sem marca de tradução"
+  },
+  {
+    "antigo": "50a76a9ed1dc783452b87ee261974286f92bbe73",
+    "novo": "eed7b34e5c61855c170bf681b02653b4afb69906",
+    "assunto": "Separar as marcas de afirmação das ausências autorizadas pela RP4N-1"
+  },
+  {
+    "antigo": "049da3f073a2c4a7abaa343beb8a626240a77d9a",
+    "novo": "eb99bae5138ca262a018b58e241640fdc50304f0",
+    "assunto": "Distinguir a frase do cartão da frase de família no inventário"
+  },
+  {
+    "antigo": "12fb070175d279dd1da3bc773e5d1a7424d1e17d",
+    "novo": "39f11f4cac20cd44ed2bff7d74809c8460820f64",
+    "assunto": "Exigir a ausência exata no campo e discriminar as marcas não abrangidas"
+  },
+  {
+    "antigo": "902971ccd7edda2c40901d19066e2ceb3b7a0384",
+    "novo": "87e4dfc7cfada13b5b01aad36b2bef6f85cea054",
+    "assunto": "Gerar o relatório da passagem com as contagens e os códigos medidos"
+  },
+  {
+    "antigo": "5de3a2ac369ab7d5b3ed5009bbd88454eff8fcf7",
+    "novo": "ae1183c8b49b9a930e1ce83da3a7b600753380cf",
+    "assunto": "Contar uma marca partida sem duplicar a classe e manter a recusa"
+  },
+  {
+    "antigo": "f8830e02027e2b45c56faf8c7c4b540d497ae4d0",
+    "novo": "9a1fd50f62e5bd39ee7dc918ec701c331723ab94",
+    "assunto": "Conferir os campos de data documentais e as duas formas de os render"
+  },
+  {
+    "antigo": "6b00cd640018ad9ee45fc46884ff9bcd27d99fe6",
+    "novo": "b091d3d17ee68adf88fd1fb4a0214e6989224660",
+    "assunto": "Recusar um título declarado por confirmar mesmo sem marca rendida"
+  },
+  {
+    "antigo": "2084ba6b2f31bb461d4013f88dcde581db1f9789",
+    "novo": "bc989e3dcac0da1ba771f4cddd1186fb7ded5748",
+    "assunto": "Ligar a medição anterior à cabeça com os trailers conferidos"
+  },
+  {
+    "antigo": "04d28781e576904f97d944d7493bb1d39c204343",
+    "novo": "3e6cfa9b3525e6ee5e271eb250374fd6e5de6a1e",
+    "assunto": "Guardar também as plantas e os códigos da proteção dos títulos"
+  },
+  {
+    "antigo": "3f755bb7ef20c08890ef9f7b6655a82a5dc2ba4e",
+    "novo": "f73f053bab03901b51521268218a011dfbd20ecc",
+    "assunto": "Guardar a medição final e os registos dos portões da RP4-n-b"
+  },
+  {
+    "antigo": "87ae3e6419208370d9e7a13a35347fd0d2e124de",
+    "novo": "3eaa2e7cedf0d5d4786d6cf858bfd54994ee82b4",
+    "assunto": "Relatar a RP4-n-b e os códigos lidos com a RP4N-5 pendente"
+  },
+  {
+    "antigo": "7267f3c2c08b41f76abfac370c169aeee9e6aeec",
+    "novo": "465b73c363536f7e7475213922368de444677218",
+    "assunto": "Completar os tipos de marcas aceites pela decisão RP4N-5"
+  },
+  {
+    "antigo": "372777e1c896ac6b5d64dc8ec0ae0193e49ab0a1",
+    "novo": "b268c343db23b06c20352052bfbe3d144edff564",
+    "assunto": "Sincronizar o inventário da voz com as frases já publicadas"
+  },
+  {
+    "antigo": "1296ca052d21e4eb5a63f9890638e8d04e3b0307",
+    "novo": "ffb7e67e54cd031296eff55f9e40e1fd09fb2367",
+    "assunto": "Sincronizar o inventário dos rótulos com as dobras já publicadas"
+  },
+  {
+    "antigo": "6de65f31a2596948293812c4d8f1e54e9638593c",
+    "novo": "dd919d51ee781ac0636e1c0402c724202065a813",
+    "assunto": "Guardar as medições e os registos dos portões da RP4-n-c"
+  },
+  {
+    "antigo": "c79037670b46f6bc9830da60b04c4fbcdb0899a9",
+    "novo": "cef2d236b09523f14cdbc8436e540789aef87a4c",
+    "assunto": "Fechar o relatório e os códigos da passagem RP4-n-c"
+  },
+  {
+    "antigo": "be23d5251ea7e901b74706ecfc1f61b56b11ae12",
+    "novo": "6571b4d0e9295c93155b1af26b301de07d0764a3",
+    "assunto": "RP4-n: a leitura a frio do Claude Opus 5.5 sobre as três passagens (cinco plantas mordidas; os achados reais decididos achado a achado no mandato da passagem RP4-n-d, que reconstrói o ramo sem a pasta de leitura do construtor antes de o publicar), o registo das plantas e o mandato"
+  }
+]

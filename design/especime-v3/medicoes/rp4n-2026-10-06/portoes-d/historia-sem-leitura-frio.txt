@@ -1,0 +1,5 @@
+git log HEAD -- design/especime-v3/medicoes/rp4n-2026-10-06/leitura-frio
+(saída vazia)
+
+git log --all -- design/especime-v3/medicoes/rp4n-2026-10-06/leitura-frio
+bf347dd81e2200d33a3a68ddb4c9d2f1267d9f6a Guardar as medições e as provas do RP4-n bloqueado na recusa global
