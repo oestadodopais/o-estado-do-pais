@@ -138,7 +138,7 @@ for (const lang of ['pt','en']) {
 }
 const inventario = fs.readFileSync('design/especime-v3/INVENTARIO-FRASES.md','utf8');
 assert.deepEqual(conferirInventarioIncorporacao(inventario), []);
-for (const linha of inventario.split('\n').filter(l => l.startsWith('| `incorporar.'))) {
+for (const linha of inventario.split('\n').filter(l => l.startsWith('| `incorporar.') || l.startsWith('| `metodo.exemplo`'))) {
   const chave = linha.split('`')[1];
   for (const lang of ['pt','en']) {
     const partes = linha.split('|'); partes[lang === 'pt' ? 2 : 3] = ' alterada ';

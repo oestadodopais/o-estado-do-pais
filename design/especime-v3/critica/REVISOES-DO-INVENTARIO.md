@@ -683,4 +683,4 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | --- | --- | --- | --- |
 | er1b | Todas as cadeias do incorporador, nas duas edições | direção lida; diff por ler | O mandato ER1-b, achados 4 e 10, aprova o aviso, conserva Copiado e Código selecionado, substitui Calculado por calculado por este projeto e retira a data não indicada. Os estados condicionais têm tabela própria conferida pela célula ER1; a recusa tem frases vivas. A leitura curta de outra família fica com o lugar de direção antes da aterragem. |
 
-A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recibo de exemplo» / «See the example receipt». Estas cadeias de navegação entram no texto governado e no inventário; a leitura curta do diff inclui-as.
+A porta de exemplo do Método, pedida no ponto 6 do brief ER1, usa «Ver o recibo de exemplo» / «See the example receipt». Estas cadeias de navegação entram no texto governado e na tabela própria do inventário, conferidas pela célula ER1 porque a leitura geral da voz já retirou o Método após a sua conferência; a leitura curta do diff inclui-as.
