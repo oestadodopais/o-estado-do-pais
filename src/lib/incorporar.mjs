@@ -1,6 +1,7 @@
+import { lugarDaIncorporacao } from './lugar-da-incorporacao.mjs';
 /* O recibo incorporável. A apresentação acompanha o JSON para nenhuma edição
    ficar com unidade, período ou ressalva de uma publicação anterior. */
-import { nomeNoRecibo, lugarNoRecibo } from './o-que-e-o-numero.mjs';
+import { nomeNoRecibo } from './o-que-e-o-numero.mjs';
 import { dataDaCasa } from './datas.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
@@ -26,7 +27,7 @@ export function podeIncorporar(c) {
 export function dadosDaIncorporacao(c, lang) {
   const s = t(lang).incorporar;
   const nome = nomeNoRecibo(c.id, lang).texto;
-  const lugar = lugarNoRecibo(c.id, lang);
+  const lugar = lugarDaIncorporacao(c, lang);
   const unidade = unidadeDaLinha(c.unit, lang);
   const correcoes = (c.corrections ?? []).filter((/** @type {any} */ x) =>
     x.kind !== 'proveniencia' && x.new_value === c.value).sort((/** @type {any} */ a, /** @type {any} */ b) => b.date.localeCompare(a.date));

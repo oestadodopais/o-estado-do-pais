@@ -66,6 +66,25 @@ for (const lang of ['pt', 'en']) {
     resultados.plantas.push({nome:nome+'-'+lang,mensagem,mordeu:true});
   }
 }
+// Lugares lidos de famílias diferentes, incluindo o comparador espanhol.
+for (const [id, nomes] of [
+  ['custo-unitario-do-trabalho-2025', ['Portugal','Portugal']],
+  ['pib-pc-alentejo-2024', ['Alentejo','Alentejo']],
+  ['evora-populacao-2021', ['Évora','Évora']],
+  ['taxa-de-desemprego-2025-ue', ['União Europeia','European Union']],
+  ['despesa-por-funcao-2024-gf01-es', ['Espanha','Spain']],
+  ['portugal-concentracao-vab4-2024', ['Portugal','Portugal']],
+]) for (const [n,lang] of ['pt','en'].entries()) {
+  const caminho = routePath('linha',lang,{slug:id});
+  const html = fs.readFileSync(`${dist}${caminho}/index.html`, 'utf8');
+  const root = lerPaginaComCodigo(html);
+  const campo = root.querySelector('[data-incorporar-codigo]');
+  assert(campo.textContent.includes(' · '+nomes[n]+','), `${id}: o lugar da fonte tem de preceder o período.`);
+  campo.set_content(campo.innerHTML.replace(' · '+nomes[n]+',', ','));
+  const mensagem = 'ER1 código: o pedaço difere da linha, carácter a carácter.';
+  assert(conferirCodigo(root, matchPath(caminho)).includes(mensagem));
+  resultados.plantas.push({nome:'lugar-em-falta-'+id+'-'+lang,mensagem,mordeu:true});
+}
 const caminhos = [`/livro-razao/${c.id}.json`, '/livro-razao.json', '/livro-razao.csv', '/incorporar.js', '/', `/livro-razao/${c.id}`];
 const vercel = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
 const respostas = caminhos.map(caminho=> {

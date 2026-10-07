@@ -1,8 +1,9 @@
+import { lugarDaIncorporacao } from '../src/lib/lugar-da-incorporacao.mjs';
 /* Leitura do ER1 pelos portões. Não importa o compositor do código nem o do
    JSON. Os nomes e as traduções são declarações comuns; os campos, as datas,
    os bytes e a escolha da releitura são recontados aqui. */
 import { allClaims } from '../src/lib/ledger.mjs';
-import { nomeNoRecibo, lugarNoRecibo } from '../src/lib/o-que-e-o-numero.mjs';
+import { nomeNoRecibo } from '../src/lib/o-que-e-o-numero.mjs';
 import { unidadeDaLinha } from '../src/i18n/unidades.mjs';
 import { linguaDaFonte } from '../src/i18n/lingua-dos-titulos.mjs';
 import { dataDaCasa } from '../src/lib/datas.mjs';
@@ -26,7 +27,7 @@ const escape = x => String(x ?? '').replaceAll('&','&amp;').replaceAll('<','&lt;
 export function dadosEsperados(c, lang) {
   const palavras = t(lang).incorporar;
   const un = unidadeDaLinha(c.unit, lang);
-  const lugar = lugarNoRecibo(c.id, lang);
+  const lugar = lugarDaIncorporacao(c, lang);
   let mudanca = '';
   for (const entrada of c.corrections ?? []) {
     if (entrada.kind !== 'proveniencia' && entrada.new_value === c.value && entrada.date > mudanca) mudanca = entrada.date;
