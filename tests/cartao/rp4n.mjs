@@ -179,9 +179,12 @@ export function conferirExcertoDaPensao(linha) {
 // RP4-n-e: a frase dos ministérios não reintroduz um termo sem definição.
 {
  const {FAMILIAS_DAS_LINHAS}=await import('../../src/data/o-que-e-das-familias.mjs');
- for(const [k,v] of Object.entries(FAMILIAS_DAS_LINHAS)) if(k.startsWith('oe-2026-cem-euros-ministerio-')) {
-  assert(!JSON.stringify(v.frase).match(/despesa bruta|gross expenditure/),`${k}: termo sem definição`);
- }
+ const conferir = familias => Object.entries(familias).filter(([k,v]) => k.startsWith('oe-2026-cem-euros-ministerio-') && /despesa bruta|gross expenditure/.test(JSON.stringify(v.frase))).map(([k]) => `${k}: termo sem definição`);
+ assert.deepEqual(conferir(FAMILIAS_DAS_LINHAS),[]);
+ const copia=structuredClone(FAMILIAS_DAS_LINHAS);
+ const k=Object.keys(copia).find(k=>k.startsWith('oe-2026-cem-euros-ministerio-'));
+ copia[k].frase.pt=['Parte da despesa bruta.'];
+ morde('despesa bruta reintroduzida sem definição',conferir(copia),'termo sem definição');
 }
 
 // RP4-n-e: a linha retirada fica no livro, mas não no carregador de publicação.
