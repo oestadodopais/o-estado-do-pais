@@ -33,7 +33,7 @@
       unidade.textContent = d.unidade;
       a.appendChild(unidade);
       novo.appendChild(a);
-      novo.appendChild(document.createTextNode(' '));
+      novo.appendChild(document.createTextNode(' · '));
       var fonte = document.createElement('span');
       fonte.lang = d.fonteLang;
       fonte.textContent = d.fonte;

@@ -32,6 +32,7 @@ function planta(nome, muda, mensagem, html = inteiro) {
   assert.throws(() => tirarCodigoConferido(root, rota), {message: new RegExp(mensagem.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))});
   resultados.plantas.push({nome,mensagem,mordeu:true});
 }
+planta('separador-em-falta', root => {const campo=root.querySelector('textarea');campo.set_content(campo.innerHTML.replace('&lt;/span&gt;&lt;/a&gt; · ', '&lt;/span&gt;&lt;/a&gt; '));}, 'ER1 código: o pedaço difere da linha, carácter a carácter.');
 planta('marca-por-confirmar', root => root.querySelector('textarea').set_content('[a verificar]'), 'ER1 código: uma marca por confirmar não se incorpora.');
 planta('valor-trocado', root => {
   const campo = root.querySelector('textarea');
