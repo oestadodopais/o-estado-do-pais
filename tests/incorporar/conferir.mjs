@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'node-html-parser';
 import { dadosDaIncorporacao, codigoDaIncorporacao, podeIncorporar } from '../../src/lib/incorporar.mjs';
-import { allClaims } from '../../src/lib/ledger.mjs';
+import { allClaims, eDerivada } from '../../src/lib/ledger.mjs';
 import { routePath, matchPath } from '../../src/lib/routes.mjs';
 import { conferirExemploNoMetodo, conferirInventarioIncorporacao, provenienciaConfirmada, conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson } from '../../scripts/incorporar-do-portao.mjs';
 const dist = process.env.OEDP_DIST || 'dist';
@@ -79,7 +79,7 @@ for (const lang of ['pt','en']) {
     assert(conferirCodigo(lerPaginaComCodigo(html),matchPath(caminho),new Map([[c.id,marcada]])).includes(mensagem));
     resultados.plantas.push({nome:'marca-isolada-'+campo+'-'+lang,mensagem,mordeu:true});
   }
-  const calculada = linhas.find(x => x.formula && !x.access_date && provenienciaConfirmada(x));
+  const calculada = linhas.find(x => eDerivada(x) && !x.access_date && provenienciaConfirmada(x));
   const caminhoCalculado = routePath('linha',lang,{slug:calculada.id});
   const root = lerPaginaComCodigo(fs.readFileSync(`${dist}${caminhoCalculado}/index.html`,'utf8'));
   assert.deepEqual(conferirCodigo(root,matchPath(caminhoCalculado)),[]);
