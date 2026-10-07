@@ -229,3 +229,10 @@ export function conferirExcertoDaPensao(linha) {
  const linhas=loadClaims({includeWithdrawn:true});
  morde('linha retirada num cartão plantado',conferirRetiradas('<a href="/livro-razao/ciclo-substituicao-condutas/">239</a>',linhas),'uma linha retirada chegou a uma página');
 }
+{
+ const {conferirValorUnidade}=await import('../../scripts/valor-unidade.mjs');
+ for(const [lang,errada] of [['pt','avisos'],['en','notices']]) {
+  const html=parse(`<html lang="${lang}"><p class="linha-valor"><span data-claim="avisos-pt2030-pessoas-singulares">1</span> <span data-linha-campo="unit">${errada}</span></p></html>`);
+  morde(`unidade plural com um aviso (${lang})`,conferirValorUnidade(html).erros,'a unidade dos avisos não concorda');
+ }
+}
