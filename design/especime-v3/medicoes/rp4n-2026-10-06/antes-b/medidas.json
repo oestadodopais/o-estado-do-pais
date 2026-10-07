@@ -9,7 +9,7 @@
     "nota-alcance": 4
   },
   "comando": "node design/especime-v3/medicoes/rp4n-2026-10-06/medir-b.mjs antes <copia-do-HTML-anterior>",
-  "cabeca": "4531e81ca400c4c814fae4c635c380ba2ade0567",
+  "cabeca": "6b00cd640018ad9ee45fc46884ff9bcd27d99fe6",
   "totais": {
     "paginas": 46,
     "aceites": 78,
