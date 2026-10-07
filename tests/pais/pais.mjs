@@ -103,6 +103,7 @@ try {
  for (const [nome, pagina] of [['registo','en/corrections/index.html'],['país','index.html'],['índice inglês','en/studies/index.html']]) {
    prova(`marca num título de estudo no ${nome}`,'A4',()=>html(pagina,r=>r.querySelector('[data-nonledger="titulo-de-estudo"]').insertAdjacentHTML('afterend','<span class="marcador-de-titulo">[a verificar]</span>')));
  }
+ prova('título declarado por confirmar mesmo sem marca','está declarado por confirmar',()=>{},`import {WORKS} from './src/data/studies.mjs';WORKS.find(w=>w.slug==='evora-2027-prometido-painel-dinheiro').editions.find(e=>e.lang==='pt').titleUnverified=true;`);
  /* PP1: a mudança declarada rende-se no registo, e é a A3 que confere o texto dela. */
  prova('texto da mudança alterado','A3',()=>html('correcoes/index.html',r=>r.querySelector('[data-mudou-registo] [data-mudanca-campo="texto"]').set_content('Uma frase que a direção não escreveu.')));
  prova('ordem dos estudos trocada','E1',()=>html('index.html',r=>{const a=r.querySelectorAll('#trabalhos [data-estudo]');const x=a[0].getAttribute('data-estudo');a[0].setAttribute('data-estudo',a[1].getAttribute('data-estudo'));a[1].setAttribute('data-estudo',x);}));
