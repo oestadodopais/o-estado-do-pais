@@ -43,7 +43,7 @@ export function dadosEsperados(c, lang) {
     periodo: c.reference_date ? dataDaCasa(c.reference_date, lang) : palavras.periodoEmFalta,
     valor: String(c.value), unidade: un.texto, unidadeLang: un.lingua || t(lang).lang,
     fonte: c.source || palavras.calculado, fonteLang: (c.source && linguaDaFonte(c.source, lang)) || t(lang).lang,
-    data: dia, leitura: dia ? palavras.lido + ' ' + dataDaCasa(dia, lang) : '',
+    data: dia, leitura: dia ? palavras.lido + ' ' + dataDaCasa(dia, lang) : palavras.calculado,
     atribuicao: LICENCA ? LICENCA.atribuicao + ', ' + LICENCA.nome : '',
     notas: [c[lang === 'en' ? 'source_flag_note_en' : 'source_flag_note'], c[lang === 'en' ? 'ressalva_en' : 'ressalva']].filter(Boolean).join(' '),
     atualizacao: mudanca ? palavras.atualizado + ' ' + dataDaCasa(mudanca, lang) : '',
@@ -52,9 +52,9 @@ export function dadosEsperados(c, lang) {
 
 // Recontagem independente, sem importar a decisão do compositor.
 export function provenienciaConfirmada(c) {
-  return Boolean(c && (c.source || c.formula) &&
+  return Boolean(c &&
     !String(c.source ?? '').toLowerCase().includes('[a verificar]') &&
-    typeof c.access_date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(c.access_date));
+    !String(c.access_date ?? '').toLowerCase().includes('[a verificar]'));
 }
 
 export function codigoEsperado(c, lang) {
@@ -62,7 +62,7 @@ export function codigoEsperado(c, lang) {
   const p = t(lang).incorporar;
   const origem = 'https://' + SITE_HOST_DISPLAY;
   const href = origem + (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + c.id;
-  const lido = c.access_date ? p.lido + ' ' + dataDaCasa(c.access_date, lang) : '';
+  const lido = c.access_date ? p.lido + ' ' + dataDaCasa(c.access_date, lang) : p.calculado;
   return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${escape(c.id)}" data-oedp-valor="${escape(c.value)}" data-oedp-lido="${escape(c.access_date)}"><a href="${href}">${escape(d.nome)}, ${escape(d.periodo)}: ${escape(c.value)} <span lang="${d.unidadeLang}">${escape(d.unidade)}</span></a> · <span lang="${d.fonteLang}">${escape(d.fonte)}</span>, ${escape(lido)} · ${escape(d.atribuicao)}${d.notas ? ` <span>${escape(d.notas)}</span>` : ''}</p><script async src="${origem}/incorporar.js" referrerpolicy="no-referrer" crossorigin="anonymous"></script>`;
 }
 
