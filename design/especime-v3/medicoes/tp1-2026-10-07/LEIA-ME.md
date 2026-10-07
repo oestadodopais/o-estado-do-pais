@@ -41,6 +41,10 @@ Corridas por `conferencias/conferir-tp1.sh`, cada uma com o código em `conferen
 | `ledger:check` | 0 |
 | `sinais` | 0 |
 
+## Os três portões inteiros, pela tranca da máquina
+
+Corridos por `scripts/leituras/portoes.sh` na cabeça `b1eba84eca2b94c0f2d613a267d45ced1349b6ce` (o ficheiro `portoes/cabeca`), com os códigos em `portoes/<portão>.codigo` e os tempos em `portoes/tempos.json`: `build` 0, `typecheck` 0, `verify` 0.
+
 ## As capturas
 
 O registo `design/especime-v3/capturas/tp1-2026-10-07/capturas.json` diz a cabeça `67358e76e7405034084fee2681570531895d0b5e`, as larguras 390, 768, 1024, 1280, 1600 px, 20 resultados com o sha256 de cada captura, 0 falhas e `ok` a true; a pasta tem 20 ficheiros PNG (as duas páginas, as duas edições, as cinco larguras).

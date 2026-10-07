@@ -54,6 +54,14 @@ linhas.append('|---|---:|')
 for nome, cod in codigos.items():
     linhas.append(f'| `{nome.replace("-", ":", 1) if nome.startswith("check-") or nome.startswith("gate-") or nome.startswith("ledger-") else nome}` | {cod} |')
 linhas.append('')
+portoes = AQUI / 'portoes'
+if portoes.is_dir():
+    cods = {p.stem: p.read_text(encoding='utf-8').strip() for p in sorted(portoes.glob('*.codigo'))}
+    cab = (portoes / 'cabeca').read_text(encoding='utf-8').strip() if (portoes / 'cabeca').exists() else '?'
+    linhas.append('## Os três portões inteiros, pela tranca da máquina')
+    linhas.append('')
+    linhas.append(f"Corridos por `scripts/leituras/portoes.sh` na cabeça `{cab}` (o ficheiro `portoes/cabeca`), com os códigos em `portoes/<portão>.codigo` e os tempos em `portoes/tempos.json`: " + ', '.join(f'`{k}` {v}' for k, v in cods.items()) + '.')
+    linhas.append('')
 linhas.append('## As capturas')
 linhas.append('')
 if capturas:
