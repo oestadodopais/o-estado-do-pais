@@ -118,7 +118,7 @@ export const FAMILIAS_JD1 = [
   },
   {
     chaves: ['custo-da-divida-emitida'],
-    nome: { pt: 'Custo médio ponderado da dívida emitida pelo Estado, até agosto', en: 'Weighted average cost of State debt issued, through August' },
+    nome: { pt: 'Custo médio ponderado da dívida emitida pelo Estado', en: 'Weighted average cost of State debt issued' },
     partes: [
       diz('É o custo médio de o Estado pedir dinheiro emprestado no ano, através de Bilhetes do Tesouro, Obrigações do Tesouro, Obrigações do Tesouro de Rendimento Variável e Medium Term Notes',
         'It is the average cost of the State’s borrowing during the year through Treasury bills, Treasury bonds, floating-rate Treasury bonds and Medium Term Notes',
@@ -127,6 +127,10 @@ export const FAMILIAS_JD1 = [
       diz('. As emissões pesam nesta média de acordo com os montantes e os prazos',
         '. Issues are weighted in this average by their amounts and maturities', O('jd1-igcp-custo', 'ponderado pelo montante e maturidade')),
       ponto,
+      diz(' O valor é de dois mil e vinte e seis, até à data do boletim de setembro.',
+        ' The value is for two thousand and twenty-six, as of the September bulletin.',
+        L('document.locator', 'ponto 2026'), L('document.edition', 'setembro de 2026'),
+        O('jd1-igcp-custo', 'emitidos no ano correspondente')),
     ],
   },
   {
@@ -135,7 +139,7 @@ export const FAMILIAS_JD1 = [
     partes: [
       diz('É o que o Estado ainda deve da dívida que emitiu', 'It is the amount the State still owes on debt it issued',
         L('name', 'Dívida total'), O('jd1-igcp-perimetro', 'a dívida direta do Estado inclui apenas a dívida emitida pelo Estado')),
-      diz(' no fim de agosto', ' at the end of August', L('document.locator', 'saldo em 31/ago/26')),
+      diz(' no fim de agosto', ' at the end of August', O('jd1-igcp-divida', '31/a go/26')),
       diz('. A dívida pública de Maastricht abrange todas as administrações públicas e retira a dívida que umas entidades públicas detêm de outras',
         '. Maastricht public debt covers all general government bodies and removes debt held by other government bodies',
         O('jd1-igcp-perimetro', 'na dívida de Maastricht se incluem todas as entidades classificadas, para fins estatísticos, no setor institucional das Administrações Públicas'),

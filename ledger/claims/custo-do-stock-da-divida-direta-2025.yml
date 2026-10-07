@@ -42,7 +42,7 @@ check: null
 
 study: "oe-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Localizador: Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2025, p. 3; rótulo na coluna 104 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5. Rótulo selecionado pelo ano e pela cor da série na legenda, assinalado no recorte do gráfico. O boletim de setembro apresenta a informação até agosto; o custo do stock é anual, o custo da emissão é o acumulado do ano. Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · custo-do-stock-da-divida-direta-2025."
+note: "[note do motor] Localizador: Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2025, p. 3; rótulo na coluna 104 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5. Rótulo selecionado pelo ano e pela cor da série na legenda, assinalado no recorte do gráfico. O custo do stock é anual; o custo da emissão refere-se a 2026, até à data do boletim de setembro, e à dívida emitida no ano correspondente, como a nota 6 a define. Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · custo-do-stock-da-divida-direta-2025."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
