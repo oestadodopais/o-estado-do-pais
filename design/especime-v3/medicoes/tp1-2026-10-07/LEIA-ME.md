@@ -4,11 +4,11 @@
 
 ## O que mudou para o leitor
 
-Nas duas edições, o Sobre diz o que o projeto é nas palavras do diretor (um projeto independente, conduzido por uma inteligência artificial e financiado em privado) e como se contacta (o endereço das correções, como ligação). O Método deixa de dizer que uma pessoa com nome define as regras e responde: a frase da política diz que nenhum humano revê cada mudança antes de se publicar e que as regras e as recusas estão na página; a secção da política diz primeiro os três papéis e depois o que se publica só pelas verificações automáticas (explicadas uma vez) e o que não se publica e a direção decide; «Nunca sem uma pessoa», «portões verdes» e «portão vermelho» saem; a regra 9 diz que a direção é de um modelo e que ninguém escreve números nem revê cada mudança; a regra 10 diz «financiado em privado». O texto do diretor no Sobre (15.08.2026), o rótulo de todas as páginas, os três papéis e as recusas não mudam. Os textos decididos estão em `brief.md` do pacote e na §1.182.
+Nas duas edições, o Sobre diz o que o projeto é nas palavras do diretor (um projeto independente, conduzido por uma inteligência artificial e financiado em privado) e como se contacta (o endereço das correções, como ligação). O Método deixa de dizer que uma pessoa com nome define as regras e responde: a frase da política diz que nenhum humano revê cada mudança antes de se publicar e que as regras e as recusas estão na página; a secção da política diz primeiro os três papéis e depois o que se publica só pelas verificações automáticas (explicadas uma vez) e o que não se publica e a direção decide; «Nunca sem uma pessoa», «portões verdes» e «portão vermelho» saem; a regra 9 diz que a direção é de um modelo e que ninguém escreve números nem revê cada mudança; a regra 10 diz «financiado em privado». O texto português do diretor no Sobre (15.08.2026), o rótulo de todas as páginas, os três papéis e as recusas não mudam; a tradução inglesa do parágrafo do diretor ganhou a ordem do inglês numa oração, com as mesmas palavras (a leitura do Codex, o achado 9). Os textos decididos estão em `brief.md` do pacote e na §1.182.
 
 ## Onde parou
 
-A cabeça do código é `841c2d557be5de2c6a0aeb0cad63d2c8d6627258`, com 47 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:23:24Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub corre na cabeça que aterra; na máquina correram as conferências que a mudança toca, abaixo.
+A cabeça do código é `4a261f3a9b4cee9cc06d6a33538a1f6b3b7f8121`, com 32 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:38:12Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub corre na cabeça que aterra; na máquina correram as conferências que a mudança toca, abaixo.
 
 ## O que ficou aberto
 
@@ -17,11 +17,12 @@ A cabeça do código é `841c2d557be5de2c6a0aeb0cad63d2c8d6627258`, com 47 entra
 - TP1-3: os comentários de `src/data/politica-ia.mjs` e de `src/views/SobreView.astro` conservam a história das redações anteriores; as frases do leitor são só as decididas.
 - TP1-4 (a leitura do Codex, o achado 6): o pacote da leitura não levou os PNG das capturas (o `pacote.sh` deixa os binários fora do diff e das cópias), só o registo com os sha256; na próxima leitura a pasta das capturas entra por `PACOTE_EXTRA`, e o guião do pacote ganha a regra no bloco de higiene.
 - TP1-5 (o achado 10): a etiqueta «The whole agenda →» do Método inglês está no inventário como retirada e rende-se na porta da regra 8; o `check:voz` não a conta (a seta sai na normalização, ou a etiqueta vem da lista das portas); anterior a este bloco, para o bloco de higiene.
-- TP1-6 (o achado 5, corrigido nesta passagem): o rótulo da prova da regra 10 dizia «valores com crédito atribuído na linha» sem dizer o que é o crédito; diz agora «linhas com o nome de quem decidiu o valor, tal como consta do documento», que é o que `src/lib/prova.mjs` conta (`attributed_to`).
+- TP1-6 (o achado 5 da primeira leitura, corrigido na TP1-b e outra vez na TP1-c): o rótulo da prova da regra 10 dizia «valores com crédito atribuído na linha» sem dizer o que é o crédito; a TP1-b pô-lo a dizer «quem decidiu o valor», que a leitura curta recusou por afirmar mais do que a contagem prova; diz agora «linhas que dizem a quem o documento atribui o valor», que é o que `src/lib/prova.mjs` conta (`attributed_to`, «linhas que creditam o valor a quem consta do documento»).
+- TP1-7 (a leitura curta, o achado 2): os códigos das conferências vivem no ramo ao lado dos registos; o guião do pacote deixa-os de fora quando o relatório não cita as linhas pela forma do M-A, e por isso os pacotes seguintes levam `PACOTE_LOGS=inteiros`; a regra do guião fica para o bloco de higiene.
 
 ## As conferências, na cabeça do código
 
-Corridas por `conferir-tp1.sh` (a cópia está no pacote da leitura como `conferencias/conferir-tp1.sh`), cada uma com o código em `conferencias/<nome>.codigo` e a saída em `conferencias/<nome>.log`:
+Corridas por `conferencias/conferir-tp1.sh`, cada uma com o código em `conferencias/<nome>.codigo` e a saída em `conferencias/<nome>.log`, no ramo; num pacote de leitura montado sem `PACOTE_LOGS=inteiros` o guião do pacote reduz estes registos aos citados e deixa os códigos de fora (a leitura curta de 07.10.2026, o achado 2), pelo que os pacotes deste bloco a partir da terceira leitura levam os registos inteiros:
 
 | conferência | código |
 |---|---:|
@@ -42,7 +43,7 @@ Corridas por `conferir-tp1.sh` (a cópia está no pacote da leitura como `confer
 
 ## As capturas
 
-O registo `design/especime-v3/capturas/tp1-2026-10-07/capturas.json` diz a cabeça `841c2d557be5de2c6a0aeb0cad63d2c8d6627258`, as larguras 390, 768, 1024, 1280, 1600 px, 20 resultados com o sha256 de cada captura, 0 falhas e `ok` a true; a pasta tem 20 ficheiros PNG (as duas páginas, as duas edições, as cinco larguras).
+O registo `design/especime-v3/capturas/tp1-2026-10-07/capturas.json` diz a cabeça `4a261f3a9b4cee9cc06d6a33538a1f6b3b7f8121`, as larguras 390, 768, 1024, 1280, 1600 px, 20 resultados com o sha256 de cada captura, 0 falhas e `ok` a true; a pasta tem 20 ficheiros PNG (as duas páginas, as duas edições, as cinco larguras).
 
 ## O custo
 

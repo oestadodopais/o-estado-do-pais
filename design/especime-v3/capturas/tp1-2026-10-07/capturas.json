@@ -1,5 +1,5 @@
 {
-  "cabeca": "841c2d557be5de2c6a0aeb0cad63d2c8d6627258",
+  "cabeca": "4a261f3a9b4cee9cc06d6a33538a1f6b3b7f8121",
   "larguras": [
     390,
     768,
@@ -310,20 +310,20 @@
     }
   ],
   "recursos": {
-    "version.json": "6b92ed3560957ad726c48df0786afbcb6d4d80833011c105816b1839529744f2",
+    "version.json": "6f806b9ec71e83893df5c24b7842769520df7c98bd9ed55082a01c9d40b4b67d",
     "sobre/index.html": "9e590dfac94a901bc55af6b5f69ebd9af96b0d9cc501da30151c3b75a371f7df",
-    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
     "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
-    "_astro/Base.hPEW4RoH.css": "f274081feb3c23a41b42c82b431fdc82ca2c162f791dec18fbb98087803084ff",
     "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/Base.hPEW4RoH.css": "f274081feb3c23a41b42c82b431fdc82ca2c162f791dec18fbb98087803084ff",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
     "tipos/spectral/Spectral-SemiBold.woff2": "91eef1143e31196ec762c00b566b9f628a851db348eb524cbfb36bfba9b22f2d",
     "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
     "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
     "en/about/index.html": "30362a926dcb29ea31ea161a50be3d910eeffec5dd0ff2ff987000b910761233",
-    "metodo/index.html": "9383760c64b0efa3a3d72d3482290c8a07b5591a617a7a09a7a81b48aadb3dc4",
+    "metodo/index.html": "fe91141ad6d63b25ecfd312c1533fbb0b3c5f787668f7dfc89c41d3cd3c3219e",
     "_astro/leitura.TndJzC6O.css": "c96affefd00a2dd221cd89e2086e266a2e7e0e3cfd4ce504551a72b45b60af9e",
     "tipos/spectral/Spectral-Bold.woff2": "8710bb6e834a4ec2aa7a7b24a76e63ead0ba6649c81881aedf615cf37724664f",
-    "en/method/index.html": "74ffceae3371e2e5cdb643d4693763339f3b8ff21db26874a8ab8f25e67a24de"
+    "en/method/index.html": "28eaa5281e1591be0a0208207a97cca970517e7299a855bbe190be2ebed0a2ee"
   },
   "falhas": [],
   "ok": true
