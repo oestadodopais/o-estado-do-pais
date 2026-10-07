@@ -146,3 +146,17 @@ console.log('RP4N-d nota: PASS, ausência da explicação não selada em todas a
   morde('legenda da pensão retirada', conferirAuditoriaDasFamilias({linhas}).erros, 'não está no campo «excerpt»');
 }
 console.log(`RP4N-d final: PASS, ${plantas.length} plantas com mensagem afirmada`);
+
+// RP4-n-e: o excerto da figura conserva o rótulo, o valor e a fonte, sem despejar os eixos.
+export function conferirExcertoDaPensao(linha) {
+  const linhas = linha.excerpt.split('\n');
+  return linhas.length === 4 && linhas[0].startsWith('Figura 8.4: Decrementos por reforma antecipada: caso geral')
+    && linhas[1] === linha.value.replace(',', '.') + '%' && linhas[2].startsWith('Fonte: Cálculos próprios')
+    ? [] : ['RP4N-e: o excerto da pensão deve conter só o rótulo, o valor e a nota da fonte'];
+}
+{
+  const l = structuredClone(loadClaims().get('penalizacao-antecipacao-um-ano-neutra'));
+  assert.deepEqual(conferirExcertoDaPensao(l), []);
+  l.excerpt += '\n91.8%\n84.3%';
+  morde('despejo dos eixos no excerto da pensão', conferirExcertoDaPensao(l), 'só o rótulo, o valor e a nota da fonte');
+}
