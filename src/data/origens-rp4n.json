@@ -17,7 +17,7 @@
       "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
       "campo": "página física 85",
       "hora": "2026-10-04T04:11:25Z",
-      "cliente": "OEstadoDoPais/corredor",
+      "cliente": "core.http.HttpClient.condicional",
       "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
     }
   },
@@ -39,7 +39,7 @@
       "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
       "campo": "página física 83",
       "hora": "2026-10-04T04:11:25Z",
-      "cliente": "OEstadoDoPais/corredor",
+      "cliente": "core.http.HttpClient.condicional",
       "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
     }
   },
@@ -61,7 +61,7 @@
       "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
       "campo": "página física 83",
       "hora": "2026-10-04T04:11:25Z",
-      "cliente": "OEstadoDoPais/corredor",
+      "cliente": "core.http.HttpClient.condicional",
       "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
     }
   },
@@ -83,7 +83,7 @@
       "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
       "campo": "página física 83",
       "hora": "2026-10-04T04:11:25Z",
-      "cliente": "OEstadoDoPais/corredor",
+      "cliente": "core.http.HttpClient.condicional",
       "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
     }
   },
@@ -105,7 +105,7 @@
       "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
       "campo": "página física 86",
       "hora": "2026-10-04T04:11:25Z",
-      "cliente": "OEstadoDoPais/corredor",
+      "cliente": "core.http.HttpClient.condicional",
       "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
     }
   },
@@ -127,7 +127,7 @@
       "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
       "campo": "página física 87",
       "hora": "2026-10-04T04:11:25Z",
-      "cliente": "OEstadoDoPais/corredor",
+      "cliente": "core.http.HttpClient.condicional",
       "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
     }
   },
@@ -149,7 +149,7 @@
       "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
       "campo": "página física 49",
       "hora": "2026-10-04T04:11:25Z",
-      "cliente": "OEstadoDoPais/corredor",
+      "cliente": "core.http.HttpClient.condicional",
       "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
     }
   },
@@ -171,7 +171,7 @@
       "motor": "content/20 Orcamento do Estado/source/dados-funcao.json",
       "campo": "description",
       "hora": "2026-10-04T03:55:05Z",
-      "cliente": "OEstadoDoPais/corredor",
+      "cliente": "core.http.HttpClient.condicional",
       "sha256": "43bb18f15b663e31b75ce6e09daaf68527aff412b1703319fcdb3e2496ddb8e7"
     }
   },
@@ -181,12 +181,12 @@
     "url": "https://www.iem.madeira.gov.pt/wp-content/uploads/recursos/instituto/estatisticas/2025/Conc/12-Bol-Conc-25.pdf",
     "lido": "2026-10-06",
     "lingua": "pt",
-    "excerto": "DESEMPREGADOS/DESEMPREGO REGISTADO - Candidatos inscritos que não têm trabalho, procuram um emprego como trabalhador\npor conta de outrém, estão imediatamente disponíveis e têm capacidade para trabalhar, dos quais:\n1º emprego: nunca trabalharam,\nNovo emprego: já trabalharam.\nEMPREGADOS - Candidatos inscritos que, tendo um emprego a tempo completo ou parcial pretendem mudar para outro emprego;\n(inclui candidatos na situação de suspensos temporariamente do trabalho, mas que mantêm um vínculo formal à empresa);",
+    "excerto": "DESEMPREGADOS/DESEMPREGO REGISTADO - Candidatos inscritos que não têm trabalho, procuram um emprego como trabalhador\npor conta de outrém, estão imediatamente disponíveis e têm capacidade para trabalhar, dos quais:\n1º emprego: nunca trabalharam,\nNovo emprego: já trabalharam.",
     "recibo": "content/13 Dominios/source/rp4n/madeira.pedido.json",
     "extracao": {
       "pagina": 15,
       "inicio": "DESEMPREGADOS/DESEMPREGO REGISTADO",
-      "fim": "OCUPADOS -"
+      "fim": "EMPREGADOS -"
     },
     "selo": {
       "tipo": "rp4n",
@@ -347,7 +347,7 @@
       "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
       "campo": "página física 72",
       "hora": "2026-10-04T04:11:25Z",
-      "cliente": "OEstadoDoPais/corredor",
+      "cliente": "core.http.HttpClient.condicional",
       "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
     }
   },
@@ -369,7 +369,7 @@
       "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
       "campo": "página física 85",
       "hora": "2026-10-04T04:11:25Z",
-      "cliente": "OEstadoDoPais/corredor",
+      "cliente": "core.http.HttpClient.condicional",
       "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
     }
   },
@@ -440,6 +440,72 @@
       "hora": "2026-10-07T09:56:44Z",
       "cliente": "core.http.HttpClient.condicional",
       "sha256": "72f86b8db94b091a1fd13804593fa58c3e484e1a422cb96a284e08b2467415d6"
+    }
+  },
+  "rp4n-diferencas-consolidacao": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Diferenças de Consolidação — No processo de «consolidação»,\nno caso da Síntese da execução Orçamental, apenas realizada\nnuma ótica de fluxos de tesouraria, podem ser identificadas as\ndiferenças entre os registos de despesa e da correspondente\nreceita relativos a verbas de: transferências e juros/\nrendimentos da propriedade, de subsídios e de aquisição de\nbens e serviços/vendas de bens e serviços correntes no âmbito\ndo Programa Saúde entre entidades, as quais são identificadas\nem linha própria na conta consolidada; bem como verbas de\nativos financeiros e passivos financeiros.\nNo apuramento da conta consolidada é anulada a parte que é\ncomum aos registos de receita e despesa, por forma a evitar\nsobrevalorização dos respetivos valores, evidenciando-se a\nparcela remanescente — à exceção dos ativos financeiros e\npassivos financeiros, cujas diferenças são imputadas à\nrespetiva rúbrica.",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 83,
+      "inicio": "Diferenças de Consolidação —",
+      "fim": "Dotação corrigida —"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 83",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-saldos-gerencia": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Saldo Orçamental (saldo de gerência anterior) — Diferença\nentre receita e despesa orçamental total, executados na\ngerência (ano) anterior.\nSaldo Orçamental (saldo de gerência seguinte) — Diferença\nentre receita e despesa orçamental total, executados no final\nda gerência (ano) atual.",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 87,
+      "inicio": "Saldo Orçamental (saldo de gerência anterior) —",
+      "fim": "Serviços e Fundos Autónomos (SFA) —"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 87",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
+    }
+  },
+  "rp4n-ac-ss-orcamento": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental | agosto 2026",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-04",
+    "lingua": "pt",
+    "excerto": "Conta consolidada da Administração Central e Segurança Social\nPeríodo: janeiro a agosto (milhões de euros)\nCGE\n\nOrçamento\nInicial\n\n2025\n\n2026\n\n2025\n\n2026",
+    "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
+    "extracao": {
+      "pagina": 49,
+      "inicio": "Conta consolidada da Administração Central e Segurança Social",
+      "fim": "Receita corrente"
+    },
+    "selo": {
+      "tipo": "rp4n",
+      "motor": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf",
+      "campo": "página física 49",
+      "hora": "2026-10-04T04:11:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5"
     }
   },
   "rp4n-combustiveis": {
