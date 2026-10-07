@@ -1,4 +1,4 @@
-/** RP4N-1: uma planta por tipo, com mensagem e contagem afirmadas. */
+/** RP4N-1 e RP4N-5: plantas por tipo, com mensagem e contagem afirmadas. */
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {parse} from 'node-html-parser';
@@ -8,7 +8,7 @@ import {inventariarMarcadores, resumirMarcadores, TIPOS_ACEITES, TIPOS_RECUSADOS
 export function plantasDosMarcadores() {
  const plantas=[];
  const marca='<a class="marcador">[a verificar]</a>';
- const claims=new Map([['planta',{published_at:'[a verificar]',access_date:'[a verificar]',reference_date:'[a verificar]',excerpt:'[a verificar]',source_url:'[a verificar]',document:{computed_over:{files:[{snapshot_date:'[a verificar]'}]}}}]]);
+ const claims=new Map([['planta',{published_at:'[a verificar]',access_date:'[a verificar]',reference_date:'[a verificar]',excerpt:'[a verificar]',source:'[a verificar]',source_url:'[a verificar]',document:{title:'[a verificar]',edition:'[a verificar]',computed_over:{files:[{snapshot_date:'[a verificar]'}]}}}]]);
  const campo=c=>`<span data-linha-claim="planta" data-linha-campo="${c}">${marca}</span>`;
  function prova(nome,html,tipo,aceite=false,rota={key:'linha'}, municipios=[]) {
   const r=inventariarMarcadores(parse(`<html><body><main>${html}</main></body></html>`),{rota,claims,municipios});
@@ -58,12 +58,35 @@ export function plantasDosMarcadores() {
  prova('afirmação acrescentada ao campo de excerto',campo('excerpt').replace('</span>',' Uma afirmação.</span>'),'fora-dos-tipos');
  prova('pessoa fora do mandato protegido',`<span class="mun-mandato-quem">${marca}</span>`,'fora-dos-tipos',false,{key:'municipio',params:{slug:'planta'}});
  for(const key of ['metodo','sobre'])prova(`afirmação em ${key}`,`<p class="metodo-p">Uma afirmação ${marca}</p>`,'fora-dos-tipos',false,{key});
+ const selo=`<a class="src-chip is-unverified" data-nonledger="proveniencia" href="/livro-razao/planta"><span>fonte</span><span class="marcador">[a verificar]</span></a>`;
+ const novos=[
+  ['selo de proveniência incompleta',selo,'selo-proveniencia',{key:'linha'}],
+  ['publicador ausente',campo('source'),'publicador',{key:'linha'}],
+  ['título de documento ausente',campo('document.title'),'titulo-documento',{key:'linha'}],
+  ['edição de documento ausente',campo('document.edition'),'edicao-documento',{key:'linha'}],
+  ['nota de alcance no recibo',`<p class="linha-alcance">${marca}</p>`,'nota-alcance',{key:'linha',params:{slug:'planta'}}],
+  ['referência do livro',`<p class="aparelho-nota">${marca}</p>`,'referencia-no-livro',{key:'livro'}],
+  ['página da própria marca',`<p>${marca}</p>`,'pagina-da-marca',{key:'marcador'}],
+ ];
+ for(const [nome,html,tipo,rota]of novos){
+  prova(nome,html,tipo,true,rota);
+  prova(`${nome} dentro de uma afirmação`,`<div data-o-que-e="planta">${html}</div>`,'o-que-e-linha',false,rota);
+ }
+ prova('selo sem recibo no livro',selo.replace('/planta','/inexistente'),'fora-dos-tipos');
+ const incompleta=claims.get('planta');claims.set('planta',{});
+ prova('selo de proveniência completa',selo,'fora-dos-tipos',false,{key:'linha'},[]);
+ claims.set('planta',incompleta);
+ prova('nota de alcance fora do recibo',`<p class="linha-alcance">${marca}</p>`,'fora-dos-tipos',false,{key:'area'});
+ prova('referência do livro com afirmação',`<p class="aparelho-nota">Uma afirmação ${marca}</p>`,'fora-dos-tipos',false,{key:'livro'});
+ prova('referência do livro com glosa',`<p class="aparelho-nota">${marca}<span> (to verify)</span></p>`,'referencia-no-livro',true,{key:'livro'});
+ prova('página inglesa da própria marca','<title>[to verify]</title>','pagina-da-marca',true,{key:'marcador',lang:'en'});
  for(const tipo of [...TIPOS_ACEITES,...TIPOS_RECUSADOS])assert(plantas.some(p=>p.tipo===tipo),`falta planta para ${tipo}`);
  return plantas;
 }
 if(process.argv[1]===fileURLToPath(import.meta.url)){
  const plantas=plantasDosMarcadores();
  for(const p of plantas)console.log(`PLANTA ${p.nome}: ${p.mensagem}; contagem=${p.contagem}`);
- if(process.argv.includes('--registo'))fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/plantas-b.json',JSON.stringify({comando:'node tests/cartao/rp4nb.mjs --registo',plantas},null,2)+'\n');
+ const fase=process.argv.includes('--registo-c')?'c':process.argv.includes('--registo')?'b':null;
+ if(fase)fs.writeFileSync(`design/especime-v3/medicoes/rp4n-2026-10-06/plantas-${fase}.json`,JSON.stringify({comando:`node tests/cartao/rp4nb.mjs --registo${fase==='c'?'-c':''}`,plantas},null,2)+'\n');
  console.log(`RP4N-b: PASS, ${plantas.length} plantas`);
 }
