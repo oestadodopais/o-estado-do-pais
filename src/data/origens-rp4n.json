@@ -197,28 +197,6 @@
       "sha256": "c93c48e256d5b6e05522968dc39e0a0289d25899065faa1dc40ba78f7e84c6ae"
     }
   },
-  "rp4n-madeira-fim-mes": {
-    "publicador": "Instituto de Emprego da Madeira",
-    "documento": "BOLETIM MENSAL POR CONCELHOS",
-    "url": "https://www.iem.madeira.gov.pt/wp-content/uploads/recursos/instituto/estatisticas/2025/Conc/12-Bol-Conc-25.pdf",
-    "lido": "2026-10-06",
-    "lingua": "pt",
-    "excerto": "Situação no fim do mês - Número de registos existentes no final do mês.",
-    "recibo": "content/13 Dominios/source/rp4n/madeira.pedido.json",
-    "extracao": {
-      "pagina": 15,
-      "inicio": "Situação no fim do mês",
-      "fim": "Movimento ao longo do mês"
-    },
-    "selo": {
-      "tipo": "rp4n",
-      "motor": "content/13 Dominios/source/rp4n/madeira.pdf",
-      "campo": "página física 15",
-      "hora": "2026-10-06T09:47:37Z",
-      "cliente": "core.http.HttpClient.condicional",
-      "sha256": "c93c48e256d5b6e05522968dc39e0a0289d25899065faa1dc40ba78f7e84c6ae"
-    }
-  },
   "rp4n-evora-orcamento": {
     "publicador": "Município de Évora",
     "documento": "PRESTAÇÃO DE CONTAS 2025",

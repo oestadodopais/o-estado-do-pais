@@ -330,6 +330,7 @@ export const CAMPOS = /** @type {const} */ ([
   'study',
   'note',
   'publication',
+  'definition_sources',
   'corrections',
   'verifications',
 ]);
@@ -1567,6 +1568,7 @@ export function validateLedger() {
 
   for (const [id, c] of claims) {
     const onde = `[${c.__file}]`;
+    if (c.definition_sources !== undefined && (!Array.isArray(c.definition_sources) || !c.definition_sources.length || c.definition_sources.some(s => !s.publisher || !/^https:\/\//.test(s.url ?? '') || !s.receipt?.motor || !/^[a-f0-9]{64}$/.test(s.receipt?.sha256 ?? '')))) errors.push(`${onde} definition_sources exige publicador, endereço e recibo de cada segunda fonte`);
     if (c.publication !== undefined && c.publication !== 'withdrawn') errors.push(`${onde} publication só aceita withdrawn ou a ausência do campo`);
     /* O bloco `document`, conferido uma vez: é um mapa, ou é `null`. Os valores
        lá dentro continuam por conferir, e cada conferência abaixo confere o seu. */

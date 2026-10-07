@@ -211,3 +211,15 @@ export function conferirExcertoDaPensao(linha) {
   assert(loadClaims().get(id).derivation.includes('intermediários e diretos com sede em Évora'));
  }
 }
+
+// RP4-n-e: outro publicador com o mesmo literal é recusado, incluindo recibos incompletos.
+{
+ const origens=structuredClone(ORIGENS_DAS_DEFINICOES);
+ origens['rp4n-orcamento'].publicador='Publicador plantado';
+ morde('origem de outro publicador',conferirAuditoriaDasFamilias({origens}).erros,'outro publicador');
+ const linhas=structuredClone(loadClaims({includeWithdrawn:true}));
+ const l=linhas.get('evora-vab-empresarial-2024');
+ delete l.definition_sources;
+ morde('segunda fonte sem declaração na linha',conferirAuditoriaDasFamilias({linhas}).erros,'outro publicador');
+}
+

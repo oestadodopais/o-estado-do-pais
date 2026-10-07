@@ -1,3 +1,4 @@
+import { conferirPublicador } from './publicador-da-definicao.mjs';
 /**
  * =============================================================================
  * K17 · A LEITURA DE CADA MEDIDA, AUDITADA E RECONTADA · bloco L1 (24.09.2026)
@@ -251,9 +252,9 @@ export function conferirAuditoriaDasLeituras({
 
   /**
    * Um apoio, conferido contra o seu campo. Devolve a origem que ele usa, ou null.
-   * @param {string} id @param {any} a @param {string} qual
+   * @param {string} id @param {any} a @param {string} qual @param {boolean} [definicao]
    */
-  const apoio = (id, a, qual) => {
+  const apoio = (id, a, qual, definicao = false) => {
     contas.apoios++;
     if (a?.forma === 'ano') {
       const alvo = a.linha === 'propria' ? id : a.linha;
@@ -271,6 +272,8 @@ export function conferirAuditoriaDasLeituras({
     if (a.origem) {
       const o = origens[a.origem];
       if (!o) return falha(id, `${qual} apoia-se em «${a.origem}», que não está declarada em ORIGENS_DAS_DEFINICOES`), null;
+      const erroPublicador = conferirPublicador(o, linhas.get(id === LEITURA_DAS_CAMARAS ? LINHA_DO_LIMITE : id), linhas);
+      if (definicao && erroPublicador) falha(id, `${a.origem}, ${id === LEITURA_DAS_CAMARAS ? LINHA_DO_LIMITE : id}: ${erroPublicador}`);
       if (!CAMPOS_DA_ORIGEM.has(a.campo) || typeof o[a.campo] !== 'string') {
         return falha(id, `${qual} cita o campo «${a.campo}» da origem «${a.origem}», que não existe ou não pode apoiar`), null;
       }
@@ -338,7 +341,7 @@ export function conferirAuditoriaDasLeituras({
             continue;
           }
           for (const a of p.apoios) {
-            const o = apoio(id, a, qualParte);
+            const o = apoio(id, a, qualParte, Number(f.caminho.match(/^\[(\d+)\]/)?.[1]) < corteIndependente(leituras[id].pt));
             if (o) { usadasPelaMedida.add(o); origensDasLeituras.add(o); }
           }
         } else if (p?.classe === 'conta') {

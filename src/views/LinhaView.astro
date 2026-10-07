@@ -80,7 +80,7 @@ import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import Frase from '../components/Frase.astro';
 import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
-import { DEFINICOES_DAS_MEDIDAS, FIGURAS, origensDaDefinicao } from '../data/figuras.mjs';
+import { DEFINICOES_DAS_MEDIDAS, FIGURAS, ORIGENS_DAS_DEFINICOES, origensDaDefinicao } from '../data/figuras.mjs';
 import { ressalvaDaLinha } from '../data/dominios.mjs';
 import {
   linguaDoTituloDoDocumento,
@@ -111,6 +111,9 @@ const nomeRecibo = nomeNoRecibo(id, lang);
 const lugarRecibo = lugarNoRecibo(id, lang);
 const nomeDaFonte = nomeDaFonteNoRecibo(id);
 const oQueE = oQueEDaLinha(id, lang);
+const fontesDaDefinicao = (claim.definition_sources ?? []).map(fonte => Object.entries(ORIGENS_DAS_DEFINICOES)
+  .find(([chave, origem]) => origem.publicador === fonte.publisher && origem.url === fonte.url)?.[0]).filter(Boolean);
+
 const comparacaoDoCartao = familiaRecibo.tipo === 'cartao' ? partesDaLeitura(id, lang).comparacao : null;
 /* As perguntas das medidas fora dos painéis europeus têm as origens no
    recibo que o cartão abre. A célula 8.4 confere a pergunta e cada campo das
@@ -772,6 +775,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         <p class="linha-o-que-e-frase" data-o-que-e-parte="comparacao"><Frase partes={comparacaoDoCartao.pedacos} lang={lang} selos={false} /></p>
       )}
     </div>
+    {fontesDaDefinicao.length > 0 && <OrigemDaDefinicao origens={origensDaDefinicao({origens:fontesDaDefinicao}, lang)} s={s} lang={lang} />}
     <p class="linha-valor">
       <Claim id={id} lang={lang} as="span" class="linha-valor-num" plano>
       {/* O ESPAÇO ENTRE O VALOR E A UNIDADE É TEXTO DA PÁGINA (bloco R1,

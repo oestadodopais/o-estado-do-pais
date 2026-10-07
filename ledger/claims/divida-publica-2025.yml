@@ -11,6 +11,7 @@ unit: "% do PIB"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Eurostat"
+definition_sources: [{"publisher": "Comissão Europeia", "receipt": {"campo": "texto da página alojada", "cliente": "publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)", "hora": "2026-09-26T08:30:08Z", "motor": "content/13 Dominios/source/ce/painel-pdm-scoreboard-2026-09-26.html", "sha256": "0230bdfacf0da8f870387675a1c20a92545c23fb4ef764e29661f0edec8cd8fa"}, "url": "https://economy-finance.ec.europa.eu/economic-and-fiscal-governance/macroeconomic-imbalance-procedure/scoreboard_en"}]
 document:
   title: "General government gross debt (EDP concept), consolidated - annual data"
   edition: "tipsgo10"

@@ -118,8 +118,8 @@ export const MEDIDAS_DO_CONCELHO = [
     /* R2 (03.10.2026, achado 23): a frase deixava implícito que se contam pessoas desempregadas; passa a dizê-lo, com o
        termo da fonte entre parênteses (o título do quadro do IEFP, «Desemprego registado por concelhos»). */
     nota: {
-      pt: ['Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).'],
-      en: ['Counts the unemployed people registered with the employment service at month end (registered unemployment).'],
+      pt: ['Conta as pessoas desempregadas inscritas nos serviços de emprego no mês de referência (desemprego registado).'],
+      en: ['Counts the unemployed people registered with the employment service in the reference month (registered unemployment).'],
     },
   },
   {
