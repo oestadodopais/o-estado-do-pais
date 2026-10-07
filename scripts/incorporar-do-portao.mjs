@@ -62,7 +62,7 @@ export function codigoEsperado(c, lang) {
   const origem = 'https://' + SITE_HOST_DISPLAY;
   const href = origem + (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + c.id;
   const lido = c.access_date ? p.lido + ' ' + dataDaCasa(c.access_date, lang) : '';
-  return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${escape(c.id)}" data-oedp-valor="${escape(c.value)}" data-oedp-lido="${escape(c.access_date)}"><a href="${href}">${escape(d.nome)}, ${escape(d.periodo)}: ${escape(c.value)} <span lang="${d.unidadeLang}">${escape(d.unidade)}</span></a> <span lang="${d.fonteLang}">${escape(d.fonte)}</span>, ${escape(lido)} · ${escape(d.atribuicao)}${d.notas ? ` <span>${escape(d.notas)}</span>` : ''}</p><script async src="${origem}/incorporar.js" referrerpolicy="no-referrer" crossorigin="anonymous"></script>`;
+  return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${escape(c.id)}" data-oedp-valor="${escape(c.value)}" data-oedp-lido="${escape(c.access_date)}"><a href="${href}">${escape(d.nome)}, ${escape(d.periodo)}: ${escape(c.value)} <span lang="${d.unidadeLang}">${escape(d.unidade)}</span></a> · <span lang="${d.fonteLang}">${escape(d.fonte)}</span>, ${escape(lido)} · ${escape(d.atribuicao)}${d.notas ? ` <span>${escape(d.notas)}</span>` : ''}</p><script async src="${origem}/incorporar.js" referrerpolicy="no-referrer" crossorigin="anonymous"></script>`;
 }
 
 /* Os estados condicionais também têm palavras aprovadas. Não se tornam
