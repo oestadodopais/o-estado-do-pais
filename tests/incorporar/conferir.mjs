@@ -166,7 +166,7 @@ for (const lang of ['pt','en']) {
   const caminho = routePath('metodo',lang);
   const root = lerPaginaComCodigo(fs.readFileSync(`${dist}${caminho}/index.html`,'utf8'));
   assert.deepEqual(conferirExemploNoMetodo(root,lang), []);
-  const porta = root.querySelectorAll('#livro-razao a').find(a => a.getAttribute('href').endsWith('/custo-unitario-do-trabalho-2024'));
+  const porta = root.querySelectorAll('#livro-razao a').find(a => a.getAttribute('href').endsWith('/divida-publica-2025'));
   porta.remove();
   const mensagem = 'ER1 Método: falta a porta para o recibo de exemplo da edição.';
   assert(conferirCodigo(root,matchPath(caminho)).includes(mensagem));

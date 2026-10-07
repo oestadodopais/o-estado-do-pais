@@ -13854,3 +13854,14 @@ Tudo aterrou dormente, sem nenhum interruptor.
 **As decisões do bloco.** A leitura a frio mordeu as cinco plantas e achou o que a passagem ER1-b corrigiu (os achados 4, 7, 8 e 10 a 15 da leitura, com a decisão do lugar de direção em `design/observatorio/mandatos/MANDATO-ER1-b-2026-10-06.md`); o achado 9 (o recibo do custo unitário do trabalho sem referência) é anterior ao ER1 e fica no bloco dos recibos.
 
 **O custo.** O construtor: [verify] e [verify] símbolos nas duas passagens (as linhas «tokens used»); a leitura do Opus: 329 667 (o total reportado pela ferramenta). A corrida `portão` do GitHub na cabeça que aterra: [verify], a conferir pelo lugar de direção na aterragem. Não há publicação nesta passagem.
+
+
+### 1.183 O exemplo do Método abre o recibo da dívida pública, pela decisão ER1-c
+
+**Afecta:** metodo
+
+**Texto:** metodo 742e6b3e0673
+
+**Data:** 07.10.2026.
+
+O mandato `design/observatorio/mandatos/MANDATO-ER1-c-2026-10-07.md`, achado 10, manda escolher uma medida nacional de cabeça da primeira página, com proveniência completa, referência e leitura em palavras correntes. A porta abre `divida-publica-2025`, nas duas edições. A linha pertence ao bloco do Estado da primeira página e tem o valor de referência declarado em `src/data/figuras.mjs`; a leitura está em `src/data/leituras-das-medidas.mjs`. A frase aprovada sobre a incorporação conserva-se. A falta de referência do exemplo antigo e as marcas do recibo recusado continuam destinadas ao bloco dos recibos.
