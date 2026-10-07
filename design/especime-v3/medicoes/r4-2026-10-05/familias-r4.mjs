@@ -487,7 +487,7 @@ const ORCAMENTO = [
     chaves: ['oe-2026-receita-efetiva-administracao-central', 'execucao-2026-07-receita-efetiva-administracao-central', 'execucao-2026-08-receita-efetiva-administracao-central'],
     partes: [
       diz('É a receita efetiva da administração central', 'It is central administration’s effective revenue', OU(L('name', 'RECEITA EFETIVA'), L('name', 'Receita efetiva'))),
-      diz(": o que ela recebe sem contar os recebimentos de ativos e passivos financeiros.", ": what it takes in without counting receipts from financial assets and liabilities.", O('rp4n-receita-efetiva', 'financeiros')),
+      diz(": o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência.", ": what it takes in without counting receipts from financial assets and liabilities or carry-over balances.", O('rp4n-receita-efetiva', 'financeiros'), O('rp4n-receita-efetiva', 'saldos de gerência')),
     ],
   },
   {
@@ -495,7 +495,7 @@ const ORCAMENTO = [
     partes: [
       diz('É a receita efetiva da administração central e da segurança social', 'It is the effective revenue of central administration and social security',
         L('name', 'Receita efetiva'), O('rp4n-ac-ss', 'Administração Central e Segurança Social')),
-      diz(": o que recebem sem contar os recebimentos de ativos e passivos financeiros.", ": what they take in without counting receipts from financial assets and liabilities.", O('rp4n-receita-efetiva', 'financeiros')),
+      diz(": o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência.", ": what they take in without counting receipts from financial assets and liabilities or carry-over balances.", O('rp4n-receita-efetiva', 'financeiros'), O('rp4n-receita-efetiva', 'saldos de gerência')),
     ],
   },
   {
