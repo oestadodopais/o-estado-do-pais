@@ -11312,6 +11312,7 @@
         "evora-prr-aprovado"
       ],
       "origens": [],
+      "instantaneo": true,
       "folhas": [
         {
           "pt": "São as verbas contratadas do Plano de Recuperação e Resiliência por beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano.",
@@ -11360,6 +11361,7 @@
         "evora-prr-pago"
       ],
       "origens": [],
+      "instantaneo": true,
       "folhas": [
         {
           "pt": "São as verbas pagas do Plano de Recuperação e Resiliência a beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano.",
@@ -11408,6 +11410,7 @@
         "evora-prr-vencido-aprovado"
       ],
       "origens": [],
+      "instantaneo": true,
       "folhas": [
         {
           "pt": "São as verbas contratadas por beneficiários intermediários e diretos com sede no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada, pela listagem de entidades do Plano de Recuperação e Resiliência.",

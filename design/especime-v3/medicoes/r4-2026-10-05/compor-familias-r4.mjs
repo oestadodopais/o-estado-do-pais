@@ -215,11 +215,11 @@ for (const e of FAMILIAS_R4) {
   const r = confereEntrada(e, ids, e.chaves.join(', '), nomes);
   const pt = e.partes.map((p) => texto(p.pt)).join('');
   const en = e.partes.map((p) => texto(p.en)).join('');
-  for (const k of e.chaves) declaracao[k] = { ...(e.nome ? { nome: e.nome } : {}), frase: { pt: [pt], en: [en] } };
+  for (const k of e.chaves) declaracao[k] = { ...(e.nome ? { nome: e.nome } : {}), frase: { pt: [pt], en: [en] }, ...(e.instantaneo ? {instantaneo:true} : {}) };
   const por = linhasPorConfirmar(e, ids, nomes);
   porConfirmar.push(...por);
   const pc = porConfirmarDaEntrada(ids, por);
-  auditoria.push({ chaves: e.chaves, ...(e.nome ? { nome: e.nome } : {}), origens: r.origens, ...(pc ? { por_confirmar_na_fonte: pc } : {}), folhas: [{ pt, en, partes: e.partes }] });
+  auditoria.push({ chaves: e.chaves, ...(e.nome ? { nome: e.nome } : {}), origens: r.origens, ...(e.instantaneo ? {instantaneo:true} : {}), ...(pc ? { por_confirmar_na_fonte: pc } : {}), folhas: [{ pt, en, partes: e.partes }] });
   (r.fonte ? classes.fonte : classes.casa).push(...e.chaves);
 }
 for (const k of linhasDe.keys()) if (!k.startsWith('concelho:') && !usadas.has(k)) falha(`a família «${k}» (${linhasDe.get(k).length} linha(s)) não tem entrada na especificação`);
@@ -249,7 +249,7 @@ for (const e of FAMILIAS_DOS_CONCELHOS_R4) {
   const por = linhasPorConfirmar(e, ids, nomes);
   porConfirmar.push(...por);
   const pc = porConfirmarDaEntrada(ids, por);
-  auditoria.push({ concelho: e.concelho, ...(e.nome ? { nome: e.nome } : {}), origens: r.origens, ...(pc ? { por_confirmar_na_fonte: pc } : {}), folhas: [{ pt, en, partes: e.partes }] });
+  auditoria.push({ concelho: e.concelho, ...(e.nome ? { nome: e.nome } : {}), origens: r.origens, ...(e.instantaneo ? {instantaneo:true} : {}), ...(pc ? { por_confirmar_na_fonte: pc } : {}), folhas: [{ pt, en, partes: e.partes }] });
   (r.fonte ? classes.fonte : classes.casa).push(k);
 }
 for (const k of linhasDe.keys()) if (k.startsWith('concelho:') && !usadasConcelho.has(k.slice(9))) falha(`a medida dos concelhos «${k}» não tem entrada`);

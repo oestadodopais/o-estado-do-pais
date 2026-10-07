@@ -1060,7 +1060,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "These are Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities."
       ]
-    }
+    },
+    "instantaneo": true
   },
   "evora-prr-execucao": {
     "frase": {
@@ -1090,7 +1091,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "These are Recovery and Resilience Plan funds paid to intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities."
       ]
-    }
+    },
+    "instantaneo": true
   },
   "evora-prr-universidade-contratado": {
     "frase": {
@@ -1110,7 +1112,8 @@ export const FAMILIAS_DAS_LINHAS = {
       "en": [
         "These are funds contracted by intermediate and direct beneficiaries headquartered in the municipality, with a completion deadline before the snapshot and no completion recorded, from the Recovery and Resilience Plan’s list of entities."
       ]
-    }
+    },
+    "instantaneo": true
   },
   "evora-prr-vencido-quota": {
     "frase": {
