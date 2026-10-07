@@ -43,7 +43,7 @@ export function dadosEsperados(c, lang) {
     periodo: c.reference_date ? dataDaCasa(c.reference_date, lang) : palavras.periodoEmFalta,
     valor: String(c.value), unidade: un.texto, unidadeLang: un.lingua || t(lang).lang,
     fonte: c.source || palavras.calculado, fonteLang: (c.source && linguaDaFonte(c.source, lang)) || t(lang).lang,
-    data: dia, leitura: dia ? palavras.lido + ' ' + dataDaCasa(dia, lang) : palavras.calculado,
+    data: dia, leitura: dia ? palavras.lido + ' ' + dataDaCasa(dia, lang) : Array.isArray(c.derived_from) && c.derived_from.length ? palavras.calculado : '',
     atribuicao: LICENCA ? LICENCA.atribuicao + ', ' + LICENCA.nome : '',
     notas: [c[lang === 'en' ? 'source_flag_note_en' : 'source_flag_note'], c[lang === 'en' ? 'ressalva_en' : 'ressalva']].filter(Boolean).join(' '),
     atualizacao: mudanca ? palavras.atualizado + ' ' + dataDaCasa(mudanca, lang) : '',

@@ -8,6 +8,7 @@ import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
 import { t } from '../i18n/strings.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { SITE_HOST_DISPLAY } from '../../site.config.mjs';
+import { eDerivada } from './ledger.mjs';
 import { caminhoDaLinha } from './livro.mjs';
 
 /** @param {unknown} valor */
@@ -46,7 +47,7 @@ export function dadosDaIncorporacao(c, lang) {
     periodo: c.reference_date ? dataDaCasa(c.reference_date, lang) : s.periodoEmFalta,
     valor: String(c.value), unidade: unidade.texto, unidadeLang: unidade.lingua ?? t(lang).lang,
     fonte, fonteLang: (c.source ? linguaDaFonte(c.source, lang) : null) ?? t(lang).lang,
-    data, leitura: data ? `${s.lido} ${dataDaCasa(data, lang)}` : s.calculado,
+    data, leitura: data ? `${s.lido} ${dataDaCasa(data, lang)}` : eDerivada(c) ? s.calculado : '',
     atribuicao: LICENCA ? `${LICENCA.atribuicao}, ${LICENCA.nome}` : '', notas,
     atualizacao: atualizada ? `${s.atualizado} ${dataDaCasa(atualizada, lang)}` : '',
   };
