@@ -4673,15 +4673,15 @@ for (const file of ficheirosHtml(DIST)) {
     new Set(root.querySelectorAll('[id]').map((e) => e.getAttribute('id')).filter(Boolean)),
   );
 
+  const marcadorRP4N = conferirSemMarcadores(root);
+  if (marcadorRP4N) err(marcadorRP4N);
+
   /* --- 0. documentos de estudo: obra citada, regra própria, e sai daqui --- */
   if (rota?.key === 'documento') {
     documentos++;
     verificaDocumento({ rota, rel, caminho, html, root, err });
     continue;
   }
-
-  const marcadorRP4N = conferirSemMarcadores(root);
-  if (marcadorRP4N) err(marcadorRP4N);
 
   if (rota?.key === 'estudo') {
     const canonicas = root.querySelectorAll('link[rel="canonical"]');

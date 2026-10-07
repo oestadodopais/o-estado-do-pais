@@ -59,5 +59,14 @@ for (const lang of ['pt','en']) {
     morde(`${nome} numa página construída (${lang})`, [conferirSemMarcadores(copia)].filter(Boolean), 'RP4N: uma página de leitor contém uma marca de informação por confirmar');
   }
 }
+for (const lang of ['pt','en']) {
+  const pasta = `dist/${lang === 'pt' ? 'estudos' : 'en/studies'}`;
+  const caminhos = fs.readdirSync(pasta).sort().map(s => `${pasta}/${s}/${lang === 'pt' ? 'documento' : 'document'}/index.html`);
+  const caminho = caminhos.find(p => fs.existsSync(p) && conferirSemMarcadores(parse(fs.readFileSync(p,'utf8'))) === null);
+  assert(caminho, 'a planta precisa de um documento construído sem marcas');
+  const copia = parse(fs.readFileSync(caminho,'utf8'));
+  copia.querySelector('body').insertAdjacentHTML('beforeend','<p>[a verificar]</p>');
+  morde(`marca num documento citado (${lang})`, [conferirSemMarcadores(copia)].filter(Boolean), 'RP4N: uma página de leitor contém uma marca de informação por confirmar');
+}
 if (process.argv.includes('--registo')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/plantas-sitio.json', JSON.stringify({plantas},null,2)+'\n');
 console.log(`RP4N: PASS, ${plantas.length} plantas com a mensagem afirmada`);
