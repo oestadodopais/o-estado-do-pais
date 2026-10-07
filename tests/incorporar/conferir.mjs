@@ -6,10 +6,10 @@ import { parse } from 'node-html-parser';
 import { dadosDaIncorporacao } from '../../src/lib/incorporar.mjs';
 import { allClaims } from '../../src/lib/ledger.mjs';
 import { routePath, matchPath } from '../../src/lib/routes.mjs';
-import { conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson } from '../../scripts/incorporar-do-portao.mjs';
+import { provenienciaConfirmada, conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson } from '../../scripts/incorporar-do-portao.mjs';
 const dist = process.env.OEDP_DIST || 'dist';
 const linhas = allClaims();
-const resultados = { comando: 'node tests/incorporar/conferir.mjs', recibos: 0, json: 0, plantas: [] };
+const resultados = { comando: 'node tests/incorporar/conferir.mjs', recibos: 0, semCodigo: 0, comCodigo: 0, json: 0, plantas: [] };
 for (const c of linhas) {
   const doc = JSON.parse(fs.readFileSync(`${dist}/livro-razao/${c.id}.json`, 'utf8'));
   for (const lang of ['pt','en']) {
@@ -18,6 +18,7 @@ for (const c of linhas) {
     const root = lerPaginaComCodigo(fs.readFileSync(`${dist}${rota}/index.html`, 'utf8'));
     assert.deepEqual(conferirCodigo(root, matchPath(rota)), []);
     resultados.recibos++;
+    resultados[provenienciaConfirmada(c) ? 'comCodigo' : 'semCodigo']++;
   }
   resultados.json++;
 }
@@ -31,6 +32,7 @@ function planta(nome, muda, mensagem, html = inteiro) {
   assert.throws(() => tirarCodigoConferido(root, rota), {message: new RegExp(mensagem.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))});
   resultados.plantas.push({nome,mensagem,mordeu:true});
 }
+planta('marca-por-confirmar', root => root.querySelector('textarea').set_content('[a verificar]'), 'ER1 código: uma marca por confirmar não se incorpora.');
 planta('valor-trocado', root => {
   const campo = root.querySelector('textarea');
   campo.set_content(campo.innerHTML.replaceAll(c.value, c.corrections.find(x=>x.new_value===c.value).old_value));
@@ -51,6 +53,19 @@ planta('comentario-no-codigo', ()=>{}, 'ER1 código: o pedaço difere da linha, 
 const mensagemLeitura = 'ER1 código: falta a leitura literal do campo.';
 assert(conferirCodigo(parse(inteiro), rota).includes(mensagemLeitura));
 resultados.plantas.push({nome:'leitura-nao-literal',mensagem:mensagemLeitura,mordeu:true});
+for (const lang of ['pt', 'en']) {
+  const sem = linhas.find(x => /\[a verificar\]/i.test(x.access_date ?? ''));
+  const caminho = routePath('linha', lang, {slug:sem.id});
+  const html = fs.readFileSync(`${dist}${caminho}/index.html`, 'utf8');
+  for (const [nome, muda, mensagem] of [
+    ['codigo-sem-proveniencia', root => root.querySelector('[data-incorporar-bloco]').insertAdjacentHTML('beforeend', '<textarea data-incorporar-codigo="'+sem.id+'">[a verificar]</textarea>'), 'ER1 código: proveniência por confirmar oferece código.'],
+    ['aviso-em-falta', root => root.querySelector('[data-incorporar-aviso]').remove(), 'ER1 aviso: falta a recusa de incorporação da edição.'],
+  ]) {
+    const root = lerPaginaComCodigo(html); muda(root);
+    assert(conferirCodigo(root, matchPath(caminho)).includes(mensagem));
+    resultados.plantas.push({nome:nome+'-'+lang,mensagem,mordeu:true});
+  }
+}
 const caminhos = [`/livro-razao/${c.id}.json`, '/livro-razao.json', '/livro-razao.csv', '/incorporar.js', '/', `/livro-razao/${c.id}`];
 const vercel = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
 const respostas = caminhos.map(caminho=> {
