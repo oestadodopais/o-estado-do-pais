@@ -492,12 +492,20 @@
     "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
     "lido": "2026-10-04",
     "lingua": "pt",
-    "excerto": "Conta consolidada da Administração Central e Segurança Social\nPeríodo: janeiro a agosto (milhões de euros)\nCGE\n\nOrçamento\nInicial\n\n2025\n\n2026\n\n2025\n\n2026",
+    "excerto": "Conta consolidada da Administração Central e Segurança Social\nOrçamento\nInicial\n\n2025\n\n2026\n\n2025\n\n2026",
     "recibo": "content/20 Orcamento do Estado/source/eo-sintese-agosto.pdf.pedido.json",
     "extracao": {
       "pagina": 49,
-      "inicio": "Conta consolidada da Administração Central e Segurança Social",
-      "fim": "Receita corrente"
+      "trechos": [
+        {
+          "inicio": "Conta consolidada da Administração Central e Segurança Social",
+          "fim": "Período:"
+        },
+        {
+          "inicio": "Orçamento\nInicial",
+          "fim": "Receita corrente"
+        }
+      ]
     },
     "selo": {
       "tipo": "rp4n",
