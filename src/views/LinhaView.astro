@@ -79,6 +79,7 @@ import { linhaDePortugalDaLinha } from '../lib/faixa-do-concelho.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import Frase from '../components/Frase.astro';
+import TextoDoNome from '../components/TextoDoNome.astro';
 import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
 import { DEFINICOES_DAS_MEDIDAS, FIGURAS, ORIGENS_DAS_DEFINICOES, origensDaDefinicao } from '../data/figuras.mjs';
 import { ressalvaDaLinha } from '../data/dominios.mjs';
@@ -728,7 +729,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
         data-nome={nomeRecibo.fonte === 'familia' ? (familiaRecibo.tipo === 'concelho' && familiaRecibo.chave !== 'limite' ? 'concelho' : 'familia') : nomeRecibo.fonte}
         data-de-linha={id}
         data-de-familia={nomeRecibo.familia ?? undefined}
-      >{nomeRecibo.texto}</span>{lugarRecibo && (
+      ><TextoDoNome id={id} texto={nomeRecibo.texto} lang={lang} /></span>{lugarRecibo && (
         <>
           <span class="linha-titulo-separador" aria-hidden="true">{' · '}</span>
           <span class="linha-titulo-lugar" data-lugar-da-linha={lugarRecibo.slug}>{lugarRecibo.nome}</span>

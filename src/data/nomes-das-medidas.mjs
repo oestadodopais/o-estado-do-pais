@@ -666,6 +666,6 @@ for (const id of Object.keys(NOMES_DAS_LINHAS_DERIVADAS)) {
 function dataDoInstantaneoPRR() {
  const d=/** @type {any} */ (getClaim('evora-prr-vencido-aprovado-2026').document).computed_over.files;
  const data=d[0]?.snapshot_date;
- if(!/^\d{4}-\d{2}-\d{2}$/.test(data ?? '') || !d.every(x=>x.snapshot_date===data)) throw Error('PRR: falta uma data única do instantâneo');
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(data ?? '') || !d.every((/** @type {{snapshot_date:string}} */ x)=>x.snapshot_date===data)) throw Error('PRR: falta uma data única do instantâneo');
  return data.split('-').reverse().join('.');
 }
