@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { chromium } from 'playwright';
 import { parse } from 'node-html-parser';
-import { allClaims } from '../../src/lib/ledger.mjs';
+import { allClaims, eDerivada } from '../../src/lib/ledger.mjs';
 import { SITE_URL, SITE_HOST_DISPLAY } from '../../site.config.mjs';
 import { routePath } from '../../src/lib/routes.mjs';
 import { t } from '../../src/i18n/strings.mjs';
@@ -24,7 +24,7 @@ const linhas = allClaims();
 const c = linhas.find(c=>c.source_url && c.corrections?.some(x=>x.kind==='atualizacao' && x.new_value===c.value));
 const cNotas = linhas.find(c => podeIncorporar(c) && (c.source_flag_note || c.ressalva) && (c.source_flag_note_en || c.ressalva_en));
 assert(cNotas, 'O navegador precisa de uma linha real com notas nas duas edições.');
-const calculada = linhas.find(c => c.formula && !c.access_date && podeIncorporar(c));
+const calculada = linhas.find(c => eDerivada(c) && !c.access_date && podeIncorporar(c));
 const antigo = c.corrections.find(x=>x.kind==='atualizacao' && x.new_value===c.value).old_value;
 const tipos = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css','.json':'application/json','.woff2':'font/woff2','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp'};
 const codigos = Object.fromEntries(['pt','en'].map(lang=>[lang,parse(fs.readFileSync(`${dist}${routePath('linha',lang,{slug:c.id})}/index.html`,'utf8')).querySelector('[data-incorporar-codigo]').textContent]));
@@ -38,7 +38,7 @@ function blogue(lang) {
   const rotulos = lang==='pt' ? ['Valor atual','Valor antigo','Pedido sem resposta'] : ['Current value','Old value','Failed request'];
   const campos={lang:t(lang).lang,titulo:lang==='pt'?'Blogue de ensaio':'Test blog',anfitria:lang==='pt'?'Conteúdo da página que acolhe os números.':'Content of the page hosting the numbers.',rotulo_atual:rotulos[0],rotulo_antigo:rotulos[1],rotulo_ausente:rotulos[2],codigo_atual:codigos[lang],codigo_antigo:velho,codigo_ausente:ausente,rotulo_notas:lang==='pt'?'Número com notas':'Number with notes',codigo_notas:codigosNotas[lang].replace(/data-oedp-lido="[^"]*"/, 'data-oedp-lido=""')};
   const codigoCalculado = lerPaginaComCodigo(fs.readFileSync(`${dist}${routePath('linha',lang,{slug:calculada.id})}/index.html`,'utf8')).querySelector('textarea').textContent.replace('data-oedp-valor="'+calculada.value+'"','data-oedp-valor="ensaio"');
-  return modeloBlogue.replace('</body>',codigoCalculado+'</body>').replace(/\{\{([a-z_]+)\}\}/g,(_,chave)=>campos[chave]);
+  return modeloBlogue.replace('</html>',codigoCalculado+'</html>').replace(/\{\{([a-z_]+)\}\}/g,(_,chave)=>campos[chave]);
 }
 let modoAtual = 'normal';
 const servidor = http.createServer((req,res)=>{
@@ -95,7 +95,7 @@ try {
     const acessos = modo==='sem-js' ? [] : await pagina.evaluate(()=>{window.registar=false;return window.acessosIndevidos;});
     const textos = await pagina.locator('.oedp-numero').allTextContents();
     const valores = await pagina.locator('.oedp-numero').evaluateAll(ns=>ns.map(n=>({valor:n.getAttribute('data-oedp-valor'),lido:n.getAttribute('data-oedp-lido'),aviso:n.querySelector('[data-oedp-atualizado]')?.textContent??null,html:n.outerHTML})));
-    assert.equal(valores.length,4);
+    assert.equal(valores.length,parse(blogue(lang)).querySelectorAll('.oedp-numero').length);
     assert.equal(valores[2].valor,c.value);
     assert.equal(valores[2].aviso,null);
     if (['normal','releitura','separador-notas-retirado','notas-retiradas'].includes(modo)) {

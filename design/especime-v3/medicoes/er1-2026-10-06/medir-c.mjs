@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { loadClaims, camposPorVerificar, provenienciaIncompleta } from '../../../../src/lib/ledger.mjs';
+import { loadClaims, eDerivada, camposPorVerificar, provenienciaIncompleta } from '../../../../src/lib/ledger.mjs';
 import { prova } from '../../../../src/lib/prova.mjs';
 import { REGRAS } from '../../../../src/data/metodo.mjs';
 import { FIGURAS_PDM } from '../../../../src/data/figuras.mjs';
@@ -21,7 +21,7 @@ assert.equal(lugarDaIncorporacao(c,'pt').nome,'Portugal');
 assert(FIGURAS_PDM.find(f=>f.claim===c.id)?.limiar);
 assert(JSON.stringify(BLOCOS_DA_PRIMEIRA_PAGINA).includes('"'+c.id+'"'));
 const sem = linhas.find(recusada);
-const calculada = linhas.find(c=>c.formula && !c.access_date && !recusada(c));
+const calculada = linhas.find(c=>eDerivada(c) && !c.access_date && !recusada(c));
 const r = {
   comando: `node ${pasta}/medir-c.mjs`,
   cabecaCodigo: execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),
@@ -44,7 +44,7 @@ for(const lang of ['pt','en']) {
     const campo=root.querySelector('[data-incorporar-codigo]');
     assert.equal(Boolean(campo),!recusada(linha));
     n[campo?'comCodigo':'semCodigo']++;
-    if(campo&&linha.formula&&!linha.access_date)n.calculadosSemDataComCodigo++;
+    if(campo&&eDerivada(linha)&&!linha.access_date)n.calculadosSemDataComCodigo++;
   }
   assert.equal(n.semCodigo,r.marcasFonteData.length);
   const metodo=lerPaginaComCodigo(fs.readFileSync(`dist${routePath('metodo',lang)}/index.html`,'utf8'));
