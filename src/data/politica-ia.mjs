@@ -218,15 +218,21 @@ export const FICHA_DA_PRIMEIRA_PAGINA = {
  * duas edições, e em mais lado nenhum: as páginas do leitor levam o rótulo, que
  * é uma linha e uma porta.
  */
+/* A FRASE MUDOU A 07.10.2026 (§1.181, o acrescento (f), por decisão do diretor): o sítio
+   deixa de dizer quem responde por ele, porque é um projeto de inteligência artificial,
+   e a frase diz onde estão as regras e as recusas, que é o que a divulgação pede; a
+   redação anterior («nenhum humano revê cada peça antes de sair; uma pessoa com nome
+   define as regras e as recusas, e responde») era a cobertura legal de 30.08.2026, e
+   o diretor aceitou a exposição de a retirar. O oráculo mudou no mesmo commit. */
 export const FRASE = {
   pt:
     'Escrito, conferido e atualizado por sistemas de inteligência artificial, segundo ' +
-    'regras publicadas; nenhum humano revê cada peça antes de sair; uma pessoa com ' +
-    'nome define as regras e as recusas, e responde.',
+    'regras publicadas; nenhum humano revê cada mudança antes de se publicar, e as ' +
+    'regras e as recusas estão nesta página.',
   en:
     'Written, checked and updated by artificial intelligence systems, under published ' +
-    'rules; no human reviews each piece before it goes out; a named person sets the ' +
-    'rules and the refusals, and answers for it.',
+    'rules; no human reviews each change before it is published, and the rules and ' +
+    'the refusals are on this page.',
 };
 
 /**
@@ -254,21 +260,56 @@ export const FRASE = {
  * adjetivo de mérito, que a Emenda 18 recusa: não dizem que o projeto é bom,
  * dizem de que espécie é.
  */
+/* A FRASE MUDOU A 07.10.2026 (§1.181, o acrescento (f)), nas palavras do diretor: um
+   projeto independente conduzido por uma inteligência artificial, financiado em privado.
+   «Pessoal» saiu, porque o projeto deixou de se dizer de uma pessoa; «explora a
+   possibilidade» saiu, porque o observatório existe. Nenhum adjetivo de mérito entrou
+   (Emenda 18): «independente» e «em privado» dizem de que espécie o projeto é. */
 export const O_PROJETO = {
   pt:
-    'O Estado do País é um projeto pessoal e independente: explora a possibilidade ' +
-    'de um observatório sobre o país feito com inteligência artificial.',
+    'O Estado do País é um projeto independente, conduzido por uma inteligência ' +
+    'artificial e financiado em privado.',
   en:
-    'O Estado do País is a personal, independent project: it explores the possibility ' +
-    'of an observatory of the country made with artificial intelligence.',
+    'O Estado do País is an independent project, run by an artificial intelligence ' +
+    'and privately funded.',
 };
+
+/**
+ * ---------------------------------------------------------------------------
+ * O CONTACTO · a terceira frase do Sobre (07.10.2026, §1.181, o acrescento (f))
+ * ---------------------------------------------------------------------------
+ * O sítio não diz quem responde por ele, e por isso diz como se lhe escreve: pelo
+ * endereço das correções, por agora o único endereço deste projeto (no futuro, um
+ * endereço do próprio projeto para o contacto editorial e geral, criado pelo diretor
+ * quando entender, e a frase muda com ele). A frase está partida em dois pedaços
+ * porque o endereço é uma ligação `mailto:` e não um pedaço de cadeia; juntar
+ * `antes`, o endereço (`ENDERECO_CORRECOES`, de `metodo.mjs`) e `depois` dá o texto
+ * decidido, que o oráculo guarda inteiro e o `gate:html` compara com o que a página
+ * rende, carácter a carácter, como faz à frase do projeto.
+ */
+export const CONTACTO = {
+  pt: { antes: 'Para contactar este projeto, escreva para o endereço das correções, ', depois: '.' },
+  en: { antes: 'To contact this project, write to the corrections address, ', depois: '.' },
+};
+
+/**
+ * O texto decidido do contacto, inteiro, na língua de uma edição. É o que o portão compara.
+ * @param {string} lang
+ * @param {string} endereco
+ */
+export function textoDoContacto(lang, endereco) {
+  const c = /** @type {Record<string, { antes: string, depois: string }>} */ (CONTACTO)[lang];
+  if (!c) return null;
+  return `${c.antes}${endereco}${c.depois}`;
+}
 
 /**
  * ---------------------------------------------------------------------------
  * A SECÇÃO DA POLÍTICA, EM `/metodo`
  * ---------------------------------------------------------------------------
- * A via, o que se publica sem humano, os lugares e as recusas: é a
- * `POLITICA-DA-AUTONOMIA.md` §2, §4, §5 e §6 dita ao leitor. A regra da voz
+ * A via, os três papéis, o que se publica só pelas verificações automáticas e as
+ * recusas: é a `POLITICA-DA-AUTONOMIA.md` §2, §5, §4 e §6 dita ao leitor, com a
+ * emenda de 07.10.2026 (§1.181). A regra da voz
  * vale aqui como em todo o lado (Emenda 18): a página diz o que a coisa é, e
  * nunca porque se deve confiar nela. Por isso nenhuma destas frases é sobre o
  * cuidado da casa; são todas sobre o que a casa faz e o que não faz.
@@ -306,58 +347,53 @@ export const POLITICA = {
   },
 
   /**
-   * O que se publica sem uma pessoa ler, o que pára, e o que nunca sai sem uma pessoa (05.10.2026: a palavra
-   * «diretor» saiu das páginas públicas, onde o leitor não sabe quem é; nos registos internos fica como a §1.112 a define).
+   * O QUE SE PUBLICA SÓ PELAS VERIFICAÇÕES AUTOMÁTICAS (07.10.2026, §1.181, o acrescento (e) e (f)).
    *
-   * A política escreve-o como uma tabela de duas colunas; a página escreve-o na
-   * forma que já existe aqui, a linha rotulada do Método («Mecanismo», «Prova»,
-   * «O que isto não apanha»). Uma tabela nova pedia uma folha nova e uma
-   * disposição que a constituição não tem, e o que ela diria é isto: três
-   * casos, e o que acontece em cada um.
+   * Até 07.10.2026 eram três casos sob o título «O que se publica sem uma pessoa ler», e o
+   * terceiro era «Nunca sem uma pessoa» (uma peça que nomeie alguém, o correio a terceiros, a
+   * identidade, o dinheiro). Por decisão do diretor, o «nunca sem uma pessoa» deixou de ser
+   * regra e portão (nada espera por uma pessoa; o diretor é avisado do que sai) e o sítio não
+   * diz quem responde por ele; o caso saiu, e os dois que ficam deixam de falar de uma pessoa:
+   * o que entra por rotina entra pelas verificações automáticas, e o que pára espera a
+   * decisão da direção, que a secção dos papéis acima define. O que pára é o que a política
+   * sempre disse (a §1.172, o ponto 3), e não muda.
+   *
+   * «Portões verdes» e «portão vermelho» saíram do texto do leitor, a pedido do editor na
+   * leitura do Codex de 06.10.2026 (a leitura H4-e-d): a página dizia-os sem os explicar. A
+   * frase diz agora o que uma verificação automática é, uma vez, no primeiro caso. E «a
+   * leitura já não reconhece» passou a «o motor já não reconhece», porque nesta página «a
+   * leitura» é um dos três papéis e aqui era o programa que lê os ficheiros das fontes.
    */
   casos: {
-    titulo: { pt: 'O que se publica sem uma pessoa ler', en: 'What is published without a person reading it' },
+    titulo: {
+      pt: 'O que se publica só pelas verificações automáticas',
+      en: 'What is published by the automated checks alone',
+    },
     itens: [
       {
-        /* A política diz «fica registado na página “O que mudou”». Essa página
-           ainda não existe neste sítio, e nomear uma página que não se
-           constrói seria uma porta que não abre: a frase diz a condição, que é
-           a parte que já é verdade hoje. */
         rotulo: { pt: 'Publica-se', en: 'Published' },
         texto: {
           pt:
-            'Um valor novo da mesma medida, no mesmo formato, da mesma fonte, com ' +
-            'todos os portões verdes.',
+            'Um valor novo da mesma medida, no mesmo formato, da mesma fonte, quando passa em ' +
+            'todas as verificações automáticas: as conferências que correm em cada construção ' +
+            'das páginas e a param à primeira diferença.',
           en:
-            'A new value of the same measure, in the same format, from the same source, ' +
-            'with every gate green.',
+            'A new value of the same measure, in the same format, from the same source, when it ' +
+            'passes every automated check: the checks that run on every build of the pages and ' +
+            'stop the build at the first difference.',
         },
       },
       {
-        /* «Pára» é a palavra da política, e não pode ser a da página: o Acordo
-           de 1990 tira-lhe o acento, e «Para, e o diretor é avisado» lê-se como
-           a preposição. O portão da ortografia apanhou-o. A frase diz a mesma
-           coisa sem o homógrafo. */
-        rotulo: { pt: 'Não se publica, e uma pessoa é avisada', en: 'Not published, and a person is told' },
+        rotulo: { pt: 'Não se publica, e a direção decide', en: 'Not published, and direction decides' },
         texto: {
           pt:
-            'Uma medida nova; uma definição mudada; um ficheiro que a leitura já não ' +
-            'reconhece; uma revisão da fonte; um portão vermelho; uma fonte que deixou ' +
+            'Uma medida nova; uma definição mudada; um ficheiro que o motor já não reconhece; ' +
+            'uma revisão da fonte; uma verificação automática que falha; uma fonte que deixou ' +
             'de responder.',
           en:
-            'A new measure; a changed definition; a file the reader no longer recognises; ' +
-            'a revision at the source; a red gate; a source that has stopped answering.',
-        },
-      },
-      {
-        rotulo: { pt: 'Nunca sem uma pessoa', en: 'Never without a person' },
-        texto: {
-          pt:
-            'Qualquer peça que nomeie uma pessoa; correio a terceiros em nome deste projeto; ' +
-            'uma mudança de identidade; dinheiro, contratos, contas.',
-          en:
-            'Any piece that names a person; mail to third parties in the name of this project; ' +
-            'a change of identity; money, contracts, accounts.',
+            'A new measure; a changed definition; a file the engine no longer recognises; ' +
+            'a revision at the source; an automated check that fails; a source that has ' +
+            'stopped answering.',
         },
       },
     ],

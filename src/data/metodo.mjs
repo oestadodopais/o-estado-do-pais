@@ -604,10 +604,10 @@ export const REGRAS = [
     titulo: { pt: 'A intervenção humana', en: 'Human intervention' },
     regra: {
       pt: [
-        'A direção é de um modelo, que decide o que se publica dentro das regras e das recusas que uma pessoa com nome define; é essa pessoa que responde pelo que se publica. Nem ela nem o modelo escrevem números. A autoria por inteligência artificial está declarada no Sobre, e todas as páginas construídas levam a porta para lá. Nos documentos de estudo, uma frase marcada «(inferência)» é a leitura que o modelo faz dos números com fonte, e não uma constatação com fonte em si mesma.',
+        'A direção é de um modelo, que decide o que se publica dentro das regras e das recusas desta página. Nenhuma pessoa escreve números nem revê cada mudança antes de sair, e o modelo também não escreve números. A autoria por inteligência artificial está declarada no Sobre, e todas as páginas construídas levam a porta para lá. Nos documentos de estudo, uma frase marcada «(inferência)» é a leitura que o modelo faz dos números com fonte, e não uma constatação com fonte em si mesma.',
       ],
       en: [
-        'It is directed by a model, which decides what gets published within the rules and the refusals that a named person sets; that person answers for what is published. Neither the person nor the model writes figures. Authorship by artificial intelligence is stated on the About page, and every page built carries the door to it. In the study documents, a sentence marked “(inference)” is the model’s reading of the sourced figures, and not a sourced finding in itself.',
+        'It is directed by a model, which decides what gets published within the rules and the refusals on this page. No person writes figures or reviews each change before it goes out, and the model does not write figures either. Authorship by artificial intelligence is stated on the About page, and every page built carries the door to it. In the study documents, a sentence marked “(inference)” is the model’s reading of the sourced figures, and not a sourced finding in itself.',
       ],
     },
     mecanismo: {
@@ -632,18 +632,18 @@ export const REGRAS = [
     titulo: { pt: 'O que o observatório não faz', en: 'What the observatory does not do' },
     regra: {
       pt: [
-        'Não classifica partidos nem faz médias por partido: regista quem decidiu o quê e o que aconteceu, com o nome tal como consta do documento e o rótulo partidário como facto de registo. Médias por partido sobre territórios que não têm nada em comum são aritmética enganosa. Não publica um número sem linha no livro-razão; onde a fonte ainda está por confirmar, a própria linha o diz com o marcador. Não corrige em silêncio. Não recebe dinheiro de nenhuma entidade que mede: é financiado pessoalmente pela pessoa que responde pelo projeto, sem publicidade nem financiamento externo.',
+        'Não classifica partidos nem faz médias por partido: regista quem decidiu o quê e o que aconteceu, com o nome tal como consta do documento e o rótulo partidário como facto de registo. Médias por partido sobre territórios que não têm nada em comum são aritmética enganosa. Não publica um número sem linha no livro-razão; onde a fonte ainda está por confirmar, a própria linha o diz com o marcador. Não corrige em silêncio. Não recebe dinheiro de nenhuma entidade que mede: é financiado em privado, sem publicidade nem dinheiro de instituições.',
       ],
       en: [
-        'It does not rank or classify parties and does not average by party: it records who decided what and what happened, with the name as the document gives it and the party label as a fact of record. Averages by party across territories with nothing in common are misleading arithmetic. It does not publish a figure without a ledger row; where the source is still to be confirmed, the row itself says so with the marker. It does not correct in silence. It takes no money from any entity it measures: it is funded personally by the person who answers for the project, with no advertising and no outside funding.',
+        'It does not rank or classify parties and does not average by party: it records who decided what and what happened, with the name as the document gives it and the party label as a fact of record. Averages by party across territories with nothing in common are misleading arithmetic. It does not publish a figure without a ledger row; where the source is still to be confirmed, the row itself says so with the marker. It does not correct in silence. It takes no money from any entity it measures: it is privately funded, with no advertising and no money from institutions.',
       ],
     },
     mecanismo: {
       pt: [
-        'Não há neste sítio nenhuma ordenação por partido. O crédito de um valor é um campo da sua linha, conferido carácter a carácter na página dessa linha, como qualquer outro campo. As frases sobre o financiamento e sobre a publicidade não têm máquina nenhuma por trás: são regras deste projeto, como a primeira, e valem por estarem escritas e por quem responde por elas.',
+        'Não há neste sítio nenhuma ordenação por partido. O crédito de um valor é um campo da sua linha, conferido carácter a carácter na página dessa linha, como qualquer outro campo. As frases sobre o financiamento e sobre a publicidade não têm máquina nenhuma por trás: são regras deste projeto, como a primeira, e valem por estarem escritas aqui.',
       ],
       en: [
-        'There is no ranking by party anywhere on this site. The credit for a value is a field of its row, checked character for character on that row page, like any other field. The sentences about funding and about advertising have no machine behind them: they are rules of this project, like the first one, and they hold by being written down and by whoever answers for them.',
+        'There is no ranking by party anywhere on this site. The credit for a value is a field of its row, checked character for character on that row page, like any other field. The sentences about funding and about advertising have no machine behind them: they are rules of this project, like the first one, and they hold by being written down here.',
       ],
     },
     prova: [

@@ -237,9 +237,11 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
       ----------------------------------------------------------------------
       A SECÇÃO QUE A DIVULGAÇÃO OBRIGA (01.09.2026)
       ----------------------------------------------------------------------
-      O rótulo de todas as páginas diz o que o texto é e quem responde por ele,
+      O rótulo de todas as páginas diz o que o texto é e onde estão as regras,
       e liga para aqui. Esta é a página onde a política se lê por extenso: a
-      via, o que sai sem o diretor, os lugares e as recusas. É a
+      via, os três papéis, o que se publica só pelas verificações automáticas
+      e as recusas (a ordem desde 07.10.2026, §1.182: os papéis antes dos casos,
+      porque os casos nomeiam a direção). É a
       `design/observatorio/POLITICA-DA-AUTONOMIA.md` §2, §4, §5 e §6 dita ao
       leitor, e o texto vem de `src/data/politica-ia.mjs`, como o das dez regras
       vem de `src/data/metodo.mjs`: esta vista compõe, não escreve.
@@ -264,20 +266,6 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
       {POLITICA.via[lang].map((paragrafo) => <p class="metodo-p">{paragrafo}</p>)}
 
       <div class="regra-linha">
-        <span class="regra-k">{POLITICA.casos.titulo[lang]}</span>
-        <div class="regra-v">
-          {
-            POLITICA.casos.itens.map((caso) => (
-              <p class="metodo-p politica-caso">
-                <strong>{caso.rotulo[lang]}</strong>
-                <Fragment set:text={` · ${caso.texto[lang]}`} />
-              </p>
-            ))
-          }
-        </div>
-      </div>
-
-      <div class="regra-linha">
         <span class="regra-k">{POLITICA.lugares.titulo[lang]}</span>
         <div class="regra-v">
           {POLITICA.lugares.intro[lang].map((p2) => <p class="metodo-p">{p2}</p>)}
@@ -297,6 +285,20 @@ const destino = (l) => (l.prova ? CAMINHO_DA_PROVA : routePath(l.rota, lang));
             }
           </ul>
           {POLITICA.lugares.fecho[lang].map((p2) => <p class="metodo-p">{p2}</p>)}
+        </div>
+      </div>
+
+      <div class="regra-linha">
+        <span class="regra-k">{POLITICA.casos.titulo[lang]}</span>
+        <div class="regra-v">
+          {
+            POLITICA.casos.itens.map((caso) => (
+              <p class="metodo-p politica-caso">
+                <strong>{caso.rotulo[lang]}</strong>
+                <Fragment set:text={` · ${caso.texto[lang]}`} />
+              </p>
+            ))
+          }
         </div>
       </div>
 

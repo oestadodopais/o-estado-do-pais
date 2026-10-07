@@ -331,6 +331,7 @@ import {
   LINGUA_DO_RESPONSAVEL,
   ROTULO as ROTULO_DA_CASA,
   textoDoRotulo,
+  textoDoContacto,
 } from '../src/data/politica-ia.mjs';
 import { VERIFICACAO } from '../src/data/verificacao.mjs';
 import { SERIES_ATRASADAS } from '../src/data/frescura.mjs';
@@ -749,7 +750,7 @@ const ORIGENS_DOS_CONCELHOS = { lugares: 0, contas: 0, empates: 0, valoresNaFaix
 let ficheiros = 0;
 let documentos = 0;
 /** O rótulo de IA, contado pelo lado da página: rodapé, topo, ficha e frase. */
-const ROTULO_DE_IA = { rodape: 0, topo: 0, ficha: 0, frase: 0, projeto: 0 };
+const ROTULO_DE_IA = { rodape: 0, topo: 0, ficha: 0, frase: 0, projeto: 0, contacto: 0 };
 let paginasDoLivro = 0;
 /* Os títulos das páginas de linha conferidos pela célula do espaço entre o valor
    e a unidade (bloco R1, 23.09.2026, I143), e os que colavam os dois. */
@@ -4604,6 +4605,18 @@ const cartoesUsados = new Set();
           `      escrita:  ${JSON.stringify(O_PROJETO[l].slice(0, 120))}`,
       });
     }
+    /* A FRASE DO CONTACTO (07.10.2026, §1.182): a mesma disciplina da frase do projeto. O
+       texto compõe-se de dois pedaços e do endereço das correções, e o oráculo guarda-o
+       inteiro; a comparação é sobre a composição, e não sobre os pedaços. */
+    if (textoDoContacto(l, ENDERECO_CORRECOES) !== TEXTOS_APROVADOS.contacto[l]) {
+      erros.push({
+        rel: 'src/data/politica-ia.mjs',
+        msg:
+          `a frase do contacto do Sobre, da edição "${l}", não é a cadeia decidida.\n` +
+          `      decidida: ${JSON.stringify(TEXTOS_APROVADOS.contacto[l].slice(0, 120))}\n` +
+          `      composta: ${JSON.stringify(String(textoDoContacto(l, ENDERECO_CORRECOES)).slice(0, 120))}`,
+      });
+    }
     const ficha = FICHA_DA_PRIMEIRA_PAGINA[l];
     const composta = ficha.gratuito;
     if (composta !== TEXTOS_APROVADOS.ficha[l]) {
@@ -5944,6 +5957,49 @@ for (const file of ficheirosHtml(DIST)) {
           `a frase do Sobre não é a cadeia decidida.\n` +
             `      decidida:    ${JSON.stringify(esperada.slice(0, 160))}\n` +
             `      renderizada: ${JSON.stringify(t.slice(0, 160))}`,
+        );
+      }
+    }
+
+    /**
+     * A FRASE DO CONTACTO · como se escreve a este projeto (07.10.2026, §1.182).
+     *
+     * O sítio deixou de dizer quem responde por ele, e diz como se lhe escreve: a
+     * frase vive no Sobre e em mais lado nenhum, marcada `data-contacto`, e o
+     * oráculo guarda o texto inteiro, com o endereço das correções dentro. A
+     * comparação é a mesma da frase do projeto: o texto rendido, com a ligação
+     * `mailto:` lida como texto, contra a cadeia decidida, carácter a carácter.
+     */
+    const contacto = root.querySelectorAll('[data-contacto]');
+    ROTULO_DE_IA.contacto += contacto.length;
+    const esperadoContacto = rota?.key === 'sobre' ? 1 : 0;
+    if (contacto.length !== esperadoContacto) {
+      err(
+        `esta página rende ${contacto.length} frase(s) do contacto e devia render ` +
+          `${esperadoContacto}. A frase que diz como se escreve a este projeto vive no Sobre, e ali só.`,
+      );
+    } else if (contacto.length === 1 && linguaPagina) {
+      const declarada = contacto[0].getAttribute('data-contacto');
+      if (declarada !== linguaPagina) {
+        err(
+          `«data-contacto="${declarada}"» e a página é da edição "${linguaPagina}". ` +
+            `A marca diz de que edição é a frase, e tem de ser a da rota.`,
+        );
+      }
+      const t = decodeEntities(textoDe(contacto[0], { semEstilo: true, separador: '' }));
+      const esperada = TEXTOS_APROVADOS.contacto[linguaPagina];
+      if (t !== esperada) {
+        err(
+          `a frase do contacto não é a cadeia decidida.\n` +
+            `      decidida:    ${JSON.stringify(esperada.slice(0, 160))}\n` +
+            `      renderizada: ${JSON.stringify(t.slice(0, 160))}`,
+        );
+      }
+      const porta = contacto[0].querySelector('a[href^="mailto:"]');
+      if (!porta || porta.getAttribute('href') !== `mailto:${ENDERECO_CORRECOES}` || porta.textContent !== ENDERECO_CORRECOES) {
+        err(
+          `a frase do contacto tem de levar o endereço das correções como ligação mailto:, com o ` +
+            `endereço como texto da ligação (esperava ${JSON.stringify(ENDERECO_CORRECOES)}).`,
         );
       }
     }
@@ -9269,7 +9325,7 @@ console.log(
     `  rótulo de IA · ${ROTULO_DE_IA.topo} no topo (de ${ficheiros - documentos} páginas fora ` +
       `dos documentos alojados) · ${ROTULO_DE_IA.rodape} no rodapé · ` +
       `${ROTULO_DE_IA.ficha} ficha(s) da primeira página · ${ROTULO_DE_IA.frase} frase(s) da ` +
-      `política e ${ROTULO_DE_IA.projeto} do projeto, comparadas com o texto decidido`,
+      `política, ${ROTULO_DE_IA.projeto} do projeto e ${ROTULO_DE_IA.contacto} do contacto, comparadas com o texto decidido`,
   ),
 );
 console.log(
