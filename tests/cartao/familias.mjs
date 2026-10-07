@@ -1,3 +1,4 @@
+import { conferirComputacaoPRR, conferirLiteralPRR } from './computacoes-rp4n.mjs';
 /**
  * =============================================================================
  * K17 · AS FAMÍLIAS: O QUE É CADA NÚMERO, AUDITADO E CONFERIDO EM CADA RECIBO · bloco R4 (05.10.2026)
@@ -57,11 +58,11 @@ import { lerSeriesDoPortao } from '../../scripts/series-do-portao.mjs';
 import { folhasDaLeitura, lerAuditoriaDasLeituras, leituraIndependente, corteIndependente, normal, PAGINAS_DA_LEITURA } from './leituras.mjs';
 
 const LITERAL_MINIMO = 4;
-const CAMPOS_DA_FONTE = new Set(['excerpt', 'unit', 'name', 'source', 'document.title', 'document.locator', 'document.edition', 'document.computed_over.column', 'document.computed_over.filter']);
+const CAMPOS_DA_FONTE = new Set(['excerpt', 'unit', 'name', 'source', 'document.title', 'document.locator', 'document.edition', 'document.computed_over.column']);
 const CAMPOS_DA_CASA = new Set(['derivation', 'derivation_en', 'ressalva', 'ressalva_en']);
 const PONTUACAO = /[\s.,:;()−%’'!?]+/g;
 /** @param {any} l @param {string} c */
-const campoDaLinha = (l, c) => (c === 'document.title' ? l?.document?.title : c === 'document.locator' ? l?.document?.locator : c === 'document.edition' ? l?.document?.edition : c === 'document.computed_over.column' ? l?.document?.computed_over?.column : c === 'document.computed_over.filter' ? l?.document?.computed_over?.filter : l?.[c]);
+const campoDaLinha = (l, c) => (c === 'document.title' ? l?.document?.title : c === 'document.locator' ? l?.document?.locator : c === 'document.edition' ? l?.document?.edition : c === 'document.computed_over.column' ? l?.document?.computed_over?.column : l?.[c]);
 /** O texto de uma frase de pedaços (as cadeias e os termos de outra língua). @param {unknown} x */
 export const textoDaFrase = (x) => (Array.isArray(x) ? x.map((p) => (typeof p === 'string' ? p : p?.termo ?? '')).join('') : typeof x === 'string' ? x : '');
 const curto = (/** @type {string} */ s) => (s.length > 60 ? `${s.slice(0, 57)}…` : s);
@@ -256,13 +257,13 @@ export function conferirAuditoriaDasFamilias({
     if (e) { falha(`${onde}: ${e}`); return null; }
     return classeDe(a);
   };
-  const classeDe = (/** @type {any} */ a) => (a.origem || (a.linha && (CAMPOS_DA_FONTE.has(a.campo) || a.forma === 'ano')) ? 'fonte' : 'casa');
+  const classeDe = (/** @type {any} */ a) => (a.ficheiro || a.origem || (a.linha && (CAMPOS_DA_FONTE.has(a.campo) || a.forma === 'ano')) ? 'fonte' : 'casa');
   /* R4-b: UMA PARTE CONFIRMA-SE NUMA LINHA quando um apoio válido nessa linha é da fonte (uma origem, um campo da fonte, o
      período da data) ou é a conta declarada de uma linha calculada (`derivation`, `derivation_en`), que é a definição
      desse número; o nome do projeto, a ressalva e a explicação de um termo são palavras da casa e não confirmam. */
   const confirmaNaLinha = (/** @type {any} */ a, /** @type {string} */ id) => (Array.isArray(a?.ou)
     ? a.ou.some((/** @type {any} */ alt) => verifica(alt, [id]) === null && confirmaNaLinha(alt, id))
-    : Boolean(a?.origem || a?.forma === 'ano' || (a?.linha === 'propria' && (CAMPOS_DA_FONTE.has(a.campo) || a.campo === 'derivation' || a.campo === 'derivation_en'))));
+    : Boolean(a?.ficheiro || a?.origem || a?.forma === 'ano' || (a?.linha === 'propria' && (CAMPOS_DA_FONTE.has(a.campo) || a.campo === 'derivation' || a.campo === 'derivation_en'))));
   /** @param {any} a @param {string[]} ids @returns {string|null} */
   const verifica = (a, ids) => {
     if (a?.forma === 'ano') {
@@ -278,6 +279,7 @@ export function conferirAuditoriaDasFamilias({
     }
     const literal = a?.literal;
     if (typeof literal !== 'string' || literal.trim().length < LITERAL_MINIMO) return `um literal com menos de ${LITERAL_MINIMO} caracteres, que não prende nada`;
+  if (a.ficheiro) { for (const id of ids) { const erro = conferirLiteralPRR(a, linhas.get(id)); if (erro) return erro; } return null; }
     if (a.origem) {
       if (a.origem === 'rp4n-ac-ss' && ids.some(id => linhas.get(id)?.reference_date !== '2026-08')) return 'o recorte de janeiro a agosto não apoia uma linha anual';
       if (a.origem === 'rp4n-ac-ss-orcamento' && ids.some(id => linhas.get(id)?.reference_date !== '2026' || !linhas.get(id)?.document?.locator?.includes('Orçamento Inicial 2026'))) return 'o recorte do Orçamento Inicial não apoia esta linha de execução';
@@ -291,7 +293,7 @@ export function conferirAuditoriaDasFamilias({
     if (a.linha === 'propria') {
       if (!CAMPOS_DA_FONTE.has(a.campo) && !CAMPOS_DA_CASA.has(a.campo)) return `cita o campo «${a.campo}», que não pode apoiar`;
       for (const id of ids) {
-        if (a.campo.startsWith('document.computed_over.') && !(linhas.get(id)?.document?.computed_over?.files?.length && linhas.get(id).document.computed_over.files.every(f => /^[a-f0-9]{64}$/.test(f.sha256) && f.file))) return `a seleção calculada de «${id}» não tem ficheiros selados`;
+        if (a.campo === 'document.computed_over.column') { const erro = conferirComputacaoPRR(linhas.get(id)); if (erro) return erro; }
       const v = campoDaLinha(linhas.get(id), a.campo);
         if (typeof v !== 'string' || !v.includes(literal)) return `cita «${curto(literal)}», que não está no campo «${a.campo}» da linha «${id}»`;
       }
@@ -716,7 +718,7 @@ export function conferirAuditoriaDasSeries({
     for (const o of usadas) if (!declaradas.has(o)) falha(`«${e.serie}»: a origem «${o}» apoia uma parte e não está na lista`);
     if (daFonte) contas.todas_na_fonte++; else { contas.alguma_da_casa++; contas.lista_da_casa.push(e.serie); }
     /* R4-b: por confirmar na fonte quando uma parte que diz não tem apoio da fonte nem da conta declarada da série. */
-    const confirma = (/** @type {any} */ a) => Boolean(a?.origem || (a?.serie === 'propria' && (CAMPOS_DA_SERIE_FONTE.has(a.campo) || CAMPOS_DA_SERIE_CASA.has(a.campo))));
+    const confirma = (/** @type {any} */ a) => Boolean(a?.ficheiro || a?.origem || (a?.serie === 'propria' && (CAMPOS_DA_SERIE_FONTE.has(a.campo) || CAMPOS_DA_SERIE_CASA.has(a.campo))));
     const por = partes.some((/** @type {any} */ p) => p?.classe === 'diz' && !(p.apoios ?? []).some(confirma));
     if (por !== (e.por_confirmar_na_fonte === true)) falha(`«${e.serie}»: a auditoria diz «por confirmar na fonte» ${JSON.stringify(e.por_confirmar_na_fonte ?? null)}, e a conta desta célula dá ${por}`);
     if (por) { porConfirmar.add(e.serie); contas.por_confirmar++; }

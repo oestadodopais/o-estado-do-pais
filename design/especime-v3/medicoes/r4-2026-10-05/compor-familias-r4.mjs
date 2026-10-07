@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { conferirComputacaoPRR, conferirLiteralPRR } from '../../../../tests/cartao/computacoes-rp4n.mjs';
 /**
  * O COMPOSITOR DAS FRASES DAS FAMÍLIAS (bloco R4, 05.10.2026).
  *
@@ -59,9 +60,9 @@ for (const id of linhas.keys()) {
 }
 
 /* ------------------------------------------------------------------ os campos que apoiam */
-const CAMPOS_DA_FONTE = new Set(['excerpt', 'unit', 'name', 'source', 'document.title', 'document.locator', 'document.edition', 'document.computed_over.column', 'document.computed_over.filter']);
+const CAMPOS_DA_FONTE = new Set(['excerpt', 'unit', 'name', 'source', 'document.title', 'document.locator', 'document.edition', 'document.computed_over.column']);
 const CAMPOS_DA_CASA = new Set(['derivation', 'derivation_en', 'ressalva', 'ressalva_en']);
-const campoDaLinha = (l, c) => (c === 'document.title' ? l?.document?.title : c === 'document.locator' ? l?.document?.locator : c === 'document.edition' ? l?.document?.edition : c === 'document.computed_over.column' ? l?.document?.computed_over?.column : c === 'document.computed_over.filter' ? l?.document?.computed_over?.filter : l?.[c]);
+const campoDaLinha = (l, c) => (c === 'document.title' ? l?.document?.title : c === 'document.locator' ? l?.document?.locator : c === 'document.edition' ? l?.document?.edition : c === 'document.computed_over.column' ? l?.document?.computed_over?.column : l?.[c]);
 const nomeDaCasa = (id, lingua) => {
   const c = linhas.get(id);
   const n = nomeDaMedida(c, lingua);
@@ -93,7 +94,7 @@ function apoio(a, ids, onde, nomesDaFamilia) {
   return classeDe(a);
 }
 function classeDe(a) {
-  if (a.origem || (a.linha && CAMPOS_DA_FONTE.has(a.campo)) || (a.linha && a.forma === 'ano')) return 'fonte';
+  if (a.ficheiro || a.origem || (a.linha && CAMPOS_DA_FONTE.has(a.campo)) || (a.linha && a.forma === 'ano')) return 'fonte';
   return 'casa';
 }
 function verifica(a, ids, nomesDaFamilia) {
@@ -103,6 +104,7 @@ function verifica(a, ids, nomesDaFamilia) {
   }
   if (typeof a.literal !== 'string' && !a.termo) return 'um apoio sem literal';
   if (a.literal !== undefined && a.literal.trim().length < 4) return `o literal «${a.literal}» tem menos de quatro caracteres`;
+  if (a.ficheiro) { for (const id of ids) { const erro = conferirLiteralPRR(a, linhas.get(id)); if (erro) return erro; } return null; }
   if (a.origem) {
       if (a.origem === 'rp4n-ac-ss' && ids.some(id => linhas.get(id)?.reference_date !== '2026-08')) return 'o recorte de janeiro a agosto não apoia uma linha anual';
       if (a.origem === 'rp4n-ac-ss-orcamento' && ids.some(id => linhas.get(id)?.reference_date !== '2026' || !linhas.get(id)?.document?.locator?.includes('Orçamento Inicial 2026'))) return 'o recorte do Orçamento Inicial não apoia esta linha de execução';
@@ -121,7 +123,7 @@ function verifica(a, ids, nomesDaFamilia) {
   if (a.linha === 'propria') {
     if (!CAMPOS_DA_FONTE.has(a.campo) && !CAMPOS_DA_CASA.has(a.campo)) return `o campo «${a.campo}» não pode apoiar`;
     for (const id of ids) {
-      if (a.campo.startsWith('document.computed_over.') && !(linhas.get(id)?.document?.computed_over?.files?.length && linhas.get(id).document.computed_over.files.every(f => /^[a-f0-9]{64}$/.test(f.sha256) && f.file))) return `a seleção calculada de «${id}» não tem ficheiros selados`;
+      if (a.campo === 'document.computed_over.column') { const erro = conferirComputacaoPRR(linhas.get(id)); if (erro) return erro; }
       const v = campoDaLinha(linhas.get(id), a.campo);
       if (typeof v !== 'string' || !v.includes(a.literal)) return `«${a.literal}» não está no campo «${a.campo}» da linha «${id}»`;
     }
