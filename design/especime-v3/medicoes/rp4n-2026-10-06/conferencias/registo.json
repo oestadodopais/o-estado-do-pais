@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "series",
+    "comando": "npm run check:series",
+    "cabeca": "099289ef243a0c920719240b0aa8410b3e91d0b9",
+    "codigo_lido": 0
+  },
+  {
+    "nome": "cruzamento",
+    "comando": "node scripts/check-cruzamento.mjs --with-origin",
+    "cabeca": "099289ef243a0c920719240b0aa8410b3e91d0b9",
+    "codigo_lido": 0
+  },
+  {
+    "nome": "cartao",
+    "comando": "npm run check:cartao",
+    "cabeca": "579c9dd463f98753c05c4e16ff2bb73a856adf6d",
+    "codigo_lido": 0
+  },
+  {
+    "nome": "privacidade",
+    "comando": "npm run check:privacidade",
+    "cabeca": "579c9dd463f98753c05c4e16ff2bb73a856adf6d",
+    "codigo_lido": 0
+  }
+]

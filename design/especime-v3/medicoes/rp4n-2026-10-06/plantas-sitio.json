@@ -1,0 +1,92 @@
+{
+  "plantas": [
+    {
+      "nome": "excerto com uma palavra inventada",
+      "mensagem": "K16 · origem «rp4n-orcamento»: o excerto ou o selo difere da origem exportada pelo motor"
+    },
+    {
+      "nome": "selo com outro cliente",
+      "mensagem": "K16 · origem «rp4n-orcamento»: o excerto ou o selo difere da origem exportada pelo motor"
+    },
+    {
+      "nome": "selo com outra página",
+      "mensagem": "K16 · origem «rp4n-orcamento»: o excerto ou o selo difere da origem exportada pelo motor"
+    },
+    {
+      "nome": "tipo do selo apagado",
+      "mensagem": "K16 · origem «rp4n-orcamento»: o excerto ou o selo difere da origem exportada pelo motor"
+    },
+    {
+      "nome": "selo inteiro apagado",
+      "mensagem": "K16 · origem «rp4n-orcamento»: o excerto ou o selo difere da origem exportada pelo motor"
+    },
+    {
+      "nome": "nome do projeto de volta numa família",
+      "mensagem": "K17 · famílias · oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10, parte 1 («É o que a administração central prevê gastar nesta função…»): o nome do projeto não pode apoiar uma frase"
+    },
+    {
+      "nome": "nome do projeto de volta numa série",
+      "mensagem": "K17 · séries · «serie-ihpc-rendas-variacao-homologa», parte 1 («É quanto mudaram»): o nome do projeto não pode apoiar uma frase"
+    },
+    {
+      "nome": "ausência declarada quando há excerto",
+      "mensagem": "K17 · famílias · avisos-pt2030-abertos, parte 1 («Não há excerto da fonte que permita explicar este número.»): a ausência não corresponde à falta do excerto"
+    },
+    {
+      "nome": "seleção calculada sem resumo do ficheiro",
+      "mensagem": "K17 · famílias · evora-prr-aprovado, parte 1 («São as verbas contratadas do Plano de Recuperação e Resil…»): a seleção calculada de «evora-prr-aprovado-2026» não tem ficheiros selados"
+    },
+    {
+      "nome": "nome numa alternativa simples",
+      "mensagem": "K17 · famílias · oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10, parte 1 («É o que a administração central prevê gastar nesta função…»): o nome do projeto não pode apoiar uma frase"
+    },
+    {
+      "nome": "nome numa alternativa aninhada",
+      "mensagem": "K17 · famílias · oe-2026-despesa-funcao-01, oe-2026-despesa-funcao-02, oe-2026-despesa-funcao-03, oe-2026-despesa-funcao-04, oe-2026-despesa-funcao-05, oe-2026-despesa-funcao-06, oe-2026-despesa-funcao-07, oe-2026-despesa-funcao-08, oe-2026-despesa-funcao-09, oe-2026-despesa-funcao-10, parte 1 («É o que a administração central prevê gastar nesta função…»): o nome do projeto não pode apoiar uma frase"
+    },
+    {
+      "nome": "nome misturado com uma origem válida",
+      "mensagem": "K17 · séries · «serie-ihpc-rendas-variacao-homologa», parte 1 («É quanto mudaram»): o nome do projeto não pode apoiar uma frase"
+    },
+    {
+      "nome": "texto simples numa página construída (pt)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "marca em inglês numa página construída (pt)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "texto partido numa página construída (pt)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "marca sem texto numa página construída (pt)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "texto simples numa página construída (en)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "marca em inglês numa página construída (en)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "texto partido numa página construída (en)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "marca sem texto numa página construída (en)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "marca num documento citado (pt)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    },
+    {
+      "nome": "marca num documento citado (en)",
+      "mensagem": "RP4N: uma página de leitor contém uma marca de informação por confirmar"
+    }
+  ]
+}
