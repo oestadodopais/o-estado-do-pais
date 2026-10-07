@@ -3170,8 +3170,8 @@ As palavras antigas «acima do valor de referência», «abaixo do valor de refe
 | conteudo | : within the reference value of the Pact (above − %) | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
 | conteudo | : outside the reference value of the Council of the EU (above %) | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
 | conteudo | concelhos | b2-peca1 | viva | A dica da chave municipios_com_pagina nomeia a unidade da contagem, no cartão das câmaras. É a etiqueta da chave da prova nas duas edições, sem introduzir uma contagem escrita à mão. |
-| conteudo | 3 195 afirmações · 366 de 3 195 calculadas · 2 767 de 3 195 linhas de concelhos | k2 | viva | OE1-b: contagem relida no HTML do livro após a entrada das linhas do bloco. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |
-| conteudo | 3 195 claims · 366 of 3 195 calculated · 2 767 of 3 195 municipality rows | k2 | viva | OE1-b: contagem relida no HTML do livro após a entrada das linhas do bloco. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |
+| conteudo | 3 195 afirmações · 366 de 3 195 calculadas · 2 767 de 3 195 linhas de concelhos | k2 | retirada | OE1-b: contagem relida no HTML do livro após a entrada das linhas do bloco. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |
+| conteudo | 3 195 claims · 366 of 3 195 calculated · 2 767 of 3 195 municipality rows | k2 | retirada | OE1-b: contagem relida no HTML do livro após a entrada das linhas do bloco. Mantêm-se a classificação e o formato do K2; mudam apenas as contagens. |
 | conteudo | dentro do valor de referência do Pacto | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
 | conteudo | fora do valor de referência do Conselho da UE | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
 | conteudo | within the reference value of the Pact | b2-peca1-correcao-2 | retirada | Bloco R2 (03.10.2026, achado 20 da auditoria dos rótulos): o estado diz quem fixa a referência, inteiro, pela tabela `estado.doDono` de `strings.mjs` (a Comissão, o limite do Pacto de Estabilidade, a trajetória aprovada pelo Conselho da UE); as formas novas estão na secção do bloco r2. |
@@ -4238,3 +4238,10 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 |---|---|---|---|---|
 | conteudo | Conta as pessoas desempregadas inscritas nos serviços de emprego no mês de referência (desemprego registado). | rp4ne | viva | A precisão do fim do mês não estava selada pelos publicadores de todos os concelhos. |
 | conteudo | Counts the unemployed people registered with the employment service in the reference month (registered unemployment). | rp4ne | viva | A mesma precisão mensal da edição portuguesa. |
+
+## RP4-n-e: contagem das linhas publicadas
+
+| tipo | frase | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | 3 194 afirmações · 366 de 3 194 calculadas · 2 767 de 3 194 linhas de concelhos | rp4ne | viva | Contagem lida do HTML construído depois da retirada das condutas; o livro conserva a linha retirada. |
+| conteudo | 3 194 claims · 366 of 3 194 calculated · 2 767 of 3 194 municipality rows | rp4ne | viva | Contagem lida do HTML construído depois da retirada das condutas; o livro conserva a linha retirada. |
