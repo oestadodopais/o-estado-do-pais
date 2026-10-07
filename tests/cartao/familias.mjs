@@ -121,7 +121,7 @@ function nomesDaCasa() {
  * O contexto da célula: as linhas, as famílias e os nomes, lidos dos ficheiros e não do resolvedor das páginas.
  * @param {{ linhas?: Map<string, any>, familias?: Record<string, any>, doConcelho?: Record<string, any>, municipios?: any[] }} [e]
  */
-export function contextoDasFamilias({ linhas = loadClaims(), familias = FAMILIAS_DAS_LINHAS, doConcelho = FAMILIAS_DOS_CONCELHOS, municipios = MUNICIPIOS_COM_PAGINA } = {}) {
+export function contextoDasFamilias({ linhas = loadClaims({ includeWithdrawn: true }), familias = FAMILIAS_DAS_LINHAS, doConcelho = FAMILIAS_DOS_CONCELHOS, municipios = MUNICIPIOS_COM_PAGINA } = {}) {
   const concelhos = linhasDosConcelhos(municipios);
   const casa = nomesDaCasa();
   /** @param {string} id */
@@ -160,7 +160,7 @@ function temNomeDoProjeto(a) { return a?.declaracao === 'nome' || (Array.isArray
  */
 export function conferirAuditoriaDasFamilias({
   auditoria = lerAuditoriaDasLeituras(),
-  linhas = loadClaims(),
+  linhas = loadClaims({ includeWithdrawn: true }),
   familias = FAMILIAS_DAS_LINHAS,
   doConcelho = FAMILIAS_DOS_CONCELHOS,
   origens = /** @type {Record<string, any>} */ (ORIGENS_DAS_DEFINICOES),
@@ -579,6 +579,10 @@ export function conferirRecibosDasLinhas(dist, porConfirmar = conferirAuditoriaD
   const cartoes = reguasDosCartoes(dist);
   if (!cartoes.size) erros.push('K17 · recibos: as páginas de assunto não renderam cartão nenhum, e as frases dos cartões não se conferem');
   for (const id of ctx.linhas.keys()) {
+    if (ctx.linhas.get(id)?.publication === 'withdrawn') {
+      for (const prefix of ['livro-razao', 'en/ledger']) if (fs.existsSync(path.join(dist, prefix, id, 'index.html'))) erros.push(`K17 · linha retirada tem recibo: ${id}`);
+      continue;
+    }
     for (const lang of /** @type {const} */ (['pt', 'en'])) {
       const f = path.join(dist, ...(lang === 'en' ? ['en', 'ledger'] : ['livro-razao']), id, 'index.html');
       if (!fs.existsSync(f)) { erros.push(`K17 · recibo · ${lang} · ${id}: o recibo não está construído`); continue; }
@@ -630,7 +634,7 @@ export function conferirAuditoriaDasSeries({
   auditoria = lerAuditoriaDasLeituras(),
   series = lerSeriesDoPortao(),
   frases = /** @type {Record<string, any>} */ (FRASES_DAS_SERIES),
-  linhas = loadClaims(),
+  linhas = loadClaims({ includeWithdrawn: true }),
   origens = /** @type {Record<string, any>} */ (ORIGENS_DAS_DEFINICOES),
   nomes = /** @type {Record<string, any>} */ (NOMES_DAS_SERIES),
   porConfirmarDeclaradas = /** @type {readonly string[]} */ (SERIES_POR_CONFIRMAR_NA_FONTE),
@@ -843,7 +847,7 @@ export function plantasDasFamilias(dist) {
     out.push({ nome, mordeu: q !== null, queixa: q ?? erros[0] ?? null });
   };
   const base = lerAuditoriaDasLeituras();
-  const linhas = loadClaims();
+  const linhas = loadClaims({ includeWithdrawn: true });
   /* 1 · UMA LINHA SEM FRASE: uma linha nova no livro, de uma família que ninguém declarou. */
   {
     const l = new Map(linhas);

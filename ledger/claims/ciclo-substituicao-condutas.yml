@@ -2,6 +2,7 @@
 # Campos obrigatórios e regras: ver ledger/README.md.
 
 id: "ciclo-substituicao-condutas"
+publication: "withdrawn"
 
 # O valor tal como é publicado, com formatação portuguesa. String, nunca número.
 value: "239"
