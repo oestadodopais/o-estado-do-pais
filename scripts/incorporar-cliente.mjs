@@ -43,7 +43,7 @@ export function incorporar(origem) {
       if (d.notas) {
         var notas = document.createElement('span');
         notas.textContent = d.notas;
-        novo.appendChild(document.createTextNode(' '));
+        novo.appendChild(document.createTextNode(' · '));
         novo.appendChild(notas);
       }
       if (c.value !== citado && d.atualizacao) {

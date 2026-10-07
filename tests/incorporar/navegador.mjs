@@ -58,7 +58,7 @@ const servidor = http.createServer((req,res)=>{
     }
     const bytes=fs.readFileSync(f);
     // Só o argumento da origem muda, em memória. O corpo da função é idêntico.
-    if(caminho==='/incorporar.js') {let codigo=bytes.toString().replace(JSON.stringify(origemPublica),JSON.stringify(sitio));if(modoAtual==='notas-retiradas') {assert(codigo.includes('if (d.notas)'));codigo=codigo.replace('if (d.notas)', 'if (false)');}res.end(codigo);}
+    if(caminho==='/incorporar.js') {let codigo=bytes.toString().replace(JSON.stringify(origemPublica),JSON.stringify(sitio));if(modoAtual==='separador-notas-retirado') {assert(codigo.includes("createTextNode(' · ')"));codigo=codigo.replace("notas.textContent = d.notas;\n        novo.appendChild(document.createTextNode(' · '));", "notas.textContent = d.notas;\n        novo.appendChild(document.createTextNode(' '));");}if(modoAtual==='notas-retiradas') {assert(codigo.includes('if (d.notas)'));codigo=codigo.replace('if (d.notas)', 'if (false)');}res.end(codigo);}
     else res.end(bytes);
   } catch {res.writeHead(404).end();}
 });
@@ -72,7 +72,7 @@ const diaSeguinte = new Date(Math.max(...[c.access_date,...(c.verifications??[])
 const linhaRelida = {...c,verifications:[...(c.verifications??[]),{date:diaSeguinte,result:'igual'}]};
 const jsonRelido = {...json,linha:linhaRelida,incorporacao:Object.fromEntries(['pt','en'].map(lang=>[lang,dadosDaIncorporacao(linhaRelida,lang)]))};
 try {
-  for (const lang of ['pt','en']) for (const modo of ['normal','releitura','notas-retiradas','proveniencia-por-confirmar','sem-js','sem-cors','falha','json-malformado','outra-linha','redirecionamento']) {
+  for (const lang of ['pt','en']) for (const modo of ['normal','releitura','separador-notas-retirado','notas-retiradas','proveniencia-por-confirmar','sem-js','sem-cors','falha','json-malformado','outra-linha','redirecionamento']) {
     const ctx = await navegador.newContext({javaScriptEnabled:modo!=='sem-js', viewport:{width:390,height:900},deviceScaleFactor:1,colorScheme:'light',reducedMotion:'reduce'});
     const pedidos = [];
     modoAtual=modo;
@@ -96,7 +96,7 @@ try {
     assert.equal(valores.length,4);
     assert.equal(valores[2].valor,c.value);
     assert.equal(valores[2].aviso,null);
-    if (['normal','releitura','notas-retiradas'].includes(modo)) {
+    if (['normal','releitura','separador-notas-retirado','notas-retiradas'].includes(modo)) {
       const esperado = modo==='releitura' ? jsonRelido : json;
       assert.equal(pedidos.filter(p=>p.caminho.endsWith('.json')).length,valores.length);
       assert.equal(valores[0].valor,c.value);assert.equal(valores[0].lido,esperado.incorporacao[lang].data);assert.equal(valores[0].aviso,null);
@@ -109,7 +109,15 @@ try {
       if(modo==='notas-retiradas') {
         assert.throws(conferirNotas, /ER1 navegador: desapareceram as notas da linha/);
         r.plantas.push({nome:'notas-retiradas-'+lang,mensagem:'ER1 navegador: desapareceram as notas da linha.',mordeu:true});
-      } else conferirNotas();
+      } else {
+        conferirNotas();
+        const mensagem = 'ER1 navegador: falta o separador entre licença e notas.';
+        const conferirSeparador = () => assert(textos[3].includes(jsonNotas.incorporacao[lang].atribuicao+' · '+notas), mensagem);
+        if (modo==='separador-notas-retirado') {
+          assert.throws(conferirSeparador, {message:mensagem});
+          r.plantas.push({nome:'separador-notas-retirado-'+lang,mensagem,mordeu:true});
+        } else conferirSeparador();
+      }
       assert(textos[0].includes(' · '+json.incorporacao[lang].fonte+', '), 'ER1 navegador: falta o separador entre unidade e fonte.');
       if(modo==='releitura')assert.equal(valores[0].lido,diaSeguinte);
     } else {
