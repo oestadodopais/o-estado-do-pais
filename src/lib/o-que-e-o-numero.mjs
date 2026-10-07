@@ -136,9 +136,10 @@ export function oQueEDaLinha(id, lang) {
   if (!Array.isArray(frase) || frase.length === 0) throw fecha(`${id} · ${lang}`, `a família «${f.chave}» não declara frase nesta edição.`);
   let pedacos = frase;
   if (d.instantaneo) {
-    const ficheiros = getClaim(id)?.document?.computed_over?.files;
+    const documento = /** @type {{computed_over?: {files?: Array<{snapshot_date?: string}>}} | undefined} */ (getClaim(id)?.document);
+    const ficheiros = documento?.computed_over?.files;
     const data = ficheiros?.[0]?.snapshot_date;
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(data ?? '') || !ficheiros.every(x => x.snapshot_date === data)) throw fecha(id, 'o instantâneo não tem uma data única nos ficheiros da computação.');
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(data ?? '') || !Array.isArray(ficheiros) || !ficheiros.every(x => x.snapshot_date === data)) throw fecha(id, 'o instantâneo não tem uma data única nos ficheiros da computação.');
     pedacos = [...frase.slice(0,-1), frase.at(-1).replace(/\.$/, ''), lang === 'pt' ? ', no instantâneo de ' : ', in the snapshot of ', {data:{id,campo:'document.computed_over.files.0.snapshot_date',valor:data}}, '.'];
   }
   return { pedacos, tipo: 'familia', chave: f.chave, cartao: null, sinal: null, porConfirmar };

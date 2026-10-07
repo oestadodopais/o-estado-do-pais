@@ -10,6 +10,7 @@ id: "penalizacao-antecipacao-um-ano-neutra"
 value: "8,2"
 unit: "%"
 name: "Decrementos por reforma antecipada: caso geral"
+name_source: "Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf, página física 273, legenda da Figura 8.4"
 
 source: "Grupo de Trabalho para a Reforma da Segurança Social"
 document:
