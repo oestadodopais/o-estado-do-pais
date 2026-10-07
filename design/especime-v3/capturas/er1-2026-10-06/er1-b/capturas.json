@@ -1,0 +1,450 @@
+{
+  "cabeca": "abe02094947a2f3c4d600891b89380c7b175ebe5",
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "resultados": [
+    {
+      "ficheiro": "com-codigo-pt-390.png",
+      "rota": "/livro-razao/custo-unitario-do-trabalho-2024",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3757,
+      "sha256": "f4aa8d56f4a58b468c45ea34b7e00ce5141dd9937cbfccd82d169b1a4a1703c2",
+      "recortes": [
+        {
+          "ficheiro": "com-codigo-pt-390-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "928a05015755fd76d57e6355654613611ccd36c56f9fe70677da17a795d4420d"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "com-codigo-pt-768.png",
+      "rota": "/livro-razao/custo-unitario-do-trabalho-2024",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3202,
+      "sha256": "95a729c6b4a26bbab9c7572b66c07965e05054b8b3477426797a7f2250ff0b19",
+      "recortes": [
+        {
+          "ficheiro": "com-codigo-pt-768-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "0f2f83e3ca38c665ba39275a4ddf206319a4eb89ba7a107e6f3ab3a66892196b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "com-codigo-pt-1024.png",
+      "rota": "/livro-razao/custo-unitario-do-trabalho-2024",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2232,
+      "sha256": "b23fe43f07bb59a0205b17e5dfc1fb429da9e4aef18fe353efe0551cbf047920",
+      "recortes": [
+        {
+          "ficheiro": "com-codigo-pt-1024-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "4f7d1d5a80db2f39f787dda27d1cd2cd1b684c63ef8921bbdadb8fa6903164e7"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "com-codigo-pt-1280.png",
+      "rota": "/livro-razao/custo-unitario-do-trabalho-2024",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2282,
+      "sha256": "f9e4547de39ee58b219ab5c69ec89b59cad650732e4f4f0237f3593ec9cadb97",
+      "recortes": [
+        {
+          "ficheiro": "com-codigo-pt-1280-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "274807a9a5844a1cea0229a76b113a2208d077703649e5ea2fcf51365114c651"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "com-codigo-pt-1600.png",
+      "rota": "/livro-razao/custo-unitario-do-trabalho-2024",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2289,
+      "sha256": "2e87db3218fc6918584d0c781fc813915f15086f7aada6816204effe8975fae9",
+      "recortes": [
+        {
+          "ficheiro": "com-codigo-pt-1600-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "c45cb49dfe943072093a33c7bf909d8ef2caebfb96625ae78d856ab9a9ee3fd2"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "com-codigo-en-390.png",
+      "rota": "/en/ledger/custo-unitario-do-trabalho-2024",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 3725,
+      "sha256": "b09c532c1a77c8394729bf02672b12069682539f4be3903f755016a1dc87fb29",
+      "recortes": [
+        {
+          "ficheiro": "com-codigo-en-390-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "88eead1a7c60ef5f650e919b7460e1693340f9d69440554416f1e91d82f302fc"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "com-codigo-en-768.png",
+      "rota": "/en/ledger/custo-unitario-do-trabalho-2024",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 3224,
+      "sha256": "904a82009bf407c21b26ac38d00c3f11295a54b9a777a35a90962409ee76c946",
+      "recortes": [
+        {
+          "ficheiro": "com-codigo-en-768-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "0078b1e0264ca47e47aebc1bd6fbab3602c91530ed58e977c6caffc5bcc7c431"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "com-codigo-en-1024.png",
+      "rota": "/en/ledger/custo-unitario-do-trabalho-2024",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 2228,
+      "sha256": "138ff5a6fd71c7dd364fdb8ff58ca4c0f4c979e4c9acbd25efc3adc7ce770228",
+      "recortes": [
+        {
+          "ficheiro": "com-codigo-en-1024-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "f7d9f7e8db1a2478b2c09fb2cfde8a3087e39c897181e4b41096dc398a95e88f"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "com-codigo-en-1280.png",
+      "rota": "/en/ledger/custo-unitario-do-trabalho-2024",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 2279,
+      "sha256": "412c03ccc90c3302636672e315bc74eca4aa802a2eda6fd4f6b01e77d06ba385",
+      "recortes": [
+        {
+          "ficheiro": "com-codigo-en-1280-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "251a5947b093395deaa3490ea9f0060d5a270841f0f344691c3eb1b7244b1267"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "com-codigo-en-1600.png",
+      "rota": "/en/ledger/custo-unitario-do-trabalho-2024",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 2285,
+      "sha256": "5622ebd8a28303e993db551cd3468cccf0b42d43fa441d0462258057143c3e69",
+      "recortes": [
+        {
+          "ficheiro": "com-codigo-en-1600-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "5147dcc09edb7d5c8800fdf8d71966eebb656e01c1b575636552d9c8229a6174"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "sem-codigo-pt-390.png",
+      "rota": "/livro-razao/avisos-pt2030-abertos",
+      "lingua": "pt",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2484,
+      "sha256": "6b1d740feffaabddfccb1f0d4b197e63f59624330bb9642f3437ed4b6b105b9e",
+      "recortes": [
+        {
+          "ficheiro": "sem-codigo-pt-390-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "1640a9b6e24c9cd73d9b27d129a9f7ff127b338bea596edf4ab91abff732ed42"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "sem-codigo-pt-768.png",
+      "rota": "/livro-razao/avisos-pt2030-abertos",
+      "lingua": "pt",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2155,
+      "sha256": "4ef970c8e538c66c2a6cbf9d456a64250b7ba8eb82faa89164c40187f6e1a825",
+      "recortes": [
+        {
+          "ficheiro": "sem-codigo-pt-768-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "f915ee52097a8c2c365ee55786e48580aa62f8ca62a6adcdf9bfe02c30a8181a"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "sem-codigo-pt-1024.png",
+      "rota": "/livro-razao/avisos-pt2030-abertos",
+      "lingua": "pt",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1756,
+      "sha256": "40cb8377064c40c4369f4bf6a209d6aec67760b6869d775e7942dd95294674f8",
+      "recortes": [
+        {
+          "ficheiro": "sem-codigo-pt-1024-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "83f303f27d7c12f0b87c5fff079febb3cc7b408f9cbfbfdb7607f4a50ea28a55"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "sem-codigo-pt-1280.png",
+      "rota": "/livro-razao/avisos-pt2030-abertos",
+      "lingua": "pt",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1790,
+      "sha256": "7eefb3fb8615a4df87cbdf6e692e186e95cad9bb1e4903b5f80530379d10dcf8",
+      "recortes": [
+        {
+          "ficheiro": "sem-codigo-pt-1280-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "62cdd83e65169ee56205a56cb6f03201feade341f0d217b4ef686d93429ce68c"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "sem-codigo-pt-1600.png",
+      "rota": "/livro-razao/avisos-pt2030-abertos",
+      "lingua": "pt",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1797,
+      "sha256": "f389ecef591bb5f7313902a3af89b4f6cbb674228c132616ad47e7308a9b5c7e",
+      "recortes": [
+        {
+          "ficheiro": "sem-codigo-pt-1600-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "3106c4c0c32a2f7a3b47d78d0250dbc1013053b21f222118c1e4bfc7123fb4d1"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "sem-codigo-en-390.png",
+      "rota": "/en/ledger/avisos-pt2030-abertos",
+      "lingua": "en",
+      "largura": 390,
+      "janela": 390,
+      "documento": 390,
+      "corpo": 390,
+      "altura": 2484,
+      "sha256": "e91a4ecfe6c2d7dc021d3775c07f44baee51586ac7d12eb372c10c740fb9c4fe",
+      "recortes": [
+        {
+          "ficheiro": "sem-codigo-en-390-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "6628044f5e88f30c064bc4895f271e3737161a8971fdfa6405e29172c1da91f0"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "sem-codigo-en-768.png",
+      "rota": "/en/ledger/avisos-pt2030-abertos",
+      "lingua": "en",
+      "largura": 768,
+      "janela": 768,
+      "documento": 768,
+      "corpo": 768,
+      "altura": 2160,
+      "sha256": "d58c2cb91ee3544a4f929dc41d93cf5bb238783a7ec36adeab7329c073c2af8b",
+      "recortes": [
+        {
+          "ficheiro": "sem-codigo-en-768-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "184ea1c0e0f21c8d80943e0f0ac53fe39c847f7666089fcb0a1bc5fba0244225"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "sem-codigo-en-1024.png",
+      "rota": "/en/ledger/avisos-pt2030-abertos",
+      "lingua": "en",
+      "largura": 1024,
+      "janela": 1024,
+      "documento": 1024,
+      "corpo": 1024,
+      "altura": 1756,
+      "sha256": "80dc3aca606420c2d24d3cdc4aeb2fa189e443c594c3692cad89cf5757a63055",
+      "recortes": [
+        {
+          "ficheiro": "sem-codigo-en-1024-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "e307f397f1d569ed4588bcd581c6d3097f687478a5a0bc1e8fb6e75562e2cbdd"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "sem-codigo-en-1280.png",
+      "rota": "/en/ledger/avisos-pt2030-abertos",
+      "lingua": "en",
+      "largura": 1280,
+      "janela": 1280,
+      "documento": 1280,
+      "corpo": 1280,
+      "altura": 1790,
+      "sha256": "4087d597a5c6fd7fc6f64f76a7b6227978dc071b6d8f4287f0e6ce6a940e2e8b",
+      "recortes": [
+        {
+          "ficheiro": "sem-codigo-en-1280-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "5098c764f22cc017405e0d67f60c8d5d7dbbe388eb796231f5197d1b92511369"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    },
+    {
+      "ficheiro": "sem-codigo-en-1600.png",
+      "rota": "/en/ledger/avisos-pt2030-abertos",
+      "lingua": "en",
+      "largura": 1600,
+      "janela": 1600,
+      "documento": 1600,
+      "corpo": 1600,
+      "altura": 1797,
+      "sha256": "6ce042a856c072cb5015fdcafe0fe2c508b0e300c6e36946a0809d2bce161a4a",
+      "recortes": [
+        {
+          "ficheiro": "sem-codigo-en-1600-incorporar.png",
+          "seletor": "[data-incorporar-bloco]",
+          "sha256": "f8d9ac676bb8d581529fb189ab96453ee3f3630892a7efd9f62d523fe152ee8b"
+        }
+      ],
+      "externos": [],
+      "erros": [],
+      "recusados": []
+    }
+  ],
+  "recursos": {
+    "version.json": "b97693b907110fe0d19131cfdc65dff5f0104eddb81b25d9d3da74d3820c57ed",
+    "livro-razao/custo-unitario-do-trabalho-2024/index.html": "99d0d96bff536a5d4a2204075ad52b19b8172090a0f06260f09ff1b22540899b",
+    "tipos/spectral/Spectral-Regular.woff2": "3c846b032ad614e02ebc439087bbcbb7371cfbdea6c8a4b568efa859537e9c43",
+    "_astro/Base.hPEW4RoH.css": "f274081feb3c23a41b42c82b431fdc82ca2c162f791dec18fbb98087803084ff",
+    "tipos/bitter/Bitter[wght].woff2": "b4ad17520d0ce8bd1aa98af06e07ca94145522f868b5a010732eb5eee3ba2ea0",
+    "_astro/linha.D0mzEg9w.css": "353cf4164cc51fd750ff11ce80099138d053d7ca0b8cd852a6431f2e03e24672",
+    "js/copiar-incorporacao.js": "b75e5f90efcd85ea94274191e44a48594932638df67377c0b91ff367df97ca13",
+    "js/tema.js": "855bcee3ec1223b43e0f3e9a94c1fbdf1451e53830dcc022962b48e8d3340757",
+    "tipos/spectral-sc/SpectralSC-SemiBold.woff2": "b847fe8f1fe1a862ce15e288958d132940a8204951ef0dbe2c9ad8fd997f29e2",
+    "tipos/spectral/Spectral-Medium.woff2": "34f0ba222c28bc0ea816c693d05c528be4a5ee10c4b1765cdea774c6fb2502c2",
+    "tipos/spectral-sc/SpectralSC-Regular.woff2": "afa69dd2e7aaca2733883133745fd84c18dfac6a08d5999e69705ea7277240b8",
+    "en/ledger/custo-unitario-do-trabalho-2024/index.html": "ae1f7348a9ef1fc9f5534896ec472829360acd45ead39ba9bd85820cd56cb070",
+    "livro-razao/avisos-pt2030-abertos/index.html": "90cbc8e18f9a3e7860ba15708e3e71b3920958cd7109086ef59c7e39b5af32d1",
+    "en/ledger/avisos-pt2030-abertos/index.html": "851f1825cae4ae74514eb9e16c2dfc0dd74c6470606f170d605947c9545c8be2"
+  },
+  "falhas": [],
+  "ok": true
+}
