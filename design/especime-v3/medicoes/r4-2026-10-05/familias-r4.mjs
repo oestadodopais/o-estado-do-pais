@@ -617,7 +617,14 @@ const ORCAMENTO = [
   },
 ];
 
-export const FAMILIAS_PARTE_2 = ORCAMENTO;
+// O cabeçalho mensal não apoia a coluna anual do Orçamento Inicial.
+export const FAMILIAS_PARTE_2 = ORCAMENTO.flatMap(e => {
+  if (!e.partes.some(p => p.apoios?.some(a => a.origem === 'rp4n-ac-ss'))) return [e];
+  return [false, true].map(anual => ({...e,
+    chaves:e.chaves.filter(k => k.startsWith('oe-') === anual),
+    partes:e.partes.map(p => ({...p, ...(p.apoios ? {apoios:p.apoios.map(a => anual && a.origem === 'rp4n-ac-ss' ? {...a,origem:'rp4n-ac-ss-orcamento'} : a)} : {})})),
+  })).filter(e => e.chaves.length);
+});
 
 /* =============================================================================
  * 5 · AS REGIÕES: o produto por habitante face à média da União, e a distância a ela

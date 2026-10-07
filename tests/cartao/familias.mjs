@@ -279,6 +279,8 @@ export function conferirAuditoriaDasFamilias({
     const literal = a?.literal;
     if (typeof literal !== 'string' || literal.trim().length < LITERAL_MINIMO) return `um literal com menos de ${LITERAL_MINIMO} caracteres, que não prende nada`;
     if (a.origem) {
+      if (a.origem === 'rp4n-ac-ss' && ids.some(id => linhas.get(id)?.reference_date !== '2026-08')) return 'o recorte de janeiro a agosto não apoia uma linha anual';
+      if (a.origem === 'rp4n-ac-ss-orcamento' && ids.some(id => linhas.get(id)?.reference_date !== '2026' || !linhas.get(id)?.document?.locator?.includes('Orçamento Inicial 2026'))) return 'o recorte do Orçamento Inicial não apoia esta linha de execução';
       const o = origens[a.origem];
       if (!o) return `apoia-se em «${a.origem}», que não está declarada em ORIGENS_DAS_DEFINICOES`;
       if (!['excerto', 'excertoEn', 'documento', 'publicador'].includes(a.campo) || typeof o[a.campo] !== 'string') return `cita o campo «${a.campo}» da origem «${a.origem}», que não pode apoiar`;
