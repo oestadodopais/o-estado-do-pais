@@ -20,8 +20,8 @@ reference_date: "2026"
 excerpt: null
 
 # Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "Não é um ministério. Nesta edição do orçamento, a rubrica dos Encargos Gerais do Estado tem o mesmo valor do programa 001, Órgãos de Soberania. As partes foram arredondadas separadamente; a sua soma pode não ser exatamente cem por cento. A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
-ressalva_en: "This is not a ministry. In this budget edition, General State Charges has the same value as programme 001, Sovereign Bodies. The shares were rounded separately; their sum may not be exactly one hundred per cent. Gross expenditure includes financial transactions and transfers between State services, as added up in the budget map."
+ressalva: "Não é um ministério. Nesta edição do orçamento, a rubrica dos Encargos Gerais do Estado tem o mesmo valor do programa 001, Órgãos de Soberania. As partes foram arredondadas separadamente; a sua soma pode não ser exatamente cem por cento."
+ressalva_en: "This is not a ministry. In this budget edition, General State Charges has the same value as programme 001, Sovereign Bodies. The shares were rounded separately; their sum may not be exactly one hundred per cent."
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: "Dividir a despesa bruta dos Encargos Gerais do Estado pela despesa bruta da administração central, multiplicar por cem e arredondar a duas casas decimais. Inclui operações financeiras e transferências internas; não mede a repartição da despesa efetiva consolidada. A igualdade referida na ressalva compara os Encargos Gerais do Estado com o programa 001, Órgãos de Soberania: 7733610763 - 7733610763 = 0 euros. A conta não descreve o conteúdo da rubrica."
