@@ -26,7 +26,7 @@ export function plantasDosMarcadores() {
   ['o-que-e-familia',`<div data-o-que-e="planta" data-o-que-e-tipo="familia" data-o-que-e-familia="familia">${marca}</div>`],
   ['o-que-e-serie',`<div data-o-que-e-da-serie="planta">${marca}</div>`],
   ['nome-medida',`<span data-nome="figuras">${marca}</span>`],
-  ['nome-serie',`<h1 class="serie-titulo">${marca}</h1>`],
+  ['nome-serie',`<span data-nome="serie">${marca}</span>`],
   ['nome-lugar',`<span data-lugar-da-linha="planta">${marca}</span>`],
   ['titulo-estudo',`<h2 data-nonledger="titulo-de-estudo">${marca}</h2>`],
   ['leitura-cartao',`<p data-cartao-leitura="planta">${marca}</p>`],
