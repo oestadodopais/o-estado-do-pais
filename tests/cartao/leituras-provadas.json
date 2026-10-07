@@ -12531,7 +12531,7 @@
               "apoios": [
                 {
                   "linha": "propria",
-                  "campo": "name",
+                  "campo": "excerpt",
                   "literal": "Decrementos por reforma antecipada: caso geral"
                 }
               ]
@@ -12549,7 +12549,12 @@
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "no esforço contributivo e no acréscimo de direitos sobre o sistema de pensões"
+                  "literal": "no esforço contributivo e no"
+                },
+                {
+                  "linha": "propria",
+                  "campo": "excerpt",
+                  "literal": "acréscimo de direitos sobre o sistema de pensões"
                 }
               ]
             },
