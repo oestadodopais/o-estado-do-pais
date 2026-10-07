@@ -1,9 +1,9 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "b72e639db588a6a11baa0edea9459f66b9d5df70",
+ "cabeca": "372777e1c896ac6b5d64dc8ec0ae0193e49ab0a1",
  "contas": {
-  "paginas": 7882,
-  "paginas_com_cartoes": 688,
+  "paginas": 7906,
+  "paginas_com_cartoes": 704,
   "cartoes": 5290,
   "familias": {
    "nacional": 318,
@@ -120,7 +120,7 @@
   },
   "concelho|en|concelho:empresas": {
    "dobra": {
-    "Counts the non-financial enterprises attributed to the municipality (integrated business accounts system).": 308
+    "Counts the enterprises attributed to the municipality (integrated business accounts system).": 308
    },
    "nome": {
     "Non-financial enterprises": 308
@@ -296,7 +296,7 @@
   },
   "concelho|pt|concelho:empresas": {
    "dobra": {
-    "Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas).": 308
+    "Conta as empresas atribuídas ao concelho (sistema de contas integradas das empresas).": 308
    },
    "nome": {
     "Empresas não financeiras": 308

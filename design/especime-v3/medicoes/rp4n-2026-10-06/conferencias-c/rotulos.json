@@ -1,0 +1,30 @@
+{
+  "comando": "node scripts/inventario-rotulos.mjs --escrever",
+  "cabeca": "372777e1c896ac6b5d64dc8ec0ae0193e49ab0a1",
+  "alteracoes": [
+    {
+      "chave": "concelho|pt|concelho:empresas",
+      "antes": {
+        "Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas).": 308
+      },
+      "depois": {
+        "Conta as empresas atribuídas ao concelho (sistema de contas integradas das empresas).": 308
+      }
+    },
+    {
+      "chave": "concelho|en|concelho:empresas",
+      "antes": {
+        "Counts the non-financial enterprises attributed to the municipality (integrated business accounts system).": 308
+      },
+      "depois": {
+        "Counts the enterprises attributed to the municipality (integrated business accounts system).": 308
+      }
+    }
+  ],
+  "diferencas_anteriores": [
+    "«concelho|en|concelho:empresas» · dobra: «Counts the enterprises attributed to the municipality (integrated business accounts system).» rende-se 308 vez(es) e o inventário declarado diz 0",
+    "«concelho|en|concelho:empresas» · dobra: «Counts the non-financial enterprises attributed to the municipality (integrated business accounts system).» rende-se 0 vez(es) e o inventário declarado diz 308",
+    "«concelho|pt|concelho:empresas» · dobra: «Conta as empresas atribuídas ao concelho (sistema de contas integradas das empresas).» rende-se 308 vez(es) e o inventário declarado diz 0",
+    "«concelho|pt|concelho:empresas» · dobra: «Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas).» rende-se 0 vez(es) e o inventário declarado diz 308"
+  ]
+}

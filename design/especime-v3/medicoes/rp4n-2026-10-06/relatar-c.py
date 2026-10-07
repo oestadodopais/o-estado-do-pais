@@ -10,6 +10,7 @@ SITE = BASE.parents[3]
 MOTOR = Path(os.environ['RESEARCHHUB_DIR'])
 PORTOES = BASE / 'portoes-c'
 INICIAIS = BASE / 'portoes-c-iniciais'
+ROTULOS = BASE / 'portoes-c-rotulos'
 
 def git(raiz, *args):
     return subprocess.check_output(['git', '-C', str(raiz), *args], text=True).strip()
@@ -30,14 +31,20 @@ novas = [p for p in plantas if p['nome'] not in nomes_anteriores]
 assert all(p in plantas for p in ler('plantas-b.json')['plantas']), 'uma planta anterior mudou'
 cabeca = (PORTOES / 'cabeca').read_text().strip()
 assert cabeca == (PORTOES / 'cabeca.fim').read_text().strip() == depois['cabeca']
-for pasta in (PORTOES, INICIAIS):
+for pasta in (PORTOES, INICIAIS, ROTULOS):
     for g in ('build', 'verify', 'typecheck'):
         assert (pasta / f'{g}.fim').exists(), f'{pasta.name}/{g} não terminou'
     for p in pasta.iterdir():
         if p.is_file():
             p.write_text(limpar(p.read_text()))
+for p in (BASE / 'conferencias-c').glob('*.log'):
+    p.write_text(limpar(p.read_text()))
 codigos = {g: int((PORTOES / f'{g}.codigo').read_text()) for g in ('build', 'verify', 'typecheck')}
 codigos_iniciais = {g: int((INICIAIS / f'{g}.codigo').read_text()) for g in codigos}
+codigos_rotulos = {g: int((ROTULOS / f'{g}.codigo').read_text()) for g in codigos}
+rotulos = ler('conferencias-c/rotulos.json')
+assert rotulos['cabeca'] == (ROTULOS / 'cabeca').read_text().strip() == (ROTULOS / 'cabeca.fim').read_text().strip()
+assert f"{len(rotulos['diferencas_anteriores'])} diferença(s)" in (ROTULOS / 'verify.log').read_text()
 voz = ler('conferencias-c/voz-antes.json')
 assert voz['cabeca'] == (INICIAIS / 'cabeca').read_text().strip() == (INICIAIS / 'cabeca.fim').read_text().strip()
 ocorrencias_voz = sum(p['ocorrencias'] for p in voz['por_classificar'])
@@ -47,7 +54,7 @@ for g in ('build', 'verify'):
 cabeca_motor = git(MOTOR, 'rev-parse', 'HEAD')
 assert cabeca_motor == git(SITE, 'show', f"{antes['cabeca']}:design/especime-v3/medicoes/rp4n-2026-10-06/portoes/motor.cabeca")
 assert not git(MOTOR, 'status', '--porcelain'), 'o motor tem alterações'
-assert not git(SITE, 'diff', cabeca, '--', 'scripts', 'tests', 'src', 'ledger', 'package.json', 'package-lock.json', 'design/especime-v3/INVENTARIO-FRASES.md', 'design/especime-v3/critica/REVISOES-DO-INVENTARIO.md'), 'o código ou o inventário mudou depois dos portões'
+assert not git(SITE, 'diff', cabeca, '--', 'scripts', 'tests', 'src', 'ledger', 'package.json', 'package-lock.json', 'design/especime-v3/INVENTARIO-FRASES.md', 'design/especime-v3/critica/REVISOES-DO-INVENTARIO.md', 'design/especime-v3/rotulos/INVENTARIO.json'), 'o código ou o inventário mudou depois dos portões'
 # As superfícies recusadas na lista antiga passam aos tipos agora autorizados.
 # A contagem vem das ocorrências antigas, sem transcrever algarismos do mandato.
 equivalencias = {'source': 'publicador', 'document.title': 'titulo-documento', 'document.edition': 'edicao-documento'}
@@ -108,18 +115,33 @@ linhas += ['', '| Portão da primeira corrida | Ficheiro | Código lido |', '|--
 for g, c in codigos_iniciais.items():
     linhas.append(f'| {g} | `portoes-c-iniciais/{g}.codigo` | {c} |')
 linhas += ['', 'Os comandos posteriores à falha da voz nas cadeias da primeira corrida não se consideram executados. Os códigos do fecho são os de `portoes-c`, na cabeça do código indicada acima.', '',
+    '### RP4N-7. A mesma sincronização no inventário dos rótulos', '',
+    f"A segunda corrida, na cabeça `{rotulos['cabeca']}`, passou a voz e encontrou {len(rotulos['diferencas_anteriores'])} diferenças no inventário dos rótulos. Eram as mesmas frases: a forma atual aparecia nas páginas e a forma antiga continuava na declaração. O comando `node scripts/inventario-rotulos.mjs --escrever` recontou o inventário. A comparação dos objetos afirma que só mudaram as {len(rotulos['alteracoes'])} formas da dobra, com as contagens conservadas; todos os outros campos das entradas ficaram iguais. Os metadados da cabeça e das páginas também foram recontados pelo comando. O diagnóstico está em `conferencias-c/rotulos.json`.", '',
+    '| Chave | Antes na declaração | Depois na declaração |', '|---|---:|---:|']
+for a in rotulos['alteracoes']:
+    chave = a['chave'].replace('|', '\\|')
+    linhas.append(f"| `{chave}` | {sum(a['antes'].values())} | {sum(a['depois'].values())} |")
+linhas += ['', '| Portão da segunda corrida | Ficheiro | Código lido |', '|---|---|---:|']
+for g, c in codigos_rotulos.items():
+    linhas.append(f'| {g} | `portoes-c-rotulos/{g}.codigo` | {c} |')
+linhas += ['', 'A conferência dos rótulos e os passos que esta corrida não alcançou foram corridos separadamente antes da repetição integral. Não substituem os portões do fecho.', '', '| Conferência | Ficheiro | Código lido |', '|---|---|---:|']
+for nome in ('rotulos', 'series', 'indice-do-sitio', 'explicacoes', 'frases-compostas'):
+    codigo = int((BASE / 'conferencias-c' / f'{nome}.codigo').read_text())
+    linhas.append(f'| {nome} | `conferencias-c/{nome}.codigo` | {codigo} |')
+linhas += ['',
     '### Pendências', '']
 recusadas = [(p['pagina'], m) for p in depois['paginas'] for m in p['recusadas']]
 if recusadas:
-    linhas += ['**RP4N-7. Ocorrências ainda recusadas.** A passagem para aqui.', '', '| Página | Tipo | Contexto |', '|---|---|---|']
+    linhas += ['**RP4N-8. Ocorrências ainda recusadas.** A passagem para aqui.', '', '| Página | Tipo | Contexto |', '|---|---|---|']
     for pagina, m in recusadas:
         contexto = m['contexto'].replace('|', '\\|')
         linhas.append(f"| `{pagina}` | {m['tipo']} | {contexto} |")
 else:
-    linhas += ['Não sobrou nenhuma ocorrência fora dos tipos nem em superfície de afirmação. A RP4N-5 fica resolvida. A RP4N-6 foi corrigida pela sincronização do inventário da voz. As ausências aceites ficam inventariadas para o bloco dos recibos as dizer por palavras. Permanecem fora desta passagem o relatório das pensões (RP4N-2, falha de certificado já registada), a leitura do vocabulário do PRR (RP4N-3) e a leitura independente com a conferência final da direção (RP4N-4). Não houve fusão nem publicação.']
+    linhas += ['Não sobrou nenhuma ocorrência fora dos tipos nem em superfície de afirmação. A RP4N-5 fica resolvida. A RP4N-6 e a RP4N-7 foram corrigidas pela sincronização dos inventários da voz e dos rótulos. As ausências aceites ficam inventariadas para o bloco dos recibos as dizer por palavras. Permanecem fora desta passagem o relatório das pensões (RP4N-2, falha de certificado já registada), a leitura do vocabulário do PRR (RP4N-3) e a leitura independente com a conferência final da direção (RP4N-4). Não houve fusão nem publicação.']
 linhas += ['', '### Comandos e commits', '', '```sh',
     'node design/especime-v3/medicoes/rp4n-2026-10-06/medir-c.mjs antes',
     'node tests/cartao/rp4nb.mjs --registo-c',
+    'node scripts/inventario-rotulos.mjs --escrever',
     'RESEARCHHUB_DIR=<motor> sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/rp4n-2026-10-06/portoes-c',
     'node design/especime-v3/medicoes/rp4n-2026-10-06/medir-c.mjs depois',
     'RESEARCHHUB_DIR=<motor> python3 design/especime-v3/medicoes/rp4n-2026-10-06/relatar-c.py', '```', '',
