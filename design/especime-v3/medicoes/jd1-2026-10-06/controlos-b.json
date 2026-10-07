@@ -1,0 +1,23 @@
+{
+  "1": {
+    "valor": "5 983,4",
+    "confere": true
+  },
+  "2": {
+    "valor": "3,53700",
+    "confere": true
+  },
+  "3": {
+    "despesa": true,
+    "receita": false
+  },
+  "4": {
+    "sha256_pedido": "e327feb73d210f958b1a40b3c86d6c681b686629416f070946902e00310392cb",
+    "sha256_pdf": "e327feb73d210f958b1a40b3c86d6c681b686629416f070946902e00310392cb",
+    "confere": true
+  },
+  "10": {
+    "http_200": 18,
+    "relatorio_18": true
+  }
+}
