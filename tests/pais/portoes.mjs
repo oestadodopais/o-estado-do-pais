@@ -50,6 +50,19 @@ function planta(nome,script,alteracoes,mordidas) {
  console.log(`${passou?'OK':'FALHA'} ${nome}: código ${r.status}`);
  if(!passou)throw Error(`${nome}: a planta não teve todas as mordidas previstas. Ver o registo.`);
 }
+/* H4-b: a lista independente do menu continua a fechar por contagem, ordem, rótulo e destino. */
+planta('h4b-menu-sem-explicacoes','scripts/check-pais.mjs',[
+ ['index.html', r=>r.querySelector('#nav-principal a[href="/explicacoes"]').remove()],
+ ['en/index.html', r=>r.querySelector('#nav-principal a[href="/en/explainers"]').remove()]
+],[/N1: menu de sete errado em index\.html\./,/N1: menu de sete errado em en\/index\.html\./]);
+planta('h4b-menu-rotulo-antigo','scripts/check-pais.mjs',[
+ ['index.html', r=>r.querySelector('#nav-principal a[href="/uniao-europeia"]').set_content('Europa')],
+ ['en/index.html', r=>r.querySelector('#nav-principal a[href="/en/european-union"]').set_content('Europe')]
+],[/N1: menu de sete errado em index\.html\./,/N1: menu de sete errado em en\/index\.html\./]);
+planta('h4b-menu-destino-e-ordem','scripts/check-pais.mjs',[
+ ['index.html', r=>r.querySelector('#nav-principal a[href="/explicacoes"]').setAttribute('href','/agenda')],
+ ['en/index.html', r=>{const a=r.querySelector('#nav-principal a[href="/en/explainers"]'); const s=a.toString(); a.remove(); r.querySelector('#nav-principal').insertAdjacentHTML('beforeend',s);}]
+],[/N1: menu de sete errado em index\.html\./,/N1: menu de sete errado em en\/index\.html\./]);
 planta('mapa-atribuicao','scripts/check-mapa.mjs',[
  ['index.html',r=>r.querySelector('.mapa-linha').remove()]
 ],[/R6/]);
@@ -93,13 +106,9 @@ planta('feixe-porta','scripts/design-bundle.mjs',[
 planta('feixe-correcao','scripts/design-bundle.mjs',[
  ['correcoes/index.html',r=>r.querySelectorAll('.registo-mudanca[data-mudanca="correcao"]').forEach(l=>l.remove())]
 ],[/não encontrei ".registo-mudanca/]);
-/* A CATRACA L1 NÃO CONTA A PORTA DE UM MARCADOR OBRIGATÓRIO (B1c, 22.09.2026).
-   O desconto vive na classe `marcador-de-titulo`: tirá-la faz das duas marcas
-   do arquivo inglês duas portas comuns para `/en/to-verify`, e a catraca sobe
-   acima do teto. É a prova de que o desconto é o que segura o teto, e não a
-   sorte. */
+/* EX2-b: uma marca de título já não é uma porta obrigatória nem tem dispensa. */
 planta('lugar-marcador-de-titulo','scripts/check-lugar.mjs',[
- ['en/studies/index.html',r=>r.querySelectorAll('a.marcador-de-titulo').forEach(a=>a.setAttribute('class','marcador'))]
+ ['en/studies/index.html',r=>r.querySelector('main').insertAdjacentHTML('beforeend','<a class="marcador marcador-de-titulo" href="/en/to-verify">[a verificar]</a><a class="marcador marcador-de-titulo" href="/en/to-verify">[a verificar]</a>')]
 ],[/L1 .*ACIMA DO TETO/]);
 const europa=routePath('uniaoEuropeia','pt').slice(1)+'/index.html';
 planta('feixe-estados','scripts/design-bundle.mjs',[

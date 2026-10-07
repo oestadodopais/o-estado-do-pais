@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { contarFrasesDasMudancas, errosDoSeloDaDefinicao } from '../tests/explicacoes/o-que-e.mjs';
+import { conferirLugaresIA } from './lugares-ia-do-portao.mjs';
 import { conferirValorUnidade } from './valor-unidade.mjs';
 import { nomeNoRegistoAdmitido } from './nome-no-registo.mjs';
 import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
@@ -724,6 +726,7 @@ const linhasConstruidas = new Set();
    K17 do `check:cartao` confere as palavras; este portão conta que cada recibo construído tem uma frase, a da sua
    linha, dentro da cabeça, e o título com o nome do recibo. */
 const R4_RECIBOS = { comFrase: 0 };
+const EX2_MUDANCAS = { frases: 0, ausencias: 0 };
 /** UE1: as páginas de série construídas, por «língua:id», e as origens das séries conferidas. */
 const seriesConstruidas = new Set();
 /* UE1b: as portas dos recibos das linhas portuguesas para as suas séries, e as
@@ -3564,7 +3567,7 @@ function linhaDaReguaDoCartao(principal, id, qual) {
     : qual === 'anterior' && id === anterior && cadenciaConfere);
 }
 
-function auditaSelo(el, id, lang, err) {
+function auditaSelo(el, id, lang, err, rota) {
   /* A LINHA DAQUELE ID, NA EDIÇÃO DA PÁGINA, E SÓ NELA (bloco «A grelha da
      voz», 26.08.2026). A folga existia por uma razão só: o bloco «a mesma frase
      na outra edição», nas páginas de leitura, era escrito na outra língua de
@@ -3608,6 +3611,11 @@ function auditaSelo(el, id, lang, err) {
     return;
   }
   if (pai && temChipPara(pai, alvos)) return;
+  /* EX2: só o valor da própria definição pode usar o selo do resumo da mesma mudança. */
+  if (['leituraDaSemana','indice'].includes(rota) && el.closest('p[data-o-que-e]')) {
+    errosDoSeloDaDefinicao(el, id, rota, alvo).forEach(err);
+    return;
+  }
   /* B1, peça 3: o cartão existente tem uma fonte e uma régua. A régua só
      pode usar o selo do seu próprio cartão, e só para as linhas que o recibo
      publica como enquadramento. O valor principal continua na regra acima. */
@@ -4794,6 +4802,13 @@ for (const file of ficheirosHtml(DIST)) {
       else R4_RECIBOS.comFrase++;
     }
   }
+  /* EX2: cada mudança de valor tem a frase da própria linha ou a ausência, uma vez. A W4 confere as palavras. */
+  if (['leituraDaSemana', 'indice'].includes(rota?.key)) {
+    const ex2 = contarFrasesDasMudancas(root, rota.key);
+    for (const falta of ex2.erros) err(falta);
+    EX2_MUDANCAS.frases += ex2.frases;
+    EX2_MUDANCAS.ausencias += ex2.ausencias;
+  }
   if (rota?.key === 'serie') {
     if (!SERIES_DO_PORTAO.has(rota.params.slug)) {
       err(`há uma página de série para "${rota.params.slug}", que não é nenhuma série de ledger/series/.`);
@@ -5862,6 +5877,8 @@ for (const file of ficheirosHtml(DIST)) {
      * uma frase inglesa numa página portuguesa passava por estar declarada
      * inglesa. O atributo é do gabarito e não é prova de nada.
      */
+    /* H4: os lugares conferem-se nas duas edições do Método, além do rótulo legal. */
+    if (rota?.key === 'metodo') for (const e of conferirLugaresIA(root, linguaPagina)) err(e);
     const frases = root.querySelectorAll('[data-frase-da-politica]');
     ROTULO_DE_IA.frase += frases.length;
     /* A FRASE DA POLÍTICA FICOU SÓ NO MÉTODO (P1, item 3, 15.09.2026). Era do
@@ -6066,7 +6083,7 @@ for (const file of ficheirosHtml(DIST)) {
     if (rota && !paginaDoLivro) {
       valoresAuditados++;
       const antes = erros.length;
-      auditaSelo(el, id, rota.lang, err);
+      auditaSelo(el, id, rota.lang, err, rota.key);
       if (erros.length > antes) valoresSemSelo++;
     }
     aRemover.push(el);
@@ -9227,6 +9244,7 @@ console.log(
       `fora do livro-razão · ${linhasConstruidas.size} páginas de linha` +
       ` · ${titulosDeLinhaConferidos} títulos de linha com o valor e a unidade separados` +
       ` · R4: ${R4_RECIBOS.comFrase} recibo(s) com a frase «O que é este número»` +
+      ` · EX2: ${EX2_MUDANCAS.frases} frase(s) e ${EX2_MUDANCAS.ausencias} ausência(s) nas mudanças` +
       (documentos ? ` · ${documentos} documento(s) de estudo, conferidos contra a origem` : '') +
       (paginasDeTexto
         ? ` · ${paginasDeTexto} página(s) de leitura, conferidas contra o seu registo de conteúdo`
