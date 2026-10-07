@@ -97,6 +97,7 @@
  * pelo menos uma das células que o estrago nomeia. Uma planta que não cumpre as
  * três faz a corrida sair a 1.
  */
+import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { cabecaValida } from './cabeca-b1.mjs';
 import http from 'node:http';
@@ -126,7 +127,8 @@ const opcao = (nome) => {
   const i = argv.indexOf(nome);
   return i >= 0 ? (argv[i + 1] ?? true) : null;
 };
-const FICHEIRO_JSON = opcao('--json');
+// M-A: a medição conserva também cada página e largura, antes de mudar a espera.
+const FICHEIRO_JSON = opcao('--json') ?? (process.env.OEDP_TEMPOS_DIR ? path.join(process.env.OEDP_TEMPOS_DIR, 'alvos.json') : null);
 const VERMELHOS = argv.includes('--vermelhos');
 const SO = opcao('--so');
 
@@ -504,7 +506,19 @@ function leFicheiro(caminho) {
   return ESTRAGO_NO_DISCO ? ESTRAGO_NO_DISCO(texto, caminho) : texto;
 }
 
+// M-A: só as plantas servem esta folha, com atraso real no servidor da régua.
+let folhaDeEnsaio = null;
 const servidor = http.createServer((req, res) => {
+  if (req.url === '/__ma_espera.css' && folhaDeEnsaio) {
+    const folha = folhaDeEnsaio;
+    folha.pedida = true;
+    setTimeout(() => {
+      folha.servida = true;
+      res.writeHead(200, { 'content-type': 'text/css' });
+      res.end(folha.css);
+    }, folha.atraso);
+    return;
+  }
   const semQuery = req.url.split('?')[0];
   let ficheiro;
   try {
@@ -1637,6 +1651,17 @@ function varreFolhas() {
 
 const nav = await chromium.launch({ headless: true });
 
+/** M-A: a página e as fontes carregadas, seguidas de um quadro de pintura.
+ * A espera depende dos recursos que a medição usa, e não de um relógio fixo.
+ * A folha atrasada da planta passa por esta mesma função. */
+async function abrirPaginaPronta(pagina, rota) {
+  await pagina.goto(base + rota, { waitUntil: 'load' });
+  await pagina.evaluate(async () => {
+    await document.fonts.ready;
+    await new Promise(resolve => requestAnimationFrame(resolve));
+  });
+}
+
 /**
  * Uma passagem completa: as rotas × as larguras, com o axe a 390 e a 1280.
  */
@@ -1649,8 +1674,7 @@ async function passagem() {
     for (const largura of LARGURAS) {
       const ctx = await nav.newContext({ viewport: { width: largura, height: 900 } });
       const pagina = await ctx.newPage();
-      await pagina.goto(base + r.rota, { waitUntil: 'networkidle' });
-      await pagina.evaluate(() => new Promise((res) => setTimeout(res, 120)));
+      await abrirPaginaPronta(pagina, r.rota);
       /* O AXE NAS DUAS LARGURAS DA CASA, e não nas cinco: as três do meio
          existem para o buraco dos alvos (I104), e o axe não muda com elas
          (medido). Correr o axe cinco vezes por rota triplicava o custo do
@@ -2146,7 +2170,7 @@ async function avalia(p, dist, cartoes, leis, folhas) {
   let positivo;
   try {
     for (const p of dist.paginasExpanded) {
-      await pagina.goto(base + p.rota, { waitUntil: 'networkidle' });
+      await abrirPaginaPronta(pagina, p.rota);
       provas.push({ rota: p.rota, comandos: await medeComandos(pagina) });
     }
     // Corre em cada chamada da cadeia, sem bandeira e sem escrever no dist.
@@ -2181,6 +2205,47 @@ function resumo(maus) {
     .join('; ');
 }
 
+/** M-A: estragos servidos numa página real, medidos pela mesma função e
+ * recusados pelas células existentes. Só se substitui essa página na passagem
+ * limpa; os restantes resultados, as células e os limiares ficam intactos. */
+async function plantasDaEspera(limpa, limpas, dist, cartoes, leis, folhas) {
+  const resultados = [];
+  const alvo = limpa.paginas.find(p => p.familia === 'sugestoes' && p.lang === 'pt' && p.largura === 390);
+  assert(alvo, 'M-A: falta a página de controlo da espera');
+  const pequena = '.sugestoes-enviar{min-height:30px!important;height:30px!important;padding:0 4px!important;line-height:30px!important;font-size:10px!important}';
+  const cortada = '.rotulo-ia-linha{display:block!important;width:24px!important;white-space:normal!important;height:12px!important;overflow:hidden!important}';
+  for (const caso of [
+    { nome: 'folha atrasada reduz o alvo', css: pequena, atraso: 1000, celula: 'H16' },
+    { nome: 'alvo abaixo de 44 px', css: pequena, atraso: 0, celula: 'H16' },
+    { nome: 'etiqueta cortada depois da primeira linha', css: cortada, atraso: 0, celula: 'H14' },
+  ]) {
+    const anterior = { estrago: ESTRAGO, folha: folhaDeEnsaio, celulas };
+    const contexto = await nav.newContext({ viewport: { width: alvo.largura, height: 900 } });
+    try {
+      folhaDeEnsaio = { ...caso, pedida: false, servida: false };
+      ESTRAGO = (html, rota) => rota.replace(/\/$/, '') === alvo.rota.replace(/\/$/, '')
+        ? html.replace('</head>', '<link rel="stylesheet" href="/__ma_espera.css"></head>') : html;
+      const pagina = await contexto.newPage();
+      await abrirPaginaPronta(pagina, alvo.rota);
+      assert(folhaDeEnsaio.pedida && folhaDeEnsaio.servida, 'M-A: a medição precedeu a folha da planta');
+      const medida = await pagina.evaluate(medeNaPagina, { alvo: ALVO, alvoPonteiro: ALVO_PONTEIRO, prefixoDoConcelho: PREFIXO_DO_CONCELHO[alvo.lang] });
+      const alterada = { ...limpa, paginas: limpa.paginas.map(p => p === alvo ? { ...alvo, ...medida } : p) };
+      await avalia(alterada, dist, cartoes, leis, folhas);
+      const mordida = celulas.find(c => c.nome === caso.celula);
+      assert(limpas.find(c => c.nome === caso.celula)?.passa, 'M-A: a célula de controlo não estava verde');
+      assert(mordida && !mordida.passa, `M-A: a planta não mordeu na ${caso.celula}`);
+      resultados.push({ nome: caso.nome, celula: caso.celula, mensagem: mordida.prova, folha_servida: folhaDeEnsaio.servida, mordeu: true });
+      console.log(`check:alvos · planta M-A · ${caso.nome} · ${caso.celula}: ${mordida.prova}`);
+    } finally {
+      ESTRAGO = anterior.estrago;
+      folhaDeEnsaio = anterior.folha;
+      celulas = anterior.celulas;
+      await contexto.close();
+    }
+  }
+  return resultados;
+}
+
 /* ------------------------------------------------------------ a corrida */
 
 const DIST_VARRIDO = varreDist();
@@ -2190,6 +2255,7 @@ const FOLHAS = varreFolhas();
 const primeira = await passagem();
 const diagnostico = await avalia(primeira, DIST_VARRIDO, CARTOES, LEIS, FOLHAS);
 const limpas = celulas;
+const plantasDaEsperaMedidas = await plantasDaEspera(primeira, limpas, DIST_VARRIDO, CARTOES, LEIS, FOLHAS);
 
 console.log('');
 console.log(cinza(`  a régua dos alvos · ${ROTAS.length} rotas × ${LARGURAS.length} larguras · dist: ${path.relative(RAIZ, DIST) || DIST}`));
@@ -2276,6 +2342,7 @@ if (FICHEIRO_JSON) {
         rotas: ROTAS.map((r) => r.rota),
         larguras: LARGURAS,
         celulas: limpas,
+        paginas: primeira.paginas,
         axe: primeira.axe,
         graves: primeira.graves,
         dist_varrido: DIST_VARRIDO,
@@ -2296,6 +2363,7 @@ if (FICHEIRO_JSON) {
           .map((a) => ({ chave: a.chave, largura: a.largura, marca: a.marca, caminho: a.caminho, caixa: a.caixa, toque: a.toque, exigido: a.exigido, ok: a.ok })),
         caixas: diagnostico.caixas,
         plantas,
+        plantas_da_espera: plantasDaEsperaMedidas,
       },
       null,
       2,

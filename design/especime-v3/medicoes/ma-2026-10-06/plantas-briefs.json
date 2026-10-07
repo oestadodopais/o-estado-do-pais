@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "controlo preso não volta a executar o guião",
+      "mensagem": "bytes iguais; §0 e JSON conferidos",
+      "passou": true
+    },
+    {
+      "planta": "número alterado no brief preso",
+      "mensagens": [
+        "BRIEF-ENSAIO-prova.md: o §0 escreve «14» e esse número não é o valor de nenhuma das medições nomeadas na sua frase (`objetos`=13).\n      «Há 14 objetos (`objetos`).»"
+      ],
+      "passou": true
+    },
+    {
+      "planta": "número alterado no guião preso",
+      "mensagens": [
+        "BRIEF-ENSAIO-prova.md: a medição «objetos» vale 14 hoje e o ficheiro diz 13.\n      comando: ensaio sintético"
+      ],
+      "passou": true
+    },
+    {
+      "planta": "JSON alterado com os selos antigos",
+      "mensagens": [
+        "BRIEF-ENSAIO-prova.md: a medição «objetos» vale 13 hoje e o ficheiro diz 14.\n      comando: ensaio sintético",
+        "BRIEF-ENSAIO-prova.md: o §0 escreve «13» e esse número não é o valor de nenhuma das medições nomeadas na sua frase (`objetos`=14).\n      «Há 13 objetos (`objetos`).»"
+      ],
+      "passou": true
+    }
+  ]
+}

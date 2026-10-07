@@ -1,0 +1,74 @@
+[
+  {
+    "nome": "h4d-l3-frase-aprovada-fora-do-metodo",
+    "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+    "estado": "",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L3 · palavras fora do vocabulário fechado\\s+1\\s+\\(teto 0\\) ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "f79fd309e56180b1be9ea0fba8b0ff053f04bd6a9116322f97040cd7457c4d0d",
+        "reposto": "f79fd309e56180b1be9ea0fba8b0ff053f04bd6a9116322f97040cd7457c4d0d"
+      }
+    ]
+  },
+  {
+    "nome": "h4d-l3-frase-aprovada-fora-da-politica",
+    "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+    "estado": "",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L3 · palavras fora do vocabulário fechado\\s+1\\s+\\(teto 0\\) ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/metodo/index.html",
+        "antes": "74e229219a7a2dcf225a419d687d76a1248f7ed1ed2ffc8252fbf269ce3131ab",
+        "reposto": "74e229219a7a2dcf225a419d687d76a1248f7ed1ed2ffc8252fbf269ce3131ab"
+      }
+    ]
+  },
+  {
+    "nome": "h4d-l3-frase-parecida-na-politica",
+    "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+    "estado": "",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L3 · palavras fora do vocabulário fechado\\s+1\\s+\\(teto 0\\) ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/metodo/index.html",
+        "antes": "74e229219a7a2dcf225a419d687d76a1248f7ed1ed2ffc8252fbf269ce3131ab",
+        "reposto": "74e229219a7a2dcf225a419d687d76a1248f7ed1ed2ffc8252fbf269ce3131ab"
+      }
+    ]
+  },
+  {
+    "nome": "h4d-l3-outra-palavra-na-politica",
+    "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+    "estado": "",
+    "comando": "node scripts/check-lugar.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "L3 · palavras fora do vocabulário fechado\\s+1\\s+\\(teto 0\\) ACIMA DO TETO"
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/metodo/index.html",
+        "antes": "74e229219a7a2dcf225a419d687d76a1248f7ed1ed2ffc8252fbf269ce3131ab",
+        "reposto": "74e229219a7a2dcf225a419d687d76a1248f7ed1ed2ffc8252fbf269ce3131ab"
+      }
+    ]
+  }
+]

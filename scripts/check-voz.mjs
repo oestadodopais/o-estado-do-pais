@@ -769,7 +769,7 @@ for (const e of ENTRADAS.filter((x) => !('existente' in x && x.existente))) {
     const raiz = parse(fs.readFileSync(caminho, 'utf8'));
     const l = /** @type {'pt'|'en'} */ (lingua);
     if (raiz.querySelector('[data-explicacao-declarado]')) for (const x of conferirPalavrasDaExplicacaoNaPagina(raiz, l, String(rota), slug)) erros.push(`as palavras de uma explicação só saem do inventário conferidas, e a célula da explicação recusou-as em ${ficheiro}: ${x}`);
-    if (raiz.querySelector('[data-semana-declarado]')) for (const x of conferirPalavrasDaSemanaNaPagina(raiz, l, String(rota), DIST)) erros.push(`as frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em ${ficheiro}: ${x}`);
+    if (raiz.querySelector('[data-semana-declarado]') || ['indice', 'leituraDaSemana'].includes(String(rota))) for (const x of conferirPalavrasDaSemanaNaPagina(raiz, l, String(rota), DIST)) erros.push(`as frases da leitura da semana só saem do inventário conferidas, e a célula da semana recusou-as em ${ficheiro}: ${x}`);
     conferidas++;
   }
   console.log(`  EX1: ${conferidas} página(s) com as palavras das explicações e as frases da semana conferidas pelas suas células.`);

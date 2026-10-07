@@ -1,0 +1,32 @@
+{
+  "comando": "captar-ex2.mjs, seguido de leitura visual das imagens pelo construtor",
+  "cabeca": "0b456c3c7aaa0b4aa6ee753950d38e9caad6860f",
+  "ficheiros_inspecionados": [
+    "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-390-inteira.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-390-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-768-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1024-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1280-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/semana-pt-1600-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/semana-en-390-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/semana-en-768-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1024-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1280-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1600-inteira.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/semana-en-1600-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-390-inteira.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-390-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-768-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1024-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1280-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/indice-pt-1600-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/indice-en-390-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/indice-en-768-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1024-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1280-mudancas.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1600-inteira.png",
+    "design/especime-v3/capturas/ex2-2026-10-06/indice-en-1600-mudancas.png"
+  ],
+  "observacao": "As definições têm parágrafo próprio e separação das mudanças. Não se observaram cortes, sobreposições nem colunas partidas na área alterada. As capturas gerais foram lidas para conferir a composição da página. Esta inspeção não substitui a leitura a frio.",
+  "erros_geometricos": []
+}

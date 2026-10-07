@@ -901,7 +901,7 @@ for (const ficheiro of paginasDe(DIST)) {
       const texto = norm(el.text);
       if (!TITULOS_DE_ESTUDO_PT.has(texto)) continue;
       contas.estudos_pt_en++;
-      if (langDe(el) !== 'pt-PT') {
+      if (!['pt', 'pt-PT'].includes(langDe(el))) {
         contas.estudos_pt_en_sem_marca++;
         anota(achados.estudos, texto, rel);
       }
