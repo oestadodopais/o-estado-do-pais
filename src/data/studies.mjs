@@ -43,9 +43,7 @@ export { POR_VERIFICAR } from './marcador.mjs';
 /**
  * A EDIÇÃO QUE UM TÍTULO NOMEIA, NA LÍNGUA DE QUEM O RENDE (B1c, 22.09.2026).
  *
- * `TituloDeTrabalho` precisa de saber se a edição que está a render tem o
- * título por confirmar (`titleUnverified`), e nem todos os seus chamadores têm
- * a edição à mão: o campo «estudo» de uma linha do livro-razão, o caminho no
+ * Nem todos os chamadores têm a edição à mão: o campo «estudo» de uma linha do livro-razão, o caminho no
  * cabeçalho e o nome de um estudo numa área rendem uma cadeia. Esta função
  * responde à pergunta que falta — «esta cadeia, nesta página, é o título de que
  * edição?» — e responde-a como o sítio a rende: a edição da língua da página, e
@@ -419,7 +417,7 @@ export const WORKS = [
     subject: null,
     editions: [
       { lang: 'pt', title: 'Onde está a água?', date: null, updated: null },
-      { lang: 'en', title: 'Onde está a água?', date: null, updated: null, titleUnverified: true },
+      { lang: 'en', title: 'Onde está a água?', date: null, updated: null },
     ],
     /* O título não determina o objecto do estudo. Não se escreve uma descrição
        a partir de nada — e a falta diz-se com o MARCADOR ÚNICO do sítio.
@@ -440,7 +438,7 @@ export const WORKS = [
     tema: 'agua',
     editions: [
       { lang: 'pt', title: 'Água Não Faturada', date: null, updated: null },
-      { lang: 'en', title: 'Água Não Faturada', date: null, updated: null, titleUnverified: true },
+      { lang: 'en', title: 'Água Não Faturada', date: null, updated: null },
     ],
     description: {
       pt: 'Água não faturada nos sistemas de abastecimento em Portugal.',
@@ -787,11 +785,11 @@ export function linguaDoTitulo(titulo, lang = 'pt') {
    * A língua do TEXTO é o português sempre que a mesma cadeia é o título de uma
    * edição portuguesa: uma cadeia portuguesa não deixa de o ser porque a edição
    * inglesa a manteve por o seu título inglês não ser conhecido
-   * (`titleUnverified`). Marcá-la `en` seria o defeito que esta função existe
+   * (RP4N-1). Marcá-la `en` seria o defeito que esta função existe
    * para corrigir; não marcar nada deixa-o só por dizer.
    */
   const doTexto = linguas.has('pt-PT') ? 'pt-PT' : [...linguas][0];
-  return doTexto === daPagina ? null : doTexto;
+  return doTexto === daPagina ? null : doTexto === 'pt-PT' && linguas.has('en') ? 'pt' : doTexto;
 }
 
 /**
