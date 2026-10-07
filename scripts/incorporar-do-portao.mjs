@@ -90,11 +90,11 @@ export function conferirExemploNoMetodo(root, lang) {
     ? [] : ['ER1 Método: falta a porta para o recibo de exemplo da edição.'];
 }
 
-export function conferirCodigo(root, rota) {
+export function conferirCodigo(root, rota, livro = linhas) {
   const erros = [...errosDoInventario, ...(rota?.key === 'metodo' ? conferirExemploNoMetodo(root, rota.lang) : [])];
   const campos = root.querySelectorAll('[data-incorporar-codigo]');
   if (campos.length && !leiturasLiterais.has(root)) erros.push('ER1 código: falta a leitura literal do campo.');
-  const linha = rota?.key === 'linha' ? linhas.get(rota.params.slug) : null;
+  const linha = rota?.key === 'linha' ? livro.get(rota.params.slug) : null;
   for (const campo of campos) if (/\[a verificar\]/i.test(campo.textContent))
     erros.push('ER1 código: uma marca por confirmar não se incorpora.');
   if (linha && LICENCA && !provenienciaConfirmada(linha)) {
