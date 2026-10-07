@@ -36,6 +36,8 @@ export function plantasDosMarcadores() {
  ])for(const lingua of ['pt','en'])prova(`${tipo} (${lingua})`,html.replaceAll('[a verificar]',lingua==='pt'?'[a verificar]':'[to verify]'),tipo,false,rota);
  for(const c of ['published_at','access_date','reference_date','document.date'])prova(`data ${c}`,campo(c),'data',true);
  prova('excerto ausente',campo('excerpt'),'excerto',true);
+ prova('marca partida entre elementos de um excerto',`<span data-linha-claim="planta" data-linha-campo="excerpt"><a class="marcador">[a </a><b>verificar]</b></span>`,'excerto',true);
+ prova('declaração proibida numa parte da marca',`<span data-linha-claim="planta" data-linha-campo="excerpt"><a data-por-confirmar-na-fonte="planta">[a </a><b>verificar]</b></span>`,'o-que-e-linha');
  prova('endereço ausente',campo('source_url'),'endereco',true);
  prova('data ausente na agenda',`<span data-agenda-sem-data="nao_publica"><a data-agenda="evento:planta.marcador">[a verificar]</a></span>`,'data',true,{key:'agenda'});
  prova('proteção da pessoa na I77',`<div id="mandato-2009-2013"><span class="mun-mandato-quem">${marca}</span></div>`,'pessoa-I77',true,{key:'municipio',params:{slug:'planta'}},[{slug:'planta',tempo:{mandatos:[{periodo:'2009–2013',quemPorVerificar:true}]}}]);

@@ -84,14 +84,14 @@ export function inventariarMarcadores(raiz, contexto = {}) {
     const tocadas = folhas.filter(f => f.fim > m.index && f.inicio < m.index + m[0].length);
     let n = tocadas[0].n.parentNode;
     while (n && !tocadas.every(f => {for(let p=f.n;p;p=p.parentNode) if(p===n)return true; return false;})) n = n.parentNode;
-    nos.push(n);
+    nos.push({n, folhas:tocadas.map(f=>f.n)});
   }
   for (const n of raiz.querySelectorAll('.marcador, [data-por-confirmar-na-fonte]')) {
-    if (!nos.some(p => {for(let a=p;a;a=a.parentNode)if(a===n)return true;return false;})) nos.push(n);
+    if (!nos.some(p => p.folhas.some(f => {for(let a=f;a;a=a.parentNode)if(a===n)return true;return false;}))) nos.push({n, folhas:[]});
   }
   const aceites = [], recusadas = [];
-  for (const n of nos) {
-    const proibido = recusado(n, contexto.rota);
+  for (const {n, folhas} of nos) {
+    const proibido = recusado(n, contexto.rota) ?? folhas.map(f=>recusado(f.parentNode, contexto.rota)).find(Boolean);
     const tipo = proibido ?? aceite(n, contexto) ?? 'fora-dos-tipos';
     const aceita = TIPOS_ACEITES.includes(tipo);
     const campo = perto(n, '[data-linha-campo]')?.getAttribute('data-linha-campo');
