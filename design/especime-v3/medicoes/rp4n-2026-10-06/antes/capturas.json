@@ -1,0 +1,553 @@
+{
+  "versao": {
+    "commit": "d1becbf8f167643ca8d53a4479f8f6bbee0f7183",
+    "ref": "rp4n-2026-10-06",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-06T10:11:21.951Z"
+  },
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/orcamento-pt-390.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 390,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "0dfff84783284c4c95c2186aadded67bf6c4053a71c8fa64c7b36d44f7e1f9c4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/orcamento-pt-768.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 768,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "ee3516c3d15c8a18f4f595ceee681512d6aca1a1736e5f086bde36da6d61ca84"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/orcamento-pt-1024.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1024,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "0d0b63ccd1a5b99f0f55f768e0c6b97e9f76e5cbf3f9978ad41a90108b3e8323"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/orcamento-pt-1280.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1280,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "d6ca373a498d1048de9feb365601deac0afc0890896f901a86a1806c6917c3a0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/orcamento-pt-1600.png",
+      "rota": "/livro-razao/oe-2026-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1600,
+      "frase": "O que é este númeroÉ o que a administração central prevê gastar nesta função num ano, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "b973c20756105a66160bb45997411b0dd9a825a0f075b2b9ed8d09bec508e24c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/orcamento-en-390.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 390,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "7dcd6e7dba325dc87712e2a66f9dcc371dae5706c089414ba398eefbf20184f6"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/orcamento-en-768.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 768,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "d62aa612f9eb65ed78a2e86000028fd1ebf6bb3a2ceda87c1a18f48af4767ee5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/orcamento-en-1024.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1024,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "f8be17e27cb82b77ef1e2fb76c0e2c36a1e6e378fdca798f29deefe5e91f9f3e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/orcamento-en-1280.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1280,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "8ea370cb1498d33bbe431a3435483739528e7497d87f0e4e0783ec5f760faf6d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/orcamento-en-1600.png",
+      "rota": "/en/ledger/oe-2026-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1600,
+      "frase": "What this number isIt is what central administration plans to spend on this function in a year, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "29348713adc10d6867bb3c351b96a3b42c86e20bf3007f4041fcd653b8cab053"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/execucao-pt-390.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 390,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "bc30593a1c7cb03b7410ba7de3735bc5f01dff42eb7a70105ba57ded7225c97e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/execucao-pt-768.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 768,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "89d3fa10bf6ec07fb2bcd1313eb95852e195989fc21be9da5f3ef920e2bce104"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/execucao-pt-1024.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1024,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "f8f29cce9bce48386a2316c22d72d51ea3a41da38c6d8c1c2492cf2b6712bb32"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/execucao-pt-1280.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1280,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "4981778ed15d4d4bea6bb9bd0ae51646d9d35d8988ef49ae59cb884380b18b9a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/execucao-pt-1600.png",
+      "rota": "/livro-razao/execucao-2026-07-despesa-funcao-01/",
+      "lang": "pt",
+      "largura": 1600,
+      "frase": "O que é este númeroÉ o que a administração central gastou nesta função de janeiro a julho, pela classificação das despesas por funções, em despesa efetiva consolidada: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "2033b3f2e908a6c31ef662ac9188956855e2b9f54b8da3dcddb6327706d0962e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/execucao-en-390.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 390,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "0002fbe52dc3f97fd0a824bdc8dbc4f9effd4afd8a7543729998afb1336ed996"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/execucao-en-768.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 768,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "d2e6b7f9bb7663d85ec70c8b92b370e9070a8c8200ac67c04fe32a6274886176"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/execucao-en-1024.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1024,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "900df6acd80c7aba2d0ed606c6f142233dadfd1d3409d0c7b876a9e2f32c464f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/execucao-en-1280.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1280,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "af97768fde9cab46de8b08364e8ba01402ec07416e20eb1d05d4f110c0e87e44"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/execucao-en-1600.png",
+      "rota": "/en/ledger/execucao-2026-07-despesa-funcao-01/",
+      "lang": "en",
+      "largura": 1600,
+      "frase": "What this number isIt is what central administration spent on this function from January to July, under the classification of expenditure by function, in consolidated effective expenditure: spending without transactions in financial assets and liabilities or transfers between its own services. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "757adcf6c50cbd372311d238075f20b9f212e7970f1ab981fd572b307368bcb2"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/evora-pt-390.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 390,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo: cada pelouro é uma área da câmara a seu cargo. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "8273f194f2b4a9158d58a12d36cad0426d2898610184feaa912f2accfb10b859"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/evora-pt-768.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 768,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo: cada pelouro é uma área da câmara a seu cargo. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "a5854b3378e864b45a9d9efcb6c2ba5086429ca36bffedd422affb2194a74214"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/evora-pt-1024.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 1024,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo: cada pelouro é uma área da câmara a seu cargo. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "2b7e7eb438a69236d3454b80e67d56a0b59e80d2e4b2bc397d0704d6eeaf8883"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/evora-pt-1280.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 1280,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo: cada pelouro é uma área da câmara a seu cargo. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "4ba5047715575592eca6f3c0f1576aedd56e2873ba6e12401fc6bd0affa5768d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/evora-pt-1600.png",
+      "rota": "/livro-razao/evora-pelouros-2025-presidente/",
+      "lang": "pt",
+      "largura": 1600,
+      "frase": "O que é este númeroÉ o número de pelouros que a página do executivo da câmara atribui a este membro do executivo: cada pelouro é uma área da câmara a seu cargo. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "65b2a039021274a4fdbfe0260b043fb878700e583d91577d2263501d6f111834"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/evora-en-390.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 390,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive: each portfolio is an area of the council in their charge. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "fe622227ed84214daf1141154c739baa68062a54f21f5fba872e4b08c7a949d1"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/evora-en-768.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 768,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive: each portfolio is an area of the council in their charge. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "13f8957c21291f934b655e0804b0b5e8e19905e349784bf00a9fa8568f7e8a31"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/evora-en-1024.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 1024,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive: each portfolio is an area of the council in their charge. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "5aeb46944a835a873d5f81d865e468e4c3fe0d3f882124f06dcd92870af0d939"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/evora-en-1280.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 1280,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive: each portfolio is an area of the council in their charge. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "0e971e3b44b2dbe4e0fddbad9317cfd10255b5dc71c3c3cd544869fe45bfc658"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/evora-en-1600.png",
+      "rota": "/en/ledger/evora-pelouros-2025-presidente/",
+      "lang": "en",
+      "largura": 1600,
+      "frase": "What this number isIt is the number of portfolios that the council executive’s page assigns to this member of the executive: each portfolio is an area of the council in their charge. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "ed1f9d7d80900850860d48ad8ab74257270cec39b5ca31ffb5c6237a9eb578c8"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/madeira-pt-390.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 390,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado). [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "169811b130c487c0de0f1d1cca2fa9d7d00915112b9e955b49cf017db49ff026"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/madeira-pt-768.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 768,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado). [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "c9d39880962f786f4aea671526867db34bdb54d0feeecb6f58cccb1c03c4f575"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/madeira-pt-1024.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 1024,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado). [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "f5e591f7798dcfa95f7b3039ef0e57c6a21411f37ba9d6612e78764c4cafddfe"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/madeira-pt-1280.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 1280,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado). [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "a87e9fd0f868c89773f29a12506de192eef7dff36362591ef915c063b474886d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/madeira-pt-1600.png",
+      "rota": "/livro-razao/funchal-desemprego-registado-2025-12/",
+      "lang": "pt",
+      "largura": 1600,
+      "frase": "O que é este númeroConta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado). [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "3093c0a776fe0afb99e854012351930616fdef8143f529631a054f640185ad0c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/madeira-en-390.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 390,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment). [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "c20e788fbb4d261e5313f239fae71b891b8e099643cb0aee950a3e8873ee053e"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/madeira-en-768.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 768,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment). [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "7689e332dde7813ad04e967170f6a725ec003a5e59c5d81b2f33c52c4befb988"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/madeira-en-1024.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 1024,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment). [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "9f1fc5e499f63d3d22ee7dcda81a3d3e7bbd35b72b7aaad95cec280c95e8fde7"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/madeira-en-1280.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 1280,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment). [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "4a4b9c85c0d0f59de4f02e8dad20ef8fe541a7f64ee1940e90dfa0070fbffd9b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/madeira-en-1600.png",
+      "rota": "/en/ledger/funchal-desemprego-registado-2025-12/",
+      "lang": "en",
+      "largura": 1600,
+      "frase": "What this number isCounts the unemployed people registered with the employment service at month end (registered unemployment). [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "9fea21137666b176fb8356fb98aa2e2603560ef3e6a811e5b79a1b53f6970630"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/pensao-pt-390.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 390,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica: abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "2cd4aff746729c4b9771b0b70cdde4690aecb43560116931d5fb19dd684d5ce5"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/pensao-pt-768.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 768,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica: abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "be85c9d76bc0b509baa5cc4ef5aaffb2531c63cb5f199066cca2f9de6ca703bc"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/pensao-pt-1024.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 1024,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica: abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "aeb89eeea4a10d52acee49777843051a61d2a2002d6e9ae597723282245b7028"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/pensao-pt-1280.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 1280,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica: abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "b6e7387420b8480a8a18b9c0a4dc6b3c1e6fc0cf519f45f3230e5d366fb38a3d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/pensao-pt-1600.png",
+      "rota": "/livro-razao/factor-sustentabilidade-2026/",
+      "lang": "pt",
+      "largura": 1600,
+      "frase": "O que é este númeroÉ o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica: abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta. [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "d6f14c35fdb34bc4cc070d0cdba72b36bfcf395b4bc65185aecc68136523deac"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/pensao-en-390.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 390,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies: below one, the pension falls, and the gap to one is the share that is cut. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "40a8216199fd6035d5c9cac220bb1c612fd2152d1990268441e25e2cd36a466b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/pensao-en-768.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 768,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies: below one, the pension falls, and the gap to one is the share that is cut. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "2dfcbfae6a3715f56ea20adb459184b9f0b95204200f333f5cafe4913c953654"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/pensao-en-1024.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 1024,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies: below one, the pension falls, and the gap to one is the share that is cut. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "b7ce56a672e1217286dd8e3a2b539e7a45c49be6a39288cc91a83b3767d5e65f"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/pensao-en-1280.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 1280,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies: below one, the pension falls, and the gap to one is the share that is cut. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "6a641565f9451697c8c167dde1b0a8b2df77afbcbbb093a39ca865fbef6cec8b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/pensao-en-1600.png",
+      "rota": "/en/ledger/factor-sustentabilidade-2026/",
+      "lang": "en",
+      "largura": 1600,
+      "frase": "What this number isIt is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies: below one, the pension falls, and the gap to one is the share that is cut. [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "aff865f6d7f21a10b79126af3ffbcffdb4d609f0b70d800d4424d9f646c8d474"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/eurostat-pt-390.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 390,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor). [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "dee092659b9c899871c90157b310652132e2220b00d0e41e09d38d9fc66d2616"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/eurostat-pt-768.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 768,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor). [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "774cae652ea53ab75fd7cfec3ab40a8168f8d24bf9c492584929a88eb31fe518"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/eurostat-pt-1024.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 1024,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor). [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "e9b4bb79babc3cbaa5b8ef483078b17c5f7bb32d0ff6e722552ab05c2134e497"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/eurostat-pt-1280.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 1280,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor). [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "436fad9a4a735b4ca740b7f77a66888d713106098c73713a3faa665e568610f3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/eurostat-pt-1600.png",
+      "rota": "/livro-razao/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "pt",
+      "largura": 1600,
+      "frase": "O que é esta sérieÉ quanto mudaram, em Portugal, os preços das rendas face ao mesmo mês do ano anterior, na medida harmonizada que serve para comparar os países da União Europeia (índice harmonizado de preços no consumidor). [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado",
+      "marcadores": 1,
+      "sha256": "bd4e95b59a189de7d97a0f2126bc169283331fbbf6a322c583029cde17d702ec"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/eurostat-en-390.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 390,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices). [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "93a868ab7d07ca363b935cd7d0a94c12cb31d970c5c25f8d624a7ef97bb02f5b"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/eurostat-en-768.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 768,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices). [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "cc28d126fdaf3d5bfbbf67b7a7083f7d597782ebffeab7184020ff36c42cf979"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/eurostat-en-1024.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 1024,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices). [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "59e7863fcf1f7dd4894c78c65e3737560d55ddf0c5f58e0ca13b5c7ffaf9681a"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/eurostat-en-1280.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 1280,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices). [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "7ce7af56ebe518ed31d76318c65e35e298a4c5735da792e209432a116a85429d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/antes/eurostat-en-1600.png",
+      "rota": "/en/ledger/series/serie-ihpc-rendas-variacao-homologa/",
+      "lang": "en",
+      "largura": 1600,
+      "frase": "What this series isIt is how much, in Portugal, rent prices changed compared with the same month of the previous year, in the harmonised measure used to compare the countries of the European Union (harmonised index of consumer prices). [a verificar] · a field not confirmed against the source, not a doubt about what is published",
+      "marcadores": 1,
+      "sha256": "3b376fe16bd5d9c5d4e7a7ae3fc78b0d6ded5a17b84fec15c21bd98eb07f8417"
+    }
+  ],
+  "problemas": []
+}
