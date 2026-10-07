@@ -16,11 +16,11 @@ export function escaparIncorporacao(valor) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-/** Uma fonte calculada é declarada pela fórmula; a data continua obrigatória.
+/** A recusa limita-se às marcas na fonte ou na data de acesso (ER1-c).
  * @param {any} c */
 export function podeIncorporar(c) {
   return !!c && !/\[a verificar\]/i.test(c.source ?? '') &&
-    /^\d{4}-\d{2}-\d{2}$/.test(c.access_date ?? '') && !!(c.source || c.formula);
+    !/\[a verificar\]/i.test(c.access_date ?? '');
 }
 
 /** @param {any} c @param {'pt'|'en'} lang */
@@ -46,7 +46,7 @@ export function dadosDaIncorporacao(c, lang) {
     periodo: c.reference_date ? dataDaCasa(c.reference_date, lang) : s.periodoEmFalta,
     valor: String(c.value), unidade: unidade.texto, unidadeLang: unidade.lingua ?? t(lang).lang,
     fonte, fonteLang: (c.source ? linguaDaFonte(c.source, lang) : null) ?? t(lang).lang,
-    data, leitura: data ? `${s.lido} ${dataDaCasa(data, lang)}` : '',
+    data, leitura: data ? `${s.lido} ${dataDaCasa(data, lang)}` : s.calculado,
     atribuicao: LICENCA ? `${LICENCA.atribuicao}, ${LICENCA.nome}` : '', notas,
     atualizacao: atualizada ? `${s.atualizado} ${dataDaCasa(atualizada, lang)}` : '',
   };
@@ -59,7 +59,7 @@ export function codigoDaIncorporacao(c, lang) {
   const e = escaparIncorporacao;
   /* O fallback diz a data guardada na linha. A releitura mais recente só entra
      quando o JSON é recebido com sucesso pelo guião. */
-  const leitura = c.access_date ? `${t(lang).incorporar.lido} ${dataDaCasa(c.access_date, lang)}` : '';
+  const leitura = c.access_date ? `${t(lang).incorporar.lido} ${dataDaCasa(c.access_date, lang)}` : t(lang).incorporar.calculado;
   const origem = `https://${SITE_HOST_DISPLAY}`;
   return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${e(c.id)}" data-oedp-valor="${e(c.value)}" data-oedp-lido="${e(c.access_date)}">` +
     `<a href="${origem}${caminhoDaLinha(c.id, lang)}">${e(d.nome)}, ${e(d.periodo)}: ${e(d.valor)} <span lang="${e(d.unidadeLang)}">${e(d.unidade)}</span></a> · ` +
