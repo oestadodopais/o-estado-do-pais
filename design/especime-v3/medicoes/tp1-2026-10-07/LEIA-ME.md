@@ -8,13 +8,16 @@ Nas duas edições, o Sobre diz o que o projeto é nas palavras do diretor (um p
 
 ## Onde parou
 
-A cabeça do código é `48cd92225b198ea9380a4f3b0707d13dece8947b`, com 0 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:01:01Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub corre na cabeça que aterra; na máquina correram as conferências que a mudança toca, abaixo.
+A cabeça do código é `841c2d557be5de2c6a0aeb0cad63d2c8d6627258`, com 47 entrada(s) por registar na árvore quando as conferências correram (2026-10-07T10:23:24Z). O último commit do ramo leva só este relatório, as capturas e os códigos. A corrida `portão` do GitHub corre na cabeça que aterra; na máquina correram as conferências que a mudança toca, abaixo.
 
 ## O que ficou aberto
 
 - TP1-1: a entrada do registo das revisões do inventário fica «por ler» até à leitura da outra família; passa a «lida» com o nome do ficheiro da leitura, antes da fusão.
 - TP1-2: o Sobre diz o endereço das correções como contacto; quando o diretor criar o endereço do próprio projeto, a frase e o oráculo mudam no mesmo commit, com a sua entrada no registo.
 - TP1-3: os comentários de `src/data/politica-ia.mjs` e de `src/views/SobreView.astro` conservam a história das redações anteriores; as frases do leitor são só as decididas.
+- TP1-4 (a leitura do Codex, o achado 6): o pacote da leitura não levou os PNG das capturas (o `pacote.sh` deixa os binários fora do diff e das cópias), só o registo com os sha256; na próxima leitura a pasta das capturas entra por `PACOTE_EXTRA`, e o guião do pacote ganha a regra no bloco de higiene.
+- TP1-5 (o achado 10): a etiqueta «The whole agenda →» do Método inglês está no inventário como retirada e rende-se na porta da regra 8; o `check:voz` não a conta (a seta sai na normalização, ou a etiqueta vem da lista das portas); anterior a este bloco, para o bloco de higiene.
+- TP1-6 (o achado 5, corrigido nesta passagem): o rótulo da prova da regra 10 dizia «valores com crédito atribuído na linha» sem dizer o que é o crédito; diz agora «linhas com o nome de quem decidiu o valor, tal como consta do documento», que é o que `src/lib/prova.mjs` conta (`attributed_to`).
 
 ## As conferências, na cabeça do código
 
@@ -39,7 +42,7 @@ Corridas por `conferir-tp1.sh` (a cópia está no pacote da leitura como `confer
 
 ## As capturas
 
-O registo `design/especime-v3/capturas/tp1-2026-10-07/capturas.json` diz a cabeça `48cd92225b198ea9380a4f3b0707d13dece8947b`, as larguras 390, 768, 1024, 1280, 1600 px, 20 resultados com o sha256 de cada captura, 0 falhas e `ok` a true; a pasta tem 20 ficheiros PNG (as duas páginas, as duas edições, as cinco larguras).
+O registo `design/especime-v3/capturas/tp1-2026-10-07/capturas.json` diz a cabeça `841c2d557be5de2c6a0aeb0cad63d2c8d6627258`, as larguras 390, 768, 1024, 1280, 1600 px, 20 resultados com o sha256 de cada captura, 0 falhas e `ok` a true; a pasta tem 20 ficheiros PNG (as duas páginas, as duas edições, as cinco larguras).
 
 ## O custo
 
