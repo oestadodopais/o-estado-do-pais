@@ -11,6 +11,7 @@ unit: "% da população"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Eurostat"
+definition_sources: [{"publisher": "Comissão Europeia", "receipt": {"campo": "a extração pdftotext -layout, o quadro A14.1 «Social Scoreboard for Portugal», a linha do Gender employment gap", "cliente": "core.http.HttpClient.condicional", "extracao": {"ferramenta": "pdftotext version 26.03.0", "ficheiro": "indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.txt", "sha256": "20d07f2d43af23c216c737df41eaea46cd9900925128e237067bbb887c7b8725"}, "hora": "2026-09-24T06:29:43Z", "motor": "indicators/out/l1-2026-09-24/ce-swd-2026-222-country-report-portugal.pdf", "sha256": "f249171d3e0e73af63707f051f56cd85eb758465f0389a930f1296462f18c647"}, "url": "https://economy-finance.ec.europa.eu/document/download/295e2168-d2a6-4e13-9496-a65e01a24bbb_en"}]
 document:
   title: "Gender employment gap"
   edition: "tesem060"

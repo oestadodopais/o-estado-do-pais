@@ -7006,7 +7006,6 @@
       },
       "origens": [
         "eurostat-tipsgo10-descricao",
-        "pdm-divida-publica",
         "eurostat-tipsna40-descricao"
       ],
       "folhas": [
@@ -7023,11 +7022,6 @@
                   "origem": "eurostat-tipsgo10-descricao",
                   "campo": "excerto",
                   "literal": "debt means total gross debt"
-                },
-                {
-                  "origem": "pdm-divida-publica",
-                  "campo": "excerto",
-                  "literal": "general government sector debt"
                 }
               ]
             },
@@ -7599,9 +7593,7 @@
       },
       "origens": [
         "eurostat-tipser10-descricao",
-        "pdm-cambio-efectivo-real",
-        "c1c-eurostat-sinal-cambio",
-        "c1c-bce-competitividade"
+        "c1c-eurostat-sinal-cambio"
       ],
       "folhas": [
         {
@@ -7638,11 +7630,6 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "origem": "pdm-cambio-efectivo-real",
-                  "campo": "excerto",
-                  "literal": "3-year percentage change"
-                },
-                {
                   "linha": "propria",
                   "campo": "unit",
                   "literal": "variação em três anos"
@@ -7658,11 +7645,6 @@
                   "origem": "c1c-eurostat-sinal-cambio",
                   "campo": "excerto",
                   "literal": "A positive value means real appreciation."
-                },
-                {
-                  "origem": "c1c-bce-competitividade",
-                  "campo": "excerto",
-                  "literal": "I have shown that the price competitiveness of the euro area has deteriorated mainly because producer prices there have moved unfavourably relative to those of key trading partners – especially in Asia, and in China in particular."
                 }
               ]
             }
@@ -9393,7 +9375,6 @@
         "execucao-2026-08-saldo-global-administracao-central"
       ],
       "origens": [
-        "eurostat-gfs-saldo",
         "rp4n-saldo"
       ],
       "folhas": [
@@ -9428,9 +9409,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "origem": "eurostat-gfs-saldo",
+                  "origem": "rp4n-saldo",
                   "campo": "excerto",
-                  "literal": "The difference between total revenue and total expenditure"
+                  "literal": "Diferença entre a receita efetiva e a despesa"
                 },
                 {
                   "ou": [
@@ -9543,7 +9524,7 @@
         "execucao-2026-07-saldo-global-administracoes-publicas-contabilidade-publica"
       ],
       "origens": [
-        "eurostat-gfs-saldo"
+        "rp4n-saldo"
       ],
       "folhas": [
         {
@@ -9568,9 +9549,9 @@
               "classe": "diz",
               "apoios": [
                 {
-                  "origem": "eurostat-gfs-saldo",
+                  "origem": "rp4n-saldo",
                   "campo": "excerto",
-                  "literal": "The difference between total revenue and total expenditure"
+                  "literal": "Diferença entre a receita efetiva e a despesa"
                 }
               ]
             }
@@ -12830,13 +12811,12 @@
     {
       "concelho": "desempregoRegistado",
       "origens": [
-        "rp4n-madeira-fim-mes",
         "rp4n-madeira"
       ],
       "folhas": [
         {
-          "pt": "Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado).",
-          "en": "Counts the unemployed people registered with the employment service at month end (registered unemployment).",
+          "pt": "Conta as pessoas desempregadas inscritas nos serviços de emprego no mês de referência (desemprego registado).",
+          "en": "Counts the unemployed people registered with the employment service in the reference month (registered unemployment).",
           "partes": [
             {
               "pt": "Conta as pessoas desempregadas inscritas nos serviços de emprego",
@@ -12865,19 +12845,14 @@
               ]
             },
             {
-              "pt": " no fim do mês",
-              "en": " at month end",
+              "pt": " no mês de referência",
+              "en": " in the reference month",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "document.edition",
                   "literal": "dezembro de 2025"
-                },
-                {
-                  "origem": "rp4n-madeira-fim-mes",
-                  "campo": "excerto",
-                  "literal": "registos existentes no final do mês"
                 }
               ]
             },

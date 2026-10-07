@@ -11,6 +11,7 @@ unit: "% do PIB"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "Eurostat"
+definition_sources: [{"publisher": "Banco de Portugal", "receipt": {"campo": "texto da página alojada", "cliente": "publisher/dominios_fetch.py, core.http.HttpClient (OEstadoDoPais/corredor)", "hora": "2026-09-24T06:29:42Z", "motor": "content/13 Dominios/source/bdp/bpstat-pagina-940.html", "sha256": "36bed0374ac4a38bd8115bd3596a9f332a0c9f318428e3bca1ace1148684fdd5"}, "url": "https://bpstat.bportugal.pt/conteudos/paginas/940"}]
 document:
   title: "Net international investment position - annual data"
   edition: "tipsii10"

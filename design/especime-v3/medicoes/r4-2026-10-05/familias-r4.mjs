@@ -152,7 +152,7 @@ const UNIAO_COM_FRASE_PROPRIA = [
     nome: { pt: 'Dívida pública' + UE, en: 'Government debt' + IN_EU },
     partes: [
       diz('É tudo o que as administrações públicas devem, ', 'It is everything general government owes, ',
-        O('eurostat-tipsgo10-descricao', 'debt means total gross debt'), O('pdm-divida-publica', 'general government sector debt')),
+        O('eurostat-tipsgo10-descricao', 'debt means total gross debt')),
       ...PIB_DA_ECONOMIA,
     ],
   },
@@ -235,11 +235,10 @@ const UNIAO_COM_FRASE_PROPRIA = [
         O('eurostat-tipser10-descricao', 'price or cost competitiveness relative to its principal competitors')),
       diz(', contando a inflação e as taxas de câmbio', ', allowing for inflation and exchange rates',
         O('eurostat-tipser10-descricao', 'depend not only on exchange rate movements but also on cost and price trends')),
-      diz(', em três anos.', ', over three years.', O('pdm-cambio-efectivo-real', '3-year percentage change'), L('unit', 'variação em três anos')),
+      diz(', em três anos.', ', over three years.', L('unit', 'variação em três anos')),
       diz(' Uma subida é uma apreciação: os preços sobem face aos dos parceiros e perde-se competitividade de preços.',
         ' A rise is an appreciation: prices increase relative to those of the partners and price competitiveness falls.',
-        O('c1c-eurostat-sinal-cambio', 'A positive value means real appreciation.'),
-        O('c1c-bce-competitividade', 'I have shown that the price competitiveness of the euro area has deteriorated mainly because producer prices there have moved unfavourably relative to those of key trading partners – especially in Asia, and in China in particular.')),
+        O('c1c-eurostat-sinal-cambio', 'A positive value means real appreciation.')),
     ],
   },
   {
@@ -525,7 +524,7 @@ const ORCAMENTO = [
       diz('É o saldo global da administração central', 'It is central administration’s overall balance', OU(L('name', 'SALDO GLOBAL'), L('name', 'Saldo global'))),
       diz(': a diferença entre o que ela recebe e o que gasta, sem contar as operações com ativos e passivos financeiros; negativo quer dizer que gastou mais do que recebeu.',
         ': the difference between what it takes in and what it spends, without counting transactions in financial assets and liabilities; negative means it spent more than it took in.',
-        O('eurostat-gfs-saldo', 'The difference between total revenue and total expenditure'),
+        O('rp4n-saldo', 'Diferença entre a receita efetiva e a despesa'),
         OU(L('ressalva', 'receita e despesa efetivas excluem-nas'), O('rp4n-saldo', 'Diferença entre a receita efetiva e a despesa'))),
     ],
   },
@@ -549,7 +548,7 @@ const ORCAMENTO = [
     partes: [
       diz('É o saldo global de todas as administrações públicas, contado em contabilidade pública', 'It is the overall balance of all general government, counted in public accounting',
         L('name', 'SALDO GLOBAL DAS AP EM CP')),
-      diz(': a diferença entre o que recebem e o que gastam.', ': the difference between what they take in and what they spend.', O('eurostat-gfs-saldo', 'The difference between total revenue and total expenditure')),
+      diz(': a diferença entre o que recebem e o que gastam.', ': the difference between what they take in and what they spend.', O('rp4n-saldo', 'Diferença entre a receita efetiva e a despesa')),
     ],
   },
   {
@@ -1198,7 +1197,7 @@ const CONCELHOS = [
     partes: [
       diz('Conta as pessoas desempregadas inscritas nos serviços de emprego', 'Counts the unemployed people registered with the employment service',
         OU(L('document.title', 'Desemprego registado'), L('name', 'DESEMPREGO REGISTADO'), L('source', 'Instituto de Emprego da Madeira'))),
-      diz(' no fim do mês', ' at month end', L('document.edition', 'dezembro de 2025'), O('rp4n-madeira-fim-mes', 'registos existentes no final do mês')),
+      diz(' no mês de referência', ' in the reference month', L('document.edition', 'dezembro de 2025')),
       diz(' (desemprego registado).', ' (registered unemployment).', OU(L('document.title', 'Desemprego registado'), L('name', 'DESEMPREGO REGISTADO'), O('rp4n-madeira', 'DESEMPREGADOS/DESEMPREGO REGISTADO'))),
     ],
   },

@@ -3894,8 +3894,8 @@ algarismo declarado e a régua salta-a nas rotas onde ela se rende. Escrito por
 |---|---|---|---|---|
 | conteudo | Estima quantas pessoas vivem no concelho (população residente), pela estimativa anual do INE. | r2 | viva | A dobra do cartão da população residente em cada página de concelho (achado 23): diz o que se conta, com o termo da fonte entre parênteses. A célula do inventário dos rótulos (`scripts/inventario-rotulos.mjs`) confere-a contra a nota declarada da medida. |
 | conteudo | Estimates how many people have their home in the municipality (resident population), from the statistics institute’s annual estimate. | r2 | viva | A mesma dobra na edição inglesa; «have their home», e não «live», que é uma frase retirada deste inventário. |
-| conteudo | Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado). | r2 | viva | A dobra do cartão do desemprego registado em cada página de concelho (achado 23). |
-| conteudo | Counts the unemployed people registered with the employment service at month end (registered unemployment). | r2 | viva | A mesma dobra na edição inglesa. |
+| conteudo | Conta as pessoas desempregadas inscritas nos serviços de emprego no fim do mês (desemprego registado). | r2 | retirada | A dobra do cartão do desemprego registado em cada página de concelho (achado 23). |
+| conteudo | Counts the unemployed people registered with the employment service at month end (registered unemployment). | r2 | retirada | A mesma dobra na edição inglesa. |
 | conteudo | Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas). | rp4nc | retirada | RP4N-6: a passagem RP4-n já retirou a qualificação não sustentada; esta declaração antiga ficou por sincronizar no inventário. A frase atual está na secção RP4-n-c. |
 | conteudo | Counts the non-financial enterprises attributed to the municipality (integrated business accounts system). | rp4nc | retirada | RP4N-6: a passagem RP4-n já retirou a qualificação não sustentada; esta declaração antiga ficou por sincronizar no inventário. A frase atual está na secção RP4-n-c. |
 | conteudo | A dívida da câmara que conta para o limite legal no fim do ano (a «dívida total» da DGAL, sem as dívidas não orçamentais e as exceções da lei). | r2 | retirada | Passagem R2-b (04.10.2026, a decisão do lugar de direção): a dobra da dívida dos concelhos diz também a contribuição para o Fundo de Apoio Municipal, que a coluna da DGAL exclui; a forma nova está na secção da passagem r2b. |
@@ -4231,3 +4231,10 @@ As frases já publicadas nas páginas dos concelhos, nas duas edições, e confe
 | conteudo | This measure’s target belongs to the European Union as a whole, not to Portugal; no separate national target was found in the source consulted. | rp4nd | viva | Achado 8 do mandato: ausência exata na nota de alcance, edição en. |
 | conteudo | Este valor é o do território continental. Nos Açores, a lei regional soma-lhe um acréscimo, e o diploma é uma das fontes da pergunta abaixo. Na Madeira, o valor é fixado por diploma regional próprio, que este livro não leu. | rp4nd | viva | Achado 8 do mandato: ausência exata na nota de alcance, edição pt. |
 | conteudo | This value is for mainland Portugal. In the Azores, regional law adds an increase to it, and the decree is one of the sources of the question below. In Madeira, the value is set by a separate regional decree, which this ledger has not read. | rp4nd | viva | Achado 8 do mandato: ausência exata na nota de alcance, edição en. |
+
+## RP4-n-e: alcance do desemprego registado
+
+| tipo | frase | bloco | estado | razão |
+|---|---|---|---|---|
+| conteudo | Conta as pessoas desempregadas inscritas nos serviços de emprego no mês de referência (desemprego registado). | rp4ne | viva | A precisão do fim do mês não estava selada pelos publicadores de todos os concelhos. |
+| conteudo | Counts the unemployed people registered with the employment service in the reference month (registered unemployment). | rp4ne | viva | A mesma precisão mensal da edição portuguesa. |

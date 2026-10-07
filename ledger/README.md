@@ -1112,3 +1112,5 @@ afirmação.
 ### Retirada da publicação
 
 `publication: "withdrawn"` conserva a linha no livro em disco e na validação integral, mas exclui-a do carregador de publicação, dos recibos, dos cartões, dos índices, das descargas e das contagens do Método. O acesso explícito de auditoria usa `loadClaims({ includeWithdrawn: true })`. Qualquer outro valor do campo é recusado.
+
+`definition_sources` declara as fontes secundárias da definição, separadas da fonte do valor. Cada entrada tem `publisher`, `url` e `receipt` (ficheiro no motor, sha256, cliente e hora). A K17 exige correspondência com a origem citada; o motor confere os bytes antes de exportar. Nas linhas calculadas, a definição pode citar as fontes das linhas de origem.

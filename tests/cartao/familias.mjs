@@ -1,3 +1,4 @@
+import { conferirPublicador } from './publicador-da-definicao.mjs';
 import { conferirComputacaoPRR, conferirLiteralPRR } from './computacoes-rp4n.mjs';
 /**
  * =============================================================================
@@ -266,6 +267,7 @@ export function conferirAuditoriaDasFamilias({
     : Boolean(a?.ficheiro || a?.origem || a?.forma === 'ano' || (a?.linha === 'propria' && (CAMPOS_DA_FONTE.has(a.campo) || a.campo === 'derivation' || a.campo === 'derivation_en'))));
   /** @param {any} a @param {string[]} ids @returns {string|null} */
   const verifica = (a, ids) => {
+    if (Array.isArray(a?.ou)) return ids.every(id => a.ou.some(alt => verifica(alt, [id]) === null)) ? null : 'nenhuma das alternativas vale na linha';
     if (a?.forma === 'ano') {
       if (a.linha !== 'propria' || a.campo !== 'reference_date') return 'a forma «ano» lê-se só do reference_date da linha própria';
       for (const id of ids) if (!/^\d{4}$/.test(String(linhas.get(id)?.reference_date ?? ''))) return `diz que o período é um ano, e o de «${id}» é «${linhas.get(id)?.reference_date}»`;
@@ -285,6 +287,7 @@ export function conferirAuditoriaDasFamilias({
       if (a.origem === 'rp4n-ac-ss-orcamento' && ids.some(id => linhas.get(id)?.reference_date !== '2026' || !linhas.get(id)?.document?.locator?.includes('Orçamento Inicial 2026'))) return 'o recorte do Orçamento Inicial não apoia esta linha de execução';
       const o = origens[a.origem];
       if (!o) return `apoia-se em «${a.origem}», que não está declarada em ORIGENS_DAS_DEFINICOES`;
+      for (const id of ids) { const erro = conferirPublicador(o, linhas.get(id), linhas); if (erro) return `${a.origem}, ${id}: ${erro}`; }
       if (!['excerto', 'excertoEn', 'documento', 'publicador'].includes(a.campo) || typeof o[a.campo] !== 'string') return `cita o campo «${a.campo}» da origem «${a.origem}», que não pode apoiar`;
       if (!o[a.campo].includes(literal)) return `cita «${curto(literal)}», que não está no campo «${a.campo}» da origem «${a.origem}»`;
       return null;
@@ -322,7 +325,7 @@ export function conferirAuditoriaDasFamilias({
         if (f.nl !== undefined) continue;
         const entrada = (m.folhas ?? []).find((/** @type {any} */ x) => x.pt === f.pt && x.en === f.en) ?? comuns.find((/** @type {any} */ x) => x.pt === f.pt && x.en === f.en);
         if (!entrada) { falha(`${quem}: a folha «${curto(String(f.pt))}» do cartão não tem auditoria`); continue; }
-        for (const p of entrada.partes ?? []) for (const a of p.apoios ?? []) if (a.linha === 'propria') {
+        for (const p of entrada.partes ?? []) for (const a of p.apoios ?? []) if (a.linha === 'propria' || a.origem || a.ou) {
           const er = verifica(a, ids);
           if (er) falha(`${quem} (a frase do cartão «${e.cartao}»): ${er}`);
         }
@@ -705,6 +708,8 @@ export function conferirAuditoriaDasSeries({
           const o = origens[a.origem];
           if (!o) { falha(`${qual}: apoia-se em «${a.origem}», que não está declarada em ORIGENS_DAS_DEFINICOES`); continue; }
           if (!['excerto', 'excertoEn', 'documento', 'publicador'].includes(a.campo) || typeof o[a.campo] !== 'string' || !o[a.campo].includes(literal)) { falha(`${qual}: cita «${curto(literal)}», que não está no campo «${a.campo}» da origem «${a.origem}»`); continue; }
+          const erroPublicador = conferirPublicador(o, s, series);
+          if (erroPublicador) { falha(`${qual}: ${a.origem}, ${s.id}: ${erroPublicador}`); continue; }
           parteDaFonte = true;
         } else if (a.declaracao === 'nome') {
           falha(`${qual}: o nome do projeto não pode apoiar uma frase`);
