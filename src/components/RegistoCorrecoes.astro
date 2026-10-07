@@ -79,6 +79,7 @@
  * «valor novo: »), **fora** do elemento marcado com `data-correcao-campo`, para
  * que o portão continue a comparar só o valor com o do livro-razão.
  */
+import TextoDoNome from './TextoDoNome.astro';
 import { entradasDoRegisto } from '../lib/ledger.mjs';
 import { mudancasDoRegisto } from '../lib/mudancas.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
@@ -198,7 +199,7 @@ const palavraRevisoes =
                 <p class="registo-mudanca-o-que">
                   {e.nome?.fonte && (
                     <span class="registo-mudanca-nome" data-nome={e.nome.fonte} data-de-linha={e.claim}>
-                      {e.nome.texto}
+                      <TextoDoNome id={e.claim} texto={e.nome.texto} lang={lang} />
                     </span>
                   )}
                   {/* E0b: um nome lido do livro mantém a marca do campo e a

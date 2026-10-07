@@ -1,0 +1,10 @@
+---
+/** Uma data do instantâneo no nome conserva a ligação ao campo da computação. */
+import DataDaLinha from './DataDaLinha.astro';
+import {getClaim} from '../lib/ledger.mjs';
+const {id, texto, lang='pt'}=Astro.props;
+const data=getClaim(id).document?.computed_over?.files?.[0]?.snapshot_date;
+const formatada=data?.split('-').reverse().join('.');
+const comData=formatada && texto.endsWith(formatada);
+---
+{comData ? <>{texto.slice(0,-formatada.length)}<DataDaLinha id={id} campo="document.computed_over.files.0.snapshot_date" valor={data} lang={lang} /></> : texto}
