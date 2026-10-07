@@ -4,7 +4,7 @@ import { lugarDaIncorporacao } from '../src/lib/lugar-da-incorporacao.mjs';
 /* Leitura do ER1 pelos portões. Não importa o compositor do código nem o do
    JSON. Os nomes e as traduções são declarações comuns; os campos, as datas,
    os bytes e a escolha da releitura são recontados aqui. */
-import { allClaims } from '../src/lib/ledger.mjs';
+import { allClaims, provenienciaIncompleta } from '../src/lib/ledger.mjs';
 import { nomeNoRecibo } from '../src/lib/o-que-e-o-numero.mjs';
 import { unidadeDaLinha } from '../src/i18n/unidades.mjs';
 import { linguaDaFonte } from '../src/i18n/lingua-dos-titulos.mjs';
@@ -50,11 +50,9 @@ export function dadosEsperados(c, lang) {
   };
 }
 
-// Recontagem independente, sem importar a decisão do compositor.
+// ER1-d: a elegibilidade vem da definição única do livro, também usada pelo Método.
 export function provenienciaConfirmada(c) {
-  return Boolean(c &&
-    !String(c.source ?? '').toLowerCase().includes('[a verificar]') &&
-    !String(c.access_date ?? '').toLowerCase().includes('[a verificar]'));
+  return Boolean(c && !provenienciaIncompleta(c));
 }
 
 export function codigoEsperado(c, lang) {
