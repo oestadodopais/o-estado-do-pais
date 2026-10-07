@@ -11729,18 +11729,18 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É a parte das verbas do Plano de Recuperação e Resiliência aprovadas para o concelho que já foi paga.",
-          "en": "It is the share of the Recovery and Resilience Plan funds approved for the municipality that has already been paid.",
+          "pt": "É a parte das verbas do Plano de Recuperação e Resiliência contratadas por beneficiários intermediários e diretos com sede no concelho que já foi paga.",
+          "en": "It is the share of Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality that has already been paid.",
           "partes": [
             {
-              "pt": "É a parte das verbas do Plano de Recuperação e Resiliência aprovadas para o concelho que já foi paga.",
-              "en": "It is the share of the Recovery and Resilience Plan funds approved for the municipality that has already been paid.",
+              "pt": "É a parte das verbas do Plano de Recuperação e Resiliência contratadas por beneficiários intermediários e diretos com sede no concelho que já foi paga.",
+              "en": "It is the share of Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality that has already been paid.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "O que já foi pago, a dividir pelo que foi aprovado e atribuído ao concelho"
+                  "literal": "As verbas pagas a beneficiários intermediários e diretos com sede em Évora"
                 }
               ]
             }
@@ -11755,18 +11755,18 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É a parte das verbas aprovadas para o concelho que está em projetos cuja data prevista de conclusão já passou sem conclusão registada.",
-          "en": "It is the share of the funds approved for the municipality that sits in projects whose planned completion date has passed with no completion recorded.",
+          "pt": "É a parte das verbas contratadas por beneficiários intermediários e diretos com sede no concelho em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.",
+          "en": "It is the share of funds contracted by intermediate and direct beneficiaries headquartered in the municipality in projects with a completion deadline before the snapshot and no completion recorded.",
           "partes": [
             {
-              "pt": "É a parte das verbas aprovadas para o concelho que está em projetos cuja data prevista de conclusão já passou sem conclusão registada.",
-              "en": "It is the share of the funds approved for the municipality that sits in projects whose planned completion date has passed with no completion recorded.",
+              "pt": "É a parte das verbas contratadas por beneficiários intermediários e diretos com sede no concelho em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.",
+              "en": "It is the share of funds contracted by intermediate and direct beneficiaries headquartered in the municipality in projects with a completion deadline before the snapshot and no completion recorded.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "derivation",
-                  "literal": "O dinheiro aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada"
+                  "literal": "As verbas contratadas por beneficiários intermediários e diretos com sede em Évora em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada"
                 }
               ]
             }

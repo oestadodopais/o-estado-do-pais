@@ -1,3 +1,4 @@
+import { getClaim } from '../lib/ledger.mjs';
 import { NOMES_RP1 } from './medidas-rp1.mjs';
 import { NOMES_OE1 } from './medidas-oe1.mjs';
 /**
@@ -407,8 +408,8 @@ export const NOMES_DO_PROJETO = {
     en: 'Recovery and Resilience Plan (PRR) funds paid to intermediate and direct beneficiaries headquartered in Évora',
   },
   'evora-prr-vencido-aprovado-2026': {
-    pt: 'Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo anterior ao instantâneo e sem conclusão registada',
-    en: 'Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with a deadline before the snapshot and no completion recorded',
+    get pt() { return 'Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo anterior e sem conclusão registada, no instantâneo de ' + dataDoInstantaneoPRR(); },
+    get en() { return 'Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with an earlier deadline and no completion recorded, in the snapshot of ' + dataDoInstantaneoPRR(); },
   },
   'evora-prr-municipio-contratado': {
     pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) contratadas pelo município de Évora',
@@ -607,12 +608,12 @@ export const NOMES_DAS_LINHAS_DERIVADAS = {
     en: 'Portfolios allocated across the executive',
   },
   'evora-prr-execucao-2026': {
-    pt: 'Parte das verbas aprovadas que já foi paga',
-    en: 'Share of approved funds already paid',
+    pt: 'Parte das verbas contratadas por beneficiários intermediários e diretos com sede em Évora que já foi paga',
+    en: 'Share of funds contracted by intermediate and direct beneficiaries headquartered in Évora already paid',
   },
   'evora-prr-vencido-quota-2026': {
-    pt: 'Parte das verbas aprovadas em projetos fora de prazo',
-    en: 'Share of approved funds in projects past their deadline',
+    pt: 'Parte das verbas contratadas em projetos com prazo anterior ao instantâneo e sem conclusão registada',
+    en: 'Share of contracted funds in projects with a deadline before the snapshot and no completion recorded',
   },
   /* SEM O NOME DO PROGRAMA, e a razão é a regra dos algarismos: «Portugal 2030»
      traz um número que não é uma medição e não resolve em linha nenhuma, e o
@@ -659,4 +660,12 @@ for (const id of Object.keys(NOMES_DAS_LINHAS_DERIVADAS)) {
       `nomes-das-medidas: a linha "${id}" está nas duas tabelas, e cada uma rende noutra forma.`,
     );
   }
+}
+
+/** A data vem da computação da própria linha. @returns {string} */
+function dataDoInstantaneoPRR() {
+ const d=/** @type {any} */ (getClaim('evora-prr-vencido-aprovado-2026').document).computed_over.files;
+ const data=d[0]?.snapshot_date;
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(data ?? '') || !d.every(x=>x.snapshot_date===data)) throw Error('PRR: falta uma data única do instantâneo');
+ return data.split('-').reverse().join('.');
 }

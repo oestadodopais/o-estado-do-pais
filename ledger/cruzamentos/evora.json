@@ -699,8 +699,8 @@
     },
     "evora-prr-execucao-2026": {
       "corrections_at_export": 2,
-      "exported_at": "2026-09-30",
-      "exported_row_sha256": "df5fca906661a91640c78aebaecaecd4c3008e3061d68984efd8c6d2c0dd52e0",
+      "exported_at": "2026-10-07",
+      "exported_row_sha256": "cc09c8f67518d55a8fb5be3f32ffbc3c4061aa7fe1fc6dd42aaf9441d7ec46c4",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "4d3935ee6ed7dd9ab6938534b5ad1e1cfdb19ef1b3b8a88b12d958bd7f452252",
       "rh_id": "prr-execution-evora",
@@ -830,8 +830,8 @@
     },
     "evora-prr-vencido-quota-2026": {
       "corrections_at_export": 2,
-      "exported_at": "2026-09-30",
-      "exported_row_sha256": "e7c9a41e2f024b01839ee045ac2693f5d9f534504ab8cebf2273dd41620a2b91",
+      "exported_at": "2026-10-07",
+      "exported_row_sha256": "5a4e92e9a43a5952a347c28ce9bbb1baf8513a6572e4208739b3be3f50e31e05",
       "exporter": "ResearchHub/publisher/export_site_rows.py",
       "origin_row_sha256": "d108f7a094a4e40464242e78002e7ba9ff759c738941b7183ebd2d2e4a7e45d5",
       "rh_id": "prr-overdue-approved-share",
