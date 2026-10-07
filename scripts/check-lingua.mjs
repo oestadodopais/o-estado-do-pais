@@ -906,7 +906,7 @@ for (const ficheiro of paginasDe(DIST)) {
         anota(achados.estudos, texto, rel);
       }
       /* E a função que decide tem de dizer o mesmo que a página mostra. */
-      if (linguaDoTitulo(texto, 'en') !== 'pt-PT') {
+      if (!['pt', 'pt-PT'].includes(linguaDoTitulo(texto, 'en'))) {
         erros.push(
           `linguaDoTitulo() não marca «${texto}» como português numa página inglesa ` +
             `(${rel}), e a cadeia é o título de uma edição portuguesa.`,
