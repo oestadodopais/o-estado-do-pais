@@ -1385,7 +1385,7 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
           ------------------------------------------------------------------- */}
       {
         (temEnquadramento || portugalDoConcelho) && (
-          <section class="linha-bloco" id="enquadramento" aria-labelledby="enquadramento-k">
+          <section class="linha-bloco" id="enquadramento" aria-labelledby="enquadramento-k" data-enquadramento-edicoes-distintas={enquadramento.edicoesDistintas ? "true" : undefined}>
             <h2 class="linha-bloco-titulo" id="enquadramento-k">
               {s.livro.linha.enquadramentoK}
             </h2>
@@ -1414,6 +1414,16 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
                   <dt>{s.livro.linha.enquadramentoUe}</dt>
                   <dd>
                     <Claim id={enquadramento.ue.id} lang={lang} as="span" chip={true} />
+                  </dd>
+                </>
+              )}
+              {enquadramento.portugal && (
+                <>
+                  <dt>{s.livro.linha.enquadramentoPortugal}</dt>
+                  <dd data-enquadramento-jd1-portugal={enquadramento.portugal.id}>
+                    <Claim id={enquadramento.portugal.id} lang={lang} as="span" chip={true} />
+                    {' · '}
+                    <CampoDaLinha id={enquadramento.portugal.id} campo="reference_date" valor={enquadramento.portugal.periodo} lang={lang} />
                   </dd>
                 </>
               )}

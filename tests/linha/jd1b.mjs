@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { parse } from 'node-html-parser';
-import { oQueEDaLinha } from '../../src/lib/o-que-e-o-numero.mjs';
+import { oQueEDaLinha, oQueEDaSerie } from '../../src/lib/o-que-e-o-numero.mjs';
 
 const provisórias = ['juros-das-administracoes-publicas-2025', 'pib-nominal-notificacao-setembro-2025', 'juros-das-administracoes-publicas-pib-2025'];
 export function estadoDaFonte(frase, lang) {
@@ -28,3 +28,58 @@ for (const id of provisórias) for (const lang of ['pt', 'en']) {
 // A marca do INE não se estende ao agregado europeu, cujo corpo não tem status.
 for (const lang of ['pt', 'en']) assert.ok(!/provis[oó]ri/.test(oQueEDaLinha('juros-das-administracoes-publicas-2025-ue', lang).pedacos.join('')));
 console.log(`JD1-b: estado provisório nas três linhas INE nas duas edições; ${plantas} plantas morderam.`);
+
+// Cada planta apaga uma distinção que mudaria o significado do número.
+// Não fixa a redação inteira: exige o conceito e confere também o recibo servido.
+const conceitos = [
+  ['juros-das-administracoes-publicas-2024', 'despesa e pagamento', /encargo é assumido, mesmo que seja pago noutro ano/, /cost is incurred, even if it is paid in another year/],
+  ['pib-nominal-notificacao-setembro-2025', 'bens e serviços finais', /bens e serviços finais produzidos/, /final goods and services produced/],
+  ['juros-das-administracoes-publicas-pib-2025', 'versões das contas', /versões das contas são diferentes/, /different versions of the accounts/],
+  ['juros-das-administracoes-publicas-2025-ue', 'versões das contas', /versões das contas são diferentes/, /different versions of the accounts/],
+  ['juros-e-outros-encargos-execucao-2026-08', 'consolidação', /descontam-se os pagamentos entre as entidades públicas/, /payments between the public bodies covered are removed/],
+  ['juros-e-outros-encargos-execucao-2025-08', 'pagamentos', /recebimentos e pagamentos ocorridos no período/, /receipts and payments during the period/],
+  ['custo-do-stock-da-divida-direta-2025', 'saldo médio dos dois anos', /saldo médio da dívida direta no fim desse ano e do anterior/, /average direct debt at the end of that year and the previous one/],
+  ['custo-da-divida-emitida-2026-08', 'instrumentos por extenso', /Bilhetes do Tesouro, Obrigações do Tesouro, Obrigações do Tesouro de Rendimento Variável e Medium Term Notes/, /Treasury bills, Treasury bonds, floating-rate Treasury bonds and Medium Term Notes/],
+  ['divida-direta-do-estado-2026-08', 'perímetro e consolidação', /Maastricht abrange todas as administrações públicas e retira a dívida/, /Maastricht public debt covers all general government bodies and removes debt/],
+  ['necessidades-brutas-de-financiamento-2025', 'amortizações e anulações', /reembolsar ou extinguir dívida/, /repay or extinguish debt/],
+  ['emissoes-de-divida-fundada-2025', 'dívida fundada', /paga num ano orçamental posterior ao da contratação/, /repaid in a budget year after the year in which it was incurred/],
+];
+let plantasConceitos = 0;
+for (const [id, conceito, pt, en] of conceitos) for (const lang of ['pt', 'en']) {
+  const expressao = lang === 'pt' ? pt : en;
+  const frase = oQueEDaLinha(id, lang).pedacos.join('');
+  assert.ok(expressao.test(frase), `${id}/${lang}: falta ${conceito}`);
+  if (process.argv.includes('--prova')) {
+    assert.ok(!expressao.test(frase.replace(expressao, '')), `a planta ${conceito} não mordeu`);
+    plantasConceitos++;
+  }
+  if (!process.argv.includes('--declaracoes')) {
+    const prefixo = lang === 'pt' ? 'livro-razao' : 'en/ledger';
+    const html = parse(fs.readFileSync(`dist/${prefixo}/${id}/index.html`, 'utf8'));
+    assert.ok(expressao.test(html.querySelector('[data-o-que-e-parte="o-que-e"]').textContent), `recibo ${id}/${lang}: falta ${conceito}`);
+  }
+}
+console.log(`JD1-b: distinções contabilísticas e financeiras nas duas edições; ${plantasConceitos} plantas morderam.`);
+
+const serie = 'serie-obrigacoes-do-tesouro-10-anos-rendibilidade';
+let plantasSerie = 0;
+for (const lang of ['pt', 'en']) {
+  const frase = oQueEDaSerie(serie, lang).pedacos.join('');
+  const expressoes = lang === 'pt'
+    ? [/taxa de juro anual/, /compra e venda de obrigações já emitidas/, /dez anos até ao reembolso/]
+    : [/annual interest rate/, /trading of bonds already issued/, /ten years remaining until repayment/];
+  let rendida = frase;
+  if (!process.argv.includes('--declaracoes')) {
+    const prefixo = lang === 'pt' ? 'livro-razao' : 'en/ledger';
+    const html = parse(fs.readFileSync(`dist/${prefixo}/series/${serie}/index.html`, 'utf8'));
+    rendida = html.querySelector('[data-o-que-e-da-serie] .linha-o-que-e-frase').textContent;
+  }
+  for (const expressao of expressoes) {
+    assert.ok(expressao.test(frase) && expressao.test(rendida), `${serie}/${lang}: falta ${expressao}`);
+    if (process.argv.includes('--prova')) {
+      assert.ok(!expressao.test(frase.replace(expressao, '')));
+      plantasSerie++;
+    }
+  }
+}
+console.log(`JD1-b: taxa anual, obrigações já emitidas e prazo restante; ${plantasSerie} plantas morderam.`);

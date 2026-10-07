@@ -42,8 +42,8 @@ def origem(nome, publicador, documento, *, page=None, anchors=None, clip=False):
     selo = dict(motor=(PASTA / r["file"]).as_posix(), hora=r["timestamp_utc"], cliente="core.http.HttpClient.condicional", sha256=r["sha256"])
     if page:
         if clip:
-            file = Path(r["file"]).with_suffix("").name + "-coluna-portuguesa.txt"
-            args = ["pdftotext", "-f", str(page), "-l", str(page), "-r", "72", "-x", "0", "-y", "0", "-W", "275", "-H", "900", "-layout"]
+            file = Path(r["file"]).with_suffix("").name + ("-coluna-portuguesa.txt" if clip is True else f"-coluna-esquerda-{page}-w{clip}.txt")
+            args = ["pdftotext", "-f", str(page), "-l", str(page), "-r", "72", "-x", "0", "-y", "0", "-W", str(275 if clip is True else clip), "-H", "900", "-layout"]
             raw = subprocess.check_output(args + [str(MOTOR / PASTA / r["file"]), "-"])
             target = MOTOR / PASTA / file
             if "--write" in sys.argv:
@@ -62,12 +62,12 @@ def origem(nome, publicador, documento, *, page=None, anchors=None, clip=False):
             texto = raw.decode().split("\f")[page - 1]
         e = next(x for x in extracoes if x["file"] == file)
         assert sha(raw) == e["sha256"] and e["origem_sha256"] == r["sha256"]
-        selo.update(campo=f"pdftotext -layout, folha {page}" + (", coluna portuguesa" if clip else ""),
+        selo.update(campo=f"pdftotext -layout, folha {page}" + (", coluna portuguesa" if clip is True else ", coluna esquerda" if clip else ""),
                     extracao=dict(ficheiro=(PASTA / file).as_posix(), sha256=e["sha256"], ferramenta=e["ferramenta"]))
     else:
         texto = re.sub(r"<(script|style)\b[^>]*>.*?</\1>", " ", corpo.decode(), flags=re.S | re.I)
         texto = html.unescape(re.sub(r"<[^>]+>", " ", texto))
-        selo["campo"] = "texto normalizado da ficha de metadados, secção 3.4"
+        selo["campo"] = "corpo JSON, dimensões selecionadas" if nome.endswith(".json") else "texto normalizado da ficha de metadados"
     texto = normal(texto)
     if anchors:
         texto = corta(texto, *anchors)
@@ -75,7 +75,49 @@ def origem(nome, publicador, documento, *, page=None, anchors=None, clip=False):
                 lingua="en" if not page else "pt", excerto=texto, selo=selo)
 
 
+def nova(nome, publicador, documento, lingua, inicio, fim):
+    pasta = Path("indicators/out/jd1b-2026-10-07")
+    recibos = [json.loads(l) for l in (MOTOR / pasta / "pedidos.jsonl").read_text().splitlines()]
+    r = next(r for r in recibos if r["nome"] == nome and r["estado"] == "lido")
+    corpo = (MOTOR / pasta / r["file"]).read_bytes()
+    assert sha(corpo) == r["sha256"] and len(corpo) == r["bytes"] and r["http"] == 200
+    assert (MOTOR / "content/20 Orcamento do Estado/source/jd1b" / nome).read_bytes() == corpo
+    es = [json.loads(l) for l in (MOTOR / pasta / "extracoes.jsonl").read_text().splitlines()]
+    e = next(e for e in es if e["origem"] == r["file"])
+    raw = (MOTOR / pasta / e["file"]).read_bytes()
+    assert sha(raw) == e["sha256"] and e["origem_sha256"] == r["sha256"]
+    return dict(publicador=publicador, documento=documento, url=r["url"], lido=r["timestamp_utc"][:10], lingua=lingua,
+        excerto=corta(normal(raw.decode()), inicio, fim), selo=dict(motor=(pasta/r["file"]).as_posix(), hora=r["timestamp_utc"],
+        cliente="core.http.HttpClient.condicional", sha256=r["sha256"], campo="texto da entrada nomeada, extraído por HTMLParser",
+        extracao=dict(ficheiro=(pasta/e["file"]).as_posix(), sha256=e["sha256"], ferramenta=e["ferramenta"])))
+
+
 origens = {
+    "jd1-eo-administracoes": origem("eo-execucao-agosto-2026.pdf", "Entidade Orçamental", "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 82", page=82, clip=300,
+        anchors=("Administrações Públicas — Universo", "e a Segurança Social.")),
+    "jd1-eo-ativos": origem("eo-execucao-agosto-2026.pdf", "Entidade Orçamental", "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 82", page=82, clip=300,
+        anchors=("Ativos financeiros (receita)", "determinado momento.")),
+    "jd1-eo-saldo": origem("eo-execucao-agosto-2026.pdf", "Entidade Orçamental", "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 87", page=87, clip=300,
+        anchors=("Saldo Global", "endividamento (excedente).")),
+    "jd1-eurostat-unidade": origem("eurostat-metadados-obrigacoes.html", "Eurostat", "EMU convergence criterion series, Reference Metadata, secção 4",
+        anchors=("All the yields are expressed", "percentages per annum.")),
+    "jd1-eurostat-versao": origem("eurostat-juros-EU27_2020-PC_GDP-2025.json", "Eurostat", "Government revenue, expenditure and main aggregates, updated e value",
+        anchors=('"updated":', '"value":{"0":1.9}')),
+    "jd1-ine-contas": origem("ine-pde-setembro-2026.pdf", "Instituto Nacional de Estatística", "Procedimento dos Défices Excessivos, setembro de 2026, folha 4", page=4,
+        anchors=("No apuramento do saldo orçamental", "incluídas no saldo em contabilidade pública.")),
+    "jd1-eo-glossario": origem("eo-execucao-agosto-2026.pdf", "Entidade Orçamental", "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 83", page=83, clip=300,
+        anchors=("Contabilidade Pública (ótica da)", "no âmbito do programa Saúde.")),
+    "jd1-igcp-perimetro": origem("igcp-relatorio-anual-2025.pdf", "IGCP", "Relatório Anual 2025, nota 1, folha 31", page=31,
+        anchors=("1A dívida direta do Estado", "passivos emitidos pelas próprias Administrações Públicas.")),
+    "jd1-igcp-siglas": origem("igcp-relatorio-anual-2025.pdf", "IGCP", "Relatório Anual 2025, siglas e abreviaturas, folha 5", page=5),
+    "jd1-eurostat-contas": origem("eurostat-juros-EU27_2020-PC_GDP-2025.json", "Eurostat", "Government revenue, expenditure and main aggregates, dimension.unit a dimension.geo",
+        anchors=('"unit":{"label"', 'European Union - 27 countries (from 2020)"}}}')),
+    "jd1-pib-definicao": nova("eurostat-pib-iniciantes.html", "Eurostat", "Gross domestic product, What is gross domestic product? e What does GDP cover?", "en",
+        "What is gross domestic product?", "GDP covers all goods and services produced for final use ."),
+    "jd1-divida-fundada": nova("igcp-glossario.html", "IGCP", "Glossário, Dívida pública fundada", "pt",
+        "Dívida pública fundada", "exercício em que foi gerada."),
+    "jd1-mercado-secundario": nova("igcp-glossario.html", "IGCP", "Glossário, Mercado Secundário", "pt",
+        "Mercado Secundário", "previamente colocados em mercado primário."),
     "jd1-ine-provisorio": origem("ine-pde-setembro-2026.pdf", "Instituto Nacional de Estatística", "Procedimento dos Défices Excessivos, setembro de 2026, folha 3", page=3,
         anchors=("Os dados de 2024", "provisórios4.")),
     "jd1-ine-ambito": origem("ine-pde-setembro-2026.pdf", "Instituto Nacional de Estatística", "Procedimento dos Défices Excessivos, setembro de 2026, folha 2", page=2),

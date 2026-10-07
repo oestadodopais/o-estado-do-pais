@@ -60,10 +60,10 @@ export const SERIES_R4 = [
   {
     serie: 'serie-obrigacoes-do-tesouro-10-anos-rendibilidade',
     partes: [
-      diz('É a taxa de rendibilidade das obrigações do Estado', 'It is the yield on central government bonds', O('jd1-eurostat-obrigacoes', 'central government bond yields')),
+      diz('É a taxa de juro anual a que o mercado empresta ao Estado', 'It is the annual interest rate at which the market lends to central government', O('jd1-eurostat-obrigacoes', 'central government bond yields'), O('jd1-eurostat-unidade', 'All the yields are expressed in percentages per annum.')),
       diz(' português', ' in Portugal', S('document.edition', 'geo=PT')),
-      diz(' negociadas no mercado secundário, antes de impostos', ' traded on the secondary market, before tax', O('jd1-eurostat-obrigacoes', 'on the secondary market, gross of tax')),
-      diz(', com prazo restante próximo de dez anos', ', with a remaining maturity of around ten years', O('jd1-eurostat-obrigacoes', 'with a residual maturity of around 10 years')),
+      diz(', observada na compra e venda de obrigações já emitidas, antes de impostos', ', observed in trading of bonds already issued, before tax', O('jd1-eurostat-obrigacoes', 'on the secondary market, gross of tax'), O('jd1-mercado-secundario', 'previamente colocados em mercado primário')),
+      diz(', a que faltam cerca de dez anos até ao reembolso', ', with around ten years remaining until repayment', O('jd1-eurostat-obrigacoes', 'with a residual maturity of around 10 years')),
       diz(', apresentada mês a mês', ', reported monthly', S('name', 'monthly data')),
       liga('.', '.'),
     ],
