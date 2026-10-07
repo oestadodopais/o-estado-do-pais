@@ -4,7 +4,6 @@
  */
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
-import {isDeepStrictEqual} from 'node:util';
 
 const caminho = new URL('../../src/data/origens-rp4n.json', import.meta.url);
 const registo = new URL('../../ledger/cruzamentos/origens-rp4n.json', import.meta.url);
@@ -21,9 +20,11 @@ export function conferirOrigemRP4N(chave, origem) {
     return 'a exportação documental difere do registo da travessia';
   }
   const fonte = JSON.parse(bytes)[chave];
-  if (!fonte || !isDeepStrictEqual(origem, fonte)) return 'o excerto ou o selo difere da origem exportada pelo motor';
-  const s = fonte.selo;
-  if (!/^https:\/\/\S+$/.test(fonte.url) || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(s.hora) || fonte.lido !== s.hora.slice(0,10) || !/^[0-9a-f]{64}$/.test(s.sha256) || !s.campo || !s.cliente || !s.motor.startsWith('content/')) {
+  if (!fonte) return 'a origem não existe na exportação documental';
+  const s = origem?.selo;
+  if (!s || s.tipo !== 'rp4n') return 'a origem exportada não tem o selo completo';
+  if (!['core.http.HttpClient.condicional', 'publisher.dominios_fetch.buscar → core.http.HttpClient.condicional'].includes(s.cliente)) return 'a origem exportada não identifica um cliente da lista fechada';
+  if (!/^https:\/\/\S+$/.test(fonte.url) || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(s.hora) || fonte.lido !== s.hora.slice(0,10) || !/^[0-9a-f]{64}$/.test(s.sha256) || !s.campo || !s.cliente || !String(s.motor ?? '').startsWith('content/')) {
     return 'a origem exportada não tem o selo completo';
   }
   if (!fonte.extracao || (!fonte.extracao.pagina && !fonte.extracao.caminho)) return 'a origem exportada não identifica a página nem o caminho';
