@@ -15,6 +15,13 @@ export function escaparIncorporacao(valor) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+/** Uma fonte calculada é declarada pela fórmula; a data continua obrigatória.
+ * @param {any} c */
+export function podeIncorporar(c) {
+  return !!c && !/\[a verificar\]/i.test(c.source ?? '') &&
+    /^\d{4}-\d{2}-\d{2}$/.test(c.access_date ?? '') && !!(c.source || c.formula);
+}
+
 /** @param {any} c @param {'pt'|'en'} lang */
 export function dadosDaIncorporacao(c, lang) {
   const s = t(lang).incorporar;
@@ -46,6 +53,7 @@ export function dadosDaIncorporacao(c, lang) {
 
 /** @param {any} c @param {'pt'|'en'} lang */
 export function codigoDaIncorporacao(c, lang) {
+  if (!podeIncorporar(c)) return null;
   const d = dadosDaIncorporacao(c, lang);
   const e = escaparIncorporacao;
   /* O fallback diz a data guardada na linha. A releitura mais recente só entra

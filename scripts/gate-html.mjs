@@ -410,6 +410,7 @@ if (!fs.existsSync(DIST)) {
 }
 
 const claims = loadClaims();
+const ER1_RECIBOS = { comCodigo: 0, semCodigo: 0 };
 /* A JANELA DA LEITURA DA SEMANA (bloco EX1, 05.10.2026): o dia do carimbo da construção, contra o qual a página da
    semana declara a sua janela (`scripts/explicacoes-do-portao.mjs`). Lido uma vez, antes de ler uma página. */
 const DIAS_DA_SEMANA = diasDaJanelaNoPortao(DIST);
@@ -4664,6 +4665,7 @@ for (const file of ficheirosHtml(DIST)) {
 
   const caminho = '/' + rel.replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
   const rota = matchPath(caminho);
+  if (rota?.key === 'linha') ER1_RECIBOS[root.querySelector('[data-incorporar-aviso]') ? 'semCodigo' : 'comCodigo']++;
   try { tirarCodigoConferido(root, rota); } catch (e) { err(e.message); }
 
   /* Os `id` desta página, guardados antes de tudo o resto: é contra eles que
@@ -9246,6 +9248,7 @@ console.log(
     `  portão de HTML · ${ficheiros} páginas · ${idsUsados.size}/${claims.size} afirmações citadas ` +
       `fora do livro-razão · ${linhasConstruidas.size} páginas de linha` +
       ` · ${titulosDeLinhaConferidos} títulos de linha com o valor e a unidade separados` +
+      ` · ER1: ${ER1_RECIBOS.comCodigo} recibo(s) com código, ${ER1_RECIBOS.semCodigo} sem código por proveniência` +
       ` · R4: ${R4_RECIBOS.comFrase} recibo(s) com a frase «O que é este número»` +
       ` · EX2: ${EX2_MUDANCAS.frases} frase(s) e ${EX2_MUDANCAS.ausencias} ausência(s) nas mudanças` +
       (documentos ? ` · ${documentos} documento(s) de estudo, conferidos contra a origem` : '') +

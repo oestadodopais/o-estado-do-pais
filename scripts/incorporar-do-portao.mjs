@@ -47,6 +47,13 @@ export function dadosEsperados(c, lang) {
   };
 }
 
+// Recontagem independente, sem importar a decisão do compositor.
+export function provenienciaConfirmada(c) {
+  return Boolean(c && (c.source || c.formula) &&
+    !String(c.source ?? '').toLowerCase().includes('[a verificar]') &&
+    typeof c.access_date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(c.access_date));
+}
+
 export function codigoEsperado(c, lang) {
   const d = dadosEsperados(c, lang);
   const p = t(lang).incorporar;
@@ -61,6 +68,18 @@ export function conferirCodigo(root, rota) {
   const campos = root.querySelectorAll('[data-incorporar-codigo]');
   if (campos.length && !leiturasLiterais.has(root)) erros.push('ER1 código: falta a leitura literal do campo.');
   const linha = rota?.key === 'linha' ? linhas.get(rota.params.slug) : null;
+  for (const campo of campos) if (/\[a verificar\]/i.test(campo.textContent))
+    erros.push('ER1 código: uma marca por confirmar não se incorpora.');
+  if (linha && LICENCA && !provenienciaConfirmada(linha)) {
+    if (campos.length || root.querySelector('[data-incorporar-bloco] textarea, [data-incorporar-bloco] button'))
+      erros.push('ER1 código: proveniência por confirmar oferece código.');
+    const blocos = root.querySelectorAll('[data-incorporar-bloco]');
+    const aviso = blocos[0]?.querySelector('[data-incorporar-aviso]');
+    if (blocos.length !== 1 || aviso?.textContent !== t(rota.lang).incorporar.indisponivel ||
+        blocos[0]?.querySelector('.linha-campo-k')?.textContent !== t(rota.lang).incorporar.titulo)
+      erros.push('ER1 aviso: falta a recusa de incorporação da edição.');
+    return erros;
+  }
   if (linha && LICENCA && campos.length !== 1) erros.push('ER1 código: falta o único código do recibo.');
   if (linha && LICENCA) {
     const blocos = root.querySelectorAll('[data-incorporar-bloco]');
