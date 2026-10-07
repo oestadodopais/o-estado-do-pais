@@ -139,3 +139,10 @@ for (const l of loadClaims().values()) {
   assert(!String(l.ressalva_en ?? '').includes('Gross expenditure includes financial transactions'), `${l.id}: regressou a nota não selada inglesa`);
 }
 console.log('RP4N-d nota: PASS, ausência da explicação não selada em todas as linhas');
+{
+  const linhas = structuredClone(loadClaims());
+  const l = linhas.get('penalizacao-antecipacao-um-ano-neutra');
+  l.excerpt = l.excerpt.replace('Decrementos por reforma antecipada: caso geral', 'legenda retirada');
+  morde('legenda da pensão retirada', conferirAuditoriaDasFamilias({linhas}).erros, 'não está no campo «excerpt»');
+}
+console.log(`RP4N-d final: PASS, ${plantas.length} plantas com mensagem afirmada`);
