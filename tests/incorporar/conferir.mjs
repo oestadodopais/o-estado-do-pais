@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'node-html-parser';
-import { dadosDaIncorporacao } from '../../src/lib/incorporar.mjs';
+import { dadosDaIncorporacao, codigoDaIncorporacao, podeIncorporar } from '../../src/lib/incorporar.mjs';
 import { allClaims } from '../../src/lib/ledger.mjs';
 import { routePath, matchPath } from '../../src/lib/routes.mjs';
 import { conferirExemploNoMetodo, conferirInventarioIncorporacao, provenienciaConfirmada, conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson } from '../../scripts/incorporar-do-portao.mjs';
@@ -66,6 +66,29 @@ for (const lang of ['pt', 'en']) {
     assert(conferirCodigo(root, matchPath(caminho)).includes(mensagem));
     resultados.plantas.push({nome:nome+'-'+lang,mensagem,mordeu:true});
   }
+}
+// ER1-c, achado 9: isola cada campo, para uma marca não esconder a outra.
+for (const lang of ['pt','en']) {
+  const caminho = routePath('linha',lang,{slug:c.id});
+  const html = fs.readFileSync(`${dist}${caminho}/index.html`,'utf8');
+  for (const campo of ['source','access_date']) {
+    const marcada = {...c,[campo]:'[a verificar]'};
+    assert.equal(podeIncorporar(marcada),false);
+    assert.equal(codigoDaIncorporacao(marcada,lang),null);
+    const mensagem = 'ER1 código: proveniência por confirmar oferece código.';
+    assert(conferirCodigo(lerPaginaComCodigo(html),matchPath(caminho),new Map([[c.id,marcada]])).includes(mensagem));
+    resultados.plantas.push({nome:'marca-isolada-'+campo+'-'+lang,mensagem,mordeu:true});
+  }
+  const calculada = linhas.find(x => x.formula && !x.access_date && provenienciaConfirmada(x));
+  const caminhoCalculado = routePath('linha',lang,{slug:calculada.id});
+  const root = lerPaginaComCodigo(fs.readFileSync(`${dist}${caminhoCalculado}/index.html`,'utf8'));
+  assert.deepEqual(conferirCodigo(root,matchPath(caminhoCalculado)),[]);
+  const frase = lang==='pt'?'calculado por este projeto':'calculated by this project';
+  assert(root.querySelector('textarea').textContent.includes(', '+frase+' · '));
+  root.querySelector('textarea').remove();
+  const mensagem = 'ER1 código: falta o único código do recibo.';
+  assert(conferirCodigo(root,matchPath(caminhoCalculado)).includes(mensagem));
+  resultados.plantas.push({nome:'calculada-sem-data-sem-codigo-'+lang,mensagem,mordeu:true});
 }
 // ER1-c: licença e notas ficam separadas também no código estático.
 for (const lang of ['pt','en']) {

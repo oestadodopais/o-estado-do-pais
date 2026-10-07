@@ -24,6 +24,7 @@ const linhas = allClaims();
 const c = linhas.find(c=>c.source_url && c.corrections?.some(x=>x.kind==='atualizacao' && x.new_value===c.value));
 const cNotas = linhas.find(c => podeIncorporar(c) && (c.source_flag_note || c.ressalva) && (c.source_flag_note_en || c.ressalva_en));
 assert(cNotas, 'O navegador precisa de uma linha real com notas nas duas edições.');
+const calculada = linhas.find(c => c.formula && !c.access_date && podeIncorporar(c));
 const antigo = c.corrections.find(x=>x.kind==='atualizacao' && x.new_value===c.value).old_value;
 const tipos = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css','.json':'application/json','.woff2':'font/woff2','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp'};
 const codigos = Object.fromEntries(['pt','en'].map(lang=>[lang,parse(fs.readFileSync(`${dist}${routePath('linha',lang,{slug:c.id})}/index.html`,'utf8')).querySelector('[data-incorporar-codigo]').textContent]));
@@ -36,7 +37,8 @@ function blogue(lang) {
   const ausente = codigos[lang].replaceAll(c.id,c.id+'-nao-existe');
   const rotulos = lang==='pt' ? ['Valor atual','Valor antigo','Pedido sem resposta'] : ['Current value','Old value','Failed request'];
   const campos={lang:t(lang).lang,titulo:lang==='pt'?'Blogue de ensaio':'Test blog',anfitria:lang==='pt'?'Conteúdo da página que acolhe os números.':'Content of the page hosting the numbers.',rotulo_atual:rotulos[0],rotulo_antigo:rotulos[1],rotulo_ausente:rotulos[2],codigo_atual:codigos[lang],codigo_antigo:velho,codigo_ausente:ausente,rotulo_notas:lang==='pt'?'Número com notas':'Number with notes',codigo_notas:codigosNotas[lang].replace(/data-oedp-lido="[^"]*"/, 'data-oedp-lido=""')};
-  return modeloBlogue.replace(/\{\{([a-z_]+)\}\}/g,(_,chave)=>campos[chave]);
+  const codigoCalculado = lerPaginaComCodigo(fs.readFileSync(`${dist}${routePath('linha',lang,{slug:calculada.id})}/index.html`,'utf8')).querySelector('textarea').textContent.replace('data-oedp-valor="'+calculada.value+'"','data-oedp-valor="ensaio"');
+  return modeloBlogue.replace('</body>',codigoCalculado+'</body>').replace(/\{\{([a-z_]+)\}\}/g,(_,chave)=>campos[chave]);
 }
 let modoAtual = 'normal';
 const servidor = http.createServer((req,res)=>{
@@ -99,6 +101,8 @@ try {
     if (['normal','releitura','separador-notas-retirado','notas-retiradas'].includes(modo)) {
       const esperado = modo==='releitura' ? jsonRelido : json;
       assert.equal(pedidos.filter(p=>p.caminho.endsWith('.json')).length,valores.length);
+      assert.equal(valores[4].valor,calculada.value, 'ER1 navegador: a linha calculada sem data não foi atualizada.');
+      assert(textos[4].includes(lang==='pt'?'calculado por este projeto':'calculated by this project'));
       assert.equal(valores[0].valor,c.value);assert.equal(valores[0].lido,esperado.incorporacao[lang].data);assert.equal(valores[0].aviso,null);
       assert.equal(valores[1].valor,c.value);assert.equal(valores[1].aviso,esperado.incorporacao[lang].atualizacao);
       assert.equal(textos[0],textos[1].slice(0,-(' · '+esperado.incorporacao[lang].atualizacao).length));
@@ -126,7 +130,7 @@ try {
       assert.deepEqual(textos,original,`${modo}: o texto colado não ficou inteiro`);
       if (modo!=='sem-js') r.plantas.push({nome:modo+'-'+lang,mensagem:'O pedido recusado conserva o código colado inteiro.',mordeu:true});
     }
-    assert(pedidos.every(p=>p.origem==='<servidor do projeto>' && (p.caminho==='/incorporar.js'||p.caminho===`/livro-razao/${c.id}.json`||p.caminho===`/livro-razao/${c.id}-nao-existe.json`||p.caminho===`/livro-razao/${cNotas.id}.json`)));
+    assert(pedidos.every(p=>p.origem==='<servidor do projeto>' && (p.caminho==='/incorporar.js'||p.caminho===`/livro-razao/${c.id}.json`||p.caminho===`/livro-razao/${c.id}-nao-existe.json`||p.caminho===`/livro-razao/${cNotas.id}.json`||p.caminho===`/livro-razao/${calculada.id}.json`)));
     assert(pedidos.every(p=>p.referer===null && p.metodo==='GET' && p.corpo===null));
     assert.equal(await pagina.locator('#anfitria').textContent(),parse(blogue(lang)).querySelector('#anfitria').textContent);
     if(modo!=='sem-js') assert.deepEqual(acessos,[]);
