@@ -96,11 +96,11 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const INVENTARIO_DECLARADO = path.join(RAIZ, 'design', 'especime-v3', 'rotulos', 'INVENTARIO.json');
 const LINHAS = loadClaims();
 /** O conjunto fechado OE1, conferido contra as linhas e contra cada edição construída. */
-const LINHAS_OE1_ESPERADAS = 186;
+const LINHAS_ESPERADAS = { oe1: 186, jd1: 14 };
 /** O estudo recebe outros blocos; a pertença vem do cruzamento de cada entrega. */
 const BLOCOS_DO_LIVRO = Object.fromEntries(['oe1', 'jd1'].map((bloco) => {
   const ids = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(RAIZ, 'ledger', 'cruzamentos', `${bloco}.json`), 'utf8')).rows));
-  return [bloco, { ids, esperado: bloco === 'oe1' ? LINHAS_OE1_ESPERADAS : ids.size }];
+  return [bloco, { ids, esperado: LINHAS_ESPERADAS[bloco] }];
 }));
 const blocoDaLinha = (id) => Object.keys(BLOCOS_DO_LIVRO).find((b) => BLOCOS_DO_LIVRO[b].ids.has(id));
 
@@ -970,6 +970,25 @@ export function plantas(dist) {
       item.remove();
       return true;
     }, new RegExp(`^JD1-unidade · ${rota}: o índice tem ${BLOCOS_DO_LIVRO.jd1.esperado - 1} entradas JD1 e deve ter ${BLOCOS_DO_LIVRO.jd1.esperado}$`));
+  }
+  // JD1-b, achado 16: perder a entrada no cruzamento E no HTML nunca baixa a contagem esperada.
+  {
+    const id = 'juros-das-administracoes-publicas-2025';
+    const rel = 'livro-razao/index.html';
+    const html = ler(rel);
+    if (!html) throw new Error('JD1-b: falta o índice para a planta da contagem.');
+    const root = parse(html);
+    const item = root.querySelector(`.livro-item[data-linha-id="${id}"]`);
+    if (!item || !BLOCOS_DO_LIVRO.jd1.ids.has(id)) throw new Error('JD1-b: falta a linha da planta.');
+    item.remove();
+    BLOCOS_DO_LIVRO.jd1.ids.delete(id);
+    try {
+      const erros = corre(rel, root);
+      const queixa = erros.find(e => e === 'JD1-unidade · /livro-razao: o índice tem 13 entradas JD1 e deve ter 14');
+      resultados.push({ nome: 'jd1b-linha-retirada-do-cruzamento-e-do-indice', campo: 'contagem', mordeu: Boolean(queixa), queixa: queixa ?? 'nenhuma queixa' });
+    } finally {
+      BLOCOS_DO_LIVRO.jd1.ids.add(id);
+    }
   }
   return { resultados, controlo };
 }
