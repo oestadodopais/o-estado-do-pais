@@ -789,7 +789,7 @@ export function linguaDoTitulo(titulo, lang = 'pt') {
    * para corrigir; não marcar nada deixa-o só por dizer.
    */
   const doTexto = linguas.has('pt-PT') ? 'pt-PT' : [...linguas][0];
-  return doTexto === daPagina ? null : doTexto === 'pt-PT' && linguas.has('en') ? 'pt' : doTexto;
+  return doTexto === daPagina ? null : doTexto;
 }
 
 /**
