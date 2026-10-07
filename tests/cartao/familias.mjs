@@ -339,6 +339,8 @@ export function conferirAuditoriaDasFamilias({
         falha(`${k}: a auditoria junta-a a «${chaves[0]}», e as duas declaram frases diferentes`);
       }
     }
+    const exigeInstantaneo = chaves.some(k => ['evora-prr-aprovado','evora-prr-pago','evora-prr-vencido-aprovado'].includes(k));
+    if (Boolean(e.instantaneo) !== exigeInstantaneo || chaves.some(k => Boolean(familias[k]?.instantaneo) !== exigeInstantaneo)) falha(`${quem}: a data do instantâneo tem de acompanhar a frase do PRR`);
     const folha = Array.isArray(e.folhas) && e.folhas.length === 1 ? e.folhas[0] : null;
     if (!folha || !declarada) { falha(`${quem}: a auditoria não tem uma folha, ou a família não declara frase`); continue; }
     const partes = Array.isArray(folha.partes) ? folha.partes : [];
@@ -519,7 +521,17 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
       } catch (e) {
         falha(`a conta desta célula não recompõe a frase do cartão «${d.cartao}» contra a linha: ${e instanceof Error ? e.message : e}`);
       }
-    } else esperado = normal(textoDaFrase(d?.frase?.[lang]));
+    } else {
+      esperado = normal(textoDaFrase(d?.frase?.[lang]));
+      if (d?.instantaneo) {
+        const files = ctx.linhas.get(id)?.document?.computed_over?.files;
+        const data = files?.[0]?.snapshot_date;
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(data ?? '') || !files.every(x=>x.snapshot_date===data)) falha('os ficheiros da computação não têm uma data única de instantâneo');
+        else esperado = esperado.replace(/\.$/,'') + (lang === 'pt' ? ', no instantâneo de ' : ', in the snapshot of ') + data.split('-').reverse().join('.') + '.';
+        const marcas = el.querySelectorAll('[data-nonledger="data-da-linha"]');
+        if (marcas.length !== 1 || marcas[0].getAttribute('data-de-linha') !== id || marcas[0].getAttribute('data-de-campo') !== 'document.computed_over.files.0.snapshot_date' || normal(marcas[0].textContent) !== String(data).split('-').reverse().join('.')) falha('a data do instantâneo não vem do campo da computação');
+      }
+    }
   }
   if (esperado !== null && rendidoOQueE !== esperado) falha(`a frase rendida não é a que a conta desta célula dá: «${curto(rendidoOQueE)}» contra «${curto(esperado ?? '')}»`);
   if (rendidoComparacao !== esperadaComparacao) falha(`a metade que compara não é a do cartão: «${curto(rendidoComparacao)}» contra «${curto(esperadaComparacao)}»`);
@@ -532,7 +544,8 @@ export function conferirCabecaDoRecibo(cabeca, id, lang, { ctx, cartoes, porConf
           const a = p.attributes ?? {};
           if ('data-claim' in a || 'data-nonledger' in a) { marcado = true; break; }
         }
-        if (!marcado || f.tipo === 'concelho' || (f.tipo === 'familia' && !ctx.familias[f.chave]?.cartao)) falha(`a frase escreve um algarismo${marcado ? ' numa frase de família' : ' sem marca de origem'}: «${curto(normal(n.text))}»`);
+        const dataDoInstantaneo = ctx.familias[f.chave]?.instantaneo && n.parentNode?.matches?.('[data-nonledger="data-da-linha"][data-de-campo="document.computed_over.files.0.snapshot_date"]') && n.parentNode.getAttribute('data-de-linha') === id;
+        if (!marcado || f.tipo === 'concelho' || (f.tipo === 'familia' && !ctx.familias[f.chave]?.cartao && !dataDoInstantaneo)) falha(`a frase escreve um algarismo${marcado ? ' numa frase de família' : ' sem marca de origem'}: «${curto(normal(n.text))}»`);
       }
       return;
     }
@@ -653,6 +666,8 @@ export function conferirAuditoriaDasSeries({
     const declarada = frases[e.serie]?.frase;
     if (!s || !declarada) continue;
     for (const lang of ['pt', 'en']) for (const p of declarada[lang] ?? []) if (typeof p !== 'string' || /\d/.test(p)) falha(`«${e.serie}» · ${lang}: a frase traz um algarismo ou um pedaço que não é texto`);
+    const exigeInstantaneo = chaves.some(k => ['evora-prr-aprovado','evora-prr-pago','evora-prr-vencido-aprovado'].includes(k));
+    if (Boolean(e.instantaneo) !== exigeInstantaneo || chaves.some(k => Boolean(familias[k]?.instantaneo) !== exigeInstantaneo)) falha(`${quem}: a data do instantâneo tem de acompanhar a frase do PRR`);
     const folha = Array.isArray(e.folhas) && e.folhas.length === 1 ? e.folhas[0] : null;
     const partes = Array.isArray(folha?.partes) ? folha.partes : [];
     const juntas = (/** @type {'pt'|'en'} */ lang) => partes.map((/** @type {any} */ p) => String(p?.[lang] ?? '')).join('');
