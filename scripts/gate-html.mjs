@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 import { contarFrasesDasMudancas, errosDoSeloDaDefinicao } from '../tests/explicacoes/o-que-e.mjs';
 import { conferirLugaresIA } from './lugares-ia-do-portao.mjs';
-import { conferirSemMarcadores } from './sem-marcadores.mjs';
+import { inventariarMarcadores, resumirMarcadores } from './sem-marcadores.mjs';
+const MARCAS_RP4N = [];
+import { plantasDosMarcadores } from '../tests/cartao/rp4nb.mjs';
+const PLANTAS_RP4N = plantasDosMarcadores();
 import { conferirValorUnidade } from './valor-unidade.mjs';
 import { nomeNoRegistoAdmitido } from './nome-no-registo.mjs';
 import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
@@ -641,10 +644,8 @@ const CADEIAS_HEAD = [
   (a, b) => b.length - a.length,
 );
 
-/* ===========================================================================
- * O SÍTIO NO ECRÃ PRINCIPAL (28.08.2026, `design/marca/BRIEF-app.md`)
- * ===========================================================================
- * O que o portão reconhece na cabeça de cada página, e o que ele confere uma
+/* ==================================================================== * O SÍTIO NO ECRÃ PRINCIPAL (28.08.2026, `design/marca/BRIEF-app.md`)
+ * ==================================================================== * O que o portão reconhece na cabeça de cada página, e o que ele confere uma
  * vez no fim, sobre os dois manifestos construídos.
  * ======================================================================== */
 
@@ -4673,8 +4674,9 @@ for (const file of ficheirosHtml(DIST)) {
     new Set(root.querySelectorAll('[id]').map((e) => e.getAttribute('id')).filter(Boolean)),
   );
 
-  const marcadorRP4N = conferirSemMarcadores(root);
-  if (marcadorRP4N) err(marcadorRP4N);
+  const marcasRP4N = inventariarMarcadores(root, {rota, claims, municipios:MUNICIPIOS_COM_PAGINA});
+  MARCAS_RP4N.push({pagina:`dist/${rel}`, ...marcasRP4N});
+  for (const m of marcasRP4N.recusadas) err(`${m.mensagem} (${m.contexto})`);
 
   /* --- 0. documentos de estudo: obra citada, regra própria, e sai daqui --- */
   if (rota?.key === 'documento') {
@@ -8783,10 +8785,8 @@ for (const o of ocorrenciasDaLista) {
   }
 }
 
-/* =============================================================================
- * OS CARTÕES DE PARTILHA, REGISTO A REGISTO (etapa 5)
- * =============================================================================
- *
+/* ====================================================================== * OS CARTÕES DE PARTILHA, REGISTO A REGISTO (etapa 5)
+ * ====================================================================== *
  * Acima confere-se que cada PÁGINA nomeia o cartão certo. Aqui confere-se o
  * CARTÃO: que o ficheiro é o que o registo diz, que mede o que diz medir, e que
  * cada número que ele mostra vem de uma linha do livro-razão ou de uma chave da
@@ -9241,6 +9241,14 @@ if (paginasDoLivro !== LANGS.length) {
   });
 }
 
+console.log(`  RP4N: ${PLANTAS_RP4N.length} plantas com mensagem e contagem afirmadas`);
+for (const [estado, tipos] of Object.entries(resumirMarcadores(MARCAS_RP4N))) {
+  for (const [tipo, dados] of Object.entries(tipos)) {
+    console.log(`  RP4N ${estado} · ${tipo}: ${dados.ocorrencias} ocorrência(s)`);
+    for (const p of dados.paginas) console.log(`    ${p.pagina}: ${p.ocorrencias}`);
+  }
+}
+
 console.log('');
 console.log(
   cinza(
@@ -9285,10 +9293,8 @@ console.log(
   ),
 );
 
-/* =============================================================================
- * UM FACTO POR VERIFICAR LEVA O MARCADOR ONDE ELE SE RENDE (I77, 27.08.2026)
- * =============================================================================
- * A `IDENTIDADE.md` §6 fixa o marcador `[a verificar]` como a única língua
+/* ====================================================================== * UM FACTO POR VERIFICAR LEVA O MARCADOR ONDE ELE SE RENDE (I77, 27.08.2026)
+ * ====================================================================== * A `IDENTIDADE.md` §6 fixa o marcador `[a verificar]` como a única língua
  * pública para «isto não está confirmado», e a Emenda 15 tirou da página do
  * leitor o parágrafo que o explicava. As duas regras juntas só se sustentam se o
  * marcador estiver ONDE o facto se rende: uma incerteza dita num parágrafo à
@@ -9363,10 +9369,8 @@ const ancoraDoMandatoNoPortao = (periodo) =>
   );
 }
 
-/* =============================================================================
- * AS DUAS EDIÇÕES DA MESMA FRASE (bloco «A grelha da voz», 26.08.2026)
- * =============================================================================
- * Até hoje a página do trabalho IMPRIMIA a frase da outra edição por baixo da
+/* ====================================================================== * AS DUAS EDIÇÕES DA MESMA FRASE (bloco «A grelha da voz», 26.08.2026)
+ * ====================================================================== * Até hoje a página do trabalho IMPRIMIA a frase da outra edição por baixo da
  * sua, com o rótulo «A mesma frase na outra edição». Era o sítio a provar ao
  * leitor que as duas edições dizem o mesmo, numa página do leitor, que é a
  * classe que a Emenda 15 tira de lá. A prova não se perde: muda de sítio, de uma
@@ -9605,8 +9609,7 @@ console.log(
 );
 console.log('');
 
-/* =============================================================================
- * LIMITES DESTE VARRIMENTO — ler antes de confiar nele.
+/* ====================================================================== * LIMITES DESTE VARRIMENTO — ler antes de confiar nele.
  *
  * 1. Só vê texto. Números dentro de <script> e <style> não são varridos, com
  *    uma excepção: as ilhas <script data-ledger-json>, essas são conferidas
