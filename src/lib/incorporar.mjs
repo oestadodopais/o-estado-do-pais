@@ -8,7 +8,7 @@ import { linguaDaFonte } from '../i18n/lingua-dos-titulos.mjs';
 import { t } from '../i18n/strings.mjs';
 import { LICENCA } from '../data/licenca.mjs';
 import { SITE_HOST_DISPLAY } from '../../site.config.mjs';
-import { eDerivada } from './ledger.mjs';
+import { eDerivada, provenienciaIncompleta } from './ledger.mjs';
 import { caminhoDaLinha } from './livro.mjs';
 
 /** @param {unknown} valor */
@@ -17,11 +17,10 @@ export function escaparIncorporacao(valor) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-/** A recusa limita-se às marcas na fonte ou na data de acesso (ER1-c).
+/** A recusa usa o mesmo predicado da prova do Método (ER1-d).
  * @param {any} c */
 export function podeIncorporar(c) {
-  return !!c && !/\[a verificar\]/i.test(c.source ?? '') &&
-    !/\[a verificar\]/i.test(c.access_date ?? '');
+  return !!c && !provenienciaIncompleta(c);
 }
 
 /** @param {any} c @param {'pt'|'en'} lang */
