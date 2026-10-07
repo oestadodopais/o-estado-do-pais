@@ -344,9 +344,9 @@ const ORCAMENTO = [
   {
     chaves: FUNCOES.map((f) => `oe-2026-cem-euros-funcao-${f}`),
     partes: [
-      diz('É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central', 'It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function',
+      diz('É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central', 'It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure',
         L('derivation', 'Dividir a despesa efetiva consolidada desta função pela despesa efetiva consolidada da administração central'), L('derivation', 'multiplicar por cem')),
-      diz(' que o Orçamento prevê', ' that the Budget plans', O('rp4n-orcamento', 'Orçamento aprovado')),
+      diz(' que o Orçamento prevê', ' planned in the Budget', O('rp4n-orcamento', 'Orçamento aprovado')),
       SEM_FINANCEIRAS,
     ],
   },
@@ -363,18 +363,18 @@ const ORCAMENTO = [
   {
     chaves: MINISTERIOS.map((m) => `oe-2026-cem-euros-ministerio-${m}`),
     partes: [
-      diz('É quanto vai para este ministério em cada cem euros da despesa bruta da administração central', 'It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry',
+      diz('É quanto vai para este ministério em cada cem euros da despesa bruta da administração central', 'It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure',
         L('derivation', 'pela despesa bruta da administração central, multiplicar por cem')),
-      diz(' que o Orçamento prevê', ' that the Budget plans', O('rp4n-orcamento', 'Orçamento aprovado')),
+      diz(' que o Orçamento prevê', ' planned in the Budget', O('rp4n-orcamento', 'Orçamento aprovado')),
       BRUTA,
     ],
   },
   {
     chaves: ['oe-2026-cem-euros-ministerio-encargos-gerais-do-estado'],
     partes: [
-      diz('É quanto vai para os encargos gerais do Estado em cada cem euros da despesa bruta da administração central', 'It is how much of every hundred euros of central administration’s gross expenditure goes to the general charges of the State',
+      diz('É quanto vai para os encargos gerais do Estado em cada cem euros da despesa bruta da administração central', 'It is the amount for the general charges of the State out of every hundred euros of central administration’s gross expenditure',
         L('derivation', 'Dividir a despesa bruta dos Encargos Gerais do Estado pela despesa bruta da administração central, multiplicar por cem')),
-      diz(' que o Orçamento prevê', ' that the Budget plans', O('rp4n-orcamento', 'Orçamento aprovado')),
+      diz(' que o Orçamento prevê', ' planned in the Budget', O('rp4n-orcamento', 'Orçamento aprovado')),
       diz('; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania', '; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies',
         L('derivation', 'A igualdade referida na ressalva compara os Encargos Gerais do Estado com o programa 001, Órgãos de Soberania')),
       BRUTA,

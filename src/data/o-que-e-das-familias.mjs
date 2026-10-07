@@ -2034,7 +2034,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central que o Orçamento prevê: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function that the Budget plans: spending without transactions in financial assets and liabilities or transfers between its own services."
+        "It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure planned in the Budget: spending without transactions in financial assets and liabilities or transfers between its own services."
       ]
     }
   },
@@ -2044,7 +2044,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central que o Orçamento prevê: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function that the Budget plans: spending without transactions in financial assets and liabilities or transfers between its own services."
+        "It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure planned in the Budget: spending without transactions in financial assets and liabilities or transfers between its own services."
       ]
     }
   },
@@ -2054,7 +2054,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central que o Orçamento prevê: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function that the Budget plans: spending without transactions in financial assets and liabilities or transfers between its own services."
+        "It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure planned in the Budget: spending without transactions in financial assets and liabilities or transfers between its own services."
       ]
     }
   },
@@ -2064,7 +2064,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central que o Orçamento prevê: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function that the Budget plans: spending without transactions in financial assets and liabilities or transfers between its own services."
+        "It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure planned in the Budget: spending without transactions in financial assets and liabilities or transfers between its own services."
       ]
     }
   },
@@ -2074,7 +2074,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central que o Orçamento prevê: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function that the Budget plans: spending without transactions in financial assets and liabilities or transfers between its own services."
+        "It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure planned in the Budget: spending without transactions in financial assets and liabilities or transfers between its own services."
       ]
     }
   },
@@ -2084,7 +2084,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central que o Orçamento prevê: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function that the Budget plans: spending without transactions in financial assets and liabilities or transfers between its own services."
+        "It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure planned in the Budget: spending without transactions in financial assets and liabilities or transfers between its own services."
       ]
     }
   },
@@ -2094,7 +2094,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central que o Orçamento prevê: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function that the Budget plans: spending without transactions in financial assets and liabilities or transfers between its own services."
+        "It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure planned in the Budget: spending without transactions in financial assets and liabilities or transfers between its own services."
       ]
     }
   },
@@ -2104,7 +2104,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central que o Orçamento prevê: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function that the Budget plans: spending without transactions in financial assets and liabilities or transfers between its own services."
+        "It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure planned in the Budget: spending without transactions in financial assets and liabilities or transfers between its own services."
       ]
     }
   },
@@ -2114,7 +2114,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central que o Orçamento prevê: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function that the Budget plans: spending without transactions in financial assets and liabilities or transfers between its own services."
+        "It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure planned in the Budget: spending without transactions in financial assets and liabilities or transfers between its own services."
       ]
     }
   },
@@ -2124,7 +2124,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para esta função em cada cem euros da despesa efetiva consolidada da administração central que o Orçamento prevê: a despesa sem as operações com ativos e passivos financeiros nem as transferências entre os próprios serviços."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s consolidated effective expenditure goes to this function that the Budget plans: spending without transactions in financial assets and liabilities or transfers between its own services."
+        "It is the amount for this function out of every hundred euros of central administration’s consolidated effective expenditure planned in the Budget: spending without transactions in financial assets and liabilities or transfers between its own services."
       ]
     }
   },
@@ -2134,7 +2134,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2144,7 +2144,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2154,7 +2154,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2164,7 +2164,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2174,7 +2174,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2184,7 +2184,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2194,7 +2194,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2204,7 +2204,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para os encargos gerais do Estado em cada cem euros da despesa bruta da administração central que o Orçamento prevê; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to the general charges of the State that the Budget plans; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies."
+        "It is the amount for the general charges of the State out of every hundred euros of central administration’s gross expenditure planned in the Budget; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies."
       ]
     }
   },
@@ -2214,7 +2214,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2224,7 +2224,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2234,7 +2234,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2244,7 +2244,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2254,7 +2254,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2264,7 +2264,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2274,7 +2274,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
@@ -2284,7 +2284,7 @@ export const FAMILIAS_DAS_LINHAS = {
         "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
+        "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget."
       ]
     }
   },
