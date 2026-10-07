@@ -38,7 +38,7 @@
       fonte.lang = d.fonteLang;
       fonte.textContent = d.fonte;
       novo.appendChild(fonte);
-      novo.appendChild(document.createTextNode(', ' + d.leitura + ' · ' + d.atribuicao));
+      novo.appendChild(document.createTextNode((d.fonte === d.leitura ? '' : ', ' + d.leitura) + ' · ' + d.atribuicao));
       if (d.notas) {
         var notas = document.createElement('span');
         notas.textContent = d.notas;

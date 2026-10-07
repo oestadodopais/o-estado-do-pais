@@ -84,7 +84,7 @@ for (const lang of ['pt','en']) {
   const root = lerPaginaComCodigo(fs.readFileSync(`${dist}${caminhoCalculado}/index.html`,'utf8'));
   assert.deepEqual(conferirCodigo(root,matchPath(caminhoCalculado)),[]);
   const frase = lang==='pt'?'calculado por este projeto':'calculated by this project';
-  assert(root.querySelector('textarea').textContent.includes(', '+frase+' · '));
+  assert.equal(root.querySelector('textarea').textContent.split(frase).length-1,1, 'ER1 calculado: a indicação de cálculo tem de aparecer uma vez.');
   root.querySelector('textarea').remove();
   const mensagem = 'ER1 código: falta o único código do recibo.';
   assert(conferirCodigo(root,matchPath(caminhoCalculado)).includes(mensagem));
