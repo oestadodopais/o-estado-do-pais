@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { contarFrasesDasMudancas, errosDoSeloDaDefinicao } from '../tests/explicacoes/o-que-e.mjs';
 import { conferirLugaresIA } from './lugares-ia-do-portao.mjs';
+import { conferirSemMarcadores } from './sem-marcadores.mjs';
 import { conferirValorUnidade } from './valor-unidade.mjs';
 import { nomeNoRegistoAdmitido } from './nome-no-registo.mjs';
 import { conferirCampoRelido, valorRelidoAqui, conferirVerificacaoLegivel, conferirValorDeProveniencia, conferirHistoricoLegivel } from './verificacao-legivel.mjs';
@@ -4678,6 +4679,9 @@ for (const file of ficheirosHtml(DIST)) {
     verificaDocumento({ rota, rel, caminho, html, root, err });
     continue;
   }
+
+  const marcadorRP4N = conferirSemMarcadores(root);
+  if (marcadorRP4N) err(marcadorRP4N);
 
   if (rota?.key === 'estudo') {
     const canonicas = root.querySelectorAll('link[rel="canonical"]');
