@@ -1,0 +1,6 @@
+
+> o-estado-do-pais@0.1.0 typecheck
+> tsc -p tsconfig.check.json
+
+src/lib/o-que-e-o-numero.mjs(139,47): error TS2339: Property 'computed_over' does not exist on type '{}'.
+src/lib/o-que-e-o-numero.mjs(141,69): error TS7006: Parameter 'x' implicitly has an 'any' type.

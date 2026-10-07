@@ -1,0 +1,2268 @@
+{
+  "comando": "node design/especime-v3/medicoes/rp4n-2026-10-06/medir-d.mjs",
+  "cabeca": "b72eac200831e8e5904ac0c1567b56eec1fac130",
+  "totais": {
+    "paginas": 38,
+    "aceites": 244,
+    "recusadas": 0
+  },
+  "tipos": {
+    "aceites": {
+      "data": {
+        "ocorrencias": 44,
+        "paginas": [
+          {
+            "pagina": "dist/agenda/index.html",
+            "ocorrencias": 11
+          },
+          {
+            "pagina": "dist/areas/ambiente-e-energia/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/agenda/index.html",
+            "ocorrencias": 11
+          },
+          {
+            "pagina": "dist/en/areas/ambiente-e-energia/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/ledger/index.html",
+            "ocorrencias": 5
+          },
+          {
+            "pagina": "dist/en/ledger/saldo-natural-portugal-2025/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/index.html",
+            "ocorrencias": 5
+          },
+          {
+            "pagina": "dist/livro-razao/saldo-natural-portugal-2025/index.html",
+            "ocorrencias": 1
+          }
+        ]
+      },
+      "excerto": {
+        "ocorrencias": 32,
+        "paginas": [
+          {
+            "pagina": "dist/en/ledger/agua-nao-faturada-portugal-2024/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/ledger/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/ledger/evora-prr-aprovado-2026/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/ledger/evora-prr-pago-2026/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/ledger/evora-prr-vencido-aprovado-2026/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/ledger/saldo-natural-portugal-2025/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/agua-nao-faturada-portugal-2024/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/evora-prr-aprovado-2026/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/evora-prr-pago-2026/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/evora-prr-vencido-aprovado-2026/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/saldo-natural-portugal-2025/index.html",
+            "ocorrencias": 2
+          }
+        ]
+      },
+      "endereco": {
+        "ocorrencias": 20,
+        "paginas": [
+          {
+            "pagina": "dist/en/ledger/agua-nao-faturada-portugal-2024/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/ledger/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/ledger/saldo-natural-portugal-2025/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/agua-nao-faturada-portugal-2024/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/livro-razao/saldo-natural-portugal-2025/index.html",
+            "ocorrencias": 2
+          }
+        ]
+      },
+      "pessoa-I77": {
+        "ocorrencias": 6,
+        "paginas": [
+          {
+            "pagina": "dist/en/municipalities/evora/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/estudos/evora-quem-governou-a-camara-2009-2025/documento/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/estudos/evora-quem-governou-a-camara-2009-2025/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/municipios/evora/index.html",
+            "ocorrencias": 1
+          }
+        ]
+      },
+      "referencia-metodo": {
+        "ocorrencias": 2,
+        "paginas": [
+          {
+            "pagina": "dist/en/method/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/metodo/index.html",
+            "ocorrencias": 1
+          }
+        ]
+      },
+      "referencia-sobre": {
+        "ocorrencias": 0,
+        "paginas": []
+      },
+      "selo-proveniencia": {
+        "ocorrencias": 106,
+        "paginas": [
+          {
+            "pagina": "dist/areas/ambiente-e-energia/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/areas/economia-e-coesao-territorial/index.html",
+            "ocorrencias": 5
+          },
+          {
+            "pagina": "dist/correcoes/index.html",
+            "ocorrencias": 9
+          },
+          {
+            "pagina": "dist/en/areas/ambiente-e-energia/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/areas/economia-e-coesao-territorial/index.html",
+            "ocorrencias": 5
+          },
+          {
+            "pagina": "dist/en/corrections/index.html",
+            "ocorrencias": 9
+          },
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/index.html",
+            "ocorrencias": 8
+          },
+          {
+            "pagina": "dist/en/ledger/saldo-natural-portugal-2025/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/municipalities/evora/index.html",
+            "ocorrencias": 4
+          },
+          {
+            "pagina": "dist/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html",
+            "ocorrencias": 13
+          },
+          {
+            "pagina": "dist/en/studies/evora-prometido-pago-auditado-2026/index.html",
+            "ocorrencias": 8
+          },
+          {
+            "pagina": "dist/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html",
+            "ocorrencias": 13
+          },
+          {
+            "pagina": "dist/estudos/evora-prometido-pago-auditado-2026/index.html",
+            "ocorrencias": 8
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/index.html",
+            "ocorrencias": 8
+          },
+          {
+            "pagina": "dist/livro-razao/saldo-natural-portugal-2025/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/municipios/evora/index.html",
+            "ocorrencias": 4
+          }
+        ]
+      },
+      "publicador": {
+        "ocorrencias": 12,
+        "paginas": [
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/index.html",
+            "ocorrencias": 3
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/index.html",
+            "ocorrencias": 3
+          }
+        ]
+      },
+      "titulo-documento": {
+        "ocorrencias": 8,
+        "paginas": [
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/saldo-natural-portugal-2025/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/saldo-natural-portugal-2025/index.html",
+            "ocorrencias": 1
+          }
+        ]
+      },
+      "edicao-documento": {
+        "ocorrencias": 8,
+        "paginas": [
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/en/ledger/saldo-natural-portugal-2025/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-abertos/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/ciclo-substituicao-condutas/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/saldo-natural-portugal-2025/index.html",
+            "ocorrencias": 1
+          }
+        ]
+      },
+      "referencia-no-livro": {
+        "ocorrencias": 2,
+        "paginas": [
+          {
+            "pagina": "dist/en/ledger/index.html",
+            "ocorrencias": 1
+          },
+          {
+            "pagina": "dist/livro-razao/index.html",
+            "ocorrencias": 1
+          }
+        ]
+      },
+      "pagina-da-marca": {
+        "ocorrencias": 4,
+        "paginas": [
+          {
+            "pagina": "dist/a-verificar/index.html",
+            "ocorrencias": 2
+          },
+          {
+            "pagina": "dist/en/to-verify/index.html",
+            "ocorrencias": 2
+          }
+        ]
+      }
+    },
+    "recusadas": {
+      "o-que-e-linha": {
+        "ocorrencias": 0,
+        "paginas": []
+      },
+      "o-que-e-familia": {
+        "ocorrencias": 0,
+        "paginas": []
+      },
+      "o-que-e-serie": {
+        "ocorrencias": 0,
+        "paginas": []
+      },
+      "nome-medida": {
+        "ocorrencias": 0,
+        "paginas": []
+      },
+      "nome-serie": {
+        "ocorrencias": 0,
+        "paginas": []
+      },
+      "nome-lugar": {
+        "ocorrencias": 0,
+        "paginas": []
+      },
+      "titulo-estudo": {
+        "ocorrencias": 0,
+        "paginas": []
+      },
+      "leitura-cartao": {
+        "ocorrencias": 0,
+        "paginas": []
+      },
+      "primeira-pagina": {
+        "ocorrencias": 0,
+        "paginas": []
+      },
+      "explicacao": {
+        "ocorrencias": 0,
+        "paginas": []
+      },
+      "fora-dos-tipos": {
+        "ocorrencias": 0,
+        "paginas": []
+      }
+    }
+  },
+  "paginas": [
+    {
+      "pagina": "dist/a-verificar/index.html",
+      "sha256": "162ededd8529c84bea662c7661f7e302a6aa4eccb82b8a223ad4e6ab035685ed",
+      "aceites": [
+        {
+          "tipo": "pagina-da-marca",
+          "superficie": "pagina-da-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (pagina-da-marca)",
+          "contexto": "O marcador [a verificar] · O Estado do País"
+        },
+        {
+          "tipo": "pagina-da-marca",
+          "superficie": "pagina-da-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (pagina-da-marca)",
+          "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/agenda/index.html",
+      "sha256": "4431015979ad1e61a27b5fbfdd91a5fb875eb83d5cc7b7370f5fc463ae919cc4",
+      "aceites": [
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado a fonte não publica data"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] a fonte não publica data"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] a fonte não publica data"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] a fonte não publica data"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] a fonte não publica data"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] a fonte não publica data"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] a fonte não foi lida"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] a fonte não publica data"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] a fonte não publica data"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] a fonte não publica data"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] a fonte não publica data"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/areas/ambiente-e-energia/index.html",
+      "sha256": "d6041176c6d6b040ca90ada62b7e500529ca35439140fb7bafa0f927510683f5",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · ERSAR[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "reference_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte[a verificar]"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/areas/economia-e-coesao-territorial/index.html",
+      "sha256": "7fa9ae882ceeb98696928784314267c7ed88163f911872e3961304d028d5bf9f",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/correcoes/index.html",
+      "sha256": "9fe1c89294872e3bcf80b2f74e513f29035e377ea0756aed53b8364a18572f7f",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/agenda/index.html",
+      "sha256": "5e5ed021bb7f937c99e1acb0d3bf144c7718806db87048bd7e77dcc7e8f4cd71",
+      "aceites": [
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] · a field not confirmed against the source, not a doubt about what is published the source publishes no date"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] the source publishes no date"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] the source publishes no date"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] the source publishes no date"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] the source publishes no date"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] the source publishes no date"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] the source was not read"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] the source publishes no date"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] the source publishes no date"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] the source publishes no date"
+        },
+        {
+          "tipo": "data",
+          "superficie": "data",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] the source publishes no date"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/areas/ambiente-e-energia/index.html",
+      "sha256": "225ab744f2fe55ac56df46db71c9c15027e38d9ba0992d5bca161d7e9852f2d2",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · ERSAR[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "reference_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source[a verificar]"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/areas/economia-e-coesao-territorial/index.html",
+      "sha256": "856baa9ffe7ab88f40f7626b3312f204837fb23d2558645c4be2afc645ad2600",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/corrections/index.html",
+      "sha256": "36abb5410729592a87515ba096aeda3313ede8476ba3c53a6f886e3401528e63",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/ledger/agua-nao-faturada-portugal-2024/index.html",
+      "sha256": "ad2fe7c656e3ed8b3c96ca731983fde9069317fc3296fbd4547f3c29c174879e",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "source_url",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProofExcerpt[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published The textual excerpt for this row has not been transcribed from the source yet."
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "endereco",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "Address[a verificar] (to verify)"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/ledger/avisos-pt2030-abertos/index.html",
+      "sha256": "e9396f964454e510dd4fe56fe2250773b9182bb325375d55c673e33773b9d622",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "source_url",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "publicador",
+          "superficie": "source",
+          "mensagem": "RP4N: marca aceite provisoriamente (publicador)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "titulo-documento",
+          "superficie": "document.title",
+          "mensagem": "RP4N: marca aceite provisoriamente (titulo-documento)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "edicao-documento",
+          "superficie": "document.edition",
+          "mensagem": "RP4N: marca aceite provisoriamente (edicao-documento)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProofExcerpt[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published The textual excerpt for this row has not been transcribed from the source yet."
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "endereco",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "Address[a verificar] (to verify)"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "Published by[a verificar] (to verify)Document[a verificar] (to verify)Edition[a verificar] (to verify)Data for08.08.2026StudyWhich Door Is Yours — public funding in Portugal, August 2026"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html",
+      "sha256": "c16bf19356dde44f70c27c3547e0842365fcfdb52ec9ace3cee8947a562e7249",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "source_url",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "publicador",
+          "superficie": "source",
+          "mensagem": "RP4N: marca aceite provisoriamente (publicador)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "titulo-documento",
+          "superficie": "document.title",
+          "mensagem": "RP4N: marca aceite provisoriamente (titulo-documento)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "edicao-documento",
+          "superficie": "document.edition",
+          "mensagem": "RP4N: marca aceite provisoriamente (edicao-documento)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProofExcerpt[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published The textual excerpt for this row has not been transcribed from the source yet."
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "endereco",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "Address[a verificar] (to verify)"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "Published by[a verificar] (to verify)Document[a verificar] (to verify)Edition[a verificar] (to verify)Data for08.08.2026StudyWhich Door Is Yours — public funding in Portugal, August 2026"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/ledger/ciclo-substituicao-condutas/index.html",
+      "sha256": "aeabdd9695c28271e777fdf4e44acd3f1a1d7d0bb1cea1e0deceba2cc5f60780",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "source_url",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "publicador",
+          "superficie": "source",
+          "mensagem": "RP4N: marca aceite provisoriamente (publicador)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "titulo-documento",
+          "superficie": "document.title",
+          "mensagem": "RP4N: marca aceite provisoriamente (titulo-documento)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "edicao-documento",
+          "superficie": "document.edition",
+          "mensagem": "RP4N: marca aceite provisoriamente (edicao-documento)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "data",
+          "superficie": "reference_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProofExcerpt[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published The textual excerpt for this row has not been transcribed from the source yet."
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "endereco",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "Address[a verificar] (to verify)"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "Published by[a verificar] (to verify)Document[a verificar] (to verify)Edition[a verificar] (to verify)Data for[a verificar] (to verify)StudyÁgua Não Faturada"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/ledger/evora-prr-aprovado-2026/index.html",
+      "sha256": "e41edbd8212f5539d47215d223ab98f939d8baca849a2f0fc2d95f383cf11557",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProofComputed overlistagem-de-entidades-prr-20260819.xlsx · snapshot of 19.08.2026 · sha256 34f6e5b555f5… · copy archived by the Internet Archivecolumn valor_contratado · filter papel_entidade ∈ {Beneficiário Intermediário, Beneficiário Direto} · localizacao_s"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/ledger/evora-prr-pago-2026/index.html",
+      "sha256": "d0f2e6344ee35d01a45ea5878ba210d0f8b134358bf4196ed12de0b9a0c08eeb",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProofComputed overlistagem-de-entidades-prr-20260819.xlsx · snapshot of 19.08.2026 · sha256 34f6e5b555f5… · copy archived by the Internet Archivecolumn valor_pago · filter papel_entidade ∈ {Beneficiário Intermediário, Beneficiário Direto} · localizacao_sede = "
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/ledger/evora-prr-vencido-aprovado-2026/index.html",
+      "sha256": "1005e8a030780911fb70dc5bc5af27de8f2657f40953c027ef8cc72ecde1d6a8",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProofComputed overlistagem-de-entidades-prr-20260819.xlsx · snapshot of 19.08.2026 · sha256 34f6e5b555f5… · copy archived by the Internet Archivelistagem-de-projetos-prr-20260819.xlsx · snapshot of 19.08.2026 · sha256 121122320839… · copy archived by the Inter"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/ledger/index.html",
+      "sha256": "6e0e0ceeb2d5dfb07a24542337018bcd5726f2c811d82b2e57922d777946c47d",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · ERSAR[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source[a verificar]"
+        },
+        {
+          "tipo": "publicador",
+          "superficie": "source",
+          "mensagem": "RP4N: marca aceite provisoriamente (publicador)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source[a verificar]"
+        },
+        {
+          "tipo": "publicador",
+          "superficie": "source",
+          "mensagem": "RP4N: marca aceite provisoriamente (publicador)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "reference_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "publicador",
+          "superficie": "source",
+          "mensagem": "RP4N: marca aceite provisoriamente (publicador)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · PORDATA[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "referencia-no-livro",
+          "superficie": "referencia-no-livro",
+          "mensagem": "RP4N: marca aceite provisoriamente (referencia-no-livro)",
+          "contexto": "[a verificar] (to verify)"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/ledger/saldo-natural-portugal-2025/index.html",
+      "sha256": "544e45848e8b6a155fe5d4ec1bdc702e42756fa490a3a07539d6f655265f8c07",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published"
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "source_url",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "titulo-documento",
+          "superficie": "document.title",
+          "mensagem": "RP4N: marca aceite provisoriamente (titulo-documento)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "edicao-documento",
+          "superficie": "document.edition",
+          "mensagem": "RP4N: marca aceite provisoriamente (edicao-documento)",
+          "contexto": "[a verificar] (to verify)"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProofExcerpt[a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is published The textual excerpt for this row has not been transcribed from the source yet."
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "endereco",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "Address[a verificar] (to verify)"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "Published byPORDATADocument[a verificar] (to verify)Edition[a verificar] (to verify)Data for2025StudyEvolução de Portugal desde 1981"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/method/index.html",
+      "sha256": "47f2acf8e739fcdca3b887a155d90c5c00938a80e1f5654fce1e9b8c91851d1a",
+      "aceites": [
+        {
+          "tipo": "referencia-metodo",
+          "superficie": "referencia-metodo",
+          "mensagem": "RP4N: marca aceite provisoriamente (referencia-metodo)",
+          "contexto": "Beside every measurement there is a seal that opens its row: filled when the origin is complete, dashed when a field is missing. A missing field is written [a verificar] (to verify) · a field not confirmed against the source, not a doubt about what is publishe"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/municipalities/evora/index.html",
+      "sha256": "b56dc4dea4bcec6f600cc75dd0dce0093163cff6f6e3b7a6c73e337428011ec0",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "pessoa-I77",
+          "superficie": "pessoa-I77",
+          "mensagem": "RP4N: marca aceite provisoriamente (pessoa-I77)",
+          "contexto": "José Ernesto d’Oliveira, then Manuel Melgão [a verificar] (to verify) from 01.05.2013"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html",
+      "sha256": "06683622f9bb6e4edc3ba0f789f51db4120e6b2cd5b1d9015e87612b7f62d573",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/studies/evora-prometido-pago-auditado-2026/index.html",
+      "sha256": "6597584407b3073f3034d0e309820d1c67eb6b13625aa54cee35b3deaaf4c432",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "source · Estrutura de Missão Recuperar Portugal[a verificar]"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/en/to-verify/index.html",
+      "sha256": "1f7ce7f077325f18bff399e0bcd09840635575efbb80dc32716ed6adaac5a1cf",
+      "aceites": [
+        {
+          "tipo": "pagina-da-marca",
+          "superficie": "pagina-da-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (pagina-da-marca)",
+          "contexto": "The [a verificar] marker · O Estado do País"
+        },
+        {
+          "tipo": "pagina-da-marca",
+          "superficie": "pagina-da-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (pagina-da-marca)",
+          "contexto": "[a verificar] · a field not confirmed against the source, not a doubt about what is published"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html",
+      "sha256": "8bbc65a697e8555e6c2dd96d8e42765a64291f911494b05cbb214acb0346a68b",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/estudos/evora-prometido-pago-auditado-2026/index.html",
+      "sha256": "d30ecb8046f9aeefaeed857bcf7a291d3529939f887ca54a2c65496bc90b5fb3",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/estudos/evora-quem-governou-a-camara-2009-2025/documento/index.html",
+      "sha256": "1418c1a3a9cbcb4e54555bb7db83edf2f64b1d5575e2528c95ded2e4e7101b2c",
+      "aceites": [
+        {
+          "tipo": "pessoa-I77",
+          "superficie": "pessoa-I77",
+          "mensagem": "RP4N: marca aceite provisoriamente (pessoa-I77)",
+          "contexto": "Quem governou a Câmara de Évora, 2009 a 2025: as eleições, os executivos, os pelouros e as decisões Em resumo Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo? Este estudo junta os resultados o"
+        },
+        {
+          "tipo": "pessoa-I77",
+          "superficie": "pessoa-I77",
+          "mensagem": "RP4N: marca aceite provisoriamente (pessoa-I77)",
+          "contexto": "Quem governou a Câmara de Évora, 2009 a 2025: as eleições, os executivos, os pelouros e as decisões Em resumo Quem governou a Câmara de Évora desde 2009, com que maioria, quem teve cada pelouro, e o que decidiu cada executivo? Este estudo junta os resultados o"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/estudos/evora-quem-governou-a-camara-2009-2025/index.html",
+      "sha256": "1f47a0177f51027845e0ec4ee5972963452babfc2bea8e6bcafe0756e42e0e3c",
+      "aceites": [
+        {
+          "tipo": "pessoa-I77",
+          "superficie": "pessoa-I77",
+          "mensagem": "RP4N: marca aceite provisoriamente (pessoa-I77)",
+          "contexto": "Secção 4 de 13Os limites deste documentoUm partido é dono das suas decisões, não de uma curva. As decisões — entrar num programa de apoio do Estado, contratar um empréstimo, assinar um acordo de pagamento de dívida, fixar uma taxa de imposto — são atos de um e"
+        },
+        {
+          "tipo": "pessoa-I77",
+          "superficie": "pessoa-I77",
+          "mensagem": "RP4N: marca aceite provisoriamente (pessoa-I77)",
+          "contexto": "Secção 4 de 13Os limites deste documentoUm partido é dono das suas decisões, não de uma curva. As decisões — entrar num programa de apoio do Estado, contratar um empréstimo, assinar um acordo de pagamento de dívida, fixar uma taxa de imposto — são atos de um e"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/livro-razao/agua-nao-faturada-portugal-2024/index.html",
+      "sha256": "9c567ca5ab364bf68eea581c88ba3dc7ce26b17111160863a4f9c1bf4458f764",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "source_url",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProvaExcerto[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado O excerto textual desta linha ainda não foi transcrito da fonte."
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "endereco",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "Endereço[a verificar]"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/livro-razao/avisos-pt2030-abertos/index.html",
+      "sha256": "3105b11f998d477b3409dc293d1148f97516fba4bdfc4c63926d8f45ba920843",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "source_url",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "publicador",
+          "superficie": "source",
+          "mensagem": "RP4N: marca aceite provisoriamente (publicador)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "titulo-documento",
+          "superficie": "document.title",
+          "mensagem": "RP4N: marca aceite provisoriamente (titulo-documento)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "edicao-documento",
+          "superficie": "document.edition",
+          "mensagem": "RP4N: marca aceite provisoriamente (edicao-documento)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProvaExcerto[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado O excerto textual desta linha ainda não foi transcrito da fonte."
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "endereco",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "Endereço[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "Publicado por[a verificar]Documento[a verificar]Edição[a verificar]Dados de08.08.2026EstudoWhich Door Is Yours — public funding in Portugal, August 2026"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html",
+      "sha256": "fb032c2d1b670265b04e651459d7e2f68427ee00a89fb187391adf18aee8c6b2",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "source_url",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "publicador",
+          "superficie": "source",
+          "mensagem": "RP4N: marca aceite provisoriamente (publicador)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "titulo-documento",
+          "superficie": "document.title",
+          "mensagem": "RP4N: marca aceite provisoriamente (titulo-documento)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "edicao-documento",
+          "superficie": "document.edition",
+          "mensagem": "RP4N: marca aceite provisoriamente (edicao-documento)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProvaExcerto[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado O excerto textual desta linha ainda não foi transcrito da fonte."
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "endereco",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "Endereço[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "Publicado por[a verificar]Documento[a verificar]Edição[a verificar]Dados de08.08.2026EstudoWhich Door Is Yours — public funding in Portugal, August 2026"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/livro-razao/ciclo-substituicao-condutas/index.html",
+      "sha256": "610660c35d85ffef25f9bd87f0dc3a21b8ac25f8f6ebde8156ec2a1d5e6b3192",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "source_url",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "publicador",
+          "superficie": "source",
+          "mensagem": "RP4N: marca aceite provisoriamente (publicador)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "titulo-documento",
+          "superficie": "document.title",
+          "mensagem": "RP4N: marca aceite provisoriamente (titulo-documento)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "edicao-documento",
+          "superficie": "document.edition",
+          "mensagem": "RP4N: marca aceite provisoriamente (edicao-documento)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "reference_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProvaExcerto[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado O excerto textual desta linha ainda não foi transcrito da fonte."
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "endereco",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "Endereço[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "Publicado por[a verificar]Documento[a verificar]Edição[a verificar]Dados de[a verificar]EstudoÁgua Não Faturada"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/livro-razao/evora-prr-aprovado-2026/index.html",
+      "sha256": "59a59d3fd1a2b112a6cde7ca894b6c7a5de91dad189bbe8a3f8a0ca209afddf8",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProvaCalculado sobrelistagem-de-entidades-prr-20260819.xlsx · instantâneo de 19.08.2026 · sha256 34f6e5b555f5… · cópia arquivada pelo Internet Archivecoluna valor_contratado · filtro papel_entidade ∈ {Beneficiário Intermediário, Beneficiário Direto} · localiza"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/livro-razao/evora-prr-pago-2026/index.html",
+      "sha256": "ff72a97e8602a33b7398a091edf617c75adb00858880cd3efe39db18ea10e0e4",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProvaCalculado sobrelistagem-de-entidades-prr-20260819.xlsx · instantâneo de 19.08.2026 · sha256 34f6e5b555f5… · cópia arquivada pelo Internet Archivecoluna valor_pago · filtro papel_entidade ∈ {Beneficiário Intermediário, Beneficiário Direto} · localizacao_se"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/livro-razao/evora-prr-vencido-aprovado-2026/index.html",
+      "sha256": "966c5052ef96de0892528329fdc9888d667c54622bf640dd5bad4ae9c50cc1af",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProvaCalculado sobrelistagem-de-entidades-prr-20260819.xlsx · instantâneo de 19.08.2026 · sha256 34f6e5b555f5… · cópia arquivada pelo Internet Archivelistagem-de-projetos-prr-20260819.xlsx · instantâneo de 19.08.2026 · sha256 121122320839… · cópia arquivada pe"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/livro-razao/index.html",
+      "sha256": "263f6dac7c87c74ff8d07b85b4fe46e13c885c6e107e3f2ce7df3f6d97672118",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · ERSAR[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte[a verificar]"
+        },
+        {
+          "tipo": "publicador",
+          "superficie": "source",
+          "mensagem": "RP4N: marca aceite provisoriamente (publicador)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte[a verificar]"
+        },
+        {
+          "tipo": "publicador",
+          "superficie": "source",
+          "mensagem": "RP4N: marca aceite provisoriamente (publicador)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "reference_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "publicador",
+          "superficie": "source",
+          "mensagem": "RP4N: marca aceite provisoriamente (publicador)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · PORDATA[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "referencia-no-livro",
+          "superficie": "referencia-no-livro",
+          "mensagem": "RP4N: marca aceite provisoriamente (referencia-no-livro)",
+          "contexto": "[a verificar]"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/livro-razao/saldo-natural-portugal-2025/index.html",
+      "sha256": "7e627533f08c251250954923a66c75a4d3d476d0055315f63aed1b853d044798",
+      "aceites": [
+        {
+          "tipo": "excerto",
+          "superficie": "excerpt",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado"
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "source_url",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "data",
+          "superficie": "access_date",
+          "mensagem": "RP4N: marca aceite provisoriamente (data)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "titulo-documento",
+          "superficie": "document.title",
+          "mensagem": "RP4N: marca aceite provisoriamente (titulo-documento)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "edicao-documento",
+          "superficie": "document.edition",
+          "mensagem": "RP4N: marca aceite provisoriamente (edicao-documento)",
+          "contexto": "[a verificar]"
+        },
+        {
+          "tipo": "excerto",
+          "superficie": "excerto",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (excerto)",
+          "contexto": "ProvaExcerto[a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado O excerto textual desta linha ainda não foi transcrito da fonte."
+        },
+        {
+          "tipo": "endereco",
+          "superficie": "endereco",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (endereco)",
+          "contexto": "Endereço[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "atributo": "data-marca",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "Publicado porPORDATADocumento[a verificar]Edição[a verificar]Dados de2025EstudoEvolução de Portugal desde 1981"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/metodo/index.html",
+      "sha256": "2c18c7f83e3f3a7f5ba1693e25671c05094d5bb368bf7be2810d62359fa0ebb0",
+      "aceites": [
+        {
+          "tipo": "referencia-metodo",
+          "superficie": "referencia-metodo",
+          "mensagem": "RP4N: marca aceite provisoriamente (referencia-metodo)",
+          "contexto": "Ao lado de cada medição há um selo que abre a sua linha: cheio quando a origem está completa, a tracejado quando falta um campo. Um campo em falta escreve-se [a verificar] · um campo não confirmado contra a fonte, e não uma dúvida sobre o que está publicado; a"
+        }
+      ],
+      "recusadas": []
+    },
+    {
+      "pagina": "dist/municipios/evora/index.html",
+      "sha256": "bb0b1a0cab43d49cf0a7f9ecbc5e1f3182cf540b210f215652e39456c622d454",
+      "aceites": [
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "selo-proveniencia",
+          "superficie": "selo-proveniencia",
+          "mensagem": "RP4N: marca aceite provisoriamente (selo-proveniencia)",
+          "contexto": "fonte · Estrutura de Missão Recuperar Portugal[a verificar]"
+        },
+        {
+          "tipo": "pessoa-I77",
+          "superficie": "pessoa-I77",
+          "mensagem": "RP4N: marca aceite provisoriamente (pessoa-I77)",
+          "contexto": "José Ernesto d’Oliveira, depois Manuel Melgão [a verificar] a partir de 01.05.2013"
+        }
+      ],
+      "recusadas": []
+    }
+  ]
+}

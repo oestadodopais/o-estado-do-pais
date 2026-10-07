@@ -261,7 +261,7 @@ A proibição do nome percorre também as alternativas `ou` e os apoios misturad
 
 ## Pacote da leitura a frio
 
-Há 5 cópias com estragos em `leitura-frio/`, com as mensagens esperadas em `leitura-frio/plantas.json`. `plantar-copias.mjs` volta a ler os ficheiros e afirma a mensagem de cada falha. O diff do motor está em `leitura-frio/motor.diff`; os corpos completos continuam na worktree do motor.
+O pacote desta passagem antiga foi retirado da história na reconstrução RP4-n-d: continha cópias com estragos e o diff do motor privado. Não existe na história do ramo reconstruído. O fecho e o pacote válido estão na secção «A passagem RP4-n-d».
 
 Os recibos HTML completos, antes e depois, estão nas pastas `antes/recibos/` e `depois/recibos/`. Incluem Orçamento, execução, Évora, Madeira, pensão e uma série do Eurostat, nas duas edições. As imagens estão em `design/especime-v3/capturas/rp4n-2026-10-06/`. Os tamanhos e resumos de cada captura estão nos respetivos `capturas.json`.
 
@@ -707,3 +707,206 @@ Commits da passagem antes do commit final do relatório e dos códigos:
 ```
 
 O último commit contém apenas este relatório e os ficheiros dos códigos. A cabeça final comunica-se no fecho. O mandato identifica o construtor como Codex `gpt-6-astra`, com raciocínio `xhigh`.
+
+## A passagem RP4-n-d
+
+Esta secção substitui as conclusões de fecho das passagens anteriores. O lançamento foi a 07.10.2026, no ramo `rp4n-2026-10-07`, conforme a alteração expressa à data do mandato. O trabalho é de construção e correção, para conferência da direção. Não houve publicação nem envio ao remoto.
+
+### A forma e a fusão
+
+A base foi `d1becbf8`. A fusão `d28b9755` entrou primeiro, trazendo `main` em `f3aaa3e7`. Os 26 commits antigos foram reaplicados, um a um, sem a pasta `design/especime-v3/medicoes/rp4n-2026-10-06/leitura-frio/`. Não se fez uma eliminação posterior dessa pasta: os novos commits nunca a receberam. As referências anteriores deste relatório às cópias com estragos e ao diff privado descrevem o ramo abandonado e não são uma entrega desta passagem. Não foram criadas plantas de leitura a frio pelo construtor. `d/reconstrucao.json` emparelha as 26 reaplicações, com os assuntos conferidos.
+
+Nos conflitos, as importações de EX2 e H4 e as de RP4-n ficaram juntas; `TituloDeTrabalho.astro` conserva o tratamento de língua de EX2 e a recusa de título não confirmado; `check-pais.mjs` conserva a proteção global A4 e a recusa da bandeira, retirando apenas a verificação redundante que usava uma variável inexistente; as plantas de `tests/pais/pais.mjs` foram reunidas. O inventário de frases e o seu registo de revisões conservam os dois conjuntos de entradas. Não se descartou um lado inteiro.
+
+`package-lock.json` não mudou com a reconstrução, pelo que não houve `npm ci`. A primeira corrida integral encontrou uma divergência de língua do título inglês da água; o código passou a conservar `pt-PT` nos dados e a normalizá-lo para `pt` no HTML. A segunda encontrou a planta W4 de EX2 dependente de uma ausência real que RP4-n já tinha fechado; a planta passou a introduzir a ausência numa cópia de prova. A terceira corrida, na cabeça `8ffe7e48`, deu zero nos três portões. Só depois começaram as correções do mandato. As duas tentativas e o verde estão em `portoes-fusao-tentativa1/`, `portoes-fusao-tentativa2/` e `portoes-fusao/`.
+
+A regra 9 exigiu também retirar restos de caminhos já abreviados dos ficheiros herdados. O limpador passou a reconhecer essas estruturas, os dois comandos que tinham destinos locais fixos passaram a descobrir o repositório ou a usar o ambiente, e os resumos dos briefs isentos foram atualizados após a alteração mecânica. As plantas do limpador passaram. Os textos históricos mantêm os factos e a sua atribuição; só os caminhos foram substituídos.
+
+### Decisões por achado e proteção
+
+| Achado | Resultado nesta passagem | Proteção e prova |
+|---|---|---|
+| 1, 2, 3, 4, 12 | Estragos plantados pela direção nas cópias, sem alteração pedida. | Nenhuma planta do construtor foi acrescentada ao pacote. |
+| 5 | Água não faturada definida pela APA; nas duas contagens de avisos e no ciclo das condutas, ausência exata. | Busca em `busca-d.json`; RO1 e K16 prendem o excerto; K17 limita as ausências aos casos e às frases declaradas. |
+| 6 | Pedido das pensões repetido, falha de certificado conservada. A cópia local do PDF com o mesmo resumo permitiu ler a medida. Saiu «sem custo para o sistema». | O teste `publisher.rp4n_origens_test` confere o PDF, a legenda da página física 273 e o valor impresso. K17 prende a frase ao excerto literal da figura; uma planta retira a legenda. |
+| 7 | Os três nomes PRR seguem a seleção das frases. A data do instantâneo vem dos ficheiros da computação. RP4N-3 fecha para estas três linhas. | K17 recompõe a data marcada no recibo; a planta altera a data e é recusada contra o Excel selado. |
+| 8 | `nota-alcance` deixou de ser uma exceção. As notas dizem a falta de leitura do diploma regional e da meta nacional. | Plantas de `tests/cartao/rp4nb.mjs` recusam a marca numa nota de alcance. |
+| 9 | Lista fechada dos dois clientes reais, tipo do selo obrigatório e agente do utilizador separado do cliente nas dez origens. Saiu a comparação tautológica. | Plantas de cliente inventado, agente como cliente e selo incompleto; `rp4nd-disco.mjs` altera o exportado real, obtém a recusa pelo resumo e repõe os bytes. |
+| 10 | Filtro deixa de ser fonte. A coluna só vale com cabeçalho lido no Excel selado. As frases citam os papéis, a sede e as colunas de datas efetivamente lidos. | Quatro plantas no motor e sete no sítio: cabeçalho, corpo, seleção, soma, data e filtro indevido. |
+| 11 | História do ramo novo reconstruída sem a pasta indevida. A eliminação do ramo antigo continua bloqueada pelo gancho local, RP4N-10. | Comando e saída da prova de história abaixo. |
+| 13 | Conferências de séries e travessia contra a origem nos dois repositórios. | Códigos e lista de ficheiros em `portoes-d/`. |
+| 14 | A explicação não selada da despesa bruta deixa de se imprimir. | Exportação pelo motor e controlo da apresentação, sem alteração dos valores. |
+| 15 | Saldo primário, consolidação, diferenças de consolidação e saldos de gerência explicados por palavras da fonte. | K17 verifica os literais; plantas retiram as definições das diferenças e dos saldos de gerência. |
+| 16 | As duas famílias de VAB citam a frase que subtrai o consumo intermédio à produção. | Controlo das duas citações no teste RP4-n-d e conferência literal de K17. |
+| 17 | Madeira termina antes de «EMPREGADOS». A conta anual usa o cabeçalho «Orçamento Inicial»; o recorte mensal fica restrito ao seu período. | Planta troca o recorte anual pelo mensal e obtém recusa; teste do motor confere o corte e o cabeçalho anual. |
+| 18 | Ausência deixa de contar como definição inteiramente na fonte. | O teste exige as três famílias na lista que contém partes da casa. |
+| 19 | `data-marca` é contado, com o mesmo critério de aceitação. Uma classe visual isolada não dá dispensa. | Plantas de atributo nas duas línguas, atributos indevidos e texto com atributo contado duas vezes. |
+| 20 | Chips aceites pela direção nas páginas de estudos, áreas, correções, concelhos e índice. | Continuam ligados ao recibo de uma linha com proveniência incompleta; ficam para o bloco dos recibos. |
+| 21 | A frase inglesa identifica a despesa prevista no Orçamento sem a oração relativa deslocada. | K17 recompõe as três famílias nas duas línguas. |
+| 22 | Diferença anterior ao bloco entre nome e título documental, remetida ao bloco dos recibos. | Sem alteração fora do mandato. |
+| 23 | Capturas refeitas na cabeça do código, nas duas edições e nas cinco larguras. | Manifesto com cabeça, rotas, resumo de cada PNG, frase e transbordos; PNG incluídos no pacote. |
+
+As plantas acumuladas dos achados 5 a 18 estão em `tests/cartao/rp4n.mjs`; a alteração real do exportado está em `tests/cartao/rp4nd-disco.mjs`; a classificação das marcas e dos atributos está em `tests/cartao/rp4nb.mjs`. No motor, as proteções documentais estão em `publisher/rp4n_origens_test.py`, as computações PRR em `publisher/rp4n_prr_test.py` e a apresentação OE1 em `publisher/oe1_test.py`. Os controlos de cliente e selo também passam por `tests/cartao/origens-rp4n.mjs`, e os de cabeçalho e corpo da computação por `tests/cartao/computacoes-rp4n.mjs`.
+
+### Documentos lidos e limites da busca
+
+- **Água não faturada.** APA, «Eficiência hídrica, setor urbano», secção «Água não faturada», HTML obtido pelo cliente da casa em 07.10.2026. Define a percentagem da água entrada no sistema que não é faturada. Fica selado como `rp4n-agua-nao-faturada`. Não se atribui uma página a HTML.
+- **Condutas.** Procurado RASARP 2025, volume 1 e Anexo X. O documento não estava alojado nas árvores consultadas; os pedidos ao sítio oficial da ERSAR não responderam. Não se inventa uma página lida. O `SOURCES.md` do estudo antigo descreve 239 como cálculo do projeto, não como número publicado. **RP4N-8, [verify]:** falta confirmar a fonte e a correspondência entre reabilitação e substituição. Por isso se escreveu «A fonte deste cálculo ainda não foi confirmada.», em vez de afirmar que a fonte publica o número.
+- **Avisos PT2030.** Busca textual nos 646 PDFs selados do manifesto, correspondentes a 211 avisos, num total de 17 566 páginas. `busca-d.json` enumera cada documento, resumo, páginas lidas e páginas com os termos procurados. No MAR2030-2023-25, versão v0, a página física 6 define os beneficiários elegíveis, incluindo pessoas singulares; não define nem publica a contagem agregada do projeto. As duas frases dizem «Os avisos consultados não definem por palavras esta contagem.» A leitura foi textual e a contagem agregada não foi promovida a afirmação do publicador.
+- **Pensões.** `Relatorio_Final_GT_Reforma_Seg_Social_Jun_2026.pdf`, página física 273, página impressa 234, figura 8.4, «Decrementos por reforma antecipada: caso geral». O resumo da cópia recuperada coincide com o já declarado na linha. O pedido de 07.10.2026 voltou a falhar por certificado e ficou em `pensoes-d.pedido.json`; a cópia efetivamente lida ficou separada. **RP4N-2, [verify]:** o novo acesso HTTP continua por resolver; a leitura documental local deixou de estar impedida.
+- **PRR.** `listagem-de-entidades-prr-20260819.xlsx` e `listagem-de-projetos-prr-20260819.xlsx`, folha `Sheet1`, cabeçalho na primeira linha. Os corpos originais foram recuperados da cache e conferidos contra os resumos e tamanhos das linhas. Não se inventou um recibo HTTP desta recuperação. O motor relê os corpos, seleciona os beneficiários intermediários e diretos com sede em Évora, cruza os projetos e refaz as três somas. `computacoes-rp4n.json` publica apenas a prova dos cabeçalhos, literais, seleção e resultados, sem a lista nominal dos beneficiários.
+- **Termos do orçamento.** Síntese da Execução Orçamental de agosto de 2026: diferenças de consolidação na página física 83; saldo de gerência anterior na 87; conta consolidada e coluna de Orçamento Inicial na 49. São recortes novos do corpo já selado. A origem mensal não passa a ser uma origem anual genérica.
+- **VAB.** SEC 2010, segunda frase do excerto já selado: produção a preços de base menos consumo intermédio a preços de aquisição. A frase sobre a base de valorização deixou de servir como definição.
+
+### Verificações durante a construção
+
+As plantas do sítio passaram com 32 recusas afirmadas e os controlos da classificação das ausências e da definição do VAB. A suite das marcas passou com 77 plantas. A planta em disco da K16 foi executada sob a tranca comum e terminou a zero, com a reposição byte a byte conferida. A primeira tentativa de commit do novo teste do PRR no motor foi recusada porque a sua linha `PASS` não imprimia a quantidade de conferências no formato exigido pelo portão; as conferências tinham passado. Corrigiu-se a linha e repetiu-se o portão inteiro. A corrida seguinte encontrou as expectativas antigas do OE1, que exigiam a nota retirada pelo achado 14. Foram substituídas por controlos que exigem a ausência da nota não selada e conservam os avisos restantes; a suite do OE1 passou nas 72 conferências.
+
+Os primeiros portões do sítio após as correções detetaram a falta de localizador do novo rótulo manual da pensão e um erro de tipos no acesso à data do PRR. O localizador isolado não resolvia a regra de fundo: um `name` só entra por travessia do motor. Retirou-se esse campo manual e leu-se o recorte literal da página física 273, desde a legenda da figura até ao fim da nota de fonte. A frase apoia-se nesse `excerpt`. A regra da travessia ficou intacta; a conferência do livro passou. O acesso à data passou a ter tipo explícito e a verificar que os ficheiros são uma lista. As corridas estão em `portoes-d-tentativa1/` e `portoes-d-tentativa2/`.
+
+A terceira corrida do sítio chegou à voz e recusou quatro declarações antigas ainda vivas das notas de alcance. Foram marcadas como retiradas e entraram as quatro formas atuais. O inventário de rótulos foi recontado depois de ler as vinte diferenças: só mudaram as dez formas, nas duas línguas, dos três nomes PRR, do nome da pensão e da ressalva do salário mínimo, com as contagens conservadas. A revisão da voz ficou como por ler pela direção. A conferência da voz corrigida deu zero.
+
+**RP4N-9, resolvida na construção.** A tentativa seguinte passou o build, mas o `verify` encontrou três falhas na explicação herdada de `main`: dois apoios à ressalva retirada da despesa bruta, nas duas línguas, e a cópia do cliente anterior no selo da origem funcional. A origem passou a acompanhar o recibo corrigido no motor. Na explicação saiu apenas a oração final que afirmava a inclusão de operações financeiras e transferências na conta por ministério; conservou-se a distinção entre contas por função e por ministério, com os seus restantes apoios. A entrada histórica X12 continua a documentar a formulação anterior, e a entrada RP4N-9 explica a correção. Não se descartou a explicação nem a intenção da I215. X2 e X3 voltaram a zero contra os ficheiros do motor. O diagnóstico está em `portoes-d-tentativa4/verify.log`.
+
+Depois das capturas, o guião auxiliar que enumera os ficheiros conferidos parou ao tratar `destino` como campo obrigatório de um registo antigo de travessia. Foi corrigido para usar `src/data` por omissão, tal como o verificador do repositório. As conferências de séries e de travessia foram repetidas e deram zero; o registo enumera também as linhas e as séries, além dos ficheiros inteiros e dos corpos pedidos.
+
+### Pendências e custo
+
+Ficam os limites documentais explicitamente assinalados em RP4N-2 e RP4N-8, os chips e a diferença de título do bloco dos recibos, e a conferência independente da direção. Nenhuma destas ausências se disfarça de definição confirmada. Não se alteraram os números publicados.
+
+O mandato identifica o construtor como `gpt-6-astra`, raciocínio `high`. O runtime não expôs uma confirmação independente desse identificador nem uma linha «tokens used». Não se estima o custo nem se afirma que ficou abaixo do alvo de trezentos mil símbolos.
+
+### Conferência visual
+
+Foram vistas dez capturas: corte da pensão em português a 390 px e em inglês a 768 px; água em inglês a 1600 px; PRR contratado em português a 390 px e vencido em inglês a 1024 px; Madeira em português a 1024 px; orçamento em inglês a 1280 px; VAB em português a 1600 px; saldo primário em inglês a 390 px; diferenças de consolidação em português a 768 px. As frases e a data do PRR estão visíveis e não se encontrou corte de conteúdo nem sobreposição na amostra. Os recibos PRR continuam longos por conservarem a história das correções. A verificação automática cobre todas as 140 capturas. A página física 273 do PDF das pensões também foi renderizada e vista: confirma a legenda, a nota da fonte e o corte acumulado de 8,2% aos 65 anos.
+
+### Cabeças e portões
+
+Cabeça do código do sítio: `b72eac200831e8e5904ac0c1567b56eec1fac130`. Cabeça final do motor: `04a41eb7efcbe5097404614a73062a7f9bcef74a`. A cabeça final do sítio é o commit seguinte, apenas com relatório, capturas e registos das provas, comunicada na entrega.
+
+| Portão | Ficheiro | Código lido |
+|---|---|---:|
+| build | `portoes-d/build.codigo` | 0 |
+| verify | `portoes-d/verify.codigo` | 0 |
+| typecheck | `portoes-d/typecheck.codigo` | 0 |
+| motor | `portoes-d/motor.codigo` | 0 |
+| series | `portoes-d/series.codigo` | 0 |
+| cruzamento | `portoes-d/cruzamento.codigo` | 0 |
+
+Os três portões do sítio correram pela tranca comum, com `RESEARCHHUB_DIR` apontado à worktree do motor. O portão inteiro do motor correu também pela tranca. O `verify` conservou a união dos passos, a imutabilidade da construção e a identidade da cabeça. `ficheiros-conferidos.json` nomeia os ficheiros relidos contra a origem e os corpos das séries. As conferências de séries e travessia voltam a correr após o commit das provas; essa contraprova acompanha o pacote, nas duas cabeças finais.
+
+### Prova da história e da forma
+
+```sh
+git log --all -- design/especime-v3/medicoes/rp4n-2026-10-06/leitura-frio
+```
+
+A prova limitada a `HEAD` dá saída vazia, zero commits. A prova com `--all` ainda encontra um commit, `bf347dd8`, alcançável pelo ramo antigo do sítio. O registo está em `portoes-d/historia-sem-leitura-frio.txt`. A condição global do mandato ainda não está cumprida.
+
+O mapa final, em `portoes-d/mapa.log`, tem 548 âncoras conferidas, zero longe, zero por encontrar e zero para lá do ficheiro. A procura das estruturas de caminhos locais nos ficheiros seguidos deu zero.
+
+Na revisão das mensagens encontrou-se a falta do trailer de sessão em doze commits. Corrigiram-se só as mensagens, conservando as árvores e a autoria. `d/trailers-mapa.json` dá a correspondência; as tentativas conservam a cabeça efetivamente corrida. Todos os commits próprios, incluindo a fusão, têm os dois trailers.
+
+### Capturas e marcas aceites
+
+Foram refeitas 140 capturas, de catorze casos nas duas edições, a 390, 768, 1024, 1280 e 1600 píxeis. O manifesto `d/capturas.json` guarda a versão e os resumos. Não encontrou erros de página nem transbordos horizontais. Os HTML estão em `d/recibos/` e os PNG em `../../capturas/rp4n-2026-10-06/d/`.
+
+O inventário `d/medidas.json` contou 244 ocorrências aceites em 38 páginas e zero recusadas, incluindo os atributos.
+
+Os chips aceites que ficam para o bloco dos recibos, conforme o achado 20:
+
+| Página | Chips |
+|---|---:|
+| `dist/areas/ambiente-e-energia/index.html` | 2 |
+| `dist/areas/economia-e-coesao-territorial/index.html` | 5 |
+| `dist/correcoes/index.html` | 9 |
+| `dist/en/areas/ambiente-e-energia/index.html` | 2 |
+| `dist/en/areas/economia-e-coesao-territorial/index.html` | 5 |
+| `dist/en/corrections/index.html` | 9 |
+| `dist/en/ledger/index.html` | 8 |
+| `dist/en/municipalities/evora/index.html` | 4 |
+| `dist/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html` | 13 |
+| `dist/en/studies/evora-prometido-pago-auditado-2026/index.html` | 8 |
+| `dist/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html` | 13 |
+| `dist/estudos/evora-prometido-pago-auditado-2026/index.html` | 8 |
+| `dist/livro-razao/index.html` | 8 |
+| `dist/municipios/evora/index.html` | 4 |
+
+### Commits, fusão primeiro
+
+Sítio, com as mensagens finais:
+
+```text
+d28b9755 Fundir main antes de reconstruir o bloco RP4-n
+46a83b45 Selar as frases das famílias e séries nas palavras das fontes
+212685dd Prender a frase da União à origem da própria série
+47cb825c Recusar marcas de informação por confirmar nas páginas
+186c26c2 Aplicar a recusa também aos documentos citados
+ecb7811b Completar a receita efetiva com a exclusão dos saldos de gerência
+92ca0dd5 Recusar o nome também nas alternativas e nos apoios misturados
+f88f6841 Exigir o selo documental mesmo quando o apagam da origem
+d6d4becd Guardar as medições e as provas do RP4-n bloqueado na recusa global
+d417c4d8 Mostrar os títulos publicados dos estudos sem marca de tradução
+eed7b34e Separar as marcas de afirmação das ausências autorizadas pela RP4N-1
+eb99bae5 Distinguir a frase do cartão da frase de família no inventário
+39f11f4c Exigir a ausência exata no campo e discriminar as marcas não abrangidas
+87e4dfc7 Gerar o relatório da passagem com as contagens e os códigos medidos
+ae1183c8 Contar uma marca partida sem duplicar a classe e manter a recusa
+9a1fd50f Conferir os campos de data documentais e as duas formas de os render
+b091d3d1 Recusar um título declarado por confirmar mesmo sem marca rendida
+bc989e3d Ligar a medição anterior à cabeça com os trailers conferidos
+3e6cfa9b Guardar também as plantas e os códigos da proteção dos títulos
+f73f053b Guardar a medição final e os registos dos portões da RP4-n-b
+3eaa2e7c Relatar a RP4-n-b e os códigos lidos com a RP4N-5 pendente
+465b73c3 Completar os tipos de marcas aceites pela decisão RP4N-5
+b268c343 Sincronizar o inventário da voz com as frases já publicadas
+ffb7e67e Sincronizar o inventário dos rótulos com as dobras já publicadas
+dd919d51 Guardar as medições e os registos dos portões da RP4-n-c
+cef2d236 Fechar o relatório e os códigos da passagem RP4-n-c
+6571b4d0 RP4-n: a leitura a frio do Claude Opus 5.5 sobre as três passagens (cinco plantas mordidas; os achados reais decididos achado a achado no mandato da passagem RP4-n-d, que reconstrói o ramo sem a pasta de leitura do construtor antes de o publicar), o registo das plantas e o mandato
+5f148673 Acertar as âncoras do mapa depois da reconstrução RP4-n
+a105e13d Conservar a língua canónica dos títulos ao integrar EX2 e RP4-n
+8ffe7e48 Conservar a planta W4 quando todas as frases estão confirmadas
+eb22db2e RP4-n-d 5: definir a água na fonte e registar a busca das ausências
+7346cb15 RP4-n-d 6: nomear o decremento da pensão sem afirmar neutralidade
+7a856784 RP4-n-d 7: alinhar nomes do PRR e ler a data do instantâneo
+9b3c5c69 RP4-n-d 8: dizer a ausência nas notas de alcance e recusar a marca
+2f1062ee RP4-n-d 16: apoiar o VAB na frase que o define
+16c0dbe3 RP4-n-d 18: separar as ausências da contagem de famílias apoiadas na fonte
+2096dcb0 RP4-n-d 21: ligar a previsão inglesa à despesa do orçamento
+b0678be0 RP4-n-d 19: contar e classificar as marcas dos atributos
+422efef8 Trazer os recortes documentais partilhados da passagem RP4-n-d
+a4b95225 Confinar a conferência do instantâneo às famílias do PRR
+90f4bc08 RP4-n-d 15: explicar saldos e consolidação pelas definições da fonte
+0847e2a0 RP4-n-d 17: separar o recorte anual dos recortes de execução
+ec0b62d7 RP4-n-d: fechar os clientes de K16 e provar a alteração em disco
+24d0ce30 RP4-n-d: retirar restos de caminhos locais e tornar portáveis as ferramentas
+be6d1c23 RP4-n-d: conferir as colunas e as palavras do PRR nos Excel selados
+fee0b8f1 RP4-n-d: guardar as plantas dos recortes e das definições corrigidas
+bb15589a RP4-n-d: preparar as capturas das duas edições na cabeça final
+6d93e271 RP4-n-d: alinhar as âncoras do mapa e documentar a prova do PRR
+b3a86d75 RP4-n-d: preparar o inventário final das marcas e dos chips aceites
+6bf594c4 RP4-n-d: reconhecer no compositor o literal conferido no Excel
+0f8d68d3 RP4-n-d: retirar dos recibos a nota não selada da despesa bruta
+c3438fb9 RP4-n-d: declarar o localizador do rótulo da pensão e tipar a data PRR
+97c997a9 RP4-n-d: apoiar a pensão no excerto literal sem criar um rótulo manual
+5498ef6a RP4-n-d: sincronizar as notas de alcance no inventário da voz
+5f131717 RP4-n-d: sincronizar os nomes e a nota de alcance no inventário dos rótulos
+b72eac20 RP4-n-d: corrigir na explicação os apoios afetados pelos achados 9 e 14
+```
+
+Motor:
+
+```text
+7ee02de RP4-n-d 5: selar a definição oficial da água não faturada
+42fdf0e RP4-n-d: corrigir clientes e recortes documentais dos achados 6, 9, 15 e 17
+04a41eb RP4-n-d: conferir os Excel do PRR e retirar a nota não selada da despesa bruta
+```
+
+### RP4N-10: fecho da forma impedido pelo gancho
+
+O gancho local `PreToolUse safety_guard.py` rejeitou a eliminação forçada do ramo antigo, com a razão «forced branch deletion», apesar da autorização expressa no lançamento. Não foi uma rejeição da revisão automática de aprovação. Não se contornou o gancho com outra via de eliminação. Foi pedida a eliminação externa do ramo antigo do sítio; o ramo homónimo do motor deve continuar. Enquanto esse ramo antigo existir, o comando com `--all` não pode dar zero e esta passagem não declara o bloco fechado. O trabalho do ramo novo, as provas de código e o pacote estão prontos para conferência.
+
+### Números do relatório
+
+`d/numeros-relatorio.json` transcreve o resultado do mapa e o valor da linha da pensão. Para o diagnóstico histórico da voz, lê o total no registo e deriva as ocorrências restantes subtraindo as duas declarações antigas retiradas no commit do inventário. Essa discriminação é uma derivação do diagnóstico guardado, não uma nova contagem dos HTML históricos. O pacote conserva a saída do conferidor numérico.
