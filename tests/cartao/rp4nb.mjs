@@ -64,7 +64,6 @@ export function plantasDosMarcadores() {
   ['publicador ausente',campo('source'),'publicador',{key:'linha'}],
   ['título de documento ausente',campo('document.title'),'titulo-documento',{key:'linha'}],
   ['edição de documento ausente',campo('document.edition'),'edicao-documento',{key:'linha'}],
-  ['nota de alcance no recibo',`<p class="linha-alcance">${marca}</p>`,'nota-alcance',{key:'linha',params:{slug:'planta'}}],
   ['referência do livro',`<p class="aparelho-nota">${marca}</p>`,'referencia-no-livro',{key:'livro'}],
   ['página da própria marca',`<p>${marca}</p>`,'pagina-da-marca',{key:'marcador'}],
  ];
@@ -76,6 +75,7 @@ export function plantasDosMarcadores() {
  const incompleta=claims.get('planta');claims.set('planta',{});
  prova('selo de proveniência completa',selo,'fora-dos-tipos',false,{key:'linha'},[]);
  claims.set('planta',incompleta);
+ prova('nota de alcance no recibo',`<p class="linha-alcance">${marca}</p>`,'fora-dos-tipos',false,{key:'linha',params:{slug:'planta'}});
  prova('nota de alcance fora do recibo',`<p class="linha-alcance">${marca}</p>`,'fora-dos-tipos',false,{key:'area'});
  prova('referência do livro com afirmação',`<p class="aparelho-nota">Uma afirmação ${marca}</p>`,'fora-dos-tipos',false,{key:'livro'});
  prova('referência do livro com glosa',`<p class="aparelho-nota">${marca}<span> (to verify)</span></p>`,'referencia-no-livro',true,{key:'livro'});
