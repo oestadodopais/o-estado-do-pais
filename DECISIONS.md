@@ -13843,11 +13843,11 @@ Tudo aterrou dormente, sem nenhum interruptor.
 
 **Afecta:** metodo
 
-**Texto:** metodo 8913a5c8cb4f
+**Texto:** metodo 23925841545a
 
 **Data:** 06.10.2026 (o brief `BRIEF-ER1-o-recibo-incorporavel.md` escrito de manhã; o construtor lançado à tarde; a leitura a frio do Claude Opus 5.5 das 14:50 às 15:12 UTC, em `design/especime-v3/critica/LEITURA-ER1-2026-10-06.md`; a passagem ER1-b lançada a 07.10.2026, depois da reposição antecipada do Codex; a aterragem com a hora no prompt da sessão seguinte).
 
-**Estado da entrada.** Preparada na passagem ER1-b; a fusão em `main`, a leitura curta do diff e a publicação pertencem à aterragem pelo lugar de direção.
+**Estado da entrada.** A porta para um recibo de exemplo, pedida no ponto 6 do brief, acompanha a frase aprovada e tem planta nas duas edições. Preparada na passagem ER1-b; a fusão em `main`, a leitura curta do diff e a publicação pertencem à aterragem pelo lugar de direção.
 
 **O que aterra.** O bloco ER1, construído pelo Codex `gpt-6-astra` pelo brief: (1) cada recibo do livro-razão, nas duas edições, traz o bloco «Incorporar este número» com o código que um jornal ou um blogue cola para mostrar o número com a sua unidade, o seu lugar, o seu período, a sua fonte, a data em que foi lido e a porta para o recibo; (2) um guião pequeno deste projeto (`/incorporar.js`) mantém o número em dia lendo o JSON da linha, só nos seus próprios parágrafos, sem credenciais, sem referenciador e sem outro pedido; (3) os ficheiros do livro-razão (o JSON de cada linha, o JSON e o CSV do conjunto) e o guião respondem a qualquer origem (a regra CORS da Vercel cobre só esses caminhos); (4) um recibo cuja fonte ou data de acesso esteja por confirmar na fonte não oferece código, e di-lo; (5) o portão recompõe o código de cada recibo a partir da linha e recusa qualquer diferença, qualquer marca «[a verificar]» e qualquer palavra que não esteja no inventário das frases; (6) a frase do Método, nas duas edições, diz o que o código é, o que o guião lê e pede, que a origem da página que incorpora chega ao alojamento (que não a guarda) e que a licença é a do conjunto de dados.
 

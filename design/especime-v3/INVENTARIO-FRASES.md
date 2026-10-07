@@ -4168,6 +4168,9 @@ são conferidos nos atributos pelo portão e exercidos no navegador.
 | navegacao | Copy | er1 | viva | O comando na edição inglesa. |
 
 
+| navegacao | Ver o recibo de exemplo | er1b | viva | Porta de exemplo no Método, pedida no ponto 6 do brief ER1. |
+| navegacao | See the example receipt | er1b | viva | A mesma porta na edição inglesa. |
+
 ### ER1-b: cadeias e composições aprovadas
 
 Leitura do lugar de direção: mandato ER1-b, achados 4 e 10, lançado a 07.10.2026.
