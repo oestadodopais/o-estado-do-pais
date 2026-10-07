@@ -9,12 +9,12 @@ import { createHash } from 'node:crypto';
 import { chromium } from 'playwright';
 
 const fase = process.argv[2];
-if (!['antes', 'depois', 'd'].includes(fase)) throw Error('Indique antes, depois ou d.');
+if (!['antes', 'depois', 'd', 'e'].includes(fase)) throw Error('Indique antes, depois, d ou e.');
 const base = 'design/especime-v3/medicoes/rp4n-2026-10-06';
 const saida = `design/especime-v3/capturas/rp4n-2026-10-06/${fase}`;
 const dist = path.resolve('dist');
 const versao = JSON.parse(await fs.readFile('dist/version.json', 'utf8'));
-const amostra = {
+const amostra = fase === 'e' ? {agua:'agua-nao-faturada-portugal-2024', corte:'penalizacao-antecipacao-um-ano-neutra', aviso:'avisos-pt2030-pessoas-singulares'} : {
   orcamento: 'oe-2026-despesa-funcao-01',
   execucao: 'execucao-2026-07-despesa-funcao-01',
   evora: 'evora-pelouros-2025-presidente',
@@ -52,7 +52,7 @@ try {
   for (const [nome, id] of Object.entries(amostra)) for (const lang of ['pt','en']) {
     const rota = `/${lang === 'pt' ? 'livro-razao' : 'en/ledger'}/${id}/`;
     await fs.copyFile(path.join(dist, rota, 'index.html'), `${base}/${fase}/recibos/${nome}-${lang}.html`);
-    for (const largura of [390,768,1024,1280,1600]) {
+    for (const largura of (fase === 'e' ? [390,1280] : [390,768,1024,1280,1600])) {
       const ctx = await browser.newContext({viewport:{width:largura,height:900},deviceScaleFactor:1,reducedMotion:'reduce',colorScheme:'light'});
       await ctx.route('**/*', r => r.request().url().startsWith(origem) ? r.continue() : r.abort());
       const p = await ctx.newPage();
