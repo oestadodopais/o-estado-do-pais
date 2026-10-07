@@ -132,7 +132,7 @@ function linhaDeEnsaio(id, extra = {}) {
 
 /** Corre `validateLedger()` com um conjunto de linhas de ensaio no mapa. */
 function comEnsaio(linhas, fn) {
-  const claims = loadClaims();
+  const claims = loadClaims({includeWithdrawn:true});
   const ids = linhas.map((l) => l.id);
   for (const l of linhas) {
     if (claims.has(l.id)) throw new Error(`o id de ensaio "${l.id}" já existe no livro-razão`);

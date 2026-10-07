@@ -39,7 +39,7 @@ for(const [nome,mudar] of casos){const c=structuredClone(prr);mudar(c);planta(no
 // OE1-b: os dois formatos da bandeira passam pelo validador chamado pelo portão.
 // Altera apenas cópias na memória. Cada recusa tem de ser a da bandeira desta linha.
 const bandeiras = [];
-const linhas = loadClaims();
+const linhas = loadClaims({includeWithdrawn:true});
 const novo = 'despesa-por-funcao-2024-gf01-pt';
 const antigo = 'credito-malparado-2024';
 assert.deepEqual(validateLedger().errors, []);

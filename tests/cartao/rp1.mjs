@@ -13,7 +13,7 @@ import { DOMINIOS_RP1, NOMES_RP1 } from '../../src/data/medidas-rp1.mjs';
 import { auditarPerguntas } from './perguntas.mjs';
 import { conferirAuditoriaDasLeituras, folhasDaLeitura, conferirPaginaDaLeitura } from './leituras.mjs';
 
-const linhas = loadClaims();
+const linhas = loadClaims({includeWithdrawn:true});
 const plantas = [];
 function recusa(nome, trabalho, mensagem) {
   assert.throws(trabalho, mensagem, nome);

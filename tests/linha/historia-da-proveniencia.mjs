@@ -9,7 +9,7 @@ import { load, dump } from 'js-yaml';
 import { loadClaims, validateLedger } from '../../src/lib/ledger.mjs';
 
 const raiz = process.cwd();
-const linhas = loadClaims();
+const linhas = loadClaims({includeWithdrawn:true});
 const uniao = 'divida-das-familias-2025-ue';
 const dgal = 'indice-de-divida-limite-legal';
 const plantas = [], controlos = [];

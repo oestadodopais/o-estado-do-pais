@@ -223,3 +223,9 @@ export function conferirExcertoDaPensao(linha) {
  morde('segunda fonte sem declaração na linha',conferirAuditoriaDasFamilias({linhas}).erros,'outro publicador');
 }
 
+// RP4-n-e: uma referência plantada numa página alheia também fecha a construção.
+{
+ const {conferirRetiradas}=await import('../../scripts/linhas-retiradas.mjs');
+ const linhas=loadClaims({includeWithdrawn:true});
+ morde('linha retirada num cartão plantado',conferirRetiradas('<a href="/livro-razao/ciclo-substituicao-condutas/">239</a>',linhas),'uma linha retirada chegou a uma página');
+}
