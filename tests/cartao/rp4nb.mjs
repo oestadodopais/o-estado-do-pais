@@ -8,7 +8,7 @@ import {inventariarMarcadores, resumirMarcadores, TIPOS_ACEITES, TIPOS_RECUSADOS
 export function plantasDosMarcadores() {
  const plantas=[];
  const marca='<a class="marcador">[a verificar]</a>';
- const claims=new Map([['planta',{published_at:'[a verificar]',access_date:'[a verificar]',reference_date:'[a verificar]',excerpt:'[a verificar]',source_url:'[a verificar]',document:{date:'[a verificar]'}}]]);
+ const claims=new Map([['planta',{published_at:'[a verificar]',access_date:'[a verificar]',reference_date:'[a verificar]',excerpt:'[a verificar]',source_url:'[a verificar]',document:{computed_over:{files:[{snapshot_date:'[a verificar]'}]}}}]]);
  const campo=c=>`<span data-linha-claim="planta" data-linha-campo="${c}">${marca}</span>`;
  function prova(nome,html,tipo,aceite=false,rota={key:'linha'}, municipios=[]) {
   const r=inventariarMarcadores(parse(`<html><body><main>${html}</main></body></html>`),{rota,claims,municipios});
@@ -34,7 +34,8 @@ export function plantasDosMarcadores() {
   ['explicacao',`<p>${marca}</p>`,{key:'explicacao'}],
   ['fora-dos-tipos',`<p>${marca}</p>`],
  ])for(const lingua of ['pt','en'])prova(`${tipo} (${lingua})`,html.replaceAll('[a verificar]',lingua==='pt'?'[a verificar]':'[to verify]'),tipo,false,rota);
- for(const c of ['published_at','access_date','reference_date','document.date'])prova(`data ${c}`,campo(c),'data',true);
+ for(const c of ['published_at','access_date','reference_date','document.computed_over.files.0.snapshot_date'])prova(`data ${c}`,campo(c),'data',true);
+ prova('data pelo componente de datas',`<span data-de-linha="planta" data-de-campo="access_date">${marca}</span>`,'data',true);
  prova('excerto ausente',campo('excerpt'),'excerto',true);
  prova('marca partida entre elementos de um excerto',`<span data-linha-claim="planta" data-linha-campo="excerpt"><a class="marcador">[a </a><b>verificar]</b></span>`,'excerto',true);
  prova('declaração proibida numa parte da marca',`<span data-linha-claim="planta" data-linha-campo="excerpt"><a data-por-confirmar-na-fonte="planta">[a </a><b>verificar]</b></span>`,'o-que-e-linha');
