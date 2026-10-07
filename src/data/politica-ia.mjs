@@ -337,12 +337,14 @@ export const POLITICA = {
     pt: [
       'Tudo o que este projeto publica leva o rótulo de texto gerado por inteligência ' +
         'artificial, em cada página, no momento em que a página é vista. A revisão é feita por verificações automáticas e por ' +
-        'amostra, e não peça a peça.',
+        'amostra, e não peça a peça. As verificações automáticas são as conferências que correm em cada construção das ' +
+        'páginas e a param à primeira diferença.',
     ],
     en: [
       'Everything this project publishes carries the label saying the text was generated ' +
         'by artificial intelligence, on every page, at the moment the page is seen. Review is done by automated checks and by sample, not ' +
-        'piece by piece.',
+        'piece by piece. The automated checks are the checks that run on every build of the pages and stop the build at the first ' +
+        'difference.',
     ],
   },
 
@@ -360,7 +362,8 @@ export const POLITICA = {
    *
    * «Portões verdes» e «portão vermelho» saíram do texto do leitor, a pedido do editor na
    * leitura do Codex de 06.10.2026 (a leitura H4-e-d): a página dizia-os sem os explicar. A
-   * frase diz agora o que uma verificação automática é, uma vez, no primeiro caso. E «a
+   * explicação do que uma verificação automática é está no parágrafo da via, onde o leitor
+   * encontra o termo pela primeira vez (a leitura do Codex de 07.10.2026, o achado 8). E «a
    * leitura já não reconhece» passou a «o motor já não reconhece», porque nesta página «a
    * leitura» é um dos três papéis e aqui era o programa que lê os ficheiros das fontes.
    */
@@ -375,12 +378,10 @@ export const POLITICA = {
         texto: {
           pt:
             'Um valor novo da mesma medida, no mesmo formato, da mesma fonte, quando passa em ' +
-            'todas as verificações automáticas: as conferências que correm em cada construção ' +
-            'das páginas e a param à primeira diferença.',
+            'todas as verificações automáticas.',
           en:
             'A new value of the same measure, in the same format, from the same source, when it ' +
-            'passes every automated check: the checks that run on every build of the pages and ' +
-            'stop the build at the first difference.',
+            'passes every automated check.',
         },
       },
       {
