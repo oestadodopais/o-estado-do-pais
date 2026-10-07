@@ -1,6 +1,6 @@
 # RP4-n · selar as frases na fonte
 
-A construção das frases está recomposta, mas a aceitação global fica bloqueada enquanto o portão HTML encontrar informação por confirmar noutras partes das páginas. Este pacote é uma entrega para leitura a frio, não uma aprovação nem uma publicação.
+A primeira passagem recompôs as frases e ficou bloqueada no portão HTML. O estado atual, a regra corrigida e os códigos desta passagem estão na secção «A passagem RP4-n-b», no fim. Este pacote é uma entrega para leitura a frio, não uma aprovação nem uma publicação.
 
 Relatório produzido por `relatar.py`. As contagens vêm de `antes/medidas.json`, `depois/medidas.json`, das origens exportadas e dos registos das plantas. `comparacao.json` conserva a comparação completa nas duas línguas.
 
@@ -278,7 +278,7 @@ Os recibos HTML completos, antes e depois, estão nas pastas `antes/recibos/` e 
 
 - **RP4N-3. Vocabulário do PRR fora destas frases.** As frases passaram a respeitar as colunas e os filtros selados, incluindo verbas contratadas e sede dos beneficiários. Os nomes e outras apresentações anteriores do indicador precisam de leitura própria; não se alterou a medida nem a sua conta neste bloco.
 
-- **RP4N-4. Leitura independente e conferência da direção.** A leitura a frio do Opus e a conferência final da direção ainda não foram realizadas nesta sessão. O pacote está preparado para essas etapas. O resto do RP4-n-b permanece fora deste trabalho.
+- **RP4N-4. Leitura independente e conferência da direção.** A leitura a frio do Opus e a conferência final da direção ainda não foram realizadas nesta sessão. O pacote está preparado para essas etapas. Esta nota é da primeira passagem. A passagem de correção pedida depois está documentada no fim.
 
 Não houve publicação nem envio para o remoto. Não foi exposta uma linha «tokens used» nesta sessão; não se estima o custo.
 
@@ -303,3 +303,202 @@ Motor:
 5561606136a357d6efbae8dbee4d84a0cd08693c Extrair e conferir as origens documentais das frases do RP4-n
 eb4a5cbb0e4abe7cc44919a3679ce6fbad3bf369 Ler os combustíveis da União no corpo da própria série
 ```
+
+## A passagem RP4-n-b
+
+A célula e os títulos foram corrigidos, mas a passagem não fecha: há marcas fora dos tipos autorizados na RP4N-1. A RP4N-5 fica à decisão da direção. Não se declarou um portão verde nem se ampliou a lista de exceções.
+
+A regra aplicada recusa sempre marcas nas frases «o que é», nos nomes e rótulos de medidas, séries e lugares, nos títulos de estudos, nas leituras de cartões, na primeira página e nas explicações. Uma exceção de recibo dentro dessas superfícies continua recusada. Fora delas, só se aceitam as ausências enumeradas na RP4N-1. Qualquer outro tipo é recusado.
+
+O campo que recebe uma exceção tem de existir no livro e ser exatamente a marca de ausência. A proteção I77 dos mandatos permanece no portão; os parágrafos já publicados sobre essa identidade só são aceites na obra respetiva e com o texto intacto, conferido por resumo. A referência do Método está presa ao seu parágrafo, e uma demonstração isolada da marca no Método ou no Sobre não autoriza prosa por confirmar. As células anteriores de fontes e de pessoas mantêm-se.
+
+Os títulos dos estudos da água conservaram o texto publicado. Na edição inglesa levam `lang="pt"`, sem marca nem ligação do título para a página «to verify». A mudança vive no componente comum, incluindo os índices, o registo e os recibos. Não se escreveu uma tradução.
+
+As contagens abaixo aplicam a mesma célula aos dois estados do HTML. Os resumos de cada página anterior são comparados com `depois/medidas.json` da primeira passagem; o total também é afirmado. A célula anterior recusava todas as ocorrências, sem distinguir tipos.
+
+| Estado | Páginas com marcas | Aceites pela RP4N-1 | Recusadas pela RP4N-1 |
+|---|---:|---:|---:|
+| Antes | 46 | 78 | 149 |
+| Depois | 42 | 78 | 136 |
+
+| Decisão | Tipo | Antes | Depois |
+|---|---|---:|---:|
+| aceites | data | 44 | 44 |
+| aceites | excerto | 16 | 16 |
+| aceites | endereco | 10 | 10 |
+| aceites | pessoa-I77 | 6 | 6 |
+| aceites | referencia-metodo | 2 | 2 |
+| aceites | referencia-sobre | 0 | 0 |
+| recusadas | o-que-e-linha | 0 | 0 |
+| recusadas | o-que-e-familia | 0 | 0 |
+| recusadas | o-que-e-serie | 0 | 0 |
+| recusadas | nome-medida | 0 | 0 |
+| recusadas | nome-serie | 0 | 0 |
+| recusadas | nome-lugar | 0 | 0 |
+| recusadas | titulo-estudo | 13 | 0 |
+| recusadas | leitura-cartao | 0 | 0 |
+| recusadas | primeira-pagina | 0 | 0 |
+| recusadas | explicacao | 0 | 0 |
+| recusadas | fora-dos-tipos | 136 | 136 |
+
+**RP4N-5. Tipos que a lista da decisão não abrange.** A enumeração do mandato não inclui todos os contextos existentes. Segue a discriminação medida. A marca do publicador ausente e a do título de um documento ausente não foram tratadas como endereços. Os selos são projeções da proveniência incompleta, mas não foram aceites como campos de recibo. A página da própria marca e a referência no livro também não foram acrescentadas às páginas autorizadas. As notas de alcance continuaram recusadas.
+
+| Superfície fora dos tipos | Antes | Depois |
+|---|---:|---:|
+| document.edition | 8 | 8 |
+| document.title | 8 | 8 |
+| nota-alcance | 4 | 4 |
+| pagina-da-marca | 4 | 4 |
+| referencia-no-livro | 2 | 2 |
+| selo-proveniencia | 98 | 98 |
+| source | 12 | 12 |
+
+Foi pedida decisão para dizer a ausência exata por palavras nos casos não abrangidos, conservando as conferências de proveniência. Sem resposta registada, essa alteração não foi executada. A decisão é necessária porque a RP4N-1 manda recusar qualquer tipo fora da lista e porque os portões envolvidos protegem uma fonte.
+
+### Cabeças do código e códigos lidos
+
+| Repositório | Cabeça do código conferido |
+|---|---|
+| sítio | `04d28781e576904f97d944d7493bb1d39c204343` |
+| motor, intacto | `eb4a5cbb0e4abe7cc44919a3679ce6fbad3bf369` |
+
+| Portão | Ficheiro | Código lido |
+|---|---|---:|
+| build | `portoes-b/build.codigo` | 1 |
+| verify | `portoes-b/verify.codigo` | 1 |
+| typecheck | `portoes-b/typecheck.codigo` | 0 |
+| língua, conferência afetada corrida separadamente | `conferencias-b/lingua.codigo` | 0 |
+| motor, corrida anterior na mesma cabeça | `portoes/motor.codigo` | 0 |
+
+O motor não mudou e não teve nova corrida. Os comandos posteriores a um portão que falhou numa cadeia não se consideram executados. Os registos dos portões são conservados com os caminhos da máquina substituídos, sem códigos de cor nem espaços no fim das linhas.
+
+### Plantas e mensagens
+
+As 50 plantas afirmam a mensagem, o lado da decisão e a contagem da ocorrência e da página. Correm também dentro do `gate:html`.
+
+| Planta | Decisão | Mensagem | Contagem afirmada |
+|---|---|---|---:|
+| o-que-e-linha (pt) | recusadas | RP4N: marca recusada em o-que-e-linha | 1 |
+| o-que-e-linha (en) | recusadas | RP4N: marca recusada em o-que-e-linha | 1 |
+| o-que-e-familia (pt) | recusadas | RP4N: marca recusada em o-que-e-familia | 1 |
+| o-que-e-familia (en) | recusadas | RP4N: marca recusada em o-que-e-familia | 1 |
+| o-que-e-serie (pt) | recusadas | RP4N: marca recusada em o-que-e-serie | 1 |
+| o-que-e-serie (en) | recusadas | RP4N: marca recusada em o-que-e-serie | 1 |
+| nome-medida (pt) | recusadas | RP4N: marca recusada em nome-medida | 1 |
+| nome-medida (en) | recusadas | RP4N: marca recusada em nome-medida | 1 |
+| nome-serie (pt) | recusadas | RP4N: marca recusada em nome-serie | 1 |
+| nome-serie (en) | recusadas | RP4N: marca recusada em nome-serie | 1 |
+| nome-lugar (pt) | recusadas | RP4N: marca recusada em nome-lugar | 1 |
+| nome-lugar (en) | recusadas | RP4N: marca recusada em nome-lugar | 1 |
+| titulo-estudo (pt) | recusadas | RP4N: marca recusada em titulo-estudo | 1 |
+| titulo-estudo (en) | recusadas | RP4N: marca recusada em titulo-estudo | 1 |
+| leitura-cartao (pt) | recusadas | RP4N: marca recusada em leitura-cartao | 1 |
+| leitura-cartao (en) | recusadas | RP4N: marca recusada em leitura-cartao | 1 |
+| primeira-pagina (pt) | recusadas | RP4N: marca recusada em primeira-pagina | 1 |
+| primeira-pagina (en) | recusadas | RP4N: marca recusada em primeira-pagina | 1 |
+| explicacao (pt) | recusadas | RP4N: marca recusada em explicacao | 1 |
+| explicacao (en) | recusadas | RP4N: marca recusada em explicacao | 1 |
+| fora-dos-tipos (pt) | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+| fora-dos-tipos (en) | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+| data published_at | aceites | RP4N: marca aceite provisoriamente (data) | 1 |
+| data access_date | aceites | RP4N: marca aceite provisoriamente (data) | 1 |
+| data reference_date | aceites | RP4N: marca aceite provisoriamente (data) | 1 |
+| data document.computed_over.files.0.snapshot_date | aceites | RP4N: marca aceite provisoriamente (data) | 1 |
+| data pelo componente de datas | aceites | RP4N: marca aceite provisoriamente (data) | 1 |
+| excerto ausente | aceites | RP4N: marca aceite provisoriamente (excerto) | 1 |
+| marca partida entre elementos de um excerto | aceites | RP4N: marca aceite provisoriamente (excerto) | 1 |
+| declaração proibida numa parte da marca | recusadas | RP4N: marca recusada em o-que-e-linha | 1 |
+| endereço ausente | aceites | RP4N: marca aceite provisoriamente (endereco) | 1 |
+| data ausente na agenda | aceites | RP4N: marca aceite provisoriamente (data) | 1 |
+| proteção da pessoa na I77 | aceites | RP4N: marca aceite provisoriamente (pessoa-I77) | 1 |
+| referência à marca em metodo | aceites | RP4N: marca aceite provisoriamente (referencia-metodo) | 1 |
+| referência à marca em sobre | aceites | RP4N: marca aceite provisoriamente (referencia-sobre) | 1 |
+| texto partido | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+| entidades | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+| classe vazia | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+| declaração sem texto | recusadas | RP4N: marca recusada em o-que-e-linha | 1 |
+| campo permitido dentro de o-que-e-linha | recusadas | RP4N: marca recusada em o-que-e-linha | 1 |
+| campo permitido dentro de leitura-cartao | recusadas | RP4N: marca recusada em leitura-cartao | 1 |
+| campo permitido dentro de titulo-estudo | recusadas | RP4N: marca recusada em titulo-estudo | 1 |
+| campo permitido dentro de primeira-pagina | recusadas | RP4N: marca recusada em primeira-pagina | 1 |
+| campo permitido dentro de explicacao | recusadas | RP4N: marca recusada em explicacao | 1 |
+| campo sem linha no livro | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+| campo não permitido | recusadas | RP4N: marca recusada em nome-medida | 1 |
+| afirmação acrescentada ao campo de excerto | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+| pessoa fora do mandato protegido | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+| afirmação em metodo | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+| afirmação em sobre | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+
+A conferência dos títulos também correu sobre cópias do HTML construído. Código lido de `conferencias-b/titulos.codigo`: 0. As 4 plantas da A4 abaixo confirmam a recusa da marca nas páginas e de uma declaração de título por confirmar, mesmo sem marca rendida.
+
+| Planta da A4 | Mensagens afirmadas | Código esperado e observado |
+|---|---|---:|
+| marca num título de estudo no registo | A4: en/corrections/index.html: evora-2027-capital-europeia-da-cultura/en tem uma marca num título de estudo. | 1 |
+| marca num título de estudo no país | A4: index.html: evora-2027-capital-europeia-da-cultura/pt tem uma marca num título de estudo. | 1 |
+| marca num título de estudo no índice inglês | A4: en/studies/index.html: evora-contas-da-camara-2010-2025/en tem uma marca num título de estudo. | 1 |
+| título declarado por confirmar mesmo sem marca | A4: correcoes/index.html: o título de evora-2027-prometido-painel-dinheiro/pt está declarado por confirmar. | 1 |
+
+### Páginas com marcas aceites para o bloco dos recibos
+
+| Página | Ocorrências aceites por tipo |
+|---|---|
+| `dist/agenda/index.html` | data: 11 |
+| `dist/areas/ambiente-e-energia/index.html` | data: 1 |
+| `dist/en/agenda/index.html` | data: 11 |
+| `dist/en/areas/ambiente-e-energia/index.html` | data: 1 |
+| `dist/en/ledger/agua-nao-faturada-portugal-2024/index.html` | endereco: 1; excerto: 1 |
+| `dist/en/ledger/avisos-pt2030-abertos/index.html` | data: 1; endereco: 1; excerto: 1 |
+| `dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html` | data: 1; endereco: 1; excerto: 1 |
+| `dist/en/ledger/ciclo-substituicao-condutas/index.html` | data: 2; endereco: 1; excerto: 1 |
+| `dist/en/ledger/evora-prr-aprovado-2026/index.html` | excerto: 1 |
+| `dist/en/ledger/evora-prr-pago-2026/index.html` | excerto: 1 |
+| `dist/en/ledger/evora-prr-vencido-aprovado-2026/index.html` | excerto: 1 |
+| `dist/en/ledger/index.html` | data: 5 |
+| `dist/en/ledger/saldo-natural-portugal-2025/index.html` | data: 1; endereco: 1; excerto: 1 |
+| `dist/en/method/index.html` | referencia-metodo: 1 |
+| `dist/en/municipalities/evora/index.html` | pessoa-I77: 1 |
+| `dist/estudos/evora-quem-governou-a-camara-2009-2025/documento/index.html` | pessoa-I77: 2 |
+| `dist/estudos/evora-quem-governou-a-camara-2009-2025/index.html` | pessoa-I77: 2 |
+| `dist/livro-razao/agua-nao-faturada-portugal-2024/index.html` | endereco: 1; excerto: 1 |
+| `dist/livro-razao/avisos-pt2030-abertos/index.html` | data: 1; endereco: 1; excerto: 1 |
+| `dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html` | data: 1; endereco: 1; excerto: 1 |
+| `dist/livro-razao/ciclo-substituicao-condutas/index.html` | data: 2; endereco: 1; excerto: 1 |
+| `dist/livro-razao/evora-prr-aprovado-2026/index.html` | excerto: 1 |
+| `dist/livro-razao/evora-prr-pago-2026/index.html` | excerto: 1 |
+| `dist/livro-razao/evora-prr-vencido-aprovado-2026/index.html` | excerto: 1 |
+| `dist/livro-razao/index.html` | data: 5 |
+| `dist/livro-razao/saldo-natural-portugal-2025/index.html` | data: 1; endereco: 1; excerto: 1 |
+| `dist/metodo/index.html` | referencia-metodo: 1 |
+| `dist/municipios/evora/index.html` | pessoa-I77: 1 |
+
+A lista com cada ocorrência, contexto e resumo da página está em `depois-b/medidas.json`. As ausências aceites ficam para o bloco dos recibos as dizer por palavras. Continuam abertas a questão do relatório das pensões (RP4N-2), a leitura do vocabulário do PRR (RP4N-3) e a leitura a frio com a conferência da direção (RP4N-4). Não se fez fusão nem publicação.
+
+### Comandos e commits
+
+```sh
+node design/especime-v3/medicoes/rp4n-2026-10-06/medir-b.mjs antes <copia-do-HTML-anterior>
+node tests/cartao/rp4nb.mjs --registo
+RESEARCHHUB_DIR=<motor> sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/rp4n-2026-10-06/portoes-b
+node design/especime-v3/medicoes/rp4n-2026-10-06/medir-b.mjs depois
+node design/especime-v3/medicoes/rp4n-2026-10-06/conferir-titulos-b.mjs
+node scripts/check-lingua.mjs
+RESEARCHHUB_DIR=<motor> python3 design/especime-v3/medicoes/rp4n-2026-10-06/relatar-b.py
+```
+
+Commits desta passagem antes do commit final do relatório e dos códigos:
+
+```text
+f16184581c55bd85512049713001341960130dc8 Mostrar os títulos publicados dos estudos sem marca de tradução
+50a76a9ed1dc783452b87ee261974286f92bbe73 Separar as marcas de afirmação das ausências autorizadas pela RP4N-1
+049da3f073a2c4a7abaa343beb8a626240a77d9a Distinguir a frase do cartão da frase de família no inventário
+12fb070175d279dd1da3bc773e5d1a7424d1e17d Exigir a ausência exata no campo e discriminar as marcas não abrangidas
+902971ccd7edda2c40901d19066e2ceb3b7a0384 Gerar o relatório da passagem com as contagens e os códigos medidos
+5de3a2ac369ab7d5b3ed5009bbd88454eff8fcf7 Contar uma marca partida sem duplicar a classe e manter a recusa
+f8830e02027e2b45c56faf8c7c4b540d497ae4d0 Conferir os campos de data documentais e as duas formas de os render
+6b00cd640018ad9ee45fc46884ff9bcd27d99fe6 Recusar um título declarado por confirmar mesmo sem marca rendida
+2084ba6b2f31bb461d4013f88dcde581db1f9789 Ligar a medição anterior à cabeça com os trailers conferidos
+04d28781e576904f97d944d7493bb1d39c204343 Guardar também as plantas e os códigos da proteção dos títulos
+3f755bb7ef20c08890ef9f7b6655a82a5dc2ba4e Guardar a medição final e os registos dos portões da RP4-n-b
+```
+
+O último commit contém apenas o relatório e os registos dos códigos. A cabeça final do sítio é a desse commit e comunica-se no fecho; a cabeça final do motor é a indicada acima. O modelo do construtor foi indicado no mandato como `gpt-6-astra`, com raciocínio `xhigh`. Não foi exposta uma linha de consumo acumulado nesta sessão e não se estima o custo.
