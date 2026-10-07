@@ -47,8 +47,12 @@ const linhaDaSerie = (id) => {
   return presas.length ? presas[presas.length - 1].id : null;
 };
 
+/** A proibição vale também dentro das alternativas e nos apoios com mais de uma forma. @param {any} a @returns {boolean} */
+function temNomeDoProjeto(a) { return a?.declaracao === 'nome' || (Array.isArray(a?.ou) && a.ou.some(temNomeDoProjeto)); }
+
 /** @param {any} a @param {any} s @returns {string|null} */
 function verifica(a, s) {
+  if (temNomeDoProjeto(a)) return 'o nome do projeto não pode apoiar uma frase';
   if (typeof a.literal !== 'string' || a.literal.trim().length < 4) return `o literal «${a.literal}» tem menos de quatro caracteres`;
   if (a.origem) {
     const o = /** @type {any} */ (ORIGENS_DAS_DEFINICOES)[a.origem];
