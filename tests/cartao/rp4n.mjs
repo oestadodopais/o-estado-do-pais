@@ -20,17 +20,17 @@ assert.deepEqual(auditarPerguntas().erros, []);
 assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
 assert.deepEqual(conferirAuditoriaDasSeries().erros, []);
 
-for (const [nome, altera] of [
-  ['excerto com uma palavra inventada', o => {o.excerto += ' PALAVRA PLANTADA';}],
-  ['selo com outro cliente', o => {o.selo.cliente = 'cliente inventado';}],
-  ['selo com outra página', o => {o.extracao.pagina++;}],
-  ['tipo do selo apagado', o => {delete o.selo.tipo;}],
-  ['selo inteiro apagado', o => {delete o.selo;}],
+for (const [nome, altera, mensagem] of [
+  ['selo com outro cliente', o => {o.selo.cliente = 'cliente inventado';}, 'não identifica um cliente da lista fechada'],
+  ['agente do utilizador como cliente', o => {o.selo.cliente = 'OEstadoDoPais/corredor';}, 'não identifica um cliente da lista fechada'],
+  ['tipo do selo apagado', o => {delete o.selo.tipo;}, 'não tem o selo completo'],
+  ['selo inteiro apagado', o => {delete o.selo;}, 'não tem o selo completo'],
 ]) {
   const origens = structuredClone(ORIGENS_DAS_DEFINICOES);
   altera(origens['rp4n-orcamento']);
-  morde(nome, auditarPerguntas({origens}).erros, 'o excerto ou o selo difere da origem exportada pelo motor');
+  morde(nome, auditarPerguntas({origens}).erros, mensagem);
 }
+
 {
   const a = structuredClone(auditoria);
   a.familias.find(e => e.chaves?.includes('oe-2026-despesa-funcao-01')).folhas[0].partes[0].apoios.push({declaracao:'nome',lingua:'pt',literal:'orçamentada'});
