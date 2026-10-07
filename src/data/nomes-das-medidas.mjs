@@ -129,8 +129,8 @@ export const NOMES_DO_PROJETO = {
     en: 'Pension sustainability factor',
   },
   'penalizacao-antecipacao-um-ano-neutra': {
-    pt: 'Corte na pensão por um ano de antecipação, sem custo para o sistema',
-    en: 'Pension cut for one year of early retirement, at no cost to the system',
+    pt: 'Corte na pensão por um ano de antecipação',
+    en: 'Pension cut for one year of early retirement',
   },
   'penalizacao-antecipacao-um-ano-sem-factor-2026': {
     pt: 'Corte na pensão por um ano de antecipação, sem o fator de sustentabilidade',

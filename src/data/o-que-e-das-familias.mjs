@@ -2948,10 +2948,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "penalizacao-antecipacao-um-ano-neutra": {
     "frase": {
       "pt": [
-        "São cálculos sobre o efeito da antecipação da idade de reforma, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social."
+        "É a redução da pensão calculada para a reforma antecipada no caso geral, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social."
       ],
       "en": [
-        "These are calculations of the effect of early retirement, counting the contributions no longer paid and the rights that are added, from the calculations of the final report on social security reform."
+        "It is the pension reduction calculated for early retirement in the general case, counting the contributions no longer paid and the rights that are added, from the calculations of the final report on social security reform."
       ]
     }
   },
