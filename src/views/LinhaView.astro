@@ -79,6 +79,7 @@ import { linhaDePortugalDaLinha } from '../lib/faixa-do-concelho.mjs';
 import { studyTitle } from '../data/studies.mjs';
 import { unidadeDaLinha } from '../i18n/unidades.mjs';
 import Frase from '../components/Frase.astro';
+import QuadroFinanciamentoJd1 from '../components/QuadroFinanciamentoJd1.astro';
 import OrigemDaDefinicao from '../components/OrigemDaDefinicao.astro';
 import { DEFINICOES_DAS_MEDIDAS, FIGURAS, origensDaDefinicao } from '../data/figuras.mjs';
 import { ressalvaDaLinha } from '../data/dominios.mjs';
@@ -1272,9 +1273,13 @@ const outraLingua = LANGS.find((l) => l !== lang) ?? null;
             </p>
           ) : (
             <>
-              <blockquote class="linha-excerto">
-                <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} />
-              </blockquote>
+              {id === 'necessidades-brutas-de-financiamento-2025' ? (
+                <QuadroFinanciamentoJd1 id={id} excerto={claim.excerpt} />
+              ) : (
+                <blockquote class="linha-excerto">
+                  <CampoDaLinha id={id} campo="excerpt" valor={claim.excerpt} lang={lang} />
+                </blockquote>
+              )}
               {/* O RECIBO DIZ O QUE O EXCERTO É (achado 5 da leitura a frio de
                   15.09.2026). Noventa e uma linhas declaram na nota que o excerto
                   foi composto a partir das etiquetas da resposta da fonte, e não
