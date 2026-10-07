@@ -17,7 +17,7 @@ function morde(nome, erros, mensagem) {
   console.log(`PLANTA ${nome}: ${achado}`);
 }
 assert.deepEqual(auditarPerguntas().erros, []);
-assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
+// A auditoria completa é afirmada no fim, depois de registar as plantas.
 assert.deepEqual(conferirAuditoriaDasSeries().erros, []);
 
 for (const [nome, altera, mensagem] of [
@@ -84,7 +84,7 @@ for (const lang of ['pt','en']) {
   morde(`marca num documento citado (${lang})`, [conferirSemMarcadores(copia)].filter(Boolean), 'RP4N: uma página de leitor contém uma marca de informação por confirmar');
 }
 if (process.argv.includes('--registo')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/plantas-sitio.json', JSON.stringify({plantas},null,2)+'\n');
-console.log(`RP4N: PASS, ${plantas.length} plantas com a mensagem afirmada`);
+console.log(`RP4N: plantas exercitadas, ${plantas.length} plantas com a mensagem afirmada`);
 
 // RP4-n-d: não basta um campo plausível nem um resumo com 64 caracteres.
 for (const [nome, altera, mensagem] of [
@@ -106,7 +106,7 @@ for (const [nome, altera, mensagem] of [
   e.folhas[0].partes[0].apoios.push({ficheiro:'entidades', campo:'cabecalho', literal:'coluna_inventada'});
   morde('PRR cabeçalho inventado', conferirAuditoriaDasFamilias({auditoria:a}).erros, 'literal não foi lido');
 }
-console.log(`RP4N-d: PASS, ${plantas.length} plantas acumuladas com a mensagem afirmada`);
+console.log(`RP4N-d: plantas exercitadas, ${plantas.length} plantas acumuladas com a mensagem afirmada`);
 
 // A ausência não pode inflacionar a contagem de definições seladas (achado 18).
 for (const chave of ['avisos-pt2030-abertos','avisos-pt2030-pessoas-singulares','ciclo-substituicao-condutas']) {
@@ -130,8 +130,8 @@ for (const chave of ['rp4n-diferencas-consolidacao','rp4n-saldos-gerencia']) {
   const vab = a.familias.filter(e => e.chaves?.some(k => ['evora-vab-empresarial','portugal-concentracao-vab4','evora-concentracao-vab4'].includes(k)));
   assert.equal(vab.filter(e => JSON.stringify(e).includes('output valued at basic prices less intermediate consumption')).length, 2);
 }
-assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
-console.log(`RP4N-d documental: PASS, ${plantas.length} plantas e controlos de classificação e de definição`);
+// A auditoria completa é afirmada no fim, depois de registar as plantas.
+console.log(`RP4N-d documental: plantas exercitadas, ${plantas.length} plantas e controlos de classificação e de definição`);
 
 // Achado 14: a explicação não selada não pode regressar através da exportação.
 for (const l of loadClaims({ includeWithdrawn: true }).values()) {
@@ -145,7 +145,7 @@ console.log('RP4N-d nota: PASS, ausência da explicação não selada em todas a
   l.excerpt = l.excerpt.replace('Decrementos por reforma antecipada: caso geral', 'legenda retirada');
   morde('legenda da pensão retirada', conferirAuditoriaDasFamilias({linhas}).erros, 'não está no campo «excerpt»');
 }
-console.log(`RP4N-d final: PASS, ${plantas.length} plantas com mensagem afirmada`);
+console.log(`RP4N-d final: plantas exercitadas, ${plantas.length} plantas com mensagem afirmada`);
 
 // RP4-n-e: o excerto da figura conserva o rótulo, o valor e a fonte, sem despejar os eixos.
 export function conferirExcertoDaPensao(linha) {
@@ -205,7 +205,6 @@ export function conferirExcertoDaPensao(linha) {
  const l=loadClaims().get('evora-prr-vencido-aprovado-2026');
  const datas=l.document.computed_over.files.map(f=>f.snapshot_date);
  for(const lang of ['pt','en']) assert(NOMES_DO_PROJETO[l.id][lang].includes(datas[0].split('-').reverse().join('.')));
- const anterior=datas[0];
  try {
   l.document.computed_over.files.forEach(f=>f.snapshot_date='2000-01-02');
   assert(NOMES_DO_PROJETO[l.id].pt.endsWith('02.01.2000'),'RP4N-e: o título PRR não acompanha o campo da computação');
@@ -239,3 +238,6 @@ export function conferirExcertoDaPensao(linha) {
   morde(`unidade plural com um aviso (${lang})`,conferirValorUnidade(html).erros,'a unidade dos avisos não concorda');
  }
 }
+if(process.argv.includes('--registo-e')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/e/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
+assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
+console.log(`RP4N-e: PASS, ${plantas.length} plantas e auditoria íntegra`);
