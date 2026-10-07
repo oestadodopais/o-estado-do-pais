@@ -4,6 +4,7 @@ Uso: RESEARCHHUB_DIR=<motor> python3 design/especime-v3/medicoes/rp4n-2026-10-06
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 
 BASE = Path(__file__).resolve().parent
@@ -30,9 +31,14 @@ def limpar(s):
 # Os registos só se limpam depois de a corrida terminar, sem cortar o que ela escreve.
 for g in ('build', 'verify', 'typecheck'):
     assert (PORTOES / f'{g}.fim').exists(), f'o portão {g} não terminou'
-for p in PORTOES.iterdir():
-    if p.is_file():
-        p.write_text(limpar(p.read_text()))
+for pasta in (PORTOES, BASE / 'conferencias-b'):
+    for p in pasta.iterdir():
+        if p.is_file():
+            conteudo = limpar(p.read_text())
+            if p.suffix == '.log':
+                conteudo = re.sub(r'\x1b\[[0-9;]*m', '', conteudo)
+                conteudo = '\n'.join(l.rstrip() for l in conteudo.splitlines()).rstrip() + '\n'
+            p.write_text(conteudo)
 
 antes, depois = [ler(BASE / f'{fase}-b' / 'medidas.json') for fase in ('antes', 'depois')]
 plantas = ler(BASE / 'plantas-b.json')['plantas']
@@ -42,6 +48,13 @@ cabeca_motor = git(MOTOR, 'rev-parse', 'HEAD')
 assert cabeca_motor == INICIO_MOTOR, 'o motor mudou e precisa de nova conferência'
 assert not git(MOTOR, 'status', '--porcelain'), 'a worktree do motor tem alterações'
 codigos = {g: int((PORTOES / f'{g}.codigo').read_text()) for g in ('build', 'verify', 'typecheck')}
+codigo_lingua = int((BASE / 'conferencias-b' / 'lingua.codigo').read_text())
+for g in ('build', 'verify'):
+    if codigos[g] == 1:
+        registo = re.sub(r'\x1b\[[0-9;]*m', '', (PORTOES / f'{g}.log').read_text())
+        falhas = [l for l in registo.splitlines() if '✗' in l]
+        assert len(falhas) == depois['totais']['recusadas'], f'{g}: falhas diferentes do inventário'
+        assert all('RP4N:' in l for l in falhas), f'{g}: há uma falha fora da RP4N'
 codigo_motor = int((BASE / 'portoes' / 'motor.codigo').read_text())
 concluida = not depois['totais']['recusadas'] and not any(codigos.values())
 linhas = ['## A passagem RP4-n-b', '',
@@ -67,8 +80,9 @@ linhas += ['', 'Foi pedida decisão para dizer a ausência exata por palavras no
     '| Portão | Ficheiro | Código lido |', '|---|---|---:|']
 for g, c in codigos.items():
     linhas.append(f'| {g} | `portoes-b/{g}.codigo` | {c} |')
-linhas += [f'| motor, corrida anterior na mesma cabeça | `portoes/motor.codigo` | {codigo_motor} |', '',
-    'O motor não mudou e não teve nova corrida. Os comandos posteriores a um portão que falhou numa cadeia não se consideram executados. Os registos dos portões são conservados com os caminhos da máquina substituídos.', '',
+linhas += [f'| língua, conferência afetada corrida separadamente | `conferencias-b/lingua.codigo` | {codigo_lingua} |',
+    f'| motor, corrida anterior na mesma cabeça | `portoes/motor.codigo` | {codigo_motor} |', '',
+    'O motor não mudou e não teve nova corrida. Os comandos posteriores a um portão que falhou numa cadeia não se consideram executados. Os registos dos portões são conservados com os caminhos da máquina substituídos, sem códigos de cor nem espaços no fim das linhas.', '',
     '### Plantas e mensagens', '', f'As {len(plantas)} plantas afirmam a mensagem, o lado da decisão e a contagem da ocorrência e da página. Correm também dentro do `gate:html`.', '', '| Planta | Decisão | Mensagem | Contagem afirmada |', '|---|---|---|---:|']
 for p in plantas:
     linhas.append('| ' + ' | '.join(md(p[k]) for k in ('nome', 'estado', 'mensagem', 'contagem')) + ' |')
@@ -91,6 +105,7 @@ linhas += ['', 'A lista com cada ocorrência, contexto e resumo da página está
     'RESEARCHHUB_DIR=<motor> sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/rp4n-2026-10-06/portoes-b',
     'node design/especime-v3/medicoes/rp4n-2026-10-06/medir-b.mjs depois',
     'node design/especime-v3/medicoes/rp4n-2026-10-06/conferir-titulos-b.mjs',
+    'node scripts/check-lingua.mjs',
     'RESEARCHHUB_DIR=<motor> python3 design/especime-v3/medicoes/rp4n-2026-10-06/relatar-b.py', '```', '',
     'Commits desta passagem antes do commit final do relatório e dos códigos:', '', '```text',
     git(SITE, 'log', '--reverse', '--format=%H %s', f'{INICIO}..HEAD'), '```', '',
