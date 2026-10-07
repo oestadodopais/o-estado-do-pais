@@ -8,16 +8,23 @@ import { municipioPorSlug } from '../data/municipios.mjs';
 import { LUGAR_DECLARADO_DAS_LINHAS } from '../data/lugar-das-linhas.mjs';
 import { nomeDoPais } from './series.mjs';
 
+/** @param {string} slug */
+function nomeDaRegiao(slug) {
+  const regiao = REGIOES.find(r => r.slug === slug);
+  if (!regiao) throw Error(`ER1 lugar: a região ${slug} não está declarada.`);
+  return regiao.nome;
+}
+
 /* Exceções lidas nas próprias linhas: a dimensão territorial do INE, os
    apuramentos CAOP, o âmbito do diploma e o par da distância calculada. */
 const EXCECOES = {
   'alentejo-central-poder-de-compra-2023': { pt: 'Alentejo Central', en: 'Alentejo Central' },
-  'municipios-acores-caop-2025': REGIOES.find(r => r.slug === 'acores').nome,
-  'municipios-madeira-caop-2025': REGIOES.find(r => r.slug === 'madeira').nome,
+  'municipios-acores-caop-2025': nomeDaRegiao('acores'),
+  'municipios-madeira-caop-2025': nomeDaRegiao('madeira'),
   'municipios-continente-caop-2025': { pt: 'Continente', en: 'Mainland Portugal' },
   'retribuicao-minima-mensal-garantida-continente-2026': { pt: 'Continente', en: 'Mainland Portugal' },
-  'distancia-setubal-grande-lisboa-2024': Object.fromEntries(['pt','en'].map(lang => [lang,
-    ['peninsula-de-setubal','grande-lisboa'].map(slug => REGIOES.find(r => r.slug === slug).nome[lang]).join(' / ')])),
+  'distancia-setubal-grande-lisboa-2024': Object.fromEntries(/** @type {const} */ (['pt','en']).map(lang => [lang,
+    ['peninsula-de-setubal','grande-lisboa'].map(slug => nomeDaRegiao(slug)[lang]).join(' / ')])),
   // O pedido do IHPC contém duas geografias; a linha europeia declara a sua.
   'ihpc-variacao-homologa-ue': { pt: 'União Europeia', en: 'European Union' },
 };
