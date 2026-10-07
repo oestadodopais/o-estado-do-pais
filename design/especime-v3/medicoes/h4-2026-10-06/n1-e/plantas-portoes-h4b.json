@@ -1,0 +1,74 @@
+[
+  {
+    "nome": "h4b-menu-sem-explicacoes",
+    "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
+    "estado": "",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "N1: menu de sete errado em index\\.html\\.",
+      "N1: menu de sete errado em en\\/index\\.html\\."
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "f79fd309e56180b1be9ea0fba8b0ff053f04bd6a9116322f97040cd7457c4d0d",
+        "reposto": "f79fd309e56180b1be9ea0fba8b0ff053f04bd6a9116322f97040cd7457c4d0d"
+      },
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "5f0c869251597ad7800f8ae81f338f9ac483a386ca8e3f9f2989f7f3e1e95acf",
+        "reposto": "5f0c869251597ad7800f8ae81f338f9ac483a386ca8e3f9f2989f7f3e1e95acf"
+      }
+    ]
+  },
+  {
+    "nome": "h4b-menu-rotulo-antigo",
+    "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
+    "estado": "",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "N1: menu de sete errado em index\\.html\\.",
+      "N1: menu de sete errado em en\\/index\\.html\\."
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "f79fd309e56180b1be9ea0fba8b0ff053f04bd6a9116322f97040cd7457c4d0d",
+        "reposto": "f79fd309e56180b1be9ea0fba8b0ff053f04bd6a9116322f97040cd7457c4d0d"
+      },
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "5f0c869251597ad7800f8ae81f338f9ac483a386ca8e3f9f2989f7f3e1e95acf",
+        "reposto": "5f0c869251597ad7800f8ae81f338f9ac483a386ca8e3f9f2989f7f3e1e95acf"
+      }
+    ]
+  },
+  {
+    "nome": "h4b-menu-destino-e-ordem",
+    "cabeca": "89c54f3480d9503d0fd85281ad5247d9137971c8",
+    "estado": "",
+    "comando": "node scripts/check-pais.mjs",
+    "codigo": 1,
+    "mordidas": [
+      "N1: menu de sete errado em index\\.html\\.",
+      "N1: menu de sete errado em en\\/index\\.html\\."
+    ],
+    "passou": true,
+    "ficheiros": [
+      {
+        "ficheiro": "dist/index.html",
+        "antes": "f79fd309e56180b1be9ea0fba8b0ff053f04bd6a9116322f97040cd7457c4d0d",
+        "reposto": "f79fd309e56180b1be9ea0fba8b0ff053f04bd6a9116322f97040cd7457c4d0d"
+      },
+      {
+        "ficheiro": "dist/en/index.html",
+        "antes": "5f0c869251597ad7800f8ae81f338f9ac483a386ca8e3f9f2989f7f3e1e95acf",
+        "reposto": "5f0c869251597ad7800f8ae81f338f9ac483a386ca8e3f9f2989f7f3e1e95acf"
+      }
+    ]
+  }
+]

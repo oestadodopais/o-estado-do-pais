@@ -125,6 +125,12 @@ jobs:
       # bibliotecas do sistema que a imagem do Ubuntu não traz de origem.
       - name: O Chromium do Playwright
         run: npx playwright install --with-deps chromium
+      # O ZSH, PARA A PLANTA DA ATERRAGEM (M-A, 06.10.2026, a segunda leitura, achado 8): o `check:leituras` corre
+      # `tests/leituras/aterrar.py`, que exercita o `scripts/aterrar.sh` (um guião zsh) com os comandos substituídos; a imagem
+      # ubuntu-24.04 não traz zsh, e a primeira corrida com o passo novo caiu em «No such file or directory: 'zsh'»,
+      # a fechar bem. Instala-se o interpretador em vez de mudar o guião, para a planta provar o guião que aterra.
+      - name: O zsh, para a planta da aterragem
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq zsh
 
       # Os três portões, um passo cada um, para o registo dizer qual caiu sem
       # ninguém ter de ler as 11 577 linhas de saída de uma corrida verde

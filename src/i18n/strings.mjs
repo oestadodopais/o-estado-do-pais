@@ -184,15 +184,16 @@ export const STRINGS = {
          O nome do item do menu é O NOME DA PÁGINA, por extenso, e não uma
          abreviatura: a regra §0 do brief é «um nome por coisa em todo o sítio»,
          e «União Europeia» ao lado de uma página que se chama «Portugal na União
-         Europeia» seriam dois nomes para a mesma coisa. */
+         Europeia» seriam dois nomes para a mesma coisa. A exceção é o menu, por
+         decisão do lugar de direção no H4 (06.10.2026): a porta diz «União
+         Europeia», o assunto da página; o rodapé e o título dizem o nome inteiro.
+         O que o H4 mediu foi a porta «União Europeia» com as sete portas, em duas
+         linhas a 390 px, nas duas edições; o nome inteiro da página não foi medido
+         no menu. */
       uniaoEuropeia: 'Portugal na União Europeia',
-      /* A PORTA DA UNIÃO NO MENU DO CABEÇALHO (bloco P4, 02.10.2026, item 0 do
-         brief P4). O nome inteiro da página fica no rodapé, que é o índice do
-         sítio; no menu, a sexta porta leva o nome curto, porque as seis têm de
-         caber numa linha a 390 px e «União Europeia» não cabe (a medida está no
-         relatório do bloco e em `src/lib/navegacao.mjs`). É a decisão do brief, e
-         ela cede a regra do F1.10 («um nome por coisa») só no menu. */
-      uniaoEuropeiaNoMenu: 'Europa',
+      /* H4 (06.10.2026): «União Europeia», por extenso e não «Europa», cabe com as sete portas em duas
+         linhas a 390 px, nas duas edições, com a regra base. A medição está em `src/lib/navegacao.mjs`. */
+      uniaoEuropeiaNoMenu: 'União Europeia',
       estudos: 'Estudos',
       /* «NÚMEROS E FONTES» E NÃO «LIVRO-RAZÃO» (bloco F1.10, item 8.8,
          08.09.2026). É o tropeço R2 da ronda de leitores de 07.09 («the
@@ -1834,10 +1835,12 @@ export const STRINGS = {
       nenhumMudou: ', e nenhum mudou de valor nem de proveniência',
       ponto: '.',
       mudancasK: 'Os números que mudaram de valor',
+      /* EX2: a unidade precede os dois pontos e os valores. A frase sem apoio fica ausente. */
+      oQueEPorConfirmar: 'O que este número é fica por confirmar na fonte.',
       deAntes: ': de ',
       para: ' para ',
-      subiu: ', subiu',
-      desceu: ', desceu',
+      subiu: ', a fonte reviu para cima',
+      desceu: ', a fonte reviu para baixo',
       naoMudou: ', não mudou',
       em: ', em ',
       primeiraK: 'A primeira página',
@@ -3267,7 +3270,7 @@ export const STRINGS = {
       distritos: 'Districts',
       /* Ver a razão na edição portuguesa. */
       uniaoEuropeia: 'Portugal in the European Union',
-      uniaoEuropeiaNoMenu: 'Europe',
+      uniaoEuropeiaNoMenu: 'European Union',
       estudos: 'Studies',
       /* Ver a razão na edição portuguesa. */
       livro: 'Numbers and sources',
@@ -3881,10 +3884,11 @@ export const STRINGS = {
       nenhumMudou: ', and none changed value or provenance',
       ponto: '.',
       mudancasK: 'The figures that changed value',
+      oQueEPorConfirmar: 'What this number is remains to be confirmed at the source.',
       deAntes: ': from ',
       para: ' to ',
-      subiu: ', rose',
-      desceu: ', fell',
+      subiu: ', the source revised it upwards',
+      desceu: ', the source revised it downwards',
       naoMudou: ', did not change',
       em: ', on ',
       primeiraK: 'The front page',

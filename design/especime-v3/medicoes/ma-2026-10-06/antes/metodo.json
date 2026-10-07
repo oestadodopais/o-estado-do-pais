@@ -1,0 +1,20 @@
+{
+  "cabeca": "207d71346ea034943058fffcbbb926ddafa79e90",
+  "estados_vazios": {
+    "estado.inicio": true,
+    "estado.fim": true,
+    "estado.depois-da-observacao": true
+  },
+  "portoes_sha256": "f63419fffb3b14244a026df635fc17273af490f8526f1c822ff4397d7031619e",
+  "instrumentos_sha256": {
+    "observar-alvos.mjs": "9d6be9085c9fd591b09d8dcd5fbbc8dcbeaff15d9c139712153be9fa61e0ea1f",
+    "tempos-shell.py": "0cf50885bf3c5ccaea4a7963db8c5dce529916916f41bfb51fbe89b6884916f0",
+    "tempos.mjs": "b9c372cc85570fe322dac12e8a350166344fee063a24cc62f07b660b3a8444e3"
+  },
+  "observacao_dos_alvos_fora_da_corrida_cronometrada": true,
+  "ambiente": {
+    "RESEARCHHUB_DIR": "<motor>",
+    "OEDP_TEMPOS_DIR": "<temporario>",
+    "npm_config_script_shell": "<temporario>/tempos-shell.py"
+  }
+}

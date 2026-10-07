@@ -1,0 +1,7 @@
+{
+  "comando": "python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4c.py",
+  "fonte": "design/observatorio/BRIEF-H4-o-menu-do-telefone-em-duas-linhas.md",
+  "questao": "H4-5",
+  "estado": "fechada",
+  "decisao": "O menu do telefone segue a dobra natural pela regra base: até aos 430 px, a TM4 exige no máximo 2 linhas a 390 e a 430 px e no máximo 3 linhas a 360 e a 320 px; em todas as larguras, nenhuma porta sai da janela, cada porta tem 44 px de altura de toque, o espaço entre portas vizinhas na mesma linha é o da regra base nessa largura e a letra é a da regra base (decidido a 06.10.2026 pela H4-5)."
+}

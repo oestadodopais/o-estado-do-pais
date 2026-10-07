@@ -1,0 +1,862 @@
+{
+  "comando": "node design/especime-v3/medicoes/h4-2026-10-06/captar-h4.mjs --passagem-d",
+  "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+  "estado": "",
+  "construcao": {
+    "commit": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+    "ref": "h4-2026-10-06",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-06T14:43:10.183Z"
+  },
+  "paginas": [
+    {
+      "familia": "politica",
+      "lang": "pt",
+      "rota": "/metodo",
+      "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas-d/politica-pt.html",
+      "sha256": "74e229219a7a2dcf225a419d687d76a1248f7ed1ed2ffc8252fbf269ce3131ab",
+      "folhas": [
+        {
+          "ficheiro": "/_astro/Base.hPEW4RoH.css",
+          "sha256": "f274081feb3c23a41b42c82b431fdc82ca2c162f791dec18fbb98087803084ff"
+        },
+        {
+          "ficheiro": "/_astro/leitura.TndJzC6O.css",
+          "sha256": "c96affefd00a2dd221cd89e2086e266a2e7e0e3cfd4ce504551a72b45b60af9e"
+        }
+      ]
+    },
+    {
+      "familia": "politica",
+      "lang": "en",
+      "rota": "/en/method",
+      "copia": "design/especime-v3/medicoes/h4-2026-10-06/paginas-d/politica-en.html",
+      "sha256": "ae5b101176955b0f25dd9c2a251710f9c2218d3b83ea373b7b2132e9047e417f",
+      "folhas": [
+        {
+          "ficheiro": "/_astro/Base.hPEW4RoH.css",
+          "sha256": "f274081feb3c23a41b42c82b431fdc82ca2c162f791dec18fbb98087803084ff"
+        },
+        {
+          "ficheiro": "/_astro/leitura.TndJzC6O.css",
+          "sha256": "c96affefd00a2dd221cd89e2086e266a2e7e0e3cfd4ce504551a72b45b60af9e"
+        }
+      ]
+    }
+  ],
+  "capturas": [
+    {
+      "familia": "politica",
+      "lang": "pt",
+      "largura": 390,
+      "rota": "/metodo",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-pt-390.png",
+      "sha256": "1bb9a721b90276d02a072db3fa8350749980048bb4b94fcbc6e23da584a88ce7",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-390.png",
+      "sha256_recorte": "7514a46c9d266a58d9bda4d236e0d5db3ff81727190c38710ca8064aefe8eda5",
+      "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-390.png",
+      "sha256_cabecalho": "4eda4f49de3b9a7a2c36870f471d1a47e10157553af619e72aa78192c9affab1",
+      "medidas": {
+        "documento": 390,
+        "janela": 390,
+        "linhas": 2,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 18,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 101.890625
+          },
+          {
+            "texto": "Lugares",
+            "x": 117.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 188.40625
+          },
+          {
+            "texto": "Temas",
+            "x": 204.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 257.296875
+          },
+          {
+            "texto": "Estudos",
+            "x": 273.296875,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 344.765625
+          },
+          {
+            "texto": "Explicações",
+            "x": 18,
+            "y": 44,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 124.75
+          },
+          {
+            "texto": "União Europeia",
+            "x": 140.75,
+            "y": 44,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 276.109375
+          },
+          {
+            "texto": "Sobre",
+            "x": 292.109375,
+            "y": 44,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 341.546875
+          }
+        ],
+        "gap": 16,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "politica",
+      "lang": "pt",
+      "largura": 768,
+      "rota": "/metodo",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-pt-768.png",
+      "sha256": "edb2ed07fc95cc0f379ce39f5543201b300fbecf48ef68ddfbc329f0f552c2b9",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-768.png",
+      "sha256_recorte": "0d212c8f38bb12abd3c249a72fe9426dfb14d61e1ac8fe6ab814df4cfcef51b7",
+      "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-768.png",
+      "sha256_cabecalho": "3a34c8de21e6b7c2dfe4d2730ea4eeff79c49fe95181a8e7f8d2dfa4253c9117",
+      "medidas": {
+        "documento": 768,
+        "janela": 768,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 30.71875,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 114.609375
+          },
+          {
+            "texto": "Lugares",
+            "x": 136.109375,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 206.625
+          },
+          {
+            "texto": "Temas",
+            "x": 228.125,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 281.015625
+          },
+          {
+            "texto": "Estudos",
+            "x": 302.515625,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 373.984375
+          },
+          {
+            "texto": "Explicações",
+            "x": 395.484375,
+            "y": 0,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 502.234375
+          },
+          {
+            "texto": "União Europeia",
+            "x": 523.734375,
+            "y": 0,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 659.09375
+          },
+          {
+            "texto": "Sobre",
+            "x": 680.59375,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 730.03125
+          }
+        ],
+        "gap": 21.504,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "politica",
+      "lang": "pt",
+      "largura": 1024,
+      "rota": "/metodo",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-pt-1024.png",
+      "sha256": "9169c8ab621eecd11d20e64e5c0069c29d105609d3107aa4d83565abd7afc9ff",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-1024.png",
+      "sha256_recorte": "b932ae3348e3a8f6dce2ee30c24a5de03ba313a02cbfcfb458e6a4d936510396",
+      "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-1024.png",
+      "sha256_cabecalho": "63b4e9c0cc1b0521a7d4baa0b47c769589d903e56191ab054d039154e8a150a8",
+      "medidas": {
+        "documento": 1024,
+        "janela": 1024,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 40.953125,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 124.84375
+          },
+          {
+            "texto": "Lugares",
+            "x": 153.515625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 224.03125
+          },
+          {
+            "texto": "Temas",
+            "x": 252.703125,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 305.59375
+          },
+          {
+            "texto": "Estudos",
+            "x": 334.265625,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 405.734375
+          },
+          {
+            "texto": "Explicações",
+            "x": 434.40625,
+            "y": 0,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 541.15625
+          },
+          {
+            "texto": "União Europeia",
+            "x": 569.828125,
+            "y": 0,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 705.1875
+          },
+          {
+            "texto": "Sobre",
+            "x": 733.859375,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 783.296875
+          }
+        ],
+        "gap": 28.672,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "politica",
+      "lang": "pt",
+      "largura": 1280,
+      "rota": "/metodo",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-pt-1280.png",
+      "sha256": "7f5da4c66e9b37a861f14ad51faab994b489691a7165b33f1607d2678ec8cccf",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-1280.png",
+      "sha256_recorte": "9f5cc705bf16fa58e51ab68a729b875f3ced17c0243e0dc5519a63484d18fff8",
+      "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-1280.png",
+      "sha256_cabecalho": "7786fb568fc1542c42ff0eef99f84ae063e6c521c63aa51e20bd3f52c2b89678",
+      "medidas": {
+        "documento": 1280,
+        "janela": 1280,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 94,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 177.890625
+          },
+          {
+            "texto": "Lugares",
+            "x": 211.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 282.40625
+          },
+          {
+            "texto": "Temas",
+            "x": 316.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 369.296875
+          },
+          {
+            "texto": "Estudos",
+            "x": 403.296875,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 474.765625
+          },
+          {
+            "texto": "Explicações",
+            "x": 508.765625,
+            "y": 0,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 615.515625
+          },
+          {
+            "texto": "União Europeia",
+            "x": 649.515625,
+            "y": 0,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 784.875
+          },
+          {
+            "texto": "Sobre",
+            "x": 818.875,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 868.3125
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "politica",
+      "lang": "pt",
+      "largura": 1600,
+      "rota": "/metodo",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-pt-1600.png",
+      "sha256": "ba8f0700757ad6fed522100079ccb863ac8747b30b7410cf40f2328912f2e1fb",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-1600.png",
+      "sha256_recorte": "9f5cc705bf16fa58e51ab68a729b875f3ced17c0243e0dc5519a63484d18fff8",
+      "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-1600.png",
+      "sha256_cabecalho": "7786fb568fc1542c42ff0eef99f84ae063e6c521c63aa51e20bd3f52c2b89678",
+      "medidas": {
+        "documento": 1600,
+        "janela": 1600,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 254,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 337.890625
+          },
+          {
+            "texto": "Lugares",
+            "x": 371.890625,
+            "y": 0,
+            "largura": 70.515625,
+            "altura": 44,
+            "direita": 442.40625
+          },
+          {
+            "texto": "Temas",
+            "x": 476.40625,
+            "y": 0,
+            "largura": 52.890625,
+            "altura": 44,
+            "direita": 529.296875
+          },
+          {
+            "texto": "Estudos",
+            "x": 563.296875,
+            "y": 0,
+            "largura": 71.46875,
+            "altura": 44,
+            "direita": 634.765625
+          },
+          {
+            "texto": "Explicações",
+            "x": 668.765625,
+            "y": 0,
+            "largura": 106.75,
+            "altura": 44,
+            "direita": 775.515625
+          },
+          {
+            "texto": "União Europeia",
+            "x": 809.515625,
+            "y": 0,
+            "largura": 135.359375,
+            "altura": 44,
+            "direita": 944.875
+          },
+          {
+            "texto": "Sobre",
+            "x": 978.875,
+            "y": 0,
+            "largura": 49.4375,
+            "altura": 44,
+            "direita": 1028.3125
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "politica",
+      "lang": "en",
+      "largura": 390,
+      "rota": "/en/method",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-en-390.png",
+      "sha256": "aa4c0fa02eddc566e861cf9b28f8d2615fe0a6c543058c7994a07c7e0ce50532",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-en-390.png",
+      "sha256_recorte": "f8dcd87f54c4d475fd5a6b496cb10e5345f684e05598c319780e31341ea1ed70",
+      "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-390.png",
+      "sha256_cabecalho": "035300cd840873212c50cde346224d0e36e83d153da24ef27227a41be5d71d83",
+      "medidas": {
+        "documento": 390,
+        "janela": 390,
+        "linhas": 2,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 18,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 101.890625
+          },
+          {
+            "texto": "Places",
+            "x": 117.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 175.578125
+          },
+          {
+            "texto": "Themes",
+            "x": 191.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 255.3125
+          },
+          {
+            "texto": "Studies",
+            "x": 271.3125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 337.203125
+          },
+          {
+            "texto": "Explainers",
+            "x": 18,
+            "y": 44,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 114.34375
+          },
+          {
+            "texto": "European Union",
+            "x": 130.34375,
+            "y": 44,
+            "largura": 142,
+            "altura": 44,
+            "direita": 272.34375
+          },
+          {
+            "texto": "About",
+            "x": 288.34375,
+            "y": 44,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 342.546875
+          }
+        ],
+        "gap": 16,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "politica",
+      "lang": "en",
+      "largura": 768,
+      "rota": "/en/method",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-en-768.png",
+      "sha256": "f0db1435e1accdc0226a7a4745c5057a74ed389a7fbc5142a8a811194dc62df9",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-en-768.png",
+      "sha256_recorte": "34a40db48029b7c3e6132d2dbc6a5944ce74d121b87a3572302d3c7003533349",
+      "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-768.png",
+      "sha256_cabecalho": "65c478fd902c1b9b93d64c19f41f0fff51ba57df76cd3a882611824ecb0c8d23",
+      "medidas": {
+        "documento": 768,
+        "janela": 768,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 30.71875,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 114.609375
+          },
+          {
+            "texto": "Places",
+            "x": 136.109375,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 193.796875
+          },
+          {
+            "texto": "Themes",
+            "x": 215.296875,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 279.03125
+          },
+          {
+            "texto": "Studies",
+            "x": 300.53125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 366.421875
+          },
+          {
+            "texto": "Explainers",
+            "x": 387.921875,
+            "y": 0,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 484.265625
+          },
+          {
+            "texto": "European Union",
+            "x": 505.765625,
+            "y": 0,
+            "largura": 142,
+            "altura": 44,
+            "direita": 647.765625
+          },
+          {
+            "texto": "About",
+            "x": 669.265625,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 723.46875
+          }
+        ],
+        "gap": 21.504,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "politica",
+      "lang": "en",
+      "largura": 1024,
+      "rota": "/en/method",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-en-1024.png",
+      "sha256": "cdb9d1cbbd1f6a8f7118385222b4f0abf97a48aa862777bf58f2d56ac17e1481",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-en-1024.png",
+      "sha256_recorte": "0f11aedf2781e39692a186e822d9cb0ba6b906be07afd4a0af1a83e0c98d9bfe",
+      "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-1024.png",
+      "sha256_cabecalho": "7c21d4858ea7c816586075eaef479df5b008cd2b9cafd42dd4dd53561247fe15",
+      "medidas": {
+        "documento": 1024,
+        "janela": 1024,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 40.953125,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 124.84375
+          },
+          {
+            "texto": "Places",
+            "x": 153.515625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 211.203125
+          },
+          {
+            "texto": "Themes",
+            "x": 239.875,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 303.609375
+          },
+          {
+            "texto": "Studies",
+            "x": 332.28125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 398.171875
+          },
+          {
+            "texto": "Explainers",
+            "x": 426.84375,
+            "y": 0,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 523.1875
+          },
+          {
+            "texto": "European Union",
+            "x": 551.859375,
+            "y": 0,
+            "largura": 142,
+            "altura": 44,
+            "direita": 693.859375
+          },
+          {
+            "texto": "About",
+            "x": 722.53125,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 776.734375
+          }
+        ],
+        "gap": 28.672,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "politica",
+      "lang": "en",
+      "largura": 1280,
+      "rota": "/en/method",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-en-1280.png",
+      "sha256": "e114151f8efb42e5da8ba424e0266ef8aabe30575e603330ce50ff127b852186",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-en-1280.png",
+      "sha256_recorte": "a771d0ac0181e568df6e2bcfa91ce8d3e15769cecbcfef2e57fe4a30623ec63d",
+      "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-1280.png",
+      "sha256_cabecalho": "fbea1306e17155a69cd6b736ee5e47cd5a29eab7b7b4ad05c6739b4a2975559a",
+      "medidas": {
+        "documento": 1280,
+        "janela": 1280,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 94,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 177.890625
+          },
+          {
+            "texto": "Places",
+            "x": 211.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 269.578125
+          },
+          {
+            "texto": "Themes",
+            "x": 303.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 367.3125
+          },
+          {
+            "texto": "Studies",
+            "x": 401.3125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 467.203125
+          },
+          {
+            "texto": "Explainers",
+            "x": 501.203125,
+            "y": 0,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 597.546875
+          },
+          {
+            "texto": "European Union",
+            "x": 631.546875,
+            "y": 0,
+            "largura": 142,
+            "altura": 44,
+            "direita": 773.546875
+          },
+          {
+            "texto": "About",
+            "x": 807.546875,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 861.75
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    },
+    {
+      "familia": "politica",
+      "lang": "en",
+      "largura": 1600,
+      "rota": "/en/method",
+      "ancora": "politica-de-ia",
+      "ficheiro": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-en-1600.png",
+      "sha256": "922183f1932991c6a7239d706473dc60b8433c881f3fb34a72c68ea5560ec8b3",
+      "recorte": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-en-1600.png",
+      "sha256_recorte": "a771d0ac0181e568df6e2bcfa91ce8d3e15769cecbcfef2e57fe4a30623ec63d",
+      "cabecalho": "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-1600.png",
+      "sha256_cabecalho": "fbea1306e17155a69cd6b736ee5e47cd5a29eab7b7b4ad05c6739b4a2975559a",
+      "medidas": {
+        "documento": 1600,
+        "janela": 1600,
+        "linhas": 1,
+        "portas": [
+          {
+            "texto": "Portugal",
+            "x": 254,
+            "y": 0,
+            "largura": 83.890625,
+            "altura": 44,
+            "direita": 337.890625
+          },
+          {
+            "texto": "Places",
+            "x": 371.890625,
+            "y": 0,
+            "largura": 57.6875,
+            "altura": 44,
+            "direita": 429.578125
+          },
+          {
+            "texto": "Themes",
+            "x": 463.578125,
+            "y": 0,
+            "largura": 63.734375,
+            "altura": 44,
+            "direita": 527.3125
+          },
+          {
+            "texto": "Studies",
+            "x": 561.3125,
+            "y": 0,
+            "largura": 65.890625,
+            "altura": 44,
+            "direita": 627.203125
+          },
+          {
+            "texto": "Explainers",
+            "x": 661.203125,
+            "y": 0,
+            "largura": 96.34375,
+            "altura": 44,
+            "direita": 757.546875
+          },
+          {
+            "texto": "European Union",
+            "x": 791.546875,
+            "y": 0,
+            "largura": 142,
+            "altura": 44,
+            "direita": 933.546875
+          },
+          {
+            "texto": "About",
+            "x": 967.546875,
+            "y": 0,
+            "largura": 54.203125,
+            "altura": 44,
+            "direita": 1021.75
+          }
+        ],
+        "gap": 34,
+        "letra": "15px",
+        "transbordo_menu": false,
+        "lugares_ia": 3
+      },
+      "pedidos_externos": []
+    }
+  ],
+  "erros": []
+}
