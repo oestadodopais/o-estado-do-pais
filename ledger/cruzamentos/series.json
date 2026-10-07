@@ -14,6 +14,13 @@
       "exporter": "ResearchHub/publisher/export_series.py",
       "origin_path": "content/13 Dominios/series.json",
       "origin_sha256": "5bd35b299fae44aa0408e9f29e4a3a465f3bd96cb7159442b7616ce55b5b7422"
+    },
+    "rotulos-das-series.json": {
+      "destino": "src/data",
+      "exported_sha256": "b562b3e0100fc9c953e7496d5064ea7ef5822ef748750e994f4b257753472474",
+      "exporter": "ResearchHub/publisher/export_series.py",
+      "origin_path": "content/13 Dominios/rotulos-series.json",
+      "origin_sha256": "b562b3e0100fc9c953e7496d5064ea7ef5822ef748750e994f4b257753472474"
     }
   },
   "origin": "ResearchHub",

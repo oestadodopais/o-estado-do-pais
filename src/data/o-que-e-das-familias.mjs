@@ -26,10 +26,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "agua-nao-faturada-portugal": {
     "frase": {
       "pt": [
-        "É a parte da água que não é faturada, pelo relatório anual dos serviços de águas e resíduos."
+        "Não há excerto da fonte que permita explicar este número."
       ],
       "en": [
-        "It is the share of water that is not billed, from the annual report on water and waste services."
+        "No source excerpt is available to explain this number."
       ]
     }
   },
@@ -46,20 +46,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "avisos-pt2030-abertos": {
     "frase": {
       "pt": [
-        "É o número de avisos de candidatura que estavam abertos."
+        "Não há excerto da fonte que permita explicar este número."
       ],
       "en": [
-        "It is the number of calls for applications that were open."
+        "No source excerpt is available to explain this number."
       ]
     }
   },
   "avisos-pt2030-pessoas-singulares": {
     "frase": {
       "pt": [
-        "É o número de avisos de candidatura abertos a pessoas singulares."
+        "Não há excerto da fonte que permita explicar este número."
       ],
       "en": [
-        "It is the number of calls for applications open to individuals."
+        "No source excerpt is available to explain this number."
       ]
     }
   },
@@ -69,10 +69,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "ciclo-substituicao-condutas": {
     "frase": {
       "pt": [
-        "É o ciclo de substituição das condutas de água, em anos."
+        "Não há excerto da fonte que permita explicar este número."
       ],
       "en": [
-        "It is the replacement cycle of the water mains, in years."
+        "No source excerpt is available to explain this number."
       ]
     }
   },
@@ -811,10 +811,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-divida-inicio-mandato-reexpressa": {
     "frase": {
       "pt": [
-        "É a dívida do início do mandato como a apresenta um relatório de gestão posterior: reexpressa quer dizer apresentada de novo mais tarde."
+        "É a dívida do início do mandato como a apresenta um relatório de gestão posterior."
       ],
       "en": [
-        "It is the debt at the start of the term as a later management report presents it: restated means presented again later."
+        "It is the debt at the start of the term as a later management report presents it."
       ]
     }
   },
@@ -961,10 +961,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-pelouros-2021-presidente": {
     "frase": {
       "pt": [
-        "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo: cada pelouro é uma área da câmara a seu cargo."
+        "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo."
       ],
       "en": [
-        "It is the number of portfolios that the council executive’s page assigns to this member of the executive: each portfolio is an area of the council in their charge."
+        "It is the number of portfolios that the council executive’s page assigns to this member of the executive."
       ]
     }
   },
@@ -981,20 +981,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-pelouros-2021-vice-presidente": {
     "frase": {
       "pt": [
-        "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo: cada pelouro é uma área da câmara a seu cargo."
+        "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo."
       ],
       "en": [
-        "It is the number of portfolios that the council executive’s page assigns to this member of the executive: each portfolio is an area of the council in their charge."
+        "It is the number of portfolios that the council executive’s page assigns to this member of the executive."
       ]
     }
   },
   "evora-pelouros-2025-presidente": {
     "frase": {
       "pt": [
-        "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo: cada pelouro é uma área da câmara a seu cargo."
+        "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo."
       ],
       "en": [
-        "It is the number of portfolios that the council executive’s page assigns to this member of the executive: each portfolio is an area of the council in their charge."
+        "It is the number of portfolios that the council executive’s page assigns to this member of the executive."
       ]
     }
   },
@@ -1011,20 +1011,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-pelouros-2025-vereadora": {
     "frase": {
       "pt": [
-        "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo: cada pelouro é uma área da câmara a seu cargo."
+        "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo."
       ],
       "en": [
-        "It is the number of portfolios that the council executive’s page assigns to this member of the executive: each portfolio is an area of the council in their charge."
+        "It is the number of portfolios that the council executive’s page assigns to this member of the executive."
       ]
     }
   },
   "evora-pelouros-2025-vice-presidente": {
     "frase": {
       "pt": [
-        "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo: cada pelouro é uma área da câmara a seu cargo."
+        "É o número de pelouros que a página do executivo da câmara atribui a este membro do executivo."
       ],
       "en": [
-        "It is the number of portfolios that the council executive’s page assigns to this member of the executive: each portfolio is an area of the council in their charge."
+        "It is the number of portfolios that the council executive’s page assigns to this member of the executive."
       ]
     }
   },
@@ -1055,10 +1055,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-prr-aprovado": {
     "frase": {
       "pt": [
-        "São as verbas do Plano de Recuperação e Resiliência aprovadas para projetos no concelho, pela listagem de entidades do plano."
+        "São as verbas contratadas do Plano de Recuperação e Resiliência por beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano."
       ],
       "en": [
-        "They are the Recovery and Resilience Plan funds approved for projects in the municipality, from the plan’s list of entities."
+        "These are Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities."
       ]
     }
   },
@@ -1085,10 +1085,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-prr-pago": {
     "frase": {
       "pt": [
-        "São as verbas do Plano de Recuperação e Resiliência já pagas a projetos no concelho, pela listagem de entidades do plano."
+        "São as verbas pagas do Plano de Recuperação e Resiliência a beneficiários intermediários e diretos com sede no concelho, pela listagem de entidades do plano."
       ],
       "en": [
-        "They are the Recovery and Resilience Plan funds already paid to projects in the municipality, from the plan’s list of entities."
+        "These are Recovery and Resilience Plan funds paid to intermediate and direct beneficiaries headquartered in the municipality, from the plan’s list of entities."
       ]
     }
   },
@@ -1105,10 +1105,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-prr-vencido-aprovado": {
     "frase": {
       "pt": [
-        "São as verbas aprovadas em projetos no concelho cujo prazo de conclusão já passou, pela listagem de entidades do Plano de Recuperação e Resiliência."
+        "São as verbas contratadas por beneficiários intermediários e diretos com sede no concelho, com prazo de conclusão anterior ao instantâneo e sem conclusão registada, pela listagem de entidades do Plano de Recuperação e Resiliência."
       ],
       "en": [
-        "They are the funds approved for projects in the municipality whose completion deadline has passed, from the Recovery and Resilience Plan’s list of entities."
+        "These are funds contracted by intermediate and direct beneficiaries headquartered in the municipality, with a completion deadline before the snapshot and no completion recorded, from the Recovery and Resilience Plan’s list of entities."
       ]
     }
   },
@@ -1395,20 +1395,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "execucao-2026-07-despesa-primaria-administracao-central": {
     "frase": {
       "pt": [
-        "É a despesa da administração central sem os juros da dívida, a que a fonte chama despesa primária."
+        "É a despesa efetiva da administração central sem a rubrica de juros e outros encargos, a que a fonte chama despesa primária."
       ],
       "en": [
-        "It is central administration’s expenditure without the interest on the debt, which the source calls primary expenditure."
+        "It is central administration’s effective expenditure excluding interest and other charges, which the source calls primary expenditure."
       ]
     }
   },
   "execucao-2026-07-diferencas-consolidacao-funcional": {
     "frase": {
       "pt": [
-        "É a diferença de consolidação da despesa por funções da administração central: o acerto que se soma às funções para chegar ao total da despesa efetiva consolidada, e não uma função."
+        "É a diferença de consolidação da despesa por funções da administração central."
       ],
       "en": [
-        "It is the consolidation difference in central administration’s expenditure by function: the adjustment added to the functions to reach total consolidated effective expenditure, and not a function."
+        "It is the consolidation difference in central administration’s expenditure by function."
       ]
     }
   },
@@ -1455,10 +1455,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "execucao-2026-07-saldo-primario-administracao-central": {
     "frase": {
       "pt": [
-        "É o saldo da administração central sem os juros da dívida, a que a fonte chama saldo primário."
+        "É a receita efetiva da administração central menos a despesa primária, a que a fonte chama saldo primário."
       ],
       "en": [
-        "It is central administration’s balance without the interest on the debt, which the source calls primary balance."
+        "It is central administration’s effective revenue minus primary expenditure, which the source calls primary balance."
       ]
     }
   },
@@ -1495,200 +1495,200 @@ export const FAMILIAS_DAS_LINHAS = {
   "execucao-2026-08-despesa-programa-001": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-002": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-003": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-004": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-005": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-006": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-007": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-008": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-009": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-010": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-011": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-012": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-013": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-014": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-015": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-016": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-017": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-018": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-019": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
   "execucao-2026-08-despesa-programa-020": {
     "frase": {
       "pt": [
-        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem as operações com ativos e passivos financeiros nem as transferências entre os serviços do programa; as transferências para outros programas ainda contam."
+        "É o que a administração central gastou neste programa de janeiro a agosto, em despesa efetiva consolidada dentro do programa: sem operações com ativos e passivos financeiros nem os fluxos internos ao programa."
       ],
       "en": [
-        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: without transactions in financial assets and liabilities or transfers between the programme’s services; transfers to other programmes still count."
+        "It is what central administration spent on this programme from January to August, in effective expenditure consolidated within the programme: excluding financial asset and liability transactions and flows within the programme."
       ]
     }
   },
@@ -1715,10 +1715,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social": {
     "frase": {
       "pt": [
-        "É o que a administração central e a segurança social receberam de novos passivos financeiros, menos o que amortizaram; não é a parte da despesa paga com dívida."
+        "É o que a administração central e a segurança social receberam de novos passivos financeiros, menos o que amortizaram."
       ],
       "en": [
-        "It is what central administration and social security received from new financial liabilities, less what they repaid; it is not the part of spending paid for with debt."
+        "It is what central administration and social security received from new financial liabilities, less what they repaid."
       ]
     }
   },
@@ -1755,30 +1755,30 @@ export const FAMILIAS_DAS_LINHAS = {
   "execucao-2026-08-saldo-global-administracao-central-seguranca-social": {
     "frase": {
       "pt": [
-        "É o saldo global da administração central e da segurança social: a receita efetiva menos a despesa efetiva; não é a dívida que se emitiu."
+        "É o saldo global da administração central e da segurança social: a receita efetiva menos a despesa efetiva."
       ],
       "en": [
-        "It is the overall balance of central administration and social security: effective revenue minus effective expenditure; it is not the debt that was issued."
+        "It is the overall balance of central administration and social security: effective revenue minus effective expenditure."
       ]
     }
   },
   "execucao-2026-08-subtotal-programas": {
     "frase": {
       "pt": [
-        "É a soma da despesa efetiva consolidada de cada programa da administração central, de janeiro a agosto: cada programa sem as suas transferências internas, mas com as transferências entre programas ainda por tirar."
+        "É a soma da despesa efetiva consolidada de cada programa da administração central, de janeiro a agosto: cada programa sem os seus fluxos internos."
       ],
       "en": [
-        "It is the sum of the consolidated effective expenditure of each central administration programme, from January to August: each programme without its internal transfers, but with the transfers between programmes still to be removed."
+        "It is the sum of the consolidated effective expenditure of each central administration programme, from January to August: each programme excluding its internal flows."
       ]
     }
   },
   "factor-sustentabilidade": {
     "frase": {
       "pt": [
-        "É o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica: abaixo de um, a pensão baixa, e o que falta para chegar a um é a parte que se corta."
+        "É o fator que multiplica o montante das pensões de velhice que começam no ano e a que ele se aplica."
       ],
       "en": [
-        "It is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies: below one, the pension falls, and the gap to one is the share that is cut."
+        "It is the factor that multiplies the amount of the old-age pensions that start in the year and to which it applies."
       ]
     }
   },
@@ -2128,190 +2128,190 @@ export const FAMILIAS_DAS_LINHAS = {
   "oe-2026-cem-euros-ministerio-administracao-interna": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-agricultura-e-mar": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-ambiente-e-energia": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-defesa-nacional": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-economia-e-coesao-territorial": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado": {
     "frase": {
       "pt": [
-        "É quanto vai para os encargos gerais do Estado em cada cem euros da despesa bruta da administração central que o Orçamento prevê; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para os encargos gerais do Estado em cada cem euros da despesa bruta da administração central que o Orçamento prevê; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to the general charges of the State that the Budget plans; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to the general charges of the State that the Budget plans; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-financas": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-justica": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-negocios-estrangeiros": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-reforma-do-estado": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-saude": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social": {
     "frase": {
       "pt": [
-        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê."
       ],
       "en": [
-        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is how much of every hundred euros of central administration’s gross expenditure goes to this ministry that the Budget plans."
       ]
     }
   },
   "oe-2026-despesa-bruta-administracao-central": {
     "frase": {
       "pt": [
-        "É a soma de toda a despesa dos serviços da administração central que o Orçamento prevê para o ano, em bruto; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É a soma de toda a despesa dos serviços da administração central que o Orçamento prevê para o ano."
       ],
       "en": [
-        "It is the sum of all the expenditure of central administration services that the Budget plans for the year, in gross terms; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is the sum of all the expenditure of central administration services that the Budget plans for the year."
       ]
     }
   },
   "oe-2026-despesa-consolidada-administracao-central": {
     "frase": {
       "pt": [
-        "É a despesa total que o Orçamento prevê para o ano, consolidada: sem as transferências entre os serviços de que é feita, mas com as operações financeiras."
+        "É a despesa total que o Orçamento prevê para o ano, consolidada."
       ],
       "en": [
-        "It is the total expenditure that the Budget plans for the year, consolidated: without the transfers between the services it is made of, but with financial transactions."
+        "It is the total expenditure that the Budget plans for the year, consolidated."
       ]
     }
   },
   "oe-2026-despesa-consolidada-seguranca-social": {
     "frase": {
       "pt": [
-        "É a despesa total que o Orçamento prevê para o ano, consolidada: sem as transferências entre os serviços de que é feita, mas com as operações financeiras."
+        "É a despesa total que o Orçamento prevê para o ano, consolidada."
       ],
       "en": [
-        "It is the total expenditure that the Budget plans for the year, consolidated: without the transfers between the services it is made of, but with financial transactions."
+        "It is the total expenditure that the Budget plans for the year, consolidated."
       ]
     }
   },
@@ -2438,160 +2438,160 @@ export const FAMILIAS_DAS_LINHAS = {
   "oe-2026-despesa-ministerio-administracao-interna": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-agricultura-e-mar": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-ambiente-e-energia": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-cultura-juventude-e-desporto": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-defesa-nacional": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-economia-e-coesao-territorial": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-encargos-gerais-do-estado": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê para os encargos gerais do Estado num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê para os encargos gerais do Estado num ano."
       ],
       "en": [
-        "It is what the Budget plans for the general charges of the State in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for the general charges of the State in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-financas": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-infraestruturas-e-habitacao": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-justica": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-negocios-estrangeiros": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-reforma-do-estado": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-saude": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
   "oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê que este ministério gaste num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê que este ministério gaste num ano."
       ],
       "en": [
-        "It is what the Budget plans for this ministry to spend in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans for this ministry to spend in a year."
       ]
     }
   },
@@ -2608,270 +2608,270 @@ export const FAMILIAS_DAS_LINHAS = {
   "oe-2026-despesa-primaria-administracao-central": {
     "frase": {
       "pt": [
-        "É a despesa da administração central sem os juros da dívida, a que a fonte chama despesa primária."
+        "É a despesa efetiva da administração central sem a rubrica de juros e outros encargos, a que a fonte chama despesa primária."
       ],
       "en": [
-        "It is central administration’s expenditure without the interest on the debt, which the source calls primary expenditure."
+        "It is central administration’s effective expenditure excluding interest and other charges, which the source calls primary expenditure."
       ]
     }
   },
   "oe-2026-despesa-programa-001": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-002": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-003": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-004": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-005": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-006": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-007": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-008": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-009": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-010": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-011": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-012": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-013": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-014": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-015": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-016": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-017": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-018": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-019": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-programa-020": {
     "frase": {
       "pt": [
-        "É o que o Orçamento prevê gastar neste programa da administração central num ano, em despesa bruta; a despesa bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É o que o Orçamento prevê gastar neste programa da administração central num ano."
       ],
       "en": [
-        "It is what the Budget plans to spend on this central administration programme in a year, in gross expenditure; gross expenditure counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is what the Budget plans to spend on this central administration programme in a year."
       ]
     }
   },
   "oe-2026-despesa-total": {
     "frase": {
       "pt": [
-        "É a despesa total que o Orçamento prevê para o ano, consolidada: sem as transferências entre os serviços de que é feita, mas com as operações financeiras."
+        "É a despesa total que o Orçamento prevê para o ano, consolidada."
       ],
       "en": [
-        "It is the total expenditure that the Budget plans for the year, consolidated: without the transfers between the services it is made of, but with financial transactions."
+        "It is the total expenditure that the Budget plans for the year, consolidated."
       ]
     }
   },
   "oe-2026-diferencas-consolidacao-funcional": {
     "frase": {
       "pt": [
-        "É a diferença de consolidação da despesa por funções da administração central: o acerto que se soma às funções para chegar ao total da despesa efetiva consolidada, e não uma função."
+        "É a diferença de consolidação da despesa por funções da administração central."
       ],
       "en": [
-        "It is the consolidation difference in central administration’s expenditure by function: the adjustment added to the functions to reach total consolidated effective expenditure, and not a function."
+        "It is the consolidation difference in central administration’s expenditure by function."
       ]
     }
   },
   "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social": {
     "frase": {
       "pt": [
-        "É o que a administração central e a segurança social receberam de novos passivos financeiros, menos o que amortizaram; não é a parte da despesa paga com dívida."
+        "É o que a administração central e a segurança social receberam de novos passivos financeiros, menos o que amortizaram."
       ],
       "en": [
-        "It is what central administration and social security received from new financial liabilities, less what they repaid; it is not the part of spending paid for with debt."
+        "It is what central administration and social security received from new financial liabilities, less what they repaid."
       ]
     }
   },
   "oe-2026-receita-bruta-administracao-central": {
     "frase": {
       "pt": [
-        "É a soma de toda a receita dos serviços da administração central que o Orçamento prevê para o ano, em bruto; a receita bruta conta as operações financeiras e as transferências entre serviços do Estado, como o mapa as soma."
+        "É a soma de toda a receita dos serviços da administração central que o Orçamento prevê para o ano."
       ],
       "en": [
-        "It is the sum of all the revenue of central administration services that the Budget plans for the year, in gross terms; gross revenue counts financial transactions and transfers between State services, as the budget map adds them up."
+        "It is the sum of all the revenue of central administration services that the Budget plans for the year."
       ]
     }
   },
   "oe-2026-receita-consolidada-administracao-central": {
     "frase": {
       "pt": [
-        "É a receita total que o Orçamento prevê para o ano, consolidada: sem as transferências entre os serviços de que é feita, mas com as operações financeiras."
+        "É a receita total que o Orçamento prevê para o ano, consolidada."
       ],
       "en": [
-        "It is the total revenue that the Budget plans for the year, consolidated: without the transfers between the services it is made of, but with financial transactions."
+        "It is the total revenue that the Budget plans for the year, consolidated."
       ]
     }
   },
   "oe-2026-receita-consolidada-seguranca-social": {
     "frase": {
       "pt": [
-        "É a receita total que o Orçamento prevê para o ano, consolidada: sem as transferências entre os serviços de que é feita, mas com as operações financeiras."
+        "É a receita total que o Orçamento prevê para o ano, consolidada."
       ],
       "en": [
-        "It is the total revenue that the Budget plans for the year, consolidated: without the transfers between the services it is made of, but with financial transactions."
+        "It is the total revenue that the Budget plans for the year, consolidated."
       ]
     }
   },
@@ -2918,20 +2918,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "oe-2026-saldo-global-administracao-central-seguranca-social": {
     "frase": {
       "pt": [
-        "É o saldo global da administração central e da segurança social: a receita efetiva menos a despesa efetiva; não é a dívida que se emitiu."
+        "É o saldo global da administração central e da segurança social: a receita efetiva menos a despesa efetiva."
       ],
       "en": [
-        "It is the overall balance of central administration and social security: effective revenue minus effective expenditure; it is not the debt that was issued."
+        "It is the overall balance of central administration and social security: effective revenue minus effective expenditure."
       ]
     }
   },
   "oe-2026-saldo-primario-administracao-central": {
     "frase": {
       "pt": [
-        "É o saldo da administração central sem os juros da dívida, a que a fonte chama saldo primário."
+        "É a receita efetiva da administração central menos a despesa primária, a que a fonte chama saldo primário."
       ],
       "en": [
-        "It is central administration’s balance without the interest on the debt, which the source calls primary balance."
+        "It is central administration’s effective revenue minus primary expenditure, which the source calls primary balance."
       ]
     }
   },
@@ -2948,10 +2948,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "penalizacao-antecipacao-um-ano-neutra": {
     "frase": {
       "pt": [
-        "É o corte na pensão por um ano de antecipação da reforma que deixaria o sistema de pensões sem ganhar nem perder, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social."
+        "São cálculos sobre o efeito da antecipação da idade de reforma, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social."
       ],
       "en": [
-        "It is the pension cut for retiring one year early that would leave the pension system neither gaining nor losing, counting the contributions no longer paid and the rights that are added, from the calculations of the final report on social security reform."
+        "These are calculations of the effect of early retirement, counting the contributions no longer paid and the rights that are added, from the calculations of the final report on social security reform."
       ]
     }
   },
@@ -3277,181 +3277,7 @@ export const FAMILIAS_DOS_CONCELHOS = {
 /**
  * AS LINHAS CUJA FRASE ESTÁ POR CONFIRMAR NA FONTE (passagem R4-b, 06.10.2026): uma parte da frase que nem a fonte nem a
  * conta declarada de uma linha calculada dizem (só o nome do projeto, a ressalva da casa ou a explicação de um termo). O
- * recibo dessas linhas leva o marcador da casa ao pé da frase; a K17 refaz a lista pela auditoria e confere o marcador.
+ * recibo dessas linhas é recusado pela K17 e pelo portão HTML. O RP4-n conserva a lista como alarme, que tem de ficar vazio.
  */
-export const LINHAS_POR_CONFIRMAR_NA_FONTE = [
-  "agua-nao-faturada-portugal-2024",
-  "calheta-desemprego-registado-2025-12",
-  "camara-de-lobos-desemprego-registado-2025-12",
-  "evora-concentracao-vab4-2024",
-  "evora-divida-inicio-mandato-reexpressa",
-  "evora-pelouros-2021-presidente",
-  "evora-pelouros-2021-vice-presidente",
-  "evora-pelouros-2025-presidente",
-  "evora-pelouros-2025-vereadora",
-  "evora-pelouros-2025-vice-presidente",
-  "evora-prr-aprovado-2026",
-  "evora-prr-pago-2026",
-  "evora-prr-vencido-aprovado-2026",
-  "evora-vab-empresarial-2024",
-  "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
-  "execucao-2026-07-ativos-e-passivos-da-receita-administracao-central",
-  "execucao-2026-07-cem-euros-funcao-01",
-  "execucao-2026-07-cem-euros-funcao-02",
-  "execucao-2026-07-cem-euros-funcao-03",
-  "execucao-2026-07-cem-euros-funcao-04",
-  "execucao-2026-07-cem-euros-funcao-05",
-  "execucao-2026-07-cem-euros-funcao-06",
-  "execucao-2026-07-cem-euros-funcao-07",
-  "execucao-2026-07-cem-euros-funcao-08",
-  "execucao-2026-07-cem-euros-funcao-09",
-  "execucao-2026-07-cem-euros-funcao-10",
-  "execucao-2026-07-despesa-efetiva-administracao-central",
-  "execucao-2026-07-despesa-funcao-01",
-  "execucao-2026-07-despesa-funcao-02",
-  "execucao-2026-07-despesa-funcao-03",
-  "execucao-2026-07-despesa-funcao-04",
-  "execucao-2026-07-despesa-funcao-05",
-  "execucao-2026-07-despesa-funcao-06",
-  "execucao-2026-07-despesa-funcao-07",
-  "execucao-2026-07-despesa-funcao-08",
-  "execucao-2026-07-despesa-funcao-09",
-  "execucao-2026-07-despesa-funcao-10",
-  "execucao-2026-07-despesa-orcamental-administracao-central",
-  "execucao-2026-07-despesa-primaria-administracao-central",
-  "execucao-2026-07-diferencas-consolidacao-funcional",
-  "execucao-2026-07-receita-efetiva-administracao-central",
-  "execucao-2026-07-receita-orcamental-administracao-central",
-  "execucao-2026-07-saldo-primario-administracao-central",
-  "execucao-2026-08-despesa-efetiva-administracao-central",
-  "execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social",
-  "execucao-2026-08-despesa-programa-001",
-  "execucao-2026-08-despesa-programa-002",
-  "execucao-2026-08-despesa-programa-003",
-  "execucao-2026-08-despesa-programa-004",
-  "execucao-2026-08-despesa-programa-005",
-  "execucao-2026-08-despesa-programa-006",
-  "execucao-2026-08-despesa-programa-007",
-  "execucao-2026-08-despesa-programa-008",
-  "execucao-2026-08-despesa-programa-009",
-  "execucao-2026-08-despesa-programa-010",
-  "execucao-2026-08-despesa-programa-011",
-  "execucao-2026-08-despesa-programa-012",
-  "execucao-2026-08-despesa-programa-013",
-  "execucao-2026-08-despesa-programa-014",
-  "execucao-2026-08-despesa-programa-015",
-  "execucao-2026-08-despesa-programa-016",
-  "execucao-2026-08-despesa-programa-017",
-  "execucao-2026-08-despesa-programa-018",
-  "execucao-2026-08-despesa-programa-019",
-  "execucao-2026-08-despesa-programa-020",
-  "execucao-2026-08-passivos-financeiros-liquidos-administracao-central-seguranca-social",
-  "execucao-2026-08-receita-efetiva-administracao-central",
-  "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social",
-  "execucao-2026-08-saldo-global-administracao-central-seguranca-social",
-  "execucao-2026-08-subtotal-programas",
-  "factor-sustentabilidade-2026",
-  "funchal-desemprego-registado-2025-12",
-  "machico-desemprego-registado-2025-12",
-  "oe-2026-ativos-e-passivos-da-despesa-administracao-central",
-  "oe-2026-ativos-e-passivos-da-receita-administracao-central",
-  "oe-2026-cem-euros-funcao-01",
-  "oe-2026-cem-euros-funcao-02",
-  "oe-2026-cem-euros-funcao-03",
-  "oe-2026-cem-euros-funcao-04",
-  "oe-2026-cem-euros-funcao-05",
-  "oe-2026-cem-euros-funcao-06",
-  "oe-2026-cem-euros-funcao-07",
-  "oe-2026-cem-euros-funcao-08",
-  "oe-2026-cem-euros-funcao-09",
-  "oe-2026-cem-euros-funcao-10",
-  "oe-2026-cem-euros-ministerio-administracao-interna",
-  "oe-2026-cem-euros-ministerio-agricultura-e-mar",
-  "oe-2026-cem-euros-ministerio-ambiente-e-energia",
-  "oe-2026-cem-euros-ministerio-cultura-juventude-e-desporto",
-  "oe-2026-cem-euros-ministerio-defesa-nacional",
-  "oe-2026-cem-euros-ministerio-economia-e-coesao-territorial",
-  "oe-2026-cem-euros-ministerio-educacao-ciencia-e-inovacao",
-  "oe-2026-cem-euros-ministerio-encargos-gerais-do-estado",
-  "oe-2026-cem-euros-ministerio-financas",
-  "oe-2026-cem-euros-ministerio-infraestruturas-e-habitacao",
-  "oe-2026-cem-euros-ministerio-justica",
-  "oe-2026-cem-euros-ministerio-negocios-estrangeiros",
-  "oe-2026-cem-euros-ministerio-presidencia-do-conselho-de-ministros",
-  "oe-2026-cem-euros-ministerio-reforma-do-estado",
-  "oe-2026-cem-euros-ministerio-saude",
-  "oe-2026-cem-euros-ministerio-trabalho-solidariedade-e-seguranca-social",
-  "oe-2026-despesa-bruta-administracao-central",
-  "oe-2026-despesa-consolidada-administracao-central",
-  "oe-2026-despesa-consolidada-seguranca-social",
-  "oe-2026-despesa-efetiva-administracao-central",
-  "oe-2026-despesa-efetiva-administracao-central-seguranca-social",
-  "oe-2026-despesa-funcao-01",
-  "oe-2026-despesa-funcao-02",
-  "oe-2026-despesa-funcao-03",
-  "oe-2026-despesa-funcao-04",
-  "oe-2026-despesa-funcao-05",
-  "oe-2026-despesa-funcao-06",
-  "oe-2026-despesa-funcao-07",
-  "oe-2026-despesa-funcao-08",
-  "oe-2026-despesa-funcao-09",
-  "oe-2026-despesa-funcao-10",
-  "oe-2026-despesa-ministerio-administracao-interna",
-  "oe-2026-despesa-ministerio-agricultura-e-mar",
-  "oe-2026-despesa-ministerio-ambiente-e-energia",
-  "oe-2026-despesa-ministerio-cultura-juventude-e-desporto",
-  "oe-2026-despesa-ministerio-defesa-nacional",
-  "oe-2026-despesa-ministerio-economia-e-coesao-territorial",
-  "oe-2026-despesa-ministerio-educacao-ciencia-e-inovacao",
-  "oe-2026-despesa-ministerio-encargos-gerais-do-estado",
-  "oe-2026-despesa-ministerio-financas",
-  "oe-2026-despesa-ministerio-infraestruturas-e-habitacao",
-  "oe-2026-despesa-ministerio-justica",
-  "oe-2026-despesa-ministerio-negocios-estrangeiros",
-  "oe-2026-despesa-ministerio-presidencia-do-conselho-de-ministros",
-  "oe-2026-despesa-ministerio-reforma-do-estado",
-  "oe-2026-despesa-ministerio-saude",
-  "oe-2026-despesa-ministerio-trabalho-solidariedade-e-seguranca-social",
-  "oe-2026-despesa-orcamental-administracao-central",
-  "oe-2026-despesa-primaria-administracao-central",
-  "oe-2026-despesa-programa-001",
-  "oe-2026-despesa-programa-002",
-  "oe-2026-despesa-programa-003",
-  "oe-2026-despesa-programa-004",
-  "oe-2026-despesa-programa-005",
-  "oe-2026-despesa-programa-006",
-  "oe-2026-despesa-programa-007",
-  "oe-2026-despesa-programa-008",
-  "oe-2026-despesa-programa-009",
-  "oe-2026-despesa-programa-010",
-  "oe-2026-despesa-programa-011",
-  "oe-2026-despesa-programa-012",
-  "oe-2026-despesa-programa-013",
-  "oe-2026-despesa-programa-014",
-  "oe-2026-despesa-programa-015",
-  "oe-2026-despesa-programa-016",
-  "oe-2026-despesa-programa-017",
-  "oe-2026-despesa-programa-018",
-  "oe-2026-despesa-programa-019",
-  "oe-2026-despesa-programa-020",
-  "oe-2026-despesa-total",
-  "oe-2026-diferencas-consolidacao-funcional",
-  "oe-2026-passivos-financeiros-liquidos-administracao-central-seguranca-social",
-  "oe-2026-receita-bruta-administracao-central",
-  "oe-2026-receita-consolidada-administracao-central",
-  "oe-2026-receita-consolidada-seguranca-social",
-  "oe-2026-receita-efetiva-administracao-central",
-  "oe-2026-receita-efetiva-administracao-central-seguranca-social",
-  "oe-2026-receita-orcamental-administracao-central",
-  "oe-2026-saldo-global-administracao-central-seguranca-social",
-  "oe-2026-saldo-primario-administracao-central",
-  "penalizacao-antecipacao-um-ano-neutra",
-  "ponta-do-sol-desemprego-registado-2025-12",
-  "porto-moniz-desemprego-registado-2025-12",
-  "porto-santo-desemprego-registado-2025-12",
-  "portugal-concentracao-vab4-2024",
-  "ribeira-brava-desemprego-registado-2025-12",
-  "santa-cruz-desemprego-registado-2025-12",
-  "santana-desemprego-registado-2025-12",
-  "sao-vicente-desemprego-registado-2025-12"
-];
+/** @type {string[]} */
+export const LINHAS_POR_CONFIRMAR_NA_FONTE = [];

@@ -59,9 +59,9 @@ for (const id of linhas.keys()) {
 }
 
 /* ------------------------------------------------------------------ os campos que apoiam */
-const CAMPOS_DA_FONTE = new Set(['excerpt', 'unit', 'name', 'source', 'document.title', 'document.locator', 'document.edition']);
+const CAMPOS_DA_FONTE = new Set(['excerpt', 'unit', 'name', 'source', 'document.title', 'document.locator', 'document.edition', 'document.computed_over.column', 'document.computed_over.filter']);
 const CAMPOS_DA_CASA = new Set(['derivation', 'derivation_en', 'ressalva', 'ressalva_en']);
-const campoDaLinha = (l, c) => (c === 'document.title' ? l?.document?.title : c === 'document.locator' ? l?.document?.locator : c === 'document.edition' ? l?.document?.edition : l?.[c]);
+const campoDaLinha = (l, c) => (c === 'document.title' ? l?.document?.title : c === 'document.locator' ? l?.document?.locator : c === 'document.edition' ? l?.document?.edition : c === 'document.computed_over.column' ? l?.document?.computed_over?.column : c === 'document.computed_over.filter' ? l?.document?.computed_over?.filter : l?.[c]);
 const nomeDaCasa = (id, lingua) => {
   const c = linhas.get(id);
   const n = nomeDaMedida(c, lingua);
@@ -111,16 +111,11 @@ function verifica(a, ids, nomesDaFamilia) {
     for (const id of ids) if (!t.cartoes.includes(id)) return `o termo «${a.termo}» não nomeia a linha «${id}»`;
     return null;
   }
-  if (a.declaracao === 'nome') {
-    for (const id of ids) {
-      const n = nomesDaFamilia.get(`${id}|${a.lingua}`);
-      if (typeof n !== 'string' || !n.includes(a.literal)) return `o nome (${a.lingua}) da linha «${id}» («${n}») não traz «${a.literal}»`;
-    }
-    return null;
-  }
+  if (a.declaracao === 'nome') return 'o nome do projeto não pode apoiar uma frase';
   if (a.linha === 'propria') {
     if (!CAMPOS_DA_FONTE.has(a.campo) && !CAMPOS_DA_CASA.has(a.campo)) return `o campo «${a.campo}» não pode apoiar`;
     for (const id of ids) {
+      if (a.campo.startsWith('document.computed_over.') && !(linhas.get(id)?.document?.computed_over?.files?.length && linhas.get(id).document.computed_over.files.every(f => /^[a-f0-9]{64}$/.test(f.sha256) && f.file))) return `a seleção calculada de «${id}» não tem ficheiros selados`;
       const v = campoDaLinha(linhas.get(id), a.campo);
       if (typeof v !== 'string' || !v.includes(a.literal)) return `«${a.literal}» não está no campo «${a.campo}» da linha «${id}»`;
     }
@@ -134,7 +129,7 @@ function verifica(a, ids, nomesDaFamilia) {
    declarada, um campo da fonte da linha ou o período lido da data) ou é a conta declarada de uma linha calculada
    (`derivation`, `derivation_en`: a definição desse número, selada e refeita pelos portões). O nome do projeto, a ressalva
    da casa e a explicação de um termo são palavras da casa: uma parte que só elas apoiam está por confirmar na fonte, e
-   a frase leva o marcador da casa no recibo dessa linha. */
+   a K17 e o portão HTML recusam a publicação dessa frase. */
 const CAMPOS_QUE_CONFIRMAM = new Set([...CAMPOS_DA_FONTE, 'derivation', 'derivation_en']);
 function confirmaNaLinha(a, id, nomesDaFamilia) {
   if (a.ou) return a.ou.some((alt) => verifica(alt, [id], nomesDaFamilia) === null && confirmaNaLinha(alt, id, nomesDaFamilia));
@@ -165,6 +160,10 @@ function confereEntrada(e, ids, chaveDeAuditoria, nomesDaFamilia) {
     const onde = `${chaveDeAuditoria}, parte ${j + 1} («${texto(p.pt).slice(0, 50)}»)`;
     if (p.classe === 'liga') {
       for (const lang of ['pt', 'en']) if (texto(p[lang]).replace(/[\s.,:;()−%’'!?]+/g, '') !== '') falha(`${onde}: uma ligação com palavras`);
+      continue;
+    }
+    if (p.classe === 'ausencia') {
+      if (e.partes.length !== 1 || p.pt !== 'Não há excerto da fonte que permita explicar este número.' || p.en !== 'No source excerpt is available to explain this number.' || p.apoios || ids.some(id => linhas.get(id)?.excerpt !== '[a verificar]')) falha(`${onde}: a ausência não corresponde à falta do excerto`);
       continue;
     }
     if (!p.apoios?.length) { falha(`${onde}: diz e não tem apoio`); continue; }
@@ -308,10 +307,10 @@ const notaPorConfirmar = `
 /**
  * AS LINHAS CUJA FRASE ESTÁ POR CONFIRMAR NA FONTE (passagem R4-b, 06.10.2026): uma parte da frase que nem a fonte nem a
  * conta declarada de uma linha calculada dizem (só o nome do projeto, a ressalva da casa ou a explicação de um termo). O
- * recibo dessas linhas leva o marcador da casa ao pé da frase; a K17 refaz a lista pela auditoria e confere o marcador.
+ * recibo dessas linhas é recusado pela K17 e pelo portão HTML. O RP4-n conserva a lista como alarme, que tem de ficar vazio.
  */
 `;
-fs.writeFileSync(DECLARACAO, `${cabeca}export const FAMILIAS_DAS_LINHAS = ${JSON.stringify(ordenado, null, 2)};\n\nexport const FAMILIAS_DOS_CONCELHOS = ${JSON.stringify(doConcelho, null, 2)};\n${notaPorConfirmar}export const LINHAS_POR_CONFIRMAR_NA_FONTE = ${JSON.stringify([...new Set(porConfirmar)].sort(), null, 2)};\n`);
+fs.writeFileSync(DECLARACAO, `${cabeca}export const FAMILIAS_DAS_LINHAS = ${JSON.stringify(ordenado, null, 2)};\n\nexport const FAMILIAS_DOS_CONCELHOS = ${JSON.stringify(doConcelho, null, 2)};\n${notaPorConfirmar}/** @type {string[]} */\nexport const LINHAS_POR_CONFIRMAR_NA_FONTE = ${JSON.stringify([...new Set(porConfirmar)].sort(), null, 2)};\n`);
 
 const leitura = {
   quem: 'Claude Opus 5.5',
@@ -319,6 +318,7 @@ const leitura = {
   o_que: 'o bloco R4: as frases «o que é» das famílias das linhas sem cartão nacional (as do ano anterior e da União das medidas com cartão leem a frase do cartão contra a própria linha; as outras têm frase própria), e as partes das oito notas das medidas dos concelhos e da frase nova do limite da dívida, cada parte com o literal que a apoia nas linhas da família, numa origem declarada, num termo explicado em TERMOS_DOS_CARTOES ou, onde a fonte não diz o que a medida é, no nome do projeto',
 };
 AUD.leituras = [...AUD.leituras.filter((l) => !(l.quando === leitura.quando && l.o_que.startsWith('o bloco R4'))), leitura];
+AUD.leituras = [...AUD.leituras.filter(l => !l.o_que.startsWith('RP4-n: famílias')), {quem: 'Codex', quando: '2026-10-06', o_que: 'RP4-n: famílias recompostas com as origens documentais exportadas pelo motor; as ausências ficam declaradas. Construção para leitura a frio, não aprovação.'}];
 AUD.familias = auditoria;
 fs.writeFileSync(AUDITORIA, `${JSON.stringify(AUD, null, 2)}\n`);
 console.log(`escrito: ${path.relative(RAIZ, DECLARACAO)} e a chave familias de ${path.relative(RAIZ, AUDITORIA)}`);

@@ -147,8 +147,8 @@ export const MEDIDAS_DO_CONCELHO = [
        sistema da fonte entre parênteses, e «atribuídas ao concelho» pelo que a nota já dizia (cada empresa conta num
        único concelho). */
     nota: {
-      pt: ['Conta as empresas não financeiras atribuídas ao concelho (sistema de contas integradas das empresas).'],
-      en: ['Counts the non-financial enterprises attributed to the municipality (integrated business accounts system).'],
+      pt: ['Conta as empresas atribuídas ao concelho (sistema de contas integradas das empresas).'],
+      en: ['Counts the enterprises attributed to the municipality (integrated business accounts system).'],
     },
   },
   {
