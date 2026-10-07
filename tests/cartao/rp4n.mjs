@@ -175,3 +175,11 @@ export function conferirExcertoDaPensao(linha) {
   assert.equal(unidadeDaLinha('avisos',lang,'2').texto,dois);
  }
 }
+
+// RP4-n-e: a frase dos ministérios não reintroduz um termo sem definição.
+{
+ const {FAMILIAS_DAS_LINHAS}=await import('../../src/data/o-que-e-das-familias.mjs');
+ for(const [k,v] of Object.entries(FAMILIAS_DAS_LINHAS)) if(k.startsWith('oe-2026-cem-euros-ministerio-')) {
+  assert(!JSON.stringify(v.frase).match(/despesa bruta|gross expenditure/),`${k}: termo sem definição`);
+ }
+}
