@@ -177,7 +177,14 @@
       "contagem": 1
     },
     {
-      "nome": "data document.date",
+      "nome": "data document.computed_over.files.0.snapshot_date",
+      "tipo": "data",
+      "estado": "aceites",
+      "mensagem": "RP4N: marca aceite provisoriamente (data)",
+      "contagem": 1
+    },
+    {
+      "nome": "data pelo componente de datas",
       "tipo": "data",
       "estado": "aceites",
       "mensagem": "RP4N: marca aceite provisoriamente (data)",

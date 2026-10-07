@@ -42,13 +42,13 @@ function recusado(n, rota) {
 }
 
 function aceite(n, {rota, claims, municipios = []}) {
-  const campo = perto(n, '[data-linha-campo][data-linha-claim]');
+  const campo = perto(n, '[data-linha-campo][data-linha-claim], [data-de-campo][data-de-linha]');
   if (campo) {
-    const chave = campo.getAttribute('data-linha-campo');
-    const linha = claims?.get(campo.getAttribute('data-linha-claim'));
+    const chave = campo.getAttribute('data-linha-campo') ?? campo.getAttribute('data-de-campo');
+    const linha = claims?.get(campo.getAttribute('data-linha-claim') ?? campo.getAttribute('data-de-linha'));
     // O campo que dá a exceção tem de existir no livro e declarar a ausência.
     if (texto(campo).trim() !== valor(linha, chave) || typeof valor(linha, chave) !== 'string' || !/^\[\s*(?:a\s+verificar|to\s+verify)\s*\]$/iu.test(valor(linha, chave))) return null;
-    if (['published_at','access_date','reference_date','document.date','document.published_at','document.access_date','document.reference_date'].includes(chave)) return 'data';
+    if (['published_at','access_date','reference_date','document.hosted.snapshot_date'].includes(chave) || /^document\.computed_over\.files\.\d+\.snapshot_date$/.test(chave) || /^verifications\.\d+\.date$/.test(chave)) return 'data';
     if (chave === 'excerpt') return 'excerto';
     if (chave === 'source_url' || chave === 'document.url') return 'endereco';
   }
