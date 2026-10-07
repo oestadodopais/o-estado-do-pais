@@ -348,7 +348,7 @@ export const REGRAS = [
     ],
     ligacoes: [
       { rota: 'livro', rotulo: { pt: 'Ver o livro-razão', en: 'See the ledger' } },
-      { rota: 'linha', params: { slug: 'custo-unitario-do-trabalho-2024' },
+      { rota: 'linha', params: { slug: 'divida-publica-2025' },
         rotulo: { pt: 'Ver o recibo de exemplo', en: 'See the example receipt' } },
     ],
   },

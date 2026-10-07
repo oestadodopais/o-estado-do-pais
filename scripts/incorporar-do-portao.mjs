@@ -84,7 +84,7 @@ export function conferirInventarioIncorporacao(texto) {
 const errosDoInventario = conferirInventarioIncorporacao(fs.readFileSync(new URL('../design/especime-v3/INVENTARIO-FRASES.md', import.meta.url), 'utf8'));
 
 export function conferirExemploNoMetodo(root, lang) {
-  const href = (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + 'custo-unitario-do-trabalho-2024';
+  const href = (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + 'divida-publica-2025';
   const texto = lang === 'en' ? 'See the example receipt' : 'Ver o recibo de exemplo';
   return root.querySelectorAll('#livro-razao a').some(a => a.getAttribute('href') === href && a.textContent.trim() === texto + ' →')
     ? [] : ['ER1 Método: falta a porta para o recibo de exemplo da edição.'];
