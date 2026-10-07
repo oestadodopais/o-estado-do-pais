@@ -1,5 +1,7 @@
 # Pendentes do diretor: o que só ele pode fazer, e ainda não está feito
 
+*Desde 07.10.2026 (§1.183) «o diretor» nomeia o lugar de direção; este ficheiro conserva o nome por ser história e lista o que só o financiador pode fazer (o dinheiro, as contas, o correio para fora, a exposição legal, a lista de recusa da conta dele). Onde as linhas dizem «o diretor», lê-se «o financiador».*
+
 *Mantido pelo lugar de direção. Uma linha por coisa, com a data em que ficou pendente, o que é, porque é dele, e o que destrava. Quando uma se faz, a linha ganha a data e passa para «Feitas»; nunca se apaga. A sessão seguinte lê este ficheiro antes de começar (está apontado no prompt), e logo a seguir a visão da casa, `VISAO.md` na raiz do repositório (o que a casa é, a pilha de camadas, as regras que não mudam, o horizonte das ideias): uma ideia que não esteja lá não existe para a sessão seguinte. Sem travessões na prosa.*
 
 ## Por fazer

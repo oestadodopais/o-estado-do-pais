@@ -1,5 +1,7 @@
 # Prompt para a sessão seguinte, O Estado do País (depois de 07.10.2026)
 
+> **A §1.183 (07.10.2026, no fecho):** «o diretor» é o lugar de direção; quem financia é «o financiador». Onde este prompt diz «o diretor» no texto escrito antes do fecho, lê-se «o financiador».
+
 > **O Claude está a 88 % da semana às 12:40 UTC de 07.10.2026 e a paragem é aos 90 % (§1.176, o acrescento de 07.10); repõe a 12.10.2026 às 10:00 UTC. O Codex está a 45 % (repõe a 14.10 às 08:39 UTC). Por isso esta sessão fechou com quatro ramos construídos pelo Codex e por ler ou por aterrar, e a ordem da sessão seguinte é lê-los e aterrá-los, um de cada vez, pela ordem abaixo.** Se a sessão seguinte abrir antes de 12.10, lança só o que não custe Claude (o Codex) e não lança leituras do Opus.
 
 *Escrito pelo lugar de direção (Claude Fable 5.1) no fecho da sessão de 07.10.2026. O estado lê-se pelo guião e vai no bloco do fim; o que está aqui em cima é o que a sessão seguinte faz, por ordem, e porquê. Sem travessões na prosa.*
