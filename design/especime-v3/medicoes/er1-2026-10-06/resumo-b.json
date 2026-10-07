@@ -1,0 +1,660 @@
+{
+  "cabecaCodigo": "abe02094947a2f3c4d600891b89380c7b175ebe5",
+  "fusao": {
+    "pasta": "portoes-fusao",
+    "cabeca": "721443ce8afea9946d7e25c4cb5e410fc268fa1f",
+    "portoes": [
+      {
+        "nome": "build",
+        "codigo": 0,
+        "inicio": "2026-10-07T09:49:10Z",
+        "fim": "2026-10-07T09:52:58Z"
+      },
+      {
+        "nome": "verify",
+        "codigo": 0,
+        "inicio": "2026-10-07T09:52:58Z",
+        "fim": "2026-10-07T09:57:34Z"
+      },
+      {
+        "nome": "typecheck",
+        "codigo": 0,
+        "inicio": "2026-10-07T09:57:34Z",
+        "fim": "2026-10-07T09:57:34Z"
+      }
+    ]
+  },
+  "primeira": {
+    "pasta": "portoes-b-primeira",
+    "cabeca": "fc969cc2d3bf5faf40d6df705f93fe7671605144",
+    "portoes": [
+      {
+        "nome": "build",
+        "codigo": 0,
+        "inicio": "2026-10-07T10:14:55Z",
+        "fim": "2026-10-07T10:18:33Z"
+      },
+      {
+        "nome": "verify",
+        "codigo": 0,
+        "inicio": "2026-10-07T10:18:33Z",
+        "fim": "2026-10-07T10:23:11Z"
+      },
+      {
+        "nome": "typecheck",
+        "codigo": 1,
+        "inicio": "2026-10-07T10:23:11Z",
+        "fim": "2026-10-07T10:23:11Z"
+      }
+    ]
+  },
+  "segunda": {
+    "pasta": "portoes-b-segunda",
+    "cabeca": "c25aee7f41e5931909f3cc05e7779f6d22922ae8",
+    "portoes": [
+      {
+        "nome": "build",
+        "codigo": 0,
+        "inicio": "2026-10-07T10:27:13Z",
+        "fim": "2026-10-07T10:30:54Z"
+      },
+      {
+        "nome": "verify",
+        "codigo": 0,
+        "inicio": "2026-10-07T10:30:54Z",
+        "fim": "2026-10-07T10:35:11Z"
+      },
+      {
+        "nome": "typecheck",
+        "codigo": 0,
+        "inicio": "2026-10-07T10:35:11Z",
+        "fim": "2026-10-07T10:35:12Z"
+      }
+    ]
+  },
+  "terceira": {
+    "pasta": "portoes-b-terceira",
+    "cabeca": "4dfb9690fb1a95d3bb2973ae32e8702988fd25d3",
+    "portoes": [
+      {
+        "nome": "build",
+        "codigo": 1,
+        "inicio": "2026-10-07T10:38:03Z",
+        "fim": "2026-10-07T10:41:31Z"
+      },
+      {
+        "nome": "verify",
+        "codigo": 125,
+        "inicio": "2026-10-07T10:41:31Z",
+        "fim": "2026-10-07T10:41:31Z"
+      },
+      {
+        "nome": "typecheck",
+        "codigo": 0,
+        "inicio": "2026-10-07T10:41:31Z",
+        "fim": "2026-10-07T10:41:31Z"
+      }
+    ]
+  },
+  "final": {
+    "pasta": "portoes-b",
+    "cabeca": "abe02094947a2f3c4d600891b89380c7b175ebe5",
+    "portoes": [
+      {
+        "nome": "build",
+        "codigo": 0,
+        "inicio": "2026-10-07T10:43:56Z",
+        "fim": "2026-10-07T10:47:28Z"
+      },
+      {
+        "nome": "verify",
+        "codigo": 0,
+        "inicio": "2026-10-07T10:47:28Z",
+        "fim": "2026-10-07T10:52:09Z"
+      },
+      {
+        "nome": "typecheck",
+        "codigo": 0,
+        "inicio": "2026-10-07T10:52:09Z",
+        "fim": "2026-10-07T10:52:09Z"
+      }
+    ]
+  },
+  "base": "56a582dd6822f5f6c73256e063c1c8421280fb5f",
+  "mainFundido": "f3aaa3e7292799f58db4158db30dd631c9d2d652",
+  "commitsMain": 109,
+  "commits": [
+    {
+      "sha": "721443ce8afea9946d7e25c4cb5e410fc268fa1f",
+      "mensagem": "Funde main de 07.10.2026 no ER1, com M-A, EX2, H4 e direção atualizada"
+    },
+    {
+      "sha": "ff6caca31bfa878b763e519bab163e169915f329",
+      "mensagem": "ER1-b 4: recusa incorporar proveniência por confirmar"
+    },
+    {
+      "sha": "637a969e69d0e3d83cb334e0852343645bd6bbf9",
+      "mensagem": "ER1-b 7 e 13: regista o texto aprovado do Método"
+    },
+    {
+      "sha": "28f3055b2429e4d6f9b98091291a65b86acd0d85",
+      "mensagem": "ER1-b 8: faz viajar o lugar antes do período"
+    },
+    {
+      "sha": "ff73542397dbaf00a2b3b5e92d1acc51e4ce207f",
+      "mensagem": "ER1-b 10: inventaria as cadeias aprovadas nas duas edições"
+    },
+    {
+      "sha": "860020a90b99c23c045aa083e889bd09215eacce",
+      "mensagem": "ER1-b 11: separa a unidade da fonte no código e na atualização"
+    },
+    {
+      "sha": "71b42c12eaf5a8fc2578c832ff7e1b4680434888",
+      "mensagem": "ER1-b 12: planta as seis leituras indevidas na privacidade"
+    },
+    {
+      "sha": "cf1b89c0ccb7d4a644ddedbd67663596f92b5f79",
+      "mensagem": "ER1-b 14: exerce as notas reais no navegador e planta a sua retirada"
+    },
+    {
+      "sha": "388bd84e850c3b3ea58671e12ec4d81d45167673",
+      "mensagem": "ER1-b 15: retira o controlo das plantas da leitura a frio"
+    },
+    {
+      "sha": "fc969cc2d3bf5faf40d6df705f93fe7671605144",
+      "mensagem": "ER1-b: alinha o mapa pelas âncoras depois das correções"
+    },
+    {
+      "sha": "c25aee7f41e5931909f3cc05e7779f6d22922ae8",
+      "mensagem": "ER1-b 8: fecha a ausência de uma região na resolução do lugar"
+    },
+    {
+      "sha": "4dfb9690fb1a95d3bb2973ae32e8702988fd25d3",
+      "mensagem": "ER1-b 7: fecha a porta de exemplo pedida no brief do Método"
+    },
+    {
+      "sha": "abe02094947a2f3c4d600891b89380c7b175ebe5",
+      "mensagem": "ER1-b 10: confere a porta governada na tabela própria do inventário"
+    }
+  ],
+  "packageLockMudou": false,
+  "packageLockSha256": "f0e5c9f6fe45a01b01339c01b0f7fa6ef42dfecfa99a1b79046cc87435e1e076",
+  "entrada": "1.182",
+  "carimbo": "23925841545a",
+  "recibos": 6390,
+  "comCodigo": 5652,
+  "semCodigo": 738,
+  "json": 3195,
+  "plantas": [
+    {
+      "nome": "separador-em-falta",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "marca-por-confirmar",
+      "mensagem": "ER1 código: uma marca por confirmar não se incorpora.",
+      "mordeu": true
+    },
+    {
+      "nome": "valor-trocado",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "codigo-em-falta",
+      "mensagem": "ER1 código: falta o único código do recibo.",
+      "mordeu": true
+    },
+    {
+      "nome": "marca-no-paragrafo",
+      "mensagem": "ER1 código: marca fora do campo do recibo da própria linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "codigo-editavel",
+      "mensagem": "ER1 código: marca fora do campo do recibo da própria linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "campo-conferido-fora-do-bloco",
+      "mensagem": "ER1 código: o campo conferido não é o que o botão copia.",
+      "mordeu": true
+    },
+    {
+      "nome": "comentario-no-codigo",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "leitura-nao-literal",
+      "mensagem": "ER1 código: falta a leitura literal do campo.",
+      "mordeu": true
+    },
+    {
+      "nome": "codigo-sem-proveniencia-pt",
+      "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+      "mordeu": true
+    },
+    {
+      "nome": "aviso-em-falta-pt",
+      "mensagem": "ER1 aviso: falta a recusa de incorporação da edição.",
+      "mordeu": true
+    },
+    {
+      "nome": "codigo-sem-proveniencia-en",
+      "mensagem": "ER1 código: proveniência por confirmar oferece código.",
+      "mordeu": true
+    },
+    {
+      "nome": "aviso-em-falta-en",
+      "mensagem": "ER1 aviso: falta a recusa de incorporação da edição.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-custo-unitario-do-trabalho-2025-pt",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-custo-unitario-do-trabalho-2025-en",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-pib-pc-alentejo-2024-pt",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-pib-pc-alentejo-2024-en",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-evora-populacao-2021-pt",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-evora-populacao-2021-en",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-taxa-de-desemprego-2025-ue-pt",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-taxa-de-desemprego-2025-ue-en",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-despesa-por-funcao-2024-gf01-es-pt",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-despesa-por-funcao-2024-gf01-es-en",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-portugal-concentracao-vab4-2024-pt",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "lugar-em-falta-portugal-concentracao-vab4-2024-en",
+      "mensagem": "ER1 código: o pedaço difere da linha, carácter a carácter.",
+      "mordeu": true
+    },
+    {
+      "nome": "cors-em-falta",
+      "mensagem": "ER1 CORS: /livro-razao/custo-unitario-do-trabalho-2024.json tem estado ou cabeçalho incorreto.",
+      "mordeu": true
+    },
+    {
+      "nome": "cors-em-html",
+      "mensagem": "ER1 CORS: / tem estado ou cabeçalho incorreto.",
+      "mordeu": true
+    },
+    {
+      "nome": "moldura-aberta",
+      "mensagem": "ER1 moldura: / perdeu SAMEORIGIN.",
+      "mordeu": true
+    },
+    {
+      "nome": "data-inacessivel-pt",
+      "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+      "mordeu": true
+    },
+    {
+      "nome": "data-diverge-pt",
+      "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+      "mordeu": true
+    },
+    {
+      "nome": "data-inacessivel-en",
+      "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+      "mordeu": true
+    },
+    {
+      "nome": "data-diverge-en",
+      "mensagem": "Uma tentativa sem confirmação não avança a data de leitura.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-nome",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-periodo",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-valor",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-unidade",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-unidadeLang",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-fonte",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-fonteLang",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-data",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-leitura",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-atribuicao",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-notas",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-atualizacao",
+      "mensagem": "ER1 JSON: a apresentação difere da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "metodo-sem-exemplo-pt",
+      "mensagem": "ER1 Método: falta a porta para o recibo de exemplo da edição.",
+      "mordeu": true
+    },
+    {
+      "nome": "metodo-sem-exemplo-en",
+      "mensagem": "ER1 Método: falta a porta para o recibo de exemplo da edição.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-metodo.exemplo-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada metodo.exemplo nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-metodo.exemplo-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada metodo.exemplo nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.indisponivel-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.indisponivel nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.indisponivel-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.indisponivel nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.titulo-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.titulo nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.titulo-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.titulo nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.copiar-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.copiar nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.copiar-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.copiar nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.copiado-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.copiado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.copiado-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.copiado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.selecionado-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.selecionado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.selecionado-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.selecionado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.lido-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.lido nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.lido-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.lido nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.calculado-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.calculado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.calculado-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.calculado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.periodoEmFalta-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.periodoEmFalta nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.periodoEmFalta-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.periodoEmFalta nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.atualizado-pt",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.atualizado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "inventario-incorporar.atualizado-en",
+      "mensagem": "ER1 inventário: falta a cadeia aprovada incorporar.atualizado nas duas edições.",
+      "mordeu": true
+    },
+    {
+      "nome": "pedido-de-fora",
+      "mensagem": "ER1 privacidade: endereço fora da origem fixa do projeto.",
+      "mordeu": true
+    },
+    {
+      "nome": "cookie",
+      "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+      "mordeu": true
+    },
+    {
+      "nome": "armazenamento",
+      "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+      "mordeu": true
+    },
+    {
+      "nome": "pagina-anfitria",
+      "mensagem": "ER1 privacidade: leitura fora dos parágrafos próprios.",
+      "mordeu": true
+    },
+    {
+      "nome": "postMessage",
+      "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+      "mordeu": true
+    },
+    {
+      "nome": "parent",
+      "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+      "mordeu": true
+    },
+    {
+      "nome": "top",
+      "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+      "mordeu": true
+    },
+    {
+      "nome": "innerText",
+      "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+      "mordeu": true
+    },
+    {
+      "nome": "getElementsBy",
+      "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+      "mordeu": true
+    },
+    {
+      "nome": "body",
+      "mensagem": "ER1 privacidade: API fora dos elementos próprios.",
+      "mordeu": true
+    },
+    {
+      "nome": "credenciais",
+      "mensagem": "ER1 privacidade: o pedido perdeu a opção credentials: 'omit'.",
+      "mordeu": true
+    },
+    {
+      "nome": "redirecionamento",
+      "mensagem": "ER1 privacidade: o pedido perdeu a opção redirect: 'error'.",
+      "mordeu": true
+    },
+    {
+      "nome": "notas-retiradas-pt",
+      "mensagem": "ER1 navegador: desapareceram as notas da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "proveniencia-por-confirmar-pt",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "sem-cors-pt",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "falha-pt",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-malformado-pt",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "outra-linha-pt",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "redirecionamento-pt",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "notas-retiradas-en",
+      "mensagem": "ER1 navegador: desapareceram as notas da linha.",
+      "mordeu": true
+    },
+    {
+      "nome": "proveniencia-por-confirmar-en",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "sem-cors-en",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "falha-en",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "json-malformado-en",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "outra-linha-en",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    },
+    {
+      "nome": "redirecionamento-en",
+      "mensagem": "O pedido recusado conserva o código colado inteiro.",
+      "mordeu": true
+    }
+  ],
+  "capturas": 40,
+  "larguras": [
+    390,
+    768,
+    1024,
+    1280,
+    1600
+  ],
+  "casosNavegador": 23,
+  "custo": "A linha tokens used não foi exposta nesta sessão; o total e o confronto com o custo-alvo ficam [verify]."
+}

@@ -1,3 +1,5 @@
+> O texto anterior à secção «A passagem ER1-b» é o relatório histórico da primeira passagem. As pendências e a apresentação anteriores foram substituídas, quando indicado, pela secção final.
+
 # ER1: o recibo incorporável
 
 A entrega permite copiar cada número com a sua fonte, período, data, atribuição e recibo, nas duas edições. O Método ficou por alterar: a secção sobre o conjunto de dados pressuposta no brief não existe nesta base e a amarra do texto governado recusou a sondagem de alteração; o ficheiro foi reposto byte a byte. A leitura a frio do Opus e a conferência do lugar de direção continuam por fazer.
@@ -211,3 +213,207 @@ Os logs em portoes/ só foram limpos de caminhos locais e nomes da conta. O moto
 - ER1-4: falta verify:deploy no endereço publicado depois de aterrar. A configuração e os pedidos locais foram conferidos; não equivalem a afirmar cabeçalhos já publicados.
 
 A linha tokens used não foi exposta nesta sessão.
+
+
+## A passagem ER1-b
+
+O código incorporável passa a dizer o lugar e a separar a unidade da fonte. As linhas sem fonte ou data confirmada mostram a recusa aprovada. O Método recebeu a frase da direção; os estados da cópia, a privacidade e as notas têm conferências e plantas.
+
+Passagem lançada a 07.10.2026, com a antecipação de data autorizada no lançamento. Modelo e esforço indicados no lançamento: Codex gpt-6-astra, high. O mandato e a leitura a frio são as referências desta passagem. Os números abaixo foram lidos dos ficheiros dos portões, do Git e dos manifestos, e agregados em resumo-b.json.
+
+Cabeça do código: `abe02094947a2f3c4d600891b89380c7b175ebe5`. A cabeça final é o commit que contém este relatório e as provas; lê-se no Git e na resposta final, sem gravar um resumo autorreferente.
+
+### Fusão e ponto de partida
+
+Fundido `main` em `f3aaa3e7292799f58db4158db30dd631c9d2d652`, com 109 commits por entrar desde `56a582dd6822f5f6c73256e063c1c8421280fb5f`. A fusão é `721443ce8afea9946d7e25c4cb5e410fc268fa1f`. Nos conflitos, ficaram as duas secções do inventário com os seus cabeçalhos, a união dos guiões de package.json e as duas células do portão de HTML. Conservaram-se M-A, EX2, H4, a direção de 07.10.2026 e as proteções ER1. Nenhum lado foi descartado inteiro.
+
+package-lock.json não mudou na fusão, pelo que npm ci não era necessário. O seu sha256 é `f0e5c9f6fe45a01b01339c01b0f7fa6ef42dfecfa99a1b79046cc87435e1e076`. O mapa foi alinhado por âncoras após a fusão e após as correções. A conferência final está em mapa-b.txt, com zero longe e zero por encontrar. Os três portões da fusão terminaram verdes antes de tocar no mandato; não houve vermelho da fusão por corrigir.
+
+| Commit, por ordem | Mensagem |
+| --- | --- |
+| 721443ce8afea9946d7e25c4cb5e410fc268fa1f | Funde main de 07.10.2026 no ER1, com M-A, EX2, H4 e direção atualizada |
+| ff6caca31bfa878b763e519bab163e169915f329 | ER1-b 4: recusa incorporar proveniência por confirmar |
+| 637a969e69d0e3d83cb334e0852343645bd6bbf9 | ER1-b 7 e 13: regista o texto aprovado do Método |
+| 28f3055b2429e4d6f9b98091291a65b86acd0d85 | ER1-b 8: faz viajar o lugar antes do período |
+| ff73542397dbaf00a2b3b5e92d1acc51e4ce207f | ER1-b 10: inventaria as cadeias aprovadas nas duas edições |
+| 860020a90b99c23c045aa083e889bd09215eacce | ER1-b 11: separa a unidade da fonte no código e na atualização |
+| 71b42c12eaf5a8fc2578c832ff7e1b4680434888 | ER1-b 12: planta as seis leituras indevidas na privacidade |
+| cf1b89c0ccb7d4a644ddedbd67663596f92b5f79 | ER1-b 14: exerce as notas reais no navegador e planta a sua retirada |
+| 388bd84e850c3b3ea58671e12ec4d81d45167673 | ER1-b 15: retira o controlo das plantas da leitura a frio |
+| fc969cc2d3bf5faf40d6df705f93fe7671605144 | ER1-b: alinha o mapa pelas âncoras depois das correções |
+| c25aee7f41e5931909f3cc05e7779f6d22922ae8 | ER1-b 8: fecha a ausência de uma região na resolução do lugar |
+| 4dfb9690fb1a95d3bb2973ae32e8702988fd25d3 | ER1-b 7: fecha a porta de exemplo pedida no brief do Método |
+| abe02094947a2f3c4d600891b89380c7b175ebe5 | ER1-b 10: confere a porta governada na tabela própria do inventário |
+
+### Decisões e correções por achado
+
+| Achado | O que mudou | Proteção |
+| --- | --- | --- |
+| 1, 2, 3, 5, 6 | Estragos da leitura a frio, só nas cópias do pacote; nenhuma correção por estes achados. | As plantas independentes continuam com a direção. |
+| 4 | Sem fonte ou data confirmada, o bloco conserva o título e mostra a frase aprovada. O código não é oferecido. | marca-por-confirmar, codigo-sem-proveniencia e aviso-em-falta, nas duas edições. |
+| 7 e 13 | O Método recebe o parágrafo exato aprovado, incluindo a origem que chega ao alojamento, e a porta para o recibo de exemplo pedida no brief. Privacidade fica intacta. | Amarra das decisões, com o carimbo do texto governado; ledger:check dentro da corrida completa; metodo-sem-exemplo nas duas edições. |
+| 8 | O lugar precede o período: país, região, concelho, União e os comparadores estrangeiros. As contagens internas conservam o âmbito do projeto. | lugar-em-falta, com casos de país, região, concelho, União, Espanha e o comparador nacional de um estudo municipal. |
+| 9 | Anterior ao ER1, remetido pela direção para o bloco dos recibos. | Não se altera nesta passagem. |
+| 10 | Todas as cadeias entram no inventário nas duas línguas, incluindo os estados condicionais. Fica calculado por este projeto; saem a leitura não indicada e o aviso sem data. | inventario-incorporar, uma alteração por chave e por edição; estados de cópia exercidos no navegador. |
+| 11 | O separador entre unidade e fonte é · no código estático e na atualização. A vírgula decimal fica. | separador-em-falta; o navegador exige também o separador depois de recompor. |
+| 12 | A privacidade recusa postMessage, parent, top, innerText, getElementsBy e body. | Uma planta por palavra; getElementsBy também cobre os métodos com esse prefixo. |
+| 14 | Uma linha real com notas entra no blogue, nas duas edições. A data inicialmente vazia no ensaio prova que a atualização correu antes de conferir as notas. | notas-retiradas elimina o ramo do guião só em memória e exige a mensagem da perda das notas; proveniencia-por-confirmar conserva o texto colado. |
+| 15 | Sai o ficheiro controlo-plantas.json. Não se regeneram plantas independentes nesta passagem. | A ausência do caminho foi conferida no índice do Git. Os fechos antigos ficam apenas como história e não foram executados. |
+
+ER1-5, decisão de âmbito: a recusa abrange as linhas calculadas sem data própria. Não se inventa uma data de acesso nem se usa uma tentativa sem confirmação. Há 738 recibos sem código e 5652 com código, nas duas edições, de 6390 recibos conferidos. O conjunto conserva os 3195 JSON e os dados das linhas; não se retirou nenhuma linha nem se alterou o seu valor, fonte ou data. Os campos de apresentação acompanham as correções de lugar e palavras dos achados 8 e 10; as chaves continuam as mesmas, e os textos de apresentação sem data ficam vazios.
+
+A entrada do registo é §1.182, com `Texto: metodo 23925841545a`, pedido e aceite por ledger:check. A chave Afecta do modelo da direção dizia sobre/metodo; a amarra exige metodo, e foi essa a chave registada. A data do lançamento foi corrigida e a entrada distingue a preparação nesta worktree da aterragem ainda por fazer. Não afirma uma corrida do GitHub nem um custo que esta sessão não mediu.
+
+### Corridas na cabeça do código
+
+Comando: `sh scripts/leituras/portoes.sh <worktree absoluta> design/especime-v3/medicoes/er1-2026-10-06/portoes-b`. As corridas usaram a tranca comum; quando estava ocupada, esperou-se sem a alterar. A cabeça no início e no fim, dist/version.json e o manifesto das capturas coincidem com a cabeça do código. Os códigos seguintes foram lidos dos ficheiros depois do fim dos processos.
+
+| Corrida | Portão | Código lido | Início UTC | Fim UTC |
+| --- | --- | --- | --- | --- |
+| Fusão | build | 0 | 2026-10-07T09:49:10Z | 2026-10-07T09:52:58Z |
+| Fusão | verify | 0 | 2026-10-07T09:52:58Z | 2026-10-07T09:57:34Z |
+| Fusão | typecheck | 0 | 2026-10-07T09:57:34Z | 2026-10-07T09:57:34Z |
+| ER1-b, primeira | build | 0 | 2026-10-07T10:14:55Z | 2026-10-07T10:18:33Z |
+| ER1-b, primeira | verify | 0 | 2026-10-07T10:18:33Z | 2026-10-07T10:23:11Z |
+| ER1-b, primeira | typecheck | 1 | 2026-10-07T10:23:11Z | 2026-10-07T10:23:11Z |
+| ER1-b, segunda | build | 0 | 2026-10-07T10:27:13Z | 2026-10-07T10:30:54Z |
+| ER1-b, segunda | verify | 0 | 2026-10-07T10:30:54Z | 2026-10-07T10:35:11Z |
+| ER1-b, segunda | typecheck | 0 | 2026-10-07T10:35:11Z | 2026-10-07T10:35:12Z |
+| ER1-b, terceira | build | 1 | 2026-10-07T10:38:03Z | 2026-10-07T10:41:31Z |
+| ER1-b, terceira | verify | 125 | 2026-10-07T10:41:31Z | 2026-10-07T10:41:31Z |
+| ER1-b, terceira | typecheck | 0 | 2026-10-07T10:41:31Z | 2026-10-07T10:41:31Z |
+| ER1-b, final | build | 0 | 2026-10-07T10:43:56Z | 2026-10-07T10:47:28Z |
+| ER1-b, final | verify | 0 | 2026-10-07T10:47:28Z | 2026-10-07T10:52:09Z |
+| ER1-b, final | typecheck | 0 | 2026-10-07T10:52:09Z | 2026-10-07T10:52:09Z |
+
+A primeira corrida ER1-b, em `fc969cc2d3bf5faf40d6df705f93fe7671605144`, ficou em portoes-b-primeira/. O typecheck recusou o acesso ao nome de uma região que poderia não existir e o índice da língua sem tipo fechado. A correção passou a recusar explicitamente a região ausente e a tipar as duas línguas; o typecheck isolado passou e os três portões foram repetidos na cabeça corrigida. A segunda corrida, em `c25aee7f41e5931909f3cc05e7779f6d22922ae8`, passou os três portões. Na conferência final do brief encontrou-se a porta de exemplo ainda em falta no Método; foi acrescentada com planta nas duas edições, mantendo a frase aprovada, e o carimbo foi atualizado. A terceira corrida, em `4dfb9690fb1a95d3bb2973ae32e8702988fd25d3`, recusou as palavras dessa porta como frases vivas na voz: o Método já fora retirado dessa leitura depois de conferido como texto governado. A porta passou à tabela própria do inventário, com comparação e plantas nas duas edições; check:voz e a célula ER1 passaram isoladamente antes da corrida completa final. A régua geral da voz não foi alterada. O verify da terceira corrida não correu porque o build falhou; o seu código de não execução está na tabela. As capturas das tentativas ficaram em er1-b-primeira/ e er1-b-segunda/; as que valem para a entrega estão em er1-b/.
+
+As provas específicas foram extraídas de portoes-b/verify.log para celula-b.json, navegador-b.json e privacidade-b.json. O navegador exerceu 23 casos. As mensagens das plantas abaixo foram afirmadas pelas células, não inferidas de um código de saída.
+
+| Planta | Mensagem afirmada | Mordeu |
+| --- | --- | --- |
+| separador-em-falta | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| marca-por-confirmar | ER1 código: uma marca por confirmar não se incorpora. | sim |
+| valor-trocado | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| codigo-em-falta | ER1 código: falta o único código do recibo. | sim |
+| marca-no-paragrafo | ER1 código: marca fora do campo do recibo da própria linha. | sim |
+| codigo-editavel | ER1 código: marca fora do campo do recibo da própria linha. | sim |
+| campo-conferido-fora-do-bloco | ER1 código: o campo conferido não é o que o botão copia. | sim |
+| comentario-no-codigo | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| leitura-nao-literal | ER1 código: falta a leitura literal do campo. | sim |
+| codigo-sem-proveniencia-pt | ER1 código: proveniência por confirmar oferece código. | sim |
+| aviso-em-falta-pt | ER1 aviso: falta a recusa de incorporação da edição. | sim |
+| codigo-sem-proveniencia-en | ER1 código: proveniência por confirmar oferece código. | sim |
+| aviso-em-falta-en | ER1 aviso: falta a recusa de incorporação da edição. | sim |
+| lugar-em-falta-custo-unitario-do-trabalho-2025-pt | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| lugar-em-falta-custo-unitario-do-trabalho-2025-en | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| lugar-em-falta-pib-pc-alentejo-2024-pt | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| lugar-em-falta-pib-pc-alentejo-2024-en | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| lugar-em-falta-evora-populacao-2021-pt | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| lugar-em-falta-evora-populacao-2021-en | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| lugar-em-falta-taxa-de-desemprego-2025-ue-pt | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| lugar-em-falta-taxa-de-desemprego-2025-ue-en | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| lugar-em-falta-despesa-por-funcao-2024-gf01-es-pt | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| lugar-em-falta-despesa-por-funcao-2024-gf01-es-en | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| lugar-em-falta-portugal-concentracao-vab4-2024-pt | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| lugar-em-falta-portugal-concentracao-vab4-2024-en | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| cors-em-falta | ER1 CORS: /livro-razao/custo-unitario-do-trabalho-2024.json tem estado ou cabeçalho incorreto. | sim |
+| cors-em-html | ER1 CORS: / tem estado ou cabeçalho incorreto. | sim |
+| moldura-aberta | ER1 moldura: / perdeu SAMEORIGIN. | sim |
+| data-inacessivel-pt | Uma tentativa sem confirmação não avança a data de leitura. | sim |
+| data-diverge-pt | Uma tentativa sem confirmação não avança a data de leitura. | sim |
+| data-inacessivel-en | Uma tentativa sem confirmação não avança a data de leitura. | sim |
+| data-diverge-en | Uma tentativa sem confirmação não avança a data de leitura. | sim |
+| json-nome | ER1 JSON: a apresentação difere da linha. | sim |
+| json-periodo | ER1 JSON: a apresentação difere da linha. | sim |
+| json-valor | ER1 JSON: a apresentação difere da linha. | sim |
+| json-unidade | ER1 JSON: a apresentação difere da linha. | sim |
+| json-unidadeLang | ER1 JSON: a apresentação difere da linha. | sim |
+| json-fonte | ER1 JSON: a apresentação difere da linha. | sim |
+| json-fonteLang | ER1 JSON: a apresentação difere da linha. | sim |
+| json-data | ER1 JSON: a apresentação difere da linha. | sim |
+| json-leitura | ER1 JSON: a apresentação difere da linha. | sim |
+| json-atribuicao | ER1 JSON: a apresentação difere da linha. | sim |
+| json-notas | ER1 JSON: a apresentação difere da linha. | sim |
+| json-atualizacao | ER1 JSON: a apresentação difere da linha. | sim |
+| metodo-sem-exemplo-pt | ER1 Método: falta a porta para o recibo de exemplo da edição. | sim |
+| metodo-sem-exemplo-en | ER1 Método: falta a porta para o recibo de exemplo da edição. | sim |
+| inventario-metodo.exemplo-pt | ER1 inventário: falta a cadeia aprovada metodo.exemplo nas duas edições. | sim |
+| inventario-metodo.exemplo-en | ER1 inventário: falta a cadeia aprovada metodo.exemplo nas duas edições. | sim |
+| inventario-incorporar.indisponivel-pt | ER1 inventário: falta a cadeia aprovada incorporar.indisponivel nas duas edições. | sim |
+| inventario-incorporar.indisponivel-en | ER1 inventário: falta a cadeia aprovada incorporar.indisponivel nas duas edições. | sim |
+| inventario-incorporar.titulo-pt | ER1 inventário: falta a cadeia aprovada incorporar.titulo nas duas edições. | sim |
+| inventario-incorporar.titulo-en | ER1 inventário: falta a cadeia aprovada incorporar.titulo nas duas edições. | sim |
+| inventario-incorporar.copiar-pt | ER1 inventário: falta a cadeia aprovada incorporar.copiar nas duas edições. | sim |
+| inventario-incorporar.copiar-en | ER1 inventário: falta a cadeia aprovada incorporar.copiar nas duas edições. | sim |
+| inventario-incorporar.copiado-pt | ER1 inventário: falta a cadeia aprovada incorporar.copiado nas duas edições. | sim |
+| inventario-incorporar.copiado-en | ER1 inventário: falta a cadeia aprovada incorporar.copiado nas duas edições. | sim |
+| inventario-incorporar.selecionado-pt | ER1 inventário: falta a cadeia aprovada incorporar.selecionado nas duas edições. | sim |
+| inventario-incorporar.selecionado-en | ER1 inventário: falta a cadeia aprovada incorporar.selecionado nas duas edições. | sim |
+| inventario-incorporar.lido-pt | ER1 inventário: falta a cadeia aprovada incorporar.lido nas duas edições. | sim |
+| inventario-incorporar.lido-en | ER1 inventário: falta a cadeia aprovada incorporar.lido nas duas edições. | sim |
+| inventario-incorporar.calculado-pt | ER1 inventário: falta a cadeia aprovada incorporar.calculado nas duas edições. | sim |
+| inventario-incorporar.calculado-en | ER1 inventário: falta a cadeia aprovada incorporar.calculado nas duas edições. | sim |
+| inventario-incorporar.periodoEmFalta-pt | ER1 inventário: falta a cadeia aprovada incorporar.periodoEmFalta nas duas edições. | sim |
+| inventario-incorporar.periodoEmFalta-en | ER1 inventário: falta a cadeia aprovada incorporar.periodoEmFalta nas duas edições. | sim |
+| inventario-incorporar.atualizado-pt | ER1 inventário: falta a cadeia aprovada incorporar.atualizado nas duas edições. | sim |
+| inventario-incorporar.atualizado-en | ER1 inventário: falta a cadeia aprovada incorporar.atualizado nas duas edições. | sim |
+| pedido-de-fora | ER1 privacidade: endereço fora da origem fixa do projeto. | sim |
+| cookie | ER1 privacidade: API fora dos elementos próprios. | sim |
+| armazenamento | ER1 privacidade: API fora dos elementos próprios. | sim |
+| pagina-anfitria | ER1 privacidade: leitura fora dos parágrafos próprios. | sim |
+| postMessage | ER1 privacidade: API fora dos elementos próprios. | sim |
+| parent | ER1 privacidade: API fora dos elementos próprios. | sim |
+| top | ER1 privacidade: API fora dos elementos próprios. | sim |
+| innerText | ER1 privacidade: API fora dos elementos próprios. | sim |
+| getElementsBy | ER1 privacidade: API fora dos elementos próprios. | sim |
+| body | ER1 privacidade: API fora dos elementos próprios. | sim |
+| credenciais | ER1 privacidade: o pedido perdeu a opção credentials: 'omit'. | sim |
+| redirecionamento | ER1 privacidade: o pedido perdeu a opção redirect: 'error'. | sim |
+| notas-retiradas-pt | ER1 navegador: desapareceram as notas da linha. | sim |
+| proveniencia-por-confirmar-pt | O pedido recusado conserva o código colado inteiro. | sim |
+| sem-cors-pt | O pedido recusado conserva o código colado inteiro. | sim |
+| falha-pt | O pedido recusado conserva o código colado inteiro. | sim |
+| json-malformado-pt | O pedido recusado conserva o código colado inteiro. | sim |
+| outra-linha-pt | O pedido recusado conserva o código colado inteiro. | sim |
+| redirecionamento-pt | O pedido recusado conserva o código colado inteiro. | sim |
+| notas-retiradas-en | ER1 navegador: desapareceram as notas da linha. | sim |
+| proveniencia-por-confirmar-en | O pedido recusado conserva o código colado inteiro. | sim |
+| sem-cors-en | O pedido recusado conserva o código colado inteiro. | sim |
+| falha-en | O pedido recusado conserva o código colado inteiro. | sim |
+| json-malformado-en | O pedido recusado conserva o código colado inteiro. | sim |
+| outra-linha-en | O pedido recusado conserva o código colado inteiro. | sim |
+| redirecionamento-en | O pedido recusado conserva o código colado inteiro. | sim |
+
+### Capturas e conferência visual
+
+As capturas pertencem à cabeça do código e cobrem as duas edições e as larguras 390, 768, 1024, 1280, 1600 px, incluindo o recibo com código e o recibo com a marca na data. São 40 imagens entre páginas completas e recortes do bloco. O manifesto captura a identidade dos recursos, os sha256, a largura do documento e a ausência de pedidos externos, erros e recursos em falta. Não houve transbordo horizontal. A inspeção visual dos recortes confirmou o campo e o botão no caso permitido e o título com a frase aprovada no caso recusado.
+
+| Captura | Sha256 |
+| --- | --- |
+| [com-codigo-pt-390-incorporar.png](../../capturas/er1-2026-10-06/er1-b/com-codigo-pt-390-incorporar.png) | 928a05015755fd76d57e6355654613611ccd36c56f9fe70677da17a795d4420d |
+| [com-codigo-pt-768-incorporar.png](../../capturas/er1-2026-10-06/er1-b/com-codigo-pt-768-incorporar.png) | 0f2f83e3ca38c665ba39275a4ddf206319a4eb89ba7a107e6f3ab3a66892196b |
+| [com-codigo-pt-1024-incorporar.png](../../capturas/er1-2026-10-06/er1-b/com-codigo-pt-1024-incorporar.png) | 4f7d1d5a80db2f39f787dda27d1cd2cd1b684c63ef8921bbdadb8fa6903164e7 |
+| [com-codigo-pt-1280-incorporar.png](../../capturas/er1-2026-10-06/er1-b/com-codigo-pt-1280-incorporar.png) | 274807a9a5844a1cea0229a76b113a2208d077703649e5ea2fcf51365114c651 |
+| [com-codigo-pt-1600-incorporar.png](../../capturas/er1-2026-10-06/er1-b/com-codigo-pt-1600-incorporar.png) | c45cb49dfe943072093a33c7bf909d8ef2caebfb96625ae78d856ab9a9ee3fd2 |
+| [com-codigo-en-390-incorporar.png](../../capturas/er1-2026-10-06/er1-b/com-codigo-en-390-incorporar.png) | 88eead1a7c60ef5f650e919b7460e1693340f9d69440554416f1e91d82f302fc |
+| [com-codigo-en-768-incorporar.png](../../capturas/er1-2026-10-06/er1-b/com-codigo-en-768-incorporar.png) | 0078b1e0264ca47e47aebc1bd6fbab3602c91530ed58e977c6caffc5bcc7c431 |
+| [com-codigo-en-1024-incorporar.png](../../capturas/er1-2026-10-06/er1-b/com-codigo-en-1024-incorporar.png) | f7d9f7e8db1a2478b2c09fb2cfde8a3087e39c897181e4b41096dc398a95e88f |
+| [com-codigo-en-1280-incorporar.png](../../capturas/er1-2026-10-06/er1-b/com-codigo-en-1280-incorporar.png) | 251a5947b093395deaa3490ea9f0060d5a270841f0f344691c3eb1b7244b1267 |
+| [com-codigo-en-1600-incorporar.png](../../capturas/er1-2026-10-06/er1-b/com-codigo-en-1600-incorporar.png) | 5147dcc09edb7d5c8800fdf8d71966eebb656e01c1b575636552d9c8229a6174 |
+| [sem-codigo-pt-390-incorporar.png](../../capturas/er1-2026-10-06/er1-b/sem-codigo-pt-390-incorporar.png) | 1640a9b6e24c9cd73d9b27d129a9f7ff127b338bea596edf4ab91abff732ed42 |
+| [sem-codigo-pt-768-incorporar.png](../../capturas/er1-2026-10-06/er1-b/sem-codigo-pt-768-incorporar.png) | f915ee52097a8c2c365ee55786e48580aa62f8ca62a6adcdf9bfe02c30a8181a |
+| [sem-codigo-pt-1024-incorporar.png](../../capturas/er1-2026-10-06/er1-b/sem-codigo-pt-1024-incorporar.png) | 83f303f27d7c12f0b87c5fff079febb3cc7b408f9cbfbfdb7607f4a50ea28a55 |
+| [sem-codigo-pt-1280-incorporar.png](../../capturas/er1-2026-10-06/er1-b/sem-codigo-pt-1280-incorporar.png) | 62cdd83e65169ee56205a56cb6f03201feade341f0d217b4ef686d93429ce68c |
+| [sem-codigo-pt-1600-incorporar.png](../../capturas/er1-2026-10-06/er1-b/sem-codigo-pt-1600-incorporar.png) | 3106c4c0c32a2f7a3b47d78d0250dbc1013053b21f222118c1e4bfc7123fb4d1 |
+| [sem-codigo-en-390-incorporar.png](../../capturas/er1-2026-10-06/er1-b/sem-codigo-en-390-incorporar.png) | 6628044f5e88f30c064bc4895f271e3737161a8971fdfa6405e29172c1da91f0 |
+| [sem-codigo-en-768-incorporar.png](../../capturas/er1-2026-10-06/er1-b/sem-codigo-en-768-incorporar.png) | 184ea1c0e0f21c8d80943e0f0ac53fe39c847f7666089fcb0a1bc5fba0244225 |
+| [sem-codigo-en-1024-incorporar.png](../../capturas/er1-2026-10-06/er1-b/sem-codigo-en-1024-incorporar.png) | e307f397f1d569ed4588bcd581c6d3097f687478a5a0bc1e8fb6e75562e2cbdd |
+| [sem-codigo-en-1280-incorporar.png](../../capturas/er1-2026-10-06/er1-b/sem-codigo-en-1280-incorporar.png) | 5098c764f22cc017405e0d67f60c8d5d7dbbe388eb796231f5197d1b92511369 |
+| [sem-codigo-en-1600-incorporar.png](../../capturas/er1-2026-10-06/er1-b/sem-codigo-en-1600-incorporar.png) | f8d9ac676bb8d581529fb189ab96453ee3f3630892a7efd9f62d523fe152ee8b |
+
+### O que fica com a aterragem
+
+A construção e as correções mandatadas estão entregues nesta worktree. A ER1-1 ficou confirmada pela leitura a frio: só uma releitura igual confirma o valor. A ER1-2 ficou fechada com a frase, a porta de exemplo e a entrada do registo. A leitura curta por outra família, a conferência do lugar de direção, a corrida do GitHub na cabeça que aterra, a fusão em main e verify:deploy pertencem à aterragem. Não houve push nem publicação nesta sessão. A regra 3 de CLAUDE.md exige a leitura curta do diff antes de aterrar; esta construção não se apresenta como leitura independente. O achado 9 fica no bloco dos recibos, por decisão expressa. O custo e a sua comparação com o alvo de trezentos mil símbolos não podem ser confirmados sem a linha da ferramenta.
+
+A linha tokens used não foi exposta nesta sessão; o total e o confronto com o custo-alvo ficam [verify].
