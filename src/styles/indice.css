@@ -148,18 +148,8 @@
   padding-bottom: 10px;
 }
 
-/* «O que mudou» no índice tem a forma do registo (`leitura.css`, `.registo-mudanca`): a data, o lugar da linha e o que
-   mudou, em três colunas, e numa só abaixo de 560 px. O lugar é escrito e não é porta (a porta dele é a da sua secção,
-   nesta página), e por isso leva a letra e a cor do instrumento sem o sublinhado das portas. O seletor duplo ganha à
-   regra de duas colunas de `lugar.css` qualquer que seja a ordem das folhas. */
-.lugar-mudou.indice-mudou li {
-  grid-template-columns: 104px 132px minmax(0, 1fr);
-}
 .indice-mudou-lugar {
   font-family: var(--f-instr);
   font-size: 13px;
   color: var(--muted);
-}
-@media (width <= 560px) {
-  .lugar-mudou.indice-mudou li { grid-template-columns: minmax(0, 1fr); }
 }

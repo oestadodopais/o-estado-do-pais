@@ -1,0 +1,191 @@
+{
+  "comando": "python3 design/especime-v3/medicoes/h4-2026-10-06/relatorio-h4d.py",
+  "partida": "6a63145dd09444c09612374a37bcfaa41b590788",
+  "cabeca_codigo": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+  "commits": [
+    {
+      "cabeca": "f00766e3008a88c0176e7b640550716602c96747",
+      "assunto": "H4-d: provar as proteções em falta da TM4 (achado 6)"
+    },
+    {
+      "cabeca": "efe38f9919de985a59b9a3d90c85080f463dd860",
+      "assunto": "H4-d: retirar o provisório e atualizar a TM4 no mapa (achado 12)"
+    },
+    {
+      "cabeca": "aeec3c17ec62ec03bb31a40b2e8a54dfe32df52c",
+      "assunto": "H4-d: explicar a exceção do nome da União no menu (achado 13)"
+    },
+    {
+      "cabeca": "35efa677c73bac12e91e5ea99618d1e975ddb1c6",
+      "assunto": "H4-d: dar cabeçalho à tabela do inventário (achado 14)"
+    },
+    {
+      "cabeca": "fcadc7f797e1212e34ff2cf7938728e95ed65d62",
+      "assunto": "H4-d: dizer os lugares como são e em palavras correntes (achados 15 e 16)"
+    },
+    {
+      "cabeca": "fd9659a08301e0c940a2c156a84d9e7ff10a7f0e",
+      "assunto": "H4-d: prender as provas e capturas à cabeça limpa (achado 11)"
+    },
+    {
+      "cabeca": "f958bf80eb9ffe366b5e40629b2c395ef71adcb9",
+      "assunto": "H4-d: distinguir peça na política do nome de um estudo (H4-6)"
+    }
+  ],
+  "codigos": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0
+  },
+  "achados": [
+    {
+      "achado": 1,
+      "mudanca": "Estrago plantado na cópia do pacote; nenhum defeito a corrigir por este achado.",
+      "protecao": "Conservado o resultado da leitura a frio."
+    },
+    {
+      "achado": 2,
+      "mudanca": "Estrago plantado na cópia do pacote; nenhum defeito a corrigir por este achado.",
+      "protecao": "Conservado o resultado da leitura a frio."
+    },
+    {
+      "achado": 3,
+      "mudanca": "Estrago plantado na cópia do pacote; nenhum defeito a corrigir por este achado.",
+      "protecao": "Conservado o resultado da leitura a frio."
+    },
+    {
+      "achado": 4,
+      "mudanca": "Estrago plantado na cópia do pacote; nenhum defeito a corrigir por este achado.",
+      "protecao": "Conservado o resultado da leitura a frio."
+    },
+    {
+      "achado": 5,
+      "mudanca": "Estrago plantado na cópia do pacote; nenhum defeito a corrigir por este achado.",
+      "protecao": "Conservado o resultado da leitura a frio."
+    },
+    {
+      "achado": 6,
+      "mudanca": "Referência independente do espaço e da letra na TM4; plantas específicas para cada proteção em falta.",
+      "protecao": "Plantas novas e mensagens na tabela abaixo; o aperto da regra base exige as mensagens do espaço e da letra."
+    },
+    {
+      "achado": 7,
+      "mudanca": "Explicação EX1, reservada ao lugar de direção; texto intacto nesta passagem.",
+      "protecao": "Fora do mandato H4-d, por decisão expressa."
+    },
+    {
+      "achado": 8,
+      "mudanca": "Explicação EX1, reservada ao lugar de direção; texto intacto nesta passagem.",
+      "protecao": "Fora do mandato H4-d, por decisão expressa."
+    },
+    {
+      "achado": 9,
+      "mudanca": "Decisões H4-1 e H4-5 reservadas à aterragem pelo lugar de direção; sem alteração.",
+      "protecao": "A TM4 conserva os limites decididos."
+    },
+    {
+      "achado": 10,
+      "mudanca": "Decisões H4-1 e H4-5 reservadas à aterragem pelo lugar de direção; sem alteração.",
+      "protecao": "A TM4 conserva os limites decididos."
+    },
+    {
+      "achado": 11,
+      "mudanca": "Portões, plantas da política e da N1 e capturas do Método repetidos na cabeça do código. As plantas e capturas correm com git status --porcelain vazio.",
+      "protecao": "Cabeça, estados inicial e final, códigos, mensagens e SHA-256 nos registos desta passagem."
+    },
+    {
+      "achado": 12,
+      "mudanca": "Comentários e mensagens dizem redação decidida (§1.173); o mapa descreve as portas, linhas e plantas atuais.",
+      "protecao": "Conferência literal dos ficheiros; plantas da política verificam as mensagens atualizadas."
+    },
+    {
+      "achado": 13,
+      "mudanca": "O comentário regista a exceção do menu: o assunto União Europeia cabe; o nome inteiro da página permanece no título e rodapé.",
+      "protecao": "Conferência do comentário; a N1 continua a recusar rótulo, ordem ou destino errados."
+    },
+    {
+      "achado": 14,
+      "mudanca": "A secção H4 do inventário tem cabeçalho e separador de tabela.",
+      "protecao": "Conferência da estrutura da tabela e das frases vivas."
+    },
+    {
+      "achado": 15,
+      "mudanca": "A política permite Claude e Codex na construção e na leitura, sempre de famílias diferentes na mesma peça; Claude mantém a direção.",
+      "protecao": "Plantas da divisão fixa antiga e da mesma família na construção e leitura, nas duas edições."
+    },
+    {
+      "achado": 16,
+      "mudanca": "Aplicada sem paráfrases a redação final em português e inglês, no texto público e na cópia independente do portão; inventário atualizado.",
+      "protecao": "Plantas das palavras de oficina na direção e na construção, nas duas edições."
+    }
+  ],
+  "contagens": {
+    "plantas_tema_menu": 28,
+    "plantas_tm4": 22,
+    "plantas_tm4_novas": 12,
+    "plantas_politica": 18,
+    "plantas_n1": 3,
+    "plantas_l3": 4,
+    "capturas_metodo": 10
+  },
+  "questoes": [
+    {
+      "questao": "H4-6",
+      "estado": "fechada",
+      "decisao": "A L3 aceita a palavra peça só nos blocos inteiros da redação aprovada dos lugares, dentro da política no Método; o teto mantém-se."
+    }
+  ],
+  "referencia_menu": {
+    "espaco": {
+      "minimo": 16,
+      "vw": 2.8,
+      "maximo": 34
+    },
+    "letra": 15,
+    "espacoLetrasEm": 0.05
+  },
+  "limites_linhas_telefone": {
+    "320": 3,
+    "360": 3,
+    "390": 2,
+    "430": 2
+  },
+  "integridade_conferida": {
+    "design/especime-v3/medicoes/h4-2026-10-06/paginas-d/politica-pt.html": "74e229219a7a2dcf225a419d687d76a1248f7ed1ed2ffc8252fbf269ce3131ab",
+    "dist/_astro/Base.hPEW4RoH.css": "f274081feb3c23a41b42c82b431fdc82ca2c162f791dec18fbb98087803084ff",
+    "dist/_astro/leitura.TndJzC6O.css": "c96affefd00a2dd221cd89e2086e266a2e7e0e3cfd4ce504551a72b45b60af9e",
+    "design/especime-v3/medicoes/h4-2026-10-06/paginas-d/politica-en.html": "ae5b101176955b0f25dd9c2a251710f9c2218d3b83ea373b7b2132e9047e417f",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-pt-390.png": "1bb9a721b90276d02a072db3fa8350749980048bb4b94fcbc6e23da584a88ce7",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-390.png": "7514a46c9d266a58d9bda4d236e0d5db3ff81727190c38710ca8064aefe8eda5",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-390.png": "4eda4f49de3b9a7a2c36870f471d1a47e10157553af619e72aa78192c9affab1",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-pt-768.png": "edb2ed07fc95cc0f379ce39f5543201b300fbecf48ef68ddfbc329f0f552c2b9",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-768.png": "0d212c8f38bb12abd3c249a72fe9426dfb14d61e1ac8fe6ab814df4cfcef51b7",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-768.png": "3a34c8de21e6b7c2dfe4d2730ea4eeff79c49fe95181a8e7f8d2dfa4253c9117",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-pt-1024.png": "9169c8ab621eecd11d20e64e5c0069c29d105609d3107aa4d83565abd7afc9ff",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-1024.png": "b932ae3348e3a8f6dce2ee30c24a5de03ba313a02cbfcfb458e6a4d936510396",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-1024.png": "63b4e9c0cc1b0521a7d4baa0b47c769589d903e56191ab054d039154e8a150a8",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-pt-1280.png": "7f5da4c66e9b37a861f14ad51faab994b489691a7165b33f1607d2678ec8cccf",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-1280.png": "9f5cc705bf16fa58e51ab68a729b875f3ced17c0243e0dc5519a63484d18fff8",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-1280.png": "7786fb568fc1542c42ff0eef99f84ae063e6c521c63aa51e20bd3f52c2b89678",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-pt-1600.png": "ba8f0700757ad6fed522100079ccb863ac8747b30b7410cf40f2328912f2e1fb",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-pt-1600.png": "9f5cc705bf16fa58e51ab68a729b875f3ced17c0243e0dc5519a63484d18fff8",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-pt-1600.png": "7786fb568fc1542c42ff0eef99f84ae063e6c521c63aa51e20bd3f52c2b89678",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-en-390.png": "aa4c0fa02eddc566e861cf9b28f8d2615fe0a6c543058c7994a07c7e0ce50532",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-en-390.png": "f8dcd87f54c4d475fd5a6b496cb10e5345f684e05598c319780e31341ea1ed70",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-390.png": "035300cd840873212c50cde346224d0e36e83d153da24ef27227a41be5d71d83",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-en-768.png": "f0db1435e1accdc0226a7a4745c5057a74ed389a7fbc5142a8a811194dc62df9",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-en-768.png": "34a40db48029b7c3e6132d2dbc6a5944ce74d121b87a3572302d3c7003533349",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-768.png": "65c478fd902c1b9b93d64c19f41f0fff51ba57df76cd3a882611824ecb0c8d23",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-en-1024.png": "cdb9d1cbbd1f6a8f7118385222b4f0abf97a48aa862777bf58f2d56ac17e1481",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-en-1024.png": "0f11aedf2781e39692a186e822d9cb0ba6b906be07afd4a0af1a83e0c98d9bfe",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-1024.png": "7c21d4858ea7c816586075eaef479df5b008cd2b9cafd42dd4dd53561247fe15",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-en-1280.png": "e114151f8efb42e5da8ba424e0266ef8aabe30575e603330ce50ff127b852186",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-en-1280.png": "a771d0ac0181e568df6e2bcfa91ce8d3e15769cecbcfef2e57fe4a30623ec63d",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-1280.png": "fbea1306e17155a69cd6b736ee5e47cd5a29eab7b7b4ad05c6739b4a2975559a",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/politica-en-1600.png": "922183f1932991c6a7239d706473dc60b8433c881f3fb34a72c68ea5560ec8b3",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/lugares-ia-en-1600.png": "a771d0ac0181e568df6e2bcfa91ce8d3e15769cecbcfef2e57fe4a30623ec63d",
+    "design/especime-v3/capturas/h4-2026-10-06/passagem-d/cabecalho-politica-en-1600.png": "fbea1306e17155a69cd6b736ee5e47cd5a29eab7b7b4ad05c6739b4a2975559a"
+  },
+  "aceitacao_cumprida": true,
+  "comando_portoes": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/h4-2026-10-06/portoes-d"
+}

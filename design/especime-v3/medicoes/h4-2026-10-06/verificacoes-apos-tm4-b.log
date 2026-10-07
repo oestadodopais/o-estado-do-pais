@@ -1,0 +1,297 @@
+
+> o-estado-do-pais@0.1.0 sinais
+> node scripts/sinais-da-primeira-pagina.mjs --prova
+
+sinais · 5 de 5 blocos na primeira página, 0 saída(s); o registo está em .sinais/primeira-pagina.json.
+sinais · 1 explicação(ões), 0 frase(s) guardada(s) fora da página; o registo está em .sinais/explicacoes.json.
+  mordeu · uma condição falsa numa cópia das declarações (código 0)
+  mordeu · um resolvedor que recusa tudo (código 1)
+  mordeu · o passo da cadeia do build com um resolvedor que recusa tudo (código 1)
+
+> o-estado-do-pais@0.1.0 check:nomes
+> node scripts/check-nomes-oficiais.mjs --prova
+
+[90m
+  nomes oficiais · 7907 página(s) lidas, 49 analisadas · 44 nome(s) em recibo (44 esperados, derivados do ficheiro), 0 em título de cartão · confirmados pela marca por fonte: 7 do INE, 15 da PORDATA · recusados: 19[0m
+  [32m✓[0m nenhuma página rende um nome oficial que o motor não confirme como a mesma medida, e as 40 plantas foram recusadas ou aceites como deviam.
+
+> o-estado-do-pais@0.1.0 check:palavras
+> node tests/voz/palavras-proibidas.mjs --prova
+
+[32m  palavras ✓ [0m[90m23 de 23 plantas vistas (14 palavras, 9 buracos da superfície) · 7907 página(s) medidas em repouso, 0 achados · 59 página(s) com a superfície estreitada por rota declarada[0m
+
+> o-estado-do-pais@0.1.0 design:feixe
+> node scripts/design-bundle.mjs --prova
+
+  mordeu · feixe · tamanho
+  mordeu · feixe · dependência SVG
+  mordeu · feixe · imagem externa
+  mordeu · feixe · recorte retirado
+{"recorte_livro":{"ficheiro":"13-pagina-livro-razao.html","entradas_na_pagina":428,"entradas_no_recorte":8,"primeiras_preservadas":true,"nota_e_porta_preservadas":true,"pagina_conservada":true,"pagina_sha256":"7a1665c94f364d8da6eb2f0e3100b2957eb13c136191042af1fe83be3337f573","bytes_cartao":239408,"bytes_sem_recorte":1136973,"teto_bytes":673249,"margem":0.1,"planta":{"nome":"recorte retirado","mordeu":true,"queixa":"1110.3 KiB acima do tecto de 657.4697265625 KiB"}}}
+
+[1m  O feixe de cartões do sistema de desenho[0m
+[90m  design-system/ · de dist/ no commit 9c44ad9 · 20 cartões, 11 ficheiros de letra e um README[0m
+
+[90m  ficheiro                          grupo          bytes  ok[0m
+  01-cor.html                       Fundamentos   380035  [32m✓[0m
+  02-tipo.html                      Fundamentos   376255  [32m✓[0m
+  03-selo-e-marcador.html           Componentes   415485  [32m✓[0m
+  04-regua.html                     Disposições   383681  [32m✓[0m
+  05-mapa.html                      Disposições   444826  [32m✓[0m
+  06-estados.html                   Componentes   375740  [32m✓[0m
+  07-cartoes.html                   Componentes   288616  [32m✓[0m
+  10-pagina-primeira.html           Páginas       572298  [32m✓[0m
+  11-pagina-primeira-escuro.html    Páginas       573169  [32m✓[0m
+  12-pagina-linha-livro-razao.html  Páginas       229886  [32m✓[0m
+  13-pagina-livro-razao.html        Páginas       239408  [32m✓[0m
+  14-pagina-municipio.html          Páginas       301006  [32m✓[0m
+  15-pagina-lugares.html            Páginas       491354  [32m✓[0m
+  16-pagina-metodo.html             Páginas       257183  [32m✓[0m
+  17-pagina-agenda.html             Páginas       293971  [32m✓[0m
+  18-pagina-estudos.html            Páginas       214327  [32m✓[0m
+  19-pagina-sobre.html              Páginas       199691  [32m✓[0m
+  20-pagina-correcoes.html          Páginas       318579  [32m✓[0m
+  21-pagina-404.html                Páginas       198620  [32m✓[0m
+  30-regras.html                    Fundamentos   240640  [32m✓[0m
+
+[90m  6635.5 KiB de cartões · maior cartão 559.7 KiB · tecto 657.4697265625 KiB[0m
+[90m  11 ficheiros de letra ao lado, 421.0 KiB, resumos conferidos contra TIPOS.md · fora do tecto[0m
+[90m  ligações internas absolutas em https://oestadodopaís.pt · 17 ligações para fontes, intactas · 12 endereços escritos no texto das páginas (transcrições, não pedidos)[0m
+[90m  nenhum <script>, nenhum <link>, nenhuma imagem que não seja data:, nenhum endereço fora de um href · 160 pedidos de tipo, todos resolvidos em ficheiros desta corrida[0m
+
+[90m  7907 página(s) de `dist/` varridas à procura das duas ausências que os cartões afirmam (`.movel-selo`, `.banda`): nenhuma das duas rende.[0m
+  [32m✓[0m 20 cartões, 11 ficheiros de letra e um README em design-system/.
+
+
+> o-estado-do-pais@0.1.0 check:privacidade
+> PYTHONDONTWRITEBYTECODE=1 python3 scripts/check-privacidade.py --prova
+
+{
+  "ficheiros": 14647,
+  "quantidade": 0,
+  "achados": [],
+  "plantas": [
+    {
+      "id": "nome-do-git-1",
+      "pagina_base": "404.html",
+      "mordeu": true,
+      "falha": "nome pessoal ou caminho local na página construída"
+    },
+    {
+      "id": "nome-do-git-2",
+      "pagina_base": "404.html",
+      "mordeu": true,
+      "falha": "nome pessoal ou caminho local na página construída"
+    },
+    {
+      "id": "nome-da-casa-real",
+      "nome_pessoal": true,
+      "esperado": "detetar",
+      "mordeu": true
+    },
+    {
+      "id": "nome-pessoal-portavel",
+      "mordeu": true
+    },
+    {
+      "id": "ligacao-home-na-conta-generica",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-raiz",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-root",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-runner",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-app",
+      "mordeu": true
+    },
+    {
+      "id": "pasta-generica-code",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-1",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-2",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-3",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-4",
+      "mordeu": true
+    },
+    {
+      "id": "caminho-5",
+      "mordeu": true
+    }
+  ],
+  "api": {
+    "ficheiros": 1,
+    "caminhos_e_nomes": 0,
+    "achados_de_caminhos": [],
+    "segredos": [],
+    "chaves_publicas_vistas": 1,
+    "plantas": [
+      {
+        "id": "segredo-chave-secreta",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-papel-de-servico",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-sal-com-valor",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-sal-entre-aspas",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-chave-com-valor",
+        "mordeu": true
+      },
+      {
+        "id": "segredo-chave-entre-aspas",
+        "mordeu": true
+      },
+      {
+        "id": "sal-lido-do-ambiente-sem-valor",
+        "mordeu": true
+      },
+      {
+        "id": "chave-lida-do-ambiente-sem-valor",
+        "mordeu": true
+      },
+      {
+        "id": "nome-vazio-entre-aspas-sem-valor",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-1",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-2",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-3",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-4",
+        "mordeu": true
+      },
+      {
+        "id": "api-caminho-5",
+        "mordeu": true
+      },
+      {
+        "id": "api-nome-do-git",
+        "mordeu": true
+      }
+    ],
+    "passou": true
+  },
+  "passou": true
+}
+
+> o-estado-do-pais@0.1.0 check:sugestoes
+> node tests/sugestoes/funcao.mjs --prova
+
+  ✓ get
+  ✓ armadilha
+  ✓ vazia
+  ✓ boa
+  ✓ boa-en
+  ✓ contacto
+  ✓ limite
+  ✓ cheia
+  ✓ chave-recusada
+  ✓ rede
+  ✓ sem-sal
+  ✓ sem-chave
+  ✓ sem-ip
+  ✓ corte
+  ✓ de-fora
+  ✓ referer-de-outra-origem
+  ✓ marca-de-hora-a-hora
+  ✓ exportacoes
+  ✓ planta controlo-sem-troca ((todos)) · a cópia sem troca passa
+  ✓ planta get-para-outra-pagina (get) · mordeu com a queixa esperada
+  ✓ planta armadilha-invertida (armadilha) · mordeu com a queixa esperada
+  ✓ planta vazia-invertida (vazia) · mordeu com a queixa esperada
+  ✓ planta marca-sem-separador (boa) · mordeu com a queixa esperada
+  ✓ planta marca-do-ultimo-endereco (boa) · mordeu com a queixa esperada
+  ✓ planta campo-em-branco-como-cadeia-vazia (boa) · mordeu com a queixa esperada
+  ✓ planta pagina-sem-o-de-do-referer (boa) · mordeu com a queixa esperada
+  ✓ planta origem-sem-o-esquema-publico (boa) · mordeu com a queixa esperada
+  ✓ planta chave-sem-trim (boa) · mordeu com a queixa esperada
+  ✓ planta corpo-sem-chave (boa) · mordeu com a queixa esperada
+  ✓ planta fuga-do-sal (boa) · mordeu com a queixa esperada
+  ✓ planta fuga-da-chave (boa) · mordeu com a queixa esperada
+  ✓ planta fuga-do-endereco (boa) · mordeu com a queixa esperada
+  ✓ planta contacto-de-volta (contacto) · mordeu com a queixa esperada
+  ✓ planta contacto-escondido-noutro-parametro (contacto) · mordeu com a queixa esperada
+  ✓ planta lingua-sempre-portuguesa (boa-en) · mordeu com a queixa esperada
+  ✓ planta limite-invertido (limite) · mordeu com a queixa esperada
+  ✓ planta cheia-como-limite (cheia) · mordeu com a queixa esperada
+  ✓ planta chave-recusada-como-limite (chave-recusada) · mordeu com a queixa esperada
+  ✓ planta rede-como-obrigado (rede) · mordeu com a queixa esperada
+  ✓ planta sal-invertido (sem-sal) · mordeu com a queixa esperada
+  ✓ planta chave-invertida (sem-chave) · mordeu com a queixa esperada
+  ✓ planta ip-em-falta-invertido (sem-ip) · mordeu com a queixa esperada
+  ✓ planta corte-em-unidades-de-utf16 (corte) · mordeu com a queixa esperada
+  ✓ planta de-de-fora-aceite (de-fora) · mordeu com a queixa esperada
+  ✓ planta referer-de-outra-origem-aceite (referer-de-outra-origem) · mordeu com a queixa esperada
+  ✓ planta marca-sem-a-hora (marca-de-hora-a-hora) · mordeu com a queixa esperada
+  ✓ planta marca-com-o-dia (marca-de-hora-a-hora) · mordeu com a queixa esperada
+  ✓ planta marca-em-base64 (marca-de-hora-a-hora) · mordeu com a queixa esperada
+  ✓ planta exportacao-a-mais (exportacoes) · mordeu com a queixa esperada
+
+  a função das sugestões: 18 casos verdes, 30 plantas que mordem com a queixa esperada e a cópia de controlo verde.
+
+> o-estado-do-pais@0.1.0 check:rotulos
+> node scripts/inventario-rotulos.mjs --prova
+
+R2 · rótulos: 7906 página(s) lidas, 704 com cartões, 5290 cartão(ões) (nacional 318, uniao 42, concelho 4928, camaras 2), 376 chave(s); unidades declaradas 780, da linha 4442, em dívida 2; estados 688; frases da faixa 2464+2464 (2464 cartões com a faixa inteira); contra o declarado: 376 chave(s), 1362 campo(s), 1411 forma(s) com a contagem, 26844 ocorrência(s), 0 diferença(s); dobras 138 perguntas, 4928 notas, 12 referências, 42 na União; OE1: unidades em 186+186 recibos, 186+186 entradas do livro; 32 de 32 plantas a morder; 0 erro(s).
+
+> o-estado-do-pais@0.1.0 check:series
+> node tests/series/series.mjs --prova
+
+  check:series · 24 série(s) no tempo de 7839 ponto(s) · 2 derivada(s) com 152 ponto(s) refeitos · 12 linha(s) presa(s), 12 cartão(ões) no último ponto · 48 recibo(s) lidos · metade do motor da S3: sem RESEARCHHUB_DIR: a metade do motor não corre aqui · 28 de 28 planta(s) morderam
+  ✓ as séries no tempo têm a forma, a cadência, cada valor no seu excerto, a derivada refeita, cada linha presa no seu ponto e cada cartão no último, e os recibos com todos os pontos nas duas edições.
+
+> o-estado-do-pais@0.1.0 check:indice-do-sitio
+> node tests/indice/indice.mjs --prova
+
+check:indice-do-sitio pt: 426 portas (426 destinos), 420 endereços do mapa conferidos, 32 rotas de leitor, 308 concelhos em 29 gavetas, 11 estudos, 8 linhas de «O que mudou».
+check:indice-do-sitio en: 426 portas (426 destinos), 420 endereços do mapa conferidos, 32 rotas de leitor, 308 concelhos em 29 gavetas, 11 estudos, 8 linhas de «O que mudou».
+check:indice-do-sitio: 17 de 17 plantas morderam.
+check:indice-do-sitio: todas as conferências a 0.
+
+> o-estado-do-pais@0.1.0 check:explicacoes
+> node tests/explicacoes/explicacao.mjs --prova && node tests/explicacoes/semana.mjs --prova
+
+X · a explicação: 1 explicação(ões), 80 folhas e 118 partes auditadas (54 diz, 0 leitura, 13 conta, 2 aponta, 49 liga), 5 origens usadas; 2 token(s) «maiores» conferidos nas duas edições; 4 token(s) de ramos (sinal e compara) com os três ramos; 2 origens das explicações, sem o motor ao lado; 2 página(s) recontadas; 23 de 23 plantas em memória.
+W · a leitura da semana: janela 2026-09-30 a 2026-10-06, 90 relidas, 9 mudadas de valor, 3 só na forma de escrever, 9 de proveniência; W1 5 de 5 plantas na cópia do livro; 4 porta(s) da semana conferidas; 8 de 8 plantas na página.
+
+> o-estado-do-pais@0.1.0 check:frases-compostas
+> node tests/explicacoes/frases-compostas.mjs
+
+FC · 20 passagem(ns) em 10 páginas, 356 pedaços marcados vistos, 0 dentro de um contentor flexível, 0 documento(s) mais largos do que a janela a 390 px; 2 de 2 plantas no navegador.

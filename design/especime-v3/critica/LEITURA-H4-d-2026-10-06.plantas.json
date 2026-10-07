@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T15:27:23+00:00",
+ "copia": "<scratchpad>/h4/pacote-leitura-d",
+ "plantas": [
+  {
+   "id": "p1",
+   "ficheiro": "built/metodo/index.html",
+   "descricao": "a página construída do Método em português diz «sempre a mesma família nos dois lugares da mesma peça», o contrário da redação decidida e da cópia do portão",
+   "sha256_antes": "74e229219a7a2dcf225a419d687d76a1248f7ed1ed2ffc8252fbf269ce3131ab",
+   "sha256_depois": "8011b39a219be4ca009cc0996d73f8f2f4d8fd24fc91016d7d012261087432e7",
+   "contexto_antes": "nstrução.</li></ul><p class=\"metodo-p\">Os modelos Claude da Anthropic estão na direção; na construção e na leitura estão os modelos Claude e o Codex da OpenAI, nunca a mesma família nos dois lugares da mesma peça. Um modelo novo só ocupa um lugar depois de passar os mesmos testes que o titular passou, e a troca fica escrita com a data.</p></div></div><div class=\"regra-l",
+   "contexto_depois": "nstrução.</li></ul><p class=\"metodo-p\">Os modelos Claude da Anthropic estão na direção; na construção e na leitura estão os modelos Claude e o Codex da OpenAI, sempre a mesma família nos dois lugares da mesma peça. Um modelo novo só ocupa um lugar depois de passar os mesmos testes que o titular passou, e a troca fica escrita com a data.</p></div></div><div class=\"regra-l"
+  },
+  {
+   "id": "p2",
+   "ficheiro": "scripts/check-lugar.mjs",
+   "descricao": "a exceção da L3 para «peça» deixa de estar presa aos blocos aprovados da política e passa a valer em qualquer bloco de qualquer página",
+   "sha256_antes": "8213b99a2de461702e1341979595c9f4199c96e2f59690cc8fd7dfb09327f78c",
+   "sha256_depois": "52e0ac3511d4e681e6e1cd4964528bb46e502d47e4256761a47144c9c7a1ad3d",
+   "contexto_antes": "as(palavra)) continue;\n      /* Conta por bloco, para que uma exceção possa dispensar o bloco dela. */\n      let n = 0;\n      for (const b of blocos) {\n        if (palavra === 'peça' && pecasDosLugares.get(b) > 0) {\n          pecasDosLugares.set(b, pecasDosLugares.get(b) - 1);\n          continue;\n        }\n        n += contaForaDasExcecoes(b, palavra, (i, desconto) =>\n    ",
+   "contexto_depois": "as(palavra)) continue;\n      /* Conta por bloco, para que uma exceção possa dispensar o bloco dela. */\n      let n = 0;\n      for (const b of blocos) {\n        if (palavra === 'peça') {\n          pecasDosLugares.set(b, pecasDosLugares.get(b) - 1);\n          continue;\n        }\n        n += contaForaDasExcecoes(b, palavra, (i, desconto) =>\n    "
+  },
+  {
+   "id": "p3",
+   "ficheiro": "tests/pais/portoes.mjs",
+   "descricao": "a planta h4d-l3-outra-palavra-na-politica passa a exigir só «L3» na saída, que aparece em qualquer corrida, e deixa de provar que a régua morde",
+   "sha256_antes": "74a92c91e50d8173f13b785328067ee40698a3ac21e24cb0b6656d237bf56264",
+   "sha256_depois": "402fcec8f0fb050e523ede39d9c43bdf17a9492ee95dd9deccd47a87e593c985",
+   "contexto_antes": "DO TETO/]);\nplanta('h4d-l3-outra-palavra-na-politica', 'scripts/check-lugar.mjs', [\n ['metodo/index.html', r => r.querySelector('.politica-lugares').parentNode.insertAdjacentHTML('beforeend', '<p>Um indicador novo.</p>')],\n], [/L3 · palavras fora do vocabulário fechado\\s+1\\s+\\(teto 0\\) ACIMA DO TETO/]);\n\nplanta('h4b-menu-sem-explicacoes','scripts/check-pais.mjs',[\n ['index.html', r=>r.querySelector('#nav-principal a[href=\"/explicacoes\"]').remove()],\n ['en/inde",
+   "contexto_depois": "DO TETO/]);\nplanta('h4d-l3-outra-palavra-na-politica', 'scripts/check-lugar.mjs', [\n ['metodo/index.html', r => r.querySelector('.politica-lugares').parentNode.insertAdjacentHTML('beforeend', '<p>Um indicador novo.</p>')],\n], [/L3/]);\n\nplanta('h4b-menu-sem-explicacoes','scripts/check-pais.mjs',[\n ['index.html', r=>r.querySelector('#nav-principal a[href=\"/explicacoes\"]').remove()],\n ['en/inde"
+  },
+  {
+   "id": "p4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "o relatório diz que a política fez 20 plantas, e o registo e a tabela dizem 18",
+   "sha256_antes": "b55a472abb21b529f91a40938b1d53ee00c760e967163578410703eb8a5827df",
+   "sha256_depois": "f83f255ca283b6ce57eec34ca9d51cc43ba3485553fb9cf72d4651be6b06a276",
+   "contexto_antes": " incluindo a porta a mais, o menu sem dobrar e o alvo de toque. Nenhuma planta da TM4 muda ficheiros da construção.\n\n### A política e a N1 na cabeça do código\n\nA política fez 18 plantas; a N1 fez 3. Todas falharam pela mensagem esperada. A política trabalha em cópias na memória; a N1 repõe os ficheiros construídos byte a byte, com o mesmo resumo antes e de",
+   "contexto_depois": " incluindo a porta a mais, o menu sem dobrar e o alvo de toque. Nenhuma planta da TM4 muda ficheiros da construção.\n\n### A política e a N1 na cabeça do código\n\nA política fez 20 plantas; a N1 fez 3. Todas falharam pela mensagem esperada. A política trabalha em cópias na memória; a N1 repõe os ficheiros construídos byte a byte, com o mesmo resumo antes e de"
+  },
+  {
+   "id": "p5",
+   "ficheiro": "built/en/method/index.html",
+   "descricao": "a página construída do Método em inglês perde, no lugar da leitura, a frase de que a leitura é sempre de outra família de modelos que a construção",
+   "sha256_antes": "ae5b101176955b0f25dd9c2a251710f9c2218d3b83ea373b7b2132e9047e417f",
+   "sha256_depois": "95075f38adc99e900432dbcdc08ccf0dbcd6b0480a2b435dfb71323af68b11e1",
+   "contexto_antes": "checks at the source, in batches, what it publishes.</li><li><strong>Reading</strong> reads each piece with no prior context, with planted errors it has to find, and is always by a different family of models from the one that built it.</li></ul><p class=\"metodo-p\">The Claude models from Anthropic hold the direction; building and reading are held by the Claude models and by Codex from OpenAI, ",
+   "contexto_depois": "checks at the source, in batches, what it publishes.</li><li><strong>Reading</strong> reads each piece with no prior context, with planted errors it has to find.</li></ul><p class=\"metodo-p\">The Claude models from Anthropic hold the direction; building and reading are held by the Claude models and by Codex from OpenAI, "
+  }
+ ]
+}

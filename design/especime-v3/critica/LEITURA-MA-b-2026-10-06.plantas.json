@@ -1,0 +1,51 @@
+{
+ "registado_em": "2026-10-06T13:54:20+00:00",
+ "copia": "<scratchpad>",
+ "plantas": [
+  {
+   "id": "p1",
+   "ficheiro": "package.json",
+   "descricao": "o check:leituras sai da cadeia do verify (as plantas das leituras deixam de correr em cadeia nenhuma)",
+   "sha256_antes": "4923de07ba87b30a891b944f5c60b097c5fa31b47bc9a931bcc24489059ae78d",
+   "sha256_depois": "bcb94dcfe876b11ef250a1d9d059ce62bb5bc05c5e6673a6ae889e76d5bf4569",
+   "contexto_antes": "onfig.check.json\",\n    \"verify\": \"npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run check:briefs && npm run check:leituras && npm run gate:html && npm run check:css && npm run check:datas && npm run check:moldura && npm run check:alvos && npm run check:cabeca && npm run check:fonte",
+   "contexto_depois": "onfig.check.json\",\n    \"verify\": \"npm run ledger:check && npm run check:registo && npm run check:cruzamento && npm run check:documentos && npm run check:briefs  && npm run gate:html && npm run check:css && npm run check:datas && npm run check:moldura && npm run check:alvos && npm run check:cabeca && npm run check:fonte"
+  },
+  {
+   "id": "p2",
+   "ficheiro": "scripts/check-briefs.py",
+   "descricao": "o modo do GitHub nunca se ativa (a função devolve False): no CI os selos valem e nenhum guião preso corre",
+   "sha256_antes": "1f9fb942eac3597ce2475dc45e9adf92fb147ccdc74567e622c29578b8923b4f",
+   "sha256_depois": "656f3acea1f74ab3a39f61a3a3e2678bcaffd8b6b1f270a6164a14fae2d2b9a0",
+   "contexto_antes": "oqa: BLE001\n            erros.append(f'{rel(guiao)}: o que escreveu não é JSON ({type(erro).__name__}: {erro})')\n            return None\n\n\ndef no_github():\n    return 'GITHUB_ACTIONS' in os.environ or 'CI' in os.environ\n\n\ndef registo_da_corrida(argv):\n    return {'cabeca': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=RAIZ, text=True).strip(),\n            'hora': d",
+   "contexto_depois": "oqa: BLE001\n            erros.append(f'{rel(guiao)}: o que escreveu não é JSON ({type(erro).__name__}: {erro})')\n            return None\n\n\ndef no_github():\n    return False\n\n\ndef registo_da_corrida(argv):\n    return {'cabeca': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=RAIZ, text=True).strip(),\n            'hora': d"
+  },
+  {
+   "id": "p3",
+   "ficheiro": "scripts/leituras/portoes.sh",
+   "descricao": "a tranca só caduca ao fim de 240000 segundos (quase três dias), e não aos quarenta minutos",
+   "sha256_antes": "5320d5d939f7998646e837a74bebba3064ca01f36827a6da22d601a47350a37a",
+   "sha256_depois": "5cb86fb81a43e921b3e3d2165047fb9d394ad1381cf00947ea943d814e7c35b9",
+   "contexto_antes": ":%M:%SZ)\" \"$W\" \"$$\" > \"$tranca\") 2>/dev/null; do\n  [ -f \"$tranca\" ] || { echo 'portoes: não foi possível tomar a tranca; nenhum portão correu' >&2; exit 9; }\n  if [ \"$(idade)\" -gt 2400 ]; then\n    python3 \"$W/scripts/leituras/tranca.py\" \"$tranca\" || exit 9\n    continue\n  fi\n  [ \"$esperou\" -ne 0 ] || echo \"à espera da tranca da máquina: $(cat \"$tranca",
+   "contexto_depois": ":%M:%SZ)\" \"$W\" \"$$\" > \"$tranca\") 2>/dev/null; do\n  [ -f \"$tranca\" ] || { echo 'portoes: não foi possível tomar a tranca; nenhum portão correu' >&2; exit 9; }\n  if [ \"$(idade)\" -gt 240000 ]; then\n    python3 \"$W/scripts/leituras/tranca.py\" \"$tranca\" || exit 9\n    continue\n  fi\n  [ \"$esperou\" -ne 0 ] || echo \"à espera da tranca da máquina: $(cat \"$tranca"
+  },
+  {
+   "id": "p4",
+   "ficheiro": "relatorio-construtor.md",
+   "descricao": "a tabela do relatório diz 314,720 s para a corrida inteira nova, e o tempos.json diz 414,720",
+   "sha256_antes": "4976aae796d3d68d1cdf6b7f3ee613d157a340d463fb6faf2afe8ef71e556401",
+   "sha256_depois": "4250ec85061fb3af36d6b93f4ce834618d9ab2f30a645c8e3801dafafd9e8cb9",
+   "contexto_antes": "566 s, na própria corrida final.\n\n| Medida, em segundos | Antes limpo | Primeira passagem, novo | Primeira passagem, antigo | M-A-b |\n|---|---:|---:|---:|---:|\n| corrida inteira | 1482,695 | 426,382 | 1104,242 | 414,720 |\n| build | 233,204 | 205,391 | 220,560 | 193,121 |\n| verify | 1249,015 | 219,714 | 883,229 | 220,239 |\n| check:briefs | 186,426 | 0,335 | 0,221 | 0,256 |\n| chec",
+   "contexto_depois": "566 s, na própria corrida final.\n\n| Medida, em segundos | Antes limpo | Primeira passagem, novo | Primeira passagem, antigo | M-A-b |\n|---|---:|---:|---:|---:|\n| corrida inteira | 1482,695 | 426,382 | 1104,242 | 314,720 |\n| build | 233,204 | 205,391 | 220,560 | 193,121 |\n| verify | 1249,015 | 219,714 | 883,229 | 220,239 |\n| check:briefs | 186,426 | 0,335 | 0,221 | 0,256 |\n| chec"
+  },
+  {
+   "id": "p5",
+   "ficheiro": "scripts/check-leituras.py",
+   "descricao": "o corredor das plantas das leituras sai sempre a 0, mesmo quando um guião falha",
+   "sha256_antes": "4551db1d2cff5d46fe5f45485e6cd89389470a7960a2dfd60c95ab956caabe4c",
+   "sha256_depois": "18207fcdbd4b51a03a2fd0b66cce3d4e98cd4cd3389b0bac638b8f40ab9c754a",
+   "contexto_antes": "odigo'] == 0 for r in resultados), 'guioes': resultados}\n    if args.json:\n        args.json.write_text(json.dumps(saida, ensure_ascii=False, indent=2) + '\\n')\n    return 0 if saida['ok'] else 1\n\n\nif __name__ == '__main__':\n    raise SystemExit(principal())\n",
+   "contexto_depois": "odigo'] == 0 for r in resultados), 'guioes': resultados}\n    if args.json:\n        args.json.write_text(json.dumps(saida, ensure_ascii=False, indent=2) + '\\n')\n    return 0\n\n\nif __name__ == '__main__':\n    raise SystemExit(principal())\n"
+  }
+ ]
+}

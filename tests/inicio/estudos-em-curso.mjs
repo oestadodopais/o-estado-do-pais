@@ -47,4 +47,4 @@ for (const lang of ['pt','en']) {
   assert.equal(ensaio(r=>r.querySelector('[data-estudo-em-curso]').remove(),encerrados),true); casos++;
 }
 console.log(`H2-b: ${casos} controlos e plantas do prazo e da composição dos estudos, data da construção ${hoje}, sem escrever em dist/.`);
-await import('./prazo-pela-celula.mjs');
+// M-A: a prova da ligação corre uma vez na cadeia do verify, como passo próprio.

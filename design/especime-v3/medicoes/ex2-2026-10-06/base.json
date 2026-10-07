@@ -1,0 +1,1092 @@
+{
+  "comando": "node design/especime-v3/medicoes/ex2-2026-10-06/medir-base.mjs",
+  "cabeca": "d1becbf8f167643ca8d53a4479f8f6bbee0f7183",
+  "linhas": 3195,
+  "ambito": 3184,
+  "unidades_distintas": 41,
+  "unidades_por_palavra": 25,
+  "unidades": [
+    {
+      "unidade": "%",
+      "linha": "abandono-escolar-precoce-2024",
+      "antes": "6,6",
+      "depois": "6,6",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "%",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "%",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "% (limite legal = 150)",
+      "linha": "abrantes-indice-de-divida-2024",
+      "antes": "7,4",
+      "depois": "7,4",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "% (limite legal = 150)",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "% (legal cap = 150)",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "% da população",
+      "linha": "disparidade-de-emprego-entre-sexos-2024",
+      "antes": "5,7",
+      "depois": "5,7",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "% da população",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "% of the population",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "% da população ativa",
+      "linha": "desemprego-de-longa-duracao-2024",
+      "antes": "2,4",
+      "depois": "2,4",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "% da população ativa",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "% of the labour force",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "% do PIB",
+      "linha": "despesa-em-id-2023",
+      "antes": "1,68",
+      "depois": "1,68",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "% do PIB",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "% of GDP",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "% do PIB (média de três anos)",
+      "linha": "saldo-da-balanca-corrente-2024",
+      "antes": "0,3",
+      "depois": "0,4",
+      "origem_dos_valores": "uma entrada real do registo",
+      "edicoes": {
+        "pt": {
+          "texto": "% do PIB (média de três anos)",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "% of GDP (three-year average)",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "% do VAB empresarial",
+      "linha": "evora-concentracao-vab4-2024",
+      "antes": "21,5",
+      "depois": "21,5",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "% do VAB empresarial",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "% of gross value added by enterprises",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "% do orçamento",
+      "linha": "evora-execucao-da-receita-2021",
+      "antes": "96",
+      "depois": "96",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "% do orçamento",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "% of the budget",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "% do stock no final do período anterior",
+      "linha": "fluxo-de-credito-as-empresas-2024",
+      "antes": "2,4",
+      "depois": "2,4",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "% do stock no final do período anterior",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "% of the stock at the end of the previous period",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "% do total OCDE e UE não-OCDE, variação em três anos",
+      "linha": "desempenho-das-exportacoes-2024",
+      "antes": "17,1",
+      "depois": "17,1",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "% do total OCDE e UE não-OCDE, variação em três anos",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "% of the OECD and non-OECD EU countries total, three-year change",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "% do valor aprovado",
+      "linha": "evora-prr-execucao-2026",
+      "antes": "50,36",
+      "depois": "50,61",
+      "origem_dos_valores": "uma entrada real do registo",
+      "edicoes": {
+        "pt": {
+          "texto": "% do valor aprovado",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "% of the approved amount",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "% dos indivíduos",
+      "linha": "competencias-digitais-2023",
+      "antes": "55,97",
+      "depois": "55,97",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "% dos indivíduos",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "% of individuals",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "%, sobre valores acumulados de janeiro a julho",
+      "linha": "execucao-2026-07-cem-euros-funcao-01",
+      "antes": "35,88",
+      "depois": "35,88",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "%, sobre valores acumulados de janeiro a julho",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "%, based on cumulative January to July values",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "anos",
+      "linha": "ciclo-substituicao-condutas",
+      "antes": "239",
+      "depois": "239",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "anos",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "years",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "avisos",
+      "linha": "avisos-pt2030-abertos",
+      "antes": "211",
+      "depois": "211",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "avisos",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "avisos",
+          "lingua": "pt-PT"
+        }
+      }
+    },
+    {
+      "unidade": "dias",
+      "linha": "abrantes-prazo-medio-de-pagamento-2025-12",
+      "antes": "4",
+      "depois": "4",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "dias",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "days",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "empresas",
+      "linha": "abrantes-empresas-2024",
+      "antes": "3 458",
+      "depois": "3 458",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "empresas",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "enterprises",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "euros",
+      "linha": "abrantes-divida-dgal-2024",
+      "antes": "2 540 996",
+      "depois": "2 540 996",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "euros",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "euros",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "euros por habitante · volumes encadeados (2015)",
+      "linha": "pib-real-per-capita-2024",
+      "antes": "20 430",
+      "depois": "20 520",
+      "origem_dos_valores": "uma entrada real do registo",
+      "edicoes": {
+        "pt": {
+          "texto": "euros por habitante · volumes encadeados (2015)",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "euro per capita · chain linked volumes (2015)",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "euros por mês",
+      "linha": "abrantes-ganho-medio-mensal-2024",
+      "antes": "1 422,4",
+      "depois": "1 422,4",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "euros por mês",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "euros per month",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "factor",
+      "linha": "factor-sustentabilidade-2026",
+      "antes": "0,8237",
+      "depois": "0,8237",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "factor",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "factor",
+          "lingua": "pt-PT"
+        }
+      }
+    },
+    {
+      "unidade": "lugares",
+      "linha": "evora-camara-lugares",
+      "antes": "7",
+      "depois": "7",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "lugares",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "seats",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "milhões de euros",
+      "linha": "oe-2026-ativos-e-passivos-da-despesa-administracao-central",
+      "antes": "191 368,9",
+      "depois": "191 368,9",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "milhões de euros",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "million euros",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "milhões de euros, acumulados de janeiro a agosto",
+      "linha": "execucao-2026-08-ativos-financeiros-liquidos-administracao-central-seguranca-social",
+      "antes": "1 491,8",
+      "depois": "1 491,8",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "milhões de euros, acumulados de janeiro a agosto",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "million euros, cumulative January to August",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "milhões de euros, acumulados de janeiro a julho",
+      "linha": "execucao-2026-07-ativos-e-passivos-da-despesa-administracao-central",
+      "antes": "69 963,6",
+      "depois": "69 963,6",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "milhões de euros, acumulados de janeiro a julho",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "million euros, cumulative January to July",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "m² por 1000 habitantes",
+      "linha": "licencas-de-construcao-2024",
+      "antes": "654,5",
+      "depois": "654,5",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "m² por 1000 habitantes",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "m² per 1000 inhabitants",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "pelouros",
+      "linha": "evora-pelouros-2021-presidente",
+      "antes": "12",
+      "depois": "12",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "pelouros",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "portfolios",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "pessoas",
+      "linha": "abrantes-desemprego-registado-2025-12",
+      "antes": "1 158",
+      "depois": "1 158",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "pessoas",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "people",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "pontos de índice",
+      "linha": "distancia-acores-ue27-2024",
+      "antes": "27",
+      "depois": "27",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "pontos de índice",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "index points",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "pontuação",
+      "linha": "indice-de-percepcao-da-corrupcao-2024",
+      "antes": "57",
+      "depois": "57",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "pontuação",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "score",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "por mil pessoas em idade ativa",
+      "linha": "beneficiarios-do-rsi-por-mil-2023",
+      "antes": "26,13",
+      "depois": "26,13",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "por mil pessoas em idade ativa",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "per thousand people of working age",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "rácio",
+      "linha": "racio-s80-s20-2024",
+      "antes": "5,2",
+      "depois": "5,2",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "rácio",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "ratio",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "variação anual média, %",
+      "linha": "precos-da-habitacao-2024",
+      "antes": "9,1",
+      "depois": "9,1",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "variação anual média, %",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "average annual change, %",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "variação em três anos, %",
+      "linha": "custo-unitario-do-trabalho-2024",
+      "antes": "17,7",
+      "depois": "17,9",
+      "origem_dos_valores": "uma entrada real do registo",
+      "edicoes": {
+        "pt": {
+          "texto": "variação em três anos, %",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "three-year change, %",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "variação em três anos, pontos percentuais",
+      "linha": "taxa-de-actividade-2024",
+      "antes": "3,2",
+      "depois": "3,2",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "variação em três anos, pontos percentuais",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "three-year change, percentage points",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "votos",
+      "linha": "evora-contas-2024-votos-contra",
+      "antes": "5",
+      "depois": "5",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "votos",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "votes",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "índice (Portugal = 100)",
+      "linha": "abrantes-poder-de-compra-2023",
+      "antes": "89,99",
+      "depois": "89,99",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "índice (Portugal = 100)",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "index (Portugal = 100)",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "índice (UE-27 = 100)",
+      "linha": "pib-pc-acores-2024",
+      "antes": "73",
+      "depois": "73",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "índice (UE-27 = 100)",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "index (EU-27 = 100)",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "€ por ano",
+      "linha": "linha-de-risco-de-pobreza-2024",
+      "antes": "7 588",
+      "depois": "7 588",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "euros por ano",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "euros per year",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "€ por mês",
+      "linha": "remuneracao-bruta-mensal-media",
+      "antes": "1 835",
+      "depois": "1 835",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "euros por mês",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "euros per month",
+          "lingua": null
+        }
+      }
+    },
+    {
+      "unidade": "€ por pensionista por ano",
+      "linha": "pensao-media-anual-2024",
+      "antes": "7 665",
+      "depois": "7 665",
+      "origem_dos_valores": "o valor atual, repetido apenas no ensaio da forma",
+      "edicoes": {
+        "pt": {
+          "texto": "euros por pensionista por ano",
+          "lingua": "pt-PT"
+        },
+        "en": {
+          "texto": "euros per pensioner per year",
+          "lingua": null
+        }
+      }
+    }
+  ],
+  "janela": {
+    "inicio": "2026-09-30",
+    "fim": "2026-10-06"
+  },
+  "contagens": {
+    "relidas": 90,
+    "valor": 9,
+    "forma": 3,
+    "proveniencia": 9
+  },
+  "mudancas": [
+    {
+      "linha": "custo-unitario-do-trabalho-2024",
+      "antes": {
+        "n": 1,
+        "valor": "17,7",
+        "data": "2026-10-05"
+      },
+      "depois": {
+        "n": 1,
+        "valor": "17,9",
+        "data": "2026-10-05"
+      },
+      "palavra": "subiu",
+      "entradas": [
+        1
+      ],
+      "frases": {
+        "pt": {
+          "pedacos": [
+            "É quanto subiu em três anos o custo do trabalho por cada unidade produzida: o que se paga pelo trabalho a dividir pelo que ele produz."
+          ],
+          "tipo": "familia",
+          "chave": "custo-unitario-do-trabalho",
+          "cartao": "custo-unitario-do-trabalho-2025",
+          "sinal": null,
+          "porConfirmar": false
+        },
+        "en": {
+          "pedacos": [
+            "It is how much the cost of labour per unit produced rose over three years: what is paid for labour divided by what it produces."
+          ],
+          "tipo": "familia",
+          "chave": "custo-unitario-do-trabalho",
+          "cartao": "custo-unitario-do-trabalho-2025",
+          "sinal": null,
+          "porConfirmar": false
+        }
+      }
+    },
+    {
+      "linha": "despesa-em-id-2024-ue",
+      "antes": {
+        "n": 1,
+        "valor": "2,24",
+        "data": "2026-10-05"
+      },
+      "depois": {
+        "n": 1,
+        "valor": "2,26",
+        "data": "2026-10-05"
+      },
+      "palavra": "subiu",
+      "entradas": [
+        1
+      ],
+      "frases": {
+        "pt": {
+          "pedacos": [
+            "É o que se gastou em investigação e desenvolvimento num ano, pelas empresas, pelas administrações públicas, pelo ensino superior e pelas instituições sem fins lucrativos, em percentagem do PIB, o valor de tudo o que a economia produz num ano."
+          ],
+          "tipo": "familia",
+          "chave": "despesa-em-id-ue",
+          "cartao": null,
+          "sinal": null,
+          "porConfirmar": false
+        },
+        "en": {
+          "pedacos": [
+            "It is what was spent on research and development in a year, by companies, government, higher education and non-profit institutions, as a percentage of GDP, the value of everything the economy produces in a year."
+          ],
+          "tipo": "familia",
+          "chave": "despesa-em-id-ue",
+          "cartao": null,
+          "sinal": null,
+          "porConfirmar": false
+        }
+      }
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2024",
+      "antes": {
+        "n": 1,
+        "valor": "20,4",
+        "data": "2026-10-05"
+      },
+      "depois": {
+        "n": 1,
+        "valor": "20,5",
+        "data": "2026-10-05"
+      },
+      "palavra": "subiu",
+      "entradas": [
+        1
+      ],
+      "frases": {
+        "pt": {
+          "pedacos": [
+            "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano."
+          ],
+          "tipo": "familia",
+          "chave": "formacao-bruta-de-capital-fixo",
+          "cartao": "formacao-bruta-de-capital-fixo-2025",
+          "sinal": null,
+          "porConfirmar": false
+        },
+        "en": {
+          "pedacos": [
+            "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year."
+          ],
+          "tipo": "familia",
+          "chave": "formacao-bruta-de-capital-fixo",
+          "cartao": "formacao-bruta-de-capital-fixo-2025",
+          "sinal": null,
+          "porConfirmar": false
+        }
+      }
+    },
+    {
+      "linha": "formacao-bruta-de-capital-fixo-2025",
+      "antes": {
+        "n": 1,
+        "valor": "20,7",
+        "data": "2026-10-05"
+      },
+      "depois": {
+        "n": 1,
+        "valor": "21,0",
+        "data": "2026-10-05"
+      },
+      "palavra": "subiu",
+      "entradas": [
+        1
+      ],
+      "frases": {
+        "pt": {
+          "pedacos": [
+            "É o que as empresas, o Estado, as famílias e as instituições sem fim lucrativo que produzem no país compraram num ano, descontado o que venderam, em bens que duram mais de um ano, como edifícios, máquinas e programas informáticos, em percentagem do PIB, o valor de tudo o que o país produz num ano."
+          ],
+          "tipo": "cartao",
+          "chave": "formacao-bruta-de-capital-fixo-2025",
+          "cartao": "formacao-bruta-de-capital-fixo-2025",
+          "sinal": null,
+          "porConfirmar": false
+        },
+        "en": {
+          "pedacos": [
+            "It is what companies, the State, households and non-profit institutions that produce in the country acquired in a year, less what they disposed of, in assets that last more than a year, such as buildings, machinery and software, as a percentage of GDP, the value of everything the country produces in a year."
+          ],
+          "tipo": "cartao",
+          "chave": "formacao-bruta-de-capital-fixo-2025",
+          "cartao": "formacao-bruta-de-capital-fixo-2025",
+          "sinal": null,
+          "porConfirmar": false
+        }
+      }
+    },
+    {
+      "linha": "pib-real-per-capita-2024",
+      "antes": {
+        "n": 1,
+        "valor": "20 430",
+        "data": "2026-10-05"
+      },
+      "depois": {
+        "n": 1,
+        "valor": "20 520",
+        "data": "2026-10-05"
+      },
+      "palavra": "subiu",
+      "entradas": [
+        1
+      ],
+      "frases": {
+        "pt": {
+          "pedacos": [
+            "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados."
+          ],
+          "tipo": "familia",
+          "chave": "pib-real-per-capita",
+          "cartao": "pib-real-per-capita-2025",
+          "sinal": null,
+          "porConfirmar": false
+        },
+        "en": {
+          "pedacos": [
+            "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes."
+          ],
+          "tipo": "familia",
+          "chave": "pib-real-per-capita",
+          "cartao": "pib-real-per-capita-2025",
+          "sinal": null,
+          "porConfirmar": false
+        }
+      }
+    },
+    {
+      "linha": "pib-real-per-capita-2025",
+      "antes": {
+        "n": 1,
+        "valor": "20 600",
+        "data": "2026-10-05"
+      },
+      "depois": {
+        "n": 1,
+        "valor": "20 700",
+        "data": "2026-10-05"
+      },
+      "palavra": "subiu",
+      "entradas": [
+        1
+      ],
+      "frases": {
+        "pt": {
+          "pedacos": [
+            "É o valor de tudo o que o país produziu no ano, por habitante, descontada a subida dos preços, a que a fonte chama volumes encadeados."
+          ],
+          "tipo": "cartao",
+          "chave": "pib-real-per-capita-2025",
+          "cartao": "pib-real-per-capita-2025",
+          "sinal": null,
+          "porConfirmar": false
+        },
+        "en": {
+          "pedacos": [
+            "It is the value of everything the country produced in the year, per inhabitant, excluding the rise in prices, which the source calls chain linked volumes."
+          ],
+          "tipo": "cartao",
+          "chave": "pib-real-per-capita-2025",
+          "cartao": "pib-real-per-capita-2025",
+          "sinal": null,
+          "porConfirmar": false
+        }
+      }
+    },
+    {
+      "linha": "posicao-de-investimento-internacional-2024",
+      "antes": {
+        "n": 0,
+        "valor": "−58,9",
+        "data": "2026-10-05"
+      },
+      "depois": {
+        "n": 0,
+        "valor": "−58,3",
+        "data": "2026-10-05"
+      },
+      "palavra": "subiu",
+      "entradas": [
+        0
+      ],
+      "frases": {
+        "pt": {
+          "pedacos": [
+            "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano."
+          ],
+          "tipo": "familia",
+          "chave": "posicao-de-investimento-internacional",
+          "cartao": "posicao-de-investimento-internacional-2025",
+          "sinal": [
+            "Negativa quer dizer que o país deve ao exterior mais do que tem lá."
+          ],
+          "porConfirmar": false
+        },
+        "en": {
+          "pedacos": [
+            "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year."
+          ],
+          "tipo": "familia",
+          "chave": "posicao-de-investimento-internacional",
+          "cartao": "posicao-de-investimento-internacional-2025",
+          "sinal": [
+            "Negative means the country owes abroad more than it owns there."
+          ],
+          "porConfirmar": false
+        }
+      }
+    },
+    {
+      "linha": "posicao-de-investimento-internacional-2025",
+      "antes": {
+        "n": 0,
+        "valor": "−50,2",
+        "data": "2026-10-05"
+      },
+      "depois": {
+        "n": 0,
+        "valor": "−49,6",
+        "data": "2026-10-05"
+      },
+      "palavra": "subiu",
+      "entradas": [
+        0
+      ],
+      "frases": {
+        "pt": {
+          "pedacos": [
+            "É a diferença entre o que os residentes em Portugal têm no resto do mundo e o que lhe devem, em percentagem do PIB, o valor de tudo o que o país produz num ano."
+          ],
+          "tipo": "cartao",
+          "chave": "posicao-de-investimento-internacional-2025",
+          "cartao": "posicao-de-investimento-internacional-2025",
+          "sinal": null,
+          "porConfirmar": false
+        },
+        "en": {
+          "pedacos": [
+            "It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year."
+          ],
+          "tipo": "cartao",
+          "chave": "posicao-de-investimento-internacional-2025",
+          "cartao": "posicao-de-investimento-internacional-2025",
+          "sinal": null,
+          "porConfirmar": false
+        }
+      }
+    },
+    {
+      "linha": "saldo-da-balanca-corrente-2024",
+      "antes": {
+        "n": 0,
+        "valor": "0,3",
+        "data": "2026-10-05"
+      },
+      "depois": {
+        "n": 0,
+        "valor": "0,4",
+        "data": "2026-10-05"
+      },
+      "palavra": "subiu",
+      "entradas": [
+        0
+      ],
+      "frases": {
+        "pt": {
+          "pedacos": [
+            "É a diferença entre o que Portugal recebeu do resto do mundo e o que lhe pagou, em bens, serviços e rendimentos, na média dos últimos três anos e em percentagem do PIB, o valor de tudo o que o país produz num ano. Positivo quer dizer que o país recebeu mais do que pagou."
+          ],
+          "tipo": "familia",
+          "chave": "saldo-da-balanca-corrente",
+          "cartao": "saldo-da-balanca-corrente-2025",
+          "sinal": null,
+          "porConfirmar": false
+        },
+        "en": {
+          "pedacos": [
+            "It is the difference between what Portugal received from the rest of the world and what it paid to it, in goods, services and income, averaged over the last three years and as a percentage of GDP, the value of everything the country produces in a year. Positive means the country received more than it paid."
+          ],
+          "tipo": "familia",
+          "chave": "saldo-da-balanca-corrente",
+          "cartao": "saldo-da-balanca-corrente-2025",
+          "sinal": null,
+          "porConfirmar": false
+        }
+      }
+    }
+  ],
+  "por_confirmar": 0,
+  "fc": {
+    "paginas_fixadas_no_brief": 8,
+    "paginas_reais": 10,
+    "paginas": [
+      "/",
+      "/indice",
+      "/explicacoes",
+      "/explicacoes/leitura-da-semana",
+      "/explicacoes/dinheiro-do-estado-2026",
+      "/en",
+      "/en/index",
+      "/en/explainers",
+      "/en/explainers/weekly-reading",
+      "/en/explainers/dinheiro-do-estado-2026"
+    ],
+    "divergencia": "O guião do brief conta as chamadas fixas, mas omite as páginas que EXPLICACOES.map acrescenta."
+  }
+}

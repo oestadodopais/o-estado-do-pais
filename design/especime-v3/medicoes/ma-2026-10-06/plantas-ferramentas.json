@@ -1,0 +1,55 @@
+{
+  "ok": true,
+  "casos": [
+    {
+      "planta": "partes repetidas de Claude",
+      "mensagem": "Uma resposta; entrada da última parte e máximo da saída, marcado como mínimo.",
+      "passou": true
+    },
+    {
+      "planta": "acumulados Codex e corte temporal",
+      "mensagem": "A repetição não duplica os símbolos; o corte subtrai o contador anterior.",
+      "passou": true
+    },
+    {
+      "planta": "contador recuado",
+      "mensagem": "O contador acumulado recuou; não se pode somar esta sessão.",
+      "passou": true
+    },
+    {
+      "planta": "formato sem utilização",
+      "mensagem": "Não há contadores de utilização reconhecidos no intervalo pedido.",
+      "passou": true
+    },
+    {
+      "planta": "linha truncada",
+      "mensagem": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+      "passou": true
+    },
+    {
+      "planta": "limpeza de texto, gzip, binários e ligações",
+      "mensagem": "Caminhos retirados; segunda passagem sem mudanças; binário e alvo da ligação intactos.",
+      "passou": true
+    },
+    {
+      "planta": "capturas e recortes nas duas edições",
+      "mensagem": "Cinco larguras por edição; PNG, sha256 e recursos conferidos; construção intacta.",
+      "passou": true
+    },
+    {
+      "planta": "captura de outra cabeça",
+      "mensagem": "captar: a cabeça pedida não é a de dist/version.json",
+      "passou": true
+    },
+    {
+      "planta": "pedido externo na captura",
+      "mensagem": "ensaio-pt-390: pedidos externos, recursos em falta ou erros do navegador",
+      "passou": true
+    },
+    {
+      "planta": "recorte ausente",
+      "mensagem": "ensaio-pt-390: o recorte cartao não aparece uma vez",
+      "passou": true
+    }
+  ]
+}
