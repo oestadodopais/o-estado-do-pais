@@ -680,3 +680,9 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 |---|---|---|---|
 | rp4nc | Frases das empresas sincronizadas com o texto publicado | por ler | Codex gpt-6-astra, pela RP4N-6: as declarações antigas passam a retiradas e as frases já publicadas passam a vivas como conteúdo. O texto das páginas, as provas do cartão, os números e as fontes permanecem intactos. O diagnóstico está em `design/especime-v3/medicoes/rp4n-2026-10-06/conferencias-c/voz-antes.json`. A leitura cruzada fica pendente antes da fusão. |
+
+## RP4-n-d · notas de alcance
+
+| bloco | mudança | estado | nota |
+|---|---|---|---|
+| rp4nd | Quatro formas antigas retiradas e quatro notas de alcance declaradas | por ler | Codex gpt-6-astra: achado 8 do mandato. As notas dizem a ausência exata nas duas edições. A conferência independente continua a cargo da direção. |
