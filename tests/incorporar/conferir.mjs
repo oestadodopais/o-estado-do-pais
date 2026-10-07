@@ -6,7 +6,7 @@ import { parse } from 'node-html-parser';
 import { dadosDaIncorporacao } from '../../src/lib/incorporar.mjs';
 import { allClaims } from '../../src/lib/ledger.mjs';
 import { routePath, matchPath } from '../../src/lib/routes.mjs';
-import { provenienciaConfirmada, conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson } from '../../scripts/incorporar-do-portao.mjs';
+import { conferirInventarioIncorporacao, provenienciaConfirmada, conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson } from '../../scripts/incorporar-do-portao.mjs';
 const dist = process.env.OEDP_DIST || 'dist';
 const linhas = allClaims();
 const resultados = { comando: 'node tests/incorporar/conferir.mjs', recibos: 0, semCodigo: 0, comCodigo: 0, json: 0, plantas: [] };
@@ -125,6 +125,17 @@ for(const campo of Object.keys(doc.incorporacao.pt)){
   resultados.plantas.push({nome:'json-'+campo,mensagem,mordeu:true});
 }
 execFileSync(process.execPath,['scripts/gerar-incorporar.mjs','--conferir']);
+const inventario = fs.readFileSync('design/especime-v3/INVENTARIO-FRASES.md','utf8');
+assert.deepEqual(conferirInventarioIncorporacao(inventario), []);
+for (const linha of inventario.split('\n').filter(l => l.startsWith('| `incorporar.'))) {
+  const chave = linha.split('`')[1];
+  for (const lang of ['pt','en']) {
+    const partes = linha.split('|'); partes[lang === 'pt' ? 2 : 3] = ' alterada ';
+    const mensagem = 'ER1 inventário: falta a cadeia aprovada '+chave+' nas duas edições.';
+    assert(conferirInventarioIncorporacao(inventario.replace(linha,partes.join('|'))).includes(mensagem));
+    resultados.plantas.push({nome:'inventario-'+chave+'-'+lang,mensagem,mordeu:true});
+  }
+}
 const i = process.argv.indexOf('--json');
 if (i>0) fs.writeFileSync(process.argv[i+1],JSON.stringify(resultados,null,2)+'\n');
 console.log(JSON.stringify(resultados,null,2));
