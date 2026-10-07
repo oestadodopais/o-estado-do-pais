@@ -1121,7 +1121,7 @@ const OUTRAS = [
   {
     chaves: ['penalizacao-antecipacao-um-ano-neutra'],
     partes: [
-      diz('São cálculos sobre o efeito da antecipação da idade de reforma', 'These are calculations of the effect of early retirement', L('excerpt', 'Cálculos próprios considerando o efeito da antecipação da idade de reforma')),
+      diz('É a redução da pensão calculada para a reforma antecipada no caso geral', 'It is the pension reduction calculated for early retirement in the general case', L('name', 'Decrementos por reforma antecipada: caso geral')),
       diz(', contando o que se deixa de descontar e os direitos que se acrescentam', ', counting the contributions no longer paid and the rights that are added',
         L('excerpt', 'considerando o efeito da antecipação da idade de reforma'), L('excerpt', 'no esforço contributivo e no acréscimo de direitos sobre o sistema de pensões')),
       diz(', pelas contas do relatório final sobre a reforma da segurança social.', ', from the calculations of the final report on social security reform.',
