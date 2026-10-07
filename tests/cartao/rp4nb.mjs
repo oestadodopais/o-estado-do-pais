@@ -23,7 +23,7 @@ export function plantasDosMarcadores() {
  }
  for(const [tipo,html,rota]of[
   ['o-que-e-linha',`<div data-o-que-e="planta">${marca}</div>`],
-  ['o-que-e-familia',`<div data-o-que-e="planta" data-o-que-e-familia="familia">${marca}</div>`],
+  ['o-que-e-familia',`<div data-o-que-e="planta" data-o-que-e-tipo="familia" data-o-que-e-familia="familia">${marca}</div>`],
   ['o-que-e-serie',`<div data-o-que-e-da-serie="planta">${marca}</div>`],
   ['nome-medida',`<span data-nome="figuras">${marca}</span>`],
   ['nome-serie',`<h1 class="serie-titulo">${marca}</h1>`],
