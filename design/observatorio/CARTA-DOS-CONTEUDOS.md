@@ -236,6 +236,13 @@ Ditas na página do domínio como conteúdo, com as pistas registadas no invent�
 3. **Se o espaço entra na segunda vaga como domínio com uma pergunta e a regra dos vazios**, ou se espera por um estudo.
 4. **As medidas partilhadas entre domínios** (as mortes na estrada em 13 e 16; os incêndios em 14 e 16): uma linha, duas páginas, como proposto, ou uma só.
 
+
+## 8 · A camada da vigilância (07.10.2026, §1.181)
+
+As fontes da vigilância, além das estatísticas oficiais da secção 3: as notícias (os jornais de referência e as agências), os registos parlamentares e as declarações do governo, dos partidos e dos seus responsáveis (cada uma no seu documento, alojado e selado), e os estudos e relatórios de referência sobre Portugal (fontes oficiais, universidades, investigadores, organizações internacionais). Cada uma entra como qualquer fonte: alojada pelo cliente da casa, com o pedido, o excerto literal e o sha256.
+
+O que se faz com elas, pela camada que o assunto merece: um item do painel (a afirmação ou o facto da semana no seu lugar, em poucas linhas: a afirmação como foi dita, as fontes, a comparação, a conclusão, a recomendação e a opinião profissional do lugar de direção); um artigo, quando o assunto merece mais; um estudo, quando merece isso (o resumo, os achados, as conclusões, as recomendações, a compreensão). Sempre pelas quatro perguntas: o que se passa, o que foi feito, o que isso fez às pessoas, se foi bem feito. O que nomeia uma pessoa espera a leitura do diretor antes de sair, e os números julgam sem adjetivos (a regra 5 do `CLAUDE.md`, na sua segunda forma).
+
 ## 7 · O registo
 
 A carta e o inventário são a entrega A da sessão de 01.09.2026 (o prompt de 30.08). O inventário foi verificado em leque: quatro lotes lidos na fonte primária por quatro agentes Claude Opus 5 (E e T; P e M; S e A; D e H), com o lugar de direção a escrever o brief comum e o de cada lote, a rever e a fundir; uma amostra medida às cegas por um agente Claude Sonnet 5 com código próprio; a leitura a frio do Codex (`gpt-5.6-sol`, xhigh) ao inventário com estragos plantados, registados por sha256 e com o contexto impresso de cada alvo conferido antes e depois. Os relatórios, os custos e os achados de cada passagem estão no inventário (§4, «O registo da verificação») e no ficheiro das plantas ao lado; os quatro lotes custaram cerca de 1,2 M símbolos de Opus e mudaram esta carta em onze linhas (T4, T5, P5, M2, M4, M6, S2, S3, A3, D1, D3, D4, D5, H1, H2), o que é a razão de a verificação vir antes da escolha. A decisão do diretor entra em `DECISIONS.md` quando ele escolher.

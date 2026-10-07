@@ -1,5 +1,7 @@
 # A política da autonomia · o que o lugar de direção decide sozinho, o que é do diretor, e como a casa o diz (01.09.2026)
 
+> **Emenda de 07.10.2026 (§1.181), que prevalece sobre o que abaixo a contradiga.** O patamar 3 abre: as conclusões, as recomendações e a opinião profissional do lugar de direção fazem parte de cada item do painel, de cada artigo e de cada estudo, assentes em factos selados e assinaladas como tal. A regra de nomear pessoas ganha a forma da afirmação (a afirmação como foi dita, no seu documento, ao lado do que as fontes dizem da mesma medida, do mesmo período e da mesma população, sem adjetivo); o que vá além disso, como chamar falsa a uma afirmação, é linha do diretor. A carta dos conteúdos admite as fontes da vigilância (as notícias, os registos parlamentares e as declarações do governo e dos partidos, os estudos e relatórios de referência). O «nunca sem uma pessoa» para o que nomeia alguém fica. O projeto é uma inteligência artificial que vigia o país e age sobre o que encontra, com a camada que o assunto merece; o recibo é uma funcionalidade de segundo plano e a verificação é o fundo.
+
 > **Emenda de 17.09.2026 (§1.112), que prevalece sobre o que abaixo a contradiga.** O lugar de direção dirige o sítio e responde por ele: decide o que se diz, como se organiza, o que se investiga, o que se funde e o que se constrói a seguir, e não pede a palavra do diretor para o que não sai do sítio. O diretor é o leitor: pergunta-se-lhe o que um leitor sabe, sobre a coisa acabada, e o lugar de direção itera sobre o que ele diz. Ficam com ele o dinheiro, a exposição legal, o que sai em nome do projeto para terceiros e os limites da subscrição (o uso vigia-se antes de cada bloco pesado). As regras desta política que nasceram de um bloco que falhou reexaminam-se: ficam as que protegem um número, uma fonte ou uma pessoa; as outras julgam-se pelo que fazem ao leitor. A avaliação do país, dos estudos e do próprio sítio é constante e do lugar de direção.
 
 
@@ -26,7 +28,7 @@ A mudança no sítio (o texto e o rótulo em todas as páginas, à primeira expo
 | correções de valor e de forma, registadas no registo de correções | qualquer peça que nomeie uma pessoa (a revisão de dano pára aqui) | recebe o aviso vermelho e decide |
 | a manutenção do motor e do sítio, os portões, as réguas | dinheiro, contratos, contas, a ERC (o advogado é dele se e quando ele quiser, e não trava nada: a emenda de 04.10.2026) | |
 | responder a pedidos de dados de máquinas | correio em nome da casa a terceiros (hoje: nunca sem o «sim» dele e sempre com cópia) | |
-| | conclusões e recomendações de política (o patamar 3, fechado até a primeira vaga provar; decisão 6) | |
+| | conclusões e recomendações de política (o patamar 3, fechado até a primeira vaga provar; decisão 6; **aberto a 07.10.2026 pela §1.181**: passam a ser do lugar de direção, assentes em factos selados e assinaladas como tal) | |
 
 **O que «portões verdes» quer dizer**: `npm run build`, `npm run verify` e `npm run typecheck` a 0 no sítio; `python3 -m core.gate` a passar no motor; e, sempre que a mudança tenha prosa nova ou um número novo, a leitura por outra família de modelos com estragos plantados antes da fusão. Um portão vermelho pára, e a resposta é sempre um portão que pára, nunca um número inventado.
 

@@ -1,6 +1,6 @@
 <!-- Rascunho da entrada do registo, escrito a 06.10.2026 pelo lugar de direção; entra em DECISIONS.md na aterragem do bloco, com os campos entre parênteses retos preenchidos. -->
 
-### 1.182 O JD1 aterra: os juros e a dívida do Estado no livro-razão, cada número lido na fonte e selado pelo motor, e a taxa das obrigações do Tesouro a dez anos como série no tempo
+### 1.183 O JD1 aterra: os juros e a dívida do Estado no livro-razão, cada número lido na fonte e selado pelo motor, e a taxa das obrigações do Tesouro a dez anos como série no tempo
 
 **Afecta:** nenhum
 
