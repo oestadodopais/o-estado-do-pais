@@ -38,7 +38,8 @@ export const L = (campo, literal) => ({ linha: 'propria', campo, literal });
 export const O = (origem, literal, campo = 'excerto') => ({ origem, campo, literal });
 export const OU = (...alternativas) => ({ ou: alternativas });
 export const ANO = { linha: 'propria', campo: 'reference_date', forma: 'ano' };
-const AUSENCIA = { classe: 'ausencia', pt: 'Não há excerto da fonte que permita explicar este número.', en: 'No source excerpt is available to explain this number.' };
+const AUSENCIA = { classe: 'ausencia', pt: 'Os avisos consultados não definem por palavras esta contagem.', en: 'The notices consulted do not define this count in words.' };
+const FONTE_DO_CALCULO_AUSENTE = { classe: 'ausencia', pt: 'A fonte deste cálculo ainda não foi confirmada.', en: 'The source of this calculation has not yet been confirmed.' };
 export const TERMO = (termo) => ({ termo });
 export const diz = (pt, en, ...apoios) => ({ pt, en, classe: 'diz', apoios });
 export const liga = (pt, en) => ({ pt, en, classe: 'liga' });
@@ -1090,12 +1091,12 @@ const OUTRAS = [
   {
     chaves: ['ciclo-substituicao-condutas'],
     partes: [
-      AUSENCIA,
+      FONTE_DO_CALCULO_AUSENTE,
     ],
   },
   {
     chaves: ['agua-nao-faturada-portugal'],
-    partes: [AUSENCIA],
+    partes: [diz('É a parte da água que entra no sistema e não é faturada.', 'It is the share of water entering the system that is not billed.', O('rp4n-agua-nao-faturada', 'É expresso em percentagem de água entrada no sistema que não é faturada.'))],
   },
   {
     chaves: ['penalizacao-antecipacao-um-ano-com-factor'],
