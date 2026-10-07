@@ -722,7 +722,7 @@ const EVORA = [
       diz('É a parte do valor acrescentado bruto das empresas que cabe às quatro maiores', 'It is the share of companies’ gross value added that goes to the four largest',
         L('name', 'Indicador de concentração do valor acrescentado bruto das quatro maiores empresas'), L('unit', '% do VAB empresarial')),
       diz('; o valor acrescentado bruto é o valor do que se produz menos o valor dos bens e serviços consumidos para o produzir.',
-        '; gross value added is the value of what is produced minus the value of the goods and services used up in producing it.', O('rp4n-vab', 'Gross value added is recorded at basic prices.')),
+        '; gross value added is the value of what is produced minus the value of the goods and services used up in producing it.', O('rp4n-vab', 'It is\noutput valued at basic prices less intermediate consumption valued at purchasers’ prices.')),
     ],
   },
   {
@@ -730,7 +730,7 @@ const EVORA = [
     partes: [
       diz('É o valor acrescentado bruto das empresas do concelho, somado sobre todas as atividades', 'It is the gross value added of the municipality’s companies, added up over all activities',
         L('name', 'Valor acrescentado bruto (€) das Empresas por Localização geográfica'), L('document.locator', 'total das divisões CAE')),
-      diz(': o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.', ': the value of what they produce minus the value of the goods and services used up in producing it.', O('rp4n-vab', 'Gross value added is recorded at basic prices.')),
+      diz(': o valor do que produzem menos o valor dos bens e serviços consumidos para o produzir.', ': the value of what they produce minus the value of the goods and services used up in producing it.', O('rp4n-vab', 'It is\noutput valued at basic prices less intermediate consumption valued at purchasers’ prices.')),
     ],
   },
   {
