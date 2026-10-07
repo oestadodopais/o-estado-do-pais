@@ -255,6 +255,7 @@ import { fileURLToPath } from 'node:url';
 import { load } from 'js-yaml';
 import { parse, NodeType } from 'node-html-parser';
 
+import { conferirRetiradas } from './linhas-retiradas.mjs';
 import { t } from '../src/i18n/strings.mjs';
 import { unidadeDaLinha } from '../src/i18n/unidades.mjs';
 import {
@@ -412,6 +413,7 @@ if (!fs.existsSync(DIST)) {
 }
 
 const claims = loadClaims();
+const livroInteiro = loadClaims({includeWithdrawn:true});
 /* A JANELA DA LEITURA DA SEMANA (bloco EX1, 05.10.2026): o dia do carimbo da construção, contra o qual a página da
    semana declara a sua janela (`scripts/explicacoes-do-portao.mjs`). Lido uma vez, antes de ler uma página. */
 const DIAS_DA_SEMANA = diasDaJanelaNoPortao(DIST);
@@ -4632,6 +4634,7 @@ for (const file of ficheirosHtml(DIST)) {
   });
 
   const err = (msg) => erros.push({ rel, msg });
+  for (const erro of conferirRetiradas(html, livroInteiro)) err(erro);
 
   // H2, I190: antes das saídas de documentos alojados, em qualquer página.
   for (const a of root.querySelectorAll('a a')) {
