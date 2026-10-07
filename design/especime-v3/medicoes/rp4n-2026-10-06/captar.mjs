@@ -1,5 +1,5 @@
 /** RP4-n: recibos antes e depois, nas duas edições e nas cinco larguras.
- * Uso: node design/especime-v3/medicoes/rp4n-2026-10-06/captar.mjs antes|depois
+ * Uso: node design/especime-v3/medicoes/rp4n-2026-10-06/captar.mjs antes|depois|d
  * Guarda também os recibos HTML completos para a leitura a frio.
  */
 import fs from 'node:fs/promises';
@@ -9,7 +9,7 @@ import { createHash } from 'node:crypto';
 import { chromium } from 'playwright';
 
 const fase = process.argv[2];
-if (!['antes', 'depois'].includes(fase)) throw Error('Indique antes ou depois.');
+if (!['antes', 'depois', 'd'].includes(fase)) throw Error('Indique antes, depois ou d.');
 const base = 'design/especime-v3/medicoes/rp4n-2026-10-06';
 const saida = `design/especime-v3/capturas/rp4n-2026-10-06/${fase}`;
 const dist = path.resolve('dist');
@@ -22,6 +22,16 @@ const amostra = {
   pensao: 'factor-sustentabilidade-2026',
   eurostat: 'series/serie-ihpc-rendas-variacao-homologa',
 };
+if (fase === 'd') Object.assign(amostra, {
+  corte: 'penalizacao-antecipacao-um-ano-neutra',
+  agua: 'agua-nao-faturada-portugal-2024',
+  prr: 'evora-prr-aprovado-2026',
+  prr_pago: 'evora-prr-pago-2026',
+  prr_vencido: 'evora-prr-vencido-aprovado-2026',
+  consolidacao: 'oe-2026-diferencas-consolidacao-funcional',
+  primario: 'oe-2026-saldo-primario-administracao-central',
+  vab: 'evora-vab-empresarial-2024',
+});
 const tipos = {'.html':'text/html; charset=utf-8', '.css':'text/css', '.woff2':'font/woff2', '.svg':'image/svg+xml', '.png':'image/png', '.js':'text/javascript'};
 const servidor = http.createServer(async (req, res) => {
   try {
