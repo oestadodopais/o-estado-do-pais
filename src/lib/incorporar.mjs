@@ -46,9 +46,9 @@ export function dadosDaIncorporacao(c, lang) {
     periodo: c.reference_date ? dataDaCasa(c.reference_date, lang) : s.periodoEmFalta,
     valor: String(c.value), unidade: unidade.texto, unidadeLang: unidade.lingua ?? t(lang).lang,
     fonte, fonteLang: (c.source ? linguaDaFonte(c.source, lang) : null) ?? t(lang).lang,
-    data, leitura: data ? `${s.lido} ${dataDaCasa(data, lang)}` : s.leituraEmFalta,
+    data, leitura: data ? `${s.lido} ${dataDaCasa(data, lang)}` : '',
     atribuicao: LICENCA ? `${LICENCA.atribuicao}, ${LICENCA.nome}` : '', notas,
-    atualizacao: atualizada ? `${s.atualizado} ${dataDaCasa(atualizada, lang)}` : s.atualizadoSemData,
+    atualizacao: atualizada ? `${s.atualizado} ${dataDaCasa(atualizada, lang)}` : '',
   };
 }
 
@@ -59,7 +59,7 @@ export function codigoDaIncorporacao(c, lang) {
   const e = escaparIncorporacao;
   /* O fallback diz a data guardada na linha. A releitura mais recente só entra
      quando o JSON é recebido com sucesso pelo guião. */
-  const leitura = c.access_date ? `${t(lang).incorporar.lido} ${dataDaCasa(c.access_date, lang)}` : t(lang).incorporar.leituraEmFalta;
+  const leitura = c.access_date ? `${t(lang).incorporar.lido} ${dataDaCasa(c.access_date, lang)}` : '';
   const origem = `https://${SITE_HOST_DISPLAY}`;
   return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${e(c.id)}" data-oedp-valor="${e(c.value)}" data-oedp-lido="${e(c.access_date)}">` +
     `<a href="${origem}${caminhoDaLinha(c.id, lang)}">${e(d.nome)}, ${e(d.periodo)}: ${e(d.valor)} <span lang="${e(d.unidadeLang)}">${e(d.unidade)}</span></a> ` +

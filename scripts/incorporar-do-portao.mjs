@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import { lugarDaIncorporacao } from '../src/lib/lugar-da-incorporacao.mjs';
 /* Leitura do ER1 pelos portões. Não importa o compositor do código nem o do
    JSON. Os nomes e as traduções são declarações comuns; os campos, as datas,
@@ -41,10 +42,10 @@ export function dadosEsperados(c, lang) {
     periodo: c.reference_date ? dataDaCasa(c.reference_date, lang) : palavras.periodoEmFalta,
     valor: String(c.value), unidade: un.texto, unidadeLang: un.lingua || t(lang).lang,
     fonte: c.source || palavras.calculado, fonteLang: (c.source && linguaDaFonte(c.source, lang)) || t(lang).lang,
-    data: dia, leitura: dia ? palavras.lido + ' ' + dataDaCasa(dia, lang) : palavras.leituraEmFalta,
+    data: dia, leitura: dia ? palavras.lido + ' ' + dataDaCasa(dia, lang) : '',
     atribuicao: LICENCA ? LICENCA.atribuicao + ', ' + LICENCA.nome : '',
     notas: [c[lang === 'en' ? 'source_flag_note_en' : 'source_flag_note'], c[lang === 'en' ? 'ressalva_en' : 'ressalva']].filter(Boolean).join(' '),
-    atualizacao: mudanca ? palavras.atualizado + ' ' + dataDaCasa(mudanca, lang) : palavras.atualizadoSemData,
+    atualizacao: mudanca ? palavras.atualizado + ' ' + dataDaCasa(mudanca, lang) : '',
   };
 }
 
@@ -60,12 +61,25 @@ export function codigoEsperado(c, lang) {
   const p = t(lang).incorporar;
   const origem = 'https://' + SITE_HOST_DISPLAY;
   const href = origem + (lang === 'en' ? '/en/ledger/' : '/livro-razao/') + c.id;
-  const lido = c.access_date ? p.lido + ' ' + dataDaCasa(c.access_date, lang) : p.leituraEmFalta;
+  const lido = c.access_date ? p.lido + ' ' + dataDaCasa(c.access_date, lang) : '';
   return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${escape(c.id)}" data-oedp-valor="${escape(c.value)}" data-oedp-lido="${escape(c.access_date)}"><a href="${href}">${escape(d.nome)}, ${escape(d.periodo)}: ${escape(c.value)} <span lang="${d.unidadeLang}">${escape(d.unidade)}</span></a> <span lang="${d.fonteLang}">${escape(d.fonte)}</span>, ${escape(lido)} · ${escape(d.atribuicao)}${d.notas ? ` <span>${escape(d.notas)}</span>` : ''}</p><script async src="${origem}/incorporar.js" referrerpolicy="no-referrer" crossorigin="anonymous"></script>`;
 }
 
-export function conferirCodigo(root, rota) {
+/* Os estados condicionais também têm palavras aprovadas. Não se tornam
+   frases vivas obrigatórias em páginas onde o estado não ocorre. */
+export function conferirInventarioIncorporacao(texto) {
   const erros = [];
+  for (const [chave, valor] of Object.entries(t('pt').incorporar)) {
+    const linha = '| `incorporar.' + chave + '` | ' + valor + ' | ' + t('en').incorporar[chave] + ' |';
+    if (!texto.split('\n').some(l => l.startsWith(linha)))
+      erros.push('ER1 inventário: falta a cadeia aprovada incorporar.' + chave + ' nas duas edições.');
+  }
+  return erros;
+}
+const errosDoInventario = conferirInventarioIncorporacao(fs.readFileSync(new URL('../design/especime-v3/INVENTARIO-FRASES.md', import.meta.url), 'utf8'));
+
+export function conferirCodigo(root, rota) {
+  const erros = [...errosDoInventario];
   const campos = root.querySelectorAll('[data-incorporar-codigo]');
   if (campos.length && !leiturasLiterais.has(root)) erros.push('ER1 código: falta a leitura literal do campo.');
   const linha = rota?.key === 'linha' ? linhas.get(rota.params.slug) : null;

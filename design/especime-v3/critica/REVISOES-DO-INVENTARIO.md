@@ -675,3 +675,10 @@ O veredicto e as contagens continuam conferidos pela V1 e pela V2, e a palavra c
 | bloco | mudança | estado | nota |
 | --- | --- | --- | --- |
 | h4 | 6 cadeias novas, 8 retiradas | por ler | Codex gpt-6-astra: texto do brief H4, §3, ponto 4, confirmado como final pela H4-3 na passagem H4-b. Os lugares e as famílias dizem a organização decidida na §1.172; a medição cega sai porque não foi exercida. A leitura a frio pelo Claude Opus fica a cargo do lugar de direção antes da fusão. A passagem H4-b acrescenta as portas do menu aos usos dos rótulos já inventariados, sem mudar frases de conteúdo. |
+
+
+## ER1-b · o recibo incorporável, 07.10.2026
+
+| bloco | mudança | estado | nota |
+| --- | --- | --- | --- |
+| er1b | Todas as cadeias do incorporador, nas duas edições | direção lida; diff por ler | O mandato ER1-b, achados 4 e 10, aprova o aviso, conserva Copiado e Código selecionado, substitui Calculado por calculado por este projeto e retira a data não indicada. Os estados condicionais têm tabela própria conferida pela célula ER1; a recusa tem frases vivas. A leitura curta de outra família fica com o lugar de direção antes da aterragem. |

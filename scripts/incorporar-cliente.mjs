@@ -20,7 +20,7 @@ export function incorporar(origem) {
       var c = j.linha;
       var d = j.incorporacao && j.incorporacao[lang];
       var campos = ['nome', 'periodo', 'valor', 'unidade', 'unidadeLang', 'fonte', 'fonteLang', 'data', 'leitura', 'atribuicao', 'notas', 'atualizacao'];
-      if (!c || c.id !== id || !d || d.valor !== c.value || !j.licenca ||
+      if (!c || !/^\d{4}-\d{2}-\d{2}$/.test(c.access_date || '') || /\[a verificar\]/i.test(c.source || '') || c.id !== id || !d || d.valor !== c.value || !j.licenca ||
           !campos.every(function (k) { return typeof d[k] === 'string'; }) ||
           !/^(pt-PT|pt|en)$/.test(d.fonteLang) || !/^(pt-PT|pt|en)$/.test(d.unidadeLang)) return;
       /* Compõe fora do documento e só troca depois de validar tudo. Nenhum
@@ -46,7 +46,7 @@ export function incorporar(origem) {
         novo.appendChild(document.createTextNode(' '));
         novo.appendChild(notas);
       }
-      if (c.value !== citado) {
+      if (c.value !== citado && d.atualizacao) {
         var aviso = document.createElement('a');
         aviso.href = destino;
         aviso.textContent = d.atualizacao;
