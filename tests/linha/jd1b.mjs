@@ -134,6 +134,12 @@ export function temRecorteDoCusto(id, linha) {
 export function temImagemDoCusto(id, html) {
   return parse(html).querySelector('.linha-recorte img')?.getAttribute('src') === `/recortes/${id}.webp`;
 }
+export function excertoSoDoGrafico(linha) {
+  const coluna = Number(linha.document?.locator?.match(/rótulo na coluna (\d+)/)?.[1]);
+  return Number.isInteger(coluna) && coluna > 0 &&
+    linha.excerpt.length === coluna - 1 + linha.value.length &&
+    linha.excerpt.slice(coluna - 1) === linha.value && !/EUR billion|anos \/ years/.test(linha.excerpt);
+}
 let plantasRecortes = 0;
 for (const id of custos) {
   const linha = getClaim(id);
@@ -144,7 +150,10 @@ for (const id of custos) {
   const coluna = Number(linha.document.locator.match(/rótulo na coluna (\d+)/)?.[1]);
   assert.ok(Number.isInteger(coluna) && coluna > 0);
   assert.equal(linha.excerpt.slice(coluna - 1, coluna - 1 + linha.value.length), linha.value, `${id}: o valor não está na coluna declarada`);
+  assert.ok(excertoSoDoGrafico(linha), `${id}: excerto invade os gráficos vizinhos`);
   if (process.argv.includes('--prova')) {
+    assert.ok(!excertoSoDoGrafico({...linha, excerpt: linha.excerpt + ' EUR billion (anos / years)'}));
+    plantasRecortes++;
     const copia = structuredClone(linha);
     delete copia.document.crop;
     assert.ok(!temRecorteDoCusto(id, copia));

@@ -31,7 +31,7 @@ access_date: "2026-10-06"
 reference_date: "2026"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "         3,2                                                                               3,4         3,4       3,4                          EUR billion )                            (anos / years )                                             (anos / years )"
+excerpt: "         3,2                                                                               3,4         3,4       3,4"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
