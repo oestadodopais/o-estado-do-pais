@@ -137,10 +137,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "É o custo médio da dívida emitida no ano, nos instrumentos BT, OT, OTRV e MTN, ponderado pelo montante e pelo prazo."
+        "É o custo médio de o Estado pedir dinheiro emprestado no ano, através de Bilhetes do Tesouro, Obrigações do Tesouro, Obrigações do Tesouro de Rendimento Variável e Medium Term Notes. As emissões pesam nesta média de acordo com os montantes e os prazos."
       ],
       "en": [
-        "It is the average cost of debt issued during the year through BT, OT, OTRV and MTN instruments, weighted by amount and maturity."
+        "It is the average cost of the State’s borrowing during the year through Treasury bills, Treasury bonds, floating-rate Treasury bonds and Medium Term Notes. Issues are weighted in this average by their amounts and maturities."
       ]
     }
   },
@@ -151,10 +151,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "É a relação entre os juros do subsetor Estado nas contas nacionais e o saldo médio da dívida direta do Estado no final de dois anos consecutivos."
+        "Mede o custo dos juros da dívida que o Estado tem: compara os juros atribuídos ao ano pelas contas nacionais com o saldo médio da dívida direta no fim desse ano e do anterior. Os juros são registados quando o encargo é assumido, mesmo que sejam pagos noutro ano."
       ],
       "en": [
-        "It is the ratio of State subsector interest costs in national accounts to average State direct debt outstanding at the end of two consecutive years."
+        "It measures the interest cost of the State’s outstanding debt: interest attributed to the year in national accounts is compared with average direct debt at the end of that year and the previous one. Interest is recorded when the cost is incurred, even if it is paid in another year."
       ]
     }
   },
@@ -658,10 +658,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "É o total da dívida direta do Estado no fim de agosto."
+        "É o que o Estado ainda deve da dívida que emitiu no fim de agosto. A dívida pública de Maastricht abrange todas as administrações públicas e retira a dívida que umas entidades públicas detêm de outras."
       ],
       "en": [
-        "It is total State direct debt at the end of August."
+        "It is the amount the State still owes on debt it issued at the end of August. Maastricht public debt covers all general government bodies and removes debt held by other government bodies."
       ]
     }
   },
@@ -727,10 +727,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "É o montante de dívida fundada que o Estado emitiu no ano civil, em contabilidade orçamental pública."
+        "É o dinheiro que o Estado pediu emprestado no ano civil através de dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período."
       ],
       "en": [
-        "It is the amount of funded debt the State issued during the calendar year, on a public budget accounting basis."
+        "It is the money the State borrowed during the calendar year through funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period."
       ]
     }
   },
@@ -1967,10 +1967,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "É a despesa em juros das administrações públicas, nas contas nacionais. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis."
+        "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. As administrações públicas abrangem a administração central, regional e local e a segurança social. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis."
       ],
       "en": [
-        "It is interest expenditure by general government, in national accounts. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification."
+        "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. General government covers central, regional and local government and social security. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification."
       ]
     }
   },
@@ -1981,10 +1981,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano, calculados a partir dos dois montantes da mesma notificação do INE. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis."
+        "Compara a despesa em juros das administrações públicas com o produto interno bruto do mesmo ano, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. A conta usa os montantes da mesma notificação do INE, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis. A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes."
       ],
       "en": [
-        "It is general government interest expenditure as a percentage of gross domestic product for the same year, calculated from both amounts in the same INE notification. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification."
+        "It compares general government interest expenditure with gross domestic product for the same year, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. The calculation uses amounts from the same INE notification, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification. The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts."
       ]
     }
   },
@@ -1995,10 +1995,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "É a despesa das administrações públicas em juros no conjunto da União Europeia, em percentagem do PIB."
+        "Compara a despesa em juros das administrações públicas do conjunto da União Europeia com o seu produto interno bruto, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. São contas nacionais: a despesa pertence ao período em que o encargo é assumido, mesmo que seja pago noutro período. A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes."
       ],
       "en": [
-        "It is general government interest expenditure across the European Union, as a percentage of GDP."
+        "It compares general government interest expenditure across the European Union with its gross domestic product, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. These are national accounts: expenditure belongs to the period in which the cost is incurred, even if it is paid in another period. The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts."
       ]
     }
   },
@@ -2009,10 +2009,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "É a despesa consolidada das administrações públicas com juros e outros encargos, acumulada de janeiro a agosto, na ótica dos pagamentos."
+        "É o dinheiro pago pelas administrações públicas em juros e outros encargos, de janeiro a agosto. O total é consolidado: descontam-se os pagamentos entre as entidades públicas abrangidas. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período."
       ],
       "en": [
-        "It is consolidated general government expenditure on interest and other charges, accumulated from January to August, on a payments basis."
+        "It is money paid by general government in interest and other charges from January to August. The total is consolidated: payments between the public bodies covered are removed. Public budget accounts record receipts and payments during the period."
       ]
     }
   },
@@ -2104,10 +2104,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "É o financiamento de que o Estado precisou, somando as necessidades líquidas às amortizações e anulações de dívida fundada, em contabilidade orçamental pública."
+        "É o financiamento de que o Estado precisou para cobrir o défice do orçamento e adquirir ativos financeiros, descontando os recebimentos dessas operações e excluindo privatizações, e para reembolsar ou extinguir dívida. O défice é a despesa que excede a receita. Os ativos financeiros incluem títulos, participações e empréstimos. O quadro chama amortizações e anulações à parcela dos reembolsos e extinções, que aparece no excerto da fonte junto do total. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período."
       ],
       "en": [
-        "It is the financing the State needed, adding net financing needs to redemptions and cancellations of funded debt, on a public budget accounting basis."
+        "It is the financing the State needed to cover the budget deficit and acquire financial assets, net of receipts from those operations and excluding privatisations, and to repay or extinguish debt. The deficit is expenditure in excess of revenue. Financial assets include securities, equity interests and loans. The table calls the repayment and cancellation component redemptions and cancellations; it appears in the source excerpt alongside the total. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period."
       ]
     }
   },
@@ -3101,10 +3101,10 @@ export const FAMILIAS_DAS_LINHAS = {
     },
     "frase": {
       "pt": [
-        "É o produto interno bruto a preços de mercado. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis."
+        "É o valor dos bens e serviços finais produzidos na economia portuguesa durante o ano, o produto interno bruto, a preços de mercado, nas contas nacionais enviadas pelo INE ao Eurostat em setembro. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis."
       ],
       "en": [
-        "It is gross domestic product at market prices. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification."
+        "It is the value of final goods and services produced in the Portuguese economy during the year, gross domestic product at market prices, in the national accounts sent by INE to Eurostat in September. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification."
       ]
     }
   },

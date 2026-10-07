@@ -1,5 +1,250 @@
 /** Gerado por design/especime-v3/medicoes/jd1-2026-10-06/origens.py. */
 export const ORIGENS_JD1 = {
+  "jd1-eo-administracoes": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 82",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "Administrações Públicas — Universo que compreende a Administração Central (serviços integrados e serviços e fundos autónomos), a Administração Regional (órgãos de governos regionais e serviços e fundos autónomos) e Local (municípios e freguesias) e a Segurança Social.",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
+      "hora": "2026-10-06T10:46:01Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+      "campo": "pdftotext -layout, folha 82, coluna esquerda",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-82-w300.txt",
+        "sha256": "3852ac2b0d15b5bfb1bde650519c68e1a90e8fcf84989d8c731d274c6bd36203",
+        "ferramenta": "pdftotext version 26.09.0"
+      }
+    }
+  },
+  "jd1-eo-ativos": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 82",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "Ativos financeiros (receita) — Receitas provenientes da venda e amortização de títulos de crédito, designadamente obrigações e ações ou outras formas de participação, assim como as resultantes de reembolso de empréstimos ou subsídios concedidos (vide Classificador Económico das receitas e das despesas públicas — Decreto-Lei n.º 26/2002, de 14 de fevereiro). Ativos financeiros (despesa) — Operações financeiras quer com a aquisição de títulos de crédito, incluindo obrigações, ações, quotas e outras formas de participação, quer com a concessão de empréstimos e adiantamentos ou subsídios reembolsáveis (vide Classificador Económico das receitas e das despesas públicas — Decreto-Lei n.º 26/2002, de 14 de fevereiro). Ativos financeiros líquidos de reembolsos — Diferença entre os fluxos de operações de ativos financeiros de despesa e receita. Traduz o património financeiro emprestado a terceiros em determinado momento.",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
+      "hora": "2026-10-06T10:46:01Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+      "campo": "pdftotext -layout, folha 82, coluna esquerda",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-82-w300.txt",
+        "sha256": "3852ac2b0d15b5bfb1bde650519c68e1a90e8fcf84989d8c731d274c6bd36203",
+        "ferramenta": "pdftotext version 26.09.0"
+      }
+    }
+  },
+  "jd1-eo-saldo": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 87",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "Saldo Global — Diferença entre a receita efetiva e a despesa efetiva. Este saldo evidencia a necessidade de recurso ao endividamento (défice) ou a capacidade de redução do endividamento (excedente).",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
+      "hora": "2026-10-06T10:46:01Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+      "campo": "pdftotext -layout, folha 87, coluna esquerda",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-87-w300.txt",
+        "sha256": "230447d57fac2bc209985c882caee0662bc6d18d77b10cdb31e977e3ccae8472",
+        "ferramenta": "pdftotext version 26.09.0"
+      }
+    }
+  },
+  "jd1-eurostat-unidade": {
+    "publicador": "Eurostat",
+    "documento": "EMU convergence criterion series, Reference Metadata, secção 4",
+    "url": "https://ec.europa.eu/eurostat/cache/metadata/en/irt_lt_mcby_esms.htm",
+    "lido": "2026-10-06",
+    "lingua": "en",
+    "excerto": "All the yields are expressed in percentages per annum.",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/009-eurostat-metadados-obrigacoes.html",
+      "hora": "2026-10-06T10:46:09Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "6ab562de6933196bf29e8ad6417fec647094f2a7824df2b2f43e5a83881433a0",
+      "campo": "texto normalizado da ficha de metadados"
+    }
+  },
+  "jd1-eurostat-versao": {
+    "publicador": "Eurostat",
+    "documento": "Government revenue, expenditure and main aggregates, updated e value",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_main?lang=EN&freq=A&sector=S13&na_item=D41PAY&geo=EU27_2020&unit=PC_GDP&time=2025",
+    "lido": "2026-10-06",
+    "lingua": "en",
+    "excerto": "\"updated\":\"2026-07-21T11:00:00+0200\",\"value\":{\"0\":1.9}",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/018-eurostat-juros-EU27_2020-PC_GDP-2025.json",
+      "hora": "2026-10-06T10:46:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "2e5b39eccba8b3ea9fddb04a4265bae436a09fb0ccdc5491da5b147338e495f9",
+      "campo": "corpo JSON, dimensões selecionadas"
+    }
+  },
+  "jd1-ine-contas": {
+    "publicador": "Instituto Nacional de Estatística",
+    "documento": "Procedimento dos Défices Excessivos, setembro de 2026, folha 4",
+    "url": "https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=816377733&att_display=n&att_download=y",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "No apuramento do saldo orçamental na ótica das Contas Nacionais, é necessário proceder a um conjunto de ajustamentos aos resultados apurados em contabilidade pública. contabilidade pública obedece a uma ótica de caixa, registando-se todas as despesas pagas no período contabilístico. Em Contas Nacionais, registam-se os encargos assumidos num determinado período contabilístico, independentemente do seu pagamento ocorrer noutro período, e excluem-se pagamentos respeitantes a encargos assumidos noutros períodos. Outro ajustamento importante efetuado está relacionado com a delimitação setorial do setor das P, no qual são consideradas entidades que não estão integradas no saldo em contabilidade pública, mas que pertencem ao setor institucional das P na ótica das Contas Nacionais, por força da aplicação do Sistema Europeu de Contas Nacionais e Regionais (SEC 2010), e são retiradas entidades que não integram esse setor, mas que estão incluídas no saldo em contabilidade pública.",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/002-ine-pde-setembro-2026.pdf",
+      "hora": "2026-10-06T10:45:57Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "58696e3c11ed4233c7a06a8fce374043de7ce6ca57898064c52bc7b9faff673d",
+      "campo": "pdftotext -layout, folha 4",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1-2026-10-06/002-ine-pde-setembro-2026.txt",
+        "sha256": "3e8580f92458bba2da44f71d66171bec6cca62c03f5c61dfd3ab069d488f89d4",
+        "ferramenta": "pdftotext version 26.09.0"
+      }
+    }
+  },
+  "jd1-eo-glossario": {
+    "publicador": "Entidade Orçamental",
+    "documento": "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 83",
+    "url": "https://www.eo.gov.pt/execucaoorcamental/SintesedaExecucaoOrcamentalMensal/2026/setembro/0926-SinteseExecucaoOrcamental_agosto2026.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "Contabilidade Pública (ótica da) ou Contabilidade Orçamental — Ótica de Caixa, ou de gerência, em que são considerados os recebimentos e pagamentos ocorridos em dado período. Consolidação/Consolidado — Agregados de receita e/ou despesa finais, abatidos de fluxos monetários intermédios efetuados entre as entidades do universo em análise. Caso a informação respeite à Ótica da Contabilidade Pública (Contabilidade Orçamental) são excluídos, a partir de 2017, os fluxos relativos a transferências, juros e rendimentos da propriedade, subsídios, ativos financeiros e passivos financeiros e aquisição e vendas de bens e serviços correntes no âmbito do programa Saúde.",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026.pdf",
+      "hora": "2026-10-06T10:46:01Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
+      "campo": "pdftotext -layout, folha 83, coluna esquerda",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1-2026-10-06/004-eo-execucao-agosto-2026-coluna-esquerda-83-w300.txt",
+        "sha256": "88df10e4bba89d498f10f69a8e08f03812cdbc01ecfea00ea613be8596d94173",
+        "ferramenta": "pdftotext version 26.09.0"
+      }
+    }
+  },
+  "jd1-igcp-perimetro": {
+    "publicador": "IGCP",
+    "documento": "Relatório Anual 2025, nota 1, folha 31",
+    "url": "https://www.igcp.pt/sites/default/files/2026-08/RA2025_signed.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "1A dívida direta do Estado é um conceito que difere da dívida pública compilada pelo Banco de Portugal para efeitos do Procedimento dos Défices Excessivos (dívida de Maastricht, apresentada no gráfico 5) em vários aspetos, entre os quais se destaca: (i) diferenças de delimitação do setor – a dívida direta do Estado inclui apenas a dívida emitida pelo Estado, enquanto na dívida de Maastricht se incluem todas as entidades classificadas, para fins estatísticos, no setor institucional das Administrações Públicas; (ii) efeitos de consolidação – a dívida direta do Estado reflete apenas os passivos deste subsetor, enquanto a dívida de Maastricht é consolidada, isto é, excluem- se os ativos das Administrações Públicas em passivos emitidos pelas próprias Administrações Públicas.",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/007-igcp-relatorio-anual-2025.pdf",
+      "hora": "2026-10-06T10:46:05Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "f36c17f0f95b0e35c8f87323fd48f7fde0e9cc84228a5444f94058ac3f0e3f2f",
+      "campo": "pdftotext -layout, folha 31",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1-2026-10-06/007-igcp-relatorio-anual-2025.txt",
+        "sha256": "da63d6608a5583f65f85e94ab6f9d54c76b85ccf5b22bf48012b105baa802985",
+        "ferramenta": "pdftotext version 26.09.0"
+      }
+    }
+  },
+  "jd1-igcp-siglas": {
+    "publicador": "IGCP",
+    "documento": "Relatório Anual 2025, siglas e abreviaturas, folha 5",
+    "url": "https://www.igcp.pt/sites/default/files/2026-08/RA2025_signed.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "Siglas e Abreviaturas AE Área do Euro APP Asset Purchase Programme BCE Banco Central Europeu BdP Banco de Portugal BT Bilhetes do Tesouro CA Certificados de Aforro CGE Conta Geral do Estado CCIRS Cross Currency Interest Rate Swap CEDIC Certificados Especiais de Dívida Pública CEDIM Certificados Especiais de Dívida de Médio e Longo Prazo CSA Credit Support Annex CT Certificados do Tesouro CTPC Certificados do Tesouro Poupança Crescimento CTPV Certificados do Tesouro Poupança Valor CTT Correios de Portugal DUC Documento Único de Cobrança DUC-TR Documento Único de Cobrança em tempo real EBT Especialista em Bilhetes do Tesouro EPR Empresas Públicas Reclassificadas EUA Estados Unidos da América EUR Euro FBCF Formação Bruta de Capital Fixo FEEF Fundo Europeu de Estabilidade Financeira FMI Fundo Monetário Internacional FRDP Fundo de Regularização da Dívida Pública GBP Great British Pound (Libra esterlina) GMRA Global Master Repurchase Agreements IB Sistema Internet Banking do IGCP IC Instituições de Crédito IGCP Agência de Gestão da Tesouraria e da Dívida Pública – IGCP, E.P.E. INE Instituto Nacional de Estatística IRN Instituto dos Registos e Notariado IRS Interest rate swap LOE Lei do Orçamento do Estado MEEF Mecanismo Europeu de Estabilização Financeira MLP Médio e Longo Prazo MTN Medium Term Notes NPL Non-performing Loans OE Orçamento do Estado OEVT Operadores Especializados em Valores do Tesouro OMP Operadores do Mercado Primário ONSUTE Organismos Não Sujeitos à Unidade da Tesouraria do Estado OT Obrigações do Tesouro OTC Over-the-Counter OTRV Obrigações do Tesouro de Rendimento Variável PAEF Programa de Assistência Económica e Financeira p.b. pontos base PEPP Pandemic Emergency Purchase Programme PIB Produto Interno Bruto p.p. pontos percentuais PSPP Public Sector Purchase Programme RCE Rede de Cobranças do Estado Repos Reportes (Acordos de Recompra) ROE Return on Equity RTE Regime da Tesouraria do Estado SEE Setor Empresarial do Estado SI Serviços Integrados SFA Serviços e Fundos Autónomos SURE European instrument for temporary Support to mitigate Unemployment Risks in an Emergency TPA Terminal de Pagamento Automático tvh taxa de variação homóloga UE União Europeia USD United States Dollar (Dólar norte-americano) UTE Unidade da Tesouraria do Estado Gestão da Tesouraria do Estado e da Dívida Pública Relatório Anual 2025 5",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/007-igcp-relatorio-anual-2025.pdf",
+      "hora": "2026-10-06T10:46:05Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "f36c17f0f95b0e35c8f87323fd48f7fde0e9cc84228a5444f94058ac3f0e3f2f",
+      "campo": "pdftotext -layout, folha 5",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1-2026-10-06/007-igcp-relatorio-anual-2025.txt",
+        "sha256": "da63d6608a5583f65f85e94ab6f9d54c76b85ccf5b22bf48012b105baa802985",
+        "ferramenta": "pdftotext version 26.09.0"
+      }
+    }
+  },
+  "jd1-eurostat-contas": {
+    "publicador": "Eurostat",
+    "documento": "Government revenue, expenditure and main aggregates, dimension.unit a dimension.geo",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/gov_10a_main?lang=EN&freq=A&sector=S13&na_item=D41PAY&geo=EU27_2020&unit=PC_GDP&time=2025",
+    "lido": "2026-10-06",
+    "lingua": "en",
+    "excerto": "\"unit\":{\"label\":\"Unit of measure\",\"category\":{\"index\":{\"PC_GDP\":0},\"label\":{\"PC_GDP\":\"Percentage of gross domestic product (GDP)\"}}},\"sector\":{\"label\":\"Sector\",\"category\":{\"index\":{\"S13\":0},\"label\":{\"S13\":\"General government\"}}},\"na_item\":{\"label\":\"National accounts indicator (ESA 2010)\",\"category\":{\"index\":{\"D41PAY\":0},\"label\":{\"D41PAY\":\"Interest, expenditure\"}}},\"geo\":{\"label\":\"Geopolitical entity (reporting)\",\"category\":{\"index\":{\"EU27_2020\":0},\"label\":{\"EU27_2020\":\"European Union - 27 countries (from 2020)\"}}}",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/018-eurostat-juros-EU27_2020-PC_GDP-2025.json",
+      "hora": "2026-10-06T10:46:25Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "2e5b39eccba8b3ea9fddb04a4265bae436a09fb0ccdc5491da5b147338e495f9",
+      "campo": "corpo JSON, dimensões selecionadas"
+    }
+  },
+  "jd1-pib-definicao": {
+    "publicador": "Eurostat",
+    "documento": "Gross domestic product, What is gross domestic product? e What does GDP cover?",
+    "url": "https://ec.europa.eu/eurostat/web/european-statistics-learning-hub/statistics-for-beginners/gross-domestic-product",
+    "lido": "2026-10-07",
+    "lingua": "en",
+    "excerto": "What is gross domestic product? The gross domestic product, abbreviated as GDP, is the most common measure for the size of an economy. It measures the total value of goods and services produced by that economy during a specific time period, typically a year or a quarter. This helps us understand changes in the size of an economy across different time periods and serves as a broad indicator for the standard of living of its population. It can be calculated for a country, a region (such as Tuscany in Italy or Burgundy in France), or for groups of countries, such as the European Union (EU). Policymakers, businesses, and institutions use GDP to make key economic decisions. In the EU, GDP is calculated for various reference periods. Generally, it is referred to as annual GDP when the reference period is a calendar year but it is also calculated every 3 months, this is called quarterly GDP . Watch our short video for more explanations What does GDP cover? DS Education corner > Statistics for beginners > Gross domestic product > Blue box Part 2 EN GDP covers all goods and services produced for final use .",
+    "selo": {
+      "motor": "indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.html",
+      "hora": "2026-10-07T09:49:11Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "65e07dfb4d6043e71431b40ad6b709b75a03b2dc4dbbf9e497b23aeb2d8fffec",
+      "campo": "texto da entrada nomeada, extraído por HTMLParser",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1b-2026-10-07/005-eurostat-pib-iniciantes.txt",
+        "sha256": "66170c143a9e9e09b297497c79f081c4ab79cf3be82712241568e12ae6c9b523",
+        "ferramenta": "Python html.parser.HTMLParser"
+      }
+    }
+  },
+  "jd1-divida-fundada": {
+    "publicador": "IGCP",
+    "documento": "Glossário, Dívida pública fundada",
+    "url": "https://www.igcp.pt/pt/glossario",
+    "lido": "2026-10-07",
+    "lingua": "pt",
+    "excerto": "Dívida pública fundada – dívida pública contraída para ser totalmente amortizada num exercício orçamental subsequente ao exercício em que foi gerada.",
+    "selo": {
+      "motor": "indicators/out/jd1b-2026-10-07/004-igcp-glossario.html",
+      "hora": "2026-10-07T09:49:11Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "fef4529244ff3f7af994b2a15d5b677be33250f1175749220729739085213b0c",
+      "campo": "texto da entrada nomeada, extraído por HTMLParser",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1b-2026-10-07/004-igcp-glossario.txt",
+        "sha256": "491b2af65ed1ccbfd5d8c0d9e9aca88ca82ef27c38e76ebd806203dd0f625980",
+        "ferramenta": "Python html.parser.HTMLParser"
+      }
+    }
+  },
+  "jd1-mercado-secundario": {
+    "publicador": "IGCP",
+    "documento": "Glossário, Mercado Secundário",
+    "url": "https://www.igcp.pt/pt/glossario",
+    "lido": "2026-10-07",
+    "lingua": "pt",
+    "excerto": "Mercado Secundário – mercado onde são negociados os títulos previamente colocados em mercado primário.",
+    "selo": {
+      "motor": "indicators/out/jd1b-2026-10-07/004-igcp-glossario.html",
+      "hora": "2026-10-07T09:49:11Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "fef4529244ff3f7af994b2a15d5b677be33250f1175749220729739085213b0c",
+      "campo": "texto da entrada nomeada, extraído por HTMLParser",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1b-2026-10-07/004-igcp-glossario.txt",
+        "sha256": "491b2af65ed1ccbfd5d8c0d9e9aca88ca82ef27c38e76ebd806203dd0f625980",
+        "ferramenta": "Python html.parser.HTMLParser"
+      }
+    }
+  },
   "jd1-ine-provisorio": {
     "publicador": "Instituto Nacional de Estatística",
     "documento": "Procedimento dos Défices Excessivos, setembro de 2026, folha 3",
@@ -172,7 +417,7 @@ export const ORIGENS_JD1 = {
       "hora": "2026-10-06T10:46:09Z",
       "cliente": "core.http.HttpClient.condicional",
       "sha256": "6ab562de6933196bf29e8ad6417fec647094f2a7824df2b2f43e5a83881433a0",
-      "campo": "texto normalizado da ficha de metadados, secção 3.4"
+      "campo": "texto normalizado da ficha de metadados"
     }
   }
 };

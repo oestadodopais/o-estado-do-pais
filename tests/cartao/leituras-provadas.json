@@ -12792,17 +12792,19 @@
       },
       "origens": [
         "jd1-ine-despesa",
-        "jd1-ine-ambito",
-        "jd1-ine-provisorio"
+        "jd1-ine-contas",
+        "jd1-eo-administracoes",
+        "jd1-ine-provisorio",
+        "jd1-ine-ambito"
       ],
       "folhas": [
         {
-          "pt": "É a despesa em juros das administrações públicas, nas contas nacionais. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
-          "en": "It is interest expenditure by general government, in national accounts. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+          "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. As administrações públicas abrangem a administração central, regional e local e a segurança social. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+          "en": "It is interest expenditure by bodies classified as general government in the national accounts, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. General government covers central, regional and local government and social security. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
           "partes": [
             {
-              "pt": "É a despesa em juros",
-              "en": "It is interest expenditure",
+              "pt": "É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas",
+              "en": "It is interest expenditure by bodies classified as general government in the national accounts",
               "classe": "diz",
               "apoios": [
                 {
@@ -12814,30 +12816,23 @@
                   "origem": "jd1-ine-despesa",
                   "campo": "excerto",
                   "literal": "O quadro 9 apresenta a despesa"
+                },
+                {
+                  "origem": "jd1-ine-contas",
+                  "campo": "excerto",
+                  "literal": "pertencem ao setor institucional das P na ótica das Contas Nacionais"
                 }
               ]
             },
             {
-              "pt": " das administrações públicas",
-              "en": " by general government",
+              "pt": ", segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano",
+              "en": ", under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year",
               "classe": "diz",
               "apoios": [
                 {
-                  "origem": "jd1-ine-ambito",
+                  "origem": "jd1-ine-contas",
                   "campo": "excerto",
-                  "literal": "Administrações Públicas"
-                }
-              ]
-            },
-            {
-              "pt": ", nas contas nacionais",
-              "en": ", in national accounts",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "jd1-ine-ambito",
-                  "campo": "excerto",
-                  "literal": "Sistema Europeu de Contas Nacionais e Regionais 2010"
+                  "literal": "encargos assumidos num determinado período contabilístico, independentemente do seu pagamento ocorrer noutro período"
                 }
               ]
             },
@@ -12845,6 +12840,33 @@
               "pt": ".",
               "en": ".",
               "classe": "liga"
+            },
+            {
+              "pt": " As administrações públicas abrangem a administração central, regional e local e a segurança social.",
+              "en": " General government covers central, regional and local government and social security.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-eo-administracoes",
+                  "campo": "excerto",
+                  "literal": "Administração Central"
+                },
+                {
+                  "origem": "jd1-eo-administracoes",
+                  "campo": "excerto",
+                  "literal": "Administração Regional"
+                },
+                {
+                  "origem": "jd1-eo-administracoes",
+                  "campo": "excerto",
+                  "literal": "e Local"
+                },
+                {
+                  "origem": "jd1-eo-administracoes",
+                  "campo": "excerto",
+                  "literal": "e a Segurança Social."
+                }
+              ]
             },
             {
               "pt": " O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
@@ -12876,23 +12898,61 @@
         "en": "GDP at market prices, September notification"
       },
       "origens": [
-        "jd1-ine-provisorio",
-        "jd1-ine-ambito"
+        "jd1-ine-ambito",
+        "jd1-pib-definicao",
+        "jd1-ine-provisorio"
       ],
       "folhas": [
         {
-          "pt": "É o produto interno bruto a preços de mercado. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
-          "en": "It is gross domestic product at market prices. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+          "pt": "É o valor dos bens e serviços finais produzidos na economia portuguesa durante o ano, o produto interno bruto, a preços de mercado, nas contas nacionais enviadas pelo INE ao Eurostat em setembro. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
+          "en": "It is the value of final goods and services produced in the Portuguese economy during the year, gross domestic product at market prices, in the national accounts sent by INE to Eurostat in September. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
           "partes": [
             {
-              "pt": "É o produto interno bruto a preços de mercado",
-              "en": "It is gross domestic product at market prices",
+              "pt": "É o valor dos bens e serviços finais produzidos na economia portuguesa durante o ano, o produto interno bruto, a preços de mercado",
+              "en": "It is the value of final goods and services produced in the Portuguese economy during the year, gross domestic product at market prices",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "name",
                   "literal": "Produto Interno Bruto, a preços de mercado"
+                },
+                {
+                  "origem": "jd1-ine-ambito",
+                  "campo": "excerto",
+                  "literal": "Estado Membro: Portugal"
+                },
+                {
+                  "origem": "jd1-pib-definicao",
+                  "campo": "excerto",
+                  "literal": "It measures the total value of goods and services produced by that economy during a specific time period"
+                },
+                {
+                  "origem": "jd1-pib-definicao",
+                  "campo": "excerto",
+                  "literal": "GDP covers all goods and services produced for final use"
+                }
+              ]
+            },
+            {
+              "pt": ", nas contas nacionais enviadas pelo INE ao Eurostat em setembro",
+              "en": ", in the national accounts sent by INE to Eurostat in September",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-ine-ambito",
+                  "campo": "excerto",
+                  "literal": "Sistema Europeu de Contas Nacionais e Regionais 2010"
+                },
+                {
+                  "origem": "jd1-ine-ambito",
+                  "campo": "excerto",
+                  "literal": "enviados ao Eurostat"
+                },
+                {
+                  "origem": "jd1-ine-ambito",
+                  "campo": "excerto",
+                  "literal": "Setembro de 2026"
                 }
               ]
             },
@@ -12931,17 +12991,20 @@
         "en": "General government interest expenditure as a share of GDP"
       },
       "origens": [
+        "jd1-pib-definicao",
+        "jd1-ine-contas",
         "jd1-ine-provisorio",
-        "jd1-ine-ambito"
+        "jd1-ine-ambito",
+        "jd1-eurostat-versao"
       ],
       "folhas": [
         {
-          "pt": "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano, calculados a partir dos dois montantes da mesma notificação do INE. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis.",
-          "en": "It is general government interest expenditure as a percentage of gross domestic product for the same year, calculated from both amounts in the same INE notification. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification.",
+          "pt": "Compara a despesa em juros das administrações públicas com o produto interno bruto do mesmo ano, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. A conta usa os montantes da mesma notificação do INE, segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano. O valor de dois mil e vinte e cinco é provisório, como a fonte o publica na notificação de setembro de dois mil e vinte e seis. A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
+          "en": "It compares general government interest expenditure with gross domestic product for the same year, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. The calculation uses amounts from the same INE notification, under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year. The value for two thousand and twenty-five is provisional, as published in the September two thousand and twenty-six notification. The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
           "partes": [
             {
-              "pt": "São os juros das administrações públicas em percentagem do produto interno bruto do mesmo ano",
-              "en": "It is general government interest expenditure as a percentage of gross domestic product for the same year",
+              "pt": "Compara a despesa em juros das administrações públicas com o produto interno bruto do mesmo ano, em percentagem",
+              "en": "It compares general government interest expenditure with gross domestic product for the same year, as a percentage",
               "classe": "diz",
               "apoios": [
                 {
@@ -12957,14 +13020,43 @@
               ]
             },
             {
-              "pt": ", calculados a partir dos dois montantes da mesma notificação do INE",
-              "en": ", calculated from both amounts in the same INE notification",
+              "pt": ". O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia",
+              "en": ". Gross domestic product measures the value of final goods and services produced in the economy",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-pib-definicao",
+                  "campo": "excerto",
+                  "literal": "It measures the total value of goods and services produced by that economy"
+                },
+                {
+                  "origem": "jd1-pib-definicao",
+                  "campo": "excerto",
+                  "literal": "GDP covers all goods and services produced for final use"
+                }
+              ]
+            },
+            {
+              "pt": ". A conta usa os montantes da mesma notificação do INE",
+              "en": ". The calculation uses amounts from the same INE notification",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
                   "campo": "derivation",
                   "literal": "na mesma notificação do INE"
+                }
+              ]
+            },
+            {
+              "pt": ", segundo as contas nacionais: a despesa pertence ao ano em que o encargo é assumido, mesmo que seja pago noutro ano",
+              "en": ", under national accounts: expenditure belongs to the year in which the cost is incurred, even if it is paid in another year",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-ine-contas",
+                  "campo": "excerto",
+                  "literal": "encargos assumidos num determinado período contabilístico, independentemente do seu pagamento ocorrer noutro período"
                 }
               ]
             },
@@ -12989,6 +13081,23 @@
                   "literal": "Setembro de 2026"
                 }
               ]
+            },
+            {
+              "pt": " A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
+              "en": " The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-ine-ambito",
+                  "campo": "excerto",
+                  "literal": "Setembro de 2026"
+                },
+                {
+                  "origem": "jd1-eurostat-versao",
+                  "campo": "excerto",
+                  "literal": "\"updated\":\"2026-07-21T11:00:00+0200\""
+                }
+              ]
             }
           ]
         }
@@ -13002,50 +13111,83 @@
         "pt": "Juros das administrações públicas na União Europeia, em percentagem do PIB",
         "en": "General government interest expenditure in the European Union, as a share of GDP"
       },
-      "origens": [],
+      "origens": [
+        "jd1-eurostat-contas",
+        "jd1-pib-definicao",
+        "jd1-ine-contas",
+        "jd1-ine-ambito",
+        "jd1-eurostat-versao"
+      ],
       "folhas": [
         {
-          "pt": "É a despesa das administrações públicas em juros no conjunto da União Europeia, em percentagem do PIB.",
-          "en": "It is general government interest expenditure across the European Union, as a percentage of GDP.",
+          "pt": "Compara a despesa em juros das administrações públicas do conjunto da União Europeia com o seu produto interno bruto, em percentagem. O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia. São contas nacionais: a despesa pertence ao período em que o encargo é assumido, mesmo que seja pago noutro período. A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
+          "en": "It compares general government interest expenditure across the European Union with its gross domestic product, as a percentage. Gross domestic product measures the value of final goods and services produced in the economy. These are national accounts: expenditure belongs to the period in which the cost is incurred, even if it is paid in another period. The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
           "partes": [
             {
-              "pt": "É a despesa das administrações públicas em juros",
-              "en": "It is general government interest expenditure",
+              "pt": "Compara a despesa em juros das administrações públicas do conjunto da União Europeia com o seu produto interno bruto, em percentagem",
+              "en": "It compares general government interest expenditure across the European Union with its gross domestic product, as a percentage",
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "excerpt",
+                  "origem": "jd1-eurostat-contas",
+                  "campo": "excerto",
                   "literal": "Interest, expenditure"
                 },
                 {
-                  "linha": "propria",
-                  "campo": "excerpt",
+                  "origem": "jd1-eurostat-contas",
+                  "campo": "excerto",
                   "literal": "General government"
-                }
-              ]
-            },
-            {
-              "pt": " no conjunto da União Europeia",
-              "en": " across the European Union",
-              "classe": "diz",
-              "apoios": [
+                },
                 {
-                  "linha": "propria",
-                  "campo": "excerpt",
+                  "origem": "jd1-eurostat-contas",
+                  "campo": "excerto",
                   "literal": "European Union - 27 countries (from 2020)"
+                },
+                {
+                  "origem": "jd1-eurostat-contas",
+                  "campo": "excerto",
+                  "literal": "Percentage of gross domestic product (GDP)"
                 }
               ]
             },
             {
-              "pt": ", em percentagem do PIB",
-              "en": ", as a percentage of GDP",
+              "pt": ". O produto interno bruto mede o valor dos bens e serviços finais produzidos na economia",
+              "en": ". Gross domestic product measures the value of final goods and services produced in the economy",
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "excerpt",
-                  "literal": "Percentage of gross domestic product (GDP)"
+                  "origem": "jd1-pib-definicao",
+                  "campo": "excerto",
+                  "literal": "It measures the total value of goods and services produced by that economy"
+                },
+                {
+                  "origem": "jd1-pib-definicao",
+                  "campo": "excerto",
+                  "literal": "GDP covers all goods and services produced for final use"
+                }
+              ]
+            },
+            {
+              "pt": ". São contas nacionais",
+              "en": ". These are national accounts",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-eurostat-contas",
+                  "campo": "excerto",
+                  "literal": "National accounts indicator (ESA 2010)"
+                }
+              ]
+            },
+            {
+              "pt": ": a despesa pertence ao período em que o encargo é assumido, mesmo que seja pago noutro período",
+              "en": ": expenditure belongs to the period in which the cost is incurred, even if it is paid in another period",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-ine-contas",
+                  "campo": "excerto",
+                  "literal": "encargos assumidos num determinado período contabilístico, independentemente do seu pagamento ocorrer noutro período"
                 }
               ]
             },
@@ -13053,6 +13195,23 @@
               "pt": ".",
               "en": ".",
               "classe": "liga"
+            },
+            {
+              "pt": " A comparação de dois mil e vinte e cinco usa a notificação portuguesa de setembro e as contas da União atualizadas pelo Eurostat em julho; as versões das contas são diferentes.",
+              "en": " The comparison for two thousand and twenty-five uses the Portuguese September notification and the Union accounts updated by Eurostat in July; these are different versions of the accounts.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-ine-ambito",
+                  "campo": "excerto",
+                  "literal": "Setembro de 2026"
+                },
+                {
+                  "origem": "jd1-eurostat-versao",
+                  "campo": "excerto",
+                  "literal": "\"updated\":\"2026-07-21T11:00:00+0200\""
+                }
+              ]
             }
           ]
         }
@@ -13068,16 +13227,17 @@
       },
       "origens": [
         "jd1-eo-conta",
-        "jd1-eo-caixa"
+        "jd1-eo-caixa",
+        "jd1-eo-glossario"
       ],
       "folhas": [
         {
-          "pt": "É a despesa consolidada das administrações públicas com juros e outros encargos, acumulada de janeiro a agosto, na ótica dos pagamentos.",
-          "en": "It is consolidated general government expenditure on interest and other charges, accumulated from January to August, on a payments basis.",
+          "pt": "É o dinheiro pago pelas administrações públicas em juros e outros encargos, de janeiro a agosto. O total é consolidado: descontam-se os pagamentos entre as entidades públicas abrangidas. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+          "en": "It is money paid by general government in interest and other charges from January to August. The total is consolidated: payments between the public bodies covered are removed. Public budget accounts record receipts and payments during the period.",
           "partes": [
             {
-              "pt": "É a despesa consolidada das administrações públicas com juros e outros encargos",
-              "en": "It is consolidated general government expenditure on interest and other charges",
+              "pt": "É o dinheiro pago pelas administrações públicas em juros e outros encargos, de janeiro a agosto",
+              "en": "It is money paid by general government in interest and other charges from January to August",
               "classe": "diz",
               "apoios": [
                 {
@@ -13093,27 +13253,8 @@
                 {
                   "origem": "jd1-eo-conta",
                   "campo": "excerto",
-                  "literal": "Despesa corrente"
-                }
-              ]
-            },
-            {
-              "pt": ", acumulada de janeiro a agosto",
-              "en": ", accumulated from January to August",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "origem": "jd1-eo-conta",
-                  "campo": "excerto",
                   "literal": "Período: janeiro a agosto"
-                }
-              ]
-            },
-            {
-              "pt": ", na ótica dos pagamentos",
-              "en": ", on a payments basis",
-              "classe": "diz",
-              "apoios": [
+                },
                 {
                   "origem": "jd1-eo-caixa",
                   "campo": "excerto",
@@ -13122,9 +13263,43 @@
               ]
             },
             {
+              "pt": ". O total é consolidado: descontam-se os pagamentos entre as entidades públicas abrangidas",
+              "en": ". The total is consolidated: payments between the public bodies covered are removed",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-eo-glossario",
+                  "campo": "excerto",
+                  "literal": "Consolidação/Consolidado"
+                },
+                {
+                  "origem": "jd1-eo-glossario",
+                  "campo": "excerto",
+                  "literal": "abatidos de fluxos monetários intermédios efetuados entre as entidades do universo em análise."
+                }
+              ]
+            },
+            {
               "pt": ".",
               "en": ".",
               "classe": "liga"
+            },
+            {
+              "pt": " A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+              "en": " Public budget accounts record receipts and payments during the period.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-eo-glossario",
+                  "campo": "excerto",
+                  "literal": "Contabilidade Pública (ótica da) ou Contabilidade Orçamental"
+                },
+                {
+                  "origem": "jd1-eo-glossario",
+                  "campo": "excerto",
+                  "literal": "recebimentos e pagamentos ocorridos em dado período."
+                }
+              ]
             }
           ]
         }
@@ -13139,34 +13314,35 @@
         "en": "Cost of outstanding State direct debt"
       },
       "origens": [
-        "jd1-igcp-custo"
+        "jd1-igcp-custo",
+        "jd1-ine-contas"
       ],
       "folhas": [
         {
-          "pt": "É a relação entre os juros do subsetor Estado nas contas nacionais e o saldo médio da dívida direta do Estado no final de dois anos consecutivos.",
-          "en": "It is the ratio of State subsector interest costs in national accounts to average State direct debt outstanding at the end of two consecutive years.",
+          "pt": "Mede o custo dos juros da dívida que o Estado tem: compara os juros atribuídos ao ano pelas contas nacionais com o saldo médio da dívida direta no fim desse ano e do anterior. Os juros são registados quando o encargo é assumido, mesmo que sejam pagos noutro ano.",
+          "en": "It measures the interest cost of the State’s outstanding debt: interest attributed to the year in national accounts is compared with average direct debt at the end of that year and the previous one. Interest is recorded when the cost is incurred, even if it is paid in another year.",
           "partes": [
             {
-              "pt": "É a relação entre os juros do subsetor Estado nas contas nacionais",
-              "en": "It is the ratio of State subsector interest costs in national accounts",
+              "pt": "Mede o custo dos juros da dívida que o Estado tem: compara os juros atribuídos ao ano pelas contas nacionais com o saldo médio da dívida direta no fim desse ano e do anterior",
+              "en": "It measures the interest cost of the State’s outstanding debt: interest attributed to the year in national accounts is compared with average direct debt at the end of that year and the previous one",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "jd1-igcp-custo",
                   "campo": "excerto",
-                  "literal": "rácio entre juros do subsetor Estado na ótica de Contas Nacionais"
+                  "literal": "rácio entre juros do subsetor Estado na ótica de Contas Nacionais e saldo médio da dívida direta do Estado no final dos anos t e t-1."
                 }
               ]
             },
             {
-              "pt": " e o saldo médio da dívida direta do Estado no final de dois anos consecutivos",
-              "en": " to average State direct debt outstanding at the end of two consecutive years",
+              "pt": ". Os juros são registados quando o encargo é assumido, mesmo que sejam pagos noutro ano",
+              "en": ". Interest is recorded when the cost is incurred, even if it is paid in another year",
               "classe": "diz",
               "apoios": [
                 {
-                  "origem": "jd1-igcp-custo",
+                  "origem": "jd1-ine-contas",
                   "campo": "excerto",
-                  "literal": "saldo médio da dívida direta do Estado no final dos anos t e t-1"
+                  "literal": "encargos assumidos num determinado período contabilístico, independentemente do seu pagamento ocorrer noutro período"
                 }
               ]
             },
@@ -13188,28 +13364,55 @@
         "en": "Cost of State debt issued, through August"
       },
       "origens": [
-        "jd1-igcp-custo"
+        "jd1-igcp-custo",
+        "jd1-igcp-divida",
+        "jd1-igcp-siglas"
       ],
       "folhas": [
         {
-          "pt": "É o custo médio da dívida emitida no ano, nos instrumentos BT, OT, OTRV e MTN, ponderado pelo montante e pelo prazo.",
-          "en": "It is the average cost of debt issued during the year through BT, OT, OTRV and MTN instruments, weighted by amount and maturity.",
+          "pt": "É o custo médio de o Estado pedir dinheiro emprestado no ano, através de Bilhetes do Tesouro, Obrigações do Tesouro, Obrigações do Tesouro de Rendimento Variável e Medium Term Notes. As emissões pesam nesta média de acordo com os montantes e os prazos.",
+          "en": "It is the average cost of the State’s borrowing during the year through Treasury bills, Treasury bonds, floating-rate Treasury bonds and Medium Term Notes. Issues are weighted in this average by their amounts and maturities.",
           "partes": [
             {
-              "pt": "É o custo médio da dívida emitida no ano, nos instrumentos BT, OT, OTRV e MTN",
-              "en": "It is the average cost of debt issued during the year through BT, OT, OTRV and MTN instruments",
+              "pt": "É o custo médio de o Estado pedir dinheiro emprestado no ano, através de Bilhetes do Tesouro, Obrigações do Tesouro, Obrigações do Tesouro de Rendimento Variável e Medium Term Notes",
+              "en": "It is the average cost of the State’s borrowing during the year through Treasury bills, Treasury bonds, floating-rate Treasury bonds and Medium Term Notes",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "jd1-igcp-custo",
                   "campo": "excerto",
                   "literal": "custo médio dos BT, OT, OTRV e MTN emitidos no ano correspondente"
+                },
+                {
+                  "origem": "jd1-igcp-divida",
+                  "campo": "excerto",
+                  "literal": "Dívida Direta do Estado"
+                },
+                {
+                  "origem": "jd1-igcp-siglas",
+                  "campo": "excerto",
+                  "literal": "Bilhetes do Tesouro"
+                },
+                {
+                  "origem": "jd1-igcp-siglas",
+                  "campo": "excerto",
+                  "literal": "Obrigações do Tesouro"
+                },
+                {
+                  "origem": "jd1-igcp-siglas",
+                  "campo": "excerto",
+                  "literal": "Obrigações do Tesouro de Rendimento Variável"
+                },
+                {
+                  "origem": "jd1-igcp-siglas",
+                  "campo": "excerto",
+                  "literal": "Medium Term Notes"
                 }
               ]
             },
             {
-              "pt": ", ponderado pelo montante e pelo prazo",
-              "en": ", weighted by amount and maturity",
+              "pt": ". As emissões pesam nesta média de acordo com os montantes e os prazos",
+              "en": ". Issues are weighted in this average by their amounts and maturities",
               "classe": "diz",
               "apoios": [
                 {
@@ -13237,16 +13440,16 @@
         "en": "State direct debt at the end of August"
       },
       "origens": [
-        "jd1-igcp-divida"
+        "jd1-igcp-perimetro"
       ],
       "folhas": [
         {
-          "pt": "É o total da dívida direta do Estado no fim de agosto.",
-          "en": "It is total State direct debt at the end of August.",
+          "pt": "É o que o Estado ainda deve da dívida que emitiu no fim de agosto. A dívida pública de Maastricht abrange todas as administrações públicas e retira a dívida que umas entidades públicas detêm de outras.",
+          "en": "It is the amount the State still owes on debt it issued at the end of August. Maastricht public debt covers all general government bodies and removes debt held by other government bodies.",
           "partes": [
             {
-              "pt": "É o total da dívida direta do Estado",
-              "en": "It is total State direct debt",
+              "pt": "É o que o Estado ainda deve da dívida que emitiu",
+              "en": "It is the amount the State still owes on debt it issued",
               "classe": "diz",
               "apoios": [
                 {
@@ -13255,9 +13458,9 @@
                   "literal": "Dívida total"
                 },
                 {
-                  "origem": "jd1-igcp-divida",
+                  "origem": "jd1-igcp-perimetro",
                   "campo": "excerto",
-                  "literal": "Dívida Direta do Estado"
+                  "literal": "a dívida direta do Estado inclui apenas a dívida emitida pelo Estado"
                 }
               ]
             },
@@ -13270,6 +13473,23 @@
                   "linha": "propria",
                   "campo": "document.locator",
                   "literal": "saldo em 31/ago/26"
+                }
+              ]
+            },
+            {
+              "pt": ". A dívida pública de Maastricht abrange todas as administrações públicas e retira a dívida que umas entidades públicas detêm de outras",
+              "en": ". Maastricht public debt covers all general government bodies and removes debt held by other government bodies",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-igcp-perimetro",
+                  "campo": "excerto",
+                  "literal": "na dívida de Maastricht se incluem todas as entidades classificadas, para fins estatísticos, no setor institucional das Administrações Públicas"
+                },
+                {
+                  "origem": "jd1-igcp-perimetro",
+                  "campo": "excerto",
+                  "literal": "a dívida de Maastricht é consolidada"
                 }
               ]
             },
@@ -13291,16 +13511,20 @@
         "en": "Gross State financing needs"
       },
       "origens": [
-        "jd1-igcp-financiamento"
+        "jd1-igcp-financiamento",
+        "jd1-eo-ativos",
+        "jd1-eo-saldo",
+        "jd1-divida-fundada",
+        "jd1-eo-glossario"
       ],
       "folhas": [
         {
-          "pt": "É o financiamento de que o Estado precisou, somando as necessidades líquidas às amortizações e anulações de dívida fundada, em contabilidade orçamental pública.",
-          "en": "It is the financing the State needed, adding net financing needs to redemptions and cancellations of funded debt, on a public budget accounting basis.",
+          "pt": "É o financiamento de que o Estado precisou para cobrir o défice do orçamento e adquirir ativos financeiros, descontando os recebimentos dessas operações e excluindo privatizações, e para reembolsar ou extinguir dívida. O défice é a despesa que excede a receita. Os ativos financeiros incluem títulos, participações e empréstimos. O quadro chama amortizações e anulações à parcela dos reembolsos e extinções, que aparece no excerto da fonte junto do total. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+          "en": "It is the financing the State needed to cover the budget deficit and acquire financial assets, net of receipts from those operations and excluding privatisations, and to repay or extinguish debt. The deficit is expenditure in excess of revenue. Financial assets include securities, equity interests and loans. The table calls the repayment and cancellation component redemptions and cancellations; it appears in the source excerpt alongside the total. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
           "partes": [
             {
-              "pt": "É o financiamento de que o Estado precisou, somando as necessidades líquidas às amortizações e anulações de dívida fundada",
-              "en": "It is the financing the State needed, adding net financing needs to redemptions and cancellations of funded debt",
+              "pt": "É o financiamento de que o Estado precisou para cobrir o défice do orçamento e adquirir ativos financeiros, descontando os recebimentos dessas operações e excluindo privatizações, e para reembolsar ou extinguir dívida",
+              "en": "It is the financing the State needed to cover the budget deficit and acquire financial assets, net of receipts from those operations and excluding privatisations, and to repay or extinguish debt",
               "classe": "diz",
               "apoios": [
                 {
@@ -13311,7 +13535,17 @@
                 {
                   "origem": "jd1-igcp-financiamento",
                   "campo": "excerto",
-                  "literal": "1. NECESSIDADES LÍQUIDAS DE FINANCIAMENTO"
+                  "literal": "Défice Orçamental"
+                },
+                {
+                  "origem": "jd1-igcp-financiamento",
+                  "campo": "excerto",
+                  "literal": "Aquisição líquida de activos financeiros (excepto privatizações)"
+                },
+                {
+                  "origem": "jd1-eo-ativos",
+                  "campo": "excerto",
+                  "literal": "Diferença entre os fluxos de operações de ativos financeiros de despesa e receita."
                 },
                 {
                   "origem": "jd1-igcp-financiamento",
@@ -13321,14 +13555,48 @@
               ]
             },
             {
-              "pt": ", em contabilidade orçamental pública",
-              "en": ", on a public budget accounting basis",
+              "pt": ". O défice é a despesa que excede a receita",
+              "en": ". The deficit is expenditure in excess of revenue",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-eo-saldo",
+                  "campo": "excerto",
+                  "literal": "Diferença entre a receita efetiva e a despesa efetiva."
+                },
+                {
+                  "origem": "jd1-eo-saldo",
+                  "campo": "excerto",
+                  "literal": "necessidade de recurso ao endividamento (défice)"
+                }
+              ]
+            },
+            {
+              "pt": ". Os ativos financeiros incluem títulos, participações e empréstimos",
+              "en": ". Financial assets include securities, equity interests and loans",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-eo-ativos",
+                  "campo": "excerto",
+                  "literal": "incluindo obrigações, ações, quotas e outras formas de participação"
+                },
+                {
+                  "origem": "jd1-eo-ativos",
+                  "campo": "excerto",
+                  "literal": "concessão de empréstimos"
+                }
+              ]
+            },
+            {
+              "pt": ". O quadro chama amortizações e anulações à parcela dos reembolsos e extinções, que aparece no excerto da fonte junto do total",
+              "en": ". The table calls the repayment and cancellation component redemptions and cancellations; it appears in the source excerpt alongside the total",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "jd1-igcp-financiamento",
                   "campo": "excerto",
-                  "literal": "contabilidade orçamental pública"
+                  "literal": "2. AMORTIZAÇÕES E ANULAÇÕES (Dívida Fundada)"
                 }
               ]
             },
@@ -13336,6 +13604,35 @@
               "pt": ".",
               "en": ".",
               "classe": "liga"
+            },
+            {
+              "pt": " Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação.",
+              "en": " Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-divida-fundada",
+                  "campo": "excerto",
+                  "literal": "dívida pública contraída para ser totalmente amortizada num exercício orçamental subsequente ao exercício em que foi gerada."
+                }
+              ]
+            },
+            {
+              "pt": " A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+              "en": " Public budget accounts record receipts and payments during the period.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-eo-glossario",
+                  "campo": "excerto",
+                  "literal": "Contabilidade Pública (ótica da) ou Contabilidade Orçamental"
+                },
+                {
+                  "origem": "jd1-eo-glossario",
+                  "campo": "excerto",
+                  "literal": "recebimentos e pagamentos ocorridos em dado período."
+                }
+              ]
             }
           ]
         }
@@ -13350,16 +13647,18 @@
         "en": "State funded debt issued during the calendar year"
       },
       "origens": [
-        "jd1-igcp-financiamento"
+        "jd1-igcp-financiamento",
+        "jd1-divida-fundada",
+        "jd1-eo-glossario"
       ],
       "folhas": [
         {
-          "pt": "É o montante de dívida fundada que o Estado emitiu no ano civil, em contabilidade orçamental pública.",
-          "en": "It is the amount of funded debt the State issued during the calendar year, on a public budget accounting basis.",
+          "pt": "É o dinheiro que o Estado pediu emprestado no ano civil através de dívida fundada. Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação. A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+          "en": "It is the money the State borrowed during the calendar year through funded debt. Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred. Public budget accounts record receipts and payments during the period.",
           "partes": [
             {
-              "pt": "É o montante de dívida fundada que o Estado emitiu no ano civil",
-              "en": "It is the amount of funded debt the State issued during the calendar year",
+              "pt": "É o dinheiro que o Estado pediu emprestado no ano civil através de dívida fundada",
+              "en": "It is the money the State borrowed during the calendar year through funded debt",
               "classe": "diz",
               "apoios": [
                 {
@@ -13375,21 +13674,38 @@
               ]
             },
             {
-              "pt": ", em contabilidade orçamental pública",
-              "en": ", on a public budget accounting basis",
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
+            },
+            {
+              "pt": " Dívida fundada é a que se contrai para acabar de ser paga num ano orçamental posterior ao da contratação.",
+              "en": " Funded debt is debt contracted to be fully repaid in a budget year after the year in which it was incurred.",
               "classe": "diz",
               "apoios": [
                 {
-                  "origem": "jd1-igcp-financiamento",
+                  "origem": "jd1-divida-fundada",
                   "campo": "excerto",
-                  "literal": "contabilidade orçamental pública"
+                  "literal": "dívida pública contraída para ser totalmente amortizada num exercício orçamental subsequente ao exercício em que foi gerada."
                 }
               ]
             },
             {
-              "pt": ".",
-              "en": ".",
-              "classe": "liga"
+              "pt": " A contabilidade orçamental pública conta os recebimentos e pagamentos ocorridos no período.",
+              "en": " Public budget accounts record receipts and payments during the period.",
+              "classe": "diz",
+              "apoios": [
+                {
+                  "origem": "jd1-eo-glossario",
+                  "campo": "excerto",
+                  "literal": "Contabilidade Pública (ótica da) ou Contabilidade Orçamental"
+                },
+                {
+                  "origem": "jd1-eo-glossario",
+                  "campo": "excerto",
+                  "literal": "recebimentos e pagamentos ocorridos em dado período."
+                }
+              ]
             }
           ]
         }
@@ -14035,22 +14351,29 @@
     {
       "serie": "serie-obrigacoes-do-tesouro-10-anos-rendibilidade",
       "origens": [
-        "jd1-eurostat-obrigacoes"
+        "jd1-eurostat-obrigacoes",
+        "jd1-eurostat-unidade",
+        "jd1-mercado-secundario"
       ],
       "folhas": [
         {
-          "pt": "É a taxa de rendibilidade das obrigações do Estado português negociadas no mercado secundário, antes de impostos, com prazo restante próximo de dez anos, apresentada mês a mês.",
-          "en": "It is the yield on central government bonds in Portugal traded on the secondary market, before tax, with a remaining maturity of around ten years, reported monthly.",
+          "pt": "É a taxa de juro anual a que o mercado empresta ao Estado português, observada na compra e venda de obrigações já emitidas, antes de impostos, a que faltam cerca de dez anos até ao reembolso, apresentada mês a mês.",
+          "en": "It is the annual interest rate at which the market lends to central government in Portugal, observed in trading of bonds already issued, before tax, with around ten years remaining until repayment, reported monthly.",
           "partes": [
             {
               "classe": "diz",
-              "pt": "É a taxa de rendibilidade das obrigações do Estado",
-              "en": "It is the yield on central government bonds",
+              "pt": "É a taxa de juro anual a que o mercado empresta ao Estado",
+              "en": "It is the annual interest rate at which the market lends to central government",
               "apoios": [
                 {
                   "origem": "jd1-eurostat-obrigacoes",
                   "campo": "excerto",
                   "literal": "central government bond yields"
+                },
+                {
+                  "origem": "jd1-eurostat-unidade",
+                  "campo": "excerto",
+                  "literal": "All the yields are expressed in percentages per annum."
                 }
               ]
             },
@@ -14068,20 +14391,25 @@
             },
             {
               "classe": "diz",
-              "pt": " negociadas no mercado secundário, antes de impostos",
-              "en": " traded on the secondary market, before tax",
+              "pt": ", observada na compra e venda de obrigações já emitidas, antes de impostos",
+              "en": ", observed in trading of bonds already issued, before tax",
               "apoios": [
                 {
                   "origem": "jd1-eurostat-obrigacoes",
                   "campo": "excerto",
                   "literal": "on the secondary market, gross of tax"
+                },
+                {
+                  "origem": "jd1-mercado-secundario",
+                  "campo": "excerto",
+                  "literal": "previamente colocados em mercado primário"
                 }
               ]
             },
             {
               "classe": "diz",
-              "pt": ", com prazo restante próximo de dez anos",
-              "en": ", with a remaining maturity of around ten years",
+              "pt": ", a que faltam cerca de dez anos até ao reembolso",
+              "en": ", with around ten years remaining until repayment",
               "apoios": [
                 {
                   "origem": "jd1-eurostat-obrigacoes",

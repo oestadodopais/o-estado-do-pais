@@ -83,10 +83,10 @@ export const FRASES_DAS_SERIES = {
   "serie-obrigacoes-do-tesouro-10-anos-rendibilidade": {
     "frase": {
       "pt": [
-        "É a taxa de rendibilidade das obrigações do Estado português negociadas no mercado secundário, antes de impostos, com prazo restante próximo de dez anos, apresentada mês a mês."
+        "É a taxa de juro anual a que o mercado empresta ao Estado português, observada na compra e venda de obrigações já emitidas, antes de impostos, a que faltam cerca de dez anos até ao reembolso, apresentada mês a mês."
       ],
       "en": [
-        "It is the yield on central government bonds in Portugal traded on the secondary market, before tax, with a remaining maturity of around ten years, reported monthly."
+        "It is the annual interest rate at which the market lends to central government in Portugal, observed in trading of bonds already issued, before tax, with around ten years remaining until repayment, reported monthly."
       ]
     }
   },
