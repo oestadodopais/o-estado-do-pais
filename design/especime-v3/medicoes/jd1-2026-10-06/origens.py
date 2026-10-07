@@ -1,6 +1,6 @@
 """Recorta e confere as origens JD1 nos corpos recebidos pelo cliente da casa.
 
-RESEARCHHUB_DIR=<motor> python3 design/especime-v3/medicoes/jd1-2026-10-06/origens.py [--write]
+RESEARCHHUB_DIR=<motor> python3 design/especime-v3/medicoes/jd1-2026-10-06/origens.py [--write | --write-site]
 """
 import hashlib
 import html
@@ -93,6 +93,8 @@ def nova(nome, publicador, documento, lingua, inicio, fim):
 
 
 origens = {
+    "jd1-igcp-valoracao": origem("igcp-boletim-setembro-2026.pdf", "IGCP", "Boletim Mensal, setembro de 2026, nota 1, folha 5", page=5, clip=True,
+        anchors=("Os saldos em dívida", "ao valor de encaixe.")),
     "jd1-eo-administracoes": origem("eo-execucao-agosto-2026.pdf", "Entidade Orçamental", "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 82", page=82, clip=300,
         anchors=("Administrações Públicas — Universo", "e a Segurança Social.")),
     "jd1-eo-ativos": origem("eo-execucao-agosto-2026.pdf", "Entidade Orçamental", "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 82", page=82, clip=300,
@@ -134,7 +136,7 @@ origens = {
 }
 body = "/** Gerado por design/especime-v3/medicoes/jd1-2026-10-06/origens.py. */\nexport const ORIGENS_JD1 = " + json.dumps(origens, ensure_ascii=False, indent=2) + ";\n"
 target = SITE / "src/data/origens-jd1.mjs"
-if "--write" in sys.argv:
+if {"--write", "--write-site"} & set(sys.argv):
     target.write_text(body)
 else:
     assert target.read_text() == body, "JD1: as origens divergem dos corpos selados"

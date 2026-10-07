@@ -132,8 +132,8 @@ export const FAMILIAS_DAS_LINHAS = {
   },
   "custo-da-divida-emitida": {
     "nome": {
-      "pt": "Custo da dívida emitida pelo Estado, até agosto",
-      "en": "Cost of State debt issued, through August"
+      "pt": "Custo médio ponderado da dívida emitida pelo Estado, até agosto",
+      "en": "Weighted average cost of State debt issued, through August"
     },
     "frase": {
       "pt": [
@@ -146,8 +146,8 @@ export const FAMILIAS_DAS_LINHAS = {
   },
   "custo-do-stock-da-divida-direta": {
     "nome": {
-      "pt": "Custo da dívida direta do Estado em circulação",
-      "en": "Cost of outstanding State direct debt"
+      "pt": "Custo da dívida direta do Estado em circulação, juros em contas nacionais",
+      "en": "Cost of outstanding State direct debt, interest in national accounts"
     },
     "frase": {
       "pt": [
@@ -653,15 +653,15 @@ export const FAMILIAS_DAS_LINHAS = {
   },
   "divida-direta-do-estado": {
     "nome": {
-      "pt": "Dívida direta do Estado no fim de agosto",
-      "en": "State direct debt at the end of August"
+      "pt": "Dívida direta do Estado no fim de agosto, valor nominal ou descontado",
+      "en": "State direct debt at the end of August, nominal or discounted value"
     },
     "frase": {
       "pt": [
-        "É o que o Estado ainda deve da dívida que emitiu no fim de agosto. A dívida pública de Maastricht abrange todas as administrações públicas e retira a dívida que umas entidades públicas detêm de outras."
+        "É o que o Estado ainda deve da dívida que emitiu no fim de agosto. A dívida pública de Maastricht abrange todas as administrações públicas e retira a dívida que umas entidades públicas detêm de outras. O saldo usa o valor nominal da dívida, exceto nos instrumentos emitidos a desconto, como os Bilhetes do Tesouro, que entram pelo valor descontado. A dívida em moeda estrangeira é convertida ao câmbio do fim do período."
       ],
       "en": [
-        "It is the amount the State still owes on debt it issued at the end of August. Maastricht public debt covers all general government bodies and removes debt held by other government bodies."
+        "It is the amount the State still owes on debt it issued at the end of August. Maastricht public debt covers all general government bodies and removes debt held by other government bodies. The balance uses the debt’s nominal value, except for instruments issued at a discount, such as Treasury bills, which are included at discounted value. Debt in foreign currency is converted at the end-of-period exchange rate."
       ]
     }
   },
@@ -722,8 +722,8 @@ export const FAMILIAS_DAS_LINHAS = {
   },
   "emissoes-de-divida-fundada": {
     "nome": {
-      "pt": "Emissões de dívida fundada do Estado no ano civil",
-      "en": "State funded debt issued during the calendar year"
+      "pt": "Emissões de dívida fundada do Estado no ano civil, contabilidade orçamental pública",
+      "en": "State funded debt issued during the calendar year, public budget accounts"
     },
     "frase": {
       "pt": [
@@ -1962,8 +1962,8 @@ export const FAMILIAS_DAS_LINHAS = {
   },
   "juros-das-administracoes-publicas": {
     "nome": {
-      "pt": "Juros das administrações públicas",
-      "en": "General government interest expenditure"
+      "pt": "Juros das administrações públicas, contas nacionais",
+      "en": "General government interest expenditure, national accounts"
     },
     "frase": {
       "pt": [
@@ -1976,8 +1976,8 @@ export const FAMILIAS_DAS_LINHAS = {
   },
   "juros-das-administracoes-publicas-pib": {
     "nome": {
-      "pt": "Juros das administrações públicas em percentagem do PIB",
-      "en": "General government interest expenditure as a share of GDP"
+      "pt": "Juros das administrações públicas em percentagem do PIB, contas nacionais",
+      "en": "General government interest expenditure as a share of GDP, national accounts"
     },
     "frase": {
       "pt": [
@@ -1990,8 +1990,8 @@ export const FAMILIAS_DAS_LINHAS = {
   },
   "juros-das-administracoes-publicas-ue": {
     "nome": {
-      "pt": "Juros das administrações públicas na União Europeia, em percentagem do PIB",
-      "en": "General government interest expenditure in the European Union, as a share of GDP"
+      "pt": "Juros das administrações públicas na União Europeia, em percentagem do PIB, contas nacionais",
+      "en": "General government interest expenditure in the European Union, as a share of GDP, national accounts"
     },
     "frase": {
       "pt": [
@@ -2004,8 +2004,8 @@ export const FAMILIAS_DAS_LINHAS = {
   },
   "juros-e-outros-encargos-execucao": {
     "nome": {
-      "pt": "Juros e outros encargos pagos pelas administrações públicas, janeiro a agosto",
-      "en": "Interest and other charges paid by general government, January to August"
+      "pt": "Juros e outros encargos das administrações públicas, caixa, janeiro a agosto",
+      "en": "General government interest and other charges, cash basis, January to August"
     },
     "frase": {
       "pt": [
@@ -2099,8 +2099,8 @@ export const FAMILIAS_DAS_LINHAS = {
   },
   "necessidades-brutas-de-financiamento": {
     "nome": {
-      "pt": "Necessidades brutas de financiamento do Estado",
-      "en": "Gross State financing needs"
+      "pt": "Necessidades brutas de financiamento do Estado, contabilidade orçamental pública",
+      "en": "Gross State financing needs, public budget accounts"
     },
     "frase": {
       "pt": [
@@ -3096,8 +3096,8 @@ export const FAMILIAS_DAS_LINHAS = {
   },
   "pib-nominal-notificacao-setembro": {
     "nome": {
-      "pt": "PIB a preços de mercado, notificação de setembro",
-      "en": "GDP at market prices, September notification"
+      "pt": "PIB de Portugal a preços de mercado, contas nacionais",
+      "en": "Portugal’s GDP at market prices, national accounts"
     },
     "frase": {
       "pt": [

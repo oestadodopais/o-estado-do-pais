@@ -1,5 +1,12 @@
 [
   {
+    "origem": "jd1-igcp-valoracao",
+    "sha256": "e327feb73d210f958b1a40b3c86d6c681b686629416f070946902e00310392cb",
+    "literal": true,
+    "pedido": true,
+    "alojamento": true
+  },
+  {
     "origem": "jd1-eo-administracoes",
     "sha256": "8c4fb11b5f2fc55be8ee2424a1d7bfd8d428ca4adf29c0899d033ea79c5586f5",
     "literal": true,
