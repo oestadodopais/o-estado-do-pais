@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { REGRAS } from '../src/data/metodo.mjs';
 import { lugarDaIncorporacao } from '../src/lib/lugar-da-incorporacao.mjs';
 /* Leitura do ER1 pelos portões. Não importa o compositor do código nem o do
    JSON. Os nomes e as traduções são declarações comuns; os campos, as datas,
@@ -69,10 +70,14 @@ export function codigoEsperado(c, lang) {
    frases vivas obrigatórias em páginas onde o estado não ocorre. */
 export function conferirInventarioIncorporacao(texto) {
   const erros = [];
-  for (const [chave, valor] of Object.entries(t('pt').incorporar)) {
-    const linha = '| `incorporar.' + chave + '` | ' + valor + ' | ' + t('en').incorporar[chave] + ' |';
+  const cadeias = Object.entries(t('pt').incorporar).map(([chave, pt]) =>
+    ['incorporar.'+chave, pt, t('en').incorporar[chave]]);
+  const exemplo = REGRAS.find(r => r.id === 'livro-razao').ligacoes.find(l => l.rota === 'linha');
+  cadeias.push(['metodo.exemplo', exemplo.rotulo.pt, exemplo.rotulo.en]);
+  for (const [chave, pt, en] of cadeias) {
+    const linha = '| `' + chave + '` | ' + pt + ' | ' + en + ' |';
     if (!texto.split('\n').some(l => l.startsWith(linha)))
-      erros.push('ER1 inventário: falta a cadeia aprovada incorporar.' + chave + ' nas duas edições.');
+      erros.push('ER1 inventário: falta a cadeia aprovada ' + chave + ' nas duas edições.');
   }
   return erros;
 }

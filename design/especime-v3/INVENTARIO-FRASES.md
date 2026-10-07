@@ -4168,8 +4168,6 @@ são conferidos nos atributos pelo portão e exercidos no navegador.
 | navegacao | Copy | er1 | viva | O comando na edição inglesa. |
 
 
-| navegacao | Ver o recibo de exemplo | er1b | viva | Porta de exemplo no Método, pedida no ponto 6 do brief ER1. |
-| navegacao | See the example receipt | er1b | viva | A mesma porta na edição inglesa. |
 
 ### ER1-b: cadeias e composições aprovadas
 
@@ -4177,9 +4175,12 @@ Leitura do lugar de direção: mandato ER1-b, achados 4 e 10, lançado a 07.10.2
 Os estados do botão e os prefixos compostos são condicionais; a célula ER1
 confere cada chave nas duas edições antes de retirar qualquer código da prosa.
 A data ausente e o aviso sem data foram retirados; não se inventa uma data.
+A porta de exemplo do Método pertence ao texto governado, que a voz retira
+apenas depois de conferido. A célula ER1 confere a porta e esta entrada.
 
 | chave | português | inglês | classe |
 | --- | --- | --- | --- |
+| `metodo.exemplo` | Ver o recibo de exemplo | See the example receipt | navegação, texto governado |
 | `incorporar.indisponivel` | Este número ainda não se pode incorporar: um campo da sua proveniência está por confirmar na fonte. | This number cannot be embedded yet: one field of its provenance is still to be confirmed at the source. | conteúdo |
 | `incorporar.titulo` | Incorporar este número | Embed this number | navegação |
 | `incorporar.copiar` | Copiar | Copy | navegação |
