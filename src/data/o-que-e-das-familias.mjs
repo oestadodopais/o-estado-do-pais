@@ -1415,10 +1415,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "execucao-2026-07-receita-efetiva-administracao-central": {
     "frase": {
       "pt": [
-        "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros."
+        "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência."
       ],
       "en": [
-        "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities."
+        "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities or carry-over balances."
       ]
     }
   },
@@ -1725,20 +1725,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "execucao-2026-08-receita-efetiva-administracao-central": {
     "frase": {
       "pt": [
-        "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros."
+        "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência."
       ],
       "en": [
-        "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities."
+        "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities or carry-over balances."
       ]
     }
   },
   "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social": {
     "frase": {
       "pt": [
-        "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros."
+        "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência."
       ],
       "en": [
-        "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities."
+        "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances."
       ]
     }
   },
@@ -2878,20 +2878,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "oe-2026-receita-efetiva-administracao-central": {
     "frase": {
       "pt": [
-        "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros."
+        "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência."
       ],
       "en": [
-        "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities."
+        "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities or carry-over balances."
       ]
     }
   },
   "oe-2026-receita-efetiva-administracao-central-seguranca-social": {
     "frase": {
       "pt": [
-        "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros."
+        "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência."
       ],
       "en": [
-        "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities."
+        "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances."
       ]
     }
   },
