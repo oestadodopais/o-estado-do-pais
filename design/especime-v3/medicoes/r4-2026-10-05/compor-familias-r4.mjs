@@ -26,7 +26,7 @@ import { MEDIDAS_DO_CONCELHO } from '../../../../src/data/concelhos.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../../../../src/data/municipios.mjs';
 import { LEITURAS_DAS_MEDIDAS } from '../../../../src/data/leituras-das-medidas.mjs';
 import { corteDaLeitura } from '../../../../src/lib/leitura-da-medida.mjs';
-import { allClaims } from '../../../../src/lib/ledger.mjs';
+import { loadClaims } from '../../../../src/lib/ledger.mjs';
 import { nomeDaMedida, nomeDaLinhaDerivada } from '../../../../src/lib/nomes.mjs';
 import { folhasDaLeitura } from '../../../../tests/cartao/leituras.mjs';
 
@@ -40,7 +40,7 @@ const erros = [];
 const falha = (m) => erros.push(m);
 
 /* ------------------------------------------------------------------ as linhas e as famílias */
-const linhas = new Map(allClaims().map((c) => [c.id, c]));
+const linhas = loadClaims({ includeWithdrawn: true });
 const DO_CONCELHO = new Map();
 for (const m of MUNICIPIOS_COM_PAGINA) {
   for (const p of m.relance ?? []) if (p.claim) DO_CONCELHO.set(p.claim, p.chave);

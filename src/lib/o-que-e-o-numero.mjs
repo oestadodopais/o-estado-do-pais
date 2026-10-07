@@ -37,7 +37,7 @@ import { MUNICIPIOS_COM_PAGINA } from '../data/municipios.mjs';
 import { partesDaLeitura, oQueEContraALinha, sinalDaLeitura } from './leitura-da-medida.mjs';
 import { notaDaBandeira } from './bandeira-da-fonte.mjs';
 import { nomeDaMedida, nomeDaLinhaDerivada } from './nomes.mjs';
-import { getClaim, allClaims } from './ledger.mjs';
+import { getClaim, loadClaims, allClaims } from './ledger.mjs';
 import { allSeries, getSerie, pontoDaSerie } from './series.mjs';
 import { NOMES_DAS_SERIES } from '../data/series-no-tempo.mjs';
 import { FRASES_DAS_SERIES, SERIES_POR_CONFIRMAR_NA_FONTE } from '../data/o-que-e-das-series.mjs';
@@ -258,10 +258,10 @@ export function errosDasFamilias(familias = FAMILIAS_DAS_LINHAS, doConcelho = FA
 
 /**
  * AS LINHAS SEM FRASE, SEM NOME, E AS FAMÍLIAS SEM LINHA, sobre o livro-razão inteiro.
- * @param {Iterable<{ id: string }>} [linhas]
+ * @param {Iterable<{ id: string, publication?: unknown }>} [linhas]
  * @returns {{ erros: string[], porTipo: Record<string, number>, familiasUsadas: Set<string> }}
  */
-export function cobertura(linhas = allClaims()) {
+export function cobertura(linhas = [...loadClaims({includeWithdrawn:true}).values()]) {
   /** @type {string[]} */
   const erros = [];
   /** @type {Record<string, number>} */
@@ -269,6 +269,7 @@ export function cobertura(linhas = allClaims()) {
   /** @type {Set<string>} */
   const usadas = new Set();
   for (const c of linhas) {
+    if (c.publication === 'withdrawn') { usadas.add(familiaDaLinha(c.id).chave); continue; }
     for (const lang of /** @type {const} */ (['pt', 'en'])) {
       try {
         const o = oQueEDaLinha(c.id, lang);
