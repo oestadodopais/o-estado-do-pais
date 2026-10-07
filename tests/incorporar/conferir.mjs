@@ -67,6 +67,19 @@ for (const lang of ['pt', 'en']) {
     resultados.plantas.push({nome:nome+'-'+lang,mensagem,mordeu:true});
   }
 }
+// ER1-c: licença e notas ficam separadas também no código estático.
+for (const lang of ['pt','en']) {
+  const notas = linhas.find(x => provenienciaConfirmada(x) && (x[lang==='pt'?'source_flag_note':'source_flag_note_en'] || x[lang==='pt'?'ressalva':'ressalva_en']));
+  const caminho = routePath('linha',lang,{slug:notas.id});
+  const root = lerPaginaComCodigo(fs.readFileSync(`${dist}${caminho}/index.html`,'utf8'));
+  const campo = root.querySelector('textarea');
+  const antes = campo.innerHTML;
+  campo.set_content(antes.replace('CC BY 4.0 · &lt;span&gt;', 'CC BY 4.0 &lt;span&gt;'));
+  assert.notEqual(campo.innerHTML, antes);
+  const mensagem = 'ER1 código: o pedaço difere da linha, carácter a carácter.';
+  assert(conferirCodigo(root,matchPath(caminho)).includes(mensagem));
+  resultados.plantas.push({nome:'separador-licenca-notas-'+lang,mensagem,mordeu:true});
+}
 // Lugares lidos de famílias diferentes, incluindo o comparador espanhol.
 for (const [id, nomes] of [
   ['custo-unitario-do-trabalho-2025', ['Portugal','Portugal']],

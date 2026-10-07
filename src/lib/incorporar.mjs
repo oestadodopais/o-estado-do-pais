@@ -64,6 +64,6 @@ export function codigoDaIncorporacao(c, lang) {
   return `<p class="oedp-numero" lang="${t(lang).lang}" data-oedp="${e(c.id)}" data-oedp-valor="${e(c.value)}" data-oedp-lido="${e(c.access_date)}">` +
     `<a href="${origem}${caminhoDaLinha(c.id, lang)}">${e(d.nome)}, ${e(d.periodo)}: ${e(d.valor)} <span lang="${e(d.unidadeLang)}">${e(d.unidade)}</span></a> · ` +
     `<span lang="${e(d.fonteLang)}">${e(d.fonte)}</span>, ${e(leitura)} · ${e(d.atribuicao)}` +
-    (d.notas ? ` <span>${e(d.notas)}</span>` : '') +
+    (d.notas ? ` · <span>${e(d.notas)}</span>` : '') +
     `</p><script async src="${origem}/incorporar.js" referrerpolicy="no-referrer" crossorigin="anonymous"></script>`;
 }
