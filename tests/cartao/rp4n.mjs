@@ -107,3 +107,28 @@ for (const [nome, altera, mensagem] of [
   morde('PRR cabeçalho inventado', conferirAuditoriaDasFamilias({auditoria:a}).erros, 'literal não foi lido');
 }
 console.log(`RP4N-d: PASS, ${plantas.length} plantas acumuladas com a mensagem afirmada`);
+
+// A ausência não pode inflacionar a contagem de definições seladas (achado 18).
+for (const chave of ['avisos-pt2030-abertos','avisos-pt2030-pessoas-singulares','ciclo-substituicao-condutas']) {
+  assert(conferirAuditoriaDasFamilias().contas.lista_da_casa.includes(chave), `${chave}: ausência contada como fonte`);
+}
+// O recorte mensal não apoia uma linha anual (achado 17).
+{
+  const a = structuredClone(auditoria);
+  for (const e of a.familias) for (const f of e.folhas ?? []) for (const p of f.partes ?? []) for (const ap of p.apoios ?? []) {
+    if (ap.origem === 'rp4n-ac-ss-orcamento') ap.origem = 'rp4n-ac-ss';
+  }
+  morde('recorte mensal numa linha anual', conferirAuditoriaDasFamilias({auditoria:a}).erros, 'recorte de janeiro a agosto não apoia uma linha anual');
+}
+// A explicação de cada termo conserva a frase definidora da fonte (15 e 16).
+for (const chave of ['rp4n-diferencas-consolidacao','rp4n-saldos-gerencia']) {
+  const origens = structuredClone(ORIGENS_DAS_DEFINICOES); delete origens[chave];
+  morde(`definição retirada: ${chave}`, conferirAuditoriaDasFamilias({origens}).erros, `apoia-se em «${chave}»`);
+}
+{
+  const a = structuredClone(auditoria);
+  const vab = a.familias.filter(e => e.chaves?.some(k => ['evora-vab-empresarial','portugal-concentracao-vab4','evora-concentracao-vab4'].includes(k)));
+  assert.equal(vab.filter(e => JSON.stringify(e).includes('output valued at basic prices less intermediate consumption')).length, 2);
+}
+assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
+console.log(`RP4N-d documental: PASS, ${plantas.length} plantas e controlos de classificação e de definição`);
