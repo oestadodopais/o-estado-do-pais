@@ -1066,10 +1066,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-prr-execucao": {
     "frase": {
       "pt": [
-        "É a parte das verbas do Plano de Recuperação e Resiliência aprovadas para o concelho que já foi paga."
+        "É a parte das verbas do Plano de Recuperação e Resiliência contratadas por beneficiários intermediários e diretos com sede no concelho que já foi paga."
       ],
       "en": [
-        "It is the share of the Recovery and Resilience Plan funds approved for the municipality that has already been paid."
+        "It is the share of Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality that has already been paid."
       ]
     }
   },
@@ -1118,10 +1118,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-prr-vencido-quota": {
     "frase": {
       "pt": [
-        "É a parte das verbas aprovadas para o concelho que está em projetos cuja data prevista de conclusão já passou sem conclusão registada."
+        "É a parte das verbas contratadas por beneficiários intermediários e diretos com sede no concelho em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada."
       ],
       "en": [
-        "It is the share of the funds approved for the municipality that sits in projects whose planned completion date has passed with no completion recorded."
+        "It is the share of funds contracted by intermediate and direct beneficiaries headquartered in the municipality in projects with a completion deadline before the snapshot and no completion recorded."
       ]
     }
   },

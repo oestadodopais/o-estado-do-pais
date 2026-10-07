@@ -54,6 +54,7 @@
  * raras, para que quem lê veja primeiro o que mais se rende.
  */
 export const UNIDADES = {
+  '% do valor contratado': '% of contracted amount',
   'avisos': 'notices',
   // OE1: tradução de dicionário da unidade monetária.
   'milhões de euros': 'million euros',

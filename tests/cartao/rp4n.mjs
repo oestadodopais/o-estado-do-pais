@@ -195,3 +195,19 @@ export function conferirExcertoDaPensao(linha) {
   assert(!fs.readFileSync(`dist/${base}/index.html`,'utf8').includes(id),'RP4N-e: uma linha retirada chegou ao índice');
  }
 }
+
+// RP4-n-e: o título vencido lê a data da computação e as derivadas conservam a seleção.
+{
+ const {NOMES_DO_PROJETO}=await import('../../src/data/nomes-das-medidas.mjs');
+ const l=loadClaims().get('evora-prr-vencido-aprovado-2026');
+ const datas=l.document.computed_over.files.map(f=>f.snapshot_date);
+ for(const lang of ['pt','en']) assert(NOMES_DO_PROJETO[l.id][lang].includes(datas[0].split('-').reverse().join('.')));
+ const anterior=datas[0];
+ try {
+  l.document.computed_over.files.forEach(f=>f.snapshot_date='2000-01-02');
+  assert(NOMES_DO_PROJETO[l.id].pt.endsWith('02.01.2000'),'RP4N-e: o título PRR não acompanha o campo da computação');
+ } finally { l.document.computed_over.files.forEach((f,i)=>f.snapshot_date=datas[i]); }
+ for(const id of ['evora-prr-execucao-2026','evora-prr-vencido-quota-2026']) {
+  assert(loadClaims().get(id).derivation.includes('intermediários e diretos com sede em Évora'));
+ }
+}

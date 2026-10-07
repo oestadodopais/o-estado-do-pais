@@ -947,16 +947,16 @@ const EVORA = [
   {
     chaves: ['evora-prr-execucao'],
     partes: [
-      diz('É a parte das verbas do Plano de Recuperação e Resiliência aprovadas para o concelho que já foi paga.', 'It is the share of the Recovery and Resilience Plan funds approved for the municipality that has already been paid.',
-        L('derivation', 'O que já foi pago, a dividir pelo que foi aprovado e atribuído ao concelho')),
+      diz('É a parte das verbas do Plano de Recuperação e Resiliência contratadas por beneficiários intermediários e diretos com sede no concelho que já foi paga.', 'It is the share of Recovery and Resilience Plan funds contracted by intermediate and direct beneficiaries headquartered in the municipality that has already been paid.',
+        L('derivation', 'As verbas pagas a beneficiários intermediários e diretos com sede em Évora')),
     ],
   },
   {
     chaves: ['evora-prr-vencido-quota'],
     partes: [
-      diz('É a parte das verbas aprovadas para o concelho que está em projetos cuja data prevista de conclusão já passou sem conclusão registada.',
-        'It is the share of the funds approved for the municipality that sits in projects whose planned completion date has passed with no completion recorded.',
-        L('derivation', 'O dinheiro aprovado em localizações cuja data prevista de conclusão já passou sem conclusão registada')),
+      diz('É a parte das verbas contratadas por beneficiários intermediários e diretos com sede no concelho em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.',
+        'It is the share of funds contracted by intermediate and direct beneficiaries headquartered in the municipality in projects with a completion deadline before the snapshot and no completion recorded.',
+        L('derivation', 'As verbas contratadas por beneficiários intermediários e diretos com sede em Évora em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada')),
     ],
   },
   {
