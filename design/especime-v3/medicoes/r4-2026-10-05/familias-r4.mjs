@@ -402,8 +402,7 @@ const ORCAMENTO = [
   {
     chaves: ['oe-2026-diferencas-consolidacao-funcional', 'execucao-2026-07-diferencas-consolidacao-funcional'],
     partes: [
-      diz('É a diferença de consolidação da despesa por funções da administração central', 'It is the consolidation difference in central administration’s expenditure by function',
-        L('name', 'DIFERENÇAS DE CONSOLIDAÇÃO'), L('document.title', 'classificação funcional')),
+      diz('É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta por funções da administração central', 'It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in central administration’s account by function', O('rp4n-diferencas-consolidacao', 'diferenças entre os registos de despesa'), O('rp4n-diferencas-consolidacao', 'comum aos registos de receita e despesa'), L('document.title', 'classificação funcional')),
       ponto,
     ],
   },
@@ -463,8 +462,7 @@ const ORCAMENTO = [
   {
     chaves: ['execucao-2026-08-diferencas-consolidacao-programas'],
     partes: [
-      diz('São as diferenças de consolidação da despesa entre os programas da administração central, de janeiro a agosto', 'They are the consolidation differences in expenditure between central administration programmes, from January to August',
-        L('name', 'Diferenças de consolidação'), L('unit', 'acumulados de janeiro a agosto')),
+      diz('É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta dos programas da administração central, de janeiro a agosto', 'It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in the account of central administration programmes from January to August', O('rp4n-diferencas-consolidacao', 'diferenças entre os registos de despesa'), O('rp4n-diferencas-consolidacao', 'comum aos registos de receita e despesa'), L('unit', 'acumulados de janeiro a agosto')),
       ponto,
     ],
   },
@@ -488,7 +486,7 @@ const ORCAMENTO = [
     chaves: ['oe-2026-receita-efetiva-administracao-central', 'execucao-2026-07-receita-efetiva-administracao-central', 'execucao-2026-08-receita-efetiva-administracao-central'],
     partes: [
       diz('É a receita efetiva da administração central', 'It is central administration’s effective revenue', OU(L('name', 'RECEITA EFETIVA'), L('name', 'Receita efetiva'))),
-      diz(": o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência.", ": what it takes in without counting receipts from financial assets and liabilities or carry-over balances.", O('rp4n-receita-efetiva', 'financeiros'), O('rp4n-receita-efetiva', 'saldos de gerência')),
+      diz(": o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.", ": what it takes in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.", O('rp4n-receita-efetiva', 'financeiros'), O('rp4n-receita-efetiva', 'saldos de gerência'), O('rp4n-saldos-gerencia', 'gerência (ano) anterior.')),
     ],
   },
   {
@@ -496,7 +494,7 @@ const ORCAMENTO = [
     partes: [
       diz('É a receita efetiva da administração central e da segurança social', 'It is the effective revenue of central administration and social security',
         L('name', 'Receita efetiva'), O('rp4n-ac-ss', 'Administração Central e Segurança Social')),
-      diz(": o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência.", ": what they take in without counting receipts from financial assets and liabilities or carry-over balances.", O('rp4n-receita-efetiva', 'financeiros'), O('rp4n-receita-efetiva', 'saldos de gerência')),
+      diz(": o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.", ": what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.", O('rp4n-receita-efetiva', 'financeiros'), O('rp4n-receita-efetiva', 'saldos de gerência'), O('rp4n-saldos-gerencia', 'gerência (ano) anterior.')),
     ],
   },
   {
@@ -541,7 +539,7 @@ const ORCAMENTO = [
   {
     chaves: ['oe-2026-saldo-primario-administracao-central', 'execucao-2026-07-saldo-primario-administracao-central'],
     partes: [
-      diz('É a receita efetiva da administração central menos a despesa primária', 'It is central administration’s effective revenue minus primary expenditure', O('rp4n-saldo', 'Saldo Primário')),
+      diz('É a receita efetiva da administração central menos a sua despesa efetiva sem juros e outros encargos', 'It is central administration’s effective revenue minus its effective expenditure excluding interest and other charges', O('rp4n-saldo', 'Saldo Primário'), O('rp4n-despesa-primaria', 'excluindo a rubrica de')),
       diz(', a que a fonte chama saldo primário.', ', which the source calls primary balance.', L('name', 'SALDO PRIMÁRIO')),
     ],
   },
@@ -604,16 +602,16 @@ const ORCAMENTO = [
   {
     chaves: ['oe-2026-despesa-consolidada-administracao-central', 'oe-2026-despesa-consolidada-seguranca-social', 'oe-2026-despesa-total'],
     partes: [
-      diz('É a despesa total que o Orçamento prevê para o ano, consolidada', 'It is the total expenditure that the Budget plans for the year, consolidated',
-        OU(L('name', 'DESPESA TOTAL CONSOLIDADA'), L('name', 'Despesa total consolidada'), L('name', 'Total da Administração Central e Segurança Social consolidado')), O('rp4n-orcamento', 'Orçamento aprovado')),
+      diz('É a despesa total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados', 'It is the total expenditure planned in the Budget for the year, excluding money flows between the services added together',
+        OU(L('name', 'DESPESA TOTAL CONSOLIDADA'), L('name', 'Despesa total consolidada'), L('name', 'Total da Administração Central e Segurança Social consolidado')), O('rp4n-orcamento', 'Orçamento aprovado'), O('rp4n-consolidacao', 'efetuados entre as entidades do universo em análise.')),
       ponto,
     ],
   },
   {
     chaves: ['oe-2026-receita-consolidada-administracao-central', 'oe-2026-receita-consolidada-seguranca-social'],
     partes: [
-      diz('É a receita total que o Orçamento prevê para o ano, consolidada', 'It is the total revenue that the Budget plans for the year, consolidated',
-        OU(L('name', 'RECEITA TOTAL CONSOLIDADA'), L('name', 'Receita total consolidada')), O('rp4n-orcamento', 'Orçamento aprovado')),
+      diz('É a receita total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados', 'It is the total revenue planned in the Budget for the year, excluding money flows between the services added together',
+        OU(L('name', 'RECEITA TOTAL CONSOLIDADA'), L('name', 'Receita total consolidada')), O('rp4n-orcamento', 'Orçamento aprovado'), O('rp4n-consolidacao', 'efetuados entre as entidades do universo em análise.')),
       ponto,
     ],
   },

@@ -1408,20 +1408,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "execucao-2026-07-diferencas-consolidacao-funcional": {
     "frase": {
       "pt": [
-        "É a diferença de consolidação da despesa por funções da administração central."
+        "É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta por funções da administração central."
       ],
       "en": [
-        "It is the consolidation difference in central administration’s expenditure by function."
+        "It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in central administration’s account by function."
       ]
     }
   },
   "execucao-2026-07-receita-efetiva-administracao-central": {
     "frase": {
       "pt": [
-        "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência."
+        "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior."
       ],
       "en": [
-        "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities or carry-over balances."
+        "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year."
       ]
     }
   },
@@ -1458,10 +1458,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "execucao-2026-07-saldo-primario-administracao-central": {
     "frase": {
       "pt": [
-        "É a receita efetiva da administração central menos a despesa primária, a que a fonte chama saldo primário."
+        "É a receita efetiva da administração central menos a sua despesa efetiva sem juros e outros encargos, a que a fonte chama saldo primário."
       ],
       "en": [
-        "It is central administration’s effective revenue minus primary expenditure, which the source calls primary balance."
+        "It is central administration’s effective revenue minus its effective expenditure excluding interest and other charges, which the source calls primary balance."
       ]
     }
   },
@@ -1698,10 +1698,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "execucao-2026-08-diferencas-consolidacao-programas": {
     "frase": {
       "pt": [
-        "São as diferenças de consolidação da despesa entre os programas da administração central, de janeiro a agosto."
+        "É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta dos programas da administração central, de janeiro a agosto."
       ],
       "en": [
-        "They are the consolidation differences in expenditure between central administration programmes, from January to August."
+        "It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in the account of central administration programmes from January to August."
       ]
     }
   },
@@ -1728,20 +1728,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "execucao-2026-08-receita-efetiva-administracao-central": {
     "frase": {
       "pt": [
-        "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência."
+        "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior."
       ],
       "en": [
-        "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities or carry-over balances."
+        "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year."
       ]
     }
   },
   "execucao-2026-08-receita-efetiva-administracao-central-seguranca-social": {
     "frase": {
       "pt": [
-        "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência."
+        "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior."
       ],
       "en": [
-        "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances."
+        "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year."
       ]
     }
   },
@@ -2301,20 +2301,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "oe-2026-despesa-consolidada-administracao-central": {
     "frase": {
       "pt": [
-        "É a despesa total que o Orçamento prevê para o ano, consolidada."
+        "É a despesa total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados."
       ],
       "en": [
-        "It is the total expenditure that the Budget plans for the year, consolidated."
+        "It is the total expenditure planned in the Budget for the year, excluding money flows between the services added together."
       ]
     }
   },
   "oe-2026-despesa-consolidada-seguranca-social": {
     "frase": {
       "pt": [
-        "É a despesa total que o Orçamento prevê para o ano, consolidada."
+        "É a despesa total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados."
       ],
       "en": [
-        "It is the total expenditure that the Budget plans for the year, consolidated."
+        "It is the total expenditure planned in the Budget for the year, excluding money flows between the services added together."
       ]
     }
   },
@@ -2821,20 +2821,20 @@ export const FAMILIAS_DAS_LINHAS = {
   "oe-2026-despesa-total": {
     "frase": {
       "pt": [
-        "É a despesa total que o Orçamento prevê para o ano, consolidada."
+        "É a despesa total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados."
       ],
       "en": [
-        "It is the total expenditure that the Budget plans for the year, consolidated."
+        "It is the total expenditure planned in the Budget for the year, excluding money flows between the services added together."
       ]
     }
   },
   "oe-2026-diferencas-consolidacao-funcional": {
     "frase": {
       "pt": [
-        "É a diferença de consolidação da despesa por funções da administração central."
+        "É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta por funções da administração central."
       ],
       "en": [
-        "It is the consolidation difference in central administration’s expenditure by function."
+        "It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in central administration’s account by function."
       ]
     }
   },
@@ -2861,40 +2861,40 @@ export const FAMILIAS_DAS_LINHAS = {
   "oe-2026-receita-consolidada-administracao-central": {
     "frase": {
       "pt": [
-        "É a receita total que o Orçamento prevê para o ano, consolidada."
+        "É a receita total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados."
       ],
       "en": [
-        "It is the total revenue that the Budget plans for the year, consolidated."
+        "It is the total revenue planned in the Budget for the year, excluding money flows between the services added together."
       ]
     }
   },
   "oe-2026-receita-consolidada-seguranca-social": {
     "frase": {
       "pt": [
-        "É a receita total que o Orçamento prevê para o ano, consolidada."
+        "É a receita total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados."
       ],
       "en": [
-        "It is the total revenue that the Budget plans for the year, consolidated."
+        "It is the total revenue planned in the Budget for the year, excluding money flows between the services added together."
       ]
     }
   },
   "oe-2026-receita-efetiva-administracao-central": {
     "frase": {
       "pt": [
-        "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência."
+        "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior."
       ],
       "en": [
-        "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities or carry-over balances."
+        "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year."
       ]
     }
   },
   "oe-2026-receita-efetiva-administracao-central-seguranca-social": {
     "frase": {
       "pt": [
-        "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência."
+        "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior."
       ],
       "en": [
-        "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances."
+        "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year."
       ]
     }
   },
@@ -2931,10 +2931,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "oe-2026-saldo-primario-administracao-central": {
     "frase": {
       "pt": [
-        "É a receita efetiva da administração central menos a despesa primária, a que a fonte chama saldo primário."
+        "É a receita efetiva da administração central menos a sua despesa efetiva sem juros e outros encargos, a que a fonte chama saldo primário."
       ],
       "en": [
-        "It is central administration’s effective revenue minus primary expenditure, which the source calls primary balance."
+        "It is central administration’s effective revenue minus its effective expenditure excluding interest and other charges, which the source calls primary balance."
       ]
     }
   },

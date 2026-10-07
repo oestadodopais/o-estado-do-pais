@@ -8525,21 +8525,28 @@
         "oe-2026-diferencas-consolidacao-funcional",
         "execucao-2026-07-diferencas-consolidacao-funcional"
       ],
-      "origens": [],
+      "origens": [
+        "rp4n-diferencas-consolidacao"
+      ],
       "folhas": [
         {
-          "pt": "É a diferença de consolidação da despesa por funções da administração central.",
-          "en": "It is the consolidation difference in central administration’s expenditure by function.",
+          "pt": "É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta por funções da administração central.",
+          "en": "It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in central administration’s account by function.",
           "partes": [
             {
-              "pt": "É a diferença de consolidação da despesa por funções da administração central",
-              "en": "It is the consolidation difference in central administration’s expenditure by function",
+              "pt": "É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta por funções da administração central",
+              "en": "It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in central administration’s account by function",
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "name",
-                  "literal": "DIFERENÇAS DE CONSOLIDAÇÃO"
+                  "origem": "rp4n-diferencas-consolidacao",
+                  "campo": "excerto",
+                  "literal": "diferenças entre os registos de despesa"
+                },
+                {
+                  "origem": "rp4n-diferencas-consolidacao",
+                  "campo": "excerto",
+                  "literal": "comum aos registos de receita e despesa"
                 },
                 {
                   "linha": "propria",
@@ -8883,21 +8890,28 @@
       "chaves": [
         "execucao-2026-08-diferencas-consolidacao-programas"
       ],
-      "origens": [],
+      "origens": [
+        "rp4n-diferencas-consolidacao"
+      ],
       "folhas": [
         {
-          "pt": "São as diferenças de consolidação da despesa entre os programas da administração central, de janeiro a agosto.",
-          "en": "They are the consolidation differences in expenditure between central administration programmes, from January to August.",
+          "pt": "É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta dos programas da administração central, de janeiro a agosto.",
+          "en": "It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in the account of central administration programmes from January to August.",
           "partes": [
             {
-              "pt": "São as diferenças de consolidação da despesa entre os programas da administração central, de janeiro a agosto",
-              "en": "They are the consolidation differences in expenditure between central administration programmes, from January to August",
+              "pt": "É a diferença entre os registos de despesa e de receita das verbas que passam entre entidades, depois de retirar a parte comum aos dois registos, na conta dos programas da administração central, de janeiro a agosto",
+              "en": "It is the difference between expenditure and revenue records for funds passing between entities, after removing the part common to both records, in the account of central administration programmes from January to August",
               "classe": "diz",
               "apoios": [
                 {
-                  "linha": "propria",
-                  "campo": "name",
-                  "literal": "Diferenças de consolidação"
+                  "origem": "rp4n-diferencas-consolidacao",
+                  "campo": "excerto",
+                  "literal": "diferenças entre os registos de despesa"
+                },
+                {
+                  "origem": "rp4n-diferencas-consolidacao",
+                  "campo": "excerto",
+                  "literal": "comum aos registos de receita e despesa"
                 },
                 {
                   "linha": "propria",
@@ -9025,12 +9039,13 @@
         "execucao-2026-08-receita-efetiva-administracao-central"
       ],
       "origens": [
-        "rp4n-receita-efetiva"
+        "rp4n-receita-efetiva",
+        "rp4n-saldos-gerencia"
       ],
       "folhas": [
         {
-          "pt": "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência.",
-          "en": "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities or carry-over balances.",
+          "pt": "É a receita efetiva da administração central: o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.",
+          "en": "It is central administration’s effective revenue: what it takes in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.",
           "partes": [
             {
               "pt": "É a receita efetiva da administração central",
@@ -9054,8 +9069,8 @@
               ]
             },
             {
-              "pt": ": o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência.",
-              "en": ": what it takes in without counting receipts from financial assets and liabilities or carry-over balances.",
+              "pt": ": o que ela recebe sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.",
+              "en": ": what it takes in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.",
               "classe": "diz",
               "apoios": [
                 {
@@ -9067,6 +9082,11 @@
                   "origem": "rp4n-receita-efetiva",
                   "campo": "excerto",
                   "literal": "saldos de gerência"
+                },
+                {
+                  "origem": "rp4n-saldos-gerencia",
+                  "campo": "excerto",
+                  "literal": "gerência (ano) anterior."
                 }
               ]
             }
@@ -9081,12 +9101,13 @@
       ],
       "origens": [
         "rp4n-ac-ss",
-        "rp4n-receita-efetiva"
+        "rp4n-receita-efetiva",
+        "rp4n-saldos-gerencia"
       ],
       "folhas": [
         {
-          "pt": "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência.",
-          "en": "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances.",
+          "pt": "É a receita efetiva da administração central e da segurança social: o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.",
+          "en": "It is the effective revenue of central administration and social security: what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.",
           "partes": [
             {
               "pt": "É a receita efetiva da administração central e da segurança social",
@@ -9106,8 +9127,8 @@
               ]
             },
             {
-              "pt": ": o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência.",
-              "en": ": what they take in without counting receipts from financial assets and liabilities or carry-over balances.",
+              "pt": ": o que recebem sem contar os recebimentos de ativos e passivos financeiros nem os saldos de gerência, a diferença entre receita e despesa que vem do ano anterior.",
+              "en": ": what they take in without counting receipts from financial assets and liabilities or carry-over balances, the difference between revenue and expenditure carried forward from the previous year.",
               "classe": "diz",
               "apoios": [
                 {
@@ -9119,6 +9140,11 @@
                   "origem": "rp4n-receita-efetiva",
                   "campo": "excerto",
                   "literal": "saldos de gerência"
+                },
+                {
+                  "origem": "rp4n-saldos-gerencia",
+                  "campo": "excerto",
+                  "literal": "gerência (ano) anterior."
                 }
               ]
             }
@@ -9360,22 +9386,28 @@
         "execucao-2026-07-saldo-primario-administracao-central"
       ],
       "origens": [
-        "rp4n-saldo"
+        "rp4n-saldo",
+        "rp4n-despesa-primaria"
       ],
       "folhas": [
         {
-          "pt": "É a receita efetiva da administração central menos a despesa primária, a que a fonte chama saldo primário.",
-          "en": "It is central administration’s effective revenue minus primary expenditure, which the source calls primary balance.",
+          "pt": "É a receita efetiva da administração central menos a sua despesa efetiva sem juros e outros encargos, a que a fonte chama saldo primário.",
+          "en": "It is central administration’s effective revenue minus its effective expenditure excluding interest and other charges, which the source calls primary balance.",
           "partes": [
             {
-              "pt": "É a receita efetiva da administração central menos a despesa primária",
-              "en": "It is central administration’s effective revenue minus primary expenditure",
+              "pt": "É a receita efetiva da administração central menos a sua despesa efetiva sem juros e outros encargos",
+              "en": "It is central administration’s effective revenue minus its effective expenditure excluding interest and other charges",
               "classe": "diz",
               "apoios": [
                 {
                   "origem": "rp4n-saldo",
                   "campo": "excerto",
                   "literal": "Saldo Primário"
+                },
+                {
+                  "origem": "rp4n-despesa-primaria",
+                  "campo": "excerto",
+                  "literal": "excluindo a rubrica de"
                 }
               ]
             },
@@ -9695,16 +9727,17 @@
         "oe-2026-despesa-total"
       ],
       "origens": [
-        "rp4n-orcamento"
+        "rp4n-orcamento",
+        "rp4n-consolidacao"
       ],
       "folhas": [
         {
-          "pt": "É a despesa total que o Orçamento prevê para o ano, consolidada.",
-          "en": "It is the total expenditure that the Budget plans for the year, consolidated.",
+          "pt": "É a despesa total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados.",
+          "en": "It is the total expenditure planned in the Budget for the year, excluding money flows between the services added together.",
           "partes": [
             {
-              "pt": "É a despesa total que o Orçamento prevê para o ano, consolidada",
-              "en": "It is the total expenditure that the Budget plans for the year, consolidated",
+              "pt": "É a despesa total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados",
+              "en": "It is the total expenditure planned in the Budget for the year, excluding money flows between the services added together",
               "classe": "diz",
               "apoios": [
                 {
@@ -9730,6 +9763,11 @@
                   "origem": "rp4n-orcamento",
                   "campo": "excerto",
                   "literal": "Orçamento aprovado"
+                },
+                {
+                  "origem": "rp4n-consolidacao",
+                  "campo": "excerto",
+                  "literal": "efetuados entre as entidades do universo em análise."
                 }
               ]
             },
@@ -9748,16 +9786,17 @@
         "oe-2026-receita-consolidada-seguranca-social"
       ],
       "origens": [
-        "rp4n-orcamento"
+        "rp4n-orcamento",
+        "rp4n-consolidacao"
       ],
       "folhas": [
         {
-          "pt": "É a receita total que o Orçamento prevê para o ano, consolidada.",
-          "en": "It is the total revenue that the Budget plans for the year, consolidated.",
+          "pt": "É a receita total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados.",
+          "en": "It is the total revenue planned in the Budget for the year, excluding money flows between the services added together.",
           "partes": [
             {
-              "pt": "É a receita total que o Orçamento prevê para o ano, consolidada",
-              "en": "It is the total revenue that the Budget plans for the year, consolidated",
+              "pt": "É a receita total que o Orçamento prevê para o ano, sem os fluxos de dinheiro entre os serviços somados",
+              "en": "It is the total revenue planned in the Budget for the year, excluding money flows between the services added together",
               "classe": "diz",
               "apoios": [
                 {
@@ -9778,6 +9817,11 @@
                   "origem": "rp4n-orcamento",
                   "campo": "excerto",
                   "literal": "Orçamento aprovado"
+                },
+                {
+                  "origem": "rp4n-consolidacao",
+                  "campo": "excerto",
+                  "literal": "efetuados entre as entidades do universo em análise."
                 }
               ]
             },
