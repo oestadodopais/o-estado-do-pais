@@ -57,7 +57,7 @@ def conferir_incorporador(corpo):
     guião pequeno à forma auditada, sem origens, APIs ou seletores adicionais.
     """
     erros = []
-    proibidas = r'\b(?:cookie|localStorage|sessionStorage|indexedDB|navigator|location|XMLHttpRequest|WebSocket|Worker|Image|sendBeacon|eval|Function|import)\b'
+    proibidas = r'\b(?:cookie|localStorage|sessionStorage|indexedDB|navigator|location|XMLHttpRequest|WebSocket|Worker|Image|sendBeacon|eval|Function|import|postMessage|parent|top|innerText|getElementsBy\w*|body)\b'
     if re.search(proibidas, corpo) or re.search(r'document\s*(?:\.referrer|\[)', corpo): erros.append('ER1 privacidade: API fora dos elementos próprios.')
     # A única origem literal vem da configuração canónica, lida sem rede.
     config = (RAIZ / 'site.config.mjs').read_text()
@@ -97,6 +97,16 @@ def medir_incorporador(dist, prova):
         ]:
             achados = conferir_incorporador(corpo + acrescento)
             plantas.append({'nome': nome, 'mensagem': mensagem, 'mordeu': mensagem in achados})
+        for palavra, acesso in [
+            ('postMessage', 'window.postMessage("x", "*");'),
+            ('parent', 'window.parent;'), ('top', 'window.top;'),
+            ('innerText', 'document.documentElement.innerText;'),
+            ('getElementsBy', 'document.getElementsByTagName("p");'),
+            ('body', 'document.body;'),
+        ]:
+            mensagem = 'ER1 privacidade: API fora dos elementos próprios.'
+            plantas.append({'nome': palavra, 'mensagem': mensagem,
+                            'mordeu': mensagem in conferir_incorporador(corpo + '\n' + acesso)})
         for nome, antigo, novo, mensagem in [
             ('credenciais', "credentials: 'omit'", "credentials: 'include'", "ER1 privacidade: o pedido perdeu a opção credentials: 'omit'."),
             ('redirecionamento', "redirect: 'error'", "redirect: 'follow'", "ER1 privacidade: o pedido perdeu a opção redirect: 'error'."),
