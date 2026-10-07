@@ -1,27 +1,43 @@
 /** Recibos JD1 e série nas duas línguas, com medidas e imagens da construção real. */
 import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import http from 'node:http';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright';
 
-const raiz = process.cwd();
+// JD1-b: todas as catorze linhas, sem sobrescrever as cinquenta capturas da primeira passagem.
+const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../../..');
 const dist = path.join(raiz, 'dist');
 const pasta = 'design/especime-v3/medicoes/jd1-2026-10-06';
-const saida = 'design/especime-v3/capturas/jd1-2026-10-06';
-const versao = JSON.parse(await fs.readFile(path.join(dist, 'version.json'), 'utf8'));
-const cabeca = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
-const alterados = execFileSync('git', ['diff', '--name-only', versao.commit, '--'], { encoding: 'utf8' }).trim().split('\n').filter(Boolean);
-if (alterados.some(p => !p.startsWith(pasta) && !p.startsWith(saida))) throw new Error('A construção não corresponde ao código a capturar.');
-const ids = {
-  ine: 'juros-das-administracoes-publicas-2025',
-  eurostat: 'juros-das-administracoes-publicas-2025-ue',
-  execucao: 'juros-e-outros-encargos-execucao-2026-08',
-  igcp: 'custo-do-stock-da-divida-direta-2025',
-  serie: 'series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade',
-};
-const larguras = [390, 768, 1024, 1280, 1600];
+const saida = 'design/especime-v3/capturas/jd1-2026-10-06/jd1b';
+const manifesto = `${pasta}/capturas-b.json`;
+const argumentos = process.argv.slice(2);
+assert(argumentos.length === 0 || (argumentos.length === 2 && argumentos[0] === '--code-head'),
+  'Uso: node captar.mjs [--code-head <cabeça do código>].');
+const git = (...args) => execFileSync('git', args, { encoding: 'utf8', cwd: raiz }).trim();
+const cabeca = git('rev-parse', 'HEAD');
+const cabecaCodigo = git('rev-parse', '--verify', `${argumentos[1] ?? 'HEAD'}^{commit}`);
+execFileSync('git', ['merge-base', '--is-ancestor', cabecaCodigo, cabeca], { cwd: raiz });
+const versaoOriginal = await fs.readFile(path.join(dist, 'version.json'), 'utf8');
+const versao = JSON.parse(versaoOriginal);
+assert.equal(versao.commit, cabecaCodigo, 'dist/version.json não é a cabeça do código pedida.');
+// O último commit pode conter apenas provas. Nunca se isentam os compositores, as definições ou outros guiões.
+const prova = p => p === `${pasta}/LEIA-ME.md` || p === manifesto || p.startsWith(`${saida}/`) || p.startsWith(`${pasta}/portoes-b/`);
+function conferirCodigo() {
+  const alterados = git('diff', '--name-only', cabecaCodigo, '--').split('\n').filter(Boolean);
+  const novos = git('ls-files', '--others', '--exclude-standard').split('\n').filter(Boolean);
+  const fora = [...alterados, ...novos].filter(p => !prova(p));
+  assert.equal(fora.length, 0, `Há mudanças fora das provas desde a cabeça do código: ${fora.join(', ')}`);
+}
+conferirCodigo();
+const cruzamento = JSON.parse(await fs.readFile(path.join(raiz, 'ledger/cruzamentos/jd1.json'), 'utf8'));
+const linhas = Object.keys(cruzamento.rows).sort();
+assert.equal(linhas.length, 14, 'O cruzamento JD1 tem de conter as catorze linhas esperadas.');
+const ids = { ...Object.fromEntries(linhas.map(id => [id, id])), serie: 'series/serie-obrigacoes-do-tesouro-10-anos-rendibilidade' };
+const larguras = [390, 1280];
 function conferirPortas(portas, largura) {
   const erros = [];
   if (largura < 1024) {
@@ -44,7 +60,7 @@ await new Promise(r => servidor.listen(0, '127.0.0.1', r));
 const base = `http://127.0.0.1:${servidor.address().port}`;
 const browser = await chromium.launch();
 const capturas = [], interacoes = [], plantas = [], problemas = [];
-await fs.mkdir(saida, { recursive: true });
+await fs.mkdir(path.join(raiz, saida), { recursive: true });
 try {
   for (const [nome, id] of Object.entries(ids)) for (const lingua of ['pt', 'en']) for (const largura of larguras) {
     const context = await browser.newContext({ viewport: { width: largura, height: 900 }, deviceScaleFactor: 1, colorScheme: 'light', reducedMotion: 'reduce' });
@@ -52,6 +68,7 @@ try {
     p.on('pageerror', e => problemas.push(`${nome}/${lingua}/${largura}: ${e.message}`));
     const url = (lingua === 'pt' ? '/livro-razao/' : '/en/ledger/') + id + '/';
     const response = await p.goto(base + url, { waitUntil: 'networkidle' });
+    await p.evaluate(() => document.fonts.ready);
     if (response.status() !== 200) problemas.push(`${url}: HTTP ${response.status()}`);
     const medidas = await p.evaluate(() => {
       const texto = s => (document.querySelector(s)?.textContent ?? '').replace(/\s+/g, ' ').trim();
@@ -69,9 +86,9 @@ try {
     if (!medidas.frase || medidas.por_confirmar) problemas.push(`${url}: frase ausente ou por confirmar`);
     problemas.push(...conferirPortas(medidas.portas, largura).map(e => `${url}: ${e}`));
     const ficheiro = `${saida}/${nome}-${lingua}-${largura}.png`;
-    const bytes = await p.screenshot({ path: ficheiro, fullPage: true });
+    const bytes = await p.screenshot({ path: path.join(raiz, ficheiro), fullPage: true });
     capturas.push({ ficheiro, url, lingua, largura, medidas, sha256: createHash('sha256').update(bytes).digest('hex') });
-    if (nome === 'execucao' && lingua === 'pt' && largura === 390) {
+    if (id === 'juros-e-outros-encargos-execucao-2026-08' && lingua === 'pt' && largura === 390) {
       const mensagem = 'O rótulo da página não fica acima do endereço.';
       const etiqueta = p.locator('.linha-endereco-abrir').first();
       const estilo = await etiqueta.evaluate(e => e.parentElement.getAttribute('style'));
@@ -88,6 +105,11 @@ try {
       await pedidos.locator('summary').click();
       const aberto = await pedidos.evaluate(el => el.open && el.querySelectorAll('[data-serie-pedido]').length > 0);
       if (!aberto) problemas.push(`${url}: os pedidos não abrem`);
+      await pedidos.locator('summary').click();
+      await pedidos.locator('summary').focus();
+      await pedidos.locator('summary').press('Enter');
+      const abertoTeclado = await pedidos.evaluate(el => el.open);
+      if (!abertoTeclado) problemas.push(`${url}: os pedidos não abrem pelo teclado`);
       const janela = p.locator('.serie-tabela-janela');
       const dimensoes = await janela.evaluate(el => ({ largura: el.clientWidth, tabela: el.scrollWidth }));
       let deslocamento = null;
@@ -98,11 +120,17 @@ try {
         catch { problemas.push(`${url}: a tabela não se desloca pelo teclado`); }
         deslocamento = await janela.evaluate(el => el.scrollLeft);
       }
-      interacoes.push({ url, lingua, largura, pedidos_abertos: aberto, dimensoes, deslocamento });
+      interacoes.push({ url, lingua, largura, pedidos_abertos: aberto, pedidos_abertos_teclado: abertoTeclado, dimensoes, deslocamento });
     }
     await context.close();
   }
 } finally { await browser.close(); servidor.close(); }
-await fs.writeFile(`${pasta}/capturas.json`, JSON.stringify({ comando: 'node design/especime-v3/medicoes/jd1-2026-10-06/captar.mjs', cabeca, construcao: versao.commit, larguras, capturas, interacoes, plantas, problemas }, null, 2) + '\n');
+conferirCodigo();
+assert.equal(await fs.readFile(path.join(dist, 'version.json'), 'utf8'), versaoOriginal, 'A construção mudou durante as capturas.');
+assert.equal(capturas.length, 60, 'Faltam capturas das catorze linhas e da série, nas duas edições e larguras.');
+assert.equal(new Set(capturas.map(c => `${c.url}/${c.largura}`)).size, 60, 'Há capturas repetidas.');
+assert.equal(interacoes.length, 4, 'Faltam ensaios da série nas duas edições e larguras.');
+const comando = `node ${pasta}/captar.mjs --code-head ${cabecaCodigo}`;
+await fs.writeFile(path.join(raiz, manifesto), JSON.stringify({ comando, cabeca, cabeca_codigo: cabecaCodigo, construcao: versao.commit, linhas, larguras, capturas, interacoes, plantas, problemas }, null, 2) + '\n');
 console.log(`Capturas: ${capturas.length}; problemas: ${problemas.length}.`);
 if (problemas.length) { console.error(problemas.join('\n')); process.exitCode = 1; }

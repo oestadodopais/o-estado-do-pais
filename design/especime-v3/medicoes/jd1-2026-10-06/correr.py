@@ -1,6 +1,6 @@
 """Corre uma conferência, guarda o código real e expurga caminhos locais dos registos.
 
-python3 design/especime-v3/medicoes/jd1-2026-10-06/correr.py <nome> [--motor] -- <comando> [argumentos]
+JD1_PORTOES=portoes-b python3 design/especime-v3/medicoes/jd1-2026-10-06/correr.py <nome> [--motor] -- <comando> [argumentos]
 """
 import json
 import os
@@ -33,7 +33,7 @@ def main():
     sep = sys.argv.index("--")
     cmd = sys.argv[sep + 1:]
     cwd = MOTOR if "--motor" in sys.argv[2:sep] else SITE
-    out = AQUI / "portoes"
+    out = AQUI / os.environ.get("JD1_PORTOES", "portoes")
     out.mkdir(exist_ok=True)
     start = datetime.now(timezone.utc).isoformat()
     head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=cwd, text=True).strip()
