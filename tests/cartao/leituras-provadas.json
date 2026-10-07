@@ -8271,12 +8271,12 @@
       ],
       "folhas": [
         {
-          "pt": "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central que o Orçamento prevê.",
-          "en": "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure planned in the Budget.",
+          "pt": "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê.",
+          "en": "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry planned in the Budget.",
           "partes": [
             {
-              "pt": "É quanto vai para este ministério em cada cem euros da despesa bruta da administração central",
-              "en": "It is the amount for this ministry out of every hundred euros of central administration’s gross expenditure",
+              "pt": "É quanto vai para este ministério em cada cem euros inscritos no total do mapa por ministérios",
+              "en": "It is the amount for this ministry out of every hundred euros entered in the total of the table by ministry",
               "classe": "diz",
               "apoios": [
                 {
@@ -8316,12 +8316,12 @@
       ],
       "folhas": [
         {
-          "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da despesa bruta da administração central que o Orçamento prevê; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania.",
-          "en": "It is the amount for the general charges of the State out of every hundred euros of central administration’s gross expenditure planned in the Budget; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies.",
+          "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros inscritos no total do mapa por ministérios que o Orçamento prevê; no mapa, estes encargos são iguais à despesa do programa dos órgãos de soberania.",
+          "en": "It is the amount for the general charges of the State out of every hundred euros entered in the total of the table by ministry planned in the Budget; in the map, these charges are equal to the expenditure of the programme for the sovereign bodies.",
           "partes": [
             {
-              "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros da despesa bruta da administração central",
-              "en": "It is the amount for the general charges of the State out of every hundred euros of central administration’s gross expenditure",
+              "pt": "É quanto vai para os encargos gerais do Estado em cada cem euros inscritos no total do mapa por ministérios",
+              "en": "It is the amount for the general charges of the State out of every hundred euros entered in the total of the table by ministry",
               "classe": "diz",
               "apoios": [
                 {
