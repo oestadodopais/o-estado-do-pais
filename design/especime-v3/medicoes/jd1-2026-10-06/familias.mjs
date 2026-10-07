@@ -137,9 +137,10 @@ export const FAMILIAS_JD1 = [
     chaves: ['divida-direta-do-estado'],
     nome: { pt: 'Dívida direta do Estado no fim de agosto, valor nominal ou descontado', en: 'State direct debt at the end of August, nominal or discounted value' },
     partes: [
-      diz('É o que o Estado ainda deve da dívida que emitiu', 'It is the amount the State still owes on debt it issued',
-        L('name', 'Dívida total'), O('jd1-igcp-perimetro', 'a dívida direta do Estado inclui apenas a dívida emitida pelo Estado')),
-      diz(' no fim de agosto', ' at the end of August', O('jd1-igcp-divida', '31/a go/26')),
+      diz('É a dívida emitida pelo Estado que ainda estava por pagar no fim de agosto',
+        'It is the amount still owed at the end of August on debt issued by the State',
+        L('name', 'Dívida total'), O('jd1-igcp-perimetro', 'a dívida direta do Estado inclui apenas a dívida emitida pelo Estado'),
+        O('jd1-igcp-divida', '31/a go/26')),
       diz('. A dívida pública de Maastricht abrange todas as administrações públicas e retira a dívida que umas entidades públicas detêm de outras',
         '. Maastricht public debt covers all general government bodies and removes debt held by other government bodies',
         O('jd1-igcp-perimetro', 'na dívida de Maastricht se incluem todas as entidades classificadas, para fins estatísticos, no setor institucional das Administrações Públicas'),

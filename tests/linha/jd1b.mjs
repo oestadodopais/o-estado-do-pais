@@ -192,6 +192,28 @@ for (const lang of ['pt', 'en']) {
 }
 console.log(`JD1-b: ano da emissão e data do boletim conservados; ${plantasPeriodo} plantas morderam.`);
 
+// A data pertence ao saldo por pagar, não à data de emissão dos títulos.
+export function dataDoSaldo(frase, lang) {
+  return (lang === 'pt' ? /estava por pagar no fim de agosto/ : /still owed at the end of August on debt issued/).test(frase);
+}
+let plantasSaldo = 0;
+for (const lang of ['pt', 'en']) {
+  const id = 'divida-direta-do-estado-2026-08';
+  const frase = oQueEDaLinha(id, lang).pedacos.join('');
+  assert.ok(dataDoSaldo(frase, lang));
+  if (process.argv.includes('--prova')) {
+    const ambigua = lang === 'pt' ? 'É o que o Estado ainda deve da dívida que emitiu no fim de agosto.' : 'It is the amount the State still owes on debt it issued at the end of August.';
+    assert.ok(!dataDoSaldo(ambigua, lang));
+    plantasSaldo++;
+  }
+  if (!process.argv.includes('--declaracoes')) {
+    const prefixo = lang === 'pt' ? 'livro-razao' : 'en/ledger';
+    const html = parse(fs.readFileSync(`dist/${prefixo}/${id}/index.html`, 'utf8'));
+    assert.ok(dataDoSaldo(html.querySelector('[data-o-que-e-parte="o-que-e"]').textContent, lang));
+  }
+}
+console.log(`JD1-b: a data qualifica o saldo por pagar; ${plantasSaldo} plantas morderam.`);
+
 // Uma publicação conserva o título já usado no R1 e no OE1, no HTML e no anexo PDF.
 const documentosJd1 = [
   ['saldo-das-administracoes-publicas-2025-notificacao-ine-2026-09', [
