@@ -46,7 +46,7 @@ export const ORIGENS_DAS_EXPLICACOES = {
       motor: 'content/20 Orcamento do Estado/source/dados-funcao.json',
       campo: 'description',
       hora: '2026-10-04T03:55:05Z',
-      cliente: 'OEstadoDoPais/corredor',
+      cliente: 'core.http.HttpClient.condicional',
       sha256: '43bb18f15b663e31b75ce6e09daaf68527aff412b1703319fcdb3e2496ddb8e7',
     },
   },
