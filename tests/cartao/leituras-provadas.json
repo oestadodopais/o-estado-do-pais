@@ -41,6 +41,11 @@
       "quem": "Codex",
       "quando": "2026-10-06",
       "o_que": "RP4-n: famílias recompostas com as origens documentais exportadas pelo motor; as ausências ficam declaradas. Construção para leitura a frio, não aprovação."
+    },
+    {
+      "quem": "Codex gpt-6-astra",
+      "quando": "2026-10-07",
+      "o_que": "RP4-n-d, RP4N-9: a explicação conserva a distinção entre as duas contas e perde só a oração apoiada na nota não selada da despesa bruta. O cliente da origem funcional acompanha o recibo corrigido no motor. Construção para conferência da direção."
     }
   ],
   "comuns": [
@@ -14885,8 +14890,8 @@
         },
         {
           "caminho": "seccoes[1].conteudo[2].paragrafo[0]",
-          "pt": "As duas contas não batem porque medem coisas diferentes: a conta por função soma o que a administração central gasta com cada fim, como a saúde ou a educação, sem as operações financeiras nem as transferências entre os seus serviços; a conta por ministério é o orçamento de cada ministério, com as operações financeiras e as transferências entre serviços do Estado.",
-          "en": "The two counts do not match because they measure different things: the count by function adds up what central government spends on each purpose, such as health or education, without financial transactions or transfers between its own services; the count by ministry is each ministry’s budget, including financial transactions and transfers between State services.",
+          "pt": "As duas contas não batem porque medem coisas diferentes: a conta por função soma o que a administração central gasta com cada fim, como a saúde ou a educação, sem as operações financeiras nem as transferências entre os seus serviços; a conta por ministério é o orçamento de cada ministério.",
+          "en": "The two counts do not match because they measure different things: the count by function adds up what central government spends on each purpose, such as health or education, without financial transactions or transfers between its own services; the count by ministry is each ministry’s budget.",
           "partes": [
             {
               "pt": "As duas contas não batem porque medem coisas diferentes",
@@ -14994,21 +14999,9 @@
               ]
             },
             {
-              "pt": ", com as operações financeiras e as transferências entre serviços do Estado.",
-              "en": ", including financial transactions and transfers between State services.",
-              "classe": "diz",
-              "apoios": [
-                {
-                  "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "ressalva",
-                  "literal": "inclui operações financeiras e transferências entre serviços do Estado"
-                },
-                {
-                  "linha": "oe-2026-cem-euros-ministerio-financas",
-                  "campo": "ressalva_en",
-                  "literal": "includes financial transactions and transfers between State services"
-                }
-              ]
+              "pt": ".",
+              "en": ".",
+              "classe": "liga"
             }
           ]
         },
