@@ -46,9 +46,7 @@ export const LINGUA_DOS_TITULOS = {
   /* JD1: títulos lidos nos documentos recebidos nesta corrida. */
   'Boletim Mensal': 'pt',
   'Gestão da Tesouraria do Estado e da Dívida Pública · Relatório Anual 2025': 'pt',
-  'Procedimento dos Défices Excessivos': 'pt',
   'Government revenue, expenditure and main aggregates': 'en',
-  'Síntese da Execução Orçamental': 'pt',
   /* OE1: línguas conferidas nos documentos e nas células de origem. */
   "Execução Orçamental de julho 2026 - despesa por classificação funcional": "pt",
   "Execução orçamental de julho 2026 – Indicadores da Administração Central (contabilidade pública)": "pt",
