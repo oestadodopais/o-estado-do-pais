@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { parse } from 'node-html-parser';
 import { dadosDaIncorporacao, codigoDaIncorporacao, podeIncorporar } from '../../src/lib/incorporar.mjs';
-import { allClaims, eDerivada } from '../../src/lib/ledger.mjs';
+import { allClaims, eDerivada, camposPorVerificar, documentoDaLinha } from '../../src/lib/ledger.mjs';
 import { routePath, matchPath } from '../../src/lib/routes.mjs';
 import { conferirExemploNoMetodo, conferirInventarioIncorporacao, provenienciaConfirmada, conferirCodigo, lerPaginaComCodigo, tirarCodigoConferido, conferirCors, conferirJson } from '../../scripts/incorporar-do-portao.mjs';
 const dist = process.env.OEDP_DIST || 'dist';
@@ -67,12 +67,16 @@ for (const lang of ['pt', 'en']) {
     resultados.plantas.push({nome:nome+'-'+lang,mensagem,mordeu:true});
   }
 }
-// ER1-c, achado 9: isola cada campo, para uma marca não esconder a outra.
+// ER1-c e ER1-d: isola cada campo, para uma marca não esconder a outra.
 for (const lang of ['pt','en']) {
   const caminho = routePath('linha',lang,{slug:c.id});
   const html = fs.readFileSync(`${dist}${caminho}/index.html`,'utf8');
-  for (const campo of ['source','access_date']) {
-    const marcada = {...c,[campo]:'[a verificar]'};
+  assert.deepEqual(camposPorVerificar(c), []);
+  for (const campo of ['source','access_date','excerpt','source_url','document.title','document.edition','document.locator']) {
+    const marcada = campo.startsWith('document.')
+      ? {...c,document:{...documentoDaLinha(c),[campo.split('.')[1]]:'[a verificar]'}}
+      : {...c,[campo]:'[a verificar]'};
+    assert.deepEqual(camposPorVerificar(marcada), [campo], 'A planta tem de marcar só o campo declarado.');
     assert.equal(podeIncorporar(marcada),false);
     assert.equal(codigoDaIncorporacao(marcada,lang),null);
     if(campo==='access_date' && !eDerivada(marcada)) assert.notEqual(dadosDaIncorporacao(marcada,lang).leitura,lang==='pt'?'calculado por este projeto':'calculated by this project', 'ER1 JSON: uma data por confirmar não faz da linha uma calculada.');
