@@ -417,3 +417,134 @@ As capturas pertencem à cabeça do código e cobrem as duas edições e as larg
 A construção e as correções mandatadas estão entregues nesta worktree. A ER1-1 ficou confirmada pela leitura a frio: só uma releitura igual confirma o valor. A ER1-2 ficou fechada com a frase, a porta de exemplo e a entrada do registo. A leitura curta por outra família, a conferência do lugar de direção, a corrida do GitHub na cabeça que aterra, a fusão em main e verify:deploy pertencem à aterragem. Não houve push nem publicação nesta sessão. A regra 3 de CLAUDE.md exige a leitura curta do diff antes de aterrar; esta construção não se apresenta como leitura independente. O achado 9 fica no bloco dos recibos, por decisão expressa. O custo e a sua comparação com o alvo de trezentos mil símbolos não podem ser confirmados sem a linha da ferramenta.
 
 A linha tokens used não foi exposta nesta sessão; o total e o confronto com o custo-alvo ficam [verify].
+
+
+## A passagem ER1-c
+
+A recusa foi limitada às marcas na fonte ou na data de acesso. As linhas calculadas sem data própria recebem código com «calculado por este projeto» / «calculated by this project». ER1-8 evita repetir essa indicação quando fonte e leitura são iguais. A licença e as notas ficam separadas por « · », e o exemplo do Método abre o recibo da dívida pública.
+
+Há uma condição do mandato que não se pode declarar satisfeita: o Método conta 8 linhas com algum campo por confirmar, mas só 4 têm marca na fonte ou na data de acesso. ER1-7 regista esta divergência. A recusa expressamente pedida aplica-se; não se alterou a contagem do Método nem se alargou a recusa para forçar igualdade.
+
+Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/relatar-c.mjs`. Cabeça do código: `9d65ba384daf1b87a2f2d33b5d789359a94e64a0`. A cabeça final é o commit que acrescenta este relatório, as capturas e as provas; lê-se na resposta final. O último commit não muda código e as capturas são dos mesmos bytes da aplicação que essa cabeça final contém. O carimbo da construção identifica a cabeça do código, sem fingir uma construção posterior.
+
+### Os commits, com os registos primeiro
+
+| Commit |
+| --- |
+| b2aeec25 docs(er1-c): registar o mandato e a leitura a frio |
+| 3fcbc28f fix(er1-c): dar código às linhas calculadas sem data própria |
+| 68d2ea26 fix(er1-c): separar a licença das notas nos dois compositores |
+| 14f4d8da docs(er1-c): registar o lugar das contagens internas como ER1-6 |
+| 238d64f0 test(er1-c): isolar as marcas e proteger a linha calculada |
+| b26bf430 fix(er1-c): abrir no Método o recibo da dívida pública |
+| c3f0243a test(er1-c): medir os recibos e nomear as rotas para a leitura |
+| b29cd9e8 test(er1-c): corrigir a seleção derivada e preparar o relatório medido |
+| ee7e6835 fix(er1-c): dizer uma vez que o número foi calculado |
+| 9d65ba38 fix(er1-c): reservar a indicação de cálculo às linhas derivadas |
+
+O primeiro commit contém o mandato, a leitura inteira e o registo das plantas. O campo `copia` desse registo foi anonimizado para cumprir a proibição de caminhos locais. Os achados plantados nas cópias não foram aplicados ao código.
+
+### Cada achado e a proteção
+
+| Achado | Tratamento | Planta ou prova |
+| --- | --- | --- |
+| 1, 2, 4, 5 e 6 | Eram os estragos das cópias, segundo o mandato. Nenhuma correção de produto. | Registo PLANTAS-ER1-b; amarra do Método, marca-por-confirmar, inventário, comando da edição e manifesto das capturas. |
+| 3 | ER1-5 revogada. Sem marca na fonte/data, há código; sem data própria, entra a cadeia calculado. | marca-isolada-source, marca-isolada-access_date, calculada-sem-data-sem-codigo; atualização real da calculada no navegador. |
+| 7 | Separador entre licença e notas no compositor estático e no cliente. | separador-licenca-notas e separador-notas-retirado, nas duas edições. |
+| 8 | ER1-6: as contagens internas mantêm O Estado do País como lugar porque medem o próprio projeto. | Decisão conservada; comparação integral dos recibos com o lugar declarado. Não se acrescenta planta para uma implementação que não mudou. |
+| 9 | Marca na fonte e marca na data testadas isoladamente; linha derivada sem data tem código. | As plantas abaixo afirmam a mensagem exata, além do código de saída. |
+| 10 | A porta do Método passa a divida-publica-2025. As marcas do recibo recusado ficam para o bloco dos recibos. | metodo-sem-exemplo-pt/en; medição da pertença à primeira página, da referência, do lugar e da proveniência. |
+| 11 | O guião nomeia recibos com código e recusados em cada edição para o próximo pacote. | medir-c.mjs lê cada HTML, compara-o com o livro e regista as rotas abaixo. A composição do pacote pertence à direção. |
+
+| Planta nova ou atualizada | Mensagem afirmada | Mordeu |
+| --- | --- | --- |
+| marca-isolada-source-pt | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-access_date-pt | ER1 código: proveniência por confirmar oferece código. | sim |
+| calculada-sem-data-sem-codigo-pt | ER1 código: falta o único código do recibo. | sim |
+| marca-isolada-source-en | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-access_date-en | ER1 código: proveniência por confirmar oferece código. | sim |
+| calculada-sem-data-sem-codigo-en | ER1 código: falta o único código do recibo. | sim |
+| separador-licenca-notas-pt | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| separador-licenca-notas-en | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| metodo-sem-exemplo-pt | ER1 Método: falta a porta para o recibo de exemplo da edição. | sim |
+| metodo-sem-exemplo-en | ER1 Método: falta a porta para o recibo de exemplo da edição. | sim |
+| separador-notas-retirado-pt | ER1 navegador: falta o separador entre licença e notas. | sim |
+| separador-notas-retirado-en | ER1 navegador: falta o separador entre licença e notas. | sim |
+
+### Contagens e rotas, por guião
+
+Comando: `node design/especime-v3/medicoes/er1-2026-10-06/medir-c.mjs`. Fonte: `ledger/claims/*.yml, pelo loadClaims() que src/lib/prova.mjs também lê`. O guião usa `loadClaims()`, a mesma leitura do livro usada pela prova do Método, e guarda os resumos dos ficheiros em `contagens-c.json`. Compara a contagem do módulo da prova com a que o Método rende. A contagem de código vem dos campos realmente construídos, conferidos carácter a carácter pelo portão.
+
+| Edição | Com código | Sem código | Calculados sem data própria com código |
+| --- | --- | --- | --- |
+| pt | 3191 | 4 | 365 |
+| en | 3191 | 4 | 365 |
+
+Método: 3187 linhas com proveniência completa e 8 por confirmar. A contagem sem código coincide com as 4 linhas marcadas na fonte/data do mesmo livro. Não coincide com o total do Método, cuja regra abrange outros campos.
+
+| Linha da diferença ER1-7 | Ficheiro do livro | Campos marcados |
+| --- | --- | --- |
+| agua-nao-faturada-portugal-2024 | agua-nao-faturada-portugal-2024.yml | source_url, excerpt |
+| evora-prr-aprovado-2026 | evora-prr-aprovado-2026.yml | excerpt |
+| evora-prr-pago-2026 | evora-prr-pago-2026.yml | excerpt |
+| evora-prr-vencido-aprovado-2026 | evora-prr-vencido-aprovado-2026.yml | excerpt |
+
+| Edição | Recibo com código | Recibo recusado | Recibo calculado |
+| --- | --- | --- | --- |
+| pt | /livro-razao/divida-publica-2025 | /livro-razao/avisos-pt2030-abertos | /livro-razao/abrantes-indice-de-divida-2024 |
+| en | /en/ledger/divida-publica-2025 | /en/ledger/avisos-pt2030-abertos | /en/ledger/abrantes-indice-de-divida-2024 |
+
+Exemplo escolhido: `divida-publica-2025`. Dívida pública: medida nacional no bloco do Estado da primeira página, com proveniência completa, referência declarada e leitura corrente sobre o que as administrações públicas devem. A referência declarada é `{"nl":"60","lado":"superior","simbolo":"%"}`, lida por guião. O texto governado do Método tem o novo carimbo em DECISIONS.md; a amarra passou sem alteração da sua regra.
+
+### Portões, ensaios e capturas
+
+Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes-c`. Cabeça no início e no fim: `9d65ba384daf1b87a2f2d33b5d789359a94e64a0`. Códigos lidos dos ficheiros depois do fim da corrida:
+
+| Portão | Código | Ficheiro |
+| --- | --- | --- |
+| build | 0 | portoes-c/build.codigo |
+| verify | 0 | portoes-c/verify.codigo |
+| typecheck | 0 | portoes-c/typecheck.codigo |
+
+O verify da tranca executa a união conferida com o build, como define portoes.sh. A corrida interrompida ficou em `portoes-c-interrompidos/`: foi parada para corrigir o ensaio novo, que tinha de ler derived_from e contar os parágrafos realmente inseridos. Não se apresenta essa corrida como verde. Nenhum portão que protege números, fontes ou pessoas foi enfraquecido.
+
+Os resultados em celula-c.json e navegador-c.json foram extraídos da saída dos ensaios em portoes-c/verify.log. Comandos para os reproduzir: `node tests/incorporar/conferir.mjs --json design/especime-v3/medicoes/er1-2026-10-06/celula-c.json` e `node tests/incorporar/navegador.mjs --json design/especime-v3/medicoes/er1-2026-10-06/navegador-c.json`. Foram conferidos 6390 recibos e 3195 JSON; o navegador registou 25 casos. A calculada sem data própria foi atualizada pelo pedido real ao JSON. As plantas do separador foram executadas no código estático e no cliente.
+
+Capturas: `node design/especime-v3/medicoes/er1-2026-10-06/capturar-c.mjs`. São 24 imagens: página completa e bloco de incorporação, nas larguras 390 e 1280 px, nas duas edições e nos três estados. O manifesto regista os bytes, as rotas, o carimbo, a ausência de pedidos externos e a largura do documento sem transbordo horizontal.
+
+| Captura | sha256 |
+| --- | --- |
+| [comCodigo-pt-390-pagina.png](../../capturas/er1-2026-10-06/er1-c/comCodigo-pt-390-pagina.png) | e92f44c1f5d200a8e76edd22f50d7dcac3a4d0572e8a83f8897369423a6cb0e6 |
+| [comCodigo-pt-390-incorporar.png](../../capturas/er1-2026-10-06/er1-c/comCodigo-pt-390-incorporar.png) | cbefe9bc8ea14096200364fcd72be6a3629ca0d33204512fb22898f2a3049754 |
+| [comCodigo-pt-1280-pagina.png](../../capturas/er1-2026-10-06/er1-c/comCodigo-pt-1280-pagina.png) | 4b43f963903b38637305f3fabcaa8b601e258f4591aeb814c7f463cf2596e8bf |
+| [comCodigo-pt-1280-incorporar.png](../../capturas/er1-2026-10-06/er1-c/comCodigo-pt-1280-incorporar.png) | 5d8c5f11dcaabef5a03714cd2cb1e72cb961f1a7b105b055f0280c6786821eca |
+| [semCodigo-pt-390-pagina.png](../../capturas/er1-2026-10-06/er1-c/semCodigo-pt-390-pagina.png) | b0f8a4bf09906073d90ccb03ef6e371d254c3d92b223b7d160630b12e94817df |
+| [semCodigo-pt-390-incorporar.png](../../capturas/er1-2026-10-06/er1-c/semCodigo-pt-390-incorporar.png) | b196d98429dc665cebeea2c5f4bf6d895c3f2c48d695b9c8d38b7dcccd3a8fcc |
+| [semCodigo-pt-1280-pagina.png](../../capturas/er1-2026-10-06/er1-c/semCodigo-pt-1280-pagina.png) | df8cb4d418ca128972a497a25109ce5ce931ab4b9f683cd87d244da8a7a8ed7f |
+| [semCodigo-pt-1280-incorporar.png](../../capturas/er1-2026-10-06/er1-c/semCodigo-pt-1280-incorporar.png) | 0f3880bbe34c493c3721cc7ddd9a53153745edf0913593a52804cba56620ff46 |
+| [calculado-pt-390-pagina.png](../../capturas/er1-2026-10-06/er1-c/calculado-pt-390-pagina.png) | 37ed21c5c332debf33390ace8b066b871014979f4d9be0c72c629cbd36ece98e |
+| [calculado-pt-390-incorporar.png](../../capturas/er1-2026-10-06/er1-c/calculado-pt-390-incorporar.png) | 2d547b8c9401c78eec5ee1c21141b3232b034063ea4cdc8f3e62f9afdff54cbd |
+| [calculado-pt-1280-pagina.png](../../capturas/er1-2026-10-06/er1-c/calculado-pt-1280-pagina.png) | 5003176218fa855d2a16c7b84ad296a1c62cc4d26e1576d4719f84dc6db2eec5 |
+| [calculado-pt-1280-incorporar.png](../../capturas/er1-2026-10-06/er1-c/calculado-pt-1280-incorporar.png) | 304b93e18122ba3ea77458a6bdb0a52b8808abc2cf3e34bbaa489a3a93296b48 |
+| [comCodigo-en-390-pagina.png](../../capturas/er1-2026-10-06/er1-c/comCodigo-en-390-pagina.png) | 31eafb17fdd0136e295815b5e0e2f7cb5dabd218274c3318e0e638eb74377636 |
+| [comCodigo-en-390-incorporar.png](../../capturas/er1-2026-10-06/er1-c/comCodigo-en-390-incorporar.png) | d199078ebeb619910f8172fa67efec2d51276fbb053376acaef2e36db5bdf4a5 |
+| [comCodigo-en-1280-pagina.png](../../capturas/er1-2026-10-06/er1-c/comCodigo-en-1280-pagina.png) | 41cf23a93d1cc858e6cbe8d942f9157e5acbc96f703d2587b04f963ca77e0a11 |
+| [comCodigo-en-1280-incorporar.png](../../capturas/er1-2026-10-06/er1-c/comCodigo-en-1280-incorporar.png) | 4f10b31258fe7354ce56f7e481ef8ec8b4315d01e647bc63bf58a6a2e88652ff |
+| [semCodigo-en-390-pagina.png](../../capturas/er1-2026-10-06/er1-c/semCodigo-en-390-pagina.png) | 7a77ad4b07c505aacfb464148f4a4c7125f21a9f6d369d42dfadaf2216f199d0 |
+| [semCodigo-en-390-incorporar.png](../../capturas/er1-2026-10-06/er1-c/semCodigo-en-390-incorporar.png) | b6570f6f8044f7b619b2ce3441930acaa8ed201f42fffed4c6b62abc027cd41c |
+| [semCodigo-en-1280-pagina.png](../../capturas/er1-2026-10-06/er1-c/semCodigo-en-1280-pagina.png) | 88baf17cedfc87de0b3a84169b0bc511e6a4e91694a7c084689030f6eb66e87f |
+| [semCodigo-en-1280-incorporar.png](../../capturas/er1-2026-10-06/er1-c/semCodigo-en-1280-incorporar.png) | 6bfc8f912b077fe826ece8a913170df9f0a0be5085c79eae705bb32c211208cb |
+| [calculado-en-390-pagina.png](../../capturas/er1-2026-10-06/er1-c/calculado-en-390-pagina.png) | ae309f6756ba0dc6b15b7605a053b2cb68f6b4ae71ca9c18c5222fdcd95fb2c3 |
+| [calculado-en-390-incorporar.png](../../capturas/er1-2026-10-06/er1-c/calculado-en-390-incorporar.png) | c4dbd722e0aba7c96345b74f222f2b2bac18ff19daa1ee2ce730e3cfe8e34008 |
+| [calculado-en-1280-pagina.png](../../capturas/er1-2026-10-06/er1-c/calculado-en-1280-pagina.png) | fe5b2376bd298a3e653b8b461a64740c6e902abdab37a76d5e6d239cad359420 |
+| [calculado-en-1280-incorporar.png](../../capturas/er1-2026-10-06/er1-c/calculado-en-1280-incorporar.png) | 7298bc376b8530a2f5c6269386fa180550e9c5803b8a17cb9f11660bcf96dd30 |
+
+Inspeção visual: os blocos foram lidos nas duas edições e larguras, e as páginas completas em português no ecrã largo e em inglês no estreito. Os campos, botões e avisos estão legíveis. As marcas do recibo recusado conservam a apresentação anterior, por decisão do mandato.
+
+### O que fica por fazer
+
+ER1-7: a direção tem de resolver a contradição entre a recusa limitada à fonte/data e a igualdade com o total de todos os campos do Método. Os dois conjuntos e a diferença estão medidos; não se declara essa igualdade nem o fecho incondicional do bloco.
+
+O recibo recusado conserva as marcas anteriores ao bloco, como manda o achado 10. A falta de referência do antigo exemplo e a apresentação dessas marcas pertencem ao bloco dos recibos. A direção compõe o próximo pacote com as rotas acima e faz a leitura a frio e a aterragem. Não houve push nem publicação, e verify:deploy desta cabeça continua por executar após publicação.
+
+A linha «tokens used» não foi exposta nesta sessão. Custo real e comparação com o custo-alvo: [verify]. Não se infere o custo do orçamento interno.
