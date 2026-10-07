@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { parse } from 'node-html-parser';
-import { oQueEDaLinha, oQueEDaSerie } from '../../src/lib/o-que-e-o-numero.mjs';
+import { oQueEDaLinha, oQueEDaSerie, nomeNoRecibo } from '../../src/lib/o-que-e-o-numero.mjs';
 
 const provisórias = ['juros-das-administracoes-publicas-2025', 'pib-nominal-notificacao-setembro-2025', 'juros-das-administracoes-publicas-pib-2025'];
 export function estadoDaFonte(frase, lang) {
@@ -83,3 +83,43 @@ for (const lang of ['pt', 'en']) {
   }
 }
 console.log(`JD1-b: taxa anual, obrigações já emitidas e prazo restante; ${plantasSerie} plantas morderam.`);
+
+// O nome deve permitir distinguir uma despesa das contas nacionais de pagamentos.
+const bases = [
+  ['juros-das-administracoes-publicas-2024', /administrações públicas.*contas nacionais/, /General government.*national accounts/],
+  ['juros-das-administracoes-publicas-2025', /administrações públicas.*contas nacionais/, /General government.*national accounts/],
+  ['pib-nominal-notificacao-setembro-2024', /Portugal.*contas nacionais/, /Portugal.*national accounts/],
+  ['pib-nominal-notificacao-setembro-2025', /Portugal.*contas nacionais/, /Portugal.*national accounts/],
+  ['juros-das-administracoes-publicas-pib-2024', /administrações públicas.*contas nacionais/, /General government.*national accounts/],
+  ['juros-das-administracoes-publicas-pib-2025', /administrações públicas.*contas nacionais/, /General government.*national accounts/],
+  ['juros-das-administracoes-publicas-2025-ue', /União Europeia.*contas nacionais/, /European Union.*national accounts/],
+  ['juros-e-outros-encargos-execucao-2025-08', /administrações públicas.*caixa/, /general government.*cash basis/i],
+  ['juros-e-outros-encargos-execucao-2026-08', /administrações públicas.*caixa/, /general government.*cash basis/i],
+  ['custo-do-stock-da-divida-direta-2025', /Estado.*contas nacionais/, /State.*national accounts/],
+  ['custo-da-divida-emitida-2026-08', /ponderado.*Estado/, /Weighted average.*State/],
+  ['divida-direta-do-estado-2026-08', /Estado.*nominal ou descontado/, /State.*nominal or discounted/],
+  ['necessidades-brutas-de-financiamento-2025', /Estado.*contabilidade orçamental pública/, /State.*public budget accounts/],
+  ['emissoes-de-divida-fundada-2025', /Estado.*contabilidade orçamental pública/, /State.*public budget accounts/],
+];
+let plantasBases = 0;
+assert.equal(bases.length, 14);
+for (const [id, pt, en] of bases) for (const lang of ['pt', 'en']) {
+  const expressao = lang === 'pt' ? pt : en;
+  const nome = nomeNoRecibo(id, lang).texto;
+  assert.ok(expressao.test(nome), `${id}/${lang}: nome sem perímetro ou base`);
+  if (process.argv.includes('--prova')) {
+    const semBase = nome.replace(/contas nacionais|national accounts|caixa|cash basis|ponderado|Weighted average|nominal ou descontado|nominal or discounted|contabilidade orçamental pública|public budget accounts/, '');
+    assert.ok(!expressao.test(semBase), `${id}/${lang}: a perda da base não foi recusada`);
+    plantasBases++;
+  }
+  if (!process.argv.includes('--declaracoes')) {
+    const prefixo = lang === 'pt' ? 'livro-razao' : 'en/ledger';
+    const html = parse(fs.readFileSync(`dist/${prefixo}/${id}/index.html`, 'utf8'));
+    assert.ok(expressao.test(html.querySelector('.linha-cabeca h1').textContent), `nome no recibo ${id}/${lang}`);
+  }
+}
+for (const lang of ['pt', 'en']) {
+  const frase = oQueEDaLinha('custo-da-divida-emitida-2026-08', lang).pedacos.join('');
+  assert.match(frase, lang === 'pt' ? /o Estado pedir dinheiro/ : /State’s borrowing/);
+}
+console.log(`JD1-b: perímetro e base nos catorze nomes, custo das emissões do Estado; ${plantasBases} plantas morderam.`);

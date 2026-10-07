@@ -29,7 +29,7 @@ const versoes = diz(' A comparação de dois mil e vinte e cinco usa a notifica�
 export const FAMILIAS_JD1 = [
   {
     chaves: ['juros-das-administracoes-publicas'],
-    nome: { pt: 'Juros das administrações públicas', en: 'General government interest expenditure' },
+    nome: { pt: 'Juros das administrações públicas, contas nacionais', en: 'General government interest expenditure, national accounts' },
     partes: [
       diz('É a despesa em juros das entidades classificadas nas contas nacionais como administrações públicas',
         'It is interest expenditure by bodies classified as general government in the national accounts',
@@ -45,7 +45,7 @@ export const FAMILIAS_JD1 = [
   },
   {
     chaves: ['pib-nominal-notificacao-setembro'],
-    nome: { pt: 'PIB a preços de mercado, notificação de setembro', en: 'GDP at market prices, September notification' },
+    nome: { pt: 'PIB de Portugal a preços de mercado, contas nacionais', en: 'Portugal’s GDP at market prices, national accounts' },
     partes: [
       diz('É o valor dos bens e serviços finais produzidos na economia portuguesa durante o ano, o produto interno bruto, a preços de mercado',
         'It is the value of final goods and services produced in the Portuguese economy during the year, gross domestic product at market prices',
@@ -59,7 +59,7 @@ export const FAMILIAS_JD1 = [
   },
   {
     chaves: ['juros-das-administracoes-publicas-pib'],
-    nome: { pt: 'Juros das administrações públicas em percentagem do PIB', en: 'General government interest expenditure as a share of GDP' },
+    nome: { pt: 'Juros das administrações públicas em percentagem do PIB, contas nacionais', en: 'General government interest expenditure as a share of GDP, national accounts' },
     partes: [
       diz('Compara a despesa em juros das administrações públicas com o produto interno bruto do mesmo ano, em percentagem',
         'It compares general government interest expenditure with gross domestic product for the same year, as a percentage',
@@ -73,7 +73,7 @@ export const FAMILIAS_JD1 = [
   },
   {
     chaves: ['juros-das-administracoes-publicas-ue'],
-    nome: { pt: 'Juros das administrações públicas na União Europeia, em percentagem do PIB', en: 'General government interest expenditure in the European Union, as a share of GDP' },
+    nome: { pt: 'Juros das administrações públicas na União Europeia, em percentagem do PIB, contas nacionais', en: 'General government interest expenditure in the European Union, as a share of GDP, national accounts' },
     partes: [
       diz('Compara a despesa em juros das administrações públicas do conjunto da União Europeia com o seu produto interno bruto, em percentagem',
         'It compares general government interest expenditure across the European Union with its gross domestic product, as a percentage',
@@ -91,7 +91,7 @@ export const FAMILIAS_JD1 = [
   },
   {
     chaves: ['juros-e-outros-encargos-execucao'],
-    nome: { pt: 'Juros e outros encargos pagos pelas administrações públicas, janeiro a agosto', en: 'Interest and other charges paid by general government, January to August' },
+    nome: { pt: 'Juros e outros encargos das administrações públicas, caixa, janeiro a agosto', en: 'General government interest and other charges, cash basis, January to August' },
     partes: [
       diz('É o dinheiro pago pelas administrações públicas em juros e outros encargos, de janeiro a agosto',
         'It is money paid by general government in interest and other charges from January to August',
@@ -105,7 +105,7 @@ export const FAMILIAS_JD1 = [
   },
   {
     chaves: ['custo-do-stock-da-divida-direta'],
-    nome: { pt: 'Custo da dívida direta do Estado em circulação', en: 'Cost of outstanding State direct debt' },
+    nome: { pt: 'Custo da dívida direta do Estado em circulação, juros em contas nacionais', en: 'Cost of outstanding State direct debt, interest in national accounts' },
     partes: [
       diz('Mede o custo dos juros da dívida que o Estado tem: compara os juros atribuídos ao ano pelas contas nacionais com o saldo médio da dívida direta no fim desse ano e do anterior',
         'It measures the interest cost of the State’s outstanding debt: interest attributed to the year in national accounts is compared with average direct debt at the end of that year and the previous one',
@@ -118,7 +118,7 @@ export const FAMILIAS_JD1 = [
   },
   {
     chaves: ['custo-da-divida-emitida'],
-    nome: { pt: 'Custo da dívida emitida pelo Estado, até agosto', en: 'Cost of State debt issued, through August' },
+    nome: { pt: 'Custo médio ponderado da dívida emitida pelo Estado, até agosto', en: 'Weighted average cost of State debt issued, through August' },
     partes: [
       diz('É o custo médio de o Estado pedir dinheiro emprestado no ano, através de Bilhetes do Tesouro, Obrigações do Tesouro, Obrigações do Tesouro de Rendimento Variável e Medium Term Notes',
         'It is the average cost of the State’s borrowing during the year through Treasury bills, Treasury bonds, floating-rate Treasury bonds and Medium Term Notes',
@@ -131,7 +131,7 @@ export const FAMILIAS_JD1 = [
   },
   {
     chaves: ['divida-direta-do-estado'],
-    nome: { pt: 'Dívida direta do Estado no fim de agosto', en: 'State direct debt at the end of August' },
+    nome: { pt: 'Dívida direta do Estado no fim de agosto, valor nominal ou descontado', en: 'State direct debt at the end of August, nominal or discounted value' },
     partes: [
       diz('É o que o Estado ainda deve da dívida que emitiu', 'It is the amount the State still owes on debt it issued',
         L('name', 'Dívida total'), O('jd1-igcp-perimetro', 'a dívida direta do Estado inclui apenas a dívida emitida pelo Estado')),
@@ -140,12 +140,20 @@ export const FAMILIAS_JD1 = [
         '. Maastricht public debt covers all general government bodies and removes debt held by other government bodies',
         O('jd1-igcp-perimetro', 'na dívida de Maastricht se incluem todas as entidades classificadas, para fins estatísticos, no setor institucional das Administrações Públicas'),
         O('jd1-igcp-perimetro', 'a dívida de Maastricht é consolidada')),
+      diz('. O saldo usa o valor nominal da dívida, exceto nos instrumentos emitidos a desconto, como os Bilhetes do Tesouro, que entram pelo valor descontado',
+        '. The balance uses the debt’s nominal value, except for instruments issued at a discount, such as Treasury bills, which are included at discounted value',
+        O('jd1-igcp-valoracao', 'Os saldos em dívida encontram-se ao valor nominal'),
+        O('jd1-igcp-valoracao', 'exceto os instrumentos emitidos a desconto, nomeadamente os BT, que se encontram ao valor descontado'),
+        O('jd1-igcp-siglas', 'Bilhetes do Tesouro')),
+      diz('. A dívida em moeda estrangeira é convertida ao câmbio do fim do período',
+        '. Debt in foreign currency is converted at the end-of-period exchange rate',
+        O('jd1-igcp-valoracao', 'valorizados à taxa de câmbio do final do período')),
       ponto,
     ],
   },
   {
     chaves: ['necessidades-brutas-de-financiamento'],
-    nome: { pt: 'Necessidades brutas de financiamento do Estado', en: 'Gross State financing needs' },
+    nome: { pt: 'Necessidades brutas de financiamento do Estado, contabilidade orçamental pública', en: 'Gross State financing needs, public budget accounts' },
     partes: [
       diz('É o financiamento de que o Estado precisou para cobrir o défice do orçamento e adquirir ativos financeiros, descontando os recebimentos dessas operações e excluindo privatizações, e para reembolsar ou extinguir dívida',
         'It is the financing the State needed to cover the budget deficit and acquire financial assets, net of receipts from those operations and excluding privatisations, and to repay or extinguish debt',
@@ -166,7 +174,7 @@ export const FAMILIAS_JD1 = [
   },
   {
     chaves: ['emissoes-de-divida-fundada'],
-    nome: { pt: 'Emissões de dívida fundada do Estado no ano civil', en: 'State funded debt issued during the calendar year' },
+    nome: { pt: 'Emissões de dívida fundada do Estado no ano civil, contabilidade orçamental pública', en: 'State funded debt issued during the calendar year, public budget accounts' },
     partes: [
       diz('É o dinheiro que o Estado pediu emprestado no ano civil através de dívida fundada',
         'It is the money the State borrowed during the calendar year through funded debt',

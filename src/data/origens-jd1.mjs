@@ -1,5 +1,25 @@
 /** Gerado por design/especime-v3/medicoes/jd1-2026-10-06/origens.py. */
 export const ORIGENS_JD1 = {
+  "jd1-igcp-valoracao": {
+    "publicador": "IGCP",
+    "documento": "Boletim Mensal, setembro de 2026, nota 1, folha 5",
+    "url": "https://www.igcp.pt/sites/default/files/2026-09/BM_set26.pdf",
+    "lido": "2026-10-06",
+    "lingua": "pt",
+    "excerto": "Os saldos em dívida encontram-se ao valor nominal (exceto os instrumentos emitidos a desconto, nomeadamente os BT, que se encontram ao valor descontado), valorizados à taxa de câmbio do final do período, enquanto que os valores de emissões e de amortizações estão ao valor de encaixe.",
+    "selo": {
+      "motor": "indicators/out/jd1-2026-10-06/006-igcp-boletim-setembro-2026.pdf",
+      "hora": "2026-10-06T10:46:05Z",
+      "cliente": "core.http.HttpClient.condicional",
+      "sha256": "e327feb73d210f958b1a40b3c86d6c681b686629416f070946902e00310392cb",
+      "campo": "pdftotext -layout, folha 5, coluna portuguesa",
+      "extracao": {
+        "ficheiro": "indicators/out/jd1-2026-10-06/006-igcp-boletim-setembro-2026-coluna-portuguesa.txt",
+        "sha256": "5e94abbc6afe6fa9d363f559ca976340a5fae5f8880c666294e840a0c1457753",
+        "ferramenta": "pdftotext version 26.09.0"
+      }
+    }
+  },
   "jd1-eo-administracoes": {
     "publicador": "Entidade Orçamental",
     "documento": "Síntese da Execução Orçamental, agosto de 2026, glossário, folha 82",
