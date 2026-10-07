@@ -28,10 +28,6 @@ reference_date: "2026"
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "<Registo>\n      <Programa>P-003</Programa>\n      <DesignacaoPrograma>REPRESENTAÇÃO EXTERNA</DesignacaoPrograma>\n      <Ministério>NEGÓCIOS ESTRANGEIROS</Ministério>\n      <TotalEmEuros>600621919</TotalEmEuros>\n    </Registo>"
 
-# Ressalva publicada da casa, conferida no motor, nas duas línguas.
-ressalva: "A despesa bruta inclui operações financeiras e transferências entre serviços do Estado, tal como o mapa as soma."
-ressalva_en: "Gross expenditure includes financial transactions and transfers between State services, as added up in the budget map."
-
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
 derivation_en: null

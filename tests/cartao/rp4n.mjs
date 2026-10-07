@@ -132,3 +132,10 @@ for (const chave of ['rp4n-diferencas-consolidacao','rp4n-saldos-gerencia']) {
 }
 assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
 console.log(`RP4N-d documental: PASS, ${plantas.length} plantas e controlos de classificação e de definição`);
+
+// Achado 14: a explicação não selada não pode regressar através da exportação.
+for (const l of loadClaims().values()) {
+  assert(!String(l.ressalva ?? '').includes('A despesa bruta inclui operações financeiras'), `${l.id}: regressou a nota não selada`);
+  assert(!String(l.ressalva_en ?? '').includes('Gross expenditure includes financial transactions'), `${l.id}: regressou a nota não selada inglesa`);
+}
+console.log('RP4N-d nota: PASS, ausência da explicação não selada em todas as linhas');
