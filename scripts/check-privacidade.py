@@ -12,6 +12,9 @@ plantado, e cada uma tem de morder; as cadeias plantadas compõem-se aqui por pa
 falsa ficar escrita no repositório.
 """
 import argparse
+import gzip
+import os
+import subprocess
 import importlib.util
 import json
 import re
@@ -95,6 +98,39 @@ def medir_api(raiz, prova):
             'chaves_publicas_vistas': publicas, 'plantas': plantas, 'passou': passou}
 
 
+# JD1-b, achado 19: a regra vale para todos os ficheiros rastreados, não só dist/ e api/.
+# As marcas constroem-se por partes para o próprio detetor cumprir a regra.
+ESTRUTURA_LOCAL = (b'Instruments' + b'/', b'.claude' + b'/worktrees/')
+
+
+def tem_estrutura_local(nome, dados):
+    corpo = gzip.decompress(dados) if nome.endswith('.gz') else dados
+    return any(m in nome.encode() or m in dados or m in corpo for m in ESTRUTURA_LOCAL)
+
+
+def medir_rastreados(raiz, prova):
+    nomes = subprocess.check_output(['git', '-C', str(raiz), 'ls-files', '-z']).decode().split('\0')
+    ficheiros, achados = 0, []
+    for nome in filter(None, nomes):
+        p = raiz / nome
+        if not p.exists() and not p.is_symlink():
+            continue  # Uma remoção da worktree não publica o ficheiro removido.
+        ficheiros += 1
+        dados = os.readlink(p).encode() if p.is_symlink() else p.read_bytes()
+        if tem_estrutura_local(nome, dados):
+            achados.append(nome)
+    plantas = []
+    if prova:
+        for i, marca in enumerate(ESTRUTURA_LOCAL, 1):
+            for nome, dados, caso in [('registo.log', b'raiz/' + marca + b'ficheiro', 'texto'),
+                                      ('registo.json.gz', gzip.compress(marca), 'gzip'),
+                                      ((marca + b'ficheiro.md').decode(), b'inocuo', 'nome')]:
+                plantas.append({'id': f'ramo-estrutura-{i}-{caso}', 'mordeu': tem_estrutura_local(nome, dados)})
+        plantas.append({'id': 'ramo-estrutura-inocua', 'mordeu': not tem_estrutura_local('registo.json.gz', gzip.compress(b'<worktree>/dist <sitio>/src <motor>/content'))})
+    return {'ficheiros': ficheiros, 'quantidade': len(achados), 'achados': achados, 'plantas': plantas,
+            'passou': ficheiros > 0 and not achados and all(p['mordeu'] for p in plantas)}
+
+
 def medir(dist, prova):
     ficheiros = sorted(p for p in dist.rglob('*') if p.is_file())
     r = conferir((str(p.relative_to(dist)), p.read_bytes()) for p in ficheiros)
@@ -135,7 +171,8 @@ def medir(dist, prova):
         for i, caminho in enumerate(detetor.proibidos()):
             r['plantas'].append({'id':f'caminho-{i+1}', 'mordeu':conferir([('pagina-construida.html',corpo+b'<p>'+caminho+b'</p>')])['quantidade']==1})
     r['api'] = medir_api(RAIZ, prova)
-    r['passou'] = bool(ficheiros) and r['quantidade']==0 and all(p['mordeu'] for p in r['plantas']) and r['api']['passou']
+    r['rastreado'] = medir_rastreados(RAIZ, prova)
+    r['passou'] = bool(ficheiros) and r['quantidade']==0 and all(p['mordeu'] for p in r['plantas']) and r['api']['passou'] and r['rastreado']['passou']
     return r
 
 if __name__ == '__main__':

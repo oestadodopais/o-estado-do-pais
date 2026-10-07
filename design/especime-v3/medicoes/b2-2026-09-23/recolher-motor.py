@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Confere as linhas anteriores e recolhe as provas da worktree do motor."""
+import os
 import hashlib
 import json
 import re
@@ -7,7 +8,7 @@ import subprocess
 from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
-MOTOR = Path.home() / 'Instruments/ResearchHub/.worktrees/b2-peca1-2026-09-23'
+MOTOR = Path(os.environ.get('RESEARCHHUB_DIR', '<motor>'))
 BASE = 'aa35e2e'
 def git(*args):
     return subprocess.check_output(['git', '-C', str(MOTOR), *args], text=True).strip()

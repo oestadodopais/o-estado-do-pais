@@ -79,8 +79,8 @@ def main():
     manifesto = 'publisher/manifest.dominios.json'
     livro = 'content/13 Dominios/ledger.json'
     circuitos.extend([
-        medida_circuito('~/Instruments/ResearchHub/' + manifesto, json_de(MOTOR, manifesto), 'rows', 'site_id'),
-        medida_circuito('~/Instruments/ResearchHub/' + livro, json_de(MOTOR, livro), 'claims', 'id'),
+        medida_circuito('<motor>/' + manifesto, json_de(MOTOR, manifesto), 'rows', 'site_id'),
+        medida_circuito('<motor>/' + livro, json_de(MOTOR, livro), 'claims', 'id'),
     ])
     for circuito in circuitos:
         if circuito['alvo_encontrado']:
@@ -164,27 +164,27 @@ def main():
             'campos_historicos_alterados': sum(not c['igual'] for c in campos.values()),
         },
         'proveniencia_real': {
-            'gerador': '~/Instruments/ResearchHub/' + gerador_rel,
+            'gerador': '<motor>/' + gerador_rel,
             'funcao': gera.name,
             'linha_da_funcao': gera.lineno,
-            'declaracao_do_estudo': '~/Instruments/ResearchHub/' + constantes_rel,
+            'declaracao_do_estudo': '<motor>/' + constantes_rel,
             'study': estudo,
-            'artefacto_original': '~/Instruments/ResearchHub/' + origem_rel,
+            'artefacto_original': '<motor>/' + origem_rel,
             'sha256_artefacto_original': sha(origem_bytes),
-            'resumo_original': '~/Instruments/ResearchHub/' + resumo_rel,
+            'resumo_original': '<motor>/' + resumo_rel,
             'entrada_do_resumo': registos[0],
             'provas': provas_da_origem,
         },
         'corpo_do_mesmo_conjunto_no_estudo_13': {
-            'ficheiro': '~/Instruments/ResearchHub/' + corpo_rel,
+            'ficheiro': '<motor>/' + corpo_rel,
             'geografias': geos,
             'funcao_declarada': pedido['measure'],
             'pedido': pedido['url'],
             'lido_a': pedido['fetched_at'],
             'sha256': sha(corpo_bytes),
             'selos_conferidos': selado,
-            'registo': '~/Instruments/ResearchHub/' + fetch_rel,
-            'manifesto': '~/Instruments/ResearchHub/' + manifesto_corpos_rel,
+            'registo': '<motor>/' + fetch_rel,
+            'manifesto': '<motor>/' + manifesto_corpos_rel,
             'conclusao': 'O corpo alojado serve de metainformação para a leitura nacional. Traz Portugal e não traz a União Europeia.',
         },
         'comparacao_antes_atual': {

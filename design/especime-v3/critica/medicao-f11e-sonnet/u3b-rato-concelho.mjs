@@ -4,7 +4,7 @@
 import fs from 'node:fs';
 import { abrePagina, BASE, pontosEmEcraNoNavegador } from './lib.mjs';
 
-const RAIZ = '/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos';
+const RAIZ = process.cwd();
 const evora = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/distritos/evora.json`, 'utf8'));
 
 const { browser, page } = await abrePagina({ viewport: { width: 1280, height: 1200 }, hasTouch: false });

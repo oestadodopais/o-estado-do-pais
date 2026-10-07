@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import { abrePagina, BASE } from './lib.mjs';
 
-const RAIZ = '/Users/UTILIZADOR/Instruments/OEstadoDoPais/.claude/worktrees/medicao-distritos';
+const RAIZ = process.cwd();
 const pais = JSON.parse(fs.readFileSync(`${RAIZ}/mapa/pais.json`, 'utf8'));
 
 // As nove regiões (a lista dita "NUTS II" pela casa), de src/data/regioes.mjs,

@@ -1663,7 +1663,7 @@
           }
         },
         {
-          "ficheiro": "~/Instruments/ResearchHub/publisher/manifest.dominios.json",
+          "ficheiro": "<motor>/publisher/manifest.dominios.json",
           "elementos_de_identificacao_lidos": 348,
           "leitor": "identificadores de rows",
           "alvo_encontrado": false,
@@ -1673,7 +1673,7 @@
           }
         },
         {
-          "ficheiro": "~/Instruments/ResearchHub/content/13 Dominios/ledger.json",
+          "ficheiro": "<motor>/content/13 Dominios/ledger.json",
           "elementos_de_identificacao_lidos": 348,
           "leitor": "identificadores de claims",
           "alvo_encontrado": false,
@@ -1688,8 +1688,8 @@
         "encontrado": true,
         "ficheiros": [
           "ledger/cruzamentos/dominios.json",
-          "~/Instruments/ResearchHub/publisher/manifest.dominios.json",
-          "~/Instruments/ResearchHub/content/13 Dominios/ledger.json"
+          "<motor>/publisher/manifest.dominios.json",
+          "<motor>/content/13 Dominios/ledger.json"
         ]
       },
       "contagens": {
@@ -1699,14 +1699,14 @@
         "campos_historicos_alterados": 0
       },
       "proveniencia_real": {
-        "gerador": "~/Instruments/ResearchHub/indicators/enquadramento.py",
+        "gerador": "<motor>/indicators/enquadramento.py",
         "funcao": "linha_da_uniao",
         "linha_da_funcao": 225,
-        "declaracao_do_estudo": "~/Instruments/ResearchHub/indicators/generate_claims.py",
+        "declaracao_do_estudo": "<motor>/indicators/generate_claims.py",
         "study": "quadro-institucional",
-        "artefacto_original": "~/Instruments/ResearchHub/indicators/out/enquadramento-2026-09-15/claims/divida-das-familias-2025-ue.yml",
+        "artefacto_original": "<motor>/indicators/out/enquadramento-2026-09-15/claims/divida-das-familias-2025-ue.yml",
         "sha256_artefacto_original": "89f0ae418b659487e7bab4ecef621011b0b98182615d472ca29136874fdfbe08",
-        "resumo_original": "~/Instruments/ResearchHub/indicators/out/enquadramento-2026-09-15/resumo.json",
+        "resumo_original": "<motor>/indicators/out/enquadramento-2026-09-15/resumo.json",
         "entrada_do_resumo": {
           "id": "divida-das-familias-2025-ue",
           "valor": "49,3",
@@ -1728,7 +1728,7 @@
         }
       },
       "corpo_do_mesmo_conjunto_no_estudo_13": {
-        "ficheiro": "~/Instruments/ResearchHub/content/13 Dominios/source/eurostat/tipspd22.json",
+        "ficheiro": "<motor>/content/13 Dominios/source/eurostat/tipspd22.json",
         "geografias": [
           "PT"
         ],
@@ -1737,8 +1737,8 @@
         "lido_a": "2026-09-24T06:29:23Z",
         "sha256": "e044653d1721480e272f79d899d457d08f87183ecac1238a968133d329340d7f",
         "selos_conferidos": true,
-        "registo": "~/Instruments/ResearchHub/content/13 Dominios/source/FETCH.json",
-        "manifesto": "~/Instruments/ResearchHub/content/13 Dominios/source/MANIFEST.sha256",
+        "registo": "<motor>/content/13 Dominios/source/FETCH.json",
+        "manifesto": "<motor>/content/13 Dominios/source/MANIFEST.sha256",
         "conclusao": "O corpo alojado serve de metainformação para a leitura nacional. Traz Portugal e não traz a União Europeia."
       },
       "comparacao_antes_atual": {
