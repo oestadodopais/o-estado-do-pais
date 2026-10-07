@@ -13,7 +13,7 @@ export const TIPOS_RECUSADOS = [
 export const TIPOS_ACEITES = [
   'data', 'excerto', 'endereco', 'pessoa-I77', 'referencia-metodo', 'referencia-sobre',
   'selo-proveniencia', 'publicador', 'titulo-documento', 'edicao-documento',
-  'nota-alcance', 'referencia-no-livro', 'pagina-da-marca',
+  'referencia-no-livro', 'pagina-da-marca',
 ];
 const MARCA = /\[\s*(?:a\s+verificar|to\s+verify)\s*\]/giu;
 // Os parágrafos citados sobre a identidade da I77, conferidos no documento e na transcrição.
@@ -67,7 +67,6 @@ function aceite(n, {rota, claims, municipios = []}) {
   const selo = perto(n, 'a.src-chip[data-nonledger="proveniencia"]');
   const destino = selo && matchPath((selo.getAttribute('href') ?? '').split('#')[0]);
   if (destino?.key === 'linha' && provenienciaIncompleta(claims?.get(destino.params.slug))) return 'selo-proveniencia';
-  if (rota?.key === 'linha' && claims?.has(rota.params?.slug) && perto(n, '.linha-alcance')) return 'nota-alcance';
   // No livro, a referência é uma amostra isolada, com a glosa inglesa opcional.
   const referencia = perto(n, '.aparelho-nota');
   if (rota?.key === 'livro' && referencia && /^\[a verificar\](?:\s*\(to verify\))?$/.test(texto(referencia).trim())) return 'referencia-no-livro';
