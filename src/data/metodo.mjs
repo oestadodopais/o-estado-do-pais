@@ -650,8 +650,8 @@ export const REGRAS = [
       {
         chave: 'valores_creditados',
         rotulo: {
-          pt: 'linhas com o nome de quem decidiu o valor, tal como consta do documento',
-          en: 'rows with the name of who decided the value, as the document gives it',
+          pt: 'linhas que dizem a quem o documento atribui o valor',
+          en: 'rows that say who the document attributes the value to',
         },
       },
     ],
