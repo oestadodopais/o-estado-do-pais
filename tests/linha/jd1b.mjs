@@ -1,5 +1,7 @@
 /** JD1-b: as ressalvas da fonte não podem desaparecer numa nova redação. */
 import fs from 'node:fs';
+import { createHash } from 'node:crypto';
+import { getClaim } from '../../src/lib/ledger.mjs';
 import assert from 'node:assert/strict';
 import { parse } from 'node-html-parser';
 import { oQueEDaLinha, oQueEDaSerie, nomeNoRecibo } from '../../src/lib/o-que-e-o-numero.mjs';
@@ -123,3 +125,36 @@ for (const lang of ['pt', 'en']) {
   assert.match(frase, lang === 'pt' ? /o Estado pedir dinheiro/ : /State’s borrowing/);
 }
 console.log(`JD1-b: perímetro e base nos catorze nomes, custo das emissões do Estado; ${plantasBases} plantas morderam.`);
+
+const custos = ['custo-do-stock-da-divida-direta-2025', 'custo-da-divida-emitida-2026-08'];
+export function temRecorteDoCusto(id, linha) {
+  const r = linha.document?.crop;
+  return Boolean(r && r.asset === `recortes/${id}.webp` && r.page === 3 && /^[0-9a-f]{64}$/.test(r.sha256));
+}
+export function temImagemDoCusto(id, html) {
+  return parse(html).querySelector('.linha-recorte img')?.getAttribute('src') === `/recortes/${id}.webp`;
+}
+let plantasRecortes = 0;
+for (const id of custos) {
+  const linha = getClaim(id);
+  assert.ok(temRecorteDoCusto(id, linha), `${id}: recorte ausente`);
+  const recorte = linha.document.crop;
+  assert.equal(createHash('sha256').update(fs.readFileSync(`public/${recorte.asset}`)).digest('hex'), recorte.sha256);
+  assert.equal(linha.excerpt.trim().split(/\r?\n/).length, 1, `${id}: excerto com mais de uma linha`);
+  const coluna = Number(linha.document.locator.match(/rótulo na coluna (\d+)/)?.[1]);
+  assert.ok(Number.isInteger(coluna) && coluna > 0);
+  assert.equal(linha.excerpt.slice(coluna - 1, coluna - 1 + linha.value.length), linha.value, `${id}: o valor não está na coluna declarada`);
+  if (process.argv.includes('--prova')) {
+    const copia = structuredClone(linha);
+    delete copia.document.crop;
+    assert.ok(!temRecorteDoCusto(id, copia));
+    const html = `<figure class="linha-recorte"><img src="/recortes/${id}.webp"></figure>`;
+    assert.ok(temImagemDoCusto(id, html));
+    assert.ok(!temImagemDoCusto(id, html.replace('<img ', '<span ')));
+    plantasRecortes += 2;
+  }
+  if (!process.argv.includes('--declaracoes')) for (const prefixo of ['livro-razao', 'en/ledger']) {
+    assert.ok(temImagemDoCusto(id, fs.readFileSync(`dist/${prefixo}/${id}/index.html`, 'utf8')), `${id}: a imagem não chegou ao recibo`);
+  }
+}
+console.log(`JD1-b: dois recortes, hashes e colunas conferidos; ${plantasRecortes} plantas morderam.`);

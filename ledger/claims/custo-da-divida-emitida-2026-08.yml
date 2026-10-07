@@ -12,22 +12,26 @@ unit: "%"
 # O rótulo com que a fonte publica esta figura, copiado do ficheiro alojado,
 # e onde nele foi lido. Escrito pelo motor, nunca à mão.
 name: "Custo da dívida emitida"
-name_source: "Custo da dívida direta do Estado, Custo da dívida emitida, ponto 2026, p. 3; definição na nota 6 da folha 5"
+name_source: "Custo da dívida direta do Estado, Custo da dívida emitida, ponto 2026, p. 3; rótulo na coluna 114 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5"
 
 # Proveniência. Em linhas derivadas fica a null: a proveniência é a das origens.
 source: "IGCP"
 document:
   title: "Boletim Mensal"
   edition: "setembro de 2026"
-  locator: "Custo da dívida direta do Estado, Custo da dívida emitida, ponto 2026, p. 3; definição na nota 6 da folha 5"
+  locator: "Custo da dívida direta do Estado, Custo da dívida emitida, ponto 2026, p. 3; rótulo na coluna 114 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5"
   page: 3
   kind: "pdf"
+  crop:
+    asset: "recortes/custo-da-divida-emitida-2026-08.webp"
+    sha256: "b29033cbba25a2182ff6da4bd1a6bdf68d5b190ce1207d9c453a342cb9a18ce9"
+    page: 3
 source_url: "https://www.igcp.pt/sites/default/files/2026-09/BM_set26.pdf#page=3"
 access_date: "2026-10-06"
 reference_date: "2026-08"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "    Custo e estrutura da dívida                                                                                                                                                               Cost and debt structure\nCusto da dívida direta do Estado (6)                                             State direct debt cost (6)                  Custo e maturidade dos empréstimos PAEF (7)                                    Cost and maturity of EU-IMF loans (7)\n[%]                                                                                                   [%]                    [ago-2026]                                                                                              [Aug-2026]\n\n                    Custo da dívida emitida / Cost of Issuance per\n6                   year                                                                                                                       Montante                           Maturidade média final                                         Maturidade média\n                                                                                                                                                                Custo all-in                                             Saldo vivo /\n                                                                                                                                            desembolsado /                     desde data do desembolso /                                          residual final /\n                    Custo do stock da dívida / Cost of Debt                                                                     Entidade /                      estimado /                                              Outstanding\n                    Outstanding                                                                                                            Amount disbursed                    Final average maturity since                                    Final average residual\n                                                                                                                                  Entity                      Estimated all in                                        (EUR mil milhões /\n4                                                                                                                                          (EUR mil milhões /                       disbursement date                                                 maturity\n                                                                               3,5                                                                                  cost                                                 EUR billion )\n         3,2                                                                               3,4         3,4       3,4                          EUR billion )                            (anos / years )                                             (anos / years )\n                    3,0           2,8\n          2,8                             2,5\n2                   2,6                           2,2                          2,0         2,1         2,1\n                                  1,8                      1,9          1,7                                                     EFSM                 24,1              2,2%                   19,1                          19,8                        5,5\n                                          1,1                           1,7\n                                                  0,5      0,6                                                                  EFSF                 26,0              1,9%                   20,4                          23,0                        8,1\n0\n        2016       2017      2018        2019     2020    2021        2022     2023      2024 2025 2026\n                                                                                             Fonte/Source: IGCP                                                                                                                             Fonte/Source: IGCP"
+excerpt: "         3,2                                                                               3,4         3,4       3,4                          EUR billion )                            (anos / years )                                             (anos / years )"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -38,7 +42,7 @@ check: null
 
 study: "oe-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Localizador: Custo da dívida direta do Estado, Custo da dívida emitida, ponto 2026, p. 3; definição na nota 6 da folha 5. Rótulo do gráfico, conferido na imagem e selecionado pela posição sob o ano. O boletim de setembro apresenta a informação até agosto; o custo do stock é anual, o custo da emissão é o acumulado do ano. Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · custo-da-divida-emitida-2026-08."
+note: "[note do motor] Localizador: Custo da dívida direta do Estado, Custo da dívida emitida, ponto 2026, p. 3; rótulo na coluna 114 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5. Rótulo selecionado pelo ano e pela cor da série na legenda, assinalado no recorte do gráfico. O boletim de setembro apresenta a informação até agosto; o custo do stock é anual, o custo da emissão é o acumulado do ano. Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · custo-da-divida-emitida-2026-08."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []
