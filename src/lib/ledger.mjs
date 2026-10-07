@@ -1044,10 +1044,12 @@ export const VERIFICACOES_MOSTRADAS = 2;
 
 /** @type {Map<string, Linha> | null} */
 let _cache = null;
+/** @type {Map<string, Linha>|null} */
+let _publicCache = null;
 
 /** Carrega e devolve Map<id, claim>. Lança se o YAML estiver partido. */
 export function loadClaims({ includeWithdrawn = false } = {}) {
-  if (_cache) return includeWithdrawn ? _cache : new Map([..._cache].filter(([, c]) => c.publication !== 'withdrawn'));
+  if (_cache && _publicCache) return includeWithdrawn ? _cache : _publicCache;
   /** @type {Map<string, Linha>} */
   const map = new Map();
   /** @type {string[]} */
@@ -1078,7 +1080,8 @@ export function loadClaims({ includeWithdrawn = false } = {}) {
     map.set(doc.id, doc);
   }
   _cache = map;
-  return includeWithdrawn ? map : new Map([...map].filter(([, c]) => c.publication !== 'withdrawn'));
+  _publicCache = new Map([...map].filter(([, c]) => c.publication !== 'withdrawn'));
+  return includeWithdrawn ? map : _publicCache;
 }
 
 /**
