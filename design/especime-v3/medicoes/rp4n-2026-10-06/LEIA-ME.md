@@ -1,6 +1,6 @@
 # RP4-n · selar as frases na fonte
 
-A primeira passagem recompôs as frases e ficou bloqueada no portão HTML. O estado atual, a regra corrigida e os códigos desta passagem estão na secção «A passagem RP4-n-b», no fim. Este pacote é uma entrega para leitura a frio, não uma aprovação nem uma publicação.
+A primeira passagem recompôs as frases e ficou bloqueada no portão HTML. O estado atual, a regra completa e os códigos estão na secção «A passagem RP4-n-c», no fim. Este pacote é uma entrega para leitura a frio, não uma aprovação nem uma publicação.
 
 Relatório produzido por `relatar.py`. As contagens vêm de `antes/medidas.json`, `depois/medidas.json`, das origens exportadas e dos registos das plantas. `comparacao.json` conserva a comparação completa nas duas línguas.
 
@@ -502,3 +502,208 @@ f8830e02027e2b45c56faf8c7c4b540d497ae4d0 Conferir os campos de data documentais 
 ```
 
 O último commit contém apenas o relatório e os registos dos códigos. A cabeça final do sítio é a desse commit e comunica-se no fecho; a cabeça final do motor é a indicada acima. O modelo do construtor foi indicado no mandato como `gpt-6-astra`, com raciocínio `xhigh`. Não foi exposta uma linha de consumo acumulado nesta sessão e não se estima o custo.
+
+## A passagem RP4-n-c
+
+A construção fecha a RP4N-5 com os portões a zero. A leitura independente e a conferência final da direção continuam por fazer.
+
+A lista da RP4N-1 era incompleta. A decisão RP4N-5 conserva o critério: a célula recusa a marca nas frases «o que é», nos nomes e rótulos de medidas, séries e lugares, nos títulos de estudos, nas leituras de cartões, na primeira página e nas explicações. Estas recusas têm prioridade sobre qualquer tipo aceite. Tudo o que não pertence a um tipo aceite continua recusado.
+
+Aceita e conta as ausências de proveniência nos recibos e os lugares onde a casa explica a marca: datas, excertos, endereços, a pessoa protegida pela I77, as referências do Método e do Sobre e, agora, os selos de proveniência dos recibos (pedido, hora, cliente, sha256 e ficheiro), o publicador, o título e a edição do documento citado, as notas de alcance, a referência no livro-razão e a própria página da marca, nas duas edições.
+
+Os campos de publicador, título e edição têm de coincidir exatamente com a ausência declarada na linha. Um selo precisa de apontar para uma linha existente com proveniência incompleta; as células anteriores continuam a conferir o seu texto, etiqueta e destino. A nota de alcance fica no recibo de uma linha existente. A referência do livro é uma amostra isolada, com a glosa inglesa opcional. A proteção I77 mantém-se. Nenhuma página, frase, medida ou fonte foi reescrita nesta passagem.
+
+### Contagens antes e depois
+
+O antes foi relido no HTML da passagem anterior e comparado com `depois-b/medidas.json`, incluindo o resumo de cada página. O depois foi medido após os portões. A medição exige as mesmas páginas e os mesmos contextos de ocorrência. A tabela discrimina retrospetivamente as superfícies recusadas no antes pelos tipos agora autorizados; não volta a somá-las em «fora-dos-tipos». Todos os algarismos abaixo vêm dos ficheiros de medição.
+
+| Estado | Páginas com marcas | Aceites | Recusadas |
+|---|---:|---:|---:|
+| Antes | 42 | 78 | 136 |
+| Depois | 42 | 214 | 0 |
+
+| Tipo | Antes aceites | Antes recusadas | Depois aceites | Depois recusadas |
+|---|---:|---:|---:|---:|
+| data | 44 | 0 | 44 | 0 |
+| excerto | 16 | 0 | 16 | 0 |
+| endereco | 10 | 0 | 10 | 0 |
+| pessoa-I77 | 6 | 0 | 6 | 0 |
+| referencia-metodo | 2 | 0 | 2 | 0 |
+| referencia-sobre | 0 | 0 | 0 | 0 |
+| selo-proveniencia | 0 | 98 | 98 | 0 |
+| publicador | 0 | 12 | 12 | 0 |
+| titulo-documento | 0 | 8 | 8 | 0 |
+| edicao-documento | 0 | 8 | 8 | 0 |
+| nota-alcance | 0 | 4 | 4 | 0 |
+| referencia-no-livro | 0 | 2 | 2 | 0 |
+| pagina-da-marca | 0 | 4 | 4 | 0 |
+| o-que-e-linha | 0 | 0 | 0 | 0 |
+| o-que-e-familia | 0 | 0 | 0 | 0 |
+| o-que-e-serie | 0 | 0 | 0 | 0 |
+| nome-medida | 0 | 0 | 0 | 0 |
+| nome-serie | 0 | 0 | 0 | 0 |
+| nome-lugar | 0 | 0 | 0 | 0 |
+| titulo-estudo | 0 | 0 | 0 | 0 |
+| leitura-cartao | 0 | 0 | 0 | 0 |
+| primeira-pagina | 0 | 0 | 0 | 0 |
+| explicacao | 0 | 0 | 0 | 0 |
+| fora-dos-tipos | 0 | 0 | 0 | 0 |
+
+### Plantas novas e mensagens
+
+As 20 plantas novas integram as 70 plantas da célula. Cada uma afirma a mensagem, a decisão, a contagem da ocorrência e a lista de páginas. As plantas anteriores permanecem intactas e todas correm dentro do portão HTML.
+
+| Planta | Decisão | Mensagem | Contagem afirmada |
+|---|---|---|---:|
+| selo de proveniência incompleta | aceites | RP4N: marca aceite provisoriamente (selo-proveniencia) | 1 |
+| selo de proveniência incompleta dentro de uma afirmação | recusadas | RP4N: marca recusada em o-que-e-linha | 1 |
+| publicador ausente | aceites | RP4N: marca aceite provisoriamente (publicador) | 1 |
+| publicador ausente dentro de uma afirmação | recusadas | RP4N: marca recusada em o-que-e-linha | 1 |
+| título de documento ausente | aceites | RP4N: marca aceite provisoriamente (titulo-documento) | 1 |
+| título de documento ausente dentro de uma afirmação | recusadas | RP4N: marca recusada em o-que-e-linha | 1 |
+| edição de documento ausente | aceites | RP4N: marca aceite provisoriamente (edicao-documento) | 1 |
+| edição de documento ausente dentro de uma afirmação | recusadas | RP4N: marca recusada em o-que-e-linha | 1 |
+| nota de alcance no recibo | aceites | RP4N: marca aceite provisoriamente (nota-alcance) | 1 |
+| nota de alcance no recibo dentro de uma afirmação | recusadas | RP4N: marca recusada em o-que-e-linha | 1 |
+| referência do livro | aceites | RP4N: marca aceite provisoriamente (referencia-no-livro) | 1 |
+| referência do livro dentro de uma afirmação | recusadas | RP4N: marca recusada em o-que-e-linha | 1 |
+| página da própria marca | aceites | RP4N: marca aceite provisoriamente (pagina-da-marca) | 1 |
+| página da própria marca dentro de uma afirmação | recusadas | RP4N: marca recusada em o-que-e-linha | 1 |
+| selo sem recibo no livro | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+| selo de proveniência completa | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+| nota de alcance fora do recibo | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+| referência do livro com afirmação | recusadas | RP4N: uma página de leitor contém uma marca de informação por confirmar | 1 |
+| referência do livro com glosa | aceites | RP4N: marca aceite provisoriamente (referencia-no-livro) | 1 |
+| página inglesa da própria marca | aceites | RP4N: marca aceite provisoriamente (pagina-da-marca) | 1 |
+
+### Páginas com marcas aceites para o bloco dos recibos
+
+| Página | Ocorrências aceites por tipo |
+|---|---|
+| `dist/a-verificar/index.html` | pagina-da-marca: 2 |
+| `dist/agenda/index.html` | data: 11 |
+| `dist/areas/ambiente-e-energia/index.html` | data: 1; selo-proveniencia: 2 |
+| `dist/areas/economia-e-coesao-territorial/index.html` | selo-proveniencia: 5 |
+| `dist/correcoes/index.html` | selo-proveniencia: 9 |
+| `dist/en/agenda/index.html` | data: 11 |
+| `dist/en/areas/ambiente-e-energia/index.html` | data: 1; selo-proveniencia: 2 |
+| `dist/en/areas/economia-e-coesao-territorial/index.html` | selo-proveniencia: 5 |
+| `dist/en/corrections/index.html` | selo-proveniencia: 9 |
+| `dist/en/ledger/agua-nao-faturada-portugal-2024/index.html` | endereco: 1; excerto: 1 |
+| `dist/en/ledger/avisos-pt2030-abertos/index.html` | data: 1; edicao-documento: 1; endereco: 1; excerto: 1; publicador: 1; titulo-documento: 1 |
+| `dist/en/ledger/avisos-pt2030-pessoas-singulares/index.html` | data: 1; edicao-documento: 1; endereco: 1; excerto: 1; publicador: 1; titulo-documento: 1 |
+| `dist/en/ledger/ciclo-substituicao-condutas/index.html` | data: 2; edicao-documento: 1; endereco: 1; excerto: 1; publicador: 1; titulo-documento: 1 |
+| `dist/en/ledger/evora-prr-aprovado-2026/index.html` | excerto: 1 |
+| `dist/en/ledger/evora-prr-pago-2026/index.html` | excerto: 1 |
+| `dist/en/ledger/evora-prr-vencido-aprovado-2026/index.html` | excerto: 1 |
+| `dist/en/ledger/index.html` | data: 5; publicador: 3; referencia-no-livro: 1; selo-proveniencia: 8 |
+| `dist/en/ledger/retribuicao-minima-mensal-garantida-continente-2026/index.html` | nota-alcance: 1 |
+| `dist/en/ledger/saldo-natural-portugal-2025/index.html` | data: 1; edicao-documento: 1; endereco: 1; excerto: 1; titulo-documento: 1 |
+| `dist/en/ledger/taxa-de-emprego-2025/index.html` | nota-alcance: 1 |
+| `dist/en/method/index.html` | referencia-metodo: 1 |
+| `dist/en/municipalities/evora/index.html` | pessoa-I77: 1; selo-proveniencia: 4 |
+| `dist/en/studies/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html` | selo-proveniencia: 13 |
+| `dist/en/studies/evora-prometido-pago-auditado-2026/index.html` | selo-proveniencia: 8 |
+| `dist/en/to-verify/index.html` | pagina-da-marca: 2 |
+| `dist/estudos/evora-economia-e-dinheiro-publico-de-fora-da-camara/index.html` | selo-proveniencia: 13 |
+| `dist/estudos/evora-prometido-pago-auditado-2026/index.html` | selo-proveniencia: 8 |
+| `dist/estudos/evora-quem-governou-a-camara-2009-2025/documento/index.html` | pessoa-I77: 2 |
+| `dist/estudos/evora-quem-governou-a-camara-2009-2025/index.html` | pessoa-I77: 2 |
+| `dist/livro-razao/agua-nao-faturada-portugal-2024/index.html` | endereco: 1; excerto: 1 |
+| `dist/livro-razao/avisos-pt2030-abertos/index.html` | data: 1; edicao-documento: 1; endereco: 1; excerto: 1; publicador: 1; titulo-documento: 1 |
+| `dist/livro-razao/avisos-pt2030-pessoas-singulares/index.html` | data: 1; edicao-documento: 1; endereco: 1; excerto: 1; publicador: 1; titulo-documento: 1 |
+| `dist/livro-razao/ciclo-substituicao-condutas/index.html` | data: 2; edicao-documento: 1; endereco: 1; excerto: 1; publicador: 1; titulo-documento: 1 |
+| `dist/livro-razao/evora-prr-aprovado-2026/index.html` | excerto: 1 |
+| `dist/livro-razao/evora-prr-pago-2026/index.html` | excerto: 1 |
+| `dist/livro-razao/evora-prr-vencido-aprovado-2026/index.html` | excerto: 1 |
+| `dist/livro-razao/index.html` | data: 5; publicador: 3; referencia-no-livro: 1; selo-proveniencia: 8 |
+| `dist/livro-razao/retribuicao-minima-mensal-garantida-continente-2026/index.html` | nota-alcance: 1 |
+| `dist/livro-razao/saldo-natural-portugal-2025/index.html` | data: 1; edicao-documento: 1; endereco: 1; excerto: 1; titulo-documento: 1 |
+| `dist/livro-razao/taxa-de-emprego-2025/index.html` | nota-alcance: 1 |
+| `dist/metodo/index.html` | referencia-metodo: 1 |
+| `dist/municipios/evora/index.html` | pessoa-I77: 1; selo-proveniencia: 4 |
+
+### Cabeças e códigos lidos
+
+| Repositório | Cabeça do código conferido |
+|---|---|
+| sítio | `1296ca052d21e4eb5a63f9890638e8d04e3b0307` |
+| motor, intacto | `eb4a5cbb0e4abe7cc44919a3679ce6fbad3bf369` |
+
+| Portão | Ficheiro | Código lido |
+|---|---|---:|
+| build | `portoes-c/build.codigo` | 0 |
+| verify | `portoes-c/verify.codigo` | 0 |
+| typecheck | `portoes-c/typecheck.codigo` | 0 |
+
+As cabeças de início e fim da corrida são iguais. Os portões correram inteiros pela tranca. Os registos foram conservados com os caminhos da máquina substituídos. O motor não mudou e não teve nova corrida.
+
+### RP4N-6. Inventário da voz desfasado
+
+A primeira corrida, na cabeça `7267f3c2c08b41f76abfac370c169aeee9e6aeec`, encontrou 618 problemas no portão da voz: 616 ocorrências das frases já publicadas por classificar e 2 declarações antigas ainda vivas que deixaram de se render. O diagnóstico completo está em `conferencias-c/voz-antes.json`.
+
+As declarações antigas, com a qualificação não sustentada, passaram a retiradas; as frases já publicadas em `src/data/concelhos.mjs` e já conferidas em `tests/cartao/leituras-provadas.json` entraram como conteúdo. A revisão ficou registada como por ler. Não se alterou a frase das páginas, a medida, o número ou a fonte. A repetição integral dos portões confere esta sincronização.
+
+| Frase já publicada | Ocorrências por classificar na primeira corrida |
+|---|---:|
+| Counts the enterprises attributed to the municipality (integrated business accounts system). | 308 |
+| Conta as empresas atribuídas ao concelho (sistema de contas integradas das empresas). | 308 |
+
+| Portão da primeira corrida | Ficheiro | Código lido |
+|---|---|---:|
+| build | `portoes-c-iniciais/build.codigo` | 1 |
+| verify | `portoes-c-iniciais/verify.codigo` | 1 |
+| typecheck | `portoes-c-iniciais/typecheck.codigo` | 0 |
+
+Os comandos posteriores à falha da voz nas cadeias da primeira corrida não se consideram executados. Os códigos do fecho são os de `portoes-c`, na cabeça do código indicada acima.
+
+### RP4N-7. A mesma sincronização no inventário dos rótulos
+
+A segunda corrida, na cabeça `372777e1c896ac6b5d64dc8ec0ae0193e49ab0a1`, passou a voz e encontrou 4 diferenças no inventário dos rótulos. Eram as mesmas frases: a forma atual aparecia nas páginas e a forma antiga continuava na declaração. O comando `node scripts/inventario-rotulos.mjs --escrever` recontou o inventário. A comparação dos objetos afirma que só mudaram as 2 formas da dobra, com as contagens conservadas; todos os outros campos das entradas ficaram iguais. Os metadados da cabeça e das páginas também foram recontados pelo comando. O diagnóstico está em `conferencias-c/rotulos.json`.
+
+| Chave | Antes na declaração | Depois na declaração |
+|---|---:|---:|
+| `concelho\|pt\|concelho:empresas` | 308 | 308 |
+| `concelho\|en\|concelho:empresas` | 308 | 308 |
+
+| Portão da segunda corrida | Ficheiro | Código lido |
+|---|---|---:|
+| build | `portoes-c-rotulos/build.codigo` | 0 |
+| verify | `portoes-c-rotulos/verify.codigo` | 1 |
+| typecheck | `portoes-c-rotulos/typecheck.codigo` | 0 |
+
+A conferência dos rótulos e os passos que esta corrida não alcançou foram corridos separadamente antes da repetição integral. Não substituem os portões do fecho.
+
+| Conferência | Ficheiro | Código lido |
+|---|---|---:|
+| rotulos | `conferencias-c/rotulos.codigo` | 0 |
+| series | `conferencias-c/series.codigo` | 0 |
+| indice-do-sitio | `conferencias-c/indice-do-sitio.codigo` | 0 |
+| explicacoes | `conferencias-c/explicacoes.codigo` | 0 |
+| frases-compostas | `conferencias-c/frases-compostas.codigo` | 0 |
+
+### Pendências
+
+Não sobrou nenhuma ocorrência fora dos tipos nem em superfície de afirmação. A RP4N-5 fica resolvida. A RP4N-6 e a RP4N-7 foram corrigidas pela sincronização dos inventários da voz e dos rótulos. As ausências aceites ficam inventariadas para o bloco dos recibos as dizer por palavras. Permanecem fora desta passagem o relatório das pensões (RP4N-2, falha de certificado já registada), a leitura do vocabulário do PRR (RP4N-3) e a leitura independente com a conferência final da direção (RP4N-4). Não houve fusão nem publicação.
+
+### Comandos e commits
+
+```sh
+node design/especime-v3/medicoes/rp4n-2026-10-06/medir-c.mjs antes
+node tests/cartao/rp4nb.mjs --registo-c
+node scripts/inventario-rotulos.mjs --escrever
+RESEARCHHUB_DIR=<motor> sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/rp4n-2026-10-06/portoes-c
+node design/especime-v3/medicoes/rp4n-2026-10-06/medir-c.mjs depois
+RESEARCHHUB_DIR=<motor> python3 design/especime-v3/medicoes/rp4n-2026-10-06/relatar-c.py
+```
+
+Commits da passagem antes do commit final do relatório e dos códigos:
+
+```text
+7267f3c2c08b41f76abfac370c169aeee9e6aeec Completar os tipos de marcas aceites pela decisão RP4N-5
+372777e1c896ac6b5d64dc8ec0ae0193e49ab0a1 Sincronizar o inventário da voz com as frases já publicadas
+1296ca052d21e4eb5a63f9890638e8d04e3b0307 Sincronizar o inventário dos rótulos com as dobras já publicadas
+6de65f31a2596948293812c4d8f1e54e9638593c Guardar as medições e os registos dos portões da RP4-n-c
+```
+
+O último commit contém apenas este relatório e os ficheiros dos códigos. A cabeça final comunica-se no fecho. O mandato identifica o construtor como Codex `gpt-6-astra`, com raciocínio `xhigh`.
