@@ -24,6 +24,8 @@ for (const [nome, altera] of [
   ['excerto com uma palavra inventada', o => {o.excerto += ' PALAVRA PLANTADA';}],
   ['selo com outro cliente', o => {o.selo.cliente = 'cliente inventado';}],
   ['selo com outra página', o => {o.extracao.pagina++;}],
+  ['tipo do selo apagado', o => {delete o.selo.tipo;}],
+  ['selo inteiro apagado', o => {delete o.selo;}],
 ]) {
   const origens = structuredClone(ORIGENS_DAS_DEFINICOES);
   altera(origens['rp4n-orcamento']);

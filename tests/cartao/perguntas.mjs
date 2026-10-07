@@ -52,7 +52,7 @@ import {
 } from '../../src/data/figuras.mjs';
 import { loadClaims } from '../../src/lib/ledger.mjs';
 import { UNIDADES_DOS_CARTOES } from '../../src/data/unidades-dos-cartoes.mjs';
-import { conferirOrigemRP4N } from './origens-rp4n.mjs';
+import { conferirOrigemRP4N, eOrigemRP4N } from './origens-rp4n.mjs';
 
 const AQUI = path.dirname(fileURLToPath(import.meta.url));
 export const AUDITORIA_DAS_PERGUNTAS = path.join(AQUI, 'perguntas-provadas.json');
@@ -289,7 +289,7 @@ export function auditarPerguntas({
     /* A forma documental conserva o cliente literal do recibo, incluindo os
        pedidos do OE1 que registam a identidade HTTP. Só a exportação conferida
        no motor admite esta forma. O selo antigo conserva todas as exigências. */
-    if (o?.selo?.tipo === 'rp4n') {
+    if (eOrigemRP4N(chave) || o?.selo?.tipo === 'rp4n') {
       const erro = conferirOrigemRP4N(chave, o);
       if (erro) erros.push(`K16 · origem «${chave}»: ${erro}`);
       contas.origens_seladas++;
