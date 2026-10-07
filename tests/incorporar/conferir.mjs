@@ -75,6 +75,7 @@ for (const lang of ['pt','en']) {
     const marcada = {...c,[campo]:'[a verificar]'};
     assert.equal(podeIncorporar(marcada),false);
     assert.equal(codigoDaIncorporacao(marcada,lang),null);
+    if(campo==='access_date' && !eDerivada(marcada)) assert.notEqual(dadosDaIncorporacao(marcada,lang).leitura,lang==='pt'?'calculado por este projeto':'calculated by this project', 'ER1 JSON: uma data por confirmar não faz da linha uma calculada.');
     const mensagem = 'ER1 código: proveniência por confirmar oferece código.';
     assert(conferirCodigo(lerPaginaComCodigo(html),matchPath(caminho),new Map([[c.id,marcada]])).includes(mensagem));
     resultados.plantas.push({nome:'marca-isolada-'+campo+'-'+lang,mensagem,mordeu:true});
