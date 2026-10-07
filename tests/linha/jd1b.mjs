@@ -158,3 +158,27 @@ for (const id of custos) {
   }
 }
 console.log(`JD1-b: dois recortes, hashes e colunas conferidos; ${plantasRecortes} plantas morderam.`);
+
+export function periodoDaEmissao(linha, frase, lang) {
+  const boletim = lang === 'pt' ? /até à data do boletim de setembro/ : /as of the September bulletin/;
+  return linha.reference_date === '2026' && boletim.test(frase) && !/até agosto|through August/.test(frase);
+}
+let plantasPeriodo = 0;
+for (const lang of ['pt', 'en']) {
+  const id = 'custo-da-divida-emitida-2026-08';
+  const linha = getClaim(id);
+  const frase = oQueEDaLinha(id, lang).pedacos.join('');
+  assert.ok(periodoDaEmissao(linha, frase, lang));
+  assert.ok(!/até agosto|through August/.test(nomeNoRecibo(id, lang).texto));
+  if (process.argv.includes('--prova')) {
+    assert.ok(!periodoDaEmissao({...linha, reference_date: '2026-08'}, frase, lang));
+    assert.ok(!periodoDaEmissao(linha, frase.replace(lang === 'pt' ? 'até à data do boletim de setembro' : 'as of the September bulletin', lang === 'pt' ? 'até agosto' : 'through August'), lang));
+    plantasPeriodo += 2;
+  }
+  if (!process.argv.includes('--declaracoes')) {
+    const prefixo = lang === 'pt' ? 'livro-razao' : 'en/ledger';
+    const html = parse(fs.readFileSync(`dist/${prefixo}/${id}/index.html`, 'utf8'));
+    assert.ok(periodoDaEmissao(linha, html.querySelector('[data-o-que-e-parte="o-que-e"]').textContent, lang));
+  }
+}
+console.log(`JD1-b: ano da emissão e data do boletim conservados; ${plantasPeriodo} plantas morderam.`);

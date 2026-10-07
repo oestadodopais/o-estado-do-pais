@@ -132,15 +132,15 @@ export const FAMILIAS_DAS_LINHAS = {
   },
   "custo-da-divida-emitida": {
     "nome": {
-      "pt": "Custo médio ponderado da dívida emitida pelo Estado, até agosto",
-      "en": "Weighted average cost of State debt issued, through August"
+      "pt": "Custo médio ponderado da dívida emitida pelo Estado",
+      "en": "Weighted average cost of State debt issued"
     },
     "frase": {
       "pt": [
-        "É o custo médio de o Estado pedir dinheiro emprestado no ano, através de Bilhetes do Tesouro, Obrigações do Tesouro, Obrigações do Tesouro de Rendimento Variável e Medium Term Notes. As emissões pesam nesta média de acordo com os montantes e os prazos."
+        "É o custo médio de o Estado pedir dinheiro emprestado no ano, através de Bilhetes do Tesouro, Obrigações do Tesouro, Obrigações do Tesouro de Rendimento Variável e Medium Term Notes. As emissões pesam nesta média de acordo com os montantes e os prazos. O valor é de dois mil e vinte e seis, até à data do boletim de setembro."
       ],
       "en": [
-        "It is the average cost of the State’s borrowing during the year through Treasury bills, Treasury bonds, floating-rate Treasury bonds and Medium Term Notes. Issues are weighted in this average by their amounts and maturities."
+        "It is the average cost of the State’s borrowing during the year through Treasury bills, Treasury bonds, floating-rate Treasury bonds and Medium Term Notes. Issues are weighted in this average by their amounts and maturities. The value is for two thousand and twenty-six, as of the September bulletin."
       ]
     }
   },

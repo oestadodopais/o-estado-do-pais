@@ -28,7 +28,7 @@ document:
     page: 3
 source_url: "https://www.igcp.pt/sites/default/files/2026-09/BM_set26.pdf#page=3"
 access_date: "2026-10-06"
-reference_date: "2026-08"
+reference_date: "2026"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
 excerpt: "         3,2                                                                               3,4         3,4       3,4                          EUR billion )                            (anos / years )                                             (anos / years )"
@@ -42,7 +42,7 @@ check: null
 
 study: "oe-2026"
 # Nota interna. NÃO é publicada: ver DECISIONS §1.24.
-note: "[note do motor] Localizador: Custo da dívida direta do Estado, Custo da dívida emitida, ponto 2026, p. 3; rótulo na coluna 114 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5. Rótulo selecionado pelo ano e pela cor da série na legenda, assinalado no recorte do gráfico. O boletim de setembro apresenta a informação até agosto; o custo do stock é anual, o custo da emissão é o acumulado do ano. Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · custo-da-divida-emitida-2026-08."
+note: "[note do motor] Localizador: Custo da dívida direta do Estado, Custo da dívida emitida, ponto 2026, p. 3; rótulo na coluna 114 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5. Rótulo selecionado pelo ano e pela cor da série na legenda, assinalado no recorte do gráfico. O custo do stock é anual; o custo da emissão refere-se a 2026, até à data do boletim de setembro, e à dívida emitida no ano correspondente, como a nota 6 a define. Contas nacionais, execução orçamental e dívida direta têm perímetros e critérios distintos; esta linha conserva o do documento citado. · Cruzado de ResearchHub content/20 Orcamento do Estado · custo-da-divida-emitida-2026-08."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
 corrections: []

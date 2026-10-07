@@ -302,7 +302,7 @@ const LOCALIZADORES_CONHECIDOS = [
   { nome: 'JD1, PIB no quadro 1 do INE', forma: /^Quadro 1, Produto Interno Bruto, a preços de mercado, coluna (2024|2025), p\. 2$/, onde: 'publisher/jd1.py: quadro do PIB do INE', confere: localizadorJd1Confere },
   { nome: 'JD1, juros no quadro 1 da execução', forma: /^Quadro 1, Conta consolidada das Administrações Públicas, execução acumulada (2025|2026), janeiro a agosto, folha 7 do PDF \(numeração impressa: 3\)$/, onde: 'publisher/jd1.py: conta consolidada da execução', confere: localizadorJd1Confere },
   { nome: 'JD1, custo da dívida no gráfico do IGCP', forma: /^Custo da dívida direta do Estado, Custo (?:da dívida emitida|do stock da dívida), ponto (?:2025|2026), p\. 3; rótulo na coluna (?:104|114) da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5$/, onde: 'publisher/jd1.py: gráfico do custo da dívida', confere: localizadorJd1Confere },
-  { nome: 'JD1, saldo da dívida direta do IGCP', forma: /^Movimento da dívida direta do Estado, Dívida total \/ Total debt, saldo em 31\/ago\/26, p\. 2$/, onde: 'publisher/jd1.py: movimento da dívida direta', confere: localizadorJd1Confere },
+  { nome: 'JD1, saldo da dívida direta do IGCP', forma: /^Movimento da dívida direta do Estado, Dívida total \/ Total debt, saldo em 31\/a go\/26, p\. 2$/, onde: 'publisher/jd1.py: movimento da dívida direta', confere: localizadorJd1Confere },
   { nome: 'JD1, quadro anual do financiamento do IGCP', forma: /^Quadro 9, (?:p\.m\. EMISSÕES DE DÍVIDA NO ANO CIVIL \(Dívida Fundada\)|3\. NECESSIDADES BRUTAS DE FINANCIAMENTO \(1\. \+ 2\.\)), coluna 2025, p\. 45$/, onde: 'publisher/jd1.py: quadro anual de financiamento', confere: localizadorJd1Confere },
   { nome: 'JD1, coordenada dos juros da União', forma: /^freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=EU27_2020; time=2025; \$\.value\["0"\]; \$\.updated$/, onde: 'publisher/jd1.py: célula dos juros no Eurostat', confere: localizadorJd1Confere },
 ];
@@ -331,7 +331,7 @@ function localizadorJd1Confere(onde, linha) {
     onde === `Quadro 1, Conta consolidada das Administrações Públicas, execução acumulada ${eo[1]}, janeiro a agosto, folha 7 do PDF (numeração impressa: 3)`;
   /** @type {Record<string, string[]>} */
   const custos = {
-    'custo-da-divida-emitida-2026-08': ['Custo da dívida emitida', '2026-08', '2026', '114'],
+    'custo-da-divida-emitida-2026-08': ['Custo da dívida emitida', '2026', '2026', '114'],
     'custo-do-stock-da-divida-direta-2025': ['Custo do stock da dívida', '2025', '2025', '104'],
   };
   if (id in custos) {
@@ -341,7 +341,7 @@ function localizadorJd1Confere(onde, linha) {
   }
   if (id === 'divida-direta-do-estado-2026-08') return linha.name === 'Dívida total / Total debt' &&
     linha.reference_date === '2026-08' && d.page === 2 && d.title === 'Boletim Mensal' &&
-    onde === 'Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 31/ago/26, p. 2';
+    onde === 'Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 31/a go/26, p. 2';
   /** @type {Record<string, string>} */
   const anuais = {
     'emissoes-de-divida-fundada-2025': 'p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada)',
@@ -1810,7 +1810,7 @@ function provaLocalizadores() {
       ['JD1: ano da execução trocado', 13, 'Quadro 1, Conta consolidada das Administrações Públicas, execução acumulada 2026, janeiro a agosto, folha 7 do PDF (numeração impressa: 3)', 'juros-e-outros-encargos-execucao-2025-08'],
       ['JD1: ano do custo do stock trocado', 14, 'Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2026, p. 3; rótulo na coluna 104 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5', 'custo-do-stock-da-divida-direta-2025'],
       ['JD1: coluna do custo do stock trocada', 14, 'Custo da dívida direta do Estado, Custo do stock da dívida, ponto 2025, p. 3; rótulo na coluna 114 da linha extraída; série identificada pela cor da legenda; definição na nota 6 da folha 5', 'custo-do-stock-da-divida-direta-2025'],
-      ['JD1: dia do saldo trocado', 15, 'Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 30/ago/26, p. 2', 'divida-direta-do-estado-2026-08'],
+      ['JD1: dia do saldo trocado', 15, 'Movimento da dívida direta do Estado, Dívida total / Total debt, saldo em 30/a go/26, p. 2', 'divida-direta-do-estado-2026-08'],
       ['JD1: emissões no lugar das necessidades', 16, 'Quadro 9, p.m. EMISSÕES DE DÍVIDA NO ANO CIVIL (Dívida Fundada), coluna 2025, p. 45', 'necessidades-brutas-de-financiamento-2025'],
       ['JD1: geografia da União trocada', 17, 'freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=PT; time=2025; $.value["0"]; $.updated', 'juros-das-administracoes-publicas-2025-ue'],
       ['JD1: célula JSON da União trocada', 17, 'freq=A; unit=PC_GDP; sector=S13; na_item=D41PAY; geo=EU27_2020; time=2025; $.value["1"]; $.updated', 'juros-das-administracoes-publicas-2025-ue'],
