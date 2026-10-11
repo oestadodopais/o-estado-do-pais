@@ -548,3 +548,93 @@ ER1-7: a direção tem de resolver a contradição entre a recusa limitada à fo
 O recibo recusado conserva as marcas anteriores ao bloco, como manda o achado 10. A falta de referência do antigo exemplo e a apresentação dessas marcas pertencem ao bloco dos recibos. A direção compõe o próximo pacote com as rotas acima e faz a leitura a frio e a aterragem. Não houve push nem publicação, e verify:deploy desta cabeça continua por executar após publicação.
 
 A linha «tokens used» não foi exposta nesta sessão. Custo real e comparação com o custo-alvo: [verify]. Não se infere o custo do orçamento interno.
+
+
+## A passagem ER1-d
+
+ER1-7 fechada pela decisão do lugar de direção no mandato desta passagem. A recusa usa agora `provenienciaIncompleta()`, a mesma definição de `src/lib/ledger.mjs` que a prova do Método usa. O compositor e o portão importam-na; a regra não foi copiada nem se alteraram as linhas do livro. O guião exige a igualdade entre os recibos realmente construídos sem código e a contagem do Método em cada edição.
+
+A definição partilhada lê os campos de proveniência, incluindo o excerto, o endereço da fonte e o documento. Conserva também o período de referência que já fazia parte do predicado do Método. As linhas calculadas sem marca continuam a receber código. A recusa mantém as cadeias aprovadas nas duas línguas, que descrevem um campo da proveniência por confirmar na fonte.
+
+Relatório gerado por `node design/especime-v3/medicoes/er1-2026-10-06/relatar-d.mjs`. Cabeça do código: `8ed75dfd1fdb00d57d977eee3beae009675b0ff0`. O último commit acrescenta apenas o relatório com os seus anexos medidos, as capturas e os códigos dos portões. A cabeça final lê-se na resposta da entrega. As capturas mostram os mesmos bytes da aplicação dessa cabeça final; o carimbo identifica honestamente a cabeça do código.
+
+| Commit |
+| --- |
+| af9d09ff docs(er1-d): registar o mandato e a decisão ER1-7 |
+| be34d0c6 fix(er1-d): partilhar a recusa com a prova do Método |
+| 577d8a8a test(er1-d): plantar marcas isoladas no excerto e no endereço |
+| 8ed75dfd docs(er1-d): fechar ER1-7 no relatório medido e preparar capturas |
+
+### As contagens lado a lado
+
+Comando: `node design/especime-v3/medicoes/er1-2026-10-06/medir-c.mjs --json design/especime-v3/medicoes/er1-2026-10-06/contagens-d.json`. Fonte: `ledger/claims/*.yml, pelo loadClaims() que src/lib/prova.mjs também lê`. Os resumos dos ficheiros do livro e as rotas estão em `contagens-d.json`. A contagem sem código vem de cada HTML construído; a do Método vem de `prova()` e é conferida contra a contagem rendida na página do Método.
+
+| Edição | Recibos sem código | Método por confirmar | Com código | Calculados sem data com código |
+| --- | --- | --- | --- | --- |
+| pt | 8 | 8 | 3187 | 365 |
+| en | 8 | 8 | 3187 | 365 |
+
+Igualdade exigida em todas as edições: satisfeita. O conjunto da diferença tem 0 linhas. A divergência descrita na secção histórica ER1-c e em `decisoes-c.md` fica resolvida por esta passagem.
+
+### As plantas e a mensagem
+
+A planta nova marca só o excerto e, separadamente, só o endereço da fonte. Confere que o compositor devolve ausência de código e que um recibo adulterado para oferecer código falha pela mensagem afirmada. Os campos do documento também são isolados. As plantas da ER1-c continuam a correr na mesma célula e no navegador.
+
+| Planta nova ou conservada | Mensagem afirmada | Mordeu |
+| --- | --- | --- |
+| marca-isolada-source-pt | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-access_date-pt | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-excerpt-pt | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-source_url-pt | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-document.title-pt | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-document.edition-pt | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-document.locator-pt | ER1 código: proveniência por confirmar oferece código. | sim |
+| calculada-sem-data-sem-codigo-pt | ER1 código: falta o único código do recibo. | sim |
+| marca-isolada-source-en | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-access_date-en | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-excerpt-en | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-source_url-en | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-document.title-en | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-document.edition-en | ER1 código: proveniência por confirmar oferece código. | sim |
+| marca-isolada-document.locator-en | ER1 código: proveniência por confirmar oferece código. | sim |
+| calculada-sem-data-sem-codigo-en | ER1 código: falta o único código do recibo. | sim |
+| separador-licenca-notas-pt | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| separador-licenca-notas-en | ER1 código: o pedaço difere da linha, carácter a carácter. | sim |
+| metodo-sem-exemplo-pt | ER1 Método: falta a porta para o recibo de exemplo da edição. | sim |
+| metodo-sem-exemplo-en | ER1 Método: falta a porta para o recibo de exemplo da edição. | sim |
+| separador-notas-retirado-pt | ER1 navegador: falta o separador entre licença e notas. | sim |
+| separador-notas-retirado-en | ER1 navegador: falta o separador entre licença e notas. | sim |
+
+As saídas integrais dos ensaios foram extraídas do `verify.log` da tranca para o anexo `provas-d.json`, sem repetir a corrida. Foram conferidos 6390 recibos e 3195 JSON; o navegador registou 25 casos. Nenhum portão de proteção de números, fontes ou pessoas foi enfraquecido.
+
+### Os portões e as capturas
+
+Comando: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/er1-2026-10-06/portoes-d`. Cabeça no início e no fim: `8ed75dfd1fdb00d57d977eee3beae009675b0ff0`. Os códigos foram lidos dos ficheiros depois de terminada a corrida. O verify executou a união conferida com o build pela tranca existente.
+
+| Portão | Código | Ficheiro |
+| --- | --- | --- |
+| build | 0 | portoes-d/build.codigo |
+| verify | 0 | portoes-d/verify.codigo |
+| typecheck | 0 | portoes-d/typecheck.codigo |
+
+Capturas por `node design/especime-v3/medicoes/er1-2026-10-06/capturar-d.mjs`: 8 imagens, com página completa e bloco de incorporação, nas larguras 390 e 1280 px. A linha `evora-prr-aprovado-2026`, de `evora-prr-aprovado-2026.yml`, tem marca apenas em `excerpt`. O guião confirma a ausência de campo e botão de código, a frase da recusa da edição, a ausência de pedidos externos e a largura sem transbordo horizontal.
+
+| Edição | Recibo recusado pelo excerto |
+| --- | --- |
+| pt | /livro-razao/evora-prr-aprovado-2026 |
+| en | /en/ledger/evora-prr-aprovado-2026 |
+
+| Captura | sha256 |
+| --- | --- |
+| [recusadoExcerto-pt-390-pagina.png](../../capturas/er1-2026-10-06/er1-d/recusadoExcerto-pt-390-pagina.png) | be24fa15f0bbd9dd6756de55bf105feef3af099fc83b3f3d7add0ffe4630907d |
+| [recusadoExcerto-pt-390-incorporar.png](../../capturas/er1-2026-10-06/er1-d/recusadoExcerto-pt-390-incorporar.png) | 1640a9b6e24c9cd73d9b27d129a9f7ff127b338bea596edf4ab91abff732ed42 |
+| [recusadoExcerto-pt-1280-pagina.png](../../capturas/er1-2026-10-06/er1-d/recusadoExcerto-pt-1280-pagina.png) | db5985d75f3e019866fab0eebdfe3583a142a27949476d0fff26928b22a28eed |
+| [recusadoExcerto-pt-1280-incorporar.png](../../capturas/er1-2026-10-06/er1-d/recusadoExcerto-pt-1280-incorporar.png) | 0f3880bbe34c493c3721cc7ddd9a53153745edf0913593a52804cba56620ff46 |
+| [recusadoExcerto-en-390-pagina.png](../../capturas/er1-2026-10-06/er1-d/recusadoExcerto-en-390-pagina.png) | bbe90ae6baada13ac27709773fca7f4301e116ab3281b412387ca674a7f104a3 |
+| [recusadoExcerto-en-390-incorporar.png](../../capturas/er1-2026-10-06/er1-d/recusadoExcerto-en-390-incorporar.png) | 6628044f5e88f30c064bc4895f271e3737161a8971fdfa6405e29172c1da91f0 |
+| [recusadoExcerto-en-1280-pagina.png](../../capturas/er1-2026-10-06/er1-d/recusadoExcerto-en-1280-pagina.png) | d24846ad5d387c60b61f4b00b3f5eb2d518f3b850ee6ef40ad757aae0305c87c |
+| [recusadoExcerto-en-1280-incorporar.png](../../capturas/er1-2026-10-06/er1-d/recusadoExcerto-en-1280-incorporar.png) | fb7a69fdd3466633b6a614908a2d3dd99e4f899e3cade6a24326a58387e0e64c |
+
+Não ficam questões novas desta passagem. A apresentação das marcas anteriores ao bloco continua reservada ao bloco dos recibos, como já decidiu a direção. A leitura a frio e a aterragem pertencem ao lugar de direção. Não houve push nem publicação.
+
+A linha «tokens used» não foi exposta nesta sessão. Custo real e comparação com o custo-alvo: [verify]. Não se infere o custo do orçamento interno.
