@@ -1,0 +1,7 @@
+{
+  "pdf_sha256": "98205ad2be8d62efcc002f11f84f0b3ad3f76fcc25914a88039ba851193f7286",
+  "pagina": 3,
+  "autoria": "O Sr. Presidente (Marcos Perestrello)",
+  "excerto": "Muito bom dia, Sr.as e Srs. Deputados, Srs. Ministros, estamos\nem condições de dar início aos nossos trabalhos.",
+  "metodo": "pdftotext -layout; página conferida visualmente por pdftoppm"
+}
