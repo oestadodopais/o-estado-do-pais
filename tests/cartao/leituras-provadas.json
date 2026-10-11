@@ -12396,7 +12396,7 @@
                 {
                   "origem": "rp4n-agua-nao-faturada",
                   "campo": "excerto",
-                  "literal": "É expresso em percentagem de água entrada no sistema que não é faturada."
+                  "literal": "percentagem de água entrada\nno sistema que não é faturada"
                 }
               ]
             }
