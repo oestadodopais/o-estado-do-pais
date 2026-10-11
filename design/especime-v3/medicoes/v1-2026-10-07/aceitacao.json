@@ -1,0 +1,38 @@
+{
+  "comando": "python3 <medicoes>/medir_entrega.py --motor <motor> --provas",
+  "motor_cabeca": "f8e07849f57270bd4d3256ccfffde185196f7823",
+  "motor_codigo": "f8e07849f57270bd4d3256ccfffde185196f7823",
+  "sitio_codigo": "142adfa9ec91d8624259d088bc1eff121dff87c0",
+  "entradas_por_fonte": {
+    "dar": 306,
+    "iniciativas": 0,
+    "dr": 4
+  },
+  "entradas_por_tipo": {
+    "declaração": 306,
+    "iniciativa": 0,
+    "ato": 4
+  },
+  "versoes_preservadas": 616,
+  "corpos_das_entradas": 2,
+  "dias": [
+    {
+      "dia": "2026-10-11",
+      "indice": "vigilancia/indice/2026-10-11.json",
+      "resumo": "vigilancia/resumo/2026-10-11.md",
+      "entradas": 616,
+      "bytes_resumo": 2356
+    }
+  ],
+  "plantas_passaram": 5,
+  "plantas_total": 5,
+  "codigo_portao": 0,
+  "portao_cabeca": "f8e07849f57270bd4d3256ccfffde185196f7823",
+  "duas_corridas_com_codigo_final": true,
+  "mesmo_codigo_das_corridas": true,
+  "segunda_sem_duplicados": true,
+  "fila_final_sem_duplicados": true,
+  "entrada_de_cada_fonte": false,
+  "tokens_used": null,
+  "custo_verificavel": false
+}

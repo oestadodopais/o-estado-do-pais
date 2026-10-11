@@ -1,0 +1,731 @@
+{
+  "comando": "python3 <medicoes>/medir_entrega.py --motor <motor>",
+  "corridas": [
+    {
+      "ficheiro": "vigilancia/corridas/2026-10-11T082941535048Z.json",
+      "id": "2026-10-11T082941535048Z",
+      "codigo_cabeca": "465d01e7853f2729fcaa4ba63160b6338ba5de1e",
+      "novas": 310,
+      "revisoes": 0,
+      "iguais": 0,
+      "pedidos": 18,
+      "bytes": 10000000,
+      "bytes_descomprimidos_lidos": 2360030,
+      "segundos": 34.619,
+      "simbolos_modelo": 0,
+      "entradas_por_fonte": {
+        "dar": 306,
+        "dr": 4
+      },
+      "entradas_por_tipo": {
+        "declaração": 306,
+        "ato": 4
+      },
+      "falhas": 5,
+      "minutos": 0.576983,
+      "fila": 5,
+      "fila_sem_duplicados": true,
+      "fontes": {
+        "dar": {
+          "estado": "parcial",
+          "razao": "Catálogo corrente e PDFs desde o primeiro número recolhido; intervenções nominais reconhecidas por número. Mudanças de sessão e lacunas fora do catálogo exigem revisão."
+        },
+        "iniciativas": {
+          "estado": "parcial",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        },
+        "dr": {
+          "estado": "parcial",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        }
+      },
+      "razoes_falhas": [
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "iniciativas",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        }
+      ],
+      "codigo_sha256": {
+        "__init__.py": "5e5ec4fed0dbbe82598949fa59ac0bbb6300ee29f2342c6f3b1260245e9b3057",
+        "diario.py": "fe16d6c7d9e0f6068c70e4cada3aab608a59234a72a430cd2de0d3f27f06bfc1",
+        "extrair.py": "99c78aaa5961a3d959f0506f87ed8c4b453784d09551846391be8794ab706ca9",
+        "fluxo.py": "92d64dac8b0e3df8dd716fdae5fffdc4ec18ef65127015abee9bc13d57b6c0a3",
+        "tests/__init__.py": "ba5dd9d965ede849d8dd7266ce437ed8d979bc5fd71b11ba0abf9f958dbd1d3b",
+        "tests/__main__.py": "9d4e1a81abf9ad22f18544d9d0fd2281e873cbf5473996546e6c798429092e94",
+        "tests/test_vigilancia.py": "f035c0c410b90a4a3d3a52cac907f917d850d22457c2d56949c8b6adf148e028",
+        "transporte.py": "ceee33c685530fb8971f497b89f950246b06969f0757d215db32d15b501f435d",
+        "verificar.py": "4832e310775295f4063c7ea95b1b564114c9bff57b08168186934b95a0ff6dd8",
+        "vigia.py": "a7550e8746ab13a1e8643539b372105ab59fed54a7d443e255f10cdfec6127d9"
+      },
+      "registo_sha256": "ac4a6ab6aea69c4fd089b0470c9e81c653da07f57d944b640fae78eee37ff32c"
+    },
+    {
+      "ficheiro": "vigilancia/corridas/2026-10-11T083143627056Z.json",
+      "id": "2026-10-11T083143627056Z",
+      "codigo_cabeca": "465d01e7853f2729fcaa4ba63160b6338ba5de1e",
+      "novas": 0,
+      "revisoes": 0,
+      "iguais": 4,
+      "pedidos": 16,
+      "bytes": 10000000,
+      "bytes_descomprimidos_lidos": 97884993,
+      "segundos": 30.256,
+      "simbolos_modelo": 0,
+      "entradas_por_fonte": {
+        "dar": 306,
+        "dr": 4
+      },
+      "entradas_por_tipo": {
+        "declaração": 306,
+        "ato": 4
+      },
+      "falhas": 6,
+      "minutos": 0.504267,
+      "fila": 10,
+      "fila_sem_duplicados": false,
+      "fontes": {
+        "dar": {
+          "estado": "parcial",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        },
+        "iniciativas": {
+          "estado": "parcial",
+          "razao": "iniciativa sem data de entrada reconhecível"
+        },
+        "dr": {
+          "estado": "parcial",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        }
+      },
+      "razoes_falhas": [
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "iniciativas",
+          "razao": "iniciativa sem data de entrada reconhecível"
+        },
+        {
+          "origem": "dar",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        }
+      ],
+      "codigo_sha256": {
+        "__init__.py": "5e5ec4fed0dbbe82598949fa59ac0bbb6300ee29f2342c6f3b1260245e9b3057",
+        "diario.py": "827207f28551138f763e7720a6274e9f6dd75643b5234e2a0e07379142609122",
+        "extrair.py": "99c78aaa5961a3d959f0506f87ed8c4b453784d09551846391be8794ab706ca9",
+        "fluxo.py": "92d64dac8b0e3df8dd716fdae5fffdc4ec18ef65127015abee9bc13d57b6c0a3",
+        "tests/__init__.py": "ba5dd9d965ede849d8dd7266ce437ed8d979bc5fd71b11ba0abf9f958dbd1d3b",
+        "tests/__main__.py": "9d4e1a81abf9ad22f18544d9d0fd2281e873cbf5473996546e6c798429092e94",
+        "tests/test_vigilancia.py": "f035c0c410b90a4a3d3a52cac907f917d850d22457c2d56949c8b6adf148e028",
+        "transporte.py": "ceee33c685530fb8971f497b89f950246b06969f0757d215db32d15b501f435d",
+        "verificar.py": "4832e310775295f4063c7ea95b1b564114c9bff57b08168186934b95a0ff6dd8",
+        "vigia.py": "a7550e8746ab13a1e8643539b372105ab59fed54a7d443e255f10cdfec6127d9"
+      },
+      "registo_sha256": "ac4a6ab6aea69c4fd089b0470c9e81c653da07f57d944b640fae78eee37ff32c"
+    },
+    {
+      "ficheiro": "vigilancia/corridas/2026-10-11T084515373549Z.json",
+      "id": "2026-10-11T084515373549Z",
+      "codigo_cabeca": "26c4bbe346c6a6d0c260782f2843350b43fdeb59",
+      "novas": 0,
+      "revisoes": 0,
+      "iguais": 4,
+      "pedidos": 16,
+      "bytes": 10000000,
+      "bytes_descomprimidos_lidos": 97884815,
+      "segundos": 33.606,
+      "simbolos_modelo": 0,
+      "entradas_por_fonte": {
+        "dar": 306,
+        "dr": 4
+      },
+      "entradas_por_tipo": {
+        "declaração": 306,
+        "ato": 4
+      },
+      "falhas": 6,
+      "minutos": 0.5601,
+      "fila": 15,
+      "fila_sem_duplicados": false,
+      "fontes": {
+        "dar": {
+          "estado": "parcial",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        },
+        "iniciativas": {
+          "estado": "parcial",
+          "razao": "registos sem data de entrada; não é possível decidir se pertencem à janela",
+          "registos_lidos": 2328,
+          "desde": "2026-10-11",
+          "sem_data": [
+            {
+              "posicao": 1509,
+              "IniId": "377355"
+            }
+          ],
+          "ultima_entrada": "2026-10-08"
+        },
+        "dr": {
+          "estado": "parcial",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        }
+      },
+      "razoes_falhas": [
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "iniciativas",
+          "razao": "registos sem data de entrada; não é possível decidir se pertencem à janela"
+        },
+        {
+          "origem": "dar",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        }
+      ],
+      "codigo_sha256": {
+        "__init__.py": "5e5ec4fed0dbbe82598949fa59ac0bbb6300ee29f2342c6f3b1260245e9b3057",
+        "diario.py": "c1158ef408488d4ac0d06c7489a6d3635a6f87ae29acb970dece5aecb934a6d2",
+        "extrair.py": "cc9e64e8a10fb739efb9b9c8b23d3a1804187f00e5cc8e5b56a18bb87eb785c9",
+        "fluxo.py": "92d64dac8b0e3df8dd716fdae5fffdc4ec18ef65127015abee9bc13d57b6c0a3",
+        "tests/__init__.py": "ba5dd9d965ede849d8dd7266ce437ed8d979bc5fd71b11ba0abf9f958dbd1d3b",
+        "tests/__main__.py": "9d4e1a81abf9ad22f18544d9d0fd2281e873cbf5473996546e6c798429092e94",
+        "tests/test_vigilancia.py": "18335c67d0893553c00b76d1bd1eef3b9933301615141803c941255133d0cf31",
+        "transporte.py": "e26c707d3630052798453b526c8b11d3467f1e5f57b4c462c859120f02791703",
+        "verificar.py": "8976f0fbff5f38d245368d4f51532deaecb40897dc154471733632270c2c7082",
+        "vigia.py": "a7550e8746ab13a1e8643539b372105ab59fed54a7d443e255f10cdfec6127d9"
+      },
+      "registo_sha256": "ac4a6ab6aea69c4fd089b0470c9e81c653da07f57d944b640fae78eee37ff32c"
+    },
+    {
+      "ficheiro": "vigilancia/corridas/2026-10-11T084609882488Z.json",
+      "id": "2026-10-11T084609882488Z",
+      "codigo_cabeca": "26c4bbe346c6a6d0c260782f2843350b43fdeb59",
+      "novas": 0,
+      "revisoes": 306,
+      "iguais": 4,
+      "pedidos": 17,
+      "bytes": 10000000,
+      "bytes_descomprimidos_lidos": 1986911,
+      "segundos": 32.094,
+      "simbolos_modelo": 0,
+      "entradas_por_fonte": {
+        "dar": 612,
+        "dr": 4
+      },
+      "entradas_por_tipo": {
+        "declaração": 612,
+        "ato": 4
+      },
+      "falhas": 5,
+      "minutos": 0.5349,
+      "fila": 18,
+      "fila_sem_duplicados": false,
+      "fontes": {
+        "dar": {
+          "estado": "parcial",
+          "razao": "Catálogo corrente e PDFs desde o primeiro número recolhido; intervenções nominais reconhecidas por número. Mudanças de sessão e lacunas fora do catálogo exigem revisão."
+        },
+        "iniciativas": {
+          "estado": "parcial",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        },
+        "dr": {
+          "estado": "parcial",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        }
+      },
+      "razoes_falhas": [
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "iniciativas",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        }
+      ],
+      "codigo_sha256": {
+        "__init__.py": "5e5ec4fed0dbbe82598949fa59ac0bbb6300ee29f2342c6f3b1260245e9b3057",
+        "diario.py": "c1158ef408488d4ac0d06c7489a6d3635a6f87ae29acb970dece5aecb934a6d2",
+        "extrair.py": "cc9e64e8a10fb739efb9b9c8b23d3a1804187f00e5cc8e5b56a18bb87eb785c9",
+        "fluxo.py": "92d64dac8b0e3df8dd716fdae5fffdc4ec18ef65127015abee9bc13d57b6c0a3",
+        "tests/__init__.py": "ba5dd9d965ede849d8dd7266ce437ed8d979bc5fd71b11ba0abf9f958dbd1d3b",
+        "tests/__main__.py": "9d4e1a81abf9ad22f18544d9d0fd2281e873cbf5473996546e6c798429092e94",
+        "tests/test_vigilancia.py": "18335c67d0893553c00b76d1bd1eef3b9933301615141803c941255133d0cf31",
+        "transporte.py": "e26c707d3630052798453b526c8b11d3467f1e5f57b4c462c859120f02791703",
+        "verificar.py": "8976f0fbff5f38d245368d4f51532deaecb40897dc154471733632270c2c7082",
+        "vigia.py": "a7550e8746ab13a1e8643539b372105ab59fed54a7d443e255f10cdfec6127d9"
+      },
+      "registo_sha256": "ac4a6ab6aea69c4fd089b0470c9e81c653da07f57d944b640fae78eee37ff32c"
+    },
+    {
+      "ficheiro": "vigilancia/corridas/2026-10-11T084739602028Z.json",
+      "id": "2026-10-11T084739602028Z",
+      "codigo_cabeca": "26c4bbe346c6a6d0c260782f2843350b43fdeb59",
+      "novas": 0,
+      "revisoes": 0,
+      "iguais": 4,
+      "pedidos": 16,
+      "bytes": 10000000,
+      "bytes_descomprimidos_lidos": 97884815,
+      "segundos": 33.946,
+      "simbolos_modelo": 0,
+      "entradas_por_fonte": {
+        "dar": 612,
+        "dr": 4
+      },
+      "entradas_por_tipo": {
+        "declaração": 612,
+        "ato": 4
+      },
+      "falhas": 6,
+      "minutos": 0.565767,
+      "fila": 6,
+      "fila_sem_duplicados": true,
+      "fontes": {
+        "dar": {
+          "estado": "parcial",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        },
+        "iniciativas": {
+          "estado": "parcial",
+          "razao": "registos sem data de entrada; não é possível decidir se pertencem à janela",
+          "registos_lidos": 2328,
+          "desde": "2026-10-11",
+          "sem_data": [
+            {
+              "posicao": 1509,
+              "IniId": "377355"
+            }
+          ],
+          "ultima_entrada": "2026-10-08"
+        },
+        "dr": {
+          "estado": "parcial",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        }
+      },
+      "razoes_falhas": [
+        {
+          "origem": "iniciativas",
+          "razao": "registos sem data de entrada; não é possível decidir se pertencem à janela"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dar",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        }
+      ],
+      "codigo_sha256": {
+        "__init__.py": "5e5ec4fed0dbbe82598949fa59ac0bbb6300ee29f2342c6f3b1260245e9b3057",
+        "diario.py": "1651196f85533f69d8932cd725b4c4ab97a31b40b5726436c4ea9cc3ae6ec10c",
+        "extrair.py": "cc9e64e8a10fb739efb9b9c8b23d3a1804187f00e5cc8e5b56a18bb87eb785c9",
+        "fluxo.py": "92d64dac8b0e3df8dd716fdae5fffdc4ec18ef65127015abee9bc13d57b6c0a3",
+        "tests/__init__.py": "ba5dd9d965ede849d8dd7266ce437ed8d979bc5fd71b11ba0abf9f958dbd1d3b",
+        "tests/__main__.py": "9d4e1a81abf9ad22f18544d9d0fd2281e873cbf5473996546e6c798429092e94",
+        "tests/test_vigilancia.py": "6ba5a86e50ea3fbea9799cb01bae2e21933aa44aa0d4d8c332a6d40738d8ea49",
+        "transporte.py": "e26c707d3630052798453b526c8b11d3467f1e5f57b4c462c859120f02791703",
+        "verificar.py": "8976f0fbff5f38d245368d4f51532deaecb40897dc154471733632270c2c7082",
+        "vigia.py": "a7550e8746ab13a1e8643539b372105ab59fed54a7d443e255f10cdfec6127d9"
+      },
+      "registo_sha256": "ac4a6ab6aea69c4fd089b0470c9e81c653da07f57d944b640fae78eee37ff32c"
+    },
+    {
+      "ficheiro": "vigilancia/corridas/2026-10-11T085234800946Z.json",
+      "id": "2026-10-11T085234800946Z",
+      "codigo_cabeca": "26c4bbe346c6a6d0c260782f2843350b43fdeb59",
+      "novas": 0,
+      "revisoes": 0,
+      "iguais": 306,
+      "pedidos": 12,
+      "bytes": 10000000,
+      "bytes_descomprimidos_lidos": 1975163,
+      "segundos": 32.749,
+      "simbolos_modelo": 0,
+      "entradas_por_fonte": {
+        "dar": 306,
+        "iniciativas": 0,
+        "dr": 4
+      },
+      "entradas_por_tipo": {
+        "declaração": 306,
+        "iniciativa": 0,
+        "ato": 4
+      },
+      "versoes_preservadas": 616,
+      "contagem": "entradas vigentes por identificador",
+      "falhas": 2,
+      "minutos": 0.545817,
+      "fila": 6,
+      "fila_sem_duplicados": true,
+      "fontes": {
+        "dar": {
+          "estado": "parcial",
+          "razao": "Catálogo corrente e PDFs desde o primeiro número recolhido; intervenções nominais reconhecidas por número. Mudanças de sessão e lacunas fora do catálogo exigem revisão."
+        },
+        "iniciativas": {
+          "estado": "parcial",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        },
+        "dr": {
+          "estado": "parcial",
+          "razao": "teto de bytes atingido"
+        }
+      },
+      "razoes_falhas": [
+        {
+          "origem": "iniciativas",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        },
+        {
+          "origem": "dr",
+          "razao": "teto de bytes atingido"
+        }
+      ],
+      "codigo_sha256": {
+        "__init__.py": "5e5ec4fed0dbbe82598949fa59ac0bbb6300ee29f2342c6f3b1260245e9b3057",
+        "diario.py": "efb96fcad086158ba6a4891a337e7000d5a36f31c218e5a9535b3926f8e912c3",
+        "extrair.py": "cc9e64e8a10fb739efb9b9c8b23d3a1804187f00e5cc8e5b56a18bb87eb785c9",
+        "fluxo.py": "92d64dac8b0e3df8dd716fdae5fffdc4ec18ef65127015abee9bc13d57b6c0a3",
+        "tests/__init__.py": "ba5dd9d965ede849d8dd7266ce437ed8d979bc5fd71b11ba0abf9f958dbd1d3b",
+        "tests/__main__.py": "9d4e1a81abf9ad22f18544d9d0fd2281e873cbf5473996546e6c798429092e94",
+        "tests/test_vigilancia.py": "dd79dae8e05574492948d6d156f8f08d00344d19076acfdf4802b9b2e4bce0c3",
+        "transporte.py": "e26c707d3630052798453b526c8b11d3467f1e5f57b4c462c859120f02791703",
+        "verificar.py": "87056b46051bbe60c81a1ec968ebbb1fcf94b4d6fb0c870f8713f42cfefcfe04",
+        "vigia.py": "a7550e8746ab13a1e8643539b372105ab59fed54a7d443e255f10cdfec6127d9"
+      },
+      "registo_sha256": "ac4a6ab6aea69c4fd089b0470c9e81c653da07f57d944b640fae78eee37ff32c"
+    },
+    {
+      "ficheiro": "vigilancia/corridas/2026-10-11T085336443850Z.json",
+      "id": "2026-10-11T085336443850Z",
+      "codigo_cabeca": "26c4bbe346c6a6d0c260782f2843350b43fdeb59",
+      "novas": 0,
+      "revisoes": 0,
+      "iguais": 4,
+      "pedidos": 16,
+      "bytes": 10000000,
+      "bytes_descomprimidos_lidos": 97884815,
+      "segundos": 31.74,
+      "simbolos_modelo": 0,
+      "entradas_por_fonte": {
+        "dar": 306,
+        "iniciativas": 0,
+        "dr": 4
+      },
+      "entradas_por_tipo": {
+        "declaração": 306,
+        "iniciativa": 0,
+        "ato": 4
+      },
+      "versoes_preservadas": 616,
+      "contagem": "entradas vigentes por identificador",
+      "falhas": 6,
+      "minutos": 0.529,
+      "fila": 7,
+      "fila_sem_duplicados": true,
+      "fontes": {
+        "dar": {
+          "estado": "parcial",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        },
+        "iniciativas": {
+          "estado": "parcial",
+          "razao": "registos sem data de entrada; não é possível decidir se pertencem à janela",
+          "registos_lidos": 2328,
+          "desde": "2026-10-11",
+          "sem_data": [
+            {
+              "posicao": 1509,
+              "IniId": "377355"
+            }
+          ],
+          "ultima_entrada": "2026-10-08"
+        },
+        "dr": {
+          "estado": "parcial",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        }
+      },
+      "razoes_falhas": [
+        {
+          "origem": "iniciativas",
+          "razao": "registos sem data de entrada; não é possível decidir se pertencem à janela"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dar",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        }
+      ],
+      "codigo_sha256": {
+        "__init__.py": "5e5ec4fed0dbbe82598949fa59ac0bbb6300ee29f2342c6f3b1260245e9b3057",
+        "diario.py": "efb96fcad086158ba6a4891a337e7000d5a36f31c218e5a9535b3926f8e912c3",
+        "extrair.py": "cc9e64e8a10fb739efb9b9c8b23d3a1804187f00e5cc8e5b56a18bb87eb785c9",
+        "fluxo.py": "92d64dac8b0e3df8dd716fdae5fffdc4ec18ef65127015abee9bc13d57b6c0a3",
+        "tests/__init__.py": "ba5dd9d965ede849d8dd7266ce437ed8d979bc5fd71b11ba0abf9f958dbd1d3b",
+        "tests/__main__.py": "9d4e1a81abf9ad22f18544d9d0fd2281e873cbf5473996546e6c798429092e94",
+        "tests/test_vigilancia.py": "dd79dae8e05574492948d6d156f8f08d00344d19076acfdf4802b9b2e4bce0c3",
+        "transporte.py": "e26c707d3630052798453b526c8b11d3467f1e5f57b4c462c859120f02791703",
+        "verificar.py": "87056b46051bbe60c81a1ec968ebbb1fcf94b4d6fb0c870f8713f42cfefcfe04",
+        "vigia.py": "a7550e8746ab13a1e8643539b372105ab59fed54a7d443e255f10cdfec6127d9"
+      },
+      "registo_sha256": "ac4a6ab6aea69c4fd089b0470c9e81c653da07f57d944b640fae78eee37ff32c"
+    },
+    {
+      "ficheiro": "vigilancia/corridas/2026-10-11T085524844046Z.json",
+      "id": "2026-10-11T085524844046Z",
+      "codigo_cabeca": "26c4bbe346c6a6d0c260782f2843350b43fdeb59",
+      "novas": 0,
+      "revisoes": 0,
+      "iguais": 310,
+      "pedidos": 17,
+      "bytes": 10000000,
+      "bytes_descomprimidos_lidos": 1986911,
+      "segundos": 34.773,
+      "simbolos_modelo": 0,
+      "entradas_por_fonte": {
+        "dar": 306,
+        "iniciativas": 0,
+        "dr": 4
+      },
+      "entradas_por_tipo": {
+        "declaração": 306,
+        "iniciativa": 0,
+        "ato": 4
+      },
+      "versoes_preservadas": 616,
+      "contagem": "entradas vigentes por identificador",
+      "falhas": 5,
+      "minutos": 0.57955,
+      "fila": 5,
+      "fila_sem_duplicados": true,
+      "fontes": {
+        "dar": {
+          "estado": "parcial",
+          "razao": "Catálogo corrente e PDFs desde o primeiro número recolhido; intervenções nominais reconhecidas por número. Mudanças de sessão e lacunas fora do catálogo exigem revisão."
+        },
+        "iniciativas": {
+          "estado": "parcial",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        },
+        "dr": {
+          "estado": "parcial",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        }
+      },
+      "razoes_falhas": [
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "iniciativas",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        }
+      ],
+      "codigo_sha256": {
+        "__init__.py": "5e5ec4fed0dbbe82598949fa59ac0bbb6300ee29f2342c6f3b1260245e9b3057",
+        "diario.py": "8799298a9a3f469ad94a8d7ad89dea46af4e64d548d26e0c14c0166862425f02",
+        "extrair.py": "cc9e64e8a10fb739efb9b9c8b23d3a1804187f00e5cc8e5b56a18bb87eb785c9",
+        "fluxo.py": "92d64dac8b0e3df8dd716fdae5fffdc4ec18ef65127015abee9bc13d57b6c0a3",
+        "tests/__init__.py": "ba5dd9d965ede849d8dd7266ce437ed8d979bc5fd71b11ba0abf9f958dbd1d3b",
+        "tests/__main__.py": "9d4e1a81abf9ad22f18544d9d0fd2281e873cbf5473996546e6c798429092e94",
+        "tests/test_vigilancia.py": "351f47e4edfd45c7a0e22b39ff596586a7f946d18f982ef14dfe1cb8aa53fb40",
+        "transporte.py": "e26c707d3630052798453b526c8b11d3467f1e5f57b4c462c859120f02791703",
+        "verificar.py": "87056b46051bbe60c81a1ec968ebbb1fcf94b4d6fb0c870f8713f42cfefcfe04",
+        "vigia.py": "a7550e8746ab13a1e8643539b372105ab59fed54a7d443e255f10cdfec6127d9"
+      },
+      "registo_sha256": "ac4a6ab6aea69c4fd089b0470c9e81c653da07f57d944b640fae78eee37ff32c"
+    },
+    {
+      "ficheiro": "vigilancia/corridas/2026-10-11T085638711957Z.json",
+      "id": "2026-10-11T085638711957Z",
+      "codigo_cabeca": "26c4bbe346c6a6d0c260782f2843350b43fdeb59",
+      "novas": 0,
+      "revisoes": 0,
+      "iguais": 4,
+      "pedidos": 16,
+      "bytes": 10000000,
+      "bytes_descomprimidos_lidos": 97884815,
+      "segundos": 31.392,
+      "simbolos_modelo": 0,
+      "entradas_por_fonte": {
+        "dar": 306,
+        "iniciativas": 0,
+        "dr": 4
+      },
+      "entradas_por_tipo": {
+        "declaração": 306,
+        "iniciativa": 0,
+        "ato": 4
+      },
+      "versoes_preservadas": 616,
+      "contagem": "entradas vigentes por identificador",
+      "falhas": 6,
+      "minutos": 0.5232,
+      "fila": 6,
+      "fila_sem_duplicados": true,
+      "fontes": {
+        "dar": {
+          "estado": "parcial",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        },
+        "iniciativas": {
+          "estado": "parcial",
+          "razao": "registos sem data de entrada; não é possível decidir se pertencem à janela",
+          "registos_lidos": 2328,
+          "desde": "2026-10-11",
+          "sem_data": [
+            {
+              "posicao": 1509,
+              "IniId": "377355"
+            }
+          ],
+          "ultima_entrada": "2026-10-08"
+        },
+        "dr": {
+          "estado": "parcial",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        }
+      },
+      "razoes_falhas": [
+        {
+          "origem": "iniciativas",
+          "razao": "registos sem data de entrada; não é possível decidir se pertencem à janela"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dr",
+          "razao": "texto integral do ato indisponível sem JavaScript; só metadados do RSS"
+        },
+        {
+          "origem": "dar",
+          "razao": "teto de bytes atingido; corpo incompleto não alojado"
+        }
+      ],
+      "codigo_sha256": {
+        "__init__.py": "5e5ec4fed0dbbe82598949fa59ac0bbb6300ee29f2342c6f3b1260245e9b3057",
+        "diario.py": "8799298a9a3f469ad94a8d7ad89dea46af4e64d548d26e0c14c0166862425f02",
+        "extrair.py": "cc9e64e8a10fb739efb9b9c8b23d3a1804187f00e5cc8e5b56a18bb87eb785c9",
+        "fluxo.py": "92d64dac8b0e3df8dd716fdae5fffdc4ec18ef65127015abee9bc13d57b6c0a3",
+        "tests/__init__.py": "ba5dd9d965ede849d8dd7266ce437ed8d979bc5fd71b11ba0abf9f958dbd1d3b",
+        "tests/__main__.py": "9d4e1a81abf9ad22f18544d9d0fd2281e873cbf5473996546e6c798429092e94",
+        "tests/test_vigilancia.py": "351f47e4edfd45c7a0e22b39ff596586a7f946d18f982ef14dfe1cb8aa53fb40",
+        "transporte.py": "e26c707d3630052798453b526c8b11d3467f1e5f57b4c462c859120f02791703",
+        "verificar.py": "87056b46051bbe60c81a1ec968ebbb1fcf94b4d6fb0c870f8713f42cfefcfe04",
+        "vigia.py": "a7550e8746ab13a1e8643539b372105ab59fed54a7d443e255f10cdfec6127d9"
+      },
+      "registo_sha256": "ac4a6ab6aea69c4fd089b0470c9e81c653da07f57d944b640fae78eee37ff32c"
+    }
+  ]
+}

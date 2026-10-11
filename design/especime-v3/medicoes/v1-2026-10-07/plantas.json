@@ -1,0 +1,41 @@
+{
+  "comando": "python3 <medicoes>/medir_entrega.py --motor <motor> --provas",
+  "codigo_cabeca": "f8e07849f57270bd4d3256ccfffde185196f7823",
+  "plantas": [
+    {
+      "planta": "excerto",
+      "mensagem_afirmada": "excerto alterado contra o arquivo",
+      "testes": 1,
+      "passou": true,
+      "registo": "test_planta_excerto (vigilancia.tests.test_vigilancia.Provas.test_planta_excerto) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "autoria",
+      "mensagem_afirmada": "autoria trocada contra o arquivo",
+      "testes": 1,
+      "passou": true,
+      "registo": "test_planta_autoria (vigilancia.tests.test_vigilancia.Provas.test_planta_autoria) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "data",
+      "mensagem_afirmada": "data errada contra o arquivo",
+      "testes": 1,
+      "passou": true,
+      "registo": "test_planta_data (vigilancia.tests.test_vigilancia.Provas.test_planta_data) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "corpo",
+      "mensagem_afirmada": "corpo truncado ou alterado no arquivo",
+      "testes": 1,
+      "passou": true,
+      "registo": "test_planta_corpo (vigilancia.tests.test_vigilancia.Provas.test_planta_corpo) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    },
+    {
+      "planta": "vazio",
+      "mensagem_afirmada": "falha apresentada como vazio ou cobertura completa",
+      "testes": 1,
+      "passou": true,
+      "registo": "test_planta_vazio (vigilancia.tests.test_vigilancia.Provas.test_planta_vazio) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n"
+    }
+  ]
+}
