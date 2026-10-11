@@ -343,3 +343,82 @@ A entrega foi medida por `node design/especime-v3/medicoes/ex2-2026-10-06/medir-
   It is the difference between what residents of Portugal own in the rest of the world and what they owe to it, as a percentage of GDP, the value of everything the country produces in a year.
 
   Negative means the country owes abroad more than it owns there. (Recibo: `posicao-de-investimento-internacional-2024`.)
+
+## A passagem EX1-d
+
+A explicação deixa de dizer que os juros faltam aos agregados: diz que estes números não os isolam. A referência à execução «acima» passa a indicar a posição na página. O saldo da execução passa a dizer se houve défice ou excedente, pelo sinal da linha, e a comparar o saldo acumulado com o saldo previsto para o ano inteiro, pelo token `compara`.
+
+A base foi `d7564f21`, no ramo `ex1d-2026-10-11`. A cabeça do código é `7355de78920d6efaf5484e73667dea067e0a9f9b`. Construção pelo Codex, com a identificação `gpt-6-astra` e o raciocínio `high` pedidos no lançamento, que prevalece sobre o `xhigh` do mandato. O último commit contém apenas este relatório, as capturas e os registos de verificação. Não houve publicação nem mudança de ramo. A leitura a frio pelo Claude Opus 5.5 e a conferência do lugar de direção continuam por fazer antes de aterrar.
+
+### As linhas e o perímetro
+
+O perímetro é a conta consolidada da administração central e da segurança social, em contabilidade pública. A execução acumula janeiro a agosto. As quatro linhas pertencem ao mesmo quadro da Síntese da Execução Orçamental, identificado nos localizadores abaixo. A previsão é o Orçamento Inicial reproduzido nessa síntese.
+
+| Linha | Valor | Unidade | Período | Localizador |
+|---|---|---|---|---|
+| `execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social` | 80 464,5 | milhões de euros, acumulados de janeiro a agosto | 2026-08 | p. 49 do ficheiro, página impressa 45, Despesa efetiva, Execução Acumulada 2026 |
+| `execucao-2026-08-receita-efetiva-administracao-central-seguranca-social` | 79 618,7 | milhões de euros, acumulados de janeiro a agosto | 2026-08 | p. 49 do ficheiro, página impressa 45, Receita efetiva, Execução Acumulada 2026 |
+| `execucao-2026-08-saldo-global-administracao-central-seguranca-social` | −845,8 | milhões de euros, acumulados de janeiro a agosto | 2026-08 | p. 49 do ficheiro, página impressa 45, Saldo global, Execução Acumulada 2026 |
+| `oe-2026-saldo-global-administracao-central-seguranca-social` | −1 789,8 | milhões de euros | 2026 | p. 49 do ficheiro, página impressa 45, Saldo global, Orçamento Inicial 2026 |
+
+O guião `captar-ex1d.mjs` confirma a identidade receita menos despesa igual a saldo, em décimos inteiros de milhão, sem arredondar nem criar uma linha nova. A [medição e o manifesto das capturas](capturas-ex1d.json) conservam os campos lidos, as frases do HTML, a cabeça e os resumos SHA-256 das imagens. O saldo não é uma medida de dívida emitida, como a ressalva da própria linha explica.
+
+### As decisões pequenas e os limites
+
+- **EX1-5, para JD1.** O valor em euros do Ministério das Finanças permanece como a fonte o publicou. O arredondamento para mil milhões depende de uma linha derivada no motor e fica por fazer, por decisão expressa do mandato.
+- **EX1-6.** Aplica-se a alternativa autorizada «que entra noutra classificação». O excerto selado `eurostat-cofog-divisao-01` nomeia literalmente «Public debt transactions», mas não explicita os juros. A descrição `dados-gov-oe-despesa-funcional` identifica a classificação funcional, sem explicitar essa inclusão. Não se acrescentou uma definição obtida fora das origens seladas. Os dois selos conferiram contra os ficheiros e os registos locais dos pedidos no motor. A abertura conserva o texto, como o mandato determina; a leitura a frio deve conhecer o limite destes apoios.
+- **EX1-7.** Existe saldo anual do mesmo perímetro, por isso a comparação entra. «Acima» compara os valores com sinal, não a dimensão do défice. Os ramos são «acima», «abaixo» e «em linha», com «para o ano inteiro» e o valor anual visíveis. «Dentro do que o Orçamento previa» sugeriria cumprimento de uma meta para agosto que nenhuma destas linhas estabelece. Não se conclui se a execução está dentro do previsto para agosto nem como fechará o ano.
+- **EX1-8.** A X6 tratava os ramos não escolhidos como palavras proibidas na página inteira. Com o défice da execução e o excedente do ano anterior, isso recusava duas frases corretas. Cada ausência passou a ser conferida no seu parágrafo; a igualdade integral do texto e a lista dos caminhos mantêm-se. As plantas trocam o sinal da execução, acrescentam-lhe o excedente da outra conta, invertem a comparação, mudam o perímetro, fazem passar a previsão anual por mensal e repõem a contradição dos juros. Nenhum portão de número, fonte ou pessoa foi dispensado.
+
+### As três frases, lidas da página
+
+Os textos abaixo retiram apenas os selos e normalizam os espaços; os números foram lidos do HTML, não compostos à mão.
+
+**PT**
+
+> Estes números não isolam o custo dos juros da dívida, que o Orçamento também prevê e que entra noutra classificação; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.
+
+> O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima.
+
+> Até agosto de 2026, as contas da administração central e da segurança social fecharam com um saldo de −845,8 milhões de euros, um défice (gastou mais do que recebeu); o saldo acumulado está acima do que o Orçamento previa para o ano inteiro (−1 789,8 milhões de euros).
+
+**EN**
+
+> These figures do not isolate the cost of the interest on the debt, which the Budget also forecasts and which falls under another classification; when the interest entries exist in the ledger, this explainer will say how much it is.
+
+> The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is the one this explainer shows above.
+
+> By August 2026, the accounts of central government and social security closed with a balance of −845,8 million euros, a deficit (it spent more than it took in); the cumulative balance is above what the Budget forecast for the full year (−1 789,8 million euros).
+
+### Conferências e capturas
+
+Comando dos portões: `sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/ex2-2026-10-06/portoes-d`, com `<worktree>` substituído pelo caminho absoluto apenas na execução. A tranca foi tomada pelo guião. Os códigos abaixo foram lidos dos ficheiros depois do fim dos processos, sem canalização. As cabeças de início e de fim coincidem com a cabeça do código.
+
+| Portão | Código lido |
+|---|---|
+| [build](portoes-d/build.codigo) | 0 |
+| [verify](portoes-d/verify.codigo) | 0 |
+| [typecheck](portoes-d/typecheck.codigo) | 0 |
+| [explicacao](portoes-d/explicacao.codigo) | 0 |
+| [acertos](portoes-d/acertos.codigo) | 0 |
+
+A célula X recontou 2 páginas, auditou 94 folhas e 139 partes, e as 29 plantas morderam. As origens foram também conferidas com o motor local por `RESEARCHHUB_DIR=<motor> node tests/explicacoes/explicacao.mjs --prova --json design/especime-v3/medicoes/ex2-2026-10-06/portoes-d/explicacao.json`. O guião dos acertos foi corrido com `node design/especime-v3/medicoes/ex1-2026-10-05/acertos-ex1.mjs --json design/especime-v3/medicoes/ex2-2026-10-06/portoes-d/acertos.json`.
+
+As 8 capturas são a página inteira e o recorte das correções, a 390 e a 1 280 px, nas duas edições. Foram inspecionadas visualmente: sem cortes nem transbordos. O guião mediu 0 erros de transbordo e abriu os recibos dos dois saldos em cada combinação de língua e largura. Comando: `RESEARCHHUB_DIR=<motor> node design/especime-v3/medicoes/ex2-2026-10-06/captar-ex1d.mjs`.
+
+- [PT, 390 px](../../capturas/ex2-2026-10-06/ex1d-pt-390-correcoes.png).
+- [PT, 1280 px](../../capturas/ex2-2026-10-06/ex1d-pt-1280-correcoes.png).
+- [EN, 390 px](../../capturas/ex2-2026-10-06/ex1d-en-390-correcoes.png).
+- [EN, 1280 px](../../capturas/ex2-2026-10-06/ex1d-en-1280-correcoes.png).
+
+Uma corrida inicial foi interrompida durante a geração dos cartões, antes de obter os três códigos, para corrigir o guião de capturas: equivalência dos espaços dos milhares nos recibos e recorte fora da janela sobre a página inteira. Essa tentativa não serve de prova; os registos finais são os de `portoes-d`.
+
+O resultado detalhado do portão de alvos fica em `portoes-d/alvos.json.gz`, comprimido sem perda depois da corrida. A descompressão foi comparada byte a byte com o original; o portão e os seus códigos não foram alterados.
+
+### Commits e custo
+
+- `e33ea4fadc4699653377d3911622110d6ebf405c EX1-d: esclarecer os juros e o saldo da execução`
+- `77dab7c2a659c7227c647fe728d7062021bae231 EX1-d: preparar a medição e as capturas da entrega`
+- `7355de78920d6efaf5484e73667dea067e0a9f9b EX1-d: conferir os recibos e o recorte da página inteira`
+
+Custo-alvo: trezentos mil símbolos. Não foi observada uma linha «tokens used» desta construção; custo efetivo e confronto com o alvo: [verify], a apurar no registo do lançador. Não se inventa uma contagem nem se afirma que o alvo foi cumprido.
