@@ -44,8 +44,10 @@ function anda(x,ids,out){
  Object.values(x).forEach(v=>anda(v,ids,out));
 }
 const frases=[];
+const chavesDe=e=>e.chaves??(e.concelho?['concelho:'+e.concelho]:[]);
 for(const e of atual.familias){
- const keys=e.chaves??[];const antiga=anterior.familias.find(a=>JSON.stringify(a.chaves)===JSON.stringify(keys));
+ const keys=chavesDe(e);if(!keys.length)throw Error('frase sem família identificada');
+ const antiga=anterior.familias.find(a=>JSON.stringify(chavesDe(a))===JSON.stringify(keys));
  const ids=[...ctx.linhas.keys()].filter(id=>{const f=ctx.familia(id);return keys.includes(f.tipo==='concelho'?'concelho:'+f.chave:f.chave);});
  if(JSON.stringify(e)===JSON.stringify(antiga)&&!ids.some(id=>alteradas.has(id))&&!keys.includes('agua-nao-faturada-portugal'))continue;
  const arquivos=new Map();anda(e,ids,arquivos);ids.forEach(id=>daLinha(id,arquivos));
