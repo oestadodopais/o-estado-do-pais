@@ -72,7 +72,8 @@ def main():
         assert sum(s['bytes'] for s in saltos) == r['medidas']['bytes']
         m = r['medidas']
         corridas.append({'ficheiro': f.relative_to(motor).as_posix(), 'id': r['id'], 'codigo_cabeca': r['codigo_cabeca'],
-                        **m, 'minutos': round(m['segundos'] / 60, 6), 'fila': len(r['fila']), 'fontes': r['fontes'],
+                        **m, 'minutos': round(m['segundos'] / 60, 6), 'fila': len(r['fila']),
+                        'fila_sem_duplicados': len(r['fila']) == len({diario.chave_tarefa(t) for t in r['fila']}), 'fontes': r['fontes'],
                         'razoes_falhas': r['falhas'], 'codigo_sha256': r.get('codigo_sha256'), 'registo_sha256': r.get('registo_sha256')})
     guardar('corridas.json', {'comando': 'python3 <medicoes>/medir_entrega.py --motor <motor>', 'corridas': corridas})
     entradas, hashes, dias, integridade = [], set(), [], []
@@ -110,21 +111,23 @@ def main():
     assert not fugas, 'caminho ou nome local em ficheiro do bloco'
     guardar('preservacao.json', {'comando': 'python3 <medicoes>/medir_entrega.py --motor <motor>', 'status_protegidos': protegido,
                                 'preexistentes_preservados': preservados, 'fugas_de_caminhos': fugas})
-    por_fonte = {k: sum(e['origem'] == k for e in entradas) for k in reg['entradas']}
-    tipos = dict(Counter(e['tipo'] for e in entradas))
-    atuais = [r for r in corridas if r['codigo_cabeca'] == codigo]
+    vigentes = diario.entradas_vigentes(entradas)
+    por_fonte = {k: sum(e['origem'] == k for e in vigentes) for k in reg['entradas']}
+    tipos = {f['tipo']: sum(e['tipo'] == f['tipo'] for e in vigentes) for f in reg['entradas'].values()}
     codigo_ficheiros = {str(p.relative_to(raiz)): sha(p.read_bytes()) for p in sorted(raiz.rglob('*.py'))}
+    atuais = [r for r in corridas if r['codigo_sha256'] == codigo_ficheiros and r['registo_sha256'] == sha(json.dumps(reg, sort_keys=True, ensure_ascii=False).encode())]
     mesmo_codigo = bool(atuais) and all(r['codigo_sha256'] == codigo_ficheiros for r in atuais)
     gate = PASTA / 'portoes/motor.codigo'
     gate_meta = json.loads((PASTA / 'portoes/motor.json').read_text()) if gate.exists() else {}
     plantas = json.loads((PASTA / 'plantas.json').read_text()) if (PASTA / 'plantas.json').exists() else {'plantas': []}
     medidas = {'comando': 'python3 <medicoes>/medir_entrega.py --motor <motor> --provas', 'motor_cabeca': git(motor, 'rev-parse', 'HEAD'),
                'motor_codigo': codigo, 'sitio_codigo': git(SITIO, 'log', '-1', '--format=%H', '--', str(PASTA.relative_to(SITIO) / 'medir_entrega.py')),
-               'entradas_por_fonte': por_fonte, 'entradas_por_tipo': tipos, 'corpos_das_entradas': len(hashes), 'dias': dias,
+               'entradas_por_fonte': por_fonte, 'entradas_por_tipo': tipos, 'versoes_preservadas': len(entradas), 'corpos_das_entradas': len(hashes), 'dias': dias,
                'plantas_passaram': sum(p['passou'] for p in plantas['plantas']), 'plantas_total': len(plantas['plantas']),
                'codigo_portao': int(gate.read_text()) if gate.exists() else None, 'portao_cabeca': gate_meta.get('cabeca'),
-               'duas_corridas_na_cabeca': len(atuais) >= 2, 'mesmo_codigo_das_corridas': mesmo_codigo,
+               'duas_corridas_com_codigo_final': len(atuais) >= 2, 'mesmo_codigo_das_corridas': mesmo_codigo,
                'segunda_sem_duplicados': len(atuais) >= 2 and atuais[-1]['novas'] == 0 and atuais[-1]['revisoes'] == 0,
+               'fila_final_sem_duplicados': bool(atuais) and all(r['fila_sem_duplicados'] for r in atuais),
                'entrada_de_cada_fonte': all(por_fonte.values()), 'tokens_used': None, 'custo_verificavel': False}
     guardar('aceitacao.json', medidas)
     commits_motor = git(motor, 'log', '--reverse', '--format=%H %s', '465d01e7853f2729fcaa4ba63160b6338ba5de1e..HEAD')
@@ -144,7 +147,10 @@ def main():
         'O estado e a fila vivem exclusivamente na vigilância. O trabalho futuro do GitHub guarda-os no arquivo privado depois das retomas, sob o seu interruptor próprio; não depende de o corredor estar armado e não reconstrói o sítio. A exceção do validador anterior está limitada ao passo e pasta da vigilância.',
         'As cópias brutas das sondas iniciais estavam em armazenamento temporário da sessão interrompida e já não estavam disponíveis na retoma. Conservam-se as medições e a conferência visual anteriores; as corridas desta entrega voltaram a alojar provas atuais. A reprodução da sonda antiga exige os seus corpos originais.',
         'Os registos de iniciativas sem data ficam como falha explícita e pendência. A leitura extrai os registos datados que pertencem à janela sem transformar o restante ficheiro em ausência de novidades.',
-        'As primeiras corridas locais serviram também para descobrir limites reais dos leitores. Estão todas conservadas com hashes do código; as medidas distinguem as corridas anteriores ao commit das corridas na cabeça do código.',
+        'O Parlamento devolveu ligações cifradas diferentes para os mesmos bytes do PDF. O diagnóstico inicial registou revisões apenas da ligação, preservadas para auditoria. O código final exclui a ligação rotativa da identidade do conteúdo e conta entradas vigentes por identificador, separando as versões históricas. Não se reescreveram os recibos de diagnóstico.',
+        'A fila identifica cada tarefa pela fonte, ação e documento. Mudanças de data do recibo não criam tarefas novas; as fontes adiadas pelo teto ganham prioridade sobre falhas persistentes. Esta correção foi exercida em corridas reais e num teste que altera a data da prova entre execuções.',
+        'As primeiras corridas locais serviram também para descobrir limites reais dos leitores. Estão todas conservadas com hashes do código; as medidas distinguem as corridas de diagnóstico das corridas com hashes iguais aos ficheiros do código final. A cabeça Git registada durante uma corrida pode preceder o commit que fixou esses mesmos ficheiros; a igualdade é conferida por conteúdo, não inferida do nome do ramo.',
+        'Sem identificadores próprios de intervenção no PDF, a identidade da declaração combina o número do diário, a página e a posição do excerto. Uma mudança de paginação pode aparecer como entrada nova; a comparação por conteúdo conserva as versões e o PDF anterior, mas não prova uma correspondência editorial entre intervenções deslocadas.',
         'A linha tokens used não foi exposta pelas ferramentas desta sessão. O custo acumulado, incluindo a sessão interrompida, não é verificável; não se declara que ficou dentro nem que ultrapassou o alvo do bloco.'
     ]
     linhas = ['# Entrega do primeiro varrimento de vigilância', '',
@@ -159,11 +165,11 @@ def main():
     for r in corridas:
         linhas.append(f"| `{r['ficheiro']}` | `{r['codigo_cabeca']}` | {r['pedidos']} | {r['bytes']} | {r['minutos']} | {r['novas']} | {r['revisoes']} | {r['iguais']} | {r['falhas']} | {r['fila']} |")
     linhas += ['', 'Os pedidos e bytes foram recalculados a partir dos saltos de `vigilancia/pedidos/`, e conferidos contra os recibos. As contagens por fonte e tipo, as razões de falha e o estado de cada fonte em cada corrida estão em `corridas.json`.', '',
-               f"Duas corridas na cabeça do código: **{medidas['duas_corridas_na_cabeca']}**. Hashes do código coincidentes: **{mesmo_codigo}**. Segunda sem novas entradas ou revisões: **{medidas['segunda_sem_duplicados']}**.", '',
+               f"Duas corridas com os ficheiros do código final: **{medidas['duas_corridas_com_codigo_final']}**. Hashes do código coincidentes: **{mesmo_codigo}**. Segunda sem novas entradas ou revisões: **{medidas['segunda_sem_duplicados']}**.", '',
                '## Índice, resumo e provas', '',
-               f"Entradas por fonte: `{json.dumps(por_fonte, ensure_ascii=False)}`. Por tipo: `{json.dumps(tipos, ensure_ascii=False)}`. Corpos distintos das entradas: {len(hashes)}. Todos os excertos, autores, datas, localizadores e hashes foram relidos em `integridade.json`.", '']
+               f"Entradas vigentes por fonte: `{json.dumps(por_fonte, ensure_ascii=False)}`. Por tipo: `{json.dumps(tipos, ensure_ascii=False)}`. Corpos distintos das entradas: {len(hashes)}. Todos os excertos, autores, datas, localizadores e hashes foram relidos em `integridade.json`.", '']
     for d in dias:
-        linhas.append(f"* `{d['indice']}`: {d['entradas']} entradas; `{d['resumo']}`: {d['bytes_resumo']} bytes UTF-8, pelo método declarado no recibo.")
+        linhas.append(f"* `{d['indice']}`: {d['entradas']} versões preservadas; `{d['resumo']}`: {d['bytes_resumo']} bytes UTF-8, pelo método declarado no recibo.")
     linhas += ['', '## Plantas, portão e fluxo', '', f"Plantas aprovadas: {medidas['plantas_passaram']} de {medidas['plantas_total']}, em `plantas.json`. A suite completa está em `autotestes.log`, com o código em `autotestes.json`.", '']
     for pl in plantas['plantas']:
         linhas.append(f"* {pl['planta']}: `{pl['mensagem_afirmada']}`; passou: {pl['passou']}.")
