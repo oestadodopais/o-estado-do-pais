@@ -866,7 +866,9 @@ caso(
    igualdade passou de 24 a 25: a corrida com a lista nova e a igualdade velha
    recusou o caso, que é a prova de que ele morde num campo a mais como num a
    menos. */
-caso('CAMPOS/tamanho', true, CAMPOS.length === 27, 'os vinte e sete campos: série do RP3 e duas línguas da ressalva do OE1.');
+caso('CAMPOS/tamanho', true, CAMPOS.length === 29, 'os campos anteriores e os campos de publicação e de segunda fonte da RP4-n-e.');
+caso('CAMPOS/rp4n-e', true, CAMPOS.includes('publication') && CAMPOS.includes('definition_sources'),
+  'A retirada da publicação e a segunda fonte com recibo pertencem ao formato da linha.');
 caso('CAMPOS/serie', true, CAMPOS.indexOf('serie') === CAMPOS.indexOf('reference_date') + 1, 'o `serie` logo a seguir ao `reference_date`, onde o exportador o escreve.');
 caso('CAMPOS/ressalva', true, CAMPOS.includes('ressalva') && CAMPOS.includes('ressalva_en'),
   'A prosa que o leitor tem de ver pertence ao formato publicado da própria linha.');
