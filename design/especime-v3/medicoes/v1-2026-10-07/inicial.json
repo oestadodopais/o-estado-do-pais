@@ -1,0 +1,180 @@
+{
+  "comando": "python3 <medicoes>/medir_inicial.py --motor <motor> --sonda <sonda>",
+  "cabeca_motor": "465d01e7853f2729fcaa4ba63160b6338ba5de1e",
+  "fontes": {
+    "app-robots": {
+      "url": "https://app.parlamento.pt/robots.txt",
+      "status": 404,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "segundos": 0.448,
+      "erro": null,
+      "url_final": "https://app.parlamento.pt/robots.txt",
+      "redireccionamentos": []
+    },
+    "ar-robots": {
+      "url": "https://www.parlamento.pt/robots.txt",
+      "status": 404,
+      "bytes": 654,
+      "sha256": "ffc74af015bad3e6e375f5d838a4ab25354b8bf342e31bdde994246a9b0001bd",
+      "segundos": 0.442,
+      "erro": null,
+      "url_final": "https://www.parlamento.pt/robots.txt",
+      "redireccionamentos": []
+    },
+    "ar-termos": {
+      "url": "https://www.parlamento.pt/Cidadania/Paginas/DadosAbertos.aspx",
+      "status": 200,
+      "bytes": 372885,
+      "sha256": "0f10729c880c755b0e3e56b310f0fa68971f0c4cdd24c5c73dc054566a0afe19",
+      "segundos": 0.888,
+      "erro": null,
+      "url_final": "https://www.parlamento.pt/Cidadania/Paginas/DadosAbertos.aspx",
+      "redireccionamentos": []
+    },
+    "dar-catalogo": {
+      "url": "https://www.parlamento.pt/Cidadania/Paginas/DAdar.aspx",
+      "status": 200,
+      "bytes": 362337,
+      "sha256": "a749f3c0d23c9c264ec8997aa2100a2feba0e83bad6f6eba541ce063b845d00d",
+      "segundos": 1.431,
+      "erro": null,
+      "url_final": "https://www.parlamento.pt/Cidadania/Paginas/DAdar.aspx",
+      "redireccionamentos": []
+    },
+    "dar-pdf": {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=2pb3X6rFb4sc3a%252bvPquhXn26ESNilRY3E4yg8HIWROI%252frvelSMhTUltw8IOYkp5ohlTU%252f%252fAPsVSAxWZJ0%252fLgv3dpyH6wO21rF7LPjAiK4T%252fsccsaSmw01wD8NI%252f50%252fs%252f1BsUtkfJjhFAKrClg0de%252bpPKsOuJ3d%252feAhyoBOM5%252bkyalGhi3FW9rsY7Jk%252fu3uoBepPvDVy%252fkkMYzrMq3pey8DMMnWmISXB9xG6t9O%252bU9lk1rMHC2EUcKlAB6MWojSRL8yOtXSIYPoq5lMpqcifuqxxX1AWGwAVPoBr8OqbTlcbwJuplmEpEzvUpAnY66U3KPbMr%252fw0HEtulWWI880f%252fmG7AqMlufQBqVCqQvG%252fa8mw%253d&fich=DAR-I-006.pdf&Inline=true",
+      "status": 200,
+      "bytes": 524669,
+      "sha256": "98205ad2be8d62efcc002f11f84f0b3ad3f76fcc25914a88039ba851193f7286",
+      "segundos": 0.829,
+      "erro": null,
+      "url_final": "https://app.parlamento.pt/webutils/docs/doc.pdf?path=2pb3X6rFb4sc3a%252bvPquhXn26ESNilRY3E4yg8HIWROI%252frvelSMhTUltw8IOYkp5ohlTU%252f%252fAPsVSAxWZJ0%252fLgv3dpyH6wO21rF7LPjAiK4T%252fsccsaSmw01wD8NI%252f50%252fs%252f1BsUtkfJjhFAKrClg0de%252bpPKsOuJ3d%252feAhyoBOM5%252bkyalGhi3FW9rsY7Jk%252fu3uoBepPvDVy%252fkkMYzrMq3pey8DMMnWmISXB9xG6t9O%252bU9lk1rMHC2EUcKlAB6MWojSRL8yOtXSIYPoq5lMpqcifuqxxX1AWGwAVPoBr8OqbTlcbwJuplmEpEzvUpAnY66U3KPbMr%252fw0HEtulWWI880f%252fmG7AqMlufQBqVCqQvG%252fa8mw%253d&fich=DAR-I-006.pdf&Inline=true",
+      "redireccionamentos": []
+    },
+    "dar": {
+      "url": "https://www.parlamento.pt/DAR/Paginas/DAR1Serie.aspx",
+      "status": 200,
+      "bytes": 369291,
+      "sha256": "fabc2488c4ecd9f46ea60f5111f28af1cd04d52f7a0a1227116c41267f21681f",
+      "segundos": 7.488,
+      "erro": null,
+      "url_final": "https://www.parlamento.pt/DAR/Paginas/DAR1Serie.aspx",
+      "redireccionamentos": []
+    },
+    "dr-robots": {
+      "url": "https://files.diariodarepublica.pt/robots.txt",
+      "status": 200,
+      "bytes": 2346,
+      "sha256": "0794abe5f8088cfd34e8e50bb5f9f7828b20a3c505f702e4b51be3bbb0631b57",
+      "segundos": 0.218,
+      "erro": null,
+      "url_final": "https://diariodarepublica.pt/dr/error",
+      "redireccionamentos": [
+        "https://files.diariodarepublica.pt/robots.txt"
+      ]
+    },
+    "dr": {
+      "url": "https://files.diariodarepublica.pt/rss/serie1-html.xml",
+      "status": 200,
+      "bytes": 1904,
+      "sha256": "516235d13c3204aef119870d39e7ebb45fbb96b15c29db81729bf720d5d3d010",
+      "segundos": 0.073,
+      "erro": null,
+      "url_final": "https://files.diariodarepublica.pt/rss/serie1-html.xml",
+      "redireccionamentos": []
+    },
+    "iniciativas-gzip": {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.txt?path=jvcnB8hbHr9%2BhauZKekDbwH37BiodPn3kUPbNIWB9gKylflBstZ%2FQFbURE3UjDp%2FWXqkf3qGmBsfRxrL54FXCQa3vx4wGblNySKCO%2BFWuLrLg8ubXVJ7uIHvr2rZvB9BtIc6xoPsN4W1zSZl%2BeJXnVhQC%2BwvwjetjjqWxCPmB%2FX8ULbg0mgtkr9aHsuTKgWMNHE6Aw2uRHWLnuOIFqEj6vqUl5NlwyHwemJg0ivW0wCblKEbRsnok830QNXsF%2FOgM6P6b9gixOER6POze3bYksP2WD%2Fm2OptDZs8GIvodWHwD%2FNIzc97AfrcK1PYRX4KKCcIrSbmpOHKUu5hOkdCk9LG4rPuSq10Wd9UXAVGrjA%3D&fich=IniciativasXVII_json.txt&Inline=true",
+      "status": 200,
+      "bytes": 9631829,
+      "sha256": "3f9146f3234b3e9250471b30f58518fffddbc78c8292266dd6432b56e9232f8f",
+      "segundos": 20.43,
+      "erro": null,
+      "url_final": "https://app.parlamento.pt/webutils/docs/doc.txt?path=jvcnB8hbHr9%2BhauZKekDbwH37BiodPn3kUPbNIWB9gKylflBstZ%2FQFbURE3UjDp%2FWXqkf3qGmBsfRxrL54FXCQa3vx4wGblNySKCO%2BFWuLrLg8ubXVJ7uIHvr2rZvB9BtIc6xoPsN4W1zSZl%2BeJXnVhQC%2BwvwjetjjqWxCPmB%2FX8ULbg0mgtkr9aHsuTKgWMNHE6Aw2uRHWLnuOIFqEj6vqUl5NlwyHwemJg0ivW0wCblKEbRsnok830QNXsF%2FOgM6P6b9gixOER6POze3bYksP2WD%2Fm2OptDZs8GIvodWHwD%2FNIzc97AfrcK1PYRX4KKCcIrSbmpOHKUu5hOkdCk9LG4rPuSq10Wd9UXAVGrjA%3D&fich=IniciativasXVII_json.txt&Inline=true",
+      "redireccionamentos": []
+    },
+    "iniciativas-json": {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.txt?path=jvcnB8hbHr9%2bhauZKekDbwH37BiodPn3kUPbNIWB9gKylflBstZ%2fQFbURE3UjDp%2fWXqkf3qGmBsfRxrL54FXCQa3vx4wGblNySKCO%2bFWuLrLg8ubXVJ7uIHvr2rZvB9BtIc6xoPsN4W1zSZl%2beJXnVhQC%2bwvwjetjjqWxCPmB%2fX8ULbg0mgtkr9aHsuTKgWMNHE6Aw2uRHWLnuOIFqEj6vqUl5NlwyHwemJg0ivW0wCblKEbRsnok830QNXsF%2fOgM6P6b9gixOER6POze3bYksP2WD%2fm2OptDZs8GIvodWHwD%2fNIzc97AfrcK1PYRX4KKCcIrSbmpOHKUu5hOkdCk9LG4rPuSq10Wd9UXAVGrjA%3d&fich=IniciativasXVII_json.txt&Inline=true",
+      "status": 200,
+      "bytes": 0,
+      "sha256": null,
+      "segundos": 21.54,
+      "erro": "o corpo passou dos 10000000 bytes declarados",
+      "url_final": "https://app.parlamento.pt/webutils/docs/doc.txt?path=jvcnB8hbHr9%2bhauZKekDbwH37BiodPn3kUPbNIWB9gKylflBstZ%2fQFbURE3UjDp%2fWXqkf3qGmBsfRxrL54FXCQa3vx4wGblNySKCO%2bFWuLrLg8ubXVJ7uIHvr2rZvB9BtIc6xoPsN4W1zSZl%2beJXnVhQC%2bwvwjetjjqWxCPmB%2fX8ULbg0mgtkr9aHsuTKgWMNHE6Aw2uRHWLnuOIFqEj6vqUl5NlwyHwemJg0ivW0wCblKEbRsnok830QNXsF%2fOgM6P6b9gixOER6POze3bYksP2WD%2fm2OptDZs8GIvodWHwD%2fNIzc97AfrcK1PYRX4KKCcIrSbmpOHKUu5hOkdCk9LG4rPuSq10Wd9UXAVGrjA%3d&fich=IniciativasXVII_json.txt&Inline=true",
+      "redireccionamentos": []
+    },
+    "iniciativas-leg": {
+      "url": "https://www.parlamento.pt/Cidadania/Paginas/DAIniciativas.aspx?t=57465a4a5353424d5a576470633278686448567959513d3d&Path=3tx8tQPklwVlyD08Re7yZ6uvpVyA21QQB8mTKpog0cwoK4tvnQGNPYV0IV%2fNa%2fxjcKLQxFhr7dmoOHqKVRvoOcOXswM%2bldRYuBwEFeis1bR8QUemGCurXMSNOHJIw3FV2nu%2bZBmlgtqhynYk4NioxmEVhdcg%2f6CkKdS2bNV%2fjzsjrZSIZZgUk1CzgWI4UI8ePUGCZ%2fGU8jJrInv0nfZxcOuKFThvvv%2bTzfxWd4wQt6HHVH7mspJNEDWcjWK0GyhyTcCgBSQFeZAJOHSciXkQ8WGtdjrYE7fAqUNQE4PsUho%3d",
+      "status": 200,
+      "bytes": 345048,
+      "sha256": "ccdd1406ce7ca452db0dc6894812ce78cfd9582cb234f992cedaaf09136931eb",
+      "segundos": 4.98,
+      "erro": null,
+      "url_final": "https://www.parlamento.pt/Cidadania/Paginas/DAIniciativas.aspx?t=57465a4a5353424d5a576470633278686448567959513d3d&Path=3tx8tQPklwVlyD08Re7yZ6uvpVyA21QQB8mTKpog0cwoK4tvnQGNPYV0IV%2fNa%2fxjcKLQxFhr7dmoOHqKVRvoOcOXswM%2bldRYuBwEFeis1bR8QUemGCurXMSNOHJIw3FV2nu%2bZBmlgtqhynYk4NioxmEVhdcg%2f6CkKdS2bNV%2fjzsjrZSIZZgUk1CzgWI4UI8ePUGCZ%2fGU8jJrInv0nfZxcOuKFThvvv%2bTzfxWd4wQt6HHVH7mspJNEDWcjWK0GyhyTcCgBSQFeZAJOHSciXkQ8WGtdjrYE7fAqUNQE4PsUho%3d",
+      "redireccionamentos": []
+    },
+    "iniciativas-tamanho": {
+      "url": "https://app.parlamento.pt/webutils/docs/doc.txt?path=jvcnB8hbHr9%2BhauZKekDbwH37BiodPn3kUPbNIWB9gKylflBstZ%2FQFbURE3UjDp%2FWXqkf3qGmBsfRxrL54FXCQa3vx4wGblNySKCO%2BFWuLrLg8ubXVJ7uIHvr2rZvB9BtIc6xoPsN4W1zSZl%2BeJXnVhQC%2BwvwjetjjqWxCPmB%2FX8ULbg0mgtkr9aHsuTKgWMNHE6Aw2uRHWLnuOIFqEj6vqUl5NlwyHwemJg0ivW0wCblKEbRsnok830QNXsF%2FOgM6P6b9gixOER6POze3bYksP2WD%2Fm2OptDZs8GIvodWHwD%2FNIzc97AfrcK1PYRX4KKCcIrSbmpOHKUu5hOkdCk9LG4rPuSq10Wd9UXAVGrjA%3D&fich=IniciativasXVII_json.txt&Inline=true",
+      "status": 200,
+      "bytes": null,
+      "sha256": null,
+      "segundos": null,
+      "erro": null,
+      "url_final": null,
+      "redireccionamentos": null,
+      "cabecalhos": {
+        "Cache-Control": "private",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "application/json",
+        "Content-Encoding": "gzip",
+        "Vary": "Origin,Accept-Encoding",
+        "Server": "",
+        "Content-Disposition": "inline;filename=IniciativasXVII.json",
+        "Access-Control-Allow-Origin": "https://app.parlamento.pt",
+        "Content-Security-Policy": "frame-ancestors https://*.parlamento.pt https://appsrv2 https://appsrv5 http://jovensstaging http://wwwstaging2017; base-uri 'self'; default-src 'self' https: 'unsafe-inline' 'unsafe-eval'",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "Date": "Wed, 07 Oct 2026 12:01:39 GMT"
+      }
+    },
+    "iniciativas": {
+      "url": "https://www.parlamento.pt/Cidadania/Paginas/DAIniciativas.aspx",
+      "status": 200,
+      "bytes": 369368,
+      "sha256": "d0ea15ebc0d523b72f04d8e86c2f1878eb5bc880ea4e3a0c4139277a8e95ce69",
+      "segundos": 0.342,
+      "erro": null,
+      "url_final": "https://www.parlamento.pt/Cidadania/Paginas/DAIniciativas.aspx",
+      "redireccionamentos": []
+    },
+    "portal-dr-robots": {
+      "url": "https://diariodarepublica.pt/robots.txt",
+      "status": 200,
+      "bytes": 2346,
+      "sha256": "0794abe5f8088cfd34e8e50bb5f9f7828b20a3c505f702e4b51be3bbb0631b57",
+      "segundos": 1.047,
+      "erro": null,
+      "url_final": "https://diariodarepublica.pt/dr/error",
+      "redireccionamentos": [
+        "https://diariodarepublica.pt/robots.txt"
+      ]
+    },
+    "conteudo-iniciativas": {
+      "bytes_descomprimidos": 96559878,
+      "sha256_descomprimido": "5d6bda3a9f0737cd8c9f310cf207087b2e36e67bd74285081dee5e801777268a",
+      "registos": 2319,
+      "ultima_entrada": "2026-10-06",
+      "entradas_desde_data_do_brief": 0
+    }
+  },
+  "ficheiros_protegidos": "",
+  "cliente": {
+    "identidade": "core.http.CASA_UA",
+    "condicionais": "HttpClient.condicional",
+    "arquivo": "indicators.arquivo.guardar",
+    "indice": "indicators.arquivo.linha_de_captura",
+    "nota": "O cliente não aloja as respostas condicionais. O limite antigo rejeita depois de ler um bloco e não conta os bytes rejeitados."
+  }
+}

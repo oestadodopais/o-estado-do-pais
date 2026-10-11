@@ -1,0 +1,6 @@
+{
+  "comando": "OEDP_SITE=<worktree> python3 -m core.gate",
+  "cabeca": "465d01e7853f2729fcaa4ba63160b6338ba5de1e",
+  "codigo": 0,
+  "segundos": 532.582
+}

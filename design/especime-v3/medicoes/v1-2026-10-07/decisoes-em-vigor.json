@@ -1,0 +1,4 @@
+{
+  "comando": "python3 <worktree>/scripts/leituras/decisoes-em-vigor.py --repo <motor> core/http.py .github/workflows/corredor.yml .github/workflows/vigia.yml",
+  "codigo": 0
+}
