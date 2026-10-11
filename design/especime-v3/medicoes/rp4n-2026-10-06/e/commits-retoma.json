@@ -1,0 +1,26 @@
+{
+  "sitio": [
+    {
+      "cabeca": "2f4383aab0a7889d5208d9aae97ea59afd087113",
+      "mensagem": "fix(rp4n-e): apoiar a água na ERSAR com a página junto da definição\n\nCo-Authored-By: Codex gpt-6-astra <noreply@openai.com>\n\nClaude-Session: https://claude.ai/code/session_017KURcwEB1JX8Zdpb6QbLx8"
+    },
+    {
+      "cabeca": "86fc51735ced3e857e8b92f488aacd85aa971190",
+      "mensagem": "fix(rp4n-e): alinhar o dicionário com os avisos e a linha retirada\n\nCo-Authored-By: Codex gpt-6-astra <noreply@openai.com>\n\nClaude-Session: https://claude.ai/code/session_017KURcwEB1JX8Zdpb6QbLx8"
+    },
+    {
+      "cabeca": "60e41eb9ae2824e1f08c450b7480b4e57cdf5be8",
+      "mensagem": "test(rp4n-e): conferir o novo formato e a unidade singular dos avisos\n\nCo-Authored-By: Codex gpt-6-astra <noreply@openai.com>\n\nClaude-Session: https://claude.ai/code/session_017KURcwEB1JX8Zdpb6QbLx8"
+    },
+    {
+      "cabeca": "5727174ad9a25376242c197f2fe285e58a2510ac",
+      "mensagem": "fix(rp4n-e): identificar os concelhos na lista de fontes por frase\n\nCo-Authored-By: Codex gpt-6-astra <noreply@openai.com>\n\nClaude-Session: https://claude.ai/code/session_017KURcwEB1JX8Zdpb6QbLx8"
+    }
+  ],
+  "motor": [
+    {
+      "cabeca": "cc68172ca59254770493d01581b4b1cbcc5761a6",
+      "mensagem": "fix(rp4n-e): selar a definição da água no RASARP da ERSAR\n\nCo-Authored-By: Codex gpt-6-astra <noreply@openai.com>"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "cabeca_codigo_sitio": "5727174ad9a25376242c197f2fe285e58a2510ac",
+  "cabeca_codigo_motor": "cc68172ca59254770493d01581b4b1cbcc5761a6",
+  "codigos": {
+    "build": 0,
+    "verify": 0,
+    "typecheck": 0,
+    "motor": 0,
+    "series": 0,
+    "cruzamento": 0
+  },
+  "capturas": 12,
+  "larguras": [
+    390,
+    1280
+  ],
+  "plantas_sitio": 43,
+  "frases": 32,
+  "ficheiros": 42,
+  "html_conferidos": 7905,
+  "referencias_condutas": 0,
+  "pagina_agua": 106
+}

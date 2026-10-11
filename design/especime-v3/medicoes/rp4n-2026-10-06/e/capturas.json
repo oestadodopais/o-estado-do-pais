@@ -1,0 +1,133 @@
+{
+  "versao": {
+    "commit": "5727174ad9a25376242c197f2fe285e58a2510ac",
+    "ref": "rp4n-2026-10-07",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-11T08:58:31.843Z"
+  },
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/e/agua-pt-390.png",
+      "rota": "/livro-razao/agua-nao-faturada-portugal-2024/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a parte da água que entra no sistema e não é faturada.",
+      "marcadores": 0,
+      "sha256": "cfe38de262eb5e96ed4980711ebe7a09d182dd52591bfe015ce96f3a498faa92"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/e/agua-pt-1280.png",
+      "rota": "/livro-razao/agua-nao-faturada-portugal-2024/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ a parte da água que entra no sistema e não é faturada.",
+      "marcadores": 0,
+      "sha256": "3ea35e7b20e7dfbca15f76a68b736125a2b48bcd9cab4bafc47c87239f7e46bf"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/e/agua-en-390.png",
+      "rota": "/en/ledger/agua-nao-faturada-portugal-2024/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the share of water entering the system that is not billed.",
+      "marcadores": 0,
+      "sha256": "079077a51a99f9663ce60830802baee1156594d3355f9f902fc14841754a0b95"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/e/agua-en-1280.png",
+      "rota": "/en/ledger/agua-nao-faturada-portugal-2024/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the share of water entering the system that is not billed.",
+      "marcadores": 0,
+      "sha256": "60bf8d653073230f84e5e160ec155ab488f18e957c3a7128cd4f93ab905bae93"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/e/corte-pt-390.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroÉ a redução da pensão calculada para a reforma antecipada no caso geral, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social.",
+      "marcadores": 0,
+      "sha256": "08315bbc70b7bd5b710c34f4ddca233d7185d424672ef7f72acf413d6c6884b4"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/e/corte-pt-1280.png",
+      "rota": "/livro-razao/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroÉ a redução da pensão calculada para a reforma antecipada no caso geral, contando o que se deixa de descontar e os direitos que se acrescentam, pelas contas do relatório final sobre a reforma da segurança social.",
+      "marcadores": 0,
+      "sha256": "abe7e04f4f972f4b4b0a4a20a36e3ebd08952aa3cdfe943e1fd38e81aa31c825"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/e/corte-en-390.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isIt is the pension reduction calculated for early retirement in the general case, counting the contributions no longer paid and the rights that are added, from the calculations of the final report on social security reform.",
+      "marcadores": 0,
+      "sha256": "adb9a2e63c2288c8921924c6e71794a1c861895fc0ad462579d34d0b3e091039"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/e/corte-en-1280.png",
+      "rota": "/en/ledger/penalizacao-antecipacao-um-ano-neutra/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isIt is the pension reduction calculated for early retirement in the general case, counting the contributions no longer paid and the rights that are added, from the calculations of the final report on social security reform.",
+      "marcadores": 0,
+      "sha256": "25d0f657349d6f11852eacfe5fbb6efffb2c67e46a0961d49f50a557f6af7f96"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/e/aviso-pt-390.png",
+      "rota": "/livro-razao/avisos-pt2030-pessoas-singulares/",
+      "lang": "pt",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "O que é este númeroA fonte publica este número sem o definir por palavras.",
+      "marcadores": 0,
+      "sha256": "3b9f910b593c27cfe37698d988ecd98a424e5c0e91f5fe58c0dca14316b2d7c9"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/e/aviso-pt-1280.png",
+      "rota": "/livro-razao/avisos-pt2030-pessoas-singulares/",
+      "lang": "pt",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "O que é este númeroA fonte publica este número sem o definir por palavras.",
+      "marcadores": 0,
+      "sha256": "ffd8db0e7f7c8e219b60d2e34ffd40ffdd728d9a8adfb329305e5fbc266161dd"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/e/aviso-en-390.png",
+      "rota": "/en/ledger/avisos-pt2030-pessoas-singulares/",
+      "lang": "en",
+      "largura": 390,
+      "largura_documento": 390,
+      "frase": "What this number isThe source publishes this number without defining it in words.",
+      "marcadores": 0,
+      "sha256": "764c13389ae34e5b2775ed0998e8a13d9a974a5231d327293c52ba04611e3bb2"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/rp4n-2026-10-06/e/aviso-en-1280.png",
+      "rota": "/en/ledger/avisos-pt2030-pessoas-singulares/",
+      "lang": "en",
+      "largura": 1280,
+      "largura_documento": 1280,
+      "frase": "What this number isThe source publishes this number without defining it in words.",
+      "marcadores": 0,
+      "sha256": "7292fd8cb46e41d36d7e1153a9a816180fb3d298800e4d75ee178f81e3b3207f"
+    }
+  ],
+  "problemas": []
+}
