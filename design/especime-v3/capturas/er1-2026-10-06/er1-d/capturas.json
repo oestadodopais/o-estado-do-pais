@@ -1,0 +1,126 @@
+{
+  "cabecaCodigo": "8ed75dfd1fdb00d57d977eee3beae009675b0ff0",
+  "carimbo": {
+    "commit": "8ed75dfd1fdb00d57d977eee3beae009675b0ff0",
+    "ref": "er1-2026-10-06",
+    "env": "local",
+    "origem": "git",
+    "motivo": null,
+    "construido_em": "2026-10-07T12:15:38.083Z"
+  },
+  "comando": "node design/especime-v3/medicoes/er1-2026-10-06/capturar-d.mjs",
+  "capturas": [
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-d/recusadoExcerto-pt-390-pagina.png",
+      "estado": "recusadoExcerto",
+      "lang": "pt",
+      "rota": "/livro-razao/evora-prr-aprovado-2026",
+      "largura": 390,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "be24fa15f0bbd9dd6756de55bf105feef3af099fc83b3f3d7add0ffe4630907d"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-d/recusadoExcerto-pt-390-incorporar.png",
+      "estado": "recusadoExcerto",
+      "lang": "pt",
+      "rota": "/livro-razao/evora-prr-aprovado-2026",
+      "largura": 390,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "1640a9b6e24c9cd73d9b27d129a9f7ff127b338bea596edf4ab91abff732ed42"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-d/recusadoExcerto-pt-1280-pagina.png",
+      "estado": "recusadoExcerto",
+      "lang": "pt",
+      "rota": "/livro-razao/evora-prr-aprovado-2026",
+      "largura": 1280,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "db5985d75f3e019866fab0eebdfe3583a142a27949476d0fff26928b22a28eed"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-d/recusadoExcerto-pt-1280-incorporar.png",
+      "estado": "recusadoExcerto",
+      "lang": "pt",
+      "rota": "/livro-razao/evora-prr-aprovado-2026",
+      "largura": 1280,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "0f3880bbe34c493c3721cc7ddd9a53153745edf0913593a52804cba56620ff46"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-d/recusadoExcerto-en-390-pagina.png",
+      "estado": "recusadoExcerto",
+      "lang": "en",
+      "rota": "/en/ledger/evora-prr-aprovado-2026",
+      "largura": 390,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "bbe90ae6baada13ac27709773fca7f4301e116ab3281b412387ca674a7f104a3"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-d/recusadoExcerto-en-390-incorporar.png",
+      "estado": "recusadoExcerto",
+      "lang": "en",
+      "rota": "/en/ledger/evora-prr-aprovado-2026",
+      "largura": 390,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 390,
+        "documento": 390
+      },
+      "externos": [],
+      "sha256": "6628044f5e88f30c064bc4895f271e3737161a8971fdfa6405e29172c1da91f0"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-d/recusadoExcerto-en-1280-pagina.png",
+      "estado": "recusadoExcerto",
+      "lang": "en",
+      "rota": "/en/ledger/evora-prr-aprovado-2026",
+      "largura": 1280,
+      "recorte": "pagina",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "d24846ad5d387c60b61f4b00b3f5eb2d518f3b850ee6ef40ad757aae0305c87c"
+    },
+    {
+      "ficheiro": "design/especime-v3/capturas/er1-2026-10-06/er1-d/recusadoExcerto-en-1280-incorporar.png",
+      "estado": "recusadoExcerto",
+      "lang": "en",
+      "rota": "/en/ledger/evora-prr-aprovado-2026",
+      "largura": 1280,
+      "recorte": "incorporar",
+      "dimensoes": {
+        "janela": 1280,
+        "documento": 1280
+      },
+      "externos": [],
+      "sha256": "fb7a69fdd3466633b6a614908a2d3dd99e4f899e3cade6a24326a58387e0e64c"
+    }
+  ]
+}
