@@ -65,6 +65,8 @@ const M = (/** @type {string} */ m) => `oe-2026-cem-euros-ministerio-${m}`;
 const DESPESA_DAS_FINANCAS = 'oe-2026-despesa-ministerio-financas';
 const DESPESA_EXECUTADA = 'execucao-2026-08-despesa-efetiva-administracao-central-seguranca-social';
 const RECEITA_EXECUTADA = 'execucao-2026-08-receita-efetiva-administracao-central-seguranca-social';
+const SALDO_EXECUTADO = 'execucao-2026-08-saldo-global-administracao-central-seguranca-social';
+const SALDO_PREVISTO = 'oe-2026-saldo-global-administracao-central-seguranca-social';
 const DIVIDA = 'divida-publica-2025';
 const DIVIDA_UE = 'divida-publica-2025-ue';
 const SALDO = 'saldo-das-administracoes-publicas-2025';
@@ -197,6 +199,28 @@ export const DINHEIRO_DO_ESTADO_2026 = {
             ],
           },
         },
+        {
+          paragrafo: {
+            pt: [
+              'Até ', { periodo: SALDO_EXECUTADO }, ', as contas da administração central e da segurança social fecharam com um saldo de ',
+              { claim: SALDO_EXECUTADO, sufixo: ' milhões de euros' }, ', ',
+              { sinal: SALDO_EXECUTADO, positivo: ['um excedente (recebeu mais do que gastou)'], negativo: ['um défice (gastou mais do que recebeu)'], zero: ['um saldo nulo (recebeu o mesmo que gastou)'] },
+              '; o saldo acumulado está ',
+              { compara: [SALDO_EXECUTADO, SALDO_PREVISTO],
+                maior: ['acima do que o Orçamento previa'], menor: ['abaixo do que o Orçamento previa'], igual: ['em linha com o que o Orçamento previa'] },
+              ' para o ano inteiro (', { claim: SALDO_PREVISTO, sufixo: ' milhões de euros' }, ').',
+            ],
+            en: [
+              'By ', { periodo: SALDO_EXECUTADO }, ', the accounts of central government and social security closed with a balance of ',
+              { claim: SALDO_EXECUTADO, sufixo: ' million euros' }, ', ',
+              { sinal: SALDO_EXECUTADO, positivo: ['a surplus (it took in more than it spent)'], negativo: ['a deficit (it spent more than it took in)'], zero: ['a zero balance (it took in as much as it spent)'] },
+              '; the cumulative balance is ',
+              { compara: [SALDO_EXECUTADO, SALDO_PREVISTO],
+                maior: ['above what the Budget forecast'], menor: ['below what the Budget forecast'], igual: ['in line with what the Budget forecast'] },
+              ' for the full year (', { claim: SALDO_PREVISTO, sufixo: ' million euros' }, ').',
+            ],
+          },
+        },
       ],
     },
     {
@@ -232,13 +256,13 @@ export const DINHEIRO_DO_ESTADO_2026 = {
   naoDiz: [
     {
       pt: [
-        { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a de agosto está acima.'] },
-        { se: [SEM_LINHAS_DOS_JUROS], partes: [' Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram.'] },
+        { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['O orçamento é uma previsão: o que se gasta de facto lê-se na execução, mês a mês, e a execução até agosto é a que esta explicação mostra acima.'] },
+        { se: [SEM_LINHAS_DOS_JUROS], partes: [' Estes números não isolam o custo dos juros da dívida, que o Orçamento também prevê e que entra noutra classificação; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.'] },
         ' O detalhe por programa e por ministério, com a fonte de cada número, está no recibo de cada um, a um toque.',
       ],
       en: [
-        { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['The budget is a forecast: what is actually spent is read in the budget execution, month by month, and August’s is above.'] },
-        { se: [SEM_LINHAS_DOS_JUROS], partes: [' Missing here is the cost of the interest on the debt, which the Budget also forecasts and which these figures do not show.'] },
+        { se: [A_EXECUCAO_E_DE_AGOSTO], partes: ['The budget is a forecast: what is actually spent is read in the budget execution, month by month, and the execution to August is the one this explainer shows above.'] },
+        { se: [SEM_LINHAS_DOS_JUROS], partes: [' These figures do not isolate the cost of the interest on the debt, which the Budget also forecasts and which falls under another classification; when the interest entries exist in the ledger, this explainer will say how much it is.'] },
         ' The detail by programme and by ministry, with the source of each figure, is in each one’s receipt, one tap away.',
       ],
     },
@@ -272,4 +296,7 @@ export const ACERTOS = [
   { id: 'X15', onde: 'a dívida e o saldo', o_que: '«contra [dívida da União] na média da União Europeia» passa ao token `compara`: «acima dos [dívida da União] da média da União Europeia», «abaixo» ou «igual aos», pela comparação dos dois valores', razao: 'o achado 9 da leitura a frio (EX1-c, 06.10.2026): a frase dizia os dois números e não o lado, que a primeira página já diz pela mesma gramática' },
   { id: 'X16', onde: 'a dívida e o saldo', o_que: 'os ramos do sinal ganham a explicação entre parênteses, «um excedente (recebeu mais do que gastou)» e «um défice (gastou mais do que recebeu)», e o ramo «zero», «um saldo nulo (recebeu o mesmo que gastou)»', razao: 'os achados 9 e 17 da leitura a frio (EX1-c, 06.10.2026): a palavra sozinha não diz o que quer dizer, e sem o ramo «zero» um saldo de exatamente zero fechava a construção' },
   { id: 'X17', onde: 'o que isto não diz', o_que: '«Os juros da dívida não estão ainda no livro-razão deste projeto como linha própria; quando entrarem, esta explicação diz quanto são.» passa a «Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram.»', razao: 'o achado 16 da leitura a frio (EX1-c, 06.10.2026): a frase falava do livro-razão do projeto e prometia uma atualização, e o sítio não se explica a si próprio nas páginas de conteúdo; a frase continua guardada pela condição de nenhuma linha dos juros' },
+  { id: 'X18', onde: 'o que isto não diz', o_que: 'os juros não estão isolados, com a alternativa «noutra classificação» e a atualização prevista pelo mandato EX1-d', razao: 'o excerto selado nomeia Public debt transactions, mas não explicita os juros; aplica-se a alternativa autorizada, mantendo a condição da ausência de linhas' },
+  { id: 'X19', onde: 'o que isto não diz', o_que: 'a execução até agosto é a que esta explicação mostra acima', razao: 'EX1-d: a referência à posição na página deixa de parecer uma comparação de valores' },
+  { id: 'X20', onde: 'execução', o_que: 'o saldo global do mesmo perímetro, o significado pelo sinal e a comparação com o saldo previsto para o ano inteiro', razao: 'EX1-d: as linhas do saldo executado e previsto constam do mesmo quadro dos totais; compara-se o saldo com sinal, sem afirmar cumprimento de uma meta mensal' },
 ];

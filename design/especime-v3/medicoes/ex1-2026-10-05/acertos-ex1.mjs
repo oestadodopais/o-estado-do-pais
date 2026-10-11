@@ -96,6 +96,12 @@ acerto('X15', ', contra ⟨claim:divida-publica-2025-ue⟩ % na média da União
 acerto('X16', '⟨sinal:saldo-das-administracoes-publicas-2025:excedente|défice|⟩', '⟨sinal:saldo-das-administracoes-publicas-2025:um excedente (recebeu mais do que gastou)|um défice (gastou mais do que recebeu)|um saldo nulo (recebeu o mesmo que gastou)⟩');
 acerto('X17', ' Os juros da dívida não estão ainda no livro-razão deste projeto como linha própria; quando entrarem, esta explicação diz quanto são.', ' Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram.');
 acerto('X10', /^\*O que isto não diz\.\* /gm, '## ⟨cadeia:explicacoes.oQueIstoNaoDiz⟩\n\n');
+/* EX1-d: as três correções decididas no mandato, sem alterar os acertos históricos. */
+acerto('X18', 'Falta aqui o custo dos juros da dívida, que o Orçamento também prevê e que estes números não mostram.', 'Estes números não isolam o custo dos juros da dívida, que o Orçamento também prevê e que entra noutra classificação; quando as linhas dos juros existirem no livro-razão, esta explicação diz quanto são.');
+acerto('X19', 'e a de agosto está acima.', 'e a execução até agosto é a que esta explicação mostra acima.');
+const SALDO_EXEC = 'execucao-2026-08-saldo-global-administracao-central-seguranca-social';
+const SALDO_OE = 'oe-2026-saldo-global-administracao-central-seguranca-social';
+acerto('X20', '\n\n## A dívida e o saldo', `\n\nAté ⟨periodo:${SALDO_EXEC}⟩, as contas da administração central e da segurança social fecharam com um saldo de ⟨claim:${SALDO_EXEC}⟩ milhões de euros, ⟨sinal:${SALDO_EXEC}:um excedente (recebeu mais do que gastou)|um défice (gastou mais do que recebeu)|um saldo nulo (recebeu o mesmo que gastou)⟩; o saldo acumulado está ⟨compara:${SALDO_EXEC},${SALDO_OE}⟩ para o ano inteiro (⟨claim:${SALDO_OE}⟩ milhões de euros).\n\n## A dívida e o saldo`);
 /* X9 não muda palavras: as frases que comparam ficam guardadas por condições. Conta-se aqui quantas guardas a declaração tem. */
 const guardas = (JSON.stringify(E).match(/"se":\[/g) ?? []).length / 2;
 exercidos.push({ id: 'X9', vezes: guardas });

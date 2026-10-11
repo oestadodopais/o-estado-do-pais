@@ -46,7 +46,7 @@
  *   · X6 · cada parágrafo rendido é, carácter a carácter, o que esta célula recompõe da declaração, com as condições
  *     avaliadas por uma conta sua (as maiores do grupo, o mês, a ausência de linhas), o ramo do sinal pelo sinal do
  *     valor, cada nome pelo nome do projeto da linha, cada valor e cada sufixo; nenhum texto de um ramo não escolhido
- *     nem de palavras guardadas por uma condição falsa está na página; os parágrafos que se rendem são os que a conta
+ *     nem de palavras guardadas por uma condição falsa está no parágrafo a que pertence; os parágrafos que se rendem são os que a conta
  *     dá, pela ordem declarada;
  *   · X7 · os títulos das secções são os declarados, pela ordem, e «O que isto não diz» é a cadeia da casa;
  *   · X8 · as portas que levam o título de uma explicação (a lista, o índice, a primeira página) rendem o título
@@ -562,18 +562,21 @@ function textoAqui(partes, lang, linhas, ausentes) {
  * @param {any} e @param {'pt'|'en'} lang @param {Map<string, any>} linhas
  */
 export function explicacaoPelaCelula(e, lang, linhas) {
-  /** @type {string[]} */
+  /** @type {{ caminho: string, texto: string }[]} */
   const ausentes = [];
   /** @type {{ caminho: string, texto: string }[]} */
   const paragrafos = [];
   const junta = (/** @type {any} */ p, /** @type {string} */ caminho) => {
-    const texto = normal(textoAqui(p[lang], lang, linhas, ausentes));
+    /** @type {string[]} */
+    const fora = [];
+    const texto = normal(textoAqui(p[lang], lang, linhas, fora));
+    ausentes.push(...fora.filter(Boolean).map((texto) => ({ caminho, texto })));
     if (texto) paragrafos.push({ caminho, texto });
   };
   e.abertura.forEach((/** @type {any} */ p, /** @type {number} */ i) => junta(p, `abertura[${i}]`));
   e.seccoes.forEach((/** @type {any} */ s, /** @type {number} */ i) => s.conteudo.forEach((/** @type {any} */ b, /** @type {number} */ j) => { if (b.paragrafo) junta(b.paragrafo, `seccoes[${i}].conteudo[${j}].paragrafo`); }));
   e.naoDiz.forEach((/** @type {any} */ p, /** @type {number} */ i) => junta(p, `naoDiz[${i}]`));
-  return { titulo: normal(textoAqui(e.titulo[lang], lang, linhas, [])), paragrafos, ausentes: ausentes.filter(Boolean) };
+  return { titulo: normal(textoAqui(e.titulo[lang], lang, linhas, [])), paragrafos, ausentes };
 }
 
 /** O texto de um elemento sem os selos. @param {any} el */
@@ -608,8 +611,13 @@ export function conferirPaginaDaExplicacao(root, lang, slug, linhas = loadClaims
     const texto = textoSemSelos(el);
     if (texto !== p.texto) erros.push(`X6 · o parágrafo ${p.caminho} difere da conta.\n      esperado: ${curto(p.texto)}\n      rendido:  ${curto(texto)}`);
   }
-  const todo = normal(main.textContent);
-  for (const a of esperado.ausentes) if (a.length >= 4 && todo.includes(a)) erros.push(`X6 · o texto de um ramo não escolhido, ou guardado por uma condição falsa, está na página: «${curto(a)}»`);
+  /* EX1-d: cada ramo pertence ao seu parágrafo. O défice da execução e o excedente do ano anterior podem
+     coexistir; uma palavra legítima noutra conta não é um ramo indevido desta. A igualdade integral de cada
+     parágrafo e o inventário dos caminhos continuam a recusar texto a mais, trocado ou fora do seu lugar. */
+  for (const a of esperado.ausentes) {
+    const el = rendidos.find((/** @type {any} */ x) => x.getAttribute('data-explicacao-paragrafo') === a.caminho);
+    if (el && a.texto.length >= 4 && textoSemSelos(el).includes(a.texto)) erros.push(`X6 · o texto de um ramo não escolhido, ou guardado por uma condição falsa, está no parágrafo ${a.caminho}: «${curto(a.texto)}»`);
+  }
   const titulos = main.querySelectorAll('[data-explicacao-secao] > h2').map((/** @type {any} */ h) => normal(h.textContent));
   const deveTitulos = [...e.seccoes.map((/** @type {any} */ x) => x.titulo[lang]), ...(esperado.paragrafos.some((p) => p.caminho.startsWith('naoDiz')) ? [s.explicacoes.oQueIstoNaoDiz] : [])];
   if (JSON.stringify(titulos) !== JSON.stringify(deveTitulos)) erros.push(`X7 · os títulos das secções (${titulos.join(' | ')}) não são os declarados (${deveTitulos.join(' | ')})`);
@@ -721,6 +729,35 @@ export function plantasDaExplicacao(dist) {
     const [de, para] = paragrafo(r, 'excedente') ? ['excedente', 'défice'] : ['défice', 'excedente'];
     const p = paragrafo(r, de);
     p.set_content(p.innerHTML.replace(de, para));
+  }, /X6 ·/);
+  /* EX1-d: as duas contas podem ter sinais diferentes. As plantas isolam o saldo da execução, incluindo
+     o caso em que se lhe acrescenta o ramo que é legítimo na conta do ano anterior. */
+  const saldoExecucao = (/** @type {any} */ r) => r.querySelector('[data-explicacao-paragrafo="seccoes[2].conteudo[1].paragrafo"]');
+  naPagina('EX1-d: o sinal da execução trocado', (r) => {
+    const p = saldoExecucao(r);
+    const de = /um excedente|um défice|um saldo nulo/.exec(p.textContent)?.[0];
+    p.set_content(p.innerHTML.replace(de, de === 'um défice' ? 'um excedente' : 'um défice'));
+  }, /X6 ·/);
+  naPagina('EX1-d: o ramo do ano anterior acrescentado à execução', (r) => {
+    const p = saldoExecucao(r);
+    p.set_content(p.innerHTML + ' um excedente (recebeu mais do que gastou)');
+  }, /X6 ·/);
+  naPagina('EX1-d: a comparação anual invertida', (r) => {
+    const p = saldoExecucao(r);
+    const de = /acima do que|abaixo do que|em linha com o que/.exec(p.textContent)?.[0];
+    p.set_content(p.innerHTML.replace(de, de === 'acima do que' ? 'abaixo do que' : 'acima do que'));
+  }, /X6 ·/);
+  naPagina('EX1-d: o saldo de outro perímetro', (r) => {
+    const c = saldoExecucao(r).querySelector('[data-claim]');
+    c.set_content(linhas.get('execucao-2026-08-saldo-global-administracao-central').value);
+    c.setAttribute('data-claim', 'execucao-2026-08-saldo-global-administracao-central');
+  }, /X6 ·|X8 ·/);
+  naPagina('EX1-d: a previsão anual apresentada como mensal', (r) => {
+    const p = saldoExecucao(r); p.set_content(p.innerHTML.replace('para o ano inteiro', 'para agosto'));
+  }, /X6 ·/);
+  naPagina('EX1-d: a contradição dos juros reposta', (r) => {
+    const p = r.querySelector('[data-explicacao-paragrafo="naoDiz[0]"]');
+    p.set_content(p.innerHTML.replace('Estes números não isolam', 'Falta aqui'));
   }, /X6 ·/);
   naPagina('as palavras de uma condição falsa rendidas (os três programas)', (r) => { const p = paragrafo(r, 'tinham gasto'); p.set_content(p.innerHTML.replace(/\.\s*$/, '; os programas que mais gastaram foram o do Trabalho, Solidariedade e Segurança Social.')); }, /X6 ·/);
   naPagina('o nome de outra função', (r) => { const n = r.querySelector('[data-explicacao-nome="oe-2026-cem-euros-funcao-07"]'); n.set_content('educação'); }, /X6 ·/);
